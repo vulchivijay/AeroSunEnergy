@@ -108,7 +108,7 @@ export default function Footer() {
 
       <div className="border-t border-gray-800 py-6">
         <p className="text-center text-gray-500 text-sm">
-          © {new Date().getFullYear()} AeroSun Energy. All rights reserved. |{' '}
+          Vulchi Vijaya Kumar © 2026 AeroSun Energy. All rights reserved. |{' '}
           <a href="https://aerosunenergy.in" className="hover:text-primary transition-colors">
             aerosunenergy.in
           </a>
