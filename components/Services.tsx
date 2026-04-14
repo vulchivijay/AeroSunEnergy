@@ -7,17 +7,31 @@ const services = [
     color: 'from-yellow-400 to-orange-400',
   },
   {
-    emoji: '🌬️',
-    title: 'Wind Energy Solutions',
+    emoji: '🌀',
+    title: '3-Blade Wind Turbines (HAWT)',
     description:
-      'Harness the power of the wind with our advanced turbine installations. Our engineers assess wind potential and deliver optimized systems for maximum power generation.',
+      'Classic horizontal-axis wind turbines engineered for high-wind sites. Our certified engineers assess wind potential and deliver optimized 3-blade systems for maximum power generation in open terrain and offshore environments.',
     color: 'from-primary to-blue-400',
+  },
+  {
+    emoji: '🌸',
+    title: 'Flower Turbines',
+    description:
+      'Innovative vertical-axis flower turbines with petal-shaped helical blades that capture wind from every direction. Ideal for urban rooftops, gardens, and low-noise environments where aesthetics and silent operation matter.',
+    color: 'from-pink-400 to-rose-400',
+  },
+  {
+    emoji: '♻️',
+    title: 'Low-Wind VAWT (Savonius)',
+    description:
+      'Savonius and Darrieus vertical-axis turbines designed for minimal air-flow conditions. These self-starting rotors generate power even at wind speeds as low as 2 m/s, making them perfect for calm-wind regions and off-grid sites.',
+    color: 'from-teal-400 to-cyan-400',
   },
   {
     emoji: '⚡',
     title: 'Hybrid Energy Systems',
     description:
-      'Combine solar and wind in a single integrated hybrid system for continuous power supply, even during low-sunlight or low-wind periods, with smart battery storage.',
+      'Combine solar and wind in a single integrated hybrid system for continuous power supply, even during low-sunlight or low-wind periods, with smart battery storage and IoT-enabled monitoring.',
     color: 'from-secondary to-teal-400',
   },
 ]
@@ -34,7 +48,7 @@ export default function Services() {
           <div className="mt-4 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
             <div
               key={service.title}
