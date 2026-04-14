@@ -39,10 +39,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 font-bold text-xl text-primary">
-            <Image src="/logo-icon.png" alt="AeroSun Energy logo" width={32} height={32} priority />
-            <span className="text-primary">AeroSun</span>
-            <span className="text-secondary">Energy</span>
+          <a href="#" className="flex items-center">
+            <Image src="/logo-icon.png" alt="AeroSun Energy logo" width={120} height={48} priority />
           </a>
 
           {/* Desktop Links */}
