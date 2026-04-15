@@ -17,7 +17,7 @@ const spaceGrotesk = Space_Grotesk({
   weight: ['500', '700'],
 })
 
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID
+const GTM_ID = 'PLB9S69G';
 const GOOGLE_SITE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 const BING_SITE_VERIFICATION = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
 
@@ -57,6 +57,7 @@ export const metadata: Metadata = {
     'Savonius turbine',
     'clean energy India',
     'sustainable energy infrastructure',
+    'aero sun energy'
   ],
   metadataBase: new URL('https://aerosunenergy.in'),
   alternates: {
@@ -107,6 +108,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {GTM_ID ? (
+          <Script
+            id="gtm-script"
+            strategy="beforeInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`,
+            }}
+          />
+        ) : null}
+      </head>
       <body className={`${manrope.variable} ${spaceGrotesk.variable} bg-white text-gray-900 transition-colors duration-300 dark:bg-gray-950 dark:text-gray-100`}>
         {GTM_ID ? (
           <noscript>
@@ -120,15 +132,6 @@ export default function RootLayout({
         ) : null}
         <JsonLd />
         {children}
-        {GTM_ID ? (
-          <Script
-            id="gtm-script"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`,
-            }}
-          />
-        ) : null}
       </body>
     </html>
   )
