@@ -58,7 +58,7 @@ export default function About() {
             transition={{ duration: 0.7 }}
           >
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">
-              AeroSun Energy is a leading renewable energy company that delivers world-class <strong>hybrid solar and wind energy solutions</strong> to homes, businesses, and industries. Our hybrid systems combine the best of both worlds — solar panels that harvest sunlight during the day and wind turbines that generate power around the clock — so you always have a reliable, uninterrupted electricity supply.
+              AeroSun Energy is a leading renewable energy company that delivers world-class <span className="font-bold text-gray-900 dark:text-white">hybrid solar and wind energy solutions</span> to homes, businesses, and industries. Our hybrid systems combine the best of both worlds — solar panels that harvest sunlight during the day and wind turbines that generate power around the clock — so you always have a reliable, uninterrupted electricity supply.
             </p>
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
               From rooftop installations to open commercial spaces and road-side deployments, our certified engineers design tailored hybrid systems that maximize energy output while minimizing environmental impact. We are committed to making clean energy accessible and affordable for all — urban and rural India alike.

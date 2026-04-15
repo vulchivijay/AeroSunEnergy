@@ -22,7 +22,7 @@ const steps = [
     icon: <Zap className="h-8 w-8 text-green-500" />,
     step: '03',
     title: 'Smart Controller Combines Energy',
-    desc: 'An IoT-enabled hybrid controller intelligently blends power from both sources, optimising load distribution and ensuring stable, continuous electricity output.',
+    desc: 'An IoT-enabled hybrid controller intelligently blends power from both sources, optimizing load distribution and ensuring stable, continuous electricity output.',
     color: 'from-green-400 to-teal-400',
   },
   {

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 const useCases = [
@@ -73,12 +74,15 @@ export default function UseCases() {
               variants={cardVariants}
               className="group bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl overflow-hidden hover:scale-105 transition-all duration-300"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={uc.img}
-                alt={uc.title}
-                className="w-full h-48 object-cover group-hover:brightness-110 transition-all duration-300"
-              />
+              <div className="relative w-full h-48">
+                <Image
+                  src={uc.img}
+                  alt={uc.title}
+                  fill
+                  className="object-cover group-hover:brightness-110 transition-all duration-300"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+              </div>
               <div className="p-6">
                 <div className="text-3xl mb-3">{uc.emoji}</div>
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{uc.title}</h3>
