@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const navLinks = [
   { label: 'Home', href: '#' },
   { label: 'About', href: '#about' },
@@ -16,7 +18,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              {/* <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <circle cx="16" cy="16" r="7" fill="#FBC02D" />
                 <g stroke="#FBC02D" strokeWidth="2" strokeLinecap="round">
                   <line x1="16" y1="2" x2="16" y2="6" />
@@ -32,7 +34,8 @@ export default function Footer() {
               <span className="text-white font-bold text-xl">
                 <span className="text-primary">AeroSun</span>{' '}
                 <span className="text-secondary">Energy</span>
-              </span>
+              </span> */}
+              <Image src="images/logo-horizontal.jpeg" alt="AeroSun Energy logo" width={180} height={60} priority />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Power from Sun &amp; Wind
@@ -41,7 +44,7 @@ export default function Footer() {
               Delivering clean, reliable, and affordable renewable energy solutions across India.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              📧 info@aerosunenergy.in
+              📧 customercare@aerosunenergy.in
             </p>
             <p className="text-gray-500 text-sm mt-1">
               🌐 aerosunenergy.in
