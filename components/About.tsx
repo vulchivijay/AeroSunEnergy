@@ -1,3 +1,7 @@
+'use client'
+
+import { motion } from 'framer-motion'
+
 const features = [
   {
     icon: (
@@ -32,16 +36,27 @@ export default function About() {
   return (
     <section id="about" className="py-24 bg-white dark:bg-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
           <span className="text-secondary font-semibold uppercase tracking-widest text-sm">The Technology</span>
           <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">
             About Our Hybrid Solar + Wind System
           </h2>
           <div className="mt-4 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary" />
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">
               Our <strong>hybrid solar wind energy</strong> system combines photovoltaic solar panels and compact wind turbines into one integrated, intelligent power unit. Solar panels capture sunlight during the day while the wind turbines generate power continuously — day or night, rain or shine. Together, they complement each other perfectly: when solar output drops (overcast skies or night-time), wind steps in to fill the gap.
             </p>
@@ -51,13 +66,19 @@ export default function About() {
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
               AeroSun Energy designs and installs tailored <strong>renewable energy solutions across India</strong> — for homes, businesses, public spaces, and large-scale infrastructure — making clean, affordable power accessible to everyone.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+          >
             {features.map((f) => (
               <div
                 key={f.title}
-                className="flex flex-col items-center text-center p-6 rounded-2xl bg-gray-50 dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow"
+                className="flex flex-col items-center text-center p-6 rounded-2xl bg-gray-50 dark:bg-gray-800 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
               >
                 <div className="mb-4 p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm">
                   {f.icon}
@@ -66,7 +87,7 @@ export default function About() {
                 <p className="text-sm text-gray-500 dark:text-gray-400">{f.desc}</p>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

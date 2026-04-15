@@ -1,3 +1,7 @@
+'use client'
+
+import { motion } from 'framer-motion'
+
 const useCases = [
   {
     emoji: '🛣️',
@@ -41,12 +45,27 @@ const useCases = [
   },
 ]
 
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.15 } },
+}
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' as const } },
+}
+
 export default function UseCases() {
   return (
     <section id="use-cases" className="py-24 bg-white dark:bg-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
           <span className="text-secondary font-semibold uppercase tracking-widest text-sm">Where We Install</span>
           <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">
             Use Cases
@@ -55,13 +74,19 @@ export default function UseCases() {
             Our hybrid solar wind energy systems are engineered for diverse environments — from busy highways to quiet homes — bringing renewable energy solutions across India wherever they&apos;re needed most.
           </p>
           <div className="mt-6 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary" />
-        </div>
+        </motion.div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {useCases.map((uc) => (
-            <div
+            <motion.div
               key={uc.title}
+              variants={cardVariants}
               className="group bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
               <div className={`h-2 bg-gradient-to-r ${uc.color}`} />
@@ -95,9 +120,9 @@ export default function UseCases() {
                   Learn more →
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

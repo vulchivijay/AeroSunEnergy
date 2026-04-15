@@ -1,13 +1,22 @@
+'use client'
+
+import { motion } from 'framer-motion'
+
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-primary via-blue-600 to-secondary overflow-hidden animate-fadeIn">
+    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-primary via-blue-600 to-secondary overflow-hidden">
       {/* Background decorative circles */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-white/5 rounded-full blur-3xl" aria-hidden="true" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
         {/* Text content */}
-        <div className="text-white z-10">
+        <motion.div
+          className="text-white z-10"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
           <span className="inline-block bg-white/20 text-white text-sm font-semibold px-4 py-1 rounded-full mb-6 uppercase tracking-wide">
             Hybrid Solar &amp; Wind Energy
           </span>
@@ -33,24 +42,27 @@ export default function Hero() {
               🏭 Open Land
             </span>
           </div>
-          <div className="flex flex-wrap gap-4">
+          <motion.div
+            className="flex flex-wrap gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+          >
             <a
               href="#how-it-works"
               className="inline-block bg-white text-primary font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-accent hover:text-white transition-colors duration-200"
             >
               See How It Works
-            </a>
-            <a
-              href="#contact"
-              className="inline-block border-2 border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white/10 transition-colors duration-200"
-            >
-              Get a Free Quote
-            </a>
-          </div>
-        </div>
+        </motion.div>
 
         {/* SVG Illustration – three wind generator types + solar panel */}
-        <div className="flex justify-center lg:justify-end z-10" aria-hidden="true">
+        <motion.div
+          className="flex justify-center lg:justify-end z-10"
+          aria-hidden="true"
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
+        >
           <svg
             width="460"
             height="400"
@@ -151,7 +163,7 @@ export default function Hero() {
             <ellipse cx="175" cy="38" rx="24" ry="12" fill="white" opacity="0.18" />
             <ellipse cx="197" cy="30" rx="19" ry="10" fill="white" opacity="0.18" />
           </svg>
-        </div>
+        </motion.div>
       </div>
 
       {/* Scroll indicator */}

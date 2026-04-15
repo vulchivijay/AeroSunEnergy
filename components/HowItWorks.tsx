@@ -1,3 +1,7 @@
+'use client'
+
+import { motion } from 'framer-motion'
+
 const steps = [
   {
     number: '01',
@@ -41,12 +45,27 @@ const steps = [
   },
 ]
 
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.18 } },
+}
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' as const } },
+}
+
 export default function HowItWorks() {
   return (
     <section id="how-it-works" className="py-24 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
           <span className="text-primary font-semibold uppercase tracking-widest text-sm">Simple Process</span>
           <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">
             How It Works
@@ -55,17 +74,24 @@ export default function HowItWorks() {
             From site visit to 24/7 power generation — here&apos;s how we turn any location into a clean energy source with our solar wind hybrid system.
           </p>
           <div className="mt-6 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary" />
-        </div>
+        </motion.div>
 
         {/* Steps */}
         <div className="relative">
           {/* Vertical connector line (desktop) */}
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent opacity-20 -translate-x-1/2" aria-hidden="true" />
 
-          <div className="flex flex-col gap-12">
+          <motion.div
+            className="flex flex-col gap-12"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {steps.map((step, idx) => (
-              <div
+              <motion.div
                 key={step.number}
+                variants={cardVariants}
                 className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}
               >
                 {/* Content card */}
@@ -93,9 +119,9 @@ export default function HowItWorks() {
 
                 {/* Spacer (mirrors content card on the other side) */}
                 <div className="flex-1 hidden lg:block" aria-hidden="true" />
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
