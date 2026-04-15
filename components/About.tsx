@@ -98,8 +98,8 @@ export default function About() {
           >
             <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-gray-100 shadow-xl ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
               <Image
-                src="/images/future-aerosunenergy.png"
-                alt="Future-ready AeroSun Energy hybrid technology installation"
+                src="/images/smart-vawt-aerosunenergy.png"
+                alt="Smart VAWT hybrid technology deployment by AeroSun Energy"
                 fill
                 sizes="(min-width: 1024px) 38vw, 92vw"
                 className="object-cover"

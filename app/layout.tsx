@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Manrope, Space_Grotesk } from 'next/font/google'
 import Script from 'next/script'
 import JsonLd from '@/components/JsonLd'
+
 import './globals.css'
 
 const manrope = Manrope({
@@ -16,8 +17,8 @@ const spaceGrotesk = Space_Grotesk({
   weight: ['500', '700'],
 })
 
-// Replace with your actual Google Tag Manager container ID
-const GTM_ID = 'GTM-XXXXXXX'
+const GTM_ID = 'PLB9S69G';
+const BING_SITE_VERIFICATION = 'CFCE648996D804079C4F28B5C09CE9D3';
 
 export const metadata: Metadata = {
   title: {
@@ -41,6 +42,7 @@ export const metadata: Metadata = {
     'Savonius turbine',
     'clean energy India',
     'sustainable energy infrastructure',
+    'aero sun energy'
   ],
   metadataBase: new URL('https://aerosunenergy.in'),
   alternates: {
@@ -81,14 +83,13 @@ export const metadata: Metadata = {
       'Clean, affordable solar and wind energy solutions for homes, businesses, and industries across India.',
     images: ['/images/logo-full.png'],
   },
-  verification: {
-    // Replace with your actual Google Search Console verification code
-    google: 'REPLACE_WITH_GOOGLE_VERIFICATION_CODE',
-    other: {
-      // Replace with your actual Bing Webmaster Tools verification code
-      'msvalidate.01': 'REPLACE_WITH_BING_VERIFICATION_CODE',
-    },
-  },
+  verification: BING_SITE_VERIFICATION
+    ? {
+      other: {
+        'msvalidate.01': BING_SITE_VERIFICATION,
+      },
+    }
+    : undefined,
 }
 
 export default function RootLayout({
@@ -98,26 +99,30 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable} ${spaceGrotesk.variable} bg-white text-gray-900 transition-colors duration-300 dark:bg-gray-950 dark:text-gray-100`}>
-        {/* Google Tag Manager (noscript fallback) */}
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
+      <head>
+        {GTM_ID ? (
+          <Script
+            id="gtm-script"
+            strategy="beforeInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`,
+            }}
           />
-        </noscript>
+        ) : null}
+      </head>
+      <body className={`${manrope.variable} ${spaceGrotesk.variable} bg-white text-gray-900 transition-colors duration-300 dark:bg-gray-950 dark:text-gray-100`}>
+        {GTM_ID ? (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            />
+          </noscript>
+        ) : null}
         <JsonLd />
         {children}
-        {/* Google Tag Manager */}
-        <Script
-          id="gtm-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`,
-          }}
-        />
       </body>
     </html>
   )

@@ -32,8 +32,8 @@ const useCases = [
     emoji: '🏡',
     title: 'Residential Rooftops',
     tag: 'Home Energy',
-    imageSrc: '/images/home-aerosunenergy.png',
-    imageAlt: 'Residential hybrid solar and wind energy rooftop installation',
+    imageSrc: '/images/roof-turbine-aerosunenergy.png',
+    imageAlt: 'Residential rooftop turbine and hybrid solar installation',
     tagColor: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300',
     description:
       'Our solar wind hybrid system for homes combines compact rooftop solar panels with low-wind VAWT turbines — delivering round-the-clock electricity. Homeowners can cut their bills drastically, store surplus energy, and even sell power back to the grid through net metering.',
