@@ -18,22 +18,7 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 const GTM_ID = 'PLB9S69G';
-const GOOGLE_SITE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
-const BING_SITE_VERIFICATION = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
-
-const metadataVerification: Metadata['verification'] =
-  GOOGLE_SITE_VERIFICATION || BING_SITE_VERIFICATION
-    ? {
-        ...(GOOGLE_SITE_VERIFICATION ? { google: GOOGLE_SITE_VERIFICATION } : {}),
-        ...(BING_SITE_VERIFICATION
-          ? {
-              other: {
-                'msvalidate.01': BING_SITE_VERIFICATION,
-              },
-            }
-          : {}),
-      }
-    : undefined
+const BING_SITE_VERIFICATION = 'CFCE648996D804079C4F28B5C09CE9D3';
 
 export const metadata: Metadata = {
   title: {
@@ -98,7 +83,13 @@ export const metadata: Metadata = {
       'Clean, affordable solar and wind energy solutions for homes, businesses, and industries across India.',
     images: ['/images/logo-full.png'],
   },
-  verification: metadataVerification,
+  verification: BING_SITE_VERIFICATION
+    ? {
+      other: {
+        'msvalidate.01': BING_SITE_VERIFICATION,
+      },
+    }
+    : undefined,
 }
 
 export default function RootLayout({
