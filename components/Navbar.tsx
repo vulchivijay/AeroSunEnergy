@@ -42,7 +42,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center">
-            <Image src="images/logo-horizontal.png" alt="AeroSun Energy logo" width={240} height={96} priority />
+            <Image src="/images/logo-horizontal.png" alt="AeroSun Energy logo" width={240} height={96} priority />
           </a>
 
           {/* Desktop Links */}

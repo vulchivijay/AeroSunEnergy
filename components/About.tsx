@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const features = [
   {
@@ -69,24 +70,43 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6"
+            className="space-y-6"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
-            {features.map((f) => (
-              <div
-                key={f.title}
-                className="flex flex-col items-center text-center p-6 rounded-2xl bg-gray-50 dark:bg-gray-800 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
-              >
-                <div className="mb-4 p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm">
-                  {f.icon}
-                </div>
-                <h3 className="font-bold text-gray-900 dark:text-white mb-2">{f.title}</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">{f.desc}</p>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-gray-100 shadow-xl ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+              <Image
+                src="/images/future-aerosunenergy.png"
+                alt="Future-ready AeroSun Energy hybrid technology installation"
+                fill
+                sizes="(min-width: 1024px) 38vw, 92vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-transparent to-transparent" aria-hidden="true" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">Future Ready</p>
+                <p className="mt-2 max-w-md text-sm text-white/90 sm:text-base">
+                  Hybrid systems engineered for dependable output, smart monitoring, and scalable installations.
+                </p>
               </div>
-            ))}
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+              {features.map((f) => (
+                <div
+                  key={f.title}
+                  className="flex flex-col items-center text-center p-6 rounded-2xl bg-gray-50 dark:bg-gray-800 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
+                >
+                  <div className="mb-4 p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm">
+                    {f.icon}
+                  </div>
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-2">{f.title}</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{f.desc}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>

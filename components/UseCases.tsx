@@ -1,12 +1,15 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const useCases = [
   {
     emoji: '🛣️',
     title: 'Smart Energy Roads & Highways',
     tag: 'Infrastructure',
+    imageSrc: '/images/infra-aerosunenergy.png',
+    imageAlt: 'Hybrid solar and wind infrastructure for roads and highways',
     tagColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300',
     description:
       'Roads and highways are exposed to sunlight and wind 24 hours a day. AeroSun integrates solar panels into road surface barriers and wind turbines along medians and roadsides — turning every kilometre of highway into a green energy generator that powers streetlights, traffic systems, and EV charging stations.',
@@ -17,6 +20,8 @@ const useCases = [
     emoji: '🌳',
     title: 'Public Parks & Open Spaces',
     tag: 'Urban Green',
+    imageSrc: '/images/openspace-aerosunenergy.png',
+    imageAlt: 'AeroSun hybrid installation for public parks and open spaces',
     tagColor: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300',
     description:
       'Parks offer unobstructed sunlight and natural airflow. Our aesthetically designed flower turbines and solar canopies blend seamlessly into park landscapes, powering benches, Wi-Fi nodes, lighting, and event spaces — supporting sustainable urban infrastructure without disrupting the natural environment.',
@@ -27,6 +32,8 @@ const useCases = [
     emoji: '🏡',
     title: 'Residential Rooftops',
     tag: 'Home Energy',
+    imageSrc: '/images/home-aerosunenergy.png',
+    imageAlt: 'Residential hybrid solar and wind energy rooftop installation',
     tagColor: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300',
     description:
       'Our solar wind hybrid system for homes combines compact rooftop solar panels with low-wind VAWT turbines — delivering round-the-clock electricity. Homeowners can cut their bills drastically, store surplus energy, and even sell power back to the grid through net metering.',
@@ -37,6 +44,8 @@ const useCases = [
     emoji: '🏭',
     title: 'Open Land & Commercial Spaces',
     tag: 'Commercial',
+    imageSrc: '/images/industries-aerosunenergy.png',
+    imageAlt: 'Commercial and industrial AeroSun hybrid energy installation',
     tagColor: 'bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300',
     description:
       'Open agricultural land, factory rooftops, warehouses, and commercial complexes represent ideal sites for large-scale hybrid deployments. AeroSun delivers scalable green energy infrastructure that offsets industrial power demands and accelerates compliance with sustainability targets.',
@@ -90,6 +99,16 @@ export default function UseCases() {
               className="group bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
               <div className={`h-2 bg-gradient-to-r ${uc.color}`} />
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <Image
+                  src={uc.imageSrc}
+                  alt={uc.imageAlt}
+                  fill
+                  sizes="(min-width: 1280px) 28vw, (min-width: 768px) 44vw, 92vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent" aria-hidden="true" />
+              </div>
               <div className="p-8">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-4xl">{uc.emoji}</span>

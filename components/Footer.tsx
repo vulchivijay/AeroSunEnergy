@@ -35,7 +35,7 @@ export default function Footer() {
                 <span className="text-primary">AeroSun</span>{' '}
                 <span className="text-secondary">Energy</span>
               </span> */}
-              <Image src="images/logo-horizontal.png" alt="AeroSun Energy logo" width={180} height={60} priority />
+              <Image src="/images/logo-horizontal.png" alt="AeroSun Energy logo" width={180} height={60} priority />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Power from Sun &amp; Wind
