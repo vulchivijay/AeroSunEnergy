@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aerosunenergy.in/sitemap.xml
