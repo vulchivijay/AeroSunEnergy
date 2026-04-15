@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image';
+import Image from 'next/image'
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -37,28 +37,35 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-md shadow-2xl">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/55 bg-white/80 px-4 py-3 shadow-[0_18px_60px_rgba(15,23,42,0.14)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/75">
           {/* Logo */}
           <a href="#" className="flex items-center">
-            <Image src="images/logo-horizontal.png" alt="AeroSun Energy logo" width={240} height={96} priority />
+            <Image src="/images/logo-horizontal.png" alt="AeroSun Energy logo" width={210} height={72} priority className="h-auto w-[170px] sm:w-[190px]" />
           </a>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden items-center gap-3 md:flex">
+            <div className="flex items-center gap-1 rounded-full border border-slate-200/80 bg-white/75 p-1 dark:border-slate-800 dark:bg-slate-900/80">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary font-medium transition-colors"
+                className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-100 hover:text-primary dark:text-slate-200 dark:hover:bg-slate-800"
               >
                 {link.label}
               </a>
             ))}
+            </div>
+            <a
+              href="#contact"
+              className="rounded-full bg-slate-950 px-5 py-2.5 text-sm font-bold text-white transition-transform duration-200 hover:scale-[1.03] hover:bg-primary dark:bg-accent dark:text-slate-950"
+            >
+              Start a Project
+            </a>
             <button
               onClick={toggleDark}
-              className="ml-2 p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              className="p-2.5 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
               aria-label="Toggle dark mode"
             >
               {dark ? (
@@ -78,7 +85,7 @@ export default function Navbar() {
           <div className="flex md:hidden items-center gap-2">
             <button
               onClick={toggleDark}
-              className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              className="p-2 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
               aria-label="Toggle dark mode"
             >
               {dark ? (
@@ -94,7 +101,7 @@ export default function Navbar() {
             </button>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              className="p-2 rounded-full text-slate-700 hover:bg-slate-100 transition-colors dark:text-slate-100 dark:hover:bg-slate-800"
               aria-label="Toggle menu"
             >
               {menuOpen ? (
@@ -109,21 +116,26 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-      </div>
-
       {/* Mobile Menu Dropdown */}
       {menuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 px-4 py-3 space-y-2">
+        <div className="mx-4 mt-3 rounded-3xl border border-white/60 bg-white/92 p-4 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/90 md:hidden sm:mx-6 lg:mx-8">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium transition-colors"
+              className="block rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
             >
               {link.label}
             </a>
           ))}
+          <a
+            href="#contact"
+            onClick={() => setMenuOpen(false)}
+            className="mt-3 block rounded-2xl bg-slate-950 px-4 py-3 text-center text-sm font-bold text-white dark:bg-accent dark:text-slate-950"
+          >
+            Start a Project
+          </a>
         </div>
       )}
     </nav>

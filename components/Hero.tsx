@@ -1,176 +1,134 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Hero() {
-  return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-primary via-blue-600 to-secondary overflow-hidden">
-      {/* Background decorative circles */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-white/5 rounded-full blur-3xl" aria-hidden="true" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl" aria-hidden="true" />
+  const proofPoints = [
+    '24/7 hybrid generation',
+    'Smart IoT monitoring',
+    'Built for roads, rooftops, parks, and industry',
+  ]
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+  return (
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-[#06111d] pt-20 text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(30,136,229,0.42),transparent_30%),radial-gradient(circle_at_78%_18%,rgba(251,192,45,0.28),transparent_18%),linear-gradient(135deg,#071321_0%,#0f3254_54%,#0d5a36_100%)]" aria-hidden="true" />
+      <div className="absolute inset-y-0 right-0 hidden w-[42%] border-l border-white/10 bg-white/5 lg:block" aria-hidden="true" />
+      <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" aria-hidden="true" />
+      <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:88px_88px]" aria-hidden="true" />
+
+      <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-14 px-4 py-24 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
         {/* Text content */}
         <motion.div
-          className="text-white z-10"
+          className="z-10"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <span className="inline-block bg-white/20 text-white text-sm font-semibold px-4 py-1 rounded-full mb-6 uppercase tracking-wide">
-            Hybrid Solar &amp; Wind Energy
+          <span className="mb-6 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.35em] text-white/80 backdrop-blur-md sm:text-sm">
+            Energy Infrastructure Reimagined
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-            Power Your World —{' '}
-            <span className="text-accent">Day and Night</span>
+          <h1 className="max-w-3xl text-5xl font-bold leading-[0.94] sm:text-6xl lg:text-7xl">
+            Built for the sun.
+            <br />
+            Tuned for the wind.
+            <br />
+            <span className="text-accent">Ready for real India.</span>
           </h1>
-          <p className="text-lg sm:text-xl text-white/90 mb-6 max-w-lg">
-            AeroSun Energy delivers cutting-edge hybrid solar wind energy systems that generate clean electricity around the clock. From residential rooftops to smart energy roads, our renewable energy solutions across India keep homes, businesses, and cities powered — sustainably.
+          <p className="mt-6 max-w-2xl text-base leading-8 text-white/82 sm:text-lg">
+            AeroSun Energy designs hybrid solar and wind systems that stay productive beyond peak daylight. From rooftops and parks to highway corridors and industrial land, every installation is shaped for continuous output, lower operating cost, and cleaner infrastructure.
           </p>
-          {/* Installation type badges */}
-          <div className="flex flex-wrap gap-2 mb-8">
-            <span className="inline-flex items-center gap-1 bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/30">
-              🛣️ Smart Roads
-            </span>
-            <span className="inline-flex items-center gap-1 bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/30">
-              🏡 Rooftops
-            </span>
-            <span className="inline-flex items-center gap-1 bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/30">
-              🌳 Public Parks
-            </span>
-            <span className="inline-flex items-center gap-1 bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/30">
-              🏭 Open Land
-            </span>
+          <div className="mt-8 grid gap-3 sm:max-w-xl sm:grid-cols-2">
+            {proofPoints.map((point) => (
+              <div key={point} className="rounded-2xl border border-white/14 bg-white/8 px-4 py-3 text-sm font-medium text-white/92 backdrop-blur-md">
+                {point}
+              </div>
+            ))}
+            <div className="rounded-2xl border border-accent/40 bg-accent/14 px-4 py-3 text-sm font-semibold text-accent backdrop-blur-md">
+              Up to 80% reduction in electricity bills
+            </div>
           </div>
           <motion.div
-            className="flex flex-wrap gap-4"
+            className="mt-10 flex flex-wrap gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
           >
             <a
               href="#how-it-works"
-              className="inline-block bg-white text-primary font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-accent hover:text-white transition-colors duration-200"
+              className="inline-flex items-center rounded-full bg-accent px-8 py-3.5 text-sm font-bold text-slate-950 shadow-[0_20px_40px_rgba(251,192,45,0.22)] transition-transform duration-200 hover:scale-[1.02]"
             >
-              See How It Works
+              Explore the System
             </a>
             <a
               href="#contact"
-              className="inline-block border-2 border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white/10 hover:scale-105 transition-all duration-200"
+              className="inline-flex items-center rounded-full border border-white/25 bg-white/8 px-8 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-colors duration-200 hover:bg-white/14"
             >
               Get a Free Quote
             </a>
           </motion.div>
+
+          <div className="mt-12 grid max-w-2xl grid-cols-2 gap-4 border-t border-white/12 pt-8 sm:grid-cols-4">
+            <div>
+              <p className="text-3xl font-bold text-white">24/7</p>
+              <p className="mt-2 text-xs uppercase tracking-[0.24em] text-white/55">Power Availability</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-white">4-6y</p>
+              <p className="mt-2 text-xs uppercase tracking-[0.24em] text-white/55">Typical ROI Window</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-white">IoT</p>
+              <p className="mt-2 text-xs uppercase tracking-[0.24em] text-white/55">Live Monitoring</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-white">Multi-site</p>
+              <p className="mt-2 text-xs uppercase tracking-[0.24em] text-white/55">Deployment Types</p>
+            </div>
+          </div>
         </motion.div>
 
-        {/* SVG Illustration – three wind generator types + solar panel */}
+        {/* Hero image */}
         <motion.div
-          className="flex justify-center lg:justify-end z-10"
-          aria-hidden="true"
+          className="z-10 flex justify-center lg:justify-end"
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
         >
-          <svg
-            width="460"
-            height="400"
-            viewBox="0 0 460 400"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-full max-w-sm lg:max-w-lg drop-shadow-2xl"
-          >
-            {/* Sun */}
-            <circle cx="380" cy="65" r="45" fill="#FBC02D" opacity="0.95" />
-            <g stroke="#FBC02D" strokeWidth="3" strokeLinecap="round" opacity="0.7">
-              <line x1="380" y1="5" x2="380" y2="18" />
-              <line x1="380" y1="112" x2="380" y2="125" />
-              <line x1="320" y1="65" x2="333" y2="65" />
-              <line x1="427" y1="65" x2="440" y2="65" />
-              <line x1="338" y1="23" x2="347" y2="32" />
-              <line x1="413" y1="98" x2="422" y2="107" />
-              <line x1="422" y1="23" x2="413" y2="32" />
-              <line x1="347" y1="98" x2="338" y2="107" />
-            </g>
-
-            {/* Ground */}
-            <rect x="0" y="340" width="460" height="60" fill="#43A047" opacity="0.4" rx="4" />
-
-            {/* ── 3-Blade HAWT (left) ── */}
-            {/* Tower */}
-            <polygon points="68,340 78,340 75,170 71,170" fill="white" opacity="0.9" />
-            {/* Hub */}
-            <circle cx="73" cy="168" r="8" fill="white" opacity="0.95" />
-            {/* Blade 1 */}
-            <ellipse cx="73" cy="120" rx="7" ry="45" fill="white" opacity="0.85" transform="rotate(0 73 168)" />
-            {/* Blade 2 */}
-            <ellipse cx="73" cy="120" rx="7" ry="45" fill="white" opacity="0.85" transform="rotate(120 73 168)" />
-            {/* Blade 3 */}
-            <ellipse cx="73" cy="120" rx="7" ry="45" fill="white" opacity="0.85" transform="rotate(240 73 168)" />
-            {/* Label */}
-            <text x="73" y="358" textAnchor="middle" fill="white" fontSize="8" opacity="0.7" fontFamily="sans-serif">HAWT</text>
-
-            {/* ── Flower Turbine (centre) ── */}
-            {/* Mast */}
-            <rect x="196" y="200" width="6" height="140" fill="white" opacity="0.85" rx="2" />
-            {/* Petals arranged around vertical axis centre at (199, 220) */}
-            {/* Each petal is an ellipse rotated around the mast top */}
-            <ellipse cx="199" cy="185" rx="9" ry="22" fill="#a5f3fc" opacity="0.85" transform="rotate(0 199 207)" />
-            <ellipse cx="199" cy="185" rx="9" ry="22" fill="#67e8f9" opacity="0.80" transform="rotate(45 199 207)" />
-            <ellipse cx="199" cy="185" rx="9" ry="22" fill="#a5f3fc" opacity="0.85" transform="rotate(90 199 207)" />
-            <ellipse cx="199" cy="185" rx="9" ry="22" fill="#67e8f9" opacity="0.80" transform="rotate(135 199 207)" />
-            <ellipse cx="199" cy="185" rx="9" ry="22" fill="#a5f3fc" opacity="0.85" transform="rotate(180 199 207)" />
-            <ellipse cx="199" cy="185" rx="9" ry="22" fill="#67e8f9" opacity="0.80" transform="rotate(225 199 207)" />
-            <ellipse cx="199" cy="185" rx="9" ry="22" fill="#a5f3fc" opacity="0.85" transform="rotate(270 199 207)" />
-            <ellipse cx="199" cy="185" rx="9" ry="22" fill="#67e8f9" opacity="0.80" transform="rotate(315 199 207)" />
-            {/* Centre hub */}
-            <circle cx="199" cy="207" r="7" fill="white" opacity="0.95" />
-            {/* Label */}
-            <text x="199" y="358" textAnchor="middle" fill="white" fontSize="8" opacity="0.7" fontFamily="sans-serif">Flower</text>
-
-            {/* ── Savonius VAWT / Low-Wind Turbine (right of centre) ── */}
-            {/* Mast */}
-            <rect x="296" y="195" width="6" height="145" fill="white" opacity="0.85" rx="2" />
-            {/* Top & bottom discs */}
-            <ellipse cx="299" cy="197" rx="22" ry="5" fill="white" opacity="0.6" />
-            <ellipse cx="299" cy="335" rx="22" ry="5" fill="white" opacity="0.6" />
-            {/* Savonius S-rotor: two opposing curved scoops */}
-            {/* Scoop A – curves right */}
-            <path
-              d="M299,197 C320,210 320,260 299,280 C299,260 285,240 285,220 C285,207 292,197 299,197Z"
-              fill="#bfdbfe"
-              opacity="0.8"
-            />
-            {/* Scoop B – curves left */}
-            <path
-              d="M299,255 C278,242 278,292 299,310 C299,290 313,270 313,250 C313,237 306,227 299,255Z"
-              fill="#93c5fd"
-              opacity="0.8"
-            />
-            {/* Label */}
-            <text x="299" y="358" textAnchor="middle" fill="white" fontSize="8" opacity="0.7" fontFamily="sans-serif">VAWT</text>
-
-            {/* ── Solar Panel ── */}
-            <rect x="355" y="255" width="90" height="55" rx="5" fill="#1565C0" opacity="0.9" />
-            <g stroke="#90CAF9" strokeWidth="1.5" opacity="0.6">
-              <line x1="355" y1="269" x2="445" y2="269" />
-              <line x1="355" y1="283" x2="445" y2="283" />
-              <line x1="355" y1="297" x2="445" y2="297" />
-              <line x1="376" y1="255" x2="376" y2="310" />
-              <line x1="397" y1="255" x2="397" y2="310" />
-              <line x1="418" y1="255" x2="418" y2="310" />
-              <line x1="439" y1="255" x2="439" y2="310" />
-            </g>
-            {/* Panel stand */}
-            <line x1="375" y1="310" x2="368" y2="325" stroke="white" strokeWidth="2.5" opacity="0.8" />
-            <line x1="425" y1="310" x2="432" y2="325" stroke="white" strokeWidth="2.5" opacity="0.8" />
-            <line x1="363" y1="325" x2="437" y2="325" stroke="white" strokeWidth="2.5" opacity="0.8" />
-
-            {/* Clouds */}
-            <ellipse cx="40" cy="55" rx="32" ry="16" fill="white" opacity="0.2" />
-            <ellipse cx="62" cy="45" rx="26" ry="13" fill="white" opacity="0.2" />
-            <ellipse cx="175" cy="38" rx="24" ry="12" fill="white" opacity="0.18" />
-            <ellipse cx="197" cy="30" rx="19" ry="10" fill="white" opacity="0.18" />
-          </svg>
+          <div className="relative w-full max-w-2xl">
+            <div className="absolute inset-8 rounded-[2.5rem] bg-accent/20 blur-3xl" aria-hidden="true" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/16 bg-white/8 p-3 shadow-[0_40px_120px_rgba(3,8,18,0.4)] backdrop-blur-sm">
+              <div className="absolute left-5 right-5 top-5 z-10 flex items-center justify-between rounded-full border border-white/16 bg-slate-950/35 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/75 backdrop-blur-md">
+                <span>Hybrid Energy Snapshot</span>
+                <span>Live Optimisation</span>
+              </div>
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] sm:aspect-[5/4]">
+              <Image
+                src="/images/home-aerosunenergy.png"
+                alt="AeroSun Energy hybrid solar and wind installation"
+                fill
+                priority
+                sizes="(min-width: 1024px) 44vw, 92vw"
+                className="object-cover"
+              />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,12,24,0.06),rgba(4,12,24,0.26)_58%,rgba(4,12,24,0.64)_100%)]" aria-hidden="true" />
+              </div>
+              <div className="absolute bottom-6 left-6 right-6 z-10 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-2xl border border-white/16 bg-slate-950/55 p-4 text-white backdrop-blur-md">
+                  <p className="text-[11px] uppercase tracking-[0.28em] text-white/60">Primary Use</p>
+                  <p className="mt-2 text-lg font-bold">Residential to infrastructure-scale deployment</p>
+                </div>
+                <div className="rounded-2xl border border-white/16 bg-white/12 p-4 text-white backdrop-blur-md">
+                  <p className="text-[11px] uppercase tracking-[0.28em] text-white/60">Performance Logic</p>
+                  <p className="mt-2 text-lg font-bold">Solar in daylight, wind beyond it</p>
+                </div>
+              </div>
+            </div>
+            <div className="absolute -bottom-5 left-4 max-w-[230px] rounded-3xl border border-white/14 bg-white/10 px-5 py-4 text-white shadow-2xl backdrop-blur-xl sm:left-6">
+              <p className="text-[11px] uppercase tracking-[0.28em] text-white/65">Field Advantage</p>
+              <p className="mt-2 text-base font-bold leading-6">One system, multiple generation windows, minimal dead time.</p>
+            </div>
+          </div>
         </motion.div>
       </div>
 

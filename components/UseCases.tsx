@@ -1,12 +1,15 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const useCases = [
   {
     emoji: '🛣️',
     title: 'Smart Energy Roads & Highways',
     tag: 'Infrastructure',
+    imageSrc: '/images/infra-aerosunenergy.png',
+    imageAlt: 'Hybrid solar and wind infrastructure for roads and highways',
     tagColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300',
     description:
       'Roads and highways are exposed to sunlight and wind 24 hours a day. AeroSun integrates solar panels into road surface barriers and wind turbines along medians and roadsides — turning every kilometre of highway into a green energy generator that powers streetlights, traffic systems, and EV charging stations.',
@@ -17,6 +20,8 @@ const useCases = [
     emoji: '🌳',
     title: 'Public Parks & Open Spaces',
     tag: 'Urban Green',
+    imageSrc: '/images/openspace-aerosunenergy.png',
+    imageAlt: 'AeroSun hybrid installation for public parks and open spaces',
     tagColor: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300',
     description:
       'Parks offer unobstructed sunlight and natural airflow. Our aesthetically designed flower turbines and solar canopies blend seamlessly into park landscapes, powering benches, Wi-Fi nodes, lighting, and event spaces — supporting sustainable urban infrastructure without disrupting the natural environment.',
@@ -27,6 +32,8 @@ const useCases = [
     emoji: '🏡',
     title: 'Residential Rooftops',
     tag: 'Home Energy',
+    imageSrc: '/images/home-aerosunenergy.png',
+    imageAlt: 'Residential hybrid solar and wind energy rooftop installation',
     tagColor: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300',
     description:
       'Our solar wind hybrid system for homes combines compact rooftop solar panels with low-wind VAWT turbines — delivering round-the-clock electricity. Homeowners can cut their bills drastically, store surplus energy, and even sell power back to the grid through net metering.',
@@ -37,6 +44,8 @@ const useCases = [
     emoji: '🏭',
     title: 'Open Land & Commercial Spaces',
     tag: 'Commercial',
+    imageSrc: '/images/industries-aerosunenergy.png',
+    imageAlt: 'Commercial and industrial AeroSun hybrid energy installation',
     tagColor: 'bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300',
     description:
       'Open agricultural land, factory rooftops, warehouses, and commercial complexes represent ideal sites for large-scale hybrid deployments. AeroSun delivers scalable green energy infrastructure that offsets industrial power demands and accelerates compliance with sustainability targets.',
@@ -57,7 +66,7 @@ const cardVariants = {
 
 export default function UseCases() {
   return (
-    <section id="use-cases" className="py-24 bg-white dark:bg-gray-950">
+    <section id="use-cases" className="py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -77,48 +86,63 @@ export default function UseCases() {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="flex flex-col gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {useCases.map((uc) => (
+          {useCases.map((uc, index) => (
             <motion.div
               key={uc.title}
               variants={cardVariants}
-              className="group bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className={`group overflow-hidden rounded-[2rem] border border-white/60 bg-white/80 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_32px_110px_rgba(15,23,42,0.12)] dark:border-white/10 dark:bg-slate-950/65`}
             >
-              <div className={`h-2 bg-gradient-to-r ${uc.color}`} />
-              <div className="p-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-4xl">{uc.emoji}</span>
-                  <span className={`text-xs font-bold px-3 py-1 rounded-full ${uc.tagColor}`}>
-                    {uc.tag}
-                  </span>
+              <div className={`grid grid-cols-1 lg:grid-cols-[0.92fr_1.08fr] ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+                <div className={`relative min-h-[280px] ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  <div className={`absolute inset-x-0 top-0 h-2 bg-gradient-to-r ${uc.color}`} />
+                  <Image
+                    src={uc.imageSrc}
+                    alt={uc.imageAlt}
+                    fill
+                    sizes="(min-width: 1024px) 36vw, 92vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,17,29,0.08),rgba(7,17,29,0.22)_52%,rgba(7,17,29,0.68)_100%)]" aria-hidden="true" />
+                  <div className="absolute inset-x-6 bottom-6 flex items-end justify-between gap-4 text-white">
+                    <div>
+                      <p className="text-4xl">{uc.emoji}</p>
+                      <p className="mt-3 text-lg font-bold">{uc.title}</p>
+                    </div>
+                    <span className={`shrink-0 rounded-full px-3 py-1 text-xs font-bold ${uc.tagColor}`}>
+                      {uc.tag}
+                    </span>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                  {uc.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-5">
-                  {uc.description}
-                </p>
-                <ul className="space-y-2">
-                  {uc.points.map((point) => (
-                    <li key={point} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-                      <svg className="h-4 w-4 mt-0.5 text-secondary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="#contact"
-                  className="inline-block mt-6 text-primary font-semibold hover:text-secondary transition-colors"
-                >
-                  Learn more →
-                </a>
+                <div className={`p-8 lg:p-10 ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                  <div className="flex items-center gap-3">
+                    <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+                      Best Fit
+                    </span>
+                    <span className="text-sm font-semibold text-primary">{uc.tag}</span>
+                  </div>
+                  <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+                    {uc.description}
+                  </p>
+                  <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+                    {uc.points.map((point) => (
+                      <li key={point} className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href="#contact"
+                    className="inline-flex mt-8 items-center rounded-full bg-slate-950 px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-primary dark:bg-accent dark:text-slate-950"
+                  >
+                    Discuss this deployment
+                  </a>
+                </div>
               </div>
             </motion.div>
           ))}

@@ -1,7 +1,20 @@
 import type { Metadata } from 'next'
+import { Manrope, Space_Grotesk } from 'next/font/google'
 import Script from 'next/script'
 import JsonLd from '@/components/JsonLd'
 import './globals.css'
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  variable: '--font-body',
+  weight: ['400', '500', '600', '700', '800'],
+})
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-display',
+  weight: ['500', '700'],
+})
 
 // Replace with your actual Google Tag Manager container ID
 const GTM_ID = 'GTM-XXXXXXX'
@@ -85,7 +98,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-sans bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+      <body className={`${manrope.variable} ${spaceGrotesk.variable} bg-white text-gray-900 transition-colors duration-300 dark:bg-gray-950 dark:text-gray-100`}>
         {/* Google Tag Manager (noscript fallback) */}
         <noscript>
           <iframe

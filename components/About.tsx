@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const features = [
   {
@@ -34,8 +35,8 @@ const features = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-white dark:bg-gray-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -50,43 +51,84 @@ export default function About() {
           <div className="mt-4 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary" />
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 gap-12 rounded-[2.25rem] border border-white/60 bg-white/75 p-6 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/65 lg:grid-cols-[0.95fr_1.05fr] lg:p-8">
           <motion.div
+            className="rounded-[1.75rem] bg-slate-950 px-6 py-8 text-white shadow-2xl lg:px-8"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-accent/90">Integrated Technology</p>
+            <h3 className="mt-4 max-w-lg text-3xl font-bold leading-tight sm:text-4xl">
+              A hybrid platform designed to keep producing when single-source systems slow down.
+            </h3>
+            <p className="mt-6 text-lg leading-relaxed text-white/78 mb-6">
               Our <strong>hybrid solar wind energy</strong> system combines photovoltaic solar panels and compact wind turbines into one integrated, intelligent power unit. Solar panels capture sunlight during the day while the wind turbines generate power continuously — day or night, rain or shine. Together, they complement each other perfectly: when solar output drops (overcast skies or night-time), wind steps in to fill the gap.
             </p>
-            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">
+            <p className="text-lg leading-relaxed text-white/78 mb-6">
               The result is a <strong>smart energy system</strong> that delivers far more consistent power than either source alone. Paired with IoT-enabled monitoring and optional battery storage, you get real-time visibility and control over every kilowatt generated — the foundation of India&apos;s green energy infrastructure.
             </p>
-            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+            <p className="text-lg leading-relaxed text-white/78">
               AeroSun Energy designs and installs tailored <strong>renewable energy solutions across India</strong> — for homes, businesses, public spaces, and large-scale infrastructure — making clean, affordable power accessible to everyone.
             </p>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              <div className="rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-md">
+                <p className="text-3xl font-bold text-accent">01</p>
+                <p className="mt-2 text-sm text-white/72">Dual-source generation that reduces idle periods.</p>
+              </div>
+              <div className="rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-md">
+                <p className="text-3xl font-bold text-accent">02</p>
+                <p className="mt-2 text-sm text-white/72">Smart controls that balance solar, wind, and storage.</p>
+              </div>
+              <div className="rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-md">
+                <p className="text-3xl font-bold text-accent">03</p>
+                <p className="mt-2 text-sm text-white/72">Scalable deployment from home rooftops to public assets.</p>
+              </div>
+            </div>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6"
+            className="space-y-6"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
-            {features.map((f) => (
-              <div
-                key={f.title}
-                className="flex flex-col items-center text-center p-6 rounded-2xl bg-gray-50 dark:bg-gray-800 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
-              >
-                <div className="mb-4 p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm">
-                  {f.icon}
-                </div>
-                <h3 className="font-bold text-gray-900 dark:text-white mb-2">{f.title}</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">{f.desc}</p>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-gray-100 shadow-xl ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+              <Image
+                src="/images/future-aerosunenergy.png"
+                alt="Future-ready AeroSun Energy hybrid technology installation"
+                fill
+                sizes="(min-width: 1024px) 38vw, 92vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" aria-hidden="true" />
+              <div className="absolute left-6 top-6 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white backdrop-blur-md">
+                Future Ready
               </div>
-            ))}
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <p className="max-w-md text-base font-semibold sm:text-lg">
+                  Hybrid systems engineered for dependable output, smart monitoring, and scalable installations.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+              {features.map((f) => (
+                <div
+                  key={f.title}
+                  className="flex flex-col items-center rounded-[1.5rem] border border-slate-200 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900"
+                >
+                  <div className="mb-4 rounded-full bg-slate-50 p-3 shadow-sm dark:bg-slate-800">
+                    {f.icon}
+                  </div>
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-2">{f.title}</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{f.desc}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>
