@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/logo-full.jpeg',
+        url: '/images/logo-full.png',
         width: 1200,
         height: 630,
         alt: 'AeroSun Energy – Solar & Wind Energy Solutions',
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: 'AeroSun Energy | Solar & Wind Energy Solutions in India',
     description:
       'Clean, affordable solar and wind energy solutions for homes, businesses, and industries across India.',
-    images: ['/logo-full.jpeg'],
+    images: ['/images/logo-full.png'],
   },
   verification: {
     // Replace with your actual Google Search Console verification code
