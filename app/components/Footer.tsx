@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Logo from './logo';
 
 const navLinks = [
   { label: 'Home', href: '#' },
@@ -12,9 +13,9 @@ const navLinks = [
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-gray-100 text-gray-300">
+    <footer id="contact" className="bg-slate-100 border-t-2 shadow-sm border-gray-200 text-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -35,24 +36,22 @@ export default function Footer() {
                 <span className="text-primary">AeroSun</span>{' '}
                 <span className="text-secondary">Energy</span>
               </span> */}
-              <Image src="/images/logo-horizontal.png" alt="AeroSun Energy logo" width={180} height={60} priority />
+              {/* <Image src="/images/logo-horizontal.png" alt="AeroSun Energy logo" width={180} height={60} priority /> */}
+              <Logo />
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Power from Sun &amp; Wind
-            </p>
-            <p className="text-gray-500 text-sm mt-3">
+            <p className="text-gray-700 text-sm mt-3">
               Delivering clean, reliable, and affordable renewable energy solutions across India.
             </p>
-            <p className="text-gray-500 text-sm mt-2">
+            <p className="text-gray-700 text-sm mt-2">
               📧 customercare@aerosunenergy.in
             </p>
-            <p className="text-gray-500 text-sm mt-1">
+            <p className="text-gray-700 text-sm mt-1">
               🌐 aerosunenergy.in
             </p>
           </div>
 
           {/* Navigation */}
-          <div>
+          <div className="text-right">
             <h3 className="text-black font-semibold text-lg mb-5">Quick Links</h3>
             <ul className="space-y-3">
               {navLinks.map((link) => (
@@ -69,9 +68,9 @@ export default function Footer() {
           </div>
 
           {/* Social */}
-          <div>
+          <div className="text-center">
             <h3 className="text-black font-semibold text-lg mb-5">Follow Us</h3>
-            <div className="flex gap-4 mb-6">
+            <div className="flex items-center justify-center gap-4 mb-6">
               {/* Twitter/X */}
               <a
                 href="https://twitter.com"
@@ -109,23 +108,23 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-            
+
             {/* QR Code */}
-            <div className="bg-white p-3 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-shadow inline-block">
-              <Image 
-                src="/images/qr-code.png" 
-                alt="AeroSun Energy QR Code" 
-                width={100} 
-                height={100}
-                className="w-20 h-20"
+            <div className="bg-white rounded-xl shadow-xl border border-gray-200 hover:shadow-xl transition-shadow inline-block">
+              <Image
+                src="/images/qr-code.png"
+                alt="AeroSun Energy QR Code"
+                width={150}
+                height={150}
+                className="w-25 h-25"
               />
-              <p className="text-center text-xs text-gray-600 mt-1 font-semibold">Scan</p>
+              <p className="text-center text-md text-gray-600 mt-1 font-semibold">Scan</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="border-t border-gray-800 py-6">
+      <div className="border-t-2 border-gray-200 py-6">
         <p className="text-center text-gray-500 text-sm">
           Vulchi Vijaya Kumar © 2026 AeroSun Energy. All rights reserved. |{' '}
           <a href="https://aerosunenergy.in" className="hover:text-primary transition-colors">

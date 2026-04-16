@@ -1,21 +1,17 @@
 import type { Metadata } from 'next'
-import { Manrope, Space_Grotesk } from 'next/font/google'
+import { Roboto } from 'next/font/google'
 import Script from 'next/script'
-import JsonLd from '@/components/JsonLd'
+import JsonLd from '@/app/components/JsonLd'
 
 import './globals.css'
 
-const manrope = Manrope({
-  subsets: ['latin'],
+const roboto = Roboto({
+  subsets: ["latin"],
   variable: '--font-body',
-  weight: ['400', '500', '600', '700', '800'],
-})
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-display',
-  weight: ['500', '700'],
-})
+  weight: ['400'],
+  preload: true,
+  display: "swap" // Prevents layout shift from font loading
+});
 
 const GTM_ID = 'GTM-PLB9S69G';
 const BING_SITE_VERIFICATION = 'CFCE648996D804079C4F28B5C09CE9D3';
@@ -110,7 +106,7 @@ export default function RootLayout({
           />
         ) : null}
       </head>
-      <body className={`${manrope.variable} ${spaceGrotesk.variable} bg-white text-gray-900 transition-colors duration-300 dark:bg-gray-950 dark:text-gray-100`}>
+      <body className={`${roboto.variable} bg-white text-gray-900 transition-colors duration-300 dark:bg-gray-950 dark:text-gray-100`}>
         {GTM_ID ? (
           <noscript>
             <iframe
