@@ -28,7 +28,7 @@ export default function Hero() {
           <span className="mb-6 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.35em] text-white/80 backdrop-blur-md sm:text-md">
             Energy Infrastructure Reimagined
           </span>
-          <h1 className="max-w-3xl leading-[0.94] sm:text-4xl lg:text-5xl">
+          <h1 className="max-w-3xl text-3xl leading-[0.94] sm:text-6xl lg:text-7xl">
             Built for the sun.
             <br />
             Tuned for the wind.
