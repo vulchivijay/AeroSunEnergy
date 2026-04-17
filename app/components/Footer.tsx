@@ -1,14 +1,15 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import Logo from './logo';
 
 const navLinks = [
-  { label: 'Home', href: '#' },
-  { label: 'About', href: '#about' },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Features', href: '#features' },
-  { label: 'Use Cases', href: '#use-cases' },
-  { label: 'Why Us', href: '#why-us' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'How It Works', href: '/how-it-works' },
+  { label: 'Features', href: '/features' },
+  { label: 'Use Cases', href: '/use-cases' },
+  { label: 'Why Us', href: '/why-us' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export default function Footer() {
@@ -56,12 +57,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {navLinks.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-gray-900 hover:text-primary transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
