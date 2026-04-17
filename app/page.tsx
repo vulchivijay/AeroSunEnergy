@@ -7,6 +7,7 @@ import UseCases from '@/components/UseCases'
 import Benefits from '@/components/Benefits'
 import Services from '@/components/Services'
 import WindGenerators from '@/components/WindGenerators'
+import Gallery from '@/components/Gallery'
 import WhyChooseUs from '@/components/WhyChooseUs'
 import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
@@ -23,6 +24,7 @@ export default function Home() {
       <Benefits />
       <Services />
       <WindGenerators />
+      <Gallery />
       <WhyChooseUs />
       <CTASection />
       <Footer />
