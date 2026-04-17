@@ -77,11 +77,11 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="text-primary font-semibold uppercase tracking-widest text-md text-gray-900 dark:text-white">Simple Process</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">
+          <span className="text-primary uppercase tracking-widest text-md text-gray-500 dark:text-white">Simple Process</span>
+          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
             How It Works
           </h2>
-          <p className="mt-4 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-gray-500 dark:text-gray-400 max-w-3xl mx-auto">
             From site visit to 24/7 power generation — here&apos;s how we turn any location into a clean energy source with our solar wind hybrid system.
           </p>
           <div className="mt-6 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary" />
@@ -119,7 +119,7 @@ export default function HowItWorks() {
                   <div className="flex items-start gap-4">
                     <span className="text-3xl flex-shrink-0">{step.icon}</span>
                     <div className="w-3/4">
-                      <p className={`text-xs font-bold uppercase tracking-widest bg-gradient-to-r ${step.color} bg-clip-text text-transparent mb-1`}>
+                      <p className={`text-md uppercase tracking-widest mb-1`}>
                         Step {step.number}
                       </p>
                       <h3 className="text-xl font-extrabold text-gray-900 dark:text-white mb-3">
@@ -132,12 +132,12 @@ export default function HowItWorks() {
                   </div>
 
                   {/* Centre node */}
-                  <div className="hidden lg:flex flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary items-center justify-center text-white font-extrabold text-lg shadow-lg z-10">
+                  <div className="flex flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary items-center justify-center text-white text-lg shadow-lg z-10">
                     {step.number}
                   </div>
 
                   {/* Spacer (mirrors content card on the other side) */}
-                  <div className="flex-1 hidden lg:block" aria-hidden="true" />
+                  <div className="flex-1" aria-hidden="true" />
                 </div>
               </motion.div>
             ))}

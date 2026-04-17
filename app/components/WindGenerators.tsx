@@ -12,8 +12,8 @@ const generators = [
     highlights: ['Rated capacity 1 kW – 200 kW', 'Performs in 3 to 8 m/s wind zones', 'Compact footprint for constrained sites', 'Efficient lift-based rotor design'],
     description:
       'The H-Darrieus turbine uses lift-driven vertical blades to capture wind efficiently without needing active yaw control. It performs reliably in variable urban and semi-urban airflow, making it suitable for highway edges, industrial plots, and compact utility installations.',
-    accentFrom: 'from-primary',
-    accentTo: 'to-blue-400',
+    accentFrom: 'from-blue-400',
+    accentTo: 'to-purple-400',
   },
   {
     id: 'flower',
@@ -54,7 +54,7 @@ const generators = [
     highlights: ['Compact structure for terrace loads', 'Performs in mixed city airflow', 'Low-noise residential profile', 'Hybrid-ready with rooftop solar'],
     description:
       'Rooftop VAWTs are designed for dense urban settings where space and noise matter. Combined with rooftop solar, they extend generation windows beyond daylight and help homes or small facilities improve self-consumption and bill savings.',
-    accentFrom: 'from-accent',
+    accentFrom: 'from-orange-400',
     accentTo: 'to-yellow-400',
   },
 ]
@@ -65,11 +65,11 @@ export default function WindGenerators() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-primary font-semibold uppercase tracking-widest text-md text-gray-600 dark:text-gray-900">Our Technology</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">
+          <span className="text-primary uppercase tracking-widest text-md text-gray-500 dark:text-gray-900">Our Technology</span>
+          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
             Wind Energy Generators
           </h2>
-          <p className="mt-4 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-gray-500 dark:text-gray-400 max-w-3xl mx-auto">
             We offer a full spectrum of wind generators — from conventional three-blade turbines to innovative flower turbines and minimal-airflow vertical-axis rotors — so every site gets the right technology.
           </p>
           <div className="mt-6 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary" />
@@ -97,12 +97,12 @@ export default function WindGenerators() {
 
               {/* Content */}
               <div className="flex-1 p-8">
-                <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full mb-4 ${gen.badgeColor}`}>
+                <span className={`inline-block text-sm font-semibold tracking-widest px-3 py-1 rounded-full mb-4 ${gen.badgeColor}`}>
                   {gen.badge}
                 </span>
-                <h3 className="text-2xl font-extrabold text-gray-900 dark:text-white mb-1">{gen.title}</h3>
+                <h3 className="text-2xl font-extrabold tracking-widest text-gray-900 dark:text-white mb-1">{gen.title}</h3>
                 <p className="text-md font-medium text-primary mb-4 text-gray-600 dark:text-gray-900">{gen.subtitle}</p>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">{gen.description}</p>
+                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">{gen.description}</p>
 
                 {/* Key specs */}
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
@@ -117,7 +117,7 @@ export default function WindGenerators() {
                 </ul>
                 <a
                   href="#contact"
-                  className={`inline-block bg-gradient-to-r ${gen.accentFrom} ${gen.accentTo} text-white font-bold px-6 py-2.5 rounded-lg shadow hover:opacity-90 transition-opacity text-md`}
+                  className={`inline-block bg-gradient-to-r ${gen.accentFrom} ${gen.accentTo} text-white font-semoibold px-6 py-2.5 rounded-xl shadow-xl hover:opacity-90 transition-opacity text-md`}
                 >
                   Get a Quote →
                 </a>

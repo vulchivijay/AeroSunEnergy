@@ -28,7 +28,7 @@ export default function Hero() {
           <span className="mb-6 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.35em] text-white/80 backdrop-blur-md sm:text-md">
             Energy Infrastructure Reimagined
           </span>
-          <h1 className="max-w-3xl text-3xl leading-[0.94] sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-3xl text-3xl leading-[1.3] sm:text-5xl lg:text-6xl font-semibold">
             Built for the sun.
             <br />
             Tuned for the wind.
@@ -113,7 +113,7 @@ export default function Hero() {
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,12,24,0.06),rgba(4,12,24,0.26)_58%,rgba(4,12,24,0.64)_100%)]" aria-hidden="true" />
               </div>
-              <div className="absolute bottom-6 left-6 right-6 z-10 grid gap-3 sm:grid-cols-2">
+              <div className="absolute bottom-35 md:bottom-30 left-6 right-6 z-10 grid gap-2 sm:grid-cols-2">
                 <div className="rounded-2xl border border-white/16 bg-slate-950/55 p-4 text-white backdrop-blur-md">
                   <p className="text-[12px] uppercase tracking-[0.28em] text-white/60">Primary Use</p>
                   <p className="mt-2 text-md">Residential to infrastructure-scale deployment</p>
@@ -124,9 +124,11 @@ export default function Hero() {
                 </div>
               </div>
             </div>
-            <div className="absolute -bottom-30 left-4 max-w-[230px] rounded-2xl border border-white/14 bg-white/10 px-5 py-4 text-white shadow-2xl backdrop-blur-xl sm:left-6">
-              <p className="text-[12px] uppercase tracking-[0.28em] text-white/65">Field Advantage</p>
-              <p className="mt-2 text-md leading-6">One system, multiple generation windows, minimal dead time.</p>
+            <div className="absolute bottom-6 left-6 right-6 z-10 grid">
+              <div className="rounded-2xl border border-white/16 bg-slate-950/55 p-4 text-white backdrop-blur-md">
+                <p className="text-[12px] uppercase tracking-[0.28em] text-white/65">Field Advantage</p>
+                <p className="mt-2 text-md leading-6">One system, multiple generation windows, minimal dead time.</p>
+              </div>
             </div>
           </div>
         </motion.div>

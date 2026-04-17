@@ -44,8 +44,8 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="text-secondary font-semibold uppercase tracking-widest text-md text-gray-900 dark:text-gray-100">The Technology</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-gray-100">
+          <span className="text-secondary uppercase tracking-widest text-md text-gray-500 dark:text-gray-100">The Technology</span>
+          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-gray-100">
             About Our Hybrid Solar + Wind System
           </h2>
           <div className="mt-4 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary" />
@@ -60,13 +60,13 @@ export default function About() {
             transition={{ duration: 0.7 }}
           >
             <p className="text-md font-semibold uppercase tracking-[0.32em] text-accent/90">Integrated Technology</p>
-            <h3 className="mt-4 max-w-lg text-3xl font-bold leading-tight sm:text-4xl">
+            <h3 className="mt-4 max-w-lg text-2xl leading-tight sm:text-3xl">
               A hybrid platform designed to keep producing when single-source systems slow down.
             </h3>
-            <p className="mt-6 text-lg leading-relaxed text-white/78 mb-6">
+            <p className="mt-6 text-md leading-relaxed text-white/78 mb-6">
               Our <strong>hybrid solar wind energy</strong> system combines photovoltaic solar panels and compact wind turbines into one integrated, intelligent power unit. Solar panels capture sunlight during the day while the wind turbines generate power continuously — day or night, rain or shine. Together, they complement each other perfectly: when solar output drops (overcast skies or night-time), wind steps in to fill the gap.
             </p>
-            <p className="text-lg leading-relaxed text-white/78 mb-6">
+            <p className="text-md leading-relaxed text-white/78 mb-6">
               The result is a <strong>smart energy system</strong> that delivers far more consistent power than either source alone. Paired with IoT-enabled monitoring and optional battery storage, you get real-time visibility and control over every kilowatt generated — the foundation of India&apos;s green energy infrastructure.
             </p>
             <p className="text-lg leading-relaxed text-white/78">

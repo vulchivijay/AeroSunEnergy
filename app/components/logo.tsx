@@ -15,10 +15,10 @@ export default function Logo() {
       />
       <div className="flex flex-col">
         <div className="flex">
-          <span className="text-3xl font-extrabold bg-clip-text bg-linear-to-r from-amber-600 via-rose-600 to-indigo-700 drop-shadow-xl text-transparent">Aero</span>
-          <span className="text-3xl font-extrabold bg-clip-text bg-linear-to-r from-amber-600 via-rose-600 to-indigo-700 drop-shadow-xl text-transparent ml-1">Sun</span>
+          <span className="text-3xl font-extrabold bg-clip-text bg-linear-to-r from-blue-800 via-blue-700 to-blue-600 drop-shadow-xl text-transparent tracking-wider">Aero</span>
+          <span className="text-3xl font-extrabold bg-clip-text bg-linear-to-r from-green-800 via-green-700 to-green-600 drop-shadow-xl text-transparent tracking-wider ml-1">Sun</span>
         </div>
-        <div className="inline-flex text-md uppercase text-gray-900">-------- E n e r g y --------</div>
+        <div className="inline-flex text-md uppercase text-yellow-500 font-semibold">------ E n e r g y ------</div>
         <div className="inline-flex text-xs text-gray-900">Power from Sun and Wind</div>
       </div>
     </a>

@@ -47,8 +47,8 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="text-secondary font-semibold uppercase tracking-widest text-md text-gray-900 dark:text-white">Our Advantages</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">
+          <span className="text-secondary uppercase tracking-widest text-md text-gray-500 dark:text-white">Our Advantages</span>
+          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
             Why Choose AeroSun Energy
           </h2>
           <div className="mt-4 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary" />

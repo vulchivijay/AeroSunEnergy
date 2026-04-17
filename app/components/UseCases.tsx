@@ -75,11 +75,11 @@ export default function UseCases() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="text-secondary font-semibold uppercase tracking-widest text-md text-gray-900 dark:text-white">Where We Install</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">
+          <span className="text-secondary uppercase tracking-widest text-md text-gray-500 dark:text-white">Where We Install</span>
+          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
             Use Cases
           </h2>
-          <p className="mt-4 text-md text-gray-900 dark:text-white max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-gray-900 dark:text-white max-w-3xl mx-auto">
             Our hybrid solar wind energy systems are engineered for diverse environments — from busy highways to quiet homes — bringing renewable energy solutions across India wherever they&apos;re needed most.
           </p>
           <div className="mt-6 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary" />
@@ -121,24 +121,24 @@ export default function UseCases() {
                 </div>
                 <div className={`p-8 lg:p-10 ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
                   <div className="flex items-center gap-3">
-                    <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+                    <span className="rounded-xl shadow-xl border border-gray-200 bg-slate-50 px-3 py-1 text-md font-semibold uppercase tracking-[0.28em] text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
                       Best Fit
                     </span>
-                    <span className="text-md font-semibold text-primary">{uc.tag}</span>
+                    <span className="text-lg font-semibold text-primary">{uc.tag}</span>
                   </div>
-                  <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+                  <p className="mt-6 text-md leading-8 text-gray-600 dark:text-gray-300">
                     {uc.description}
                   </p>
                   <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                     {uc.points.map((point) => (
-                      <li key={point} className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-md font-medium text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+                      <li key={point} className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-md text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
                         {point}
                       </li>
                     ))}
                   </ul>
                   <a
                     href="#contact"
-                    className="inline-flex mt-8 items-center rounded-full bg-slate-950 px-6 py-3 text-md font-bold text-white transition-colors hover:bg-primary dark:bg-accent dark:text-slate-950"
+                    className="inline-flex mt-8 items-center rounded-full bg-slate-950 px-6 py-3 text-md text-white transition-colors hover:bg-primary dark:bg-accent dark:text-slate-950"
                   >
                     Discuss this deployment
                   </a>
