@@ -100,7 +100,7 @@ export default function Navbar() {
           </button>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="p-2 rounded-full text-slate-700 hover:bg-slate-100 transition-colors dark:text-slate-100 dark:hover:bg-slate-800"
+            className="p-2 rounded-full shadow-2xl text-slate-700 hover:bg-slate-100 transition-colors dark:text-slate-100 dark:hover:bg-slate-500"
             aria-label="Toggle menu"
           >
             {menuOpen ? (
@@ -123,7 +123,7 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="block rounded-2xl px-4 py-3 text-md font-semibold text-slate-700 transition-colors hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
+              className="block rounded-2xl px-4 py-3 text-md font-semibold text-slate-700 transition-colors hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slat-500"
             >
               {link.label}
             </a>
