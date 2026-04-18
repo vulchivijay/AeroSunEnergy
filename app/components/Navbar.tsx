@@ -38,11 +38,10 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-white/55 bg-white/25 px-4 py-3 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/75">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-white/55 bg-white/65 px-3 py-2 shadow-xl backdrop-blur-md dark:border-white/55 dark:bg-slate-950/65">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Logo */}
         <Logo />
-
         {/* Desktop Links */}
         <div className="hidden items-center gap-3 md:flex">
           <div className="flex items-center rounded-md shadow-md border border-slate-200/80 bg-white/75 p-1 dark:border-slate-800 dark:bg-slate-900/80">

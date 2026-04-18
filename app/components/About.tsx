@@ -35,7 +35,7 @@ const features = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24">
+    <section id="about" className="py-24 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -44,14 +44,14 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="text-secondary uppercase tracking-widest text-md text-gray-900 dark:text-gray-300">The Technology</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-gray-100">
+          <span className="text-secondary uppercase tracking-widest text-md text-gray-900 dark:text-white">The Technology</span>
+          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
             About Our Hybrid Solar + Wind System
           </h2>
-          <div className="mt-4 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary" />
+          <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-gradient-to-r from-primary to-secondary" />
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-12 rounded-[2.25rem] md:border md:border-white/60 md:bg-white/75 md:p-3 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/65 lg:grid-cols-[0.95fr_1.05fr] lg:p-8">
+        <div className="grid grid-cols-1 gap-12 rounded-[2.25rem] md:border md:border-white/60 md:bg-white/75 md:p-3 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-800 lg:grid-cols-[0.95fr_1.05fr] lg:p-8">
           <motion.div
             className="rounded-[1.75rem] bg-slate-950 px-6 py-8 text-white shadow-2xl lg:px-8"
             initial={{ opacity: 0, x: -40 }}
@@ -74,15 +74,15 @@ export default function About() {
             </p>
 
             <div className="mt-8 grid gap-4">
-              <div className="rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-md">
+              <div className="rounded-md border border-white/12 bg-white/8 p-4 backdrop-blur-md">
                 <p className="text-3xl font-bold text-accent">01</p>
                 <p className="mt-2 text-md text-white/72">Dual-source generation that reduces idle periods.</p>
               </div>
-              <div className="rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-md">
+              <div className="rounded-md border border-white/12 bg-white/8 p-4 backdrop-blur-md">
                 <p className="text-3xl font-bold text-accent">02</p>
                 <p className="mt-2 text-md text-white/72">Smart controls that balance solar, wind, and storage.</p>
               </div>
-              <div className="rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-md">
+              <div className="rounded-md border border-white/12 bg-white/8 p-4 backdrop-blur-md">
                 <p className="text-3xl font-bold text-accent">03</p>
                 <p className="mt-2 text-md text-white/72">Scalable deployment from home rooftops to public assets.</p>
               </div>
@@ -105,7 +105,7 @@ export default function About() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" aria-hidden="true" />
-              <div className="absolute left-6 top-6 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white backdrop-blur-md">
+              <div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white backdrop-blur-md">
                 Future Ready
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -121,7 +121,7 @@ export default function About() {
                   key={f.title}
                   className="flex flex-col items-center rounded-[1.5rem] border border-slate-200 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900"
                 >
-                  <div className="mb-4 rounded-full bg-slate-50 p-3 shadow-sm dark:bg-slate-800">
+                  <div className="mb-4 rounded-md bg-slate-50 p-3 shadow-sm dark:bg-slate-800">
                     {f.icon}
                   </div>
                   <h3 className="text-xl text-gray-900 dark:text-gray-100 mb-2">{f.title}</h3>

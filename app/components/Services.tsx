@@ -40,22 +40,22 @@ import Image from 'next/image'
 
 export default function Services() {
   return (
-    <section id="features" className="py-24 bg-gray-50 dark:bg-gray-900">
+    <section id="features" className="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-primary font-semibold uppercase tracking-widest text-md text-gray-600 dark:text-gray-900">Key Features &amp; Benefits</span>
           <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-gray-100">
             Why Hybrid Energy Changes Everything
           </h2>
-          <div className="mt-4 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary" />
+          <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-gradient-to-r from-primary to-secondary" />
         </div>
 
         {/* Services Image */}
         <div className="mb-16">
           <div className="relative max-w-5xl mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-r from-secondary/20 via-primary/20 to-accent/20 rounded-2xl blur-3xl" aria-hidden="true" />
-            <div className="relative overflow-hidden rounded-2xl border border-white/20 bg-white/90 shadow-2xl backdrop-blur-sm dark:border-white/10 dark:bg-slate-950/90">
-              <div className="absolute left-6 top-6 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white backdrop-blur-md">
+            <div className="absolute inset-0 bg-gradient-to-r from-secondary/20 via-primary/20 to-accent/20 rounded-md blur-3xl" aria-hidden="true" />
+            <div className="relative overflow-hidden rounded-md border border-white/20 bg-white/90 shadow-2xl backdrop-blur-sm dark:border-white/10 dark:bg-slate-950/90">
+              <div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white backdrop-blur-md">
                 Manufacturing Excellence
               </div>
               <div className="aspect-[16/9] overflow-hidden">
@@ -69,7 +69,7 @@ export default function Services() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent" aria-hidden="true" />
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <p className="max-w-3xl text-lg font-semibold">
+                <p className="max-w-3xl text-md">
                   Our state-of-the-art manufacturing processes ensure every component meets the highest standards of quality and durability, from turbine blades to solar panel integration.
                 </p>
               </div>
@@ -81,7 +81,7 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="group bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 overflow-hidden"
+              className="group bg-white dark:bg-gray-800 rounded-md shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 overflow-hidden"
             >
               <div className={`h-2 bg-gradient-to-r ${service.color}`} />
               <div className="p-8">

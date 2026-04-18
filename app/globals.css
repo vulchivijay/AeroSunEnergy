@@ -13,23 +13,6 @@ html {
 body {
   font-family: var(--font-body), sans-serif;
   color: var(--page-ink);
-  background:
-    radial-gradient(circle at top left, rgba(30, 136, 229, 0.16), transparent 32%),
-    radial-gradient(circle at 85% 10%, rgba(251, 192, 45, 0.18), transparent 24%),
-    linear-gradient(180deg, #f8fbf5 0%, #f4f6ee 48%, #eef4f8 100%);
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(to right, transparent 0, transparent 47px, var(--page-grid) 48px),
-    linear-gradient(to bottom, transparent 0, transparent 47px, var(--page-grid) 48px);
-  background-size: 48px 48px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.22), transparent 70%);
-  z-index: -1;
 }
 
 h1,

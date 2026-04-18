@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export default function Logo() {
   return (
-    <Link href="#" className="flex items-center gap-1 bg-[radial-gradient(circle,theme(colors.blue.100)_0%,theme(colors.white.100)_100%)] dark:bg-[radial-gradient(circle,theme(colors.blue.100)_0%,theme(colors.white.100)_100%)]">
+    <Link href="#" className="flex items-center gap-1 relative">
       <Image
         src="/images/logo.png"
         alt="AeroSun Energy logo"
