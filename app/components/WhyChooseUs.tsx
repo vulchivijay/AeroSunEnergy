@@ -67,10 +67,10 @@ export default function WhyChooseUs() {
               variants={cardVariants}
               className="p-6 rounded-2xl shadow-2xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-primary dark:hover:border-primary hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
-              <div className="mb-4 p-3 inline-block rounded-xl bg-gray-50 dark:bg-gray-700 shadow-sm">
+              <div className="mb-4 p-1 w-12 h-12 text-2xl inline-flex items-center justify-center rounded-xl shadow-xl bg-gray-50 dark:bg-gray-700">
                 {r.icon}
               </div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{r.title}</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">{r.title}</h3>
               <p className="text-md text-gray-500 dark:text-gray-400 leading-relaxed">{r.desc}</p>
             </motion.div>
           ))}

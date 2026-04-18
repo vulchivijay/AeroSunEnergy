@@ -4,35 +4,35 @@ const services = [
     title: '24/7 Continuous Power Generation',
     description:
       'Solar panels work at peak capacity during daylight hours while wind turbines generate power continuously — day and night, calm or stormy. Together, they eliminate energy gaps and ensure your supply never stops.',
-    color: 'from-primary to-blue-400',
+    color: 'from-amber-400 to-rose-400',
   },
   {
     emoji: '💰',
     title: 'Significant Cost Savings',
     description:
       'Our hybrid solar wind energy systems can cut electricity bills by up to 80%. With government subsidies, net metering, and rapid ROI, switching to green energy has never made more financial sense.',
-    color: 'from-accent to-yellow-400',
+    color: 'from-red-400 to-rose-400',
   },
   {
     emoji: '🌍',
     title: 'Eco-Friendly Zero-Emission Power',
     description:
       'Every kilowatt from AeroSun replaces fossil-fuel electricity — reducing carbon emissions, improving local air quality, and contributing directly to India&apos;s renewable energy goals. Clean energy for a cleaner future.',
-    color: 'from-secondary to-teal-400',
+    color: 'from-violet-400 to-rose-400',
   },
   {
     emoji: '📡',
     title: 'Smart IoT Monitoring',
     description:
       'Our smart energy systems come with real-time IoT dashboards so you can track solar output, wind generation, consumption, and savings from anywhere. Data-driven decisions, maximum efficiency.',
-    color: 'from-primary to-secondary',
+    color: 'from-purple-400 to-rose-400',
   },
   {
     emoji: '🔧',
     title: 'Low Maintenance, High Reliability',
     description:
       'Engineered for durability, our systems require minimal upkeep. With self-starting wind rotors and weather-resistant solar panels, AeroSun installations run reliably in urban rooftops, rural fields, highways, and parks alike.',
-    color: 'from-teal-400 to-cyan-400',
+    color: 'from-yellow-400 to-cyan-400',
   },
   {
     emoji: '📐',
@@ -49,7 +49,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-primary font-semibold uppercase tracking-widest text-md text-gray-600 dark:text-gray-900">Key Features &amp; Benefits</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">
+          <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-gray-100">
             Why Hybrid Energy Changes Everything
           </h2>
           <div className="mt-4 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary" />
@@ -63,8 +63,8 @@ export default function Services() {
             >
               <div className={`h-2 bg-gradient-to-r ${service.color}`} />
               <div className="p-8">
-                <div className="text-5xl mb-5">{service.emoji}</div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                <div className="mb-4 p-1 w-12 h-12 text-2xl inline-flex items-center justify-center rounded-xl shadow-xl bg-gray-50 dark:bg-gray-700">{service.emoji}</div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">
                   {service.title}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">

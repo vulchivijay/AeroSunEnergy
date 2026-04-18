@@ -124,7 +124,7 @@ export default function About() {
                   <div className="mb-4 rounded-full bg-slate-50 p-3 shadow-sm dark:bg-slate-800">
                     {f.icon}
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{f.title}</h3>
+                  <h3 className="text-xl text-gray-900 dark:text-gray-100 mb-2">{f.title}</h3>
                   <p className="text-md text-gray-500 dark:text-gray-400">{f.desc}</p>
                 </div>
               ))}

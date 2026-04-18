@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
+import Link from 'next/link'
 import Logo from './logo'
 
 export default function Navbar() {
@@ -38,33 +38,33 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-white/55 bg-white/80 px-4 py-3 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/75">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-white/55 bg-white/25 px-4 py-3 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/75">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Logo */}
         <Logo />
 
         {/* Desktop Links */}
         <div className="hidden items-center gap-3 md:flex">
-          <div className="flex items-center gap-1 rounded-full border border-slate-200/80 bg-white/75 p-1 dark:border-slate-800 dark:bg-slate-900/80">
+          <div className="flex items-center rounded-md shadow-md border border-slate-200/80 bg-white/75 p-1 dark:border-slate-800 dark:bg-slate-900/80">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
                 href={link.href}
-                className="rounded-full px-4 py-2 text-md font-semibold text-slate-700 transition-colors hover:bg-slate-100 hover:text-primary dark:text-slate-200 dark:hover:bg-slate-800"
+                className="px-4 py-2 text-md text-slate-700 transition-colors hover:bg-slate-100 hover:text-primary dark:text-slate-200 dark:hover:bg-slate-800"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
-          <a
+          <Link
             href="#contact"
-            className="rounded-full bg-slate-950 px-5 py-2.5 text-md font-bold text-white transition-transform duration-200 hover:scale-[1.03] hover:bg-primary dark:bg-accent dark:text-slate-950"
+            className="rounded-md shadow-md bg-slate-950 px-5 py-2.5 text-md text-white transition-transform duration-200 hover:scale-[1.03] hover:bg-primary dark:bg-accent dark:text-slate-950"
           >
             Start a Project
-          </a>
+          </Link>
           <button
             onClick={toggleDark}
-            className="p-2.5 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
+            className="p-2.5 rounded-md shadow-md bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
             aria-label="Toggle dark mode"
           >
             {dark ? (
@@ -84,7 +84,7 @@ export default function Navbar() {
         <div className="flex md:hidden items-center gap-2">
           <button
             onClick={toggleDark}
-            className="p-2 rounded-full shadow-2xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700"
+            className="p-2 rounded-md shadow-md bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700"
             aria-label="Toggle dark mode"
           >
             {dark ? (
@@ -100,9 +100,8 @@ export default function Navbar() {
           </button>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="p-2 rounded-full text-slate-700 hover:bg-slate-100 transition-colors dark:text-slate-100 dark:hover:bg-slate-500"
-            aria-label="Toggle menu"
-          >
+            className="p-2 rounded-md shadow-md text-slate-700 hover:bg-slate-100 transition-colors dark:text-slate-100 dark:hover:bg-slate-500"
+            aria-label="Toggle menu">
             {menuOpen ? (
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -117,24 +116,24 @@ export default function Navbar() {
       </div>
       {/* Mobile Menu Dropdown */}
       {menuOpen && (
-        <div className="mx-4 mt-3 rounded-2xl border border-white/60 bg-white/92 p-4 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/90 md:hidden sm:mx-6 lg:mx-8">
+        <div className="mx-4 mt-3 rounded-md shadow-md border border-white/60 bg-white/92 p-4 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/90 md:hidden sm:mx-6 lg:mx-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="block rounded-2xl px-4 py-3 text-md font-semibold text-slate-700 transition-colors hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slat-500"
+              className="block px-4 py-3 text-md text-slate-700 transition-colors hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slat-500"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
+          <Link
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="mt-3 block rounded-2xl bg-slate-950 px-4 py-3 text-center text-md font-bold text-white dark:bg-accent dark:text-slate-950"
+            className="mt-3 block rounded-md shadow-md bg-slate-950 px-4 py-3 text-center text-md text-white dark:bg-accent dark:text-slate-950"
           >
             Start a Project
-          </a>
+          </Link>
         </div>
       )}
     </nav>

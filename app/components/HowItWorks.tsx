@@ -81,7 +81,7 @@ export default function HowItWorks() {
           <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
             How It Works
           </h2>
-          <p className="mt-4 text-lg text-gray-500 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="mt-4 text-md text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">
             From site visit to 24/7 power generation — here&apos;s how we turn any location into a clean energy source with our solar wind hybrid system.
           </p>
           <div className="mt-6 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary" />
@@ -122,7 +122,7 @@ export default function HowItWorks() {
                       <p className={`text-md uppercase tracking-widest mb-1`}>
                         Step {step.number}
                       </p>
-                      <h3 className="text-xl font-extrabold text-gray-900 dark:text-white mb-3">
+                      <h3 className="text-xl font-extrabold text-gray-900 dark:text-gray-100 mb-3">
                         {step.title}
                       </h3>
                       <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
