@@ -101,7 +101,7 @@ export default function About() {
                 src="/images/smart-vawt-aerosunenergy.png"
                 alt="Smart VAWT hybrid technology deployment by AeroSun Energy"
                 fill
-                sizes="(min-width: 1024px) 38vw, 92vw"
+                sizes="(min-width: 1024px) 44vw, 92vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" aria-hidden="true" />

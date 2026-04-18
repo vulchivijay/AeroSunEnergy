@@ -24,7 +24,7 @@ export default function Hero() {
           className="z-10"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
         >
           <span className="mb-6 inline-flex rounded-md shadow-md border border-white/24 bg-white/24 px-3 py-2 text-md uppercase tracking-[0.45em] text-white backdrop-blur-md">
             Energy Infrastructure Reimagined
@@ -53,7 +53,7 @@ export default function Hero() {
             className="mt-10 flex flex-wrap gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+            transition={{ duration: 0.5, delay: 0.15, ease: 'easeOut' }}
           >
             <Link
               href="#how-it-works"
@@ -94,9 +94,9 @@ export default function Hero() {
           className="z-10 flex justify-center lg:justify-end"
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
+          transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
         >
-          <div className="relative w-full max-w-2xl">
+          <div className="relative w-full max-w-3xl">
             <div className="absolute inset-8 rounded-[2.5rem] bg-accent/20 blur-3xl" aria-hidden="true" />
             <div className="relative overflow-hidden rounded-[2rem] border border-white/16 bg-white/8 p-3 shadow-[0_40px_120px_rgba(3,8,18,0.4)] backdrop-blur-sm">
               <div className="absolute left-5 right-5 top-5 z-10 flex items-center justify-between rounded-md border border-white/16 bg-slate-950/35 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/75 backdrop-blur-md">
@@ -109,12 +109,12 @@ export default function Hero() {
                   alt="AeroSun Energy hybrid solar and wind installation"
                   fill
                   priority
-                  sizes="(min-width: 1024px) 44vw, 92vw"
+                  sizes="(min-width: 1024px) 52vw, 92vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,12,24,0.06),rgba(4,12,24,0.26)_58%,rgba(4,12,24,0.64)_100%)]" aria-hidden="true" />
               </div>
-              <div className="absolute bottom-35 md:bottom-30 left-6 right-6 z-10 grid gap-2 sm:grid-cols-2">
+              <div className="absolute bottom-40 md:bottom-35 left-6 right-6 z-10 grid gap-2 sm:grid-cols-2">
                 <div className="rounded-md border border-white/16 bg-slate-950/55 p-4 text-white backdrop-blur-md">
                   <p className="text-[12px] uppercase tracking-[0.28em] text-white/60">Primary Use</p>
                   <p className="mt-2 text-md">Residential to infrastructure-scale deployment</p>

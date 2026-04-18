@@ -71,7 +71,7 @@ export default function Benefits() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <div className="relative max-w-4xl mx-auto">
+          <div className="relative max-w-6xl mx-auto">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-md blur-3xl" aria-hidden="true" />
             <div className="relative overflow-hidden rounded-md border border-white/20 bg-white/90 shadow-2xl backdrop-blur-sm dark:border-white/10 dark:bg-slate-950/90">
               <div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white backdrop-blur-md">
@@ -82,14 +82,14 @@ export default function Benefits() {
                   src="/images/darrieus-turbine-aerosunenergy.png"
                   alt="Advanced Darrieus wind turbine technology by AeroSun Energy - efficient vertical-axis design for urban and semi-urban environments"
                   fill
-                  sizes="(min-width: 1024px) 56rem, 92vw"
+                  sizes="(min-width: 1024px) 68rem, 92vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" aria-hidden="true" />
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <p className="max-w-2xl text-lg font-semibold">
-                  Our Darrieus turbines utilize aerodynamic lift principles for superior efficiency in variable wind conditions, making them perfect for India's diverse climate zones.
+                  Our Darrieus turbines utilize aerodynamic lift principles for superior efficiency in variable wind conditions, making them perfect for India&apos;s diverse climate zones.
                 </p>
               </div>
             </div>

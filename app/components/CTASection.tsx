@@ -15,12 +15,12 @@ export default function CTASection() {
           transition={{ duration: 0.7 }}
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(30,136,229,0.34),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(67,160,71,0.24),transparent_25%),linear-gradient(135deg,rgba(7,17,29,0.28),rgba(7,17,29,0.16))]" aria-hidden="true" />
-          <div className="absolute -right-10 bottom-0 top-0 hidden w-[42%] lg:block" aria-hidden="true">
+          <div className="absolute -right-10 bottom-0 top-0 hidden w-[48%] lg:block" aria-hidden="true">
             <Image
               src="/images/nextgen-aerosunenergy.png"
               alt=""
               fill
-              sizes="34vw"
+              sizes="42vw"
               className="object-cover opacity-55"
             />
           </div>

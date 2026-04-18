@@ -52,7 +52,7 @@ export default function Services() {
 
         {/* Services Image */}
         <div className="mb-16">
-          <div className="relative max-w-5xl mx-auto">
+          <div className="relative max-w-7xl mx-auto">
             <div className="absolute inset-0 bg-gradient-to-r from-secondary/20 via-primary/20 to-accent/20 rounded-md blur-3xl" aria-hidden="true" />
             <div className="relative overflow-hidden rounded-md border border-white/20 bg-white/90 shadow-2xl backdrop-blur-sm dark:border-white/10 dark:bg-slate-950/90">
               <div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white backdrop-blur-md">
@@ -63,7 +63,7 @@ export default function Services() {
                   src="/images/forming-aerosunenergy.png"
                   alt="AeroSun Energy manufacturing facility showcasing precision forming and assembly of hybrid energy systems"
                   fill
-                  sizes="(min-width: 1024px) 64rem, 92vw"
+                  sizes="(min-width: 1024px) 80rem, 92vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent" aria-hidden="true" />

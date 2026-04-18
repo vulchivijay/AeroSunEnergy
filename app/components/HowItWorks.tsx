@@ -95,7 +95,7 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <div className="relative max-w-6xl mx-auto">
+          <div className="relative max-w-7xl mx-auto">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-secondary/20 rounded-md blur-3xl" aria-hidden="true" />
             <div className="relative overflow-hidden rounded-md border border-white/20 bg-white/90 shadow-2xl backdrop-blur-sm dark:border-white/10 dark:bg-slate-950/90">
               <div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white backdrop-blur-md">
@@ -106,7 +106,7 @@ export default function HowItWorks() {
                   src="/images/nextgen-aerosunenergy.png"
                   alt="Next-generation hybrid energy technology by AeroSun - advanced systems for modern renewable infrastructure"
                   fill
-                  sizes="(min-width: 1024px) 72rem, 92vw"
+                  sizes="(min-width: 1024px) 80rem, 92vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" aria-hidden="true" />
@@ -143,7 +143,7 @@ export default function HowItWorks() {
                     src={step.imageSrc}
                     alt={step.imageAlt}
                     fill
-                    sizes="(min-width: 768px) 19vw, 46vw"
+                    sizes="(min-width: 768px) 42vw, 92vw"
                     className="object-cover"
                   />
                 </div>

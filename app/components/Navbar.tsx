@@ -6,25 +6,18 @@ import Logo from './logo'
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [dark, setDark] = useState(false)
-
-  useEffect(() => {
-    const stored = localStorage.getItem('theme')
-    if (stored === 'dark') {
-      document.documentElement.classList.add('dark')
-      setDark(true)
-    }
-  }, [])
+  const [dark, setDark] = useState(() => typeof window !== 'undefined' && localStorage.getItem('theme') === 'dark')
 
   const toggleDark = () => {
     if (dark) {
       document.documentElement.classList.remove('dark')
       localStorage.setItem('theme', 'light')
+      setDark(false)
     } else {
       document.documentElement.classList.add('dark')
       localStorage.setItem('theme', 'dark')
+      setDark(true)
     }
-    setDark(!dark)
   }
 
   const navLinks = [
@@ -121,7 +114,7 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="block px-4 py-3 text-md text-slate-700 transition-colors hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slat-500"
+              className="block px-4 py-3 text-md text-slate-700 transition-colors hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-500"
             >
               {link.label}
             </Link>

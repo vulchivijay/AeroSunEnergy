@@ -105,7 +105,7 @@ export default function UseCases() {
                     src={uc.imageSrc}
                     alt={uc.imageAlt}
                     fill
-                    sizes="(min-width: 1024px) 36vw, 92vw"
+                    sizes="(min-width: 1024px) 44vw, 92vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,17,29,0.08),rgba(7,17,29,0.22)_52%,rgba(7,17,29,0.68)_100%)]" aria-hidden="true" />

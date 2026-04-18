@@ -105,6 +105,21 @@ export default function RootLayout({
             }}
           />
         ) : null}
+        <Script id="theme-script" strategy="beforeInteractive">
+          {`(function() {
+            try {
+              var theme = localStorage.getItem('theme');
+              var html = document.documentElement;
+              if (theme === 'dark') {
+                html.classList.add('dark');
+              } else {
+                html.classList.remove('dark');
+              }
+            } catch (e) {
+              console.error(e);
+            }
+          })();`}
+        </Script>
       </head>
       <body className={`${roboto.variable} bg-white text-gray-900 transition-colors duration-300 dark:bg-gray-950 dark:text-gray-100`}>
         {GTM_ID ? (
