@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import Image from 'next/image'
 
 export default function Hero() {
@@ -28,14 +29,14 @@ export default function Hero() {
           <span className="mb-6 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.35em] text-white/80 backdrop-blur-md sm:text-md">
             Energy Infrastructure Reimagined
           </span>
-          <h1 className="max-w-3xl text-4xl leading-[1.1] md:leading-[1.3] sm:text-4xl lg:text-5xl font-semibold">
+          <h1 className="max-w-3xl text-4xl leading-[1.05] sm:text-4xl lg:text-5xl font-semibold">
             Built for the sun.
             <br />
             Tuned for the wind.
             <br />
             <span className="text-accent">Ready for real India.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-white/82 sm:text-lg">
+          <p className="mt-6 max-w-2xl text-lg leading-6 text-white/82">
             AeroSun Energy designs hybrid solar and wind systems that stay productive beyond peak daylight. From rooftops and parks to highway corridors and industrial land, every installation is shaped for continuous output, lower operating cost, and cleaner infrastructure.
           </p>
           <div className="mt-8 grid gap-3 sm:max-w-xl sm:grid-cols-2">
@@ -44,7 +45,7 @@ export default function Hero() {
                 {point}
               </div>
             ))}
-            <div className="rounded-2xl bg-white/8 px-4 py-3 text-md font-semibold text-white/92 backdrop-blur-md">
+            <div className="rounded-2xl bg-white/8 px-4 py-3 text-md text-white/92 backdrop-blur-md">
               Up to 80% reduction in electricity bills
             </div>
           </div>
@@ -54,35 +55,35 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
           >
-            <a
+            <Link
               href="#how-it-works"
-              className="inline-flex items-center rounded-full bg-accent px-8 py-3.5 text-md font-bold text-slate-200 shadow-[0_20px_40px_rgba(251,192,45,0.22)] transition-transform duration-200 hover:scale-[1.02]"
+              className="inline-flex items-center rounded-full bg-accent px-8 py-3.5 text-md text-slate-200 shadow-[0_20px_40px_rgba(251,192,45,0.22)] transition-transform duration-200 hover:scale-[1.02]"
             >
               Explore the System
-            </a>
-            <a
+            </Link>
+            <Link
               href="#contact"
-              className="inline-flex items-center rounded-full border border-white/25 bg-white/8 px-8 py-3.5 text-md font-bold text-white backdrop-blur-md transition-colors duration-200 hover:bg-white/14"
+              className="inline-flex items-center rounded-full border border-white/25 bg-white/8 px-8 py-3.5 text-md text-white backdrop-blur-md transition-colors duration-200 hover:bg-white/14"
             >
               Get a Free Quote
-            </a>
+            </Link>
           </motion.div>
 
           <div className="mt-12 grid max-w-2xl grid-cols-2 gap-4 border-t border-white/12 pt-8 sm:grid-cols-4">
             <div>
-              <p className="text-3xl font-semibold text-white">24/7</p>
+              <p className="text-3xl text-white">24/7</p>
               <p className="mt-2 text-sm uppercase tracking-[0.24em] text-white/55">Power Availability</p>
             </div>
             <div>
-              <p className="text-3xl font-semibold text-white">4-6y</p>
+              <p className="text-3xl text-white">4-6y</p>
               <p className="mt-2 text-sm uppercase tracking-[0.24em] text-white/55">Typical ROI Window</p>
             </div>
             <div>
-              <p className="text-3xl font-semibold text-white">IoT</p>
+              <p className="text-3xl text-white">IoT</p>
               <p className="mt-2 text-sm uppercase tracking-[0.24em] text-white/55">Live Monitoring</p>
             </div>
             <div>
-              <p className="text-3xl font-semibold text-white">Multi-site</p>
+              <p className="text-3xl text-white">Multi-site</p>
               <p className="mt-2 text-sm uppercase tracking-[0.24em] text-white/55">Deployment Types</p>
             </div>
           </div>
