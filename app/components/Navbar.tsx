@@ -50,7 +50,7 @@ export default function Navbar() {
           </div>
           <Link
             href="#contact"
-            className="rounded-md shadow-md bg-slate-950 px-5 py-2.5 text-md text-white transition-transform duration-200 hover:scale-[1.03] hover:bg-primary dark:bg-accent dark:text-slate-950"
+            className="rounded-md shadow-md bg-slate-950 px-5 py-2.5 text-md text-white transition-transform duration-150 hover:scale-[1.03] hover:bg-primary dark:bg-accent dark:text-slate-950"
           >
             Start a Project
           </Link>

@@ -81,7 +81,7 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="group bg-white dark:bg-gray-800 rounded-md shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 overflow-hidden"
+              className="group bg-white dark:bg-gray-800 rounded-md shadow-md hover:shadow-xl transition-all duration-150 hover:scale-105 overflow-hidden"
             >
               <div className={`h-2 bg-gradient-to-r ${service.color}`} />
               <div className="p-8">

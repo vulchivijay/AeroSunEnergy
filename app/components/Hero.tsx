@@ -57,13 +57,13 @@ export default function Hero() {
           >
             <Link
               href="#how-it-works"
-              className="inline-flex items-center rounded-md bg-accent px-8 py-3.5 text-md text-slate-200 shadow-[0_20px_40px_rgba(251,192,45,0.22)] transition-transform duration-200 hover:scale-[1.02]"
+              className="inline-flex items-center rounded-md bg-accent px-8 py-3.5 text-md text-slate-200 shadow-[0_20px_40px_rgba(251,192,45,0.22)] transition-transform duration-150 hover:scale-[1.02]"
             >
               Explore the System
             </Link>
             <Link
               href="#contact"
-              className="inline-flex items-center rounded-md border border-white/25 bg-white/8 px-8 py-3.5 text-md text-white backdrop-blur-md transition-colors duration-200 hover:bg-white/14"
+              className="inline-flex items-center rounded-md border border-white/25 bg-white/8 px-8 py-3.5 text-md text-white backdrop-blur-md transition-colors duration-150 hover:bg-white/14"
             >
               Get a Free Quote
             </Link>

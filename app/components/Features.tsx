@@ -75,7 +75,7 @@ export default function Features() {
             <motion.div
               key={f.title}
               variants={cardVariants}
-              className="group p-8 rounded-md shadow-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-primary dark:hover:border-primary hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="group p-8 rounded-md shadow-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-primary dark:hover:border-primary hover:shadow-lg hover:scale-105 transition-all duration-150"
             >
               <div className="mb-5 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white dark:bg-gray-700 shadow-sm">
                 {f.icon}

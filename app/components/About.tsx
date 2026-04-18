@@ -119,7 +119,7 @@ export default function About() {
               {features.map((f) => (
                 <div
                   key={f.title}
-                  className="flex flex-col items-center rounded-[1.5rem] border border-slate-200 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900"
+                  className="flex flex-col items-center rounded-[1.5rem] border border-slate-200 bg-white p-6 text-center shadow-sm transition-all duration-150 hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900"
                 >
                   <div className="mb-4 rounded-md bg-slate-50 p-3 shadow-sm dark:bg-slate-800">
                     {f.icon}

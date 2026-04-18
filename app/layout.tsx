@@ -121,7 +121,7 @@ export default function RootLayout({
           })();`}
         </Script>
       </head>
-      <body className={`${roboto.variable} bg-white text-gray-900 transition-colors duration-300 dark:bg-gray-950 dark:text-gray-100`}>
+      <body className={`${roboto.variable} bg-white text-gray-900 transition-colors duration-150 dark:bg-gray-950 dark:text-gray-100`}>
         {GTM_ID ? (
           <noscript>
             <iframe

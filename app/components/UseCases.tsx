@@ -96,7 +96,7 @@ export default function UseCases() {
             <motion.div
               key={uc.title}
               variants={cardVariants}
-              className={`group overflow-hidden rounded-[2rem] border border-white/60 bg-white shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_32px_110px_rgba(15,23,42,0.12)] dark:border-slate-700 dark:bg-slate-800`}
+              className={`group overflow-hidden rounded-[2rem] border border-white/60 bg-white shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-150 hover:-translate-y-1 hover:shadow-[0_32px_110px_rgba(15,23,42,0.12)] dark:border-slate-700 dark:bg-slate-800`}
             >
               <div className={`grid grid-cols-1 lg:grid-cols-[0.92fr_1.08fr] ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
                 <div className={`relative min-h-[280px] ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
@@ -106,7 +106,7 @@ export default function UseCases() {
                     alt={uc.imageAlt}
                     fill
                     sizes="(min-width: 1024px) 44vw, 92vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,17,29,0.08),rgba(7,17,29,0.22)_52%,rgba(7,17,29,0.68)_100%)]" aria-hidden="true" />
                   <div className="absolute inset-x-6 bottom-6 flex items-end justify-between gap-4 text-white">

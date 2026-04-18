@@ -38,13 +38,13 @@ export default function CTASection() {
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
                   href="#contact"
-                  className="inline-flex items-center rounded-md bg-accent px-8 py-3.5 text-md font-bold text-slate-950 transition-transform duration-200 hover:scale-[1.02]"
+                  className="inline-flex items-center rounded-md bg-accent px-8 py-3.5 text-md font-bold text-slate-950 transition-transform duration-150 hover:scale-[1.02]"
                 >
                   Request a Free Quote
                 </a>
                 <a
                   href="#how-it-works"
-                  className="inline-flex items-center rounded-md border border-white/18 bg-white/8 px-8 py-3.5 text-md font-bold text-white backdrop-blur-md transition-colors duration-200 hover:bg-white/14"
+                  className="inline-flex items-center rounded-md border border-white/18 bg-white/8 px-8 py-3.5 text-md font-bold text-white backdrop-blur-md transition-colors duration-150 hover:bg-white/14"
                 >
                   See How It Works
                 </a>

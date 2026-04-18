@@ -99,7 +99,7 @@ export default function WhyChooseUs() {
             <motion.div
               key={r.title}
               variants={cardVariants}
-              className="p-6 rounded-md shadow-2xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-primary dark:hover:border-primary hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="p-6 rounded-md shadow-2xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-primary dark:hover:border-primary hover:shadow-lg hover:scale-105 transition-all duration-150"
             >
               <div className="mb-4 p-1 w-12 h-12 text-2xl inline-flex items-center justify-center rounded-xl shadow-xl bg-gray-50 dark:bg-gray-700">
                 {r.icon}
