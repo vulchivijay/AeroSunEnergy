@@ -79,7 +79,7 @@ export default function HowItWorks() {
         >
           <span className="text-primary uppercase tracking-widest text-md text-gray-900 dark:text-gray-100">Simple Process</span>
           <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
-            How It Works
+            How Hybrid Solar Wind Systems Work
           </h2>
           <p className="mt-4 text-md text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">
             From site visit to 24/7 power generation — here&apos;s how we turn any location into a clean energy source with our solar wind hybrid system.

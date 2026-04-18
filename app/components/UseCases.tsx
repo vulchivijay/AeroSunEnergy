@@ -77,7 +77,7 @@ export default function UseCases() {
         >
           <span className="text-gray-600 dark:text-white">Where We Install</span>
           <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
-            Use Cases
+            Hybrid Solar Wind Use Cases in India
           </h2>
           <p className="mt-4 text-lg text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">
             Our hybrid solar wind energy systems are engineered for diverse environments — from busy highways to quiet homes — bringing renewable energy solutions across India wherever they&apos;re needed most.

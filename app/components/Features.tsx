@@ -59,7 +59,7 @@ export default function Features() {
         >
           <span className="text-secondary font-semibold uppercase tracking-widest text-md text-gray-600 dark:text-white">What Sets Us Apart</span>
           <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-gray-100">
-            Key Features
+            Hybrid Solar Wind System Features
           </h2>
           <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-gradient-to-r from-primary to-secondary" />
         </motion.div>

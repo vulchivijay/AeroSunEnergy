@@ -58,7 +58,7 @@ export default function Benefits() {
         >
           <span className="text-secondary font-semibold uppercase tracking-widest text-md text-gray-900 dark:text-gray-100">Why Go Hybrid</span>
           <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-gray-100">
-            Benefits
+            Benefits of Hybrid Solar Wind Energy
           </h2>
           <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-gradient-to-r from-primary to-secondary" />
         </motion.div>

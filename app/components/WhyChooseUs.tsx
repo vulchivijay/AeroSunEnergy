@@ -50,7 +50,7 @@ export default function WhyChooseUs() {
         >
           <span className="text-gray-600 dark:text-white">Our Advantages</span>
           <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
-            Why Choose AeroSun Energy
+            Why Choose AeroSun for Hybrid Energy
           </h2>
           <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-gradient-to-r from-primary to-secondary" />
         </motion.div>

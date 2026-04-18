@@ -46,7 +46,7 @@ export default function About() {
         >
           <span className="text-secondary uppercase tracking-widest text-md text-gray-900 dark:text-white">The Technology</span>
           <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
-            About Our Hybrid Solar + Wind System
+            Hybrid Solar and Wind Energy System Overview
           </h2>
           <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-gradient-to-r from-primary to-secondary" />
         </motion.div>

@@ -45,7 +45,7 @@ export default function Services() {
         <div className="text-center mb-16">
           <span className="text-primary font-semibold uppercase tracking-widest text-md text-gray-600 dark:text-gray-900">Key Features &amp; Benefits</span>
           <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-gray-100">
-            Why Hybrid Energy Changes Everything
+            Hybrid Energy Solutions for Homes and Businesses
           </h2>
           <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-gradient-to-r from-primary to-secondary" />
         </div>

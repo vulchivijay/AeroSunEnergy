@@ -67,7 +67,7 @@ export default function WindGenerators() {
         <div className="text-center mb-16">
           <span className="text-primary uppercase tracking-widest text-md text-gray-900 dark:text-gray-100">Our Technology</span>
           <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
-            Wind Energy Generators
+            Wind Turbines for Hybrid Solar Wind Systems
           </h2>
           <p className="mt-4 text-md text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">
             We offer a full spectrum of wind generators — from conventional three-blade turbines to innovative flower turbines and minimal-airflow vertical-axis rotors — so every site gets the right technology.

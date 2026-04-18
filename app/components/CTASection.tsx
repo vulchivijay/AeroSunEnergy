@@ -32,7 +32,7 @@ export default function CTASection() {
                 Build The Right System
               </span>
               <h2 className="mt-6 max-w-3xl text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
-                Clean energy infrastructure should look ambitious and perform reliably.
+                Plan a hybrid solar wind system that fits your site.
               </h2>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-white/78">
                 We assess the site, match the right solar and turbine mix, and design for the way your location actually behaves. Homes, public projects, and commercial deployments all need different answers.
