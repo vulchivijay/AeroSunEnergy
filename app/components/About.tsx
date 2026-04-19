@@ -6,36 +6,42 @@ import Image from 'next/image'
 const features = [
   {
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-800 dark:text-blue-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3l4 9H5l1 9 13-13h-6l2-5H5z" />
       </svg>
     ),
     title: 'Always-On Generation',
     desc: 'Solar powers your system through the day while wind turbines keep generating at night and on cloudy days — ensuring uninterrupted electricity supply.',
+    cardBg: 'bg-blue-100/90 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700 hover:border-blue-500',
+    iconBg: 'bg-blue-300 dark:bg-blue-800',
   },
   {
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-emerald-800 dark:text-emerald-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
     title: 'Cut Your Energy Bills',
     desc: 'Reduce electricity costs by up to 80% with our optimised solar wind hybrid systems — a smart investment that pays for itself and then keeps paying you.',
+    cardBg: 'bg-emerald-100/90 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700 hover:border-emerald-500',
+    iconBg: 'bg-emerald-300 dark:bg-emerald-800',
   },
   {
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-amber-800 dark:text-amber-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
     title: 'Built to Last',
     desc: 'Engineered for low maintenance and peak performance across all climates — urban rooftops, open highways, rural farmland, and public parks alike.',
+    cardBg: 'bg-amber-100/90 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700 hover:border-amber-500',
+    iconBg: 'bg-amber-300 dark:bg-amber-800',
   },
 ]
 
 export default function About() {
   return (
-    <section id="about" className="py-24">
+    <section id="about" className="py-24 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -44,16 +50,16 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="text-secondary uppercase tracking-widest text-md text-gray-500 dark:text-gray-100">The Technology</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-gray-100">
-            About Our Hybrid Solar + Wind System
+          <span className="text-secondary uppercase tracking-widest text-md text-gray-900 dark:text-white">The Technology</span>
+          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
+            Hybrid Solar and Wind Energy System Overview
           </h2>
-          <div className="mt-4 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary" />
+          <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary" />
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-12 rounded-[2.25rem] md:border md:border-white/60 md:bg-white/75 md:p-3 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/65 lg:grid-cols-[0.95fr_1.05fr] lg:p-8">
+        <div className="grid grid-cols-1 gap-12 rounded-[2.25rem] md:border md:border-white/60 md:bg-white/75 md:p-3 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-800 lg:grid-cols-[0.95fr_1.05fr] lg:p-8">
           <motion.div
-            className="rounded-[1.75rem] bg-slate-950 px-6 py-8 text-white shadow-2xl lg:px-8"
+            className="rounded-md bg-slate-950 px-6 py-8 text-white shadow-md lg:px-8"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -74,15 +80,15 @@ export default function About() {
             </p>
 
             <div className="mt-8 grid gap-4">
-              <div className="rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-md">
+              <div className="rounded-md shadow-2xl border border-white/24 bg-white/24 p-4 backdrop-blur-md">
                 <p className="text-3xl font-bold text-accent">01</p>
                 <p className="mt-2 text-md text-white/72">Dual-source generation that reduces idle periods.</p>
               </div>
-              <div className="rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-md">
+              <div className="rounded-md shadow-2xl border border-white/24 bg-white/24 p-4 backdrop-blur-md">
                 <p className="text-3xl font-bold text-accent">02</p>
                 <p className="mt-2 text-md text-white/72">Smart controls that balance solar, wind, and storage.</p>
               </div>
-              <div className="rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-md">
+              <div className="rounded-md shadow-2xl border border-white/24 bg-white/24 p-4 backdrop-blur-md">
                 <p className="text-3xl font-bold text-accent">03</p>
                 <p className="mt-2 text-md text-white/72">Scalable deployment from home rooftops to public assets.</p>
               </div>
@@ -96,16 +102,16 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-gray-100 shadow-xl ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+            <div className="relative aspect-4/3 overflow-hidden rounded-md bg-gray-100 shadow-md ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
               <Image
                 src="/images/smart-vawt-aerosunenergy.png"
                 alt="Smart VAWT hybrid technology deployment by AeroSun Energy"
                 fill
-                sizes="(min-width: 1024px) 38vw, 92vw"
+                sizes="(min-width: 1024px) 44vw, 92vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" aria-hidden="true" />
-              <div className="absolute left-6 top-6 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white backdrop-blur-md">
+              <div className="absolute inset-0 bg-linear-to-t from-slate-950/60 via-transparent to-transparent" aria-hidden="true" />
+              <div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white backdrop-blur-md">
                 Future Ready
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -119,12 +125,12 @@ export default function About() {
               {features.map((f) => (
                 <div
                   key={f.title}
-                  className="flex flex-col items-center rounded-[1.5rem] border border-slate-200 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900"
+                  className={`flex flex-col items-center rounded-md border p-6 text-center shadow-md transition-all duration-150 hover:-translate-y-1 hover:shadow-lg ${f.cardBg}`}
                 >
-                  <div className="mb-4 rounded-full bg-slate-50 p-3 shadow-sm dark:bg-slate-800">
+                  <div className={`mb-4 rounded-md p-3 shadow-sm ${f.iconBg}`}>
                     {f.icon}
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{f.title}</h3>
+                  <h3 className="text-xl text-gray-900 dark:text-gray-100 mb-2">{f.title}</h3>
                   <p className="text-md text-gray-500 dark:text-gray-400">{f.desc}</p>
                 </div>
               ))}

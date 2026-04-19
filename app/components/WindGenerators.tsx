@@ -61,18 +61,18 @@ const generators = [
 
 export default function WindGenerators() {
   return (
-    <section id="wind-generators" className="py-24 bg-gray-50 dark:bg-gray-900">
+    <section id="wind-generators" className="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-primary uppercase tracking-widest text-md text-gray-500 dark:text-gray-900">Our Technology</span>
+          <span className="text-primary uppercase tracking-widest text-md text-gray-900 dark:text-gray-100">Our Technology</span>
           <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
-            Wind Energy Generators
+            Wind Turbines for Hybrid Solar Wind Systems
           </h2>
-          <p className="mt-4 text-lg text-gray-500 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="mt-4 text-md text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">
             We offer a full spectrum of wind generators — from conventional three-blade turbines to innovative flower turbines and minimal-airflow vertical-axis rotors — so every site gets the right technology.
           </p>
-          <div className="mt-6 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary" />
+          <div className="mt-6 mx-auto w-16 h-1 rounded-md bg-gradient-to-r from-primary to-secondary" />
         </div>
 
         {/* Generator cards */}
@@ -80,7 +80,7 @@ export default function WindGenerators() {
           {generators.map((gen, idx) => (
             <div
               key={gen.id}
-              className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-10 items-center bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden`}
+              className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-10 items-center bg-white dark:bg-gray-800 rounded-md shadow-2xl overflow-hidden`}
             >
               {/* Illustration panel */}
               <div className={`flex-shrink-0 flex items-center justify-center w-full lg:w-72 h-64 bg-gradient-to-br ${gen.accentFrom} ${gen.accentTo} bg-opacity-10 dark:bg-opacity-20`}>
@@ -97,10 +97,10 @@ export default function WindGenerators() {
 
               {/* Content */}
               <div className="flex-1 p-8">
-                <span className={`inline-block text-sm font-semibold tracking-widest px-3 py-1 rounded-full mb-4 ${gen.badgeColor}`}>
+                <span className={`inline-block text-sm font-semibold tracking-widest px-3 py-1 rounded-md mb-4 ${gen.badgeColor}`}>
                   {gen.badge}
                 </span>
-                <h3 className="text-2xl font-extrabold tracking-widest text-gray-900 dark:text-white mb-1">{gen.title}</h3>
+                <h3 className="text-2xl font-semibold tracking-widest text-gray-900 dark:text-gray-100 mb-1">{gen.title}</h3>
                 <p className="text-md font-medium text-primary mb-4 text-gray-600 dark:text-gray-900">{gen.subtitle}</p>
                 <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">{gen.description}</p>
 

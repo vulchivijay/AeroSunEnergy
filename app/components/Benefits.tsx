@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { TrendingDown, Globe, ShieldCheck, Infinity } from 'lucide-react'
+import Image from 'next/image'
 
 const benefits = [
   {
@@ -46,7 +47,7 @@ const cardVariants = {
 
 export default function Benefits() {
   return (
-    <section id="benefits" className="py-24 bg-white dark:bg-gray-950">
+    <section id="benefits" className="py-24 bg-white dark:bg-gray-950 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -55,11 +56,44 @@ export default function Benefits() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="text-secondary font-semibold uppercase tracking-widest text-md text-gray-900 dark:text-white">Why Go Hybrid</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">
-            Benefits
+          <span className="text-secondary font-semibold uppercase tracking-widest text-md text-gray-900 dark:text-gray-100">Why Go Hybrid</span>
+          <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-gray-100">
+            Benefits of Hybrid Solar Wind Energy
           </h2>
-          <div className="mt-4 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary" />
+          <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-gradient-to-r from-primary to-secondary" />
+        </motion.div>
+
+        {/* Benefits Image */}
+        <motion.div
+          className="mb-16"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
+          <div className="relative max-w-6xl mx-auto">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-md blur-3xl" aria-hidden="true" />
+            <div className="relative overflow-hidden rounded-md border border-white/20 bg-white/90 shadow-2xl backdrop-blur-sm dark:border-white/10 dark:bg-slate-950/90">
+              <div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white backdrop-blur-md">
+                Advanced Darrieus Technology
+              </div>
+              <div className="aspect-[16/9] overflow-hidden">
+                <Image
+                  src="/images/darrieus-turbine-aerosunenergy.png"
+                  alt="Advanced Darrieus wind turbine technology by AeroSun Energy - efficient vertical-axis design for urban and semi-urban environments"
+                  fill
+                  sizes="(min-width: 1024px) 68rem, 92vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" aria-hidden="true" />
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <p className="max-w-2xl text-lg font-semibold">
+                  Our Darrieus turbines utilize aerodynamic lift principles for superior efficiency in variable wind conditions, making them perfect for India&apos;s diverse climate zones.
+                </p>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
@@ -73,12 +107,12 @@ export default function Benefits() {
             <motion.div
               key={b.title}
               variants={cardVariants}
-              className={`p-8 rounded-2xl border ${b.bg} ${b.border} hover:shadow-lg hover:scale-105 transition-all duration-300`}
+              className={`p-8 rounded-md border ${b.bg} ${b.border} hover:shadow-lg hover:scale-105 transition-all duration-150`}
             >
               <div className="mb-5 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white dark:bg-gray-700 shadow-sm">
                 {b.icon}
               </div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">{b.title}</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">{b.title}</h3>
               <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-md">{b.desc}</p>
             </motion.div>
           ))}

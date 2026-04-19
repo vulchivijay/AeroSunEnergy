@@ -15,6 +15,7 @@ const useCases = [
       'Roads and highways are exposed to sunlight and wind 24 hours a day. AeroSun integrates solar panels into road surface barriers and wind turbines along medians and roadsides — turning every kilometre of highway into a green energy generator that powers streetlights, traffic systems, and EV charging stations.',
     points: ['Powers streetlights & signage', 'Supports EV charging infrastructure', 'Scalable across national highways', 'Supports smart city infrastructure'],
     color: 'from-primary to-blue-400',
+    cardBg: 'bg-blue-100/85 dark:bg-blue-950/45 border-blue-300 dark:border-blue-700',
   },
   {
     emoji: '🌳',
@@ -27,6 +28,7 @@ const useCases = [
       'Parks offer unobstructed sunlight and natural airflow. Our aesthetically designed flower turbines and solar canopies blend seamlessly into park landscapes, powering benches, Wi-Fi nodes, lighting, and event spaces — supporting sustainable urban infrastructure without disrupting the natural environment.',
     points: ['Aesthetic flower turbine designs', 'Powers park lighting & amenities', 'Silent, low-vibration operation', 'Ideal for urban and suburban parks'],
     color: 'from-secondary to-teal-400',
+    cardBg: 'bg-emerald-100/85 dark:bg-emerald-950/45 border-emerald-300 dark:border-emerald-700',
   },
   {
     emoji: '🏡',
@@ -39,6 +41,7 @@ const useCases = [
       'Our solar wind hybrid system for homes combines compact rooftop solar panels with low-wind VAWT turbines — delivering round-the-clock electricity. Homeowners can cut their bills drastically, store surplus energy, and even sell power back to the grid through net metering.',
     points: ['Up to 80% reduction in electricity bills', 'Net metering & grid export ready', 'Battery storage available', 'Suits urban apartments and bungalows'],
     color: 'from-accent to-yellow-400',
+    cardBg: 'bg-amber-100/85 dark:bg-amber-950/45 border-amber-300 dark:border-amber-700',
   },
   {
     emoji: '🏭',
@@ -51,6 +54,7 @@ const useCases = [
       'Open agricultural land, factory rooftops, warehouses, and commercial complexes represent ideal sites for large-scale hybrid deployments. AeroSun delivers scalable green energy infrastructure that offsets industrial power demands and accelerates compliance with sustainability targets.',
     points: ['Scalable from 10 kW to multi-MW', 'Reduces industrial power costs', 'Supports ESG & sustainability goals', 'Suitable for rural and urban commercial sites'],
     color: 'from-pink-400 to-rose-400',
+    cardBg: 'bg-purple-100/85 dark:bg-purple-950/45 border-purple-300 dark:border-purple-700',
   },
 ]
 
@@ -66,7 +70,7 @@ const cardVariants = {
 
 export default function UseCases() {
   return (
-    <section id="use-cases" className="py-24">
+    <section id="use-cases" className="py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -75,14 +79,14 @@ export default function UseCases() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="text-secondary uppercase tracking-widest text-md text-gray-500 dark:text-white">Where We Install</span>
+          <span className="text-gray-600 dark:text-white">Where We Install</span>
           <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
-            Use Cases
+            Hybrid Solar Wind Use Cases in India
           </h2>
-          <p className="mt-4 text-lg text-gray-900 dark:text-white max-w-3xl mx-auto">
+          <p className="mt-4 text-lg text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">
             Our hybrid solar wind energy systems are engineered for diverse environments — from busy highways to quiet homes — bringing renewable energy solutions across India wherever they&apos;re needed most.
           </p>
-          <div className="mt-6 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary" />
+          <div className="mt-6 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary" />
         </motion.div>
 
         <motion.div
@@ -96,17 +100,17 @@ export default function UseCases() {
             <motion.div
               key={uc.title}
               variants={cardVariants}
-              className={`group overflow-hidden rounded-[2rem] border border-white/60 bg-white/80 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_32px_110px_rgba(15,23,42,0.12)] dark:border-white/10 dark:bg-slate-950/65`}
+              className={`group overflow-hidden rounded-4xl border shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-150 hover:-translate-y-1 hover:shadow-[0_32px_110px_rgba(15,23,42,0.12)] ${uc.cardBg}`}
             >
               <div className={`grid grid-cols-1 lg:grid-cols-[0.92fr_1.08fr] ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-                <div className={`relative min-h-[280px] ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                  <div className={`absolute inset-x-0 top-0 h-2 bg-gradient-to-r ${uc.color}`} />
+                <div className={`relative min-h-70 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  <div className={`absolute inset-x-0 top-0 h-2 bg-linear-to-r ${uc.color}`} />
                   <Image
                     src={uc.imageSrc}
                     alt={uc.imageAlt}
                     fill
-                    sizes="(min-width: 1024px) 36vw, 92vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(min-width: 1024px) 44vw, 92vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,17,29,0.08),rgba(7,17,29,0.22)_52%,rgba(7,17,29,0.68)_100%)]" aria-hidden="true" />
                   <div className="absolute inset-x-6 bottom-6 flex items-end justify-between gap-4 text-white">
@@ -114,14 +118,14 @@ export default function UseCases() {
                       <p className="text-4xl">{uc.emoji}</p>
                       <p className="mt-3 text-lg font-bold">{uc.title}</p>
                     </div>
-                    <span className={`shrink-0 rounded-full px-3 py-1 text-xs font-bold ${uc.tagColor}`}>
+                    <span className={`shrink-0 rounded-md px-3 py-1 text-xs font-bold ${uc.tagColor}`}>
                       {uc.tag}
                     </span>
                   </div>
                 </div>
                 <div className={`p-8 lg:p-10 ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
                   <div className="flex items-center gap-3">
-                    <span className="rounded-xl shadow-xl border border-gray-200 bg-slate-50 px-3 py-1 text-md font-semibold uppercase tracking-[0.28em] text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+                    <span className="rounded-md shadow-md border border-gray-200 bg-slate-50 px-3 py-1 text-md font-semibold uppercase tracking-[0.28em] text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
                       Best Fit
                     </span>
                     <span className="text-lg font-semibold text-primary">{uc.tag}</span>
@@ -131,14 +135,14 @@ export default function UseCases() {
                   </p>
                   <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                     {uc.points.map((point) => (
-                      <li key={point} className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-md text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+                      <li key={point} className="rounded-md border border-slate-200 bg-slate-50 px-4 py-3 text-md text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
                         {point}
                       </li>
                     ))}
                   </ul>
                   <a
                     href="#contact"
-                    className="inline-flex mt-8 items-center rounded-full bg-slate-950 px-6 py-3 text-md text-white transition-colors hover:bg-primary dark:bg-accent dark:text-slate-950"
+                    className="inline-flex mt-8 items-center rounded-md bg-slate-950 px-6 py-3 text-md text-white transition-colors hover:bg-primary dark:bg-accent dark:text-slate-950"
                   >
                     Discuss this deployment
                   </a>

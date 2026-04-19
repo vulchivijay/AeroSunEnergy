@@ -10,10 +10,13 @@ export default function JsonLd() {
         logo: {
           '@type': 'ImageObject',
           '@id': 'https://aerosunenergy.in/#logo',
-          url: 'https://aerosunenergy.in/logo-icon.png',
-          contentUrl: 'https://aerosunenergy.in/logo-icon.png',
+          url: 'https://aerosunenergy.in/images/logo.png',
+          contentUrl: 'https://aerosunenergy.in/images/logo.png',
         },
-        image: { '@id': 'https://aerosunenergy.in/#logo' },
+        image: [
+          'https://aerosunenergy.in/images/logo-horizontal.png',
+          'https://aerosunenergy.in/images/logo-vertical.png',
+        ],
         description:
           'AeroSun Energy is a leading renewable energy company in India providing solar panels, wind turbines (HAWT, VAWT, flower turbines), and hybrid energy systems for homes, businesses, and industries.',
         email: 'info@aerosunenergy.in',

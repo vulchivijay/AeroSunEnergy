@@ -25,22 +25,41 @@ export const metadata: Metadata = {
     'AeroSun Energy provides hybrid solar wind energy systems for homes, roads, parks, and commercial spaces across India. 24/7 clean power generation with smart IoT monitoring.',
   keywords: [
     'hybrid solar wind energy',
-    'renewable energy solutions India',
     'solar wind hybrid system for homes',
     'green energy infrastructure',
     'smart energy systems',
     'AeroSun Energy',
-    'wind turbine installation India',
-    'solar panel installation India',
-    'HAWT',
-    'VAWT',
+    'HAWT and VAWT turbines',
+    'VAWT flower turbines',
+    'low-wind VAWT solutions',
     'flower turbines',
     'Savonius turbine',
-    'clean energy India',
-    'sustainable energy infrastructure',
-    'aero sun energy'
+    'aero sun energy',
+    'free energy from sun and wind',
+    'free energy from wind turbines',
+    'free energy from solar panels',
+    'solar and wind energy solutions',
+    'hybrid energy systems for roads',
+    'hybrid energy systems for parks',
+    'hybrid energy systems for commercial spaces',
+    'IoT energy monitoring',
+    'cost savings with hybrid energy',
+    'eco-friendly energy solutions',
+    'low maintenance energy systems',
+    'efficient use of space for energy'
   ],
   metadataBase: new URL('https://aerosunenergy.in'),
+  applicationName: 'AeroSun Energy',
+  authors: [{ name: 'AeroSun Energy', url: 'https://aerosunenergy.in' }],
+  creator: 'AeroSun Energy',
+  publisher: 'AeroSun Energy',
+  category: 'Renewable Energy',
+  referrer: 'origin-when-cross-origin',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   alternates: {
     canonical: '/',
   },
@@ -95,7 +114,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
+      <body className={`${roboto.variable} bg-white text-gray-900 transition-colors duration-150 dark:bg-gray-950 dark:text-gray-100`}>
         {GTM_ID ? (
           <Script
             id="gtm-script"
@@ -105,8 +124,21 @@ export default function RootLayout({
             }}
           />
         ) : null}
-      </head>
-      <body className={`${roboto.variable} bg-white text-gray-900 transition-colors duration-300 dark:bg-gray-950 dark:text-gray-100`}>
+        <Script id="theme-script" strategy="beforeInteractive">
+          {`(function() {
+            try {
+              var theme = localStorage.getItem('theme');
+              var html = document.documentElement;
+              if (theme === 'dark') {
+                html.classList.add('dark');
+              } else {
+                html.classList.remove('dark');
+              }
+            } catch (e) {
+              console.error(e);
+            }
+          })();`}
+        </Script>
         {GTM_ID ? (
           <noscript>
             <iframe
