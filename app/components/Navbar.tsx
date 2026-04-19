@@ -35,13 +35,13 @@ export default function Navbar() {
   }
 
   const navLinks = [
-    { label: 'Home', href: '#' },
-    { label: 'About', href: '#about' },
-    { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Features', href: '#features' },
-    { label: 'Use Cases', href: '#use-cases' },
-    { label: 'Why Us', href: '#why-us' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about' },
+    { label: 'How It Works', href: '/how-it-works' },
+    { label: 'Features', href: '/features' },
+    { label: 'Use Cases', href: '/use-cases' },
+    { label: 'Why Us', href: '/why-us' },
+    { label: 'Contact', href: '/contact' },
   ]
 
   return (
@@ -67,8 +67,8 @@ export default function Navbar() {
             ))}
           </div>
           <Link
-            href="#contact"
-            className="rounded-md shadow-md bg-slate-950 px-5 py-2.5 text-md text-white transition-transform duration-150 hover:scale-[1.03] hover:bg-primary dark:bg-accent dark:text-slate-950 opacity-55 pointer-events-none"
+            href="/contact"
+            className="rounded-full bg-slate-950 px-5 py-2.5 text-md font-bold text-white transition-transform duration-200 hover:scale-[1.03] hover:bg-primary dark:bg-accent dark:text-slate-950"
           >
             Start a Project
           </Link>
@@ -146,7 +146,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="#contact"
+            href="/contact"
             onClick={() => setMenuOpen(false)}
             className="mt-3 block rounded-2xl border border-slate-300 bg-linear-to-r from-slate-900 to-slate-700 px-4 py-3 text-center text-md font-semibold text-white shadow-[0_12px_34px_-20px_rgba(15,23,42,0.95)] transition-all duration-300 dark:border-slate-700 dark:from-amber-400 dark:to-orange-300 dark:text-slate-950 opacity-55 pointer-events-none"
           >
