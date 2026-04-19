@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const services = [
   {
     emoji: '💰',
@@ -91,7 +93,7 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.title}
-              className={`group overflow-hidden rounded-md border shadow-md transition-all duration-150 hover:scale-105 hover:shadow-xl ${service.cardBg}`}
+              className={`group overflow-hidden rounded-md shadow-md border transition-all duration-150 hover:scale-105 hover:shadow-xl ${service.cardBg}`}
             >
               <div className={`h-2 bg-linear-to-r ${service.color}`} />
               <div className="p-8">
@@ -102,12 +104,12 @@ export default function Services() {
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                   {service.description}
                 </p>
-                <a
+                <Link
                   href="#contact"
-                  className="inline-block mt-6 text-primary font-semibold hover:text-secondary transition-colors"
+                  className="inline-block mt-6 text-primary font-semibold hover:text-secondary transition-colors opacity-55 pointer-events-none"
                 >
                   Learn more →
-                </a>
+                </Link>
               </div>
             </div>
           ))}

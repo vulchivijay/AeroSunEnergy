@@ -46,7 +46,7 @@ export default function CTASection() {
                 </a>
                 <a
                   href="#how-it-works"
-                  className="inline-flex items-center rounded-md border border-white/18 bg-white/8 px-8 py-3.5 text-md font-bold text-white backdrop-blur-md transition-colors duration-150 hover:bg-white/14"
+                  className="inline-flex items-center rounded-md border border-white/18 bg-white/8 px-8 py-3.5 text-md font-bold text-white backdrop-blur-md transition-colors duration-150 hover:bg-white/14 opacity-55 pointer-events-none"
                 >
                   See How It Works
                 </a>
