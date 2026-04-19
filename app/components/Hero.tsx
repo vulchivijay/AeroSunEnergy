@@ -29,7 +29,7 @@ export default function Hero() {
           <span className="mb-6 inline-flex rounded-md shadow-md border border-white/24 bg-white/24 px-3 py-2 text-md uppercase tracking-[0.45em] text-white backdrop-blur-md">
             Energy Infrastructure Reimagined
           </span>
-          <h1 className="max-w-3xl text-4xl leading-[1.1] sm:text-4xl lg:text-5xl font-semibold">
+          <h1 className="max-w-3xl text-4xl leading-[1.1] tracking-wide sm:text-4xl lg:text-5xl font-semibold">
             Hybrid solar wind energy systems in India.
             <br />
             Built for rooftops, roads, parks, and industry.
@@ -112,7 +112,7 @@ export default function Hero() {
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,12,24,0.06),rgba(4,12,24,0.26)_58%,rgba(4,12,24,0.64)_100%)]" aria-hidden="true" />
               </div>
-              <div className="absolute bottom-40 md:bottom-35 left-6 right-6 z-10 grid gap-2 sm:grid-cols-2">
+              <div className="absolute bottom-35 md:bottom-30 left-6 right-6 z-10 grid gap-2 sm:grid-cols-2">
                 <div className="rounded-md border border-white/16 bg-slate-950/55 p-4 text-white backdrop-blur-md">
                   <p className="text-[12px] uppercase tracking-[0.28em] text-white/60">Primary Use</p>
                   <p className="mt-2 text-md">Residential to infrastructure-scale deployment</p>

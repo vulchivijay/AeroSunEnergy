@@ -112,7 +112,7 @@ export default function HowItWorks() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" aria-hidden="true" />
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <p className="max-w-4xl text-lg font-semibold">
+                <p className="max-w-4xl text-lg">
                   Our cutting-edge hybrid systems combine the latest in solar photovoltaic technology with advanced vertical-axis wind turbines, creating a seamless energy generation platform that adapts to any environment.
                 </p>
               </div>

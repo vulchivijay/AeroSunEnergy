@@ -53,7 +53,7 @@ export default function About() {
 
         <div className="grid grid-cols-1 gap-12 rounded-[2.25rem] md:border md:border-white/60 md:bg-white/75 md:p-3 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-800 lg:grid-cols-[0.95fr_1.05fr] lg:p-8">
           <motion.div
-            className="rounded-[1.75rem] bg-slate-950 px-6 py-8 text-white shadow-2xl lg:px-8"
+            className="rounded-md bg-slate-950 px-6 py-8 text-white shadow-md lg:px-8"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -96,7 +96,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-gray-100 shadow-xl ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-gray-100 shadow-md ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
               <Image
                 src="/images/smart-vawt-aerosunenergy.png"
                 alt="Smart VAWT hybrid technology deployment by AeroSun Energy"
@@ -119,7 +119,7 @@ export default function About() {
               {features.map((f) => (
                 <div
                   key={f.title}
-                  className="flex flex-col items-center rounded-[1.5rem] border border-slate-200 bg-white p-6 text-center shadow-sm transition-all duration-150 hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900"
+                  className="flex flex-col items-center rounded-md border border-slate-200 bg-white p-6 text-center shadow-md transition-all duration-150 hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900"
                 >
                   <div className="mb-4 rounded-md bg-slate-50 p-3 shadow-sm dark:bg-slate-800">
                     {f.icon}

@@ -5,34 +5,46 @@ import { Clock, GitMerge, Wrench, Layers, Leaf, MapPin } from 'lucide-react'
 
 const features = [
   {
-    icon: <Clock className="h-7 w-7 text-primary" />,
+    icon: <Clock className="h-7 w-7 text-blue-700 dark:text-blue-200" />,
     title: '24/7 Power Generation',
     desc: 'Solar and wind working together ensures continuous electricity day and night, even during cloudy or calm periods.',
+    cardBg: 'bg-blue-50/70 dark:bg-blue-950/30 border-blue-100 dark:border-blue-900/70 hover:border-blue-400',
+    iconBg: 'bg-blue-100 dark:bg-blue-900/60',
   },
   {
-    icon: <GitMerge className="h-7 w-7 text-secondary" />,
+    icon: <GitMerge className="h-7 w-7 text-emerald-700 dark:text-emerald-200" />,
     title: 'Smart Grid Integration',
     desc: 'IoT-enabled controllers seamlessly feed surplus energy back to the grid and manage load balancing in real time.',
+    cardBg: 'bg-emerald-50/70 dark:bg-emerald-950/30 border-emerald-100 dark:border-emerald-900/70 hover:border-emerald-400',
+    iconBg: 'bg-emerald-100 dark:bg-emerald-900/60',
   },
   {
-    icon: <Wrench className="h-7 w-7 text-accent" />,
+    icon: <Wrench className="h-7 w-7 text-amber-700 dark:text-amber-200" />,
     title: 'Low Maintenance',
     desc: 'Minimal moving parts and self-cleaning panel coatings keep operational costs low with rare service intervals.',
+    cardBg: 'bg-amber-50/70 dark:bg-amber-950/30 border-amber-100 dark:border-amber-900/70 hover:border-amber-400',
+    iconBg: 'bg-amber-100 dark:bg-amber-900/60',
   },
   {
-    icon: <Layers className="h-7 w-7 text-primary" />,
+    icon: <Layers className="h-7 w-7 text-indigo-700 dark:text-indigo-200" />,
     title: 'Scalable Installation',
     desc: 'From a single rooftop kit to a multi-megawatt commercial array, our modular design scales with your energy needs.',
+    cardBg: 'bg-indigo-50/70 dark:bg-indigo-950/30 border-indigo-100 dark:border-indigo-900/70 hover:border-indigo-400',
+    iconBg: 'bg-indigo-100 dark:bg-indigo-900/60',
   },
   {
-    icon: <Leaf className="h-7 w-7 text-secondary" />,
+    icon: <Leaf className="h-7 w-7 text-green-700 dark:text-green-200" />,
     title: 'Eco-Friendly',
     desc: 'Zero direct emissions during operation, recyclable components, and a lifecycle carbon footprint far below fossil fuels.',
+    cardBg: 'bg-green-50/70 dark:bg-green-950/30 border-green-100 dark:border-green-900/70 hover:border-green-400',
+    iconBg: 'bg-green-100 dark:bg-green-900/60',
   },
   {
-    icon: <MapPin className="h-7 w-7 text-accent" />,
+    icon: <MapPin className="h-7 w-7 text-cyan-700 dark:text-cyan-200" />,
     title: 'Efficient Land Use',
     desc: 'Hybrid systems generate more energy per square metre, reducing land requirements compared to standalone solar or wind farms.',
+    cardBg: 'bg-cyan-50/70 dark:bg-cyan-950/30 border-cyan-100 dark:border-cyan-900/70 hover:border-cyan-400',
+    iconBg: 'bg-cyan-100 dark:bg-cyan-900/60',
   },
 ]
 
@@ -61,7 +73,7 @@ export default function Features() {
           <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-gray-100">
             Hybrid Solar Wind System Features
           </h2>
-          <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-gradient-to-r from-primary to-secondary" />
+          <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary" />
         </motion.div>
 
         <motion.div
@@ -75,9 +87,9 @@ export default function Features() {
             <motion.div
               key={f.title}
               variants={cardVariants}
-              className="group p-8 rounded-md shadow-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-primary dark:hover:border-primary hover:shadow-lg hover:scale-105 transition-all duration-150"
+              className={`group rounded-md border p-8 shadow-2xl transition-all duration-150 hover:scale-105 hover:shadow-lg ${f.cardBg}`}
             >
-              <div className="mb-5 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white dark:bg-gray-700 shadow-sm">
+              <div className={`mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl shadow-sm ${f.iconBg}`}>
                 {f.icon}
               </div>
               <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">{f.title}</h3>
