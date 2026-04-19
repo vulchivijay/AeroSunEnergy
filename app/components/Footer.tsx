@@ -128,7 +128,7 @@ export default function Footer() {
 
       <div className="border-t-2 border-gray-200 py-6 dark:border-gray-700">
         <p className="text-center text-gray-500 text-md dark:text-gray-400">
-          <strong>Vulchi Vijaya Kumar Raju (Kshatriya's)</strong> © 2026 AeroSun Energy. All rights reserved. |{' '}
+          <strong>Vulchi Vijaya Kumar Raju (Kshatriya's)</strong> © 2026 AeroSun Energy Private Limited (Registration is in process). All rights reserved. |{' '}
           <a href="https://aerosunenergy.in" className="transition-all duration-200 hover:text-primary hover:underline hover:underline-offset-4 dark:hover:text-primary">
             aerosunenergy.in
           </a>

@@ -13,6 +13,9 @@ const steps = [
     imageSrc: '/images/forming-aerosunenergy.png',
     imageAlt: 'Site assessment and planning process by AeroSun Energy',
     color: 'from-primary to-blue-400',
+    cardBg: 'bg-blue-100/90 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700',
+    iconBg: 'bg-blue-300 dark:bg-blue-800',
+    nodeBg: 'from-blue-700 to-blue-500',
   },
   {
     number: '02',
@@ -23,6 +26,9 @@ const steps = [
     imageSrc: '/images/nextgen-aerosunenergy.png',
     imageAlt: 'Custom hybrid system design by AeroSun Energy',
     color: 'from-secondary to-teal-400',
+    cardBg: 'bg-emerald-100/90 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700',
+    iconBg: 'bg-emerald-300 dark:bg-emerald-800',
+    nodeBg: 'from-emerald-700 to-teal-500',
   },
   {
     number: '03',
@@ -33,6 +39,9 @@ const steps = [
     imageSrc: '/images/darrieus-turbine-aerosunenergy.png',
     imageAlt: 'Installation of AeroSun hybrid turbine system',
     color: 'from-accent to-yellow-400',
+    cardBg: 'bg-amber-100/90 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700',
+    iconBg: 'bg-amber-300 dark:bg-amber-800',
+    nodeBg: 'from-amber-700 to-yellow-500',
   },
   {
     number: '04',
@@ -43,6 +52,9 @@ const steps = [
     imageSrc: '/images/smart-vawt-aerosunenergy.png',
     imageAlt: 'Smart monitoring dashboard for AeroSun energy systems',
     color: 'from-primary to-secondary',
+    cardBg: 'bg-violet-100/90 dark:bg-violet-900/55 border-violet-300 dark:border-violet-700',
+    iconBg: 'bg-violet-300 dark:bg-violet-800',
+    nodeBg: 'from-violet-700 to-purple-500',
   },
   {
     number: '05',
@@ -53,6 +65,9 @@ const steps = [
     imageSrc: '/images/future-aerosunenergy.png',
     imageAlt: 'Continuous clean power output from AeroSun hybrid systems',
     color: 'from-secondary to-green-400',
+    cardBg: 'bg-cyan-100/90 dark:bg-cyan-900/55 border-cyan-300 dark:border-cyan-700',
+    iconBg: 'bg-cyan-300 dark:bg-cyan-800',
+    nodeBg: 'from-cyan-700 to-green-500',
   },
 ]
 
@@ -148,9 +163,9 @@ export default function HowItWorks() {
                   />
                 </div>
                 {/* Content card */}
-                <div className="flex-1 bg-white w-full md:W-1/2 dark:bg-gray-800 rounded-md shadow-md p-8 hover:shadow-lg transition-shadow">
+                <div className={`flex-1 w-full md:W-1/2 rounded-md border p-8 shadow-md transition-shadow hover:shadow-lg ${step.cardBg}`}>
                   <div className="flex items-start gap-4">
-                    <span className="text-3xl flex-shrink-0">{step.icon}</span>
+                    <span className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-md text-3xl shadow-sm ${step.iconBg}`}>{step.icon}</span>
                     <div className="w-3/4">
                       <p className={`text-md uppercase tracking-widest mb-1`}>
                         Step {step.number}
@@ -165,7 +180,7 @@ export default function HowItWorks() {
                   </div>
 
                   {/* Centre node */}
-                  <div className="flex flex-shrink-0 w-14 h-14 rounded-md bg-gradient-to-br from-primary to-secondary items-center justify-center text-white text-lg shadow-lg z-10">
+                  <div className={`z-10 flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-md bg-linear-to-br text-lg text-white shadow-lg ${step.nodeBg}`}>
                     {step.number}
                   </div>
 
