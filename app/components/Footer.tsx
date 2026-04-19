@@ -139,8 +139,8 @@ export default function Footer() {
       <div className="bg-yellow-300 text-gray-950 text-md py-1 text-center border-b border-t-2 border-amber-300">This site is under development... Build with <Link href="https://chatgpt.com" target="_blank">ChatGPT</Link> and <Link href="https://github.com" target="_blank">Github Copilot</Link>.</div>
 
       <div className="border-t-2 border-gray-200 py-6 dark:border-gray-700">
-        <div className="flex items-center justify-center ">
-          <p className="max-w-3xl text-center text-gray-500 text-sm dark:text-gray-400">
+        <div className="flex items-center justify-center">
+          <p className="max-w-7xl mx-auto px-3 text-center text-gray-500 text-sm dark:text-gray-400">
             <strong>Vulchi Vijaya Kumar Raju (Kshatriya's)</strong> © 2026 AeroSun Energy Private Limited <span className="underline underline-offset-4 text-orange-600">(Registration is in process)</span>. All rights reserved. |{' '}
             <Link href="https://aerosunenergy.in" className="transition-all duration-200 hover:text-primary hover:underline hover:underline-offset-4 dark:hover:text-primary">
               aerosunenergy.in
