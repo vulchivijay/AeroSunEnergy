@@ -7,6 +7,20 @@ import Logo from './logo'
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [dark, setDark] = useState(() => typeof window !== 'undefined' && localStorage.getItem('theme') === 'dark')
+  const [activeHref, setActiveHref] = useState('#')
+
+  useEffect(() => {
+    const updateActiveHref = () => {
+      setActiveHref(window.location.hash || '#')
+    }
+
+    updateActiveHref()
+    window.addEventListener('hashchange', updateActiveHref)
+
+    return () => {
+      window.removeEventListener('hashchange', updateActiveHref)
+    }
+  }, [])
 
   const toggleDark = () => {
     if (dark) {
@@ -31,18 +45,22 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-white/55 bg-white/65 px-3 py-2 shadow-xl backdrop-blur-md dark:border-white/55 dark:bg-slate-950/65">
+    <nav className="sticky top-0 left-0 right-0 z-50 border-b border-slate-200/70 bg-white/70 px-3 py-2 shadow-sm backdrop-blur-md transition-all duration-300 ease-in-out dark:border-slate-700/70 dark:bg-slate-900/70">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Logo */}
         <Logo />
         {/* Desktop Links */}
-        <div className="hidden items-center gap-3 md:flex">
-          <div className="flex items-center rounded-md shadow-md border border-slate-200/80 bg-white/75 p-1 dark:border-slate-800 dark:bg-slate-900/80">
+        <div className="hidden items-center gap-3 lg:flex">
+          <div className="flex items-center gap-1 rounded-full border border-slate-200/70 bg-white/80 px-2 py-1 dark:border-slate-700/80 dark:bg-slate-900/80">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="px-4 py-2 text-md text-slate-700 transition-colors hover:bg-slate-100 hover:text-primary dark:text-slate-200 dark:hover:bg-slate-800"
+                onClick={() => setActiveHref(link.href)}
+                className={`relative rounded-lg px-4 py-2 text-md font-medium tracking-wide transition-all duration-300 ease-in-out after:absolute after:bottom-1 after:left-1/2 after:h-0.5 after:-translate-x-1/2 after:rounded-full after:bg-green-500 after:transition-all after:duration-300 after:ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400/70 dark:after:bg-green-400 ${activeHref === link.href
+                  ? 'text-green-600 font-semibold tracking-wider after:w-4/5 dark:text-green-400'
+                  : 'text-slate-600 after:w-0 hover:text-green-500 hover:font-semibold hover:tracking-wider hover:after:w-4/5 dark:text-slate-300 dark:hover:text-green-400'
+                  }`}
               >
                 {link.label}
               </Link>
@@ -56,8 +74,9 @@ export default function Navbar() {
           </Link>
           <button
             onClick={toggleDark}
-            className="p-2.5 rounded-md shadow-md bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
+            className="rounded-xl border border-slate-300/80 bg-white/80 p-2.5 text-slate-700 shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:border-green-300 hover:bg-green-50 hover:text-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-white active:scale-95 aria-pressed:border-green-400 aria-pressed:bg-green-100 aria-pressed:text-green-700 dark:border-slate-600/80 dark:bg-slate-900/80 dark:text-slate-100 dark:hover:border-green-500/80 dark:hover:bg-slate-800 dark:hover:text-green-300 dark:focus-visible:ring-green-500/80 dark:focus-visible:ring-offset-slate-900 dark:aria-pressed:border-green-500/80 dark:aria-pressed:bg-slate-800 dark:aria-pressed:text-green-300"
             aria-label="Toggle dark mode"
+            aria-pressed={dark}
           >
             {dark ? (
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
@@ -73,11 +92,12 @@ export default function Navbar() {
         </div>
 
         {/* Mobile: dark mode + hamburger */}
-        <div className="flex md:hidden items-center gap-2">
+        <div className="flex lg:hidden items-center gap-2">
           <button
             onClick={toggleDark}
-            className="p-2 rounded-md shadow-md bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700"
+            className="rounded-xl border border-slate-300/80 bg-white/80 p-2.5 text-slate-700 shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:border-green-300 hover:bg-green-50 hover:text-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-white active:scale-95 aria-pressed:border-green-400 aria-pressed:bg-green-100 aria-pressed:text-green-700 dark:border-slate-600/80 dark:bg-slate-900/80 dark:text-slate-100 dark:hover:border-green-500/80 dark:hover:bg-slate-800 dark:hover:text-green-300 dark:focus-visible:ring-green-500/80 dark:focus-visible:ring-offset-slate-900 dark:aria-pressed:border-green-500/80 dark:aria-pressed:bg-slate-800 dark:aria-pressed:text-green-300"
             aria-label="Toggle dark mode"
+            aria-pressed={dark}
           >
             {dark ? (
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
@@ -92,7 +112,7 @@ export default function Navbar() {
           </button>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="p-2 rounded-md shadow-md text-slate-700 hover:bg-slate-100 transition-colors dark:text-slate-100 dark:hover:bg-slate-500"
+            className="rounded-xl p-2.5 text-slate-700 transition-all duration-300 ease-in-out hover:bg-green-50 hover:text-green-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400/70 active:scale-95 dark:text-slate-100 dark:hover:bg-slate-800 dark:hover:text-green-400"
             aria-label="Toggle menu">
             {menuOpen ? (
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -108,13 +128,19 @@ export default function Navbar() {
       </div>
       {/* Mobile Menu Dropdown */}
       {menuOpen && (
-        <div className="mx-4 mt-3 rounded-md shadow-md border border-white/60 bg-white/92 p-4 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/90 md:hidden sm:mx-6 lg:mx-8">
+        <div className="mx-4 mt-3 rounded-xl border border-slate-200/80 bg-white/90 p-3 shadow-lg backdrop-blur-md opacity-100 translate-y-0 transition-all duration-300 ease-in-out dark:border-slate-700/80 dark:bg-slate-900/90 lg:hidden sm:mx-6">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="block px-4 py-3 text-md text-slate-700 transition-colors hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-500"
+              onClick={() => {
+                setActiveHref(link.href)
+                setMenuOpen(false)
+              }}
+              className={`mb-1 block w-full rounded-lg px-4 py-3 text-md font-medium tracking-wide transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400/70 active:scale-[0.99] ${activeHref === link.href
+                ? 'bg-green-100 text-green-600 dark:bg-slate-800 dark:text-green-400'
+                : 'text-slate-700 hover:bg-green-50 hover:text-green-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-green-400'
+                }`}
             >
               {link.label}
             </Link>
@@ -122,7 +148,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setMenuOpen(false)}
-            className="mt-3 block rounded-md shadow-md bg-slate-950 px-4 py-3 text-center text-md text-white dark:bg-accent dark:text-slate-950"
+            className="mt-3 block rounded-2xl border border-slate-300 bg-linear-to-r from-slate-900 to-slate-700 px-4 py-3 text-center text-md font-semibold text-white shadow-[0_12px_34px_-20px_rgba(15,23,42,0.95)] transition-all duration-300 dark:border-slate-700 dark:from-amber-400 dark:to-orange-300 dark:text-slate-950 opacity-55 pointer-events-none"
           >
             Start a Project
           </Link>

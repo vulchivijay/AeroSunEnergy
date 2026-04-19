@@ -12,7 +12,7 @@ export default function Hero() {
   ]
 
   return (
-    <section className="relative flex min-h-screen items-center bg-[#06111d] pt-20 text-white overflow-hidden">
+    <section className="relative flex min-h-screen items-center bg-[#06111d] pt-6 md:pt-20 text-white overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(30,136,229,0.42),transparent_30%),radial-gradient(circle_at_78%_18%,rgba(251,192,45,0.28),transparent_18%),linear-gradient(135deg,#071321_0%,#0f3254_54%,#0d5a36_100%)]" aria-hidden="true" />
       <div className="absolute inset-y-0 right-0 hidden w-[42%] border-l border-white/10 bg-white/5 lg:block" aria-hidden="true" />
       <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" aria-hidden="true" />
@@ -55,13 +55,13 @@ export default function Hero() {
           >
             <Link
               href="#how-it-works"
-              className="inline-flex items-center rounded-md bg-accent px-8 py-3.5 text-md text-slate-200 shadow-[0_20px_40px_rgba(251,192,45,0.22)] transition-transform duration-150 hover:scale-[1.02]"
+              className="inline-flex items-center rounded-md bg-accent px-8 py-3.5 text-md text-slate-200 shadow-[0_20px_40px_rgba(251,192,45,0.22)] transition-transform duration-150 hover:scale-[1.02] opacity-65 pointer-events-none"
             >
               Explore the System
             </Link>
             <Link
               href="#contact"
-              className="inline-flex items-center rounded-md border border-white/25 bg-white/8 px-8 py-3.5 text-md text-white backdrop-blur-md transition-colors duration-150 hover:bg-white/14"
+              className="inline-flex items-center rounded-md border border-white/25 bg-white/8 px-8 py-3.5 text-md text-white backdrop-blur-md transition-colors duration-150 hover:bg-white/14 opacity-65 pointer-events-none"
             >
               Get a Free Quote
             </Link>

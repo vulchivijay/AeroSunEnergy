@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const useCases = [
   {
@@ -125,7 +126,7 @@ export default function UseCases() {
                 </div>
                 <div className={`p-8 lg:p-10 ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
                   <div className="flex items-center gap-3">
-                    <span className="rounded-md shadow-md border border-gray-200 bg-slate-50 px-3 py-1 text-md font-semibold uppercase tracking-[0.28em] text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+                    <span className="rounded-sm shadow-sm border border-gray-200 bg-slate-50 px-3 py-1 text-sm font-semibold uppercase tracking-[0.28em] text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
                       Best Fit
                     </span>
                     <span className="text-lg font-semibold text-primary">{uc.tag}</span>
@@ -135,17 +136,17 @@ export default function UseCases() {
                   </p>
                   <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                     {uc.points.map((point) => (
-                      <li key={point} className="rounded-md border border-slate-200 bg-slate-50 px-4 py-3 text-md text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+                      <li key={point} className="rounded-sm shadow-sm border border-slate-200 bg-slate-50 px-4 py-3 text-md text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
                         {point}
                       </li>
                     ))}
                   </ul>
-                  <a
+                  <Link
                     href="#contact"
-                    className="inline-flex mt-8 items-center rounded-md bg-slate-950 px-6 py-3 text-md text-white transition-colors hover:bg-primary dark:bg-accent dark:text-slate-950"
+                    className="inline-flex mt-8 items-center rounded-md bg-slate-950 px-6 py-3 text-md text-white transition-colors hover:bg-primary dark:bg-accent dark:text-slate-950 opacity-65 pointer-events-none"
                   >
                     Discuss this deployment
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>

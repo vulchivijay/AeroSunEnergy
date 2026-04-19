@@ -107,7 +107,7 @@ export default function Benefits() {
             <motion.div
               key={b.title}
               variants={cardVariants}
-              className={`p-8 rounded-md border ${b.bg} ${b.border} hover:shadow-lg hover:scale-105 transition-all duration-150`}
+              className={`p-8 rounded-md shadow-md border ${b.bg} ${b.border} hover:shadow-lg hover:scale-105 transition-all duration-150`}
             >
               <div className="mb-5 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white dark:bg-gray-700 shadow-sm">
                 {b.icon}
