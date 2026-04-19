@@ -1,25 +1,30 @@
 import Image from "next/image"
 import Link from "next/link"
 
+type LogoProps = {
+  size?: 'default' | 'footer'
+}
 
-export default function Logo() {
+export default function Logo({ size = 'default' }: LogoProps) {
+  const isFooter = size === 'footer'
+
   return (
-    <Link href="#" className="flex items-center gap-1 relative">
+    <Link href="#" className={`relative flex items-center`}>
       <Image
         src="/images/logo-aerosunenergy.png"
         alt="AeroSun Energy logo"
-        width={96}
-        height={96}
-        className="w-24 h-auto"
+        width={isFooter ? 112 : 96}
+        height={isFooter ? 112 : 96}
+        className={isFooter ? 'h-auto w-28' : 'h-auto w-24'}
         priority
       />
-      <div className="flex flex-col">
+      <div className="flex flex-col items-center justify-center text-center">
         <div className="flex items-center justify-center">
-          <span className="text-3xl font-extrabold bg-clip-text bg-linear-to-r from-blue-800 via-blue-700 to-blue-600 drop-shadow-xl text-transparent tracking-wider">Aero</span>
-          <span className="text-3xl font-extrabold bg-clip-text bg-linear-to-r from-green-800 via-green-700 to-green-600 drop-shadow-xl text-transparent tracking-wider ml-1">Sun</span>
+          <span className={`${isFooter ? 'text-[2.05rem]' : 'text-3xl'} font-normal bg-clip-text bg-linear-to-r from-blue-800 via-blue-700 to-blue-600 drop-shadow-xl text-transparent tracking-wider`}>Aero</span>
+          <span className={`${isFooter ? 'text-[2.05rem]' : 'text-3xl'} ml-1 font-normal bg-clip-text bg-linear-to-r from-green-800 via-green-700 to-green-600 drop-shadow-xl text-transparent tracking-wider`}>Sun</span>
         </div>
-        <div className="items-center justify-center text-md uppercase text-yellow-600 font-semibold">------ E n e r g y ------</div>
-        <div className="items-center justify-center text-xs text-gray-900 dark:text-gray-500">Power from Sun and Wind</div>
+        <div className={`${isFooter ? 'text-[1.03rem]' : 'text-md'} uppercase text-yellow-600 font-semibold`}> {`${isFooter ? '--' : ''}`}------ E n e r g y ------{`${isFooter ? '--' : ''}`}</div>
+        <div className={`${isFooter ? 'text-sm' : 'text-xs'} text-gray-900 dark:text-gray-500`}>Power from Sun and Wind</div>
       </div>
     </Link>
   )

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 const generators = [
   {
@@ -115,12 +116,12 @@ export default function WindGenerators() {
                     </li>
                   ))}
                 </ul>
-                <a
+                <Link
                   href="#contact"
-                  className={`inline-block bg-gradient-to-r ${gen.accentFrom} ${gen.accentTo} text-white font-semoibold px-6 py-2.5 rounded-xl shadow-xl hover:opacity-90 transition-opacity text-md`}
+                  className={`inline-block bg-gradient-to-r ${gen.accentFrom} ${gen.accentTo} text-white font-semoibold px-6 py-2.5 rounded-xl shadow-xl hover:opacity-90 transition-opacity text-md opacity-65 pointer-events-none`}
                 >
                   Get a Quote →
-                </a>
+                </Link>
               </div>
             </div>
           ))}
