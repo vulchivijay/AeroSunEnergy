@@ -125,7 +125,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="bg-yellow-300 text-gray-950 text-md py-1 text-center border-b border-t-2 border-amber-300">This site is under development... Build with <Link href="https://chatgpt.com" target="_blank">ChatGPT</Link> and <Link href="https://github.com" target="_blank">Github Copilot</Link>.</div>
+      <div className="bg-yellow-300 text-gray-950 text-md py-1 text-center border-b border-t-2 border-amber-300">This site is open source. Improve this page on <Link href="https://github.com" target="_blank">GitHub</Link>.</div>
 
       <div className="border-t-2 border-gray-200 py-6 dark:border-gray-700">
         <div className="flex items-center justify-center">
