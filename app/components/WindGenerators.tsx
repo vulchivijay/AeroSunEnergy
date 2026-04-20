@@ -66,11 +66,11 @@ export default function WindGenerators() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-primary uppercase tracking-widest text-md text-gray-900 dark:text-gray-100">Our Technology</span>
+          <span className="text-primary uppercase tracking-widest text-lg text-gray-900 dark:text-gray-100">Our Technology</span>
           <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
             Wind Turbines for Hybrid Solar Wind Systems
           </h2>
-          <p className="mt-4 text-md text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">
+          <p className="mt-4 text-lg text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">
             We offer a full spectrum of wind generators — from conventional three-blade turbines to innovative flower turbines and minimal-airflow vertical-axis rotors — so every site gets the right technology.
           </p>
           <div className="mt-6 mx-auto w-16 h-1 rounded-md bg-gradient-to-r from-primary to-secondary" />
@@ -102,13 +102,13 @@ export default function WindGenerators() {
                   {gen.badge}
                 </span>
                 <h3 className="text-2xl font-semibold tracking-widest text-gray-900 dark:text-gray-100 mb-1">{gen.title}</h3>
-                <p className="text-md font-medium text-primary mb-4 text-gray-600 dark:text-gray-900">{gen.subtitle}</p>
+                <p className="text-lg font-medium text-primary mb-4 text-gray-600 dark:text-gray-900">{gen.subtitle}</p>
                 <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">{gen.description}</p>
 
                 {/* Key specs */}
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
                   {gen.highlights.map((h) => (
-                    <li key={h} className="flex items-start gap-2 text-md text-gray-700 dark:text-gray-300">
+                    <li key={h} className="flex items-start gap-2 text-lg text-gray-700 dark:text-gray-300">
                       <svg className="h-4 w-4 mt-0.5 text-secondary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
@@ -118,7 +118,7 @@ export default function WindGenerators() {
                 </ul>
                 <Link
                   href="#contact"
-                  className={`inline-block bg-gradient-to-r ${gen.accentFrom} ${gen.accentTo} text-white font-semoibold px-6 py-2.5 rounded-xl shadow-xl hover:opacity-90 transition-opacity text-md opacity-65 pointer-events-none`}
+                  className={`inline-block bg-gradient-to-r ${gen.accentFrom} ${gen.accentTo} text-white font-semoibold px-6 py-2.5 rounded-xl shadow-xl hover:opacity-90 transition-opacity text-lg opacity-65 pointer-events-none`}
                 >
                   Get a Quote →
                 </Link>

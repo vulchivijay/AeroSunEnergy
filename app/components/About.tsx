@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { Card, CardContent } from './Card'
 
 const features = [
   {
@@ -41,7 +42,78 @@ const features = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 overflow-hidden">
+    <section id="about" className="py-24 bg-white dark:bg-gray-950 overflow-hidden">
+      {/* About Section */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24">
+        <Card>
+          <CardContent className="space-y-6">
+            <h2 className="text-xl font-bold">
+              <span className="text-3xl ml-1 font-semibold bg-clip-text bg-linear-to-r from-blue-800 via-blue-700 to-blue-600 drop-shadow-xl text-transparent tracking-wider">Aero</span>
+              <span className="text-3xl ml-1 font-semibold bg-clip-text bg-linear-to-r from-green-800 via-green-700 to-green-600 drop-shadow-xl text-transparent tracking-wider">Sun</span>
+              <span className="ml-1 uppercase text-yellow-600 font-semibold tracking-wider">Energy</span>
+            </h2>
+
+            <p className="text-lg text-gray-900 leading-relaxed">
+              <strong>AeroSun Energy</strong>, a flagship innovation of <strong>Aerosun Energy</strong>, is India’s first specialized manufacturer of portable and low-wind smart turbines. Founded by
+              <strong> Vulchi Vijaya Kumar</strong>, Aerosun Energy is driven by the belief that clean wind energy
+              should be accessible, affordable, and scalable — from rooftops in remote villages to commercial buildings in the heart of modern cities.
+            </p>
+
+            <p className="text-lg text-gray-900 leading-relaxed">
+              With strong roots in innovation, sustainability, and rural empowerment, Aerosun Energy
+              designs advanced wind energy systems that operate silently, generate power at low wind
+              speeds, and require minimal maintenance. Our solutions are built to perform reliably
+              across diverse Indian environments.
+            </p>
+
+            <p className="inline-flex bg-orange-500 px-4 py-1 text-lg font-medium text-white">
+              We don’t just build turbines. We create a future where every citizen can produce their own
+              clean energy.
+            </p>
+          </CardContent>
+        </Card>
+
+        {/* Core Values */}
+        <div>
+          <h3 className="text-2xl font-bold my-12">Our Core Values</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Sustainability",
+                desc: "Accelerating India's transition to renewable energy by reducing carbon footprints through clean wind solutions.",
+                bg: "bg-blue-50 dark:bg-blue-900/20",
+              },
+              {
+                title: "Innovation",
+                desc: "Designing low-wind, smart, and efficient turbine technology tailored for real-world conditions.",
+                bg: "bg-green-50 dark:bg-green-900/20",
+              },
+              {
+                title: "Accessibility",
+                desc: "Making renewable energy affordable and easy to adopt for homes, businesses, and rural communities.",
+                bg: "bg-yellow-50 dark:bg-yellow-900/20",
+              },
+              {
+                title: "Empowerment",
+                desc: "Enabling energy independence and strengthening rural and urban economies alike.",
+                bg: "bg-purple-50 dark:bg-purple-900/20",
+              },
+              {
+                title: "Reliability",
+                desc: "Delivering quiet, durable, and low-maintenance systems that perform consistently over time.",
+                bg: "bg-pink-50 dark:bg-pink-900/20",
+              },
+            ].map((value) => (
+              <Card key={value.title} className={value.bg}>
+                <CardContent className="space-y-2">
+                  <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{value.title}</h4>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">{value.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -50,8 +122,8 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="text-secondary uppercase tracking-widest text-md text-gray-900 dark:text-white">The Technology</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
+          <span className="text-secondary uppercase tracking-widest text-lg text-gray-900 dark:text-white">The Technology</span>
+          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-900 dark:text-white">
             Hybrid Solar and Wind Energy System Overview
           </h2>
           <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary" />
@@ -65,14 +137,14 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <p className="text-md font-semibold uppercase tracking-[0.32em] text-accent/90">Integrated Technology</p>
+            <p className="text-lg font-semibold uppercase tracking-[0.32em] text-accent/90">Integrated Technology</p>
             <h3 className="mt-4 max-w-lg text-2xl leading-tight sm:text-3xl">
               A hybrid platform designed to keep producing when single-source systems slow down.
             </h3>
-            <p className="mt-6 text-md leading-relaxed text-white/78 mb-6">
+            <p className="mt-6 text-lg leading-relaxed text-white/78 mb-6">
               Our <strong>hybrid solar wind energy</strong> system combines photovoltaic solar panels and compact wind turbines into one integrated, intelligent power unit. Solar panels capture sunlight during the day while the wind turbines generate power continuously — day or night, rain or shine. Together, they complement each other perfectly: when solar output drops (overcast skies or night-time), wind steps in to fill the gap.
             </p>
-            <p className="text-md leading-relaxed text-white/78 mb-6">
+            <p className="text-lg leading-relaxed text-white/78 mb-6">
               The result is a <strong>smart energy system</strong> that delivers far more consistent power than either source alone. Paired with IoT-enabled monitoring and optional battery storage, you get real-time visibility and control over every kilowatt generated — the foundation of India&apos;s green energy infrastructure.
             </p>
             <p className="text-lg leading-relaxed text-white/78">
@@ -82,15 +154,15 @@ export default function About() {
             <div className="mt-8 grid gap-4">
               <div className="rounded-md shadow-2xl border border-white/24 bg-white/24 p-4 backdrop-blur-md">
                 <p className="text-3xl font-bold text-accent">01</p>
-                <p className="mt-2 text-md text-white/72">Dual-source generation that reduces idle periods.</p>
+                <p className="mt-2 text-lg text-white/72">Dual-source generation that reduces idle periods.</p>
               </div>
               <div className="rounded-md shadow-2xl border border-white/24 bg-white/24 p-4 backdrop-blur-md">
                 <p className="text-3xl font-bold text-accent">02</p>
-                <p className="mt-2 text-md text-white/72">Smart controls that balance solar, wind, and storage.</p>
+                <p className="mt-2 text-lg text-white/72">Smart controls that balance solar, wind, and storage.</p>
               </div>
               <div className="rounded-md shadow-2xl border border-white/24 bg-white/24 p-4 backdrop-blur-md">
                 <p className="text-3xl font-bold text-accent">03</p>
-                <p className="mt-2 text-md text-white/72">Scalable deployment from home rooftops to public assets.</p>
+                <p className="mt-2 text-lg text-white/72">Scalable deployment from home rooftops to public assets.</p>
               </div>
             </div>
           </motion.div>
@@ -131,7 +203,7 @@ export default function About() {
                     {f.icon}
                   </div>
                   <h3 className="text-xl text-gray-900 dark:text-gray-100 mb-2">{f.title}</h3>
-                  <p className="text-md text-gray-500 dark:text-gray-400">{f.desc}</p>
+                  <p className="text-lg text-gray-500 dark:text-gray-400">{f.desc}</p>
                 </div>
               ))}
             </div>

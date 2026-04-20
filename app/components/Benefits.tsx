@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { TrendingDown, Globe, ShieldCheck, Infinity } from 'lucide-react'
 import Image from 'next/image'
+import { Card, CardContent } from './Card'
 
 const benefits = [
   {
@@ -56,7 +57,7 @@ export default function Benefits() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="text-secondary font-semibold uppercase tracking-widest text-md text-gray-900 dark:text-gray-100">Why Go Hybrid</span>
+          <span className="text-secondary font-semibold uppercase tracking-widest text-lg text-gray-900 dark:text-gray-100">Why Go Hybrid</span>
           <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-gray-100">
             Benefits of Hybrid Solar Wind Energy
           </h2>
@@ -107,13 +108,16 @@ export default function Benefits() {
             <motion.div
               key={b.title}
               variants={cardVariants}
-              className={`p-8 rounded-md shadow-md border ${b.bg} ${b.border} hover:shadow-lg hover:scale-105 transition-all duration-150`}
             >
-              <div className="mb-5 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white dark:bg-gray-700 shadow-sm">
-                {b.icon}
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">{b.title}</h3>
-              <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-md">{b.desc}</p>
+              <Card className={`hover:shadow-lg hover:scale-105 transition-all duration-150 ${b.bg} ${b.border}`}>
+                <CardContent>
+                  <div className="mb-5 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white dark:bg-gray-700 shadow-sm">
+                    {b.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">{b.title}</h3>
+                  <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-lg">{b.desc}</p>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </motion.div>

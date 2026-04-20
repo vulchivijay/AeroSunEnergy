@@ -131,19 +131,19 @@ export default function UseCases() {
                     </span>
                     <span className="text-lg font-semibold text-primary">{uc.tag}</span>
                   </div>
-                  <p className="mt-6 text-md leading-8 text-gray-600 dark:text-gray-300">
+                  <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
                     {uc.description}
                   </p>
                   <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                     {uc.points.map((point) => (
-                      <li key={point} className="rounded-sm shadow-sm border border-slate-200 bg-slate-50 px-4 py-3 text-md text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+                      <li key={point} className="rounded-sm shadow-sm border border-slate-200 bg-slate-50 px-4 py-3 text-lg text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
                         {point}
                       </li>
                     ))}
                   </ul>
                   <Link
                     href="#contact"
-                    className="inline-flex mt-8 items-center rounded-md bg-slate-950 px-6 py-3 text-md text-white transition-colors hover:bg-primary dark:bg-accent dark:text-slate-950 opacity-65 pointer-events-none"
+                    className="inline-flex mt-8 items-center rounded-md bg-slate-950 px-6 py-3 text-lg text-white transition-colors hover:bg-primary dark:bg-accent dark:text-slate-950 opacity-65 pointer-events-none"
                   >
                     Discuss this deployment
                   </Link>

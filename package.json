@@ -10,23 +10,25 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/third-parties": "^16.2.4",
-    "framer-motion": "^12.38.0",
-    "lucide-react": "^1.8.0",
     "next": "^16.2.4",
     "react": "^19",
-    "react-dom": "^19"
+    "react-dom": "^19",
+    "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
+    "@next/third-parties": "^16.2.4",
     "@tailwindcss/postcss": "^4.2.2",
     "@types/node": "^25",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.5.0",
+    "clsx": "^2.1.1",
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.2.4",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^1.8.0",
     "postcss": "^8",
-    "tailwindcss": "^4.2.2",
+    "tailwind-merge": "^3.5.0",
     "typescript": "^6"
   }
 }

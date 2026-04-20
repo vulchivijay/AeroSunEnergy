@@ -28,7 +28,7 @@ export default function CTASection() {
           </div>
           <div className="relative grid gap-10 lg:grid-cols-[1fr_280px] lg:items-end">
             <div>
-              <span className="inline-block rounded-md md:border md:border-white/16 bg-white/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.34em] text-white/72 backdrop-blur-md sm:text-md">
+              <span className="inline-block rounded-md md:border md:border-white/16 bg-white/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.34em] text-white/72 backdrop-blur-md sm:text-lg">
                 Build The Right System
               </span>
               <h2 className="mt-6 max-w-3xl text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
@@ -40,13 +40,13 @@ export default function CTASection() {
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
                   href="#contact"
-                  className="inline-flex items-center rounded-md bg-accent px-8 py-3.5 text-md font-bold text-slate-950 transition-transform duration-150 hover:scale-[1.02]"
+                  className="inline-flex items-center rounded-md bg-accent px-8 py-3.5 text-lg font-bold text-slate-950 transition-transform duration-150 hover:scale-[1.02]"
                 >
                   Request a Free Quote
                 </a>
                 <a
                   href="#how-it-works"
-                  className="inline-flex items-center rounded-md border border-white/18 bg-white/8 px-8 py-3.5 text-md font-bold text-white backdrop-blur-md transition-colors duration-150 hover:bg-white/14 opacity-55 pointer-events-none"
+                  className="inline-flex items-center rounded-md border border-white/18 bg-white/8 px-8 py-3.5 text-lg font-bold text-white backdrop-blur-md transition-colors duration-150 hover:bg-white/14 opacity-55 pointer-events-none"
                 >
                   See How It Works
                 </a>
@@ -57,16 +57,16 @@ export default function CTASection() {
               <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-white/60">Project Spectrum</p>
               <div className="mt-5 space-y-3">
                 <div className="rounded-md border border-white/12 bg-slate-950/35 px-4 py-3">
-                  <p className="text-md font-semibold">Residential rooftops</p>
+                  <p className="text-lg font-semibold">Residential rooftops</p>
                 </div>
                 <div className="rounded-md border border-white/12 bg-slate-950/35 px-4 py-3">
-                  <p className="text-md font-semibold">Parks and civic spaces</p>
+                  <p className="text-lg font-semibold">Parks and civic spaces</p>
                 </div>
                 <div className="rounded-md border border-white/12 bg-slate-950/35 px-4 py-3">
-                  <p className="text-md font-semibold">Industrial and open land</p>
+                  <p className="text-lg font-semibold">Industrial and open land</p>
                 </div>
                 <div className="rounded-md border border-white/12 bg-slate-950/35 px-4 py-3">
-                  <p className="text-md font-semibold">Highways and smart infrastructure</p>
+                  <p className="text-lg font-semibold">Highways and smart infrastructure</p>
                 </div>
               </div>
             </div>
