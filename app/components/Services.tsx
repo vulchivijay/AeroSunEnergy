@@ -52,7 +52,7 @@ import Image from 'next/image'
 
 export default function Services() {
   return (
-    <section id="features" className="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
+    <section id="services" className="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-primary font-semibold uppercase tracking-widest text-lg text-gray-600 dark:text-gray-900">Key Features &amp; Benefits</span>

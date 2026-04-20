@@ -42,7 +42,7 @@ const features = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 overflow-hidden">
+    <section id="about" className="py-24 bg-white dark:bg-gray-950 overflow-hidden">
       {/* About Section */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24">
         <Card className="rounded-2xl shadow-md">
@@ -118,7 +118,7 @@ export default function About() {
           transition={{ duration: 0.7 }}
         >
           <span className="text-secondary uppercase tracking-widest text-lg text-gray-900 dark:text-white">The Technology</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
+          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-900 dark:text-white">
             Hybrid Solar and Wind Energy System Overview
           </h2>
           <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary" />
