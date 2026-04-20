@@ -95,14 +95,17 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
         >
           <div className="relative w-full max-w-3xl">
-            <div className="flex items-center justify-center pb-12">
-              <div className="relative rounded-full shadow-xl bg-linear-to-br from-green-100 via-white to-cyan-100 p-2 animate-spin dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 dark:shadow-[0_30px_80px_-40px_rgba(16,185,129,0.2)]">
+            <div className="flex items-center justify-center my-8">
+              <div className="relative rounded-full shadow-xl bg-linear-to-br from-green-50 via-white to-cyan-50 p-2 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 dark:shadow-[0_30px_80px_-40px_rgba(16,185,129,0.2)]">
+                <div className="absolute inset-0 rounded-full border-2 border-green-300/50 animate-rise-glow"></div>
+                <div className="absolute inset-0 rounded-full border-2 border-blue-300/30 animate-rise-glow" style={{ animationDelay: '0.5s' }}></div>
+                <div className="absolute inset-0 rounded-full border-2 border-purple-300/20 animate-rise-glow" style={{ animationDelay: '1s' }}></div>
                 <Image
                   src="/images/lord-shiva-aerosunenergy.png"
                   alt="Lord Shiva"
-                  width={124}
-                  height={124}
-                  className="h-32 w-32 object-contain"
+                  width={128}
+                  height={128}
+                  className="h-32 w-32 object-contain relative z-10 brightness-90"
                 />
               </div>
             </div>
