@@ -95,6 +95,17 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
         >
           <div className="relative w-full max-w-3xl">
+            <div className="flex items-center justify-center pb-12">
+              <div className="relative rounded-full shadow-xl bg-linear-to-br from-green-100 via-white to-cyan-100 p-2 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 dark:shadow-[0_30px_80px_-40px_rgba(16,185,129,0.2)]">
+                <Image
+                  src="/images/lord-shiva-aerosunenergy.png"
+                  alt="Lord Shiva"
+                  width={124}
+                  height={124}
+                  className="h-32 w-32 object-contain"
+                />
+              </div>
+            </div>
             <div className="absolute inset-8 rounded-[2.5rem] bg-accent/20 blur-3xl" aria-hidden="true" />
             <div className="relative overflow-hidden rounded-[2rem] border border-white/16 bg-white/8 p-3 shadow-[0_40px_120px_rgba(3,8,18,0.4)] backdrop-blur-sm">
               <div className="absolute left-5 right-5 top-5 z-10 flex items-center justify-between rounded-md border border-white/16 bg-slate-950/35 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/75 backdrop-blur-md">

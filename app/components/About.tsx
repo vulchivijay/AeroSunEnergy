@@ -44,23 +44,10 @@ export default function About() {
   return (
     <section id="about" className="py-24 overflow-hidden">
       {/* About Section */}
-      <div className="flex items-center justify-center py-12">
-        <div className="relative rounded-full shadow-xl bg-linear-to-br from-green-100 via-white to-cyan-100 p-2 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 dark:shadow-[0_30px_80px_-40px_rgba(16,185,129,0.2)]">
-          <Image
-            src="/images/lord-shiva-aerosunenergy.png"
-            alt="Lord Shiva"
-            width={124}
-            height={124}
-            className="h-32 w-32 object-contain"
-          />
-        </div>
-      </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24">
         <Card className="rounded-2xl shadow-md">
-
           <CardContent className="p-8 space-y-6">
             <h2 className="text-xl font-bold">
-              About
               <span className="text-3xl ml-1 font-semibold bg-clip-text bg-linear-to-r from-blue-800 via-blue-700 to-blue-600 drop-shadow-xl text-transparent tracking-wider">Aero</span>
               <span className="text-3xl ml-1 font-semibold bg-clip-text bg-linear-to-r from-green-800 via-green-700 to-green-600 drop-shadow-xl text-transparent tracking-wider">Sun</span>
               <span className="ml-1 uppercase text-yellow-600 font-semibold tracking-wider">Energy</span>
