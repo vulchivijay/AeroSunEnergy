@@ -38,12 +38,12 @@ const benefits = [
 
 const containerVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.15 } },
+  visible: { transition: { staggerChildren: 0.1 } },
 }
 
 const cardVariants = {
   hidden: { opacity: 0, scale: 0.95, y: 20 },
-  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' as const } },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.3, ease: 'easeOut' as const } },
 }
 
 export default function Benefits() {
@@ -55,7 +55,7 @@ export default function Benefits() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.4 }}
         >
           <span className="text-secondary font-semibold uppercase tracking-widest text-lg text-gray-900 dark:text-gray-100">Why Go Hybrid</span>
           <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-gray-100">
@@ -70,7 +70,7 @@ export default function Benefits() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ duration: 0.2, delay: 0.1 }}
         >
           <div className="relative max-w-6xl mx-auto">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-md blur-3xl" aria-hidden="true" />

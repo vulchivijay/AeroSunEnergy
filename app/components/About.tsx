@@ -120,7 +120,7 @@ export default function About() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.4 }}
         >
           <span className="text-secondary uppercase tracking-widest text-lg text-gray-900 dark:text-white">The Technology</span>
           <h2 className="mt-2 text-3xl sm:text-4xl text-gray-900 dark:text-white">
@@ -135,7 +135,7 @@ export default function About() {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.4 }}
           >
             <p className="text-lg font-semibold uppercase tracking-[0.32em] text-accent/90">Integrated Technology</p>
             <h3 className="mt-4 max-w-lg text-2xl leading-tight sm:text-3xl">
@@ -172,7 +172,7 @@ export default function About() {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.15 }}
+            transition={{ duration: 0.2, delay: 0.1 }}
           >
             <div className="relative aspect-4/3 overflow-hidden rounded-md bg-gray-100 shadow-md ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
               <Image

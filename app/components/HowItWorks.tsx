@@ -74,12 +74,12 @@ const steps = [
 
 const containerVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.18 } },
+  visible: { transition: { staggerChildren: 0.1 } },
 }
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' as const } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: 'easeOut' as const } },
 }
 
 export default function HowItWorks() {
@@ -91,7 +91,7 @@ export default function HowItWorks() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.4 }}
         >
           <span className="text-primary uppercase tracking-widest text-lg text-gray-900 dark:text-gray-100">Simple Process</span>
           <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
@@ -109,7 +109,7 @@ export default function HowItWorks() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ duration: 0.2, delay: 0.1 }}
         >
           <div className="relative max-w-7xl mx-auto">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-secondary/20 rounded-md blur-3xl" aria-hidden="true" />

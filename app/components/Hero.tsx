@@ -24,7 +24,7 @@ export default function Hero() {
           className="z-10"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
+          transition={{ duration: 0.2, ease: 'easeOut' }}
         >
           <span className="mb-6 inline-flex rounded-md shadow-md border border-white/24 bg-white/24 px-3 py-2 text-lg uppercase tracking-[0.45em] text-white backdrop-blur-md">
             Energy Infrastructure Reimagined
@@ -51,7 +51,7 @@ export default function Hero() {
             className="mt-10 flex flex-wrap gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.15, ease: 'easeOut' }}
+            transition={{ duration: 0.2, delay: 0.1, ease: 'easeOut' }}
           >
             <Link
               href="#how-it-works"
@@ -92,7 +92,7 @@ export default function Hero() {
           className="z-10 flex justify-center lg:justify-end"
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
+          transition={{ duration: 0.2, delay: 0.05, ease: 'easeOut' }}
         >
           <div className="relative w-full max-w-3xl">
             <div className="flex items-center justify-center my-8">

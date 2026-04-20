@@ -70,7 +70,7 @@ export default function WhyChooseUs() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ duration: 0.2, delay: 0.2 }}
         >
           <div className="relative max-w-7xl mx-auto">
             <div className="absolute inset-0 rounded-md bg-linear-to-r from-accent/20 via-primary/20 to-secondary/20 blur-3xl" aria-hidden="true" />
