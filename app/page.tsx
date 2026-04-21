@@ -22,6 +22,7 @@ export default function Home() {
       <HowItWorks />
       <Features />
       <SavoniusRotor />
+      <Savonius3D />
       <UseCases />
       <Benefits />
       <Services />
