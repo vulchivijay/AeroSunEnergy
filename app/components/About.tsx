@@ -92,7 +92,7 @@ export default function About() {
                 />
               </div>
 
-              <div className="relative group">
+              <div className="w-full relative group">
                 {/* Hexagonal Frame */}
                 <div className="absolute inset-0 transform rotate-30 scale-110">
                   <div className="w-full h-full bg-gradient-to-br from-primary/20 via-accent/30 to-secondary/20 rounded-lg blur-sm animate-pulse"></div>
@@ -105,7 +105,6 @@ export default function About() {
                 <div className="relative w-36 h-36 lg:w-44 lg:h-44 overflow-hidden transform transition-transform duration-300 group-hover:scale-105">
                   {/* Energy Rays Background */}
                   <div className="absolute inset-0 bg-gradient-radial from-accent/10 via-transparent to-transparent animate-spin" style={{ animationDuration: '20s' }}></div>
-
                   <Image
                     src="/images/founder-aerosunenergy.jpeg"
                     alt="Vulchi Vijaya Kumar - Founder of AeroSun Energy"
@@ -123,7 +122,7 @@ export default function About() {
 
                 {/* Turbine Blade Accents */}
                 <motion.div
-                  className="absolute -top-2 -right-2 w-6 h-6 text-accent opacity-80"
+                  className="absolute -top-2 -right-2 w-6 h-6 text-accent"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                 >
@@ -179,8 +178,8 @@ export default function About() {
                 </motion.p>
               </div>
 
-              <div className="pr-12">
-                <div className="relative rounded-full shadow-xl bg-linear-to-br from-green-50 via-white to-cyan-50 p-2 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 dark:shadow-[0_30px_80px_-40px_rgba(16,185,129,0.2)]">
+              <div className="flex items-center">
+                <div className="relative rounded-full shadow-2xl bg-linear-to-br from-green-50 via-white to-cyan-50 p-2 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 dark:shadow-[0_30px_80px_-40px_rgba(16,185,129,0.2)]">
                   <div className="absolute inset-0 rounded-full border-2 border-green-300/50 animate-rise-glow"></div>
                   <div className="absolute inset-0 rounded-full border-2 border-blue-300/50 animate-rise-glow" style={{ animationDelay: '0.5s' }}></div>
                   <div className="absolute inset-0 rounded-full border-2 border-purple-300/50 animate-rise-glow" style={{ animationDelay: '1s' }}></div>
@@ -189,7 +188,7 @@ export default function About() {
                     alt="Lord Shiva"
                     width={128}
                     height={128}
-                    className="h-32 w-32 object-contain relative z-10 brightness-90"
+                    className="h-32 w-32 object-contain relative z-10 brightness-100"
                   />
                 </div>
               </div>
