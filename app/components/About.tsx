@@ -150,7 +150,7 @@ export default function About() {
 
               <div className="px-6 text-center lg:text-left relative z-10 lg:flex-1">
                 <motion.h3
-                  className="text-2xl font-medium text-gray-900 dark:text-white mb-1"
+                  className="text-2xl font-medium text-gray-900 dark:text-white my-16"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
