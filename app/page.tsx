@@ -3,6 +3,7 @@ import Hero from '@/app/components/Hero'
 import About from '@/app/components/About'
 import HowItWorks from '@/app/components/HowItWorks'
 import Features from '@/app/components/Features'
+import SavoniusRotor from '@/app/components/SavoniusRotor'
 import UseCases from '@/app/components/UseCases'
 import Benefits from '@/app/components/Benefits'
 import Services from '@/app/components/Services'
@@ -19,6 +20,7 @@ export default function Home() {
       <About />
       <HowItWorks />
       <Features />
+      <SavoniusRotor />
       <UseCases />
       <Benefits />
       <Services />
