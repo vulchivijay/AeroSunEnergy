@@ -55,7 +55,7 @@ export default function About() {
 
             {/* Founder Image */}
             <motion.div
-              className="relative flex flex-col items-center lg:flex-row lg:items-center lg:justify-start gap-8 py-6"
+              className="relative flex flex-col items-center lg:flex-row lg:items-center lg:justify-start gap-8 px-16 py-6"
               initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
               whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
               viewport={{ once: true }}
@@ -104,7 +104,7 @@ export default function About() {
                 {/* Main Image Container */}
                 <div className="relative w-36 h-36 lg:w-44 lg:h-44 overflow-hidden transform transition-transform duration-300 group-hover:scale-105">
                   {/* Energy Rays Background */}
-                  <div className="absolute inset-0 bg-gradient-radial from-accent/10 via-transparent to-transparent animate-spin" style={{animationDuration: '20s'}}></div>
+                  <div className="absolute inset-0 bg-gradient-radial from-accent/10 via-transparent to-transparent animate-spin" style={{ animationDuration: '20s' }}></div>
 
                   <Image
                     src="/images/founder-aerosunenergy.jpeg"
@@ -128,7 +128,7 @@ export default function About() {
                   transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                 >
                   <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                    <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" />
                   </svg>
                 </motion.div>
                 <motion.div
@@ -137,7 +137,7 @@ export default function About() {
                   transition={{ duration: 6, repeat: Infinity, ease: "linear", delay: 1 }}
                 >
                   <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                    <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" />
                   </svg>
                 </motion.div>
 
@@ -160,7 +160,7 @@ export default function About() {
                   Vulchi Vijaya Kumar
                 </motion.h3>
                 <motion.p
-                  className="text-base text-gray-600 dark:text-gray-400 mb-1"
+                  className="text-lg text-gray-600 dark:text-gray-400 mb-1"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -169,7 +169,7 @@ export default function About() {
                   Founder & Visionary Leader
                 </motion.p>
                 <motion.p
-                  className="text-base text-gray-700 dark:text-gray-300 leading-relaxed"
+                  className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -179,7 +179,7 @@ export default function About() {
                 </motion.p>
               </div>
 
-              <div className="px-12">
+              <div className="pr-12">
                 <div className="relative rounded-full shadow-xl bg-linear-to-br from-green-50 via-white to-cyan-50 p-2 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 dark:shadow-[0_30px_80px_-40px_rgba(16,185,129,0.2)]">
                   <div className="absolute inset-0 rounded-full border-2 border-green-300/50 animate-rise-glow"></div>
                   <div className="absolute inset-0 rounded-full border-2 border-blue-300/50 animate-rise-glow" style={{ animationDelay: '0.5s' }}></div>

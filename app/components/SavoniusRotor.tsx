@@ -5,7 +5,7 @@ import Image from 'next/image';
 export default function SavoniusRotor() {
   return (
     <section className="w-full py-12 px-4 md:px-10 lg:px-20 bg-gradient-to-b from-slate-50 to-white">
-      
+
       {/* Header */}
       <div className="max-w-5xl mx-auto text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
@@ -18,14 +18,14 @@ export default function SavoniusRotor() {
 
       {/* Content Grid */}
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-        
+
         {/* Image */}
         <div className="relative w-full h-[300px] md:h-[400px]">
           <Image
             src="/images/savonius-rotor.png" // place your image in public/images
             alt="Savonius wind rotor"
             fill
-            className="object-contain rounded-xl shadow-md"
+            className="object-contain rounded-md shadow-md"
           />
         </div>
 
@@ -53,7 +53,7 @@ export default function SavoniusRotor() {
 
       {/* Specs Section */}
       <div className="max-w-5xl mx-auto mt-12 grid sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        
+
         <div className="p-5 rounded-xl bg-white shadow">
           <p className="text-gray-500 text-sm">Efficiency</p>
           <p className="text-xl font-semibold text-gray-800">15–25%</p>

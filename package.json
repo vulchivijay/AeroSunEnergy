@@ -17,6 +17,8 @@
   },
   "devDependencies": {
     "@next/third-parties": "^16.2.4",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.0",
     "@tailwindcss/postcss": "^4.2.2",
     "@types/node": "^25",
     "@types/react": "^19",
@@ -29,6 +31,7 @@
     "lucide-react": "^1.8.0",
     "postcss": "^8",
     "tailwind-merge": "^3.5.0",
+    "three": "^0.184.0",
     "typescript": "^6"
   }
 }
