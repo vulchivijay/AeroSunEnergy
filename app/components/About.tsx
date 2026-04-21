@@ -47,7 +47,7 @@ export default function About() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24">
         <Card>
           <CardContent className="space-y-8">
-            <h2 className="text-xl font-bold">
+            <h2 className="text-xl font-bold mb-12">
               <span className="text-3xl ml-1 font-semibold bg-clip-text bg-linear-to-r from-blue-800 via-blue-700 to-blue-600 drop-shadow-xl text-transparent tracking-wider">Aero</span>
               <span className="text-3xl ml-1 font-semibold bg-clip-text bg-linear-to-r from-green-800 via-green-700 to-green-600 drop-shadow-xl text-transparent tracking-wider">Sun</span>
               <span className="ml-1 uppercase text-yellow-600 font-semibold tracking-wider">Energy</span>
@@ -55,7 +55,7 @@ export default function About() {
 
             {/* Founder Image */}
             <motion.div
-              className="relative flex flex-col items-center lg:flex-row lg:items-center lg:justify-start gap-8 px-16 py-6"
+              className="w-full relative flex flex-col items-center lg:flex-row gap-2 md:gap-8 md:px-16 md:py-6"
               initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
               whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
               viewport={{ once: true }}
@@ -95,17 +95,16 @@ export default function About() {
               <div className="relative group">
                 {/* Hexagonal Frame */}
                 <div className="absolute inset-0 transform rotate-30 scale-110">
-                  <div className="w-full h-full bg-gradient-to-br from-primary/20 via-accent/30 to-secondary/20 rounded-lg blur-sm animate-pulse"></div>
+                  <div className="w-full h-full bg-gradient-to-br from-primary/20 via-accent/30 to-secondary/20 rounded-lg blur-sm"></div>
                 </div>
                 <div className="absolute inset-0 transform rotate-30 scale-105">
-                  <div className="w-full h-full border-2 border-primary/40 rounded-lg"></div>
+                  <div className="w-full h-full border-2 border-primary/40 rounded-lg animate-square-box"></div>
                 </div>
 
                 {/* Main Image Container */}
                 <div className="relative w-36 h-36 lg:w-44 lg:h-44 overflow-hidden transform transition-transform duration-300 group-hover:scale-105">
                   {/* Energy Rays Background */}
                   <div className="absolute inset-0 bg-gradient-radial from-accent/10 via-transparent to-transparent animate-spin" style={{ animationDuration: '20s' }}></div>
-
                   <Image
                     src="/images/founder-aerosunenergy.jpeg"
                     alt="Vulchi Vijaya Kumar - Founder of AeroSun Energy"
@@ -123,27 +122,27 @@ export default function About() {
 
                 {/* Turbine Blade Accents */}
                 <motion.div
-                  className="absolute -top-2 -right-2 w-6 h-6 text-accent opacity-80"
+                  className="absolute -top-3 -right-3 w-10 h-10 text-accent"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                 >
-                  <svg viewBox="0 0 24 24" fill="currentColor">
+                  <svg viewBox="0 0 24 24" fill="purple">
                     <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" />
                   </svg>
                 </motion.div>
                 <motion.div
-                  className="absolute -bottom-1 -left-1 w-4 h-4 text-secondary opacity-60"
+                  className="absolute -bottom-2 -left-2 w-6 h-6 text-secondary"
                   animate={{ rotate: -360 }}
                   transition={{ duration: 6, repeat: Infinity, ease: "linear", delay: 1 }}
                 >
-                  <svg viewBox="0 0 24 24" fill="currentColor">
+                  <svg viewBox="0 0 24 24" fill="blue">
                     <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" />
                   </svg>
                 </motion.div>
 
                 {/* Achievement Badge */}
-                <div className="absolute bottom-2 right-2 bg-gradient-to-br from-accent to-primary text-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg border-2 border-white dark:border-gray-800">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <div className="absolute bottom-2 right-2 rounded-full w-8 h-8 flex items-center justify-center border-2 border-green-500">
+                  <svg className="w-4 h-4" fill="#00c758" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                 </div>
@@ -151,7 +150,7 @@ export default function About() {
 
               <div className="px-6 text-center lg:text-left relative z-10 lg:flex-1">
                 <motion.h3
-                  className="text-2xl font-medium text-gray-900 dark:text-white mb-1"
+                  className="text-2xl font-medium text-gray-900 dark:text-white mt-12"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -169,7 +168,7 @@ export default function About() {
                   Founder & Visionary Leader
                 </motion.p>
                 <motion.p
-                  className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
+                  className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-12"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -179,8 +178,8 @@ export default function About() {
                 </motion.p>
               </div>
 
-              <div className="pr-12">
-                <div className="relative rounded-full shadow-xl bg-linear-to-br from-green-50 via-white to-cyan-50 p-2 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 dark:shadow-[0_30px_80px_-40px_rgba(16,185,129,0.2)]">
+              <div className="flex items-center mb-12">
+                <div className="relative rounded-full shadow-2xl bg-linear-to-br from-green-50 via-white to-cyan-50 p-2 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 dark:shadow-[0_30px_80px_-40px_rgba(16,185,129,0.2)]">
                   <div className="absolute inset-0 rounded-full border-2 border-green-300/50 animate-rise-glow"></div>
                   <div className="absolute inset-0 rounded-full border-2 border-blue-300/50 animate-rise-glow" style={{ animationDelay: '0.5s' }}></div>
                   <div className="absolute inset-0 rounded-full border-2 border-purple-300/50 animate-rise-glow" style={{ animationDelay: '1s' }}></div>
@@ -189,7 +188,7 @@ export default function About() {
                     alt="Lord Shiva"
                     width={128}
                     height={128}
-                    className="h-32 w-32 object-contain relative z-10 brightness-90"
+                    className="h-32 w-32 object-contain relative z-10 brightness-100"
                   />
                 </div>
               </div>
