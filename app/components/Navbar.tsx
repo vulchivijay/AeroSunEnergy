@@ -57,6 +57,9 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={() => setActiveHref(link.href)}
+                title={`Navigate to ${link.label} section`}
+                aria-label={`Go to ${link.label}`}
+                data-nav={link.href.replace('#', '')}
                 className={`relative rounded-lg px-4 py-2 text-md font-medium tracking-wide transition-all duration-300 ease-in-out after:absolute after:bottom-1 after:left-1/2 after:h-0.5 after:-translate-x-1/2 after:rounded-full after:bg-green-500 after:transition-all after:duration-300 after:ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400/70 dark:after:bg-green-400 ${activeHref === link.href
                   ? 'text-green-600 font-semibold tracking-wider after:w-4/5 dark:text-green-400'
                   : 'text-slate-600 after:w-0 hover:text-green-500 hover:font-semibold hover:tracking-wider hover:after:w-4/5 dark:text-slate-300 dark:hover:text-green-400'
@@ -68,6 +71,9 @@ export default function Navbar() {
           </div>
           <Link
             href="/contact"
+            title="Start a renewable energy project with AeroSun Energy"
+            aria-label="Contact AeroSun Energy to start your project"
+            data-cta="start-project"
             className="rounded-full bg-slate-950 px-5 py-2.5 text-md text-white transition-transform duration-200 hover:scale-[1.03] hover:bg-primary dark:bg-accent dark:text-slate-950"
           >
             Start a Project

@@ -107,6 +107,9 @@ export default function Services() {
                 </p>
                 <Link
                   href="#contact"
+                  title="Learn more about AeroSun Energy services"
+                  aria-label="Contact us to learn more about our services"
+                  data-cta="learn-more"
                   className="inline-block mt-6 text-primary font-semibold hover:text-secondary transition-colors opacity-55 pointer-events-none"
                 >
                   Learn more →

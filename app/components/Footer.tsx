@@ -77,7 +77,10 @@ export default function Footer() {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Twitter"
+                aria-label="Follow AeroSun Energy on Twitter"
+                title="Follow AeroSun Energy on Twitter (opens in new tab)"
+                itemProp="sameAs"
+                data-social="twitter"
                 className="rounded-md bg-gray-900 p-2 transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary hover:shadow-md"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
@@ -89,7 +92,10 @@ export default function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LinkedIn"
+                aria-label="Connect with AeroSun Energy on LinkedIn"
+                title="Connect with AeroSun Energy on LinkedIn (opens in new tab)"
+                itemProp="sameAs"
+                data-social="linkedin"
                 className="rounded-md bg-gray-900 p-2 transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary hover:shadow-md"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
@@ -101,7 +107,10 @@ export default function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Facebook"
+                aria-label="Like AeroSun Energy on Facebook"
+                title="Like AeroSun Energy on Facebook (opens in new tab)"
+                itemProp="sameAs"
+                data-social="facebook"
                 className="rounded-md bg-gray-900 p-2 transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary hover:shadow-md"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
@@ -114,10 +123,13 @@ export default function Footer() {
             <div className="bg-white rounded-md shadow-md border border-gray-200 hover:shadow-xl transition-shadow inline-block dark:bg-slate-800 dark:border-gray-600">
               <Image
                 src="/images/qr-code.png"
-                alt="AeroSun Energy QR Code"
+                alt="AeroSun Energy QR Code - Scan to visit our website"
                 width={200}
                 height={200}
                 className="w-50 h-auto"
+                title="AeroSun Energy Contact QR Code"
+                itemProp="image"
+                data-seo="qr-code"
               />
               <p className="text-center text-md text-gray-600 mt-1 mb-4 dark:text-gray-300">Scan</p>
             </div>
@@ -125,13 +137,13 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="bg-yellow-300 text-gray-950 text-md py-1 text-center border-b border-t-2 border-amber-300">This site is under development... Build with <Link href="https://chatgpt.com" target="_blank">ChatGPT</Link> and <Link href="https://github.com" target="_blank">Github Copilot</Link>.</div>
+      <div className="bg-yellow-300 text-gray-950 text-md py-1 text-center border-b border-t-2 border-amber-300"> This website is under development. Build with <Link href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" title="Visit ChatGPT website" data-external="chatgpt" className="underline">ChatGPT</Link> and <Link href="https://github.com" target="_blank" rel="noopener noreferrer" title="Visit GitHub website" data-external="github" className="underline">GitHub</Link>.</div>
 
       <div className="border-t-2 border-gray-200 py-6 dark:border-gray-700">
         <div className="flex items-center justify-center">
           <p className="max-w-7xl mx-auto px-3 text-center text-gray-500 text-sm dark:text-gray-400">
             <strong>Vulchi Vijaya Kumar Raju (Kshatriya's)</strong> © 2026 AeroSun Energy Private Limited <span className="underline underline-offset-4 text-orange-600">(Registration is in process)</span>. All rights reserved. |{' '}
-            <Link href="https://aerosunenergy.in" className="transition-all duration-200 hover:text-primary hover:underline hover:underline-offset-4 dark:hover:text-primary">
+            <Link href="https://aerosunenergy.in" target="_blank" rel="noopener noreferrer" title="Visit AeroSun Energy official website" itemProp="url" data-external="website" className="transition-all duration-200 hover:text-primary hover:underline hover:underline-offset-4 dark:hover:text-primary">
               aerosunenergy.in
             </Link>
           </p>

@@ -118,6 +118,9 @@ export default function WindGenerators() {
                 </ul>
                 <Link
                   href="#contact"
+                  title="Get a quote for AeroSun Energy wind generators"
+                  aria-label="Request a quote for this wind generator model"
+                  data-cta="get-quote"
                   className={`inline-block bg-gradient-to-r ${gen.accentFrom} ${gen.accentTo} text-white font-semoibold px-6 py-2.5 rounded-xl shadow-xl hover:opacity-90 transition-opacity text-lg opacity-65 pointer-events-none`}
                 >
                   Get a Quote →

@@ -46,24 +46,163 @@ export default function About() {
       {/* About Section */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24">
         <Card>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-8">
             <h2 className="text-xl font-bold">
               <span className="text-3xl ml-1 font-semibold bg-clip-text bg-linear-to-r from-blue-800 via-blue-700 to-blue-600 drop-shadow-xl text-transparent tracking-wider">Aero</span>
               <span className="text-3xl ml-1 font-semibold bg-clip-text bg-linear-to-r from-green-800 via-green-700 to-green-600 drop-shadow-xl text-transparent tracking-wider">Sun</span>
               <span className="ml-1 uppercase text-yellow-600 font-semibold tracking-wider">Energy</span>
             </h2>
 
+            {/* Founder Image */}
+            <motion.div
+              className="relative flex flex-col items-center lg:flex-row lg:items-center lg:justify-start gap-8 py-6"
+              initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
+              whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
+            >
+              {/* Floating Energy Particles */}
+              <div className="absolute inset-0 pointer-events-none">
+                <motion.div
+                  className="absolute top-4 left-8 w-2 h-2 bg-accent rounded-full opacity-60"
+                  animate={{
+                    y: [-10, 10, -10],
+                    x: [-5, 5, -5],
+                    scale: [1, 1.2, 1]
+                  }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <motion.div
+                  className="absolute top-12 right-6 w-1.5 h-1.5 bg-primary rounded-full opacity-70"
+                  animate={{
+                    y: [10, -10, 10],
+                    x: [5, -5, 5],
+                    scale: [1.2, 1, 1.2]
+                  }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                />
+                <motion.div
+                  className="absolute bottom-8 left-12 w-1 h-1 bg-secondary rounded-full opacity-50"
+                  animate={{
+                    y: [-8, 8, -8],
+                    x: [-3, 3, -3],
+                    scale: [1, 1.3, 1]
+                  }}
+                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                />
+              </div>
+
+              <div className="relative group">
+                {/* Hexagonal Frame */}
+                <div className="absolute inset-0 transform rotate-30 scale-110">
+                  <div className="w-full h-full bg-gradient-to-br from-primary/20 via-accent/30 to-secondary/20 rounded-lg blur-sm animate-pulse"></div>
+                </div>
+                <div className="absolute inset-0 transform rotate-30 scale-105">
+                  <div className="w-full h-full border-2 border-primary/40 rounded-lg"></div>
+                </div>
+
+                {/* Main Image Container */}
+                <div className="relative w-36 h-36 lg:w-44 lg:h-44 overflow-hidden transform transition-transform duration-300 group-hover:scale-105">
+                  {/* Energy Rays Background */}
+                  <div className="absolute inset-0 bg-gradient-radial from-accent/10 via-transparent to-transparent animate-spin" style={{animationDuration: '20s'}}></div>
+
+                  <Image
+                    src="/images/founder-aerosunenergy.jpeg"
+                    alt="Vulchi Vijaya Kumar - Founder of AeroSun Energy"
+                    fill
+                    sizes="(min-width: 1024px) 176px, 144px"
+                    className="object-cover rounded-lg shadow-2xl"
+                    loading="eager"
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+IRjWjBqO6O2mhP//Z"
+                  />
+
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-accent/10 rounded-lg"></div>
+                </div>
+
+                {/* Turbine Blade Accents */}
+                <motion.div
+                  className="absolute -top-2 -right-2 w-6 h-6 text-accent opacity-80"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                  </svg>
+                </motion.div>
+                <motion.div
+                  className="absolute -bottom-1 -left-1 w-4 h-4 text-secondary opacity-60"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "linear", delay: 1 }}
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                  </svg>
+                </motion.div>
+
+                {/* Achievement Badge */}
+                <div className="absolute bottom-2 right-2 bg-gradient-to-br from-accent to-primary text-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg border-2 border-white dark:border-gray-800">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+
+              <div className="px-6 text-center lg:text-left relative z-10 lg:flex-1">
+                <motion.h3
+                  className="text-2xl font-medium text-gray-900 dark:text-white mb-1"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.4 }}
+                >
+                  Vulchi Vijaya Kumar
+                </motion.h3>
+                <motion.p
+                  className="text-base text-gray-600 dark:text-gray-400 mb-1"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.5 }}
+                >
+                  Founder & Visionary Leader
+                </motion.p>
+                <motion.p
+                  className="text-base text-gray-700 dark:text-gray-300 leading-relaxed"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.6 }}
+                >
+                  Driving India's renewable energy revolution with cutting-edge hybrid technology solutions that empower communities and businesses across the nation.
+                </motion.p>
+              </div>
+
+              <div className="px-12">
+                <div className="relative rounded-full shadow-xl bg-linear-to-br from-green-50 via-white to-cyan-50 p-2 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 dark:shadow-[0_30px_80px_-40px_rgba(16,185,129,0.2)]">
+                  <div className="absolute inset-0 rounded-full border-2 border-green-300/50 animate-rise-glow"></div>
+                  <div className="absolute inset-0 rounded-full border-2 border-blue-300/50 animate-rise-glow" style={{ animationDelay: '0.5s' }}></div>
+                  <div className="absolute inset-0 rounded-full border-2 border-purple-300/50 animate-rise-glow" style={{ animationDelay: '1s' }}></div>
+                  <Image
+                    src="/images/lord-shiva-aerosunenergy.png"
+                    alt="Lord Shiva"
+                    width={128}
+                    height={128}
+                    className="h-32 w-32 object-contain relative z-10 brightness-90"
+                  />
+                </div>
+              </div>
+            </motion.div>
+
             <p className="text-lg text-gray-900 leading-relaxed">
-              <strong>AeroSun Energy</strong>, a flagship innovation of <strong>Aerosun Energy</strong>, is India’s first specialized manufacturer of portable and low-wind smart turbines. Founded by
-              <strong> Vulchi Vijaya Kumar</strong>, Aerosun Energy is driven by the belief that clean wind energy
+              <strong className="font-medium underline">AeroSun Energy</strong>, a flagship innovation of <strong className="font-medium underline">Aerosun Energy</strong>, is India’s first specialized manufacturer of portable and low-wind smart turbines. Founded by
+              <strong className="font-medium underline"> Vulchi Vijaya Kumar</strong>, Aerosun Energy is driven by the belief that clean wind energy
               should be accessible, affordable, and scalable — from rooftops in remote villages to commercial buildings in the heart of modern cities.
             </p>
 
             <p className="text-lg text-gray-900 leading-relaxed">
-              With strong roots in innovation, sustainability, and rural empowerment, Aerosun Energy
-              designs advanced wind energy systems that operate silently, generate power at low wind
-              speeds, and require minimal maintenance. Our solutions are built to perform reliably
-              across diverse Indian environments.
+              With strong roots in innovation, sustainability, and rural empowerment, Aerosun Energy designs advanced wind energy systems that operate silently, generate power at low wind speeds, and require minimal maintenance. Our solutions are built to perform reliably across diverse Indian environments.
             </p>
 
             <p className="inline-flex bg-orange-500 px-4 py-1 text-lg font-medium text-white">
@@ -120,7 +259,7 @@ export default function About() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.4 }}
         >
           <span className="text-secondary uppercase tracking-widest text-lg text-gray-900 dark:text-white">The Technology</span>
           <h2 className="mt-2 text-3xl sm:text-4xl text-gray-900 dark:text-white">
@@ -135,7 +274,7 @@ export default function About() {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.4 }}
           >
             <p className="text-lg font-semibold uppercase tracking-[0.32em] text-accent/90">Integrated Technology</p>
             <h3 className="mt-4 max-w-lg text-2xl leading-tight sm:text-3xl">
@@ -172,7 +311,7 @@ export default function About() {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.15 }}
+            transition={{ duration: 0.2, delay: 0.1 }}
           >
             <div className="relative aspect-4/3 overflow-hidden rounded-md bg-gray-100 shadow-md ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
               <Image

@@ -143,6 +143,9 @@ export default function UseCases() {
                   </ul>
                   <Link
                     href="#contact"
+                    title="Contact AeroSun Energy to discuss this deployment option"
+                    aria-label="Get in touch to discuss this renewable energy deployment"
+                    data-cta="discuss-deployment"
                     className="inline-flex mt-8 items-center rounded-md bg-slate-950 px-6 py-3 text-lg text-white transition-colors hover:bg-primary dark:bg-accent dark:text-slate-950 opacity-65 pointer-events-none"
                   >
                     Discuss this deployment
