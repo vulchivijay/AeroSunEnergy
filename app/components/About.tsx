@@ -92,7 +92,7 @@ export default function About() {
                 />
               </div>
 
-              <div className="w-full relative group">
+              <div className="relative group">
                 {/* Hexagonal Frame */}
                 <div className="absolute inset-0 transform rotate-30 scale-110">
                   <div className="w-full h-full bg-gradient-to-br from-primary/20 via-accent/30 to-secondary/20 rounded-lg blur-sm animate-pulse"></div>
