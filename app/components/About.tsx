@@ -47,7 +47,7 @@ export default function About() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24">
         <Card>
           <CardContent className="space-y-8">
-            <h2 className="text-xl font-bold mb-16">
+            <h2 className="text-xl font-bold mb-12">
               <span className="text-3xl ml-1 font-semibold bg-clip-text bg-linear-to-r from-blue-800 via-blue-700 to-blue-600 drop-shadow-xl text-transparent tracking-wider">Aero</span>
               <span className="text-3xl ml-1 font-semibold bg-clip-text bg-linear-to-r from-green-800 via-green-700 to-green-600 drop-shadow-xl text-transparent tracking-wider">Sun</span>
               <span className="ml-1 uppercase text-yellow-600 font-semibold tracking-wider">Energy</span>
@@ -150,7 +150,7 @@ export default function About() {
 
               <div className="px-6 text-center lg:text-left relative z-10 lg:flex-1">
                 <motion.h3
-                  className="text-2xl font-medium text-gray-900 dark:text-white mt-16"
+                  className="text-2xl font-medium text-gray-900 dark:text-white mt-12"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -168,7 +168,7 @@ export default function About() {
                   Founder & Visionary Leader
                 </motion.p>
                 <motion.p
-                  className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-16"
+                  className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-12"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -178,7 +178,7 @@ export default function About() {
                 </motion.p>
               </div>
 
-              <div className="flex items-center">
+              <div className="flex items-center mb-12">
                 <div className="relative rounded-full shadow-2xl bg-linear-to-br from-green-50 via-white to-cyan-50 p-2 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 dark:shadow-[0_30px_80px_-40px_rgba(16,185,129,0.2)]">
                   <div className="absolute inset-0 rounded-full border-2 border-green-300/50 animate-rise-glow"></div>
                   <div className="absolute inset-0 rounded-full border-2 border-blue-300/50 animate-rise-glow" style={{ animationDelay: '0.5s' }}></div>
