@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/logo-full.png',
+        url: '/images/og-image.png',
         width: 1200,
         height: 630,
         alt: 'AeroSun Energy – Solar & Wind Energy Solutions',
@@ -97,7 +97,7 @@ export const metadata: Metadata = {
     title: 'AeroSun Energy | Solar & Wind Energy Solutions in India',
     description:
       'Clean, affordable solar and wind energy solutions for homes, businesses, and industries across India.',
-    images: ['/images/logo-full.png'],
+    images: ['/images/og-image.png'],
   },
   verification: BING_SITE_VERIFICATION
     ? {
