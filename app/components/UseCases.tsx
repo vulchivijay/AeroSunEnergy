@@ -22,7 +22,7 @@ const useCases = [
     emoji: '🌳',
     title: 'Public Parks & Open Spaces',
     tag: 'Urban Green',
-    imageSrc: '/images/openspace-aerosunenergy.png',
+    imageSrc: '/images/urbangreen-aerosunenergy.png',
     imageAlt: 'AeroSun hybrid installation for public parks and open spaces',
     tagColor: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300',
     description:

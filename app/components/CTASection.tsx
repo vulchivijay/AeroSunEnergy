@@ -18,7 +18,7 @@ export default function CTASection() {
           <div className="absolute -right-10 bottom-0 top-0 hidden w-[48%] lg:block" aria-hidden="true">
             <div className="relative h-full w-full">
               <Image
-                src="/images/nextgen-aerosunenergy.png"
+                src="/images/customdesign-aerosunenergy.png"
                 alt="Next-generation renewable energy technology by AeroSun Energy"
                 fill
                 sizes="42vw"
