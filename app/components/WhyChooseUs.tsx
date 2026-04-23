@@ -88,8 +88,8 @@ export default function WhyChooseUs() {
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-slate-950/50 via-transparent to-transparent" aria-hidden="true" />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <p className="max-w-3xl text-lg">
+              <div className="absolute bottom-0 left-0 right-0 p-3 bg-green-500/25 backdrop-blur-sm">
+                <p className="text-lg text-white">
                   Our commitment to innovation drives us to continuously evolve our technology, ensuring our clients always have access to the most advanced and efficient renewable energy solutions available.
                 </p>
               </div>

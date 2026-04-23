@@ -121,7 +121,7 @@ export default function Hero() {
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,12,24,0.06),rgba(4,12,24,0.26)_58%,rgba(4,12,24,0.64)_100%)]" aria-hidden="true" />
               </div>
-              <div className="absolute bottom-31 left-6 right-6 z-10 grid gap-2 sm:grid-cols-2">
+              <div className="absolute bottom-33 left-6 right-6 z-10 grid gap-2 sm:grid-cols-2">
                 <div className="rounded-md border border-white/16 bg-slate-950/55 p-4 text-white backdrop-blur-md">
                   <p className="text-lg uppercase tracking-[0.08em] text-white/60">Primary Use</p>
                   <p className="mt-2 text-lg">Residential to infrastructure-scale deployment</p>

@@ -24,7 +24,7 @@ const steps = [
     description:
       'We design a hybrid solar wind energy system tailored for your energy needs and budget. Solar panels are oriented for maximum daylight capture while wind turbines are sized and positioned to harvest wind around the clock.',
     icon: '📐',
-    imageSrc: '/images/customdesign-aerosunenergy.jpeg',
+    imageSrc: '/images/customdesign-aerosunenergy.png',
     imageAlt: 'Custom hybrid system design by AeroSun Energy',
     color: 'from-secondary to-teal-400',
     cardBg: 'bg-emerald-100/90 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700',
@@ -119,7 +119,7 @@ export default function HowItWorks() {
               </div>
               <div className="relative aspect-[16/9] overflow-hidden">
                 <Image
-                  src="/images/nextgen-aerosunenergy.jpeg"
+                  src="/images/nextgen-aerosunenergy.png"
                   alt="Next-generation hybrid energy technology by AeroSun - advanced systems for modern renewable infrastructure"
                   fill
                   sizes="(min-width: 1024px) 80rem, 92vw"
@@ -127,7 +127,7 @@ export default function HowItWorks() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" aria-hidden="true" />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-3 bg-green-500/75 backdrop-blur-md">
+              <div className="absolute bottom-0 left-0 right-0 p-3 bg-green-500/25 backdrop-blur-sm">
                 <p className="text-md text-white">
                   Our cutting-edge hybrid systems combine the latest in solar photovoltaic technology with advanced vertical-axis wind turbines, creating a seamless energy generation platform that adapts to any environment.
                 </p>
