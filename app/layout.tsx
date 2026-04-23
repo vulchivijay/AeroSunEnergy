@@ -47,7 +47,10 @@ export const metadata: Metadata = {
     'cost savings with hybrid energy',
     'eco-friendly energy solutions',
     'low maintenance energy systems',
-    'efficient use of space for energy'
+    'efficient use of space for energy',
+    'Solar energy',
+    'Wind energy',
+    'Renewable energy',
   ],
   metadataBase: new URL('https://aerosunenergy.in'),
   applicationName: 'AeroSun Energy',

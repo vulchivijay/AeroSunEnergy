@@ -80,7 +80,7 @@ export default function Benefits() {
               </div>
               <div className="aspect-[16/9] overflow-hidden">
                 <Image
-                  src="/images/darrieus-turbine-aerosunenergy.png"
+                  src="/images/smart-vawt-aerosunenergy.png"
                   alt="Advanced Darrieus wind turbine technology by AeroSun Energy - efficient vertical-axis design for urban and semi-urban environments"
                   fill
                   sizes="(min-width: 1024px) 68rem, 92vw"
@@ -88,8 +88,8 @@ export default function Benefits() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" aria-hidden="true" />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <p className="max-w-2xl text-lg font-semibold">
+              <div className="absolute bottom-0 left-0 right-0 p-3 bg-green-500/25 backdrop-blur-sm">
+                <p className="text-lg text-white">
                   Our Darrieus turbines utilize aerodynamic lift principles for superior efficiency in variable wind conditions, making them perfect for India&apos;s diverse climate zones.
                 </p>
               </div>

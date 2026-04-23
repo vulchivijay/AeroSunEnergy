@@ -18,7 +18,7 @@ export default function Hero() {
       <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" aria-hidden="true" />
       <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:88px_88px]" aria-hidden="true" />
 
-      <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-14 px-4 py-24 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
+      <div className="relative grid w-full grid-cols-1 items-center gap-7 px-6 py-18 sm:px-3 lg:grid-cols-[1.08fr_0.92fr] lg:px-12">
         {/* Text content */}
         <motion.div
           className="z-10"
@@ -29,7 +29,7 @@ export default function Hero() {
           <span className="mb-6 inline-flex rounded-md shadow-md border border-white/24 bg-white/24 px-3 py-2 text-lg uppercase tracking-[0.45em] text-white backdrop-blur-md">
             Energy Infrastructure Reimagined
           </span>
-          <h1 className="max-w-3xl text-4xl leading-[1.1] tracking-[0.04em]! sm:text-4xl lg:text-5xl font-semibold">
+          <h1 className="max-w-2xl leading-[1.1] tracking-[0.06em]! sm:text-4xl lg:text-5xl font-semibold">
             Hybrid solar wind energy systems in India.
             <br />
             Built for rooftops, roads, parks, and industry.
@@ -58,7 +58,7 @@ export default function Hero() {
               title="Learn how AeroSun Energy hybrid systems work"
               aria-label="Explore the AeroSun Energy system details"
               data-section="how-it-works"
-              className="inline-flex items-center rounded-md bg-accent px-8 py-3.5 text-lg text-slate-200 shadow-[0_20px_40px_rgba(251,192,45,0.22)] transition-transform duration-150 hover:scale-[1.02] opacity-65 pointer-events-none"
+              className="inline-flex items-center rounded-md shadown-md border border-white/25 bg-accent px-8 py-3.5 text-lg text-slate-200 backdrop-blur-md transition-colors duration-150 hover:scale-[1.02] opacity-65 pointer-events-none"
             >
               Explore the System
             </Link>
@@ -67,7 +67,7 @@ export default function Hero() {
               title="Get a free quote for AeroSun Energy systems"
               aria-label="Request a free quote from AeroSun Energy"
               data-section="contact"
-              className="inline-flex items-center rounded-md border border-white/25 bg-white/8 px-8 py-3.5 text-lg text-white backdrop-blur-md transition-colors duration-150 hover:bg-white/14 opacity-65 pointer-events-none"
+              className="inline-flex items-center rounded-md shadow-md border border-white/25 bg-accent px-8 py-3.5 text-lg text-slate-200 backdrop-blur-md transition-colors duration-150 hover:scale-[1.02] opacity-65 pointer-events-none"
             >
               Get a Free Quote
             </Link>
@@ -100,10 +100,10 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.2, delay: 0.05, ease: 'easeOut' }}
         >
-          <div className="relative w-full max-w-3xl">
+          <div className="relative w-full max-w-4xl">
             <div className="absolute inset-8 rounded-[2.5rem] bg-accent/20 blur-3xl" aria-hidden="true" />
             <div className="relative overflow-hidden rounded-[2rem] border border-white/16 bg-white/8 p-3 shadow-[0_40px_120px_rgba(3,8,18,0.4)] backdrop-blur-sm">
-              <div className="absolute left-5 right-5 top-5 z-10 flex items-center justify-between rounded-md border border-white/16 bg-slate-950/35 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/75 backdrop-blur-md">
+              <div className="absolute left-2 right-2 top-2 z-10 flex items-center justify-between rounded-md border border-white/16 bg-slate-950/35 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/75 backdrop-blur-md">
                 <span>Hybrid Energy Snapshot</span>
                 <span>Live Optimisation</span>
               </div>
@@ -121,21 +121,21 @@ export default function Hero() {
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,12,24,0.06),rgba(4,12,24,0.26)_58%,rgba(4,12,24,0.64)_100%)]" aria-hidden="true" />
               </div>
-              <div className="absolute bottom-35 left-6 right-6 z-10 grid gap-2 sm:grid-cols-2">
+              <div className="absolute bottom-33 left-6 right-6 z-10 grid gap-2 sm:grid-cols-2">
                 <div className="rounded-md border border-white/16 bg-slate-950/55 p-4 text-white backdrop-blur-md">
-                  <p className="text-[12px] uppercase tracking-[0.28em] text-white/60">Primary Use</p>
+                  <p className="text-lg uppercase tracking-[0.08em] text-white/60">Primary Use</p>
                   <p className="mt-2 text-lg">Residential to infrastructure-scale deployment</p>
                 </div>
                 <div className="rounded-md border border-white/16 bg-white/12 p-4 text-white backdrop-blur-md">
-                  <p className="text-[12px] uppercase tracking-[0.28em] text-white/60">Performance Logic</p>
+                  <p className="text-lg uppercase tracking-[0.08em] text-white/60">Performance Logic</p>
                   <p className="mt-2 text-lg">Solar in daylight, wind beyond it</p>
                 </div>
               </div>
             </div>
             <div className="absolute bottom-6 left-6 right-6 z-10 grid">
               <div className="rounded-md border border-white/16 bg-slate-950/55 p-4 text-white backdrop-blur-md">
-                <p className="text-[12px] uppercase tracking-[0.28em] text-white/65">Field Advantage</p>
-                <p className="mt-2 text-lg leading-6">One system, multiple generation windows, minimal dead time.</p>
+                <p className="text-lg uppercase tracking-[0.28em] text-white/65">Field Advantage</p>
+                <p className="mt-2 text-lg">One system, multiple generation windows, minimal dead time.</p>
               </div>
             </div>
           </div>

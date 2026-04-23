@@ -106,7 +106,7 @@ export default function About() {
                   {/* Energy Rays Background */}
                   <div className="absolute inset-0 bg-gradient-radial from-accent/10 via-transparent to-transparent animate-spin" style={{ animationDuration: '20s' }}></div>
                   <Image
-                    src="/images/founder-aerosunenergy.jpeg"
+                    src="/images/founder-aerosunenergy.png"
                     alt="Vulchi Vijaya Kumar - Founder of AeroSun Energy"
                     fill
                     sizes="(min-width: 1024px) 176px, 144px"
@@ -180,9 +180,9 @@ export default function About() {
 
               <div className="flex items-center mb-12">
                 <div className="relative rounded-full shadow-2xl bg-linear-to-br from-green-50 via-white to-cyan-50 p-2 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 dark:shadow-[0_30px_80px_-40px_rgba(16,185,129,0.2)]">
-                  <div className="absolute inset-0 rounded-full border-2 border-green-300/50 animate-rise-glow"></div>
-                  <div className="absolute inset-0 rounded-full border-2 border-blue-300/50 animate-rise-glow" style={{ animationDelay: '0.5s' }}></div>
-                  <div className="absolute inset-0 rounded-full border-2 border-purple-300/50 animate-rise-glow" style={{ animationDelay: '1s' }}></div>
+                  <div className="absolute inset-0 rounded-full border-5 border-green-300 animate-rise-glow"></div>
+                  <div className="absolute inset-0 rounded-full border-4 border-blue-300 animate-rise-glow" style={{ animationDelay: '0.5s' }}></div>
+                  <div className="absolute inset-0 rounded-full border-3 border-purple-300 animate-rise-glow" style={{ animationDelay: '1s' }}></div>
                   <Image
                     src="/images/lord-shiva-aerosunenergy.png"
                     alt="Lord Shiva"
@@ -204,16 +204,16 @@ export default function About() {
               With strong roots in innovation, sustainability, and rural empowerment, Aerosun Energy designs advanced wind energy systems that operate silently, generate power at low wind speeds, and require minimal maintenance. Our solutions are built to perform reliably across diverse Indian environments.
             </p>
 
-            <p className="inline-flex bg-orange-500 px-4 py-1 text-lg font-medium text-white">
-              We don’t just build turbines. We create a future where every citizen can produce their own
-              clean energy.
+            <p className="inline-flex p-3 bg-green-500/75 backdrop-blur-md rounded-sm shadow-sm">
+              <span className="text-lg text-white">We don’t just build turbines. We create a future where every citizen can produce their own
+                clean energy.</span>
             </p>
           </CardContent>
         </Card>
 
         {/* Core Values */}
         <div>
-          <h3 className="text-2xl font-bold my-12">Our Core Values</h3>
+          <h3 className="text-3xl font-semibold my-12">Our Core Values</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
@@ -244,8 +244,8 @@ export default function About() {
             ].map((value) => (
               <Card key={value.title} className={value.bg}>
                 <CardContent className="space-y-2">
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{value.title}</h4>
-                  <p className="text-sm text-gray-700 dark:text-gray-300">{value.desc}</p>
+                  <h4 className="text-xl font-semibold uppercase text-gray-900 dark:text-gray-100">{value.title}</h4>
+                  <p className="text-lg text-gray-700 dark:text-gray-300">{value.desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -314,7 +314,7 @@ export default function About() {
           >
             <div className="relative aspect-4/3 overflow-hidden rounded-md bg-gray-100 shadow-md ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
               <Image
-                src="/images/smart-vawt-aerosunenergy.png"
+                src="/images/hybrid-solar-wind -energy.png"
                 alt="Smart VAWT hybrid technology deployment by AeroSun Energy"
                 fill
                 sizes="(min-width: 1024px) 44vw, 92vw"
@@ -324,8 +324,8 @@ export default function About() {
               <div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white backdrop-blur-md">
                 Future Ready
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <p className="max-w-md text-base font-semibold sm:text-lg">
+              <div className="absolute bottom-0 left-0 right-0 p-3 bg-green-500/25 backdrop-blur-sm">
+                <p className="text-md text-white">
                   Hybrid systems engineered for dependable output, smart monitoring, and scalable installations.
                 </p>
               </div>
