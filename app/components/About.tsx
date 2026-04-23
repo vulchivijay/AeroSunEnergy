@@ -186,9 +186,9 @@ export default function About() {
                   <Image
                     src="/images/lord-shiva-aerosunenergy.png"
                     alt="Lord Shiva"
-                    width={128}
-                    height={128}
-                    className="h-32 w-32 object-contain relative z-10 brightness-100"
+                    width={256}
+                    height={256}
+                    className="h-96 w-96 object-contain relative z-10"
                   />
                 </div>
               </div>
