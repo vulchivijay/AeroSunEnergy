@@ -47,7 +47,10 @@ export const metadata: Metadata = {
     'cost savings with hybrid energy',
     'eco-friendly energy solutions',
     'low maintenance energy systems',
-    'efficient use of space for energy'
+    'efficient use of space for energy',
+    'Solar energy',
+    'Wind energy',
+    'Renewable energy',
   ],
   metadataBase: new URL('https://aerosunenergy.in'),
   applicationName: 'AeroSun Energy',
@@ -85,7 +88,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/logo-full.png',
+        url: '/images/og-image.png',
         width: 1200,
         height: 630,
         alt: 'AeroSun Energy – Solar & Wind Energy Solutions',
@@ -97,7 +100,7 @@ export const metadata: Metadata = {
     title: 'AeroSun Energy | Solar & Wind Energy Solutions in India',
     description:
       'Clean, affordable solar and wind energy solutions for homes, businesses, and industries across India.',
-    images: ['/images/logo-full.png'],
+    images: ['/images/og-image.png'],
   },
   verification: BING_SITE_VERIFICATION
     ? {

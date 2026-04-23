@@ -24,7 +24,7 @@ const steps = [
     description:
       'We design a hybrid solar wind energy system tailored for your energy needs and budget. Solar panels are oriented for maximum daylight capture while wind turbines are sized and positioned to harvest wind around the clock.',
     icon: '📐',
-    imageSrc: '/images/nextgen-aerosunenergy.png',
+    imageSrc: '/images/customdesign-aerosunenergy.png',
     imageAlt: 'Custom hybrid system design by AeroSun Energy',
     color: 'from-secondary to-teal-400',
     cardBg: 'bg-emerald-100/90 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700',
@@ -37,7 +37,7 @@ const steps = [
     description:
       'Our certified installation team sets up the solar panels, wind turbines, smart inverters, and optional battery storage — all integrated into one unified green energy system with zero disruption to your operations.',
     icon: '🔧',
-    imageSrc: '/images/darrieus-turbine-aerosunenergy.png',
+    imageSrc: '/images/installation-aerosunenergy.png',
     imageAlt: 'Installation of AeroSun hybrid turbine system',
     color: 'from-accent to-yellow-400',
     cardBg: 'bg-amber-100/90 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700',
@@ -63,7 +63,7 @@ const steps = [
     description:
       'Once live, your hybrid system generates electricity day and night with minimal maintenance. Solar works hardest in daylight; wind covers the rest. Together, they deliver continuous, reliable power to support sustainable infrastructure.',
     icon: '⚡',
-    imageSrc: '/images/future-aerosunenergy.png',
+    imageSrc: '/images/minimal-maintainance-aerosunenergy.png',
     imageAlt: 'Continuous clean power output from AeroSun hybrid systems',
     color: 'from-secondary to-green-400',
     cardBg: 'bg-cyan-100/90 dark:bg-cyan-900/55 border-cyan-300 dark:border-cyan-700',
@@ -127,8 +127,8 @@ export default function HowItWorks() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" aria-hidden="true" />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <p className="max-w-4xl text-lg">
+              <div className="absolute bottom-0 left-0 right-0 p-3 bg-green-500/25 backdrop-blur-sm">
+                <p className="text-md text-white">
                   Our cutting-edge hybrid systems combine the latest in solar photovoltaic technology with advanced vertical-axis wind turbines, creating a seamless energy generation platform that adapts to any environment.
                 </p>
               </div>

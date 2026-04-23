@@ -7,6 +7,12 @@ export default function JsonLd() {
         '@id': 'https://aerosunenergy.in/#organization',
         name: 'AeroSun Energy',
         url: 'https://aerosunenergy.in',
+        sameAs: [
+          'https://x.com/aerosunenergy',
+          'https://www.linkedin.com/company/aerosunenergy',
+          'https://www.facebook.com/aerosunenergy',
+          'https://www.instagram.com/aerosunenergy',
+        ],
         logo: {
           '@type': 'ImageObject',
           '@id': 'https://aerosunenergy.in/#logo',

@@ -73,7 +73,7 @@ export default function Services() {
               </div>
               <div className="relative aspect-video overflow-hidden">
                 <Image
-                  src="/images/forming-aerosunenergy.png"
+                  src="/images/home-business-aerosunenergy.png"
                   alt="AeroSun Energy manufacturing facility showcasing precision forming and assembly of hybrid energy systems"
                   fill
                   sizes="(min-width: 1024px) 80rem, 92vw"
@@ -81,8 +81,8 @@ export default function Services() {
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-slate-950/50 via-transparent to-transparent" aria-hidden="true" />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <p className="max-w-3xl text-lg">
+              <div className="absolute bottom-0 left-0 right-0 p-3 bg-green-500/25 backdrop-blur-sm">
+                <p className="text-lg text-white">
                   Our state-of-the-art manufacturing processes ensure every component meets the highest standards of quality and durability, from turbine blades to solar panel integration.
                 </p>
               </div>
