@@ -3,73 +3,14 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Card, CardContent } from './Card'
+import { useLocale } from '@/app/lib/LocaleContext'
 
-const steps = [
-  {
-    number: '01',
-    title: 'Site Assessment',
-    description:
-      'Our engineers visit your location — rooftop, road, park, or open land — to measure sunlight exposure, wind patterns, and available space. This data shapes a system perfectly tuned to your site.',
-    icon: '📍',
-    imageSrc: '/images/forming-aerosunenergy.png',
-    imageAlt: 'Site assessment and planning process by AeroSun Energy',
-    color: 'from-primary to-blue-400',
-    cardBg: 'bg-blue-100/90 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700',
-    iconBg: 'bg-blue-300 dark:bg-blue-800',
-    nodeBg: 'from-blue-700 to-blue-500',
-  },
-  {
-    number: '02',
-    title: 'Custom System Design',
-    description:
-      'We design a hybrid solar wind energy system tailored for your energy needs and budget. Solar panels are oriented for maximum daylight capture while wind turbines are sized and positioned to harvest wind around the clock.',
-    icon: '📐',
-    imageSrc: '/images/customdesign-aerosunenergy.png',
-    imageAlt: 'Custom hybrid system design by AeroSun Energy',
-    color: 'from-secondary to-teal-400',
-    cardBg: 'bg-emerald-100/90 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700',
-    iconBg: 'bg-emerald-300 dark:bg-emerald-800',
-    nodeBg: 'from-emerald-700 to-teal-500',
-  },
-  {
-    number: '03',
-    title: 'Installation',
-    description:
-      'Our certified installation team sets up the solar panels, wind turbines, smart inverters, and optional battery storage — all integrated into one unified green energy system with zero disruption to your operations.',
-    icon: '🔧',
-    imageSrc: '/images/installation-aerosunenergy.png',
-    imageAlt: 'Installation of AeroSun hybrid turbine system',
-    color: 'from-accent to-yellow-400',
-    cardBg: 'bg-amber-100/90 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700',
-    iconBg: 'bg-amber-300 dark:bg-amber-800',
-    nodeBg: 'from-amber-700 to-yellow-500',
-  },
-  {
-    number: '04',
-    title: 'Smart Monitoring',
-    description:
-      'An IoT-enabled dashboard gives you real-time visibility into power generation, consumption, and savings — from your phone or computer. The system auto-optimises output between solar and wind at all times.',
-    icon: '📊',
-    imageSrc: '/images/smart-vawt-aerosunenergy.png',
-    imageAlt: 'Smart monitoring dashboard for AeroSun energy systems',
-    color: 'from-primary to-secondary',
-    cardBg: 'bg-violet-100/90 dark:bg-violet-900/55 border-violet-300 dark:border-violet-700',
-    iconBg: 'bg-violet-300 dark:bg-violet-800',
-    nodeBg: 'from-violet-700 to-purple-500',
-  },
-  {
-    number: '05',
-    title: 'Continuous Power, Minimal Maintenance',
-    description:
-      'Once live, your hybrid system generates electricity day and night with minimal maintenance. Solar works hardest in daylight; wind covers the rest. Together, they deliver continuous, reliable power to support sustainable infrastructure.',
-    icon: '⚡',
-    imageSrc: '/images/minimal-maintainance-aerosunenergy.png',
-    imageAlt: 'Continuous clean power output from AeroSun hybrid systems',
-    color: 'from-secondary to-green-400',
-    cardBg: 'bg-cyan-100/90 dark:bg-cyan-900/55 border-cyan-300 dark:border-cyan-700',
-    iconBg: 'bg-cyan-300 dark:bg-cyan-800',
-    nodeBg: 'from-cyan-700 to-green-500',
-  },
+const stepStyles = [
+  { icon: '📍', imageSrc: '/images/forming-aerosunenergy.png', imageAlt: 'Site assessment and planning process by AeroSun Energy', color: 'from-primary to-blue-400', cardBg: 'bg-blue-100/90 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700', iconBg: 'bg-blue-300 dark:bg-blue-800', nodeBg: 'from-blue-700 to-blue-500' },
+  { icon: '📐', imageSrc: '/images/customdesign-aerosunenergy.png', imageAlt: 'Custom hybrid system design by AeroSun Energy', color: 'from-secondary to-teal-400', cardBg: 'bg-emerald-100/90 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700', iconBg: 'bg-emerald-300 dark:bg-emerald-800', nodeBg: 'from-emerald-700 to-teal-500' },
+  { icon: '🔧', imageSrc: '/images/installation-aerosunenergy.png', imageAlt: 'Installation of AeroSun hybrid turbine system', color: 'from-accent to-yellow-400', cardBg: 'bg-amber-100/90 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700', iconBg: 'bg-amber-300 dark:bg-amber-800', nodeBg: 'from-amber-700 to-yellow-500' },
+  { icon: '📊', imageSrc: '/images/smart-vawt-aerosunenergy.png', imageAlt: 'Smart monitoring dashboard for AeroSun energy systems', color: 'from-primary to-secondary', cardBg: 'bg-violet-100/90 dark:bg-violet-900/55 border-violet-300 dark:border-violet-700', iconBg: 'bg-violet-300 dark:bg-violet-800', nodeBg: 'from-violet-700 to-purple-500' },
+  { icon: '⚡', imageSrc: '/images/minimal-maintainance-aerosunenergy.png', imageAlt: 'Continuous clean power output from AeroSun hybrid systems', color: 'from-secondary to-green-400', cardBg: 'bg-cyan-100/90 dark:bg-cyan-900/55 border-cyan-300 dark:border-cyan-700', iconBg: 'bg-cyan-300 dark:bg-cyan-800', nodeBg: 'from-cyan-700 to-green-500' },
 ]
 
 const containerVariants = {
@@ -83,6 +24,11 @@ const cardVariants = {
 }
 
 export default function HowItWorks() {
+  const { t } = useLocale()
+  const h = t.howItWorks
+
+  const steps = h.steps.map((step, i) => ({ ...step, ...stepStyles[i] }))
+
   return (
     <section id="how-it-works" className="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -93,12 +39,12 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
-          <span className="text-primary uppercase tracking-widest text-lg text-gray-900 dark:text-gray-100">Simple Process</span>
+          <span className="text-primary uppercase tracking-widest text-lg text-gray-900 dark:text-gray-100">{h.sectionBadge}</span>
           <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
-            How Hybrid Solar Wind Systems Work
+            {h.heading}
           </h2>
           <p className="mt-4 text-lg text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">
-            From site visit to 24/7 power generation — here&apos;s how we turn any location into a clean energy source with our solar wind hybrid system.
+            {h.description}
           </p>
           <div className="mt-6 mx-auto w-16 h-1 rounded-md bg-gradient-to-r from-primary to-secondary" />
         </motion.div>
@@ -115,7 +61,7 @@ export default function HowItWorks() {
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-secondary/20 rounded-md blur-3xl" aria-hidden="true" />
             <div className="relative overflow-hidden rounded-md border border-white/20 bg-white/90 shadow-2xl backdrop-blur-sm dark:border-white/10 dark:bg-slate-950/90">
               <div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white backdrop-blur-md">
-                Next-Gen Technology
+                {h.nextGenBadge}
               </div>
               <div className="relative aspect-[16/9] overflow-hidden">
                 <Image
@@ -129,7 +75,7 @@ export default function HowItWorks() {
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-3 bg-green-500/25 backdrop-blur-sm">
                 <p className="text-md text-white">
-                  Our cutting-edge hybrid systems combine the latest in solar photovoltaic technology with advanced vertical-axis wind turbines, creating a seamless energy generation platform that adapts to any environment.
+                  {h.nextGenCaption}
                 </p>
               </div>
             </div>
@@ -170,7 +116,7 @@ export default function HowItWorks() {
                       <span className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-md text-3xl shadow-sm ${step.iconBg}`}>{step.icon}</span>
                       <div className="w-3/4">
                         <p className={`text-lg uppercase tracking-widest mb-1`}>
-                          Step {step.number}
+                          {h.stepLabel} {step.number}
                         </p>
                         <h3 className="text-xl font-extrabold text-gray-900 dark:text-gray-100 mb-3">
                           {step.title}
