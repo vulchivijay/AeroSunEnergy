@@ -26,8 +26,8 @@ export default function Logo({ size = 'default' }: LogoProps) {
           <span className={`${isFooter ? 'text-[2rem]' : 'text-3xl'} font-semibold bg-clip-text bg-linear-to-r from-blue-800 via-blue-700 to-blue-600 drop-shadow-xl text-transparent tracking-wider`}>Aero</span>
           <span className={`${isFooter ? 'text-[2rem]' : 'text-3xl'} ml-1 font-semibold bg-clip-text bg-linear-to-r from-green-800 via-green-700 to-green-600 drop-shadow-xl text-transparent tracking-wider`}>Sun</span>
         </div>
-        <div className={`${isFooter ? 'text-[1.03rem]' : 'text-lg'} uppercase text-yellow-700 dark:text-yellow-400 font-semibold`}> {`${isFooter ? '--' : ''}`}------ E n e r g y ------{`${isFooter ? '--' : ''}`}</div>
-        <div className={`${isFooter ? 'text-sm' : 'text-sm'} text-gray-900 dark:text-gray-500`}>{t.logo.tagline}</div>
+        <div className={`${isFooter ? 'text-md' : 'text-sm'} uppercase text-yellow-700 dark:text-yellow-400 font-semibold`}> {`${isFooter ? '--' : ''}`}------ E n e r g y ------{`${isFooter ? '--' : ''}`}</div>
+        <div className={`${isFooter ? 'text-md' : 'text-sm'} text-gray-900 dark:text-gray-500`}>{t.logo.tagline}</div>
       </div>
     </Link>
   )

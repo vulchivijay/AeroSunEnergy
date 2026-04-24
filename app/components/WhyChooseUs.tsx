@@ -51,7 +51,7 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.7 }}
         >
           <span className="text-gray-600 dark:text-white">{w.sectionBadge}</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
+          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 font-semibold dark:text-white">
             {w.heading}
           </h2>
           <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary" />

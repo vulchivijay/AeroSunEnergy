@@ -39,7 +39,7 @@ export default function UseCases() {
           transition={{ duration: 0.7 }}
         >
           <span className="text-gray-600 dark:text-white">{u.sectionBadge}</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
+          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 font-semibold dark:text-white">
             {u.heading}
           </h2>
           <p className="mt-4 text-lg text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">
@@ -69,21 +69,21 @@ export default function UseCases() {
                     alt={uc.imageAlt}
                     fill
                     sizes="(min-width: 1024px) 44vw, 92vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,17,29,0.08),rgba(7,17,29,0.22)_52%,rgba(7,17,29,0.68)_100%)]" aria-hidden="true" />
-                  <div className="absolute inset-x-6 bottom-6 flex items-end justify-between gap-4 text-white">
+                  <div className="absolute inset-x-6 bottom-6 flex items-end justify-between gap-6 text-white">
                     <div>
                       <p className="text-4xl">{uc.emoji}</p>
                       <p className="mt-3 text-lg font-bold">{uc.title}</p>
                     </div>
-                    <span className={`shrink-0 rounded-md px-3 py-1 text-xs font-bold ${uc.tagColor}`}>
+                    <span className={`shrink-0 rounded-md px-3 py-1 text-sm font-bold ${uc.tagColor}`}>
                       {uc.tag}
                     </span>
                   </div>
                 </div>
-                <div className={`p-6 lg:p-12 ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
-                  <div className="flex items-center gap-3">
+                <div className={`p-3 lg:p-6 ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                  <div className="flex items-center gap-6">
                     <span className="rounded-sm shadow-sm border border-gray-200 bg-slate-50 px-3 py-1 text-sm font-semibold uppercase tracking-[0.28em] text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
                       {u.bestFit}
                     </span>
@@ -92,7 +92,7 @@ export default function UseCases() {
                   <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
                     {uc.description}
                   </p>
-                  <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+                  <ul className="mt-8 grid gap-6 sm:grid-cols-2">
                     {uc.points.map((point) => (
                       <li key={point} className="rounded-sm shadow-sm border border-slate-200 bg-slate-50 px-4 py-3 text-lg text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
                         {point}
@@ -104,7 +104,7 @@ export default function UseCases() {
                     title={u.discussTitle}
                     aria-label={u.discussAriaLabel}
                     data-cta="discuss-deployment"
-                    className="inline-flex mt-8 items-center rounded-md bg-slate-950 px-6 py-3 text-lg text-white transition-colors hover:bg-primary dark:bg-accent dark:text-slate-950 opacity-65 pointer-events-none"
+                    className="inline-flex mt-8 items-center rounded-md bg-slate-950 px-6 py-3 text-lg text-white transition-colors hover:bg-primary dark:bg-accent dark:text-slate-950"
                   >
                     {u.discussDeployment}
                   </Link>
