@@ -76,12 +76,12 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 left-0 right-0 z-50 border-b-4 border-slate-400 bg-white/70 py-1 shadow-2xl backdrop-blur-md transition-all duration-300 ease-in-out dark:border-slate-700/70 dark:bg-slate-900/70">
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between px-3 md:px-12">
-        <div className="flex items-start justify-between">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-around px-3 md:px-12">
+        <div className="flex sm:items-start md:items-center justify-between">
           {/* Logo */}
           <Logo />
           {/* Desktop Links */}
-          <div className="hidden items-center gap-2 lg:flex">
+          <div className="hidden items-center lg:flex lg:ml-24">
             <div className="flex items-center gap-1 rounded-full border border-slate-200/70 bg-white/80 px-2 py-1 dark:border-slate-700/80 dark:bg-slate-900/80">
               {navLinks.map((link) => (
                 <Link
@@ -105,13 +105,13 @@ export default function Navbar() {
               title="Start a renewable energy project with AeroSun Energy"
               aria-label="Contact AeroSun Energy to start your project"
               data-cta="start-project"
-              className="rounded-full bg-slate-950 px-5 py-2.5 text-md text-white transition-transform duration-200 hover:scale-[1.03] hover:bg-primary dark:bg-accent dark:text-slate-950"
+              className="lg:ml-2 rounded-full bg-slate-950 px-5 py-2.5 text-md text-white transition-transform duration-200 hover:scale-[1.03] hover:bg-primary dark:bg-accent dark:text-slate-950"
             >
               {t.navbar.startProject}
             </Link>
 
             {/* Desktop Language Dropdown */}
-            <div className="relative" ref={langRef}>
+            <div className="lg:ml-2 relative" ref={langRef}>
               <button
                 onClick={() => setLangOpen(!langOpen)}
                 className="flex items-center gap-1.5 rounded-full border border-slate-300/80 bg-white/80 px-3 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:border-green-300 hover:bg-green-50 hover:text-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400/80 active:scale-95 dark:border-slate-600/80 dark:bg-slate-900/80 dark:text-slate-100 dark:hover:border-green-500/80 dark:hover:bg-slate-800 dark:hover:text-green-300"
@@ -142,7 +142,7 @@ export default function Navbar() {
 
             <button
               onClick={toggleDark}
-              className={themeButtonClass}
+              className={`lg:ml-2 ${themeButtonClass}`}
               aria-label={t.navbar.toggleDark}
               aria-pressed={dark}
             >
@@ -152,7 +152,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="rounded-xl p-2.5 text-slate-700 transition-all duration-300 ease-in-out hover:bg-green-50 hover:text-green-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400/70 active:scale-95 dark:text-slate-100 dark:hover:bg-slate-800 dark:hover:text-green-400"
+            className="md:hidden rounded-xl p-2.5 text-slate-700 transition-all duration-300 ease-in-out hover:bg-green-50 hover:text-green-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400/70 active:scale-95 dark:text-slate-100 dark:hover:bg-slate-800 dark:hover:text-green-400"
             aria-label={t.navbar.toggleMenu}
           >
             {menuOpen ? (
