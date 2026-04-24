@@ -77,7 +77,7 @@ export default function Services() {
                   title={s.learnMoreTitle}
                   aria-label={s.learnMoreAriaLabel}
                   data-cta="learn-more"
-                  className="inline-block mt-6 text-primary font-semibold hover:text-secondary transition-colors opacity-55 pointer-events-none"
+                  className="inline-block mt-6 text-primary font-semibold hover:text-secondary transition-colors"
                 >
                   {s.learnMore}
                 </Link>

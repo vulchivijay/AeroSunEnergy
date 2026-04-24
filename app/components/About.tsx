@@ -57,12 +57,12 @@ export default function About() {
             <h2 className="text-xl font-bold mb-12">
               <span className="text-3xl ml-1 font-semibold bg-clip-text bg-linear-to-r from-blue-800 via-blue-700 to-blue-600 drop-shadow-xl text-transparent tracking-wider">Aero</span>
               <span className="text-3xl ml-1 font-semibold bg-clip-text bg-linear-to-r from-green-800 via-green-700 to-green-600 drop-shadow-xl text-transparent tracking-wider">Sun</span>
-              <span className="ml-1 uppercase text-yellow-600 font-semibold tracking-wider">Energy</span>
+              <span className="ml-1 uppercase text-yellow-600 font-semibold text-xl tracking-wider">Energy</span>
             </h2>
 
             {/* Founder Image */}
             <motion.div
-              className="w-full relative flex flex-col items-center lg:flex-row gap-2 md:gap-8 md:px-16 md:py-6"
+              className="w-full relative flex flex-col items-center lg:flex-row gap-4 md:gap-16 md:p-6"
               initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
               whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
               viewport={{ once: true }}
@@ -195,7 +195,7 @@ export default function About() {
                     alt="Lord Shiva"
                     fill
                     sizes="160px"
-                    className="relative z-10 rounded-full object-contain p-2"
+                    className="relative z-10 rounded-full object-contain"
                     loading="eager"
                     placeholder="blur"
                     blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+IRjWjBqO6O2mhP//Z"
@@ -212,8 +212,8 @@ export default function About() {
               {a.paragraph2}
             </p>
 
-            <p className="inline-flex p-3 bg-green-900 rounded-lg shadow-lg">
-              <span className="text-lg text-slate-300">{a.quote}</span>
+            <p className="inline-flex p-3 bg-green-600 rounded-sm shadow-sm">
+              <span className="text-lg text-slate-100">{a.quote}</span>
             </p>
           </CardContent>
         </Card>
@@ -249,7 +249,7 @@ export default function About() {
           <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary" />
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-12 rounded-[2.25rem] md:border md:border-white/60 md:bg-white/75 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-800 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="grid grid-cols-1 gap-6 rounded-[2.25rem] md:border md:border-white/60 md:bg-white/75 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-800 lg:grid-cols-[0.95fr_1.05fr]">
           <motion.div
             className="rounded-md bg-slate-950 px-6 py-8 text-white shadow-md lg:px-8"
             initial={{ opacity: 0, x: -40 }}
@@ -301,7 +301,7 @@ export default function About() {
                 {a.techImageBadge}
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-3 bg-green-500/25 backdrop-blur-sm">
-                <p className="text-md text-white">
+                <p className="text-lg text-white">
                   {a.techImageCaption}
                 </p>
               </div>
