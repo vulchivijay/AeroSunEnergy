@@ -1,18 +1,15 @@
+'use client'
+
 import Image from 'next/image';
 import Link from 'next/link';
 import Logo from './logo';
-
-const navLinks = [
-  { label: 'Home', href: '#hero' },
-  { label: 'About', href: '#about' },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Features', href: '#features' },
-  { label: 'Use Cases', href: '#use-cases' },
-  { label: 'Why Us', href: '#why-us' },
-  { label: 'Contact', href: '#contact' },
-]
+import { useLocale } from '@/app/lib/LocaleContext'
 
 export default function Footer() {
+  const { t } = useLocale()
+  const footer = t.footer
+  const navLinks = t.navbar.links
+
   return (
     <footer id="contact" className="bg-slate-100 border-t-2 shadow-sm border-gray-200 text-gray-900 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -41,19 +38,19 @@ export default function Footer() {
               <Logo size="footer" />
             </div>
             <p className="text-gray-700 text-md mt-3 dark:text-gray-300">
-              Delivering clean, reliable, and affordable renewable energy solutions across India.
+              {footer.brandDesc}
             </p>
             <p className="text-gray-700 text-md mt-2 dark:text-gray-300">
-              📧 customercare@aerosunenergy.in
+              📧 {footer.email}
             </p>
             <p className="text-gray-700 text-md mt-1 dark:text-gray-300">
-              🌐 aerosunenergy.in
+              🌐 {footer.website}
             </p>
           </div>
 
           {/* Navigation */}
           <div className="md:text-right">
-            <h3 className="text-black font-semibold text-lg mb-5 dark:text-white">Quick Links</h3>
+            <h3 className="text-black font-semibold text-lg mb-5 dark:text-white">{footer.quickLinks}</h3>
             <ul className="space-y-3">
               {navLinks.map((link) => (
                 <li key={link.label}>
@@ -70,7 +67,7 @@ export default function Footer() {
 
           {/* Social */}
           <div className="text-center">
-            <h3 className="text-black font-semibold text-lg mb-5 dark:text-white">Follow Us</h3>
+            <h3 className="text-black font-semibold text-lg mb-5 dark:text-white">{footer.followUs}</h3>
             <div className="flex items-center justify-center gap-4 mb-6">
               {/* Twitter/X */}
               <Link
@@ -146,20 +143,20 @@ export default function Footer() {
                 itemProp="image"
                 data-seo="qr-code"
               />
-              <p className="text-center text-md text-gray-600 mt-1 mb-4 dark:text-gray-300">Scan</p>
+              <p className="text-center text-md text-gray-600 mt-1 mb-4 dark:text-gray-300">{footer.scan}</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-yellow-300 text-gray-950 text-md py-1 text-center border-b border-t-2 border-amber-300"> This website is under development. Build with <Link href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" title="Visit ChatGPT website" data-external="chatgpt" className="underline">ChatGPT</Link> and <Link href="https://github.com" target="_blank" rel="noopener noreferrer" title="Visit GitHub website" data-external="github" className="underline">GitHub</Link>.</div>
+      <div className="bg-yellow-300 text-gray-950 text-md py-1 text-center border-b border-t-2 border-amber-300"> {footer.devNotice} <Link href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" title="Visit ChatGPT website" data-external="chatgpt" className="underline">{footer.devNoticeChatGPT}</Link> {footer.devNoticeAnd} <Link href="https://github.com" target="_blank" rel="noopener noreferrer" title="Visit GitHub website" data-external="github" className="underline">{footer.devNoticeGitHub}</Link>.</div>
 
       <div className="border-t-2 border-gray-200 py-6 dark:border-gray-700">
         <div className="flex items-center justify-center">
           <p className="max-w-7xl mx-auto px-3 text-center text-gray-500 text-sm dark:text-gray-400">
-            <strong>Vulchi Vijaya Kumar (Kshatriya's)</strong> © 2026 AeroSun Energy Private Limited <span className="underline underline-offset-4 text-orange-600">(Registration is in process)</span>. All rights reserved. |{' '}
+            <strong>Vulchi Vijaya Kumar (Kshatriya's)</strong> {footer.copyright} <span className="underline underline-offset-4 text-orange-600">{footer.registrationNotice}</span>. {footer.allRightsReserved} |{' '}
             <Link href="https://aerosunenergy.in" target="_blank" rel="noopener noreferrer" title="Visit AeroSun Energy official website" itemProp="url" data-external="website" className="transition-all duration-200 hover:text-primary hover:underline hover:underline-offset-4 dark:hover:text-primary">
-              aerosunenergy.in
+              {footer.website}
             </Link>
           </p>
         </div>

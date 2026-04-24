@@ -46,13 +46,13 @@ export default function CTASection() {
                   href="#contact"
                   className="inline-flex items-center rounded-md bg-accent px-8 py-3.5 text-lg font-bold text-slate-950 transition-transform duration-150 hover:scale-[1.02]"
                 >
-                  {c.requestQuote}
+                  {c.buttons.quote}
                 </a>
                 <a
                   href="#how-it-works"
                   className="inline-flex items-center rounded-md border border-white/18 bg-white/8 px-8 py-3.5 text-lg font-bold text-white backdrop-blur-md transition-colors duration-150 hover:bg-white/14 opacity-55 pointer-events-none"
                 >
-                  {c.seeHowItWorks}
+                  {c.buttons.howItWorks}
                 </a>
               </div>
             </div>

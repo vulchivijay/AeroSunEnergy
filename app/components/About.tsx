@@ -48,9 +48,10 @@ export default function About() {
   }))
 
   return (
-    <section id="about" className="py-24 bg-white dark:bg-gray-950 overflow-hidden">
+    <section id="about" className="px-6 sm:px-3 lg:px-12 bg-white dark:bg-gray-950 overflow-hidden">
+      {/* relative grid w-full grid-cols-1 items-center gap-7 lg:grid-cols-[1.08fr_0.92fr] */}
       {/* About Section */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24">
+      <div className="mx-auto max-w-7xl py-12">
         <Card>
           <CardContent className="space-y-8">
             <h2 className="text-xl font-bold mb-12">
@@ -147,14 +148,14 @@ export default function About() {
                 </motion.div>
 
                 {/* Achievement Badge */}
-                <div className="absolute bottom-2 right-2 rounded-full w-8 h-8 flex items-center justify-center border-2 border-green-500">
-                  <svg className="w-4 h-4" fill="#00c758" viewBox="0 0 20 20">
+                <div className="absolute bottom-2 right-2 rounded-full w-8 h-8 flex items-center justify-center border-2 border-gray-100">
+                  <svg className="w-4 h-4" fill="#fef9c2" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                 </div>
               </div>
 
-              <div className="px-6 text-center lg:text-left relative z-10 lg:flex-1">
+              <div className="text-center lg:text-left relative z-10 lg:flex-1">
                 <motion.h3
                   className="text-2xl font-medium text-gray-900 dark:text-white mt-12"
                   initial={{ opacity: 0, x: -20 }}
@@ -185,16 +186,19 @@ export default function About() {
               </div>
 
               <div className="flex items-center mb-12">
-                <div className="relative rounded-full shadow-2xl bg-linear-to-br from-green-50 via-white to-cyan-50 p-2 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 dark:shadow-[0_30px_80px_-40px_rgba(16,185,129,0.2)]">
+                <div className="relative h-40 w-40 rounded-full bg-white p-2 shadow-2xl backdrop-blur-sm dark:bg-white dark:shadow-[0_30px_80px_-40px_rgba(16,185,129,0.2)]">
                   <div className="absolute inset-0 rounded-full border-5 border-green-300 animate-rise-glow"></div>
                   <div className="absolute inset-0 rounded-full border-4 border-blue-300 animate-rise-glow" style={{ animationDelay: '0.5s' }}></div>
                   <div className="absolute inset-0 rounded-full border-3 border-purple-300 animate-rise-glow" style={{ animationDelay: '1s' }}></div>
                   <Image
                     src="/images/lord-shiva-aerosunenergy.png"
                     alt="Lord Shiva"
-                    width={128}
-                    height={129}
-                    className="h-32 w-32 object-cover rounded-full overflow-hidden relative z-10"
+                    fill
+                    sizes="160px"
+                    className="relative z-10 rounded-full object-contain p-2"
+                    loading="eager"
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+IRjWjBqO6O2mhP//Z"
                   />
                 </div>
               </div>
@@ -208,8 +212,8 @@ export default function About() {
               {a.paragraph2}
             </p>
 
-            <p className="inline-flex p-3 bg-green-500/75 backdrop-blur-md rounded-sm shadow-sm">
-              <span className="text-lg text-white">{a.quote}</span>
+            <p className="inline-flex p-3 bg-green-900 rounded-lg shadow-lg">
+              <span className="text-lg text-slate-300">{a.quote}</span>
             </p>
           </CardContent>
         </Card>
@@ -229,9 +233,10 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+      <div className="mx-auto max-w-7xl pt-12">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -244,7 +249,7 @@ export default function About() {
           <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary" />
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-12 rounded-[2.25rem] md:border md:border-white/60 md:bg-white/75 md:p-3 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-800 lg:grid-cols-[0.95fr_1.05fr] lg:p-8">
+        <div className="grid grid-cols-1 gap-12 rounded-[2.25rem] md:border md:border-white/60 md:bg-white/75 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-800 lg:grid-cols-[0.95fr_1.05fr]">
           <motion.div
             className="rounded-md bg-slate-950 px-6 py-8 text-white shadow-md lg:px-8"
             initial={{ opacity: 0, x: -40 }}
@@ -283,7 +288,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.2, delay: 0.1 }}
           >
-            <div className="relative aspect-4/3 overflow-hidden rounded-md bg-gray-100 shadow-md ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+            <div className="relative min-h-96 md:aspect-4/3 overflow-hidden rounded-md bg-gray-100 shadow-md ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
               <Image
                 src="/images/hybrid-solar-wind -energy.png"
                 alt="Smart VAWT hybrid technology deployment by AeroSun Energy"

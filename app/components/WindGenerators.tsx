@@ -21,7 +21,7 @@ export default function WindGenerators() {
     <section id="wind-generators" className="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <span className="text-primary uppercase tracking-widest text-lg text-gray-900 dark:text-gray-100">{w.sectionBadge}</span>
           <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
             {w.heading}

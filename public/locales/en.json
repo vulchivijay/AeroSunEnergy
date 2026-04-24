@@ -405,5 +405,37 @@
     "copyright": "© 2026 AeroSun Energy Private Limited",
     "registrationNotice": "(Registration is in process)",
     "allRightsReserved": "All rights reserved."
+  },
+  "savoniusRotor": {
+    "title": "Savonius Rotor",
+    "subtitle": "The most practical circle wind roller for low-wind environments",
+    "imageAlt": "Savonius wind rotor",
+    "howItWorks": "How it works",
+    "description": "A Savonius rotor is a vertical-axis wind turbine that uses drag force. Its S-shaped blades capture wind from any direction, making it ideal for rooftops and urban environments.",
+    "highlights": [
+      "Works in low wind speeds (3-5 m/s)",
+      "Omni-directional (no alignment needed)",
+      "Simple, durable, and low maintenance",
+      "Ideal for hybrid solar + wind systems"
+    ],
+    "specs": [
+      {
+        "label": "Efficiency",
+        "value": "15-25%"
+      },
+      {
+        "label": "Wind Range",
+        "value": "3-8 m/s"
+      },
+      {
+        "label": "Output",
+        "value": "50-300W"
+      },
+      {
+        "label": "Noise",
+        "value": "Very Low"
+      }
+    ],
+    "cta": "Explore Hybrid Solution"
   }
 }

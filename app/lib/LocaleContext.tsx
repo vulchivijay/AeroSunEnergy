@@ -1,9 +1,9 @@
 'use client'
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
-import en from '@/../public/locales/en.json'
-import hi from '@/../public/locales/hi.json'
-import te from '@/../public/locales/te.json'
+import en from '@/public/locales/en.json'
+import hi from '@/public/locales/hi.json'
+import te from '@/public/locales/te.json'
 
 const locales = { en, hi, te } as const
 
@@ -35,6 +35,10 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
       // ignore
     }
   }, [])
+
+  useEffect(() => {
+    document.documentElement.lang = locale
+  }, [locale])
 
   const setLocale = (l: Locale) => {
     setLocaleState(l)
