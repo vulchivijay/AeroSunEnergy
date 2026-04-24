@@ -1,18 +1,22 @@
 'use client';
 
 import Image from 'next/image';
+import { useLocale } from '@/app/lib/LocaleContext'
 
 export default function SavoniusRotor() {
+  const { t } = useLocale()
+  const s = t.savoniusRotor
+
   return (
-    <section className="w-full py-12 px-4 md:px-10 lg:px-20 bg-gradient-to-b from-slate-50 to-white">
+    <section className="px-6 py-12 sm:px-3 lg:px-12 bg-white dark:bg-gray-950 overflow-hidden bg-linear-to-b from-slate-50">
 
       {/* Header */}
-      <div className="max-w-5xl mx-auto text-center mb-10">
+      <div className="max-w-7xl mx-auto text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-          Savonius Rotor
+          {s.title}
         </h2>
         <p className="text-gray-600 mt-3 text-lg">
-          The most practical “circle wind roller” for low-wind environments
+          {s.subtitle}
         </p>
       </div>
 
@@ -20,10 +24,10 @@ export default function SavoniusRotor() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
 
         {/* Image */}
-        <div className="relative w-full h-[300px] md:h-[400px]">
+        <div className="relative w-full h-75 md:h-100">
           <Image
             src="/images/savonius-rotor.png" // place your image in public/images
-            alt="Savonius wind rotor"
+            alt={s.imageAlt}
             fill
             className="object-contain rounded-md shadow-md"
           />
@@ -32,53 +36,36 @@ export default function SavoniusRotor() {
         {/* Description */}
         <div>
           <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-            How it works
+            {s.howItWorks}
           </h3>
 
           <p className="text-gray-600 mb-4">
-            A Savonius rotor is a vertical-axis wind turbine that uses drag force.
-            Its S-shaped blades capture wind from any direction, making it ideal
-            for rooftops and urban environments.
+            {s.description}
           </p>
 
           {/* Key Points */}
           <ul className="space-y-3 text-gray-700">
-            <li>✔ Works in low wind speeds (3–5 m/s)</li>
-            <li>✔ Omni-directional (no alignment needed)</li>
-            <li>✔ Simple, durable, and low maintenance</li>
-            <li>✔ Ideal for hybrid solar + wind systems</li>
+            {s.highlights.map((highlight) => (
+              <li key={highlight}>✔ {highlight}</li>
+            ))}
           </ul>
         </div>
       </div>
 
       {/* Specs Section */}
       <div className="max-w-5xl mx-auto mt-12 grid sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
-
-        <div className="p-5 rounded-xl bg-white shadow">
-          <p className="text-gray-500 text-sm">Efficiency</p>
-          <p className="text-xl font-semibold text-gray-800">15–25%</p>
-        </div>
-
-        <div className="p-5 rounded-xl bg-white shadow">
-          <p className="text-gray-500 text-sm">Wind Range</p>
-          <p className="text-xl font-semibold text-gray-800">3–8 m/s</p>
-        </div>
-
-        <div className="p-5 rounded-xl bg-white shadow">
-          <p className="text-gray-500 text-sm">Output</p>
-          <p className="text-xl font-semibold text-gray-800">50–300W</p>
-        </div>
-
-        <div className="p-5 rounded-xl bg-white shadow">
-          <p className="text-gray-500 text-sm">Noise</p>
-          <p className="text-xl font-semibold text-gray-800">Very Low</p>
-        </div>
+        {s.specs.map((spec) => (
+          <div key={spec.label} className="p-5 rounded-xl bg-white shadow">
+            <p className="text-gray-500 text-sm">{spec.label}</p>
+            <p className="text-xl font-semibold text-gray-800">{spec.value}</p>
+          </div>
+        ))}
       </div>
 
       {/* CTA */}
       <div className="text-center mt-12">
         <button className="px-6 py-3 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition">
-          Explore Hybrid Solution
+          {s.cta}
         </button>
       </div>
     </section>

@@ -21,8 +21,8 @@ export default function Services() {
 
   return (
     <section id="services" className="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
           <span className="text-primary font-semibold uppercase tracking-widest text-lg text-gray-600 dark:text-gray-900">{s.sectionBadge}</span>
           <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-gray-100">
             {s.heading}
@@ -31,14 +31,14 @@ export default function Services() {
         </div>
 
         {/* Services Image */}
-        <div className="mb-16">
+        <div className="mb-12">
           <div className="relative max-w-7xl mx-auto">
             <div className="absolute inset-0 rounded-md bg-linear-to-r from-secondary/20 via-primary/20 to-accent/20 blur-3xl" aria-hidden="true" />
             <div className="relative overflow-hidden rounded-md border border-white/20 bg-white/90 shadow-2xl backdrop-blur-sm dark:border-white/10 dark:bg-slate-950/90">
               <div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white backdrop-blur-md">
                 {s.imageBadge}
               </div>
-              <div className="relative aspect-video overflow-hidden">
+              <div className="relative min-h-96 md:aspect-video overflow-hidden">
                 <Image
                   src="/images/home-business-aerosunenergy.png"
                   alt="AeroSun Energy manufacturing facility showcasing precision forming and assembly of hybrid energy systems"

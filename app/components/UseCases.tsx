@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from '@/app/lib/motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useLocale } from '@/app/lib/LocaleContext'
@@ -29,10 +29,10 @@ export default function UseCases() {
   const useCases = u.items.map((item, i) => ({ ...item, ...useCaseStyles[i] }))
 
   return (
-    <section id="use-cases" className="py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="use-cases" className="px-6 sm:px-3 lg:px-12 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -82,7 +82,7 @@ export default function UseCases() {
                     </span>
                   </div>
                 </div>
-                <div className={`p-8 lg:p-10 ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                <div className={`p-6 lg:p-12 ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
                   <div className="flex items-center gap-3">
                     <span className="rounded-sm shadow-sm border border-gray-200 bg-slate-50 px-3 py-1 text-sm font-semibold uppercase tracking-[0.28em] text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
                       {u.bestFit}

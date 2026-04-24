@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from '@/app/lib/motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useLocale } from '@/app/lib/LocaleContext'
@@ -27,12 +27,12 @@ export default function Hero() {
           <span className="mb-6 inline-flex rounded-md shadow-md border border-white/24 bg-white/24 px-3 py-2 text-lg uppercase tracking-[0.45em] text-white backdrop-blur-md">
             {h.badge}
           </span>
-          <h1 className="max-w-2xl leading-[1.1] tracking-[0.06em]! sm:text-4xl lg:text-5xl font-semibold">
+          <h1 className="text-4xl md:text-4xl leading-[1.1] tracking-[0.05em]! font-semibold">
             {h.title1}
             <br />
             {h.title2}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-6 text-white/82">
+          <p className="mt-6 max-w-2xl text-xl leading-[1.4] text-white/82">
             {h.description}
           </p>
           <div className="mt-8 grid gap-3 sm:max-w-xl sm:grid-cols-2">
@@ -56,7 +56,7 @@ export default function Hero() {
               title={h.buttons.exploreTitle}
               aria-label={h.buttons.exploreAriaLabel}
               data-section="how-it-works"
-              className="inline-flex items-center rounded-md shadown-md border border-white/25 bg-accent px-8 py-3.5 text-lg text-slate-200 backdrop-blur-md transition-colors duration-150 hover:scale-[1.02] opacity-65 pointer-events-none"
+              className="inline-flex items-center rounded-full shadow-sm border border-white/25 bg-white/15 px-8 py-3.5 text-lg text-slate-200 backdrop-blur-md transition-colors duration-150 hover:scale-[1.02]"
             >
               {h.buttons.explore}
             </Link>
@@ -65,7 +65,7 @@ export default function Hero() {
               title={h.buttons.quoteTitle}
               aria-label={h.buttons.quoteAriaLabel}
               data-section="contact"
-              className="inline-flex items-center rounded-md shadow-md border border-white/25 bg-accent px-8 py-3.5 text-lg text-slate-200 backdrop-blur-md transition-colors duration-150 hover:scale-[1.02] opacity-65 pointer-events-none"
+              className="inline-flex items-center rounded-full shadow-sm border border-white/25 bg-white/15 px-8 py-3.5 text-lg text-slate-200 backdrop-blur-md transition-colors duration-150 hover:scale-[1.02]"
             >
               {h.buttons.quote}
             </Link>
@@ -91,11 +91,11 @@ export default function Hero() {
           <div className="relative w-full max-w-4xl">
             <div className="absolute inset-8 rounded-[2.5rem] bg-accent/20 blur-3xl" aria-hidden="true" />
             <div className="relative overflow-hidden rounded-[2rem] border border-white/16 bg-white/8 p-3 shadow-[0_40px_120px_rgba(3,8,18,0.4)] backdrop-blur-sm">
-              <div className="absolute left-2 right-2 top-2 z-10 flex items-center justify-between rounded-md border border-white/16 bg-slate-950/35 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/75 backdrop-blur-md">
+              <div className="absolute left-6 right-6 top-6 z-10 flex items-center justify-between rounded-md border border-white/16 bg-slate-950/35 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/75 backdrop-blur-md">
                 <span>{h.overlay.snapshotLabel}</span>
                 <span>{h.overlay.optimisationLabel}</span>
               </div>
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] sm:aspect-[5/4]">
+              <div className="relative min-h-screen md:aspect-[4/5] overflow-hidden rounded-[1.5rem]">
                 <Image
                   src="/images/home-aerosunenergy.png"
                   alt="AeroSun Energy hybrid solar and wind installation"
@@ -109,7 +109,7 @@ export default function Hero() {
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,12,24,0.06),rgba(4,12,24,0.26)_58%,rgba(4,12,24,0.64)_100%)]" aria-hidden="true" />
               </div>
-              <div className="absolute bottom-33 left-6 right-6 z-10 grid gap-2 sm:grid-cols-2">
+              <div className="absolute bottom-6 left-6 right-6 z-10 grid gap-2 sm:grid-cols-2">
                 <div className="rounded-md border border-white/16 bg-slate-950/55 p-4 text-white backdrop-blur-md">
                   <p className="text-lg uppercase tracking-[0.08em] text-white/60">{h.overlay.primaryUseLabel}</p>
                   <p className="mt-2 text-lg">{h.overlay.primaryUseValue}</p>
@@ -118,12 +118,10 @@ export default function Hero() {
                   <p className="text-lg uppercase tracking-[0.08em] text-white/60">{h.overlay.performanceLabel}</p>
                   <p className="mt-2 text-lg">{h.overlay.performanceValue}</p>
                 </div>
-              </div>
-            </div>
-            <div className="absolute bottom-6 left-6 right-6 z-10 grid">
-              <div className="rounded-md border border-white/16 bg-slate-950/55 p-4 text-white backdrop-blur-md">
-                <p className="text-lg uppercase tracking-[0.28em] text-white/65">{h.overlay.fieldAdvantageLabel}</p>
-                <p className="mt-2 text-lg">{h.overlay.fieldAdvantageValue}</p>
+                <div className="rounded-md border border-white/16 bg-slate-950/55 p-4 text-white backdrop-blur-md">
+                  <p className="text-lg uppercase tracking-[0.28em] text-white/65">{h.overlay.fieldAdvantageLabel}</p>
+                  <p className="mt-2 text-lg">{h.overlay.fieldAdvantageValue}</p>
+                </div>
               </div>
             </div>
           </div>

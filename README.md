@@ -134,7 +134,20 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 npm run build
 ```
 
-The site is exported as a static site into the `out/` directory. The `postbuild` step automatically submits updated URLs to search engines via IndexNow.
+The site is exported as a static site into the `out/` directory. The `postbuild` step automatically submits the sitemap via IndexNow and prints a Google index verification summary.
+
+To enable the Google index verification step, set these environment variables before running the build:
+
+```bash
+GOOGLE_CUSTOM_SEARCH_API_KEY=your_google_api_key
+GOOGLE_CUSTOM_SEARCH_CX=your_programmable_search_engine_id
+```
+
+You can also run the check directly:
+
+```bash
+npm run google:index-check
+```
 
 ### Preview the production build
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from '@/app/lib/motion'
 import Image from 'next/image'
 import { useLocale } from '@/app/lib/LocaleContext'
 
@@ -10,7 +10,7 @@ export default function CTASection() {
 
   return (
     <section className="py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           className="relative overflow-hidden rounded-md shadow-2xl md:border md:border-slate-200 bg-slate-950 px-6 py-10 dark:border-white/10 sm:px-8 lg:px-10"
           initial={{ opacity: 0, y: 30 }}
@@ -46,13 +46,13 @@ export default function CTASection() {
                   href="#contact"
                   className="inline-flex items-center rounded-md bg-accent px-8 py-3.5 text-lg font-bold text-slate-950 transition-transform duration-150 hover:scale-[1.02]"
                 >
-                  {c.requestQuote}
+                  {c.buttons.quote}
                 </a>
                 <a
                   href="#how-it-works"
                   className="inline-flex items-center rounded-md border border-white/18 bg-white/8 px-8 py-3.5 text-lg font-bold text-white backdrop-blur-md transition-colors duration-150 hover:bg-white/14 opacity-55 pointer-events-none"
                 >
-                  {c.seeHowItWorks}
+                  {c.buttons.howItWorks}
                 </a>
               </div>
             </div>

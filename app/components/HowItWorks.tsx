@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from '@/app/lib/motion'
 import Image from 'next/image'
 import { Card, CardContent } from './Card'
 import { useLocale } from '@/app/lib/LocaleContext'
@@ -31,9 +31,9 @@ export default function HowItWorks() {
 
   return (
     <section id="how-it-works" className="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -51,7 +51,7 @@ export default function HowItWorks() {
 
         {/* Process Overview Image */}
         <motion.div
-          className="mb-16"
+          className="mb-12"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -63,7 +63,7 @@ export default function HowItWorks() {
               <div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white backdrop-blur-md">
                 {h.nextGenBadge}
               </div>
-              <div className="relative aspect-[16/9] overflow-hidden">
+              <div className="relative min-h-96 md:aspect-[16/9] overflow-hidden">
                 <Image
                   src="/images/nextgen-aerosunenergy.png"
                   alt="Next-generation hybrid energy technology by AeroSun - advanced systems for modern renewable infrastructure"
