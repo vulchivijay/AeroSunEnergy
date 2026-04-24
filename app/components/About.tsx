@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from '@/app/lib/motion'
 import Image from 'next/image'
 import { Card, CardContent } from './Card'
 import { useLocale } from '@/app/lib/LocaleContext'

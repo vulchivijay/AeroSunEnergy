@@ -8,10 +8,10 @@ export default function SavoniusRotor() {
   const s = t.savoniusRotor
 
   return (
-    <section className="w-full py-12 px-4 md:px-10 lg:px-20 bg-linear-to-b from-slate-50 to-white">
+    <section className="px-6 py-12 sm:px-3 lg:px-12 bg-white dark:bg-gray-950 overflow-hidden bg-linear-to-b from-slate-50">
 
       {/* Header */}
-      <div className="max-w-5xl mx-auto text-center mb-10">
+      <div className="max-w-7xl mx-auto text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
           {s.title}
         </h2>

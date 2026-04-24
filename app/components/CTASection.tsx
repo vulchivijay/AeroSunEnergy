@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from '@/app/lib/motion'
 import Image from 'next/image'
 import { useLocale } from '@/app/lib/LocaleContext'
 
@@ -10,7 +10,7 @@ export default function CTASection() {
 
   return (
     <section className="py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           className="relative overflow-hidden rounded-md shadow-2xl md:border md:border-slate-200 bg-slate-950 px-6 py-10 dark:border-white/10 sm:px-8 lg:px-10"
           initial={{ opacity: 0, y: 30 }}

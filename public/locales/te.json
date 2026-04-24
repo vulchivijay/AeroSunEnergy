@@ -1,5 +1,10 @@
 {
   "navbar": {
+    "languages": [
+      { "code": "en", "label": "ఇంగ్లీష్", "shortLabel": "EN" },
+      { "code": "hi", "label": "హిందీ", "shortLabel": "HI" },
+      { "code": "te", "label": "తెలుగు", "shortLabel": "TE" }
+    ],
     "links": [
       { "label": "హోమ్", "href": "#hero" },
       { "label": "మా గురించి", "href": "#about" },
@@ -15,7 +20,15 @@
     "navigateTo": "వెళ్ళండి",
     "goTo": "వెళ్ళు",
     "section": "విభాగం",
-    "languageLabel": "భాష"
+    "languageLabel": "భాష",
+    "startProjectTitle": "AeroSun Energy తో పునరుత్పాదక శక్తి ప్రాజెక్ట్ ప్రారంభించండి",
+    "startProjectAriaLabel": "మీ ప్రాజెక్ట్ ప్రారంభించడానికి AeroSun Energy ని సంప్రదించండి"
+  },
+  "logo": {
+    "homeTitle": "AeroSun Energy హోమ్‌పేజీకి వెళ్లండి",
+    "homeAriaLabel": "AeroSun Energy లోగో - హోమ్‌పేజీకి వెళ్లండి",
+    "imageAlt": "AeroSun Energy లోగో",
+    "tagline": "సూర్యుడు మరియు గాలినుంచి శక్తి"
   },
   "hero": {
     "badge": "శక్తి మౌలిక సదుపాయాల పునర్నిర్మాణం",

@@ -1,5 +1,10 @@
 {
   "navbar": {
+    "languages": [
+      { "code": "en", "label": "अंग्रेज़ी", "shortLabel": "EN" },
+      { "code": "hi", "label": "हिंदी", "shortLabel": "HI" },
+      { "code": "te", "label": "तेलुगु", "shortLabel": "TE" }
+    ],
     "links": [
       { "label": "होम", "href": "#hero" },
       { "label": "हमारे बारे में", "href": "#about" },
@@ -15,7 +20,15 @@
     "navigateTo": "जाएं",
     "goTo": "जाएं",
     "section": "अनुभाग",
-    "languageLabel": "भाषा"
+    "languageLabel": "भाषा",
+    "startProjectTitle": "AeroSun Energy के साथ नवीकरणीय ऊर्जा प्रोजेक्ट शुरू करें",
+    "startProjectAriaLabel": "अपना प्रोजेक्ट शुरू करने के लिए AeroSun Energy से संपर्क करें"
+  },
+  "logo": {
+    "homeTitle": "AeroSun Energy होमपेज पर जाएं",
+    "homeAriaLabel": "AeroSun Energy लोगो - होमपेज पर जाएं",
+    "imageAlt": "AeroSun Energy लोगो",
+    "tagline": "सूरज और हवा से ऊर्जा"
   },
   "hero": {
     "badge": "ऊर्जा अवसंरचना की पुनर्कल्पना",

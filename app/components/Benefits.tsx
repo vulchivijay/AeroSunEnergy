@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from '@/app/lib/motion'
 import { TrendingDown, Globe, ShieldCheck, Infinity } from 'lucide-react'
 import Image from 'next/image'
 import { Card, CardContent } from './Card'
@@ -42,7 +42,7 @@ export default function Benefits() {
 
   return (
     <section id="benefits" className="py-24 bg-white dark:bg-gray-950 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
@@ -65,7 +65,7 @@ export default function Benefits() {
           viewport={{ once: true }}
           transition={{ duration: 0.2, delay: 0.1 }}
         >
-          <div className="relative max-w-6xl mx-auto">
+          <div className="relative max-w-7xl mx-auto">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-md blur-3xl" aria-hidden="true" />
             <div className="relative overflow-hidden rounded-md border border-white/20 bg-white/90 shadow-2xl backdrop-blur-sm dark:border-white/10 dark:bg-slate-950/90">
               <div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white backdrop-blur-md">

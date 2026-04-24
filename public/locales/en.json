@@ -1,5 +1,10 @@
 {
   "navbar": {
+    "languages": [
+      { "code": "en", "label": "English", "shortLabel": "EN" },
+      { "code": "hi", "label": "Hindi", "shortLabel": "HI" },
+      { "code": "te", "label": "Telugu", "shortLabel": "TE" }
+    ],
     "links": [
       { "label": "Home", "href": "#hero" },
       { "label": "About", "href": "#about" },
@@ -15,7 +20,15 @@
     "navigateTo": "Navigate to",
     "goTo": "Go to",
     "section": "section",
-    "languageLabel": "Language"
+    "languageLabel": "Language",
+    "startProjectTitle": "Start a renewable energy project with AeroSun Energy",
+    "startProjectAriaLabel": "Contact AeroSun Energy to start your project"
+  },
+  "logo": {
+    "homeTitle": "Go to AeroSun Energy homepage",
+    "homeAriaLabel": "AeroSun Energy logo - go to homepage",
+    "imageAlt": "AeroSun Energy logo",
+    "tagline": "Power from Sun and Wind"
   },
   "hero": {
     "badge": "Energy Infrastructure Reimagined",

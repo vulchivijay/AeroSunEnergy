@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
-import Script from 'next/script'
 import { GoogleTagManager } from '@next/third-parties/google'
 import JsonLd from '@/app/components/JsonLd'
+import ThemeBootstrap from '@/app/components/ThemeBootstrap'
 import { LocaleProvider } from '@/app/lib/LocaleContext'
 
 import './globals.css'
@@ -121,21 +121,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${roboto.variable} bg-white text-gray-900 transition-colors duration-150 dark:bg-gray-950 dark:text-gray-100`}>
         {GTM_ID ? <GoogleTagManager gtmId={GTM_ID} /> : null}
-        <Script id="theme-script" strategy="beforeInteractive">
-          {`(function() {
-            try {
-              var theme = localStorage.getItem('theme');
-              var html = document.documentElement;
-              if (theme === 'dark') {
-                html.classList.add('dark');
-              } else {
-                html.classList.remove('dark');
-              }
-            } catch (e) {
-              console.error(e);
-            }
-          })();`}
-        </Script>
+        <ThemeBootstrap />
         <JsonLd />
         <LocaleProvider>
           {children}

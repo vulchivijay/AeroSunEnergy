@@ -1,10 +1,16 @@
 {
   "name": "aerosunenergy",
-  "version": "0.1.0",
+  "version": "2006.4.24",
   "private": true,
+  "author": {
+    "name": "Vulchi Vijaya Kumar",
+    "email": "vulchi.vijay@gmail.com",
+    "url": "https://sanatanadharmam.in"
+  },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "next build",
+    "google:index-check": "node scripts/submit-indexnow.js",
     "postbuild": "node scripts/submit-indexnow.js",
     "start": "next start",
     "lint": "next lint"

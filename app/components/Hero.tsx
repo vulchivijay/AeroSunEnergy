@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from '@/app/lib/motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useLocale } from '@/app/lib/LocaleContext'

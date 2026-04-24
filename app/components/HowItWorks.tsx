@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from '@/app/lib/motion'
 import Image from 'next/image'
 import { Card, CardContent } from './Card'
 import { useLocale } from '@/app/lib/LocaleContext'
@@ -31,7 +31,7 @@ export default function HowItWorks() {
 
   return (
     <section id="how-it-works" className="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}

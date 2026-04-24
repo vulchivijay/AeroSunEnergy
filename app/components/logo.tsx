@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { useLocale } from '@/app/lib/LocaleContext'
 type LogoProps = {
   size?: 'default' | 'footer'
 }
@@ -8,11 +9,12 @@ type LogoProps = {
 export default function Logo({ size = 'default' }: LogoProps) {
   const isFooter = size === 'footer'
 
+  const { t } = useLocale()
   return (
-    <Link href="#" title="Go to AeroSun Energy homepage" aria-label="AeroSun Energy logo - go to homepage" data-logo="brand" className={`relative flex items-center gap-1`}>
+    <Link href="#" title={t.logo.homeTitle} aria-label={t.logo.homeAriaLabel} data-logo="brand" className={`relative flex items-center gap-1`}>
       <Image
         src="/images/logo-aerosunenergy.png"
-        alt="AeroSun Energy logo"
+        alt={t.logo.imageAlt}
         width={isFooter ? 112 : 96}
         height={isFooter ? 112 : 96}
         className={isFooter ? 'h-auto w-28' : 'h-auto w-24'}
@@ -25,7 +27,7 @@ export default function Logo({ size = 'default' }: LogoProps) {
           <span className={`${isFooter ? 'text-[2rem]' : 'text-3xl'} ml-1 font-semibold bg-clip-text bg-linear-to-r from-green-800 via-green-700 to-green-600 drop-shadow-xl text-transparent tracking-wider`}>Sun</span>
         </div>
         <div className={`${isFooter ? 'text-[1.03rem]' : 'text-lg'} uppercase text-yellow-700 dark:text-yellow-400 font-semibold`}> {`${isFooter ? '--' : ''}`}------ E n e r g y ------{`${isFooter ? '--' : ''}`}</div>
-        <div className={`${isFooter ? 'text-sm' : 'text-sm'} text-gray-900 dark:text-gray-500`}>Power from Sun and Wind</div>
+        <div className={`${isFooter ? 'text-sm' : 'text-sm'} text-gray-900 dark:text-gray-500`}>{t.logo.tagline}</div>
       </div>
     </Link>
   )
