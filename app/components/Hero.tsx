@@ -3,13 +3,11 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useLocale } from '@/app/lib/LocaleContext'
 
 export default function Hero() {
-  const proofPoints = [
-    '24/7 hybrid generation',
-    'Smart IoT monitoring',
-    'Built for roads, rooftops, parks, and industry',
-  ]
+  const { t } = useLocale()
+  const h = t.hero
 
   return (
     <section className="relative flex min-h-screen items-center bg-[#06111d] text-white overflow-hidden">
@@ -27,24 +25,24 @@ export default function Hero() {
           transition={{ duration: 0.2, ease: 'easeOut' }}
         >
           <span className="mb-6 inline-flex rounded-md shadow-md border border-white/24 bg-white/24 px-3 py-2 text-lg uppercase tracking-[0.45em] text-white backdrop-blur-md">
-            Energy Infrastructure Reimagined
+            {h.badge}
           </span>
           <h1 className="max-w-2xl leading-[1.1] tracking-[0.06em]! sm:text-4xl lg:text-5xl font-semibold">
-            Hybrid solar wind energy systems in India.
+            {h.title1}
             <br />
-            Built for rooftops, roads, parks, and industry.
+            {h.title2}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-6 text-white/82">
-            AeroSun Energy designs hybrid solar and wind systems that stay productive beyond peak daylight. From rooftops and parks to highway corridors and industrial land, every installation is shaped for continuous output, lower operating cost, and cleaner infrastructure.
+            {h.description}
           </p>
           <div className="mt-8 grid gap-3 sm:max-w-xl sm:grid-cols-2">
-            {proofPoints.map((point) => (
+            {h.proofPoints.map((point) => (
               <div key={point} className="rounded-md shadow-md bg-white/8 px-4 py-3 text-lg font-medium text-white/92 backdrop-blur-md">
                 {point}
               </div>
             ))}
             <div className="rounded-md bg-white/8 px-4 py-3 text-lg text-white/92 backdrop-blur-md">
-              Up to 80% reduction in electricity bills
+              {h.billReduction}
             </div>
           </div>
           <motion.div
@@ -55,41 +53,31 @@ export default function Hero() {
           >
             <Link
               href="#how-it-works"
-              title="Learn how AeroSun Energy hybrid systems work"
-              aria-label="Explore the AeroSun Energy system details"
+              title={h.buttons.exploreTitle}
+              aria-label={h.buttons.exploreAriaLabel}
               data-section="how-it-works"
               className="inline-flex items-center rounded-md shadown-md border border-white/25 bg-accent px-8 py-3.5 text-lg text-slate-200 backdrop-blur-md transition-colors duration-150 hover:scale-[1.02] opacity-65 pointer-events-none"
             >
-              Explore the System
+              {h.buttons.explore}
             </Link>
             <Link
               href="#contact"
-              title="Get a free quote for AeroSun Energy systems"
-              aria-label="Request a free quote from AeroSun Energy"
+              title={h.buttons.quoteTitle}
+              aria-label={h.buttons.quoteAriaLabel}
               data-section="contact"
               className="inline-flex items-center rounded-md shadow-md border border-white/25 bg-accent px-8 py-3.5 text-lg text-slate-200 backdrop-blur-md transition-colors duration-150 hover:scale-[1.02] opacity-65 pointer-events-none"
             >
-              Get a Free Quote
+              {h.buttons.quote}
             </Link>
           </motion.div>
 
           <div className="mt-12 grid max-w-2xl grid-cols-2 gap-4 border-t border-white/12 pt-8 sm:grid-cols-4">
-            <div>
-              <p className="text-3xl text-white">24/7</p>
-              <p className="mt-2 text-sm uppercase tracking-[0.24em] text-white/55">Power Availability</p>
-            </div>
-            <div>
-              <p className="text-3xl text-white">4-6 years</p>
-              <p className="mt-2 text-sm uppercase tracking-[0.24em] text-white/55">Typical ROI Window</p>
-            </div>
-            <div>
-              <p className="text-3xl text-white">IoT App</p>
-              <p className="mt-2 text-sm uppercase tracking-[0.24em] text-white/55">Live Monitoring</p>
-            </div>
-            <div>
-              <p className="text-3xl text-white">Multi-site</p>
-              <p className="mt-2 text-sm uppercase tracking-[0.24em] text-white/55">Deployment Types</p>
-            </div>
+            {h.stats.map((stat) => (
+              <div key={stat.label}>
+                <p className="text-3xl text-white">{stat.value}</p>
+                <p className="mt-2 text-sm uppercase tracking-[0.24em] text-white/55">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </motion.div>
 
@@ -104,8 +92,8 @@ export default function Hero() {
             <div className="absolute inset-8 rounded-[2.5rem] bg-accent/20 blur-3xl" aria-hidden="true" />
             <div className="relative overflow-hidden rounded-[2rem] border border-white/16 bg-white/8 p-3 shadow-[0_40px_120px_rgba(3,8,18,0.4)] backdrop-blur-sm">
               <div className="absolute left-2 right-2 top-2 z-10 flex items-center justify-between rounded-md border border-white/16 bg-slate-950/35 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/75 backdrop-blur-md">
-                <span>Hybrid Energy Snapshot</span>
-                <span>Live Optimisation</span>
+                <span>{h.overlay.snapshotLabel}</span>
+                <span>{h.overlay.optimisationLabel}</span>
               </div>
               <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] sm:aspect-[5/4]">
                 <Image
@@ -123,19 +111,19 @@ export default function Hero() {
               </div>
               <div className="absolute bottom-33 left-6 right-6 z-10 grid gap-2 sm:grid-cols-2">
                 <div className="rounded-md border border-white/16 bg-slate-950/55 p-4 text-white backdrop-blur-md">
-                  <p className="text-lg uppercase tracking-[0.08em] text-white/60">Primary Use</p>
-                  <p className="mt-2 text-lg">Residential to infrastructure-scale deployment</p>
+                  <p className="text-lg uppercase tracking-[0.08em] text-white/60">{h.overlay.primaryUseLabel}</p>
+                  <p className="mt-2 text-lg">{h.overlay.primaryUseValue}</p>
                 </div>
                 <div className="rounded-md border border-white/16 bg-white/12 p-4 text-white backdrop-blur-md">
-                  <p className="text-lg uppercase tracking-[0.08em] text-white/60">Performance Logic</p>
-                  <p className="mt-2 text-lg">Solar in daylight, wind beyond it</p>
+                  <p className="text-lg uppercase tracking-[0.08em] text-white/60">{h.overlay.performanceLabel}</p>
+                  <p className="mt-2 text-lg">{h.overlay.performanceValue}</p>
                 </div>
               </div>
             </div>
             <div className="absolute bottom-6 left-6 right-6 z-10 grid">
               <div className="rounded-md border border-white/16 bg-slate-950/55 p-4 text-white backdrop-blur-md">
-                <p className="text-lg uppercase tracking-[0.28em] text-white/65">Field Advantage</p>
-                <p className="mt-2 text-lg">One system, multiple generation windows, minimal dead time.</p>
+                <p className="text-lg uppercase tracking-[0.28em] text-white/65">{h.overlay.fieldAdvantageLabel}</p>
+                <p className="mt-2 text-lg">{h.overlay.fieldAdvantageValue}</p>
               </div>
             </div>
           </div>

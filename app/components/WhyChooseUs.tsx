@@ -4,36 +4,20 @@ import { motion } from 'framer-motion'
 import { Lightbulb, ShieldCheck, Layers, MapPin } from 'lucide-react'
 import Image from 'next/image'
 import { Card, CardContent } from './Card'
+import { useLocale } from '@/app/lib/LocaleContext'
 
-const reasons = [
-  {
-    icon: <Lightbulb className="h-8 w-8 text-blue-800 dark:text-blue-100" />,
-    title: 'Certified Expert Team',
-    desc: 'Our engineers and energy consultants are certified specialists in hybrid solar wind energy systems with proven installations across urban and rural India.',
-    cardBg: 'bg-blue-100/85 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700 hover:border-blue-500',
-    iconBg: 'bg-blue-300 dark:bg-blue-800',
-  },
-  {
-    icon: <ShieldCheck className="h-8 w-8 text-emerald-800 dark:text-emerald-100" />,
-    title: 'Innovative Smart Systems',
-    desc: 'Every AeroSun installation includes IoT-enabled monitoring, smart inverters, and AI-assisted output optimisation — true smart energy systems built for the future.',
-    cardBg: 'bg-emerald-100/85 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700 hover:border-emerald-500',
-    iconBg: 'bg-emerald-300 dark:bg-emerald-800',
-  },
-  {
-    icon: <Layers className="h-8 w-8 text-amber-800 dark:text-amber-100" />,
-    title: 'Fully Scalable Solutions',
-    desc: 'From a single-home solar wind hybrid system to city-wide green energy infrastructure, our modular architecture scales effortlessly to match any project size or budget.',
-    cardBg: 'bg-amber-100/85 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700 hover:border-amber-500',
-    iconBg: 'bg-amber-300 dark:bg-amber-800',
-  },
-  {
-    icon: <MapPin className="h-8 w-8 text-indigo-800 dark:text-indigo-100" />,
-    title: 'Reliable 24/7 Support',
-    desc: 'Round-the-clock customer support and a rapid-response maintenance team ensure your hybrid energy system always runs at full capacity — no downtime, no surprises.',
-    cardBg: 'bg-indigo-100/85 dark:bg-indigo-900/55 border-indigo-300 dark:border-indigo-700 hover:border-indigo-500',
-    iconBg: 'bg-indigo-300 dark:bg-indigo-800',
-  },
+const reasonIcons = [
+  <Lightbulb key="lightbulb" className="h-8 w-8 text-blue-800 dark:text-blue-100" />,
+  <ShieldCheck key="shield" className="h-8 w-8 text-emerald-800 dark:text-emerald-100" />,
+  <Layers key="layers" className="h-8 w-8 text-amber-800 dark:text-amber-100" />,
+  <MapPin key="mappin" className="h-8 w-8 text-indigo-800 dark:text-indigo-100" />,
+]
+
+const reasonStyles = [
+  { cardBg: 'bg-blue-100/85 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700 hover:border-blue-500', iconBg: 'bg-blue-300 dark:bg-blue-800' },
+  { cardBg: 'bg-emerald-100/85 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700 hover:border-emerald-500', iconBg: 'bg-emerald-300 dark:bg-emerald-800' },
+  { cardBg: 'bg-amber-100/85 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700 hover:border-amber-500', iconBg: 'bg-amber-300 dark:bg-amber-800' },
+  { cardBg: 'bg-indigo-100/85 dark:bg-indigo-900/55 border-indigo-300 dark:border-indigo-700 hover:border-indigo-500', iconBg: 'bg-indigo-300 dark:bg-indigo-800' },
 ]
 
 const containerVariants = {
@@ -47,6 +31,15 @@ const cardVariants = {
 }
 
 export default function WhyChooseUs() {
+  const { t } = useLocale()
+  const w = t.whyChooseUs
+
+  const reasons = w.items.map((item, i) => ({
+    ...item,
+    icon: reasonIcons[i],
+    ...reasonStyles[i],
+  }))
+
   return (
     <section id="why-us" className="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,9 +50,9 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="text-gray-600 dark:text-white">Our Advantages</span>
+          <span className="text-gray-600 dark:text-white">{w.sectionBadge}</span>
           <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
-            Why Choose AeroSun for Hybrid Energy
+            {w.heading}
           </h2>
           <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary" />
         </motion.div>
@@ -76,7 +69,7 @@ export default function WhyChooseUs() {
             <div className="absolute inset-0 rounded-md bg-linear-to-r from-accent/20 via-primary/20 to-secondary/20 blur-3xl" aria-hidden="true" />
             <div className="relative overflow-hidden rounded-md border border-white/20 bg-white/90 shadow-2xl backdrop-blur-sm dark:border-white/10 dark:bg-slate-950/90">
               <div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white backdrop-blur-md">
-                Future-Ready Innovation
+                {w.imageBadge}
               </div>
               <div className="relative aspect-video overflow-hidden">
                 <Image
@@ -90,7 +83,7 @@ export default function WhyChooseUs() {
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-3 bg-green-500/25 backdrop-blur-sm">
                 <p className="text-lg text-white">
-                  Our commitment to innovation drives us to continuously evolve our technology, ensuring our clients always have access to the most advanced and efficient renewable energy solutions available.
+                  {w.imageCaption}
                 </p>
               </div>
             </div>

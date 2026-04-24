@@ -3,6 +3,7 @@ import { Roboto } from 'next/font/google'
 import Script from 'next/script'
 import { GoogleTagManager } from '@next/third-parties/google'
 import JsonLd from '@/app/components/JsonLd'
+import { LocaleProvider } from '@/app/lib/LocaleContext'
 
 import './globals.css'
 
@@ -136,7 +137,9 @@ export default function RootLayout({
           })();`}
         </Script>
         <JsonLd />
-        {children}
+        <LocaleProvider>
+          {children}
+        </LocaleProvider>
       </body>
     </html>
   )

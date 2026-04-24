@@ -1,77 +1,33 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { useLocale } from '@/app/lib/LocaleContext'
 
-const generators = [
-  {
-    id: 'h-darrieus',
-    title: 'H-Darrieus Turbine',
-    subtitle: 'Urban Corridors & Mid-Wind Sites',
-    badge: 'H-VAWT',
-    badgeColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300',
-    imageSrc: '/images/h-darrieus-turbine-aerosunenergy.png',
-    imageAlt: 'H-Darrieus wind turbine by AeroSun Energy',
-    highlights: ['Rated capacity 1 kW – 200 kW', 'Performs in 3 to 8 m/s wind zones', 'Compact footprint for constrained sites', 'Efficient lift-based rotor design'],
-    description:
-      'The H-Darrieus turbine uses lift-driven vertical blades to capture wind efficiently without needing active yaw control. It performs reliably in variable urban and semi-urban airflow, making it suitable for highway edges, industrial plots, and compact utility installations.',
-    accentFrom: 'from-blue-400',
-    accentTo: 'to-purple-400',
-  },
-  {
-    id: 'flower',
-    title: 'Helical Flower Turbine',
-    subtitle: 'Urban Rooftops & Quiet Environments',
-    badge: 'Flower VAWT',
-    badgeColor: 'bg-pink-100 text-pink-700 dark:bg-pink-900 dark:text-pink-300',
-    imageSrc: '/images/helical-turbine-aerosunenergy.png',
-    imageAlt: 'Helical flower-style vertical wind turbine by AeroSun Energy',
-    highlights: ['Rated capacity 0.5 – 50 kW', 'Works at wind speeds ≥ 2 m/s', 'Omni-directional – no yaw needed', 'Near-silent operation'],
-    description:
-      'Flower turbines feature multiple helical petal-shaped blades arranged symmetrically around a vertical axis, resembling a blooming flower in motion. They capture wind from any horizontal direction without requiring a yaw mechanism, making them ideal for turbulent urban airflows. Their low rotational noise and elegant appearance suit rooftop installations, parks, and environmentally sensitive areas.',
-    accentFrom: 'from-pink-400',
-    accentTo: 'to-rose-400',
-  },
-  {
-    id: 'savonius',
-    title: 'Savonius VAWT',
-    subtitle: 'Low Wind Speed & Off-Grid Sites',
-    badge: 'Low-Wind VAWT',
-    badgeColor: 'bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-300',
-    imageSrc: '/images/savonius-turbine-aerosunenergy.png',
-    imageAlt: 'Savonius vertical-axis wind turbine by AeroSun Energy',
-    highlights: ['Rated capacity 0.3 – 30 kW', 'Self-starting from 1.5 m/s', 'Works in turbulent & gusty winds', 'Minimal maintenance'],
-    description:
-      'The Savonius vertical-axis wind turbine uses two or more curved bucket-shaped scoops mounted on a vertical shaft. The differential drag between the concave and convex faces causes rotation even at very low wind speeds, making it self-starting without any external mechanism. Perfect for remote off-grid locations, hilly terrain, and areas with inconsistent or low-velocity wind resources where conventional turbines cannot operate efficiently.',
-    accentFrom: 'from-teal-400',
-    accentTo: 'to-cyan-400',
-  },
-  {
-    id: 'rooftop-vawt',
-    title: 'Rooftop Smart VAWT',
-    subtitle: 'Homes, Apartments & Terrace Retrofits',
-    badge: 'Rooftop',
-    badgeColor: 'bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-300',
-    imageSrc: '/images/roof-turbine-aerosunenergy.png',
-    imageAlt: 'Rooftop vertical wind turbine by AeroSun Energy',
-    highlights: ['Compact structure for terrace loads', 'Performs in mixed city airflow', 'Low-noise residential profile', 'Hybrid-ready with rooftop solar'],
-    description:
-      'Rooftop VAWTs are designed for dense urban settings where space and noise matter. Combined with rooftop solar, they extend generation windows beyond daylight and help homes or small facilities improve self-consumption and bill savings.',
-    accentFrom: 'from-orange-400',
-    accentTo: 'to-yellow-400',
-  },
+const generatorStyles = [
+  { id: 'h-darrieus', imageSrc: '/images/h-darrieus-turbine-aerosunenergy.png', imageAlt: 'H-Darrieus wind turbine by AeroSun Energy', badgeColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300', accentFrom: 'from-blue-400', accentTo: 'to-purple-400' },
+  { id: 'flower', imageSrc: '/images/helical-turbine-aerosunenergy.png', imageAlt: 'Helical flower-style vertical wind turbine by AeroSun Energy', badgeColor: 'bg-pink-100 text-pink-700 dark:bg-pink-900 dark:text-pink-300', accentFrom: 'from-pink-400', accentTo: 'to-rose-400' },
+  { id: 'savonius', imageSrc: '/images/savonius-turbine-aerosunenergy.png', imageAlt: 'Savonius vertical-axis wind turbine by AeroSun Energy', badgeColor: 'bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-300', accentFrom: 'from-teal-400', accentTo: 'to-cyan-400' },
+  { id: 'rooftop-vawt', imageSrc: '/images/roof-turbine-aerosunenergy.png', imageAlt: 'Rooftop vertical wind turbine by AeroSun Energy', badgeColor: 'bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-300', accentFrom: 'from-orange-400', accentTo: 'to-yellow-400' },
 ]
 
 export default function WindGenerators() {
+  const { t } = useLocale()
+  const w = t.windGenerators
+
+  const generators = w.items.map((item, i) => ({ ...item, ...generatorStyles[i] }))
+
   return (
     <section id="wind-generators" className="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-primary uppercase tracking-widest text-lg text-gray-900 dark:text-gray-100">Our Technology</span>
+          <span className="text-primary uppercase tracking-widest text-lg text-gray-900 dark:text-gray-100">{w.sectionBadge}</span>
           <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
-            Wind Turbines for Hybrid Solar Wind Systems
+            {w.heading}
           </h2>
           <p className="mt-4 text-lg text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">
-            We offer a full spectrum of wind generators — from conventional three-blade turbines to innovative flower turbines and minimal-airflow vertical-axis rotors — so every site gets the right technology.
+            {w.description}
           </p>
           <div className="mt-6 mx-auto w-16 h-1 rounded-md bg-gradient-to-r from-primary to-secondary" />
         </div>
@@ -118,12 +74,12 @@ export default function WindGenerators() {
                 </ul>
                 <Link
                   href="#contact"
-                  title="Get a quote for AeroSun Energy wind generators"
-                  aria-label="Request a quote for this wind generator model"
+                  title={w.getQuoteTitle}
+                  aria-label={w.getQuoteAriaLabel}
                   data-cta="get-quote"
                   className={`inline-block bg-gradient-to-r ${gen.accentFrom} ${gen.accentTo} text-white font-semoibold px-6 py-2.5 rounded-xl shadow-xl hover:opacity-90 transition-opacity text-lg opacity-65 pointer-events-none`}
                 >
-                  Get a Quote →
+                  {w.getQuote}
                 </Link>
               </div>
             </div>

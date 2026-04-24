@@ -1,0 +1,409 @@
+{
+  "navbar": {
+    "links": [
+      { "label": "Home", "href": "#hero" },
+      { "label": "About", "href": "#about" },
+      { "label": "How It Works", "href": "#how-it-works" },
+      { "label": "Features", "href": "#features" },
+      { "label": "Use Cases", "href": "#use-cases" },
+      { "label": "Why Us", "href": "#why-us" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "startProject": "Start a Project",
+    "toggleDark": "Toggle dark mode",
+    "toggleMenu": "Toggle menu",
+    "navigateTo": "Navigate to",
+    "goTo": "Go to",
+    "section": "section",
+    "languageLabel": "Language"
+  },
+  "hero": {
+    "badge": "Energy Infrastructure Reimagined",
+    "title1": "Hybrid solar wind energy systems in India.",
+    "title2": "Built for rooftops, roads, parks, and industry.",
+    "description": "AeroSun Energy designs hybrid solar and wind systems that stay productive beyond peak daylight. From rooftops and parks to highway corridors and industrial land, every installation is shaped for continuous output, lower operating cost, and cleaner infrastructure.",
+    "proofPoints": [
+      "24/7 hybrid generation",
+      "Smart IoT monitoring",
+      "Built for roads, rooftops, parks, and industry"
+    ],
+    "billReduction": "Up to 80% reduction in electricity bills",
+    "buttons": {
+      "explore": "Explore the System",
+      "exploreTitle": "Learn how AeroSun Energy hybrid systems work",
+      "exploreAriaLabel": "Explore the AeroSun Energy system details",
+      "quote": "Get a Free Quote",
+      "quoteTitle": "Get a free quote for AeroSun Energy systems",
+      "quoteAriaLabel": "Request a free quote from AeroSun Energy"
+    },
+    "stats": [
+      { "value": "24/7", "label": "Power Availability" },
+      { "value": "4-6 years", "label": "Typical ROI Window" },
+      { "value": "IoT App", "label": "Live Monitoring" },
+      { "value": "Multi-site", "label": "Deployment Types" }
+    ],
+    "overlay": {
+      "snapshotLabel": "Hybrid Energy Snapshot",
+      "optimisationLabel": "Live Optimisation",
+      "primaryUseLabel": "Primary Use",
+      "primaryUseValue": "Residential to infrastructure-scale deployment",
+      "performanceLabel": "Performance Logic",
+      "performanceValue": "Solar in daylight, wind beyond it",
+      "fieldAdvantageLabel": "Field Advantage",
+      "fieldAdvantageValue": "One system, multiple generation windows, minimal dead time."
+    }
+  },
+  "about": {
+    "features": [
+      {
+        "title": "Always-On Generation",
+        "desc": "Solar powers your system through the day while wind turbines keep generating at night and on cloudy days — ensuring uninterrupted electricity supply."
+      },
+      {
+        "title": "Cut Your Energy Bills",
+        "desc": "Reduce electricity costs by up to 80% with our optimised solar wind hybrid systems — a smart investment that pays for itself and then keeps paying you."
+      },
+      {
+        "title": "Built to Last",
+        "desc": "Engineered for low maintenance and peak performance across all climates — urban rooftops, open highways, rural farmland, and public parks alike."
+      }
+    ],
+    "founder": {
+      "name": "Vulchi Vijaya Kumar",
+      "title": "Founder & Visionary Leader",
+      "bio": "Driving India's renewable energy revolution with cutting-edge hybrid technology solutions that empower communities and businesses across the nation."
+    },
+    "paragraph1": "AeroSun Energy, a flagship innovation of Aerosun Energy, is India's first specialized manufacturer of portable and low-wind smart turbines. Founded by Vulchi Vijaya Kumar, Aerosun Energy is driven by the belief that clean wind energy should be accessible, affordable, and scalable — from rooftops in remote villages to commercial buildings in the heart of modern cities.",
+    "paragraph2": "With strong roots in innovation, sustainability, and rural empowerment, Aerosun Energy designs advanced wind energy systems that operate silently, generate power at low wind speeds, and require minimal maintenance. Our solutions are built to perform reliably across diverse Indian environments.",
+    "quote": "We don't just build turbines. We create a future where every citizen can produce their own clean energy.",
+    "coreValuesHeading": "Our Core Values",
+    "coreValues": [
+      {
+        "title": "Sustainability",
+        "desc": "Accelerating India's transition to renewable energy by reducing carbon footprints through clean wind solutions."
+      },
+      {
+        "title": "Innovation",
+        "desc": "Designing low-wind, smart, and efficient turbine technology tailored for real-world conditions."
+      },
+      {
+        "title": "Accessibility",
+        "desc": "Making renewable energy affordable and easy to adopt for homes, businesses, and rural communities."
+      },
+      {
+        "title": "Empowerment",
+        "desc": "Enabling energy independence and strengthening rural and urban economies alike."
+      },
+      {
+        "title": "Reliability",
+        "desc": "Delivering quiet, durable, and low-maintenance systems that perform consistently over time."
+      }
+    ],
+    "techBadge": "The Technology",
+    "techHeading": "Hybrid Solar and Wind Energy System Overview",
+    "techIntegratedBadge": "Integrated Technology",
+    "techSubheading": "A hybrid platform designed to keep producing when single-source systems slow down.",
+    "techPara1": "Our hybrid solar wind energy system combines photovoltaic solar panels and compact wind turbines into one integrated, intelligent power unit. Solar panels capture sunlight during the day while the wind turbines generate power continuously — day or night, rain or shine. Together, they complement each other perfectly: when solar output drops (overcast skies or night-time), wind steps in to fill the gap.",
+    "techPara2": "The result is a smart energy system that delivers far more consistent power than either source alone. Paired with IoT-enabled monitoring and optional battery storage, you get real-time visibility and control over every kilowatt generated — the foundation of India's green energy infrastructure.",
+    "techPara3": "AeroSun Energy designs and installs tailored renewable energy solutions across India — for homes, businesses, public spaces, and large-scale infrastructure — making clean, affordable power accessible to everyone.",
+    "techPoints": [
+      "Dual-source generation that reduces idle periods.",
+      "Smart controls that balance solar, wind, and storage.",
+      "Scalable deployment from home rooftops to public assets."
+    ],
+    "techImageBadge": "Future Ready",
+    "techImageCaption": "Hybrid systems engineered for dependable output, smart monitoring, and scalable installations."
+  },
+  "howItWorks": {
+    "sectionBadge": "Simple Process",
+    "heading": "How Hybrid Solar Wind Systems Work",
+    "description": "From site visit to 24/7 power generation — here's how we turn any location into a clean energy source with our solar wind hybrid system.",
+    "nextGenBadge": "Next-Gen Technology",
+    "nextGenCaption": "Our cutting-edge hybrid systems combine the latest in solar photovoltaic technology with advanced vertical-axis wind turbines, creating a seamless energy generation platform that adapts to any environment.",
+    "stepLabel": "Step",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Site Assessment",
+        "description": "Our engineers visit your location — rooftop, road, park, or open land — to measure sunlight exposure, wind patterns, and available space. This data shapes a system perfectly tuned to your site."
+      },
+      {
+        "number": "02",
+        "title": "Custom System Design",
+        "description": "We design a hybrid solar wind energy system tailored for your energy needs and budget. Solar panels are oriented for maximum daylight capture while wind turbines are sized and positioned to harvest wind around the clock."
+      },
+      {
+        "number": "03",
+        "title": "Installation",
+        "description": "Our certified installation team sets up the solar panels, wind turbines, smart inverters, and optional battery storage — all integrated into one unified green energy system with zero disruption to your operations."
+      },
+      {
+        "number": "04",
+        "title": "Smart Monitoring",
+        "description": "An IoT-enabled dashboard gives you real-time visibility into power generation, consumption, and savings — from your phone or computer. The system auto-optimises output between solar and wind at all times."
+      },
+      {
+        "number": "05",
+        "title": "Continuous Power, Minimal Maintenance",
+        "description": "Once live, your hybrid system generates electricity day and night with minimal maintenance. Solar works hardest in daylight; wind covers the rest. Together, they deliver continuous, reliable power to support sustainable infrastructure."
+      }
+    ]
+  },
+  "features": {
+    "sectionBadge": "What Sets Us Apart",
+    "heading": "Hybrid Solar Wind System Features",
+    "items": [
+      {
+        "title": "24/7 Power Generation",
+        "desc": "Solar and wind working together ensures continuous electricity day and night, even during cloudy or calm periods."
+      },
+      {
+        "title": "Smart Grid Integration",
+        "desc": "IoT-enabled controllers seamlessly feed surplus energy back to the grid and manage load balancing in real time."
+      },
+      {
+        "title": "Low Maintenance",
+        "desc": "Minimal moving parts and self-cleaning panel coatings keep operational costs low with rare service intervals."
+      },
+      {
+        "title": "Scalable Installation",
+        "desc": "From a single rooftop kit to a multi-megawatt commercial array, our modular design scales with your energy needs."
+      },
+      {
+        "title": "Eco-Friendly",
+        "desc": "Zero direct emissions during operation, recyclable components, and a lifecycle carbon footprint far below fossil fuels."
+      },
+      {
+        "title": "Efficient Land Use",
+        "desc": "Hybrid systems generate more energy per square metre, reducing land requirements compared to standalone solar or wind farms."
+      }
+    ]
+  },
+  "useCases": {
+    "sectionBadge": "Where We Install",
+    "heading": "Hybrid Solar Wind Use Cases in India",
+    "description": "Our hybrid solar wind energy systems are engineered for diverse environments — from busy highways to quiet homes — bringing renewable energy solutions across India wherever they're needed most.",
+    "bestFit": "Best Fit",
+    "discussDeployment": "Discuss this deployment",
+    "discussTitle": "Contact AeroSun Energy to discuss this deployment option",
+    "discussAriaLabel": "Get in touch to discuss this renewable energy deployment",
+    "items": [
+      {
+        "title": "Smart Energy Roads & Highways",
+        "tag": "Infrastructure",
+        "description": "Roads and highways are exposed to sunlight and wind 24 hours a day. AeroSun integrates solar panels into road surface barriers and wind turbines along medians and roadsides — turning every kilometre of highway into a green energy generator that powers streetlights, traffic systems, and EV charging stations.",
+        "points": [
+          "Powers streetlights & signage",
+          "Supports EV charging infrastructure",
+          "Scalable across national highways",
+          "Supports smart city infrastructure"
+        ]
+      },
+      {
+        "title": "Public Parks & Open Spaces",
+        "tag": "Urban Green",
+        "description": "Parks offer unobstructed sunlight and natural airflow. Our aesthetically designed flower turbines and solar canopies blend seamlessly into park landscapes, powering benches, Wi-Fi nodes, lighting, and event spaces — supporting sustainable urban infrastructure without disrupting the natural environment.",
+        "points": [
+          "Aesthetic flower turbine designs",
+          "Powers park lighting & amenities",
+          "Silent, low-vibration operation",
+          "Ideal for urban and suburban parks"
+        ]
+      },
+      {
+        "title": "Residential Rooftops",
+        "tag": "Home Energy",
+        "description": "Our solar wind hybrid system for homes combines compact rooftop solar panels with low-wind VAWT turbines — delivering round-the-clock electricity. Homeowners can cut their bills drastically, store surplus energy, and even sell power back to the grid through net metering.",
+        "points": [
+          "Up to 80% reduction in electricity bills",
+          "Net metering & grid export ready",
+          "Battery storage available",
+          "Suits urban apartments and bungalows"
+        ]
+      },
+      {
+        "title": "Open Land & Commercial Spaces",
+        "tag": "Commercial",
+        "description": "Open agricultural land, factory rooftops, warehouses, and commercial complexes represent ideal sites for large-scale hybrid deployments. AeroSun delivers scalable green energy infrastructure that offsets industrial power demands and accelerates compliance with sustainability targets.",
+        "points": [
+          "Scalable from 10 kW to multi-MW",
+          "Reduces industrial power costs",
+          "Supports ESG & sustainability goals",
+          "Suitable for rural and urban commercial sites"
+        ]
+      }
+    ]
+  },
+  "benefits": {
+    "sectionBadge": "Why Go Hybrid",
+    "heading": "Benefits of Hybrid Solar Wind Energy",
+    "imageBadge": "Advanced Darrieus Technology",
+    "imageCaption": "Our Darrieus turbines utilize aerodynamic lift principles for superior efficiency in variable wind conditions, making them perfect for India's diverse climate zones.",
+    "items": [
+      {
+        "title": "Significant Cost Savings",
+        "desc": "Dramatically reduce your electricity bills from day one. Most systems pay for themselves within 4–6 years through energy savings and government incentives."
+      },
+      {
+        "title": "Sustainability",
+        "desc": "Every kilowatt-hour of renewable energy generated directly reduces carbon emissions, helping India meet its net-zero targets and preserving the environment."
+      },
+      {
+        "title": "Energy Independence",
+        "desc": "Break free from grid outages and rising utility tariffs. Generate your own clean power and take full control of your energy future."
+      },
+      {
+        "title": "Continuous Power Supply",
+        "desc": "The hybrid solar + wind architecture ensures power availability around the clock — sunshine or overcast, calm or windy, day or night."
+      }
+    ]
+  },
+  "services": {
+    "sectionBadge": "Key Features & Benefits",
+    "heading": "Hybrid Energy Solutions for Homes and Businesses",
+    "imageBadge": "Manufacturing Excellence",
+    "imageCaption": "Our state-of-the-art manufacturing processes ensure every component meets the highest standards of quality and durability, from turbine blades to solar panel integration.",
+    "learnMore": "Learn more →",
+    "learnMoreTitle": "Learn more about AeroSun Energy services",
+    "learnMoreAriaLabel": "Contact us to learn more about our services",
+    "items": [
+      {
+        "title": "Significant Cost Savings",
+        "description": "Our hybrid solar wind energy systems can cut electricity bills by up to 80%. With government subsidies, net metering, and rapid ROI, switching to green energy has never made more financial sense."
+      },
+      {
+        "title": "Eco-Friendly Zero-Emission Power",
+        "description": "Every kilowatt from AeroSun replaces fossil-fuel electricity — reducing carbon emissions, improving local air quality, and contributing directly to India's renewable energy goals. Clean energy for a cleaner future."
+      },
+      {
+        "title": "Smart IoT Monitoring",
+        "description": "Our smart energy systems come with real-time IoT dashboards so you can track solar output, wind generation, consumption, and savings from anywhere. Data-driven decisions, maximum efficiency."
+      },
+      {
+        "title": "Low Maintenance, High Reliability",
+        "description": "Engineered for durability, our systems require minimal upkeep. With self-starting wind rotors and weather-resistant solar panels, AeroSun installations run reliably in urban rooftops, rural fields, highways, and parks alike."
+      },
+      {
+        "title": "Efficient Use of Space",
+        "description": "Hybrid systems generate more energy per square metre than standalone solar or wind alone — ideal for space-constrained sites like urban rooftops, roadside infrastructure, and compact commercial plots."
+      }
+    ]
+  },
+  "windGenerators": {
+    "sectionBadge": "Our Technology",
+    "heading": "Wind Turbines for Hybrid Solar Wind Systems",
+    "description": "We offer a full spectrum of wind generators — from conventional three-blade turbines to innovative flower turbines and minimal-airflow vertical-axis rotors — so every site gets the right technology.",
+    "getQuote": "Get a Quote →",
+    "getQuoteTitle": "Get a quote for AeroSun Energy wind generators",
+    "getQuoteAriaLabel": "Request a quote for this wind generator model",
+    "items": [
+      {
+        "id": "h-darrieus",
+        "title": "H-Darrieus Turbine",
+        "subtitle": "Urban Corridors & Mid-Wind Sites",
+        "badge": "H-VAWT",
+        "description": "The H-Darrieus turbine uses lift-driven vertical blades to capture wind efficiently without needing active yaw control. It performs reliably in variable urban and semi-urban airflow, making it suitable for highway edges, industrial plots, and compact utility installations.",
+        "highlights": [
+          "Rated capacity 1 kW – 200 kW",
+          "Performs in 3 to 8 m/s wind zones",
+          "Compact footprint for constrained sites",
+          "Efficient lift-based rotor design"
+        ]
+      },
+      {
+        "id": "flower",
+        "title": "Helical Flower Turbine",
+        "subtitle": "Urban Rooftops & Quiet Environments",
+        "badge": "Flower VAWT",
+        "description": "Flower turbines feature multiple helical petal-shaped blades arranged symmetrically around a vertical axis, resembling a blooming flower in motion. They capture wind from any horizontal direction without requiring a yaw mechanism, making them ideal for turbulent urban airflows. Their low rotational noise and elegant appearance suit rooftop installations, parks, and environmentally sensitive areas.",
+        "highlights": [
+          "Rated capacity 0.5 – 50 kW",
+          "Works at wind speeds ≥ 2 m/s",
+          "Omni-directional – no yaw needed",
+          "Near-silent operation"
+        ]
+      },
+      {
+        "id": "savonius",
+        "title": "Savonius VAWT",
+        "subtitle": "Low Wind Speed & Off-Grid Sites",
+        "badge": "Low-Wind VAWT",
+        "description": "The Savonius vertical-axis wind turbine uses two or more curved bucket-shaped scoops mounted on a vertical shaft. The differential drag between the concave and convex faces causes rotation even at very low wind speeds, making it self-starting without any external mechanism. Perfect for remote off-grid locations, hilly terrain, and areas with inconsistent or low-velocity wind resources where conventional turbines cannot operate efficiently.",
+        "highlights": [
+          "Rated capacity 0.3 – 30 kW",
+          "Self-starting from 1.5 m/s",
+          "Works in turbulent & gusty winds",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "id": "rooftop-vawt",
+        "title": "Rooftop Smart VAWT",
+        "subtitle": "Homes, Apartments & Terrace Retrofits",
+        "badge": "Rooftop",
+        "description": "Rooftop VAWTs are designed for dense urban settings where space and noise matter. Combined with rooftop solar, they extend generation windows beyond daylight and help homes or small facilities improve self-consumption and bill savings.",
+        "highlights": [
+          "Compact structure for terrace loads",
+          "Performs in mixed city airflow",
+          "Low-noise residential profile",
+          "Hybrid-ready with rooftop solar"
+        ]
+      }
+    ]
+  },
+  "whyChooseUs": {
+    "sectionBadge": "Our Advantages",
+    "heading": "Why Choose AeroSun for Hybrid Energy",
+    "imageBadge": "Future-Ready Innovation",
+    "imageCaption": "Our commitment to innovation drives us to continuously evolve our technology, ensuring our clients always have access to the most advanced and efficient renewable energy solutions available.",
+    "items": [
+      {
+        "title": "Certified Expert Team",
+        "desc": "Our engineers and energy consultants are certified specialists in hybrid solar wind energy systems with proven installations across urban and rural India."
+      },
+      {
+        "title": "Innovative Smart Systems",
+        "desc": "Every AeroSun installation includes IoT-enabled monitoring, smart inverters, and AI-assisted output optimisation — true smart energy systems built for the future."
+      },
+      {
+        "title": "Fully Scalable Solutions",
+        "desc": "From a single-home solar wind hybrid system to city-wide green energy infrastructure, our modular architecture scales effortlessly to match any project size or budget."
+      },
+      {
+        "title": "Reliable 24/7 Support",
+        "desc": "Round-the-clock customer support and a rapid-response maintenance team ensure your hybrid energy system always runs at full capacity — no downtime, no surprises."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Build The Right System",
+    "heading": "Plan a hybrid solar wind system that fits your site.",
+    "description": "We assess the site, match the right solar and turbine mix, and design for the way your location actually behaves. Homes, public projects, and commercial deployments all need different answers.",
+    "buttons": {
+      "quote": "Request a Free Quote",
+      "howItWorks": "See How It Works"
+    },
+    "projectSpectrum": "Project Spectrum",
+    "projectTypes": [
+      "Residential rooftops",
+      "Parks and civic spaces",
+      "Industrial and open land",
+      "Highways and smart infrastructure"
+    ]
+  },
+  "footer": {
+    "brandDesc": "Delivering clean, reliable, and affordable renewable energy solutions across India.",
+    "email": "customercare@aerosunenergy.in",
+    "website": "aerosunenergy.in",
+    "quickLinks": "Quick Links",
+    "followUs": "Follow Us",
+    "scan": "Scan",
+    "devNotice": "This website is under development. Build with",
+    "devNoticeChatGPT": "ChatGPT",
+    "devNoticeGitHub": "GitHub",
+    "devNoticeAnd": "and",
+    "copyright": "© 2026 AeroSun Energy Private Limited",
+    "registrationNotice": "(Registration is in process)",
+    "allRightsReserved": "All rights reserved."
+  }
+}
