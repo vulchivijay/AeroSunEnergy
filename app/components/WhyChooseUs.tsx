@@ -41,10 +41,10 @@ export default function WhyChooseUs() {
   }))
 
   return (
-    <section id="why-us" className="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="why-us" className="px-6 sm:px-3 lg:px-12 bg-gray-50 dark:bg-gray-900 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-1"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -59,7 +59,7 @@ export default function WhyChooseUs() {
 
         {/* Why Choose Us Image */}
         <motion.div
-          className="mb-16"
+          className="mb-12"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -71,7 +71,7 @@ export default function WhyChooseUs() {
               <div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white backdrop-blur-md">
                 {w.imageBadge}
               </div>
-              <div className="relative aspect-video overflow-hidden">
+              <div className="relative min-h-96 md:aspect-video overflow-hidden">
                 <Image
                   src="/images/future-aerosunenergy.png"
                   alt="AeroSun Energy's vision for future renewable energy infrastructure - advanced hybrid systems powering smart cities"

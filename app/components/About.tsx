@@ -48,9 +48,10 @@ export default function About() {
   }))
 
   return (
-    <section id="about" className="py-24 bg-white dark:bg-gray-950 overflow-hidden">
+    <section id="about" className="px-6 sm:px-3 lg:px-12 bg-white dark:bg-gray-950 overflow-hidden">
+      {/* relative grid w-full grid-cols-1 items-center gap-7 lg:grid-cols-[1.08fr_0.92fr] */}
       {/* About Section */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24">
+      <div className="mx-auto max-w-7xl py-12">
         <Card>
           <CardContent className="space-y-8">
             <h2 className="text-xl font-bold mb-12">
@@ -154,7 +155,7 @@ export default function About() {
                 </div>
               </div>
 
-              <div className="px-6 text-center lg:text-left relative z-10 lg:flex-1">
+              <div className="text-center lg:text-left relative z-10 lg:flex-1">
                 <motion.h3
                   className="text-2xl font-medium text-gray-900 dark:text-white mt-12"
                   initial={{ opacity: 0, x: -20 }}
@@ -211,8 +212,8 @@ export default function About() {
               {a.paragraph2}
             </p>
 
-            <p className="inline-flex p-3 bg-green-500/75 backdrop-blur-md rounded-sm shadow-sm">
-              <span className="text-lg text-white">{a.quote}</span>
+            <p className="inline-flex p-3 bg-green-900 rounded-lg shadow-lg">
+              <span className="text-lg text-slate-300">{a.quote}</span>
             </p>
           </CardContent>
         </Card>
@@ -232,9 +233,10 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+      <div className="mx-auto max-w-7xl pt-12">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -247,7 +249,7 @@ export default function About() {
           <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary" />
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-12 rounded-[2.25rem] md:border md:border-white/60 md:bg-white/75 md:p-3 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-800 lg:grid-cols-[0.95fr_1.05fr] lg:p-8">
+        <div className="grid grid-cols-1 gap-12 rounded-[2.25rem] md:border md:border-white/60 md:bg-white/75 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-800 lg:grid-cols-[0.95fr_1.05fr]">
           <motion.div
             className="rounded-md bg-slate-950 px-6 py-8 text-white shadow-md lg:px-8"
             initial={{ opacity: 0, x: -40 }}
@@ -286,7 +288,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.2, delay: 0.1 }}
           >
-            <div className="relative aspect-4/3 overflow-hidden rounded-md bg-gray-100 shadow-md ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+            <div className="relative min-h-96 md:aspect-4/3 overflow-hidden rounded-md bg-gray-100 shadow-md ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
               <Image
                 src="/images/hybrid-solar-wind -energy.png"
                 alt="Smart VAWT hybrid technology deployment by AeroSun Energy"
