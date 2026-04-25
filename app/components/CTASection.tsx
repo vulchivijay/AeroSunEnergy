@@ -10,7 +10,7 @@ export default function CTASection() {
   const c = t.cta
 
   return (
-    <section className="py-24 overflow-hidden">
+    <section className="px-6 sm:px-3 lg:px-12 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="relative overflow-hidden rounded-md shadow-2xl md:border md:border-slate-200 bg-slate-950 px-6 py-10 dark:border-white/10 sm:px-8 lg:px-10"
