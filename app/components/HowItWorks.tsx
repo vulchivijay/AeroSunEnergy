@@ -30,7 +30,7 @@ export default function HowItWorks() {
   const steps = h.steps.map((step, i) => ({ ...step, ...stepStyles[i] }))
 
   return (
-    <section id="how-it-works" className="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
+    <section id="how-it-works" className="px-6 sm:px-3 lg:px-12 bg-gray-50 dark:bg-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-12"
@@ -40,7 +40,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.4 }}
         >
           <span className="text-primary uppercase tracking-widest text-lg text-gray-900 dark:text-gray-100">{h.sectionBadge}</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
+          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 font-semibold dark:text-white">
             {h.heading}
           </h2>
           <p className="mt-4 text-lg text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">
@@ -74,7 +74,7 @@ export default function HowItWorks() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" aria-hidden="true" />
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-3 bg-green-500/25 backdrop-blur-sm">
-                <p className="text-md text-white">
+                <p className="text-lg text-white">
                   {h.nextGenCaption}
                 </p>
               </div>
@@ -88,7 +88,7 @@ export default function HowItWorks() {
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent opacity-20 -translate-x-1/2" aria-hidden="true" />
 
           <motion.div
-            className="flex flex-col gap-12"
+            className="flex flex-col gap-6"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"

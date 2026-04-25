@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-type MotionLikeProps = {
+type MotionAnimationProps = {
   initial?: unknown
   animate?: unknown
   whileInView?: unknown
@@ -13,13 +13,13 @@ type MotionLikeProps = {
   variants?: unknown
   viewport?: unknown
   layout?: unknown
-  children?: React.ReactNode
-  [key: string]: unknown
 }
+
+type MotionLikeProps = React.PropsWithChildren<React.HTMLAttributes<HTMLElement> & MotionAnimationProps>
 
 const componentCache = new Map<string, React.ComponentType<MotionLikeProps>>()
 
-function createMotionComponent(tagName: string) {
+function createMotionComponent(tagName: keyof React.JSX.IntrinsicElements) {
   const MotionComponent = React.forwardRef<HTMLElement, MotionLikeProps>(function MotionComponent(
     {
       initial,
@@ -49,7 +49,7 @@ export const motion: Record<string, React.ComponentType<MotionLikeProps>> = new 
   {},
   {
     get(_, property) {
-      const tagName = String(property)
+      const tagName = String(property) as keyof React.JSX.IntrinsicElements
 
       if (!componentCache.has(tagName)) {
         componentCache.set(tagName, createMotionComponent(tagName))
