@@ -204,11 +204,11 @@ export default function About() {
               </div>
             </motion.div>
 
-            <p className="text-lg text-gray-900 leading-relaxed">
+            <p className="text-lg text-gray-900 dark:text-gray-100 leading-relaxed">
               {a.paragraph1}
             </p>
 
-            <p className="text-lg text-gray-900 leading-relaxed">
+            <p className="text-lg text-gray-900 dark:text-gray-100 leading-relaxed">
               {a.paragraph2}
             </p>
 
@@ -220,7 +220,7 @@ export default function About() {
 
         {/* Core Values */}
         <div>
-          <h3 className="text-3xl font-semibold my-12">{a.coreValuesHeading}</h3>
+          <h3 className="text-3xl font-semibold dark:text-gray-100 my-12">{a.coreValuesHeading}</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {a.coreValues.map((value, i) => (
               <Card key={value.title} className={coreValueStyles[i]}>
@@ -317,7 +317,7 @@ export default function About() {
                     {f.icon}
                   </div>
                   <h3 className="text-xl text-gray-900 dark:text-gray-100 mb-2">{f.title}</h3>
-                  <p className="text-lg text-gray-500 dark:text-gray-400">{f.desc}</p>
+                  <p className="text-lg text-gray-500 dark:text-gray-100">{f.desc}</p>
                 </div>
               ))}
             </div>
