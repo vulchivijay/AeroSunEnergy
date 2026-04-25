@@ -30,7 +30,7 @@ export default function HowItWorks() {
   const steps = h.steps.map((step, i) => ({ ...step, ...stepStyles[i] }))
 
   return (
-    <section id="how-it-works" className="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
+    <section id="how-it-works" className="px-6 sm:px-3 lg:px-12 bg-gray-50 dark:bg-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-12"
