@@ -41,7 +41,7 @@ export default function WhyChooseUs() {
   }))
 
   return (
-    <section id="why-us" className="px-6 sm:px-3 lg:px-12 bg-gray-50 dark:bg-gray-900 overflow-hidden">
+    <section id="why-us" className="px-6 sm:px-3 lg:px-12 bg-gray-50 dark:bg-gray-900 pb-12 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-1"
