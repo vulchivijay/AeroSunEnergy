@@ -20,10 +20,10 @@ export default function Services() {
   const services = s.items.map((item, i) => ({ ...item, ...serviceStyles[i] }))
 
   return (
-    <section id="services" className="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
+    <section id="services" className="px-6 sm:px-3 lg:px-12 bg-gray-50 dark:bg-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <span className="text-primary font-semibold uppercase tracking-widest text-lg text-gray-600 dark:text-gray-900">{s.sectionBadge}</span>
+          <span className="text-primary font-semibold uppercase tracking-widest text-lg text-gray-900 dark:text-gray-100">{s.sectionBadge}</span>
           <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-gray-100">
             {s.heading}
           </h2>
@@ -77,7 +77,7 @@ export default function Services() {
                   title={s.learnMoreTitle}
                   aria-label={s.learnMoreAriaLabel}
                   data-cta="learn-more"
-                  className="inline-block mt-6 text-primary font-semibold hover:text-secondary transition-colors opacity-55 pointer-events-none"
+                  className="inline-block mt-6 text-primary font-semibold hover:text-secondary transition-colors"
                 >
                   {s.learnMore}
                 </Link>

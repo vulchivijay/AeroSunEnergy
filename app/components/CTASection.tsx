@@ -2,6 +2,7 @@
 
 import { motion } from '@/app/lib/motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useLocale } from '@/app/lib/LocaleContext'
 
 export default function CTASection() {
@@ -9,7 +10,7 @@ export default function CTASection() {
   const c = t.cta
 
   return (
-    <section className="py-24 overflow-hidden">
+    <section className="px-6 sm:px-3 lg:px-12 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="relative overflow-hidden rounded-md shadow-2xl md:border md:border-slate-200 bg-slate-950 px-6 py-10 dark:border-white/10 sm:px-8 lg:px-10"
@@ -32,28 +33,28 @@ export default function CTASection() {
           </div>
           <div className="relative grid gap-10 lg:grid-cols-[1fr_280px] lg:items-end">
             <div>
-              <span className="inline-block rounded-md md:border md:border-white/16 bg-white/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.34em] text-white/72 backdrop-blur-md sm:text-lg">
+              <span className="inline-block rounded-md md:border md:border-white/16 bg-white/8 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.34em] text-white/72 backdrop-blur-md sm:text-lg">
                 {c.badge}
               </span>
-              <h2 className="mt-6 max-w-3xl text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+              <h2 className="mt-6 max-w-xl text-3xl leading-[1.1] tracking-[0.05em]! font-semibold text-white lg:text-4xl">
                 {c.heading}
               </h2>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-white/78">
                 {c.description}
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <a
+                <Link
                   href="#contact"
-                  className="inline-flex items-center rounded-md bg-accent px-8 py-3.5 text-lg font-bold text-slate-950 transition-transform duration-150 hover:scale-[1.02]"
+                  className="inline-flex items-center rounded-full bg-white/15 px-4 py-2 text-md font-semibold text-slate-200 transition-transform duration-150 hover:scale-[1.02]"
                 >
                   {c.buttons.quote}
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#how-it-works"
-                  className="inline-flex items-center rounded-md border border-white/18 bg-white/8 px-8 py-3.5 text-lg font-bold text-white backdrop-blur-md transition-colors duration-150 hover:bg-white/14 opacity-55 pointer-events-none"
+                  className="inline-flex items-center rounded-full border border-white/18 bg-white/15 px-4 py-2 text-md font-semibold text-slate-200 backdrop-blur-md transition-colors duration-150 hover:bg-white/14"
                 >
                   {c.buttons.howItWorks}
-                </a>
+                </Link>
               </div>
             </div>
 

@@ -10,13 +10,13 @@ export default function Hero() {
   const h = t.hero
 
   return (
-    <section className="relative flex min-h-screen items-center bg-[#06111d] text-white overflow-hidden">
+    <section id="hero" className="relative flex min-h-screen items-center bg-[#06111d] text-white overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(30,136,229,0.42),transparent_30%),radial-gradient(circle_at_78%_18%,rgba(251,192,45,0.28),transparent_18%),linear-gradient(135deg,#071321_0%,#0f3254_54%,#0d5a36_100%)]" aria-hidden="true" />
       <div className="absolute inset-y-0 right-0 hidden w-[42%] border-l border-white/10 bg-white/5 lg:block" aria-hidden="true" />
       <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" aria-hidden="true" />
       <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:88px_88px]" aria-hidden="true" />
 
-      <div className="relative grid w-full grid-cols-1 items-center gap-7 px-6 py-18 sm:px-3 lg:grid-cols-[1.08fr_0.92fr] lg:px-12">
+      <div className="relative grid w-full grid-cols-1 items-center gap-6 px-6 py-18 sm:px-3 lg:grid-cols-[1.08fr_0.92fr] lg:px-12">
         {/* Text content */}
         <motion.div
           className="z-10"
@@ -24,18 +24,18 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, ease: 'easeOut' }}
         >
-          <span className="mb-6 inline-flex rounded-md shadow-md border border-white/24 bg-white/24 px-3 py-2 text-lg uppercase tracking-[0.45em] text-white backdrop-blur-md">
+          <span className="mb-12 inline-flex rounded-md shadow-md border border-white/24 bg-white/24 px-4 py-2 text-lg uppercase tracking-[0.45em] text-white backdrop-blur-md">
             {h.badge}
           </span>
-          <h1 className="text-4xl md:text-4xl leading-[1.1] tracking-[0.05em]! font-semibold">
+          <h1 className="text-3xl leading-[1.4] tracking-[0.05em]! font-semibold">
             {h.title1}
             <br />
             {h.title2}
           </h1>
-          <p className="mt-6 max-w-2xl text-xl leading-[1.4] text-white/82">
+          <p className="mt-6 max-w-2xl text-lg leading-[1.4] text-white/82">
             {h.description}
           </p>
-          <div className="mt-8 grid gap-3 sm:max-w-xl sm:grid-cols-2">
+          <div className="mt-8 grid gap-6 sm:max-w-xl sm:grid-cols-2">
             {h.proofPoints.map((point) => (
               <div key={point} className="rounded-md shadow-md bg-white/8 px-4 py-3 text-lg font-medium text-white/92 backdrop-blur-md">
                 {point}
@@ -56,7 +56,7 @@ export default function Hero() {
               title={h.buttons.exploreTitle}
               aria-label={h.buttons.exploreAriaLabel}
               data-section="how-it-works"
-              className="inline-flex items-center rounded-full shadow-sm border border-white/25 bg-white/15 px-8 py-3.5 text-lg text-slate-200 backdrop-blur-md transition-colors duration-150 hover:scale-[1.02]"
+              className="inline-flex items-center rounded-full shadow-2xl border border-white/25 bg-white/15 px-4 py-2 text-lg text-slate-200 backdrop-blur-md transition-colors duration-150 hover:scale-[1.02]"
             >
               {h.buttons.explore}
             </Link>
@@ -65,17 +65,17 @@ export default function Hero() {
               title={h.buttons.quoteTitle}
               aria-label={h.buttons.quoteAriaLabel}
               data-section="contact"
-              className="inline-flex items-center rounded-full shadow-sm border border-white/25 bg-white/15 px-8 py-3.5 text-lg text-slate-200 backdrop-blur-md transition-colors duration-150 hover:scale-[1.02]"
+              className="inline-flex items-center rounded-full shadow-2xl border border-white/25 bg-white/15 px-4 py-2 text-lg text-slate-200 backdrop-blur-md transition-colors duration-150 hover:scale-[1.02]"
             >
               {h.buttons.quote}
             </Link>
           </motion.div>
 
-          <div className="mt-12 grid max-w-2xl grid-cols-2 gap-4 border-t border-white/12 pt-8 sm:grid-cols-4">
+          <div className="mt-12 grid max-w-3xl grid-cols-2 gap-6 border-t border-white/12 pt-8 sm:grid-cols-4">
             {h.stats.map((stat) => (
               <div key={stat.label}>
-                <p className="text-3xl text-white">{stat.value}</p>
-                <p className="mt-2 text-sm uppercase tracking-[0.24em] text-white/55">{stat.label}</p>
+                <p className="text-xl text-white whitespace-nowrap">{stat.value}</p>
+                <p className="mt-2 text-md uppercase tracking-[0.24em] text-white/55">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -111,16 +111,16 @@ export default function Hero() {
               </div>
               <div className="absolute bottom-6 left-6 right-6 z-10 grid gap-2 sm:grid-cols-2">
                 <div className="rounded-md border border-white/16 bg-slate-950/55 p-4 text-white backdrop-blur-md">
-                  <p className="text-lg uppercase tracking-[0.08em] text-white/60">{h.overlay.primaryUseLabel}</p>
-                  <p className="mt-2 text-lg">{h.overlay.primaryUseValue}</p>
+                  <p className="text-md font-semibold uppercase tracking-[0.08em] text-white/60">{h.overlay.primaryUseLabel}</p>
+                  <p className="mt-2 text-md">{h.overlay.primaryUseValue}</p>
                 </div>
                 <div className="rounded-md border border-white/16 bg-white/12 p-4 text-white backdrop-blur-md">
-                  <p className="text-lg uppercase tracking-[0.08em] text-white/60">{h.overlay.performanceLabel}</p>
-                  <p className="mt-2 text-lg">{h.overlay.performanceValue}</p>
+                  <p className="text-md font-semibold uppercase tracking-[0.08em] text-white/60">{h.overlay.performanceLabel}</p>
+                  <p className="mt-2 text-md">{h.overlay.performanceValue}</p>
                 </div>
                 <div className="rounded-md border border-white/16 bg-slate-950/55 p-4 text-white backdrop-blur-md">
-                  <p className="text-lg uppercase tracking-[0.28em] text-white/65">{h.overlay.fieldAdvantageLabel}</p>
-                  <p className="mt-2 text-lg">{h.overlay.fieldAdvantageValue}</p>
+                  <p className="text-md font-semibold uppercase tracking-[0.28em] text-white/65">{h.overlay.fieldAdvantageLabel}</p>
+                  <p className="mt-2 text-md">{h.overlay.fieldAdvantageValue}</p>
                 </div>
               </div>
             </div>

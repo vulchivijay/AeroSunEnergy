@@ -18,12 +18,12 @@ export default function WindGenerators() {
   const generators = w.items.map((item, i) => ({ ...item, ...generatorStyles[i] }))
 
   return (
-    <section id="wind-generators" className="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
+    <section id="wind-generators" className="px-6 sm:px-3 lg:px-12 bg-gray-50 dark:bg-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <span className="text-primary uppercase tracking-widest text-lg text-gray-900 dark:text-gray-100">{w.sectionBadge}</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 dark:text-white">
+          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 font-semibold dark:text-white">
             {w.heading}
           </h2>
           <p className="mt-4 text-lg text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">
@@ -77,7 +77,7 @@ export default function WindGenerators() {
                   title={w.getQuoteTitle}
                   aria-label={w.getQuoteAriaLabel}
                   data-cta="get-quote"
-                  className={`inline-block bg-gradient-to-r ${gen.accentFrom} ${gen.accentTo} text-white font-semoibold px-6 py-2.5 rounded-xl shadow-xl hover:opacity-90 transition-opacity text-lg opacity-65 pointer-events-none`}
+                  className={`inline-block bg-gradient-to-r ${gen.accentFrom} ${gen.accentTo} text-white px-8 py-3 rounded-full shadow-2xl hover:opacity-90 transition-opacity text-lg`}
                 >
                   {w.getQuote}
                 </Link>
