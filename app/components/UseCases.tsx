@@ -82,7 +82,7 @@ export default function UseCases() {
                     </span>
                   </div>
                 </div>
-                <div className={`p-3 lg:p-6 ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                <div className={`p-5 lg:p-6 ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
                   <div className="flex items-center gap-6">
                     <span className="rounded-sm shadow-sm border border-gray-200 bg-slate-50 px-3 py-1 text-sm font-semibold uppercase tracking-[0.28em] text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
                       {u.bestFit}

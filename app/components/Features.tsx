@@ -44,7 +44,7 @@ export default function Features() {
   }))
 
   return (
-    <section id="features" className="px-6 sm:px-3 lg:px-12 bg-white dark:bg-gray-950 overflow-hidden">
+    <section id="features" className="px-6 sm:px-3 lg:px-12 py-16 md:py-24 bg-white dark:bg-gray-950 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-12"

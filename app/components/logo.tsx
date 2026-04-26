@@ -11,7 +11,7 @@ export default function Logo({ size = 'default' }: LogoProps) {
 
   const { t } = useLocale()
   return (
-    <Link href="#" title={t.logo.homeTitle} aria-label={t.logo.homeAriaLabel} data-logo="brand" className={`relative flex items-center gap-1`}>
+    <Link href="#" title={t.logo.homeTitle} aria-label={t.logo.homeAriaLabel} data-logo="brand" className={`relative flex items-center`}>
       <Image
         src="/images/logo-aerosunenergy.png"
         alt={t.logo.imageAlt}

@@ -48,13 +48,13 @@ export default function About() {
   }))
 
   return (
-    <section id="about" className="px-6 sm:px-3 lg:px-12 bg-white dark:bg-gray-950 overflow-hidden">
+    <section id="about" className="px-6 sm:px-3 lg:px-12 py-16 md:py-24 bg-white dark:bg-gray-950 overflow-hidden">
       {/* relative grid w-full grid-cols-1 items-center gap-7 lg:grid-cols-[1.08fr_0.92fr] */}
       {/* About Section */}
       <div className="mx-auto max-w-7xl py-12">
         <Card>
           <CardContent className="space-y-8">
-            <h2 className="text-xl font-bold mb-12">
+            <h2 className="text-xl font-bold">
               <span className="text-3xl ml-1 font-semibold bg-clip-text bg-linear-to-r from-blue-800 via-blue-700 to-blue-600 drop-shadow-xl text-transparent tracking-wider">Aero</span>
               <span className="text-3xl ml-1 font-semibold bg-clip-text bg-linear-to-r from-green-800 via-green-700 to-green-600 drop-shadow-xl text-transparent tracking-wider">Sun</span>
               <span className="ml-1 uppercase text-yellow-600 font-semibold text-xl tracking-wider">Energy</span>
@@ -251,7 +251,7 @@ export default function About() {
 
         <div className="grid grid-cols-1 gap-6 rounded-[2.25rem] md:border md:border-white/60 md:bg-white/75 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-800 lg:grid-cols-[0.95fr_1.05fr]">
           <motion.div
-            className="rounded-md bg-slate-950 px-6 py-8 text-white shadow-md lg:px-8"
+            className="rounded-md shadow-md px-6 lg:px-8 py-8 text-white "
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}

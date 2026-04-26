@@ -20,7 +20,7 @@ export default function Services() {
   const services = s.items.map((item, i) => ({ ...item, ...serviceStyles[i] }))
 
   return (
-    <section id="services" className="px-6 sm:px-3 lg:px-12 bg-gray-50 dark:bg-gray-900 overflow-hidden">
+    <section id="services" className="px-6 sm:px-3 lg:px-12 py-16 md:py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <span className="text-primary font-semibold uppercase tracking-widest text-lg text-gray-900 dark:text-gray-100">{s.sectionBadge}</span>

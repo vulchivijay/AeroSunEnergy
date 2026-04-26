@@ -24,7 +24,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, ease: 'easeOut' }}
         >
-          <span className="mb-12 inline-flex rounded-md shadow-md border border-white/24 bg-white/24 px-4 py-2 text-lg uppercase tracking-[0.45em] text-white backdrop-blur-md">
+          <span className="mb-12 inline-flex rounded-md shadow-md border border-white/24 bg-white/24 px-6 py-3.5 text-md uppercase tracking-[0.45em] text-white backdrop-blur-md">
             {h.badge}
           </span>
           <h1 className="text-3xl leading-[1.4] tracking-[0.05em]! font-semibold">
@@ -37,7 +37,7 @@ export default function Hero() {
           </p>
           <div className="mt-8 grid gap-6 sm:max-w-xl sm:grid-cols-2">
             {h.proofPoints.map((point) => (
-              <div key={point} className="rounded-md shadow-md bg-white/8 px-4 py-3 text-lg font-medium text-white/92 backdrop-blur-md">
+              <div key={point} className="rounded-md shadow-md bg-white/8 px-4 py-3 text-md font-medium text-white/92 backdrop-blur-md">
                 {point}
               </div>
             ))}
@@ -56,7 +56,7 @@ export default function Hero() {
               title={h.buttons.exploreTitle}
               aria-label={h.buttons.exploreAriaLabel}
               data-section="how-it-works"
-              className="inline-flex items-center rounded-full shadow-2xl border border-white/25 bg-white/15 px-4 py-2 text-lg text-slate-200 backdrop-blur-md transition-colors duration-150 hover:scale-[1.02]"
+              className="inline-flex items-center rounded-full shadow-2xl border border-white/25 bg-white/15 px-6 py-3.5 text-md text-slate-200 backdrop-blur-md transition-colors duration-150 hover:scale-[1.02]"
             >
               {h.buttons.explore}
             </Link>
@@ -65,7 +65,7 @@ export default function Hero() {
               title={h.buttons.quoteTitle}
               aria-label={h.buttons.quoteAriaLabel}
               data-section="contact"
-              className="inline-flex items-center rounded-full shadow-2xl border border-white/25 bg-white/15 px-4 py-2 text-lg text-slate-200 backdrop-blur-md transition-colors duration-150 hover:scale-[1.02]"
+              className="inline-flex items-center rounded-full shadow-2xl border border-white/25 bg-white/15 px-6 py-3.5 text-md text-slate-200 backdrop-blur-md transition-colors duration-150 hover:scale-[1.02]"
             >
               {h.buttons.quote}
             </Link>

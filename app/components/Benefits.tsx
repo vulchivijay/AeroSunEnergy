@@ -41,7 +41,7 @@ export default function Benefits() {
   }))
 
   return (
-    <section id="benefits" className="px-6 sm:px-3 lg:px-12 bg-white dark:bg-gray-950 overflow-hidden">
+    <section id="benefits" className="px-6 sm:px-3 lg:px-12 py-16 md:py-24 bg-white dark:bg-gray-950 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-12"
@@ -54,7 +54,7 @@ export default function Benefits() {
           <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-gray-100">
             {b.heading}
           </h2>
-          <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-gradient-to-r from-primary to-secondary" />
+          <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary" />
         </motion.div>
 
         {/* Benefits Image */}
@@ -66,12 +66,12 @@ export default function Benefits() {
           transition={{ duration: 0.2, delay: 0.1 }}
         >
           <div className="relative max-w-7xl mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-md blur-3xl" aria-hidden="true" />
+            <div className="absolute inset-0 bg-linear-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-md blur-3xl" aria-hidden="true" />
             <div className="relative overflow-hidden rounded-md border border-white/20 bg-white/90 shadow-2xl backdrop-blur-sm dark:border-white/10 dark:bg-slate-950/90">
               <div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white backdrop-blur-md">
                 {b.imageBadge}
               </div>
-              <div className="min-h-96 md:aspect-[16/9] overflow-hidden">
+              <div className="min-h-96 md:aspect-video overflow-hidden">
                 <Image
                   src="/images/smart-vawt-aerosunenergy.png"
                   alt="Advanced Darrieus wind turbine technology by AeroSun Energy - efficient vertical-axis design for urban and semi-urban environments"
@@ -79,7 +79,7 @@ export default function Benefits() {
                   sizes="(min-width: 1024px) 68rem, 92vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" aria-hidden="true" />
+                <div className="absolute inset-0 bg-linear-to-t from-slate-950/40 via-transparent to-transparent" aria-hidden="true" />
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-3 bg-green-500/25 backdrop-blur-sm">
                 <p className="text-lg text-white">
@@ -91,7 +91,7 @@ export default function Benefits() {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-4"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -100,15 +100,16 @@ export default function Benefits() {
           {benefits.map((ben) => (
             <motion.div
               key={ben.title}
+              className="flex h-full"
               variants={cardVariants}
             >
-              <Card className={`hover:shadow-lg hover:scale-105 transition-all duration-150 ${ben.bg} ${ben.border}`}>
-                <CardContent>
+              <Card className={`flex h-full w-full hover:shadow-lg hover:scale-105 transition-all duration-150 ${ben.bg} ${ben.border}`}>
+                <CardContent className="flex h-full w-full flex-col">
                   <div className="mb-5 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white dark:bg-gray-700 shadow-sm">
                     {ben.icon}
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">{ben.title}</h3>
-                  <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-lg">{ben.desc}</p>
+                  <h3 className="mb-3 text-lg font-bold text-gray-900 dark:text-gray-100">{ben.title}</h3>
+                  <p className="text-lg leading-relaxed text-gray-500 dark:text-gray-400">{ben.desc}</p>
                 </CardContent>
               </Card>
             </motion.div>

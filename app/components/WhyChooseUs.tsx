@@ -41,7 +41,7 @@ export default function WhyChooseUs() {
   }))
 
   return (
-    <section id="why-us" className="px-6 sm:px-3 lg:px-12 bg-gray-50 dark:bg-gray-900 pb-12 overflow-hidden">
+    <section id="why-us" className="px-6 sm:px-3 lg:px-12 py-24 bg-gray-50 dark:bg-gray-900 pb-12 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-1"
@@ -50,11 +50,12 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="text-gray-600 dark:text-white">{w.sectionBadge}</span>
+          <span className="text-primary uppercase tracking-widest text-lg text-gray-900 dark:text-gray-100">{w.sectionBadge}</span>
           <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 font-semibold dark:text-white">
             {w.heading}
           </h2>
-          <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary" />
+          <p className="mt-4 text-lg text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">Test</p>
+          <div className="mt-6 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary"></div>
         </motion.div>
 
         {/* Why Choose Us Image */}
@@ -91,7 +92,7 @@ export default function WhyChooseUs() {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-4"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -100,15 +101,16 @@ export default function WhyChooseUs() {
           {reasons.map((r) => (
             <motion.div
               key={r.title}
+              className="flex h-full"
               variants={cardVariants}
             >
-              <Card className={`transition-all duration-150 hover:scale-105 hover:shadow-lg ${r.cardBg}`}>
-                <CardContent>
+              <Card className={`flex h-full w-full transition-all duration-150 hover:scale-105 hover:shadow-lg ${r.cardBg}`}>
+                <CardContent className="flex h-full w-full flex-col">
                   <div className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl p-1 text-2xl shadow-xl ${r.iconBg}`}>
                     {r.icon}
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">{r.title}</h3>
-                  <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed">{r.desc}</p>
+                  <h3 className="mb-2 text-lg font-bold text-gray-900 dark:text-gray-100">{r.title}</h3>
+                  <p className="text-lg leading-relaxed text-gray-500 dark:text-gray-400">{r.desc}</p>
                 </CardContent>
               </Card>
             </motion.div>

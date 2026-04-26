@@ -11,8 +11,8 @@ export default function Footer() {
   const navLinks = t.navbar.links
 
   return (
-    <footer id="contact" className="bg-slate-100 border-t-2 shadow-sm border-gray-200 text-gray-900 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-100 overflow-hidden px-6 sm:px-3 lg:px-12">
-      <div className="max-w-7xl mx-auto">
+    <footer id="contact" className="bg-slate-100 border-t-2 shadow-sm border-gray-200 text-gray-900 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-100 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-3 lg:px-12 py-24">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Brand */}
           <div>
