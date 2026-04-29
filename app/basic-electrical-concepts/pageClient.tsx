@@ -119,7 +119,7 @@ export default function BasicElectricalConceptsContent() {
             return (
               <article
                 key={item.name}
-                className="rounded-2xl border border-slate-200 bg-white/90 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:shadow-lg"
+                className="rounded-2xl p-2 border border-slate-200 bg-white/90 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:shadow-lg"
               >
                 <div className="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
                   <button
@@ -131,8 +131,8 @@ export default function BasicElectricalConceptsContent() {
                     <CardImage src={imagePath} alt={item.name} />
                   </button>
                 </div>
-
-                <div className="mb-4 flex flex-wrap items-center justify-between gap-3 p-4">
+<div className="p-6">
+                <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
                   <h2 className="text-lg font-semibold text-slate-900">{item.name}</h2>
                   {item.category ? (
                     <span className="rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-medium uppercase tracking-[0.08em] text-sky-700">
@@ -160,6 +160,7 @@ export default function BasicElectricalConceptsContent() {
                     ))}
                   </div>
                 ) : null}
+</div>
               </article>
             )
           })}
