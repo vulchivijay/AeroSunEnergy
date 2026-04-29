@@ -109,7 +109,7 @@ export default function BasicElectricalConceptsContent() {
           </div>
         </div>
 
-        <section className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <section className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {conceptData.components.map((item) => {
             const content = item.content ?? {}
             const imagePath = item.image ?? `/images/basic-electrical-concepts/${slugify(item.name)}.png`
@@ -119,7 +119,7 @@ export default function BasicElectricalConceptsContent() {
             return (
               <article
                 key={item.name}
-                className="rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:shadow-lg"
+                className="rounded-2xl border border-slate-200 bg-white/90 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:shadow-lg"
               >
                 <div className="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
                   <button
@@ -132,7 +132,7 @@ export default function BasicElectricalConceptsContent() {
                   </button>
                 </div>
 
-                <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+                <div className="mb-4 flex flex-wrap items-center justify-between gap-3 p-4">
                   <h2 className="text-lg font-semibold text-slate-900">{item.name}</h2>
                   {item.category ? (
                     <span className="rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-medium uppercase tracking-[0.08em] text-sky-700">
