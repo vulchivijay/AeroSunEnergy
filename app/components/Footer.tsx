@@ -149,7 +149,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="bg-yellow-300 text-gray-950 text-md py-1 text-center border-b border-t-2 border-amber-300"> {footer.devNotice} <Link href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" title="Visit ChatGPT website" data-external="chatgpt" className="underline">{footer.devNoticeChatGPT}</Link> {footer.devNoticeAnd} <Link href="https://github.com" target="_blank" rel="noopener noreferrer" title="Visit GitHub website" data-external="github" className="underline">{footer.devNoticeGitHub}</Link>.</div>
+      <div className="bg-yellow-300 text-gray-950 text-md py-1 text-center border-b border-t-2 border-amber-300 hidden"> {footer.devNotice} <Link href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" title="Visit ChatGPT website" data-external="chatgpt" className="underline">{footer.devNoticeChatGPT}</Link> {footer.devNoticeAnd} <Link href="https://github.com" target="_blank" rel="noopener noreferrer" title="Visit GitHub website" data-external="github" className="underline">{footer.devNoticeGitHub}</Link>.</div>
 
       <div className="border-t-2 border-gray-200 py-6 dark:border-gray-700">
         <div className="flex items-center justify-center">
