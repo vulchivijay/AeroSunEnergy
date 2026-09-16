@@ -114,7 +114,7 @@ export default function About() {
                   <div className="absolute inset-0 bg-gradient-radial from-accent/10 via-transparent to-transparent animate-spin" style={{ animationDuration: '20s' }}></div>
                   <Image
                     src="/images/founder-aerosunenergy.png"
-                    alt="Vulchi Vijaya Kumar - Founder of AeroSun Energy"
+                    alt="Vulchi Vijaya Kumar - Founder of AeroSun Renewable Energy"
                     fill
                     sizes="(min-width: 1024px) 176px, 144px"
                     className="object-cover rounded-lg shadow-2xl"
@@ -291,7 +291,7 @@ export default function About() {
             <div className="relative min-h-96 md:aspect-4/3 overflow-hidden rounded-md bg-gray-100 shadow-md ring-1 ring-gray-200 dark:bg-gray-900 dark:ring-gray-100">
               <Image
                 src="/images/hybrid-solar-wind -energy.png"
-                alt="Smart VAWT hybrid technology deployment by AeroSun Energy"
+                alt="Smart VAWT hybrid technology deployment by AeroSun Renewable Energy"
                 fill
                 sizes="(min-width: 1024px) 44vw, 92vw"
                 className="object-cover"

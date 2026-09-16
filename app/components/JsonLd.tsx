@@ -5,7 +5,7 @@ export default function JsonLd() {
       {
         '@type': 'Organization',
         '@id': 'https://aerosunenergy.in/#organization',
-        name: 'AeroSun Energy',
+        name: 'AeroSun Renewable Energy',
         url: 'https://aerosunenergy.in',
         sameAs: [
           'https://x.com/aerosunenergy',
@@ -23,7 +23,7 @@ export default function JsonLd() {
           'https://aerosunenergy.in/images/logo-aerosunenergy.png',
         ],
         description:
-          'AeroSun Energy is a leading renewable energy company in India providing solar panels, wind turbines (HAWT, VAWT, flower turbines), and hybrid energy systems for homes, businesses, and industries.',
+          'AeroSun Renewable Energy is a leading renewable energy company in India providing solar panels, wind turbines (HAWT, VAWT, flower turbines), and hybrid energy systems for homes, businesses, and industries.',
         email: 'info@aerosunenergy.in',
         foundingDate: '2024',
         areaServed: {
@@ -35,7 +35,7 @@ export default function JsonLd() {
         '@type': 'WebSite',
         '@id': 'https://aerosunenergy.in/#website',
         url: 'https://aerosunenergy.in',
-        name: 'AeroSun Energy',
+        name: 'AeroSun Renewable Energy',
         description: 'Solar & Wind Energy Solutions across India',
         publisher: { '@id': 'https://aerosunenergy.in/#organization' },
         inLanguage: 'en-IN',
@@ -44,7 +44,7 @@ export default function JsonLd() {
         '@type': 'WebPage',
         '@id': 'https://aerosunenergy.in/#webpage',
         url: 'https://aerosunenergy.in',
-        name: 'AeroSun Energy | Solar & Wind Energy Solutions in India',
+        name: 'AeroSun Renewable Energy | Solar & Wind Energy Solutions in India',
         isPartOf: { '@id': 'https://aerosunenergy.in/#website' },
         about: { '@id': 'https://aerosunenergy.in/#organization' },
         description:
@@ -54,7 +54,7 @@ export default function JsonLd() {
       {
         '@type': 'LocalBusiness',
         '@id': 'https://aerosunenergy.in/#localbusiness',
-        name: 'AeroSun Energy',
+        name: 'AeroSun Renewable Energy',
         url: 'https://aerosunenergy.in',
         email: 'info@aerosunenergy.in',
         description:
