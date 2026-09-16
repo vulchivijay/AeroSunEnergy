@@ -21,12 +21,20 @@ export default function Navbar() {
   const { t, locale, setLocale } = useLocale()
   const [menuOpen, setMenuOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
-  const [dark, setDark] = useState(() => typeof window !== 'undefined' && localStorage.getItem('theme') === 'dark')
+  const [dark, setDark] = useState(false)
   const [activeHref, setActiveHref] = useState('#')
   const navRef = useRef<HTMLElement>(null)
   const desktopLangRef = useRef<HTMLDivElement>(null)
   const mobileLangRef = useRef<HTMLDivElement>(null)
   const navLinks = t.navbar.links
+
+  useEffect(() => {
+    try {
+      setDark(localStorage.getItem('theme') === 'dark')
+    } catch {
+      // Ignore storage access failures.
+    }
+  }, [])
 
   useEffect(() => {
     const sectionLinks = navLinks.filter((link) => link.href.startsWith('#'))
