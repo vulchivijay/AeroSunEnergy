@@ -1,18 +1,51 @@
 {
   "navbar": {
     "languages": [
-      { "code": "en", "label": "English", "shortLabel": "EN" },
-      { "code": "hi", "label": "Hindi", "shortLabel": "HI" },
-      { "code": "te", "label": "Telugu", "shortLabel": "TE" }
+      {
+        "code": "en",
+        "label": "English",
+        "shortLabel": "EN"
+      },
+      {
+        "code": "hi",
+        "label": "Hindi",
+        "shortLabel": "HI"
+      },
+      {
+        "code": "te",
+        "label": "Telugu",
+        "shortLabel": "TE"
+      }
     ],
     "links": [
-      { "label": "Home", "href": "#hero" },
-      { "label": "About", "href": "#about" },
-      { "label": "How It Works", "href": "#how-it-works" },
-      { "label": "Features", "href": "#features" },
-      { "label": "Use Cases", "href": "#use-cases" },
-      { "label": "Why Us", "href": "#why-us" },
-      { "label": "Contact", "href": "#contact" }
+      {
+        "label": "Home",
+        "href": "#hero"
+      },
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "Features",
+        "href": "#features"
+      },
+      {
+        "label": "Use Cases",
+        "href": "#use-cases"
+      },
+      {
+        "label": "Why Us",
+        "href": "#why-us"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
     ],
     "startProject": "Start a Project",
     "toggleDark": "Toggle dark mode",
@@ -50,10 +83,22 @@
       "quoteAriaLabel": "Request a free quote from AeroSun Renewable Energy"
     },
     "stats": [
-      { "value": "24/7", "label": "Power Availability" },
-      { "value": "4-6 years", "label": "Typical ROI Window" },
-      { "value": "IoT App", "label": "Live Monitoring" },
-      { "value": "Multi-site", "label": "Deployment Types" }
+      {
+        "value": "24/7",
+        "label": "Power Availability"
+      },
+      {
+        "value": "4-6 years",
+        "label": "Typical ROI Window"
+      },
+      {
+        "value": "IoT App",
+        "label": "Live Monitoring"
+      },
+      {
+        "value": "Multi-site",
+        "label": "Deployment Types"
+      }
     ],
     "overlay": {
       "snapshotLabel": "Hybrid Energy Snapshot",
@@ -86,8 +131,8 @@
       "title": "Founder & Visionary Leader",
       "bio": "Driving India's renewable energy revolution with cutting-edge hybrid technology solutions that empower communities and businesses across the nation."
     },
-    "paragraph1": "AeroSun Renewable Energy, a flagship innovation of Aerosun Energy, is India's first specialized manufacturer of portable and low-wind smart turbines. Founded by Vulchi Vijaya Kumar, Aerosun Energy is driven by the belief that clean wind energy should be accessible, affordable, and scalable — from rooftops in remote villages to commercial buildings in the heart of modern cities.",
-    "paragraph2": "With strong roots in innovation, sustainability, and rural empowerment, Aerosun Energy designs advanced wind energy systems that operate silently, generate power at low wind speeds, and require minimal maintenance. Our solutions are built to perform reliably across diverse Indian environments.",
+    "paragraph1": "AeroSun Renewable Energy, a flagship innovation of AeroSun Renewable Energy, is India's first specialized manufacturer of portable and low-wind smart turbines. Founded by Vulchi Vijaya Kumar, AeroSun Renewable Energy is driven by the belief that clean wind energy should be accessible, affordable, and scalable — from rooftops in remote villages to commercial buildings in the heart of modern cities.",
+    "paragraph2": "With strong roots in innovation, sustainability, and rural empowerment, AeroSun Renewable Energy designs advanced wind energy systems that operate silently, generate power at low wind speeds, and require minimal maintenance. Our solutions are built to perform reliably across diverse Indian environments.",
     "quote": "We don't just build turbines. We create a future where every citizen can produce their own clean energy.",
     "coreValuesHeading": "Our Core Values",
     "coreValues": [
