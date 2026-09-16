@@ -22,7 +22,7 @@
     "schema": {
       "@type": "TechArticle",
       "headline": "Basic Electrical Concepts Explained",
-      "author": "AeroSun Energy",
+      "author": "AeroSun Renewable Energy",
       "description": "Learn the fundamental electrical components and concepts essential for DIY wind and solar projects.",
       "keywords": [
         "basic electrical concepts",
@@ -37,7 +37,7 @@
       "mainEntityOfPage": "https://www.aerosunenergy.com/basic-electrical-concepts",
       "publisher": {
         "@type": "Organization",
-        "name": "AeroSun Energy",
+        "name": "AeroSun Renewable Energy",
         "logo": {
           "@type": "ImageObject",
           "url": "https://www.aerosunenergy.com/images/logo.png"

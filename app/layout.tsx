@@ -22,17 +22,17 @@ const BING_SITE_VERIFICATION = 'CFCE648996D804079C4F28B5C09CE9D3';
 
 export const metadata: Metadata = {
   title: {
-    default: 'AeroSun Energy | Hybrid Solar Wind Energy Solutions India',
-    template: '%s | AeroSun Energy',
+    default: 'AeroSun Renewable Energy | Hybrid Solar Wind Energy Solutions India',
+    template: '%s | AeroSun Renewable Energy',
   },
   description:
-    'AeroSun Energy provides hybrid solar wind energy systems for homes, roads, parks, and commercial spaces across India. 24/7 clean power generation with smart IoT monitoring.',
+    'AeroSun Renewable Energy provides hybrid solar wind energy systems for homes, roads, parks, and commercial spaces across India. 24/7 clean power generation with smart IoT monitoring.',
   keywords: [
     'hybrid solar wind energy',
     'solar wind hybrid system for homes',
     'green energy infrastructure',
     'smart energy systems',
-    'AeroSun Energy',
+    'AeroSun Renewable Energy',
     'HAWT and VAWT turbines',
     'VAWT flower turbines',
     'low-wind VAWT solutions',
@@ -56,10 +56,10 @@ export const metadata: Metadata = {
     'Renewable energy',
   ],
   metadataBase: new URL('https://aerosunenergy.in'),
-  applicationName: 'AeroSun Energy',
-  authors: [{ name: 'AeroSun Energy', url: 'https://aerosunenergy.in' }],
-  creator: 'AeroSun Energy',
-  publisher: 'AeroSun Energy',
+  applicationName: 'AeroSun Renewable Energy',
+  authors: [{ name: 'AeroSun Renewable Energy', url: 'https://aerosunenergy.in' }],
+  creator: 'AeroSun Renewable Energy',
+  publisher: 'AeroSun Renewable Energy',
   category: 'Renewable Energy',
   referrer: 'origin-when-cross-origin',
   formatDetection: {
@@ -82,11 +82,11 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'AeroSun Energy | Hybrid Solar Wind Energy Solutions India',
+    title: 'AeroSun Renewable Energy | Hybrid Solar Wind Energy Solutions India',
     description:
       'Hybrid solar wind energy systems that power homes, highways, parks, and commercial spaces across India — day and night.',
     url: 'https://aerosunenergy.in',
-    siteName: 'AeroSun Energy',
+    siteName: 'AeroSun Renewable Energy',
     locale: 'en_IN',
     type: 'website',
     images: [
@@ -94,13 +94,13 @@ export const metadata: Metadata = {
         url: '/images/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'AeroSun Energy – Solar & Wind Energy Solutions',
+        alt: 'AeroSun Renewable Energy – Solar & Wind Energy Solutions',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AeroSun Energy | Solar & Wind Energy Solutions in India',
+    title: 'AeroSun Renewable Energy | Solar & Wind Energy Solutions in India',
     description:
       'Clean, affordable solar and wind energy solutions for homes, businesses, and industries across India.',
     images: ['/images/og-image.png'],

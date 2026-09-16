@@ -34,7 +34,7 @@ export default function Footer() {
                 <span className="text-primary">AeroSun</span>{' '}
                 <span className="text-secondary">Energy</span>
               </span> */}
-              {/* <Image src="/images/logo-horizontal.png" alt="AeroSun Energy logo" width={180} height={60} priority /> */}
+              {/* <Image src="/images/logo-horizontal.png" alt="AeroSun Renewable Energy logo" width={180} height={60} priority /> */}
               <Logo size="footer" />
             </div>
             <p className="text-gray-700 text-md mt-3 dark:text-gray-300">
@@ -74,8 +74,8 @@ export default function Footer() {
                 href="https://x.com/aerosunenergy"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow AeroSun Energy on X (Twitter)"
-                title="Follow AeroSun Energy on X (opens in new tab)"
+                aria-label="Follow AeroSun Renewable Energy on X (Twitter)"
+                title="Follow AeroSun Renewable Energy on X (opens in new tab)"
                 itemProp="sameAs"
                 data-social="twitter"
                 className="rounded-md bg-gray-900 p-2 transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary hover:shadow-md"
@@ -89,8 +89,8 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/aerosunenergy"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Connect with AeroSun Energy on LinkedIn"
-                title="Connect with AeroSun Energy on LinkedIn (opens in new tab)"
+                aria-label="Connect with AeroSun Renewable Energy on LinkedIn"
+                title="Connect with AeroSun Renewable Energy on LinkedIn (opens in new tab)"
                 itemProp="sameAs"
                 data-social="linkedin"
                 className="rounded-md bg-gray-900 p-2 transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary hover:shadow-md"
@@ -104,8 +104,8 @@ export default function Footer() {
                 href="https://www.facebook.com/aerosunenergy"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Like AeroSun Energy on Facebook"
-                title="Like AeroSun Energy on Facebook (opens in new tab)"
+                aria-label="Like AeroSun Renewable Energy on Facebook"
+                title="Like AeroSun Renewable Energy on Facebook (opens in new tab)"
                 itemProp="sameAs"
                 data-social="facebook"
                 className="rounded-md bg-gray-900 p-2 transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary hover:shadow-md"
@@ -119,8 +119,8 @@ export default function Footer() {
                 href="https://www.instagram.com/aerosunenergy"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow AeroSun Energy on Instagram"
-                title="Follow AeroSun Energy on Instagram (opens in new tab)"
+                aria-label="Follow AeroSun Renewable Energy on Instagram"
+                title="Follow AeroSun Renewable Energy on Instagram (opens in new tab)"
                 itemProp="sameAs"
                 data-social="instagram"
                 className="rounded-md bg-gray-900 p-2 transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary hover:shadow-md"
@@ -135,11 +135,11 @@ export default function Footer() {
             <div className="bg-white rounded-md shadow-md border border-gray-200 hover:shadow-xl transition-shadow inline-block dark:bg-slate-800 dark:border-gray-600">
               <Image
                 src="/images/qr-code.png"
-                alt="AeroSun Energy QR Code - Scan to visit our website"
+                alt="AeroSun Renewable Energy QR Code - Scan to visit our website"
                 width={200}
                 height={200}
                 className="w-50 h-auto"
-                title="AeroSun Energy Contact QR Code"
+                title="AeroSun Renewable Energy Contact QR Code"
                 itemProp="image"
                 data-seo="qr-code"
               />
@@ -155,7 +155,7 @@ export default function Footer() {
         <div className="flex items-center justify-center">
           <p className="max-w-7xl mx-auto px-3 text-center text-gray-500 text-sm dark:text-gray-400">
             <strong>Vulchi Vijaya Kumar (Kshatriya's)</strong> {footer.copyright} <span className="underline underline-offset-4 text-orange-600">{footer.registrationNotice}</span>. {footer.allRightsReserved} |{' '}
-            <Link href="https://aerosunenergy.in" target="_blank" rel="noopener noreferrer" title="Visit AeroSun Energy official website" itemProp="url" data-external="website" className="transition-all duration-200 hover:text-primary hover:underline hover:underline-offset-4 dark:hover:text-primary">
+            <Link href="https://aerosunenergy.in" target="_blank" rel="noopener noreferrer" title="Visit AeroSun Renewable Energy official website" itemProp="url" data-external="website" className="transition-all duration-200 hover:text-primary hover:underline hover:underline-offset-4 dark:hover:text-primary">
               {footer.website}
             </Link>
           </p>
