@@ -74,7 +74,7 @@ export default function Benefits() {
               <div className="min-h-96 md:aspect-video overflow-hidden">
                 <Image
                   src="/images/smart-vawt-aerosunenergy.png"
-                  alt="Advanced Darrieus wind turbine technology by AeroSun Renewable Energy - efficient vertical-axis design for urban and semi-urban environments"
+                  alt="Advanced Darrieus wind turbine technology by AeroSun Energy - efficient vertical-axis design for urban and semi-urban environments"
                   fill
                   sizes="(min-width: 1024px) 68rem, 92vw"
                   className="object-cover"
