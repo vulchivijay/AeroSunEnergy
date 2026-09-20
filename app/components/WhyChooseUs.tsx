@@ -72,7 +72,7 @@ export default function WhyChooseUs() {
             <div className="relative min-h-96 md:aspect-video overflow-hidden">
               <Image
                 src="/images/future-aerosunenergy.png"
-                alt="AeroSun Renewable Energy's vision for future renewable energy infrastructure - advanced hybrid systems powering smart cities"
+                alt="AeroSun Energy's vision for future renewable energy infrastructure - advanced hybrid systems powering smart cities"
                 fill
                 sizes="(min-width: 1024px) 80rem, 92vw"
                 className="object-cover"

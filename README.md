@@ -1,4 +1,4 @@
-# AeroSun Renewable Energy
+# AeroSun Energy
 
 > **Hybrid solar wind energy systems in India — built for rooftops, roads, parks, and industry.**
 
@@ -8,7 +8,7 @@ Live site: [aerosunenergy.in](https://aerosunenergy.in)
 
 ## Overview
 
-AeroSun Renewable Energy is a marketing and information website for a hybrid solar-wind energy company serving customers across India. The site showcases AeroSun's technology, deployment use-cases, and wind turbine product range, guiding visitors from discovery through to an enquiry.
+AeroSun Energy is a marketing and information website for a hybrid solar-wind energy company serving customers across India. The site showcases AeroSun's technology, deployment use-cases, and wind turbine product range, guiding visitors from discovery through to an enquiry.
 
 Key highlights communicated on the site:
 
