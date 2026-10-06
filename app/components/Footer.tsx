@@ -152,12 +152,9 @@ export default function Footer() {
       <div className="bg-yellow-300 text-gray-950 text-md py-1 text-center border-b border-t-2 border-amber-300 hidden"> {footer.devNotice} <Link href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" title="Visit ChatGPT website" data-external="chatgpt" className="underline">{footer.devNoticeChatGPT}</Link> {footer.devNoticeAnd} <Link href="https://github.com" target="_blank" rel="noopener noreferrer" title="Visit GitHub website" data-external="github" className="underline">{footer.devNoticeGitHub}</Link>.</div>
 
       <div className="border-t-2 border-gray-200 py-6 dark:border-gray-700">
-        <div className="flex items-center justify-center">
-          <p className="max-w-7xl mx-auto px-3 text-center text-gray-500 text-sm dark:text-gray-400">
-            <strong>Vulchi Vijaya Kumar (Kshatriya's)</strong> {footer.copyright} <span className="underline underline-offset-4 text-orange-600">{footer.registrationNotice}</span>. {footer.allRightsReserved} |{' '}
-            <Link href="https://aerosunenergy.in" target="_blank" rel="noopener noreferrer" title="Visit AeroSun Energy official website" itemProp="url" data-external="website" className="transition-all duration-200 hover:text-primary hover:underline hover:underline-offset-4 dark:hover:text-primary">
-              {footer.website}
-            </Link>
+        <div className="flex justify-end">
+          <p className="px-3 text-gray-500 text-sm dark:text-gray-400">
+            {footer.copyright}. {footer.allRightsReserved}{' '}
           </p>
         </div>
       </div>
