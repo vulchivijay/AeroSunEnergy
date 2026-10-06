@@ -27,7 +27,7 @@ export default function Logo({ size = 'default' }: LogoProps) {
           <span className={`${isFooter ? 'text-[2rem]' : 'text-3xl'} ml-1 font-bold text-[#F59E0B] drop-shadow-xl tracking-wider`}>Energy</span>
           <span className=""></span>
         </div>
-        <div className={`${isFooter ? 'text-md' : 'text-sm'} uppercase text-[#18251F]`}> {`${isFooter ? '---' : ''}`}--- Power from Sun and Wind ---{`${isFooter ? '---' : ''}`}</div>
+        <div className={`${isFooter ? 'text-md' : 'text-sm'} text-[#18251F]`}> {`${isFooter ? '---' : ''}`}--- Power from Sun and Wind ---{`${isFooter ? '---' : ''}`}</div>
         {/* <div className={`${isFooter ? 'text-md' : 'text-sm'} text-gray-900 dark:text-gray-300`}>{t.logo.tagline}</div> */}
       </div>
     </Link>
