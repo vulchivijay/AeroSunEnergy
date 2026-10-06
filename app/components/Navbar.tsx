@@ -121,7 +121,7 @@ export default function Navbar() {
           <Logo />
           {/* Desktop Links */}
           <div className="hidden items-center lg:flex lg:ml-24">
-            <div className="flex items-center gap-1 rounded-full border border-slate-200/70 bg-white/80 px-2 py-1 dark:border-slate-700/80 dark:bg-slate-900/80">
+            <div className="flex items-center gap-1 rounded-full border border-slate-200 bg-white/50 px-2 py-1 dark:border-slate-700/80 dark:bg-slate-900/80 shadow-2xl">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
