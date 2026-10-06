@@ -114,7 +114,7 @@ export default function Navbar() {
   )
 
   return (
-    <nav ref={navRef} className="sticky top-0 left-0 right-0 z-50 border-b-4 border-slate-400 bg-white/70 p-1.5 shadow-2xl backdrop-blur-md transition-all duration-300 ease-in-out dark:border-slate-700/70 dark:bg-slate-900/70">
+    <nav ref={navRef} className="sticky top-0 left-0 right-0 z-50 border-b-4 border-slate-400 bg-slate-100 px-1.5 py-1 shadow-2xl backdrop-blur-md transition-all duration-300 ease-in-out dark:border-slate-700/70 dark:bg-slate-900/70">
       <div className="w-full">
         <div className="flex items-center justify-between">
           {/* Logo */}

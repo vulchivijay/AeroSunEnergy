@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Roboto } from 'next/font/google'
+import { Poppins, Roboto } from 'next/font/google'
 import { GoogleTagManager } from '@next/third-parties/google'
 import JsonLd from '@/app/components/JsonLd'
 import ThemeBootstrap from '@/app/components/ThemeBootstrap'
@@ -15,6 +15,14 @@ const roboto = Roboto({
   weight: ['400'],
   preload: true,
   display: "swap" // Prevents layout shift from font loading
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  variable: '--font-logo',
+  weight: ['700'],
+  preload: true,
+  display: 'swap',
 });
 
 const GTM_ID = 'GTM-PLB9S69G';
@@ -124,7 +132,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} bg-white text-gray-900 transition-colors duration-150 dark:bg-gray-950 dark:text-gray-100`}>
+      <body className={`${roboto.variable} ${poppins.variable} bg-white text-gray-900 transition-colors duration-150 dark:bg-gray-950 dark:text-gray-100`}>
         {GTM_ID ? <GoogleTagManager gtmId={GTM_ID} /> : null}
         <ThemeBootstrap />
         <JsonLd />
