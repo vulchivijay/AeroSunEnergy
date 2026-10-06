@@ -29,7 +29,7 @@ export default function UseCases() {
   const useCases = u.items.map((item, i) => ({ ...item, ...useCaseStyles[i] }))
 
   return (
-    <section id="use-cases" className="px-6 sm:px-3 lg:px-12 overflow-hidden">
+    <section id="use-cases" className="py-12 px-6 sm:px-3 lg:px-12 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-12"
@@ -39,10 +39,10 @@ export default function UseCases() {
           transition={{ duration: 0.7 }}
         >
           <span className="text-gray-600 dark:text-white">{u.sectionBadge}</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 font-semibold dark:text-white">
+          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-500 font-semibold dark:text-white">
             {u.heading}
           </h2>
-          <p className="mt-4 text-lg text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">
+          <p className="mt-4 text-lg text-gray-500 dark:text-gray-100 max-w-3xl mx-auto">
             {u.description}
           </p>
           <div className="mt-6 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary" />

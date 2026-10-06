@@ -88,7 +88,7 @@ export default function WhyChooseUs() {
         </div>
       </motion.div>
 
-      <div className="px-6 sm:px-3 lg:px-12 py-24">
+      <div className="px-4 sm:px-2 lg:px-12 py-24">
         <motion.div
           className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-4"
           variants={containerVariants}

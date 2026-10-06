@@ -12,7 +12,7 @@ export default function CTASection() {
   return (
     <section className="overflow-hidden">
       <motion.div
-        className="relative px-6 sm:px-3 lg:px-12 py-16 md:py-24 rounded-md shadow-2xl md:border md:border-slate-200 bg-slate-950 dark:border-white/10 sm:px-8"
+        className="relative px-4 sm:px-2 lg:px-12 py-16 md:py-24 rounded-md shadow-2xl md:border md:border-slate-200 bg-slate-950 dark:border-white/10 sm:px-8"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

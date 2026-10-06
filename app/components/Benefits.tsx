@@ -41,7 +41,7 @@ export default function Benefits() {
   }))
 
   return (
-    <section id="benefits" className="px-6 sm:px-3 lg:px-12 py-16 md:py-24 bg-white dark:bg-gray-950 overflow-hidden">
+    <section id="benefits" className="px-4 sm:px-2 lg:px-12 py-16 md:py-24 bg-white dark:bg-gray-950 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-12"

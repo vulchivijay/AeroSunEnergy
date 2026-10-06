@@ -48,7 +48,7 @@ export default function About() {
   }))
 
   return (
-    <section id="about" className="px-6 sm:px-3 lg:px-12 py-16 md:py-24 bg-white dark:bg-gray-950 overflow-hidden">
+    <section id="about" className="px-4 sm:px-2 lg:px-12 py-16 md:py-24 bg-white dark:bg-gray-950 overflow-hidden">
       {/* relative grid w-full grid-cols-1 items-center gap-7 lg:grid-cols-[1.08fr_0.92fr] */}
       {/* About Section */}
       <div className="mx-auto max-w-7xl py-12">
