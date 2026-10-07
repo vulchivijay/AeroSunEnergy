@@ -16,11 +16,11 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-stone-100 text-stone-800">
       <div className="mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-4 sm:px-6 lg:px-8">
-        <header className="flex items-center justify-between gap-2 border-b border-stone-200 py-3 sm:gap-3">
+        <header className="flex flex-col md:flex-row items-center md:justify-between gap-2 border-b border-stone-200 py-3">
           <div className="min-w-0 flex-1">
             <Logo />
           </div>
-          <span className="shrink-0 text-[16px] font-medium uppercase tracking-[0.24em] text-stone-500">
+          <span className="md:shrink-0 text-md font-medium uppercase tracking-[0.24em] text-stone-500">
             Coming soon
           </span>
         </header>

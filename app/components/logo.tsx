@@ -30,17 +30,17 @@ export default function Logo({ size = 'default' }: LogoProps) {
         priority
         loading="eager"
       />
-      <div className="flex min-w-0 flex-col items-start justify-center text-left">
+      <div className="flex min-w-0 flex-col items-start justify-center text-left sm:mb-2">
         <div className="flex flex-wrap items-center justify-start gap-1">
-          <span className={`${isFooter ? 'text-lg sm:text-[1.5rem]' : 'text-lg sm:text-2xl'} font-bold text-[#20A44A] tracking-wider drop-shadow-xl`}>
+          <span className={`text-3xl font-bold text-[#20A44A] tracking-wider drop-shadow-xl`}>
             AeroSun
           </span>
-          <span className={`${isFooter ? 'text-lg sm:text-[1.5rem]' : 'text-lg sm:text-2xl'} font-bold text-[#F59E0B] tracking-wider drop-shadow-xl`}>
+          <span className={`text-3xl font-bold text-[#F59E0B] tracking-wider drop-shadow-xl`}>
             Energy
           </span>
         </div>
-        <div className={`${isFooter ? 'text-[10px] sm:text-sm' : 'hidden text-[10px] sm:block sm:text-xs'} whitespace-nowrap text-[#18251F]`}>
-          Power from Sun and Wind
+        <div className={`text-[16px] ${isFooter ? '' : 'sm:block'} whitespace-nowrap text-[#18251F]`}>
+          --- Power from Sun and Wind ---
         </div>
       </div>
     </Link>
