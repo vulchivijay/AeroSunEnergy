@@ -6,8 +6,6 @@ import ThemeBootstrap from '@/app/components/ThemeBootstrap'
 import { LocaleProvider } from '@/app/lib/LocaleContext'
 
 import './globals.css'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -137,9 +135,9 @@ export default function RootLayout({
         <ThemeBootstrap />
         <JsonLd />
         <LocaleProvider>
-          <Navbar />
+          {/* <Navbar /> */}
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </LocaleProvider>
       </body>
     </html>
