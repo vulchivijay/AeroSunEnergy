@@ -8,11 +8,14 @@
 
 html {
   scroll-behavior: smooth;
+  min-height: 100%;;
 }
 
 body {
+  min-height: 100%;
   font-family: var(--font-body), sans-serif;
-  color: var(--page-ink);
+  background: #fff;
+  color: #333;
 }
 
 h1,
@@ -30,13 +33,8 @@ h6 {
 }
 
 .dark body {
-  --page-ink: #e5eef9;
-  --page-surface: #07111f;
-  --page-grid: rgba(148, 163, 184, 0.08);
-  background:
-    radial-gradient(circle at top left, rgba(30, 136, 229, 0.24), transparent 32%),
-    radial-gradient(circle at 85% 10%, rgba(67, 160, 71, 0.18), transparent 24%),
-    linear-gradient(180deg, #06101d 0%, #081324 48%, #0b1727 100%);
+  background: #fff;
+  color: var(--page-surface);
 }
 
 @keyframes slow-ping {
