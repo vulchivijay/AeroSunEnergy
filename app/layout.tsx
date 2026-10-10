@@ -68,8 +68,9 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL('https://aerosunenergy.in'),
   icons: {
-    icon: '/icon',
-    apple: '/apple-icon',
+    icon: '/images/logo.png',
+    shortcut: '/images/logo.png',
+    apple: '/images/logo.png',
   },
   applicationName: 'AeroSun Energy',
   authors: [{ name: 'AeroSun Energy', url: 'https://aerosunenergy.in' }],
