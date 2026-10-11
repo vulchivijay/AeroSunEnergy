@@ -4,8 +4,9 @@ import { GoogleTagManager } from '@next/third-parties/google'
 import JsonLd from '@/app/components/JsonLd'
 import ThemeBootstrap from '@/app/components/ThemeBootstrap'
 import { LocaleProvider } from '@/app/lib/LocaleContext'
-import Navbar from '@/app/components/Navbar'
+import Navbar from '@/app/components/Header'
 import Footer from '@/app/components/Footer'
+import LordGanesha from '@/app/components/lord-ganesha'
 
 import './globals.css'
 
@@ -143,6 +144,7 @@ export default function RootLayout({
         <JsonLd />
         <LocaleProvider>
           <Navbar />
+          <LordGanesha />
           {children}
           <Footer />
         </LocaleProvider>
