@@ -39,7 +39,7 @@ export default function Logo({ size = 'default' }: LogoProps) {
           </span>
         </div>
         <div className={`text-[12px] ${isFooter ? '' : 'sm:block'} whitespace-nowrap text-[#18251F]`}>
-          --- Power from Sun and Wind ---
+          ---- Power from Sun and Wind ----
         </div>
       </div>
     </Link>

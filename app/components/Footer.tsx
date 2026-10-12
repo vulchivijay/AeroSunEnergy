@@ -47,7 +47,6 @@ export default function Footer() {
               🌐 {footer.website}
             </p>
           </div>
-
           {/* Navigation */}
           <div className="md:text-right">
             <h3 className="text-black font-semibold text-lg mb-5 dark:text-white">{footer.quickLinks}</h3>
