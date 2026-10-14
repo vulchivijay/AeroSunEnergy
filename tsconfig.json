@@ -3,8 +3,7 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext",
-      "react/jsx-runtime"
+      "esnext"
     ],
     "allowJs": true,
     "skipLibCheck": true,
