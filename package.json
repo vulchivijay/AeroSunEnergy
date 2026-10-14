@@ -2,7 +2,7 @@
   "name": "aerosunrenewableenergy",
   "version": "2026.9.16",
   "private": true,
-  "packageManager": "npm@12.0.2",
+  "packageManager": "npm@12.2.0",
   "engines": {
     "node": ">=22.19.0"
   },
@@ -30,22 +30,22 @@
     "zod": "^4.6.7"
   },
   "devDependencies": {
-    "@next/third-parties": "16.3.5",
-    "@react-three/drei": "^10.7.8",
-    "@react-three/fiber": "^9.7.0",
+    "@next/third-parties": "16.4.0",
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.1",
     "@tailwindcss/postcss": "^4.3.3",
-    "@types/node": "^25",
+    "@types/node": "^26",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.6.1",
     "clsx": "^2.1.1",
-    "eslint": "^9.39.5",
-    "eslint-config-next": "^16.4.0",
-    "framer-motion": "^13.4.0",
-    "lucide-react": "^1.46.0",
+    "eslint": "^10.12.0",
+    "eslint-config-next": "^14.2.35",
+    "framer-motion": "^14.2.0",
+    "lucide-react": "^1.57.0",
     "postcss": "^8",
     "tailwind-merge": "^3.7.0",
-    "three": "^0.186.0",
-    "typescript": "^5.9.3"
+    "three": "^0.186.1",
+    "typescript": "^7.0.2"
   }
 }
