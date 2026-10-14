@@ -6,7 +6,7 @@ import ThemeBootstrap from '@/app/components/ThemeBootstrap'
 import { LocaleProvider } from '@/app/lib/LocaleContext'
 import Navbar from '@/app/components/Header'
 import Footer from '@/app/components/Footer'
-import LordGanesha from '@/app/components/lord-ganesha'
+import LordGanesha from '@/app/components/LordGanesha'
 
 import './globals.css'
 

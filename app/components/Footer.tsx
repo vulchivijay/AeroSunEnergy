@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import Logo from './logo';
+import Logo from './Logo';
 import { useLocale } from '@/app/lib/LocaleContext'
 
 export default function Footer() {
