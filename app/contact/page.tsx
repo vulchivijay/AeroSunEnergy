@@ -29,9 +29,44 @@ const channelIcons = {
 
 export default function Contact() {
   const { t } = useLocale()
+  const c = t.contact
   const footer = t.footer
   const navbar = t.navbar
-  const c = t.contact
+
+  const contactHighlights = c.highlights.map((item, index) => ({
+    ...item,
+    tone: [
+      'from-primary/20 via-custom-orange/15 to-custom-red/20',
+      'from-custom-blue/20 via-primary/15 to-custom-violet/20',
+      'from-emerald-500/20 via-primary/15 to-slate-500/20',
+    ][index] ?? 'from-primary/20 via-custom-orange/15 to-custom-red/20',
+  }))
+
+  const contactSteps = c.steps.map((step, index) => ({
+    ...step,
+    number: String(index + 1).padStart(2, '0'),
+  }))
+
+  const channels = [
+    {
+      label: c.channels[0]?.label ?? 'Email',
+      value: c.channels[0]?.value ?? footer.email,
+      href: `mailto:${footer.email}`,
+      icon: channelIcons.email,
+    },
+    {
+      label: c.channels[1]?.label ?? 'Website',
+      value: c.channels[1]?.value ?? footer.website,
+      href: footer.website.startsWith('http') ? footer.website : `https://${footer.website}`,
+      icon: channelIcons.website,
+    },
+    {
+      label: c.channels[2]?.label ?? 'Estimation',
+      value: c.channels[2]?.value ?? 'Open the calculator',
+      href: '/estimation',
+      icon: channelIcons.quote,
+    },
+  ]
 
   const contactEmail = footer.email
   const websiteUrl = footer.website.startsWith('http') ? footer.website : `https://${footer.website}`
@@ -87,18 +122,17 @@ export default function Contact() {
               <div className="relative grid gap-8 lg:grid-cols-[1fr_320px] lg:items-end">
                 <div>
                   <span className="inline-flex rounded-md border border-white/16 bg-white/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.34em] text-white/70 backdrop-blur-md sm:text-sm">
-                    {c.badge}
+                    {navbar.startProject}
                   </span>
 
                   <h1 className="mt-6 max-w-2xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-                    {c.title1}{' '}
                     <span className="bg-linear-to-r from-primary via-white to-primary bg-clip-text text-transparent">
-                      {c.title2}
+                      {c.heroTitle}
                     </span>
                   </h1>
 
                   <p className="mt-5 max-w-2xl text-base leading-8 text-white/76 sm:text-lg">
-                    {c.intro}
+                    {c.heroDescription}
                   </p>
 
                   <div className="mt-8 flex flex-wrap gap-4">
@@ -106,22 +140,29 @@ export default function Contact() {
                       href={`mailto:${contactEmail}`}
                       className="inline-flex items-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition-transform duration-200 hover:scale-[1.02] hover:bg-primary hover:text-white"
                     >
-                      {c.actions.email}
+                      {c.emailButton}
                     </Link>
                     <Link
                       href="/estimation"
                       className="inline-flex items-center rounded-full border border-white/16 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition-colors duration-200 hover:bg-white/15"
                     >
-                      {c.actions.estimate}
+                      {c.estimationButton}
                     </Link>
                   </div>
 
                   <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                    {c.highlights.map((item) => (
-                      <div key={item.label} className="rounded-3xl border border-white/14 bg-white/8 p-4 backdrop-blur-md">
-                        <div className="h-1.5 rounded-full bg-linear-to-r from-primary/20 via-custom-orange/15 to-custom-red/20" aria-hidden="true" />
-                        <p className="mt-4 text-xs font-semibold uppercase tracking-[0.28em] text-white/55">{item.label}</p>
-                        <p className="mt-3 text-sm leading-6 text-white/88">{item.value}</p>
+                    {contactHighlights.map((item) => (
+                      <div
+                        key={item.label}
+                        className="rounded-3xl border border-white/14 bg-white/8 p-4 backdrop-blur-md"
+                      >
+                        <div className={`h-1.5 rounded-full bg-linear-to-r ${item.tone}`} aria-hidden="true" />
+                        <p className="mt-4 text-xs font-semibold uppercase tracking-[0.28em] text-white/55">
+                          {item.label}
+                        </p>
+                        <p className="mt-3 text-sm leading-6 text-white/88">
+                          {item.value}
+                        </p>
                       </div>
                     ))}
                   </div>
@@ -131,8 +172,8 @@ export default function Contact() {
                   <div className="absolute inset-6 rounded-4xl bg-accent/20 blur-3xl" aria-hidden="true" />
                   <div className="relative overflow-hidden rounded-3xl border border-white/16 bg-white/8 p-3 shadow-2xl backdrop-blur-sm">
                     <div className="absolute left-5 right-5 top-5 z-10 flex items-center justify-between rounded-md border border-white/16 bg-slate-950/35 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/78 backdrop-blur-md">
-                      <span>{c.heroCard.badge}</span>
-                      <span>{c.heroCard.subBadge}</span>
+                      <span>{c.badge}</span>
+                      <span>{c.projectBrief}</span>
                     </div>
                     <div className="relative min-h-90 overflow-hidden rounded-3xl sm:min-h-105">
                       <Image
@@ -147,11 +188,11 @@ export default function Contact() {
                     </div>
                     <div className="absolute bottom-5 left-5 right-5 grid gap-3 sm:grid-cols-2">
                       <div className="rounded-2xl border border-white/16 bg-slate-950/55 p-4 text-white backdrop-blur-md">
-                        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">{c.heroCard.email}</p>
+                        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">{c.channels[0]?.label ?? 'Email'}</p>
                         <p className="mt-2 break-all text-sm text-white/92">{contactEmail}</p>
                       </div>
                       <div className="rounded-2xl border border-white/16 bg-white/10 p-4 text-white backdrop-blur-md">
-                        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">{c.heroCard.website}</p>
+                        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">{c.channels[1]?.label ?? 'Website'}</p>
                         <p className="mt-2 text-sm text-white/92">{footer.website}</p>
                       </div>
                     </div>
@@ -169,31 +210,18 @@ export default function Contact() {
           >
             <Card className="overflow-hidden border-white/70 bg-white/84 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/76">
               <CardContent className="space-y-4 p-6 sm:p-7">
-                <p className="text-xs font-semibold uppercase tracking-[0.34em] text-slate-500 dark:text-slate-400">{c.quickAccess.badge}</p>
-                <h2 className="text-2xl font-semibold text-custom-deep-blue dark:text-white">{c.quickAccess.title}</h2>
-                <p className="text-sm leading-7 text-slate-600 dark:text-slate-300">{c.quickAccess.description}</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.34em] text-slate-500 dark:text-slate-400">
+                  {c.quickAccess}
+                </p>
+                <h2 className="text-2xl font-semibold text-custom-deep-blue dark:text-white">
+                  {c.quickAccessTitle}
+                </h2>
+                <p className="text-sm leading-7 text-slate-600 dark:text-slate-300">
+                  {c.quickAccessCopy}
+                </p>
 
                 <div className="space-y-3 pt-2">
-                  {[
-                    {
-                      label: c.quickAccess.channels.email,
-                      value: contactEmail,
-                      href: `mailto:${contactEmail}`,
-                      icon: channelIcons.email,
-                    },
-                    {
-                      label: c.quickAccess.channels.website,
-                      value: footer.website,
-                      href: websiteUrl,
-                      icon: channelIcons.website,
-                    },
-                    {
-                      label: c.quickAccess.channels.estimation,
-                      value: c.quickAccess.channels.estimationValue,
-                      href: '/estimation',
-                      icon: channelIcons.quote,
-                    },
-                  ].map((channel) => (
+                  {channels.map((channel) => (
                     <Link
                       key={channel.label}
                       href={channel.href}
@@ -203,8 +231,12 @@ export default function Contact() {
                         {channel.icon}
                       </div>
                       <div className="min-w-0 flex-1">
-                        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">{channel.label}</p>
-                        <p className="mt-1 truncate text-sm font-semibold text-custom-deep-blue dark:text-white">{channel.value}</p>
+                        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
+                          {channel.label}
+                        </p>
+                        <p className="mt-1 truncate text-sm font-semibold text-custom-deep-blue dark:text-white">
+                          {channel.value}
+                        </p>
                       </div>
                     </Link>
                   ))}
@@ -214,16 +246,25 @@ export default function Contact() {
 
             <Card className="overflow-hidden border-white/70 bg-white/84 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/76">
               <CardContent className="space-y-5 p-6 sm:p-7">
-                <p className="text-xs font-semibold uppercase tracking-[0.34em] text-slate-500 dark:text-slate-400">{c.nextSteps.badge}</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.34em] text-slate-500 dark:text-slate-400">
+                  {c.whatHappensNext}
+                </p>
                 <div className="space-y-3">
-                  {c.nextSteps.items.map((step, index) => (
-                    <div key={step.title} className="flex gap-4 rounded-3xl border border-slate-200/80 bg-slate-50/80 p-4 dark:border-white/10 dark:bg-slate-950/40">
+                  {contactSteps.map((step) => (
+                    <div
+                      key={step.number}
+                      className="flex gap-4 rounded-3xl border border-slate-200/80 bg-slate-50/80 p-4 dark:border-white/10 dark:bg-slate-950/40"
+                    >
                       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-primary to-custom-red text-sm font-semibold text-white">
-                        {String(index + 1).padStart(2, '0')}
+                        {step.number}
                       </span>
                       <div>
-                        <h3 className="text-base font-semibold text-custom-deep-blue dark:text-white">{step.title}</h3>
-                        <p className="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-300">{step.description}</p>
+                        <h3 className="text-base font-semibold text-custom-deep-blue dark:text-white">
+                          {step.title}
+                        </h3>
+                        <p className="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-300">
+                          {step.description}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -236,22 +277,30 @@ export default function Contact() {
         <div className="grid gap-6 lg:grid-cols-[1.02fr_0.98fr]">
           <Card className="overflow-hidden border-white/70 bg-white/84 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/76">
             <CardContent className="space-y-5 p-6 sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.34em] text-slate-500 dark:text-slate-400">{c.form.badge}</p>
-              <h2 className="text-3xl font-semibold text-custom-deep-blue dark:text-white">{c.form.title}</h2>
-              <p className="max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">{c.form.description}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.34em] text-slate-500 dark:text-slate-400">
+                {c.projectBrief}
+              </p>
+              <h2 className="text-3xl font-semibold text-custom-deep-blue dark:text-white">
+                {c.projectBriefTitle}
+              </h2>
+              <p className="max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
+                {c.projectBriefCopy}
+              </p>
 
               <form className="grid gap-4 sm:grid-cols-2" onSubmit={handleProjectBrief}>
-                <Field label={c.form.fields.name} name="name" placeholder={c.form.placeholders.name} />
-                <Field label={c.form.fields.email} name="email" type="email" placeholder={c.form.placeholders.email} />
-                <Field label={c.form.fields.phone} name="phone" placeholder={c.form.placeholders.phone} />
-                <Field label={c.form.fields.projectType} name="projectType" placeholder={c.form.placeholders.projectType} />
-                <Field label={c.form.fields.usage} name="usage" placeholder={c.form.placeholders.usage} />
+                <Field label={c.form.fullName} name="name" placeholder={c.form.fullNamePlaceholder} />
+                <Field label={c.form.email} name="email" type="email" placeholder={c.form.emailPlaceholder} />
+                <Field label={c.form.phone} name="phone" placeholder={c.form.phonePlaceholder} />
+                <Field label={c.form.projectType} name="projectType" placeholder={c.form.projectTypePlaceholder} />
+                <Field label={c.form.usage} name="usage" placeholder={c.form.usagePlaceholder} />
                 <div className="sm:col-span-2">
-                  <label className="mb-2 block text-sm font-semibold text-custom-deep-blue dark:text-white">{c.form.fields.message}</label>
+                  <label className="mb-2 block text-sm font-semibold text-custom-deep-blue dark:text-white">
+                    {c.form.message}
+                  </label>
                   <textarea
                     name="message"
                     rows={5}
-                    placeholder={c.form.placeholders.message}
+                    placeholder={c.form.messagePlaceholder}
                     className="w-full rounded-3xl border border-slate-200 bg-slate-50/80 px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-primary/40 focus:ring-4 focus:ring-primary/10 dark:border-white/10 dark:bg-slate-950/50 dark:text-white"
                   />
                 </div>
@@ -261,13 +310,13 @@ export default function Contact() {
                     type="submit"
                     className="inline-flex items-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:scale-[1.02] hover:bg-primary dark:bg-white dark:text-slate-950"
                   >
-                    {c.form.buttons.submit}
+                    {c.openEmailDraft}
                   </button>
                   <Link
                     href={`mailto:${contactEmail}`}
                     className="inline-flex items-center rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition-colors duration-200 hover:bg-slate-100 dark:border-white/10 dark:bg-white/5 dark:text-slate-100 dark:hover:bg-white/10"
                   >
-                    {c.form.buttons.direct}
+                    {c.emailDirect}
                   </Link>
                 </div>
               </form>
@@ -276,30 +325,48 @@ export default function Contact() {
 
           <Card className="overflow-hidden border-white/70 bg-linear-to-br from-custom-deep-blue via-slate-900 to-custom-blue shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10">
             <CardContent className="space-y-6 p-6 sm:p-8 text-white">
-              <p className="text-xs font-semibold uppercase tracking-[0.34em] text-white/60">{c.info.badge}</p>
-              <h2 className="text-3xl font-semibold tracking-tight text-white">{c.info.title}</h2>
-              <p className="text-sm leading-7 text-white/76">{c.info.description}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.34em] text-white/60">
+                {c.builtForClarity}
+              </p>
+              <h2 className="text-3xl font-semibold tracking-tight text-white">
+                {c.builtForClarityTitle}
+              </h2>
+              <p className="text-sm leading-7 text-white/76">
+                {c.builtForClarityCopy}
+              </p>
 
               <div className="grid gap-4 sm:grid-cols-2">
-                {c.info.cards.map((item) => (
-                  <div key={item.title} className="rounded-3xl border border-white/16 bg-white/8 p-4 backdrop-blur-md">
-                    <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">{item.title}</p>
-                    <p className="mt-3 text-sm leading-6 text-white/88">{item.description}</p>
-                  </div>
-                ))}
+                <div className="rounded-3xl border border-white/16 bg-white/8 p-4 backdrop-blur-md">
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">
+                    {c.brandPalette}
+                  </p>
+                  <p className="mt-3 text-sm leading-6 text-white/88">
+                    {c.brandPaletteCopy}
+                  </p>
+                </div>
+                <div className="rounded-3xl border border-white/16 bg-white/8 p-4 backdrop-blur-md">
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">
+                    {c.mobileFirst}
+                  </p>
+                  <p className="mt-3 text-sm leading-6 text-white/88">
+                    {c.mobileFirstCopy}
+                  </p>
+                </div>
               </div>
 
               <div className="rounded-3xl border border-white/16 bg-white/8 p-4 backdrop-blur-md">
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">{c.info.routes.about}</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">
+                  {c.helpfulRoutes}
+                </p>
                 <div className="mt-4 flex flex-wrap gap-3">
                   <Link href="/about" className="rounded-full border border-white/16 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/15">
-                    {c.info.routes.about}
+                    {c.aboutAeroSun}
                   </Link>
                   <Link href="/services" className="rounded-full border border-white/16 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/15">
-                    {c.info.routes.services}
+                    {c.services}
                   </Link>
                   <Link href="/estimation" className="rounded-full border border-white/16 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/15">
-                    {c.info.routes.estimation}
+                    {c.estimation}
                   </Link>
                 </div>
               </div>
