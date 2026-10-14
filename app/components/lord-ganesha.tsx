@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 
-export default function LordGanesha(): JSX.Element {
+export default function LordGanesha(): React.ReactElement {
   const [open, setOpen] = useState(true)
 
   if (!open) return <></>
