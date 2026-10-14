@@ -1,8 +1,7 @@
 'use client';
 
 import { z } from 'zod';
-import { useMemo } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, useWatch } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 const solarCalculatorSchema = z
@@ -37,7 +36,7 @@ type FormData = z.infer<typeof solarCalculatorSchema>;
 export default function SolarCalculator() {
   const {
     register,
-    watch,
+    control,
     formState: { errors, isValid },
   } = useForm<FormData>({
     resolver: zodResolver(solarCalculatorSchema),
@@ -49,10 +48,10 @@ export default function SolarCalculator() {
     },
   });
 
-  const values = watch();
+  const values = useWatch({ control });
 
-  const calculation = useMemo(() => {
-    if (!isValid) return null;
+  const calculation = isValid
+    ? (() => {
 
     const recommendedKw = Math.max(
       1,
@@ -62,11 +61,11 @@ export default function SolarCalculator() {
     let subsidy = 0;
 
     if (recommendedKw === 1) {
-      subsidy = 30000;
+        subsidy = 30000;
     } else if (recommendedKw === 2) {
-      subsidy = 60000;
+        subsidy = 60000;
     } else {
-      subsidy = 78000;
+        subsidy = 78000;
     }
 
     const totalInstallationCost =
@@ -75,38 +74,39 @@ export default function SolarCalculator() {
     const totalSellingPrice =
       recommendedKw * values.sellingPricePerKw;
 
-    const customerPayable =
-      totalSellingPrice - subsidy;
+        const customerPayable =
+          totalSellingPrice - subsidy;
 
-    const profit =
-      totalSellingPrice - totalInstallationCost;
+        const profit =
+          totalSellingPrice - totalInstallationCost;
 
-    const profitMargin =
-      (profit / totalSellingPrice) * 100;
+        const profitMargin =
+          (profit / totalSellingPrice) * 100;
 
-    let profitStatus = 'Low';
-    let profitColor = 'text-red-600';
+        let profitStatus = 'Low';
+        let profitColor = 'text-red-600';
 
-    if (profitMargin >= 20) {
-      profitStatus = 'Excellent';
-      profitColor = 'text-green-600';
-    } else if (profitMargin >= 10) {
-      profitStatus = 'Average';
-      profitColor = 'text-yellow-600';
-    }
+        if (profitMargin >= 20) {
+          profitStatus = 'Excellent';
+          profitColor = 'text-green-600';
+        } else if (profitMargin >= 10) {
+          profitStatus = 'Average';
+          profitColor = 'text-yellow-600';
+        }
 
-    return {
-      recommendedKw,
-      subsidy,
-      totalInstallationCost,
-      totalSellingPrice,
-      customerPayable,
-      profit,
-      profitMargin,
-      profitStatus,
-      profitColor,
-    };
-  }, [values, isValid]);
+        return {
+          recommendedKw,
+          subsidy,
+          totalInstallationCost,
+          totalSellingPrice,
+          customerPayable,
+          profit,
+          profitMargin,
+          profitStatus,
+          profitColor,
+        };
+    })()
+    : null;
 
   const currency = (amount: number) =>
     new Intl.NumberFormat('en-IN', {

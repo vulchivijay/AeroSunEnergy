@@ -1,3 +1,5 @@
+import InfrastructureCard from '../components/InfrastructureCard'
+
 <section className="mt-12">
   <h2 className="text-2xl font-bold mb-6">
     Solar System Infrastructure

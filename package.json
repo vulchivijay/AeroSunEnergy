@@ -17,7 +17,8 @@
     "google:index-check": "node scripts/submit-indexnow.js",
     "postbuild": "node scripts/submit-indexnow.js",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "audit:prod": "npm audit --omit=dev"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",
@@ -39,7 +40,7 @@
     "autoprefixer": "^10.6.1",
     "clsx": "^2.1.1",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^14.2.35",
+    "eslint-config-next": "^16.4.0",
     "framer-motion": "^13.4.0",
     "lucide-react": "^1.46.0",
     "postcss": "^8",

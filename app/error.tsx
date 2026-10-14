@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 export default function GlobalError({
   error,
@@ -10,10 +10,7 @@ export default function GlobalError({
   error: Error & { digest?: string }
   reset: () => void
 }) {
-  const [visible, setVisible] = useState(false)
-
   useEffect(() => {
-    setVisible(true)
     console.error(error)
   }, [error])
 
@@ -33,7 +30,7 @@ export default function GlobalError({
           <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-red-500/50 to-transparent" aria-hidden="true" />
 
           <div
-            className={`relative z-10 flex flex-col items-center text-center transition-all duration-700 ${visible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}
+            className="relative z-10 flex flex-col items-center text-center transition-all duration-700 translate-y-0 opacity-100"
           >
             {/* Warning icon with pulse */}
             <div className="relative mb-6">
