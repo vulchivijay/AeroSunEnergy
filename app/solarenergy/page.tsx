@@ -4,7 +4,7 @@ import SavingsCard from "../components/SavingsCard";
 import { OptionCard } from "../components/Cards";
 import TimelineItem from "../components/TimelineItem";
 import InstallationStep from "../components/InstallationStep";
-import WeatherPerformance from "./Performance";
+import WeatherPerformance from "../install/Performance";
 
 
 export default function Installation() {

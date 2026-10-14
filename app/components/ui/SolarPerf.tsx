@@ -1,5 +1,5 @@
-import BenefitCard from '../components/BenefitCard';
-import FaqCard from '../components/FaqCard';
+import BenefitCard from './BenefitCard';
+import FaqCard from './FaqCard';
 
 export default function WeatherPerformance() {
   return (
