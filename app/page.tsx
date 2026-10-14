@@ -1,5 +1,3 @@
-import Logo from '@/app/components/Logo'
-
 import Hero from '@/app/components/Hero'
 import About from '@/app/components/About'
 import HowItWorks from '@/app/components/HowItWorks'
