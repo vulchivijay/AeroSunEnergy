@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import Logo from './Logo'
+import Logo from './Logo';
 import { useLocale, type Locale } from '@/app/lib/LocaleContext'
 import Image from 'next/image'
 
