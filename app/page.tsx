@@ -15,7 +15,7 @@ import CTASection from '@/app/components/CTASection'
 export default function Home() {
   return (
     <main>
-      {/* <Hero />
+      <Hero />
       <About />
       <HowItWorks />
       <Features />
@@ -25,7 +25,7 @@ export default function Home() {
       <WindGenerators />
       <Services />
       <WhyChooseUs />
-      <CTASection /> */}
+      <CTASection />
     </main>
   )
 }

@@ -6,17 +6,17 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 const solarCalculatorSchema = z
   .object({
-    monthlyUnits: z.coerce
+    monthlyUnits: z
       .number()
       .min(1, 'Monthly electricity consumption is required')
       .max(100000, 'Maximum allowed value is 100000 units'),
 
-    installationCostPerKw: z.coerce
+    installationCostPerKw: z
       .number()
       .min(10000, 'Installation cost must be at least ₹10,000')
       .max(100000, 'Installation cost cannot exceed ₹1,00,000'),
 
-    sellingPricePerKw: z.coerce
+    sellingPricePerKw: z
       .number()
       .min(10000, 'Selling price must be at least ₹10,000')
       .max(200000, 'Selling price cannot exceed ₹2,00,000'),
@@ -33,6 +33,12 @@ const solarCalculatorSchema = z
 
 type FormData = z.infer<typeof solarCalculatorSchema>;
 
+const defaultValues: FormData = {
+  monthlyUnits: 360,
+  installationCostPerKw: 54300,
+  sellingPricePerKw: 65000,
+};
+
 export default function SolarCalculator() {
   const {
     register,
@@ -41,21 +47,20 @@ export default function SolarCalculator() {
   } = useForm<FormData>({
     resolver: zodResolver(solarCalculatorSchema),
     mode: 'onChange',
-    defaultValues: {
-      monthlyUnits: 360,
-      installationCostPerKw: 54300,
-      sellingPricePerKw: 65000,
-    },
+    defaultValues,
   });
 
-  const values = useWatch({ control });
+  const values = useWatch({ control, defaultValue: defaultValues });
+  const monthlyUnits = values.monthlyUnits ?? defaultValues.monthlyUnits;
+  const installationCostPerKw = values.installationCostPerKw ?? defaultValues.installationCostPerKw;
+  const sellingPricePerKw = values.sellingPricePerKw ?? defaultValues.sellingPricePerKw;
 
   const calculation = isValid
     ? (() => {
 
     const recommendedKw = Math.max(
       1,
-      Math.round(values.monthlyUnits / 120)
+      Math.round(monthlyUnits / 120)
     );
 
     let subsidy = 0;
@@ -69,10 +74,10 @@ export default function SolarCalculator() {
     }
 
     const totalInstallationCost =
-      recommendedKw * values.installationCostPerKw;
+      recommendedKw * installationCostPerKw;
 
     const totalSellingPrice =
-      recommendedKw * values.sellingPricePerKw;
+      recommendedKw * sellingPricePerKw;
 
         const customerPayable =
           totalSellingPrice - subsidy;
@@ -132,21 +137,21 @@ export default function SolarCalculator() {
             label="Monthly Electricity Consumption (Units)"
             helperText="Average monthly electricity usage"
             error={errors.monthlyUnits?.message}
-            register={register('monthlyUnits')}
+            register={register('monthlyUnits', { valueAsNumber: true })}
           />
 
           <InputField
             label="Your Installation Cost per kW (₹)"
             helperText="Panels, inverter, wiring, labour etc."
             error={errors.installationCostPerKw?.message}
-            register={register('installationCostPerKw')}
+            register={register('installationCostPerKw', { valueAsNumber: true })}
           />
 
           <InputField
             label="Customer Selling Price per kW (₹)"
             helperText="Amount charged to customer"
             error={errors.sellingPricePerKw?.message}
-            register={register('sellingPricePerKw')}
+            register={register('sellingPricePerKw', { valueAsNumber: true })}
           />
         </div>
 
