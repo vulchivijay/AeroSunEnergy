@@ -1,10 +1,10 @@
-import BenefitCard from "../components/ui/BenefitCard";
-import StepCard from "../components/ui/StepCard";
-import SavingsCard from "../components/SavingsCard";
-import { OptionCard } from "../components/Cards";
-import TimelineItem from "../components/ui/TimelineItem";
-import InstallationStep from "../components/ui/InstallationStep";
-import WeatherPerformance from "../components/ui/SolarPerf";
+import BenefitCard from "@/app/components/ui/BenefitCard";
+import StepCard from "@/app/components/ui/StepCard";
+import SavingsCard from "@/app/components/SavingsCard";
+import { OptionCard } from "@/app/components/Cards";
+import TimelineItem from "@/app/components/ui/TimelineItem";
+import InstallationStep from "@/app/components/ui/InstallationStep";
+import WeatherPerformance from "@/app/components/ui/SolarPerf";
 
 
 export default function Installation() {

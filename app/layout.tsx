@@ -5,6 +5,7 @@ import { JsonLd } from '@/app/components/seo'
 import { ThemeBootstrap } from '@/app/components/theme'
 import { LocaleProvider } from '@/lib/LocaleContext'
 import { Header, Footer, LordGanesha } from '@/app/components/layout'
+import { PerformanceMonitor } from '@/app/components/performance'
 
 import './globals.css'
 
@@ -140,6 +141,7 @@ export default function RootLayout({
         {GTM_ID ? <GoogleTagManager gtmId={GTM_ID} /> : null}
         <ThemeBootstrap />
         <JsonLd />
+        <PerformanceMonitor />
         <LocaleProvider>
           <Header />
           <LordGanesha />
