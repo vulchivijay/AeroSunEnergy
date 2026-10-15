@@ -50,6 +50,7 @@ export default function Navbar() {
   const [langOpen, setLangOpen] = useState(false)
   const [dark, setDark] = useState(false)
   const [activeHref, setActiveHref] = useState(pathname || '/')
+  const [hydrated, setHydrated] = useState(false)
   const navRef = useRef<HTMLElement>(null)
   const desktopLangRef = useRef<HTMLDivElement>(null)
   const mobileLangRef = useRef<HTMLDivElement>(null)
@@ -57,6 +58,7 @@ export default function Navbar() {
   const languageOptions = t.navbar.languages as { code: Locale; label: string; shortLabel: string }[]
 
   useEffect(() => {
+    setHydrated(true)
     try {
       const savedTheme = localStorage.getItem('theme') === 'dark'
       setDark(savedTheme)
@@ -72,38 +74,61 @@ export default function Navbar() {
 
   useEffect(() => {
     setActiveHref(pathname || '/')
+    setMenuOpen(false)
+    setLangOpen(false)
   }, [pathname])
 
   useEffect(() => {
+    if (!hydrated) return
+    if (dark) {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
+    }
+  }, [dark, hydrated])
+
+  useEffect(() => {
+    if (!hydrated) return
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Node
       const isInsideDesktopDropdown = desktopLangRef.current?.contains(target) ?? false
       const isInsideMobileDropdown = mobileLangRef.current?.contains(target) ?? false
+      const isInsideMobileMenu = navRef.current?.contains(target) ?? false
 
-      if (!isInsideDesktopDropdown && !isInsideMobileDropdown) {
+      if (!isInsideDesktopDropdown && !isInsideMobileDropdown && !isInsideMobileMenu) {
+        setLangOpen(false)
+      }
+    }
+
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setMenuOpen(false)
+      }
+    }
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false)
         setLangOpen(false)
       }
     }
 
     document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
+    window.addEventListener('resize', handleResize)
+    document.addEventListener('keydown', handleEscape)
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      window.removeEventListener('resize', handleResize)
+      document.removeEventListener('keydown', handleEscape)
+    }
+  }, [hydrated])
 
   const toggleDark = () => {
-    if (dark) {
-      document.documentElement.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
-      setDark(false)
-      return
-    }
-
-    document.documentElement.classList.add('dark')
-    localStorage.setItem('theme', 'dark')
-    setDark(true)
+    setDark((prev) => !prev)
   }
-
-  const themeButtonClass =
-    'flex h-11 w-11 items-center justify-center rounded-full border border-[#20A44A]/20 bg-white text-[#18251F] shadow-[0_8px_20px_rgba(32,164,74,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#F59E0B]/50 hover:bg-[#F7FDF8] hover:text-[#20A44A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20A44A]/50 dark:border-white/10 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-[#F59E0B]/70 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]'
 
   const themeIcon = dark ? (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#F59E0B]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -124,10 +149,11 @@ export default function Navbar() {
   }
 
   useEffect(() => {
+    if (!hydrated) return
     navLinks.forEach((link) => {
       router.prefetch(link.href)
     })
-  }, [router, navLinks])
+  }, [router, navLinks, hydrated])
 
   return (
     <header className="sticky top-0 left-0 right-0 z-50 border-b border-[#20A44A]/20 bg-white shadow-[0_12px_30px_-24px_rgba(15,23,42,0.55)] backdrop-blur-xl transition-all duration-300 dark:border-slate-700/80 dark:bg-slate-950/80">
@@ -210,7 +236,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={toggleDark}
-              className={themeButtonClass}
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#20A44A]/20 bg-white text-[#18251F] shadow-[0_8px_20px_rgba(32,164,74,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#F59E0B]/50 hover:bg-[#F7FDF8] hover:text-[#20A44A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20A44A]/50 dark:border-white/10 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-[#F59E0B]/70 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]"
               aria-label={t.navbar.toggleDark}
               aria-pressed={dark}
             >
@@ -281,7 +307,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={toggleDark}
-                className={themeButtonClass}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#20A44A]/20 bg-white text-[#18251F] shadow-[0_8px_20px_rgba(32,164,74,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#F59E0B]/50 hover:bg-[#F7FDF8] hover:text-[#20A44A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20A44A]/50 dark:border-white/10 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-[#F59E0B]/70 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]"
                 aria-label={t.navbar.toggleDark}
                 aria-pressed={dark}
               >
