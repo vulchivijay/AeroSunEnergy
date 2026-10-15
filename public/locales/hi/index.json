@@ -20,31 +20,27 @@
         "links": [
             {
                 "label": "होम",
-                "href": "#hero"
+                "href": "/"
             },
             {
                 "label": "हमारे बारे में",
-                "href": "#about"
+                "href": "/about"
             },
             {
-                "label": "कैसे काम करता है",
-                "href": "#how-it-works"
+                "label": "सर्विसेज",
+                "href": "/services"
             },
             {
-                "label": "विशेषताएं",
-                "href": "#features"
+                "label": "सोलर एनर्जी",
+                "href": "/solarenergy"
             },
             {
-                "label": "उपयोग के मामले",
-                "href": "#use-cases"
-            },
-            {
-                "label": "हमें क्यों चुनें",
-                "href": "#why-us"
+                "label": "अनुमान",
+                "href": "/estimation"
             },
             {
                 "label": "संपर्क करें",
-                "href": "#contact"
+                "href": "/contact"
             }
         ],
         "startProject": "प्रोजेक्ट शुरू करें",

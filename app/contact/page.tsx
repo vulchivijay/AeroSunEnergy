@@ -4,7 +4,7 @@ import type { FormEvent } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from '@/app/lib/motion'
-import { Card, CardContent } from '@/app/components/Card'
+import { Card, CardContent } from '@/app/components/ui/Card'
 import { useLocale } from '@/app/lib/LocaleContext'
 
 const channelIcons = {

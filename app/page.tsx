@@ -1,14 +1,16 @@
-import Hero from '@/app/components/Hero'
-import About from '@/app/components/About'
-import HowItWorks from '@/app/components/HowItWorks'
-import Features from '@/app/components/Features'
-import SavoniusRotor from '@/app/components/SavoniusRotor'
-import UseCases from '@/app/components/UseCases'
-import Benefits from '@/app/components/Benefits'
-import Services from '@/app/components/Services'
-import WindGenerators from '@/app/components/WindGenerators'
-import WhyChooseUs from '@/app/components/WhyChooseUs'
-import CTASection from '@/app/components/CTASection'
+import {
+  Hero,
+  About,
+  HowItWorks,
+  Features,
+  SavoniusRotor,
+  UseCases,
+  Benefits,
+  WindGenerators,
+  Services,
+  WhyChooseUs,
+  CTASection,
+} from '@/app/components/sections'
 
 export default function Home() {
   return (

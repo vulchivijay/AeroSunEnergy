@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import Logo from './Logo'
 import { useLocale, type Locale } from '@/app/lib/LocaleContext'
 
@@ -43,6 +44,7 @@ function isLocale(value: string): value is Locale {
 
 export default function Navbar() {
   const { t, locale, setLocale } = useLocale()
+  const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
   const [dark, setDark] = useState(() => {
@@ -52,7 +54,7 @@ export default function Navbar() {
       return false
     }
   })
-  const [activeHref, setActiveHref] = useState('#')
+  const [activeHref, setActiveHref] = useState(pathname || '/')
   const navRef = useRef<HTMLElement>(null)
   const desktopLangRef = useRef<HTMLDivElement>(null)
   const mobileLangRef = useRef<HTMLDivElement>(null)
@@ -60,37 +62,8 @@ export default function Navbar() {
   const languageOptions = t.navbar.languages as { code: Locale; label: string; shortLabel: string }[]
 
   useEffect(() => {
-    const sectionLinks = navLinks.filter((link) => link.href.startsWith('#'))
-
-    const updateActiveHref = () => {
-      const navOffset = (navRef.current?.offsetHeight ?? 0) + 32
-      const scrollPosition = window.scrollY + navOffset
-
-      let nextActiveHref = sectionLinks[0]?.href ?? '#'
-
-      for (const link of sectionLinks) {
-        const section = document.getElementById(link.href.slice(1))
-        if (!section) continue
-
-        if (section.offsetTop <= scrollPosition) {
-          nextActiveHref = link.href
-        }
-      }
-
-      setActiveHref(nextActiveHref)
-    }
-
-    updateActiveHref()
-    window.addEventListener('scroll', updateActiveHref, { passive: true })
-    window.addEventListener('resize', updateActiveHref)
-    window.addEventListener('hashchange', updateActiveHref)
-
-    return () => {
-      window.removeEventListener('scroll', updateActiveHref)
-      window.removeEventListener('resize', updateActiveHref)
-      window.removeEventListener('hashchange', updateActiveHref)
-    }
-  }, [navLinks])
+    setActiveHref(pathname || '/')
+  }, [pathname])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

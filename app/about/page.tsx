@@ -2,7 +2,7 @@
 
 import { motion } from '@/app/lib/motion'
 import Image from 'next/image'
-import { Card, CardContent } from '@/app/components/Card'
+import { Card, CardContent } from '@/app/components/ui/Card'
 import { useLocale } from '@/app/lib/LocaleContext'
 
 const featureIcons = [
