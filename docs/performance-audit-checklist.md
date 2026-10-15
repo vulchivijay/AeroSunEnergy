@@ -28,3 +28,28 @@ This project keeps a lightweight Lighthouse-oriented checklist for fast page del
 2. Re-check hero image weights and format when publishing new assets.
 3. Run Lighthouse in Chrome DevTools on the home page and main service pages after each significant content update.
 4. Compare new `CLS` and `FCP` values against the baseline before launching a new page revision.
+
+## Before pushing to GitHub
+
+Use this checklist before every push or pull request to avoid case-only rename issues that pass locally but fail on GitHub Linux builds.
+
+- Confirm the repo uses exact file and folder casing everywhere.
+- Do not rely on Windows/macOS Explorer rename behavior alone; rename with Git when possible:
+  - `git mv old-name new-name`
+  - `git mv -f old-name new-name` if the case changed only
+- Search the repo for old names after any rename.
+- Update all imports, aliases, and route references to the new exact casing.
+- Check path aliases such as `@/`, `~/`, and relative imports like `../` and `./`.
+- Verify the folder names in the filesystem and in the Git status exactly match the code.
+- Run a local production build before push:
+  - `npm run build`
+- Check Git diff before committing:
+  - `git status`
+  - `git diff --name-status`
+- If a case-only rename was made, ensure Git recorded it as a rename and not just a delete/add pair.
+- Prefer a Linux environment or CI run to confirm the app works in a case-sensitive environment.
+- If GitHub Actions fails with `module not found`, treat it as a case mismatch first.
+
+## Quick rename safety rule
+
+If a file or folder name changes only by case, it is still a different path on Linux. GitHub build runners are case-sensitive, so the repo must match the exact path names used in every import.
