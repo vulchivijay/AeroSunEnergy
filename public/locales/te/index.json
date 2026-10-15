@@ -20,31 +20,31 @@
         "links": [
             {
                 "label": "హోమ్",
-                "href": "#hero"
+                "href": "/"
             },
             {
                 "label": "మా గురించి",
-                "href": "#about"
+                "href": "/about"
             },
             {
-                "label": "ఎలా పనిచేస్తుంది",
-                "href": "#how-it-works"
+                "label": "సౌర శక్తి",
+                "href": "/solarenergy"
             },
             {
-                "label": "లక్షణాలు",
-                "href": "#features"
+                "label": "పవన శక్తి",
+                "href": "/windenergy"
             },
             {
-                "label": "వినియోగ సందర్భాలు",
-                "href": "#use-cases"
+                "label": "హైబ్రిడ్ శక్తి",
+                "href": "/hybridenergy"
             },
             {
-                "label": "ఎందుకు మేము",
-                "href": "#why-us"
+                "label": "సర్వీసులు",
+                "href": "/services"
             },
             {
                 "label": "సంప్రదించండి",
-                "href": "#contact"
+                "href": "/contact"
             }
         ],
         "startProject": "ప్రాజెక్ట్ ప్రారంభించండి",

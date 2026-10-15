@@ -1,22 +1,21 @@
 import type { Metadata } from 'next'
 import { Poppins, Roboto } from 'next/font/google'
 import { GoogleTagManager } from '@next/third-parties/google'
-import JsonLd from '@/app/components/JsonLd'
-import ThemeBootstrap from '@/app/components/ThemeBootstrap'
-import { LocaleProvider } from '@/app/lib/LocaleContext'
-import Navbar from '@/app/components/Header'
-import Footer from '@/app/components/Footer'
-import LordGanesha from '@/app/components/LordGanesha'
+import { JsonLd } from '@/app/components/seo'
+import { ThemeBootstrap } from '@/app/components/theme'
+import { LocaleProvider } from '@/lib/LocaleContext'
+import { Header, Footer, LordGanesha } from '@/app/components/layout'
+import { PerformanceMonitor } from '@/app/components/performance'
 
 import './globals.css'
 
 const roboto = Roboto({
-  subsets: ["latin"],
+  subsets: ['latin'],
   variable: '--font-body',
   weight: ['400'],
   preload: true,
-  display: "swap" // Prevents layout shift from font loading
-});
+  display: 'swap',
+})
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -24,10 +23,10 @@ const poppins = Poppins({
   weight: ['700'],
   preload: true,
   display: 'swap',
-});
+})
 
-const GTM_ID = 'GTM-PLB9S69G';
-const BING_SITE_VERIFICATION = 'CFCE648996D804079C4F28B5C09CE9D3';
+const GTM_ID = 'GTM-PLB9S69G'
+const BING_SITE_VERIFICATION = 'CFCE648996D804079C4F28B5C09CE9D3'
 
 export const metadata: Metadata = {
   title: {
@@ -124,10 +123,10 @@ export const metadata: Metadata = {
   },
   verification: BING_SITE_VERIFICATION
     ? {
-      other: {
-        'msvalidate.01': BING_SITE_VERIFICATION,
-      },
-    }
+        other: {
+          'msvalidate.01': BING_SITE_VERIFICATION,
+        },
+      }
     : undefined,
 }
 
@@ -142,8 +141,9 @@ export default function RootLayout({
         {GTM_ID ? <GoogleTagManager gtmId={GTM_ID} /> : null}
         <ThemeBootstrap />
         <JsonLd />
+        <PerformanceMonitor />
         <LocaleProvider>
-          <Navbar />
+          <Header />
           <LordGanesha />
           {children}
           <Footer />

@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useLocale } from '@/app/lib/LocaleContext'
+import { useLocale } from '@/lib/LocaleContext'
 
 const generatorStyles = [
   { id: 'h-darrieus', imageSrc: '/images/h-darrieus-turbine-aerosunenergy.png', imageAlt: 'H-Darrieus wind turbine by AeroSun Energy', badgeColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300', accentFrom: 'from-blue-400', accentTo: 'to-purple-400' },
@@ -18,7 +18,7 @@ export default function WindGenerators() {
   const generators = w.items.map((item, i) => ({ ...item, ...generatorStyles[i] }))
 
   return (
-    <section id="wind-generators" className="px-4 sm:px-2 lg:px-12 py-16 md:py-24 bg-gray-50 dark:bg-gray-900 border-t-2 border-gray-1000 overflow-hidden">
+    <section id="wind-generators" className="px-4 sm:px-2 lg:px-12 py-16 md:py-24 bg-gray-50 dark:bg-gray-900 border-t-2 border-stone-100 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

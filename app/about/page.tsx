@@ -1,9 +1,9 @@
 'use client'
 
-import { motion } from '@/app/lib/motion'
+import { motion } from '@/lib/motion'
 import Image from 'next/image'
-import { Card, CardContent } from '@/app/components/Card'
-import { useLocale } from '@/app/lib/LocaleContext'
+import { Card, CardContent } from '@/app/components/ui/Card'
+import { useLocale } from '@/lib/LocaleContext'
 
 const featureIcons = [
   (

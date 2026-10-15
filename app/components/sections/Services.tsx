@@ -2,8 +2,8 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Card, CardContent } from './Card'
-import { useLocale } from '@/app/lib/LocaleContext'
+import { Card, CardContent } from './../ui/Card'
+import { useLocale } from '@/lib/LocaleContext'
 
 const serviceStyles = [
   { emoji: '💰', color: 'from-red-400 to-rose-400', cardBg: 'bg-rose-100/90 dark:bg-rose-900/50 border-rose-300 dark:border-rose-700 hover:border-rose-500', iconBg: 'bg-rose-300 dark:bg-rose-800' },

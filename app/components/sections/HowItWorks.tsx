@@ -1,9 +1,9 @@
 'use client'
 
-import { motion } from '@/app/lib/motion'
+import { motion } from '@/lib/motion'
 import Image from 'next/image'
-import { Card, CardContent } from './Card'
-import { useLocale } from '@/app/lib/LocaleContext'
+import { Card, CardContent } from './../ui/Card'
+import { useLocale } from '@/lib/LocaleContext'
 
 const stepStyles = [
   { icon: '📍', imageSrc: '/images/forming-aerosunenergy.png', imageAlt: 'Site assessment and planning process by AeroSun Energy', color: 'from-primary to-blue-400', cardBg: 'bg-blue-100/90 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700', iconBg: 'bg-blue-300 dark:bg-blue-800', nodeBg: 'from-blue-700 to-blue-500' },

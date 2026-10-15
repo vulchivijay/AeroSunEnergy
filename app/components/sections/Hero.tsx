@@ -1,9 +1,9 @@
 'use client'
 
-import { motion } from '@/app/lib/motion'
+import { motion } from '@/lib/motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useLocale } from '@/app/lib/LocaleContext'
+import { useLocale } from '@/lib/LocaleContext'
 
 export default function Hero() {
   const { t } = useLocale()

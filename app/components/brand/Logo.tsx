@@ -2,15 +2,9 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { useLocale } from '@/lib/LocaleContext'
 
-import { useLocale } from '@/app/lib/LocaleContext'
-
-type LogoProps = {
-  size?: 'default' | 'footer'
-}
-
-export default function Logo({ size = 'default' }: LogoProps) {
-  const isFooter = size === 'footer'
+export default function Logo() {
   const { t } = useLocale()
 
   return (
@@ -27,7 +21,7 @@ export default function Logo({ size = 'default' }: LogoProps) {
         width={80}
         height={80}
         priority
-        loading="eager"
+        loading="eager" 
       />
       <div className="flex min-w-0 flex-col items-start justify-center text-left sm:mb-2">
         <div className="flex flex-wrap items-center justify-start gap-1">
@@ -38,7 +32,7 @@ export default function Logo({ size = 'default' }: LogoProps) {
             Energy
           </span>
         </div>
-        <div className={`text-[12px] ${isFooter ? '' : 'sm:block'} whitespace-nowrap text-[#18251F]`}>
+        <div className={`text-[12px] whitespace-nowrap text-[#18251F]`}>
           ---- Power from Sun and Wind ----
         </div>
       </div>

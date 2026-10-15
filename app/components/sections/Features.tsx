@@ -1,9 +1,9 @@
 'use client'
 
-import { motion } from '@/app/lib/motion'
+import { motion } from '@/lib/motion'
 import { Clock, GitMerge, Wrench, Layers, Leaf, MapPin } from 'lucide-react'
-import { Card, CardContent } from './Card'
-import { useLocale } from '@/app/lib/LocaleContext'
+import { Card, CardContent } from './../ui/Card'
+import { useLocale } from '@/lib/LocaleContext'
 
 const featureIcons = [
   <Clock key="clock" className="h-7 w-7 text-blue-800 dark:text-blue-100" />,
