@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { motion } from '@/lib/motion'
 import { Card, CardContent } from '@/app/components/ui/Card'
 import { useLocale } from '@/lib/LocaleContext'
+import { OptimizedImage } from '@/app/components/ui'
 
 const channelIcons = {
   email: (
@@ -171,7 +172,7 @@ export default function Contact() {
                   </div>
 
                   <div className="relative mt-3 h-[300px] overflow-hidden rounded-[22px] sm:h-[350px]">
-                    <Image
+                    <OptimizedImage
                       src="/images/customdesign-aerosunenergy.png"
                       alt="AeroSun Energy custom renewable energy design"
                       fill

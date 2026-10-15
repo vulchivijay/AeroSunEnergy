@@ -1,9 +1,9 @@
 'use client'
 
 import { motion } from '@/lib/motion'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useLocale } from '@/lib/LocaleContext'
+import { OptimizedImage } from '@/app/components/ui'
 
 const useCaseStyles = [
   { emoji: '🛣️', imageSrc: '/images/infra-aerosunenergy.png', imageAlt: 'Hybrid solar and wind infrastructure for roads and highways', tagColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300', color: 'from-primary to-blue-400', cardBg: 'bg-blue-100/85 dark:bg-blue-950/45 border-blue-300 dark:border-blue-700' },
@@ -64,7 +64,7 @@ export default function UseCases() {
               <div className={`grid grid-cols-1 lg:grid-cols-[0.92fr_1.08fr] ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
                 <div className={`relative min-h-70 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                   <div className={`absolute inset-x-0 top-0 h-2 bg-linear-to-r ${uc.color}`} />
-                  <Image
+                  <OptimizedImage
                     src={uc.imageSrc}
                     alt={uc.imageAlt}
                     fill

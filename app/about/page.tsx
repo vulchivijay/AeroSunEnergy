@@ -1,9 +1,9 @@
 'use client'
 
 import { motion } from '@/lib/motion'
-import Image from 'next/image'
 import { Card, CardContent } from '@/app/components/ui/Card'
 import { useLocale } from '@/lib/LocaleContext'
+import { OptimizedImage } from '@/app/components/ui'
 
 const featureIcons = [
   (
@@ -48,10 +48,10 @@ export default function About() {
   }))
 
   return (
-    <section id="about" className="px-4 sm:px-2 lg:px-12 py-16 md:py-24 bg-white dark:bg-gray-950 overflow-hidden">
+    <section id="about" className="px-4 sm:px-2 lg:p-12 bg-white dark:bg-gray-950 overflow-hidden">
       {/* relative grid w-full grid-cols-1 items-center gap-7 lg:grid-cols-[1.08fr_0.92fr] */}
       {/* About Section */}
-      <div className="mx-auto max-w-7xl py-12">
+      <div className="mx-auto max-w-7xl">
         <Card>
           <CardContent className="space-y-8">
             <h2 className="text-xl font-bold">
@@ -112,15 +112,13 @@ export default function About() {
                 <div className="relative w-36 h-36 lg:w-44 lg:h-44 overflow-hidden transform transition-transform duration-300 group-hover:scale-105">
                   {/* Energy Rays Background */}
                   <div className="absolute inset-0 bg-gradient-radial from-accent/10 via-transparent to-transparent animate-spin" style={{ animationDuration: '20s' }}></div>
-                  <Image
+                  <OptimizedImage
                     src="/images/founder-aerosunenergy.png"
                     alt="Vulchi Vijaya Kumar - Founder of AeroSun Energy"
                     fill
                     sizes="(min-width: 1024px) 176px, 144px"
                     className="object-cover rounded-lg shadow-2xl"
                     loading="eager"
-                    placeholder="blur"
-                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+IRjWjBqO6O2mhP//Z"
                   />
 
                   {/* Overlay Gradient */}
@@ -190,15 +188,13 @@ export default function About() {
                   <div className="absolute inset-0 rounded-full border-5 border-green-300 animate-rise-glow"></div>
                   <div className="absolute inset-0 rounded-full border-4 border-blue-300 animate-rise-glow" style={{ animationDelay: '0.5s' }}></div>
                   <div className="absolute inset-0 rounded-full border-3 border-purple-300 animate-rise-glow" style={{ animationDelay: '1s' }}></div>
-                  <Image
+                  <OptimizedImage
                     src="/images/lord-shiva-aerosunenergy.png"
                     alt="Lord Shiva"
                     fill
                     sizes="160px"
                     className="relative z-10 rounded-full object-contain"
                     loading="eager"
-                    placeholder="blur"
-                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+IRjWjBqO6O2mhP//Z"
                   />
                 </div>
               </div>
@@ -289,7 +285,7 @@ export default function About() {
             transition={{ duration: 0.2, delay: 0.1 }}
           >
             <div className="relative min-h-96 md:aspect-4/3 overflow-hidden rounded-md bg-gray-100 shadow-md ring-1 ring-gray-200 dark:bg-gray-900 dark:ring-gray-100">
-              <Image
+              <OptimizedImage
                 src="/images/hybrid-solar-wind -energy.png"
                 alt="Smart VAWT hybrid technology deployment by AeroSun Energy"
                 fill

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import Logo from '../brand/Logo'
 import { useLocale, type Locale } from '@/lib/LocaleContext'
 
@@ -45,6 +45,7 @@ function isLocale(value: string): value is Locale {
 export default function Navbar() {
   const { t, locale, setLocale } = useLocale()
   const pathname = usePathname()
+  const router = useRouter()
   const [menuOpen, setMenuOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
   const [dark, setDark] = useState(() => {
@@ -107,6 +108,13 @@ export default function Navbar() {
     </svg>
   )
 
+  const handleRouteNavigate = (href: string) => {
+    setActiveHref(href)
+    setMenuOpen(false)
+    setLangOpen(false)
+    router.push(href)
+  }
+
   return (
     <header className="sticky top-0 left-0 right-0 z-50 border-b border-[#20A44A]/20 bg-white shadow-[0_12px_30px_-24px_rgba(15,23,42,0.55)] backdrop-blur-xl transition-all duration-300 dark:border-slate-700/80 dark:bg-slate-950/80">
       <div className="w-full px-4 py-3 sm:px-6 lg:px-8">
@@ -116,10 +124,10 @@ export default function Navbar() {
           <nav ref={navRef} aria-label="Primary navigation" className="hidden items-center lg:flex">
             <div className="flex items-center rounded-full border border-[#20A44A]/60 bg-[#F7FDF8] p-1 shadow-inner shadow-[#20A44A]/5">
               {navLinks.map((link) => (
-                <Link
+                <button
                   key={link.href}
-                  href={link.href}
-                  onClick={() => setActiveHref(link.href)}
+                  type="button"
+                  onClick={() => handleRouteNavigate(link.href)}
                   title={`${t.navbar.navigateTo} ${link.label} ${t.navbar.section}`}
                   aria-label={`${t.navbar.goTo} ${link.label}`}
                   data-nav={link.href.replace('#', '')}
@@ -130,7 +138,7 @@ export default function Navbar() {
                   }`}
                 >
                   {link.label}
-                </Link>
+                </button>
               ))}
             </div>
           </nav>
@@ -268,13 +276,10 @@ export default function Navbar() {
             </div>
 
             {navLinks.map((link) => (
-              <Link
+              <button
                 key={link.href}
-                href={link.href}
-                onClick={() => {
-                  setActiveHref(link.href)
-                  setMenuOpen(false)
-                }}
+                type="button"
+                onClick={() => handleRouteNavigate(link.href)}
                 className={`block w-full rounded-2xl px-4 py-3 text-sm font-medium tracking-wide transition-all duration-300 ${
                   activeHref === link.href
                     ? 'bg-[#EAF9F0] text-[#20A44A] dark:bg-slate-800 dark:text-[#F59E0B]'
@@ -282,7 +287,7 @@ export default function Navbar() {
                 }`}
               >
                 {link.label}
-              </Link>
+              </button>
             ))}
 
             <Link

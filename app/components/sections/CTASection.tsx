@@ -1,9 +1,9 @@
 'use client'
 
 import { motion } from '@/lib/motion'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useLocale } from '@/lib/LocaleContext'
+import { OptimizedImage } from '@/app/components/ui'
 
 export default function CTASection() {
   const { t } = useLocale()
@@ -21,7 +21,7 @@ export default function CTASection() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(30,136,229,0.34),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(67,160,71,0.24),transparent_25%),linear-gradient(135deg,rgba(7,17,29,0.28),rgba(7,17,29,0.16))]" aria-hidden="true" />
         <div className="absolute -right-10 bottom-0 top-0 hidden w-[48%] lg:block" aria-hidden="true">
           <div className="relative h-full w-full">
-            <Image
+            <OptimizedImage
               src="/images/customdesign-aerosunenergy.png"
               alt="Next-generation renewable energy technology by AeroSun Energy"
               fill

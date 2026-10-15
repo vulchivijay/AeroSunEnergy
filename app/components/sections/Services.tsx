@@ -1,9 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { Card, CardContent } from './../ui/Card'
 import { useLocale } from '@/lib/LocaleContext'
+import { OptimizedImage } from '@/app/components/ui'
 
 const serviceStyles = [
   { emoji: '💰', color: 'from-red-400 to-rose-400', cardBg: 'bg-rose-100/90 dark:bg-rose-900/50 border-rose-300 dark:border-rose-700 hover:border-rose-500', iconBg: 'bg-rose-300 dark:bg-rose-800' },
@@ -39,7 +39,7 @@ export default function Services() {
                 {s.imageBadge}
               </div>
               <div className="relative min-h-96 md:aspect-video overflow-hidden">
-                <Image
+                <OptimizedImage
                   src="/images/home-business-aerosunenergy.png"
                   alt="AeroSun Energy manufacturing facility showcasing precision forming and assembly of hybrid energy systems"
                   fill

@@ -1,6 +1,6 @@
 'use client'
 
-import Image from "next/image"
+import { OptimizedImage } from '@/app/components/ui'
 import Link from "next/link"
 import { useLocale } from '@/lib/LocaleContext'
 
@@ -15,13 +15,13 @@ export default function Logo() {
       data-logo="brand"
       className="relative flex max-w-full items-center gap-2 font-(--font-logo) sm:gap-3"
     >
-      <Image
+      <OptimizedImage
         src="/images/logo.png"
         alt={t.logo.imageAlt}
         width={80}
         height={80}
         priority
-        loading="eager" 
+        loading="eager"
       />
       <div className="flex min-w-0 flex-col items-start justify-center text-left sm:mb-2">
         <div className="flex flex-wrap items-center justify-start gap-1">

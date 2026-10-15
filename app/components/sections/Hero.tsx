@@ -2,8 +2,8 @@
 
 import { motion } from '@/lib/motion'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useLocale } from '@/lib/LocaleContext'
+import { OptimizedImage } from '@/app/components/ui'
 
 export default function Hero() {
   const { t } = useLocale()
@@ -96,14 +96,12 @@ export default function Hero() {
                 <span>{h.overlay.optimisationLabel}</span>
               </div>
               <div className="relative min-h-screen md:aspect-[4/5] overflow-hidden rounded-[1.5rem]">
-                <Image
+                <OptimizedImage
                   src="/images/home-aerosunenergy.png"
                   alt="AeroSun Energy hybrid solar and wind installation"
                   fill
                   priority
                   loading="eager"
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+IRjWjBqO6O2mhP//Z"
                   sizes="(min-width: 1024px) 52vw, 92vw"
                   className="object-cover"
                 />
