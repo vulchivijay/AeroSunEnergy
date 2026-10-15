@@ -31,14 +31,6 @@
                 "href": "/services"
             },
             {
-                "label": "Solar Energy",
-                "href": "/solarenergy"
-            },
-            {
-                "label": "Estimation",
-                "href": "/estimation"
-            },
-            {
                 "label": "Contact",
                 "href": "/contact"
             }

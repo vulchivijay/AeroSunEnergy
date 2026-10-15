@@ -1,1 +1,1 @@
-export { Card, CardContent } from './Card'
+export { Card, CardContent } from './../ui/Card'

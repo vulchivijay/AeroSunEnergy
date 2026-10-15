@@ -3,7 +3,7 @@ import { Poppins, Roboto } from 'next/font/google'
 import { GoogleTagManager } from '@next/third-parties/google'
 import { JsonLd } from '@/app/components/seo'
 import { ThemeBootstrap } from '@/app/components/theme'
-import { LocaleProvider } from '@/app/lib/LocaleContext'
+import { LocaleProvider } from '@/lib/LocaleContext'
 import { Header, Footer, LordGanesha } from '@/app/components/layout'
 
 import './globals.css'

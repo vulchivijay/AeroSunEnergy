@@ -1,6 +1,5 @@
 import {
   Hero,
-  About,
   HowItWorks,
   Features,
   SavoniusRotor,
@@ -16,7 +15,6 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <About />
       <HowItWorks />
       <Features />
       <SavoniusRotor />

@@ -5,7 +5,7 @@ import { z } from 'zod'
 import { useForm, useWatch, type UseFormRegisterReturn } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
-import { useLocale } from '@/app/lib/LocaleContext'
+import { useLocale } from '@/lib/LocaleContext'
 
 const solarCalculatorSchema = z
   .object({

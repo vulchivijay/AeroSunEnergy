@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useLocale } from '@/app/lib/LocaleContext'
+import { useLocale } from '@/lib/LocaleContext'
 
 export default function SavoniusRotor() {
   const { t } = useLocale()

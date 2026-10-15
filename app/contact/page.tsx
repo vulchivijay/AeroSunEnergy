@@ -3,9 +3,9 @@
 import type { FormEvent } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from '@/app/lib/motion'
+import { motion } from '@/lib/motion'
 import { Card, CardContent } from '@/app/components/ui/Card'
-import { useLocale } from '@/app/lib/LocaleContext'
+import { useLocale } from '@/lib/LocaleContext'
 
 const channelIcons = {
   email: (
@@ -98,103 +98,98 @@ export default function Contact() {
   }
 
   return (
-    <section className="relative isolate overflow-hidden px-4 py-10 sm:px-6 lg:px-12 lg:py-14">
-      <div className="absolute inset-0 bg-[#f6f7f2] dark:bg-slate-950" aria-hidden="true" />
-      <div
-        className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(251,191,36,0.22),transparent_26%),radial-gradient(circle_at_78%_18%,rgba(50,84,146,0.18),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(250,89,82,0.12),transparent_22%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(251,191,36,0.14),transparent_24%),radial-gradient(circle_at_78%_18%,rgba(50,84,146,0.18),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(250,89,82,0.12),transparent_22%)]"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(15,23,42,0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.045)_1px,transparent_1px)] bg-size-[44px_44px] opacity-30 dark:opacity-10"
-        aria-hidden="true"
-      />
+    <section className="relative isolate overflow-hidden px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.18),transparent_22%),radial-gradient(circle_at_80%_15%,rgba(245,158,11,0.12),transparent_18%),linear-gradient(180deg,#f8faf7_0%,#eefaf3_38%,#f8fafc_100%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.16),transparent_20%),radial-gradient(circle_at_80%_12%,rgba(245,158,11,0.14),transparent_18%),linear-gradient(180deg,#020817_0%,#0f172a_45%,#020817_100%)]" aria-hidden="true" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.03)_1px,transparent_1px)] bg-[size:44px_44px] dark:bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl space-y-8">
-        <div className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr]">
+        <div className="grid gap-6 xl:grid-cols-[1.14fr_0.86fr] xl:items-stretch">
           <motion.div
-            className="overflow-hidden rounded-3xl border border-white/70 bg-slate-950 text-white shadow-[0_24px_90px_rgba(15,23,42,0.14)] dark:border-white/10"
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, ease: 'easeOut' }}
+            className="relative isolate overflow-hidden rounded-[32px] border border-[#dfeee4] bg-white shadow-[0_36px_90px_rgba(15,23,42,0.08)] dark:border-slate-800 dark:bg-slate-950"
           >
-            <div className="relative p-6 sm:p-8 lg:p-10">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(30,136,229,0.34),transparent_28%),radial-gradient(circle_at_80%_20%,rgba(67,160,71,0.22),transparent_25%),linear-gradient(135deg,rgba(7,17,29,0.3),rgba(7,17,29,0.16))]" aria-hidden="true" />
-              <div className="relative grid gap-8 lg:grid-cols-[1fr_320px] lg:items-end">
-                <div>
-                  <span className="inline-flex rounded-md border border-white/16 bg-white/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.34em] text-white/70 backdrop-blur-md sm:text-sm">
-                    {navbar.startProject}
-                  </span>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.22),transparent_22%),radial-gradient(circle_at_100%_0%,rgba(245,158,11,0.18),transparent_18%),linear-gradient(135deg,#f5faf6_0%,#effaf2_28%,#f8fafc_100%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.20),transparent_20%),radial-gradient(circle_at_100%_0%,rgba(245,158,11,0.20),transparent_18%),linear-gradient(135deg,#081421_0%,#101d2d_32%,#020817_100%)]" aria-hidden="true" />
 
-                  <h1 className="mt-6 max-w-2xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-                    <span className="bg-linear-to-r from-primary via-white to-primary bg-clip-text text-transparent">
-                      {c.heroTitle}
-                    </span>
+            <div className="relative grid gap-7 p-5 sm:p-7 lg:grid-cols-[1.04fr_0.96fr] lg:items-center lg:p-8 xl:min-h-[560px]">
+              <div className="flex flex-col justify-center self-stretch rounded-[28px] border border-[#dfeee4]/80 bg-white/65 p-2 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/40">
+                <div className="flex h-full flex-col justify-center rounded-[24px] bg-[linear-gradient(135deg,rgba(255,255,255,0.95),rgba(244,248,245,0.88))] p-5 sm:p-6 dark:bg-[linear-gradient(135deg,rgba(15,23,42,0.92),rgba(15,23,42,0.78))]">
+                  <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#20A44A]/20 bg-white/85 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.30em] text-[#183729] shadow-sm backdrop-blur-md dark:border-white/10 dark:bg-slate-900/70 dark:text-slate-100">
+                    <span className="h-2 w-2 rounded-full bg-[#20A44A] shadow-[0_0_18px_rgba(32,164,74,0.9)]" />
+                    {navbar.startProject}
+                  </div>
+
+                  <h1 className="mt-6 max-w-xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-[4rem] lg:leading-[1.02] dark:text-white">
+                    {c.heroTitle}
                   </h1>
 
-                  <p className="mt-5 max-w-2xl text-base leading-8 text-white/76 sm:text-lg">
+                  <p className="mt-5 max-w-xl text-base leading-8 text-slate-700 sm:text-lg dark:text-slate-200">
                     {c.heroDescription}
                   </p>
 
-                  <div className="mt-8 flex flex-wrap gap-4">
+                  <div className="mt-7 flex flex-wrap gap-3">
                     <Link
                       href={`mailto:${contactEmail}`}
-                      className="inline-flex items-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition-transform duration-200 hover:scale-[1.02] hover:bg-primary hover:text-white"
+                      className="inline-flex items-center justify-center rounded-full bg-[#20A44A] px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_30px_-18px_rgba(32,164,74,0.9)] transition-transform duration-200 hover:-translate-y-0.5 hover:bg-[#1d9a45]"
                     >
                       {c.emailButton}
                     </Link>
                     <Link
                       href="/estimation"
-                      className="inline-flex items-center rounded-full border border-white/16 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition-colors duration-200 hover:bg-white/15"
+                      className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-800 backdrop-blur-md transition-colors duration-200 hover:bg-white dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-100"
                     >
                       {c.estimationButton}
                     </Link>
                   </div>
 
-                  <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                  <div className="mt-8 grid gap-3 sm:grid-cols-3">
                     {contactHighlights.map((item) => (
                       <div
                         key={item.label}
-                        className="rounded-3xl border border-white/14 bg-white/8 p-4 backdrop-blur-md"
+                        className="rounded-2xl border border-slate-200/80 bg-white/75 p-3.5 shadow-[0_12px_28px_rgba(15,23,42,0.04)] backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/70"
                       >
                         <div className={`h-1.5 rounded-full bg-linear-to-r ${item.tone}`} aria-hidden="true" />
-                        <p className="mt-4 text-xs font-semibold uppercase tracking-[0.28em] text-white/55">
+                        <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
                           {item.label}
                         </p>
-                        <p className="mt-3 text-sm leading-6 text-white/88">
-                          {item.value}
-                        </p>
+                        <p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-100">{item.value}</p>
                       </div>
                     ))}
                   </div>
                 </div>
+              </div>
 
-                <div className="relative">
-                  <div className="absolute inset-6 rounded-4xl bg-accent/20 blur-3xl" aria-hidden="true" />
-                  <div className="relative overflow-hidden rounded-3xl border border-white/16 bg-white/8 p-3 shadow-2xl backdrop-blur-sm">
-                    <div className="absolute left-5 right-5 top-5 z-10 flex items-center justify-between rounded-md border border-white/16 bg-slate-950/35 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/78 backdrop-blur-md">
-                      <span>{c.badge}</span>
-                      <span>{c.projectBrief}</span>
+              <div className="relative flex items-center justify-center">
+                <div className="absolute -left-5 top-12 h-28 w-28 rounded-full bg-[#20A44A]/18 blur-3xl" aria-hidden="true" />
+                <div className="absolute -right-4 bottom-8 h-28 w-28 rounded-full bg-[#F59E0B]/18 blur-3xl" aria-hidden="true" />
+
+                <div className="relative w-full overflow-hidden rounded-[28px] border border-white/50 bg-white/60 p-3 shadow-[0_26px_80px_rgba(2,6,23,0.18)] backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/65">
+                  <div className="flex items-center justify-between rounded-xl border border-slate-200/80 bg-slate-950 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-slate-100 dark:border-slate-700">
+                    <span>{c.badge}</span>
+                    <span className="text-[#F59E0B]">{c.projectBrief}</span>
+                  </div>
+
+                  <div className="relative mt-3 h-[300px] overflow-hidden rounded-[22px] sm:h-[350px]">
+                    <Image
+                      src="/images/customdesign-aerosunenergy.png"
+                      alt="AeroSun Energy custom renewable energy design"
+                      fill
+                      sizes="(min-width: 1024px) 34vw, 90vw"
+                      className="object-cover"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.08),rgba(2,6,23,0.50)_72%,rgba(2,6,23,0.82))]" aria-hidden="true" />
+                  </div>
+
+                  <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                    <div className="rounded-2xl border border-slate-200/80 bg-slate-950/85 p-3 text-white">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-slate-300">{c.channels[0]?.label ?? 'Email'}</p>
+                      <p className="mt-2 break-all text-sm font-medium text-slate-100">{contactEmail}</p>
                     </div>
-                    <div className="relative min-h-90 overflow-hidden rounded-3xl sm:min-h-105">
-                      <Image
-                        src="/images/customdesign-aerosunenergy.png"
-                        alt="AeroSun Energy custom renewable energy design"
-                        fill
-                        sizes="(min-width: 1024px) 38vw, 92vw"
-                        className="object-cover"
-                        priority
-                      />
-                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,12,24,0.06),rgba(4,12,24,0.26)_58%,rgba(4,12,24,0.66)_100%)]" aria-hidden="true" />
-                    </div>
-                    <div className="absolute bottom-5 left-5 right-5 grid gap-3 sm:grid-cols-2">
-                      <div className="rounded-2xl border border-white/16 bg-slate-950/55 p-4 text-white backdrop-blur-md">
-                        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">{c.channels[0]?.label ?? 'Email'}</p>
-                        <p className="mt-2 break-all text-sm text-white/92">{contactEmail}</p>
-                      </div>
-                      <div className="rounded-2xl border border-white/16 bg-white/10 p-4 text-white backdrop-blur-md">
-                        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">{c.channels[1]?.label ?? 'Website'}</p>
-                        <p className="mt-2 text-sm text-white/92">{footer.website}</p>
-                      </div>
+                    <div className="rounded-2xl border border-slate-200/80 bg-slate-950/85 p-3 text-white">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-slate-300">{c.channels[1]?.label ?? 'Website'}</p>
+                      <p className="mt-2 text-sm font-medium text-slate-100">{footer.website}</p>
                     </div>
                   </div>
                 </div>
@@ -203,40 +198,30 @@ export default function Contact() {
           </motion.div>
 
           <motion.div
-            className="grid gap-4"
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, delay: 0.05, ease: 'easeOut' }}
+            className="space-y-5"
           >
-            <Card className="overflow-hidden border-white/70 bg-white/84 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/76">
-              <CardContent className="space-y-4 p-6 sm:p-7">
-                <p className="text-xs font-semibold uppercase tracking-[0.34em] text-slate-500 dark:text-slate-400">
-                  {c.quickAccess}
-                </p>
-                <h2 className="text-2xl font-semibold text-custom-deep-blue dark:text-white">
-                  {c.quickAccessTitle}
-                </h2>
-                <p className="text-sm leading-7 text-slate-600 dark:text-slate-300">
-                  {c.quickAccessCopy}
-                </p>
+            <Card className="overflow-hidden border border-[#e4efe7] bg-white/80 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/80">
+              <CardContent className="p-5 sm:p-6">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-slate-500 dark:text-slate-400">{c.quickAccess}</p>
+                <h2 className="mt-3 text-2xl font-semibold text-slate-900 dark:text-white">{c.quickAccessTitle}</h2>
+                <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{c.quickAccessCopy}</p>
 
-                <div className="space-y-3 pt-2">
+                <div className="mt-5 space-y-3">
                   {channels.map((channel) => (
                     <Link
                       key={channel.label}
                       href={channel.href}
-                      className="group flex items-center gap-4 rounded-3xl border border-slate-200/80 bg-linear-to-br from-white via-slate-50 to-slate-100 px-4 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg dark:border-white/10 dark:from-slate-950 dark:via-slate-900 dark:to-slate-900"
+                      className="group flex items-center gap-3 rounded-2xl border border-slate-200 bg-gradient-to-r from-white via-slate-50 to-slate-100 p-3.5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-700 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950"
                     >
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-custom-deep-blue transition-colors group-hover:bg-primary group-hover:text-white dark:bg-primary/15 dark:text-primary-100">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#20A44A]/10 text-[#0f172a] transition-colors group-hover:bg-[#20A44A] group-hover:text-white dark:bg-[#20A44A]/15 dark:text-[#86efac] dark:group-hover:bg-[#20A44A] dark:group-hover:text-white">
                         {channel.icon}
                       </div>
                       <div className="min-w-0 flex-1">
-                        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
-                          {channel.label}
-                        </p>
-                        <p className="mt-1 truncate text-sm font-semibold text-custom-deep-blue dark:text-white">
-                          {channel.value}
-                        </p>
+                        <p className="text-[10px] font-semibold uppercase tracking-[0.26em] text-slate-500 dark:text-slate-400">{channel.label}</p>
+                        <p className="mt-1 truncate text-sm font-semibold text-slate-800 dark:text-slate-100">{channel.value}</p>
                       </div>
                     </Link>
                   ))}
@@ -244,27 +229,21 @@ export default function Contact() {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden border-white/70 bg-white/84 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/76">
-              <CardContent className="space-y-5 p-6 sm:p-7">
-                <p className="text-xs font-semibold uppercase tracking-[0.34em] text-slate-500 dark:text-slate-400">
-                  {c.whatHappensNext}
-                </p>
-                <div className="space-y-3">
+            <Card className="overflow-hidden border border-[#e4efe7] bg-white/80 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/80">
+              <CardContent className="p-5 sm:p-6">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-slate-500 dark:text-slate-400">{c.whatHappensNext}</p>
+                <div className="mt-4 space-y-3">
                   {contactSteps.map((step) => (
                     <div
                       key={step.number}
-                      className="flex gap-4 rounded-3xl border border-slate-200/80 bg-slate-50/80 p-4 dark:border-white/10 dark:bg-slate-950/40"
+                      className="flex gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-3.5 dark:border-slate-700 dark:bg-slate-900/70"
                     >
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-primary to-custom-red text-sm font-semibold text-white">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-[#20A44A] to-[#F59E0B] text-xs font-bold text-white">
                         {step.number}
                       </span>
                       <div>
-                        <h3 className="text-base font-semibold text-custom-deep-blue dark:text-white">
-                          {step.title}
-                        </h3>
-                        <p className="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                          {step.description}
-                        </p>
+                        <h3 className="text-sm font-semibold text-slate-900 dark:text-white">{step.title}</h3>
+                        <p className="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-300">{step.description}</p>
                       </div>
                     </div>
                   ))}
@@ -274,47 +253,39 @@ export default function Contact() {
           </motion.div>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[1.02fr_0.98fr]">
-          <Card className="overflow-hidden border-white/70 bg-white/84 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/76">
-            <CardContent className="space-y-5 p-6 sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.34em] text-slate-500 dark:text-slate-400">
-                {c.projectBrief}
-              </p>
-              <h2 className="text-3xl font-semibold text-custom-deep-blue dark:text-white">
-                {c.projectBriefTitle}
-              </h2>
-              <p className="max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-                {c.projectBriefCopy}
-              </p>
+        <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+          <Card className="overflow-hidden border border-[#e4efe7] bg-white/80 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/80">
+            <CardContent className="p-5 sm:p-7">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-slate-500 dark:text-slate-400">{c.projectBrief}</p>
+              <h2 className="mt-3 text-3xl font-semibold text-slate-900 dark:text-white">{c.projectBriefTitle}</h2>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">{c.projectBriefCopy}</p>
 
-              <form className="grid gap-4 sm:grid-cols-2" onSubmit={handleProjectBrief}>
+              <form className="mt-6 grid gap-4 sm:grid-cols-2" onSubmit={handleProjectBrief}>
                 <Field label={c.form.fullName} name="name" placeholder={c.form.fullNamePlaceholder} />
                 <Field label={c.form.email} name="email" type="email" placeholder={c.form.emailPlaceholder} />
                 <Field label={c.form.phone} name="phone" placeholder={c.form.phonePlaceholder} />
                 <Field label={c.form.projectType} name="projectType" placeholder={c.form.projectTypePlaceholder} />
                 <Field label={c.form.usage} name="usage" placeholder={c.form.usagePlaceholder} />
                 <div className="sm:col-span-2">
-                  <label className="mb-2 block text-sm font-semibold text-custom-deep-blue dark:text-white">
-                    {c.form.message}
-                  </label>
+                  <label className="mb-2 block text-sm font-semibold text-slate-800 dark:text-slate-100">{c.form.message}</label>
                   <textarea
                     name="message"
                     rows={5}
                     placeholder={c.form.messagePlaceholder}
-                    className="w-full rounded-3xl border border-slate-200 bg-slate-50/80 px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-primary/40 focus:ring-4 focus:ring-primary/10 dark:border-white/10 dark:bg-slate-950/50 dark:text-white"
+                    className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-primary/40 focus:ring-4 focus:ring-primary/10 dark:border-white/10 dark:bg-slate-950/50 dark:text-white"
                   />
                 </div>
 
                 <div className="sm:col-span-2 flex flex-wrap items-center gap-3 pt-2">
                   <button
                     type="submit"
-                    className="inline-flex items-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:scale-[1.02] hover:bg-primary dark:bg-white dark:text-slate-950"
+                    className="inline-flex items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 hover:bg-[#20A44A] dark:bg-white dark:text-slate-950 dark:hover:bg-[#20A44A] dark:hover:text-white"
                   >
                     {c.openEmailDraft}
                   </button>
                   <Link
                     href={`mailto:${contactEmail}`}
-                    className="inline-flex items-center rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition-colors duration-200 hover:bg-slate-100 dark:border-white/10 dark:bg-white/5 dark:text-slate-100 dark:hover:bg-white/10"
+                    className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition-colors duration-200 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800"
                   >
                     {c.emailDirect}
                   </Link>
@@ -323,51 +294,29 @@ export default function Contact() {
             </CardContent>
           </Card>
 
-          <Card className="overflow-hidden border-white/70 bg-linear-to-br from-custom-deep-blue via-slate-900 to-custom-blue shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10">
-            <CardContent className="space-y-6 p-6 sm:p-8 text-white">
-              <p className="text-xs font-semibold uppercase tracking-[0.34em] text-white/60">
-                {c.builtForClarity}
-              </p>
-              <h2 className="text-3xl font-semibold tracking-tight text-white">
-                {c.builtForClarityTitle}
-              </h2>
-              <p className="text-sm leading-7 text-white/76">
-                {c.builtForClarityCopy}
-              </p>
+          <Card className="overflow-hidden border border-[#dbe9df] bg-gradient-to-br from-[#0b1728] via-[#0f1d2f] to-[#1f3f28] text-white shadow-[0_25px_70px_rgba(15,23,42,0.18)] dark:border-slate-700">
+            <CardContent className="p-5 sm:p-7">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-white/60">{c.builtForClarity}</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">{c.builtForClarityTitle}</h2>
+              <p className="mt-3 text-sm leading-7 text-slate-200">{c.builtForClarityCopy}</p>
 
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-3xl border border-white/16 bg-white/8 p-4 backdrop-blur-md">
-                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">
-                    {c.brandPalette}
-                  </p>
-                  <p className="mt-3 text-sm leading-6 text-white/88">
-                    {c.brandPaletteCopy}
-                  </p>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-md">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/55">{c.brandPalette}</p>
+                  <p className="mt-3 text-sm leading-6 text-slate-200">{c.brandPaletteCopy}</p>
                 </div>
-                <div className="rounded-3xl border border-white/16 bg-white/8 p-4 backdrop-blur-md">
-                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">
-                    {c.mobileFirst}
-                  </p>
-                  <p className="mt-3 text-sm leading-6 text-white/88">
-                    {c.mobileFirstCopy}
-                  </p>
+                <div className="rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-md">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/55">{c.mobileFirst}</p>
+                  <p className="mt-3 text-sm leading-6 text-slate-200">{c.mobileFirstCopy}</p>
                 </div>
               </div>
 
-              <div className="rounded-3xl border border-white/16 bg-white/8 p-4 backdrop-blur-md">
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">
-                  {c.helpfulRoutes}
-                </p>
+              <div className="mt-6 rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-md">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/55">{c.helpfulRoutes}</p>
                 <div className="mt-4 flex flex-wrap gap-3">
-                  <Link href="/about" className="rounded-full border border-white/16 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/15">
-                    {c.aboutAeroSun}
-                  </Link>
-                  <Link href="/services" className="rounded-full border border-white/16 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/15">
-                    {c.services}
-                  </Link>
-                  <Link href="/estimation" className="rounded-full border border-white/16 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/15">
-                    {c.estimation}
-                  </Link>
+                  <Link href="/about" className="rounded-full border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/12">{c.aboutAeroSun}</Link>
+                  <Link href="/services" className="rounded-full border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/12">{c.services}</Link>
+                  <Link href="/estimation" className="rounded-full border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/12">{c.estimation}</Link>
                 </div>
               </div>
             </CardContent>

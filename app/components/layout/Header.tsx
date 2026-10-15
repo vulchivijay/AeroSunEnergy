@@ -3,8 +3,8 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import Logo from './Logo'
-import { useLocale, type Locale } from '@/app/lib/LocaleContext'
+import Logo from '../brand/Logo'
+import { useLocale, type Locale } from '@/lib/LocaleContext'
 
 function GlobeIcon({ className }: { className?: string }) {
   return (

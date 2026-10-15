@@ -2,8 +2,8 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import Logo from './Logo'
-import { useLocale } from '@/app/lib/LocaleContext'
+import Logo from '../brand/Logo'
+import { useLocale } from '@/lib/LocaleContext'
 
 const socialLinks = [
 	{
@@ -89,8 +89,8 @@ export default function Footer() {
 			<div className="w-full px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 				<div className="grid w-full gap-8 md:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr]">
 					<div className="space-y-5">
-						<div className="inline-flex rounded-2xl border border-[#20A44A]/15 bg-white/60 p-2 shadow-sm backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/60">
-							<Logo size="footer" />
+						<div className="inline-flex p-2 dark:border-slate-700 dark:bg-slate-900/60">
+							<Logo />
 						</div>
 
 						<p className="max-w-md text-sm leading-7 text-slate-600 dark:text-slate-300">
@@ -165,7 +165,7 @@ export default function Footer() {
 							)}
 						</div>
 
-						<div className="inline-flex rounded-3xl border border-[#F59E0B]/25 bg-white/80 p-3 shadow-[0_18px_30px_-22px_rgba(15,23,42,0.4)] dark:border-slate-700 dark:bg-slate-900/70">
+						<div className="inline-flex bg-white/80 p-3 shadow-[0_18px_30px_-22px_rgba(15,23,42,0.4)] dark:border-slate-700 dark:bg-slate-900/70">
 							<Image
 								src="/images/qr-code.png"
 								alt="AeroSun Energy QR Code - Scan to visit our website"
@@ -177,9 +177,6 @@ export default function Footer() {
 								data-seo="qr-code"
 							/>
 						</div>
-						<p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
-							{footer.scan}
-						</p>
 					</div>
 				</div>
 			</div>

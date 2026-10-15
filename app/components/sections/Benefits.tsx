@@ -1,10 +1,10 @@
 'use client'
 
-import { motion } from '@/app/lib/motion'
+import { motion } from '@/lib/motion'
 import { TrendingDown, Globe, ShieldCheck, Infinity } from 'lucide-react'
 import Image from 'next/image'
-import { Card, CardContent } from './Card'
-import { useLocale } from '@/app/lib/LocaleContext'
+import { Card, CardContent } from './../ui/Card'
+import { useLocale } from '@/lib/LocaleContext'
 
 const benefitIcons = [
   <TrendingDown key="trending" className="h-8 w-8 text-primary" />,

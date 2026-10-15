@@ -1,9 +1,9 @@
 'use client'
 
-import { motion } from '@/app/lib/motion'
+import { motion } from '@/lib/motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useLocale } from '@/app/lib/LocaleContext'
+import { useLocale } from '@/lib/LocaleContext'
 
 const useCaseStyles = [
   { emoji: '🛣️', imageSrc: '/images/infra-aerosunenergy.png', imageAlt: 'Hybrid solar and wind infrastructure for roads and highways', tagColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300', color: 'from-primary to-blue-400', cardBg: 'bg-blue-100/85 dark:bg-blue-950/45 border-blue-300 dark:border-blue-700' },
