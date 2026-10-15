@@ -48,19 +48,27 @@ export default function Navbar() {
   const router = useRouter()
   const [menuOpen, setMenuOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
-  const [dark, setDark] = useState(() => {
-    try {
-      return localStorage.getItem('theme') === 'dark'
-    } catch {
-      return false
-    }
-  })
+  const [dark, setDark] = useState(false)
   const [activeHref, setActiveHref] = useState(pathname || '/')
   const navRef = useRef<HTMLElement>(null)
   const desktopLangRef = useRef<HTMLDivElement>(null)
   const mobileLangRef = useRef<HTMLDivElement>(null)
   const navLinks = t.navbar.links
   const languageOptions = t.navbar.languages as { code: Locale; label: string; shortLabel: string }[]
+
+  useEffect(() => {
+    try {
+      const savedTheme = localStorage.getItem('theme') === 'dark'
+      setDark(savedTheme)
+      if (savedTheme) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    } catch {
+      // ignore storage access failures
+    }
+  }, [])
 
   useEffect(() => {
     setActiveHref(pathname || '/')
@@ -122,7 +130,7 @@ export default function Navbar() {
   }, [router, navLinks])
 
   return (
-    <header className="sticky top-0 left-0 right-0 z-50 border-b border-[#20A44A]/20 bg-white/80 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.55)] backdrop-blur-xl transition-all duration-300 dark:border-slate-700/80 dark:bg-slate-950/80">
+    <header className="sticky top-0 left-0 right-0 z-50 border-b border-[#20A44A]/20 bg-white shadow-[0_12px_30px_-24px_rgba(15,23,42,0.55)] backdrop-blur-xl transition-all duration-300 dark:border-slate-700/80 dark:bg-slate-950/80">
       <div className="w-full px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex w-full items-center justify-between gap-4">
           <Logo />
