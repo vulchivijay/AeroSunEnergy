@@ -53,3 +53,18 @@ Use this checklist before every push or pull request to avoid case-only rename i
 ## Quick rename safety rule
 
 If a file or folder name changes only by case, it is still a different path on Linux. GitHub build runners are case-sensitive, so the repo must match the exact path names used in every import.
+
+## Deployment safety
+
+- Run a full production build locally before pushing: `npm run build`
+- Confirm all renamed files and folders are committed with exact casing
+- Treat case-only renames as a Linux/GitHub build risk
+- Check `git status` and `git diff --name-status` before merge
+- Validate route imports and asset paths in CI before deployment
+
+## Release readiness signoff
+
+- Home page and primary service pages render without console errors
+- Route loader and navigation transitions remain smooth
+- Images load with placeholders and stable dimensions
+- Core performance metrics remain within the target ranges above

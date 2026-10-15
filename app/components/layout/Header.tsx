@@ -115,8 +115,14 @@ export default function Navbar() {
     router.push(href)
   }
 
+  useEffect(() => {
+    navLinks.forEach((link) => {
+      router.prefetch(link.href)
+    })
+  }, [router, navLinks])
+
   return (
-    <header className="sticky top-0 left-0 right-0 z-50 border-b border-[#20A44A]/20 bg-white shadow-[0_12px_30px_-24px_rgba(15,23,42,0.55)] backdrop-blur-xl transition-all duration-300 dark:border-slate-700/80 dark:bg-slate-950/80">
+    <header className="sticky top-0 left-0 right-0 z-50 border-b border-[#20A44A]/20 bg-white/80 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.55)] backdrop-blur-xl transition-all duration-300 dark:border-slate-700/80 dark:bg-slate-950/80">
       <div className="w-full px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex w-full items-center justify-between gap-4">
           <Logo />
