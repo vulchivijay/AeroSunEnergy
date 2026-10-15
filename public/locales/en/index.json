@@ -27,6 +27,18 @@
                 "href": "/about"
             },
             {
+                "label": "Solar Energy",
+                "href": "/solarenergy"
+            },
+            {
+                "label": "Wind Energy",
+                "href": "/windenergy"
+            },
+            {
+                "label": "Hybrid Energy",
+                "href": "/hybridenergy"
+            },
+            {
                 "label": "Services",
                 "href": "/services"
             },

@@ -112,8 +112,8 @@ export default function Contact() {
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.22),transparent_22%),radial-gradient(circle_at_100%_0%,rgba(245,158,11,0.18),transparent_18%),linear-gradient(135deg,#f5faf6_0%,#effaf2_28%,#f8fafc_100%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.20),transparent_20%),radial-gradient(circle_at_100%_0%,rgba(245,158,11,0.20),transparent_18%),linear-gradient(135deg,#081421_0%,#101d2d_32%,#020817_100%)]" aria-hidden="true" />
 
-            <div className="relative grid gap-7 p-5 sm:p-7 lg:grid-cols-[1.04fr_0.96fr] lg:items-center lg:p-8 xl:min-h-[560px]">
-              <div className="flex flex-col justify-center self-stretch rounded-[28px] border border-[#dfeee4]/80 bg-white/65 p-2 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/40">
+            <div className="relative grid gap-7 p-5 sm:p-7 xl:min-h-[560px]">
+              <div className="flex rounded-[28px] border border-[#dfeee4]/80 bg-white/65 p-2 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/40">
                 <div className="flex h-full flex-col justify-center rounded-[24px] bg-[linear-gradient(135deg,rgba(255,255,255,0.95),rgba(244,248,245,0.88))] p-5 sm:p-6 dark:bg-[linear-gradient(135deg,rgba(15,23,42,0.92),rgba(15,23,42,0.78))]">
                   <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#20A44A]/20 bg-white/85 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.30em] text-[#183729] shadow-sm backdrop-blur-md dark:border-white/10 dark:bg-slate-900/70 dark:text-slate-100">
                     <span className="h-2 w-2 rounded-full bg-[#20A44A] shadow-[0_0_18px_rgba(32,164,74,0.9)]" />
@@ -160,7 +160,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="relative flex items-center justify-center">
+              <div className="relative flex">
                 <div className="absolute -left-5 top-12 h-28 w-28 rounded-full bg-[#20A44A]/18 blur-3xl" aria-hidden="true" />
                 <div className="absolute -right-4 bottom-8 h-28 w-28 rounded-full bg-[#F59E0B]/18 blur-3xl" aria-hidden="true" />
 

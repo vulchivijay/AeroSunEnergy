@@ -108,13 +108,13 @@ export default function Navbar() {
   )
 
   return (
-    <header className="sticky top-0 left-0 right-0 z-50 border-b border-[#20A44A]/20 bg-white/80 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.55)] backdrop-blur-xl transition-all duration-300 dark:border-slate-700/80 dark:bg-slate-950/80">
+    <header className="sticky top-0 left-0 right-0 z-50 border-b border-[#20A44A]/20 bg-white shadow-[0_12px_30px_-24px_rgba(15,23,42,0.55)] backdrop-blur-xl transition-all duration-300 dark:border-slate-700/80 dark:bg-slate-950/80">
       <div className="w-full px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex w-full items-center justify-between gap-4">
           <Logo />
 
           <nav ref={navRef} aria-label="Primary navigation" className="hidden items-center lg:flex">
-            <div className="flex items-center gap-1 rounded-full border border-[#20A44A]/10 bg-[#F7FDF8] p-1.5 shadow-inner shadow-[#20A44A]/5">
+            <div className="flex items-center rounded-full border border-[#20A44A]/60 bg-[#F7FDF8] p-1 shadow-inner shadow-[#20A44A]/5">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -135,13 +135,13 @@ export default function Navbar() {
             </div>
           </nav>
 
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="hidden items-center gap-2 lg:flex">
             <Link
               href="/contact"
               title={t.navbar.startProjectTitle}
               aria-label={t.navbar.startProjectAriaLabel}
               data-cta="start-project"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-r from-[#20A44A] via-[#1c9a42] to-[#F59E0B] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_18px_26px_-18px_rgba(32,164,74,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_30px_-18px_rgba(245,158,11,0.7)]"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-r from-[#F59E0B] via-[#F59E0B] to-[#F59E0B] px-5 py-2.5 text-sm text-white shadow-[0_18px_26px_-18px_rgba(32,164,74,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_30px_-18px_rgba(245,158,11,0.7)]"
             >
               {t.navbar.startProject}
             </Link>

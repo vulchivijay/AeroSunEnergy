@@ -27,6 +27,18 @@
                 "href": "/about"
             },
             {
+                "label": "सौर ऊर्जा",
+                "href": "/solarenergy"
+            },
+            {
+                "label": "पवन ऊर्जा",
+                "href": "/windenergy"
+            },
+            {
+                "label": "हाइब्रिड ऊर्जा",
+                "href": "/hybridenergy"
+            },
+            {
                 "label": "सर्विसेज",
                 "href": "/services"
             },

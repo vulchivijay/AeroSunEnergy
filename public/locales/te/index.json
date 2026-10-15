@@ -27,6 +27,18 @@
                 "href": "/about"
             },
             {
+                "label": "సౌర శక్తి",
+                "href": "/solarenergy"
+            },
+            {
+                "label": "పవన శక్తి",
+                "href": "/windenergy"
+            },
+            {
+                "label": "హైబ్రిడ్ శక్తి",
+                "href": "/hybridenergy"
+            },
+            {
                 "label": "సర్వీసులు",
                 "href": "/services"
             },
