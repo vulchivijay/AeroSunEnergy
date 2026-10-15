@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import { useLocale } from '@/lib/LocaleContext'
+import { OptimizedImage } from '@/app/components/ui'
 
 export default function SavoniusRotor() {
   const { t } = useLocale()
@@ -25,8 +25,8 @@ export default function SavoniusRotor() {
 
         {/* Image */}
         <div className="relative w-full h-75 md:h-100">
-          <Image
-            src="/images/savonius-rotor.png" // place your image in public/images
+          <OptimizedImage
+            src="/images/savonius-rotor.png"
             alt={s.imageAlt}
             fill
             className="object-contain rounded-md shadow-md"

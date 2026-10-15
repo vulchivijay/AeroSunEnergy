@@ -1,9 +1,9 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import Logo from '../brand/Logo'
 import { useLocale } from '@/lib/LocaleContext'
+import { OptimizedImage } from '@/app/components/ui'
 
 const socialLinks = [
 	{
@@ -166,7 +166,7 @@ export default function Footer() {
 						</div>
 
 						<div className="inline-flex bg-white/80 p-3 shadow-[0_18px_30px_-22px_rgba(15,23,42,0.4)] dark:border-slate-700 dark:bg-slate-900/70">
-							<Image
+							<OptimizedImage
 								src="/images/qr-code.png"
 								alt="AeroSun Energy QR Code - Scan to visit our website"
 								width={170}

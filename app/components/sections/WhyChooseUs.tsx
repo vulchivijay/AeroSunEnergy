@@ -2,9 +2,9 @@
 
 import { motion } from '@/lib/motion'
 import { Lightbulb, ShieldCheck, Layers, MapPin } from 'lucide-react'
-import Image from 'next/image'
 import { Card, CardContent } from './../ui/Card'
 import { useLocale } from '@/lib/LocaleContext'
+import { OptimizedImage } from '@/app/components/ui'
 
 const reasonIcons = [
   <Lightbulb key="lightbulb" className="h-8 w-8 text-blue-800 dark:text-blue-100" />,
@@ -70,7 +70,7 @@ export default function WhyChooseUs() {
               {w.imageBadge}
             </div>
             <div className="relative min-h-96 md:aspect-video overflow-hidden">
-              <Image
+              <OptimizedImage
                 src="/images/future-aerosunenergy.png"
                 alt="AeroSun Energy's vision for future renewable energy infrastructure - advanced hybrid systems powering smart cities"
                 fill

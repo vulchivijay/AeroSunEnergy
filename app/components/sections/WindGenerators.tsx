@@ -1,8 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { useLocale } from '@/lib/LocaleContext'
+import { OptimizedImage } from '@/app/components/ui'
 
 const generatorStyles = [
   { id: 'h-darrieus', imageSrc: '/images/h-darrieus-turbine-aerosunenergy.png', imageAlt: 'H-Darrieus wind turbine by AeroSun Energy', badgeColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300', accentFrom: 'from-blue-400', accentTo: 'to-purple-400' },
@@ -42,7 +42,7 @@ export default function WindGenerators() {
               {/* Illustration panel */}
               <div className={`flex-shrink-0 flex items-center justify-center w-full lg:w-72 h-64 bg-gradient-to-br ${gen.accentFrom} ${gen.accentTo} bg-opacity-10 dark:bg-opacity-20`}>
                 <div className="relative h-full w-full">
-                  <Image
+                  <OptimizedImage
                     src={gen.imageSrc}
                     alt={gen.imageAlt}
                     fill

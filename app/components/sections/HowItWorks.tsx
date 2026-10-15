@@ -1,9 +1,9 @@
 'use client'
 
 import { motion } from '@/lib/motion'
-import Image from 'next/image'
 import { Card, CardContent } from './../ui/Card'
 import { useLocale } from '@/lib/LocaleContext'
+import { OptimizedImage } from '@/app/components/ui'
 
 const stepStyles = [
   { icon: '📍', imageSrc: '/images/forming-aerosunenergy.png', imageAlt: 'Site assessment and planning process by AeroSun Energy', color: 'from-primary to-blue-400', cardBg: 'bg-blue-100/90 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700', iconBg: 'bg-blue-300 dark:bg-blue-800', nodeBg: 'from-blue-700 to-blue-500' },
@@ -64,7 +64,7 @@ export default function HowItWorks() {
                 {h.nextGenBadge}
               </div>
               <div className="relative min-h-96 md:aspect-[16/9] overflow-hidden">
-                <Image
+                <OptimizedImage
                   src="/images/nextgen-aerosunenergy.png"
                   alt="Next-generation hybrid energy technology by AeroSun - advanced systems for modern renewable infrastructure"
                   fill
@@ -101,7 +101,7 @@ export default function HowItWorks() {
                 className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}
               >
                 <div className="relative h-60 md:h-120 w-full md:w-1/2 overflow-hidden rounded-md mb-5">
-                  <Image
+                  <OptimizedImage
                     src={step.imageSrc}
                     alt={step.imageAlt}
                     fill
