@@ -157,7 +157,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 left-0 right-0 z-50 border-b border-[#20A44A]/20 bg-white shadow-[0_12px_30px_-24px_rgba(15,23,42,0.55)] backdrop-blur-xl transition-all duration-300 dark:border-slate-700/80 dark:bg-slate-950/80">
-      <div className="w-full px-4 py-3 sm:px-6 lg:px-8">
+      <div className="w-full px-4 py-2">
         <div className="flex w-full items-center justify-between gap-4">
           <Logo />
 
@@ -171,7 +171,7 @@ export default function Navbar() {
                   title={`${t.navbar.navigateTo} ${link.label} ${t.navbar.section}`}
                   aria-label={`${t.navbar.goTo} ${link.label}`}
                   data-nav={link.href.replace('#', '')}
-                  className={`relative rounded-full px-4 py-2 text-sm font-medium tracking-wide transition-all duration-300 ${
+                  className={`relative rounded-full px-4 py-2 text-sm font-medium whitespace-nowrap transition-all duration-300 ${
                     activeHref === link.href
                       ? 'bg-[#20A44A] text-white shadow-[0_8px_18px_rgba(32,164,74,0.3)]'
                       : 'text-slate-700 hover:bg-[#EAF9F0] hover:text-[#20A44A] dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]'

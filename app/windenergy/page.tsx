@@ -21,14 +21,32 @@ export default function WindEnergyPage() {
       </header>
 
       <Slider autoplay interval={5200} pauseOnHover>
-        <div className="h-full flex-1 bg-gradient-to-r from-sky-500 to-indigo-600 flex flex-col items-start justify-center p-12 text-white">
-          <h2 className="text-3xl font-semibold">Rooftop VAWTs</h2>
-          <p className="mt-4 max-w-2xl">Vertical-axis turbines built for noise-sensitive and space-constrained urban rooftops.</p>
+        <div
+          className="h-full flex-1 flex flex-col items-start justify-center p-12 text-white"
+          style={{
+            backgroundImage: "linear-gradient(135deg, rgba(14,165,233,0.7), rgba(79,70,229,0.72)), url('/images/slider-1.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div className="max-w-xl rounded-2xl bg-slate-900/20 p-6 backdrop-blur-sm">
+            <h2 className="text-3xl font-semibold">Rooftop VAWTs</h2>
+            <p className="mt-4 max-w-2xl">Vertical-axis turbines built for noise-sensitive and space-constrained urban rooftops.</p>
+          </div>
         </div>
 
-        <div className="h-full flex-1 bg-gradient-to-r from-teal-500 to-emerald-600 flex flex-col items-start justify-center p-12 text-white">
-          <h2 className="text-3xl font-semibold">Open Land & Commercial Turbines</h2>
-          <p className="mt-4 max-w-2xl">Higher-capacity turbines and hybrid-ready solutions for farms, warehouses, and industrial sites.</p>
+        <div
+          className="h-full flex-1 flex flex-col items-start justify-center p-12 text-white"
+          style={{
+            backgroundImage: "linear-gradient(135deg, rgba(20,184,166,0.7), rgba(5,150,105,0.7)), url('/images/slider-2.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div className="max-w-xl rounded-2xl bg-slate-900/15 p-6 backdrop-blur-sm">
+            <h2 className="text-3xl font-semibold">Open Land & Commercial Turbines</h2>
+            <p className="mt-4 max-w-2xl">Higher-capacity turbines and hybrid-ready solutions for farms, warehouses, and industrial sites.</p>
+          </div>
         </div>
       </Slider>
 
