@@ -123,7 +123,7 @@ export default function Slider({ children, className = '', autoplay = false, int
   const endDrag = () => {
     if (!dragging.current) return
     dragging.current = false
-    const threshold = Math.max(50, slideWidth * 0.15)
+    const threshold = Math.max(50, slideWidth > 0 ? slideWidth * 0.15 : (viewportRef.current ? viewportRef.current.clientWidth * 0.15 : 50))
     if (dragX > threshold) {
       prev()
     } else if (dragX < -threshold) {
@@ -165,9 +165,11 @@ export default function Slider({ children, className = '', autoplay = false, int
     goTo(i + 1)
   }
 
-  const totalWidth = slideWidth * clonedSlides.length
-  const baseTranslate = -index * slideWidth
-  const translate = baseTranslate + dragX
+  const totalWidth = slideWidth > 0 ? slideWidth * clonedSlides.length : 0
+  const percentPerSlide = 100 / clonedSlides.length
+  const baseTranslatePx = -index * slideWidth
+  const translatePx = baseTranslatePx + dragX
+  const translateStyle = slideWidth > 0 ? `translate3d(${translatePx}px,0,0)` : `translate3d(${(-index * percentPerSlide).toFixed(6)}%,0,0)`
 
   return (
     <div
@@ -188,16 +190,32 @@ export default function Slider({ children, className = '', autoplay = false, int
       <div
         ref={wrapperRef}
         className={`h-full ${withTransition ? 'transition-transform duration-500 ease-in-out' : ''}`}
-        style={{ width: totalWidth ? `${totalWidth}px` : `${clonedSlides.length * 100}%`, transform: `translate3d(${translate}px,0,0)` }}
+        style={{ width: slideWidth > 0 ? `${totalWidth}px` : `${clonedSlides.length * 100}%`, transform: translateStyle }}
         onTransitionEnd={onTransitionEnd}
       >
-        {clonedSlides.map((child, i) => (
-          <div key={i} className="inline-block flex-shrink-0 h-full" style={{ width: slideWidth || `${100 / clonedSlides.length}%` }}>
-            <div className="h-full w-full flex flex-col min-h-0">
-              {child}
+        {clonedSlides.map((child, i) => {
+          const isActive = i === index
+          return (
+            <div
+              key={i}
+              className="inline-block shrink-0 h-full"
+              style={{ width: slideWidth > 0 ? `${slideWidth}px` : `${percentPerSlide}%` }}
+            >
+              <div
+                className={
+                  `h-full w-full flex flex-col min-h-0 transition-all duration-700 ease-[cubic-bezier(.2,.9,.2,1)] ` +
+                  (isActive
+                    ? 'opacity-100 translate-y-0 blur-none pointer-events-auto'
+                    : 'opacity-0 -translate-y-6 blur-sm pointer-events-none')
+                }
+                style={{ willChange: 'opacity, transform, filter' }}
+                aria-hidden={!isActive}
+              >
+                {child}
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
 
       {/* Arrows */}
