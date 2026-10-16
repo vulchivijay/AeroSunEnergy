@@ -21,14 +21,32 @@ export default function HybridEnergyPage() {
       </header>
 
       <Slider autoplay interval={4800} pauseOnHover>
-        <div className="h-full flex-1 bg-gradient-to-r from-green-500 to-teal-500 flex flex-col items-start justify-center p-12 text-white">
-          <h2 className="text-3xl font-semibold">Resilient Hybrid Kits</h2>
-          <p className="mt-4 max-w-2xl">Designed to minimize dead time between solar and wind generation with optional battery storage.</p>
+        <div
+          className="h-full flex-1 flex flex-col items-start justify-center p-12 text-white"
+          style={{
+            backgroundImage: "linear-gradient(135deg, rgba(16,185,129,0.7), rgba(13,148,136,0.7)), url('/images/slider-1.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div className="max-w-xl rounded-2xl bg-black/20 p-6 backdrop-blur-sm">
+            <h2 className="text-3xl font-semibold">Resilient Hybrid Kits</h2>
+            <p className="mt-4 max-w-2xl">Designed to minimize dead time between solar and wind generation with optional battery storage.</p>
+          </div>
         </div>
 
-        <div className="h-full flex-1 bg-gradient-to-r from-violet-600 to-indigo-700 flex flex-col items-start justify-center p-12 text-white">
-          <h2 className="text-3xl font-semibold">Microgrid & Community Systems</h2>
-          <p className="mt-4 max-w-2xl">Shared installations for villages, campuses, and public infrastructure with islanding capability.</p>
+        <div
+          className="h-full flex-1 flex flex-col items-start justify-center p-12 text-white"
+          style={{
+            backgroundImage: "linear-gradient(135deg, rgba(109,40,217,0.7), rgba(79,70,229,0.7)), url('/images/slider-2.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div className="max-w-xl rounded-2xl bg-black/20 p-6 backdrop-blur-sm">
+            <h2 className="text-3xl font-semibold">Microgrid & Community Systems</h2>
+            <p className="mt-4 max-w-2xl">Shared installations for villages, campuses, and public infrastructure with islanding capability.</p>
+          </div>
         </div>
       </Slider>
 

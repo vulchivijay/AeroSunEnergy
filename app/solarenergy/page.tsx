@@ -21,14 +21,32 @@ export default function SolarEnergyPage() {
       </header>
 
       <Slider autoplay interval={5000} pauseOnHover>
-        <div className="h-full flex-1 bg-gradient-to-r from-yellow-400 to-orange-500 flex flex-col items-start justify-center p-12 text-slate-900">
-          <h2 className="text-3xl font-semibold">Rooftop Solar</h2>
-          <p className="mt-4 max-w-2xl">Cost-effective PV installations for homes and small businesses. Ideal for reducing monthly bills and leveraging net-metering.</p>
+        <div
+          className="h-full flex-1 flex flex-col items-start justify-center p-12 text-slate-900"
+          style={{
+            backgroundImage: "linear-gradient(135deg, rgba(251,191,36,0.85), rgba(249,115,22,0.68)), url('/images/slider-1.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div className="max-w-xl rounded-2xl bg-white/12 p-6 backdrop-blur-sm">
+            <h2 className="text-3xl font-semibold text-white">Rooftop Solar</h2>
+            <p className="mt-4 max-w-2xl text-white/90">Cost-effective PV installations for homes and small businesses. Ideal for reducing monthly bills and leveraging net-metering.</p>
+          </div>
         </div>
 
-        <div className="h-full flex-1 bg-gradient-to-r from-amber-600 to-red-500 flex flex-col items-start justify-center p-12 text-white">
-          <h2 className="text-3xl font-semibold">Ground Mount & Commercial</h2>
-          <p className="mt-4 max-w-2xl">Large-scale arrays, tracking options, and commercial systems that scale from kW to MW deployments.</p>
+        <div
+          className="h-full flex-1 flex flex-col items-start justify-center p-12 text-white"
+          style={{
+            backgroundImage: "linear-gradient(135deg, rgba(120,119,198,0.75), rgba(239,68,68,0.75)), url('/images/slider-2.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div className="max-w-xl rounded-2xl bg-slate-900/25 p-6 backdrop-blur-sm">
+            <h2 className="text-3xl font-semibold">Ground Mount & Commercial</h2>
+            <p className="mt-4 max-w-2xl">Large-scale arrays, tracking options, and commercial systems that scale from kW to MW deployments.</p>
+          </div>
         </div>
       </Slider>
 

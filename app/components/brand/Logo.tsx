@@ -24,7 +24,7 @@ export default function Logo() {
         loading="eager"
       />
       <div className="flex min-w-0 flex-col items-start justify-center text-left sm:mb-2">
-        <div className="flex flex-wrap items-center justify-start gap-1">
+        <div className="flex items-center justify-start gap-1">
           <span className={`text-2xl font-bold text-[#20A44A] tracking-wider drop-shadow-xl`}>
             AeroSun
           </span>
