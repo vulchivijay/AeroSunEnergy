@@ -23,11 +23,12 @@ export default function Home() {
     <main>
       <Slider autoplay interval={4500} pauseOnHover>
         <div
-          className={`${slideClass} bg-linear-to-br from-sky-600 via-blue-700 to-indigo-900`}
+          className={`${slideClass} bg-linear-to-br from-slate-700 via-slate-800 to-slate-950`}
           style={{
-            backgroundImage: "linear-gradient(135deg, rgba(14,116,144,0.72), rgba(37,99,235,0.65)), url('/images/slider/slider-1.png')",
-            backgroundSize: 'center',
-            backgroundPosition: 'center',
+            backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-1.png')",
+            backgroundSize: 'ccover cover',
+            backgroundPosition: 'left',
+            backgroundRepeat: 'no-repeat',
           }}
         >
           <div className={slideOverlay} aria-hidden="true" />
@@ -47,11 +48,12 @@ export default function Home() {
         </div>
 
         <div
-          className={`${slideClass} bg-linear-to-br from-emerald-500 via-teal-600 to-cyan-800`}
+          className={`${slideClass} bg-linear-to-br from-slate-700 via-slate-800 to-slate-950`}
           style={{
-            backgroundImage: "linear-gradient(135deg, rgba(6,95,70,0.72), rgba(8,145,178,0.62)), url('/images/slider/slider-2.png')",
-            backgroundSize: 'center',
-            backgroundPosition: 'center',
+            backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-2.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'left',
+            backgroundRepeat: 'no-repeat',
           }}
         >
           <div className={slideOverlay} aria-hidden="true" />
@@ -71,11 +73,12 @@ export default function Home() {
         </div>
 
         <div
-          className={`${slideClass} bg-linear-to-br from-pink-500 via-rose-600 to-red-700`}
+          className={`${slideClass} bg-linear-to-br from-slate-700 via-slate-800 to-slate-950`}
           style={{
-            backgroundImage: "linear-gradient(135deg, rgba(190,24,93,0.7), rgba(220,38,38,0.62)), url('/images/slider/slider-3.png')",
-            backgroundSize: 'center',
-            backgroundPosition: 'center',
+            backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-3.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'left',
+            backgroundRepeat: 'no-repeat',
           }}
         >
           <div className={slideOverlay} aria-hidden="true" />
@@ -95,11 +98,12 @@ export default function Home() {
         </div>
 
         <div
-          className={`${slideClass} bg-linear-to-br from-amber-400 via-orange-500 to-red-600`}
+          className={`${slideClass} bg-linear-to-br from-slate-700 via-slate-800 to-slate-950`}
           style={{
-            backgroundImage: "linear-gradient(135deg, rgba(180,83,9,0.72), rgba(220,38,38,0.66)), url('/images/slider/slider-4.png')",
-            backgroundSize: 'center',
-            backgroundPosition: 'center',
+            backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-4.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'left',
+            backgroundRepeat: 'no-repeat',
           }}
         >
           <div className={slideOverlay} aria-hidden="true" />
@@ -121,9 +125,10 @@ export default function Home() {
         <div
           className={`${slideClass} bg-linear-to-br from-slate-700 via-slate-800 to-slate-950`}
           style={{
-            backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.82), rgba(51,65,85,0.66)), url('/images/slider/slider-5.png')",
-            backgroundSize: 'center',
-            backgroundPosition: 'center',
+            backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-5.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'left',
+            backgroundRepeat: 'no-repeat',
           }}
         >
           <div className={slideOverlay} aria-hidden="true" />
@@ -143,11 +148,12 @@ export default function Home() {
         </div>
 
         <div
-          className={`${slideClass} bg-linear-to-br from-violet-700 via-indigo-800 to-slate-950`}
+          className={`${slideClass} bg-linear-to-br from-slate-700 via-slate-800 to-slate-950`}
           style={{
-            backgroundImage: "linear-gradient(135deg, rgba(76,29,149,0.74), rgba(30,41,59,0.72)), url('/images/slider/slider-6.png')",
-            backgroundSize: 'center',
-            backgroundPosition: 'center',
+            backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-6.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'left',
+            backgroundRepeat: 'no-repeat',
           }}
         >
           <div className={slideOverlay} aria-hidden="true" />
