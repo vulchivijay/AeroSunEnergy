@@ -27,7 +27,7 @@ export default function Home() {
           style={{
             backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-1.png')",
             backgroundSize: 'ccover cover',
-            backgroundPosition: 'left',
+            backgroundPosition: 'left, top',
             backgroundRepeat: 'no-repeat',
           }}
         >
@@ -52,7 +52,7 @@ export default function Home() {
           style={{
             backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-2.png')",
             backgroundSize: 'cover',
-            backgroundPosition: 'left',
+            backgroundPosition: 'left, top',
             backgroundRepeat: 'no-repeat',
           }}
         >
@@ -77,7 +77,7 @@ export default function Home() {
           style={{
             backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-3.png')",
             backgroundSize: 'cover',
-            backgroundPosition: 'left',
+            backgroundPosition: 'left, top',
             backgroundRepeat: 'no-repeat',
           }}
         >
@@ -102,7 +102,7 @@ export default function Home() {
           style={{
             backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-4.png')",
             backgroundSize: 'cover',
-            backgroundPosition: 'left',
+            backgroundPosition: 'left, top',
             backgroundRepeat: 'no-repeat',
           }}
         >
@@ -127,7 +127,7 @@ export default function Home() {
           style={{
             backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-5.png')",
             backgroundSize: 'cover',
-            backgroundPosition: 'left',
+            backgroundPosition: 'left, top',
             backgroundRepeat: 'no-repeat',
           }}
         >
@@ -152,7 +152,7 @@ export default function Home() {
           style={{
             backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-6.png')",
             backgroundSize: 'cover',
-            backgroundPosition: 'left',
+            backgroundPosition: 'left, top',
             backgroundRepeat: 'no-repeat',
           }}
         >
