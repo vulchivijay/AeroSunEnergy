@@ -1,16 +1,86 @@
-import {
-  Hero,
-  HowItWorks,
-  Features,
-  SavoniusRotor,
-  UseCases,
-  Benefits,
-  WindGenerators,
-  Services,
-  WhyChooseUs,
-  CTASection,
-} from '@/app/components/sections'
+// import {
+//   Hero,
+//   HowItWorks,
+//   Features,
+//   SavoniusRotor,
+//   UseCases,
+//   Benefits,
+//   WindGenerators,
+//   Services,
+//   WhyChooseUs,
+//   CTASection,
+// } from '@/app/components/sections'
 import { Slider } from './components/ui'
+import About from './components/sections/About'
+
+const slides = [
+  {
+    badge: 'Grid-tied rooftop',
+    title: 'Grid - tied Rooftop',
+    description:
+      'On-grid PV connected to the utility. Pros: lower cost (no batteries), net-metering, simple setup. Cons: no backup power during outages unless paired with storage.',
+    tags: ['Lower Capex', 'Net Metering'],
+    image: '/images/slider/slider-1.png',
+    badgeClass: 'text-sky-100',
+    chipClass: 'text-sky-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
+    badge: 'Off-grid autonomy',
+    title: 'Off - grid (Standalone)',
+    description:
+      'Fully independent systems with PV + batteries + charge controller. Pros: complete autonomy for remote sites. Cons: higher upfront cost and careful energy management required.',
+    tags: ['Battery-backed', 'Remote-ready'],
+    image: '/images/slider/slider-2.png',
+    badgeClass: 'text-emerald-100',
+    chipClass: 'text-emerald-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
+    badge: 'Hybrid resilience',
+    title: 'Hybrid (Grid + Battery)',
+    description:
+      'PV plus battery storage with ability to work with the grid. Pros: backup power, time-shifting, demand management. Cons: more complex controls and higher cost than grid-only.',
+    tags: ['Backup power', 'Smart control'],
+    image: '/images/slider/slider-3.png',
+    badgeClass: 'text-pink-100',
+    chipClass: 'text-pink-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
+    badge: 'Storage strategy',
+    title: 'Solar + Storage',
+    description:
+      'Architectures pairing batteries with PV. DC-coupled suits new installs; AC-coupled is great for retrofits. Choose based on efficiency and retrofit needs.',
+    tags: ['DC-coupled', 'Retrofit-ready'],
+    image: '/images/slider/slider-4.png',
+    badgeClass: 'text-amber-50',
+    chipClass: 'text-amber-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
+    badge: 'Utility scale',
+    title: 'Commercial / Utility-scale',
+    description:
+      'Large ground-mounted arrays with trackers and centralized inverters. Pros: high output and economies of scale; often paired with large storage for grid services.',
+    tags: ['High yield', 'Grid support'],
+    image: '/images/slider/slider-5.png',
+    badgeClass: 'text-slate-100',
+    chipClass: 'text-slate-100',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
+    badge: 'Shared energy',
+    title: 'Community / Microgrid',
+    description:
+      'Shared systems serving multiple customers or a local microgrid. Pros: pooled financing, resilience, and islanding capability; usually paired with storage and smart controls.',
+    tags: ['Resilient', 'Shared value'],
+    image: '/images/slider/slider-6.png',
+    badgeClass: 'text-violet-100',
+    chipClass: 'text-violet-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+]
 
 export default function Home() {
   const slideClass =
@@ -22,157 +92,43 @@ export default function Home() {
   return (
     <main>
       <Slider autoplay interval={4500} pauseOnHover>
-        <div
-          className={`${slideClass} bg-linear-to-br from-slate-700 via-slate-800 to-slate-950`}
-          style={{
-            backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-1.png')",
-            backgroundSize: 'ccover cover',
-            backgroundPosition: 'left, top',
-            backgroundRepeat: 'no-repeat',
-          }}
-        >
-          <div className={slideOverlay} aria-hidden="true" />
-          <div className="relative z-10 max-w-2xl">
-            <span className="mb-5 inline-flex rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.32em] text-sky-100 backdrop-blur-sm">
-              Grid-tied rooftop
-            </span>
-            <h2 className="text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">Grid - tied Rooftop</h2>
-            <p className="mt-5 max-w-xl text-base leading-7 text-sky-50/90 sm:text-lg">
-              On-grid PV connected to the utility. Pros: lower cost (no batteries), net-metering, simple setup. Cons: no backup power during outages unless paired with storage.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3 text-sm text-sky-50">
-              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5">Lower Capex</span>
-              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5">Net Metering</span>
+        {slides.map(
+          ({ badge, title, description, tags, image, badgeClass, chipClass, panelClass }) => (
+            <div
+              key={title}
+              className={`${slideClass} ${panelClass}`}
+              style={{
+                backgroundImage: `linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('${image}')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+              }}
+            >
+              <div className={slideOverlay} aria-hidden="true" />
+              <div className="relative z-10 max-w-2xl rounded-lg bg-black/24 p-6 backdrop-blur-md">
+                <span
+                  className={`mb-5 inline-flex rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.32em] ${badgeClass} backdrop-blur-sm`}
+                >
+                  {badge}
+                </span>
+                <h2 className="text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">{title}</h2>
+                <p className={`mt-5 max-w-xl text-base leading-7 sm:text-lg ${chipClass}/90`}>
+                  {description}
+                </p>
+                <div className={`mt-7 flex flex-wrap gap-3 text-sm ${chipClass}`}>
+                  {tags.map((tag) => (
+                    <span key={tag} className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div
-          className={`${slideClass} bg-linear-to-br from-slate-700 via-slate-800 to-slate-950`}
-          style={{
-            backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-2.png')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'left, top',
-            backgroundRepeat: 'no-repeat',
-          }}
-        >
-          <div className={slideOverlay} aria-hidden="true" />
-          <div className="relative z-10 max-w-2xl">
-            <span className="mb-5 inline-flex rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.32em] text-emerald-100 backdrop-blur-sm">
-              Off-grid autonomy
-            </span>
-            <h2 className="text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">Off - grid (Standalone)</h2>
-            <p className="mt-5 max-w-xl text-base leading-7 text-emerald-50/90 sm:text-lg">
-              Fully independent systems with PV + batteries + charge controller. Pros: complete autonomy for remote sites. Cons: higher upfront cost and careful energy management required.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3 text-sm text-emerald-50">
-              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5">Battery-backed</span>
-              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5">Remote-ready</span>
-            </div>
-          </div>
-        </div>
-
-        <div
-          className={`${slideClass} bg-linear-to-br from-slate-700 via-slate-800 to-slate-950`}
-          style={{
-            backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-3.png')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'left, top',
-            backgroundRepeat: 'no-repeat',
-          }}
-        >
-          <div className={slideOverlay} aria-hidden="true" />
-          <div className="relative z-10 max-w-2xl">
-            <span className="mb-5 inline-flex rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.32em] text-pink-100 backdrop-blur-sm">
-              Hybrid resilience
-            </span>
-            <h2 className="text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">Hybrid (Grid + Battery)</h2>
-            <p className="mt-5 max-w-xl text-base leading-7 text-pink-50/90 sm:text-lg">
-              PV plus battery storage with ability to work with the grid. Pros: backup power, time-shifting, demand management. Cons: more complex controls and higher cost than grid-only.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3 text-sm text-pink-50">
-              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5">Backup power</span>
-              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5">Smart control</span>
-            </div>
-          </div>
-        </div>
-
-        <div
-          className={`${slideClass} bg-linear-to-br from-slate-700 via-slate-800 to-slate-950`}
-          style={{
-            backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-4.png')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'left, top',
-            backgroundRepeat: 'no-repeat',
-          }}
-        >
-          <div className={slideOverlay} aria-hidden="true" />
-          <div className="relative z-10 max-w-2xl">
-            <span className="mb-5 inline-flex rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.32em] text-amber-50 backdrop-blur-sm">
-              Storage strategy
-            </span>
-            <h2 className="text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">Solar + Storage</h2>
-            <p className="mt-5 max-w-xl text-base leading-7 text-amber-50/90 sm:text-lg">
-              Architectures pairing batteries with PV. DC-coupled suits new installs; AC-coupled is great for retrofits. Choose based on efficiency and retrofit needs.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3 text-sm text-amber-50">
-              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5">DC-coupled</span>
-              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5">Retrofit-ready</span>
-            </div>
-          </div>
-        </div>
-
-        <div
-          className={`${slideClass} bg-linear-to-br from-slate-700 via-slate-800 to-slate-950`}
-          style={{
-            backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-5.png')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'left, top',
-            backgroundRepeat: 'no-repeat',
-          }}
-        >
-          <div className={slideOverlay} aria-hidden="true" />
-          <div className="relative z-10 max-w-2xl">
-            <span className="mb-5 inline-flex rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.32em] text-slate-100 backdrop-blur-sm">
-              Utility scale
-            </span>
-            <h2 className="text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">Commercial / Utility-scale</h2>
-            <p className="mt-5 max-w-xl text-base leading-7 text-slate-100/90 sm:text-lg">
-              Large ground-mounted arrays with trackers and centralized inverters. Pros: high output and economies of scale; often paired with large storage for grid services.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3 text-sm text-slate-100">
-              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5">High yield</span>
-              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5">Grid support</span>
-            </div>
-          </div>
-        </div>
-
-        <div
-          className={`${slideClass} bg-linear-to-br from-slate-700 via-slate-800 to-slate-950`}
-          style={{
-            backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-6.png')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'left, top',
-            backgroundRepeat: 'no-repeat',
-          }}
-        >
-          <div className={slideOverlay} aria-hidden="true" />
-          <div className="relative z-10 max-w-2xl">
-            <span className="mb-5 inline-flex rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.32em] text-violet-100 backdrop-blur-sm">
-              Shared energy
-            </span>
-            <h2 className="text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">Community / Microgrid</h2>
-            <p className="mt-5 max-w-xl text-base leading-7 text-violet-50/90 sm:text-lg">
-              Shared systems serving multiple customers or a local microgrid. Pros: pooled financing, resilience, and islanding capability; usually paired with storage and smart controls.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3 text-sm text-violet-50">
-              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5">Resilient</span>
-              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5">Shared value</span>
-            </div>
-          </div>
-        </div>
+          )
+        )}
       </Slider>
-      <Hero />
+      <About />
+      {/* <Hero />
       <HowItWorks />
       <Features />
       <SavoniusRotor />
@@ -181,7 +137,7 @@ export default function Home() {
       <WindGenerators />
       <Services />
       <WhyChooseUs />
-      <CTASection />
+      <CTASection /> */}
     </main>
   )
 }

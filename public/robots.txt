@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
 Disallow: /_next/
+Disallow: /api/
+
 Sitemap: https://aerosunenergy.in/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+Disallow: /_next/
+Disallow: /api/
