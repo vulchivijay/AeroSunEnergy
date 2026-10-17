@@ -53,7 +53,7 @@ export default function About() {
       <div className="mx-auto max-w-7xl">
         <Card className="relative overflow-hidden rounded-4xl border border-slate-200/80 bg-white/85 shadow-[0_30px_80px_-28px_rgba(15,23,42,0.18)] backdrop-blur-xl">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,197,94,0.12),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.12),transparent_32%)]" />
-          <CardContent className="relative space-y-8 p-6 sm:p-8 lg:p-10">
+          <CardContent className="relative space-y-8 p-3 md:p-6">
             <div className="flex flex-col gap-4 border-b border-slate-200 pb-5 lg:flex-row lg:items-center lg:justify-between">
               <div className="flex items-baseline justify-start gap-1">
                 <span className={`text-xl font-bold text-[#333333] tracking-wider drop-shadow-xl`}>About </span>
@@ -69,13 +69,13 @@ export default function About() {
             </div>
 
             <motion.div
-              className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center"
+              className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr] lg:items-center"
               initial={{ opacity: 0, scale: 0.96, y: 24 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, ease: 'easeOut' }}
             >
-              <div className="relative overflow-hidden rounded-4xl border border-slate-200 bg-slate-950 p-6 shadow-[0_24px_60px_-24px_rgba(15,23,42,0.8)]">
+              <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-slate-950 p-4 shadow-[0_24px_60px_-24px_rgba(15,23,42,0.8)]">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(45,212,191,0.35),transparent_20%),radial-gradient(circle_at_bottom_right,rgba(96,165,250,0.22),transparent_30%)]" />
                 <div className="relative space-y-5">
                   <span className="inline-flex rounded-full border border-emerald-300/40 bg-emerald-400/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-emerald-200">
