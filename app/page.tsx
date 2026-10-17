@@ -1,16 +1,17 @@
-import {
-  Hero,
-  HowItWorks,
-  Features,
-  SavoniusRotor,
-  UseCases,
-  Benefits,
-  WindGenerators,
-  Services,
-  WhyChooseUs,
-  CTASection,
-} from '@/app/components/sections'
+// import {
+//   Hero,
+//   HowItWorks,
+//   Features,
+//   SavoniusRotor,
+//   UseCases,
+//   Benefits,
+//   WindGenerators,
+//   Services,
+//   WhyChooseUs,
+//   CTASection,
+// } from '@/app/components/sections'
 import { Slider } from './components/ui'
+import About from './components/sections/About'
 
 export default function Home() {
   const slideClass =
@@ -27,12 +28,12 @@ export default function Home() {
           style={{
             backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-1.png')",
             backgroundSize: 'ccover cover',
-            backgroundPosition: 'left, top',
+            backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
           }}
         >
           <div className={slideOverlay} aria-hidden="true" />
-          <div className="relative z-10 max-w-2xl">
+          <div className="relative z-10 max-w-2xl bg-black/24 p-6 rounded-lg backdrop-blur-md">
             <span className="mb-5 inline-flex rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.32em] text-sky-100 backdrop-blur-sm">
               Grid-tied rooftop
             </span>
@@ -52,12 +53,12 @@ export default function Home() {
           style={{
             backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-2.png')",
             backgroundSize: 'cover',
-            backgroundPosition: 'left, top',
+            backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
           }}
         >
           <div className={slideOverlay} aria-hidden="true" />
-          <div className="relative z-10 max-w-2xl">
+          <div className="relative z-10 max-w-2xl bg-black/24 p-6 rounded-lg backdrop-blur-md">
             <span className="mb-5 inline-flex rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.32em] text-emerald-100 backdrop-blur-sm">
               Off-grid autonomy
             </span>
@@ -77,12 +78,12 @@ export default function Home() {
           style={{
             backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-3.png')",
             backgroundSize: 'cover',
-            backgroundPosition: 'left, top',
+            backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
           }}
         >
           <div className={slideOverlay} aria-hidden="true" />
-          <div className="relative z-10 max-w-2xl">
+          <div className="relative z-10 max-w-2xl bg-black/24 p-6 rounded-lg backdrop-blur-md">
             <span className="mb-5 inline-flex rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.32em] text-pink-100 backdrop-blur-sm">
               Hybrid resilience
             </span>
@@ -102,12 +103,12 @@ export default function Home() {
           style={{
             backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-4.png')",
             backgroundSize: 'cover',
-            backgroundPosition: 'left, top',
+            backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
           }}
         >
           <div className={slideOverlay} aria-hidden="true" />
-          <div className="relative z-10 max-w-2xl">
+          <div className="relative z-10 max-w-2xl bg-black/24 p-6 rounded-lg backdrop-blur-md">
             <span className="mb-5 inline-flex rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.32em] text-amber-50 backdrop-blur-sm">
               Storage strategy
             </span>
@@ -127,12 +128,12 @@ export default function Home() {
           style={{
             backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-5.png')",
             backgroundSize: 'cover',
-            backgroundPosition: 'left, top',
+            backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
           }}
         >
           <div className={slideOverlay} aria-hidden="true" />
-          <div className="relative z-10 max-w-2xl">
+          <div className="relative z-10 max-w-2xl bg-black/24 p-6 rounded-lg backdrop-blur-md">
             <span className="mb-5 inline-flex rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.32em] text-slate-100 backdrop-blur-sm">
               Utility scale
             </span>
@@ -152,12 +153,12 @@ export default function Home() {
           style={{
             backgroundImage: "linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('/images/slider/slider-6.png')",
             backgroundSize: 'cover',
-            backgroundPosition: 'left, top',
+            backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
           }}
         >
           <div className={slideOverlay} aria-hidden="true" />
-          <div className="relative z-10 max-w-2xl">
+          <div className="relative z-10 max-w-2xl bg-black/24 p-6 rounded-lg backdrop-blur-md">
             <span className="mb-5 inline-flex rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.32em] text-violet-100 backdrop-blur-sm">
               Shared energy
             </span>
@@ -172,7 +173,8 @@ export default function Home() {
           </div>
         </div>
       </Slider>
-      <Hero />
+      <About />
+      {/* <Hero />
       <HowItWorks />
       <Features />
       <SavoniusRotor />
@@ -181,7 +183,7 @@ export default function Home() {
       <WindGenerators />
       <Services />
       <WhyChooseUs />
-      <CTASection />
+      <CTASection /> */}
     </main>
   )
 }
