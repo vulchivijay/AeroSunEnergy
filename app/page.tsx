@@ -16,7 +16,7 @@ import About from './components/sections/About'
 const slides = [
   {
     badge: 'Grid-tied rooftop',
-    title: 'Grid - tied Rooftop',
+    title: 'Grid-tied Rooftop',
     description:
       'On-grid PV connected to the utility. Pros: lower cost (no batteries), net-metering, simple setup. Cons: no backup power during outages unless paired with storage.',
     tags: ['Lower Capex', 'Net Metering'],
@@ -27,7 +27,7 @@ const slides = [
   },
   {
     badge: 'Off-grid autonomy',
-    title: 'Off - grid (Standalone)',
+    title: 'Off-grid (Standalone)',
     description:
       'Fully independent systems with PV + batteries + charge controller. Pros: complete autonomy for remote sites. Cons: higher upfront cost and careful energy management required.',
     tags: ['Battery-backed', 'Remote-ready'],

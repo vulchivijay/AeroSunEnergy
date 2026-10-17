@@ -35,28 +35,6 @@ export default function Slider({ children, className = '', autoplay = false, int
   const viewportRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    let raf = 0
-    const updateHeaderVar = () => {
-      cancelAnimationFrame(raf)
-      raf = requestAnimationFrame(() => {
-        const header = document.querySelector('header') as HTMLElement | null
-        const headerHeight = header ? header.getBoundingClientRect().height : 0
-        document.documentElement.style.setProperty('--site-header-height', `${headerHeight}px`)
-      })
-    }
-
-    updateHeaderVar()
-    window.addEventListener('resize', updateHeaderVar)
-    window.addEventListener('orientationchange', updateHeaderVar)
-
-    return () => {
-      cancelAnimationFrame(raf)
-      window.removeEventListener('resize', updateHeaderVar)
-      window.removeEventListener('orientationchange', updateHeaderVar)
-    }
-  }, [])
-
-  useEffect(() => {
     const measure = () => {
       const vw = viewportRef.current
       setSlideWidth(vw ? vw.clientWidth : 0)
@@ -183,7 +161,7 @@ export default function Slider({ children, className = '', autoplay = false, int
       onPointerUp={onPointerUp}
       onPointerCancel={endDrag}
       className={`w-full relative overflow-hidden ${className}`}
-      style={{ height: 'calc(100vh - var(--site-header-height, 0px))' }}
+      style={{ minHeight: '420px', height: 'clamp(420px, 56vw, 760px)' }}
     >
       <div
         className={`h-full ${withTransition ? 'transition-transform duration-500 ease-in-out' : ''}`}

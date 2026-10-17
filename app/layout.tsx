@@ -7,6 +7,7 @@ import { LocaleProvider } from '@/lib/LocaleContext'
 import { Header, Footer, LordGanesha } from '@/app/components/layout'
 import { PerformanceMonitor } from '@/app/components/performance'
 import CookieConsent from '@/app/components/cookies/CookieConsent'
+import Notifications from '@/app/components/layout/Notifications'
 
 import './globals.css'
 
@@ -139,6 +140,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd />
         <PerformanceMonitor />
         <LocaleProvider>
+          <Notifications />
           <Header />
           <LordGanesha />
           {children}

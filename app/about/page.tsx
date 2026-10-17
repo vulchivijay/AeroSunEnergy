@@ -1,325 +1,545 @@
 'use client'
 
 import { motion } from '@/lib/motion'
-import { Card, CardContent } from '@/app/components/ui/Card'
-import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
 
-const featureIcons = [
-  (
-    <svg key="speed" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-800 dark:text-blue-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3l4 9H5l1 9 13-13h-6l2-5H5z" />
-    </svg>
-  ),
-  (
-    <svg key="savings" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-emerald-800 dark:text-emerald-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-  ),
-  (
-    <svg key="trust" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-amber-800 dark:text-amber-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-    </svg>
-  ),
+const companyStats = [
+  { label: 'Location', value: 'Tirupati, Andhra Pradesh' },
+  { label: 'Focus', value: 'Solar • Wind • Hybrid' },
+  { label: 'Service Scope', value: 'Residential to industrial' },
 ]
 
-const featureStyles = [
-  { cardBg: 'bg-blue-100/90 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700 hover:border-blue-500', iconBg: 'bg-blue-300 dark:bg-blue-800' },
-  { cardBg: 'bg-emerald-100/90 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700 hover:border-emerald-500', iconBg: 'bg-emerald-300 dark:bg-emerald-800' },
-  { cardBg: 'bg-amber-100/90 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700 hover:border-amber-500', iconBg: 'bg-amber-300 dark:bg-amber-800' },
+const coreValues = [
+  {
+    title: 'Sustainability',
+    description:
+      'We support the responsible adoption of renewable energy and seek to reduce dependence on conventional energy sources wherever practical.',
+  },
+  {
+    title: 'Integrity',
+    description:
+      'We aim to conduct business honestly, communicate transparently and make realistic commitments.',
+  },
+  {
+    title: 'Quality',
+    description:
+      'We seek to use appropriate equipment, sound engineering practices and systematic quality checks throughout project delivery.',
+  },
+  {
+    title: 'Innovation',
+    description:
+      'We encourage technologies that improve energy efficiency, reliability and system performance.',
+  },
+  {
+    title: 'Customer Focus',
+    description:
+      'We aim to understand each customer’s requirements and recommend solutions based on site conditions, budget and energy demand.',
+  },
+  {
+    title: 'Safety & Responsibility',
+    description:
+      'We prioritise electrical safety, suitable installation practices, equipment protection and compliance with applicable requirements.',
+  },
+  {
+    title: 'Continuous Improvement',
+    description:
+      'We aim to strengthen technical capabilities, service standards and operational processes as the company grows.',
+  },
 ]
 
-const coreValueStyles = [
-  'bg-blue-50 dark:bg-blue-900/20',
-  'bg-green-50 dark:bg-green-900/20',
-  'bg-yellow-50 dark:bg-yellow-900/20',
-  'bg-purple-50 dark:bg-purple-900/20',
-  'bg-pink-50 dark:bg-pink-900/20',
+const serviceGroups = [
+  {
+    title: 'Solar Energy Solutions',
+    accent: 'from-emerald-500 to-green-600',
+    items: [
+      'Residential rooftop solar systems',
+      'Commercial and industrial solar installations',
+      'On-grid and off-grid solar systems',
+      'Solar systems with battery storage',
+      'Solar water pumping for agriculture',
+      'Solar street lighting and selected off-grid applications',
+      'Maintenance, monitoring and upgrades',
+    ],
+  },
+  {
+    title: 'Wind Energy Solutions',
+    accent: 'from-sky-500 to-blue-600',
+    items: [
+      'Horizontal-axis wind turbines (HAWT)',
+      'Vertical-axis wind turbines (VAWT), where suitable',
+      'Small wind energy systems',
+      'Wind-powered water pumping and battery charging',
+      'Wind turbine installation and maintenance',
+      'Wind resource assessment and project feasibility',
+    ],
+  },
+  {
+    title: 'Hybrid Energy Solutions',
+    accent: 'from-violet-500 to-purple-600',
+    items: [
+      'Solar-wind hybrid systems',
+      'Solar-battery storage systems',
+      'Wind-battery storage systems',
+      'Residential and agricultural hybrid systems',
+      'Commercial and industrial hybrid installations',
+      'Renewable-energy microgrids',
+      'Energy management, monitoring and integration',
+    ],
+  },
 ]
 
-export default function About() {
-  const { t } = useLocale()
-  const a = t.about
+const currentGoals = [
+  'Establish the business infrastructure and statutory compliance foundations.',
+  'Develop a reliable supplier network for panels, inverters, turbines and batteries.',
+  'Build technical capabilities with engineers, electrical contractors and installation teams.',
+  'Launch initial service offerings in solar, battery and selected renewable projects.',
+  'Develop customer relationships through website, quotations and support processes.',
+  'Establish quality procedures for site assessment, commissioning and maintenance records.',
+  'Evaluate hybrid opportunities where solar and wind can be technically and economically viable.',
+]
 
-  const features = a.features.map((f, i) => ({
-    ...f,
-    icon: featureIcons[i],
-    ...featureStyles[i],
-  }))
+const futureGoals = [
+  {
+    title: 'Short-term',
+    items: [
+      'Establish initial customers and supplier relationships.',
+      'Develop residential and agricultural solar services.',
+      'Introduce structured maintenance and technical-support offerings.',
+      'Build a portfolio of verified installations and customer references.',
+    ],
+  },
+  {
+    title: 'Medium-term',
+    items: [
+      'Expand into commercial and industrial renewable-energy projects.',
+      'Develop solar-wind-battery integration capabilities.',
+      'Establish partnerships with manufacturers, engineering firms and project developers.',
+      'Investigate appropriate certifications and quality-management systems.',
+      'Explore energy monitoring and smart energy-management solutions.',
+    ],
+  },
+  {
+    title: 'Long-term',
+    items: [
+      'Expand renewable-energy services across additional Indian markets.',
+      'Develop proprietary products if technically and commercially feasible.',
+      'Evaluate wind turbine and hybrid-system research and development.',
+      'Explore manufacturing opportunities subject to investment, testing and compliance requirements.',
+      'Participate in larger renewable-energy projects through qualified teams and strategic partnerships.',
+    ],
+  },
+]
 
+const whyChooseUs = [
+  'Integrated renewable-energy options across solar, wind and hybrid systems.',
+  'Solutions tailored to energy demand, available space, site conditions and budget.',
+  'Practical energy planning with transparent discussion of generation, storage and backup assumptions.',
+  'Support beyond installation through commissioning, maintenance and troubleshooting.',
+  'Options designed for households, farms, commercial establishments and industrial facilities.',
+  'A long-term sustainability focus aligned to operational and environmental goals.',
+]
+
+const qualityPoints = [
+  'Equipment selection from appropriate manufacturers and suppliers.',
+  'Design verification for capacity, generation, compatibility and installation conditions.',
+  'Quality installation, testing and commissioning before handover.',
+  'Documentation covering warranties, operating instructions and maintenance information.',
+  'After-sales support for troubleshooting, maintenance and warranty coordination.',
+  'Continuous improvement through performance review and better processes.',
+]
+
+const ethicsPoints = [
+  'Honesty and transparency in quotations, specifications and commitments.',
+  'Fair pricing and realistic performance assumptions.',
+  'Safety-first practices with qualified personnel and compliant installation methods.',
+  'Legal compliance across corporate, tax, electrical, environmental and consumer obligations.',
+  'Responsible sourcing and dependable supplier selection.',
+  'Customer privacy and careful handling of project data.',
+  'Environmental responsibility across equipment choice, battery handling and lifecycle planning.',
+]
+
+const approvalRows = [
+  ['Certificate of Incorporation and CIN', 'Establishes the company’s legal identity', 'Incorporated, according to information provided'],
+  ['Company PAN', 'Tax identification', 'Obtained, according to prior conversation'],
+  ['TAN', 'Tax deduction and collection compliance where applicable', 'Status to confirm'],
+  ['GST registration', 'Required when applicable under GST law', 'Must verify current status'],
+  ['Udyam/MSME registration', 'MSME recognition if eligible', 'Status not confirmed'],
+  ['DPIIT Startup Recognition', 'Startup India recognition if eligible', 'Status not confirmed'],
+  ['Trademark registration', 'Protects the company brand and eligible marks', 'Status not confirmed'],
+]
+
+const officialResources = [
+  { label: 'MNRE', href: 'https://mnre.gov.in/' },
+  { label: 'NREDCAP', href: 'https://nredcap.in/' },
+  { label: 'APERC', href: 'https://www.aperc.gov.in/' },
+  { label: 'Startup India', href: 'https://www.startupindia.gov.in/' },
+  { label: 'Udyam Registration', href: 'https://udyamregistration.gov.in/' },
+]
+
+const promisePoints = [
+  'To become a trusted renewable-energy solutions provider in India.',
+  'To deliver practical, innovative and sustainable solar, wind and hybrid systems.',
+  'To empower households, agricultural communities, businesses and industries with informed renewable-energy decisions.',
+]
+
+const missionPoints = [
+  'Promoting the adoption of solar and wind energy.',
+  'Developing integrated solar-wind hybrid solutions where technically suitable.',
+  'Helping customers understand their energy requirements and available technologies.',
+  'Delivering carefully designed and professionally executed projects.',
+  'Providing ongoing maintenance and technical support.',
+  'Encouraging energy efficiency and responsible resource utilisation.',
+]
+
+export default function AboutPage() {
   return (
-    <section id="about" className="px-4 sm:px-2 lg:p-12 bg-white dark:bg-gray-950 overflow-hidden">
-      {/* relative grid w-full grid-cols-1 items-center gap-7 lg:grid-cols-[1.08fr_0.92fr] */}
-      {/* About Section */}
-      <div className="mx-auto max-w-7xl">
-        <Card>
-          <CardContent className="space-y-8">
-            <h2 className="text-xl font-bold">
-              <span className="text-3xl ml-1 font-semibold bg-clip-text bg-linear-to-r from-blue-800 via-blue-700 to-blue-600 drop-shadow-xl text-transparent tracking-wider">Aero</span>
-              <span className="text-3xl ml-1 font-semibold bg-clip-text bg-linear-to-r from-green-800 via-green-700 to-green-600 drop-shadow-xl text-transparent tracking-wider">Sun</span>
-              <span className="ml-1 uppercase text-yellow-600 font-semibold text-xl tracking-wider">Energy</span>
-            </h2>
+    <main className="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45 }}
+          className="overflow-hidden rounded-[30px] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-sky-50 shadow-[0_30px_80px_-40px_rgba(16,185,129,0.35)] dark:border-slate-800 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950"
+        >
+          <div className="grid gap-8 p-6 lg:grid-cols-[1.12fr_0.88fr] lg:p-10">
+            <div className="space-y-6">
+              <div className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-emerald-700 dark:border-emerald-700/40 dark:bg-emerald-500/10 dark:text-emerald-300">
+                Company Profile
+              </div>
 
-            {/* Founder Image */}
+              <div className="space-y-4">
+                <h1 className="text-4xl font-black leading-none tracking-[-0.04em] text-slate-900 sm:text-5xl dark:text-white">
+                  AEROSUN ENERGY
+                </h1>
+                <p className="text-lg font-semibold uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">
+                  Private Limited
+                </p>
+                <p className="max-w-xl text-lg text-slate-700 dark:text-slate-300">
+                  Solar Energy • Wind Energy • Hybrid Renewable Energy
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-emerald-200 bg-white/80 p-4 shadow-sm dark:border-emerald-900/50 dark:bg-slate-900/70">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">
+                  Tagline
+                </p>
+                <p className="mt-2 text-xl font-medium italic text-slate-800 dark:text-slate-100">
+                  “Harnessing Nature. Empowering Tomorrow.”
+                </p>
+              </div>
+
+              <p className="max-w-2xl text-base leading-8 text-slate-700 dark:text-slate-300">
+                AeroSun Energy Private Limited is an Indian renewable-energy company established with the vision of supporting a cleaner, more sustainable and energy-efficient future. Based in Tirupati, Andhra Pradesh, the company aims to develop renewable-energy solutions for residential, agricultural, commercial and industrial customers.
+              </p>
+
+              <div className="grid gap-4 sm:grid-cols-3">
+                {companyStats.map((stat) => (
+                  <div key={stat.label} className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900/75">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+                      {stat.label}
+                    </p>
+                    <p className="mt-2 text-base font-semibold text-slate-900 dark:text-white">{stat.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative flex items-center justify-center">
+              <div className="absolute inset-0 rounded-4xl bg-linear-to-br from-emerald-200/60 via-sky-100/60 to-violet-200/60 blur-3xl dark:from-emerald-500/10 dark:via-sky-500/10 dark:to-violet-500/10" />
+              <div className="relative w-full max-w-md rounded-[28px] border border-white/60 bg-white/80 p-4 shadow-[0_24px_80px_-30px_rgba(16,185,129,0.45)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-900/80">
+                <div className="relative overflow-hidden rounded-[22px] border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800">
+                  <div className="relative h-90 w-full">
+                    <OptimizedImage
+                      src="/images/founder-aerosunenergy.png"
+                      alt="Mr. Vulchi Vijaya Kumar, Founder of AeroSun Energy"
+                      fill
+                      sizes="(min-width: 1024px) 36vw, 90vw"
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-5 space-y-3">
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <p className="text-lg font-semibold text-slate-900 dark:text-white">Mr. Vulchi Vijaya Kumar</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-300">Founder and Director</p>
+                    </div>
+                    <div className="rounded-full bg-emerald-100 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
+                      Visionary
+                    </div>
+                  </div>
+                  <p className="text-sm leading-7 text-slate-700 dark:text-slate-300">
+                    Through AeroSun Energy, the company aims to pursue opportunities in solar energy, wind energy and hybrid renewable-energy systems while building a customer-focused organisation grounded in quality, reliability, responsible business practices and continuous improvement.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-emerald-600 dark:text-emerald-400">
+              About the Founder
+            </p>
+            <h2 className="mt-3 text-3xl font-bold text-slate-900 dark:text-white">Building a cleaner future with purpose</h2>
+
+            <div className="mt-5 space-y-4 text-base leading-8 text-slate-700 dark:text-slate-300">
+              <p>
+                Mr. Vulchi Vijaya Kumar is associated with the establishment of AeroSun Energy Private Limited, a company focused on renewable-energy opportunities and sustainable power solutions.
+              </p>
+              <p>
+                The founder’s vision is to help make renewable-energy solutions more accessible to households, farmers, businesses and industries, while developing a company capable of growing alongside India’s evolving clean-energy sector.
+              </p>
+              <p className="rounded-2xl border border-amber-200 bg-amber-50 p-4 text-amber-900 dark:border-amber-500/30 dark:bg-amber-500/10 dark:text-amber-100">
+                This profile is based on company information shared in conversation. Specific qualifications, professional experience, technical achievements and completed projects have not been independently established, so they are not claimed here.
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-[30px] border border-slate-200 bg-linear-to-br from-slate-900 to-slate-800 p-6 text-white shadow-[0_28px_80px_-40px_rgba(15,23,42,0.9)] dark:border-slate-700">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-emerald-300">Our promise</p>
+            <h3 className="mt-3 text-3xl font-bold">Reliable, efficient and environmentally responsible energy choices.</h3>
+            <div className="mt-6 space-y-4">
+              {promisePoints.map((point) => (
+                <div key={point} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
+                  <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                  <p className="text-sm leading-7 text-slate-200">{point}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="mb-6">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-sky-600 dark:text-sky-400">Vision & mission</p>
+          <h2 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">Purpose-led growth for a resilient energy future</h2>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          <div className="rounded-[28px] border border-sky-200 bg-sky-50 p-6 dark:border-sky-900/50 dark:bg-sky-950/30">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-sky-700 dark:text-sky-300">Vision</p>
+            <h3 className="mt-3 text-2xl font-bold text-slate-900 dark:text-white">A cleaner and more energy-resilient future</h3>
+            <p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
+              To become a trusted renewable-energy solutions provider in India, delivering practical, innovative and sustainable solar, wind and hybrid energy systems that contribute to a cleaner environment and a more energy-resilient future.
+            </p>
+          </div>
+
+          <div className="rounded-[28px] border border-emerald-200 bg-emerald-50 p-6 dark:border-emerald-900/50 dark:bg-emerald-950/30">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-emerald-700 dark:text-emerald-300">Mission</p>
+            <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
+              {missionPoints.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="mt-2 inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="mb-6">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-violet-600 dark:text-violet-400">Core values</p>
+          <h2 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">The principles guiding every decision</h2>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {coreValues.map((value, index) => (
             <motion.div
-              className="w-full relative flex flex-col items-center lg:flex-row gap-4 md:gap-16 md:p-6"
-              initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
-              whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+              key={value.title}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.28, delay: index * 0.05 }}
+              className="rounded-[26px] border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900"
             >
-              {/* Floating Energy Particles */}
-              <div className="absolute inset-0 pointer-events-none">
-                <motion.div
-                  className="absolute top-4 left-8 w-2 h-2 bg-accent rounded-full opacity-60"
-                  animate={{
-                    y: [-10, 10, -10],
-                    x: [-5, 5, -5],
-                    scale: [1, 1.2, 1]
-                  }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                />
-                <motion.div
-                  className="absolute top-12 right-6 w-1.5 h-1.5 bg-primary rounded-full opacity-70"
-                  animate={{
-                    y: [10, -10, 10],
-                    x: [5, -5, 5],
-                    scale: [1.2, 1, 1.2]
-                  }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                />
-                <motion.div
-                  className="absolute bottom-8 left-12 w-1 h-1 bg-secondary rounded-full opacity-50"
-                  animate={{
-                    y: [-8, 8, -8],
-                    x: [-3, 3, -3],
-                    scale: [1, 1.3, 1]
-                  }}
-                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                />
+              <div className="mb-4 inline-flex rounded-full bg-slate-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-700 dark:bg-slate-800 dark:text-slate-200">
+                {index + 1}
               </div>
-
-              <div className="relative group">
-                {/* Hexagonal Frame */}
-                <div className="absolute inset-0 transform rotate-30 scale-110">
-                  <div className="w-full h-full bg-gradient-to-br from-primary/20 via-accent/30 to-secondary/20 rounded-lg blur-sm"></div>
-                </div>
-                <div className="absolute inset-0 transform rotate-30 scale-105">
-                  <div className="w-full h-full border-2 border-primary/40 rounded-lg animate-square-box"></div>
-                </div>
-
-                {/* Main Image Container */}
-                <div className="relative w-36 h-36 lg:w-44 lg:h-44 overflow-hidden transform transition-transform duration-300 group-hover:scale-105">
-                  {/* Energy Rays Background */}
-                  <div className="absolute inset-0 bg-gradient-radial from-accent/10 via-transparent to-transparent animate-spin" style={{ animationDuration: '20s' }}></div>
-                  <OptimizedImage
-                    src="/images/founder-aerosunenergy.png"
-                    alt="Vulchi Vijaya Kumar - Founder of AeroSun Energy"
-                    fill
-                    sizes="(min-width: 1024px) 176px, 144px"
-                    className="object-cover rounded-lg shadow-2xl"
-                    loading="eager"
-                  />
-
-                  {/* Overlay Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-accent/10 rounded-lg"></div>
-                </div>
-
-                {/* Turbine Blade Accents */}
-                <motion.div
-                  className="absolute -top-3 -right-3 w-10 h-10 text-accent"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                >
-                  <svg viewBox="0 0 24 24" fill="purple">
-                    <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" />
-                  </svg>
-                </motion.div>
-                <motion.div
-                  className="absolute -bottom-2 -left-2 w-6 h-6 text-secondary"
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "linear", delay: 1 }}
-                >
-                  <svg viewBox="0 0 24 24" fill="blue">
-                    <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" />
-                  </svg>
-                </motion.div>
-
-                {/* Achievement Badge */}
-                <div className="absolute bottom-2 right-2 rounded-full w-8 h-8 flex items-center justify-center border-2 border-gray-100">
-                  <svg className="w-4 h-4" fill="#fef9c2" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                </div>
-              </div>
-
-              <div className="text-center lg:text-left relative z-10 lg:flex-1">
-                <motion.h3
-                  className="text-2xl font-medium text-gray-900 dark:text-white mt-12"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.4 }}
-                >
-                  {a.founder.name}
-                </motion.h3>
-                <motion.p
-                  className="text-lg text-gray-600 dark:text-gray-400 mb-1"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.5 }}
-                >
-                  {a.founder.title}
-                </motion.p>
-                <motion.p
-                  className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-12"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.6 }}
-                >
-                  {a.founder.bio}
-                </motion.p>
-              </div>
-
-              <div className="flex items-center mb-12">
-                <div className="relative h-40 w-40 rounded-full bg-white p-2 shadow-2xl backdrop-blur-sm dark:bg-white dark:shadow-[0_30px_80px_-40px_rgba(16,185,129,0.2)]">
-                  <div className="absolute inset-0 rounded-full border-5 border-green-300 animate-rise-glow"></div>
-                  <div className="absolute inset-0 rounded-full border-4 border-blue-300 animate-rise-glow" style={{ animationDelay: '0.5s' }}></div>
-                  <div className="absolute inset-0 rounded-full border-3 border-purple-300 animate-rise-glow" style={{ animationDelay: '1s' }}></div>
-                  <OptimizedImage
-                    src="/images/lord-shiva-aerosunenergy.png"
-                    alt="Lord Shiva"
-                    fill
-                    sizes="160px"
-                    className="relative z-10 rounded-full object-contain"
-                    loading="eager"
-                  />
-                </div>
-              </div>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white">{value.title}</h3>
+              <p className="mt-3 text-base leading-7 text-slate-700 dark:text-slate-300">{value.description}</p>
             </motion.div>
+          ))}
+        </div>
+      </section>
 
-            <p className="text-lg text-gray-900 dark:text-gray-100 leading-relaxed">
-              {a.paragraph1}
-            </p>
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="mb-6">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-emerald-600 dark:text-emerald-400">Products & services</p>
+          <h2 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">A comprehensive renewable-energy portfolio</h2>
+        </div>
 
-            <p className="text-lg text-gray-900 dark:text-gray-100 leading-relaxed">
-              {a.paragraph2}
-            </p>
+        <div className="grid gap-5 lg:grid-cols-3">
+          {serviceGroups.map((group) => (
+            <div key={group.title} className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div className={`mb-4 h-1.5 rounded-full bg-linear-to-r ${group.accent}`} />
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{group.title}</h3>
+              <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
+                {group.items.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="mt-2 inline-flex h-2.5 w-2.5 rounded-full bg-slate-900 dark:bg-white" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
 
-            <p className="inline-flex p-3 bg-green-600 rounded-sm shadow-sm">
-              <span className="text-lg text-slate-100">{a.quote}</span>
-            </p>
-          </CardContent>
-        </Card>
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-amber-600 dark:text-amber-400">Licences, registrations and approvals</p>
+            <h2 className="mt-3 text-3xl font-bold text-slate-900 dark:text-white">Responsible growth requires compliance</h2>
 
-        {/* Core Values */}
-        <div>
-          <h3 className="text-3xl font-semibold dark:text-gray-100 my-12">{a.coreValuesHeading}</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {a.coreValues.map((value, i) => (
-              <Card key={value.title} className={coreValueStyles[i]}>
-                <CardContent className="space-y-2">
-                  <h4 className="text-xl font-semibold uppercase text-gray-900 dark:text-gray-100">{value.title}</h4>
-                  <p className="text-lg text-gray-700 dark:text-gray-300">{value.desc}</p>
-                </CardContent>
-              </Card>
+            <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
+              <table className="min-w-full divide-y divide-slate-200 text-left text-sm dark:divide-slate-700">
+                <thead className="bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-white">
+                  <tr>
+                    <th className="px-4 py-3 font-semibold">Registration or approval</th>
+                    <th className="px-4 py-3 font-semibold">Purpose</th>
+                    <th className="px-4 py-3 font-semibold">Status</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200 bg-white dark:divide-slate-700 dark:bg-slate-900">
+                  {approvalRows.map(([name, purpose, status]) => (
+                    <tr key={name}>
+                      <td className="px-4 py-3 text-slate-700 dark:text-slate-300">{name}</td>
+                      <td className="px-4 py-3 text-slate-700 dark:text-slate-300">{purpose}</td>
+                      <td className="px-4 py-3 text-slate-700 dark:text-slate-300">{status}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <div className="rounded-[30px] border border-amber-200 bg-amber-50 p-6 dark:border-amber-900/40 dark:bg-amber-950/30">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-amber-700 dark:text-amber-300">Quality commitment</p>
+              <h3 className="mt-3 text-2xl font-bold text-slate-900 dark:text-white">Standards that support trust</h3>
+              <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
+                {qualityPoints.map((point) => (
+                  <li key={point} className="flex gap-3">
+                    <span className="mt-2 inline-flex h-2.5 w-2.5 rounded-full bg-amber-500" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-[30px] border border-rose-200 bg-rose-50 p-6 dark:border-rose-900/40 dark:bg-rose-950/20">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-rose-700 dark:text-rose-300">Business ethics</p>
+              <h3 className="mt-3 text-2xl font-bold text-slate-900 dark:text-white">Responsible conduct for lasting relationships</h3>
+              <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
+                {ethicsPoints.map((point) => (
+                  <li key={point} className="flex gap-3">
+                    <span className="mt-2 inline-flex h-2.5 w-2.5 rounded-full bg-rose-500" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-teal-600 dark:text-teal-400">Why choose us</p>
+          <h2 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">A customer-focused and technically responsible approach</h2>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {whyChooseUs.map((reason) => (
+              <div key={reason} className="rounded-3xl border border-teal-200 bg-teal-50 p-5 text-base leading-7 text-slate-700 dark:border-teal-900/50 dark:bg-teal-950/20 dark:text-slate-300">
+                {reason}
+              </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="mx-auto max-w-7xl pt-12">
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-        >
-          <span className="text-secondary uppercase tracking-widest text-lg text-gray-900 dark:text-gray-100">{a.techBadge}</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-900 dark:text-gray-100">
-            {a.techHeading}
-          </h2>
-          <div className="mt-4 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary" />
-        </motion.div>
-
-        <div className="grid grid-cols-1 gap-6 rounded-[2.25rem] md:border md:border-white/60 md:bg-white/75 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-800 lg:grid-cols-[0.95fr_1.05fr]">
-          <motion.div
-            className="rounded-md shadow-md px-6 lg:px-8 py-8 text-gray-900 dark:text-gray-100"
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-          >
-            <p className="text-lg font-semibold uppercase tracking-[0.32em]">{a.techIntegratedBadge}</p>
-            <h3 className="mt-4 max-w-lg text-2xl leading-tight sm:text-3xl">
-              {a.techSubheading}
-            </h3>
-            <p className="mt-6 text-lg leading-relaxed mb-6">
-              {a.techPara1}
-            </p>
-            <p className="text-lg leading-relaxed mb-6">
-              {a.techPara2}
-            </p>
-            <p className="text-lg leading-relaxed">
-              {a.techPara3}
-            </p>
-
-            <div className="mt-8 grid gap-4">
-              {a.techPoints.map((point, i) => (
-                <div key={i} className="rounded-md shadow-2xl border border-white/24 bg-white/24 p-4 backdrop-blur-md">
-                  <p className="text-3xl font-bold">0{i + 1}</p>
-                  <p className="mt-2 text-lg">{point}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.2, delay: 0.1 }}
-          >
-            <div className="relative min-h-96 md:aspect-4/3 overflow-hidden rounded-md bg-gray-100 shadow-md ring-1 ring-gray-200 dark:bg-gray-900 dark:ring-gray-100">
-              <OptimizedImage
-                src="/images/hybrid-solar-wind -energy.png"
-                alt="Smart VAWT hybrid technology deployment by AeroSun Energy"
-                fill
-                sizes="(min-width: 1024px) 44vw, 92vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-slate-950/60 via-transparent to-transparent" aria-hidden="true" />
-              <div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white backdrop-blur-md">
-                {a.techImageBadge}
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 p-3 bg-green-500/25 backdrop-blur-sm">
-                <p className="text-lg text-white">
-                  {a.techImageCaption}
-                </p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 gap-6">
-              {features.map((f) => (
-                <div
-                  key={f.title}
-                  className={`flex flex-col items-center rounded-md border p-6 text-center shadow-md transition-all duration-150 hover:-translate-y-1 hover:shadow-lg ${f.cardBg}`}
-                >
-                  <div className={`mb-4 rounded-md p-3 shadow-sm ${f.iconBg}`}>
-                    {f.icon}
-                  </div>
-                  <h3 className="text-xl text-gray-900 dark:text-gray-100 mb-2">{f.title}</h3>
-                  <p className="text-lg text-gray-500 dark:text-gray-100">{f.desc}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="mb-6">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-indigo-600 dark:text-indigo-400">Current & future goals</p>
+          <h2 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">Growth built on strong foundations</h2>
         </div>
-      </div>
-    </section>
+
+        <div className="grid gap-5 lg:grid-cols-2">
+          <div className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white">Current goals</h3>
+            <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
+              {currentGoals.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="mt-2 inline-flex h-2.5 w-2.5 rounded-full bg-indigo-500" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="grid gap-5">
+            {futureGoals.map((track) => (
+              <div key={track.title} className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">{track.title} goals</h3>
+                <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
+                  {track.items.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="mt-2 inline-flex h-2.5 w-2.5 rounded-full bg-indigo-500" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 pb-12 sm:px-6 lg:px-8">
+        <div className="rounded-[30px] border border-slate-200 bg-linear-to-br from-slate-900 via-slate-950 to-emerald-950 p-6 text-white shadow-[0_28px_80px_-40px_rgba(16,185,129,0.55)] dark:border-slate-700">
+          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-emerald-300">Company profile summary</p>
+              <h2 className="mt-3 text-3xl font-bold">AeroSun Energy Private Limited</h2>
+              <p className="mt-4 text-base leading-8 text-slate-200">
+                AeroSun Energy Private Limited is an Indian renewable-energy company based in Tirupati, Andhra Pradesh, with a focus on solar energy, wind energy and hybrid renewable-energy solutions.
+              </p>
+              <p className="mt-4 text-base leading-8 text-slate-200">
+                The company aims to serve residential, agricultural, commercial and industrial customers through energy consultation, system design, equipment supply, installation, commissioning, maintenance and energy-system integration, subject to applicable requirements.
+              </p>
+              <p className="mt-4 text-base leading-8 text-slate-200">
+                Guided by its vision of a cleaner and more energy-resilient future, AeroSun seeks to build its business around sustainability, innovation, quality, integrity, safety and customer satisfaction.
+              </p>
+            </div>
+
+            <div className="rounded-[26px] border border-white/10 bg-white/5 p-5">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald-300">Official resources</p>
+              <ul className="mt-4 space-y-3 text-base leading-7 text-slate-200">
+                {officialResources.map((resource) => (
+                  <li key={resource.label}>
+                    <a href={resource.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm hover:border-emerald-300 hover:text-emerald-200">
+                      {resource.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-emerald-400/20 bg-emerald-500/10 p-4 text-lg font-medium italic text-emerald-50">
+            AeroSun Energy Private Limited — Harnessing Nature. Empowering Tomorrow.
+          </div>
+        </div>
+      </section>
+    </main>
   )
 }
