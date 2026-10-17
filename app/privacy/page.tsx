@@ -32,44 +32,54 @@ export const metadata: Metadata = {
 
 const sections = [
   {
-    heading: '1. Information we collect',
+    heading: '1. What information we collect',
     content:
-      'We may collect personal information you provide directly, such as your name, email address, phone number, company information, and project requirements when you contact us, request a consultation, or submit an inquiry.',
+      'We collect information that you choose to share with us, such as your name, phone number, email address, business or project details, and your questions about solar, wind, or hybrid energy systems. We may also collect technical information about how the website is used, such as browser type, device information, pages visited, and general location data when needed for analytics and security.',
   },
   {
     heading: '2. How we use your information',
     content:
-      'We use your information to respond to your queries, provide quotations, discuss renewable energy solutions, improve customer service, and maintain website security. We may also use information to comply with legal and regulatory obligations.',
+      'We use your information to respond to your inquiries, prepare quotations, understand your energy requirements, contact you about potential solutions, improve customer service, and maintain the security and performance of our website. We may also use your information to comply with applicable legal, tax, and regulatory obligations.',
   },
   {
     heading: '3. Cookies and website analytics',
     content:
-      'Our website uses cookies and similar technologies to remember preferences, support essential website functionality, and understand user interactions with our services. You can manage or decline optional cookies through the cookie banner displayed on the site.',
+      'Our website uses cookies and similar technologies to remember user settings, improve website performance, support essential functionality, and understand how visitors use our site. Some cookies are necessary for the website to work properly. Optional cookies may be used for analytics and improvement purposes, and you can manage them through the cookie banner or browser settings.',
   },
   {
-    heading: '4. Data sharing',
+    heading: '4. Who we share information with',
     content:
-      'We do not sell personal data. We may share information with trusted service providers who support hosting, communications, analytics, or operational needs, subject to confidentiality obligations.',
+      'We do not sell your personal information. We may share information with trusted service providers who help us operate the website, send emails, support customer communication, or manage technical services. These parties are expected to handle information responsibly and use it only for the services they provide to AeroSun Energy.',
   },
   {
-    heading: '5. Data security',
+    heading: '5. Data retention and deletion',
     content:
-      'We use commercially reasonable administrative, technical, and organizational safeguards to protect personal information from unauthorized access, misuse, or disclosure. No method of transmission or storage is completely secure, however.',
+      'We keep personal information only for as long as needed to serve the purpose for which it was collected, meet legal obligations, resolve disputes, and maintain business records. If you ask us to delete your personal data, we will review the request and delete it where legally permitted and practically feasible.',
   },
   {
-    heading: '6. Your rights',
+    heading: '6. How we protect your data',
     content:
-      'Depending on applicable data protection laws, you may have the right to request access, correction, deletion, or restriction of your personal information, as well as the right to object to certain processing activities. You may also withdraw consent for non-essential cookies at any time.',
+      'We use reasonable technical, administrative, and organizational safeguards to protect personal information from unauthorized access, loss, misuse, or disclosure. However, no online system is completely risk-free, and we cannot guarantee absolute security of information transmitted over the internet.',
   },
   {
-    heading: '7. Retention',
+    heading: '7. Your rights',
     content:
-      'We retain personal information only as long as necessary to fulfill the purposes described in this policy, comply with legal obligations, resolve disputes, and enforce agreements.',
+      'Depending on the applicable law, you may have rights to access, correct, update, restrict, or delete your personal information. You may also object to some uses of your information and withdraw consent for optional cookies or other non-essential processing where consent is required. If you want to exercise any of these rights, please contact us using the details below.',
   },
   {
-    heading: '8. Contact us',
+    heading: '8. Third-party links',
     content:
-      'If you have questions about this Privacy Policy or your personal information, please contact us through the contact form or the contact details listed on our website.',
+      'Our website may include links to external websites such as government portals, renewable energy resources, or partner platforms. We are not responsible for the privacy practices or content of these third-party websites. Please review their policies before sharing any information with them.',
+  },
+  {
+    heading: '9. Changes to this policy',
+    content:
+      'We may update this Privacy Policy from time to time to reflect changes in our business, legal requirements, or how we operate the website. Any changes will be posted on this page with a revised effective date. Continued use of the website after changes are posted means that you accept the updated version.',
+  },
+  {
+    heading: '10. Contact us',
+    content:
+      'If you have any questions about this Privacy Policy, your personal information, or how we handle cookies, please use the contact details available on our contact page or email us through the official contact information listed on the website.',
   },
 ]
 
@@ -85,7 +95,7 @@ export default function PrivacyPage() {
       </h1>
       <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-700">
         This Privacy Policy explains how AeroSun Energy collects, uses, protects, and manages
-        information shared through our website and communications.
+        information shared through our website, email communication, and service enquiries.
       </p>
 
       <div className="mt-10 space-y-8">
@@ -105,7 +115,7 @@ export default function PrivacyPage() {
         <Link href="/terms" className="font-semibold text-sky-700 hover:text-sky-800">
           Terms and Conditions
         </Link>{' '}
-        for more information about the rules governing website usage.
+        for more information about the rules for using our website and requesting services.
       </div>
     </main>
   )

@@ -112,14 +112,14 @@ export default function LordGanesha() {
       <div className="relative z-10 w-full max-w-xl rounded-2xl bg-white p-6 text-gray-900 shadow-[0_25px_80px_rgba(0,0,0,0.25)] dark:bg-gray-800 dark:text-gray-100">
         <button
           aria-label="Close Lord Ganesha modal"
-          className="absolute right-3 top-3 rounded-full p-2 text-gray-600 transition-colors hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
+          className="cursor absolute right-3 top-3 rounded-md p-2 text-gray-600 transition-colors hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
           onClick={dismiss}
         >
           ✕
         </button>
 
-        <div className="flex flex-col items-center gap-3 text-center">
-          <div className="overflow-hidden rounded-full border border-orange-200 bg-orange-50 p-3 shadow-sm dark:border-orange-700 dark:bg-orange-950/30">
+        <div className="flex flex-col items-center gap-1 text-center">
+          <div className="overflow-hidden rounded-full border border-orange-200 bg-orange-50 p-6 shadow-sm dark:border-orange-700 dark:bg-orange-950/30">
             <Image
               src="/images/lordganesha.png"
               alt="Lord Ganesha"
@@ -130,15 +130,15 @@ export default function LordGanesha() {
             />
           </div>
 
-          <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
-          <p className="max-w-md text-sm leading-6 text-gray-600 dark:text-gray-300">
+          <h2 className="text-3xl font-semibold tracking-tight">{title}</h2>
+          <p className="max-w-md text-md leading-6 text-gray-600 dark:text-gray-300">
             Welcome to AeroSun Energy. May this blessing bring clarity, success, and prosperity to your renewable energy journey.
           </p>
 
-          <div className="mt-2 flex w-full items-center justify-center gap-3">
+          <div className="mt-2 flex w-full items-center justify-center gap-1">
             <button
               onClick={dismiss}
-              className="rounded-full bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-orange-500"
+              className="cursor rounded-md bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-orange-500"
             >
               Close
             </button>

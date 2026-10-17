@@ -138,24 +138,6 @@ export default function Footer() {
 									</Link>
 								</li>
 							))}
-							<li>
-								<Link
-									href="/terms"
-									className="inline-flex items-center gap-2 text-sm text-slate-700 transition-all duration-200 hover:translate-x-1 hover:text-[#20A44A] dark:text-slate-300 dark:hover:text-[#F59E0B]"
-								>
-									<span className="h-1.5 w-1.5 rounded-full bg-[#F59E0B]" aria-hidden="true" />
-									Terms & Conditions
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="/privacy"
-									className="inline-flex items-center gap-2 text-sm text-slate-700 transition-all duration-200 hover:translate-x-1 hover:text-[#20A44A] dark:text-slate-300 dark:hover:text-[#F59E0B]"
-								>
-									<span className="h-1.5 w-1.5 rounded-full bg-[#F59E0B]" aria-hidden="true" />
-									Privacy Policy
-								</Link>
-							</li>
 						</ul>
 					</div>
 
@@ -200,7 +182,22 @@ export default function Footer() {
 			</div>
 
 			<div className="w-full border-t border-[#20A44A]/10 bg-[#18251F] py-4 text-center text-sm text-white/90 dark:border-slate-700 dark:bg-slate-900">
-				<div className="flex w-full flex-col items-center justify-between gap-2 px-4 text-center sm:px-6 lg:flex-row lg:justify-end lg:px-8">
+				<div className="flex w-full flex-col items-center justify-between gap-2 px-4 text-center sm:px-6 lg:flex-row lg:justify-between lg:px-8">
+					<div className="flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-[0.18em] text-slate-300">
+						<Link
+							href="/terms"
+							className="transition-colors duration-200 hover:text-white"
+						>
+							Terms & Conditions
+						</Link>
+						<span className="text-slate-500">|</span>
+						<Link
+							href="/privacy"
+							className="transition-colors duration-200 hover:text-white"
+						>
+							Privacy Policy
+						</Link>
+					</div>
 					<p>
 						{footer.copyright}. {footer.allRightsReserved}
 					</p>

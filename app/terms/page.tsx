@@ -34,42 +34,52 @@ const sections = [
   {
     heading: '1. Acceptance of terms',
     content:
-      'By accessing or using the AeroSun Energy website, you agree to be bound by these Terms and Conditions and any policies referenced herein. If you do not agree, please do not use our website or request services from us.',
+      'By using this website, you agree to follow these Terms and Conditions and any related policies posted on the site. If you do not agree with these terms, please do not use the website or contact us through it.',
   },
   {
-    heading: '2. Information and service scope',
+    heading: '2. About the information on this website',
     content:
-      'AeroSun Energy provides information about renewable energy systems, including solar, wind, and hybrid solutions. Any proposal, design, estimate, or project execution remains subject to technical feasibility, site conditions, local regulations, utility approval, and commercial terms agreed in writing.',
+      'AeroSun Energy provides information about renewable energy solutions, including solar, wind, and hybrid systems. This information is intended for general awareness and planning purposes. It does not replace professional engineering judgment, site assessment, local regulations, or formal quotations prepared after review of project requirements.',
   },
   {
-    heading: '3. User responsibilities',
+    heading: '3. Service enquiries and project discussions',
     content:
-      'Users are responsible for ensuring that any information they submit is accurate, complete, and lawful. You must not use the website for any illegal, harmful, or abusive purpose, including attempts to interfere with the operation, security, or integrity of our systems.',
+      'Any enquiry, consultation request, design discussion, quotation, or project execution remains subject to technical feasibility, site conditions, utility approvals, product availability, commercial terms, and applicable laws. We may request additional information before preparing a project proposal or proceeding with any service engagement.',
   },
   {
-    heading: '4. Intellectual property',
+    heading: '4. User responsibilities',
     content:
-      'All trademarks, logos, product names, text, imagery, and content displayed on this website are the property of AeroSun Energy or their respective owners and may not be used without prior written consent.',
+      'Users must ensure that any information submitted through the website is accurate, lawful, and relevant to the enquiry. You agree not to misuse the site, upload harmful content, attempt unauthorized access, or interfere with the website or other users’ experiences.',
   },
   {
-    heading: '5. Limitation of liability',
+    heading: '5. Intellectual property',
     content:
-      'AeroSun Energy strives to provide accurate and useful information, but the website is provided on an "as is" basis. We do not guarantee that the website will be uninterrupted, error-free, or completely free from security threats. To the fullest extent allowed by law, we disclaim liability for indirect, incidental, or consequential losses arising from website use or service discussions.',
+      'All content, branding, text, graphics, layouts, logos, product names, and visual materials used on this website remain the property of AeroSun Energy or their respective owners unless stated otherwise. You may not copy, reproduce, distribute, or use this content without prior written approval.',
   },
   {
-    heading: '6. Changes to terms',
+    heading: '6. Website availability and accuracy',
     content:
-      'AeroSun Energy reserves the right to modify these Terms and Conditions at any time. Continued use of the website after such changes are posted means you accept the updated terms.',
+      'We aim to keep the website accessible and up to date, but we do not guarantee that it will always be uninterrupted, error-free, or free from technical issues. Information may change without notice. We encourage users to verify critical details before making decisions based on website content.',
   },
   {
-    heading: '7. Governing law',
+    heading: '7. Limitation of liability',
     content:
-      'These Terms and Conditions are governed by the laws of India and the applicable jurisdiction for AeroSun Energy operations, without regard to conflict-of-law principles.',
+      'To the maximum extent permitted by law, AeroSun Energy shall not be liable for any direct, indirect, incidental, consequential, or special damages arising out of or related to website use, service enquiries, or reliance on information provided on the site. We do not guarantee project outcomes, energy production values, or commercial results without a formal agreement and technical review.',
   },
   {
-    heading: '8. Contact information',
+    heading: '8. Links to external websites',
     content:
-      'For questions or concerns regarding these Terms and Conditions, please contact us through the contact form on the website or via the official contact details listed on the site.',
+      'This website may contain links to third-party platforms, government portals, resource websites, or partner websites. We do not control or assume responsibility for these external resources. Accessing them is at your own risk, and you should review their own terms and privacy policies before sharing any information.',
+  },
+  {
+    heading: '9. Changes to these terms',
+    content:
+      'AeroSun Energy may update these Terms and Conditions from time to time. Any updated version will be posted on this page and will become effective as soon as it is published. Continued use of the website after changes are made means you accept the updated terms.',
+  },
+  {
+    heading: '10. Governing law and contact',
+    content:
+      'These Terms and Conditions are governed by the laws of India, without regard to conflict-of-law principles. If you have a question about these terms or need clarification, please use the contact details provided on the website so we can assist you directly.',
   },
 ]
 
@@ -82,7 +92,8 @@ export default function TermsPage() {
 
       <h1 className="text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">Terms and Conditions</h1>
       <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-700">
-        Welcome to the AeroSun Energy website. By using this site, you agree to comply with these terms and conditions.
+        These Terms and Conditions explain how you may use our website and how we handle general information,
+        enquiries, and service discussions related to renewable energy solutions.
       </p>
 
       <div className="mt-10 space-y-8">

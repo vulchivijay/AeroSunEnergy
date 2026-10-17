@@ -35,28 +35,6 @@ export default function Slider({ children, className = '', autoplay = false, int
   const viewportRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    let raf = 0
-    const updateHeaderVar = () => {
-      cancelAnimationFrame(raf)
-      raf = requestAnimationFrame(() => {
-        const header = document.querySelector('header') as HTMLElement | null
-        const headerHeight = header ? header.getBoundingClientRect().height : 0
-        document.documentElement.style.setProperty('--site-header-height', `${headerHeight}px`)
-      })
-    }
-
-    updateHeaderVar()
-    window.addEventListener('resize', updateHeaderVar)
-    window.addEventListener('orientationchange', updateHeaderVar)
-
-    return () => {
-      cancelAnimationFrame(raf)
-      window.removeEventListener('resize', updateHeaderVar)
-      window.removeEventListener('orientationchange', updateHeaderVar)
-    }
-  }, [])
-
-  useEffect(() => {
     const measure = () => {
       const vw = viewportRef.current
       setSlideWidth(vw ? vw.clientWidth : 0)
@@ -183,7 +161,7 @@ export default function Slider({ children, className = '', autoplay = false, int
       onPointerUp={onPointerUp}
       onPointerCancel={endDrag}
       className={`w-full relative overflow-hidden ${className}`}
-      style={{ height: 'calc(100vh - var(--site-header-height, 0px))' }}
+      style={{ minHeight: '420px', height: 'clamp(420px, 56vw, 760px)' }}
     >
       <div
         className={`h-full ${withTransition ? 'transition-transform duration-500 ease-in-out' : ''}`}
@@ -212,18 +190,24 @@ export default function Slider({ children, className = '', autoplay = false, int
         ›
       </button>
 
-      <div className="absolute left-1/2 bottom-6 z-20 flex -translate-x-1/2 items-center gap-3">
-        {slidesArray.map((_, i) => {
-          const isActive = activeRealIndex === i
-          return (
-            <button
-              key={i}
-              onClick={() => goToSlide(i)}
-              aria-label={`Go to slide ${i + 1}`}
-              className={`h-2 ${isActive ? 'w-10' : 'w-6'} rounded-full transition-all ${isActive ? 'bg-white' : 'bg-white/40 hover:bg-white/60'}`}
-            />
-          )
-        })}
+      <div className="absolute inset-x-0 bottom-3 z-20 flex justify-center px-3 sm:bottom-5">
+        <div className="flex max-w-[calc(100vw-2.5rem)] flex-wrap items-center justify-center gap-1.5 sm:gap-2.5">
+          {slidesArray.map((_, i) => {
+            const isActive = activeRealIndex === i
+            return (
+              <button
+                key={i}
+                onClick={() => goToSlide(i)}
+                aria-label={`Go to slide ${i + 1}`}
+                className={`rounded-full transition-all duration-300 ${
+                  isActive
+                    ? 'h-2 w-5 bg-white sm:h-2.5 sm:w-8'
+                    : 'h-2 w-2 bg-white/40 hover:bg-white/60 sm:h-2.5 sm:w-2.5'
+                }`}
+              />
+            )
+          })}
+        </div>
       </div>
     </div>
   )
