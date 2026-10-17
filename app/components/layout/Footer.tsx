@@ -84,7 +84,7 @@ export default function Footer() {
 	return (
 		<footer
 			id="contact"
-			className="w-full overflow-hidden border-t border-[#20A44A]/10 bg-[radial-gradient(circle_at_top,_rgba(32,164,74,0.10),_transparent_40%),linear-gradient(180deg,#f9fdf9_0%,#eef8f1_100%)] text-slate-800 shadow-[0_-12px_35px_-28px_rgba(15,23,42,0.35)] dark:border-slate-700 dark:bg-[radial-gradient(circle_at_top,_rgba(245,158,11,0.12),_transparent_35%),linear-gradient(180deg,#020817_0%,#0f172a_100%)] dark:text-slate-100"
+			className="w-full overflow-hidden border-t border-[#20A44A]/10 bg-[radial-gradient(circle_at_top,rgba(32,164,74,0.10),transparent_40%),linear-gradient(180deg,#f9fdf9_0%,#eef8f1_100%)] text-slate-800 shadow-[0_-12px_35px_-28px_rgba(15,23,42,0.35)] dark:border-slate-700 dark:bg-[radial-gradient(circle_at_top,rgba(245,158,11,0.12),transparent_35%),linear-gradient(180deg,#020817_0%,#0f172a_100%)] dark:text-slate-100"
 		>
 			<div className="w-full px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 				<div className="grid w-full gap-8 md:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr]">
@@ -138,6 +138,24 @@ export default function Footer() {
 									</Link>
 								</li>
 							))}
+							<li>
+								<Link
+									href="/terms"
+									className="inline-flex items-center gap-2 text-sm text-slate-700 transition-all duration-200 hover:translate-x-1 hover:text-[#20A44A] dark:text-slate-300 dark:hover:text-[#F59E0B]"
+								>
+									<span className="h-1.5 w-1.5 rounded-full bg-[#F59E0B]" aria-hidden="true" />
+									Terms & Conditions
+								</Link>
+							</li>
+							<li>
+								<Link
+									href="/privacy"
+									className="inline-flex items-center gap-2 text-sm text-slate-700 transition-all duration-200 hover:translate-x-1 hover:text-[#20A44A] dark:text-slate-300 dark:hover:text-[#F59E0B]"
+								>
+									<span className="h-1.5 w-1.5 rounded-full bg-[#F59E0B]" aria-hidden="true" />
+									Privacy Policy
+								</Link>
+							</li>
 						</ul>
 					</div>
 

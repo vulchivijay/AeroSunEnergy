@@ -6,6 +6,7 @@ import { ThemeBootstrap } from '@/app/components/theme'
 import { LocaleProvider } from '@/lib/LocaleContext'
 import { Header, Footer, LordGanesha } from '@/app/components/layout'
 import { PerformanceMonitor } from '@/app/components/performance'
+import CookieConsent from '@/app/components/cookies/CookieConsent'
 
 import './globals.css'
 
@@ -121,20 +122,15 @@ export const metadata: Metadata = {
       'Clean, affordable solar and wind energy solutions for homes, businesses, and industries across India.',
     images: ['/images/og-image.png'],
   },
-  verification: BING_SITE_VERIFICATION
-    ? {
-        other: {
-          'msvalidate.01': BING_SITE_VERIFICATION,
-        },
-      }
-    : undefined,
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
+    other: {
+      'msvalidate.01': BING_SITE_VERIFICATION,
+    },
+  },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={`${roboto.variable} ${poppins.variable} bg-white text-gray-900 transition-colors duration-150 dark:bg-gray-950 dark:text-gray-100`}>
@@ -147,6 +143,7 @@ export default function RootLayout({
           <LordGanesha />
           {children}
           <Footer />
+          <CookieConsent />
         </LocaleProvider>
       </body>
     </html>
