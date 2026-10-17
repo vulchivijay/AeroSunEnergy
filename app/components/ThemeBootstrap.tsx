@@ -6,15 +6,18 @@ export default function ThemeBootstrap() {
   useEffect(() => {
     try {
       const html = document.documentElement
-      const theme = localStorage.getItem('theme')
+      const savedTheme = localStorage.getItem('theme')
 
-      if (theme === 'dark') {
+      if (savedTheme === 'dark') {
         html.classList.add('dark')
-      } else {
-        html.classList.remove('dark')
+        return
       }
+
+      html.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
     } catch {
       // Ignore storage access failures.
+      document.documentElement.classList.remove('dark')
     }
   }, [])
 
