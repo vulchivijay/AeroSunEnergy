@@ -40,7 +40,7 @@ export default function ResearchDevelopmentPage() {
   return (
     <main className="bg-[radial-gradient(circle_at_top,_rgba(16,185,129,0.12),_transparent_30%),linear-gradient(180deg,#f8fafc_0%,#f1f5f9_100%)] text-slate-900 dark:bg-[radial-gradient(circle_at_top,_rgba(16,185,129,0.18),_transparent_30%),linear-gradient(180deg,#020817_0%,#0f172a_100%)] dark:text-white">
       <section className="mx-auto max-w-7xl px-4 pb-8 pt-10 sm:px-6 lg:px-8 lg:pt-14">
-        <div className="overflow-hidden rounded-[2rem] border border-emerald-200/80 bg-white/70 shadow-[0_35px_90px_-35px_rgba(16,185,129,0.55)] backdrop-blur-xl dark:border-slate-700/80 dark:bg-slate-900/70">
+        <div className="relative overflow-hidden rounded-[2rem] border border-emerald-200/80 bg-white/70 shadow-[0_35px_90px_-35px_rgba(16,185,129,0.55)] backdrop-blur-xl dark:border-slate-700/80 dark:bg-slate-900/70">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.14),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.12),_transparent_30%)]" />
           <div className="relative grid gap-8 p-6 sm:p-8 lg:grid-cols-[1.2fr_0.8fr] lg:p-12">
             <div>
@@ -88,8 +88,7 @@ export default function ResearchDevelopmentPage() {
             label: 'Test cycles',
             value: '1,200+',
             tone: 'violet',
-          },
-          }.map((stat) => (
+          }}.map((stat) => (
             <div key={stat.label} className="rounded-[1.5rem] border border-white/60 bg-white/65 p-5 shadow-[0_18px_40px_-26px_rgba(15,23,42,0.45)] backdrop-blur-md dark:border-slate-700/80 dark:bg-slate-900/75">
               <p className="text-[10px] font-bold uppercase tracking-[0.26em] text-slate-500 dark:text-slate-400">{stat.label}</p>
               <p className="mt-3 text-3xl font-black text-slate-900 dark:text-white">{stat.value}</p>
