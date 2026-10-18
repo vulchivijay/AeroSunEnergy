@@ -22,6 +22,11 @@ const researchItems: ResearchItem[] = Array.from({ length: 180 }, (_, index) => 
 export default function ResearchDevelopmentPage() {
   const [currentPage, setCurrentPage] = useState(1)
   const pageSize = 6
+  const stats = [
+    { label: 'Live pilots', value: '24+', tone: 'emerald' },
+    { label: 'Efficiency gains', value: '18–32%', tone: 'sky' },
+    { label: 'Test cycles', value: '1,200+', tone: 'violet' },
+  ]
 
   const pageNumbers = useMemo(() => {
     const start = Math.max(1, currentPage - 2)
@@ -74,21 +79,7 @@ export default function ResearchDevelopmentPage() {
 
       <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
         <div className="grid gap-4 md:grid-cols-3">
-          {{
-            label: 'Live pilots',
-            value: '24+',
-            tone: 'emerald',
-          },
-          {
-            label: 'Efficiency gains',
-            value: '18–32%',
-            tone: 'sky',
-          },
-          {
-            label: 'Test cycles',
-            value: '1,200+',
-            tone: 'violet',
-          }}.map((stat) => (
+          {stats.map((stat) => (
             <div key={stat.label} className="rounded-[1.5rem] border border-white/60 bg-white/65 p-5 shadow-[0_18px_40px_-26px_rgba(15,23,42,0.45)] backdrop-blur-md dark:border-slate-700/80 dark:bg-slate-900/75">
               <p className="text-[10px] font-bold uppercase tracking-[0.26em] text-slate-500 dark:text-slate-400">{stat.label}</p>
               <p className="mt-3 text-3xl font-black text-slate-900 dark:text-white">{stat.value}</p>
