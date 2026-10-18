@@ -8,6 +8,7 @@ import { Header, Footer, LordGanesha } from '@/app/components/layout'
 import { PerformanceMonitor } from '@/app/components/performance'
 import CookieConsent from '@/app/components/cookies/CookieConsent'
 import Notifications from '@/app/components/layout/Notifications'
+import { SaveEarthBadge } from '@/app/components/ui'
 
 import './globals.css'
 
@@ -146,6 +147,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <Footer />
           <CookieConsent />
+          <SaveEarthBadge />
         </LocaleProvider>
       </body>
     </html>
