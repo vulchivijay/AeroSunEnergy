@@ -114,7 +114,15 @@ export default function Footer() {
 								>
 									🌐
 								</span>
-								{footer.website}
+								<Link
+									href={footer.website?.startsWith('http') ? footer.website : `https://${footer.website}`}
+									className="transition-colors duration-150 hover:underline"
+									target="_self"
+									rel="nofollow"
+									aria-label={`Visit ${footer.website}`}
+								>
+									{footer.website}
+								</Link>
 							</p>
 							<p className="flex items-center gap-2">
 								<span
@@ -123,7 +131,15 @@ export default function Footer() {
 								>
 									🌐
 								</span>
-								{footer.trust}
+								<Link
+									href={footer.trust?.startsWith('http') ? footer.trust : `https://${footer.trust}`}
+									className="transition-colors duration-150 hover:underline"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label={`Visit ${footer.trust} (opens in new tab)`}
+								>
+									{footer.trust}
+								</Link>
 							</p>
 						</div>
 					</div>
