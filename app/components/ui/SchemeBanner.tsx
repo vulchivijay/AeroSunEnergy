@@ -4,8 +4,8 @@ import { useEffect, useMemo, useState } from 'react'
 
 const TARGET_DATE = new Date('2027-03-31T23:59:59+05:30')
 
-function getTimeParts(target: Date) {
-  const diff = Math.max(target.getTime() - Date.now(), 0)
+function getTimeParts(target: Date, now: number) {
+  const diff = Math.max(target.getTime() - now, 0)
   const totalSeconds = Math.floor(diff / 1000)
   const days = Math.floor(totalSeconds / 86400)
   const hours = Math.floor((totalSeconds % 86400) / 3600)
@@ -19,18 +19,19 @@ function getTimeParts(target: Date) {
 }
 
 export default function SchemeBanner() {
-  const [now, setNow] = useState(Date.now())
+  const [now, setNow] = useState<number | null>(null)
 
   useEffect(() => {
-    const interval = window.setInterval(() => {
-      setNow(Date.now())
-    }, 1000)
+    const updateNow = () => setNow(Date.now())
+    updateNow()
 
+    const interval = window.setInterval(updateNow, 1000)
     return () => window.clearInterval(interval)
   }, [])
 
   const stats = useMemo(() => {
-    const parts = getTimeParts(TARGET_DATE)
+    const referenceNow = now ?? TARGET_DATE.getTime()
+    const parts = getTimeParts(TARGET_DATE, referenceNow)
     return [
       { label: 'Days', value: parts.days },
       { label: 'Hours', value: parts.hours },

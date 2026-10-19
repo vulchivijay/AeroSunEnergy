@@ -10,6 +10,7 @@
 //   WhyChooseUs,
 //   CTASection,
 // } from '@/app/components/sections'
+import About from './components/sections/About'
 import {
   BenefitCard,
   CapacityTable,
@@ -22,6 +23,7 @@ import {
   InfoPanel,
   SchemeBanner,
   SectionEyebrow,
+  Slider,
   WindBenefitCard,
   WindCapacityTable,
   WindFeatureCard,
@@ -97,127 +99,127 @@ const slides = [
     chipClass: 'text-violet-50',
     panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
   },
-  {
-    badge: 'Horizontal-axis wind',
-    title: 'Horizontal-Axis Wind Turbines (HAWT)',
-    description:
-      'Three-blade propeller turbines designed for efficient wind capture, common in commercial and utility-scale deployments where consistent wind resource is available.',
-    tags: ['High efficiency', 'Utility-scale', 'Directional alignment'],
-    image: '/images/slider/slider-7.png',
-    badgeClass: 'text-sky-100',
-    chipClass: 'text-sky-50',
-    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
-  },
-  {
-    badge: 'Vertical-axis wind',
-    title: 'Vertical-Axis Wind Turbines',
-    description:
-      'Rotor designs that accept wind from multiple directions, useful in compact sites and noise-sensitive areas where simplicity and adaptability matter.',
-    tags: ['Multi-directional', 'Compact footprint', 'Flexible siting'],
-    image: '/images/slider/slider-8.png',
-    badgeClass: 'text-emerald-100',
-    chipClass: 'text-emerald-50',
-    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
-  },
-  {
-    badge: 'Grid-connected power',
-    title: 'Grid-connected system wind energy',
-    description:
-      'Wind generation tied to the utility network allows energy offset, reduced demand charges, and smoother integration with local grid infrastructure.',
-    tags: ['Net metering', 'Grid tied', 'On-site generation'],
-    image: '/images/slider/slider-9.png',
-    badgeClass: 'text-cyan-100',
-    chipClass: 'text-cyan-50',
-    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
-  },
-  {
-    badge: 'Independent power',
-    title: 'Off-grid system',
-    description:
-      'Standalone wind systems with battery support provide independent electricity for remote homes, telecom stations, and sites without reliable utility access.',
-    tags: ['Battery backup', 'Remote-ready', 'Autonomous supply'],
-    image: '/images/slider/slider-10.png',
-    badgeClass: 'text-amber-100',
-    chipClass: 'text-amber-50',
-    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
-  },
-  {
-    badge: 'Battery storage',
-    title: 'Wind–battery',
-    description:
-      'Energy storage pairs with wind generation to smooth output, supply power during calm periods, and improve efficiency for critical or irregular loads.',
-    tags: ['Load shifting', 'Backup reserve', 'Stability support'],
-    image: '/images/slider/slider-11.png',
-    badgeClass: 'text-violet-100',
-    chipClass: 'text-violet-50',
-    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
-  },
-  {
-    badge: 'Scalable power',
-    title: 'Below 1 kW, 1–10 kW, 10–100 kW, 100 kW–1 MW, 1 MW',
-    description:
-      'Wind systems scale across micro, small, medium, commercial, and utility-size categories to match load demand, site conditions, and operating goals.',
-    tags: ['Micro to utility', 'Right-sized system', 'Capacity planning'],
-    image: '/images/slider/slider-12.png',
-    badgeClass: 'text-orange-100',
-    chipClass: 'text-orange-50',
-    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
-  },
-  {
-    badge: 'Home hybrid',
-    title: 'Residential solar-wind hybrid systems',
-    description:
-      'Hybrid systems combine solar PV with wind generation to improve energy resilience at homes and residential communities with seasonal or variable generation patterns.',
-    tags: ['Home resilience', 'Solar + wind', 'Reduced dependence'],
-    image: '/images/slider/slider-13.png',
-    badgeClass: 'text-emerald-100',
-    chipClass: 'text-emerald-50',
-    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
-  },
-  {
-    badge: 'Farm hybrid',
-    title: 'Agricultural solar-wind hybrid systems',
-    description:
-      'Farm-ready hybrid systems support irrigation, cold storage, pumps, and rural operations by combining solar generation with wind power and backup storage.',
-    tags: ['Agriculture use', 'Water pumping', 'Rural reliability'],
-    image: '/images/slider/slider-14.png',
-    badgeClass: 'text-amber-100',
-    chipClass: 'text-amber-50',
-    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
-  },
-  {
-    badge: 'Commercial backup',
-    title: 'Off-grid commercial hybrid systems',
-    description:
-      'Independent hybrid power plants for commercial operations provide continuity, reduce diesel dependence, and support critical loads in remote or unstable areas.',
-    tags: ['Critical loads', 'Off-grid', 'Business continuity'],
-    image: '/images/slider/slider-15.png',
-    badgeClass: 'text-rose-100',
-    chipClass: 'text-rose-50',
-    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
-  },
-  {
-    badge: 'Business grid',
-    title: 'Commercial grid-connected hybrid systems',
-    description:
-      'Grid-linked hybrid systems pair solar and wind with storage to manage peak demand, lower utility costs, and improve operational resilience for businesses.',
-    tags: ['Demand reduction', 'Grid-linked', 'Business savings'],
-    image: '/images/slider/slider-16.png',
-    badgeClass: 'text-sky-100',
-    chipClass: 'text-sky-50',
-    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
-  },
-  {
-    badge: 'Microgrid network',
-    title: 'Hybrid microgrids',
-    description:
-      'Localized energy networks connect multiple generation sources, storage, and loads to maintain power stability for communities, campuses, and industrial sites.',
-    tags: ['Local resilience', 'Multiple sources', 'Smart control'],
-    image: '/images/slider/slider-17.png',
-    badgeClass: 'text-violet-100',
-    chipClass: 'text-violet-50',
-    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
-  },
+  // {
+  //   badge: 'Horizontal-axis wind',
+  //   title: 'Horizontal-Axis Wind Turbines (HAWT)',
+  //   description:
+  //     'Three-blade propeller turbines designed for efficient wind capture, common in commercial and utility-scale deployments where consistent wind resource is available.',
+  //   tags: ['High efficiency', 'Utility-scale', 'Directional alignment'],
+  //   image: '/images/slider/slider-7.png',
+  //   badgeClass: 'text-sky-100',
+  //   chipClass: 'text-sky-50',
+  //   panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  // },
+  // {
+  //   badge: 'Vertical-axis wind',
+  //   title: 'Vertical-Axis Wind Turbines',
+  //   description:
+  //     'Rotor designs that accept wind from multiple directions, useful in compact sites and noise-sensitive areas where simplicity and adaptability matter.',
+  //   tags: ['Multi-directional', 'Compact footprint', 'Flexible siting'],
+  //   image: '/images/slider/slider-8.png',
+  //   badgeClass: 'text-emerald-100',
+  //   chipClass: 'text-emerald-50',
+  //   panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  // },
+  // {
+  //   badge: 'Grid-connected power',
+  //   title: 'Grid-connected system wind energy',
+  //   description:
+  //     'Wind generation tied to the utility network allows energy offset, reduced demand charges, and smoother integration with local grid infrastructure.',
+  //   tags: ['Net metering', 'Grid tied', 'On-site generation'],
+  //   image: '/images/slider/slider-9.png',
+  //   badgeClass: 'text-cyan-100',
+  //   chipClass: 'text-cyan-50',
+  //   panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  // },
+  // {
+  //   badge: 'Independent power',
+  //   title: 'Off-grid system',
+  //   description:
+  //     'Standalone wind systems with battery support provide independent electricity for remote homes, telecom stations, and sites without reliable utility access.',
+  //   tags: ['Battery backup', 'Remote-ready', 'Autonomous supply'],
+  //   image: '/images/slider/slider-10.png',
+  //   badgeClass: 'text-amber-100',
+  //   chipClass: 'text-amber-50',
+  //   panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  // },
+  // {
+  //   badge: 'Battery storage',
+  //   title: 'Wind–battery',
+  //   description:
+  //     'Energy storage pairs with wind generation to smooth output, supply power during calm periods, and improve efficiency for critical or irregular loads.',
+  //   tags: ['Load shifting', 'Backup reserve', 'Stability support'],
+  //   image: '/images/slider/slider-11.png',
+  //   badgeClass: 'text-violet-100',
+  //   chipClass: 'text-violet-50',
+  //   panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  // },
+  // {
+  //   badge: 'Scalable power',
+  //   title: 'Below 1 kW, 1–10 kW, 10–100 kW, 100 kW–1 MW, 1 MW',
+  //   description:
+  //     'Wind systems scale across micro, small, medium, commercial, and utility-size categories to match load demand, site conditions, and operating goals.',
+  //   tags: ['Micro to utility', 'Right-sized system', 'Capacity planning'],
+  //   image: '/images/slider/slider-12.png',
+  //   badgeClass: 'text-orange-100',
+  //   chipClass: 'text-orange-50',
+  //   panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  // },
+  // {
+  //   badge: 'Home hybrid',
+  //   title: 'Residential solar-wind hybrid systems',
+  //   description:
+  //     'Hybrid systems combine solar PV with wind generation to improve energy resilience at homes and residential communities with seasonal or variable generation patterns.',
+  //   tags: ['Home resilience', 'Solar + wind', 'Reduced dependence'],
+  //   image: '/images/slider/slider-13.png',
+  //   badgeClass: 'text-emerald-100',
+  //   chipClass: 'text-emerald-50',
+  //   panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  // },
+  // {
+  //   badge: 'Farm hybrid',
+  //   title: 'Agricultural solar-wind hybrid systems',
+  //   description:
+  //     'Farm-ready hybrid systems support irrigation, cold storage, pumps, and rural operations by combining solar generation with wind power and backup storage.',
+  //   tags: ['Agriculture use', 'Water pumping', 'Rural reliability'],
+  //   image: '/images/slider/slider-14.png',
+  //   badgeClass: 'text-amber-100',
+  //   chipClass: 'text-amber-50',
+  //   panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  // },
+  // {
+  //   badge: 'Commercial backup',
+  //   title: 'Off-grid commercial hybrid systems',
+  //   description:
+  //     'Independent hybrid power plants for commercial operations provide continuity, reduce diesel dependence, and support critical loads in remote or unstable areas.',
+  //   tags: ['Critical loads', 'Off-grid', 'Business continuity'],
+  //   image: '/images/slider/slider-15.png',
+  //   badgeClass: 'text-rose-100',
+  //   chipClass: 'text-rose-50',
+  //   panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  // },
+  // {
+  //   badge: 'Business grid',
+  //   title: 'Commercial grid-connected hybrid systems',
+  //   description:
+  //     'Grid-linked hybrid systems pair solar and wind with storage to manage peak demand, lower utility costs, and improve operational resilience for businesses.',
+  //   tags: ['Demand reduction', 'Grid-linked', 'Business savings'],
+  //   image: '/images/slider/slider-16.png',
+  //   badgeClass: 'text-sky-100',
+  //   chipClass: 'text-sky-50',
+  //   panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  // },
+  // {
+  //   badge: 'Microgrid network',
+  //   title: 'Hybrid microgrids',
+  //   description:
+  //     'Localized energy networks connect multiple generation sources, storage, and loads to maintain power stability for communities, campuses, and industrial sites.',
+  //   tags: ['Local resilience', 'Multiple sources', 'Smart control'],
+  //   image: '/images/slider/slider-17.png',
+  //   badgeClass: 'text-violet-100',
+  //   chipClass: 'text-violet-50',
+  //   panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  // },
 ]
 
 export default function Home() {
@@ -229,9 +231,43 @@ export default function Home() {
 
   return (
     <main>
+      <Slider autoplay interval={5000} pauseOnHover>
+        {slides.map((slide) => (
+          <div key={slide.title} className={`${slide.panelClass} relative h-full w-full overflow-hidden`}>
+            <div className="absolute inset-0">
+              <div
+                className="h-full w-full bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: `url(${slide.image})`, filter: 'saturate(1.05) brightness(0.72)' }}
+              />
+            </div>
+            <div className={`${slideOverlay} absolute inset-0`} />
+            <div className={slideClass}>
+              <span className={`mb-4 inline-flex rounded-full border border-white/15 bg-white/8 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.28em] ${slide.badgeClass}`}>
+                {slide.badge}
+              </span>
+              <h1 className="max-w-3xl text-4xl font-black tracking-[-0.06em] text-white sm:text-5xl lg:text-[4.2rem]">
+                {slide.title}
+              </h1>
+              <p className="mt-5 max-w-2xl text-base leading-7 text-slate-100 sm:text-lg">
+                {slide.description}
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {slide.tags.map((tag) => (
+                  <span key={tag} className={`rounded-full border border-white/15 bg-white/8 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] ${slide.chipClass}`}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </Slider>
+
       <SchemeBanner />
 
-      <section className="mx-auto max-w-[1400px] px-4 py-12 sm:px-6 lg:px-10">
+      <About />
+      {/* Solar Section */}
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
         <div className="mb-8">
           <SectionEyebrow>What We Offer</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-4xl">
@@ -441,8 +477,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section className="mx-auto max-w-[1400px] px-4 py-12 sm:px-6 lg:px-10">
+      {/* Wind Energy Section */}
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
         <div className="mb-8">
           <WindSectionEyebrow>Wind Energy</WindSectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-4xl">
@@ -524,8 +560,8 @@ export default function Home() {
           />
         </div>
       </section>
-
-      <section className="mx-auto max-w-[1400px] px-4 py-12 sm:px-6 lg:px-10">
+      {/* Hybrid Energy Section */}
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
         <div className="mb-8">
           <HybridSectionEyebrow>Hybrid Energy</HybridSectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-4xl">
@@ -605,7 +641,6 @@ export default function Home() {
           />
         </div>
       </section>
-
       <SolarCalculator />
     </main>
   )
