@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Poppins, Roboto } from 'next/font/google'
 import { GoogleTagManager } from '@next/third-parties/google'
 import { JsonLd } from '@/app/components/seo'
-import { ThemeBootstrap } from '@/app/components/theme'
 import { LocaleProvider } from '@/lib/LocaleContext'
 import { Header, Footer, LordGanesha } from '@/app/components/layout'
 import { PerformanceMonitor } from '@/app/components/performance'
@@ -135,9 +134,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} ${poppins.variable} bg-white text-gray-900 transition-colors duration-150 dark:bg-gray-950 dark:text-gray-100`}>
+      <body className={`${roboto.variable} ${poppins.variable} bg-white text-gray-900 transition-colors duration-150`}>
         {GTM_ID ? <GoogleTagManager gtmId={GTM_ID} /> : null}
-        <ThemeBootstrap />
         <JsonLd />
         <PerformanceMonitor />
         <LocaleProvider>
