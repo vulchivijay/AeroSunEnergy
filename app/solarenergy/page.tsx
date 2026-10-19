@@ -1,4 +1,13 @@
-import { OptimizedImage, Slider } from '../components/ui'
+import {
+  CapacityTable,
+  FeatureCard,
+  BenefitCard,
+  InfoPanel,
+  OptimizedImage,
+  SectionEyebrow,
+  Slider,
+  SubsidyCard,
+} from '../components/ui'
 
 export const metadata = {
   title: 'Solar Energy Systems | AeroSun Energy',
@@ -33,6 +42,57 @@ export const metadata = {
   },
 }
 
+const offerings = [
+  {
+    title: 'Solar Rooftop Systems',
+    description:
+      'On-grid power plants for homes and businesses, designed for performance, net metering, and long-term savings.',
+    points: ['On-grid, off-grid and hybrid configurations', 'Net metering with state DISCOM', 'PM Surya Ghar subsidy assistance', 'TATA Power Solar premium panels'],
+  },
+  {
+    title: 'Solar Thermal — Water Heating Solutions',
+    description:
+      'Efficient hot water systems for homes, hotels, hospitals, hostels, commercial spaces, and industries.',
+    points: ['Available in capacities from 100 LPD', 'Pressurised and non-pressurised options', 'BIS-certified collectors', 'Low-maintenance hot water year-round'],
+  },
+  {
+    title: 'Solar Street Lights',
+    description:
+      'All-in-one solar lighting for roads, compounds, campuses, and public spaces with zero grid dependence.',
+    points: ['Integrated all-in-one luminaires from 12W', 'Auto dusk-to-dawn operation', 'Lithium-ion storage with 5+ year life', 'Zero electricity bills'],
+  },
+  {
+    title: 'Solar Fencing',
+    description:
+      'Energy-efficient perimeter protection for farms, estates, and rural properties.',
+    points: ['Solar-charged energiser', 'Up to 10 km perimeter on a single charger', 'Audible alarm and battery backup', 'Crop and livestock protection'],
+  },
+  {
+    title: 'Solar Pumpsets',
+    description:
+      'Diesel-free pumping systems for agriculture and irrigation from clean solar power.',
+    points: ['AC and DC pump configurations', 'MNRE-approved controllers', 'PM-KUSUM scheme assistance', '5-year manufacturer warranty'],
+  },
+  {
+    title: 'Operation & Maintenance (AMC)',
+    description:
+      'Annual support plans that keep your plant performing at peak generation and reliability.',
+    points: ['Quarterly preventive maintenance', 'Performance ratio monitoring', '24x7 priority support', 'Spare parts and inverter service'],
+  },
+]
+
+const rooftopBenefits = [
+  'Reduce electricity bills by up to 80–90%',
+  '25+ years of solar panel life',
+  'Low maintenance and high reliability',
+  'Environment-friendly renewable energy',
+  'Increase property value',
+  'Net Metering facility to export excess power to the grid',
+  'Eligible for government subsidies (as applicable)',
+]
+
+const suitableFor = ['Individual Houses', 'Apartments & Residential Communities', 'Commercial Buildings', 'Industries & Factories', 'Educational Institutions', 'Hospitals & Government Buildings']
+
 const systemTypes = [
   {
     title: 'On-grid solar systems',
@@ -54,20 +114,13 @@ const systemTypes = [
   },
 ]
 
-const locationTypes = [
-  'Rooftop solar systems',
-  'Ground-mounted solar systems',
-  'Floating solar systems',
-  'Building-integrated PV systems',
-]
-
-const applicationTypes = [
-  'Solar water pumping systems',
-  'Solar street lighting',
-  'Solar home lighting',
-  'Solar EV charging',
-  'Industrial and agricultural solar systems',
-  'Solar thermal systems',
+const whySolar = [
+  { title: 'Reduce Carbon Emissions', description: 'Every kW of solar offsets ~1.2 tonnes of CO₂ a year — shrinking your carbon footprint.' },
+  { title: 'Eco-Friendly', description: 'Clean, renewable energy that protects nature for generations to come.' },
+  { title: 'Cost Saving', description: 'Slash electricity bills by 70–90% from day one and recover your investment in 4–6 years.' },
+  { title: 'Energy Independence', description: 'Generate your own power and cut reliance on the grid and rising tariffs.' },
+  { title: 'Unlimited Energy', description: 'Sunlight is infinite — Tirupati enjoys 300+ sunny days every year.' },
+  { title: 'Continuous Supply', description: 'Hybrid systems with battery backup keep critical loads running through outages.' },
 ]
 
 const comparisonRows = [
@@ -164,72 +217,116 @@ export default function SolarEnergyPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-8 max-w-3xl">
-          <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-blue-700">Core classification</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Solar photovoltaic systems</h2>
+          <SectionEyebrow>What We Offer</SectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Expertise End-to-End Solar Solutions</h2>
+          <p className="mt-4 text-base leading-8 text-slate-700">
+            We have rich experience in solar rooftop 1 kW to megawatt solar power plants — including solar hybrid systems, solar hot water, solar street lights, solar fencing, solar agriculture pump sets & any solar power services.
+          </p>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
+          {offerings.map((service) => (
+            <FeatureCard
+              key={service.title}
+              title={service.title}
+              description={service.description}
+              points={service.points}
+              accent={service.title.includes('Street') ? 'amber' : service.title.includes('Thermal') ? 'sky' : service.title.includes('Fencing') ? 'violet' : 'emerald'}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mb-8 max-w-3xl">
+          <SectionEyebrow>Rooftop Solar</SectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900">Solar Rooftop Systems</h2>
+          <p className="mt-4 text-base leading-8 text-slate-700">
+            Solar rooftop systems generate electricity using solar panels installed on your rooftop. Sized to your power needs and usage, they cut your dependence on grid power and significantly lower your monthly electricity bills.
+          </p>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+          <div className="grid gap-5 sm:grid-cols-2">
+            {rooftopBenefits.map((benefit) => (
+              <BenefitCard key={benefit} title={benefit.split(' ').slice(0, 3).join(' ') || 'Benefit'} description={benefit} />
+            ))}
+          </div>
+
+          <div className="space-y-5">
+            <InfoPanel title="Suitable For" content={suitableFor} accent="emerald" />
+            <InfoPanel title="Key Benefits" content={rooftopBenefits} accent="sky" />
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mb-8 max-w-3xl">
+          <SectionEyebrow>System Types</SectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900">There are three main types of solar rooftop systems</h2>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
           {systemTypes.map((type) => (
-            <article key={type.title} className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.28)]">
-              <h3 className="text-2xl font-bold text-slate-900">{type.title}</h3>
-              <p className="mt-4 text-base leading-7 text-slate-700">{type.description}</p>
-              <ul className="mt-5 space-y-2 text-base text-slate-700">
-                {type.benefits.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-amber-500" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
+            <FeatureCard key={type.title} title={type.title} description={type.description} points={type.benefits} accent={type.title.includes('Off-grid') ? 'amber' : type.title.includes('Hybrid') ? 'violet' : 'emerald'} />
           ))}
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="rounded-4xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-[0_32px_90px_-38px_rgba(15,23,42,1)] sm:p-8">
-          <div className="mb-6 flex items-center justify-between gap-3">
-            <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-300">Installations</p>
-              <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">Solar systems by location</h3>
-            </div>
-            <div className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-200 sm:block">
-              Site-specific
-            </div>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {locationTypes.map((item, index) => (
-              <div key={item} className="rounded-3xl border border-white/10 bg-white/5 p-4">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-lg font-bold text-amber-300">
-                  {index + 1}
-                </div>
-                <p className="text-base leading-7 text-slate-100">{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mb-8">
-          <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-violet-700">Applications</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900">Solar systems based on application</h2>
+        <div className="mb-8 max-w-3xl">
+          <SectionEyebrow>Why Solar</SectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900">Why you have to switch to solar today?</h2>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {applicationTypes.map((item, index) => (
-            <div key={item} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_16px_24px_-24px_rgba(15,23,42,0.5)]">
-              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-violet-100 text-sm font-bold text-violet-700">
-                {index + 1}
-              </div>
-              <p className="text-lg font-semibold text-slate-900">{item}</p>
-            </div>
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {whySolar.map((item) => (
+            <BenefitCard key={item.title} title={item.title} description={item.description} />
           ))}
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mb-8 max-w-3xl">
+          <SectionEyebrow>Government of India Scheme</SectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900">PM Surya Ghar: Muft Bijli Yojana Subsidy</h2>
+          <p className="mt-4 text-base leading-8 text-slate-700">
+            Central-government subsidy you can claim on your rooftop solar — AeroSun Energy files the entire application for you.
+          </p>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <SubsidyCard label="For Residential Households" value="₹30,000" note="per kW up to 2 kW" />
+          <SubsidyCard label="Additional Capacity" value="₹18,000" note="per kW for additional capacity up to 3 kW" />
+          <SubsidyCard label="Maximum Subsidy" value="₹78,000" note="Total subsidy for systems larger than 3 kW" />
+          <SubsidyCard label="For GHS / RWA" value="₹18,000" note="Common facility subsidy up to 500 kW" />
+        </div>
+
+        <div className="mt-8">
+          <CapacityTable />
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+        <div className="rounded-4xl border border-slate-200 bg-linear-to-br from-slate-100 via-white to-amber-50 p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.3)] sm:p-8">
+          <SectionEyebrow>Strategic view</SectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900">Which solar systems should AeroSun Energy consider?</h2>
+          <div className="mt-6 grid gap-6 lg:grid-cols-2">
+            <div className="rounded-3xl border border-slate-200 bg-white p-5 text-base leading-7 text-slate-700">
+              Start by evaluating rooftop solar, hybrid systems, and agricultural solar water pumping. These categories give actionable customer segments and manageable project scopes.
+            </div>
+            <div className="rounded-3xl border border-slate-200 bg-white p-5 text-base leading-7 text-slate-700">
+              Solar EV charging, off-grid systems, and solar street lighting also have strong use cases, especially in public infrastructure and rural applications.
+            </div>
+          </div>
+
+          <div className="mt-8 rounded-3xl border border-emerald-200 bg-emerald-50 p-5 text-base leading-7 text-emerald-900">
+            <strong className="font-bold">Recommendation:</strong> focus first on rooftop solar, hybrid systems, and irrigation-related solar pumping solutions.
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)]">
             <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-sky-700">Comparison</p>
@@ -274,25 +371,6 @@ export default function SolarEnergyPage() {
                 These categories offer clear customer groups and better opportunities to build installation and maintenance capabilities.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-        <div className="rounded-4xl border border-slate-200 bg-linear-to-br from-slate-100 via-white to-amber-50 p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.3)] sm:p-8">
-          <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-700">Strategic view</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900">Which solar systems should AeroSun Energy consider?</h2>
-          <div className="mt-6 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-3xl border border-slate-200 bg-white p-5 text-base leading-7 text-slate-700">
-              Start by evaluating rooftop solar, hybrid systems, and agricultural solar water pumping. These categories give actionable customer segments and manageable project scopes.
-            </div>
-            <div className="rounded-3xl border border-slate-200 bg-white p-5 text-base leading-7 text-slate-700">
-              Solar EV charging, off-grid systems, and solar street lighting also have strong use cases, especially in public infrastructure and rural applications.
-            </div>
-          </div>
-
-          <div className="mt-8 rounded-3xl border border-emerald-200 bg-emerald-50 p-5 text-base leading-7 text-emerald-900">
-            <strong className="font-bold">Recommendation:</strong> focus first on rooftop solar, hybrid systems, and irrigation-related solar pumping solutions.
           </div>
         </div>
       </section>

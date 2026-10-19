@@ -1,4 +1,13 @@
-import { OptimizedImage, Slider } from '../components/ui'
+import {
+  OptimizedImage,
+  Slider,
+  WindBenefitCard,
+  WindCapacityTable,
+  WindComparisonTable,
+  WindFeatureCard,
+  WindInfoPanel,
+  WindSectionEyebrow,
+} from '../components/ui'
 
 export const metadata = {
   title: 'Wind Energy Systems | AeroSun Energy',
@@ -41,6 +50,7 @@ const turbineTypes = [
     description:
       'The most common design, with blades rotating like a propeller on a horizontal shaft. Ideal for utility-scale and larger commercial installations.',
     highlights: ['Three-blade design', 'Directional alignment', 'High efficiency'],
+    accent: 'sky' as const,
   },
   {
     title: 'Vertical-Axis Wind Turbines',
@@ -48,6 +58,7 @@ const turbineTypes = [
     description:
       'Rotors are vertical, allowing wind capture from multiple directions. Common designs include Darrieus and Savonius turbines.',
     highlights: ['Low yaw requirement', 'Suitable for niche sites', 'Needs careful feasibility review'],
+    accent: 'emerald' as const,
   },
 ]
 
@@ -58,22 +69,10 @@ const deploymentTypes = [
 ]
 
 const systemConfigs = [
-  {
-    title: 'Grid-connected',
-    text: 'Supplies electricity to a building or network through appropriate conversion equipment.',
-  },
-  {
-    title: 'Off-grid',
-    text: 'Operates independently of the utility grid, often with batteries or backup generation.',
-  },
-  {
-    title: 'Wind–solar hybrid',
-    text: 'Combines wind and PV generation with shared storage and power electronics.',
-  },
-  {
-    title: 'Wind–battery storage',
-    text: 'Stores excess energy for later use when wind conditions are weaker.',
-  },
+  { system: 'Grid-connected system', detail: 'Supplies electricity to a building or network through appropriate conversion equipment.', use: 'Commercial buildings, factories and wind farms' },
+  { system: 'Off-grid system', detail: 'Operates independently of the utility grid, usually with batteries or another backup source.', use: 'Remote homes, farms, telecom sites and isolated facilities' },
+  { system: 'Wind–solar hybrid', detail: 'Combines wind turbines and solar PV panels, often with shared storage and power electronics.', use: 'Homes, farms, businesses and microgrids' },
+  { system: 'Wind–battery', detail: 'Stores excess wind-generated electricity for later use.', use: 'Sites needing energy outside periods of wind generation' },
 ]
 
 const capacityBands = [
@@ -82,6 +81,19 @@ const capacityBands = [
   { label: 'Medium', value: '10–100 kW', use: 'Agricultural and commercial facilities' },
   { label: 'Large commercial', value: '100 kW–1 MW', use: 'Industrial and distributed generation projects' },
   { label: 'Utility-scale', value: '1 MW and above', use: 'Wind farms and grid-scale generation' },
+]
+
+const keyBenefits = [
+  'Generates clean electricity from a renewable natural resource',
+  'Helps reduce dependence on grid power and rising tariffs',
+  'Works especially well when paired with solar and batteries',
+  'Can support agricultural, commercial, and rural projects',
+]
+
+const strategicPoints = [
+  'Wind resource evaluation is essential before installation',
+  'Hybrid configurations increase system resilience',
+  'Project design depends on site height, obstacles, and load profile',
 ]
 
 export default function WindEnergyPage() {
@@ -165,29 +177,19 @@ export default function WindEnergyPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-8 max-w-3xl">
-          <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-sky-700">Overview</p>
+          <WindSectionEyebrow>Overview</WindSectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Types of wind energy systems</h2>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
           {turbineTypes.map((type) => (
-            <article key={type.title} className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.28)]">
-              <div className="flex items-center justify-between gap-4">
-                <h3 className="text-2xl font-bold text-slate-900">{type.title}</h3>
-                <span className="rounded-full border border-slate-200 bg-slate-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.26em] text-slate-700">
-                  {type.badge}
-                </span>
-              </div>
-              <p className="mt-4 text-base leading-7 text-slate-700">{type.description}</p>
-              <ul className="mt-5 space-y-2 text-base text-slate-700">
-                {type.highlights.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-emerald-500" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
+            <WindFeatureCard
+              key={type.title}
+              title={type.title}
+              description={type.description}
+              points={type.highlights}
+              accent={type.accent}
+            />
           ))}
         </div>
       </section>
@@ -196,7 +198,7 @@ export default function WindEnergyPage() {
         <div className="rounded-4xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-[0_32px_90px_-38px_rgba(15,23,42,1)] sm:p-8">
           <div className="mb-6 flex items-center justify-between gap-3">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-300">Classification</p>
+              <WindSectionEyebrow>Classification</WindSectionEyebrow>
               <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">Design and installation choices</h3>
             </div>
             <div className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-200 sm:block">
@@ -218,86 +220,43 @@ export default function WindEnergyPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mb-8">
-          <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-700">Electrical configuration</p>
+        <div className="mb-8 max-w-3xl">
+          <WindSectionEyebrow>Electrical configuration</WindSectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900">Matching the system to the application</h2>
         </div>
 
-        <div className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-[0_20px_40px_-25px_rgba(15,23,42,0.25)]">
-          <div className="grid grid-cols-1 border-b border-slate-200 bg-slate-50 text-sm font-semibold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-[1.2fr_2.4fr_1.8fr]">
-            <div className="px-5 py-4">System type</div>
-            <div className="px-5 py-4">How it works</div>
-            <div className="px-5 py-4">Typical applications</div>
+        <WindComparisonTable rows={systemConfigs} />
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+          <div className="grid gap-5 sm:grid-cols-2">
+            {keyBenefits.map((benefit) => (
+              <WindBenefitCard key={benefit} title={benefit.split(' ').slice(0, 3).join(' ') || 'Benefit'} description={benefit} />
+            ))}
           </div>
 
-          <div className="divide-y divide-slate-200">
-            <div className="grid gap-3 px-5 py-5 md:grid-cols-[1.2fr_2.4fr_1.8fr] md:gap-0">
-              <div className="font-bold text-slate-900">Grid-connected system</div>
-              <div className="text-slate-700">Supplies electricity to a building or electrical network through suitable power-conversion equipment.</div>
-              <div className="text-slate-700">Commercial buildings, factories and wind farms</div>
-            </div>
-            <div className="grid gap-3 px-5 py-5 md:grid-cols-[1.2fr_2.4fr_1.8fr] md:gap-0">
-              <div className="font-bold text-slate-900">Off-grid system</div>
-              <div className="text-slate-700">Operates independently of the utility grid, usually with batteries or another backup source.</div>
-              <div className="text-slate-700">Remote homes, farms, telecom sites and isolated facilities</div>
-            </div>
-            <div className="grid gap-3 px-5 py-5 md:grid-cols-[1.2fr_2.4fr_1.8fr] md:gap-0">
-              <div className="font-bold text-slate-900">Wind–solar hybrid</div>
-              <div className="text-slate-700">Combines wind turbines and solar PV panels, often with shared storage and power electronics.</div>
-              <div className="text-slate-700">Homes, farms, businesses and microgrids</div>
-            </div>
-            <div className="grid gap-3 px-5 py-5 md:grid-cols-[1.2fr_2.4fr_1.8fr] md:gap-0">
-              <div className="font-bold text-slate-900">Wind–battery</div>
-              <div className="text-slate-700">Stores excess wind-generated electricity for later use.</div>
-              <div className="text-slate-700">Sites needing energy outside periods of wind generation</div>
-            </div>
+          <div className="space-y-5">
+            <WindInfoPanel title="Key benefits" content={keyBenefits} accent="sky" />
+            <WindInfoPanel title="Feasibility checks" content={strategicPoints} accent="emerald" />
           </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)]">
-            <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-sky-700">Capacity ranges</p>
-            <h2 className="mt-3 text-3xl font-bold text-slate-900">Power capacity categories</h2>
-            <div className="mt-6 space-y-3">
-              {capacityBands.map((band) => (
-                <div key={band.label} className="grid gap-2 rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:grid-cols-[140px_1fr_2fr] sm:items-center">
-                  <div className="font-bold text-slate-900">{band.label}</div>
-                  <div className="text-slate-700">{band.value}</div>
-                  <div className="text-slate-600">{band.use}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="overflow-hidden rounded-4xl border border-slate-200 bg-slate-950 p-5 shadow-[0_28px_70px_-36px_rgba(15,23,42,0.9)]">
-            <div className="relative h-64 overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
-              <OptimizedImage
-                src="/images/slider-2.png"
-                alt="Wind energy and hybrid generation" 
-                fill
-                sizes="(min-width: 1024px) 30vw, 100vw"
-                className="object-cover opacity-85"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-slate-950/85 via-slate-900/30 to-transparent" />
-            </div>
-            <div className="mt-5 rounded-2xl border border-emerald-400/20 bg-emerald-500/10 p-4">
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-200">Best opportunity</p>
-              <h3 className="mt-2 text-xl font-bold text-white">Solar–wind hybrid systems</h3>
-              <p className="mt-2 text-base leading-7 text-slate-200">
-                Wind and solar may complement each other across the day and across seasons, especially when battery storage and coordinated control are included.
-              </p>
-            </div>
-          </div>
+        <div className="mb-8 max-w-3xl">
+          <WindSectionEyebrow>Capacity ranges</WindSectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900">Power capacity categories</h2>
         </div>
+
+        <WindCapacityTable rows={capacityBands} />
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
         <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)] sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-700">Strategic recommendation</p>
+              <WindSectionEyebrow>Strategic recommendation</WindSectionEyebrow>
               <h2 className="mt-3 text-3xl font-bold text-slate-900">Which wind systems should AeroSun Energy focus on?</h2>
               <div className="mt-6 space-y-5 text-base leading-7 text-slate-700">
                 <p>
@@ -317,25 +276,6 @@ export default function WindEnergyPage() {
                 <div className="rounded-2xl bg-white p-3">3. Commercial systems, 10–100 kW</div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-        <div className="rounded-4xl border border-slate-200 bg-linear-to-br from-slate-100 via-white to-sky-50 p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.3)] sm:p-8">
-          <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-sky-700">Important consideration</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900">India-specific feasibility matters</h2>
-          <div className="mt-6 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-3xl border border-slate-200 bg-white p-5 text-base leading-7 text-slate-700">
-              Before selling or installing a wind turbine, evaluate local wind conditions, tower requirements, electrical safety, grid-interconnection rules, and state or local approvals.
-            </div>
-            <div className="rounded-3xl border border-slate-200 bg-white p-5 text-base leading-7 text-slate-700">
-              Do not assume that a small rooftop wind turbine will generate enough electricity to justify its cost; nearby buildings and obstacles can significantly affect performance.
-            </div>
-          </div>
-
-          <div className="mt-8 rounded-3xl border border-amber-200 bg-amber-50 p-5 text-base leading-7 text-amber-900">
-            <strong className="font-bold">Key conclusion:</strong> a wind-resource assessment is essential before recommending a system to a customer.
           </div>
         </div>
       </section>

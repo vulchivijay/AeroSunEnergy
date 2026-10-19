@@ -36,6 +36,7 @@ type Calculation = {
   totalSellingPrice: number
   customerPayable: number
   profit: number
+  commission: number
   profitMargin: number
   profitStatus: 'Low' | 'Average' | 'Excellent'
   profitTone: string
@@ -62,6 +63,7 @@ export default function SolarCalculator() {
   const {
     register,
     control,
+    setValue,
     formState: { errors, isValid },
   } = useForm<FormData>({
     resolver: zodResolver(solarCalculatorSchema),
@@ -91,6 +93,7 @@ export default function SolarCalculator() {
         const totalSellingPrice = recommendedKw * sellingPricePerKw
         const customerPayable = totalSellingPrice - subsidy
         const profit = totalSellingPrice - totalInstallationCost
+        const commission = totalInstallationCost * 0.1
         const profitMargin = (profit / totalSellingPrice) * 100
 
         let profitStatus: Calculation['profitStatus'] = 'Low'
@@ -114,6 +117,7 @@ export default function SolarCalculator() {
           totalSellingPrice,
           customerPayable,
           profit,
+          commission,
           profitMargin,
           profitStatus,
           profitTone,
@@ -127,7 +131,8 @@ export default function SolarCalculator() {
       style: 'currency',
       currency: 'INR',
       maximumFractionDigits: 0,
-    }).format(amount)
+      currencyDisplay: 'narrowSymbol',
+    }).format(amount).replace('₹', '₹ ')
 
   const summaryStats = calculation
     ? [
@@ -150,305 +155,173 @@ export default function SolarCalculator() {
     : []
 
   return (
-    <section className="relative isolate overflow-hidden px-4 py-10 sm:px-6 lg:px-12 lg:py-14">
-      <div className="absolute inset-0 bg-[#f7f6f0] dark:bg-slate-950" aria-hidden="true" />
-      <div
-        className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(251,191,36,0.22),transparent_28%),radial-gradient(circle_at_80%_20%,rgba(50,84,146,0.18),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(250,89,82,0.12),transparent_22%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(251,191,36,0.12),transparent_26%),radial-gradient(circle_at_80%_20%,rgba(50,84,146,0.18),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(250,89,82,0.14),transparent_22%)]"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(15,23,42,0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.045)_1px,transparent_1px)] bg-size-[44px_44px] opacity-30 dark:opacity-10"
-        aria-hidden="true"
-      />
-
-      <div className="relative mx-auto max-w-7xl space-y-8">
-        <div className="flex flex-col gap-4">
-          <span className="inline-flex w-fit items-center rounded-full border border-primary/20 bg-white/80 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.38em] text-custom-deep-blue shadow-sm backdrop-blur-md dark:border-white/10 dark:bg-slate-900/70 dark:text-slate-100">
+    <section className="relative isolate overflow-hidden bg-[#f7f5f0] px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-8 text-center">
+          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.28em] text-emerald-700 shadow-sm backdrop-blur-md">
+            <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
             {e.badge}
           </span>
 
-          <div className="max-w-3xl space-y-4">
-            <h1 className="text-4xl font-semibold leading-tight text-custom-deep-blue sm:text-5xl lg:text-6xl dark:text-white">
-              {e.heading.split('sharper branded dashboard')[0]}
-              <span className="bg-linear-to-r from-primary via-custom-blue to-custom-red bg-clip-text text-transparent">
-                {e.headingAccent}
-              </span>
-              {e.heading.includes('sharper branded dashboard') ? e.heading.replace('sharper branded dashboard', '') : ''}
-            </h1>
-            <p className="max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-              {e.description}
-            </p>
-          </div>
+          <h1 className="mt-6 text-4xl font-black leading-[0.95] tracking-[-0.065em] text-slate-900 sm:text-5xl lg:text-[5rem]">
+            See how much you save with
+            <span className="mt-2 block text-emerald-600">solar</span>
+          </h1>
+
+          <p className="mt-5 text-lg leading-8 text-slate-600">
+            A 3 kW rooftop plant in Tirupati typically saves ₹30,000+ a year. Run the numbers for your home below.
+          </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr]">
-          <Card className="overflow-hidden border-white/70 bg-white/82 shadow-[0_30px_100px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/75">
-            <CardContent className="space-y-8 p-6 sm:p-8">
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-custom-deep-blue dark:bg-primary/15 dark:text-primary-200">
-                  {e.liveCalculation}
-                </span>
-                <span className="rounded-full bg-custom-blue/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-custom-blue dark:bg-custom-blue/15 dark:text-blue-200">
-                  {e.subsidyAware}
-                </span>
-                <span className="rounded-full bg-custom-red/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-custom-red dark:bg-custom-red/15 dark:text-red-200">
-                  {e.responsiveLayout}
-                </span>
+        <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="rounded-[30px] border border-slate-200 bg-white/85 p-5 shadow-[0_25px_60px_-35px_rgba(15,23,42,0.35)] backdrop-blur-sm sm:p-6 lg:p-8">
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-[2rem] font-black tracking-[-0.05em] text-slate-900">
+                  Estimate Your Savings
+                </h2>
+                <p className="mt-2 text-base text-slate-600">Drag the slider to your average monthly electricity bill.</p>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-3">
-                {summaryStats.map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-linear-to-br from-white via-slate-50 to-slate-100 p-4 shadow-sm dark:border-white/10 dark:from-slate-950 dark:via-slate-900 dark:to-slate-900"
-                  >
-                    <div className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r ${stat.accent}`} aria-hidden="true" />
-                    <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
-                      {stat.label}
-                    </p>
-                    <p className="mt-3 text-2xl font-semibold tracking-tight text-custom-deep-blue dark:text-white">
-                      {stat.value}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="grid gap-4 md:grid-cols-3">
-                <InputField
-                  name="monthlyUnits"
-                  label={e.monthlyUsage}
-                  helperText={e.monthlyUsageHelper}
-                  suffix="units"
-                  error={errors.monthlyUnits?.message}
-                  register={register('monthlyUnits', { valueAsNumber: true })}
-                  accentClass="from-primary via-custom-orange to-custom-red"
-                  placeholder="360"
-                />
-
-                <InputField
-                  name="installationCostPerKw"
-                  label={e.installationCost}
-                  helperText={e.installationCostHelper}
-                  suffix="per kW"
-                  error={errors.installationCostPerKw?.message}
-                  register={register('installationCostPerKw', { valueAsNumber: true })}
-                  accentClass="from-custom-blue via-primary to-custom-violet"
-                  placeholder="54300"
-                />
-
-                <InputField
-                  name="sellingPricePerKw"
-                  label={e.sellingPrice}
-                  helperText={e.sellingPriceHelper}
-                  suffix="per kW"
-                  error={errors.sellingPricePerKw?.message}
-                  register={register('sellingPricePerKw', { valueAsNumber: true })}
-                  accentClass="from-custom-red via-custom-orange to-primary"
-                  placeholder="65000"
-                />
-              </div>
-
-              {!isValid && (
-                <div className="rounded-3xl border border-rose-200/80 bg-rose-50/80 px-4 py-4 text-rose-700 dark:border-rose-500/20 dark:bg-rose-950/40 dark:text-rose-200">
-                  {e.pleaseFix}
-                </div>
-              )}
-
-              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-                <ResultCard
-                  title={e.recommendedCapacityLabel}
-                  value={calculation ? `${calculation.recommendedKw} kW` : '—'}
-                  detail="Rounded from monthly usage"
-                  accentClass="from-primary/15 to-custom-orange/10"
-                />
-                <ResultCard
-                  title={e.subsidyBand}
-                  value={calculation ? currency(calculation.subsidy) : '—'}
-                  detail="Based on the system band"
-                  accentClass="from-custom-blue/15 to-primary/10"
-                />
-                <ResultCard
-                  title={e.profitMargin}
-                  value={calculation ? `${calculation.profitMargin.toFixed(1)}%` : '—'}
-                  detail={calculation ? `${calculation.profitMargin.toFixed(1)}% margin` : 'Ready after validation'}
-                  accentClass="from-custom-red/15 to-custom-violet/10"
-                />
-                <ResultCard
-                  title={e.recommendedCapacity}
-                  value={calculation ? `${calculation.recommendedKw} kW` : '—'}
-                  detail={calculation ? `${calculation.profitMargin.toFixed(1)}% margin` : 'Ready after validation'}
-                  accentClass="from-emerald-500/15 to-amber-500/10"
-                  valueTone={calculation?.profitTone}
-                />
-              </div>
-            </CardContent>
-          </Card>
-
-          <div className="space-y-6 lg:sticky lg:top-28 self-start">
-            <Card className="overflow-hidden border-white/70 bg-white/82 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/75">
-              <CardContent className="space-y-6 p-6 sm:p-7">
-                <div className="flex items-start justify-between gap-4">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between gap-3">
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.34em] text-slate-500 dark:text-slate-400">
-                      {e.liveOutput}
-                    </p>
-                    <h2 className="mt-2 text-2xl font-semibold text-custom-deep-blue dark:text-white">
-                      {e.projectedSolarProfile}
-                    </h2>
-                  </div>
-                  <div
-                    className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] ring-1 ${calculation?.badgeTone ?? 'bg-slate-500/10 text-slate-600 ring-slate-500/20 dark:text-slate-300'}`}
-                  >
-                    {calculation?.profitStatus ?? e.pending}
-                  </div>
-                </div>
-
-                {calculation ? (
-                  <>
-                    <div className="rounded-[1.75rem] bg-linear-to-br from-primary/15 via-white to-custom-blue/10 p-5 dark:from-primary/10 dark:via-slate-950 dark:to-custom-blue/10">
-                      <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">
-                        {e.recommendedCapacityLabel}
-                      </p>
-                      <div className="mt-3 flex items-end gap-2">
-                        <span className="text-5xl font-semibold tracking-tight text-custom-deep-blue dark:text-white">
-                          {calculation.recommendedKw}
-                        </span>
-                        <span className="mb-1 text-lg font-medium text-slate-500 dark:text-slate-300">
-                          kW
-                        </span>
-                      </div>
-                      <p className="mt-3 max-w-md text-sm leading-6 text-slate-600 dark:text-slate-300">
-                        {e.basedOnUsage}
-                      </p>
+                    <p className="text-[11px] font-bold uppercase tracking-[0.26em] text-slate-500">Monthly Electricity Bill</p>
+                    <div className="mt-2 flex items-center gap-2">
+                      <span className="text-[2.4rem] font-black tracking-[-0.06em] text-emerald-600">{new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0, currencyDisplay: 'narrowSymbol' }).format(values.monthlyUnits ?? defaultValues.monthlyUnits).replace('₹', '₹ ')}</span>
                     </div>
-
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <ResultCard
-                        title={e.totalSystemSellingPrice}
-                        value={currency(calculation.totalSellingPrice)}
-                        detail={e.beforeSubsidy}
-                        accentClass="from-primary/10 to-custom-orange/10"
-                      />
-                      <ResultCard
-                        title={e.totalInstallationCost}
-                        value={currency(calculation.totalInstallationCost)}
-                        detail={e.projectSideCost}
-                        accentClass="from-custom-blue/10 to-custom-violet/10"
-                      />
-                      <ResultCard
-                        title={e.profitMargin}
-                        value={`${calculation.profitMargin.toFixed(1)}%`}
-                        detail="Higher is healthier"
-                        accentClass="from-emerald-500/10 to-primary/10"
-                        valueTone={calculation.profitTone}
-                      />
-                      <ResultCard
-                        title={e.netSubsidyBand}
-                        value={calculation.subsidy >= 78000 ? '3 kW +' : `${calculation.recommendedKw} kW`}
-                        detail={e.matchedEstimate}
-                        accentClass="from-custom-red/10 to-primary/10"
-                      />
-                    </div>
-                  </>
-                ) : (
-                  <div className="rounded-[1.75rem] border border-dashed border-slate-300 bg-slate-50/80 p-6 text-slate-500 dark:border-white/10 dark:bg-slate-950/40 dark:text-slate-300">
-                    {e.updateInputs}
                   </div>
-                )}
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden border-white/70 bg-linear-to-br from-white via-slate-50 to-primary/10 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:from-slate-950 dark:via-slate-900 dark:to-primary/10">
-              <CardContent className="space-y-5 p-6 sm:p-7">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.34em] text-slate-500 dark:text-slate-400">
-                    {e.subsidyLadder}
-                  </p>
-                  <h3 className="mt-2 text-xl font-semibold text-custom-deep-blue dark:text-white">
-                    {e.quickPricingBands}
-                  </h3>
+                  <div className="rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700">
+                    {calculation ? `${calculation.recommendedKw} kW system` : 'System sizing'}
+                  </div>
                 </div>
 
                 <div className="space-y-3">
-                  {subsidyTiers.map((tier) => (
-                    <div
-                      key={tier.label}
-                      className="flex items-start justify-between gap-4 rounded-[1.25rem] border border-white/70 bg-white/75 p-4 shadow-sm dark:border-white/10 dark:bg-slate-950/55"
-                    >
-                      <div>
-                        <p className="text-lg font-semibold text-custom-deep-blue dark:text-white">
-                          {tier.label}
-                        </p>
-                        <p className="mt-1 text-sm leading-6 text-slate-500 dark:text-slate-300">
-                          {tier.note}
-                        </p>
-                      </div>
-                      <span className="rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-custom-deep-blue dark:bg-primary/15 dark:text-primary-200">
-                        {tier.subsidy}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-[1.02fr_0.98fr]">
-          <Card className="overflow-hidden border-white/70 bg-white/82 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/75">
-            <CardContent className="space-y-5 p-6 sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.34em] text-slate-500 dark:text-slate-400">
-                {e.calculationLogic}
-              </p>
-              <h3 className="text-2xl font-semibold text-custom-deep-blue dark:text-white">
-                {e.whatEstimateIncludes}
-              </h3>
-              <div className="space-y-3">
-                {e.formulaNotes.map((note, index) => (
-                  <div
-                    key={note}
-                    className="flex gap-4 rounded-[1.25rem] border border-slate-200/80 bg-slate-50/80 p-4 dark:border-white/10 dark:bg-slate-950/40"
-                  >
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-custom-deep-blue dark:bg-primary/15 dark:text-primary-200">
-                      {index + 1}
-                    </span>
-                    <p className="text-sm leading-6 text-slate-600 dark:text-slate-300">
-                      {note}
-                    </p>
+                  <input
+                    type="range"
+                    min={1000}
+                    max={20000}
+                    step={100}
+                    value={Math.min(20000, Math.max(1000, monthlyUnits * 7))}
+                    onChange={(event) => {
+                      const nextValue = Number(event.target.value)
+                      const units = Math.round(nextValue / 7)
+                      setValue('monthlyUnits', units, { shouldValidate: true, shouldDirty: true })
+                    }}
+                    className="h-2 w-full cursor-pointer appearance-none rounded-full bg-gradient-to-r from-emerald-400 via-amber-400 to-slate-200 accent-emerald-600"
+                  />
+                  <div className="flex items-center justify-between text-sm font-semibold text-slate-500">
+                    <span>₹1,000</span>
+                    <span>₹20,000</span>
                   </div>
-                ))}
+                </div>
               </div>
-            </CardContent>
-          </Card>
 
-          <Card className="overflow-hidden border-white/70 bg-linear-to-br from-custom-deep-blue via-slate-900 to-custom-blue shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10">
-            <CardContent className="space-y-5 p-6 sm:p-8 text-white">
-              <p className="text-xs font-semibold uppercase tracking-[0.34em] text-white/60">
-                {e.nextStep}
-              </p>
-              <h3 className="text-2xl font-semibold tracking-tight text-white">
-                {e.turnEstimateIntoQuote}
-              </h3>
-              <p className="text-sm leading-7 text-white/75">
-                {e.nextStepCopy}
-              </p>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-[20px] border border-slate-200 bg-slate-50/80 p-4 shadow-inner">
+                  <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Plant Size</div>
+                  <div className="mt-2 text-3xl font-black tracking-[-0.06em] text-emerald-600">
+                    {calculation ? `${calculation.recommendedKw} kW` : '—'}
+                  </div>
+                </div>
 
-              <div className="flex flex-wrap gap-3">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-custom-deep-blue transition-transform duration-200 hover:scale-[1.02] hover:bg-primary hover:text-white"
-                >
-                  {e.contactTeam}
-                </Link>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition-colors duration-200 hover:bg-white/15"
-                >
-                  {e.exploreServices}
-                </Link>
+                <div className="rounded-[20px] border border-slate-200 bg-slate-50/80 p-4 shadow-inner">
+                  <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Roof Required</div>
+                  <div className="mt-2 text-3xl font-black tracking-[-0.06em] text-emerald-600">
+                    {calculation ? `${Math.max(60, calculation.recommendedKw * 60)} sq ft` : '—'}
+                  </div>
+                </div>
               </div>
-            </CardContent>
-          </Card>
+
+              <div className="pt-2">
+                <div className="grid gap-4 md:grid-cols-3">
+                  <InputField
+                    name="monthlyUnits"
+                    label={e.monthlyUsage}
+                    helperText={e.monthlyUsageHelper}
+                    suffix="units"
+                    error={errors.monthlyUnits?.message}
+                    register={register('monthlyUnits', { valueAsNumber: true })}
+                    accentClass="from-emerald-500 via-emerald-500 to-emerald-600"
+                    placeholder="360"
+                  />
+
+                  <InputField
+                    name="installationCostPerKw"
+                    label={e.installationCost}
+                    helperText={e.installationCostHelper}
+                    suffix="per kW"
+                    error={errors.installationCostPerKw?.message}
+                    register={register('installationCostPerKw', { valueAsNumber: true })}
+                    accentClass="from-sky-500 via-blue-500 to-emerald-600"
+                    placeholder="54300"
+                  />
+
+                  <InputField
+                    name="sellingPricePerKw"
+                    label={e.sellingPrice}
+                    helperText={e.sellingPriceHelper}
+                    suffix="per kW"
+                    error={errors.sellingPricePerKw?.message}
+                    register={register('sellingPricePerKw', { valueAsNumber: true })}
+                    accentClass="from-emerald-500 via-teal-500 to-cyan-600"
+                    placeholder="65000"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-[30px] bg-gradient-to-br from-[#0b3b2e] via-[#1f7a5a] to-[#48b69a] p-5 text-white shadow-[0_30px_80px_-35px_rgba(11,59,46,0.8)] sm:p-6 lg:p-8">
+            <div className="space-y-5">
+              <div>
+                <h2 className="text-[2rem] font-black tracking-[-0.05em] text-white">Your Estimated Returns</h2>
+                <p className="mt-2 text-base text-emerald-50/90">Based on Tirupati irradiance and ₹8.5/unit average tariff.</p>
+              </div>
+
+              <div className="rounded-[22px] border border-white/15 bg-white/10 p-5 backdrop-blur-sm">
+                <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-emerald-50">Annual Savings</div>
+                <div className="mt-3 text-5xl font-black tracking-[-0.08em] text-white">
+                  {calculation ? currency(calculation.profit) : '—'}
+                </div>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
+                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-50">Original Cost</div>
+                  <div className="mt-3 text-[2rem] font-black tracking-[-0.06em] text-white">
+                    {calculation ? currency(calculation.totalInstallationCost) : '—'}
+                  </div>
+                </div>
+                <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
+                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-50">Subsidy</div>
+                  <div className="mt-3 text-[2rem] font-black tracking-[-0.06em] text-white">
+                    {calculation ? currency(calculation.subsidy) : '—'}
+                  </div>
+                </div>
+                <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
+                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-50">Net Cost</div>
+                  <div className="mt-3 text-[2rem] font-black tracking-[-0.06em] text-white">
+                    {calculation ? currency(calculation.customerPayable) : '—'}
+                  </div>
+                </div>
+                <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
+                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-50">Payback</div>
+                  <div className="mt-3 text-[2rem] font-black tracking-[-0.06em] text-white">
+                    {calculation ? `${(calculation.customerPayable / Math.max(1, calculation.profit / 12)).toFixed(1)} yrs` : '—'}
+                  </div>
+                </div>
+              </div>
+
+              <button className="mt-4 w-full rounded-full bg-white px-5 py-4 text-xl font-bold text-slate-900 shadow-[0_20px_30px_-18px_rgba(15,23,42,0.5)] transition hover:bg-emerald-50">
+                Get a Detailed Quote <span aria-hidden="true">→</span>
+              </button>
+
+              <p className="text-center text-sm leading-6 text-emerald-50/90">
+                Estimates only. Actual figures depend on site conditions and DISCOM tariff.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -477,27 +350,31 @@ function InputField({
   placeholder,
 }: InputFieldProps) {
   return (
-    <div className="rounded-3xl border border-slate-200/80 bg-white/80 p-4 shadow-sm transition-transform duration-200 hover:-translate-y-1 dark:border-white/10 dark:bg-slate-950/40">
-      <div className={`h-1.5 rounded-full bg-linear-to-r ${accentClass}`} aria-hidden="true" />
+    <div className="rounded-[22px] border border-slate-200 bg-gradient-to-b from-white via-slate-50 to-slate-100 p-4 shadow-[0_18px_35px_-30px_rgba(15,23,42,0.45)] transition-transform duration-200 hover:-translate-y-0.5 dark:border-white/10 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+      <div className={`h-1.5 rounded-full bg-gradient-to-r ${accentClass}`} aria-hidden="true" />
+
       <div className="mt-4 flex items-center justify-between gap-3">
-        <label htmlFor={name} className="text-sm font-semibold text-custom-deep-blue dark:text-white">
+        <label htmlFor={name} className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-600 dark:text-slate-300">
           {label}
         </label>
-        <span className="rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-500 dark:bg-white/5 dark:text-slate-300">
+        <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
           {suffix}
         </span>
       </div>
+
       <input
         id={name}
         type="number"
         inputMode="numeric"
         placeholder={placeholder}
         {...register}
-        className={`mt-3 w-full rounded-2xl border px-4 py-3 text-base text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-primary/40 focus:ring-4 focus:ring-primary/10 dark:text-white ${error ? 'border-rose-400 bg-rose-50/70 dark:border-rose-500/40 dark:bg-rose-950/25' : 'border-slate-200 bg-slate-50/80 dark:border-white/10 dark:bg-slate-950/50'}`}
+        className={`mt-3 w-full rounded-2xl border px-4 py-3 text-base font-semibold text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 dark:text-white ${error ? 'border-rose-400 bg-rose-50/80 dark:border-rose-500/40 dark:bg-rose-950/25' : 'border-slate-200 bg-white/90 dark:border-white/10 dark:bg-slate-950/60'}`}
       />
+
       <p className="mt-2 text-xs leading-5 text-slate-500 dark:text-slate-400">
         {helperText}
       </p>
+
       {error && (
         <p className="mt-2 text-sm font-medium text-rose-600 dark:text-rose-300">
           {error}
