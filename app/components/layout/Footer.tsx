@@ -116,6 +116,15 @@ export default function Footer() {
 								</span>
 								{footer.website}
 							</p>
+							<p className="flex items-center gap-2">
+								<span
+									className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#FFF7E6] text-[#F59E0B] dark:bg-slate-800 dark:text-[#F59E0B]"
+									aria-hidden="true"
+								>
+									🌐
+								</span>
+								{footer.trust}
+							</p>
 						</div>
 					</div>
 

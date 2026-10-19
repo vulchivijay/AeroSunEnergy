@@ -221,7 +221,7 @@ export default function Home() {
               style={{
                 backgroundImage: `linear-gradient(135deg, rgba(15,23,42,0.44), rgba(51,65,85,0.24)), url('${image}')`,
                 backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                backgroundPosition: 'center bottom',
                 backgroundRepeat: 'no-repeat',
               }}
             >
