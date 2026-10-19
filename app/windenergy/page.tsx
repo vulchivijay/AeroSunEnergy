@@ -121,7 +121,7 @@ export default function WindEnergyPage() {
         <div className="relative h-full flex-1 overflow-hidden">
           <div className="absolute inset-0">
             <OptimizedImage
-              src="/images/slider-1.png"
+              src="/images/slider/slider-7.png"
               alt="Wind turbine energy concept"
               fill
               sizes="100vw"
@@ -143,7 +143,7 @@ export default function WindEnergyPage() {
         <div className="relative h-full flex-1 overflow-hidden">
           <div className="absolute inset-0">
             <OptimizedImage
-              src="/images/slider-2.png"
+              src="/images/slider/slider-9.png"
               alt="Commercial wind turbine installation"
               fill
               sizes="100vw"

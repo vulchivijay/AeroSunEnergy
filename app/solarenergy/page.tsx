@@ -120,7 +120,7 @@ export default function SolarEnergyPage() {
         <div className="relative h-full flex-1 overflow-hidden">
           <div className="absolute inset-0">
             <OptimizedImage
-              src="/images/slider-1.png"
+              src="/images/slider/slider-5.png"
               alt="Rooftop solar panel installation"
               fill
               sizes="100vw"
@@ -142,7 +142,7 @@ export default function SolarEnergyPage() {
         <div className="relative h-full flex-1 overflow-hidden">
           <div className="absolute inset-0">
             <OptimizedImage
-              src="/images/slider-2.png"
+              src="/images/slider/slider-15.png"
               alt="Ground-mounted solar installation"
               fill
               sizes="100vw"

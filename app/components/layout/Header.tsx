@@ -48,7 +48,6 @@ export default function Navbar() {
   const router = useRouter()
   const [menuOpen, setMenuOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
-  const [dark, setDark] = useState(false)
   const [activeHref, setActiveHref] = useState(pathname || '/')
   const [hydrated, setHydrated] = useState(false)
   const navRef = useRef<HTMLElement>(null)
@@ -59,31 +58,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setHydrated(true)
-    try {
-      const savedTheme = localStorage.getItem('theme')
-      const shouldUseDark = savedTheme === 'dark'
-      setDark(shouldUseDark)
-      document.documentElement.classList.toggle('dark', shouldUseDark)
-      if (!savedTheme) {
-        localStorage.setItem('theme', 'light')
-      }
-    } catch {
-      // ignore storage access failures
-      setDark(false)
-      document.documentElement.classList.remove('dark')
-    }
   }, [])
-
-  useEffect(() => {
-    if (!hydrated) return
-    if (dark) {
-      document.documentElement.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
-    }
-  }, [dark, hydrated])
 
   useEffect(() => {
     setActiveHref(pathname || '/')
@@ -127,21 +102,6 @@ export default function Navbar() {
       document.removeEventListener('keydown', handleEscape)
     }
   }, [hydrated])
-
-  const toggleDark = () => {
-    setDark((prev) => !prev)
-  }
-
-  const themeIcon = dark ? (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#F59E0B]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 3a9 9 0 1 0 9 9A9.01 9.01 0 0 0 12 3zm0 16a7 7 0 1 1 7-7 7.008 7.008 0 0 1-7 7z" />
-      <path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5z" />
-    </svg>
-  ) : (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-slate-700" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z" />
-    </svg>
-  )
 
   const handleRouteNavigate = (href: string) => {
     setActiveHref(href)
@@ -234,16 +194,6 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-
-            <button
-              type="button"
-              onClick={toggleDark}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#20A44A]/20 bg-white text-[#18251F] shadow-[0_8px_20px_rgba(32,164,74,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#F59E0B]/50 hover:bg-[#F7FDF8] hover:text-[#20A44A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20A44A]/50 dark:border-white/10 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-[#F59E0B]/70 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]"
-              aria-label={t.navbar.toggleDark}
-              aria-pressed={dark}
-            >
-              {themeIcon}
-            </button>
           </div>
 
           <div className="flex items-center gap-2 lg:hidden">
@@ -305,16 +255,6 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
-
-              <button
-                type="button"
-                onClick={toggleDark}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#20A44A]/20 bg-white text-[#18251F] shadow-[0_8px_20px_rgba(32,164,74,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#F59E0B]/50 hover:bg-[#F7FDF8] hover:text-[#20A44A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20A44A]/50 dark:border-white/10 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-[#F59E0B]/70 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]"
-                aria-label={t.navbar.toggleDark}
-                aria-pressed={dark}
-              >
-                {themeIcon}
-              </button>
             </div>
 
             {navLinks.map((link) => (
