@@ -50,6 +50,7 @@ h6 {
 
 button,
 a {
+  cursor: pointer;
   transition: all 180ms ease;
 }
 

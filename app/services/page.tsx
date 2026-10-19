@@ -52,6 +52,13 @@ const servicePackages = [
       'Integrated solar-wind-battery systems for homes, businesses, farms, and remote facilities requiring resilient power and backup capacity.',
     points: ['Hybrid feasibility', 'Battery integration', 'Microgrid planning', 'Performance monitoring'],
   },
+  {
+    title: 'Operations & AMC',
+    accent: 'from-emerald-400 via-emerald-500 to-teal-500',
+    description:
+      'Managed operations, tiered Annual Maintenance Contracts (AMC), remote monitoring, and specialized services such as drone-based panel cleaning and preventive care.',
+    points: ['Tiered AMC plans', 'Remote monitoring & alerts', 'Drone cleaning & soiling mitigation', 'Priority spare parts & support'],
+  },
 ]
 
 const serviceGrid = [
@@ -78,6 +85,14 @@ const serviceGrid = [
   {
     title: 'Monitoring & Upgrades',
     text: 'Remote monitoring, system upgrades, performance optimization, battery retrofits, and expansion planning.',
+  },
+  {
+    title: 'AMC Plans',
+    text: 'Tiered Annual Maintenance Contracts covering preventive maintenance, scheduled inspections, performance audits, and priority technical support.',
+  },
+  {
+    title: 'Solar Cleaning (Drones)',
+    text: 'Automated drone cleaning services to remove soiling at scale, reduce water usage, and recover generation losses safely and efficiently.',
   },
 ]
 

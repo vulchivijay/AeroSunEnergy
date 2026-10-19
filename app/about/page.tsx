@@ -159,13 +159,13 @@ const ethicsPoints = [
 ]
 
 const approvalRows = [
-  ['Certificate of Incorporation and CIN', 'Establishes the company’s legal identity', 'Incorporated, according to information provided'],
-  ['Company PAN', 'Tax identification', 'Obtained, according to prior conversation'],
-  ['TAN', 'Tax deduction and collection compliance where applicable', 'Status to confirm'],
-  ['GST registration', 'Required when applicable under GST law', 'Must verify current status'],
-  ['Udyam/MSME registration', 'MSME recognition if eligible', 'Status not confirmed'],
-  ['DPIIT Startup Recognition', 'Startup India recognition if eligible', 'Status not confirmed'],
-  ['Trademark registration', 'Protects the company brand and eligible marks', 'Status not confirmed'],
+  ['Certificate of Incorporation and CIN', 'Establishes the company’s legal identity', 'Done'],
+  ['Company PAN', 'Tax identification', 'Done'],
+  ['TAN', 'Tax deduction and collection compliance where applicable', 'Done'],
+  ['GST registration', 'Required when applicable under GST law', 'Done'],
+  ['Udyam/MSME registration', 'MSME recognition if eligible', 'Not yet applied'],
+  ['DPIIT Startup Recognition', 'Startup India recognition if eligible', 'In process'],
+  ['Trademark registration', 'Protects the company brand and eligible marks', 'In process'],
 ]
 
 const officialResources = [
@@ -400,25 +400,27 @@ export default function AboutPage() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-amber-600 dark:text-amber-400">Licences, registrations and approvals</p>
             <h2 className="mt-3 text-3xl font-bold text-slate-900 dark:text-white">Responsible growth requires compliance</h2>
 
-            <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
-              <table className="min-w-full divide-y divide-slate-200 text-left text-sm dark:divide-slate-700">
-                <thead className="bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-white">
-                  <tr>
-                    <th className="px-4 py-3 font-semibold">Registration or approval</th>
-                    <th className="px-4 py-3 font-semibold">Purpose</th>
-                    <th className="px-4 py-3 font-semibold">Status</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 bg-white dark:divide-slate-700 dark:bg-slate-900">
-                  {approvalRows.map(([name, purpose, status]) => (
-                    <tr key={name}>
-                      <td className="px-4 py-3 text-slate-700 dark:text-slate-300">{name}</td>
-                      <td className="px-4 py-3 text-slate-700 dark:text-slate-300">{purpose}</td>
-                      <td className="px-4 py-3 text-slate-700 dark:text-slate-300">{status}</td>
+            <div className="mt-6 rounded-2xl border border-slate-200 dark:border-slate-700">
+              <div className="w-full overflow-x-auto">
+                <table className="min-w-full divide-y divide-slate-200 text-left text-sm dark:divide-slate-700">
+                  <thead className="bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-white">
+                    <tr>
+                      <th className="px-4 py-3 font-semibold">Registration or approval</th>
+                      <th className="px-4 py-3 font-semibold">Purpose</th>
+                      <th className="px-4 py-3 font-semibold">Status</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 bg-white dark:divide-slate-700 dark:bg-slate-900">
+                    {approvalRows.map(([name, purpose, status]) => (
+                      <tr key={name}>
+                        <td className="px-4 py-3 text-slate-700 dark:text-slate-300">{name}</td>
+                        <td className="px-4 py-3 text-slate-700 dark:text-slate-300">{purpose}</td>
+                        <td className="px-4 py-3 text-slate-700 dark:text-slate-300">{status}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
 

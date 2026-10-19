@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function SaveEarthBadge() {
   return (
-    <div className="fixed bottom-5 left-4 z-50 md:bottom-6 md:left-6">
+    <div className="fixed bottom-20 left-4 z-50 md:bottom-24 md:left-5">
       <div className="flex items-center gap-2 rounded-full border border-emerald-200 bg-white/85 px-3 py-2 shadow-[0_18px_38px_-24px_rgba(16,185,129,0.7)] backdrop-blur-sm dark:border-emerald-500/30 dark:bg-slate-900/80">
         <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full bg-emerald-100 dark:bg-emerald-500/10">
           <Image

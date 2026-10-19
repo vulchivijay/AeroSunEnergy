@@ -1,4 +1,12 @@
-import { OptimizedImage, Slider } from '../components/ui'
+import {
+  HybridBenefitCard,
+  HybridFeatureCard,
+  HybridInfoPanel,
+  HybridSectionEyebrow,
+  HybridTable,
+  OptimizedImage,
+  Slider,
+} from '../components/ui'
 
 export const metadata = {
   title: 'Hybrid Solar & Wind Energy | AeroSun Energy',
@@ -36,24 +44,28 @@ const hybridTypes = [
     description:
       'A standalone power system using solar PV, wind generation, battery storage, and inverter controls to serve remote loads without utility supply.',
     highlights: ['Rural homes', 'Remote telecom', 'Agricultural facilities'],
+    accent: 'emerald' as const,
   },
   {
     title: 'Grid-connected hybrid without battery',
     description:
       'Combines solar and wind with grid-connected power-conversion equipment, with the grid acting as a backup source when generation is not sufficient.',
     highlights: ['Commercial buildings', 'Factories', 'Large agricultural sites'],
+    accent: 'sky' as const,
   },
   {
     title: 'Grid-connected hybrid with battery storage',
     description:
       'Adds storage for backup power, reduced outages, and better utilization of self-generated renewable electricity.',
     highlights: ['Critical loads', 'Hospitals', 'Commercial resilience'],
+    accent: 'violet' as const,
   },
   {
     title: 'Hybrid microgrid',
     description:
       'A local network that coordinates multiple energy sources and loads, capable of operating connected or independently from the utility grid.',
     highlights: ['Villages', 'Campuses', 'Industrial sites'],
+    accent: 'amber' as const,
   },
 ]
 
@@ -70,6 +82,20 @@ const productPriorities = [
   'Off-grid commercial hybrid systems',
   'Commercial grid-connected hybrid systems',
   'Hybrid microgrids',
+]
+
+const projectRows = [
+  { label: 'Small residential hybrid', value: 'Solar PV + small wind turbine + battery', use: 'Homes in suitable wind locations' },
+  { label: 'Agricultural hybrid', value: 'Solar PV + wind turbine + battery or pump controller', use: 'Farms and irrigation facilities' },
+  { label: 'Remote off-grid hybrid', value: 'Solar PV + wind + battery', use: 'Remote homes, telecom and monitoring stations' },
+  { label: 'Commercial hybrid', value: 'Solar PV + wind + optional battery', use: 'Shops, offices and commercial facilities' },
+]
+
+const keyBenefits = [
+  'Improves renewable energy availability across variable weather',
+  'Better resilience for operations and critical loads',
+  'Supports energy independence and reduced utility dependence',
+  'Helps optimize generation mixes across day and season',
 ]
 
 export default function HybridEnergyPage() {
@@ -157,24 +183,19 @@ export default function HybridEnergyPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-8 max-w-3xl">
-          <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-700">Hybrid categories</p>
+          <HybridSectionEyebrow>Hybrid categories</HybridSectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Hybrid systems by grid connection and storage</h2>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
           {hybridTypes.map((type) => (
-            <article key={type.title} className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.28)]">
-              <h3 className="text-2xl font-bold text-slate-900">{type.title}</h3>
-              <p className="mt-4 text-base leading-7 text-slate-700">{type.description}</p>
-              <ul className="mt-5 space-y-2 text-base text-slate-700">
-                {type.highlights.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-emerald-500" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
+            <HybridFeatureCard
+              key={type.title}
+              title={type.title}
+              description={type.description}
+              points={type.highlights}
+              accent={type.accent}
+            />
           ))}
         </div>
       </section>
@@ -183,7 +204,7 @@ export default function HybridEnergyPage() {
         <div className="rounded-4xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-[0_32px_90px_-38px_rgba(15,23,42,1)] sm:p-8">
           <div className="mb-6 flex items-center justify-between gap-3">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-300">Electrical integration</p>
+              <HybridSectionEyebrow>Electrical integration</HybridSectionEyebrow>
               <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">AC-coupled vs DC-coupled architectures</h3>
             </div>
             <div className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-200 sm:block">
@@ -205,97 +226,66 @@ export default function HybridEnergyPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mb-8">
-          <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-violet-700">Application sizing</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900">System size and customer categories</h2>
-        </div>
-
-        <div className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-[0_20px_40px_-25px_rgba(15,23,42,0.25)]">
-          <div className="grid grid-cols-1 border-b border-slate-200 bg-slate-50 text-sm font-semibold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-[1.2fr_2.2fr_1.8fr]">
-            <div className="px-5 py-4">Type</div>
-            <div className="px-5 py-4">Typical configuration</div>
-            <div className="px-5 py-4">Potential customers</div>
+        <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+          <div className="grid gap-5 sm:grid-cols-2">
+            {keyBenefits.map((benefit) => (
+              <HybridBenefitCard key={benefit} title={benefit.split(' ').slice(0, 3).join(' ') || 'Benefit'} description={benefit} />
+            ))}
           </div>
 
-          <div className="divide-y divide-slate-200">
-            <div className="grid gap-3 px-5 py-5 md:grid-cols-[1.2fr_2.2fr_1.8fr] md:gap-0">
-              <div className="font-bold text-slate-900">Small residential hybrid</div>
-              <div className="text-slate-700">Solar PV + small wind turbine + battery</div>
-              <div className="text-slate-700">Homes in suitable wind locations</div>
-            </div>
-            <div className="grid gap-3 px-5 py-5 md:grid-cols-[1.2fr_2.2fr_1.8fr] md:gap-0">
-              <div className="font-bold text-slate-900">Agricultural hybrid</div>
-              <div className="text-slate-700">Solar PV + wind turbine + battery or pump controller</div>
-              <div className="text-slate-700">Farms and irrigation facilities</div>
-            </div>
-            <div className="grid gap-3 px-5 py-5 md:grid-cols-[1.2fr_2.2fr_1.8fr] md:gap-0">
-              <div className="font-bold text-slate-900">Remote off-grid hybrid</div>
-              <div className="text-slate-700">Solar PV + wind + battery</div>
-              <div className="text-slate-700">Remote homes, telecom and monitoring stations</div>
-            </div>
-            <div className="grid gap-3 px-5 py-5 md:grid-cols-[1.2fr_2.2fr_1.8fr] md:gap-0">
-              <div className="font-bold text-slate-900">Commercial hybrid</div>
-              <div className="text-slate-700">Solar PV + wind + optional battery</div>
-              <div className="text-slate-700">Shops, offices and commercial facilities</div>
-            </div>
+          <div className="space-y-5">
+            <HybridInfoPanel title="Why hybrid works" content={keyBenefits} accent="emerald" />
+            <HybridInfoPanel title="Feasibility checklist" content={['Wind resource assessment', 'Storage sizing', 'Load profile analysis', 'Grid approval and safety review']} accent="sky" />
           </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)] sm:p-8">
-            <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-sky-700">Recommended launch</p>
-            <h2 className="mt-3 text-3xl font-bold text-slate-900">AeroSun product priorities</h2>
-            <div className="mt-6 space-y-3">
-              {productPriorities.map((item, index) => (
-                <div key={item} className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 text-sm font-bold text-emerald-700">
-                    {index + 1}
-                  </div>
-                  <div className="text-base font-medium text-slate-800">{item}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="overflow-hidden rounded-4xl border border-slate-200 bg-slate-950 p-5 shadow-[0_28px_70px_-36px_rgba(15,23,42,0.9)]">
-            <div className="relative h-72 overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
-              <OptimizedImage
-                src="/images/slider-2.png"
-                alt="Hybrid renewable energy deployment"
-                fill
-                sizes="(min-width: 1024px) 35vw, 100vw"
-                className="object-cover opacity-85"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-900/30 to-transparent" />
-            </div>
-            <div className="mt-5 rounded-3xl border border-emerald-400/20 bg-emerald-500/10 p-4">
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-200">Key insight</p>
-              <h3 className="mt-2 text-xl font-bold text-white">Start with the simplest, most credible hybrid offers</h3>
-              <p className="mt-2 text-base leading-7 text-slate-200">
-                Evaluate solar + battery hybrid, solar + wind + battery off-grid systems, and commercial grid-connected hybrid designs before entering larger projects.
-              </p>
-            </div>
-          </div>
+        <div className="mb-8 max-w-3xl">
+          <HybridSectionEyebrow>Application sizing</HybridSectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900">System size and customer categories</h2>
         </div>
+
+        <HybridTable rows={projectRows} />
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-        <div className="rounded-4xl border border-slate-200 bg-linear-to-br from-slate-100 via-white to-emerald-50 p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.3)] sm:p-8">
-          <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-700">Important feasibility note</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900">Assess wind resource before recommending a hybrid system</h2>
-          <div className="mt-6 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-3xl border border-slate-200 bg-white p-5 text-base leading-7 text-slate-700">
-              Hybrid systems can improve renewable energy availability, but performance depends on local wind speed, solar production, storage requirements, and load profile.
+        <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)] sm:p-8">
+          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+            <div>
+              <HybridSectionEyebrow>Recommended launch</HybridSectionEyebrow>
+              <h2 className="mt-3 text-3xl font-bold text-slate-900">AeroSun product priorities</h2>
+              <div className="mt-6 space-y-3">
+                {productPriorities.map((item, index) => (
+                  <div key={item} className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 text-sm font-bold text-emerald-700">
+                      {index + 1}
+                    </div>
+                    <div className="text-base font-medium text-slate-800">{item}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="rounded-3xl border border-slate-200 bg-white p-5 text-base leading-7 text-slate-700">
-              Adding a small wind turbine does not automatically improve economics; site conditions, noise, structural requirements, and approvals must be reviewed carefully.
-            </div>
-          </div>
 
-          <div className="mt-8 rounded-3xl border border-amber-200 bg-amber-50 p-5 text-base leading-7 text-amber-900">
-            <strong className="font-bold">Recommendation:</strong> begin with solar + battery hybrid, solar + wind + battery off-grid systems, and commercial hybrid installations where the site and load profile support them.
+            <div className="overflow-hidden rounded-4xl border border-slate-200 bg-slate-950 p-5 shadow-[0_28px_70px_-36px_rgba(15,23,42,0.9)]">
+              <div className="relative h-72 overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
+                <OptimizedImage
+                  src="/images/slider-2.png"
+                  alt="Hybrid renewable energy deployment"
+                  fill
+                  sizes="(min-width: 1024px) 35vw, 100vw"
+                  className="object-cover opacity-85"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-900/30 to-transparent" />
+              </div>
+              <div className="mt-5 rounded-3xl border border-emerald-400/20 bg-emerald-500/10 p-4">
+                <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-200">Key insight</p>
+                <h3 className="mt-2 text-xl font-bold text-white">Start with the simplest, most credible hybrid offers</h3>
+                <p className="mt-2 text-base leading-7 text-slate-200">
+                  Evaluate solar + battery hybrid, solar + wind + battery off-grid systems, and commercial grid-connected hybrid designs before entering larger projects.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
