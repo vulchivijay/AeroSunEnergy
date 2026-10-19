@@ -113,7 +113,7 @@ export default function HybridEnergyPage() {
         <div className="relative h-full flex-1 overflow-hidden">
           <div className="absolute inset-0">
             <OptimizedImage
-              src="/images/slider-1.png"
+              src="/images/slider/slider-15.png"
               alt="Hybrid solar and wind energy system"
               fill
               sizes="100vw"
@@ -135,7 +135,7 @@ export default function HybridEnergyPage() {
         <div className="relative h-full flex-1 overflow-hidden">
           <div className="absolute inset-0">
             <OptimizedImage
-              src="/images/slider-2.png"
+              src="/images/slider/slider-17.png"
               alt="Microgrid and hybrid renewable power deployment"
               fill
               sizes="100vw"
