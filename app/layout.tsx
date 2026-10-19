@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Poppins, Roboto } from 'next/font/google'
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 import { JsonLd } from '@/app/components/seo'
 import { LocaleProvider } from '@/lib/LocaleContext'
 import { Header, Footer, LordGanesha } from '@/app/components/layout'
@@ -27,8 +27,10 @@ const poppins = Poppins({
   display: 'swap',
 })
 
-const GTM_ID = 'GTM-PLB9S69G'
-const BING_SITE_VERIFICATION = 'CFCE648996D804079C4F28B5C09CE9D3'
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || process.env.GTM_ID
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || process.env.GA_MEASUREMENT_ID
+const GOOGLE_SITE_VERIFICATION = process.env.GOOGLE_SITE_VERIFICATION || undefined
+const BING_SITE_VERIFICATION = process.env.BING_SITE_VERIFICATION || 'CFCE648996D804079C4F28B5C09CE9D3'
 
 export const metadata: Metadata = {
   title: {
@@ -124,7 +126,7 @@ export const metadata: Metadata = {
     images: ['/images/og-image.png'],
   },
   verification: {
-    google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
+    google: GOOGLE_SITE_VERIFICATION,
     other: {
       'msvalidate.01': BING_SITE_VERIFICATION,
     },
@@ -136,6 +138,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${roboto.variable} ${poppins.variable} bg-white text-gray-900 transition-colors duration-150`}>
         {GTM_ID ? <GoogleTagManager gtmId={GTM_ID} /> : null}
+        {GA_MEASUREMENT_ID ? <GoogleAnalytics gaId={GA_MEASUREMENT_ID} /> : null}
         <JsonLd />
         <PerformanceMonitor />
         <LocaleProvider>
