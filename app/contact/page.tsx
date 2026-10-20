@@ -1,10 +1,10 @@
 'use client'
 
 import type { FormEvent } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from '@/lib/motion'
 import { Card, CardContent } from '@/app/components/ui/Card'
+import FaqCard from '@/app/components/ui/FaqCard'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
 
@@ -70,7 +70,6 @@ export default function Contact() {
   ]
 
   const contactEmail = footer.email
-  const websiteUrl = footer.website.startsWith('http') ? footer.website : `https://${footer.website}`
 
   const handleProjectBrief = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -101,7 +100,7 @@ export default function Contact() {
   return (
     <section className="relative isolate overflow-hidden px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.18),transparent_22%),radial-gradient(circle_at_80%_15%,rgba(245,158,11,0.12),transparent_18%),linear-gradient(180deg,#f8faf7_0%,#eefaf3_38%,#f8fafc_100%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.16),transparent_20%),radial-gradient(circle_at_80%_12%,rgba(245,158,11,0.14),transparent_18%),linear-gradient(180deg,#020817_0%,#0f172a_45%,#020817_100%)]" aria-hidden="true" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.03)_1px,transparent_1px)] bg-[size:44px_44px] dark:bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]" aria-hidden="true" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.03)_1px,transparent_1px)] bg-size-[44px_44px] dark:bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl space-y-8">
         <div className="grid gap-6 xl:grid-cols-[1.14fr_0.86fr] xl:items-stretch">
@@ -109,13 +108,13 @@ export default function Contact() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, ease: 'easeOut' }}
-            className="relative isolate overflow-hidden rounded-[32px] border border-[#dfeee4] bg-white shadow-[0_36px_90px_rgba(15,23,42,0.08)] dark:border-slate-800 dark:bg-slate-950"
+            className="relative isolate overflow-hidden rounded-4xl border border-[#dfeee4] bg-white shadow-[0_36px_90px_rgba(15,23,42,0.08)] dark:border-slate-800 dark:bg-slate-950"
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.22),transparent_22%),radial-gradient(circle_at_100%_0%,rgba(245,158,11,0.18),transparent_18%),linear-gradient(135deg,#f5faf6_0%,#effaf2_28%,#f8fafc_100%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.20),transparent_20%),radial-gradient(circle_at_100%_0%,rgba(245,158,11,0.20),transparent_18%),linear-gradient(135deg,#081421_0%,#101d2d_32%,#020817_100%)]" aria-hidden="true" />
 
             <div className="relative grid gap-7 p-5 sm:p-7 xl:min-h-[560px]">
               <div className="flex rounded-[28px] border border-[#dfeee4]/80 bg-white/65 p-2 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/40">
-                <div className="flex h-full flex-col justify-center rounded-[24px] bg-[linear-gradient(135deg,rgba(255,255,255,0.95),rgba(244,248,245,0.88))] p-5 sm:p-6 dark:bg-[linear-gradient(135deg,rgba(15,23,42,0.92),rgba(15,23,42,0.78))]">
+                <div className="flex h-full flex-col justify-center rounded-3xl bg-[linear-gradient(135deg,rgba(255,255,255,0.95),rgba(244,248,245,0.88))] p-5 sm:p-6 dark:bg-[linear-gradient(135deg,rgba(15,23,42,0.92),rgba(15,23,42,0.78))]">
                   <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#20A44A]/20 bg-white/85 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.30em] text-[#183729] shadow-sm backdrop-blur-md dark:border-white/10 dark:bg-slate-900/70 dark:text-slate-100">
                     <span className="h-2 w-2 rounded-full bg-[#20A44A] shadow-[0_0_18px_rgba(32,164,74,0.9)]" />
                     {navbar.startProject}
@@ -318,6 +317,49 @@ export default function Contact() {
                   <Link href="/about" className="rounded-full border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/12">{c.aboutAeroSun}</Link>
                   <Link href="/services" className="rounded-full border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/12">{c.services}</Link>
                   <Link href="/estimation" className="rounded-full border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/12">{c.estimation}</Link>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="grid gap-6">
+          <Card className="overflow-hidden border border-[#e4efe7] bg-white/80 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/80">
+            <CardContent className="p-5 sm:p-7">
+              <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">FAQ</h2>
+
+              <div className="mt-4 space-y-4">
+                <div className="rounded-4xl border border-[#dfeee4] bg-white/80 p-5 shadow-[0_24px_70px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/80 sm:p-7">
+                  <div className="mb-6 flex items-end justify-between gap-4">
+                    <div>
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-slate-500 dark:text-slate-400">FAQ</p>
+                      <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white">Frequently asked questions</h2>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <FaqCard
+                      question="What type of solar system is best for a home or business?"
+                      answer="The best option depends on your rooftop area, electricity usage, and whether you want backup during outages. On-grid systems are the most common for homes and offices, while hybrid systems are preferred when backup power is important."
+                      defaultOpen
+                    />
+                    <FaqCard
+                      question="Do solar panels generate power in cloudy or rainy weather?"
+                      answer="Yes. Solar panels still produce electricity during cloudy or rainy conditions, although the output is lower because the sunlight is diffused and the intensity is reduced."
+                    />
+                    <FaqCard
+                      question="How long does a rooftop solar installation take?"
+                      answer="Most residential and commercial rooftop systems are installed within a few days to a couple of weeks depending on the size of the project, site conditions, approvals, and the availability of equipment and net-metering."
+                    />
+                    <FaqCard
+                      question="Can I get subsidy support for my solar rooftop system?"
+                      answer="Yes. Eligible residential customers can apply under government schemes such as PM Surya Ghar: Muft Bijli Yojana. AeroSun Energy helps clients with documentation, application support, and subsidy guidance."
+                    />
+                    <FaqCard
+                      question="Will solar reduce my monthly electricity bill?"
+                      answer="In most cases, yes. A properly sized rooftop solar system can significantly lower grid consumption and reduce your monthly power charges, especially when paired with net metering and smart usage planning."
+                    />
+                  </div>
                 </div>
               </div>
             </CardContent>
