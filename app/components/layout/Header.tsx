@@ -55,7 +55,7 @@ export default function Navbar() {
   const mobileLangRef = useRef<HTMLDivElement>(null)
   const navLinks = t.navbar.links
   const languageOptions = t.navbar.languages as { code: Locale; label: string; shortLabel: string }[]
-  const shouldDisableWindAndHybrid = true // keep these links disabled until the sections are live
+  const shouldDisableWindAndHybrid = process.env.NODE_ENV === 'production'
   const visibleNavLinks = shouldDisableWindAndHybrid
     ? navLinks.map((link) => {
         const isDisabled = link.href === '/windenergy' || link.href === '/hybridenergy'
@@ -159,10 +159,10 @@ export default function Navbar() {
                           : 'text-slate-700 hover:bg-[#EAF9F0] hover:text-[#20A44A] dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]'
                     }`}
                   >
-                    <span className="inline-flex items-center gap-2">
+                    <span className="relative inline-flex items-center gap-2">
                       {link.label}
                       {disabled && (
-                        <span className="inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-amber-700">
+                        <span className="absolute -right-2 -top-2 inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-amber-700 shadow-sm">
                           Coming soon
                         </span>
                       )}

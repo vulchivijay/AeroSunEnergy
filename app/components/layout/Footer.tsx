@@ -80,7 +80,7 @@ export default function Footer() {
 	const { t } = useLocale()
 	const footer = t.footer
 	const navLinks = t.navbar.links
-	const shouldDisableWindAndHybrid = true
+	const shouldDisableWindAndHybrid = process.env.NODE_ENV === 'production'
 	const visibleNavLinks = shouldDisableWindAndHybrid
 		? navLinks.map((link) => ({
 			...link,
@@ -159,10 +159,10 @@ export default function Footer() {
 							{visibleNavLinks.map((link) => (
 								<li key={link.label}>
 									{(link as { disabled?: boolean }).disabled ? (
-										<span className="inline-flex items-center gap-2 text-sm text-slate-400 dark:text-slate-500">
+										<span className="relative inline-flex items-center gap-2 text-sm text-slate-400 dark:text-slate-500">
 											<span className="h-1.5 w-1.5 rounded-full bg-slate-400" aria-hidden="true" />
 											{link.label}
-											<span className="inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-amber-700">
+											<span className="absolute -right-3 -top-2 inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-amber-700 shadow-sm">
 												Coming soon
 											</span>
 										</span>
