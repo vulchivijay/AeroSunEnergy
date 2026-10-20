@@ -4,7 +4,7 @@ import type { FormEvent } from 'react'
 import Link from 'next/link'
 import { motion } from '@/lib/motion'
 import { Card, CardContent } from '@/app/components/ui/Card'
-import FaqCard from '@/app/components/ui/FaqCard'
+import FaqCard, { solarFaqs } from '@/app/components/ui/FaqCard'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
 
@@ -338,27 +338,14 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-4">
-                    <FaqCard
-                      question="What type of solar system is best for a home or business?"
-                      answer="The best option depends on your rooftop area, electricity usage, and whether you want backup during outages. On-grid systems are the most common for homes and offices, while hybrid systems are preferred when backup power is important."
-                      defaultOpen
-                    />
-                    <FaqCard
-                      question="Do solar panels generate power in cloudy or rainy weather?"
-                      answer="Yes. Solar panels still produce electricity during cloudy or rainy conditions, although the output is lower because the sunlight is diffused and the intensity is reduced."
-                    />
-                    <FaqCard
-                      question="How long does a rooftop solar installation take?"
-                      answer="Most residential and commercial rooftop systems are installed within a few days to a couple of weeks depending on the size of the project, site conditions, approvals, and the availability of equipment and net-metering."
-                    />
-                    <FaqCard
-                      question="Can I get subsidy support for my solar rooftop system?"
-                      answer="Yes. Eligible residential customers can apply under government schemes such as PM Surya Ghar: Muft Bijli Yojana. AeroSun Energy helps clients with documentation, application support, and subsidy guidance."
-                    />
-                    <FaqCard
-                      question="Will solar reduce my monthly electricity bill?"
-                      answer="In most cases, yes. A properly sized rooftop solar system can significantly lower grid consumption and reduce your monthly power charges, especially when paired with net metering and smart usage planning."
-                    />
+                    {solarFaqs.map((item, index) => (
+                      <FaqCard
+                        key={`${item.question}-${index}`}
+                        question={item.question}
+                        answer={item.answer}
+                        defaultOpen={index === 0}
+                      />
+                    ))}
                   </div>
                 </div>
               </div>

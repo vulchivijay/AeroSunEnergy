@@ -1,5 +1,6 @@
 "use client"
 
+import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
 
 const TARGET_DATE = new Date('2027-03-31T23:59:59+05:30')
@@ -87,12 +88,18 @@ export default function SchemeBanner() {
               </p>
 
               <div className="mt-7 flex flex-wrap items-center gap-3">
-                <button className="rounded-full bg-emerald-600 px-5 py-3 text-sm font-bold uppercase tracking-[0.14em] text-white shadow-[0_18px_28px_-18px_rgba(5,150,105,0.9)] transition hover:bg-emerald-500">
+                <Link
+                  href="/contact"
+                  className="rounded-full bg-emerald-600 px-5 py-3 text-sm font-bold uppercase tracking-[0.14em] text-white shadow-[0_18px_28px_-18px_rgba(5,150,105,0.9)] transition hover:bg-emerald-500"
+                >
                   Apply Now
-                </button>
-                <button className="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-bold uppercase tracking-[0.14em] text-slate-700 transition hover:border-emerald-200 hover:text-emerald-700">
+                </Link>
+                <Link
+                  href="/know-eligibility"
+                  className="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-bold uppercase tracking-[0.14em] text-slate-700 transition hover:border-emerald-200 hover:text-emerald-700"
+                >
                   Know Eligibility
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -102,7 +109,7 @@ export default function SchemeBanner() {
                   <div className="text-[11px] font-bold uppercase tracking-[0.22em] text-emerald-200">Subsidy</div>
                   <div className="mt-2 text-4xl font-black tracking-[-0.05em] text-white">₹ 78,000</div>
                 </div>
-                <div className="rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-2 text-right">
+                <div className="rounded-lg border border-emerald-400/40 bg-emerald-500/10 px-3 py-2 text-right">
                   <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-200">Max</div>
                   <div className="text-sm font-semibold text-white">per home</div>
                 </div>
