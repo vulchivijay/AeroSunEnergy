@@ -119,6 +119,72 @@ const packages = [
   },
 ]
 
+const solarPillars = [
+  {
+    title: 'Solar Rooftop Systems',
+    description: 'On-grid power plants for homes and businesses.',
+    bullets: ['On-grid, off-grid and hybrid configurations', 'Net metering with state DISCOM', 'PM Surya Ghar subsidy assistance', 'TATA Power Solar premium panels'],
+    accent: 'from-emerald-500 via-green-500 to-lime-400',
+  },
+  {
+    title: 'Solar Thermal — Water Heating Solutions',
+    description: 'Efficient, eco-friendly hot water for homes, hotels, hospitals, hostels, commercial establishments and industries.',
+    bullets: ['Available in capacities from 100 litres per day (LPD)', 'Pressurised and non-pressurised models', 'High-performance BIS-certified collectors', 'Cut electricity use and reduce geyser dependency'],
+    accent: 'from-orange-400 via-amber-500 to-yellow-400',
+  },
+  {
+    title: 'Solar Street Lights',
+    description: 'All-in-one lighting powered entirely by sunlight.',
+    bullets: ['Integrated all-in-one luminaires from 12W', 'Auto dusk-to-dawn operation', 'Lithium-ion storage with 5+ year life', 'Zero electricity bills'],
+    accent: 'from-cyan-500 via-sky-500 to-blue-500',
+  },
+  {
+    title: 'Solar Fencing',
+    description: 'Solar-powered electrical protection for farms and estates.',
+    bullets: ['Solar-charged energiser', 'Up to 10 km perimeter on a single charger', 'Audible alarm and battery backup', 'Crop and livestock protection'],
+    accent: 'from-violet-500 via-purple-500 to-fuchsia-500',
+  },
+  {
+    title: 'Solar Pumpsets',
+    description: 'Diesel-free water pumping for agriculture.',
+    bullets: ['AC and DC pump configurations', 'MNRE-approved controllers', 'PM-KUSUM scheme assistance', '5-year manufacturer warranty'],
+    accent: 'from-sky-500 via-teal-500 to-emerald-500',
+  },
+  {
+    title: 'Operation & Maintenance (AMC)',
+    description: 'Annual care to keep your plant generating at peak.',
+    bullets: ['Quarterly preventive maintenance', 'Performance ratio monitoring', '24x7 priority support', 'Spare parts and inverter service'],
+    accent: 'from-rose-500 via-red-500 to-orange-500',
+  },
+]
+
+const systemTypes = [
+  {
+    type: 'On-Grid Solar',
+    badge: 'Most Popular',
+    description: 'Connected to the utility grid via net metering. Excess generation flows back to DISCOM and credits your bill.',
+    benefits: ['Lowest upfront cost', 'Eligible for PM Surya Ghar subsidy', 'Net metering with state DISCOM', 'Fastest payback (4-6 years)'],
+    bestFor: 'Homes & businesses with stable grid',
+    accent: 'border-emerald-200 bg-emerald-50 text-emerald-800',
+  },
+  {
+    type: 'Off-Grid Solar',
+    badge: 'Independent',
+    description: 'Standalone system with battery storage. No DISCOM connection — you produce, store and consume your own power.',
+    benefits: ['Complete grid independence', 'Battery backup included', 'Ideal for remote sites', 'Diesel-genset replacement'],
+    bestFor: 'Farms, telecom towers, remote homes',
+    accent: 'border-sky-200 bg-sky-50 text-sky-800',
+  },
+  {
+    type: 'Hybrid Solar',
+    badge: 'Best of Both',
+    description: 'Combines net metering with battery storage. You stay grid-connected and ride through outages seamlessly.',
+    benefits: ['Power-cut protection', 'Net metering benefits', 'Critical loads always on', 'Smart energy management'],
+    bestFor: 'Hotels, hospitals, premium homes',
+    accent: 'border-violet-200 bg-violet-50 text-violet-800',
+  },
+]
+
 export default function ServicesPage() {
   return (
     <main className="bg-slate-50 text-slate-900">
@@ -296,6 +362,87 @@ export default function ServicesPage() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mb-8 max-w-3xl">
+          <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-700">Complete solar solutions</p>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Complete solar solutions, one trusted partner.</h2>
+          <p className="mt-4 text-lg leading-8 text-slate-700">
+            Whether you need a 1 kW home rooftop or a 100 kW industrial plant — we design, supply, install and maintain it end-to-end.
+          </p>
+        </div>
+
+        <div className="overflow-hidden rounded-4xl border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-amber-50 p-6 shadow-[0_24px_60px_-36px_rgba(16,185,129,0.35)] sm:p-8">
+          <div className="mb-6 flex items-center justify-between gap-4">
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-700">Our Services</p>
+              <h3 className="mt-2 text-2xl font-bold text-slate-900 sm:text-3xl">Six pillars of clean energy</h3>
+            </div>
+            <div className="hidden rounded-full border border-emerald-200 bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 sm:block">
+              End-to-end support
+            </div>
+          </div>
+
+          <div className="grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
+            {solarPillars.map((item) => (
+              <article key={item.title} className="overflow-hidden rounded-[1.6rem] border border-slate-200 bg-white shadow-[0_14px_32px_-24px_rgba(15,23,42,0.22)]">
+                <div className={`h-2 bg-linear-to-r ${item.accent}`} />
+                <div className="p-5">
+                  <h4 className="text-xl font-bold text-slate-900">{item.title}</h4>
+                  <p className="mt-3 text-sm leading-7 text-slate-700">{item.description}</p>
+                  <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700">
+                    {item.bullets.map((bullet) => (
+                      <li key={bullet} className="flex items-start gap-2">
+                        <span className="mt-2 h-2 w-2 rounded-full bg-emerald-500" />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <button type="button" className="mt-5 inline-flex rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-700 transition hover:border-emerald-200 hover:bg-emerald-50 hover:text-emerald-700">
+                    Learn more
+                  </button>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mb-8 max-w-3xl">
+          <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-sky-700">System Types</p>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">On-grid, Off-grid or Hybrid?</h2>
+          <p className="mt-4 text-lg leading-8 text-slate-700">
+            The right configuration depends on your power-cut frequency, budget and self-consumption goals.
+          </p>
+        </div>
+
+        <div className="grid gap-6 xl:grid-cols-3">
+          {systemTypes.map((system) => (
+            <div key={system.type} className={`rounded-[1.8rem] border p-5 shadow-[0_18px_42px_-30px_rgba(15,23,42,0.35)] ${system.accent}`}>
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="text-2xl font-bold">{system.type}</h3>
+                <span className="rounded-full bg-white/80 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-700">{system.badge}</span>
+              </div>
+
+              <p className="mt-4 text-sm leading-7">{system.description}</p>
+
+              <ul className="mt-4 space-y-2 text-sm leading-6">
+                {system.benefits.map((benefit) => (
+                  <li key={benefit} className="flex items-start gap-2">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-slate-900" />
+                    <span>{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-5 rounded-2xl bg-white/75 p-3 text-sm font-semibold text-slate-700">
+                <span className="font-bold">Best for:</span> {system.bestFor}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </main>

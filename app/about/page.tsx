@@ -191,6 +191,42 @@ const missionPoints = [
   'Encouraging energy efficiency and responsible resource utilisation.',
 ]
 
+const ppsStats = [
+  { value: '14+', label: 'Years in Solar' },
+  { value: '4700+', label: 'Happy Customers' },
+  { value: '30MW+', label: 'Installed Capacity' },
+  { value: '100%', label: 'Subsidy Assistance' },
+]
+
+const ppsStrengths = [
+  '14+ years of expertise',
+  'In-house engineering support',
+  'Tata-grade components',
+  'End-to-end local service in Tirupati',
+]
+
+const founderProfiles = [
+  {
+    initials: 'KC',
+    name: 'K. Chandra Sekhar',
+    role: 'Co-Founder & Director',
+    description: 'Leads engineering, system design and large commercial deployments. Hands-on through every site assessment.',
+  },
+  {
+    initials: 'BK',
+    name: 'Balaji Kiran Gilledu',
+    role: 'Co-Founder & Director',
+    description: 'Drives strategy, partnerships and customer experience. Personally oversees the AMC and service operations.',
+  },
+]
+
+const ppsReasons = [
+  { title: '14+ yrs', text: 'Industry Experience — Over a decade of pure solar focus. We have seen every roof type and use case.' },
+  { title: 'TATA', text: 'Premium Hardware — Authorised TATA Power Solar Channel partners with tier-1 panels and 25-year warranty.' },
+  { title: '4700+', text: 'Customers Powered — From village homes to gated villas, our installations span every segment.' },
+  { title: '100%', text: 'Local Service — Tirupati-based engineering team. We answer the phone every single time.' },
+]
+
 export default function AboutPage() {
   return (
     <main className="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
@@ -506,39 +542,139 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-6 pb-12 sm:px-6 lg:px-8">
-        <div className="rounded-[30px] border border-slate-200 bg-linear-to-br from-slate-900 via-slate-950 to-emerald-950 p-6 text-white shadow-[0_28px_80px_-40px_rgba(16,185,129,0.55)] dark:border-slate-700">
-          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-emerald-300">Company profile summary</p>
-              <h2 className="mt-3 text-3xl font-bold">AeroSun Energy Private Limited</h2>
-              <p className="mt-4 text-base leading-8 text-slate-200">
-                AeroSun Energy Private Limited is an Indian renewable-energy company based in Tirupati, Andhra Pradesh, with a focus on solar energy, wind energy and hybrid renewable-energy solutions.
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45 }}
+          className="overflow-hidden rounded-[30px] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-sky-50 shadow-[0_30px_80px_-40px_rgba(16,185,129,0.35)] dark:border-slate-800 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950"
+        >
+          <div className="grid gap-8 p-6 lg:grid-cols-[1.12fr_0.88fr] lg:p-10">
+            <div className="space-y-6">
+              <div className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-emerald-700 dark:border-emerald-700/40 dark:bg-emerald-500/10 dark:text-emerald-300">
+                Pragathi Power Solutions
+              </div>
+
+              <h2 className="mt-4 text-3xl font-black tracking-[-0.04em] text-slate-900 dark:text-white sm:text-4xl">
+                Powering Up with the Power of the Sun
+              </h2>
+
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-700 dark:text-slate-300">
+                Founded in 2012 by industry veterans, Pragathi Power Solutions is the most trusted name in solar across the Tirupati & Chittoor districts — and the authorised TATA Power Solar Channel Partner for the region.
               </p>
-              <p className="mt-4 text-base leading-8 text-slate-200">
-                The company aims to serve residential, agricultural, commercial and industrial customers through energy consultation, system design, equipment supply, installation, commissioning, maintenance and energy-system integration, subject to applicable requirements.
-              </p>
-              <p className="mt-4 text-base leading-8 text-slate-200">
-                Guided by its vision of a cleaner and more energy-resilient future, AeroSun seeks to build its business around sustainability, innovation, quality, integrity, safety and customer satisfaction.
-              </p>
+
+              <div className="mt-6 rounded-3xl border border-slate-200 bg-white/80 p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900/70">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-emerald-700 dark:text-emerald-300">
+                  Our Story
+                </p>
+                <p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
+                  Over a decade of pioneering clean energy in the Tirupati & Chittoor Districts. Pragathi Power Solutions (PPS) was founded in 2012 by Mr. K. Chandra Sekhar and Mr. Balaji Kiran Gilledu with a single mission — to put the power of the sun into every home, farm and business in Andhra Pradesh.
+                </p>
+                <p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
+                  Headquartered at Ramanujam Circle in Tirupati, we have grown into the most trusted solar partner across the Tirupati & Chittoor districts, with installations spanning residential rooftops, schools, hotels, factories and farmlands. Our designation as Authorised TATA Power Solar Channel Partners means our customers get tier-1 panels and inverters — backed by a name India trusts.
+                </p>
+                <p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
+                  More than a decade on, we still answer every call ourselves, run every site survey personally, and stand behind every kilowatt we install.
+                </p>
+              </div>
             </div>
 
-            <div className="rounded-[26px] border border-white/10 bg-white/5 p-5">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald-300">Official resources</p>
-              <ul className="mt-4 space-y-3 text-base leading-7 text-slate-200">
-                {officialResources.map((resource) => (
-                  <li key={resource.label}>
-                    <a href={resource.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm hover:border-emerald-300 hover:text-emerald-200">
-                      {resource.label}
-                    </a>
-                  </li>
+            <div className="rounded-[28px] border border-emerald-200 bg-emerald-50 p-5 shadow-sm dark:border-emerald-900/50 dark:bg-emerald-950/30">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-emerald-700 dark:text-emerald-300">
+                Why PPS
+              </p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                {ppsStats.map((item) => (
+                  <div key={item.label} className="rounded-2xl border border-emerald-200 bg-white/90 p-4 text-center dark:border-emerald-800 dark:bg-slate-900/80">
+                    <div className="text-2xl font-black tracking-tighter text-emerald-700 dark:text-emerald-300">{item.value}</div>
+                    <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-600 dark:text-slate-300">{item.label}</div>
+                  </div>
                 ))}
-              </ul>
+              </div>
+              <div className="mt-5 space-y-2">
+                {ppsStrengths.map((item) => (
+                  <div key={item} className="flex items-center gap-3 rounded-2xl border border-emerald-200 bg-white/80 px-3 py-2 text-sm font-medium text-slate-700 dark:border-emerald-800 dark:bg-slate-900/70 dark:text-slate-200">
+                    <span className="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
+        </motion.div>
+      </section>
 
-          <div className="mt-6 rounded-2xl border border-emerald-400/20 bg-emerald-500/10 p-4 text-lg font-medium italic text-emerald-50">
-            AeroSun Energy Private Limited — Harnessing Nature. Empowering Tomorrow.
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <div className="mb-5">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald-600 dark:text-emerald-400">Mission</p>
+            <h3 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">Make solar the default choice for every roof in the Tirupati & Chittoor districts by 2030.</h3>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-2">
+            <div className="rounded-[28px] border border-sky-200 bg-sky-50 p-5 dark:border-sky-900/50 dark:bg-sky-950/30">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-sky-700 dark:text-sky-300">Vision</p>
+              <h4 className="mt-3 text-2xl font-bold text-slate-900 dark:text-white">A self-sufficient, carbon-free South India powered by clean energy.</h4>
+            </div>
+
+            <div className="rounded-[28px] border border-violet-200 bg-violet-50 p-5 dark:border-violet-900/50 dark:bg-violet-950/30">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-violet-700 dark:text-violet-300">Values</p>
+              <h4 className="mt-3 text-2xl font-bold text-slate-900 dark:text-white">Honest pricing, premium components, and lifelong service.</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <div className="mb-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-amber-600 dark:text-amber-400">Strengths</p>
+            <h3 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">14+ years of expertise, an in-house engineering team and Tata-grade components.</h3>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {ppsReasons.map((item) => (
+              <div key={item.title} className="rounded-3xl border border-amber-200 bg-amber-50 p-4 dark:border-amber-900/50 dark:bg-amber-950/20">
+                <div className="text-2xl font-black tracking-tighter text-amber-700 dark:text-amber-300">{item.title}</div>
+                <p className="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-300">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <div className="mb-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-violet-600 dark:text-violet-400">Leadership</p>
+            <h3 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">Meet the founders</h3>
+            <p className="mt-3 text-base leading-7 text-slate-700 dark:text-slate-300">Engineers and entrepreneurs who built PPS one rooftop at a time.</p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {founderProfiles.map((person) => (
+              <div key={person.name} className="rounded-[26px] border border-violet-200 bg-violet-50 p-5 dark:border-violet-900/50 dark:bg-violet-950/20">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-violet-700 text-xl font-black text-white shadow-lg shadow-violet-200/50 dark:shadow-violet-950/40">
+                  {person.initials}
+                </div>
+                <h4 className="text-xl font-bold text-slate-900 dark:text-white">{person.name}</h4>
+                <p className="mt-1 text-sm font-semibold uppercase tracking-[0.18em] text-violet-700 dark:text-violet-300">{person.role}</p>
+                <p className="mt-4 text-base leading-7 text-slate-700 dark:text-slate-300">{person.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 pb-12 sm:px-6 lg:px-8">
+        <div className="rounded-4xl border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-sky-50 p-6 shadow-[0_32px_90px_-50px_rgba(16,185,129,0.35)] dark:border-emerald-900/40 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="mb-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald-600 dark:text-emerald-400">Explore Our Services</p>
+            <h3 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">Want to know if solar is right for your home?</h3>
+          </div>
+
+          <div className="rounded-3xl border border-slate-200 bg-white/80 p-5 text-base leading-8 text-slate-700 shadow-sm dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-300">
+            Book a free site survey with our Tirupati team. No commitments, just honest answers.
           </div>
         </div>
       </section>
