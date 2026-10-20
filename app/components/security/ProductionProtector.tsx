@@ -8,6 +8,17 @@ export default function ProductionProtector() {
   useEffect(() => {
     if (process.env.NODE_ENV !== 'production') return
 
+    const isMobileDevice = () => {
+      if (typeof navigator === 'undefined') return false
+      const coarsePointer = window.matchMedia && window.matchMedia('(pointer: coarse)').matches
+      const smallScreen = window.innerWidth <= 768 || window.innerHeight <= 640
+      const userAgent = navigator.userAgent || ''
+      const mobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)
+      return Boolean(coarsePointer || smallScreen || mobileUA)
+    }
+
+    if (isMobileDevice()) return
+
     const onContext = (e: MouseEvent) => {
       try {
         e.preventDefault()

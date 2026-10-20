@@ -164,12 +164,12 @@ export default function Slider({ children, className = '', autoplay = false, int
       style={{ minHeight: '420px', height: 'clamp(420px, 56vw, 760px)' }}
     >
       <div
-        className={`h-full ${withTransition ? 'transition-transform duration-500 ease-in-out' : ''}`}
+        className={`flex h-full ${withTransition ? 'transition-transform duration-500 ease-in-out' : ''}`}
         style={{ width: slideWidth > 0 ? `${totalWidth}px` : `${clonedSlides.length * 100}%`, transform: translate }}
         onTransitionEnd={onTransitionEnd}
       >
         {clonedSlides.map((child, i) => (
-          <div key={i} className="inline-block shrink-0 h-full" style={{ width: slideWidth > 0 ? `${slideWidth}px` : `${percentPerSlide}%` }}>
+          <div key={i} className="h-full shrink-0" style={{ width: slideWidth > 0 ? `${slideWidth}px` : `${percentPerSlide}%` }}>
             <div className="h-full w-full flex flex-col min-h-0">{child}</div>
           </div>
         ))}
