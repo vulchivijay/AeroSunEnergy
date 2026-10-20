@@ -235,9 +235,11 @@ export default function Home() {
         {slides.map((slide) => (
           <div key={slide.title} className={`${slide.panelClass} relative h-full w-full overflow-hidden`}>
             <div className="absolute inset-0">
-              <div
-                className="h-full w-full bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: `url(${slide.image})`, filter: 'saturate(1.05) brightness(0.72)' }}
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="h-full w-full object-cover object-center"
+                style={{ filter: 'saturate(1.05) brightness(0.72)' }}
               />
             </div>
             <div className={`${slideOverlay} absolute inset-0`} />
