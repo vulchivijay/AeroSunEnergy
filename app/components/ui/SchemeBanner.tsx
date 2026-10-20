@@ -1,5 +1,6 @@
 "use client"
 
+import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
 
 const TARGET_DATE = new Date('2027-03-31T23:59:59+05:30')
@@ -20,8 +21,10 @@ function getTimeParts(target: Date, now: number) {
 
 export default function SchemeBanner() {
   const [now, setNow] = useState<number | null>(null)
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
+    setIsMounted(true)
     const updateNow = () => setNow(Date.now())
     updateNow()
 
@@ -38,6 +41,25 @@ export default function SchemeBanner() {
       { label: 'Mins', value: parts.minutes },
     ]
   }, [now])
+
+  if (!isMounted) {
+    return (
+      <section className="relative overflow-hidden border-b border-emerald-100 bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.15),_transparent_30%),linear-gradient(135deg,#f0fdf4_0%,#ecfeff_28%,#f8fafc_100%)] px-4 py-8 sm:px-6 lg:px-10 lg:py-12">
+        <div className="relative mx-auto max-w-[1400px]">
+          <div className="rounded-[32px] border border-emerald-200/80 bg-white/75 p-5 shadow-[0_30px_80px_-45px_rgba(16,185,129,0.8)] backdrop-blur-sm sm:p-7 lg:p-8">
+            <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+              <div className="animate-pulse space-y-4">
+                <div className="h-9 w-44 rounded-full bg-emerald-100" />
+                <div className="h-16 w-full rounded-2xl bg-slate-200" />
+                <div className="h-5 w-4/5 rounded-full bg-slate-200" />
+              </div>
+              <div className="h-56 rounded-[28px] bg-slate-200/70" />
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section className="relative overflow-hidden border-b border-emerald-100 bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.15),_transparent_30%),linear-gradient(135deg,#f0fdf4_0%,#ecfeff_28%,#f8fafc_100%)] px-4 py-8 sm:px-6 lg:px-10 lg:py-12">
@@ -66,12 +88,18 @@ export default function SchemeBanner() {
               </p>
 
               <div className="mt-7 flex flex-wrap items-center gap-3">
-                <button className="rounded-full bg-emerald-600 px-5 py-3 text-sm font-bold uppercase tracking-[0.14em] text-white shadow-[0_18px_28px_-18px_rgba(5,150,105,0.9)] transition hover:bg-emerald-500">
+                <Link
+                  href="/contact"
+                  className="rounded-full bg-emerald-600 px-5 py-3 text-sm font-bold uppercase tracking-[0.14em] text-white shadow-[0_18px_28px_-18px_rgba(5,150,105,0.9)] transition hover:bg-emerald-500"
+                >
                   Apply Now
-                </button>
-                <button className="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-bold uppercase tracking-[0.14em] text-slate-700 transition hover:border-emerald-200 hover:text-emerald-700">
+                </Link>
+                <Link
+                  href="/know-eligibility"
+                  className="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-bold uppercase tracking-[0.14em] text-slate-700 transition hover:border-emerald-200 hover:text-emerald-700"
+                >
                   Know Eligibility
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -81,7 +109,7 @@ export default function SchemeBanner() {
                   <div className="text-[11px] font-bold uppercase tracking-[0.22em] text-emerald-200">Subsidy</div>
                   <div className="mt-2 text-4xl font-black tracking-[-0.05em] text-white">₹ 78,000</div>
                 </div>
-                <div className="rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-2 text-right">
+                <div className="rounded-lg border border-emerald-400/40 bg-emerald-500/10 px-3 py-2 text-right">
                   <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-200">Max</div>
                   <div className="text-sm font-semibold text-white">per home</div>
                 </div>
