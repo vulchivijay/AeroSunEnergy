@@ -47,6 +47,28 @@
         "href": "/contact"
       }
     ],
+    "quiries": [
+      {
+        "label": "Know Eligibility",
+        "href": "/know-eligibility"
+      },
+      {
+        "label": "Warranty & Policy",
+        "href": "/warranty-policy"
+      },
+      {
+        "label": "Purchase Order",
+        "href": "/purchase-order"
+      },
+      {
+        "label": "Installation Checklist",
+        "href": "/installation-checklist"
+      },
+      {
+        "label": "Customer Agreement",
+        "href": "/customer-agreement"
+      }
+    ],
     "startProject": "Start a Project",
     "toggleDark": "Toggle dark mode",
     "toggleMenu": "Toggle menu",

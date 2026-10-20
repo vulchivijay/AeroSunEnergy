@@ -179,7 +179,7 @@ export default function Navbar() {
               title={t.navbar.startProjectTitle}
               aria-label={t.navbar.startProjectAriaLabel}
               data-cta="start-project"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-linear-to-r from-[#F59E0B] via-[#F59E0B] to-[#F59E0B] px-5 py-2.5 text-sm text-white shadow-[0_18px_26px_-18px_rgba(32,164,74,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_30px_-18px_rgba(245,158,11,0.7)]"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-linear-to-r from-[#20A44A] via-[#20A44A] to-[#29A44A] px-5 py-2.5 text-sm text-white shadow-[0_18px_26px_-18px_rgba(32,164,74,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_30px_-18px_rgba(245,158,11,0.7)]"
             >
               {t.navbar.startProject}
             </Link>

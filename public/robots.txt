@@ -1,11 +1,12 @@
 User-agent: *
 Allow: /
-Disallow: /_next/
 Disallow: /api/
+Disallow: /_next/
+Host: aerosunenergy.in
 
 Sitemap: https://aerosunenergy.in/sitemap.xml
 
 User-agent: Googlebot
 Allow: /
-Disallow: /_next/
 Disallow: /api/
+Disallow: /_next/

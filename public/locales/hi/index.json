@@ -47,6 +47,28 @@
         "href": "/contact"
       }
     ],
+    "quiries": [
+      {
+        "label": "एलिजिबिलिटी देखें",
+        "href": "/know-eligibility"
+      },
+      {
+        "label": "वारंटी और नीति",
+        "href": "/warranty-policy"
+      },
+      {
+        "label": "क्रय आदेश",
+        "href": "/purchase-order"
+      },
+      {
+        "label": "स्थापना चेकलिस्ट",
+        "href": "/installation-checklist"
+      },
+      {
+        "label": "ग्राहक समझौता",
+        "href": "/customer-agreement"
+      }
+    ],
     "startProject": "प्रोजेक्ट शुरू करें",
     "toggleDark": "डार्क मोड टॉगल करें",
     "toggleMenu": "मेनू टॉगल करें",

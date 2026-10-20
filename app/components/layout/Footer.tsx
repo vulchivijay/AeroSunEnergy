@@ -80,6 +80,7 @@ export default function Footer() {
 	const { t } = useLocale()
 	const footer = t.footer
 	const navLinks = t.navbar.links
+	const queries = t.navbar.quiries || []
 	const shouldDisableWindAndHybrid = process.env.NODE_ENV === 'production'
 	const visibleNavLinks = shouldDisableWindAndHybrid
 		? navLinks.map((link) => ({
@@ -94,7 +95,7 @@ export default function Footer() {
 			className="w-full overflow-hidden border-t border-[#20A44A]/10 bg-[radial-gradient(circle_at_top,rgba(32,164,74,0.10),transparent_40%),linear-gradient(180deg,#f9fdf9_0%,#eef8f1_100%)] text-slate-800 shadow-[0_-12px_35px_-28px_rgba(15,23,42,0.35)] dark:border-slate-700 dark:bg-[radial-gradient(circle_at_top,rgba(245,158,11,0.12),transparent_35%),linear-gradient(180deg,#020817_0%,#0f172a_100%)] dark:text-slate-100"
 		>
 			<div className="w-full px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-				<div className="grid w-full gap-8 md:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr]">
+				<div className="grid w-full gap-6 md:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.9fr_0.7fr]">
 					<div className="space-y-5">
 						<div className="inline-flex p-2 dark:border-slate-700 dark:bg-slate-900/60">
 							<Logo />
@@ -105,6 +106,16 @@ export default function Footer() {
 						</p>
 
 						<div className="space-y-2 text-sm text-slate-700 dark:text-slate-200">
+							<div className="flex flex-col items-start gap-2">
+								<span className="inline-flex items-center justify-center rounded-full bg-[#EAF9F0] text-sm text-[#20A44A] dark:bg-slate-800 dark:text-[#F59E0B]">
+									Address:
+								</span>
+								<address className="not-italic text-slate-600 dark:text-slate-300">
+									Do.no 11-184, Gollavanigunta,<br />
+									T.N. Pallem, Tirupati,<br />
+									Andhra Pradesh, India - 517501.
+								</address>
+							</div>
 							<p className="flex items-center gap-2">
 								<span
 									className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#EAF9F0] text-[#20A44A] dark:bg-slate-800 dark:text-[#F59E0B]"
@@ -114,7 +125,8 @@ export default function Footer() {
 								</span>
 								{footer.email}
 							</p>
-							<p className="flex items-center gap-2">
+
+              <p className="flex items-center gap-2">
 								<span
 									className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#FFF7E6] text-[#F59E0B] dark:bg-slate-800 dark:text-[#F59E0B]"
 									aria-hidden="true"
@@ -122,15 +134,16 @@ export default function Footer() {
 									🌐
 								</span>
 								<Link
-									href={footer.website?.startsWith('http') ? footer.website : `https://${footer.website}`}
+									href={footer.trust?.startsWith('http') ? footer.trust : `https://${footer.trust}`}
 									className="transition-colors duration-150 hover:underline"
-									target="_self"
-									rel="nofollow"
-									aria-label={`Visit ${footer.website}`}
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label={`Visit ${footer.trust} (opens in new tab)`}
 								>
-									{footer.website}
+									Save Eearth
 								</Link>
 							</p>
+
 							<p className="flex items-center gap-2">
 								<span
 									className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#FFF7E6] text-[#F59E0B] dark:bg-slate-800 dark:text-[#F59E0B]"
@@ -145,7 +158,7 @@ export default function Footer() {
 									rel="noopener noreferrer"
 									aria-label={`Visit ${footer.trust} (opens in new tab)`}
 								>
-									{footer.trust}
+									Save SanatanaDharma
 								</Link>
 							</p>
 						</div>
@@ -176,6 +189,35 @@ export default function Footer() {
 												aria-hidden="true"
 											/>
 											{link.label}
+										</Link>
+									)}
+								</li>
+							))}
+						</ul>
+					</div>
+
+					<div>
+						<h3 className="mb-5 text-lg font-bold text-[#18251F] dark:text-white">
+							Quick Enquiries
+						</h3>
+						<ul className="space-y-3">
+							{queries.map((item) => (
+								<li key={item.href}>
+									{(item as { disabled?: boolean }).disabled ? (
+										<span className="relative inline-flex items-center gap-2 text-sm text-slate-400 dark:text-slate-500">
+											<span className="h-1.5 w-1.5 rounded-full bg-slate-400" aria-hidden="true" />
+											{item.label}
+											<span className="absolute -right-3 -top-2 inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-amber-700 shadow-sm">
+												Coming soon
+											</span>
+										</span>
+									) : (
+										<Link
+											href={item.href}
+											className="inline-flex items-center gap-2 text-sm text-slate-700 transition-all duration-200 hover:translate-x-1 hover:text-[#20A44A] dark:text-slate-300 dark:hover:text-[#F59E0B]"
+										>
+											<span className="h-1.5 w-1.5 rounded-full bg-[#20A44A]" aria-hidden="true" />
+											{item.label}
 										</Link>
 									)}
 								</li>
