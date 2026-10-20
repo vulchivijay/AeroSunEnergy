@@ -55,6 +55,16 @@ export default function Navbar() {
   const mobileLangRef = useRef<HTMLDivElement>(null)
   const navLinks = t.navbar.links
   const languageOptions = t.navbar.languages as { code: Locale; label: string; shortLabel: string }[]
+  const shouldDisableWindAndHybrid = true // keep these links disabled until the sections are live
+  const visibleNavLinks = shouldDisableWindAndHybrid
+    ? navLinks.map((link) => {
+        const isDisabled = link.href === '/windenergy' || link.href === '/hybridenergy'
+        return {
+          ...link,
+          disabled: isDisabled,
+        }
+      })
+    : navLinks
 
   useEffect(() => {
     setHydrated(true)
@@ -118,30 +128,48 @@ export default function Navbar() {
   }, [router, navLinks, hydrated])
 
   return (
-    <header className="sticky top-0 left-0 right-0 z-50 relative border-b border-[#20A44A]/20 bg-white shadow-[0_12px_30px_-24px_rgba(15,23,42,0.55)] backdrop-blur-xl transition-all duration-300 dark:border-slate-700/80 dark:bg-slate-950/80">
+    <header className="sticky top-0 left-0 right-0 z-50 border-b border-[#20A44A]/20 bg-white shadow-[0_12px_30px_-24px_rgba(15,23,42,0.55)] backdrop-blur-xl transition-all duration-300 dark:border-slate-700/80 dark:bg-slate-950/80">
       <div className="relative z-10 w-full px-4 py-2">
         <div className="flex w-full items-center justify-between gap-4">
           <Logo />
 
           <nav ref={navRef} aria-label="Primary navigation" className="hidden items-center lg:flex">
             <div className="flex items-center rounded-full border border-[#20A44A]/60 bg-[#F7FDF8] p-1 shadow-inner shadow-[#20A44A]/5">
-              {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  type="button"
-                  onClick={() => handleRouteNavigate(link.href)}
-                  title={`${t.navbar.navigateTo} ${link.label} ${t.navbar.section}`}
-                  aria-label={`${t.navbar.goTo} ${link.label}`}
-                  data-nav={link.href.replace('#', '')}
-                  className={`relative rounded-full px-4 py-2 text-sm font-medium whitespace-nowrap transition-all duration-300 ${
-                    activeHref === link.href
-                      ? 'bg-[#20A44A] text-white shadow-[0_8px_18px_rgba(32,164,74,0.3)]'
-                      : 'text-slate-700 hover:bg-[#EAF9F0] hover:text-[#20A44A] dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]'
-                  }`}
-                >
-                  {link.label}
-                </button>
-              ))}
+              {visibleNavLinks.map((link) => {
+                const disabled = Boolean((link as { disabled?: boolean }).disabled)
+                return (
+                  <button
+                    key={link.href}
+                    type="button"
+                    onClick={() => {
+                      if (!disabled) {
+                        handleRouteNavigate(link.href)
+                      }
+                    }}
+                    disabled={disabled}
+                    aria-disabled={disabled}
+                    title={disabled ? `${link.label} — Coming soon` : `${t.navbar.navigateTo} ${link.label} ${t.navbar.section}`}
+                    aria-label={disabled ? `${link.label} coming soon` : `${t.navbar.goTo} ${link.label}`}
+                    data-nav={link.href.replace('#', '')}
+                    className={`group relative rounded-full px-4 py-2 text-sm font-medium whitespace-nowrap transition-all duration-300 ${
+                      activeHref === link.href && !disabled
+                        ? 'bg-[#20A44A] text-white shadow-[0_8px_18px_rgba(32,164,74,0.3)]'
+                        : disabled
+                          ? 'cursor-not-allowed text-slate-400 opacity-70'
+                          : 'text-slate-700 hover:bg-[#EAF9F0] hover:text-[#20A44A] dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]'
+                    }`}
+                  >
+                    <span className="inline-flex items-center gap-2">
+                      {link.label}
+                      {disabled && (
+                        <span className="inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-amber-700">
+                          Coming soon
+                        </span>
+                      )}
+                    </span>
+                  </button>
+                )
+              })}
             </div>
           </nav>
 
@@ -257,20 +285,38 @@ export default function Navbar() {
               </div>
             </div>
 
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                type="button"
-                onClick={() => handleRouteNavigate(link.href)}
-                className={`block w-full rounded-2xl px-4 py-3 text-sm font-medium tracking-wide transition-all duration-300 ${
-                  activeHref === link.href
-                    ? 'bg-[#EAF9F0] text-[#20A44A] dark:bg-slate-800 dark:text-[#F59E0B]'
-                    : 'text-slate-700 hover:bg-[#F7FDF8] hover:text-[#20A44A] dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]'
-                }`}
-              >
-                {link.label}
-              </button>
-            ))}
+            {visibleNavLinks.map((link) => {
+              const disabled = Boolean((link as { disabled?: boolean }).disabled)
+              return (
+                <button
+                  key={link.href}
+                  type="button"
+                  onClick={() => {
+                    if (!disabled) {
+                      handleRouteNavigate(link.href)
+                    }
+                  }}
+                  disabled={disabled}
+                  aria-disabled={disabled}
+                  className={`block w-full rounded-2xl px-4 py-3 text-sm font-medium tracking-wide transition-all duration-300 ${
+                    disabled
+                      ? 'cursor-not-allowed bg-slate-100 text-slate-400 opacity-80 dark:bg-slate-800 dark:text-slate-500'
+                      : activeHref === link.href
+                        ? 'bg-[#EAF9F0] text-[#20A44A] dark:bg-slate-800 dark:text-[#F59E0B]'
+                        : 'text-slate-700 hover:bg-[#F7FDF8] hover:text-[#20A44A] dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]'
+                  }`}
+                >
+                  <span className="flex items-center justify-between gap-3">
+                    <span>{link.label}</span>
+                    {disabled && (
+                      <span className="inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-amber-700">
+                        Coming soon
+                      </span>
+                    )}
+                  </span>
+                </button>
+              )
+            })}
 
             <Link
               href="/contact"

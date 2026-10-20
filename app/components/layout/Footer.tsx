@@ -80,6 +80,13 @@ export default function Footer() {
 	const { t } = useLocale()
 	const footer = t.footer
 	const navLinks = t.navbar.links
+	const shouldDisableWindAndHybrid = true
+	const visibleNavLinks = shouldDisableWindAndHybrid
+		? navLinks.map((link) => ({
+			...link,
+			disabled: link.href === '/windenergy' || link.href === '/hybridenergy',
+		}))
+		: navLinks
 
 	return (
 		<footer
@@ -149,18 +156,28 @@ export default function Footer() {
 							{footer.quickLinks}
 						</h3>
 						<ul className="space-y-3">
-							{navLinks.map((link) => (
+							{visibleNavLinks.map((link) => (
 								<li key={link.label}>
-									<Link
-										href={link.href}
-										className="inline-flex items-center gap-2 text-sm text-slate-700 transition-all duration-200 hover:translate-x-1 hover:text-[#20A44A] dark:text-slate-300 dark:hover:text-[#F59E0B]"
-									>
-										<span
-											className="h-1.5 w-1.5 rounded-full bg-[#F59E0B]"
-											aria-hidden="true"
-										/>
-										{link.label}
-									</Link>
+									{(link as { disabled?: boolean }).disabled ? (
+										<span className="inline-flex items-center gap-2 text-sm text-slate-400 dark:text-slate-500">
+											<span className="h-1.5 w-1.5 rounded-full bg-slate-400" aria-hidden="true" />
+											{link.label}
+											<span className="inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-amber-700">
+												Coming soon
+											</span>
+										</span>
+									) : (
+										<Link
+											href={link.href}
+											className="inline-flex items-center gap-2 text-sm text-slate-700 transition-all duration-200 hover:translate-x-1 hover:text-[#20A44A] dark:text-slate-300 dark:hover:text-[#F59E0B]"
+										>
+											<span
+												className="h-1.5 w-1.5 rounded-full bg-[#F59E0B]"
+												aria-hidden="true"
+											/>
+											{link.label}
+										</Link>
+									)}
 								</li>
 							))}
 						</ul>

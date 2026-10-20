@@ -1,1 +1,1 @@
-export { default as ThemeBootstrap } from '../ThemeBootstrap'
+export { default as ThemeBootstrap } from '../_ThemeBootstrap'
