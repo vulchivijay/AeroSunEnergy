@@ -47,6 +47,28 @@
         "href": "/contact"
       }
     ],
+    "quiries": [
+      {
+        "label": "ఎలిజిబిలిటీ చూడండి",
+        "href": "/know-eligibility"
+      },
+      {
+        "label": "వారంటీ & విధానం",
+        "href": "/warranty-policy"
+      },
+      {
+        "label": "కొనుగోలు ఆర్డర్",
+        "href": "/purchase-order"
+      },
+      {
+        "label": "ఇన్‌స్టాలేషన్ చెక్‌లిస్ట్",
+        "href": "/installation-checklist"
+      },
+      {
+        "label": "కస్టమర్ అగ్రిమెంట్",
+        "href": "/customer-agreement"
+      }
+    ],
     "startProject": "ప్రాజెక్ట్ ప్రారంభించండి",
     "toggleDark": "డార్క్ మోడ్ మార్చు",
     "toggleMenu": "మెనూ మార్చు",

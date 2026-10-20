@@ -35,7 +35,7 @@ const BING_SITE_VERIFICATION = process.env.BING_SITE_VERIFICATION || 'CFCE648996
 
 export const metadata: Metadata = {
   title: {
-    default: 'AeroSun Energy | Hybrid Solar Wind Energy Solutions India',
+    default: 'AeroSun Energy | Solar/Wind/Hybrid Solar Wind Energy Solutions India',
     template: '%s | AeroSun Energy',
   },
   description:
@@ -45,8 +45,10 @@ export const metadata: Metadata = {
     'solar wind hybrid system for homes',
     'green energy infrastructure',
     'smart energy systems',
-    'AeroSun Energy',
-    'AeroSun Energy',
+    'AeroSun Energy Private Limited',
+    'AeroSun Energy Pvt Ltd',
+    'aerosun energy private limited',
+    'aerosun energy pvt ltd',
     'solar wind hybrid energy solutions',
     'solar wind hybrid energy systems',
     'HAWT and VAWT turbines',
@@ -150,8 +152,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <Footer />
           <CookieConsent />
-          <SaveEarthBadge />
-          <SaveSanatanaBadge />
         </LocaleProvider>
       </body>
     </html>
