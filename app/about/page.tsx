@@ -192,39 +192,39 @@ const missionPoints = [
 ]
 
 const ppsStats = [
-  { value: '14+', label: 'Years in Solar' },
-  { value: '4700+', label: 'Happy Customers' },
-  { value: '30MW+', label: 'Installed Capacity' },
-  { value: '100%', label: 'Subsidy Assistance' },
+  { value: '2026', label: 'Company Founded' },
+  { value: '100%', label: 'Startup Focus' },
+  { value: 'Solar', label: 'Core Expertise' },
+  { value: '100%', label: 'Customer First' },
 ]
 
 const ppsStrengths = [
-  '14+ years of expertise',
-  'In-house engineering support',
-  'Tata-grade components',
-  'End-to-end local service in Tirupati',
+  'Startup energy with fresh ideas',
+  'Responsive support and quick decisions',
+  'Tailored solar planning for each site',
+  'Strong focus on service, quality, and trust',
 ]
 
 const founderProfiles = [
   {
-    initials: 'KC',
-    name: 'K. Chandra Sekhar',
+    initials: 'V',
+    name: 'Vijaya Kumar',
     role: 'Co-Founder & Director',
     description: 'Leads engineering, system design and large commercial deployments. Hands-on through every site assessment.',
   },
   {
-    initials: 'BK',
-    name: 'Balaji Kiran Gilledu',
-    role: 'Co-Founder & Director',
+    initials: 'D',
+    name: 'Anusha',
+    role: 'Director',
     description: 'Drives strategy, partnerships and customer experience. Personally oversees the AMC and service operations.',
   },
 ]
 
 const ppsReasons = [
-  { title: '14+ yrs', text: 'Industry Experience — Over a decade of pure solar focus. We have seen every roof type and use case.' },
-  { title: 'TATA', text: 'Premium Hardware — Authorised TATA Power Solar Channel partners with tier-1 panels and 25-year warranty.' },
-  { title: '4700+', text: 'Customers Powered — From village homes to gated villas, our installations span every segment.' },
-  { title: '100%', text: 'Local Service — Tirupati-based engineering team. We answer the phone every single time.' },
+  { title: 'Experience', text: 'Industry Experience — Over a decade of pure solar focus. We have seen every roof type and use case.' },
+  { title: 'Scale', text: 'Customers Powered — From village homes to gated villas, our installations span every segment.' },
+  { title: 'Service', text: 'Local Service — Tirupati-based engineering team. We answer the phone every single time.' },
+  { title: 'Trust', text: 'Premium Components — We work with trusted technology and maintain strict quality standards.' },
 ]
 
 export default function AboutPage() {
@@ -626,13 +626,13 @@ export default function AboutPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+        <div className="hidden rounded-4xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
           <div className="mb-6">
             <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-amber-600 dark:text-amber-400">Strengths</p>
             <h3 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">14+ years of expertise, an in-house engineering team and Tata-grade components.</h3>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4 hidden">
             {ppsReasons.map((item) => (
               <div key={item.title} className="rounded-3xl border border-amber-200 bg-amber-50 p-4 dark:border-amber-900/50 dark:bg-amber-950/20">
                 <div className="text-2xl font-black tracking-tighter text-amber-700 dark:text-amber-300">{item.title}</div>
