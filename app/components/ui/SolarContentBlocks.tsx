@@ -2,6 +2,39 @@ import type { ReactNode } from 'react'
 
 export type AccentTone = 'emerald' | 'amber' | 'sky' | 'violet'
 
+const renderSolarIcon = (accent: AccentTone) => {
+  const colorClass = {
+    emerald: 'text-emerald-700',
+    amber: 'text-amber-700',
+    sky: 'text-sky-700',
+    violet: 'text-violet-700',
+  }[accent]
+
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={`h-4 w-4 ${colorClass}`} aria-hidden="true">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 1.5v2.3M12 20.2v2.3M4.93 4.93l1.63 1.63M17.44 17.44l1.63 1.63M1.5 12h2.3M20.2 12h2.3M4.93 19.07l1.63-1.63M17.44 6.56l1.63-1.63" />
+    </svg>
+  )
+}
+
+const renderCheckIcon = (accent: AccentTone) => {
+  const bgClass = {
+    emerald: 'bg-emerald-100 text-emerald-700',
+    amber: 'bg-amber-100 text-amber-700',
+    sky: 'bg-sky-100 text-sky-700',
+    violet: 'bg-violet-100 text-violet-700',
+  }[accent]
+
+  return (
+    <div className={`flex h-10 w-10 items-center justify-center rounded-2xl shadow-inner ${bgClass}`}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-4 w-4" aria-hidden="true">
+        <path d="M5 13.5 9 17l10-10" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </div>
+  )
+}
+
 export const solarOfferings = [
   {
     title: 'Solar Rooftop Systems',
@@ -157,7 +190,10 @@ export const solarCapacityRows = [
 
 export function SectionEyebrow({ children }: { children: ReactNode }) {
   return (
-    <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-700">{children}</p>
+    <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f0fdfa_45%,#ffffff_100%)] px-3.5 py-2 shadow-[0_14px_26px_-20px_rgba(16,185,129,0.9)]">
+      <span className="inline-flex h-2.5 w-2.5 items-center justify-center rounded-full bg-linear-to-r from-emerald-500 to-lime-500 shadow-[0_0_0_4px_rgba(16,185,129,0.12)]" aria-hidden="true" />
+      <p className="text-[10px] font-black uppercase tracking-[0.24em] text-emerald-700">{children}</p>
+    </div>
   )
 }
 
@@ -178,24 +214,27 @@ export function FeatureCard({
   accent?: AccentTone
 }) {
   const accentClasses: Record<AccentTone, string> = {
-    emerald: 'border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#ffffff_100%)] text-emerald-700',
-    amber: 'border-amber-200 bg-[linear-gradient(135deg,#fff7ed_0%,#ffffff_100%)] text-amber-700',
-    sky: 'border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ffffff_100%)] text-sky-700',
-    violet: 'border-violet-200 bg-[linear-gradient(135deg,#f5f3ff_0%,#ffffff_100%)] text-violet-700',
+    emerald: 'border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f8fffb_50%,#ffffff_100%)] text-emerald-700',
+    amber: 'border-amber-200 bg-[linear-gradient(135deg,#fff7ed_0%,#fffdf8_50%,#ffffff_100%)] text-amber-700',
+    sky: 'border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#f8fbff_50%,#ffffff_100%)] text-sky-700',
+    violet: 'border-violet-200 bg-[linear-gradient(135deg,#f5f3ff_0%,#faf7ff_50%,#ffffff_100%)] text-violet-700',
   }
 
   return (
-    <article className="group rounded-[1.9rem] border border-slate-200 bg-white p-5 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_45px_-26px_rgba(15,23,42,0.30)]">
-      <div className={`mb-4 inline-flex rounded-full border px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] ${accentClasses[accent]}`}>
-        Solar solution
+    <article className="group rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_22px_45px_-28px_rgba(15,23,42,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-28px_rgba(16,185,129,0.3)]">
+      <div className={`mb-5 flex items-center justify-between gap-4 rounded-2xl border px-3 py-2 ${accentClasses[accent]}`}>
+        <span className="text-[10px] font-black uppercase tracking-[0.24em]">Solar solution</span>
+        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/80 shadow-sm ring-1 ring-black/5">
+          {renderSolarIcon(accent)}
+        </span>
       </div>
       <h3 className="text-2xl font-black tracking-[-0.05em] text-slate-900">{title}</h3>
       <p className="mt-4 text-base leading-7 text-slate-700">{description}</p>
       {points.length > 0 && (
         <ul className="mt-5 space-y-3 text-base text-slate-700">
           {points.map((point) => (
-            <li key={point} className="flex items-start gap-3">
-              <span className="mt-2 flex h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500" />
+            <li key={point} className="flex items-start gap-3 rounded-xl bg-slate-50/80 p-2.5">
+              <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[10px] font-black text-emerald-700">✓</span>
               <span>{point}</span>
             </li>
           ))}
@@ -213,8 +252,8 @@ export function BenefitCard({
   description?: string
 }) {
   return (
-    <div className="rounded-[1.6rem] border border-slate-200 bg-[linear-gradient(135deg,#ffffff_0%,#f0fdf4_100%)] p-5 shadow-[0_18px_28px_-24px_rgba(15,23,42,0.3)]">
-      <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-emerald-100 text-lg font-black text-emerald-700">
+    <div className="rounded-[1.7rem] border border-emerald-200 bg-[linear-gradient(135deg,#ffffff_0%,#ecfdf5_100%)] p-5 shadow-[0_18px_32px_-26px_rgba(16,185,129,0.45)]">
+      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-emerald-500 to-lime-500 text-lg font-black text-white shadow-lg shadow-emerald-500/20">
         ✓
       </div>
       <h3 className="text-xl font-black tracking-[-0.04em] text-slate-900">{title}</h3>
@@ -233,7 +272,7 @@ export function SubsidyCard({
   note: string
 }) {
   return (
-    <div className="rounded-[1.75rem] border border-slate-200 bg-[linear-gradient(135deg,#ffffff_0%,#ecfdf5_100%)] p-5 shadow-[0_18px_28px_-24px_rgba(15,23,42,0.24)]">
+    <div className="rounded-[1.8rem] border border-emerald-200 bg-[linear-gradient(135deg,#ffffff_0%,#ecfdf5_100%)] p-5 shadow-[0_18px_32px_-26px_rgba(16,185,129,0.45)]">
       <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-slate-500">{label}</p>
       <div className="mt-4 text-3xl font-black tracking-[-0.05em] text-slate-900">{value}</div>
       <p className="mt-3 text-sm leading-6 text-slate-600">{note}</p>
@@ -262,9 +301,12 @@ export function InfoPanel({
   }
 
   return (
-    <div className={`rounded-[1.75rem] border p-5 shadow-[0_12px_28px_-24px_rgba(15,23,42,0.28)] ${theme[accent]}`}>
-      <h3 className="text-xl font-black tracking-[-0.04em]">{title}</h3>
-      <ul className="mt-4 space-y-2 text-base leading-7">
+    <div className={`rounded-[1.8rem] border p-5 shadow-[0_12px_28px_-24px_rgba(15,23,42,0.28)] ${theme[accent]}`}>
+      <div className="mb-3 flex items-center gap-3">
+        {renderCheckIcon(accent)}
+        <h3 className="text-xl font-black tracking-[-0.04em]">{title}</h3>
+      </div>
+      <ul className="mt-4 space-y-3 text-base leading-7">
         {content.map((item) => (
           <li key={item} className="flex items-start gap-3">
             <span className="mt-2 h-2.5 w-2.5 rounded-full bg-current" />
@@ -278,9 +320,9 @@ export function InfoPanel({
 
 export function CapacityTable() {
   return (
-    <div className="overflow-x-auto rounded-[1.8rem] border border-slate-200 bg-white shadow-[0_18px_28px_-24px_rgba(15,23,42,0.28)] [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400">
+    <div className="overflow-x-auto rounded-[1.9rem] border border-emerald-200 bg-white shadow-[0_20px_34px_-24px_rgba(16,185,129,0.3)] [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400">
       <div className="min-w-[620px]">
-        <div className="grid border-b border-slate-200 bg-[linear-gradient(90deg,#ecfdf5_0%,#ffffff_50%,#eff6ff_100%)] text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600 md:grid-cols-3">
+        <div className="grid border-b border-emerald-100 bg-[linear-gradient(90deg,#ecfdf5_0%,#ffffff_50%,#eff6ff_100%)] text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600 md:grid-cols-3">
           <div className="px-4 py-3">Average monthly usage</div>
           <div className="px-4 py-3">Suitable rooftop capacity</div>
           <div className="px-4 py-3">Best fit</div>

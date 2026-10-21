@@ -102,7 +102,7 @@ export default function HomeHeroSlider() {
           <div className={`${slideOverlay} absolute inset-0`} />
           <div className={slideClass}>
             <span
-              className={`mb-4 inline-flex rounded-full border border-white/15 bg-white/8 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.28em] ${slide.badgeClass}`}
+              className={`mb-4 inline-flex rounded-full border border-white/15 bg-black/80 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.28em] ${slide.badgeClass}`}
             >
               {slide.badge}
             </span>
@@ -116,7 +116,7 @@ export default function HomeHeroSlider() {
               {slide.tags.map((tag) => (
                 <span
                   key={tag}
-                  className={`rounded-full border border-white/15 bg-white/8 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] ${slide.chipClass}`}
+                  className={`rounded-full border border-white/15 bg-black/80 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] ${slide.chipClass}`}
                 >
                   {tag}
                 </span>

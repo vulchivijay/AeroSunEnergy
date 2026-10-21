@@ -214,7 +214,7 @@ export default function Contact() {
                     <Link
                       key={channel.label}
                       href={channel.href}
-                      className="group flex items-center gap-3 rounded-2xl border border-slate-200 bg-gradient-to-r from-white via-slate-50 to-slate-100 p-3.5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-700 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950"
+                      className="group flex items-center gap-3 rounded-2xl border border-slate-200 bg-linear-to-r from-white via-slate-50 to-slate-100 p-3.5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-700 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950"
                     >
                       <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#20A44A]/10 text-[#0f172a] transition-colors group-hover:bg-[#20A44A] group-hover:text-white dark:bg-[#20A44A]/15 dark:text-[#86efac] dark:group-hover:bg-[#20A44A] dark:group-hover:text-white">
                         {channel.icon}
@@ -294,7 +294,7 @@ export default function Contact() {
             </CardContent>
           </Card>
 
-          <Card className="overflow-hidden border border-[#dbe9df] bg-gradient-to-br from-[#0b1728] via-[#0f1d2f] to-[#1f3f28] text-white shadow-[0_25px_70px_rgba(15,23,42,0.18)] dark:border-slate-700">
+          <Card className="overflow-hidden border border-[#dbe9df] bg-linear-to-br from-[#0b1728] via-[#0f1d2f] to-[#1f3f28] text-white shadow-[0_25px_70px_rgba(15,23,42,0.18)] dark:border-slate-700">
             <CardContent className="p-5 sm:p-7">
               <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-white/60">{c.builtForClarity}</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">{c.builtForClarityTitle}</h2>

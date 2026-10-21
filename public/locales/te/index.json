@@ -49,6 +49,10 @@
     ],
     "quiries": [
       {
+        "label": "కస్టమర్ ఎన్‌క్వైరీ",
+        "href": "/customer-enquiry"
+      },
+      {
         "label": "ఎలిజిబిలిటీ చూడండి",
         "href": "/know-eligibility"
       },
@@ -477,6 +481,9 @@
     "website": "aerosunenergy.in",
     "trust": "sanatanadharmam.in",
     "quickLinks": "శీఘ్ర లింకులు",
+    "quickEnquiries": "శీఘ్ర ప్రశ్నలు",
+    "saveEarth": "భూమిని కాపాడండి",
+    "saveSanatanaDharma": "సనాతన ధర్మాన్ని కాపాడండి",
     "followUs": "మమ్మల్ని అనుసరించండి",
     "scan": "స్కాన్ చేయండి",
     "devNotice": "ఈ వెబ్‌సైట్ అభివృద్ధిలో ఉంది. తో నిర్మించబడింది",

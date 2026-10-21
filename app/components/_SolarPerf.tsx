@@ -1,11 +1,11 @@
-import BenefitCard from './BenefitCard';
-import FaqCard from './FaqCard';
+import BenefitCard from './ui/BenefitCard';
+import FaqCard from './ui/FaqCard';
 
 export default function WeatherPerformance() {
   return (
     <div className="py-6">
       {/* Hero */}
-      <section className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-2xl p-8">
+      <section className="bg-linear-to-r from-yellow-500 to-orange-500 text-white rounded-2xl p-8">
         <h1 className="text-4xl font-bold mb-4">
           Solar Performance in Different Weather Conditions
         </h1>
@@ -221,11 +221,7 @@ export default function WeatherPerformance() {
           </h2>
 
           <p className="text-lg text-gray-700">
-            Solar systems generate electricity throughout the year. Sunny days
-            provide maximum generation, while cloudy and rainy conditions reduce
-            output temporarily. Proper installation, correct panel orientation,
-            regular cleaning, and avoidance of shading ensure optimal
-            performance and long-term savings.
+            Solar performance varies with weather, but thoughtful system design and regular maintenance help maintain strong long-term energy generation.
           </p>
         </div>
       </section>

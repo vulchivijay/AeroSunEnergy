@@ -33,7 +33,7 @@ export default function OptimizedImage({
     >
       {isLoading && (
         <div
-          className={`absolute inset-0 animate-pulse bg-gradient-to-br from-slate-200 via-slate-100 to-slate-200 dark:from-slate-800 dark:via-slate-700 dark:to-slate-800 ${
+          className={`absolute inset-0 animate-pulse bg-linear-to-br from-slate-200 via-slate-100 to-slate-200 dark:from-slate-800 dark:via-slate-700 dark:to-slate-800 ${
             skeletonClassName ?? ''
           }`}
           aria-hidden="true"

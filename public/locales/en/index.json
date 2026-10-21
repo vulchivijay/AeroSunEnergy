@@ -49,6 +49,10 @@
     ],
     "quiries": [
       {
+        "label": "Customer Enquiry",
+        "href": "/customer-enquiry"
+      },
+      {
         "label": "Know Eligibility",
         "href": "/know-eligibility"
       },
@@ -477,6 +481,9 @@
     "website": "aerosunenergy.in",
     "trust": "sanatanadharmam.in",
     "quickLinks": "Quick Links",
+    "quickEnquiries": "Quick Enquiries",
+    "saveEarth": "Save Earth",
+    "saveSanatanaDharma": "Save Sanatana Dharma",
     "followUs": "Follow Us",
     "scan": "Scan",
     "devNotice": "This website is under development. Build with",
