@@ -41,7 +41,7 @@ const socialLinks = [
 		),
 	},
 	{
-		href: 'https://www.facebook.com/aerosunenergy',
+		href: 'https://www.facebook.com/AeroSunEnergy',
 		label: 'Like AeroSun Energy on Facebook',
 		title: 'Like AeroSun Energy on Facebook (opens in new tab)',
 		dataSocial: 'facebook',
@@ -298,9 +298,9 @@ export default function Footer() {
 				</div>
 			</div>
 
-			<div className="w-full border-t border-[#20A44A]/10 bg-[#18251F] py-4 text-center text-sm text-white/90 dark:border-slate-700 dark:bg-slate-900">
+			<div className="w-full border-t border-[#20A44A]/10 bg-gray-50 py-4 text-center text-sm text-gray-900 dark:border-slate-700 dark:bg-slate-900">
 				<div className="mx-auto flex w-full max-w-350 flex-col items-center justify-between gap-2 px-4 text-center sm:px-6 lg:flex-row lg:justify-between lg:px-8">
-					<div className="flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-[0.18em] text-slate-300">
+					<div className="flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-[0.18em] text-gray-900">
 						<Link
 							href="/terms"
 							className="transition-colors duration-200 hover:text-white"
@@ -315,6 +315,7 @@ export default function Footer() {
 							Privacy Policy
 						</Link>
 					</div>
+          <p>Build with 💕 & 🔥 @VulchiVijayaKumar.</p>
 					<p>
 						{footer.copyright}. {footer.allRightsReserved}
 					</p>

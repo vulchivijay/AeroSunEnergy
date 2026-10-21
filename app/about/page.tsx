@@ -235,32 +235,32 @@ export default function AboutPage() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45 }}
-          className="overflow-hidden rounded-[30px] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-sky-50 shadow-[0_30px_80px_-40px_rgba(16,185,129,0.35)] dark:border-slate-800 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950"
+          className="overflow-hidden rounded-[34px] border border-emerald-200 bg-linear-to-br from-[#f0fdf4] via-white to-[#ebf8ff] shadow-[0_32px_90px_-40px_rgba(16,185,129,0.45)] dark:border-slate-800 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950"
         >
           <div className="grid gap-8 p-6 lg:grid-cols-[1.12fr_0.88fr] lg:p-10">
             <div className="space-y-6">
-              <div className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-emerald-700 dark:border-emerald-700/40 dark:bg-emerald-500/10 dark:text-emerald-300">
+              <div className="inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-3 py-1 text-[11px] font-black uppercase tracking-[0.24em] text-emerald-700 shadow-sm dark:border-emerald-800 dark:bg-slate-900/80 dark:text-emerald-300">
                 Company Profile
               </div>
 
               <div className="space-y-4">
-                <h1 className="text-4xl font-black leading-none tracking-[-0.04em] text-slate-900 sm:text-5xl dark:text-white">
+                <h1 className="text-4xl font-black leading-none tracking-[-0.06em] text-slate-900 sm:text-5xl dark:text-white">
                   AEROSUN ENERGY
                 </h1>
-                <p className="text-lg font-semibold uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">
+                <p className="text-lg font-bold uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">
                   Private Limited
                 </p>
-                <p className="max-w-xl text-lg text-slate-700 dark:text-slate-300">
+                <p className="max-w-xl text-lg font-medium text-slate-700 dark:text-slate-300">
                   Solar Energy • Wind Energy • Hybrid Renewable Energy
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-emerald-200 bg-white/80 p-4 shadow-sm dark:border-emerald-900/50 dark:bg-slate-900/70">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">
+              <div className="rounded-[24px] border border-emerald-200 bg-linear-to-r from-emerald-50 via-white to-sky-50 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] dark:border-emerald-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+                <p className="text-sm font-black uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">
                   Tagline
                 </p>
-                <p className="mt-2 text-xl font-medium italic text-slate-800 dark:text-slate-100">
-                  “Harnessing Nature. Empowering Tomorrow.”
+                <p className="mt-2 text-xl font-semibold italic text-slate-800 dark:text-slate-100">
+                  “Power from sun and wind”
                 </p>
               </div>
 
@@ -270,21 +270,21 @@ export default function AboutPage() {
 
               <div className="grid gap-4 sm:grid-cols-3">
                 {companyStats.map((stat) => (
-                  <div key={stat.label} className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900/75">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+                  <div key={stat.label} className="rounded-[22px] border border-slate-200 bg-white/85 p-4 shadow-[0_18px_35px_-25px_rgba(15,23,42,0.5)] dark:border-slate-700 dark:bg-slate-900/75">
+                    <p className="text-[10px] font-black uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
                       {stat.label}
                     </p>
-                    <p className="mt-2 text-base font-semibold text-slate-900 dark:text-white">{stat.value}</p>
+                    <p className="mt-2 text-base font-black text-slate-900 dark:text-white">{stat.value}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="relative flex items-center justify-center">
-              <div className="absolute inset-0 rounded-4xl bg-linear-to-br from-emerald-200/60 via-sky-100/60 to-violet-200/60 blur-3xl dark:from-emerald-500/10 dark:via-sky-500/10 dark:to-violet-500/10" />
-              <div className="relative w-full max-w-md rounded-[28px] border border-white/60 bg-white/80 p-4 shadow-[0_24px_80px_-30px_rgba(16,185,129,0.45)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-900/80">
-                <div className="relative overflow-hidden rounded-[22px] border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800">
-                  <div className="relative h-90 w-full">
+              <div className="absolute inset-0 rounded-[32px] bg-linear-to-br from-emerald-200/60 via-sky-100/60 to-violet-200/60 blur-3xl dark:from-emerald-500/10 dark:via-sky-500/10 dark:to-violet-500/10" />
+              <div className="relative w-full max-w-md overflow-hidden rounded-[30px] border border-white/60 bg-white/80 p-4 shadow-[0_32px_90px_-30px_rgba(16,185,129,0.5)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-900/80">
+                <div className="relative overflow-hidden rounded-[24px] border border-slate-200 bg-linear-to-br from-emerald-100 via-white to-sky-100 dark:border-slate-700 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800">
+                  <div className="relative h-96 w-full">
                     <OptimizedImage
                       src="/images/founder-aerosunenergy.png"
                       alt="Mr. Vulchi Vijaya Kumar, Founder of AeroSun Energy"
@@ -295,13 +295,13 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div className="mt-5 space-y-3">
+                <div className="mt-5 space-y-3 rounded-[22px] border border-emerald-100 bg-emerald-50/80 p-4 dark:border-emerald-900/50 dark:bg-emerald-950/20">
                   <div className="flex items-center justify-between gap-3">
                     <div>
-                      <p className="text-lg font-semibold text-slate-900 dark:text-white">Mr. Vulchi Vijaya Kumar</p>
+                      <p className="text-lg font-black text-slate-900 dark:text-white">Mr. Vulchi Vijaya Kumar</p>
                       <p className="text-sm text-slate-600 dark:text-slate-300">Founder and Director</p>
                     </div>
-                    <div className="rounded-full bg-emerald-100 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
+                    <div className="rounded-full bg-emerald-100 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
                       Visionary
                     </div>
                   </div>
@@ -316,171 +316,41 @@ export default function AboutPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-emerald-600 dark:text-emerald-400">
-              About the Founder
-            </p>
-            <h2 className="mt-3 text-3xl font-bold text-slate-900 dark:text-white">Building a cleaner future with purpose</h2>
-
-            <div className="mt-5 space-y-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-              <p>
-                Mr. Vulchi Vijaya Kumar is associated with the establishment of AeroSun Energy Private Limited, a company focused on renewable-energy opportunities and sustainable power solutions.
-              </p>
-              <p>
-                The founder’s vision is to help make renewable-energy solutions more accessible to households, farmers, businesses and industries, while developing a company capable of growing alongside India’s evolving clean-energy sector.
-              </p>
-              <p className="rounded-2xl border border-amber-200 bg-amber-50 p-4 text-amber-900 dark:border-amber-500/30 dark:bg-amber-500/10 dark:text-amber-100">
-                This profile is based on company information shared in conversation. Specific qualifications, professional experience, technical achievements and completed projects have not been independently established, so they are not claimed here.
+        <div className="overflow-hidden rounded-[30px] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-sky-50 p-5 shadow-[0_26px_70px_-40px_rgba(16,185,129,0.4)] dark:border-emerald-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:border-emerald-800 dark:bg-slate-900/80 dark:text-emerald-300">
+                About the founder
               </p>
             </div>
-          </div>
-
-          <div className="rounded-[30px] border border-slate-200 bg-linear-to-br from-slate-900 to-slate-800 p-6 text-white shadow-[0_28px_80px_-40px_rgba(15,23,42,0.9)] dark:border-slate-700">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-emerald-300">Our promise</p>
-            <h3 className="mt-3 text-3xl font-bold">Reliable, efficient and environmentally responsible energy choices.</h3>
-            <div className="mt-6 space-y-4">
-              {promisePoints.map((point) => (
-                <div key={point} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
-                  <p className="text-sm leading-7 text-slate-200">{point}</p>
-                </div>
-              ))}
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100 bg-emerald-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:border-emerald-800 dark:bg-emerald-900/20 dark:text-emerald-300">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              Leadership
             </div>
           </div>
-        </div>
-      </section>
+          <h2 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+            Building a cleaner future with purpose
+          </h2>
 
-      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="mb-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-sky-600 dark:text-sky-400">Vision & mission</p>
-          <h2 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">Purpose-led growth for a resilient energy future</h2>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="rounded-[28px] border border-sky-200 bg-sky-50 p-6 dark:border-sky-900/50 dark:bg-sky-950/30">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-sky-700 dark:text-sky-300">Vision</p>
-            <h3 className="mt-3 text-2xl font-bold text-slate-900 dark:text-white">A cleaner and more energy-resilient future</h3>
-            <p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-              To become a trusted renewable-energy solutions provider in India, delivering practical, innovative and sustainable solar, wind and hybrid energy systems that contribute to a cleaner environment and a more energy-resilient future.
-            </p>
-          </div>
-
-          <div className="rounded-[28px] border border-emerald-200 bg-emerald-50 p-6 dark:border-emerald-900/50 dark:bg-emerald-950/30">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-emerald-700 dark:text-emerald-300">Mission</p>
-            <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
-              {missionPoints.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-2 inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="mb-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-violet-600 dark:text-violet-400">Core values</p>
-          <h2 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">The principles guiding every decision</h2>
-        </div>
-
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {coreValues.map((value, index) => (
-            <motion.div
-              key={value.title}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.28, delay: index * 0.05 }}
-              className="rounded-[26px] border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900"
-            >
-              <div className="mb-4 inline-flex rounded-full bg-slate-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-700 dark:bg-slate-800 dark:text-slate-200">
-                {index + 1}
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">{value.title}</h3>
-              <p className="mt-3 text-base leading-7 text-slate-700 dark:text-slate-300">{value.description}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="mb-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-emerald-600 dark:text-emerald-400">Products & services</p>
-          <h2 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">A comprehensive renewable-energy portfolio</h2>
-        </div>
-
-        <div className="grid gap-5 lg:grid-cols-3">
-          {serviceGroups.map((group) => (
-            <div key={group.title} className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-              <div className={`mb-4 h-1.5 rounded-full bg-linear-to-r ${group.accent}`} />
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{group.title}</h3>
+          <div className="mt-6 grid gap-5 lg:grid-cols-2">
+            <div className="rounded-[26px] border border-sky-200 bg-white/80 p-5 shadow-[0_20px_45px_-30px_rgba(14,165,233,0.5)] dark:border-sky-900/60 dark:bg-slate-900/75">
+              <p className="text-[10px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">Our promise</p>
               <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
-                {group.items.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="mt-2 inline-flex h-2.5 w-2.5 rounded-full bg-slate-900 dark:bg-white" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-amber-600 dark:text-amber-400">Licences, registrations and approvals</p>
-            <h2 className="mt-3 text-3xl font-bold text-slate-900 dark:text-white">Responsible growth requires compliance</h2>
-
-            <div className="mt-6 rounded-2xl border border-slate-200 dark:border-slate-700">
-              <div className="w-full overflow-x-auto">
-                <table className="min-w-full divide-y divide-slate-200 text-left text-sm dark:divide-slate-700">
-                  <thead className="bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-white">
-                    <tr>
-                      <th className="px-4 py-3 font-semibold">Registration or approval</th>
-                      <th className="px-4 py-3 font-semibold">Purpose</th>
-                      <th className="px-4 py-3 font-semibold">Status</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-200 bg-white dark:divide-slate-700 dark:bg-slate-900">
-                    {approvalRows.map(([name, purpose, status]) => (
-                      <tr key={name}>
-                        <td className="px-4 py-3 text-slate-700 dark:text-slate-300">{name}</td>
-                        <td className="px-4 py-3 text-slate-700 dark:text-slate-300">{purpose}</td>
-                        <td className="px-4 py-3 text-slate-700 dark:text-slate-300">{status}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-6">
-            <div className="rounded-[30px] border border-amber-200 bg-amber-50 p-6 dark:border-amber-900/40 dark:bg-amber-950/30">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-amber-700 dark:text-amber-300">Quality commitment</p>
-              <h3 className="mt-3 text-2xl font-bold text-slate-900 dark:text-white">Standards that support trust</h3>
-              <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
-                {qualityPoints.map((point) => (
+                {promisePoints.map((point) => (
                   <li key={point} className="flex gap-3">
-                    <span className="mt-2 inline-flex h-2.5 w-2.5 rounded-full bg-amber-500" />
+                    <span className="mt-2 h-2.5 w-2.5 rounded-full bg-sky-500" />
                     <span>{point}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="rounded-[30px] border border-rose-200 bg-rose-50 p-6 dark:border-rose-900/40 dark:bg-rose-950/20">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-rose-700 dark:text-rose-300">Business ethics</p>
-              <h3 className="mt-3 text-2xl font-bold text-slate-900 dark:text-white">Responsible conduct for lasting relationships</h3>
+            <div className="rounded-[26px] border border-emerald-200 bg-emerald-50/80 p-5 shadow-[0_20px_45px_-30px_rgba(16,185,129,0.5)] dark:border-emerald-900/60 dark:bg-emerald-950/20">
+              <p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">Our mission</p>
               <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
-                {ethicsPoints.map((point) => (
+                {missionPoints.map((point) => (
                   <li key={point} className="flex gap-3">
-                    <span className="mt-2 inline-flex h-2.5 w-2.5 rounded-full bg-rose-500" />
+                    <span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500" />
                     <span>{point}</span>
                   </li>
                 ))}
@@ -491,14 +361,29 @@ export default function AboutPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-teal-600 dark:text-teal-400">Why choose us</p>
-          <h2 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">A customer-focused and technically responsible approach</h2>
+        <div className="mb-6 overflow-hidden rounded-[28px] border border-violet-200 bg-linear-to-br from-violet-50 via-white to-fuchsia-50 p-5 shadow-[0_22px_60px_-40px_rgba(168,85,247,0.45)] dark:border-violet-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="inline-flex items-center rounded-full border border-violet-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-violet-700 dark:border-violet-800 dark:bg-slate-900/80 dark:text-violet-300">
+                Core values
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-violet-100 bg-violet-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-violet-700 dark:border-violet-800 dark:bg-violet-900/20 dark:text-violet-300">
+              <span className="h-2 w-2 rounded-full bg-violet-500" />
+              Guiding principles
+            </div>
+          </div>
+          <h2 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+            The principles guiding every decision we make
+          </h2>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {whyChooseUs.map((reason) => (
-              <div key={reason} className="rounded-3xl border border-teal-200 bg-teal-50 p-5 text-base leading-7 text-slate-700 dark:border-teal-900/50 dark:bg-teal-950/20 dark:text-slate-300">
-                {reason}
+            {coreValues.map((value) => (
+              <div key={value.title} className="rounded-[24px] border border-violet-100 bg-white/85 p-5 shadow-[0_20px_45px_-35px_rgba(139,92,246,0.45)] dark:border-violet-900/60 dark:bg-slate-900/75">
+                <div className="inline-flex rounded-full border border-violet-200 bg-violet-50 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-violet-700 dark:border-violet-800 dark:bg-violet-950/40 dark:text-violet-300">
+                  {value.title}
+                </div>
+                <p className="mt-4 text-base leading-7 text-slate-700 dark:text-slate-300">{value.description}</p>
               </div>
             ))}
           </div>
@@ -506,32 +391,32 @@ export default function AboutPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="mb-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-indigo-600 dark:text-indigo-400">Current & future goals</p>
-          <h2 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">Growth built on strong foundations</h2>
-        </div>
-
-        <div className="grid gap-5 lg:grid-cols-2">
-          <div className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white">Current goals</h3>
-            <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
-              {currentGoals.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-2 inline-flex h-2.5 w-2.5 rounded-full bg-indigo-500" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+        <div className="mb-6 overflow-hidden rounded-[28px] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-green-50 p-5 shadow-[0_22px_60px_-40px_rgba(16,185,129,0.45)] dark:border-emerald-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:border-emerald-800 dark:bg-slate-900/80 dark:text-emerald-300">
+                Products & services
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100 bg-emerald-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:border-emerald-800 dark:bg-emerald-900/20 dark:text-emerald-300">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              Renewable portfolio
+            </div>
           </div>
+          <h2 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+            A comprehensive renewable-energy portfolio for homes, farms, and businesses
+          </h2>
 
-          <div className="grid gap-5">
-            {futureGoals.map((track) => (
-              <div key={track.title} className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">{track.title} goals</h3>
-                <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
-                  {track.items.map((item) => (
+          <div className="mt-6 grid gap-5 xl:grid-cols-3">
+            {serviceGroups.map((group) => (
+              <div key={group.title} className="overflow-hidden rounded-[28px] border border-slate-200 bg-white/85 shadow-[0_22px_45px_-35px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
+                <div className={`bg-linear-to-r ${group.accent} px-5 py-4`}>
+                  <p className="text-lg font-black text-white">{group.title}</p>
+                </div>
+                <ul className="space-y-3 p-5 text-sm leading-7 text-slate-700 dark:text-slate-300">
+                  {group.items.map((item) => (
                     <li key={item} className="flex gap-3">
-                      <span className="mt-2 inline-flex h-2.5 w-2.5 rounded-full bg-indigo-500" />
+                      <span className="mt-2 h-2 w-2 rounded-full bg-slate-400 dark:bg-slate-500" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -542,139 +427,191 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45 }}
-          className="overflow-hidden rounded-[30px] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-sky-50 shadow-[0_30px_80px_-40px_rgba(16,185,129,0.35)] dark:border-slate-800 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950"
-        >
-          <div className="grid gap-8 p-6 lg:grid-cols-[1.12fr_0.88fr] lg:p-10">
-            <div className="space-y-6">
-              <div className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-emerald-700 dark:border-emerald-700/40 dark:bg-emerald-500/10 dark:text-emerald-300">
-                Pragathi Power Solutions
-              </div>
-
-              <h2 className="mt-4 text-3xl font-black tracking-[-0.04em] text-slate-900 dark:text-white sm:text-4xl">
-                Powering Up with the Power of the Sun
-              </h2>
-
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-700 dark:text-slate-300">
-                Founded in 2012 by industry veterans, Pragathi Power Solutions is the most trusted name in solar across the Tirupati & Chittoor districts — and the authorised TATA Power Solar Channel Partner for the region.
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="mb-6 overflow-hidden rounded-[30px] border border-indigo-200 bg-linear-to-br from-indigo-50 via-white to-violet-50 p-5 shadow-[0_24px_60px_-40px_rgba(99,102,241,0.45)] dark:border-indigo-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="inline-flex items-center rounded-full border border-indigo-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-indigo-700 dark:border-indigo-800 dark:bg-slate-900/80 dark:text-indigo-300">
+                Current & future goals
               </p>
-
-              <div className="mt-6 rounded-3xl border border-slate-200 bg-white/80 p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900/70">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-emerald-700 dark:text-emerald-300">
-                  Our Story
-                </p>
-                <p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
-                  Over a decade of pioneering clean energy in the Tirupati & Chittoor Districts. Pragathi Power Solutions (PPS) was founded in 2012 by Mr. K. Chandra Sekhar and Mr. Balaji Kiran Gilledu with a single mission — to put the power of the sun into every home, farm and business in Andhra Pradesh.
-                </p>
-                <p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-                  Headquartered at Ramanujam Circle in Tirupati, we have grown into the most trusted solar partner across the Tirupati & Chittoor districts, with installations spanning residential rooftops, schools, hotels, factories and farmlands. Our designation as Authorised TATA Power Solar Channel Partners means our customers get tier-1 panels and inverters — backed by a name India trusts.
-                </p>
-                <p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-                  More than a decade on, we still answer every call ourselves, run every site survey personally, and stand behind every kilowatt we install.
-                </p>
-              </div>
             </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:border-indigo-800 dark:bg-indigo-900/20 dark:text-indigo-300">
+              <span className="h-2 w-2 rounded-full bg-indigo-500" />
+              Growth roadmap
+            </div>
+          </div>
+          <h2 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+            Growth built on strong foundations
+          </h2>
 
-            <div className="rounded-[28px] border border-emerald-200 bg-emerald-50 p-5 shadow-sm dark:border-emerald-900/50 dark:bg-emerald-950/30">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-emerald-700 dark:text-emerald-300">
-                Why PPS
-              </p>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-                {ppsStats.map((item) => (
-                  <div key={item.label} className="rounded-2xl border border-emerald-200 bg-white/90 p-4 text-center dark:border-emerald-800 dark:bg-slate-900/80">
-                    <div className="text-2xl font-black tracking-tighter text-emerald-700 dark:text-emerald-300">{item.value}</div>
-                    <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-600 dark:text-slate-300">{item.label}</div>
-                  </div>
+          <div className="mt-6 grid gap-5">
+            <div className="rounded-[26px] border border-indigo-100 bg-white/85 p-5 shadow-[0_20px_45px_-35px_rgba(79,70,229,0.5)] dark:border-indigo-900/60 dark:bg-slate-900/75">
+              <p className="text-[10px] font-black uppercase tracking-[0.28em] text-indigo-700 dark:text-indigo-300">Current goals</p>
+              <ul className="mt-4 grid gap-3 text-base leading-7 text-slate-700 dark:text-slate-300 md:grid-cols-2">
+                {currentGoals.map((goal) => (
+                  <li key={goal} className="flex gap-3 rounded-[18px] border border-indigo-100 bg-indigo-50/60 p-3 dark:border-indigo-900/60 dark:bg-indigo-950/20">
+                    <span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500" />
+                    <span>{goal}</span>
+                  </li>
                 ))}
-              </div>
-              <div className="mt-5 space-y-2">
-                {ppsStrengths.map((item) => (
-                  <div key={item} className="flex items-center gap-3 rounded-2xl border border-emerald-200 bg-white/80 px-3 py-2 text-sm font-medium text-slate-700 dark:border-emerald-800 dark:bg-slate-900/70 dark:text-slate-200">
-                    <span className="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-          <div className="mb-5">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald-600 dark:text-emerald-400">Mission</p>
-            <h3 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">Make solar the default choice for every roof in the Tirupati & Chittoor districts by 2030.</h3>
-          </div>
-
-          <div className="grid gap-6 lg:grid-cols-2">
-            <div className="rounded-[28px] border border-sky-200 bg-sky-50 p-5 dark:border-sky-900/50 dark:bg-sky-950/30">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-sky-700 dark:text-sky-300">Vision</p>
-              <h4 className="mt-3 text-2xl font-bold text-slate-900 dark:text-white">A self-sufficient, carbon-free South India powered by clean energy.</h4>
+              </ul>
             </div>
 
-            <div className="rounded-[28px] border border-violet-200 bg-violet-50 p-5 dark:border-violet-900/50 dark:bg-violet-950/30">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-violet-700 dark:text-violet-300">Values</p>
-              <h4 className="mt-3 text-2xl font-bold text-slate-900 dark:text-white">Honest pricing, premium components, and lifelong service.</h4>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="hidden rounded-4xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-          <div className="mb-6">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-amber-600 dark:text-amber-400">Strengths</p>
-            <h3 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">14+ years of expertise, an in-house engineering team and Tata-grade components.</h3>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4 hidden">
-            {ppsReasons.map((item) => (
-              <div key={item.title} className="rounded-3xl border border-amber-200 bg-amber-50 p-4 dark:border-amber-900/50 dark:bg-amber-950/20">
-                <div className="text-2xl font-black tracking-tighter text-amber-700 dark:text-amber-300">{item.title}</div>
-                <p className="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-300">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-          <div className="mb-6">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-violet-600 dark:text-violet-400">Leadership</p>
-            <h3 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">Meet the founders</h3>
-            <p className="mt-3 text-base leading-7 text-slate-700 dark:text-slate-300">Engineers and entrepreneurs who built PPS one rooftop at a time.</p>
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-2">
-            {founderProfiles.map((person) => (
-              <div key={person.name} className="rounded-[26px] border border-violet-200 bg-violet-50 p-5 dark:border-violet-900/50 dark:bg-violet-950/20">
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-violet-700 text-xl font-black text-white shadow-lg shadow-violet-200/50 dark:shadow-violet-950/40">
-                  {person.initials}
+            <div className="grid gap-5 md:grid-cols-3">
+              {futureGoals.map((group) => (
+                <div key={group.title} className="rounded-[26px] border border-slate-200 bg-white/85 p-5 shadow-[0_20px_45px_-35px_rgba(79,70,229,0.5)] dark:border-slate-700 dark:bg-slate-900/75">
+                  <p className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300">{group.title}</p>
+                  <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700 dark:text-slate-300">
+                    {group.items.map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="mt-2 h-2 w-2 rounded-full bg-violet-500" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h4 className="text-xl font-bold text-slate-900 dark:text-white">{person.name}</h4>
-                <p className="mt-1 text-sm font-semibold uppercase tracking-[0.18em] text-violet-700 dark:text-violet-300">{person.role}</p>
-                <p className="mt-4 text-base leading-7 text-slate-700 dark:text-slate-300">{person.description}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="overflow-hidden rounded-[30px] border border-teal-200 bg-linear-to-br from-teal-50 via-white to-cyan-50 p-5 shadow-[0_24px_60px_-40px_rgba(20,184,166,0.45)] dark:border-teal-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="inline-flex items-center rounded-full border border-teal-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-teal-700 dark:border-teal-800 dark:bg-slate-900/80 dark:text-teal-300">
+                Why choose us
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-teal-100 bg-teal-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-teal-700 dark:border-teal-800 dark:bg-teal-900/20 dark:text-teal-300">
+              <span className="h-2 w-2 rounded-full bg-teal-500" />
+              Customer first
+            </div>
+          </div>
+          <h2 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+            A customer-focused and technically responsible approach
+          </h2>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {whyChooseUs.map((point) => (
+              <div key={point} className="rounded-[24px] border border-teal-100 bg-white/85 p-4 shadow-[0_18px_40px_-35px_rgba(13,148,136,0.5)] dark:border-teal-900/60 dark:bg-slate-900/75">
+                <div className="flex items-start gap-3">
+                  <span className="mt-1.5 inline-flex h-2.5 w-2.5 rounded-full bg-teal-500" />
+                  <p className="text-base leading-7 text-slate-700 dark:text-slate-300">{point}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-6 pb-12 sm:px-6 lg:px-8">
-        <div className="rounded-4xl border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-sky-50 p-6 shadow-[0_32px_90px_-50px_rgba(16,185,129,0.35)] dark:border-emerald-900/40 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-          <div className="mb-6">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald-600 dark:text-emerald-400">Explore Our Services</p>
-            <h3 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">Want to know if solar is right for your home?</h3>
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="overflow-hidden rounded-[30px] border border-violet-200 bg-linear-to-br from-violet-50 via-white to-indigo-50 p-5 shadow-[0_24px_60px_-40px_rgba(139,92,246,0.45)] dark:border-violet-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="inline-flex items-center rounded-full border border-violet-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-violet-700 dark:border-violet-800 dark:bg-slate-900/80 dark:text-violet-300">
+                Leadership
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-violet-100 bg-violet-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-violet-700 dark:border-violet-800 dark:bg-violet-900/20 dark:text-violet-300">
+              <span className="h-2 w-2 rounded-full bg-violet-500" />
+              Team vision
+            </div>
+          </div>
+          <h3 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+            Meet the founders
+          </h3>
+
+          <div className="mt-6 grid gap-5 md:grid-cols-2">
+            {founderProfiles.map((profile) => (
+              <div key={profile.name} className="rounded-[28px] border border-violet-100 bg-white/85 p-5 shadow-[0_20px_45px_-35px_rgba(139,92,246,0.5)] dark:border-violet-900/60 dark:bg-slate-900/75">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-linear-to-br from-violet-500 to-indigo-600 text-lg font-black text-white">
+                    {profile.initials}
+                  </div>
+                  <div>
+                    <p className="text-xl font-black text-slate-900 dark:text-white">{profile.name}</p>
+                    <p className="text-sm font-medium text-violet-700 dark:text-violet-300">{profile.role}</p>
+                  </div>
+                </div>
+                <p className="mt-4 text-base leading-7 text-slate-700 dark:text-slate-300">{profile.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="overflow-hidden rounded-[30px] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-teal-50 p-5 shadow-[0_24px_60px_-40px_rgba(16,185,129,0.45)] dark:border-emerald-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:border-emerald-800 dark:bg-slate-900/80 dark:text-emerald-300">
+                Explore our services
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100 bg-emerald-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:border-emerald-800 dark:bg-emerald-900/20 dark:text-emerald-300">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              Tailored guidance
+            </div>
+          </div>
+          <h3 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+            Want to know if solar is right for your home?
+          </h3>
+
+          <div className="mt-6 grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
+            <div className="rounded-[26px] border border-emerald-100 bg-white/85 p-5 dark:border-emerald-900/60 dark:bg-slate-900/75">
+              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-emerald-700 dark:text-emerald-300">Quick overview</p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                {ppsStats.map((stat) => (
+                  <div key={stat.label} className="rounded-[18px] border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-800/70">
+                    <p className="text-2xl font-black text-slate-900 dark:text-white">{stat.value}</p>
+                    <p className="mt-1 text-[10px] font-black uppercase tracking-[0.22em] text-slate-500 dark:text-slate-400">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[26px] border border-amber-100 bg-amber-50/80 p-5 dark:border-amber-900/60 dark:bg-amber-950/20">
+              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-amber-700 dark:text-amber-300">Our strengths</p>
+              <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
+                {ppsStrengths.map((point) => (
+                  <li key={point} className="flex gap-3">
+                    <span className="mt-2 h-2.5 w-2.5 rounded-full bg-amber-500" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          <div className="rounded-3xl border border-slate-200 bg-white/80 p-5 text-base leading-8 text-slate-700 shadow-sm dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-300">
-            Book a free site survey with our Tirupati team. No commitments, just honest answers.
+          <div className="mt-6 rounded-[26px] border border-slate-200 bg-white/80 p-5 dark:border-slate-700 dark:bg-slate-900/70">
+            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Why customers choose us</p>
+            <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              {ppsReasons.map((reason) => (
+                <div key={reason.title} className="rounded-[22px] border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800/70">
+                  <p className="text-[10px] font-black uppercase tracking-[0.22em] text-emerald-700 dark:text-emerald-300">{reason.title}</p>
+                  <p className="mt-2 text-sm leading-7 text-slate-700 dark:text-slate-300">{reason.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-6 rounded-[26px] border border-slate-200 bg-white/80 p-5 dark:border-slate-700 dark:bg-slate-900/70">
+            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Official resources</p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              {officialResources.map((resource) => (
+                <a
+                  key={resource.label}
+                  href={resource.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold text-slate-700 transition hover:border-emerald-200 hover:bg-emerald-50 hover:text-emerald-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-emerald-800 dark:hover:bg-emerald-950/20 dark:hover:text-emerald-300"
+                >
+                  {resource.label}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
