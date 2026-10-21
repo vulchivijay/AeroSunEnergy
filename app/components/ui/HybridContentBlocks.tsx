@@ -37,7 +37,7 @@ const renderCheckIcon = (accent: 'emerald' | 'sky' | 'violet' | 'amber') => {
 export function HybridSectionEyebrow({ children }: { children: ReactNode }) {
   return (
     <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f5f3ff_45%,#ffffff_100%)] px-3.5 py-2 shadow-[0_14px_26px_-20px_rgba(16,185,129,0.9)]">
-      <span className="inline-flex h-2.5 w-2.5 items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-violet-500 shadow-[0_0_0_4px_rgba(16,185,129,0.12)]" aria-hidden="true" />
+      <span className="inline-flex h-2.5 w-2.5 items-center justify-center rounded-full bg-linear-to-r from-emerald-500 to-violet-500 shadow-[0_0_0_4px_rgba(16,185,129,0.12)]" aria-hidden="true" />
       <p className="text-[10px] font-black uppercase tracking-[0.24em] text-emerald-700">{children}</p>
     </div>
   )

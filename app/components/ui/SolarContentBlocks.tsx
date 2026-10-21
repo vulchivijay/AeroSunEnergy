@@ -191,7 +191,7 @@ export const solarCapacityRows = [
 export function SectionEyebrow({ children }: { children: ReactNode }) {
   return (
     <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f0fdfa_45%,#ffffff_100%)] px-3.5 py-2 shadow-[0_14px_26px_-20px_rgba(16,185,129,0.9)]">
-      <span className="inline-flex h-2.5 w-2.5 items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-lime-500 shadow-[0_0_0_4px_rgba(16,185,129,0.12)]" aria-hidden="true" />
+      <span className="inline-flex h-2.5 w-2.5 items-center justify-center rounded-full bg-linear-to-r from-emerald-500 to-lime-500 shadow-[0_0_0_4px_rgba(16,185,129,0.12)]" aria-hidden="true" />
       <p className="text-[10px] font-black uppercase tracking-[0.24em] text-emerald-700">{children}</p>
     </div>
   )
@@ -253,7 +253,7 @@ export function BenefitCard({
 }) {
   return (
     <div className="rounded-[1.7rem] border border-emerald-200 bg-[linear-gradient(135deg,#ffffff_0%,#ecfdf5_100%)] p-5 shadow-[0_18px_32px_-26px_rgba(16,185,129,0.45)]">
-      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-lime-500 text-lg font-black text-white shadow-lg shadow-emerald-500/20">
+      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-emerald-500 to-lime-500 text-lg font-black text-white shadow-lg shadow-emerald-500/20">
         ✓
       </div>
       <h3 className="text-xl font-black tracking-[-0.04em] text-slate-900">{title}</h3>

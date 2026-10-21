@@ -95,7 +95,7 @@ function Rotor() {
 
 export default function Savonius3D() {
   return (
-    <div className="w-full h-[420px] md:h-[520px] rounded-2xl overflow-hidden bg-gradient-to-b from-slate-100 to-white">
+    <div className="w-full h-[420px] md:h-[520px] rounded-2xl overflow-hidden bg-linear-to-b from-slate-100 to-white">
       <Canvas
         camera={{ position: [2.2, 1.4, 2.2], fov: 50 }}
         shadows

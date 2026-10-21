@@ -192,7 +192,7 @@ export default function SaveEarthPage() {
               key={item.title}
               className="group rounded-[28px] border border-slate-200 bg-white p-5 shadow-[0_20px_40px_-30px_rgba(15,23,42,0.35)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_25px_60px_-28px_rgba(16,185,129,0.4)]"
             >
-              <div className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${item.accent} text-lg font-black text-white shadow-lg`}>
+              <div className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br ${item.accent} text-lg font-black text-white shadow-lg`}>
                 {item.title.charAt(0)}
               </div>
               <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
@@ -249,7 +249,7 @@ export default function SaveEarthPage() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
+      <section className="bg-linear-to-br from-emerald-50 via-teal-50 to-cyan-50">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-2">
             <div className="rounded-[32px] border border-emerald-200 bg-white/75 p-7 shadow-[0_30px_80px_-40px_rgba(16,185,129,0.5)] backdrop-blur-sm">
@@ -313,7 +313,7 @@ export default function SaveEarthPage() {
             },
           ].map((item) => (
             <div key={item.title} className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-[0_18px_36px_-30px_rgba(15,23,42,0.4)]">
-              <div className="mb-4 h-12 w-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600" />
+              <div className="mb-4 h-12 w-12 rounded-2xl bg-linear-to-br from-emerald-500 to-teal-600" />
               <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
               <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
             </div>
@@ -323,7 +323,7 @@ export default function SaveEarthPage() {
 
       <section className="bg-slate-900">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="rounded-[32px] border border-white/10 bg-gradient-to-r from-emerald-600/20 via-slate-900 to-cyan-600/20 p-8 text-center shadow-[0_30px_80px_-40px_rgba(16,185,129,0.8)]">
+          <div className="rounded-[32px] border border-white/10 bg-linear-to-r from-emerald-600/20 via-slate-900 to-cyan-600/20 p-8 text-center shadow-[0_30px_80px_-40px_rgba(16,185,129,0.8)]">
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-emerald-300">Take action today</p>
             <h2 className="mt-4 text-3xl font-black tracking-[-0.05em] text-white sm:text-4xl">
               The cleanest energy is the energy you choose to generate.

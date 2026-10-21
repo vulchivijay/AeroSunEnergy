@@ -37,7 +37,7 @@ const renderCheckIcon = (accent: 'sky' | 'emerald' | 'amber' | 'violet') => {
 export function WindSectionEyebrow({ children }: { children: ReactNode }) {
   return (
     <div className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ecfeff_45%,#ffffff_100%)] px-3.5 py-2 shadow-[0_14px_26px_-20px_rgba(59,130,246,0.9)]">
-      <span className="inline-flex h-2.5 w-2.5 items-center justify-center rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 shadow-[0_0_0_4px_rgba(59,130,246,0.12)]" aria-hidden="true" />
+      <span className="inline-flex h-2.5 w-2.5 items-center justify-center rounded-full bg-linear-to-r from-sky-500 to-cyan-500 shadow-[0_0_0_4px_rgba(59,130,246,0.12)]" aria-hidden="true" />
       <p className="text-[10px] font-black uppercase tracking-[0.24em] text-sky-700">{children}</p>
     </div>
   )
@@ -88,7 +88,7 @@ export function WindFeatureCard({
 export function WindBenefitCard({ title, description }: { title: string; description: string }) {
   return (
     <div className="rounded-[1.7rem] border border-sky-200 bg-[linear-gradient(135deg,#ffffff_0%,#eff6ff_100%)] p-5 shadow-[0_18px_32px_-26px_rgba(59,130,246,0.4)]">
-      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500 text-lg font-black text-white shadow-lg shadow-sky-500/20">
+      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-sky-500 to-cyan-500 text-lg font-black text-white shadow-lg shadow-sky-500/20">
         ✓
       </div>
       <h3 className="text-xl font-black tracking-[-0.04em] text-slate-900">{title}</h3>

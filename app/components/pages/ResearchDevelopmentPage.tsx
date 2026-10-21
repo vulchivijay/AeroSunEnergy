@@ -66,7 +66,7 @@ export default function ResearchDevelopmentPage() {
                 <div className="mt-5 space-y-4">
                   {['Solar efficiency optimization', 'Wind turbine performance validation', 'Hybrid storage and load balancing'].map((item) => (
                     <div key={item} className="flex items-center gap-3 rounded-2xl border border-slate-200/80 bg-slate-50/90 p-3 shadow-[0_14px_30px_-22px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-800/80">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 text-sm font-bold text-white shadow-[0_8px_16px_-10px_rgba(16,185,129,0.8)]">✓</span>
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-linear-to-br from-emerald-400 to-teal-500 text-sm font-bold text-white shadow-[0_8px_16px_-10px_rgba(16,185,129,0.8)]">✓</span>
                       <span className="text-sm font-medium text-slate-700 dark:text-slate-200">{item}</span>
                     </div>
                   ))}
@@ -102,7 +102,7 @@ export default function ResearchDevelopmentPage() {
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {visibleItems.map((item) => (
             <article key={`${item.title}-${item.phase}`} className="group overflow-hidden rounded-[1.75rem] border border-white/60 bg-white/70 shadow-[0_22px_50px_-30px_rgba(15,23,42,0.45)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_-32px_rgba(16,185,129,0.38)] dark:border-slate-700/80 dark:bg-slate-900/75">
-              <div className={`h-2 bg-gradient-to-r ${item.accent}`} />
+              <div className={`h-2 bg-linear-to-r ${item.accent}`} />
               <div className="p-5">
                 <div className="flex items-center justify-between gap-3">
                   <span className="rounded-full border border-slate-200 bg-slate-50/90 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-slate-600 shadow-sm dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">{item.phase}</span>
@@ -141,7 +141,7 @@ export default function ResearchDevelopmentPage() {
                 onClick={() => goToPage(page)}
                 className={`flex h-10 min-w-10 items-center justify-center rounded-full px-3 text-sm font-semibold transition ${
                   page === currentPage
-                    ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-[0_14px_30px_-16px_rgba(16,185,129,0.9)]'
+                    ? 'bg-linear-to-r from-emerald-500 to-teal-500 text-white shadow-[0_14px_30px_-16px_rgba(16,185,129,0.9)]'
                     : 'border border-slate-200 bg-white/80 text-slate-700 shadow-sm hover:border-emerald-300 hover:text-emerald-700 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-emerald-400 dark:hover:text-emerald-300'
                 }`}
               >

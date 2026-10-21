@@ -46,7 +46,7 @@ export default function HowItWorks() {
           <p className="mt-4 text-lg text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">
             {h.description}
           </p>
-          <div className="mt-6 mx-auto w-16 h-1 rounded-md bg-gradient-to-r from-primary to-secondary" />
+          <div className="mt-6 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary" />
         </motion.div>
 
         {/* Process Overview Image */}
@@ -58,7 +58,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.2, delay: 0.1 }}
         >
           <div className="relative max-w-7xl mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-secondary/20 rounded-md blur-3xl" aria-hidden="true" />
+            <div className="absolute inset-0 bg-linear-to-r from-primary/20 via-accent/20 to-secondary/20 rounded-md blur-3xl" aria-hidden="true" />
             <div className="relative overflow-hidden rounded-md border border-white/20 bg-white/90 shadow-2xl backdrop-blur-sm dark:border-white/10 dark:bg-slate-950/90">
               <div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white backdrop-blur-md">
                 {h.nextGenBadge}
@@ -71,7 +71,7 @@ export default function HowItWorks() {
                   sizes="(min-width: 1024px) 80rem, 92vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" aria-hidden="true" />
+                <div className="absolute inset-0 bg-linear-to-t from-slate-950/40 via-transparent to-transparent" aria-hidden="true" />
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-3 bg-green-500/25 backdrop-blur-sm">
                 <p className="text-lg text-white">
@@ -85,7 +85,7 @@ export default function HowItWorks() {
         {/* Steps */}
         <div className="relative">
           {/* Vertical connector line (desktop) */}
-          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent opacity-20 -translate-x-1/2" aria-hidden="true" />
+          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-primary via-secondary to-accent opacity-20 -translate-x-1/2" aria-hidden="true" />
 
           <motion.div
             className="flex flex-col gap-6"

@@ -87,8 +87,8 @@ export default function SchemeBanner() {
                 Make your rooftop solar dream affordable with up to ₹ 78,000 in central subsidy and a complete application support experience from AeroSun Energy.
               </p>
 
-              <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-amber-200 bg-gradient-to-r from-amber-50 via-orange-50 to-rose-50 px-4 py-2.5 shadow-[0_12px_24px_-18px_rgba(245,158,11,0.7)]">
-                <span className="inline-flex h-2.5 w-2.5 rounded-full bg-gradient-to-r from-red-500 to-amber-500 shadow-[0_0_0_4px_rgba(251,191,36,0.18)]" />
+              <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-amber-200 bg-linear-to-r from-amber-50 via-orange-50 to-rose-50 px-4 py-2.5 shadow-[0_12px_24px_-18px_rgba(245,158,11,0.7)]">
+                <span className="inline-flex h-2.5 w-2.5 rounded-full bg-linear-to-r from-red-500 to-amber-500 shadow-[0_0_0_4px_rgba(251,191,36,0.18)]" />
                 <span className="text-[11px] font-black uppercase tracking-[0.18em] text-amber-700 sm:text-[12px]">
                   Subsidy ends 31<sup>st</sup> March 2027
                 </span>
@@ -110,7 +110,7 @@ export default function SchemeBanner() {
               </div>
             </div>
 
-            <div className="rounded-[28px] border border-emerald-200 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950 p-5 text-white shadow-[0_28px_60px_-28px_rgba(15,23,42,0.9)]">
+            <div className="rounded-[28px] border border-emerald-200 bg-linear-to-br from-slate-900 via-slate-800 to-emerald-950 p-5 text-white shadow-[0_28px_60px_-28px_rgba(15,23,42,0.9)]">
               <div className="flex items-center justify-between gap-3 border-b border-white/10 pb-4">
                 <div>
                   <div className="text-[11px] font-bold uppercase tracking-[0.22em] text-emerald-200">Subsidy</div>

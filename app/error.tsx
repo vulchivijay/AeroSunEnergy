@@ -27,7 +27,7 @@ export default function GlobalError({
             className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(to_right,rgba(255,255,255,0.3)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.3)_1px,transparent_1px)] [background-size:72px_72px]"
             aria-hidden="true"
           />
-          <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-red-500/50 to-transparent" aria-hidden="true" />
+          <div className="absolute left-0 right-0 top-0 h-px bg-linear-to-r from-transparent via-red-500/50 to-transparent" aria-hidden="true" />
 
           <div
             className="relative z-10 flex flex-col items-center text-center transition-all duration-700 translate-y-0 opacity-100"
@@ -54,7 +54,7 @@ export default function GlobalError({
               </div>
             </div>
 
-            <h1 className="bg-gradient-to-r from-red-400 via-amber-400 to-orange-400 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent sm:text-5xl">
+            <h1 className="bg-linear-to-r from-red-400 via-amber-400 to-orange-400 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent sm:text-5xl">
               System Error
             </h1>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-slate-400 sm:text-base">
@@ -70,7 +70,7 @@ export default function GlobalError({
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <button
                 onClick={reset}
-                className="rounded-full bg-gradient-to-r from-red-500 to-amber-500 px-7 py-2.5 text-sm font-semibold text-white shadow-lg shadow-red-900/40 transition-all hover:scale-105 hover:shadow-red-700/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
+                className="rounded-full bg-linear-to-r from-red-500 to-amber-500 px-7 py-2.5 text-sm font-semibold text-white shadow-lg shadow-red-900/40 transition-all hover:scale-105 hover:shadow-red-700/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
               >
                 Try Again
               </button>

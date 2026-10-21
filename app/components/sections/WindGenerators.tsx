@@ -29,7 +29,7 @@ export default function WindGenerators() {
           <p className="mt-4 text-lg text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">
             {w.description}
           </p>
-          <div className="mt-6 mx-auto w-16 h-1 rounded-md bg-gradient-to-r from-primary to-secondary" />
+          <div className="mt-6 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary" />
         </div>
 
         {/* Generator cards */}
@@ -40,7 +40,7 @@ export default function WindGenerators() {
               className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-10 items-center bg-white dark:bg-gray-800 rounded-md shadow-2xl overflow-hidden`}
             >
               {/* Illustration panel */}
-              <div className={`flex-shrink-0 flex items-center justify-center w-full lg:w-72 h-64 bg-gradient-to-br ${gen.accentFrom} ${gen.accentTo} bg-opacity-10 dark:bg-opacity-20`}>
+              <div className={`flex-shrink-0 flex items-center justify-center w-full lg:w-72 h-64 bg-linear-to-br ${gen.accentFrom} ${gen.accentTo} bg-opacity-10 dark:bg-opacity-20`}>
                 <div className="relative h-full w-full">
                   <OptimizedImage
                     src={gen.imageSrc}
@@ -77,7 +77,7 @@ export default function WindGenerators() {
                   title={w.getQuoteTitle}
                   aria-label={w.getQuoteAriaLabel}
                   data-cta="get-quote"
-                  className={`inline-block bg-gradient-to-r ${gen.accentFrom} ${gen.accentTo} text-white px-8 py-3 rounded-full shadow-2xl hover:opacity-90 transition-opacity text-lg`}
+                  className={`inline-block bg-linear-to-r ${gen.accentFrom} ${gen.accentTo} text-white px-8 py-3 rounded-full shadow-2xl hover:opacity-90 transition-opacity text-lg`}
                 >
                   {w.getQuote}
                 </Link>

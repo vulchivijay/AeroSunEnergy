@@ -14,16 +14,16 @@ export default function NotFound() {
         aria-hidden="true"
       />
       {/* Top divider */}
-      <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-400/50 to-transparent" aria-hidden="true" />
+      <div className="absolute left-0 right-0 top-0 h-px bg-linear-to-r from-transparent via-sky-400/50 to-transparent" aria-hidden="true" />
 
       <div className="relative z-10 flex flex-col items-center text-center">
         {/* Large 404 */}
         <div className="relative select-none">
-          <span className="bg-gradient-to-br from-sky-400 via-emerald-400 to-amber-400 bg-clip-text text-[clamp(7rem,20vw,14rem)] font-extrabold leading-none tracking-tighter text-transparent opacity-90">
+          <span className="bg-linear-to-br from-sky-400 via-emerald-400 to-amber-400 bg-clip-text text-[clamp(7rem,20vw,14rem)] font-extrabold leading-none tracking-tighter text-transparent opacity-90">
             404
           </span>
           {/* Glow behind the number */}
-          <span className="absolute inset-0 z-[-1] blur-3xl bg-gradient-to-br from-sky-500/30 via-emerald-500/20 to-amber-500/20 rounded-full" aria-hidden="true" />
+          <span className="absolute inset-0 z-[-1] blur-3xl bg-linear-to-br from-sky-500/30 via-emerald-500/20 to-amber-500/20 rounded-full" aria-hidden="true" />
         </div>
 
         {/* Wind turbine icon */}
@@ -43,7 +43,7 @@ export default function NotFound() {
             <path d="M28.5 34 C20 40 10 44 8 38 C6 32 18 26 28.5 34Z" strokeLinejoin="round" />
             <line x1="32" y1="36" x2="32" y2="60" strokeWidth="2.5" />
           </svg>
-          <div className="h-1.5 w-24 rounded-full bg-gradient-to-r from-sky-500/0 via-emerald-400/60 to-sky-500/0" />
+          <div className="h-1.5 w-24 rounded-full bg-linear-to-r from-sky-500/0 via-emerald-400/60 to-sky-500/0" />
         </div>
 
         <h1 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
@@ -56,7 +56,7 @@ export default function NotFound() {
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link
             href="/"
-            className="rounded-full bg-gradient-to-r from-sky-500 to-emerald-500 px-7 py-2.5 text-sm font-semibold text-white shadow-lg shadow-emerald-900/40 transition-all hover:scale-105 hover:shadow-emerald-700/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+            className="rounded-full bg-linear-to-r from-sky-500 to-emerald-500 px-7 py-2.5 text-sm font-semibold text-white shadow-lg shadow-emerald-900/40 transition-all hover:scale-105 hover:shadow-emerald-700/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
           >
             Back to Home
           </Link>

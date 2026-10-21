@@ -102,7 +102,7 @@ export default function KnowEligibilityPage() {
             </div>
           </div>
 
-          <div className="rounded-[28px] border border-emerald-200 bg-gradient-to-br from-emerald-600 via-emerald-700 to-emerald-900 p-6 text-white shadow-[0_24px_60px_-28px_rgba(5,150,105,0.85)] sm:p-8">
+          <div className="rounded-[28px] border border-emerald-200 bg-linear-to-br from-emerald-600 via-emerald-700 to-emerald-900 p-6 text-white shadow-[0_24px_60px_-28px_rgba(5,150,105,0.85)] sm:p-8">
             <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-emerald-100">Subsidy snapshot</p>
             <h2 className="mt-3 text-2xl font-black">Central subsidy support</h2>
 
