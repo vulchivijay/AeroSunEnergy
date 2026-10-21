@@ -49,6 +49,10 @@
     ],
     "quiries": [
       {
+        "label": "ग्राहक पूछताछ",
+        "href": "/customer-enquiry"
+      },
+      {
         "label": "एलिजिबिलिटी देखें",
         "href": "/know-eligibility"
       },

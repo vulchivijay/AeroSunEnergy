@@ -49,6 +49,10 @@
     ],
     "quiries": [
       {
+        "label": "కస్టమర్ ఎన్‌క్వైరీ",
+        "href": "/customer-enquiry"
+      },
+      {
         "label": "ఎలిజిబిలిటీ చూడండి",
         "href": "/know-eligibility"
       },

@@ -49,6 +49,10 @@
     ],
     "quiries": [
       {
+        "label": "Customer Enquiry",
+        "href": "/customer-enquiry"
+      },
+      {
         "label": "Know Eligibility",
         "href": "/know-eligibility"
       },
