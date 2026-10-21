@@ -319,10 +319,7 @@ export default function SolarEnergyPage() {
               Solar EV charging, off-grid systems, and solar street lighting also have strong use cases, especially in public infrastructure and rural applications.
             </div>
           </div>
-
-          <div className="mt-8 rounded-3xl border border-emerald-200 bg-emerald-50 p-5 text-base leading-7 text-emerald-900">
-            <strong className="font-bold">Recommendation:</strong> focus first on rooftop solar, hybrid systems, and irrigation-related solar pumping solutions.
-          </div>
+          
         </div>
       </section>
 
