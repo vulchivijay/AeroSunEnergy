@@ -161,7 +161,7 @@ export default function Slider({ children, className = '', autoplay = false, int
       onPointerUp={onPointerUp}
       onPointerCancel={endDrag}
       className={`w-full relative overflow-hidden ${className}`}
-      style={{ minHeight: '420px', height: 'clamp(420px, 56vw, 760px)' }}
+      style={{ minHeight: '480px', height: 'clamp(480px, 56vw, 760px)' }}
     >
       <div
         className={`flex h-full ${withTransition ? 'transition-transform duration-500 ease-in-out' : ''}`}

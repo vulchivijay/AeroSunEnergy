@@ -87,6 +87,13 @@ export default function SchemeBanner() {
                 Make your rooftop solar dream affordable with up to ₹ 78,000 in central subsidy and a complete application support experience from AeroSun Energy.
               </p>
 
+              <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-amber-200 bg-gradient-to-r from-amber-50 via-orange-50 to-rose-50 px-4 py-2.5 shadow-[0_12px_24px_-18px_rgba(245,158,11,0.7)]">
+                <span className="inline-flex h-2.5 w-2.5 rounded-full bg-gradient-to-r from-red-500 to-amber-500 shadow-[0_0_0_4px_rgba(251,191,36,0.18)]" />
+                <span className="text-[11px] font-black uppercase tracking-[0.18em] text-amber-700 sm:text-[12px]">
+                  Subsidy ends 31<sup>st</sup> March 2027
+                </span>
+              </div>
+
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 <Link
                   href="/contact"

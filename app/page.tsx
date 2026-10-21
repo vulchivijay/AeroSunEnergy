@@ -1,15 +1,3 @@
-// import {
-//   Hero,
-//   HowItWorks,
-//   Features,
-//   SavoniusRotor,
-//   UseCases,
-//   Benefits,
-//   WindGenerators,
-//   Services,
-//   WhyChooseUs,
-//   CTASection,
-// } from '@/app/components/sections'
 import About from './components/sections/About'
 import {
   BenefitCard,
