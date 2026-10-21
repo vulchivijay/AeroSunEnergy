@@ -73,188 +73,168 @@ export default function WarrantyPolicyPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.12),transparent_18%),linear-gradient(180deg,#f8fafc_0%,#f0f9ff_30%,#f8fafc_100%)] px-4 py-10 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-8 text-center">
-          <span className="inline-flex items-center rounded-full border border-sky-200 bg-white/80 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.28em] text-sky-700 shadow-sm backdrop-blur-sm">
-            Warranty
-          </span>
-          <h1 className="mt-5 text-4xl font-black tracking-[-0.06em] text-slate-900 sm:text-5xl">
-            Warranty and after-sales service policy
-          </h1>
-          <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-slate-600">
-            This policy outlines warranty coverage, service responsibilities, operating support, and after-sales obligations for renewable energy systems and solutions delivered by AeroSun Energy.
-          </p>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-          <Card className="overflow-hidden border border-slate-200 bg-white/85 shadow-[0_25px_80px_rgba(15,23,42,0.08)] backdrop-blur-md">
-            <CardContent className="p-5 sm:p-7 lg:p-8">
-              <div className="space-y-6">
-                <section>
-                  <h2 className="text-xl font-bold text-slate-900">1. Warranty coverage</h2>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
-                    AeroSun Energy provides product and workmanship warranty coverage as specified in the applicable equipment supplier documentation, the final project agreement, and the installation report. Warranty terms may vary depending on the product category, manufacturer policy, and service contract signed with the customer.
-                  </p>
-                </section>
-
-                <section>
-                  <h2 className="text-xl font-bold text-slate-900">2. Warranty limitations</h2>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
-                    Warranty coverage does not include damage caused by misuse, improper maintenance, accidents, unauthorized modifications, abnormal weather events, power surges, corrosion, tampering, or failures due to external site conditions beyond the design assumptions. Routine preventive maintenance and service compliance remain essential to maintaining eligibility for support.
-                  </p>
-                </section>
-
-                <section>
-                  <h2 className="text-xl font-bold text-slate-900">3. After-sales support</h2>
-                  <div className="mt-3 space-y-3 text-sm leading-7 text-slate-600">
-                    <p><span className="font-semibold text-slate-800">Service coordination:</span> Support requests are handled through direct communication with the project and service team for diagnosis, scheduling, and resolution.</p>
-                    <p><span className="font-semibold text-slate-800">Remote assistance:</span> Remote diagnostics, performance review, and troubleshooting guidance may be provided for certain system issues.</p>
-                    <p><span className="font-semibold text-slate-800">On-site support:</span> Site visits and technical interventions may be scheduled based on the service plan, warranty class, and nature of the fault.</p>
-                  </div>
-                </section>
-
-                <section>
-                  <h2 className="text-xl font-bold text-slate-900">4. Annual maintenance contracts</h2>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
-                    Customers may opt for annual maintenance contracts (AMC), periodic inspections, preventive checks, performance review, and support for inverter, battery, panel, and electrical health. AMC terms are subject to the selected plan and the agreed service schedule.
-                  </p>
-                </section>
-
-                <section>
-                  <h2 className="text-xl font-bold text-slate-900">5. Service request process</h2>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
-                    Any defect or service issue should be reported promptly with system details, site information, fault symptoms, and relevant photos or readings. This helps the service team assess the issue quickly and determine whether remote support, component replacement, or site attendance is required.
-                  </p>
-                </section>
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.10),transparent_14%),linear-gradient(180deg,#f8fafc_0%,#edf6ff_34%,#f8fafc_100%)] px-4 py-8 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-5xl">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          noValidate
+          className="overflow-hidden rounded-[28px] border border-sky-200 bg-white/90 shadow-[0_30px_90px_-35px_rgba(15,23,42,0.45)] backdrop-blur-sm"
+        >
+          <header className="bg-linear-to-r from-[#0b1e46] via-[#123b72] to-[#0d6d8d] px-5 py-5 text-white sm:px-7">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-center gap-4">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-xl font-black shadow-[0_18px_40px_-18px_rgba(255,255,255,0.8)]">
+                  W
+                </div>
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-[0.36em] text-sky-100/80">Warranty</p>
+                  <h1 className="mt-1 text-2xl font-black tracking-[-0.06em] sm:text-3xl">Policy Acknowledgement</h1>
+                </div>
               </div>
-            </CardContent>
-          </Card>
 
-          <Card className="overflow-hidden border border-sky-100 bg-linear-to-br from-slate-950 via-slate-900 to-sky-950 text-white shadow-[0_25px_80px_rgba(15,23,42,0.12)]">
-            <CardContent className="p-5 sm:p-7">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-sky-200">Policy acknowledgement</p>
-              <h2 className="mt-3 text-2xl font-semibold">Confirm service terms</h2>
+              <div className="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-sky-100">
+                <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(74,222,128,0.9)]" />
+                Online Support
+              </div>
+            </div>
+          </header>
 
-              <form onSubmit={handleSubmit(onSubmit)} noValidate className="mt-6 space-y-4">
-                <Field
-                  label="Customer name"
-                  name="customerName"
-                  placeholder="Enter your full name"
-                  register={register}
-                  error={errors.customerName}
-                />
+          <div className="space-y-5 p-4 sm:p-6 lg:p-7">
+            <div className="grid gap-5 lg:grid-cols-2">
+              <Field
+                label="Customer name"
+                name="customerName"
+                placeholder="Enter your full name"
+                register={register}
+                error={errors.customerName}
+                accent="sky"
+              />
 
-                <Field
-                  label="Company name"
-                  name="companyName"
-                  placeholder="Optional company / organization"
-                  register={register}
-                  error={errors.companyName}
-                />
+              <Field
+                label="Company name"
+                name="companyName"
+                placeholder="Optional company / organization"
+                register={register}
+                error={errors.companyName}
+                accent="emerald"
+              />
 
-                <Field
-                  label="Email address"
-                  name="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  register={register}
-                  error={errors.email}
-                />
+              <Field
+                label="Email address"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                register={register}
+                error={errors.email}
+                accent="cyan"
+              />
 
-                <Field
-                  label="Phone number"
-                  name="phone"
-                  type="tel"
-                  placeholder="+91 98765 43210"
-                  register={register}
-                  error={errors.phone}
-                />
+              <Field
+                label="Phone number"
+                name="phone"
+                type="tel"
+                placeholder="+91 98765 43210"
+                register={register}
+                error={errors.phone}
+                accent="blue"
+              />
 
-                <Field
-                  label="Project name"
-                  name="projectName"
-                  placeholder="Solar rooftop project"
-                  register={register}
-                  error={errors.projectName}
-                />
+              <Field
+                label="Project name"
+                name="projectName"
+                placeholder="Solar rooftop project"
+                register={register}
+                error={errors.projectName}
+                accent="indigo"
+              />
 
-                <div>
-                  <label htmlFor="productLine" className="mb-2 block text-sm font-semibold text-slate-100">
-                    Product or service line
-                  </label>
-                  <select
-                    id="productLine"
-                    {...register('productLine')}
-                    aria-invalid={Boolean(errors.productLine)}
-                    className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-all duration-200 focus:border-sky-400 focus:ring-4 focus:ring-sky-500/30"
-                  >
-                    <option value="" className="text-slate-900">Select product line</option>
-                    <option value="Solar PV system" className="text-slate-900">Solar PV system</option>
-                    <option value="Wind energy system" className="text-slate-900">Wind energy system</option>
-                    <option value="Hybrid energy system" className="text-slate-900">Hybrid energy system</option>
-                    <option value="Battery storage" className="text-slate-900">Battery storage</option>
-                    <option value="Maintenance plan" className="text-slate-900">Maintenance plan</option>
-                    <option value="Service request" className="text-slate-900">Service request</option>
-                  </select>
-                  {errors.productLine && <p className="mt-2 text-xs text-rose-300">{errors.productLine.message}</p>}
-                </div>
-
-                <Field
-                  label="Warranty start date"
-                  name="warrantyStart"
-                  type="date"
-                  register={register}
-                  error={errors.warrantyStart}
-                />
-
-                <div>
-                  <label htmlFor="servicePlan" className="mb-2 block text-sm font-semibold text-slate-100">
-                    After-sales service plan
-                  </label>
-                  <select
-                    id="servicePlan"
-                    {...register('servicePlan')}
-                    aria-invalid={Boolean(errors.servicePlan)}
-                    className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-all duration-200 focus:border-sky-400 focus:ring-4 focus:ring-sky-500/30"
-                  >
-                    <option value="" className="text-slate-900">Select service plan</option>
-                    <option value="Basic support" className="text-slate-900">Basic support</option>
-                    <option value="Annual maintenance contract" className="text-slate-900">Annual maintenance contract</option>
-                    <option value="Priority service plan" className="text-slate-900">Priority service plan</option>
-                    <option value="Monitoring and support" className="text-slate-900">Monitoring and support</option>
-                    <option value="Not sure yet" className="text-slate-900">Not sure yet</option>
-                  </select>
-                  {errors.servicePlan && <p className="mt-2 text-xs text-rose-300">{errors.servicePlan.message}</p>}
-                </div>
-
-                <label className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 text-sm leading-6 text-slate-200">
-                  <input
-                    type="checkbox"
-                    {...register('acceptTerms')}
-                    className="mt-1 h-4 w-4 rounded border-slate-300 text-sky-500 focus:ring-sky-400"
-                  />
-                  <span>
-                    I acknowledge and accept the warranty and after-sales service policy terms as outlined above.
-                  </span>
+              <div>
+                <label htmlFor="productLine" className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">
+                  Product or service line
                 </label>
-                {errors.acceptTerms && <p className="text-xs text-rose-300">{errors.acceptTerms.message}</p>}
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="inline-flex w-full items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition-all duration-200 hover:-translate-y-0.5 hover:bg-sky-100 disabled:cursor-not-allowed disabled:opacity-60"
+                <select
+                  id="productLine"
+                  {...register('productLine')}
+                  aria-invalid={Boolean(errors.productLine)}
+                  className="h-12 w-full rounded-2xl border border-sky-200 bg-sky-50/70 px-4 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
                 >
-                  {isSubmitting ? 'Submitting...' : 'Accept warranty policy'}
-                </button>
+                  <option value="">Select product line</option>
+                  <option value="Solar PV system">Solar PV system</option>
+                  <option value="Wind energy system">Wind energy system</option>
+                  <option value="Hybrid energy system">Hybrid energy system</option>
+                  <option value="Battery storage">Battery storage</option>
+                  <option value="Maintenance plan">Maintenance plan</option>
+                  <option value="Service request">Service request</option>
+                </select>
+                {errors.productLine && <p className="mt-2 text-xs text-rose-600">{errors.productLine.message}</p>}
+              </div>
 
-                {isSubmitSuccessful && (
-                  <p className="text-sm font-medium text-emerald-300">Your policy acknowledgement has been prepared in your email app.</p>
-                )}
-              </form>
-            </CardContent>
-          </Card>
-        </div>
+              <Field
+                label="Warranty start date"
+                name="warrantyStart"
+                type="date"
+                register={register}
+                error={errors.warrantyStart}
+                accent="emerald"
+              />
+
+              <div>
+                <label htmlFor="servicePlan" className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">
+                  After-sales service plan
+                </label>
+                <select
+                  id="servicePlan"
+                  {...register('servicePlan')}
+                  aria-invalid={Boolean(errors.servicePlan)}
+                  className="h-12 w-full rounded-2xl border border-emerald-200 bg-emerald-50/70 px-4 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"
+                >
+                  <option value="">Select service plan</option>
+                  <option value="Basic support">Basic support</option>
+                  <option value="Annual maintenance contract">Annual maintenance contract</option>
+                  <option value="Priority service plan">Priority service plan</option>
+                  <option value="Monitoring and support">Monitoring and support</option>
+                  <option value="Not sure yet">Not sure yet</option>
+                </select>
+                {errors.servicePlan && <p className="mt-2 text-xs text-rose-600">{errors.servicePlan.message}</p>}
+              </div>
+            </div>
+
+            <div className="rounded-[26px] border border-slate-200 bg-linear-to-br from-slate-50 via-white to-sky-50 p-4">
+              <label className="flex items-start gap-3 text-sm leading-6 text-slate-700">
+                <input
+                  type="checkbox"
+                  {...register('acceptTerms')}
+                  className="mt-1 h-4 w-4 rounded border-slate-300 text-sky-600 focus:ring-sky-500"
+                />
+                <span className="font-medium">
+                  I acknowledge and accept the warranty and after-sales service policy terms as outlined by AeroSun Energy.
+                </span>
+              </label>
+              {errors.acceptTerms && <p className="mt-2 text-xs text-rose-600">{errors.acceptTerms.message}</p>}
+            </div>
+
+            <div className="flex flex-col gap-3 border-t border-slate-200 pt-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.24em] text-slate-500">
+                <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                Service confirmation
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="inline-flex items-center justify-center rounded-full bg-linear-to-r from-[#1d4ed8] via-[#0f7acb] to-[#0ea5a5] px-6 py-3 text-sm font-black uppercase tracking-[0.18em] text-white shadow-[0_18px_35px_-18px_rgba(14,165,233,0.85)] transition-all duration-200 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {isSubmitting ? 'Submitting...' : 'Accept Policy'}
+              </button>
+            </div>
+
+            {isSubmitSuccessful && (
+              <p className="rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-700">
+                Your policy acknowledgement has been prepared in your email app.
+              </p>
+            )}
+          </div>
+        </form>
       </div>
     </main>
   )
@@ -267,12 +247,21 @@ type FieldProps = {
   type?: string
   register: ReturnType<typeof useForm<WarrantyPolicyFormValues>>['register']
   error?: { message?: string }
+  accent?: 'sky' | 'emerald' | 'cyan' | 'blue' | 'indigo'
 }
 
-function Field({ label, name, placeholder, type = 'text', register, error }: FieldProps) {
+function Field({ label, name, placeholder, type = 'text', register, error, accent = 'sky' }: FieldProps) {
+  const accentClasses: Record<string, string> = {
+    sky: 'border-sky-200 bg-sky-50/70 focus:border-sky-500 focus:ring-sky-100',
+    emerald: 'border-emerald-200 bg-emerald-50/70 focus:border-emerald-500 focus:ring-emerald-100',
+    cyan: 'border-cyan-200 bg-cyan-50/70 focus:border-cyan-500 focus:ring-cyan-100',
+    blue: 'border-blue-200 bg-blue-50/70 focus:border-blue-500 focus:ring-blue-100',
+    indigo: 'border-indigo-200 bg-indigo-50/70 focus:border-indigo-500 focus:ring-indigo-100',
+  }
+
   return (
     <div>
-      <label htmlFor={name} className="mb-2 block text-sm font-semibold text-slate-100">
+      <label htmlFor={name} className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">
         {label}
       </label>
       <input
@@ -281,9 +270,9 @@ function Field({ label, name, placeholder, type = 'text', register, error }: Fie
         {...register(name)}
         placeholder={placeholder}
         aria-invalid={Boolean(error)}
-        className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-sky-400 focus:ring-4 focus:ring-sky-500/30"
+        className={`h-12 w-full rounded-2xl border px-4 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:ring-4 ${accentClasses[accent]}`}
       />
-      {error && <p className="mt-2 text-xs text-rose-300">{error.message}</p>}
+      {error && <p className="mt-2 text-xs text-rose-600">{error.message}</p>}
     </div>
   )
 }
