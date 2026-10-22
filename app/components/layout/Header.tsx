@@ -6,7 +6,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import Logo from '../brand/Logo'
 import { useLocale, type Locale } from '@/lib/LocaleContext'
 
-function GlobeIcon({ className }: { className?: string }) {
+function LanguageFlag({ code, className }: { code: Locale; className?: string }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 0c-2.5 2.5-4 6-4 10s1.5 7.5 4 10m0-20c2.5 2.5 4 6 4 10s-1.5 7.5-4 10M2 12h20" />
@@ -179,12 +179,11 @@ export default function Navbar() {
               title={t.navbar.startProjectTitle}
               aria-label={t.navbar.startProjectAriaLabel}
               data-cta="start-project"
-              className="group relative inline-flex items-center overflow-hidden rounded-full border border-[#1ea75f] bg-linear-to-r from-[#0f172a] via-[#103f2d] to-[#20A44A] p-2 text-sm font-black uppercase tracking-[0.12em] text-white shadow-[0_20px_30px_-18px_rgba(32,164,74,0.85)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_36px_-18px_rgba(32,164,74,0.9)]"
+              className="group relative inline-flex items-center overflow-hidden rounded-[28px] border border-[#1ea75f]/70 bg-[radial-gradient(circle_at_top_left,rgba(34,197,94,0.35),rgba(15,23,42,0.95)_42%,rgba(2,6,23,1)_100%)] p-px shadow-[0_22px_36px_-18px_rgba(34,197,94,0.9)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_26px_42px_-18px_rgba(34,197,94,0.95)]"
             >
-              <span className="absolute inset-y-0 left-0 w-20 bg-linear-to-r from-white/15 via-white/0 to-transparent" aria-hidden="true" />
-              <span className="absolute -right-3 top-1/2 h-8 w-8 -translate-y-1/2 rounded-full border border-white/25 bg-white/10" aria-hidden="true" />
-              <span className="relative inline-flex items-center gap-2">
-                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/12 ring-1 ring-white/30">
+              <span className="absolute inset-y-0 left-0 w-14 bg-linear-to-r from-white/20 via-white/5 to-transparent" aria-hidden="true" />
+              <span className="relative inline-flex items-center gap-2 rounded-[27px] bg-[#071b15] px-4 py-2.5 text-[10px] font-black uppercase tracking-[0.22em] text-white">
+                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-linear-to-r from-[#34d399] via-[#22c55e] to-[#facc15] text-[#05130f] shadow-[inset_0_1px_2px_rgba(255,255,255,0.5)]">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-3.5 w-3.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
@@ -198,11 +197,11 @@ export default function Navbar() {
               download="aerosun-energy.pdf"
               title="Download voucher"
               aria-label="Download AeroSun Energy voucher"
-              className="group relative inline-flex items-center overflow-hidden rounded-full border border-[#f3c75d]/70 bg-[#fffaf0] p-1 shadow-[0_20px_30px_-18px_rgba(245,158,11,0.85)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_34px_-18px_rgba(245,158,11,0.95)]"
+              className="group relative inline-flex items-center overflow-hidden rounded-[28px] border border-[#f3c75d]/70 bg-[#fffaf0] p-1 shadow-[0_20px_30px_-18px_rgba(245,158,11,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_38px_-18px_rgba(245,158,11,0.9)]"
             >
-              <span className="absolute inset-y-0 left-0 w-10 bg-linear-to-r from-[#f59e0b] via-[#facc15] to-transparent opacity-80" aria-hidden="true" />
-              <span className="absolute inset-y-2 left-2 w-6 rounded-full border border-white/80 bg-[#0f172a] opacity-90" aria-hidden="true" />
-              <span className="relative z-10 flex items-center gap-2 rounded-full bg-[#0f172a] px-2.5 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-[#fef3c7]">
+              <span className="absolute inset-y-0 left-0 w-12 bg-linear-to-r from-[#f59e0b] via-[#facc15] to-transparent opacity-90" aria-hidden="true" />
+              <span className="absolute inset-y-2 left-2 w-7 rounded-full border border-white/90 bg-[#0f172a] opacity-95" aria-hidden="true" />
+              <span className="relative z-10 flex items-center gap-2 rounded-3xl bg-[#0f172a] px-2.5 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-[#fef3c7]">
                 <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#f59e0b] text-[#0f172a]">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-3 w-3">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v11m0 0l-4-4m4 4l4-4M5 20h14"/>
@@ -218,13 +217,16 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-2 rounded-full border border-[#20A44A]/20 bg-white px-3 py-2 text-sm font-medium text-slate-700 shadow-[0_8px_20px_rgba(32,164,74,0.08)] transition-all duration-300 hover:border-[#F59E0B]/50 hover:text-[#20A44A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20A44A]/50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-[#F59E0B]/60 dark:hover:text-[#F59E0B]"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-[28px] border border-[#1b2d25]/10 bg-linear-to-r from-[#f8fafc] via-[#ecfdf5] to-[#fef3c7] px-3 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-[#0f172a] shadow-[0_20px_28px_-20px_rgba(15,23,42,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_34px_-18px_rgba(34,197,94,0.75)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20A44A]/50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
                 aria-label={t.navbar.languageLabel}
                 aria-expanded={langOpen}
               >
-                <GlobeIcon className="h-4 w-4" />
-                <span>{languageOptions.find((option) => option.code === locale)?.shortLabel}</span>
-                <ChevronIcon open={langOpen} className="h-3.5 w-3.5" />
+                <span className="absolute inset-y-0 left-0 w-12 bg-linear-to-r from-[#20A44A]/15 via-[#34d399]/10 to-transparent" aria-hidden="true" />
+                <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#0f172a] text-[#fef3c7] ring-1 ring-white/80">
+                  <LanguageFlag code={locale} className="h-3.5 w-3.5" />
+                </span>
+                <span className="relative">{languageOptions.find((option) => option.code === locale)?.shortLabel}</span>
+                <ChevronIcon open={langOpen} className="relative h-3.5 w-3.5" />
               </button>
 
               {langOpen && (
@@ -245,7 +247,7 @@ export default function Navbar() {
                           : 'text-slate-700 hover:bg-[#F7FDF8] hover:text-[#20A44A] dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]'
                       }`}
                     >
-                      <GlobeIcon className="h-3.5 w-3.5 shrink-0" />
+                      <LanguageFlag code={opt.code} className="h-3.5 w-3.5" />
                       {opt.label}
                     </button>
                   ))}
@@ -277,12 +279,14 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => setLangOpen(!langOpen)}
-                  className="flex w-full items-center justify-between gap-2 rounded-2xl border border-[#20A44A]/20 bg-[#F7FDF8] px-3 py-2.5 text-left text-sm font-medium text-slate-700 shadow-sm transition-colors duration-200 hover:border-[#F59E0B]/40 hover:text-[#20A44A] dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-[#F59E0B]/60 dark:hover:text-[#F59E0B]"
+                  className="flex w-full items-center justify-between gap-2 overflow-hidden rounded-[26px] border border-[#1b2d25]/10 bg-linear-to-r from-[#f8fafc] via-[#ecfdf5] to-[#fef3c7] px-3 py-2.5 text-left text-[10px] font-black uppercase tracking-[0.2em] text-[#0f172a] shadow-[0_18px_28px_-18px_rgba(15,23,42,0.5)] transition-colors duration-200 hover:border-[#F59E0B]/40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
                   aria-label={t.navbar.languageLabel}
                   aria-expanded={langOpen}
                 >
                   <span className="flex items-center gap-2">
-                    <GlobeIcon className="h-4 w-4" />
+                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#0f172a] text-[#fef3c7] ring-1 ring-white/80">
+                      <LanguageFlag code={locale} className="h-3.5 w-3.5" />
+                    </span>
                     {t.navbar.languageLabel}
                   </span>
                   <ChevronIcon open={langOpen} className="h-3.5 w-3.5" />
@@ -306,7 +310,7 @@ export default function Navbar() {
                             : 'text-slate-700 hover:bg-[#F7FDF8] hover:text-[#20A44A] dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]'
                         }`}
                       >
-                        <GlobeIcon className="h-3.5 w-3.5 shrink-0" />
+                        <LanguageFlag code={opt.code} className="h-3.5 w-3.5" />
                         {opt.label}
                       </button>
                     ))}
@@ -351,10 +355,10 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="mt-2 block overflow-hidden rounded-2xl border border-[#1ea75f] bg-linear-to-r from-[#0f172a] via-[#103f2d] to-[#20A44A] p-px shadow-[0_18px_30px_-18px_rgba(32,164,74,0.9)]"
+              className="mt-2 block overflow-hidden rounded-[28px] border border-[#1ea75f]/70 bg-[radial-gradient(circle_at_top_left,rgba(34,197,94,0.35),rgba(15,23,42,0.95)_42%,rgba(2,6,23,1)_100%)] p-px shadow-[0_18px_30px_-18px_rgba(32,164,74,0.9)]"
             >
-              <span className="flex items-center justify-center gap-3 rounded-2xl bg-linear-to-r from-[#0f172a] via-[#103f2d] to-[#20A44A] px-4 py-3 text-center text-xs font-black uppercase tracking-[0.20em] text-white">
-                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/12 ring-1 ring-white/30">
+              <span className="flex items-center justify-center gap-3 rounded-[27px] bg-[#071b15] px-4 py-3 text-center text-[10px] font-black uppercase tracking-[0.20em] text-white">
+                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-linear-to-r from-[#34d399] via-[#22c55e] to-[#facc15] text-[#05130f]">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-3.5 w-3.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
@@ -367,9 +371,9 @@ export default function Navbar() {
               href="/voucher.svg"
               download="aerosun-voucher.svg"
               onClick={() => setMenuOpen(false)}
-              className="mt-2 block overflow-hidden rounded-2xl border border-[#f3c75d]/70 bg-[#fffaf0] p-1 shadow-[0_16px_24px_-18px_rgba(245,158,11,0.8)]"
+              className="mt-2 block overflow-hidden rounded-[28px] border border-[#f3c75d]/70 bg-[#fffaf0] p-1 shadow-[0_16px_24px_-18px_rgba(245,158,11,0.8)]"
             >
-              <span className="flex items-center justify-center gap-2 rounded-2xl bg-[#0f172a] px-4 py-3 text-center text-[10px] font-black uppercase tracking-[0.22em] text-[#fef3c7]">
+              <span className="flex items-center justify-center gap-2 rounded-[22px] bg-[#0f172a] px-4 py-3 text-center text-[10px] font-black uppercase tracking-[0.22em] text-[#fef3c7]">
                 <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#f59e0b] text-[#0f172a]">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-3 w-3">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v11m0 0l-4-4m4 4l4-4M5 20h14"/>
