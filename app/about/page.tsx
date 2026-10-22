@@ -159,13 +159,21 @@ const ethicsPoints = [
 ]
 
 const approvalRows = [
-  ['Certificate of Incorporation and CIN', 'Establishes the company’s legal identity', 'Done'],
+  ['Certificate of Incorporation and CIN', 'Establishes the company’s legal identity (MCA)', 'Done'],
+  ['Momorandum of Association', 'Defines the company’s business scope, objectives and legal framework', 'Done'],
+  ['Articles of Association', 'Sets out the company’s internal governance, rules and operating structure', 'Done'],
   ['Company PAN', 'Tax identification', 'Done'],
   ['TAN', 'Tax deduction and collection compliance where applicable', 'Done'],
+  ['AGILE-PRO-S', 'MCA registration and business identity filing support', 'Done'],
+  ['EPFO SPECIMEN', 'Employee provident fund compliance and workforce contribution records', 'Done'],
   ['GST registration', 'Required when applicable under GST law', 'Done'],
-  ['Udyam/MSME registration', 'MSME recognition if eligible', 'Not yet applied'],
+  ['Professional Tax Registration', 'State professional tax compliance for employees and business operations', 'Done'],
+  ['ADT-1 Filing', 'Statutory auditor appointment filing with the registrar', 'Done'],
+  ['Accountant', 'Financial accounting, books of records and compliance support', 'Done'],
+  ['Compliance Advisor', 'External regulatory guidance and compliance monitoring support', 'Done'],
   ['DPIIT Startup Recognition', 'Startup India recognition if eligible', 'In process'],
   ['Trademark registration', 'Protects the company brand and eligible marks', 'In process'],
+  ['Udyam/MSME registration', 'MSME recognition if eligible', 'Not yet applied'],
 ]
 
 const officialResources = [
@@ -316,308 +324,7 @@ export default function AboutPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-[30px] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-sky-50 p-5 shadow-[0_26px_70px_-40px_rgba(16,185,129,0.4)] dark:border-emerald-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:border-emerald-800 dark:bg-slate-900/80 dark:text-emerald-300">
-                About the founder
-              </p>
-            </div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100 bg-emerald-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:border-emerald-800 dark:bg-emerald-900/20 dark:text-emerald-300">
-              <span className="h-2 w-2 rounded-full bg-emerald-500" />
-              Leadership
-            </div>
-          </div>
-          <h2 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
-            Building a cleaner future with purpose
-          </h2>
-
-          <div className="mt-6 grid gap-5 lg:grid-cols-2">
-            <div className="rounded-[26px] border border-sky-200 bg-white/80 p-5 shadow-[0_20px_45px_-30px_rgba(14,165,233,0.5)] dark:border-sky-900/60 dark:bg-slate-900/75">
-              <p className="text-[10px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">Our promise</p>
-              <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
-                {promisePoints.map((point) => (
-                  <li key={point} className="flex gap-3">
-                    <span className="mt-2 h-2.5 w-2.5 rounded-full bg-sky-500" />
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="rounded-[26px] border border-emerald-200 bg-emerald-50/80 p-5 shadow-[0_20px_45px_-30px_rgba(16,185,129,0.5)] dark:border-emerald-900/60 dark:bg-emerald-950/20">
-              <p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">Our mission</p>
-              <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
-                {missionPoints.map((point) => (
-                  <li key={point} className="flex gap-3">
-                    <span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="mb-6 overflow-hidden rounded-[28px] border border-violet-200 bg-linear-to-br from-violet-50 via-white to-fuchsia-50 p-5 shadow-[0_22px_60px_-40px_rgba(168,85,247,0.45)] dark:border-violet-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="inline-flex items-center rounded-full border border-violet-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-violet-700 dark:border-violet-800 dark:bg-slate-900/80 dark:text-violet-300">
-                Core values
-              </p>
-            </div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-violet-100 bg-violet-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-violet-700 dark:border-violet-800 dark:bg-violet-900/20 dark:text-violet-300">
-              <span className="h-2 w-2 rounded-full bg-violet-500" />
-              Guiding principles
-            </div>
-          </div>
-          <h2 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
-            The principles guiding every decision we make
-          </h2>
-
-          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {coreValues.map((value) => (
-              <div key={value.title} className="rounded-[24px] border border-violet-100 bg-white/85 p-5 shadow-[0_20px_45px_-35px_rgba(139,92,246,0.45)] dark:border-violet-900/60 dark:bg-slate-900/75">
-                <div className="inline-flex rounded-full border border-violet-200 bg-violet-50 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-violet-700 dark:border-violet-800 dark:bg-violet-950/40 dark:text-violet-300">
-                  {value.title}
-                </div>
-                <p className="mt-4 text-base leading-7 text-slate-700 dark:text-slate-300">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="mb-6 overflow-hidden rounded-[28px] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-green-50 p-5 shadow-[0_22px_60px_-40px_rgba(16,185,129,0.45)] dark:border-emerald-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:border-emerald-800 dark:bg-slate-900/80 dark:text-emerald-300">
-                Products & services
-              </p>
-            </div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100 bg-emerald-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:border-emerald-800 dark:bg-emerald-900/20 dark:text-emerald-300">
-              <span className="h-2 w-2 rounded-full bg-emerald-500" />
-              Renewable portfolio
-            </div>
-          </div>
-          <h2 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
-            A comprehensive renewable-energy portfolio for homes, farms, and businesses
-          </h2>
-
-          <div className="mt-6 grid gap-5 xl:grid-cols-3">
-            {serviceGroups.map((group) => (
-              <div key={group.title} className="overflow-hidden rounded-[28px] border border-slate-200 bg-white/85 shadow-[0_22px_45px_-35px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
-                <div className={`bg-linear-to-r ${group.accent} px-5 py-4`}>
-                  <p className="text-lg font-black text-white">{group.title}</p>
-                </div>
-                <ul className="space-y-3 p-5 text-sm leading-7 text-slate-700 dark:text-slate-300">
-                  {group.items.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span className="mt-2 h-2 w-2 rounded-full bg-slate-400 dark:bg-slate-500" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="mb-6 overflow-hidden rounded-[30px] border border-indigo-200 bg-linear-to-br from-indigo-50 via-white to-violet-50 p-5 shadow-[0_24px_60px_-40px_rgba(99,102,241,0.45)] dark:border-indigo-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="inline-flex items-center rounded-full border border-indigo-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-indigo-700 dark:border-indigo-800 dark:bg-slate-900/80 dark:text-indigo-300">
-                Current & future goals
-              </p>
-            </div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:border-indigo-800 dark:bg-indigo-900/20 dark:text-indigo-300">
-              <span className="h-2 w-2 rounded-full bg-indigo-500" />
-              Growth roadmap
-            </div>
-          </div>
-          <h2 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
-            Growth built on strong foundations
-          </h2>
-
-          <div className="mt-6 grid gap-5">
-            <div className="rounded-[26px] border border-indigo-100 bg-white/85 p-5 shadow-[0_20px_45px_-35px_rgba(79,70,229,0.5)] dark:border-indigo-900/60 dark:bg-slate-900/75">
-              <p className="text-[10px] font-black uppercase tracking-[0.28em] text-indigo-700 dark:text-indigo-300">Current goals</p>
-              <ul className="mt-4 grid gap-3 text-base leading-7 text-slate-700 dark:text-slate-300 md:grid-cols-2">
-                {currentGoals.map((goal) => (
-                  <li key={goal} className="flex gap-3 rounded-[18px] border border-indigo-100 bg-indigo-50/60 p-3 dark:border-indigo-900/60 dark:bg-indigo-950/20">
-                    <span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500" />
-                    <span>{goal}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="grid gap-5 md:grid-cols-3">
-              {futureGoals.map((group) => (
-                <div key={group.title} className="rounded-[26px] border border-slate-200 bg-white/85 p-5 shadow-[0_20px_45px_-35px_rgba(79,70,229,0.5)] dark:border-slate-700 dark:bg-slate-900/75">
-                  <p className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300">{group.title}</p>
-                  <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700 dark:text-slate-300">
-                    {group.items.map((item) => (
-                      <li key={item} className="flex gap-3">
-                        <span className="mt-2 h-2 w-2 rounded-full bg-violet-500" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-[30px] border border-teal-200 bg-linear-to-br from-teal-50 via-white to-cyan-50 p-5 shadow-[0_24px_60px_-40px_rgba(20,184,166,0.45)] dark:border-teal-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="inline-flex items-center rounded-full border border-teal-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-teal-700 dark:border-teal-800 dark:bg-slate-900/80 dark:text-teal-300">
-                Why choose us
-              </p>
-            </div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-teal-100 bg-teal-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-teal-700 dark:border-teal-800 dark:bg-teal-900/20 dark:text-teal-300">
-              <span className="h-2 w-2 rounded-full bg-teal-500" />
-              Customer first
-            </div>
-          </div>
-          <h2 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
-            A customer-focused and technically responsible approach
-          </h2>
-
-          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {whyChooseUs.map((point) => (
-              <div key={point} className="rounded-[24px] border border-teal-100 bg-white/85 p-4 shadow-[0_18px_40px_-35px_rgba(13,148,136,0.5)] dark:border-teal-900/60 dark:bg-slate-900/75">
-                <div className="flex items-start gap-3">
-                  <span className="mt-1.5 inline-flex h-2.5 w-2.5 rounded-full bg-teal-500" />
-                  <p className="text-base leading-7 text-slate-700 dark:text-slate-300">{point}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-[30px] border border-violet-200 bg-linear-to-br from-violet-50 via-white to-indigo-50 p-5 shadow-[0_24px_60px_-40px_rgba(139,92,246,0.45)] dark:border-violet-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="inline-flex items-center rounded-full border border-violet-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-violet-700 dark:border-violet-800 dark:bg-slate-900/80 dark:text-violet-300">
-                Leadership
-              </p>
-            </div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-violet-100 bg-violet-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-violet-700 dark:border-violet-800 dark:bg-violet-900/20 dark:text-violet-300">
-              <span className="h-2 w-2 rounded-full bg-violet-500" />
-              Team vision
-            </div>
-          </div>
-          <h3 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
-            Meet the founders
-          </h3>
-
-          <div className="mt-6 grid gap-5 md:grid-cols-2">
-            {founderProfiles.map((profile) => (
-              <div key={profile.name} className="rounded-[28px] border border-violet-100 bg-white/85 p-5 shadow-[0_20px_45px_-35px_rgba(139,92,246,0.5)] dark:border-violet-900/60 dark:bg-slate-900/75">
-                <div className="flex items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-linear-to-br from-violet-500 to-indigo-600 text-lg font-black text-white">
-                    {profile.initials}
-                  </div>
-                  <div>
-                    <p className="text-xl font-black text-slate-900 dark:text-white">{profile.name}</p>
-                    <p className="text-sm font-medium text-violet-700 dark:text-violet-300">{profile.role}</p>
-                  </div>
-                </div>
-                <p className="mt-4 text-base leading-7 text-slate-700 dark:text-slate-300">{profile.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-[30px] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-teal-50 p-5 shadow-[0_24px_60px_-40px_rgba(16,185,129,0.45)] dark:border-emerald-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:border-emerald-800 dark:bg-slate-900/80 dark:text-emerald-300">
-                Explore our services
-              </p>
-            </div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100 bg-emerald-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:border-emerald-800 dark:bg-emerald-900/20 dark:text-emerald-300">
-              <span className="h-2 w-2 rounded-full bg-emerald-500" />
-              Tailored guidance
-            </div>
-          </div>
-          <h3 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
-            Want to know if solar is right for your home?
-          </h3>
-
-          <div className="mt-6 grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
-            <div className="rounded-[26px] border border-emerald-100 bg-white/85 p-5 dark:border-emerald-900/60 dark:bg-slate-900/75">
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-emerald-700 dark:text-emerald-300">Quick overview</p>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-                {ppsStats.map((stat) => (
-                  <div key={stat.label} className="rounded-[18px] border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-800/70">
-                    <p className="text-2xl font-black text-slate-900 dark:text-white">{stat.value}</p>
-                    <p className="mt-1 text-[10px] font-black uppercase tracking-[0.22em] text-slate-500 dark:text-slate-400">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="rounded-[26px] border border-amber-100 bg-amber-50/80 p-5 dark:border-amber-900/60 dark:bg-amber-950/20">
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-amber-700 dark:text-amber-300">Our strengths</p>
-              <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
-                {ppsStrengths.map((point) => (
-                  <li key={point} className="flex gap-3">
-                    <span className="mt-2 h-2.5 w-2.5 rounded-full bg-amber-500" />
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-6 rounded-[26px] border border-slate-200 bg-white/80 p-5 dark:border-slate-700 dark:bg-slate-900/70">
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Why customers choose us</p>
-            <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-              {ppsReasons.map((reason) => (
-                <div key={reason.title} className="rounded-[22px] border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800/70">
-                  <p className="text-[10px] font-black uppercase tracking-[0.22em] text-emerald-700 dark:text-emerald-300">{reason.title}</p>
-                  <p className="mt-2 text-sm leading-7 text-slate-700 dark:text-slate-300">{reason.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-6 rounded-[26px] border border-slate-200 bg-white/80 p-5 dark:border-slate-700 dark:bg-slate-900/70">
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Official resources</p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              {officialResources.map((resource) => (
-                <a
-                  key={resource.label}
-                  href={resource.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold text-slate-700 transition hover:border-emerald-200 hover:bg-emerald-50 hover:text-emerald-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-emerald-800 dark:hover:bg-emerald-950/20 dark:hover:text-emerald-300"
-                >
-                  {resource.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-[30px] border border-amber-200 bg-linear-to-br from-amber-50 via-white to-yellow-50 p-5 shadow-[0_24px_60px_-40px_rgba(245,158,11,0.45)] dark:border-amber-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+        <div className="mb-6 overflow-hidden rounded-[30px] border border-amber-200 bg-linear-to-br from-amber-50 via-white to-yellow-50 p-5 shadow-[0_24px_60px_-40px_rgba(245,158,11,0.45)] dark:border-amber-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="inline-flex items-center rounded-full border border-amber-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-amber-700 dark:border-amber-800 dark:bg-slate-900/80 dark:text-amber-300">
@@ -663,6 +370,327 @@ export default function AboutPage() {
               </tbody>
             </table>
           </div>
+
+          <div className="mt-6 rounded-[24px] border border-slate-200 bg-white/80 p-4 dark:border-slate-700 dark:bg-slate-900/70">
+            <div className="mb-3 flex items-center justify-between gap-3">
+              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">
+                Official sources
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {officialResources.map((resource) => (
+                <a
+                  key={resource.label}
+                  href={resource.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:border-amber-300 hover:bg-amber-50 hover:text-amber-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-amber-700 dark:hover:bg-amber-950/30 dark:hover:text-amber-300"
+                >
+                  {resource.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="mb-6 overflow-hidden rounded-[28px] border border-violet-200 bg-linear-to-br from-violet-50 via-white to-fuchsia-50 p-5 shadow-[0_22px_60px_-40px_rgba(168,85,247,0.45)] dark:border-violet-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="inline-flex items-center rounded-full border border-violet-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-violet-700 dark:border-violet-800 dark:bg-slate-900/80 dark:text-violet-300">
+                Core values
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-violet-100 bg-violet-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-violet-700 dark:border-violet-800 dark:bg-violet-900/20 dark:text-violet-300">
+              <span className="h-2 w-2 rounded-full bg-violet-500" />
+              Guiding principles
+            </div>
+          </div>
+          <h2 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+            The principles guiding every decision we make
+          </h2>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {coreValues.map((value) => (
+              <div key={value.title} className="rounded-[24px] border border-violet-100 bg-white/85 p-5 shadow-[0_20px_45px_-35px_rgba(139,92,246,0.45)] dark:border-violet-900/60 dark:bg-slate-900/75">
+                <div className="inline-flex rounded-full border border-violet-200 bg-violet-50 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-violet-700 dark:border-violet-800 dark:bg-violet-950/40 dark:text-violet-300">
+                  {value.title}
+                </div>
+                <p className="mt-4 text-base leading-7 text-slate-700 dark:text-slate-300">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="mb-6 overflow-hidden rounded-[30px] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-sky-50 p-5 shadow-[0_24px_60px_-40px_rgba(16,185,129,0.45)] dark:border-emerald-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:border-emerald-800 dark:bg-slate-900/80 dark:text-emerald-300">
+                Services
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100 bg-emerald-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:border-emerald-800 dark:bg-emerald-900/20 dark:text-emerald-300">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              Renewable solutions
+            </div>
+          </div>
+          <h2 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+            Energy systems built around real site conditions
+          </h2>
+
+          <div className="mt-6 grid gap-5 xl:grid-cols-3">
+            {serviceGroups.map((group) => (
+              <div key={group.title} className="rounded-[26px] border border-slate-200 bg-white/85 p-5 shadow-[0_20px_45px_-35px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
+                <div className={`mb-4 inline-flex rounded-full bg-linear-to-r ${group.accent} px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-white`}>
+                  {group.title}
+                </div>
+                <ul className="space-y-3 text-sm leading-7 text-slate-700 dark:text-slate-300">
+                  {group.items.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="mt-2 h-2 w-2 rounded-full bg-emerald-500" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="grid gap-6 lg:grid-cols-2">
+          <div className="overflow-hidden rounded-[30px] border border-rose-200 bg-linear-to-br from-rose-50 via-white to-orange-50 p-5 shadow-[0_24px_60px_-40px_rgba(251,113,133,0.45)] dark:border-rose-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="inline-flex items-center rounded-full border border-rose-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-rose-700 dark:border-rose-800 dark:bg-slate-900/80 dark:text-rose-300">
+                  Promise
+                </p>
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-rose-100 bg-rose-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-rose-700 dark:border-rose-800 dark:bg-rose-900/20 dark:text-rose-300">
+                <span className="h-2 w-2 rounded-full bg-rose-500" />
+                Our commitment
+              </div>
+            </div>
+            <h3 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+              What we stand for
+            </h3>
+            <ul className="mt-6 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
+              {promisePoints.map((point) => (
+                <li key={point} className="flex gap-3">
+                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-rose-500" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="overflow-hidden rounded-[30px] border border-sky-200 bg-linear-to-br from-sky-50 via-white to-cyan-50 p-5 shadow-[0_24px_60px_-40px_rgba(14,165,233,0.45)] dark:border-sky-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="inline-flex items-center rounded-full border border-sky-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-sky-700 dark:border-sky-800 dark:bg-slate-900/80 dark:text-sky-300">
+                  Mission
+                </p>
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-sky-100 bg-sky-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-700 dark:border-sky-800 dark:bg-sky-900/20 dark:text-sky-300">
+                <span className="h-2 w-2 rounded-full bg-sky-500" />
+                Purpose
+              </div>
+            </div>
+            <h3 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+              How we create value
+            </h3>
+            <ul className="mt-6 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
+              {missionPoints.map((point) => (
+                <li key={point} className="flex gap-3">
+                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-sky-500" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="overflow-hidden rounded-[30px] border border-violet-200 bg-linear-to-br from-violet-50 via-white to-fuchsia-50 p-5 shadow-[0_24px_60px_-40px_rgba(168,85,247,0.45)] dark:border-violet-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="inline-flex items-center rounded-full border border-violet-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-violet-700 dark:border-violet-800 dark:bg-slate-900/80 dark:text-violet-300">
+                Why AeroSun
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-violet-100 bg-violet-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-violet-700 dark:border-violet-800 dark:bg-violet-900/20 dark:text-violet-300">
+              <span className="h-2 w-2 rounded-full bg-violet-500" />
+              Benefits
+            </div>
+          </div>
+          <h2 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+            Practical reasons customers choose us
+          </h2>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {ppsStats.map((stat) => (
+              <div key={stat.label} className="rounded-[22px] border border-violet-200 bg-white/85 p-4 text-center shadow-[0_18px_35px_-25px_rgba(168,85,247,0.45)] dark:border-violet-800 dark:bg-slate-900/75">
+                <p className="text-3xl font-black tracking-tight text-violet-700 dark:text-violet-300">{stat.value}</p>
+                <p className="mt-2 text-[10px] font-black uppercase tracking-[0.2em] text-slate-600 dark:text-slate-300">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="rounded-[26px] border border-slate-200 bg-white/85 p-5 dark:border-slate-700 dark:bg-slate-900/75">
+              <h3 className="text-xl font-black text-slate-900 dark:text-white">Our strengths</h3>
+              <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
+                {ppsStrengths.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="mt-2 h-2.5 w-2.5 rounded-full bg-violet-500" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-[26px] border border-slate-200 bg-white/85 p-5 dark:border-slate-700 dark:bg-slate-900/75">
+              <h3 className="text-xl font-black text-slate-900 dark:text-white">Why choose us</h3>
+              <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
+                {whyChooseUs.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {ppsReasons.map((reason) => (
+              <div key={reason.title} className="rounded-[22px] border border-slate-200 bg-white/85 p-4 shadow-[0_18px_35px_-25px_rgba(15,23,42,0.5)] dark:border-slate-700 dark:bg-slate-900/75">
+                <p className="text-[10px] font-black uppercase tracking-[0.18em] text-violet-700 dark:text-violet-300">{reason.title}</p>
+                <p className="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-300">{reason.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="grid gap-6 lg:grid-cols-2">
+          <div className="overflow-hidden rounded-[30px] border border-amber-200 bg-linear-to-br from-amber-50 via-white to-yellow-50 p-5 shadow-[0_24px_60px_-40px_rgba(245,158,11,0.45)] dark:border-amber-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="inline-flex items-center rounded-full border border-amber-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-amber-700 dark:border-amber-800 dark:bg-slate-900/80 dark:text-amber-300">
+                  Current goals
+                </p>
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-amber-100 bg-amber-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-700 dark:border-amber-800 dark:bg-amber-900/20 dark:text-amber-300">
+                <span className="h-2 w-2 rounded-full bg-amber-500" />
+                Now
+              </div>
+            </div>
+            <h3 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+              Immediate priorities
+            </h3>
+            <ul className="mt-6 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
+              {currentGoals.map((goal) => (
+                <li key={goal} className="flex gap-3">
+                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-amber-500" />
+                  <span>{goal}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="overflow-hidden rounded-[30px] border border-indigo-200 bg-linear-to-br from-indigo-50 via-white to-violet-50 p-5 shadow-[0_24px_60px_-40px_rgba(99,102,241,0.45)] dark:border-indigo-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="inline-flex items-center rounded-full border border-indigo-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-indigo-700 dark:border-indigo-800 dark:bg-slate-900/80 dark:text-indigo-300">
+                  Roadmap
+                </p>
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:border-indigo-800 dark:bg-indigo-900/20 dark:text-indigo-300">
+                <span className="h-2 w-2 rounded-full bg-indigo-500" />
+                Growth plan
+              </div>
+            </div>
+            <h3 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+              Short, medium and long-term outlook
+            </h3>
+
+            <div className="mt-6 space-y-5">
+              {futureGoals.map((group) => (
+                <div key={group.title} className="rounded-[22px] border border-slate-200 bg-white/85 p-4 dark:border-slate-700 dark:bg-slate-900/75">
+                  <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-indigo-700 dark:text-indigo-300">{group.title}</h4>
+                  <ul className="mt-3 space-y-3 text-sm leading-7 text-slate-700 dark:text-slate-300">
+                    {group.items.map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="mt-2 h-2 w-2 rounded-full bg-indigo-500" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="mb-6 overflow-hidden rounded-[30px] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-sky-50 p-5 shadow-[0_24px_60px_-40px_rgba(16,185,129,0.45)] dark:border-emerald-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:border-emerald-800 dark:bg-slate-900/80 dark:text-emerald-300">
+                Quality
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100 bg-emerald-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:border-emerald-800 dark:bg-emerald-900/20 dark:text-emerald-300">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              Operational standards
+            </div>
+          </div>
+          <h3 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+            Our quality commitments
+          </h3>
+
+          <ul className="mt-6 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
+            {qualityPoints.map((point) => (
+              <li key={point} className="flex gap-3">
+                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="overflow-hidden rounded-[30px] border border-amber-200 bg-linear-to-br from-amber-50 via-white to-yellow-50 p-5 shadow-[0_24px_60px_-40px_rgba(245,158,11,0.45)] dark:border-amber-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="inline-flex items-center rounded-full border border-amber-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-amber-700 dark:border-amber-800 dark:bg-slate-900/80 dark:text-amber-300">
+                Ethics
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-amber-100 bg-amber-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-700 dark:border-amber-800 dark:bg-amber-900/20 dark:text-amber-300">
+              <span className="h-2 w-2 rounded-full bg-amber-500" />
+              Responsible conduct
+            </div>
+          </div>
+          <h3 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+            Business conduct we stand by
+          </h3>
+
+          <ul className="mt-6 space-y-3 text-base leading-7 text-slate-700 dark:text-slate-300">
+            {ethicsPoints.map((point) => (
+              <li key={point} className="flex gap-3">
+                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-amber-500" />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </main>
