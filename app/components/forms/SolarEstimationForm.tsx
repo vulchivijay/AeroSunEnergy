@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from 'react'
 import Link from 'next/link'
 import { z } from 'zod'
 import { useForm, useWatch, type UseFormRegisterReturn } from 'react-hook-form'
@@ -65,7 +66,7 @@ export function SolarEstimationForm() {
     register,
     control,
     setValue,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm<FormData>({
     resolver: zodResolver(solarCalculatorSchema),
     mode: 'onChange',
@@ -73,63 +74,94 @@ export function SolarEstimationForm() {
   })
 
   const values = useWatch({ control, defaultValue: defaultValues })
-  const monthlyUnits = values.monthlyUnits ?? defaultValues.monthlyUnits
-  const installationCostPerKw = values.installationCostPerKw ?? defaultValues.installationCostPerKw
-  const sellingPricePerKw = values.sellingPricePerKw ?? defaultValues.sellingPricePerKw
+  const monthlyUnits = Number(values.monthlyUnits ?? defaultValues.monthlyUnits)
+  const installationCostPerKw = Number(values.installationCostPerKw ?? defaultValues.installationCostPerKw)
+  const sellingPricePerKw = Number(values.sellingPricePerKw ?? defaultValues.sellingPricePerKw)
 
-  const calculation: Calculation | null = isValid
-    ? (() => {
-        const recommendedKw = Math.max(1, Math.round(monthlyUnits / 120))
+  const recommendedKw = Math.max(1, Math.round(monthlyUnits / 120))
+  const expectedInstallationCostPerKw = Math.round(54300 + Math.max(0, recommendedKw - 1) * 1800)
+  const expectedSellingPricePerKw = Math.round(65000 + Math.max(0, recommendedKw - 1) * 2200)
 
-        let subsidy = 0
-        if (recommendedKw === 1) {
-          subsidy = 30000
-        } else if (recommendedKw === 2) {
-          subsidy = 60000
-        } else {
-          subsidy = 78000
-        }
+  useEffect(() => {
+    const installationNeedsSync = Math.abs(installationCostPerKw - expectedInstallationCostPerKw) > 0
+    const sellingNeedsSync = Math.abs(sellingPricePerKw - expectedSellingPricePerKw) > 0
 
-        const totalInstallationCost = recommendedKw * installationCostPerKw
-        const totalSellingPrice = recommendedKw * sellingPricePerKw
-        const customerPayable = Math.max(0, totalSellingPrice - subsidy)
+    if (installationNeedsSync) {
+      setValue('installationCostPerKw', expectedInstallationCostPerKw, { shouldValidate: true, shouldDirty: true })
+    }
 
-        // Real annual savings from electricity offset at ₹8.5/unit.
-        // This aligns the estimate with actual utility bill reduction and prevents absurd payback values.
-        const annualSavings = monthlyUnits * 8.5 * 12
-        const profit = annualSavings
-        const commission = totalInstallationCost * 0.1
-        const profitMargin = (annualSavings / Math.max(1, customerPayable)) * 100
+    if (sellingNeedsSync) {
+      setValue('sellingPricePerKw', expectedSellingPricePerKw, { shouldValidate: true, shouldDirty: true })
+    }
+  }, [monthlyUnits, installationCostPerKw, sellingPricePerKw, expectedInstallationCostPerKw, expectedSellingPricePerKw, setValue])
 
-        let profitStatus: Calculation['profitStatus'] = 'Low'
-        let profitTone = 'text-rose-700 dark:text-rose-300'
-        let badgeTone = 'bg-rose-500/10 text-rose-700 ring-rose-500/20 dark:text-rose-300'
+  const calculation: Calculation = (() => {
+    const recommendedKw = Math.max(1, Math.round(monthlyUnits / 120))
 
-        if (profitMargin >= 20) {
-          profitStatus = 'Excellent'
-          profitTone = 'text-emerald-700 dark:text-emerald-300'
-          badgeTone = 'bg-emerald-500/10 text-emerald-700 ring-emerald-500/20 dark:text-emerald-300'
-        } else if (profitMargin >= 10) {
-          profitStatus = 'Average'
-          profitTone = 'text-amber-700 dark:text-amber-300'
-          badgeTone = 'bg-amber-500/10 text-amber-700 ring-amber-500/20 dark:text-amber-300'
-        }
+    let subsidy = 0
+    if (recommendedKw === 1) {
+      subsidy = 30000
+    } else if (recommendedKw === 2) {
+      subsidy = 60000
+    } else {
+      subsidy = 78000
+    }
 
-        return {
-          recommendedKw,
-          subsidy,
-          totalInstallationCost,
-          totalSellingPrice,
-          customerPayable,
-          profit,
-          commission,
-          profitMargin,
-          profitStatus,
-          profitTone,
-          badgeTone,
-        }
-      })()
-    : null
+    const totalInstallationCost = recommendedKw * installationCostPerKw
+    const totalSellingPrice = recommendedKw * sellingPricePerKw
+    const customerPayable = Math.max(0, totalSellingPrice - subsidy)
+
+    const annualSavings = monthlyUnits * 8.5 * 12
+    const profit = annualSavings
+    const commission = totalInstallationCost * 0.1
+    const profitMargin = (annualSavings / Math.max(1, customerPayable)) * 100
+
+    let profitStatus: Calculation['profitStatus'] = 'Low'
+    let profitTone = 'text-rose-700 dark:text-rose-300'
+    let badgeTone = 'bg-rose-500/10 text-rose-700 ring-rose-500/20 dark:text-rose-300'
+
+    if (profitMargin >= 20) {
+      profitStatus = 'Excellent'
+      profitTone = 'text-emerald-700 dark:text-emerald-300'
+      badgeTone = 'bg-emerald-500/10 text-emerald-700 ring-emerald-500/20 dark:text-emerald-300'
+    } else if (profitMargin >= 10) {
+      profitStatus = 'Average'
+      profitTone = 'text-amber-700 dark:text-amber-300'
+      badgeTone = 'bg-amber-500/10 text-amber-700 ring-amber-500/20 dark:text-amber-300'
+    }
+
+    return {
+      recommendedKw,
+      subsidy,
+      totalInstallationCost,
+      totalSellingPrice,
+      customerPayable,
+      profit,
+      commission,
+      profitMargin,
+      profitStatus,
+      profitTone,
+      badgeTone,
+    }
+  })()
+
+  const summaryStats = [
+    {
+      label: e.recommendedCapacity,
+      value: `${calculation.recommendedKw} kW`,
+      accent: 'from-primary/90 to-custom-orange/90',
+    },
+    {
+      label: e.profitMargin,
+      value: `${calculation.profitMargin.toFixed(1)}%`,
+      accent: 'from-custom-blue/90 to-primary/90',
+    },
+    {
+      label: e.subsidyBand,
+      value: calculation.subsidy >= 78000 ? '3 kW +' : `${calculation.recommendedKw} kW`,
+      accent: 'from-custom-red/90 to-custom-violet/90',
+    },
+  ]
 
   const currency = (amount: number) =>
     new Intl.NumberFormat('en-IN', {
@@ -138,26 +170,6 @@ export function SolarEstimationForm() {
       maximumFractionDigits: 0,
       currencyDisplay: 'narrowSymbol',
     }).format(amount).replace('₹', '₹ ')
-
-  const summaryStats = calculation
-    ? [
-        {
-          label: e.recommendedCapacity,
-          value: `${calculation.recommendedKw} kW`,
-          accent: 'from-primary/90 to-custom-orange/90',
-        },
-        {
-          label: e.profitMargin,
-          value: `${calculation.profitMargin.toFixed(1)}%`,
-          accent: 'from-custom-blue/90 to-primary/90',
-        },
-        {
-          label: e.subsidyBand,
-          value: calculation.subsidy >= 78000 ? '3 kW +' : `${calculation.recommendedKw} kW`,
-          accent: 'from-custom-red/90 to-custom-violet/90',
-        },
-      ]
-    : []
 
   return (
     <section className="relative isolate overflow-hidden bg-[#f7f5f0] px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
@@ -185,15 +197,15 @@ export function SolarEstimationForm() {
                 <h2 className="text-[2rem] font-black tracking-tighter text-slate-900">
                   Estimate Your Savings
                 </h2>
-                <p className="mt-2 text-base text-slate-600">Drag the slider to your average monthly electricity bill.</p>
+                <p className="mt-2 text-base text-slate-600">Drag the slider to your average monthly electricity usage.</p>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between gap-3">
                   <div>
-                    <p className="text-[11px] font-bold uppercase tracking-[0.26em] text-slate-500">Monthly Electricity Bill</p>
+                    <p className="text-[11px] font-bold uppercase tracking-[0.26em] text-slate-500">Monthly Electricity Units</p>
                     <div className="mt-2 flex items-center gap-2">
-                      <span className="text-[2.4rem] font-black tracking-[-0.06em] text-emerald-600">{new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0, currencyDisplay: 'narrowSymbol' }).format(values.monthlyUnits ?? defaultValues.monthlyUnits).replace('₹', '₹ ')}</span>
+                      <span className="text-[2.4rem] font-black tracking-[-0.06em] text-emerald-600">{(values.monthlyUnits ?? defaultValues.monthlyUnits).toLocaleString('en-IN')} units</span>
                     </div>
                   </div>
                   <div className="rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700">
@@ -204,20 +216,19 @@ export function SolarEstimationForm() {
                 <div className="space-y-3">
                   <input
                     type="range"
-                    min={1000}
-                    max={20000}
-                    step={100}
-                    value={Math.min(20000, Math.max(1000, monthlyUnits * 7))}
+                    min={50}
+                    max={4000}
+                    step={10}
+                    value={Math.min(4000, Math.max(50, monthlyUnits))}
                     onChange={(event) => {
                       const nextValue = Number(event.target.value)
-                      const units = Math.round(nextValue / 7)
-                      setValue('monthlyUnits', units, { shouldValidate: true, shouldDirty: true })
+                      setValue('monthlyUnits', nextValue, { shouldValidate: true, shouldDirty: true })
                     }}
                     className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-emerald-600"
                   />
                   <div className="flex items-center justify-between text-sm font-semibold text-slate-500">
-                    <span>₹1,000</span>
-                    <span>₹20,000</span>
+                    <span>50 units</span>
+                    <span>4,000 units</span>
                   </div>
                 </div>
               </div>
