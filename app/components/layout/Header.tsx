@@ -179,10 +179,40 @@ export default function Navbar() {
               title={t.navbar.startProjectTitle}
               aria-label={t.navbar.startProjectAriaLabel}
               data-cta="start-project"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-linear-to-r from-[#20A44A] via-[#20A44A] to-[#29A44A] px-5 py-2.5 text-sm text-white shadow-[0_18px_26px_-18px_rgba(32,164,74,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_30px_-18px_rgba(245,158,11,0.7)]"
+              className="group relative inline-flex items-center overflow-hidden rounded-full border border-[#1ea75f] bg-linear-to-r from-[#0f172a] via-[#103f2d] to-[#20A44A] p-2 text-sm font-black uppercase tracking-[0.12em] text-white shadow-[0_20px_30px_-18px_rgba(32,164,74,0.85)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_36px_-18px_rgba(32,164,74,0.9)]"
             >
-              {t.navbar.startProject}
+              <span className="absolute inset-y-0 left-0 w-20 bg-linear-to-r from-white/15 via-white/0 to-transparent" aria-hidden="true" />
+              <span className="absolute -right-3 top-1/2 h-8 w-8 -translate-y-1/2 rounded-full border border-white/25 bg-white/10" aria-hidden="true" />
+              <span className="relative inline-flex items-center gap-2">
+                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/12 ring-1 ring-white/30">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-3.5 w-3.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </span>
+                {t.navbar.startProject}
+              </span>
             </Link>
+
+            <a
+              href="/aerosun-energy.pdf"
+              download="aerosun-energy.pdf"
+              title="Download voucher"
+              aria-label="Download AeroSun Energy voucher"
+              className="group relative inline-flex items-center overflow-hidden rounded-full border border-[#f3c75d]/70 bg-[#fffaf0] p-1 shadow-[0_20px_30px_-18px_rgba(245,158,11,0.85)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_34px_-18px_rgba(245,158,11,0.95)]"
+            >
+              <span className="absolute inset-y-0 left-0 w-10 bg-linear-to-r from-[#f59e0b] via-[#facc15] to-transparent opacity-80" aria-hidden="true" />
+              <span className="absolute inset-y-2 left-2 w-6 rounded-full border border-white/80 bg-[#0f172a] opacity-90" aria-hidden="true" />
+              <span className="relative z-10 flex items-center gap-2 rounded-full bg-[#0f172a] px-2.5 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-[#fef3c7]">
+                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#f59e0b] text-[#0f172a]">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-3 w-3">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v11m0 0l-4-4m4 4l4-4M5 20h14"/>
+                  </svg>
+                </span>
+              </span>
+              <span className="relative z-10 mx-2 text-[10px] font-black uppercase tracking-[0.28em] text-[#1f2937]">
+                Voucher
+              </span>
+            </a>
 
             <div className="relative" ref={desktopLangRef}>
               <button
@@ -321,10 +351,32 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="mt-2 block rounded-2xl bg-linear-to-r from-[#20A44A] via-[#1b9540] to-[#F59E0B] px-4 py-3 text-center text-sm font-semibold text-white shadow-[0_16px_32px_-18px_rgba(32,164,74,0.7)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_32px_-18px_rgba(32,164,74,0.8)]"
+              className="mt-2 block overflow-hidden rounded-2xl border border-[#1ea75f] bg-linear-to-r from-[#0f172a] via-[#103f2d] to-[#20A44A] p-px shadow-[0_18px_30px_-18px_rgba(32,164,74,0.9)]"
             >
-              {t.navbar.startProject}
+              <span className="flex items-center justify-center gap-3 rounded-2xl bg-linear-to-r from-[#0f172a] via-[#103f2d] to-[#20A44A] px-4 py-3 text-center text-xs font-black uppercase tracking-[0.20em] text-white">
+                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/12 ring-1 ring-white/30">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-3.5 w-3.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </span>
+                {t.navbar.startProject}
+              </span>
             </Link>
+
+            <a
+              href="/voucher.svg"
+              download="aerosun-voucher.svg"
+              onClick={() => setMenuOpen(false)}
+              className="mt-2 block overflow-hidden rounded-2xl border border-[#f3c75d]/70 bg-[#fffaf0] p-1 shadow-[0_16px_24px_-18px_rgba(245,158,11,0.8)]"
+            >
+              <span className="flex items-center justify-center gap-2 rounded-2xl bg-[#0f172a] px-4 py-3 text-center text-[10px] font-black uppercase tracking-[0.22em] text-[#fef3c7]">
+                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#f59e0b] text-[#0f172a]">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-3 w-3">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v11m0 0l-4-4m4 4l4-4M5 20h14"/>
+                  </svg>
+                </span>
+              </span>
+            </a>
           </div>
         </div>
       )}
