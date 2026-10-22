@@ -96,7 +96,7 @@ export default function Footer() {
 		>
 			<div className="w-full px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 				<div className="mx-auto max-w-350">
-					<div className="grid w-full gap-6 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_0.9fr_0.8fr]">
+					<div className="grid w-full gap-4 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_0.9fr_0.8fr]">
 						<div className="rounded-[30px] border border-emerald-200/70 bg-white/70 p-5 shadow-[0_24px_60px_-35px_rgba(16,185,129,0.7)] backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/50">
 							<div className="inline-flex p-2 dark:border-slate-700 dark:bg-slate-800/80">
 								<Logo />

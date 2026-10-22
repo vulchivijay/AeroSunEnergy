@@ -239,7 +239,7 @@ export default function About() {
                 We believe renewable energy is an important part of creating a sustainable future. By promoting innovative energy technologies and practical renewable energy solutions, AeroSun Energy aims to help customers manage energy costs, reduce environmental impact, and move towards greater energy independence.
               </p>
               <div className="mt-5 inline-flex rounded-full bg-linear-to-r from-emerald-600 to-green-500 px-5 py-3 shadow-lg shadow-emerald-200/60">
-                <span className="text-base font-semibold text-white">AeroSun Energy Private Limited — Harnessing Nature. Empowering Tomorrow.</span>
+                <span className="text-base font-normal text-white">AeroSun Energy Private Limited — Power from Sun and Wind.</span>
               </div>
             </div>
           </CardContent>
