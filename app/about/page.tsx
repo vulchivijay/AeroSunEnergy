@@ -209,13 +209,13 @@ const founderProfiles = [
   {
     initials: 'V',
     name: 'Vijaya Kumar',
-    role: 'Co-Founder & Director',
+    role: 'Founder & Director',
     description: 'Leads engineering, system design and large commercial deployments. Hands-on through every site assessment.',
   },
   {
     initials: 'D',
     name: 'Anusha',
-    role: 'Director',
+    role: 'Co-Founder & Director',
     description: 'Drives strategy, partnerships and customer experience. Personally oversees the AMC and service operations.',
   },
 ]
@@ -612,6 +612,56 @@ export default function AboutPage() {
                 </a>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="overflow-hidden rounded-[30px] border border-amber-200 bg-linear-to-br from-amber-50 via-white to-yellow-50 p-5 shadow-[0_24px_60px_-40px_rgba(245,158,11,0.45)] dark:border-amber-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="inline-flex items-center rounded-full border border-amber-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-amber-700 dark:border-amber-800 dark:bg-slate-900/80 dark:text-amber-300">
+                Licences, registrations & approvals
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-amber-100 bg-amber-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-700 dark:border-amber-800 dark:bg-amber-900/20 dark:text-amber-300">
+              <span className="h-2 w-2 rounded-full bg-amber-500" />
+              Compliance
+            </div>
+          </div>
+          <h2 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+            Formal registrations and approval milestones
+          </h2>
+
+          <div className="mt-6 overflow-x-auto rounded-[26px] border border-slate-200 bg-white/85 shadow-[0_20px_45px_-35px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
+            <table className="min-w-full border-collapse text-left text-sm text-slate-700 dark:text-slate-300">
+              <thead className="bg-slate-50 dark:bg-slate-800/80">
+                <tr>
+                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Registration / approval</th>
+                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Purpose</th>
+                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {approvalRows.map(([label, purpose, status]) => (
+                  <tr key={label} className="border-t border-slate-200 dark:border-slate-700">
+                    <td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{label}</td>
+                    <td className="px-4 py-3">{purpose}</td>
+                    <td className="px-4 py-3">
+                      <span className={`inline-flex rounded-full px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.18em] ${
+                        status === 'Done'
+                          ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300'
+                          : status === 'In process'
+                            ? 'bg-amber-100 text-amber-700 dark:bg-amber-950/40 dark:text-amber-300'
+                            : 'bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-200'
+                      }`}>
+                        {status}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

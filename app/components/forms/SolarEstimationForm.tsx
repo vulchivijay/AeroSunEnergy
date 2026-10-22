@@ -52,6 +52,7 @@ const defaultValues: FormData = {
 export function SolarEstimationForm() {
   const { t } = useLocale()
   const e = t.estimation
+  const isProduction = process.env.NODE_ENV === 'production'
 
   const subsidyTiers = e.tiers.map((tier) => ({
     ...tier,
@@ -91,10 +92,14 @@ export function SolarEstimationForm() {
 
         const totalInstallationCost = recommendedKw * installationCostPerKw
         const totalSellingPrice = recommendedKw * sellingPricePerKw
-        const customerPayable = totalSellingPrice - subsidy
-        const profit = totalSellingPrice - totalInstallationCost
+        const customerPayable = Math.max(0, totalSellingPrice - subsidy)
+
+        // Real annual savings from electricity offset at ₹8.5/unit.
+        // This aligns the estimate with actual utility bill reduction and prevents absurd payback values.
+        const annualSavings = monthlyUnits * 8.5 * 12
+        const profit = annualSavings
         const commission = totalInstallationCost * 0.1
-        const profitMargin = (profit / totalSellingPrice) * 100
+        const profitMargin = (annualSavings / Math.max(1, customerPayable)) * 100
 
         let profitStatus: Calculation['profitStatus'] = 'Low'
         let profitTone = 'text-rose-700 dark:text-rose-300'
@@ -234,7 +239,7 @@ export function SolarEstimationForm() {
               </div>
 
               <div className="pt-2">
-                <div className="grid gap-4 md:grid-cols-3">
+                <div className="mt-4 grid gap-4 md:grid-cols-3">
                   <InputField
                     name="monthlyUnits"
                     label={e.monthlyUsage}
@@ -247,17 +252,6 @@ export function SolarEstimationForm() {
                   />
 
                   <InputField
-                    name="installationCostPerKw"
-                    label={e.installationCost}
-                    helperText={e.installationCostHelper}
-                    suffix="per kW"
-                    error={errors.installationCostPerKw?.message}
-                    register={register('installationCostPerKw', { valueAsNumber: true })}
-                    accentClass="from-sky-500 via-blue-500 to-emerald-600"
-                    placeholder="54300"
-                  />
-
-                  <InputField
                     name="sellingPricePerKw"
                     label={e.sellingPrice}
                     helperText={e.sellingPriceHelper}
@@ -267,6 +261,29 @@ export function SolarEstimationForm() {
                     accentClass="from-emerald-500 via-teal-500 to-cyan-600"
                     placeholder="65000"
                   />
+
+                  {!isProduction && (
+                    <div className="mb-4">
+                      <InputField
+                        name="installationCostPerKw"
+                        label={e.installationCost}
+                        helperText={e.installationCostHelper}
+                        suffix="per kW"
+                        error={errors.installationCostPerKw?.message}
+                        register={register('installationCostPerKw', { valueAsNumber: true })}
+                        accentClass="from-sky-500 via-blue-500 to-emerald-600"
+                        placeholder="54300"
+                      />
+                    </div>
+                  )}
+
+                  {isProduction && (
+                    <input
+                      type="hidden"
+                      {...register('installationCostPerKw', { valueAsNumber: true })}
+                      value={defaultValues.installationCostPerKw}
+                    />
+                  )}
                 </div>
               </div>
             </div>
@@ -308,7 +325,7 @@ export function SolarEstimationForm() {
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
                   <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-50">Payback</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[-0.06em] text-white">
-                    {calculation ? `${(calculation.customerPayable / Math.max(1, calculation.profit / 12)).toFixed(1)} yrs` : '—'}
+                    {calculation ? `${(calculation.customerPayable / Math.max(1, calculation.profit)).toFixed(1)} yrs` : '—'}
                   </div>
                 </div>
               </div>

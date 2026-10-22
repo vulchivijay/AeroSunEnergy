@@ -35,11 +35,11 @@ const BING_SITE_VERIFICATION = process.env.BING_SITE_VERIFICATION || 'CFCE648996
 
 export const metadata: Metadata = {
   title: {
-    default: 'AeroSun Energy | Solar/Wind/Hybrid Solar Wind Energy Solutions India',
+    default: 'AeroSun Energy | Solar / Wind / Hybrid Energy Solutions India',
     template: '%s | AeroSun Energy',
   },
   description:
-    'AeroSun Energy provides hybrid solar wind energy systems for homes, roads, parks, and commercial spaces across India. 24/7 clean power generation with smart IoT monitoring.',
+    'AeroSun Energy provides hybrid solar and wind energy systems for homes, roads, parks, and commercial spaces across India. 24/7 clean power generation with smart IoT monitoring.',
   keywords: [
     'hybrid solar wind energy',
     'solar wind hybrid system for homes',
