@@ -21,8 +21,8 @@ export default function Notifications() {
           <div className="absolute -left-10 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-emerald-400/15 blur-3xl" />
           <div className="absolute -right-12 top-0 h-32 w-32 rounded-full bg-cyan-400/10 blur-3xl" />
 
-          <div className="relative flex items-center justify-between gap-2 p-2">
-            <div className="flex min-w-0 flex-1 items-center">
+          <div className="relative flex items-center justify-between gap-2">
+            <div className="flex min-w-0 m-2 flex-1 items-center">
               <span className="inline-flex1 shrink-0 items-center rounded-full border border-emerald-300/40 bg-emerald-300/10 px-2 py-1 text-[9px] font-bold uppercase tracking-[0.22em] text-emerald-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] sm:text-[10px] hidden">
                 AeroSun Update
               </span>
@@ -38,7 +38,7 @@ export default function Notifications() {
               type="button"
               onClick={() => setIsVisible(false)}
               aria-label="Dismiss notification"
-              className="cursor inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 shadow-sm transition hover:border-emerald-300/60 hover:bg-emerald-400/10 hover:text-white"
+              className="cursor inline-flex h-8 w-8 mx-2 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 shadow-sm transition hover:border-emerald-300/60 hover:bg-emerald-400/10 hover:text-white"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden="true">
                 <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />

@@ -132,6 +132,126 @@ const comparisonRows = [
   { type: 'Floating solar', battery: 'Depends', grid: 'Either', use: 'Reservoirs, water bodies' },
 ]
 
+type SolarSlide = {
+  badge: string
+  title: string
+  description: string
+  image: string
+  tags: string[]
+  badgeClass: string
+  chipClass: string
+  panelClass: string
+}
+
+const solarSlides: SolarSlide[] = [
+  {
+    badge: 'Grid-tied rooftop',
+    title: 'Rooftop Solar for Homes & Businesses',
+    description:
+      'On-grid PV systems designed to cut daytime electricity costs, offset consumption with net metering, and lower long-term energy bills without requiring heavy battery storage.',
+    image: '/images/slider/slider-1.png',
+    tags: ['Lower Capex', 'Net Metering'],
+    badgeClass: 'text-sky-100',
+    chipClass: 'text-sky-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
+    badge: 'Off-grid autonomy',
+    title: 'Off-grid Solar for Remote Power',
+    description:
+      'Standalone systems with batteries and controls for homes, farms, telecom sites, and facilities where grid reliability is weak or unavailable.',
+    image: '/images/slider/slider-2.png',
+    tags: ['Battery-backed', 'Remote-ready'],
+    badgeClass: 'text-emerald-100',
+    chipClass: 'text-emerald-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
+    badge: 'Hybrid resilience',
+    title: 'Hybrid Solar with Backup',
+    description:
+      'Integrated solar + battery systems that keep essential loads running during outages while reducing grid dependence and managing peak demand smartly.',
+    image: '/images/slider/slider-3.png',
+    tags: ['Backup power', 'Smart control'],
+    badgeClass: 'text-pink-100',
+    chipClass: 'text-pink-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
+    badge: 'Commercial scale',
+    title: 'Commercial & Industrial Solar',
+    description:
+      'High-output rooftop and ground-mounted systems for businesses that want lower operating costs, cleaner power, and stronger sustainability performance.',
+    image: '/images/slider/slider-5.png',
+    tags: ['High yield', 'Grid support'],
+    badgeClass: 'text-slate-100',
+    chipClass: 'text-slate-100',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
+    badge: 'Water pumping',
+    title: 'Solar Pumpsets & Agriculture',
+    description:
+      'Diesel-free pumping systems that support irrigation, water access, and lower energy costs for agricultural operations across rural and semi-urban sites.',
+    image: '/images/slider/slider-6.png',
+    tags: ['Irrigation', 'PM-KUSUM'],
+    badgeClass: 'text-violet-100',
+    chipClass: 'text-violet-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+]
+
+function SolarHeroSlider() {
+  const slideClass =
+    'group relative flex h-full w-full flex-col items-start justify-center overflow-hidden p-8 text-left text-white sm:p-10 lg:p-26 xl:p-36'
+
+  const slideOverlay =
+    'absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.24),_transparent_24%),linear-gradient(135deg,rgba(15,23,42,0.18),rgba(15,23,42,0.58))]'
+
+  return (
+    <Slider autoplay interval={5000} pauseOnHover>
+      {solarSlides.map((slide) => (
+        <div key={slide.title} className={`${slide.panelClass} relative h-full w-full overflow-hidden`}>
+          <div className="absolute inset-0">
+            <OptimizedImage
+              src={slide.image}
+              alt={slide.title}
+              fill
+              sizes="100vw"
+              className="object-cover object-center"
+              style={{ filter: 'saturate(1.05) brightness(0.72)' }}
+            />
+          </div>
+          <div className={`${slideOverlay} absolute inset-0`} />
+          <div className={slideClass}>
+            <span
+              className={`mb-4 inline-flex rounded-full border border-white/15 bg-black/80 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.28em] ${slide.badgeClass}`}
+            >
+              {slide.badge}
+            </span>
+            <h1 className="max-w-3xl text-4xl font-black tracking-[-0.06em] text-white sm:text-5xl lg:text-[4.2rem]">
+              {slide.title}
+            </h1>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-100 sm:text-lg">
+              {slide.description}
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {slide.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className={`rounded-full border border-white/15 bg-black/80 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] ${slide.chipClass}`}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </Slider>
+  )
+}
+
 export default function SolarEnergyPage() {
   return (
     <main className="bg-slate-50 text-slate-900">
@@ -169,51 +289,7 @@ export default function SolarEnergyPage() {
         </div>
       </header>
 
-      <Slider autoplay interval={5000} pauseOnHover>
-        <div className="relative h-full flex-1 overflow-hidden">
-          <div className="absolute inset-0">
-            <OptimizedImage
-              src="/images/slider/slider-5.png"
-              alt="Rooftop solar panel installation"
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="absolute inset-0 bg-linear-to-r from-amber-900/80 via-orange-700/60 to-sky-900/35" />
-          <div className="relative flex h-full min-h-90 items-end p-6 sm:p-10 lg:p-14">
-            <div className="max-w-xl rounded-4xl border border-white/15 bg-slate-900/25 p-6 shadow-2xl backdrop-blur-sm">
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-200">Rooftop systems</p>
-              <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">Residential and commercial PV</h2>
-              <p className="mt-4 text-base leading-7 text-slate-100">
-                Smart solar installations that reduce power bills, improve energy independence, and help businesses meet sustainability targets.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="relative h-full flex-1 overflow-hidden">
-          <div className="absolute inset-0">
-            <OptimizedImage
-              src="/images/slider/slider-15.png"
-              alt="Ground-mounted solar installation"
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="absolute inset-0 bg-linear-to-r from-sky-950/70 via-violet-900/55 to-emerald-900/40" />
-          <div className="relative flex h-full min-h-90 items-end p-6 sm:p-10 lg:p-14">
-            <div className="max-w-xl rounded-4xl border border-white/15 bg-slate-900/30 p-6 shadow-2xl backdrop-blur-sm">
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-200">Large deployment</p>
-              <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">Ground mount & industrial scale</h2>
-              <p className="mt-4 text-base leading-7 text-slate-100">
-                Utility-ready arrays and project-grade systems for farms, factories, campuses, and larger commercial energy needs.
-              </p>
-            </div>
-          </div>
-        </div>
-      </Slider>
+      <SolarHeroSlider />
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-8 max-w-3xl">
@@ -353,7 +429,7 @@ export default function SolarEnergyPage() {
           <div className="overflow-hidden rounded-4xl border border-slate-200 bg-slate-950 p-5 shadow-[0_28px_70px_-36px_rgba(15,23,42,0.9)]">
             <div className="relative h-72 overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
               <OptimizedImage
-                src="/images/slider-2.png"
+                src="/images/slider/slider-3.png"
                 alt="Solar energy field and rooftop systems"
                 fill
                 sizes="(min-width: 1024px) 30vw, 100vw"

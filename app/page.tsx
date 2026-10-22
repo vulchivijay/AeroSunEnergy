@@ -1,3 +1,4 @@
+import { SolarEstimationForm } from './components/forms/SolarEstimationForm'
 import About from './components/sections/About'
 import {
   BenefitCard,
@@ -18,7 +19,6 @@ import {
   WindInfoPanel,
   WindSectionEyebrow,
 } from './components/ui'
-import SolarCalculator from './services/estimation/page'
 
 export default function Home() {
   return (
@@ -401,7 +401,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <SolarCalculator />
+      <SolarEstimationForm />
     </main>
   )
 }
