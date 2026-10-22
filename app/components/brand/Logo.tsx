@@ -26,7 +26,7 @@ export default function Logo() {
       <div className="flex min-w-0 flex-col items-start justify-center text-left sm:mb-2">
         <div className="flex items-center justify-start gap-1">
           <span className={`text-2xl font-bold text-[#20A44A] tracking-wider drop-shadow-xl`}>
-            AeroSun <sup classname={'text-black text-sm'}>TM</sup>
+            AeroSun <sup className={'text-black text-sm'}>TM</sup>
           </span>
           <span className={`text-2xl font-bold text-[#F59E0B] tracking-wider drop-shadow-xl`}>
             Energy
