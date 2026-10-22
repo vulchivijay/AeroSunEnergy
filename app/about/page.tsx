@@ -160,10 +160,10 @@ const ethicsPoints = [
 
 const approvalRows = [
   ['Certificate of Incorporation and CIN', 'Establishes the company’s legal identity (MCA)', 'Done'],
-  ['Momorandum of Association', 'Defines the company’s business scope, objectives and legal framework', 'Done'],
-  ['Articles of Association', 'Sets out the company’s internal governance, rules and operating structure', 'Done'],
+  ['e Momorandum of Association', 'Defines the company’s business scope, objectives and legal framework', 'Done'],
+  ['e Articles of Association', 'Sets out the company’s internal governance, rules and operating structure', 'Done'],
   ['Company PAN', 'Tax identification', 'Done'],
-  ['TAN', 'Tax deduction and collection compliance where applicable', 'Done'],
+  ['Company TAN', 'Tax deduction and collection compliance where applicable', 'Done'],
   ['AGILE-PRO-S', 'MCA registration and business identity filing support', 'Done'],
   ['EPFO SPECIMEN', 'Employee provident fund compliance and workforce contribution records', 'Done'],
   ['GST registration', 'Required when applicable under GST law', 'Done'],
@@ -173,7 +173,7 @@ const approvalRows = [
   ['Compliance Advisor', 'External regulatory guidance and compliance monitoring support', 'Done'],
   ['DPIIT Startup Recognition', 'Startup India recognition if eligible', 'In process'],
   ['Trademark registration', 'Protects the company brand and eligible marks', 'In process'],
-  ['Udyam/MSME registration', 'MSME recognition if eligible', 'Not yet applied'],
+  ['Udyam/MSME registration', 'MSME recognition if eligible', 'In process'],
 ]
 
 const officialResources = [
