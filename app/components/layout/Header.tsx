@@ -195,8 +195,8 @@ export default function Navbar() {
             <a
               href="/aerosun-energy.pdf"
               download="aerosun-energy.pdf"
-              title="Download voucher"
-              aria-label="Download AeroSun Energy voucher"
+              title={t.navbar.downloadVoucherTitle}
+              aria-label={t.navbar.downloadVoucherAriaLabel}
               className="group relative inline-flex items-center overflow-hidden rounded-[28px] border border-[#f3c75d]/70 bg-[#fffaf0] p-1 shadow-[0_20px_30px_-18px_rgba(245,158,11,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_38px_-18px_rgba(245,158,11,0.9)]"
             >
               <span className="absolute inset-y-0 left-0 w-12 bg-linear-to-r from-[#f59e0b] via-[#facc15] to-transparent opacity-90" aria-hidden="true" />
@@ -209,7 +209,7 @@ export default function Navbar() {
                 </span>
               </span>
               <span className="relative z-10 mx-2 text-[10px] font-black uppercase tracking-[0.28em] text-[#1f2937]">
-                Voucher
+                {t.navbar.voucher}
               </span>
             </a>
 

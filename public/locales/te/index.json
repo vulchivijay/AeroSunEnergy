@@ -74,6 +74,8 @@
       }
     ],
     "startProject": "ప్రాజెక్ట్ ప్రారంభించండి",
+    "voucher": "వౌచర్",
+    "comingSoon": "త్వరలో",
     "toggleDark": "డార్క్ మోడ్ మార్చు",
     "toggleMenu": "మెనూ మార్చు",
     "navigateTo": "వెళ్ళండి",
@@ -81,7 +83,9 @@
     "section": "విభాగం",
     "languageLabel": "భాష",
     "startProjectTitle": "AeroSun Energy తో పునరుత్పాదక శక్తి ప్రాజెక్ట్ ప్రారంభించండి",
-    "startProjectAriaLabel": "మీ ప్రాజెక్ట్ ప్రారంభించడానికి AeroSun Energy ని సంప్రదించండి"
+    "startProjectAriaLabel": "మీ ప్రాజెక్ట్ ప్రారంభించడానికి AeroSun Energy ని సంప్రదించండి",
+    "downloadVoucherTitle": "వౌచర్ డౌన్‌లోడ్ చేయండి",
+    "downloadVoucherAriaLabel": "AeroSun Energy వౌచర్‌ను డౌన్‌లోడ్ చేయండి"
   },
   "logo": {
     "homeTitle": "AeroSun Energy హోమ్‌పేజీకి వెళ్లండి",
@@ -476,23 +480,30 @@
     ]
   },
   "footer": {
-    "brandDesc": "భారతదేశం అంతటా స్వచ్ఛమైన, విశ్వసనీయమైన మరియు సరసమైన పునరుత్పాదక శక్తి పరిష్కారాలను అందిస్తోంది.",
+    "brandDesc": "భారతదేశం అంతటా స్వచ్ఛమైన, విశ్వసనీయ మరియు సరసమైన పునరుత్పాదక శక్తి పరిష్కారాలను అందిస్తోంది.",
     "email": "customercare@aerosunenergy.in",
     "website": "aerosunenergy.in",
     "trust": "sanatanadharmam.in",
-    "quickLinks": "శీఘ్ర లింకులు",
-    "quickEnquiries": "శీఘ్ర ప్రశ్నలు",
+    "quickLinks": "త్వరిత లింక్‌లు",
+    "quickEnquiries": "త్వరిత ప్రశ్నలు",
     "saveEarth": "భూమిని కాపాడండి",
     "saveSanatanaDharma": "సనాతన ధర్మాన్ని కాపాడండి",
-    "followUs": "మమ్మల్ని అనుసరించండి",
+    "followUs": "మాల్ని అనుసరించండి",
     "scan": "స్కాన్ చేయండి",
-    "devNotice": "ఈ వెబ్‌సైట్ అభివృద్ధిలో ఉంది. తో నిర్మించబడింది",
+    "devNotice": "ఈ వెబ్‌సైట్ అభివృద్ధిలో ఉంది. దీనితో రూపొందించబడింది",
     "devNoticeChatGPT": "ChatGPT",
     "devNoticeGitHub": "GitHub",
     "devNoticeAnd": "మరియు",
     "copyright": "© 2026 AeroSun™ Energy Private Limited",
     "registrationNotice": "(నమోదు ప్రక్రియలో ఉంది)",
-    "allRightsReserved": "అన్ని హక్కులు పరిరక్షితమైనవి."
+    "allRightsReserved": "అన్ని హక్కులు ప్రత్యేకించబడ్డాయి.",
+    "address": "చిరునామా",
+    "terms": "నిబంధనలు మరియు షరతులు",
+    "privacy": "గోప్యతా విధానం",
+    "buildWith": "దీనితో నిర్మించబడింది",
+    "by": "@VulchiVijayaKumar",
+    "soon": "త్వరలో",
+    "visitSaveEarth": "Save Earth పేజీ చూడండి"
   },
   "savoniusRotor": {
     "title": "సవోనియస్ రోటర్",

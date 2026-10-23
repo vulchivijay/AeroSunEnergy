@@ -3,6 +3,8 @@
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useLocale } from '@/lib/LocaleContext'
+import en from '@/public/locales/en/index.json'
 
 const quotationSchema = z.object({
   customerName: z.string().trim().min(2, 'Customer name is required.'),
@@ -37,37 +39,57 @@ export const defaultQuotationValues: StandardQuotationValues = {
 }
 
 export function StandardQuotationTemplate() {
+  const { t } = useLocale()
+  const quotationText = ((t as any).quotationTemplate ?? (en as any).quotationTemplate) as any
+
+  const schema = z.object({
+    customerName: z.string().trim().min(2, quotationText.validation.customerNameRequired),
+    companyName: z.string().trim().optional().or(z.literal('')),
+    email: z.string().trim().email(quotationText.validation.emailInvalid),
+    phone: z
+      .string()
+      .trim()
+      .min(10, quotationText.validation.phoneMin)
+      .regex(/^[0-9+()\-\s]+$/, quotationText.validation.phoneFormat),
+    projectType: z.string().min(1, quotationText.validation.projectTypeRequired),
+    siteLocation: z.string().trim().min(3, quotationText.validation.siteLocationRequired),
+    systemCapacity: z.string().trim().min(1, quotationText.validation.systemCapacityRequired),
+    estimatedBudget: z.string().trim().min(1, quotationText.validation.estimatedBudgetRequired),
+    scope: z.string().trim().min(20, quotationText.validation.scopeRequired),
+    terms: z.string().min(1, quotationText.validation.termsRequired),
+  })
+
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<StandardQuotationValues>({
-    resolver: zodResolver(quotationSchema),
+    resolver: zodResolver(schema),
     defaultValues: defaultQuotationValues,
     mode: 'onBlur',
     reValidateMode: 'onChange',
   })
 
   const onSubmit = (data: StandardQuotationValues) => {
-    const subject = `Standard Quotation Request - ${data.customerName}`
+    const subject = quotationText.email.subject.replace('{name}', data.customerName)
     const body = [
-      'STANDARD QUOTATION REQUEST',
+      quotationText.email.title,
       '===========================',
       '',
-      `Customer Name: ${data.customerName}`,
-      `Company Name: ${data.companyName || 'Not provided'}`,
-      `Email: ${data.email}`,
-      `Phone: ${data.phone}`,
-      `Project Type: ${data.projectType}`,
-      `Site Location: ${data.siteLocation}`,
-      `System Capacity: ${data.systemCapacity}`,
-      `Estimated Budget: ${data.estimatedBudget}`,
+      `${quotationText.email.customerName}: ${data.customerName}`,
+      `${quotationText.email.companyName}: ${data.companyName || quotationText.notProvided}`,
+      `${quotationText.email.email}: ${data.email}`,
+      `${quotationText.email.phone}: ${data.phone}`,
+      `${quotationText.email.projectType}: ${data.projectType}`,
+      `${quotationText.email.siteLocation}: ${data.siteLocation}`,
+      `${quotationText.email.systemCapacity}: ${data.systemCapacity}`,
+      `${quotationText.email.estimatedBudget}: ${data.estimatedBudget}`,
       '',
-      'Scope / Requirement:',
+      `${quotationText.email.scope}:`,
       data.scope,
       '',
-      `Terms Accepted: ${data.terms}`,
+      `${quotationText.email.termsAccepted}: ${data.terms}`,
     ].join('\n')
 
     window.location.href = `mailto:customercare@aerosunenergy.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
@@ -86,23 +108,23 @@ export function StandardQuotationTemplate() {
                     Q
                   </div>
                   <div>
-                    <p className="text-[10px] font-black uppercase tracking-[0.38em] text-cyan-200/85">Quotation</p>
-                    <h1 className="mt-1 text-2xl font-black tracking-[-0.06em] sm:text-3xl">Standard Quotation Template</h1>
+                    <p className="text-[10px] font-black uppercase tracking-[0.38em] text-cyan-200/85">{quotationText.badge}</p>
+                    <h1 className="mt-1 text-2xl font-black tracking-[-0.06em] sm:text-3xl">{quotationText.pageTitle}</h1>
                   </div>
                 </div>
 
                 <div className="grid gap-2 text-right text-sm sm:grid-cols-3 lg:min-w-[420px]">
                   <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-                    <p className="text-[9px] font-black uppercase tracking-[0.28em] text-cyan-100/80">No.</p>
-                    <p className="mt-1 font-semibold">AESP/QTN/2025/001</p>
+                    <p className="text-[9px] font-black uppercase tracking-[0.28em] text-cyan-100/80">{quotationText.header.no}</p>
+                    <p className="mt-1 font-semibold">{quotationText.header.reference}</p>
                   </div>
                   <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-                    <p className="text-[9px] font-black uppercase tracking-[0.28em] text-cyan-100/80">Date</p>
-                    <p className="mt-1 font-semibold">DD-MM-YYYY</p>
+                    <p className="text-[9px] font-black uppercase tracking-[0.28em] text-cyan-100/80">{quotationText.header.date}</p>
+                    <p className="mt-1 font-semibold">{quotationText.header.defaultDate}</p>
                   </div>
                   <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-                    <p className="text-[9px] font-black uppercase tracking-[0.28em] text-cyan-100/80">Valid Till</p>
-                    <p className="mt-1 font-semibold">DD-MM-YYYY</p>
+                    <p className="text-[9px] font-black uppercase tracking-[0.28em] text-cyan-100/80">{quotationText.header.validTill}</p>
+                    <p className="mt-1 font-semibold">{quotationText.header.defaultDate}</p>
                   </div>
                 </div>
               </div>
@@ -111,41 +133,41 @@ export function StandardQuotationTemplate() {
             <div className="grid gap-5 xl:grid-cols-3">
               <section className="rounded-[24px] border border-slate-200 bg-linear-to-br from-[#f2f8ff] via-white to-[#effaf4] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 border-b border-slate-200 pb-3">
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Company Details</h2>
+                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">{quotationText.sections.companyDetails}</h2>
                 </div>
 
                 <div className="space-y-4 text-sm text-slate-700">
                   <div className="space-y-2">
                     <Field
-                      label="Company Name"
+                      label={quotationText.fields.companyName}
                       name="companyName"
-                      placeholder="Your company / organization"
+                      placeholder={quotationText.fields.companyNamePlaceholder}
                       register={register}
                       error={errors.companyName}
                       compact
                     />
                     <Field
-                      label="Customer Name"
+                      label={quotationText.fields.customerName}
                       name="customerName"
-                      placeholder="Customer full name"
+                      placeholder={quotationText.fields.customerNamePlaceholder}
                       register={register}
                       error={errors.customerName}
                       compact
                     />
                     <Field
-                      label="Email"
+                      label={quotationText.fields.email}
                       name="email"
                       type="email"
-                      placeholder="you@example.com"
+                      placeholder={quotationText.fields.emailPlaceholder}
                       register={register}
                       error={errors.email}
                       compact
                     />
                     <Field
-                      label="Phone"
+                      label={quotationText.fields.phone}
                       name="phone"
                       type="tel"
-                      placeholder="+91 98765 43210"
+                      placeholder={quotationText.fields.phonePlaceholder}
                       register={register}
                       error={errors.phone}
                       compact
@@ -156,77 +178,59 @@ export function StandardQuotationTemplate() {
 
               <section className="rounded-[24px] border border-slate-200 bg-linear-to-br from-[#f6f9ff] via-white to-[#f5fff9] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 border-b border-slate-200 pb-3">
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Customer Details</h2>
+                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">{quotationText.sections.customerDetails}</h2>
                 </div>
 
                 <div className="space-y-4">
                   <Field
-                    label="Name"
+                    label={quotationText.fields.customerName}
                     name="customerName"
-                    placeholder="Enter your full name"
+                    placeholder={quotationText.fields.customerNamePlaceholder}
                     register={register}
                     error={errors.customerName}
                     compact
                   />
                   <Field
-                    label="Address"
-                    placeholder="Street / locality / landmark"
+                    label={quotationText.fields.siteLocation}
+                    name="siteLocation"
+                    placeholder={quotationText.fields.siteLocationPlaceholder}
                     register={register}
+                    error={errors.siteLocation}
                     compact
                   />
                   <div className="grid gap-4 sm:grid-cols-2">
                     <Field
-                      label="City"
-                      placeholder="City"
-                      register={register}
-                      compact
-                    />
-                    <Field
-                      label="PIN Code"
-                      placeholder="PIN code"
-                      register={register}
-                      compact
-                    />
-                  </div>
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <Field
-                      label="Phone"
+                      label={quotationText.fields.phone}
                       name="phone"
                       type="tel"
-                      placeholder="Phone"
+                      placeholder={quotationText.fields.phonePlaceholder}
                       register={register}
                       error={errors.phone}
                       compact
                     />
                     <Field
-                      label="Email"
+                      label={quotationText.fields.email}
                       name="email"
                       type="email"
-                      placeholder="Email"
+                      placeholder={quotationText.fields.emailPlaceholder}
                       register={register}
                       error={errors.email}
                       compact
                     />
                   </div>
-                  <Field
-                    label="GSTIN (if applicable)"
-                    placeholder="GSTIN number"
-                    register={register}
-                    compact
-                  />
                 </div>
               </section>
 
               <section className="rounded-[24px] border border-slate-200 bg-linear-to-br from-[#f4fff9] via-white to-[#f5f8ff] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 border-b border-slate-200 pb-3">
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Project Details</h2>
+                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">{quotationText.sections.projectDetails}</h2>
                 </div>
 
                 <div className="space-y-4">
                   <div>
-                    <label className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">Project Type</label>
+                    <label className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">{quotationText.fields.projectType}</label>
                     <div className="grid grid-cols-2 gap-2 rounded-2xl border border-slate-200 bg-white/80 p-3">
-                      {['Rooftop Solar', 'Ground-Mounted Solar', 'Wind Energy', 'Hybrid System', 'Battery Storage', 'Other'].map((option) => (
+                      {quotationText.projectTypeOptions.map((option: string) => (
                         <label key={option} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-2.5 py-2 text-xs font-medium text-slate-700">
                           <input type="radio" value={option} {...register('projectType')} className="h-4 w-4 accent-emerald-600" />
                           <span>{option}</span>
@@ -237,31 +241,27 @@ export function StandardQuotationTemplate() {
                   </div>
 
                   <Field
-                    label="Site Address"
+                    label={quotationText.fields.siteLocation}
                     name="siteLocation"
-                    placeholder="Site address"
+                    placeholder={quotationText.fields.siteLocationPlaceholder}
                     register={register}
                     error={errors.siteLocation}
                     compact
                   />
                   <Field
-                    label="City"
-                    placeholder="City"
-                    register={register}
-                    compact
-                  />
-                  <Field
-                    label="System Capacity"
+                    label={quotationText.fields.systemCapacity}
                     name="systemCapacity"
-                    placeholder="Example: 5 kW / 15 kW"
+                    placeholder={quotationText.fields.systemCapacityPlaceholder}
                     register={register}
                     error={errors.systemCapacity}
                     compact
                   />
                   <Field
-                    label="Special Requirements"
-                    placeholder="Any special technical conditions"
+                    label={quotationText.fields.estimatedBudget}
+                    name="estimatedBudget"
+                    placeholder={quotationText.fields.estimatedBudgetPlaceholder}
                     register={register}
+                    error={errors.estimatedBudget}
                     compact
                   />
                 </div>
@@ -270,20 +270,20 @@ export function StandardQuotationTemplate() {
 
             <section className="overflow-hidden rounded-[24px] border border-blue-200 bg-linear-to-br from-[#edf9ff] via-[#f4fbff] to-[#eefdf8] shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]">
               <div className="border-b border-blue-200 bg-linear-to-r from-[#0d2f65] via-[#103d77] to-[#0c5f87] px-4 py-3 text-left text-lg font-black tracking-[-0.04em] text-white sm:px-5">
-                1. Scope of Supply and Work
+                {quotationText.sections.scopeOfSupply}
               </div>
 
               <div className="overflow-x-auto">
                 <table className="min-w-full border-separate border-spacing-0 text-left text-sm">
                   <thead className="bg-blue-50 text-[10px] font-black uppercase tracking-[0.18em] text-slate-700">
                     <tr>
-                      <th className="border-r border-blue-200 px-3 py-3">S. No.</th>
-                      <th className="border-r border-blue-200 px-3 py-3">Description</th>
-                      <th className="border-r border-blue-200 px-3 py-3">Specification / Brand (Tentative)</th>
-                      <th className="border-r border-blue-200 px-3 py-3">Quantity</th>
-                      <th className="border-r border-blue-200 px-3 py-3">Unit</th>
-                      <th className="border-r border-blue-200 px-3 py-3">Unit Price (₹)</th>
-                      <th className="px-3 py-3">Amount (₹)</th>
+                      <th className="border-r border-blue-200 px-3 py-3">{quotationText.table.sNo}</th>
+                      <th className="border-r border-blue-200 px-3 py-3">{quotationText.table.description}</th>
+                      <th className="border-r border-blue-200 px-3 py-3">{quotationText.table.specification}</th>
+                      <th className="border-r border-blue-200 px-3 py-3">{quotationText.table.quantity}</th>
+                      <th className="border-r border-blue-200 px-3 py-3">{quotationText.table.unit}</th>
+                      <th className="border-r border-blue-200 px-3 py-3">{quotationText.table.unitPrice}</th>
+                      <th className="px-3 py-3">{quotationText.table.amount}</th>
                     </tr>
                   </thead>
                   <tbody className="bg-white/80 text-slate-700">
@@ -306,40 +306,40 @@ export function StandardQuotationTemplate() {
             <div className="grid gap-5 lg:grid-cols-2">
               <section className="rounded-[24px] border border-emerald-200 bg-linear-to-br from-[#ecfff5] via-white to-[#f5fff8] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 border-b border-emerald-200 pb-3">
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">2. Commercial Summary</h2>
+                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">{quotationText.sections.commercialSummary}</h2>
                 </div>
 
                 <div className="space-y-3 text-sm">
                   <div className="grid grid-cols-[1.3fr_0.9fr] items-center gap-3">
-                    <span className="font-semibold text-slate-700">Total Ex-Work Price</span>
+                    <span className="font-semibold text-slate-700">{quotationText.table.totalExWork}</span>
                     <div className="rounded-xl border border-emerald-200 bg-white px-3 py-2 text-right font-bold text-slate-800">₹</div>
                   </div>
                   <div className="grid grid-cols-[1.3fr_0.9fr] items-center gap-3">
-                    <span className="font-semibold text-slate-700">Total Supply and Installation Charges</span>
+                    <span className="font-semibold text-slate-700">{quotationText.table.supplyInstallation}</span>
                     <div className="rounded-xl border border-emerald-200 bg-white px-3 py-2 text-right font-bold text-slate-800">₹</div>
                   </div>
                   <div className="grid grid-cols-[1.3fr_0.9fr] items-center gap-3">
-                    <span className="font-semibold text-slate-700">Sub-Total (A)</span>
+                    <span className="font-semibold text-slate-700">{quotationText.table.subTotal}</span>
                     <div className="rounded-xl border border-emerald-200 bg-white px-3 py-2 text-right font-bold text-slate-800">₹</div>
                   </div>
                   <div className="grid grid-cols-[1.3fr_0.9fr] items-center gap-3">
-                    <span className="font-semibold text-slate-700">GST @ ___ % (B)</span>
+                    <span className="font-semibold text-slate-700">{quotationText.table.gst}</span>
                     <div className="rounded-xl border border-emerald-200 bg-white px-3 py-2 text-right font-bold text-slate-800">₹</div>
                   </div>
                   <div className="grid grid-cols-[1.3fr_0.9fr] items-center gap-3">
-                    <span className="font-semibold text-slate-700">Total Project Cost (A + B)</span>
+                    <span className="font-semibold text-slate-700">{quotationText.table.totalProjectCost}</span>
                     <div className="rounded-xl border border-emerald-200 bg-white px-3 py-2 text-right font-bold text-slate-800">₹</div>
                   </div>
                   <div className="grid grid-cols-[1.3fr_0.9fr] items-center gap-3">
-                    <span className="font-semibold text-slate-700">Less: Government Subsidy (if applicable)</span>
+                    <span className="font-semibold text-slate-700">{quotationText.table.governmentSubsidy}</span>
                     <div className="rounded-xl border border-emerald-200 bg-white px-3 py-2 text-right font-bold text-slate-800">(−) ₹</div>
                   </div>
                   <div className="grid grid-cols-[1.3fr_0.9fr] items-center gap-3">
-                    <span className="font-semibold text-slate-700">Less: Special Discount (if any)</span>
+                    <span className="font-semibold text-slate-700">{quotationText.table.specialDiscount}</span>
                     <div className="rounded-xl border border-emerald-200 bg-white px-3 py-2 text-right font-bold text-slate-800">(−) ₹</div>
                   </div>
                   <div className="grid grid-cols-[1.3fr_0.9fr] items-center gap-3 rounded-2xl border border-emerald-300 bg-emerald-50 px-2 py-2 font-black text-emerald-900">
-                    <span>Grand Total (Customer Payable)</span>
+                    <span>{quotationText.table.grandTotal}</span>
                     <div className="rounded-xl border border-emerald-300 bg-white px-3 py-2 text-right">₹</div>
                   </div>
                 </div>
@@ -347,15 +347,15 @@ export function StandardQuotationTemplate() {
 
               <section className="rounded-[24px] border border-amber-200 bg-linear-to-br from-[#fffaf1] via-white to-[#fffdf8] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 border-b border-amber-200 pb-3">
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">3. Payment Terms</h2>
+                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">{quotationText.sections.paymentTerms}</h2>
                 </div>
 
                 <div className="overflow-hidden rounded-2xl border border-amber-200 bg-white/80">
                   <div className="grid grid-cols-[60px_1.5fr_1fr_1fr] border-b border-amber-200 bg-amber-50 text-[10px] font-black uppercase tracking-[0.18em] text-slate-700">
-                    <div className="px-3 py-3">S. No.</div>
-                    <div className="px-3 py-3">Milestone</div>
-                    <div className="px-3 py-3">Percentage</div>
-                    <div className="px-3 py-3">Amount (₹)</div>
+                    <div className="px-3 py-3">{quotationText.table.sNo}</div>
+                    <div className="px-3 py-3">{quotationText.table.milestone}</div>
+                    <div className="px-3 py-3">{quotationText.table.percentage}</div>
+                    <div className="px-3 py-3">{quotationText.table.amountValue}</div>
                   </div>
                   {['On Order Confirmation', 'On Delivery of Materials', 'On Completion of Installation', 'On Testing & Commissioning', 'After Net Meter Installation / Project Handover'].map((milestone, index) => (
                     <div key={milestone} className="grid grid-cols-[60px_1.5fr_1fr_1fr] border-b border-amber-100 last:border-b-0 text-sm text-slate-700">
@@ -366,7 +366,7 @@ export function StandardQuotationTemplate() {
                     </div>
                   ))}
                   <div className="grid grid-cols-[60px_1.5fr_1fr_1fr] bg-amber-50 text-sm font-black text-slate-800">
-                    <div className="px-3 py-3">Total</div>
+                    <div className="px-3 py-3">{quotationText.table.total}</div>
                     <div className="border-l border-amber-200 px-3 py-3 text-center">100%</div>
                     <div className="border-l border-amber-200 px-3 py-3 text-center">—</div>
                     <div className="border-l border-amber-200 px-3 py-3 text-center">—</div>
@@ -378,11 +378,11 @@ export function StandardQuotationTemplate() {
             <div className="grid gap-5 lg:grid-cols-[1.25fr_1fr]">
               <section className="rounded-[24px] border border-yellow-200 bg-linear-to-br from-[#fffdea] via-white to-[#fffef8] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 border-b border-yellow-200 pb-3">
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">4. Terms and Conditions</h2>
+                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">{quotationText.sections.termsAndConditions}</h2>
                 </div>
 
                 <ol className="space-y-2 text-sm leading-6 text-slate-700">
-                  {['This quotation is valid for 30 days from the date of issue.', 'Prices are subject to change based on final site survey and system design.', 'Government subsidy is subject to eligibility and approval from the concerned authorities.', 'Customer to provide necessary approvals, access, and electrical connection as required.', 'Warranty: As per manufacturer\'s standard warranty terms.', 'Any additional work not mentioned in this quotation will be charged separately.', 'This quotation is subject to our standard terms and conditions.'].map((item, index) => (
+                  {quotationText.termsList.map((item: string, index: number) => (
                     <li key={item} className="flex gap-3">
                       <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-yellow-300 text-[10px] font-black text-slate-900">{index + 1}</span>
                       <span>{item}</span>
@@ -393,34 +393,34 @@ export function StandardQuotationTemplate() {
 
               <section className="rounded-[24px] border border-emerald-200 bg-linear-to-br from-[#edfdf5] via-white to-[#f8fff9] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 border-b border-emerald-200 pb-3">
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">5. Acceptance</h2>
+                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">{quotationText.sections.acceptance}</h2>
                 </div>
 
                 <div className="space-y-4 text-sm text-slate-700">
-                  <p>We accept the above quotation and agree to the terms and conditions.</p>
+                  <p>{quotationText.acceptanceText}</p>
                   <div className="space-y-3">
                     <Field
-                      label="Customer Name"
-                      placeholder="Customer name"
+                      label={quotationText.fields.customerName}
+                      placeholder={quotationText.fields.customerNamePlaceholder}
                       register={register}
                       compact
                     />
                     <Field
-                      label="Signature"
-                      placeholder="Customer signature"
+                      label={quotationText.fields.signature}
+                      placeholder={quotationText.fields.signaturePlaceholder}
                       register={register}
                       compact
                     />
                     <div className="grid gap-4 sm:grid-cols-2">
                       <Field
-                        label="Date"
-                        placeholder="DD-MM-YYYY"
+                        label={quotationText.fields.date}
+                        placeholder={quotationText.fields.datePlaceholder}
                         register={register}
                         compact
                       />
                       <Field
-                        label="Place"
-                        placeholder="Place"
+                        label={quotationText.fields.place}
+                        placeholder={quotationText.fields.placePlaceholder}
                         register={register}
                         compact
                       />
@@ -437,7 +437,7 @@ export function StandardQuotationTemplate() {
                   {...register('terms')}
                   className="mt-1 h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
                 />
-                <span>I accept the above quotation and agree to proceed under the stated terms.</span>
+                <span>{quotationText.fields.terms}</span>
               </label>
 
               <button
@@ -445,13 +445,13 @@ export function StandardQuotationTemplate() {
                 disabled={isSubmitting}
                 className="inline-flex items-center justify-center rounded-full bg-linear-to-r from-[#0d5a80] via-[#123f74] to-[#0a2d5a] px-6 py-3 text-sm font-black uppercase tracking-[0.18em] text-white shadow-[0_18px_30px_-18px_rgba(15,63,116,0.9)] transition-all duration-200 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                {isSubmitting ? 'Sending...' : 'Submit Quotation'}
+                {isSubmitting ? quotationText.submitting : quotationText.submit}
               </button>
             </div>
 
             {isSubmitSuccessful && (
               <p className="rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-700">
-                Your quotation request has been prepared in your email app.
+                {quotationText.success}
               </p>
             )}
           </form>

@@ -33,7 +33,7 @@ export default function Logo() {
           </span>
         </div>
         <div className={`text-[12px] whitespace-nowrap text-[#18251F]`}>
-          ---- Power from Sun and Wind ----
+          {t.logo.tagline}
         </div>
       </div>
     </Link>

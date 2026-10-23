@@ -4,46 +4,63 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
+import { useLocale } from '@/lib/LocaleContext'
+import en from '@/public/locales/en/index.json'
 
-const checklistSchema = z.object({
-  customerName: z.string().trim().min(2, 'Customer name is required.'),
-  companyName: z.string().trim().optional().or(z.literal('')),
-  email: z.string().trim().email('Please enter a valid email address.'),
-  phone: z
-    .string()
-    .trim()
-    .min(10, 'Phone number must be at least 10 digits.')
-    .regex(/^[0-9+()\-\s]+$/, 'Phone number can contain only digits, spaces, +, (, ), and -.'),
-  projectName: z.string().trim().min(3, 'Please enter the project name.'),
-  siteLocation: z.string().trim().min(3, 'Please enter the site location.'),
-  installationDate: z.string().min(1, 'Please enter the installation date.'),
-  checklistStatus: z.string().min(1, 'Please select the installation status.'),
-  safetyCheck: z.boolean().refine((value) => value === true, {
-    message: 'Please confirm the site safety checklist has been completed.',
-  }),
-  commissioningCheck: z.boolean().refine((value) => value === true, {
-    message: 'Please confirm the commissioning checklist has been completed.',
-  }),
-  notes: z.string().trim().min(10, 'Please add a few notes for the installation and commissioning team.'),
-})
-
-type ChecklistFormValues = z.infer<typeof checklistSchema>
-
-const defaultValues: ChecklistFormValues = {
-  customerName: '',
-  companyName: '',
-  email: '',
-  phone: '',
-  projectName: '',
-  siteLocation: '',
-  installationDate: '',
-  checklistStatus: '',
-  safetyCheck: false,
-  commissioningCheck: false,
-  notes: '',
+type ChecklistFormValues = {
+  customerName: string
+  companyName?: string
+  email: string
+  phone: string
+  projectName: string
+  siteLocation: string
+  installationDate: string
+  checklistStatus: string
+  safetyCheck: boolean
+  commissioningCheck: boolean
+  notes: string
 }
 
 export default function InstallationChecklistPage() {
+  const { t } = useLocale()
+  const checklistText = ((t as any).installationChecklist ?? (en as any).installationChecklist) as any
+
+  const checklistSchema = z.object({
+    customerName: z.string().trim().min(2, checklistText.validation.customerNameRequired),
+    companyName: z.string().trim().optional().or(z.literal('')),
+    email: z.string().trim().email(checklistText.validation.emailInvalid),
+    phone: z
+      .string()
+      .trim()
+      .min(10, checklistText.validation.phoneMin)
+      .regex(/^[0-9+()\-\s]+$/, checklistText.validation.phoneFormat),
+    projectName: z.string().trim().min(3, checklistText.validation.projectNameRequired),
+    siteLocation: z.string().trim().min(3, checklistText.validation.siteLocationRequired),
+    installationDate: z.string().min(1, checklistText.validation.installationDateRequired),
+    checklistStatus: z.string().min(1, checklistText.validation.statusRequired),
+    safetyCheck: z.boolean().refine((value) => value === true, {
+      message: checklistText.validation.safetyRequired,
+    }),
+    commissioningCheck: z.boolean().refine((value) => value === true, {
+      message: checklistText.validation.commissioningRequired,
+    }),
+    notes: z.string().trim().min(10, checklistText.validation.notesRequired),
+  })
+
+  const defaultValues: ChecklistFormValues = {
+    customerName: '',
+    companyName: '',
+    email: '',
+    phone: '',
+    projectName: '',
+    siteLocation: '',
+    installationDate: '',
+    checklistStatus: '',
+    safetyCheck: false,
+    commissioningCheck: false,
+    notes: '',
+  }
+
   const {
     register,
     handleSubmit,
@@ -57,23 +74,23 @@ export default function InstallationChecklistPage() {
   })
 
   const onSubmit = (data: ChecklistFormValues) => {
-    const subject = `Installation & Commissioning Checklist - ${data.projectName}`
+    const subject = checklistText.email.subject.replace('{project}', data.projectName)
     const body = [
-      'INSTALLATION, TESTING, AND COMMISSIONING CHECKLIST',
+      checklistText.email.title,
       '=================================================',
       '',
-      `Customer Name: ${data.customerName}`,
-      `Company Name: ${data.companyName || 'Not provided'}`,
-      `Email: ${data.email}`,
-      `Phone: ${data.phone}`,
-      `Project Name: ${data.projectName}`,
-      `Site Location: ${data.siteLocation}`,
-      `Installation Date: ${data.installationDate}`,
-      `Status: ${data.checklistStatus}`,
-      `Safety Checklist Completed: ${data.safetyCheck ? 'Yes' : 'No'}`,
-      `Commissioning Checklist Completed: ${data.commissioningCheck ? 'Yes' : 'No'}`,
+      `${checklistText.email.customerName}: ${data.customerName}`,
+      `${checklistText.email.companyName}: ${data.companyName || 'Not provided'}`,
+      `${checklistText.email.email}: ${data.email}`,
+      `${checklistText.email.phone}: ${data.phone}`,
+      `${checklistText.email.projectName}: ${data.projectName}`,
+      `${checklistText.email.siteLocation}: ${data.siteLocation}`,
+      `${checklistText.email.installationDate}: ${data.installationDate}`,
+      `${checklistText.email.status}: ${data.checklistStatus}`,
+      `${checklistText.email.safetyCheck}: ${data.safetyCheck ? 'Yes' : 'No'}`,
+      `${checklistText.email.commissioningCheck}: ${data.commissioningCheck ? 'Yes' : 'No'}`,
       '',
-      'Notes:',
+      `${checklistText.email.notes}:`,
       data.notes,
     ].join('\n')
 
@@ -86,13 +103,13 @@ export default function InstallationChecklistPage() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 text-center">
           <span className="inline-flex items-center rounded-full border border-amber-200 bg-white/80 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.28em] text-amber-700 shadow-sm backdrop-blur-sm">
-            Checklist
+            {checklistText.badge}
           </span>
           <h1 className="mt-5 text-4xl font-black tracking-[-0.06em] text-slate-900 sm:text-5xl">
-            Installation, testing, and commissioning checklist
+            {checklistText.pageTitle}
           </h1>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-slate-600">
-            Use this checklist to record the installation readiness, safety review, commissioning process, and final sign-off requirements before system handover.
+            {checklistText.intro}
           </p>
         </div>
 
@@ -101,42 +118,38 @@ export default function InstallationChecklistPage() {
             <CardContent className="p-5 sm:p-7 lg:p-8">
               <div className="space-y-6">
                 <section>
-                  <h2 className="text-xl font-bold text-slate-900">1. Pre-installation checks</h2>
+                  <h2 className="text-xl font-bold text-slate-900">{checklistText.sections.preInstallation.title}</h2>
                   <ul className="mt-3 space-y-2 text-sm leading-7 text-slate-600">
-                    <li>• Site access, labor availability, and installation safety plan confirmed.</li>
-                    <li>• Equipment received, inspected, and verified against purchase order and serial numbers.</li>
-                    <li>• Mounting layout, cable route, and protective clearances reviewed before installation.</li>
-                    <li>• Utility, grid, or battery integration requirements confirmed with the project team.</li>
+                    {checklistText.sections.preInstallation.items.map((item: string) => (
+                      <li key={item}>• {item}</li>
+                    ))}
                   </ul>
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-bold text-slate-900">2. Installation checklist</h2>
+                  <h2 className="text-xl font-bold text-slate-900">{checklistText.sections.installation.title}</h2>
                   <ul className="mt-3 space-y-2 text-sm leading-7 text-slate-600">
-                    <li>• Structure, support frame, and anchor points inspected and installed correctly.</li>
-                    <li>• Module or turbine mounting alignment verified for safe operation and drainage.</li>
-                    <li>• Cable routing, termination, earthing/grounding, and protection devices installed as per design.</li>
-                    <li>• Inverter, controller, panel, and battery components mounted and labelled correctly.</li>
+                    {checklistText.sections.installation.items.map((item: string) => (
+                      <li key={item}>• {item}</li>
+                    ))}
                   </ul>
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-bold text-slate-900">3. Testing and commissioning</h2>
+                  <h2 className="text-xl font-bold text-slate-900">{checklistText.sections.testing.title}</h2>
                   <ul className="mt-3 space-y-2 text-sm leading-7 text-slate-600">
-                    <li>• Continuity, insulation resistance, polarity, and voltage checks completed.</li>
-                    <li>• System startup sequence, inverter communication, and protection logic verified.</li>
-                    <li>• Load testing, generation readings, and battery charging/discharging confirmed.</li>
-                    <li>• Final performance values and commissioning report signed off by responsible personnel.</li>
+                    {checklistText.sections.testing.items.map((item: string) => (
+                      <li key={item}>• {item}</li>
+                    ))}
                   </ul>
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-bold text-slate-900">4. Handover and documentation</h2>
+                  <h2 className="text-xl font-bold text-slate-900">{checklistText.sections.handover.title}</h2>
                   <ul className="mt-3 space-y-2 text-sm leading-7 text-slate-600">
-                    <li>• Final site photos, test logs, and safety record uploaded or shared.</li>
-                    <li>• Customer demonstration and operating instructions delivered.</li>
-                    <li>• Warranty documents, product data sheets, and maintenance guidance handed over.</li>
-                    <li>• AMC or monitoring plan discussed and agreed for post-commissioning support.</li>
+                    {checklistText.sections.handover.items.map((item: string) => (
+                      <li key={item}>• {item}</li>
+                    ))}
                   </ul>
                 </section>
               </div>
@@ -145,71 +158,21 @@ export default function InstallationChecklistPage() {
 
           <Card className="overflow-hidden border border-amber-100 bg-linear-to-br from-slate-950 via-slate-900 to-amber-950 text-white shadow-[0_25px_80px_rgba(15,23,42,0.12)]">
             <CardContent className="p-5 sm:p-7">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-amber-200">Commissioning form</p>
-              <h2 className="mt-3 text-2xl font-semibold">Submit checklist</h2>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-amber-200">{checklistText.form.badge}</p>
+              <h2 className="mt-3 text-2xl font-semibold">{checklistText.form.title}</h2>
 
               <form onSubmit={handleSubmit(onSubmit)} noValidate className="mt-6 space-y-4">
-                <Field
-                  label="Customer name"
-                  name="customerName"
-                  placeholder="Enter your full name"
-                  register={register}
-                  error={errors.customerName}
-                />
-
-                <Field
-                  label="Company name"
-                  name="companyName"
-                  placeholder="Optional company / organization"
-                  register={register}
-                  error={errors.companyName}
-                />
-
-                <Field
-                  label="Email address"
-                  name="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  register={register}
-                  error={errors.email}
-                />
-
-                <Field
-                  label="Phone number"
-                  name="phone"
-                  type="tel"
-                  placeholder="+91 98765 43210"
-                  register={register}
-                  error={errors.phone}
-                />
-
-                <Field
-                  label="Project name"
-                  name="projectName"
-                  placeholder="Solar rooftop project"
-                  register={register}
-                  error={errors.projectName}
-                />
-
-                <Field
-                  label="Site location"
-                  name="siteLocation"
-                  placeholder="City / site address"
-                  register={register}
-                  error={errors.siteLocation}
-                />
-
-                <Field
-                  label="Installation date"
-                  name="installationDate"
-                  type="date"
-                  register={register}
-                  error={errors.installationDate}
-                />
+                <Field label={checklistText.fields.customerName} name="customerName" placeholder={checklistText.fields.customerNamePlaceholder} register={register} error={errors.customerName} />
+                <Field label={checklistText.fields.companyName} name="companyName" placeholder={checklistText.fields.companyNamePlaceholder} register={register} error={errors.companyName} />
+                <Field label={checklistText.fields.email} name="email" type="email" placeholder={checklistText.fields.emailPlaceholder} register={register} error={errors.email} />
+                <Field label={checklistText.fields.phone} name="phone" type="tel" placeholder={checklistText.fields.phonePlaceholder} register={register} error={errors.phone} />
+                <Field label={checklistText.fields.projectName} name="projectName" placeholder={checklistText.fields.projectNamePlaceholder} register={register} error={errors.projectName} />
+                <Field label={checklistText.fields.siteLocation} name="siteLocation" placeholder={checklistText.fields.siteLocationPlaceholder} register={register} error={errors.siteLocation} />
+                <Field label={checklistText.fields.installationDate} name="installationDate" type="date" placeholder={checklistText.fields.installationDatePlaceholder} register={register} error={errors.installationDate} />
 
                 <div>
                   <label htmlFor="checklistStatus" className="mb-2 block text-sm font-semibold text-slate-100">
-                    Installation status
+                    {checklistText.fields.checklistStatus}
                   </label>
                   <select
                     id="checklistStatus"
@@ -217,12 +180,10 @@ export default function InstallationChecklistPage() {
                     aria-invalid={Boolean(errors.checklistStatus)}
                     className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-all duration-200 focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
                   >
-                    <option value="" className="text-slate-900">Select status</option>
-                    <option value="Not started" className="text-slate-900">Not started</option>
-                    <option value="In progress" className="text-slate-900">In progress</option>
-                    <option value="Completed" className="text-slate-900">Completed</option>
-                    <option value="Pending follow-up" className="text-slate-900">Pending follow-up</option>
-                    <option value="Ready for commissioning" className="text-slate-900">Ready for commissioning</option>
+                    <option value="" className="text-slate-900">{checklistText.fields.checklistStatusPlaceholder}</option>
+                    {checklistText.statusOptions.map((option: string) => (
+                      <option key={option} value={option} className="text-slate-900">{option}</option>
+                    ))}
                   </select>
                   {errors.checklistStatus && <p className="mt-2 text-xs text-rose-300">{errors.checklistStatus.message}</p>}
                 </div>
@@ -233,7 +194,7 @@ export default function InstallationChecklistPage() {
                     {...register('safetyCheck')}
                     className="mt-1 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400"
                   />
-                  <span>I confirm the site safety checklist has been completed before energizing the system.</span>
+                  <span>{checklistText.fields.safetyCheck}</span>
                 </label>
                 {errors.safetyCheck && <p className="text-xs text-rose-300">{errors.safetyCheck.message}</p>}
 
@@ -243,19 +204,19 @@ export default function InstallationChecklistPage() {
                     {...register('commissioningCheck')}
                     className="mt-1 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400"
                   />
-                  <span>I confirm the commissioning checklist and performance validation have been completed.</span>
+                  <span>{checklistText.fields.commissioningCheck}</span>
                 </label>
                 {errors.commissioningCheck && <p className="text-xs text-rose-300">{errors.commissioningCheck.message}</p>}
 
                 <div>
                   <label htmlFor="notes" className="mb-2 block text-sm font-semibold text-slate-100">
-                    Installation and commissioning notes
+                    {checklistText.fields.notes}
                   </label>
                   <textarea
                     id="notes"
                     {...register('notes')}
                     rows={5}
-                    placeholder="Include site observations, test results, deviations, and any additional actions needed."
+                    placeholder={checklistText.fields.notesPlaceholder}
                     aria-invalid={Boolean(errors.notes)}
                     className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
                   />
@@ -267,11 +228,11 @@ export default function InstallationChecklistPage() {
                   disabled={isSubmitting}
                   className="inline-flex w-full items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition-all duration-200 hover:-translate-y-0.5 hover:bg-amber-100 disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {isSubmitting ? 'Submitting...' : 'Submit checklist'}
+                  {isSubmitting ? checklistText.submitting : checklistText.submit}
                 </button>
 
                 {isSubmitSuccessful && (
-                  <p className="text-sm font-medium text-emerald-300">Your checklist has been prepared in your email app.</p>
+                  <p className="text-sm font-medium text-emerald-300">{checklistText.success}</p>
                 )}
               </form>
             </CardContent>

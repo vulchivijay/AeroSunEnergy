@@ -8,8 +8,6 @@ import { OptimizedImage } from '@/app/components/ui'
 const socialLinks = [
 	{
 		href: 'https://x.com/AeroSunEnergy',
-		label: 'Follow AeroSun Energy on X (Twitter)',
-		title: 'Follow AeroSun Energy on X (opens in new tab)',
 		dataSocial: 'twitter',
 		icon: (
 			<svg
@@ -25,8 +23,6 @@ const socialLinks = [
 	},
 	{
 		href: 'https://www.linkedin.com/company/aerosun-energy/',
-		label: 'Connect with AeroSun Energy on LinkedIn',
-		title: 'Connect with AeroSun Energy on LinkedIn (opens in new tab)',
 		dataSocial: 'linkedin',
 		icon: (
 			<svg
@@ -42,8 +38,6 @@ const socialLinks = [
 	},
 	{
 		href: 'https://www.facebook.com/AeroSunEnergy',
-		label: 'Like AeroSun Energy on Facebook',
-		title: 'Like AeroSun Energy on Facebook (opens in new tab)',
 		dataSocial: 'facebook',
 		icon: (
 			<svg
@@ -59,8 +53,6 @@ const socialLinks = [
 	},
 	{
 		href: 'https://www.instagram.com/aerosunenergy/',
-		label: 'Follow AeroSun Energy on Instagram',
-		title: 'Follow AeroSun Energy on Instagram (opens in new tab)',
 		dataSocial: 'instagram',
 		icon: (
 			<svg
@@ -88,6 +80,7 @@ export default function Footer() {
 			disabled: link.href === '/windenergy' || link.href === '/hybridenergy',
 		}))
 		: navLinks
+	const socialLabels = footer.socialLinks || []
 
 	return (
 		<footer
@@ -117,7 +110,7 @@ export default function Footer() {
 										</span>
 										<div>
 											<span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.16em] text-emerald-600 dark:text-emerald-300">
-												Address
+												{footer.addressTitle}
 											</span>
 											<address className="not-italic text-slate-600 dark:text-slate-300">
 												Do.no 11-184, Gollavanigunta,<br />
@@ -153,7 +146,7 @@ export default function Footer() {
 										<Link
 											href="/save-earth"
 											className="text-slate-700 transition-colors duration-200 hover:text-cyan-600 dark:text-slate-200 dark:hover:text-cyan-300"
-											aria-label="Visit Save Earth page"
+											aria-label={footer.visitSaveEarthAriaLabel || footer.visitSaveEarth}
 										>
 											{footer.saveEarth}
 										</Link>
@@ -174,7 +167,7 @@ export default function Footer() {
 											className="text-slate-700 transition-colors duration-200 hover:text-violet-600 dark:text-slate-200 dark:hover:text-violet-300"
 											target="_blank"
 											rel="noopener noreferrer"
-											aria-label={`Visit ${footer.trust} (opens in new tab)`}
+											aria-label={`${footer.visitTrust} ${footer.trust}`}
 										>
 											{footer.saveSanatanaDharma}
 										</Link>
@@ -200,7 +193,7 @@ export default function Footer() {
 												<span className="h-1.5 w-1.5 rounded-full bg-slate-400" aria-hidden="true" />
 												{link.label}
 												<span className="absolute -right-1 -top-2 inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.12em] text-amber-700 shadow-sm">
-													Soon
+													{footer.soon}
 												</span>
 											</span>
 										) : (
@@ -234,7 +227,7 @@ export default function Footer() {
 												<span className="h-1.5 w-1.5 rounded-full bg-slate-400" aria-hidden="true" />
 												{item.label}
 												<span className="absolute -right-1 -top-2 inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.12em] text-amber-700 shadow-sm">
-													Soon
+													{footer.soon}
 												</span>
 											</span>
 										) : (
@@ -262,32 +255,37 @@ export default function Footer() {
 								{footer.followUs}
 							</h3>
 							<div className="mb-6 flex flex-wrap items-center gap-3">
-								{socialLinks.map(({ href, label, title, dataSocial, icon }) => (
-									<Link
-										key={dataSocial}
-										href={href}
-										target="_blank"
-										rel="noopener noreferrer"
-										aria-label={label}
-										title={title}
-										itemProp="sameAs"
-										data-social={dataSocial}
-										className="group flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-slate-200 transition-all duration-200 hover:-translate-y-1 hover:border-emerald-300/40 hover:bg-linear-to-br hover:from-emerald-500 hover:to-teal-500 hover:text-white hover:shadow-[0_18px_28px_-18px_rgba(16,185,129,0.9)] dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200"
-									>
-										{icon}
-									</Link>
-								))}
+								{socialLinks.map(({ href, dataSocial, icon }, index) => {
+									const label = socialLabels[index]?.label ?? ''
+									const title = socialLabels[index]?.title ?? label
+
+									return (
+										<Link
+											key={dataSocial}
+											href={href}
+											target="_blank"
+											rel="noopener noreferrer"
+											aria-label={label}
+											title={title}
+											itemProp="sameAs"
+											data-social={dataSocial}
+											className="group flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-slate-200 transition-all duration-200 hover:-translate-y-1 hover:border-emerald-300/40 hover:bg-linear-to-br hover:from-emerald-500 hover:to-teal-500 hover:text-white hover:shadow-[0_18px_28px_-18px_rgba(16,185,129,0.9)] dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200"
+										>
+											{icon}
+										</Link>
+									)
+								})}
 							</div>
 
 							<div className="rounded-3xl border border-white/10 bg-linear-to-br from-white/10 to-emerald-500/5 py-12 shadow-inner shadow-white/5">
 								<div className="inline-flex w-full items-center justify-center">
 									<OptimizedImage
 										src="/images/qr-code.png"
-										alt="AeroSun Energy QR Code - Scan to visit our website"
+										alt={footer.qrAlt || 'AeroSun Energy QR Code - Scan to visit our website'}
 										width={170}
 										height={170}
 										className="h-auto w-36 rounded-2xl"
-										title="AeroSun Energy Contact QR Code"
+										title={footer.qrTitle || 'AeroSun Energy Contact QR Code'}
 										itemProp="image"
 										data-seo="qr-code"
 									/>
@@ -305,17 +303,17 @@ export default function Footer() {
 							href="/terms"
 							className="transition-colors duration-200 hover:text-white"
 						>
-							Terms & Conditions
+							{t.footer.terms}
 						</Link>
 						<span className="text-slate-500">|</span>
 						<Link
 							href="/privacy"
 							className="transition-colors duration-200 hover:text-white"
 						>
-							Privacy Policy
+							{t.footer.privacy}
 						</Link>
 					</div>
-          <p>Build with 💕 & 🔥 @VulchiVijayaKumar.</p>
+					<p>{t.footer.buildWith} 💕 & 🔥 {t.footer.by}</p>
 					<p>
 						{footer.copyright}. {footer.allRightsReserved}
 					</p>

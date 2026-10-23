@@ -1,5 +1,6 @@
 'use client'
 
+import { useLocale } from '@/lib/LocaleContext'
 import { useMemo, useState } from 'react'
 
 type ResearchItem = {
@@ -20,13 +21,11 @@ const researchItems: ResearchItem[] = Array.from({ length: 180 }, (_, index) => 
 }))
 
 export default function ResearchDevelopmentPage() {
+  const { t } = useLocale()
+  const researchLocale = t.researchDevelopment
   const [currentPage, setCurrentPage] = useState(1)
   const pageSize = 6
-  const stats = [
-    { label: 'Live pilots', value: '24+', tone: 'emerald' },
-    { label: 'Efficiency gains', value: '18–32%', tone: 'sky' },
-    { label: 'Test cycles', value: '1,200+', tone: 'violet' },
-  ]
+  const stats = researchLocale.stats.map((stat) => ({ ...stat, tone: stat.label.includes('Live') ? 'emerald' : stat.label.includes('Efficiency') ? 'sky' : 'violet' }))
 
   const pageNumbers = useMemo(() => {
     const start = Math.max(1, currentPage - 2)
@@ -50,21 +49,21 @@ export default function ResearchDevelopmentPage() {
           <div className="relative grid gap-8 p-6 sm:p-8 lg:grid-cols-[1.2fr_0.8fr] lg:p-12">
             <div>
               <span className="inline-flex items-center rounded-full border border-emerald-200/80 bg-white/80 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-700 shadow-[0_8px_18px_-12px_rgba(16,185,129,0.7)] backdrop-blur-sm dark:border-emerald-500/40 dark:bg-slate-900/70 dark:text-emerald-300">
-                AeroSun Energy • Research & Development
+                {researchLocale.badge}
               </span>
               <h1 className="mt-6 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl lg:text-6xl dark:text-white">
-                Reach, testing, and product development for cleaner energy systems.
+                {researchLocale.heading}
               </h1>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-700 dark:text-slate-300">
-                We transform ideas into field-ready renewable solutions through simulation, prototyping, pilot validation, and operational learning.
+                {researchLocale.description}
               </p>
             </div>
 
             <div className="flex items-center">
               <div className="w-full rounded-[1.75rem] border border-white/60 bg-white/60 p-5 shadow-[0_30px_60px_-35px_rgba(15,23,42,0.5)] backdrop-blur-xl dark:border-slate-700/80 dark:bg-slate-900/80">
-                <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">Innovation focus</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">{researchLocale.focus}</p>
                 <div className="mt-5 space-y-4">
-                  {['Solar efficiency optimization', 'Wind turbine performance validation', 'Hybrid storage and load balancing'].map((item) => (
+                  {researchLocale.focusItems.map((item) => (
                     <div key={item} className="flex items-center gap-3 rounded-2xl border border-slate-200/80 bg-slate-50/90 p-3 shadow-[0_14px_30px_-22px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-800/80">
                       <span className="flex h-8 w-8 items-center justify-center rounded-full bg-linear-to-br from-emerald-400 to-teal-500 text-sm font-bold text-white shadow-[0_8px_16px_-10px_rgba(16,185,129,0.8)]">✓</span>
                       <span className="text-sm font-medium text-slate-700 dark:text-slate-200">{item}</span>
@@ -91,11 +90,15 @@ export default function ResearchDevelopmentPage() {
       <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
         <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">Development roadmap</p>
-            <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Innovation pipeline</h2>
+            <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">{researchLocale.roadmap}</p>
+            <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 dark:text-white">{researchLocale.pipeline}</h2>
           </div>
           <p className="text-sm text-slate-600 dark:text-slate-400">
-            Page {currentPage} • Showing {Math.min((currentPage - 1) * pageSize + 1, researchItems.length)}-{Math.min(currentPage * pageSize, researchItems.length)} of {researchItems.length} records
+            {researchLocale.records
+              .replace('{page}', String(currentPage))
+              .replace('{start}', String(Math.min((currentPage - 1) * pageSize + 1, researchItems.length)))
+              .replace('{end}', String(Math.min(currentPage * pageSize, researchItems.length)))
+              .replace('{total}', String(researchItems.length))}
           </p>
         </div>
 
@@ -119,20 +122,8 @@ export default function ResearchDevelopmentPage() {
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
         <div className="rounded-[2rem] border border-white/70 bg-white/70 p-4 shadow-[0_28px_70px_-40px_rgba(15,23,42,0.5)] backdrop-blur-xl dark:border-slate-700/80 dark:bg-slate-900/75">
           <div className="flex flex-wrap items-center justify-center gap-2">
-            <button
-              type="button"
-              onClick={goFirst}
-              className="rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-emerald-300 hover:text-emerald-700 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-emerald-400 dark:hover:text-emerald-300"
-            >
-              First
-            </button>
-            <button
-              type="button"
-              onClick={goPrev}
-              className="rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-emerald-300 hover:text-emerald-700 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-emerald-400 dark:hover:text-emerald-300"
-            >
-              Prev
-            </button>
+            <button type="button" onClick={goFirst} className="rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-emerald-300 hover:text-emerald-700 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-emerald-400 dark:hover:text-emerald-300">{researchLocale.first}</button>
+            <button type="button" onClick={goPrev} className="rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-emerald-300 hover:text-emerald-700 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-emerald-400 dark:hover:text-emerald-300">{researchLocale.prev}</button>
 
             {pageNumbers.map((page) => (
               <button
@@ -149,20 +140,8 @@ export default function ResearchDevelopmentPage() {
               </button>
             ))}
 
-            <button
-              type="button"
-              onClick={goNext}
-              className="rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-emerald-300 hover:text-emerald-700 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-emerald-400 dark:hover:text-emerald-300"
-            >
-              Next
-            </button>
-            <button
-              type="button"
-              onClick={goLast}
-              className="rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-emerald-300 hover:text-emerald-700 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-emerald-400 dark:hover:text-emerald-300"
-            >
-              Last
-            </button>
+            <button type="button" onClick={goNext} className="rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-emerald-300 hover:text-emerald-700 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-emerald-400 dark:hover:text-emerald-300">{researchLocale.next}</button>
+            <button type="button" onClick={goLast} className="rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-emerald-300 hover:text-emerald-700 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-emerald-400 dark:hover:text-emerald-300">{researchLocale.last}</button>
           </div>
         </div>
       </section>

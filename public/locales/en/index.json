@@ -74,6 +74,8 @@
       }
     ],
     "startProject": "Start a Project",
+    "voucher": "Voucher",
+    "comingSoon": "Coming soon",
     "toggleDark": "Toggle dark mode",
     "toggleMenu": "Toggle menu",
     "navigateTo": "Navigate to",
@@ -81,13 +83,55 @@
     "section": "section",
     "languageLabel": "Language",
     "startProjectTitle": "Start a renewable energy project with AeroSun Energy",
-    "startProjectAriaLabel": "Contact AeroSun Energy to start your project"
+    "startProjectAriaLabel": "Contact AeroSun Energy to start your project",
+    "downloadVoucherTitle": "Download voucher",
+    "downloadVoucherAriaLabel": "Download AeroSun Energy voucher"
   },
   "logo": {
     "homeTitle": "Go to AeroSun Energy homepage",
     "homeAriaLabel": "AeroSun Energy logo - go to homepage",
     "imageAlt": "AeroSun Energy logo",
-    "tagline": "Private Limited"
+    "tagline": "---- Power from Sun and Wind ----"
+  },
+  "aboutPage": {
+    "companyProfile": "Company Profile",
+    "privateLimited": "Private Limited",
+    "serviceMix": "Solar • Wind • Hybrid",
+    "tagline": "Power from sun and wind",
+    "location": "Location",
+    "tirupati": "Tirupati, Andhra Pradesh",
+    "focus": "Focus",
+    "serviceScope": "Service Scope",
+    "residentialToIndustrial": "Residential to industrial",
+    "founderName": "Mr. Vulchi Vijaya Kumar",
+    "founderTitle": "Founder and Director",
+    "founderBio": "Through AeroSun Energy, the company aims to pursue opportunities in solar energy, wind energy and hybrid renewable-energy systems while building a customer-focused organisation grounded in quality, reliability, responsible business practices and continuous improvement.",
+    "licensesHeading": "Licences, registrations & approvals",
+    "compliance": "Compliance",
+    "approvalTitle": "Formal registrations and approval milestones",
+    "registrationApproval": "Registration / approval",
+    "purpose": "Purpose",
+    "status": "Status",
+    "officialSources": "Official sources",
+    "coreValues": "Core values",
+    "guidingPrinciples": "Guiding principles",
+    "coreValuesHeading": "The principles guiding every decision we make",
+    "services": "Services",
+    "renewableSolutions": "Renewable solutions",
+    "servicesHeading": "Energy systems built around real site conditions",
+    "promise": "Promise",
+    "ourCommitment": "Our commitment",
+    "whatWeStandFor": "What we stand for",
+    "mission": "Mission",
+    "purposeLabel": "Purpose",
+    "howWeCreateValue": "How we create value",
+    "powerFromSunAndWind": "AeroSun Energy Private Limited — Power from Sun and Wind.",
+    "quality": "Quality",
+    "qualityBadge": "Operational standards",
+    "qualityHeading": "Our quality commitments",
+    "ethics": "Ethics",
+    "ethicsBadge": "Responsible conduct",
+    "ethicsHeading": "Business conduct we stand by"
   },
   "hero": {
     "badge": "Energy Infrastructure Reimagined",
@@ -492,7 +536,491 @@
     "devNoticeAnd": "and",
     "copyright": "© 2026 AeroSun™ Energy Private Limited",
     "registrationNotice": "(Registration is in process)",
-    "allRightsReserved": "All rights reserved."
+    "allRightsReserved": "All rights reserved.",
+    "address": "Address",
+    "addressTitle": "Address",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "buildWith": "Build with",
+    "by": "@VulchiVijayaKumar",
+    "soon": "Soon",
+    "visitSaveEarth": "Visit Save Earth page",
+    "visitSaveEarthAriaLabel": "Visit Save Earth page",
+    "visitTrust": "Visit",
+    "qrAlt": "AeroSun Energy QR Code - Scan to visit our website",
+    "qrTitle": "AeroSun Energy Contact QR Code",
+    "socialLinks": [
+      {
+        "label": "Follow AeroSun Energy on X (Twitter)",
+        "title": "Follow AeroSun Energy on X (opens in new tab)"
+      },
+      {
+        "label": "Connect with AeroSun Energy on LinkedIn",
+        "title": "Connect with AeroSun Energy on LinkedIn (opens in new tab)"
+      },
+      {
+        "label": "Like AeroSun Energy on Facebook",
+        "title": "Like AeroSun Energy on Facebook (opens in new tab)"
+      },
+      {
+        "label": "Follow AeroSun Energy on Instagram",
+        "title": "Follow AeroSun Energy on Instagram (opens in new tab)"
+      }
+    ]
+  },
+  "notifications": {
+    "badge": "AeroSun Update",
+    "text": "AeroSun Energy Private Limited is committed to providing reliable and sustainable renewable energy solutions through solar, wind, and hybrid energy systems.",
+    "bold": "Our business approach focuses on sourcing quality equipment, supporting installation and implementation,",
+    "end": "and exploring innovative energy solutions tailored to customer needs. As we grow, we aim to expand our technical capabilities and develop advanced renewable energy solutions that contribute to a cleaner, more sustainable future.",
+    "dismiss": "Dismiss notification"
+  },
+  "ganesha": {
+    "title": "Lord Ganesha Blessing",
+    "description": "Welcome to AeroSun Energy. May this blessing bring clarity, success, and prosperity to your renewable energy journey.",
+    "close": "Close",
+    "closeAria": "Close Lord Ganesha modal",
+    "autoClose": "Auto-closes in 30s"
+  },
+  "researchDevelopment": {
+    "badge": "AeroSun Energy • Research & Development",
+    "heading": "Reach, testing, and product development for cleaner energy systems.",
+    "description": "We transform ideas into field-ready renewable solutions through simulation, prototyping, pilot validation, and operational learning.",
+    "focus": "Innovation focus",
+    "focusItems": [
+      "Solar efficiency optimization",
+      "Wind turbine performance validation",
+      "Hybrid storage and load balancing"
+    ],
+    "stats": [
+      {
+        "label": "Live pilots",
+        "value": "24+"
+      },
+      {
+        "label": "Efficiency gains",
+        "value": "18–32%"
+      },
+      {
+        "label": "Test cycles",
+        "value": "1,200+"
+      }
+    ],
+    "roadmap": "Development roadmap",
+    "pipeline": "Innovation pipeline",
+    "records": "Page {page} • Showing {start}-{end} of {total} records",
+    "first": "First",
+    "prev": "Prev",
+    "next": "Next",
+    "last": "Last"
+  },
+  "customerEnquiry": {
+    "pageTitle": "Customer Enquiry",
+    "customerDetails": "Customer Details",
+    "enquiryType": "Enquiry Type",
+    "propertySite": "Property / Site",
+    "electricityUsage": "Electricity Usage",
+    "requirements": "Requirements",
+    "projectDetails": "Project Details",
+    "submit": "Send Enquiry",
+    "submitting": "Submitting...",
+    "success": "Your enquiry has been prepared in your email app.",
+    "validation": {
+      "customerNameRequired": "Customer name is required.",
+      "phoneMin": "Phone number must be at least 10 digits.",
+      "phoneFormat": "Phone number can contain only digits, spaces, +, (, ), and -.",
+      "emailInvalid": "Please enter a valid email address.",
+      "addressRequired": "Please enter the address or site location.",
+      "cityRequired": "Please enter the city.",
+      "stateRequired": "Please enter the state.",
+      "serviceTypeRequired": "Please select an enquiry type.",
+      "propertyTypeRequired": "Please select the property type.",
+      "availableAreaRequired": "Please enter the available roof or land area.",
+      "roofTypeRequired": "Please enter the roof type.",
+      "averageBillRequired": "Please enter the average monthly bill.",
+      "monthlyConsumptionRequired": "Please enter the average monthly consumption.",
+      "connectionTypeRequired": "Please select the electricity connection type.",
+      "expectedSystemCapacityRequired": "Please enter the expected system capacity.",
+      "installationTimelineRequired": "Please select the preferred installation timeline.",
+      "budgetRangeRequired": "Please select the budget range.",
+      "projectDetailsRequired": "Please provide a few more details about your project requirement."
+    },
+    "email": {
+      "subject": "Customer Enquiry - {name}",
+      "customerName": "Customer Name",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "city": "City",
+      "state": "State",
+      "enquiryType": "Enquiry Type",
+      "propertyType": "Property Type",
+      "availableArea": "Available Area",
+      "roofType": "Roof Type",
+      "averageBill": "Average Monthly Electricity Bill",
+      "monthlyConsumption": "Average Monthly Consumption",
+      "connectionType": "Connection Type",
+      "expectedSystemCapacity": "Expected System Capacity",
+      "installationTimeline": "Installation Timeline",
+      "budgetRange": "Budget Range",
+      "projectDetails": "Project Details"
+    },
+    "fields": {
+      "customerName": "Full Name*",
+      "customerNamePlaceholder": "Enter your full name",
+      "phone": "Phone Number*",
+      "phonePlaceholder": "+91 98765 43210",
+      "email": "Email ID*",
+      "emailPlaceholder": "you@example.com",
+      "address": "Address*",
+      "addressPlaceholder": "Street / local area / city",
+      "city": "City*",
+      "cityPlaceholder": "City name",
+      "state": "State*",
+      "statePlaceholder": "State",
+      "propertyType": "Property Type*",
+      "propertyTypePlaceholder": "Residential / Commercial / Industrial",
+      "availableArea": "Available Roof / Land Area*",
+      "availableAreaPlaceholder": "Approx. sq. ft. / acres",
+      "roofType": "Roof Type*",
+      "roofTypePlaceholder": "RCC / Metal / Tile / Other",
+      "averageBill": "Average Monthly Electricity Bill*",
+      "averageBillPlaceholder": "₹ 0",
+      "monthlyConsumption": "Average Monthly Consumption (Units)*",
+      "monthlyConsumptionPlaceholder": "Example: 640 units",
+      "connectionType": "Connection Type*",
+      "connectionTypePlaceholder": "Single phase / Three phase",
+      "expectedSystemCapacity": "Expected System Capacity (if known)*",
+      "expectedSystemCapacityPlaceholder": "Example: 5 kW",
+      "installationTimeline": "Preferred Installation Timeframe*",
+      "installationTimelinePlaceholder": "Immediate / 1-3 months / 3-6 months",
+      "budgetRange": "Budget Range*",
+      "budgetRangePlaceholder": "Below ₹1 Lakh / ₹1-3 Lakhs",
+      "projectRequirements": "Requirement details*",
+      "projectRequirementsPlaceholder": "Tell us about your expected load, site conditions, backup needs, voltage preference, and any unique project requirements."
+    },
+    "services": [
+      "Rooftop Solar",
+      "Commercial Solar",
+      "Ground-Mounted Solar",
+      "Wind Energy",
+      "Solar-Wind Hybrid",
+      "Battery Storage",
+      "Solar Water Pumping",
+      "Operations & Maintenance"
+    ]
+  },
+  "customerAgreement": {
+    "pageTitle": "Customer Agreement & Payment Terms",
+    "agreement": "Agreement",
+    "status": "Pending Sign",
+    "ref": "Ref.",
+    "date": "Date",
+    "details": "Agreement Details",
+    "customerDetails": "Customer Details",
+    "projectDetails": "Project Details",
+    "commercialTerms": "Commercial Terms",
+    "scopeOfWork": "Scope of Work",
+    "termsAndConditions": "Terms & Conditions",
+    "acceptance": "Acceptance",
+    "submit": "Accept Agreement",
+    "submitting": "Submitting...",
+    "success": "Your agreement acceptance has been prepared in your email app.",
+    "validation": {
+      "customerNameRequired": "Customer name is required.",
+      "emailInvalid": "Please enter a valid email address.",
+      "phoneMin": "Phone number must be at least 10 digits.",
+      "phoneFormat": "Phone number can contain only digits, spaces, +, (, ), and -.",
+      "agreeRequired": "Please confirm that you accept the agreement and payment terms."
+    },
+    "email": {
+      "subject": "Customer Agreement Acceptance - {name}",
+      "title": "CUSTOMER AGREEMENT AND PAYMENT TERMS",
+      "status": "Status: Agreement accepted",
+      "paymentNote": "Payment terms acknowledged by customer.",
+      "customerName": "Customer Name",
+      "companyName": "Company Name",
+      "phone": "Phone",
+      "email": "Email",
+      "agreementNo": "Agreement No.",
+      "date": "Date",
+      "projectReference": "Project Reference",
+      "accept": "I accept the customer agreement and payment terms stated above."
+    },
+    "fields": {
+      "agreementNo": "Agreement No.",
+      "date": "Date",
+      "projectReference": "Project Reference",
+      "customerName": "Customer Name",
+      "companyName": "Company Name",
+      "phone": "Phone Number",
+      "email": "Email ID",
+      "projectType": "Project Type",
+      "systemCapacity": "System Capacity",
+      "projectLocation": "Project Location",
+      "quotedAmount": "Quoted Amount",
+      "siteAccessDate": "Site Access Date",
+      "customerNamePlaceholder": "Enter customer name",
+      "companyNamePlaceholder": "Optional company name",
+      "phonePlaceholder": "+91 98765 43210",
+      "emailPlaceholder": "you@example.com",
+      "agreementNoPlaceholder": "Agreement number",
+      "datePlaceholder": "DD-MM-YYYY",
+      "projectReferencePlaceholder": "Project reference",
+      "projectTypePlaceholder": "Project type",
+      "systemCapacityPlaceholder": "kW / kWp",
+      "projectLocationPlaceholder": "Site location / city",
+      "quotedAmountPlaceholder": "₹",
+      "siteAccessDatePlaceholder": "DD-MM-YYYY",
+      "signature": "Signature",
+      "signaturePlaceholder": "Authorized signature",
+      "place": "Place",
+      "placePlaceholder": "City / place"
+    },
+    "terms": [
+      "This agreement is based on the final approved quotation and technical specifications.",
+      "Prices are valid for the agreed time period and may be revised if the job scope changes.",
+      "Government subsidy, if applicable, remains subject to eligibility and authority approval.",
+      "Customer shall provide necessary approvals, access, and coordination for system implementation.",
+      "Any additional work outside the agreed scope will be charged separately.",
+      "This agreement shall be governed by the laws of India."
+    ]
+  },
+  "purchaseOrder": {
+    "pageTitle": "Purchase order and supplier agreement template",
+    "badge": "Purchase order",
+    "summaryTitle": "1. Purchase order summary",
+    "summaryText": "This purchase order confirms the supply of equipment, materials, installation support, or associated services as agreed between the buyer and the supplier.",
+    "commercialTitle": "2. Commercial terms",
+    "deliveryTitle": "3. Delivery and execution",
+    "warrantyTitle": "4. Warranty and support",
+    "riskTitle": "5. Risk and compliance",
+    "acceptTitle": "Confirm order details",
+    "submit": "Confirm purchase order",
+    "submitting": "Submitting...",
+    "success": "Your purchase order has been prepared in your email app.",
+    "validation": {
+      "customerNameRequired": "Customer name is required.",
+      "emailInvalid": "Please enter a valid email address.",
+      "phoneMin": "Phone number must be at least 10 digits.",
+      "phoneFormat": "Phone number can contain only digits, spaces, +, (, ), and -.",
+      "poNumberRequired": "Please enter the purchase order number.",
+      "projectTitleRequired": "Please enter the project title.",
+      "supplierNameRequired": "Please enter the supplier name.",
+      "productLineRequired": "Please select the product line.",
+      "quantityRequired": "Please enter the quantity.",
+      "unitPriceRequired": "Please enter the unit price.",
+      "totalValueRequired": "Please enter the total value.",
+      "deliveryRequired": "Please enter the delivery schedule.",
+      "warrantyRequired": "Please enter the warranty details.",
+      "termsRequired": "Please accept the purchase terms and agreement."
+    },
+    "email": {
+      "subject": "Purchase Order Confirmation - {po}",
+      "title": "PURCHASE ORDER AND SUPPLIER AGREEMENT",
+      "customerName": "Customer Name",
+      "companyName": "Company Name",
+      "email": "Email",
+      "phone": "Phone",
+      "poNumber": "PO Number",
+      "projectTitle": "Project Title",
+      "supplierName": "Supplier Name",
+      "productLine": "Product Line",
+      "quantity": "Quantity",
+      "unitPrice": "Unit Price",
+      "totalValue": "Total Value",
+      "deliverySchedule": "Delivery Schedule",
+      "warranty": "Warranty",
+      "termsAccepted": "Terms accepted by customer: Yes"
+    },
+    "fields": {
+      "customerName": "Customer name",
+      "companyName": "Company name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "poNumber": "Purchase order number",
+      "projectTitle": "Project title",
+      "supplierName": "Supplier name",
+      "productLine": "Product line",
+      "quantity": "Quantity",
+      "unitPrice": "Unit price",
+      "totalValue": "Total value",
+      "deliverySchedule": "Delivery schedule",
+      "warranty": "Warranty details",
+      "companyNamePlaceholder": "Optional company / organization",
+      "customerNamePlaceholder": "Enter your full name",
+      "phonePlaceholder": "+91 98765 43210",
+      "emailPlaceholder": "you@example.com",
+      "poNumberPlaceholder": "PO-2026-001",
+      "projectTitlePlaceholder": "Residential solar installation",
+      "supplierNamePlaceholder": "Supplier / vendor name",
+      "quantityPlaceholder": "Example: 12 units",
+      "unitPricePlaceholder": "Example: ₹42,000",
+      "totalValuePlaceholder": "Example: ₹5,04,000",
+      "deliverySchedulePlaceholder": "Example: 30-45 days from order confirmation",
+      "warrantyPlaceholder": "Example: 5 years product warranty",
+      "acceptTerms": "I accept the purchase order terms, commercial conditions, and supplier agreement as stated above."
+    },
+    "productLines": [
+      "Solar PV modules",
+      "Inverters and controllers",
+      "Batteries and storage",
+      "Wind turbine equipment",
+      "Mounting and balance of system",
+      "Maintenance and AMC"
+    ]
+  },
+  "warrantyPolicy": {
+    "pageTitle": "Policy Acknowledgement",
+    "badge": "Warranty",
+    "submit": "Accept Policy",
+    "submitting": "Submitting...",
+    "success": "Your policy acknowledgement has been prepared in your email app.",
+    "validation": {
+      "customerNameRequired": "Customer name is required.",
+      "emailInvalid": "Please enter a valid email address.",
+      "phoneMin": "Phone number must be at least 10 digits.",
+      "phoneFormat": "Phone number can contain only digits, spaces, +, (, ), and -.",
+      "projectNameRequired": "Please enter the project name.",
+      "productLineRequired": "Please select the product or service line.",
+      "warrantyStartRequired": "Please enter the warranty start date.",
+      "servicePlanRequired": "Please select the after-sales service plan.",
+      "acceptRequired": "Please confirm that you accept the warranty and service policy terms."
+    },
+    "email": {
+      "subject": "Warranty & After-Sales Policy - {project}",
+      "title": "WARRANTY AND AFTER-SALES SERVICE POLICY",
+      "customerName": "Customer Name",
+      "companyName": "Company Name",
+      "email": "Email",
+      "phone": "Phone",
+      "projectName": "Project Name",
+      "productLine": "Product / Service Line",
+      "warrantyStart": "Warranty Start Date",
+      "servicePlan": "Service Plan",
+      "termsAccepted": "Policy terms acknowledged: Yes"
+    },
+    "fields": {
+      "customerName": "Customer name",
+      "companyName": "Company name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "projectName": "Project name",
+      "productLine": "Product or service line",
+      "warrantyStart": "Warranty start date",
+      "servicePlan": "After-sales service plan",
+      "acceptTerms": "I acknowledge and accept the warranty and after-sales service policy terms as outlined by AeroSun Energy.",
+      "customerNamePlaceholder": "Enter your full name",
+      "companyNamePlaceholder": "Optional company / organization",
+      "emailPlaceholder": "you@example.com",
+      "phonePlaceholder": "+91 98765 43210",
+      "projectNamePlaceholder": "Solar rooftop project",
+      "servicePlanPlaceholder": "Select service plan",
+      "warrantyStartPlaceholder": "Select date"
+    },
+    "servicePlans": [
+      "Basic support",
+      "Annual maintenance contract",
+      "Priority service plan",
+      "Monitoring and support",
+      "Not sure yet"
+    ]
+  },
+  "legalTerms": {
+    "badge": "Legal",
+    "pageTitle": "Terms and Conditions",
+    "intro": "These Terms and Conditions explain how you may use our website and how we handle general information, enquiries, and service discussions related to renewable energy solutions.",
+    "contactPrompt": "For questions about these terms, please use the contact page.",
+    "sections": [
+      {
+        "heading": "1. Acceptance of terms",
+        "content": "By using this website, you agree to follow these Terms and Conditions and any related policies posted on the site. If you do not agree with these terms, please do not use the website or contact us through it."
+      },
+      {
+        "heading": "2. About the information on this website",
+        "content": "AeroSun Energy provides information about renewable energy solutions, including solar, wind, and hybrid systems. This information is intended for general awareness and planning purposes. It does not replace professional engineering judgment, site assessment, local regulations, or formal quotations prepared after review of project requirements."
+      },
+      {
+        "heading": "3. Service enquiries and project discussions",
+        "content": "Any enquiry, consultation request, design discussion, quotation, or project execution remains subject to technical feasibility, site conditions, utility approvals, product availability, commercial terms, and applicable laws. We may request additional information before preparing a project proposal or proceeding with any service engagement."
+      },
+      {
+        "heading": "4. User responsibilities",
+        "content": "Users must ensure that any information submitted through the website is accurate, lawful, and relevant to the enquiry. You agree not to misuse the site, upload harmful content, attempt unauthorized access, or interfere with the website or other users’ experiences."
+      },
+      {
+        "heading": "5. Intellectual property",
+        "content": "All content, branding, text, graphics, layouts, logos, product names, and visual materials used on this website remain the property of AeroSun Energy or their respective owners unless stated otherwise. You may not copy, reproduce, distribute, or use this content without prior written approval."
+      },
+      {
+        "heading": "6. Website availability and accuracy",
+        "content": "We aim to keep the website accessible and up to date, but we do not guarantee that it will always be uninterrupted, error-free, or free from technical issues. Information may change without notice. We encourage users to verify critical details before making decisions based on website content."
+      },
+      {
+        "heading": "7. Limitation of liability",
+        "content": "To the maximum extent permitted by law, AeroSun Energy shall not be liable for any direct, indirect, incidental, consequential, or special damages arising out of or related to website use, service enquiries, or reliance on information provided on the site. We do not guarantee project outcomes, energy production values, or commercial results without a formal agreement and technical review."
+      },
+      {
+        "heading": "8. Links to external websites",
+        "content": "This website may contain links to third-party platforms, government portals, resource websites, or partner websites. We do not control or assume responsibility for these external resources. Accessing them is at your own risk, and you should review their own terms and privacy policies before sharing any information."
+      },
+      {
+        "heading": "9. Changes to these terms",
+        "content": "AeroSun Energy may update these Terms and Conditions from time to time. Any updated version will be posted on this page and will become effective as soon as it is published. Continued use of the website after changes are made means you accept the updated terms."
+      },
+      {
+        "heading": "10. Governing law and contact",
+        "content": "These Terms and Conditions are governed by the laws of India, without regard to conflict-of-law principles. If you have a question about these terms or need clarification, please use the contact details provided on the website so we can assist you directly."
+      }
+    ]
+  },
+  "privacyPolicy": {
+    "badge": "Privacy",
+    "pageTitle": "Privacy Policy",
+    "intro": "This Privacy Policy explains how AeroSun Energy collects, uses, protects, and manages information shared through our website, email communication, and service enquiries.",
+    "termsLink": "Terms and Conditions",
+    "sections": [
+      {
+        "heading": "1. What information we collect",
+        "content": "We collect information that you choose to share with us, such as your name, phone number, email address, business or project details, and your questions about solar, wind, or hybrid energy systems. We may also collect technical information about how the website is used, such as browser type, device information, pages visited, and general location data when needed for analytics and security."
+      },
+      {
+        "heading": "2. How we use your information",
+        "content": "We use your information to respond to your inquiries, prepare quotations, understand your energy requirements, contact you about potential solutions, improve customer service, and maintain the security and performance of our website. We may also use your information to comply with applicable legal, tax, and regulatory obligations."
+      },
+      {
+        "heading": "3. Cookies and website analytics",
+        "content": "Our website uses cookies and similar technologies to remember user settings, improve website performance, support essential functionality, and understand how visitors use our site. Some cookies are necessary for the website to work properly. Optional cookies may be used for analytics and improvement purposes, and you can manage them through the cookie banner or browser settings."
+      },
+      {
+        "heading": "4. Who we share information with",
+        "content": "We do not sell your personal information. We may share information with trusted service providers who help us operate the website, send emails, support customer communication, or manage technical services. These parties are expected to handle information responsibly and use it only for the services they provide to AeroSun Energy."
+      },
+      {
+        "heading": "5. Data retention and deletion",
+        "content": "We keep personal information only for as long as needed to serve the purpose for which it was collected, meet legal obligations, resolve disputes, and maintain business records. If you ask us to delete your personal data, we will review the request and delete it where legally permitted and practically feasible."
+      },
+      {
+        "heading": "6. How we protect your data",
+        "content": "We use reasonable technical, administrative, and organizational safeguards to protect personal information from unauthorized access, loss, misuse, or disclosure. However, no online system is completely risk-free, and we cannot guarantee absolute security of information transmitted over the internet."
+      },
+      {
+        "heading": "7. Your rights",
+        "content": "Depending on the applicable law, you may have rights to access, correct, update, restrict, or delete your personal information. You may also object to some uses of your information and withdraw consent for optional cookies or other non-essential processing where consent is required. If you want to exercise any of these rights, please contact us using the details below."
+      },
+      {
+        "heading": "8. Third-party links",
+        "content": "Our website may include links to external websites such as government portals, renewable energy resources, or partner platforms. We are not responsible for the privacy practices or content of these third-party websites. Please review their policies before sharing any information with them."
+      },
+      {
+        "heading": "9. Changes to this policy",
+        "content": "We may update this Privacy Policy from time to time to reflect changes in our business, legal requirements, or how we operate the website. Any changes will be posted on this page with a revised effective date. Continued use of the website after changes are posted means that you accept the updated version."
+      },
+      {
+        "heading": "10. Contact us",
+        "content": "If you have any questions about this Privacy Policy, your personal information, or how we handle cookies, please use the contact details available on our contact page or email us through the official contact information listed on the website."
+      }
+    ]
   },
   "savoniusRotor": {
     "title": "Savonius Rotor",
@@ -683,5 +1211,441 @@
       "sellingMax": "Selling price cannot exceed ₹2,00,000",
       "sellingGreaterThanCost": "Selling price should be greater than or equal to installation cost"
     }
+  },
+  "installationChecklist": {
+    "badge": "Installation checklist",
+    "pageTitle": "Installation Checklist",
+    "intro": "Use this checklist to verify site readiness, installation compliance, safety checks, and handover readiness before project completion.",
+    "submit": "Submit Checklist",
+    "submitting": "Submitting...",
+    "success": "Your installation checklist has been prepared in your email app.",
+    "validation": {
+      "customerNameRequired": "Customer name is required.",
+      "emailInvalid": "Please enter a valid email address.",
+      "phoneMin": "Phone number must be at least 10 digits.",
+      "phoneFormat": "Phone number can contain only digits, spaces, +, (, ), and -.",
+      "projectNameRequired": "Please enter the project name.",
+      "siteLocationRequired": "Please enter the site location.",
+      "installationDateRequired": "Please enter the installation date.",
+      "statusRequired": "Please select the installation status.",
+      "safetyRequired": "Please confirm that the safety checklist is complete.",
+      "commissioningRequired": "Please confirm that commissioning checks are completed.",
+      "notesRequired": "Please add a few notes for the installation team."
+    },
+    "email": {
+      "subject": "Installation Checklist - {project}",
+      "title": "INSTALLATION CHECKLIST",
+      "customerName": "Customer Name",
+      "companyName": "Company Name",
+      "email": "Email",
+      "phone": "Phone",
+      "projectName": "Project Name",
+      "siteLocation": "Site Location",
+      "installationDate": "Installation Date",
+      "status": "Checklist Status",
+      "safetyCheck": "Safety checklist complete",
+      "commissioningCheck": "Commissioning checks complete",
+      "notes": "Notes"
+    },
+    "fields": {
+      "customerName": "Customer name",
+      "customerNamePlaceholder": "Enter your full name",
+      "companyName": "Company name",
+      "companyNamePlaceholder": "Optional company / organization",
+      "email": "Email address",
+      "emailPlaceholder": "you@example.com",
+      "phone": "Phone number",
+      "phonePlaceholder": "+91 98765 43210",
+      "projectName": "Project name",
+      "projectNamePlaceholder": "Solar rooftop project",
+      "siteLocation": "Site location",
+      "siteLocationPlaceholder": "Project site or address",
+      "installationDate": "Installation date",
+      "installationDatePlaceholder": "Select date",
+      "checklistStatus": "Installation status",
+      "checklistStatusPlaceholder": "Select status",
+      "safetyCheck": "Safety checklist complete",
+      "commissioningCheck": "Commissioning checks complete",
+      "notes": "Installation notes",
+      "notesPlaceholder": "Add project notes, access details, or completion remarks."
+    },
+    "statusOptions": [
+      "Ready for installation",
+      "Installation in progress",
+      "Installation completed",
+      "Pending final inspection",
+      "Handover ready"
+    ],
+    "form": {
+      "badge": "Site readiness",
+      "title": "Installation checklist"
+    },
+    "sections": {
+      "preInstallation": {
+        "title": "Pre-installation checks",
+        "items": [
+          "Verify customer approval, project scope, and final site access details.",
+          "Confirm equipment delivery, mounting plan, and safety clearance before mobilization.",
+          "Check panel and inverter quantity, labels, cable routing, and required approvals."
+        ]
+      },
+      "installation": {
+        "title": "Installation checklist",
+        "items": [
+          "Foundation, mounting rails, and structure alignment validated before system placement.",
+          "All panels, inverters, and balance-of-system equipment installed as per approved design.",
+          "Cable routing, earthing, protection devices, and enclosure readiness checked on site."
+        ]
+      },
+      "testing": {
+        "title": "Testing and commissioning",
+        "items": [
+          "Electrical continuity, polarity checks, insulation resistance, and protective tests completed.",
+          "System startup, inverter functionality, and live performance verified by qualified personnel.",
+          "Safety interlocks, grid synchronization, and monitoring configuration validated."
+        ]
+      },
+      "handover": {
+        "title": "Handover and documentation",
+        "items": [
+          "Operation manual, warranty details, and customer sign-off provided at handover.",
+          "Maintenance schedule, monitoring access, and emergency contacts shared with the customer.",
+          "Final project records saved for service, support, and future reference."
+        ]
+      }
+    },
+    "notProvided": "Not provided",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "invoiceReceipt": {
+    "badge": "Invoice receipt",
+    "pageTitle": "Invoice & Receipt",
+    "intro": "Capture invoice and payment acknowledgement details for customer billing, receipt confirmation, and internal finance tracking.",
+    "submit": "Send Receipt",
+    "submitting": "Sending...",
+    "success": "Your invoice receipt details have been prepared in your email app.",
+    "validation": {
+      "customerNameRequired": "Customer name is required.",
+      "emailInvalid": "Please enter a valid email address.",
+      "phoneMin": "Phone number must be at least 10 digits.",
+      "phoneFormat": "Phone number can contain only digits, spaces, +, (, ), and -.",
+      "invoiceNumberRequired": "Please enter the invoice number.",
+      "projectNameRequired": "Please enter the project name.",
+      "invoiceDateRequired": "Please enter the invoice date.",
+      "amountRequired": "Please enter the invoice amount.",
+      "paymentModeRequired": "Please select the payment mode.",
+      "receiptNoteRequired": "Please add a short receipt note.",
+      "paymentReceivedRequired": "Please confirm that the payment has been received."
+    },
+    "email": {
+      "subject": "Invoice Receipt - {invoice}",
+      "title": "INVOICE AND RECEIPT DETAILS",
+      "customerName": "Customer Name",
+      "companyName": "Company Name",
+      "email": "Email",
+      "phone": "Phone",
+      "invoiceNumber": "Invoice Number",
+      "projectName": "Project Name",
+      "invoiceDate": "Invoice Date",
+      "amount": "Amount",
+      "paymentMode": "Payment Mode",
+      "paymentReceived": "Payment Received",
+      "receiptNote": "Receipt Note"
+    },
+    "fields": {
+      "customerName": "Customer name",
+      "customerNamePlaceholder": "Enter your full name",
+      "companyName": "Company name",
+      "companyNamePlaceholder": "Optional company / organization",
+      "email": "Email address",
+      "emailPlaceholder": "you@example.com",
+      "phone": "Phone number",
+      "phonePlaceholder": "+91 98765 43210",
+      "invoiceNumber": "Invoice number",
+      "invoiceNumberPlaceholder": "INV-2026-001",
+      "projectName": "Project name",
+      "projectNamePlaceholder": "Solar rooftop project",
+      "invoiceDate": "Invoice date",
+      "invoiceDatePlaceholder": "Select date",
+      "amount": "Amount",
+      "amountPlaceholder": "₹ 0",
+      "paymentMode": "Payment mode",
+      "paymentModePlaceholder": "Select payment mode",
+      "receiptNote": "Receipt note",
+      "receiptNotePlaceholder": "Add the payment acknowledgement or receipt note.",
+      "paymentReceived": "I confirm that payment has been received."
+    },
+    "paymentModes": [
+      "Bank transfer",
+      "UPI",
+      "Cash",
+      "Cheque",
+      "Credit or debit card",
+      "Other"
+    ],
+    "notProvided": "Not provided",
+    "yes": "Yes",
+    "no": "No",
+    "sections": {
+      "summary": {
+        "title": "Customer billing summary",
+        "content": "This receipt confirms the invoice amount, customer information, payment mode, and project reference for the installed or scheduled renewable energy system."
+      },
+      "paymentBreakdown": {
+        "title": "Billing checklist",
+        "items": [
+          "Invoice amount must match the approved project cost and service scope.",
+          "Supporting evidence should be attached before final payment confirmation.",
+          "Any taxes, adjustments, or special pricing should be clearly noted in the receipt."
+        ]
+      },
+      "receipt": {
+        "title": "Receipt confirmation",
+        "content": "A signed or acknowledged receipt helps maintain customer clarity and supports proper records for service support and compliance documentation."
+      },
+      "support": {
+        "title": "Customer support",
+        "content": "If the amount, mode, or project reference needs to be revised, please contact AeroSun Energy support before final financial closure."
+      }
+    },
+    "form": {
+      "badge": "Finance record",
+      "title": "Invoice receipt form"
+    }
+  },
+  "quotationTemplate": {
+    "badge": "Quotation",
+    "pageTitle": "Standard Quotation Template",
+    "header": {
+      "no": "No.",
+      "date": "Date",
+      "validTill": "Valid Till",
+      "defaultDate": "DD-MM-YYYY",
+      "reference": "AESP/QTN/2025/001"
+    },
+    "validation": {
+      "customerNameRequired": "Customer name is required.",
+      "emailInvalid": "Please enter a valid email address.",
+      "phoneMin": "Phone number must be at least 10 digits.",
+      "phoneFormat": "Phone number can contain only digits, spaces, +, (, ), and -.",
+      "projectTypeRequired": "Please select a project type.",
+      "siteLocationRequired": "Please enter the site location.",
+      "systemCapacityRequired": "Please enter the system capacity.",
+      "estimatedBudgetRequired": "Please select an estimated budget.",
+      "scopeRequired": "Please describe the quotation scope in a little more detail.",
+      "termsRequired": "Please accept the quotation terms."
+    },
+    "email": {
+      "subject": "Standard Quotation Request - {name}",
+      "title": "STANDARD QUOTATION REQUEST",
+      "customerName": "Customer Name",
+      "companyName": "Company Name",
+      "email": "Email",
+      "phone": "Phone",
+      "projectType": "Project Type",
+      "siteLocation": "Site Location",
+      "systemCapacity": "System Capacity",
+      "estimatedBudget": "Estimated Budget",
+      "scope": "Scope / Requirement",
+      "termsAccepted": "Terms Accepted"
+    },
+    "fields": {
+      "companyName": "Company Name",
+      "companyNamePlaceholder": "Your company / organization",
+      "customerName": "Customer Name",
+      "customerNamePlaceholder": "Customer full name",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+91 98765 43210",
+      "projectType": "Project Type",
+      "siteLocation": "Site Address",
+      "siteLocationPlaceholder": "Site address",
+      "systemCapacity": "System Capacity",
+      "systemCapacityPlaceholder": "Example: 5 kW / 15 kW",
+      "estimatedBudget": "Estimated Budget",
+      "estimatedBudgetPlaceholder": "Select budget range",
+      "scope": "Scope / Requirement",
+      "scopePlaceholder": "Describe your project scope and requirements",
+      "terms": "I accept the above quotation and agree to proceed under the stated terms.",
+      "signature": "Signature",
+      "signaturePlaceholder": "Customer signature",
+      "date": "Date",
+      "datePlaceholder": "DD-MM-YYYY",
+      "place": "Place",
+      "placePlaceholder": "Place"
+    },
+    "sections": {
+      "companyDetails": "Company Details",
+      "customerDetails": "Customer Details",
+      "projectDetails": "Project Details",
+      "scopeOfSupply": "1. Scope of Supply and Work",
+      "commercialSummary": "2. Commercial Summary",
+      "paymentTerms": "3. Payment Terms",
+      "termsAndConditions": "4. Terms and Conditions",
+      "acceptance": "5. Acceptance"
+    },
+    "table": {
+      "sNo": "S. No.",
+      "description": "Description",
+      "specification": "Specification / Brand (Tentative)",
+      "quantity": "Quantity",
+      "unit": "Unit",
+      "unitPrice": "Unit Price (₹)",
+      "amount": "Amount (₹)",
+      "totalExWork": "Total Ex-Work Price",
+      "supplyInstallation": "Total Supply and Installation Charges",
+      "subTotal": "Sub-Total (A)",
+      "gst": "GST @ ___ % (B)",
+      "totalProjectCost": "Total Project Cost (A + B)",
+      "governmentSubsidy": "Less: Government Subsidy (if applicable)",
+      "specialDiscount": "Less: Special Discount (if any)",
+      "grandTotal": "Grand Total (Customer Payable)",
+      "milestone": "Milestone",
+      "percentage": "Percentage",
+      "amountValue": "Amount (₹)",
+      "total": "Total"
+    },
+    "projectTypeOptions": [
+      "Rooftop Solar",
+      "Ground-Mounted Solar",
+      "Wind Energy",
+      "Hybrid System",
+      "Battery Storage",
+      "Other"
+    ],
+    "termsList": [
+      "This quotation is valid for 30 days from the date of issue.",
+      "Prices are subject to change based on final site survey and system design.",
+      "Government subsidy is subject to eligibility and approval from the concerned authorities.",
+      "Customer to provide necessary approvals, access, and electrical connection as required.",
+      "Warranty: As per manufacturer's standard warranty terms.",
+      "Any additional work not mentioned in this quotation will be charged separately.",
+      "This quotation is subject to our standard terms and conditions."
+    ],
+    "submit": "Submit Quotation",
+    "submitting": "Sending...",
+    "success": "Your quotation request has been prepared in your email app.",
+    "acceptanceText": "We accept the above quotation and agree to the terms and conditions.",
+    "notProvided": "Not provided"
+  },
+  "siteSurvey": {
+    "badge": "Site Survey",
+    "pageTitle": "Site Survey & Electricity-Load Assessment Form",
+    "headerNote": "Accurate assessment",
+    "headerSubtitle": "For the right solution",
+    "submit": "Submit Assessment",
+    "submitting": "Submitting...",
+    "success": "Your survey request has been prepared in your email app.",
+    "validation": {
+      "customerNameRequired": "Customer name is required.",
+      "emailInvalid": "Please enter a valid email address.",
+      "phoneMin": "Phone number must be at least 10 digits.",
+      "phoneFormat": "Phone number can contain only digits, spaces, +, (, ), and -.",
+      "propertyTypeRequired": "Please select the property type.",
+      "siteAddressRequired": "Please enter the site address.",
+      "cityRequired": "Please enter the city.",
+      "roofTypeRequired": "Please select the roof type.",
+      "availableAreaRequired": "Please enter the available area in sq ft.",
+      "avgMonthlyUnitsRequired": "Please enter monthly electricity usage.",
+      "peakLoadKwRequired": "Please enter the peak load in kW.",
+      "backupPriorityRequired": "Please select the backup priority.",
+      "equipmentLoadsRequired": "Please describe the main equipment and loads.",
+      "timelineRequired": "Please select an expected timeline.",
+      "notesRequired": "Please add a few notes for the survey team."
+    },
+    "email": {
+      "subject": "Site Survey & Load Assessment - {name}",
+      "customerName": "Customer Name",
+      "email": "Email",
+      "phone": "Phone",
+      "propertyType": "Property Type",
+      "siteAddress": "Site Address",
+      "city": "City",
+      "roofType": "Roof Type",
+      "availableArea": "Available Area",
+      "avgMonthlyUnits": "Average Monthly Units",
+      "peakLoadKw": "Peak Load",
+      "backupPriority": "Backup Priority",
+      "equipmentLoads": "Equipment / Loads",
+      "timeline": "Expected Timeline",
+      "notes": "Notes"
+    },
+    "fields": {
+      "customerName": "Name*",
+      "customerNamePlaceholder": "Enter your full name",
+      "phone": "Phone Number*",
+      "phonePlaceholder": "+91 98765 43210",
+      "email": "Email ID*",
+      "emailPlaceholder": "you@example.com",
+      "city": "City*",
+      "cityPlaceholder": "City / district",
+      "siteAddress": "Address*",
+      "siteAddressPlaceholder": "Plot / building / street address",
+      "propertyType": "Type of Project",
+      "roofType": "Roof Type",
+      "roofTypePlaceholder": "Select roof type",
+      "availableArea": "Available Area*",
+      "availableAreaPlaceholder": "sq ft",
+      "avgMonthlyUnits": "Avg. Monthly Units*",
+      "avgMonthlyUnitsPlaceholder": "units",
+      "peakLoadKw": "Peak Load (kW)*",
+      "peakLoadKwPlaceholder": "kW",
+      "backupPriority": "Backup Priority",
+      "equipmentLoads": "Major Equipment / Load Details",
+      "equipmentLoadsPlaceholder": "Example: 3 ACs, 20 LED lights, 3 HP water pump...",
+      "timeline": "Preferred Timeline",
+      "notes": "Remarks / Photos",
+      "notesPlaceholder": "Add notes for the survey team, shading observations, or technical constraints."
+    },
+    "sections": {
+      "customerInformation": "Customer Information",
+      "projectDetails": "Project / Enquiry Details",
+      "siteLocation": "Site Location & Accessibility",
+      "siteConditions": "Site Conditions",
+      "solarAssessment": "Solar Resource Assessment",
+      "existingElectrical": "Existing Electrical Connection",
+      "loadAssessment": "Detailed Electricity Load Assessment",
+      "specialRequirements": "Special Requirements",
+      "surveyRecommendation": "Survey Findings & Recommendation",
+      "customerAcknowledgement": "Customer Acknowledgement"
+    },
+    "projectTypes": [
+      "Residential",
+      "Commercial",
+      "Industrial",
+      "Agricultural",
+      "Domestic",
+      "Other"
+    ],
+    "roofTypes": [
+      "Concrete roof",
+      "Metal sheet roof",
+      "Ground mount",
+      "Open land / car park",
+      "Rooftop with shading"
+    ],
+    "timelines": [
+      "Immediately",
+      "Within 1 month",
+      "1-3 months",
+      "3-6 months",
+      "Planning phase"
+    ],
+    "backupPriorities": [
+      "Essential loads only",
+      "Partial backup",
+      "Full backup for all loads",
+      "Export to grid"
+    ],
+    "specialRequirements": [
+      "Battery Backup Required",
+      "EV Charging",
+      "Solar Water Pump",
+      "Hybrid System",
+      "Power Quality Issues",
+      "Other"
+    ]
   }
 }

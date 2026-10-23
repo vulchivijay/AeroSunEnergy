@@ -4,32 +4,27 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
+import { useLocale } from '@/lib/LocaleContext'
 
-const enquirySchema = z.object({
-  customerName: z.string().trim().min(2, 'Customer name is required.'),
-  phone: z
-    .string()
-    .trim()
-    .min(10, 'Phone number must be at least 10 digits.')
-    .regex(/^[0-9+()\-\s]+$/, 'Phone number can contain only digits, spaces, +, (, ), and -.'),
-  email: z.string().trim().email('Please enter a valid email address.'),
-  address: z.string().trim().min(3, 'Please enter the address or site location.'),
-  city: z.string().trim().min(2, 'Please enter the city.'),
-  state: z.string().trim().min(2, 'Please enter the state.'),
-  serviceType: z.string().trim().min(1, 'Please select an enquiry type.'),
-  propertyType: z.string().trim().min(2, 'Please select the property type.'),
-  availableArea: z.string().trim().min(2, 'Please enter the available roof or land area.'),
-  roofType: z.string().trim().min(2, 'Please enter the roof type.'),
-  averageBill: z.string().trim().min(1, 'Please enter the average monthly bill.'),
-  monthlyConsumption: z.string().trim().min(1, 'Please enter the average monthly consumption.'),
-  connectionType: z.string().trim().min(2, 'Please select the electricity connection type.'),
-  expectedSystemCapacity: z.string().trim().min(1, 'Please enter the expected system capacity.'),
-  installationTimeline: z.string().trim().min(1, 'Please select the preferred installation timeline.'),
-  budgetRange: z.string().trim().min(1, 'Please select the budget range.'),
-  projectDetails: z.string().trim().min(20, 'Please provide a few more details about your project requirement.'),
-})
-
-export type EnquiryFormValues = z.infer<typeof enquirySchema>
+export type EnquiryFormValues = {
+  customerName: string
+  phone: string
+  email: string
+  address: string
+  city: string
+  state: string
+  serviceType: string
+  propertyType: string
+  availableArea: string
+  roofType: string
+  averageBill: string
+  monthlyConsumption: string
+  connectionType: string
+  expectedSystemCapacity: string
+  installationTimeline: string
+  budgetRange: string
+  projectDetails: string
+}
 
 export const defaultEnquiryValues: EnquiryFormValues = {
   customerName: '',
@@ -52,6 +47,33 @@ export const defaultEnquiryValues: EnquiryFormValues = {
 }
 
 export function CustomerEnquiryForm() {
+  const { t } = useLocale()
+  const formText = t.customerEnquiry as any
+
+  const enquirySchema = z.object({
+    customerName: z.string().trim().min(2, formText.validation.customerNameRequired),
+    phone: z
+      .string()
+      .trim()
+      .min(10, formText.validation.phoneMin)
+      .regex(/^[0-9+()\-\s]+$/, formText.validation.phoneFormat),
+    email: z.string().trim().email(formText.validation.emailInvalid),
+    address: z.string().trim().min(3, formText.validation.addressRequired),
+    city: z.string().trim().min(2, formText.validation.cityRequired),
+    state: z.string().trim().min(2, formText.validation.stateRequired),
+    serviceType: z.string().trim().min(1, formText.validation.serviceTypeRequired),
+    propertyType: z.string().trim().min(2, formText.validation.propertyTypeRequired),
+    availableArea: z.string().trim().min(2, formText.validation.availableAreaRequired),
+    roofType: z.string().trim().min(2, formText.validation.roofTypeRequired),
+    averageBill: z.string().trim().min(1, formText.validation.averageBillRequired),
+    monthlyConsumption: z.string().trim().min(1, formText.validation.monthlyConsumptionRequired),
+    connectionType: z.string().trim().min(2, formText.validation.connectionTypeRequired),
+    expectedSystemCapacity: z.string().trim().min(1, formText.validation.expectedSystemCapacityRequired),
+    installationTimeline: z.string().trim().min(1, formText.validation.installationTimelineRequired),
+    budgetRange: z.string().trim().min(1, formText.validation.budgetRangeRequired),
+    projectDetails: z.string().trim().min(20, formText.validation.projectDetailsRequired),
+  })
+
   const {
     register,
     handleSubmit,
@@ -65,26 +87,26 @@ export function CustomerEnquiryForm() {
   })
 
   const onSubmit = (data: EnquiryFormValues) => {
-    const subject = `Customer Enquiry - ${data.customerName}`
+    const subject = formText.email.subject.replace('{name}', data.customerName)
     const body = [
-      `Customer Name: ${data.customerName}`,
-      `Phone: ${data.phone}`,
-      `Email: ${data.email}`,
-      `Address: ${data.address}`,
-      `City: ${data.city}`,
-      `State: ${data.state}`,
-      `Enquiry Type: ${data.serviceType}`,
-      `Property Type: ${data.propertyType}`,
-      `Available Area: ${data.availableArea}`,
-      `Roof Type: ${data.roofType}`,
-      `Average Monthly Electricity Bill: ${data.averageBill}`,
-      `Average Monthly Consumption: ${data.monthlyConsumption}`,
-      `Connection Type: ${data.connectionType}`,
-      `Expected System Capacity: ${data.expectedSystemCapacity}`,
-      `Installation Timeline: ${data.installationTimeline}`,
-      `Budget Range: ${data.budgetRange}`,
+      `${formText.email.customerName}: ${data.customerName}`,
+      `${formText.email.phone}: ${data.phone}`,
+      `${formText.email.email}: ${data.email}`,
+      `${formText.email.address}: ${data.address}`,
+      `${formText.email.city}: ${data.city}`,
+      `${formText.email.state}: ${data.state}`,
+      `${formText.email.enquiryType}: ${data.serviceType}`,
+      `${formText.email.propertyType}: ${data.propertyType}`,
+      `${formText.email.availableArea}: ${data.availableArea}`,
+      `${formText.email.roofType}: ${data.roofType}`,
+      `${formText.email.averageBill}: ${data.averageBill}`,
+      `${formText.email.monthlyConsumption}: ${data.monthlyConsumption}`,
+      `${formText.email.connectionType}: ${data.connectionType}`,
+      `${formText.email.expectedSystemCapacity}: ${data.expectedSystemCapacity}`,
+      `${formText.email.installationTimeline}: ${data.installationTimeline}`,
+      `${formText.email.budgetRange}: ${data.budgetRange}`,
       '',
-      'Project Details:',
+      `${formText.email.projectDetails}:`,
       data.projectDetails,
     ].join('\n')
 
@@ -104,17 +126,17 @@ export function CustomerEnquiryForm() {
                     1
                   </span>
                   <h2 className="text-lg font-black uppercase tracking-[0.2em] text-sky-800 sm:text-xl">
-                    Customer Details
+                    {formText.customerDetails}
                   </h2>
                 </div>
 
                 <div className="grid gap-4 md:grid-cols-2">
-                  <Field label="Full Name*" name="customerName" placeholder="Enter your full name" register={register} error={errors.customerName} />
-                  <Field label="Phone Number*" name="phone" type="tel" placeholder="+91 98765 43210" register={register} error={errors.phone} />
-                  <Field label="Email ID*" name="email" type="email" placeholder="you@example.com" register={register} error={errors.email} />
-                  <Field label="Address*" name="address" placeholder="Street / local area / city" register={register} error={errors.address} />
-                  <Field label="City*" name="city" placeholder="City name" register={register} error={errors.city} />
-                  <Field label="State*" name="state" placeholder="State" register={register} error={errors.state} />
+                  <Field label={formText.fields.customerName} name="customerName" placeholder={formText.fields.customerNamePlaceholder} register={register} error={errors.customerName} />
+                  <Field label={formText.fields.phone} name="phone" type="tel" placeholder={formText.fields.phonePlaceholder} register={register} error={errors.phone} />
+                  <Field label={formText.fields.email} name="email" type="email" placeholder={formText.fields.emailPlaceholder} register={register} error={errors.email} />
+                  <Field label={formText.fields.address} name="address" placeholder={formText.fields.addressPlaceholder} register={register} error={errors.address} />
+                  <Field label={formText.fields.city} name="city" placeholder={formText.fields.cityPlaceholder} register={register} error={errors.city} />
+                  <Field label={formText.fields.state} name="state" placeholder={formText.fields.statePlaceholder} register={register} error={errors.state} />
                 </div>
               </div>
 
@@ -124,19 +146,14 @@ export function CustomerEnquiryForm() {
                     2
                   </span>
                   <h2 className="text-lg font-black uppercase tracking-[0.2em] text-emerald-800 sm:text-xl">
-                    Enquiry Type
+                    {formText.enquiryType}
                   </h2>
                 </div>
 
                 <div className="grid gap-3 md:grid-cols-2">
-                  <SelectTile label="Rooftop Solar" value="Rooftop Solar" accent="emerald" register={register} />
-                  <SelectTile label="Commercial Solar" value="Commercial Solar" accent="sky" register={register} />
-                  <SelectTile label="Ground-Mounted Solar" value="Ground-Mounted Solar" accent="emerald" register={register} />
-                  <SelectTile label="Wind Energy" value="Wind Energy" accent="blue" register={register} />
-                  <SelectTile label="Solar-Wind Hybrid" value="Solar-Wind Hybrid" accent="violet" register={register} />
-                  <SelectTile label="Battery Storage" value="Battery Storage" accent="amber" register={register} />
-                  <SelectTile label="Solar Water Pumping" value="Solar Water Pumping" accent="emerald" register={register} />
-                  <SelectTile label="Operations & Maintenance" value="Operations & Maintenance" accent="slate" register={register} />
+                  {formText.services.map((service: string) => (
+                    <SelectTile key={service} label={service} value={service} accent={service.includes('Solar') ? 'emerald' : service.includes('Wind') ? 'blue' : service.includes('Hybrid') ? 'violet' : service.includes('Battery') ? 'amber' : service.includes('Operations') ? 'slate' : 'sky'} register={register} />
+                  ))}
                 </div>
 
                 {errors.serviceType && <p className="mt-3 text-xs text-rose-600">{errors.serviceType.message}</p>}
@@ -149,14 +166,14 @@ export function CustomerEnquiryForm() {
                       3
                     </span>
                     <h2 className="text-lg font-black uppercase tracking-[0.2em] text-violet-800 sm:text-xl">
-                      Property / Site
+                      {formText.propertySite}
                     </h2>
                   </div>
 
                   <div className="space-y-4">
-                    <Field label="Property Type*" name="propertyType" placeholder="Residential / Commercial / Industrial" register={register} error={errors.propertyType} />
-                    <Field label="Available Roof / Land Area*" name="availableArea" placeholder="Approx. sq. ft. / acres" register={register} error={errors.availableArea} />
-                    <Field label="Roof Type*" name="roofType" placeholder="RCC / Metal / Tile / Other" register={register} error={errors.roofType} />
+                    <Field label={formText.fields.propertyType} name="propertyType" placeholder={formText.fields.propertyTypePlaceholder} register={register} error={errors.propertyType} />
+                    <Field label={formText.fields.availableArea} name="availableArea" placeholder={formText.fields.availableAreaPlaceholder} register={register} error={errors.availableArea} />
+                    <Field label={formText.fields.roofType} name="roofType" placeholder={formText.fields.roofTypePlaceholder} register={register} error={errors.roofType} />
                   </div>
                 </div>
 
@@ -166,14 +183,14 @@ export function CustomerEnquiryForm() {
                       4
                     </span>
                     <h2 className="text-lg font-black uppercase tracking-[0.2em] text-amber-800 sm:text-xl">
-                      Electricity Usage
+                      {formText.electricityUsage}
                     </h2>
                   </div>
 
                   <div className="space-y-4">
-                    <Field label="Average Monthly Electricity Bill*" name="averageBill" placeholder="₹ 0" register={register} error={errors.averageBill} />
-                    <Field label="Average Monthly Consumption (Units)*" name="monthlyConsumption" placeholder="Example: 640 units" register={register} error={errors.monthlyConsumption} />
-                    <Field label="Connection Type*" name="connectionType" placeholder="Single phase / Three phase" register={register} error={errors.connectionType} />
+                    <Field label={formText.fields.averageBill} name="averageBill" placeholder={formText.fields.averageBillPlaceholder} register={register} error={errors.averageBill} />
+                    <Field label={formText.fields.monthlyConsumption} name="monthlyConsumption" placeholder={formText.fields.monthlyConsumptionPlaceholder} register={register} error={errors.monthlyConsumption} />
+                    <Field label={formText.fields.connectionType} name="connectionType" placeholder={formText.fields.connectionTypePlaceholder} register={register} error={errors.connectionType} />
                   </div>
                 </div>
               </div>
@@ -185,14 +202,14 @@ export function CustomerEnquiryForm() {
                       5
                     </span>
                     <h2 className="text-lg font-black uppercase tracking-[0.2em] text-emerald-800 sm:text-xl">
-                      Requirements
+                      {formText.requirements}
                     </h2>
                   </div>
 
                   <div className="space-y-4">
-                    <Field label="Expected System Capacity (if known)*" name="expectedSystemCapacity" placeholder="Example: 5 kW" register={register} error={errors.expectedSystemCapacity} />
-                    <Field label="Preferred Installation Timeframe*" name="installationTimeline" placeholder="Immediate / 1-3 months / 3-6 months" register={register} error={errors.installationTimeline} />
-                    <Field label="Budget Range*" name="budgetRange" placeholder="Below ₹1 Lakh / ₹1-3 Lakhs" register={register} error={errors.budgetRange} />
+                    <Field label={formText.fields.expectedSystemCapacity} name="expectedSystemCapacity" placeholder={formText.fields.expectedSystemCapacityPlaceholder} register={register} error={errors.expectedSystemCapacity} />
+                    <Field label={formText.fields.installationTimeline} name="installationTimeline" placeholder={formText.fields.installationTimelinePlaceholder} register={register} error={errors.installationTimeline} />
+                    <Field label={formText.fields.budgetRange} name="budgetRange" placeholder={formText.fields.budgetRangePlaceholder} register={register} error={errors.budgetRange} />
                   </div>
                 </div>
 
@@ -202,19 +219,19 @@ export function CustomerEnquiryForm() {
                       6
                     </span>
                     <h2 className="text-lg font-black uppercase tracking-[0.2em] text-sky-800 sm:text-xl">
-                      Project Details
+                      {formText.projectDetails}
                     </h2>
                   </div>
 
                   <div className="md:col-span-2">
                     <label htmlFor="projectDetails" className="mb-2 block text-sm font-semibold text-slate-800">
-                      Requirement details*
+                      {formText.fields.projectRequirements}
                     </label>
                     <textarea
                       id="projectDetails"
                       {...register('projectDetails')}
                       rows={7}
-                      placeholder="Tell us about your expected load, site conditions, backup needs, voltage preference, and any unique project requirements."
+                      placeholder={formText.fields.projectRequirementsPlaceholder}
                       aria-invalid={Boolean(errors.projectDetails)}
                       className="w-full rounded-2xl border border-sky-200 bg-white/90 px-4 py-3 text-sm text-slate-900 shadow-[inset_0_1px_2px_rgba(15,23,42,0.04)] outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
                     />
@@ -229,11 +246,11 @@ export function CustomerEnquiryForm() {
                   disabled={isSubmitting}
                   className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(135deg,#0f172a_0%,#0f766e_100%)] px-6 py-3 text-sm font-black uppercase tracking-[0.18em] text-white shadow-[0_18px_32px_-18px_rgba(15,118,110,0.85)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_24px_38px_-18px_rgba(15,118,110,0.9)] disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {isSubmitting ? 'Submitting...' : 'Send Enquiry'}
+                  {isSubmitting ? formText.submitting : formText.submit}
                 </button>
 
                 {isSubmitSuccessful && (
-                  <p className="text-sm font-semibold text-emerald-700">Your enquiry has been prepared in your email app.</p>
+                  <p className="text-sm font-semibold text-emerald-700">{formText.success}</p>
                 )}
               </div>
             </form>

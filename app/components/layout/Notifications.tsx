@@ -1,15 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-
-const notificationText =
-  'AeroSun Energy Private Limited is committed to providing reliable and sustainable renewable energy solutions through solar, wind, and hybrid energy systems.'
-const notificationBoldText =
-  ' Our business approach focuses on sourcing quality equipment, supporting installation and implementation, '
-const notificationEndText = 
-  'and exploring innovative energy solutions tailored to customer needs. As we grow, we aim to expand our technical capabilities and develop advanced renewable energy solutions that contribute to a cleaner, more sustainable future.'
+import { useLocale } from '@/lib/LocaleContext'
 
 export default function Notifications() {
+  const { t } = useLocale()
+  const notifications = t.notifications
   const [isVisible, setIsVisible] = useState(true)
 
   if (!isVisible) return null
@@ -24,20 +20,20 @@ export default function Notifications() {
           <div className="relative flex items-center justify-between gap-2">
             <div className="flex min-w-0 m-2 flex-1 items-center">
               <span className="inline-flex1 shrink-0 items-center rounded-full border border-emerald-300/40 bg-emerald-300/10 px-2 py-1 text-[9px] font-bold uppercase tracking-[0.22em] text-emerald-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] sm:text-[10px] hidden">
-                AeroSun Update
+                {notifications.badge}
               </span>
 
               <p className="min-w-0 flex-1 text-center text-xs font-light leading-5 tracking-[0.12em] text-slate-100 lg:tracking-[0.16em]">
-                {notificationText}
-                <span className='text-gray-200 italic underline underline-offset-4'>{notificationBoldText}</span>
-                {notificationEndText}
+                {notifications.text}
+                <span className='text-gray-200 italic underline underline-offset-4'>{notifications.bold}</span>
+                {notifications.end}
               </p>
             </div>
 
             <button
               type="button"
               onClick={() => setIsVisible(false)}
-              aria-label="Dismiss notification"
+              aria-label={notifications.dismiss}
               className="cursor inline-flex h-8 w-8 mx-2 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 shadow-sm transition hover:border-emerald-300/60 hover:bg-emerald-400/10 hover:text-white"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden="true">

@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useEffect, useMemo, useState } from 'react'
+import { useLocale } from '@/lib/LocaleContext'
 
 const STORAGE_KEY = 'aerosun_lord_ganesha_modal'
 const MODAL_TTL_MS = 24 * 60 * 60 * 1000
@@ -12,6 +13,8 @@ function getIpStorageKey(ip: string) {
 }
 
 export default function LordGanesha() {
+  const { t } = useLocale()
+  const ganesha = t.ganesha
   const [open, setOpen] = useState(false)
   const [resolvedIp, setResolvedIp] = useState<string | null>(null)
 
@@ -101,7 +104,7 @@ export default function LordGanesha() {
     }
   }
 
-  const title = useMemo(() => 'Lord Ganesha Blessing', [])
+  const title = useMemo(() => ganesha.title, [ganesha.title])
 
   if (!open) return null
 
@@ -111,7 +114,7 @@ export default function LordGanesha() {
 
       <div className="relative z-10 w-full max-w-xl rounded-2xl bg-white p-6 text-gray-900 shadow-[0_25px_80px_rgba(0,0,0,0.25)] dark:bg-gray-800 dark:text-gray-100">
         <button
-          aria-label="Close Lord Ganesha modal"
+          aria-label={ganesha.closeAria}
           className="cursor absolute right-3 top-3 rounded-md p-2 text-gray-600 transition-colors hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
           onClick={dismiss}
         >
@@ -132,7 +135,7 @@ export default function LordGanesha() {
 
           <h2 className="text-3xl font-semibold tracking-tight">{title}</h2>
           <p className="max-w-md text-md leading-6 text-gray-600 dark:text-gray-300">
-            Welcome to AeroSun Energy. May this blessing bring clarity, success, and prosperity to your renewable energy journey.
+            {ganesha.description}
           </p>
 
           <div className="mt-2 flex w-full items-center justify-center gap-1">
@@ -140,9 +143,9 @@ export default function LordGanesha() {
               onClick={dismiss}
               className="cursor rounded-md bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-orange-500"
             >
-              Close
+              {ganesha.close}
             </button>
-            <span className="text-xs text-gray-500 dark:text-gray-400">Auto-closes in 30s</span>
+            <span className="text-xs text-gray-500 dark:text-gray-400">{ganesha.autoClose}</span>
           </div>
         </div>
       </div>
