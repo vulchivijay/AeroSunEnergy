@@ -13,7 +13,7 @@ export default function Logo() {
       title={t.logo.homeTitle}
       aria-label={t.logo.homeAriaLabel}
       data-logo="brand"
-      className="relative flex max-w-full items-center gap-2 font-(--font-logo) sm:gap-3"
+      className="relative flex max-w-full items-center gap-2 font-(--font-logo)"
     >
       <OptimizedImage
         src="/images/logo.png"
@@ -23,10 +23,10 @@ export default function Logo() {
         priority
         loading="eager"
       />
-      <div className="flex min-w-0 flex-col items-start justify-center text-left sm:mb-2">
+      <div className="flex min-w-0 flex-col items-start justify-center text-left">
         <div className="flex items-center justify-start gap-1">
-          <span className={`whitespace-nowrap text-2xl font-bold text-[#20A44A] tracking-wider drop-shadow-xl`}>
-            AeroSun<sup className={'text-black text-[8px]'}>TM</sup>
+          <span className={`relative text-2xl font-bold text-[#20A44A] tracking-wider drop-shadow-xl pr-3`}>
+            AeroSun<sup className={'absolute top-2 right-0 text-black text-[6px]'}>TM</sup>
           </span>
           <span className={`text-2xl font-bold text-[#F59E0B] tracking-wider drop-shadow-xl`}>
             Energy
