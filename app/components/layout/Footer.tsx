@@ -81,6 +81,10 @@ export default function Footer() {
 	const footer = t.footer
 	const navLinks = t.navbar.links
 	const queries = t.navbar.quiries || []
+	const allowedQuickEnquiries = ['/know-eligibility', '/customer-enquiry', '/installation-checklist']
+	const quickEnquiries = queries
+		.filter((item) => allowedQuickEnquiries.includes(item.href))
+		.sort((a, b) => allowedQuickEnquiries.indexOf(a.href) - allowedQuickEnquiries.indexOf(b.href))
 	const shouldDisableWindAndHybrid = process.env.NODE_ENV === 'production'
 	const visibleNavLinks = shouldDisableWindAndHybrid
 		? navLinks.map((link) => ({
@@ -183,7 +187,7 @@ export default function Footer() {
 							</div>
 						</div>
 
-						<div className="rounded-[30px] border border-slate-200 bg-white/70 p-5 shadow-[0_18px_40px_-32px_rgba(15,23,42,0.5)] backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/50">
+						<div className="rounded-[30px] bg-white/70 p-5 dark:border-slate-700 dark:bg-slate-900/50">
 							<h3 className="mb-5 flex items-center gap-2 text-lg font-bold text-[#18251F] dark:text-white">
 								<span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-lime-500 text-white shadow-lg shadow-emerald-500/20">
 									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4">
@@ -217,7 +221,7 @@ export default function Footer() {
 							</ul>
 						</div>
 
-						<div className="rounded-[30px] border border-slate-200 bg-white/70 p-5 shadow-[0_18px_40px_-32px_rgba(15,23,42,0.5)] backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/50">
+						<div className="rounded-[30px] bg-white/70 p-5 dark:border-slate-700 dark:bg-slate-900/50">
 							<h3 className="mb-5 flex items-center gap-2 text-lg font-bold text-[#18251F] dark:text-white">
 								<span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/20">
 									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4">
@@ -227,7 +231,7 @@ export default function Footer() {
 								{footer.quickEnquiries}
 							</h3>
 							<ul className="space-y-3">
-								{queries.map((item) => (
+								{quickEnquiries.map((item) => (
 									<li key={item.href}>
 										{(item as { disabled?: boolean }).disabled ? (
 											<span className="relative inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-400 dark:border-slate-700 dark:bg-slate-800/60 dark:text-slate-500">
@@ -251,7 +255,7 @@ export default function Footer() {
 							</ul>
 						</div>
 
-						<div className="rounded-[30px] border border-slate-200 bg-slate-900 p-5 text-white shadow-[0_20px_50px_-30px_rgba(15,23,42,0.8)] dark:border-slate-700 dark:bg-slate-900/80">
+						<div className="rounded-[30px] bg-slate-900 p-5 text-white dark:border-slate-700 dark:bg-slate-900/80">
 							<h3 className="mb-5 flex items-center gap-2 text-lg font-bold text-white">
 								<span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-rose-500 text-white shadow-lg shadow-amber-500/20">
 									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4">
@@ -279,14 +283,14 @@ export default function Footer() {
 								))}
 							</div>
 
-							<div className="rounded-3xl border border-white/10 bg-linear-to-br from-white/10 to-emerald-500/5 py-12 shadow-inner shadow-white/5">
+							<div className="py-12">
 								<div className="inline-flex w-full items-center justify-center">
 									<OptimizedImage
 										src="/images/qr-code.png"
 										alt="AeroSun Energy QR Code - Scan to visit our website"
 										width={170}
 										height={170}
-										className="h-auto w-36 rounded-2xl"
+										className="h-36 w-36 rounded-2xl"
 										title="AeroSun Energy Contact QR Code"
 										itemProp="image"
 										data-seo="qr-code"

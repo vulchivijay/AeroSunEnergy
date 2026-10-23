@@ -447,6 +447,79 @@ export default function SolarEnergyPage() {
           </div>
         </div>
       </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mb-8 max-w-3xl">
+          <SectionEyebrow>How We Measure</SectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900">How household solar consumption and grid surplus are measured</h2>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)]">
+            <p className="text-base leading-8 text-slate-700">
+              For a grid-connected house, the most accurate starting point is the recent electricity bill. We measure monthly consumption in <span className="font-bold text-slate-900">units or kWh</span>, then compare it with the estimated solar generation from the planned rooftop system.
+            </p>
+
+            <div className="mt-6 space-y-5">
+              <div className="rounded-3xl border border-emerald-200 bg-emerald-50 p-4">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-700">1. Measure house consumption</p>
+                <p className="mt-2 text-base leading-7 text-slate-700">
+                  We use the last 6–12 months of DISCOM bills to calculate average monthly units consumed. This includes daytime and nighttime usage, which helps us size the rooftop system correctly.
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-sky-200 bg-sky-50 p-4">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-sky-700">2. Estimate solar generation</p>
+                <p className="mt-2 text-base leading-7 text-slate-700">
+                  A rooftop solar system is estimated using system size, sunlight hours, panel efficiency, and site conditions. A simple formula is:<br />
+                  <span className="font-bold text-slate-900">Monthly generation ≈ kWp × sun hours × 30 × performance factor</span>
+                </p>
+                <p className="mt-2 text-sm text-slate-600">
+                  Example: 4 kWp × 5 hours × 30 days × 0.8 ≈ 480 units per month.
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-violet-200 bg-violet-50 p-4">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-violet-700">3. Measure grid import and export</p>
+                <p className="mt-2 text-base leading-7 text-slate-700">
+                  In a net-metered home, the grid import equals the electricity used after self-consumption, while the grid surplus is the excess generation that is exported back to the utility after local demand is met.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-5">
+            <div className="rounded-4xl border border-slate-200 bg-slate-950 p-5 shadow-[0_28px_70px_-36px_rgba(15,23,42,0.9)]">
+              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-200">Example</p>
+              <h3 className="mt-2 text-xl font-bold text-white">Household solar balance</h3>
+              <div className="mt-5 space-y-4 text-sm leading-7 text-slate-200">
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                  <span className="font-bold text-white">Monthly house consumption:</span> 600 units
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                  <span className="font-bold text-white">Solar generation:</span> 480 units
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                  <span className="font-bold text-white">Self-consumed solar:</span> 300 units
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                  <span className="font-bold text-white">Grid surplus exported:</span> 180 units
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                  <span className="font-bold text-white">Net grid import:</span> 300 units
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-4xl border border-amber-200 bg-amber-50 p-5">
+              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-700">Key point</p>
+              <p className="mt-2 text-base leading-7 text-slate-700">
+                We design the solar array to lower the house’s grid import first, and then measure surplus export only after daytime consumption has been served.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
