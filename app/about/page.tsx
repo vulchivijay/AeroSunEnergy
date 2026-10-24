@@ -245,8 +245,8 @@ export default function AboutPage() {
           transition={{ duration: 0.45 }}
           className="overflow-hidden rounded-[34px] border border-emerald-200 bg-linear-to-br from-[#f0fdf4] via-white to-[#ebf8ff] shadow-[0_32px_90px_-40px_rgba(16,185,129,0.45)] dark:border-slate-800 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950"
         >
-          <div className="grid gap-8 p-6 lg:grid-cols-[1.12fr_0.88fr] lg:p-10">
-            <div className="space-y-6">
+          <div className="grid gap-4 p-6 lg:grid-cols-[1.12fr_0.88fr] lg:p-10">
+            <div className="space-y-4">
               <div className="inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-3 py-1 text-[11px] font-black uppercase tracking-[0.24em] text-emerald-700 shadow-sm dark:border-emerald-800 dark:bg-slate-900/80 dark:text-emerald-300">
                 Company Profile
               </div>
@@ -274,6 +274,19 @@ export default function AboutPage() {
 
               <p className="max-w-2xl text-base leading-8 text-slate-700 dark:text-slate-300">
                 AeroSun Energy Private Limited is an Indian renewable-energy company established with the vision of supporting a cleaner, more sustainable and energy-efficient future. Based in Tirupati, Andhra Pradesh, the company aims to develop renewable-energy solutions for residential, agricultural, commercial and industrial customers.
+              </p>
+
+              <p className="max-w-2xl text-base leading-8 text-slate-700 dark:text-slate-300">
+                <b className="rounded-full bg-emerald-100 px-1.5 py-0.5 font-black text-emerald-700 shadow-sm ring-1 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-800">Vulchi Vijaya Kumar</b> is the Founder and Visionary Leader of AeroSun Energy Private Limited, a renewable energy company based in Tirupati, Andhra Pradesh, India. <b className="rounded-full bg-sky-100 px-1.5 py-0.5 font-extrabold text-sky-700 shadow-sm ring-1 ring-sky-200 dark:bg-sky-950/40 dark:text-sky-300 dark:ring-sky-800">With 14 years of professional experience in the IT industry across organisations including HCLTech, Freshworks, KRDS, and other technology companies</b>, he brings a strong technology-oriented perspective and a commitment to innovation to his entrepreneurial journey.
+              </p>
+              <p className="max-w-2xl text-base leading-8 text-slate-700 dark:text-slate-300">
+                His interests span renewable energy, technological innovation, and the development of practical energy solutions for residential, agricultural, commercial, and industrial applications. <b className="rounded-full bg-violet-100 px-1.5 py-0.5 font-extrabold text-violet-700 shadow-sm ring-1 ring-violet-200 dark:bg-violet-950/40 dark:text-violet-300 dark:ring-violet-800">Through AeroSun Energy, he aims to support the adoption of solar power, wind energy, and integrated renewable energy systems that contribute to a cleaner and more sustainable future</b>.
+              </p>
+              <p className="max-w-2xl text-base leading-8 text-slate-700 dark:text-slate-300">
+                Combining his professional exposure to software technologies with an entrepreneurial vision, he seeks to encourage the use of intelligent energy monitoring, efficient power management, and innovative renewable energy solutions.
+              </p>
+              <p className="max-w-2xl text-base leading-8 text-slate-700 dark:text-slate-300">
+                Under his leadership, AeroSun Energy aspires to make clean energy solutions more accessible, promote environmental responsibility, and contribute to India&apos;s transition towards sustainable energy.
               </p>
 
               <div className="grid gap-4 sm:grid-cols-3">
@@ -316,10 +329,11 @@ export default function AboutPage() {
                   <p className="text-sm leading-7 text-slate-700 dark:text-slate-300">
                     Through AeroSun Energy, the company aims to pursue opportunities in solar energy, wind energy and hybrid renewable-energy systems while building a customer-focused organisation grounded in quality, reliability, responsible business practices and continuous improvement.
                   </p>
+                  
                 </div>
               </div>
             </div>
-          </div>
+          </div>         
         </motion.div>
       </section>
 

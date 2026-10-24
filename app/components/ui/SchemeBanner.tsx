@@ -133,7 +133,7 @@ export default function SchemeBanner() {
 
               <div className="mt-5 rounded-2xl border border-emerald-300/30 bg-emerald-400/10 p-4">
                 <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-100">Offer Window</div>
-                <div className="mt-2 text-lg font-semibold text-white">Limited duration – apply before the current subsidy cycle closes.</div>
+                <div className="mt-2 text-lg text-white">Limited duration – apply before the current subsidy cycle closes.</div>
               </div>
             </div>
           </div>
