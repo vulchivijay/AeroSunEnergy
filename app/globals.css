@@ -15,15 +15,31 @@
 html {
   scroll-behavior: smooth;
   min-height: 100%;
+  overflow-x: hidden;
 }
 
 body {
   min-height: 100%;
+  overflow-x: hidden;
   font-family: var(--font-body), sans-serif;
   background:
     radial-gradient(circle at top, rgba(32, 164, 74, 0.08), transparent 26%),
     linear-gradient(180deg, #ffffff 0%, #f6faf7 100%);
   color: #0f172a;
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .header-label {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
 }
 
 html.dark body {

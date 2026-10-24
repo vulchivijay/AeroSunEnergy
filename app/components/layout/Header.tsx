@@ -130,11 +130,13 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 left-0 right-0 z-50 border-b border-[#20A44A]/20 bg-white shadow-[0_12px_30px_-24px_rgba(15,23,42,0.55)] backdrop-blur-xl transition-all duration-300 dark:border-slate-700/80 dark:bg-slate-950/80">
       <div className="relative z-10 w-full px-4 py-2">
-        <div className="flex w-full items-center justify-between gap-4">
-          <Logo />
+        <div className="flex w-full items-center justify-between gap-2 lg:gap-3">
+          <div className="min-w-0 shrink-0">
+            <Logo />
+          </div>
 
-          <nav ref={navRef} aria-label="Primary navigation" className="hidden items-center lg:flex">
-            <div className="flex items-center rounded-full border border-[#20A44A]/60 bg-[#F7FDF8] p-1 shadow-inner shadow-[#20A44A]/5">
+          <nav ref={navRef} aria-label="Primary navigation" className="hidden min-w-0 flex-1 items-center justify-center lg:flex">
+            <div className="flex max-w-208 items-center justify-center overflow-hidden rounded-full border border-[#20A44A]/60 bg-[#F7FDF8] p-1 shadow-inner shadow-[#20A44A]/5">
               {visibleNavLinks.map((link) => {
                 const disabled = Boolean((link as { disabled?: boolean }).disabled)
                 return (
@@ -173,22 +175,22 @@ export default function Navbar() {
             </div>
           </nav>
 
-          <div className="hidden items-center gap-2 lg:flex">
+          <div className="shrink-0 items-center gap-1.5 lg:flex">
             <Link
               href="/contact"
               title={t.navbar.startProjectTitle}
               aria-label={t.navbar.startProjectAriaLabel}
               data-cta="start-project"
-              className="group relative inline-flex items-center overflow-hidden rounded-[28px] border border-[#1ea75f]/70 bg-[radial-gradient(circle_at_top_left,rgba(34,197,94,0.35),rgba(15,23,42,0.95)_42%,rgba(2,6,23,1)_100%)] p-px shadow-[0_22px_36px_-18px_rgba(34,197,94,0.9)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_26px_42px_-18px_rgba(34,197,94,0.95)]"
+              className="group relative inline-flex shrink-0 items-center rounded-[28px] border border-[#1ea75f]/70 bg-[radial-gradient(circle_at_top_left,rgba(34,197,94,0.35),rgba(15,23,42,0.95)_42%,rgba(2,6,23,1)_100%)] p-px shadow-[0_18px_30px_-18px_rgba(34,197,94,0.9)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_36px_-18px_rgba(34,197,94,0.95)]"
             >
               <span className="absolute inset-y-0 left-0 w-14 bg-linear-to-r from-white/20 via-white/5 to-transparent" aria-hidden="true" />
-              <span className="relative inline-flex items-center gap-2 rounded-[27px] bg-[#071b15] px-4 py-2.5 text-[10px] font-black uppercase tracking-[0.22em] text-white">
-                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-linear-to-r from-[#34d399] via-[#22c55e] to-[#facc15] text-[#05130f] shadow-[inset_0_1px_2px_rgba(255,255,255,0.5)]">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-3.5 w-3.5">
+              <span className="relative inline-flex items-center gap-2 rounded-[27px] bg-[#071b15] p-2 text-[9px] font-black uppercase tracking-[0.18em] text-white sm:text-[10px]">
+                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-linear-to-r from-[#34d399] via-[#22c55e] to-[#facc15] text-[#05130f] shadow-[inset_0_1px_2px_rgba(255,255,255,0.5)]">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-3 w-3">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
                 </span>
-                {t.navbar.startProject}
+                <span className="header-label">{t.navbar.startProject}</span>
               </span>
             </Link>
 
@@ -197,18 +199,18 @@ export default function Navbar() {
               download="aerosun-energy.pdf"
               title="Download voucher"
               aria-label="Download AeroSun Energy voucher"
-              className="group relative inline-flex items-center overflow-hidden rounded-[28px] border border-[#f3c75d]/70 bg-[#fffaf0] p-1 shadow-[0_20px_30px_-18px_rgba(245,158,11,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_38px_-18px_rgba(245,158,11,0.9)]"
+              className="group relative inline-flex shrink-0 items-center overflow-hidden rounded-[28px] border border-[#f3c75d]/70 bg-[#fffaf0] p-1 shadow-[0_16px_28px_-18px_rgba(245,158,11,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_34px_-18px_rgba(245,158,11,0.9)]"
             >
               <span className="absolute inset-y-0 left-0 w-12 bg-linear-to-r from-[#f59e0b] via-[#facc15] to-transparent opacity-90" aria-hidden="true" />
               <span className="absolute inset-y-2 left-2 w-7 rounded-full border border-white/90 bg-[#0f172a] opacity-95" aria-hidden="true" />
-              <span className="relative z-10 flex items-center gap-2 rounded-3xl bg-[#0f172a] px-2.5 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-[#fef3c7]">
+              <span className="relative z-10 flex items-center gap-2 rounded-3xl bg-[#0f172a] p-2 text-[9px] font-black uppercase tracking-[0.18em] text-[#fef3c7] sm:text-[10px]">
                 <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#f59e0b] text-[#0f172a]">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-3 w-3">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v11m0 0l-4-4m4 4l4-4M5 20h14"/>
                   </svg>
                 </span>
               </span>
-              <span className="relative z-10 mx-2 text-[10px] font-black uppercase tracking-[0.28em] text-[#1f2937]">
+              <span className="header-label relative z-10 mx-2 text-[9px] font-black uppercase tracking-[0.2em] text-[#1f2937] sm:text-[10px]">
                 Voucher
               </span>
             </a>
@@ -217,16 +219,16 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setLangOpen(!langOpen)}
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-[28px] border border-[#1b2d25]/10 bg-linear-to-r from-[#f8fafc] via-[#ecfdf5] to-[#fef3c7] px-3 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-[#0f172a] shadow-[0_20px_28px_-20px_rgba(15,23,42,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_34px_-18px_rgba(34,197,94,0.75)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20A44A]/50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
+                className="group relative inline-flex shrink-0 items-center gap-2 overflow-hidden rounded-[28px] border border-[#1b2d25]/10 bg-linear-to-r from-[#f8fafc] via-[#ecfdf5] to-[#fef3c7] px-2.5 py-2.5 text-[9px] font-black uppercase tracking-[0.18em] text-[#0f172a] shadow-[0_16px_22px_-20px_rgba(15,23,42,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_28px_-18px_rgba(34,197,94,0.75)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20A44A]/50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 sm:text-[10px]"
                 aria-label={t.navbar.languageLabel}
                 aria-expanded={langOpen}
               >
                 <span className="absolute inset-y-0 left-0 w-12 bg-linear-to-r from-[#20A44A]/15 via-[#34d399]/10 to-transparent" aria-hidden="true" />
-                <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#0f172a] text-[#fef3c7] ring-1 ring-white/80">
-                  <LanguageFlag code={locale} className="h-3.5 w-3.5" />
+                <span className="relative inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#0f172a] text-[#fef3c7] ring-1 ring-white/80">
+                  <LanguageFlag code={locale} className="h-3 w-3" />
                 </span>
-                <span className="relative">{languageOptions.find((option) => option.code === locale)?.shortLabel}</span>
-                <ChevronIcon open={langOpen} className="relative h-3.5 w-3.5" />
+                <span className="header-label relative">{languageOptions.find((option) => option.code === locale)?.shortLabel}</span>
+                <ChevronIcon open={langOpen} className="relative h-3 w-3" />
               </button>
 
               {langOpen && (
@@ -270,7 +272,7 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-
+      {/* Mobile menu */}
       {menuOpen && (
         <div id="mobile-menu" className="border-t border-[#20A44A]/10 bg-white/95 shadow-[0_20px_35px_-20px_rgba(15,23,42,0.45)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-950/95 lg:hidden">
           <div className="mx-auto max-w-7xl space-y-3 px-4 py-4 sm:px-6">
@@ -363,7 +365,7 @@ export default function Navbar() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
                 </span>
-                {t.navbar.startProject}
+                <span className="header-label">{t.navbar.startProject}</span>
               </span>
             </Link>
 

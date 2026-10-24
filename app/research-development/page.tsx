@@ -174,7 +174,7 @@ const exampleMetrics = [
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-100 text-slate-900">
-      <ResearchDevelopmentPage />
+      
       <section className="relative overflow-hidden bg-gradient-to-br from-emerald-50 via-white to-sky-50">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.18),_transparent_20%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.15),_transparent_22%)]" />
         <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
@@ -481,6 +481,8 @@ export default function Page() {
           </p>
         </div>
       </section>
+
+      <ResearchDevelopmentPage />
     </main>
   )
 }
