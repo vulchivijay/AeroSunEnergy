@@ -293,6 +293,17 @@ export default function ResearchDevelopmentPage() {
 						</div>
 					))}
 				</div>
+
+				<div className="mt-6 rounded-[1.75rem] border border-sky-100 bg-white/80 p-5 dark:border-sky-900/50 dark:bg-slate-900/75">
+					<p className="text-[10px] font-black uppercase tracking-[0.22em] text-sky-700 dark:text-sky-300">
+						Deep example
+					</p>
+					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
+						A strong example is a high-consumption household in an urban area paying ₹10,000 to ₹15,000 every month on electricity.
+						If a rooftop system can reduce that bill by 60% to 70%, the customer experiences an immediate lifestyle benefit and a clear payback story.
+						That makes residential rooftop solar a strong initial opportunity. A wind turbine, by contrast, is harder to understand unless the company can present actual measured generation data, local wind performance, and maintenance cost over time.
+					</p>
+				</div>
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
@@ -328,6 +339,15 @@ export default function ResearchDevelopmentPage() {
 									</p>
 								</div>
 							))}
+						</div>
+
+						<div className="mt-6 rounded-[1.5rem] border border-violet-100 bg-violet-50/60 p-4 dark:border-violet-900/50 dark:bg-violet-950/20">
+							<p className="text-[10px] font-black uppercase tracking-[0.2em] text-violet-700 dark:text-violet-300">
+								Why this ordering matters
+							</p>
+							<p className="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-200">
+								A tech professional with a high monthly bill will likely respond to a clean savings estimate and performance dashboard. A retailer or clinic will respond to reliability, lower operating cost, and simple payback language. This is why AeroSun should not try to sell the same pitch to every customer; the offer should be customized by consumption pattern and budget.
+							</p>
 						</div>
 					</div>
 
@@ -394,6 +414,15 @@ export default function ResearchDevelopmentPage() {
 						</div>
 					))}
 				</div>
+
+				<div className="mt-6 rounded-[1.75rem] border border-emerald-100 bg-emerald-50/60 p-5 dark:border-emerald-900/50 dark:bg-emerald-950/20">
+					<p className="text-[10px] font-black uppercase tracking-[0.22em] text-emerald-700 dark:text-emerald-300">
+						Example milestone
+					</p>
+					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-200">
+						A practical example would be a pilot in a single residential neighborhood where 10 homes are offered a single solar package with identical inverters, monitoring and support. If the company can measure actual generation, checkout conversion, installation time and maintenance calls, it learns whether the model is workable before expanding across cities or customer segments.
+					</p>
+				</div>
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
@@ -421,6 +450,15 @@ export default function ResearchDevelopmentPage() {
 						</div>
 					))}
 				</div>
+
+				<div className="mt-6 rounded-[1.75rem] border border-rose-100 bg-rose-50/60 p-5 dark:border-rose-900/50 dark:bg-rose-950/20">
+					<p className="text-[10px] font-black uppercase tracking-[0.22em] text-rose-700 dark:text-rose-300">
+						Failure example
+					</p>
+					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-200">
+						If AeroSun promises a low-wind turbine with guaranteed savings but cannot produce data from actual site conditions, the company will lose trust quickly. The same can happen if customer promises are based on subsidy assumptions rather than real site assessments. In renewable energy, credibility is built through field results, not just marketing language.
+					</p>
+				</div>
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
@@ -447,6 +485,15 @@ export default function ResearchDevelopmentPage() {
 							</div>
 						</div>
 					))}
+				</div>
+
+				<div className="mt-6 rounded-[1.75rem] border border-amber-100 bg-amber-50/60 p-5 dark:border-amber-900/50 dark:bg-amber-950/20">
+					<p className="text-[10px] font-black uppercase tracking-[0.22em] text-amber-700 dark:text-amber-300">
+						Pricing logic example
+					</p>
+					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-200">
+						A customer with a ₹15,000 monthly bill may prefer a basic but dependable package with a clear six-year payback story. A customer with a higher bill and smart-home expectations may pay more for monitoring and output dashboards. The price strategy should therefore not be “cheap solar for everyone”; it should be “clear value at the right price for the right customer.”
+					</p>
 				</div>
 			</section>
 
@@ -483,6 +530,15 @@ export default function ResearchDevelopmentPage() {
 							</div>
 						</div>
 					))}
+				</div>
+
+				<div className="mt-6 rounded-[1.75rem] border border-indigo-100 bg-indigo-50/60 p-5 dark:border-indigo-900/50 dark:bg-indigo-950/20">
+					<p className="text-[10px] font-black uppercase tracking-[0.22em] text-indigo-700 dark:text-indigo-300">
+						What a real validation looks like
+					</p>
+					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-200">
+						During the validation phase, a sales team may learn that homeowners are not asking for “a solar system” in general; they are asking for solar savings certainty, lower bills, and confidence that the installation will be well-managed. This is why the team needs to test objection handling, quote clarity, financing conversation quality, and post-sale service response before scaling up.
+					</p>
 				</div>
 			</section>
 
@@ -573,90 +629,113 @@ export default function ResearchDevelopmentPage() {
 						installation and maintenance, and wind turbines, hybrid energy systems and smart energy monitoring. The first two are the more
 						practical starting points for AeroSun. The third could provide differentiation, but it requires more technical validation.
 					</p>
+					<div className="mt-6 rounded-[1.5rem] border border-sky-100 bg-white/80 p-4 dark:border-sky-900/50 dark:bg-slate-900/75">
+						<p className="text-[10px] font-black uppercase tracking-[0.22em] text-sky-700 dark:text-sky-300">Example market logic</p>
+						<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
+							A competitor like Loom Solar is strong in consumer-facing product sales, while a large EPC player like Tata Power can win large residential and commercial contracts because of brand trust and operational scale. AeroSun should not attempt to beat them in size at the start. It should win where trust, speed, customer education, and after-sales service can create a superior local experience.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+				<div className="rounded-[2rem] border border-slate-200 bg-white/80 p-5 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
+					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
+						Business funding explained
+					</p>
+					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
+						From bootstrapping to IPO: a funding roadmap for AeroSun Energy Private Limited
+					</h2>
+					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
+						For AeroSun Energy, funding means obtaining the money needed to start operations, acquire equipment,
+						develop solar and wind prototypes, hire people, win customers and expand the business.
+					</p>
+					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
+						The right choice depends on <span className="font-black text-slate-900 dark:text-white">how much money you need, what it will be used for, how quickly the business generates revenue, and how much ownership you are willing to give investors.</span>
+					</p>
+					<div className="mt-6 rounded-[1.5rem] border border-slate-200 bg-slate-50/85 p-4 dark:border-slate-700 dark:bg-slate-800/80">
+						<p className="text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding example</p>
+						<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
+							Suppose AeroSun needs ₹5 lakh to test a solar package, build a basic monitoring dashboard, and conduct the first 10 customer site surveys. Bootstrapping or a small grant may be sufficient. However, if the company wants to build a custom wind turbine prototype and run sustained field trials, then an incubator, angel round, or strategic investor may be more realistic.
+						</p>
+					</div>
 				</div>
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">1. Who are AeroSun’s competitors?</p>
-					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Major market participants</h2>
+					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
+						Funding stages
+					</p>
+					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
+						The main funding stages AeroSun should understand
+					</h2>
 				</div>
-
-				<div className="overflow-x-auto rounded-[1.8rem] border border-slate-200 bg-white/80 shadow-[0_20px_45px_-30px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
-					<table className="min-w-full border-collapse text-left text-sm text-slate-700 dark:text-slate-300">
-						<thead className="bg-slate-50 dark:bg-slate-800/80">
-							<tr>
-								<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Competitor</th>
-								<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Main business</th>
-								<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Where it competes</th>
-								<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Competitive strength</th>
-							</tr>
-						</thead>
-						<tbody>
-							{[
-								['Tata Power Solar', 'Solar manufacturing, rooftop solar, EPC and energy services', 'Residential and commercial solar', 'Established brand, broad capabilities and customer trust'],
-								['Waaree Energies', 'Solar modules, energy products and related businesses', 'Equipment supply and solar distribution', 'Manufacturing scale, product portfolio and supply-chain reach'],
-								['Loom Solar', 'Solar products, inverters, batteries and rooftop solutions', 'Residential equipment sales and installations', 'Consumer-focused product offerings and online reach'],
-								['Jakson Group', 'Solar modules, EPC and energy infrastructure', 'Commercial and industrial solar', 'Engineering and project-delivery capabilities'],
-								['Mahindra Susten', 'Renewable-energy development and EPC', 'Larger commercial and industrial projects', 'Institutional execution capabilities'],
-								['Sterling and Wilson Renewable Energy', 'Utility-scale solar EPC and renewable-energy projects', 'Large projects rather than typical household installations', 'Experience delivering large-scale projects'],
-							].map(([name, business, market, strength]) => (
-								<tr key={name} className="border-t border-slate-200 dark:border-slate-700">
-									<td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{name}</td>
-									<td className="px-4 py-3">{business}</td>
-									<td className="px-4 py-3">{market}</td>
-									<td className="px-4 py-3">{strength}</td>
-								</tr>
-							))}
-						</tbody>
-					</table>
-				</div>
-			</section>
-
-			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
-				<div className="rounded-[2rem] border border-amber-200 bg-linear-to-br from-amber-50 via-white to-yellow-50 p-5 shadow-[0_24px_60px_-40px_rgba(245,158,11,0.45)] dark:border-amber-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">2. Are competitors making profits?</p>
-					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Financial reality varies by model</h2>
-					<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
-						<table className="min-w-full border-collapse text-left text-sm text-slate-700 dark:text-slate-300">
-							<thead className="bg-slate-50 dark:bg-slate-800/80">
-								<tr>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Company</th>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Reported financial evidence</th>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">What it tells AeroSun</th>
-								</tr>
-							</thead>
-							<tbody>
-								{[
-									['Tata Power', 'FY2025–26 revenue of ₹63,681 crore and consolidated profit after tax of ₹5,118 crore.', 'A large diversified energy company can operate profitably across multiple business lines.'],
-									['Tata Power rooftop solar', 'FY2025–26 rooftop-solar profit after tax reported at ₹499 crore, up 150% year on year.', 'Rooftop solar can be a meaningful profit-generating business at scale.'],
-									['Waaree Energies', 'Annual report identifies competitive pricing, supply-chain dependencies and regulatory changes as risks.', 'Manufacturing benefits from scale but is exposed to pricing and supply-chain changes.'],
-									['Sterling and Wilson Renewable Energy', 'Sector comparison in a 2025 SEBI prospectus reports revenue above ₹3,000 crore and presents EPC financial metrics.', 'Large EPC companies can operate at substantial revenue scale, but revenue alone does not establish profitability.'],
-								].map(([company, evidence, insight]) => (
-									<tr key={company} className="border-t border-slate-200 dark:border-slate-700">
-										<td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{company}</td>
-										<td className="px-4 py-3">{evidence}</td>
-										<td className="px-4 py-3">{insight}</td>
-									</tr>
-								))}
-							</tbody>
-						</table>
-					</div>
+				<div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+					{[
+						['Bootstrapping', 'Finance using your own capital and revenue.'],
+						['Friends and family', 'Capital from trusted contacts.'],
+						['Grants and incubators', 'Non-dilutive support and technical help.'],
+						['Angel investment', 'Individual investors with equity or convertible instruments.'],
+						['Pre-seed and seed', 'Prototype, validation and early growth capital.'],
+						['Series A', 'Scale a proven artificial or real-world commercial model.'],
+						['Series B and beyond', 'Expand operations, markets and manufacturing capacity.'],
+						['IPO or acquisition', 'Potential exit for investors and public-market capital.'],
+					].map(([stage, detail]) => (
+						<div key={stage} className="rounded-[1.5rem] border border-emerald-100 bg-white/80 p-4 shadow-[0_18px_35px_-25px_rgba(16,185,129,0.45)] dark:border-emerald-900/50 dark:bg-slate-900/75">
+							<p className="text-sm font-black uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300">{stage}</p>
+							<p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">{detail}</p>
+						</div>
+					))}
 				</div>
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
 					<div className="rounded-[2rem] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-cyan-50 p-5 dark:border-emerald-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-						<p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">3. Why AeroSun has an opportunity</p>
-						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Key market advantages</h2>
-						<div className="mt-6 space-y-4">
+						<p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
+							1. Bootstrapping your business
+						</p>
+						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
+							What bootstrapping means
+						</h2>
+						<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
+							<span className="font-black text-slate-900 dark:text-white">Bootstrapping means building a business primarily using your own capital and the revenue generated by the business</span>, rather than relying on outside equity investors.
+						</p>
+						<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
+							For AeroSun Energy, this could mean starting with solar equipment sales, installation coordination and maintenance services, then using the profits to finance larger projects and prototype development.
+						</p>
+						<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
+							<table className="min-w-full border-collapse text-left text-sm text-slate-700 dark:text-slate-300">
+								<thead className="bg-slate-50 dark:bg-slate-800/80">
+									<tr>
+										<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Initial expenditure</th>
+										<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Illustrative amount</th>
+									</tr>
+								</thead>
+								<tbody>
+									{[
+										['Website, branding and marketing', '₹10,000'],
+										['Tools and testing equipment', '₹20,000'],
+										['Supplier visits and customer acquisition', '₹10,000'],
+										['Prototype and monitoring equipment', '₹25,000'],
+										['Working capital reserve', '₹35,000'],
+										['Total', '₹1,00,000'],
+									].map(([label, value]) => (
+										<tr key={label} className="border-t border-slate-200 dark:border-slate-700">
+											<td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{label}</td>
+											<td className="px-4 py-3">{value}</td>
+										</tr>
+									))}
+								</tbody>
+							</table>
+						</div>
+						<div className="mt-6 space-y-3">
 							{[
-								'Customers want help managing electricity costs and reducing bills.',
-								'You can start by sourcing equipment instead of investing in a factory or large inventory.',
-								'Local service can differentiate you through faster site surveys, clear quotes and better after-sales support.',
-								'Monitoring services can become a measurable add-on for solar generation and usage visibility.',
-								'Maintenance contracts can create recurring revenue once systems are installed.',
+								'You retain ownership of your company.',
+								'You can grow according to actual customer demand.',
+								'You avoid investor dilution.',
+								'Growth may be slower and personal capital is at risk.',
 							].map((item) => (
 								<div key={item} className="flex gap-3 rounded-[1.2rem] border border-emerald-100 bg-white/80 p-3 dark:border-emerald-900/50 dark:bg-slate-900/75">
 									<span className="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500" />
@@ -666,121 +745,170 @@ export default function ResearchDevelopmentPage() {
 						</div>
 					</div>
 
-					<div className="rounded-[2rem] border border-rose-200 bg-linear-to-br from-rose-50 via-white to-pink-50 p-5 dark:border-rose-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-						<p className="text-[10px] font-black uppercase tracking-[0.28em] text-rose-700 dark:text-rose-300">4. Main concerns</p>
-						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">What can cause pressure</h2>
-						<div className="mt-6 space-y-3">
+					<div className="rounded-[2rem] border border-slate-200 bg-white/80 p-5 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
+						<p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
+							When bootstrap makes sense
+						</p>
+						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
+							Best use cases
+						</h2>
+						<ol className="mt-6 space-y-4">
 							{[
-								['Price competition', 'Customers compare multiple installer quotes, so low pricing alone is risky.'],
-								['Customer trust', 'A new company may have few completed projects and limited proof.'],
-								['Cash flow', 'Suppliers, technicians and installation teams may need payment before the customer pays in full.'],
-								['Subsidy expectations', 'Customers may assume every installation qualifies for assistance.'],
-								['Technical responsibility', 'Weak design or installation can cause faults and warranty disputes.'],
-								['Wind-turbine performance', 'A rotating turbine is not equivalent to profitable energy output.'],
-							].map(([title, text]) => (
-								<div key={title} className="rounded-[1.2rem] border border-rose-100 bg-white/80 p-3 dark:border-rose-900/50 dark:bg-slate-900/75">
-									<p className="text-sm font-black text-rose-700 dark:text-rose-300">{title}</p>
-									<p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">{text}</p>
-								</div>
+								'You are testing whether customers will purchase residential solar installations.',
+								'You can source equipment from established suppliers.',
+								'You do not need to build a factory immediately.',
+								'You can generate revenue before making large capital commitments.',
+							].map((item, index) => (
+								<li key={item} className="flex gap-3 rounded-[1.2rem] border border-slate-200 bg-slate-50/90 p-3 dark:border-slate-700 dark:bg-slate-800/80">
+									<div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-xs font-black text-white">{index + 1}</div>
+									<span className="text-sm leading-6 text-slate-700 dark:text-slate-300">{item}</span>
+								</li>
 							))}
-						</div>
+						</ol>
 					</div>
 				</div>
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
-				<div className="rounded-[2rem] border border-violet-200 bg-linear-to-br from-violet-50 via-white to-fuchsia-50 p-5 shadow-[0_24px_60px_-40px_rgba(168,85,247,0.45)] dark:border-violet-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-violet-700 dark:text-violet-300">5. Illustrative profit model</p>
-					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">What a solar installation could contribute</h2>
+				<div className="rounded-[2rem] border border-violet-200 bg-linear-to-br from-violet-50 via-white to-fuchsia-50 p-5 dark:border-violet-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-violet-700 dark:text-violet-300">2. Friends and family funding</p>
+					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Small early capital should still be documented</h2>
+					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
+						For example, a relative might invest ₹2 lakh to help AeroSun purchase demonstration equipment and secure its first customers. There are three common arrangements: equity investment, loan, or a gift. Do not rely on a verbal promise — document the amount, purpose, repayment terms, or investor rights.
+					</p>
+				</div>
+			</section>
+
+			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
+				<div className="rounded-[2rem] border border-sky-200 bg-linear-to-br from-sky-50 via-white to-cyan-50 p-5 dark:border-sky-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">3. Grants and incubator funding</p>
+					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Use grants where innovation needs proof</h2>
 					<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
 						<table className="min-w-full border-collapse text-left text-sm text-slate-700 dark:text-slate-300">
 							<thead className="bg-slate-50 dark:bg-slate-800/80">
 								<tr>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Item</th>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Illustrative amount</th>
+									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding route</th>
+									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Published scheme limit</th>
+									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Intended use</th>
 								</tr>
 							</thead>
 							<tbody>
 								{[
-									['Customer project price', '₹1,50,000'],
-									['Solar equipment and materials', '₹1,10,000'],
-									['Installation labour and transport', '₹12,000'],
-									['Sales and project-related costs', '₹5,000'],
-									['Warranty and rework provision', '₹3,000'],
-									['Estimated project contribution before overheads and tax', '₹20,000'],
-									['Contribution as a percentage of sales', '13.3%'],
-								].map(([item, value]) => (
-									<tr key={item} className="border-t border-slate-200 dark:border-slate-700">
-										<td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{item}</td>
-										<td className="px-4 py-3">{value}</td>
+									['Grant', 'Up to ₹20 lakh', 'Proof of concept, prototype development and product trials'],
+									['Debt or convertible instruments', 'Up to ₹50 lakh', 'Market entry, commercialisation and scaling'],
+								].map(([route, limit, use]) => (
+									<tr key={route} className="border-t border-slate-200 dark:border-slate-700">
+										<td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{route}</td>
+										<td className="px-4 py-3">{limit}</td>
+										<td className="px-4 py-3">{use}</td>
 									</tr>
 								))}
 							</tbody>
 						</table>
 					</div>
-					<p className="mt-4 text-base leading-7 text-slate-700 dark:text-slate-300">
-						This illustrative model shows why project contribution matters: if business overhead is ₹60,000 per month, a company would need several sales per month to cover its fixed costs before tax and financing.
+					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
+						For AeroSun, a grant may be especially useful for a wind-turbine prototype, a hybrid energy controller, field trials or energy-monitoring software. The key is to define one problem, one customer segment, one prototype and measurable milestones.
 					</p>
 				</div>
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
-				<div className="rounded-[2rem] border border-slate-200 bg-white/80 p-5 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">6. How AeroSun should compete</p>
-					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Three core promises</h2>
-					<div className="mt-6 grid gap-4 md:grid-cols-3">
-						{[
-							['Transparent pricing', 'Give customers an itemised quotation showing equipment, installation, taxes, exclusions and subsidy assumptions.'],
-							['Measurable performance', 'Explain expected generation and savings using actual site and usage conditions, then track real output after installation.'],
-							['Dependable after-sales support', 'Define a clear process for reporting faults, arranging inspections and managing warranties.'],
-						].map(([title, text]) => (
-							<div key={title} className="rounded-[1.4rem] border border-slate-200 bg-slate-50/85 p-4 dark:border-slate-700 dark:bg-slate-800/80">
-								<p className="text-sm font-black uppercase tracking-[0.18em] text-slate-700 dark:text-slate-200">{title}</p>
-								<p className="mt-3 text-sm leading-6 text-slate-700 dark:text-slate-300">{text}</p>
-							</div>
-						))}
+				<div className="mb-6">
+					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">
+						4. Funding stages in practice
+					</p>
+					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
+						Pre-seed, seed, angel and Series A
+					</h2>
+				</div>
+				<div className="grid gap-5 lg:grid-cols-2">
+					{[
+						['Pre-seed', 'Used when you need a prototype or first version of a product. Investors look for a clear customer problem, a technical plan and credible milestones.'],
+						['Seed', 'Used to move from a prototype to a validated product and repeatable business model with pilot programmes and initial customers.'],
+						['Angel', 'An individual investor provides capital in exchange for equity, often bringing mentoring and investor relationships as well.'],
+						['Series A', 'Raise after repeated traction and a business model that can grow with capital, usually across engineering, sales and operations.'],
+					].map(([stage, text]) => (
+						<div key={stage} className="rounded-[1.7rem] border border-amber-100 bg-white/80 p-5 dark:border-amber-900/50 dark:bg-slate-900/75">
+							<p className="text-sm font-black uppercase tracking-[0.18em] text-amber-700 dark:text-amber-300">{stage}</p>
+							<p className="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-300">{text}</p>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
+				<div className="rounded-[2rem] border border-rose-200 bg-linear-to-br from-rose-50 via-white to-pink-50 p-5 dark:border-rose-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-rose-700 dark:text-rose-300">5. Understand dilution before you raise</p>
+					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Dilution reduces founder ownership</h2>
+					<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
+						<table className="min-w-full border-collapse text-left text-sm text-slate-700 dark:text-slate-300">
+							<thead className="bg-slate-50 dark:bg-slate-800/80">
+								<tr>
+									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding stage</th>
+									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">New investment</th>
+									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Illustrative post-investment ownership</th>
+								</tr>
+							</thead>
+							<tbody>
+								{[
+									['Founders start the company', '₹1 lakh founder capital', 'Founders: 100%'],
+									['Angel round', '₹25 lakh', 'Founders: 80%; angel: 20%'],
+									['Seed round', '₹75 lakh', 'Founders: 60%; angel: 15%; seed investor: 25%'],
+									['Series A', '₹5 crore', 'Founders: 45%; angel: 11.25%; seed investor: 18.75%; Series A investor: 25%'],
+								].map(([stage, investment, ownership]) => (
+									<tr key={stage} className="border-t border-slate-200 dark:border-slate-700">
+										<td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{stage}</td>
+										<td className="px-4 py-3">{investment}</td>
+										<td className="px-4 py-3">{ownership}</td>
+									</tr>
+								))}
+							</tbody>
+						</table>
 					</div>
+					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
+						The important point is that raising money increases resources, but each equity round can reduce the founders' percentage ownership. A smaller percentage of a substantially more valuable company may be worth more than a larger percentage of a company that cannot grow.
+					</p>
 				</div>
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-indigo-200 bg-linear-to-br from-indigo-50 via-white to-purple-50 p-5 dark:border-indigo-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-indigo-700 dark:text-indigo-300">7. 90-day competitive validation plan</p>
-					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Check the market before committing capital</h2>
-					<div className="mt-6 grid gap-4 md:grid-cols-3">
+					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-indigo-700 dark:text-indigo-300">6. Which funding route should AeroSun follow?</p>
+					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">A staged plan is the safest strategy</h2>
+					<div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 						{[
-							['First 30 days', 'Identify 10 local solar installers and suppliers, collect quotations, and interview 20 homeowners and 10 small-business owners.'],
-							['Days 31–60', 'Build two or three solar packages, confirm equipment availability, complete site surveys and issue actual quotations.'],
-							['Days 61–90', 'Complete initial projects where commercially viable, measure costs and customer satisfaction, and decide whether the model is sustainable.'],
-						].map(([period, text]) => (
-							<div key={period} className="rounded-[1.4rem] border border-indigo-100 bg-white/80 p-4 dark:border-indigo-900/50 dark:bg-slate-900/75">
-								<p className="text-sm font-black uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">{period}</p>
-								<p className="mt-3 text-sm leading-6 text-slate-700 dark:text-slate-300">{text}</p>
+							['Stage 1', 'Bootstrap the solar business and generate early revenue.'],
+							['Stage 2', 'Apply for grant or incubator support for a prototype or validation project.'],
+							['Stage 3', 'Raise angel or seed capital only after demand and product evidence are credible.'],
+							['Stage 4', 'Expand with larger financing only after the business model is proven.'],
+						].map(([stage, point]) => (
+							<div key={stage} className="rounded-[1.5rem] border border-indigo-100 bg-white/80 p-4 dark:border-indigo-900/50 dark:bg-slate-900/75">
+								<p className="text-sm font-black uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">{stage}</p>
+								<p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">{point}</p>
 							</div>
 						))}
 					</div>
 				</div>
 			</section>
 
-			<section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+			<section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-cyan-50 p-5 shadow-[0_24px_60px_-40px_rgba(16,185,129,0.45)] dark:border-emerald-900/60 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">8. Final verdict</p>
-					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">A plausible but narrow path to success</h2>
+					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">Final funding recommendation</p>
+					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Do not ask how much you can raise before knowing what milestone you need to fund.</h2>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						My assessment is that AeroSun has a plausible opportunity as a focused solar-sales, installation and maintenance company, but it should validate demand and project profitability before expanding into manufacturing.
+						For AeroSun, the immediate funding path should be: <span className="font-black text-slate-900 dark:text-white">bootstrap the solar business, validate customer demand, apply for incubator or grant support for technology proof, and only then raise angel or seed capital if the prototype and market case are credible.</span>
 					</p>
-					<div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+					<div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
 						{[
-							['Residential rooftop solar', 'Strong candidate for initial validation'],
-							['Small commercial solar', 'Attractive next segment'],
-							['Solar maintenance and monitoring', 'Useful additional service'],
-							['Smart energy monitoring', 'Potential differentiator'],
-							['Hybrid solar and battery systems', 'Worth pursuing where the economics justify the cost'],
-							['Proprietary wind turbines', 'Technically demanding and must be validated before large investment'],
-						].map(([title, text]) => (
-							<div key={title} className="rounded-[1.3rem] border border-emerald-100 bg-white/80 p-4 dark:border-emerald-900/50 dark:bg-slate-900/75">
-								<p className="text-sm font-black text-slate-900 dark:text-white">{title}</p>
-								<p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">{text}</p>
+							['₹1–3 lakh', 'Validate solar-service business and customer demand'],
+							['₹3–10 lakh', 'Develop a structured prototype or monitoring system'],
+							['₹10–50 lakh+', 'Larger prototype, pilot deployment or commercialisation'],
+							['Grant route', 'Use for eligible innovation and proof-of-concept work'],
+							['Equity route', 'Use only when evidence supports product scale'],
+						].map(([amount, note]) => (
+							<div key={amount} className="rounded-[1.4rem] border border-emerald-100 bg-white/80 p-4 dark:border-emerald-900/50 dark:bg-slate-900/75">
+								<p className="text-sm font-black text-emerald-700 dark:text-emerald-300">{amount}</p>
+								<p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">{note}</p>
 							</div>
 						))}
 					</div>
@@ -788,7 +916,7 @@ export default function ResearchDevelopmentPage() {
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
-				<div className="rounded-[2rem] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-cyan-50 p-5 shadow-[0_24px_60px_-40px_rgba(16,185,129,0.45)] dark:border-emerald-900/60 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+				<div className="mb-6">
 					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
 						# AeroSun Energy Private Limited
 					</p>
@@ -1143,8 +1271,12 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">4. Funding stages in practice</p>
-					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Pre-seed, seed, angel and Series A</h2>
+					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">
+						4. Funding stages in practice
+					</p>
+					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
+						Pre-seed, seed, angel and Series A
+					</h2>
 				</div>
 				<div className="grid gap-5 lg:grid-cols-2">
 					{[
