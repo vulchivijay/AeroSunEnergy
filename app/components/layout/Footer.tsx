@@ -283,7 +283,7 @@ export default function Footer() {
 								))}
 							</div>
 
-							<div className="py-12">
+							<div className="hidden py-12">
 								<div className="inline-flex w-full items-center justify-center">
 									<OptimizedImage
 										src="/images/qr-code.png"
