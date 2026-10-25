@@ -35,9 +35,7 @@ const BING_SITE_VERIFICATION = process.env.BING_SITE_VERIFICATION || 'CFCE648996
 
 export const metadata: Metadata = {
   title: {
-    default: 'AeroSun Energy | Solar Energy Solutions - Solar Panel Installation - Save Electricity With Solar - Get Your Solar Quote Today -
-    Affordable Solar Solutions - Renewable Energy Solutions - Residential Solar Solutions -
-    Commercial Solar Systems - Hybrid Solar Power Systems',
+    default: 'AeroSun Energy | Solar Energy Solutions - Solar Panel Installation - Save Electricity With Solar - Get Your Solar Quote Today - Affordable Solar Solutions - Renewable Energy Solutions - Residential Solar Solutions - Commercial Solar Systems - Hybrid Solar Power Systems',
     template: '%s | AeroSun Energy',
   },
   description:
