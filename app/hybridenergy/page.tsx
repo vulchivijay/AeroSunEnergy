@@ -268,7 +268,7 @@ export default function HybridEnergyPage() {
             <div className="overflow-hidden rounded-4xl border border-slate-200 bg-slate-950 p-5 shadow-[0_28px_70px_-36px_rgba(15,23,42,0.9)]">
               <div className="relative h-72 overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
                 <OptimizedImage
-                  src="/images/slider-2.png"
+                  src="/images/slider/slider-2.png"
                   alt="Hybrid renewable energy deployment"
                   fill
                   sizes="(min-width: 1024px) 35vw, 100vw"

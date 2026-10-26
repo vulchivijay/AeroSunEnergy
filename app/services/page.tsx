@@ -220,7 +220,7 @@ export default function ServicesPage() {
         <div className="relative overflow-hidden rounded-[2.5rem] border border-slate-200 bg-slate-950 shadow-[0_34px_100px_-40px_rgba(15,23,42,0.9)]">
           <div className="absolute inset-0">
             <OptimizedImage
-              src="/images/slider-1.png"
+              src="/images/slider/slider-1.png"
               alt="Renewable energy systems and technical services"
               fill
               sizes="100vw"
@@ -351,7 +351,7 @@ export default function ServicesPage() {
           <div className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)]">
             <div className="relative h-72 overflow-hidden">
               <OptimizedImage
-                src="/images/slider-2.png"
+                src="/images/slider/slider-2.png"
                 alt="Energy service planning and renewable technology integration"
                 fill
                 sizes="(min-width: 1024px) 38vw, 100vw"
