@@ -17,6 +17,8 @@ const roboto = Roboto({
   weight: ['400'],
   preload: true,
   display: 'swap',
+  adjustFontFallback: true,
+  fallback: ['system-ui', 'sans-serif'],
 })
 
 const poppins = Poppins({
@@ -25,6 +27,8 @@ const poppins = Poppins({
   weight: ['700'],
   preload: true,
   display: 'swap',
+  adjustFontFallback: true,
+  fallback: ['system-ui', 'sans-serif'],
 })
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || process.env.GTM_ID

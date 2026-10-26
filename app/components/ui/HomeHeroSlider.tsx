@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Slider from './Slider'
 
 type Slide = {
@@ -89,13 +90,18 @@ export default function HomeHeroSlider() {
 
   return (
     <Slider autoplay interval={5000} pauseOnHover>
-      {slides.map((slide) => (
+      {slides.map((slide, index) => (
         <div key={slide.title} className={`${slide.panelClass} relative h-full w-full overflow-hidden`}>
           <div className="absolute inset-0">
-            <img
+            <Image
               src={slide.image}
               alt={slide.title}
-              className="h-full w-full object-cover object-center"
+              fill
+              priority={index === 0}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              quality={70}
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1400px"
+              className="object-cover object-center"
               style={{ filter: 'saturate(1.05) brightness(0.72)' }}
             />
           </div>
