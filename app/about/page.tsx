@@ -160,28 +160,14 @@ const ethicsPoints = [
 
 const approvalRows = [
   ['Certificate of Incorporation and CIN', 'Establishes the company’s legal identity (MCA)', 'Done'],
-  ['Memorandum of Association', 'Defines the company’s business scope, objectives and legal framework', 'Done'],
-  ['Articles of Association', 'Sets out the company’s internal governance, rules and operating structure', 'Done'],
-  ['Company PAN', 'Tax identification', 'Done'],
-  ['Company TAN', 'Tax deduction and collection compliance where applicable', 'Done'],
-  ['AGILE-PRO-S', 'MCA registration and business identity filing support', 'Done'],
-  ['EPFO SPECIMEN', 'Employee provident fund compliance and workforce contribution records', 'Done'],
-  ['GST registration', 'Required when applicable under GST law', 'Done'],
-  ['Professional Tax Registration', 'State professional tax compliance for employees and business operations', 'Done'],
-  ['ADT-1 Filing', 'Statutory auditor appointment filing with the registrar', 'Done'],
+  ['EPFO', 'Employee provident fund compliance and workforce contribution records', 'Done'],
+  ['GST', 'Required when applicable under GST law', 'Done'],
+  ['Professional Tax', 'State professional tax compliance for employees and business operations', 'Done'],
   ['Accountant', 'Financial accounting, books of records and compliance support', 'Done'],
   ['Compliance Advisor', 'External regulatory guidance and compliance monitoring support', 'Done'],
   ['DPIIT Startup Recognition', 'Startup India recognition if eligible', 'In process'],
-  ['Trademark registration', 'Protects the company brand and eligible marks', 'In process'],
-  ['Udyam/MSME registration', 'MSME recognition if eligible', 'Done'],
-]
-
-const officialResources = [
-  { label: 'MNRE', href: 'https://mnre.gov.in/' },
-  { label: 'NREDCAP', href: 'https://nredcap.in/' },
-  { label: 'APERC', href: 'https://www.aperc.gov.in/' },
-  { label: 'Startup India', href: 'https://www.startupindia.gov.in/' },
-  { label: 'Udyam Registration', href: 'https://udyamregistration.gov.in/' },
+  ['Trademark', 'Protects the company brand and eligible marks', 'In process'],
+  ['Udyam/MSME', 'MSME recognition if eligible', 'Done'],
 ]
 
 const promisePoints = [
@@ -354,56 +340,36 @@ export default function AboutPage() {
             Formal registrations and approval milestones
           </h2>
 
-          <div className="mt-6 overflow-x-auto rounded-[26px] border border-slate-200 bg-white/85 shadow-[0_20px_45px_-35px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
-            <table className="min-w-full border-collapse text-left text-sm text-slate-700 dark:text-slate-300">
-              <thead className="bg-slate-50 dark:bg-slate-800/80">
-                <tr>
-                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Registration / approval</th>
-                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Purpose</th>
-                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                {approvalRows.map(([label, purpose, status]) => (
-                  <tr key={label} className="border-t border-slate-200 dark:border-slate-700">
-                    <td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{label}</td>
-                    <td className="px-4 py-3">{purpose}</td>
-                    <td className="px-4 py-3">
-                      <span className={`inline-flex rounded-full px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.18em] ${
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {approvalRows.map(([label, purpose, status]) => (
+              <div
+                key={label}
+                className="group relative overflow-hidden rounded-[26px] border border-amber-200/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.94),rgba(254,249,195,0.78),rgba(255,255,255,0.96))] p-[1px] shadow-[0_24px_60px_-30px_rgba(245,158,11,0.7)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_68px_-28px_rgba(245,158,11,0.8)] dark:border-amber-800/70 dark:bg-[linear-gradient(135deg,rgba(12,18,25,0.95),rgba(67,38,14,0.82),rgba(12,18,25,0.95))]"
+              >
+                <div className="relative h-full rounded-[25px] bg-white/90 p-4 dark:bg-slate-950/85">
+                  <div className="absolute inset-y-0 left-0 w-1.5 bg-[linear-gradient(180deg,#fbbf24,#f59e0b,#f97316)]" />
+                  <div className="flex items-start justify-between gap-3 pl-3">
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[9px] font-black uppercase tracking-[0.26em] text-amber-700 dark:text-amber-300">
+                        Registration / approval
+                      </p>
+                      <p className="mt-3 text-sm font-black leading-6 text-slate-900 dark:text-white">
+                        {label}
+                      </p>
+                    </div>
+                    <span
+                      className={`inline-flex shrink-0 rounded-full border px-2.5 py-1 text-[8px] font-black uppercase tracking-[0.18em] ${
                         status === 'Done'
-                          ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300'
-                          : status === 'In process'
-                            ? 'bg-amber-100 text-amber-700 dark:bg-amber-950/40 dark:text-amber-300'
-                            : 'bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-200'
-                      }`}>
-                        {status}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div className="mt-6 rounded-[24px] border border-slate-200 bg-white/80 p-4 dark:border-slate-700 dark:bg-slate-900/70">
-            <div className="mb-3 flex items-center justify-between gap-3">
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">
-                Official sources
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {officialResources.map((resource) => (
-                <a
-                  key={resource.label}
-                  href={resource.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:border-amber-300 hover:bg-amber-50 hover:text-amber-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-amber-700 dark:hover:bg-amber-950/30 dark:hover:text-amber-300"
-                >
-                  {resource.label}
-                </a>
-              ))}
-            </div>
+                          ? 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-300'
+                          : 'border-amber-200 bg-amber-50 text-amber-700 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-300'
+                      }`}
+                    >
+                      {status}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

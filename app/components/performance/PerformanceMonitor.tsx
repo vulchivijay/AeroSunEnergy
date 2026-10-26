@@ -94,7 +94,7 @@ export default function PerformanceMonitor() {
     : [{ label: 'Perf', value: 'Loading…' }]
 
   return (
-    <div className="fixed bottom-4 right-4 z-[9999] rounded-xl border border-slate-700/80 bg-slate-950/85 px-3 py-2 text-[10px] font-medium shadow-2xl shadow-slate-950/30 backdrop-blur-sm">
+    <div className="fixed bottom-4 right-4 z-40 rounded-xl border border-slate-700/80 bg-slate-950/85 px-3 py-2 text-[10px] font-medium shadow-2xl shadow-slate-950/30 backdrop-blur-sm">
       <div className="mb-1 flex items-center gap-2 text-[9px] uppercase tracking-[0.24em] text-sky-300">
         <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(74,222,128,0.8)]" />
         Perf
