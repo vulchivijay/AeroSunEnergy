@@ -111,12 +111,21 @@ export default function Contact() {
       projectType,
       usage,
       message,
-      _subject: `AeroSun Energy project brief from ${name}`,
-      _replyto: email,
     }
 
+    const mailtoUrl = `mailto:${contactEmail}?subject=${encodeURIComponent(`AeroSun Energy project brief from ${name}`)}&body=${encodeURIComponent([
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      `Project type: ${projectType}`,
+      `Estimated usage: ${usage}`,
+      '',
+      'Message:',
+      message,
+    ].join('\n'))}`
+
     try {
-      const response = await fetch(`https://formsubmit.co/ajax/${contactEmail}`, {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -125,31 +134,22 @@ export default function Contact() {
         body: JSON.stringify(payload),
       })
 
+      const result = await response.json().catch(() => ({}))
+
       if (!response.ok) {
-        throw new Error('The email service rejected the request.')
+        throw new Error(result?.error || 'The contact service rejected the request.')
       }
 
       formElement?.reset()
       setProjectBriefFeedback({
         type: 'success',
-        message: 'Your project brief has been sent successfully.',
+        message: result?.message || 'Your project brief has been sent successfully.',
       })
     } catch (error) {
-      const mailtoUrl = `mailto:${contactEmail}?subject=${encodeURIComponent(`AeroSun Energy project brief from ${name}`)}&body=${encodeURIComponent([
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Phone: ${phone}`,
-        `Project type: ${projectType}`,
-        `Estimated usage: ${usage}`,
-        '',
-        'Message:',
-        message,
-      ].join('\n'))}`
-
       formElement?.reset()
       setProjectBriefFeedback({
         type: 'error',
-        message: 'The email service is unavailable right now. Your email app is opened so you can send it manually.',
+        message: 'The contact service is unavailable right now. Your email app is opening so you can send it manually.',
       })
 
       if (typeof window !== 'undefined') {
@@ -173,7 +173,7 @@ export default function Contact() {
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.22),transparent_22%),radial-gradient(circle_at_100%_0%,rgba(245,158,11,0.18),transparent_18%),linear-gradient(135deg,#f5faf6_0%,#effaf2_28%,#f8fafc_100%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.20),transparent_20%),radial-gradient(circle_at_100%_0%,rgba(245,158,11,0.20),transparent_18%),linear-gradient(135deg,#081421_0%,#101d2d_32%,#020817_100%)]" aria-hidden="true" />
 
-            <div className="relative grid gap-7 p-5 sm:p-7 xl:min-h-[560px]">
+            <div className="relative grid gap-7 p-5 sm:p-7 xl:min-h-140">
               <div className="flex rounded-[28px] border border-[#dfeee4]/80 bg-white/65 p-2 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/40">
                 <div className="flex h-full flex-col justify-center rounded-3xl bg-[linear-gradient(135deg,rgba(255,255,255,0.95),rgba(244,248,245,0.88))] p-5 sm:p-6 dark:bg-[linear-gradient(135deg,rgba(15,23,42,0.92),rgba(15,23,42,0.78))]">
                   <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#20A44A]/20 bg-white/85 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.30em] text-[#183729] shadow-sm backdrop-blur-md dark:border-white/10 dark:bg-slate-900/70 dark:text-slate-100">
@@ -231,7 +231,7 @@ export default function Contact() {
                     <span className="text-[#F59E0B]">{c.projectBrief}</span>
                   </div>
 
-                  <div className="relative mt-3 h-[300px] overflow-hidden rounded-[22px] sm:h-[350px]">
+                  <div className="relative mt-3 h-75 overflow-hidden rounded-[22px] sm:h-87.5">
                     <OptimizedImage
                       src="/images/customdesign-aerosunenergy.png"
                       alt="AeroSun Energy custom renewable energy design"
