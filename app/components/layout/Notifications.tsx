@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const notificationText =
   'AeroSun Energy Private Limited is committed to providing reliable and sustainable renewable energy solutions through solar, wind, and hybrid energy systems.'
@@ -11,8 +11,13 @@ const notificationEndText =
 
 export default function Notifications() {
   const [isVisible, setIsVisible] = useState(true)
+  const [hasMounted, setHasMounted] = useState(false)
 
-  if (!isVisible) return null
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  if (!hasMounted || !isVisible) return null
 
   return (
     <div className="relative h-18 overflow-hidden border-b border-emerald-200 bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.18),transparent_36%),linear-gradient(135deg,#f0fdf4_0%,#ecfeff_48%,#f8fafc_100%)] dark:border-slate-700 dark:bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.12),transparent_28%),linear-gradient(135deg,#020617_0%,#0f172a_46%,#111827_100%)] sm:h-15">
@@ -23,7 +28,7 @@ export default function Notifications() {
 
           <div className="relative flex h-full items-center justify-between gap-2">
             <div className="m-2 flex min-w-0 flex-1 items-center">
-              <span className="inline-flex1 hidden shrink-0 items-center rounded-full border border-emerald-300/40 bg-emerald-300/10 px-2 py-1 text-[9px] font-bold uppercase tracking-[0.22em] text-emerald-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] sm:text-[10px]">
+              <span className="inline-flex hidden shrink-0 items-center rounded-full border border-emerald-300/40 bg-emerald-300/10 px-2 py-1 text-[9px] font-bold uppercase tracking-[0.22em] text-emerald-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] sm:text-[10px]">
                 AeroSun Update
               </span>
 
