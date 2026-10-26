@@ -4,6 +4,8 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
+import { submitMailtoForm } from '@/lib/submitMailto'
+import { useState } from 'react'
 
 const invoiceSchema = z.object({
   customerName: z.string().trim().min(2, 'Customer name is required.'),
@@ -42,6 +44,7 @@ const defaultValues: InvoiceFormValues = {
 }
 
 export default function InvoiceReceiptPage() {
+  const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {
     register,
     handleSubmit,
@@ -75,8 +78,17 @@ export default function InvoiceReceiptPage() {
       data.receiptNote,
     ].join('\n')
 
-    window.location.href = `mailto:customercare@aerosunenergy.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    const opened = submitMailtoForm({
+      to: 'customercare@aerosunenergy.in',
+      subject,
+      body,
+    })
+
     reset(defaultValues)
+    setSubmitFeedback({
+      type: opened ? 'success' : 'error',
+      message: opened ? 'Your invoice has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+    })
   }
 
   return (
@@ -256,11 +268,15 @@ export default function InvoiceReceiptPage() {
                   disabled={isSubmitting}
                   className="inline-flex w-full items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition-all duration-200 hover:-translate-y-0.5 hover:bg-orange-100 disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {isSubmitting ? 'Submitting...' : 'Generate receipt'}
+                  {isSubmitting ? 'Submitting...' : 'Submit invoice'}
                 </button>
 
-                {isSubmitSuccessful && (
-                  <p className="text-sm font-medium text-emerald-300">Your invoice and receipt record has been prepared in your email app.</p>
+                {submitFeedback ? (
+                  <p className={`text-sm font-medium ${submitFeedback.type === 'success' ? 'text-emerald-300' : 'text-rose-300'}`}>
+                    {submitFeedback.message}
+                  </p>
+                ) : isSubmitSuccessful && (
+                  <p className="text-sm font-medium text-emerald-300">Your invoice has been prepared in your email app.</p>
                 )}
               </form>
             </CardContent>

@@ -4,6 +4,8 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
+import { submitMailtoForm } from '@/lib/submitMailto'
+import { useState } from 'react'
 
 const warrantyPolicySchema = z.object({
   customerName: z.string().trim().min(2, 'Customer name is required.'),
@@ -38,6 +40,7 @@ const defaultValues: WarrantyPolicyFormValues = {
 }
 
 export default function WarrantyPolicyPage() {
+  const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {
     register,
     handleSubmit,
@@ -68,8 +71,17 @@ export default function WarrantyPolicyPage() {
       'Policy terms acknowledged: Yes',
     ].join('\n')
 
-    window.location.href = `mailto:customercare@aerosunenergy.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    const opened = submitMailtoForm({
+      to: 'customercare@aerosunenergy.in',
+      subject,
+      body,
+    })
+
     reset(defaultValues)
+    setSubmitFeedback({
+      type: opened ? 'success' : 'error',
+      message: opened ? 'Your warranty acknowledgement has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+    })
   }
 
   return (
@@ -222,17 +234,19 @@ export default function WarrantyPolicyPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="inline-flex items-center justify-center rounded-full bg-linear-to-r from-[#1d4ed8] via-[#0f7acb] to-[#0ea5a5] px-6 py-3 text-sm font-black uppercase tracking-[0.18em] text-white shadow-[0_18px_35px_-18px_rgba(14,165,233,0.85)] transition-all duration-200 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
+                className="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-black uppercase tracking-[0.18em] text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-sky-900 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                {isSubmitting ? 'Submitting...' : 'Accept Policy'}
+                {isSubmitting ? 'Submitting...' : 'Submit acknowledgement'}
               </button>
-            </div>
 
-            {isSubmitSuccessful && (
-              <p className="rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-700">
-                Your policy acknowledgement has been prepared in your email app.
-              </p>
-            )}
+              {submitFeedback ? (
+                <p className={`text-sm font-medium ${submitFeedback.type === 'success' ? 'text-emerald-700' : 'text-rose-600'}`}>
+                  {submitFeedback.message}
+                </p>
+              ) : isSubmitSuccessful && (
+                <p className="text-sm font-medium text-emerald-700">Your warranty acknowledgement has been prepared in your email app.</p>
+              )}
+            </div>
           </div>
         </form>
       </div>

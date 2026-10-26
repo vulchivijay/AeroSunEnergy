@@ -3,6 +3,8 @@
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { submitMailtoForm } from '@/lib/submitMailto'
+import { useState } from 'react'
 
 const quotationSchema = z.object({
   customerName: z.string().trim().min(2, 'Customer name is required.'),
@@ -37,6 +39,7 @@ export const defaultQuotationValues: StandardQuotationValues = {
 }
 
 export function StandardQuotationTemplate() {
+  const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {
     register,
     handleSubmit,
@@ -70,8 +73,17 @@ export function StandardQuotationTemplate() {
       `Terms Accepted: ${data.terms}`,
     ].join('\n')
 
-    window.location.href = `mailto:customercare@aerosunenergy.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    const opened = submitMailtoForm({
+      to: 'customercare@aerosunenergy.in',
+      subject,
+      body,
+    })
+
     reset(defaultQuotationValues)
+    setSubmitFeedback({
+      type: opened ? 'success' : 'error',
+      message: opened ? 'Your quotation request has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+    })
   }
 
   return (
@@ -449,7 +461,11 @@ export function StandardQuotationTemplate() {
               </button>
             </div>
 
-            {isSubmitSuccessful && (
+            {submitFeedback ? (
+              <p className={`rounded-2xl border px-4 py-3 text-sm font-medium ${submitFeedback.type === 'success' ? 'border-emerald-200 bg-emerald-50 text-emerald-700' : 'border-rose-200 bg-rose-50 text-rose-700'}`}>
+                {submitFeedback.message}
+              </p>
+            ) : isSubmitSuccessful && (
               <p className="rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-700">
                 Your quotation request has been prepared in your email app.
               </p>

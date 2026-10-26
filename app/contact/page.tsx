@@ -7,6 +7,8 @@ import { Card, CardContent } from '@/app/components/ui/Card'
 import FaqCard, { solarFaqs } from '@/app/components/ui/FaqCard'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
+import { useState, useRef } from 'react'
+import { submitMailtoForm } from '@/lib/submitMailto'
 
 const channelIcons = {
   email: (
@@ -29,6 +31,8 @@ const channelIcons = {
 }
 
 export default function Contact() {
+  const [projectBriefFeedback, setProjectBriefFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
+  const projectBriefFormRef = useRef<HTMLFormElement | null>(null)
   const { t } = useLocale()
   const c = t.contact
   const footer = t.footer
@@ -71,10 +75,11 @@ export default function Contact() {
 
   const contactEmail = footer.email
 
-  const handleProjectBrief = (event: FormEvent<HTMLFormElement>) => {
+  const handleProjectBrief = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    const form = new FormData(event.currentTarget)
+    const formElement = projectBriefFormRef.current ?? event.currentTarget
+    const form = new FormData(formElement)
     const name = String(form.get('name') ?? '').trim()
     const email = String(form.get('email') ?? '').trim()
     const phone = String(form.get('phone') ?? '').trim()
@@ -82,19 +87,75 @@ export default function Contact() {
     const usage = String(form.get('usage') ?? '').trim()
     const message = String(form.get('message') ?? '').trim()
 
-    const subject = `AeroSun Energy project brief${name ? ` from ${name}` : ''}`
-    const body = [
-      `Name: ${name || 'Not provided'}`,
-      `Email: ${email || 'Not provided'}`,
-      `Phone: ${phone || 'Not provided'}`,
-      `Project type: ${projectType || 'Not provided'}`,
-      `Estimated usage: ${usage || 'Not provided'}`,
-      '',
-      'Message:',
-      message || 'Not provided',
-    ].join('\n')
+    if (!name || !email || !phone || !projectType || !usage || !message) {
+      const missing = [
+        !name && 'name',
+        !email && 'email',
+        !phone && 'phone',
+        !projectType && 'project type',
+        !usage && 'usage',
+        !message && 'message',
+      ].filter(Boolean)
 
-    window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+      const alertMessage = `Please fill in the required fields: ${missing.join(', ')}.`
+      if (typeof window !== 'undefined') {
+        window.alert(alertMessage)
+      }
+      return
+    }
+
+    const payload = {
+      name,
+      email,
+      phone,
+      projectType,
+      usage,
+      message,
+      _subject: `AeroSun Energy project brief from ${name}`,
+      _replyto: email,
+    }
+
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${contactEmail}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(payload),
+      })
+
+      if (!response.ok) {
+        throw new Error('The email service rejected the request.')
+      }
+
+      formElement?.reset()
+      setProjectBriefFeedback({
+        type: 'success',
+        message: 'Your project brief has been sent successfully.',
+      })
+    } catch (error) {
+      const mailtoUrl = `mailto:${contactEmail}?subject=${encodeURIComponent(`AeroSun Energy project brief from ${name}`)}&body=${encodeURIComponent([
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Phone: ${phone}`,
+        `Project type: ${projectType}`,
+        `Estimated usage: ${usage}`,
+        '',
+        'Message:',
+        message,
+      ].join('\n'))}`
+
+      formElement?.reset()
+      setProjectBriefFeedback({
+        type: 'error',
+        message: 'The email service is unavailable right now. Your email app is opened so you can send it manually.',
+      })
+
+      if (typeof window !== 'undefined') {
+        window.location.href = mailtoUrl
+      }
+    }
   }
 
   return (
@@ -260,7 +321,7 @@ export default function Contact() {
               <h2 className="mt-3 text-3xl font-semibold text-slate-900 dark:text-white">{c.projectBriefTitle}</h2>
               <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">{c.projectBriefCopy}</p>
 
-              <form className="mt-6 grid gap-4 sm:grid-cols-2" onSubmit={handleProjectBrief}>
+              <form ref={projectBriefFormRef} className="mt-6 grid gap-4 sm:grid-cols-2" onSubmit={handleProjectBrief}>
                 <Field label={c.form.fullName} name="name" placeholder={c.form.fullNamePlaceholder} />
                 <Field label={c.form.email} name="email" type="email" placeholder={c.form.emailPlaceholder} />
                 <Field label={c.form.phone} name="phone" placeholder={c.form.phonePlaceholder} />
@@ -290,6 +351,14 @@ export default function Contact() {
                     {c.emailDirect}
                   </Link>
                 </div>
+
+                {projectBriefFeedback && (
+                  <div className="sm:col-span-2">
+                    <p className={`text-sm font-semibold ${projectBriefFeedback.type === 'success' ? 'text-emerald-700 dark:text-emerald-300' : 'text-rose-600 dark:text-rose-300'}`}>
+                      {projectBriefFeedback.message}
+                    </p>
+                  </div>
+                )}
               </form>
             </CardContent>
           </Card>

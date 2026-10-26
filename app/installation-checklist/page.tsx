@@ -4,6 +4,8 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
+import { submitMailtoForm } from '@/lib/submitMailto'
+import { useState } from 'react'
 
 const checklistSchema = z.object({
   customerName: z.string().trim().min(2, 'Customer name is required.'),
@@ -44,6 +46,7 @@ const defaultValues: ChecklistFormValues = {
 }
 
 export default function InstallationChecklistPage() {
+  const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {
     register,
     handleSubmit,
@@ -77,8 +80,17 @@ export default function InstallationChecklistPage() {
       data.notes,
     ].join('\n')
 
-    window.location.href = `mailto:customercare@aerosunenergy.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    const opened = submitMailtoForm({
+      to: 'customercare@aerosunenergy.in',
+      subject,
+      body,
+    })
+
     reset(defaultValues)
+    setSubmitFeedback({
+      type: opened ? 'success' : 'error',
+      message: opened ? 'Your checklist has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+    })
   }
 
   return (
@@ -270,7 +282,11 @@ export default function InstallationChecklistPage() {
                   {isSubmitting ? 'Submitting...' : 'Submit checklist'}
                 </button>
 
-                {isSubmitSuccessful && (
+                {submitFeedback ? (
+                  <p className={`text-sm font-medium ${submitFeedback.type === 'success' ? 'text-emerald-300' : 'text-rose-300'}`}>
+                    {submitFeedback.message}
+                  </p>
+                ) : isSubmitSuccessful && (
                   <p className="text-sm font-medium text-emerald-300">Your checklist has been prepared in your email app.</p>
                 )}
               </form>

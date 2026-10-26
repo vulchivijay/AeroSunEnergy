@@ -1,9 +1,11 @@
 'use client'
 
+import { useState } from 'react'
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
+import { submitMailtoForm } from '@/lib/submitMailto'
 
 const purchaseOrderSchema = z.object({
   customerName: z.string().trim().min(2, 'Customer name is required.'),
@@ -48,6 +50,7 @@ const defaultValues: PurchaseOrderFormValues = {
 }
 
 export default function PurchaseOrderPage() {
+  const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {
     register,
     handleSubmit,
@@ -83,8 +86,17 @@ export default function PurchaseOrderPage() {
       'Terms accepted by customer: Yes',
     ].join('\n')
 
-    window.location.href = `mailto:customercare@aerosunenergy.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    const opened = submitMailtoForm({
+      to: 'customercare@aerosunenergy.in',
+      subject,
+      body,
+    })
+
     reset(defaultValues)
+    setSubmitFeedback({
+      type: opened ? 'success' : 'error',
+      message: opened ? 'Your purchase order has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+    })
   }
 
   return (
@@ -292,7 +304,11 @@ export default function PurchaseOrderPage() {
                   {isSubmitting ? 'Submitting...' : 'Confirm purchase order'}
                 </button>
 
-                {isSubmitSuccessful && (
+                {submitFeedback ? (
+                  <p className={`text-sm font-medium ${submitFeedback.type === 'success' ? 'text-emerald-300' : 'text-rose-300'}`}>
+                    {submitFeedback.message}
+                  </p>
+                ) : isSubmitSuccessful && (
                   <p className="text-sm font-medium text-emerald-300">Your purchase order has been prepared in your email app.</p>
                 )}
               </form>
