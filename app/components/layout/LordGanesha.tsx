@@ -14,6 +14,7 @@ function getIpStorageKey(ip: string) {
 export default function LordGanesha() {
   const [open, setOpen] = useState(false)
   const [resolvedIp, setResolvedIp] = useState<string | null>(null)
+  const [isReady, setIsReady] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -35,6 +36,7 @@ export default function LordGanesha() {
         if (cancelled) return
 
         setResolvedIp(ip)
+        setIsReady(true)
 
         const storageKey = getIpStorageKey(ip)
         const existing = localStorage.getItem(storageKey)
@@ -58,6 +60,8 @@ export default function LordGanesha() {
 
         const fallbackKey = getIpStorageKey('unknown')
         const existing = localStorage.getItem(fallbackKey)
+        setResolvedIp('unknown')
+        setIsReady(true)
 
         if (!existing) {
           setOpen(true)
@@ -103,10 +107,14 @@ export default function LordGanesha() {
 
   const title = useMemo(() => 'Lord Ganesha Blessing', [])
 
+  if (!isReady) {
+    return <div className="hidden" aria-hidden="true" />
+  }
+
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center px-4">
+    <div className="fixed inset-0 z-60 flex items-center justify-center px-4">
       <div className="absolute inset-0 bg-black/55 backdrop-blur-[2px]" aria-hidden="true" />
 
       <div className="relative z-10 w-full max-w-xl rounded-2xl bg-white p-6 text-gray-900 shadow-[0_25px_80px_rgba(0,0,0,0.25)] dark:bg-gray-800 dark:text-gray-100">

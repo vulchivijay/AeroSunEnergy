@@ -32,6 +32,9 @@ export const metadata = {
     'solar street lighting',
     'renewable energy India',
   ],
+  alternates: {
+    canonical: '/solarenergy',
+  },
   openGraph: {
     title: 'Solar Energy Systems | AeroSun Energy',
     description:
@@ -39,6 +42,10 @@ export const metadata = {
     url: 'https://aerosunenergy.in/solarenergy',
     siteName: 'AeroSun Energy',
     type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 

@@ -20,6 +20,9 @@ export const metadata = {
     'industrial solar service',
     'solar water pumping installation',
   ],
+  alternates: {
+    canonical: '/services',
+  },
   openGraph: {
     title: 'Renewable Energy Services | AeroSun Energy',
     description:
@@ -27,6 +30,10 @@ export const metadata = {
     url: 'https://aerosunenergy.in/services',
     siteName: 'AeroSun Energy',
     type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 
