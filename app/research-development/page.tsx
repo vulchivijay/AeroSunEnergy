@@ -1,14 +1,40 @@
 import type { Metadata } from 'next'
-import ResearchDevelopmentPage from '@/app/components/pages/ResearchDevelopmentPage'
 
 export const metadata: Metadata = {
-  title: 'మార్వాడీ వ్యాపార పద్ధతులు | AeroSun Energy',
+  title: 'Business Strategy and Growth Roadmap | AeroSun Energy',
   description:
-    'AeroSun Energy కోసం మార్వాడీ వ్యాపార పద్ధతులు, పెట్టుబడి, నగదు ప్రవాహం, సరఫరాదారులు, profitability, 90-day plan, and realistic operating roadmap.',
+    'AeroSun Energy business strategy guide covering capital discipline, cash flow, supplier strategy, customer segmentation, risk management, and a 90-day execution roadmap.',
   robots: {
     index: false,
     follow: false,
   },
+}
+
+function SectionTitle({ eyebrow, title }: { eyebrow: string; title: string }) {
+  return (
+    <div className="mb-6">
+      <p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-600">{eyebrow}</p>
+      <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900">{title}</h2>
+    </div>
+  )
+}
+
+function MetricCard({ label, value, className = '' }: { label: string; value: string; className?: string }) {
+  return (
+    <div className={`rounded-2xl border p-3 ${className}`}>
+      <p className="text-[10px] font-black uppercase tracking-[0.2em]">{label}</p>
+      <p className="mt-2 text-xl font-black text-slate-900">{value}</p>
+    </div>
+  )
+}
+
+function FeatureCard({ title, text, tone = 'bg-white' }: { title: string; text: string; tone?: string }) {
+  return (
+    <div className={`rounded-[1.5rem] border border-slate-200 ${tone} p-4 shadow-sm`}>
+      <p className="text-sm font-black text-slate-900">{title}</p>
+      <p className="mt-3 text-sm leading-6 text-slate-700">{text}</p>
+    </div>
+  )
 }
 
 const highlights = [
@@ -245,10 +271,7 @@ export default function Page() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mb-6">
-          <p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700">1. తక్కువ పెట్టుబడితో ప్రారంభించడం</p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900">ప్రారంభంలో పెద్ద పెట్టుబడి కాదు, డిమాండ్ ముందుగా</h2>
-        </div>
+        <SectionTitle eyebrow="1. తక్కువ పెట్టుబడితో ప్రారంభించడం" title="ప్రారంభంలో పెద్ద పెట్టుబడి కాదు, డిమాండ్ ముందుగా" />
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-[2rem] border border-emerald-200 bg-white p-6 shadow-sm">
@@ -297,10 +320,7 @@ export default function Page() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mb-6">
-          <p className="text-[10px] font-black uppercase tracking-[0.28em] text-cyan-700">2. నగదు ప్రవాహం (Cash Flow)</p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900">లాభం మరియు నగదు రెండూ వేర్వేరు</h2>
-        </div>
+        <SectionTitle eyebrow="2. నగదు ప్రవాహం (Cash Flow)" title="లాభం మరియు నగదు రెండూ వేర్వేరు" />
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-[2rem] border border-cyan-200 bg-cyan-50 p-6">
@@ -336,10 +356,7 @@ export default function Page() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mb-6">
-          <p className="text-[10px] font-black uppercase tracking-[0.28em] text-violet-700">3. సరఫరాదారులతో సంబంధాలు, కొనుగోలు ధరలు</p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900">ఒక్క సరఫరాదారుపై ఆధారపడకండి</h2>
-        </div>
+        <SectionTitle eyebrow="3. సరఫరాదారులతో సంబంధాలు, కొనుగోలు ధరలు" title="ఒక్క సరఫరాదారుపై ఆధారపడకండి" />
 
         <div className="grid gap-5 lg:grid-cols-2">
           {supplierOptions.map((supplier) => (
@@ -368,10 +385,7 @@ export default function Page() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mb-6">
-          <p className="text-[10px] font-black uppercase tracking-[0.28em] text-amber-700">5. లాభాల లెక్కలు, తిరిగి పెట్టుబడి</p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900">ఆదాయం = లాభం కాదు; ప్రాజెక్ట్ కాంట్రిబ్యూషన్ తెలుసుకోవాలి</h2>
-        </div>
+        <SectionTitle eyebrow="5. లాభాల లెక్కలు, తిరిగి పెట్టుబడి" title="ఆదాయం = లాభం కాదు; ప్రాజెక్ట్ కాంట్రిబ్యూషన్ తెలుసుకోవాలి" />
 
         <div className="rounded-[2rem] border border-amber-200 bg-amber-50 p-6">
           <p className="text-base leading-8 text-slate-700">
@@ -391,10 +405,7 @@ export default function Page() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mb-6">
-          <p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700">13. AeroSun కోసం పూర్తి వ్యాపార ఉదాహరణ</p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900">నెలవారీ సదుపాయాలు, లాభాలు మరియు నగదు అవసరాలు</h2>
-        </div>
+        <SectionTitle eyebrow="13. AeroSun కోసం పూర్తి వ్యాపార ఉదాహరణ" title="నెలవారీ సదుపాయాలు, లాభాలు మరియు నగదు అవసరాలు" />
 
         <div className="rounded-[2rem] border border-emerald-200 bg-white p-6 shadow-sm">
           <p className="text-base leading-8 text-slate-700">
@@ -415,10 +426,7 @@ export default function Page() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mb-6">
-          <p className="text-[10px] font-black uppercase tracking-[0.28em] text-violet-700">14. మొదటి 90 రోజుల కార్యాచరణ ప్రణాళిక</p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900">స్వల్ప కాలంలో డేటా సేకరించడానికి బాగా రూపొందించిన ప్రణాళిక</h2>
-        </div>
+        <SectionTitle eyebrow="14. మొదటి 90 రోజుల కార్యాచరణ ప్రణాళిక" title="స్వల్ప కాలంలో డేటా సేకరించడానికి బాగా రూపొందించిన ప్రణాళిక" />
 
         <div className="space-y-5">
           {plans90.map((plan) => (
@@ -443,10 +451,7 @@ export default function Page() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mb-6">
-          <p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-600">15. మార్వాడీ వ్యాపార పద్ధతుల నుంచి ప్రధాన సూత్రాలు</p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900">12 ముఖ్య సూత్రాలు</h2>
-        </div>
+        <SectionTitle eyebrow="15. మార్వాడీ వ్యాపార పద్ధతుల నుంచి ప్రధాన సూత్రాలు" title="12 ముఖ్య సూత్రాలు" />
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {principles.map((principle, index) => (
@@ -481,8 +486,6 @@ export default function Page() {
           </p>
         </div>
       </section>
-
-      <ResearchDevelopmentPage />
     </main>
   )
 }

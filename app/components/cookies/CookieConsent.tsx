@@ -38,13 +38,13 @@ export default function CookieConsent() {
   }
 
   if (!isReady) {
-    return <div className="fixed inset-x-0 bottom-0 z-60 h-32 sm:h-26" aria-hidden="true" />
+    return <div className="fixed inset-x-0 bottom-0 z-40 h-32 sm:h-26" aria-hidden="true" />
   }
 
   if (!isVisible) return null
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-60 flex justify-center p-4 sm:p-6">
+    <div className="fixed inset-x-0 bottom-0 z-40 flex justify-center p-4 sm:p-6">
       <div
         role="dialog"
         aria-modal="true"

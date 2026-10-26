@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from 'react'
 
 const STORAGE_KEY = 'aerosun_lord_ganesha_modal'
 const MODAL_TTL_MS = 24 * 60 * 60 * 1000
-const AUTO_CLOSE_MS = 30 * 1000
+const AUTO_CLOSE_MS = 5 * 1000
 
 function getIpStorageKey(ip: string) {
   return `${STORAGE_KEY}:${ip}`
@@ -114,7 +114,7 @@ export default function LordGanesha() {
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-60 flex items-center justify-center px-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
       <div className="absolute inset-0 bg-black/55 backdrop-blur-[2px]" aria-hidden="true" />
 
       <div className="relative z-10 w-full max-w-xl rounded-2xl bg-white p-6 text-gray-900 shadow-[0_25px_80px_rgba(0,0,0,0.25)] dark:bg-gray-800 dark:text-gray-100">
@@ -150,7 +150,7 @@ export default function LordGanesha() {
             >
               Close
             </button>
-            <span className="text-xs text-gray-500 dark:text-gray-400">Auto-closes in 30s</span>
+            <span className="text-xs text-gray-500 dark:text-gray-400">Auto-closes in 5s</span>
           </div>
         </div>
       </div>

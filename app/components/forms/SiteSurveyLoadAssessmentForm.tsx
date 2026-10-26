@@ -4,6 +4,8 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
+import { submitMailtoForm } from '@/lib/submitMailto'
+import { useState } from 'react'
 
 const siteSurveySchema = z.object({
   customerName: z.string().trim().min(2, 'Customer name is required.'),
@@ -52,6 +54,7 @@ export const defaultSiteSurveyValues: SiteSurveyFormValues = {
 }
 
 export function SiteSurveyLoadAssessmentForm() {
+  const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {
     register,
     handleSubmit,
@@ -85,8 +88,17 @@ export function SiteSurveyLoadAssessmentForm() {
       data.notes,
     ].join('\n')
 
-    window.location.href = `mailto:customercare@aerosunenergy.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    const opened = submitMailtoForm({
+      to: 'customercare@aerosunenergy.in',
+      subject,
+      body,
+    })
+
     reset(defaultSiteSurveyValues)
+    setSubmitFeedback({
+      type: opened ? 'success' : 'error',
+      message: opened ? 'Your site survey request has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+    })
   }
 
   return (
@@ -515,17 +527,19 @@ export function SiteSurveyLoadAssessmentForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="inline-flex items-center justify-center rounded-full bg-linear-to-r from-[#0d6a73] via-[#0d5b9f] to-[#0b3d7a] px-6 py-3 text-sm font-black uppercase tracking-[0.18em] text-white shadow-[0_18px_32px_-20px_rgba(17,94,89,0.9)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_22px_34px_-18px_rgba(17,94,89,0.9)] disabled:cursor-not-allowed disabled:opacity-60"
+                className="inline-flex w-full items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition-all duration-200 hover:-translate-y-0.5 hover:bg-sky-100 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                {isSubmitting ? 'Submitting...' : 'Submit Assessment'}
+                {isSubmitting ? 'Submitting...' : 'Submit site survey'}
               </button>
-            </div>
 
-            {isSubmitSuccessful && (
-              <p className="rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-700">
-                Your survey request has been prepared in your email app.
-              </p>
-            )}
+              {submitFeedback ? (
+                <p className={`text-sm font-medium ${submitFeedback.type === 'success' ? 'text-emerald-300' : 'text-rose-300'}`}>
+                  {submitFeedback.message}
+                </p>
+              ) : isSubmitSuccessful && (
+                <p className="text-sm font-medium text-emerald-300">Your site survey request has been prepared in your email app.</p>
+              )}
+            </div>
           </form>
         </div>
       </div>

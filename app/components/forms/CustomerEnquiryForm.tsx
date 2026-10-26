@@ -4,6 +4,8 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
+import { submitMailtoForm } from '@/lib/submitMailto'
+import { useState } from 'react'
 
 const enquirySchema = z.object({
   customerName: z.string().trim().min(2, 'Customer name is required.'),
@@ -52,6 +54,7 @@ export const defaultEnquiryValues: EnquiryFormValues = {
 }
 
 export function CustomerEnquiryForm() {
+  const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {
     register,
     handleSubmit,
@@ -88,8 +91,17 @@ export function CustomerEnquiryForm() {
       data.projectDetails,
     ].join('\n')
 
-    window.location.href = `mailto:customercare@aerosunenergy.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    const opened = submitMailtoForm({
+      to: 'customercare@aerosunenergy.in',
+      subject,
+      body,
+    })
+
     reset(defaultEnquiryValues)
+    setSubmitFeedback({
+      type: opened ? 'success' : 'error',
+      message: opened ? 'Your enquiry has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+    })
   }
 
   return (
@@ -232,7 +244,11 @@ export function CustomerEnquiryForm() {
                   {isSubmitting ? 'Submitting...' : 'Send Enquiry'}
                 </button>
 
-                {isSubmitSuccessful && (
+                {submitFeedback ? (
+                  <p className={`text-sm font-semibold ${submitFeedback.type === 'success' ? 'text-emerald-700' : 'text-rose-600'}`}>
+                    {submitFeedback.message}
+                  </p>
+                ) : isSubmitSuccessful && (
                   <p className="text-sm font-semibold text-emerald-700">Your enquiry has been prepared in your email app.</p>
                 )}
               </div>

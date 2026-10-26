@@ -29,7 +29,7 @@ export default function Notifications() {
           <div className="relative flex h-full items-center justify-between gap-2">
             <div className="m-2 flex min-w-0 flex-1 items-center">
               <span className="inline-flex hidden shrink-0 items-center rounded-full border border-emerald-300/40 bg-emerald-300/10 px-2 py-1 text-[9px] font-bold uppercase tracking-[0.22em] text-emerald-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] sm:text-[10px]">
-                AeroSun Update
+                Updates
               </span>
 
               <p className="min-w-0 flex-1 text-center text-[10px] font-light leading-4 tracking-[0.12em] text-slate-100 lg:text-xs lg:tracking-[0.16em]">

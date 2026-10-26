@@ -160,28 +160,14 @@ const ethicsPoints = [
 
 const approvalRows = [
   ['Certificate of Incorporation and CIN', 'Establishes the company’s legal identity (MCA)', 'Done'],
-  ['Memorandum of Association', 'Defines the company’s business scope, objectives and legal framework', 'Done'],
-  ['Articles of Association', 'Sets out the company’s internal governance, rules and operating structure', 'Done'],
-  ['Company PAN', 'Tax identification', 'Done'],
-  ['Company TAN', 'Tax deduction and collection compliance where applicable', 'Done'],
-  ['AGILE-PRO-S', 'MCA registration and business identity filing support', 'Done'],
-  ['EPFO SPECIMEN', 'Employee provident fund compliance and workforce contribution records', 'Done'],
-  ['GST registration', 'Required when applicable under GST law', 'Done'],
-  ['Professional Tax Registration', 'State professional tax compliance for employees and business operations', 'Done'],
-  ['ADT-1 Filing', 'Statutory auditor appointment filing with the registrar', 'Done'],
+  ['EPFO', 'Employee provident fund compliance and workforce contribution records', 'Done'],
+  ['GST', 'Required when applicable under GST law', 'Done'],
+  ['Professional Tax', 'State professional tax compliance for employees and business operations', 'Done'],
   ['Accountant', 'Financial accounting, books of records and compliance support', 'Done'],
   ['Compliance Advisor', 'External regulatory guidance and compliance monitoring support', 'Done'],
   ['DPIIT Startup Recognition', 'Startup India recognition if eligible', 'In process'],
-  ['Trademark registration', 'Protects the company brand and eligible marks', 'In process'],
-  ['Udyam/MSME registration', 'MSME recognition if eligible', 'Done'],
-]
-
-const officialResources = [
-  { label: 'MNRE', href: 'https://mnre.gov.in/' },
-  { label: 'NREDCAP', href: 'https://nredcap.in/' },
-  { label: 'APERC', href: 'https://www.aperc.gov.in/' },
-  { label: 'Startup India', href: 'https://www.startupindia.gov.in/' },
-  { label: 'Udyam Registration', href: 'https://udyamregistration.gov.in/' },
+  ['Trademark', 'Protects the company brand and eligible marks', 'In process'],
+  ['Udyam/MSME', 'MSME recognition if eligible', 'Done'],
 ]
 
 const promisePoints = [
@@ -354,56 +340,62 @@ export default function AboutPage() {
             Formal registrations and approval milestones
           </h2>
 
-          <div className="mt-6 overflow-x-auto rounded-[26px] border border-slate-200 bg-white/85 shadow-[0_20px_45px_-35px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
-            <table className="min-w-full border-collapse text-left text-sm text-slate-700 dark:text-slate-300">
-              <thead className="bg-slate-50 dark:bg-slate-800/80">
-                <tr>
-                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Registration / approval</th>
-                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Purpose</th>
-                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                {approvalRows.map(([label, purpose, status]) => (
-                  <tr key={label} className="border-t border-slate-200 dark:border-slate-700">
-                    <td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{label}</td>
-                    <td className="px-4 py-3">{purpose}</td>
-                    <td className="px-4 py-3">
-                      <span className={`inline-flex rounded-full px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.18em] ${
-                        status === 'Done'
-                          ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300'
-                          : status === 'In process'
-                            ? 'bg-amber-100 text-amber-700 dark:bg-amber-950/40 dark:text-amber-300'
-                            : 'bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-200'
-                      }`}>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {approvalRows.map(([label, purpose, status], index) => {
+              const borderGradients = [
+                'from-emerald-400 via-green-500 to-lime-500',
+                'from-sky-400 via-cyan-500 to-blue-600',
+                'from-violet-400 via-purple-500 to-fuchsia-600',
+                'from-rose-400 via-pink-500 to-red-600',
+                'from-amber-400 via-orange-500 to-yellow-500',
+                'from-cyan-400 via-teal-500 to-emerald-600',
+                'from-indigo-400 via-violet-500 to-purple-600',
+                'from-pink-400 via-rose-500 to-orange-500',
+                'from-slate-400 via-zinc-500 to-stone-600',
+              ]
+
+              const accentGradients = [
+                'from-emerald-500 via-green-500 to-lime-500',
+                'from-sky-500 via-cyan-500 to-blue-600',
+                'from-violet-500 via-purple-500 to-fuchsia-600',
+                'from-rose-500 via-pink-500 to-red-600',
+                'from-amber-500 via-orange-500 to-yellow-500',
+                'from-cyan-500 via-teal-500 to-emerald-600',
+                'from-indigo-500 via-violet-500 to-purple-600',
+                'from-pink-500 via-rose-500 to-orange-500',
+                'from-slate-500 via-zinc-500 to-stone-600',
+              ]
+
+              return (
+                <div
+                  key={label}
+                  className={`group relative overflow-hidden rounded-[26px] border border-amber-200/80 bg-gradient-to-br ${borderGradients[index % borderGradients.length]} p-[1px] shadow-[0_24px_60px_-30px_rgba(245,158,11,0.7)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_68px_-28px_rgba(245,158,11,0.8)] dark:border-amber-800/70`}
+                >
+                  <div className="relative h-full rounded-[25px] bg-white/90 p-4 dark:bg-slate-950/85">
+                    <div className={`absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b ${accentGradients[index % accentGradients.length]}`} />
+                    <div className="flex items-start justify-between gap-3 pl-3">
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[9px] font-black uppercase tracking-[0.26em] text-amber-700 dark:text-amber-300">
+                          Registration / approval
+                        </p>
+                        <p className="mt-3 text-sm font-black leading-6 text-slate-900 dark:text-white">
+                          {label}
+                        </p>
+                      </div>
+                      <span
+                        className={`inline-flex shrink-0 rounded-full border px-2.5 py-1 text-[8px] font-black uppercase tracking-[0.18em] ${
+                          status === 'Done'
+                            ? 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-300'
+                            : 'border-amber-200 bg-amber-50 text-amber-700 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-300'
+                        }`}
+                      >
                         {status}
                       </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div className="mt-6 rounded-[24px] border border-slate-200 bg-white/80 p-4 dark:border-slate-700 dark:bg-slate-900/70">
-            <div className="mb-3 flex items-center justify-between gap-3">
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">
-                Official sources
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {officialResources.map((resource) => (
-                <a
-                  key={resource.label}
-                  href={resource.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:border-amber-300 hover:bg-amber-50 hover:text-amber-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-amber-700 dark:hover:bg-amber-950/30 dark:hover:text-amber-300"
-                >
-                  {resource.label}
-                </a>
-              ))}
-            </div>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>

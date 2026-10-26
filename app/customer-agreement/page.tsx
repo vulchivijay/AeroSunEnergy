@@ -3,6 +3,8 @@
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { submitMailtoForm } from '@/lib/submitMailto'
+import { useState } from 'react'
 
 const agreementSchema = z.object({
   customerName: z.string().trim().min(2, 'Customer name is required.'),
@@ -29,6 +31,7 @@ const defaultValues: AgreementFormValues = {
 }
 
 export default function CustomerAgreementPage() {
+  const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {
     register,
     handleSubmit,
@@ -56,8 +59,17 @@ export default function CustomerAgreementPage() {
       'Payment terms acknowledged by customer.',
     ].join('\n')
 
-    window.location.href = `mailto:customercare@aerosunenergy.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    const opened = submitMailtoForm({
+      to: 'customercare@aerosunenergy.in',
+      subject,
+      body,
+    })
+
     reset(defaultValues)
+    setSubmitFeedback({
+      type: opened ? 'success' : 'error',
+      message: opened ? 'Your agreement submission has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+    })
   }
 
   return (
@@ -253,12 +265,20 @@ export default function CustomerAgreementPage() {
                   </label>
                   {errors.agreed && <p className="text-xs text-rose-300">{errors.agreed.message}</p>}
 
-                  <button type="submit" disabled={isSubmitting} className="inline-flex w-full items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-black uppercase tracking-[0.18em] text-slate-900 transition-all duration-200 hover:-translate-y-0.5 hover:bg-indigo-100 disabled:cursor-not-allowed disabled:opacity-60">
-                    {isSubmitting ? 'Submitting...' : 'Accept Agreement'}
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="inline-flex w-full items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-indigo-900 disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {isSubmitting ? 'Sending...' : 'Submit agreement'}
                   </button>
 
-                  {isSubmitSuccessful && (
-                    <p className="text-sm font-medium text-emerald-300">Your agreement acceptance has been prepared in your email app.</p>
+                  {submitFeedback ? (
+                    <p className={`text-sm font-medium ${submitFeedback.type === 'success' ? 'text-emerald-300' : 'text-rose-300'}`}>
+                      {submitFeedback.message}
+                    </p>
+                  ) : isSubmitSuccessful && (
+                    <p className="text-sm font-medium text-emerald-300">Your agreement submission has been prepared in your email app.</p>
                   )}
                 </div>
               </aside>

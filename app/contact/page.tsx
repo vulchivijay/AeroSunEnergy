@@ -7,6 +7,8 @@ import { Card, CardContent } from '@/app/components/ui/Card'
 import FaqCard, { solarFaqs } from '@/app/components/ui/FaqCard'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
+import { useState, useRef } from 'react'
+import { submitMailtoForm } from '@/lib/submitMailto'
 
 const channelIcons = {
   email: (
@@ -29,6 +31,8 @@ const channelIcons = {
 }
 
 export default function Contact() {
+  const [projectBriefFeedback, setProjectBriefFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
+  const projectBriefFormRef = useRef<HTMLFormElement | null>(null)
   const { t } = useLocale()
   const c = t.contact
   const footer = t.footer
@@ -71,10 +75,11 @@ export default function Contact() {
 
   const contactEmail = footer.email
 
-  const handleProjectBrief = (event: FormEvent<HTMLFormElement>) => {
+  const handleProjectBrief = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    const form = new FormData(event.currentTarget)
+    const formElement = projectBriefFormRef.current ?? event.currentTarget
+    const form = new FormData(formElement)
     const name = String(form.get('name') ?? '').trim()
     const email = String(form.get('email') ?? '').trim()
     const phone = String(form.get('phone') ?? '').trim()
@@ -82,19 +87,75 @@ export default function Contact() {
     const usage = String(form.get('usage') ?? '').trim()
     const message = String(form.get('message') ?? '').trim()
 
-    const subject = `AeroSun Energy project brief${name ? ` from ${name}` : ''}`
-    const body = [
-      `Name: ${name || 'Not provided'}`,
-      `Email: ${email || 'Not provided'}`,
-      `Phone: ${phone || 'Not provided'}`,
-      `Project type: ${projectType || 'Not provided'}`,
-      `Estimated usage: ${usage || 'Not provided'}`,
+    if (!name || !email || !phone || !projectType || !usage || !message) {
+      const missing = [
+        !name && 'name',
+        !email && 'email',
+        !phone && 'phone',
+        !projectType && 'project type',
+        !usage && 'usage',
+        !message && 'message',
+      ].filter(Boolean)
+
+      const alertMessage = `Please fill in the required fields: ${missing.join(', ')}.`
+      if (typeof window !== 'undefined') {
+        window.alert(alertMessage)
+      }
+      return
+    }
+
+    const payload = {
+      name,
+      email,
+      phone,
+      projectType,
+      usage,
+      message,
+    }
+
+    const mailtoUrl = `mailto:${contactEmail}?subject=${encodeURIComponent(`AeroSun Energy project brief from ${name}`)}&body=${encodeURIComponent([
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      `Project type: ${projectType}`,
+      `Estimated usage: ${usage}`,
       '',
       'Message:',
-      message || 'Not provided',
-    ].join('\n')
+      message,
+    ].join('\n'))}`
 
-    window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(payload),
+      })
+
+      const result = await response.json().catch(() => ({}))
+
+      if (!response.ok) {
+        throw new Error(result?.error || 'The contact service rejected the request.')
+      }
+
+      formElement?.reset()
+      setProjectBriefFeedback({
+        type: 'success',
+        message: result?.message || 'Your project brief has been sent successfully.',
+      })
+    } catch (error) {
+      formElement?.reset()
+      setProjectBriefFeedback({
+        type: 'error',
+        message: 'The contact service is unavailable right now. Your email app is opening so you can send it manually.',
+      })
+
+      if (typeof window !== 'undefined') {
+        window.location.href = mailtoUrl
+      }
+    }
   }
 
   return (
@@ -112,7 +173,7 @@ export default function Contact() {
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.22),transparent_22%),radial-gradient(circle_at_100%_0%,rgba(245,158,11,0.18),transparent_18%),linear-gradient(135deg,#f5faf6_0%,#effaf2_28%,#f8fafc_100%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.20),transparent_20%),radial-gradient(circle_at_100%_0%,rgba(245,158,11,0.20),transparent_18%),linear-gradient(135deg,#081421_0%,#101d2d_32%,#020817_100%)]" aria-hidden="true" />
 
-            <div className="relative grid gap-7 p-5 sm:p-7 xl:min-h-[560px]">
+            <div className="relative grid gap-7 p-5 sm:p-7 xl:min-h-140">
               <div className="flex rounded-[28px] border border-[#dfeee4]/80 bg-white/65 p-2 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/40">
                 <div className="flex h-full flex-col justify-center rounded-3xl bg-[linear-gradient(135deg,rgba(255,255,255,0.95),rgba(244,248,245,0.88))] p-5 sm:p-6 dark:bg-[linear-gradient(135deg,rgba(15,23,42,0.92),rgba(15,23,42,0.78))]">
                   <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#20A44A]/20 bg-white/85 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.30em] text-[#183729] shadow-sm backdrop-blur-md dark:border-white/10 dark:bg-slate-900/70 dark:text-slate-100">
@@ -170,7 +231,7 @@ export default function Contact() {
                     <span className="text-[#F59E0B]">{c.projectBrief}</span>
                   </div>
 
-                  <div className="relative mt-3 h-[300px] overflow-hidden rounded-[22px] sm:h-[350px]">
+                  <div className="relative mt-3 h-75 overflow-hidden rounded-[22px] sm:h-87.5">
                     <OptimizedImage
                       src="/images/customdesign-aerosunenergy.png"
                       alt="AeroSun Energy custom renewable energy design"
@@ -260,7 +321,7 @@ export default function Contact() {
               <h2 className="mt-3 text-3xl font-semibold text-slate-900 dark:text-white">{c.projectBriefTitle}</h2>
               <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">{c.projectBriefCopy}</p>
 
-              <form className="mt-6 grid gap-4 sm:grid-cols-2" onSubmit={handleProjectBrief}>
+              <form ref={projectBriefFormRef} className="mt-6 grid gap-4 sm:grid-cols-2" onSubmit={handleProjectBrief}>
                 <Field label={c.form.fullName} name="name" placeholder={c.form.fullNamePlaceholder} />
                 <Field label={c.form.email} name="email" type="email" placeholder={c.form.emailPlaceholder} />
                 <Field label={c.form.phone} name="phone" placeholder={c.form.phonePlaceholder} />
@@ -290,6 +351,14 @@ export default function Contact() {
                     {c.emailDirect}
                   </Link>
                 </div>
+
+                {projectBriefFeedback && (
+                  <div className="sm:col-span-2">
+                    <p className={`text-sm font-semibold ${projectBriefFeedback.type === 'success' ? 'text-emerald-700 dark:text-emerald-300' : 'text-rose-600 dark:text-rose-300'}`}>
+                      {projectBriefFeedback.message}
+                    </p>
+                  </div>
+                )}
               </form>
             </CardContent>
           </Card>
