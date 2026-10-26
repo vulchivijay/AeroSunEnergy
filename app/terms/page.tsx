@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Terms and Conditions',
+  title: 'Terms and Conditions | AeroSun Energy',
   description:
     'Read the AeroSun Energy website terms and conditions covering service scope, usage rules, intellectual property, liability, and governing law.',
   keywords: [

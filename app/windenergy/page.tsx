@@ -33,6 +33,9 @@ export const metadata = {
     'wind turbines for agriculture',
     'renewable energy India',
   ],
+  alternates: {
+    canonical: '/windenergy',
+  },
   openGraph: {
     title: 'Wind Energy Systems | AeroSun Energy',
     description:
@@ -40,6 +43,10 @@ export const metadata = {
     url: 'https://aerosunenergy.in/windenergy',
     siteName: 'AeroSun Energy',
     type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 

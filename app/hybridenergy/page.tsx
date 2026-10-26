@@ -28,6 +28,9 @@ export const metadata = {
     'resilient clean energy system',
     'renewable energy India',
   ],
+  alternates: {
+    canonical: '/hybridenergy',
+  },
   openGraph: {
     title: 'Hybrid Solar & Wind Energy | AeroSun Energy',
     description:
@@ -35,6 +38,10 @@ export const metadata = {
     url: 'https://aerosunenergy.in/hybridenergy',
     siteName: 'AeroSun Energy',
     type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 
@@ -238,15 +245,6 @@ export default function HybridEnergyPage() {
             <HybridInfoPanel title="Feasibility checklist" content={['Wind resource assessment', 'Storage sizing', 'Load profile analysis', 'Grid approval and safety review']} accent="sky" />
           </div>
         </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mb-8 max-w-3xl">
-          <HybridSectionEyebrow>Application sizing</HybridSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900">System size and customer categories</h2>
-        </div>
-
-        <HybridTable rows={projectRows} />
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
