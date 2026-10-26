@@ -381,6 +381,9 @@ export default function Navbar() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v11m0 0l-4-4m4 4l4-4M5 20h14"/>
                   </svg>
                 </span>
+                <span className="header-label relative z-10 mx-2 text-[9px] font-black uppercase tracking-[0.2em] text-[#1f2937] sm:text-[10px]">
+                  Voucher
+                </span>
               </span>
             </a>
           </div>

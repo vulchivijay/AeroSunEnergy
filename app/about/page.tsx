@@ -341,35 +341,61 @@ export default function AboutPage() {
           </h2>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {approvalRows.map(([label, purpose, status]) => (
-              <div
-                key={label}
-                className="group relative overflow-hidden rounded-[26px] border border-amber-200/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.94),rgba(254,249,195,0.78),rgba(255,255,255,0.96))] p-[1px] shadow-[0_24px_60px_-30px_rgba(245,158,11,0.7)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_68px_-28px_rgba(245,158,11,0.8)] dark:border-amber-800/70 dark:bg-[linear-gradient(135deg,rgba(12,18,25,0.95),rgba(67,38,14,0.82),rgba(12,18,25,0.95))]"
-              >
-                <div className="relative h-full rounded-[25px] bg-white/90 p-4 dark:bg-slate-950/85">
-                  <div className="absolute inset-y-0 left-0 w-1.5 bg-[linear-gradient(180deg,#fbbf24,#f59e0b,#f97316)]" />
-                  <div className="flex items-start justify-between gap-3 pl-3">
-                    <div className="min-w-0 flex-1">
-                      <p className="text-[9px] font-black uppercase tracking-[0.26em] text-amber-700 dark:text-amber-300">
-                        Registration / approval
-                      </p>
-                      <p className="mt-3 text-sm font-black leading-6 text-slate-900 dark:text-white">
-                        {label}
-                      </p>
+            {approvalRows.map(([label, purpose, status], index) => {
+              const borderGradients = [
+                'from-emerald-400 via-green-500 to-lime-500',
+                'from-sky-400 via-cyan-500 to-blue-600',
+                'from-violet-400 via-purple-500 to-fuchsia-600',
+                'from-rose-400 via-pink-500 to-red-600',
+                'from-amber-400 via-orange-500 to-yellow-500',
+                'from-cyan-400 via-teal-500 to-emerald-600',
+                'from-indigo-400 via-violet-500 to-purple-600',
+                'from-pink-400 via-rose-500 to-orange-500',
+                'from-slate-400 via-zinc-500 to-stone-600',
+              ]
+
+              const accentGradients = [
+                'from-emerald-500 via-green-500 to-lime-500',
+                'from-sky-500 via-cyan-500 to-blue-600',
+                'from-violet-500 via-purple-500 to-fuchsia-600',
+                'from-rose-500 via-pink-500 to-red-600',
+                'from-amber-500 via-orange-500 to-yellow-500',
+                'from-cyan-500 via-teal-500 to-emerald-600',
+                'from-indigo-500 via-violet-500 to-purple-600',
+                'from-pink-500 via-rose-500 to-orange-500',
+                'from-slate-500 via-zinc-500 to-stone-600',
+              ]
+
+              return (
+                <div
+                  key={label}
+                  className={`group relative overflow-hidden rounded-[26px] border border-amber-200/80 bg-gradient-to-br ${borderGradients[index % borderGradients.length]} p-[1px] shadow-[0_24px_60px_-30px_rgba(245,158,11,0.7)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_68px_-28px_rgba(245,158,11,0.8)] dark:border-amber-800/70`}
+                >
+                  <div className="relative h-full rounded-[25px] bg-white/90 p-4 dark:bg-slate-950/85">
+                    <div className={`absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b ${accentGradients[index % accentGradients.length]}`} />
+                    <div className="flex items-start justify-between gap-3 pl-3">
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[9px] font-black uppercase tracking-[0.26em] text-amber-700 dark:text-amber-300">
+                          Registration / approval
+                        </p>
+                        <p className="mt-3 text-sm font-black leading-6 text-slate-900 dark:text-white">
+                          {label}
+                        </p>
+                      </div>
+                      <span
+                        className={`inline-flex shrink-0 rounded-full border px-2.5 py-1 text-[8px] font-black uppercase tracking-[0.18em] ${
+                          status === 'Done'
+                            ? 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-300'
+                            : 'border-amber-200 bg-amber-50 text-amber-700 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-300'
+                        }`}
+                      >
+                        {status}
+                      </span>
                     </div>
-                    <span
-                      className={`inline-flex shrink-0 rounded-full border px-2.5 py-1 text-[8px] font-black uppercase tracking-[0.18em] ${
-                        status === 'Done'
-                          ? 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-300'
-                          : 'border-amber-200 bg-amber-50 text-amber-700 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-300'
-                      }`}
-                    >
-                      {status}
-                    </span>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
