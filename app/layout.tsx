@@ -7,7 +7,6 @@ import { Header, Footer, LordGanesha } from '@/app/components/layout'
 import { PerformanceMonitor } from '@/app/components/performance'
 import CookieConsent from '@/app/components/cookies/CookieConsent'
 import Notifications from '@/app/components/layout/Notifications'
-import { SaveEarthBadge, SaveSanatanaBadge } from '@/app/components/ui'
 import ProductionProtector from '@/app/components/security/ProductionProtector'
 
 import './globals.css'
@@ -35,11 +34,11 @@ const BING_SITE_VERIFICATION = process.env.BING_SITE_VERIFICATION || 'CFCE648996
 
 export const metadata: Metadata = {
   title: {
-    default: 'AeroSun Energy | Solar Energy Solutions - Solar Panel Installation - Save Electricity With Solar - Get Your Solar Quote Today - Affordable Solar Solutions - Renewable Energy Solutions - Residential Solar Solutions - Commercial Solar Systems - Hybrid Solar Power Systems',
+    default: 'Solar Energy Solutions for Homes & Businesses | AeroSun Energy',
     template: '%s | AeroSun Energy',
   },
   description:
-    'Go solar with Aerosun Energy. Explore reliable solar solutions for your energy needs. Reduce your electricity bills with efficient solar power systems. Contact us today! Solar solutions for homes and businesses. Get expert guidance and request a quote. Discover solar and hybrid energy systems designed for reliable, sustainable power.',
+    'Go solar with Aerosun Energy. Explore reliable solar and hybrid energy systems for homes and businesses. Reduce electricity bills with efficient, sustainable power and get expert guidance. Contact us today for a quote.',
   keywords: [
     "energy solutions",
     "solar energy solutions",
@@ -87,7 +86,11 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/',
+    canonical: 'https://aerosunenergy.in',
+    languages: {
+      'en-IN': 'https://aerosunenergy.in',
+      'en': 'https://aerosunenergy.in',
+    },
   },
   robots: {
     index: true,
@@ -101,9 +104,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'AeroSun Energy | Hybrid Solar Wind Energy Solutions India',
+    title: 'AeroSun Energy | Solar, Wind & Hybrid Energy Solutions in India',
     description:
-      'Hybrid solar wind energy systems that power homes, highways, parks, and commercial spaces across India — day and night.',
+      'AeroSun Energy designs and installs solar, wind, and hybrid renewable energy systems for homes, businesses, farms, and infrastructure across India.',
     url: 'https://aerosunenergy.in',
     siteName: 'AeroSun Energy',
     locale: 'en_IN',
@@ -119,9 +122,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AeroSun Energy | Solar & Wind Energy Solutions in India',
+    title: 'AeroSun Energy | Solar, Wind & Hybrid Energy Solutions in India',
     description:
-      'Clean, affordable solar and wind energy solutions for homes, businesses, and industries across India.',
+      'AeroSun Energy delivers solar, wind, and hybrid renewable energy systems for homes, businesses, and infrastructure across India.',
     images: ['/images/og-image.png'],
   },
   verification: {

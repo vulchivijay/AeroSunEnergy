@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Contact AeroSun Energy',
+  title: 'Contact AeroSun Energy | Get a Solar Quote & Expert Advice',
   description:
-    'Contact AeroSun Energy for solar, wind, and hybrid energy consultations, project inquiries, and custom renewable energy solutions in India.',
+    'Contact AeroSun Energy for expert advice on solar and hybrid power systems. Request a quote for reliable solar solutions for your home or business and take the next step toward lower electricity bills.',
   keywords: [
     'contact AeroSun Energy',
     'renewable energy consultation',
