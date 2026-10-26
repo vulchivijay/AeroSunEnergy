@@ -175,7 +175,7 @@ export default function Navbar() {
             </div>
           </nav>
 
-          <div className="shrink-0 items-center gap-1.5 lg:flex">
+          <div className="hidden shrink-0 items-center gap-1.5 lg:flex">
             <Link
               href="/contact"
               title={t.navbar.startProjectTitle}
