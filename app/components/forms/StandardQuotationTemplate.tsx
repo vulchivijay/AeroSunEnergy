@@ -4,7 +4,8 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { submitMailtoForm } from '@/lib/submitMailto'
-import { useState } from 'react'
+import { useState, type FocusEventHandler } from 'react'
+import { validateZeroBounceEmail } from '@/lib/emailValidation'
 
 const quotationSchema = z.object({
   customerName: z.string().trim().min(2, 'Customer name is required.'),
@@ -44,6 +45,8 @@ export function StandardQuotationTemplate() {
     register,
     handleSubmit,
     reset,
+    setError,
+    clearErrors,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<StandardQuotationValues>({
     resolver: zodResolver(quotationSchema),
@@ -52,7 +55,35 @@ export function StandardQuotationTemplate() {
     reValidateMode: 'onChange',
   })
 
-  const onSubmit = (data: StandardQuotationValues) => {
+  const handleEmailBlur: FocusEventHandler<HTMLInputElement> = async (event) => {
+    const email = event.currentTarget.value.trim()
+    if (!email) {
+      clearErrors('email')
+      return
+    }
+
+    const isAllowed = await validateZeroBounceEmail(email)
+    if (!isAllowed) {
+      setError('email', {
+        type: 'manual',
+        message: 'This email address appears risky or invalid. Please use a different email address.',
+      })
+      return
+    }
+
+    clearErrors('email')
+  }
+
+  const onSubmit = async (data: StandardQuotationValues) => {
+    const isAllowed = await validateZeroBounceEmail(data.email)
+    if (!isAllowed) {
+      setError('email', {
+        type: 'manual',
+        message: 'This email address appears risky or invalid. Please use a different email address.',
+      })
+      return
+    }
+
     const subject = `Standard Quotation Request - ${data.customerName}`
     const body = [
       'STANDARD QUOTATION REQUEST',
@@ -152,6 +183,7 @@ export function StandardQuotationTemplate() {
                       register={register}
                       error={errors.email}
                       compact
+                      onBlur={handleEmailBlur}
                     />
                     <Field
                       label="Phone"
@@ -218,6 +250,7 @@ export function StandardQuotationTemplate() {
                       register={register}
                       error={errors.email}
                       compact
+                      onBlur={handleEmailBlur}
                     />
                   </div>
                   <Field
@@ -485,9 +518,10 @@ type FieldProps = {
   register: ReturnType<typeof useForm<StandardQuotationValues>>['register']
   error?: { message?: string }
   compact?: boolean
+  onBlur?: FocusEventHandler<HTMLInputElement>
 }
 
-function Field({ label, name, placeholder, type = 'text', register, error, compact = false }: FieldProps) {
+function Field({ label, name, placeholder, type = 'text', register, error, compact = false, onBlur }: FieldProps) {
   const fieldId = name ?? label.toLowerCase().replace(/[^a-z0-9]+/g, '-')
 
   return (
@@ -498,7 +532,7 @@ function Field({ label, name, placeholder, type = 'text', register, error, compa
       <input
         id={fieldId}
         type={type}
-        {...(name ? register(name) : {})}
+        {...(name ? register(name, { onBlur }) : {})}
         placeholder={placeholder}
         aria-invalid={Boolean(error)}
         className="h-11 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"

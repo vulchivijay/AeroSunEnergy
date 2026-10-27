@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+import { validateZeroBounceEmail } from '@/lib/emailValidation'
 
 export async function POST(request: Request) {
   try {
@@ -14,6 +15,14 @@ export async function POST(request: Request) {
     if (!name || !email || !phone || !projectType || !usage || !message) {
       return NextResponse.json(
         { error: 'Please fill in all required fields.' },
+        { status: 400 },
+      )
+    }
+
+    const isAllowedEmail = await validateZeroBounceEmail(email)
+    if (!isAllowedEmail) {
+      return NextResponse.json(
+        { error: 'This email address appears risky or invalid. Please use a different email address.' },
         { status: 400 },
       )
     }

@@ -7,8 +7,9 @@ import { Card, CardContent } from '@/app/components/ui/Card'
 import FaqCard, { solarFaqs } from '@/app/components/ui/FaqCard'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
-import { useState, useRef } from 'react'
+import { useState, useRef, type FocusEventHandler } from 'react'
 import { submitMailtoForm } from '@/lib/submitMailto'
+import { validateZeroBounceEmail } from '@/lib/emailValidation'
 
 const channelIcons = {
   email: (
@@ -104,6 +105,15 @@ export default function Contact() {
       return
     }
 
+    const isAllowedEmail = await validateZeroBounceEmail(email)
+    if (!isAllowedEmail) {
+      setProjectBriefFeedback({
+        type: 'error',
+        message: 'This email address appears risky or invalid. Please use a different email address.',
+      })
+      return
+    }
+
     const payload = {
       name,
       email,
@@ -156,6 +166,22 @@ export default function Contact() {
         window.location.href = mailtoUrl
       }
     }
+  }
+
+  const handleEmailBlur: FocusEventHandler<HTMLInputElement> = async (event) => {
+    const email = event.currentTarget.value.trim()
+    if (!email) {
+      return
+    }
+
+    const isAllowedEmail = await validateZeroBounceEmail(email)
+    if (!isAllowedEmail) {
+      event.currentTarget.setCustomValidity('This email address appears risky or invalid. Please use a different email address.')
+      event.currentTarget.reportValidity()
+      return
+    }
+
+    event.currentTarget.setCustomValidity('')
   }
 
   return (
@@ -323,7 +349,7 @@ export default function Contact() {
 
               <form ref={projectBriefFormRef} className="mt-6 grid gap-4 sm:grid-cols-2" onSubmit={handleProjectBrief}>
                 <Field label={c.form.fullName} name="name" placeholder={c.form.fullNamePlaceholder} />
-                <Field label={c.form.email} name="email" type="email" placeholder={c.form.emailPlaceholder} />
+                <Field label={c.form.email} name="email" type="email" placeholder={c.form.emailPlaceholder} onBlur={handleEmailBlur} />
                 <Field label={c.form.phone} name="phone" placeholder={c.form.phonePlaceholder} />
                 <Field label={c.form.projectType} name="projectType" placeholder={c.form.projectTypePlaceholder} />
                 <Field label={c.form.usage} name="usage" placeholder={c.form.usagePlaceholder} />
@@ -431,9 +457,10 @@ type FieldProps = {
   name: string
   placeholder: string
   type?: string
+  onBlur?: FocusEventHandler<HTMLInputElement>
 }
 
-function Field({ label, name, placeholder, type = 'text' }: FieldProps) {
+function Field({ label, name, placeholder, type = 'text', onBlur }: FieldProps) {
   return (
     <div>
       <label htmlFor={name} className="mb-2 block text-sm font-semibold text-custom-deep-blue dark:text-white">
@@ -444,6 +471,7 @@ function Field({ label, name, placeholder, type = 'text' }: FieldProps) {
         name={name}
         type={type}
         placeholder={placeholder}
+        onBlur={onBlur}
         className="w-full rounded-3xl border border-slate-200 bg-slate-50/80 px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-primary/40 focus:ring-4 focus:ring-primary/10 dark:border-white/10 dark:bg-slate-950/50 dark:text-white"
       />
     </div>
