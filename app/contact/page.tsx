@@ -161,8 +161,10 @@ export default function Contact() {
 
                   <div className="relative mt-3 h-75 overflow-hidden rounded-[22px] sm:h-87.5">
                     <OptimizedImage
-                      src="/images/contact/solar-team.webp"
+                      src="/images/home-business-aerosunenergy.png"
                       alt="AeroSun energy consultation"
+                      width={1200}
+                      height={800}
                       className="h-full w-full object-cover"
                     />
                   </div>
