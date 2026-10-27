@@ -20,7 +20,7 @@ export default function Notifications() {
   if (!hasMounted || !isVisible) return null
 
   return (
-    <div className="relative h-18 overflow-hidden border-b border-emerald-200 bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.18),transparent_36%),linear-gradient(135deg,#f0fdf4_0%,#ecfeff_48%,#f8fafc_100%)] dark:border-slate-700 dark:bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.12),transparent_28%),linear-gradient(135deg,#020617_0%,#0f172a_46%,#111827_100%)] sm:h-15">
+    <div className="relative min-h-18 overflow-hidden border-b border-emerald-200 bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.18),transparent_36%),linear-gradient(135deg,#f0fdf4_0%,#ecfeff_48%,#f8fafc_100%)] dark:border-slate-700 dark:bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.12),transparent_28%),linear-gradient(135deg,#020617_0%,#0f172a_46%,#111827_100%)] sm:h-15">
       <div className="h-full">
         <div className="relative h-full overflow-hidden border border-emerald-200/70 bg-[linear-gradient(135deg,rgba(5,46,30,0.96),rgba(8,64,59,0.9),rgba(15,23,42,0.98))] shadow-[0_18px_40px_-24px_rgba(16,185,129,0.85)] dark:border-emerald-500/15">
           <div className="absolute -left-10 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-emerald-400/15 blur-3xl" />
