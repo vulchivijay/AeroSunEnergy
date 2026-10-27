@@ -57,38 +57,35 @@ export default function InvoiceReceiptPage() {
     reValidateMode: 'onChange',
   })
 
-  const onSubmit = (data: InvoiceFormValues) => {
-    const subject = `Invoice & Receipt - ${data.invoiceNumber}`
-    const body = [
-      'INVOICE AND RECEIPT TEMPLATE',
-      '===========================',
-      '',
-      `Customer Name: ${data.customerName}`,
-      `Company Name: ${data.companyName || 'Not provided'}`,
-      `Email: ${data.email}`,
-      `Phone: ${data.phone}`,
-      `Invoice Number: ${data.invoiceNumber}`,
-      `Project Name: ${data.projectName}`,
-      `Invoice Date: ${data.invoiceDate}`,
-      `Amount: ${data.amount}`,
-      `Payment Mode: ${data.paymentMode}`,
-      `Payment Received: ${data.paymentReceived ? 'Yes' : 'No'}`,
-      '',
-      'Receipt Notes:',
-      data.receiptNote,
-    ].join('\n')
+  const onSubmit = async (data: InvoiceFormValues) => {
+    try {
+      const response = await fetch('/api/invoice', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
 
-    const opened = submitMailtoForm({
-      to: 'customercare@aerosunenergy.in',
-      subject,
-      body,
-    })
+      const result = await response.json().catch(() => ({}))
 
-    reset(defaultValues)
-    setSubmitFeedback({
-      type: opened ? 'success' : 'error',
-      message: opened ? 'Your invoice has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
-    })
+      if (!response.ok) {
+        throw new Error(result?.error || 'The invoice service rejected the request.')
+      }
+
+      reset(defaultValues)
+      setSubmitFeedback({
+        type: 'success',
+        message: result?.message || 'Your invoice record has been sent successfully.',
+      })
+    } catch (error) {
+      reset(defaultValues)
+      setSubmitFeedback({
+        type: 'error',
+        message: 'We could not send your invoice right now. Please try again later or email us directly.',
+      })
+    }
   }
 
   return (
