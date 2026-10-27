@@ -6,6 +6,7 @@ import { Card, CardContent } from '@/app/components/ui/Card'
 import FaqCard, { solarFaqs } from '@/app/components/ui/FaqCard'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
+import FormWarningRibbon from '@/app/components/ui/FormWarningRibbon'
 
 const channelIcons = {
   email: (
@@ -79,7 +80,7 @@ export default function Contact() {
     {
       label: c.channels[3]?.label ?? 'Estimation',
       value: c.channels[3]?.value ?? 'Open the calculator',
-      href: '/estimation',
+      href: '/estimation-calculator',
       icon: channelIcons.quote,
     },
   ]
@@ -88,10 +89,9 @@ export default function Contact() {
 
   return (
     <section className="relative isolate overflow-hidden px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.18),transparent_22%),radial-gradient(circle_at_80%_15%,rgba(245,158,11,0.12),transparent_18%),linear-gradient(180deg,#f8faf7_0%,#eefaf3_38%,#f8fafc_100%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.16),transparent_20%),radial-gradient(circle_at_80%_12%,rgba(245,158,11,0.14),transparent_18%),linear-gradient(180deg,#020817_0%,#0f172a_45%,#020817_100%)]" aria-hidden="true" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.03)_1px,transparent_1px)] bg-size-[44px_44px] dark:bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]" aria-hidden="true" />
-
       <div className="relative mx-auto max-w-7xl space-y-8">
+        <FormWarningRibbon />
+
         <div className="grid gap-6 xl:grid-cols-[1.14fr_0.86fr] xl:items-stretch">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
@@ -101,7 +101,7 @@ export default function Contact() {
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.22),transparent_22%),radial-gradient(circle_at_100%_0%,rgba(245,158,11,0.18),transparent_18%),linear-gradient(135deg,#f5faf6_0%,#effaf2_28%,#f8fafc_100%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.20),transparent_20%),radial-gradient(circle_at_100%_0%,rgba(245,158,11,0.20),transparent_18%),linear-gradient(135deg,#081421_0%,#101d2d_32%,#020817_100%)]" aria-hidden="true" />
 
-            <div className="relative grid gap-7 p-5 sm:p-7 xl:min-h-140">
+            <div className="relative grid gap-7 p-5 sm:p-6 xl:min-h-140">
               <div className="flex rounded-[28px] border border-[#dfeee4]/80 bg-white/65 p-2 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/40">
                 <div className="flex h-full flex-col justify-center rounded-3xl bg-[linear-gradient(135deg,rgba(255,255,255,0.95),rgba(244,248,245,0.88))] p-5 sm:p-6 dark:bg-[linear-gradient(135deg,rgba(15,23,42,0.92),rgba(15,23,42,0.78))]">
                   <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#20A44A]/20 bg-white/85 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.30em] text-[#183729] shadow-sm backdrop-blur-md dark:border-white/10 dark:bg-slate-900/70 dark:text-slate-100">
@@ -125,7 +125,7 @@ export default function Contact() {
                       {c.emailButton}
                     </Link>
                     <Link
-                      href="/estimation"
+                      href="/estimation-calculator"
                       className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-800 backdrop-blur-md transition-colors duration-200 hover:bg-white dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-100"
                     >
                       {c.estimationButton}

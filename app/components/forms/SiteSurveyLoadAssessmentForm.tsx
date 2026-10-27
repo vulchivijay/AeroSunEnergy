@@ -7,6 +7,7 @@ import { Card, CardContent } from '@/app/components/ui/Card'
 import { submitMailtoForm } from '@/lib/submitMailto'
 import { useState, type FocusEventHandler } from 'react'
 import { validateZeroBounceEmail } from '@/lib/emailValidation'
+import FormWarningRibbon from '@/app/components/ui/FormWarningRibbon'
 
 const siteSurveySchema = z.object({
   customerName: z.string().trim().min(2, 'Customer name is required.'),
@@ -135,6 +136,7 @@ export function SiteSurveyLoadAssessmentForm() {
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(15,118,110,0.10),transparent_18%),linear-gradient(180deg,#f8fafc_0%,#ecfeff_30%,#f8fafc_100%)] px-4 py-8 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
+        <FormWarningRibbon />
         <div className="rounded-[30px] border border-slate-200 bg-white/80 p-4 shadow-[0_28px_90px_-40px_rgba(15,23,42,0.35)] backdrop-blur-sm sm:p-6 lg:p-8">
           <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
             <header className="overflow-hidden rounded-[26px] border border-[#1d4f7a] bg-linear-to-r from-[#0a1d4d] via-[#113f7d] to-[#0a5c4b] p-5 text-white shadow-[0_26px_50px_-30px_rgba(15,68,120,0.9)] sm:p-7">

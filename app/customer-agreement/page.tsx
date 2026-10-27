@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { submitMailtoForm } from '@/lib/submitMailto'
 import { useState } from 'react'
+import FormWarningRibbon from '@/app/components/ui/FormWarningRibbon'
 
 const agreementSchema = z.object({
   customerName: z.string().trim().min(2, 'Customer name is required.'),
@@ -75,6 +76,7 @@ export default function CustomerAgreementPage() {
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(30,64,175,0.12),transparent_18%),linear-gradient(180deg,#f8fafc_0%,#eef6ff_28%,#f8fafc_100%)] px-4 py-8 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
+        <FormWarningRibbon />
         <div className="overflow-hidden rounded-[30px] border border-slate-200 bg-white/90 shadow-[0_28px_90px_-35px_rgba(15,23,42,0.38)] backdrop-blur-sm">
           <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5 p-3 sm:p-5 lg:p-6">
             <header className="overflow-hidden rounded-[26px] border border-indigo-200 bg-linear-to-r from-[#0c1f51] via-[#153c78] to-[#0d6685] p-4 text-white sm:p-5">

@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { submitMailtoForm } from '@/lib/submitMailto'
 import { useState, type FocusEventHandler } from 'react'
 import { validateZeroBounceEmail } from '@/lib/emailValidation'
+import FormWarningRibbon from '@/app/components/ui/FormWarningRibbon'
 
 const quotationSchema = z.object({
   customerName: z.string().trim().min(2, 'Customer name is required.'),
@@ -120,6 +121,7 @@ export function StandardQuotationTemplate() {
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(13,148,136,0.12),transparent_18%),linear-gradient(180deg,#f8fafc_0%,#ecfeff_24%,#f8fafc_100%)] px-4 py-8 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
+        <FormWarningRibbon />
         <div className="overflow-hidden rounded-[30px] border border-slate-200 bg-white/90 shadow-[0_26px_90px_-35px_rgba(15,23,42,0.35)] backdrop-blur-sm">
           <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5 p-3 sm:p-5 lg:p-6">
             <header className="overflow-hidden rounded-[26px] border border-[#123c72] bg-linear-to-r from-[#0b1d4d] via-[#143d72] to-[#0d5a80] p-4 text-white shadow-[0_25px_60px_-32px_rgba(15,68,120,0.9)] sm:p-5">
