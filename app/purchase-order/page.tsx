@@ -5,6 +5,7 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
+import { submitMailtoForm } from '@/lib/submitMailto'
 
 const purchaseOrderSchema = z.object({
   customerName: z.string().trim().min(2, 'Customer name is required.'),
@@ -62,35 +63,40 @@ export default function PurchaseOrderPage() {
     reValidateMode: 'onChange',
   })
 
-  const onSubmit = async (data: PurchaseOrderFormValues) => {
-    try {
-      const response = await fetch('/api/purchase-order', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
+  const onSubmit = (data: PurchaseOrderFormValues) => {
+    const subject = `Purchase Order Confirmation - ${data.poNumber}`
+    const body = [
+      'PURCHASE ORDER AND SUPPLIER AGREEMENT',
+      '===================================',
+      '',
+      `Customer Name: ${data.customerName}`,
+      `Company Name: ${data.companyName || 'Not provided'}`,
+      `Email: ${data.email}`,
+      `Phone: ${data.phone}`,
+      `PO Number: ${data.poNumber}`,
+      `Project Title: ${data.projectTitle}`,
+      `Supplier Name: ${data.supplierName}`,
+      `Product Line: ${data.productLine}`,
+      `Quantity: ${data.quantity}`,
+      `Unit Price: ${data.unitPrice}`,
+      `Total Value: ${data.totalValue}`,
+      `Delivery Schedule: ${data.deliverySchedule}`,
+      `Warranty: ${data.warranty}`,
+      '',
+      'Terms accepted by customer: Yes',
+    ].join('\n')
 
-      const result = await response.json().catch(() => ({}))
+    const opened = submitMailtoForm({
+      to: 'customercare@aerosunenergy.in',
+      subject,
+      body,
+    })
 
-      if (!response.ok) {
-        throw new Error(result?.error || 'The purchase order service rejected the request.')
-      }
-
-      reset(defaultValues)
-      setSubmitFeedback({
-        type: 'success',
-        message: result?.message || 'Your purchase order has been sent successfully.',
-      })
-    } catch (error) {
-      reset(defaultValues)
-      setSubmitFeedback({
-        type: 'error',
-        message: 'We could not send your purchase order right now. Please try again later or email us directly.',
-      })
-    }
+    reset(defaultValues)
+    setSubmitFeedback({
+      type: opened ? 'success' : 'error',
+      message: opened ? 'Your purchase order has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+    })
   }
 
   return (

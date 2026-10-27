@@ -53,35 +53,35 @@ export default function WarrantyPolicyPage() {
     reValidateMode: 'onChange',
   })
 
-  const onSubmit = async (data: WarrantyPolicyFormValues) => {
-    try {
-      const response = await fetch('/api/warranty', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
+  const onSubmit = (data: WarrantyPolicyFormValues) => {
+    const subject = `Warranty & After-Sales Policy - ${data.projectName}`
+    const body = [
+      'WARRANTY AND AFTER-SALES SERVICE POLICY',
+      '=====================================',
+      '',
+      `Customer Name: ${data.customerName}`,
+      `Company Name: ${data.companyName || 'Not provided'}`,
+      `Email: ${data.email}`,
+      `Phone: ${data.phone}`,
+      `Project Name: ${data.projectName}`,
+      `Product / Service Line: ${data.productLine}`,
+      `Warranty Start Date: ${data.warrantyStart}`,
+      `Service Plan: ${data.servicePlan}`,
+      '',
+      'Policy terms acknowledged: Yes',
+    ].join('\n')
 
-      const result = await response.json().catch(() => ({}))
+    const opened = submitMailtoForm({
+      to: 'customercare@aerosunenergy.in',
+      subject,
+      body,
+    })
 
-      if (!response.ok) {
-        throw new Error(result?.error || 'The warranty service rejected the request.')
-      }
-
-      reset(defaultValues)
-      setSubmitFeedback({
-        type: 'success',
-        message: result?.message || 'Your warranty acknowledgement has been sent successfully.',
-      })
-    } catch (error) {
-      reset(defaultValues)
-      setSubmitFeedback({
-        type: 'error',
-        message: 'We could not send your warranty acknowledgement right now. Please try again later or email us directly.',
-      })
-    }
+    reset(defaultValues)
+    setSubmitFeedback({
+      type: opened ? 'success' : 'error',
+      message: opened ? 'Your warranty acknowledgement has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+    })
   }
 
   return (

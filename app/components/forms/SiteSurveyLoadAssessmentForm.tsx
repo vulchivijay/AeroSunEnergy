@@ -4,8 +4,10 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
+import { submitMailtoForm } from '@/lib/submitMailto'
 import { useState, type FocusEventHandler } from 'react'
 import { validateZeroBounceEmail } from '@/lib/emailValidation'
+import FormWarningRibbon from '@/app/components/ui/FormWarningRibbon'
 
 const siteSurveySchema = z.object({
   customerName: z.string().trim().min(2, 'Customer name is required.'),
@@ -98,39 +100,43 @@ export function SiteSurveyLoadAssessmentForm() {
       return
     }
 
-    try {
-      const response = await fetch('/api/site-survey', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
+    const subject = `Site Survey & Load Assessment - ${data.customerName}`
+    const body = [
+      `Customer Name: ${data.customerName}`,
+      `Email: ${data.email}`,
+      `Phone: ${data.phone}`,
+      `Property Type: ${data.propertyType}`,
+      `Site Address: ${data.siteAddress}`,
+      `City: ${data.city}`,
+      `Roof Type: ${data.roofType}`,
+      `Available Area: ${data.availableArea} sq ft`,
+      `Average Monthly Units: ${data.avgMonthlyUnits} kWh`,
+      `Peak Load: ${data.peakLoadKw} kW`,
+      `Backup Priority: ${data.backupPriority}`,
+      `Equipment / Loads: ${data.equipmentLoads}`,
+      `Expected Timeline: ${data.timeline}`,
+      '',
+      'Notes:',
+      data.notes,
+    ].join('\n')
 
-      const result = await response.json().catch(() => ({}))
+    const opened = submitMailtoForm({
+      to: 'customercare@aerosunenergy.in',
+      subject,
+      body,
+    })
 
-      if (!response.ok) {
-        throw new Error(result?.error || 'The site survey service rejected the request.')
-      }
-
-      reset(defaultSiteSurveyValues)
-      setSubmitFeedback({
-        type: 'success',
-        message: result?.message || 'Your site survey request has been sent successfully.',
-      })
-    } catch (error) {
-      reset(defaultSiteSurveyValues)
-      setSubmitFeedback({
-        type: 'error',
-        message: 'We could not send your request right now. Please try again later or email us directly.',
-      })
-    }
+    reset(defaultSiteSurveyValues)
+    setSubmitFeedback({
+      type: opened ? 'success' : 'error',
+      message: opened ? 'Your site survey request has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+    })
   }
 
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(15,118,110,0.10),transparent_18%),linear-gradient(180deg,#f8fafc_0%,#ecfeff_30%,#f8fafc_100%)] px-4 py-8 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
+        <FormWarningRibbon />
         <div className="rounded-[30px] border border-slate-200 bg-white/80 p-4 shadow-[0_28px_90px_-40px_rgba(15,23,42,0.35)] backdrop-blur-sm sm:p-6 lg:p-8">
           <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
             <header className="overflow-hidden rounded-[26px] border border-[#1d4f7a] bg-linear-to-r from-[#0a1d4d] via-[#113f7d] to-[#0a5c4b] p-5 text-white shadow-[0_26px_50px_-30px_rgba(15,68,120,0.9)] sm:p-7">

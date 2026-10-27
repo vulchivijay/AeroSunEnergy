@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { submitMailtoForm } from '@/lib/submitMailto'
 import { useState, type FocusEventHandler } from 'react'
 import { validateZeroBounceEmail } from '@/lib/emailValidation'
+import FormWarningRibbon from '@/app/components/ui/FormWarningRibbon'
 
 const quotationSchema = z.object({
   customerName: z.string().trim().min(2, 'Customer name is required.'),
@@ -84,39 +85,43 @@ export function StandardQuotationTemplate() {
       return
     }
 
-    try {
-      const response = await fetch('/api/quotation', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
+    const subject = `Standard Quotation Request - ${data.customerName}`
+    const body = [
+      'STANDARD QUOTATION REQUEST',
+      '===========================',
+      '',
+      `Customer Name: ${data.customerName}`,
+      `Company Name: ${data.companyName || 'Not provided'}`,
+      `Email: ${data.email}`,
+      `Phone: ${data.phone}`,
+      `Project Type: ${data.projectType}`,
+      `Site Location: ${data.siteLocation}`,
+      `System Capacity: ${data.systemCapacity}`,
+      `Estimated Budget: ${data.estimatedBudget}`,
+      '',
+      'Scope / Requirement:',
+      data.scope,
+      '',
+      `Terms Accepted: ${data.terms}`,
+    ].join('\n')
 
-      const result = await response.json().catch(() => ({}))
+    const opened = submitMailtoForm({
+      to: 'customercare@aerosunenergy.in',
+      subject,
+      body,
+    })
 
-      if (!response.ok) {
-        throw new Error(result?.error || 'The quotation service rejected the request.')
-      }
-
-      reset(defaultQuotationValues)
-      setSubmitFeedback({
-        type: 'success',
-        message: result?.message || 'Your quotation request has been sent successfully.',
-      })
-    } catch (error) {
-      reset(defaultQuotationValues)
-      setSubmitFeedback({
-        type: 'error',
-        message: 'We could not send your quotation request right now. Please try again later or email us directly.',
-      })
-    }
+    reset(defaultQuotationValues)
+    setSubmitFeedback({
+      type: opened ? 'success' : 'error',
+      message: opened ? 'Your quotation request has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+    })
   }
 
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(13,148,136,0.12),transparent_18%),linear-gradient(180deg,#f8fafc_0%,#ecfeff_24%,#f8fafc_100%)] px-4 py-8 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
+        <FormWarningRibbon />
         <div className="overflow-hidden rounded-[30px] border border-slate-200 bg-white/90 shadow-[0_26px_90px_-35px_rgba(15,23,42,0.35)] backdrop-blur-sm">
           <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5 p-3 sm:p-5 lg:p-6">
             <header className="overflow-hidden rounded-[26px] border border-[#123c72] bg-linear-to-r from-[#0b1d4d] via-[#143d72] to-[#0d5a80] p-4 text-white shadow-[0_25px_60px_-32px_rgba(15,68,120,0.9)] sm:p-5">
