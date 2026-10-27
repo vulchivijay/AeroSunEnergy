@@ -29,9 +29,19 @@ const channelIcons = {
 
 export default function Contact() {
   const { t } = useLocale()
-  const c = t.contact
+  const c = t.contact as typeof t.contact & {
+    contactUs?: string
+    contactCardTitle?: string
+    faqHeader?: string
+    faqTitle?: string
+  }
   const footer = t.footer
   const navbar = t.navbar
+
+  const contactUs = c.contactUs ?? 'Contact us'
+  const contactCardTitle = c.contactCardTitle ?? 'Speak with our team'
+  const faqHeader = c.faqHeader ?? 'FAQ'
+  const faqTitle = c.faqTitle ?? 'Common questions'
 
   const contactHighlights = c.highlights.map((item, index) => ({
     ...item,
@@ -61,8 +71,14 @@ export default function Contact() {
       icon: channelIcons.website,
     },
     {
-      label: c.channels[2]?.label ?? 'Estimation',
-      value: c.channels[2]?.value ?? 'Open the calculator',
+      label: c.channels[2]?.label ?? 'trust',
+      value: c.channels[2]?.value ?? 'sanatanadharmam.in',
+      href: 'https://sanatanadharmam.in',
+      icon: channelIcons.quote,
+    },
+    {
+      label: c.channels[3]?.label ?? 'Estimation',
+      value: c.channels[3]?.value ?? 'Open the calculator',
       href: '/estimation',
       icon: channelIcons.quote,
     },
@@ -163,8 +179,8 @@ export default function Contact() {
           >
             <div className="mb-6 flex items-center justify-between gap-3">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#20A44A]">{c.contactUs}</p>
-                <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">{c.contactCardTitle}</h2>
+                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#20A44A]">{contactUs}</p>
+                <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">{contactCardTitle}</h2>
               </div>
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#20A44A]/10 text-[#20A44A]">
                 {channelIcons.email}
@@ -210,12 +226,12 @@ export default function Contact() {
 
         <div className="rounded-[32px] border border-slate-200 bg-white/90 p-5 shadow-[0_18px_50px_rgba(15,23,42,0.04)] dark:border-slate-700 dark:bg-slate-900/80 sm:p-7">
           <div className="mb-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#20A44A]">{c.faqHeader}</p>
-            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">{c.faqTitle}</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#20A44A]">{faqHeader}</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">{faqTitle}</h2>
           </div>
           <div className="grid gap-4 lg:grid-cols-2">
             {solarFaqs.map((faq) => (
-              <FaqCard key={faq.question} faq={faq} />
+              <FaqCard key={faq.question} question={faq.question} answer={faq.answer} />
             ))}
           </div>
         </div>
