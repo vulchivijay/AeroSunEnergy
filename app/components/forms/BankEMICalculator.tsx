@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import { useMemo, useState } from 'react'
 
@@ -49,7 +49,7 @@ export function BankEMICalculator() {
   }, [interestRate, loanAmount, tenureYears])
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#f7f5f0] px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
+    <section className="relative isolate overflow-hidden bg-[#f7f5f0] px-4 py-10 sm:px-6 lg:px-8 lg:py-16 border-t-4 border-slate-200">
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white/80 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.28em] text-sky-700 shadow-sm backdrop-blur-md">
@@ -147,46 +147,46 @@ export function BankEMICalculator() {
             </div>
           </div>
 
-          <div className="rounded-[30px] bg-linear-to-br from-[#0b3b2e] via-[#1f7a5a] to-[#48b69a] p-5 text-white shadow-[0_30px_80px_-35px_rgba(11,59,46,0.8)] sm:p-6 lg:p-8">
+          <div className="rounded-[30px] bg-linear-to-br from-[#f59e0b] via-[#f8b84d] to-[#f59e0b] p-5 text-white shadow-[0_30px_80px_-35px_rgba(245,158,11,0.8)] backdrop-blur-sm sm:p-6 lg:p-8">
             <div className="space-y-5">
               <div>
                 <h2 className="text-[2rem] font-black tracking-tighter text-white">Your Monthly EMI will be</h2>
-                <p className="mt-2 text-base text-emerald-50/90">Based on your loan rate and tenure.</p>
+                <p className="mt-2 text-base text-orange-50/90">Based on your loan rate and tenure.</p>
               </div>
 
-              <div className="rounded-[22px] border border-white/15 bg-white/10 p-5 backdrop-blur-sm">
-                <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-emerald-50">Monthly EMI</div>
+              <div className="rounded-[22px] border border-white/15 bg-white/10 p-5 backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.2)]">
+                <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-orange-50">Monthly EMI</div>
                 <div className="mt-3 text-5xl font-black tracking-[-0.08em] text-white">
                   {formatCurrency(calculation.emi)}
                 </div>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-50">Amount Payable</div>
+                <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.12)]">
+                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-50">Amount Payable</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[-0.06em] text-white">
                     {formatCurrency(calculation.totalAmountPayable)}
                   </div>
                 </div>
-                <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-50">Interest Amount</div>
+                <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.12)]">
+                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-50">Interest Amount</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[-0.06em] text-white">
                     {formatCurrency(calculation.totalInterest)}
                   </div>
                 </div>
-                <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm sm:col-span-2">
-                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-50">Principal Amount</div>
+                <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.12)] sm:col-span-2">
+                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-50">Principal Amount</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[-0.06em] text-white">
                     {formatCurrency(loanAmount)}
                   </div>
                 </div>
               </div>
 
-              <button className="mt-4 w-full rounded-full bg-white px-5 py-4 text-xl font-bold text-slate-900 shadow-[0_20px_30px_-18px_rgba(15,23,42,0.5)] transition hover:bg-emerald-50">
+              <button className="mt-4 w-full rounded-full bg-white px-5 py-4 text-xl font-bold text-slate-900 shadow-[0_20px_30px_-18px_rgba(15,23,42,0.5)] transition hover:bg-orange-50">
                 Apply Now <span aria-hidden="true">→</span>
               </button>
 
-              <p className="text-center text-sm leading-6 text-emerald-50/90">
+              <p className="text-center text-sm leading-6 text-orange-50/90">
                 Note: Get 9.99%* p.a. on ₹15 lakh+
               </p>
             </div>

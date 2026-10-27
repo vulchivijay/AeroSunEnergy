@@ -144,29 +144,7 @@ export default function Contact() {
                     ))}
                   </div>
                 </div>
-              </div>
-
-              <div className="relative flex">
-                <div className="absolute -left-5 top-12 h-28 w-28 rounded-full bg-[#20A44A]/18 blur-3xl" aria-hidden="true" />
-                <div className="absolute -right-4 bottom-8 h-28 w-28 rounded-full bg-[#F59E0B]/18 blur-3xl" aria-hidden="true" />
-
-                <div className="relative w-full overflow-hidden rounded-[28px] border border-white/50 bg-white/60 p-3 shadow-[0_26px_80px_rgba(2,6,23,0.18)] backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/65">
-                  <div className="flex items-center justify-between rounded-xl border border-slate-200/80 bg-slate-950 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-slate-100 dark:border-slate-700">
-                    <span>{c.badge}</span>
-                    <span className="text-[#F59E0B]">{c.projectBrief}</span>
-                  </div>
-
-                  <div className="relative mt-3 h-75 overflow-hidden rounded-[22px] sm:h-87.5">
-                    <OptimizedImage
-                      src="/images/home-business-aerosunenergy.png"
-                      alt="AeroSun energy consultation"
-                      width={1200}
-                      height={800}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
+              </div>              
             </div>
           </motion.div>
 
@@ -176,7 +154,28 @@ export default function Contact() {
             transition={{ duration: 0.45, ease: 'easeOut', delay: 0.08 }}
             className="rounded-[32px] border border-slate-200 bg-white/80 p-5 shadow-[0_18px_50px_rgba(15,23,42,0.06)] backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/80 sm:p-7"
           >
-            <div className="mb-6 flex items-center justify-between gap-3">
+            <div className="relative flex">
+              <div className="absolute -left-5 top-12 h-28 w-28 rounded-full bg-[#20A44A]/18 blur-3xl" aria-hidden="true" />
+              <div className="absolute -right-4 bottom-8 h-28 w-28 rounded-full bg-[#F59E0B]/18 blur-3xl" aria-hidden="true" />
+
+              <div className="relative w-full overflow-hidden rounded-[28px] border border-white/50 bg-white/60 p-3 shadow-[0_26px_80px_rgba(2,6,23,0.18)] backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/65">
+                <div className="flex items-center justify-between rounded-xl border border-slate-200/80 bg-slate-950 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-slate-100 dark:border-slate-700">
+                  <span>{c.badge}</span>
+                  <span className="text-[#F59E0B]">{c.projectBrief}</span>
+                </div>
+
+                <div className="relative mt-3 h-52 overflow-hidden rounded-[22px] sm:h-62.5">
+                  <OptimizedImage
+                    src="/images/home-business-aerosunenergy.png"
+                    alt="AeroSun energy consultation"
+                    width={1200}
+                    height={800}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="mb-6 flex items-center justify-between gap-3 pt-8">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#20A44A]">{contactUs}</p>
                 <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">{contactCardTitle}</h2>
@@ -228,7 +227,7 @@ export default function Contact() {
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#20A44A]">{faqHeader}</p>
             <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">{faqTitle}</h2>
           </div>
-          <div className="grid gap-4 lg:grid-cols-2">
+          <div className="grid gap-4 lg:grid-cols-1">
             {solarFaqs.map((faq) => (
               <FaqCard key={faq.question} question={faq.question} answer={faq.answer} />
             ))}
