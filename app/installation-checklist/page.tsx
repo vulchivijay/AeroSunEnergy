@@ -59,38 +59,35 @@ export default function InstallationChecklistPage() {
     reValidateMode: 'onChange',
   })
 
-  const onSubmit = (data: ChecklistFormValues) => {
-    const subject = `Installation & Commissioning Checklist - ${data.projectName}`
-    const body = [
-      'INSTALLATION, TESTING, AND COMMISSIONING CHECKLIST',
-      '=================================================',
-      '',
-      `Customer Name: ${data.customerName}`,
-      `Company Name: ${data.companyName || 'Not provided'}`,
-      `Email: ${data.email}`,
-      `Phone: ${data.phone}`,
-      `Project Name: ${data.projectName}`,
-      `Site Location: ${data.siteLocation}`,
-      `Installation Date: ${data.installationDate}`,
-      `Status: ${data.checklistStatus}`,
-      `Safety Checklist Completed: ${data.safetyCheck ? 'Yes' : 'No'}`,
-      `Commissioning Checklist Completed: ${data.commissioningCheck ? 'Yes' : 'No'}`,
-      '',
-      'Notes:',
-      data.notes,
-    ].join('\n')
+  const onSubmit = async (data: ChecklistFormValues) => {
+    try {
+      const response = await fetch('/api/checklist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
 
-    const opened = submitMailtoForm({
-      to: 'customercare@aerosunenergy.in',
-      subject,
-      body,
-    })
+      const result = await response.json().catch(() => ({}))
 
-    reset(defaultValues)
-    setSubmitFeedback({
-      type: opened ? 'success' : 'error',
-      message: opened ? 'Your checklist has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
-    })
+      if (!response.ok) {
+        throw new Error(result?.error || 'The checklist service rejected the request.')
+      }
+
+      reset(defaultValues)
+      setSubmitFeedback({
+        type: 'success',
+        message: result?.message || 'Your checklist has been sent successfully.',
+      })
+    } catch (error) {
+      reset(defaultValues)
+      setSubmitFeedback({
+        type: 'error',
+        message: 'We could not send your checklist right now. Please try again later or email us directly.',
+      })
+    }
   }
 
   return (

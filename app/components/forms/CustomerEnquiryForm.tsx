@@ -99,40 +99,34 @@ export function CustomerEnquiryForm() {
       return
     }
 
-    const subject = `Customer Enquiry - ${data.customerName}`
-    const body = [
-      `Customer Name: ${data.customerName}`,
-      `Phone: ${data.phone}`,
-      `Email: ${data.email}`,
-      `Address: ${data.address}`,
-      `City: ${data.city}`,
-      `State: ${data.state}`,
-      `Enquiry Type: ${data.serviceType}`,
-      `Property Type: ${data.propertyType}`,
-      `Available Area: ${data.availableArea}`,
-      `Roof Type: ${data.roofType}`,
-      `Average Monthly Electricity Bill: ${data.averageBill}`,
-      `Average Monthly Consumption: ${data.monthlyConsumption}`,
-      `Connection Type: ${data.connectionType}`,
-      `Expected System Capacity: ${data.expectedSystemCapacity}`,
-      `Installation Timeline: ${data.installationTimeline}`,
-      `Budget Range: ${data.budgetRange}`,
-      '',
-      'Project Details:',
-      data.projectDetails,
-    ].join('\n')
+    try {
+      const response = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
 
-    const opened = submitMailtoForm({
-      to: 'customercare@aerosunenergy.in',
-      subject,
-      body,
-    })
+      const result = await response.json().catch(() => ({}))
 
-    reset(defaultEnquiryValues)
-    setSubmitFeedback({
-      type: opened ? 'success' : 'error',
-      message: opened ? 'Your enquiry has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
-    })
+      if (!response.ok) {
+        throw new Error(result?.error || 'The enquiry service rejected the request.')
+      }
+
+      reset(defaultEnquiryValues)
+      setSubmitFeedback({
+        type: 'success',
+        message: result?.message || 'Your enquiry has been sent successfully.',
+      })
+    } catch (error) {
+      reset(defaultEnquiryValues)
+      setSubmitFeedback({
+        type: 'error',
+        message: 'We could not send your enquiry right now. Please try again later or email us directly.',
+      })
+    }
   }
 
   return (
