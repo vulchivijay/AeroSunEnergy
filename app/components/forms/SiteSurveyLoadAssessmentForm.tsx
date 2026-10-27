@@ -4,6 +4,7 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
+import { submitMailtoForm } from '@/lib/submitMailto'
 import { useState, type FocusEventHandler } from 'react'
 import { validateZeroBounceEmail } from '@/lib/emailValidation'
 
@@ -98,34 +99,37 @@ export function SiteSurveyLoadAssessmentForm() {
       return
     }
 
-    try {
-      const response = await fetch('/api/site-survey', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
+    const subject = `Site Survey & Load Assessment - ${data.customerName}`
+    const body = [
+      `Customer Name: ${data.customerName}`,
+      `Email: ${data.email}`,
+      `Phone: ${data.phone}`,
+      `Property Type: ${data.propertyType}`,
+      `Site Address: ${data.siteAddress}`,
+      `City: ${data.city}`,
+      `Roof Type: ${data.roofType}`,
+      `Available Area: ${data.availableArea} sq ft`,
+      `Average Monthly Units: ${data.avgMonthlyUnits} kWh`,
+      `Peak Load: ${data.peakLoadKw} kW`,
+      `Backup Priority: ${data.backupPriority}`,
+      `Equipment / Loads: ${data.equipmentLoads}`,
+      `Expected Timeline: ${data.timeline}`,
+      '',
+      'Notes:',
+      data.notes,
+    ].join('\n')
 
-      const result = await response.json().catch(() => ({}))
+    const opened = submitMailtoForm({
+      to: 'customercare@aerosunenergy.in',
+      subject,
+      body,
+    })
 
-      if (!response.ok) {
-        throw new Error(result?.error || 'The site survey service rejected the request.')
-      }
-
-      reset(defaultSiteSurveyValues)
-      setSubmitFeedback({
-        type: 'success',
-        message: result?.message || 'Your site survey request has been sent successfully.',
-      })
-    } catch (error) {
-      reset(defaultSiteSurveyValues)
-      setSubmitFeedback({
-        type: 'error',
-        message: 'We could not send your request right now. Please try again later or email us directly.',
-      })
-    }
+    reset(defaultSiteSurveyValues)
+    setSubmitFeedback({
+      type: opened ? 'success' : 'error',
+      message: opened ? 'Your site survey request has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+    })
   }
 
   return (

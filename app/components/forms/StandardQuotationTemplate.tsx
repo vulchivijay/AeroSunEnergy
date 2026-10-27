@@ -84,34 +84,37 @@ export function StandardQuotationTemplate() {
       return
     }
 
-    try {
-      const response = await fetch('/api/quotation', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
+    const subject = `Standard Quotation Request - ${data.customerName}`
+    const body = [
+      'STANDARD QUOTATION REQUEST',
+      '===========================',
+      '',
+      `Customer Name: ${data.customerName}`,
+      `Company Name: ${data.companyName || 'Not provided'}`,
+      `Email: ${data.email}`,
+      `Phone: ${data.phone}`,
+      `Project Type: ${data.projectType}`,
+      `Site Location: ${data.siteLocation}`,
+      `System Capacity: ${data.systemCapacity}`,
+      `Estimated Budget: ${data.estimatedBudget}`,
+      '',
+      'Scope / Requirement:',
+      data.scope,
+      '',
+      `Terms Accepted: ${data.terms}`,
+    ].join('\n')
 
-      const result = await response.json().catch(() => ({}))
+    const opened = submitMailtoForm({
+      to: 'customercare@aerosunenergy.in',
+      subject,
+      body,
+    })
 
-      if (!response.ok) {
-        throw new Error(result?.error || 'The quotation service rejected the request.')
-      }
-
-      reset(defaultQuotationValues)
-      setSubmitFeedback({
-        type: 'success',
-        message: result?.message || 'Your quotation request has been sent successfully.',
-      })
-    } catch (error) {
-      reset(defaultQuotationValues)
-      setSubmitFeedback({
-        type: 'error',
-        message: 'We could not send your quotation request right now. Please try again later or email us directly.',
-      })
-    }
+    reset(defaultQuotationValues)
+    setSubmitFeedback({
+      type: opened ? 'success' : 'error',
+      message: opened ? 'Your quotation request has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+    })
   }
 
   return (

@@ -44,35 +44,32 @@ export default function CustomerAgreementPage() {
     reValidateMode: 'onChange',
   })
 
-  const onSubmit = async (data: AgreementFormValues) => {
-    try {
-      const response = await fetch('/api/agreement', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
+  const onSubmit = (data: AgreementFormValues) => {
+    const subject = `Customer Agreement Acceptance - ${data.customerName}`
+    const body = [
+      'CUSTOMER AGREEMENT AND PAYMENT TERMS',
+      '=================================',
+      '',
+      `Customer Name: ${data.customerName}`,
+      `Company Name: ${data.companyName || 'Not provided'}`,
+      `Email: ${data.email}`,
+      `Phone: ${data.phone}`,
+      '',
+      'Status: Agreement accepted',
+      'Payment terms acknowledged by customer.',
+    ].join('\n')
 
-      const result = await response.json().catch(() => ({}))
+    const opened = submitMailtoForm({
+      to: 'customercare@aerosunenergy.in',
+      subject,
+      body,
+    })
 
-      if (!response.ok) {
-        throw new Error(result?.error || 'The agreement service rejected the request.')
-      }
-
-      reset(defaultValues)
-      setSubmitFeedback({
-        type: 'success',
-        message: result?.message || 'Your agreement submission has been sent successfully.',
-      })
-    } catch (error) {
-      reset(defaultValues)
-      setSubmitFeedback({
-        type: 'error',
-        message: 'We could not send your agreement right now. Please try again later or email us directly.',
-      })
-    }
+    reset(defaultValues)
+    setSubmitFeedback({
+      type: opened ? 'success' : 'error',
+      message: opened ? 'Your agreement submission has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+    })
   }
 
   return (
