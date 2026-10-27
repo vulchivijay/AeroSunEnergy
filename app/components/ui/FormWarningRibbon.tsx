@@ -22,7 +22,7 @@ export default function FormWarningRibbon() {
               </svg>
             </span>
 
-            <div className="flex flex-wrap items-center justify-center gap-2 text-sm font-semibold text-amber-900 sm:text-base">
+            <div className="flex flex-wrap items-center justify-center gap-2 text-sm text-amber-900 sm:text-base">
               <span className="inline-flex rounded-full border border-amber-300 bg-white/80 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-amber-800">
                 Notice
               </span>
@@ -30,7 +30,7 @@ export default function FormWarningRibbon() {
                 Forms functionality failing due to server issues. Please mail at{' '}
                 <a
                   href="mailto:customercare@aerosunenergy.in"
-                  className="text-amber-900 underline decoration-2 underline-offset-2 transition hover:text-orange-700"
+                  className="text-amber-900 underline decoration-1 underline-offset-2 transition hover:text-orange-700"
                 >
                   customercare@aerosunenergy.in
                 </a>

@@ -6,7 +6,6 @@ import { Card, CardContent } from '@/app/components/ui/Card'
 import FaqCard, { solarFaqs } from '@/app/components/ui/FaqCard'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
-import FormWarningRibbon from '@/app/components/ui/FormWarningRibbon'
 
 const channelIcons = {
   email: (
@@ -90,8 +89,6 @@ export default function Contact() {
   return (
     <section className="relative isolate overflow-hidden px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
       <div className="relative mx-auto max-w-7xl space-y-8">
-        <FormWarningRibbon />
-
         <div className="grid gap-6 xl:grid-cols-[1.14fr_0.86fr] xl:items-stretch">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
