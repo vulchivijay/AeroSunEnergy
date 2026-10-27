@@ -5,7 +5,8 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
 import { submitMailtoForm } from '@/lib/submitMailto'
-import { useState } from 'react'
+import { useState, type FocusEventHandler } from 'react'
+import { validateZeroBounceEmail } from '@/lib/emailValidation'
 
 const siteSurveySchema = z.object({
   customerName: z.string().trim().min(2, 'Customer name is required.'),
@@ -59,6 +60,8 @@ export function SiteSurveyLoadAssessmentForm() {
     register,
     handleSubmit,
     reset,
+    setError,
+    clearErrors,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<SiteSurveyFormValues>({
     resolver: zodResolver(siteSurveySchema),
@@ -67,7 +70,35 @@ export function SiteSurveyLoadAssessmentForm() {
     reValidateMode: 'onChange',
   })
 
-  const onSubmit = (data: SiteSurveyFormValues) => {
+  const handleEmailBlur: FocusEventHandler<HTMLInputElement> = async (event) => {
+    const email = event.currentTarget.value.trim()
+    if (!email) {
+      clearErrors('email')
+      return
+    }
+
+    const isAllowed = await validateZeroBounceEmail(email)
+    if (!isAllowed) {
+      setError('email', {
+        type: 'manual',
+        message: 'This email address appears risky or invalid. Please use a different email address.',
+      })
+      return
+    }
+
+    clearErrors('email')
+  }
+
+  const onSubmit = async (data: SiteSurveyFormValues) => {
+    const isAllowed = await validateZeroBounceEmail(data.email)
+    if (!isAllowed) {
+      setError('email', {
+        type: 'manual',
+        message: 'This email address appears risky or invalid. Please use a different email address.',
+      })
+      return
+    }
+
     const subject = `Site Survey & Load Assessment - ${data.customerName}`
     const body = [
       `Customer Name: ${data.customerName}`,
@@ -166,6 +197,7 @@ export function SiteSurveyLoadAssessmentForm() {
                     register={register}
                     error={errors.email}
                     compact
+                    onBlur={handleEmailBlur}
                   />
 
                   <Field
@@ -555,9 +587,10 @@ type FieldProps = {
   register: ReturnType<typeof useForm<SiteSurveyFormValues>>['register']
   error?: { message?: string }
   compact?: boolean
+  onBlur?: FocusEventHandler<HTMLInputElement>
 }
 
-function Field({ label, name, placeholder, type = 'text', register, error, compact = false }: FieldProps) {
+function Field({ label, name, placeholder, type = 'text', register, error, compact = false, onBlur }: FieldProps) {
   const inputId = name ?? label.toLowerCase().replace(/[^a-z0-9]+/g, '-')
 
   return (
@@ -568,7 +601,7 @@ function Field({ label, name, placeholder, type = 'text', register, error, compa
       <input
         id={inputId}
         type={type}
-        {...(name ? register(name) : {})}
+        {...(name ? register(name, { onBlur }) : {})}
         placeholder={placeholder}
         aria-invalid={Boolean(error)}
         className={`w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-sky-500 focus:ring-4 focus:ring-sky-100 ${compact ? 'h-12' : 'h-12'}`}

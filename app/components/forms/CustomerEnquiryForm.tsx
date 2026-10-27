@@ -5,7 +5,8 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
 import { submitMailtoForm } from '@/lib/submitMailto'
-import { useState } from 'react'
+import { useState, type FocusEventHandler } from 'react'
+import { validateZeroBounceEmail } from '@/lib/emailValidation'
 
 const enquirySchema = z.object({
   customerName: z.string().trim().min(2, 'Customer name is required.'),
@@ -59,6 +60,8 @@ export function CustomerEnquiryForm() {
     register,
     handleSubmit,
     reset,
+    setError,
+    clearErrors,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<EnquiryFormValues>({
     resolver: zodResolver(enquirySchema),
@@ -67,7 +70,35 @@ export function CustomerEnquiryForm() {
     reValidateMode: 'onChange',
   })
 
-  const onSubmit = (data: EnquiryFormValues) => {
+  const handleEmailBlur: FocusEventHandler<HTMLInputElement> = async (event) => {
+    const email = event.currentTarget.value.trim()
+    if (!email) {
+      clearErrors('email')
+      return
+    }
+
+    const isAllowed = await validateZeroBounceEmail(email)
+    if (!isAllowed) {
+      setError('email', {
+        type: 'manual',
+        message: 'This email address appears risky or invalid. Please use a different email address.',
+      })
+      return
+    }
+
+    clearErrors('email')
+  }
+
+  const onSubmit = async (data: EnquiryFormValues) => {
+    const isAllowed = await validateZeroBounceEmail(data.email)
+    if (!isAllowed) {
+      setError('email', {
+        type: 'manual',
+        message: 'This email address appears risky or invalid. Please use a different email address.',
+      })
+      return
+    }
+
     const subject = `Customer Enquiry - ${data.customerName}`
     const body = [
       `Customer Name: ${data.customerName}`,
@@ -123,7 +154,7 @@ export function CustomerEnquiryForm() {
                 <div className="grid gap-4 md:grid-cols-2">
                   <Field label="Full Name*" name="customerName" placeholder="Enter your full name" register={register} error={errors.customerName} />
                   <Field label="Phone Number*" name="phone" type="tel" placeholder="+91 98765 43210" register={register} error={errors.phone} />
-                  <Field label="Email ID*" name="email" type="email" placeholder="you@example.com" register={register} error={errors.email} />
+                  <Field label="Email ID*" name="email" type="email" placeholder="you@example.com" register={register} error={errors.email} onBlur={handleEmailBlur} />
                   <Field label="Address*" name="address" placeholder="Street / local area / city" register={register} error={errors.address} />
                   <Field label="City*" name="city" placeholder="City name" register={register} error={errors.city} />
                   <Field label="State*" name="state" placeholder="State" register={register} error={errors.state} />
@@ -295,9 +326,10 @@ type FieldProps = {
   type?: string
   register: ReturnType<typeof useForm<EnquiryFormValues>>['register']
   error?: { message?: string }
+  onBlur?: FocusEventHandler<HTMLInputElement>
 }
 
-function Field({ label, name, placeholder, type = 'text', register, error }: FieldProps) {
+function Field({ label, name, placeholder, type = 'text', register, error, onBlur }: FieldProps) {
   return (
     <div>
       <label htmlFor={name} className="mb-2 block text-sm font-semibold text-slate-700">
@@ -306,7 +338,7 @@ function Field({ label, name, placeholder, type = 'text', register, error }: Fie
       <input
         id={name}
         type={type}
-        {...register(name)}
+        {...register(name, { onBlur })}
         placeholder={placeholder}
         aria-invalid={Boolean(error)}
         className="w-full rounded-2xl border border-sky-200 bg-white/90 px-4 py-3 text-sm text-slate-900 shadow-[inset_0_1px_2px_rgba(15,23,42,0.04)] outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
