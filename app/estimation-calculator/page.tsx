@@ -1,5 +1,9 @@
-import { SolarEstimationForm } from '@/app/components/forms/SolarEstimationForm'
+import { SolarEstimation } from '@/app/components/forms/SolarEstimation'
+import { BankEMICalculator } from '../components/forms/BankEMICalculator'
 
 export default function EstimationCalculatorPage() {
-  return <SolarEstimationForm />
+  return <>
+    <SolarEstimation />
+    <BankEMICalculator />
+  </>
 }

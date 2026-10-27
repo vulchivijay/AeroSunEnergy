@@ -1,4 +1,5 @@
-import { SolarEstimationForm } from './components/forms/SolarEstimationForm'
+import { BankEMICalculator } from './components/forms/BankEMICalculator'
+import { SolarEstimation } from './components/forms/SolarEstimation'
 import About from './components/sections/About'
 import {
   BenefitCard,
@@ -401,7 +402,8 @@ export default function Home() {
           />
         </div>
       </section>
-      <SolarEstimationForm />
+      <SolarEstimation />
+      <BankEMICalculator />
     </main>
   )
 }

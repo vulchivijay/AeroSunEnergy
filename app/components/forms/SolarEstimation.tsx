@@ -50,7 +50,7 @@ const defaultValues: FormData = {
   sellingPricePerKw: 65000,
 }
 
-export function SolarEstimationForm() {
+export function SolarEstimation() {
   const { t } = useLocale()
   const e = t.estimation
   const isProduction = process.env.NODE_ENV === 'production'
