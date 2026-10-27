@@ -8,7 +8,6 @@ import { PerformanceMonitor } from '@/app/components/performance'
 import CookieConsent from '@/app/components/cookies/CookieConsent'
 import Notifications from '@/app/components/layout/Notifications'
 import ProductionProtector from '@/app/components/security/ProductionProtector'
-import { ZeroBounceWidget } from '@/app/components/ZeroBounceWidget'
 
 import './globals.css'
 
@@ -144,7 +143,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${roboto.variable} ${poppins.variable} bg-white text-gray-900 transition-colors duration-150`}>
-        <ZeroBounceWidget />
         {process.env.NODE_ENV === 'production' ? <ProductionProtector /> : null}
         {GTM_ID ? <GoogleTagManager gtmId={GTM_ID} /> : null}
         {GA_MEASUREMENT_ID ? <GoogleAnalytics gaId={GA_MEASUREMENT_ID} /> : null}

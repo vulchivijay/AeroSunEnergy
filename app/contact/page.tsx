@@ -1,15 +1,11 @@
 'use client'
 
-import type { FormEvent } from 'react'
 import Link from 'next/link'
 import { motion } from '@/lib/motion'
 import { Card, CardContent } from '@/app/components/ui/Card'
 import FaqCard, { solarFaqs } from '@/app/components/ui/FaqCard'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
-import { useState, useRef, type FocusEventHandler } from 'react'
-import { submitMailtoForm } from '@/lib/submitMailto'
-import { validateZeroBounceEmail } from '@/lib/emailValidation'
 
 const channelIcons = {
   email: (
@@ -32,8 +28,6 @@ const channelIcons = {
 }
 
 export default function Contact() {
-  const [projectBriefFeedback, setProjectBriefFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
-  const projectBriefFormRef = useRef<HTMLFormElement | null>(null)
   const { t } = useLocale()
   const c = t.contact
   const footer = t.footer
@@ -75,114 +69,6 @@ export default function Contact() {
   ]
 
   const contactEmail = footer.email
-
-  const handleProjectBrief = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-
-    const formElement = projectBriefFormRef.current ?? event.currentTarget
-    const form = new FormData(formElement)
-    const name = String(form.get('name') ?? '').trim()
-    const email = String(form.get('email') ?? '').trim()
-    const phone = String(form.get('phone') ?? '').trim()
-    const projectType = String(form.get('projectType') ?? '').trim()
-    const usage = String(form.get('usage') ?? '').trim()
-    const message = String(form.get('message') ?? '').trim()
-
-    if (!name || !email || !phone || !projectType || !usage || !message) {
-      const missing = [
-        !name && 'name',
-        !email && 'email',
-        !phone && 'phone',
-        !projectType && 'project type',
-        !usage && 'usage',
-        !message && 'message',
-      ].filter(Boolean)
-
-      const alertMessage = `Please fill in the required fields: ${missing.join(', ')}.`
-      if (typeof window !== 'undefined') {
-        window.alert(alertMessage)
-      }
-      return
-    }
-
-    const isAllowedEmail = await validateZeroBounceEmail(email)
-    if (!isAllowedEmail) {
-      setProjectBriefFeedback({
-        type: 'error',
-        message: 'This email address appears risky or invalid. Please use a different email address.',
-      })
-      return
-    }
-
-    const payload = {
-      name,
-      email,
-      phone,
-      projectType,
-      usage,
-      message,
-    }
-
-    const mailtoUrl = `mailto:${contactEmail}?subject=${encodeURIComponent(`AeroSun Energy project brief from ${name}`)}&body=${encodeURIComponent([
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Phone: ${phone}`,
-      `Project type: ${projectType}`,
-      `Estimated usage: ${usage}`,
-      '',
-      'Message:',
-      message,
-    ].join('\n'))}`
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(payload),
-      })
-
-      const result = await response.json().catch(() => ({}))
-
-      if (!response.ok) {
-        throw new Error(result?.error || 'The contact service rejected the request.')
-      }
-
-      formElement?.reset()
-      setProjectBriefFeedback({
-        type: 'success',
-        message: result?.message || 'Your project brief has been sent successfully.',
-      })
-    } catch (error) {
-      formElement?.reset()
-      setProjectBriefFeedback({
-        type: 'error',
-        message: 'The contact service is unavailable right now. Your email app is opening so you can send it manually.',
-      })
-
-      if (typeof window !== 'undefined') {
-        window.location.href = mailtoUrl
-      }
-    }
-  }
-
-  const handleEmailBlur: FocusEventHandler<HTMLInputElement> = async (event) => {
-    const email = event.currentTarget.value.trim()
-    if (!email) {
-      return
-    }
-
-    const isAllowedEmail = await validateZeroBounceEmail(email)
-    if (!isAllowedEmail) {
-      event.currentTarget.setCustomValidity('This email address appears risky or invalid. Please use a different email address.')
-      event.currentTarget.reportValidity()
-      return
-    }
-
-    event.currentTarget.setCustomValidity('')
-  }
 
   return (
     <section className="relative isolate overflow-hidden px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
@@ -259,25 +145,10 @@ export default function Contact() {
 
                   <div className="relative mt-3 h-75 overflow-hidden rounded-[22px] sm:h-87.5">
                     <OptimizedImage
-                      src="/images/customdesign-aerosunenergy.png"
-                      alt="AeroSun Energy custom renewable energy design"
-                      fill
-                      sizes="(min-width: 1024px) 34vw, 90vw"
-                      className="object-cover"
-                      priority
+                      src="/images/contact/solar-team.webp"
+                      alt="AeroSun energy consultation"
+                      className="h-full w-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.08),rgba(2,6,23,0.50)_72%,rgba(2,6,23,0.82))]" aria-hidden="true" />
-                  </div>
-
-                  <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                    <div className="rounded-2xl border border-slate-200/80 bg-slate-950/85 p-3 text-white">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-slate-300">{c.channels[0]?.label ?? 'Email'}</p>
-                      <p className="mt-2 break-all text-sm font-medium text-slate-100">{contactEmail}</p>
-                    </div>
-                    <div className="rounded-2xl border border-slate-200/80 bg-slate-950/85 p-3 text-white">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-slate-300">{c.channels[1]?.label ?? 'Website'}</p>
-                      <p className="mt-2 text-sm font-medium text-slate-100">{footer.website}</p>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -287,193 +158,68 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, delay: 0.05, ease: 'easeOut' }}
-            className="space-y-5"
+            transition={{ duration: 0.45, ease: 'easeOut', delay: 0.08 }}
+            className="rounded-[32px] border border-slate-200 bg-white/80 p-5 shadow-[0_18px_50px_rgba(15,23,42,0.06)] backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/80 sm:p-7"
           >
-            <Card className="overflow-hidden border border-[#e4efe7] bg-white/80 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/80">
-              <CardContent className="p-5 sm:p-6">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-slate-500 dark:text-slate-400">{c.quickAccess}</p>
-                <h2 className="mt-3 text-2xl font-semibold text-slate-900 dark:text-white">{c.quickAccessTitle}</h2>
-                <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{c.quickAccessCopy}</p>
+            <div className="mb-6 flex items-center justify-between gap-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#20A44A]">{c.contactUs}</p>
+                <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">{c.contactCardTitle}</h2>
+              </div>
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#20A44A]/10 text-[#20A44A]">
+                {channelIcons.email}
+              </div>
+            </div>
 
-                <div className="mt-5 space-y-3">
-                  {channels.map((channel) => (
-                    <Link
-                      key={channel.label}
-                      href={channel.href}
-                      className="group flex items-center gap-3 rounded-2xl border border-slate-200 bg-linear-to-r from-white via-slate-50 to-slate-100 p-3.5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-700 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950"
-                    >
-                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#20A44A]/10 text-[#0f172a] transition-colors group-hover:bg-[#20A44A] group-hover:text-white dark:bg-[#20A44A]/15 dark:text-[#86efac] dark:group-hover:bg-[#20A44A] dark:group-hover:text-white">
-                        {channel.icon}
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.26em] text-slate-500 dark:text-slate-400">{channel.label}</p>
-                        <p className="mt-1 truncate text-sm font-semibold text-slate-800 dark:text-slate-100">{channel.value}</p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden border border-[#e4efe7] bg-white/80 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/80">
-              <CardContent className="p-5 sm:p-6">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-slate-500 dark:text-slate-400">{c.whatHappensNext}</p>
-                <div className="mt-4 space-y-3">
-                  {contactSteps.map((step) => (
-                    <div
-                      key={step.number}
-                      className="flex gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-3.5 dark:border-slate-700 dark:bg-slate-900/70"
-                    >
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-[#20A44A] to-[#F59E0B] text-xs font-bold text-white">
-                        {step.number}
-                      </span>
-                      <div>
-                        <h3 className="text-sm font-semibold text-slate-900 dark:text-white">{step.title}</h3>
-                        <p className="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-300">{step.description}</p>
-                      </div>
+            <div className="space-y-4">
+              {channels.map((channel) => (
+                <a
+                  key={channel.label}
+                  href={channel.href}
+                  className="group flex items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-slate-50/80 p-4 transition-colors hover:border-[#20A44A]/30 hover:bg-[#f3faf5] dark:border-slate-700 dark:bg-slate-950/60 dark:hover:border-[#20A44A]/40 dark:hover:bg-slate-900"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-slate-700 shadow-sm dark:bg-slate-900 dark:text-slate-200">
+                      {channel.icon}
                     </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+                    <div>
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">{channel.label}</p>
+                      <p className="mt-1 text-sm font-medium text-slate-800 dark:text-slate-100">{channel.value}</p>
+                    </div>
+                  </div>
+                  <span className="text-slate-400 transition-transform group-hover:translate-x-1 dark:text-slate-500">→</span>
+                </a>
+              ))}
+            </div>
           </motion.div>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <Card className="overflow-hidden border border-[#e4efe7] bg-white/80 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/80">
-            <CardContent className="p-5 sm:p-7">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-slate-500 dark:text-slate-400">{c.projectBrief}</p>
-              <h2 className="mt-3 text-3xl font-semibold text-slate-900 dark:text-white">{c.projectBriefTitle}</h2>
-              <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">{c.projectBriefCopy}</p>
-
-              <form ref={projectBriefFormRef} className="mt-6 grid gap-4 sm:grid-cols-2" onSubmit={handleProjectBrief}>
-                <Field label={c.form.fullName} name="name" placeholder={c.form.fullNamePlaceholder} />
-                <Field label={c.form.email} name="email" type="email" placeholder={c.form.emailPlaceholder} onBlur={handleEmailBlur} />
-                <Field label={c.form.phone} name="phone" placeholder={c.form.phonePlaceholder} />
-                <Field label={c.form.projectType} name="projectType" placeholder={c.form.projectTypePlaceholder} />
-                <Field label={c.form.usage} name="usage" placeholder={c.form.usagePlaceholder} />
-                <div className="sm:col-span-2">
-                  <label className="mb-2 block text-sm font-semibold text-slate-800 dark:text-slate-100">{c.form.message}</label>
-                  <textarea
-                    name="message"
-                    rows={5}
-                    placeholder={c.form.messagePlaceholder}
-                    className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-primary/40 focus:ring-4 focus:ring-primary/10 dark:border-white/10 dark:bg-slate-950/50 dark:text-white"
-                  />
+        <div className="grid gap-6 lg:grid-cols-3">
+          {contactSteps.map((step) => (
+            <Card key={step.title} className="relative overflow-hidden border border-slate-200 bg-white/90 shadow-[0_16px_40px_rgba(15,23,42,0.04)] dark:border-slate-700 dark:bg-slate-900/80">
+              <CardContent className="p-6">
+                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-[#20A44A]/10 text-sm font-semibold text-[#20A44A]">
+                  {step.number}
                 </div>
-
-                <div className="sm:col-span-2 flex flex-wrap items-center gap-3 pt-2">
-                  <button
-                    type="submit"
-                    className="inline-flex items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 hover:bg-[#20A44A] dark:bg-white dark:text-slate-950 dark:hover:bg-[#20A44A] dark:hover:text-white"
-                  >
-                    {c.openEmailDraft}
-                  </button>
-                  <Link
-                    href={`mailto:${contactEmail}`}
-                    className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition-colors duration-200 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800"
-                  >
-                    {c.emailDirect}
-                  </Link>
-                </div>
-
-                {projectBriefFeedback && (
-                  <div className="sm:col-span-2">
-                    <p className={`text-sm font-semibold ${projectBriefFeedback.type === 'success' ? 'text-emerald-700 dark:text-emerald-300' : 'text-rose-600 dark:text-rose-300'}`}>
-                      {projectBriefFeedback.message}
-                    </p>
-                  </div>
-                )}
-              </form>
-            </CardContent>
-          </Card>
-
-          <Card className="overflow-hidden border border-[#dbe9df] bg-linear-to-br from-[#0b1728] via-[#0f1d2f] to-[#1f3f28] text-white shadow-[0_25px_70px_rgba(15,23,42,0.18)] dark:border-slate-700">
-            <CardContent className="p-5 sm:p-7">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-white/60">{c.builtForClarity}</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">{c.builtForClarityTitle}</h2>
-              <p className="mt-3 text-sm leading-7 text-slate-200">{c.builtForClarityCopy}</p>
-
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-md">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/55">{c.brandPalette}</p>
-                  <p className="mt-3 text-sm leading-6 text-slate-200">{c.brandPaletteCopy}</p>
-                </div>
-                <div className="rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-md">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/55">{c.mobileFirst}</p>
-                  <p className="mt-3 text-sm leading-6 text-slate-200">{c.mobileFirstCopy}</p>
-                </div>
-              </div>
-
-              <div className="mt-6 rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-md">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/55">{c.helpfulRoutes}</p>
-                <div className="mt-4 flex flex-wrap gap-3">
-                  <Link href="/about" className="rounded-full border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/12">{c.aboutAeroSun}</Link>
-                  <Link href="/services" className="rounded-full border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/12">{c.services}</Link>
-                  <Link href="/estimation" className="rounded-full border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/12">{c.estimation}</Link>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+                <h3 className="text-xl font-semibold text-slate-900 dark:text-white">{step.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{step.description}</p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
-        <div className="grid gap-6">
-          <Card className="overflow-hidden border border-[#e4efe7] bg-white/80 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/80">
-            <CardContent className="p-5 sm:p-7">
-              <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">FAQ</h2>
-
-              <div className="mt-4 space-y-4">
-                <div className="rounded-4xl border border-[#dfeee4] bg-white/80 p-5 shadow-[0_24px_70px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/80 sm:p-7">
-                  <div className="mb-6 flex items-end justify-between gap-4">
-                    <div>
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-slate-500 dark:text-slate-400">FAQ</p>
-                      <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white">Frequently asked questions</h2>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4">
-                    {solarFaqs.map((item, index) => (
-                      <FaqCard
-                        key={`${item.question}-${index}`}
-                        question={item.question}
-                        answer={item.answer}
-                        defaultOpen={index === 0}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+        <div className="rounded-[32px] border border-slate-200 bg-white/90 p-5 shadow-[0_18px_50px_rgba(15,23,42,0.04)] dark:border-slate-700 dark:bg-slate-900/80 sm:p-7">
+          <div className="mb-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#20A44A]">{c.faqHeader}</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">{c.faqTitle}</h2>
+          </div>
+          <div className="grid gap-4 lg:grid-cols-2">
+            {solarFaqs.map((faq) => (
+              <FaqCard key={faq.question} faq={faq} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
-  )
-}
-
-type FieldProps = {
-  label: string
-  name: string
-  placeholder: string
-  type?: string
-  onBlur?: FocusEventHandler<HTMLInputElement>
-}
-
-function Field({ label, name, placeholder, type = 'text', onBlur }: FieldProps) {
-  return (
-    <div>
-      <label htmlFor={name} className="mb-2 block text-sm font-semibold text-custom-deep-blue dark:text-white">
-        {label}
-      </label>
-      <input
-        id={name}
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        onBlur={onBlur}
-        className="w-full rounded-3xl border border-slate-200 bg-slate-50/80 px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-primary/40 focus:ring-4 focus:ring-primary/10 dark:border-white/10 dark:bg-slate-950/50 dark:text-white"
-      />
-    </div>
   )
 }
