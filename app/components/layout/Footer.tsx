@@ -85,13 +85,7 @@ export default function Footer() {
 	const quickEnquiries = queries
 		.filter((item) => allowedQuickEnquiries.includes(item.href))
 		.sort((a, b) => allowedQuickEnquiries.indexOf(a.href) - allowedQuickEnquiries.indexOf(b.href))
-	const shouldDisableWindAndHybrid = process.env.NODE_ENV === 'production'
-	const visibleNavLinks = shouldDisableWindAndHybrid
-		? navLinks.map((link) => ({
-			...link,
-			disabled: link.href === '/windenergy' || link.href === '/hybridenergy',
-		}))
-		: navLinks
+	const visibleNavLinks = navLinks
 
 	return (
 		<footer

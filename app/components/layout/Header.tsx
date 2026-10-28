@@ -55,16 +55,7 @@ export default function Navbar() {
   const mobileLangRef = useRef<HTMLDivElement>(null)
   const navLinks = t.navbar.links
   const languageOptions = t.navbar.languages as { code: Locale; label: string; shortLabel: string }[]
-  const shouldDisableWindAndHybrid = process.env.NODE_ENV === 'production'
-  const visibleNavLinks = shouldDisableWindAndHybrid
-    ? navLinks.map((link) => {
-        const isDisabled = link.href === '/windenergy' || link.href === '/hybridenergy'
-        return {
-          ...link,
-          disabled: isDisabled,
-        }
-      })
-    : navLinks
+  const visibleNavLinks = navLinks
 
   useEffect(() => {
     setHydrated(true)
