@@ -70,12 +70,12 @@ export default function Contact() {
       href: footer.website.startsWith('http') ? footer.website : `https://${footer.website}`,
       icon: channelIcons.website,
     },
-    {
-      label: c.channels[2]?.label ?? 'trust',
-      value: c.channels[2]?.value ?? 'sanatanadharmam.in',
-      href: 'https://sanatanadharmam.in',
-      icon: channelIcons.quote,
-    },
+    // {
+    //   label: c.channels[2]?.label ?? 'trust',
+    //   value: c.channels[2]?.value ?? 'sanatanadharmam.in',
+    //   href: 'https://sanatanadharmam.in',
+    //   icon: channelIcons.quote,
+    // },
     {
       label: c.channels[3]?.label ?? 'Estimation',
       value: c.channels[3]?.value ?? 'Open the calculator',

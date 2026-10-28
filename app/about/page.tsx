@@ -165,7 +165,7 @@ const approvalRows = [
   ['Professional Tax', 'State professional tax compliance for employees and business operations', 'Done'],
   ['Accountant', 'Financial accounting, books of records and compliance support', 'Done'],
   ['Compliance Advisor', 'External regulatory guidance and compliance monitoring support', 'Done'],
-  ['DPIIT Startup Recognition', 'Startup India recognition if eligible', 'In process'],
+  ['DPIIT Startup Recognition', 'Startup India recognition if eligible', 'Submitted'],
   ['Trademark', 'Protects the company brand and eligible marks', 'In process'],
   ['Udyam/MSME', 'MSME recognition if eligible', 'Done'],
 ]
