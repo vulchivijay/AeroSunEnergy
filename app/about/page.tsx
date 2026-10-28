@@ -204,13 +204,19 @@ const founderProfiles = [
     initials: 'V',
     name: 'Vijaya Kumar',
     role: 'Founder & Director',
-    description: 'Leads engineering, system design and large commercial deployments. Hands-on through every site assessment.',
+    description: 'Leads the company vision, project planning and renewable-energy strategy. He is closely involved in system design, technical evaluation and business development for clean-energy solutions.',
+  },
+  {
+    initials: 'V',
+    name: 'Kumar',
+    role: 'Co-Founder & Director',
+    description: 'Supports strategic growth, customer engagement and operational execution. He helps shape partnerships, service quality and long-term business relationships across solar and hybrid projects.',
   },
   {
     initials: 'D',
     name: 'Anusha',
-    role: 'Co-Founder & Director',
-    description: 'Drives strategy, partnerships and customer experience. Personally oversees the AMC and service operations.',
+    role: 'Director',
+    description: 'Oversees organisational direction, stakeholder coordination and service excellence. She contributes to customer experience, governance and the smooth execution of project operations.',
   },
 ]
 
@@ -535,76 +541,108 @@ export default function AboutPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="grid gap-6 xl:grid-cols-[1.08fr_0.92fr]">
-          <div className="overflow-hidden rounded-[32px] border border-amber-200/80 bg-linear-to-br from-amber-50 via-white to-orange-50 p-5 shadow-[0_28px_80px_-45px_rgba(245,158,11,0.55)] dark:border-amber-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+        <div className="grid gap-6 xl:grid-cols-[0.96fr_1.04fr]">
+          <div className="overflow-hidden rounded-[32px] border border-emerald-200/80 bg-linear-to-br from-emerald-50 via-white to-teal-50 p-5 shadow-[0_28px_80px_-45px_rgba(16,185,129,0.55)] dark:border-emerald-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
             <div className="flex items-center justify-between gap-3">
-              <span className="inline-flex items-center rounded-full border border-amber-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-amber-700 dark:border-amber-800 dark:bg-slate-900/80 dark:text-amber-300">
-                Current goals
+              <span className="inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:border-emerald-800 dark:bg-slate-900/80 dark:text-emerald-300">
+                Promise
               </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-700 dark:border-amber-800 dark:bg-amber-950/50 dark:text-amber-300">
-                <span className="h-2 w-2 rounded-full bg-amber-500" />
-                Now
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300">
+                <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                Commitment
               </span>
             </div>
 
             <h3 className="mt-5 text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-[2.25rem] dark:text-white">
-              Immediate priorities
+              What we promise to build
             </h3>
 
             <div className="mt-6 space-y-3">
-              {currentGoals.map((goal, index) => (
+              {promisePoints.map((point, index) => (
                 <div
-                  key={goal}
-                  className="group flex items-start gap-3 rounded-[22px] border border-amber-100 bg-white/80 p-3.5 transition duration-300 hover:-translate-y-0.5 hover:border-amber-200 hover:shadow-[0_16px_28px_-22px_rgba(245,158,11,0.7)] dark:border-amber-900/50 dark:bg-slate-900/70 dark:hover:border-amber-700"
+                  key={point}
+                  className="flex items-start gap-3 rounded-[20px] border border-emerald-100 bg-white/80 p-3.5 shadow-[0_18px_30px_-28px_rgba(16,185,129,0.5)] dark:border-emerald-900/50 dark:bg-slate-900/70"
                 >
-                  <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-500/10 text-[10px] font-black text-amber-700 ring-1 ring-amber-200 dark:bg-amber-500/15 dark:text-amber-300 dark:ring-amber-700/50">
-                    0{index + 1}
+                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-[10px] font-black text-white shadow-lg shadow-emerald-500/25">
+                    {index + 1}
                   </div>
-                  <p className="text-base leading-7 text-slate-700 dark:text-slate-300">{goal}</p>
+                  <p className="text-base leading-7 text-slate-700 dark:text-slate-300">{point}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-[32px] border border-indigo-200/80 bg-linear-to-br from-indigo-50 via-white to-violet-50 p-5 shadow-[0_28px_80px_-45px_rgba(99,102,241,0.5)] dark:border-indigo-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="overflow-hidden rounded-[32px] border border-sky-200/80 bg-linear-to-br from-sky-50 via-white to-indigo-50 p-5 shadow-[0_28px_80px_-45px_rgba(14,165,233,0.5)] dark:border-sky-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
             <div className="flex items-center justify-between gap-3">
-              <span className="inline-flex items-center rounded-full border border-indigo-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-indigo-700 dark:border-indigo-800 dark:bg-slate-900/80 dark:text-indigo-300">
-                Roadmap
+              <span className="inline-flex items-center rounded-full border border-sky-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-sky-700 dark:border-sky-800 dark:bg-slate-900/80 dark:text-sky-300">
+                Mission
               </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:border-indigo-800 dark:bg-indigo-950/50 dark:text-indigo-300">
-                <span className="h-2 w-2 rounded-full bg-indigo-500" />
-                Growth plan
+              <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-700 dark:border-sky-800 dark:bg-sky-950/50 dark:text-sky-300">
+                <span className="h-2 w-2 rounded-full bg-sky-500" />
+                Purpose
               </span>
             </div>
 
             <h3 className="mt-5 text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-[2.25rem] dark:text-white">
-              Short, medium and long-term outlook
+              The purpose behind every project
             </h3>
 
-            <div className="mt-6 space-y-4">
-              {futureGoals.map((group) => (
-                <div
-                  key={group.title}
-                  className="rounded-[24px] border border-slate-200/80 bg-white/80 p-4 shadow-[0_16px_30px_-28px_rgba(15,23,42,0.6)] dark:border-slate-700 dark:bg-slate-900/75"
+            <ul className="mt-6 space-y-3">
+              {missionPoints.map((point, index) => (
+                <li
+                  key={point}
+                  className="flex items-start gap-3 rounded-[18px] border border-sky-100 bg-white/80 p-3.5 dark:border-sky-900/50 dark:bg-slate-900/70"
                 >
-                  <div className="flex items-center gap-2">
-                    <span className="h-2.5 w-2.5 rounded-full bg-indigo-500" />
-                    <h4 className="text-[10px] font-black uppercase tracking-[0.22em] text-indigo-700 dark:text-indigo-300">
-                      {group.title}
-                    </h4>
+                  <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky-500/10 text-[9px] font-black text-sky-700 ring-1 ring-sky-200 dark:bg-sky-500/15 dark:text-sky-300 dark:ring-sky-700/50">
+                    0{index + 1}
                   </div>
-
-                  <ul className="mt-3 space-y-2.5 text-sm leading-6 text-slate-700 dark:text-slate-300">
-                    {group.items.map((item) => (
-                      <li key={item} className="flex gap-3">
-                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-indigo-400" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  <span className="text-base leading-7 text-slate-700 dark:text-slate-300">{point}</span>
+                </li>
               ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="overflow-hidden rounded-[34px] border border-slate-200 bg-linear-to-br from-slate-50 via-white to-emerald-50 p-5 shadow-[0_30px_90px_-45px_rgba(15,23,42,0.45)] dark:border-slate-800 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="inline-flex items-center rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-slate-700 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-200">
+                Service focus
+              </p>
             </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-300">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              Renewable solutions
+            </div>
+          </div>
+
+          <h2 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+            Integrated clean-energy solutions for multiple needs
+          </h2>
+
+          <div className="mt-6 grid gap-5 lg:grid-cols-3">
+            {serviceGroups.map((group) => (
+              <div
+                key={group.title}
+                className="group relative overflow-hidden rounded-[28px] border border-slate-200 bg-white/85 p-5 shadow-[0_22px_45px_-35px_rgba(15,23,42,0.5)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_50px_-32px_rgba(15,23,42,0.65)] dark:border-slate-700 dark:bg-slate-900/75"
+              >
+                <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${group.accent}`} />
+                <div className={`inline-flex rounded-full bg-gradient-to-r ${group.accent} px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-white`}>
+                  {group.title.split(' ')[0]}
+                </div>
+                <h3 className="mt-4 text-xl font-black text-slate-900 dark:text-white">{group.title}</h3>
+                <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700 dark:text-slate-300">
+                  {group.items.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-slate-900 dark:bg-slate-100" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>
