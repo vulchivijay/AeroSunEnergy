@@ -52,7 +52,7 @@ const slides: Slide[] = [
     description:
       'Utility-connected wind generation for locations with consistent wind resource. Pros: lower grid dependence, reduced power cost, and potential net-metering benefits. Cons: generation varies with wind speed and requires site assessment.',
     tags: ['Net Metering', 'Wind-rich sites'],
-    image: '/images/slider/slider-8.png',
+    image: '/images/slider/slider-7.png',
     badgeClass: 'text-sky-100',
     chipClass: 'text-sky-50',
     panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
@@ -63,7 +63,7 @@ const slides: Slide[] = [
     description:
       'Standalone wind systems with battery storage for remote homes, farms, telecom towers, and water pumping. Pros: off-grid power independence and reliable generation where grid access is limited. Cons: storage sizing and wind variability must be planned carefully.',
     tags: ['Battery Storage', 'Remote Power'],
-    image: '/images/slider/slider-9.png',
+    image: '/images/slider/slider-8.png',
     badgeClass: 'text-emerald-100',
     chipClass: 'text-emerald-50',
     panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
@@ -74,7 +74,7 @@ const slides: Slide[] = [
     description:
       'Wind energy paired with batteries and grid connection for resilient, flexible power supply. Pros: backup during outages, better energy management, and reduced dependence on utility supply. Cons: more complex controls and higher capital outlay than a grid-only design.',
     tags: ['Backup Ready', 'Smart Control'],
-    image: '/images/slider/slider-10.png',
+    image: '/images/slider/slider-9.png',
     badgeClass: 'text-pink-100',
     chipClass: 'text-pink-50',
     panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
