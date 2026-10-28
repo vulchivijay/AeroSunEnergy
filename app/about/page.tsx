@@ -660,28 +660,28 @@ export default function AboutPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-2">
-          <div className="overflow-hidden rounded-[32px] border border-emerald-200/80 bg-linear-to-br from-emerald-50 via-white to-teal-50 p-5 shadow-[0_28px_80px_-45px_rgba(16,185,129,0.55)] dark:border-emerald-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="overflow-hidden rounded-[32px] border border-emerald-200/80 bg-linear-to-br from-emerald-50 via-white to-cyan-50 p-5 shadow-[0_28px_80px_-45px_rgba(16,185,129,0.55)] dark:border-emerald-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
             <div className="flex items-center justify-between gap-3">
               <span className="inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:border-emerald-800 dark:bg-slate-900/80 dark:text-emerald-300">
-                Promise
+                Quality
               </span>
               <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300">
                 <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                Commitment
+                Standards
               </span>
             </div>
 
             <h3 className="mt-5 text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-[2.25rem] dark:text-white">
-              What we stand for
+              Our quality commitments
             </h3>
 
             <div className="mt-6 space-y-3">
-              {promisePoints.map((point, index) => (
+              {qualityPoints.map((point, index) => (
                 <div
                   key={point}
-                  className="flex items-start gap-3 rounded-[20px] border border-emerald-100 bg-white/80 p-3.5 dark:border-emerald-900/50 dark:bg-slate-900/70"
+                  className="flex items-start gap-3 rounded-[18px] border border-emerald-100 bg-white/80 p-3.5 dark:border-emerald-900/50 dark:bg-slate-900/70"
                 >
-                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-[10px] font-black text-white shadow-lg shadow-emerald-500/25">
+                  <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/10 text-[10px] font-black text-emerald-700 ring-1 ring-emerald-200 dark:bg-emerald-500/15 dark:text-emerald-300 dark:ring-emerald-700/50">
                     {index + 1}
                   </div>
                   <p className="text-base leading-7 text-slate-700 dark:text-slate-300">{point}</p>
@@ -690,34 +690,134 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-[32px] border border-sky-200/80 bg-linear-to-br from-sky-50 via-white to-indigo-50 p-5 shadow-[0_28px_80px_-45px_rgba(14,165,233,0.5)] dark:border-sky-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="overflow-hidden rounded-[32px] border border-amber-200/80 bg-linear-to-br from-amber-50 via-white to-yellow-50 p-5 shadow-[0_28px_80px_-45px_rgba(245,158,11,0.55)] dark:border-amber-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
             <div className="flex items-center justify-between gap-3">
-              <span className="inline-flex items-center rounded-full border border-sky-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-sky-700 dark:border-sky-800 dark:bg-slate-900/80 dark:text-sky-300">
-                Mission
+              <span className="inline-flex items-center rounded-full border border-amber-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-amber-700 dark:border-amber-800 dark:bg-slate-900/80 dark:text-amber-300">
+                Ethics
               </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-700 dark:border-sky-800 dark:bg-sky-950/50 dark:text-sky-300">
-                <span className="h-2 w-2 rounded-full bg-sky-500" />
-                Purpose
+              <span className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-700 dark:border-amber-800 dark:bg-amber-950/50 dark:text-amber-300">
+                <span className="h-2 w-2 rounded-full bg-amber-500" />
+                Conduct
               </span>
             </div>
 
             <h3 className="mt-5 text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-[2.25rem] dark:text-white">
-              Why we do what we do
+              Business conduct we stand by
             </h3>
 
-            <ul className="mt-6 space-y-3">
-              {missionPoints.map((point, index) => (
-                <li
+            <div className="mt-6 space-y-3">
+              {ethicsPoints.map((point, index) => (
+                <div
                   key={point}
-                  className="flex items-start gap-3 rounded-[18px] border border-sky-100 bg-white/80 p-3.5 dark:border-sky-900/50 dark:bg-slate-900/70"
+                  className="flex items-start gap-3 rounded-[18px] border border-amber-100 bg-white/80 p-3.5 dark:border-amber-900/50 dark:bg-slate-900/70"
                 >
-                  <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky-500/10 text-[9px] font-black text-sky-700 ring-1 ring-sky-200 dark:bg-sky-500/15 dark:text-sky-300 dark:ring-sky-700/50">
-                    0{index + 1}
+                  <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-500/10 text-[10px] font-black text-amber-700 ring-1 ring-amber-200 dark:bg-amber-500/15 dark:text-amber-300 dark:ring-amber-700/50">
+                    {index + 1}
                   </div>
-                  <span className="text-base leading-7 text-slate-700 dark:text-slate-300">{point}</span>
-                </li>
+                  <p className="text-base leading-7 text-slate-700 dark:text-slate-300">{point}</p>
+                </div>
               ))}
-            </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="overflow-hidden rounded-[34px] border border-slate-200 bg-linear-to-br from-slate-50 via-white to-slate-100 p-5 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.45)] dark:border-slate-800 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="inline-flex items-center rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-slate-700 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-200">
+                Company values
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-700 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200">
+              <span className="h-2 w-2 rounded-full bg-slate-500" />
+              Complete overview
+            </div>
+          </div>
+
+          <h2 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+            Full picture of our commitments and standards
+          </h2>
+
+          <div className="mt-6 grid gap-5 lg:grid-cols-2">
+            <div className="rounded-[28px] border border-emerald-200 bg-white/85 p-5 dark:border-emerald-900/50 dark:bg-slate-900/75">
+              <div className="flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                <h3 className="text-[10px] font-black uppercase tracking-[0.24em] text-emerald-700 dark:text-emerald-300">
+                  Promise
+                </h3>
+              </div>
+              <div className="mt-4 space-y-3">
+                {promisePoints.map((point, index) => (
+                  <div key={point} className="flex items-start gap-3 rounded-[16px] border border-emerald-100 bg-emerald-50/60 p-3 dark:border-emerald-900/50 dark:bg-emerald-950/20">
+                    <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-[9px] font-black text-white">
+                      {index + 1}
+                    </div>
+                    <p className="text-base leading-7 text-slate-700 dark:text-slate-300">{point}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[28px] border border-sky-200 bg-white/85 p-5 dark:border-sky-900/50 dark:bg-slate-900/75">
+              <div className="flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-sky-500" />
+                <h3 className="text-[10px] font-black uppercase tracking-[0.24em] text-sky-700 dark:text-sky-300">
+                  Mission
+                </h3>
+              </div>
+              <div className="mt-4 space-y-3">
+                {missionPoints.map((point, index) => (
+                  <div key={point} className="flex items-start gap-3 rounded-[16px] border border-sky-100 bg-sky-50/60 p-3 dark:border-sky-900/50 dark:bg-sky-950/20">
+                    <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky-500 text-[9px] font-black text-white">
+                      {index + 1}
+                    </div>
+                    <p className="text-base leading-7 text-slate-700 dark:text-slate-300">{point}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-5 lg:grid-cols-2">
+            <div className="rounded-[28px] border border-amber-200 bg-white/85 p-5 dark:border-amber-900/50 dark:bg-slate-900/75">
+              <div className="flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-amber-500" />
+                <h3 className="text-[10px] font-black uppercase tracking-[0.24em] text-amber-700 dark:text-amber-300">
+                  Quality
+                </h3>
+              </div>
+              <div className="mt-4 space-y-3">
+                {qualityPoints.map((point, index) => (
+                  <div key={point} className="flex items-start gap-3 rounded-[16px] border border-amber-100 bg-amber-50/60 p-3 dark:border-amber-900/50 dark:bg-amber-950/20">
+                    <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-500 text-[9px] font-black text-white">
+                      {index + 1}
+                    </div>
+                    <p className="text-base leading-7 text-slate-700 dark:text-slate-300">{point}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[28px] border border-violet-200 bg-white/85 p-5 dark:border-violet-900/50 dark:bg-slate-900/75">
+              <div className="flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-violet-500" />
+                <h3 className="text-[10px] font-black uppercase tracking-[0.24em] text-violet-700 dark:text-violet-300">
+                  Ethics
+                </h3>
+              </div>
+              <div className="mt-4 space-y-3">
+                {ethicsPoints.map((point, index) => (
+                  <div key={point} className="flex items-start gap-3 rounded-[16px] border border-violet-100 bg-violet-50/60 p-3 dark:border-violet-900/50 dark:bg-violet-950/20">
+                    <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet-500 text-[9px] font-black text-white">
+                      {index + 1}
+                    </div>
+                    <p className="text-base leading-7 text-slate-700 dark:text-slate-300">{point}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
