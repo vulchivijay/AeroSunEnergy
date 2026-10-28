@@ -165,7 +165,7 @@ const approvalRows = [
   ['Professional Tax', 'State professional tax compliance for employees and business operations', 'Done'],
   ['Accountant', 'Financial accounting, books of records and compliance support', 'Done'],
   ['Compliance Advisor', 'External regulatory guidance and compliance monitoring support', 'Done'],
-  ['DPIIT Startup Recognition', 'Startup India recognition if eligible', 'In process'],
+  ['DPIIT Startup Recognition', 'Startup India recognition if eligible', 'Submitted'],
   ['Trademark', 'Protects the company brand and eligible marks', 'In process'],
   ['Udyam/MSME', 'MSME recognition if eligible', 'Done'],
 ]
@@ -204,13 +204,19 @@ const founderProfiles = [
     initials: 'V',
     name: 'Vijaya Kumar',
     role: 'Founder & Director',
-    description: 'Leads engineering, system design and large commercial deployments. Hands-on through every site assessment.',
+    description: 'Leads the company vision, project planning and renewable-energy strategy. He is closely involved in system design, technical evaluation and business development for clean-energy solutions.',
+  },
+  {
+    initials: 'V',
+    name: 'Kumar',
+    role: 'Co-Founder & Director',
+    description: 'Supports strategic growth, customer engagement and operational execution. He helps shape partnerships, service quality and long-term business relationships across solar and hybrid projects.',
   },
   {
     initials: 'D',
     name: 'Anusha',
-    role: 'Co-Founder & Director',
-    description: 'Drives strategy, partnerships and customer experience. Personally oversees the AMC and service operations.',
+    role: 'Director',
+    description: 'Oversees organisational direction, stakeholder coordination and service excellence. She contributes to customer experience, governance and the smooth execution of project operations.',
   },
 ]
 
@@ -610,6 +616,49 @@ export default function AboutPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="overflow-hidden rounded-[34px] border border-slate-200 bg-linear-to-br from-slate-50 via-white to-emerald-50 p-5 shadow-[0_30px_90px_-45px_rgba(15,23,42,0.45)] dark:border-slate-800 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="inline-flex items-center rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-slate-700 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-200">
+                Service focus
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-300">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              Renewable solutions
+            </div>
+          </div>
+
+          <h2 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+            Integrated clean-energy solutions for multiple needs
+          </h2>
+
+          <div className="mt-6 grid gap-5 lg:grid-cols-3">
+            {serviceGroups.map((group) => (
+              <div
+                key={group.title}
+                className="group relative overflow-hidden rounded-[28px] border border-slate-200 bg-white/85 p-5 shadow-[0_22px_45px_-35px_rgba(15,23,42,0.5)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_50px_-32px_rgba(15,23,42,0.65)] dark:border-slate-700 dark:bg-slate-900/75"
+              >
+                <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${group.accent}`} />
+                <div className={`inline-flex rounded-full bg-gradient-to-r ${group.accent} px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-white`}>
+                  {group.title.split(' ')[0]}
+                </div>
+                <h3 className="mt-4 text-xl font-black text-slate-900 dark:text-white">{group.title}</h3>
+                <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700 dark:text-slate-300">
+                  {group.items.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-slate-900 dark:bg-slate-100" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="overflow-hidden rounded-[32px] border border-emerald-200/80 bg-linear-to-br from-emerald-50 via-white to-cyan-50 p-5 shadow-[0_28px_80px_-45px_rgba(16,185,129,0.55)] dark:border-emerald-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
             <div className="flex items-center justify-between gap-3">
@@ -668,6 +717,106 @@ export default function AboutPage() {
                   <p className="text-base leading-7 text-slate-700 dark:text-slate-300">{point}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="overflow-hidden rounded-[34px] border border-slate-200 bg-linear-to-br from-slate-50 via-white to-slate-100 p-5 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.45)] dark:border-slate-800 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="inline-flex items-center rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-slate-700 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-200">
+                Company values
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-700 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200">
+              <span className="h-2 w-2 rounded-full bg-slate-500" />
+              Complete overview
+            </div>
+          </div>
+
+          <h2 className="mt-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl">
+            Full picture of our commitments and standards
+          </h2>
+
+          <div className="mt-6 grid gap-5 lg:grid-cols-2">
+            <div className="rounded-[28px] border border-emerald-200 bg-white/85 p-5 dark:border-emerald-900/50 dark:bg-slate-900/75">
+              <div className="flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                <h3 className="text-[10px] font-black uppercase tracking-[0.24em] text-emerald-700 dark:text-emerald-300">
+                  Promise
+                </h3>
+              </div>
+              <div className="mt-4 space-y-3">
+                {promisePoints.map((point, index) => (
+                  <div key={point} className="flex items-start gap-3 rounded-[16px] border border-emerald-100 bg-emerald-50/60 p-3 dark:border-emerald-900/50 dark:bg-emerald-950/20">
+                    <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-[9px] font-black text-white">
+                      {index + 1}
+                    </div>
+                    <p className="text-base leading-7 text-slate-700 dark:text-slate-300">{point}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[28px] border border-sky-200 bg-white/85 p-5 dark:border-sky-900/50 dark:bg-slate-900/75">
+              <div className="flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-sky-500" />
+                <h3 className="text-[10px] font-black uppercase tracking-[0.24em] text-sky-700 dark:text-sky-300">
+                  Mission
+                </h3>
+              </div>
+              <div className="mt-4 space-y-3">
+                {missionPoints.map((point, index) => (
+                  <div key={point} className="flex items-start gap-3 rounded-[16px] border border-sky-100 bg-sky-50/60 p-3 dark:border-sky-900/50 dark:bg-sky-950/20">
+                    <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky-500 text-[9px] font-black text-white">
+                      {index + 1}
+                    </div>
+                    <p className="text-base leading-7 text-slate-700 dark:text-slate-300">{point}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-5 lg:grid-cols-2">
+            <div className="rounded-[28px] border border-amber-200 bg-white/85 p-5 dark:border-amber-900/50 dark:bg-slate-900/75">
+              <div className="flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-amber-500" />
+                <h3 className="text-[10px] font-black uppercase tracking-[0.24em] text-amber-700 dark:text-amber-300">
+                  Quality
+                </h3>
+              </div>
+              <div className="mt-4 space-y-3">
+                {qualityPoints.map((point, index) => (
+                  <div key={point} className="flex items-start gap-3 rounded-[16px] border border-amber-100 bg-amber-50/60 p-3 dark:border-amber-900/50 dark:bg-amber-950/20">
+                    <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-500 text-[9px] font-black text-white">
+                      {index + 1}
+                    </div>
+                    <p className="text-base leading-7 text-slate-700 dark:text-slate-300">{point}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[28px] border border-violet-200 bg-white/85 p-5 dark:border-violet-900/50 dark:bg-slate-900/75">
+              <div className="flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-violet-500" />
+                <h3 className="text-[10px] font-black uppercase tracking-[0.24em] text-violet-700 dark:text-violet-300">
+                  Ethics
+                </h3>
+              </div>
+              <div className="mt-4 space-y-3">
+                {ethicsPoints.map((point, index) => (
+                  <div key={point} className="flex items-start gap-3 rounded-[16px] border border-violet-100 bg-violet-50/60 p-3 dark:border-violet-900/50 dark:bg-violet-950/20">
+                    <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet-500 text-[9px] font-black text-white">
+                      {index + 1}
+                    </div>
+                    <p className="text-base leading-7 text-slate-700 dark:text-slate-300">{point}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

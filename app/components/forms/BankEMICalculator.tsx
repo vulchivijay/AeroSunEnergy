@@ -3,23 +3,31 @@
 import { useMemo, useState } from 'react'
 
 const MIN_LOAN = 25000
-const MAX_LOAN = 10000000
-const DEFAULT_LOAN = 2500000
+const MAX_LOAN = 2000000
+const DEFAULT_LOAN = 25000
 const MIN_TENURE = 1
 const MAX_TENURE = 7
 const DEFAULT_TENURE = 5
-const MIN_RATE = 9.99
+const MIN_RATE = 12
 const MAX_RATE = 24
-const DEFAULT_RATE = 9.99
+const DEFAULT_RATE = 12
 
-const formatCurrency = (value: number) =>
-  new Intl.NumberFormat('en-IN', {
-    style: 'currency',
-    currency: 'INR',
-    maximumFractionDigits: 0,
-  })
-    .format(value)
-    .replace('₹', '₹ ')
+const formatCurrency = (value: number) => {
+  const absoluteValue = Math.abs(Math.round(value)).toString()
+  const lastThreeDigits = absoluteValue.slice(-3)
+  const remainingDigits = absoluteValue.slice(0, -3)
+
+  const groupedRemaining =
+    remainingDigits.length > 0
+      ? remainingDigits.replace(/\B(?=(\d{2})+(?!\d))/g, ',')
+      : ''
+
+  const formattedAmount = groupedRemaining
+    ? `${groupedRemaining},${lastThreeDigits}`
+    : lastThreeDigits
+
+  return `₹ ${formattedAmount}`
+}
 
 const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max)
 
@@ -91,7 +99,7 @@ export function BankEMICalculator() {
 
                 <div className="flex items-center justify-between text-base font-medium text-slate-600">
                   <span>₹ 25,000</span>
-                  <span>₹ 1,00,00,000</span>
+                  <span>₹ 20,00,000</span>
                 </div>
               </div>
 
@@ -140,7 +148,7 @@ export function BankEMICalculator() {
                 />
 
                 <div className="flex items-center justify-between text-base font-medium text-slate-600">
-                  <span>9.99% PA</span>
+                  <span>12% PA</span>
                   <span>24% PA</span>
                 </div>
               </div>
