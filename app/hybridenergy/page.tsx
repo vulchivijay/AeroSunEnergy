@@ -105,6 +105,137 @@ const keyBenefits = [
   'Helps optimize generation mixes across day and season',
 ]
 
+type HybridSlide = {
+  badge: string
+  title: string
+  description: string
+  image: string
+  tags: string[]
+  badgeClass: string
+  chipClass: string
+  panelClass: string
+}
+
+const hybridSlides: HybridSlide[] = [
+  {
+    badge: 'Solar + wind',
+    title: 'Continuous Renewable Generation',
+    description:
+      'Combined solar and wind generation creates a more reliable energy mix, covering daytime production and filling gaps during low-sun or high-wind periods.',
+    image: '/images/slider/slider-13.png',
+    tags: ['24/7 supply', 'Balanced output'],
+    badgeClass: 'text-emerald-100',
+    chipClass: 'text-emerald-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
+    badge: 'Smart control',
+    title: 'Hybrid Microgrid Energy Management',
+    description:
+      'Integrated controls coordinate solar, wind, storage, and load demand for better efficiency, backup readiness, and digital monitoring.',
+    image: '/images/slider/slider-14.png',
+    tags: ['Smart dispatch', 'Battery sync'],
+    badgeClass: 'text-violet-100',
+    chipClass: 'text-violet-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
+    badge: 'Remote resilience',
+    title: 'Off-grid Hybrid for Isolated Locations',
+    description:
+      'Solar-wind hybrid systems with battery storage support remote homes, telecom towers, and rural sites where grid access is limited or unavailable.',
+    image: '/images/slider/slider-15.png',
+    tags: ['Off-grid', 'Remote-ready'],
+    badgeClass: 'text-sky-100',
+    chipClass: 'text-sky-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
+    badge: 'Business backup',
+    title: 'Hybrid Power for Commercial Facilities',
+    description:
+      'Commercial buildings and industrial facilities benefit from reduced outages, lower energy cost, and stronger renewable self-sufficiency.',
+    image: '/images/slider/slider-16.png',
+    tags: ['Business-ready', 'Backup'],
+    badgeClass: 'text-amber-100',
+    chipClass: 'text-amber-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
+    badge: 'Agricultural power',
+    title: 'Hybrid Energy for Farms & Irrigation',
+    description:
+      'Farm operations use hybrid generation to support pumps, processing units, lighting, and essential loads with cleaner and more stable power.',
+    image: '/images/slider/slider-17.png',
+    tags: ['Agri-power', 'Irrigation'],
+    badgeClass: 'text-emerald-100',
+    chipClass: 'text-emerald-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
+    badge: 'Community network',
+    title: 'Campus & Community Hybrid Microgrids',
+    description:
+      'Multi-source hybrid systems create resilient local networks for campuses, villages, and community facilities with distributed renewable generation.',
+    image: '/images/slider/slider-18.png',
+    tags: ['Microgrid', 'Community'],
+    badgeClass: 'text-violet-100',
+    chipClass: 'text-violet-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+]
+
+function HybridHeroSlider() {
+  const slideClass =
+    'group relative flex h-full w-full flex-col items-start justify-center overflow-hidden p-8 text-left text-white sm:p-10 lg:p-26 xl:p-36'
+
+  const slideOverlay =
+    'absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.24),_transparent_24%),linear-gradient(135deg,rgba(15,23,42,0.18),rgba(15,23,42,0.58))]'
+
+  return (
+    <Slider autoplay interval={5000} pauseOnHover>
+      {hybridSlides.map((slide) => (
+        <div key={slide.title} className={`${slide.panelClass} relative h-full w-full overflow-hidden`}>
+          <div className="absolute inset-0">
+            <OptimizedImage
+              src={slide.image}
+              alt={slide.title}
+              fill
+              sizes="100vw"
+              className="object-cover object-center"
+              style={{ filter: 'saturate(1.05) brightness(0.72)' }}
+            />
+          </div>
+          <div className={`${slideOverlay} absolute inset-0`} />
+          <div className={slideClass}>
+            <span
+              className={`mb-4 inline-flex rounded-full border border-white/15 bg-black/80 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.28em] ${slide.badgeClass}`}
+            >
+              {slide.badge}
+            </span>
+            <h1 className="max-w-3xl text-4xl font-black tracking-[-0.06em] text-white sm:text-5xl lg:text-[4.2rem]">
+              {slide.title}
+            </h1>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-100 sm:text-lg">
+              {slide.description}
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {slide.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className={`rounded-full border border-white/15 bg-black/80 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] ${slide.chipClass}`}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </Slider>
+  )
+}
+
 export default function HybridEnergyPage() {
   return (
     <main className="bg-slate-50 text-slate-900">
@@ -142,51 +273,7 @@ export default function HybridEnergyPage() {
         </div>
       </header>
 
-      <Slider autoplay interval={5000} pauseOnHover>
-        <div className="relative h-full flex-1 overflow-hidden">
-          <div className="absolute inset-0">
-            <OptimizedImage
-              src="/images/slider/slider-15.png"
-              alt="Hybrid solar and wind energy system"
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="absolute inset-0 bg-linear-to-r from-emerald-900/80 via-sky-900/60 to-teal-900/45" />
-          <div className="relative flex h-full min-h-90 items-end p-6 sm:p-10 lg:p-14">
-            <div className="max-w-xl rounded-4xl border border-white/15 bg-slate-900/25 p-6 shadow-2xl backdrop-blur-sm">
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-200">Multi-source resilience</p>
-              <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">Solar + wind for continuous generation</h2>
-              <p className="mt-4 text-base leading-7 text-slate-100">
-                Solar delivers daytime production, while wind helps fill gaps when weather and site conditions are favorable.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="relative h-full flex-1 overflow-hidden">
-          <div className="absolute inset-0">
-            <OptimizedImage
-              src="/images/slider/slider-17.png"
-              alt="Microgrid and hybrid renewable power deployment"
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="absolute inset-0 bg-linear-to-r from-violet-900/80 via-indigo-900/60 to-sky-900/40" />
-          <div className="relative flex h-full min-h-90 items-end p-6 sm:p-10 lg:p-14">
-            <div className="max-w-xl rounded-4xl border border-white/15 bg-slate-900/30 p-6 shadow-2xl backdrop-blur-sm">
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-violet-200">Smart controls</p>
-              <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">Microgrid and demand management</h2>
-              <p className="mt-4 text-base leading-7 text-slate-100">
-                Coordinated generation, storage, and power electronics help deliver more reliable and efficient operation across multiple loads.
-              </p>
-            </div>
-          </div>
-        </div>
-      </Slider>
+      <HybridHeroSlider />
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-8 max-w-3xl">

@@ -162,7 +162,7 @@ export function BankEMICalculator() {
                 <p className="mt-2 text-base text-orange-50/90">Based on your loan rate and tenure.</p>
               </div>
 
-              <div className="rounded-[22px] border border-white/15 bg-white/10 p-5 backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.2)]">
+              <div className="rounded-[22px] border border-white/15 bg-white/15 p-5 backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.2)]">
                 <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-orange-50">Monthly EMI</div>
                 <div className="mt-3 text-5xl font-black tracking-[-0.08em] text-white">
                   {formatCurrency(calculation.emi)}
@@ -170,19 +170,19 @@ export function BankEMICalculator() {
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.12)]">
+                <div className="rounded-[18px] border border-white/10 bg-white/15 p-4 backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.12)]">
                   <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-50">Amount Payable</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[-0.06em] text-white">
                     {formatCurrency(calculation.totalAmountPayable)}
                   </div>
                 </div>
-                <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.12)]">
+                <div className="rounded-[18px] border border-white/10 bg-white/15 p-4 backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.12)]">
                   <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-50">Interest Amount</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[-0.06em] text-white">
                     {formatCurrency(calculation.totalInterest)}
                   </div>
                 </div>
-                <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.12)] sm:col-span-2">
+                <div className="rounded-[18px] border border-white/10 bg-white/15 p-4 backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.12)] sm:col-span-2">
                   <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-50">Principal Amount</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[-0.06em] text-white">
                     {formatCurrency(loanAmount)}

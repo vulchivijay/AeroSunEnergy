@@ -103,6 +103,137 @@ const strategicPoints = [
   'Project design depends on site height, obstacles, and load profile',
 ]
 
+type WindSlide = {
+  badge: string
+  title: string
+  description: string
+  image: string
+  tags: string[]
+  badgeClass: string
+  chipClass: string
+  panelClass: string
+}
+
+const windSlides: WindSlide[] = [
+  {
+    badge: 'Urban rooftop',
+    title: 'Vertical Axis Turbine for Rooftops',
+    description:
+      'Compact rooftop wind systems are ideal for urban and semi-urban spaces where low-noise output, compact footprint, and adaptive installation matter most.',
+    image: '/images/slider/slider-7.png',
+    tags: ['Low-noise', 'Rooftop'],
+    badgeClass: 'text-sky-100',
+    chipClass: 'text-sky-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
+    badge: 'Commercial wind',
+    title: 'Large Wind Systems for Industry',
+    description:
+      'High-capacity turbines support factories, warehouses, and business campuses by reducing dependency on grid supply and improving renewable generation at scale.',
+    image: '/images/slider/slider-8.png',
+    tags: ['Industrial', 'High output'],
+    badgeClass: 'text-emerald-100',
+    chipClass: 'text-emerald-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
+    badge: 'Farm power',
+    title: 'Wind for Agriculture & Irrigation',
+    description:
+      'Farm-based wind systems help power pumping, processing, and site loads while lowering energy costs in rural and peri-urban locations.',
+    image: '/images/slider/slider-9.png',
+    tags: ['Agri-ready', 'Load support'],
+    badgeClass: 'text-amber-100',
+    chipClass: 'text-amber-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
+    badge: 'Feasibility study',
+    title: 'Wind Resource Assessment & Planning',
+    description:
+      'Accurate site analysis covers wind speed, turbulence, mast height, and obstruction zones before choosing the optimal turbine configuration.',
+    image: '/images/slider/slider-10.png',
+    tags: ['Site study', 'Feasibility'],
+    badgeClass: 'text-cyan-100',
+    chipClass: 'text-cyan-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
+    badge: 'Remote power',
+    title: 'Off-grid Wind for Remote Sites',
+    description:
+      'Standalone wind systems deliver dependable clean electricity to telecom towers, rural homes, and remote infrastructure without relying on the utility grid.',
+    image: '/images/slider/slider-11.png',
+    tags: ['Off-grid', 'Storage-ready'],
+    badgeClass: 'text-emerald-100',
+    chipClass: 'text-emerald-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
+    badge: 'Utility scale',
+    title: 'Wind Farms & Grid Integration',
+    description:
+      'Large-scale wind installations deliver resilient renewable generation for utilities, industrial parks, and grid-connected energy networks.',
+    image: '/images/slider/slider-12.png',
+    tags: ['Grid support', 'Utility'],
+    badgeClass: 'text-violet-100',
+    chipClass: 'text-violet-50',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+]
+
+function WindHeroSlider() {
+  const slideClass =
+    'group relative flex h-full w-full flex-col items-start justify-center overflow-hidden p-8 text-left text-white sm:p-10 lg:p-26 xl:p-36'
+
+  const slideOverlay =
+    'absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.24),_transparent_24%),linear-gradient(135deg,rgba(15,23,42,0.18),rgba(15,23,42,0.58))]'
+
+  return (
+    <Slider autoplay interval={5200} pauseOnHover>
+      {windSlides.map((slide) => (
+        <div key={slide.title} className={`${slide.panelClass} relative h-full w-full overflow-hidden`}>
+          <div className="absolute inset-0">
+            <OptimizedImage
+              src={slide.image}
+              alt={slide.title}
+              fill
+              sizes="100vw"
+              className="object-cover object-center"
+              style={{ filter: 'saturate(1.05) brightness(0.72)' }}
+            />
+          </div>
+          <div className={`${slideOverlay} absolute inset-0`} />
+          <div className={slideClass}>
+            <span
+              className={`mb-4 inline-flex rounded-full border border-white/15 bg-black/80 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.28em] ${slide.badgeClass}`}
+            >
+              {slide.badge}
+            </span>
+            <h1 className="max-w-3xl text-4xl font-black tracking-[-0.06em] text-white sm:text-5xl lg:text-[4.2rem]">
+              {slide.title}
+            </h1>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-100 sm:text-lg">
+              {slide.description}
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {slide.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className={`rounded-full border border-white/15 bg-black/80 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] ${slide.chipClass}`}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </Slider>
+  )
+}
+
 export default function WindEnergyPage() {
   return (
     <main className="bg-slate-50 text-slate-900">
@@ -136,51 +267,7 @@ export default function WindEnergyPage() {
         </div>
       </header>
 
-      <Slider autoplay interval={5200} pauseOnHover>
-        <div className="relative h-full flex-1 overflow-hidden">
-          <div className="absolute inset-0">
-            <OptimizedImage
-              src="/images/slider/slider-7.png"
-              alt="Wind turbine energy concept"
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="absolute inset-0 bg-linear-to-r from-sky-950/80 via-sky-900/55 to-emerald-900/35" />
-          <div className="relative flex h-full min-h-90 items-end p-6 sm:p-10 lg:p-14">
-            <div className="max-w-xl rounded-4xl border border-white/15 bg-slate-900/30 p-6 shadow-2xl backdrop-blur-sm">
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-sky-200">Rooftop concept</p>
-              <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">Rooftop VAWTs</h2>
-              <p className="mt-4 text-base leading-7 text-slate-100">
-                Vertical-axis turbines designed for noise-sensitive and space-constrained urban rooftops where site conditions demand a more adaptive approach.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="relative h-full flex-1 overflow-hidden">
-          <div className="absolute inset-0">
-            <OptimizedImage
-              src="/images/slider/slider-9.png"
-              alt="Commercial wind turbine installation"
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="absolute inset-0 bg-linear-to-r from-emerald-900/80 via-emerald-800/60 to-sky-900/40" />
-          <div className="relative flex h-full min-h-90 items-end p-6 sm:p-10 lg:p-14">
-            <div className="max-w-xl rounded-4xl border border-white/15 bg-slate-900/30 p-6 shadow-2xl backdrop-blur-sm">
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-200">Commercial generation</p>
-              <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">Open land & commercial systems</h2>
-              <p className="mt-4 text-base leading-7 text-slate-100">
-                Higher-capacity wind facilities and hybrid-ready solutions for farms, warehouses, factories, and industrial campuses.
-              </p>
-            </div>
-          </div>
-        </div>
-      </Slider>
+      <WindHeroSlider />
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-8 max-w-3xl">

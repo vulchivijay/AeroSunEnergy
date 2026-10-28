@@ -85,13 +85,7 @@ export default function Footer() {
 	const quickEnquiries = queries
 		.filter((item) => allowedQuickEnquiries.includes(item.href))
 		.sort((a, b) => allowedQuickEnquiries.indexOf(a.href) - allowedQuickEnquiries.indexOf(b.href))
-	const shouldDisableWindAndHybrid = process.env.NODE_ENV === 'production'
-	const visibleNavLinks = shouldDisableWindAndHybrid
-		? navLinks.map((link) => ({
-			...link,
-			disabled: link.href === '/windenergy' || link.href === '/hybridenergy',
-		}))
-		: navLinks
+	const visibleNavLinks = navLinks
 
 	return (
 		<footer
@@ -132,7 +126,7 @@ export default function Footer() {
 									</div>
 								</div>
 
-								<div className="group rounded-2xl border border-amber-100 bg-linear-to-r from-amber-50 to-white p-3 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_18px_30px_-24px_rgba(245,158,11,0.8)] dark:border-slate-700 dark:from-slate-800/80 dark:to-slate-900/80">
+								<div className="group rounded-2xl border border-amber-100 bg-linear-to-r from-amber-50 to-white p-3 transition-all duration-200 shadow-[0_24px_60px_-35px_rgba(16,185,129,0.7)] backdrop-blur-sm hover:-translate-y-0.5 hover:shadow-[0_18px_30px_-24px_rgba(245,158,11,0.8)] dark:border-slate-700 dark:from-slate-800/80 dark:to-slate-900/80">
 									<div className="flex items-center gap-3">
 										<span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-orange-500 text-white shadow-lg shadow-amber-500/20" aria-hidden="true">
 											<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5">
@@ -187,7 +181,7 @@ export default function Footer() {
 							</div>
 						</div>
 
-						<div className="rounded-[30px] bg-white/70 p-5 dark:border-slate-700 dark:bg-slate-900/50">
+						<div className="rounded-[30px] border border-emerald-200/70 bg-white/70 p-5 shadow-[0_24px_60px_-35px_rgba(16,185,129,0.7)] backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/50">
 							<h3 className="mb-5 flex items-center gap-2 text-lg font-bold text-[#18251F] dark:text-white">
 								<span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-lime-500 text-white shadow-lg shadow-emerald-500/20">
 									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4">
@@ -221,7 +215,7 @@ export default function Footer() {
 							</ul>
 						</div>
 
-						<div className="rounded-[30px] bg-white/70 p-5 dark:border-slate-700 dark:bg-slate-900/50">
+						<div className="rounded-[30px] border border-emerald-200/70 bg-white/70 p-5 shadow-[0_24px_60px_-35px_rgba(16,185,129,0.7)] backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/50">
 							<h3 className="mb-5 flex items-center gap-2 text-lg font-bold text-[#18251F] dark:text-white">
 								<span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/20">
 									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4">
@@ -255,7 +249,7 @@ export default function Footer() {
 							</ul>
 						</div>
 
-						<div className="rounded-[30px] bg-slate-900 p-5 text-white dark:border-slate-700 dark:bg-slate-900/80">
+						<div className="rounded-[30px] border border-slate-200/70 bg-slate-900 p-5 shadow-[0_24px_60px_-35px_rgba(16,185,129,0.7)] backdrop-blur-sm text-white dark:border-slate-700 dark:bg-slate-900/80">
 							<h3 className="mb-5 flex items-center gap-2 text-lg font-bold text-white">
 								<span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-rose-500 text-white shadow-lg shadow-amber-500/20">
 									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4">
@@ -302,7 +296,11 @@ export default function Footer() {
 				</div>
 			</div>
 
-			<div className="w-full border-t border-[#20A44A]/10 bg-gray-50 py-4 text-center text-sm text-gray-900 dark:border-slate-700 dark:bg-slate-900">
+			<div className="w-full border-t border-[#20A44A]/10 bg-gray-50 pb-4 text-center text-sm text-gray-900 dark:border-slate-700 dark:bg-slate-900">
+        <p className="mb-4 py-2 px-2 border-t border-b border-t-gray-200 border-b-gray-200 text-center text-[14px] leading-6 text-gray-400 dark:text-amber-400 sm:px-4 lg:px-4">
+					🚧 This website is currently under development. Some content and images may be incomplete, and information, page titles, or page locations may change as updates are made.
+          <br />Images generated with <Link href="/www.chatgpt" target='blank' className="mx-1 text-emerald-600 transition-colors duration-200 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300">ChatGPT</Link>.
+				</p>
 				<div className="mx-auto flex w-full max-w-350 flex-col items-center justify-between gap-2 px-4 text-center sm:px-6 lg:flex-row lg:justify-between lg:px-8">
 					<div className="flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-[0.18em] text-gray-900">
 						<Link
@@ -319,8 +317,8 @@ export default function Footer() {
 							Privacy Policy
 						</Link>
 					</div>
-          <p>Build with 💕 & 🔥 @VulchiVijayaKumar.</p>
-					<p>
+          <p className='text-gray-400'>Build with 💕 & 🔥 @VulchiVijayaKumar.</p>
+					<p className='text-gray-400'>
 						{footer.copyright}. {footer.allRightsReserved}
 					</p>
 				</div>
