@@ -118,32 +118,32 @@ type HybridSlide = {
 
 const hybridSlides: HybridSlide[] = [
   {
-    badge: 'Multi-source resilience',
-    title: 'Solar + wind for continuous generation',
+    badge: 'Solar + wind',
+    title: 'Continuous Renewable Generation',
     description:
-      'Solar delivers daytime production, while wind helps fill gaps when weather and site conditions are favorable.',
+      'Combined solar and wind generation creates a more reliable energy mix, covering daytime production and filling gaps during low-sun or high-wind periods.',
     image: '/images/slider/slider-13.png',
-    tags: ['Day + night', 'Load balancing'],
+    tags: ['24/7 supply', 'Balanced output'],
     badgeClass: 'text-emerald-100',
     chipClass: 'text-emerald-50',
     panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
   },
   {
-    badge: 'Smart controls',
-    title: 'Microgrid and demand management',
+    badge: 'Smart control',
+    title: 'Hybrid Microgrid Energy Management',
     description:
-      'Coordinated generation, storage, and power electronics help deliver more reliable and efficient operation across multiple loads.',
+      'Integrated controls coordinate solar, wind, storage, and load demand for better efficiency, backup readiness, and digital monitoring.',
     image: '/images/slider/slider-14.png',
-    tags: ['Smart dispatch', 'Battery-first'],
+    tags: ['Smart dispatch', 'Battery sync'],
     badgeClass: 'text-violet-100',
     chipClass: 'text-violet-50',
     panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
   },
   {
-    badge: 'Rural resilience',
-    title: 'Off-grid hybrid for remote projects',
+    badge: 'Remote resilience',
+    title: 'Off-grid Hybrid for Isolated Locations',
     description:
-      'Standalone solar-wind systems with storage provide dependable power for remote homes, farms, telecom stations, and industrial outposts.',
+      'Solar-wind hybrid systems with battery storage support remote homes, telecom towers, and rural sites where grid access is limited or unavailable.',
     image: '/images/slider/slider-15.png',
     tags: ['Off-grid', 'Remote-ready'],
     badgeClass: 'text-sky-100',
@@ -151,21 +151,21 @@ const hybridSlides: HybridSlide[] = [
     panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
   },
   {
-    badge: 'Commercial backup',
-    title: 'Hybrid power for businesses',
+    badge: 'Business backup',
+    title: 'Hybrid Power for Commercial Facilities',
     description:
-      'Commercial sites can reduce outages and maximize self-generation by combining solar, wind, and storage in a single system.',
+      'Commercial buildings and industrial facilities benefit from reduced outages, lower energy cost, and stronger renewable self-sufficiency.',
     image: '/images/slider/slider-16.png',
-    tags: ['Business-ready', 'Resilient'],
+    tags: ['Business-ready', 'Backup'],
     badgeClass: 'text-amber-100',
     chipClass: 'text-amber-50',
     panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
   },
   {
     badge: 'Agricultural power',
-    title: 'Farm and irrigation hybrid systems',
+    title: 'Hybrid Energy for Farms & Irrigation',
     description:
-      'Solar-wind hybrid systems help farms meet irrigation, pumping, and processing demands with cleaner and more stable energy.',
+      'Farm operations use hybrid generation to support pumps, processing units, lighting, and essential loads with cleaner and more stable power.',
     image: '/images/slider/slider-17.png',
     tags: ['Agri-power', 'Irrigation'],
     badgeClass: 'text-emerald-100',
@@ -173,10 +173,10 @@ const hybridSlides: HybridSlide[] = [
     panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
   },
   {
-    badge: 'Microgrid control',
-    title: 'Campus and community hybrid networks',
+    badge: 'Community network',
+    title: 'Campus & Community Hybrid Microgrids',
     description:
-      'Multi-source hybrid networks coordinate renewable generation, storage, and loads for resilient local energy independence.',
+      'Multi-source hybrid systems create resilient local networks for campuses, villages, and community facilities with distributed renewable generation.',
     image: '/images/slider/slider-18.png',
     tags: ['Microgrid', 'Community'],
     badgeClass: 'text-violet-100',

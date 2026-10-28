@@ -298,7 +298,8 @@ export default function Footer() {
 
 			<div className="w-full border-t border-[#20A44A]/10 bg-gray-50 pb-4 text-center text-sm text-gray-900 dark:border-slate-700 dark:bg-slate-900">
         <p className="mb-4 py-2 px-2 border-t border-b border-t-gray-200 border-b-gray-200 text-center text-[14px] leading-6 text-gray-400 dark:text-amber-400 sm:px-4 lg:px-4">
-					🚧 This website is currently under development. Some content may be incomplete, and information, page titles, or page locations may change as updates are made.
+					🚧 This website is currently under development. Some content and images may be incomplete, and information, page titles, or page locations may change as updates are made.
+          <br />Images generated with <Link href="/www.chatgpt" target='blank' className="mx-1 text-emerald-600 transition-colors duration-200 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300">ChatGPT</Link>.
 				</p>
 				<div className="mx-auto flex w-full max-w-350 flex-col items-center justify-between gap-2 px-4 text-center sm:px-6 lg:flex-row lg:justify-between lg:px-8">
 					<div className="flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-[0.18em] text-gray-900">
