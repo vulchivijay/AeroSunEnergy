@@ -185,6 +185,17 @@ const solarSlides: SolarSlide[] = [
     panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
   },
   {
+    badge: 'Agricultural pumping',
+    title: 'Solar Water Pumping for Agriculture',
+    description:
+      'Diesel-free solar pumpsets for irrigation and water access, reducing energy costs and supporting sustainable farming practices across rural and semi-urban areas.',
+    image: '/images/slider/slider-4.png',
+    tags: [],
+    badgeClass: 'text-slate-100',
+    chipClass: 'text-slate-100',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
     badge: 'Commercial scale',
     title: 'Commercial & Industrial Solar',
     description:
