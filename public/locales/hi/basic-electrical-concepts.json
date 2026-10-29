@@ -11,13 +11,13 @@
         "DIY wind projects",
         "DIY solar projects"
       ],
-      "canonical": "https://www.aerosunenergy.com/basic-electrical-concepts"
+      "canonical": "https://aerosunenergy.in/basic-electrical-concepts"
     },
     "openGraph": {
       "title": "Basic Electrical Concepts for DIY Wind and Solar Projects",
       "description": "Understand key electrical components and concepts to build your own wind and solar energy systems.",
-      "image": "https://www.aerosunenergy.com/images/basic-electrical-concepts.jpg",
-      "url": "https://www.aerosunenergy.com/basic-electrical-concepts"
+      "image": "https://aerosunenergy.in/images/basic-electrical-concepts.jpg",
+      "url": "https://aerosunenergy.in/basic-electrical-concepts"
     },
     "schema": {
       "@type": "TechArticle",
@@ -30,17 +30,17 @@
         "DIY wind projects",
         "DIY solar projects"
       ],
-      "url": "https://www.aerosunenergy.com/basic-electrical-concepts",
-      "image": "https://www.aerosunenergy.com/images/basic-electrical-concepts.jpg",
+      "url": "https://aerosunenergy.in/basic-electrical-concepts",
+      "image": "https://aerosunenergy.in/images/basic-electrical-concepts.jpg",
       "datePublished": "2024-06-01",
       "dateModified": "2024-06-01",
-      "mainEntityOfPage": "https://www.aerosunenergy.com/basic-electrical-concepts",
+      "mainEntityOfPage": "https://aerosunenergy.in/basic-electrical-concepts",
       "publisher": {
         "@type": "Organization",
         "name": "AeroSun Energy",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.aerosunenergy.com/images/logo.png"
+          "url": "https://aerosunenergy.in/images/logo.png"
         }
       }
     },
