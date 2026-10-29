@@ -33,7 +33,7 @@ const poppins = Poppins({
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || process.env.GTM_ID
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || process.env.GA_MEASUREMENT_ID
-const GOOGLE_SITE_VERIFICATION = process.env.GOOGLE_SITE_VERIFICATION || 'replace-with-your-google-site-verification-token'
+const GOOGLE_SITE_VERIFICATION = process.env.GOOGLE_SITE_VERIFICATION || undefined
 const BING_SITE_VERIFICATION = process.env.BING_SITE_VERIFICATION || 'CFCE648996D804079C4F28B5C09CE9D3'
 
 export const metadata: Metadata = {
