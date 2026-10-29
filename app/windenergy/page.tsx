@@ -234,6 +234,171 @@ function WindHeroSlider() {
   )
 }
 
+const serviceSections = [
+  {
+    title: 'Vertical Axis Turbine for Rooftops',
+    heading: 'Compact wind energy for suitable rooftops and urban pilot projects',
+    overview:
+      'Urban buildings, commercial properties, institutional facilities, and industrial rooftops may offer opportunities to explore small-scale wind energy generation. Vertical-axis wind turbines are one technology that can be considered where the design, structure, and operating characteristics suit the site. AeroSun Energy evaluates rooftop feasibility based on wind resource, structural capacity, building layout, electrical requirements, and intended application.',
+    applications: [
+      { title: 'Residential buildings', description: 'Supplementary renewable electricity for homes with suitable rooftop wind exposure and structurally appropriate installations.' },
+      { title: 'Commercial buildings', description: 'Pilot renewable systems for offices, business parks, and commercial properties that want monitored energy generation.' },
+      { title: 'Educational institutions', description: 'Demonstration and research projects for engineering labs and renewable-energy learning environments.' },
+    ],
+    benefits: [
+      'Compact design options for suitable rooftops',
+      'Wind-direction flexibility without active yaw for many VAWT applications',
+      'Technology diversity for demonstration and pilot projects',
+      'Potential supplementary generation where the wind resource is adequate',
+    ],
+    calculation: {
+      label: 'Illustrative rooftop example',
+      formula: '3 kW × 8,760 hr × 0.20 = 5,256 kWh/year',
+      result: 'Estimated annual generation: 5,256 kWh',
+      note: 'This is an illustrative estimate and not a guaranteed output. Actual generation depends on measured wind profiles, turbulence, structural conditions, and electrical losses.',
+    },
+    faqs: [
+      { question: 'Is rooftop wind suitable for every building?', answer: 'No. Rooftop installations require suitable wind exposure, a stable structure, and realistic expectations for annual generation.' },
+      { question: 'What is the main risk?', answer: 'Turbulence from nearby buildings, parapets, and equipment can reduce output and increase vibration or fatigue.' },
+    ],
+  },
+  {
+    title: 'Large Wind Systems for Industry',
+    heading: 'Wind power solutions for industrial and commercial electricity demand',
+    overview:
+      'Industrial facilities can consume significant electricity for manufacturing, refrigeration, pumping, ventilation, and processing. For suitable sites, larger wind energy systems can contribute to an industrial facility’s electricity supply and help diversify its energy sources. An industrial wind project may include one larger turbine or multiple turbines, depending on the available land, wind resource, grid capacity, and operational objectives.',
+    applications: [
+      { title: 'Manufacturing plants', description: 'Wind energy can offset electricity used by machinery, production lines, ventilation systems, and process operations.' },
+      { title: 'Warehouses and logistics', description: 'Large commercial sites can reduce dependence on grid supply and improve renewable generation at scale.' },
+      { title: 'Food processing and cold storage', description: 'Wind may support refrigeration and processing loads when carefully coordinated with demand profiles.' },
+    ],
+    benefits: [
+      'Diversifies the energy mix for large electricity users',
+      'Potential reduction in purchased electricity',
+      'Supports emissions-reduction goals',
+      'Can align with solar, battery, and demand management strategies',
+    ],
+    calculation: {
+      label: 'Illustrative industrial turbine',
+      formula: '500 kW × 8,760 hr × 0.30 = 1,314,000 kWh/year',
+      result: 'Estimated annual generation: 1,314 MWh',
+      note: 'This is a gross generation estimate before losses, capital costs, maintenance, financing, and site-specific performance factors.',
+    },
+    faqs: [
+      { question: 'Does a larger turbine always mean better economics?', answer: 'Not necessarily. Wind resource, demand profile, grid interface, and operational constraints play a more decisive role than the nameplate rating alone.' },
+      { question: 'Can industrial wind integrate with solar?', answer: 'Yes. A wind-solar-battery combination can increase annual energy availability and improve resilience for many sites.' },
+    ],
+  },
+  {
+    title: 'Wind for Agriculture & Irrigation',
+    heading: 'Renewable wind energy for farming, irrigation, and rural operations',
+    overview:
+      'Agricultural operations depend on electricity for irrigation, pumping, farm processing, cold storage, and general site loads. Wind energy can potentially support these requirements at farms with adequate wind resources and suitable locations for turbine installation. A farm wind system may supply compatible electrical loads, contribute to an agricultural microgrid, or work alongside solar PV and battery systems.',
+    applications: [
+      { title: 'Irrigation pumping', description: 'Wind-generated electricity may help supply water pumping loads during suitable periods of operation.' },
+      { title: 'Water transfer and storage', description: 'Wind generation can support reservoir and tank pumping where water demand and renewable generation are coordinated.' },
+      { title: 'Livestock and crop processing', description: 'Wind can offset pumping, ventilation, refrigeration, and processing loads depending on the site profile.' },
+    ],
+    benefits: [
+      'Potential reduction in purchased power for farm loads',
+      'Wind adds source diversity alongside solar generation',
+      'Can support water management and irrigation planning',
+      'Useful for rural and remote agricultural operations',
+    ],
+    calculation: {
+      label: 'Illustrative farm irrigation calculation',
+      formula: '10 kW × 8,760 hr × 0.25 = 21,900 kWh/year',
+      result: 'Estimated annual generation: 21,900 kWh',
+      note: 'This estimate assumes a 25% capacity factor and does not account for pump scheduling, storage, or low-wind periods.',
+    },
+    faqs: [
+      { question: 'Can wind power an irrigation pump directly?', answer: 'Potentially, but the system must consider pump starting current, water demand, operating schedule, and low-wind periods.' },
+      { question: 'Is wind better than solar for farms?', answer: 'Not always. For many farms, a hybrid solar-wind setup provides the best overall match to seasonal energy demand and site conditions.' },
+    ],
+  },
+  {
+    title: 'Wind Resource Assessment & Planning',
+    heading: 'The first step before investing in any wind project',
+    overview:
+      'A wind turbine’s rated capacity does not determine actual generation at a location. Annual energy output depends on wind speed, terrain, hub height, turbulence, obstacle shading, and operating conditions. Wind resource assessment is therefore a critical stage before selecting equipment or committing capital. AeroSun Energy begins with the intended application, the site conditions, and the relationship between expected energy generation and electricity demand.',
+    applications: [
+      { title: 'Project screening', description: 'Review terrain, obstacles, exposure, and feasibility before making a purchase decision.' },
+      { title: 'Measurement planning', description: 'Determine whether the site needs local measurement or whether existing wind data is adequate.' },
+      { title: 'Feasibility and economics', description: 'Estimate annual energy yield and compare turbine options before investment or development.' },
+    ],
+    benefits: [
+      'Avoids poor turbine selection based on nameplate capacity alone',
+      'Improves annual energy estimates and project confidence',
+      'Helps identify installation and regulatory constraints early',
+      'Supports better planning and financial decisions',
+    ],
+    calculation: {
+      label: 'Illustrative assessment calculation',
+      formula: '100 kW × 8,760 hr × 0.30 = 262,800 kWh/year',
+      result: 'Estimated annual generation: 262.8 MWh',
+      note: 'The capacity factor is an example assumption for screening and should be replaced with site-specific measured or modelled data in real projects.',
+    },
+    faqs: [
+      { question: 'Why is assessment so important?', answer: 'Because available wind power rises roughly with the cube of wind speed, making small changes in local wind conditions highly significant.' },
+      { question: 'Can I rely on online maps alone?', answer: 'Maps help with preliminary screening, but site-level measurements or more detailed analysis are often required before an investment decision.' },
+    ],
+  },
+  {
+    title: 'Off-grid Wind for Remote Sites',
+    heading: 'Standalone wind power for locations beyond reliable grid access',
+    overview:
+      'Remote facilities may need electricity where grid access is unavailable, unreliable, or expensive to extend. Examples include telecom sites, isolated agricultural facilities, environmental research stations, and other remote infrastructure. A wind system can contribute where the resource is sufficient, but because supply varies with weather, an off-grid design must be coordinated with storage, backup sources, and load expectations.',
+    applications: [
+      { title: 'Telecom infrastructure', description: 'Wind may support the energy needs of remote communications infrastructure where grid extension is not feasible.' },
+      { title: 'Environmental monitoring', description: 'Small renewable systems can power sensors, data loggers, and communications in isolated locations.' },
+      { title: 'Rural and research installations', description: 'Wind can support remote buildings, sites, and infrastructure when paired with batteries or a hybrid arrangement.' },
+    ],
+    benefits: [
+      'Reduces dependence on grid expansion or diesel generation',
+      'Useful in remote and critical infrastructure settings',
+      'Can be paired with batteries and solar PV for reliability',
+      'Improves resilience when the site has a consistent wind resource',
+    ],
+    calculation: {
+      label: 'Illustrative remote site demand',
+      formula: '1 kW × 24 hr × 365 = 8,760 kWh/year',
+      result: 'Annual demand: 8,760 kWh',
+      note: 'Annual generation alone is not enough to guarantee reliability. Battery sizing, low-wind periods, and autonomy requirements must still be designed into the project.',
+    },
+    faqs: [
+      { question: 'Do off-grid wind systems need batteries?', answer: 'Often yes. Batteries or a hybrid backup source are usually required to cover low-wind periods and maintain continuity of supply.' },
+      { question: 'Is wind alone enough?', answer: 'Not always. Many remote applications perform better with a solar-wind-battery hybrid system tailored to the site profile.' },
+    ],
+  },
+  {
+    title: 'Wind Farms & Grid Integration',
+    heading: 'Grid-connected wind generation for large energy portfolios',
+    overview:
+      'Wind farms generate electricity from multiple turbines and deliver it through a collection network, electrical substations, and a grid interconnection. Successful integration requires more than installing turbines: it involves wind-resource assessment, turbine selection, electrical studies, protection, forecasting, network compliance, and coordination with the utility or system operator. AeroSun Energy can discuss wind project concepts and the planning required to connect renewable generation with electrical infrastructure.',
+    applications: [
+      { title: 'Utility-scale generation', description: 'Wind farms can contribute to the broader power network and support renewable-energy supply targets.' },
+      { title: 'Industrial and commercial procurement', description: 'Wind may form part of a larger renewable-energy portfolio for large electricity users.' },
+      { title: 'Hybrid renewable projects', description: 'Wind can be combined with solar PV and storage for diversified generation and improved operational flexibility.' },
+    ],
+    benefits: [
+      'Large-scale renewable generation where resource conditions are suitable',
+      'Diversifies energy supply and reduces dependence on a single source',
+      'Supports emissions-reduction and sustainability goals',
+      'Can integrate with storage and broader renewable strategies',
+    ],
+    calculation: {
+      label: 'Illustrative 20 MW wind farm',
+      formula: '20 MW × 8,760 hr × 0.35 = 61,320 MWh/year',
+      result: 'Estimated annual generation: 61.32 GWh',
+      note: 'This is a simplified gross energy estimate and excludes curtailment, transmission losses, financing, and operating expenses.',
+    },
+    faqs: [
+      { question: 'What is the biggest challenge?', answer: 'Grid integration, electrical studies, and coordination with utility requirements are often the most important factors after resource assessment.' },
+      { question: 'Can wind farms combine with solar?', answer: 'Yes. Hybrid wind-solar-storage systems can improve energy management, but they still require proper system design and grid study.' },
+    ],
+  },
+]
+
 export default function WindEnergyPage() {
   return (
     <main className="bg-slate-50 text-slate-900">
@@ -371,6 +536,84 @@ export default function WindEnergyPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mb-8 max-w-3xl">
+          <WindSectionEyebrow>Service Sections</WindSectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900">Exploring wind energy applications</h2>
+        </div>
+
+        <div className="grid gap-8 lg:grid-cols-2">
+          {serviceSections.map((section) => (
+            <div key={section.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 className="text-2xl font-bold text-slate-900">{section.title}</h3>
+              <p className="mt-2 text-base leading-7 text-slate-700">{section.heading}</p>
+              <p className="mt-4 text-sm leading-6 text-slate-600">{section.overview}</p>
+
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <div>
+                  <h4 className="text-sm font-semibold text-slate-800">Typical applications</h4>
+                  <ul className="mt-2 space-y-2 text-sm leading-6 text-slate-600">
+                    {section.applications.map((app) => (
+                      <li key={app.title} className="flex gap-3">
+                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <div>
+                          <div className="font-medium text-slate-800">{app.title}</div>
+                          <div className="text-sm leading-6 text-slate-600">{app.description}</div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="text-sm font-semibold text-slate-800">Key benefits</h4>
+                  <ul className="mt-2 space-y-2 text-sm leading-6 text-slate-600">
+                    {section.benefits.map((benefit) => (
+                      <li key={benefit} className="flex gap-3">
+                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <div className="text-sm leading-6 text-slate-600">{benefit}</div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-6 rounded-lg bg-slate-50 p-4 text-sm text-slate-700">
+                <div className="flex items-center justify-between">
+                  <div className="font-medium">Illustrative calculation</div>
+                  <div className="text-xs text-slate-500">{section.calculation.label}</div>
+                </div>
+                <div className="mt-2 flex gap-2 text-lg font-bold">
+                  <div className="text-emerald-600">{section.calculation.result}</div>
+                  <div className="text-slate-500">{section.calculation.formula}</div>
+                </div>
+                <div className="mt-2 text-xs text-slate-500">{section.calculation.note}</div>
+              </div>
+
+              <div className="mt-6 border-t border-slate-200 pt-4">
+                <h4 className="text-sm font-semibold text-slate-800">FAQs</h4>
+                <div className="mt-2 space-y-3 text-sm leading-6 text-slate-600">
+                  {section.faqs.map((faq) => (
+                    <div key={faq.question} className="flex flex-col gap-1">
+                      <div className="font-medium text-slate-800">{faq.question}</div>
+                      <div className="text-sm">{faq.answer}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </main>

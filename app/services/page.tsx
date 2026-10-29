@@ -42,28 +42,28 @@ const servicePackages = [
     title: 'Solar Energy Solutions',
     accent: 'from-amber-400 via-orange-500 to-yellow-500',
     description:
-      'Rooftop solar, off-grid systems, hybrid solar with battery storage, solar water pumping, EV charging, and commercial/industrial installations.',
-    points: ['Consultation & site assessment', 'System design & engineering', 'Installation & commissioning', 'Maintenance & performance support'],
+      'Rooftop solar, solar thermal, street lighting, solar fencing, solar pumpsets, off-grid systems, hybrid solar, and complete maintenance support for homes, businesses, farms, and institutions.',
+    points: ['Site assessment & feasibility', 'System design & engineering', 'Installation & commissioning', 'Operations, monitoring & maintenance'],
   },
   {
     title: 'Wind Energy Solutions',
     accent: 'from-sky-500 via-blue-500 to-indigo-600',
     description:
-      'Wind resource analysis, turbine selection, site engineering, supply support, installation coordination, and long-term technical maintenance.',
-    points: ['Resource assessment', 'KAWT/VAWT evaluation', 'Installation support', 'Monitoring & service plans'],
+      'Wind resource analysis, turbine selection, feasibility studies, rooftop and industrial wind applications, agricultural wind support, and remote/off-grid wind energy planning.',
+    points: ['Wind resource assessment', 'VAWT and HAWT evaluation', 'System planning & installation support', 'Monitoring & life-cycle service plans'],
   },
   {
     title: 'Hybrid Energy & Storage',
     accent: 'from-emerald-500 via-teal-500 to-cyan-500',
     description:
-      'Integrated solar-wind-battery systems for homes, businesses, farms, and remote facilities requiring resilient power and backup capacity.',
-    points: ['Hybrid feasibility', 'Battery integration', 'Microgrid planning', 'Performance monitoring'],
+      'Integrated solar-wind-battery systems, hybrid microgrids, and resilient energy solutions for homes, businesses, farms, and remote sites requiring reliable power.',
+    points: ['Hybrid feasibility studies', 'Battery & storage integration', 'Microgrid planning', 'Performance monitoring & optimization'],
   },
   {
     title: 'Operations & AMC',
     accent: 'from-emerald-400 via-emerald-500 to-teal-500',
     description:
-      'Managed operations, tiered Annual Maintenance Contracts (AMC), remote monitoring, and specialized services such as drone-based panel cleaning and preventive care.',
+      'Managed operations, preventive maintenance, drone cleaning, remote monitoring, and customer support designed to maximize annual generation and system lifetime.',
     points: ['Tiered AMC plans', 'Remote monitoring & alerts', 'Drone cleaning & soiling mitigation', 'Priority spare parts & support'],
   },
 ]
@@ -71,95 +71,95 @@ const servicePackages = [
 const serviceGrid = [
   {
     title: 'Energy Consultation',
-    text: 'Load analysis, feasibility studies, solar and wind feasibility, ROI estimates, and practical customer recommendations.',
+    text: 'Load analysis, solar and wind feasibility, ROI estimates, battery backup planning, and practical recommendations for homes, farms, and commercial sites.',
   },
   {
     title: 'System Design',
-    text: 'Single-line diagrams, electrical layouts, inverter and battery selection, protection planning, and generation modeling.',
+    text: 'Single-line diagrams, power calculations, inverter and battery selection, protection planning, and generation modelling for solar, wind, and hybrid systems.',
   },
   {
     title: 'Procurement',
-    text: 'Supply of panels, inverters, batteries, mounting systems, controllers, cables, and monitoring equipment from suitable suppliers.',
+    text: 'Supply of panels, inverters, batteries, mounting structures, wind equipment, controllers, and monitoring hardware from suitable technology partners.',
   },
   {
     title: 'Installation',
-    text: 'Project coordination, site preparation, mounting, wiring, testing, commissioning, and customer handover.',
+    text: 'Project coordination, structural fitting, wiring, testing, commissioning, safety checks, and customer handover for renewable energy systems.',
   },
   {
     title: 'Maintenance',
-    text: 'Preventive care, fault diagnosis, panel cleaning, inverter checks, battery health management, and periodic reports.',
+    text: 'Preventive care, fault diagnosis, panel and turbine checks, inverter service, battery monitoring, and scheduled performance reviews.',
   },
   {
     title: 'Monitoring & Upgrades',
-    text: 'Remote monitoring, system upgrades, performance optimization, battery retrofits, and expansion planning.',
+    text: 'Remote system monitoring, optimization, energy audits, battery retrofits, and expansion planning to improve long-term reliability and output.',
   },
   {
     title: 'AMC Plans',
-    text: 'Tiered Annual Maintenance Contracts covering preventive maintenance, scheduled inspections, performance audits, and priority technical support.',
+    text: 'Tiered Annual Maintenance Contracts covering recurring inspections, preventive care, performance audits, troubleshooting, and priority technical support.',
   },
   {
     title: 'Solar Cleaning (Drones)',
-    text: 'Automated drone cleaning services to remove soiling at scale, reduce water usage, and recover generation losses safely and efficiently.',
+    text: 'Safe and efficient drone-based cleaning to remove dust and soiling, improve generation, and reduce water usage for large rooftops and utility-scale plants.',
   },
 ]
 
 const packages = [
   {
     name: 'Home Energy Solutions',
-    customers: 'Homeowners and residential communities',
-    services: ['Rooftop solar', 'Hybrid battery backup', 'Annual maintenance'],
+    customers: 'Homeowners, residential societies and small commercial rooftops',
+    services: ['Rooftop solar', 'Hybrid battery backup', 'Solar water heating', 'Annual maintenance'],
   },
   {
     name: 'Business Energy Solutions',
-    customers: 'Shops, schools, offices, hotels and commercial units',
-    services: ['Commercial solar', 'Energy cost audits', 'Monitoring & maintenance'],
+    customers: 'Shops, schools, offices, hotels and commercial establishments',
+    services: ['Commercial solar', 'Energy cost audits', 'Wind and hybrid feasibility', 'Monitoring & maintenance'],
   },
   {
     name: 'Industrial Renewable Solutions',
     customers: 'Factories, warehouses and industrial users',
-    services: ['Rooftop & ground mount', 'Hybrid feasibility', 'Battery and energy management'],
+    services: ['Rooftop & ground-mount solar', 'Hybrid feasibility', 'Battery & energy management', 'Commercial wind integration'],
   },
   {
     name: 'Agriculture & Rural Energy',
     customers: 'Farmers, rural facilities and remote sites',
-    services: ['Solar pumping', 'Off-grid solar', 'Small wind and hybrids'],
+    services: ['Solar pumping', 'Off-grid solar', 'Small wind and hybrids', 'Microgrid and storage planning'],
   },
 ]
 
 const solarPillars = [
   {
     title: 'Solar Rooftop Systems',
-    description: 'On-grid power plants for homes and businesses.',
+    description: 'On-grid power plants for homes and businesses. Designed for performance, net metering, and long-term energy savings.',
     bullets: ['On-grid, off-grid and hybrid configurations', 'Net metering with state DISCOM', 'PM Surya Ghar subsidy assistance', 'TATA Power Solar premium panels'],
     accent: 'from-emerald-500 via-green-500 to-lime-400',
   },
   {
     title: 'Solar Thermal — Water Heating Solutions',
-    description: 'Efficient, eco-friendly hot water for homes, hotels, hospitals, hostels, commercial establishments and industries.',
+    description: 'Efficient, eco-friendly hot water systems for homes, hotels, hospitals, hostels, commercial establishments and industries.',
     bullets: ['Available in capacities from 100 litres per day (LPD)', 'Pressurised and non-pressurised models', 'High-performance BIS-certified collectors', 'Cut electricity use and reduce geyser dependency'],
     accent: 'from-orange-400 via-amber-500 to-yellow-400',
   },
   {
     title: 'Solar Street Lights',
-    description: 'All-in-one lighting powered entirely by sunlight.',
+    description: 'All-in-one lighting powered entirely by sunlight for roads, campuses and public spaces.',
     bullets: ['Integrated all-in-one luminaires from 12W', 'Auto dusk-to-dawn operation', 'Lithium-ion storage with 5+ year life', 'Zero electricity bills'],
     accent: 'from-cyan-500 via-sky-500 to-blue-500',
   },
   {
     title: 'Solar Fencing',
-    description: 'Solar-powered electrical protection for farms and estates.',
+    description: 'Solar-powered electrical protection for farms, estates, and rural properties.',
     bullets: ['Solar-charged energiser', 'Up to 10 km perimeter on a single charger', 'Audible alarm and battery backup', 'Crop and livestock protection'],
     accent: 'from-violet-500 via-purple-500 to-fuchsia-500',
   },
   {
     title: 'Solar Pumpsets',
-    description: 'Diesel-free water pumping for agriculture.',
+    description: 'Diesel-free water pumping for agriculture, irrigation, and rural water access.',
     bullets: ['AC and DC pump configurations', 'MNRE-approved controllers', 'PM-KUSUM scheme assistance', '5-year manufacturer warranty'],
     accent: 'from-sky-500 via-teal-500 to-emerald-500',
   },
   {
     title: 'Operation & Maintenance (AMC)',
-    description: 'Annual care to keep your plant generating at peak.',
+    description: 'Annual care to keep your plant generating at peak efficiency and reliability.',
     bullets: ['Quarterly preventive maintenance', 'Performance ratio monitoring', '24x7 priority support', 'Spare parts and inverter service'],
     accent: 'from-rose-500 via-red-500 to-orange-500',
   },
@@ -205,7 +205,7 @@ export default function ServicesPage() {
               Renewable Energy Services
             </h1>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-700 sm:text-xl">
-              We provide end-to-end renewable energy services across solar, wind, and hybrid systems — from energy consultation and engineering to installation, maintenance, and ongoing technical support.
+              We provide end-to-end renewable energy services across solar, wind, and hybrid systems — from feasibility studies and engineering to installation, maintenance, monitoring, and long-term support.
             </p>
           </div>
 
@@ -232,7 +232,7 @@ export default function ServicesPage() {
             <div className="max-w-2xl">
               <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-300">Service portfolio</p>
               <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
-                Clean energy services built around performance and trust
+                Clean energy solutions tailored to real site conditions
               </h2>
               <p className="mt-4 text-lg leading-8 text-slate-200">
                 AeroSun helps customers move from energy assessment to full project execution with tailored renewable solutions for residential, commercial, agricultural, and industrial needs.
@@ -244,9 +244,9 @@ export default function ServicesPage() {
                 <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-slate-200">Why it matters</p>
                 <ul className="mt-4 space-y-3 text-base text-slate-100">
                   <li>• Reduced energy costs</li>
-                  <li>• Cleaner energy adoption</li>
-                  <li>• Long-term system reliability</li>
-                  <li>• Better operational continuity</li>
+                  <li>• Cleaner power generation</li>
+                  <li>• Better system reliability</li>
+                  <li>• Improved energy resilience</li>
                 </ul>
               </div>
             </div>
@@ -335,7 +335,7 @@ export default function ServicesPage() {
             <div className="mt-6 space-y-4">
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700">Phase 1</p>
-                <p className="mt-2 text-lg font-semibold text-slate-900">Solar consultation, rooftop installations, equipment supply, and maintenance</p>
+                <p className="mt-2 text-lg font-semibold text-slate-900">Solar consultation, rooftop systems, equipment supply, and maintenance</p>
               </div>
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-700">Phase 2</p>
@@ -343,7 +343,7 @@ export default function ServicesPage() {
               </div>
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-violet-700">Phase 3</p>
-                <p className="mt-2 text-lg font-semibold text-slate-900">Industrial hybrid systems, large storage projects, microgrids, and next-stage product development</p>
+                <p className="mt-2 text-lg font-semibold text-slate-900">Industrial hybrid systems, larger storage projects, microgrids, and next-stage deployment</p>
               </div>
             </div>
           </div>
@@ -375,9 +375,9 @@ export default function ServicesPage() {
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mb-8 max-w-3xl">
           <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-700">Complete solar solutions</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Complete solar solutions, one trusted partner.</h2>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Complete renewable energy solutions, one trusted partner.</h2>
           <p className="mt-4 text-lg leading-8 text-slate-700">
-            Whether you need a 1 kW home rooftop or a 100 kW industrial plant — we design, supply, install and maintain it end-to-end.
+            Whether you need a 1 kW home rooftop or a 100 kW industrial plant — we design, supply, install and maintain end-to-end energy systems for solar, wind, and hybrid applications.
           </p>
         </div>
 

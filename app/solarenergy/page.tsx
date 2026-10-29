@@ -185,6 +185,17 @@ const solarSlides: SolarSlide[] = [
     panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
   },
   {
+    badge: 'Agricultural pumping',
+    title: 'Solar Water Pumping for Agriculture',
+    description:
+      'Diesel-free solar pumpsets for irrigation and water access, reducing energy costs and supporting sustainable farming practices across rural and semi-urban areas.',
+    image: '/images/slider/slider-4.png',
+    tags: [],
+    badgeClass: 'text-slate-100',
+    chipClass: 'text-slate-100',
+    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
+  },
+  {
     badge: 'Commercial scale',
     title: 'Commercial & Industrial Solar',
     description:
@@ -436,7 +447,7 @@ export default function SolarEnergyPage() {
           <div className="overflow-hidden rounded-4xl border border-slate-200 bg-slate-950 p-5 shadow-[0_28px_70px_-36px_rgba(15,23,42,0.9)]">
             <div className="relative h-72 overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
               <OptimizedImage
-                src="/images/slider/slider-3.png"
+                src="/images/slider/slider-6.png"
                 alt="Solar energy field and rooftop systems"
                 fill
                 sizes="(min-width: 1024px) 30vw, 100vw"

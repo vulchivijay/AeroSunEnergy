@@ -105,6 +105,171 @@ const keyBenefits = [
   'Helps optimize generation mixes across day and season',
 ]
 
+const serviceSections = [
+  {
+    title: 'Continuous Renewable Generation',
+    heading: 'Harness solar and wind for more consistent power availability',
+    overview:
+      'Renewable power changes throughout the day and across seasons. Solar generation is strongest during sunlight hours while wind generation may peak when conditions are favourable at other times. A hybrid system combines solar PV and wind generation to create a more balanced renewable supply that can support electricity demand in varying weather conditions.',
+    applications: [
+      { title: 'Residential and rural power', description: 'Homes and rural systems benefit from a more stable energy mix when solar and wind complement each other.' },
+      { title: 'Industrial facilities', description: 'Process and operations loads can be supported with a broader renewable generation mix and battery backup.' },
+      { title: 'Agricultural operations', description: 'Farms can align solar and wind generation with irrigation, pumping, and processing demands.' },
+    ],
+    benefits: [
+      'Better utilization of renewable resources',
+      'Improved power availability with storage support',
+      'Reduced grid dependence',
+      'Flexible system design for future expansion',
+    ],
+    calculation: {
+      label: 'Illustrative solar + wind + battery example',
+      formula: '20 kW solar × 8,760 × 0.18 + 10 kW wind × 8,760 × 0.25 = 53,436 kWh/year',
+      result: 'Combined annual generation: 53,436 kWh',
+      note: 'This is an annual average estimate and not a guarantee of daily production. Actual generation depends on resource availability, losses, and system operation.',
+    },
+    faqs: [
+      { question: 'Can solar and wind work well together?', answer: 'Yes, because they often generate at different times and under different weather conditions, helping balance resource availability.' },
+      { question: 'Does annual generation guarantee 24/7 supply?', answer: 'No. Storage, demand profile, and backup arrangements are still required to support continuity during low-generation periods.' },
+    ],
+  },
+  {
+    title: 'Hybrid Microgrid Energy Management',
+    heading: 'Intelligent control for efficient renewable power distribution',
+    overview:
+      'A hybrid microgrid is a localized energy system that combines generation, storage, loads, and control equipment to balance supply and demand. It may operate with the utility grid or independently when designed for islanded operation. Effective energy management is essential to get the most practical value from solar, wind, and battery assets.',
+    applications: [
+      { title: 'Industrial facilities', description: 'Multi-load sites benefit from coordinated dispatch across generation, storage, and priority loads.' },
+      { title: 'Commercial campuses', description: 'Energy use across multiple buildings can be optimized through central demand and generation control.' },
+      { title: 'Remote infrastructure', description: 'Monitoring and control systems help remote sites manage generation and battery operation more effectively.' },
+    ],
+    benefits: [
+      'Improved energy coordination across sources and loads',
+      'Better use of stored energy',
+      'Reduced unnecessary grid purchases',
+      'Operational visibility for faults and maintenance',
+    ],
+    calculation: {
+      label: 'Commercial microgrid example',
+      formula: '50 kW solar × 8,760 × 0.18 + 30 kW wind × 8,760 × 0.25 = 144,540 kWh/year',
+      result: 'Estimated annual generation: 144,540 kWh',
+      note: 'The facility consumption must still be compared against actual hourly demand, battery availability, and operating priorities.',
+    },
+    faqs: [
+      { question: 'Why does a microgrid need controls?', answer: 'Without coordinated control, solar, wind, and batteries can overlap poorly or charge/discharge at the wrong times.' },
+      { question: 'Can microgrid control improve resilience?', answer: 'Yes, especially when loads are prioritized and battery dispatch is aligned with critical operations.' },
+    ],
+  },
+  {
+    title: 'Off-grid Hybrid for Isolated Locations',
+    heading: 'Renewable electricity for places beyond reliable grid access',
+    overview:
+      'Many remote locations face limited grid access, expensive grid extensions, or dependence on diesel generation. An off-grid hybrid system can combine solar panels, wind turbines, battery storage, and backup generation to supply electricity without a continuous utility connection. Proper planning is critical because maintenance access and fuel logistics may be difficult.',
+    applications: [
+      { title: 'Remote villages', description: 'Hybrid systems can support homes, lighting, communications, and essential services away from the grid.' },
+      { title: 'Telecom towers', description: 'Reliable renewable power can lower fuel dependence and improve operational continuity.' },
+      { title: 'Research stations', description: 'Remote monitoring and field facilities benefit from renewable generation paired with storage and backup logic.' },
+    ],
+    benefits: [
+      'Reduced dependence on fuel deliveries',
+      'Improved energy access in remote locations',
+      'Better operational resilience',
+      'Flexible system sizing for essential loads',
+    ],
+    calculation: {
+      label: 'Remote site hybrid power example',
+      formula: '10 kW solar × 8,760 × 0.18 + 5 kW wind × 8,760 × 0.25 = 26,718 kWh/year',
+      result: 'Estimated annual generation: 26,718 kWh',
+      note: 'This first-pass estimate is useful for site screening, but off-grid reliability must also consider low-generation periods and battery autonomy.',
+    },
+    faqs: [
+      { question: 'Is off-grid renewable power always reliable?', answer: 'Not by itself. Reliability depends on load, resource variation, battery sizing, backup supply, and system design.' },
+      { question: 'Do remote systems need a backup generator?', answer: 'Sometimes. For critical loads, a backup source may be justified to protect availability during prolonged low-generation periods.' },
+    ],
+  },
+  {
+    title: 'Hybrid Power for Commercial Facilities',
+    heading: 'Reduce grid dependence with coordinated solar, wind, and storage',
+    overview:
+      'Commercial facilities need electricity for lighting, air conditioning, computers, refrigeration, pumps, and process equipment. A hybrid renewable energy system can combine solar PV, wind generation where site conditions allow, and battery storage to support these needs while reducing grid dependence and improving operational resilience.',
+    applications: [
+      { title: 'Offices and IT facilities', description: 'Daytime and peak-load reduction can be improved through smart solar, wind, and battery coordination.' },
+      { title: 'Shopping centres and hotels', description: 'Businesses can lower operating overhead and maintain service continuity during outages or tariff peaks.' },
+      { title: 'Cold storage and manufacturing', description: 'Industry can use hybrid generation to reduce cost pressure while supporting selected critical loads.' },
+    ],
+    benefits: [
+      'Potential reduction in electricity expenditure',
+      'Greater energy flexibility with storage',
+      'Support for business resilience',
+      'Scalable installation for future expansion',
+    ],
+    calculation: {
+      label: 'Commercial building example',
+      formula: '100 kW solar × 8,760 × 0.18 + 20 kW wind × 8,760 × 0.25 = 201,480 kWh/year',
+      result: 'Combined annual generation: 201,480 kWh',
+      note: 'Only 70% of this generation is assumed to be consumed on site, with value based on the applicable electricity tariff and facility profile.',
+    },
+    faqs: [
+      { question: 'Can commercial hybrid systems cut bills?', answer: 'Yes, when self-consumption, tariff structures, and load timing line up with generation. The actual savings depend on the business profile.' },
+      { question: 'Do I need a battery?', answer: 'Not always. Some grid-connected systems work without batteries, while others need storage for resilience or peak shifting.' },
+    ],
+  },
+  {
+    title: 'Hybrid Energy for Farms & Irrigation',
+    heading: 'Support agricultural operations with solar, wind, and storage',
+    overview:
+      'Agriculture requires energy for irrigation pumps, water transfer, livestock facilities, cold storage, and general farm operations. Hybrid renewable systems combine solar PV, wind generation when suitable, and storage to support agricultural operations more reliably and reduce dependency on grid or diesel supply.',
+    applications: [
+      { title: 'Irrigation systems', description: 'Hybrid systems can support pumping loads while water storage helps match renewable generation to irrigation timing.' },
+      { title: 'Dairy and livestock farms', description: 'Energy can support lighting, ventilation, refrigeration, and essential equipment for daily operations.' },
+      { title: 'Cold storage and processing', description: 'Hybrid power can support cooling, processing, and site loads when matched to the right system design.' },
+    ],
+    benefits: [
+      'Potential reduction in grid power use',
+      'Reduced exposure to fuel costs',
+      'Flexible pumping schedules',
+      'Improved water management and farm resilience',
+    ],
+    calculation: {
+      label: 'Farm irrigation example',
+      formula: '10 kW solar × 8,760 × 0.18 + 3 kW wind × 8,760 × 0.25 = 22,338 kWh/year',
+      result: 'Estimated annual generation: 22,338 kWh',
+      note: 'The generation is greater than the pump demand on paper, but schedules still need to match or storage must be included for reliable supply.',
+    },
+    faqs: [
+      { question: 'Can a hybrid system run irrigation pumps?', answer: 'Yes, if the system is designed around pump rating, daily schedule, starting current, and water storage needs.' },
+      { question: 'Should water storage replace battery storage?', answer: 'Sometimes. In irrigation systems, storing water can be more economical than storing electricity in batteries when pumping schedules are flexible.' },
+    ],
+  },
+  {
+    title: 'Campus & Community Hybrid Microgrids',
+    heading: 'Coordinated renewable energy for shared facilities and communities',
+    overview:
+      'Campuses and communities often have multiple buildings with varied electricity demands across the day. A hybrid microgrid can combine solar PV, suitable wind generation, battery energy storage, and central controls to improve the use of locally generated renewable electricity and support shared infrastructure.',
+    applications: [
+      { title: 'Educational campuses', description: 'Shared generation and metering can align with classroom, residential, and essential-service loads.' },
+      { title: 'Residential communities', description: 'Communities can coordinate renewable supply and improve local resilience and efficiency.' },
+      { title: 'Healthcare and public facilities', description: 'Critical services can be prioritized while the system manages backup and demand across the site.' },
+    ],
+    benefits: [
+      'Better coordination across buildings',
+      'Greater use of locally generated renewable electricity',
+      'Improved visibility through metering and dashboards',
+      'Expandable architecture for future community growth',
+    ],
+    calculation: {
+      label: 'Campus microgrid example',
+      formula: '250 kW solar × 8,760 × 0.18 + 50 kW wind × 8,760 × 0.25 = 503,700 kWh/year',
+      result: 'Estimated annual generation: 503,700 kWh',
+      note: 'This exceeds the campus annual demand under the example assumptions, but real performance still depends on timing, storage, and operational strategy.',
+    },
+    faqs: [
+      { question: 'Can a campus operate without the grid?', answer: 'Only if the microgrid is designed for islanded operation, with sufficient generation, storage, and controls to maintain power quality and reliability.' },
+      { question: 'How is the system managed?', answer: 'Using a central controller that tracks generation, storage, demand, critical loads, and grid interaction while applying predefined operating rules.' },
+    ],
+  },
+]
+
 type HybridSlide = {
   badge: string
   title: string
@@ -246,10 +411,10 @@ export default function HybridEnergyPage() {
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
             <h1 className="text-4xl font-black tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-              Types of Hybrid Solar + Wind Systems
+              Hybrid Solar + Wind Energy Systems
             </h1>
             <p className="mt-4 text-lg leading-8 text-slate-700 sm:text-xl">
-              Hybrid solar-wind systems combine photovoltaic generation with wind turbines to create a more resilient renewable energy source for homes, farms, commercial facilities, and remote operations.
+              Combine solar generation, wind power, storage, and intelligent controls to create more resilient, flexible, and efficient renewable energy systems for homes, businesses, farms, and communities.
             </p>
           </div>
           <div className="grid w-full max-w-xl grid-cols-2 gap-3">
@@ -334,6 +499,104 @@ export default function HybridEnergyPage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mb-8 max-w-3xl">
+          <HybridSectionEyebrow>Our solutions</HybridSectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Six hybrid renewable energy service lines</h2>
+        </div>
+
+        <div className="space-y-8">
+          {serviceSections.map((service, index) => (
+            <article key={service.title} className="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_20px_44px_-30px_rgba(15,23,42,0.32)] sm:p-8">
+              <div className="mb-6 flex items-center justify-between gap-3">
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700">Service {index + 1}</p>
+                  <h3 className="mt-2 text-2xl font-black tracking-[-0.04em] text-slate-900 sm:text-3xl">{service.title}</h3>
+                </div>
+                <div className="hidden rounded-full border border-emerald-200 bg-emerald-50 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-700 sm:block">
+                  Hybrid system
+                </div>
+              </div>
+
+              <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+                <div>
+                  <h4 className="text-xl font-bold text-slate-900">{service.heading}</h4>
+                  <p className="mt-4 text-base leading-8 text-slate-700">{service.overview}</p>
+
+                  <div className="mt-6 grid gap-4 md:grid-cols-3">
+                    {service.applications.map((item) => (
+                      <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                        <p className="text-sm font-black uppercase tracking-[0.18em] text-slate-600">Application</p>
+                        <h5 className="mt-3 text-lg font-bold text-slate-900">{item.title}</h5>
+                        <p className="mt-2 text-sm leading-6 text-slate-700">{item.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="rounded-[1.8rem] border border-emerald-200 bg-emerald-50 p-5">
+                  <p className="text-[10px] font-black uppercase tracking-[0.26em] text-emerald-700">Benefits</p>
+                  <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
+                    {service.benefits.map((benefit) => (
+                      <li key={benefit} className="flex items-start gap-3 rounded-2xl bg-white/70 p-3">
+                        <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[10px] font-black text-emerald-700">✓</span>
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-8 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
+                <div className="rounded-[1.75rem] border border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ffffff_100%)] p-5">
+                  <p className="text-[10px] font-black uppercase tracking-[0.24em] text-sky-700">Example calculation</p>
+                  <h4 className="mt-3 text-xl font-black tracking-[-0.03em] text-slate-900">{service.calculation.label}</h4>
+                  <p className="mt-3 font-mono text-sm leading-7 text-slate-800">{service.calculation.formula}</p>
+                  <div className="mt-4 rounded-2xl bg-slate-900 p-3 text-sm font-semibold text-white">{service.calculation.result}</div>
+                  <p className="mt-4 text-sm leading-6 text-slate-700">{service.calculation.note}</p>
+                </div>
+
+                <div className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-5">
+                  <p className="text-[10px] font-black uppercase tracking-[0.24em] text-slate-600">Frequently asked questions</p>
+                  <div className="mt-4 space-y-4">
+                    {service.faqs.map((item) => (
+                      <div key={item.question} className="rounded-2xl border border-slate-200 bg-white p-3.5">
+                        <p className="text-sm font-black text-slate-900">{item.question}</p>
+                        <p className="mt-2 text-sm leading-7 text-slate-700">{item.answer}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
+                >
+                  Request energy assessment
+                </a>
+                <a
+                  href="/customer-enquiry"
+                  className="inline-flex items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 px-5 py-3 text-sm font-semibold text-emerald-700 transition hover:border-emerald-300 hover:bg-emerald-100"
+                >
+                  Enquire now
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mb-8 max-w-3xl">
+          <HybridSectionEyebrow>Application fit</HybridSectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900">Typical system combinations</h2>
+        </div>
+
+        <HybridTable rows={projectRows} />
+      </section>
+
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
         <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)] sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
@@ -355,7 +618,7 @@ export default function HybridEnergyPage() {
             <div className="overflow-hidden rounded-4xl border border-slate-200 bg-slate-950 p-5 shadow-[0_28px_70px_-36px_rgba(15,23,42,0.9)]">
               <div className="relative h-72 overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
                 <OptimizedImage
-                  src="/images/slider/slider-2.png"
+                  src="/images/slider/slider-13.png"
                   alt="Hybrid renewable energy deployment"
                   fill
                   sizes="(min-width: 1024px) 35vw, 100vw"
@@ -365,9 +628,9 @@ export default function HybridEnergyPage() {
               </div>
               <div className="mt-5 rounded-3xl border border-emerald-400/20 bg-emerald-500/10 p-4">
                 <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-200">Key insight</p>
-                <h3 className="mt-2 text-xl font-bold text-white">Start with the simplest, most credible hybrid offers</h3>
+                <h3 className="mt-2 text-xl font-bold text-white">Start with credible and practical hybrid offers</h3>
                 <p className="mt-2 text-base leading-7 text-slate-200">
-                  Evaluate solar + battery hybrid, solar + wind + battery off-grid systems, and commercial grid-connected hybrid designs before entering larger projects.
+                  Evaluate solar + battery hybrid, solar + wind + battery off-grid systems, and commercial grid-connected hybrid designs before moving into larger multi-source microsgrids.
                 </p>
               </div>
             </div>

@@ -42,35 +42,18 @@ export const metadata: Metadata = {
     template: '%s | AeroSun Energy',
   },
   description:
-    'Go solar with Aerosun Energy. Explore reliable solar and hybrid energy systems for homes and businesses. Reduce electricity bills with efficient, sustainable power and get expert guidance. Contact us today for a quote.',
+    'AeroSun Energy designs and installs solar, wind, and hybrid renewable energy systems for homes, businesses, farms, and industrial projects across India.',
   keywords: [
-    "energy solutions",
-    "solar energy solutions",
-    "solar energy",
-    "solar solutions",
-    "renewable energy solutions",
-    "solar power",
-    "solar panel",
-    "solar power solutions",
-    "clean energy solutions",
-    "solar installation",
-    "solar wind hybrid system",
-    "solar energy systems",
-    "sustainable energy solutions",
-    "solar electricity",
-    "hybrid solar solutions",
-    "solar panel installation",
-    "hybrid power solutions",
-    "solar heating",
-    "solar systems",
-    "solar generation",
-    "solar panel solutions",
-    "rooftop solar",
-    "renewable energy systems",
-    "off grid solar power systems",
-    "solar wind energy",
-    "off grid solar system",
-    "sun energy"
+    'solar energy solutions',
+    'solar panel installation',
+    'renewable energy solutions',
+    'solar wind hybrid system',
+    'AeroSun Energy',
+    'solar energy in India',
+    'on-grid solar systems',
+    'off-grid solar systems',
+    'hybrid power solutions',
+    'wind energy solutions',
   ],
   metadataBase: new URL('https://aerosunenergy.in'),
   icons: {
@@ -93,7 +76,7 @@ export const metadata: Metadata = {
     canonical: 'https://aerosunenergy.in',
     languages: {
       'en-IN': 'https://aerosunenergy.in',
-      'en': 'https://aerosunenergy.in',
+      en: 'https://aerosunenergy.in',
     },
   },
   robots: {
@@ -117,7 +100,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/og-image.png',
+        url: 'https://aerosunenergy.in/images/og-image.png',
         width: 1200,
         height: 630,
         alt: 'AeroSun Energy – Solar & Wind Energy Solutions',
@@ -129,7 +112,7 @@ export const metadata: Metadata = {
     title: 'AeroSun Energy | Solar, Wind & Hybrid Energy Solutions in India',
     description:
       'AeroSun Energy delivers solar, wind, and hybrid renewable energy systems for homes, businesses, and infrastructure across India.',
-    images: ['/images/og-image.png'],
+    images: ['https://aerosunenergy.in/images/og-image.png'],
   },
   verification: {
     google: GOOGLE_SITE_VERIFICATION,
