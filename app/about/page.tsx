@@ -159,15 +159,15 @@ const ethicsPoints = [
 ]
 
 const approvalRows = [
-  ['Certificate of Incorporation and CIN', 'Establishes the company’s legal identity (MCA)', 'Done'],
-  ['EPFO', 'Employee provident fund compliance and workforce contribution records', 'Done'],
-  ['GST', 'Required when applicable under GST law', 'Done'],
-  ['Professional Tax', 'State professional tax compliance for employees and business operations', 'Done'],
-  ['Accountant', 'Financial accounting, books of records and compliance support', 'Done'],
-  ['Compliance Advisor', 'External regulatory guidance and compliance monitoring support', 'Done'],
-  ['DPIIT Startup Recognition', 'Startup India recognition if eligible', 'Submitted'],
+  ['Certificate of Incorporation and CIN', 'Establishes the company’s legal identity (MCA)', 'Approved by MCA India'],
+  ['EPFO', 'Employee provident fund compliance and workforce contribution records', 'approved by EPFO'],
+  ['GST', 'Required when applicable under GST law', 'Aproved by GSTN India'],
+  ['Professional Tax', 'State professional tax compliance for employees and business operations', 'In process'],
+  ['Accountant', 'Financial accounting, books of records and compliance support', 'Appointed'],
+  ['Compliance Advisor', 'External regulatory guidance and compliance monitoring support', 'Appointed'],
+  ['DPIIT Startup Recognition', 'Startup India recognition if eligible', 'Approved By DPIIT India'],
   ['Trademark', 'Protects the company brand and eligible marks', 'In process'],
-  ['Udyam/MSME', 'MSME recognition if eligible', 'Done'],
+  ['Udyam/MSME', 'MSME recognition if eligible', 'Approved by Udyam India'],
 ]
 
 const promisePoints = [

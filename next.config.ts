@@ -10,6 +10,16 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/docs',
+        destination: '/not-found',
+        permanent: false,
+      },
+      {
+        source: '/docs/:path*',
+        destination: '/not-found',
+        permanent: false,
+      },
+      {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.aerosunenergy.in' }],
         destination: `${SITE_URL}/:path*`,
@@ -31,6 +41,22 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      {
+        source: '/docs',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive, nosnippet' },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Cache-Control', value: 'no-store, no-cache, must-revalidate' },
+        ],
+      },
+      {
+        source: '/docs/:path*',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive, nosnippet' },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Cache-Control', value: 'no-store, no-cache, must-revalidate' },
+        ],
+      },
       {
         source: '/:path*',
         headers: [
