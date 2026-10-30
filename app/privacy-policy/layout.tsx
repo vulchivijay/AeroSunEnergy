@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     'consumer data handling policy',
   ],
   alternates: {
-    canonical: '/privacy',
+    canonical: '/privacy-policy',
   },
   openGraph: {
     title: 'Privacy Policy | AeroSun Energy',
     description:
       'Understand how AeroSun Energy handles personal information, cookies, and user data protection on this website.',
-    url: 'https://aerosunenergy.in/privacy',
+    url: 'https://aerosunenergy.in/privacy-policy',
     siteName: 'AeroSun Energy',
     type: 'website',
   },

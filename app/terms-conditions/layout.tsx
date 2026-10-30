@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     'green energy company policy',
   ],
   alternates: {
-    canonical: '/terms',
+    canonical: '/terms-conditions',
   },
   openGraph: {
     title: 'Terms and Conditions | AeroSun Energy',
     description:
       'Review the legal terms for using the AeroSun Energy website and engaging with our renewable energy services.',
-    url: 'https://aerosunenergy.in/terms',
+    url: 'https://aerosunenergy.in/terms-conditions',
     siteName: 'AeroSun Energy',
     type: 'website',
   },

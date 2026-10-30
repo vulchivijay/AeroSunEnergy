@@ -1,0 +1,1760 @@
+For AeroSun Energy, the Privacy Policy should cover more than a standard company website. Your business involves **solar energy, wind energy, hybrid renewable energy systems, energy assessments, customer enquiries, project planning, and potentially installation, maintenance, and energy monitoring**.
+
+The policy below is written around those activities. It addresses information collected through your website and customer interactions, including enquiries about rooftop solar, wind turbines, agricultural pumps, off-grid systems, hybrid microgrids, and commercial or industrial renewable energy projects.
+
+I have kept it suitable for a growing renewable-energy company without claiming that AeroSun Energy currently operates specific tracking systems, monitoring platforms, payment gateways, or third-party integrations that have not been confirmed.
+
+The following is the proposed Privacy Policy for your website. It is tailored to **AeroSun Energy Private Limited**, rather than using generic e-commerce or software-company language.
+
+# Privacy Policy
+
+**Effective Date:** 30 October 2026  
+**Last Updated:** 30 October 2026
+
+## 1. Introduction
+
+Welcome to **AeroSun Energy Private Limited** ("AeroSun Energy", "we", "our", or "us").
+
+At AeroSun Energy, we are committed to promoting clean, sustainable, and renewable energy solutions through solar power, wind energy, hybrid renewable energy systems, and related technologies.
+
+Our solutions and business activities may include:
+
+- Rooftop solar energy systems for residential and commercial properties.
+- Off-grid solar power solutions for remote locations.
+- Solar systems with battery storage and backup.
+- Solar pumpsets and agricultural energy solutions.
+- Commercial and industrial solar installations.
+- Wind turbines and wind energy solutions.
+- Small and large-scale wind power systems.
+- Hybrid solar and wind energy solutions.
+- Hybrid microgrids and energy management.
+- Renewable energy solutions for farms, communities, campuses, and industries.
+- Energy assessments, project planning, installation coordination, maintenance, and technical support.
+
+This Privacy Policy explains how we collect, use, store, disclose, and protect personal information when you visit our website, contact us, request information, submit an enquiry, seek a quotation, or interact with our products and services.
+
+We respect your privacy and aim to handle your personal information responsibly, transparently, and only for legitimate business purposes.
+
+By using our website or voluntarily providing your information, you acknowledge that you have read this Privacy Policy.
+
+## 2. Information We Collect
+
+We may collect different categories of information depending on how you interact with AeroSun Energy.
+
+### 2.1 Personal Identification Information
+
+When you contact us, request a quotation, or submit an enquiry, we may collect:
+
+- Full name.
+- Mobile number.
+- Email address.
+- Residential or business address.
+- City, district, state, and PIN code.
+- Company or organization name.
+- Designation or business role, where relevant.
+
+This information helps us identify and communicate with prospective customers, existing customers, suppliers, business partners, and other individuals who contact us.
+
+### 2.2 Project and Energy Requirement Information
+
+To understand your renewable energy requirements and prepare suitable project proposals, we may collect information such as:
+
+- Type of project: residential, commercial, industrial, agricultural, or institutional.
+- Project location.
+- Electricity consumption and monthly electricity bills.
+- Connected electrical load and power requirements.
+- Solar installation capacity requirements.
+- Wind turbine capacity requirements.
+- Daily operating hours and energy consumption patterns.
+- Rooftop or available land area.
+- Roof photographs, site photographs, and installation details.
+- Solar and wind resource information relevant to the project.
+- Water pumping requirements, pump ratings, and irrigation details.
+- Battery storage and backup requirements.
+- Existing electricity connection and infrastructure details.
+- Project budget and expected implementation schedule.
+
+This information is used to understand project feasibility, estimate energy requirements, prepare proposals, and coordinate suitable renewable energy solutions.
+
+### 2.3 Business and Communication Information
+
+If you communicate with us through email, telephone, website enquiry forms, or other communication channels, we may collect:
+
+- Enquiry details.
+- Messages and communication history.
+- Product or service preferences.
+- Quotation and proposal details.
+- Customer support requests.
+- Feedback, complaints, and service-related information.
+
+### 2.4 Website and Technical Information
+
+When you visit our website, certain technical information may be collected automatically, depending on the website configuration and technologies in use.
+
+This may include:
+
+- IP address.
+- Browser type and version.
+- Device type and operating system.
+- Website pages visited.
+- Date and time of access.
+- Referring website or webpage.
+- Approximate location derived from technical information.
+- Website interaction and diagnostic information.
+- Security and server access logs.
+
+This information may be used to maintain website functionality, improve performance, identify technical issues, and protect the website against unauthorized activity.
+
+### 2.5 Cookies and Similar Technologies
+
+Our website may use cookies or similar technologies to support website functionality and improve the browsing experience.
+
+Cookies may be used for:
+
+- Essential website functionality.
+- Remembering certain website preferences.
+- Understanding website traffic and usage.
+- Website performance analysis.
+- Improving content and navigation.
+- Marketing measurement, if applicable.
+
+You can manage cookies through your browser settings. Disabling certain cookies may affect some website features.
+
+Where required, we will provide appropriate information and obtain consent for non-essential cookies or similar technologies.
+
+### 2.6 Information Related to Renewable Energy Monitoring
+
+Some renewable energy projects may involve monitoring equipment, energy meters, controllers, inverters, battery management systems, or remote monitoring platforms.
+
+Where such services are provided and monitoring information is collected, it may include:
+
+- Solar power generation data.
+- Wind turbine generation data.
+- Electricity consumption information.
+- Battery charging and discharging information.
+- Equipment operating status.
+- System performance and fault information.
+- Maintenance and service records.
+
+Such information is primarily related to the performance and operation of the renewable energy installation.
+
+If monitoring information is associated with an identifiable individual, property, or customer account, we will handle it in accordance with this Privacy Policy and applicable law.
+
+## 3. How We Use Your Information
+
+AeroSun Energy may use collected information for the following purposes.
+
+### 3.1 Responding to Enquiries
+
+- Responding to website enquiries.
+- Providing information about our solar, wind, and hybrid energy solutions.
+- Communicating with prospective customers.
+- Scheduling discussions, consultations, and site assessments.
+- Understanding customer requirements.
+
+### 3.2 Project Assessment and Planning
+
+- Evaluating solar installation requirements.
+- Understanding wind energy potential and project requirements.
+- Assessing hybrid solar and wind system requirements.
+- Estimating electricity generation and energy consumption.
+- Understanding battery storage and backup requirements.
+- Evaluating agricultural pumping requirements.
+- Preparing technical proposals and project estimates.
+- Coordinating project planning and implementation.
+
+### 3.3 Providing Products and Services
+
+- Processing customer requests.
+- Preparing quotations and commercial proposals.
+- Coordinating equipment procurement and supply.
+- Supporting installation and commissioning activities where offered.
+- Providing maintenance and technical support.
+- Managing customer and project communications.
+- Maintaining service and warranty records.
+
+### 3.4 Improving Our Website and Services
+
+- Understanding how visitors use our website.
+- Improving website content and navigation.
+- Identifying technical problems.
+- Evaluating customer interests in renewable energy solutions.
+- Improving our products, services, and customer experience.
+
+### 3.5 Business Communication and Marketing
+
+With appropriate permission where required, we may use contact information to share:
+
+- New solar energy solutions.
+- Wind energy products and developments.
+- Hybrid renewable energy systems.
+- Renewable energy technology updates.
+- Product announcements.
+- Service information.
+- Company news and relevant offers.
+
+You may opt out of promotional communications at any time.
+
+### 3.6 Legal and Regulatory Requirements
+
+We may process or disclose information when necessary to:
+
+- Comply with applicable laws and regulations.
+- Respond to lawful requests from government authorities.
+- Maintain business and financial records.
+- Protect our legal rights.
+- Prevent fraud, misuse, or unauthorized activities.
+- Resolve disputes and enforce contractual obligations.
+
+## 4. How We Share Your Information
+
+AeroSun Energy does not intend to sell your personal information to third parties for their independent marketing purposes.
+
+However, certain information may be shared when necessary to provide our services, operate our business, or comply with legal requirements.
+
+### 4.1 Service Providers and Business Partners
+
+We may share relevant information with trusted third parties involved in supporting our operations, such as:
+
+- Solar panel and electrical equipment suppliers.
+- Wind turbine and renewable energy equipment manufacturers.
+- Battery and inverter suppliers.
+- Installation and technical service partners.
+- Engineering and project consultants.
+- Website hosting and maintenance providers.
+- Email and communication service providers.
+- IT support and cybersecurity service providers.
+- Payment and financial service providers, where applicable.
+- Logistics and delivery partners.
+
+Information shared with such parties should be limited to what is reasonably necessary for the relevant business purpose.
+
+### 4.2 Project Implementation Partners
+
+For certain solar, wind, agricultural, industrial, or hybrid energy projects, we may work with equipment manufacturers, installers, engineering consultants, contractors, and other project partners.
+
+Relevant project information may be shared with these parties when required to:
+
+- Evaluate the installation site.
+- Prepare technical designs.
+- Estimate equipment requirements.
+- Prepare project quotations.
+- Supply equipment.
+- Coordinate installation and commissioning.
+- Provide maintenance and support.
+
+### 4.3 Legal and Government Authorities
+
+We may disclose information to government authorities, regulatory bodies, courts, law enforcement agencies, or other authorized entities where disclosure is required or permitted by applicable law.
+
+### 4.4 Business Transactions
+
+If AeroSun Energy undergoes a merger, restructuring, acquisition, business transfer, or similar transaction, relevant business information may be transferred as part of that transaction, subject to applicable legal requirements.
+
+## 5. Data Security
+
+We understand that personal and project information must be handled responsibly.
+
+AeroSun Energy aims to implement reasonable technical and organizational measures to protect information against:
+
+- Unauthorized access.
+- Accidental loss.
+- Unauthorized alteration.
+- Misuse or disclosure.
+- Destruction.
+- Unauthorized processing.
+
+Depending on the systems and services in use, protective measures may include access controls, secure communication methods, system monitoring, backups, and other appropriate safeguards.
+
+However, no website, electronic transmission, or storage system can be guaranteed to be completely secure.
+
+We encourage customers not to share passwords, banking credentials, or other confidential authentication information through website enquiry forms or ordinary email.
+
+## 6. Data Retention
+
+We retain personal information only for as long as reasonably necessary for the purposes described in this Privacy Policy or as required under applicable law.
+
+Retention periods may depend on the type of information and the reason it was collected.
+
+For example:
+
+- **Website enquiries:** Retained for the time needed to respond to and manage the enquiry.
+- **Customer information:** Retained as necessary for customer relationship management and service delivery.
+- **Project records:** Retained for project planning, execution, documentation, and support.
+- **Quotation and commercial records:** Retained for business, accounting, and legal requirements.
+- **Warranty and maintenance records:** Retained for the applicable service and warranty period and any necessary follow-up.
+- **Website technical logs:** Retained according to operational, security, and legal requirements.
+
+When information is no longer required, we will take reasonable steps to delete it, erase it, or otherwise dispose of it securely, subject to applicable legal retention requirements.
+
+## 7. Your Privacy Rights
+
+Subject to applicable law, you may have rights relating to your personal information.
+
+These may include:
+
+### 7.1 Right to Access Information
+
+You may request information about the personal data we process about you and the purposes for which it is used, subject to applicable legal requirements.
+
+### 7.2 Right to Correction
+
+You may request correction of inaccurate or incomplete personal information.
+
+### 7.3 Right to Update Information
+
+You may request updates to your contact details or other personal information that we maintain.
+
+### 7.4 Right to Erasure
+
+You may request deletion of your personal information where applicable, subject to legal, contractual, accounting, warranty, and other legitimate retention requirements.
+
+### 7.5 Right to Withdraw Consent
+
+Where we rely on your consent to process personal information, you may withdraw that consent.
+
+Withdrawal of consent will not affect processing that took place lawfully before the withdrawal. It may, however, affect our ability to provide certain requested services or respond to specific requests.
+
+### 7.6 Right to Raise a Privacy Complaint
+
+You may contact us if you have questions, concerns, or complaints regarding the collection or use of your personal information.
+
+We will review and respond to privacy-related requests in accordance with applicable law.
+
+## 8. Third-Party Websites and Services
+
+Our website may contain links to third-party websites, platforms, manufacturers, suppliers, service providers, or other external resources.
+
+These websites and services may have their own privacy policies and data-handling practices.
+
+AeroSun Energy is not responsible for the privacy practices, content, or security of external websites that we do not control.
+
+We encourage visitors to review the privacy policies of third-party websites before submitting personal information.
+
+## 9. Children's Privacy
+
+Our website and renewable energy services are primarily intended for adults, homeowners, businesses, institutions, organizations, and other prospective customers.
+
+We do not knowingly seek to collect personal information from children through our website unless it is necessary for a lawful and properly authorized purpose.
+
+If we become aware that personal information has been collected from a child in circumstances where appropriate authorization is required, we will take appropriate steps in accordance with applicable law.
+
+Parents or legal guardians who believe that a child has provided personal information to us may contact us using the details provided below.
+
+## 10. International Data Processing
+
+Depending on the website hosting, communication systems, software platforms, or service providers used by AeroSun Energy, certain information may be processed or stored on servers located outside India.
+
+Where personal information is transferred or processed outside India, we will take appropriate steps to ensure that such processing is handled in accordance with applicable Indian laws and relevant legal requirements.
+
+## 11. Changes to This Privacy Policy
+
+AeroSun Energy may update this Privacy Policy from time to time to reflect changes in:
+
+- Our business operations.
+- Solar, wind, and hybrid energy services.
+- Website functionality.
+- Technology and service providers.
+- Information collection and processing practices.
+- Applicable laws and regulatory requirements.
+
+Any updated version will be published on this page with a revised "Last Updated" date.
+
+We encourage visitors and customers to review this page periodically.
+
+## 12. Contact Us
+
+If you have questions, requests, or concerns regarding this Privacy Policy or the handling of your personal information, you can contact us using the following details.
+
+**Company Name:** AeroSun Energy Private Limited
+
+**Website:** https://aerosunenergy.in/
+
+**Email:** customercare@aerosunenergy.in
+
+**Phone:** +91 8099181075
+
+**Registered / Business Address:**  
+D.No. 11-184, Gollavanigunta,  
+T.N. Pallem, Tirupati,  
+Andhra Pradesh – 517501, India.
+
+**Subject for Privacy Requests:** Privacy Policy / Personal Data Request
+
+We will review privacy-related enquiries and respond in accordance with applicable laws and requirements.
+
+---
+
+## 13. Our Commitment to Responsible Renewable Energy
+
+At AeroSun Energy, our purpose is to support the adoption of clean, sustainable, and renewable energy through solar power, wind energy, and hybrid energy solutions.
+
+We believe that the transition to renewable energy should be supported by responsible business practices, transparency, customer trust, and respect for individual privacy.
+
+Whether you contact us for a rooftop solar installation, a wind turbine, an agricultural pumping solution, an off-grid renewable energy system, or a large-scale hybrid microgrid, we aim to handle your information responsibly throughout our interactions.
+
+**AeroSun Energy — Power from sun and wind.**
+
+## Important checks before publishing
+
+This draft is tailored to your business, but a privacy policy must accurately reflect what your website and company actually do. Please check these points before publishing:
+
+| Area | What AeroSun Energy should verify |
+|---|---|
+| Enquiry forms | What fields are collected: name, phone, email, location, project details, etc. |
+| Cookies | Whether analytics, advertising, or other tracking tools are installed. |
+| Website hosting | Which company hosts the website and stores its data. |
+| Google services | Whether Google Analytics, Maps, reCAPTCHA, or other Google services are used. |
+| WhatsApp | Whether website buttons redirect customers to WhatsApp. |
+| Customer documents | Whether electricity bills, property photographs, and project documents are collected. |
+| Monitoring systems | Whether AeroSun Energy or its partners can access customer energy-generation or equipment data. |
+| Payments | Whether customers can make payments through the website. |
+
+### Important legal consideration for an Indian company
+
+India's **Digital Personal Data Protection Act, 2023** and the **Digital Personal Data Protection Rules, 2025** provide the relevant framework for digital personal data. The Rules have phased commencement dates, so your legal obligations should be checked against the provisions in force at the time of implementation. The notified Rules emphasize clear privacy notices, specified purposes, and accessible ways to exercise privacy rights. [MeitY](https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf?utm_source=chatgpt.com)
+
+Official references:
+- [Digital Personal Data Protection Rules, 2025 — MeitY](https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf?utm_source=chatgpt.com)
+- [Digital Personal Data Protection Act and Rules information — MeitY](https://www.meity.gov.in/static/uploads/2026/04/46face7d48c8f6a97030f713ad5fdab4.pdf?utm_source=chatgpt.com)
+
+**My recommendation:** Before publishing, have an Indian privacy lawyer review the final version and verify that the website's actual forms, cookies, third-party services, retention practices, and customer-data handling match the policy. A privacy policy alone does not establish compliance; the underlying business processes must also follow it.
+
+Below are all five policy pages prepared for **AeroSun Energy Private Limited**, covering your solar energy, wind energy, hybrid renewable energy, agricultural energy, off-grid power, commercial and industrial solutions, and broader green-energy purpose.
+
+The content is written for an Indian renewable-energy business and covers the customer journey from website enquiries and quotations through equipment supply, delivery, installation, payments, warranties, maintenance, and after-sales support.
+
+**Important:** These policies are drafted as website-ready templates. They distinguish between products and services, and avoid promising fixed generation, guaranteed savings, universal returns, or warranties that have not been confirmed. Before publishing, align them with your actual sales terms, supplier agreements, warranty documents, delivery arrangements, and applicable Indian law.
+
+# 1. Terms & Conditions
+
+**Effective Date:** 30 October 2026  
+**Last Updated:** 30 October 2026
+
+## 1. Introduction
+
+Welcome to the website of **AeroSun Energy Private Limited** ("AeroSun Energy", "Company", "we", "our", or "us").
+
+AeroSun Energy is focused on renewable energy solutions, including solar power, wind energy, hybrid energy systems, and related green-energy technologies.
+
+Our business activities may include the supply, sale, design coordination, installation coordination, maintenance, and support of renewable energy products and solutions, depending on the services offered for each project.
+
+These Terms & Conditions govern your access to and use of our website, communications, enquiries, quotations, products, and services.
+
+By accessing our website or engaging with our services, you agree to these Terms & Conditions. If you do not agree, please discontinue use of the website.
+
+## 2. Our Products and Services
+
+AeroSun Energy may offer or facilitate renewable energy products and services in the following categories:
+
+### Solar Energy Solutions
+- Rooftop solar systems for homes and businesses.
+- Off-grid solar power systems.
+- Hybrid solar systems with battery backup.
+- Solar pumpsets and agricultural applications.
+- Commercial and industrial solar installations.
+- Solar panels, inverters, batteries, mounting structures, and related accessories.
+
+### Wind Energy Solutions
+- Small and large wind turbine systems.
+- Vertical-axis wind turbines (VAWT).
+- Horizontal-axis wind turbines (HAWT).
+- Customized wind power solutions.
+- Wind energy applications for residential, commercial, agricultural, and industrial sites.
+- Wind-resource assessment and project planning, where offered.
+
+### Hybrid Renewable Energy Solutions
+- Solar and wind hybrid systems.
+- Battery energy storage solutions.
+- Off-grid hybrid power systems.
+- Hybrid microgrids.
+- Energy management and monitoring solutions.
+- Renewable energy systems for farms, campuses, communities, and commercial facilities.
+
+Product availability, technical specifications, configurations, and services may vary depending on project requirements, supplier availability, location, and technical feasibility.
+
+## 3. Website Information
+
+The information provided on our website is intended for general awareness and preliminary guidance.
+
+Product descriptions, photographs, illustrations, diagrams, technical information, estimated generation figures, and example calculations may be indicative.
+
+Actual equipment specifications, pricing, performance, availability, and project scope will be confirmed through the relevant quotation, technical proposal, product documentation, or written agreement.
+
+We reserve the right to update website information, correct errors, modify product descriptions, and discontinue or change offerings without prior notice, subject to applicable law and existing contractual commitments.
+
+## 4. Customer Enquiries and Quotations
+
+Customers may contact AeroSun Energy to request product information, project assessments, technical discussions, or commercial quotations.
+
+To prepare a quotation, we may request information such as:
+
+- Customer name and contact details.
+- Project location.
+- Electricity consumption and energy requirements.
+- Monthly electricity bills, where relevant.
+- Solar or wind system capacity requirements.
+- Available rooftop or land area.
+- Equipment specifications.
+- Installation and operating requirements.
+- Project budget and expected timeline.
+
+Any quotation provided by AeroSun Energy will be subject to the terms, validity period, specifications, inclusions, exclusions, and commercial conditions stated in that quotation.
+
+Unless expressly confirmed in writing, a preliminary estimate or website enquiry does not constitute a final project quotation or binding commitment.
+
+## 5. Orders and Order Confirmation
+
+An order will be considered accepted only after confirmation by AeroSun Energy through an authorized written communication, order confirmation, invoice, or agreement, as applicable.
+
+The order confirmation may specify:
+
+- Product descriptions and quantities.
+- Technical specifications.
+- Agreed prices.
+- Applicable taxes.
+- Payment schedule.
+- Delivery arrangements.
+- Installation scope, if applicable.
+- Estimated delivery or project timelines.
+- Warranty terms.
+- Special conditions.
+
+Any changes to an accepted order must be agreed upon in writing.
+
+## 6. Pricing and Taxes
+
+Prices may vary depending on equipment specifications, capacity, supplier pricing, customization, transportation, installation requirements, and applicable taxes.
+
+Unless expressly stated otherwise, prices should not be assumed to include:
+
+- Goods and Services Tax (GST).
+- Transportation and freight.
+- Loading and unloading.
+- Civil and structural work.
+- Electrical infrastructure upgrades.
+- Installation and commissioning.
+- Permits, approvals, or statutory charges.
+- Additional equipment or accessories.
+- Maintenance and service charges.
+
+The applicable quotation or invoice will identify the charges included in the transaction.
+
+## 7. Payments
+
+Customers must make payments according to the payment terms specified in the accepted quotation, purchase order, invoice, or agreement.
+
+Payment terms may vary depending on the project and may include advance payments, milestone payments, equipment delivery payments, installation payments, or final settlement.
+
+AeroSun Energy will communicate applicable payment details through authorized company channels.
+
+Customers should verify payment instructions before transferring money. Payments should not be made to unauthorized individuals or accounts claiming to represent AeroSun Energy.
+
+## 8. Product Specifications and Customization
+
+Renewable energy systems may require customization according to:
+
+- Required electrical capacity.
+- Site conditions.
+- Solar irradiation.
+- Wind-resource availability.
+- Load profile.
+- Battery storage requirements.
+- Installation height and location.
+- Structural and electrical requirements.
+- Environmental and operating conditions.
+
+Customized products and systems may differ from standard catalogue configurations.
+
+Final specifications will be governed by the approved technical proposal, quotation, product documentation, or written agreement.
+
+## 9. Site Assessment and Customer Responsibilities
+
+For projects requiring site evaluation or installation, customers are responsible for providing accurate and complete information about the property and installation location.
+
+This may include:
+
+- Site access and ownership or authorization details.
+- Roof or land availability.
+- Structural information, where available.
+- Existing electrical infrastructure.
+- Electricity consumption details.
+- Water-source and pumping information for agricultural projects.
+- Known site restrictions and safety concerns.
+
+Customers must obtain or authorize access to the site and disclose any conditions that may affect installation, safety, performance, or project execution.
+
+Any required structural assessment, electrical inspection, or other specialist evaluation must be completed before installation where necessary.
+
+## 10. Installation and Commissioning
+
+Where installation or commissioning is included in a project, the scope and responsibilities will be specified in the relevant quotation or agreement.
+
+Installation may depend on:
+
+- Site readiness.
+- Equipment availability.
+- Weather conditions.
+- Safe access.
+- Electrical and structural suitability.
+- Required permissions and approvals.
+- Availability of qualified personnel.
+- Coordination with utilities or other contractors.
+
+Estimated project schedules may change due to circumstances beyond reasonable control.
+
+Customers must not modify, relocate, dismantle, or interfere with installed equipment in a manner that creates safety risks or affects warranty coverage.
+
+## 11. Government Approvals and Subsidies
+
+Certain renewable energy installations may require approvals, registrations, inspections, grid-interconnection permissions, or compliance with applicable technical standards.
+
+Any applicable subsidy, incentive, tax benefit, net-metering arrangement, or government scheme is subject to eligibility conditions and the rules of the relevant government authority or electricity distribution company.
+
+AeroSun Energy does not guarantee the approval, availability, amount, or disbursement of any subsidy or incentive unless expressly confirmed under a separate written commitment.
+
+Customers are responsible for providing accurate documents and cooperating with required application procedures.
+
+## 12. Customer Obligations
+
+Customers agree to:
+
+- Provide accurate information.
+- Use equipment according to its intended purpose and manufacturer instructions.
+- Maintain safe access to installed equipment.
+- Avoid unauthorized modifications.
+- Follow electrical and operating safety instructions.
+- Make payments according to agreed terms.
+- Obtain necessary property permissions.
+- Inform AeroSun Energy of relevant operational issues.
+- Avoid using equipment for unlawful or unsafe purposes.
+
+## 13. Intellectual Property
+
+All content on the AeroSun Energy website, including text, graphics, logos, photographs, illustrations, designs, layouts, and other materials, is owned by AeroSun Energy or used with appropriate permission, unless otherwise indicated.
+
+You may not reproduce, distribute, modify, publish, commercially exploit, or reuse website content without prior written permission, except where permitted by law.
+
+## 14. Limitation of Liability
+
+To the extent permitted by applicable law, AeroSun Energy shall not be responsible for losses arising from:
+
+- Incorrect information supplied by customers.
+- Unauthorized modifications to equipment.
+- Improper operation or maintenance.
+- Site conditions not disclosed before installation.
+- Weather conditions and natural resource variations.
+- Utility interruptions or grid-related issues.
+- Third-party equipment failures outside our contractual responsibility.
+- Delays caused by circumstances beyond reasonable control.
+
+Nothing in these Terms & Conditions excludes liability that cannot lawfully be excluded, including applicable consumer rights and liability for matters where exclusion is prohibited by law.
+
+Any project-specific liability provisions will be governed by the relevant written agreement.
+
+## 15. Third-Party Products and Services
+
+Certain equipment or services may be supplied, manufactured, supported, or maintained by third-party manufacturers, suppliers, contractors, or service providers.
+
+Such products may be subject to their own specifications, warranty conditions, manuals, and service procedures.
+
+Where applicable, AeroSun Energy will communicate the relevant third-party terms to customers.
+
+## 16. Force Majeure
+
+AeroSun Energy shall not be considered in breach of its obligations to the extent that performance is prevented or delayed by circumstances beyond reasonable control.
+
+Such circumstances may include natural disasters, extreme weather, floods, fires, strikes, transportation disruptions, government restrictions, regulatory changes, supplier disruptions, epidemics, or other unforeseen events.
+
+We will make reasonable efforts to communicate material delays and identify practical alternatives where possible.
+
+## 17. Website Availability and Security
+
+We aim to maintain the availability and security of our website. However, uninterrupted access cannot be guaranteed.
+
+The website may occasionally be unavailable due to maintenance, technical issues, hosting problems, or other circumstances.
+
+Users must not attempt unauthorized access, disrupt website operations, introduce malicious software, or misuse website forms and communication facilities.
+
+## 18. Privacy
+
+Your use of our website and services is also subject to our Privacy Policy, which explains how we collect, use, store, and protect personal information.
+
+Please review the Privacy Policy available on our website.
+
+## 19. Changes to These Terms
+
+AeroSun Energy may revise these Terms & Conditions from time to time.
+
+Updated terms will be published on this page with a revised date. Continued use of the website after changes are published indicates acceptance of the updated terms, to the extent permitted by law.
+
+Changes to an existing customer order or agreement will be governed by the applicable contractual change provisions.
+
+## 20. Governing Law and Jurisdiction
+
+These Terms & Conditions shall be governed by the laws of India.
+
+Subject to applicable consumer protection laws and other mandatory legal provisions, courts of competent jurisdiction in Andhra Pradesh shall have jurisdiction over disputes arising from these Terms & Conditions.
+
+Nothing in this section limits any statutory rights or remedies available to customers under applicable law.
+
+## 21. Contact Information
+
+**AeroSun Energy Private Limited**
+
+Website: https://aerosunenergy.in/  
+Email: customercare@aerosunenergy.in  
+Phone: +91 8099181075
+
+Address:  
+D.No. 11-184, Gollavanigunta,  
+T.N. Pallem, Tirupati,  
+Andhra Pradesh – 517501, India.
+
+**For enquiries regarding these Terms & Conditions, please contact us through our official communication channels.**
+
+**AeroSun Energy — Power from sun and wind.**
+
+# 2. Return, Refund & Cancellation Policy
+
+**Effective Date:** 30 October 2026  
+**Last Updated:** 30 October 2026
+
+## 1. Introduction
+
+At AeroSun Energy Private Limited ("AeroSun Energy", "we", "our", or "us"), we aim to provide customers with suitable renewable energy products and solutions.
+
+Our offerings may include solar panels, wind turbines, inverters, batteries, solar pumpsets, electrical accessories, hybrid renewable energy systems, and related services.
+
+This Return, Refund & Cancellation Policy explains the general process for requesting order cancellations, product returns, replacements, and refunds.
+
+The applicable terms may vary depending on the product, order type, customization, installation status, manufacturer warranty, and agreed commercial conditions.
+
+## 2. Scope of This Policy
+
+This policy applies, where relevant, to:
+
+- Solar panels and rooftop solar equipment.
+- Wind turbines and associated components.
+- Solar and hybrid inverters.
+- Batteries and energy storage products.
+- Solar pumpsets and controllers.
+- Mounting structures and electrical accessories.
+- Customized renewable energy systems.
+- Equipment supplied as part of commercial and industrial projects.
+- Installation, commissioning, assessment, and maintenance services.
+
+The terms in an accepted quotation, purchase order, invoice, or separate agreement will also apply.
+
+Where any term conflicts with a mandatory consumer protection right, the applicable law will prevail.
+
+## 3. Order Cancellation
+
+Customers who wish to cancel an order should contact AeroSun Energy as soon as possible through the official email address or telephone number.
+
+Cancellation requests should include:
+
+- Customer name.
+- Order or invoice number.
+- Product or project details.
+- Date of order.
+- Reason for cancellation.
+- Contact information.
+
+### 3.1 Cancellation Before Order Processing
+
+If a cancellation request is received before procurement, manufacturing, dispatch, or other committed work has started, it may be considered subject to the order terms.
+
+Any refund, deduction, or cancellation charge will be determined according to the accepted quotation, applicable law, and actual costs incurred.
+
+### 3.2 Cancellation After Procurement or Processing
+
+Once equipment has been procured, customized, manufactured, reserved, or prepared for dispatch, cancellation may be subject to costs already incurred.
+
+These may include supplier cancellation charges, customization costs, procurement expenses, logistics charges, or other documented commitments.
+
+Any applicable deductions will be communicated to the customer.
+
+### 3.3 Cancellation After Dispatch
+
+Orders that have already been dispatched may not be eligible for ordinary cancellation.
+
+Customers should contact us to discuss the available options. Any return or refund will be considered according to product condition, supplier terms, the accepted order, and applicable law.
+
+### 3.4 Customized Products
+
+Products or systems specifically configured or customized for a customer's project may have different cancellation and return conditions.
+
+Examples include:
+
+- Custom wind turbine configurations.
+- Customized generator assemblies.
+- Project-specific mounting structures.
+- Specially configured solar or hybrid systems.
+- Customized electrical panels and control equipment.
+
+Any applicable restrictions or cancellation charges should be communicated before the order is confirmed.
+
+## 4. Product Returns
+
+Customers who receive damaged, defective, incorrect, or incomplete products should contact AeroSun Energy promptly.
+
+Return requests should include:
+
+- Order or invoice number.
+- Product name and model.
+- Description of the issue.
+- Photographs or videos, where relevant.
+- Delivery date.
+- Contact details.
+
+Returns must be authorized by AeroSun Energy before equipment is shipped back, unless applicable law provides otherwise.
+
+### 4.1 Eligible Return Situations
+
+Subject to the applicable order terms and law, a return may be considered where:
+
+- The product delivered is different from the confirmed order.
+- The product arrives visibly damaged.
+- The product is supplied with missing components.
+- The product has a manufacturing defect covered by the applicable warranty or return terms.
+- The return is otherwise required under applicable law.
+
+### 4.2 Non-Returnable or Restricted Items
+
+Certain products may not be eligible for ordinary returns because of their nature or condition, subject to applicable law.
+
+These may include:
+
+- Customized or specially manufactured products.
+- Equipment installed or commissioned at the customer's site.
+- Products damaged due to improper handling after delivery.
+- Products altered or repaired without authorization.
+- Products damaged due to misuse, negligence, or improper installation by unauthorized persons.
+- Products returned without required accessories or documentation.
+- Products whose return is restricted by applicable manufacturer or supplier conditions.
+
+These restrictions do not override any mandatory legal rights relating to defective, misrepresented, or non-conforming goods.
+
+## 5. Damaged or Incorrect Products
+
+Customers are encouraged to inspect delivered products upon receipt.
+
+If a product appears damaged, incomplete, or incorrect, please notify AeroSun Energy as soon as reasonably possible.
+
+Where practical, retain the original packaging and provide photographs of:
+
+- The external packaging.
+- The product.
+- The product identification label.
+- Any visible damage.
+- The delivery documentation.
+
+We will review the issue and determine the appropriate next step, which may include repair, replacement, return, or refund, subject to the circumstances and applicable law.
+
+## 6. Refund Policy
+
+Refund requests will be reviewed after considering:
+
+- The reason for cancellation or return.
+- Order and payment records.
+- Product condition.
+- Whether procurement or customization has started.
+- Whether the equipment has been dispatched or installed.
+- Applicable supplier and manufacturer terms.
+- The accepted quotation or agreement.
+- Applicable legal requirements.
+
+Where a refund is approved, it will ordinarily be processed through the original payment method where feasible, or through another mutually agreed lawful method.
+
+The processing timeline will depend on payment-provider procedures, banking arrangements, and any required verification.
+
+Any deductions will be explained to the customer and must be consistent with the applicable agreement and law.
+
+## 7. Installation and Service Cancellation
+
+Installation, site assessment, engineering, commissioning, and maintenance services may involve planning, labour, travel, procurement, and other project-specific costs.
+
+If a customer cancels a service after work has started, charges may apply for work already completed and costs reasonably incurred, subject to the agreed scope and applicable law.
+
+For projects involving advance payments or milestone payments, the refund calculation will be based on the applicable written agreement and the status of completed work.
+
+## 8. Replacement and Repair
+
+Depending on the nature of the issue, product availability, and warranty conditions, AeroSun Energy may coordinate:
+
+- Product repair.
+- Replacement of defective components.
+- Replacement of an entire product where appropriate.
+- Manufacturer inspection.
+- Technical support.
+- Other suitable remedies.
+
+The available remedy will depend on the product, defect, supplier terms, and applicable legal requirements.
+
+## 9. Shipping Costs for Returns
+
+Responsibility for return shipping, collection, packaging, and handling costs will be determined according to the reason for the return and applicable law.
+
+For example, where a product is confirmed to be incorrectly supplied or damaged before delivery, return or replacement arrangements will be handled in accordance with the agreed order terms and applicable legal requirements.
+
+Where a return is requested for reasons unrelated to a product defect or supply error, the customer may be responsible for reasonable return-related expenses if this was properly disclosed and agreed.
+
+## 10. Refund Exclusions and Limitations
+
+No provision of this policy is intended to remove statutory consumer rights.
+
+Refunds may not be available merely because:
+
+- Actual renewable generation varies with weather and site conditions.
+- A customer changes their electricity consumption.
+- The customer changes their project requirements after procurement.
+- A system produces less energy than an illustrative website calculation that was not a contractual guarantee.
+
+However, claims involving defective products, incorrect specifications, misrepresentation, or failure to meet an agreed contractual obligation will be reviewed on their merits.
+
+## 11. How to Request a Return, Refund, or Cancellation
+
+Please contact us using the details below.
+
+**Email:** customercare@aerosunenergy.in  
+**Phone:** +91 8099181075
+
+**Subject:** Return / Refund / Cancellation Request
+
+Please include your order number, invoice details, product information, and a clear explanation of your request.
+
+AeroSun Energy will review the request and communicate the next steps.
+
+## 12. Changes to This Policy
+
+AeroSun Energy may update this policy from time to time to reflect changes in business operations, product categories, supplier arrangements, and applicable laws.
+
+The latest version will be published on our website.
+
+## 13. Contact Information
+
+**AeroSun Energy Private Limited**
+
+Website: https://aerosunenergy.in/  
+Email: customercare@aerosunenergy.in  
+Phone: +91 8099181075
+
+Address:  
+D.No. 11-184, Gollavanigunta,  
+T.N. Pallem, Tirupati,  
+Andhra Pradesh – 517501, India.
+
+**AeroSun Energy — Power from sun and wind.**
+
+# 3. Shipping & Delivery Policy
+
+**Effective Date:** 30 October 2026  
+**Last Updated:** 30 October 2026
+
+## 1. Introduction
+
+AeroSun Energy Private Limited ("AeroSun Energy", "we", "our", or "us") provides renewable energy products and solutions for residential, commercial, agricultural, industrial, and institutional applications.
+
+Our products may include:
+
+- Solar panels and photovoltaic equipment.
+- Wind turbines and generator components.
+- Solar and hybrid inverters.
+- Batteries and energy storage systems.
+- Solar pumpsets and pump controllers.
+- Mounting structures.
+- Electrical protection equipment.
+- Cables, connectors, and accessories.
+- Customized solar, wind, and hybrid energy equipment.
+
+This Shipping & Delivery Policy explains the general arrangements for product dispatch, transportation, delivery, and receipt.
+
+Actual delivery terms will be confirmed in the applicable quotation, invoice, purchase order, or project agreement.
+
+## 2. Delivery Locations
+
+Delivery availability depends on product type, transportation arrangements, supplier availability, site accessibility, and project requirements.
+
+AeroSun Energy may arrange deliveries to eligible locations within India, subject to confirmation.
+
+For remote areas, agricultural properties, industrial sites, and locations with restricted vehicle access, additional transport coordination may be necessary.
+
+Delivery outside India, where offered, will be subject to separate commercial, customs, and shipping arrangements.
+
+## 3. Order Processing
+
+Orders are processed after the applicable requirements have been completed, which may include:
+
+- Order confirmation.
+- Required advance payment.
+- Technical specification confirmation.
+- Product availability verification.
+- Supplier procurement.
+- Customization or manufacturing, where applicable.
+- Dispatch authorization.
+
+Customers will be informed of the expected dispatch or delivery schedule through the agreed communication channel.
+
+## 4. Delivery Timelines
+
+Delivery timelines depend on:
+
+- Product availability.
+- Supplier and manufacturer schedules.
+- Customized manufacturing requirements.
+- Order quantity and system capacity.
+- Transportation arrangements.
+- Project location.
+- Weather and road conditions.
+- Regulatory or documentation requirements.
+
+Any timeline communicated before order confirmation is an estimate unless expressly agreed as a binding delivery commitment.
+
+For customized wind turbines, hybrid systems, industrial solar equipment, and project-specific assemblies, delivery may require additional preparation and coordination.
+
+If a significant delay occurs, AeroSun Energy will make reasonable efforts to communicate the updated schedule.
+
+## 5. Shipping and Transportation Charges
+
+Transportation, freight, loading, unloading, packaging, insurance, and handling charges will be specified in the applicable quotation or invoice.
+
+Depending on the order, these charges may be:
+
+- Included in the quoted price.
+- Charged separately.
+- Calculated according to distance, weight, volume, and transportation requirements.
+- Arranged through a mutually agreed logistics provider.
+
+Customers should review the quotation carefully to understand which delivery-related charges are included.
+
+## 6. Delivery of Large and Heavy Equipment
+
+Certain renewable energy products require special transportation and handling.
+
+These may include:
+
+- Large solar panel consignments.
+- Wind turbine blades and generator assemblies.
+- Towers and mounting structures.
+- Industrial inverters and electrical panels.
+- Large battery systems.
+- Pumping equipment.
+- Customized renewable energy assemblies.
+
+Such products may require special vehicles, lifting equipment, unloading arrangements, or additional site preparation.
+
+Customers may be required to provide suitable access and unloading facilities at the delivery location where this is part of the agreed delivery arrangement.
+
+## 7. Customer Responsibilities at Delivery
+
+Customers or their authorized representatives should:
+
+- Provide an accurate delivery address.
+- Provide a reachable contact number.
+- Ensure that the site is accessible.
+- Arrange authorized personnel to receive the goods.
+- Provide unloading arrangements where required by the order terms.
+- Check the product quantity and visible condition.
+- Retain delivery documentation.
+- Report visible damage, missing items, or incorrect products promptly.
+
+Any delivery restrictions or special access conditions should be communicated before dispatch.
+
+## 8. Inspection Upon Receipt
+
+Customers are encouraged to inspect the outer packaging and visible condition of products upon delivery.
+
+If any visible damage, shortage, or discrepancy is identified, customers should:
+
+1. Record the issue on the delivery receipt where possible.
+2. Take photographs or videos.
+3. Retain the packaging.
+4. Notify AeroSun Energy promptly.
+5. Provide the invoice or order reference.
+
+This helps us coordinate with the relevant supplier or logistics provider.
+
+Inspection at delivery does not remove any applicable warranty or statutory rights relating to latent defects or other non-obvious problems.
+
+## 9. Failed Delivery or Incorrect Address
+
+If delivery cannot be completed because of an incorrect address, unavailable recipient, restricted access, or other customer-related issue, additional delivery charges or rescheduling may apply where disclosed and legally permissible.
+
+Customers should ensure that delivery information is accurate before dispatch.
+
+## 10. Partial Deliveries
+
+For large or complex renewable energy projects, products may be delivered in multiple shipments.
+
+For example, a solar installation may involve separate deliveries of panels, inverters, mounting structures, cables, and protection equipment.
+
+A hybrid project may involve separate shipments of solar equipment, wind turbine components, batteries, and electrical control equipment.
+
+Where partial delivery is planned, the expected shipment arrangement will be communicated to the customer.
+
+## 11. Installation and Delivery Are Different Services
+
+Delivery of equipment does not automatically include installation, commissioning, electrical connection, structural work, or site preparation.
+
+These services will be included only where specified in the accepted quotation or project agreement.
+
+Customers should confirm whether the order includes:
+
+- Transportation.
+- Unloading.
+- Installation.
+- Electrical connection.
+- Civil or structural work.
+- Commissioning.
+- Testing.
+- Customer handover.
+
+## 12. Delivery Delays Beyond Our Control
+
+Delivery may be delayed due to circumstances beyond reasonable control, including:
+
+- Extreme weather.
+- Floods and natural disasters.
+- Transportation disruptions.
+- Supplier or manufacturer delays.
+- Government restrictions.
+- Road closures.
+- Customs or regulatory delays.
+- Strikes or other unforeseen events.
+
+We will make reasonable efforts to communicate significant delays and coordinate revised delivery arrangements.
+
+## 13. Product Packaging and Handling
+
+Renewable energy equipment may contain sensitive electrical and mechanical components.
+
+Customers should follow the manufacturer's instructions for storage, lifting, transportation, and handling.
+
+Products should not be exposed to unsuitable environmental conditions, rough handling, or unauthorized modifications.
+
+Any storage requirements specified by the manufacturer should be followed until installation.
+
+## 14. Contact for Shipping and Delivery Enquiries
+
+For questions regarding an order, shipment, or delivery, contact:
+
+**Email:** customercare@aerosunenergy.in  
+**Phone:** +91 8099181075
+
+**Subject:** Shipping / Delivery Enquiry
+
+Please include your order number, invoice reference, delivery location, and contact information.
+
+## 15. Changes to This Policy
+
+AeroSun Energy may update this policy to reflect changes in delivery arrangements, product categories, logistics partners, and applicable laws.
+
+The latest version will be published on our website.
+
+## 16. Company Details
+
+**AeroSun Energy Private Limited**
+
+Website: https://aerosunenergy.in/  
+Email: customercare@aerosunenergy.in  
+Phone: +91 8099181075
+
+Address:  
+D.No. 11-184, Gollavanigunta,  
+T.N. Pallem, Tirupati,  
+Andhra Pradesh – 517501, India.
+
+**AeroSun Energy — Power from sun and wind.**
+
+# 4. Warranty & Service Policy
+
+**Effective Date:** 30 October 2026  
+**Last Updated:** 30 October 2026
+
+## 1. Introduction
+
+AeroSun Energy Private Limited ("AeroSun Energy", "we", "our", or "us") is committed to supporting customers who choose renewable energy solutions for their homes, businesses, farms, industries, and institutions.
+
+Our renewable energy solutions may include solar panels, wind turbines, inverters, batteries, solar pumpsets, hybrid energy systems, electrical equipment, and related components.
+
+This policy explains the general principles governing product warranties, service requests, maintenance, and technical support.
+
+The actual warranty applicable to a product or project will be determined by the manufacturer's warranty documentation, product invoice, accepted quotation, and any separate written warranty agreement.
+
+## 2. Product Warranty Coverage
+
+Different renewable energy products have different warranty periods and coverage conditions.
+
+Depending on the product, warranty coverage may be provided by:
+
+- The original equipment manufacturer.
+- The product supplier or distributor.
+- AeroSun Energy, where a separate warranty is expressly provided.
+- An authorized service provider.
+
+Customers should refer to the relevant warranty certificate, product documentation, invoice, or written agreement to identify the responsible warranty provider.
+
+### 2.1 Solar Panels
+
+Solar photovoltaic modules may have manufacturer warranties covering specified manufacturing defects and/or power output degradation over a stated period.
+
+The precise coverage, duration, performance thresholds, and claim procedure depend on the manufacturer's warranty documentation.
+
+### 2.2 Solar and Hybrid Inverters
+
+Inverters may have warranties covering specified manufacturing defects and internal component failures under defined operating conditions.
+
+Warranty conditions may include installation requirements, operating temperature limits, ventilation, electrical protection, and maintenance instructions.
+
+### 2.3 Batteries and Energy Storage Systems
+
+Battery warranties may depend on:
+
+- Battery chemistry and model.
+- Charge and discharge cycles.
+- Depth of discharge.
+- Operating temperature.
+- Charging and discharging current.
+- Storage and maintenance conditions.
+- Battery management system operation.
+
+Battery capacity may reduce over time through normal ageing and usage. Such degradation will be assessed according to the applicable manufacturer warranty.
+
+### 2.4 Wind Turbines and Generator Components
+
+Wind turbine products may include mechanical and electrical components such as:
+
+- Rotor blades.
+- Generator assemblies.
+- Bearings.
+- Shafts and mechanical couplings.
+- Braking and control systems.
+- Electrical connections.
+- Towers and mounting components.
+
+Warranty coverage may differ for each component.
+
+The customer must operate and maintain the equipment according to the approved installation requirements and manufacturer instructions.
+
+### 2.5 Solar Pumpsets and Controllers
+
+Solar pumpsets and related controllers may be covered under the respective manufacturer's warranty.
+
+Warranty conditions may include correct pump selection, water quality, operating conditions, electrical compatibility, dry-run protection, and maintenance requirements.
+
+## 3. Warranty Period
+
+Warranty periods are product-specific and must be verified from the relevant manufacturer documentation or written agreement.
+
+AeroSun Energy does not automatically provide an additional warranty beyond the warranty expressly offered for the product or service.
+
+The applicable warranty period and its commencement date should be confirmed in the invoice, warranty certificate, or project agreement.
+
+## 4. What May Be Covered Under Warranty?
+
+Subject to the applicable warranty terms, coverage may include:
+
+- Manufacturing defects.
+- Defective components.
+- Material defects.
+- Electrical or mechanical failures attributable to covered manufacturing defects.
+- Other failures expressly covered by the manufacturer's warranty.
+
+The product must have been installed, operated, and maintained in accordance with the applicable technical instructions and warranty conditions.
+
+## 5. What May Not Be Covered?
+
+Unless expressly included in a written warranty or required by law, warranty coverage may exclude:
+
+- Physical damage caused by improper handling.
+- Unauthorized repair or modification.
+- Improper installation by unauthorized personnel.
+- Damage caused by incorrect electrical connections.
+- Overvoltage, lightning, or external electrical disturbances beyond specified protection limits.
+- Flooding, fire, accidents, or other external events.
+- Damage caused by negligence or misuse.
+- Operation outside specified voltage, current, temperature, or load limits.
+- Failure to follow maintenance instructions.
+- Normal wear and tear.
+- Cosmetic deterioration that does not affect functionality.
+- Consumable or replaceable items excluded by the manufacturer.
+- Damage caused by unsuitable site conditions or external equipment.
+
+These exclusions do not remove rights that customers may have under applicable consumer protection or other mandatory laws.
+
+## 6. Warranty Claim Process
+
+Customers who believe a product has developed a warranty-related defect should contact AeroSun Energy.
+
+Please provide:
+
+- Customer name.
+- Contact number and email address.
+- Invoice or order number.
+- Product name and model.
+- Serial number, where available.
+- Date of purchase or installation.
+- Description of the issue.
+- Photographs or videos, where relevant.
+- Error codes or monitoring information, where available.
+
+AeroSun Energy may request additional information to assess the claim.
+
+Depending on the product and warranty provider, the claim may require technical inspection, remote diagnosis, or manufacturer authorization.
+
+## 7. Inspection and Warranty Assessment
+
+After receiving a service request, the reported issue may be assessed to determine:
+
+- Whether the product is within its warranty period.
+- Whether the issue is covered by the applicable warranty.
+- Whether installation and operating conditions were compliant.
+- Whether the issue is related to a manufacturing defect.
+- Whether further inspection is necessary.
+
+AeroSun Energy may coordinate with the manufacturer, supplier, or authorized service provider where applicable.
+
+## 8. Repair or Replacement
+
+If a claim is accepted under the applicable warranty, the remedy will be determined by the responsible warranty provider and the applicable warranty terms.
+
+Depending on the circumstances, the remedy may include:
+
+- Repair of the defective product.
+- Replacement of defective components.
+- Replacement of the product.
+- Technical support or corrective action.
+- Another remedy required by the applicable warranty or law.
+
+Replacement products or components may be new or equivalent products as permitted by the applicable warranty terms.
+
+## 9. Installation and Workmanship
+
+Where AeroSun Energy expressly provides installation services, the scope of installation and any applicable workmanship warranty will be specified in the relevant quotation or written agreement.
+
+Workmanship-related concerns should be reported promptly with supporting details.
+
+Manufacturer product warranties and installation workmanship warranties are separate and may have different terms.
+
+## 10. Maintenance Responsibilities
+
+Renewable energy systems require appropriate inspection and maintenance to support safe and reliable operation.
+
+Depending on the equipment, maintenance may include:
+
+**Solar systems**
+- Periodic inspection of solar panels.
+- Cleaning where necessary and safe.
+- Checking mounting structures.
+- Inspecting cables and connectors.
+- Checking inverter operation.
+- Reviewing system performance.
+
+**Wind energy systems**
+- Inspection of rotor blades.
+- Checking mechanical fasteners.
+- Inspecting bearings and moving components.
+- Checking braking and control systems.
+- Inspecting electrical connections.
+- Reviewing vibration and unusual noise.
+- Checking tower and mounting integrity.
+
+**Battery systems**
+- Reviewing battery status and alarms.
+- Checking ventilation and environmental conditions.
+- Monitoring charge and discharge behaviour.
+- Following manufacturer storage and operating instructions.
+
+**Hybrid systems**
+- Checking energy management settings.
+- Reviewing generation and consumption data.
+- Inspecting system protection and electrical connections.
+- Verifying communication and monitoring equipment.
+
+Maintenance requirements depend on equipment type, installation conditions, and manufacturer instructions.
+
+## 11. Service Charges
+
+Service charges may apply for:
+
+- Out-of-warranty repairs.
+- Site visits.
+- Inspection and troubleshooting.
+- Labour and technical support.
+- Replacement parts.
+- Transportation and travel.
+- Equipment removal or reinstallation.
+- Additional maintenance services.
+
+Any applicable charges will be communicated before undertaking chargeable work, where reasonably practicable.
+
+## 12. Safety and Unauthorized Modifications
+
+Customers must not attempt unsafe repairs or modify electrical or mechanical components without appropriate technical qualifications and authorization.
+
+Wind turbines, electrical systems, batteries, and solar installations can present mechanical, electrical, fire, and structural risks.
+
+Customers should isolate equipment only in accordance with the manufacturer's safety instructions and seek qualified technical assistance when necessary.
+
+Unauthorized modifications may affect warranty coverage.
+
+## 13. Service Availability
+
+Service availability depends on product type, location, spare-parts availability, manufacturer support, and technical requirements.
+
+For remote and isolated locations, service visits may require additional planning and travel arrangements.
+
+Any estimated service response or completion time will be communicated based on the specific request and available resources.
+
+## 14. Warranty and Service Contact
+
+For warranty claims or technical support, contact:
+
+**Email:** customercare@aerosunenergy.in  
+**Phone:** +91 8099181075
+
+**Subject:** Warranty / Technical Support Request
+
+Please include your invoice number, product model, serial number, and a description of the issue.
+
+## 15. Changes to This Policy
+
+AeroSun Energy may update this policy to reflect changes in products, manufacturer warranty conditions, service arrangements, and applicable laws.
+
+The warranty applicable to an individual purchase will remain subject to the documentation and terms governing that purchase, subject to mandatory legal rights.
+
+## 16. Company Details
+
+**AeroSun Energy Private Limited**
+
+Website: https://aerosunenergy.in/  
+Email: customercare@aerosunenergy.in  
+Phone: +91 8099181075
+
+Address:  
+D.No. 11-184, Gollavanigunta,  
+T.N. Pallem, Tirupati,  
+Andhra Pradesh – 517501, India.
+
+**AeroSun Energy — Power from sun and wind.**
+
+# 5. Disclaimer
+
+**Effective Date:** 30 October 2026  
+**Last Updated:** 30 October 2026
+
+## 1. General Information
+
+Welcome to the website of **AeroSun Energy Private Limited** ("AeroSun Energy", "we", "our", or "us").
+
+Our website provides information about renewable energy technologies and solutions, including:
+
+- Solar energy systems.
+- Rooftop solar installations.
+- Off-grid solar power.
+- Solar pumpsets and agricultural applications.
+- Wind energy systems.
+- Vertical-axis and horizontal-axis wind turbines.
+- Commercial and industrial renewable energy.
+- Solar and wind hybrid systems.
+- Battery energy storage.
+- Hybrid microgrids and energy management.
+- Renewable energy applications for homes, farms, industries, campuses, and communities.
+
+The information provided on this website is intended for general information, awareness, and preliminary evaluation.
+
+It should not be treated as a substitute for a professional site assessment, engineering design, technical inspection, financial evaluation, or legal advice.
+
+## 2. Renewable Energy Generation Disclaimer
+
+Solar and wind power generation depends on natural environmental conditions.
+
+Actual electricity production may vary according to:
+
+- Solar irradiation.
+- Wind speed and direction.
+- Seasonal weather conditions.
+- Cloud cover and rainfall.
+- Ambient temperature.
+- Turbulence and surrounding obstructions.
+- Installation height and orientation.
+- Equipment specifications.
+- System design and electrical losses.
+- Maintenance and operating conditions.
+
+Any generation figures displayed on our website are estimates or illustrative examples unless expressly identified as verified project results.
+
+AeroSun Energy does not guarantee a particular daily, monthly, or annual energy output solely on the basis of website estimates.
+
+## 3. Solar Energy Performance Disclaimer
+
+Solar system performance may be affected by:
+
+- Panel orientation and tilt.
+- Shading from buildings, trees, or other obstructions.
+- Dust and dirt accumulation.
+- Panel temperature.
+- Inverter efficiency.
+- Cable and electrical losses.
+- Weather conditions.
+- Equipment ageing.
+- Installation quality.
+
+Solar generation estimates are intended to help customers understand the potential of a proposed system. Actual results require site-specific evaluation.
+
+## 4. Wind Energy Performance Disclaimer
+
+Wind turbine performance depends on the wind resource at the actual installation location.
+
+Factors that may affect wind energy production include:
+
+- Average wind speed.
+- Wind-speed distribution.
+- Wind direction.
+- Turbulence intensity.
+- Installation height.
+- Nearby buildings, trees, and structures.
+- Rotor diameter and turbine design.
+- Cut-in, rated, and cut-out wind speeds.
+- Mechanical and electrical system efficiency.
+- Maintenance and operating conditions.
+
+Wind power available in the wind increases approximately with the cube of wind speed under simplified physical assumptions. However, this does not mean a turbine's electrical output will increase by exactly the same ratio in every operating condition.
+
+A turbine's actual output depends on its power curve, control system, operating limits, and site conditions.
+
+AeroSun Energy does not guarantee that every location is suitable for wind energy installation. Proper wind-resource assessment and site evaluation are important before selecting a turbine.
+
+## 5. Hybrid Energy System Disclaimer
+
+Hybrid renewable energy systems may combine solar PV, wind turbines, battery storage, inverters, generators, and energy management equipment.
+
+The performance of a hybrid system depends on the interaction between its components and the electricity demand of the installation.
+
+Combining solar and wind generation does not automatically guarantee uninterrupted electricity.
+
+System reliability depends on:
+
+- Available renewable resources.
+- Load profile.
+- Generation capacity.
+- Battery energy capacity.
+- Battery power capability.
+- Inverter and controller specifications.
+- Backup generation availability.
+- Electrical protection.
+- System configuration and operating strategy.
+
+Any claim regarding continuous or uninterrupted power must be supported by a specific engineering design and defined operating conditions.
+
+## 6. Battery Storage Disclaimer
+
+Battery storage capacity and performance may change over time due to:
+
+- Charge and discharge cycles.
+- Depth of discharge.
+- Temperature.
+- Operating current.
+- Charging and discharging practices.
+- Battery ageing.
+- Manufacturer specifications.
+- Maintenance and environmental conditions.
+
+Nominal battery capacity is not necessarily equal to usable energy delivered to connected loads.
+
+Battery backup duration depends on the actual load, usable battery energy, inverter efficiency, reserve settings, and other operating conditions.
+
+Customers should follow the battery manufacturer's operating and safety instructions.
+
+## 7. Savings, Financial Returns, and Payback Disclaimer
+
+Our website may contain illustrative calculations relating to:
+
+- Electricity generation.
+- Electricity bill reduction.
+- Renewable energy value.
+- Fuel savings.
+- Operating cost reduction.
+- Project payback.
+- Potential return on investment.
+
+These calculations are provided for explanatory purposes.
+
+Actual financial results may vary depending on:
+
+- Equipment purchase cost.
+- Installation and civil work costs.
+- Electricity tariffs.
+- Grid charges and applicable fees.
+- Self-consumption levels.
+- Export compensation.
+- Subsidy or incentive eligibility.
+- Financing costs.
+- Maintenance and replacement expenses.
+- Battery degradation and replacement.
+- Actual energy generation.
+- Changes in electricity consumption.
+
+A projected saving or payback period is not a guarantee of future financial performance.
+
+Customers should undertake an independent financial assessment before making investment decisions.
+
+## 8. Government Subsidies and Incentives
+
+Information about government schemes, renewable energy subsidies, tax benefits, incentives, and net-metering arrangements may change over time.
+
+Eligibility and approval may depend on:
+
+- Government policies.
+- Applicable regulations.
+- Customer category.
+- Installation capacity.
+- Equipment specifications.
+- Approved vendors or manufacturers.
+- Documentation requirements.
+- Utility or distribution-company procedures.
+
+AeroSun Energy does not guarantee that any particular customer or installation will qualify for a government subsidy or incentive.
+
+Customers should verify current eligibility and applicable conditions with the relevant government authority or electricity distribution company.
+
+## 9. Product Specifications and Images
+
+Product descriptions, illustrations, photographs, diagrams, and technical specifications on our website may be provided for general reference.
+
+Actual products may differ in appearance, dimensions, configuration, accessories, and specifications depending on the manufacturer, model, and customization requirements.
+
+Final product specifications should be confirmed through the relevant quotation, technical proposal, invoice, manufacturer's documentation, or written agreement.
+
+## 10. Installation and Site Suitability
+
+Renewable energy installations require appropriate site assessment and technical planning.
+
+A site may be unsuitable for a particular installation because of:
+
+- Structural limitations.
+- Insufficient roof or land area.
+- Shading.
+- Poor wind conditions.
+- Excessive turbulence.
+- Environmental exposure.
+- Electrical infrastructure limitations.
+- Safety restrictions.
+- Local regulatory requirements.
+
+Rooftop wind turbines, in particular, require careful consideration of vibration, noise, turbulence, structural loading, mounting arrangements, and maintenance access.
+
+Website information should not be interpreted as confirmation that a particular property or location is technically suitable for a proposed installation.
+
+## 11. Electrical and Mechanical Safety
+
+Solar panels, inverters, batteries, wind turbines, generators, and associated electrical equipment may involve electrical, mechanical, fire, and structural hazards.
+
+Installation, inspection, maintenance, and repair should be performed by appropriately qualified personnel.
+
+Customers should follow the applicable equipment manuals, safety procedures, and installation requirements.
+
+AeroSun Energy does not recommend unauthorized modifications or unsafe operation of renewable energy equipment.
+
+## 12. Third-Party Products and External Links
+
+Our website may refer to or link to products, manufacturers, suppliers, service providers, government websites, or other third-party resources.
+
+Third-party products and services may be subject to separate specifications, warranty conditions, terms, and privacy policies.
+
+We are not responsible for the independent content, availability, or policies of external websites that we do not control.
+
+Customers should verify relevant third-party information before making decisions.
+
+## 13. Limitation of Responsibility
+
+To the extent permitted by applicable law, AeroSun Energy shall not be responsible for losses arising solely from:
+
+- Reliance on general website information without a proper project assessment.
+- Changes in weather or renewable resource availability.
+- Customer-supplied inaccurate information.
+- Unauthorized equipment modifications.
+- Improper operation or maintenance.
+- Site conditions not disclosed during project assessment.
+- Third-party services or products outside our contractual responsibility.
+- Events beyond reasonable control.
+
+Nothing in this Disclaimer excludes liability that cannot lawfully be excluded or restricts mandatory rights available to consumers under applicable law.
+
+The terms of an accepted quotation, purchase agreement, service agreement, or warranty documentation will govern the relevant transaction.
+
+## 14. No Automatic Professional or Investment Advice
+
+Website information is not intended to constitute:
+
+- A final engineering design.
+- A structural safety certification.
+- An electrical safety approval.
+- A legal opinion.
+- A tax opinion.
+- A financial investment recommendation.
+- A guaranteed energy-generation assessment.
+
+Customers should obtain the relevant professional advice and site-specific evaluation before proceeding with a renewable energy project.
+
+## 15. Changes to This Disclaimer
+
+AeroSun Energy may update this Disclaimer to reflect changes in our website, products, renewable energy technologies, services, and applicable laws.
+
+The latest version will be published on this page with an updated date.
+
+## 16. Contact Information
+
+For questions about information published on our website, please contact:
+
+**AeroSun Energy Private Limited**
+
+Website: https://aerosunenergy.in/  
+Email: customercare@aerosunenergy.in  
+Phone: +91 8099181075
+
+Address:  
+D.No. 11-184, Gollavanigunta,  
+T.N. Pallem, Tirupati,  
+Andhra Pradesh – 517501, India.
+
+**AeroSun Energy — Power from sun and wind.**
+
+## 17. Our Renewable Energy Commitment
+
+AeroSun Energy believes in supporting a cleaner and more sustainable energy future through solar power, wind energy, hybrid renewable energy systems, and innovative green-energy applications.
+
+Our objective is to help customers understand renewable energy opportunities and explore practical solutions for residential, agricultural, commercial, industrial, and community applications.
+
+We believe that responsible renewable energy adoption begins with transparent information, realistic performance expectations, appropriate engineering, and customer awareness.
+
+**Power from sun and wind. Building a more sustainable energy future.**
+
+## Recommended website policy navigation
+
+Create a **Policies** section in your website footer with these five links:
+
+| Policy page | Suggested URL slug |
+|---|---|
+| Terms & Conditions | `/terms-and-conditions` |
+| Return, Refund & Cancellation Policy | `/return-refund-cancellation-policy` |
+| Shipping & Delivery Policy | `/shipping-delivery-policy` |
+| Warranty & Service Policy | `/warranty-service-policy` |
+| Disclaimer | `/disclaimer` |
+| Privacy Policy | `/privacy-policy` |
+
+### Important items to finalize before publishing
+
+There are a few business decisions that should be reflected in the final policies:
+
+1. **Returns:** Decide whether standard products can be returned within a specified period and whether customized wind turbines or hybrid systems have different conditions.
+2. **Refunds:** Define your actual refund processing timeline and cancellation deductions.
+3. **Delivery:** Confirm whether you offer delivery across India and whether transportation and unloading are included in quotations.
+4. **Warranty:** Publish actual manufacturer warranty periods for the products you sell. Do not use one universal warranty period for all equipment.
+5. **Installation:** Clearly distinguish between equipment supply, installation, commissioning, and maintenance.
+6. **Payments:** Define accepted payment methods and your advance-payment or milestone-payment arrangements.
+
+**Legal recommendation:** Have an Indian lawyer review these documents before publication, particularly the cancellation, refund, warranty, liability, and consumer-rights provisions. These templates should reflect your actual business practices; publishing a policy does not by itself establish legal compliance.
+
+The five policies are now drafted as separate website pages, ready for your final business-specific details and legal review.

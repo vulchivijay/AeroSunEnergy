@@ -81,7 +81,7 @@ export default function Footer() {
 	const footer = t.footer
 	const navLinks = t.navbar.links
 	const queries = t.navbar.quiries || []
-	const allowedQuickEnquiries = ['/know-eligibility', '/customer-enquiry', '/installation-checklist']
+	const allowedQuickEnquiries = ['/know-eligibility', '/customer-enquiry', '/installation-checklist', '/projects']
 	const quickEnquiries = queries
 		.filter((item) => allowedQuickEnquiries.includes(item.href))
 		.sort((a, b) => allowedQuickEnquiries.indexOf(a.href) - allowedQuickEnquiries.indexOf(b.href))
@@ -304,14 +304,14 @@ export default function Footer() {
 				<div className="mx-auto flex w-full max-w-350 flex-col items-center justify-between gap-2 px-4 text-center sm:px-6 lg:flex-row lg:justify-between lg:px-8">
 					<div className="flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-[0.18em] text-gray-900">
 						<Link
-							href="/terms"
+							href="/terms-conditions"
 							className="transition-colors duration-200 hover:text-green-500"
 						>
 							Terms & Conditions
 						</Link>
 						<span className="text-slate-500">|</span>
 						<Link
-							href="/privacy"
+							href="/privacy-policy"
 							className="transition-colors duration-200 hover:text-orange-500"
 						>
 							Privacy Policy
