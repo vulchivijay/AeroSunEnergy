@@ -10,9 +10,9 @@ import {
 } from '../components/ui'
 
 export const metadata = {
-  title: 'Wind Energy Systems | AeroSun Energy',
+  title: 'Wind Energy Systems | Small Wind Turbines, Hybrid Systems & Renewable Power by AeroSun Energy',
   description:
-    'Wind energy systems including horizontal-axis turbines, vertical-axis turbines, distributed wind, off-grid wind, and solar-wind hybrid systems for farms, commercial sites, and rural applications.',
+    'AeroSun Energy offers wind turbine systems, distributed wind solutions, and solar-wind hybrid renewable energy systems for farms, commercial properties, and rural projects in India.',
   keywords: [
     'wind energy systems',
     'horizontal axis wind turbine',
@@ -32,12 +32,20 @@ export const metadata = {
     'wind energy for businesses',
     'wind turbines for agriculture',
     'renewable energy India',
+    'wind project consultation',
+    'wind power generation',
+    'clean energy wind systems',
+    'small-scale wind energy',
+    'hybrid renewable power',
+    'wind and solar hybrid system',
+    'wind energy company India',
+    'renewable power solutions',
   ],
   alternates: {
     canonical: '/windenergy',
   },
   openGraph: {
-    title: 'Wind Energy Systems | AeroSun Energy',
+    title: 'Wind Energy Systems | Small Wind Turbines, Hybrid Systems & Renewable Power by AeroSun Energy',
     description:
       'Explore small wind turbines, large commercial systems, distributed wind, and hybrid solar-wind solutions for sustainable power generation.',
     url: 'https://aerosunenergy.in/windenergy',

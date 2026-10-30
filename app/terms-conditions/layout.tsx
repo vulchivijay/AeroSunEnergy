@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Terms and Conditions | AeroSun Energy',
   description:
-    'Read the AeroSun Energy website terms and conditions covering renewable energy service scope, usage rules, liability, intellectual property, and legal obligations.',
+    'Read the AeroSun Energy website terms and conditions covering service scope, user obligations, website usage, intellectual property, liability, and governing law for renewable energy services.',
   keywords: [
     'AeroSun Energy terms and conditions',
     'website terms and conditions',

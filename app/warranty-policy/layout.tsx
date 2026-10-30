@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Warranty Policy | AeroSun Energy',
+  title: 'Warranty Policy for Solar, Wind & Hybrid Energy Systems | AeroSun Energy',
   description:
     'Review AeroSun Energy warranty terms, service responsibilities, and after-sales support for solar, wind, and hybrid energy systems.',
   keywords: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     canonical: '/warranty-policy',
   },
   openGraph: {
-    title: 'Warranty Policy | AeroSun Energy',
+    title: 'Warranty Policy for Solar, Wind & Hybrid Energy Systems | AeroSun Energy',
     description:
       'Understand AeroSun Energy warranty coverage, support commitments, and service terms for renewable energy systems.',
     url: 'https://aerosunenergy.in/warranty-policy',

@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Privacy Policy | AeroSun Energy',
   description:
-    'Review the AeroSun Energy Privacy Policy covering personal data collection, cookies, website analytics, user rights, and data protection practices.',
+    'Review the AeroSun Energy privacy policy covering personal data collection, cookies, website analytics, user rights, and data protection practices for renewable energy enquiries and services.',
   keywords: [
     'AeroSun Energy privacy policy',
     'renewable energy privacy policy',
@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     'AeroSun Energy data protection',
     'solar project inquiry privacy',
     'consumer data handling policy',
+    'green energy company privacy',
+    'renewable power privacy policy',
+    'AeroSun Energy website policy',
   ],
   alternates: {
     canonical: '/privacy-policy',

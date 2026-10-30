@@ -1,0 +1,965 @@
+# AeroSun Energy – End-to-End Installation & Project Execution Checklist
+### Solar | Wind | Hybrid Renewable Energy Systems
+
+This checklist is designed as an operational document for AeroSun Energy. It covers the complete project lifecycle, from the first customer enquiry through engineering, quotation, government approvals, procurement, installation, testing, performance verification and final handover.
+
+It can be used by the Sales, Engineering, Procurement, Installation, Quality Control and Customer Support teams.
+
+**Project identification**
+
+| Field | Details |
+|---|---|
+| Project ID | |
+| Customer Name | |
+| Project Location | |
+| Contact Number | |
+| Project Type | ☐ Solar ☐ Wind ☐ Hybrid |
+| Application | ☐ Residential ☐ Commercial ☐ Industrial ☐ Agriculture ☐ Institutional |
+| System Capacity | |
+| Grid Connection | ☐ On-grid ☐ Off-grid ☐ Hybrid |
+| Battery Storage | ☐ Yes ☐ No |
+| Project Manager | |
+| Assigned Engineer | |
+| Project Start Date | |
+| Target Completion Date | |
+
+**Checklist status:**  
+☐ Completed | ☐ Pending | ☐ Not Applicable | ☐ Failed / Rectification Required
+
+---
+
+# PHASE 1: Customer Enquiry & Requirement Collection
+
+### 1.1 Customer information
+
+| No. | Checklist item | Status | Remarks |
+|---|---|---|---|
+| 1 | Customer name collected | ☐ | |
+| 2 | Mobile number and email collected | ☐ | |
+| 3 | Installation address collected | ☐ | |
+| 4 | GPS location recorded | ☐ | |
+| 5 | Customer category identified | ☐ | |
+| 6 | Electricity service connection details collected | ☐ | |
+| 7 | Latest electricity bill collected, if applicable | ☐ | |
+| 8 | Customer expectations documented | ☐ | |
+
+### 1.2 Electrical requirements
+
+| No. | Checklist item | Status | Remarks |
+|---|---|---|---|
+| 1 | Average monthly electricity consumption identified | ☐ | |
+| 2 | Daily energy requirement calculated | ☐ | |
+| 3 | Connected load identified | ☐ | |
+| 4 | Single-phase / three-phase supply verified | ☐ | |
+| 5 | Sanctioned load recorded | ☐ | |
+| 6 | Critical loads identified | ☐ | |
+| 7 | Required backup duration identified | ☐ | |
+| 8 | Grid-connected / off-grid / hybrid requirement confirmed | ☐ | |
+| 9 | Future load expansion discussed | ☐ | |
+
+### 1.3 Additional requirements by system
+
+**Solar**
+- ☐ Required solar capacity identified.
+- ☐ Available rooftop or land area identified.
+- ☐ Customer's daytime and nighttime consumption understood.
+- ☐ Battery backup requirement confirmed.
+
+**Wind**
+- ☐ Required wind turbine capacity identified.
+- ☐ Available installation location identified.
+- ☐ Tower height preference recorded.
+- ☐ Wind-resource assessment requirement identified.
+
+**Hybrid**
+- ☐ Solar contribution identified.
+- ☐ Wind contribution identified.
+- ☐ Battery backup requirement identified.
+- ☐ Grid interaction requirement identified.
+- ☐ Critical load backup requirement identified.
+
+**Agricultural pumps**
+- ☐ Borewell/open-well details collected.
+- ☐ Borewell depth collected.
+- ☐ Static and pumping water levels collected, where measurable.
+- ☐ Required water discharge identified.
+- ☐ Total dynamic head estimated.
+- ☐ Irrigation area recorded.
+- ☐ Crop and watering requirements identified.
+
+**Phase 1 approval gate:** Customer requirements are sufficiently documented to proceed with the site survey.
+
+Responsible person: __________  
+Date: __________
+
+---
+
+# PHASE 2: Site Survey & Feasibility Assessment
+
+### 2.1 General site inspection
+
+| No. | Checklist item | Status | Remarks |
+|---|---|---|---|
+| 1 | Site visit completed | ☐ | |
+| 2 | GPS coordinates recorded | ☐ | |
+| 3 | Site photographs captured | ☐ | |
+| 4 | Site dimensions measured | ☐ | |
+| 5 | Equipment installation area identified | ☐ | |
+| 6 | Material transportation access checked | ☐ | |
+| 7 | Electrical infrastructure inspected | ☐ | |
+| 8 | Cable routing identified | ☐ | |
+| 9 | Equipment safety and accessibility checked | ☐ | |
+| 10 | Potential installation risks recorded | ☐ | |
+
+### 2.2 Solar site survey
+
+- ☐ Roof or land area measured.
+- ☐ Roof orientation identified.
+- ☐ Panel tilt requirements assessed.
+- ☐ Shading assessment completed.
+- ☐ Nearby trees and buildings checked.
+- ☐ Roof structural condition inspected.
+- ☐ Waterproofing requirements assessed.
+- ☐ Inverter location identified.
+- ☐ Battery location identified, if applicable.
+- ☐ Earthing locations identified.
+- ☐ Lightning and surge protection requirements assessed.
+
+### 2.3 Wind site survey
+
+- ☐ Proposed turbine location identified.
+- ☐ Wind-resource data collected or assessment planned.
+- ☐ Wind-speed distribution assessed.
+- ☐ Turbulence and surrounding obstacles assessed.
+- ☐ Proposed tower height assessed.
+- ☐ Foundation area inspected.
+- ☐ Soil and geotechnical assessment arranged, where required.
+- ☐ Access for tower transportation checked.
+- ☐ Nearby buildings and safety clearances assessed.
+- ☐ Noise and vibration considerations assessed.
+- ☐ Location-specific restrictions checked.
+
+### 2.4 Hybrid site survey
+
+- ☐ Solar installation area identified.
+- ☐ Wind turbine location identified.
+- ☐ Battery installation area identified.
+- ☐ Hybrid inverter location identified.
+- ☐ Grid connection point identified.
+- ☐ Solar and wind cable routes identified.
+- ☐ Source isolation arrangements assessed.
+- ☐ Backup load distribution assessed.
+- ☐ Equipment ventilation and maintenance access checked.
+
+### 2.5 Agricultural pump site survey
+
+- ☐ Water source inspected.
+- ☐ Borewell/open-well depth recorded.
+- ☐ Static water level recorded.
+- ☐ Pumping water level recorded, where available.
+- ☐ Total dynamic head calculated.
+- ☐ Required discharge determined.
+- ☐ Pipeline route measured.
+- ☐ Pipeline diameter identified.
+- ☐ Water storage arrangements inspected.
+- ☐ Irrigation distribution method identified.
+
+**Phase 2 deliverables:**
+- Site Survey Report.
+- Site photographs.
+- GPS coordinates.
+- Preliminary feasibility assessment.
+- Initial capacity recommendation.
+
+Responsible engineer: __________  
+Approval: __________
+
+---
+
+# PHASE 3: Engineering Design & Technical Approval
+
+### 3.1 Solar engineering checklist
+
+| No. | Checklist item | Status | Remarks |
+|---|---|---|---|
+| 1 | Solar capacity calculated | ☐ | |
+| 2 | Solar panel quantity determined | ☐ | |
+| 3 | Module wattage and model selected | ☐ | |
+| 4 | String configuration prepared | ☐ | |
+| 5 | Inverter capacity selected | ☐ | |
+| 6 | DC voltage and current calculations completed | ☐ | |
+| 7 | DC cable sizing completed | ☐ | |
+| 8 | AC cable sizing completed | ☐ | |
+| 9 | Mounting structure designed | ☐ | |
+| 10 | DCDB and ACDB selected | ☐ | |
+| 11 | Earthing design completed | ☐ | |
+| 12 | Lightning and surge protection designed | ☐ | |
+| 13 | Battery capacity calculated, if applicable | ☐ | |
+| 14 | Energy generation estimate prepared | ☐ | |
+| 15 | Single-line diagram prepared | ☐ | |
+| 16 | Equipment layout drawing prepared | ☐ | |
+
+### 3.2 Wind engineering checklist
+
+- ☐ Turbine rated capacity selected.
+- ☐ Rotor diameter determined.
+- ☐ Blade configuration selected.
+- ☐ Generator specification finalised.
+- ☐ Generator voltage and current requirements calculated.
+- ☐ Power curve obtained.
+- ☐ Cut-in wind speed documented.
+- ☐ Rated wind speed documented.
+- ☐ Cut-out wind speed documented.
+- ☐ Tower height determined.
+- ☐ Foundation design completed.
+- ☐ Structural calculations reviewed.
+- ☐ Braking and overspeed protection designed.
+- ☐ Electrical protection selected.
+- ☐ Rectifier and controller selected, where required.
+- ☐ Battery and inverter selected, where applicable.
+- ☐ Expected annual generation estimated.
+
+### 3.3 Hybrid engineering checklist
+
+- ☐ Solar capacity finalised.
+- ☐ Wind capacity finalised.
+- ☐ Battery capacity calculated.
+- ☐ Hybrid inverter selected.
+- ☐ Battery management system selected.
+- ☐ Energy management strategy prepared.
+- ☐ Grid interaction design completed.
+- ☐ Grid isolation and protection designed.
+- ☐ Backup load circuits identified.
+- ☐ Source priority configured.
+- ☐ Energy generation estimate prepared.
+- ☐ Single-line diagram completed.
+
+### 3.4 Agricultural pump engineering checklist
+
+- ☐ Required pump capacity calculated.
+- ☐ Pump type selected.
+- ☐ Pump motor rating confirmed.
+- ☐ Total dynamic head confirmed.
+- ☐ Required flow rate confirmed.
+- ☐ Solar array capacity calculated.
+- ☐ Pump controller selected.
+- ☐ Pipeline sizing confirmed.
+- ☐ Water delivery estimate prepared.
+- ☐ Dry-run protection selected.
+- ☐ Overload protection selected.
+- ☐ Water storage requirements confirmed.
+
+**Phase 3 approval gate:** Engineering design must be reviewed and approved before procurement.
+
+Deliverables:
+- Detailed Project Design.
+- Single-Line Diagram.
+- Equipment Layout.
+- Bill of Materials.
+- Technical Specifications.
+- Estimated Generation Report.
+
+Design engineer: __________  
+Technical approver: __________
+
+---
+
+# PHASE 4: Quotation, Agreement & Payments
+
+### 4.1 Quotation checklist
+
+| No. | Checklist item | Status | Remarks |
+|---|---|---|---|
+| 1 | Customer requirements verified | ☐ | |
+| 2 | System capacity mentioned | ☐ | |
+| 3 | Equipment specifications included | ☐ | |
+| 4 | Equipment brands and models included | ☐ | |
+| 5 | Bill of quantities prepared | ☐ | |
+| 6 | Equipment prices included | ☐ | |
+| 7 | Installation charges included | ☐ | |
+| 8 | Transportation charges included | ☐ | |
+| 9 | Civil work charges included | ☐ | |
+| 10 | Applicable taxes included | ☐ | |
+| 11 | Government approval responsibilities mentioned | ☐ | |
+| 12 | Warranty details included | ☐ | |
+| 13 | Project completion timeline included | ☐ | |
+| 14 | Exclusions and assumptions documented | ☐ | |
+| 15 | Quotation validity mentioned | ☐ | |
+
+### 4.2 Customer confirmation
+
+- ☐ Quotation shared.
+- ☐ Technical specifications explained.
+- ☐ Expected generation explained.
+- ☐ Backup limitations explained.
+- ☐ Warranty explained.
+- ☐ Government approval responsibilities explained.
+- ☐ Customer queries resolved.
+- ☐ Customer approval received.
+- ☐ Project agreement signed.
+- ☐ Purchase order received, if applicable.
+
+### 4.3 Payment tracking
+
+| Payment milestone | Expected % | Amount | Received | Date |
+|---|---:|---:|---|---|
+| Order confirmation | 20% | | ☐ | |
+| Procurement initiation | 40% | | ☐ | |
+| Material delivery | 25% | | ☐ | |
+| Installation and commissioning | 10% | | ☐ | |
+| Final handover | 5% | | ☐ | |
+| **Total** | **100%** | | | |
+
+*The percentages are an example commercial structure. Use the actual agreed project payment terms.*
+
+**Phase 4 approval gate:** Signed agreement and agreed initial payment confirmed.
+
+---
+
+# PHASE 5: Government Approvals & Permissions
+
+Approval requirements must be determined according to project type, location, capacity and grid connection arrangement.
+
+### 5.1 Grid-connected solar
+
+- ☐ Electricity consumer details collected.
+- ☐ Latest electricity bill collected.
+- ☐ Applicable DISCOM identified.
+- ☐ Rooftop solar application submitted.
+- ☐ Technical feasibility approval obtained, where required.
+- ☐ Approved system capacity confirmed.
+- ☐ Applicable vendor requirements verified.
+- ☐ Installation completed according to approval conditions.
+- ☐ Net-metering application submitted, where applicable.
+- ☐ Inspection completed.
+- ☐ Meter installation or replacement completed.
+- ☐ Commissioning permission obtained, where required.
+
+### 5.2 Off-grid solar
+
+- ☐ Confirmed standalone configuration.
+- ☐ Grid isolation arrangement verified, if a utility connection exists.
+- ☐ Applicable electrical safety requirements checked.
+- ☐ Local structural/building permissions checked.
+- ☐ Land permissions checked, where applicable.
+
+### 5.3 Wind
+
+- ☐ Landowner permission obtained.
+- ☐ Local planning requirements checked.
+- ☐ Foundation/structural approvals obtained, where applicable.
+- ☐ Applicable electrical inspector approvals checked.
+- ☐ DISCOM connectivity approval obtained, if grid-connected.
+- ☐ Grid protection requirements confirmed.
+- ☐ Location-specific clearances checked.
+- ☐ Applicable turbine certification requirements verified.
+
+### 5.4 Hybrid
+
+- ☐ Solar approvals completed.
+- ☐ Wind approvals completed.
+- ☐ Battery installation requirements checked.
+- ☐ Grid-interactive hybrid configuration approved, where applicable.
+- ☐ Metering arrangement approved.
+- ☐ Grid protection and isolation requirements confirmed.
+
+### 5.5 Agricultural pumpsets
+
+- ☐ Applicable agricultural scheme identified.
+- ☐ Customer eligibility checked.
+- ☐ Required agricultural documents collected.
+- ☐ Applicable state agency requirements checked.
+- ☐ Vendor eligibility confirmed, where required.
+- ☐ Approval or allocation confirmed before making subsidy commitments.
+
+**Phase 5 deliverable:** Government Approval Register.
+
+| Approval | Application number | Submitted date | Status | Approval date |
+|---|---|---|---|---|
+| | | | | |
+| | | | | |
+
+**Important:** Do not energise a grid-parallel installation before the applicable approvals and commissioning requirements are satisfied.
+
+---
+
+# PHASE 6: Material Procurement & Quality Inspection
+
+### 6.1 Solar equipment
+
+| Material | Quantity | Specification verified | Physical inspection |
+|---|---:|---|---|
+| Solar PV modules | | ☐ | ☐ |
+| Solar inverter | | ☐ | ☐ |
+| Mounting structure | | ☐ | ☐ |
+| DC cables | | ☐ | ☐ |
+| AC cables | | ☐ | ☐ |
+| DCDB | | ☐ | ☐ |
+| ACDB | | ☐ | ☐ |
+| DC isolator | | ☐ | ☐ |
+| AC isolator | | ☐ | ☐ |
+| Surge protection devices | | ☐ | ☐ |
+| Earthing materials | | ☐ | ☐ |
+| Lightning protection | | ☐ | ☐ |
+| Battery system, if applicable | | ☐ | ☐ |
+| Monitoring equipment | | ☐ | ☐ |
+
+### 6.2 Wind equipment
+
+- ☐ Wind turbine.
+- ☐ Generator.
+- ☐ Rotor blades.
+- ☐ Hub.
+- ☐ Nacelle.
+- ☐ Tower.
+- ☐ Foundation/anchor-bolt materials.
+- ☐ Rectifier.
+- ☐ Charge controller.
+- ☐ Braking system.
+- ☐ Overspeed protection.
+- ☐ Inverter.
+- ☐ Battery bank, if applicable.
+- ☐ Cables and electrical protection.
+
+### 6.3 Hybrid equipment
+
+- ☐ Solar modules.
+- ☐ Wind turbine and generator.
+- ☐ Hybrid inverter.
+- ☐ Battery bank.
+- ☐ Battery management system.
+- ☐ Energy management system.
+- ☐ Distribution boards.
+- ☐ Grid isolation equipment.
+- ☐ Protection devices.
+- ☐ Monitoring system.
+
+### 6.4 Agricultural pump equipment
+
+- ☐ Solar panels.
+- ☐ Pump and motor.
+- ☐ Pump controller.
+- ☐ Mounting structure.
+- ☐ Water pipes.
+- ☐ Valves.
+- ☐ Dry-run protection.
+- ☐ Electrical protection.
+- ☐ Earthing materials.
+- ☐ Water storage arrangement, if required.
+
+### 6.5 Material receipt verification
+
+- ☐ Purchase order matched with delivery.
+- ☐ Manufacturer verified.
+- ☐ Model number verified.
+- ☐ Serial numbers recorded.
+- ☐ Quantity verified.
+- ☐ Physical damage checked.
+- ☐ Datasheets collected.
+- ☐ Test certificates collected, where applicable.
+- ☐ Warranty details collected.
+- ☐ Invoices and delivery challans received.
+- ☐ Material inspection completed.
+
+**Phase 6 deliverable:** Material Receipt and Inspection Report.
+
+---
+
+# PHASE 7: Installation & Mechanical/Electrical Quality Control
+
+## 7.1 Solar installation checklist
+
+### Mechanical installation
+
+- ☐ Roof/foundation structural suitability confirmed.
+- ☐ Mounting structure installed according to approved drawings.
+- ☐ Structure alignment checked.
+- ☐ Tilt angle checked.
+- ☐ Orientation checked.
+- ☐ Fasteners tightened to specified torque.
+- ☐ Corrosion protection verified.
+- ☐ Panel mounting clamps secured.
+- ☐ Adequate maintenance access provided.
+- ☐ Roof waterproofing checked.
+- ☐ Cable routing secured.
+- ☐ Equipment ventilation provided.
+
+### Electrical installation
+
+- ☐ Solar modules installed according to string design.
+- ☐ String connections verified.
+- ☐ Connector compatibility verified.
+- ☐ Cable polarity checked.
+- ☐ DC cable routing completed.
+- ☐ AC cable routing completed.
+- ☐ DC isolator installed.
+- ☐ AC isolator installed.
+- ☐ DCDB installed.
+- ☐ ACDB installed.
+- ☐ Surge protection installed.
+- ☐ Earthing completed.
+- ☐ Lightning protection installed, where required.
+- ☐ Inverter installed and configured.
+- ☐ Battery connections completed, if applicable.
+- ☐ Monitoring system installed.
+- ☐ Labels and warning signs installed.
+
+## 7.2 Wind installation checklist
+
+### Mechanical installation
+
+- ☐ Foundation constructed according to approved design.
+- ☐ Concrete curing requirements satisfied.
+- ☐ Anchor bolts inspected.
+- ☐ Tower alignment verified.
+- ☐ Tower connections inspected.
+- ☐ Turbine assembly inspected.
+- ☐ Blade condition checked.
+- ☐ Rotor balance and alignment checked as specified.
+- ☐ Mechanical fasteners tightened to specified torque.
+- ☐ Braking mechanism installed.
+- ☐ Overspeed protection installed.
+- ☐ Mechanical clearance verified.
+- ☐ Vibration-related checks completed.
+
+### Electrical installation
+
+- ☐ Generator electrical connections verified.
+- ☐ Rectifier installed, if applicable.
+- ☐ Controller installed.
+- ☐ Inverter installed, if applicable.
+- ☐ Battery installed, if applicable.
+- ☐ Protection equipment installed.
+- ☐ Earthing completed.
+- ☐ Lightning protection completed.
+- ☐ Cable connections secured.
+- ☐ Grid isolation installed, if applicable.
+
+## 7.3 Hybrid installation checklist
+
+- ☐ Solar installation completed.
+- ☐ Wind installation completed.
+- ☐ Hybrid inverter installed.
+- ☐ Battery bank installed.
+- ☐ Battery management system connected.
+- ☐ Solar source connected.
+- ☐ Wind source connected.
+- ☐ Grid input connected, if applicable.
+- ☐ Backup load circuits connected.
+- ☐ Energy management system configured.
+- ☐ Source isolation verified.
+- ☐ Protection devices installed.
+- ☐ Earthing completed.
+- ☐ Monitoring system configured.
+
+## 7.4 Solar agricultural pump installation
+
+- ☐ Solar mounting structure installed.
+- ☐ Panels installed and secured.
+- ☐ Pump installed.
+- ☐ Motor connection checked.
+- ☐ Pump controller installed.
+- ☐ Water pipeline installed.
+- ☐ Valves installed.
+- ☐ Dry-run protection configured.
+- ☐ Overload protection configured.
+- ☐ Earthing completed.
+- ☐ Water discharge route completed.
+- ☐ Water storage or irrigation connection completed.
+
+**Phase 7 deliverable:** Installation Completion and Quality Inspection Report.
+
+---
+
+# PHASE 8: Pre-Commissioning Safety Testing
+
+**This phase must be completed before energising the system.** Tests must be conducted using suitable calibrated instruments by competent personnel, following equipment manufacturer instructions and applicable standards.
+
+### 8.1 Solar electrical testing
+
+| Test | Status | Actual reading | Acceptance |
+|---|---|---|---|
+| Visual inspection | ☐ | | |
+| Module condition | ☐ | | |
+| String polarity | ☐ | | |
+| String open-circuit voltage | ☐ | | |
+| String current | ☐ | | |
+| Insulation resistance | ☐ | | |
+| Earthing continuity | ☐ | | |
+| Earth resistance | ☐ | | |
+| DC protection | ☐ | | |
+| AC protection | ☐ | | |
+| Inverter configuration | ☐ | | |
+| Cable connections | ☐ | | |
+
+### 8.2 Wind electrical and mechanical testing
+
+- ☐ Blade inspection.
+- ☐ Rotor alignment.
+- ☐ Tower alignment.
+- ☐ Foundation and anchor-bolt inspection.
+- ☐ Generator winding inspection.
+- ☐ Insulation resistance test.
+- ☐ Electrical continuity test.
+- ☐ Cable polarity check.
+- ☐ Earthing continuity test.
+- ☐ Earth resistance test.
+- ☐ Brake operation test.
+- ☐ Overspeed protection test.
+- ☐ Controller inspection.
+- ☐ Mechanical vibration inspection.
+
+### 8.3 Hybrid system testing
+
+- ☐ Solar source test completed.
+- ☐ Wind source test completed.
+- ☐ Battery voltage verified.
+- ☐ Battery polarity verified.
+- ☐ Battery BMS communication verified.
+- ☐ Battery protection checked.
+- ☐ Inverter configuration verified.
+- ☐ Grid isolation checked.
+- ☐ Backup load connections checked.
+- ☐ Energy management communication checked.
+
+### 8.4 Agricultural pump testing
+
+- ☐ Pump electrical connections checked.
+- ☐ Motor insulation checked.
+- ☐ Pump controller configuration checked.
+- ☐ Dry-run protection checked.
+- ☐ Overload protection checked.
+- ☐ Pipeline leak inspection completed.
+- ☐ Water source availability confirmed.
+- ☐ Pump mounting and alignment checked.
+
+**Phase 8 deliverable:** Pre-Commissioning Test Report.
+
+---
+
+# PHASE 9: Commissioning & Operational Testing
+
+### 9.1 Solar commissioning
+
+- ☐ DC isolator operation verified.
+- ☐ Inverter startup completed.
+- ☐ DC input voltage recorded.
+- ☐ AC output voltage recorded.
+- ☐ AC frequency recorded.
+- ☐ AC output current recorded.
+- ☐ AC power recorded.
+- ☐ Inverter operating status checked.
+- ☐ Monitoring system communication verified.
+- ☐ Generation readings recorded.
+- ☐ Grid synchronisation verified, if applicable.
+- ☐ Grid protection functions tested as required.
+- ☐ Commissioning approval obtained, where required.
+
+### 9.2 Wind commissioning
+
+- ☐ Suitable wind conditions confirmed.
+- ☐ Turbine startup verified.
+- ☐ Generator RPM recorded.
+- ☐ Generator voltage recorded.
+- ☐ Generator current recorded.
+- ☐ Electrical power recorded.
+- ☐ Controller operation verified.
+- ☐ Battery charging verified, if applicable.
+- ☐ Braking operation verified.
+- ☐ Safety shutdown verified.
+- ☐ Vibration recorded.
+- ☐ Operating noise recorded.
+- ☐ Grid interaction verified, if applicable.
+
+### 9.3 Hybrid commissioning
+
+Test the following operating conditions:
+
+| Operating mode | Test completed | Result |
+|---|---|---|
+| Solar generation only | ☐ | |
+| Wind generation only | ☐ | |
+| Solar + wind generation | ☐ | |
+| Battery charging | ☐ | |
+| Battery discharging | ☐ | |
+| Backup load operation | ☐ | |
+| Grid failure response | ☐ | |
+| Grid restoration response | ☐ | |
+| Low battery protection | ☐ | |
+| Full battery charging control | ☐ | |
+| Energy management operation | ☐ | |
+
+### 9.4 Agricultural pump commissioning
+
+- ☐ Pump startup completed.
+- ☐ Pump voltage recorded.
+- ☐ Pump current recorded.
+- ☐ Pump power recorded.
+- ☐ Water flow rate measured.
+- ☐ Total dynamic head measured or verified.
+- ☐ Water discharge verified.
+- ☐ Operating stability checked.
+- ☐ Dry-run protection tested.
+- ☐ Overload protection tested.
+- ☐ Irrigation distribution verified.
+
+**Phase 9 deliverable:** Commissioning Report.
+
+---
+
+# PHASE 10: Energy Output & Performance Verification
+
+### 10.1 Solar output verification
+
+| Parameter | Expected | Actual | Result |
+|---|---:|---:|---|
+| Installed capacity | | | |
+| Solar irradiation | | | |
+| DC voltage | | | |
+| DC current | | | |
+| DC power | | | |
+| AC voltage | | | |
+| AC current | | | |
+| AC power | | | |
+| Daily generation | | | |
+| Inverter efficiency | | | |
+| Monitoring status | | | |
+
+### 10.2 Wind output verification
+
+| Parameter | Expected | Actual | Result |
+|---|---:|---:|---|
+| Rated capacity | | | |
+| Wind speed | | | |
+| Wind direction | | | |
+| Generator RPM | | | |
+| Generator voltage | | | |
+| Generator current | | | |
+| Power output | | | |
+| Energy generation | | | |
+| Vibration | | | |
+| Noise | | | |
+
+### 10.3 Hybrid output verification
+
+| Parameter | Expected | Actual | Result |
+|---|---:|---:|---|
+| Solar generation | | | |
+| Wind generation | | | |
+| Battery charging | | | |
+| Battery discharging | | | |
+| Grid import | | | |
+| Grid export | | | |
+| Customer consumption | | | |
+| Backup duration | | | |
+
+### 10.4 Agricultural pump output verification
+
+| Parameter | Expected | Actual | Result |
+|---|---:|---:|---|
+| Pump capacity | | | |
+| Pump voltage | | | |
+| Pump current | | | |
+| Pump power | | | |
+| Total dynamic head | | | |
+| Water flow rate | | | |
+| Operating hours | | | |
+| Total water pumped | | | |
+
+### Performance acceptance checklist
+
+- ☐ Output compared with approved design.
+- ☐ Operating conditions recorded.
+- ☐ Environmental conditions recorded.
+- ☐ Performance deviations identified.
+- ☐ Rectification completed, if required.
+- ☐ Retesting completed, if required.
+- ☐ Customer acceptance criteria satisfied.
+- ☐ Performance report approved.
+
+**Important:** A short commissioning test does not establish annual energy generation. Wind and solar performance should be assessed over an appropriate measurement period, with environmental conditions recorded. Use the agreed project acceptance criteria rather than an arbitrary percentage.
+
+---
+
+# PHASE 11: Customer Handover & Documentation
+
+### 11.1 Technical documents
+
+- ☐ Approved final design.
+- ☐ Single-line diagram.
+- ☐ Equipment layout drawing.
+- ☐ Final bill of materials.
+- ☐ Installed equipment serial number register.
+- ☐ Equipment datasheets.
+- ☐ Manufacturer manuals.
+- ☐ Warranty certificates.
+- ☐ Installation report.
+- ☐ Pre-commissioning test report.
+- ☐ Commissioning report.
+- ☐ Performance verification report.
+- ☐ Applicable government approvals.
+- ☐ Metering documents, where applicable.
+
+### 11.2 Customer training
+
+- ☐ System operation explained.
+- ☐ Inverter display explained.
+- ☐ Generation monitoring explained.
+- ☐ Battery operation explained.
+- ☐ Backup operation explained.
+- ☐ Emergency shutdown explained.
+- ☐ Safety precautions explained.
+- ☐ Solar panel cleaning explained.
+- ☐ Wind turbine access restrictions explained, if applicable.
+- ☐ Pump operating procedure explained, if applicable.
+- ☐ Maintenance schedule explained.
+- ☐ Customer support contact shared.
+
+### 11.3 Final handover
+
+| No. | Checklist item | Status |
+|---|---|---|
+| 1 | All installation work completed | ☐ |
+| 2 | All safety tests passed | ☐ |
+| 3 | Commissioning completed | ☐ |
+| 4 | Performance verified | ☐ |
+| 5 | Government documentation handed over | ☐ |
+| 6 | Warranty documents handed over | ☐ |
+| 7 | Customer training completed | ☐ |
+| 8 | User manuals handed over | ☐ |
+| 9 | Final invoice issued | ☐ |
+| 10 | Pending payments settled as agreed | ☐ |
+| 11 | Customer acceptance obtained | ☐ |
+| 12 | Project closure approved | ☐ |
+
+**Customer acceptance**
+
+Customer Name: ____________________
+
+Signature: ____________________
+
+Date: ____________________
+
+AeroSun Project Manager: ____________________
+
+Signature: ____________________
+
+Date: ____________________
+
+**Deliverable:** Customer Handover Certificate.
+
+---
+
+# PHASE 12: After-Sales Service & Maintenance
+
+### 12.1 Preventive maintenance checklist
+
+| Activity | Monthly | Quarterly | Half-yearly | Annually |
+|---|:---:|:---:|:---:|:---:|
+| Generation monitoring | ☐ | ☐ | ☐ | ☐ |
+| Solar panel inspection | ☐ | ☐ | ☐ | ☐ |
+| Panel cleaning, as needed | ☐ | ☐ | ☐ | ☐ |
+| Inverter inspection | ☐ | ☐ | ☐ | ☐ |
+| Cable and connector inspection | ☐ | ☐ | ☐ | ☐ |
+| Earthing inspection | | ☐ | ☐ | ☐ |
+| Battery health inspection | ☐ | ☐ | ☐ | ☐ |
+| Wind blade inspection | | ☐ | ☐ | ☐ |
+| Tower and foundation inspection | | | ☐ | ☐ |
+| Pump performance inspection | ☐ | ☐ | ☐ | ☐ |
+| Electrical protection inspection | | ☐ | ☐ | ☐ |
+| Overall performance review | | | ☐ | ☐ |
+
+*This is a suggested maintenance planning matrix. Actual frequencies must follow manufacturer instructions, operating conditions and applicable safety requirements.*
+
+### 12.2 Service request tracking
+
+| Field | Details |
+|---|---|
+| Project ID | |
+| Customer name | |
+| Complaint date | |
+| Complaint description | |
+| Equipment affected | |
+| Service engineer | |
+| Site visit date | |
+| Root cause | |
+| Corrective action | |
+| Parts replaced | |
+| Service completion date | |
+| Customer confirmation | |
+
+---
+
+# 18. Final Project Completion Approval
+
+This section acts as the final control gate before closing any AeroSun project.
+
+| Phase | Responsible department | Completion |
+|---|---|---|
+| Customer requirements | Sales | ☐ |
+| Site survey | Engineering | ☐ |
+| Feasibility | Engineering | ☐ |
+| System design | Engineering | ☐ |
+| Quotation and agreement | Sales / Finance | ☐ |
+| Payments | Finance | ☐ |
+| Government approvals | Compliance / Engineering | ☐ |
+| Procurement | Procurement | ☐ |
+| Material quality inspection | Quality Control | ☐ |
+| Installation | Installation Team | ☐ |
+| Safety testing | Engineering / QC | ☐ |
+| Commissioning | Commissioning Team | ☐ |
+| Output verification | Engineering / QC | ☐ |
+| Customer handover | Project Manager | ☐ |
+| Maintenance registration | Customer Support | ☐ |
+
+### Final sign-off
+
+| Role | Name | Signature | Date |
+|---|---|---|---|
+| Project Engineer | | | |
+| Quality Inspector | | | |
+| Installation Supervisor | | | |
+| Project Manager | | | |
+| Customer Representative | | | |
+
+---
+
+# 19. Recommended project forms for AeroSun Energy
+
+To make this checklist operational, I recommend maintaining the following separate forms instead of putting all information into one document.
+
+| Form ID | Document name | Used by |
+|---|---|---|
+| ASE-F01 | Customer Enquiry Form | Sales |
+| ASE-F02 | Customer Requirement Sheet | Sales |
+| ASE-F03 | Site Survey Checklist | Engineering |
+| ASE-F04 | Technical Feasibility Report | Engineering |
+| ASE-F05 | System Design Approval Form | Engineering |
+| ASE-F06 | Quotation Approval Form | Sales / Finance |
+| ASE-F07 | Customer Agreement & Payment Tracker | Finance |
+| ASE-F08 | Government Approval Tracker | Compliance |
+| ASE-F09 | Material Procurement Checklist | Procurement |
+| ASE-F10 | Material Inspection Report | Quality Control |
+| ASE-F11 | Solar Installation Checklist | Installation |
+| ASE-F12 | Wind Installation Checklist | Installation |
+| ASE-F13 | Hybrid Installation Checklist | Installation |
+| ASE-F14 | Pre-Commissioning Test Report | Engineering |
+| ASE-F15 | Commissioning Report | Commissioning |
+| ASE-F16 | Energy Performance Verification Report | Engineering |
+| ASE-F17 | Customer Handover Certificate | Project Manager |
+| ASE-F18 | Preventive Maintenance Checklist | Service |
+| ASE-F19 | Customer Complaint & Service Report | Customer Support |
+| ASE-F20 | Project Closure Report | Project Manager |
+
+## My recommendation
+
+For AeroSun Energy, the best approach is to make this a **controlled project checklist system**:
+
+- Every project gets a unique project ID.
+- Every phase has an assigned responsible person.
+- Every completed phase requires evidence or documentation.
+- Critical safety and approval stages cannot be bypassed.
+- Failed inspections generate corrective actions and retesting.
+- Final handover is permitted only after all mandatory acceptance criteria are met.
+
+This will help AeroSun maintain consistent installation quality across solar, wind and hybrid projects as the business scales.

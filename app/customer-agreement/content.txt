@@ -1,0 +1,896 @@
+# AeroSun Energy – End-to-End Project Execution Process
+### Solar, Wind & Hybrid Renewable Energy Systems
+
+AeroSun Energy should follow a standard project lifecycle for every customer, starting with requirement collection and ending with commissioning, performance verification, and customer handover.
+
+The process should be divided into **12 stages**, with documented customer approvals and technical checks at each stage.
+
+This workflow can be used for:
+- Residential rooftop solar systems.
+- Commercial and industrial solar installations.
+- Off-grid solar systems.
+- Solar water pumpsets for agriculture.
+- Wind turbine and wind generator systems.
+- Solar–wind hybrid systems.
+- Battery energy storage systems.
+- Custom renewable energy projects.
+
+## 1. Customer enquiry and requirement collection
+
+The first step is to understand exactly what the customer needs.
+
+AeroSun should collect the following information before preparing a quotation.
+
+**Customer information**
+- Customer or company name.
+- Installation address and GPS location.
+- Contact details.
+- Residential, commercial, industrial, agricultural, or institutional use.
+- Electricity service connection details, if applicable.
+
+**Electrical requirements**
+- Monthly electricity consumption (kWh).
+- Existing sanctioned load.
+- Electricity bill and tariff category.
+- Single-phase or three-phase connection.
+- Connected equipment and load details.
+- Required backup duration.
+- Whether the customer needs grid-connected, off-grid, or hybrid operation.
+
+**Site information**
+- Available rooftop or land area.
+- Roof type and structural condition.
+- Shading from trees and buildings.
+- Available space for batteries and inverters.
+- Distance between generation equipment and electrical connection.
+- Existing electrical infrastructure.
+- Accessibility for material transportation and installation.
+
+**For wind projects**
+- Average wind speed.
+- Wind speed distribution throughout the year.
+- Site exposure and surrounding obstacles.
+- Required turbine capacity.
+- Available tower height and foundation area.
+- Grid connection or battery charging requirements.
+
+**For agricultural solar pumps**
+- Borewell or open-well details.
+- Water source and water availability.
+- Borewell depth and pumping water level.
+- Required water discharge.
+- Total dynamic head.
+- Pipeline diameter and length.
+- Irrigation area and crop requirements.
+
+**Deliverable:** Customer Requirement Sheet (CRS).
+
+## 2. Technical site survey and feasibility assessment
+
+After collecting the initial requirements, AeroSun conducts a site survey.
+
+The purpose is to confirm whether the proposed system can technically meet the customer's requirements.
+
+| System | Main technical assessments |
+|---|---|
+| Rooftop solar | Roof area, shading, orientation, structural capacity |
+| Ground-mounted solar | Land availability, soil, shading, access |
+| Off-grid solar | Load profile, battery capacity, autonomy |
+| Solar pumpset | Water source, total dynamic head, flow rate |
+| Wind turbine | Wind resource, turbulence, obstacles, tower height |
+| Hybrid system | Solar and wind resources, load profile, battery storage |
+
+### Important calculations
+
+**Solar capacity**
+
+Estimate the required solar capacity from daily energy consumption and the expected site-specific solar yield.
+
+For example:
+
+- Daily energy requirement: 20 kWh.
+- Assumed effective solar yield: 4.5 kWh per kWp per day.
+
+Estimated solar capacity:
+
+20 ÷ 4.5 = 4.44 kWp.
+
+This is an initial estimate, not a final system design. Losses, seasonal variation, shading, roof orientation, and inverter sizing must be considered.
+
+**Battery capacity**
+
+For an illustrative off-grid load:
+
+- Daily energy consumption: 10 kWh.
+- Required backup: 1 day.
+- Battery usable depth of discharge: 80%.
+- Battery/inverter discharge efficiency: 95%.
+
+Required nominal battery capacity:
+
+10 ÷ (0.80 × 0.95) = 13.16 kWh.
+
+**Wind feasibility**
+
+Wind systems require actual wind-resource assessment. Do not estimate annual generation using rated turbine capacity alone.
+
+**Deliverable:** Site Survey Report and Preliminary Feasibility Report.
+
+## 3. System design and engineering
+
+Once feasibility is established, prepare a project-specific engineering design.
+
+### A. Solar system design
+
+Determine:
+- Solar panel capacity and quantity.
+- Module arrangement and string configuration.
+- Inverter capacity.
+- Mounting structure.
+- DC and AC cable sizes.
+- DC and AC protection.
+- Earthing and lightning protection.
+- Generation monitoring.
+- Battery capacity, if applicable.
+
+### B. Wind system design
+
+Determine:
+- Turbine rated capacity.
+- Rotor diameter and configuration.
+- Generator type.
+- Cut-in, rated, and cut-out wind speeds.
+- Tower height and structural design.
+- Foundation design.
+- Rectifier and charge controller, where applicable.
+- Braking and overspeed protection.
+- Battery or grid interface.
+
+### C. Hybrid system design
+
+Determine:
+- Solar generation capacity.
+- Wind generation capacity.
+- Battery storage capacity.
+- Hybrid inverter or power conversion system.
+- Energy management system.
+- Grid interaction.
+- Backup load distribution.
+- Protection and control arrangements.
+
+**Deliverable:** Detailed Project Design (DPD), single-line diagram (SLD), equipment specifications, layout drawing, and bill of materials (BOM).
+
+## 4. Quotation preparation and commercial proposal
+
+After completing the engineering design, prepare a detailed quotation for the customer.
+
+The quotation should clearly explain what the customer is paying for.
+
+### Quotation structure
+
+| Category | Items |
+|---|---|
+| Solar equipment | Solar panels, inverter, mounting structure |
+| Wind equipment | Turbine, generator, tower, controller, protection |
+| Battery system | Batteries, BMS, battery enclosure |
+| Electrical equipment | Cables, connectors, AC/DC distribution boxes, breakers |
+| Safety equipment | Earthing, lightning protection, surge protection |
+| Civil works | Foundation, structural supports, equipment platforms |
+| Installation | Labour, transportation, erection, commissioning |
+| Engineering | Design, drawings, site assessment |
+| Approvals | Applicable application, inspection and meter-related charges |
+| Services | Testing, documentation, warranty and maintenance |
+
+### Every quotation should contain
+
+1. Customer and project details.
+2. Proposed system capacity.
+3. System configuration.
+4. Technical specifications.
+5. Equipment brands and models, wherever selected.
+6. Detailed bill of quantities.
+7. Individual equipment costs.
+8. Installation and labour charges.
+9. Applicable taxes.
+10. Government approval responsibilities.
+11. Expected project timeline.
+12. Warranty details.
+13. Payment schedule.
+14. Exclusions and additional charges.
+15. Quotation validity.
+
+**Important:** Clearly distinguish estimated annual generation from guaranteed performance. Actual generation depends on weather, equipment, site conditions, operating conditions and maintenance.
+
+### Example payment schedule
+
+For a normal privately funded project, AeroSun can consider the following milestone structure:
+
+| Milestone | Payment |
+|---|---:|
+| Order confirmation and project booking | 20% |
+| Design approval and procurement initiation | 40% |
+| Material delivery to site | 25% |
+| Installation and commissioning | 10% |
+| Testing, documentation and handover | 5% |
+| **Total** | **100%** |
+
+These are suggested commercial terms, not mandatory industry percentages. The actual schedule should reflect project size, supplier payment requirements, procurement risks and customer negotiations.
+
+For large projects, use a separate milestone-based contract.
+
+**Deliverable:** Commercial Quotation and Project Agreement.
+
+## 5. Customer approval, order confirmation and payments
+
+Once the quotation is shared:
+
+1. Explain the system design and expected performance.
+2. Discuss the equipment brands and specifications.
+3. Explain the warranty and service conditions.
+4. Clarify government approval requirements.
+5. Clarify what is included and excluded.
+6. Obtain written customer acceptance.
+7. Sign the project agreement.
+8. Collect the agreed advance payment.
+9. Generate a project ID and order confirmation.
+
+### Documents to collect
+
+- Signed quotation.
+- Purchase order, if applicable.
+- Customer agreement.
+- Customer identity and address details, where required.
+- Electricity bill and consumer number, for grid-connected systems.
+- Site ownership or permission documents, where applicable.
+- Bank and payment details for relevant subsidy applications.
+- Technical and site survey approvals.
+
+**Deliverable:** Confirmed Customer Order and Project Execution File.
+
+## 6. Government approvals and statutory permissions
+
+This stage is particularly important because the approval process depends on the type of renewable energy system.
+
+Do not assume that every solar, wind or hybrid project requires the same approvals.
+
+### A. Grid-connected rooftop solar
+
+Depending on the applicable state regulations and DISCOM procedure, the process can include:
+
+1. Submit the rooftop solar application.
+2. Provide consumer and system details.
+3. Obtain DISCOM technical feasibility or connectivity approval, where required.
+4. Finalise the approved system capacity.
+5. Install the system according to applicable technical requirements.
+6. Apply for the required net-metering or other metering arrangement.
+7. Complete inspection and testing.
+8. Obtain commissioning approval and meter installation.
+9. Receive permission to operate in parallel with the grid.
+
+For residential subsidy projects, use the applicable National Rooftop Solar Portal procedure and current vendor eligibility requirements.
+
+The MNRE portal describes the application, DISCOM feasibility, installation, net-metering, inspection and subsidy process. [Press Information Bureau](https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1794785\&lang=2\&reg=48\&utm_source=chatgpt.com)
+
+### B. Off-grid solar
+
+A standalone off-grid system generally does not require grid-export or net-metering approval because it is not intended to export electricity to the DISCOM network.
+
+However, check:
+- Electrical safety requirements.
+- Building and structural permissions, where applicable.
+- Local authority requirements.
+- Land-use permissions, where applicable.
+- Applicable electrical inspection requirements for the project.
+
+If the system can operate in parallel with the utility grid, it must be treated as a grid-interactive installation for approval and protection purposes.
+
+### C. Solar agricultural pumpsets
+
+For standalone agricultural pumps, check the applicable state agricultural and renewable-energy programme.
+
+Under PM-KUSUM, implementation is through designated state agencies, with applicable technical specifications, eligibility and vendor requirements. Do not promise a subsidy until the customer's eligibility and the current state allocation are confirmed. [PM-KUSUM](https://pmkusum.mnre.gov.in/landing-faq.html?utm_source=chatgpt.com)
+
+### D. Wind energy systems
+
+Depending on turbine capacity, tower height, location and grid connection, approvals may involve:
+
+- Landowner permission.
+- Local planning and building permissions.
+- Foundation and structural approvals.
+- Electrical inspector or CEIG approval, where applicable.
+- DISCOM connectivity approval.
+- Grid protection and metering approvals.
+- Aviation, defence or other location-specific clearances, where applicable.
+- Environmental or other statutory permissions, where applicable.
+
+For larger or commercial wind turbines, design evaluation and type certification are important. NIWE describes the wind-turbine certification process under IS/IEC 61400-22. [National Institute of Wind Energy](https://niwe.res.in/certification_procedure/?utm_source=chatgpt.com)
+
+### E. Hybrid solar–wind systems
+
+A hybrid project must consider the approvals applicable to both generation sources.
+
+For a grid-connected hybrid system, obtain approval for the complete proposed electrical configuration, including:
+- Solar generation.
+- Wind generation.
+- Battery storage.
+- Inverter or power conversion system.
+- Grid export/import arrangement.
+- Protection and isolation.
+- Metering and control systems.
+
+**Deliverable:** Approval Register containing application numbers, submitted documents, approval status, conditions and pending actions.
+
+**AeroSun policy:** Do not proceed with grid-parallel operation until the required approvals, inspections and permissions are complete.
+
+## 7. Material procurement and quality verification
+
+After the design is frozen and required procurement conditions are satisfied, purchase the equipment.
+
+### Solar material checklist
+
+| Equipment | Verification |
+|---|---|
+| Solar panels | Manufacturer, model, wattage, serial numbers, applicable BIS compliance |
+| Solar inverter | Capacity, voltage, protection, certifications |
+| Mounting structure | Material, coating, corrosion resistance |
+| DC cables | Correct voltage and current rating |
+| AC cables | Correct current and installation rating |
+| Connectors | Compatible and approved connector type |
+| DCDB/ACDB | Correct protection devices |
+| Earthing | Suitable earthing components |
+| Lightning protection | Project-specific design |
+| Battery | Chemistry, capacity, BMS and applicable compliance |
+
+### Wind material checklist
+
+- Wind turbine.
+- Generator.
+- Rotor blades.
+- Hub and mechanical components.
+- Nacelle.
+- Tower.
+- Foundation materials.
+- Rectifier.
+- Charge controller.
+- Braking and overspeed protection.
+- Inverter, if required.
+- Batteries, if required.
+- Cables and protection equipment.
+
+### Hybrid material checklist
+
+Verify all solar and wind equipment, along with:
+- Hybrid inverter.
+- Battery bank.
+- Battery management system.
+- Energy management system.
+- Power distribution equipment.
+- Grid isolation and synchronisation equipment, as applicable.
+
+### Material inspection before installation
+
+AeroSun should verify:
+
+1. Equipment model against the approved BOM.
+2. Manufacturer and supplier details.
+3. Serial numbers.
+4. Physical damage.
+5. Quantity received.
+6. Technical datasheets.
+7. Applicable test certificates.
+8. Warranty documents.
+9. Delivery challan and invoice.
+10. Compatibility between equipment.
+
+**Deliverable:** Material Inspection Report and Approved Material Register.
+
+## 8. Installation according to engineering and safety standards
+
+Installation must be performed by trained technicians under the supervision of a qualified electrical engineer or appropriately authorised professional.
+
+AeroSun should maintain a written installation checklist for every project.
+
+### A. Solar installation standards
+
+**Mechanical installation**
+- Verify roof or foundation structural suitability.
+- Install mounting structures according to approved drawings.
+- Use appropriate corrosion-resistant fasteners.
+- Maintain the designed panel tilt and orientation.
+- Ensure adequate spacing and ventilation.
+- Provide safe maintenance access.
+- Ensure proper waterproofing of roof penetrations.
+
+**Electrical installation**
+- Install solar modules according to the approved string design.
+- Use compatible DC connectors.
+- Maintain correct cable polarity.
+- Use appropriately rated DC and AC cables.
+- Install DC and AC protection devices.
+- Provide isolation switches.
+- Install earthing and surge protection.
+- Complete inverter installation and configuration.
+- Provide anti-islanding protection for applicable grid-connected systems.
+
+### B. Wind installation standards
+
+**Mechanical**
+- Verify turbine and tower specifications.
+- Construct the foundation according to approved structural calculations.
+- Verify anchor bolts and foundation dimensions.
+- Inspect blades, hub, shaft and generator.
+- Verify tower alignment and mechanical fastening.
+- Check vibration and mechanical clearances.
+- Install braking and overspeed protection.
+
+**Electrical**
+- Connect generator output according to the electrical design.
+- Install rectifiers and controllers, where required.
+- Install appropriate circuit protection.
+- Complete earthing and lightning protection.
+- Verify battery and inverter connections, where applicable.
+- Install grid isolation and protection equipment, where applicable.
+
+### C. Hybrid installation standards
+
+- Install solar and wind systems independently according to their approved designs.
+- Integrate generation sources with the hybrid inverter or power conversion system.
+- Configure battery charging and discharging.
+- Configure energy management.
+- Configure grid import and export.
+- Configure backup loads.
+- Verify source isolation and protection.
+- Test transitions between operating modes.
+
+### Applicable standards and regulations
+
+The engineering team should maintain a standards register and use the latest applicable editions and amendments.
+
+Important references include:
+
+| Area | Reference |
+|---|---|
+| Solar PV products | Applicable BIS standards and MNRE quality requirements |
+| Solar grid connectivity | CEA connectivity regulations |
+| Electrical safety | CEA Measures Relating to Safety and Electric Supply Regulations |
+| Wind turbines | Applicable IS/IEC 61400 standards |
+| Wind turbine certification | NIWE certification requirements, where applicable |
+| Building structures | Applicable structural design standards and National Building Code |
+| Solar agricultural pumps | Current MNRE technical specifications and BIS requirements |
+
+The MNRE Solar Systems, Devices and Components Quality Control Order, 2025 covers solar PV modules, solar inverters and storage batteries. [Press Information Bureau](https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2097219\&lang=2\&reg=3\&utm_source=chatgpt.com)
+
+The CEA maintains the applicable grid-connectivity regulations and amendments. [Central Electricity Authority](https://cea.nic.in/regulations-category/connectivity-to-the-grid/?lang=en\&utm_source=chatgpt.com)
+
+**Deliverable:** Installation Completion Report and Installation Photographs.
+
+---
+
+## 9. Pre-commissioning inspection and safety testing
+
+Before switching on the system, conduct a complete inspection.
+
+This stage verifies that the installation is electrically and mechanically safe.
+
+### Solar system testing checklist
+
+| Test | Purpose |
+|---|---|
+| Visual inspection | Check installation quality |
+| Module inspection | Identify cracks or damage |
+| Polarity test | Verify positive and negative connections |
+| String voltage test | Verify expected DC voltage |
+| Insulation resistance test | Identify insulation faults |
+| Earthing continuity test | Verify protective earthing |
+| Earth resistance test | Verify earthing performance |
+| DC protection test | Verify protective devices |
+| AC protection test | Verify AC protection |
+| Inverter configuration | Confirm correct operating parameters |
+| Grid protection test | Verify required grid protection functions |
+
+### Wind system testing checklist
+
+- Blade inspection.
+- Rotor alignment.
+- Tower inspection.
+- Foundation and anchor-bolt inspection.
+- Mechanical fastening.
+- Generator winding and insulation checks.
+- Cable continuity.
+- Electrical polarity.
+- Earthing resistance.
+- Braking system operation.
+- Overspeed protection.
+- Vibration measurement.
+- Controller operation.
+- Battery charging, where applicable.
+
+### Hybrid system testing checklist
+
+In addition to solar and wind tests:
+
+- Battery voltage verification.
+- Battery capacity and BMS communication.
+- Charging and discharging operation.
+- Grid charging, if configured.
+- Solar charging.
+- Wind charging.
+- Backup supply operation.
+- Grid failure response.
+- Grid restoration response.
+- Source switching.
+- Energy management configuration.
+- Protection coordination.
+
+**Deliverable:** Pre-commissioning Inspection and Test Report.
+
+---
+
+## 10. System commissioning and operational testing
+
+After the pre-commissioning inspection is successful, commission the system.
+
+Commissioning means placing the equipment into operation according to the approved design and operating procedures.
+
+### A. Solar commissioning
+
+1. Switch on the DC isolator.
+2. Verify DC input voltage.
+3. Start the inverter according to manufacturer instructions.
+4. Verify AC output.
+5. Confirm inverter operating status.
+6. Verify monitoring communication.
+7. Check generation readings.
+8. For grid-connected systems, complete the authorised grid-synchronisation and commissioning process.
+
+### B. Wind commissioning
+
+1. Verify wind conditions are suitable for testing.
+2. Check the turbine's mechanical operation.
+3. Verify generator voltage.
+4. Measure generator output.
+5. Verify controller operation.
+6. Check charging or inverter operation.
+7. Verify braking and safety functions.
+8. Record vibration and operating noise.
+9. Monitor turbine operation under suitable wind conditions.
+
+### C. Hybrid commissioning
+
+Test different operating conditions.
+
+| Operating condition | Expected system behaviour |
+|---|---|
+| Solar available, wind unavailable | Solar supplies the load |
+| Wind available, solar unavailable | Wind supplies the load |
+| Both available | Both sources contribute according to the control strategy |
+| Solar and wind unavailable | Battery supplies the designated backup load |
+| Grid unavailable | System follows its approved backup operating mode |
+| Grid restored | System returns to its configured operating mode |
+| Battery fully charged | Charging is controlled according to the battery settings |
+| Battery low | Low-battery protection and load management operate |
+
+The actual operating behaviour depends on the selected inverter, controller, protection architecture and system configuration.
+
+**Deliverable:** Commissioning Report.
+
+---
+
+## 11. Output verification and performance assessment
+
+This is one of the most important stages for AeroSun Energy.
+
+Installing equipment does not prove that the system is producing the expected output.
+
+AeroSun must measure, record and compare actual performance against the approved engineering design.
+
+### A. Solar output verification
+
+Record:
+
+- Solar irradiation.
+- Ambient temperature.
+- Module temperature.
+- DC voltage.
+- DC current.
+- DC power.
+- AC voltage.
+- AC current.
+- AC power.
+- Daily energy generation (kWh).
+- Inverter efficiency, where measurable.
+- System operating status.
+
+**Example: 5 kW solar installation**
+
+Assume:
+- Installed solar capacity: 5 kWp.
+- Effective solar yield: 4.5 kWh/kWp/day.
+
+Expected illustrative daily generation:
+
+5 × 4.5 = **22.5 kWh/day**.
+
+This is an estimate, not a guaranteed daily output. Actual performance must be evaluated over an appropriate period and under comparable solar irradiation and operating conditions.
+
+### B. Wind output verification
+
+Record:
+
+- Wind speed.
+- Wind direction.
+- Generator RPM.
+- Generator voltage.
+- Generator current.
+- Electrical power output.
+- Daily energy generation.
+- Operating hours.
+- Vibration.
+- Noise.
+- Turbine operating status.
+
+**Important:** A 3 kW wind turbine does not continuously generate 3 kW. Rated output is normally achieved only under specified wind conditions.
+
+For a proper performance assessment, compare measured output against the turbine's documented power curve and measured wind conditions.
+
+### C. Solar water pump output verification
+
+For agricultural pumpsets, measure:
+
+- Solar input power.
+- Pump operating voltage.
+- Pump operating current.
+- Water flow rate.
+- Total dynamic head.
+- Discharge pressure, where applicable.
+- Pump operating hours.
+- Total water pumped.
+
+For example:
+
+If a pump delivers 10,000 litres per hour and operates for 5 hours:
+
+Daily water pumped:
+
+10,000 × 5 = **50,000 litres/day**.
+
+This is an illustrative calculation. Actual water delivery depends on water level, head, pipeline losses, pump characteristics and available solar power.
+
+### D. Hybrid output verification
+
+Record the energy contribution of each source separately.
+
+| Parameter | Measurement |
+|---|---|
+| Solar generation | kWh |
+| Wind generation | kWh |
+| Battery charging | kWh |
+| Battery discharge | kWh |
+| Grid import | kWh |
+| Grid export | kWh |
+| Customer consumption | kWh |
+| Backup operating hours | Hours |
+
+This helps demonstrate how the hybrid system is operating.
+
+### Performance acceptance
+
+Before starting the project, define acceptance criteria in the customer agreement.
+
+For example:
+- Required system capacity.
+- Equipment specifications.
+- Electrical output parameters.
+- Required water discharge for pumps.
+- Grid synchronisation requirements.
+- Backup duration, if applicable.
+- Monitoring functionality.
+- Agreed performance test conditions.
+
+If measured performance is below the agreed acceptance criteria:
+
+1. Investigate the issue.
+2. Check equipment configuration.
+3. Check electrical connections.
+4. Check environmental conditions.
+5. Identify equipment or installation faults.
+6. Rectify the issue.
+7. Repeat the test.
+8. Record the final results.
+
+**Deliverable:** System Performance Verification Report.
+
+---
+
+## 12. Customer handover and project closure
+
+After successful testing and commissioning, hand over the system to the customer.
+
+AeroSun should provide a complete project handover package.
+
+### Customer handover documents
+
+| Document | Purpose |
+|---|---|
+| Final system design | Shows installed configuration |
+| Single-line diagram | Explains electrical connections |
+| Equipment BOM | Lists installed equipment |
+| Equipment datasheets | Provides technical specifications |
+| Serial number register | Identifies installed equipment |
+| Warranty certificates | Covers applicable equipment warranties |
+| Installation report | Confirms installation completion |
+| Electrical test report | Records safety and electrical checks |
+| Commissioning report | Confirms operational commissioning |
+| Performance report | Records measured output |
+| Government approvals | Provides applicable approval documents |
+| User manual | Explains system operation |
+| Maintenance schedule | Explains periodic maintenance |
+| Emergency contacts | Provides support information |
+| Final invoice | Records project financial closure |
+| Customer acceptance form | Confirms handover |
+
+### Customer training
+
+Demonstrate:
+
+1. How to operate the system.
+2. How to read inverter displays.
+3. How to check daily generation.
+4. How to monitor battery status.
+5. How to identify common warning indicators.
+6. What to do during a power failure.
+7. How to shut down the system safely.
+8. How to clean and maintain solar panels.
+9. How to report a technical issue.
+
+For wind systems, explain safe operating procedures and restrictions on accessing the turbine or tower.
+
+For agricultural pumps, explain pump operation, water-flow monitoring and controller protection.
+
+**Deliverable:** Customer Handover Certificate and Project Closure Report.
+
+---
+
+# 13. After-sales service and preventive maintenance
+
+AeroSun's responsibility should not end with installation.
+
+Create a maintenance and support schedule for every project.
+
+| Frequency | Maintenance activity |
+|---|---|
+| Monthly | Check generation and monitoring alerts |
+| Quarterly | Visual inspection, cable and connection checks |
+| Half-yearly | Electrical and mechanical inspection |
+| Annually | Comprehensive system performance and safety assessment |
+
+The exact schedule should follow equipment manufacturers' instructions and project-specific operating conditions.
+
+### Solar maintenance
+- Panel cleaning.
+- Inverter inspection.
+- Cable and connector inspection.
+- Earthing checks.
+- Monitoring review.
+
+### Wind maintenance
+- Blade inspection.
+- Tower and foundation inspection.
+- Bearing and mechanical inspection.
+- Electrical connection inspection.
+- Brake and protection system inspection.
+
+### Hybrid maintenance
+- Solar maintenance.
+- Wind maintenance.
+- Battery health checks.
+- BMS inspection.
+- Inverter and controller checks.
+- Energy management system checks.
+
+**Deliverable:** Annual Maintenance Report and Service History.
+
+---
+
+# 14. Recommended AeroSun Energy project workflow
+
+The following is the complete operational sequence that AeroSun can adopt as its standard operating procedure (SOP).
+
+| Stage | Activity | Main document | Approval/decision |
+|---|---|---|---|
+| 1 | Customer enquiry | Enquiry Form | Customer requirements received |
+| 2 | Requirement collection | Customer Requirement Sheet | Requirements confirmed |
+| 3 | Site survey | Site Survey Report | Site feasibility confirmed |
+| 4 | Engineering design | Design Report and SLD | Technical design approved |
+| 5 | Quotation | Commercial Proposal | Customer accepts quotation |
+| 6 | Order confirmation | Agreement and PO | Advance payment received |
+| 7 | Government approvals | Approval Register | Applicable approvals obtained |
+| 8 | Procurement | BOM and Purchase Orders | Material verified |
+| 9 | Installation | Installation Report | Installation completed |
+| 10 | Safety testing | Test Report | Safety checks passed |
+| 11 | Commissioning | Commissioning Report | System operational |
+| 12 | Performance verification | Performance Report | Acceptance criteria met |
+| 13 | Handover | Handover Certificate | Customer acceptance |
+| 14 | Maintenance | AMC and Service Reports | Ongoing support |
+
+---
+
+# 15. How AeroSun Energy should manage these projects internally
+
+I recommend creating a central project management system rather than handling everything through individual WhatsApp messages, phone calls and spreadsheets.
+
+Every project should have a unique ID.
+
+Example:
+
+`ASE-SOL-2026-001` – Solar project  
+`ASE-WND-2026-001` – Wind project  
+`ASE-HYB-2026-001` – Hybrid project  
+
+### Suggested internal departments
+
+| Department | Responsibility |
+|---|---|
+| Sales & Customer Relations | Enquiries, requirements, quotations |
+| Engineering & Design | Survey, calculations, system design |
+| Government Approvals | DISCOM, CEIG and other applicable permissions |
+| Procurement | Supplier selection and material purchase |
+| Quality Control | Material inspection and installation quality |
+| Installation Team | Mechanical and electrical installation |
+| Testing & Commissioning | Safety, output and performance verification |
+| Customer Support | Training, warranty and maintenance |
+| Finance & Accounts | Payments, invoices and project costing |
+
+In the initial phase, one qualified person may handle multiple responsibilities, but engineering approval, electrical safety checks and financial authorisation should have clearly assigned accountability.
+
+---
+
+# 16. Important operational rules for AeroSun Energy
+
+I recommend making these mandatory internal rules:
+
+1. Never issue a final quotation without understanding the customer's requirements.
+2. Never finalise system capacity without technical assessment.
+3. Never purchase major project equipment without an approved BOM.
+4. Never promise a government subsidy without confirming eligibility and availability.
+5. Never install grid-connected equipment without following the applicable DISCOM process.
+6. Never energise an installation before completing required safety tests.
+7. Never claim rated wind output as actual continuous generation.
+8. Never declare a solar pump successful without measuring water flow and head.
+9. Never close a project without recording actual performance.
+10. Never complete handover without customer training and documentation.
+11. Maintain equipment serial numbers and warranty records.
+12. Maintain a complete project history for future maintenance and troubleshooting.
+
+---
+
+## 17. Official technical and government references
+
+These are useful starting points for developing AeroSun's engineering and compliance procedures:
+
+- [MNRE – National Rooftop Solar Portal](https://solarrooftop.pmsuryaghar.gov.in/?utm_source=chatgpt.com) — Rooftop solar applications and programme information.
+- [Central Electricity Authority (CEA)](https://cea.nic.in/?utm_source=chatgpt.com) — Electrical safety and grid-connectivity regulations.
+- [MNRE – PM-KUSUM Portal](https://pmkusum.mnre.gov.in/?utm_source=chatgpt.com) — Agricultural solar pump and solarisation programme information.
+- [National Institute of Wind Energy (NIWE)](https://niwe.res.in/?utm_source=chatgpt.com) — Wind resource assessment and turbine certification.
+- [Bureau of Indian Standards (BIS)](https://www.bis.gov.in/?utm_source=chatgpt.com) — Applicable Indian standards and product compliance.
+
+For Andhra Pradesh projects, the applicable DISCOM, state renewable-energy agency and electrical inspectorate requirements must be checked for the specific site and project category.
+
+---
+
+## My recommendation: Make this AeroSun Energy's official project execution model
+
+I would standardise the entire business around three important documents:
+
+**1. Customer Project File**  
+Requirements, site survey, quotation, agreement, payments and approvals.
+
+**2. Engineering & Quality File**  
+Design, BOM, material inspection, installation, safety testing, commissioning and performance verification.
+
+**3. Customer Handover & Service File**  
+Warranty, user manuals, customer acceptance, maintenance and service history.
+
+This creates a traceable process from the first customer enquiry to long-term maintenance, and gives AeroSun a repeatable operating model as the company grows.
+
+**The next logical step is to convert this workflow into an AeroSun Energy Project Management System, with individual forms, checklists, approval gates and document templates for Solar, Wind and Hybrid projects.**

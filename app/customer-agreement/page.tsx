@@ -5,7 +5,167 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { submitMailtoForm } from '@/lib/submitMailto'
 import { useState } from 'react'
-import FormWarningRibbon from '@/app/components/ui/FormWarningRibbon'
+
+const projectExecutionSections = [
+  {
+    title: 'Project lifecycle overview',
+    text:
+      'AeroSun Energy should follow a standard project lifecycle for every customer, from requirement collection to commissioning, performance verification, and final handover. The process should be documented and reviewed at each stage for solar, wind, and hybrid projects.',
+    points: [
+      'Residential rooftop solar systems',
+      'Commercial and industrial solar installations',
+      'Off-grid solar, solar pumpsets, and farm systems',
+      'Wind turbine and wind generator projects',
+      'Solar-wind hybrid and battery-based systems',
+    ],
+  },
+  {
+    title: '1. Customer enquiry and requirement collection',
+    text:
+      'The first step is to understand the customer’s exact needs before preparing a quotation. AeroSun should collect customer details, electrical requirements, site conditions, and operating expectations, including any wind, pump, or hybrid requirements.',
+    points: [
+      'Customer information, address, contact details, and use case',
+      'Monthly electricity consumption, sanctioned load, and backup needs',
+      'Available rooftop or land area, shading, structure, and wiring access',
+      'Wind-speed and turbine requirements for wind projects',
+      'Water source, flow rate, head, and agricultural pumping requirements',
+    ],
+  },
+  {
+    title: '2. Technical site survey and feasibility assessment',
+    text:
+      'After collecting the inquiry, AeroSun should conduct a technical site survey and confirm that the proposed design is feasible. This includes checking roof or land conditions, shading, wind exposure, load profile, structural suitability, and whether the intended solution can meet the customer’s goals.',
+    points: [
+      'Rooftop solar checks: structure, orientation, shading, and access',
+      'Ground-mounted checks: land, soil, access, and compacting conditions',
+      'Off-grid battery sizing and autonomy review',
+      'Wind feasibility based on wind data, turbulence, obstacles, and tower height',
+      'Pump system viability using water head, flow, source, and site conditions',
+    ],
+  },
+  {
+    title: '3. System design and engineering',
+    text:
+      'Once feasibility is confirmed, AeroSun prepares a project-specific engineering design. The design should cover solar, wind, hybrid generation, batteries, protection, cables, inverters, monitoring, and the project’s electrical and structural layout.',
+    points: [
+      'Solar system design includes panel capacity, string design, inverter, mounting, earthing, protection, and monitoring',
+      'Wind system design includes turbine type, tower height, foundation, generator, overspeed protection, and battery or grid interfaces',
+      'Hybrid system design includes solar and wind contribution, battery storage, control logic, backup loads, and protection',
+      'Deliverables include the detailed project design, single-line diagram, BOM, drawings, and specifications',
+    ],
+  },
+  {
+    title: '4. Quotation preparation and commercial proposal',
+    text:
+      'The quotation should clearly explain what the customer is paying for and what is included, with separate cost categories for equipment, installation, civil works, electrical items, approvals, and after-sales support.',
+    points: [
+      'Solar, wind, battery, electrical, and safety equipment',
+      'Civil work, installation, testing, commissioning, and transportation',
+      'Engineering and drawing support',
+      'Applicable approvals, inspections, and meter-related charges',
+      'Warranty, maintenance, and service scope',
+    ],
+  },
+  {
+    title: '5. Customer approval, order confirmation, and payment',
+    text:
+      'Once the customer accepts the quotation, the project moves into a formal order confirmation stage. This includes the signed agreement, payment schedule, accepted design, and the generation of a project ID or order reference.',
+    points: [
+      'Explain the design and expected performance to the customer',
+      'Clarify equipment, warranty, scope, and exclusions',
+      'Collect the agreed advance payment and sign the project agreement',
+      'Maintain a project file with approval history, documents, and schedules',
+    ],
+  },
+  {
+    title: '6. Government approvals and statutory permissions',
+    text:
+      'This is a critical stage because the required approvals depend on the type of system and the project category. AeroSun should not assume that all renewable energy systems require the same permits or checks.',
+    points: [
+      'Grid-connected rooftop solar may need DISCOM feasibility, net-metering, and commissioning approvals',
+      'Off-grid systems need electrical safety and local compliance review',
+      'Solar pumpsets may require state agency and subsidy checks',
+      'Wind and hybrid systems may require land, electrical, grid, aviation, or structural approvals',
+      'Always maintain an approval register with application numbers, conditions, and pending actions',
+    ],
+  },
+  {
+    title: '7. Material procurement and quality verification',
+    text:
+      'After the design is frozen, AeroSun procures the equipment and verifies the material against the approved BOM. Material verification helps prevent wrong models, damaged parts, missing accessories, and installation delays.',
+    points: [
+      'Verify model numbers, serial numbers, manufacturer details, and warranties',
+      'Check physical condition, delivery challan, invoice, and matching BOM',
+      'Confirm compatibility between modules, inverters, controllers, and batteries',
+      'Record the inspection results in an approved material register',
+    ],
+  },
+  {
+    title: '8. Installation according to engineering and safety standards',
+    text:
+      'Installation should be performed by trained technicians under the supervision of a qualified engineer. Every installation must match the approved design and maintain proper mechanical, electrical, and safety standards.',
+    points: [
+      'Solar installation requires safe mounting, correct stringing, earthing, DC and AC protection, and waterproofing',
+      'Wind installation covers proper tower installation, foundation checks, mechanical fastening, and overspeed protection',
+      'Hybrid systems require synchronized design and integration across solar, wind, battery, and control equipment',
+      'Maintain an installation checklist with photographs and completion records',
+    ],
+  },
+  {
+    title: '9. Pre-commissioning inspection and safety testing',
+    text:
+      'Before switching on the system, AeroSun should complete pre-commissioning checks to confirm the installation is electrically and mechanically safe.',
+    points: [
+      'Visual and module checks for damage or structural defects',
+      'Polarity, string voltage, insulation, earthing continuity, and surge protection checks',
+      'Protection and inverter configuration validation',
+      'Wind and hybrid-specific checks such as blade inspection, braking, battery operation, and control testing',
+    ],
+  },
+  {
+    title: '10. System commissioning and operational testing',
+    text:
+      'Commissioning is the stage where the system is switched on and checked against its approved operational design. For grid-connected systems, this also includes utility coordination and synchronization checks.',
+    points: [
+      'Solar commissioning includes DC input verification, inverter startup, AC output, and monitoring checks',
+      'Wind commissioning checks generator output, controller operation, braking, and safe operating conditions',
+      'Hybrid commissioning validates source switching, battery charging, grid response, and backup behaviour',
+      'Record the commissioning report and operational observations',
+    ],
+  },
+  {
+    title: '11. Output verification and performance assessment',
+    text:
+      'The project is not complete when the system is energized. AeroSun must measure actual energy output against the approved design and acceptance criteria.',
+    points: [
+      'Measure solar irradiation, module temperature, DC output, AC output, and daily generation',
+      'For wind, record wind speed, turbine operating status, electrical output, vibration, and performance against the power curve',
+      'For pump systems, verify water flow, head, and operating hours',
+      'For hybrid systems, measure solar contribution, wind contribution, storage, backup, and grid import/export',
+    ],
+  },
+  {
+    title: '12. Customer handover and project closure',
+    text:
+      'After successful testing and commissioning, the system should be formally handed over to the customer with all documentation, training, and support information in place.',
+    points: [
+      'Final design, single-line diagram, BOM, warranty certificates, serial numbers, and technical manuals',
+      'Electrical test report, commissioning report, performance report, and approval copies',
+      'Customer training for operation, monitoring, and safe shutdown procedures',
+      'Customer acceptance form and final handover certificate',
+    ],
+  },
+  {
+    title: 'Recommended AeroSun operating model',
+    text:
+      'The company should standardize its workflow around three documents: Customer Project File, Engineering & Quality File, and Customer Handover & Service File. This creates a traceable process from the first enquiry to long-term maintenance and gives AeroSun a repeatable operating model as it grows.',
+    points: [
+      'Customer Project File: requirements, site survey, quotation, agreement, approvals, and payment records',
+      'Engineering & Quality File: design, BOM, material inspection, installation, testing, commissioning, and performance verification',
+      'Handover & Service File: warranty, user manuals, maintenance, service history, and customer support',
+    ],
+  },
+]
 
 const agreementSchema = z.object({
   customerName: z.string().trim().min(2, 'Customer name is required.'),
@@ -30,6 +190,34 @@ const defaultValues: AgreementFormValues = {
   phone: '',
   agreed: false,
 }
+
+const projectSummaryCards = [
+  {
+    title: 'Customer Project File',
+    description: 'Requirements, site survey, quotation, agreement, approvals, and project records kept in one traceable file.',
+    accent: 'emerald',
+  },
+  {
+    title: 'Engineering & Quality File',
+    description: 'Design, BOM, inspection, installation, safety checks, commissioning, and performance verification.',
+    accent: 'sky',
+  },
+  {
+    title: 'Handover & Service File',
+    description: 'Warranty, training, acceptance, maintenance history, and long-term service continuity.',
+    accent: 'violet',
+  },
+]
+
+const coreProcessSteps = [
+  'Customer enquiry and requirement collection',
+  'Technical site survey and feasibility review',
+  'System design and engineering approval',
+  'Quotation, commercial offer, and agreement',
+  'Procurement, government approvals, and scheduling',
+  'Installation, testing, commissioning, and performance verification',
+  'Customer handover, training, and maintenance support',
+]
 
 export default function CustomerAgreementPage() {
   const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
@@ -75,9 +263,48 @@ export default function CustomerAgreementPage() {
 
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(30,64,175,0.12),transparent_18%),linear-gradient(180deg,#f8fafc_0%,#eef6ff_28%,#f8fafc_100%)] px-4 py-8 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-6xl">
-        <FormWarningRibbon />
+      <div className="mx-auto max-w-6xl space-y-8">
+        <section className="overflow-hidden rounded-[30px] border border-slate-200 bg-white/90 shadow-[0_28px_90px_-35px_rgba(15,23,42,0.38)] backdrop-blur-sm">
+          <div className="border-b border-slate-200 bg-linear-to-r from-[#0c1f51] via-[#153c78] to-[#0d6685] p-5 text-white sm:p-6">
+            <p className="text-[10px] font-black uppercase tracking-[0.34em] text-indigo-100/85">Project Execution</p>
+            <h1 className="mt-2 text-2xl font-black tracking-[-0.06em] sm:text-3xl">AeroSun Energy Project Execution Process</h1>
+          </div>
+          <div className="p-4 sm:p-6 lg:p-8">
+            {projectExecutionSections.map((section, index) => (
+              <div key={section.title} className="mb-8 last:mb-0">
+                <h2 className="text-xl font-bold text-slate-900">{section.title}</h2>
+                <p className="mt-2 mb-4 text-sm leading-7 text-slate-700">{section.text}</p>
+                <ul className="list-inside list-disc space-y-2 pl-4 text-sm leading-7 text-slate-700">
+                  {section.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <div className="overflow-hidden rounded-[30px] border border-slate-200 bg-white/90 shadow-[0_28px_90px_-35px_rgba(15,23,42,0.38)] backdrop-blur-sm">
+          <div className="grid gap-8 bg-linear-to-br from-[#0c1f51] to-[#0d6685] p-6 text-white">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {projectSummaryCards.map((card) => (
+                <div key={card.title} className={`rounded-2xl p-4 shadow-md transition-all duration-200 ${card.accent === 'emerald' ? 'bg-emerald-500/10 hover:scale-[1.02]' : card.accent === 'sky' ? 'bg-sky-500/10 hover:scale-[1.02]' : 'bg-violet-500/10 hover:scale-[1.02]'}`}>
+                  <h3 className="text-lg font-semibold">{card.title}</h3>
+                  <p className="mt-2 text-sm leading-6">{card.description}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="rounded-2xl bg-white p-6 shadow-md">
+              <h2 className="mb-4 text-xl font-bold">Core Process Steps</h2>
+              <ol className="list-inside list-decimal space-y-2 pl-4 text-sm leading-6 text-slate-700">
+                {coreProcessSteps.map((step, index) => (
+                  <li key={index}>{step}</li>
+                ))}
+              </ol>
+            </div>
+          </div>
+
           <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5 p-3 sm:p-5 lg:p-6">
             <header className="overflow-hidden rounded-[26px] border border-indigo-200 bg-linear-to-r from-[#0c1f51] via-[#153c78] to-[#0d6685] p-4 text-white sm:p-5">
               <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
@@ -87,11 +314,11 @@ export default function CustomerAgreementPage() {
                   </div>
                   <div>
                     <p className="text-[10px] font-black uppercase tracking-[0.34em] text-indigo-100/85">Agreement</p>
-                    <h1 className="mt-1 text-2xl font-black tracking-[-0.06em] sm:text-3xl">Customer Agreement & Payment Terms</h1>
+                    <h2 className="mt-1 text-2xl font-black tracking-[-0.06em] sm:text-3xl">Customer Agreement & Payment Terms</h2>
                   </div>
                 </div>
 
-                <div className="grid gap-2 text-sm sm:grid-cols-3 lg:min-w-[420px]">
+                <div className="grid gap-2 text-sm sm:grid-cols-3 lg:min-w-104">
                   <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
                     <p className="text-[9px] font-black uppercase tracking-[0.28em] text-indigo-100/75">Ref.</p>
                     <p className="mt-1 font-semibold">AES/AGR/2026</p>
@@ -137,7 +364,7 @@ export default function CustomerAgreementPage() {
                   </div>
                 </div>
 
-                <div className="rounded-[24px] border border-violet-200 bg-linear-to-br from-[#f6f1ff] via-white to-[#f7f8ff] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] sm:p-5">
+                <div className="rounded-3xl border border-violet-200 bg-linear-to-br from-[#f6f1ff] via-white to-[#f7f8ff] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] sm:p-5">
                   <div className="mb-4 flex items-center gap-3 border-b border-violet-200 pb-3">
                     <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-violet-500 to-indigo-500 text-lg font-black text-white shadow-lg shadow-violet-500/25">3</span>
                     <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Project Details</h2>
@@ -164,7 +391,7 @@ export default function CustomerAgreementPage() {
                 </div>
 
                 <div className="grid gap-4 lg:grid-cols-2">
-                  <section className="rounded-[24px] border border-amber-200 bg-linear-to-br from-[#fffaf1] via-white to-[#fffef7] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
+                  <section className="rounded-3xl border border-amber-200 bg-linear-to-br from-[#fffaf1] via-white to-[#fffef7] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                     <div className="mb-3 flex items-center gap-3 border-b border-amber-200 pb-3">
                       <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-orange-500 text-lg font-black text-white shadow-lg shadow-amber-500/25">4</span>
                       <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Commercial Terms</h2>
@@ -194,7 +421,7 @@ export default function CustomerAgreementPage() {
                     </div>
                   </section>
 
-                  <section className="rounded-[24px] border border-emerald-200 bg-linear-to-br from-[#edfdf7] via-white to-[#f5fff9] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
+                  <section className="rounded-3xl border border-emerald-200 bg-linear-to-br from-[#edfdf7] via-white to-[#f5fff9] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                     <div className="mb-3 flex items-center gap-3 border-b border-emerald-200 pb-3">
                       <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-teal-500 text-lg font-black text-white shadow-lg shadow-emerald-500/25">5</span>
                       <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Scope of Work</h2>
@@ -218,7 +445,7 @@ export default function CustomerAgreementPage() {
                   </section>
                 </div>
 
-                <section className="rounded-[24px] border border-rose-200 bg-linear-to-br from-[#fff5f5] via-white to-[#fffafb] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
+                <section className="rounded-3xl border border-rose-200 bg-linear-to-br from-[#fff5f5] via-white to-[#fffafb] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                   <div className="mb-3 flex items-center gap-3 border-b border-rose-200 pb-3">
                     <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-rose-500 to-pink-500 text-lg font-black text-white shadow-lg shadow-rose-500/25">6</span>
                     <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Terms & Conditions</h2>
@@ -242,7 +469,7 @@ export default function CustomerAgreementPage() {
                 </section>
               </section>
 
-              <aside className="rounded-[24px] border border-indigo-200 bg-linear-to-br from-[#0b1e46] via-[#132c5e] to-[#0a1d45] p-4 text-white shadow-[0_25px_50px_-30px_rgba(15,23,42,0.9)] sm:p-5">
+              <aside className="rounded-3xl border border-indigo-200 bg-linear-to-br from-[#0b1e46] via-[#132c5e] to-[#0a1d45] p-4 text-white shadow-[0_25px_50px_-30px_rgba(15,23,42,0.9)] sm:p-5">
                 <div className="mb-4 flex items-center gap-3 border-b border-white/10 pb-3">
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-lg font-black">7</span>
                   <h2 className="text-lg font-black tracking-[-0.04em]">Acceptance</h2>

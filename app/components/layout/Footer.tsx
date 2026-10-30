@@ -81,10 +81,7 @@ export default function Footer() {
 	const footer = t.footer
 	const navLinks = t.navbar.links
 	const queries = t.navbar.quiries || []
-	const allowedQuickEnquiries = ['/know-eligibility', '/customer-enquiry', '/installation-checklist', '/projects']
 	const quickEnquiries = queries
-		.filter((item) => allowedQuickEnquiries.includes(item.href))
-		.sort((a, b) => allowedQuickEnquiries.indexOf(a.href) - allowedQuickEnquiries.indexOf(b.href))
 	const visibleNavLinks = navLinks
 
 	return (
