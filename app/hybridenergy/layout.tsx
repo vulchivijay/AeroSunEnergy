@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Hybrid Solar & Wind Energy | AeroSun Energy',
   description:
-    'Hybrid solar and wind energy systems combining PV, wind turbines, storage, and intelligent controls for reliable power generation for homes, businesses, farms, and microgrids.',
+    'Hybrid solar and wind energy systems combining PV, wind turbines, storage, and intelligent controls for reliable power generation for homes, businesses, farms, and microgrids in India.',
   keywords: [
     'hybrid solar and wind energy',
     'solar wind hybrid system',
@@ -15,6 +15,10 @@ export const metadata: Metadata = {
     'renewable hybrid power',
     'AeroSun Energy hybrid',
     'wind solar hybrid system',
+    'grid-connected hybrid solar',
+    'farm hybrid power system',
+    'resilient clean energy system',
+    'renewable energy India',
     'hybrid power generation',
     'solar and wind combination system',
     'hybrid rooftop solar system',

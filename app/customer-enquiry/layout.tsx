@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Customer Enquiry | AeroSun Energy',
   description:
-    'Submit your enquiry to AeroSun Energy for solar, wind, and hybrid energy systems, project discussions, quotations, and renewable energy consultation in India.',
+    'Submit your solar, wind, and hybrid energy enquiry to AeroSun Energy for expert advice, renewable energy consultation, and project-specific quotations in India.',
   keywords: [
     'customer enquiry AeroSun Energy',
     'solar energy enquiry',
@@ -28,6 +28,8 @@ export const metadata: Metadata = {
     'renewable energy project enquiry',
     'solar and wind project discussion',
     'hybrid system inquiry',
+    'commercial renewable energy enquiry',
+    'renewable power solution enquiry',
   ],
   alternates: {
     canonical: '/customer-enquiry',
