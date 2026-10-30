@@ -22,10 +22,51 @@ export default function GlobalError({
         aria-hidden="true"
       />
       <div
-        className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(to_right,rgba(255,255,255,0.3)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.3)_1px,transparent_1px)] [background-size:72px_72px]"
+        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.3)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.3)_1px,transparent_1px)] bg-size-[72px_72px] opacity-[0.07]"
         aria-hidden="true"
       />
       <div className="absolute left-0 right-0 top-0 h-px bg-linear-to-r from-transparent via-red-500/50 to-transparent" aria-hidden="true" />
+
+      <div className="absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-amber-900/30 to-transparent" aria-hidden="true" />
+
+      <div className="absolute bottom-10 left-6 z-0 hidden w-[36vw] max-w-90 sm:block">
+        <div className="relative h-40 w-full">
+          <div className="absolute left-6 top-0 h-8 w-8 rounded-full bg-amber-300/90 shadow-[0_0_30px_rgba(252,211,77,0.9)] animate-pulse" aria-hidden="true" />
+          <div className="absolute left-10 top-8 h-24 w-24 rounded-[18px] border border-sky-300/50 bg-sky-200/10 backdrop-blur-sm">
+            <div className="absolute inset-x-2 top-3 h-px bg-sky-200/60" />
+            <div className="absolute inset-x-2 top-7 h-px bg-sky-200/60" />
+            <div className="absolute inset-x-2 top-11 h-px bg-sky-200/60" />
+            <div className="absolute inset-y-2 left-3 w-px bg-sky-200/60" />
+            <div className="absolute inset-y-2 left-7 w-px bg-sky-200/60" />
+            <div className="absolute inset-y-2 left-11 w-px bg-sky-200/60" />
+            <div className="absolute inset-y-2 right-3 w-px bg-sky-200/60" />
+            <div className="absolute inset-y-2 right-7 w-px bg-sky-200/60" />
+            <div className="absolute inset-y-2 right-11 w-px bg-sky-200/60" />
+            <div className="absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-300/60 blur-[2px]" />
+          </div>
+          <div className="absolute left-14 top-20 h-20 w-8 rounded-t-full border border-sky-400/40 bg-sky-400/20" aria-hidden="true" />
+          <div className="absolute left-28 top-20 h-20 w-8 rounded-t-full border border-sky-400/40 bg-sky-400/20" aria-hidden="true" />
+          <div className="absolute bottom-0 left-6 right-6 h-2 rounded-full bg-slate-500/50" aria-hidden="true" />
+        </div>
+      </div>
+
+      <div className="absolute bottom-8 right-6 z-0 hidden w-[32vw] max-w-75 sm:block">
+        <div className="relative h-48 w-full">
+          <div className="absolute bottom-0 left-20 h-28 w-2 rounded-full bg-slate-300/80" aria-hidden="true" />
+          <div className="absolute bottom-28 left-16 h-7 w-7 rounded-full bg-slate-200/80 shadow-[0_0_18px_rgba(248,250,252,0.7)]" aria-hidden="true" />
+          <div
+            className="absolute bottom-20 left-16 flex h-20 w-20 items-center justify-center animate-spin"
+            style={{ animationDuration: '7s' }}
+            aria-hidden="true"
+          >
+            <div className="absolute h-0.5 w-20 rounded-full bg-slate-200/90" />
+            <div className="absolute h-20 w-0.5 rounded-full bg-slate-200/90" />
+            <div className="absolute h-16 w-0.5 rotate-45 rounded-full bg-slate-200/90" />
+            <div className="absolute h-16 w-0.5 -rotate-45 rounded-full bg-slate-200/90" />
+          </div>
+          <div className="absolute bottom-0 left-14 right-8 h-2 rounded-full bg-slate-500/50" aria-hidden="true" />
+        </div>
+      </div>
 
       <div className="relative z-10 flex flex-col items-center text-center transition-all duration-700 translate-y-0 opacity-100">
         {/* Warning icon with pulse */}
