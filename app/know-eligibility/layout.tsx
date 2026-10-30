@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Check Your Solar Eligibility | AeroSun Energy',
+  title: 'Check Your Solar Eligibility & Rooftop Subsidy Options | AeroSun Energy',
   description:
     'Understand rooftop solar and subsidy eligibility with AeroSun Energy, including household requirements, system sizing, and renewable energy project suitability in India.',
   keywords: [
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     canonical: '/know-eligibility',
   },
   openGraph: {
-    title: 'Check Your Solar Eligibility | AeroSun Energy',
+    title: 'Check Your Solar Eligibility & Rooftop Subsidy Options | AeroSun Energy',
     description:
       'Learn whether your property qualifies for rooftop solar and subsidy support with AeroSun Energy expert guidance.',
     url: 'https://aerosunenergy.in/know-eligibility',

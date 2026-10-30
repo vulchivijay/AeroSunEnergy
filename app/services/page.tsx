@@ -1,7 +1,7 @@
 import { OptimizedImage } from '@/app/components/ui'
 
 export const metadata = {
-  title: 'Renewable Energy Services | AeroSun Energy',
+  title: 'Renewable Energy Services | Solar, Wind & Hybrid Solutions by AeroSun Energy',
   description:
     'AeroSun Energy offers renewable energy services including solar consultation, wind energy support, hybrid system design, installation, maintenance, and technical support for homes, businesses, farms, and industrial projects in India.',
   keywords: [
@@ -37,7 +37,7 @@ export const metadata = {
     canonical: '/services',
   },
   openGraph: {
-    title: 'Renewable Energy Services | Solar, Wind & Hybrid Solutions',
+    title: 'Renewable Energy Services | Solar, Wind & Hybrid Solutions by AeroSun Energy',
     description:
       'Solar, wind, and hybrid energy services covering consultation, design, engineering, installation, maintenance, and monitoring.',
     url: 'https://aerosunenergy.in/services',

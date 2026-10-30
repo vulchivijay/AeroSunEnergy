@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Contact AeroSun Energy | Get a Solar Quote & Expert Advice',
+  title: 'Contact AeroSun Energy | Solar Quote, Renewable Energy Advice & Project Consultation',
   description:
     'Contact AeroSun Energy for expert guidance on solar, wind, and hybrid energy systems. Request a solar quote, discuss your project, and get reliable renewable energy solutions for your home or business in India.',
   keywords: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     canonical: '/contact',
   },
   openGraph: {
-    title: 'Contact Us | AeroSun Energy',
+    title: 'Contact AeroSun Energy | Solar Quote, Renewable Energy Advice & Project Consultation',
     description:
       'Reach out for renewable energy consultation, quotations, and project discussions with AeroSun Energy.',
     url: 'https://aerosunenergy.in/contact',

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Customer Agreement | AeroSun Energy',
+  title: 'Customer Agreement for Solar, Wind & Hybrid Project Terms | AeroSun Energy',
   description:
     'Review AeroSun Energy customer agreement terms, project scope, payment conditions, and acceptance details for solar, wind, and hybrid renewable energy projects in India.',
   keywords: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     canonical: '/customer-agreement',
   },
   openGraph: {
-    title: 'Customer Agreement | AeroSun Energy',
+    title: 'Customer Agreement for Solar, Wind & Hybrid Project Terms | AeroSun Energy',
     description:
       'AeroSun Energy customer agreement and payment terms for solar, wind, and hybrid energy solutions.',
     url: 'https://aerosunenergy.in/customer-agreement',

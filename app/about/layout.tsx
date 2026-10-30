@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About AeroSun Energy | Reliable Solar Solutions for Homes & Businesses',
+  title: 'About AeroSun Energy | Trusted Solar, Wind & Hybrid Energy Solutions in India',
   description:
     'Learn about AeroSun Energy, a trusted renewable energy company delivering solar, wind, and hybrid power solutions for homes, businesses, farms, and industrial projects in India.',
   keywords: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     canonical: '/about',
   },
   openGraph: {
-    title: 'About Us | AeroSun Energy',
+    title: 'About AeroSun Energy | Trusted Solar, Wind & Hybrid Energy Solutions in India',
     description:
       'Discover the mission, values, and renewable energy expertise behind AeroSun Energy.',
     url: 'https://aerosunenergy.in/about',

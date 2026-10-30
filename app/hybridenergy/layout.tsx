@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Hybrid Solar & Wind Energy | AeroSun Energy',
+  title: 'Hybrid Solar & Wind Energy Systems | Reliable Renewable Power by AeroSun Energy',
   description:
     'Hybrid solar and wind energy systems combining PV, wind turbines, storage, and intelligent controls for reliable power generation for homes, businesses, farms, and microgrids in India.',
   keywords: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     canonical: '/hybridenergy',
   },
   openGraph: {
-    title: 'Hybrid Solar & Wind Energy | AeroSun Energy',
+    title: 'Hybrid Solar & Wind Energy Systems | Reliable Renewable Power by AeroSun Energy',
     description:
       'Integrated solar and wind energy systems with storage for reliable power generation, smart controls, and energy resilience across India.',
     url: 'https://aerosunenergy.in/hybridenergy',

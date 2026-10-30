@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Solar Estimation Calculator | Rooftop Solar Savings Estimate',
+  title: 'Solar Estimation Calculator | Estimate Rooftop Solar Savings & Payback with AeroSun Energy',
   description:
     'Use AeroSun Energy’s solar estimation calculator to estimate rooftop solar capacity, savings potential, payback period, and return on investment for homes and businesses in India.',
   keywords: [
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     canonical: '/estimation-calculator',
   },
   openGraph: {
-    title: 'Solar Estimation Calculator | AeroSun Energy',
+    title: 'Solar Estimation Calculator | Estimate Rooftop Solar Savings & Payback with AeroSun Energy',
     description:
       'Estimate your solar system size, potential savings, and ROI with AeroSun Energy.',
     url: 'https://aerosunenergy.in/estimation-calculator',

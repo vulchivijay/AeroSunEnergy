@@ -10,7 +10,7 @@ import {
 } from '../components/ui'
 
 export const metadata = {
-  title: 'Solar Energy Systems | AeroSun Energy',
+  title: 'Solar Energy Systems | Rooftop Solar, Hybrid & Clean Power Solutions by AeroSun Energy',
   description:
     'AeroSun Energy designs and installs rooftop solar, off-grid solar, hybrid solar, and commercial solar systems for homes, businesses, farms, and industrial sites in India.',
   keywords: [
@@ -46,7 +46,7 @@ export const metadata = {
     canonical: '/solarenergy',
   },
   openGraph: {
-    title: 'Solar Energy Systems | Rooftop Solar & Hybrid Solutions',
+    title: 'Solar Energy Systems | Rooftop Solar, Hybrid & Clean Power Solutions by AeroSun Energy',
     description:
       'Explore rooftop solar, hybrid solar, off-grid solar, and commercial solar solutions designed for Indian homes, businesses, and agricultural applications.',
     url: 'https://aerosunenergy.in/solarenergy',

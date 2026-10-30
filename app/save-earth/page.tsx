@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Save Earth | AeroSun Energy',
+  title: 'Save Earth with Solar, Wind & Hybrid Renewable Energy | AeroSun Energy',
   description:
     'Learn how rooftop solar, wind, and hybrid renewable energy solutions help reduce emissions, protect the environment, and build a cleaner future with AeroSun Energy.',
   keywords: [
@@ -12,12 +12,29 @@ export const metadata: Metadata = {
     'reduce carbon emissions',
     'clean energy India',
     'AeroSun Energy sustainability',
+    'green energy solutions',
+    'solar power for climate action',
+    'wind energy sustainability',
+    'hybrid power climate impact',
+    'renewable environmental benefits',
+    'AeroSun Energy green future',
+    'low carbon energy solutions',
+    'eco friendly power',
+    'clean electricity generation',
+    'sustainable energy India',
+    'solar and wind climate change',
+    'reduce pollution with solar',
+    'renewable resource protection',
+    'green technology solutions',
+    'clean energy for future generations',
+    'AeroSun Energy environmental mission',
+    'solar for a greener planet',
   ],
   alternates: {
     canonical: '/save-earth',
   },
   openGraph: {
-    title: 'Save Earth | AeroSun Energy',
+    title: 'Save Earth with Solar, Wind & Hybrid Renewable Energy | AeroSun Energy',
     description:
       'Discover how switching to clean solar, wind, and hybrid energy can help reduce emissions, save resources, and protect the planet.',
     url: 'https://aerosunenergy.in/save-earth',
