@@ -78,7 +78,7 @@ export default function SchemeBanner() {
                 Government Subsidy Initiative
               </div>
 
-              <h2 className="mt-6 text-4xl font-black leading-[0.95] tracking-[-0.06em] text-slate-900 sm:text-5xl xl:text-[5rem]">
+              <h2 className="mt-6 text-4xl font-black leading-[0.95] tracking-[0.06em] text-slate-900 sm:text-5xl xl:text-[5rem]">
                 PM Surya Ghar
                 <span className="mt-2 block text-emerald-600">Muft Bijli Yojana</span>
               </h2>
@@ -114,7 +114,7 @@ export default function SchemeBanner() {
               <div className="flex items-center justify-between gap-3 border-b border-white/10 pb-4">
                 <div>
                   <div className="text-[11px] font-bold uppercase tracking-[0.22em] text-emerald-200">Subsidy</div>
-                  <div className="mt-2 text-4xl font-black tracking-[-0.05em] text-white">₹ 78,000</div>
+                  <div className="mt-2 text-4xl font-black tracking-[0.05em] text-white">₹ 78,000</div>
                 </div>
                 <div className="rounded-lg border border-emerald-400/40 bg-emerald-500/10 px-3 py-2 text-right">
                   <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-200">Max</div>
@@ -125,7 +125,7 @@ export default function SchemeBanner() {
               <div className="mt-5 grid grid-cols-3 gap-3">
                 {stats.map((item) => (
                   <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 px-2 py-3 text-center">
-                    <div className="text-2xl font-black tracking-tight text-white sm:text-3xl">{item.value}</div>
+                    <div className="text-2xl font-black tracking-[0.06em] text-white sm:text-3xl">{item.value}</div>
                     <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-100">{item.label}</div>
                   </div>
                 ))}

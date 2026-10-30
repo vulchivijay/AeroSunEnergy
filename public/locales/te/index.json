@@ -49,6 +49,10 @@
     ],
     "quiries": [
       {
+        "label": "ప్రాజెక్టులు",
+        "href": "/projects"
+      },
+      {
         "label": "కస్టమర్ ఎన్‌క్వైరీ",
         "href": "/customer-enquiry"
       },

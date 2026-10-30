@@ -215,8 +215,8 @@ const founderProfiles = [
   {
     initials: 'D',
     name: 'Anusha',
-    role: 'Director',
-    description: 'Oversees organisational direction, stakeholder coordination and service excellence. She contributes to customer experience, governance and the smooth execution of project operations.',
+    role: 'Board of Director',
+    description: 'Helps in company work, team support, and project follow-up.',
   },
 ]
 

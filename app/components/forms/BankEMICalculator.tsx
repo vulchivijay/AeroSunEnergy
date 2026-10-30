@@ -93,7 +93,7 @@ export function BankEMICalculator() {
                   step={25000}
                   value={loanAmount}
                   onChange={(event) => setLoanAmount(clamp(Number(event.target.value), MIN_LOAN, MAX_LOAN))}
-                  className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-sky-600 shadow-[inset_0_1px_2px_rgba(15,23,42,0.08)]"
+                  className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-emerald-600"
                   aria-label="Loan amount"
                 />
 
@@ -118,7 +118,7 @@ export function BankEMICalculator() {
                   step={1}
                   value={tenureYears}
                   onChange={(event) => setTenureYears(clamp(Number(event.target.value), MIN_TENURE, MAX_TENURE))}
-                  className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-sky-600 shadow-[inset_0_1px_2px_rgba(15,23,42,0.08)]"
+                  className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-emerald-600"
                   aria-label="Loan tenure"
                 />
 
@@ -143,7 +143,7 @@ export function BankEMICalculator() {
                   step={0.01}
                   value={interestRate}
                   onChange={(event) => setInterestRate(clamp(Number(event.target.value), MIN_RATE, MAX_RATE))}
-                  className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-sky-600 shadow-[inset_0_1px_2px_rgba(15,23,42,0.08)]"
+                  className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-emerald-600"
                   aria-label="Interest rate"
                 />
 
@@ -164,7 +164,7 @@ export function BankEMICalculator() {
 
               <div className="rounded-[22px] border border-white/15 bg-white/15 p-5 backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.2)]">
                 <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-orange-50">Monthly EMI</div>
-                <div className="mt-3 text-5xl font-black tracking-[-0.08em] text-white">
+                <div className="mt-3 text-5xl font-black tracking-[0.08em] text-white">
                   {formatCurrency(calculation.emi)}
                 </div>
               </div>
@@ -172,19 +172,19 @@ export function BankEMICalculator() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-[18px] border border-white/10 bg-white/15 p-4 backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.12)]">
                   <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-50">Amount Payable</div>
-                  <div className="mt-3 text-[2rem] font-black tracking-[-0.06em] text-white">
+                  <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
                     {formatCurrency(calculation.totalAmountPayable)}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/15 p-4 backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.12)]">
                   <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-50">Interest Amount</div>
-                  <div className="mt-3 text-[2rem] font-black tracking-[-0.06em] text-white">
+                  <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
                     {formatCurrency(calculation.totalInterest)}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/15 p-4 backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.12)] sm:col-span-2">
                   <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-50">Principal Amount</div>
-                  <div className="mt-3 text-[2rem] font-black tracking-[-0.06em] text-white">
+                  <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
                     {formatCurrency(loanAmount)}
                   </div>
                 </div>

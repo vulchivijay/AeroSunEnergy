@@ -43,6 +43,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aerosunenergy.in/projects</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aerosunenergy.in/research-development</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -91,13 +97,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aerosunenergy.in/terms</loc>
+    <loc>https://aerosunenergy.in/terms-conditions</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://aerosunenergy.in/privacy</loc>
+    <loc>https://aerosunenergy.in/privacy-policy</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
