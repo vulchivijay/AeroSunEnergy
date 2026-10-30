@@ -28,9 +28,9 @@ function RecognitionHighlight() {
       subtitle: 'Recognized enterprise',
       badge: 'Certified',
       icon: '🏛️',
-      accent: 'from-emerald-400 via-emerald-500 to-teal-600',
-      glow: 'shadow-[0_0_35px_rgba(16,185,129,0.35)]',
-      ring: 'border-emerald-200/80',
+      accent: 'from-[#0d7a35] via-[#0f9d45] to-[#0a5d2a]',
+      glow: 'shadow-[0_0_30px_rgba(32,164,74,0.38)]',
+      ring: 'border-[#90d2a2]',
       text: 'Micro, Small & Medium Enterprise recognition supporting growth-ready clean energy operations.',
     },
     {
@@ -38,30 +38,30 @@ function RecognitionHighlight() {
       subtitle: 'Startup recognition',
       badge: 'Approved',
       icon: '🚀',
-      accent: 'from-sky-400 via-cyan-500 to-blue-700',
-      glow: 'shadow-[0_0_35px_rgba(14,165,233,0.35)]',
-      ring: 'border-sky-200/80',
+      accent: 'from-[#b75f00] via-[#d98309] to-[#8a4900]',
+      glow: 'shadow-[0_0_30px_rgba(245,158,11,0.38)]',
+      ring: 'border-[#e6b35d]',
       text: 'Official startup recognition for innovation-led renewable energy entrepreneurship and expansion.',
     },
   ]
 
   return (
-    <section className="mx-auto max-w-7xl px-4 pb-2 pt-8 sm:px-6 lg:px-10 lg:pt-10">
-      <div className="relative overflow-hidden rounded-[38px] border border-slate-200 bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.22),transparent_18%),radial-gradient(circle_at_bottom_right,rgba(14,165,233,0.20),transparent_22%),linear-gradient(135deg,#061b1a_0%,#0a2233_25%,#0b1423_45%,#101827_100%)] shadow-[0_30px_110px_-40px_rgba(14,116,144,0.8)]">
-        <div className="absolute -left-16 top-7 h-52 w-52 rounded-full bg-emerald-400/10 blur-3xl" aria-hidden="true" />
-        <div className="absolute -right-14 bottom-0 h-60 w-60 rounded-full bg-sky-500/10 blur-3xl" aria-hidden="true" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-size-[34px_34px]" aria-hidden="true" />
+    <section className="mx-auto max-w-7xl pt-8 lg:pt-10">
+      <div className="relative overflow-hidden rounded-[38px] border border-[#cfe8d2] bg-[radial-gradient(circle_at_top_left,rgba(13,122,53,0.2),transparent_18%),radial-gradient(circle_at_bottom_right,rgba(183,95,0,0.2),transparent_22%),linear-gradient(135deg,#eaf6ee_0%,#d7ecdf_35%,#fdf1d8_100%)] shadow-[0_32px_90px_-40px_rgba(13,122,53,0.45)]">
+        <div className="absolute -left-16 top-7 h-52 w-52 rounded-full bg-[#20A44A]/18 blur-3xl" aria-hidden="true" />
+        <div className="absolute -right-16 bottom-0 h-60 w-60 rounded-full bg-[#F59E0B]/18 blur-3xl" aria-hidden="true" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(24,37,31,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(24,37,31,0.04)_1px,transparent_1px)] bg-size-[34px_34px]" aria-hidden="true" />
 
         <div className="relative z-10 flex flex-col gap-6 p-5 sm:p-6 lg:flex-row lg:items-end lg:justify-between lg:p-8">
           <div className="max-w-2xl">
-            <p className="text-[10px] font-black uppercase tracking-[0.38em] text-emerald-300">Recognition</p>
-            <h2 className="mt-3 text-3xl font-black tracking-[-0.07em] text-white sm:text-4xl">
+            <p className="text-[10px] font-black uppercase tracking-[0.38em] text-[#1f6f40]">Recognition</p>
+            <h2 className="mt-3 text-3xl font-black tracking-[-0.07em] text-[#18251F] sm:text-4xl">
               Government-backed credibility for a fast-moving clean energy brand
             </h2>
           </div>
 
-          <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-4 py-2.5 text-[10px] font-black uppercase tracking-[0.28em] text-emerald-100 backdrop-blur-sm">
-            <span className="flex h-2.5 w-2.5 items-center justify-center rounded-full bg-emerald-400 shadow-[0_0_18px_rgba(52,211,153,0.9)]" />
+          <div className="inline-flex items-center gap-3 rounded-full border border-[#d9f0df] bg-white/80 px-4 py-2.5 text-[10px] font-black uppercase tracking-[0.28em] text-[#1d5f3f] backdrop-blur-sm">
+            <span className="flex h-2.5 w-2.5 items-center justify-center rounded-full bg-[#20A44A] shadow-[0_0_18px_rgba(32,164,74,0.9)]" />
             Verified credentials
           </div>
         </div>
@@ -70,26 +70,26 @@ function RecognitionHighlight() {
           {recognitions.map((item) => (
             <div
               key={item.title}
-              className={`group relative overflow-hidden rounded-[30px] border bg-white/8 p-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 ${item.ring}`}
+              className={`group relative overflow-hidden rounded-[30px] border bg-white/80 p-5 shadow-[0_20px_45px_-30px_rgba(24,37,31,0.35)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_55px_-30px_rgba(24,37,31,0.45)] ${item.ring}`}
             >
               <div className={`absolute inset-x-0 top-0 h-1.5 bg-linear-to-r ${item.accent}`} />
 
               <div className="flex items-center justify-between gap-3">
-                <div className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-linear-to-br ${item.accent} text-2xl ${item.glow}`}>
+                <div className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-linear-to-br ${item.accent} text-2xl text-white ${item.glow}`}>
                   {item.icon}
                 </div>
 
-                <span className="rounded-full border border-white/10 bg-slate-950/40 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.22em] text-slate-200">
+                <span className="rounded-full border border-[#e7f4ea] bg-[#f7fbf8] px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.22em] text-[#1c4d35]">
                   {item.badge}
                 </span>
               </div>
 
               <div className="mt-5">
-                <h3 className="text-2xl font-black tracking-tighter text-white">{item.title}</h3>
-                <p className="mt-1 text-sm text-slate-300">{item.subtitle}</p>
+                <h3 className="text-2xl font-black tracking-tighter text-[#18251F]">{item.title}</h3>
+                <p className="mt-1 text-sm text-[#335247]">{item.subtitle}</p>
               </div>
 
-              <div className="mt-5 rounded-2xl border border-white/10 bg-slate-950/30 p-3 text-sm leading-6 text-slate-200">
+              <div className="mt-5 rounded-2xl border border-[#e9efe9] bg-[#f8faf8] p-3 text-sm leading-6 text-[#234136]">
                 {item.text}
               </div>
             </div>
