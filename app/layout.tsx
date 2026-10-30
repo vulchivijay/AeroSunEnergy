@@ -44,6 +44,12 @@ export const metadata: Metadata = {
   description:
     'AeroSun Energy designs and installs solar, wind, and hybrid renewable energy systems for homes, businesses, farms, and industrial projects across India.',
   keywords: [
+    'solar energy',
+    'wind energy',
+    'renewable energy',
+    'hybrid energy systems',
+    'solar power solutions',
+    'wind power solutions',
     'solar energy solutions',
     'solar panel installation',
     'renewable energy solutions',

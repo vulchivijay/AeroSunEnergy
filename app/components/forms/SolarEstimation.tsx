@@ -180,7 +180,7 @@ export function SolarEstimation() {
             {e.badge}
           </span>
 
-          <h1 className="mt-6 text-4xl font-black leading-[0.95] tracking-[-0.065em] text-slate-900 sm:text-5xl lg:text-[5rem]">
+          <h1 className="mt-6 text-4xl font-black leading-[0.95] tracking-[0.065em] text-slate-900 sm:text-5xl lg:text-[5rem]">
             See how much you save with
             <span className="mt-2 block text-emerald-600">solar</span>
           </h1>
@@ -205,7 +205,7 @@ export function SolarEstimation() {
                   <div>
                     <p className="text-[11px] font-bold uppercase tracking-[0.26em] text-slate-500">Monthly Electricity Units</p>
                     <div className="mt-2 flex items-center gap-2">
-                      <span className="text-[2.4rem] font-black tracking-[-0.06em] text-emerald-600">{(values.monthlyUnits ?? defaultValues.monthlyUnits).toLocaleString('en-IN')} units</span>
+                      <span className="text-[2.4rem] font-black tracking-[0.06em] text-emerald-600">{(values.monthlyUnits ?? defaultValues.monthlyUnits).toLocaleString('en-IN')} units</span>
                     </div>
                   </div>
                   <div className="rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700">
@@ -236,14 +236,14 @@ export function SolarEstimation() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-[20px] border border-slate-200 bg-slate-50/80 p-4 shadow-inner">
                   <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Plant Size</div>
-                  <div className="mt-2 text-3xl font-black tracking-[-0.06em] text-emerald-600">
+                  <div className="mt-2 text-3xl font-black tracking-[0.06em] text-emerald-600">
                     {calculation ? `${calculation.recommendedKw} kW` : '—'}
                   </div>
                 </div>
 
                 <div className="rounded-[20px] border border-slate-200 bg-slate-50/80 p-4 shadow-inner">
                   <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Roof Required</div>
-                  <div className="mt-2 text-3xl font-black tracking-[-0.06em] text-emerald-600">
+                  <div className="mt-2 text-3xl font-black tracking-[0.06em] text-emerald-600">
                     {calculation ? `${Math.max(60, calculation.recommendedKw * 60)} sq ft` : '—'}
                   </div>
                 </div>
@@ -309,7 +309,7 @@ export function SolarEstimation() {
 
               <div className="rounded-[22px] border border-white/15 bg-white/10 p-5 backdrop-blur-sm">
                 <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-emerald-50">Annual Savings</div>
-                <div className="mt-3 text-5xl font-black tracking-[-0.08em] text-white">
+                <div className="mt-3 text-5xl font-black tracking-[0.08em] text-white">
                   {calculation ? currency(calculation.profit) : '—'}
                 </div>
               </div>
@@ -317,25 +317,25 @@ export function SolarEstimation() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
                   <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-50">Original Cost</div>
-                  <div className="mt-3 text-[2rem] font-black tracking-[-0.06em] text-white">
+                  <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
                     {calculation ? currency(calculation.totalInstallationCost) : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
                   <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-50">Subsidy</div>
-                  <div className="mt-3 text-[2rem] font-black tracking-[-0.06em] text-white">
+                  <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
                     {calculation ? currency(calculation.subsidy) : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
                   <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-50">Net Cost</div>
-                  <div className="mt-3 text-[2rem] font-black tracking-[-0.06em] text-white">
+                  <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
                     {calculation ? currency(calculation.customerPayable) : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
                   <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-50">Payback</div>
-                  <div className="mt-3 text-[2rem] font-black tracking-[-0.06em] text-white">
+                  <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
                     {calculation ? `${(calculation.customerPayable / Math.max(1, calculation.profit)).toFixed(1)} yrs` : '—'}
                   </div>
                 </div>
