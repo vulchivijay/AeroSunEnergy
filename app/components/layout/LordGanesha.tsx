@@ -139,11 +139,11 @@ export default function LordGanesha() {
           </div>
 
           <h2 className="text-3xl font-semibold tracking-tight">{title}</h2>
-          <p className="max-w-md text-md leading-6 text-gray-600 dark:text-gray-300">
+          <p className="max-w-md text-md leading-6 text-gray-600 dark:text-gray-300 hidden">
             Welcome to AeroSun Energy. May this blessing bring clarity, success, and prosperity to your renewable energy journey.
           </p>
 
-          <div className="mt-2 flex w-full items-center justify-center gap-1">
+          <div className="mt-2 flex w-full items-center justify-center gap-1 hidden">
             <button
               onClick={dismiss}
               className="cursor rounded-md bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-orange-500"

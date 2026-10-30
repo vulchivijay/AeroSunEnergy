@@ -1,0 +1,782 @@
+# AeroSun Energy – Indian Government Renewable Energy Schemes & Customer Eligibility Guide
+
+For AeroSun Energy, government-scheme eligibility should be checked **before preparing the final quotation or promising a subsidy to a customer**.
+
+Not every solar, wind or hybrid installation qualifies for government financial assistance. Eligibility depends on the customer's category, location, electricity connection, land ownership, system configuration, equipment specifications, vendor registration and the availability of funds under the relevant scheme.
+
+I recommend building a scheme-eligibility process into AeroSun's customer enquiry and site-survey stages.
+
+This guide distinguishes between:
+
+1. Schemes that provide financial assistance to customers.
+2. Schemes that support agricultural solarisation.
+3. Schemes for commercial and industrial renewable energy.
+4. Schemes that support renewable-energy developers rather than individual customers.
+5. Projects that normally do not qualify, and the reasons for rejection.
+
+The focus below is India, with particular attention to Andhra Pradesh.
+
+# 1. PM Surya Ghar: Muft Bijli Yojana
+
+**Main purpose:** Financial assistance for residential rooftop solar installations.
+
+This is the most relevant central government scheme for AeroSun's household rooftop solar customers.
+
+Official programme: [PM Surya Ghar National Portal](https://pmsuryaghar.gov.in/?utm_source=chatgpt.com)
+
+## 1.1 Where the scheme applies
+
+| Customer category | Eligibility |
+|---|---|
+| Individual house owner with a residential electricity connection | Generally eligible, subject to scheme conditions |
+| Individual house with a suitable rooftop | Eligible |
+| Independent residential apartment | Eligible if it has an eligible residential electricity connection |
+| Group Housing Society (GHS) | Eligible for qualifying common facilities |
+| Residential Welfare Association (RWA) | Eligible for qualifying common facilities |
+| Residential apartment common facilities | Eligible within applicable scheme limits |
+| New residential construction | Potentially eligible once the required residential electricity connection and other conditions are met |
+
+The scheme is available across India, including Andhra Pradesh.
+
+## 1.2 Financial assistance
+
+For general states such as Andhra Pradesh, the published central assistance structure is:
+
+| Installed eligible capacity | Central financial assistance |
+|---|---:|
+| First 1 kW | ₹30,000 |
+| 2 kW | ₹60,000 |
+| 3 kW | ₹78,000 |
+| Above 3 kW | Maximum ₹78,000 |
+
+For example:
+
+- 1 kW system: ₹30,000 assistance.
+- 2 kW system: ₹60,000 assistance.
+- 3 kW system: ₹78,000 assistance.
+- 5 kW system: ₹78,000 assistance, not ₹1,50,000.
+
+The assistance is subject to the scheme's eligible capacity, technical requirements and approval process. [Sri Potti Sriramulu Nellore District](https://spsnellore.ap.gov.in/new-renewable-energy-development-corporation-of-a-p-ltd-nredcap/?utm_source=chatgpt.com)
+
+For qualifying RWA/GHS common facilities, including EV charging, assistance is structured at ₹18,000 per kW, subject to a maximum eligible capacity of 500 kW and the applicable 3 kW per dwelling limit. [Sri Potti Sriramulu Nellore District](https://spsnellore.ap.gov.in/new-renewable-energy-development-corporation-of-a-p-ltd-nredcap/?utm_source=chatgpt.com)
+
+## 1.3 Mandatory eligibility conditions
+
+The following conditions should be checked before AeroSun accepts a subsidised residential rooftop solar project.
+
+| Condition | Requirement |
+|---|---|
+| Electricity connection | Residential connection from the local DISCOM |
+| System type | Grid-connected rooftop solar |
+| Installation location | Roof, terrace, balcony or eligible elevated structure |
+| Solar modules | Domestic Content Requirement (DCR) compliant modules |
+| Solar cells | Domestically manufactured cells, as required by DCR |
+| Vendor | Vendor selected through the applicable National Portal process |
+| DISCOM approval | Required feasibility and other approvals |
+| Metering | Applicable net-metering or other approved metering arrangement |
+| Inspection | DISCOM inspection and commissioning procedure |
+| Bank details | Valid beneficiary bank details for assistance |
+
+The scheme's operational guidelines require the residential installation to be linked to a particular residential electricity connection. They also specify DCR requirements and the commissioning process. [Solar Rooftop](https://solarrooftop.pmsuryaghar.gov.in/notification/172_notification.pdf?utm_source=chatgpt.com)
+
+## 1.4 Where the scheme does NOT apply, and why
+
+| Customer/project | Subsidy eligibility | Reason |
+|---|---|---|
+| Commercial office building | No | Not a residential consumer connection |
+| Industrial factory | No | Industrial electricity category is outside residential CFA |
+| Shopping mall | No | Commercial consumer category |
+| Hotel | No | Commercial consumer category |
+| Hospital with commercial/institutional connection | No | Not an eligible residential connection |
+| School or college | No | Institutional category |
+| Government office | No | Not an eligible residential consumer |
+| Standalone off-grid solar system | No | The CFA component is for eligible grid-connected residential rooftop systems |
+| Ground-mounted solar farm | No | Not an eligible residential rooftop installation |
+| Wind turbine | No | Scheme is for residential rooftop solar, not wind generation |
+| Solar–wind hybrid without qualifying rooftop solar configuration | No general eligibility | No general hybrid-system CFA under this scheme |
+| Existing relocated solar plant | No | Relocation does not qualify as a newly installed eligible system |
+| Solar installation using non-compliant modules | No | DCR requirements are not satisfied |
+
+These are scheme-category exclusions, not a statement that the underlying renewable-energy project is illegal or cannot be installed.
+
+## 1.5 Example for AeroSun customers
+
+**Customer A – Residential home in Tirupati**
+
+- Residential electricity connection.
+- 3 kW rooftop solar.
+- DCR-compliant modules.
+- Required DISCOM approvals.
+- Eligible vendor and portal procedure followed.
+
+Potential central assistance: ₹78,000.
+
+**Customer B – Commercial shop in Tirupati**
+
+- Commercial electricity connection.
+- 5 kW rooftop solar.
+- Same solar panel technology.
+
+PM Surya Ghar residential CFA: Not eligible.
+
+**Customer C – House with off-grid solar and battery**
+
+- No grid-connected rooftop arrangement.
+- Standalone solar system.
+
+PM Surya Ghar residential CFA: Not eligible under the standard residential grid-connected CFA route.
+
+---
+
+# 2. PM-KUSUM – Pradhan Mantri Kisan Urja Suraksha evam Utthaan Mahabhiyan
+
+**Main purpose:** Solar energy for agriculture, solarisation of agricultural pumps and decentralised renewable power generation.
+
+This is particularly important for AeroSun's agricultural solar pumpset business.
+
+Official portal: [PM-KUSUM National Portal](https://pmkusum.mnre.gov.in/?utm_source=chatgpt.com)
+
+PM-KUSUM has three main components.
+
+| Component | Main purpose |
+|---|---|
+| Component A | Decentralised grid-connected renewable power plants |
+| Component B | Standalone solar agricultural pumps |
+| Component C | Solarisation of existing grid-connected agricultural pumps and feeders | :chatgpt-content-reference{index="5"}
+
+
+## 2.1 PM-KUSUM Component A – Grid-connected renewable power plants
+
+### Who can apply?
+
+Eligible project participants under the scheme include:
+- Individual farmers.
+- Groups of farmers.
+- Cooperatives.
+- Panchayats.
+- Farmer Producer Organisations (FPOs).
+- Water User Associations (WUAs).
+
+### What does the scheme support?
+
+Setting up decentralised grid-connected renewable energy power plants, generally in the 500 kW to 2 MW capacity range under the scheme guidelines.
+
+The farmer or eligible entity can:
+- Develop a renewable power plant on suitable land.
+- Develop it independently, subject to scheme conditions.
+- Lease suitable land to an eligible developer.
+- Sell generated electricity to the DISCOM under an approved Power Purchase Agreement (PPA).
+
+### Land eligibility
+
+- Suitable barren or fallow land is preferred under the scheme framework.
+- Land must be suitable for renewable-energy development.
+- Connectivity to an eligible substation must be available.
+- The project must comply with the DISCOM's notified capacity and selection process.
+
+### Where it does NOT apply
+
+| Situation | Reason |
+|---|---|
+| A homeowner wants a 3 kW rooftop system | This component is for decentralised power plants, not normal residential rooftops |
+| A farmer wants only a standalone irrigation pump | Component B is the more relevant route |
+| A commercial factory wants rooftop solar for self-consumption | Not the purpose of Component A |
+| Land is unsuitable for the proposed project | Technical feasibility is not established |
+| No eligible grid/substation capacity is available | Grid evacuation cannot be confirmed |
+| Applicant has not followed the state/DISCOM selection process | The project cannot automatically receive scheme support |
+
+The scheme guidelines describe the project capacity and eligible participants. [PM-KUSUM](https://pmkusum.mnre.gov.in/assets/pdf/KUSUMguidelines.pdf?utm_source=chatgpt.com)
+
+## 2.2 PM-KUSUM Component B – Standalone solar agricultural pumps
+
+**This is the most relevant PM-KUSUM component for standalone solar water pumpsets.**
+
+### Who is eligible?
+
+The official scheme FAQ identifies the following eligible participants:
+
+1. Individual farmers.
+2. Water User Associations.
+3. Farmer Producer Organisations.
+4. Primary Agriculture Credit Societies.
+5. Community or cluster-based irrigation systems. [PM-KUSUM](https://pmkusum.mnre.gov.in/assets/pdf/PM%20KUSUM%20FAQs%20-%20Revised_%20April%20%28Brand%29.pdf?utm_source=chatgpt.com)
+
+
+### Main eligibility conditions
+
+| Requirement | What AeroSun should verify |
+|---|---|
+| Applicant | Eligible farmer or recognised eligible organisation |
+| Land | Agricultural land and relevant ownership/lease documents |
+| Water source | Suitable water source for irrigation |
+| Existing pump | Generally intended to replace existing diesel agricultural pumps in off-grid areas |
+| Grid availability | Suitability for standalone pumping under the state programme |
+| Pump capacity | Within the capacity sanctioned by the implementing agency |
+| Equipment | Compliant solar PV pumping system |
+| Vendor | Vendor selected through the authorised state implementation process |
+| Beneficiary contribution | Customer must pay the prescribed contribution |
+| Application | Application accepted by the State Implementing Agency |
+
+### What type of pumps are covered?
+
+The PM-KUSUM FAQ identifies:
+
+- AC submersible pumps.
+- DC submersible pumps.
+- AC surface pumps.
+- DC surface pumps. [PM-KUSUM](https://pmkusum.mnre.gov.in/assets/pdf/PM%20KUSUM%20FAQs%20-%20Revised_%20April%20%28Brand%29.pdf?utm_source=chatgpt.com)
+
+
+### Financial assistance
+
+The central framework provides financial assistance based on the applicable scheme cost and state implementation structure.
+
+In the general-state model, the indicative funding structure has been:
+
+| Funding source | Share |
+|---|---:|
+| Central Government assistance | 30% |
+| State Government assistance | 30% |
+| Farmer contribution | 40% |
+
+In certain special-category states and territories, the central assistance structure differs.
+
+**Important:** These are the scheme framework shares, not a guaranteed current quotation or subsidy amount for an Andhra Pradesh farmer. The actual beneficiary payment depends on the sanctioned state allocation, approved benchmark cost, tendered equipment price and applicable state contribution. Verify the current AP implementation order before quoting. [PM-KUSUM](https://pmkusum.mnre.gov.in/landing-faq.html?utm_source=chatgpt.com)
+
+### Where Component B does NOT apply
+
+| Customer/project | Eligibility | Why |
+|---|---|---|
+| Farmer replacing an existing diesel irrigation pump in an eligible off-grid area | Potentially eligible | Fits the scheme's purpose |
+| Farmer with no qualifying agricultural land documents | Generally not eligible | Beneficiary verification cannot be completed |
+| Commercial building wanting a solar pump | Not eligible | Not an agricultural beneficiary |
+| Factory wanting a water pumping system | Not eligible | Industrial use is outside the agricultural pump component |
+| Household wanting a domestic water pump | Not eligible | Not an agricultural irrigation application |
+| Farmer independently purchases a solar pump and later requests subsidy | Not automatically eligible | Must follow the sanctioned state process |
+| Farmer with an ordinary grid-connected agricultural pump seeking standalone pump subsidy | Not automatically eligible | Component C is the relevant route to investigate |
+| Pump capacity outside the sanctioned range | Not eligible under that allocation | Capacity does not meet the approved programme |
+| Non-compliant solar pump equipment | Not eligible | Technical and quality requirements are not met |
+
+**AeroSun's business opportunity:** Design, supply and service agricultural pumping systems, but participate in subsidised projects only after obtaining the required vendor eligibility or selection under the state tender.
+
+---
+
+## 2.3 PM-KUSUM Component C – Solarisation of existing grid-connected agricultural pumps
+
+This component is especially relevant to farmers who already have agricultural electricity connections.
+
+It has two implementation models.
+
+### A. Individual Pump Solarisation (IPS)
+
+Under this model, an existing grid-connected agricultural pump is solarised.
+
+**Who may qualify?**
+- Farmers with existing eligible grid-connected agricultural pumps.
+- Beneficiaries whose pumps are covered by the state-approved programme.
+- Customers whose DISCOM or State Implementing Agency has sanctioned the solarisation.
+
+### Required verification
+
+- ☐ Agricultural electricity service connection.
+- ☐ Consumer/service number.
+- ☐ Existing pump capacity.
+- ☐ Existing pump ownership or authorised use.
+- ☐ Agricultural land details.
+- ☐ DISCOM eligibility confirmation.
+- ☐ Sanctioned capacity.
+- ☐ Approved vendor and equipment.
+- ☐ Net-metering/export arrangement, where applicable.
+- ☐ Beneficiary contribution.
+
+**Why it may not apply:**
+
+A farmer having an agricultural electricity connection does not automatically receive a subsidy. The particular pump, feeder, beneficiary and location must be covered by the state-approved implementation programme.
+
+### B. Feeder Level Solarisation (FLS)
+
+Under this model, an agricultural electricity feeder is solarised so that electricity can be supplied to agricultural consumers through a solar power plant.
+
+**Who is the primary implementing party?**
+- DISCOMs.
+- State-designated implementing agencies.
+- Eligible project developers selected through the applicable procurement process.
+
+This is not normally a direct individual farmer purchase subsidy.
+
+**Where it does NOT apply:**
+
+A farmer cannot independently install a small rooftop solar system and claim that it qualifies for feeder-level solarisation. The project must form part of the designated feeder-level programme.
+
+The official PM-KUSUM portal distinguishes Components A, B and C, including individual pump and feeder-level solarisation. [PM-KUSUM](https://pmkusum.mnre.gov.in/landing-faq.html?utm_source=chatgpt.com)
+
+---
+
+# 3. Andhra Pradesh-specific agricultural solar programmes
+
+AeroSun should pay particular attention to Andhra Pradesh's own implementation arrangements because the state government and DISCOMs play a significant role in agricultural solar projects.
+
+## 3.1 NREDCAP solar pumping programmes
+
+The New & Renewable Energy Development Corporation of Andhra Pradesh Limited (NREDCAP) is the state's renewable-energy nodal agency.
+
+Official website: [NREDCAP](https://nredcap.in/?utm_source=chatgpt.com)
+
+The Andhra Pradesh government has previously implemented solar pumpset programmes through NREDCAP, DISCOMs and agriculture-related departments. Historical programme information describes solar pumpsets for new agricultural connections and remote agricultural locations. [NRedcap](https://nredcap.in/PDFs/2024/Annual_Reports/Annual_Report_2022_23.pdf?utm_source=chatgpt.com)
+
+### Potential beneficiary categories
+
+- Farmers requiring agricultural irrigation.
+- Eligible new agricultural service connections under notified programmes.
+- Farmers in locations where conventional electricity supply is unavailable or difficult.
+- Farmers covered by state-sanctioned solar pumping allocations.
+
+### Important limitations
+
+Historical programme information is not proof that fresh applications are open in October 2026.
+
+Before offering this programme to a customer, AeroSun must obtain confirmation of:
+
+1. Whether the current programme is open.
+2. Which districts and mandals are covered.
+3. Whether new applications are being accepted.
+4. Whether the customer has an eligible agricultural service connection.
+5. Whether an existing grid connection is permitted.
+6. Which pump capacities are sanctioned.
+7. Which vendors are authorised.
+8. The current farmer contribution.
+9. Whether funds have been allocated.
+
+## 3.2 Andhra Pradesh agricultural feeder solarisation
+
+Andhra Pradesh has also planned feeder-level solarisation under PM-KUSUM Component C.
+
+For example, the Tirupati district government's published information describes proposed feeder solarisation and agricultural pump coverage. [Tirupati District](https://tirupati.ap.gov.in/apspdcl/?utm_source=chatgpt.com)
+
+However, a proposed feeder or identified substation does not mean every farmer connected to it can independently claim a subsidy.
+
+**AeroSun verification rule:** Ask the DISCOM whether the customer's exact agricultural service connection falls under an approved feeder solarisation programme.
+
+---
+
+# 4. Andhra Pradesh Integrated Clean Energy Policy 2024
+
+This is relevant to AeroSun's larger solar, wind, hybrid and renewable-energy development business.
+
+It should not be confused with a normal household solar subsidy.
+
+The policy is designed to encourage renewable-energy investment and development in Andhra Pradesh.
+
+### Potentially relevant participants
+
+Depending on the applicable policy provisions and eligibility conditions:
+- Renewable-energy project developers.
+- Solar power project investors.
+- Wind power project investors.
+- Hybrid renewable-energy developers.
+- Renewable-energy equipment manufacturers.
+- Eligible energy-storage project developers.
+- Green-energy infrastructure investors.
+
+### What type of support may be relevant?
+
+Depending on the particular project category and applicable government approvals, policy incentives may include:
+- Capital investment support.
+- Land-related facilitation.
+- Electricity duty benefits.
+- State tax-related incentives.
+- Industrial infrastructure support.
+- Renewable-energy project facilitation.
+
+### Where it does NOT automatically apply
+
+| Customer/project | Why not automatically eligible |
+|---|---|
+| Ordinary homeowner installing 3 kW rooftop solar | Residential CFA is handled through PM Surya Ghar |
+| Small shop installing rooftop solar | Not automatically an eligible renewable-energy developer |
+| Factory installing solar for self-consumption | Self-consumption alone does not qualify the customer for developer incentives |
+| Farmer purchasing a solar pump | Agricultural pump programmes are the more relevant route |
+| Customer purchasing a small wind generator | No automatic consumer subsidy under the policy |
+| Solar installer purchasing equipment for resale | Being a solar installer does not automatically qualify as a manufacturing or project-development investment |
+
+**AeroSun opportunity:** If the company develops a qualifying renewable-energy project or manufacturing facility, it can investigate the policy's investment incentives separately. A normal customer installation should not be presented as qualifying for these incentives without a specific policy provision and approval.
+
+The state policy's investor-oriented incentives are distinct from residential consumer subsidies. [APEDB](https://apedb.ap.gov.in/assets/pdf/AP%20Maritime%20Policy.pdf?utm_source=chatgpt.com)
+
+---
+
+# 5. Government support for commercial and industrial solar
+
+For AeroSun, this is an important customer category because factories, warehouses, offices, hospitals, hotels and shopping complexes can have substantial electricity consumption.
+
+However, **there is no general PM Surya Ghar capital subsidy for commercial or industrial rooftop solar customers.**
+
+## 5.1 Where commercial and industrial solar applies
+
+| Customer | Can install solar? | PM Surya Ghar subsidy? |
+|---|---|---|
+| Manufacturing factory | Yes | No |
+| Warehouse | Yes | No |
+| IT company | Yes | No |
+| Shopping mall | Yes | No |
+| Hotel | Yes | No |
+| Private hospital | Yes | No |
+| Private school | Yes | No |
+| Commercial office | Yes | No |
+| Industrial park | Yes | No |
+| Government industrial facility | Yes, subject to applicable procurement and approvals | No residential CFA |
+
+The customer may still benefit through:
+- Reduced electricity purchases.
+- Applicable net-metering or gross-metering arrangements.
+- Captive renewable-energy generation.
+- Green Open Access, where eligible.
+- Renewable-energy procurement arrangements.
+- Applicable tax and depreciation provisions, subject to professional advice.
+
+These are not the same as a direct government subsidy.
+
+## 5.2 Green Open Access
+
+Green Open Access can be relevant to larger commercial and industrial consumers that want to procure renewable electricity from an external generator.
+
+Potential customers include:
+- Large factories.
+- Manufacturing units.
+- Commercial campuses.
+- Industrial parks.
+- Eligible institutional electricity consumers.
+
+Eligibility depends on the applicable consumption threshold, state regulations, connectivity, metering and other conditions.
+
+**Why a small shop may not qualify:** It may not meet the applicable consumption threshold or other regulatory requirements.
+
+**AeroSun opportunity:** Offer solar project development, captive solar generation and renewable-energy procurement solutions after assessing the customer's electricity consumption and applicable regulations.
+
+Official regulatory reference: [Green Energy Open Access Rules – Ministry of Power](https://powermin.gov.in/?utm_source=chatgpt.com)
+
+---
+
+# 6. Government support for wind energy systems
+
+This is important for AeroSun's wind generator business.
+
+A customer purchasing a 1 kW, 3 kW, 5 kW or 10 kW wind turbine should not be promised a general central-government consumer subsidy.
+
+There is no general PM Surya Ghar-style direct household subsidy for purchasing a small wind turbine.
+
+## 6.1 Where wind projects may receive government support
+
+| Project type | Potential support route |
+|---|---|
+| Large grid-connected wind farm | Renewable-energy policies, tenders and applicable developer incentives |
+| Wind power project developed by an eligible company | Applicable state investment policies |
+| Wind manufacturing facility | Eligible manufacturing investment incentives |
+| Wind–solar hybrid power project | Applicable hybrid project policies and procurement arrangements |
+| Small wind turbine for a house | No general direct consumer subsidy identified |
+| Small wind turbine for a farm | No automatic agricultural pump subsidy for the wind turbine |
+| Wind generator for a factory | Commercial renewable-energy investment, not a general direct subsidy |
+
+### Why small wind systems may not qualify
+
+1. The available scheme may be designed for large project developers rather than individual consumers.
+2. The installation may not be part of an approved government programme.
+3. The turbine may not meet the required technical certification standards.
+4. The site may not satisfy wind-resource and grid-connectivity conditions.
+5. The project may not have the required land, electrical or statutory permissions.
+
+### What AeroSun should do
+
+For small wind generator customers, prepare:
+- Technical feasibility report.
+- Wind-resource assessment.
+- Turbine technical specifications.
+- Power curve.
+- Structural and safety documentation.
+- Expected energy-generation report.
+- Grid or off-grid electrical design.
+
+For larger wind projects, assess the applicable Andhra Pradesh policy, DISCOM procurement route and developer eligibility.
+
+Official technical reference: [National Institute of Wind Energy (NIWE)](https://niwe.res.in/?utm_source=chatgpt.com)
+
+---
+
+# 7. Government support for hybrid solar–wind systems
+
+A hybrid system combines two or more energy sources, such as:
+
+- Solar panels.
+- Wind turbines.
+- Battery storage.
+- Grid supply.
+- Backup generation, where applicable.
+
+There is no general-purpose government subsidy that automatically covers every solar–wind hybrid system.
+
+Eligibility depends on the scheme under which the project is being implemented.
+
+| Hybrid project | Potential scheme route |
+|---|---|
+| Residential solar + battery | PM Surya Ghar only for the qualifying rooftop solar component; battery costs are not automatically subsidised |
+| Residential solar + wind + battery | No general hybrid consumer subsidy |
+| Agricultural solar pump | PM-KUSUM Component B, subject to its approved configuration |
+| Existing grid-connected agricultural pump solarisation | PM-KUSUM Component C |
+| Solar power plant + wind power plant | Eligible renewable-energy developer or procurement programmes |
+| Industrial hybrid system | State policy, captive generation and applicable open-access provisions |
+| Remote village microgrid | Relevant decentralised-energy or rural electrification programme, if an active allocation exists |
+| Commercial hybrid system with storage | Project-specific investment and procurement opportunities |
+
+### Important distinction
+
+Suppose a farmer installs:
+- 5 kW solar panels.
+- 3 kW wind generator.
+- 10 kWh battery.
+- Hybrid inverter.
+
+The farmer cannot assume that the entire system qualifies for PM-KUSUM Component B.
+
+The approved scheme configuration, equipment specifications, pump requirements and sanctioned capacity must be followed.
+
+---
+
+# 8. Additional government schemes and programmes relevant to AeroSun
+
+These are not direct subsidies for every renewable-energy customer, but may become relevant depending on AeroSun's future business activities.
+
+| Scheme/programme | Main beneficiaries | Relevance to AeroSun |
+|---|---|---|
+| PM Surya Ghar | Residential electricity consumers | Residential rooftop solar |
+| PM-KUSUM | Eligible farmers and agricultural institutions | Solar pumps and agricultural solarisation |
+| Solar PLI Scheme | Eligible solar PV manufacturers | Potential manufacturing expansion |
+| PMEGP | Eligible new micro-enterprises | Potential business finance, subject to activity and eligibility |
+| CGTMSE | Eligible micro and small enterprises and lenders | Potential collateral-free credit support |
+| MSME programmes | Eligible registered MSMEs | Business development and finance |
+| Green Open Access | Eligible electricity consumers and renewable generators | Commercial and industrial renewable-energy projects |
+| Andhra Pradesh Integrated Clean Energy Policy | Eligible renewable-energy investors and developers | Larger solar, wind and hybrid projects |
+
+### 8.1 Solar PLI Scheme
+
+The Production Linked Incentive scheme for high-efficiency solar PV modules is primarily designed to encourage domestic solar manufacturing.
+
+**Who may qualify?**
+- Eligible solar PV module manufacturers selected under the scheme.
+- Companies meeting the applicable investment, manufacturing and performance conditions.
+
+**Who does not qualify automatically?**
+- A normal solar installation company.
+- A solar equipment reseller.
+- A household purchasing solar panels.
+- A factory installing solar panels for its own electricity consumption.
+
+AeroSun would need to establish a qualifying manufacturing business and meet the scheme's selection requirements to explore this opportunity. [Ministry of New and Renewable Energy](https://mnre.gov.in/offerings?utm_source=chatgpt.com)
+
+### 8.2 PMEGP – Prime Minister's Employment Generation Programme
+
+This may be worth investigating if AeroSun establishes a qualifying new manufacturing or service enterprise.
+
+Potential activities should be checked against the current PMEGP negative list, project limits and eligibility rules.
+
+It is not a subsidy for a customer purchasing a solar system.
+
+Official portal: [PMEGP e-Portal](https://www.kviconline.gov.in/pmegpeportal/?utm_source=chatgpt.com)
+
+### 8.3 CGTMSE
+
+This programme supports eligible lending to micro and small enterprises through a credit guarantee mechanism.
+
+It is not a direct capital subsidy.
+
+AeroSun may investigate it when seeking eligible business loans for:
+- Equipment procurement.
+- Manufacturing setup.
+- Working capital.
+- Business expansion.
+
+Official portal: [CGTMSE](https://www.cgtmse.in/?utm_source=chatgpt.com)
+
+---
+
+# 9. Master eligibility matrix for AeroSun Energy
+
+This is the table I recommend using during customer enquiries.
+
+| Customer requirement | Relevant scheme | Likely eligibility |
+|---|---|---|
+| Residential rooftop solar, 1–3 kW | PM Surya Ghar | Yes, if conditions are met |
+| Residential rooftop solar, 5–10 kW | PM Surya Ghar | Yes, but CFA capped at 3 kW |
+| Commercial rooftop solar | PM Surya Ghar | No |
+| Industrial rooftop solar | PM Surya Ghar | No |
+| Residential off-grid solar | PM Surya Ghar | No under the standard CFA route |
+| Solar + battery for a residence | PM Surya Ghar | Qualifying solar portion only |
+| Standalone agricultural solar pump | PM-KUSUM B | Potentially |
+| Existing grid-connected agricultural pump | PM-KUSUM C | Potentially |
+| Agricultural feeder solarisation | PM-KUSUM C | Through the designated agency |
+| Farmer developing a solar power plant | PM-KUSUM A | Potentially |
+| Farmer leasing land for a solar plant | PM-KUSUM A | Potentially |
+| Small residential wind turbine | No general consumer scheme identified | Generally no |
+| Commercial wind power plant | Developer/state policy route | Project-specific |
+| Solar–wind hybrid for a factory | State policy/open-access route | Project-specific |
+| Solar–wind hybrid for a farmer | Relevant agricultural programme only if approved configuration fits | Project-specific |
+| Solar manufacturing unit | Solar PLI or eligible state investment policy | Project-specific |
+| New renewable-energy enterprise | PMEGP/MSME finance programmes | Subject to enterprise eligibility |
+
+---
+
+# 10. Documents AeroSun should collect for government scheme verification
+
+Before telling a customer that they are eligible, collect the following documents.
+
+## A. Residential solar customer
+
+- ☐ Aadhaar or other accepted identity proof.
+- ☐ Latest electricity bill.
+- ☐ Consumer/service connection number.
+- ☐ Residential connection category.
+- ☐ Property or roof-use permission, where required.
+- ☐ Bank account details.
+- ☐ Mobile number linked to the application.
+- ☐ Portal application number.
+- ☐ DISCOM feasibility approval.
+- ☐ DCR equipment details.
+
+## B. Agricultural solar pump customer
+
+- ☐ Farmer identity proof.
+- ☐ Aadhaar, where required.
+- ☐ Agricultural land ownership documents.
+- ☐ Pattadar passbook or other accepted land records.
+- ☐ Lease documents, where permitted.
+- ☐ Existing agricultural electricity connection details, if applicable.
+- ☐ Existing diesel pump details, where relevant.
+- ☐ Borewell or water source information.
+- ☐ Required pump capacity.
+- ☐ Bank account details.
+- ☐ Farmer contribution receipt.
+- ☐ State application number.
+- ☐ Sanction order.
+
+## C. Commercial/industrial customer
+
+- ☐ Company registration documents.
+- ☐ PAN.
+- ☐ GST registration.
+- ☐ Electricity bill.
+- ☐ Consumer category.
+- ☐ Sanctioned load.
+- ☐ Monthly consumption.
+- ☐ Site ownership or lease documents.
+- ☐ Land/building permissions, where applicable.
+- ☐ Financial statements, where required for financing.
+- ☐ Project feasibility report.
+
+## D. Wind/hybrid project customer
+
+- ☐ Land ownership or lease documents.
+- ☐ Site coordinates.
+- ☐ Wind-resource assessment.
+- ☐ Solar-resource assessment.
+- ☐ Load profile.
+- ☐ Equipment technical specifications.
+- ☐ Structural and foundation designs.
+- ☐ Grid connectivity details.
+- ☐ Applicable statutory permissions.
+- ☐ Project financial model.
+
+---
+
+# 11. Important: Current scheme availability and Andhra Pradesh verification
+
+There is one important timing issue that AeroSun must account for.
+
+The PM-KUSUM portal's earlier extension announcement specified an implementation period up to **31 March 2026**. However, the portal also contains later 2026 updates and implementation information. Therefore, the existence of a live portal or a previously published scheme guideline is not, by itself, confirmation that a new application can be accepted in a particular Andhra Pradesh district in October 2026. [PM-KUSUM](https://pmkusum.mnre.gov.in/assets/pdf/Progress%20Update%20of%20PM%20KUSUM%20Scheme.pdf?utm_source=chatgpt.com)
+
+Before accepting a subsidised project, confirm the following with the relevant agency:
+
+1. Is the scheme currently accepting new applications?
+2. Is there an active allocation for Andhra Pradesh?
+3. Is there an active allocation for the customer's district?
+4. Is the customer's mandal or feeder covered?
+5. Is the relevant component open?
+6. Is the customer category eligible?
+7. Is the required vendor registration or empanelment active?
+8. What is the current beneficiary contribution?
+9. What are the sanctioned equipment capacities?
+10. What is the application deadline?
+
+### Andhra Pradesh agencies
+
+| Agency | Responsibility |
+|---|---|
+| NREDCAP | State renewable-energy programmes and implementation coordination |
+| APSPDCL | Electricity distribution and relevant solar connections in its service area |
+| APEPDCL | Electricity distribution in its service area |
+| APCPDCL | Electricity distribution in its service area |
+| MNRE | Central renewable-energy schemes and guidelines |
+| NIWE | Wind technology, resource assessment and certification |
+
+**Useful portals:**
+
+- [NREDCAP official website](https://nredcap.in/?utm_source=chatgpt.com)
+- [PM-KUSUM official portal](https://pmkusum.mnre.gov.in/?utm_source=chatgpt.com)
+- [PM Surya Ghar portal](https://pmsuryaghar.gov.in/?utm_source=chatgpt.com)
+- [MNRE official website](https://mnre.gov.in/?utm_source=chatgpt.com)
+
+---
+
+# 12. Recommended AeroSun customer eligibility decision process
+
+I recommend implementing the following decision process in your sales and project management system.
+
+| Step | Question | If YES | If NO |
+|---|---|---|---|
+| 1 | Is the customer residential? | Check PM Surya Ghar | Check other schemes |
+| 2 | Is there an eligible residential DISCOM connection? | Continue eligibility check | PM Surya Ghar CFA generally unavailable |
+| 3 | Is the system grid-connected rooftop solar? | Check DCR and portal conditions | Standard PM Surya Ghar CFA unavailable |
+| 4 | Is the customer a farmer? | Check PM-KUSUM | Check commercial/industrial options |
+| 5 | Does the farmer need a standalone agricultural pump? | Check Component B | Continue |
+| 6 | Does the farmer already have a grid-connected agricultural pump? | Check Component C | Check Component B or other state programmes |
+| 7 | Is the farmer developing a grid-connected renewable power plant? | Check Component A | Continue |
+| 8 | Is the project commercial or industrial? | Check open access, state policy and financing | Continue |
+| 9 | Is the project a wind or hybrid development? | Check developer-specific policies | Do not promise consumer subsidy |
+| 10 | Is the relevant scheme currently open in the customer's district? | Proceed with application | Offer normal commercial quotation |
+
+### Suggested eligibility status in AeroSun's CRM
+
+Use five statuses:
+
+| Status | Meaning |
+|---|---|
+| Green – Eligible | All initial eligibility conditions appear satisfied |
+| Yellow – Verification Required | Customer appears eligible, but official confirmation is pending |
+| Blue – Application Submitted | Application has been filed |
+| Orange – Sanction Pending | Application is awaiting approval or allocation |
+| Red – Not Eligible | One or more mandatory eligibility conditions are not met |
+
+**Never label a customer as subsidy-approved merely because they meet the preliminary eligibility conditions.** Final approval belongs to the designated government agency or implementing authority.
+
+---
+
+# 13. My recommendation for AeroSun Energy
+
+Build your business around three separate customer categories:
+
+| Business vertical | Customer segment | Government-scheme strategy |
+|---|---|---|
+| Residential Solar | Homes and apartments | PM Surya Ghar |
+| Agricultural Solar | Farmers and irrigation | PM-KUSUM and applicable AP programmes |
+| Commercial & Industrial Solar | Factories, offices, warehouses, businesses | Open access, state investment policies and financing |
+| Wind Energy | Farms, commercial sites, industries and developers | Developer policies, project permissions and technical certification |
+| Hybrid Energy | Homes, farms, businesses and remote sites | Evaluate the eligible component and project-specific policy |
+
+For AeroSun, I would make **government eligibility verification a mandatory step before quotation approval**.
+
+That way, the company can issue two separate commercial proposals where necessary:
+
+- **Normal project quotation:** Customer pays the full project price.
+- **Scheme-based project quotation:** Customer contribution is calculated only after confirming the applicable scheme, sanctioned capacity, approved equipment, vendor eligibility and official beneficiary contribution.
+
+This protects AeroSun from subsidy disputes and prevents customers from receiving incorrect financial commitments.
+
+**The next useful deliverable would be an AeroSun Government Scheme Eligibility Form and document-verification checklist, designed so your sales team can assess a residential, agricultural, commercial, wind or hybrid customer before preparing a quotation.**

@@ -73,6 +73,50 @@ const importantNotes = [
   'AeroSun Energy can help with application guidance, documentation support, vendor coordination, and installation planning for eligible homes.',
 ]
 
+const schemeOverviewCards = [
+  {
+    title: 'Residential rooftop solar',
+    detail: 'PM Surya Ghar focuses on grid-connected residential rooftops and is the most relevant scheme for household customers. It is not a general commercial or industrial subsidy route.',
+  },
+  {
+    title: 'Agricultural solarisation',
+    detail: 'PM-KUSUM supports agricultural solar pumps, solarisation of existing pumping systems, and decentralised renewable energy where the farmer or eligible entity qualifies under the scheme rules.',
+  },
+  {
+    title: 'Developer and commercial categories',
+    detail: 'Some schemes support renewable-energy developers, farmer groups, cooperatives, FPOs, and common facility applications, while others are strictly limited to eligible residential connections.',
+  },
+]
+
+const schemeEligibilityNotes = [
+  'Eligibility depends on customer category, location, electricity connection, land ownership, installation type, equipment quality, and scheme-specific documentation.',
+  'Before promising a subsidy, AeroSun should verify the customer’s residential or agricultural category, the applicable state process, and the relevant funding rules.',
+  'Projects that do not meet the scheme’s technical or consumer-category requirements may still be viable as non-subsidised renewable energy installations.',
+]
+
+const pmKusumComponents = [
+  {
+    title: 'Component A',
+    detail: 'Decentralised grid-connected renewable power plants for eligible farmer groups, cooperatives, panchayats, FPOs, WUAs, and similar entities.',
+  },
+  {
+    title: 'Component B',
+    detail: 'Standalone solar agricultural pumps, mainly for eligible farmers and agricultural end-users seeking off-grid or standalone irrigation solutions.',
+  },
+  {
+    title: 'Component C',
+    detail: 'Solarisation of existing grid-connected agricultural pumps and feeders, where the state implementation process and grid conditions permit the programme.',
+  },
+]
+
+const commonRejectionReasons = [
+  'Commercial, industrial, or institutional electricity connection rather than a residential category',
+  'No qualifying agricultural land or beneficiary documentation',
+  'Standalone off-grid solar system where the scheme only supports eligible grid-connected rooftop solar',
+  'Wind turbine or hybrid project without the specific qualifying rooftop solar configuration under that scheme',
+  'Non-DCR-compliant modules, ineligible equipment, or failure to complete the official portal process',
+]
+
 export default function KnowEligibilityPage() {
   return (
     <main className="bg-slate-50">
@@ -120,34 +164,59 @@ export default function KnowEligibilityPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8 lg:pb-16">
-        <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-[0_20px_50px_-32px_rgba(15,23,42,0.25)] sm:p-8">
-          <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-sky-700">Process</p>
-          <h2 className="mt-3 text-3xl font-black tracking-[-0.05em] text-slate-900">How the scheme typically works</h2>
+        <div className="rounded-[30px] border border-emerald-200 bg-white p-6 shadow-[0_20px_50px_-32px_rgba(15,23,42,0.25)] sm:p-8">
+          <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-emerald-700">Scheme guide</p>
+          <h2 className="mt-3 text-3xl font-black tracking-[-0.05em] text-slate-900">Renewable-energy scheme categories</h2>
 
-          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {processSteps.map((step, index) => (
-              <div key={step} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-600 text-sm font-black text-white">
+          <div className="mt-6 grid gap-4 lg:grid-cols-3">
+            {schemeOverviewCards.map((card) => (
+              <div key={card.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <h3 className="text-lg font-black text-slate-900">{card.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-slate-700">{card.detail}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 grid gap-4 lg:grid-cols-3">
+            {pmKusumComponents.map((item, index) => (
+              <div key={item.title} className="rounded-2xl border border-sky-200 bg-sky-50 p-4">
+                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-sky-600 text-sm font-black text-white">
                   {index + 1}
                 </div>
-                <p className="text-sm leading-7 text-slate-700">{step}</p>
+                <h3 className="text-base font-black text-slate-900">{item.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-slate-700">{item.detail}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-        <div className="rounded-[30px] border border-amber-200 bg-amber-50 p-6 sm:p-8">
-          <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-amber-700">Important notes</p>
-          <h2 className="mt-3 text-3xl font-black tracking-[-0.05em] text-slate-900">Before you apply</h2>
+      <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8 lg:pb-16">
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-[0_20px_50px_-32px_rgba(15,23,42,0.25)] sm:p-8">
+            <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-slate-500">Eligibility checklist</p>
+            <h2 className="mt-3 text-3xl font-black tracking-[-0.05em] text-slate-900">What AeroSun should verify before promising support</h2>
 
-          <div className="mt-6 space-y-4">
-            {importantNotes.map((note) => (
-              <div key={note} className="rounded-2xl border border-amber-200 bg-white/80 p-4 text-sm leading-7 text-slate-700">
-                {note}
-              </div>
-            ))}
+            <div className="mt-6 space-y-3">
+              {schemeEligibilityNotes.map((note) => (
+                <div key={note} className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm leading-7 text-slate-700">
+                  {note}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-[30px] border border-rose-200 bg-rose-50 p-6 shadow-[0_20px_50px_-32px_rgba(15,23,42,0.25)] sm:p-8">
+            <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-rose-700">Common exclusions</p>
+            <h2 className="mt-3 text-3xl font-black tracking-[-0.05em] text-slate-900">Where schemes normally do not apply</h2>
+            <ul className="mt-6 space-y-3 text-sm leading-7 text-slate-700">
+              {commonRejectionReasons.map((reason) => (
+                <li key={reason} className="flex items-start gap-3">
+                  <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-rose-100 text-[10px] font-black text-rose-700">×</span>
+                  <span>{reason}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
