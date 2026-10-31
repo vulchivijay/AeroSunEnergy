@@ -295,6 +295,13 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-2 lg:hidden">
+            <Link
+              href="/contact"
+              onClick={() => setMenuOpen(false)}
+              className="inline-flex items-center justify-center rounded-full bg-[#0f172a] px-3 py-2 text-[9px] font-black uppercase tracking-[0.16em] text-white shadow-[0_12px_24px_-16px_rgba(15,23,42,0.9)] transition-colors hover:bg-[#111827]"
+            >
+              Quote
+            </Link>
             <button
               type="button"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -337,7 +344,7 @@ export default function Navbar() {
                         key={opt.code}
                         type="button"
                         onClick={() => {
-                          if (isLocale(opt.code)) {
+                          if (isLocale(opt.code)) { 
                             setLocale(opt.code)
                           }
                           setLangOpen(false)
@@ -409,8 +416,8 @@ export default function Navbar() {
             </Link>
 
             <a
-              href="/voucher.svg"
-              download="aerosun-voucher.svg"
+              href="/aerosun-energy.pdf"
+              download="aerosun-energy.pdf"
               onClick={() => setMenuOpen(false)}
               className="mt-2 block overflow-hidden rounded-[28px] border border-[#f3c75d]/70 bg-[#fffaf0] p-1 shadow-[0_16px_24px_-18px_rgba(245,158,11,0.8)]"
             >

@@ -341,9 +341,20 @@ export function SolarEstimation() {
                 </div>
               </div>
 
-              <button className="mt-4 w-full rounded-full bg-white px-5 py-4 text-xl font-bold text-slate-900 shadow-[0_20px_30px_-18px_rgba(15,23,42,0.5)] transition hover:bg-emerald-50">
-                Get a Detailed Quote <span aria-hidden="true">→</span>
-              </button>
+              <div className="mt-4 flex w-full flex-col gap-4 sm:flex-row">
+                <Link
+                  href="/contact"
+                  className="flex-1 rounded-full bg-white px-5 py-4 text-center text-xl font-bold text-slate-900 shadow-[0_20px_30px_-18px_rgba(15,23,42,0.5)] transition hover:bg-emerald-50"
+                >
+                  Enquire Now <span aria-hidden="true">→</span>
+                </Link>
+                <Link
+                  href="/"
+                  className="flex-1 rounded-full bg-white px-5 py-4 text-center text-xl font-bold text-slate-900 shadow-[0_20px_30px_-18px_rgba(15,23,42,0.5)] transition hover:bg-emerald-50"
+                >
+                  Contact Us <span aria-hidden="true">→</span>
+                </Link>
+              </div>
 
               <p className="text-center text-sm leading-6 text-emerald-50/90">
                 Estimates only. Actual figures depend on site conditions and DISCOM tariff.

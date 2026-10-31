@@ -19,7 +19,7 @@ export default function JsonLd() {
         description:
           'AeroSun Energy provides solar, wind, and hybrid renewable energy systems for residential, commercial, industrial, agricultural, and infrastructure projects across India.',
         email: 'customercare@aerosunenergy.in',
-        telephone: '+91-XXXXXXXXXX',
+        telephone: '+91-8099181075',
         address: {
           '@type': 'PostalAddress',
           addressCountry: 'IN',
@@ -28,9 +28,14 @@ export default function JsonLd() {
           '@type': 'Country',
           name: 'India',
         },
-        sameAs: [
-          'https://aerosunenergy.in',
-        ],
+        contactPoint: {
+          '@type': 'ContactPoint',
+          contactType: 'customer service',
+          telephone: '+91-8099181075',
+          areaServed: 'IN',
+          availableLanguage: ['English', 'Hindi', 'Telugu'],
+        },
+        sameAs: ['https://aerosunenergy.in'],
       },
       {
         '@type': 'WebSite',
@@ -41,11 +46,6 @@ export default function JsonLd() {
           'Solar, wind and hybrid renewable energy solutions for homes, businesses and industries in India.',
         inLanguage: 'en-IN',
         publisher: { '@id': 'https://aerosunenergy.in/#organization' },
-        potentialAction: {
-          '@type': 'SearchAction',
-          target: 'https://aerosunenergy.in/search?q={search_term_string}',
-          'query-input': 'required name=search_term_string',
-        },
       },
       {
         '@type': 'WebPage',
@@ -76,7 +76,7 @@ export default function JsonLd() {
           '@type': 'PostalAddress',
           addressCountry: 'IN',
         },
-        telephone: '+91-XXXXXXXXXX',
+        telephone: '+91-8099181075',
         email: 'customercare@aerosunenergy.in',
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
