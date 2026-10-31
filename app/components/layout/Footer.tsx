@@ -297,7 +297,7 @@ export default function Footer() {
 
 			<div className="w-full border-t border-[#20A44A]/10 bg-gray-50 pb-4 text-center text-sm text-gray-900 dark:border-slate-700 dark:bg-slate-900">
         <p className="mb-4 border-b border-t border-b-gray-200 border-t-gray-200 px-3 py-3 text-center text-[12px] leading-6 text-gray-500 dark:border-slate-700 dark:text-amber-300 sm:px-4 lg:px-4">
-          🚧 This website is currently under development. Some content and images may be incomplete, and information, page titles, or page locations may change as updates are made.
+          🚧 This website is currently under development. Some content and images may be incomplete, and page titles or locations may change as updates are made.
           <br className="hidden sm:block" />
           Images generated with <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" className="mx-1 text-emerald-600 transition-colors duration-200 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300">ChatGPT</Link>.
         </p>
@@ -311,7 +311,7 @@ export default function Footer() {
               Privacy Policy
             </Link>
           </div>
-          <p className="text-[11px] text-gray-500 dark:text-slate-300">Build with 💕 & 🔥 @VulchiVijayaKumar.</p>
+          <p className="text-[11px] text-gray-500 dark:text-slate-300">Built with care by AeroSun Energy.</p>
           <p className="text-[11px] text-gray-500 dark:text-slate-300">
             {footer.copyright}. {footer.allRightsReserved}
           </p>
