@@ -84,7 +84,7 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="relative overflow-hidden bg-[#f7f9f5] px-4 py-12 sm:px-6 lg:px-10 lg:py-20">
+    <section id="about" className="relative overflow-hidden bg-[#f7f9f5] px-4 py-8 sm:px-6 lg:px-10 lg:py-12">
       <div className="mx-auto max-w-7xl">
         <Card className="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white/90 shadow-[0_32px_80px_-36px_rgba(15,23,42,0.26)] backdrop-blur-xl">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,197,94,0.12),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.10),transparent_30%)]" />

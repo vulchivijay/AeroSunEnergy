@@ -50,9 +50,11 @@ export default function Navbar() {
   const [langOpen, setLangOpen] = useState(false)
   const [activeHref, setActiveHref] = useState(pathname || '/')
   const [hydrated, setHydrated] = useState(false)
+  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0, opacity: 0 })
   const navRef = useRef<HTMLElement>(null)
   const desktopLangRef = useRef<HTMLDivElement>(null)
   const mobileLangRef = useRef<HTMLDivElement>(null)
+  const navButtonRefs = useRef<Record<string, HTMLButtonElement | null>>({})
   const navLinks = t.navbar.links
   const languageOptions = t.navbar.languages as { code: Locale; label: string; shortLabel: string }[]
   const visibleNavLinks = navLinks
@@ -118,6 +120,29 @@ export default function Navbar() {
     })
   }, [router, navLinks, hydrated])
 
+  useEffect(() => {
+    const activeLink = visibleNavLinks.find((link) => link.href === activeHref)
+    if (!activeLink) {
+      setIndicatorStyle((prev) => ({ ...prev, opacity: 0 }))
+      return
+    }
+
+    const activeButton = navButtonRefs.current[activeLink.href]
+    if (!activeButton) return
+
+    const navTrack = activeButton.parentElement
+    if (!navTrack) return
+
+    const trackRect = navTrack.getBoundingClientRect()
+    const buttonRect = activeButton.getBoundingClientRect()
+
+    setIndicatorStyle({
+      left: buttonRect.left - trackRect.left,
+      width: buttonRect.width,
+      opacity: 1,
+    })
+  }, [activeHref, visibleNavLinks])
+
   return (
     <header className="sticky top-0 left-0 right-0 z-50 border-b border-[#20A44A]/20 bg-white shadow-[0_12px_30px_-24px_rgba(15,23,42,0.55)] backdrop-blur-xl transition-all duration-300 dark:border-slate-700/80 dark:bg-slate-950/80">
       <div className="relative z-10 w-full px-4 py-2">
@@ -127,12 +152,27 @@ export default function Navbar() {
           </div>
 
           <nav ref={navRef} aria-label="Primary navigation" className="hidden min-w-0 flex-1 items-center justify-center lg:flex">
-            <div className="flex max-w-208 items-center justify-center overflow-hidden rounded-full border border-[#20A44A]/60 bg-[#F7FDF8] p-1 shadow-inner shadow-[#20A44A]/5">
+            <div className="relative flex max-w-208 items-center justify-center overflow-hidden rounded-full border border-[#20A44A]/60 bg-[#F7FDF8] p-1 shadow-inner shadow-[#20A44A]/5">
+              <span
+                aria-hidden="true"
+                className="absolute inset-y-1 rounded-full bg-[#20A44A] shadow-[0_8px_18px_rgba(32,164,74,0.3)] transition-[left,width,opacity,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                style={{
+                  left: indicatorStyle.left,
+                  width: indicatorStyle.width,
+                  opacity: indicatorStyle.opacity,
+                }}
+              />
+
               {visibleNavLinks.map((link) => {
                 const disabled = Boolean((link as { disabled?: boolean }).disabled)
+                const isActive = activeHref === link.href && !disabled
+
                 return (
                   <button
                     key={link.href}
+                    ref={(el) => {
+                      navButtonRefs.current[link.href] = el
+                    }}
                     type="button"
                     onClick={() => {
                       if (!disabled) {
@@ -144,9 +184,9 @@ export default function Navbar() {
                     title={disabled ? `${link.label} — Coming soon` : `${t.navbar.navigateTo} ${link.label} ${t.navbar.section}`}
                     aria-label={disabled ? `${link.label} coming soon` : `${t.navbar.goTo} ${link.label}`}
                     data-nav={link.href.replace('#', '')}
-                    className={`group relative rounded-full px-4 py-2 text-sm font-medium whitespace-nowrap transition-all duration-300 ${
-                      activeHref === link.href && !disabled
-                        ? 'bg-[#20A44A] text-white shadow-[0_8px_18px_rgba(32,164,74,0.3)]'
+                    className={`group relative z-10 rounded-full px-4 py-2 text-sm font-medium whitespace-nowrap transition-all duration-300 ${
+                      isActive
+                        ? 'text-white'
                         : disabled
                           ? 'cursor-not-allowed text-slate-400 opacity-70'
                           : 'text-slate-700 hover:bg-[#EAF9F0] hover:text-[#20A44A] dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]'

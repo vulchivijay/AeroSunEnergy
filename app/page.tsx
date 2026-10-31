@@ -46,7 +46,7 @@ function RecognitionHighlight() {
   ]
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f9f5] px-4 py-12 sm:px-6 lg:px-10 lg:py-20">
+    <section className="relative overflow-hidden bg-[#f7f9f5] px-4 py-8 sm:px-6 lg:px-10 lg:py-12">
       <div className='mx-auto max-w-7xl '>
         <div className="relative overflow-hidden rounded-[38px] border border-[#cfe8d2] bg-[radial-gradient(circle_at_top_left,rgba(13,122,53,0.2),transparent_18%),radial-gradient(circle_at_bottom_right,rgba(183,95,0,0.2),transparent_22%),linear-gradient(135deg,#eaf6ee_0%,#d7ecdf_35%,#fdf1d8_100%)] shadow-[0_32px_90px_-40px_rgba(13,122,53,0.45)]">
           <div className="absolute -left-16 top-7 h-52 w-52 rounded-full bg-[#20A44A]/18 blur-3xl" aria-hidden="true" />

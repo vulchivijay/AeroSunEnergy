@@ -127,7 +127,7 @@ export default function LordGanesha() {
         </button>
 
         <div className="flex flex-col items-center gap-1 text-center">
-          <div className="overflow-hidden rounded-full border border-orange-200 bg-orange-50 p-6 shadow-sm dark:border-orange-700 dark:bg-orange-950/30">
+          <div className="overflow-hidden p-6">
             <Image
               src="/images/lordganesha.png"
               alt="Lord Ganesha"
