@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import Slider from './Slider'
 
 type Slide = {
@@ -165,6 +166,21 @@ export default function HomeHeroSlider() {
                     {tag}
                   </span>
                 ))}
+              </div>
+
+              <div className="mt-7 flex flex-wrap items-center gap-3">
+                <Link
+                  href="/contact"
+                  className="rounded-full bg-emerald-500 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-white shadow-[0_18px_30px_-18px_rgba(16,185,129,0.9)] transition hover:bg-emerald-400"
+                >
+                  Get Free Quote
+                </Link>
+                <Link
+                  href="/estimation-calculator"
+                  className="rounded-full border border-white/15 bg-white/8 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-white backdrop-blur-sm transition hover:border-white/30 hover:bg-white/12"
+                >
+                  Estimate Savings
+                </Link>
               </div>
             </div>
           </div>

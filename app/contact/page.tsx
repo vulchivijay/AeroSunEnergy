@@ -205,6 +205,28 @@ export default function Contact() {
                 </a>
               ))}
             </div>
+
+            <div className="mt-6 rounded-[28px] border border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f0fdf4_48%,#ffffff_100%)] p-4 shadow-[0_18px_30px_-20px_rgba(16,185,129,0.8)]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-emerald-700">Fastest route</p>
+              <h3 className="mt-3 text-2xl font-semibold text-slate-900">Need a custom solar proposal?</h3>
+              <p className="mt-2 text-sm leading-7 text-slate-600">
+                Share your roof size, usage, and location and our team will recommend the best rooftop, hybrid, or wind solution for your site.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Link
+                  href="/customer-enquiry"
+                  className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_30px_-18px_rgba(5,150,105,0.9)] transition-transform duration-200 hover:-translate-y-0.5 hover:bg-emerald-500"
+                >
+                  Submit Enquiry
+                </Link>
+                <Link
+                  href="/estimation-calculator"
+                  className="inline-flex items-center justify-center rounded-full border border-emerald-200 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-800 transition-colors hover:bg-white"
+                >
+                  Estimate Savings
+                </Link>
+              </div>
+            </div>
           </motion.div>
         </div>
 
