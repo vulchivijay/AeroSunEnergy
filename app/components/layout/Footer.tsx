@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Logo from '../brand/Logo'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
+import { Tooltip } from '@/app/components/ui'
 
 const socialLinks = [
 	{
@@ -258,20 +259,21 @@ export default function Footer() {
 							</h3>
 							<div className="mb-6 flex flex-wrap items-center gap-3">
 								{socialLinks.map(({ href, label, title, dataSocial, icon }) => (
-									<Link
-										key={dataSocial}
-										href={href}
-										target="_blank"
-										rel="noopener noreferrer"
-										aria-label={label}
-										title={title}
-										itemProp="sameAs"
-										data-social={dataSocial}
-										className="group flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-slate-200 transition-all duration-200 hover:-translate-y-1 hover:border-emerald-300/40 hover:bg-linear-to-br hover:from-emerald-500 hover:to-teal-500 hover:text-white hover:shadow-[0_18px_28px_-18px_rgba(16,185,129,0.9)] dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200"
-									>
-										{icon}
-									</Link>
-								))}
+										<Tooltip key={dataSocial} content={title} side="top" align="center">
+											<Link
+												href={href}
+												target="_blank"
+												rel="noopener noreferrer"
+												aria-label={label}
+												title={title}
+												itemProp="sameAs"
+												data-social={dataSocial}
+												className="group flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-slate-200 transition-all duration-200 hover:-translate-y-1 hover:border-emerald-300/40 hover:bg-linear-to-br hover:from-emerald-500 hover:to-teal-500 hover:text-white hover:shadow-[0_18px_28px_-18px_rgba(16,185,129,0.9)] dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200"
+											>
+												{icon}
+											</Link>
+										</Tooltip>
+									))}
 							</div>
 
 							<div className="hidden py-12">

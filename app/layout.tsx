@@ -8,6 +8,7 @@ import { PerformanceMonitor } from '@/app/components/performance'
 import CookieConsent from '@/app/components/cookies/CookieConsent'
 import Notifications from '@/app/components/layout/Notifications'
 import ProductionProtector from '@/app/components/security/ProductionProtector'
+import Script from 'next/script'
 
 import './globals.css'
 
@@ -131,6 +132,21 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18547983243"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18547983243');
+          `}
+        </Script>
+      </head>
       <body className={`${roboto.variable} ${poppins.variable} bg-white text-gray-900 transition-colors duration-150`}>
         {process.env.NODE_ENV === 'production' ? <ProductionProtector /> : null}
         {GTM_ID ? <GoogleTagManager gtmId={GTM_ID} /> : null}

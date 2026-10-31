@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import Logo from '../brand/Logo'
 import { useLocale, type Locale } from '@/lib/LocaleContext'
+import { Tooltip } from '@/app/components/ui'
 
 function LanguageFlag({ code, className }: { code: Locale; className?: string }) {
   return (
@@ -50,9 +51,11 @@ export default function Navbar() {
   const [langOpen, setLangOpen] = useState(false)
   const [activeHref, setActiveHref] = useState(pathname || '/')
   const [hydrated, setHydrated] = useState(false)
+  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0, opacity: 0 })
   const navRef = useRef<HTMLElement>(null)
   const desktopLangRef = useRef<HTMLDivElement>(null)
   const mobileLangRef = useRef<HTMLDivElement>(null)
+  const navButtonRefs = useRef<Record<string, HTMLButtonElement | null>>({})
   const navLinks = t.navbar.links
   const languageOptions = t.navbar.languages as { code: Locale; label: string; shortLabel: string }[]
   const visibleNavLinks = navLinks
@@ -118,6 +121,29 @@ export default function Navbar() {
     })
   }, [router, navLinks, hydrated])
 
+  useEffect(() => {
+    const activeLink = visibleNavLinks.find((link) => link.href === activeHref)
+    if (!activeLink) {
+      setIndicatorStyle((prev) => ({ ...prev, opacity: 0 }))
+      return
+    }
+
+    const activeButton = navButtonRefs.current[activeLink.href]
+    if (!activeButton) return
+
+    const navTrack = activeButton.parentElement
+    if (!navTrack) return
+
+    const trackRect = navTrack.getBoundingClientRect()
+    const buttonRect = activeButton.getBoundingClientRect()
+
+    setIndicatorStyle({
+      left: buttonRect.left - trackRect.left,
+      width: buttonRect.width,
+      opacity: 1,
+    })
+  }, [activeHref, visibleNavLinks])
+
   return (
     <header className="sticky top-0 left-0 right-0 z-50 border-b border-[#20A44A]/20 bg-white shadow-[0_12px_30px_-24px_rgba(15,23,42,0.55)] backdrop-blur-xl transition-all duration-300 dark:border-slate-700/80 dark:bg-slate-950/80">
       <div className="relative z-10 w-full px-4 py-2">
@@ -127,40 +153,57 @@ export default function Navbar() {
           </div>
 
           <nav ref={navRef} aria-label="Primary navigation" className="hidden min-w-0 flex-1 items-center justify-center lg:flex">
-            <div className="flex max-w-208 items-center justify-center overflow-hidden rounded-full border border-[#20A44A]/60 bg-[#F7FDF8] p-1 shadow-inner shadow-[#20A44A]/5">
+            <div className="relative flex max-w-208 items-center justify-center overflow-hidden rounded-full border border-[#20A44A]/60 bg-[#F7FDF8] p-1 shadow-inner shadow-[#20A44A]/5">
+              <span
+                aria-hidden="true"
+                className="absolute inset-y-1 rounded-full bg-[#20A44A] shadow-[0_8px_18px_rgba(32,164,74,0.3)] transition-[left,width,opacity,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                style={{
+                  left: indicatorStyle.left,
+                  width: indicatorStyle.width,
+                  opacity: indicatorStyle.opacity,
+                }}
+              />
+
               {visibleNavLinks.map((link) => {
                 const disabled = Boolean((link as { disabled?: boolean }).disabled)
+                const isActive = activeHref === link.href && !disabled
+                const tooltipContent = disabled ? `${link.label} — Coming soon` : `${t.navbar.navigateTo} ${link.label} ${t.navbar.section}`
+
                 return (
-                  <button
-                    key={link.href}
-                    type="button"
-                    onClick={() => {
-                      if (!disabled) {
-                        handleRouteNavigate(link.href)
-                      }
-                    }}
-                    disabled={disabled}
-                    aria-disabled={disabled}
-                    title={disabled ? `${link.label} — Coming soon` : `${t.navbar.navigateTo} ${link.label} ${t.navbar.section}`}
-                    aria-label={disabled ? `${link.label} coming soon` : `${t.navbar.goTo} ${link.label}`}
-                    data-nav={link.href.replace('#', '')}
-                    className={`group relative rounded-full px-4 py-2 text-sm font-medium whitespace-nowrap transition-all duration-300 ${
-                      activeHref === link.href && !disabled
-                        ? 'bg-[#20A44A] text-white shadow-[0_8px_18px_rgba(32,164,74,0.3)]'
-                        : disabled
-                          ? 'cursor-not-allowed text-slate-400 opacity-70'
-                          : 'text-slate-700 hover:bg-[#EAF9F0] hover:text-[#20A44A] dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]'
-                    }`}
-                  >
-                    <span className="relative inline-flex items-center gap-2">
-                      {link.label}
-                      {disabled && (
-                        <span className="absolute -right-2 -top-2 inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-amber-700 shadow-sm">
-                          Coming soon
-                        </span>
-                      )}
-                    </span>
-                  </button>
+                  <Tooltip key={link.href} content={tooltipContent} side="bottom" align="center">
+                    <button
+                      ref={(el) => {
+                        navButtonRefs.current[link.href] = el
+                      }}
+                      type="button"
+                      onClick={() => {
+                        if (!disabled) {
+                          handleRouteNavigate(link.href)
+                        }
+                      }}
+                      disabled={disabled}
+                      aria-disabled={disabled}
+                      title={tooltipContent}
+                      aria-label={disabled ? `${link.label} coming soon` : `${t.navbar.goTo} ${link.label}`}
+                      data-nav={link.href.replace('#', '')}
+                      className={`group relative z-10 rounded-full px-4 py-2 text-sm font-medium whitespace-nowrap transition-all duration-300 ${
+                        isActive
+                          ? 'text-white'
+                          : disabled
+                            ? 'cursor-not-allowed text-slate-400 opacity-70'
+                            : 'text-slate-700 hover:bg-[#EAF9F0] hover:text-[#20A44A] dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]'
+                      }`}
+                    >
+                      <span className="relative inline-flex items-center gap-2">
+                        {link.label}
+                        {disabled && (
+                          <span className="absolute -right-2 -top-2 inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-amber-700 shadow-sm">
+                            Coming soon
+                          </span>
+                        )}
+                      </span>
+                    </button>
+                  </Tooltip>
                 )
               })}
             </div>
@@ -207,20 +250,22 @@ export default function Navbar() {
             </a>
 
             <div className="relative" ref={desktopLangRef}>
-              <button
-                type="button"
-                onClick={() => setLangOpen(!langOpen)}
-                className="group relative inline-flex shrink-0 items-center gap-2 overflow-hidden rounded-[28px] border border-[#1b2d25]/10 bg-linear-to-r from-[#f8fafc] via-[#ecfdf5] to-[#fef3c7] px-2.5 py-2.5 text-[9px] font-black uppercase tracking-[0.18em] text-[#0f172a] shadow-[0_16px_22px_-20px_rgba(15,23,42,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_28px_-18px_rgba(34,197,94,0.75)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20A44A]/50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 sm:text-[10px]"
-                aria-label={t.navbar.languageLabel}
-                aria-expanded={langOpen}
-              >
-                <span className="absolute inset-y-0 left-0 w-12 bg-linear-to-r from-[#20A44A]/15 via-[#34d399]/10 to-transparent" aria-hidden="true" />
-                <span className="relative inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#0f172a] text-[#fef3c7] ring-1 ring-white/80">
-                  <LanguageFlag code={locale} className="h-3 w-3" />
-                </span>
-                <span className="header-label relative">{languageOptions.find((option) => option.code === locale)?.shortLabel}</span>
-                <ChevronIcon open={langOpen} className="relative h-3 w-3" />
-              </button>
+              <Tooltip content={t.navbar.languageLabel} side="bottom" align="center">
+                <button
+                  type="button"
+                  onClick={() => setLangOpen(!langOpen)}
+                  className="group relative inline-flex shrink-0 items-center gap-2 overflow-hidden rounded-[28px] border border-[#1b2d25]/10 bg-linear-to-r from-[#f8fafc] via-[#ecfdf5] to-[#fef3c7] px-2.5 py-2.5 text-[9px] font-black uppercase tracking-[0.18em] text-[#0f172a] shadow-[0_16px_22px_-20px_rgba(15,23,42,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_28px_-18px_rgba(34,197,94,0.75)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20A44A]/50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 sm:text-[10px]"
+                  aria-label={t.navbar.languageLabel}
+                  aria-expanded={langOpen}
+                >
+                  <span className="absolute inset-y-0 left-0 w-12 bg-linear-to-r from-[#20A44A]/15 via-[#34d399]/10 to-transparent" aria-hidden="true" />
+                  <span className="relative inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#0f172a] text-[#fef3c7] ring-1 ring-white/80">
+                    <LanguageFlag code={locale} className="h-3 w-3" />
+                  </span>
+                  <span className="header-label relative">{languageOptions.find((option) => option.code === locale)?.shortLabel}</span>
+                  <ChevronIcon open={langOpen} className="relative h-3 w-3" />
+                </button>
+              </Tooltip>
 
               {langOpen && (
                 <div className="absolute right-0 mt-2 w-40 rounded-2xl border border-slate-200 bg-white/95 p-1.5 shadow-[0_20px_35px_-15px_rgba(15,23,42,0.45)] backdrop-blur-md dark:border-slate-700 dark:bg-slate-900/95">
@@ -314,34 +359,37 @@ export default function Navbar() {
 
             {visibleNavLinks.map((link) => {
               const disabled = Boolean((link as { disabled?: boolean }).disabled)
+              const tooltipContent = disabled ? `${link.label} — Coming soon` : `${link.label}`
+
               return (
-                <button
-                  key={link.href}
-                  type="button"
-                  onClick={() => {
-                    if (!disabled) {
-                      handleRouteNavigate(link.href)
-                    }
-                  }}
-                  disabled={disabled}
-                  aria-disabled={disabled}
-                  className={`block w-full rounded-2xl px-4 py-3 text-sm font-medium tracking-wide transition-all duration-300 ${
-                    disabled
-                      ? 'cursor-not-allowed bg-slate-100 text-slate-400 opacity-80 dark:bg-slate-800 dark:text-slate-500'
-                      : activeHref === link.href
-                        ? 'bg-[#EAF9F0] text-[#20A44A] dark:bg-slate-800 dark:text-[#F59E0B]'
-                        : 'text-slate-700 hover:bg-[#F7FDF8] hover:text-[#20A44A] dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]'
-                  }`}
-                >
-                  <span className="flex items-center justify-between gap-3">
-                    <span>{link.label}</span>
-                    {disabled && (
-                      <span className="inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-amber-700">
-                        Coming soon
-                      </span>
-                    )}
-                  </span>
-                </button>
+                <Tooltip key={link.href} content={tooltipContent} side="bottom" align="center">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (!disabled) {
+                        handleRouteNavigate(link.href)
+                      }
+                    }}
+                    disabled={disabled}
+                    aria-disabled={disabled}
+                    className={`block w-full rounded-2xl px-4 py-3 text-sm font-medium tracking-wide transition-all duration-300 ${
+                      disabled
+                        ? 'cursor-not-allowed bg-slate-100 text-slate-400 opacity-80 dark:bg-slate-800 dark:text-slate-500'
+                        : activeHref === link.href
+                          ? 'bg-[#EAF9F0] text-[#20A44A] dark:bg-slate-800 dark:text-[#F59E0B]'
+                          : 'text-slate-700 hover:bg-[#F7FDF8] hover:text-[#20A44A] dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]'
+                    }`}
+                  >
+                    <span className="flex items-center justify-between gap-3">
+                      <span>{link.label}</span>
+                      {disabled && (
+                        <span className="inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-amber-700">
+                          Coming soon
+                        </span>
+                      )}
+                    </span>
+                  </button>
+                </Tooltip>
               )
             })}
 
