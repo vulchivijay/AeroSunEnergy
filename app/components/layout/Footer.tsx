@@ -1,10 +1,11 @@
 'use client'
 
 import Link from 'next/link'
+import { useState, type FormEvent } from 'react'
 import Logo from '../brand/Logo'
 import { useLocale } from '@/lib/LocaleContext'
-import { OptimizedImage } from '@/app/components/ui'
 import { Tooltip } from '@/app/components/ui'
+import { ArrowRight, ArrowUpRight, Globe, Mail, MapPin, Phone, Send, Sun, Wind, Zap } from 'lucide-react'
 
 const socialLinks = [
 	{
@@ -84,239 +85,251 @@ export default function Footer() {
 	const queries = t.navbar.quiries || []
 	const quickEnquiries = queries
 	const visibleNavLinks = navLinks
+	const [newsletterEmail, setNewsletterEmail] = useState('')
+	const [newsletterStatus, setNewsletterStatus] = useState('')
+	const companyAddress = 'Do.no 11-184, Gollavanigunta, T.N. Pallem, Tirupati, Andhra Pradesh, India - 517501.'
+	const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyAddress)}`
+	const websiteUrl = footer.website.startsWith('http') ? footer.website : `https://${footer.website}`
+	const solutions = [
+		{ label: 'Residential Solar Solutions', href: '/solarenergy' },
+		{ label: 'Commercial & Industrial Solar', href: '/solarenergy' },
+		{ label: 'Solar Agricultural Pumps', href: '/solarenergy' },
+		{ label: 'Wind Generator Systems', href: '/windenergy' },
+		{ label: 'Vertical Axis Wind Turbines', href: '/windenergy' },
+		{ label: 'Solar-Wind Hybrid Systems', href: '/hybridenergy' },
+		{ label: 'Battery Energy Storage', href: '/hybridenergy' },
+		{ label: 'Off-grid Power Solutions', href: '/hybridenergy' },
+	]
+
+	function handleNewsletterSubmit(event: FormEvent<HTMLFormElement>) {
+		event.preventDefault()
+		const subject = encodeURIComponent('Clean energy newsletter subscription request')
+		const body = encodeURIComponent(`Please add ${newsletterEmail} to the AeroSun Energy clean energy newsletter.`)
+		setNewsletterStatus('Your email app will open with your subscription request.')
+		window.location.href = `mailto:${footer.email}?subject=${subject}&body=${body}`
+	}
 
 	return (
 		<footer
 			id="contact"
-			className="w-full overflow-hidden border-t border-[#20A44A]/10 bg-[radial-gradient(circle_at_top,rgba(32,164,74,0.10),transparent_40%),linear-gradient(180deg,#f9fdf9_0%,#eef8f1_100%)] text-slate-800 shadow-[0_-12px_35px_-28px_rgba(15,23,42,0.35)] dark:border-slate-700 dark:bg-[radial-gradient(circle_at_top,rgba(245,158,11,0.12),transparent_35%),linear-gradient(180deg,#020817_0%,#0f172a_100%)] dark:text-slate-100"
+			className="relative w-full overflow-hidden bg-[radial-gradient(ellipse_at_75%_5%,rgba(163,217,119,0.12),transparent_34%),linear-gradient(145deg,#071B17_0%,#0B2922_52%,#071B17_100%)] text-white"
 		>
-			<div className="w-full px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-				<div className="mx-auto max-w-350">
-					<div className="grid w-full gap-4 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_0.9fr_0.8fr]">
-						<div className="rounded-[30px] border border-emerald-200/70 bg-white/70 p-5 shadow-[0_24px_60px_-35px_rgba(16,185,129,0.7)] backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/50">
-							<div className="inline-flex p-2 dark:border-slate-700 dark:bg-slate-800/80">
-								<Logo />
-							</div>
+			<div className="pointer-events-none absolute -right-40 top-0 h-[34rem] w-[34rem] rounded-full border border-[#F5C76A]/[0.08]" aria-hidden="true" />
+			<div className="pointer-events-none absolute -right-24 top-16 h-[24rem] w-[24rem] rounded-full border border-[#A3D977]/[0.08]" aria-hidden="true" />
 
-							<p className="mt-5 max-w-md text-sm leading-7 text-slate-600 dark:text-slate-300">
-								{footer.brandDesc}
+			<div className="relative mx-auto max-w-7xl px-5 pb-14 pt-14 sm:px-8 sm:pb-20 sm:pt-20 lg:px-10">
+				<section className="relative mb-14 overflow-hidden rounded-[2rem] border border-white/10 bg-[#0B2922]/80 p-7 shadow-[0_30px_90px_-45px_rgba(0,0,0,0.8)] sm:p-10 lg:mb-20 lg:p-14">
+					<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_88%_45%,rgba(163,217,119,0.14),transparent_35%)]" aria-hidden="true" />
+					<div className="relative grid items-center gap-10 lg:grid-cols-[1fr_auto]">
+						<div className="max-w-3xl">
+							<p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.24em] text-[#A3D977]">
+								<span className="h-px w-8 bg-[#A3D977]" />
+								AeroSun Energy
 							</p>
-
-							<div className="mt-6 space-y-3 text-sm text-slate-700 dark:text-slate-200">
-								<div className="group rounded-2xl border border-emerald-100 bg-linear-to-r from-emerald-50 to-white p-3 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_18px_30px_-24px_rgba(16,185,129,0.8)] dark:border-slate-700 dark:from-slate-800/80 dark:to-slate-900/80">
-									<div className="flex items-start gap-3">
-										<span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-teal-600 text-white shadow-lg shadow-emerald-500/20" aria-hidden="true">
-											<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5">
-												<path d="M12 21s7-4.35 7-11.3A7.2 7.2 0 0 0 12 3a7.2 7.2 0 0 0-7 6.7C5 16.65 12 21 12 21Z" />
-												<circle cx="12" cy="9.5" r="2.5" />
-											</svg>
-										</span>
-										<div>
-											<span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.16em] text-emerald-600 dark:text-emerald-300">
-												Address
-											</span>
-											<address className="not-italic text-slate-600 dark:text-slate-300">
-												Do.no 11-184, Gollavanigunta,<br />
-												T.N. Pallem, Tirupati,<br />
-												Andhra Pradesh, India - 517501.
-											</address>
-										</div>
-									</div>
-								</div>
-
-								<div className="group rounded-2xl border border-amber-100 bg-linear-to-r from-amber-50 to-white p-3 transition-all duration-200 shadow-[0_24px_60px_-35px_rgba(16,185,129,0.7)] backdrop-blur-sm hover:-translate-y-0.5 hover:shadow-[0_18px_30px_-24px_rgba(245,158,11,0.8)] dark:border-slate-700 dark:from-slate-800/80 dark:to-slate-900/80">
-									<div className="flex items-center gap-3">
-										<span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-orange-500 text-white shadow-lg shadow-amber-500/20" aria-hidden="true">
-											<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5">
-												<rect x="3" y="5" width="18" height="14" rx="3" />
-												<path d="m4 7 8 6 8-6" />
-											</svg>
-										</span>
-										<a href={`mailto:${footer.email}`} className="text-slate-700 transition-colors duration-200 hover:text-amber-600 dark:text-slate-200 dark:hover:text-amber-300">
-											{footer.email}
-										</a>
-									</div>
-								</div>
-
-								<div className="group rounded-2xl border border-cyan-100 bg-linear-to-r from-cyan-50 to-white p-3 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_18px_30px_-24px_rgba(6,182,212,0.8)] dark:border-slate-700 dark:from-slate-800/80 dark:to-slate-900/80">
-									<div className="flex items-center gap-3">
-										<span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-sky-500 to-cyan-600 text-white shadow-lg shadow-cyan-500/20" aria-hidden="true">
-											<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5">
-												<circle cx="12" cy="12" r="8" />
-												<path d="M12 3v5M12 16v5M3 12h5M16 12h5" />
-											</svg>
-										</span>
-										<Link
-											href="/save-earth"
-											className="text-slate-700 transition-colors duration-200 hover:text-cyan-600 dark:text-slate-200 dark:hover:text-cyan-300"
-											aria-label="Visit Save Earth page"
-										>
-											{footer.saveEarth}
-										</Link>
-									</div>
-								</div>
-
-								<div className="group rounded-2xl border border-violet-100 bg-linear-to-r from-violet-50 to-white p-3 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_18px_30px_-24px_rgba(139,92,246,0.8)] dark:border-slate-700 dark:from-slate-800/80 dark:to-slate-900/80">
-									<div className="flex items-center gap-3">
-										<span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-violet-500 to-indigo-600 text-white shadow-lg shadow-violet-500/20" aria-hidden="true">
-											<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5">
-												<path d="M12 2.5 3 7l9 4.5L21 7l-9-4.5Z" />
-												<path d="M3 12.5 12 17l9-4.5" />
-												<path d="M3 17.5 12 22l9-4.5" />
-											</svg>
-										</span>
-										<Link
-											href={footer.trust?.startsWith('http') ? footer.trust : `https://${footer.trust}`}
-											className="text-slate-700 transition-colors duration-200 hover:text-violet-600 dark:text-slate-200 dark:hover:text-violet-300"
-											target="_blank"
-											rel="noopener noreferrer"
-											aria-label={`Visit ${footer.trust} (opens in new tab)`}
-										>
-											{footer.saveSanatanaDharma}
-										</Link>
-									</div>
-								</div>
-							</div>
+							<h2 className="mt-5 text-4xl font-semibold leading-[1.05] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
+								Let&apos;s Build a Cleaner Energy Future Together.
+							</h2>
+							<p className="mt-5 max-w-2xl text-base leading-7 text-gray-300 sm:text-lg">
+								Power your next project with thoughtful solar, wind and hybrid energy solutions.
+							</p>
+							<Link
+								href="/contact"
+								className="group mt-8 inline-flex min-h-12 items-center gap-3 rounded-full bg-[#F5C76A] px-6 py-3 text-sm font-bold text-[#071B17] transition hover:-translate-y-0.5 hover:bg-[#ffda8b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C76A]"
+							>
+								Talk to Our Energy Experts
+								<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+							</Link>
 						</div>
 
-						<div className="rounded-[30px] border border-emerald-200/70 bg-white/70 p-5 shadow-[0_24px_60px_-35px_rgba(16,185,129,0.7)] backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/50">
-							<h3 className="mb-5 flex items-center gap-2 text-lg font-bold text-[#18251F] dark:text-white">
-								<span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-lime-500 text-white shadow-lg shadow-emerald-500/20">
-									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4">
-										<path d="M5 12h14M12 5v14" />
-									</svg>
-								</span>
-								{footer.quickLinks}
-							</h3>
-							<ul className="space-y-3">
-								{visibleNavLinks.map((link) => (
-									<li key={link.label}>
-										{(link as { disabled?: boolean }).disabled ? (
-											<span className="relative inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-400 dark:border-slate-700 dark:bg-slate-800/60 dark:text-slate-500">
-												<span className="h-1.5 w-1.5 rounded-full bg-slate-400" aria-hidden="true" />
-												{link.label}
-												<span className="absolute -right-1 -top-2 inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.12em] text-amber-700 shadow-sm">
-													Soon
-												</span>
-											</span>
-										) : (
-											<Link
-												href={link.href}
-												className="group inline-flex items-center gap-3 rounded-full border border-transparent bg-slate-50 px-3 py-2 text-sm text-slate-700 transition-all duration-200 hover:-translate-x-0.5 hover:border-emerald-200 hover:bg-emerald-50 hover:text-emerald-700 dark:bg-slate-800/70 dark:text-slate-300 dark:hover:border-emerald-500/40 dark:hover:bg-emerald-500/10 dark:hover:text-emerald-300"
-											>
-												<span className="inline-flex h-2.5 w-2.5 rounded-full bg-linear-to-r from-amber-400 to-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.12)] transition-transform duration-200 group-hover:scale-125" aria-hidden="true" />
-												{link.label}
-											</Link>
-										)}
-									</li>
-								))}
-							</ul>
-						</div>
-
-						<div className="rounded-[30px] border border-emerald-200/70 bg-white/70 p-5 shadow-[0_24px_60px_-35px_rgba(16,185,129,0.7)] backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/50">
-							<h3 className="mb-5 flex items-center gap-2 text-lg font-bold text-[#18251F] dark:text-white">
-								<span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/20">
-									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4">
-										<path d="M7 8h10M7 12h10M7 16h6" />
-									</svg>
-								</span>
-								{footer.quickEnquiries}
-							</h3>
-							<ul className="space-y-3">
-								{quickEnquiries.map((item) => (
-									<li key={item.href}>
-										{(item as { disabled?: boolean }).disabled ? (
-											<span className="relative inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-400 dark:border-slate-700 dark:bg-slate-800/60 dark:text-slate-500">
-												<span className="h-1.5 w-1.5 rounded-full bg-slate-400" aria-hidden="true" />
-												{item.label}
-												<span className="absolute -right-1 -top-2 inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.12em] text-amber-700 shadow-sm">
-													Soon
-												</span>
-											</span>
-										) : (
-											<Link
-												href={item.href}
-												className="group inline-flex items-center gap-3 rounded-full border border-transparent bg-slate-50 px-3 py-2 text-sm text-slate-700 transition-all duration-200 hover:-translate-x-0.5 hover:border-cyan-200 hover:bg-cyan-50 hover:text-cyan-700 dark:bg-slate-800/70 dark:text-slate-300 dark:hover:border-cyan-500/40 dark:hover:bg-cyan-500/10 dark:hover:text-cyan-300"
-											>
-												<span className="inline-flex h-2.5 w-2.5 rounded-full bg-linear-to-r from-emerald-500 to-cyan-500 shadow-[0_0_0_4px_rgba(6,182,212,0.12)] transition-transform duration-200 group-hover:scale-125" aria-hidden="true" />
-												{item.label}
-											</Link>
-										)}
-									</li>
-								))}
-							</ul>
-						</div>
-
-						<div className="rounded-[30px] border border-slate-200/70 bg-slate-900 p-5 shadow-[0_24px_60px_-35px_rgba(16,185,129,0.7)] backdrop-blur-sm text-white dark:border-slate-700 dark:bg-slate-900/80">
-							<h3 className="mb-5 flex items-center gap-2 text-lg font-bold text-white">
-								<span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-rose-500 text-white shadow-lg shadow-amber-500/20">
-									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4">
-										<path d="M7 7h10v10H7z" />
-										<path d="M10 10h4v4h-4z" />
-									</svg>
-								</span>
-								{footer.followUs}
-							</h3>
-							<div className="mb-6 flex flex-wrap items-center gap-3">
-								{socialLinks.map(({ href, label, title, dataSocial, icon }) => (
-										<Tooltip key={dataSocial} content={title} side="top" align="center">
-											<Link
-												href={href}
-												target="_blank"
-												rel="noopener noreferrer"
-												aria-label={label}
-												title={title}
-												itemProp="sameAs"
-												data-social={dataSocial}
-												className="group flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-slate-200 transition-all duration-200 hover:-translate-y-1 hover:border-emerald-300/40 hover:bg-linear-to-br hover:from-emerald-500 hover:to-teal-500 hover:text-white hover:shadow-[0_18px_28px_-18px_rgba(16,185,129,0.9)] dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200"
-											>
-												{icon}
-											</Link>
-										</Tooltip>
-									))}
+						<div className="relative mx-auto flex h-44 w-44 items-center justify-center sm:h-52 sm:w-52" role="img" aria-label="Solar energy orbit illustration">
+							<div className="absolute inset-2 rounded-full border border-[#A3D977]/25" />
+							<div className="absolute inset-5 animate-[spin_28s_linear_infinite] rounded-full border border-dashed border-[#F5C76A]/45 motion-reduce:animate-none" />
+							<div className="absolute inset-0 animate-[spin_38s_linear_infinite_reverse] rounded-full border border-[#A3D977]/20 motion-reduce:animate-none" />
+							<div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-[#F5C76A] text-[#071B17] shadow-[0_0_60px_rgba(245,199,106,0.3)]">
+								<Sun className="h-10 w-10" strokeWidth={1.5} aria-hidden="true" />
 							</div>
-
-							<div className="hidden py-12">
-								<div className="inline-flex w-full items-center justify-center">
-									<OptimizedImage
-										src="/images/qr-code.png"
-										alt="AeroSun Energy QR Code - Scan to visit our website"
-										width={170}
-										height={170}
-										className="h-36 w-36 rounded-2xl"
-										title="AeroSun Energy Contact QR Code"
-										itemProp="image"
-										data-seo="qr-code"
-									/>
-								</div>
-							</div>
+							<span className="absolute right-5 top-6 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-[#123b30] text-[#A3D977]">
+								<Wind className="h-4 w-4" aria-hidden="true" />
+							</span>
+							<span className="absolute bottom-7 left-2 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-[#123b30] text-[#F5C76A]">
+								<Zap className="h-4 w-4" aria-hidden="true" />
+							</span>
 						</div>
 					</div>
+				</section>
+
+				<div className="mb-10 h-px w-full origin-left animate-[pulse_3s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-[#A3D977]/80 to-transparent motion-reduce:animate-none" aria-hidden="true" />
+
+				<div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1.1fr_1fr] lg:gap-x-8">
+					<section aria-labelledby="footer-brand">
+						<div className="inline-flex max-w-full rounded-xl bg-white p-2">
+							<Logo />
+						</div>
+						<h2 id="footer-brand" className="mt-6 text-sm font-bold tracking-wide text-white">AeroSun Energy Private Limited</h2>
+						<p className="mt-1 text-sm font-medium text-[#F5C76A]">&ldquo;Power from Sun and Wind&rdquo;</p>
+						<p className="mt-4 max-w-sm text-sm leading-7 text-gray-300">{footer.brandDesc}</p>
+						<div className="mt-6 flex flex-wrap gap-2" aria-label={footer.followUs}>
+							{socialLinks.map(({ href, label, title, dataSocial, icon }) => (
+								<Tooltip key={dataSocial} content={title} side="top" align="center">
+									<Link
+										href={href}
+										target="_blank"
+										rel="noopener noreferrer"
+										aria-label={label}
+										title={title}
+										itemProp="sameAs"
+										data-social={dataSocial}
+										className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] text-gray-300 transition duration-200 hover:-translate-y-1 hover:border-[#F5C76A] hover:bg-[#F5C76A] hover:text-[#071B17] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5C76A]"
+									>
+										{icon}
+									</Link>
+								</Tooltip>
+							))}
+						</div>
+					</section>
+
+					<nav aria-labelledby="footer-navigation">
+						<h2 id="footer-navigation" className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-[#A3D977]">{footer.quickLinks}</h2>
+						<ul className="space-y-1">
+							{visibleNavLinks.map((link) => (
+								<li key={link.label}>
+									{(link as { disabled?: boolean }).disabled ? (
+										<span className="inline-flex min-h-10 items-center gap-2 text-sm text-gray-500">
+											{link.label}<span className="rounded-full bg-white/10 px-2 py-0.5 text-[9px] uppercase tracking-wider">Soon</span>
+										</span>
+									) : (
+										<Link href={link.href} className="group inline-flex min-h-10 items-center gap-2 text-sm text-gray-300 transition-colors hover:text-[#A3D977] focus-visible:text-[#A3D977] focus-visible:outline-none">
+											<span className="h-px w-0 bg-[#A3D977] transition-all group-hover:w-3 group-focus-visible:w-3" aria-hidden="true" />
+											{link.label}
+										</Link>
+									)}
+								</li>
+							))}
+						</ul>
+						<h3 className="mb-3 mt-7 text-xs font-bold uppercase tracking-[0.2em] text-[#F5C76A]">{footer.quickEnquiries}</h3>
+						<ul className="space-y-1">
+							{quickEnquiries.map((item) => (
+								<li key={item.href}>
+									{(item as { disabled?: boolean }).disabled ? (
+										<span className="inline-flex min-h-9 items-center gap-2 text-sm text-gray-500">
+											{item.label}<span className="rounded-full bg-white/10 px-2 py-0.5 text-[9px] uppercase tracking-wider">Soon</span>
+										</span>
+									) : (
+										<Link href={item.href} className="group inline-flex min-h-9 items-center gap-2 text-sm text-gray-300 transition-colors hover:text-[#A3D977] focus-visible:text-[#A3D977] focus-visible:outline-none">
+											<span className="h-px w-0 bg-[#A3D977] transition-all group-hover:w-3 group-focus-visible:w-3" aria-hidden="true" />
+											{item.label}
+										</Link>
+									)}
+								</li>
+							))}
+						</ul>
+					</nav>
+
+					<nav aria-labelledby="footer-solutions">
+						<h2 id="footer-solutions" className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-[#A3D977]">Our Solutions</h2>
+						<ul className="space-y-1">
+							{solutions.map((solution) => (
+								<li key={solution.label}>
+									<Link href={solution.href} className="group inline-flex min-h-10 items-center gap-2 text-sm text-gray-300 transition-colors hover:text-[#A3D977] focus-visible:text-[#A3D977] focus-visible:outline-none">
+										<span className="h-px w-0 bg-[#A3D977] transition-all group-hover:w-3 group-focus-visible:w-3" aria-hidden="true" />
+										{solution.label}
+									</Link>
+								</li>
+							))}
+						</ul>
+					</nav>
+
+					<section aria-labelledby="footer-contact">
+						<h2 id="footer-contact" className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-[#A3D977]">Contact Information</h2>
+						<ul className="space-y-4 text-sm leading-6 text-gray-300">
+							<li className="flex items-start gap-3">
+								<MapPin className="mt-1 h-4 w-4 shrink-0 text-[#F5C76A]" aria-hidden="true" />
+								<a href={mapUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#F5C76A] focus-visible:text-[#F5C76A]">
+									{companyAddress}<span className="sr-only"> (opens in a new tab)</span>
+								</a>
+							</li>
+							<li className="flex items-center gap-3">
+								<Mail className="h-4 w-4 shrink-0 text-[#F5C76A]" aria-hidden="true" />
+								<a href={`mailto:${footer.email}`} className="break-all transition-colors hover:text-[#F5C76A]">{footer.email}</a>
+							</li>
+							<li className="flex items-center gap-3">
+								<Phone className="h-4 w-4 shrink-0 text-[#F5C76A]" aria-hidden="true" />
+								<a href="tel:+91-8099181075" className="transition-colors hover:text-[#F5C76A]">+91-8099181075</a>
+							</li>
+							<li className="flex items-center gap-3">
+								<Globe className="h-4 w-4 shrink-0 text-[#F5C76A]" aria-hidden="true" />
+								<a href={websiteUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#F5C76A]">{footer.website}</a>
+							</li>
+							<li>
+								<Link href="/save-earth" className="group inline-flex min-h-10 items-center gap-2 text-sm text-gray-300 transition-colors hover:text-[#A3D977]">
+									<ArrowUpRight className="h-4 w-4 text-[#A3D977]" aria-hidden="true" />{footer.saveEarth}
+								</Link>
+							</li>
+							<li>
+								<a href={footer.trust?.startsWith('http') ? footer.trust : `https://${footer.trust}`} target="_blank" rel="noopener noreferrer" className="group inline-flex min-h-10 items-center gap-2 text-sm text-gray-300 transition-colors hover:text-[#A3D977]" aria-label={`Visit ${footer.trust} (opens in new tab)`}>
+									<ArrowUpRight className="h-4 w-4 text-[#A3D977]" aria-hidden="true" />{footer.saveSanatanaDharma}
+								</a>
+							</li>
+						</ul>
+						<div className="mt-6 flex items-center gap-2 border-t border-white/10 pt-4 text-xs text-gray-400">
+							<Sun className="h-4 w-4 text-[#F5C76A]" aria-hidden="true" />
+							<Wind className="h-4 w-4 text-[#A3D977]" aria-hidden="true" />
+							<span>Solar · Wind · Hybrid</span>
+						</div>
+					</section>
 				</div>
+
+				<section aria-labelledby="footer-newsletter" className="mt-14 grid gap-6 rounded-2xl border border-white/10 bg-white/[0.04] p-6 sm:p-8 lg:grid-cols-[1fr_1fr] lg:items-center">
+					<div>
+						<h2 id="footer-newsletter" className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Stay Powered by Clean Energy</h2>
+						<p className="mt-2 max-w-xl text-sm leading-6 text-gray-300">Get renewable energy insights, technology updates and sustainable energy solutions.</p>
+					</div>
+					<form onSubmit={handleNewsletterSubmit} className="w-full">
+						<label htmlFor="footer-newsletter-email" className="sr-only">Email address for clean energy updates</label>
+						<div className="flex flex-col gap-3 sm:flex-row">
+							<input
+								id="footer-newsletter-email"
+								name="email"
+								type="email"
+								autoComplete="email"
+								required
+								maxLength={254}
+								value={newsletterEmail}
+								onChange={(event) => {
+									setNewsletterEmail(event.target.value)
+									setNewsletterStatus('')
+								}}
+								placeholder="you@example.com"
+								className="min-h-12 min-w-0 flex-1 rounded-full border border-white/15 bg-[#071B17] px-5 text-base text-white outline-none transition placeholder:text-gray-500 focus:border-[#A3D977] focus:ring-2 focus:ring-[#A3D977]/20"
+							/>
+							<button type="submit" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#A3D977] px-6 text-sm font-bold text-[#071B17] transition hover:bg-[#b9eb8b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A3D977]">
+								Subscribe <Send className="h-4 w-4" aria-hidden="true" />
+							</button>
+						</div>
+						<p className="mt-3 text-xs leading-5 text-gray-400">No newsletter service is connected yet. Subscribe opens an email request to our customer-care address; it does not add you automatically.</p>
+						<p role="status" aria-live="polite" className="mt-1 min-h-5 text-xs text-[#A3D977]">{newsletterStatus}</p>
+					</form>
+				</section>
 			</div>
 
-			<div className="w-full border-t border-[#20A44A]/10 bg-gray-50 pb-4 text-center text-sm text-gray-900 dark:border-slate-700 dark:bg-slate-900">
-        <p className="mb-4 border-b border-t border-b-gray-200 border-t-gray-200 px-3 py-3 text-center text-[12px] leading-6 text-gray-500 dark:border-slate-700 dark:text-amber-300 sm:px-4 lg:px-4">
-          🚧 This website is currently under development. Some content and images may be incomplete, and page titles or locations may change as updates are made.
-          <br className="hidden sm:block" />
-          Images generated with <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" className="mx-1 text-emerald-600 transition-colors duration-200 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300">ChatGPT</Link>.
-        </p>
-        <div className="mx-auto flex w-full max-w-350 flex-col items-center justify-between gap-3 px-4 text-center sm:px-6 lg:flex-row lg:justify-between lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-2 text-[10px] font-medium uppercase tracking-[0.18em] text-gray-700 sm:gap-4">
-            <Link href="/terms-conditions" className="transition-colors duration-200 hover:text-green-500">
-              Terms & Conditions
-            </Link>
-            <span className="hidden text-slate-400 sm:inline">|</span>
-            <Link href="/privacy-policy" className="transition-colors duration-200 hover:text-orange-500">
-              Privacy Policy
-            </Link>
-          </div>
-          <p className="text-[11px] text-gray-500 dark:text-slate-300">Built with care by AeroSun Energy.</p>
-          <p className="text-[11px] text-gray-500 dark:text-slate-300">
-            {footer.copyright}. {footer.allRightsReserved}
-          </p>
-        </div>
-      </div>
+			<div className="border-t border-white/10 bg-black/20">
+				<p className="mx-auto max-w-7xl px-5 py-4 text-center text-xs leading-6 text-gray-400 sm:px-8 lg:px-10">
+					🚧 This website is currently under development. Some content and images may be incomplete, and page titles or locations may change as updates are made.
+					<br className="hidden sm:block" />
+					Images generated with <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" className="mx-1 text-[#F5C76A] transition-colors hover:text-white">ChatGPT</Link>.
+				</p>
+				<div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-3 border-t border-white/10 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
+					<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[10px] font-medium uppercase tracking-[0.14em] text-gray-400">
+						<Link href="/privacy-policy" className="transition-colors hover:text-[#A3D977]">Privacy Policy</Link>
+						<Link href="/terms-conditions" className="transition-colors hover:text-[#A3D977]">Terms & Conditions</Link>
+						<Link href="/warranty-policy" className="transition-colors hover:text-[#A3D977]">Warranty & Service Policy</Link>
+					</div>
+					<p className="text-[11px] text-gray-400">Built with care by AeroSun Energy.</p>
+					<p className="text-[11px] text-gray-400">
+						© {new Date().getFullYear()} AeroSun Energy Private Limited. All Rights Reserved.
+					</p>
+				</div>
+			</div>
 		</footer>
 	)
 }
