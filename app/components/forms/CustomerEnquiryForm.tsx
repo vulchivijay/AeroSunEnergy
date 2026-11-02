@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
 import { submitMailtoForm } from '@/lib/submitMailto'
+import { trackGoogleAdsConversion } from '@/lib/googleAdsConversion'
 import { useState, type FocusEventHandler } from 'react'
 import { validateZeroBounceEmail } from '@/lib/emailValidation'
 
@@ -127,6 +128,10 @@ export function CustomerEnquiryForm() {
       subject,
       body,
     })
+
+    if (opened) {
+      trackGoogleAdsConversion()
+    }
 
     reset(defaultEnquiryValues)
     setSubmitFeedback({

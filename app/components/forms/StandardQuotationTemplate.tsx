@@ -4,6 +4,7 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { submitMailtoForm } from '@/lib/submitMailto'
+import { trackGoogleAdsConversion } from '@/lib/googleAdsConversion'
 import { useState, type FocusEventHandler } from 'react'
 import { validateZeroBounceEmail } from '@/lib/emailValidation'
 import FormWarningRibbon from '@/app/components/ui/FormWarningRibbon'
@@ -110,6 +111,10 @@ export function StandardQuotationTemplate() {
       subject,
       body,
     })
+
+    if (opened) {
+      trackGoogleAdsConversion()
+    }
 
     reset(defaultQuotationValues)
     setSubmitFeedback({

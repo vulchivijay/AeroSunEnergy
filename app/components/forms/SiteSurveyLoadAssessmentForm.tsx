@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
 import { submitMailtoForm } from '@/lib/submitMailto'
+import { trackGoogleAdsConversion } from '@/lib/googleAdsConversion'
 import { useState, type FocusEventHandler } from 'react'
 import { validateZeroBounceEmail } from '@/lib/emailValidation'
 import FormWarningRibbon from '@/app/components/ui/FormWarningRibbon'
@@ -125,6 +126,10 @@ export function SiteSurveyLoadAssessmentForm() {
       subject,
       body,
     })
+
+    if (opened) {
+      trackGoogleAdsConversion()
+    }
 
     reset(defaultSiteSurveyValues)
     setSubmitFeedback({
