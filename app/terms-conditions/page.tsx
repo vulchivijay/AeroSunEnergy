@@ -1,34 +1,4 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
-
-export const metadata: Metadata = {
-  title: 'Terms and Conditions | AeroSun Energy',
-  description:
-    'Read the AeroSun Energy website terms and conditions covering service scope, usage rules, intellectual property, liability, and governing law.',
-  keywords: [
-    'AeroSun Energy terms and conditions',
-    'website terms and conditions',
-    'renewable energy company terms',
-    'website legal policy',
-    'solar energy service terms',
-    'AeroSun Energy legal policy',
-  ],
-  alternates: {
-    canonical: '/terms-conditions',
-  },
-  openGraph: {
-    title: 'Terms and Conditions | AeroSun Energy',
-    description:
-      'Review the legal terms for using the AeroSun Energy website and engaging with our renewable energy services.',
-    url: 'https://aerosunenergy.in/terms-conditions',
-    siteName: 'AeroSun Energy',
-    type: 'website',
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-}
 
 const termsSections = [
   {

@@ -3,7 +3,6 @@
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Card, CardContent } from '@/app/components/ui/Card'
 import { submitMailtoForm } from '@/lib/submitMailto'
 import { useState } from 'react'
 

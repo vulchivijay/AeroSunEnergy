@@ -30,6 +30,8 @@ export const metadata: Metadata = {
     'microgrid hybrid power solution',
     'renewable backup power system',
     'clean hybrid power system',
+    'hybrid energy company India',
+    'solar and wind off-grid system',
   ],
   alternates: {
     canonical: '/hybridenergy',

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Wind Energy Systems | AeroSun Energy',
+  title: 'Wind Energy Systems | Small Wind Turbines, Hybrid Systems & Renewable Power by AeroSun Energy',
   description:
     'AeroSun Energy offers wind turbine systems, distributed wind solutions, and solar-wind hybrid renewable energy systems for farms, commercial properties, and rural projects in India.',
   keywords: [
@@ -29,12 +29,14 @@ export const metadata: Metadata = {
     'small-scale wind energy',
     'hybrid renewable power',
     'wind and solar hybrid system',
+    'wind energy company India',
+    'renewable power solutions',
   ],
   alternates: {
     canonical: '/windenergy',
   },
   openGraph: {
-    title: 'Wind Energy Systems | AeroSun Energy',
+    title: 'Wind Energy Systems | Small Wind Turbines, Hybrid Systems & Renewable Power by AeroSun Energy',
     description:
       'Explore small wind turbines, large commercial systems, distributed wind, and hybrid solar-wind solutions for sustainable power generation.',
     url: 'https://aerosunenergy.in/windenergy',

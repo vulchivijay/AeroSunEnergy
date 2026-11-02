@@ -1,34 +1,4 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
-
-export const metadata: Metadata = {
-  title: 'Privacy Policy | AeroSun Energy',
-  description:
-    'Review the AeroSun Energy Privacy Policy covering personal data collection, cookies, website analytics, user rights, and data protection practices.',
-  keywords: [
-    'AeroSun Energy privacy policy',
-    'renewable energy privacy policy',
-    'website cookies policy',
-    'data protection policy India',
-    'personal information handling',
-    'AeroSun Energy legal privacy',
-  ],
-  alternates: {
-    canonical: '/privacy-policy',
-  },
-  openGraph: {
-    title: 'Privacy Policy | AeroSun Energy',
-    description:
-      'Understand how AeroSun Energy handles personal information, cookies, and user data protection on this website.',
-    url: 'https://aerosunenergy.in/privacy-policy',
-    siteName: 'AeroSun Energy',
-    type: 'website',
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-}
 
 const privacySections = [
   {
