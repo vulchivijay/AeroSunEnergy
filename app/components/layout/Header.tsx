@@ -298,7 +298,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="inline-flex items-center justify-center rounded-full bg-[#0f172a] px-3 py-2 text-[9px] font-black uppercase tracking-[0.16em] text-white shadow-[0_12px_24px_-16px_rgba(15,23,42,0.9)] transition-colors hover:bg-[#111827]"
+              className="hidden lg:inline-flex items-center justify-center rounded-full bg-[#0f172a] px-3 py-2 text-[9px] font-black uppercase tracking-[0.16em] text-white shadow-[0_12px_24px_-16px_rgba(15,23,42,0.9)] transition-colors hover:bg-[#111827]"
             >
               Quote
             </Link>
