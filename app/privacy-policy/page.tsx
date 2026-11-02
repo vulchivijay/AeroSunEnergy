@@ -110,77 +110,154 @@ const privacySections = [
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.10),transparent_18%),linear-gradient(180deg,#f8fbff_0%,#eef7ff_28%,#f8fafc_100%)] px-4 py-8 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-6xl">
-        <section className="overflow-hidden rounded-4xl border border-sky-200 bg-white/90 shadow-[0_28px_90px_-35px_rgba(14,116,144,0.45)] backdrop-blur-sm">
-          <div className="bg-linear-to-r from-[#0f172a] via-[#0f3d66] to-[#0ea5e9] p-6 text-white sm:p-8 lg:p-10">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-              <div className="max-w-3xl">
-                <p className="text-[10px] font-black uppercase tracking-[0.35em] text-sky-100/80">Privacy</p>
-                <h1 className="mt-3 text-3xl font-black tracking-[-0.06em] sm:text-4xl lg:text-6xl">Privacy Policy</h1>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-sky-50 backdrop-blur-sm">
-                Effective Date: 30 October 2026
-              </div>
+    <main className="min-h-screen bg-[#f2f6fb] text-slate-800">
+      <header className="relative isolate overflow-hidden bg-[#101c32] text-white">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_18%_90%,rgba(14,165,233,0.24),transparent_38%),radial-gradient(ellipse_at_88%_10%,rgba(99,102,241,0.2),transparent_34%)]" />
+        <div className="absolute -right-20 top-[-12rem] -z-10 h-[35rem] w-[35rem] rounded-full border border-sky-100/10">
+          <div className="absolute inset-10 rounded-full border border-sky-100/10" />
+          <div className="absolute inset-20 rounded-full border border-sky-100/10" />
+          <div className="absolute inset-32 rounded-full border border-sky-100/10" />
+        </div>
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1fr_auto] lg:px-10">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-sky-100/20 bg-white/5 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-sky-100">
+              <span className="h-1.5 w-1.5 rounded-full bg-sky-300 shadow-[0_0_12px_rgba(125,211,252,0.8)]" />
+              Trust · Privacy · Transparency
             </div>
+            <h1 className="mt-6 text-4xl font-black tracking-[-0.065em] text-white sm:text-6xl lg:text-7xl">
+              Your information.
+              <span className="mt-1 block text-sky-300">Handled with care.</span>
+            </h1>
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base sm:leading-8">
+              Our privacy policy explains what information we collect, why we use it, and the choices available to you.
+            </p>
           </div>
+          <div className="flex w-fit items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.06] px-5 py-4 backdrop-blur">
+            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-300/10 text-xl text-sky-200">◎</span>
+            <span className="text-xs leading-5 text-slate-300">
+              Last updated
+              <strong className="block text-sm font-bold text-white">30 October 2026</strong>
+            </span>
+          </div>
+        </div>
+        <div className="border-t border-white/10">
+          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[10px] font-bold uppercase tracking-[0.18em] text-sky-100/60 sm:px-8 lg:px-10">
+            <span>Information we collect</span>
+            <span>How we use it</span>
+            <span>Your choices</span>
+            <span>How we protect it</span>
+          </div>
+        </div>
+      </header>
 
-          <div className="grid gap-8 p-4 sm:p-6 lg:grid-cols-[1.2fr_0.8fr] lg:p-8">
-            <div className="space-y-6">
-              <div className="rounded-3xl border border-sky-200 bg-linear-to-br from-sky-50 to-white p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
-                <p className="text-sm leading-7 text-slate-700">
+      <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:px-8 sm:py-14 lg:grid-cols-[minmax(0,1fr)_290px] lg:gap-12 lg:px-10">
+        <article className="min-w-0">
+          <div className="mb-8 rounded-3xl border border-sky-200/80 bg-white p-6 shadow-[0_20px_55px_-42px_rgba(15,23,42,0.5)] sm:p-8">
+            <div className="flex items-start gap-4">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-lg text-sky-800">i</span>
+              <div>
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-sky-800">Privacy at a glance</p>
+                <p className="mt-2 text-sm leading-7 text-slate-600 sm:text-base">
                   This Privacy Policy explains how AeroSun Energy collects, uses, protects, and manages information shared through our website, customer enquiries, project discussions, and renewable-energy service interactions.
                 </p>
               </div>
-
-              {privacySections.map((section) => (
-                <section key={section.heading} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_18px_40px_-30px_rgba(15,23,42,0.35)] sm:p-6">
-                  <h2 className="text-xl font-black tracking-[-0.04em] text-slate-900">{section.heading}</h2>
-                  <p className="mt-3 text-sm leading-7 text-slate-700">{section.content}</p>
-                  <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700">
-                    {section.bullets.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sky-100 text-[10px] font-black text-sky-700">✓</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
+            </div>
+            <div className="mt-6 grid gap-3 border-t border-slate-100 pt-5 sm:grid-cols-3">
+              {[
+                { label: 'Collect', text: 'Relevant enquiry and project details' },
+                { label: 'Use', text: 'Respond, plan, and support services' },
+                { label: 'Respect', text: 'Your information and privacy choices' },
+              ].map((item, index) => (
+                <div key={item.label} className="flex gap-3 rounded-xl bg-[#f4f8fc] p-3">
+                  <span className="font-mono text-xs font-bold text-sky-700">0{index + 1}</span>
+                  <span className="text-xs leading-5 text-slate-600">
+                    <strong className="block text-sm text-slate-900">{item.label}</strong>
+                    {item.text}
+                  </span>
+                </div>
               ))}
             </div>
-
-            <aside className="space-y-5">
-              <div className="rounded-[26px] border border-sky-200 bg-slate-900 p-5 text-white shadow-[0_30px_60px_-35px_rgba(15,23,42,0.9)]">
-                <p className="text-[10px] font-black uppercase tracking-[0.28em] text-sky-200">Summary</p>
-                <h2 className="mt-3 text-2xl font-black tracking-tighter">What we protect</h2>
-                <ul className="mt-5 space-y-3 text-sm leading-6 text-slate-200">
-                  <li>Customer contact details and business information</li>
-                  <li>Project enquiries and energy requirements</li>
-                  <li>Technical site and feasibility information</li>
-                  <li>Website usage, diagnostics, and security logs</li>
-                </ul>
-              </div>
-
-              <div className="rounded-[26px] border border-emerald-200 bg-emerald-50 p-5 shadow-[0_20px_40px_-35px_rgba(16,185,129,0.6)]">
-                <p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700">Principles</p>
-                <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
-                  <li>We collect only what is necessary for our services and business operations.</li>
-                  <li>We use data responsibly for enquiries, project support, and service delivery.</li>
-                  <li>We protect personal and project information with reasonable safeguards.</li>
-                  <li>We respect your right to review, correct, and manage your information.</li>
-                </ul>
-              </div>
-
-              <div className="rounded-[26px] border border-slate-200 bg-slate-50 p-5 text-sm leading-7 text-slate-700">
-                Need clarification? Please use the{' '}
-                <Link href="/contact" className="font-semibold text-sky-700 underline decoration-sky-400 underline-offset-4 hover:text-sky-800">
-                  Contact page
-                </Link>{' '}
-                or the official contact details listed on the website.
-              </div>
-            </aside>
           </div>
-        </section>
+
+          <div className="space-y-4">
+            {privacySections.map((section, index) => (
+              <section
+                key={section.heading}
+                id={`privacy-${index + 1}`}
+                className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-[0_15px_45px_-40px_rgba(15,23,42,0.5)]"
+              >
+                <div className="flex items-start gap-4 p-5 sm:p-6">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-sky-200 bg-sky-50 font-mono text-xs font-bold text-sky-800">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{section.heading}</h2>
+                    <p className="mt-3 text-sm leading-7 text-slate-600 sm:text-base">{section.content}</p>
+                    <ul className="mt-4 space-y-2.5">
+                      {section.bullets.map((item) => (
+                        <li key={item} className="flex items-start gap-3 text-sm leading-6 text-slate-600">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="h-px bg-linear-to-r from-sky-100 via-indigo-100 to-transparent" />
+              </section>
+            ))}
+          </div>
+
+          <p className="mt-7 rounded-2xl border border-sky-200/80 bg-white p-5 text-sm leading-7 text-slate-600">
+            Need clarification? Please use the{' '}
+            <Link href="/contact" className="font-bold text-sky-800 underline decoration-sky-300 underline-offset-4 hover:text-indigo-800">
+              Contact page
+            </Link>{' '}
+            or the official contact details listed on the website.
+          </p>
+        </article>
+
+        <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
+          <nav aria-label="Privacy policy sections" className="overflow-hidden rounded-2xl border border-sky-200/80 bg-white shadow-sm">
+            <div className="border-b border-slate-100 px-5 py-4">
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-sky-800">Find a topic</p>
+              <p className="mt-1 text-sm font-bold text-slate-900">Policy contents</p>
+            </div>
+            <ol className="max-h-[55vh] space-y-1 overflow-y-auto p-3 lg:max-h-[calc(100vh-15rem)]">
+              {privacySections.map((section, index) => (
+                <li key={section.heading}>
+                  <a
+                    href={`#privacy-${index + 1}`}
+                    className="flex items-start gap-3 rounded-xl px-3 py-2.5 text-xs leading-5 text-slate-600 transition hover:bg-sky-50 hover:text-sky-900"
+                  >
+                    <span className="font-mono font-bold text-sky-700/70">{String(index + 1).padStart(2, '0')}</span>
+                    <span>{section.heading.replace(/^\d+\.\s*/, '')}</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+
+          <section className="rounded-2xl bg-[#101c32] p-5 text-white">
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-sky-300">Information we protect</p>
+            <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-200">
+              <li>Customer contact details and business information</li>
+              <li>Project enquiries and energy requirements</li>
+              <li>Technical site and feasibility information</li>
+              <li>Website usage, diagnostics, and security logs</li>
+            </ul>
+          </section>
+
+          <section className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-800">Our principles</p>
+            <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
+              <li>We collect only what is necessary for our services and business operations.</li>
+              <li>We use data responsibly for enquiries, project support, and service delivery.</li>
+              <li>We protect personal and project information with reasonable safeguards.</li>
+              <li>We respect your right to review, correct, and manage your information.</li>
+            </ul>
+          </section>
+        </aside>
       </div>
     </main>
   )
