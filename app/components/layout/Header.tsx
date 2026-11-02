@@ -1,42 +1,36 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
+import {
+  ArrowDownToLine,
+  ArrowRight,
+  Check,
+  ChevronDown,
+  Globe2,
+  House,
+  Info,
+  Mail,
+  Menu,
+  PanelsTopLeft,
+  Sun,
+  Wind,
+  X,
+  Zap,
+  type LucideIcon,
+} from 'lucide-react'
 import Logo from '../brand/Logo'
 import { useLocale, type Locale } from '@/lib/LocaleContext'
-import { Tooltip } from '@/app/components/ui'
 
-function LanguageFlag({ code, className }: { code: Locale; className?: string }) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 0c-2.5 2.5-4 6-4 10s1.5 7.5 4 10m0-20c2.5 2.5 4 6 4 10s-1.5 7.5-4 10M2 12h20" />
-    </svg>
-  )
-}
-
-function ChevronIcon({ open, className }: { open?: boolean; className?: string }) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={`${className} transition-transform duration-200 ${open ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-    </svg>
-  )
-}
-
-function MenuIcon({ className }: { className?: string }) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-  )
-}
-
-function CloseIcon({ className }: { className?: string }) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-    </svg>
-  )
+const navigationIcons: Record<string, LucideIcon> = {
+  '/': House,
+  '/about': Info,
+  '/solarenergy': Sun,
+  '/windenergy': Wind,
+  '/hybridenergy': Zap,
+  '/services': PanelsTopLeft,
+  '/contact': Mail,
 }
 
 function isLocale(value: string): value is Locale {
@@ -45,394 +39,302 @@ function isLocale(value: string): value is Locale {
 
 export default function Navbar() {
   const { t, locale, setLocale } = useLocale()
-  const pathname = usePathname()
-  const router = useRouter()
+  const pathname = usePathname() || '/'
   const [menuOpen, setMenuOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
-  const [activeHref, setActiveHref] = useState(pathname || '/')
-  const [hydrated, setHydrated] = useState(false)
-  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0, opacity: 0 })
-  const navRef = useRef<HTMLElement>(null)
-  const desktopLangRef = useRef<HTMLDivElement>(null)
-  const mobileLangRef = useRef<HTMLDivElement>(null)
-  const navButtonRefs = useRef<Record<string, HTMLButtonElement | null>>({})
+  const headerRef = useRef<HTMLElement>(null)
+  const languageOptions = t.navbar.languages as {
+    code: Locale
+    label: string
+    shortLabel: string
+  }[]
   const navLinks = t.navbar.links
-  const languageOptions = t.navbar.languages as { code: Locale; label: string; shortLabel: string }[]
-  const visibleNavLinks = navLinks
 
   useEffect(() => {
-    setHydrated(true)
-  }, [])
-
-  useEffect(() => {
-    setActiveHref(pathname || '/')
-    setMenuOpen(false)
-    setLangOpen(false)
-  }, [pathname])
-
-  useEffect(() => {
-    if (!hydrated) return
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as Node
-      const isInsideDesktopDropdown = desktopLangRef.current?.contains(target) ?? false
-      const isInsideMobileDropdown = mobileLangRef.current?.contains(target) ?? false
-      const isInsideMobileMenu = navRef.current?.contains(target) ?? false
-
-      if (!isInsideDesktopDropdown && !isInsideMobileDropdown && !isInsideMobileMenu) {
+    const handlePointerDown = (event: PointerEvent) => {
+      if (!headerRef.current?.contains(event.target as Node)) {
+        setMenuOpen(false)
         setLangOpen(false)
       }
     }
 
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setMenuOpen(false)
-      }
-    }
-
-    const handleEscape = (event: KeyboardEvent) => {
+    const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         setMenuOpen(false)
         setLangOpen(false)
       }
     }
 
-    document.addEventListener('mousedown', handleClickOutside)
+    const handleResize = () => {
+      if (window.innerWidth >= 1280) {
+        setMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('pointerdown', handlePointerDown)
+    document.addEventListener('keydown', handleKeyDown)
     window.addEventListener('resize', handleResize)
-    document.addEventListener('keydown', handleEscape)
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('pointerdown', handlePointerDown)
+      document.removeEventListener('keydown', handleKeyDown)
       window.removeEventListener('resize', handleResize)
-      document.removeEventListener('keydown', handleEscape)
     }
-  }, [hydrated])
+  }, [])
 
-  const handleRouteNavigate = (href: string) => {
-    setActiveHref(href)
+  useEffect(() => {
     setMenuOpen(false)
     setLangOpen(false)
-    router.push(href)
+  }, [pathname])
+
+  function isActive(href: string) {
+    if (href === '/') return pathname === '/'
+    return pathname === href || pathname.startsWith(`${href}/`)
   }
 
-  useEffect(() => {
-    if (!hydrated) return
-    navLinks.forEach((link) => {
-      router.prefetch(link.href)
-    })
-  }, [router, navLinks, hydrated])
+  function closeMenu() {
+    setMenuOpen(false)
+    setLangOpen(false)
+  }
 
-  useEffect(() => {
-    const activeLink = visibleNavLinks.find((link) => link.href === activeHref)
-    if (!activeLink) {
-      setIndicatorStyle((prev) => ({ ...prev, opacity: 0 }))
-      return
+  function renderNavigationLink(link: (typeof navLinks)[number], mobile = false) {
+    const disabled = Boolean((link as { disabled?: boolean }).disabled)
+    const active = isActive(link.href) && !disabled
+    const Icon = navigationIcons[link.href] ?? PanelsTopLeft
+    const classes = mobile
+      ? `flex min-h-12 w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium transition ${
+          disabled
+            ? 'cursor-not-allowed text-white/35'
+            : active
+              ? 'bg-white/[0.08] text-[#f2d794] ring-1 ring-inset ring-[#d6b45e]/30'
+              : 'text-white/75 hover:bg-white/[0.06] hover:text-white'
+        }`
+      : `group relative z-10 flex min-w-[3.55rem] flex-col items-center gap-1 rounded-xl px-2 py-1.5 text-[13px] transition-colors 2xl:min-w-[4rem] 2xl:text-xs ${
+          active
+            ? 'bg-white/[0.04] text-[#fff3ce]'
+            : disabled
+              ? 'cursor-not-allowed text-white/35'
+              : 'text-white/65 hover:text-white'
+        }`
+
+    const content = (
+      <span className={mobile ? 'flex w-full items-center justify-between gap-3' : 'flex flex-col items-center gap-1'}>
+        {mobile ? (
+          <span>{link.label}</span>
+        ) : (
+          <>
+            <span className={`flex h-8 w-8 items-center justify-center rounded-full border transition-all duration-300 ${
+              active
+                ? 'border-[#f2d794] bg-[#d6b45e] text-[#11251c] shadow-[0_0_22px_-5px_rgba(214,180,94,0.75)]'
+                : 'border-white/10 bg-[#0c3026] text-[#c2d4bf] group-hover:border-[#d6b45e]/45 group-hover:bg-[#164331]'
+            }`}>
+              <Icon className="h-4 w-4" strokeWidth={1.7} aria-hidden="true" />
+            </span>
+            <span className="whitespace-nowrap">{link.label}</span>
+          </>
+        )}
+        {disabled && (
+          <span className="rounded-full bg-[#f7edda] px-2 py-1 text-[9px] font-bold uppercase tracking-wider text-[#85672f]">
+            Coming soon
+          </span>
+        )}
+      </span>
+    )
+
+    if (disabled) {
+      return (
+        <button
+          key={link.href}
+          type="button"
+          disabled
+          aria-disabled="true"
+          className={classes}
+        >
+          {content}
+        </button>
+      )
     }
 
-    const activeButton = navButtonRefs.current[activeLink.href]
-    if (!activeButton) return
+    return (
+      <Link
+        key={link.href}
+        href={link.href}
+        onClick={mobile ? closeMenu : undefined}
+        aria-current={active ? 'page' : undefined}
+        aria-label={`${t.navbar.goTo} ${link.label}`}
+        className={classes}
+      >
+        {content}
+      </Link>
+    )
+  }
 
-    const navTrack = activeButton.parentElement
-    if (!navTrack) return
-
-    const trackRect = navTrack.getBoundingClientRect()
-    const buttonRect = activeButton.getBoundingClientRect()
-
-    setIndicatorStyle({
-      left: buttonRect.left - trackRect.left,
-      width: buttonRect.width,
-      opacity: 1,
-    })
-  }, [activeHref, visibleNavLinks])
+  function renderLanguageOptions(id: string, open: boolean) {
+    return (
+      <div
+        id={id}
+        hidden={!open}
+        role="group"
+        aria-label={t.navbar.languageLabel}
+        className="absolute right-0 top-[calc(100%+0.65rem)] z-[60] w-48 overflow-hidden rounded-2xl border border-white/10 bg-[#09251e] p-1.5 text-white shadow-[0_20px_50px_-25px_rgba(0,0,0,0.7)]"
+      >
+        {languageOptions.map((option) => (
+          <button
+            key={option.code}
+            type="button"
+            onClick={() => {
+              if (isLocale(option.code)) setLocale(option.code)
+              setLangOpen(false)
+            }}
+            aria-pressed={locale === option.code}
+            className={`flex min-h-11 w-full items-center justify-between rounded-xl px-3 text-sm transition ${
+              locale === option.code
+                ? 'bg-white/[0.08] font-semibold text-[#f2d794]'
+                : 'text-white/75 hover:bg-white/[0.06] hover:text-white'
+            }`}
+          >
+            <span>{option.label}</span>
+            {locale === option.code && <Check className="h-4 w-4 text-[#d6b45e]" aria-hidden="true" />}
+          </button>
+        ))}
+      </div>
+    )
+  }
 
   return (
-    <header className="sticky top-0 left-0 right-0 z-50 border-b border-[#20A44A]/20 bg-white shadow-[0_12px_30px_-24px_rgba(15,23,42,0.55)] backdrop-blur-xl transition-all duration-300 dark:border-slate-700/80 dark:bg-slate-950/80">
-      <div className="relative z-10 w-full px-4 py-2">
-        <div className="flex w-full items-center justify-between gap-2 lg:gap-3">
-          <div className="min-w-0 shrink-0">
-            <Logo />
-          </div>
-
-          <nav ref={navRef} aria-label="Primary navigation" className="hidden min-w-0 flex-1 items-center justify-center lg:flex">
-            <div className="relative flex max-w-208 items-center justify-center overflow-hidden rounded-full border border-[#20A44A]/60 bg-[#F7FDF8] p-1 shadow-inner shadow-[#20A44A]/5">
-              <span
-                aria-hidden="true"
-                className="absolute inset-y-1 rounded-full bg-[#20A44A] shadow-[0_8px_18px_rgba(32,164,74,0.3)] transition-[left,width,opacity,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
-                style={{
-                  left: indicatorStyle.left,
-                  width: indicatorStyle.width,
-                  opacity: indicatorStyle.opacity,
-                }}
-              />
-
-              {visibleNavLinks.map((link) => {
-                const disabled = Boolean((link as { disabled?: boolean }).disabled)
-                const isActive = activeHref === link.href && !disabled
-                const tooltipContent = disabled ? `${link.label} — Coming soon` : `${t.navbar.navigateTo} ${link.label} ${t.navbar.section}`
-
-                return (
-                  <Tooltip key={link.href} content={tooltipContent} side="bottom" align="center">
-                    <button
-                      ref={(el) => {
-                        navButtonRefs.current[link.href] = el
-                      }}
-                      type="button"
-                      onClick={() => {
-                        if (!disabled) {
-                          handleRouteNavigate(link.href)
-                        }
-                      }}
-                      disabled={disabled}
-                      aria-disabled={disabled}
-                      title={tooltipContent}
-                      aria-label={disabled ? `${link.label} coming soon` : `${t.navbar.goTo} ${link.label}`}
-                      data-nav={link.href.replace('#', '')}
-                      className={`group relative z-10 rounded-full px-4 py-2 text-sm font-medium whitespace-nowrap transition-all duration-300 ${
-                        isActive
-                          ? 'text-white'
-                          : disabled
-                            ? 'cursor-not-allowed text-slate-400 opacity-70'
-                            : 'text-slate-700 hover:bg-[#EAF9F0] hover:text-[#20A44A] dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]'
-                      }`}
-                    >
-                      <span className="relative inline-flex items-center gap-2">
-                        {link.label}
-                        {disabled && (
-                          <span className="absolute -right-2 -top-2 inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-amber-700 shadow-sm">
-                            Coming soon
-                          </span>
-                        )}
-                      </span>
-                    </button>
-                  </Tooltip>
-                )
-              })}
-            </div>
-          </nav>
-
-          <div className="hidden shrink-0 items-center gap-1.5 lg:flex">
-            <Link
-              href="/contact"
-              title={t.navbar.startProjectTitle}
-              aria-label={t.navbar.startProjectAriaLabel}
-              data-cta="start-project"
-              className="group relative inline-flex shrink-0 items-center rounded-[28px] border border-[#1ea75f]/70 bg-[radial-gradient(circle_at_top_left,rgba(34,197,94,0.35),rgba(15,23,42,0.95)_42%,rgba(2,6,23,1)_100%)] p-px shadow-[0_18px_30px_-18px_rgba(34,197,94,0.9)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_36px_-18px_rgba(34,197,94,0.95)]"
-            >
-              <span className="absolute inset-y-0 left-0 w-14 bg-linear-to-r from-white/20 via-white/5 to-transparent" aria-hidden="true" />
-              <span className="relative inline-flex items-center gap-2 rounded-[27px] bg-[#071b15] p-2 text-[9px] font-black uppercase tracking-[0.18em] text-white sm:text-[10px]">
-                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-linear-to-r from-[#34d399] via-[#22c55e] to-[#facc15] text-[#05130f] shadow-[inset_0_1px_2px_rgba(255,255,255,0.5)]">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-3 w-3">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </span>
-                <span className="header-label">{t.navbar.startProject}</span>
-              </span>
-            </Link>
-
-            <a
-              href="/aerosun-energy.pdf"
-              download="aerosun-energy.pdf"
-              title="Download voucher"
-              aria-label="Download AeroSun Energy voucher"
-              className="group relative inline-flex shrink-0 items-center overflow-hidden rounded-[28px] border border-[#f3c75d]/70 bg-[#fffaf0] p-1 shadow-[0_16px_28px_-18px_rgba(245,158,11,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_34px_-18px_rgba(245,158,11,0.9)]"
-            >
-              <span className="absolute inset-y-0 left-0 w-12 bg-linear-to-r from-[#f59e0b] via-[#facc15] to-transparent opacity-90" aria-hidden="true" />
-              <span className="absolute inset-y-2 left-2 w-7 rounded-full border border-white/90 bg-[#0f172a] opacity-95" aria-hidden="true" />
-              <span className="relative z-10 flex items-center gap-2 rounded-3xl bg-[#0f172a] p-2 text-[9px] font-black uppercase tracking-[0.18em] text-[#fef3c7] sm:text-[10px]">
-                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#f59e0b] text-[#0f172a]">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-3 w-3">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v11m0 0l-4-4m4 4l4-4M5 20h14"/>
-                  </svg>
-                </span>
-              </span>
-              <span className="header-label relative z-10 mx-2 text-[9px] font-black uppercase tracking-[0.2em] text-[#1f2937] sm:text-[10px]">
-                Voucher
-              </span>
-            </a>
-
-            <div className="relative" ref={desktopLangRef}>
-              <Tooltip content={t.navbar.languageLabel} side="bottom" align="center">
-                <button
-                  type="button"
-                  onClick={() => setLangOpen(!langOpen)}
-                  className="group relative inline-flex shrink-0 items-center gap-2 overflow-hidden rounded-[28px] border border-[#1b2d25]/10 bg-linear-to-r from-[#f8fafc] via-[#ecfdf5] to-[#fef3c7] px-2.5 py-2.5 text-[9px] font-black uppercase tracking-[0.18em] text-[#0f172a] shadow-[0_16px_22px_-20px_rgba(15,23,42,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_28px_-18px_rgba(34,197,94,0.75)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20A44A]/50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 sm:text-[10px]"
-                  aria-label={t.navbar.languageLabel}
-                  aria-expanded={langOpen}
-                >
-                  <span className="absolute inset-y-0 left-0 w-12 bg-linear-to-r from-[#20A44A]/15 via-[#34d399]/10 to-transparent" aria-hidden="true" />
-                  <span className="relative inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#0f172a] text-[#fef3c7] ring-1 ring-white/80">
-                    <LanguageFlag code={locale} className="h-3 w-3" />
-                  </span>
-                  <span className="header-label relative">{languageOptions.find((option) => option.code === locale)?.shortLabel}</span>
-                  <ChevronIcon open={langOpen} className="relative h-3 w-3" />
-                </button>
-              </Tooltip>
-
-              {langOpen && (
-                <div className="absolute right-0 mt-2 w-40 rounded-2xl border border-slate-200 bg-white/95 p-1.5 shadow-[0_20px_35px_-15px_rgba(15,23,42,0.45)] backdrop-blur-md dark:border-slate-700 dark:bg-slate-900/95">
-                  {languageOptions.map((opt) => (
-                    <button
-                      key={opt.code}
-                      type="button"
-                      onClick={() => {
-                        if (isLocale(opt.code)) {
-                          setLocale(opt.code)
-                        }
-                        setLangOpen(false)
-                      }}
-                      className={`flex w-full items-center gap-2 rounded-xl px-3 py-2 text-sm transition-colors duration-200 ${
-                        locale === opt.code
-                          ? 'bg-[#EAF9F0] font-semibold text-[#20A44A] dark:bg-slate-800 dark:text-[#F59E0B]'
-                          : 'text-slate-700 hover:bg-[#F7FDF8] hover:text-[#20A44A] dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]'
-                      }`}
-                    >
-                      <LanguageFlag code={opt.code} className="h-3.5 w-3.5" />
-                      {opt.label}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2 lg:hidden">
-            <Link
-              href="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="hidden lg:inline-flex items-center justify-center rounded-full bg-[#0f172a] px-3 py-2 text-[9px] font-black uppercase tracking-[0.16em] text-white shadow-[0_12px_24px_-16px_rgba(15,23,42,0.9)] transition-colors hover:bg-[#111827]"
-            >
-              Quote
-            </Link>
-            <button
-              type="button"
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#20A44A]/20 bg-white text-slate-700 shadow-[0_8px_20px_rgba(32,164,74,0.08)] transition-all duration-300 hover:border-[#F59E0B]/50 hover:text-[#20A44A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20A44A]/50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-[#F59E0B]/60 dark:hover:text-[#F59E0B]"
-              aria-label={t.navbar.toggleMenu}
-              aria-expanded={menuOpen}
-              aria-controls="mobile-menu"
-            >
-              {menuOpen ? <CloseIcon className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
-            </button>
-          </div>
+    <header
+      ref={headerRef}
+      className="sticky top-0 z-50 border-b border-white/10 bg-[#071b17] text-white shadow-[0_18px_42px_-30px_rgba(3,18,12,0.9)]"
+    >
+      <div className="relative border-b border-white/[0.07] bg-[#04130f] text-[#e8ecd9] hidden">
+        <div className="mx-auto flex min-h-8 max-w-[90rem] items-center justify-between gap-3 px-3 py-1 text-[9px] font-semibold tracking-[0.08em] sm:px-6 sm:text-[10px] sm:tracking-[0.12em] lg:px-8">
+          <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
+            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6b45e] shadow-[0_0_10px_rgba(214,180,94,0.65)]" aria-hidden="true" />
+            AeroSun Energy Private Limited
+          </span>
+          <span className="ml-3 hidden whitespace-nowrap text-[9px] font-medium uppercase tracking-[0.2em] text-[#c2cbb8] lg:flex lg:items-center lg:gap-2">
+            <Sun className="h-3 w-3 text-[#d6b45e]" strokeWidth={1.8} aria-hidden="true" />
+            Power from Sun, Wind, Water, Fire
+          </span>
         </div>
       </div>
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div id="mobile-menu" className="border-t border-[#20A44A]/10 bg-white/95 shadow-[0_20px_35px_-20px_rgba(15,23,42,0.45)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-950/95 lg:hidden">
-          <div className="mx-auto max-w-7xl space-y-3 px-4 py-4 sm:px-6">
-            <div className="flex items-center gap-2">
-              <div className="relative flex-1" ref={mobileLangRef}>
-                <button
-                  type="button"
-                  onClick={() => setLangOpen(!langOpen)}
-                  className="flex w-full items-center justify-between gap-2 overflow-hidden rounded-[26px] border border-[#1b2d25]/10 bg-linear-to-r from-[#f8fafc] via-[#ecfdf5] to-[#fef3c7] px-3 py-2.5 text-left text-[10px] font-black uppercase tracking-[0.2em] text-[#0f172a] shadow-[0_18px_28px_-18px_rgba(15,23,42,0.5)] transition-colors duration-200 hover:border-[#F59E0B]/40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
-                  aria-label={t.navbar.languageLabel}
-                  aria-expanded={langOpen}
-                >
-                  <span className="flex items-center gap-2">
-                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#0f172a] text-[#fef3c7] ring-1 ring-white/80">
-                      <LanguageFlag code={locale} className="h-3.5 w-3.5" />
-                    </span>
-                    {t.navbar.languageLabel}
-                  </span>
-                  <ChevronIcon open={langOpen} className="h-3.5 w-3.5" />
-                </button>
 
-                {langOpen && (
-                  <div className="absolute left-0 right-0 z-10 mt-2 rounded-2xl border border-slate-200 bg-white/95 p-1.5 shadow-[0_20px_35px_-15px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/95">
-                    {languageOptions.map((opt) => (
-                      <button
-                        key={opt.code}
-                        type="button"
-                        onClick={() => {
-                          if (isLocale(opt.code)) { 
-                            setLocale(opt.code)
-                          }
-                          setLangOpen(false)
-                        }}
-                        className={`flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-sm transition-colors duration-200 ${
-                          locale === opt.code
-                            ? 'bg-[#EAF9F0] font-semibold text-[#20A44A] dark:bg-slate-800 dark:text-[#F59E0B]'
-                            : 'text-slate-700 hover:bg-[#F7FDF8] hover:text-[#20A44A] dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]'
-                        }`}
-                      >
-                        <LanguageFlag code={opt.code} className="h-3.5 w-3.5" />
-                        {opt.label}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
+      <div className="relative mx-auto flex min-h-[5.25rem] max-w-[90rem] items-center justify-between gap-1 px-3 py-2 sm:gap-3 sm:px-6 lg:px-8 max-[319px]:flex-wrap">
+        <Logo compact />
 
-            {visibleNavLinks.map((link) => {
-              const disabled = Boolean((link as { disabled?: boolean }).disabled)
-              const tooltipContent = disabled ? `${link.label} — Coming soon` : `${link.label}`
+        <nav aria-label="Primary navigation" className="hidden min-w-0 flex-1 items-center justify-center xl:flex">
+          <div className="relative flex items-start gap-0.5">
+            <span className="pointer-events-none absolute left-[8%] right-[8%] top-4 h-px bg-gradient-to-r from-transparent via-[#8aa28b]/65 to-transparent" aria-hidden="true" />
+            {navLinks.map((link) => renderNavigationLink(link))}
+          </div>
+        </nav>
 
-              return (
-                <Tooltip key={link.href} content={tooltipContent} side="bottom" align="center">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      if (!disabled) {
-                        handleRouteNavigate(link.href)
-                      }
-                    }}
-                    disabled={disabled}
-                    aria-disabled={disabled}
-                    className={`block w-full rounded-2xl px-4 py-3 text-sm font-medium tracking-wide transition-all duration-300 ${
-                      disabled
-                        ? 'cursor-not-allowed bg-slate-100 text-slate-400 opacity-80 dark:bg-slate-800 dark:text-slate-500'
-                        : activeHref === link.href
-                          ? 'bg-[#EAF9F0] text-[#20A44A] dark:bg-slate-800 dark:text-[#F59E0B]'
-                          : 'text-slate-700 hover:bg-[#F7FDF8] hover:text-[#20A44A] dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#F59E0B]'
-                    }`}
-                  >
-                    <span className="flex items-center justify-between gap-3">
-                      <span>{link.label}</span>
-                      {disabled && (
-                        <span className="inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-amber-700">
-                          Coming soon
-                        </span>
-                      )}
-                    </span>
-                  </button>
-                </Tooltip>
-              )
-            })}
+        <div className="hidden shrink-0 items-center gap-2 border-l border-white/10 pl-3 2xl:gap-3 2xl:pl-5 xl:flex">
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => setLangOpen((open) => !open)}
+              aria-label={t.navbar.languageLabel}
+              aria-expanded={langOpen}
+              aria-controls="desktop-language-options"
+              className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3 text-sm tracking-wider text-[#e8ecd9] transition hover:border-[#d6b45e]/60 hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6b45e]"
+            >
+              <Globe2 className="h-4 w-4 text-[#d6b45e]" aria-hidden="true" />
+              {languageOptions.find((option) => option.code === locale)?.shortLabel}
+              <ChevronDown className={`h-3.5 w-3.5 text-white/60 transition-transform ${langOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+            </button>
+            {renderLanguageOptions('desktop-language-options', langOpen)}
+          </div>
 
+          <Link
+            href="/aerosun-energy.pdf"
+            download="aerosun-energy.pdf"
+            aria-label="Download AeroSun Energy voucher"
+            className="inline-flex min-h-10 items-center gap-2 rounded-full px-3 text-xs font-semibold text-[#e8d4a0] transition hover:bg-white/[0.07] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6b45e]"
+          >
+            <ArrowDownToLine className="h-4 w-4" aria-hidden="true" />
+            <span className="hidden 2xl:inline">Voucher</span>
+          </Link>
+
+          <Link
+            href="/contact"
+            title={t.navbar.startProjectTitle}
+            aria-label={t.navbar.startProjectAriaLabel}
+            data-cta="start-project"
+            className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-[#d6b45e] px-4 text-sm font-bold text-[#13231a] shadow-[0_8px_24px_-12px_rgba(214,180,94,0.7)] transition hover:-translate-y-0.5 hover:bg-[#efd48f] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#d6b45e]"
+          >
+            {t.navbar.startProject}
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+          </Link>
+        </div>
+
+        <div className="flex shrink-0 items-center gap-2 xl:hidden max-[359px]:gap-1 max-[319px]:w-full max-[319px]:justify-end">
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => {
+                setLangOpen((open) => !open)
+                setMenuOpen(false)
+              }}
+              aria-label={`${t.navbar.languageLabel}: ${languageOptions.find((option) => option.code === locale)?.label}`}
+              aria-expanded={langOpen}
+              aria-controls="mobile-language-options"
+              className="inline-flex h-10 min-w-12 items-center justify-center gap-1.5 rounded-full border border-white/15 bg-white/[0.05] px-2.5 text-xs font-bold text-[#f4f0e2] transition hover:border-[#d6b45e]/60 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6b45e] max-[359px]:w-10 max-[359px]:min-w-10 max-[359px]:px-0"
+            >
+              <Globe2 className="h-4 w-4 text-[#d6b45e]" aria-hidden="true" />
+              <span className="max-[359px]:sr-only">{languageOptions.find((option) => option.code === locale)?.shortLabel}</span>
+            </button>
+            {renderLanguageOptions('mobile-language-options', langOpen)}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => {
+              setMenuOpen((open) => !open)
+              setLangOpen(false)
+            }}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#d6b45e]/50 bg-[#123c2d] text-[#f4f0e2] shadow-[0_6px_18px_-10px_rgba(163,217,119,0.65)] transition hover:border-[#d6b45e] hover:bg-[#19533c] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6b45e]"
+            aria-label={menuOpen ? 'Close navigation menu' : t.navbar.toggleMenu}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-primary-navigation"
+          >
+            {menuOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="mobile-primary-navigation"
+        hidden={!menuOpen}
+        className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-[#d6b45e]/25 bg-[#09251e] px-4 pb-6 pt-3 shadow-[0_24px_50px_-22px_rgba(0,0,0,0.8)] sm:px-6 xl:hidden"
+      >
+        <nav aria-label="Mobile primary navigation" className="mx-auto max-w-3xl space-y-1">
+          <p className="mb-3 flex items-center gap-2 px-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#d6b45e]">
+            <span className="h-px w-5 bg-[#d6b45e]/70" />
+            Explore AeroSun
+          </p>
+          {navLinks.map((link) => renderNavigationLink(link, true))}
+          <div className="grid gap-3 border-t border-white/10 pt-4 sm:grid-cols-2">
             <Link
               href="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="mt-2 block overflow-hidden rounded-[28px] border border-[#1ea75f]/70 bg-[radial-gradient(circle_at_top_left,rgba(34,197,94,0.35),rgba(15,23,42,0.95)_42%,rgba(2,6,23,1)_100%)] p-px shadow-[0_18px_30px_-18px_rgba(32,164,74,0.9)]"
+              onClick={closeMenu}
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#d6b45e] px-5 text-sm font-bold text-[#13231a] transition hover:bg-[#efd48f] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6b45e]"
             >
-              <span className="flex items-center justify-center gap-3 rounded-[27px] bg-[#071b15] px-4 py-3 text-center text-[10px] font-black uppercase tracking-[0.20em] text-white">
-                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-linear-to-r from-[#34d399] via-[#22c55e] to-[#facc15] text-[#05130f]">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-3.5 w-3.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </span>
-                <span className="header-label">{t.navbar.startProject}</span>
-              </span>
+              {t.navbar.startProject}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
-
             <a
               href="/aerosun-energy.pdf"
               download="aerosun-energy.pdf"
-              onClick={() => setMenuOpen(false)}
-              className="mt-2 block overflow-hidden rounded-[28px] border border-[#f3c75d]/70 bg-[#fffaf0] p-1 shadow-[0_16px_24px_-18px_rgba(245,158,11,0.8)]"
+              onClick={closeMenu}
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-5 text-sm font-semibold text-[#e8d4a0] transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6b45e]"
             >
-              <span className="flex items-center justify-center gap-3 rounded-[27px] bg-[#071b15] px-4 py-3 text-center text-[10px] font-black uppercase tracking-[0.20em] text-white">
-                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#f59e0b] text-[#0f172a]">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-3.5 w-3.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v11m0 0l-4-4m4 4l4-4M5 20h14"/>
-                  </svg>
-                </span>
-                <span className="header-label">Voucher</span>
-              </span>
+              <ArrowDownToLine className="h-4 w-4" aria-hidden="true" />
+              Download voucher
             </a>
           </div>
-        </div>
-      )}
+        </nav>
+      </div>
     </header>
   )
 }

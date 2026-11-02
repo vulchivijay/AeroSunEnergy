@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Renewable Energy Services | AeroSun Energy',
+  title: 'Renewable Energy Services | Solar, Wind & Hybrid Solutions by AeroSun Energy',
   description:
-    'AeroSun Energy provides renewable energy services including solar consultation, wind solutions, hybrid system design, installation, maintenance, and technical support for homes, businesses, and industries in India.',
+    'AeroSun Energy offers renewable energy services including solar consultation, wind energy support, hybrid system design, installation, maintenance, and technical support for homes, businesses, farms, and industrial projects in India.',
   keywords: [
     'renewable energy services',
     'solar energy services India',
@@ -30,12 +30,14 @@ export const metadata: Metadata = {
     'hybrid power services',
     'solar panel installation service',
     'renewable power project support',
+    'off-grid solar service',
+    'solar rooftop engineering',
   ],
   alternates: {
     canonical: '/services',
   },
   openGraph: {
-    title: 'Renewable Energy Services | AeroSun Energy',
+    title: 'Renewable Energy Services | Solar, Wind & Hybrid Solutions by AeroSun Energy',
     description:
       'Solar, wind, and hybrid energy services covering consultation, design, engineering, installation, maintenance, and monitoring.',
     url: 'https://aerosunenergy.in/services',
