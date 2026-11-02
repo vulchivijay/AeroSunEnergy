@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useState, type FormEvent } from 'react'
 import Logo from '../brand/Logo'
 import { useLocale } from '@/lib/LocaleContext'
-import { Tooltip } from '@/app/components/ui'
 import { ArrowRight, ArrowUpRight, Globe, Mail, MapPin, Phone, Send, Sun, Wind, Zap } from 'lucide-react'
 
 const socialLinks = [
@@ -165,31 +164,30 @@ export default function Footer() {
 						<div className="inline-flex max-w-full rounded-xl bg-white p-2">
 							<Logo />
 						</div>
-						<h2 id="footer-brand" className="mt-6 text-sm font-bold tracking-wide text-white">AeroSun Energy Private Limited</h2>
-						<p className="mt-1 text-sm font-medium text-[#F5C76A]">&ldquo;Power from Sun and Wind&rdquo;</p>
+						<h2 id="footer-brand" className="mt-6 text-sm font-bold tracking-wide text-white hidden">AeroSun Energy Private Limited</h2>
+						<p className="mt-1 text-sm font-medium text-[#F5C76A] hidden">&ldquo;Power from Sun, Wind, Water, Fire&rdquo;</p>
 						<p className="mt-4 max-w-sm text-sm leading-7 text-gray-300">{footer.brandDesc}</p>
 						<div className="mt-6 flex flex-wrap gap-2" aria-label={footer.followUs}>
 							{socialLinks.map(({ href, label, title, dataSocial, icon }) => (
-								<Tooltip key={dataSocial} content={title} side="top" align="center">
-									<Link
-										href={href}
-										target="_blank"
-										rel="noopener noreferrer"
-										aria-label={label}
-										title={title}
-										itemProp="sameAs"
-										data-social={dataSocial}
-										className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] text-gray-300 transition duration-200 hover:-translate-y-1 hover:border-[#F5C76A] hover:bg-[#F5C76A] hover:text-[#071B17] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5C76A]"
-									>
-										{icon}
-									</Link>
-								</Tooltip>
+								<Link
+									key={dataSocial}
+									href={href}
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label={label}
+									title={title}
+									itemProp="sameAs"
+									data-social={dataSocial}
+									className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] text-gray-300 transition duration-200 hover:-translate-y-1 hover:border-[#F5C76A] hover:bg-[#F5C76A] hover:text-[#071B17] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5C76A]"
+								>
+									{icon}
+								</Link>
 							))}
 						</div>
 					</section>
 
 					<nav aria-labelledby="footer-navigation">
-						<h2 id="footer-navigation" className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-[#A3D977]">{footer.quickLinks}</h2>
+						<h2 id="footer-navigation" className="mb-5 text-md uppercase text-[#A3D977]">{footer.quickLinks}</h2>
 						<ul className="space-y-1">
 							{visibleNavLinks.map((link) => (
 								<li key={link.label}>
@@ -206,7 +204,7 @@ export default function Footer() {
 								</li>
 							))}
 						</ul>
-						<h3 className="mb-3 mt-7 text-xs font-bold uppercase tracking-[0.2em] text-[#F5C76A]">{footer.quickEnquiries}</h3>
+						<h3 className="mb-3 mt-7 text-md uppercase text-[#F5C76A]">{footer.quickEnquiries}</h3>
 						<ul className="space-y-1">
 							{quickEnquiries.map((item) => (
 								<li key={item.href}>
@@ -226,7 +224,7 @@ export default function Footer() {
 					</nav>
 
 					<nav aria-labelledby="footer-solutions">
-						<h2 id="footer-solutions" className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-[#A3D977]">Our Solutions</h2>
+						<h2 id="footer-solutions" className="mb-5 text-md uppercase text-[#A3D977]">Our Solutions</h2>
 						<ul className="space-y-1">
 							{solutions.map((solution) => (
 								<li key={solution.label}>
@@ -240,7 +238,7 @@ export default function Footer() {
 					</nav>
 
 					<section aria-labelledby="footer-contact">
-						<h2 id="footer-contact" className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-[#A3D977]">Contact Information</h2>
+						<h2 id="footer-contact" className="mb-5 text-md uppercase text-[#A3D977]">Contact Information</h2>
 						<ul className="space-y-4 text-sm leading-6 text-gray-300">
 							<li className="flex items-start gap-3">
 								<MapPin className="mt-1 h-4 w-4 shrink-0 text-[#F5C76A]" aria-hidden="true" />
@@ -281,7 +279,7 @@ export default function Footer() {
 
 				<section aria-labelledby="footer-newsletter" className="mt-14 grid gap-6 rounded-2xl border border-white/10 bg-white/[0.04] p-6 sm:p-8 lg:grid-cols-[1fr_1fr] lg:items-center">
 					<div>
-						<h2 id="footer-newsletter" className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Stay Powered by Clean Energy</h2>
+						<h2 id="footer-newsletter" className="text-2xl tracking-wider text-white sm:text-3xl">Stay Powered by Clean Energy</h2>
 						<p className="mt-2 max-w-xl text-sm leading-6 text-gray-300">Get renewable energy insights, technology updates and sustainable energy solutions.</p>
 					</div>
 					<form onSubmit={handleNewsletterSubmit} className="w-full">

@@ -1673,7 +1673,7 @@ const documentarySections: DocumentarySection[] = [
           "A reference document for AeroSun Energy's environmental initiatives."
       ] },
       { type: 'paragraph', text: "Suggested publication credit:" },
-      { type: 'paragraph', text: "Prepared as an environmental awareness initiative by AeroSun Energy Private Limited — Power from Sun and Wind." },
+      { type: 'paragraph', text: "Prepared as an environmental awareness initiative by AeroSun Energy Private Limited — Power from Sun, Wind, Water, Fire." },
       { type: 'paragraph', text: "The content is educational and should not be treated as a substitute for scientific reports, environmental assessments or government regulations." },
     ],
   },

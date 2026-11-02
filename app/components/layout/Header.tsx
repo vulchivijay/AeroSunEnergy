@@ -109,7 +109,7 @@ export default function Navbar() {
               ? 'bg-white/[0.08] text-[#f2d794] ring-1 ring-inset ring-[#d6b45e]/30'
               : 'text-white/75 hover:bg-white/[0.06] hover:text-white'
         }`
-      : `group relative z-10 flex min-w-[3.55rem] flex-col items-center gap-1 rounded-xl px-2 py-1.5 text-[11px] font-semibold transition-colors 2xl:min-w-[4rem] 2xl:text-xs ${
+      : `group relative z-10 flex min-w-[3.55rem] flex-col items-center gap-1 rounded-xl px-2 py-1.5 text-[13px] transition-colors 2xl:min-w-[4rem] 2xl:text-xs ${
           active
             ? 'bg-white/[0.04] text-[#fff3ce]'
             : disabled
@@ -206,7 +206,7 @@ export default function Navbar() {
       ref={headerRef}
       className="sticky top-0 z-50 border-b border-white/10 bg-[#071b17] text-white shadow-[0_18px_42px_-30px_rgba(3,18,12,0.9)]"
     >
-      <div className="relative border-b border-white/[0.07] bg-[#04130f] text-[#e8ecd9]">
+      <div className="relative border-b border-white/[0.07] bg-[#04130f] text-[#e8ecd9] hidden">
         <div className="mx-auto flex min-h-8 max-w-[90rem] items-center justify-between gap-3 px-3 py-1 text-[9px] font-semibold tracking-[0.08em] sm:px-6 sm:text-[10px] sm:tracking-[0.12em] lg:px-8">
           <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
             <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6b45e] shadow-[0_0_10px_rgba(214,180,94,0.65)]" aria-hidden="true" />
@@ -214,15 +214,13 @@ export default function Navbar() {
           </span>
           <span className="ml-3 hidden whitespace-nowrap text-[9px] font-medium uppercase tracking-[0.2em] text-[#c2cbb8] lg:flex lg:items-center lg:gap-2">
             <Sun className="h-3 w-3 text-[#d6b45e]" strokeWidth={1.8} aria-hidden="true" />
-            Power from Sun and Wind
+            Power from Sun, Wind, Water, Fire
           </span>
         </div>
       </div>
 
       <div className="relative mx-auto flex min-h-[5.25rem] max-w-[90rem] items-center justify-between gap-1 px-3 py-2 sm:gap-3 sm:px-6 lg:px-8 max-[319px]:flex-wrap">
-        <div className="relative z-10 w-fit shrink-0 rounded-[1.15rem] border border-[#f5e9c8]/70 bg-[#f7f3e8] p-1.5 shadow-[0_10px_30px_-18px_rgba(0,0,0,0.65)]">
-          <Logo compact />
-        </div>
+        <Logo compact />
 
         <nav aria-label="Primary navigation" className="hidden min-w-0 flex-1 items-center justify-center xl:flex">
           <div className="relative flex items-start gap-0.5">
@@ -239,7 +237,7 @@ export default function Navbar() {
               aria-label={t.navbar.languageLabel}
               aria-expanded={langOpen}
               aria-controls="desktop-language-options"
-              className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3 text-xs font-bold tracking-wide text-[#e8ecd9] transition hover:border-[#d6b45e]/60 hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6b45e]"
+              className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3 text-sm tracking-wider text-[#e8ecd9] transition hover:border-[#d6b45e]/60 hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6b45e]"
             >
               <Globe2 className="h-4 w-4 text-[#d6b45e]" aria-hidden="true" />
               {languageOptions.find((option) => option.code === locale)?.shortLabel}
@@ -248,7 +246,7 @@ export default function Navbar() {
             {renderLanguageOptions('desktop-language-options', langOpen)}
           </div>
 
-          <a
+          <Link
             href="/aerosun-energy.pdf"
             download="aerosun-energy.pdf"
             aria-label="Download AeroSun Energy voucher"
@@ -256,14 +254,14 @@ export default function Navbar() {
           >
             <ArrowDownToLine className="h-4 w-4" aria-hidden="true" />
             <span className="hidden 2xl:inline">Voucher</span>
-          </a>
+          </Link>
 
           <Link
             href="/contact"
             title={t.navbar.startProjectTitle}
             aria-label={t.navbar.startProjectAriaLabel}
             data-cta="start-project"
-            className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-[#d6b45e] px-4 text-xs font-bold text-[#13231a] shadow-[0_8px_24px_-12px_rgba(214,180,94,0.7)] transition hover:-translate-y-0.5 hover:bg-[#efd48f] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#d6b45e]"
+            className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-[#d6b45e] px-4 text-sm font-bold text-[#13231a] shadow-[0_8px_24px_-12px_rgba(214,180,94,0.7)] transition hover:-translate-y-0.5 hover:bg-[#efd48f] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#d6b45e]"
           >
             {t.navbar.startProject}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />

@@ -262,7 +262,7 @@ export default function AboutPage() {
             </p>
             <div className="mt-8 border-l-2 border-lime-300 pl-5">
               <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-lime-200">Our promise</p>
-              <p className="mt-2 text-xl font-semibold italic text-white sm:text-2xl">&ldquo;Power from sun and wind&rdquo;</p>
+              <p className="mt-2 text-xl font-semibold italic text-white sm:text-2xl">&ldquo;Power from Sun, Wind, Water, Fire&rdquo;</p>
             </div>
             <p className="mt-8 max-w-2xl text-base leading-7 text-emerald-50/85 sm:text-lg sm:leading-8">
               AeroSun Energy Private Limited is an Indian renewable-energy company established with the vision of supporting a cleaner, more sustainable and energy-efficient future. Based in Tirupati, Andhra Pradesh, the company aims to develop renewable-energy solutions for residential, agricultural, commercial and industrial customers.
@@ -383,10 +383,10 @@ export default function AboutPage() {
               {founderProfiles.map((profile) => (
                 <article key={profile.name} className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900/70">
                   <div className="flex items-center gap-3">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-900 text-sm font-black text-lime-300">{profile.initials}</span>
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-900 text-lg font-black text-lime-300">{profile.initials}</span>
                     <div>
-                      <h3 className="text-sm font-bold text-slate-950 dark:text-white">{profile.name}</h3>
-                      <p className="mt-0.5 text-[10px] font-bold uppercase tracking-[0.15em] text-emerald-700 dark:text-emerald-300">{profile.role}</p>
+                      <h3 className="text-lg font-bold text-slate-950 dark:text-white">{profile.name}</h3>
+                      <p className="mt-0.5 text-[12px] font-bold uppercase tracking-[0.15em] text-emerald-700 dark:text-emerald-300">{profile.role}</p>
                     </div>
                   </div>
                   <p className="mt-3 text-base leading-7 text-slate-700 dark:text-slate-300">{profile.description}</p>
@@ -400,7 +400,7 @@ export default function AboutPage() {
               {coreValues.map((value, index) => (
                 <article key={value.title} className="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-950/5 dark:border-slate-800 dark:bg-slate-900/70 dark:hover:border-emerald-800">
                   <div className="flex items-center justify-between gap-3">
-                    <h3 className="text-sm font-extrabold text-slate-950 dark:text-white">{value.title}</h3>
+                    <h3 className="text-md font-extrabold text-slate-950 dark:text-white">{value.title}</h3>
                     <span className="font-mono text-[10px] font-bold text-emerald-700/50 dark:text-emerald-300/50">0{index + 1}</span>
                   </div>
                   <p className="mt-3 text-base leading-7 text-slate-700 dark:text-slate-300">{value.description}</p>
@@ -523,37 +523,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
-        <div className="mb-8 max-w-3xl">
-          <p className="text-[10px] font-black uppercase tracking-[0.24em] text-sky-700 dark:text-sky-300">How we work</p>
-          <h2 className="mt-3 text-3xl font-black tracking-[-0.055em] text-slate-950 dark:text-white sm:text-4xl">A clear standard for every project</h2>
-        </div>
-        <div className="grid gap-5 lg:grid-cols-2">
-          <article className="rounded-3xl bg-[#eaf4ef] p-5 dark:bg-emerald-950/25 sm:p-7">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-800 dark:text-emerald-300">Quality commitments</p>
-            <div className="mt-5 divide-y divide-emerald-900/10 dark:divide-emerald-100/10">
-              {qualityPoints.map((point, index) => (
-                <div key={point} className="flex gap-4 py-3 first:pt-0 last:pb-0">
-                  <span className="font-mono text-xs font-bold text-emerald-800/60 dark:text-emerald-200/60">0{index + 1}</span>
-                  <p className="text-base leading-7 text-slate-700 dark:text-slate-200">{point}</p>
-                </div>
-              ))}
-            </div>
-          </article>
-          <article className="rounded-3xl bg-[#f1f0e9] p-5 dark:bg-slate-900 sm:p-7">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-800 dark:text-amber-300">Responsible business conduct</p>
-            <div className="mt-5 divide-y divide-slate-900/10 dark:divide-white/10">
-              {ethicsPoints.map((point, index) => (
-                <div key={point} className="flex gap-4 py-3 first:pt-0 last:pb-0">
-                  <span className="font-mono text-xs font-bold text-amber-800/60 dark:text-amber-200/60">0{index + 1}</span>
-                  <p className="text-base leading-7 text-slate-700 dark:text-slate-200">{point}</p>
-                </div>
-              ))}
-            </div>
-          </article>
-        </div>
-      </section>
-
       <section className="bg-[#10251f] text-white">
         <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
           <div className="mb-8 max-w-3xl">
@@ -587,6 +556,37 @@ export default function AboutPage() {
               Contact our team <span aria-hidden="true" className="ml-2">&rarr;</span>
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
+        <div className="mb-8 max-w-3xl">
+          <p className="text-[10px] font-black uppercase tracking-[0.24em] text-sky-700 dark:text-sky-300">How we work</p>
+          <h2 className="mt-3 text-3xl font-black tracking-[-0.055em] text-slate-950 dark:text-white sm:text-4xl">A clear standard for every project</h2>
+        </div>
+        <div className="grid gap-5 lg:grid-cols-2">
+          <article className="rounded-3xl bg-[#eaf4ef] p-5 dark:bg-emerald-950/25 sm:p-7">
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-800 dark:text-emerald-300">Quality commitments</p>
+            <div className="mt-5 divide-y divide-emerald-900/10 dark:divide-emerald-100/10">
+              {qualityPoints.map((point, index) => (
+                <div key={point} className="flex gap-4 py-3 first:pt-0 last:pb-0">
+                  <span className="font-mono text-xs font-bold text-emerald-800/60 dark:text-emerald-200/60">0{index + 1}</span>
+                  <p className="text-base leading-7 text-slate-700 dark:text-slate-200">{point}</p>
+                </div>
+              ))}
+            </div>
+          </article>
+          <article className="rounded-3xl bg-[#f1f0e9] p-5 dark:bg-slate-900 sm:p-7">
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-800 dark:text-amber-300">Responsible business conduct</p>
+            <div className="mt-5 divide-y divide-slate-900/10 dark:divide-white/10">
+              {ethicsPoints.map((point, index) => (
+                <div key={point} className="flex gap-4 py-3 first:pt-0 last:pb-0">
+                  <span className="font-mono text-xs font-bold text-amber-800/60 dark:text-amber-200/60">0{index + 1}</span>
+                  <p className="text-base leading-7 text-slate-700 dark:text-slate-200">{point}</p>
+                </div>
+              ))}
+            </div>
+          </article>
         </div>
       </section>
     </main>
