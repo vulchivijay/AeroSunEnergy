@@ -7,6 +7,7 @@ import { Header, Footer, LordGanesha } from '@/app/components/layout'
 import { PerformanceMonitor } from '@/app/components/performance'
 import CookieConsent from '@/app/components/cookies/CookieConsent'
 import Notifications from '@/app/components/layout/Notifications'
+import { NetworkStatus } from '@/app/components/system/NetworkStatus'
 import ProductionProtector from '@/app/components/security/ProductionProtector'
 import Script from 'next/script'
 
@@ -162,6 +163,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd />
         <PerformanceMonitor />
         <LocaleProvider>
+          <NetworkStatus />
           <Notifications />
           <Header />
           <LordGanesha />
