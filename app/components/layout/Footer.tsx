@@ -324,7 +324,7 @@ export default function Footer() {
 						<Link href="/terms-conditions" className="transition-colors hover:text-[#A3D977]">Terms & Conditions</Link>
 						<Link href="/warranty-policy" className="transition-colors hover:text-[#A3D977]">Warranty & Service Policy</Link>
 					</div>
-					<p className="text-[11px] text-gray-400">Built with care by AeroSun Energy.</p>
+					<p className="text-[11px] text-gray-400">Built with Love and fassion by Vulchi Vijaya Kumar Raju (Kshatriya's).</p>
 					<p className="text-[11px] text-gray-400">
 						© {new Date().getFullYear()} AeroSun Energy Private Limited. All Rights Reserved.
 					</p>
