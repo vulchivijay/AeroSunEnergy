@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { motion } from '@/lib/motion'
-import { Card, CardContent } from '@/app/components/ui/Card'
 import FaqCard, { solarFaqs } from '@/app/components/ui/FaqCard'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
@@ -43,14 +42,7 @@ export default function Contact() {
   const faqHeader = c.faqHeader ?? 'FAQ'
   const faqTitle = c.faqTitle ?? 'Common questions'
 
-  const contactHighlights = c.highlights.map((item, index) => ({
-    ...item,
-    tone: [
-      'from-primary/20 via-custom-orange/15 to-custom-red/20',
-      'from-custom-blue/20 via-primary/15 to-custom-violet/20',
-      'from-emerald-500/20 via-primary/15 to-slate-500/20',
-    ][index] ?? 'from-primary/20 via-custom-orange/15 to-custom-red/20',
-  }))
+  const contactHighlights = c.highlights
 
   const contactSteps = c.steps.map((step, index) => ({
     ...step,
@@ -87,175 +79,158 @@ export default function Contact() {
   const contactEmail = footer.email
 
   return (
-    <section className="relative isolate overflow-hidden px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
-      <div className="relative mx-auto max-w-7xl space-y-8">
-        <div className="grid gap-6 xl:grid-cols-[1.14fr_0.86fr] xl:items-stretch">
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, ease: 'easeOut' }}
-            className="relative isolate overflow-hidden rounded-4xl border border-[#dfeee4] bg-white shadow-[0_36px_90px_rgba(15,23,42,0.08)] dark:border-slate-800 dark:bg-slate-950"
-          >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.22),transparent_22%),radial-gradient(circle_at_100%_0%,rgba(245,158,11,0.18),transparent_18%),linear-gradient(135deg,#f5faf6_0%,#effaf2_28%,#f8fafc_100%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.20),transparent_20%),radial-gradient(circle_at_100%_0%,rgba(245,158,11,0.20),transparent_18%),linear-gradient(135deg,#081421_0%,#101d2d_32%,#020817_100%)]" aria-hidden="true" />
-
-            <div className="relative grid gap-7 p-5 sm:p-6 xl:min-h-140">
-              <div className="flex rounded-[28px] border border-[#dfeee4]/80 bg-white/65 p-2 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/40">
-                <div className="flex h-full flex-col justify-center rounded-3xl bg-[linear-gradient(135deg,rgba(255,255,255,0.95),rgba(244,248,245,0.88))] p-5 sm:p-6 dark:bg-[linear-gradient(135deg,rgba(15,23,42,0.92),rgba(15,23,42,0.78))]">
-                  <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#20A44A]/20 bg-white/85 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.30em] text-[#183729] shadow-sm backdrop-blur-md dark:border-white/10 dark:bg-slate-900/70 dark:text-slate-100">
-                    <span className="h-2 w-2 rounded-full bg-[#20A44A] shadow-[0_0_18px_rgba(32,164,74,0.9)]" />
-                    {navbar.startProject}
-                  </div>
-
-                  <h1 className="mt-6 max-w-xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-[4rem] lg:leading-[1.02] dark:text-white">
-                    {c.heroTitle}
-                  </h1>
-
-                  <p className="mt-5 max-w-xl text-base leading-8 text-slate-700 sm:text-lg dark:text-slate-200">
-                    {c.heroDescription}
-                  </p>
-
-                  <div className="mt-7 flex flex-wrap gap-3">
-                    <Link
-                      href={`mailto:${contactEmail}`}
-                      className="inline-flex items-center justify-center rounded-full bg-[#20A44A] px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_30px_-18px_rgba(32,164,74,0.9)] transition-transform duration-200 hover:-translate-y-0.5 hover:bg-[#1d9a45]"
-                    >
-                      {c.emailButton}
-                    </Link>
-                    <Link
-                      href="/estimation-calculator"
-                      className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-800 backdrop-blur-md transition-colors duration-200 hover:bg-white dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-100"
-                    >
-                      {c.estimationButton}
-                    </Link>
-                  </div>
-
-                  <div className="mt-8 grid gap-3 sm:grid-cols-3">
-                    {contactHighlights.map((item) => (
-                      <div
-                        key={item.label}
-                        className="rounded-2xl border border-slate-200/80 bg-white/75 p-3.5 shadow-[0_12px_28px_rgba(15,23,42,0.04)] backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/70"
-                      >
-                        <div className={`h-1.5 rounded-full bg-linear-to-r ${item.tone}`} aria-hidden="true" />
-                        <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
-                          {item.label}
-                        </p>
-                        <p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-100">{item.value}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>              
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, ease: 'easeOut', delay: 0.08 }}
-            className="rounded-[32px] border border-slate-200 bg-white/80 p-5 shadow-[0_18px_50px_rgba(15,23,42,0.06)] backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/80 sm:p-7"
-          >
-            <div className="relative flex">
-              <div className="absolute -left-5 top-12 h-28 w-28 rounded-full bg-[#20A44A]/18 blur-3xl" aria-hidden="true" />
-              <div className="absolute -right-4 bottom-8 h-28 w-28 rounded-full bg-[#F59E0B]/18 blur-3xl" aria-hidden="true" />
-
-              <div className="relative w-full overflow-hidden rounded-[28px] border border-white/50 bg-white/60 p-3 shadow-[0_26px_80px_rgba(2,6,23,0.18)] backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/65">
-                <div className="flex items-center justify-between rounded-xl border border-slate-200/80 bg-slate-950 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-slate-100 dark:border-slate-700">
-                  <span>{c.badge}</span>
-                  <span className="text-[#F59E0B]">{c.projectBrief}</span>
-                </div>
-
-                <div className="relative mt-3 h-52 overflow-hidden rounded-[22px] sm:h-62.5">
-                  <OptimizedImage
-                    src="/images/home-business-aerosunenergy.png"
-                    alt="AeroSun energy consultation"
-                    width={1200}
-                    height={800}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="mb-6 flex items-center justify-between gap-3 pt-8">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#20A44A]">{contactUs}</p>
-                <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">{contactCardTitle}</h2>
-              </div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#20A44A]/10 text-[#20A44A]">
-                {channelIcons.email}
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              {channels.map((channel) => (
-                <a
-                  key={channel.label}
-                  href={channel.href}
-                  className="group flex items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-slate-50/80 p-4 transition-colors hover:border-[#20A44A]/30 hover:bg-[#f3faf5] dark:border-slate-700 dark:bg-slate-950/60 dark:hover:border-[#20A44A]/40 dark:hover:bg-slate-900"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-slate-700 shadow-sm dark:bg-slate-900 dark:text-slate-200">
-                      {channel.icon}
-                    </div>
-                    <div>
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">{channel.label}</p>
-                      <p className="mt-1 text-sm font-medium text-slate-800 dark:text-slate-100">{channel.value}</p>
-                    </div>
-                  </div>
-                  <span className="text-slate-400 transition-transform group-hover:translate-x-1 dark:text-slate-500">→</span>
-                </a>
-              ))}
-            </div>
-
-            <div className="mt-6 rounded-[28px] border border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f0fdf4_48%,#ffffff_100%)] p-4 shadow-[0_18px_30px_-20px_rgba(16,185,129,0.8)]">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-emerald-700">Fastest route</p>
-              <h3 className="mt-3 text-2xl font-semibold text-slate-900">Need a custom solar proposal?</h3>
-              <p className="mt-2 text-sm leading-7 text-slate-600">
-                Share your roof size, usage, and location and our team will recommend the best rooftop, hybrid, or wind solution for your site.
-              </p>
-              <div className="mt-5 flex flex-wrap gap-3">
-                <Link
-                  href="/customer-enquiry"
-                  className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_30px_-18px_rgba(5,150,105,0.9)] transition-transform duration-200 hover:-translate-y-0.5 hover:bg-emerald-500"
-                >
-                  Submit Enquiry
-                </Link>
-                <Link
-                  href="/estimation-calculator"
-                  className="inline-flex items-center justify-center rounded-full border border-emerald-200 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-800 transition-colors hover:bg-white"
-                >
-                  Estimate Savings
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-3">
-          {contactSteps.map((step) => (
-            <Card key={step.title} className="relative overflow-hidden border border-slate-200 bg-white/90 shadow-[0_16px_40px_rgba(15,23,42,0.04)] dark:border-slate-700 dark:bg-slate-900/80">
-              <CardContent className="p-6">
-                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-[#20A44A]/10 text-sm font-semibold text-[#20A44A]">
-                  {step.number}
-                </div>
-                <h3 className="text-xl font-semibold text-slate-900 dark:text-white">{step.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{step.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        <div className="rounded-[32px] border border-slate-200 bg-white/90 p-5 shadow-[0_18px_50px_rgba(15,23,42,0.04)] dark:border-slate-700 dark:bg-slate-900/80 sm:p-7">
-          <div className="mb-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#20A44A]">{faqHeader}</p>
-            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">{faqTitle}</h2>
+    <main className="overflow-hidden bg-[#f3f0e5] text-slate-950 dark:bg-slate-950 dark:text-white">
+      <section className="px-5 pb-16 pt-6 sm:px-8 sm:pb-24 sm:pt-10 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-5 flex items-center justify-between border-b border-slate-300 pb-4 dark:border-slate-800">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-emerald-900 dark:text-emerald-300">AeroSun Energy <span className="mx-2 text-lime-600">/</span> {contactUs}</p>
+            <span className="hidden text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 sm:block">Tirupati, India</span>
           </div>
-          <div className="grid gap-4 lg:grid-cols-1">
-            {solarFaqs.map((faq) => (
-              <FaqCard key={faq.question} question={faq.question} answer={faq.answer} />
+
+          <div className="grid min-h-[34rem] overflow-hidden rounded-[2rem] bg-[#dfff72] lg:grid-cols-[1fr_0.92fr]">
+            <motion.div
+              initial={{ opacity: 0, x: -18 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.45, ease: 'easeOut' }}
+              className="relative flex flex-col justify-between overflow-hidden p-7 sm:p-11 lg:p-14"
+            >
+              <div className="pointer-events-none absolute -bottom-36 -left-36 h-[28rem] w-[28rem] rounded-full border border-emerald-950/10" aria-hidden="true" />
+              <div className="pointer-events-none absolute -bottom-20 -left-20 h-80 w-80 rounded-full border border-emerald-950/10" aria-hidden="true" />
+              <div className="relative">
+                <p className="inline-flex items-center gap-3 text-xs font-black uppercase tracking-[0.2em] text-emerald-950">
+                  <span className="h-2 w-2 rounded-full bg-emerald-800" />
+                  {navbar.startProject}
+                </p>
+                <h1 className="mt-10 max-w-2xl text-5xl font-black leading-[0.9] tracking-[-0.075em] sm:text-6xl lg:text-7xl">
+                  {c.heroTitle}
+                </h1>
+                <p className="mt-7 max-w-xl text-base leading-8 text-emerald-950/80 sm:text-lg">
+                  {c.heroDescription}
+                </p>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <Link
+                    href={`mailto:${contactEmail}`}
+                    className="inline-flex items-center justify-center rounded-full bg-[#10251f] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-emerald-900"
+                  >
+                    {c.emailButton}
+                  </Link>
+                  <Link
+                    href="/estimation-calculator"
+                    className="inline-flex items-center justify-center rounded-full border border-emerald-950/25 px-6 py-3.5 text-sm font-bold text-emerald-950 transition hover:bg-white/50"
+                  >
+                    {c.estimationButton}
+                  </Link>
+                </div>
+              </div>
+              <div className="relative mt-12 flex items-end justify-between gap-4 border-t border-emerald-950/20 pt-4">
+                <span className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-950/70">{c.badge}</span>
+                <span className="text-right text-sm font-black text-emerald-950">{c.projectBrief}</span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 1.03 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, ease: 'easeOut', delay: 0.08 }}
+              className="relative min-h-80 overflow-hidden bg-[#172a21] lg:min-h-full"
+            >
+              <OptimizedImage
+                src="/images/home-business-aerosunenergy.png"
+                alt="AeroSun energy consultation"
+                fill
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#10251f]/75 via-transparent to-[#10251f]/10" />
+              <div className="absolute right-8 top-8 flex h-28 w-28 items-center justify-center rounded-full border border-white/70 bg-lime-300 text-center text-[10px] font-black uppercase leading-4 tracking-[0.16em] text-emerald-950 shadow-xl sm:right-12 sm:top-12 sm:h-36 sm:w-36">
+                Sun <span className="mx-1 text-emerald-700">+</span> wind<br />better together
+              </div>
+              <div className="absolute bottom-7 left-7 max-w-xs border-l-2 border-lime-300 pl-4 text-sm font-semibold leading-6 text-white sm:bottom-10 sm:left-10">
+                Practical renewable energy, shaped around your project.
+              </div>
+            </motion.div>
+          </div>
+
+          <section className="mt-5 overflow-hidden rounded-[2rem] bg-[#10251f] text-white">
+            <div className="grid lg:grid-cols-[0.75fr_1.25fr]">
+              <div className="flex flex-col justify-center border-b border-white/10 p-6 sm:p-9 lg:border-b-0 lg:border-r">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-lime-300">{contactUs}</p>
+                <h2 className="mt-4 text-3xl font-black leading-tight tracking-tight sm:text-4xl">{contactCardTitle}</h2>
+                <p className="mt-4 text-base leading-7 text-emerald-50/75">Choose the best way to connect or begin planning your energy project.</p>
+              </div>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3">
+                {channels.map((channel, index) => (
+                  <a
+                    key={channel.label}
+                    href={channel.href}
+                    className="group flex min-h-36 items-start gap-4 border-b border-white/10 p-6 transition-colors hover:bg-white/[0.06] sm:p-7 lg:border-b-0 lg:border-r lg:last:border-r-0"
+                  >
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-lime-300 text-emerald-950 transition-transform group-hover:rotate-[-8deg]">
+                      {channel.icon}
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block font-mono text-xs font-bold text-lime-300">0{index + 1}</span>
+                      <span className="mt-3 block text-xs font-bold uppercase tracking-[0.14em] text-white/60">{channel.label}</span>
+                      <span className="mt-1 block break-words text-base font-semibold leading-6 text-white group-hover:text-lime-200">{channel.value}</span>
+                    </span>
+                    <span className="ml-auto text-lg text-lime-300 transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
+                    <span className="sr-only">Open {channel.label}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <div className="mt-5 grid gap-3 sm:grid-cols-3">
+            {contactHighlights.map((item, index) => (
+              <article key={item.label} className="flex gap-4 border-t-2 border-emerald-800/20 bg-white/55 p-5 dark:border-emerald-300/20 dark:bg-slate-900/60">
+                <span className="font-mono text-sm font-bold text-emerald-800 dark:text-lime-300">0{index + 1}</span>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">{item.label}</p>
+                  <p className="mt-2 text-base leading-7 text-slate-800 dark:text-slate-200">{item.value}</p>
+                </div>
+              </article>
             ))}
           </div>
+
+          <section className="mt-20 sm:mt-28">
+            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+              <div>
+                <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-800 dark:text-emerald-300">From first question to next step</p>
+                <h2 className="mt-4 max-w-xl text-4xl font-black leading-tight tracking-[-0.05em] text-slate-950 sm:text-5xl dark:text-white">A simple way to get started</h2>
+              </div>
+              <div className="flex flex-col justify-between gap-5 border-t border-slate-300 pt-5 sm:flex-row sm:items-end dark:border-slate-800">
+                <p className="max-w-md text-base leading-7 text-slate-600 dark:text-slate-300">Tell us what you need, and we&apos;ll help you explore the right renewable-energy direction.</p>
+                <Link href="/customer-enquiry" className="inline-flex w-fit items-center gap-3 text-sm font-bold text-emerald-900 transition hover:gap-4 dark:text-lime-300">
+                  Submit an enquiry <span aria-hidden="true">&rarr;</span>
+                </Link>
+              </div>
+            </div>
+            <div className="mt-8 grid gap-px overflow-hidden rounded-2xl bg-slate-300 dark:bg-slate-800 lg:grid-cols-3">
+              {contactSteps.map((step) => (
+                <article key={step.title} className="bg-[#f3f0e5] p-6 sm:p-8 dark:bg-slate-950">
+                  <span className="font-mono text-sm font-bold text-emerald-700 dark:text-lime-300">{step.number} <span className="text-slate-400">/ 03</span></span>
+                  <h3 className="mt-8 text-2xl font-black text-slate-950 dark:text-white">{step.title}</h3>
+                  <p className="mt-3 text-base leading-7 text-slate-700 dark:text-slate-300">{step.description}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="mt-20 grid overflow-hidden rounded-[2rem] bg-[#dfff72] sm:mt-28 lg:grid-cols-[0.7fr_1.3fr] dark:bg-emerald-950">
+            <div className="flex flex-col justify-center p-6 sm:p-10">
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-900 dark:text-lime-300">{faqHeader}</p>
+              <h2 className="mt-4 text-4xl font-black leading-tight tracking-[-0.05em] text-emerald-950 dark:text-white sm:text-5xl">{faqTitle}</h2>
+              <p className="mt-5 text-base leading-7 text-emerald-950/75 dark:text-emerald-50/75">Explore answers to common questions about solar energy and project planning.</p>
+            </div>
+            <div className="space-y-3 bg-[#f3f0e5] p-4 sm:p-6 lg:p-8 dark:bg-slate-900">
+              {solarFaqs.map((faq) => (
+                <FaqCard key={faq.question} question={faq.question} answer={faq.answer} />
+              ))}
+            </div>
+          </section>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
   )
 }
