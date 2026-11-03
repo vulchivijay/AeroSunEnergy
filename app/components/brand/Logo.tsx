@@ -1,6 +1,6 @@
 'use client'
 
-import { OptimizedImage } from '@/app/components/ui'
+import Image from 'next/image'
 import Link from "next/link"
 import { useLocale } from '@/lib/LocaleContext'
 
@@ -15,14 +15,13 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
       data-logo="brand"
       className={`relative flex items-center gap-2 font-(--font-logo) ${compact ? 'w-max max-w-auto' : 'max-w-full'}`}
     >
-      <OptimizedImage
+      <Image
         src="/images/logo.webp"
         alt={t.logo.imageAlt}
-        width={80}
-        height={80}
+        width={512}
+        height={401}
         priority
-        loading="eager"
-        className={compact ? '' : ''}
+        className="h-auto w-20 shrink-0 object-contain"
       />
       <div className="flex min-w-0 flex-col items-start justify-center text-left">
         <div className={`flex items-center justify-start ${compact ? 'gap-0.5' : 'gap-1'}`}>
