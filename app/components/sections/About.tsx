@@ -144,12 +144,11 @@ export default function About() {
                     <div className="absolute inset-0 bg-linear-to-br from-emerald-200/60 via-transparent to-blue-200/40" />
                     <div className="relative h-80 w-full">
                       <OptimizedImage
-                        src="/images/founder-aerosunenergy.png"
+                        src="/images/founder-aerosunenergy.webp"
                         alt="Founder of AeroSun Energy"
                         fill
                         sizes="(min-width: 400px) 400px, 100vw"
                         className="bg-white"
-                        loading="eager"
                       />
                     </div>
                     <div className="absolute left-4 top-4 rounded-full border border-white/70 bg-white/60 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-slate-700 backdrop-blur-sm">

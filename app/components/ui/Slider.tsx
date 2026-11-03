@@ -199,12 +199,18 @@ export default function Slider({ children, className = '', autoplay = false, int
                 key={i}
                 onClick={() => goToSlide(i)}
                 aria-label={`Go to slide ${i + 1}`}
-                className={`rounded-full transition-all duration-300 ${
-                  isActive
-                    ? 'h-2 w-5 bg-white sm:h-2.5 sm:w-8'
-                    : 'h-2 w-2 bg-white/40 hover:bg-white/60 sm:h-2.5 sm:w-2.5'
-                }`}
-              />
+                aria-current={isActive ? 'true' : undefined}
+                className="group flex h-11 w-11 shrink-0 items-center justify-center rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-white"
+              >
+                <span
+                  aria-hidden="true"
+                  className={`rounded-full transition-all duration-300 ${
+                    isActive
+                      ? 'h-2 w-5 bg-white sm:h-2.5 sm:w-8'
+                      : 'h-2 w-2 bg-white/40 group-hover:bg-white/60 sm:h-2.5 sm:w-2.5'
+                  }`}
+                />
+              </button>
             )
           })}
         </div>

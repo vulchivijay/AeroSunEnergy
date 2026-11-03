@@ -1,15 +1,14 @@
 import type { Metadata } from 'next'
 import { Poppins, Roboto } from 'next/font/google'
-import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 import { JsonLd } from '@/app/components/seo'
 import { LocaleProvider } from '@/lib/LocaleContext'
 import { Header, Footer, LordGanesha } from '@/app/components/layout'
 import { PerformanceMonitor } from '@/app/components/performance'
 import CookieConsent from '@/app/components/cookies/CookieConsent'
+import ConsentAwareTracking from '@/app/components/cookies/ConsentAwareTracking'
 import Notifications from '@/app/components/layout/Notifications'
 import { NetworkStatus } from '@/app/components/system/NetworkStatus'
 import ProductionProtector from '@/app/components/security/ProductionProtector'
-import Script from 'next/script'
 
 import './globals.css'
 
@@ -34,7 +33,8 @@ const poppins = Poppins({
 })
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || process.env.GTM_ID
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || process.env.GA_MEASUREMENT_ID
+const GA_MEASUREMENT_ID =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || process.env.GA_MEASUREMENT_ID
 const GOOGLE_SITE_VERIFICATION = process.env.GOOGLE_SITE_VERIFICATION || undefined
 const BING_SITE_VERIFICATION = process.env.BING_SITE_VERIFICATION || 'CFCE648996D804079C4F28B5C09CE9D3'
 
@@ -133,34 +133,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18547983243"
-          strategy="afterInteractive"
-        />
-        <Script id="google-ads-gtag" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-18547983243');
-            gtag('config', 'AW-18551268371');
-          `}
-        </Script>
-        {GTM_ID ? (
-          <Script id="gtm-script" strategy="afterInteractive">
-            {`
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');
-            `}
-          </Script>
-        ) : null}
-      </head>
       <body className={`${roboto.variable} ${poppins.variable} bg-white text-gray-900 transition-colors duration-150`}>
         {process.env.NODE_ENV === 'production' ? <ProductionProtector /> : null}
-        {GTM_ID ? <GoogleTagManager gtmId={GTM_ID} /> : null}
-        {GA_MEASUREMENT_ID ? <GoogleAnalytics gaId={GA_MEASUREMENT_ID} /> : null}
         <JsonLd />
+        <ConsentAwareTracking gtmId={GTM_ID} gaMeasurementId={GA_MEASUREMENT_ID} />
         <PerformanceMonitor />
         <LocaleProvider>
           <NetworkStatus />

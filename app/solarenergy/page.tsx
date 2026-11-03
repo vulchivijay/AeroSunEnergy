@@ -116,7 +116,7 @@ const solarSlides: SolarSlide[] = [
     title: 'Rooftop Solar for Homes & Businesses',
     description:
       'On-grid PV systems designed to cut daytime electricity costs, offset consumption with net metering, and lower long-term energy bills without requiring heavy battery storage.',
-    image: '/images/slider/slider-1.png',
+    image: '/images/slider/slider-1.webp',
     tags: ['Lower Capex', 'Net Metering'],
     badgeClass: 'text-sky-100',
     chipClass: 'text-sky-50',

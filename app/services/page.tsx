@@ -183,7 +183,7 @@ export default function ServicesPage() {
         <div className="relative overflow-hidden rounded-[2.5rem] border border-slate-200 bg-slate-950 shadow-[0_34px_100px_-40px_rgba(15,23,42,0.9)]">
           <div className="absolute inset-0">
             <OptimizedImage
-              src="/images/slider/slider-1.png"
+              src="/images/slider/slider-1.webp"
               alt="Renewable energy systems and technical services"
               fill
               sizes="100vw"

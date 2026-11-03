@@ -282,7 +282,7 @@ export default function AboutPage() {
             <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.07] p-3 shadow-2xl shadow-black/30 backdrop-blur-sm">
               <div className="relative h-[26rem] overflow-hidden rounded-[1.5rem] bg-[linear-gradient(155deg,#31594b_0%,#14372f_55%,#24463a_100%)] sm:h-[32rem]">
                 <OptimizedImage
-                  src="/images/founder-aerosunenergy.png"
+                  src="/images/founder-aerosunenergy.webp"
                   alt="Mr. Vulchi Vijaya Kumar, Founder of AeroSun Energy"
                   fill
                   sizes="(min-width: 1024px) 38vw, 90vw"

@@ -97,7 +97,7 @@ export default function SchemeBanner() {
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 <Link
                   href="/contact"
-                  className="rounded-full bg-emerald-600 px-5 py-3 text-sm font-bold uppercase tracking-[0.14em] text-white shadow-[0_18px_28px_-18px_rgba(5,150,105,0.9)] transition hover:bg-emerald-500"
+                  className="rounded-full bg-emerald-700 px-5 py-3 text-sm font-bold uppercase tracking-[0.14em] text-white shadow-[0_18px_28px_-18px_rgba(5,150,105,0.9)] transition hover:bg-emerald-800"
                 >
                   Apply Now
                 </Link>

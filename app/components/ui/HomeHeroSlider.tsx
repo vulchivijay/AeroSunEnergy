@@ -20,7 +20,7 @@ const slides: Slide[] = [
     description:
       'On-grid PV connected to the utility. Pros: lower cost (no batteries), net-metering, simple setup. Cons: no backup power during outages unless paired with storage.',
     tags: ['Lower Capex', 'Net Metering'],
-    image: '/images/slider/slider-1.png',
+    image: '/images/slider/slider-1.webp',
     badgeClass: 'text-sky-100',
     chipClass: 'text-sky-50',
     panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
@@ -171,7 +171,7 @@ export default function HomeHeroSlider() {
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 <Link
                   href="/contact"
-                  className="rounded-full bg-emerald-500 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-white shadow-[0_18px_30px_-18px_rgba(16,185,129,0.9)] transition hover:bg-emerald-400"
+                  className="rounded-full bg-emerald-500 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-emerald-950 shadow-[0_18px_30px_-18px_rgba(16,185,129,0.9)] transition hover:bg-emerald-400"
                 >
                   Get Free Quote
                 </Link>

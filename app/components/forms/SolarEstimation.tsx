@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useId } from 'react'
 import Link from 'next/link'
 import { z } from 'zod'
 import { useForm, useWatch, type UseFormRegisterReturn } from 'react-hook-form'
@@ -52,6 +52,7 @@ const defaultValues: FormData = {
 
 export function SolarEstimation() {
   const { t } = useLocale()
+  const monthlyUnitsInputId = useId()
   const e = t.estimation
   const isProduction = process.env.NODE_ENV === 'production'
 
@@ -203,7 +204,7 @@ export function SolarEstimation() {
               <div className="space-y-4">
                 <div className="flex items-center justify-between gap-3">
                   <div>
-                    <p className="text-[11px] font-bold uppercase tracking-[0.26em] text-slate-500">Monthly Electricity Units</p>
+                    <label htmlFor={monthlyUnitsInputId} className="text-[11px] font-bold uppercase tracking-[0.26em] text-slate-500">Monthly Electricity Units</label>
                     <div className="mt-2 flex items-center gap-2">
                       <span className="text-[2.4rem] font-black tracking-[0.06em] text-emerald-600">{(values.monthlyUnits ?? defaultValues.monthlyUnits).toLocaleString('en-IN')} units</span>
                     </div>
@@ -215,7 +216,9 @@ export function SolarEstimation() {
 
                 <div className="space-y-3">
                   <input
+                    id={monthlyUnitsInputId}
                     type="range"
+                    aria-label="Monthly electricity usage in units"
                     min={50}
                     max={4000}
                     step={10}
