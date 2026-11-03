@@ -230,9 +230,9 @@ const ppsReasons = [
 
 export default function AboutPage() {
   return (
-    <main className="overflow-hidden bg-[#f5f6ef] text-slate-900 dark:bg-[#07120f] dark:text-slate-100">
-      <section id="story" className="relative isolate overflow-hidden bg-[#10251f] text-white">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_8%,rgba(16,185,129,0.22),transparent_38%),radial-gradient(ellipse_at_5%_100%,rgba(132,204,22,0.12),transparent_35%)]" />
+    <main className="overflow-hidden bg-[#f5f6ef] text-slate-900 dark:bg-[#101b17] dark:text-slate-100">
+      <section id="story" className="relative isolate overflow-hidden bg-[#14372f] text-white">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_8%,rgba(52,211,153,0.2),transparent_38%),radial-gradient(ellipse_at_5%_100%,rgba(163,217,119,0.11),transparent_35%)]" />
         <div className="absolute -right-36 top-20 -z-10 h-[34rem] w-[34rem] rounded-full border border-white/[0.08] sm:right-[-8rem]">
           <div className="absolute inset-10 rounded-full border border-white/[0.08]" />
           <div className="absolute inset-20 rounded-full border border-white/[0.08]" />
@@ -280,7 +280,7 @@ export default function AboutPage() {
           <div className="relative mx-auto w-full max-w-md lg:ml-auto">
             <div className="absolute -inset-5 rounded-[2.5rem] bg-emerald-400/15 blur-3xl" />
             <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.07] p-3 shadow-2xl shadow-black/30 backdrop-blur-sm">
-              <div className="relative h-[26rem] overflow-hidden rounded-[1.5rem] bg-[linear-gradient(155deg,#234b3d_0%,#10251f_55%,#1d352c_100%)] sm:h-[32rem]">
+              <div className="relative h-[26rem] overflow-hidden rounded-[1.5rem] bg-[linear-gradient(155deg,#31594b_0%,#14372f_55%,#24463a_100%)] sm:h-[32rem]">
                 <OptimizedImage
                   src="/images/founder-aerosunenergy.png"
                   alt="Mr. Vulchi Vijaya Kumar, Founder of AeroSun Energy"
@@ -288,7 +288,7 @@ export default function AboutPage() {
                   sizes="(min-width: 1024px) 38vw, 90vw"
                   className="object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#08150f]/95 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0b1c17]/95 via-transparent to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
                   <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-lime-200">Founder & Director</p>
                   <h2 className="mt-2 text-2xl font-black tracking-tight text-white sm:text-3xl">Vulchi Vijaya Kumar</h2>
@@ -350,7 +350,7 @@ export default function AboutPage() {
             </span>
           </div>
           <div className="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
-            <div className="hidden grid-cols-[1fr_1.5fr_auto] gap-4 bg-[#10251f] px-5 py-3 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-100/80 sm:grid">
+            <div className="hidden grid-cols-[1fr_1.5fr_auto] gap-4 bg-[#30453a] px-5 py-3 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-50/80 sm:grid">
               <span>Registration</span><span>Purpose</span><span>Status</span>
             </div>
             <div className="divide-y divide-slate-100 dark:divide-slate-800">
@@ -411,7 +411,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#10251f] text-white">
+      <section className="bg-[#1d3d43] text-white">
         <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -523,7 +523,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#10251f] text-white">
+      <section className="bg-[#303b29] text-white">
         <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
           <div className="mb-8 max-w-3xl">
             <p className="text-[10px] font-black uppercase tracking-[0.24em] text-lime-300">Our commitments</p>

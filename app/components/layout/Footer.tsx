@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState, type FormEvent } from 'react'
 import Logo from '../brand/Logo'
 import { useLocale } from '@/lib/LocaleContext'
@@ -79,6 +80,7 @@ const socialLinks = [
 
 export default function Footer() {
 	const { t } = useLocale()
+	const pathname = usePathname() || '/'
 	const footer = t.footer
 	const navLinks = t.navbar.links
 	const queries = t.navbar.quiries || []
@@ -89,6 +91,7 @@ export default function Footer() {
 	const companyAddress = 'Do.no 11-184, Gollavanigunta, T.N. Pallem, Tirupati, Andhra Pradesh, India - 517501.'
 	const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyAddress)}`
 	const websiteUrl = footer.website.startsWith('http') ? footer.website : `https://${footer.website}`
+	const isActive = (href: string) => href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`)
 	const solutions = [
 		{ label: 'Residential Solar Solutions', href: '/solarenergy' },
 		{ label: 'Commercial & Industrial Solar', href: '/solarenergy' },
@@ -125,7 +128,7 @@ export default function Footer() {
 								<span className="h-px w-8 bg-[#A3D977]" />
 								AeroSun Energy
 							</p>
-							<h2 className="mt-5 text-4xl font-semibold leading-[1.05] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
+							<h2 className="mt-5 text-4xl leading-[1.05] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
 								Let&apos;s Build a Cleaner Energy Future Together.
 							</h2>
 							<p className="mt-5 max-w-2xl text-base leading-7 text-gray-300 sm:text-lg">
@@ -133,7 +136,7 @@ export default function Footer() {
 							</p>
 							<Link
 								href="/contact"
-								className="group mt-8 inline-flex min-h-12 items-center gap-3 rounded-full bg-[#F5C76A] px-6 py-3 text-sm font-bold text-[#071B17] transition hover:-translate-y-0.5 hover:bg-[#ffda8b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C76A]"
+								className="group mt-8 inline-flex min-h-12 items-center gap-3 rounded-full bg-[#A5D6A7] px-6 py-3 text-sm font-bold text-[#173B2C] transition hover:-translate-y-0.5 hover:bg-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7]"
 							>
 								Talk to Our Energy Experts
 								<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
@@ -178,7 +181,7 @@ export default function Footer() {
 									title={title}
 									itemProp="sameAs"
 									data-social={dataSocial}
-									className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] text-gray-300 transition duration-200 hover:-translate-y-1 hover:border-[#F5C76A] hover:bg-[#F5C76A] hover:text-[#071B17] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5C76A]"
+									className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] text-gray-300 transition duration-200 hover:-translate-y-1 hover:border-[#A5D6A7] hover:bg-[#A5D6A7] hover:text-[#173B2C] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7]"
 								>
 									{icon}
 								</Link>
@@ -196,8 +199,8 @@ export default function Footer() {
 											{link.label}<span className="rounded-full bg-white/10 px-2 py-0.5 text-[9px] uppercase tracking-wider">Soon</span>
 										</span>
 									) : (
-										<Link href={link.href} className="group inline-flex min-h-10 items-center gap-2 text-sm text-gray-300 transition-colors hover:text-[#A3D977] focus-visible:text-[#A3D977] focus-visible:outline-none">
-											<span className="h-px w-0 bg-[#A3D977] transition-all group-hover:w-3 group-focus-visible:w-3" aria-hidden="true" />
+										<Link href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-none ${isActive(link.href) ? 'font-semibold text-[#DCEDC8]' : 'text-gray-300 hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]'}`}>
+											<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(link.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
 											{link.label}
 										</Link>
 									)}
@@ -213,8 +216,8 @@ export default function Footer() {
 											{item.label}<span className="rounded-full bg-white/10 px-2 py-0.5 text-[9px] uppercase tracking-wider">Soon</span>
 										</span>
 									) : (
-										<Link href={item.href} className="group inline-flex min-h-9 items-center gap-2 text-sm text-gray-300 transition-colors hover:text-[#A3D977] focus-visible:text-[#A3D977] focus-visible:outline-none">
-											<span className="h-px w-0 bg-[#A3D977] transition-all group-hover:w-3 group-focus-visible:w-3" aria-hidden="true" />
+										<Link href={item.href} aria-current={isActive(item.href) ? 'page' : undefined} className={`group inline-flex min-h-9 items-center gap-2 text-sm transition-colors focus-visible:outline-none ${isActive(item.href) ? 'font-semibold text-[#DCEDC8]' : 'text-gray-300 hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]'}`}>
+											<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(item.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
 											{item.label}
 										</Link>
 									)}
@@ -228,8 +231,8 @@ export default function Footer() {
 						<ul className="space-y-1">
 							{solutions.map((solution) => (
 								<li key={solution.label}>
-									<Link href={solution.href} className="group inline-flex min-h-10 items-center gap-2 text-sm text-gray-300 transition-colors hover:text-[#A3D977] focus-visible:text-[#A3D977] focus-visible:outline-none">
-										<span className="h-px w-0 bg-[#A3D977] transition-all group-hover:w-3 group-focus-visible:w-3" aria-hidden="true" />
+									<Link href={solution.href} aria-current={isActive(solution.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-none ${isActive(solution.href) ? 'font-semibold text-[#DCEDC8]' : 'text-gray-300 hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]'}`}>
+										<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(solution.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
 										{solution.label}
 									</Link>
 								</li>
@@ -242,30 +245,30 @@ export default function Footer() {
 						<ul className="space-y-4 text-sm leading-6 text-gray-300">
 							<li className="flex items-start gap-3">
 								<MapPin className="mt-1 h-4 w-4 shrink-0 text-[#F5C76A]" aria-hidden="true" />
-								<a href={mapUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#F5C76A] focus-visible:text-[#F5C76A]">
+								<a href={mapUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]">
 									{companyAddress}<span className="sr-only"> (opens in a new tab)</span>
 								</a>
 							</li>
 							<li className="flex items-center gap-3">
 								<Mail className="h-4 w-4 shrink-0 text-[#F5C76A]" aria-hidden="true" />
-								<a href={`mailto:${footer.email}`} className="break-all transition-colors hover:text-[#F5C76A]">{footer.email}</a>
+								<a href={`mailto:${footer.email}`} className="break-all transition-colors hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]">{footer.email}</a>
 							</li>
 							<li className="flex items-center gap-3">
 								<Phone className="h-4 w-4 shrink-0 text-[#F5C76A]" aria-hidden="true" />
-								<a href="tel:+91-8099181075" className="transition-colors hover:text-[#F5C76A]">+91-8099181075</a>
+								<a href="tel:+91-8099181075" className="transition-colors hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]">+91-8099181075</a>
 							</li>
 							<li className="flex items-center gap-3">
 								<Globe className="h-4 w-4 shrink-0 text-[#F5C76A]" aria-hidden="true" />
-								<a href={websiteUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#F5C76A]">{footer.website}</a>
+								<a href={websiteUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]">{footer.website}</a>
 							</li>
 							<li>
-								<Link href="/save-earth" className="group inline-flex min-h-10 items-center gap-2 text-sm text-gray-300 transition-colors hover:text-[#A3D977]">
-									<ArrowUpRight className="h-4 w-4 text-[#A3D977]" aria-hidden="true" />{footer.saveEarth}
+								<Link href="/save-earth" className="group inline-flex min-h-10 items-center gap-2 text-sm text-gray-300 transition-colors hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]">
+									<ArrowUpRight className="h-4 w-4 text-[#A5D6A7]" aria-hidden="true" />{footer.saveEarth}
 								</Link>
 							</li>
 							<li>
-								<a href={footer.trust?.startsWith('http') ? footer.trust : `https://${footer.trust}`} target="_blank" rel="noopener noreferrer" className="group inline-flex min-h-10 items-center gap-2 text-sm text-gray-300 transition-colors hover:text-[#A3D977]" aria-label={`Visit ${footer.trust} (opens in new tab)`}>
-									<ArrowUpRight className="h-4 w-4 text-[#A3D977]" aria-hidden="true" />{footer.saveSanatanaDharma}
+								<a href={footer.trust?.startsWith('http') ? footer.trust : `https://${footer.trust}`} target="_blank" rel="noopener noreferrer" className="group inline-flex min-h-10 items-center gap-2 text-sm text-gray-300 transition-colors hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]" aria-label={`Visit ${footer.trust} (opens in new tab)`}>
+									<ArrowUpRight className="h-4 w-4 text-[#A5D6A7]" aria-hidden="true" />{footer.saveSanatanaDharma}
 								</a>
 							</li>
 						</ul>
@@ -279,7 +282,7 @@ export default function Footer() {
 
 				<section aria-labelledby="footer-newsletter" className="mt-14 grid gap-6 rounded-2xl border border-white/10 bg-white/[0.04] p-6 sm:p-8 lg:grid-cols-[1fr_1fr] lg:items-center">
 					<div>
-						<h2 id="footer-newsletter" className="text-2xl tracking-wider text-white sm:text-3xl">Stay Powered by Clean Energy</h2>
+						<h2 id="footer-newsletter" className="text-2xl tracking-widest text-white sm:text-3xl">Stay Powered by Clean Energy</h2>
 						<p className="mt-2 max-w-xl text-sm leading-6 text-gray-300">Get renewable energy insights, technology updates and sustainable energy solutions.</p>
 					</div>
 					<form onSubmit={handleNewsletterSubmit} className="w-full">
@@ -298,14 +301,14 @@ export default function Footer() {
 									setNewsletterStatus('')
 								}}
 								placeholder="you@example.com"
-								className="min-h-12 min-w-0 flex-1 rounded-full border border-white/15 bg-[#071B17] px-5 text-base text-white outline-none transition placeholder:text-gray-500 focus:border-[#A3D977] focus:ring-2 focus:ring-[#A3D977]/20"
+								className="min-h-12 min-w-0 flex-1 rounded-full border border-white/15 bg-[#071B17] px-5 text-base text-white outline-none transition placeholder:text-gray-400 focus:border-[#A5D6A7] focus:ring-2 focus:ring-[#A5D6A7]/25"
 							/>
-							<button type="submit" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#A3D977] px-6 text-sm font-bold text-[#071B17] transition hover:bg-[#b9eb8b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A3D977]">
+							<button type="submit" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#A5D6A7] px-6 text-sm font-bold text-[#173B2C] transition hover:bg-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7]">
 								Subscribe <Send className="h-4 w-4" aria-hidden="true" />
 							</button>
 						</div>
 						<p className="mt-3 text-xs leading-5 text-gray-400">No newsletter service is connected yet. Subscribe opens an email request to our customer-care address; it does not add you automatically.</p>
-						<p role="status" aria-live="polite" className="mt-1 min-h-5 text-xs text-[#A3D977]">{newsletterStatus}</p>
+						<p role="status" aria-live="polite" className="mt-1 min-h-5 text-xs text-[#DCEDC8]">{newsletterStatus}</p>
 					</form>
 				</section>
 			</div>
@@ -314,13 +317,13 @@ export default function Footer() {
 				<p className="mx-auto max-w-7xl px-5 py-4 text-center text-xs leading-6 text-gray-400 sm:px-8 lg:px-10">
 					🚧 This website is currently under development. Some content and images may be incomplete, and page titles or locations may change as updates are made.
 					<br className="hidden sm:block" />
-					Images generated with <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" className="mx-1 text-[#F5C76A] transition-colors hover:text-white">ChatGPT</Link>.
+					Images generated with <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" className="mx-1 text-[#A5D6A7] transition-colors hover:text-[#DCEDC8]">ChatGPT</Link>.
 				</p>
 				<div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-3 border-t border-white/10 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
 					<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[10px] font-medium uppercase tracking-[0.14em] text-gray-400">
-						<Link href="/privacy-policy" className="transition-colors hover:text-[#A3D977]">Privacy Policy</Link>
-						<Link href="/terms-conditions" className="transition-colors hover:text-[#A3D977]">Terms & Conditions</Link>
-						<Link href="/warranty-policy" className="transition-colors hover:text-[#A3D977]">Warranty & Service Policy</Link>
+						<Link href="/privacy-policy" aria-current={isActive('/privacy-policy') ? 'page' : undefined} className={`transition-colors hover:text-[#DCEDC8] ${isActive('/privacy-policy') ? 'font-semibold text-[#DCEDC8]' : ''}`}>Privacy Policy</Link>
+						<Link href="/terms-conditions" aria-current={isActive('/terms-conditions') ? 'page' : undefined} className={`transition-colors hover:text-[#DCEDC8] ${isActive('/terms-conditions') ? 'font-semibold text-[#DCEDC8]' : ''}`}>Terms & Conditions</Link>
+						<Link href="/warranty-policy" aria-current={isActive('/warranty-policy') ? 'page' : undefined} className={`transition-colors hover:text-[#DCEDC8] ${isActive('/warranty-policy') ? 'font-semibold text-[#DCEDC8]' : ''}`}>Warranty & Service Policy</Link>
 					</div>
 					<p className="text-[11px] text-gray-400">Built with Love and fassion by Vulchi Vijaya Kumar Raju (Kshatriya's).</p>
 					<p className="text-[11px] text-gray-400">
