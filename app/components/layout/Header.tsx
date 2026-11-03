@@ -246,7 +246,7 @@ export default function Navbar() {
             {renderLanguageOptions('desktop-language-options', langOpen)}
           </div>
 
-          <Link
+          <a
             href="/aerosun-energy.pdf"
             download="aerosun-energy.pdf"
             aria-label="Download AeroSun Energy voucher"
@@ -254,7 +254,7 @@ export default function Navbar() {
           >
             <ArrowDownToLine className="h-4 w-4" aria-hidden="true" />
             <span className="hidden 2xl:inline">Voucher</span>
-          </Link>
+          </a>
 
           <Link
             href="/contact"
