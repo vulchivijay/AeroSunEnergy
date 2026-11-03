@@ -124,7 +124,7 @@ export default function PrivacyPolicyPage() {
               <span className="h-1.5 w-1.5 rounded-full bg-sky-300 shadow-[0_0_12px_rgba(125,211,252,0.8)]" />
               Trust · Privacy · Transparency
             </div>
-            <h1 className="mt-6 text-4xl font-black tracking-[-0.065em] text-white sm:text-6xl lg:text-7xl">
+            <h1 className="mt-6 text-4xl font-black tracking-[0.065em] text-white sm:text-6xl lg:text-7xl">
               Your information.
               <span className="mt-1 block text-sky-300">Handled with care.</span>
             </h1>

@@ -98,7 +98,7 @@ export default function InvoiceReceiptPage() {
           <span className="inline-flex items-center rounded-full border border-orange-200 bg-white/80 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.28em] text-orange-700 shadow-sm backdrop-blur-sm">
             Invoice
           </span>
-          <h1 className="mt-5 text-4xl font-black tracking-[-0.06em] text-slate-900 sm:text-5xl">
+          <h1 className="mt-5 text-4xl font-black tracking-[0.06em] text-slate-900 sm:text-5xl">
             Invoice and receipt template
           </h1>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-slate-600">

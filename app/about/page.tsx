@@ -250,7 +250,7 @@ export default function AboutPage() {
               <span className="h-1.5 w-1.5 rounded-full bg-lime-300" />
               Company profile &middot; Tirupati, India
             </div>
-            <h1 className="mt-7 text-5xl font-black uppercase leading-[0.92] tracking-[-0.075em] text-white sm:text-7xl lg:text-8xl">
+            <h1 className="mt-7 text-5xl font-black uppercase leading-[0.92] tracking-[0.075em] text-white sm:text-7xl lg:text-8xl">
               AeroSun
               <span className="mt-2 block text-emerald-300">Energy</span>
             </h1>
@@ -317,7 +317,7 @@ export default function AboutPage() {
         <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.24em] text-emerald-700 dark:text-emerald-300">The person behind the vision</p>
-            <h2 className="mt-4 max-w-md text-3xl font-black leading-tight tracking-[-0.055em] text-slate-950 dark:text-white sm:text-4xl">
+            <h2 className="mt-4 max-w-md text-3xl font-black leading-tight tracking-[0.055em] text-slate-950 dark:text-white sm:text-4xl">
               Technology roots. A cleaner-energy future.
             </h2>
             <div className="mt-6 h-1 w-16 rounded-full bg-lime-500" />
@@ -348,7 +348,7 @@ export default function AboutPage() {
                     <span className="h-1.5 w-1.5 rounded-full bg-lime-300" />
                     Governance &amp; compliance
                   </p>
-                  <h2 className="mt-4 text-3xl font-black tracking-[-0.055em] sm:text-4xl">
+                  <h2 className="mt-4 text-3xl font-black tracking-[0.055em] sm:text-4xl">
                     Registrations and approval milestones
                   </h2>
                   <p className="mt-2 text-sm leading-6 text-emerald-50/85">
@@ -385,7 +385,7 @@ export default function AboutPage() {
         <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
           <div>
             <p className="text-[12px] font-black uppercase tracking-[0.24em] text-emerald-700 dark:text-emerald-300">People & principles</p>
-            <h2 className="mt-3 text-3xl font-black tracking-[-0.055em] text-slate-950 dark:text-white sm:text-4xl">Leadership behind the mission</h2>
+            <h2 className="mt-3 text-3xl font-black tracking-[0.055em] text-slate-950 dark:text-white sm:text-4xl">Leadership behind the mission</h2>
             <p className="mt-4 text-base leading-7 text-slate-700 dark:text-slate-200">
               Our work is guided by a commitment to sustainability, integrity, quality, innovation, safety, and continuous improvement.
             </p>
@@ -426,7 +426,7 @@ export default function AboutPage() {
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-[10px] font-black uppercase tracking-[0.24em] text-lime-300">Why AeroSun</p>
-              <h2 className="mt-3 max-w-2xl text-3xl font-black tracking-[-0.055em] text-white sm:text-4xl">Practical energy. Personal service.</h2>
+              <h2 className="mt-3 max-w-2xl text-3xl font-black tracking-[0.055em] text-white sm:text-4xl">Practical energy. Personal service.</h2>
             </div>
             <p className="max-w-lg text-base leading-7 text-emerald-50/85">We aim to match solutions to real requirements, site conditions, and project goals.</p>
           </div>
@@ -470,13 +470,13 @@ export default function AboutPage() {
       <section id="roadmap" className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
         <div className="mb-8 max-w-3xl">
           <p className="text-[10px] font-black uppercase tracking-[0.24em] text-amber-700 dark:text-amber-300">Building responsibly</p>
-          <h2 className="mt-3 text-3xl font-black tracking-[-0.055em] text-slate-950 dark:text-white sm:text-4xl">A thoughtful path from foundations to growth</h2>
+          <h2 className="mt-3 text-3xl font-black tracking-[0.055em] text-slate-950 dark:text-white sm:text-4xl">A thoughtful path from foundations to growth</h2>
         </div>
         <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
           <article className="rounded-3xl border border-amber-200 bg-[#fffdf6] p-5 dark:border-amber-900/50 dark:bg-amber-950/10 sm:p-7">
             <div className="flex items-center justify-between gap-4">
               <h3 className="text-lg font-extrabold text-slate-950 dark:text-white">Immediate priorities</h3>
-              <span className="rounded-full bg-amber-100 px-3 py-1 text-[9px] font-bold uppercase tracking-[0.16em] text-amber-900 dark:bg-amber-900/40 dark:text-amber-200">Current</span>
+              <span className="rounded-full bg-amber-100 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-amber-900 dark:bg-amber-900/40 dark:text-amber-200">Current</span>
             </div>
             <ol className="mt-6 space-y-3">
               {currentGoals.map((goal, index) => (
@@ -512,7 +512,7 @@ export default function AboutPage() {
           <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-[10px] font-black uppercase tracking-[0.24em] text-emerald-700 dark:text-emerald-300">Service focus</p>
-              <h2 className="mt-3 max-w-3xl text-3xl font-black tracking-[-0.055em] text-slate-950 dark:text-white sm:text-4xl">Integrated clean-energy capabilities</h2>
+              <h2 className="mt-3 max-w-3xl text-3xl font-black tracking-[0.055em] text-slate-950 dark:text-white sm:text-4xl">Integrated clean-energy capabilities</h2>
             </div>
             <span className="text-sm font-semibold text-slate-600 dark:text-slate-300">For homes, farms, businesses & industry</span>
           </div>
@@ -537,7 +537,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
           <div className="mb-8 max-w-3xl">
             <p className="text-[10px] font-black uppercase tracking-[0.24em] text-lime-300">Our commitments</p>
-            <h2 className="mt-3 text-3xl font-black tracking-[-0.055em] text-white sm:text-4xl">Purpose, translated into practice</h2>
+            <h2 className="mt-3 text-3xl font-black tracking-[0.055em] text-white sm:text-4xl">Purpose, translated into practice</h2>
           </div>
           <div className="grid gap-5 lg:grid-cols-2">
             {[
@@ -572,7 +572,7 @@ export default function AboutPage() {
       <section className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
         <div className="mb-8 max-w-3xl">
           <p className="text-[10px] font-black uppercase tracking-[0.24em] text-sky-700 dark:text-sky-300">How we work</p>
-          <h2 className="mt-3 text-3xl font-black tracking-[-0.055em] text-slate-950 dark:text-white sm:text-4xl">A clear standard for every project</h2>
+          <h2 className="mt-3 text-3xl font-black tracking-[0.055em] text-slate-950 dark:text-white sm:text-4xl">A clear standard for every project</h2>
         </div>
         <div className="grid gap-5 lg:grid-cols-2">
           <article className="rounded-3xl bg-[#eaf4ef] p-5 dark:bg-emerald-950/25 sm:p-7">

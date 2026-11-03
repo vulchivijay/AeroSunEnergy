@@ -175,7 +175,7 @@ function WindHeroSlider() {
                 {slide.badge}
               </span>
 
-              <h1 className="max-w-2xl text-3xl font-black leading-none tracking-[-0.06em] text-white sm:text-4xl lg:text-[4rem]">
+              <h1 className="max-w-2xl text-3xl font-black leading-none tracking-[0.06em] text-white sm:text-4xl lg:text-[4rem]">
                 {slide.title}
               </h1>
 
@@ -378,7 +378,7 @@ export default function WindEnergyPage() {
               <span className="h-2 w-2 rounded-full bg-sky-300" aria-hidden="true" />
               AeroSun Energy <span aria-hidden="true">/</span> Wind Systems
             </div>
-            <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.02] tracking-[-0.06em] text-white sm:text-5xl lg:text-7xl">
+            <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.02] tracking-[0.06em] text-white sm:text-5xl lg:text-7xl">
               Wind energy,
               <span className="block text-sky-300">built around your site.</span>
             </h1>

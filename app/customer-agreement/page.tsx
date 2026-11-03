@@ -267,7 +267,7 @@ export default function CustomerAgreementPage() {
         <section className="overflow-hidden rounded-[30px] border border-slate-200 bg-white/90 shadow-[0_28px_90px_-35px_rgba(15,23,42,0.38)] backdrop-blur-sm">
           <div className="border-b border-slate-200 bg-linear-to-r from-[#0c1f51] via-[#153c78] to-[#0d6685] p-5 text-white sm:p-6">
             <p className="text-[10px] font-black uppercase tracking-[0.34em] text-indigo-100/85">Project Execution</p>
-            <h1 className="mt-2 text-2xl font-black tracking-[-0.06em] sm:text-3xl">AeroSun Energy Project Execution Process</h1>
+            <h1 className="mt-2 text-2xl font-black tracking-[0.06em] sm:text-3xl">AeroSun Energy Project Execution Process</h1>
           </div>
           <div className="p-4 sm:p-6 lg:p-8">
             {projectExecutionSections.map((section, index) => (
@@ -314,21 +314,21 @@ export default function CustomerAgreementPage() {
                   </div>
                   <div>
                     <p className="text-[10px] font-black uppercase tracking-[0.34em] text-indigo-100/85">Agreement</p>
-                    <h2 className="mt-1 text-2xl font-black tracking-[-0.06em] sm:text-3xl">Customer Agreement & Payment Terms</h2>
+                    <h2 className="mt-1 text-2xl font-black tracking-[0.06em] sm:text-3xl">Customer Agreement & Payment Terms</h2>
                   </div>
                 </div>
 
                 <div className="grid gap-2 text-sm sm:grid-cols-3 lg:min-w-104">
                   <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-                    <p className="text-[9px] font-black uppercase tracking-[0.28em] text-indigo-100/75">Ref.</p>
+                    <p className="text-[11px] font-black uppercase tracking-[0.28em] text-indigo-100/75">Ref.</p>
                     <p className="mt-1 font-semibold">AES/AGR/2026</p>
                   </div>
                   <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-                    <p className="text-[9px] font-black uppercase tracking-[0.28em] text-indigo-100/75">Date</p>
+                    <p className="text-[11px] font-black uppercase tracking-[0.28em] text-indigo-100/75">Date</p>
                     <p className="mt-1 font-semibold">DD-MM-YYYY</p>
                   </div>
                   <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-                    <p className="text-[9px] font-black uppercase tracking-[0.28em] text-indigo-100/75">Status</p>
+                    <p className="text-[11px] font-black uppercase tracking-[0.28em] text-indigo-100/75">Status</p>
                     <p className="mt-1 font-semibold text-emerald-300">Pending Sign</p>
                   </div>
                 </div>
@@ -341,7 +341,7 @@ export default function CustomerAgreementPage() {
                   <div className="rounded-[22px] border border-sky-200 bg-linear-to-br from-[#ebf8ff] via-white to-[#f5fbff] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] sm:p-5">
                     <div className="mb-3 flex items-center gap-3">
                       <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-sky-700 to-cyan-700 text-lg font-black text-white shadow-lg shadow-sky-500/25">1</span>
-                      <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Agreement Details</h2>
+                      <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">Agreement Details</h2>
                     </div>
                     <div className="space-y-4">
                       <Field label="Agreement No." placeholder="Agreement number" register={register} compact />
@@ -353,7 +353,7 @@ export default function CustomerAgreementPage() {
                   <div className="rounded-[22px] border border-emerald-200 bg-linear-to-br from-[#f1fff9] via-white to-[#f7fff7] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] sm:p-5">
                     <div className="mb-3 flex items-center gap-3">
                       <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-lime-500 text-lg font-black text-slate-950 shadow-lg shadow-emerald-500/25">2</span>
-                      <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Customer Details</h2>
+                      <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">Customer Details</h2>
                     </div>
                     <div className="space-y-4">
                       <Field label="Customer Name" name="customerName" placeholder="Enter customer name" register={register} error={errors.customerName} compact />
@@ -367,7 +367,7 @@ export default function CustomerAgreementPage() {
                 <div className="rounded-3xl border border-violet-200 bg-linear-to-br from-[#f6f1ff] via-white to-[#f7f8ff] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] sm:p-5">
                   <div className="mb-4 flex items-center gap-3 border-b border-violet-200 pb-3">
                     <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-violet-700 to-indigo-600 text-lg font-black text-white shadow-lg shadow-violet-500/25">3</span>
-                    <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Project Details</h2>
+                    <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">Project Details</h2>
                   </div>
 
                   <div className="grid gap-4 md:grid-cols-2">
@@ -394,7 +394,7 @@ export default function CustomerAgreementPage() {
                   <section className="rounded-3xl border border-amber-200 bg-linear-to-br from-[#fffaf1] via-white to-[#fffef7] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                     <div className="mb-3 flex items-center gap-3 border-b border-amber-200 pb-3">
                       <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-orange-500 text-lg font-black text-slate-950 shadow-lg shadow-amber-500/25">4</span>
-                      <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Commercial Terms</h2>
+                      <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">Commercial Terms</h2>
                     </div>
 
                     <div className="overflow-hidden rounded-2xl border border-amber-200 bg-white/80">
@@ -424,7 +424,7 @@ export default function CustomerAgreementPage() {
                   <section className="rounded-3xl border border-emerald-200 bg-linear-to-br from-[#edfdf7] via-white to-[#f5fff9] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                     <div className="mb-3 flex items-center gap-3 border-b border-emerald-200 pb-3">
                       <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-teal-500 text-lg font-black text-slate-950 shadow-lg shadow-emerald-500/25">5</span>
-                      <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Scope of Work</h2>
+                      <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">Scope of Work</h2>
                     </div>
 
                     <div className="space-y-2 text-sm text-slate-700">
@@ -448,7 +448,7 @@ export default function CustomerAgreementPage() {
                 <section className="rounded-3xl border border-rose-200 bg-linear-to-br from-[#fff5f5] via-white to-[#fffafb] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                   <div className="mb-3 flex items-center gap-3 border-b border-rose-200 pb-3">
                     <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-rose-500 to-pink-500 text-lg font-black text-white shadow-lg shadow-rose-500/25">6</span>
-                    <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Terms & Conditions</h2>
+                    <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">Terms & Conditions</h2>
                   </div>
 
                   <ol className="space-y-2 text-sm leading-7 text-slate-700">
@@ -472,7 +472,7 @@ export default function CustomerAgreementPage() {
               <aside className="rounded-3xl border border-indigo-200 bg-linear-to-br from-[#0b1e46] via-[#132c5e] to-[#0a1d45] p-4 text-white shadow-[0_25px_50px_-30px_rgba(15,23,42,0.9)] sm:p-5">
                 <div className="mb-4 flex items-center gap-3 border-b border-white/10 pb-3">
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-lg font-black">7</span>
-                  <h2 className="text-lg font-black tracking-[-0.04em]">Acceptance</h2>
+                  <h2 className="text-lg font-black tracking-[0.04em]">Acceptance</h2>
                 </div>
 
                 <div className="space-y-4">

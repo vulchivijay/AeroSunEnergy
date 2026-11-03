@@ -99,7 +99,7 @@ export default function WarrantyPolicyPage() {
                 </div>
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.36em] text-sky-100/80">Warranty</p>
-                  <h1 className="mt-1 text-2xl font-black tracking-[-0.06em] sm:text-3xl">Policy Acknowledgement</h1>
+                  <h1 className="mt-1 text-2xl font-black tracking-[0.06em] sm:text-3xl">Policy Acknowledgement</h1>
                 </div>
               </div>
 

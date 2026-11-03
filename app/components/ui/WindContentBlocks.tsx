@@ -69,7 +69,7 @@ export function WindFeatureCard({
           {renderWindIcon(accent)}
         </span>
       </div>
-      <h3 className="text-2xl font-black tracking-[-0.05em] text-slate-900">{title}</h3>
+      <h3 className="text-2xl font-black tracking-[0.05em] text-slate-900">{title}</h3>
       <p className="mt-4 text-base leading-7 text-slate-700">{description}</p>
       {points.length > 0 && (
         <ul className="mt-5 space-y-3 text-base text-slate-700">
@@ -91,7 +91,7 @@ export function WindBenefitCard({ title, description }: { title: string; descrip
       <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-sky-700 to-cyan-700 text-lg font-black text-white shadow-lg shadow-sky-500/20">
         ✓
       </div>
-      <h3 className="text-xl font-black tracking-[-0.04em] text-slate-900">{title}</h3>
+      <h3 className="text-xl font-black tracking-[0.04em] text-slate-900">{title}</h3>
       <p className="mt-3 text-base leading-7 text-slate-700">{description}</p>
     </div>
   )
@@ -116,7 +116,7 @@ export function WindInfoPanel({
     <div className={`rounded-[1.8rem] border p-5 shadow-[0_12px_28px_-24px_rgba(15,23,42,0.28)] ${theme[accent]}`}>
       <div className="mb-3 flex items-center gap-3">
         {renderCheckIcon(accent)}
-        <h3 className="text-xl font-black tracking-[-0.04em]">{title}</h3>
+        <h3 className="text-xl font-black tracking-[0.04em]">{title}</h3>
       </div>
       <ul className="mt-4 space-y-3 text-base leading-7">
         {content.map((item) => (

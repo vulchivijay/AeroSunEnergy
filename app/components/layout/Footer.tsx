@@ -128,7 +128,7 @@ export default function Footer() {
 								<span className="h-px w-8 bg-[#A3D977]" />
 								AeroSun Energy
 							</p>
-							<h2 className="mt-5 text-4xl leading-[1.05] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
+							<h2 className="mt-5 text-4xl leading-[1.05] tracking-[0.045em] text-white sm:text-5xl lg:text-6xl">
 								Let&apos;s Build a Cleaner Energy Future Together.
 							</h2>
 							<p className="mt-5 max-w-2xl text-base leading-7 text-gray-300 sm:text-lg">
@@ -282,7 +282,7 @@ export default function Footer() {
 
 				<section aria-labelledby="footer-newsletter" className="mt-14 grid gap-6 rounded-2xl border border-white/10 bg-white/[0.04] p-6 sm:p-8 lg:grid-cols-[1fr_1fr] lg:items-center">
 					<div>
-						<h2 id="footer-newsletter" className="text-2xl tracking-widest text-white sm:text-3xl">Stay Powered by Clean Energy</h2>
+						<h2 id="footer-newsletter" className="text-2xl leading-[1.05] tracking-[0.045em] text-white sm:text-3xl">Stay Powered by Clean Energy</h2>
 						<p className="mt-2 max-w-xl text-sm leading-6 text-gray-300">Get renewable energy insights, technology updates and sustainable energy solutions.</p>
 					</div>
 					<form onSubmit={handleNewsletterSubmit} className="w-full">

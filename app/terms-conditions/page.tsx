@@ -122,7 +122,7 @@ export default function TermsPage() {
                 <span className="h-1.5 w-1.5 rounded-full bg-lime-300" />
                 Legal · Website use
               </div>
-              <h1 className="mt-6 text-4xl font-black tracking-[-0.065em] text-white sm:text-6xl lg:text-7xl">
+              <h1 className="mt-6 text-4xl font-black tracking-[0.065em] text-white sm:text-6xl lg:text-7xl">
                 Terms <span className="text-lime-300">&</span> Conditions
               </h1>
               <p className="mt-5 max-w-2xl text-sm leading-7 text-emerald-50/75 sm:text-base sm:leading-8">
@@ -200,7 +200,7 @@ export default function TermsPage() {
                     <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
                       {section.bullets.map((item) => (
                         <li key={item} className="flex items-start gap-3 rounded-xl bg-[#f5f7f2] px-3 py-3 text-sm leading-6 text-slate-700">
-                          <span className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-200 text-[9px] font-black text-emerald-900">
+                          <span className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-200 text-[11px] font-black text-emerald-900">
                             ✓
                           </span>
                           <span>{item}</span>

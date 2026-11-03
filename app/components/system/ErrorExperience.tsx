@@ -67,7 +67,7 @@ function ErrorIllustration({
         {isLandscape ? 'A new direction' : 'System status'}
       </div>
 
-      <span className="absolute left-1/2 top-[16%] -translate-x-1/2 select-none font-semibold leading-none tracking-[-0.08em] text-white/[0.08] [font-size:clamp(7rem,22vw,13rem)]">
+      <span className="absolute left-1/2 top-[16%] -translate-x-1/2 select-none font-semibold leading-none tracking-[0.08em] text-white/[0.08] [font-size:clamp(7rem,22vw,13rem)]">
         {code}
       </span>
 
@@ -130,10 +130,10 @@ export function ErrorExperience({
             <span className="h-px w-8 bg-[#f5c76a]" />
             {eyebrow}
           </p>
-          <p className="mt-7 font-mono text-5xl font-semibold tracking-[-0.08em] text-[#f5c76a] sm:text-6xl">
+          <p className="mt-7 font-mono text-5xl font-semibold tracking-[0.08em] text-[#f5c76a] sm:text-6xl">
             {code}
           </p>
-          <h1 className="mt-4 text-4xl font-semibold leading-[1.05] tracking-[-0.05em] text-white sm:text-5xl">
+          <h1 className="mt-4 text-4xl font-semibold leading-[1.05] tracking-[0.05em] text-white sm:text-5xl">
             {title}
           </h1>
           <p className="mt-5 max-w-lg text-base leading-7 text-white/70 sm:text-lg sm:leading-8">

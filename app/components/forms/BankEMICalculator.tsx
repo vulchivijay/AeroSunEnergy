@@ -72,7 +72,7 @@ export function BankEMICalculator() {
               <Landmark size={14} strokeWidth={2.2} aria-hidden="true" />
               Personal finance · EMI planner
             </div>
-            <h2 className="text-4xl font-black leading-[1.02] tracking-[-0.055em] text-[#122b22] sm:text-5xl lg:text-6xl">
+            <h2 className="text-4xl font-black leading-[1.02] tracking-[0.055em] text-[#122b22] sm:text-5xl lg:text-6xl">
               Make your next move
               <span className="mt-1 block text-emerald-700">with clarity.</span>
             </h2>
@@ -198,7 +198,7 @@ export function BankEMICalculator() {
             <div className="relative mt-7 rounded-2xl border border-white/[0.09] bg-white/[0.06] p-5 sm:p-6">
               <p className="text-sm font-medium text-white/80">Your monthly EMI</p>
               <div className="mt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1">
-                <span className="text-4xl font-bold tracking-[-0.045em] text-white sm:text-5xl">
+                <span className="text-4xl font-bold tracking-[0.045em] text-white sm:text-5xl">
                   {formatCurrency(calculation.emi)}
                 </span>
                 <span className="text-sm text-white/80">/ month</span>
@@ -220,7 +220,7 @@ export function BankEMICalculator() {
               >
                 <div className="flex h-[5.25rem] w-[5.25rem] flex-col items-center justify-center rounded-full bg-[#26346f] sm:h-24 sm:w-24">
                   <span className="text-xl font-bold tabular-nums text-white">{principalShare.toFixed(0)}%</span>
-                  <span className="mt-0.5 text-[9px] font-semibold uppercase tracking-[0.15em] text-white/80">principal</span>
+                  <span className="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.15em] text-white/80">principal</span>
                 </div>
               </div>
               <div className="space-y-4">

@@ -149,7 +149,7 @@ export default function HomeHeroSlider() {
                 {slide.badge}
               </span>
 
-              <h1 className="max-w-2xl text-3xl font-black leading-none tracking-[-0.06em] text-white sm:text-4xl lg:text-[4rem]">
+              <h1 className="max-w-2xl text-3xl font-black leading-none tracking-[0.06em] text-white sm:text-4xl lg:text-[4rem]">
                 {slide.title}
               </h1>
 

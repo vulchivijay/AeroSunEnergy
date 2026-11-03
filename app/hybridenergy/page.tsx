@@ -346,7 +346,7 @@ function HybridHeroSlider() {
                 {slide.badge}
               </span>
 
-              <h1 className="max-w-2xl text-3xl font-black leading-none tracking-[-0.06em] text-white sm:text-4xl lg:text-[4rem]">
+              <h1 className="max-w-2xl text-3xl font-black leading-none tracking-[0.06em] text-white sm:text-4xl lg:text-[4rem]">
                 {slide.title}
               </h1>
 
@@ -383,7 +383,7 @@ export default function HybridEnergyPage() {
               <span className="h-2 w-2 rounded-full bg-emerald-300" aria-hidden="true" />
               AeroSun Energy <span aria-hidden="true">/</span> Hybrid Systems
             </div>
-            <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.02] tracking-[-0.06em] text-white sm:text-5xl lg:text-7xl">
+            <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.02] tracking-[0.06em] text-white sm:text-5xl lg:text-7xl">
               Hybrid energy,
               <span className="block bg-linear-to-r from-emerald-300 via-cyan-200 to-violet-300 bg-clip-text text-transparent">working as one.</span>
             </h1>
@@ -512,7 +512,7 @@ export default function HybridEnergyPage() {
               <div className="mb-6 flex items-center justify-between gap-3">
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700">Service {index + 1}</p>
-                  <h3 className="mt-2 text-2xl font-black tracking-[-0.04em] text-slate-900 sm:text-3xl">{service.title}</h3>
+                  <h3 className="mt-2 text-2xl font-black tracking-[0.04em] text-slate-900 sm:text-3xl">{service.title}</h3>
                 </div>
                 <div className="hidden rounded-full border border-emerald-200 bg-emerald-50 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-700 sm:block">
                   Hybrid system
@@ -551,7 +551,7 @@ export default function HybridEnergyPage() {
               <div className="mt-8 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
                 <div className="rounded-[1.75rem] border border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ffffff_100%)] p-5">
                   <p className="text-[10px] font-black uppercase tracking-[0.24em] text-sky-700">Example calculation</p>
-                  <h4 className="mt-3 text-xl font-black tracking-[-0.03em] text-slate-900">{service.calculation.label}</h4>
+                  <h4 className="mt-3 text-xl font-black tracking-[0.03em] text-slate-900">{service.calculation.label}</h4>
                   <p className="mt-3 font-mono text-sm leading-7 text-slate-800">{service.calculation.formula}</p>
                   <div className="mt-4 rounded-2xl bg-slate-900 p-3 text-sm font-semibold text-white">{service.calculation.result}</div>
                   <p className="mt-4 text-sm leading-6 text-slate-700">{service.calculation.note}</p>

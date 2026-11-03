@@ -228,7 +228,7 @@ export function FeatureCard({
           {renderSolarIcon(accent)}
         </span>
       </div>
-      <h3 className="text-2xl font-black tracking-[-0.05em] text-slate-900">{title}</h3>
+      <h3 className="text-2xl font-black tracking-[0.05em] text-slate-900">{title}</h3>
       <p className="mt-4 text-base leading-7 text-slate-700">{description}</p>
       {points.length > 0 && (
         <ul className="mt-5 space-y-3 text-base text-slate-700">
@@ -256,7 +256,7 @@ export function BenefitCard({
       <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-emerald-500 to-lime-500 text-lg font-black text-slate-950 shadow-lg shadow-emerald-500/20">
         ✓
       </div>
-      <h3 className="text-xl font-black tracking-[-0.04em] text-slate-900">{title}</h3>
+      <h3 className="text-xl font-black tracking-[0.04em] text-slate-900">{title}</h3>
       <p className="mt-3 text-base leading-7 text-slate-700">{description}</p>
     </div>
   )
@@ -274,7 +274,7 @@ export function SubsidyCard({
   return (
     <div className="rounded-[1.8rem] border border-emerald-200 bg-[linear-gradient(135deg,#ffffff_0%,#ecfdf5_100%)] p-5 shadow-[0_18px_32px_-26px_rgba(16,185,129,0.45)]">
       <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-slate-500">{label}</p>
-      <div className="mt-4 text-3xl font-black tracking-[-0.05em] text-slate-900">{value}</div>
+      <div className="mt-4 text-3xl font-black tracking-[0.05em] text-slate-900">{value}</div>
       <p className="mt-3 text-sm leading-6 text-slate-600">{note}</p>
     </div>
   )
@@ -304,7 +304,7 @@ export function InfoPanel({
     <div className={`rounded-[1.8rem] border p-5 shadow-[0_12px_28px_-24px_rgba(15,23,42,0.28)] ${theme[accent]}`}>
       <div className="mb-3 flex items-center gap-3">
         {renderCheckIcon(accent)}
-        <h3 className="text-xl font-black tracking-[-0.04em]">{title}</h3>
+        <h3 className="text-xl font-black tracking-[0.04em]">{title}</h3>
       </div>
       <ul className="mt-4 space-y-3 text-base leading-7">
         {content.map((item) => (

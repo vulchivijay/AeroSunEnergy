@@ -1782,7 +1782,7 @@ export default function SaveEarthPage() {
               <span className="h-2 w-2 rounded-full bg-lime-300 shadow-[0_0_16px_rgba(190,242,100,0.9)]" />
               Our planet · Our responsibility
             </div>
-            <h1 className="mt-8 text-5xl font-black uppercase tracking-[-0.07em] text-white sm:text-7xl lg:text-8xl">
+            <h1 className="mt-8 text-5xl font-black uppercase tracking-[0.07em] text-white sm:text-7xl lg:text-8xl">
               {documentaryTitle}
             </h1>
             <p className="mt-4 max-w-2xl text-2xl font-semibold leading-tight tracking-tight text-emerald-100 sm:text-4xl">
@@ -1913,7 +1913,7 @@ export default function SaveEarthPage() {
                     {String(index + 1).padStart(2, '0')}
                   </span>
                 </div>
-                <h2 className="max-w-4xl text-2xl font-black leading-tight tracking-[-0.04em] text-slate-950 sm:text-3xl lg:text-4xl">
+                <h2 className="max-w-4xl text-2xl font-black leading-tight tracking-[0.04em] text-slate-950 sm:text-3xl lg:text-4xl">
                   {section.heading.text}
                 </h2>
               </div>

@@ -90,7 +90,7 @@ export default function ProjectsPage() {
             <span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-700">
               Renewable project portfolio
             </span>
-            <h1 className="mt-6 max-w-2xl text-4xl font-black tracking-[-0.08em] text-slate-900 sm:text-5xl lg:text-[4.2rem] lg:leading-[0.94]">
+            <h1 className="mt-6 max-w-2xl text-4xl font-black tracking-[0.08em] text-slate-900 sm:text-5xl lg:text-[4.2rem] lg:leading-[0.94]">
               Project solutions built around energy performance and reliability.
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-8 text-slate-700">
@@ -134,7 +134,7 @@ export default function ProjectsPage() {
         <div className="mb-8 flex items-end justify-between gap-4">
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-600">Project pipeline</p>
-            <h2 className="mt-2 text-3xl font-black tracking-[-0.06em] text-slate-900 sm:text-4xl">Project status overview</h2>
+            <h2 className="mt-2 text-3xl font-black tracking-[0.06em] text-slate-900 sm:text-4xl">Project status overview</h2>
           </div>
         </div>
 
@@ -169,7 +169,7 @@ export default function ProjectsPage() {
                     <path d="M12 5v14M5 12h14" />
                   </svg>
                 </div>
-                <h3 className="mt-5 text-2xl font-bold tracking-[-0.05em] text-slate-900">No {activeTab.toLowerCase()} projects yet</h3>
+                <h3 className="mt-5 text-2xl font-bold tracking-[0.05em] text-slate-900">No {activeTab.toLowerCase()} projects yet</h3>
                 <p className="mx-auto mt-2 max-w-lg text-sm leading-7 text-slate-600">
                   New renewable energy opportunities and project updates will appear here as they are scheduled, assigned, or completed.
                 </p>
@@ -186,7 +186,7 @@ export default function ProjectsPage() {
 
                     <div className={`mt-4 h-1.5 rounded-full bg-linear-to-r ${statusMeta[project.status].accent}`} aria-hidden="true" />
 
-                    <h3 className="mt-4 text-xl font-bold tracking-[-0.05em] text-slate-900">{project.title}</h3>
+                    <h3 className="mt-4 text-xl font-bold tracking-[0.05em] text-slate-900">{project.title}</h3>
                     <p className="mt-2 text-sm text-slate-500">{project.location}</p>
                     <p className="mt-3 text-sm font-medium text-slate-700">{project.type}</p>
                     <p className="mt-3 text-sm leading-7 text-slate-600">{project.summary}</p>
@@ -204,13 +204,13 @@ export default function ProjectsPage() {
             <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-600">Why choose AeroSun Energy</p>
-                <h2 className="mt-2 text-3xl font-black tracking-[-0.06em] text-slate-900 sm:text-4xl">Planning that balances performance, safety, and cost.</h2>
+                <h2 className="mt-2 text-3xl font-black tracking-[0.06em] text-slate-900 sm:text-4xl">Planning that balances performance, safety, and cost.</h2>
               </div>
               <div className="grid gap-4 sm:grid-cols-3">
                 {projectCategories.map((project) => (
                   <div key={project.title} className="rounded-2xl border border-slate-200 bg-white p-4">
                     <div className={`mb-3 h-1.5 rounded-full bg-linear-to-r ${project.accent}`} aria-hidden="true" />
-                    <p className="text-lg font-bold tracking-[-0.04em] text-slate-900">{project.title}</p>
+                    <p className="text-lg font-bold tracking-[0.04em] text-slate-900">{project.title}</p>
                     <p className="mt-2 text-sm leading-6 text-slate-600">{project.description}</p>
                   </div>
                 ))}

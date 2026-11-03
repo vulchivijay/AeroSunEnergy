@@ -123,7 +123,7 @@ export default function KnowEligibilityPage() {
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
         <div className="mb-8 max-w-4xl">
           <p className="text-[11px] font-bold uppercase tracking-[0.32em] text-emerald-700">Eligibility check</p>
-          <h1 className="mt-3 text-4xl font-black tracking-[-0.06em] text-slate-900 sm:text-5xl">
+          <h1 className="mt-3 text-4xl font-black tracking-[0.06em] text-slate-900 sm:text-5xl">
             PM Surya Ghar: Muft Bijli Yojana
           </h1>
           <p className="mt-4 text-lg leading-8 text-slate-700">
@@ -154,7 +154,7 @@ export default function KnowEligibilityPage() {
               {subsidyBreakdown.map((item) => (
                 <div key={item.title} className="rounded-2xl border border-white/15 bg-white/5 p-4 backdrop-blur-sm">
                   <div className="text-[10px] font-bold uppercase tracking-[0.24em] text-emerald-100">{item.title}</div>
-                  <div className="mt-2 text-2xl font-black tracking-[-0.05em] text-white">{item.value}</div>
+                  <div className="mt-2 text-2xl font-black tracking-[0.05em] text-white">{item.value}</div>
                   <div className="mt-2 text-sm text-emerald-50">{item.note}</div>
                 </div>
               ))}
@@ -166,7 +166,7 @@ export default function KnowEligibilityPage() {
       <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8 lg:pb-16">
         <div className="rounded-[30px] border border-emerald-200 bg-white p-6 shadow-[0_20px_50px_-32px_rgba(15,23,42,0.25)] sm:p-8">
           <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-emerald-700">Scheme guide</p>
-          <h2 className="mt-3 text-3xl font-black tracking-[-0.05em] text-slate-900">Renewable-energy scheme categories</h2>
+          <h2 className="mt-3 text-3xl font-black tracking-[0.05em] text-slate-900">Renewable-energy scheme categories</h2>
 
           <div className="mt-6 grid gap-4 lg:grid-cols-3">
             {schemeOverviewCards.map((card) => (
@@ -195,7 +195,7 @@ export default function KnowEligibilityPage() {
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-[0_20px_50px_-32px_rgba(15,23,42,0.25)] sm:p-8">
             <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-slate-500">Eligibility checklist</p>
-            <h2 className="mt-3 text-3xl font-black tracking-[-0.05em] text-slate-900">What AeroSun should verify before promising support</h2>
+            <h2 className="mt-3 text-3xl font-black tracking-[0.05em] text-slate-900">What AeroSun should verify before promising support</h2>
 
             <div className="mt-6 space-y-3">
               {schemeEligibilityNotes.map((note) => (
@@ -208,7 +208,7 @@ export default function KnowEligibilityPage() {
 
           <div className="rounded-[30px] border border-rose-200 bg-rose-50 p-6 shadow-[0_20px_50px_-32px_rgba(15,23,42,0.25)] sm:p-8">
             <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-rose-700">Common exclusions</p>
-            <h2 className="mt-3 text-3xl font-black tracking-[-0.05em] text-slate-900">Where schemes normally do not apply</h2>
+            <h2 className="mt-3 text-3xl font-black tracking-[0.05em] text-slate-900">Where schemes normally do not apply</h2>
             <ul className="mt-6 space-y-3 text-sm leading-7 text-slate-700">
               {commonRejectionReasons.map((reason) => (
                 <li key={reason} className="flex items-start gap-3">
@@ -225,7 +225,7 @@ export default function KnowEligibilityPage() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_20px_50px_-32px_rgba(15,23,42,0.2)]">
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-slate-500">Next step</p>
-            <h3 className="mt-2 text-2xl font-black tracking-[-0.05em] text-slate-900">Need help checking your eligibility?</h3>
+            <h3 className="mt-2 text-2xl font-black tracking-[0.05em] text-slate-900">Need help checking your eligibility?</h3>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link href="/contact" className="rounded-full bg-slate-900 px-5 py-3 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:bg-slate-800">

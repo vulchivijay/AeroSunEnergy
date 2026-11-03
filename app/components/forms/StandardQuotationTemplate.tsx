@@ -137,21 +137,21 @@ export function StandardQuotationTemplate() {
                   </div>
                   <div>
                     <p className="text-[10px] font-black uppercase tracking-[0.38em] text-cyan-200/85">Quotation</p>
-                    <h1 className="mt-1 text-2xl font-black tracking-[-0.06em] sm:text-3xl">Standard Quotation Template</h1>
+                    <h1 className="mt-1 text-2xl font-black tracking-[0.06em] sm:text-3xl">Standard Quotation Template</h1>
                   </div>
                 </div>
 
                 <div className="grid gap-2 text-right text-sm sm:grid-cols-3 lg:min-w-[420px]">
                   <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-                    <p className="text-[9px] font-black uppercase tracking-[0.28em] text-cyan-100/80">No.</p>
+                    <p className="text-[11px] font-black uppercase tracking-[0.28em] text-cyan-100/80">No.</p>
                     <p className="mt-1 font-semibold">AESP/QTN/2025/001</p>
                   </div>
                   <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-                    <p className="text-[9px] font-black uppercase tracking-[0.28em] text-cyan-100/80">Date</p>
+                    <p className="text-[11px] font-black uppercase tracking-[0.28em] text-cyan-100/80">Date</p>
                     <p className="mt-1 font-semibold">DD-MM-YYYY</p>
                   </div>
                   <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-                    <p className="text-[9px] font-black uppercase tracking-[0.28em] text-cyan-100/80">Valid Till</p>
+                    <p className="text-[11px] font-black uppercase tracking-[0.28em] text-cyan-100/80">Valid Till</p>
                     <p className="mt-1 font-semibold">DD-MM-YYYY</p>
                   </div>
                 </div>
@@ -161,7 +161,7 @@ export function StandardQuotationTemplate() {
             <div className="grid gap-5 xl:grid-cols-3">
               <section className="rounded-[24px] border border-slate-200 bg-linear-to-br from-[#f2f8ff] via-white to-[#effaf4] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 border-b border-slate-200 pb-3">
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Company Details</h2>
+                  <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">Company Details</h2>
                 </div>
 
                 <div className="space-y-4 text-sm text-slate-700">
@@ -207,7 +207,7 @@ export function StandardQuotationTemplate() {
 
               <section className="rounded-[24px] border border-slate-200 bg-linear-to-br from-[#f6f9ff] via-white to-[#f5fff9] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 border-b border-slate-200 pb-3">
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Customer Details</h2>
+                  <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">Customer Details</h2>
                 </div>
 
                 <div className="space-y-4">
@@ -271,7 +271,7 @@ export function StandardQuotationTemplate() {
 
               <section className="rounded-[24px] border border-slate-200 bg-linear-to-br from-[#f4fff9] via-white to-[#f5f8ff] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 border-b border-slate-200 pb-3">
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Project Details</h2>
+                  <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">Project Details</h2>
                 </div>
 
                 <div className="space-y-4">
@@ -321,7 +321,7 @@ export function StandardQuotationTemplate() {
             </div>
 
             <section className="overflow-hidden rounded-[24px] border border-blue-200 bg-linear-to-br from-[#edf9ff] via-[#f4fbff] to-[#eefdf8] shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]">
-              <div className="border-b border-blue-200 bg-linear-to-r from-[#0d2f65] via-[#103d77] to-[#0c5f87] px-4 py-3 text-left text-lg font-black tracking-[-0.04em] text-white sm:px-5">
+              <div className="border-b border-blue-200 bg-linear-to-r from-[#0d2f65] via-[#103d77] to-[#0c5f87] px-4 py-3 text-left text-lg font-black tracking-[0.04em] text-white sm:px-5">
                 1. Scope of Supply and Work
               </div>
 
@@ -358,7 +358,7 @@ export function StandardQuotationTemplate() {
             <div className="grid gap-5 lg:grid-cols-2">
               <section className="rounded-[24px] border border-emerald-200 bg-linear-to-br from-[#ecfff5] via-white to-[#f5fff8] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 border-b border-emerald-200 pb-3">
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">2. Commercial Summary</h2>
+                  <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">2. Commercial Summary</h2>
                 </div>
 
                 <div className="space-y-3 text-sm">
@@ -399,7 +399,7 @@ export function StandardQuotationTemplate() {
 
               <section className="rounded-[24px] border border-amber-200 bg-linear-to-br from-[#fffaf1] via-white to-[#fffdf8] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 border-b border-amber-200 pb-3">
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">3. Payment Terms</h2>
+                  <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">3. Payment Terms</h2>
                 </div>
 
                 <div className="overflow-hidden rounded-2xl border border-amber-200 bg-white/80">
@@ -430,7 +430,7 @@ export function StandardQuotationTemplate() {
             <div className="grid gap-5 lg:grid-cols-[1.25fr_1fr]">
               <section className="rounded-[24px] border border-yellow-200 bg-linear-to-br from-[#fffdea] via-white to-[#fffef8] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 border-b border-yellow-200 pb-3">
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">4. Terms and Conditions</h2>
+                  <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">4. Terms and Conditions</h2>
                 </div>
 
                 <ol className="space-y-2 text-sm leading-6 text-slate-700">
@@ -445,7 +445,7 @@ export function StandardQuotationTemplate() {
 
               <section className="rounded-[24px] border border-emerald-200 bg-linear-to-br from-[#edfdf5] via-white to-[#f8fff9] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 border-b border-emerald-200 pb-3">
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">5. Acceptance</h2>
+                  <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">5. Acceptance</h2>
                 </div>
 
                 <div className="space-y-4 text-sm text-slate-700">

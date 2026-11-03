@@ -101,7 +101,7 @@ export default function Contact() {
                   <span className="h-2 w-2 rounded-full bg-emerald-800" />
                   {navbar.startProject}
                 </p>
-                <h1 className="mt-10 max-w-2xl text-5xl font-black leading-[0.9] tracking-[-0.075em] sm:text-6xl lg:text-7xl">
+                <h1 className="mt-10 max-w-2xl text-5xl font-black leading-[0.9] tracking-[0.075em] sm:text-6xl lg:text-7xl">
                   {c.heroTitle}
                 </h1>
                 <p className="mt-7 max-w-xl text-base leading-8 text-emerald-950/80 sm:text-lg">
@@ -197,7 +197,7 @@ export default function Contact() {
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-800 dark:text-emerald-300">From first question to next step</p>
-                <h2 className="mt-4 max-w-xl text-4xl font-black leading-tight tracking-[-0.05em] text-slate-950 sm:text-5xl dark:text-white">A simple way to get started</h2>
+                <h2 className="mt-4 max-w-xl text-4xl font-black leading-tight tracking-[0.05em] text-slate-950 sm:text-5xl dark:text-white">A simple way to get started</h2>
               </div>
               <div className="flex flex-col justify-between gap-5 border-t border-slate-300 pt-5 sm:flex-row sm:items-end dark:border-slate-800">
                 <p className="max-w-md text-base leading-7 text-slate-600 dark:text-slate-300">Tell us what you need, and we&apos;ll help you explore the right renewable-energy direction.</p>
@@ -220,7 +220,7 @@ export default function Contact() {
           <section className="mt-20 grid overflow-hidden rounded-[2rem] shadow-2xl border border-emerald-950/20 bg-[#dfff72] sm:mt-28 lg:grid-cols-[0.7fr_1.3fr] dark:border-emerald-300/20 dark:bg-emerald-950">
             <div className="flex flex-col justify-start p-6 sm:p-10">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-900 dark:text-lime-300">{faqHeader}</p>
-              <h2 className="mt-4 text-4xl font-black leading-tight tracking-[-0.05em] text-emerald-950 dark:text-white sm:text-5xl">{faqTitle}</h2>
+              <h2 className="mt-4 text-4xl font-black leading-tight tracking-[0.05em] text-emerald-950 dark:text-white sm:text-5xl">{faqTitle}</h2>
               <p className="mt-5 text-base leading-7 text-emerald-950/75 dark:text-emerald-50/75">Explore answers to common questions about solar energy and project planning.</p>
             </div>
             <div className="space-y-3 bg-[#f3f0e5] p-4 sm:p-6 lg:p-8 dark:bg-slate-900">

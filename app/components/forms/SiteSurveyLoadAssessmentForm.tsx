@@ -150,7 +150,7 @@ export function SiteSurveyLoadAssessmentForm() {
                   <p className="text-[10px] font-black uppercase tracking-[0.38em] text-cyan-200/90">
                     Site Survey
                   </p>
-                  <h1 className="mt-3 text-2xl font-black tracking-[-0.06em] sm:text-4xl lg:text-[2.6rem]">
+                  <h1 className="mt-3 text-2xl font-black tracking-[0.06em] sm:text-4xl lg:text-[2.6rem]">
                     Site Survey & Electricity-Load Assessment Form
                   </h1>
                 </div>
@@ -171,7 +171,7 @@ export function SiteSurveyLoadAssessmentForm() {
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-sky-700 to-cyan-700 text-lg font-black text-white shadow-lg shadow-sky-500/20">
                     1
                   </span>
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">
+                  <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">
                     Customer Information
                   </h2>
                 </div>
@@ -233,7 +233,7 @@ export function SiteSurveyLoadAssessmentForm() {
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-lime-500 text-lg font-black text-slate-950 shadow-lg shadow-emerald-500/20">
                     2
                   </span>
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">
+                  <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">
                     Project / Enquiry Details
                   </h2>
                 </div>
@@ -310,7 +310,7 @@ export function SiteSurveyLoadAssessmentForm() {
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-violet-700 to-indigo-600 text-lg font-black text-white shadow-lg shadow-violet-500/20">
                     3
                   </span>
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">
+                  <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">
                     Site Location & Accessibility
                   </h2>
                 </div>
@@ -370,7 +370,7 @@ export function SiteSurveyLoadAssessmentForm() {
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-orange-500 text-lg font-black text-slate-950 shadow-lg shadow-amber-500/20">
                     4
                   </span>
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">
+                  <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">
                     Site Conditions
                   </h2>
                 </div>
@@ -399,7 +399,7 @@ export function SiteSurveyLoadAssessmentForm() {
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-teal-500 text-lg font-black text-slate-950 shadow-lg shadow-emerald-500/20">
                     5
                   </span>
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">
+                  <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">
                     Solar Resource Assessment
                   </h2>
                 </div>
@@ -442,7 +442,7 @@ export function SiteSurveyLoadAssessmentForm() {
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-sky-700 to-blue-700 text-lg font-black text-white shadow-lg shadow-sky-500/20">
                     6
                   </span>
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">
+                  <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">
                     Existing Electrical Connection
                   </h2>
                 </div>
@@ -483,7 +483,7 @@ export function SiteSurveyLoadAssessmentForm() {
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-cyan-700 to-teal-700 text-lg font-black text-white shadow-lg shadow-cyan-500/20">
                     7
                   </span>
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">
+                  <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">
                     Detailed Electricity Load Assessment
                   </h2>
                 </div>
@@ -527,7 +527,7 @@ export function SiteSurveyLoadAssessmentForm() {
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-rose-500 to-pink-500 text-lg font-black text-white shadow-lg shadow-rose-500/20">
                     8
                   </span>
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">
+                  <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">
                     Special Requirements
                   </h2>
                 </div>
@@ -547,7 +547,7 @@ export function SiteSurveyLoadAssessmentForm() {
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-emerald-500 text-lg font-black text-slate-950 shadow-lg shadow-lime-500/20">
                     9
                   </span>
-                  <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">
+                  <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">
                     Survey Findings & Recommendation
                   </h2>
                 </div>
