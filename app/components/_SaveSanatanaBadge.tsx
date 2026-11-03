@@ -13,11 +13,11 @@ export default function SaveSanatanaBadge() {
           type="button"
           aria-label="Show Save Sanatana Dharma badge"
           onClick={() => setIsOpen(true)}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-emerald-200 bg-white/90 shadow-[0_18px_38px_-24px_rgba(16,185,129,0.7)] backdrop-blur-sm transition hover:scale-105 dark:border-emerald-500/30 dark:bg-slate-900/80"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-emerald-200 bg-white/90 shadow-[0_18px_38px_-24px_rgba(16,185,129,0.7)] backdrop-blur-sm transition hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 dark:border-emerald-500/30 dark:bg-slate-900/80"
         >
           <Image
             src="/images/globe.png"
-            alt="Globe icon"
+            alt=""
             width={20}
             height={20}
             className="h-4 w-4 object-cover md:h-5 md:w-5"
@@ -28,7 +28,7 @@ export default function SaveSanatanaBadge() {
           <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full bg-emerald-100 dark:bg-emerald-500/10">
             <Image
               src="/images/globe.png"
-              alt="Globe icon"
+              alt=""
               width={24}
               height={24}
               className="h-4 w-4 object-cover md:h-5 md:w-5"
@@ -43,7 +43,7 @@ export default function SaveSanatanaBadge() {
             type="button"
             aria-label="Hide Save Sanatana Dharma badge"
             onClick={() => setIsOpen(false)}
-            className="ml-1 flex h-5 w-5 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 text-[10px] font-bold text-emerald-700 transition hover:bg-emerald-100 dark:border-emerald-400/40 dark:bg-emerald-500/10 dark:text-emerald-300"
+            className="ml-1 flex h-11 w-11 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 text-[10px] font-bold text-emerald-700 transition hover:bg-emerald-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 dark:border-emerald-400/40 dark:bg-emerald-500/10 dark:text-emerald-300"
           >
             ×
           </button>

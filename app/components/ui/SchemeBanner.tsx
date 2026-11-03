@@ -48,7 +48,7 @@ export default function SchemeBanner() {
         <div className="relative mx-auto max-w-[1400px]">
           <div className="rounded-[32px] border border-emerald-200/80 bg-white/75 p-5 shadow-[0_30px_80px_-45px_rgba(16,185,129,0.8)] backdrop-blur-sm sm:p-7 lg:p-8">
             <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-              <div className="animate-pulse space-y-4">
+              <div className="animate-pulse space-y-4 motion-reduce:animate-none">
                 <div className="h-9 w-44 rounded-full bg-emerald-100" />
                 <div className="h-16 w-full rounded-2xl bg-slate-200" />
                 <div className="h-5 w-4/5 rounded-full bg-slate-200" />
@@ -97,7 +97,7 @@ export default function SchemeBanner() {
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 <Link
                   href="/contact"
-                  className="rounded-full bg-emerald-600 px-5 py-3 text-sm font-bold uppercase tracking-[0.14em] text-white shadow-[0_18px_28px_-18px_rgba(5,150,105,0.9)] transition hover:bg-emerald-500"
+                  className="rounded-full bg-emerald-700 px-5 py-3 text-sm font-bold uppercase tracking-[0.14em] text-white shadow-[0_18px_28px_-18px_rgba(5,150,105,0.9)] transition hover:bg-emerald-800"
                 >
                   Apply Now
                 </Link>

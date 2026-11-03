@@ -304,6 +304,7 @@ export default function InstallationChecklistPage() {
 											id="checklistStatus"
 											{...register('checklistStatus')}
 											aria-invalid={Boolean(errors.checklistStatus)}
+											aria-describedby={errors.checklistStatus ? 'checklistStatus-error' : undefined}
 											className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-all duration-200 focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
 										>
 											<option value="" className="text-slate-900">Select status</option>
@@ -313,20 +314,20 @@ export default function InstallationChecklistPage() {
 											<option value="Pending follow-up" className="text-slate-900">Pending follow-up</option>
 											<option value="Ready for commissioning" className="text-slate-900">Ready for commissioning</option>
 										</select>
-										{errors.checklistStatus && <p className="mt-2 text-xs text-rose-300">{errors.checklistStatus.message}</p>}
+										{errors.checklistStatus && <p id="checklistStatus-error" className="mt-2 text-xs text-rose-300">{errors.checklistStatus.message}</p>}
 									</div>
 
 									<label className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 text-sm leading-6 text-slate-200">
-										<input type="checkbox" {...register('safetyCheck')} className="mt-1 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+										<input type="checkbox" {...register('safetyCheck')} aria-invalid={Boolean(errors.safetyCheck)} aria-describedby={errors.safetyCheck ? 'safetyCheck-error' : undefined} className="mt-1 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
 										<span>I confirm the site safety checklist has been completed before energizing the system.</span>
 									</label>
-									{errors.safetyCheck && <p className="text-xs text-rose-300">{errors.safetyCheck.message}</p>}
+									{errors.safetyCheck && <p id="safetyCheck-error" className="text-xs text-rose-300">{errors.safetyCheck.message}</p>}
 
 									<label className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 text-sm leading-6 text-slate-200">
-										<input type="checkbox" {...register('commissioningCheck')} className="mt-1 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+										<input type="checkbox" {...register('commissioningCheck')} aria-invalid={Boolean(errors.commissioningCheck)} aria-describedby={errors.commissioningCheck ? 'commissioningCheck-error' : undefined} className="mt-1 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
 										<span>I confirm the commissioning checklist and performance validation have been completed.</span>
 									</label>
-									{errors.commissioningCheck && <p className="text-xs text-rose-300">{errors.commissioningCheck.message}</p>}
+									{errors.commissioningCheck && <p id="commissioningCheck-error" className="text-xs text-rose-300">{errors.commissioningCheck.message}</p>}
 
 									<div>
 										<label htmlFor="notes" className="mb-2 block text-sm font-semibold text-slate-100">
@@ -337,10 +338,11 @@ export default function InstallationChecklistPage() {
 											rows={4}
 											{...register('notes')}
 											aria-invalid={Boolean(errors.notes)}
+											aria-describedby={errors.notes ? 'notes-error' : undefined}
 											placeholder="Summarize installation status, testing notes, and any follow-up actions."
 											className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-300 outline-none transition-all duration-200 focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
 										/>
-										{errors.notes && <p className="mt-2 text-xs text-rose-300">{errors.notes.message}</p>}
+										{errors.notes && <p id="notes-error" className="mt-2 text-xs text-rose-300">{errors.notes.message}</p>}
 									</div>
 
 									<button
@@ -401,9 +403,10 @@ function Field({ label, name, placeholder, type = 'text', register, error }: Fie
 				{...register(name)}
 				placeholder={placeholder}
 				aria-invalid={Boolean(error)}
+				aria-describedby={error ? `${name}-error` : undefined}
 				className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-300 outline-none transition-all duration-200 focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
 			/>
-			{error && <p className="mt-2 text-xs text-rose-300">{error.message}</p>}
+			{error && <p id={`${name}-error`} className="mt-2 text-xs text-rose-300">{error.message}</p>}
 		</div>
 	)
 }

@@ -139,7 +139,7 @@ export default function ProjectsPage() {
         </div>
 
         <div className="rounded-[30px] border border-slate-200 bg-white p-3 shadow-[0_26px_70px_-42px_rgba(15,23,42,0.28)]">
-          <div className="flex flex-wrap gap-2 border-b border-slate-200 pb-3">
+          <div role="group" aria-label="Filter projects by status" className="flex flex-wrap gap-2 border-b border-slate-200 pb-3">
             {tabs.map((tab) => {
               const isActive = activeTab === tab
               return (
@@ -147,7 +147,8 @@ export default function ProjectsPage() {
                   key={tab}
                   type="button"
                   onClick={() => setActiveTab(tab)}
-                  className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200 ${
+                  aria-pressed={isActive}
+                  className={`inline-flex min-h-11 items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 ${
                     isActive
                       ? 'bg-slate-900 text-white shadow-[0_16px_30px_-18px_rgba(15,23,42,0.7)]'
                       : 'bg-slate-100 text-slate-700 hover:bg-slate-200'

@@ -4,7 +4,7 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { submitMailtoForm } from '@/lib/submitMailto'
-import { useState } from 'react'
+import { useId, useState } from 'react'
 
 const projectExecutionSections = [
   {
@@ -340,7 +340,7 @@ export default function CustomerAgreementPage() {
                 <div className="grid gap-4 lg:grid-cols-2">
                   <div className="rounded-[22px] border border-sky-200 bg-linear-to-br from-[#ebf8ff] via-white to-[#f5fbff] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] sm:p-5">
                     <div className="mb-3 flex items-center gap-3">
-                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-sky-500 to-cyan-500 text-lg font-black text-white shadow-lg shadow-sky-500/25">1</span>
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-sky-700 to-cyan-700 text-lg font-black text-white shadow-lg shadow-sky-500/25">1</span>
                       <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Agreement Details</h2>
                     </div>
                     <div className="space-y-4">
@@ -352,7 +352,7 @@ export default function CustomerAgreementPage() {
 
                   <div className="rounded-[22px] border border-emerald-200 bg-linear-to-br from-[#f1fff9] via-white to-[#f7fff7] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] sm:p-5">
                     <div className="mb-3 flex items-center gap-3">
-                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-lime-500 text-lg font-black text-white shadow-lg shadow-emerald-500/25">2</span>
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-lime-500 text-lg font-black text-slate-950 shadow-lg shadow-emerald-500/25">2</span>
                       <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Customer Details</h2>
                     </div>
                     <div className="space-y-4">
@@ -366,22 +366,22 @@ export default function CustomerAgreementPage() {
 
                 <div className="rounded-3xl border border-violet-200 bg-linear-to-br from-[#f6f1ff] via-white to-[#f7f8ff] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] sm:p-5">
                   <div className="mb-4 flex items-center gap-3 border-b border-violet-200 pb-3">
-                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-violet-500 to-indigo-500 text-lg font-black text-white shadow-lg shadow-violet-500/25">3</span>
+                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-violet-700 to-indigo-600 text-lg font-black text-white shadow-lg shadow-violet-500/25">3</span>
                     <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Project Details</h2>
                   </div>
 
                   <div className="grid gap-4 md:grid-cols-2">
-                    <div className="md:col-span-2">
-                      <label className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">Project Type</label>
+                    <fieldset className="md:col-span-2">
+                      <legend className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">Project Type</legend>
                       <div className="grid grid-cols-2 gap-2 rounded-2xl border border-violet-200 bg-white/80 p-2.5 sm:grid-cols-3">
                         {['Rooftop Solar', 'Ground-Mounted Solar', 'Wind Energy', 'Hybrid System', 'Battery Storage', 'Other'].map((option) => (
                           <label key={option} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-2 py-2 text-[11px] font-medium text-slate-700">
-                            <input type="radio" className="h-4 w-4 accent-violet-600" />
+                            <input type="radio" name="projectType" value={option} className="h-4 w-4 accent-violet-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-700" />
                             <span>{option}</span>
                           </label>
                         ))}
                       </div>
-                    </div>
+                    </fieldset>
 
                     <Field label="System Capacity" placeholder="kW / kWp" register={register} compact />
                     <Field label="Project Location" placeholder="Site location / city" register={register} compact />
@@ -393,7 +393,7 @@ export default function CustomerAgreementPage() {
                 <div className="grid gap-4 lg:grid-cols-2">
                   <section className="rounded-3xl border border-amber-200 bg-linear-to-br from-[#fffaf1] via-white to-[#fffef7] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                     <div className="mb-3 flex items-center gap-3 border-b border-amber-200 pb-3">
-                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-orange-500 text-lg font-black text-white shadow-lg shadow-amber-500/25">4</span>
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-orange-500 text-lg font-black text-slate-950 shadow-lg shadow-amber-500/25">4</span>
                       <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Commercial Terms</h2>
                     </div>
 
@@ -423,7 +423,7 @@ export default function CustomerAgreementPage() {
 
                   <section className="rounded-3xl border border-emerald-200 bg-linear-to-br from-[#edfdf7] via-white to-[#f5fff9] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                     <div className="mb-3 flex items-center gap-3 border-b border-emerald-200 pb-3">
-                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-teal-500 text-lg font-black text-white shadow-lg shadow-emerald-500/25">5</span>
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-teal-500 text-lg font-black text-slate-950 shadow-lg shadow-emerald-500/25">5</span>
                       <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Scope of Work</h2>
                     </div>
 
@@ -489,10 +489,10 @@ export default function CustomerAgreementPage() {
                   </div>
 
                   <label className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 text-sm leading-6 text-slate-200">
-                    <input type="checkbox" {...register('agreed')} className="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-500 focus:ring-indigo-400" />
+                    <input type="checkbox" {...register('agreed')} aria-invalid={Boolean(errors.agreed)} aria-describedby={errors.agreed ? 'agreed-error' : undefined} className="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-500 focus:ring-indigo-400" />
                     <span>I accept the customer agreement and payment terms stated above.</span>
                   </label>
-                  {errors.agreed && <p className="text-xs text-rose-300">{errors.agreed.message}</p>}
+                  {errors.agreed && <p id="agreed-error" className="text-xs text-rose-300">{errors.agreed.message}</p>}
 
                   <button
                     type="submit"
@@ -531,7 +531,8 @@ type FieldProps = {
 }
 
 function Field({ label, name, placeholder, type = 'text', register, error, compact = false, dark = false }: FieldProps) {
-  const inputId = name ?? label.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+  const generatedId = useId()
+  const inputId = name ?? generatedId
 
   return (
     <div className={compact ? '' : 'md:col-span-2'}>
@@ -544,9 +545,10 @@ function Field({ label, name, placeholder, type = 'text', register, error, compa
         {...(name ? register(name) : {})}
         placeholder={placeholder}
         aria-invalid={Boolean(error)}
-        className={`h-11 w-full rounded-2xl border px-4 py-3 text-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:ring-4 ${dark ? 'border-white/10 bg-white/5 text-white focus:border-indigo-400 focus:ring-indigo-600/30' : 'border-slate-200 bg-white text-slate-900 focus:border-sky-500 focus:ring-sky-100'}`}
+        aria-describedby={error ? `${inputId}-error` : undefined}
+        className={`h-11 w-full rounded-2xl border px-4 py-3 text-sm outline-none transition-all duration-200 placeholder:text-slate-600 focus:ring-4 ${dark ? 'border-white/10 bg-white/5 text-white placeholder:text-slate-400 focus:border-indigo-400 focus:ring-indigo-600/30' : 'border-slate-200 bg-white text-slate-900 focus:border-sky-500 focus:ring-sky-100'}`}
       />
-      {error && <p className="mt-2 text-xs text-rose-300">{error.message}</p>}
+      {error && <p id={`${inputId}-error`} className="mt-2 text-xs text-rose-300">{error.message}</p>}
     </div>
   )
 }

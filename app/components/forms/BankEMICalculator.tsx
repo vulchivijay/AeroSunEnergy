@@ -86,7 +86,7 @@ export function BankEMICalculator() {
             </span>
             <div>
               <div className="text-xs font-bold text-[#18372a]">Plan with confidence</div>
-              <div className="mt-0.5 text-xs text-slate-500">A clear estimate, at a glance</div>
+              <div className="mt-0.5 text-xs text-slate-700">A clear estimate, at a glance</div>
             </div>
           </div>
         </header>
@@ -96,9 +96,9 @@ export function BankEMICalculator() {
             <div className="mb-8 flex items-center justify-between border-b border-slate-100 pb-5">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.17em] text-emerald-800">Your loan details</p>
-                <p className="mt-1 text-sm text-slate-500">Fine-tune the estimate below</p>
+                <p className="mt-1 text-sm text-slate-600">Fine-tune the estimate below</p>
               </div>
-              <span className="rounded-lg bg-[#e6eefb] px-2.5 py-1.5 font-mono text-[11px] font-semibold tracking-wide text-slate-500">
+              <span className="rounded-lg bg-[#e6eefb] px-2.5 py-1.5 font-mono text-[11px] font-semibold tracking-wide text-slate-700">
                 INR · ₹
               </span>
             </div>
@@ -122,7 +122,7 @@ export function BankEMICalculator() {
                   className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-emerald-600"
                   aria-label="Loan amount"
                 />
-                <div className="mt-2 flex justify-between text-xs font-medium tabular-nums text-slate-400">
+                <div className="mt-2 flex justify-between text-xs font-medium tabular-nums text-slate-600">
                   <span>₹25,000</span>
                   <span>₹20,00,000</span>
                 </div>
@@ -146,7 +146,7 @@ export function BankEMICalculator() {
                   className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-emerald-600"
                   aria-label="Loan tenure"
                 />
-                <div className="mt-2 flex justify-between text-xs font-medium text-slate-400">
+                <div className="mt-2 flex justify-between text-xs font-medium text-slate-600">
                   <span>1 year</span>
                   <span>7 years</span>
                 </div>
@@ -156,7 +156,7 @@ export function BankEMICalculator() {
                 <div className="mb-4 flex items-center justify-between gap-3">
                   <label htmlFor="bank-emi-rate" className="text-sm font-semibold text-slate-700 sm:text-base">Interest rate</label>
                   <output htmlFor="bank-emi-rate" className="rounded-xl bg-[#e6eefb] px-3 py-2 text-right text-sm font-bold tabular-nums text-[#173c2b] sm:px-4 sm:text-base">
-                    {interestRate.toFixed(2)}% <span className="text-xs font-medium text-slate-500">p.a.</span>
+                    {interestRate.toFixed(2)}% <span className="text-xs font-medium text-slate-700">p.a.</span>
                   </output>
                 </div>
                 <input
@@ -170,14 +170,14 @@ export function BankEMICalculator() {
                   className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-emerald-600"
                   aria-label="Interest rate"
                 />
-                <div className="mt-2 flex justify-between text-xs font-medium tabular-nums text-slate-400">
+                <div className="mt-2 flex justify-between text-xs font-medium tabular-nums text-slate-600">
                   <span>12% p.a.</span>
                   <span>24% p.a.</span>
                 </div>
               </div>
             </div>
 
-            <p className="mt-8 border-t border-slate-100 pt-5 text-xs leading-5 text-slate-400">
+            <p className="mt-8 border-t border-slate-100 pt-5 text-xs leading-5 text-slate-600">
               Estimate only. Your lender may apply different rates, fees, and eligibility criteria.
             </p>
           </div>
@@ -188,22 +188,22 @@ export function BankEMICalculator() {
             <div className="relative flex items-center justify-between">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.17em] text-emerald-200/75">Repayment snapshot</p>
-                <p className="mt-1 text-sm text-white/55">Based on your loan details</p>
+                <p className="mt-1 text-sm text-white/80">Based on your loan details</p>
               </div>
-              <span className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-white/65">
+              <span className="rounded-full border border-white/20 bg-white/[0.08] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-white/85">
                 Live estimate
               </span>
             </div>
 
             <div className="relative mt-7 rounded-2xl border border-white/[0.09] bg-white/[0.06] p-5 sm:p-6">
-              <p className="text-sm font-medium text-white/60">Your monthly EMI</p>
+              <p className="text-sm font-medium text-white/80">Your monthly EMI</p>
               <div className="mt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1">
                 <span className="text-4xl font-bold tracking-[-0.045em] text-white sm:text-5xl">
                   {formatCurrency(calculation.emi)}
                 </span>
-                <span className="text-sm text-white/50">/ month</span>
+                <span className="text-sm text-white/80">/ month</span>
               </div>
-              <div className="mt-5 flex items-center gap-2 border-t border-white/10 pt-4 text-xs text-white/55">
+              <div className="mt-5 flex items-center gap-2 border-t border-white/10 pt-4 text-xs text-white/80">
                 <span className="h-1.5 w-1.5 rounded-full bg-lime-300" aria-hidden="true" />
                 Fixed monthly instalment for {tenureYears} {tenureYears === 1 ? 'year' : 'years'}
               </div>
@@ -220,21 +220,21 @@ export function BankEMICalculator() {
               >
                 <div className="flex h-[5.25rem] w-[5.25rem] flex-col items-center justify-center rounded-full bg-[#26346f] sm:h-24 sm:w-24">
                   <span className="text-xl font-bold tabular-nums text-white">{principalShare.toFixed(0)}%</span>
-                  <span className="mt-0.5 text-[9px] font-semibold uppercase tracking-[0.15em] text-white/45">principal</span>
+                  <span className="mt-0.5 text-[9px] font-semibold uppercase tracking-[0.15em] text-white/80">principal</span>
                 </div>
               </div>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-sm bg-lime-300" aria-hidden="true" />
                   <div className="min-w-0">
-                    <p className="text-xs text-white/50">Principal</p>
+                    <p className="text-xs text-white/80">Principal</p>
                     <p className="mt-0.5 text-sm font-semibold tabular-nums text-white sm:text-base">{formatCurrency(loanAmount)}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-sm bg-white/25" aria-hidden="true" />
                   <div className="min-w-0">
-                    <p className="text-xs text-white/50">Total interest</p>
+                    <p className="text-xs text-white/80">Total interest</p>
                     <p className="mt-0.5 text-sm font-semibold tabular-nums text-white sm:text-base">{formatCurrency(calculation.totalInterest)}</p>
                   </div>
                 </div>
@@ -243,12 +243,12 @@ export function BankEMICalculator() {
 
             <div className="relative flex items-end justify-between gap-4 py-5">
               <div>
-                <p className="text-xs text-white/50">Total repayment</p>
+                <p className="text-xs text-white/80">Total repayment</p>
                 <p className="mt-1 text-xl font-bold tracking-tight tabular-nums text-white sm:text-2xl">
                   {formatCurrency(calculation.totalAmountPayable)}
                 </p>
               </div>
-              <p className="pb-1 text-right text-[11px] leading-4 text-white/45">
+              <p className="pb-1 text-right text-[11px] leading-4 text-white/80">
                 Principal +<br />interest
               </p>
             </div>
@@ -260,7 +260,7 @@ export function BankEMICalculator() {
               Talk to our team
               <ArrowUpRight size={17} strokeWidth={2.2} aria-hidden="true" />
             </Link>
-            <p className="relative mt-3 text-center text-[10px] leading-4 text-white/40">
+            <p className="relative mt-3 text-center text-[10px] leading-4 text-white/80">
               Final terms are subject to lender approval and eligibility.
             </p>
           </div>

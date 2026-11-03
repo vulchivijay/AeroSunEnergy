@@ -237,7 +237,7 @@ export default function Navbar() {
               aria-label={t.navbar.languageLabel}
               aria-expanded={langOpen}
               aria-controls="desktop-language-options"
-              className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3 text-sm tracking-wider text-[#e8ecd9] transition hover:border-[#dcedc8]/70 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3 text-sm tracking-wider text-[#e8ecd9] transition hover:border-[#dcedc8]/70 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
             >
               <Globe2 className="h-4 w-4 text-[#c5e1a5]" aria-hidden="true" />
               {languageOptions.find((option) => option.code === locale)?.shortLabel}
@@ -250,7 +250,7 @@ export default function Navbar() {
             href="/aerosun-energy.pdf"
             download="aerosun-energy.pdf"
             aria-label="Download AeroSun Energy voucher"
-            className="inline-flex min-h-10 items-center gap-2 rounded-full px-3 text-xs font-semibold text-[#e8d4a0] transition hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-xs font-semibold text-[#e8d4a0] transition hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
           >
             <ArrowDownToLine className="h-4 w-4" aria-hidden="true" />
             <span className="hidden 2xl:inline">Voucher</span>
@@ -279,7 +279,7 @@ export default function Navbar() {
               aria-label={`${t.navbar.languageLabel}: ${languageOptions.find((option) => option.code === locale)?.label}`}
               aria-expanded={langOpen}
               aria-controls="mobile-language-options"
-              className="inline-flex h-10 min-w-12 items-center justify-center gap-1.5 rounded-full border border-white/15 bg-white/[0.05] px-2.5 text-xs font-bold text-[#f4f0e2] transition hover:border-[#dcedc8]/70 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7] max-[359px]:w-10 max-[359px]:min-w-10 max-[359px]:px-0"
+              className="inline-flex h-11 min-w-12 items-center justify-center gap-1.5 rounded-full border border-white/15 bg-white/[0.05] px-2.5 text-xs font-bold text-[#f4f0e2] transition hover:border-[#dcedc8]/70 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7] max-[359px]:w-11 max-[359px]:min-w-11 max-[359px]:px-0"
             >
               <Globe2 className="h-4 w-4 text-[#c5e1a5]" aria-hidden="true" />
               <span className="max-[359px]:sr-only">{languageOptions.find((option) => option.code === locale)?.shortLabel}</span>
@@ -293,7 +293,7 @@ export default function Navbar() {
               setMenuOpen((open) => !open)
               setLangOpen(false)
             }}
-            className={`inline-flex h-10 w-10 items-center justify-center rounded-full border shadow-[0_6px_18px_-10px_rgba(165,214,167,0.4)] transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7] ${
+            className={`inline-flex h-11 w-11 items-center justify-center rounded-full border shadow-[0_6px_18px_-10px_rgba(165,214,167,0.4)] transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7] ${
               menuOpen
                 ? 'border-[#dcedc8] bg-[#a5d6a7] text-[#173b2c]'
                 : 'border-white/20 bg-white/[0.06] text-[#f4f0e2] hover:border-[#dcedc8] hover:bg-[#a5d6a7] hover:text-[#173b2c]'

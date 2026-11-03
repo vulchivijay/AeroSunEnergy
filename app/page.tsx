@@ -54,7 +54,7 @@ function RecognitionHighlight() {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(24,37,31,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(24,37,31,0.06)_1px,transparent_1px)] bg-size-[34px_34px]" aria-hidden="true" />
           <div className="relative z-10 flex flex-col gap-6 p-5 sm:p-6 lg:flex-row lg:items-end lg:justify-between lg:p-8">
             <div className="max-w-2xl">
-              <p className="inline-flex rounded-full bg-amber-500 text-[10px] font-black uppercase tracking-[0.38em] text-[#ffffff] py-1 px-2">Recognition</p>
+              <p className="inline-flex rounded-full bg-amber-500 text-[10px] font-black uppercase tracking-[0.38em] text-amber-950 py-1 px-2">Recognition</p>
               <h2 className="mt-3 text-3xl font-black tracking-[-0.07em] text-[#18251F] sm:text-4xl">
                 Government-backed credibility for a fast-moving clean energy brand
               </h2>

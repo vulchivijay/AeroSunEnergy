@@ -148,7 +148,7 @@ export function CustomerEnquiryForm() {
             <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
               <div className="rounded-[28px] border border-sky-200 bg-[linear-gradient(135deg,#dff3ff_0%,#edf9ff_52%,#f2fbff_100%)] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 flex items-center gap-3">
-                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-sky-500 to-cyan-500 text-base font-black text-white shadow-lg shadow-sky-500/20">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-sky-700 to-cyan-700 text-base font-black text-white shadow-lg shadow-sky-500/20">
                     1
                   </span>
                   <h2 className="text-lg font-black uppercase tracking-[0.2em] text-sky-800 sm:text-xl">
@@ -168,7 +168,7 @@ export function CustomerEnquiryForm() {
 
               <div className="rounded-[28px] border border-emerald-200 bg-[linear-gradient(135deg,#e8fff4_0%,#edfdf8_52%,#f8fffd_100%)] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 flex items-center gap-3">
-                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-lime-500 text-base font-black text-white shadow-lg shadow-emerald-500/20">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-lime-500 text-base font-black text-slate-950 shadow-lg shadow-emerald-500/20">
                     2
                   </span>
                   <h2 className="text-lg font-black uppercase tracking-[0.2em] text-emerald-800 sm:text-xl">
@@ -193,7 +193,7 @@ export function CustomerEnquiryForm() {
               <div className="grid gap-5 lg:grid-cols-2">
                 <div className="rounded-[28px] border border-violet-200 bg-[linear-gradient(135deg,#f5f1ff_0%,#f9f6ff_60%,#ffffff_100%)] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                   <div className="mb-4 flex items-center gap-3">
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-violet-500 to-indigo-600 text-base font-black text-white shadow-lg shadow-violet-500/20">
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-violet-700 to-indigo-700 text-base font-black text-white shadow-lg shadow-violet-500/20">
                       3
                     </span>
                     <h2 className="text-lg font-black uppercase tracking-[0.2em] text-violet-800 sm:text-xl">
@@ -210,7 +210,7 @@ export function CustomerEnquiryForm() {
 
                 <div className="rounded-[28px] border border-amber-200 bg-[linear-gradient(135deg,#fff8e8_0%,#fffaf1_60%,#ffffff_100%)] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                   <div className="mb-4 flex items-center gap-3">
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-amber-500 to-orange-500 text-base font-black text-white shadow-lg shadow-amber-500/20">
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-amber-500 to-orange-500 text-base font-black text-slate-950 shadow-lg shadow-amber-500/20">
                       4
                     </span>
                     <h2 className="text-lg font-black uppercase tracking-[0.2em] text-amber-800 sm:text-xl">
@@ -229,7 +229,7 @@ export function CustomerEnquiryForm() {
               <div className="grid gap-5 lg:grid-cols-2">
                 <div className="rounded-[28px] border border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f4fff9_60%,#ffffff_100%)] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                   <div className="mb-4 flex items-center gap-3">
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-green-600 text-base font-black text-white shadow-lg shadow-emerald-500/20">
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-green-600 text-base font-black text-slate-950 shadow-lg shadow-emerald-500/20">
                       5
                     </span>
                     <h2 className="text-lg font-black uppercase tracking-[0.2em] text-emerald-800 sm:text-xl">
@@ -246,7 +246,7 @@ export function CustomerEnquiryForm() {
 
                 <div className="rounded-[28px] border border-sky-200 bg-[linear-gradient(135deg,#edf8ff_0%,#f4fbff_60%,#ffffff_100%)] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                   <div className="mb-4 flex items-center gap-3">
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-sky-500 to-blue-600 text-base font-black text-white shadow-lg shadow-sky-500/20">
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-sky-700 to-blue-700 text-base font-black text-white shadow-lg shadow-sky-500/20">
                       6
                     </span>
                     <h2 className="text-lg font-black uppercase tracking-[0.2em] text-sky-800 sm:text-xl">
@@ -264,9 +264,10 @@ export function CustomerEnquiryForm() {
                       rows={7}
                       placeholder="Tell us about your expected load, site conditions, backup needs, voltage preference, and any unique project requirements."
                       aria-invalid={Boolean(errors.projectDetails)}
-                      className="w-full rounded-2xl border border-sky-200 bg-white/90 px-4 py-3 text-sm text-slate-900 shadow-[inset_0_1px_2px_rgba(15,23,42,0.04)] outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
+                      aria-describedby={errors.projectDetails ? 'projectDetails-error' : undefined}
+                      className="w-full rounded-2xl border border-sky-200 bg-white/90 px-4 py-3 text-sm text-slate-900 shadow-[inset_0_1px_2px_rgba(15,23,42,0.04)] outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
                     />
-                    {errors.projectDetails && <p className="mt-2 text-xs text-rose-600">{errors.projectDetails.message}</p>}
+                    {errors.projectDetails && <p id="projectDetails-error" className="mt-2 text-xs text-rose-600">{errors.projectDetails.message}</p>}
                   </div>
                 </div>
               </div>
@@ -346,9 +347,10 @@ function Field({ label, name, placeholder, type = 'text', register, error, onBlu
         {...register(name, { onBlur })}
         placeholder={placeholder}
         aria-invalid={Boolean(error)}
-        className="w-full rounded-2xl border border-sky-200 bg-white/90 px-4 py-3 text-sm text-slate-900 shadow-[inset_0_1px_2px_rgba(15,23,42,0.04)] outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
+        aria-describedby={error ? `${name}-error` : undefined}
+        className="w-full rounded-2xl border border-sky-200 bg-white/90 px-4 py-3 text-sm text-slate-900 shadow-[inset_0_1px_2px_rgba(15,23,42,0.04)] outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
       />
-      {error && <p className="mt-2 text-xs text-rose-600">{error.message}</p>}
+      {error && <p id={`${name}-error`} className="mt-2 text-xs text-rose-600">{error.message}</p>}
     </div>
   )
 }

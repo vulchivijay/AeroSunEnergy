@@ -12,6 +12,10 @@ export function trackGoogleAdsConversion() {
     return
   }
 
+  if (window.localStorage.getItem('aerosun_cookie_consent') !== 'accepted') {
+    return
+  }
+
   window.dataLayer = window.dataLayer || []
   window.gtag = window.gtag || function gtag() {
     window.dataLayer?.push(arguments)

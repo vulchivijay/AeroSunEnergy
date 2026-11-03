@@ -223,6 +223,7 @@ export default function InvoiceReceiptPage() {
                     id="paymentMode"
                     {...register('paymentMode')}
                     aria-invalid={Boolean(errors.paymentMode)}
+                    aria-describedby={errors.paymentMode ? 'paymentMode-error' : undefined}
                     className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-all duration-200 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
                   >
                     <option value="" className="text-slate-900">Select payment mode</option>
@@ -233,7 +234,7 @@ export default function InvoiceReceiptPage() {
                     <option value="Demand draft" className="text-slate-900">Demand draft</option>
                     <option value="Other" className="text-slate-900">Other</option>
                   </select>
-                  {errors.paymentMode && <p className="mt-2 text-xs text-rose-300">{errors.paymentMode.message}</p>}
+                  {errors.paymentMode && <p id="paymentMode-error" className="mt-2 text-xs text-rose-300">{errors.paymentMode.message}</p>}
                 </div>
 
                 <div>
@@ -246,9 +247,10 @@ export default function InvoiceReceiptPage() {
                     rows={5}
                     placeholder="Add booking notes, payment reference, GST detail, and any remarks relevant to the invoice."
                     aria-invalid={Boolean(errors.receiptNote)}
+                    aria-describedby={errors.receiptNote ? 'receiptNote-error' : undefined}
                     className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
                   />
-                  {errors.receiptNote && <p className="mt-2 text-xs text-rose-300">{errors.receiptNote.message}</p>}
+                  {errors.receiptNote && <p id="receiptNote-error" className="mt-2 text-xs text-rose-300">{errors.receiptNote.message}</p>}
                 </div>
 
                 <label className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 text-sm leading-6 text-slate-200">
@@ -308,9 +310,10 @@ function Field({ label, name, placeholder, type = 'text', register, error }: Fie
         {...register(name)}
         placeholder={placeholder}
         aria-invalid={Boolean(error)}
+        aria-describedby={error ? `${name}-error` : undefined}
         className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
       />
-      {error && <p className="mt-2 text-xs text-rose-300">{error.message}</p>}
+      {error && <p id={`${name}-error`} className="mt-2 text-xs text-rose-300">{error.message}</p>}
     </div>
   )
 }

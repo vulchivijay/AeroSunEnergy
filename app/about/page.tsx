@@ -282,7 +282,7 @@ export default function AboutPage() {
             <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.07] p-3 shadow-2xl shadow-black/30 backdrop-blur-sm">
               <div className="relative h-[26rem] overflow-hidden rounded-[1.5rem] bg-[linear-gradient(155deg,#31594b_0%,#14372f_55%,#24463a_100%)] sm:h-[32rem]">
                 <OptimizedImage
-                  src="/images/founder-aerosunenergy.png"
+                  src="/images/founder-aerosunenergy.webp"
                   alt="Mr. Vulchi Vijaya Kumar, Founder of AeroSun Energy"
                   fill
                   sizes="(min-width: 1024px) 38vw, 90vw"
@@ -338,33 +338,43 @@ export default function AboutPage() {
 
       <section id="compliance" className="border-y border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900/40">
         <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
-          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.24em] text-amber-700 dark:text-amber-300">Governance & compliance</p>
-              <h2 className="mt-3 max-w-2xl text-3xl font-black tracking-[-0.055em] text-slate-950 dark:text-white sm:text-4xl">
-                Registrations and approval milestones
-              </h2>
-            </div>
-            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-amber-800 dark:border-amber-900 dark:bg-amber-950/30 dark:text-amber-200">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-500" /> Company records
-            </span>
-          </div>
-          <div className="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
-            <div className="hidden grid-cols-[1fr_1.5fr_auto] gap-4 bg-[#30453a] px-5 py-3 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-50/80 sm:grid">
-              <span>Registration</span><span>Purpose</span><span>Status</span>
-            </div>
-            <div className="divide-y divide-slate-100 dark:divide-slate-800">
-              {approvalRows.map(([label, purpose, status], index) => (
-                <div key={label} className="grid gap-2 bg-white p-4 transition hover:bg-emerald-50/50 dark:bg-slate-950/70 dark:hover:bg-slate-900 sm:grid-cols-[1fr_1.5fr_auto] sm:items-center sm:gap-4 sm:px-5">
-                  <div className="flex items-center gap-3">
-                    <span className="font-mono text-[10px] font-bold text-emerald-700/60 dark:text-emerald-300/60">{String(index + 1).padStart(2, '0')}</span>
-                    <span className="text-sm font-bold text-slate-900 dark:text-white">{label}</span>
-                  </div>
-                  <p className="pl-6 text-base leading-7 text-slate-700 dark:text-slate-300 sm:pl-0">{purpose}</p>
-                  <span className="ml-6 w-fit rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-emerald-800 dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-200 sm:ml-0">
-                    {status}
-                  </span>
+          <div className="overflow-hidden rounded-[2rem] border border-emerald-900/10 bg-[#f7faf6] shadow-[0_28px_70px_-46px_rgba(20,55,47,0.45)] dark:border-emerald-100/10 dark:bg-slate-950/60">
+            <div className="relative overflow-hidden bg-[linear-gradient(115deg,#14372f_0%,#1d5140_58%,#285d43_100%)] px-5 py-7 text-white sm:px-8 sm:py-9">
+              <div className="absolute -right-12 -top-24 h-64 w-64 rounded-full border border-white/10" aria-hidden="true" />
+              <div className="absolute -right-2 -top-14 h-44 w-44 rounded-full border border-white/10" aria-hidden="true" />
+              <div className="relative flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+                <div className="max-w-2xl">
+                  <p className="inline-flex items-center gap-2 rounded-full border border-lime-200/25 bg-white/[0.08] px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-lime-200">
+                    <span className="h-1.5 w-1.5 rounded-full bg-lime-300" />
+                    Governance &amp; compliance
+                  </p>
+                  <h2 className="mt-4 text-3xl font-black tracking-[-0.055em] sm:text-4xl">
+                    Registrations and approval milestones
+                  </h2>
+                  <p className="mt-2 text-sm leading-6 text-emerald-50/85">
+                    Company records and key compliance milestones.
+                  </p>
                 </div>
+                <div className="flex w-fit items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/20 px-4 py-3 backdrop-blur-sm">
+                  <span className="text-3xl font-black leading-none text-lime-200">{approvalRows.length}</span>
+                  <span className="max-w-20 text-[10px] font-bold uppercase leading-4 tracking-[0.16em] text-emerald-50">Company records</span>
+                </div>
+              </div>
+            </div>
+            <div className="grid gap-3 p-4 sm:grid-cols-2 sm:gap-4 sm:p-6 lg:p-8">
+              {approvalRows.map(([label, , status], index) => (
+                <article key={label} className="group flex min-h-24 items-center gap-3 rounded-2xl border border-slate-200/90 bg-white p-4 shadow-[0_8px_24px_-20px_rgba(15,23,42,0.45)] transition duration-200 hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-[0_16px_30px_-22px_rgba(16,87,58,0.45)] dark:border-slate-700 dark:bg-slate-900 dark:hover:border-emerald-700 sm:gap-4 sm:p-5">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 font-mono text-xs font-black text-emerald-800 ring-1 ring-emerald-700/10 transition-colors group-hover:bg-emerald-100 dark:bg-emerald-950/60 dark:text-emerald-200 dark:ring-emerald-300/10 dark:group-hover:bg-emerald-900/60">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-md font-bold leading-6 text-slate-900 dark:text-white">{label}</h3>
+                    <span className="mt-2 inline-flex max-w-full items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[11px] font-bold uppercase leading-4 tracking-[0.1em] text-emerald-900 dark:border-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-200">
+                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600 dark:bg-emerald-400" />
+                      {status}
+                    </span>
+                  </div>
+                </article>
               ))}
             </div>
           </div>
@@ -374,7 +384,7 @@ export default function AboutPage() {
       <section id="leadership" className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
           <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.24em] text-emerald-700 dark:text-emerald-300">People & principles</p>
+            <p className="text-[12px] font-black uppercase tracking-[0.24em] text-emerald-700 dark:text-emerald-300">People & principles</p>
             <h2 className="mt-3 text-3xl font-black tracking-[-0.055em] text-slate-950 dark:text-white sm:text-4xl">Leadership behind the mission</h2>
             <p className="mt-4 text-base leading-7 text-slate-700 dark:text-slate-200">
               Our work is guided by a commitment to sustainability, integrity, quality, innovation, safety, and continuous improvement.

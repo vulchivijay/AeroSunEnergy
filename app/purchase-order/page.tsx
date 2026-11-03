@@ -231,6 +231,7 @@ export default function PurchaseOrderPage() {
                     id="productLine"
                     {...register('productLine')}
                     aria-invalid={Boolean(errors.productLine)}
+                    aria-describedby={errors.productLine ? 'productLine-error' : undefined}
                     className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-all duration-200 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-600/30"
                   >
                     <option value="" className="text-slate-900">Select product line</option>
@@ -241,7 +242,7 @@ export default function PurchaseOrderPage() {
                     <option value="Mounting and balance of system" className="text-slate-900">Mounting and balance of system</option>
                     <option value="Maintenance and AMC" className="text-slate-900">Maintenance and AMC</option>
                   </select>
-                  {errors.productLine && <p className="mt-2 text-xs text-rose-300">{errors.productLine.message}</p>}
+                  {errors.productLine && <p id="productLine-error" className="mt-2 text-xs text-rose-300">{errors.productLine.message}</p>}
                 </div>
 
                 <Field
@@ -341,9 +342,10 @@ function Field({ label, name, placeholder, type = 'text', register, error }: Fie
         {...register(name)}
         placeholder={placeholder}
         aria-invalid={Boolean(error)}
+        aria-describedby={error ? `${name}-error` : undefined}
         className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-600/30"
       />
-      {error && <p className="mt-2 text-xs text-rose-300">{error.message}</p>}
+      {error && <p id={`${name}-error`} className="mt-2 text-xs text-rose-300">{error.message}</p>}
     </div>
   )
 }

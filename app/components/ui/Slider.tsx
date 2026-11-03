@@ -8,9 +8,17 @@ type SliderProps = {
   autoplay?: boolean
   interval?: number
   pauseOnHover?: boolean
+  ariaLabel?: string
 }
 
-export default function Slider({ children, className = '', autoplay = false, interval = 5000, pauseOnHover = true }: SliderProps) {
+export default function Slider({
+  children,
+  className = '',
+  autoplay = false,
+  interval = 5000,
+  pauseOnHover = true,
+  ariaLabel = 'Featured content',
+}: SliderProps) {
   const slidesArray = React.Children.toArray(children)
   const count = slidesArray.length
 
@@ -18,7 +26,7 @@ export default function Slider({ children, className = '', autoplay = false, int
 
   if (count === 1) {
     return (
-      <div className={`w-full relative overflow-hidden ${className}`}>
+      <div role="region" aria-label={ariaLabel} className={`w-full relative overflow-hidden ${className}`}>
         <div className="w-full">{slidesArray[0]}</div>
       </div>
     )
@@ -31,8 +39,19 @@ export default function Slider({ children, className = '', autoplay = false, int
   const [dragX, setDragX] = useState(0)
   const dragStartX = useRef<number | null>(null)
   const dragging = useRef(false)
-  const [isPaused, setIsPaused] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
+  const [isDocumentHidden, setIsDocumentHidden] = useState(false)
+  const [userPaused, setUserPaused] = useState(false)
   const viewportRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const syncMotionPreference = () => setUserPaused(motionPreference.matches)
+
+    syncMotionPreference()
+    motionPreference.addEventListener('change', syncMotionPreference)
+    return () => motionPreference.removeEventListener('change', syncMotionPreference)
+  }, [])
 
   useEffect(() => {
     const measure = () => {
@@ -52,21 +71,23 @@ export default function Slider({ children, className = '', autoplay = false, int
 
   useEffect(() => {
     const handleVisibilityChange = () => {
-      const hidden = document.hidden
-      setIsPaused(hidden)
-      if (!hidden) setWithTransition(true)
+      setIsDocumentHidden(document.hidden)
+      if (!document.hidden) setWithTransition(true)
     }
 
+    handleVisibilityChange()
     document.addEventListener('visibilitychange', handleVisibilityChange)
     return () => document.removeEventListener('visibilitychange', handleVisibilityChange)
   }, [])
 
   const next = () => {
+    setUserPaused(true)
     setPosition((prev) => prev + 1)
     setWithTransition(true)
   }
 
   const prev = () => {
+    setUserPaused(true)
     setPosition((prev) => prev - 1)
     setWithTransition(true)
   }
@@ -85,7 +106,7 @@ export default function Slider({ children, className = '', autoplay = false, int
 
   useEffect(() => {
     if (!autoplay) return
-    if (isPaused || dragging.current) return
+    if (isHovered || isDocumentHidden || userPaused || dragging.current) return
 
     const id = window.setInterval(() => {
       setPosition((prev) => prev + 1)
@@ -93,13 +114,15 @@ export default function Slider({ children, className = '', autoplay = false, int
     }, interval)
 
     return () => clearInterval(id)
-  }, [autoplay, interval, isPaused])
+  }, [autoplay, interval, isHovered, isDocumentHidden, userPaused])
 
   const onPointerDown = (e: React.PointerEvent) => {
+    if (e.target instanceof Element && e.target.closest('button, a, input, select, textarea')) return
     dragStartX.current = e.clientX
     dragging.current = true
+    setUserPaused(true)
     setWithTransition(false)
-    ;(e.target as Element).setPointerCapture(e.pointerId)
+    e.currentTarget.setPointerCapture(e.pointerId)
   }
 
   const onPointerMove = (e: React.PointerEvent) => {
@@ -127,9 +150,9 @@ export default function Slider({ children, className = '', autoplay = false, int
 
   const onPointerUp = (e: React.PointerEvent) => {
     endDrag()
-    try {
-      ;(e.target as Element).releasePointerCapture(e.pointerId)
-    } catch {}
+    if (e.currentTarget.hasPointerCapture(e.pointerId)) {
+      e.currentTarget.releasePointerCapture(e.pointerId)
+    }
   }
 
   const onKeyDown = (e: React.KeyboardEvent) => {
@@ -138,6 +161,7 @@ export default function Slider({ children, className = '', autoplay = false, int
   }
 
   const goToSlide = (i: number) => {
+    setUserPaused(true)
     setPosition(i + 1)
     setWithTransition(true)
   }
@@ -146,46 +170,79 @@ export default function Slider({ children, className = '', autoplay = false, int
   const totalWidth = slideWidth > 0 ? slideWidth * clonedSlides.length : 0
   const translate = slideWidth > 0 ? `translate3d(${-(position * slideWidth) + dragX}px,0,0)` : `translate3d(${(-position * percentPerSlide).toFixed(6)}%,0,0)`
   const activeRealIndex = position === 0 ? count - 1 : position === clonedSlides.length - 1 ? 0 : position - 1
+  const rotationPaused = isHovered || isDocumentHidden || userPaused
 
   return (
     <div
       ref={viewportRef}
+      role="region"
+      aria-roledescription="carousel"
+      aria-label={ariaLabel}
+      aria-live={autoplay && !rotationPaused ? 'off' : 'polite'}
       tabIndex={0}
       onKeyDown={onKeyDown}
-      onMouseEnter={() => pauseOnHover && setIsPaused(true)}
-      onMouseLeave={() => pauseOnHover && setIsPaused(false)}
-      onFocus={() => pauseOnHover && setIsPaused(true)}
-      onBlur={() => pauseOnHover && setIsPaused(false)}
+      onMouseEnter={() => pauseOnHover && setIsHovered(true)}
+      onMouseLeave={() => pauseOnHover && setIsHovered(false)}
+      onFocus={() => setUserPaused(true)}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
       onPointerCancel={endDrag}
-      className={`w-full relative overflow-hidden ${className}`}
+      className={`w-full relative overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${className}`}
       style={{ minHeight: '480px', height: 'clamp(480px, 56vw, 760px)' }}
     >
       <div
-        className={`flex h-full ${withTransition ? 'transition-transform duration-500 ease-in-out' : ''}`}
+        className={`flex h-full ${withTransition ? 'transition-transform duration-500 ease-in-out motion-reduce:transition-none' : ''}`}
         style={{ width: slideWidth > 0 ? `${totalWidth}px` : `${clonedSlides.length * 100}%`, transform: translate }}
         onTransitionEnd={onTransitionEnd}
       >
         {clonedSlides.map((child, i) => (
-          <div key={i} className="h-full shrink-0" style={{ width: slideWidth > 0 ? `${slideWidth}px` : `${percentPerSlide}%` }}>
+          <div
+            key={i}
+            className="h-full shrink-0"
+            style={{ width: slideWidth > 0 ? `${slideWidth}px` : `${percentPerSlide}%` }}
+            role="group"
+            aria-roledescription="slide"
+            aria-label={`${i === 0 ? count : i === clonedSlides.length - 1 ? 1 : i} of ${count}`}
+            aria-hidden={i !== position}
+            inert={i !== position}
+          >
             <div className="h-full w-full flex flex-col min-h-0">{child}</div>
           </div>
         ))}
       </div>
 
+      {autoplay && (
+        <button
+          type="button"
+          onClick={() => {
+            if (rotationPaused) {
+              setUserPaused(false)
+              setIsHovered(false)
+            } else {
+              setUserPaused(true)
+            }
+          }}
+          aria-label={rotationPaused ? 'Start slide rotation' : 'Stop slide rotation'}
+          className="absolute right-4 top-4 z-20 inline-flex min-h-11 items-center justify-center rounded-full bg-black/50 px-4 text-sm font-semibold text-white shadow-lg transition hover:bg-black/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
+          {userPaused ? 'Play' : 'Pause'}
+        </button>
+      )}
+
       <button
-        aria-label="Previous"
+        type="button"
+        aria-label="Previous slide"
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-black/30 text-white hover:bg-black/40 shadow-lg"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-black/30 text-white shadow-lg transition hover:bg-black/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
       >
         ‹
       </button>
       <button
-        aria-label="Next"
+        type="button"
+        aria-label="Next slide"
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-black/30 text-white hover:bg-black/40 shadow-lg"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-black/30 text-white shadow-lg transition hover:bg-black/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
       >
         ›
       </button>
@@ -197,14 +254,21 @@ export default function Slider({ children, className = '', autoplay = false, int
             return (
               <button
                 key={i}
+                type="button"
                 onClick={() => goToSlide(i)}
                 aria-label={`Go to slide ${i + 1}`}
-                className={`rounded-full transition-all duration-300 ${
-                  isActive
-                    ? 'h-2 w-5 bg-white sm:h-2.5 sm:w-8'
-                    : 'h-2 w-2 bg-white/40 hover:bg-white/60 sm:h-2.5 sm:w-2.5'
-                }`}
-              />
+                aria-current={isActive ? 'true' : undefined}
+                className="group flex h-11 w-11 shrink-0 items-center justify-center rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-white"
+              >
+                <span
+                  aria-hidden="true"
+                  className={`rounded-full transition-all duration-300 ${
+                    isActive
+                      ? 'h-2 w-5 bg-white sm:h-2.5 sm:w-8'
+                      : 'h-2 w-2 bg-white/40 group-hover:bg-white/60 sm:h-2.5 sm:w-2.5'
+                  }`}
+                />
+              </button>
             )
           })}
         </div>

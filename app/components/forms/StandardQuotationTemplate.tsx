@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { submitMailtoForm } from '@/lib/submitMailto'
 import { trackGoogleAdsConversion } from '@/lib/googleAdsConversion'
-import { useState, type FocusEventHandler } from 'react'
+import { useId, useState, type FocusEventHandler } from 'react'
 import { validateZeroBounceEmail } from '@/lib/emailValidation'
 import FormWarningRibbon from '@/app/components/ui/FormWarningRibbon'
 
@@ -275,18 +275,18 @@ export function StandardQuotationTemplate() {
                 </div>
 
                 <div className="space-y-4">
-                  <div>
-                    <label className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">Project Type</label>
+                  <fieldset>
+                    <legend className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">Project Type</legend>
                     <div className="grid grid-cols-2 gap-2 rounded-2xl border border-slate-200 bg-white/80 p-3">
                       {['Rooftop Solar', 'Ground-Mounted Solar', 'Wind Energy', 'Hybrid System', 'Battery Storage', 'Other'].map((option) => (
                         <label key={option} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-2.5 py-2 text-xs font-medium text-slate-700">
-                          <input type="radio" value={option} {...register('projectType')} className="h-4 w-4 accent-emerald-600" />
+                          <input type="radio" value={option} {...register('projectType')} aria-invalid={Boolean(errors.projectType)} aria-describedby={errors.projectType ? 'projectType-error' : undefined} className="h-4 w-4 accent-emerald-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700" />
                           <span>{option}</span>
                         </label>
                       ))}
                     </div>
-                    {errors.projectType && <p className="mt-2 text-xs text-rose-600">{errors.projectType.message}</p>}
-                  </div>
+                    {errors.projectType && <p id="projectType-error" className="mt-2 text-xs text-rose-600">{errors.projectType.message}</p>}
+                  </fieldset>
 
                   <Field
                     label="Site Address"
@@ -529,7 +529,8 @@ type FieldProps = {
 }
 
 function Field({ label, name, placeholder, type = 'text', register, error, compact = false, onBlur }: FieldProps) {
-  const fieldId = name ?? label.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+  const generatedId = useId()
+  const fieldId = name ?? generatedId
 
   return (
     <div className={compact ? '' : 'md:col-span-2'}>
@@ -542,9 +543,10 @@ function Field({ label, name, placeholder, type = 'text', register, error, compa
         {...(name ? register(name, { onBlur }) : {})}
         placeholder={placeholder}
         aria-invalid={Boolean(error)}
-        className="h-11 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"
+        aria-describedby={error ? `${fieldId}-error` : undefined}
+        className="h-11 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"
       />
-      {error && <p className="mt-2 text-xs text-rose-600">{error.message}</p>}
+      {error && <p id={`${fieldId}-error`} className="mt-2 text-xs text-rose-600">{error.message}</p>}
     </div>
   )
 }

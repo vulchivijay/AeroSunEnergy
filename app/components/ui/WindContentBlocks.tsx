@@ -88,7 +88,7 @@ export function WindFeatureCard({
 export function WindBenefitCard({ title, description }: { title: string; description: string }) {
   return (
     <div className="rounded-[1.7rem] border border-sky-200 bg-[linear-gradient(135deg,#ffffff_0%,#eff6ff_100%)] p-5 shadow-[0_18px_32px_-26px_rgba(59,130,246,0.4)]">
-      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-sky-500 to-cyan-500 text-lg font-black text-white shadow-lg shadow-sky-500/20">
+      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-sky-700 to-cyan-700 text-lg font-black text-white shadow-lg shadow-sky-500/20">
         ✓
       </div>
       <h3 className="text-xl font-black tracking-[-0.04em] text-slate-900">{title}</h3>

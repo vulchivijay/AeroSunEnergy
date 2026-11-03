@@ -78,7 +78,7 @@ export default function Features() {
                     {feat.icon}
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">{feat.title}</h3>
-                  <p className="text-gray-500 dark:text-gray-400 leading-relaxed">{feat.desc}</p>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{feat.desc}</p>
                 </CardContent>
               </Card>
             </motion.div>
