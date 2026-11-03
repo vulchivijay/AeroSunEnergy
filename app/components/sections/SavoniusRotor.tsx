@@ -2,6 +2,7 @@
 
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
+import Link from 'next/link'
 
 export default function SavoniusRotor() {
   const { t } = useLocale()
@@ -46,7 +47,7 @@ export default function SavoniusRotor() {
           {/* Key Points */}
           <ul className="space-y-3 text-gray-700">
             {s.highlights.map((highlight) => (
-              <li key={highlight}>✔ {highlight}</li>
+              <li key={highlight}><span aria-hidden="true">✔ </span>{highlight}</li>
             ))}
           </ul>
         </div>
@@ -64,9 +65,9 @@ export default function SavoniusRotor() {
 
       {/* CTA */}
       <div className="text-center mt-12">
-        <button className="px-6 py-3 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition">
+        <Link href="/hybridenergy" className="inline-flex min-h-11 items-center rounded-lg bg-green-700 px-6 py-3 text-white shadow transition hover:bg-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-800">
           {s.cta}
-        </button>
+        </Link>
       </div>
     </section>
   );

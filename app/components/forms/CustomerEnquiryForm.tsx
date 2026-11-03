@@ -264,9 +264,10 @@ export function CustomerEnquiryForm() {
                       rows={7}
                       placeholder="Tell us about your expected load, site conditions, backup needs, voltage preference, and any unique project requirements."
                       aria-invalid={Boolean(errors.projectDetails)}
+                      aria-describedby={errors.projectDetails ? 'projectDetails-error' : undefined}
                       className="w-full rounded-2xl border border-sky-200 bg-white/90 px-4 py-3 text-sm text-slate-900 shadow-[inset_0_1px_2px_rgba(15,23,42,0.04)] outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
                     />
-                    {errors.projectDetails && <p className="mt-2 text-xs text-rose-600">{errors.projectDetails.message}</p>}
+                    {errors.projectDetails && <p id="projectDetails-error" className="mt-2 text-xs text-rose-600">{errors.projectDetails.message}</p>}
                   </div>
                 </div>
               </div>
@@ -346,9 +347,10 @@ function Field({ label, name, placeholder, type = 'text', register, error, onBlu
         {...register(name, { onBlur })}
         placeholder={placeholder}
         aria-invalid={Boolean(error)}
+        aria-describedby={error ? `${name}-error` : undefined}
         className="w-full rounded-2xl border border-sky-200 bg-white/90 px-4 py-3 text-sm text-slate-900 shadow-[inset_0_1px_2px_rgba(15,23,42,0.04)] outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
       />
-      {error && <p className="mt-2 text-xs text-rose-600">{error.message}</p>}
+      {error && <p id={`${name}-error`} className="mt-2 text-xs text-rose-600">{error.message}</p>}
     </div>
   )
 }

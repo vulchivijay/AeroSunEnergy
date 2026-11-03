@@ -1,11 +1,10 @@
 "use client"
 
 import Image from 'next/image'
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 const STORAGE_KEY = 'aerosun_lord_ganesha_modal'
 const MODAL_TTL_MS = 24 * 60 * 60 * 1000
-const AUTO_CLOSE_MS = 5 * 1000
 
 function getIpStorageKey(ip: string) {
   return `${STORAGE_KEY}:${ip}`
@@ -15,6 +14,8 @@ export default function LordGanesha() {
   const [open, setOpen] = useState(false)
   const [resolvedIp, setResolvedIp] = useState<string | null>(null)
   const [isReady, setIsReady] = useState(false)
+  const dialogRef = useRef<HTMLDivElement | null>(null)
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null)
 
   useEffect(() => {
     let cancelled = false
@@ -87,25 +88,56 @@ export default function LordGanesha() {
     }
   }, [])
 
-  useEffect(() => {
-    if (!open || !resolvedIp) return
-
-    const timer = window.setTimeout(() => {
-      setOpen(false)
-      localStorage.setItem(getIpStorageKey(resolvedIp), JSON.stringify({ ts: Date.now() }))
-    }, AUTO_CLOSE_MS)
-
-    return () => window.clearTimeout(timer)
-  }, [open, resolvedIp])
-
-  const dismiss = () => {
+  const dismiss = useCallback(() => {
     setOpen(false)
     if (resolvedIp) {
       localStorage.setItem(getIpStorageKey(resolvedIp), JSON.stringify({ ts: Date.now() }))
     }
-  }
+  }, [resolvedIp])
 
-  const title = useMemo(() => 'Lord Ganesha Blessing', [])
+  useEffect(() => {
+    if (!open) return
+
+    const previouslyFocused = document.activeElement
+    closeButtonRef.current?.focus()
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault()
+        dismiss()
+        return
+      }
+
+      if (event.key !== 'Tab' || !dialogRef.current) return
+
+      const focusableElements = Array.from(
+        dialogRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter((element) => element.getClientRects().length > 0)
+      const firstElement = focusableElements[0]
+      const lastElement = focusableElements[focusableElements.length - 1]
+
+      if (!firstElement || !lastElement) {
+        event.preventDefault()
+        dialogRef.current.focus()
+      } else if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault()
+        lastElement.focus()
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault()
+        firstElement.focus()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      if (previouslyFocused instanceof HTMLElement && previouslyFocused.isConnected) {
+        previouslyFocused.focus()
+      }
+    }
+  }, [dismiss, open])
 
   if (!isReady) {
     return <div className="hidden" aria-hidden="true" />
@@ -117,10 +149,20 @@ export default function LordGanesha() {
     <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
       <div className="absolute inset-0 bg-black/55 backdrop-blur-[2px]" aria-hidden="true" />
 
-      <div className="relative z-10 w-full max-w-xl rounded-2xl bg-white p-6 text-gray-900 shadow-[0_25px_80px_rgba(0,0,0,0.25)] dark:bg-gray-800 dark:text-gray-100">
+      <div
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="lord-ganesha-title"
+        aria-describedby="lord-ganesha-description"
+        tabIndex={-1}
+        className="relative z-10 w-full max-w-xl rounded-2xl bg-white p-6 text-gray-900 shadow-[0_25px_80px_rgba(0,0,0,0.25)] dark:bg-gray-800 dark:text-gray-100"
+      >
         <button
+          ref={closeButtonRef}
+          type="button"
           aria-label="Close Lord Ganesha modal"
-          className="cursor absolute right-3 top-3 rounded-md p-2 text-gray-600 transition-colors hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
+          className="absolute right-3 top-3 inline-flex min-h-11 min-w-11 items-center justify-center rounded-md p-2 text-gray-600 transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus-visible:outline-emerald-300"
           onClick={dismiss}
         >
           ✕
@@ -138,20 +180,11 @@ export default function LordGanesha() {
             />
           </div>
 
-          <h2 className="text-3xl font-semibold tracking-tight">{title}</h2>
-          <p className="max-w-md text-md leading-6 text-gray-600 dark:text-gray-300">
+          <h2 id="lord-ganesha-title" className="text-3xl font-semibold tracking-tight">Lord Ganesha Blessing</h2>
+          <p id="lord-ganesha-description" className="max-w-md text-md leading-6 text-gray-600 dark:text-gray-300">
             Welcome to AeroSun Energy. May this blessing bring clarity, success, and prosperity to your renewable energy journey.
           </p>
 
-          <div className="mt-2 flex w-full items-center justify-center gap-1 hidden">
-            <button
-              onClick={dismiss}
-              className="cursor rounded-md bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-orange-500"
-            >
-              Close
-            </button>
-            <span className="text-xs text-gray-500 dark:text-gray-400">Auto-closes in 5s</span>
-          </div>
         </div>
       </div>
     </div>

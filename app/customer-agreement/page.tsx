@@ -4,7 +4,7 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { submitMailtoForm } from '@/lib/submitMailto'
-import { useState } from 'react'
+import { useId, useState } from 'react'
 
 const projectExecutionSections = [
   {
@@ -371,17 +371,17 @@ export default function CustomerAgreementPage() {
                   </div>
 
                   <div className="grid gap-4 md:grid-cols-2">
-                    <div className="md:col-span-2">
-                      <label className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">Project Type</label>
+                    <fieldset className="md:col-span-2">
+                      <legend className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">Project Type</legend>
                       <div className="grid grid-cols-2 gap-2 rounded-2xl border border-violet-200 bg-white/80 p-2.5 sm:grid-cols-3">
                         {['Rooftop Solar', 'Ground-Mounted Solar', 'Wind Energy', 'Hybrid System', 'Battery Storage', 'Other'].map((option) => (
                           <label key={option} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-2 py-2 text-[11px] font-medium text-slate-700">
-                            <input type="radio" className="h-4 w-4 accent-violet-600" />
+                            <input type="radio" name="projectType" value={option} className="h-4 w-4 accent-violet-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-700" />
                             <span>{option}</span>
                           </label>
                         ))}
                       </div>
-                    </div>
+                    </fieldset>
 
                     <Field label="System Capacity" placeholder="kW / kWp" register={register} compact />
                     <Field label="Project Location" placeholder="Site location / city" register={register} compact />
@@ -489,10 +489,10 @@ export default function CustomerAgreementPage() {
                   </div>
 
                   <label className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 text-sm leading-6 text-slate-200">
-                    <input type="checkbox" {...register('agreed')} className="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-500 focus:ring-indigo-400" />
+                    <input type="checkbox" {...register('agreed')} aria-invalid={Boolean(errors.agreed)} aria-describedby={errors.agreed ? 'agreed-error' : undefined} className="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-500 focus:ring-indigo-400" />
                     <span>I accept the customer agreement and payment terms stated above.</span>
                   </label>
-                  {errors.agreed && <p className="text-xs text-rose-300">{errors.agreed.message}</p>}
+                  {errors.agreed && <p id="agreed-error" className="text-xs text-rose-300">{errors.agreed.message}</p>}
 
                   <button
                     type="submit"
@@ -531,7 +531,8 @@ type FieldProps = {
 }
 
 function Field({ label, name, placeholder, type = 'text', register, error, compact = false, dark = false }: FieldProps) {
-  const inputId = name ?? label.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+  const generatedId = useId()
+  const inputId = name ?? generatedId
 
   return (
     <div className={compact ? '' : 'md:col-span-2'}>
@@ -544,9 +545,10 @@ function Field({ label, name, placeholder, type = 'text', register, error, compa
         {...(name ? register(name) : {})}
         placeholder={placeholder}
         aria-invalid={Boolean(error)}
+        aria-describedby={error ? `${inputId}-error` : undefined}
         className={`h-11 w-full rounded-2xl border px-4 py-3 text-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:ring-4 ${dark ? 'border-white/10 bg-white/5 text-white focus:border-indigo-400 focus:ring-indigo-600/30' : 'border-slate-200 bg-white text-slate-900 focus:border-sky-500 focus:ring-sky-100'}`}
       />
-      {error && <p className="mt-2 text-xs text-rose-300">{error.message}</p>}
+      {error && <p id={`${inputId}-error`} className="mt-2 text-xs text-rose-300">{error.message}</p>}
     </div>
   )
 }
