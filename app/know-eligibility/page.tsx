@@ -129,7 +129,7 @@ export default function KnowEligibilityPage() {
         </div>
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1fr_auto] lg:px-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-white/5 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-emerald-100">
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-white/5 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-emerald-100">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-300 shadow-[0_0_12px_rgba(110,231,183,0.8)]" />
               Eligibility · Schemes · Support
             </div>
@@ -150,7 +150,7 @@ export default function KnowEligibilityPage() {
           </div>
         </div>
         <div className="border-t border-white/10">
-          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-100/60 sm:px-8 lg:px-10">
+          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-emerald-100/60 sm:px-8 lg:px-10">
             <span>Residential rooftop solar</span>
             <span>Subsidy overview</span>
             <span>PM-KUSUM</span>
@@ -165,7 +165,7 @@ export default function KnowEligibilityPage() {
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-lg text-emerald-800">i</span>
               <div>
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-800">Eligibility at a glance</p>
+                <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">Eligibility at a glance</p>
                 <p className="mt-2 text-md leading-7 text-slate-600 sm:text-base">
                   The PM Surya Ghar: Muft Bijli Yojana is a Central Government rooftop solar programme designed to encourage residential households to adopt solar power and reduce their dependence on conventional electricity.
                 </p>
@@ -212,7 +212,7 @@ export default function KnowEligibilityPage() {
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
                     {subsidyBreakdown.map((item) => (
                       <div key={item.title} className="rounded-xl bg-[#f4f8fc] p-4">
-                        <p className="text-[10px] font-black uppercase tracking-[0.16em] text-emerald-800">{item.title}</p>
+                        <p className="text-[12px] font-black uppercase tracking-[0.16em] text-emerald-800">{item.title}</p>
                         <p className="mt-2 text-xl font-black text-slate-950">{item.value}</p>
                         <p className="mt-1 text-xs leading-5 text-slate-600">{item.note}</p>
                       </div>
@@ -259,7 +259,7 @@ export default function KnowEligibilityPage() {
                   <ol className="mt-4 space-y-3">
                     {processSteps.map((step, index) => (
                       <li key={step} className="flex items-start gap-3 text-md leading-6 text-slate-600">
-                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 font-mono text-[10px] font-bold text-emerald-800">{index + 1}</span>
+                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 font-mono text-[12px] font-bold text-emerald-800">{index + 1}</span>
                         <span>{step}</span>
                       </li>
                     ))}
@@ -307,7 +307,7 @@ export default function KnowEligibilityPage() {
         <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
           <nav aria-label="Eligibility guide sections" className="overflow-hidden rounded-2xl border border-emerald-200/80 bg-white shadow-sm">
             <div className="border-b border-slate-100 px-5 py-4">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-800">Find a topic</p>
+              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">Find a topic</p>
               <p className="mt-1 text-md font-bold text-slate-900">Eligibility guide</p>
             </div>
             <ol className="space-y-1 p-3">
@@ -329,7 +329,7 @@ export default function KnowEligibilityPage() {
           </nav>
 
           <section className="rounded-2xl bg-[#101c32] p-5 text-white">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-300">Important</p>
+            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-300">Important</p>
             <p className="mt-3 text-md leading-6 text-slate-200">Subsidy amounts, vendor requirements, and programme rules can change. Confirm the latest details through the official portal and your local DISCOM.</p>
             <a href="https://pmsuryaghar.gov.in/" target="_blank" rel="noreferrer" className="mt-4 inline-flex text-md font-bold text-emerald-300 underline decoration-emerald-300/50 underline-offset-4 hover:text-white">Visit PM Surya Ghar portal</a>
           </section>

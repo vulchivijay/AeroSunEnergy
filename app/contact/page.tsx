@@ -142,7 +142,7 @@ export default function Contact() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#10251f]/75 via-transparent to-[#10251f]/10" />
-              <div className="absolute right-8 top-8 flex h-28 w-28 items-center justify-center rounded-full border border-white/70 bg-lime-300 text-center text-[10px] font-black uppercase leading-4 tracking-[0.16em] text-emerald-950 shadow-xl sm:right-12 sm:top-12 sm:h-36 sm:w-36">
+              <div className="absolute right-8 top-8 flex h-28 w-28 items-center justify-center rounded-full border border-white/70 bg-lime-300 text-center text-[12px] font-black uppercase leading-4 tracking-[0.16em] text-emerald-950 shadow-xl sm:right-12 sm:top-12 sm:h-36 sm:w-36">
                 Sun <span className="mx-1 text-emerald-700">+</span> wind<br />better together
               </div>
               <div className="absolute bottom-7 left-7 max-w-xs border-l-2 border-lime-300 pl-4 text-md font-semibold leading-6 text-white sm:bottom-10 sm:left-10">

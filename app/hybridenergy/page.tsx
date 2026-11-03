@@ -341,7 +341,7 @@ function HybridHeroSlider() {
           <div className={slideClass}>
             <div className="relative z-10 w-full max-w-3xl rounded-[28px] border border-white/15 bg-slate-950/30 p-4 shadow-[0_24px_60px_-30px_rgba(15,23,42,0.9)] backdrop-blur-[3px] sm:p-6 lg:p-8">
               <span
-                className={`mb-4 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.04)] ${slide.badgeClass}`}
+                className={`mb-4 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[12px] uppercase tracking-[0.28em] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.04)] ${slide.badgeClass}`}
               >
                 {slide.badge}
               </span>
@@ -358,7 +358,7 @@ function HybridHeroSlider() {
                 {slide.tags.map((tag) => (
                   <span
                     key={tag}
-                    className={`rounded-full border border-white/15 bg-slate-950/50 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] ${slide.chipClass}`}
+                    className={`rounded-full border border-white/15 bg-slate-950/50 px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] ${slide.chipClass}`}
                   >
                     {tag}
                   </span>
@@ -379,7 +379,7 @@ export default function HybridEnergyPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_18%_110%,rgba(16,185,129,0.24),transparent_42%),radial-gradient(ellipse_at_90%_0%,rgba(139,92,246,0.28),transparent_40%)]" aria-hidden="true" />
         <div className="relative grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-violet-200/25 bg-white/[0.07] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-violet-200">
+            <div className="inline-flex items-center gap-2 rounded-full border border-violet-200/25 bg-white/[0.07] px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-violet-200">
               <span className="h-2 w-2 rounded-full bg-emerald-300" aria-hidden="true" />
               AeroSun Energy <span aria-hidden="true">/</span> Hybrid Systems
             </div>
@@ -394,10 +394,10 @@ export default function HybridEnergyPage() {
           <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.06] p-5 backdrop-blur-sm sm:p-7">
             <div className="flex items-center justify-between gap-3">
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-emerald-200">One coordinated system</p>
+                <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-emerald-200">One coordinated system</p>
                 <p className="mt-1 text-xl font-black tracking-tight text-white sm:text-2xl">Sources work together</p>
               </div>
-              <span className="rounded-xl border border-emerald-200/20 bg-emerald-300/10 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-emerald-100">Balanced</span>
+              <span className="rounded-xl border border-emerald-200/20 bg-emerald-300/10 px-3 py-2 text-[12px] font-bold uppercase tracking-[0.14em] text-emerald-100">Balanced</span>
             </div>
             <div className="relative mt-7 grid grid-cols-2 gap-3">
               <svg viewBox="0 0 300 130" preserveAspectRatio="none" className="pointer-events-none absolute inset-x-0 top-7 z-0 h-24 w-full text-emerald-200/50" aria-hidden="true">
@@ -467,7 +467,7 @@ export default function HybridEnergyPage() {
               <HybridSectionEyebrow>Electrical integration</HybridSectionEyebrow>
               <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">AC-coupled vs DC-coupled architectures</h3>
             </div>
-            <div className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-200 sm:block">
+            <div className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.25em] text-slate-200 sm:block">
               Design-driven
             </div>
           </div>
@@ -511,10 +511,10 @@ export default function HybridEnergyPage() {
             <article key={service.title} className="rounded-4xl border border-slate-200 bg-white p-5 shadow-[0_20px_44px_-30px_rgba(15,23,42,0.32)] sm:p-8">
               <div className="mb-6 flex items-center justify-between gap-3">
                 <div>
-                  <p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700">Service {index + 1}</p>
+                  <p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700">Service {index + 1}</p>
                   <h3 className="mt-2 text-2xl font-black tracking-[0.04em] text-slate-900 sm:text-3xl">{service.title}</h3>
                 </div>
-                <div className="hidden rounded-full border border-emerald-200 bg-emerald-50 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-700 sm:block">
+                <div className="hidden rounded-full border border-emerald-200 bg-emerald-50 px-3 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-700 sm:block">
                   Hybrid system
                 </div>
               </div>
@@ -536,11 +536,11 @@ export default function HybridEnergyPage() {
                 </div>
 
                 <div className="rounded-[1.8rem] border border-emerald-200 bg-emerald-50 p-5">
-                  <p className="text-[10px] font-black uppercase tracking-[0.26em] text-emerald-700">Benefits</p>
+                  <p className="text-[12px] font-black uppercase tracking-[0.26em] text-emerald-700">Benefits</p>
                   <ul className="mt-4 space-y-3 text-md leading-7 text-slate-700">
                     {service.benefits.map((benefit) => (
                       <li key={benefit} className="flex items-start gap-3 rounded-2xl bg-white/70 p-3">
-                        <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[10px] font-black text-emerald-700">✓</span>
+                        <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[12px] font-black text-emerald-700">✓</span>
                         <span>{benefit}</span>
                       </li>
                     ))}
@@ -550,7 +550,7 @@ export default function HybridEnergyPage() {
 
               <div className="mt-8 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
                 <div className="rounded-[1.75rem] border border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ffffff_100%)] p-5">
-                  <p className="text-[10px] font-black uppercase tracking-[0.24em] text-sky-700">Example calculation</p>
+                  <p className="text-[12px] font-black uppercase tracking-[0.24em] text-sky-700">Example calculation</p>
                   <h4 className="mt-3 text-xl font-black tracking-[0.03em] text-slate-900">{service.calculation.label}</h4>
                   <p className="mt-3 font-mono text-md leading-7 text-slate-800">{service.calculation.formula}</p>
                   <div className="mt-4 rounded-2xl bg-slate-900 p-3 text-md font-semibold text-white">{service.calculation.result}</div>
@@ -558,7 +558,7 @@ export default function HybridEnergyPage() {
                 </div>
 
                 <div className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-5">
-                  <p className="text-[10px] font-black uppercase tracking-[0.24em] text-slate-600">Frequently asked questions</p>
+                  <p className="text-[12px] font-black uppercase tracking-[0.24em] text-slate-600">Frequently asked questions</p>
                   <div className="mt-4 space-y-4">
                     {service.faqs.map((item) => (
                       <div key={item.question} className="rounded-2xl border border-slate-200 bg-white p-3.5">
@@ -628,7 +628,7 @@ export default function HybridEnergyPage() {
                 <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-900/30 to-transparent" />
               </div>
               <div className="mt-5 rounded-3xl border border-emerald-400/20 bg-emerald-500/10 p-4">
-                <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-200">Key insight</p>
+                <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-200">Key insight</p>
                 <h3 className="mt-2 text-xl font-bold text-white">Start with credible and practical hybrid offers</h3>
                 <p className="mt-2 text-base leading-7 text-slate-200">
                   Evaluate solar + battery hybrid, solar + wind + battery off-grid systems, and commercial grid-connected hybrid designs before moving into larger multi-source microsgrids.

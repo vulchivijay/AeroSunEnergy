@@ -147,7 +147,7 @@ export function SiteSurveyLoadAssessmentForm() {
             <header className="overflow-hidden rounded-[26px] border border-[#1d4f7a] bg-linear-to-r from-[#0a1d4d] via-[#113f7d] to-[#0a5c4b] p-5 text-white shadow-[0_26px_50px_-30px_rgba(15,68,120,0.9)] sm:p-7">
               <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
                 <div>
-                  <p className="text-[10px] font-black uppercase tracking-[0.38em] text-cyan-200/90">
+                  <p className="text-[12px] font-black uppercase tracking-[0.38em] text-cyan-200/90">
                     Site Survey
                   </p>
                   <h1 className="mt-3 text-2xl font-black tracking-[0.06em] sm:text-4xl lg:text-[2.6rem]">
@@ -155,7 +155,7 @@ export function SiteSurveyLoadAssessmentForm() {
                   </h1>
                 </div>
                 <div className="rounded-2xl border border-white/15 bg-white/8 px-4 py-3 text-right backdrop-blur-sm">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-cyan-100/80">
+                  <p className="text-[12px] font-bold uppercase tracking-[0.32em] text-cyan-100/80">
                     Accurate assessment
                   </p>
                   <p className="mt-1 text-md font-semibold text-emerald-200">
@@ -240,7 +240,7 @@ export function SiteSurveyLoadAssessmentForm() {
 
                 <div className="grid gap-4">
                   <fieldset>
-                    <legend className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">
+                    <legend className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
                       Type of Project
                     </legend>
                     <div className="grid grid-cols-2 gap-2 rounded-2xl border border-emerald-200 bg-white/80 p-3 sm:grid-cols-3">
@@ -262,7 +262,7 @@ export function SiteSurveyLoadAssessmentForm() {
                   </fieldset>
 
                   <div>
-                    <label htmlFor="roofType" className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">
+                    <label htmlFor="roofType" className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
                       Roof Type
                     </label>
                     <select
@@ -283,7 +283,7 @@ export function SiteSurveyLoadAssessmentForm() {
                   </div>
 
                   <div>
-                    <label htmlFor="timeline" className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">
+                    <label htmlFor="timeline" className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
                       Preferred Timeline
                     </label>
                     <select
@@ -344,7 +344,7 @@ export function SiteSurveyLoadAssessmentForm() {
                   />
 
                   <div>
-                    <label htmlFor="backupPriority" className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">
+                    <label htmlFor="backupPriority" className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
                       Backup Priority
                     </label>
                     <select
@@ -377,7 +377,7 @@ export function SiteSurveyLoadAssessmentForm() {
 
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="md:col-span-2">
-                    <label htmlFor="equipmentLoads" className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">
+                    <label htmlFor="equipmentLoads" className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
                       Major Equipment / Load Details
                     </label>
                     <textarea
@@ -420,7 +420,7 @@ export function SiteSurveyLoadAssessmentForm() {
                   />
 
                   <div className="md:col-span-2">
-                    <label htmlFor="notes" className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">
+                    <label htmlFor="notes" className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
                       Remarks / Photos
                     </label>
                     <textarea
@@ -491,7 +491,7 @@ export function SiteSurveyLoadAssessmentForm() {
                 <div className="overflow-x-auto rounded-2xl border border-cyan-200 bg-white/80">
                   <table className="w-full min-w-[640px] border-collapse text-left" aria-label="Electricity load details">
                     <thead>
-                      <tr className="border-b border-cyan-200 bg-cyan-50 text-[10px] font-black uppercase tracking-[0.2em] text-slate-700">
+                      <tr className="border-b border-cyan-200 bg-cyan-50 text-[12px] font-black uppercase tracking-[0.2em] text-slate-700">
                         <th scope="col" className="px-3 py-3">No.</th>
                         <th scope="col" className="px-3 py-3">Equipment</th>
                         <th scope="col" className="px-3 py-3">Quantity</th>
@@ -568,7 +568,7 @@ export function SiteSurveyLoadAssessmentForm() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="notes" className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">
+                    <label htmlFor="notes" className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
                       Key Observations
                     </label>
                     <textarea
@@ -629,7 +629,7 @@ function Field({ label, name, placeholder, type = 'text', register, error, compa
 
   return (
     <div className={compact ? '' : 'md:col-span-2'}>
-      <label htmlFor={inputId} className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">
+      <label htmlFor={inputId} className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
         {label}
       </label>
       <input

@@ -91,7 +91,7 @@ export default function Hero() {
           <div className="relative w-full max-w-4xl">
             <div className="absolute inset-8 rounded-[2.5rem] bg-accent/20 blur-3xl" aria-hidden="true" />
             <div className="relative overflow-hidden rounded-[2rem] border border-white/16 bg-white/8 p-3 shadow-[0_40px_120px_rgba(3,8,18,0.4)] backdrop-blur-sm">
-              <div className="absolute left-6 right-6 top-6 z-10 flex items-center justify-between rounded-md border border-white/16 bg-slate-950/35 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/75 backdrop-blur-md">
+              <div className="absolute left-6 right-6 top-6 z-10 flex items-center justify-between rounded-md border border-white/16 bg-slate-950/35 px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.28em] text-white/75 backdrop-blur-md">
                 <span>{h.overlay.snapshotLabel}</span>
                 <span>{h.overlay.optimisationLabel}</span>
               </div>

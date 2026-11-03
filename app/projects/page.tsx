@@ -91,7 +91,7 @@ export default function ProjectsPage() {
         </div>
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1fr_auto] lg:px-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-white/5 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-emerald-100">
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-white/5 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-emerald-100">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-300 shadow-[0_0_12px_rgba(110,231,183,0.8)]" />
               Renewable project portfolio
             </div>
@@ -112,7 +112,7 @@ export default function ProjectsPage() {
           </div>
         </div>
         <div className="border-t border-white/10">
-          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-100/60 sm:px-8 lg:px-10">
+          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-emerald-100/60 sm:px-8 lg:px-10">
             <span>Residential</span>
             <span>Commercial & industrial</span>
             <span>Agriculture & rural</span>
@@ -127,7 +127,7 @@ export default function ProjectsPage() {
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-lg text-emerald-800">i</span>
               <div>
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-800">Our approach</p>
+                <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">Our approach</p>
                 <p className="mt-2 text-md leading-7 text-slate-600 sm:text-base">We tailor every system to the site, energy use, operating conditions, and project goals—balancing performance, safety, cost, and long-term service.</p>
               </div>
             </div>
@@ -154,7 +154,7 @@ export default function ProjectsPage() {
                       <p className="mt-2 text-md leading-6 text-slate-600">{project.description}</p>
                       <ul className="mt-3 flex flex-wrap gap-2">
                         {project.outcomes.map((outcome) => (
-                          <li key={outcome} className="rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[10px] font-semibold text-slate-600">{outcome}</li>
+                          <li key={outcome} className="rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[12px] font-semibold text-slate-600">{outcome}</li>
                         ))}
                       </ul>
                     </div>
@@ -199,7 +199,7 @@ export default function ProjectsPage() {
                       <div className="grid gap-4 md:grid-cols-2">
                         {filteredProjects.map((project) => (
                           <article key={`${project.title}-${project.location}`} className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                            <span className={`inline-flex rounded-full border px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] ${statusMeta[project.status].tone}`}>{project.status}</span>
+                            <span className={`inline-flex rounded-full border px-2.5 py-1 text-[12px] font-bold uppercase tracking-[0.18em] ${statusMeta[project.status].tone}`}>{project.status}</span>
                             <div className={`mt-4 h-1.5 rounded-full bg-linear-to-r ${statusMeta[project.status].accent}`} aria-hidden="true" />
                             <h3 className="mt-4 text-lg font-bold text-slate-900">{project.title}</h3>
                             <p className="mt-2 text-md text-slate-500">{project.location}</p>
@@ -226,7 +226,7 @@ export default function ProjectsPage() {
         <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
           <nav aria-label="Project page sections" className="overflow-hidden rounded-2xl border border-emerald-200/80 bg-white shadow-sm">
             <div className="border-b border-slate-100 px-5 py-4">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-800">Find a topic</p>
+              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">Find a topic</p>
               <p className="mt-1 text-md font-bold text-slate-900">Project overview</p>
             </div>
             <ol className="space-y-1 p-3">
@@ -245,13 +245,13 @@ export default function ProjectsPage() {
             </ol>
           </nav>
           <section className="rounded-2xl bg-[#101c32] p-5 text-white">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-300">Planning priorities</p>
+            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-300">Planning priorities</p>
             <ul className="mt-4 space-y-3 text-md leading-6 text-slate-200">
               {['Site feasibility and energy audit', 'Technology and system design', 'Installation and commissioning', 'Monitoring and maintenance'].map((step) => <li key={step}>{step}</li>)}
             </ul>
           </section>
           <section className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-800">Start a conversation</p>
+            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">Start a conversation</p>
             <p className="mt-3 text-md leading-6 text-slate-700">Share your project needs and our team can help plan the next steps.</p>
             <a href="/customer-enquiry" className="mt-4 inline-flex rounded-full bg-[#101c32] px-4 py-2.5 text-md font-bold text-white transition hover:bg-emerald-900">Request consultation</a>
           </section>

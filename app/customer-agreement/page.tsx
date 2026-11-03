@@ -272,7 +272,7 @@ export default function CustomerAgreementPage() {
         </div>
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1fr_auto] lg:px-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-100/20 bg-white/5 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-indigo-100">
+            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-100/20 bg-white/5 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-indigo-100">
               <span className="h-1.5 w-1.5 rounded-full bg-indigo-300 shadow-[0_0_12px_rgba(165,180,252,0.8)]" />
               Agreement · Scope · Acceptance
             </div>
@@ -293,7 +293,7 @@ export default function CustomerAgreementPage() {
           </div>
         </div>
         <div className="border-t border-white/10">
-          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[10px] font-bold uppercase tracking-[0.18em] text-indigo-100/60 sm:px-8 lg:px-10">
+          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-indigo-100/60 sm:px-8 lg:px-10">
             <span>Project process</span>
             <span>Customer details</span>
             <span>Commercial terms</span>
@@ -308,7 +308,7 @@ export default function CustomerAgreementPage() {
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-100 text-lg text-indigo-800">i</span>
               <div>
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-indigo-800">Agreement at a glance</p>
+                <p className="text-[12px] font-black uppercase tracking-[0.2em] text-indigo-800">Agreement at a glance</p>
                 <p className="mt-2 text-md leading-7 text-slate-600 sm:text-base">
                   A traceable project process connects customer requirements, engineering, procurement, installation, commissioning, and long-term service.
                 </p>
@@ -370,7 +370,7 @@ export default function CustomerAgreementPage() {
         <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
           <nav aria-label="Project execution sections" className="overflow-hidden rounded-2xl border border-indigo-200/80 bg-white shadow-sm">
             <div className="border-b border-slate-100 px-5 py-4">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-indigo-800">Find a topic</p>
+              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-indigo-800">Find a topic</p>
               <p className="mt-1 text-md font-bold text-slate-900">Project process</p>
             </div>
             <ol className="max-h-[55vh] space-y-1 overflow-y-auto p-3 lg:max-h-[calc(100vh-15rem)]">
@@ -391,7 +391,7 @@ export default function CustomerAgreementPage() {
             </ol>
           </nav>
           <section className="rounded-2xl bg-[#101c32] p-5 text-white">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-indigo-300">Before accepting</p>
+            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-indigo-300">Before accepting</p>
             <ul className="mt-4 space-y-3 text-md leading-6 text-slate-200">
               <li>Review the agreed scope and technical specifications.</li>
               <li>Confirm payment milestones and project responsibilities.</li>
@@ -411,22 +411,22 @@ export default function CustomerAgreementPage() {
                     C
                   </div>
                   <div>
-                    <p className="text-[10px] font-black uppercase tracking-[0.34em] text-indigo-100/85">Agreement</p>
+                    <p className="text-[12px] font-black uppercase tracking-[0.34em] text-indigo-100/85">Agreement</p>
                     <h2 className="mt-1 text-2xl font-black tracking-[0.06em] sm:text-3xl">Customer Agreement & Payment Terms</h2>
                   </div>
                 </div>
 
                 <div className="grid gap-2 text-md sm:grid-cols-3 lg:min-w-104">
                   <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-                    <p className="text-[11px] font-black uppercase tracking-[0.28em] text-indigo-100/75">Ref.</p>
+                    <p className="text-[12px] font-black uppercase tracking-[0.28em] text-indigo-100/75">Ref.</p>
                     <p className="mt-1 font-semibold">AES/AGR/2026</p>
                   </div>
                   <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-                    <p className="text-[11px] font-black uppercase tracking-[0.28em] text-indigo-100/75">Date</p>
+                    <p className="text-[12px] font-black uppercase tracking-[0.28em] text-indigo-100/75">Date</p>
                     <p className="mt-1 font-semibold">DD-MM-YYYY</p>
                   </div>
                   <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-                    <p className="text-[11px] font-black uppercase tracking-[0.28em] text-indigo-100/75">Status</p>
+                    <p className="text-[12px] font-black uppercase tracking-[0.28em] text-indigo-100/75">Status</p>
                     <p className="mt-1 font-semibold text-emerald-300">Pending Sign</p>
                   </div>
                 </div>
@@ -470,10 +470,10 @@ export default function CustomerAgreementPage() {
 
                   <div className="grid gap-4 md:grid-cols-2">
                     <fieldset className="md:col-span-2">
-                      <legend className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">Project Type</legend>
+                      <legend className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">Project Type</legend>
                       <div className="grid grid-cols-2 gap-2 rounded-2xl border border-violet-200 bg-white/80 p-2.5 sm:grid-cols-3">
                         {['Rooftop Solar', 'Ground-Mounted Solar', 'Wind Energy', 'Hybrid System', 'Battery Storage', 'Other'].map((option) => (
-                          <label key={option} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-2 py-2 text-[11px] font-medium text-slate-700">
+                          <label key={option} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-2 py-2 text-[12px] font-medium text-slate-700">
                             <input type="radio" name="projectType" value={option} className="h-4 w-4 accent-violet-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-700" />
                             <span>{option}</span>
                           </label>
@@ -496,7 +496,7 @@ export default function CustomerAgreementPage() {
                     </div>
 
                     <div className="overflow-hidden rounded-2xl border border-amber-200 bg-white/80">
-                      <div className="grid grid-cols-[1.5fr_0.8fr_0.9fr_0.9fr] border-b border-amber-200 bg-amber-50 text-[10px] font-black uppercase tracking-[0.18em] text-slate-700">
+                      <div className="grid grid-cols-[1.5fr_0.8fr_0.9fr_0.9fr] border-b border-amber-200 bg-amber-50 text-[12px] font-black uppercase tracking-[0.18em] text-slate-700">
                         <div className="px-3 py-3">Milestone</div>
                         <div className="px-3 py-3">%</div>
                         <div className="px-3 py-3">Amount</div>
@@ -559,7 +559,7 @@ export default function CustomerAgreementPage() {
                       'This agreement shall be governed by the laws of India.',
                     ].map((item, index) => (
                       <li key={item} className="flex gap-3">
-                        <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-rose-100 text-[10px] font-black text-rose-700">{index + 1}</span>
+                        <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-rose-100 text-[12px] font-black text-rose-700">{index + 1}</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -634,7 +634,7 @@ function Field({ label, name, placeholder, type = 'text', register, error, compa
 
   return (
     <div className={compact ? '' : 'md:col-span-2'}>
-      <label htmlFor={inputId} className={`mb-2 block text-[11px] font-black uppercase tracking-[0.22em] ${dark ? 'text-slate-200' : 'text-slate-700'}`}>
+      <label htmlFor={inputId} className={`mb-2 block text-[12px] font-black uppercase tracking-[0.22em] ${dark ? 'text-slate-200' : 'text-slate-700'}`}>
         {label}
       </label>
       <input

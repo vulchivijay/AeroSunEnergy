@@ -1778,7 +1778,7 @@ export default function SaveEarthPage() {
 
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1.15fr_0.85fr] lg:px-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-3 rounded-full border border-emerald-200/20 bg-white/5 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-emerald-200 backdrop-blur">
+            <div className="inline-flex items-center gap-3 rounded-full border border-emerald-200/20 bg-white/5 px-4 py-2 text-[12px] font-bold uppercase tracking-[0.24em] text-emerald-200 backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-lime-300 shadow-[0_0_16px_rgba(190,242,100,0.9)]" />
               Our planet · Our responsibility
             </div>
@@ -1810,7 +1810,7 @@ export default function SaveEarthPage() {
           <div className="relative mx-auto w-full max-w-sm lg:ml-auto">
             <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-5 shadow-2xl shadow-black/20 backdrop-blur-sm">
               <div className="flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-[1.5rem] bg-[linear-gradient(155deg,#173b31_0%,#0b211b_58%,#152b24_100%)] p-7">
-                <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.22em] text-emerald-200">
+                <div className="flex items-center justify-between text-[12px] font-bold uppercase tracking-[0.22em] text-emerald-200">
                   <span>Environmental field notes</span>
                   <span className="h-2 w-2 rounded-full bg-lime-300" />
                 </div>
@@ -1837,7 +1837,7 @@ export default function SaveEarthPage() {
         </div>
 
         <div className="border-t border-white/10">
-          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-5 text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-100/70 sm:px-8 lg:px-10">
+          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-5 text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-100/70 sm:px-8 lg:px-10">
             <span>Climate action</span>
             <span>Living ecosystems</span>
             <span>Responsible choices</span>
@@ -1853,7 +1853,7 @@ export default function SaveEarthPage() {
             className="overflow-hidden rounded-[1.75rem] border border-emerald-950/10 bg-white shadow-[0_18px_50px_-38px_rgba(15,23,42,0.4)]"
           >
             <div className="border-b border-slate-100 px-5 py-5">
-              <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-emerald-700">
+              <p className="text-[12px] font-extrabold uppercase tracking-[0.22em] text-emerald-700">
                 Navigate the guide
               </p>
               <p className="mt-1 text-md font-semibold text-slate-900">Contents</p>
@@ -1865,7 +1865,7 @@ export default function SaveEarthPage() {
                     href={`#${section.heading.id}`}
                     className="group flex items-start gap-3 rounded-xl px-3 py-2.5 text-md leading-5 text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-900"
                   >
-                    <span className="shrink-0 font-mono text-[10px] font-bold text-emerald-600/70 group-hover:text-emerald-700">
+                    <span className="shrink-0 font-mono text-[12px] font-bold text-emerald-600/70 group-hover:text-emerald-700">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <span>{section.heading.text}</span>
@@ -1886,7 +1886,7 @@ export default function SaveEarthPage() {
           >
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-8 bg-lime-300" />
-              <p className="text-[10px] font-extrabold uppercase tracking-[0.24em] text-lime-200">
+              <p className="text-[12px] font-extrabold uppercase tracking-[0.24em] text-lime-200">
                 The documentary
               </p>
             </div>
@@ -1905,7 +1905,7 @@ export default function SaveEarthPage() {
                 }`}
               >
                 <div className="mb-4 flex items-center gap-3">
-                  <span className="rounded-full border border-emerald-900/10 bg-white/80 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.18em] text-emerald-800">
+                  <span className="rounded-full border border-emerald-900/10 bg-white/80 px-3 py-1 text-[12px] font-extrabold uppercase tracking-[0.18em] text-emerald-800">
                     Section {String(index + 1).padStart(2, '0')}
                   </span>
                   <span className="h-px flex-1 bg-emerald-900/10" />
@@ -1924,7 +1924,7 @@ export default function SaveEarthPage() {
           <footer className="rounded-[2rem] border border-emerald-900/10 bg-white p-6 shadow-[0_20px_65px_-48px_rgba(15,23,42,0.42)] sm:p-9">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-emerald-700">
+                <p className="text-[12px] font-extrabold uppercase tracking-[0.22em] text-emerald-700">
                   Turn awareness into action
                 </p>
                 <p className="mt-2 max-w-xl text-lg font-bold leading-7 text-slate-900">

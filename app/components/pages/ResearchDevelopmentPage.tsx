@@ -193,7 +193,7 @@ export default function ResearchDevelopmentPage() {
 					<div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.15),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.14),_transparent_30%)]" />
 					<div className="relative grid gap-8 p-6 sm:p-8 lg:grid-cols-[1.2fr_0.8fr] lg:p-12">
 						<div>
-							<span className="inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 shadow-sm dark:border-emerald-800/80 dark:bg-slate-900/80 dark:text-emerald-300">
+							<span className="inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-3 py-1 text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 shadow-sm dark:border-emerald-800/80 dark:bg-slate-900/80 dark:text-emerald-300">
 								Research & Development
 							</span>
 							<h1 className="mt-6 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl lg:text-6xl dark:text-white">
@@ -211,7 +211,7 @@ export default function ResearchDevelopmentPage() {
 
 						<div className="flex items-center">
 							<div className="w-full rounded-[1.75rem] border border-slate-200/80 bg-white/80 p-5 shadow-[0_30px_60px_-35px_rgba(15,23,42,0.5)] dark:border-slate-700 dark:bg-slate-900/80">
-								<p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
+								<p className="text-[12px] font-black uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
 									Key recommendation
 								</p>
 								<div className="mt-5 rounded-[1.5rem] border border-emerald-200 bg-emerald-50/80 p-4 dark:border-emerald-900/60 dark:bg-emerald-950/20">
@@ -242,7 +242,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-amber-200 bg-linear-to-br from-amber-50 via-white to-yellow-50 p-5 shadow-[0_24px_60px_-40px_rgba(245,158,11,0.45)] dark:border-amber-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">
 						Recommendation summary
 					</p>
 					<p className="mt-4 text-xl font-semibold leading-9 text-slate-800 dark:text-slate-100">
@@ -256,7 +256,7 @@ export default function ResearchDevelopmentPage() {
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6 flex items-end justify-between gap-3">
 					<div>
-						<p className="text-[10px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">
+						<p className="text-[12px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">
 							1. Idea validation
 						</p>
 						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -275,13 +275,13 @@ export default function ResearchDevelopmentPage() {
 							<div className="p-4">
 								<p className="text-md font-black text-slate-900 dark:text-white">{item.title}</p>
 								<div className="mt-4 flex items-center justify-between gap-2 rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 dark:border-slate-700 dark:bg-slate-800">
-									<span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+									<span className="text-[12px] font-bold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
 										Risk
 									</span>
 									<span className="text-md font-bold text-slate-700 dark:text-slate-200">{item.risk}</span>
 								</div>
 								<div className="mt-3 rounded-2xl border border-emerald-100 bg-emerald-50/80 p-2 dark:border-emerald-900/60 dark:bg-emerald-950/20">
-									<p className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">
+									<p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">
 										Recommendation
 									</p>
 									<p className="mt-1 text-md font-semibold text-emerald-800 dark:text-emerald-300">
@@ -295,7 +295,7 @@ export default function ResearchDevelopmentPage() {
 				</div>
 
 				<div className="mt-6 rounded-[1.75rem] border border-sky-100 bg-white/80 p-5 dark:border-sky-900/50 dark:bg-slate-900/75">
-					<p className="text-[10px] font-black uppercase tracking-[0.22em] text-sky-700 dark:text-sky-300">
+					<p className="text-[12px] font-black uppercase tracking-[0.22em] text-sky-700 dark:text-sky-300">
 						Deep example
 					</p>
 					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
@@ -309,7 +309,7 @@ export default function ResearchDevelopmentPage() {
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
 					<div className="rounded-[2rem] border border-violet-200 bg-linear-to-br from-violet-50 via-white to-fuchsia-50 p-5 dark:border-violet-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-						<p className="text-[10px] font-black uppercase tracking-[0.28em] text-violet-700 dark:text-violet-300">
+						<p className="text-[12px] font-black uppercase tracking-[0.28em] text-violet-700 dark:text-violet-300">
 							2. Who should AeroSun target?
 						</p>
 						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -324,7 +324,7 @@ export default function ResearchDevelopmentPage() {
 								>
 									<div className="flex flex-wrap items-center justify-between gap-2">
 										<h3 className="text-lg font-black text-slate-900 dark:text-white">{group.label}</h3>
-										<span className="rounded-full bg-violet-100 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-violet-700 dark:bg-violet-950/40 dark:text-violet-300">
+										<span className="rounded-full bg-violet-100 px-2.5 py-1 text-[12px] font-black uppercase tracking-[0.18em] text-violet-700 dark:bg-violet-950/40 dark:text-violet-300">
 											{group.age}
 										</span>
 									</div>
@@ -342,7 +342,7 @@ export default function ResearchDevelopmentPage() {
 						</div>
 
 						<div className="mt-6 rounded-[1.5rem] border border-violet-100 bg-violet-50/60 p-4 dark:border-violet-900/50 dark:bg-violet-950/20">
-							<p className="text-[10px] font-black uppercase tracking-[0.2em] text-violet-700 dark:text-violet-300">
+							<p className="text-[12px] font-black uppercase tracking-[0.2em] text-violet-700 dark:text-violet-300">
 								Why this ordering matters
 							</p>
 							<p className="mt-3 text-md leading-7 text-slate-700 dark:text-slate-200">
@@ -352,7 +352,7 @@ export default function ResearchDevelopmentPage() {
 					</div>
 
 					<div className="rounded-[2rem] border border-slate-200 bg-white/75 p-5 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
-						<p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
+						<p className="text-[12px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
 							Priority order
 						</p>
 						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -384,7 +384,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
 						3. Develop a low-cost prototype before expansion
 					</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -416,7 +416,7 @@ export default function ResearchDevelopmentPage() {
 				</div>
 
 				<div className="mt-6 rounded-[1.75rem] border border-emerald-100 bg-emerald-50/60 p-5 dark:border-emerald-900/50 dark:bg-emerald-950/20">
-					<p className="text-[10px] font-black uppercase tracking-[0.22em] text-emerald-700 dark:text-emerald-300">
+					<p className="text-[12px] font-black uppercase tracking-[0.22em] text-emerald-700 dark:text-emerald-300">
 						Example milestone
 					</p>
 					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-200">
@@ -427,7 +427,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-rose-700 dark:text-rose-300">4. Red flags</p>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-rose-700 dark:text-rose-300">4. Red flags</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
 						Risk areas to address before scale-up
 					</h2>
@@ -452,7 +452,7 @@ export default function ResearchDevelopmentPage() {
 				</div>
 
 				<div className="mt-6 rounded-[1.75rem] border border-rose-100 bg-rose-50/60 p-5 dark:border-rose-900/50 dark:bg-rose-950/20">
-					<p className="text-[10px] font-black uppercase tracking-[0.22em] text-rose-700 dark:text-rose-300">
+					<p className="text-[12px] font-black uppercase tracking-[0.22em] text-rose-700 dark:text-rose-300">
 						Failure example
 					</p>
 					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-200">
@@ -463,7 +463,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">
 						5. Price strategy
 					</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -488,7 +488,7 @@ export default function ResearchDevelopmentPage() {
 				</div>
 
 				<div className="mt-6 rounded-[1.75rem] border border-amber-100 bg-amber-50/60 p-5 dark:border-amber-900/50 dark:bg-amber-950/20">
-					<p className="text-[10px] font-black uppercase tracking-[0.22em] text-amber-700 dark:text-amber-300">
+					<p className="text-[12px] font-black uppercase tracking-[0.22em] text-amber-700 dark:text-amber-300">
 						Pricing logic example
 					</p>
 					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-200">
@@ -499,7 +499,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-indigo-700 dark:text-indigo-300">
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-indigo-700 dark:text-indigo-300">
 						6. Practical 90-day validation plan
 					</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -517,13 +517,13 @@ export default function ResearchDevelopmentPage() {
 								{step.period}
 							</div>
 							<div>
-								<p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+								<p className="text-[12px] font-black uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
 									Action
 								</p>
 								<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{step.action}</p>
 							</div>
 							<div>
-								<p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+								<p className="text-[12px] font-black uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
 									Target evidence
 								</p>
 								<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{step.result}</p>
@@ -533,7 +533,7 @@ export default function ResearchDevelopmentPage() {
 				</div>
 
 				<div className="mt-6 rounded-[1.75rem] border border-indigo-100 bg-indigo-50/60 p-5 dark:border-indigo-900/50 dark:bg-indigo-950/20">
-					<p className="text-[10px] font-black uppercase tracking-[0.22em] text-indigo-700 dark:text-indigo-300">
+					<p className="text-[12px] font-black uppercase tracking-[0.22em] text-indigo-700 dark:text-indigo-300">
 						What a real validation looks like
 					</p>
 					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-200">
@@ -545,7 +545,7 @@ export default function ResearchDevelopmentPage() {
 			<section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
 				<div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
 					<div className="rounded-[2rem] border border-slate-200 bg-white/80 p-5 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
-						<p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
+						<p className="text-[12px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
 							7. Final assessment
 						</p>
 						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -561,7 +561,7 @@ export default function ResearchDevelopmentPage() {
 										<p className="text-md font-bold text-slate-900 dark:text-white">{item.label}</p>
 										<p className="text-md text-slate-600 dark:text-slate-300">{item.value}</p>
 									</div>
-									<span className="rounded-full bg-emerald-100 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
+									<span className="rounded-full bg-emerald-100 px-2.5 py-1 text-[12px] font-black uppercase tracking-[0.18em] text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
 										{item.level}
 									</span>
 								</div>
@@ -570,7 +570,7 @@ export default function ResearchDevelopmentPage() {
 					</div>
 
 					<div className="rounded-[2rem] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-cyan-50 p-5 dark:border-emerald-900/60 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-						<p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
+						<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
 							Recommended operating model
 						</p>
 						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -598,7 +598,7 @@ export default function ResearchDevelopmentPage() {
 						</div>
 
 						<div className="mt-6 rounded-[1.5rem] border border-slate-200 bg-white/80 p-4 dark:border-slate-700 dark:bg-slate-900/75">
-							<p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+							<p className="text-[12px] font-black uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
 								Decision questions
 							</p>
 							<ul className="mt-3 space-y-2 text-md leading-6 text-slate-700 dark:text-slate-300">
@@ -613,7 +613,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-sky-200 bg-linear-to-br from-sky-50 via-white to-cyan-50 p-5 shadow-[0_24px_60px_-40px_rgba(59,130,246,0.45)] dark:border-sky-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">
 						AeroSun Energy: Competitor analysis, profitability, opportunities and risks in India
 					</p>
 					<h2 className="mt-4 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -630,7 +630,7 @@ export default function ResearchDevelopmentPage() {
 						practical starting points for AeroSun. The third could provide differentiation, but it requires more technical validation.
 					</p>
 					<div className="mt-6 rounded-[1.5rem] border border-sky-100 bg-white/80 p-4 dark:border-sky-900/50 dark:bg-slate-900/75">
-						<p className="text-[10px] font-black uppercase tracking-[0.22em] text-sky-700 dark:text-sky-300">Example market logic</p>
+						<p className="text-[12px] font-black uppercase tracking-[0.22em] text-sky-700 dark:text-sky-300">Example market logic</p>
 						<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
 							A competitor like Loom Solar is strong in consumer-facing product sales, while a large EPC player like Tata Power can win large residential and commercial contracts because of brand trust and operational scale. AeroSun should not attempt to beat them in size at the start. It should win where trust, speed, customer education, and after-sales service can create a superior local experience.
 						</p>
@@ -640,7 +640,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-slate-200 bg-white/80 p-5 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
 						Business funding explained
 					</p>
 					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -654,7 +654,7 @@ export default function ResearchDevelopmentPage() {
 						The right choice depends on <span className="font-black text-slate-900 dark:text-white">how much money you need, what it will be used for, how quickly the business generates revenue, and how much ownership you are willing to give investors.</span>
 					</p>
 					<div className="mt-6 rounded-[1.5rem] border border-slate-200 bg-slate-50/85 p-4 dark:border-slate-700 dark:bg-slate-800/80">
-						<p className="text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding example</p>
+						<p className="text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding example</p>
 						<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
 							Suppose AeroSun needs ₹5 lakh to test a solar package, build a basic monitoring dashboard, and conduct the first 10 customer site surveys. Bootstrapping or a small grant may be sufficient. However, if the company wants to build a custom wind turbine prototype and run sustained field trials, then an incubator, angel round, or strategic investor may be more realistic.
 						</p>
@@ -664,7 +664,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
 						Funding stages
 					</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -693,7 +693,7 @@ export default function ResearchDevelopmentPage() {
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
 					<div className="rounded-[2rem] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-cyan-50 p-5 dark:border-emerald-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-						<p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
+						<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
 							1. Bootstrapping your business
 						</p>
 						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -709,8 +709,8 @@ export default function ResearchDevelopmentPage() {
 							<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 								<thead className="bg-slate-50 dark:bg-slate-800/80">
 									<tr>
-										<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Initial expenditure</th>
-										<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Illustrative amount</th>
+										<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Initial expenditure</th>
+										<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Illustrative amount</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -746,7 +746,7 @@ export default function ResearchDevelopmentPage() {
 					</div>
 
 					<div className="rounded-[2rem] border border-slate-200 bg-white/80 p-5 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
-						<p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
+						<p className="text-[12px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
 							When bootstrap makes sense
 						</p>
 						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -771,7 +771,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-violet-200 bg-linear-to-br from-violet-50 via-white to-fuchsia-50 p-5 dark:border-violet-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-violet-700 dark:text-violet-300">2. Friends and family funding</p>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-violet-700 dark:text-violet-300">2. Friends and family funding</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Small early capital should still be documented</h2>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
 						For example, a relative might invest ₹2 lakh to help AeroSun purchase demonstration equipment and secure its first customers. There are three common arrangements: equity investment, loan, or a gift. Do not rely on a verbal promise — document the amount, purpose, repayment terms, or investor rights.
@@ -781,15 +781,15 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-sky-200 bg-linear-to-br from-sky-50 via-white to-cyan-50 p-5 dark:border-sky-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">3. Grants and incubator funding</p>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">3. Grants and incubator funding</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Use grants where innovation needs proof</h2>
 					<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
 						<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 							<thead className="bg-slate-50 dark:bg-slate-800/80">
 								<tr>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding route</th>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Published scheme limit</th>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Intended use</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding route</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Published scheme limit</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Intended use</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -814,7 +814,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">
 						4. Funding stages in practice
 					</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -838,15 +838,15 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-rose-200 bg-linear-to-br from-rose-50 via-white to-pink-50 p-5 dark:border-rose-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-rose-700 dark:text-rose-300">5. Understand dilution before you raise</p>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-rose-700 dark:text-rose-300">5. Understand dilution before you raise</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Dilution reduces founder ownership</h2>
 					<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
 						<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 							<thead className="bg-slate-50 dark:bg-slate-800/80">
 								<tr>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding stage</th>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">New investment</th>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Illustrative post-investment ownership</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding stage</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">New investment</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Illustrative post-investment ownership</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -873,7 +873,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-indigo-200 bg-linear-to-br from-indigo-50 via-white to-purple-50 p-5 dark:border-indigo-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-indigo-700 dark:text-indigo-300">6. Which funding route should AeroSun follow?</p>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-indigo-700 dark:text-indigo-300">6. Which funding route should AeroSun follow?</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">A staged plan is the safest strategy</h2>
 					<div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 						{[
@@ -893,7 +893,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-cyan-50 p-5 shadow-[0_24px_60px_-40px_rgba(16,185,129,0.45)] dark:border-emerald-900/60 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">Final funding recommendation</p>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">Final funding recommendation</p>
 					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Do not ask how much you can raise before knowing what milestone you need to fund.</h2>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
 						For AeroSun, the immediate funding path should be: <span className="font-black text-slate-900 dark:text-white">bootstrap the solar business, validate customer demand, apply for incubator or grant support for technology proof, and only then raise angel or seed capital if the prototype and market case are credible.</span>
@@ -917,7 +917,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
 						# AeroSun Energy Private Limited
 					</p>
 					<h2 className="mt-4 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -942,7 +942,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-sky-200 bg-linear-to-br from-sky-50 via-white to-cyan-50 p-5 shadow-[0_24px_60px_-40px_rgba(59,130,246,0.45)] dark:border-sky-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">1. Prototype A — AeroSun Solar Smart System</p>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">1. Prototype A — AeroSun Solar Smart System</p>
 					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">AeroSun Solar Smart 1 kW</h2>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
 						Purpose: build an affordable demonstration system that generates solar electricity and measures where that electricity goes.
@@ -951,8 +951,8 @@ export default function ResearchDevelopmentPage() {
 						<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 							<thead className="bg-slate-50 dark:bg-slate-800/80">
 								<tr>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Component</th>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Suggested specification</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Component</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Suggested specification</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -991,7 +991,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-cyan-200 bg-linear-to-br from-cyan-50 via-white to-sky-50 p-5 shadow-[0_24px_60px_-40px_rgba(14,165,233,0.45)] dark:border-cyan-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">2. Prototype B — AeroSun Small Wind Turbine</p>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">2. Prototype B — AeroSun Small Wind Turbine</p>
 					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">AeroSun Wind 500</h2>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
 						Purpose: develop a small wind turbine for demonstration, testing and potentially suitable off-grid applications.
@@ -1003,8 +1003,8 @@ export default function ResearchDevelopmentPage() {
 						<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 							<thead className="bg-slate-50 dark:bg-slate-800/80">
 								<tr>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Component</th>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Purpose</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Component</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Purpose</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -1035,7 +1035,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-violet-200 bg-linear-to-br from-violet-50 via-white to-fuchsia-50 p-5 shadow-[0_24px_60px_-40px_rgba(168,85,247,0.45)] dark:border-violet-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-violet-700 dark:text-violet-300">3. Prototype C — AeroSun Solar–Wind Hybrid System</p>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-violet-700 dark:text-violet-300">3. Prototype C — AeroSun Solar–Wind Hybrid System</p>
 					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">AeroSun Hybrid Smart 1 kW</h2>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
 						Purpose: combine solar and wind generation with battery storage and intelligent monitoring. The goal is to supply useful electricity from two renewable sources while managing changes in generation and customer demand.
@@ -1061,7 +1061,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-amber-200 bg-linear-to-br from-amber-50 via-white to-yellow-50 p-5 shadow-[0_24px_60px_-40px_rgba(245,158,11,0.45)] dark:border-amber-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">4. Make the prototypes reusable and sustainable</p>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">4. Make the prototypes reusable and sustainable</p>
 					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Build for repairability, durability and lower waste</h2>
 					<div className="mt-6 grid gap-4 md:grid-cols-2">
 						{[
@@ -1081,7 +1081,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">5. Prototype development roadmap</p>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">5. Prototype development roadmap</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Order of work for AeroSun</h2>
 				</div>
 				<div className="space-y-4">
@@ -1103,7 +1103,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-slate-200 bg-white/80 p-5 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
 						Business funding explained
 					</p>
 					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -1121,7 +1121,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
 						Funding stages
 					</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -1150,7 +1150,7 @@ export default function ResearchDevelopmentPage() {
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
 					<div className="rounded-[2rem] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-cyan-50 p-5 dark:border-emerald-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-						<p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
+						<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
 							1. Bootstrapping your business
 						</p>
 						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -1166,8 +1166,8 @@ export default function ResearchDevelopmentPage() {
 							<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 								<thead className="bg-slate-50 dark:bg-slate-800/80">
 									<tr>
-										<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Initial expenditure</th>
-										<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Illustrative amount</th>
+										<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Initial expenditure</th>
+										<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Illustrative amount</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -1203,7 +1203,7 @@ export default function ResearchDevelopmentPage() {
 					</div>
 
 					<div className="rounded-[2rem] border border-slate-200 bg-white/80 p-5 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
-						<p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
+						<p className="text-[12px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
 							When bootstrap makes sense
 						</p>
 						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -1228,7 +1228,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-violet-200 bg-linear-to-br from-violet-50 via-white to-fuchsia-50 p-5 dark:border-violet-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-violet-700 dark:text-violet-300">2. Friends and family funding</p>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-violet-700 dark:text-violet-300">2. Friends and family funding</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Small early capital should still be documented</h2>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
 						For example, a relative might invest ₹2 lakh to help AeroSun purchase demonstration equipment and secure its first customers. There are three common arrangements: equity investment, loan, or a gift. Do not rely on a verbal promise — document the amount, purpose, repayment terms, or investor rights.
@@ -1238,15 +1238,15 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-sky-200 bg-linear-to-br from-sky-50 via-white to-cyan-50 p-5 dark:border-sky-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">3. Grants and incubator funding</p>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">3. Grants and incubator funding</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Use grants where innovation needs proof</h2>
 					<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
 						<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 							<thead className="bg-slate-50 dark:bg-slate-800/80">
 								<tr>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding route</th>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Published scheme limit</th>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Intended use</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding route</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Published scheme limit</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Intended use</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -1271,7 +1271,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">
 						4. Funding stages in practice
 					</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
@@ -1295,15 +1295,15 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-rose-200 bg-linear-to-br from-rose-50 via-white to-pink-50 p-5 dark:border-rose-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-rose-700 dark:text-rose-300">5. Understand dilution before you raise</p>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-rose-700 dark:text-rose-300">5. Understand dilution before you raise</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Dilution reduces founder ownership</h2>
 					<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
 						<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 							<thead className="bg-slate-50 dark:bg-slate-800/80">
 								<tr>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding stage</th>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">New investment</th>
-									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Illustrative post-investment ownership</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding stage</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">New investment</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Illustrative post-investment ownership</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -1330,7 +1330,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-indigo-200 bg-linear-to-br from-indigo-50 via-white to-purple-50 p-5 dark:border-indigo-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-indigo-700 dark:text-indigo-300">6. Which funding route should AeroSun follow?</p>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-indigo-700 dark:text-indigo-300">6. Which funding route should AeroSun follow?</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">A staged plan is the safest strategy</h2>
 					<div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 						{[
@@ -1350,7 +1350,7 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-cyan-50 p-5 shadow-[0_24px_60px_-40px_rgba(16,185,129,0.45)] dark:border-emerald-900/60 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">Final funding recommendation</p>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">Final funding recommendation</p>
 					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Do not ask how much you can raise before knowing what milestone you need to fund.</h2>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
 						For AeroSun, the immediate funding path should be: <span className="font-black text-slate-900 dark:text-white">bootstrap the solar business, validate customer demand, apply for incubator or grant support for technology proof, and only then raise angel or seed capital if the prototype and market case are credible.</span>

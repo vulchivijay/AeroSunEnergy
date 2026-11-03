@@ -207,7 +207,7 @@ function SolarHeroSlider() {
           <div className={slideClass}>
             <div className="relative z-10 w-full max-w-3xl rounded-[28px] border border-white/15 bg-slate-950/30 p-4 shadow-[0_24px_60px_-30px_rgba(15,23,42,0.9)] backdrop-blur-[3px] sm:p-6 lg:p-8">
               <span
-                className={`mb-4 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.04)] ${slide.badgeClass}`}
+                className={`mb-4 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[12px] uppercase tracking-[0.28em] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.04)] ${slide.badgeClass}`}
               >
                 {slide.badge}
               </span>
@@ -224,7 +224,7 @@ function SolarHeroSlider() {
                 {slide.tags.map((tag) => (
                   <span
                     key={tag}
-                    className={`rounded-full border border-white/15 bg-slate-950/50 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] ${slide.chipClass}`}
+                    className={`rounded-full border border-white/15 bg-slate-950/50 px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] ${slide.chipClass}`}
                   >
                     {tag}
                   </span>
@@ -244,7 +244,7 @@ export default function SolarEnergyPage() {
       <header className="relative mx-auto mb-6 max-w-7xl overflow-hidden rounded-[2.5rem] border border-amber-200 bg-[radial-gradient(ellipse_at_82%_15%,rgba(251,191,36,0.28),transparent_35%),linear-gradient(125deg,#fffdf7_0%,#fff4d6_58%,#fffaf0_100%)] px-5 py-7 shadow-[0_28px_70px_-44px_rgba(120,72,0,0.42)] sm:mb-8 sm:px-8 sm:py-9 lg:px-10 lg:py-11">
         <div className="relative z-10 grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-amber-300 bg-white/80 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-amber-900 shadow-sm">
+            <div className="inline-flex items-center gap-2 rounded-full border border-amber-300 bg-white/80 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-amber-900 shadow-sm">
               <span className="h-2 w-2 rounded-full bg-amber-500" aria-hidden="true" />
               AeroSun Energy <span aria-hidden="true">/</span> Solar Systems
             </div>
@@ -267,7 +267,7 @@ export default function SolarEnergyPage() {
                 </svg>
               </span>
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-amber-100">One source. Many uses.</p>
+                <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-amber-100">One source. Many uses.</p>
                 <p className="mt-1 text-xl font-black tracking-tight sm:text-2xl">Choose your solar pathway</p>
               </div>
             </div>
@@ -401,7 +401,7 @@ export default function SolarEnergyPage() {
       <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-orange-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(120,72,0,0.3)] sm:my-8 sm:p-8 lg:p-9">
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)]">
-            <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-sky-700">Comparison</p>
+            <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-sky-700">Comparison</p>
             <h2 className="mt-3 text-3xl font-bold text-slate-900">Main solar system types</h2>
 
             <div className="mt-6 overflow-hidden rounded-3xl border border-slate-200">
@@ -437,7 +437,7 @@ export default function SolarEnergyPage() {
               <div className="absolute inset-0 bg-linear-to-t from-slate-950/85 via-slate-900/30 to-transparent" />
             </div>
             <div className="mt-5 rounded-3xl border border-amber-400/20 bg-amber-500/10 p-4">
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-200">Recommended focus</p>
+              <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-amber-200">Recommended focus</p>
               <h3 className="mt-2 text-xl font-bold text-white">Rooftop, hybrid, and solar pumping</h3>
               <p className="mt-2 text-base leading-7 text-slate-200">
                 These categories offer clear customer groups and better opportunities to build installation and maintenance capabilities.
@@ -461,14 +461,14 @@ export default function SolarEnergyPage() {
 
             <div className="mt-6 space-y-5">
               <div className="rounded-3xl border border-emerald-200 bg-emerald-50 p-4">
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-700">1. Measure house consumption</p>
+                <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-700">1. Measure house consumption</p>
                 <p className="mt-2 text-base leading-7 text-slate-700">
                   We use the last 6–12 months of DISCOM bills to calculate average monthly units consumed. This includes daytime and nighttime usage, which helps us size the rooftop system correctly.
                 </p>
               </div>
 
               <div className="rounded-3xl border border-sky-200 bg-sky-50 p-4">
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-sky-700">2. Estimate solar generation</p>
+                <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-sky-700">2. Estimate solar generation</p>
                 <p className="mt-2 text-base leading-7 text-slate-700">
                   A rooftop solar system is estimated using system size, sunlight hours, panel efficiency, and site conditions. A simple formula is:<br />
                   <span className="font-bold text-slate-900">Monthly generation ≈ kWp × sun hours × 30 × performance factor</span>
@@ -479,7 +479,7 @@ export default function SolarEnergyPage() {
               </div>
 
               <div className="rounded-3xl border border-violet-200 bg-violet-50 p-4">
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-violet-700">3. Measure grid import and export</p>
+                <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-violet-700">3. Measure grid import and export</p>
                 <p className="mt-2 text-base leading-7 text-slate-700">
                   In a net-metered home, the grid import equals the electricity used after self-consumption, while the grid surplus is the excess generation that is exported back to the utility after local demand is met.
                 </p>
@@ -489,7 +489,7 @@ export default function SolarEnergyPage() {
 
           <div className="space-y-5">
             <div className="rounded-4xl border border-slate-200 bg-slate-950 p-5 shadow-[0_28px_70px_-36px_rgba(15,23,42,0.9)]">
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-200">Example</p>
+              <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-amber-200">Example</p>
               <h3 className="mt-2 text-xl font-bold text-white">Household solar balance</h3>
               <div className="mt-5 space-y-4 text-md leading-7 text-slate-200">
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
@@ -511,7 +511,7 @@ export default function SolarEnergyPage() {
             </div>
 
             <div className="rounded-4xl border border-amber-200 bg-amber-50 p-5">
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-700">Key point</p>
+              <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-amber-700">Key point</p>
               <p className="mt-2 text-base leading-7 text-slate-700">
                 We design the solar array to lower the house’s grid import first, and then measure surplus export only after daytime consumption has been served.
               </p>

@@ -98,12 +98,12 @@ export default function WarrantyPolicyPage() {
                   W
                 </div>
                 <div>
-                  <p className="text-[10px] font-black uppercase tracking-[0.36em] text-sky-100/80">Warranty</p>
+                  <p className="text-[12px] font-black uppercase tracking-[0.36em] text-sky-100/80">Warranty</p>
                   <h1 className="mt-1 text-2xl font-black tracking-[0.06em] sm:text-3xl">Policy Acknowledgement</h1>
                 </div>
               </div>
 
-              <div className="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-sky-100">
+              <div className="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-sky-100">
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(74,222,128,0.9)]" />
                 Online Support
               </div>
@@ -160,7 +160,7 @@ export default function WarrantyPolicyPage() {
               />
 
               <div>
-                <label htmlFor="productLine" className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">
+                <label htmlFor="productLine" className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
                   Product or service line
                 </label>
                 <select
@@ -191,7 +191,7 @@ export default function WarrantyPolicyPage() {
               />
 
               <div>
-                <label htmlFor="servicePlan" className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">
+                <label htmlFor="servicePlan" className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
                   After-sales service plan
                 </label>
                 <select
@@ -227,7 +227,7 @@ export default function WarrantyPolicyPage() {
             </div>
 
             <div className="flex flex-col gap-3 border-t border-slate-200 pt-4 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.24em] text-slate-500">
+              <div className="flex items-center gap-2 text-[12px] font-black uppercase tracking-[0.24em] text-slate-500">
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
                 Service confirmation
               </div>
@@ -276,7 +276,7 @@ function Field({ label, name, placeholder, type = 'text', register, error, accen
 
   return (
     <div>
-      <label htmlFor={name} className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">
+      <label htmlFor={name} className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
         {label}
       </label>
       <input

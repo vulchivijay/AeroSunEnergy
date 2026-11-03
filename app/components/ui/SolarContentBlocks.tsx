@@ -192,7 +192,7 @@ export function SectionEyebrow({ children }: { children: ReactNode }) {
   return (
     <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f0fdfa_45%,#ffffff_100%)] px-3.5 py-2 shadow-[0_14px_26px_-20px_rgba(16,185,129,0.9)]">
       <span className="inline-flex h-2.5 w-2.5 items-center justify-center rounded-full bg-linear-to-r from-emerald-500 to-lime-500 shadow-[0_0_0_4px_rgba(16,185,129,0.12)]" aria-hidden="true" />
-      <p className="text-[10px] font-black uppercase tracking-[0.24em] text-emerald-700">{children}</p>
+      <p className="text-[12px] font-black uppercase tracking-[0.24em] text-emerald-700">{children}</p>
     </div>
   )
 }
@@ -223,7 +223,7 @@ export function FeatureCard({
   return (
     <article className="group rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_22px_45px_-28px_rgba(15,23,42,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-28px_rgba(16,185,129,0.3)]">
       <div className={`mb-5 flex items-center justify-between gap-4 rounded-2xl border px-3 py-2 ${accentClasses[accent]}`}>
-        <span className="text-[10px] font-black uppercase tracking-[0.24em]">Solar solution</span>
+        <span className="text-[12px] font-black uppercase tracking-[0.24em]">Solar solution</span>
         <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/80 shadow-sm ring-1 ring-black/5">
           {renderSolarIcon(accent)}
         </span>
@@ -234,7 +234,7 @@ export function FeatureCard({
         <ul className="mt-5 space-y-3 text-base text-slate-700">
           {points.map((point) => (
             <li key={point} className="flex items-start gap-3 rounded-xl bg-slate-50/80 p-2.5">
-              <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[10px] font-black text-emerald-700">✓</span>
+              <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[12px] font-black text-emerald-700">✓</span>
               <span>{point}</span>
             </li>
           ))}
@@ -273,7 +273,7 @@ export function SubsidyCard({
 }) {
   return (
     <div className="rounded-[1.8rem] border border-emerald-200 bg-[linear-gradient(135deg,#ffffff_0%,#ecfdf5_100%)] p-5 shadow-[0_18px_32px_-26px_rgba(16,185,129,0.45)]">
-      <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-slate-500">{label}</p>
+      <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-slate-500">{label}</p>
       <div className="mt-4 text-3xl font-black tracking-[0.05em] text-slate-900">{value}</div>
       <p className="mt-3 text-md leading-6 text-slate-600">{note}</p>
     </div>
@@ -322,7 +322,7 @@ export function CapacityTable() {
   return (
     <div className="overflow-x-auto rounded-[1.9rem] border border-emerald-200 bg-white shadow-[0_20px_34px_-24px_rgba(16,185,129,0.3)] [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400">
       <div className="min-w-[620px]">
-        <div className="grid border-b border-emerald-100 bg-[linear-gradient(90deg,#ecfdf5_0%,#ffffff_50%,#eff6ff_100%)] text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600 md:grid-cols-3">
+        <div className="grid border-b border-emerald-100 bg-[linear-gradient(90deg,#ecfdf5_0%,#ffffff_50%,#eff6ff_100%)] text-[12px] font-bold uppercase tracking-[0.2em] text-slate-600 md:grid-cols-3">
           <div className="px-4 py-3">Average monthly usage</div>
           <div className="px-4 py-3">Suitable rooftop capacity</div>
           <div className="px-4 py-3">Best fit</div>

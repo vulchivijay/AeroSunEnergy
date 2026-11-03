@@ -95,7 +95,7 @@ export default function InvoiceReceiptPage() {
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(249,115,22,0.12),transparent_18%),linear-gradient(180deg,#f8fafc_0%,#fff7ed_30%,#f8fafc_100%)] px-4 py-10 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 text-center">
-          <span className="inline-flex items-center rounded-full border border-orange-200 bg-white/80 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.28em] text-orange-700 shadow-sm backdrop-blur-sm">
+          <span className="inline-flex items-center rounded-full border border-orange-200 bg-white/80 px-4 py-2 text-[12px] font-bold uppercase tracking-[0.28em] text-orange-700 shadow-sm backdrop-blur-sm">
             Invoice
           </span>
           <h1 className="mt-5 text-4xl font-black tracking-[0.06em] text-slate-900 sm:text-5xl">
@@ -145,7 +145,7 @@ export default function InvoiceReceiptPage() {
 
           <Card className="overflow-hidden border border-orange-100 bg-linear-to-br from-slate-950 via-slate-900 to-orange-950 text-white shadow-[0_25px_80px_rgba(15,23,42,0.12)]">
             <CardContent className="p-5 sm:p-7">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-orange-200">Receipt form</p>
+              <p className="text-[12px] font-semibold uppercase tracking-[0.32em] text-orange-200">Receipt form</p>
               <h2 className="mt-3 text-2xl font-semibold">Create invoice record</h2>
 
               <form onSubmit={handleSubmit(onSubmit)} noValidate className="mt-6 space-y-4">

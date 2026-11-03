@@ -73,7 +73,7 @@ export default function SchemeBanner() {
         <div className="rounded-[32px] border border-emerald-200/80 bg-white/75 p-5 shadow-[0_30px_80px_-45px_rgba(16,185,129,0.8)] backdrop-blur-sm sm:p-7 lg:p-8">
           <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700 sm:text-[12px]">
+              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-700 sm:text-[12px]">
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
                 Government Subsidy Initiative
               </div>
@@ -89,7 +89,7 @@ export default function SchemeBanner() {
 
               <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-amber-200 bg-linear-to-r from-amber-50 via-orange-50 to-rose-50 px-4 py-2.5 shadow-[0_12px_24px_-18px_rgba(245,158,11,0.7)]">
                 <span className="inline-flex h-2.5 w-2.5 rounded-full bg-linear-to-r from-red-500 to-amber-500 shadow-[0_0_0_4px_rgba(251,191,36,0.18)]" />
-                <span className="text-[11px] font-black uppercase tracking-[0.18em] text-amber-700 sm:text-[12px]">
+                <span className="text-[12px] font-black uppercase tracking-[0.18em] text-amber-700 sm:text-[12px]">
                   Subsidy ends 31<sup>st</sup> March 2027
                 </span>
               </div>
@@ -113,11 +113,11 @@ export default function SchemeBanner() {
             <div className="rounded-[28px] border border-emerald-200 bg-linear-to-br from-slate-900 via-slate-800 to-emerald-950 p-5 text-white shadow-[0_28px_60px_-28px_rgba(15,23,42,0.9)]">
               <div className="flex items-center justify-between gap-3 border-b border-white/10 pb-4">
                 <div>
-                  <div className="text-[11px] font-bold uppercase tracking-[0.22em] text-emerald-200">Subsidy</div>
+                  <div className="text-[12px] font-bold uppercase tracking-[0.22em] text-emerald-200">Subsidy</div>
                   <div className="mt-2 text-4xl font-black tracking-[0.05em] text-white">₹ 78,000</div>
                 </div>
                 <div className="rounded-lg border border-emerald-400/40 bg-emerald-500/10 px-3 py-2 text-right">
-                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-200">Max</div>
+                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-200">Max</div>
                   <div className="text-md font-semibold text-white">per home</div>
                 </div>
               </div>
@@ -126,13 +126,13 @@ export default function SchemeBanner() {
                 {stats.map((item) => (
                   <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 px-2 py-3 text-center">
                     <div className="text-2xl font-black tracking-[0.06em] text-white sm:text-3xl">{item.value}</div>
-                    <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-100">{item.label}</div>
+                    <div className="mt-1 text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-100">{item.label}</div>
                   </div>
                 ))}
               </div>
 
               <div className="mt-5 rounded-2xl border border-emerald-300/30 bg-emerald-400/10 p-4">
-                <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-100">Offer Window</div>
+                <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-100">Offer Window</div>
                 <div className="mt-2 text-lg text-white">Limited duration – apply before the current subsidy cycle closes.</div>
               </div>
             </div>

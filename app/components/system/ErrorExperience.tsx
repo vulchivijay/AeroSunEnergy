@@ -62,7 +62,7 @@ function ErrorIllustration({
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_36%,rgba(245,199,106,0.20),transparent_35%),linear-gradient(155deg,rgba(163,217,119,0.08),transparent_55%)]" />
       <div className="absolute inset-5 rounded-[1.5rem] border border-white/[0.07]" />
-      <div className="absolute left-8 top-8 flex items-center gap-2 rounded-full border border-white/10 bg-[#071b17]/70 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/60 backdrop-blur">
+      <div className="absolute left-8 top-8 flex items-center gap-2 rounded-full border border-white/10 bg-[#071b17]/70 px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-white/60 backdrop-blur">
         <span className={`h-1.5 w-1.5 rounded-full ${isLandscape ? 'bg-[#a3d977]' : 'bg-[#f5c76a]'}`} />
         {isLandscape ? 'A new direction' : 'System status'}
       </div>

@@ -120,7 +120,7 @@ export default function PrivacyPolicyPage() {
         </div>
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1fr_auto] lg:px-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-sky-100/20 bg-white/5 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-sky-100">
+            <div className="inline-flex items-center gap-2 rounded-full border border-sky-100/20 bg-white/5 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-sky-100">
               <span className="h-1.5 w-1.5 rounded-full bg-sky-300 shadow-[0_0_12px_rgba(125,211,252,0.8)]" />
               Trust · Privacy · Transparency
             </div>
@@ -141,7 +141,7 @@ export default function PrivacyPolicyPage() {
           </div>
         </div>
         <div className="border-t border-white/10">
-          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[10px] font-bold uppercase tracking-[0.18em] text-sky-100/60 sm:px-8 lg:px-10">
+          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-sky-100/60 sm:px-8 lg:px-10">
             <span>Information we collect</span>
             <span>How we use it</span>
             <span>Your choices</span>
@@ -156,7 +156,7 @@ export default function PrivacyPolicyPage() {
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-lg text-sky-800">i</span>
               <div>
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-sky-800">Privacy at a glance</p>
+                <p className="text-[12px] font-black uppercase tracking-[0.2em] text-sky-800">Privacy at a glance</p>
                 <p className="mt-2 text-md leading-7 text-slate-600 sm:text-base">
                   This Privacy Policy explains how AeroSun Energy collects, uses, protects, and manages information shared through our website, customer enquiries, project discussions, and renewable-energy service interactions.
                 </p>
@@ -220,7 +220,7 @@ export default function PrivacyPolicyPage() {
         <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
           <nav aria-label="Privacy policy sections" className="overflow-hidden rounded-2xl border border-sky-200/80 bg-white shadow-sm">
             <div className="border-b border-slate-100 px-5 py-4">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-sky-800">Find a topic</p>
+              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-sky-800">Find a topic</p>
               <p className="mt-1 text-md font-bold text-slate-900">Policy contents</p>
             </div>
             <ol className="max-h-[55vh] space-y-1 overflow-y-auto p-3 lg:max-h-[calc(100vh-15rem)]">
@@ -239,7 +239,7 @@ export default function PrivacyPolicyPage() {
           </nav>
 
           <section className="rounded-2xl bg-[#101c32] p-5 text-white">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-sky-300">Information we protect</p>
+            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-sky-300">Information we protect</p>
             <ul className="mt-4 space-y-3 text-md leading-6 text-slate-200">
               <li>Customer contact details and business information</li>
               <li>Project enquiries and energy requirements</li>
@@ -249,7 +249,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-800">Our principles</p>
+            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">Our principles</p>
             <ul className="mt-4 space-y-3 text-md leading-6 text-slate-700">
               <li>We collect only what is necessary for our services and business operations.</li>
               <li>We use data responsibly for enquiries, project support, and service delivery.</li>

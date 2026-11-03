@@ -136,22 +136,22 @@ export function StandardQuotationTemplate() {
                     Q
                   </div>
                   <div>
-                    <p className="text-[10px] font-black uppercase tracking-[0.38em] text-cyan-200/85">Quotation</p>
+                    <p className="text-[12px] font-black uppercase tracking-[0.38em] text-cyan-200/85">Quotation</p>
                     <h1 className="mt-1 text-2xl font-black tracking-[0.06em] sm:text-3xl">Standard Quotation Template</h1>
                   </div>
                 </div>
 
                 <div className="grid gap-2 text-right text-md sm:grid-cols-3 lg:min-w-[420px]">
                   <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-                    <p className="text-[11px] font-black uppercase tracking-[0.28em] text-cyan-100/80">No.</p>
+                    <p className="text-[12px] font-black uppercase tracking-[0.28em] text-cyan-100/80">No.</p>
                     <p className="mt-1 font-semibold">AESP/QTN/2025/001</p>
                   </div>
                   <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-                    <p className="text-[11px] font-black uppercase tracking-[0.28em] text-cyan-100/80">Date</p>
+                    <p className="text-[12px] font-black uppercase tracking-[0.28em] text-cyan-100/80">Date</p>
                     <p className="mt-1 font-semibold">DD-MM-YYYY</p>
                   </div>
                   <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-                    <p className="text-[11px] font-black uppercase tracking-[0.28em] text-cyan-100/80">Valid Till</p>
+                    <p className="text-[12px] font-black uppercase tracking-[0.28em] text-cyan-100/80">Valid Till</p>
                     <p className="mt-1 font-semibold">DD-MM-YYYY</p>
                   </div>
                 </div>
@@ -276,7 +276,7 @@ export function StandardQuotationTemplate() {
 
                 <div className="space-y-4">
                   <fieldset>
-                    <legend className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">Project Type</legend>
+                    <legend className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">Project Type</legend>
                     <div className="grid grid-cols-2 gap-2 rounded-2xl border border-slate-200 bg-white/80 p-3">
                       {['Rooftop Solar', 'Ground-Mounted Solar', 'Wind Energy', 'Hybrid System', 'Battery Storage', 'Other'].map((option) => (
                         <label key={option} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-2.5 py-2 text-md font-medium text-slate-700">
@@ -327,7 +327,7 @@ export function StandardQuotationTemplate() {
 
               <div className="overflow-x-auto">
                 <table className="min-w-full border-separate border-spacing-0 text-left text-md">
-                  <thead className="bg-blue-50 text-[10px] font-black uppercase tracking-[0.18em] text-slate-700">
+                  <thead className="bg-blue-50 text-[12px] font-black uppercase tracking-[0.18em] text-slate-700">
                     <tr>
                       <th className="border-r border-blue-200 px-3 py-3">S. No.</th>
                       <th className="border-r border-blue-200 px-3 py-3">Description</th>
@@ -403,7 +403,7 @@ export function StandardQuotationTemplate() {
                 </div>
 
                 <div className="overflow-hidden rounded-2xl border border-amber-200 bg-white/80">
-                  <div className="grid grid-cols-[60px_1.5fr_1fr_1fr] border-b border-amber-200 bg-amber-50 text-[10px] font-black uppercase tracking-[0.18em] text-slate-700">
+                  <div className="grid grid-cols-[60px_1.5fr_1fr_1fr] border-b border-amber-200 bg-amber-50 text-[12px] font-black uppercase tracking-[0.18em] text-slate-700">
                     <div className="px-3 py-3">S. No.</div>
                     <div className="px-3 py-3">Milestone</div>
                     <div className="px-3 py-3">Percentage</div>
@@ -436,7 +436,7 @@ export function StandardQuotationTemplate() {
                 <ol className="space-y-2 text-md leading-6 text-slate-700">
                   {['This quotation is valid for 30 days from the date of issue.', 'Prices are subject to change based on final site survey and system design.', 'Government subsidy is subject to eligibility and approval from the concerned authorities.', 'Customer to provide necessary approvals, access, and electrical connection as required.', 'Warranty: As per manufacturer\'s standard warranty terms.', 'Any additional work not mentioned in this quotation will be charged separately.', 'This quotation is subject to our standard terms and conditions.'].map((item, index) => (
                     <li key={item} className="flex gap-3">
-                      <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-yellow-300 text-[10px] font-black text-slate-900">{index + 1}</span>
+                      <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-yellow-300 text-[12px] font-black text-slate-900">{index + 1}</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -534,7 +534,7 @@ function Field({ label, name, placeholder, type = 'text', register, error, compa
 
   return (
     <div className={compact ? '' : 'md:col-span-2'}>
-      <label htmlFor={fieldId} className="mb-2 block text-[11px] font-black uppercase tracking-[0.22em] text-slate-700">
+      <label htmlFor={fieldId} className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
         {label}
       </label>
       <input

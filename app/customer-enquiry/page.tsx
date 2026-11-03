@@ -13,7 +13,7 @@ export default function CustomerEnquiryPage() {
         </div>
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1fr_auto] lg:px-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-sky-100/20 bg-white/5 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-sky-100">
+            <div className="inline-flex items-center gap-2 rounded-full border border-sky-100/20 bg-white/5 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-sky-100">
               <span className="h-1.5 w-1.5 rounded-full bg-sky-300 shadow-[0_0_12px_rgba(125,211,252,0.8)]" />
               Your project · Your requirements
             </div>
@@ -34,7 +34,7 @@ export default function CustomerEnquiryPage() {
           </div>
         </div>
         <div className="border-t border-white/10">
-          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[10px] font-bold uppercase tracking-[0.18em] text-sky-100/60 sm:px-8 lg:px-10">
+          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-sky-100/60 sm:px-8 lg:px-10">
             <span>Customer details</span>
             <span>Site & energy use</span>
             <span>Project requirements</span>
@@ -49,7 +49,7 @@ export default function CustomerEnquiryPage() {
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-lg text-sky-800">i</span>
               <div>
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-sky-800">Enquiry at a glance</p>
+                <p className="text-[12px] font-black uppercase tracking-[0.2em] text-sky-800">Enquiry at a glance</p>
                 <p className="mt-2 text-md leading-7 text-slate-600 sm:text-base">
                   Complete the form with your contact information, property details, energy usage, and preferred solution. Required fields help us understand your project before following up.
                 </p>
@@ -80,7 +80,7 @@ export default function CustomerEnquiryPage() {
         <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
           <nav aria-label="Customer enquiry form sections" className="overflow-hidden rounded-2xl border border-sky-200/80 bg-white shadow-sm">
             <div className="border-b border-slate-100 px-5 py-4">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-sky-800">Form sections</p>
+              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-sky-800">Form sections</p>
               <p className="mt-1 text-md font-bold text-slate-900">Your project details</p>
             </div>
             <ol className="space-y-1 p-3">
@@ -102,7 +102,7 @@ export default function CustomerEnquiryPage() {
             </ol>
           </nav>
           <section className="rounded-2xl bg-[#101c32] p-5 text-white">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-sky-300">Solutions we discuss</p>
+            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-sky-300">Solutions we discuss</p>
             <ul className="mt-4 space-y-3 text-md leading-6 text-slate-200">
               <li>Rooftop, ground-mounted, and commercial solar</li>
               <li>Wind, solar-wind hybrid, and battery storage</li>
@@ -110,7 +110,7 @@ export default function CustomerEnquiryPage() {
             </ul>
           </section>
           <section className="rounded-2xl border border-sky-200 bg-sky-50 p-5">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-sky-800">Need help?</p>
+            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-sky-800">Need help?</p>
             <p className="mt-3 text-md leading-6 text-slate-700">If the form is unavailable, email our team directly.</p>
             <a href="mailto:customercare@aerosunenergy.in" className="mt-3 inline-flex text-md font-bold text-sky-800 underline decoration-sky-300 underline-offset-4">customercare@aerosunenergy.in</a>
           </section>

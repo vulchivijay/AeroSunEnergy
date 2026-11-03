@@ -1,7 +1,7 @@
 function SectionTitle({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
     <div className="mb-6">
-      <p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-600">{eyebrow}</p>
+      <p className="text-[12px] font-black uppercase tracking-[0.28em] text-slate-600">{eyebrow}</p>
       <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900">{title}</h2>
     </div>
   )
@@ -10,7 +10,7 @@ function SectionTitle({ eyebrow, title }: { eyebrow: string; title: string }) {
 function MetricCard({ label, value, className = '' }: { label: string; value: string; className?: string }) {
   return (
     <div className={`rounded-2xl border p-3 ${className}`}>
-      <p className="text-[10px] font-black uppercase tracking-[0.2em]">{label}</p>
+      <p className="text-[12px] font-black uppercase tracking-[0.2em]">{label}</p>
       <p className="mt-2 text-xl font-black text-slate-900">{value}</p>
     </div>
   )
@@ -192,7 +192,7 @@ export default function Page() {
       <section className="relative overflow-hidden bg-gradient-to-br from-emerald-50 via-white to-sky-50">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.18),_transparent_20%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.15),_transparent_22%)]" />
         <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-          <div className="mb-8 inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 shadow-sm">
+          <div className="mb-8 inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-3 py-1.5 text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 shadow-sm">
             AeroSun Energy Strategy
           </div>
 
@@ -214,7 +214,7 @@ export default function Page() {
                 {['తక్కువ పెట్టుబడి', 'నగదు ప్రవాహం', 'సరఫరాదారులు', 'కస్టమర్ అవసరం', '90 రోజులు'].map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.18em] text-slate-700 shadow-sm"
+                    className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[12px] font-black uppercase tracking-[0.18em] text-slate-700 shadow-sm"
                   >
                     {tag}
                   </span>
@@ -223,7 +223,7 @@ export default function Page() {
             </div>
 
             <div className="rounded-[2rem] border border-slate-200 bg-white/80 p-6 shadow-[0_35px_80px_-35px_rgba(15,23,42,0.35)] backdrop-blur-xl">
-              <p className="text-[10px] font-black uppercase tracking-[0.26em] text-slate-500">Critical Reminder</p>
+              <p className="text-[12px] font-black uppercase tracking-[0.26em] text-slate-500">Critical Reminder</p>
               <div className="mt-5 rounded-3xl border border-emerald-200 bg-emerald-50 p-4">
                 <p className="text-md leading-7 text-slate-700">
                   <span className="font-black text-emerald-700">ముఖ్యమైన సూత్రం:</span> అమ్మకాలు పెంచడం మాత్రమే లక్ష్యం కాదు. ప్రతి
@@ -250,7 +250,7 @@ export default function Page() {
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {highlights.map((item) => (
             <div key={item.title} className="rounded-[1.6rem] border border-slate-200 bg-white p-5 shadow-sm">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">Principle</p>
+              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-slate-500">Principle</p>
               <h2 className="mt-3 text-xl font-black text-slate-900">{item.title}</h2>
               <p className="mt-2 text-md leading-6 text-slate-700">{item.text}</p>
             </div>
@@ -287,7 +287,7 @@ export default function Page() {
           </div>
 
           <div className="rounded-[2rem] border border-slate-200 bg-slate-50 p-5 shadow-sm">
-            <p className="text-[10px] font-black uppercase tracking-[0.18em] text-slate-500">ప్రారంభ పెట్టుబడి ఉదాహరణ</p>
+            <p className="text-[12px] font-black uppercase tracking-[0.18em] text-slate-500">ప్రారంభ పెట్టుబడి ఉదాహరణ</p>
             <div className="mt-5 space-y-3">
               {budgetRows.map(([label, value]) => (
                 <div
@@ -312,7 +312,7 @@ export default function Page() {
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-[2rem] border border-cyan-200 bg-cyan-50 p-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-cyan-700">వర్కింగ్ క్యాపిటల్ సూత్రం</p>
+            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-cyan-700">వర్కింగ్ క్యాపిటల్ సూత్రం</p>
             <div className="mt-5 rounded-3xl border border-cyan-100 bg-white p-4">
               <p className="text-md leading-7 text-slate-700">స్టాక్ + కస్టమర్ల నుంచి రావాల్సిన డబ్బు − సరఫరాదారులకు చెల్లించాల్సిన బాకీలు</p>
               <p className="mt-3 text-2xl font-black text-slate-900">₹1,00,000 + ₹80,000 − ₹50,000 = ₹1,30,000</p>
@@ -324,7 +324,7 @@ export default function Page() {
           </div>
 
           <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">చెల్లింపు షెడ్యూల్ ఉదాహరణ</p>
+            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-slate-500">చెల్లింపు షెడ్యూల్ ఉదాహరణ</p>
             <div className="mt-5 space-y-3">
               {cashFlowSteps.map(([step, value]) => (
                 <div key={step} className="flex items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-3">
@@ -334,7 +334,7 @@ export default function Page() {
               ))}
             </div>
             <div className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 p-3">
-              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-amber-700">జాగ్రత్త</p>
+              <p className="text-[12px] font-black uppercase tracking-[0.18em] text-amber-700">జాగ్రత్త</p>
               <p className="mt-2 text-md leading-6 text-slate-700">
                 ప్రతి ఇన్వాయిస్‌కు చెల్లింపు గడువు, బాకీల జాబితా, రాతపూర్వక ఒప్పందం, మరియు అత్యవసర నగదు నిల్వ ఉండాలి.
               </p>
@@ -351,7 +351,7 @@ export default function Page() {
             <div key={supplier.name} className="rounded-[1.8rem] border border-violet-200 bg-white p-5 shadow-sm">
               <div className="flex items-center justify-between gap-3">
                 <p className="text-xl font-black text-slate-900">{supplier.name}</p>
-                <span className="rounded-full bg-violet-100 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-violet-700">
+                <span className="rounded-full bg-violet-100 px-3 py-1 text-[12px] font-black uppercase tracking-[0.2em] text-violet-700">
                   Total
                 </span>
               </div>
@@ -362,7 +362,7 @@ export default function Page() {
         </div>
 
         <div className="mt-6 rounded-[1.75rem] border border-violet-100 bg-violet-50 p-5">
-          <p className="text-[10px] font-black uppercase tracking-[0.18em] text-violet-700">సరఫరాదారుతో చర్చించేటప్పుడు</p>
+          <p className="text-[12px] font-black uppercase tracking-[0.18em] text-violet-700">సరఫరాదారుతో చర్చించేటప్పుడు</p>
           <ul className="mt-4 space-y-3 text-md leading-7 text-slate-700">
             <li>• త్రైమాసిక కొనుగోళ్ల అంచనాను చెప్పండి.</li>
             <li>• మొదటి ఆర్డర్ చిన్నదిగా ఉంచండి; తదుపరి ఆర్డర్లకు తగ్గింపు గురించి చర్చించండి.</li>
@@ -384,7 +384,7 @@ export default function Page() {
           <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             {profitabilityMetrics.map(({ label, value }) => (
               <div key={label} className="rounded-2xl border border-amber-200 bg-white p-3">
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-700">{label}</p>
+                <p className="text-[12px] font-black uppercase tracking-[0.2em] text-amber-700">{label}</p>
                 <p className="mt-2 text-xl font-black text-slate-900">{value}</p>
               </div>
             ))}
@@ -405,7 +405,7 @@ export default function Page() {
           <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             {exampleMetrics.map(({ label, value }) => (
               <div key={label} className="rounded-2xl border border-emerald-200 bg-emerald-50 p-3">
-                <p className="text-[10px] font-black uppercase tracking-[0.18em] text-emerald-700">{label}</p>
+                <p className="text-[12px] font-black uppercase tracking-[0.18em] text-emerald-700">{label}</p>
                 <p className="mt-2 text-xl font-black text-slate-900">{value}</p>
               </div>
             ))}
@@ -420,7 +420,7 @@ export default function Page() {
           {plans90.map((plan) => (
             <div key={plan.phase} className="rounded-[1.8rem] border border-violet-200 bg-white p-5 shadow-sm">
               <div className="flex flex-wrap items-center gap-3">
-                <span className="rounded-full bg-violet-100 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-violet-700">
+                <span className="rounded-full bg-violet-100 px-3 py-1 text-[12px] font-black uppercase tracking-[0.2em] text-violet-700">
                   {plan.phase}
                 </span>
                 <p className="text-xl font-black text-slate-900">{plan.title}</p>
@@ -455,7 +455,7 @@ export default function Page() {
 
       <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
         <div className="rounded-[2.2rem] border border-emerald-200 bg-gradient-to-br from-emerald-50 via-white to-sky-50 p-6 shadow-[0_30px_80px_-40px_rgba(16,185,129,0.45)]">
-          <p className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700">16. AeroSun Energy కోసం తుది సూచన</p>
+          <p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700">16. AeroSun Energy కోసం తుది సూచన</p>
           <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900">మూడు సమాంతర మార్గాలు</h2>
 
           <div className="mt-6 grid gap-5 lg:grid-cols-3">

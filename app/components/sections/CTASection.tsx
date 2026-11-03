@@ -58,7 +58,7 @@ export default function CTASection() {
           </div>
 
           <div className="relative z-10 rounded-[2rem] border border-white/16 bg-white/8 p-5 text-white backdrop-blur-xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-white/60">{c.projectSpectrum}</p>
+            <p className="text-[12px] font-semibold uppercase tracking-[0.3em] text-white/60">{c.projectSpectrum}</p>
             <div className="mt-5 space-y-3">
               {c.projectTypes.map((type) => (
                 <div key={type} className="rounded-md border border-white/12 bg-slate-950/35 px-4 py-3">

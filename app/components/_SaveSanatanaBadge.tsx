@@ -35,7 +35,7 @@ export default function SaveSanatanaBadge() {
             />
           </span>
 
-          <span className="text-[10px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300 md:text-[11px]">
+          <span className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300 md:text-[12px]">
             SAVE SANATANADHARMA
           </span>
 
@@ -43,7 +43,7 @@ export default function SaveSanatanaBadge() {
             type="button"
             aria-label="Hide Save Sanatana Dharma badge"
             onClick={() => setIsOpen(false)}
-            className="ml-1 flex h-11 w-11 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 text-[10px] font-bold text-emerald-700 transition hover:bg-emerald-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 dark:border-emerald-400/40 dark:bg-emerald-500/10 dark:text-emerald-300"
+            className="ml-1 flex h-11 w-11 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 text-[12px] font-bold text-emerald-700 transition hover:bg-emerald-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 dark:border-emerald-400/40 dark:bg-emerald-500/10 dark:text-emerald-300"
           >
             ×
           </button>

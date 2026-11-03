@@ -170,7 +170,7 @@ function WindHeroSlider() {
           <div className={slideClass}>
             <div className="relative z-10 w-full max-w-3xl rounded-[28px] border border-white/15 bg-slate-950/30 p-4 shadow-[0_24px_60px_-30px_rgba(15,23,42,0.9)] backdrop-blur-[3px] sm:p-6 lg:p-8">
               <span
-                className={`mb-4 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.04)] ${slide.badgeClass}`}
+                className={`mb-4 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[12px] uppercase tracking-[0.28em] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.04)] ${slide.badgeClass}`}
               >
                 {slide.badge}
               </span>
@@ -187,7 +187,7 @@ function WindHeroSlider() {
                 {slide.tags.map((tag) => (
                   <span
                     key={tag}
-                    className={`rounded-full border border-white/15 bg-slate-950/50 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] ${slide.chipClass}`}
+                    className={`rounded-full border border-white/15 bg-slate-950/50 px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] ${slide.chipClass}`}
                   >
                     {tag}
                   </span>
@@ -374,7 +374,7 @@ export default function WindEnergyPage() {
         <div className="absolute inset-y-0 right-0 w-2/3 bg-[radial-gradient(ellipse_at_80%_48%,rgba(14,165,233,0.24),transparent_58%)]" aria-hidden="true" />
         <div className="relative grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-sky-200/25 bg-sky-300/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-sky-200">
+            <div className="inline-flex items-center gap-2 rounded-full border border-sky-200/25 bg-sky-300/10 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-sky-200">
               <span className="h-2 w-2 rounded-full bg-sky-300" aria-hidden="true" />
               AeroSun Energy <span aria-hidden="true">/</span> Wind Systems
             </div>
@@ -414,7 +414,7 @@ export default function WindEnergyPage() {
                 <circle cx="92" cy="79" r="54" stroke="currentColor" strokeDasharray="3 7" opacity=".28" />
               </svg>
             </div>
-            <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-4 text-[10px] font-bold uppercase tracking-[0.2em] text-sky-100">
+            <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-4 text-[12px] font-bold uppercase tracking-[0.2em] text-sky-100">
               <span>Resource first</span><span className="h-px flex-1 mx-3 bg-sky-300/30" aria-hidden="true" /><span>Site designed</span>
             </div>
           </div>
@@ -449,7 +449,7 @@ export default function WindEnergyPage() {
               <WindSectionEyebrow>Classification</WindSectionEyebrow>
               <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">Design and installation choices</h3>
             </div>
-            <div className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-200 sm:block">
+            <div className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.25em] text-slate-200 sm:block">
               Site-sensitive
             </div>
           </div>
@@ -517,7 +517,7 @@ export default function WindEnergyPage() {
             </div>
 
             <div className="rounded-4xl border border-emerald-200 bg-emerald-50 p-5">
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-700">AeroSun view</p>
+              <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700">AeroSun view</p>
               <div className="mt-4 space-y-3 text-md leading-7 text-slate-700">
                 <div className="rounded-2xl bg-white p-3">1. Small wind turbines, 1–10 kW</div>
                 <div className="rounded-2xl bg-white p-3">2. Solar–wind hybrid systems</div>

@@ -237,7 +237,7 @@ export default function InstallationChecklistPage() {
 				</div>
 				<div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1fr_auto] lg:px-10">
 					<div className="max-w-3xl">
-						<div className="inline-flex items-center gap-2 rounded-full border border-amber-100/20 bg-white/5 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-amber-100">
+						<div className="inline-flex items-center gap-2 rounded-full border border-amber-100/20 bg-white/5 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-amber-100">
 							<span className="h-1.5 w-1.5 rounded-full bg-amber-300 shadow-[0_0_12px_rgba(252,211,77,0.8)]" />
 							Plan · Install · Commission
 						</div>
@@ -258,7 +258,7 @@ export default function InstallationChecklistPage() {
 					</div>
 				</div>
 				<div className="border-t border-white/10">
-					<div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[10px] font-bold uppercase tracking-[0.18em] text-amber-100/60 sm:px-8 lg:px-10">
+					<div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-amber-100/60 sm:px-8 lg:px-10">
 						<span>Requirements</span>
 						<span>Site readiness</span>
 						<span>Safe installation</span>
@@ -273,7 +273,7 @@ export default function InstallationChecklistPage() {
 						<div className="flex items-start gap-4">
 							<span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-lg text-amber-800">i</span>
 							<div>
-								<p className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-800">Checklist at a glance</p>
+								<p className="text-[12px] font-black uppercase tracking-[0.2em] text-amber-800">Checklist at a glance</p>
 								<p className="mt-2 text-md leading-7 text-slate-600 sm:text-base">
 									This operational guide covers the complete project lifecycle, from the first customer enquiry through design, approvals, procurement, installation, testing, performance verification, and final handover.
 								</p>
@@ -333,7 +333,7 @@ export default function InstallationChecklistPage() {
 				<aside className="space-y-5 lg:self-start">
 					<nav aria-label="Installation checklist phases" className="overflow-hidden rounded-2xl border border-amber-200/80 bg-white shadow-sm">
 						<div className="border-b border-slate-100 px-5 py-4">
-							<p className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-800">Find a phase</p>
+							<p className="text-[12px] font-black uppercase tracking-[0.2em] text-amber-800">Find a phase</p>
 							<p className="mt-1 text-md font-bold text-slate-900">Project lifecycle</p>
 						</div>
 						<ol className="max-h-[45vh] space-y-1 overflow-y-auto p-3">
@@ -352,7 +352,7 @@ export default function InstallationChecklistPage() {
 					</nav>
 
 					<section className="rounded-2xl border border-amber-200 bg-white p-5">
-						<p className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-800">Project essentials</p>
+						<p className="text-[12px] font-black uppercase tracking-[0.2em] text-amber-800">Project essentials</p>
 						<ul className="mt-4 space-y-3 text-md leading-6 text-slate-700">
 							<li>Confirm requirements and site feasibility before design approval.</li>
 							<li>Verify materials and safety checks before installation and energization.</li>
@@ -361,7 +361,7 @@ export default function InstallationChecklistPage() {
 					</section>
 
 					<div className="rounded-2xl border border-amber-200 bg-[#101c32] p-5 text-white shadow-sm">
-						<p className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-300">Submission form</p>
+						<p className="text-[12px] font-black uppercase tracking-[0.2em] text-amber-300">Submission form</p>
 						<h2 className="mt-2 text-xl font-extrabold tracking-tight">Record installation status</h2>
 						<form onSubmit={handleSubmit(onSubmit)} noValidate className="mt-5 space-y-4">
 							<Field label="Customer name" name="customerName" placeholder="Enter your full name" register={register} error={errors.customerName} />

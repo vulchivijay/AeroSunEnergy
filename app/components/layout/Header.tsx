@@ -134,7 +134,7 @@ export default function Navbar() {
           </>
         )}
         {disabled && (
-          <span className="rounded-full bg-[#f7edda] px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-[#85672f]">
+          <span className="rounded-full bg-[#f7edda] px-2 py-1 text-[12px] font-bold uppercase tracking-wider text-[#85672f]">
             Coming soon
           </span>
         )}
@@ -207,12 +207,12 @@ export default function Navbar() {
       className="sticky top-0 z-50 border-b border-white/10 bg-[#071b17] text-white shadow-[0_18px_42px_-30px_rgba(3,18,12,0.9)]"
     >
       <div className="relative border-b border-white/[0.07] bg-[#04130f] text-[#e8ecd9] hidden">
-        <div className="mx-auto flex min-h-8 max-w-[90rem] items-center justify-between gap-3 px-3 py-1 text-[11px] font-semibold tracking-[0.08em] sm:px-6 sm:text-[10px] sm:tracking-[0.12em] lg:px-8">
+        <div className="mx-auto flex min-h-8 max-w-[90rem] items-center justify-between gap-3 px-3 py-1 text-[12px] font-semibold tracking-[0.08em] sm:px-6 sm:text-[12px] sm:tracking-[0.12em] lg:px-8">
           <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
             <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6b45e] shadow-[0_0_10px_rgba(214,180,94,0.65)]" aria-hidden="true" />
             AeroSun Energy Private Limited
           </span>
-          <span className="ml-3 hidden whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.2em] text-[#c2cbb8] lg:flex lg:items-center lg:gap-2">
+          <span className="ml-3 hidden whitespace-nowrap text-[12px] font-medium uppercase tracking-[0.2em] text-[#c2cbb8] lg:flex lg:items-center lg:gap-2">
             <Sun className="h-3 w-3 text-[#d6b45e]" strokeWidth={1.8} aria-hidden="true" />
             Power from Sun, Wind, Water, Fire
           </span>
@@ -313,7 +313,7 @@ export default function Navbar() {
         className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-[#a5d6a7]/30 bg-[#09251e] px-4 pb-6 pt-3 shadow-[0_24px_50px_-22px_rgba(0,0,0,0.8)] sm:px-6 xl:hidden"
       >
         <nav aria-label="Mobile primary navigation" className="mx-auto max-w-3xl space-y-1">
-          <p className="mb-3 flex items-center gap-2 px-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#c5e1a5]">
+          <p className="mb-3 flex items-center gap-2 px-2 text-[12px] font-bold uppercase tracking-[0.2em] text-[#c5e1a5]">
             <span className="h-px w-5 bg-[#a5d6a7]/70" />
             Explore AeroSun
           </p>

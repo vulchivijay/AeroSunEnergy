@@ -176,7 +176,7 @@ export function SolarEstimation() {
     <section className="relative isolate overflow-hidden bg-[#fff4e8] px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.28em] text-emerald-700 shadow-sm backdrop-blur-md">
+          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-4 py-1.5 text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700 shadow-sm backdrop-blur-md">
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
             {e.badge}
           </span>
@@ -204,7 +204,7 @@ export function SolarEstimation() {
               <div className="space-y-4">
                 <div className="flex items-center justify-between gap-3">
                   <div>
-                    <label htmlFor={monthlyUnitsInputId} className="text-[11px] font-bold uppercase tracking-[0.26em] text-slate-500">Monthly Electricity Units</label>
+                    <label htmlFor={monthlyUnitsInputId} className="text-[12px] font-bold uppercase tracking-[0.26em] text-slate-500">Monthly Electricity Units</label>
                     <div className="mt-2 flex items-center gap-2">
                       <span className="text-[2.4rem] font-black tracking-[0.06em] text-emerald-600">{(values.monthlyUnits ?? defaultValues.monthlyUnits).toLocaleString('en-IN')} units</span>
                     </div>
@@ -311,7 +311,7 @@ export function SolarEstimation() {
               </div>
 
               <div className="rounded-[22px] border border-white/15 bg-white/10 p-5 backdrop-blur-sm">
-                <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-emerald-50">Annual Savings</div>
+                <div className="text-[12px] font-bold uppercase tracking-[0.3em] text-emerald-50">Annual Savings</div>
                 <div className="mt-3 text-5xl font-black tracking-[0.08em] text-white">
                   {calculation ? currency(calculation.profit) : '—'}
                 </div>
@@ -319,25 +319,25 @@ export function SolarEstimation() {
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-50">Original Cost</div>
+                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">Original Cost</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
                     {calculation ? currency(calculation.totalInstallationCost) : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-50">Subsidy</div>
+                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">Subsidy</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
                     {calculation ? currency(calculation.subsidy) : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-50">Net Cost</div>
+                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">Net Cost</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
                     {calculation ? currency(calculation.customerPayable) : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-50">Payback</div>
+                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">Payback</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
                     {calculation ? `${(calculation.customerPayable / Math.max(1, calculation.profit)).toFixed(1)} yrs` : '—'}
                   </div>
@@ -396,10 +396,10 @@ function InputField({
       <div className={`h-1.5 rounded-full bg-linear-to-r ${accentClass}`} aria-hidden="true" />
 
       <div className="mt-4 flex items-center justify-between gap-3">
-        <label htmlFor={name} className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-600 dark:text-slate-300">
+        <label htmlFor={name} className="text-[12px] font-bold uppercase tracking-[0.24em] text-slate-600 dark:text-slate-300">
           {label}
         </label>
-        <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
+        <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[12px] font-bold uppercase tracking-[0.18em] text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
           {suffix}
         </span>
       </div>
