@@ -128,15 +128,15 @@ export default function PrivacyPolicyPage() {
               Your information.
               <span className="mt-1 block text-sky-300">Handled with care.</span>
             </h1>
-            <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base sm:leading-8">
+            <p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-base sm:leading-8">
               Our privacy policy explains what information we collect, why we use it, and the choices available to you.
             </p>
           </div>
           <div className="flex w-fit items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.06] px-5 py-4 backdrop-blur">
             <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-300/10 text-xl text-sky-200">◎</span>
-            <span className="text-xs leading-5 text-slate-300">
+            <span className="text-md leading-5 text-slate-300">
               Last updated
-              <strong className="block text-sm font-bold text-white">30 October 2026</strong>
+              <strong className="block text-md font-bold text-white">30 October 2026</strong>
             </span>
           </div>
         </div>
@@ -157,7 +157,7 @@ export default function PrivacyPolicyPage() {
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-lg text-sky-800">i</span>
               <div>
                 <p className="text-[10px] font-black uppercase tracking-[0.2em] text-sky-800">Privacy at a glance</p>
-                <p className="mt-2 text-sm leading-7 text-slate-600 sm:text-base">
+                <p className="mt-2 text-md leading-7 text-slate-600 sm:text-base">
                   This Privacy Policy explains how AeroSun Energy collects, uses, protects, and manages information shared through our website, customer enquiries, project discussions, and renewable-energy service interactions.
                 </p>
               </div>
@@ -169,9 +169,9 @@ export default function PrivacyPolicyPage() {
                 { label: 'Respect', text: 'Your information and privacy choices' },
               ].map((item, index) => (
                 <div key={item.label} className="flex gap-3 rounded-xl bg-[#f4f8fc] p-3">
-                  <span className="font-mono text-xs font-bold text-sky-700">0{index + 1}</span>
-                  <span className="text-xs leading-5 text-slate-600">
-                    <strong className="block text-sm text-slate-900">{item.label}</strong>
+                  <span className="font-mono text-md font-bold text-sky-700">0{index + 1}</span>
+                  <span className="text-md leading-5 text-slate-600">
+                    <strong className="block text-md text-slate-900">{item.label}</strong>
                     {item.text}
                   </span>
                 </div>
@@ -187,15 +187,15 @@ export default function PrivacyPolicyPage() {
                 className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-[0_15px_45px_-40px_rgba(15,23,42,0.5)]"
               >
                 <div className="flex items-start gap-4 p-5 sm:p-6">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-sky-200 bg-sky-50 font-mono text-xs font-bold text-sky-800">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-sky-200 bg-sky-50 font-mono text-md font-bold text-sky-800">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <div className="min-w-0 flex-1">
                     <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{section.heading}</h2>
-                    <p className="mt-3 text-sm leading-7 text-slate-600 sm:text-base">{section.content}</p>
+                    <p className="mt-3 text-md leading-7 text-slate-600 sm:text-base">{section.content}</p>
                     <ul className="mt-4 space-y-2.5">
                       {section.bullets.map((item) => (
-                        <li key={item} className="flex items-start gap-3 text-sm leading-6 text-slate-600">
+                        <li key={item} className="flex items-start gap-3 text-md leading-6 text-slate-600">
                           <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500" />
                           <span>{item}</span>
                         </li>
@@ -208,7 +208,7 @@ export default function PrivacyPolicyPage() {
             ))}
           </div>
 
-          <p className="mt-7 rounded-2xl border border-sky-200/80 bg-white p-5 text-sm leading-7 text-slate-600">
+          <p className="mt-7 rounded-2xl border border-sky-200/80 bg-white p-5 text-md leading-7 text-slate-600">
             Need clarification? Please use the{' '}
             <Link href="/contact" className="font-bold text-sky-800 underline decoration-sky-300 underline-offset-4 hover:text-indigo-800">
               Contact page
@@ -221,14 +221,14 @@ export default function PrivacyPolicyPage() {
           <nav aria-label="Privacy policy sections" className="overflow-hidden rounded-2xl border border-sky-200/80 bg-white shadow-sm">
             <div className="border-b border-slate-100 px-5 py-4">
               <p className="text-[10px] font-black uppercase tracking-[0.2em] text-sky-800">Find a topic</p>
-              <p className="mt-1 text-sm font-bold text-slate-900">Policy contents</p>
+              <p className="mt-1 text-md font-bold text-slate-900">Policy contents</p>
             </div>
             <ol className="max-h-[55vh] space-y-1 overflow-y-auto p-3 lg:max-h-[calc(100vh-15rem)]">
               {privacySections.map((section, index) => (
                 <li key={section.heading}>
                   <a
                     href={`#privacy-${index + 1}`}
-                    className="flex items-start gap-3 rounded-xl px-3 py-2.5 text-xs leading-5 text-slate-600 transition hover:bg-sky-50 hover:text-sky-900"
+                    className="flex items-start gap-3 rounded-xl px-3 py-2.5 text-md leading-5 text-slate-600 transition hover:bg-sky-50 hover:text-sky-900"
                   >
                     <span className="font-mono font-bold text-sky-700/70">{String(index + 1).padStart(2, '0')}</span>
                     <span>{section.heading.replace(/^\d+\.\s*/, '')}</span>
@@ -240,7 +240,7 @@ export default function PrivacyPolicyPage() {
 
           <section className="rounded-2xl bg-[#101c32] p-5 text-white">
             <p className="text-[10px] font-black uppercase tracking-[0.2em] text-sky-300">Information we protect</p>
-            <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-200">
+            <ul className="mt-4 space-y-3 text-md leading-6 text-slate-200">
               <li>Customer contact details and business information</li>
               <li>Project enquiries and energy requirements</li>
               <li>Technical site and feasibility information</li>
@@ -250,7 +250,7 @@ export default function PrivacyPolicyPage() {
 
           <section className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
             <p className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-800">Our principles</p>
-            <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
+            <ul className="mt-4 space-y-3 text-md leading-6 text-slate-700">
               <li>We collect only what is necessary for our services and business operations.</li>
               <li>We use data responsibly for enquiries, project support, and service delivery.</li>
               <li>We protect personal and project information with reasonable safeguards.</li>

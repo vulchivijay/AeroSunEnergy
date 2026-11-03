@@ -216,7 +216,7 @@ function SolarHeroSlider() {
                 {slide.title}
               </h1>
 
-              <p className="mt-4 max-w-xl text-sm leading-7 text-slate-100/95 sm:text-base lg:text-lg">
+              <p className="mt-4 max-w-xl text-md leading-7 text-slate-100/95 sm:text-base lg:text-lg">
                 {slide.description}
               </p>
 
@@ -280,7 +280,7 @@ export default function SolarEnergyPage() {
               ].map(([name, detail]) => (
                 <div key={name} className="bg-white/[0.08] p-3.5 sm:p-4">
                   <p className="font-bold text-white">{name}</p>
-                  <p className="mt-1 text-xs text-white">{detail}</p>
+                  <p className="mt-1 text-md text-white">{detail}</p>
                 </div>
               ))}
             </div>
@@ -405,7 +405,7 @@ export default function SolarEnergyPage() {
             <h2 className="mt-3 text-3xl font-bold text-slate-900">Main solar system types</h2>
 
             <div className="mt-6 overflow-hidden rounded-3xl border border-slate-200">
-              <div className="grid grid-cols-1 border-b border-slate-200 bg-slate-50 text-xs font-semibold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-[1.3fr_0.9fr_0.8fr_1.4fr]">
+              <div className="grid grid-cols-1 border-b border-slate-200 bg-slate-50 text-md font-semibold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-[1.3fr_0.9fr_0.8fr_1.4fr]">
                 <div className="px-4 py-3">System type</div>
                 <div className="px-4 py-3">Battery</div>
                 <div className="px-4 py-3">Grid</div>
@@ -414,7 +414,7 @@ export default function SolarEnergyPage() {
 
               <div className="divide-y divide-slate-200">
                 {comparisonRows.map((row) => (
-                  <div key={row.type} className="grid gap-3 px-4 py-4 text-sm text-slate-700 md:grid-cols-[1.3fr_0.9fr_0.8fr_1.4fr] md:gap-0">
+                  <div key={row.type} className="grid gap-3 px-4 py-4 text-md text-slate-700 md:grid-cols-[1.3fr_0.9fr_0.8fr_1.4fr] md:gap-0">
                     <div className="font-bold text-slate-900">{row.type}</div>
                     <div>{row.battery}</div>
                     <div>{row.grid}</div>
@@ -473,7 +473,7 @@ export default function SolarEnergyPage() {
                   A rooftop solar system is estimated using system size, sunlight hours, panel efficiency, and site conditions. A simple formula is:<br />
                   <span className="font-bold text-slate-900">Monthly generation ≈ kWp × sun hours × 30 × performance factor</span>
                 </p>
-                <p className="mt-2 text-sm text-slate-600">
+                <p className="mt-2 text-md text-slate-600">
                   Example: 4 kWp × 5 hours × 30 days × 0.8 ≈ 480 units per month.
                 </p>
               </div>
@@ -491,7 +491,7 @@ export default function SolarEnergyPage() {
             <div className="rounded-4xl border border-slate-200 bg-slate-950 p-5 shadow-[0_28px_70px_-36px_rgba(15,23,42,0.9)]">
               <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-200">Example</p>
               <h3 className="mt-2 text-xl font-bold text-white">Household solar balance</h3>
-              <div className="mt-5 space-y-4 text-sm leading-7 text-slate-200">
+              <div className="mt-5 space-y-4 text-md leading-7 text-slate-200">
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
                   <span className="font-bold text-white">Monthly house consumption:</span> 600 units
                 </div>

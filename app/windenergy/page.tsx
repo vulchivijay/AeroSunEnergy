@@ -179,7 +179,7 @@ function WindHeroSlider() {
                 {slide.title}
               </h1>
 
-              <p className="mt-4 max-w-xl text-sm leading-7 text-slate-100/95 sm:text-base lg:text-lg">
+              <p className="mt-4 max-w-xl text-md leading-7 text-slate-100/95 sm:text-base lg:text-lg">
                 {slide.description}
               </p>
 
@@ -396,12 +396,12 @@ export default function WindEnergyPage() {
                   ['HYBRID', 'Solar + wind'],
                 ].map(([label, detail], index) => (
                   <div key={label} className="flex items-center gap-3">
-                    <span className={`flex h-9 w-9 items-center justify-center rounded-xl text-xs font-black ${index === 0 ? 'bg-sky-300 text-slate-950' : index === 1 ? 'bg-cyan-300 text-slate-950' : 'bg-emerald-300 text-slate-950'}`}>
+                    <span className={`flex h-9 w-9 items-center justify-center rounded-xl text-md font-black ${index === 0 ? 'bg-sky-300 text-slate-950' : index === 1 ? 'bg-cyan-300 text-slate-950' : 'bg-emerald-300 text-slate-950'}`}>
                       {index + 1}
                     </span>
                     <span>
-                      <span className="block text-sm font-bold text-white">{label}</span>
-                      <span className="block text-xs text-slate-300">{detail}</span>
+                      <span className="block text-md font-bold text-white">{label}</span>
+                      <span className="block text-md text-slate-300">{detail}</span>
                     </span>
                   </div>
                 ))}
@@ -518,7 +518,7 @@ export default function WindEnergyPage() {
 
             <div className="rounded-4xl border border-emerald-200 bg-emerald-50 p-5">
               <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-700">AeroSun view</p>
-              <div className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
+              <div className="mt-4 space-y-3 text-md leading-7 text-slate-700">
                 <div className="rounded-2xl bg-white p-3">1. Small wind turbines, 1–10 kW</div>
                 <div className="rounded-2xl bg-white p-3">2. Solar–wind hybrid systems</div>
                 <div className="rounded-2xl bg-white p-3">3. Commercial systems, 10–100 kW</div>
@@ -539,12 +539,12 @@ export default function WindEnergyPage() {
             <div key={section.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="text-2xl font-bold text-slate-900">{section.title}</h3>
               <p className="mt-2 text-base leading-7 text-slate-700">{section.heading}</p>
-              <p className="mt-4 text-sm leading-6 text-slate-600">{section.overview}</p>
+              <p className="mt-4 text-md leading-6 text-slate-600">{section.overview}</p>
 
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <div>
-                  <h4 className="text-sm font-semibold text-slate-800">Typical applications</h4>
-                  <ul className="mt-2 space-y-2 text-sm leading-6 text-slate-600">
+                  <h4 className="text-md font-semibold text-slate-800">Typical applications</h4>
+                  <ul className="mt-2 space-y-2 text-md leading-6 text-slate-600">
                     {section.applications.map((app) => (
                       <li key={app.title} className="flex gap-3">
                         <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
@@ -554,7 +554,7 @@ export default function WindEnergyPage() {
                         </div>
                         <div>
                           <div className="font-medium text-slate-800">{app.title}</div>
-                          <div className="text-sm leading-6 text-slate-600">{app.description}</div>
+                          <div className="text-md leading-6 text-slate-600">{app.description}</div>
                         </div>
                       </li>
                     ))}
@@ -562,8 +562,8 @@ export default function WindEnergyPage() {
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-semibold text-slate-800">Key benefits</h4>
-                  <ul className="mt-2 space-y-2 text-sm leading-6 text-slate-600">
+                  <h4 className="text-md font-semibold text-slate-800">Key benefits</h4>
+                  <ul className="mt-2 space-y-2 text-md leading-6 text-slate-600">
                     {section.benefits.map((benefit) => (
                       <li key={benefit} className="flex gap-3">
                         <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
@@ -571,32 +571,32 @@ export default function WindEnergyPage() {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <div className="text-sm leading-6 text-slate-600">{benefit}</div>
+                        <div className="text-md leading-6 text-slate-600">{benefit}</div>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
 
-              <div className="mt-6 rounded-lg bg-slate-50 p-4 text-sm text-slate-700">
+              <div className="mt-6 rounded-lg bg-slate-50 p-4 text-md text-slate-700">
                 <div className="flex items-center justify-between">
                   <div className="font-medium">Illustrative calculation</div>
-                  <div className="text-xs text-slate-500">{section.calculation.label}</div>
+                  <div className="text-md text-slate-500">{section.calculation.label}</div>
                 </div>
                 <div className="mt-2 flex gap-2 text-lg font-bold">
                   <div className="text-emerald-600">{section.calculation.result}</div>
                   <div className="text-slate-500">{section.calculation.formula}</div>
                 </div>
-                <div className="mt-2 text-xs text-slate-500">{section.calculation.note}</div>
+                <div className="mt-2 text-md text-slate-500">{section.calculation.note}</div>
               </div>
 
               <div className="mt-6 border-t border-slate-200 pt-4">
-                <h4 className="text-sm font-semibold text-slate-800">FAQs</h4>
-                <div className="mt-2 space-y-3 text-sm leading-6 text-slate-600">
+                <h4 className="text-md font-semibold text-slate-800">FAQs</h4>
+                <div className="mt-2 space-y-3 text-md leading-6 text-slate-600">
                   {section.faqs.map((faq) => (
                     <div key={faq.question} className="flex flex-col gap-1">
                       <div className="font-medium text-slate-800">{faq.question}</div>
-                      <div className="text-sm">{faq.answer}</div>
+                      <div className="text-md">{faq.answer}</div>
                     </div>
                   ))}
                 </div>

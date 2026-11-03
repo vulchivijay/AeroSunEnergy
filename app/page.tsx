@@ -81,9 +81,9 @@ function RecognitionHighlight() {
                 </div>
                 <div className="mt-5">
                   <h3 className="text-2xl font-black tracking-tighter text-[#18251F]">{item.title}</h3>
-                  <p className="mt-1 text-sm text-[#335247]">{item.subtitle}</p>
+                  <p className="mt-1 text-md text-[#335247]">{item.subtitle}</p>
                 </div>
-                <div className="mt-5 rounded-2xl border border-[#e9efe9] bg-[#f8faf8] p-3 text-sm leading-6 text-[#234136]">
+                <div className="mt-5 rounded-2xl border border-[#e9efe9] bg-[#f8faf8] p-3 text-md leading-6 text-[#234136]">
                   {item.text}
                 </div>
               </div>

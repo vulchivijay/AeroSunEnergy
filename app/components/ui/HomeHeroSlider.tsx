@@ -153,7 +153,7 @@ export default function HomeHeroSlider() {
                 {slide.title}
               </h1>
 
-              <p className="mt-4 max-w-xl text-sm leading-7 text-slate-100/95 sm:text-base lg:text-lg">
+              <p className="mt-4 max-w-xl text-md leading-7 text-slate-100/95 sm:text-base lg:text-lg">
                 {slide.description}
               </p>
 
@@ -171,13 +171,13 @@ export default function HomeHeroSlider() {
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 <Link
                   href="/contact"
-                  className="rounded-full bg-emerald-500 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-emerald-950 shadow-[0_18px_30px_-18px_rgba(16,185,129,0.9)] transition hover:bg-emerald-400"
+                  className="rounded-full bg-emerald-500 px-5 py-3 text-md font-black uppercase tracking-[0.18em] text-emerald-950 shadow-[0_18px_30px_-18px_rgba(16,185,129,0.9)] transition hover:bg-emerald-400"
                 >
                   Get Free Quote
                 </Link>
                 <Link
                   href="/estimation-calculator"
-                  className="rounded-full border border-white/15 bg-white/8 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-white backdrop-blur-sm transition hover:border-white/30 hover:bg-white/12"
+                  className="rounded-full border border-white/15 bg-white/8 px-5 py-3 text-md font-black uppercase tracking-[0.18em] text-white backdrop-blur-sm transition hover:border-white/30 hover:bg-white/12"
                 >
                   Estimate Savings
                 </Link>

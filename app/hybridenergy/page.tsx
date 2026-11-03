@@ -350,7 +350,7 @@ function HybridHeroSlider() {
                 {slide.title}
               </h1>
 
-              <p className="mt-4 max-w-xl text-sm leading-7 text-slate-100/95 sm:text-base lg:text-lg">
+              <p className="mt-4 max-w-xl text-md leading-7 text-slate-100/95 sm:text-base lg:text-lg">
                 {slide.description}
               </p>
 
@@ -408,20 +408,20 @@ export default function HybridEnergyPage() {
                 ['Wind', 'Moving air', 'bg-sky-300 text-slate-950'],
               ].map(([label, detail, color]) => (
                 <div key={label} className="relative z-10 rounded-2xl border border-white/15 bg-slate-950/25 p-3.5 text-center sm:p-4">
-                  <span className={`mx-auto flex h-10 w-10 items-center justify-center rounded-full text-sm font-black ${color}`}>
+                  <span className={`mx-auto flex h-10 w-10 items-center justify-center rounded-full text-md font-black ${color}`}>
                     {label === 'Solar' ? (
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42m0-14.14-1.42 1.42M6.35 17.65l-1.42 1.42" /></svg>
                     ) : (
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5" aria-hidden="true"><path d="M3 8h13a3 3 0 1 0-3-3M2 12h17a3 3 0 1 1-3 3M4 16h8" strokeLinecap="round" /></svg>
                     )}
                   </span>
-                  <p className="mt-2 text-sm font-bold text-white">{label}</p>
-                  <p className="text-xs text-slate-300">{detail}</p>
+                  <p className="mt-2 text-md font-bold text-white">{label}</p>
+                  <p className="text-md text-slate-300">{detail}</p>
                 </div>
               ))}
               <div className="relative z-10 col-span-2 mx-auto w-full max-w-56 rounded-2xl border border-emerald-200/25 bg-emerald-300/10 p-3.5 text-center">
-                <p className="text-sm font-bold text-emerald-100">Storage + smart controls</p>
-                <p className="mt-1 text-xs text-slate-200">Balance supply with demand</p>
+                <p className="text-md font-bold text-emerald-100">Storage + smart controls</p>
+                <p className="mt-1 text-md text-slate-200">Balance supply with demand</p>
               </div>
             </div>
             <div className="mt-5 flex flex-wrap gap-2 border-t border-white/10 pt-4">
@@ -430,7 +430,7 @@ export default function HybridEnergyPage() {
                 ['Off-grid', 'Independent'],
                 ['Microgrid', 'Local network'],
               ].map(([label, detail]) => (
-                <span key={label} className="rounded-full border border-white/15 bg-white/[0.05] px-3 py-1.5 text-xs text-slate-200">
+                <span key={label} className="rounded-full border border-white/15 bg-white/[0.05] px-3 py-1.5 text-md text-slate-200">
                   <strong className="font-bold text-white">{label}</strong> · {detail}
                 </span>
               ))}
@@ -527,9 +527,9 @@ export default function HybridEnergyPage() {
                   <div className="mt-6 grid gap-4 md:grid-cols-3">
                     {service.applications.map((item) => (
                       <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                        <p className="text-sm font-black uppercase tracking-[0.18em] text-slate-600">Application</p>
+                        <p className="text-md font-black uppercase tracking-[0.18em] text-slate-600">Application</p>
                         <h5 className="mt-3 text-lg font-bold text-slate-900">{item.title}</h5>
-                        <p className="mt-2 text-sm leading-6 text-slate-700">{item.description}</p>
+                        <p className="mt-2 text-md leading-6 text-slate-700">{item.description}</p>
                       </div>
                     ))}
                   </div>
@@ -537,7 +537,7 @@ export default function HybridEnergyPage() {
 
                 <div className="rounded-[1.8rem] border border-emerald-200 bg-emerald-50 p-5">
                   <p className="text-[10px] font-black uppercase tracking-[0.26em] text-emerald-700">Benefits</p>
-                  <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
+                  <ul className="mt-4 space-y-3 text-md leading-7 text-slate-700">
                     {service.benefits.map((benefit) => (
                       <li key={benefit} className="flex items-start gap-3 rounded-2xl bg-white/70 p-3">
                         <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[10px] font-black text-emerald-700">✓</span>
@@ -552,9 +552,9 @@ export default function HybridEnergyPage() {
                 <div className="rounded-[1.75rem] border border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ffffff_100%)] p-5">
                   <p className="text-[10px] font-black uppercase tracking-[0.24em] text-sky-700">Example calculation</p>
                   <h4 className="mt-3 text-xl font-black tracking-[0.03em] text-slate-900">{service.calculation.label}</h4>
-                  <p className="mt-3 font-mono text-sm leading-7 text-slate-800">{service.calculation.formula}</p>
-                  <div className="mt-4 rounded-2xl bg-slate-900 p-3 text-sm font-semibold text-white">{service.calculation.result}</div>
-                  <p className="mt-4 text-sm leading-6 text-slate-700">{service.calculation.note}</p>
+                  <p className="mt-3 font-mono text-md leading-7 text-slate-800">{service.calculation.formula}</p>
+                  <div className="mt-4 rounded-2xl bg-slate-900 p-3 text-md font-semibold text-white">{service.calculation.result}</div>
+                  <p className="mt-4 text-md leading-6 text-slate-700">{service.calculation.note}</p>
                 </div>
 
                 <div className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-5">
@@ -562,8 +562,8 @@ export default function HybridEnergyPage() {
                   <div className="mt-4 space-y-4">
                     {service.faqs.map((item) => (
                       <div key={item.question} className="rounded-2xl border border-slate-200 bg-white p-3.5">
-                        <p className="text-sm font-black text-slate-900">{item.question}</p>
-                        <p className="mt-2 text-sm leading-7 text-slate-700">{item.answer}</p>
+                        <p className="text-md font-black text-slate-900">{item.question}</p>
+                        <p className="mt-2 text-md leading-7 text-slate-700">{item.answer}</p>
                       </div>
                     ))}
                   </div>
@@ -573,13 +573,13 @@ export default function HybridEnergyPage() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
+                  className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-3 text-md font-semibold text-white transition hover:bg-slate-700"
                 >
                   Request energy assessment
                 </a>
                 <a
                   href="/customer-enquiry"
-                  className="inline-flex items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 px-5 py-3 text-sm font-semibold text-emerald-700 transition hover:border-emerald-300 hover:bg-emerald-100"
+                  className="inline-flex items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 px-5 py-3 text-md font-semibold text-emerald-700 transition hover:border-emerald-300 hover:bg-emerald-100"
                 >
                   Enquire now
                 </a>
@@ -607,7 +607,7 @@ export default function HybridEnergyPage() {
               <div className="mt-6 space-y-3">
                 {productPriorities.map((item, index) => (
                   <div key={item} className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 text-sm font-bold text-emerald-700">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 text-md font-bold text-emerald-700">
                       {index + 1}
                     </div>
                     <div className="text-base font-medium text-slate-800">{item}</div>

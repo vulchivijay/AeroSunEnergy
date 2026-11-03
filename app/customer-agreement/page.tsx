@@ -262,49 +262,147 @@ export default function CustomerAgreementPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(30,64,175,0.12),transparent_18%),linear-gradient(180deg,#f8fafc_0%,#eef6ff_28%,#f8fafc_100%)] px-4 py-8 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-6xl space-y-8">
-        <section className="overflow-hidden rounded-[30px] border border-slate-200 bg-white/90 shadow-[0_28px_90px_-35px_rgba(15,23,42,0.38)] backdrop-blur-sm">
-          <div className="border-b border-slate-200 bg-linear-to-r from-[#0c1f51] via-[#153c78] to-[#0d6685] p-5 text-white sm:p-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.34em] text-indigo-100/85">Project Execution</p>
-            <h1 className="mt-2 text-2xl font-black tracking-[0.06em] sm:text-3xl">AeroSun Energy Project Execution Process</h1>
+    <main className="min-h-screen bg-[#f2f6fb] text-slate-800">
+      <header className="relative isolate overflow-hidden bg-[#101c32] text-white">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_18%_90%,rgba(99,102,241,0.24),transparent_38%),radial-gradient(ellipse_at_88%_10%,rgba(14,165,233,0.2),transparent_34%)]" />
+        <div className="absolute -right-20 top-[-12rem] -z-10 h-[35rem] w-[35rem] rounded-full border border-indigo-100/10">
+          <div className="absolute inset-10 rounded-full border border-indigo-100/10" />
+          <div className="absolute inset-20 rounded-full border border-indigo-100/10" />
+          <div className="absolute inset-32 rounded-full border border-indigo-100/10" />
+        </div>
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1fr_auto] lg:px-10">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-100/20 bg-white/5 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-indigo-100">
+              <span className="h-1.5 w-1.5 rounded-full bg-indigo-300 shadow-[0_0_12px_rgba(165,180,252,0.8)]" />
+              Agreement · Scope · Acceptance
+            </div>
+            <h1 className="mt-6 text-4xl font-black tracking-[0.065em] text-white sm:text-6xl lg:text-7xl">
+              Clear terms.
+              <span className="mt-1 block text-sky-300">Confident projects.</span>
+            </h1>
+            <p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-base sm:leading-8">
+              Review AeroSun Energy&apos;s project execution process, scope, payment milestones, and customer acceptance details.
+            </p>
           </div>
-          <div className="p-4 sm:p-6 lg:p-8">
-            {projectExecutionSections.map((section, index) => (
-              <div key={section.title} className="mb-8 last:mb-0">
-                <h2 className="text-xl font-bold text-slate-900">{section.title}</h2>
-                <p className="mt-2 mb-4 text-sm leading-7 text-slate-700">{section.text}</p>
-                <ul className="list-inside list-disc space-y-2 pl-4 text-sm leading-7 text-slate-700">
-                  {section.points.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="flex w-fit items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.06] px-5 py-4 backdrop-blur">
+            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-300/10 text-xl text-indigo-200">7</span>
+            <span className="text-md leading-5 text-slate-300">
+              Project lifecycle
+              <strong className="block text-md font-bold text-white">From enquiry to service</strong>
+            </span>
           </div>
-        </section>
+        </div>
+        <div className="border-t border-white/10">
+          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[10px] font-bold uppercase tracking-[0.18em] text-indigo-100/60 sm:px-8 lg:px-10">
+            <span>Project process</span>
+            <span>Customer details</span>
+            <span>Commercial terms</span>
+            <span>Acceptance</span>
+          </div>
+        </div>
+      </header>
 
-        <div className="overflow-hidden rounded-[30px] border border-slate-200 bg-white/90 shadow-[0_28px_90px_-35px_rgba(15,23,42,0.38)] backdrop-blur-sm">
-          <div className="grid gap-8 bg-linear-to-br from-[#0c1f51] to-[#0d6685] p-6 text-white">
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {projectSummaryCards.map((card) => (
-                <div key={card.title} className={`rounded-2xl p-4 shadow-md transition-all duration-200 ${card.accent === 'emerald' ? 'bg-emerald-500/10 hover:scale-[1.02]' : card.accent === 'sky' ? 'bg-sky-500/10 hover:scale-[1.02]' : 'bg-violet-500/10 hover:scale-[1.02]'}`}>
-                  <h3 className="text-lg font-semibold">{card.title}</h3>
-                  <p className="mt-2 text-sm leading-6">{card.description}</p>
+      <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:px-8 sm:py-14 lg:grid-cols-[minmax(0,1fr)_290px] lg:gap-12 lg:px-10">
+        <article className="min-w-0">
+          <section className="mb-8 rounded-3xl border border-indigo-200/80 bg-white p-6 shadow-[0_20px_55px_-42px_rgba(15,23,42,0.5)] sm:p-8">
+            <div className="flex items-start gap-4">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-100 text-lg text-indigo-800">i</span>
+              <div>
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-indigo-800">Agreement at a glance</p>
+                <p className="mt-2 text-md leading-7 text-slate-600 sm:text-base">
+                  A traceable project process connects customer requirements, engineering, procurement, installation, commissioning, and long-term service.
+                </p>
+              </div>
+            </div>
+            <div className="mt-6 grid gap-3 border-t border-slate-100 pt-5 sm:grid-cols-3">
+              {projectSummaryCards.map((card, index) => (
+                <div key={card.title} className="flex gap-3 rounded-xl bg-[#f4f8fc] p-3">
+                  <span className="font-mono text-md font-bold text-indigo-700">0{index + 1}</span>
+                  <span className="text-md leading-5 text-slate-600">
+                    <strong className="block text-md text-slate-900">{card.title}</strong>
+                    {card.description}
+                  </span>
                 </div>
               ))}
             </div>
+            <h2 className="mt-6 text-md font-bold text-slate-900">Core process steps</h2>
+            <ol className="mt-3 grid gap-2 sm:grid-cols-2">
+              {coreProcessSteps.map((step, index) => (
+                <li key={step} className="flex gap-3 rounded-xl bg-[#f4f8fc] p-3 text-md leading-5 text-slate-600">
+                  <span className="font-mono font-bold text-indigo-700">{String(index + 1).padStart(2, '0')}</span>
+                  <span>{step}</span>
+                </li>
+              ))}
+            </ol>
+          </section>
 
-            <div className="rounded-2xl bg-white p-6 shadow-md">
-              <h2 className="mb-4 text-xl font-bold">Core Process Steps</h2>
-              <ol className="list-inside list-decimal space-y-2 pl-4 text-sm leading-6 text-slate-700">
-                {coreProcessSteps.map((step, index) => (
-                  <li key={index}>{step}</li>
-                ))}
-              </ol>
-            </div>
+          <div className="space-y-4">
+            {projectExecutionSections.map((section, index) => (
+              <section key={section.title} id={`agreement-process-${index + 1}`} className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-[0_15px_45px_-40px_rgba(15,23,42,0.5)]">
+                <div className="flex items-start gap-4 p-5 sm:p-6">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-indigo-200 bg-indigo-50 font-mono text-md font-bold text-indigo-800">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{section.title.replace(/^(?:\d+\.\s*)/, '')}</h2>
+                    <p className="mt-3 text-md leading-7 text-slate-600 sm:text-base">{section.text}</p>
+                    <ul className="mt-4 space-y-2.5">
+                      {section.points.map((point) => (
+                        <li key={point} className="flex items-start gap-3 text-md leading-6 text-slate-600">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500" />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="h-px bg-linear-to-r from-indigo-100 via-sky-100 to-transparent" />
+              </section>
+            ))}
           </div>
 
+          <p className="mt-7 rounded-2xl border border-indigo-200/80 bg-white p-5 text-md leading-7 text-slate-600">
+            Have a question about your project terms? Contact our team at{' '}
+            <a href="mailto:customercare@aerosunenergy.in" className="font-bold text-indigo-800 underline decoration-indigo-300 underline-offset-4">customercare@aerosunenergy.in</a>.
+          </p>
+        </article>
+
+        <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
+          <nav aria-label="Project execution sections" className="overflow-hidden rounded-2xl border border-indigo-200/80 bg-white shadow-sm">
+            <div className="border-b border-slate-100 px-5 py-4">
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-indigo-800">Find a topic</p>
+              <p className="mt-1 text-md font-bold text-slate-900">Project process</p>
+            </div>
+            <ol className="max-h-[55vh] space-y-1 overflow-y-auto p-3 lg:max-h-[calc(100vh-15rem)]">
+              {projectExecutionSections.map((section, index) => (
+                <li key={section.title}>
+                  <a href={`#agreement-process-${index + 1}`} className="flex items-start gap-3 rounded-xl px-3 py-2.5 text-md leading-5 text-slate-600 transition hover:bg-indigo-50 hover:text-indigo-900">
+                    <span className="font-mono font-bold text-indigo-700/70">{String(index + 1).padStart(2, '0')}</span>
+                    <span>{section.title.replace(/^(?:\d+\.\s*)/, '')}</span>
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a href="#customer-agreement-form" className="flex items-start gap-3 rounded-xl px-3 py-2.5 text-md leading-5 text-slate-600 transition hover:bg-indigo-50 hover:text-indigo-900">
+                  <span className="font-mono font-bold text-indigo-700/70">AG</span>
+                  <span>Agreement form</span>
+                </a>
+              </li>
+            </ol>
+          </nav>
+          <section className="rounded-2xl bg-[#101c32] p-5 text-white">
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-indigo-300">Before accepting</p>
+            <ul className="mt-4 space-y-3 text-md leading-6 text-slate-200">
+              <li>Review the agreed scope and technical specifications.</li>
+              <li>Confirm payment milestones and project responsibilities.</li>
+              <li>Ask our team about any items that need clarification.</li>
+            </ul>
+          </section>
+        </aside>
+      </div>
+
+      <section id="customer-agreement-form" className="scroll-mt-28 mx-auto max-w-7xl px-5 pb-14 sm:px-8 lg:px-10">
+        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
           <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5 p-3 sm:p-5 lg:p-6">
             <header className="overflow-hidden rounded-[26px] border border-indigo-200 bg-linear-to-r from-[#0c1f51] via-[#153c78] to-[#0d6685] p-4 text-white sm:p-5">
               <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
@@ -318,7 +416,7 @@ export default function CustomerAgreementPage() {
                   </div>
                 </div>
 
-                <div className="grid gap-2 text-sm sm:grid-cols-3 lg:min-w-104">
+                <div className="grid gap-2 text-md sm:grid-cols-3 lg:min-w-104">
                   <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
                     <p className="text-[11px] font-black uppercase tracking-[0.28em] text-indigo-100/75">Ref.</p>
                     <p className="mt-1 font-semibold">AES/AGR/2026</p>
@@ -411,7 +509,7 @@ export default function CustomerAgreementPage() {
                         'Testing & Commissioning',
                         'Final Handover',
                       ].map((milestone, index) => (
-                        <div key={milestone} className="grid grid-cols-[1.5fr_0.8fr_0.9fr_0.9fr] border-b border-amber-100 last:border-b-0 text-sm text-slate-700">
+                        <div key={milestone} className="grid grid-cols-[1.5fr_0.8fr_0.9fr_0.9fr] border-b border-amber-100 last:border-b-0 text-md text-slate-700">
                           <div className="border-r border-amber-100 px-3 py-3">{index + 1}. {milestone}</div>
                           <div className="border-r border-amber-100 px-3 py-3"><div className="h-7 rounded-md border border-dashed border-slate-200 bg-slate-50/60" /></div>
                           <div className="border-r border-amber-100 px-3 py-3"><div className="h-7 rounded-md border border-dashed border-slate-200 bg-slate-50/60" /></div>
@@ -427,7 +525,7 @@ export default function CustomerAgreementPage() {
                       <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">Scope of Work</h2>
                     </div>
 
-                    <div className="space-y-2 text-sm text-slate-700">
+                    <div className="space-y-2 text-md text-slate-700">
                       { [
                         'Supply of system equipment',
                         'Installation and commissioning',
@@ -451,7 +549,7 @@ export default function CustomerAgreementPage() {
                     <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">Terms & Conditions</h2>
                   </div>
 
-                  <ol className="space-y-2 text-sm leading-7 text-slate-700">
+                  <ol className="space-y-2 text-md leading-7 text-slate-700">
                     { [
                       'This agreement is based on the final approved quotation and technical specifications.',
                       'Prices are valid for the agreed time period and may be revised if the job scope changes.',
@@ -476,7 +574,7 @@ export default function CustomerAgreementPage() {
                 </div>
 
                 <div className="space-y-4">
-                  <p className="text-sm leading-7 text-slate-200">
+                  <p className="text-md leading-7 text-slate-200">
                     I have read and understood the terms and conditions above and agree to proceed with AeroSun Energy Private Limited as per the agreed project scope, payment schedule, and service obligations.
                   </p>
 
@@ -488,33 +586,33 @@ export default function CustomerAgreementPage() {
                     <Field label="Place" placeholder="City / place" register={register} compact dark />
                   </div>
 
-                  <label className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 text-sm leading-6 text-slate-200">
+                  <label className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 text-md leading-6 text-slate-200">
                     <input type="checkbox" {...register('agreed')} aria-invalid={Boolean(errors.agreed)} aria-describedby={errors.agreed ? 'agreed-error' : undefined} className="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-500 focus:ring-indigo-400" />
                     <span>I accept the customer agreement and payment terms stated above.</span>
                   </label>
-                  {errors.agreed && <p id="agreed-error" className="text-xs text-rose-300">{errors.agreed.message}</p>}
+                  {errors.agreed && <p id="agreed-error" className="text-md text-rose-300">{errors.agreed.message}</p>}
 
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex w-full items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-indigo-900 disabled:cursor-not-allowed disabled:opacity-60"
+                    className="inline-flex w-full items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-md font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-indigo-900 disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {isSubmitting ? 'Sending...' : 'Submit agreement'}
                   </button>
 
                   {submitFeedback ? (
-                    <p className={`text-sm font-medium ${submitFeedback.type === 'success' ? 'text-emerald-300' : 'text-rose-300'}`}>
+                    <p className={`text-md font-medium ${submitFeedback.type === 'success' ? 'text-emerald-300' : 'text-rose-300'}`}>
                       {submitFeedback.message}
                     </p>
                   ) : isSubmitSuccessful && (
-                    <p className="text-sm font-medium text-emerald-300">Your agreement submission has been prepared in your email app.</p>
+                    <p className="text-md font-medium text-emerald-300">Your agreement submission has been prepared in your email app.</p>
                   )}
                 </div>
               </aside>
             </div>
           </form>
         </div>
-      </div>
+      </section>
     </main>
   )
 }
@@ -546,9 +644,9 @@ function Field({ label, name, placeholder, type = 'text', register, error, compa
         placeholder={placeholder}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${inputId}-error` : undefined}
-        className={`h-11 w-full rounded-2xl border px-4 py-3 text-sm outline-none transition-all duration-200 placeholder:text-slate-600 focus:ring-4 ${dark ? 'border-white/10 bg-white/5 text-white placeholder:text-slate-400 focus:border-indigo-400 focus:ring-indigo-600/30' : 'border-slate-200 bg-white text-slate-900 focus:border-sky-500 focus:ring-sky-100'}`}
+        className={`h-11 w-full rounded-2xl border px-4 py-3 text-md outline-none transition-all duration-200 placeholder:text-slate-600 focus:ring-4 ${dark ? 'border-white/10 bg-white/5 text-white placeholder:text-slate-400 focus:border-indigo-400 focus:ring-indigo-600/30' : 'border-slate-200 bg-white text-slate-900 focus:border-sky-500 focus:ring-sky-100'}`}
       />
-      {error && <p id={`${inputId}-error`} className="mt-2 text-xs text-rose-300">{error.message}</p>}
+      {error && <p id={`${inputId}-error`} className="mt-2 text-md text-rose-300">{error.message}</p>}
     </div>
   )
 }

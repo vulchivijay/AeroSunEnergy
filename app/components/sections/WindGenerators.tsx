@@ -54,7 +54,7 @@ export default function WindGenerators() {
 
               {/* Content */}
               <div className="flex-1 p-8">
-                <span className={`inline-block text-sm font-semibold tracking-widest px-3 py-1 rounded-md mb-4 ${gen.badgeColor}`}>
+                <span className={`inline-block text-md font-semibold tracking-widest px-3 py-1 rounded-md mb-4 ${gen.badgeColor}`}>
                   {gen.badge}
                 </span>
                 <h3 className="text-2xl font-semibold tracking-widest text-gray-900 dark:text-gray-100 mb-1">{gen.title}</h3>

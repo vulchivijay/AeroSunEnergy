@@ -102,14 +102,14 @@ export default function Navbar() {
     const active = isActive(link.href) && !disabled
     const Icon = navigationIcons[link.href] ?? PanelsTopLeft
     const classes = mobile
-      ? `flex min-h-12 w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium transition ${
+      ? `flex min-h-12 w-full items-center justify-between rounded-xl px-4 py-3 text-md font-medium transition ${
           disabled
             ? 'cursor-not-allowed text-white/35'
             : active
               ? 'bg-[#a5d6a7]/15 text-[#dcedc8] ring-1 ring-inset ring-[#a5d6a7]/40'
               : 'text-white/75 hover:bg-[#a5d6a7]/10 hover:text-[#dcedc8]'
         }`
-      : `group relative z-10 flex min-w-[3.55rem] flex-col items-center gap-1 rounded-xl px-2 py-1.5 text-[13px] transition-colors 2xl:min-w-[4rem] 2xl:text-xs ${
+      : `group relative z-10 flex min-w-[3.55rem] flex-col items-center gap-1 rounded-xl px-2 py-1.5 text-[13px] transition-colors 2xl:min-w-[4rem] 2xl:text-md ${
           active
             ? 'bg-[#a5d6a7]/10 text-[#dcedc8]'
             : disabled
@@ -187,7 +187,7 @@ export default function Navbar() {
               setLangOpen(false)
             }}
             aria-pressed={locale === option.code}
-            className={`flex min-h-11 w-full items-center justify-between rounded-xl px-3 text-sm transition ${
+            className={`flex min-h-11 w-full items-center justify-between rounded-xl px-3 text-md transition ${
               locale === option.code
                 ? 'bg-[#a5d6a7]/15 font-semibold text-[#dcedc8]'
                 : 'text-white/75 hover:bg-[#a5d6a7]/10 hover:text-[#dcedc8]'
@@ -237,7 +237,7 @@ export default function Navbar() {
               aria-label={t.navbar.languageLabel}
               aria-expanded={langOpen}
               aria-controls="desktop-language-options"
-              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3 text-sm tracking-wider text-[#e8ecd9] transition hover:border-[#dcedc8]/70 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3 text-md tracking-wider text-[#e8ecd9] transition hover:border-[#dcedc8]/70 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
             >
               <Globe2 className="h-4 w-4 text-[#c5e1a5]" aria-hidden="true" />
               {languageOptions.find((option) => option.code === locale)?.shortLabel}
@@ -250,7 +250,7 @@ export default function Navbar() {
             href="/aerosun-energy.pdf"
             download="aerosun-energy.pdf"
             aria-label="Download AeroSun Energy voucher"
-            className="inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-xs font-semibold text-[#e8d4a0] transition hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-md font-semibold text-[#e8d4a0] transition hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
           >
             <ArrowDownToLine className="h-4 w-4" aria-hidden="true" />
             <span className="hidden 2xl:inline">Voucher</span>
@@ -261,7 +261,7 @@ export default function Navbar() {
             title={t.navbar.startProjectTitle}
             aria-label={t.navbar.startProjectAriaLabel}
             data-cta="start-project"
-            className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-[#a5d6a7] px-4 text-sm font-bold text-[#173b2c] shadow-[0_8px_24px_-12px_rgba(165,214,167,0.45)] transition hover:-translate-y-0.5 hover:bg-[#dcedc8] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#a5d6a7]"
+            className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-[#a5d6a7] px-4 text-md font-bold text-[#173b2c] shadow-[0_8px_24px_-12px_rgba(165,214,167,0.45)] transition hover:-translate-y-0.5 hover:bg-[#dcedc8] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#a5d6a7]"
           >
             {t.navbar.startProject}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
@@ -279,7 +279,7 @@ export default function Navbar() {
               aria-label={`${t.navbar.languageLabel}: ${languageOptions.find((option) => option.code === locale)?.label}`}
               aria-expanded={langOpen}
               aria-controls="mobile-language-options"
-              className="inline-flex h-11 min-w-12 items-center justify-center gap-1.5 rounded-full border border-white/15 bg-white/[0.05] px-2.5 text-xs font-bold text-[#f4f0e2] transition hover:border-[#dcedc8]/70 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7] max-[359px]:w-11 max-[359px]:min-w-11 max-[359px]:px-0"
+              className="inline-flex h-11 min-w-12 items-center justify-center gap-1.5 rounded-full border border-white/15 bg-white/[0.05] px-2.5 text-md font-bold text-[#f4f0e2] transition hover:border-[#dcedc8]/70 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7] max-[359px]:w-11 max-[359px]:min-w-11 max-[359px]:px-0"
             >
               <Globe2 className="h-4 w-4 text-[#c5e1a5]" aria-hidden="true" />
               <span className="max-[359px]:sr-only">{languageOptions.find((option) => option.code === locale)?.shortLabel}</span>
@@ -322,7 +322,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={closeMenu}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#a5d6a7] px-5 text-sm font-bold text-[#173b2c] transition hover:bg-[#dcedc8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#a5d6a7] px-5 text-md font-bold text-[#173b2c] transition hover:bg-[#dcedc8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
             >
               {t.navbar.startProject}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -331,7 +331,7 @@ export default function Navbar() {
               href="/aerosun-energy.pdf"
               download="aerosun-energy.pdf"
               onClick={closeMenu}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-5 text-sm font-semibold text-[#e8d4a0] transition hover:border-[#dcedc8]/60 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-5 text-md font-semibold text-[#e8d4a0] transition hover:border-[#dcedc8]/60 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
             >
               <ArrowDownToLine className="h-4 w-4" aria-hidden="true" />
               Download voucher

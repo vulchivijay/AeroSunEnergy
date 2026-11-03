@@ -1706,7 +1706,7 @@ function renderBlocks(blocks: DocumentaryBlock[]) {
 
     if (block.type === 'paragraph') {
       return (
-        <p key={`paragraph-${index}`} className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
+        <p key={`paragraph-${index}`} className="mt-4 text-md leading-7 text-slate-600 sm:text-base sm:leading-8">
           {block.text}
         </p>
       )
@@ -1717,7 +1717,7 @@ function renderBlocks(blocks: DocumentaryBlock[]) {
       return (
         <ListTag
           key={`list-${index}`}
-          className={`mt-4 space-y-2.5 pl-6 text-sm leading-7 text-slate-600 marker:font-bold marker:text-emerald-600 sm:text-base sm:leading-8 ${
+          className={`mt-4 space-y-2.5 pl-6 text-md leading-7 text-slate-600 marker:font-bold marker:text-emerald-600 sm:text-base sm:leading-8 ${
             block.ordered ? 'list-decimal' : 'list-disc'
           }`}
         >
@@ -1734,8 +1734,8 @@ function renderBlocks(blocks: DocumentaryBlock[]) {
       return (
         <div key={`table-${index}`} className="my-7 overflow-hidden rounded-2xl border border-emerald-100">
           <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-emerald-100 text-left text-sm">
-              <thead className="bg-emerald-50 text-xs font-bold uppercase tracking-wider text-emerald-900">
+            <table className="min-w-full divide-y divide-emerald-100 text-left text-md">
+              <thead className="bg-emerald-50 text-md font-bold uppercase tracking-wider text-emerald-900">
                 <tr>
                   {block.headers.map((header, headerIndex) => (
                     <th key={headerIndex} scope="col" className="px-5 py-4">
@@ -1794,13 +1794,13 @@ export default function SaveEarthPage() {
             <div className="mt-9 flex flex-wrap gap-3">
               <a
                 href="#documentary"
-                className="rounded-full bg-lime-300 px-6 py-3 text-sm font-bold text-emerald-950 shadow-lg shadow-lime-950/20 transition hover:bg-lime-200"
+                className="rounded-full bg-lime-300 px-6 py-3 text-md font-bold text-emerald-950 shadow-lg shadow-lime-950/20 transition hover:bg-lime-200"
               >
                 Explore the documentary
               </a>
               <Link
                 href="/contact"
-                className="rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:border-emerald-200/60 hover:bg-white/5"
+                className="rounded-full border border-white/20 px-6 py-3 text-md font-bold text-white transition hover:border-emerald-200/60 hover:bg-white/5"
               >
                 Connect with AeroSun Energy
               </Link>
@@ -1823,7 +1823,7 @@ export default function SaveEarthPage() {
                   </p>
                 </div>
                 <div className="flex items-end justify-between border-t border-white/15 pt-5">
-                  <span className="max-w-[12rem] text-xs leading-5 text-emerald-100/80">
+                  <span className="max-w-[12rem] text-md leading-5 text-emerald-100/80">
                     {documentaryTagline}
                   </span>
                   <span aria-hidden="true" className="text-3xl text-lime-300">
@@ -1856,14 +1856,14 @@ export default function SaveEarthPage() {
               <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-emerald-700">
                 Navigate the guide
               </p>
-              <p className="mt-1 text-sm font-semibold text-slate-900">Contents</p>
+              <p className="mt-1 text-md font-semibold text-slate-900">Contents</p>
             </div>
             <ol className="max-h-[calc(100vh-12rem)] space-y-1 overflow-y-auto p-3">
               {documentarySections.map((section, index) => (
                 <li key={section.heading.id}>
                   <a
                     href={`#${section.heading.id}`}
-                    className="group flex items-start gap-3 rounded-xl px-3 py-2.5 text-xs leading-5 text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-900"
+                    className="group flex items-start gap-3 rounded-xl px-3 py-2.5 text-md leading-5 text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-900"
                   >
                     <span className="shrink-0 font-mono text-[10px] font-bold text-emerald-600/70 group-hover:text-emerald-700">
                       {String(index + 1).padStart(2, '0')}
@@ -1874,7 +1874,7 @@ export default function SaveEarthPage() {
               ))}
             </ol>
           </nav>
-          <p className="mt-4 hidden px-2 text-xs leading-6 text-slate-500 lg:block">
+          <p className="mt-4 hidden px-2 text-md leading-6 text-slate-500 lg:block">
             A complete documentary script and practical environmental guide.
           </p>
         </aside>
@@ -1909,7 +1909,7 @@ export default function SaveEarthPage() {
                     Section {String(index + 1).padStart(2, '0')}
                   </span>
                   <span className="h-px flex-1 bg-emerald-900/10" />
-                  <span className="font-mono text-xs font-bold text-emerald-900/40">
+                  <span className="font-mono text-md font-bold text-emerald-900/40">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                 </div>
@@ -1933,7 +1933,7 @@ export default function SaveEarthPage() {
               </div>
               <Link
                 href="/contact"
-                className="inline-flex shrink-0 items-center justify-center rounded-full bg-emerald-800 px-6 py-3 text-sm font-bold text-white transition hover:bg-emerald-700"
+                className="inline-flex shrink-0 items-center justify-center rounded-full bg-emerald-800 px-6 py-3 text-md font-bold text-white transition hover:bg-emerald-700"
               >
                 Get in touch
               </Link>

@@ -112,14 +112,14 @@ export default function InvoiceReceiptPage() {
               <div className="space-y-6">
                 <section>
                   <h2 className="text-xl font-bold text-slate-900">1. Invoice summary</h2>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                  <p className="mt-3 text-md leading-7 text-slate-600">
                     The invoice records the project value, purchase order reference, payment mode, and customer acknowledgment for services rendered or equipment supplied. It acts as a commercial record for part payment, final settlement, and receipt tracking.
                   </p>
                 </section>
 
                 <section>
                   <h2 className="text-xl font-bold text-slate-900">2. Payment breakdown</h2>
-                  <div className="mt-3 space-y-3 text-sm leading-7 text-slate-600">
+                  <div className="mt-3 space-y-3 text-md leading-7 text-slate-600">
                     <p><span className="font-semibold text-slate-800">Advance:</span> Initial deposit or milestone payment before project execution.</p>
                     <p><span className="font-semibold text-slate-800">Progress billing:</span> Amount billed at agreed project phases or material dispatch milestones.</p>
                     <p><span className="font-semibold text-slate-800">Final settlement:</span> Balance payment on commissioning, handover, and final documentation.</p>
@@ -128,14 +128,14 @@ export default function InvoiceReceiptPage() {
 
                 <section>
                   <h2 className="text-xl font-bold text-slate-900">3. Receipt and acknowledgement</h2>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                  <p className="mt-3 text-md leading-7 text-slate-600">
                     Receipt acknowledgement confirms the customer has received payment documentation and accepted the amount as final, subject to the project agreement, tax conditions, and supporting commercial terms recorded in the transaction.
                   </p>
                 </section>
 
                 <section>
                   <h2 className="text-xl font-bold text-slate-900">4. Support and dispute handling</h2>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                  <p className="mt-3 text-md leading-7 text-slate-600">
                     Any discrepancy in billing, payment schedule, or receipt details should be reported promptly. Clarifications can be reviewed through the customer support process, the project agreement, and the commercial documentation associated with the project.
                   </p>
                 </section>
@@ -216,7 +216,7 @@ export default function InvoiceReceiptPage() {
                 />
 
                 <div>
-                  <label htmlFor="paymentMode" className="mb-2 block text-sm font-semibold text-slate-100">
+                  <label htmlFor="paymentMode" className="mb-2 block text-md font-semibold text-slate-100">
                     Payment mode
                   </label>
                   <select
@@ -224,7 +224,7 @@ export default function InvoiceReceiptPage() {
                     {...register('paymentMode')}
                     aria-invalid={Boolean(errors.paymentMode)}
                     aria-describedby={errors.paymentMode ? 'paymentMode-error' : undefined}
-                    className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-all duration-200 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
+                    className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
                   >
                     <option value="" className="text-slate-900">Select payment mode</option>
                     <option value="Bank transfer" className="text-slate-900">Bank transfer</option>
@@ -234,11 +234,11 @@ export default function InvoiceReceiptPage() {
                     <option value="Demand draft" className="text-slate-900">Demand draft</option>
                     <option value="Other" className="text-slate-900">Other</option>
                   </select>
-                  {errors.paymentMode && <p id="paymentMode-error" className="mt-2 text-xs text-rose-300">{errors.paymentMode.message}</p>}
+                  {errors.paymentMode && <p id="paymentMode-error" className="mt-2 text-md text-rose-300">{errors.paymentMode.message}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="receiptNote" className="mb-2 block text-sm font-semibold text-slate-100">
+                  <label htmlFor="receiptNote" className="mb-2 block text-md font-semibold text-slate-100">
                     Receipt note / remarks
                   </label>
                   <textarea
@@ -248,12 +248,12 @@ export default function InvoiceReceiptPage() {
                     placeholder="Add booking notes, payment reference, GST detail, and any remarks relevant to the invoice."
                     aria-invalid={Boolean(errors.receiptNote)}
                     aria-describedby={errors.receiptNote ? 'receiptNote-error' : undefined}
-                    className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
+                    className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
                   />
-                  {errors.receiptNote && <p id="receiptNote-error" className="mt-2 text-xs text-rose-300">{errors.receiptNote.message}</p>}
+                  {errors.receiptNote && <p id="receiptNote-error" className="mt-2 text-md text-rose-300">{errors.receiptNote.message}</p>}
                 </div>
 
-                <label className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 text-sm leading-6 text-slate-200">
+                <label className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 text-md leading-6 text-slate-200">
                   <input
                     type="checkbox"
                     {...register('paymentReceived')}
@@ -263,22 +263,22 @@ export default function InvoiceReceiptPage() {
                     I confirm that the payment for this invoice has been received and acknowledged as part of the project record.
                   </span>
                 </label>
-                {errors.paymentReceived && <p className="text-xs text-rose-300">{errors.paymentReceived.message}</p>}
+                {errors.paymentReceived && <p className="text-md text-rose-300">{errors.paymentReceived.message}</p>}
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex w-full items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition-all duration-200 hover:-translate-y-0.5 hover:bg-orange-100 disabled:cursor-not-allowed disabled:opacity-60"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-white px-5 py-3 text-md font-semibold text-slate-900 transition-all duration-200 hover:-translate-y-0.5 hover:bg-orange-100 disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit invoice'}
                 </button>
 
                 {submitFeedback ? (
-                  <p className={`text-sm font-medium ${submitFeedback.type === 'success' ? 'text-emerald-300' : 'text-rose-300'}`}>
+                  <p className={`text-md font-medium ${submitFeedback.type === 'success' ? 'text-emerald-300' : 'text-rose-300'}`}>
                     {submitFeedback.message}
                   </p>
                 ) : isSubmitSuccessful && (
-                  <p className="text-sm font-medium text-emerald-300">Your invoice has been prepared in your email app.</p>
+                  <p className="text-md font-medium text-emerald-300">Your invoice has been prepared in your email app.</p>
                 )}
               </form>
             </CardContent>
@@ -301,7 +301,7 @@ type FieldProps = {
 function Field({ label, name, placeholder, type = 'text', register, error }: FieldProps) {
   return (
     <div>
-      <label htmlFor={name} className="mb-2 block text-sm font-semibold text-slate-100">
+      <label htmlFor={name} className="mb-2 block text-md font-semibold text-slate-100">
         {label}
       </label>
       <input
@@ -311,9 +311,9 @@ function Field({ label, name, placeholder, type = 'text', register, error }: Fie
         placeholder={placeholder}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${name}-error` : undefined}
-        className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
+        className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
       />
-      {error && <p id={`${name}-error`} className="mt-2 text-xs text-rose-300">{error.message}</p>}
+      {error && <p id={`${name}-error`} className="mt-2 text-md text-rose-300">{error.message}</p>}
     </div>
   )
 }

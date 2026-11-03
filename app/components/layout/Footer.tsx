@@ -124,7 +124,7 @@ export default function Footer() {
 					<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_88%_45%,rgba(163,217,119,0.14),transparent_35%)]" aria-hidden="true" />
 					<div className="relative grid items-center gap-10 lg:grid-cols-[1fr_auto]">
 						<div className="max-w-3xl">
-							<p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.24em] text-[#A3D977]">
+							<p className="flex items-center gap-3 text-md font-bold uppercase tracking-[0.24em] text-[#A3D977]">
 								<span className="h-px w-8 bg-[#A3D977]" />
 								AeroSun Energy
 							</p>
@@ -136,7 +136,7 @@ export default function Footer() {
 							</p>
 							<Link
 								href="/contact"
-								className="group mt-8 inline-flex min-h-12 items-center gap-3 rounded-full bg-[#A5D6A7] px-6 py-3 text-sm font-bold text-[#173B2C] transition hover:-translate-y-0.5 hover:bg-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7]"
+								className="group mt-8 inline-flex min-h-12 items-center gap-3 rounded-full bg-[#A5D6A7] px-6 py-3 text-md font-bold text-[#173B2C] transition hover:-translate-y-0.5 hover:bg-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7]"
 							>
 								Talk to Our Energy Experts
 								<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
@@ -167,9 +167,9 @@ export default function Footer() {
 						<div className="inline-flex max-w-full rounded-xl bg-white p-2">
 							<Logo />
 						</div>
-						<h2 id="footer-brand" className="mt-6 text-sm font-bold tracking-wide text-white hidden">AeroSun Energy Private Limited</h2>
-						<p className="mt-1 text-sm font-medium text-[#F5C76A] hidden">&ldquo;Power from Sun, Wind, Water, Fire&rdquo;</p>
-						<p className="mt-4 max-w-sm text-sm leading-7 text-gray-300">{footer.brandDesc}</p>
+						<h2 id="footer-brand" className="mt-6 text-md font-bold tracking-wide text-white hidden">AeroSun Energy Private Limited</h2>
+						<p className="mt-1 text-md font-medium text-[#F5C76A] hidden">&ldquo;Power from Sun, Wind, Water, Fire&rdquo;</p>
+						<p className="mt-4 max-w-sm text-md leading-7 text-gray-300">{footer.brandDesc}</p>
 						<div className="mt-6 flex flex-wrap gap-2" role="group" aria-label={footer.followUs}>
 							{socialLinks.map(({ href, label, title, dataSocial, icon }) => (
 								<Link
@@ -195,11 +195,11 @@ export default function Footer() {
 							{visibleNavLinks.map((link) => (
 								<li key={link.label}>
 									{(link as { disabled?: boolean }).disabled ? (
-										<span className="inline-flex min-h-10 items-center gap-2 text-sm text-gray-500">
+										<span className="inline-flex min-h-10 items-center gap-2 text-md text-gray-500">
 											{link.label}<span className="rounded-full bg-white/10 px-2 py-0.5 text-[9px] uppercase tracking-wider">Soon</span>
 										</span>
 									) : (
-										<Link href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] ${isActive(link.href) ? 'font-semibold text-[#DCEDC8]' : 'text-gray-300 hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]'}`}>
+										<Link href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-md transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] ${isActive(link.href) ? 'font-semibold text-[#DCEDC8]' : 'text-gray-300 hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]'}`}>
 											<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(link.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
 											{link.label}
 										</Link>
@@ -212,11 +212,11 @@ export default function Footer() {
 							{quickEnquiries.map((item) => (
 								<li key={item.href}>
 									{(item as { disabled?: boolean }).disabled ? (
-										<span className="inline-flex min-h-9 items-center gap-2 text-sm text-gray-500">
+										<span className="inline-flex min-h-9 items-center gap-2 text-md text-gray-500">
 											{item.label}<span className="rounded-full bg-white/10 px-2 py-0.5 text-[9px] uppercase tracking-wider">Soon</span>
 										</span>
 									) : (
-										<Link href={item.href} aria-current={isActive(item.href) ? 'page' : undefined} className={`group inline-flex min-h-11 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] ${isActive(item.href) ? 'font-semibold text-[#DCEDC8]' : 'text-gray-300 hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]'}`}>
+										<Link href={item.href} aria-current={isActive(item.href) ? 'page' : undefined} className={`group inline-flex min-h-11 items-center gap-2 text-md transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] ${isActive(item.href) ? 'font-semibold text-[#DCEDC8]' : 'text-gray-300 hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]'}`}>
 											<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(item.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
 											{item.label}
 										</Link>
@@ -231,7 +231,7 @@ export default function Footer() {
 						<ul className="space-y-1">
 							{solutions.map((solution) => (
 								<li key={solution.label}>
-									<Link href={solution.href} aria-current={isActive(solution.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] ${isActive(solution.href) ? 'font-semibold text-[#DCEDC8]' : 'text-gray-300 hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]'}`}>
+									<Link href={solution.href} aria-current={isActive(solution.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-md transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] ${isActive(solution.href) ? 'font-semibold text-[#DCEDC8]' : 'text-gray-300 hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]'}`}>
 										<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(solution.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
 										{solution.label}
 									</Link>
@@ -242,7 +242,7 @@ export default function Footer() {
 
 					<section aria-labelledby="footer-contact">
 						<h2 id="footer-contact" className="mb-5 text-md uppercase text-[#A3D977]">Contact Information</h2>
-						<ul className="space-y-4 text-sm leading-6 text-gray-300">
+						<ul className="space-y-4 text-md leading-6 text-gray-300">
 							<li className="flex items-start gap-3">
 								<MapPin className="mt-1 h-4 w-4 shrink-0 text-[#F5C76A]" aria-hidden="true" />
 								<a href={mapUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] focus-visible:text-[#DCEDC8]">
@@ -262,17 +262,17 @@ export default function Footer() {
 								<a href={websiteUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] focus-visible:text-[#DCEDC8]">{footer.website}<span className="sr-only"> (opens in a new tab)</span></a>
 							</li>
 							<li>
-								<Link href="/save-earth" className="group inline-flex min-h-11 items-center gap-2 text-sm text-gray-300 transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] focus-visible:text-[#DCEDC8]">
+								<Link href="/save-earth" className="group inline-flex min-h-11 items-center gap-2 text-md text-gray-300 transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] focus-visible:text-[#DCEDC8]">
 									<ArrowUpRight className="h-4 w-4 text-[#A5D6A7]" aria-hidden="true" />{footer.saveEarth}
 								</Link>
 							</li>
 							<li>
-								<a href={footer.trust?.startsWith('http') ? footer.trust : `https://${footer.trust}`} target="_blank" rel="noopener noreferrer" className="group inline-flex min-h-11 items-center gap-2 text-sm text-gray-300 transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] focus-visible:text-[#DCEDC8]" aria-label={`Visit ${footer.trust} (opens in new tab)`}>
+								<a href={footer.trust?.startsWith('http') ? footer.trust : `https://${footer.trust}`} target="_blank" rel="noopener noreferrer" className="group inline-flex min-h-11 items-center gap-2 text-md text-gray-300 transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] focus-visible:text-[#DCEDC8]" aria-label={`Visit ${footer.trust} (opens in new tab)`}>
 									<ArrowUpRight className="h-4 w-4 text-[#A5D6A7]" aria-hidden="true" />{footer.saveSanatanaDharma}
 								</a>
 							</li>
 						</ul>
-						<div className="mt-6 flex items-center gap-2 border-t border-white/10 pt-4 text-xs text-gray-400">
+						<div className="mt-6 flex items-center gap-2 border-t border-white/10 pt-4 text-md text-gray-400">
 							<Sun className="h-4 w-4 text-[#F5C76A]" aria-hidden="true" />
 							<Wind className="h-4 w-4 text-[#A3D977]" aria-hidden="true" />
 							<span>Solar · Wind · Hybrid</span>
@@ -283,7 +283,7 @@ export default function Footer() {
 				<section aria-labelledby="footer-newsletter" className="mt-14 grid gap-6 rounded-2xl border border-white/10 bg-white/[0.04] p-6 sm:p-8 lg:grid-cols-[1fr_1fr] lg:items-center">
 					<div>
 						<h2 id="footer-newsletter" className="text-2xl leading-[1.05] tracking-[0.045em] text-white sm:text-3xl">Stay Powered by Clean Energy</h2>
-						<p className="mt-2 max-w-xl text-sm leading-6 text-gray-300">Get renewable energy insights, technology updates and sustainable energy solutions.</p>
+						<p className="mt-2 max-w-xl text-md leading-6 text-gray-300">Get renewable energy insights, technology updates and sustainable energy solutions.</p>
 					</div>
 					<form onSubmit={handleNewsletterSubmit} className="w-full">
 						<label htmlFor="footer-newsletter-email" className="sr-only">Email address for clean energy updates</label>
@@ -303,18 +303,18 @@ export default function Footer() {
 								placeholder="you@example.com"
 								className="min-h-12 min-w-0 flex-1 rounded-full border border-white/15 bg-[#071B17] px-5 text-base text-white outline-none transition placeholder:text-gray-400 focus:border-[#A5D6A7] focus:ring-2 focus:ring-[#A5D6A7]/25"
 							/>
-							<button type="submit" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#A5D6A7] px-6 text-sm font-bold text-[#173B2C] transition hover:bg-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7]">
+							<button type="submit" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#A5D6A7] px-6 text-md font-bold text-[#173B2C] transition hover:bg-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7]">
 								Subscribe <Send className="h-4 w-4" aria-hidden="true" />
 							</button>
 						</div>
-						<p className="mt-3 text-xs leading-5 text-gray-400">No newsletter service is connected yet. Subscribe opens an email request to our customer-care address; it does not add you automatically.</p>
-						<p role="status" aria-live="polite" className="mt-1 min-h-5 text-xs text-[#DCEDC8]">{newsletterStatus}</p>
+						<p className="mt-3 text-md leading-5 text-gray-400">No newsletter service is connected yet. Subscribe opens an email request to our customer-care address; it does not add you automatically.</p>
+						<p role="status" aria-live="polite" className="mt-1 min-h-5 text-md text-[#DCEDC8]">{newsletterStatus}</p>
 					</form>
 				</section>
 			</div>
 
 			<div className="border-t border-white/10 bg-black/20">
-				<p className="mx-auto max-w-7xl px-5 py-4 text-center text-xs leading-6 text-gray-400 sm:px-8 lg:px-10">
+				<p className="mx-auto max-w-7xl px-5 py-4 text-center text-md leading-6 text-gray-400 sm:px-8 lg:px-10">
 					🚧 This website is currently under development. Some content and images may be incomplete, and page titles or locations may change as updates are made.
 					<br className="hidden sm:block" />
 					Images generated with <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" className="mx-1 text-[#A5D6A7] transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7]">ChatGPT<span className="sr-only"> (opens in a new tab)</span></Link>.

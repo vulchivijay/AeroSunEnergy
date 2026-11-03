@@ -215,7 +215,7 @@ export default function ResearchDevelopmentPage() {
 									Key recommendation
 								</p>
 								<div className="mt-5 rounded-[1.5rem] border border-emerald-200 bg-emerald-50/80 p-4 dark:border-emerald-900/60 dark:bg-emerald-950/20">
-									<p className="text-sm leading-7 text-slate-700 dark:text-slate-200">
+									<p className="text-md leading-7 text-slate-700 dark:text-slate-200">
 										<span className="font-black text-emerald-700 dark:text-emerald-300">Best first move:</span> build
 										a disciplined solar business model in residential and small commercial segments, then validate
 										wind technology as a separate R&D effort before large investment.
@@ -227,10 +227,10 @@ export default function ResearchDevelopmentPage() {
 											key={item}
 											className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50/90 p-3 dark:border-slate-700 dark:bg-slate-800/80"
 										>
-											<span className="flex h-8 w-8 items-center justify-center rounded-full bg-linear-to-br from-emerald-400 to-teal-500 text-sm font-bold text-slate-950">
+											<span className="flex h-8 w-8 items-center justify-center rounded-full bg-linear-to-br from-emerald-400 to-teal-500 text-md font-bold text-slate-950">
 												✓
 											</span>
-											<span className="text-sm font-medium text-slate-700 dark:text-slate-200">{item}</span>
+											<span className="text-md font-medium text-slate-700 dark:text-slate-200">{item}</span>
 										</div>
 									))}
 								</div>
@@ -273,22 +273,22 @@ export default function ResearchDevelopmentPage() {
 						>
 							<div className={`h-2 bg-linear-to-r ${item.accent}`} />
 							<div className="p-4">
-								<p className="text-sm font-black text-slate-900 dark:text-white">{item.title}</p>
+								<p className="text-md font-black text-slate-900 dark:text-white">{item.title}</p>
 								<div className="mt-4 flex items-center justify-between gap-2 rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 dark:border-slate-700 dark:bg-slate-800">
 									<span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
 										Risk
 									</span>
-									<span className="text-xs font-bold text-slate-700 dark:text-slate-200">{item.risk}</span>
+									<span className="text-md font-bold text-slate-700 dark:text-slate-200">{item.risk}</span>
 								</div>
 								<div className="mt-3 rounded-2xl border border-emerald-100 bg-emerald-50/80 p-2 dark:border-emerald-900/60 dark:bg-emerald-950/20">
 									<p className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">
 										Recommendation
 									</p>
-									<p className="mt-1 text-sm font-semibold text-emerald-800 dark:text-emerald-300">
+									<p className="mt-1 text-md font-semibold text-emerald-800 dark:text-emerald-300">
 										{item.recommendation}
 									</p>
 								</div>
-								<p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">{item.note}</p>
+								<p className="mt-3 text-md leading-6 text-slate-600 dark:text-slate-300">{item.note}</p>
 							</div>
 						</div>
 					))}
@@ -328,13 +328,13 @@ export default function ResearchDevelopmentPage() {
 											{group.age}
 										</span>
 									</div>
-									<p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+									<p className="mt-2 text-md text-slate-600 dark:text-slate-300">
 										<span className="font-bold text-slate-800 dark:text-white">Profile:</span> {group.profile}
 									</p>
-									<p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+									<p className="mt-1 text-md text-slate-600 dark:text-slate-300">
 										<span className="font-bold text-slate-800 dark:text-white">Main concern:</span> {group.concern}
 									</p>
-									<p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+									<p className="mt-1 text-md text-slate-600 dark:text-slate-300">
 										<span className="font-bold text-slate-800 dark:text-white">AeroSun offer:</span> {group.offer}
 									</p>
 								</div>
@@ -345,7 +345,7 @@ export default function ResearchDevelopmentPage() {
 							<p className="text-[10px] font-black uppercase tracking-[0.2em] text-violet-700 dark:text-violet-300">
 								Why this ordering matters
 							</p>
-							<p className="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-200">
+							<p className="mt-3 text-md leading-7 text-slate-700 dark:text-slate-200">
 								A tech professional with a high monthly bill will likely respond to a clean savings estimate and performance dashboard. A retailer or clinic will respond to reliability, lower operating cost, and simple payback language. This is why AeroSun should not try to sell the same pitch to every customer; the offer should be customized by consumption pattern and budget.
 							</p>
 						</div>
@@ -371,10 +371,10 @@ export default function ResearchDevelopmentPage() {
 									key={item}
 									className="flex gap-3 rounded-[1.2rem] border border-slate-200 bg-slate-50/85 p-3 dark:border-slate-700 dark:bg-slate-800/80"
 								>
-									<div className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-700 text-xs font-black text-white">
+									<div className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-700 text-md font-black text-white">
 										{index + 1}
 									</div>
-									<span className="text-sm leading-6 text-slate-700 dark:text-slate-200">{item}</span>
+									<span className="text-md leading-6 text-slate-700 dark:text-slate-200">{item}</span>
 								</li>
 							))}
 						</ol>
@@ -401,10 +401,10 @@ export default function ResearchDevelopmentPage() {
 							<div className={`h-2 bg-linear-to-r ${item.accent}`} />
 							<div className="p-5">
 								<h3 className="text-xl font-black text-slate-900 dark:text-white">{item.title}</h3>
-								<p className="mt-2 text-sm font-semibold text-slate-500 dark:text-slate-400">{item.subtitle}</p>
+								<p className="mt-2 text-md font-semibold text-slate-500 dark:text-slate-400">{item.subtitle}</p>
 								<ul className="mt-4 space-y-3">
 									{item.bullets.map((bullet) => (
-										<li key={bullet} className="flex gap-3 text-sm leading-6 text-slate-700 dark:text-slate-300">
+										<li key={bullet} className="flex gap-3 text-md leading-6 text-slate-700 dark:text-slate-300">
 											<span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-emerald-500" />
 											<span>{bullet}</span>
 										</li>
@@ -441,12 +441,12 @@ export default function ResearchDevelopmentPage() {
 						>
 							<div className="flex items-center gap-2">
 								<span className="h-2.5 w-2.5 rounded-full bg-rose-500" />
-								<p className="text-sm font-black uppercase tracking-[0.16em] text-rose-700 dark:text-rose-300">
+								<p className="text-md font-black uppercase tracking-[0.16em] text-rose-700 dark:text-rose-300">
 									Risk
 								</p>
 							</div>
 							<h3 className="mt-3 text-lg font-black text-slate-900 dark:text-white">{flag.title}</h3>
-							<p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">{flag.text}</p>
+							<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{flag.text}</p>
 						</div>
 					))}
 				</div>
@@ -480,8 +480,8 @@ export default function ResearchDevelopmentPage() {
 							<div className={`h-2 bg-linear-to-r ${option.accent}`} />
 							<div className="p-5">
 								<h3 className="text-xl font-black text-slate-900 dark:text-white">{option.name}</h3>
-								<p className="mt-2 text-sm font-semibold text-slate-500 dark:text-slate-400">{option.audience}</p>
-								<p className="mt-4 text-sm leading-7 text-slate-700 dark:text-slate-300">{option.positioning}</p>
+								<p className="mt-2 text-md font-semibold text-slate-500 dark:text-slate-400">{option.audience}</p>
+								<p className="mt-4 text-md leading-7 text-slate-700 dark:text-slate-300">{option.positioning}</p>
 							</div>
 						</div>
 					))}
@@ -513,20 +513,20 @@ export default function ResearchDevelopmentPage() {
 							key={step.period}
 							className="grid gap-3 rounded-[1.5rem] border border-indigo-100 bg-white/80 p-4 md:grid-cols-[180px_1fr_1fr] dark:border-indigo-900/40 dark:bg-slate-900/75"
 						>
-							<div className="flex items-center justify-center rounded-[1rem] bg-indigo-100 px-3 py-2 text-sm font-black uppercase tracking-[0.18em] text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-300">
+							<div className="flex items-center justify-center rounded-[1rem] bg-indigo-100 px-3 py-2 text-md font-black uppercase tracking-[0.18em] text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-300">
 								{step.period}
 							</div>
 							<div>
 								<p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
 									Action
 								</p>
-								<p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">{step.action}</p>
+								<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{step.action}</p>
 							</div>
 							<div>
 								<p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
 									Target evidence
 								</p>
-								<p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">{step.result}</p>
+								<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{step.result}</p>
 							</div>
 						</div>
 					))}
@@ -558,8 +558,8 @@ export default function ResearchDevelopmentPage() {
 									className="flex items-center justify-between gap-3 rounded-[1.2rem] border border-slate-200 bg-slate-50/90 p-3 dark:border-slate-700 dark:bg-slate-800/80"
 								>
 									<div>
-										<p className="text-sm font-bold text-slate-900 dark:text-white">{item.label}</p>
-										<p className="text-xs text-slate-600 dark:text-slate-300">{item.value}</p>
+										<p className="text-md font-bold text-slate-900 dark:text-white">{item.label}</p>
+										<p className="text-md text-slate-600 dark:text-slate-300">{item.value}</p>
 									</div>
 									<span className="rounded-full bg-emerald-100 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
 										{item.level}
@@ -578,7 +578,7 @@ export default function ResearchDevelopmentPage() {
 						</h2>
 						<div className="mt-6 space-y-4">
 							<div className="rounded-[1.5rem] border border-emerald-100 bg-white/80 p-4 dark:border-emerald-900/50 dark:bg-slate-900/75">
-								<p className="text-sm font-black uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">
+								<p className="text-md font-black uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">
 									Track 1
 								</p>
 								<p className="mt-2 text-base leading-7 text-slate-700 dark:text-slate-300">
@@ -587,7 +587,7 @@ export default function ResearchDevelopmentPage() {
 								</p>
 							</div>
 							<div className="rounded-[1.5rem] border border-sky-100 bg-white/80 p-4 dark:border-sky-900/50 dark:bg-slate-900/75">
-								<p className="text-sm font-black uppercase tracking-[0.2em] text-sky-700 dark:text-sky-300">
+								<p className="text-md font-black uppercase tracking-[0.2em] text-sky-700 dark:text-sky-300">
 									Track 2
 								</p>
 								<p className="mt-2 text-base leading-7 text-slate-700 dark:text-slate-300">
@@ -601,7 +601,7 @@ export default function ResearchDevelopmentPage() {
 							<p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
 								Decision questions
 							</p>
-							<ul className="mt-3 space-y-2 text-sm leading-6 text-slate-700 dark:text-slate-300">
+							<ul className="mt-3 space-y-2 text-md leading-6 text-slate-700 dark:text-slate-300">
 								<li>• What is AeroSun’s current stage: website only, solar activity, or prototype stage?</li>
 								<li>• What is the available startup budget for validation?</li>
 								<li>• Which product should be prioritised in the next six months?</li>
@@ -683,8 +683,8 @@ export default function ResearchDevelopmentPage() {
 						['IPO or acquisition', 'Potential exit for investors and public-market capital.'],
 					].map(([stage, detail]) => (
 						<div key={stage} className="rounded-[1.5rem] border border-emerald-100 bg-white/80 p-4 shadow-[0_18px_35px_-25px_rgba(16,185,129,0.45)] dark:border-emerald-900/50 dark:bg-slate-900/75">
-							<p className="text-sm font-black uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300">{stage}</p>
-							<p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">{detail}</p>
+							<p className="text-md font-black uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300">{stage}</p>
+							<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{detail}</p>
 						</div>
 					))}
 				</div>
@@ -706,7 +706,7 @@ export default function ResearchDevelopmentPage() {
 							For AeroSun Energy, this could mean starting with solar equipment sales, installation coordination and maintenance services, then using the profits to finance larger projects and prototype development.
 						</p>
 						<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
-							<table className="min-w-full border-collapse text-left text-sm text-slate-700 dark:text-slate-300">
+							<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 								<thead className="bg-slate-50 dark:bg-slate-800/80">
 									<tr>
 										<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Initial expenditure</th>
@@ -739,7 +739,7 @@ export default function ResearchDevelopmentPage() {
 							].map((item) => (
 								<div key={item} className="flex gap-3 rounded-[1.2rem] border border-emerald-100 bg-white/80 p-3 dark:border-emerald-900/50 dark:bg-slate-900/75">
 									<span className="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500" />
-									<span className="text-sm leading-6 text-slate-700 dark:text-slate-300">{item}</span>
+									<span className="text-md leading-6 text-slate-700 dark:text-slate-300">{item}</span>
 								</div>
 							))}
 						</div>
@@ -760,8 +760,8 @@ export default function ResearchDevelopmentPage() {
 								'You can generate revenue before making large capital commitments.',
 							].map((item, index) => (
 								<li key={item} className="flex gap-3 rounded-[1.2rem] border border-slate-200 bg-slate-50/90 p-3 dark:border-slate-700 dark:bg-slate-800/80">
-									<div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-700 text-xs font-black text-white">{index + 1}</div>
-									<span className="text-sm leading-6 text-slate-700 dark:text-slate-300">{item}</span>
+									<div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-700 text-md font-black text-white">{index + 1}</div>
+									<span className="text-md leading-6 text-slate-700 dark:text-slate-300">{item}</span>
 								</li>
 							))}
 						</ol>
@@ -784,7 +784,7 @@ export default function ResearchDevelopmentPage() {
 					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">3. Grants and incubator funding</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Use grants where innovation needs proof</h2>
 					<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
-						<table className="min-w-full border-collapse text-left text-sm text-slate-700 dark:text-slate-300">
+						<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 							<thead className="bg-slate-50 dark:bg-slate-800/80">
 								<tr>
 									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding route</th>
@@ -829,8 +829,8 @@ export default function ResearchDevelopmentPage() {
 						['Series A', 'Raise after repeated traction and a business model that can grow with capital, usually across engineering, sales and operations.'],
 					].map(([stage, text]) => (
 						<div key={stage} className="rounded-[1.7rem] border border-amber-100 bg-white/80 p-5 dark:border-amber-900/50 dark:bg-slate-900/75">
-							<p className="text-sm font-black uppercase tracking-[0.18em] text-amber-700 dark:text-amber-300">{stage}</p>
-							<p className="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-300">{text}</p>
+							<p className="text-md font-black uppercase tracking-[0.18em] text-amber-700 dark:text-amber-300">{stage}</p>
+							<p className="mt-3 text-md leading-7 text-slate-700 dark:text-slate-300">{text}</p>
 						</div>
 					))}
 				</div>
@@ -841,7 +841,7 @@ export default function ResearchDevelopmentPage() {
 					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-rose-700 dark:text-rose-300">5. Understand dilution before you raise</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Dilution reduces founder ownership</h2>
 					<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
-						<table className="min-w-full border-collapse text-left text-sm text-slate-700 dark:text-slate-300">
+						<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 							<thead className="bg-slate-50 dark:bg-slate-800/80">
 								<tr>
 									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding stage</th>
@@ -883,8 +883,8 @@ export default function ResearchDevelopmentPage() {
 							['Stage 4', 'Expand with larger financing only after the business model is proven.'],
 						].map(([stage, point]) => (
 							<div key={stage} className="rounded-[1.5rem] border border-indigo-100 bg-white/80 p-4 dark:border-indigo-900/50 dark:bg-slate-900/75">
-								<p className="text-sm font-black uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">{stage}</p>
-								<p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">{point}</p>
+								<p className="text-md font-black uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">{stage}</p>
+								<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{point}</p>
 							</div>
 						))}
 					</div>
@@ -907,8 +907,8 @@ export default function ResearchDevelopmentPage() {
 							['Equity route', 'Use only when evidence supports product scale'],
 						].map(([amount, note]) => (
 							<div key={amount} className="rounded-[1.4rem] border border-emerald-100 bg-white/80 p-4 dark:border-emerald-900/50 dark:bg-slate-900/75">
-								<p className="text-sm font-black text-emerald-700 dark:text-emerald-300">{amount}</p>
-								<p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">{note}</p>
+								<p className="text-md font-black text-emerald-700 dark:text-emerald-300">{amount}</p>
+								<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{note}</p>
 							</div>
 						))}
 					</div>
@@ -930,8 +930,8 @@ export default function ResearchDevelopmentPage() {
 						The objective is not just to build a device that generates electricity. It is to develop a product that can generate useful energy reliably, remain affordable for Indian customers, be repaired locally, and produce enough value to justify its cost.
 					</p>
 					<div className="mt-6 rounded-[1.5rem] border border-emerald-100 bg-white/80 p-4 dark:border-emerald-900/50 dark:bg-slate-900/75">
-						<p className="text-sm font-black uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">Recommended order</p>
-						<ol className="mt-3 space-y-2 text-sm leading-6 text-slate-700 dark:text-slate-300">
+						<p className="text-md font-black uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">Recommended order</p>
+						<ol className="mt-3 space-y-2 text-md leading-6 text-slate-700 dark:text-slate-300">
 							<li>1. Solar prototype — lowest technical risk and best starting point for customer validation.</li>
 							<li>2. Wind prototype — higher technical risk; validate wind resources and actual electrical output.</li>
 							<li>3. Hybrid prototype — combine proven solar and wind components with a controller, battery and energy monitoring.</li>
@@ -948,7 +948,7 @@ export default function ResearchDevelopmentPage() {
 						Purpose: build an affordable demonstration system that generates solar electricity and measures where that electricity goes.
 					</p>
 					<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
-						<table className="min-w-full border-collapse text-left text-sm text-slate-700 dark:text-slate-300">
+						<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 							<thead className="bg-slate-50 dark:bg-slate-800/80">
 								<tr>
 									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Component</th>
@@ -977,8 +977,8 @@ export default function ResearchDevelopmentPage() {
 						A 1 kWp solar array has a peak DC rating of approximately 1,000 watts under specified test conditions. Actual output varies with sunlight, panel temperature, shading, orientation and system losses.
 					</p>
 					<div className="mt-6 rounded-[1.5rem] border border-slate-200 bg-slate-50/80 p-4 dark:border-slate-700 dark:bg-slate-900/75">
-						<p className="text-sm font-black uppercase tracking-[0.2em] text-slate-700 dark:text-slate-200">What the prototype should prove</p>
-						<ul className="mt-3 space-y-2 text-sm leading-6 text-slate-700 dark:text-slate-300">
+						<p className="text-md font-black uppercase tracking-[0.2em] text-slate-700 dark:text-slate-200">What the prototype should prove</p>
+						<ul className="mt-3 space-y-2 text-md leading-6 text-slate-700 dark:text-slate-300">
 							<li>• How much electricity does it generate each day?</li>
 							<li>• How much of that electricity does the home consume directly?</li>
 							<li>• How much electricity is imported from and exported to the grid?</li>
@@ -1000,7 +1000,7 @@ export default function ResearchDevelopmentPage() {
 						For the first prototype, I would investigate a 300–500 W rated horizontal-axis wind turbine using a commercially available generator and a properly engineered rotor. A vertical-axis design could be tested separately as a research comparison.
 					</p>
 					<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
-						<table className="min-w-full border-collapse text-left text-sm text-slate-700 dark:text-slate-300">
+						<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 							<thead className="bg-slate-50 dark:bg-slate-800/80">
 								<tr>
 									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Component</th>
@@ -1048,8 +1048,8 @@ export default function ResearchDevelopmentPage() {
 							['Monitoring', 'Separate solar, wind, battery, load and grid measurements'],
 						].map(([label, value]) => (
 							<div key={label} className="rounded-[1.3rem] border border-violet-100 bg-white/80 p-4 dark:border-violet-900/50 dark:bg-slate-900/75">
-								<p className="text-sm font-black uppercase tracking-[0.18em] text-violet-700 dark:text-violet-300">{label}</p>
-								<p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">{value}</p>
+								<p className="text-md font-black uppercase tracking-[0.18em] text-violet-700 dark:text-violet-300">{label}</p>
+								<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{value}</p>
 							</div>
 						))}
 					</div>
@@ -1071,8 +1071,8 @@ export default function ResearchDevelopmentPage() {
 							['Responsible battery management', 'Provide safe inspection, replacement, collection and recycling arrangements.'],
 						].map(([title, text]) => (
 							<div key={title} className="rounded-[1.5rem] border border-amber-100 bg-white/80 p-4 dark:border-amber-900/50 dark:bg-slate-900/75">
-								<p className="text-sm font-black uppercase tracking-[0.2em] text-amber-700 dark:text-amber-300">{title}</p>
-								<p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">{text}</p>
+								<p className="text-md font-black uppercase tracking-[0.2em] text-amber-700 dark:text-amber-300">{title}</p>
+								<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{text}</p>
 							</div>
 						))}
 					</div>
@@ -1094,8 +1094,8 @@ export default function ResearchDevelopmentPage() {
 						['6. Economic validation', 'Calculate installation cost, operating cost and expected customer value'],
 					].map(([phase, work]) => (
 						<div key={phase} className="grid gap-3 rounded-[1.4rem] border border-emerald-100 bg-white/80 p-4 md:grid-cols-[180px_1fr] dark:border-emerald-900/50 dark:bg-slate-900/75">
-							<div className="flex items-center justify-center rounded-[1rem] bg-emerald-100 px-3 py-2 text-sm font-black uppercase tracking-[0.18em] text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">{phase}</div>
-							<p className="text-sm leading-6 text-slate-700 dark:text-slate-300">{work}</p>
+							<div className="flex items-center justify-center rounded-[1rem] bg-emerald-100 px-3 py-2 text-md font-black uppercase tracking-[0.18em] text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">{phase}</div>
+							<p className="text-md leading-6 text-slate-700 dark:text-slate-300">{work}</p>
 						</div>
 					))}
 				</div>
@@ -1140,8 +1140,8 @@ export default function ResearchDevelopmentPage() {
 						['IPO or acquisition', 'Potential exit for investors and public-market capital.'],
 					].map(([stage, detail]) => (
 						<div key={stage} className="rounded-[1.5rem] border border-emerald-100 bg-white/80 p-4 shadow-[0_18px_35px_-25px_rgba(16,185,129,0.45)] dark:border-emerald-900/50 dark:bg-slate-900/75">
-							<p className="text-sm font-black uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300">{stage}</p>
-							<p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">{detail}</p>
+							<p className="text-md font-black uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300">{stage}</p>
+							<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{detail}</p>
 						</div>
 					))}
 				</div>
@@ -1163,7 +1163,7 @@ export default function ResearchDevelopmentPage() {
 							For AeroSun Energy, this could mean starting with solar equipment sales, installation coordination and maintenance services, then using the profits to finance larger projects and prototype development.
 						</p>
 						<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
-							<table className="min-w-full border-collapse text-left text-sm text-slate-700 dark:text-slate-300">
+							<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 								<thead className="bg-slate-50 dark:bg-slate-800/80">
 									<tr>
 										<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Initial expenditure</th>
@@ -1196,7 +1196,7 @@ export default function ResearchDevelopmentPage() {
 							].map((item) => (
 								<div key={item} className="flex gap-3 rounded-[1.2rem] border border-emerald-100 bg-white/80 p-3 dark:border-emerald-900/50 dark:bg-slate-900/75">
 									<span className="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500" />
-									<span className="text-sm leading-6 text-slate-700 dark:text-slate-300">{item}</span>
+									<span className="text-md leading-6 text-slate-700 dark:text-slate-300">{item}</span>
 								</div>
 							))}
 						</div>
@@ -1217,8 +1217,8 @@ export default function ResearchDevelopmentPage() {
 								'You can generate revenue before making large capital commitments.',
 							].map((item, index) => (
 								<li key={item} className="flex gap-3 rounded-[1.2rem] border border-slate-200 bg-slate-50/90 p-3 dark:border-slate-700 dark:bg-slate-800/80">
-									<div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-700 text-xs font-black text-white">{index + 1}</div>
-									<span className="text-sm leading-6 text-slate-700 dark:text-slate-300">{item}</span>
+									<div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-700 text-md font-black text-white">{index + 1}</div>
+									<span className="text-md leading-6 text-slate-700 dark:text-slate-300">{item}</span>
 								</li>
 							))}
 						</ol>
@@ -1241,7 +1241,7 @@ export default function ResearchDevelopmentPage() {
 					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">3. Grants and incubator funding</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Use grants where innovation needs proof</h2>
 					<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
-						<table className="min-w-full border-collapse text-left text-sm text-slate-700 dark:text-slate-300">
+						<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 							<thead className="bg-slate-50 dark:bg-slate-800/80">
 								<tr>
 									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding route</th>
@@ -1286,8 +1286,8 @@ export default function ResearchDevelopmentPage() {
 						['Series A', 'Raise after repeated traction and a business model that can grow with capital, usually across engineering, sales and operations.'],
 					].map(([stage, text]) => (
 						<div key={stage} className="rounded-[1.7rem] border border-amber-100 bg-white/80 p-5 dark:border-amber-900/50 dark:bg-slate-900/75">
-							<p className="text-sm font-black uppercase tracking-[0.18em] text-amber-700 dark:text-amber-300">{stage}</p>
-							<p className="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-300">{text}</p>
+							<p className="text-md font-black uppercase tracking-[0.18em] text-amber-700 dark:text-amber-300">{stage}</p>
+							<p className="mt-3 text-md leading-7 text-slate-700 dark:text-slate-300">{text}</p>
 						</div>
 					))}
 				</div>
@@ -1298,7 +1298,7 @@ export default function ResearchDevelopmentPage() {
 					<p className="text-[10px] font-black uppercase tracking-[0.28em] text-rose-700 dark:text-rose-300">5. Understand dilution before you raise</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Dilution reduces founder ownership</h2>
 					<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
-						<table className="min-w-full border-collapse text-left text-sm text-slate-700 dark:text-slate-300">
+						<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 							<thead className="bg-slate-50 dark:bg-slate-800/80">
 								<tr>
 									<th className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding stage</th>
@@ -1340,8 +1340,8 @@ export default function ResearchDevelopmentPage() {
 							['Stage 4', 'Expand with larger financing only after the business model is proven.'],
 						].map(([stage, point]) => (
 							<div key={stage} className="rounded-[1.5rem] border border-indigo-100 bg-white/80 p-4 dark:border-indigo-900/50 dark:bg-slate-900/75">
-								<p className="text-sm font-black uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">{stage}</p>
-								<p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">{point}</p>
+								<p className="text-md font-black uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">{stage}</p>
+								<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{point}</p>
 							</div>
 						))}
 					</div>
@@ -1364,8 +1364,8 @@ export default function ResearchDevelopmentPage() {
 							['Equity route', 'Use only when evidence supports product scale'],
 						].map(([amount, note]) => (
 							<div key={amount} className="rounded-[1.4rem] border border-emerald-100 bg-white/80 p-4 dark:border-emerald-900/50 dark:bg-slate-900/75">
-								<p className="text-sm font-black text-emerald-700 dark:text-emerald-300">{amount}</p>
-								<p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">{note}</p>
+								<p className="text-md font-black text-emerald-700 dark:text-emerald-300">{amount}</p>
+								<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{note}</p>
 							</div>
 						))}
 					</div>

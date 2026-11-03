@@ -275,7 +275,7 @@ export function SubsidyCard({
     <div className="rounded-[1.8rem] border border-emerald-200 bg-[linear-gradient(135deg,#ffffff_0%,#ecfdf5_100%)] p-5 shadow-[0_18px_32px_-26px_rgba(16,185,129,0.45)]">
       <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-slate-500">{label}</p>
       <div className="mt-4 text-3xl font-black tracking-[0.05em] text-slate-900">{value}</div>
-      <p className="mt-3 text-sm leading-6 text-slate-600">{note}</p>
+      <p className="mt-3 text-md leading-6 text-slate-600">{note}</p>
     </div>
   )
 }

@@ -245,15 +245,15 @@ export default function InstallationChecklistPage() {
 							Installation.
 							<span className="mt-1 block text-amber-300">Checked at every stage.</span>
 						</h1>
-						<p className="mt-5 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base sm:leading-8">
+						<p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-base sm:leading-8">
 							A practical guide to planning, installing, testing, and handing over solar, wind, hybrid, and pump projects.
 						</p>
 					</div>
 					<div className="flex w-fit items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.06] px-5 py-4 backdrop-blur">
 						<span className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-300/10 text-xl text-amber-200">12</span>
-						<span className="text-xs leading-5 text-slate-300">
+						<span className="text-md leading-5 text-slate-300">
 							Project lifecycle
-							<strong className="block text-sm font-bold text-white">12 checklist phases</strong>
+							<strong className="block text-md font-bold text-white">12 checklist phases</strong>
 						</span>
 					</div>
 				</div>
@@ -274,7 +274,7 @@ export default function InstallationChecklistPage() {
 							<span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-lg text-amber-800">i</span>
 							<div>
 								<p className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-800">Checklist at a glance</p>
-								<p className="mt-2 text-sm leading-7 text-slate-600 sm:text-base">
+								<p className="mt-2 text-md leading-7 text-slate-600 sm:text-base">
 									This operational guide covers the complete project lifecycle, from the first customer enquiry through design, approvals, procurement, installation, testing, performance verification, and final handover.
 								</p>
 							</div>
@@ -282,9 +282,9 @@ export default function InstallationChecklistPage() {
 						<div className="mt-6 grid gap-3 border-t border-slate-100 pt-5 sm:grid-cols-3">
 							{projectSummaryCards.map((card, index) => (
 								<div key={card.title} className="flex gap-3 rounded-xl bg-[#f4f8fc] p-3">
-									<span className="font-mono text-xs font-bold text-amber-700">0{index + 1}</span>
-									<span className="text-xs leading-5 text-slate-600">
-										<strong className="block text-sm text-slate-900">{card.title}</strong>
+									<span className="font-mono text-md font-bold text-amber-700">0{index + 1}</span>
+									<span className="text-md leading-5 text-slate-600">
+										<strong className="block text-md text-slate-900">{card.title}</strong>
 										{card.description}
 									</span>
 								</div>
@@ -300,15 +300,15 @@ export default function InstallationChecklistPage() {
 								className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-[0_15px_45px_-40px_rgba(15,23,42,0.5)]"
 							>
 								<div className="flex items-start gap-4 p-5 sm:p-6">
-									<span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-amber-200 bg-amber-50 font-mono text-xs font-bold text-amber-800">
+									<span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-amber-200 bg-amber-50 font-mono text-md font-bold text-amber-800">
 										{String(index + 1).padStart(2, '0')}
 									</span>
 									<div className="min-w-0 flex-1">
 										<h2 className="text-lg font-extrabold tracking-tight text-slate-950">{section.title.replace(/^Phase \d+:\s*/, '')}</h2>
-										<p className="mt-3 text-sm leading-7 text-slate-600 sm:text-base">{section.text}</p>
+										<p className="mt-3 text-md leading-7 text-slate-600 sm:text-base">{section.text}</p>
 										<ul className="mt-4 space-y-2.5">
 											{section.points.map((item) => (
-												<li key={item} className="flex items-start gap-3 text-sm leading-6 text-slate-600">
+												<li key={item} className="flex items-start gap-3 text-md leading-6 text-slate-600">
 													<span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
 													<span>{item}</span>
 												</li>
@@ -321,7 +321,7 @@ export default function InstallationChecklistPage() {
 						))}
 					</div>
 
-					<p className="mt-7 rounded-2xl border border-amber-200/80 bg-white p-5 text-sm leading-7 text-slate-600">
+					<p className="mt-7 rounded-2xl border border-amber-200/80 bg-white p-5 text-md leading-7 text-slate-600">
 						For project support or technical clarification, please visit the{' '}
 						<a href="/contact" className="font-bold text-amber-800 underline decoration-amber-300 underline-offset-4 hover:text-orange-800">
 							Contact page
@@ -334,14 +334,14 @@ export default function InstallationChecklistPage() {
 					<nav aria-label="Installation checklist phases" className="overflow-hidden rounded-2xl border border-amber-200/80 bg-white shadow-sm">
 						<div className="border-b border-slate-100 px-5 py-4">
 							<p className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-800">Find a phase</p>
-							<p className="mt-1 text-sm font-bold text-slate-900">Project lifecycle</p>
+							<p className="mt-1 text-md font-bold text-slate-900">Project lifecycle</p>
 						</div>
 						<ol className="max-h-[45vh] space-y-1 overflow-y-auto p-3">
 							{checklistSections.map((section, index) => (
 								<li key={section.title}>
 									<a
 										href={`#checklist-phase-${index + 1}`}
-										className="flex items-start gap-3 rounded-xl px-3 py-2.5 text-xs leading-5 text-slate-600 transition hover:bg-amber-50 hover:text-amber-900"
+										className="flex items-start gap-3 rounded-xl px-3 py-2.5 text-md leading-5 text-slate-600 transition hover:bg-amber-50 hover:text-amber-900"
 									>
 										<span className="font-mono font-bold text-amber-700/70">{String(index + 1).padStart(2, '0')}</span>
 										<span>{section.title.replace(/^Phase \d+:\s*/, '')}</span>
@@ -353,7 +353,7 @@ export default function InstallationChecklistPage() {
 
 					<section className="rounded-2xl border border-amber-200 bg-white p-5">
 						<p className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-800">Project essentials</p>
-						<ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
+						<ul className="mt-4 space-y-3 text-md leading-6 text-slate-700">
 							<li>Confirm requirements and site feasibility before design approval.</li>
 							<li>Verify materials and safety checks before installation and energization.</li>
 							<li>Document commissioning, customer training, and final handover.</li>
@@ -373,13 +373,13 @@ export default function InstallationChecklistPage() {
 							<Field label="Installation date" name="installationDate" type="date" register={register} error={errors.installationDate} />
 
 							<div>
-								<label htmlFor="checklistStatus" className="mb-2 block text-sm font-semibold text-slate-100">Installation status</label>
+								<label htmlFor="checklistStatus" className="mb-2 block text-md font-semibold text-slate-100">Installation status</label>
 								<select
 									id="checklistStatus"
 									{...register('checklistStatus')}
 									aria-invalid={Boolean(errors.checklistStatus)}
 									aria-describedby={errors.checklistStatus ? 'checklistStatus-error' : undefined}
-									className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
+									className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
 								>
 									<option value="" className="text-slate-900">Select status</option>
 									<option value="Not started" className="text-slate-900">Not started</option>
@@ -388,23 +388,23 @@ export default function InstallationChecklistPage() {
 									<option value="Pending follow-up" className="text-slate-900">Pending follow-up</option>
 									<option value="Ready for commissioning" className="text-slate-900">Ready for commissioning</option>
 								</select>
-								{errors.checklistStatus && <p id="checklistStatus-error" className="mt-2 text-xs text-rose-300">{errors.checklistStatus.message}</p>}
+								{errors.checklistStatus && <p id="checklistStatus-error" className="mt-2 text-md text-rose-300">{errors.checklistStatus.message}</p>}
 							</div>
 
-							<label className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-3 text-sm leading-6 text-slate-200">
+							<label className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-3 text-md leading-6 text-slate-200">
 								<input type="checkbox" {...register('safetyCheck')} aria-invalid={Boolean(errors.safetyCheck)} aria-describedby={errors.safetyCheck ? 'safetyCheck-error' : undefined} className="mt-1 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
 								<span>I confirm the site safety checklist has been completed before energizing the system.</span>
 							</label>
-							{errors.safetyCheck && <p id="safetyCheck-error" className="text-xs text-rose-300">{errors.safetyCheck.message}</p>}
+							{errors.safetyCheck && <p id="safetyCheck-error" className="text-md text-rose-300">{errors.safetyCheck.message}</p>}
 
-							<label className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-3 text-sm leading-6 text-slate-200">
+							<label className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-3 text-md leading-6 text-slate-200">
 								<input type="checkbox" {...register('commissioningCheck')} aria-invalid={Boolean(errors.commissioningCheck)} aria-describedby={errors.commissioningCheck ? 'commissioningCheck-error' : undefined} className="mt-1 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
 								<span>I confirm the commissioning checklist and performance validation have been completed.</span>
 							</label>
-							{errors.commissioningCheck && <p id="commissioningCheck-error" className="text-xs text-rose-300">{errors.commissioningCheck.message}</p>}
+							{errors.commissioningCheck && <p id="commissioningCheck-error" className="text-md text-rose-300">{errors.commissioningCheck.message}</p>}
 
 							<div>
-								<label htmlFor="notes" className="mb-2 block text-sm font-semibold text-slate-100">Notes</label>
+								<label htmlFor="notes" className="mb-2 block text-md font-semibold text-slate-100">Notes</label>
 								<textarea
 									id="notes"
 									rows={4}
@@ -412,21 +412,21 @@ export default function InstallationChecklistPage() {
 									aria-invalid={Boolean(errors.notes)}
 									aria-describedby={errors.notes ? 'notes-error' : undefined}
 									placeholder="Summarize installation status, testing notes, and any follow-up actions."
-									className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-300 outline-none transition focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
+									className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white placeholder:text-slate-300 outline-none transition focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
 								/>
-								{errors.notes && <p id="notes-error" className="mt-2 text-xs text-rose-300">{errors.notes.message}</p>}
+								{errors.notes && <p id="notes-error" className="mt-2 text-md text-rose-300">{errors.notes.message}</p>}
 							</div>
 
 							<button
 								type="submit"
 								disabled={isSubmitting}
-								className="inline-flex w-full items-center justify-center rounded-xl bg-amber-300 px-4 py-3 text-sm font-bold text-slate-900 transition hover:bg-amber-200 disabled:cursor-not-allowed disabled:opacity-70"
+								className="inline-flex w-full items-center justify-center rounded-xl bg-amber-300 px-4 py-3 text-md font-bold text-slate-900 transition hover:bg-amber-200 disabled:cursor-not-allowed disabled:opacity-70"
 							>
 								{isSubmitting ? 'Submitting...' : 'Submit checklist'}
 							</button>
 
 							{submitFeedback && (
-								<p className={`rounded-xl border px-3 py-2 text-sm ${submitFeedback.type === 'success' ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-200' : 'border-rose-500/30 bg-rose-500/10 text-rose-200'}`}>
+								<p className={`rounded-xl border px-3 py-2 text-md ${submitFeedback.type === 'success' ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-200' : 'border-rose-500/30 bg-rose-500/10 text-rose-200'}`}>
 									{submitFeedback.message}
 								</p>
 							)}
@@ -450,7 +450,7 @@ type FieldProps = {
 function Field({ label, name, placeholder, type = 'text', register, error }: FieldProps) {
 	return (
 		<div>
-			<label htmlFor={name} className="mb-2 block text-sm font-semibold text-slate-100">
+			<label htmlFor={name} className="mb-2 block text-md font-semibold text-slate-100">
 				{label}
 			</label>
 			<input
@@ -460,9 +460,9 @@ function Field({ label, name, placeholder, type = 'text', register, error }: Fie
 				placeholder={placeholder}
 				aria-invalid={Boolean(error)}
 				aria-describedby={error ? `${name}-error` : undefined}
-				className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-300 outline-none transition-all duration-200 focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
+				className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white placeholder:text-slate-300 outline-none transition-all duration-200 focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
 			/>
-			{error && <p id={`${name}-error`} className="mt-2 text-xs text-rose-300">{error.message}</p>}
+			{error && <p id={`${name}-error`} className="mt-2 text-md text-rose-300">{error.message}</p>}
 		</div>
 	)
 }

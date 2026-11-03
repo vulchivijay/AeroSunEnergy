@@ -32,7 +32,7 @@ export default function Notifications() {
                 Updates
               </span>
 
-              <p className="min-w-0 flex-1 text-center text-[10px] font-light leading-4 tracking-[0.12em] text-slate-100 lg:text-xs lg:tracking-[0.16em]">
+              <p className="min-w-0 flex-1 text-center text-[10px] font-light leading-4 tracking-[0.12em] text-slate-100 lg:text-md lg:tracking-[0.16em]">
                 {notificationText}
                 <span className="text-gray-200 italic underline underline-offset-4">{notificationBoldText}</span>
                 {notificationEndText}

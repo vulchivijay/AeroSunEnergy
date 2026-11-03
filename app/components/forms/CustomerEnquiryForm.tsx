@@ -141,12 +141,12 @@ export function CustomerEnquiryForm() {
   }
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(32,164,74,0.12),transparent_22%),linear-gradient(180deg,#f8fafc_0%,#f0fdf4_32%,#f8fafc_100%)] px-4 py-10 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-6xl">
-        <Card className="overflow-hidden border border-sky-200 bg-[#f7fbff] shadow-[0_26px_80px_rgba(14,116,144,0.12)] ring-1 ring-white/60 backdrop-blur-sm">
+    <div className="min-w-0">
+      <div className="w-full">
+        <Card className="overflow-hidden border border-sky-200 bg-white shadow-sm">
           <CardContent className="p-4 sm:p-6 lg:p-8">
             <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
-              <div className="rounded-[28px] border border-sky-200 bg-[linear-gradient(135deg,#dff3ff_0%,#edf9ff_52%,#f2fbff_100%)] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
+              <div id="enquiry-customer-details" className="scroll-mt-28 rounded-2xl border border-sky-200 bg-[#f4f8fc] p-4 sm:p-5">
                 <div className="mb-4 flex items-center gap-3">
                   <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-sky-700 to-cyan-700 text-base font-black text-white shadow-lg shadow-sky-500/20">
                     1
@@ -166,7 +166,7 @@ export function CustomerEnquiryForm() {
                 </div>
               </div>
 
-              <div className="rounded-[28px] border border-emerald-200 bg-[linear-gradient(135deg,#e8fff4_0%,#edfdf8_52%,#f8fffd_100%)] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
+              <div id="enquiry-service-type" className="scroll-mt-28 rounded-2xl border border-emerald-200 bg-[#f4f8fc] p-4 sm:p-5">
                 <div className="mb-4 flex items-center gap-3">
                   <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-lime-500 text-base font-black text-slate-950 shadow-lg shadow-emerald-500/20">
                     2
@@ -187,11 +187,11 @@ export function CustomerEnquiryForm() {
                   <SelectTile label="Operations & Maintenance" value="Operations & Maintenance" accent="slate" register={register} />
                 </div>
 
-                {errors.serviceType && <p className="mt-3 text-xs text-rose-600">{errors.serviceType.message}</p>}
+                {errors.serviceType && <p className="mt-3 text-md text-rose-600">{errors.serviceType.message}</p>}
               </div>
 
               <div className="grid gap-5 lg:grid-cols-2">
-                <div className="rounded-[28px] border border-violet-200 bg-[linear-gradient(135deg,#f5f1ff_0%,#f9f6ff_60%,#ffffff_100%)] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
+                <div id="enquiry-property-site" className="scroll-mt-28 rounded-2xl border border-violet-200 bg-[#f4f8fc] p-4 sm:p-5">
                   <div className="mb-4 flex items-center gap-3">
                     <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-violet-700 to-indigo-700 text-base font-black text-white shadow-lg shadow-violet-500/20">
                       3
@@ -208,7 +208,7 @@ export function CustomerEnquiryForm() {
                   </div>
                 </div>
 
-                <div className="rounded-[28px] border border-amber-200 bg-[linear-gradient(135deg,#fff8e8_0%,#fffaf1_60%,#ffffff_100%)] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
+                <div id="enquiry-electricity-usage" className="scroll-mt-28 rounded-2xl border border-amber-200 bg-[#f4f8fc] p-4 sm:p-5">
                   <div className="mb-4 flex items-center gap-3">
                     <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-amber-500 to-orange-500 text-base font-black text-slate-950 shadow-lg shadow-amber-500/20">
                       4
@@ -227,7 +227,7 @@ export function CustomerEnquiryForm() {
               </div>
 
               <div className="grid gap-5 lg:grid-cols-2">
-                <div className="rounded-[28px] border border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f4fff9_60%,#ffffff_100%)] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
+                <div id="enquiry-requirements" className="scroll-mt-28 rounded-2xl border border-emerald-200 bg-[#f4f8fc] p-4 sm:p-5">
                   <div className="mb-4 flex items-center gap-3">
                     <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-green-600 text-base font-black text-slate-950 shadow-lg shadow-emerald-500/20">
                       5
@@ -244,7 +244,7 @@ export function CustomerEnquiryForm() {
                   </div>
                 </div>
 
-                <div className="rounded-[28px] border border-sky-200 bg-[linear-gradient(135deg,#edf8ff_0%,#f4fbff_60%,#ffffff_100%)] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
+                <div id="enquiry-project-details" className="scroll-mt-28 rounded-2xl border border-sky-200 bg-[#f4f8fc] p-4 sm:p-5">
                   <div className="mb-4 flex items-center gap-3">
                     <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-sky-700 to-blue-700 text-base font-black text-white shadow-lg shadow-sky-500/20">
                       6
@@ -255,7 +255,7 @@ export function CustomerEnquiryForm() {
                   </div>
 
                   <div className="md:col-span-2">
-                    <label htmlFor="projectDetails" className="mb-2 block text-sm font-semibold text-slate-800">
+                    <label htmlFor="projectDetails" className="mb-2 block text-md font-semibold text-slate-800">
                       Requirement details*
                     </label>
                     <textarea
@@ -265,9 +265,9 @@ export function CustomerEnquiryForm() {
                       placeholder="Tell us about your expected load, site conditions, backup needs, voltage preference, and any unique project requirements."
                       aria-invalid={Boolean(errors.projectDetails)}
                       aria-describedby={errors.projectDetails ? 'projectDetails-error' : undefined}
-                      className="w-full rounded-2xl border border-sky-200 bg-white/90 px-4 py-3 text-sm text-slate-900 shadow-[inset_0_1px_2px_rgba(15,23,42,0.04)] outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
+                      className="w-full rounded-2xl border border-sky-200 bg-white/90 px-4 py-3 text-md text-slate-900 shadow-[inset_0_1px_2px_rgba(15,23,42,0.04)] outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
                     />
-                    {errors.projectDetails && <p id="projectDetails-error" className="mt-2 text-xs text-rose-600">{errors.projectDetails.message}</p>}
+                    {errors.projectDetails && <p id="projectDetails-error" className="mt-2 text-md text-rose-600">{errors.projectDetails.message}</p>}
                   </div>
                 </div>
               </div>
@@ -276,24 +276,24 @@ export function CustomerEnquiryForm() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(135deg,#0f172a_0%,#0f766e_100%)] px-6 py-3 text-sm font-black uppercase tracking-[0.18em] text-white shadow-[0_18px_32px_-18px_rgba(15,118,110,0.85)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_24px_38px_-18px_rgba(15,118,110,0.9)] disabled:cursor-not-allowed disabled:opacity-60"
+                  className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(135deg,#0f172a_0%,#0f766e_100%)] px-6 py-3 text-md font-black uppercase tracking-[0.18em] text-white shadow-[0_18px_32px_-18px_rgba(15,118,110,0.85)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_24px_38px_-18px_rgba(15,118,110,0.9)] disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {isSubmitting ? 'Submitting...' : 'Send Enquiry'}
                 </button>
 
                 {submitFeedback ? (
-                  <p className={`text-sm font-semibold ${submitFeedback.type === 'success' ? 'text-emerald-700' : 'text-rose-600'}`}>
+                  <p className={`text-md font-semibold ${submitFeedback.type === 'success' ? 'text-emerald-700' : 'text-rose-600'}`}>
                     {submitFeedback.message}
                   </p>
                 ) : isSubmitSuccessful && (
-                  <p className="text-sm font-semibold text-emerald-700">Your enquiry has been prepared in your email app.</p>
+                  <p className="text-md font-semibold text-emerald-700">Your enquiry has been prepared in your email app.</p>
                 )}
               </div>
             </form>
           </CardContent>
         </Card>
       </div>
-    </main>
+    </div>
   )
 }
 
@@ -320,7 +320,7 @@ function SelectTile({
   return (
     <label className={`flex cursor-pointer items-center gap-3 rounded-2xl border p-3 transition-all duration-200 ${accentClasses[accent]}`}>
       <input type="radio" value={value} {...register('serviceType')} className="h-4 w-4 accent-sky-600" />
-      <span className="text-sm font-semibold">{label}</span>
+      <span className="text-md font-semibold">{label}</span>
     </label>
   )
 }
@@ -338,7 +338,7 @@ type FieldProps = {
 function Field({ label, name, placeholder, type = 'text', register, error, onBlur }: FieldProps) {
   return (
     <div>
-      <label htmlFor={name} className="mb-2 block text-sm font-semibold text-slate-700">
+      <label htmlFor={name} className="mb-2 block text-md font-semibold text-slate-700">
         {label}
       </label>
       <input
@@ -348,9 +348,9 @@ function Field({ label, name, placeholder, type = 'text', register, error, onBlu
         placeholder={placeholder}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${name}-error` : undefined}
-        className="w-full rounded-2xl border border-sky-200 bg-white/90 px-4 py-3 text-sm text-slate-900 shadow-[inset_0_1px_2px_rgba(15,23,42,0.04)] outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
+        className="w-full rounded-2xl border border-sky-200 bg-white/90 px-4 py-3 text-md text-slate-900 shadow-[inset_0_1px_2px_rgba(15,23,42,0.04)] outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
       />
-      {error && <p id={`${name}-error`} className="mt-2 text-xs text-rose-600">{error.message}</p>}
+      {error && <p id={`${name}-error`} className="mt-2 text-md text-rose-600">{error.message}</p>}
     </div>
   )
 }

@@ -156,7 +156,7 @@ export default function About() {
                     </div>
                     <div className="absolute bottom-4 right-4 rounded-2xl border border-emerald-200 bg-white/85 px-3 py-2 shadow-lg backdrop-blur-sm">
                       <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-slate-500">Leadership</p>
-                      <p className="mt-1 text-sm font-semibold text-slate-900">{a.founder.name}</p>
+                      <p className="mt-1 text-md font-semibold text-slate-900">{a.founder.name}</p>
                     </div>
                   </div>
                 </div>
@@ -225,7 +225,7 @@ export default function About() {
                   {systemCards.map((item) => (
                     <div key={item.label} className={`rounded-2xl border p-3 ${item.tone}`}>
                       <p className="text-[10px] font-bold uppercase tracking-[0.28em]">{item.label}</p>
-                      <p className="mt-2 text-sm text-slate-100">{item.value}</p>
+                      <p className="mt-2 text-md text-slate-100">{item.value}</p>
                     </div>
                   ))}
                 </div>

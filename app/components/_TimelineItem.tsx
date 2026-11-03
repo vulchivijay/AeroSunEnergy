@@ -24,13 +24,13 @@ export default function TimelineItem({
       <div className="flex-1 pb-6">
         <div className="flex justify-between">
           <h3 className="font-semibold">{title}</h3>
-          <span className="text-blue-600 text-sm">
+          <span className="text-blue-600 text-md">
             {duration}
           </span>
         </div>
 
         {description && (
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-md text-gray-600">
             {description}
           </p>
         )}

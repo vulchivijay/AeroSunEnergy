@@ -254,7 +254,7 @@ export default function AboutPage() {
               AeroSun
               <span className="mt-2 block text-emerald-300">Energy</span>
             </h1>
-            <p className="mt-5 text-xs font-bold uppercase tracking-[0.3em] text-emerald-100/65">
+            <p className="mt-5 text-md font-bold uppercase tracking-[0.3em] text-emerald-100/65">
               Private Limited
             </p>
             <p className="mt-6 max-w-xl text-xl font-medium leading-8 text-white/85 sm:text-2xl">
@@ -268,10 +268,10 @@ export default function AboutPage() {
               AeroSun Energy Private Limited is an Indian renewable-energy company established with the vision of supporting a cleaner, more sustainable and energy-efficient future. Based in Tirupati, Andhra Pradesh, the company aims to develop renewable-energy solutions for residential, agricultural, commercial and industrial customers.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#capabilities" className="rounded-full bg-lime-300 px-5 py-3 text-sm font-bold text-emerald-950 transition hover:bg-lime-200">
+              <a href="#capabilities" className="rounded-full bg-lime-300 px-5 py-3 text-md font-bold text-emerald-950 transition hover:bg-lime-200">
                 Explore our capabilities
               </a>
-              <a href="#leadership" className="rounded-full border border-white/20 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/10">
+              <a href="#leadership" className="rounded-full border border-white/20 px-5 py-3 text-md font-bold text-white transition hover:bg-white/10">
                 Meet the leadership
               </a>
             </div>
@@ -306,7 +306,7 @@ export default function AboutPage() {
             {companyStats.map((stat) => (
               <div key={stat.label} className="flex items-center justify-between gap-4 sm:justify-start sm:gap-5">
                 <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-100/55">{stat.label}</span>
-                <span className="text-sm font-semibold text-white">{stat.value}</span>
+                <span className="text-md font-semibold text-white">{stat.value}</span>
               </div>
             ))}
           </div>
@@ -351,7 +351,7 @@ export default function AboutPage() {
                   <h2 className="mt-4 text-3xl font-black tracking-[0.055em] sm:text-4xl">
                     Registrations and approval milestones
                   </h2>
-                  <p className="mt-2 text-sm leading-6 text-emerald-50/85">
+                  <p className="mt-2 text-md leading-6 text-emerald-50/85">
                     Company records and key compliance milestones.
                   </p>
                 </div>
@@ -364,7 +364,7 @@ export default function AboutPage() {
             <div className="grid gap-3 p-4 sm:grid-cols-2 sm:gap-4 sm:p-6 lg:p-8">
               {approvalRows.map(([label, , status], index) => (
                 <article key={label} className="group flex min-h-24 items-center gap-3 rounded-2xl border border-slate-200/90 bg-white p-4 shadow-[0_8px_24px_-20px_rgba(15,23,42,0.45)] transition duration-200 hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-[0_16px_30px_-22px_rgba(16,87,58,0.45)] dark:border-slate-700 dark:bg-slate-900 dark:hover:border-emerald-700 sm:gap-4 sm:p-5">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 font-mono text-xs font-black text-emerald-800 ring-1 ring-emerald-700/10 transition-colors group-hover:bg-emerald-100 dark:bg-emerald-950/60 dark:text-emerald-200 dark:ring-emerald-300/10 dark:group-hover:bg-emerald-900/60">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 font-mono text-md font-black text-emerald-800 ring-1 ring-emerald-700/10 transition-colors group-hover:bg-emerald-100 dark:bg-emerald-950/60 dark:text-emerald-200 dark:ring-emerald-300/10 dark:group-hover:bg-emerald-900/60">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <div className="min-w-0 flex-1">
@@ -481,7 +481,7 @@ export default function AboutPage() {
             <ol className="mt-6 space-y-3">
               {currentGoals.map((goal, index) => (
                 <li key={goal} className="flex gap-3 border-b border-amber-100 pb-3 last:border-0 dark:border-amber-900/40">
-                  <span className="font-mono text-xs font-bold text-amber-700 dark:text-amber-300">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="font-mono text-md font-bold text-amber-700 dark:text-amber-300">{String(index + 1).padStart(2, '0')}</span>
                   <span className="text-base leading-7 text-slate-700 dark:text-slate-200">{goal}</span>
                 </li>
               ))}
@@ -494,7 +494,7 @@ export default function AboutPage() {
                 <div key={group.title} className="relative border-l border-indigo-200 pl-5 dark:border-indigo-800">
                   <span className="absolute -left-[5px] top-1 h-2.5 w-2.5 rounded-full bg-indigo-500 ring-4 ring-[#f8f8ff] dark:ring-[#12112a]" />
                   <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">Phase 0{index + 1}</p>
-                  <h4 className="mt-1 text-sm font-extrabold text-slate-950 dark:text-white">{group.title}</h4>
+                  <h4 className="mt-1 text-md font-extrabold text-slate-950 dark:text-white">{group.title}</h4>
                   <ul className="mt-3 space-y-2">
                     {group.items.map((item) => (
                       <li key={item} className="flex gap-2 text-base leading-7 text-slate-700 dark:text-slate-300"><span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-indigo-500" />{item}</li>
@@ -514,13 +514,13 @@ export default function AboutPage() {
               <p className="text-[10px] font-black uppercase tracking-[0.24em] text-emerald-700 dark:text-emerald-300">Service focus</p>
               <h2 className="mt-3 max-w-3xl text-3xl font-black tracking-[0.055em] text-slate-950 dark:text-white sm:text-4xl">Integrated clean-energy capabilities</h2>
             </div>
-            <span className="text-sm font-semibold text-slate-600 dark:text-slate-300">For homes, farms, businesses & industry</span>
+            <span className="text-md font-semibold text-slate-600 dark:text-slate-300">For homes, farms, businesses & industry</span>
           </div>
           <div className="grid gap-4 lg:grid-cols-3">
             {serviceGroups.map((group, index) => (
               <article key={group.title} className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-[#f8f9f5] p-5 transition hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-950/5 dark:border-slate-800 dark:bg-slate-950/70 dark:hover:border-emerald-800 sm:p-6">
                 <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${group.accent}`} />
-                <p className="font-mono text-xs font-bold text-emerald-700/60 dark:text-emerald-300/60">0{index + 1} / SOLUTIONS</p>
+                <p className="font-mono text-md font-bold text-emerald-700/60 dark:text-emerald-300/60">0{index + 1} / SOLUTIONS</p>
                 <h3 className="mt-4 text-xl font-black text-slate-950 dark:text-white">{group.title}</h3>
                 <ul className="mt-5 space-y-3">
                   {group.items.map((item) => (
@@ -545,11 +545,11 @@ export default function AboutPage() {
               { title: 'Our mission', points: missionPoints, accent: 'text-sky-300' },
             ].map((group) => (
               <article key={group.title} className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 sm:p-7">
-                <h3 className={`text-xs font-black uppercase tracking-[0.2em] ${group.accent}`}>{group.title}</h3>
+                <h3 className={`text-md font-black uppercase tracking-[0.2em] ${group.accent}`}>{group.title}</h3>
                 <ul className="mt-5 space-y-4">
                   {group.points.map((point, index) => (
                     <li key={point} className="flex gap-4 border-b border-white/10 pb-4 last:border-0 last:pb-0">
-                      <span className={`font-mono text-xs font-bold ${group.accent}`}>0{index + 1}</span>
+                      <span className={`font-mono text-md font-bold ${group.accent}`}>0{index + 1}</span>
                       <span className="text-base leading-7 text-emerald-50/90">{point}</span>
                     </li>
                   ))}
@@ -562,7 +562,7 @@ export default function AboutPage() {
               <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-lime-200">Let&apos;s build a cleaner future</p>
               <p className="mt-2 text-lg font-bold text-white">Start a conversation with AeroSun Energy.</p>
             </div>
-            <a href="/contact" className="inline-flex items-center justify-center rounded-full bg-lime-300 px-5 py-3 text-sm font-bold text-emerald-950 transition hover:bg-lime-200">
+            <a href="/contact" className="inline-flex items-center justify-center rounded-full bg-lime-300 px-5 py-3 text-md font-bold text-emerald-950 transition hover:bg-lime-200">
               Contact our team <span aria-hidden="true" className="ml-2">&rarr;</span>
             </a>
           </div>
@@ -580,7 +580,7 @@ export default function AboutPage() {
             <div className="mt-5 divide-y divide-emerald-900/10 dark:divide-emerald-100/10">
               {qualityPoints.map((point, index) => (
                 <div key={point} className="flex gap-4 py-3 first:pt-0 last:pb-0">
-                  <span className="font-mono text-xs font-bold text-emerald-800/60 dark:text-emerald-200/60">0{index + 1}</span>
+                  <span className="font-mono text-md font-bold text-emerald-800/60 dark:text-emerald-200/60">0{index + 1}</span>
                   <p className="text-base leading-7 text-slate-700 dark:text-slate-200">{point}</p>
                 </div>
               ))}
@@ -591,7 +591,7 @@ export default function AboutPage() {
             <div className="mt-5 divide-y divide-slate-900/10 dark:divide-white/10">
               {ethicsPoints.map((point, index) => (
                 <div key={point} className="flex gap-4 py-3 first:pt-0 last:pb-0">
-                  <span className="font-mono text-xs font-bold text-amber-800/60 dark:text-amber-200/60">0{index + 1}</span>
+                  <span className="font-mono text-md font-bold text-amber-800/60 dark:text-amber-200/60">0{index + 1}</span>
                   <p className="text-base leading-7 text-slate-700 dark:text-slate-200">{point}</p>
                 </div>
               ))}

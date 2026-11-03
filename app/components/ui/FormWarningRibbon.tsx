@@ -22,7 +22,7 @@ export default function FormWarningRibbon() {
               </svg>
             </span>
 
-            <div className="flex flex-wrap items-center justify-center gap-2 text-sm text-amber-900 sm:text-base">
+            <div className="flex flex-wrap items-center justify-center gap-2 text-md text-amber-900 sm:text-base">
               <span className="inline-flex rounded-full border border-amber-300 bg-white/80 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-amber-800">
                 Notice
               </span>

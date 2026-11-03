@@ -168,7 +168,7 @@ export default function WarrantyPolicyPage() {
                   {...register('productLine')}
                   aria-invalid={Boolean(errors.productLine)}
                   aria-describedby={errors.productLine ? 'productLine-error' : undefined}
-                  className="h-12 w-full rounded-2xl border border-sky-200 bg-sky-50/70 px-4 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
+                  className="h-12 w-full rounded-2xl border border-sky-200 bg-sky-50/70 px-4 text-md text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
                 >
                   <option value="">Select product line</option>
                   <option value="Solar PV system">Solar PV system</option>
@@ -178,7 +178,7 @@ export default function WarrantyPolicyPage() {
                   <option value="Maintenance plan">Maintenance plan</option>
                   <option value="Service request">Service request</option>
                 </select>
-                {errors.productLine && <p id="productLine-error" className="mt-2 text-xs text-rose-600">{errors.productLine.message}</p>}
+                {errors.productLine && <p id="productLine-error" className="mt-2 text-md text-rose-600">{errors.productLine.message}</p>}
               </div>
 
               <Field
@@ -199,7 +199,7 @@ export default function WarrantyPolicyPage() {
                   {...register('servicePlan')}
                   aria-invalid={Boolean(errors.servicePlan)}
                   aria-describedby={errors.servicePlan ? 'servicePlan-error' : undefined}
-                  className="h-12 w-full rounded-2xl border border-emerald-200 bg-emerald-50/70 px-4 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"
+                  className="h-12 w-full rounded-2xl border border-emerald-200 bg-emerald-50/70 px-4 text-md text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"
                 >
                   <option value="">Select service plan</option>
                   <option value="Basic support">Basic support</option>
@@ -208,12 +208,12 @@ export default function WarrantyPolicyPage() {
                   <option value="Monitoring and support">Monitoring and support</option>
                   <option value="Not sure yet">Not sure yet</option>
                 </select>
-                {errors.servicePlan && <p id="servicePlan-error" className="mt-2 text-xs text-rose-600">{errors.servicePlan.message}</p>}
+                {errors.servicePlan && <p id="servicePlan-error" className="mt-2 text-md text-rose-600">{errors.servicePlan.message}</p>}
               </div>
             </div>
 
             <div className="rounded-[26px] border border-slate-200 bg-linear-to-br from-slate-50 via-white to-sky-50 p-4">
-              <label className="flex items-start gap-3 text-sm leading-6 text-slate-700">
+              <label className="flex items-start gap-3 text-md leading-6 text-slate-700">
                 <input
                   type="checkbox"
                   {...register('acceptTerms')}
@@ -223,7 +223,7 @@ export default function WarrantyPolicyPage() {
                   I acknowledge and accept the warranty and after-sales service policy terms as outlined by AeroSun Energy.
                 </span>
               </label>
-              {errors.acceptTerms && <p className="mt-2 text-xs text-rose-600">{errors.acceptTerms.message}</p>}
+              {errors.acceptTerms && <p className="mt-2 text-md text-rose-600">{errors.acceptTerms.message}</p>}
             </div>
 
             <div className="flex flex-col gap-3 border-t border-slate-200 pt-4 sm:flex-row sm:items-center sm:justify-between">
@@ -235,17 +235,17 @@ export default function WarrantyPolicyPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-black uppercase tracking-[0.18em] text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-sky-900 disabled:cursor-not-allowed disabled:opacity-60"
+                className="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-md font-black uppercase tracking-[0.18em] text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-sky-900 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {isSubmitting ? 'Submitting...' : 'Submit acknowledgement'}
               </button>
 
               {submitFeedback ? (
-                <p className={`text-sm font-medium ${submitFeedback.type === 'success' ? 'text-emerald-700' : 'text-rose-600'}`}>
+                <p className={`text-md font-medium ${submitFeedback.type === 'success' ? 'text-emerald-700' : 'text-rose-600'}`}>
                   {submitFeedback.message}
                 </p>
               ) : isSubmitSuccessful && (
-                <p className="text-sm font-medium text-emerald-700">Your warranty acknowledgement has been prepared in your email app.</p>
+                <p className="text-md font-medium text-emerald-700">Your warranty acknowledgement has been prepared in your email app.</p>
               )}
             </div>
           </div>
@@ -286,9 +286,9 @@ function Field({ label, name, placeholder, type = 'text', register, error, accen
         placeholder={placeholder}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${name}-error` : undefined}
-        className={`h-12 w-full rounded-2xl border px-4 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:ring-4 ${accentClasses[accent]}`}
+        className={`h-12 w-full rounded-2xl border px-4 text-md text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:ring-4 ${accentClasses[accent]}`}
       />
-      {error && <p id={`${name}-error`} className="mt-2 text-xs text-rose-600">{error.message}</p>}
+      {error && <p id={`${name}-error`} className="mt-2 text-md text-rose-600">{error.message}</p>}
     </div>
   )
 }

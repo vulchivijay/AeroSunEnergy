@@ -209,7 +209,7 @@ export function SolarEstimation() {
                       <span className="text-[2.4rem] font-black tracking-[0.06em] text-emerald-600">{(values.monthlyUnits ?? defaultValues.monthlyUnits).toLocaleString('en-IN')} units</span>
                     </div>
                   </div>
-                  <div className="rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700">
+                  <div className="rounded-full bg-emerald-50 px-3 py-1 text-md font-semibold text-emerald-700">
                     {calculation ? `${calculation.recommendedKw} kW system` : 'System sizing'}
                   </div>
                 </div>
@@ -229,7 +229,7 @@ export function SolarEstimation() {
                     }}
                     className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-emerald-600"
                   />
-                  <div className="flex items-center justify-between text-sm font-semibold text-slate-500">
+                  <div className="flex items-center justify-between text-md font-semibold text-slate-500">
                     <span>50 units</span>
                     <span>4,000 units</span>
                   </div>
@@ -238,14 +238,14 @@ export function SolarEstimation() {
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-[20px] border border-slate-200 bg-slate-50/80 p-4 shadow-inner">
-                  <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Plant Size</div>
+                  <div className="text-md font-bold uppercase tracking-[0.2em] text-slate-500">Plant Size</div>
                   <div className="mt-2 text-3xl font-black tracking-[0.06em] text-emerald-600">
                     {calculation ? `${calculation.recommendedKw} kW` : '—'}
                   </div>
                 </div>
 
                 <div className="rounded-[20px] border border-slate-200 bg-slate-50/80 p-4 shadow-inner">
-                  <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Roof Required</div>
+                  <div className="text-md font-bold uppercase tracking-[0.2em] text-slate-500">Roof Required</div>
                   <div className="mt-2 text-3xl font-black tracking-[0.06em] text-emerald-600">
                     {calculation ? `${Math.max(60, calculation.recommendedKw * 60)} sq ft` : '—'}
                   </div>
@@ -359,7 +359,7 @@ export function SolarEstimation() {
                 </Link>
               </div>
 
-              <p className="text-center text-sm leading-6 text-emerald-50/90">
+              <p className="text-center text-md leading-6 text-emerald-50/90">
                 Estimates only. Actual figures depend on site conditions and DISCOM tariff.
               </p>
             </div>
@@ -415,12 +415,12 @@ function InputField({
         className={`mt-3 w-full rounded-2xl border px-4 py-3 text-base font-semibold text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 dark:text-white dark:placeholder:text-slate-400 ${error ? 'border-rose-400 bg-rose-50/80 dark:border-rose-500/40 dark:bg-rose-950/25' : 'border-slate-200 bg-white/90 dark:border-white/10 dark:bg-slate-950/60'}`}
       />
 
-      <p id={`${name}-help`} className="mt-2 text-xs leading-5 text-slate-500 dark:text-slate-400">
+      <p id={`${name}-help`} className="mt-2 text-md leading-5 text-slate-500 dark:text-slate-400">
         {helperText}
       </p>
 
       {error && (
-        <p id={`${name}-error`} className="mt-2 text-sm font-medium text-rose-600 dark:text-rose-300">
+        <p id={`${name}-error`} className="mt-2 text-md font-medium text-rose-600 dark:text-rose-300">
           {error}
         </p>
       )}
@@ -446,13 +446,13 @@ function ResultCard({
   return (
     <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white/82 p-4 shadow-sm dark:border-white/10 dark:bg-slate-950/45">
       <div className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r ${accentClass}`} aria-hidden="true" />
-      <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
+      <p className="text-md font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
         {title}
       </p>
       <p className={`mt-3 text-2xl font-semibold tracking-tight ${valueTone}`}>
         {value}
       </p>
-      <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
+      <p className="mt-2 text-md leading-6 text-slate-500 dark:text-slate-400">
         {detail}
       </p>
     </div>

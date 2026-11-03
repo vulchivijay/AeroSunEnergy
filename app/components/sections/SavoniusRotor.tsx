@@ -57,7 +57,7 @@ export default function SavoniusRotor() {
       <div className="max-w-5xl mx-auto mt-12 grid sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
         {s.specs.map((spec) => (
           <div key={spec.label} className="p-5 rounded-xl bg-white shadow dark:bg-gray-800">
-            <p className="text-gray-600 dark:text-gray-300 text-sm">{spec.label}</p>
+            <p className="text-gray-600 dark:text-gray-300 text-md">{spec.label}</p>
             <p className="text-xl font-semibold text-gray-800 dark:text-gray-100">{spec.value}</p>
           </div>
         ))}

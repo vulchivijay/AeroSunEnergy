@@ -97,13 +97,13 @@ export default function SchemeBanner() {
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 <Link
                   href="/contact"
-                  className="rounded-full bg-emerald-700 px-5 py-3 text-sm font-bold uppercase tracking-[0.14em] text-white shadow-[0_18px_28px_-18px_rgba(5,150,105,0.9)] transition hover:bg-emerald-800"
+                  className="rounded-full bg-emerald-700 px-5 py-3 text-md font-bold uppercase tracking-[0.14em] text-white shadow-[0_18px_28px_-18px_rgba(5,150,105,0.9)] transition hover:bg-emerald-800"
                 >
                   Apply Now
                 </Link>
                 <Link
                   href="/know-eligibility"
-                  className="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-bold uppercase tracking-[0.14em] text-slate-700 transition hover:border-emerald-200 hover:text-emerald-700"
+                  className="rounded-full border border-slate-200 bg-white px-5 py-3 text-md font-bold uppercase tracking-[0.14em] text-slate-700 transition hover:border-emerald-200 hover:text-emerald-700"
                 >
                   Know Eligibility
                 </Link>
@@ -118,7 +118,7 @@ export default function SchemeBanner() {
                 </div>
                 <div className="rounded-lg border border-emerald-400/40 bg-emerald-500/10 px-3 py-2 text-right">
                   <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-200">Max</div>
-                  <div className="text-sm font-semibold text-white">per home</div>
+                  <div className="text-md font-semibold text-white">per home</div>
                 </div>
               </div>
 

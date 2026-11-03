@@ -83,8 +83,8 @@ export default function Contact() {
       <section className="px-5 pb-16 pt-6 sm:px-8 sm:pb-24 sm:pt-10 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-5 flex items-center justify-between border-b border-slate-300 pb-4 dark:border-slate-800">
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-emerald-900 dark:text-emerald-300">AeroSun Energy <span className="mx-2 text-lime-600">/</span> {contactUs}</p>
-            <span className="hidden text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 sm:block">Tirupati, India</span>
+            <p className="text-md font-black uppercase tracking-[0.22em] text-emerald-900 dark:text-emerald-300">AeroSun Energy <span className="mx-2 text-lime-600">/</span> {contactUs}</p>
+            <span className="hidden text-md font-semibold uppercase tracking-[0.18em] text-slate-500 sm:block">Tirupati, India</span>
           </div>
 
           <div className="grid min-h-[34rem] overflow-hidden rounded-[2rem] bg-[#dfff72] lg:grid-cols-[1fr_0.92fr]">
@@ -97,7 +97,7 @@ export default function Contact() {
               <div className="pointer-events-none absolute -bottom-36 -left-36 h-[28rem] w-[28rem] rounded-full border border-emerald-950/10" aria-hidden="true" />
               <div className="pointer-events-none absolute -bottom-20 -left-20 h-80 w-80 rounded-full border border-emerald-950/10" aria-hidden="true" />
               <div className="relative">
-                <p className="inline-flex items-center gap-3 text-xs font-black uppercase tracking-[0.2em] text-emerald-950">
+                <p className="inline-flex items-center gap-3 text-md font-black uppercase tracking-[0.2em] text-emerald-950">
                   <span className="h-2 w-2 rounded-full bg-emerald-800" />
                   {navbar.startProject}
                 </p>
@@ -110,21 +110,21 @@ export default function Contact() {
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
                     href={`mailto:${contactEmail}`}
-                    className="inline-flex items-center justify-center rounded-full bg-[#10251f] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-emerald-900"
+                    className="inline-flex items-center justify-center rounded-full bg-[#10251f] px-6 py-3.5 text-md font-bold text-white transition hover:-translate-y-0.5 hover:bg-emerald-900"
                   >
                     {c.emailButton}
                   </Link>
                   <Link
                     href="/estimation-calculator"
-                    className="inline-flex items-center justify-center rounded-full border border-emerald-950/25 px-6 py-3.5 text-sm font-bold text-emerald-950 transition hover:bg-white/50"
+                    className="inline-flex items-center justify-center rounded-full border border-emerald-950/25 px-6 py-3.5 text-md font-bold text-emerald-950 transition hover:bg-white/50"
                   >
                     {c.estimationButton}
                   </Link>
                 </div>
               </div>
               <div className="relative mt-12 flex items-end justify-between gap-4 border-t border-emerald-950/20 pt-4">
-                <span className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-950/70">{c.badge}</span>
-                <span className="text-right text-sm font-black text-emerald-950">{c.projectBrief}</span>
+                <span className="text-md font-bold uppercase tracking-[0.18em] text-emerald-950/70">{c.badge}</span>
+                <span className="text-right text-md font-black text-emerald-950">{c.projectBrief}</span>
               </div>
             </motion.div>
 
@@ -145,7 +145,7 @@ export default function Contact() {
               <div className="absolute right-8 top-8 flex h-28 w-28 items-center justify-center rounded-full border border-white/70 bg-lime-300 text-center text-[10px] font-black uppercase leading-4 tracking-[0.16em] text-emerald-950 shadow-xl sm:right-12 sm:top-12 sm:h-36 sm:w-36">
                 Sun <span className="mx-1 text-emerald-700">+</span> wind<br />better together
               </div>
-              <div className="absolute bottom-7 left-7 max-w-xs border-l-2 border-lime-300 pl-4 text-sm font-semibold leading-6 text-white sm:bottom-10 sm:left-10">
+              <div className="absolute bottom-7 left-7 max-w-xs border-l-2 border-lime-300 pl-4 text-md font-semibold leading-6 text-white sm:bottom-10 sm:left-10">
                 Practical renewable energy, shaped around your project.
               </div>
             </motion.div>
@@ -154,7 +154,7 @@ export default function Contact() {
           <section className="mt-5 overflow-hidden rounded-[2rem] bg-[#10251f] text-white">
             <div className="grid lg:grid-cols-[0.75fr_1.25fr]">
               <div className="flex flex-col justify-center border-b border-white/10 p-6 sm:p-9 lg:border-b-0 lg:border-r">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-lime-300">{contactUs}</p>
+                <p className="text-md font-bold uppercase tracking-[0.2em] text-lime-300">{contactUs}</p>
                 <h2 className="mt-4 text-3xl font-black leading-tight tracking-tight sm:text-4xl">{contactCardTitle}</h2>
                 <p className="mt-4 text-base leading-7 text-emerald-50/75">Choose the best way to connect or begin planning your energy project.</p>
               </div>
@@ -169,8 +169,8 @@ export default function Contact() {
                       {channel.icon}
                     </span>
                     <span className="min-w-0">
-                      <span className="block font-mono text-xs font-bold text-lime-300">0{index + 1}</span>
-                      <span className="mt-3 block text-xs font-bold uppercase tracking-[0.14em] text-white/60">{channel.label}</span>
+                      <span className="block font-mono text-md font-bold text-lime-300">0{index + 1}</span>
+                      <span className="mt-3 block text-md font-bold uppercase tracking-[0.14em] text-white/60">{channel.label}</span>
                       <span className="mt-1 block break-words text-base font-semibold leading-6 text-white group-hover:text-lime-200">{channel.value}</span>
                     </span>
                     <span className="ml-auto text-lg text-lime-300 transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
@@ -184,9 +184,9 @@ export default function Contact() {
           <div className="mt-5 grid gap-3 sm:grid-cols-3">
             {contactHighlights.map((item, index) => (
               <article key={item.label} className="flex gap-4 border-t-2 border-emerald-800/20 bg-white/55 p-5 dark:border-emerald-300/20 dark:bg-slate-900/60">
-                <span className="font-mono text-sm font-bold text-emerald-800 dark:text-lime-300">0{index + 1}</span>
+                <span className="font-mono text-md font-bold text-emerald-800 dark:text-lime-300">0{index + 1}</span>
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-600 dark:text-slate-300">{item.label}</p>
+                  <p className="text-md font-bold uppercase tracking-[0.16em] text-slate-600 dark:text-slate-300">{item.label}</p>
                   <p className="mt-2 text-base leading-7 text-slate-800 dark:text-slate-200">{item.value}</p>
                 </div>
               </article>
@@ -196,12 +196,12 @@ export default function Contact() {
           <section className="mt-20 sm:mt-28">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-800 dark:text-emerald-300">From first question to next step</p>
+                <p className="text-md font-black uppercase tracking-[0.2em] text-emerald-800 dark:text-emerald-300">From first question to next step</p>
                 <h2 className="mt-4 max-w-xl text-4xl font-black leading-tight tracking-[0.05em] text-slate-950 sm:text-5xl dark:text-white">A simple way to get started</h2>
               </div>
               <div className="flex flex-col justify-between gap-5 border-t border-slate-300 pt-5 sm:flex-row sm:items-end dark:border-slate-800">
                 <p className="max-w-md text-base leading-7 text-slate-600 dark:text-slate-300">Tell us what you need, and we&apos;ll help you explore the right renewable-energy direction.</p>
-                <Link href="/customer-enquiry" className="inline-flex w-fit items-center gap-3 text-sm font-bold text-emerald-900 transition hover:gap-4 dark:text-lime-300">
+                <Link href="/customer-enquiry" className="inline-flex w-fit items-center gap-3 text-md font-bold text-emerald-900 transition hover:gap-4 dark:text-lime-300">
                   Submit an enquiry <span aria-hidden="true">&rarr;</span>
                 </Link>
               </div>
@@ -209,7 +209,7 @@ export default function Contact() {
             <div className="mt-8 grid gap-px overflow-hidden rounded-2xl bg-slate-300 dark:bg-slate-800 lg:grid-cols-3">
               {contactSteps.map((step) => (
                 <article key={step.title} className="bg-[#f3f0e5] p-6 sm:p-8 dark:bg-slate-950">
-                  <span className="font-mono text-sm font-bold text-emerald-700 dark:text-lime-300">{step.number} <span className="text-slate-600 dark:text-slate-400">/ 03</span></span>
+                  <span className="font-mono text-md font-bold text-emerald-700 dark:text-lime-300">{step.number} <span className="text-slate-600 dark:text-slate-400">/ 03</span></span>
                   <h3 className="mt-8 text-2xl font-black text-slate-950 dark:text-white">{step.title}</h3>
                   <p className="mt-3 text-base leading-7 text-slate-700 dark:text-slate-300">{step.description}</p>
                 </article>
@@ -219,7 +219,7 @@ export default function Contact() {
 
           <section className="mt-20 grid overflow-hidden rounded-[2rem] shadow-2xl border border-emerald-950/20 bg-[#dfff72] sm:mt-28 lg:grid-cols-[0.7fr_1.3fr] dark:border-emerald-300/20 dark:bg-emerald-950">
             <div className="flex flex-col justify-start p-6 sm:p-10">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-900 dark:text-lime-300">{faqHeader}</p>
+              <p className="text-md font-black uppercase tracking-[0.2em] text-emerald-900 dark:text-lime-300">{faqHeader}</p>
               <h2 className="mt-4 text-4xl font-black leading-tight tracking-[0.05em] text-emerald-950 dark:text-white sm:text-5xl">{faqTitle}</h2>
               <p className="mt-5 text-base leading-7 text-emerald-950/75 dark:text-emerald-50/75">Explore answers to common questions about solar energy and project planning.</p>
             </div>
