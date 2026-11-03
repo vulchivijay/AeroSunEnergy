@@ -61,9 +61,9 @@ export function BankEMICalculator() {
   const principalShare = (loanAmount / calculation.totalAmountPayable) * 100
 
   return (
-    <section className="relative isolate overflow-hidden border-y border-[#dce8df] bg-[#f3f7f2] px-4 py-14 sm:px-6 sm:py-18 lg:px-8 lg:py-24">
-      <div className="pointer-events-none absolute -right-36 -top-40 h-[28rem] w-[28rem] rounded-full border border-emerald-900/[0.06]" aria-hidden="true" />
-      <div className="pointer-events-none absolute -right-20 -top-24 h-96 w-96 rounded-full border border-emerald-900/[0.06]" aria-hidden="true" />
+    <section className="relative isolate overflow-hidden border-y border-[#d9e3f3] bg-[#edf3ff] px-4 py-14 sm:px-6 sm:py-18 lg:px-8 lg:py-24">
+      <div className="pointer-events-none absolute -right-36 -top-40 h-[28rem] w-[28rem] rounded-full border border-blue-900/[0.06]" aria-hidden="true" />
+      <div className="pointer-events-none absolute -right-20 -top-24 h-96 w-96 rounded-full border border-blue-900/[0.06]" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl">
         <header className="mb-9 flex flex-col gap-6 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
@@ -98,7 +98,7 @@ export function BankEMICalculator() {
                 <p className="text-xs font-bold uppercase tracking-[0.17em] text-emerald-800">Your loan details</p>
                 <p className="mt-1 text-sm text-slate-500">Fine-tune the estimate below</p>
               </div>
-              <span className="rounded-lg bg-[#f3f7f2] px-2.5 py-1.5 font-mono text-[11px] font-semibold tracking-wide text-slate-500">
+              <span className="rounded-lg bg-[#e6eefb] px-2.5 py-1.5 font-mono text-[11px] font-semibold tracking-wide text-slate-500">
                 INR · ₹
               </span>
             </div>
@@ -107,7 +107,7 @@ export function BankEMICalculator() {
               <div>
                 <div className="mb-4 flex items-center justify-between gap-3">
                   <label htmlFor="bank-emi-loan" className="text-sm font-semibold text-slate-700 sm:text-base">Loan amount</label>
-                  <output htmlFor="bank-emi-loan" className="rounded-xl bg-[#f3f7f2] px-3 py-2 text-right text-sm font-bold tabular-nums text-[#173c2b] sm:px-4 sm:text-base">
+                  <output htmlFor="bank-emi-loan" className="rounded-xl bg-[#e6eefb] px-3 py-2 text-right text-sm font-bold tabular-nums text-[#173c2b] sm:px-4 sm:text-base">
                     {formatCurrency(loanAmount)}
                   </output>
                 </div>
@@ -119,7 +119,7 @@ export function BankEMICalculator() {
                   step={25000}
                   value={loanAmount}
                   onChange={(event) => setLoanAmount(clamp(Number(event.target.value), MIN_LOAN, MAX_LOAN))}
-                  className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-700 via-teal-400 to-emerald-100 accent-emerald-700"
+                  className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-emerald-600"
                   aria-label="Loan amount"
                 />
                 <div className="mt-2 flex justify-between text-xs font-medium tabular-nums text-slate-400">
@@ -131,7 +131,7 @@ export function BankEMICalculator() {
               <div>
                 <div className="mb-4 flex items-center justify-between gap-3">
                   <label htmlFor="bank-emi-tenure" className="text-sm font-semibold text-slate-700 sm:text-base">Loan tenure</label>
-                  <output htmlFor="bank-emi-tenure" className="rounded-xl bg-[#f3f7f2] px-3 py-2 text-right text-sm font-bold tabular-nums text-[#173c2b] sm:px-4 sm:text-base">
+                  <output htmlFor="bank-emi-tenure" className="rounded-xl bg-[#e6eefb] px-3 py-2 text-right text-sm font-bold tabular-nums text-[#173c2b] sm:px-4 sm:text-base">
                     {tenureYears} {tenureYears === 1 ? 'year' : 'years'}
                   </output>
                 </div>
@@ -143,7 +143,7 @@ export function BankEMICalculator() {
                   step={1}
                   value={tenureYears}
                   onChange={(event) => setTenureYears(clamp(Number(event.target.value), MIN_TENURE, MAX_TENURE))}
-                  className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-sky-700 via-cyan-400 to-sky-100 accent-sky-700"
+                  className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-emerald-600"
                   aria-label="Loan tenure"
                 />
                 <div className="mt-2 flex justify-between text-xs font-medium text-slate-400">
@@ -155,7 +155,7 @@ export function BankEMICalculator() {
               <div>
                 <div className="mb-4 flex items-center justify-between gap-3">
                   <label htmlFor="bank-emi-rate" className="text-sm font-semibold text-slate-700 sm:text-base">Interest rate</label>
-                  <output htmlFor="bank-emi-rate" className="rounded-xl bg-[#f3f7f2] px-3 py-2 text-right text-sm font-bold tabular-nums text-[#173c2b] sm:px-4 sm:text-base">
+                  <output htmlFor="bank-emi-rate" className="rounded-xl bg-[#e6eefb] px-3 py-2 text-right text-sm font-bold tabular-nums text-[#173c2b] sm:px-4 sm:text-base">
                     {interestRate.toFixed(2)}% <span className="text-xs font-medium text-slate-500">p.a.</span>
                   </output>
                 </div>
@@ -167,7 +167,7 @@ export function BankEMICalculator() {
                   step={0.01}
                   value={interestRate}
                   onChange={(event) => setInterestRate(clamp(Number(event.target.value), MIN_RATE, MAX_RATE))}
-                  className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-violet-700 via-fuchsia-400 to-violet-100 accent-violet-700"
+                  className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-emerald-600"
                   aria-label="Interest rate"
                 />
                 <div className="mt-2 flex justify-between text-xs font-medium tabular-nums text-slate-400">

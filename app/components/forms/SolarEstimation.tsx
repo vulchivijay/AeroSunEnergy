@@ -172,7 +172,7 @@ export function SolarEstimation() {
     }).format(amount).replace('₹', '₹ ')
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#f7f5f0] px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
+    <section className="relative isolate overflow-hidden bg-[#fff4e8] px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.28em] text-emerald-700 shadow-sm backdrop-blur-md">
