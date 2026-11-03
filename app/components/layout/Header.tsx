@@ -102,14 +102,14 @@ export default function Navbar() {
     const active = isActive(link.href) && !disabled
     const Icon = navigationIcons[link.href] ?? PanelsTopLeft
     const classes = mobile
-      ? `flex min-h-12 w-full items-center justify-between rounded-xl px-4 py-3 text-md font-medium transition ${
+      ? `flex min-h-12 w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium transition ${
           disabled
             ? 'cursor-not-allowed text-white/35'
             : active
               ? 'bg-[#a5d6a7]/15 text-[#dcedc8] ring-1 ring-inset ring-[#a5d6a7]/40'
               : 'text-white/75 hover:bg-[#a5d6a7]/10 hover:text-[#dcedc8]'
         }`
-      : `group relative z-10 flex min-w-[3.55rem] flex-col items-center gap-1 rounded-xl px-2 py-1.5 text-[13px] transition-colors 2xl:min-w-[4rem] 2xl:text-md ${
+      : `group relative z-10 flex min-w-[3.55rem] flex-col items-center gap-1 rounded-xl px-2 py-1.5 text-[13px] transition-colors 2xl:min-w-[4rem] 2xl:text-sm ${
           active
             ? 'bg-[#a5d6a7]/10 text-[#dcedc8]'
             : disabled
@@ -134,7 +134,7 @@ export default function Navbar() {
           </>
         )}
         {disabled && (
-          <span className="rounded-full bg-[#f7edda] px-2 py-1 text-[12px] font-bold uppercase tracking-wider text-[#85672f]">
+          <span className="rounded-full bg-[#f7edda] px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-[#85672f]">
             Coming soon
           </span>
         )}
@@ -187,7 +187,7 @@ export default function Navbar() {
               setLangOpen(false)
             }}
             aria-pressed={locale === option.code}
-            className={`flex min-h-11 w-full items-center justify-between rounded-xl px-3 text-md transition ${
+            className={`flex min-h-11 w-full items-center justify-between rounded-xl px-3 text-sm transition ${
               locale === option.code
                 ? 'bg-[#a5d6a7]/15 font-semibold text-[#dcedc8]'
                 : 'text-white/75 hover:bg-[#a5d6a7]/10 hover:text-[#dcedc8]'
@@ -207,12 +207,12 @@ export default function Navbar() {
       className="sticky top-0 z-50 border-b border-white/10 bg-[#071b17] text-white shadow-[0_18px_42px_-30px_rgba(3,18,12,0.9)]"
     >
       <div className="relative border-b border-white/[0.07] bg-[#04130f] text-[#e8ecd9] hidden">
-        <div className="mx-auto flex min-h-8 max-w-[90rem] items-center justify-between gap-3 px-3 py-1 text-[12px] font-semibold tracking-[0.08em] sm:px-6 sm:text-[12px] sm:tracking-[0.12em] lg:px-8">
+        <div className="mx-auto flex min-h-8 max-w-[90rem] items-center justify-between gap-3 px-3 py-1 text-[11px] font-semibold tracking-[0.08em] sm:px-6 sm:text-[11px] sm:tracking-[0.12em] lg:px-8">
           <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
             <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6b45e] shadow-[0_0_10px_rgba(214,180,94,0.65)]" aria-hidden="true" />
             AeroSun Energy Private Limited
           </span>
-          <span className="ml-3 hidden whitespace-nowrap text-[12px] font-medium uppercase tracking-[0.2em] text-[#c2cbb8] lg:flex lg:items-center lg:gap-2">
+          <span className="ml-3 hidden whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.2em] text-[#c2cbb8] lg:flex lg:items-center lg:gap-2">
             <Sun className="h-3 w-3 text-[#d6b45e]" strokeWidth={1.8} aria-hidden="true" />
             Power from Sun, Wind, Water, Fire
           </span>
@@ -237,7 +237,7 @@ export default function Navbar() {
               aria-label={t.navbar.languageLabel}
               aria-expanded={langOpen}
               aria-controls="desktop-language-options"
-              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3 text-md tracking-wider text-[#e8ecd9] transition hover:border-[#dcedc8]/70 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3 text-sm tracking-wider text-[#e8ecd9] transition hover:border-[#dcedc8]/70 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
             >
               <Globe2 className="h-4 w-4 text-[#c5e1a5]" aria-hidden="true" />
               {languageOptions.find((option) => option.code === locale)?.shortLabel}
@@ -250,7 +250,7 @@ export default function Navbar() {
             href="/aerosun-energy.pdf"
             download="aerosun-energy.pdf"
             aria-label="Download AeroSun Energy voucher"
-            className="inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-md font-semibold text-[#e8d4a0] transition hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-sm font-semibold text-[#e8d4a0] transition hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
           >
             <ArrowDownToLine className="h-4 w-4" aria-hidden="true" />
             <span className="hidden 2xl:inline">Voucher</span>
@@ -261,7 +261,7 @@ export default function Navbar() {
             title={t.navbar.startProjectTitle}
             aria-label={t.navbar.startProjectAriaLabel}
             data-cta="start-project"
-            className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-[#a5d6a7] px-4 text-md font-bold text-[#173b2c] shadow-[0_8px_24px_-12px_rgba(165,214,167,0.45)] transition hover:-translate-y-0.5 hover:bg-[#dcedc8] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#a5d6a7]"
+            className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-[#a5d6a7] px-4 text-sm font-bold text-[#173b2c] shadow-[0_8px_24px_-12px_rgba(165,214,167,0.45)] transition hover:-translate-y-0.5 hover:bg-[#dcedc8] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#a5d6a7]"
           >
             {t.navbar.startProject}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
@@ -279,7 +279,7 @@ export default function Navbar() {
               aria-label={`${t.navbar.languageLabel}: ${languageOptions.find((option) => option.code === locale)?.label}`}
               aria-expanded={langOpen}
               aria-controls="mobile-language-options"
-              className="inline-flex h-11 min-w-12 items-center justify-center gap-1.5 rounded-full border border-white/15 bg-white/[0.05] px-2.5 text-md font-bold text-[#f4f0e2] transition hover:border-[#dcedc8]/70 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7] max-[359px]:w-11 max-[359px]:min-w-11 max-[359px]:px-0"
+              className="inline-flex h-11 min-w-12 items-center justify-center gap-1.5 rounded-full border border-white/15 bg-white/[0.05] px-2.5 text-sm font-bold text-[#f4f0e2] transition hover:border-[#dcedc8]/70 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7] max-[359px]:w-11 max-[359px]:min-w-11 max-[359px]:px-0"
             >
               <Globe2 className="h-4 w-4 text-[#c5e1a5]" aria-hidden="true" />
               <span className="max-[359px]:sr-only">{languageOptions.find((option) => option.code === locale)?.shortLabel}</span>
@@ -313,7 +313,7 @@ export default function Navbar() {
         className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-[#a5d6a7]/30 bg-[#09251e] px-4 pb-6 pt-3 shadow-[0_24px_50px_-22px_rgba(0,0,0,0.8)] sm:px-6 xl:hidden"
       >
         <nav aria-label="Mobile primary navigation" className="mx-auto max-w-3xl space-y-1">
-          <p className="mb-3 flex items-center gap-2 px-2 text-[12px] font-bold uppercase tracking-[0.2em] text-[#c5e1a5]">
+          <p className="mb-3 flex items-center gap-2 px-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#c5e1a5]">
             <span className="h-px w-5 bg-[#a5d6a7]/70" />
             Explore AeroSun
           </p>
@@ -322,7 +322,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={closeMenu}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#a5d6a7] px-5 text-md font-bold text-[#173b2c] transition hover:bg-[#dcedc8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#a5d6a7] px-5 text-sm font-bold text-[#173b2c] transition hover:bg-[#dcedc8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
             >
               {t.navbar.startProject}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -331,7 +331,7 @@ export default function Navbar() {
               href="/aerosun-energy.pdf"
               download="aerosun-energy.pdf"
               onClick={closeMenu}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-5 text-md font-semibold text-[#e8d4a0] transition hover:border-[#dcedc8]/60 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-5 text-sm font-semibold text-[#e8d4a0] transition hover:border-[#dcedc8]/60 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
             >
               <ArrowDownToLine className="h-4 w-4" aria-hidden="true" />
               Download voucher
