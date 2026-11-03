@@ -148,7 +148,7 @@ export default function Footer() {
 							<div className="absolute inset-5 animate-[spin_28s_linear_infinite] rounded-full border border-dashed border-[#F5C76A]/45 motion-reduce:animate-none" />
 							<div className="absolute inset-0 animate-[spin_38s_linear_infinite_reverse] rounded-full border border-[#A3D977]/20 motion-reduce:animate-none" />
 							<div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-[#F5C76A] text-[#071B17] shadow-[0_0_60px_rgba(245,199,106,0.3)]">
-								<Sun className="h-10 w-10" strokeWidth={1.5} aria-hidden="true" />
+								<Sun className="h-10 w-10 motion-safe:animate-[spin_20s_linear_infinite] motion-reduce:animate-none" strokeWidth={1.5} aria-hidden="true" />
 							</div>
 							<span className="absolute right-5 top-6 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-[#123b30] text-[#A3D977]">
 								<Wind className="h-4 w-4" aria-hidden="true" />

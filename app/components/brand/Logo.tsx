@@ -29,7 +29,7 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
           <span data-brand-name className={compact ? 'relative whitespace-nowrap pr-2 text-2xl font-bold tracking-wider text-[#20A44A] drop-shadow-xl' : 'relative whitespace-nowrap pr-3 text-2xl font-bold tracking-wider text-[#20A44A] drop-shadow-xl'}>
             AeroSun<sup className={`absolute right-0 text-[8px] ${compact ? 'top-1 text-white' : 'top-2 text-black'}`}>TM</sup>
           </span>
-          <span data-brand-name className={`whitespace-nowrap text-2xl font-bold tracking-wider drop-shadow-xl ${compact ? 'text-[#F59E0B]' : 'text-[#9a5600]'}`}>
+          <span data-brand-name className={`whitespace-nowrap text-2xl font-bold tracking-wider drop-shadow-xl ${compact ? 'text-[#F59E0B]' : 'text-[#F59E0B]'}`}>
             Energy
           </span>
         </div>

@@ -4,18 +4,60 @@ import Image from 'next/image'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 const STORAGE_KEY = 'aerosun_lord_ganesha_modal'
+const LORD_IMAGE_INDEX_KEY = 'aerosun_lord_image_index'
 const MODAL_TTL_MS = 24 * 60 * 60 * 1000
+const LORDS = [
+  {
+    name: 'Ganesha',
+    image: '/images/lordganesha.png',
+    width: 558,
+    height: 1448,
+    title: 'Lord Ganesha Blessing',
+    description:
+      'Welcome to AeroSun Energy. May Lord Ganesha bring clarity, success, and prosperity to your renewable energy journey.',
+  },
+  {
+    name: 'Balaji',
+    image: '/images/lordbalaji.png',
+    width: 433,
+    height: 577,
+    title: 'Lord Balaji Blessing',
+    description:
+      'Welcome to AeroSun Energy. May Lord Balaji bless your path with abundance, wellbeing, and success.',
+  },
+  {
+    name: 'Shiva',
+    image: '/images/lordshiva.png',
+    width: 375,
+    height: 591,
+    title: 'Lord Shiva Blessing',
+    description:
+      'Welcome to AeroSun Energy. May Lord Shiva bring peace, strength, and harmony to your journey.',
+  },
+] as const
 
 function getIpStorageKey(ip: string) {
   return `${STORAGE_KEY}:${ip}`
 }
 
-export default function LordGanesha() {
+export default function Lord() {
   const [open, setOpen] = useState(false)
+  const [lordIndex, setLordIndex] = useState(0)
   const [resolvedIp, setResolvedIp] = useState<string | null>(null)
   const [isReady, setIsReady] = useState(false)
   const dialogRef = useRef<HTMLDivElement | null>(null)
   const closeButtonRef = useRef<HTMLButtonElement | null>(null)
+  const showModal = useCallback(() => {
+    const storedIndex = Number(localStorage.getItem(LORD_IMAGE_INDEX_KEY))
+    const nextIndex =
+      Number.isInteger(storedIndex) && storedIndex >= 0
+        ? storedIndex % LORDS.length
+        : 0
+
+    setLordIndex(nextIndex)
+    localStorage.setItem(LORD_IMAGE_INDEX_KEY, String((nextIndex + 1) % LORDS.length))
+    setOpen(true)
+  }, [])
 
   useEffect(() => {
     let cancelled = false
@@ -43,7 +85,7 @@ export default function LordGanesha() {
         const existing = localStorage.getItem(storageKey)
 
         if (!existing) {
-          setOpen(true)
+          showModal()
           return
         }
 
@@ -51,10 +93,10 @@ export default function LordGanesha() {
           const parsed = JSON.parse(existing) as { ts?: number }
           const shouldShow = !parsed.ts || Date.now() - Number(parsed.ts) >= MODAL_TTL_MS
           if (shouldShow) {
-            setOpen(true)
+            showModal()
           }
         } catch {
-          setOpen(true)
+          showModal()
         }
       } catch {
         if (cancelled) return
@@ -65,7 +107,7 @@ export default function LordGanesha() {
         setIsReady(true)
 
         if (!existing) {
-          setOpen(true)
+          showModal()
           return
         }
 
@@ -73,10 +115,10 @@ export default function LordGanesha() {
           const parsed = JSON.parse(existing) as { ts?: number }
           const shouldShow = !parsed.ts || Date.now() - Number(parsed.ts) >= MODAL_TTL_MS
           if (shouldShow) {
-            setOpen(true)
+            showModal()
           }
         } catch {
-          setOpen(true)
+          showModal()
         }
       }
     }
@@ -86,7 +128,9 @@ export default function LordGanesha() {
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [showModal])
+
+  const lord = LORDS[lordIndex] ?? LORDS[0]
 
   const dismiss = useCallback(() => {
     setOpen(false)
@@ -153,15 +197,15 @@ export default function LordGanesha() {
         ref={dialogRef}
         role="dialog"
         aria-modal="true"
-        aria-labelledby="lord-ganesha-title"
-        aria-describedby="lord-ganesha-description"
+        aria-labelledby="lord-blessing-title"
+        aria-describedby="lord-blessing-description"
         tabIndex={-1}
         className="relative z-10 w-full max-w-xl rounded-2xl bg-white p-6 text-gray-900 shadow-[0_25px_80px_rgba(0,0,0,0.25)] dark:bg-gray-800 dark:text-gray-100"
       >
         <button
           ref={closeButtonRef}
           type="button"
-          aria-label="Close Lord Ganesha modal"
+          aria-label="Close blessing modal"
           className="absolute right-3 top-3 inline-flex min-h-11 min-w-11 items-center justify-center rounded-md p-2 text-gray-600 transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus-visible:outline-emerald-300"
           onClick={dismiss}
         >
@@ -171,18 +215,18 @@ export default function LordGanesha() {
         <div className="flex flex-col items-center gap-1 text-center">
           <div className="overflow-hidden p-6">
             <Image
-              src="/images/lordganesha.png"
-              alt="Lord Ganesha"
-              width={180}
-              height={180}
+              src={lord.image}
+              alt={`Lord ${lord.name}`}
+              width={lord.width}
+              height={lord.height}
               priority
-              className="m-auto h-auto w-28 md:w-36"
+              className="m-auto h-72 w-auto max-w-full object-contain"
             />
           </div>
 
-          <h2 id="lord-ganesha-title" className="text-3xl font-semibold tracking-tight">Lord Ganesha Blessing</h2>
-          <p id="lord-ganesha-description" className="max-w-md text-md leading-6 text-gray-600 dark:text-gray-300">
-            Welcome to AeroSun Energy. May this blessing bring clarity, success, and prosperity to your renewable energy journey.
+          <h2 id="lord-blessing-title" className="text-3xl font-semibold tracking-tight">{lord.title}</h2>
+          <p id="lord-blessing-description" className="max-w-md text-md leading-6 text-gray-600 dark:text-gray-300">
+            {lord.description}
           </p>
 
         </div>
