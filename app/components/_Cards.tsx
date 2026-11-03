@@ -34,7 +34,7 @@ export function StepCard({
       </div>
 
       <h3 className="font-semibold">{title}</h3>
-      <p className="text-sm text-gray-600 mt-2">
+      <p className="text-md text-gray-600 mt-2">
         {description}
       </p>
     </div>

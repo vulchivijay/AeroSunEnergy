@@ -92,11 +92,11 @@ export default function About() {
             <div className="flex flex-col gap-4 border-b border-slate-200 pb-5 lg:flex-row lg:items-center lg:justify-between">
               <div className="flex items-baseline justify-start gap-1">
                 <span className="text-xl font-bold tracking-[0.08em] text-[#333333]">ABOUT</span>
-                <span className="text-3xl font-black tracking-[-0.05em] text-[#20A44A]">AeroSun</span>
-                <span className="text-3xl font-black tracking-[-0.05em] text-[#F59E0B]">Energy</span>
+                <span className="text-3xl font-black tracking-[0.05em] text-[#20A44A]">AeroSun</span>
+                <span className="text-3xl font-black tracking-[0.05em] text-[#F59E0B]">Energy</span>
               </div>
 
-              <div className="flex flex-wrap items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-600">
+              <div className="flex flex-wrap items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.22em] text-slate-600">
                 <span className="rounded-full border border-blue-200 bg-blue-50 px-3 py-2 text-blue-700">Solar</span>
                 <span className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-2 text-emerald-700">Wind</span>
                 <span className="rounded-full border border-amber-200 bg-amber-50 px-3 py-2 text-amber-700">Hybrid</span>
@@ -112,15 +112,15 @@ export default function About() {
             >
               <div className="rounded-[2rem] border border-slate-200 bg-slate-950 p-5 text-white shadow-[0_30px_70px_-30px_rgba(15,23,42,0.95)] sm:p-6 lg:p-7">
                 <div className="flex items-center justify-between gap-3">
-                  <span className="inline-flex rounded-full border border-emerald-300/40 bg-emerald-400/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-emerald-200">
+                  <span className="inline-flex rounded-full border border-emerald-300/40 bg-emerald-400/10 px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.28em] text-emerald-200">
                     Clean Energy Partner
                   </span>
-                  <span className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-200">
+                  <span className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.2em] text-slate-200">
                     Since 2026
                   </span>
                 </div>
 
-                <h3 className="mt-5 max-w-lg text-3xl font-black leading-tight tracking-[-0.06em] text-white sm:text-4xl lg:text-[3rem]">
+                <h3 className="mt-5 max-w-lg text-3xl font-black leading-tight tracking-[0.06em] text-white sm:text-4xl lg:text-[3rem]">
                   Powering a sustainable future with purpose.
                 </h3>
 
@@ -130,7 +130,7 @@ export default function About() {
 
                 <div className="mt-6 flex flex-wrap gap-3">
                   {['Residential', 'Commercial', 'Industrial', 'Institutional'].map((item) => (
-                    <span key={item} className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-100">
+                    <span key={item} className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.2em] text-slate-100">
                       {item}
                     </span>
                   ))}
@@ -151,12 +151,12 @@ export default function About() {
                         className="bg-white"
                       />
                     </div>
-                    <div className="absolute left-4 top-4 rounded-full border border-white/70 bg-white/60 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-slate-700 backdrop-blur-sm">
+                    <div className="absolute left-4 top-4 rounded-full border border-white/70 bg-white/60 px-3 py-2 text-[12px] font-bold uppercase tracking-[0.24em] text-slate-700 backdrop-blur-sm">
                       Founder Vision
                     </div>
                     <div className="absolute bottom-4 right-4 rounded-2xl border border-emerald-200 bg-white/85 px-3 py-2 shadow-lg backdrop-blur-sm">
-                      <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-slate-500">Leadership</p>
-                      <p className="mt-1 text-sm font-semibold text-slate-900">{a.founder.name}</p>
+                      <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-slate-500">Leadership</p>
+                      <p className="mt-1 text-md font-semibold text-slate-900">{a.founder.name}</p>
                     </div>
                   </div>
                 </div>
@@ -166,7 +166,7 @@ export default function About() {
             <div className="grid gap-4 md:grid-cols-3">
               {statCards.map((item) => (
                 <div key={item.title} className={`rounded-[1.5rem] border p-4 shadow-sm ${item.tone}`}>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.28em]">{item.title}</p>
+                  <p className="text-[12px] font-bold uppercase tracking-[0.28em]">{item.title}</p>
                   <p className="mt-3 text-lg font-semibold text-slate-900">{item.value}</p>
                 </div>
               ))}
@@ -174,7 +174,7 @@ export default function About() {
 
             <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
               <div className="rounded-[2rem] border border-slate-200 bg-[linear-gradient(135deg,#f8fafc_0%,#ecfeff_35%,#f0fdf4_100%)] p-5 shadow-[0_18px_32px_-26px_rgba(15,23,42,0.3)] sm:p-6">
-                <h3 className="text-2xl font-black tracking-[-0.05em] text-slate-900">Our vision and commitment</h3>
+                <h3 className="text-2xl font-black tracking-[0.05em] text-slate-900">Our vision and commitment</h3>
                 <div className="mt-4 space-y-4 text-base leading-8 text-slate-700">
                   <p>
                     At <strong className="text-slate-900">AeroSun Energy Private Limited</strong>, we are committed to delivering innovative,
@@ -192,7 +192,7 @@ export default function About() {
 
               <div className="space-y-4 rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_20px_40px_-26px_rgba(15,23,42,0.30)] sm:p-6">
                 <div className="rounded-[1.5rem] bg-[linear-gradient(135deg,#eff6ff_0%,#ffffff_60%,#ecfdf5_100%)] p-5">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-sky-700">Solutions</p>
+                  <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-sky-700">Solutions</p>
                   <h4 className="mt-2 text-xl font-bold text-slate-900">Renewable energy for every need</h4>
                   <p className="mt-3 text-base leading-7 text-slate-700">
                     We support customers, architects, builders, and project developers in identifying suitable renewable energy systems.
@@ -200,7 +200,7 @@ export default function About() {
                 </div>
 
                 <div className="rounded-[1.5rem] bg-[linear-gradient(135deg,#ecfdf5_0%,#ffffff_60%,#fff7ed_100%)] p-5">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-700">System design</p>
+                  <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700">System design</p>
                   <ul className="mt-3 space-y-2 text-base leading-7 text-slate-700">
                     <li>• Solar PV systems for clean electricity generation</li>
                     <li>• Wind energy solutions for sustainable power</li>
@@ -214,8 +214,8 @@ export default function About() {
             <div className="rounded-[2rem] border border-slate-200 bg-slate-900 p-5 text-slate-100 shadow-[0_24px_70px_-30px_rgba(15,23,42,0.9)] sm:p-6">
               <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-300">Technology focus</p>
-                  <h3 className="mt-3 text-2xl font-black tracking-[-0.05em] text-white">Solar, wind, and hybrid energy systems</h3>
+                  <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-300">Technology focus</p>
+                  <h3 className="mt-3 text-2xl font-black tracking-[0.05em] text-white">Solar, wind, and hybrid energy systems</h3>
                   <p className="mt-4 text-lg leading-8 text-slate-300">
                     Depending on project requirements, systems may be designed for grid-connected or off-grid applications, subject to technical feasibility and approvals.
                   </p>
@@ -224,8 +224,8 @@ export default function About() {
                 <div className="grid gap-3 rounded-[1.5rem] border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                   {systemCards.map((item) => (
                     <div key={item.label} className={`rounded-2xl border p-3 ${item.tone}`}>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.28em]">{item.label}</p>
-                      <p className="mt-2 text-sm text-slate-100">{item.value}</p>
+                      <p className="text-[12px] font-bold uppercase tracking-[0.28em]">{item.label}</p>
+                      <p className="mt-2 text-md text-slate-100">{item.value}</p>
                     </div>
                   ))}
                 </div>
@@ -233,7 +233,7 @@ export default function About() {
             </div>
 
             <div className="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_20px_40px_-26px_rgba(15,23,42,0.25)] sm:p-6">
-              <h3 className="text-2xl font-black tracking-[-0.05em] text-slate-900">Building a cleaner and more energy-efficient future</h3>
+              <h3 className="text-2xl font-black tracking-[0.05em] text-slate-900">Building a cleaner and more energy-efficient future</h3>
               <p className="mt-4 text-lg leading-8 text-slate-700">
                 We believe renewable energy is an important part of creating a sustainable future. By promoting innovative energy technologies and practical renewable energy solutions, AeroSun Energy aims to help customers manage energy costs, reduce environmental impact, and move towards greater energy independence.
               </p>

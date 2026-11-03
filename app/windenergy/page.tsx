@@ -170,16 +170,16 @@ function WindHeroSlider() {
           <div className={slideClass}>
             <div className="relative z-10 w-full max-w-3xl rounded-[28px] border border-white/15 bg-slate-950/30 p-4 shadow-[0_24px_60px_-30px_rgba(15,23,42,0.9)] backdrop-blur-[3px] sm:p-6 lg:p-8">
               <span
-                className={`mb-4 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.04)] ${slide.badgeClass}`}
+                className={`mb-4 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[12px] uppercase tracking-[0.28em] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.04)] ${slide.badgeClass}`}
               >
                 {slide.badge}
               </span>
 
-              <h1 className="max-w-2xl text-3xl font-black leading-none tracking-[-0.06em] text-white sm:text-4xl lg:text-[4rem]">
+              <h1 className="max-w-2xl text-3xl font-black leading-none tracking-[0.06em] text-white sm:text-4xl lg:text-[4rem]">
                 {slide.title}
               </h1>
 
-              <p className="mt-4 max-w-xl text-sm leading-7 text-slate-100/95 sm:text-base lg:text-lg">
+              <p className="mt-4 max-w-xl text-md leading-7 text-slate-100/95 sm:text-base lg:text-lg">
                 {slide.description}
               </p>
 
@@ -187,7 +187,7 @@ function WindHeroSlider() {
                 {slide.tags.map((tag) => (
                   <span
                     key={tag}
-                    className={`rounded-full border border-white/15 bg-slate-950/50 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] ${slide.chipClass}`}
+                    className={`rounded-full border border-white/15 bg-slate-950/50 px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] ${slide.chipClass}`}
                   >
                     {tag}
                   </span>
@@ -368,17 +368,17 @@ const serviceSections = [
 
 export default function WindEnergyPage() {
   return (
-    <main className="bg-[#f0f8fc] text-slate-900 [&>section]:rounded-2xl [&>section]:border-l-4 [&>section]:border-l-sky-500">
-      <header className="relative mx-auto my-6 max-w-7xl overflow-hidden rounded-[2.5rem] border border-slate-700 bg-[#0b1c2c] px-5 py-7 text-white shadow-[0_30px_75px_-42px_rgba(7,28,47,0.75)] sm:my-8 sm:px-8 sm:py-9 lg:px-10 lg:py-11">
+    <main className="bg-[#f0f8fc] pt-6 sm:pt-8 text-slate-900 [&>section]:rounded-2xl [&>section]:border-l-4 [&>section]:border-l-sky-500">
+      <header className="relative mx-auto mb-6 max-w-7xl overflow-hidden rounded-[2.5rem] border border-slate-700 bg-[#0b1c2c] px-5 py-7 text-white shadow-[0_30px_75px_-42px_rgba(7,28,47,0.75)] sm:mb-8 sm:px-8 sm:py-9 lg:px-10 lg:py-11">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(125,211,252,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(125,211,252,0.055)_1px,transparent_1px)] bg-size-[36px_36px]" aria-hidden="true" />
         <div className="absolute inset-y-0 right-0 w-2/3 bg-[radial-gradient(ellipse_at_80%_48%,rgba(14,165,233,0.24),transparent_58%)]" aria-hidden="true" />
         <div className="relative grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-sky-200/25 bg-sky-300/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-sky-200">
+            <div className="inline-flex items-center gap-2 rounded-full border border-sky-200/25 bg-sky-300/10 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-sky-200">
               <span className="h-2 w-2 rounded-full bg-sky-300" aria-hidden="true" />
               AeroSun Energy <span aria-hidden="true">/</span> Wind Systems
             </div>
-            <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.02] tracking-[-0.06em] text-white sm:text-5xl lg:text-7xl">
+            <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.02] tracking-[0.06em] text-white sm:text-5xl lg:text-7xl">
               Wind energy,
               <span className="block text-sky-300">built around your site.</span>
             </h1>
@@ -396,12 +396,12 @@ export default function WindEnergyPage() {
                   ['HYBRID', 'Solar + wind'],
                 ].map(([label, detail], index) => (
                   <div key={label} className="flex items-center gap-3">
-                    <span className={`flex h-9 w-9 items-center justify-center rounded-xl text-xs font-black ${index === 0 ? 'bg-sky-300 text-slate-950' : index === 1 ? 'bg-cyan-300 text-slate-950' : 'bg-emerald-300 text-slate-950'}`}>
+                    <span className={`flex h-9 w-9 items-center justify-center rounded-xl text-md font-black ${index === 0 ? 'bg-sky-300 text-slate-950' : index === 1 ? 'bg-cyan-300 text-slate-950' : 'bg-emerald-300 text-slate-950'}`}>
                       {index + 1}
                     </span>
                     <span>
-                      <span className="block text-sm font-bold text-white">{label}</span>
-                      <span className="block text-xs text-slate-300">{detail}</span>
+                      <span className="block text-md font-bold text-white">{label}</span>
+                      <span className="block text-md text-slate-300">{detail}</span>
                     </span>
                   </div>
                 ))}
@@ -414,7 +414,7 @@ export default function WindEnergyPage() {
                 <circle cx="92" cy="79" r="54" stroke="currentColor" strokeDasharray="3 7" opacity=".28" />
               </svg>
             </div>
-            <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-4 text-[10px] font-bold uppercase tracking-[0.2em] text-sky-100">
+            <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-4 text-[12px] font-bold uppercase tracking-[0.2em] text-sky-100">
               <span>Resource first</span><span className="h-px flex-1 mx-3 bg-sky-300/30" aria-hidden="true" /><span>Site designed</span>
             </div>
           </div>
@@ -449,7 +449,7 @@ export default function WindEnergyPage() {
               <WindSectionEyebrow>Classification</WindSectionEyebrow>
               <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">Design and installation choices</h3>
             </div>
-            <div className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-200 sm:block">
+            <div className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.25em] text-slate-200 sm:block">
               Site-sensitive
             </div>
           </div>
@@ -517,8 +517,8 @@ export default function WindEnergyPage() {
             </div>
 
             <div className="rounded-4xl border border-emerald-200 bg-emerald-50 p-5">
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-700">AeroSun view</p>
-              <div className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
+              <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700">AeroSun view</p>
+              <div className="mt-4 space-y-3 text-md leading-7 text-slate-700">
                 <div className="rounded-2xl bg-white p-3">1. Small wind turbines, 1–10 kW</div>
                 <div className="rounded-2xl bg-white p-3">2. Solar–wind hybrid systems</div>
                 <div className="rounded-2xl bg-white p-3">3. Commercial systems, 10–100 kW</div>
@@ -539,12 +539,12 @@ export default function WindEnergyPage() {
             <div key={section.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="text-2xl font-bold text-slate-900">{section.title}</h3>
               <p className="mt-2 text-base leading-7 text-slate-700">{section.heading}</p>
-              <p className="mt-4 text-sm leading-6 text-slate-600">{section.overview}</p>
+              <p className="mt-4 text-md leading-6 text-slate-600">{section.overview}</p>
 
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <div>
-                  <h4 className="text-sm font-semibold text-slate-800">Typical applications</h4>
-                  <ul className="mt-2 space-y-2 text-sm leading-6 text-slate-600">
+                  <h4 className="text-md font-semibold text-slate-800">Typical applications</h4>
+                  <ul className="mt-2 space-y-2 text-md leading-6 text-slate-600">
                     {section.applications.map((app) => (
                       <li key={app.title} className="flex gap-3">
                         <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
@@ -554,7 +554,7 @@ export default function WindEnergyPage() {
                         </div>
                         <div>
                           <div className="font-medium text-slate-800">{app.title}</div>
-                          <div className="text-sm leading-6 text-slate-600">{app.description}</div>
+                          <div className="text-md leading-6 text-slate-600">{app.description}</div>
                         </div>
                       </li>
                     ))}
@@ -562,8 +562,8 @@ export default function WindEnergyPage() {
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-semibold text-slate-800">Key benefits</h4>
-                  <ul className="mt-2 space-y-2 text-sm leading-6 text-slate-600">
+                  <h4 className="text-md font-semibold text-slate-800">Key benefits</h4>
+                  <ul className="mt-2 space-y-2 text-md leading-6 text-slate-600">
                     {section.benefits.map((benefit) => (
                       <li key={benefit} className="flex gap-3">
                         <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
@@ -571,32 +571,32 @@ export default function WindEnergyPage() {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <div className="text-sm leading-6 text-slate-600">{benefit}</div>
+                        <div className="text-md leading-6 text-slate-600">{benefit}</div>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
 
-              <div className="mt-6 rounded-lg bg-slate-50 p-4 text-sm text-slate-700">
+              <div className="mt-6 rounded-lg bg-slate-50 p-4 text-md text-slate-700">
                 <div className="flex items-center justify-between">
                   <div className="font-medium">Illustrative calculation</div>
-                  <div className="text-xs text-slate-500">{section.calculation.label}</div>
+                  <div className="text-md text-slate-500">{section.calculation.label}</div>
                 </div>
                 <div className="mt-2 flex gap-2 text-lg font-bold">
                   <div className="text-emerald-600">{section.calculation.result}</div>
                   <div className="text-slate-500">{section.calculation.formula}</div>
                 </div>
-                <div className="mt-2 text-xs text-slate-500">{section.calculation.note}</div>
+                <div className="mt-2 text-md text-slate-500">{section.calculation.note}</div>
               </div>
 
               <div className="mt-6 border-t border-slate-200 pt-4">
-                <h4 className="text-sm font-semibold text-slate-800">FAQs</h4>
-                <div className="mt-2 space-y-3 text-sm leading-6 text-slate-600">
+                <h4 className="text-md font-semibold text-slate-800">FAQs</h4>
+                <div className="mt-2 space-y-3 text-md leading-6 text-slate-600">
                   {section.faqs.map((faq) => (
                     <div key={faq.question} className="flex flex-col gap-1">
                       <div className="font-medium text-slate-800">{faq.question}</div>
-                      <div className="text-sm">{faq.answer}</div>
+                      <div className="text-md">{faq.answer}</div>
                     </div>
                   ))}
                 </div>

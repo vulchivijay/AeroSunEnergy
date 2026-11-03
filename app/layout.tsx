@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Poppins, Roboto } from 'next/font/google'
 import { JsonLd } from '@/app/components/seo'
 import { LocaleProvider } from '@/lib/LocaleContext'
-import { Header, Footer, LordGanesha } from '@/app/components/layout'
+import { Header, Footer, Lord } from '@/app/components/layout'
 import { PerformanceMonitor } from '@/app/components/performance'
 import CookieConsent from '@/app/components/cookies/CookieConsent'
 import ConsentAwareTracking from '@/app/components/cookies/ConsentAwareTracking'
@@ -142,7 +142,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <NetworkStatus />
           <Notifications />
           <Header />
-          <LordGanesha />
+          <Lord />
           {children}
           <Footer />
           <CookieConsent />

@@ -118,18 +118,18 @@ export default function TermsPage() {
         <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-white/5 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-emerald-100">
+              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-white/5 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-emerald-100">
                 <span className="h-1.5 w-1.5 rounded-full bg-lime-300" />
                 Legal · Website use
               </div>
-              <h1 className="mt-6 text-4xl font-black tracking-[-0.065em] text-white sm:text-6xl lg:text-7xl">
+              <h1 className="mt-6 text-4xl font-black tracking-[0.065em] text-white sm:text-6xl lg:text-7xl">
                 Terms <span className="text-lime-300">&</span> Conditions
               </h1>
-              <p className="mt-5 max-w-2xl text-sm leading-7 text-emerald-50/75 sm:text-base sm:leading-8">
+              <p className="mt-5 max-w-2xl text-md leading-7 text-emerald-50/75 sm:text-base sm:leading-8">
                 The guidelines for using our website, exploring renewable energy solutions, and engaging with AeroSun Energy.
               </p>
             </div>
-            <div className="flex items-center gap-4 border-l border-emerald-100/20 pl-4 text-sm text-emerald-50/80">
+            <div className="flex items-center gap-4 border-l border-emerald-100/20 pl-4 text-md text-emerald-50/80">
               <span className="text-2xl font-light text-lime-300">§</span>
               <span>
                 Effective date
@@ -137,7 +137,7 @@ export default function TermsPage() {
               </span>
             </div>
           </div>
-          <div className="mt-10 grid max-w-3xl grid-cols-3 gap-3 border-t border-white/10 pt-5 text-[10px] font-bold uppercase tracking-[0.16em] text-emerald-100/60 sm:text-xs">
+          <div className="mt-10 grid max-w-3xl grid-cols-3 gap-3 border-t border-white/10 pt-5 text-[12px] font-bold uppercase tracking-[0.16em] text-emerald-100/60 sm:text-md">
             <span>Website access</span>
             <span>Project information</span>
             <span>Service terms</span>
@@ -149,15 +149,15 @@ export default function TermsPage() {
         <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
           <nav aria-label="Terms and conditions sections" className="overflow-hidden rounded-2xl border border-emerald-950/10 bg-white shadow-sm">
             <div className="border-b border-slate-100 px-5 py-4">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-800">In this document</p>
-              <p className="mt-1 text-sm font-bold text-slate-900">Contents</p>
+              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">In this document</p>
+              <p className="mt-1 text-md font-bold text-slate-900">Contents</p>
             </div>
             <ol className="max-h-[55vh] space-y-1 overflow-y-auto p-3 lg:max-h-[calc(100vh-15rem)]">
               {termsSections.map((section, index) => (
                 <li key={section.heading}>
                   <a
                     href={`#terms-${index + 1}`}
-                    className="flex gap-3 rounded-xl px-3 py-2.5 text-xs leading-5 text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-900"
+                    className="flex gap-3 rounded-xl px-3 py-2.5 text-md leading-5 text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-900"
                   >
                     <span className="font-mono font-bold text-emerald-700/70">{String(index + 1).padStart(2, '0')}</span>
                     <span>{section.heading.replace(/^\d+\.\s*/, '')}</span>
@@ -167,8 +167,8 @@ export default function TermsPage() {
             </ol>
           </nav>
           <div className="rounded-2xl border border-emerald-900/10 bg-[#e8eee4] p-5">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-800">A useful reminder</p>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
+            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">A useful reminder</p>
+            <p className="mt-3 text-md leading-6 text-slate-700">
               Project-specific scope, pricing, warranties, and performance expectations are confirmed in writing.
             </p>
           </div>
@@ -176,7 +176,7 @@ export default function TermsPage() {
 
         <article className="min-w-0">
           <div className="mb-8 rounded-3xl border border-emerald-900/10 bg-white p-6 shadow-[0_20px_55px_-42px_rgba(15,23,42,0.5)] sm:p-8">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-800">Please read</p>
+            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">Please read</p>
             <p className="mt-3 max-w-4xl text-base leading-8 text-slate-700">
               These Terms and Conditions explain how you may use our website and how we handle general information,
               customer enquiries, quotations, project discussions, and renewable-energy service interactions.
@@ -191,16 +191,16 @@ export default function TermsPage() {
                 className="scroll-mt-28 rounded-3xl border border-slate-200/80 bg-white p-5 shadow-[0_18px_50px_-42px_rgba(15,23,42,0.45)] transition-shadow hover:shadow-[0_24px_60px_-42px_rgba(5,150,105,0.35)] sm:p-7"
               >
                 <div className="flex items-start gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-950 text-xs font-black text-lime-300">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-950 text-md font-black text-lime-300">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <div className="min-w-0">
                     <h2 className="text-lg font-extrabold tracking-tight text-slate-950 sm:text-xl">{section.heading}</h2>
-                    <p className="mt-3 text-sm leading-7 text-slate-600 sm:text-base">{section.content}</p>
+                    <p className="mt-3 text-md leading-7 text-slate-600 sm:text-base">{section.content}</p>
                     <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
                       {section.bullets.map((item) => (
-                        <li key={item} className="flex items-start gap-3 rounded-xl bg-[#f5f7f2] px-3 py-3 text-sm leading-6 text-slate-700">
-                          <span className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-200 text-[9px] font-black text-emerald-900">
+                        <li key={item} className="flex items-start gap-3 rounded-xl bg-[#f5f7f2] px-3 py-3 text-md leading-6 text-slate-700">
+                          <span className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-200 text-[12px] font-black text-emerald-900">
                             ✓
                           </span>
                           <span>{item}</span>
@@ -215,9 +215,9 @@ export default function TermsPage() {
 
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             <section className="rounded-3xl bg-[#10251f] p-6 text-white">
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-lime-300">Key points</p>
+              <p className="text-[12px] font-black uppercase tracking-[0.22em] text-lime-300">Key points</p>
               <h2 className="mt-2 text-xl font-black">Use responsibly</h2>
-              <ul className="mt-4 space-y-3 text-sm leading-6 text-emerald-50/80">
+              <ul className="mt-4 space-y-3 text-md leading-6 text-emerald-50/80">
                 <li>Use the website lawfully and for valid business or information purposes.</li>
                 <li>Provide accurate project details when contacting AeroSun Energy.</li>
                 <li>Recognize that final technical recommendations depend on site conditions and engineering review.</li>
@@ -225,9 +225,9 @@ export default function TermsPage() {
               </ul>
             </section>
             <section className="rounded-3xl border border-amber-200 bg-amber-50 p-6">
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-amber-800">Important</p>
+              <p className="text-[12px] font-black uppercase tracking-[0.22em] text-amber-800">Important</p>
               <h2 className="mt-2 text-xl font-black text-slate-900">Project information</h2>
-              <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
+              <ul className="mt-4 space-y-3 text-md leading-6 text-slate-700">
                 <li>Website information is intended for general awareness and planning purposes.</li>
                 <li>Preliminary estimates do not replace technical assessment or formal project approval.</li>
                 <li>Final terms, pricing, warranty, and scope are confirmed in writing.</li>
@@ -235,7 +235,7 @@ export default function TermsPage() {
             </section>
           </div>
 
-          <p className="mt-7 rounded-2xl border border-emerald-900/10 bg-white p-5 text-sm leading-7 text-slate-600">
+          <p className="mt-7 rounded-2xl border border-emerald-900/10 bg-white p-5 text-md leading-7 text-slate-600">
             For questions about these terms, please use the{' '}
             <Link href="/contact" className="font-bold text-emerald-800 underline decoration-emerald-400 underline-offset-4 hover:text-emerald-950">
               contact page

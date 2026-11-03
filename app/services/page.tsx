@@ -159,7 +159,7 @@ export default function ServicesPage() {
   return (
     <main className="bg-slate-50 text-slate-900">
       <header className="mx-auto max-w-7xl px-4 pb-6 pt-8 sm:px-6 lg:px-8">
-        <div className="mb-6 inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-emerald-700">
+        <div className="mb-6 inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.28em] text-emerald-700">
           AeroSun Energy • Services
         </div>
         <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
@@ -173,7 +173,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="rounded-4xl border border-slate-200 bg-white p-5 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)]">
-            <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-slate-500">Core model</p>
+            <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-slate-500">Core model</p>
             <p className="mt-3 text-lg font-semibold text-slate-900">Assess • Design • Supply • Install • Support</p>
           </div>
         </div>
@@ -193,7 +193,7 @@ export default function ServicesPage() {
           <div className="absolute inset-0 bg-linear-to-r from-slate-950/80 via-slate-900/60 to-emerald-900/35" />
           <div className="relative grid gap-8 p-6 sm:p-8 lg:grid-cols-[1.2fr_0.8fr] lg:p-12">
             <div className="max-w-2xl">
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-300">Service portfolio</p>
+              <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-300">Service portfolio</p>
               <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
                 Clean energy solutions tailored to real site conditions
               </h2>
@@ -204,7 +204,7 @@ export default function ServicesPage() {
 
             <div className="flex items-end">
               <div className="w-full rounded-4xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
-                <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-slate-200">Why it matters</p>
+                <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-slate-200">Why it matters</p>
                 <ul className="mt-4 space-y-3 text-base text-slate-100">
                   <li>• Reduced energy costs</li>
                   <li>• Cleaner power generation</li>
@@ -219,7 +219,7 @@ export default function ServicesPage() {
 
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mb-8 max-w-3xl">
-          <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-sky-700">Service structure</p>
+          <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-sky-700">Service structure</p>
           <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Three core renewable energy service divisions</h2>
         </div>
 
@@ -246,14 +246,14 @@ export default function ServicesPage() {
 
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mb-8">
-          <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-700">Common capabilities</p>
+          <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-amber-700">Common capabilities</p>
           <h2 className="mt-3 text-3xl font-bold text-slate-900">Services applicable across solar, wind, and hybrid projects</h2>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {serviceGrid.map((item) => (
             <div key={item.title} className="rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-[0_16px_28px_-24px_rgba(15,23,42,0.4)]">
-              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-amber-100 text-sm font-bold text-amber-700">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-amber-100 text-md font-bold text-amber-700">
                 {item.title.charAt(0)}
               </div>
               <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
@@ -266,7 +266,7 @@ export default function ServicesPage() {
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
         <div className="rounded-4xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.9)] sm:p-8">
           <div className="mb-6">
-            <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-300">Recommended delivery model</p>
+            <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-300">Recommended delivery model</p>
             <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">Recommended service packages</h2>
           </div>
 
@@ -274,7 +274,7 @@ export default function ServicesPage() {
             {packages.map((pkg) => (
               <div key={pkg.name} className="rounded-3xl border border-white/10 bg-white/5 p-5">
                 <h3 className="text-xl font-bold text-white">{pkg.name}</h3>
-                <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.24em] text-slate-300">{pkg.customers}</p>
+                <p className="mt-2 text-[12px] font-bold uppercase tracking-[0.24em] text-slate-300">{pkg.customers}</p>
                 <ul className="mt-4 space-y-2 text-base text-slate-200">
                   {pkg.services.map((item) => (
                     <li key={item} className="flex items-start gap-3">
@@ -292,20 +292,20 @@ export default function ServicesPage() {
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)] sm:p-8">
-            <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-sky-700">Implementation roadmap</p>
+            <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-sky-700">Implementation roadmap</p>
             <h2 className="mt-3 text-3xl font-bold text-slate-900">How AeroSun should begin</h2>
 
             <div className="mt-6 space-y-4">
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700">Phase 1</p>
+                <p className="text-md font-bold uppercase tracking-[0.2em] text-emerald-700">Phase 1</p>
                 <p className="mt-2 text-lg font-semibold text-slate-900">Solar consultation, rooftop systems, equipment supply, and maintenance</p>
               </div>
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-700">Phase 2</p>
+                <p className="text-md font-bold uppercase tracking-[0.2em] text-amber-700">Phase 2</p>
                 <p className="mt-2 text-lg font-semibold text-slate-900">Agricultural solar pumps, commercial systems, off-grid systems, and small wind applications</p>
               </div>
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-violet-700">Phase 3</p>
+                <p className="text-md font-bold uppercase tracking-[0.2em] text-violet-700">Phase 3</p>
                 <p className="mt-2 text-lg font-semibold text-slate-900">Industrial hybrid systems, larger storage projects, microgrids, and next-stage deployment</p>
               </div>
             </div>
@@ -323,7 +323,7 @@ export default function ServicesPage() {
               <div className="absolute inset-0 bg-linear-to-t from-slate-950/70 via-slate-900/20 to-transparent" />
             </div>
             <div className="p-6">
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-700">Final recommendation</p>
+              <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700">Final recommendation</p>
               <h3 className="mt-2 text-2xl font-bold text-slate-900">Build three core divisions</h3>
               <ul className="mt-4 space-y-2 text-base text-slate-700">
                 <li>• Solar Energy Solutions</li>
@@ -337,7 +337,7 @@ export default function ServicesPage() {
 
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mb-8 max-w-3xl">
-          <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-700">Complete solar solutions</p>
+          <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700">Complete solar solutions</p>
           <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Complete renewable energy solutions, one trusted partner.</h2>
           <p className="mt-4 text-lg leading-8 text-slate-700">
             Whether you need a 1 kW home rooftop or a 100 kW industrial plant — we design, supply, install and maintain end-to-end energy systems for solar, wind, and hybrid applications.
@@ -347,10 +347,10 @@ export default function ServicesPage() {
         <div className="overflow-hidden rounded-4xl border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-amber-50 p-6 shadow-[0_24px_60px_-36px_rgba(16,185,129,0.35)] sm:p-8">
           <div className="mb-6 flex items-center justify-between gap-4">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-700">Our Services</p>
+              <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700">Our Services</p>
               <h3 className="mt-2 text-2xl font-bold text-slate-900 sm:text-3xl">Six pillars of clean energy</h3>
             </div>
-            <div className="hidden rounded-full border border-emerald-200 bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 sm:block">
+            <div className="hidden rounded-full border border-emerald-200 bg-white px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.2em] text-emerald-700 sm:block">
               End-to-end support
             </div>
           </div>
@@ -361,8 +361,8 @@ export default function ServicesPage() {
                 <div className={`h-2 bg-linear-to-r ${item.accent}`} />
                 <div className="p-5">
                   <h4 className="text-xl font-bold text-slate-900">{item.title}</h4>
-                  <p className="mt-3 text-sm leading-7 text-slate-700">{item.description}</p>
-                  <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700">
+                  <p className="mt-3 text-md leading-7 text-slate-700">{item.description}</p>
+                  <ul className="mt-4 space-y-2 text-md leading-6 text-slate-700">
                     {item.bullets.map((bullet) => (
                       <li key={bullet} className="flex items-start gap-2">
                         <span className="mt-2 h-2 w-2 rounded-full bg-emerald-500" />
@@ -370,7 +370,7 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                  <button type="button" className="mt-5 inline-flex rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-700 transition hover:border-emerald-200 hover:bg-emerald-50 hover:text-emerald-700">
+                  <button type="button" className="mt-5 inline-flex rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-[12px] font-bold uppercase tracking-[0.18em] text-slate-700 transition hover:border-emerald-200 hover:bg-emerald-50 hover:text-emerald-700">
                     Learn more
                   </button>
                 </div>
@@ -382,7 +382,7 @@ export default function ServicesPage() {
 
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mb-8 max-w-3xl">
-          <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-sky-700">System Types</p>
+          <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-sky-700">System Types</p>
           <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">On-grid, Off-grid or Hybrid?</h2>
           <p className="mt-4 text-lg leading-8 text-slate-700">
             The right configuration depends on your power-cut frequency, budget and self-consumption goals.
@@ -394,12 +394,12 @@ export default function ServicesPage() {
             <div key={system.type} className={`rounded-[1.8rem] border p-5 shadow-[0_18px_42px_-30px_rgba(15,23,42,0.35)] ${system.accent}`}>
               <div className="flex items-center justify-between gap-3">
                 <h3 className="text-2xl font-bold">{system.type}</h3>
-                <span className="rounded-full bg-white/80 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-700">{system.badge}</span>
+                <span className="rounded-full bg-white/80 px-2.5 py-1 text-[12px] font-bold uppercase tracking-[0.18em] text-slate-700">{system.badge}</span>
               </div>
 
-              <p className="mt-4 text-sm leading-7">{system.description}</p>
+              <p className="mt-4 text-md leading-7">{system.description}</p>
 
-              <ul className="mt-4 space-y-2 text-sm leading-6">
+              <ul className="mt-4 space-y-2 text-md leading-6">
                 {system.benefits.map((benefit) => (
                   <li key={benefit} className="flex items-start gap-2">
                     <span className="mt-2 h-2 w-2 rounded-full bg-slate-900" />
@@ -408,7 +408,7 @@ export default function ServicesPage() {
                 ))}
               </ul>
 
-              <div className="mt-5 rounded-2xl bg-white/75 p-3 text-sm font-semibold text-slate-700">
+              <div className="mt-5 rounded-2xl bg-white/75 p-3 text-md font-semibold text-slate-700">
                 <span className="font-bold">Best for:</span> {system.bestFor}
               </div>
             </div>

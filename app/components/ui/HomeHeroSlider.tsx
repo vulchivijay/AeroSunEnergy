@@ -144,16 +144,16 @@ export default function HomeHeroSlider() {
           <div className={slideClass}>
             <div className="relative z-10 w-full max-w-3xl rounded-[28px] border border-white/15 bg-slate-950/30 p-4 shadow-[0_24px_60px_-30px_rgba(15,23,42,0.9)] backdrop-blur-[3px] sm:p-6 lg:p-8">
               <span
-                className={`mb-4 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.04)] ${slide.badgeClass}`}
+                className={`mb-4 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[12px] uppercase tracking-[0.28em] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.04)] ${slide.badgeClass}`}
               >
                 {slide.badge}
               </span>
 
-              <h1 className="max-w-2xl text-3xl font-black leading-none tracking-[-0.06em] text-white sm:text-4xl lg:text-[4rem]">
+              <h1 className="max-w-2xl text-3xl font-black leading-none tracking-[0.06em] text-white sm:text-4xl lg:text-[4rem]">
                 {slide.title}
               </h1>
 
-              <p className="mt-4 max-w-xl text-sm leading-7 text-slate-100/95 sm:text-base lg:text-lg">
+              <p className="mt-4 max-w-xl text-md leading-7 text-slate-100/95 sm:text-base lg:text-lg">
                 {slide.description}
               </p>
 
@@ -161,7 +161,7 @@ export default function HomeHeroSlider() {
                 {slide.tags.map((tag) => (
                   <span
                     key={tag}
-                    className={`rounded-full border border-white/15 bg-slate-950/50 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] ${slide.chipClass}`}
+                    className={`rounded-full border border-white/15 bg-slate-950/50 px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] ${slide.chipClass}`}
                   >
                     {tag}
                   </span>
@@ -171,13 +171,13 @@ export default function HomeHeroSlider() {
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 <Link
                   href="/contact"
-                  className="rounded-full bg-emerald-500 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-emerald-950 shadow-[0_18px_30px_-18px_rgba(16,185,129,0.9)] transition hover:bg-emerald-400"
+                  className="rounded-full bg-emerald-500 px-5 py-3 text-md font-black uppercase tracking-[0.18em] text-emerald-950 shadow-[0_18px_30px_-18px_rgba(16,185,129,0.9)] transition hover:bg-emerald-400"
                 >
                   Get Free Quote
                 </Link>
                 <Link
                   href="/estimation-calculator"
-                  className="rounded-full border border-white/15 bg-white/8 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-white backdrop-blur-sm transition hover:border-white/30 hover:bg-white/12"
+                  className="rounded-full border border-white/15 bg-white/8 px-5 py-3 text-md font-black uppercase tracking-[0.18em] text-white backdrop-blur-sm transition hover:border-white/30 hover:bg-white/12"
                 >
                   Estimate Savings
                 </Link>

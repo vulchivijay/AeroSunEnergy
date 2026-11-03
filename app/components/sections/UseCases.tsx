@@ -77,14 +77,14 @@ export default function UseCases() {
                       <p className="text-4xl">{uc.emoji}</p>
                       <p className="mt-3 text-lg font-bold">{uc.title}</p>
                     </div>
-                    <span className={`shrink-0 rounded-md px-3 py-1 text-sm font-bold ${uc.tagColor}`}>
+                    <span className={`shrink-0 rounded-md px-3 py-1 text-md font-bold ${uc.tagColor}`}>
                       {uc.tag}
                     </span>
                   </div>
                 </div>
                 <div className={`p-5 lg:p-6 ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
                   <div className="flex items-center gap-6">
-                    <span className="rounded-sm shadow-sm border border-gray-200 bg-slate-50 px-3 py-1 text-sm font-semibold uppercase tracking-[0.28em] text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+                    <span className="rounded-sm shadow-sm border border-gray-200 bg-slate-50 px-3 py-1 text-md font-semibold uppercase tracking-[0.28em] text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
                       {u.bestFit}
                     </span>
                     <span className="text-lg font-semibold text-primary">{uc.tag}</span>

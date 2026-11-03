@@ -54,12 +54,12 @@ function RecognitionHighlight() {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(24,37,31,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(24,37,31,0.06)_1px,transparent_1px)] bg-size-[34px_34px]" aria-hidden="true" />
           <div className="relative z-10 flex flex-col gap-6 p-5 sm:p-6 lg:flex-row lg:items-end lg:justify-between lg:p-8">
             <div className="max-w-2xl">
-              <p className="inline-flex rounded-full bg-amber-500 text-[10px] font-black uppercase tracking-[0.38em] text-amber-950 py-1 px-2">Recognition</p>
-              <h2 className="mt-3 text-3xl font-black tracking-[-0.07em] text-[#18251F] sm:text-4xl">
+              <p className="inline-flex rounded-full bg-amber-500 text-[12px] font-black uppercase tracking-[0.38em] text-amber-950 py-1 px-2">Recognition</p>
+              <h2 className="mt-3 text-3xl font-black tracking-[0.07em] text-[#18251F] sm:text-4xl">
                 Government-backed credibility for a fast-moving clean energy brand
               </h2>
             </div>
-            <div className="inline-flex items-center gap-3 rounded-full border border-[#d9f0df] bg-white/80 px-4 py-2.5 text-[10px] font-black uppercase tracking-[0.28em] text-[#1d5f3f] backdrop-blur-sm">
+            <div className="inline-flex items-center gap-3 rounded-full border border-[#d9f0df] bg-white/80 px-4 py-2.5 text-[12px] font-black uppercase tracking-[0.28em] text-[#1d5f3f] backdrop-blur-sm">
               <span className="flex h-2.5 w-2.5 items-center justify-center rounded-full bg-[#20A44A] shadow-[0_0_18px_rgba(32,164,74,0.9)]" />
               Verified credentials
             </div>
@@ -75,15 +75,15 @@ function RecognitionHighlight() {
                   <div className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-linear-to-br ${item.accent} text-2xl text-white ${item.glow}`}>
                     {item.icon}
                   </div>
-                  <span className={`rounded-full border border-[#e7f4ea] ${item.accent} px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-[#18251F]`}>
+                  <span className={`rounded-full border border-[#e7f4ea] ${item.accent} px-2.5 py-1 text-[12px] font-black uppercase tracking-[0.22em] text-[#18251F]`}>
                     {item.badge}
                   </span>
                 </div>
                 <div className="mt-5">
                   <h3 className="text-2xl font-black tracking-tighter text-[#18251F]">{item.title}</h3>
-                  <p className="mt-1 text-sm text-[#335247]">{item.subtitle}</p>
+                  <p className="mt-1 text-md text-[#335247]">{item.subtitle}</p>
                 </div>
-                <div className="mt-5 rounded-2xl border border-[#e9efe9] bg-[#f8faf8] p-3 text-sm leading-6 text-[#234136]">
+                <div className="mt-5 rounded-2xl border border-[#e9efe9] bg-[#f8faf8] p-3 text-md leading-6 text-[#234136]">
                   {item.text}
                 </div>
               </div>

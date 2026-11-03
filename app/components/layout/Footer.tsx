@@ -124,11 +124,11 @@ export default function Footer() {
 					<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_88%_45%,rgba(163,217,119,0.14),transparent_35%)]" aria-hidden="true" />
 					<div className="relative grid items-center gap-10 lg:grid-cols-[1fr_auto]">
 						<div className="max-w-3xl">
-							<p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.24em] text-[#A3D977]">
+							<p className="flex items-center gap-3 text-sm font-bold uppercase tracking-[0.24em] text-[#A3D977]">
 								<span className="h-px w-8 bg-[#A3D977]" />
 								AeroSun Energy
 							</p>
-							<h2 className="mt-5 text-4xl leading-[1.05] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
+							<h2 className="mt-5 text-4xl leading-[1.05] tracking-[0.045em] text-white sm:text-5xl lg:text-6xl">
 								Let&apos;s Build a Cleaner Energy Future Together.
 							</h2>
 							<p className="mt-5 max-w-2xl text-base leading-7 text-gray-300 sm:text-lg">
@@ -148,7 +148,7 @@ export default function Footer() {
 							<div className="absolute inset-5 animate-[spin_28s_linear_infinite] rounded-full border border-dashed border-[#F5C76A]/45 motion-reduce:animate-none" />
 							<div className="absolute inset-0 animate-[spin_38s_linear_infinite_reverse] rounded-full border border-[#A3D977]/20 motion-reduce:animate-none" />
 							<div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-[#F5C76A] text-[#071B17] shadow-[0_0_60px_rgba(245,199,106,0.3)]">
-								<Sun className="h-10 w-10" strokeWidth={1.5} aria-hidden="true" />
+								<Sun className="h-10 w-10 motion-safe:animate-[spin_20s_linear_infinite] motion-reduce:animate-none" strokeWidth={1.5} aria-hidden="true" />
 							</div>
 							<span className="absolute right-5 top-6 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-[#123b30] text-[#A3D977]">
 								<Wind className="h-4 w-4" aria-hidden="true" />
@@ -190,7 +190,7 @@ export default function Footer() {
 					</section>
 
 					<nav aria-labelledby="footer-navigation">
-						<h2 id="footer-navigation" className="mb-5 text-md uppercase text-[#A3D977]">{footer.quickLinks}</h2>
+						<h2 id="footer-navigation" className="mb-5 text-sm uppercase text-[#A3D977]">{footer.quickLinks}</h2>
 						<ul className="space-y-1">
 							{visibleNavLinks.map((link) => (
 								<li key={link.label}>
@@ -207,7 +207,7 @@ export default function Footer() {
 								</li>
 							))}
 						</ul>
-						<h3 className="mb-3 mt-7 text-md uppercase text-[#F5C76A]">{footer.quickEnquiries}</h3>
+						<h3 className="mb-3 mt-7 text-sm uppercase text-[#F5C76A]">{footer.quickEnquiries}</h3>
 						<ul className="space-y-1">
 							{quickEnquiries.map((item) => (
 								<li key={item.href}>
@@ -227,7 +227,7 @@ export default function Footer() {
 					</nav>
 
 					<nav aria-labelledby="footer-solutions">
-						<h2 id="footer-solutions" className="mb-5 text-md uppercase text-[#A3D977]">Our Solutions</h2>
+						<h2 id="footer-solutions" className="mb-5 text-sm uppercase text-[#A3D977]">Our Solutions</h2>
 						<ul className="space-y-1">
 							{solutions.map((solution) => (
 								<li key={solution.label}>
@@ -241,7 +241,7 @@ export default function Footer() {
 					</nav>
 
 					<section aria-labelledby="footer-contact">
-						<h2 id="footer-contact" className="mb-5 text-md uppercase text-[#A3D977]">Contact Information</h2>
+						<h2 id="footer-contact" className="mb-5 text-sm uppercase text-[#A3D977]">Contact Information</h2>
 						<ul className="space-y-4 text-sm leading-6 text-gray-300">
 							<li className="flex items-start gap-3">
 								<MapPin className="mt-1 h-4 w-4 shrink-0 text-[#F5C76A]" aria-hidden="true" />
@@ -272,7 +272,7 @@ export default function Footer() {
 								</a>
 							</li>
 						</ul>
-						<div className="mt-6 flex items-center gap-2 border-t border-white/10 pt-4 text-xs text-gray-400">
+						<div className="mt-6 flex items-center gap-2 border-t border-white/10 pt-4 text-sm text-gray-400">
 							<Sun className="h-4 w-4 text-[#F5C76A]" aria-hidden="true" />
 							<Wind className="h-4 w-4 text-[#A3D977]" aria-hidden="true" />
 							<span>Solar · Wind · Hybrid</span>
@@ -282,7 +282,7 @@ export default function Footer() {
 
 				<section aria-labelledby="footer-newsletter" className="mt-14 grid gap-6 rounded-2xl border border-white/10 bg-white/[0.04] p-6 sm:p-8 lg:grid-cols-[1fr_1fr] lg:items-center">
 					<div>
-						<h2 id="footer-newsletter" className="text-2xl tracking-widest text-white sm:text-3xl">Stay Powered by Clean Energy</h2>
+						<h2 id="footer-newsletter" className="text-2xl leading-[1.05] tracking-[0.045em] text-white sm:text-3xl">Stay Powered by Clean Energy</h2>
 						<p className="mt-2 max-w-xl text-sm leading-6 text-gray-300">Get renewable energy insights, technology updates and sustainable energy solutions.</p>
 					</div>
 					<form onSubmit={handleNewsletterSubmit} className="w-full">
@@ -307,26 +307,24 @@ export default function Footer() {
 								Subscribe <Send className="h-4 w-4" aria-hidden="true" />
 							</button>
 						</div>
-						<p className="mt-3 text-xs leading-5 text-gray-400">No newsletter service is connected yet. Subscribe opens an email request to our customer-care address; it does not add you automatically.</p>
-						<p role="status" aria-live="polite" className="mt-1 min-h-5 text-xs text-[#DCEDC8]">{newsletterStatus}</p>
+						<p className="mt-3 text-sm leading-5 text-gray-400">No newsletter service is connected yet. Subscribe opens an email request to our customer-care address; it does not add you automatically.</p>
+						<p role="status" aria-live="polite" className="mt-1 min-h-5 text-sm text-[#DCEDC8]">{newsletterStatus}</p>
 					</form>
 				</section>
 			</div>
 
 			<div className="border-t border-white/10 bg-black/20">
-				<p className="mx-auto max-w-7xl px-5 py-4 text-center text-xs leading-6 text-gray-400 sm:px-8 lg:px-10">
-					🚧 This website is currently under development. Some content and images may be incomplete, and page titles or locations may change as updates are made.
-					<br className="hidden sm:block" />
-					Images generated with <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" className="mx-1 text-[#A5D6A7] transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7]">ChatGPT<span className="sr-only"> (opens in a new tab)</span></Link>.
+				<p className="w-full text-sm font-medium text-gray-400 gap-3 border-t border-white/10 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
+					🚧 This website is currently under development. Some content and images may be incomplete, and page titles or locations may change as updates are made. Images generated with <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-[#A5D6A7] transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7]">ChatGPT<span className="sr-only"> (opens in a new tab)</span></Link>.
 				</p>
-				<div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-3 border-t border-white/10 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
-					<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[10px] font-medium uppercase tracking-[0.14em] text-gray-400">
+				<div className="flex w-full flex-col items-center justify-between gap-3 border-t border-white/10 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
+					<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[12px] uppercase tracking-[0.14em] text-gray-400">
 						<Link href="/privacy-policy" aria-current={isActive('/privacy-policy') ? 'page' : undefined} className={`transition-colors hover:text-[#DCEDC8] ${isActive('/privacy-policy') ? 'font-semibold text-[#DCEDC8]' : ''}`}>Privacy Policy</Link>
 						<Link href="/terms-conditions" aria-current={isActive('/terms-conditions') ? 'page' : undefined} className={`transition-colors hover:text-[#DCEDC8] ${isActive('/terms-conditions') ? 'font-semibold text-[#DCEDC8]' : ''}`}>Terms & Conditions</Link>
 						<Link href="/warranty-policy" aria-current={isActive('/warranty-policy') ? 'page' : undefined} className={`transition-colors hover:text-[#DCEDC8] ${isActive('/warranty-policy') ? 'font-semibold text-[#DCEDC8]' : ''}`}>Warranty & Service Policy</Link>
 					</div>
-					<p className="text-[11px] text-gray-400">Built with Love and fassion by Vulchi Vijaya Kumar Raju (Kshatriya's).</p>
-					<p className="text-[11px] text-gray-400">
+					<p className="text-[12px] text-gray-400">Built with Love and fassion by Vulchi Vijaya Kumar Raju (Kshatriya's).</p>
+					<p className="text-[12px] text-gray-400">
 						© {new Date().getFullYear()} AeroSun Energy Private Limited. All Rights Reserved.
 					</p>
 				</div>

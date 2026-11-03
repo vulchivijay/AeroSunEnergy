@@ -227,156 +227,212 @@ export default function InstallationChecklistPage() {
 	}
 
 	return (
-		<main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(245,158,11,0.10),transparent_18%),linear-gradient(180deg,#f8fafc_0%,#fff7ed_30%,#f8fafc_100%)] px-4 py-8 sm:px-6 lg:px-8">
-			<div className="mx-auto max-w-6xl">
-				<section className="overflow-hidden rounded-4xl border border-amber-200 bg-white/90 shadow-[0_30px_80px_-35px_rgba(217,119,6,0.45)] backdrop-blur-sm">
-					<div className="bg-linear-to-r from-[#1f2937] via-[#7c2d12] to-[#f59e0b] p-6 text-white sm:p-8 lg:p-10">
-						<div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-							<div className="max-w-3xl">
-								<p className="text-[10px] font-black uppercase tracking-[0.32em] text-amber-100/80">Installation</p>
-								<h1 className="mt-3 text-3xl font-black tracking-[-0.06em] sm:text-4xl lg:text-6xl">Installation checklist</h1>
-							</div>
-							<div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-amber-50 backdrop-blur-sm">
-								Solar • Wind • Hybrid • Pump systems
-							</div>
+		<main className="min-h-screen bg-[#f2f6fb] text-slate-800">
+			<header className="relative isolate overflow-hidden bg-[#101c32] text-white">
+				<div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_18%_90%,rgba(245,158,11,0.22),transparent_38%),radial-gradient(ellipse_at_88%_10%,rgba(14,165,233,0.2),transparent_34%)]" />
+				<div className="absolute -right-20 top-[-12rem] -z-10 h-[35rem] w-[35rem] rounded-full border border-amber-100/10">
+					<div className="absolute inset-10 rounded-full border border-amber-100/10" />
+					<div className="absolute inset-20 rounded-full border border-amber-100/10" />
+					<div className="absolute inset-32 rounded-full border border-amber-100/10" />
+				</div>
+				<div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1fr_auto] lg:px-10">
+					<div className="max-w-3xl">
+						<div className="inline-flex items-center gap-2 rounded-full border border-amber-100/20 bg-white/5 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-amber-100">
+							<span className="h-1.5 w-1.5 rounded-full bg-amber-300 shadow-[0_0_12px_rgba(252,211,77,0.8)]" />
+							Plan · Install · Commission
 						</div>
+						<h1 className="mt-6 text-4xl font-black tracking-[0.065em] text-white sm:text-6xl lg:text-7xl">
+							Installation.
+							<span className="mt-1 block text-amber-300">Checked at every stage.</span>
+						</h1>
+						<p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-base sm:leading-8">
+							A practical guide to planning, installing, testing, and handing over solar, wind, hybrid, and pump projects.
+						</p>
 					</div>
+					<div className="flex w-fit items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.06] px-5 py-4 backdrop-blur">
+						<span className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-300/10 text-xl text-amber-200">12</span>
+						<span className="text-md leading-5 text-slate-300">
+							Project lifecycle
+							<strong className="block text-md font-bold text-white">12 checklist phases</strong>
+						</span>
+					</div>
+				</div>
+				<div className="border-t border-white/10">
+					<div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-amber-100/60 sm:px-8 lg:px-10">
+						<span>Requirements</span>
+						<span>Site readiness</span>
+						<span>Safe installation</span>
+						<span>Testing & handover</span>
+					</div>
+				</div>
+			</header>
 
-					<div className="grid gap-8 p-4 sm:p-6 lg:grid-cols-[1.2fr_0.8fr] lg:p-8">
-						<div className="space-y-6">
-							<div className="rounded-3xl border border-amber-200 bg-linear-to-br from-amber-50 to-white p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
-								<p className="text-sm leading-7 text-slate-700">
-									This checklist is designed as an operational project document for AeroSun Energy covering the complete lifecycle from the first customer enquiry to engineering, approvals, procurement, installation, testing, performance verification, and final handover.
+			<div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:px-8 sm:py-14 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-12 lg:px-10">
+				<article className="min-w-0">
+					<div className="mb-8 rounded-3xl border border-amber-200/80 bg-white p-6 shadow-[0_20px_55px_-42px_rgba(15,23,42,0.5)] sm:p-8">
+						<div className="flex items-start gap-4">
+							<span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-lg text-amber-800">i</span>
+							<div>
+								<p className="text-[12px] font-black uppercase tracking-[0.2em] text-amber-800">Checklist at a glance</p>
+								<p className="mt-2 text-md leading-7 text-slate-600 sm:text-base">
+									This operational guide covers the complete project lifecycle, from the first customer enquiry through design, approvals, procurement, installation, testing, performance verification, and final handover.
 								</p>
 							</div>
-
-							<div className="grid gap-4 md:grid-cols-3">
-								{projectSummaryCards.map((card) => (
-									<div
-										key={card.title}
-										className="rounded-3xl border border-slate-200 bg-white p-4 shadow-[0_18px_40px_-30px_rgba(15,23,42,0.35)]"
-									>
-										<p className="text-[10px] font-black uppercase tracking-[0.28em] text-amber-700">{card.accent}</p>
-										<h2 className="mt-3 text-lg font-black tracking-[-0.04em] text-slate-900">{card.title}</h2>
-										<p className="mt-2 text-sm leading-6 text-slate-600">{card.description}</p>
-									</div>
-								))}
-							</div>
-
-							{checklistSections.map((section) => (
-								<section
-									key={section.title}
-									className="rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_18px_40px_-30px_rgba(15,23,42,0.35)] sm:p-6"
-								>
-									<h2 className="text-xl font-black tracking-[-0.04em] text-slate-900">{section.title}</h2>
-									<p className="mt-3 text-sm leading-7 text-slate-700">{section.text}</p>
-									<ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700">
-										{section.points.map((item) => (
-											<li key={item} className="flex items-start gap-3">
-												<span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-amber-100 text-[10px] font-black text-amber-700">✓</span>
-												<span>{item}</span>
-											</li>
-										))}
-									</ul>
-								</section>
+						</div>
+						<div className="mt-6 grid gap-3 border-t border-slate-100 pt-5 sm:grid-cols-3">
+							{projectSummaryCards.map((card, index) => (
+								<div key={card.title} className="flex gap-3 rounded-xl bg-[#f4f8fc] p-3">
+									<span className="font-mono text-md font-bold text-amber-700">0{index + 1}</span>
+									<span className="text-md leading-5 text-slate-600">
+										<strong className="block text-md text-slate-900">{card.title}</strong>
+										{card.description}
+									</span>
+								</div>
 							))}
 						</div>
-
-						<aside className="space-y-5">
-							<div className="rounded-3xl border border-amber-200 bg-slate-950 p-5 text-white shadow-[0_30px_60px_-35px_rgba(15,23,42,0.9)]">
-								<p className="text-[10px] font-black uppercase tracking-[0.28em] text-amber-200">Submission form</p>
-								<h2 className="mt-3 text-2xl font-black tracking-tighter">Record installation status</h2>
-
-								<form onSubmit={handleSubmit(onSubmit)} noValidate className="mt-6 space-y-4">
-									<Field label="Customer name" name="customerName" placeholder="Enter your full name" register={register} error={errors.customerName} />
-									<Field label="Company name" name="companyName" placeholder="Optional company / organization" register={register} error={errors.companyName} />
-									<Field label="Email address" name="email" type="email" placeholder="you@example.com" register={register} error={errors.email} />
-									<Field label="Phone number" name="phone" type="tel" placeholder="+91 98765 43210" register={register} error={errors.phone} />
-									<Field label="Project name" name="projectName" placeholder="Solar rooftop project" register={register} error={errors.projectName} />
-									<Field label="Site location" name="siteLocation" placeholder="City / site address" register={register} error={errors.siteLocation} />
-									<Field label="Installation date" name="installationDate" type="date" register={register} error={errors.installationDate} />
-
-									<div>
-										<label htmlFor="checklistStatus" className="mb-2 block text-sm font-semibold text-slate-100">
-											Installation status
-										</label>
-										<select
-											id="checklistStatus"
-											{...register('checklistStatus')}
-											aria-invalid={Boolean(errors.checklistStatus)}
-											aria-describedby={errors.checklistStatus ? 'checklistStatus-error' : undefined}
-											className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-all duration-200 focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
-										>
-											<option value="" className="text-slate-900">Select status</option>
-											<option value="Not started" className="text-slate-900">Not started</option>
-											<option value="In progress" className="text-slate-900">In progress</option>
-											<option value="Completed" className="text-slate-900">Completed</option>
-											<option value="Pending follow-up" className="text-slate-900">Pending follow-up</option>
-											<option value="Ready for commissioning" className="text-slate-900">Ready for commissioning</option>
-										</select>
-										{errors.checklistStatus && <p id="checklistStatus-error" className="mt-2 text-xs text-rose-300">{errors.checklistStatus.message}</p>}
-									</div>
-
-									<label className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 text-sm leading-6 text-slate-200">
-										<input type="checkbox" {...register('safetyCheck')} aria-invalid={Boolean(errors.safetyCheck)} aria-describedby={errors.safetyCheck ? 'safetyCheck-error' : undefined} className="mt-1 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
-										<span>I confirm the site safety checklist has been completed before energizing the system.</span>
-									</label>
-									{errors.safetyCheck && <p id="safetyCheck-error" className="text-xs text-rose-300">{errors.safetyCheck.message}</p>}
-
-									<label className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 text-sm leading-6 text-slate-200">
-										<input type="checkbox" {...register('commissioningCheck')} aria-invalid={Boolean(errors.commissioningCheck)} aria-describedby={errors.commissioningCheck ? 'commissioningCheck-error' : undefined} className="mt-1 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
-										<span>I confirm the commissioning checklist and performance validation have been completed.</span>
-									</label>
-									{errors.commissioningCheck && <p id="commissioningCheck-error" className="text-xs text-rose-300">{errors.commissioningCheck.message}</p>}
-
-									<div>
-										<label htmlFor="notes" className="mb-2 block text-sm font-semibold text-slate-100">
-											Notes
-										</label>
-										<textarea
-											id="notes"
-											rows={4}
-											{...register('notes')}
-											aria-invalid={Boolean(errors.notes)}
-											aria-describedby={errors.notes ? 'notes-error' : undefined}
-											placeholder="Summarize installation status, testing notes, and any follow-up actions."
-											className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-300 outline-none transition-all duration-200 focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
-										/>
-										{errors.notes && <p id="notes-error" className="mt-2 text-xs text-rose-300">{errors.notes.message}</p>}
-									</div>
-
-									<button
-										type="submit"
-										disabled={isSubmitting}
-										className="inline-flex w-full items-center justify-center rounded-2xl bg-amber-400 px-4 py-3 text-sm font-bold text-slate-900 transition hover:bg-amber-300 disabled:cursor-not-allowed disabled:opacity-70"
-									>
-										{isSubmitting ? 'Submitting...' : 'Submit checklist'}
-									</button>
-
-									{submitFeedback && (
-										<p
-											className={`rounded-2xl border px-3 py-2 text-sm ${
-												submitFeedback.type === 'success'
-													? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-200'
-													: 'border-rose-500/30 bg-rose-500/10 text-rose-200'
-											}`}
-										>
-											{submitFeedback.message}
-										</p>
-									)}
-								</form>
-							</div>
-
-							<div className="rounded-3xl border border-slate-200 bg-slate-50 p-5 text-sm leading-7 text-slate-700">
-								For project support or technical clarification, please use the{' '}
-								<a href="/contact" className="font-semibold text-amber-700 underline decoration-amber-400 underline-offset-4">
-									contact page
-								</a>{' '}
-								or the official contact details listed on the website.
-							</div>
-						</aside>
 					</div>
-				</section>
+
+					<div className="space-y-4">
+						{checklistSections.map((section, index) => (
+							<section
+								key={section.title}
+								id={`checklist-phase-${index + 1}`}
+								className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-[0_15px_45px_-40px_rgba(15,23,42,0.5)]"
+							>
+								<div className="flex items-start gap-4 p-5 sm:p-6">
+									<span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-amber-200 bg-amber-50 font-mono text-md font-bold text-amber-800">
+										{String(index + 1).padStart(2, '0')}
+									</span>
+									<div className="min-w-0 flex-1">
+										<h2 className="text-lg font-extrabold tracking-tight text-slate-950">{section.title.replace(/^Phase \d+:\s*/, '')}</h2>
+										<p className="mt-3 text-md leading-7 text-slate-600 sm:text-base">{section.text}</p>
+										<ul className="mt-4 space-y-2.5">
+											{section.points.map((item) => (
+												<li key={item} className="flex items-start gap-3 text-md leading-6 text-slate-600">
+													<span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
+													<span>{item}</span>
+												</li>
+											))}
+										</ul>
+									</div>
+								</div>
+								<div className="h-px bg-linear-to-r from-amber-100 via-orange-100 to-transparent" />
+							</section>
+						))}
+					</div>
+
+					<p className="mt-7 rounded-2xl border border-amber-200/80 bg-white p-5 text-md leading-7 text-slate-600">
+						For project support or technical clarification, please visit the{' '}
+						<a href="/contact" className="font-bold text-amber-800 underline decoration-amber-300 underline-offset-4 hover:text-orange-800">
+							Contact page
+						</a>{' '}
+						or use the official contact details listed on the website.
+					</p>
+				</article>
+
+				<aside className="space-y-5 lg:self-start">
+					<nav aria-label="Installation checklist phases" className="overflow-hidden rounded-2xl border border-amber-200/80 bg-white shadow-sm">
+						<div className="border-b border-slate-100 px-5 py-4">
+							<p className="text-[12px] font-black uppercase tracking-[0.2em] text-amber-800">Find a phase</p>
+							<p className="mt-1 text-md font-bold text-slate-900">Project lifecycle</p>
+						</div>
+						<ol className="max-h-[45vh] space-y-1 overflow-y-auto p-3">
+							{checklistSections.map((section, index) => (
+								<li key={section.title}>
+									<a
+										href={`#checklist-phase-${index + 1}`}
+										className="flex items-start gap-3 rounded-xl px-3 py-2.5 text-md leading-5 text-slate-600 transition hover:bg-amber-50 hover:text-amber-900"
+									>
+										<span className="font-mono font-bold text-amber-700/70">{String(index + 1).padStart(2, '0')}</span>
+										<span>{section.title.replace(/^Phase \d+:\s*/, '')}</span>
+									</a>
+								</li>
+							))}
+						</ol>
+					</nav>
+
+					<section className="rounded-2xl border border-amber-200 bg-white p-5">
+						<p className="text-[12px] font-black uppercase tracking-[0.2em] text-amber-800">Project essentials</p>
+						<ul className="mt-4 space-y-3 text-md leading-6 text-slate-700">
+							<li>Confirm requirements and site feasibility before design approval.</li>
+							<li>Verify materials and safety checks before installation and energization.</li>
+							<li>Document commissioning, customer training, and final handover.</li>
+						</ul>
+					</section>
+
+					<div className="rounded-2xl border border-amber-200 bg-[#101c32] p-5 text-white shadow-sm">
+						<p className="text-[12px] font-black uppercase tracking-[0.2em] text-amber-300">Submission form</p>
+						<h2 className="mt-2 text-xl font-extrabold tracking-tight">Record installation status</h2>
+						<form onSubmit={handleSubmit(onSubmit)} noValidate className="mt-5 space-y-4">
+							<Field label="Customer name" name="customerName" placeholder="Enter your full name" register={register} error={errors.customerName} />
+							<Field label="Company name" name="companyName" placeholder="Optional company / organization" register={register} error={errors.companyName} />
+							<Field label="Email address" name="email" type="email" placeholder="you@example.com" register={register} error={errors.email} />
+							<Field label="Phone number" name="phone" type="tel" placeholder="+91 98765 43210" register={register} error={errors.phone} />
+							<Field label="Project name" name="projectName" placeholder="Solar rooftop project" register={register} error={errors.projectName} />
+							<Field label="Site location" name="siteLocation" placeholder="City / site address" register={register} error={errors.siteLocation} />
+							<Field label="Installation date" name="installationDate" type="date" register={register} error={errors.installationDate} />
+
+							<div>
+								<label htmlFor="checklistStatus" className="mb-2 block text-md font-semibold text-slate-100">Installation status</label>
+								<select
+									id="checklistStatus"
+									{...register('checklistStatus')}
+									aria-invalid={Boolean(errors.checklistStatus)}
+									aria-describedby={errors.checklistStatus ? 'checklistStatus-error' : undefined}
+									className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
+								>
+									<option value="" className="text-slate-900">Select status</option>
+									<option value="Not started" className="text-slate-900">Not started</option>
+									<option value="In progress" className="text-slate-900">In progress</option>
+									<option value="Completed" className="text-slate-900">Completed</option>
+									<option value="Pending follow-up" className="text-slate-900">Pending follow-up</option>
+									<option value="Ready for commissioning" className="text-slate-900">Ready for commissioning</option>
+								</select>
+								{errors.checklistStatus && <p id="checklistStatus-error" className="mt-2 text-md text-rose-300">{errors.checklistStatus.message}</p>}
+							</div>
+
+							<label className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-3 text-md leading-6 text-slate-200">
+								<input type="checkbox" {...register('safetyCheck')} aria-invalid={Boolean(errors.safetyCheck)} aria-describedby={errors.safetyCheck ? 'safetyCheck-error' : undefined} className="mt-1 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+								<span>I confirm the site safety checklist has been completed before energizing the system.</span>
+							</label>
+							{errors.safetyCheck && <p id="safetyCheck-error" className="text-md text-rose-300">{errors.safetyCheck.message}</p>}
+
+							<label className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-3 text-md leading-6 text-slate-200">
+								<input type="checkbox" {...register('commissioningCheck')} aria-invalid={Boolean(errors.commissioningCheck)} aria-describedby={errors.commissioningCheck ? 'commissioningCheck-error' : undefined} className="mt-1 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+								<span>I confirm the commissioning checklist and performance validation have been completed.</span>
+							</label>
+							{errors.commissioningCheck && <p id="commissioningCheck-error" className="text-md text-rose-300">{errors.commissioningCheck.message}</p>}
+
+							<div>
+								<label htmlFor="notes" className="mb-2 block text-md font-semibold text-slate-100">Notes</label>
+								<textarea
+									id="notes"
+									rows={4}
+									{...register('notes')}
+									aria-invalid={Boolean(errors.notes)}
+									aria-describedby={errors.notes ? 'notes-error' : undefined}
+									placeholder="Summarize installation status, testing notes, and any follow-up actions."
+									className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white placeholder:text-slate-300 outline-none transition focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
+								/>
+								{errors.notes && <p id="notes-error" className="mt-2 text-md text-rose-300">{errors.notes.message}</p>}
+							</div>
+
+							<button
+								type="submit"
+								disabled={isSubmitting}
+								className="inline-flex w-full items-center justify-center rounded-xl bg-amber-300 px-4 py-3 text-md font-bold text-slate-900 transition hover:bg-amber-200 disabled:cursor-not-allowed disabled:opacity-70"
+							>
+								{isSubmitting ? 'Submitting...' : 'Submit checklist'}
+							</button>
+
+							{submitFeedback && (
+								<p className={`rounded-xl border px-3 py-2 text-md ${submitFeedback.type === 'success' ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-200' : 'border-rose-500/30 bg-rose-500/10 text-rose-200'}`}>
+									{submitFeedback.message}
+								</p>
+							)}
+						</form>
+					</div>
+				</aside>
 			</div>
 		</main>
 	)
@@ -394,7 +450,7 @@ type FieldProps = {
 function Field({ label, name, placeholder, type = 'text', register, error }: FieldProps) {
 	return (
 		<div>
-			<label htmlFor={name} className="mb-2 block text-sm font-semibold text-slate-100">
+			<label htmlFor={name} className="mb-2 block text-md font-semibold text-slate-100">
 				{label}
 			</label>
 			<input
@@ -404,9 +460,9 @@ function Field({ label, name, placeholder, type = 'text', register, error }: Fie
 				placeholder={placeholder}
 				aria-invalid={Boolean(error)}
 				aria-describedby={error ? `${name}-error` : undefined}
-				className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-300 outline-none transition-all duration-200 focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
+				className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white placeholder:text-slate-300 outline-none transition-all duration-200 focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
 			/>
-			{error && <p id={`${name}-error`} className="mt-2 text-xs text-rose-300">{error.message}</p>}
+			{error && <p id={`${name}-error`} className="mt-2 text-md text-rose-300">{error.message}</p>}
 		</div>
 	)
 }

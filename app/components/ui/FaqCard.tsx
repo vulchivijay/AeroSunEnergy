@@ -131,7 +131,7 @@ export default function FaqCard({ question, answer, defaultOpen = false }: FaqCa
         aria-controls={answerId}
         id={questionId}
       >
-        <span className="text-base font-black tracking-[-0.03em] text-[#1f2a44] sm:text-lg">{question}</span>
+        <span className="text-base font-black tracking-[0.03em] text-[#1f2a44] sm:text-lg">{question}</span>
         <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-lg font-bold transition ${isOpen ? 'border-[#F59E0B]/60 bg-[#F59E0B] text-white' : 'border-[#F59E0B]/60 bg-[#fff3df] text-[#D97706]'}`}>
           {isOpen ? '−' : '+'}
         </span>

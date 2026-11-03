@@ -32,7 +32,7 @@ export default function CTASection() {
         </div>
         <div className="relative grid gap-10 lg:grid-cols-[1fr_280px] lg:items-end">
           <div>
-            <span className="inline-block rounded-md md:border md:border-white/16 bg-white/8 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.34em] text-white/72 backdrop-blur-md sm:text-lg">
+            <span className="inline-block rounded-md md:border md:border-white/16 bg-white/8 px-4 py-1.5 text-md font-semibold uppercase tracking-[0.34em] text-white/72 backdrop-blur-md sm:text-lg">
               {c.badge}
             </span>
             <h2 className="mt-6 max-w-xl text-3xl leading-[1.1] tracking-[0.05em]! font-semibold text-white lg:text-4xl">
@@ -58,7 +58,7 @@ export default function CTASection() {
           </div>
 
           <div className="relative z-10 rounded-[2rem] border border-white/16 bg-white/8 p-5 text-white backdrop-blur-xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-white/60">{c.projectSpectrum}</p>
+            <p className="text-[12px] font-semibold uppercase tracking-[0.3em] text-white/60">{c.projectSpectrum}</p>
             <div className="mt-5 space-y-3">
               {c.projectTypes.map((type) => (
                 <div key={type} className="rounded-md border border-white/12 bg-slate-950/35 px-4 py-3">

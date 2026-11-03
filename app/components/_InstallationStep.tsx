@@ -13,7 +13,7 @@ export default function InstallationStep({
         {step}
       </div>
       <h3 className="font-semibold">{title}</h3>
-      <p className="text-sm text-gray-500 mt-2">
+      <p className="text-md text-gray-500 mt-2">
         {description}
       </p>
     </div>

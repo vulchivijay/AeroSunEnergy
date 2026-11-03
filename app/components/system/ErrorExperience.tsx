@@ -28,8 +28,8 @@ type ErrorExperienceProps = {
 
 function Action({ action, primary }: { action: ErrorAction; primary: boolean }) {
   const className = primary
-    ? 'group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#d6e8b9] px-6 py-3 text-sm font-bold text-[#10251f] transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d6e8b9]'
-    : 'group inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'
+    ? 'group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#d6e8b9] px-6 py-3 text-md font-bold text-[#10251f] transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d6e8b9]'
+    : 'group inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-6 py-3 text-md font-semibold text-white transition hover:border-white/40 hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'
   const icon = primary
     ? <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
     : <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
@@ -62,12 +62,12 @@ function ErrorIllustration({
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_36%,rgba(245,199,106,0.20),transparent_35%),linear-gradient(155deg,rgba(163,217,119,0.08),transparent_55%)]" />
       <div className="absolute inset-5 rounded-[1.5rem] border border-white/[0.07]" />
-      <div className="absolute left-8 top-8 flex items-center gap-2 rounded-full border border-white/10 bg-[#071b17]/70 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/60 backdrop-blur">
+      <div className="absolute left-8 top-8 flex items-center gap-2 rounded-full border border-white/10 bg-[#071b17]/70 px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-white/60 backdrop-blur">
         <span className={`h-1.5 w-1.5 rounded-full ${isLandscape ? 'bg-[#a3d977]' : 'bg-[#f5c76a]'}`} />
         {isLandscape ? 'A new direction' : 'System status'}
       </div>
 
-      <span className="absolute left-1/2 top-[16%] -translate-x-1/2 select-none font-semibold leading-none tracking-[-0.08em] text-white/[0.08] [font-size:clamp(7rem,22vw,13rem)]">
+      <span className="absolute left-1/2 top-[16%] -translate-x-1/2 select-none font-semibold leading-none tracking-[0.08em] text-white/[0.08] [font-size:clamp(7rem,22vw,13rem)]">
         {code}
       </span>
 
@@ -126,14 +126,14 @@ export function ErrorExperience({
 
       <section className="relative mx-auto grid min-h-[min(720px,calc(100svh-10rem))] max-w-7xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16 lg:px-10">
         <div className="max-w-xl">
-          <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.22em] text-[#c2df9e]">
+          <p className="flex items-center gap-3 text-md font-bold uppercase tracking-[0.22em] text-[#c2df9e]">
             <span className="h-px w-8 bg-[#f5c76a]" />
             {eyebrow}
           </p>
-          <p className="mt-7 font-mono text-5xl font-semibold tracking-[-0.08em] text-[#f5c76a] sm:text-6xl">
+          <p className="mt-7 font-mono text-5xl font-semibold tracking-[0.08em] text-[#f5c76a] sm:text-6xl">
             {code}
           </p>
-          <h1 className="mt-4 text-4xl font-semibold leading-[1.05] tracking-[-0.05em] text-white sm:text-5xl">
+          <h1 className="mt-4 text-4xl font-semibold leading-[1.05] tracking-[0.05em] text-white sm:text-5xl">
             {title}
           </h1>
           <p className="mt-5 max-w-lg text-base leading-7 text-white/70 sm:text-lg sm:leading-8">
@@ -147,11 +147,11 @@ export function ErrorExperience({
 
           {helpfulLinks.length > 0 && (
             <nav aria-label="Helpful destinations" className="mt-9 border-t border-white/10 pt-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/45">Find your way</p>
+              <p className="text-md font-semibold uppercase tracking-[0.16em] text-white/45">Find your way</p>
               <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
                 {helpfulLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-sm text-white/70 underline decoration-white/20 underline-offset-4 transition hover:text-[#d6e8b9] hover:decoration-[#d6e8b9] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d6e8b9]">
+                    <Link href={link.href} className="text-md text-white/70 underline decoration-white/20 underline-offset-4 transition hover:text-[#d6e8b9] hover:decoration-[#d6e8b9] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d6e8b9]">
                       {link.label}
                     </Link>
                   </li>

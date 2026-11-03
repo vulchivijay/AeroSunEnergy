@@ -224,7 +224,7 @@ export default function Slider({
             }
           }}
           aria-label={rotationPaused ? 'Start slide rotation' : 'Stop slide rotation'}
-          className="absolute right-4 top-4 z-20 inline-flex min-h-11 items-center justify-center rounded-full bg-black/50 px-4 text-sm font-semibold text-white shadow-lg transition hover:bg-black/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          className="absolute right-4 top-4 z-20 inline-flex min-h-11 items-center justify-center rounded-full bg-black/50 px-4 text-md font-semibold text-white shadow-lg transition hover:bg-black/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
           {userPaused ? 'Play' : 'Pause'}
         </button>

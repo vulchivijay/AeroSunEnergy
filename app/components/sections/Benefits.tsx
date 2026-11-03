@@ -68,7 +68,7 @@ export default function Benefits() {
 					<div className="relative max-w-7xl mx-auto">
 						<div className="absolute inset-0 bg-linear-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-md blur-3xl" aria-hidden="true" />
 						<div className="relative overflow-hidden rounded-md border border-white/20 bg-white/90 shadow-2xl backdrop-blur-sm dark:border-white/10 dark:bg-slate-950/90">
-							<div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white backdrop-blur-md">
+							<div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-md font-semibold uppercase tracking-widest text-white backdrop-blur-md">
 								{b.imageBadge}
 							</div>
 							<div className="min-h-96 md:aspect-video overflow-hidden">

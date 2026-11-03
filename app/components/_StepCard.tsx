@@ -19,7 +19,7 @@ export default function StepCard({
         {title}
       </h3>
 
-      <p className="text-sm text-gray-600 mt-2">
+      <p className="text-md text-gray-600 mt-2">
         {description}
       </p>
     </div>
