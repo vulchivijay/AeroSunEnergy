@@ -240,36 +240,49 @@ function SolarHeroSlider() {
 
 export default function SolarEnergyPage() {
   return (
-    <main className="bg-slate-50 text-slate-900">
-      <header className="mx-auto max-w-7xl px-4 pb-6 pt-8 sm:px-6 lg:px-8">
-        <div className="mb-6 inline-flex items-center rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-amber-700">
-          AeroSun Energy • Solar Systems
-        </div>
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl font-black tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-              Types of Solar Energy Systems
+    <main className="bg-[#fff9ed] text-slate-900 [&>section]:border-t-4 [&>section]:border-t-orange-400">
+      <header className="relative mx-auto my-6 max-w-7xl overflow-hidden rounded-[2.5rem] border border-amber-200 bg-[radial-gradient(ellipse_at_82%_15%,rgba(251,191,36,0.28),transparent_35%),linear-gradient(125deg,#fffdf7_0%,#fff4d6_58%,#fffaf0_100%)] px-5 py-7 shadow-[0_28px_70px_-44px_rgba(120,72,0,0.42)] sm:my-8 sm:px-8 sm:py-9 lg:px-10 lg:py-11">
+        <div className="relative z-10 grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-amber-300 bg-white/80 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-amber-900 shadow-sm">
+              <span className="h-2 w-2 rounded-full bg-amber-500" aria-hidden="true" />
+              AeroSun Energy <span aria-hidden="true">/</span> Solar Systems
+            </div>
+            <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.02] tracking-[-0.06em] text-slate-950 sm:text-5xl lg:text-7xl">
+              Solar energy,
+              <span className="block text-amber-700">made for your world.</span>
             </h1>
-            <p className="mt-4 text-lg leading-8 text-slate-700 sm:text-xl">
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-700 sm:text-xl">
               Solar energy systems are designed around how they generate power, how they connect to the grid, where they are installed, and which loads they are meant to serve.
             </p>
           </div>
-          <div className="grid w-full max-w-xl grid-cols-2 gap-3">
-            <div className="rounded-2xl border border-blue-200 bg-blue-50 p-4 shadow-sm">
-              <div className="text-xl font-black text-blue-700">On-grid</div>
-              <div className="mt-2 text-xs uppercase tracking-[0.2em] text-slate-500">Grid tied</div>
+          <div className="relative isolate overflow-hidden rounded-[2rem] bg-[linear-gradient(145deg,#71300c_0%,#92370b_55%,#a94208_100%)] p-5 text-white shadow-[0_24px_55px_-30px_rgba(120,55,5,0.65)] sm:p-7">
+            <div className="absolute right-[-2.5rem] top-[-3.5rem] h-48 w-48 rounded-full border border-white/15" aria-hidden="true" />
+            <div className="absolute right-[-0.25rem] top-[-1.25rem] h-32 w-32 rounded-full border border-white/15" aria-hidden="true" />
+            <div className="flex items-center gap-4">
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/15 ring-1 ring-white/25">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="h-8 w-8" aria-hidden="true">
+                  <circle cx="12" cy="12" r="4" />
+                  <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" strokeLinecap="round" />
+                </svg>
+              </span>
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-amber-100">One source. Many uses.</p>
+                <p className="mt-1 text-xl font-black tracking-tight sm:text-2xl">Choose your solar pathway</p>
+              </div>
             </div>
-            <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4 shadow-sm">
-              <div className="text-xl font-black text-emerald-700">Off-grid</div>
-              <div className="mt-2 text-xs uppercase tracking-[0.2em] text-slate-500">Standalone</div>
-            </div>
-            <div className="rounded-2xl border border-violet-200 bg-violet-50 p-4 shadow-sm">
-              <div className="text-xl font-black text-violet-700">Hybrid</div>
-              <div className="mt-2 text-xs uppercase tracking-[0.2em] text-slate-500">Solar + storage</div>
-            </div>
-            <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4 shadow-sm">
-              <div className="text-xl font-black text-amber-700">Thermal</div>
-              <div className="mt-2 text-xs uppercase tracking-[0.2em] text-slate-500">Heat use</div>
+            <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/20 bg-white/20">
+              {[
+                ['On-grid', 'Grid tied'],
+                ['Off-grid', 'Standalone'],
+                ['Hybrid', 'Solar + storage'],
+                ['Thermal', 'Heat use'],
+              ].map(([name, detail]) => (
+                <div key={name} className="bg-white/[0.08] p-3.5 sm:p-4">
+                  <p className="font-bold text-white">{name}</p>
+                  <p className="mt-1 text-xs text-white">{detail}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -277,7 +290,7 @@ export default function SolarEnergyPage() {
 
       <SolarHeroSlider />
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-amber-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(120,72,0,0.3)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
           <SectionEyebrow>What We Offer</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Expertise End-to-End Solar Solutions</h2>
@@ -299,7 +312,7 @@ export default function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-orange-200/80 bg-[#fffaf0] p-5 shadow-[0_20px_55px_-42px_rgba(120,72,0,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
           <SectionEyebrow>Rooftop Solar</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900">Solar Rooftop Systems</h2>
@@ -322,7 +335,7 @@ export default function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-amber-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(120,72,0,0.3)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
           <SectionEyebrow>System Types</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900">There are three main types of solar rooftop systems</h2>
@@ -335,7 +348,7 @@ export default function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-orange-200/80 bg-[#fffaf0] p-5 shadow-[0_20px_55px_-42px_rgba(120,72,0,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
           <SectionEyebrow>Why Solar</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900">Why you have to switch to solar today?</h2>
@@ -348,7 +361,7 @@ export default function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-amber-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(120,72,0,0.3)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
           <SectionEyebrow>Government of India Scheme</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900">PM Surya Ghar: Muft Bijli Yojana Subsidy</h2>
@@ -369,7 +382,7 @@ export default function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-amber-200/80 bg-[#fffaf0] p-5 shadow-[0_20px_55px_-42px_rgba(120,72,0,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="rounded-4xl border border-slate-200 bg-linear-to-br from-slate-100 via-white to-amber-50 p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.3)] sm:p-8">
           <SectionEyebrow>Strategic view</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900">Which solar systems should AeroSun Energy consider?</h2>
@@ -385,7 +398,7 @@ export default function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-orange-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(120,72,0,0.3)] sm:my-8 sm:p-8 lg:p-9">
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)]">
             <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-sky-700">Comparison</p>
@@ -434,7 +447,7 @@ export default function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-amber-200/80 bg-[#fffaf0] p-5 shadow-[0_20px_55px_-42px_rgba(120,72,0,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
           <SectionEyebrow>How We Measure</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900">How household solar consumption and grid surplus are measured</h2>
