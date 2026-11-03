@@ -374,36 +374,66 @@ function HybridHeroSlider() {
 
 export default function HybridEnergyPage() {
   return (
-    <main className="bg-slate-50 text-slate-900">
-      <header className="mx-auto max-w-7xl px-4 pb-6 pt-8 sm:px-6 lg:px-8">
-        <div className="mb-6 inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-emerald-700">
-          AeroSun Energy • Hybrid Systems
-        </div>
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl font-black tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-              Hybrid Solar + Wind Energy Systems
+    <main className="bg-[#f1faf5] text-slate-900 [&>section]:border-t-4 [&>section]:border-t-violet-400">
+      <header className="relative mx-auto my-6 max-w-7xl overflow-hidden rounded-[2.5rem] border border-slate-800 bg-[#10152d] px-5 py-7 text-white shadow-[0_30px_75px_-42px_rgba(28,27,75,0.7)] sm:my-8 sm:px-8 sm:py-9 lg:px-10 lg:py-11">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_18%_110%,rgba(16,185,129,0.24),transparent_42%),radial-gradient(ellipse_at_90%_0%,rgba(139,92,246,0.28),transparent_40%)]" aria-hidden="true" />
+        <div className="relative grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-violet-200/25 bg-white/[0.07] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-violet-200">
+              <span className="h-2 w-2 rounded-full bg-emerald-300" aria-hidden="true" />
+              AeroSun Energy <span aria-hidden="true">/</span> Hybrid Systems
+            </div>
+            <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.02] tracking-[-0.06em] text-white sm:text-5xl lg:text-7xl">
+              Hybrid energy,
+              <span className="block bg-linear-to-r from-emerald-300 via-cyan-200 to-violet-300 bg-clip-text text-transparent">working as one.</span>
             </h1>
-            <p className="mt-4 text-lg leading-8 text-slate-700 sm:text-xl">
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl">
               Combine solar generation, wind power, storage, and intelligent controls to create more resilient, flexible, and efficient renewable energy systems for homes, businesses, farms, and communities.
             </p>
           </div>
-          <div className="grid w-full max-w-xl grid-cols-2 gap-3">
-            <div className="rounded-2xl border border-sky-200 bg-sky-50 p-4 shadow-sm">
-              <div className="text-xl font-black text-sky-700">Grid</div>
-              <div className="mt-2 text-xs uppercase tracking-[0.2em] text-slate-500">Connected</div>
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.06] p-5 backdrop-blur-sm sm:p-7">
+            <div className="flex items-center justify-between gap-3">
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-emerald-200">One coordinated system</p>
+                <p className="mt-1 text-xl font-black tracking-tight text-white sm:text-2xl">Sources work together</p>
+              </div>
+              <span className="rounded-xl border border-emerald-200/20 bg-emerald-300/10 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-emerald-100">Balanced</span>
             </div>
-            <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4 shadow-sm">
-              <div className="text-xl font-black text-emerald-700">Off-grid</div>
-              <div className="mt-2 text-xs uppercase tracking-[0.2em] text-slate-500">Independent</div>
+            <div className="relative mt-7 grid grid-cols-2 gap-3">
+              <svg viewBox="0 0 300 130" preserveAspectRatio="none" className="pointer-events-none absolute inset-x-0 top-7 z-0 h-24 w-full text-emerald-200/50" aria-hidden="true">
+                <path d="M75 5v38q0 12 12 12h126q12 0 12 12v38M225 5v38q0 12-12 12H87q-12 0-12 12v38" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5 6" />
+              </svg>
+              {[
+                ['Solar', 'Daylight', 'bg-amber-300 text-slate-950'],
+                ['Wind', 'Moving air', 'bg-sky-300 text-slate-950'],
+              ].map(([label, detail, color]) => (
+                <div key={label} className="relative z-10 rounded-2xl border border-white/15 bg-slate-950/25 p-3.5 text-center sm:p-4">
+                  <span className={`mx-auto flex h-10 w-10 items-center justify-center rounded-full text-sm font-black ${color}`}>
+                    {label === 'Solar' ? (
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42m0-14.14-1.42 1.42M6.35 17.65l-1.42 1.42" /></svg>
+                    ) : (
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5" aria-hidden="true"><path d="M3 8h13a3 3 0 1 0-3-3M2 12h17a3 3 0 1 1-3 3M4 16h8" strokeLinecap="round" /></svg>
+                    )}
+                  </span>
+                  <p className="mt-2 text-sm font-bold text-white">{label}</p>
+                  <p className="text-xs text-slate-300">{detail}</p>
+                </div>
+              ))}
+              <div className="relative z-10 col-span-2 mx-auto w-full max-w-56 rounded-2xl border border-emerald-200/25 bg-emerald-300/10 p-3.5 text-center">
+                <p className="text-sm font-bold text-emerald-100">Storage + smart controls</p>
+                <p className="mt-1 text-xs text-slate-200">Balance supply with demand</p>
+              </div>
             </div>
-            <div className="rounded-2xl border border-violet-200 bg-violet-50 p-4 shadow-sm">
-              <div className="text-xl font-black text-violet-700">Battery</div>
-              <div className="mt-2 text-xs uppercase tracking-[0.2em] text-slate-500">Storage</div>
-            </div>
-            <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4 shadow-sm">
-              <div className="text-xl font-black text-amber-700">Microgrid</div>
-              <div className="mt-2 text-xs uppercase tracking-[0.2em] text-slate-500">Local network</div>
+            <div className="mt-5 flex flex-wrap gap-2 border-t border-white/10 pt-4">
+              {[
+                ['Grid', 'Connected'],
+                ['Off-grid', 'Independent'],
+                ['Microgrid', 'Local network'],
+              ].map(([label, detail]) => (
+                <span key={label} className="rounded-full border border-white/15 bg-white/[0.05] px-3 py-1.5 text-xs text-slate-200">
+                  <strong className="font-bold text-white">{label}</strong> · {detail}
+                </span>
+              ))}
             </div>
           </div>
         </div>
@@ -411,7 +441,7 @@ export default function HybridEnergyPage() {
 
       <HybridHeroSlider />
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-emerald-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(16,87,58,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
           <HybridSectionEyebrow>Hybrid categories</HybridSectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Hybrid systems by grid connection and storage</h2>
@@ -430,7 +460,7 @@ export default function HybridEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-violet-200/80 bg-[#f7f5ff] p-5 shadow-[0_20px_55px_-42px_rgba(74,54,130,0.24)] sm:my-8 sm:p-8 lg:p-9">
         <div className="rounded-4xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-[0_32px_90px_-38px_rgba(15,23,42,1)] sm:p-8">
           <div className="mb-6 flex items-center justify-between gap-3">
             <div>
@@ -455,7 +485,7 @@ export default function HybridEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-emerald-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(16,87,58,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="grid gap-5 sm:grid-cols-2">
             {keyBenefits.map((benefit) => (
@@ -470,7 +500,7 @@ export default function HybridEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-violet-200/80 bg-[#f7f5ff] p-5 shadow-[0_20px_55px_-42px_rgba(74,54,130,0.24)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
           <HybridSectionEyebrow>Our solutions</HybridSectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Six hybrid renewable energy service lines</h2>
@@ -559,7 +589,7 @@ export default function HybridEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-emerald-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(16,87,58,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
           <HybridSectionEyebrow>Application fit</HybridSectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900">Typical system combinations</h2>
@@ -568,7 +598,7 @@ export default function HybridEnergyPage() {
         <HybridTable rows={projectRows} />
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-violet-200/80 bg-[#f7f5ff] p-5 shadow-[0_20px_55px_-42px_rgba(74,54,130,0.24)] sm:my-8 sm:p-8 lg:p-9">
         <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)] sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
             <div>

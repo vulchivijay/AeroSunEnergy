@@ -368,32 +368,54 @@ const serviceSections = [
 
 export default function WindEnergyPage() {
   return (
-    <main className="bg-slate-50 text-slate-900">
-      <header className="mx-auto max-w-7xl px-4 pb-6 pt-8 sm:px-6 lg:px-8">
-        <div className="mb-6 inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-emerald-700">
-          AeroSun Energy • Wind Systems
-        </div>
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl font-black tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-              Wind Energy Systems
+    <main className="bg-[#f0f8fc] text-slate-900 [&>section]:rounded-2xl [&>section]:border-l-4 [&>section]:border-l-sky-500">
+      <header className="relative mx-auto my-6 max-w-7xl overflow-hidden rounded-[2.5rem] border border-slate-700 bg-[#0b1c2c] px-5 py-7 text-white shadow-[0_30px_75px_-42px_rgba(7,28,47,0.75)] sm:my-8 sm:px-8 sm:py-9 lg:px-10 lg:py-11">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(125,211,252,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(125,211,252,0.055)_1px,transparent_1px)] bg-size-[36px_36px]" aria-hidden="true" />
+        <div className="absolute inset-y-0 right-0 w-2/3 bg-[radial-gradient(ellipse_at_80%_48%,rgba(14,165,233,0.24),transparent_58%)]" aria-hidden="true" />
+        <div className="relative grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-sky-200/25 bg-sky-300/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-sky-200">
+              <span className="h-2 w-2 rounded-full bg-sky-300" aria-hidden="true" />
+              AeroSun Energy <span aria-hidden="true">/</span> Wind Systems
+            </div>
+            <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.02] tracking-[-0.06em] text-white sm:text-5xl lg:text-7xl">
+              Wind energy,
+              <span className="block text-sky-300">built around your site.</span>
             </h1>
-            <p className="mt-4 text-lg leading-8 text-slate-700 sm:text-xl">
-              Wind energy converts the kinetic energy of moving air into electricity or mechanical power. For AeroSun Energy, this includes small turbines, distributed generation, commercial systems, and hybrid renewable solutions.
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl">
+              Wind energy converts the kinetic energy of moving air into electricity or mechanical power. Explore distributed generation, commercial turbines and hybrid renewable systems.
             </p>
           </div>
-          <div className="grid w-full max-w-xl grid-cols-3 gap-3">
-            <div className="rounded-2xl border border-sky-200 bg-sky-50 p-4 shadow-sm">
-              <div className="text-xl font-black text-sky-700">HAWT</div>
-              <div className="mt-2 text-xs uppercase tracking-[0.2em] text-slate-500">Horizontal</div>
+          <div className="relative overflow-hidden rounded-[2rem] border border-sky-100/15 bg-slate-900/65 p-5 backdrop-blur-sm sm:p-7">
+            <div className="absolute right-0 top-0 h-40 w-40 rounded-bl-full bg-sky-400/10" aria-hidden="true" />
+            <div className="relative flex min-h-44 items-center justify-between gap-5">
+              <div className="space-y-4">
+                {[
+                  ['HAWT', 'Horizontal axis'],
+                  ['VAWT', 'Vertical axis'],
+                  ['HYBRID', 'Solar + wind'],
+                ].map(([label, detail], index) => (
+                  <div key={label} className="flex items-center gap-3">
+                    <span className={`flex h-9 w-9 items-center justify-center rounded-xl text-xs font-black ${index === 0 ? 'bg-sky-300 text-slate-950' : index === 1 ? 'bg-cyan-300 text-slate-950' : 'bg-emerald-300 text-slate-950'}`}>
+                      {index + 1}
+                    </span>
+                    <span>
+                      <span className="block text-sm font-bold text-white">{label}</span>
+                      <span className="block text-xs text-slate-300">{detail}</span>
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <svg viewBox="0 0 180 190" fill="none" className="h-40 w-36 shrink-0 text-sky-300 sm:h-48 sm:w-44" aria-hidden="true">
+                <path d="M92 80v101M80 181h24" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+                <circle cx="92" cy="79" r="6" fill="currentColor" />
+                <path d="M92 73 83 16q-2-12 8-7l9 54M98 80l51-26q11-6 10 5l-4 9-51 17M89 84 47 124q-9 9-13-1l-2-10 48-36" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" />
+                <path d="M18 45c20-12 35-12 51 0M10 61c18-10 31-10 46 0M126 136c14-8 25-8 38 0M130 151c12-7 21-7 32 0" stroke="#bae6fd" strokeWidth="2" strokeLinecap="round" opacity=".8" />
+                <circle cx="92" cy="79" r="54" stroke="currentColor" strokeDasharray="3 7" opacity=".28" />
+              </svg>
             </div>
-            <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4 shadow-sm">
-              <div className="text-xl font-black text-emerald-700">VAWT</div>
-              <div className="mt-2 text-xs uppercase tracking-[0.2em] text-slate-500">Vertical</div>
-            </div>
-            <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4 shadow-sm">
-              <div className="text-xl font-black text-amber-700">Hybrid</div>
-              <div className="mt-2 text-xs uppercase tracking-[0.2em] text-slate-500">Solar + Wind</div>
+            <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-4 text-[10px] font-bold uppercase tracking-[0.2em] text-sky-100">
+              <span>Resource first</span><span className="h-px flex-1 mx-3 bg-sky-300/30" aria-hidden="true" /><span>Site designed</span>
             </div>
           </div>
         </div>
@@ -401,7 +423,7 @@ export default function WindEnergyPage() {
 
       <WindHeroSlider />
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-sky-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
           <WindSectionEyebrow>Overview</WindSectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Types of wind energy systems</h2>
@@ -420,7 +442,7 @@ export default function WindEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-sky-200/80 bg-[#f7fcff] p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.26)] sm:my-8 sm:p-8 lg:p-9">
         <div className="rounded-4xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-[0_32px_90px_-38px_rgba(15,23,42,1)] sm:p-8">
           <div className="mb-6 flex items-center justify-between gap-3">
             <div>
@@ -445,7 +467,7 @@ export default function WindEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-cyan-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
           <WindSectionEyebrow>Electrical configuration</WindSectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900">Matching the system to the application</h2>
@@ -454,7 +476,7 @@ export default function WindEnergyPage() {
         <WindComparisonTable rows={systemConfigs} />
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-sky-200/80 bg-[#f7fcff] p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.26)] sm:my-8 sm:p-8 lg:p-9">
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="grid gap-5 sm:grid-cols-2">
             {keyBenefits.map((benefit) => (
@@ -469,7 +491,7 @@ export default function WindEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-cyan-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
           <WindSectionEyebrow>Capacity ranges</WindSectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900">Power capacity categories</h2>
@@ -478,7 +500,7 @@ export default function WindEnergyPage() {
         <WindCapacityTable rows={capacityBands} />
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-sky-200/80 bg-[#f7fcff] p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.26)] sm:my-8 sm:p-8 lg:p-9">
         <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)] sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
@@ -506,7 +528,7 @@ export default function WindEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-cyan-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
           <WindSectionEyebrow>Service Sections</WindSectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900">Exploring wind energy applications</h2>
