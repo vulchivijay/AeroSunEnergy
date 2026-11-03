@@ -128,7 +128,7 @@ export default function Footer() {
 								<span className="h-px w-8 bg-[#A3D977]" />
 								AeroSun Energy
 							</p>
-							<h2 className="mt-5 text-4xl font-semibold leading-[1.05] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
+							<h2 className="mt-5 text-4xl leading-[1.05] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
 								Let&apos;s Build a Cleaner Energy Future Together.
 							</h2>
 							<p className="mt-5 max-w-2xl text-base leading-7 text-gray-300 sm:text-lg">

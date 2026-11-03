@@ -139,7 +139,7 @@ export default function LordGanesha() {
           </div>
 
           <h2 className="text-3xl font-semibold tracking-tight">{title}</h2>
-          <p className="max-w-md text-md leading-6 text-gray-600 dark:text-gray-300 hidden">
+          <p className="max-w-md text-md leading-6 text-gray-600 dark:text-gray-300">
             Welcome to AeroSun Energy. May this blessing bring clarity, success, and prosperity to your renewable energy journey.
           </p>
 
