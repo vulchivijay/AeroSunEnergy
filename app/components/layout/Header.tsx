@@ -68,6 +68,7 @@ export default function Navbar() {
     const handleResize = () => {
       if (window.innerWidth >= 1280) {
         setMenuOpen(false)
+        setLangOpen(false)
       }
     }
 
@@ -169,14 +170,16 @@ export default function Navbar() {
     )
   }
 
-  function renderLanguageOptions(id: string, open: boolean) {
+  function renderLanguageOptions(id: string, open: boolean, inline = false) {
     return (
       <div
         id={id}
         hidden={!open}
         role="group"
         aria-label={t.navbar.languageLabel}
-        className="absolute right-0 top-[calc(100%+0.65rem)] z-[60] w-48 overflow-hidden rounded-2xl border border-white/10 bg-[#09251e] p-1.5 text-white shadow-[0_20px_50px_-25px_rgba(0,0,0,0.7)]"
+        className={inline
+          ? 'mt-2 grid gap-1 rounded-xl border border-white/10 bg-white/[0.03] p-1.5 text-white'
+          : 'absolute right-0 top-[calc(100%+0.65rem)] z-[60] w-48 overflow-hidden rounded-2xl border border-white/10 bg-[#09251e] p-1.5 text-white shadow-[0_20px_50px_-25px_rgba(0,0,0,0.7)]'}
       >
         {languageOptions.map((option) => (
           <button
@@ -237,7 +240,7 @@ export default function Navbar() {
               aria-label={t.navbar.languageLabel}
               aria-expanded={langOpen}
               aria-controls="desktop-language-options"
-              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3 text-sm tracking-wider text-[#e8ecd9] transition hover:border-[#dcedc8]/70 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3 text-[12px] tracking-wider text-[#e8ecd9] transition hover:border-[#dcedc8]/70 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
             >
               <Globe2 className="h-4 w-4 text-[#c5e1a5]" aria-hidden="true" />
               {languageOptions.find((option) => option.code === locale)?.shortLabel}
@@ -268,25 +271,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="flex shrink-0 items-center gap-2 xl:hidden max-[359px]:gap-1 max-[319px]:w-full max-[319px]:justify-end">
-          <div className="relative">
-            <button
-              type="button"
-              onClick={() => {
-                setLangOpen((open) => !open)
-                setMenuOpen(false)
-              }}
-              aria-label={`${t.navbar.languageLabel}: ${languageOptions.find((option) => option.code === locale)?.label}`}
-              aria-expanded={langOpen}
-              aria-controls="mobile-language-options"
-              className="inline-flex h-11 min-w-12 items-center justify-center gap-1.5 rounded-full border border-white/15 bg-white/[0.05] px-2.5 text-sm font-bold text-[#f4f0e2] transition hover:border-[#dcedc8]/70 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7] max-[359px]:w-11 max-[359px]:min-w-11 max-[359px]:px-0"
-            >
-              <Globe2 className="h-4 w-4 text-[#c5e1a5]" aria-hidden="true" />
-              <span className="max-[359px]:sr-only">{languageOptions.find((option) => option.code === locale)?.shortLabel}</span>
-            </button>
-            {renderLanguageOptions('mobile-language-options', langOpen)}
-          </div>
-
+        <div className="flex shrink-0 items-center gap-2 xl:hidden">
           <button
             type="button"
             onClick={() => {
@@ -318,6 +303,26 @@ export default function Navbar() {
             Explore AeroSun
           </p>
           {navLinks.map((link) => renderNavigationLink(link, true))}
+          <div className="border-t border-white/10 px-2 pt-4">
+            <button
+              type="button"
+              onClick={() => setLangOpen((open) => !open)}
+              aria-label={t.navbar.languageLabel}
+              aria-expanded={langOpen}
+              aria-controls="mobile-language-options"
+              className="flex min-h-12 w-full items-center justify-between rounded-xl px-3 py-3 text-sm font-medium text-white/75 transition hover:bg-[#a5d6a7]/10 hover:text-[#dcedc8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
+            >
+              <span className="flex items-center gap-3">
+                <Globe2 className="h-4 w-4 text-[#c5e1a5]" aria-hidden="true" />
+                {t.navbar.languageLabel}
+                <span className="text-xs text-white/50">
+                  {languageOptions.find((option) => option.code === locale)?.label}
+                </span>
+              </span>
+              <ChevronDown className={`h-4 w-4 text-white/60 transition-transform ${langOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+            </button>
+            {renderLanguageOptions('mobile-language-options', langOpen, true)}
+          </div>
           <div className="grid gap-3 border-t border-white/10 pt-4 sm:grid-cols-2">
             <Link
               href="/contact"
