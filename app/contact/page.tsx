@@ -217,8 +217,8 @@ export default function Contact() {
             </div>
           </section>
 
-          <section className="mt-20 grid overflow-hidden rounded-[2rem] bg-[#dfff72] sm:mt-28 lg:grid-cols-[0.7fr_1.3fr] dark:bg-emerald-950">
-            <div className="flex flex-col justify-center p-6 sm:p-10">
+          <section className="mt-20 grid overflow-hidden rounded-[2rem] shadow-2xl border border-emerald-950/20 bg-[#dfff72] sm:mt-28 lg:grid-cols-[0.7fr_1.3fr] dark:border-emerald-300/20 dark:bg-emerald-950">
+            <div className="flex flex-col justify-start p-6 sm:p-10">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-900 dark:text-lime-300">{faqHeader}</p>
               <h2 className="mt-4 text-4xl font-black leading-tight tracking-[-0.05em] text-emerald-950 dark:text-white sm:text-5xl">{faqTitle}</h2>
               <p className="mt-5 text-base leading-7 text-emerald-950/75 dark:text-emerald-50/75">Explore answers to common questions about solar energy and project planning.</p>
