@@ -234,7 +234,7 @@ export default function Page() {
               <div className="mt-5 space-y-3">
                 {['డిమాండ్ ముందుగా', 'లాభం గణన కావాలి', 'నగదు 관리 ముఖ్యం', 'విస్తరణ డేటాతో'].map((item) => (
                   <div key={item} className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-3">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-xs font-black text-white">
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-xs font-black text-slate-950">
                       ✓
                     </span>
                     <span className="text-sm font-medium text-slate-700">{item}</span>
@@ -444,7 +444,7 @@ export default function Page() {
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {principles.map((principle, index) => (
             <div key={principle} className="flex gap-3 rounded-[1.4rem] border border-slate-200 bg-white p-4 shadow-sm">
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-cyan-500 text-sm font-black text-white">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-cyan-500 text-sm font-black text-slate-950">
                 {index + 1}
               </div>
               <p className="text-sm leading-7 text-slate-700">{principle}</p>

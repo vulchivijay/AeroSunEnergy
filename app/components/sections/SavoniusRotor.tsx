@@ -9,14 +9,14 @@ export default function SavoniusRotor() {
   const s = t.savoniusRotor
 
   return (
-    <section className="px-4 sm:px-2 lg:px-12 py-16 md:py-24 bg-white dark:bg-gray-950 overflow-hidden bg-linear-to-b from-slate-50">
+    <section className="px-4 sm:px-2 lg:px-12 py-16 md:py-24 bg-white dark:bg-gray-950 overflow-hidden bg-linear-to-b from-slate-50 dark:from-gray-950">
 
       {/* Header */}
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100">
           {s.title}
         </h2>
-        <p className="text-gray-600 mt-3 text-lg">
+        <p className="text-gray-600 dark:text-gray-300 mt-3 text-lg">
           {s.subtitle}
         </p>
       </div>
@@ -36,16 +36,16 @@ export default function SavoniusRotor() {
 
         {/* Description */}
         <div>
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+          <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4">
             {s.howItWorks}
           </h3>
 
-          <p className="text-gray-600 mb-4">
+          <p className="text-gray-600 dark:text-gray-300 mb-4">
             {s.description}
           </p>
 
           {/* Key Points */}
-          <ul className="space-y-3 text-gray-700">
+          <ul className="space-y-3 text-gray-700 dark:text-gray-200">
             {s.highlights.map((highlight) => (
               <li key={highlight}><span aria-hidden="true">✔ </span>{highlight}</li>
             ))}
@@ -56,9 +56,9 @@ export default function SavoniusRotor() {
       {/* Specs Section */}
       <div className="max-w-5xl mx-auto mt-12 grid sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
         {s.specs.map((spec) => (
-          <div key={spec.label} className="p-5 rounded-xl bg-white shadow">
-            <p className="text-gray-500 text-sm">{spec.label}</p>
-            <p className="text-xl font-semibold text-gray-800">{spec.value}</p>
+          <div key={spec.label} className="p-5 rounded-xl bg-white shadow dark:bg-gray-800">
+            <p className="text-gray-600 dark:text-gray-300 text-sm">{spec.label}</p>
+            <p className="text-xl font-semibold text-gray-800 dark:text-gray-100">{spec.value}</p>
           </div>
         ))}
       </div>

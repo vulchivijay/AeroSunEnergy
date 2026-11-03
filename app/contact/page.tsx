@@ -186,7 +186,7 @@ export default function Contact() {
               <article key={item.label} className="flex gap-4 border-t-2 border-emerald-800/20 bg-white/55 p-5 dark:border-emerald-300/20 dark:bg-slate-900/60">
                 <span className="font-mono text-sm font-bold text-emerald-800 dark:text-lime-300">0{index + 1}</span>
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">{item.label}</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-600 dark:text-slate-300">{item.label}</p>
                   <p className="mt-2 text-base leading-7 text-slate-800 dark:text-slate-200">{item.value}</p>
                 </div>
               </article>
@@ -209,7 +209,7 @@ export default function Contact() {
             <div className="mt-8 grid gap-px overflow-hidden rounded-2xl bg-slate-300 dark:bg-slate-800 lg:grid-cols-3">
               {contactSteps.map((step) => (
                 <article key={step.title} className="bg-[#f3f0e5] p-6 sm:p-8 dark:bg-slate-950">
-                  <span className="font-mono text-sm font-bold text-emerald-700 dark:text-lime-300">{step.number} <span className="text-slate-400">/ 03</span></span>
+                  <span className="font-mono text-sm font-bold text-emerald-700 dark:text-lime-300">{step.number} <span className="text-slate-600 dark:text-slate-400">/ 03</span></span>
                   <h3 className="mt-8 text-2xl font-black text-slate-950 dark:text-white">{step.title}</h3>
                   <p className="mt-3 text-base leading-7 text-slate-700 dark:text-slate-300">{step.description}</p>
                 </article>

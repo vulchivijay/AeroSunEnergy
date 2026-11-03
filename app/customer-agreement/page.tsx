@@ -340,7 +340,7 @@ export default function CustomerAgreementPage() {
                 <div className="grid gap-4 lg:grid-cols-2">
                   <div className="rounded-[22px] border border-sky-200 bg-linear-to-br from-[#ebf8ff] via-white to-[#f5fbff] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] sm:p-5">
                     <div className="mb-3 flex items-center gap-3">
-                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-sky-500 to-cyan-500 text-lg font-black text-white shadow-lg shadow-sky-500/25">1</span>
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-sky-700 to-cyan-700 text-lg font-black text-white shadow-lg shadow-sky-500/25">1</span>
                       <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Agreement Details</h2>
                     </div>
                     <div className="space-y-4">
@@ -352,7 +352,7 @@ export default function CustomerAgreementPage() {
 
                   <div className="rounded-[22px] border border-emerald-200 bg-linear-to-br from-[#f1fff9] via-white to-[#f7fff7] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] sm:p-5">
                     <div className="mb-3 flex items-center gap-3">
-                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-lime-500 text-lg font-black text-white shadow-lg shadow-emerald-500/25">2</span>
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-lime-500 text-lg font-black text-slate-950 shadow-lg shadow-emerald-500/25">2</span>
                       <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Customer Details</h2>
                     </div>
                     <div className="space-y-4">
@@ -366,7 +366,7 @@ export default function CustomerAgreementPage() {
 
                 <div className="rounded-3xl border border-violet-200 bg-linear-to-br from-[#f6f1ff] via-white to-[#f7f8ff] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] sm:p-5">
                   <div className="mb-4 flex items-center gap-3 border-b border-violet-200 pb-3">
-                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-violet-500 to-indigo-500 text-lg font-black text-white shadow-lg shadow-violet-500/25">3</span>
+                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-violet-700 to-indigo-600 text-lg font-black text-white shadow-lg shadow-violet-500/25">3</span>
                     <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Project Details</h2>
                   </div>
 
@@ -393,7 +393,7 @@ export default function CustomerAgreementPage() {
                 <div className="grid gap-4 lg:grid-cols-2">
                   <section className="rounded-3xl border border-amber-200 bg-linear-to-br from-[#fffaf1] via-white to-[#fffef7] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                     <div className="mb-3 flex items-center gap-3 border-b border-amber-200 pb-3">
-                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-orange-500 text-lg font-black text-white shadow-lg shadow-amber-500/25">4</span>
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-orange-500 text-lg font-black text-slate-950 shadow-lg shadow-amber-500/25">4</span>
                       <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Commercial Terms</h2>
                     </div>
 
@@ -423,7 +423,7 @@ export default function CustomerAgreementPage() {
 
                   <section className="rounded-3xl border border-emerald-200 bg-linear-to-br from-[#edfdf7] via-white to-[#f5fff9] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                     <div className="mb-3 flex items-center gap-3 border-b border-emerald-200 pb-3">
-                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-teal-500 text-lg font-black text-white shadow-lg shadow-emerald-500/25">5</span>
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-teal-500 text-lg font-black text-slate-950 shadow-lg shadow-emerald-500/25">5</span>
                       <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">Scope of Work</h2>
                     </div>
 
@@ -546,7 +546,7 @@ function Field({ label, name, placeholder, type = 'text', register, error, compa
         placeholder={placeholder}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${inputId}-error` : undefined}
-        className={`h-11 w-full rounded-2xl border px-4 py-3 text-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:ring-4 ${dark ? 'border-white/10 bg-white/5 text-white focus:border-indigo-400 focus:ring-indigo-600/30' : 'border-slate-200 bg-white text-slate-900 focus:border-sky-500 focus:ring-sky-100'}`}
+        className={`h-11 w-full rounded-2xl border px-4 py-3 text-sm outline-none transition-all duration-200 placeholder:text-slate-600 focus:ring-4 ${dark ? 'border-white/10 bg-white/5 text-white placeholder:text-slate-400 focus:border-indigo-400 focus:ring-indigo-600/30' : 'border-slate-200 bg-white text-slate-900 focus:border-sky-500 focus:ring-sky-100'}`}
       />
       {error && <p id={`${inputId}-error`} className="mt-2 text-xs text-rose-300">{error.message}</p>}
     </div>

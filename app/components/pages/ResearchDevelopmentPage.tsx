@@ -227,7 +227,7 @@ export default function ResearchDevelopmentPage() {
 											key={item}
 											className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50/90 p-3 dark:border-slate-700 dark:bg-slate-800/80"
 										>
-											<span className="flex h-8 w-8 items-center justify-center rounded-full bg-linear-to-br from-emerald-400 to-teal-500 text-sm font-bold text-white">
+											<span className="flex h-8 w-8 items-center justify-center rounded-full bg-linear-to-br from-emerald-400 to-teal-500 text-sm font-bold text-slate-950">
 												✓
 											</span>
 											<span className="text-sm font-medium text-slate-700 dark:text-slate-200">{item}</span>
@@ -371,7 +371,7 @@ export default function ResearchDevelopmentPage() {
 									key={item}
 									className="flex gap-3 rounded-[1.2rem] border border-slate-200 bg-slate-50/85 p-3 dark:border-slate-700 dark:bg-slate-800/80"
 								>
-									<div className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-500 text-xs font-black text-white">
+									<div className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-700 text-xs font-black text-white">
 										{index + 1}
 									</div>
 									<span className="text-sm leading-6 text-slate-700 dark:text-slate-200">{item}</span>
@@ -760,7 +760,7 @@ export default function ResearchDevelopmentPage() {
 								'You can generate revenue before making large capital commitments.',
 							].map((item, index) => (
 								<li key={item} className="flex gap-3 rounded-[1.2rem] border border-slate-200 bg-slate-50/90 p-3 dark:border-slate-700 dark:bg-slate-800/80">
-									<div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-xs font-black text-white">{index + 1}</div>
+									<div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-700 text-xs font-black text-white">{index + 1}</div>
 									<span className="text-sm leading-6 text-slate-700 dark:text-slate-300">{item}</span>
 								</li>
 							))}
@@ -1217,7 +1217,7 @@ export default function ResearchDevelopmentPage() {
 								'You can generate revenue before making large capital commitments.',
 							].map((item, index) => (
 								<li key={item} className="flex gap-3 rounded-[1.2rem] border border-slate-200 bg-slate-50/90 p-3 dark:border-slate-700 dark:bg-slate-800/80">
-									<div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-xs font-black text-white">{index + 1}</div>
+									<div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-700 text-xs font-black text-white">{index + 1}</div>
 									<span className="text-sm leading-6 text-slate-700 dark:text-slate-300">{item}</span>
 								</li>
 							))}

@@ -108,7 +108,7 @@ export default function WhyChooseUs() {
                     {r.icon}
                   </div>
                   <h3 className="mb-2 text-lg font-bold text-gray-900 dark:text-gray-100">{r.title}</h3>
-                  <p className="text-lg leading-relaxed text-gray-500 dark:text-gray-400">{r.desc}</p>
+                  <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">{r.desc}</p>
                 </CardContent>
               </Card>
             </motion.div>

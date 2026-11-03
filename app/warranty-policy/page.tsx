@@ -168,7 +168,7 @@ export default function WarrantyPolicyPage() {
                   {...register('productLine')}
                   aria-invalid={Boolean(errors.productLine)}
                   aria-describedby={errors.productLine ? 'productLine-error' : undefined}
-                  className="h-12 w-full rounded-2xl border border-sky-200 bg-sky-50/70 px-4 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
+                  className="h-12 w-full rounded-2xl border border-sky-200 bg-sky-50/70 px-4 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
                 >
                   <option value="">Select product line</option>
                   <option value="Solar PV system">Solar PV system</option>
@@ -199,7 +199,7 @@ export default function WarrantyPolicyPage() {
                   {...register('servicePlan')}
                   aria-invalid={Boolean(errors.servicePlan)}
                   aria-describedby={errors.servicePlan ? 'servicePlan-error' : undefined}
-                  className="h-12 w-full rounded-2xl border border-emerald-200 bg-emerald-50/70 px-4 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"
+                  className="h-12 w-full rounded-2xl border border-emerald-200 bg-emerald-50/70 px-4 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"
                 >
                   <option value="">Select service plan</option>
                   <option value="Basic support">Basic support</option>
@@ -286,7 +286,7 @@ function Field({ label, name, placeholder, type = 'text', register, error, accen
         placeholder={placeholder}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${name}-error` : undefined}
-        className={`h-12 w-full rounded-2xl border px-4 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:ring-4 ${accentClasses[accent]}`}
+        className={`h-12 w-full rounded-2xl border px-4 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:ring-4 ${accentClasses[accent]}`}
       />
       {error && <p id={`${name}-error`} className="mt-2 text-xs text-rose-600">{error.message}</p>}
     </div>

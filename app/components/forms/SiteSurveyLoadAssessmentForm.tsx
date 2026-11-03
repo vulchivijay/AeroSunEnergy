@@ -168,7 +168,7 @@ export function SiteSurveyLoadAssessmentForm() {
             <div className="grid gap-5 xl:grid-cols-2">
               <section className="rounded-[24px] border border-sky-200 bg-linear-to-br from-[#f3fbff] via-white to-[#eef9ff] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 flex items-center gap-3 border-b border-sky-200 pb-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-sky-500 to-cyan-500 text-lg font-black text-white shadow-lg shadow-sky-500/20">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-sky-700 to-cyan-700 text-lg font-black text-white shadow-lg shadow-sky-500/20">
                     1
                   </span>
                   <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">
@@ -230,7 +230,7 @@ export function SiteSurveyLoadAssessmentForm() {
 
               <section className="rounded-[24px] border border-emerald-200 bg-linear-to-br from-[#f1fff7] via-white to-[#edfef7] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 flex items-center gap-3 border-b border-emerald-200 pb-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-lime-500 text-lg font-black text-white shadow-lg shadow-emerald-500/20">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-lime-500 text-lg font-black text-slate-950 shadow-lg shadow-emerald-500/20">
                     2
                   </span>
                   <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">
@@ -307,7 +307,7 @@ export function SiteSurveyLoadAssessmentForm() {
 
               <section className="rounded-[24px] border border-violet-200 bg-linear-to-br from-[#f5f3ff] via-white to-[#f6f4ff] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5 xl:col-span-2">
                 <div className="mb-4 flex items-center gap-3 border-b border-violet-200 pb-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-violet-500 to-indigo-500 text-lg font-black text-white shadow-lg shadow-violet-500/20">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-violet-700 to-indigo-600 text-lg font-black text-white shadow-lg shadow-violet-500/20">
                     3
                   </span>
                   <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">
@@ -367,7 +367,7 @@ export function SiteSurveyLoadAssessmentForm() {
 
               <section className="rounded-[24px] border border-amber-200 bg-linear-to-br from-[#fffaf1] via-white to-[#fffdf7] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 flex items-center gap-3 border-b border-amber-200 pb-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-orange-500 text-lg font-black text-white shadow-lg shadow-amber-500/20">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-orange-500 text-lg font-black text-slate-950 shadow-lg shadow-amber-500/20">
                     4
                   </span>
                   <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">
@@ -387,7 +387,7 @@ export function SiteSurveyLoadAssessmentForm() {
                       placeholder="Example: 3 ACs, 20 LED lights, 3 HP water pump, 2 computers, 5 kW motor load..."
                       aria-invalid={Boolean(errors.equipmentLoads)}
                       aria-describedby={errors.equipmentLoads ? 'equipmentLoads-error' : undefined}
-                      className="w-full rounded-2xl border border-amber-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-amber-500 focus:ring-4 focus:ring-amber-100"
+                      className="w-full rounded-2xl border border-amber-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-amber-500 focus:ring-4 focus:ring-amber-100"
                     />
                     {errors.equipmentLoads && <p id="equipmentLoads-error" className="mt-2 text-xs text-rose-600">{errors.equipmentLoads.message}</p>}
                   </div>
@@ -396,7 +396,7 @@ export function SiteSurveyLoadAssessmentForm() {
 
               <section className="rounded-[24px] border border-emerald-200 bg-linear-to-br from-[#f2fff9] via-white to-[#f3fff7] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 flex items-center gap-3 border-b border-emerald-200 pb-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-teal-500 text-lg font-black text-white shadow-lg shadow-emerald-500/20">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-teal-500 text-lg font-black text-slate-950 shadow-lg shadow-emerald-500/20">
                     5
                   </span>
                   <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">
@@ -430,7 +430,7 @@ export function SiteSurveyLoadAssessmentForm() {
                       placeholder="Add notes for the survey team, shading observations, or technical constraints."
                       aria-invalid={Boolean(errors.notes)}
                       aria-describedby={errors.notes ? 'notes-error' : undefined}
-                      className="w-full rounded-2xl border border-emerald-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"
+                      className="w-full rounded-2xl border border-emerald-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"
                     />
                     {errors.notes && <p id="notes-error" className="mt-2 text-xs text-rose-600">{errors.notes.message}</p>}
                   </div>
@@ -439,7 +439,7 @@ export function SiteSurveyLoadAssessmentForm() {
 
               <section className="rounded-[24px] border border-sky-200 bg-linear-to-br from-[#f4fbff] via-white to-[#f0f9ff] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 flex items-center gap-3 border-b border-sky-200 pb-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-sky-500 to-blue-600 text-lg font-black text-white shadow-lg shadow-sky-500/20">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-sky-700 to-blue-700 text-lg font-black text-white shadow-lg shadow-sky-500/20">
                     6
                   </span>
                   <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">
@@ -480,7 +480,7 @@ export function SiteSurveyLoadAssessmentForm() {
 
               <section className="rounded-[24px] border border-cyan-200 bg-linear-to-br from-[#ecfeff] via-white to-[#f0fdff] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 flex items-center gap-3 border-b border-cyan-200 pb-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-cyan-500 to-teal-500 text-lg font-black text-white shadow-lg shadow-cyan-500/20">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-cyan-700 to-teal-700 text-lg font-black text-white shadow-lg shadow-cyan-500/20">
                     7
                   </span>
                   <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">
@@ -544,7 +544,7 @@ export function SiteSurveyLoadAssessmentForm() {
 
               <section className="rounded-[24px] border border-lime-200 bg-linear-to-br from-[#f8fff5] via-white to-[#fafff9] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
                 <div className="mb-4 flex items-center gap-3 border-b border-lime-200 pb-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-emerald-500 text-lg font-black text-white shadow-lg shadow-lime-500/20">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-lime-500 to-emerald-500 text-lg font-black text-slate-950 shadow-lg shadow-lime-500/20">
                     9
                   </span>
                   <h2 className="text-lg font-black tracking-[-0.04em] text-slate-900">
@@ -574,7 +574,7 @@ export function SiteSurveyLoadAssessmentForm() {
                     <textarea
                       rows={4}
                       placeholder="Summarize key observations and next recommended steps."
-                      className="w-full rounded-2xl border border-lime-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-lime-500 focus:ring-4 focus:ring-lime-100"
+                      className="w-full rounded-2xl border border-lime-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-lime-500 focus:ring-4 focus:ring-lime-100"
                     />
                   </div>
                 </div>
@@ -583,7 +583,7 @@ export function SiteSurveyLoadAssessmentForm() {
 
             <div className="flex flex-col gap-4 rounded-[24px] border border-slate-200 bg-slate-50/80 p-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-3 text-sm font-semibold text-slate-700">
-                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-base text-white shadow-md shadow-emerald-500/20">
+                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-base text-slate-950 shadow-md shadow-emerald-500/20">
                   ✓
                 </span>
                 Customer Acknowledgement
@@ -639,7 +639,7 @@ function Field({ label, name, placeholder, type = 'text', register, error, compa
         placeholder={placeholder}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${inputId}-error` : undefined}
-        className={`w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-sky-500 focus:ring-4 focus:ring-sky-100 ${compact ? 'h-12' : 'h-12'}`}
+        className={`w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-sky-500 focus:ring-4 focus:ring-sky-100 ${compact ? 'h-12' : 'h-12'}`}
       />
       {error && <p id={`${inputId}-error`} className="mt-2 text-xs text-rose-600">{error.message}</p>}
     </div>

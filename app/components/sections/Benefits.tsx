@@ -109,7 +109,7 @@ export default function Benefits() {
 										{ben.icon}
 									</div>
 									<h3 className="mb-3 text-lg font-bold text-gray-900 dark:text-gray-100">{ben.title}</h3>
-									<p className="text-lg leading-relaxed text-gray-500 dark:text-gray-400">{ben.desc}</p>
+									<p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">{ben.desc}</p>
 								</CardContent>
 							</Card>
 						</motion.div>

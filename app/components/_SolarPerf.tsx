@@ -5,7 +5,7 @@ export default function WeatherPerformance() {
   return (
     <div className="py-6">
       {/* Hero */}
-      <section className="bg-linear-to-r from-yellow-500 to-orange-500 text-white rounded-2xl p-8">
+      <section className="bg-linear-to-r from-yellow-500 to-orange-500 text-slate-950 rounded-2xl p-8">
         <h1 className="text-4xl font-bold mb-4">
           Solar Performance in Different Weather Conditions
         </h1>
