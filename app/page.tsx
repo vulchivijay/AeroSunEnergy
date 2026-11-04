@@ -101,8 +101,6 @@ export default function Home() {
     <main>
       <HomeHeroSlider />
       <SchemeBanner />
-      <RecognitionHighlight />
-      <About />
       {/* Solar Section */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
         <div className="mb-8">
@@ -111,11 +109,10 @@ export default function Home() {
             Expertise End-to-End Solar Solutions
           </h2>
         </div>
-
+        
         <div className="mb-10 text-lg leading-8 text-slate-700">
           We have rich experience in solar rooftop 1 KW to megawatt solar power plants — including solar hybrid systems, solar hot water, solar street lights, solar fencing, solar agriculture pump sets & any solar power services.
         </div>
-
         <div className="grid gap-6 lg:grid-cols-3">
           <FeatureCard
             title="Solar Rooftop Systems"
@@ -187,7 +184,7 @@ export default function Home() {
             accent="emerald"
           />
         </div>
-
+        
         <div className="mt-12 rounded-4xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
           <div className="mb-6">
             <SectionEyebrow>Rooftop Solar</SectionEyebrow>
@@ -236,7 +233,7 @@ export default function Home() {
             />
           </div>
         </div>
-
+        
         <div className="mt-12 rounded-4xl border border-slate-200 bg-white p-6 lg:p-8">
           <div className="mb-6">
             <SectionEyebrow>System Types</SectionEyebrow>
@@ -271,7 +268,7 @@ export default function Home() {
             />
           </div>
         </div>
-
+        
         <div className="mt-12 rounded-4xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
           <div className="mb-6">
             <SectionEyebrow>Why Solar</SectionEyebrow>
@@ -289,7 +286,7 @@ export default function Home() {
             <BenefitCard title="Continuous Supply" description="Hybrid systems with battery backup keep critical loads running through outages." />
           </div>
         </div>
-
+        
         <div className="mt-12 rounded-4xl border border-emerald-200 bg-emerald-50 p-6 lg:p-8">
           <div className="mb-6">
             <SectionEyebrow>Government of India Scheme</SectionEyebrow>
@@ -478,6 +475,8 @@ export default function Home() {
           />
         </div>
       </section>
+      <About />
+      <RecognitionHighlight />
       <SolarEstimation />
       <BankEMICalculator />
     </main>
