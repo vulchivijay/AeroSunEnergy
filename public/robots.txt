@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /docs
+Disallow: /docs/
 Sitemap: https://aerosunenergy.in/sitemap.xml
