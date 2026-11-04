@@ -207,8 +207,11 @@ export default function Navbar() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 border-b border-white/10 bg-[#071b17] text-white shadow-[0_18px_42px_-30px_rgba(3,18,12,0.9)]"
+      className="sticky top-0 z-50 bg-[linear-gradient(135deg,rgba(5,46,30,0.96),rgba(8,64,59,0.9),rgba(15,23,42,0.98))] text-white shadow-[0_18px_42px_-30px_rgba(3,18,12,0.9)]"
     >
+      <div className="absolute -left-10 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-emerald-400/15 blur-3xl" />
+      <div className="absolute -right-12 top-0 h-32 w-32 rounded-full bg-cyan-400/10 blur-3xl" />
+
       <div className="relative border-b border-white/[0.07] bg-[#04130f] text-[#e8ecd9] hidden">
         <div className="mx-auto flex min-h-8 max-w-[90rem] items-center justify-between gap-3 px-3 py-1 text-[11px] font-semibold tracking-[0.08em] sm:px-6 sm:text-[11px] sm:tracking-[0.12em] lg:px-8">
           <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">

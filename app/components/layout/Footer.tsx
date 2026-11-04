@@ -314,10 +314,10 @@ export default function Footer() {
 			</div>
 
 			<div className="border-t border-white/10 bg-black/20">
-				<p className="w-full text-sm font-medium text-gray-400 gap-3 border-t border-white/10 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
-					🚧 This website is currently under development. Some content and images may be incomplete, and page titles or locations may change as updates are made. Images generated with <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-[#A5D6A7] transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7]">ChatGPT<span className="sr-only"> (opens in a new tab)</span></Link>.
+				<p className="mx-auto flex max-w-[90rem] justify-center text-sm font-medium text-gray-400 gap-1 border-t border-white/10 px-5 py-5 sm:px-8 lg:flex-row lg:px-10">
+					🚧 This website is currently under development. Some content and images may be incomplete, and page titles or locations may change as updates are made. Images generated with <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-[#A5D6A7] transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7]">ChatGPT.</Link>
 				</p>
-				<div className="flex w-full flex-col items-center justify-between gap-3 border-t border-white/10 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
+				<div className="mx-auto flex max-w-[90rem] flex-col items-center justify-between gap-3 border-t border-white/10 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
 					<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[12px] uppercase tracking-[0.14em] text-gray-400">
 						<Link href="/privacy-policy" aria-current={isActive('/privacy-policy') ? 'page' : undefined} className={`transition-colors hover:text-[#DCEDC8] ${isActive('/privacy-policy') ? 'font-semibold text-[#DCEDC8]' : ''}`}>Privacy Policy</Link>
 						<Link href="/terms-conditions" aria-current={isActive('/terms-conditions') ? 'page' : undefined} className={`transition-colors hover:text-[#DCEDC8] ${isActive('/terms-conditions') ? 'font-semibold text-[#DCEDC8]' : ''}`}>Terms & Conditions</Link>

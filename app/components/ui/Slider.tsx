@@ -41,12 +41,12 @@ export default function Slider({
   const dragging = useRef(false)
   const [isHovered, setIsHovered] = useState(false)
   const [isDocumentHidden, setIsDocumentHidden] = useState(false)
-  const [userPaused, setUserPaused] = useState(false)
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
   const viewportRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const syncMotionPreference = () => setUserPaused(motionPreference.matches)
+    const syncMotionPreference = () => setPrefersReducedMotion(motionPreference.matches)
 
     syncMotionPreference()
     motionPreference.addEventListener('change', syncMotionPreference)
@@ -81,13 +81,11 @@ export default function Slider({
   }, [])
 
   const next = () => {
-    setUserPaused(true)
     setPosition((prev) => prev + 1)
     setWithTransition(true)
   }
 
   const prev = () => {
-    setUserPaused(true)
     setPosition((prev) => prev - 1)
     setWithTransition(true)
   }
@@ -106,7 +104,7 @@ export default function Slider({
 
   useEffect(() => {
     if (!autoplay) return
-    if (isHovered || isDocumentHidden || userPaused || dragging.current) return
+    if (isHovered || isDocumentHidden || prefersReducedMotion || dragging.current) return
 
     const id = window.setInterval(() => {
       setPosition((prev) => prev + 1)
@@ -114,13 +112,12 @@ export default function Slider({
     }, interval)
 
     return () => clearInterval(id)
-  }, [autoplay, interval, isHovered, isDocumentHidden, userPaused])
+  }, [autoplay, interval, isHovered, isDocumentHidden, prefersReducedMotion])
 
   const onPointerDown = (e: React.PointerEvent) => {
     if (e.target instanceof Element && e.target.closest('button, a, input, select, textarea')) return
     dragStartX.current = e.clientX
     dragging.current = true
-    setUserPaused(true)
     setWithTransition(false)
     e.currentTarget.setPointerCapture(e.pointerId)
   }
@@ -161,7 +158,6 @@ export default function Slider({
   }
 
   const goToSlide = (i: number) => {
-    setUserPaused(true)
     setPosition(i + 1)
     setWithTransition(true)
   }
@@ -170,7 +166,7 @@ export default function Slider({
   const totalWidth = slideWidth > 0 ? slideWidth * clonedSlides.length : 0
   const translate = slideWidth > 0 ? `translate3d(${-(position * slideWidth) + dragX}px,0,0)` : `translate3d(${(-position * percentPerSlide).toFixed(6)}%,0,0)`
   const activeRealIndex = position === 0 ? count - 1 : position === clonedSlides.length - 1 ? 0 : position - 1
-  const rotationPaused = isHovered || isDocumentHidden || userPaused
+  const rotationPaused = isHovered || isDocumentHidden || prefersReducedMotion
 
   return (
     <div
@@ -183,7 +179,6 @@ export default function Slider({
       onKeyDown={onKeyDown}
       onMouseEnter={() => pauseOnHover && setIsHovered(true)}
       onMouseLeave={() => pauseOnHover && setIsHovered(false)}
-      onFocus={() => setUserPaused(true)}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
@@ -212,24 +207,6 @@ export default function Slider({
         ))}
       </div>
 
-      {autoplay && (
-        <button
-          type="button"
-          onClick={() => {
-            if (rotationPaused) {
-              setUserPaused(false)
-              setIsHovered(false)
-            } else {
-              setUserPaused(true)
-            }
-          }}
-          aria-label={rotationPaused ? 'Start slide rotation' : 'Stop slide rotation'}
-          className="absolute right-4 top-4 z-20 inline-flex min-h-11 items-center justify-center rounded-full bg-black/50 px-4 text-md font-semibold text-white shadow-lg transition hover:bg-black/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-        >
-          {userPaused ? 'Play' : 'Pause'}
-        </button>
-      )}
-
       <button
         type="button"
         aria-label="Previous slide"
@@ -248,7 +225,7 @@ export default function Slider({
       </button>
 
       <div className="absolute inset-x-0 bottom-3 z-20 flex justify-center px-3 sm:bottom-5">
-        <div className="flex max-w-[calc(100vw-2.5rem)] flex-wrap items-center justify-center gap-1.5 sm:gap-2.5">
+        <div className="flex max-w-[calc(100vw-2.5rem)] flex-wrap items-center justify-center">
           {slidesArray.map((_, i) => {
             const isActive = activeRealIndex === i
             return (
@@ -264,7 +241,7 @@ export default function Slider({
                   aria-hidden="true"
                   className={`rounded-full transition-all duration-300 ${
                     isActive
-                      ? 'h-2 w-5 bg-white sm:h-2.5 sm:w-8'
+                      ? 'h-2 w-4 bg-white sm:h-2.5 sm:w-8'
                       : 'h-2 w-2 bg-white/40 group-hover:bg-white/60 sm:h-2.5 sm:w-2.5'
                   }`}
                 />
