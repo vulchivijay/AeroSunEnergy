@@ -43,7 +43,7 @@ const socialLinks = [
 		),
 	},
 	{
-		href: 'https://www.facebook.com/AeroSunEnergy',
+		href: 'https://www.facebook.com/AeroSunEnergyPrivateLimited/',
 		label: 'Like AeroSun Energy on Facebook',
 		title: 'Like AeroSun Energy on Facebook (opens in new tab)',
 		dataSocial: 'facebook',
@@ -60,7 +60,7 @@ const socialLinks = [
 		),
 	},
 	{
-		href: 'https://www.instagram.com/aerosunenergy/',
+		href: 'https://www.instagram.com/aerosunenergyprivatelimited/',
 		label: 'Follow AeroSun Energy on Instagram',
 		title: 'Follow AeroSun Energy on Instagram (opens in new tab)',
 		dataSocial: 'instagram',
