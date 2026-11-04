@@ -183,3 +183,64 @@ a {
   display: inline-block;
   animation: page-loader-spin 0.9s linear infinite;
 }
+
+@media print {
+  @page {
+    margin: 14mm;
+  }
+
+  body > header,
+  body > footer,
+  [data-print-hide] {
+    display: none !important;
+  }
+
+  body {
+    min-height: auto !important;
+    overflow: visible !important;
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  .printable-about-document {
+    width: 100% !important;
+    max-width: none !important;
+    overflow: visible !important;
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  .printable-about-document,
+  .printable-about-document * {
+    color: #111 !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  .printable-about-document a {
+    color: #111 !important;
+    text-decoration: none !important;
+  }
+
+  .printable-about-document article,
+  .printable-about-document li,
+  .printable-about-document h1,
+  .printable-about-document h2,
+  .printable-about-document h3 {
+    break-inside: avoid;
+  }
+
+  .printable-about-document h1,
+  .printable-about-document h2,
+  .printable-about-document h3 {
+    break-after: avoid;
+  }
+
+  .printable-about-document p,
+  .printable-about-document li {
+    orphans: 3;
+    widows: 3;
+  }
+}

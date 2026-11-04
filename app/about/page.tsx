@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from '@/lib/motion'
 import { OptimizedImage } from '@/app/components/ui'
 
@@ -274,6 +275,12 @@ export default function AboutPage() {
               <a href="#leadership" className="rounded-full border border-white/20 px-5 py-3 text-md font-bold text-white transition hover:bg-white/10">
                 Meet the leadership
               </a>
+              <Link href="/about/company-profile" className="rounded-full border border-white/20 px-5 py-3 text-md font-bold text-white transition hover:bg-white/10">
+                Read our company profile
+              </Link>
+              <Link href="/about/product-catalogue" className="rounded-full border border-white/20 px-5 py-3 text-md font-bold text-white transition hover:bg-white/10">
+                Browse product catalogue
+              </Link>
             </div>
           </motion.div>
 

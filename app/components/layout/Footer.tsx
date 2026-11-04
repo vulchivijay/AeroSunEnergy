@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState, type FormEvent } from 'react'
 import Logo from '../brand/Logo'
+import CompanyAge from './CompanyAge'
 import { useLocale } from '@/lib/LocaleContext'
 import { ArrowRight, ArrowUpRight, Globe, Mail, MapPin, Phone, Send, Sun, Wind, Zap } from 'lucide-react'
 
@@ -114,6 +115,7 @@ export default function Footer() {
 	return (
 		<footer
 			id="contact"
+			data-print-hide
 			className="relative w-full overflow-hidden bg-[radial-gradient(ellipse_at_75%_5%,rgba(163,217,119,0.12),transparent_34%),linear-gradient(145deg,#071B17_0%,#0B2922_52%,#071B17_100%)] text-white"
 		>
 			<div className="pointer-events-none absolute -right-40 top-0 h-[34rem] w-[34rem] rounded-full border border-[#F5C76A]/[0.08]" aria-hidden="true" />
@@ -327,6 +329,9 @@ export default function Footer() {
 					<p className="text-[12px] text-gray-400">
 						© {new Date().getFullYear()} AeroSun Energy Private Limited. All Rights Reserved.
 					</p>
+				</div>
+				<div className="border-t border-white/10 px-5 py-4 sm:px-8 lg:px-10">
+					<CompanyAge />
 				</div>
 			</div>
 		</footer>

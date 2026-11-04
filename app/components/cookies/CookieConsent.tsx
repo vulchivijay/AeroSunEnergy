@@ -38,19 +38,19 @@ export default function CookieConsent() {
   }
 
   if (!isReady) {
-    return <div className="fixed inset-x-0 bottom-0 z-40 h-32 sm:h-26" aria-hidden="true" />
+    return <div data-print-hide className="fixed inset-x-0 bottom-0 z-40 h-32 sm:h-26" aria-hidden="true" />
   }
 
   if (!isVisible) return null
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 flex justify-center p-4 sm:p-6">
+    <div data-print-hide className="fixed inset-x-0 bottom-0 z-40 flex justify-center p-4 sm:p-6">
       <aside
         aria-label="Cookie preferences"
         className="w-full max-w-5xl rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-[0_25px_60px_-20px_rgba(15,23,42,0.5)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-900/95"
       >
-        <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-3xl">
+        <div>
+          <div className="w-full">
             <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
               Cookie preferences
             </p>
@@ -64,18 +64,18 @@ export default function CookieConsent() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
+          <div className="mt-5 flex flex-col gap-2 border-t border-slate-200 pt-4 sm:flex-row sm:justify-end dark:border-slate-700">
             <button
               type="button"
               onClick={() => saveConsent('declined')}
-              className="inline-flex min-h-11 items-center justify-center rounded-full border border-slate-300 bg-white px-5 py-2.5 text-md font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700 dark:focus-visible:outline-emerald-300"
+              className="inline-flex min-h-11 text-nowrap items-center justify-center rounded-full border border-slate-300 bg-white px-5 py-2.5 text-md font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700 dark:focus-visible:outline-emerald-300"
             >
               Reject optional cookies
             </button>
             <button
               type="button"
               onClick={() => saveConsent('accepted')}
-              className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#20A44A] px-5 py-2.5 text-md font-semibold text-white shadow-lg shadow-emerald-600/20 transition hover:bg-[#18833a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+              className="inline-flex min-h-11 text-nowrap items-center justify-center rounded-full bg-[#20A44A] px-5 py-2.5 text-md font-semibold text-white shadow-lg shadow-emerald-600/20 transition hover:bg-[#18833a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
             >
               Accept all cookies
             </button>
