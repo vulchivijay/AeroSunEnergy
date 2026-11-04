@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Poppins, Roboto } from 'next/font/google'
+import { Orbitron, Poppins, Roboto } from 'next/font/google'
 import { JsonLd } from '@/app/components/seo'
 import { LocaleProvider } from '@/lib/LocaleContext'
 import { Header, Footer, Lord } from '@/app/components/layout'
@@ -30,6 +30,14 @@ const poppins = Poppins({
   display: 'swap',
   adjustFontFallback: true,
   fallback: ['system-ui', 'sans-serif'],
+})
+
+const orbitron = Orbitron({
+  subsets: ['latin'],
+  variable: '--font-digital',
+  weight: ['600', '700'],
+  display: 'swap',
+  fallback: ['monospace'],
 })
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || process.env.GTM_ID
@@ -133,7 +141,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} ${poppins.variable} bg-white text-gray-900 transition-colors duration-150`}>
+      <body className={`${roboto.variable} ${poppins.variable} ${orbitron.variable} bg-white text-gray-900 transition-colors duration-150`}>
         {process.env.NODE_ENV === 'production' ? <ProductionProtector /> : null}
         <JsonLd />
         <ConsentAwareTracking gtmId={GTM_ID} gaMeasurementId={GA_MEASUREMENT_ID} />

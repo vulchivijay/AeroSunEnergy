@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState, type FormEvent } from 'react'
 import Logo from '../brand/Logo'
+import CompanyAge from './CompanyAge'
 import { useLocale } from '@/lib/LocaleContext'
 import { ArrowRight, ArrowUpRight, Globe, Mail, MapPin, Phone, Send, Sun, Wind, Zap } from 'lucide-react'
 
@@ -327,6 +328,9 @@ export default function Footer() {
 					<p className="text-[12px] text-gray-400">
 						© {new Date().getFullYear()} AeroSun Energy Private Limited. All Rights Reserved.
 					</p>
+				</div>
+				<div className="border-t border-white/10 px-5 py-4 sm:px-8 lg:px-10">
+					<CompanyAge />
 				</div>
 			</div>
 		</footer>
