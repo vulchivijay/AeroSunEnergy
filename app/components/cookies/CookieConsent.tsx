@@ -38,13 +38,13 @@ export default function CookieConsent() {
   }
 
   if (!isReady) {
-    return <div className="fixed inset-x-0 bottom-0 z-40 h-32 sm:h-26" aria-hidden="true" />
+    return <div data-print-hide className="fixed inset-x-0 bottom-0 z-40 h-32 sm:h-26" aria-hidden="true" />
   }
 
   if (!isVisible) return null
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 flex justify-center p-4 sm:p-6">
+    <div data-print-hide className="fixed inset-x-0 bottom-0 z-40 flex justify-center p-4 sm:p-6">
       <aside
         aria-label="Cookie preferences"
         className="w-full max-w-5xl rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-[0_25px_60px_-20px_rgba(15,23,42,0.5)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-900/95"

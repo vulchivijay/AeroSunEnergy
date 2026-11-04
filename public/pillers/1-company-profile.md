@@ -1,7 +1,6 @@
-Let's prepare two professional, customer-facing documents for **AeroSun Energy Private Limited**:
+Let's prepare professional, customer-facing documents for **AeroSun Energy Private Limited**:
 
-1. **Company Profile** – for customers, manufacturers, suppliers, EPC partners, investors and business collaborations.
-2. **Solar & Renewable Energy Product Catalogue** – for homeowners, farmers, commercial businesses and institutions.
+**Company Profile** – for customers, manufacturers, suppliers, EPC partners, investors and business collaborations.
 
 The content below uses the company information and business direction established in our discussions. Product performance, installations, certifications and manufacturing capabilities that have not yet been verified will not be presented as completed achievements.
 
@@ -9,7 +8,7 @@ The content below uses the company information and business direction establishe
 
 # AEROSUN ENERGY PRIVATE LIMITED
 
-### Power from Sun and Wind
+### Power from Sun, Wind, Water, Fire.
 
 **Company Profile | 2026**
 
@@ -33,7 +32,7 @@ We aim to combine renewable-energy products, customised system design, engineeri
 
 Our long-term direction includes the development of customised small wind generators, solar power systems and integrated solar–wind hybrid solutions.
 
-**Our guiding principle: Power from Sun and Wind.**
+**Our guiding principle: Power from Sun, Wind, Water, Fire..**
 
 ## 2. Our Vision
 
@@ -215,7 +214,7 @@ AeroSun Energy's long-term development priorities include:
 
 **AEROSUN ENERGY PRIVATE LIMITED**
 
-_Power from Sun and Wind._
+_Power from Sun, Wind, Water, Fire.._
 
 Registered Office:  
 D.No. 11-184, Gollavanigunta, T.N. Pallem, Tirupati, Andhra Pradesh – 517501, India.

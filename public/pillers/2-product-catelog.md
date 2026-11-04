@@ -1,3 +1,7 @@
+Let's prepare professional, customer-facing documents for **AeroSun Energy Private Limited**:
+
+**Solar & Renewable Energy Product Catalogue** – for homeowners, farmers, commercial businesses and institutions.
+
 # Document 2: AeroSun Energy – Solar & Renewable Energy Product Catalogue
 
 This catalogue is designed for customer enquiries, WhatsApp sharing, sales meetings and website publication.
@@ -6,7 +10,7 @@ This catalogue is designed for customer enquiries, WhatsApp sharing, sales meeti
 
 ## SOLAR & RENEWABLE ENERGY SOLUTIONS
 
-### Power from Sun and Wind
+### Power from Sun, Wind, Water, Fire.
 
 **Product & Services Catalogue | 2026**
 
@@ -345,7 +349,7 @@ A hybrid energy system integrates multiple generation sources and, where require
 
 Solar and wind generation depend on environmental conditions. A hybrid system does not guarantee uninterrupted power unless its generation capacity, storage, load management and backup arrangements are properly designed.
 
-**AeroSun Energy – Power from Sun and Wind.**
+**AeroSun Energy – Power from Sun, Wind, Water, Fire..**
 
 ---
 
@@ -425,7 +429,7 @@ Whether you are a homeowner, farmer, business owner or institution, AeroSun Ener
 
 **AEROSUN ENERGY PRIVATE LIMITED**
 
-### Power from Sun and Wind.
+### Power from Sun, Wind, Water, Fire..
 
 Registered Office:  
 D.No. 11-184, Gollavanigunta, T.N. Pallem, Tirupati, Andhra Pradesh – 517501, India.

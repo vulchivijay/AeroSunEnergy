@@ -207,6 +207,7 @@ export default function Navbar() {
   return (
     <header
       ref={headerRef}
+      data-print-hide
       className="sticky top-0 z-50 bg-[linear-gradient(135deg,rgba(5,46,30,0.96),rgba(8,64,59,0.9),rgba(15,23,42,0.98))] text-white shadow-[0_18px_42px_-30px_rgba(3,18,12,0.9)]"
     >
       <div className="absolute -left-10 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-emerald-400/15 blur-3xl" />
