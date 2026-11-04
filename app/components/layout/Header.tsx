@@ -235,7 +235,7 @@ export default function Navbar() {
                   href={child.href}
                   onClick={closeMenu}
                   aria-current={childActive ? 'page' : undefined}
-                  className={`flex min-h-10 items-center rounded-lg px-3 py-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 ${
+                  className={`flex min-h-10 items-center rounded-lg px-3 py-2 text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 ${
                     childActive
                       ? 'bg-emerald-50 font-semibold text-emerald-900'
                       : 'text-slate-700 hover:bg-[#a5d6a7] hover:text-[#173b2c]'
@@ -264,7 +264,7 @@ export default function Navbar() {
                   key={child.href}
                   href={child.href}
                   aria-current={childActive ? 'page' : undefined}
-                  className={`flex items-center rounded-lg px-3 py-2.5 text-left text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 ${
+                  className={`flex items-center rounded-lg px-3 py-2.5 text-left text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 ${
                     childActive
                       ? 'bg-emerald-50 font-semibold text-emerald-900'
                       : 'text-slate-700 hover:bg-[#a5d6a7] hover:text-[#173b2c]'
