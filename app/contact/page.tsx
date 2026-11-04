@@ -101,7 +101,7 @@ export default function Contact() {
                   <span className="h-2 w-2 rounded-full bg-emerald-800" />
                   {navbar.startProject}
                 </p>
-                <h1 className="mt-10 max-w-2xl text-5xl font-black leading-[0.9] tracking-[0.075em] sm:text-6xl lg:text-7xl">
+                <h1 className="mt-10 max-w-2xl text-5xl font-black leading-[0.9] tracking-[0.075em] text-text-slate-950 sm:text-6xl sm:text-slate-950 lg:text-7xl">
                   {c.heroTitle}
                 </h1>
                 <p className="mt-7 max-w-xl text-base leading-8 text-emerald-950/80 sm:text-lg">
