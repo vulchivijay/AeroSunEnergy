@@ -24,7 +24,17 @@
       },
       {
         "label": "हमारे बारे में",
-        "href": "/about"
+        "href": "/about",
+        "children": [
+          {
+            "label": "कंपनी प्रोफ़ाइल",
+            "href": "/about/company-profile"
+          },
+          {
+            "label": "उत्पाद कैटलॉग",
+            "href": "/about/product-catalogue"
+          }
+        ]
       },
       {
         "label": "सौर ऊर्जा",
@@ -76,6 +86,7 @@
     "goTo": "जाएं",
     "section": "अनुभाग",
     "languageLabel": "भाषा",
+    "aboutSubmenuLabel": "हमारे बारे में सबमेनू खोलें या बंद करें",
     "startProjectTitle": "AeroSun Energy के साथ नवीकरणीय ऊर्जा प्रोजेक्ट शुरू करें",
     "startProjectAriaLabel": "अपना प्रोजेक्ट शुरू करने के लिए AeroSun Energy से संपर्क करें"
   },

@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import {
   ArrowDownToLine,
   ArrowRight,
+  Building2,
   Check,
   ChevronDown,
   Globe2,
@@ -14,6 +15,7 @@ import {
   Mail,
   Menu,
   PanelsTopLeft,
+  PackageOpen,
   Sun,
   Wind,
   X,
@@ -26,6 +28,8 @@ import { useLocale, type Locale } from '@/lib/LocaleContext'
 const navigationIcons: Record<string, LucideIcon> = {
   '/': House,
   '/about': Info,
+  '/about/company-profile': Building2,
+  '/about/product-catalogue': PackageOpen,
   '/solarenergy': Sun,
   '/windenergy': Wind,
   '/hybridenergy': Zap,
@@ -37,11 +41,20 @@ function isLocale(value: string): value is Locale {
   return value === 'en' || value === 'hi' || value === 'te'
 }
 
+type NavigationLink = {
+  label: string
+  href: string
+  disabled?: boolean
+  children?: { label: string; href: string }[]
+}
+
 export default function Navbar() {
   const { t, locale, setLocale } = useLocale()
   const pathname = usePathname() || '/'
   const [menuOpen, setMenuOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
+  const [isHydrated, setIsHydrated] = useState(false)
+  const [expandedMobileSubmenu, setExpandedMobileSubmenu] = useState<string | null>(null)
   const headerRef = useRef<HTMLElement>(null)
   const languageOptions = t.navbar.languages as {
     code: Locale
@@ -84,11 +97,14 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
+    setIsHydrated(true)
     setMenuOpen(false)
     setLangOpen(false)
+    setExpandedMobileSubmenu(pathname.startsWith('/about') ? '/about' : null)
   }, [pathname])
 
   function isActive(href: string) {
+    if (!isHydrated) return false
     if (href === '/') return pathname === '/'
     return pathname === href || pathname.startsWith(`${href}/`)
   }
@@ -98,8 +114,8 @@ export default function Navbar() {
     setLangOpen(false)
   }
 
-  function renderNavigationLink(link: (typeof navLinks)[number], mobile = false) {
-    const disabled = Boolean((link as { disabled?: boolean }).disabled)
+  function renderNavigationLink(link: NavigationLink, mobile = false) {
+    const disabled = Boolean(link.disabled)
     const active = isActive(link.href) && !disabled
     const Icon = navigationIcons[link.href] ?? PanelsTopLeft
     const classes = mobile
@@ -156,7 +172,7 @@ export default function Navbar() {
       )
     }
 
-    return (
+    const parentLink = (
       <Link
         key={link.href}
         href={link.href}
@@ -167,6 +183,101 @@ export default function Navbar() {
       >
         {content}
       </Link>
+    )
+
+    if (!link.children?.length) {
+      return parentLink
+    }
+
+    if (mobile) {
+      const submenuOpen = expandedMobileSubmenu === link.href
+      return (
+        <div key={link.href}>
+          <div className="flex items-center gap-1">
+            <Link
+              href={link.href}
+              onClick={closeMenu}
+              aria-current={active ? 'page' : undefined}
+              aria-label={`${t.navbar.goTo} ${link.label}`}
+              className={`flex min-h-12 min-w-0 flex-1 items-center rounded-xl px-4 py-3 text-sm font-medium transition ${
+                active
+                  ? 'bg-[#a5d6a7]/15 text-[#dcedc8] ring-1 ring-inset ring-[#a5d6a7]/40'
+                  : 'text-white/75 hover:bg-[#a5d6a7]/10 hover:text-[#dcedc8]'
+              }`}
+            >
+              {link.label}
+            </Link>
+            <button
+              type="button"
+              onClick={() => setExpandedMobileSubmenu(submenuOpen ? null : link.href)}
+              aria-label={t.navbar.aboutSubmenuLabel}
+              aria-expanded={submenuOpen}
+              aria-controls="mobile-about-submenu"
+              className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-white/70 transition hover:bg-[#a5d6a7]/10 hover:text-[#dcedc8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
+            >
+              <ChevronDown
+                className={`h-4 w-4 transition-transform ${submenuOpen ? 'rotate-180' : ''}`}
+                aria-hidden="true"
+              />
+            </button>
+          </div>
+          <div
+            id="mobile-about-submenu"
+            hidden={!submenuOpen}
+            className="ml-5 rounded-xl border border-slate-200 bg-white p-2 shadow-lg"
+          >
+            {link.children.map((child) => {
+              const childActive = isHydrated && pathname === child.href
+              const ChildIcon = navigationIcons[child.href] ?? PanelsTopLeft
+              return (
+                <Link
+                  key={child.href}
+                  href={child.href}
+                  onClick={closeMenu}
+                  aria-current={childActive ? 'page' : undefined}
+                  className={`flex min-h-10 items-center rounded-lg px-3 py-2 text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 ${
+                    childActive
+                      ? 'bg-emerald-50 font-semibold text-emerald-900'
+                      : 'text-slate-700 hover:bg-[#a5d6a7] hover:text-[#173b2c]'
+                  }`}
+                >
+                  <ChildIcon className="mr-3 h-4 w-4 shrink-0" strokeWidth={1.7} aria-hidden="true" />
+                  {child.label}
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+      )
+    }
+
+    return (
+      <div key={link.href} className="group/nav relative z-20">
+        {parentLink}
+        <div className="invisible absolute left-1/2 top-full z-[70] min-w-52 -translate-x-1/2 pt-2 opacity-0 transition duration-150 group-hover/nav:visible group-hover/nav:opacity-100 group-focus-within/nav:visible group-focus-within/nav:opacity-100">
+          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-1.5 shadow-[0_20px_50px_-25px_rgba(0,0,0,0.35)]">
+            {link.children.map((child) => {
+              const childActive = isHydrated && pathname === child.href
+              const ChildIcon = navigationIcons[child.href] ?? PanelsTopLeft
+              return (
+                <Link
+                  key={child.href}
+                  href={child.href}
+                  aria-current={childActive ? 'page' : undefined}
+                  className={`flex items-center rounded-lg px-3 py-2.5 text-left text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 ${
+                    childActive
+                      ? 'bg-emerald-50 font-semibold text-emerald-900'
+                      : 'text-slate-700 hover:bg-[#a5d6a7] hover:text-[#173b2c]'
+                  }`}
+                >
+                  <ChildIcon className="mr-3 h-4 w-4 shrink-0" strokeWidth={1.7} aria-hidden="true" />
+                  {child.label}
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+      </div>
     )
   }
 
