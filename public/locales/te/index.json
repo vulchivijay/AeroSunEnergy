@@ -24,7 +24,17 @@
       },
       {
         "label": "మా గురించి",
-        "href": "/about"
+        "href": "/about",
+        "children": [
+          {
+            "label": "కంపెనీ ప్రొఫైల్",
+            "href": "/about/company-profile"
+          },
+          {
+            "label": "ఉత్పత్తుల కేటలాగ్",
+            "href": "/about/product-catalogue"
+          }
+        ]
       },
       {
         "label": "సౌర శక్తి",
@@ -76,6 +86,7 @@
     "goTo": "వెళ్ళు",
     "section": "విభాగం",
     "languageLabel": "భాష",
+    "aboutSubmenuLabel": "మా గురించి ఉపమెనూను తెరవండి లేదా మూసివేయండి",
     "startProjectTitle": "AeroSun Energy తో పునరుత్పాదక శక్తి ప్రాజెక్ట్ ప్రారంభించండి",
     "startProjectAriaLabel": "మీ ప్రాజెక్ట్ ప్రారంభించడానికి AeroSun Energy ని సంప్రదించండి"
   },

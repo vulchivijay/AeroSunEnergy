@@ -24,7 +24,17 @@
       },
       {
         "label": "About",
-        "href": "/about"
+        "href": "/about",
+        "children": [
+          {
+            "label": "Company Profile",
+            "href": "/about/company-profile"
+          },
+          {
+            "label": "Product Catalogue",
+            "href": "/about/product-catalogue"
+          }
+        ]
       },
       {
         "label": "Solar Energy",
@@ -76,6 +86,7 @@
     "goTo": "Go to",
     "section": "section",
     "languageLabel": "Language",
+    "aboutSubmenuLabel": "Toggle About submenu",
     "startProjectTitle": "Start a renewable energy project with AeroSun Energy",
     "startProjectAriaLabel": "Contact AeroSun Energy to start your project"
   },
