@@ -3,14 +3,7 @@
 import type { ReactNode } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
 
-const renderHybridIcon = (accent: 'emerald' | 'sky' | 'violet' | 'amber') => {
-  const colorClass = {
-    emerald: 'text-emerald-700',
-    sky: 'text-sky-700',
-    violet: 'text-violet-700',
-    amber: 'text-amber-700',
-  }[accent]
-
+const renderHybridIcon = (colorClass: string) => {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={`h-4 w-4 ${colorClass}`} aria-hidden="true">
       <path d="M7 7h10v10H7z" />
@@ -20,14 +13,7 @@ const renderHybridIcon = (accent: 'emerald' | 'sky' | 'violet' | 'amber') => {
   )
 }
 
-const renderCheckIcon = (accent: 'emerald' | 'sky' | 'violet' | 'amber') => {
-  const bgClass = {
-    emerald: 'bg-emerald-100 text-emerald-700',
-    sky: 'bg-sky-100 text-sky-700',
-    violet: 'bg-violet-100 text-violet-700',
-    amber: 'bg-amber-100 text-amber-700',
-  }[accent]
-
+const renderCheckIcon = (bgClass: string) => {
   return (
     <div className={`flex h-10 w-10 items-center justify-center rounded-2xl shadow-inner ${bgClass}`}>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-4 w-4" aria-hidden="true">
@@ -59,19 +45,14 @@ export function HybridFeatureCard({
 }) {
   const { t } = useLocale()
   const ui = t.ui
-  const accentClasses: Record<typeof accent, string> = {
-    emerald: 'border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f8fffb_50%,#ffffff_100%)] text-emerald-700',
-    sky: 'border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#f8fbff_50%,#ffffff_100%)] text-sky-700',
-    violet: 'border-violet-200 bg-[linear-gradient(135deg,#f5f3ff_0%,#faf7ff_50%,#ffffff_100%)] text-violet-700',
-    amber: 'border-amber-200 bg-[linear-gradient(135deg,#fffbeb_0%,#fffdf6_50%,#ffffff_100%)] text-amber-700',
-  }
+  const componentData = t.componentData.hybridContentBlocks
 
   return (
     <article className="group rounded-4xl border border-slate-200 bg-white p-5 shadow-[0_22px_45px_-28px_rgba(15,23,42,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-28px_rgba(16,185,129,0.3)]">
-      <div className={`mb-5 flex items-center justify-between gap-4 rounded-2xl border px-3 py-2 ${accentClasses[accent]}`}>
+      <div className={`mb-5 flex items-center justify-between gap-4 rounded-2xl border px-3 py-2 ${componentData.featureClasses[accent]}`}>
         <span className="text-[12px] font-black uppercase tracking-[0.24em]">{ui.hybridSystem}</span>
         <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/80 shadow-sm ring-1 ring-black/5">
-          {renderHybridIcon(accent)}
+          {renderHybridIcon(componentData.iconColors[accent])}
         </span>
       </div>
       <h3 className="text-2xl font-black tracking-tighter text-slate-900">{title}</h3>
@@ -111,16 +92,13 @@ export function HybridInfoPanel({
   content: string[]
   accent?: 'emerald' | 'sky' | 'violet'
 }) {
-  const theme: Record<typeof accent, string> = {
-    emerald: 'border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-white text-emerald-900',
-    sky: 'border-sky-200 bg-linear-to-br from-sky-50 via-white to-white text-sky-900',
-    violet: 'border-violet-200 bg-linear-to-br from-violet-50 via-white to-white text-violet-900',
-  }
+  const { t } = useLocale()
+  const componentData = t.componentData.hybridContentBlocks
 
   return (
-    <div className={`rounded-[1.8rem] border p-5 shadow-[0_12px_28px_-24px_rgba(15,23,42,0.28)] ${theme[accent]}`}>
+    <div className={`rounded-[1.8rem] border p-5 shadow-[0_12px_28px_-24px_rgba(15,23,42,0.28)] ${componentData.infoThemes[accent]}`}>
       <div className="mb-3 flex items-center gap-3">
-        {renderCheckIcon(accent)}
+        {renderCheckIcon(componentData.checkBackgrounds[accent])}
         <h3 className="text-xl font-black tracking-tighter">{title}</h3>
       </div>
       <ul className="mt-4 space-y-3 text-base leading-7">

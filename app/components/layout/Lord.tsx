@@ -7,33 +7,13 @@ import { useLocale } from '@/lib/LocaleContext'
 const STORAGE_KEY = 'aerosun_lord_ganesha_modal'
 const LORD_IMAGE_INDEX_KEY = 'aerosun_lord_image_index'
 const MODAL_TTL_MS = 24 * 60 * 60 * 1000
-const LORDS = [
-  {
-    name: 'Ganesha',
-    image: '/images/lordganesha.png',
-    width: 558,
-    height: 1448,
-  },
-  {
-    name: 'Balaji',
-    image: '/images/lordbalaji.png',
-    width: 433,
-    height: 577,
-  },
-  {
-    name: 'Shiva',
-    image: '/images/lordshiva.png',
-    width: 375,
-    height: 591,
-  },
-] as const
-
 function getIpStorageKey(ip: string) {
   return `${STORAGE_KEY}:${ip}`
 }
 
 export default function Lord() {
   const { t } = useLocale()
+  const lords = t.componentData.lordModal.lords
   const [open, setOpen] = useState(false)
   const [lordIndex, setLordIndex] = useState(0)
   const [resolvedIp, setResolvedIp] = useState<string | null>(null)
@@ -44,13 +24,13 @@ export default function Lord() {
     const storedIndex = Number(localStorage.getItem(LORD_IMAGE_INDEX_KEY))
     const nextIndex =
       Number.isInteger(storedIndex) && storedIndex >= 0
-        ? storedIndex % LORDS.length
+        ? storedIndex % lords.length
         : 0
 
     setLordIndex(nextIndex)
-    localStorage.setItem(LORD_IMAGE_INDEX_KEY, String((nextIndex + 1) % LORDS.length))
+    localStorage.setItem(LORD_IMAGE_INDEX_KEY, String((nextIndex + 1) % lords.length))
     setOpen(true)
-  }, [])
+  }, [lords.length])
 
   useEffect(() => {
     let cancelled = false
@@ -123,7 +103,7 @@ export default function Lord() {
     }
   }, [showModal])
 
-  const lord = LORDS[lordIndex] ?? LORDS[0]
+  const lord = lords[lordIndex] ?? lords[0]
   const blessing = t.blessingModal.blessings[lordIndex] ?? t.blessingModal.blessings[0]
 
   const dismiss = useCallback(() => {

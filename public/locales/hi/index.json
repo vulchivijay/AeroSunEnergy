@@ -53,7 +53,7 @@
                 "href": "/services"
             },
             {
-                "label": "90-Day Tracker",
+                "label": "90-दिवसीय प्रगति ट्रैकर",
                 "href": "/nintydays-tracker"
             },
             {
@@ -101,7 +101,18 @@
         "exploreLabel": "AeroSun",
         "closeMenu": "एक्सप्लोर करें नेविगेशन मेनू बंद करें",
         "voucher": "वाउचर",
-        "downloadVoucher": "AeroSun Energy वाउचर डाउनलोड करें"
+        "downloadVoucher": "AeroSun Energy वाउचर डाउनलोड करें",
+        "navigationIconIds": {
+            "/": "house",
+            "/about": "info",
+            "/about/company-profile": "building",
+            "/about/product-catalogue": "package",
+            "/solarenergy": "sun",
+            "/windenergy": "wind",
+            "/hybridenergy": "zap",
+            "/services": "panels",
+            "/contact": "mail"
+        }
     },
     "logo": {
         "homeTitle": "AeroSun Energy होमपेज पर जाएं",
@@ -225,12 +236,90 @@
                 "badgeClass": "text-pink-100",
                 "chipClass": "text-pink-50",
                 "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
+            },
+            {
+                "badge": "शहरी छतें",
+                "title": "छतों के लिए ऊर्ध्वाधर-अक्ष पवन टर्बाइन",
+                "description": "कम शोर, कम जगह घेरने और अनुकूल स्थापना की विशेषताओं वाले कॉम्पैक्ट छत-आधारित पवन तंत्र शहरी और अर्ध-शहरी क्षेत्रों के लिए आदर्श हैं।",
+                "tags": [
+                    "कम शोर",
+                    "छत पर स्थापना"
+                ],
+                "image": "/images/slider/slider-7.png",
+                "badgeClass": "text-sky-100",
+                "chipClass": "text-sky-50",
+                "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
+            },
+            {
+                "badge": "वाणिज्यिक पवन ऊर्जा",
+                "title": "उद्योगों के लिए बड़े पवन ऊर्जा तंत्र",
+                "description": "उच्च क्षमता वाले टर्बाइन कारखानों, गोदामों और व्यावसायिक परिसरों को ग्रिड बिजली पर निर्भरता घटाने और बड़े पैमाने पर नवीकरणीय ऊर्जा उत्पादन बढ़ाने में सहायता करते हैं।",
+                "tags": [
+                    "औद्योगिक",
+                    "उच्च उत्पादन"
+                ],
+                "image": "/images/slider/slider-8.png",
+                "badgeClass": "text-emerald-100",
+                "chipClass": "text-emerald-50",
+                "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
+            },
+            {
+                "badge": "कृषि ऊर्जा",
+                "title": "कृषि और सिंचाई के लिए पवन ऊर्जा",
+                "description": "खेतों में लगाए गए पवन ऊर्जा तंत्र पंपिंग, प्रसंस्करण और परिसर की बिजली संबंधी ज़रूरतें पूरी करने के साथ ग्रामीण और उपनगरीय क्षेत्रों में ऊर्जा लागत घटाने में मदद करते हैं।",
+                "tags": [
+                    "कृषि के लिए उपयुक्त",
+                    "बिजली मांग में सहायक"
+                ],
+                "image": "/images/slider/slider-9.png",
+                "badgeClass": "text-amber-100",
+                "chipClass": "text-amber-50",
+                "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
+            },
+            {
+                "badge": "सौर + पवन ऊर्जा",
+                "title": "निरंतर नवीकरणीय ऊर्जा उत्पादन",
+                "description": "सौर और पवन ऊर्जा का संयुक्त उत्पादन अधिक भरोसेमंद ऊर्जा मिश्रण तैयार करता है—दिन में बिजली बनाता है और कम धूप या तेज़ हवा के समय की कमी पूरी करता है।",
+                "tags": [
+                    "24/7 आपूर्ति",
+                    "संतुलित उत्पादन"
+                ],
+                "image": "/images/slider/slider-13.png",
+                "badgeClass": "text-emerald-100",
+                "chipClass": "text-emerald-50",
+                "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
+            },
+            {
+                "badge": "स्मार्ट नियंत्रण",
+                "title": "हाइब्रिड माइक्रोग्रिड ऊर्जा प्रबंधन",
+                "description": "एकीकृत नियंत्रण प्रणाली बेहतर दक्षता, बैकअप की तैयारी और डिजिटल निगरानी के लिए सौर ऊर्जा, पवन ऊर्जा, भंडारण और बिजली की मांग के बीच तालमेल बनाती है।",
+                "tags": [
+                    "स्मार्ट वितरण",
+                    "बैटरी समन्वय"
+                ],
+                "image": "/images/slider/slider-14.png",
+                "badgeClass": "text-violet-100",
+                "chipClass": "text-violet-50",
+                "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
+            },
+            {
+                "badge": "दूरस्थ क्षेत्रों के लिए भरोसेमंद ऊर्जा",
+                "title": "दुर्गम क्षेत्रों के लिए ऑफ-ग्रिड हाइब्रिड तंत्र",
+                "description": "बैटरी भंडारण वाले सौर-पवन हाइब्रिड तंत्र दूरस्थ घरों, दूरसंचार टावरों और ग्रामीण स्थलों को बिजली देते हैं, जहाँ ग्रिड तक पहुँच सीमित है या उपलब्ध नहीं है।",
+                "tags": [
+                    "ऑफ-ग्रिड",
+                    "दूरस्थ क्षेत्रों के लिए तैयार"
+                ],
+                "image": "/images/slider/slider-15.png",
+                "badgeClass": "text-sky-100",
+                "chipClass": "text-sky-50",
+                "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
             }
         ],
         "schemeBanner": {
             "badge": "सरकारी सब्सिडी पहल",
             "title": "PM Surya Ghar",
-            "titleAccent": "Muft Bijli Yojana",
+            "titleAccent": "मुफ़्त बिजली योजना",
             "description": "अपने रूफटॉप सोलर सपने को ₹ 78,000 तक की केंद्रीय सब्सिडी के साथ आसानी से बनाएं और AeroSun Energy से Complete application support पाएं।",
             "ctaPrimary": "अभी आवेदन करें",
             "ctaSecondary": "एलिजिबिलिटी देखें",
@@ -545,7 +634,7 @@
             "title": "हरित ग्रिड के लिए पवन ऊर्जा समाधान",
             "cards": [
                 {
-                    "title": "Horizontal-Axis Wind Turbines",
+                    "title": "क्षैतिज-अक्ष पवन टर्बाइन",
                     "description": "उच्च-रिसोर्स साइटों के लिए प्रभावी पवन कैप्चर।",
                     "points": [
                         "उच्च दक्षता",
@@ -555,7 +644,7 @@
                     "accent": "sky"
                 },
                 {
-                    "title": "Vertical-Axis Wind Turbines",
+                    "title": "ऊर्ध्वाधर-अक्ष पवन टर्बाइन",
                     "description": "कॉम्पैक्ट और शोर-संवेदनशील सेटिंग्स के लिए समाधान।",
                     "points": [
                         "कई दिशाओं से पवन स्वीकार",
@@ -617,8 +706,8 @@
             ],
             "capacity": [
                 {
-                    "label": "Micro",
-                    "value": "Below 1 kW",
+                    "label": "सूक्ष्म",
+                    "value": "1 kW से कम",
                     "use": "छोटे रिमोट लोड"
                 },
                 {
@@ -714,8 +803,8 @@
             ],
             "table": [
                 {
-                    "label": "Residential",
-                    "value": "Solar + small wind + battery",
+                    "label": "आवासीय",
+                    "value": "सौर ऊर्जा + लघु पवन ऊर्जा + बैटरी",
                     "use": "घरों के लिए"
                 },
                 {
@@ -1748,8 +1837,7 @@
                 "विनिर्माण और आपूर्तिकर्ता साझेदारियों का विस्तार करना।",
                 "एक क्षेत्रीय नवीकरणीय ऊर्जा सेवा नेटवर्क बनाना।",
                 "अतिरिक्त भारतीय बाजारों तक विस्तार करना।"
-            ],
-            "downloadButton": "कंपनी प्रोफ़ाइल डाउनलोड करें PDF"
+            ]
         },
         "features": [
             {
@@ -1866,7 +1954,7 @@
         ],
         "governanceRows": [
             {
-                "label": "Certificate of Incorporation and CIN",
+                "label": "निगमन प्रमाणपत्र और CIN",
                 "status": "MCA द्वारा अनुमोदित"
             },
             {
@@ -1878,19 +1966,19 @@
                 "status": "GSTN द्वारा अनुमोदित"
             },
             {
-                "label": "Professional Tax",
+                "label": "व्यावसायिक कर",
                 "status": "भेजा गया"
             },
             {
-                "label": "Accountant",
+                "label": "लेखाकार",
                 "status": "नियुक्त"
             },
             {
-                "label": "Compliance Advisor",
+                "label": "अनुपालन सलाहकार",
                 "status": "नियुक्त"
             },
             {
-                "label": "Professional Tax advisor",
+                "label": "व्यावसायिक कर सलाहकार",
                 "status": "नियुक्त"
             },
             {
@@ -1898,11 +1986,11 @@
                 "status": "Udyam द्वारा अनुमोदित"
             },
             {
-                "label": "DPIIT Startup Recognition",
+                "label": "DPIIT स्टार्टअप मान्यता",
                 "status": "DPIIT द्वारा अनुमोदित"
             },
             {
-                "label": "Trademark",
+                "label": "व्यापार-चिह्न",
                 "status": "भेजा गया"
             }
         ],
@@ -2137,7 +2225,12 @@
                 "ग्राहक की गोपनीयता और प्रोजेक्ट डेटा का सावधानीपूर्वक प्रबंधन।",
                 "उपकरण चयन, बैटरी प्रबंधन और जीवनचक्र योजना में पर्यावरणीय जिम्मेदारी।"
             ]
-        }
+        },
+        "serviceAccents": [
+            "from-emerald-500 to-green-600",
+            "from-sky-500 to-blue-600",
+            "from-violet-500 to-purple-600"
+        ]
     },
     "howItWorks": {
         "sectionBadge": "सरल प्रक्रिया",
@@ -6961,7 +7054,7 @@
         "pageLoader": {
             "accessibilityLabel": "पेज लोड हो रहा है",
             "loading": "लोड हो रहा है",
-            "route": "Route"
+            "route": "पृष्ठ"
         }
     },
     "solarFaqs": {
@@ -7448,7 +7541,7 @@
             "description": "विवरण",
             "specification": "विशिष्टता/ब्रांड (अस्थायी)",
             "quantity": "मात्रा",
-            "unit": "Unit",
+            "unit": "इकाई",
             "unitPrice": "इकाई मूल्य (₹)",
             "amount": "राशि (₹)",
             "items": [
@@ -7548,7 +7641,6 @@
     "productCataloguePage": {
         "hero": {
             "badge": "उत्पाद एवं सेवा कैटलॉग · 2026",
-            "downloadButton": "उत्पाद कैटलॉग डाउनलोड करें PDF",
             "title": "सौर एवं नवीकरणीय",
             "titleAccent": "ऊर्जा समाधान",
             "tagline": "सूर्य, पवन, जल, अग्नि से शक्ति।",
@@ -9267,7 +9359,7 @@
                 "label": "मॉड्यूल की कुल संख्या",
                 "name": "मॉड्यूल_मात्रा",
                 "type": "number",
-                "unit": "modules"
+                "unit": "मॉड्यूल"
             },
             {
                 "label": "सोलर इन्वर्टर निर्माता",
@@ -9389,7 +9481,7 @@
         "gstPlaceholder": "GST वस्तुओं और सेवाओं पर लागू अनुसार शुल्क लिया जाता है",
         "gstNote": "GST का शुल्क व्यक्तिगत वस्तुओं और सेवाओं और सहमत आपूर्ति संरचना पर लागू होगा।",
         "estimatedValue": "अनुमानित मूल्य",
-        "unit": "Unit",
+        "unit": "इकाई",
         "generationParameters": [
             {
                 "label": "स्थापित सौर क्षमता",
@@ -9484,7 +9576,7 @@
             {
                 "label": "अनुमानित सरल भुगतान अवधि",
                 "name": "पेबैक_अवधि",
-                "unit": "Years"
+                "unit": "वर्ष"
             }
         ],
         "calculationAssumptions": "गणना धारणाएँ",
@@ -10023,7 +10115,13 @@
                 "tone": "सीमा-पन्ना-200 बीजी-पन्ना-50 पाठ-पन्ना-700",
                 "accent": "from-emerald-500 via-green-500 to-lime-500"
             }
-        }
+        },
+        "statusTabs": [
+            "कतार में",
+            "प्रगति पर",
+            "Completed"
+        ],
+        "projectCards": []
     },
     "customerAgreementPage": {
         "hero": {
@@ -10335,6 +10433,13 @@
                 "paymentAcknowledged": "ग्राहक द्वारा स्वीकृत भुगतान शर्तें.",
                 "success": "आपका अनुबंध सबमिशन आपके ईमेल ऐप.",
                 "error": "में तैयार हो गया है हम आपका ईमेल ऐप नहीं खोल सके. कृपया पुनः प्रयास करें या हमें सीधे ईमेल करें।"
+            },
+            "defaultValues": {
+                "customerName": "",
+                "companyName": "",
+                "email": "",
+                "phone": "",
+                "agreed": false
             }
         }
     },
@@ -10584,6 +10689,19 @@
                 "yes": "हाँ",
                 "no": "नं",
                 "notes": "नोट्स"
+            },
+            "defaultValues": {
+                "customerName": "",
+                "companyName": "",
+                "email": "",
+                "phone": "",
+                "projectName": "",
+                "siteLocation": "",
+                "installationDate": "",
+                "checklistStatus": "",
+                "safetyCheck": false,
+                "commissioningCheck": false,
+                "notes": ""
             }
         },
         "invoiceReceipt": {
@@ -10712,6 +10830,19 @@
                 "yes": "हाँ",
                 "no": "नं",
                 "receiptNotes": "रसीद नोट:"
+            },
+            "defaultValues": {
+                "customerName": "",
+                "companyName": "",
+                "email": "",
+                "phone": "",
+                "invoiceNumber": "",
+                "projectName": "",
+                "invoiceDate": "",
+                "amount": "",
+                "paymentMode": "",
+                "receiptNote": "",
+                "paymentReceived": false
             }
         },
         "purchaseOrder": {
@@ -10865,6 +10996,22 @@
                 "deliverySchedule": "डिलीवरी शेड्यूल",
                 "warranty": "वारंटी",
                 "termsAccepted": "ग्राहक द्वारा स्वीकृत शर्तें: हाँ"
+            },
+            "defaultValues": {
+                "customerName": "",
+                "companyName": "",
+                "email": "",
+                "phone": "",
+                "poNumber": "",
+                "projectTitle": "",
+                "supplierName": "",
+                "productLine": "",
+                "quantity": "",
+                "unitPrice": "",
+                "totalValue": "",
+                "deliverySchedule": "",
+                "warranty": "",
+                "termsAccepted": false
             }
         },
         "warrantyPolicy": {
@@ -10954,6 +11101,17 @@
                 "warrantyStart": "वारंटी आरंभ तिथि",
                 "servicePlan": "सेवा योजना",
                 "termsAccepted": "पॉलिसी की शर्तें स्वीकृत: हाँ"
+            },
+            "defaultValues": {
+                "customerName": "",
+                "companyName": "",
+                "email": "",
+                "phone": "",
+                "projectName": "",
+                "productLine": "",
+                "warrantyStart": "",
+                "servicePlan": "",
+                "acceptTerms": false
             }
         }
     },
@@ -11107,5 +11265,980 @@
             "उस योजना के तहत विशिष्ट योग्य छत सौर विन्यास के बिना पवन टरबाइन या हाइब्रिड परियोजना",
             "गैर-डीसीआर-अनुपालक मॉड्यूल, अयोग्य उपकरण, या आधिकारिक पोर्टल प्रक्रिया को पूरा करने में विफलता"
         ]
+    },
+    "ninetyDayTrackerPage": {
+        "sheetRows": [
+            [
+                "डैशबोर्ड",
+                "व्यवसाय के समग्र प्रदर्शन और वित्तीय स्थिति का सारांश"
+            ],
+            [
+                "खर्च",
+                "खर्च, GST, भुगतान और रसीदों का हिसाब रखें"
+            ],
+            [
+                "संभावित ग्राहक",
+                "ग्राहक पूछताछ और फॉलो-अप का प्रबंधन करें"
+            ],
+            [
+                "ऑर्डर",
+                "पुष्ट परियोजनाओं, भुगतानों और बकाया राशि का हिसाब रखें"
+            ],
+            [
+                "गतिविधियाँ",
+                "दैनिक कार्यों और 90-दिवसीय लक्ष्यों का प्रबंधन करें"
+            ],
+            [
+                "सेटअप",
+                "पूंजी, आरक्षित राशि और व्यावसायिक लक्ष्यों में बदलाव करें"
+            ]
+        ],
+        "assumptionItems": [
+            "प्रारंभिक पूंजी: ₹1,00,000",
+            "आपातकालीन आरक्षित राशि का लक्ष्य: ₹35,000",
+            "ग्राहकों से बातचीत का लक्ष्य: 50",
+            "शुरुआती भुगतान वाली परियोजना का लक्ष्य: 1",
+            "ट्रैकिंग अवधि: 4 नवंबर 2026 – 1 फ़रवरी 2027"
+        ],
+        "actionPlan": [
+            {
+                "title": "चरण 1: आय अर्जित करें",
+                "points": [
+                    "छत पर सौर ऊर्जा से जुड़ी परामर्श और समन्वय सेवाएँ शुरू करें।",
+                    "पूछताछ को भुगतान वाले स्थल सर्वेक्षण और डिज़ाइन सहायता में बदलें।",
+                    "खरीद से पहले लिखित समझौते के तहत ग्राहकों से अग्रिम राशि लें।"
+                ]
+            },
+            {
+                "title": "चरण 2: सहयोगी नेटवर्क बनाएँ",
+                "points": [
+                    "स्थापना और खरीद के लिए आपूर्तिकर्ताओं तथा ठेकेदारों से संबंध विकसित करें।",
+                    "कार्यालय, कारख़ाने या गोदाम की जगह किराए पर लिए बिना कम खर्च में कामकाज चलाएँ।",
+                    "आय बढ़ाने वाली गतिविधियों और ग्राहकों से फॉलो-अप पर ध्यान दें।"
+                ]
+            },
+            {
+                "title": "चरण 3: वित्तपोषण और इनक्यूबेशन सहायता प्राप्त करें",
+                "points": [
+                    "Startup India, MSME और नवाचार कार्यक्रमों से सहायता के लिए आवेदन करें।",
+                    "इनक्यूबेटर और ऋणदाताओं के लिए तकनीकी दस्तावेज़ तथा व्यवसाय योजना तैयार करें।",
+                    "अनावश्यक बुनियादी ढाँचे पर खर्च करने के बजाय बाहरी तकनीकी सहायता लें।"
+                ]
+            },
+            {
+                "title": "चरण 4: पवन ऊर्जा प्रोटोटाइप विकसित करें",
+                "points": [
+                    "डिज़ाइन, BOM और परीक्षण के ज़रिए 3 kW पवन जनरेटर की पुष्टि करें।",
+                    "पूर्ण विनिर्माण शुरू करने से पहले बाहरी निर्माण सेवाओं और अनुबंध-आधारित काम का उपयोग करें।",
+                    "वित्तपोषण की पुष्टि होने से पहले पूर्ण प्रोटोटाइप पर भारी निवेश न करें।"
+                ]
+            },
+            {
+                "title": "चरण 5: सोच-समझकर विस्तार करें",
+                "points": [
+                    "मांग साबित होने पर ही अनुबंध-आधारित विनिर्माण से छोटे पैमाने पर उत्पादन शुरू करें।",
+                    "हर सप्ताह डैशबोर्ड की समीक्षा करें और ट्रैकर को रोज़ अपडेट करें।",
+                    "₹1 लाख की पूंजी सुरक्षित रखें और अनावश्यक खर्च से बचें।"
+                ]
+            }
+        ],
+        "phases": [
+            {
+                "period": "दिन 1–15",
+                "title": "व्यवसाय की तैयारी",
+                "actions": [
+                    "कंपनी प्रोफ़ाइल को अंतिम रूप दें।",
+                    "सौर उत्पाद सूची को अंतिम रूप दें।",
+                    "कोटेशन और ग्राहक पूछताछ के प्रारूप तैयार करें।",
+                    "आपूर्तिकर्ताओं का डेटाबेस बनाएँ।",
+                    "स्थानीय सौर ऊर्जा स्थापना ठेकेदारों की पहचान करें।",
+                    "ग्राहक स्थल सर्वेक्षण के लिए बुनियादी जाँच-सूची तैयार करें।",
+                    "ग्राहक पूछताछ ट्रैक करने के लिए शीट बनाएँ।"
+                ],
+                "outcome": "AeroSun अब पेशेवर तरीके से ग्राहकों से संपर्क करने के लिए तैयार है।"
+            },
+            {
+                "period": "दिन 16–30",
+                "title": "ग्राहक जोड़ना",
+                "actions": [
+                    "घर-मालिकों से संपर्क करें।",
+                    "किसानों से संपर्क करें।",
+                    "लघु उद्योगों से संपर्क करें।",
+                    "दुकानों और व्यावसायिक भवनों से संपर्क करें।",
+                    "स्कूलों और संस्थानों से संपर्क करें।",
+                    "फ़ार्महाउस और दूरस्थ संपत्ति-मालिकों से संपर्क करें।"
+                ],
+                "target": "50 संभावित ग्राहकों से सार्थक बातचीत का लक्ष्य रखें।",
+                "note": "यह एक लक्ष्य है, रूपांतरण की गारंटी नहीं।"
+            },
+            {
+                "period": "दिन 31–60",
+                "title": "पहली व्यावसायिक परियोजनाएँ",
+                "actions": [
+                    "स्थल सर्वेक्षण करें।",
+                    "कोटेशन तैयार करें।",
+                    "आपूर्तिकर्ताओं की कीमतों की तुलना करें।",
+                    "ग्राहक का पहला ऑर्डर पक्का करें।",
+                    "योग्य ठेकेदारों के ज़रिए स्थापना का समन्वय करें।",
+                    "ग्राहकों की प्रतिक्रिया और परियोजना के दस्तावेज़ एकत्र करें।"
+                ],
+                "outcome": "पहली भुगतान वाली परियोजना या परियोजना समन्वय का काम।"
+            },
+            {
+                "period": "दिन 61–90",
+                "title": "तकनीक और वित्तपोषण",
+                "actions": [
+                    "प्रारंभिक AS-WG-3000 डिज़ाइन को अंतिम रूप दें।",
+                    "घटकों के कोटेशन प्राप्त करें।",
+                    "प्रोटोटाइप का बजट तैयार करें।",
+                    "इनक्यूबेटर से संपर्क करें।",
+                    "तकनीकी प्रस्तुति तैयार करें।",
+                    "सरकारी सहायता वाले प्रोटोटाइप वित्तपोषण के विकल्प तलाशें।",
+                    "उपयुक्त परीक्षण केंद्र की पहचान करें।"
+                ],
+                "outcome": "पवन जनरेटर विकास और वित्तपोषण का एक विश्वसनीय प्रस्ताव।"
+            }
+        ]
+    },
+    "componentData": {
+        "jsonLdSchema": {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "@id": "https://aerosunenergy.in/#organization",
+                    "name": "AeroSun Energy",
+                    "url": "https://aerosunenergy.in",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "@id": "https://aerosunenergy.in/#logo",
+                        "url": "https://aerosunenergy.in/images/logo.png",
+                        "contentUrl": "https://aerosunenergy.in/images/logo.png",
+                        "width": 512,
+                        "height": 512
+                    },
+                    "image": "https://aerosunenergy.in/images/logo.png",
+                    "description": "AeroSun Energy भारत भर में आवासीय, वाणिज्यिक, औद्योगिक, कृषि और बुनियादी ढाँचा परियोजनाओं के लिए सौर, पवन और हाइब्रिड नवीकरणीय ऊर्जा प्रणालियाँ उपलब्ध कराती है।",
+                    "email": "customercare@aerosunenergy.in",
+                    "telephone": "+91-8099181075",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "IN"
+                    },
+                    "areaServed": {
+                        "@type": "Country",
+                        "name": "India"
+                    },
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "contactType": "customer service",
+                        "telephone": "+91-8099181075",
+                        "areaServed": "IN",
+                        "availableLanguage": [
+                            "English",
+                            "Hindi",
+                            "Telugu"
+                        ]
+                    },
+                    "sameAs": [
+                        "https://aerosunenergy.in"
+                    ]
+                },
+                {
+                    "@type": "WebSite",
+                    "@id": "https://aerosunenergy.in/#website",
+                    "url": "https://aerosunenergy.in",
+                    "name": "AeroSun Energy",
+                    "description": "भारत में घरों, व्यवसायों और उद्योगों के लिए सौर, पवन और हाइब्रिड नवीकरणीय ऊर्जा समाधान।",
+                    "inLanguage": "en-IN",
+                    "publisher": {
+                        "@id": "https://aerosunenergy.in/#organization"
+                    }
+                },
+                {
+                    "@type": "WebPage",
+                    "@id": "https://aerosunenergy.in/#webpage",
+                    "url": "https://aerosunenergy.in",
+                    "name": "AeroSun Energy | Solar, Wind & Hybrid Energy Solutions in India",
+                    "isPartOf": {
+                        "@id": "https://aerosunenergy.in/#website"
+                    },
+                    "about": {
+                        "@id": "https://aerosunenergy.in/#organization"
+                    },
+                    "description": "AeroSun Energy भारत भर में घरों, व्यवसायों और बड़े प्रोजेक्ट्स के लिए सौर पैनल, पवन टर्बाइन, हाइब्रिड प्रणालियाँ और ऊर्जा संबंधी बुनियादी ढाँचे के समाधान उपलब्ध कराती है।",
+                    "inLanguage": "en-IN"
+                },
+                {
+                    "@type": "LocalBusiness",
+                    "@id": "https://aerosunenergy.in/#localbusiness",
+                    "name": "AeroSun Energy",
+                    "url": "https://aerosunenergy.in",
+                    "image": "https://aerosunenergy.in/images/logo.png",
+                    "logo": "https://aerosunenergy.in/images/logo.png",
+                    "description": "भारत भर में सौर ऊर्जा प्रणालियों, पवन टर्बाइनों और हाइब्रिड ऊर्जा समाधानों में विशेषज्ञता रखने वाली नवीकरणीय ऊर्जा कंपनी।",
+                    "areaServed": {
+                        "@type": "Country",
+                        "name": "India"
+                    },
+                    "priceRange": "₹₹",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "IN"
+                    },
+                    "telephone": "+91-8099181075",
+                    "email": "customercare@aerosunenergy.in",
+                    "hasOfferCatalog": {
+                        "@type": "OfferCatalog",
+                        "name": "Renewable Energy Services",
+                        "itemListElement": [
+                            {
+                                "@type": "Offer",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Solar Energy Solutions",
+                                    "description": "छत पर सौर ऊर्जा, वाणिज्यिक सौर परियोजनाएँ तथा टिकाऊ ऊर्जा प्रणालियों का डिज़ाइन और स्थापना।"
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Wind Energy Solutions",
+                                    "description": "कुशल नवीकरणीय बिजली उत्पादन की ज़रूरत वाले स्थलों के लिए पवन टर्बाइन प्रणालियाँ।"
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Hybrid Energy Systems",
+                                    "description": "स्मार्ट निगरानी और भंडारण सहायता वाली एकीकृत सौर-पवन हाइब्रिड बिजली प्रणालियाँ।"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "about": {
+            "featureIconIds": [
+                "speed",
+                "savings",
+                "trust"
+            ],
+            "featureStyles": [
+                {
+                    "cardBg": "bg-blue-100/90 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700 hover:border-blue-500",
+                    "iconBg": "bg-blue-300 dark:bg-blue-800"
+                },
+                {
+                    "cardBg": "bg-emerald-100/90 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700 hover:border-emerald-500",
+                    "iconBg": "bg-emerald-300 dark:bg-emerald-800"
+                },
+                {
+                    "cardBg": "bg-amber-100/90 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700 hover:border-amber-500",
+                    "iconBg": "bg-amber-300 dark:bg-amber-800"
+                }
+            ],
+            "statCardTones": [
+                "bg-blue-50 border-blue-200 text-blue-700",
+                "bg-emerald-50 border-emerald-200 text-emerald-700",
+                "bg-amber-50 border-amber-200 text-amber-700"
+            ],
+            "systemCardTones": [
+                "border-blue-400/20 bg-blue-500/10 text-blue-100",
+                "border-emerald-400/20 bg-emerald-500/10 text-emerald-100",
+                "border-amber-400/20 bg-amber-500/10 text-amber-100"
+            ]
+        },
+        "benefits": {
+            "iconIds": [
+                "trending",
+                "globe",
+                "shield",
+                "infinity"
+            ],
+            "styles": [
+                {
+                    "bg": "bg-blue-50 dark:bg-blue-900/20",
+                    "border": "border-blue-100 dark:border-blue-800"
+                },
+                {
+                    "bg": "bg-green-50 dark:bg-green-900/20",
+                    "border": "border-green-100 dark:border-green-800"
+                },
+                {
+                    "bg": "bg-yellow-50 dark:bg-yellow-900/20",
+                    "border": "border-yellow-100 dark:border-yellow-800"
+                },
+                {
+                    "bg": "bg-purple-50 dark:bg-purple-900/20",
+                    "border": "border-purple-100 dark:border-purple-800"
+                }
+            ],
+            "containerVariants": {
+                "hidden": {},
+                "visible": {
+                    "transition": {
+                        "staggerChildren": 0.1
+                    }
+                }
+            },
+            "cardVariants": {
+                "hidden": {
+                    "opacity": 0,
+                    "scale": 0.95,
+                    "y": 20
+                },
+                "visible": {
+                    "opacity": 1,
+                    "scale": 1,
+                    "y": 0,
+                    "transition": {
+                        "duration": 0.3,
+                        "ease": "easeOut"
+                    }
+                }
+            }
+        },
+        "features": {
+            "iconIds": [
+                "clock",
+                "gitmerge",
+                "wrench",
+                "layers",
+                "leaf",
+                "mappin"
+            ],
+            "styles": [
+                {
+                    "cardBg": "bg-blue-200/70 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700 hover:border-blue-500",
+                    "iconBg": "bg-blue-300 dark:bg-blue-800"
+                },
+                {
+                    "cardBg": "bg-emerald-200/70 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700 hover:border-emerald-500",
+                    "iconBg": "bg-emerald-300 dark:bg-emerald-800"
+                },
+                {
+                    "cardBg": "bg-amber-200/70 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700 hover:border-amber-500",
+                    "iconBg": "bg-amber-300 dark:bg-amber-800"
+                },
+                {
+                    "cardBg": "bg-indigo-200/70 dark:bg-indigo-900/55 border-indigo-300 dark:border-indigo-700 hover:border-indigo-500",
+                    "iconBg": "bg-indigo-300 dark:bg-indigo-800"
+                },
+                {
+                    "cardBg": "bg-green-200/70 dark:bg-green-900/55 border-green-300 dark:border-green-700 hover:border-green-500",
+                    "iconBg": "bg-green-300 dark:bg-green-800"
+                },
+                {
+                    "cardBg": "bg-cyan-200/70 dark:bg-cyan-900/55 border-cyan-300 dark:border-cyan-700 hover:border-cyan-500",
+                    "iconBg": "bg-cyan-300 dark:bg-cyan-800"
+                }
+            ],
+            "containerVariants": {
+                "hidden": {},
+                "visible": {
+                    "transition": {
+                        "staggerChildren": 0.12
+                    }
+                }
+            },
+            "cardVariants": {
+                "hidden": {
+                    "opacity": 0,
+                    "y": 30
+                },
+                "visible": {
+                    "opacity": 1,
+                    "y": 0,
+                    "transition": {
+                        "duration": 0.55,
+                        "ease": "easeOut"
+                    }
+                }
+            }
+        },
+        "howItWorks": {
+            "stepStyles": [
+                {
+                    "icon": "??",
+                    "imageSrc": "/images/forming-aerosunenergy.png",
+                    "imageAlt": "AeroSun Energy द्वारा स्थल मूल्यांकन और योजना प्रक्रिया",
+                    "color": "from-primary to-blue-400",
+                    "cardBg": "bg-blue-100/90 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700",
+                    "iconBg": "bg-blue-300 dark:bg-blue-800",
+                    "nodeBg": "from-blue-700 to-blue-500"
+                },
+                {
+                    "icon": "??",
+                    "imageSrc": "/images/customdesign-aerosunenergy.png",
+                    "imageAlt": "AeroSun Energy द्वारा अनुकूलित हाइब्रिड प्रणाली का डिज़ाइन",
+                    "color": "from-secondary to-teal-400",
+                    "cardBg": "bg-emerald-100/90 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700",
+                    "iconBg": "bg-emerald-300 dark:bg-emerald-800",
+                    "nodeBg": "from-emerald-700 to-teal-500"
+                },
+                {
+                    "icon": "??",
+                    "imageSrc": "/images/installation-aerosunenergy.png",
+                    "imageAlt": "AeroSun हाइब्रिड टर्बाइन प्रणाली की स्थापना",
+                    "color": "from-accent to-yellow-400",
+                    "cardBg": "bg-amber-100/90 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700",
+                    "iconBg": "bg-amber-300 dark:bg-amber-800",
+                    "nodeBg": "from-amber-700 to-yellow-500"
+                },
+                {
+                    "icon": "??",
+                    "imageSrc": "/images/smart-vawt-aerosunenergy.png",
+                    "imageAlt": "AeroSun Energy प्रणालियों के लिए स्मार्ट निगरानी डैशबोर्ड",
+                    "color": "from-primary to-secondary",
+                    "cardBg": "bg-violet-100/90 dark:bg-violet-900/55 border-violet-300 dark:border-violet-700",
+                    "iconBg": "bg-violet-300 dark:bg-violet-800",
+                    "nodeBg": "from-violet-700 to-purple-500"
+                },
+                {
+                    "icon": "?",
+                    "imageSrc": "/images/minimal-maintainance-aerosunenergy.png",
+                    "imageAlt": "AeroSun हाइब्रिड प्रणालियों से निरंतर स्वच्छ बिजली उत्पादन",
+                    "color": "from-secondary to-green-400",
+                    "cardBg": "bg-cyan-100/90 dark:bg-cyan-900/55 border-cyan-300 dark:border-cyan-700",
+                    "iconBg": "bg-cyan-300 dark:bg-cyan-800",
+                    "nodeBg": "from-cyan-700 to-green-500"
+                }
+            ],
+            "containerVariants": {
+                "hidden": {},
+                "visible": {
+                    "transition": {
+                        "staggerChildren": 0.1
+                    }
+                }
+            },
+            "cardVariants": {
+                "hidden": {
+                    "opacity": 0,
+                    "y": 40
+                },
+                "visible": {
+                    "opacity": 1,
+                    "y": 0,
+                    "transition": {
+                        "duration": 0.3,
+                        "ease": "easeOut"
+                    }
+                }
+            }
+        },
+        "useCases": {
+            "styles": [
+                {
+                    "emoji": "???",
+                    "imageSrc": "/images/infra-aerosunenergy.png",
+                    "imageAlt": "सड़कों और राजमार्गों के लिए सौर-पवन हाइब्रिड बुनियादी ढाँचा",
+                    "tagColor": "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300",
+                    "color": "from-primary to-blue-400",
+                    "cardBg": "bg-blue-100/85 dark:bg-blue-950/45 border-blue-300 dark:border-blue-700"
+                },
+                {
+                    "emoji": "??",
+                    "imageSrc": "/images/urbangreen-aerosunenergy.png",
+                    "imageAlt": "सार्वजनिक पार्कों और खुले स्थानों के लिए AeroSun हाइब्रिड स्थापना",
+                    "tagColor": "bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300",
+                    "color": "from-secondary to-teal-400",
+                    "cardBg": "bg-emerald-100/85 dark:bg-emerald-950/45 border-emerald-300 dark:border-emerald-700"
+                },
+                {
+                    "emoji": "??",
+                    "imageSrc": "/images/roof-turbine-aerosunenergy.png",
+                    "imageAlt": "आवासीय छत पर टर्बाइन और हाइब्रिड सौर प्रणाली की स्थापना",
+                    "tagColor": "bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300",
+                    "color": "from-accent to-yellow-400",
+                    "cardBg": "bg-amber-100/85 dark:bg-amber-950/45 border-amber-300 dark:border-amber-700"
+                },
+                {
+                    "emoji": "??",
+                    "imageSrc": "/images/industries-aerosunenergy.png",
+                    "imageAlt": "वाणिज्यिक और औद्योगिक क्षेत्रों में AeroSun हाइब्रिड ऊर्जा प्रणाली की स्थापना",
+                    "tagColor": "bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300",
+                    "color": "from-pink-400 to-rose-400",
+                    "cardBg": "bg-purple-100/85 dark:bg-purple-950/45 border-purple-300 dark:border-purple-700"
+                }
+            ],
+            "containerVariants": {
+                "hidden": {},
+                "visible": {
+                    "transition": {
+                        "staggerChildren": 0.15
+                    }
+                }
+            },
+            "cardVariants": {
+                "hidden": {
+                    "opacity": 0,
+                    "y": 30
+                },
+                "visible": {
+                    "opacity": 1,
+                    "y": 0,
+                    "transition": {
+                        "duration": 0.55,
+                        "ease": "easeOut"
+                    }
+                }
+            }
+        },
+        "whyChooseUs": {
+            "iconIds": [
+                "lightbulb",
+                "shield",
+                "layers",
+                "mappin"
+            ],
+            "styles": [
+                {
+                    "cardBg": "bg-blue-100/85 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700 hover:border-blue-500",
+                    "iconBg": "bg-blue-300 dark:bg-blue-800"
+                },
+                {
+                    "cardBg": "bg-emerald-100/85 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700 hover:border-emerald-500",
+                    "iconBg": "bg-emerald-300 dark:bg-emerald-800"
+                },
+                {
+                    "cardBg": "bg-amber-100/85 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700 hover:border-amber-500",
+                    "iconBg": "bg-amber-300 dark:bg-amber-800"
+                },
+                {
+                    "cardBg": "bg-indigo-100/85 dark:bg-indigo-900/55 border-indigo-300 dark:border-indigo-700 hover:border-indigo-500",
+                    "iconBg": "bg-indigo-300 dark:bg-indigo-800"
+                }
+            ],
+            "containerVariants": {
+                "hidden": {},
+                "visible": {
+                    "transition": {
+                        "staggerChildren": 0.15
+                    }
+                }
+            },
+            "cardVariants": {
+                "hidden": {
+                    "opacity": 0,
+                    "y": 30
+                },
+                "visible": {
+                    "opacity": 1,
+                    "y": 0,
+                    "transition": {
+                        "duration": 0.55,
+                        "ease": "easeOut"
+                    }
+                }
+            }
+        },
+        "services": {
+            "styles": [
+                {
+                    "emoji": "??",
+                    "color": "from-red-400 to-rose-400",
+                    "cardBg": "bg-rose-100/90 dark:bg-rose-900/50 border-rose-300 dark:border-rose-700 hover:border-rose-500",
+                    "iconBg": "bg-rose-300 dark:bg-rose-800"
+                },
+                {
+                    "emoji": "??",
+                    "color": "from-violet-400 to-rose-400",
+                    "cardBg": "bg-violet-100/90 dark:bg-violet-900/50 border-violet-300 dark:border-violet-700 hover:border-violet-500",
+                    "iconBg": "bg-violet-300 dark:bg-violet-800"
+                },
+                {
+                    "emoji": "??",
+                    "color": "from-purple-400 to-rose-400",
+                    "cardBg": "bg-purple-100/90 dark:bg-purple-900/50 border-purple-300 dark:border-purple-700 hover:border-purple-500",
+                    "iconBg": "bg-purple-300 dark:bg-purple-800"
+                },
+                {
+                    "emoji": "??",
+                    "color": "from-yellow-400 to-cyan-400",
+                    "cardBg": "bg-amber-100/90 dark:bg-amber-900/50 border-amber-300 dark:border-amber-700 hover:border-amber-500",
+                    "iconBg": "bg-amber-300 dark:bg-amber-800"
+                },
+                {
+                    "emoji": "??",
+                    "color": "from-pink-400 to-rose-400",
+                    "cardBg": "bg-cyan-100/90 dark:bg-cyan-900/50 border-cyan-300 dark:border-cyan-700 hover:border-cyan-500",
+                    "iconBg": "bg-cyan-300 dark:bg-cyan-800"
+                }
+            ]
+        },
+        "windGenerators": {
+            "styles": [
+                {
+                    "id": "h-darrieus",
+                    "imageSrc": "/images/h-darrieus-turbine-aerosunenergy.png",
+                    "imageAlt": "AeroSun Energy का H-Darrieus पवन टर्बाइन",
+                    "badgeColor": "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300",
+                    "accentFrom": "from-blue-400",
+                    "accentTo": "to-purple-400"
+                },
+                {
+                    "id": "flower",
+                    "imageSrc": "/images/helical-turbine-aerosunenergy.png",
+                    "imageAlt": "AeroSun Energy का फूल के आकार के कुंडलित ब्लेड वाला ऊर्ध्वाधर पवन टर्बाइन",
+                    "badgeColor": "bg-pink-100 text-pink-700 dark:bg-pink-900 dark:text-pink-300",
+                    "accentFrom": "from-pink-400",
+                    "accentTo": "to-rose-400"
+                },
+                {
+                    "id": "savonius",
+                    "imageSrc": "/images/savonius-turbine-aerosunenergy.png",
+                    "imageAlt": "AeroSun Energy का Savonius ऊर्ध्वाधर-अक्ष पवन टर्बाइन",
+                    "badgeColor": "bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-300",
+                    "accentFrom": "from-teal-400",
+                    "accentTo": "to-cyan-400"
+                },
+                {
+                    "id": "rooftop-vawt",
+                    "imageSrc": "/images/roof-turbine-aerosunenergy.png",
+                    "imageAlt": "AeroSun Energy का छत पर लगाया जाने वाला ऊर्ध्वाधर पवन टर्बाइन",
+                    "badgeColor": "bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-300",
+                    "accentFrom": "from-orange-400",
+                    "accentTo": "to-yellow-400"
+                }
+            ]
+        },
+        "solarContentBlocks": {
+            "iconColors": {
+                "emerald": "text-emerald-700",
+                "amber": "text-amber-700",
+                "sky": "text-sky-700",
+                "violet": "text-violet-700"
+            },
+            "checkBackgrounds": {
+                "emerald": "bg-emerald-100 text-emerald-700",
+                "amber": "bg-amber-100 text-amber-700",
+                "sky": "bg-sky-100 text-sky-700",
+                "violet": "bg-violet-100 text-violet-700"
+            },
+            "featureClasses": {
+                "emerald": "border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f8fffb_50%,#ffffff_100%)] text-emerald-700",
+                "amber": "border-amber-200 bg-[linear-gradient(135deg,#fff7ed_0%,#fffdf8_50%,#ffffff_100%)] text-amber-700",
+                "sky": "border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#f8fbff_50%,#ffffff_100%)] text-sky-700",
+                "violet": "border-violet-200 bg-[linear-gradient(135deg,#f5f3ff_0%,#faf7ff_50%,#ffffff_100%)] text-violet-700"
+            },
+            "infoThemes": {
+                "emerald": "border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#ffffff_100%)] text-emerald-900",
+                "amber": "border-amber-200 bg-[linear-gradient(135deg,#fff7ed_0%,#ffffff_100%)] text-amber-900",
+                "sky": "border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ffffff_100%)] text-sky-900"
+            },
+            "defaultFeature": {
+                "title": "छत पर सौर ऊर्जा प्रणालियाँ",
+                "description": "घरों और व्यवसायों के लिए ग्रिड से जुड़ी सौर ऊर्जा प्रणालियाँ।",
+                "points": [
+                    "ऑन-ग्रिड, ऑफ-ग्रिड और हाइब्रिड विन्यास",
+                    "राज्य DISCOM के साथ नेट मीटरिंग",
+                    "PM Surya Ghar योजना की सब्सिडी पाने में सहायता",
+                    "TATA Power Solar के प्रीमियम पैनल"
+                ],
+                "accent": "emerald"
+            },
+            "defaultBenefit": {
+                "title": "बिजली के बिल में 80–90% तक की बचत करें",
+                "description": "ऊर्जा आपूर्ति की विश्वसनीयता बढ़ाते हुए मासिक खर्च घटाएँ।"
+            },
+            "defaultInfo": {
+                "title": "मुख्य लाभ",
+                "content": [
+                    "बिजली के बिल में 80–90% तक की बचत करें",
+                    "सौर पैनलों का 25+ वर्षों का जीवनकाल",
+                    "कम रखरखाव और उच्च विश्वसनीयता",
+                    "पर्यावरण के अनुकूल नवीकरणीय ऊर्जा"
+                ],
+                "accent": "emerald"
+            },
+            "offerings": [
+                {
+                    "title": "छत पर सौर ऊर्जा प्रणालियाँ",
+                    "description": "घरों और व्यवसायों के लिए ग्रिड से जुड़ी सौर ऊर्जा प्रणालियाँ।",
+                    "points": [
+                        "ऑन-ग्रिड, ऑफ-ग्रिड और हाइब्रिड विन्यास",
+                        "राज्य DISCOM के साथ नेट मीटरिंग",
+                        "PM Surya Ghar योजना की सब्सिडी पाने में सहायता",
+                        "TATA Power Solar के प्रीमियम पैनल"
+                    ],
+                    "accent": "emerald"
+                },
+                {
+                    "title": "सौर तापीय ऊर्जा और जल तापन समाधान",
+                    "description": "सौर गर्म पानी और हीट पंप—घरों, होटलों, अस्पतालों, छात्रावासों, व्यावसायिक प्रतिष्ठानों और उद्योगों के लिए ऊर्जा-कुशल, पर्यावरण-अनुकूल गर्म पानी।",
+                    "points": [
+                        "100 लीटर प्रतिदिन (LPD) से शुरू होने वाली क्षमता में उपलब्ध",
+                        "प्रेशरयुक्त और बिना प्रेशर वाले मॉडल का विकल्प",
+                        "उच्च प्रदर्शन वाले BIS-प्रमाणित सौर कलेक्टर",
+                        "गीज़र का उपयोग घटाकर बिजली की खपत कम करें"
+                    ],
+                    "accent": "amber"
+                },
+                {
+                    "title": "सौर स्ट्रीट लाइटें",
+                    "description": "पूरी तरह सूर्य के प्रकाश से चलने वाली ऑल-इन-वन लाइटें।",
+                    "points": [
+                        "12W से शुरू होने वाले एकीकृत ऑल-इन-वन ल्यूमिनेयर",
+                        "शाम से सुबह तक स्वचालित संचालन",
+                        "लिथियम-आयन भंडारण, 5+ वर्षों का जीवनकाल",
+                        "बिजली का बिल शून्य"
+                    ],
+                    "accent": "sky"
+                },
+                {
+                    "title": "सौर ऊर्जा से चलने वाली बाड़",
+                    "description": "खेतों और संपत्तियों के लिए सौर ऊर्जा से चलने वाली बिजली की बाड़।",
+                    "points": [
+                        "सौर ऊर्जा से चार्ज होने वाला विद्युतीकरण उपकरण",
+                        "एक चार्जर से 10 km तक की परिधि की सुरक्षा",
+                        "श्रव्य अलार्म और बैटरी बैकअप",
+                        "फ़सलों और पशुधन की सुरक्षा"
+                    ],
+                    "accent": "violet"
+                },
+                {
+                    "title": "सौर पंप सेट",
+                    "description": "कृषि के लिए डीज़ल-मुक्त जल पंपिंग।",
+                    "points": [
+                        "AC और DC पंप विन्यास",
+                        "MNRE-अनुमोदित कंट्रोलर",
+                        "PM-KUSUM योजना के लिए सहायता",
+                        "निर्माता की 5-वर्षीय वारंटी"
+                    ],
+                    "accent": "amber"
+                },
+                {
+                    "title": "संचालन एवं रखरखाव (AMC)",
+                    "description": "आपके संयंत्र से अधिकतम उत्पादन बनाए रखने के लिए वार्षिक रखरखाव।",
+                    "points": [
+                        "हर तिमाही निवारक रखरखाव",
+                        "प्रदर्शन अनुपात की निगरानी",
+                        "24x7 प्राथमिकता सहायता",
+                        "स्पेयर पार्ट्स और इन्वर्टर सेवा"
+                    ],
+                    "accent": "emerald"
+                }
+            ],
+            "rooftopBenefits": [
+                {
+                    "title": "बिजली के बिल में 80–90% तक की बचत करें",
+                    "description": "ऊर्जा आपूर्ति की विश्वसनीयता बढ़ाते हुए मासिक खर्च घटाएँ।"
+                },
+                {
+                    "title": "सौर पैनलों का 25+ वर्षों का जीवनकाल",
+                    "description": "कम से कम पुर्ज़े बदलने के साथ लंबा परिचालन जीवन।"
+                },
+                {
+                    "title": "कम रखरखाव और उच्च विश्वसनीयता",
+                    "description": "आसान रखरखाव के साथ लंबे समय तक स्थिर उत्पादन के लिए डिज़ाइन किया गया।"
+                },
+                {
+                    "title": "पर्यावरण के अनुकूल नवीकरणीय ऊर्जा",
+                    "description": "स्वच्छ बिजली उत्पादन से पर्यावरण पर अपना प्रभाव कम करें।"
+                },
+                {
+                    "title": "संपत्ति का मूल्य बढ़ाएँ",
+                    "description": "सौर ऊर्जा के लिए तैयार बुनियादी ढाँचे से अपनी संपत्ति का मूल्य और आकर्षण बढ़ाएँ।"
+                },
+                {
+                    "title": "नेट मीटरिंग की सुविधा",
+                    "description": "जहाँ लागू हो, अतिरिक्त बिजली ग्रिड को भेजें और क्रेडिट प्राप्त करें।"
+                }
+            ],
+            "whySolar": [
+                {
+                    "title": "कार्बन उत्सर्जन घटाएँ",
+                    "description": "सौर ऊर्जा का हर kW सालाना लगभग 1.2 टन CO₂ उत्सर्जन की भरपाई करता है—इससे आपका कार्बन फ़ुटप्रिंट घटता है।"
+                },
+                {
+                    "title": "पर्यावरण-अनुकूल",
+                    "description": "स्वच्छ नवीकरणीय ऊर्जा, जो आने वाली पीढ़ियों के लिए प्रकृति की रक्षा करती है।"
+                },
+                {
+                    "title": "लागत में बचत",
+                    "description": "पहले दिन से बिजली के बिल में 70–90% तक बचत करें और 4–6 वर्षों में अपना निवेश वसूलें।"
+                },
+                {
+                    "title": "ऊर्जा आत्मनिर्भरता",
+                    "description": "अपनी बिजली खुद बनाएँ और ग्रिड तथा बढ़ती दरों पर निर्भरता घटाएँ।"
+                },
+                {
+                    "title": "असीमित ऊर्जा",
+                    "description": "सूर्य का प्रकाश असीमित है—तिरुपति में हर साल 300+ दिन धूप रहती है।"
+                },
+                {
+                    "title": "निरंतर आपूर्ति",
+                    "description": "बैटरी बैकअप वाले हाइब्रिड तंत्र बिजली कटौती के दौरान भी ज़रूरी उपकरणों को चालू रखते हैं।"
+                }
+            ],
+            "subsidyCards": [
+                {
+                    "label": "आवासीय घरों के लिए",
+                    "value": "₹30,000",
+                    "note": "2 kW तक प्रति kW"
+                },
+                {
+                    "label": "अतिरिक्त क्षमता",
+                    "value": "₹18,000",
+                    "note": "3 kW तक की अतिरिक्त क्षमता के लिए प्रति kW"
+                },
+                {
+                    "label": "अधिकतम कुल सब्सिडी",
+                    "value": "₹78,000",
+                    "note": "3 kW से अधिक क्षमता वाले तंत्रों के लिए अधिकतम कुल सब्सिडी"
+                },
+                {
+                    "label": "GHS / RWA के लिए",
+                    "value": "₹18,000",
+                    "note": "EV चार्जिंग सहित साझा सुविधाओं के लिए प्रति kW, 500 kW तक"
+                }
+            ]
+        },
+        "hybridContentBlocks": {
+            "iconColors": {
+                "emerald": "text-emerald-700",
+                "sky": "text-sky-700",
+                "violet": "text-violet-700",
+                "amber": "text-amber-700"
+            },
+            "checkBackgrounds": {
+                "emerald": "bg-emerald-100 text-emerald-700",
+                "sky": "bg-sky-100 text-sky-700",
+                "violet": "bg-violet-100 text-violet-700",
+                "amber": "bg-amber-100 text-amber-700"
+            },
+            "featureClasses": {
+                "emerald": "border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f8fffb_50%,#ffffff_100%)] text-emerald-700",
+                "sky": "border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#f8fbff_50%,#ffffff_100%)] text-sky-700",
+                "violet": "border-violet-200 bg-[linear-gradient(135deg,#f5f3ff_0%,#faf7ff_50%,#ffffff_100%)] text-violet-700",
+                "amber": "border-amber-200 bg-[linear-gradient(135deg,#fffbeb_0%,#fffdf6_50%,#ffffff_100%)] text-amber-700"
+            },
+            "infoThemes": {
+                "emerald": "border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-white text-emerald-900",
+                "sky": "border-sky-200 bg-linear-to-br from-sky-50 via-white to-white text-sky-900",
+                "violet": "border-violet-200 bg-linear-to-br from-violet-50 via-white to-white text-violet-900"
+            }
+        },
+        "windContentBlocks": {
+            "iconColors": {
+                "sky": "text-sky-700",
+                "emerald": "text-emerald-700",
+                "amber": "text-amber-700",
+                "violet": "text-violet-700"
+            },
+            "checkBackgrounds": {
+                "sky": "bg-sky-100 text-sky-700",
+                "emerald": "bg-emerald-100 text-emerald-700",
+                "amber": "bg-amber-100 text-amber-700",
+                "violet": "bg-violet-100 text-violet-700"
+            },
+            "featureClasses": {
+                "sky": "border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#f8fbff_50%,#ffffff_100%)] text-sky-700",
+                "emerald": "border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f8fffb_50%,#ffffff_100%)] text-emerald-700",
+                "amber": "border-amber-200 bg-[linear-gradient(135deg,#fffbeb_0%,#fffdf6_50%,#ffffff_100%)] text-amber-700",
+                "violet": "border-violet-200 bg-[linear-gradient(135deg,#f5f3ff_0%,#faf7ff_50%,#ffffff_100%)] text-violet-700"
+            },
+            "infoThemes": {
+                "sky": "border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ffffff_100%)] text-sky-900",
+                "emerald": "border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#ffffff_100%)] text-emerald-900",
+                "amber": "border-amber-200 bg-[linear-gradient(135deg,#fffbeb_0%,#ffffff_100%)] text-amber-900"
+            }
+        },
+        "solarEstimation": {
+            "defaultValues": {
+                "monthlyUnits": 360,
+                "installationCostPerKw": 54300,
+                "sellingPricePerKw": 65000
+            },
+            "summaryStatAccents": [
+                "from-primary/90 to-custom-orange/90",
+                "from-custom-blue/90 to-primary/90",
+                "from-custom-red/90 to-custom-violet/90"
+            ]
+        },
+        "footer": {
+            "socialLinks": [
+                {
+                    "href": "https://x.com/AeroSunEnergy",
+                    "platform": "twitter",
+                    "dataSocial": "twitter",
+                    "iconId": "twitter"
+                },
+                {
+                    "href": "https://www.linkedin.com/company/aerosun-energy/",
+                    "platform": "linkedin",
+                    "dataSocial": "linkedin",
+                    "iconId": "linkedin"
+                },
+                {
+                    "href": "https://www.facebook.com/AeroSunEnergyPrivateLimited/",
+                    "platform": "facebook",
+                    "dataSocial": "facebook",
+                    "iconId": "facebook"
+                },
+                {
+                    "href": "https://www.instagram.com/aerosunenergyprivatelimited/",
+                    "platform": "instagram",
+                    "dataSocial": "instagram",
+                    "iconId": "instagram"
+                }
+            ]
+        },
+        "contact": {
+            "channelIconIds": [
+                "email",
+                "website",
+                "quote"
+            ]
+        },
+        "warrantyPolicy": {
+            "fieldAccentClasses": {
+                "sky": "border-sky-200 bg-sky-50/70 focus:border-sky-500 focus:ring-sky-100",
+                "emerald": "border-emerald-200 bg-emerald-50/70 focus:border-emerald-500 focus:ring-emerald-100",
+                "cyan": "border-cyan-200 bg-cyan-50/70 focus:border-cyan-500 focus:ring-cyan-100",
+                "blue": "border-blue-200 bg-blue-50/70 focus:border-blue-500 focus:ring-blue-100",
+                "indigo": "border-indigo-200 bg-indigo-50/70 focus:border-indigo-500 focus:ring-indigo-100"
+            }
+        },
+        "companyAge": {
+            "digitalFontStyle": {
+                "fontFamily": "var(--font-digital), \"Orbitron\", monospace",
+                "fontVariantNumeric": "tabular-nums",
+                "fontFeatureSettings": "\"tnum\" 1"
+            }
+        },
+        "lordModal": {
+            "lords": [
+                {
+                    "name": "Ganesha",
+                    "image": "/images/lordganesha.png",
+                    "width": 558,
+                    "height": 1448
+                },
+                {
+                    "name": "Balaji",
+                    "image": "/images/lordbalaji.png",
+                    "width": 433,
+                    "height": 577
+                },
+                {
+                    "name": "Shiva",
+                    "image": "/images/lordshiva.png",
+                    "width": 375,
+                    "height": 591
+                }
+            ]
+        },
+        "consentAwareTracking": {
+            "adsTagIds": [
+                "AW-18547983243",
+                "AW-18551268371"
+            ]
+        }
     }
 }

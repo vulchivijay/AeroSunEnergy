@@ -3,9 +3,7 @@
 import { useMemo, useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
 
-const tabs = ['In Queue', 'In Progress', 'Completed'] as const
-
-type ProjectStatus = (typeof tabs)[number]
+type ProjectStatus = 'In Queue' | 'In Progress' | 'Completed'
 
 type ProjectCard = {
   title: string
@@ -15,77 +13,21 @@ type ProjectCard = {
   summary: string
 }
 
-const projectCards: ProjectCard[] = []
-
-const statusMeta: Record<ProjectStatus, { label: string; tone: string; accent: string }> = {
-  'In Queue': {
-    label: 'In Queue',
-    tone: 'border-amber-200 bg-amber-50 text-amber-700',
-    accent: 'from-amber-400 via-orange-400 to-yellow-400',
-  },
-  'In Progress': {
-    label: 'In Progress',
-    tone: 'border-cyan-200 bg-cyan-50 text-cyan-700',
-    accent: 'from-cyan-500 via-sky-500 to-blue-500',
-  },
-  Completed: {
-    label: 'Completed',
-    tone: 'border-emerald-200 bg-emerald-50 text-emerald-700',
-    accent: 'from-emerald-500 via-green-500 to-lime-500',
-  },
-}
-
-const projectSteps = [
-  'Energy audit and site feasibility',
-  'System design and technology selection',
-  'Procurement, installation, and commissioning',
-  'Performance monitoring and maintenance support',
-]
-
-const projectCategories = [
-  {
-    title: 'Residential Solar',
-    accent: 'from-emerald-500 via-green-500 to-lime-500',
-    description:
-      'Custom rooftop solar systems for homes and apartments that reduce electricity bills, improve energy independence, and support long-term sustainability.',
-    outcomes: ['Lower monthly power cost', 'Smart monitoring', 'Net metering support'],
-  },
-  {
-    title: 'Commercial & Industrial',
-    accent: 'from-violet-500 via-indigo-500 to-blue-500',
-    description:
-      'Solar and hybrid energy systems for business parks, factories, warehouses, schools, and institutions seeking dependable and efficient power.',
-    outcomes: ['Lower operating cost', 'Stable energy supply', 'Sustainability reporting'],
-  },
-  {
-    title: 'Agricultural & Rural',
-    accent: 'from-amber-400 via-orange-500 to-rose-500',
-    description:
-      'Energy solutions designed for irrigation, pumping, cold storage, farm operations, and village infrastructure where reliability matters most.',
-    outcomes: ['Solar pumping', 'Rural electrification', 'Efficient water access'],
-  },
-  {
-    title: 'Wind & Hybrid Systems',
-    accent: 'from-sky-500 via-cyan-500 to-teal-500',
-    description:
-      'Integrated solar-wind-battery systems that improve resilience, balance seasonal generation, and support higher-efficiency energy planning.',
-    outcomes: ['Hybrid design', 'Battery integration', 'Site-specific performance planning'],
-  },
-]
-
 export default function ProjectsPage() {
   const { t } = useLocale()
   const projectsPage = t.projectsPage
   const projectCategoriesData = projectsPage.projectCategories
   const projectStepsData = projectsPage.projectSteps
   const statusMetaData = projectsPage.statusMeta
+  const projectCards: ProjectCard[] = projectsPage.projectCards
+  const tabs = projectsPage.statusTabs as ProjectStatus[]
   const labels = projectsPage.labels
 
   const [activeTab, setActiveTab] = useState<ProjectStatus>('In Queue')
 
   const filteredProjects = useMemo(
     () => projectCards.filter((project) => project.status === activeTab),
-    [activeTab],
+    [activeTab, projectCards],
   )
 
   return (

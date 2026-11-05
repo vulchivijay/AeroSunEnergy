@@ -13,7 +13,6 @@ import {
   Wind,
   Zap,
 } from 'lucide-react'
-import DownloadCataloguePdf from './DownloadCataloguePdf'
 import { useLocale } from '@/lib/LocaleContext'
 
 function SectionHeading({
@@ -77,22 +76,17 @@ export default function ProductCataloguePage() {
   const c = t.productCataloguePage
 
   return (
-    <main className="printable-about-document overflow-hidden bg-[#f5f6ef] text-slate-900 dark:bg-[#101b17] dark:text-slate-100">
+    <main className="overflow-hidden bg-[#f5f6ef] text-slate-900 dark:bg-[#101b17] dark:text-slate-100">
       <section className="relative isolate overflow-hidden bg-[#14372f] text-white">
         <div
           className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_8%,rgba(52,211,153,0.2),transparent_38%),radial-gradient(ellipse_at_5%_100%,rgba(163,217,119,0.11),transparent_35%)]"
           aria-hidden="true"
         />
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:px-10">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-100/20 bg-white/[0.06] px-3 py-1.5 text-md font-bold uppercase tracking-[0.2em] text-emerald-100">
-              <span className="h-1.5 w-1.5 rounded-full bg-lime-300" aria-hidden="true" />
-              {c.hero.badge}
-            </p>
-            <div data-print-hide className="sm:ml-auto">
-              <DownloadCataloguePdf label={c.hero.downloadButton} />
-            </div>
-          </div>
+          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-100/20 bg-white/[0.06] px-3 py-1.5 text-md font-bold uppercase tracking-[0.2em] text-emerald-100">
+            <span className="h-1.5 w-1.5 rounded-full bg-lime-300" aria-hidden="true" />
+            {c.hero.badge}
+          </p>
           <h1 className="mt-7 max-w-5xl text-4xl font-black uppercase leading-[1.05] tracking-[0.045em] sm:text-6xl lg:text-7xl">
             {c.hero.title}
             <span className="mt-2 block text-emerald-300">{c.hero.titleAccent}</span>

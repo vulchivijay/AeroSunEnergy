@@ -30,23 +30,10 @@ const createInvoiceSchema = (validation: typeof import('@/public/locales/en/inde
 
 type InvoiceFormValues = z.infer<ReturnType<typeof createInvoiceSchema>>
 
-const defaultValues: InvoiceFormValues = {
-  customerName: '',
-  companyName: '',
-  email: '',
-  phone: '',
-  invoiceNumber: '',
-  projectName: '',
-  invoiceDate: '',
-  amount: '',
-  paymentMode: '',
-  receiptNote: '',
-  paymentReceived: false,
-}
-
 export default function InvoiceReceiptPage() {
   const { t } = useLocale()
   const content = t.businessForms.invoiceReceipt
+  const defaultValues = content.defaultValues
   const { labels } = content
   const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {

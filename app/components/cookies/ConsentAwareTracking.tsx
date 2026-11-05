@@ -2,9 +2,9 @@
 
 import Script from 'next/script'
 import { useEffect, useState } from 'react'
+import { useLocale } from '@/lib/LocaleContext'
 
 const COOKIE_KEY = 'aerosun_cookie_consent'
-const ADS_TAG_IDS = ['AW-18547983243', 'AW-18551268371']
 
 export default function ConsentAwareTracking({
   gtmId,
@@ -13,6 +13,8 @@ export default function ConsentAwareTracking({
   gtmId?: string
   gaMeasurementId?: string
 }) {
+  const { t } = useLocale()
+  const adsTagIds = t.componentData.consentAwareTracking.adsTagIds
   const [hasConsent, setHasConsent] = useState(false)
 
   useEffect(() => {
@@ -55,7 +57,7 @@ export default function ConsentAwareTracking({
     )
   }
 
-  const gtagId = gaMeasurementId || ADS_TAG_IDS[0]
+  const gtagId = gaMeasurementId || adsTagIds[0]
 
   return (
     <>
@@ -70,7 +72,7 @@ export default function ConsentAwareTracking({
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
           ${gaMeasurementId ? `gtag('config', '${gaMeasurementId}');` : ''}
-          ${ADS_TAG_IDS.map((id) => `gtag('config', '${id}');`).join('\n')}
+          ${adsTagIds.map((id) => `gtag('config', '${id}');`).join('\n')}
         `}
       </Script>
     </>

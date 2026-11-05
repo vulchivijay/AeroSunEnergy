@@ -5,39 +5,31 @@ import { TrendingDown, Globe, ShieldCheck, Infinity } from 'lucide-react'
 import { Card, CardContent } from './../ui/Card'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
+import type { ReactNode } from 'react'
 
-const benefitIcons = [
-	<TrendingDown key="trending" className="h-8 w-8 text-primary" />,
-	<Globe key="globe" className="h-8 w-8 text-secondary" />,
-	<ShieldCheck key="shield" className="h-8 w-8 text-accent" />,
-	<Infinity key="infinity" className="h-8 w-8 text-purple-500" />,
-]
-
-const benefitStyles = [
-	{ bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-100 dark:border-blue-800' },
-	{ bg: 'bg-green-50 dark:bg-green-900/20', border: 'border-green-100 dark:border-green-800' },
-	{ bg: 'bg-yellow-50 dark:bg-yellow-900/20', border: 'border-yellow-100 dark:border-yellow-800' },
-	{ bg: 'bg-purple-50 dark:bg-purple-900/20', border: 'border-purple-100 dark:border-purple-800' },
-]
-
-const containerVariants = {
-	hidden: {},
-	visible: { transition: { staggerChildren: 0.1 } },
-}
-
-const cardVariants = {
-	hidden: { opacity: 0, scale: 0.95, y: 20 },
-	visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.3, ease: 'easeOut' as const } },
+const benefitIconComponents: Record<string, ReactNode> = {
+	trending: <TrendingDown className="h-8 w-8 text-primary" />,
+	globe: <Globe className="h-8 w-8 text-secondary" />,
+	shield: <ShieldCheck className="h-8 w-8 text-accent" />,
+	infinity: <Infinity className="h-8 w-8 text-purple-500" />,
 }
 
 export default function Benefits() {
 	const { t } = useLocale()
 	const b = t.benefits
+	const componentData = t.componentData.benefits
+	const cardVariants = {
+		...componentData.cardVariants,
+		visible: {
+			...componentData.cardVariants.visible,
+			transition: { ...componentData.cardVariants.visible.transition, ease: 'easeOut' as const },
+		},
+	}
 
 	const benefits = b.items.map((item, i) => ({
 		...item,
-		icon: benefitIcons[i],
-		...benefitStyles[i],
+		icon: benefitIconComponents[componentData.iconIds[i]],
+		...componentData.styles[i],
 	}))
 
 	return (
@@ -92,7 +84,7 @@ export default function Benefits() {
 
 				<motion.div
 					className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-4"
-					variants={containerVariants}
+					variants={componentData.containerVariants}
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true }}

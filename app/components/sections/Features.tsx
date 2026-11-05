@@ -4,43 +4,33 @@ import { motion } from '@/lib/motion'
 import { Clock, GitMerge, Wrench, Layers, Leaf, MapPin } from 'lucide-react'
 import { Card, CardContent } from './../ui/Card'
 import { useLocale } from '@/lib/LocaleContext'
+import type { ReactNode } from 'react'
 
-const featureIcons = [
-  <Clock key="clock" className="h-7 w-7 text-blue-800 dark:text-blue-100" />,
-  <GitMerge key="gitmerge" className="h-7 w-7 text-emerald-800 dark:text-emerald-100" />,
-  <Wrench key="wrench" className="h-7 w-7 text-amber-800 dark:text-amber-100" />,
-  <Layers key="layers" className="h-7 w-7 text-indigo-800 dark:text-indigo-100" />,
-  <Leaf key="leaf" className="h-7 w-7 text-green-800 dark:text-green-100" />,
-  <MapPin key="mappin" className="h-7 w-7 text-cyan-800 dark:text-cyan-100" />,
-]
-
-const featureStyles = [
-  { cardBg: 'bg-blue-200/70 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700 hover:border-blue-500', iconBg: 'bg-blue-300 dark:bg-blue-800' },
-  { cardBg: 'bg-emerald-200/70 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700 hover:border-emerald-500', iconBg: 'bg-emerald-300 dark:bg-emerald-800' },
-  { cardBg: 'bg-amber-200/70 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700 hover:border-amber-500', iconBg: 'bg-amber-300 dark:bg-amber-800' },
-  { cardBg: 'bg-indigo-200/70 dark:bg-indigo-900/55 border-indigo-300 dark:border-indigo-700 hover:border-indigo-500', iconBg: 'bg-indigo-300 dark:bg-indigo-800' },
-  { cardBg: 'bg-green-200/70 dark:bg-green-900/55 border-green-300 dark:border-green-700 hover:border-green-500', iconBg: 'bg-green-300 dark:bg-green-800' },
-  { cardBg: 'bg-cyan-200/70 dark:bg-cyan-900/55 border-cyan-300 dark:border-cyan-700 hover:border-cyan-500', iconBg: 'bg-cyan-300 dark:bg-cyan-800' },
-]
-
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
-}
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' as const } },
+const featureIconComponents: Record<string, ReactNode> = {
+  clock: <Clock className="h-7 w-7 text-blue-800 dark:text-blue-100" />,
+  gitmerge: <GitMerge className="h-7 w-7 text-emerald-800 dark:text-emerald-100" />,
+  wrench: <Wrench className="h-7 w-7 text-amber-800 dark:text-amber-100" />,
+  layers: <Layers className="h-7 w-7 text-indigo-800 dark:text-indigo-100" />,
+  leaf: <Leaf className="h-7 w-7 text-green-800 dark:text-green-100" />,
+  mappin: <MapPin className="h-7 w-7 text-cyan-800 dark:text-cyan-100" />,
 }
 
 export default function Features() {
   const { t } = useLocale()
   const f = t.features
+  const componentData = t.componentData.features
+  const cardVariants = {
+    ...componentData.cardVariants,
+    visible: {
+      ...componentData.cardVariants.visible,
+      transition: { ...componentData.cardVariants.visible.transition, ease: 'easeOut' as const },
+    },
+  }
 
   const features = f.items.map((item, i) => ({
     ...item,
-    icon: featureIcons[i],
-    ...featureStyles[i],
+    icon: featureIconComponents[componentData.iconIds[i]],
+    ...componentData.styles[i],
   }))
 
   return (
@@ -62,7 +52,7 @@ export default function Features() {
 
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerVariants}
+          variants={componentData.containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}

@@ -15,18 +15,11 @@ type AgreementFormValues = {
   agreed: boolean
 }
 
-const defaultValues: AgreementFormValues = {
-  customerName: '',
-  companyName: '',
-  email: '',
-  phone: '',
-  agreed: false,
-}
-
 export default function CustomerAgreementPage() {
   const { t } = useLocale()
   const content = t.customerAgreementPage
   const formCopy = content.form
+  const defaultValues = formCopy.defaultValues
   const agreementSchema = z.object({
     customerName: z.string().trim().min(2, formCopy.validation.customerNameRequired),
     companyName: z.string().trim().optional().or(z.literal('')),

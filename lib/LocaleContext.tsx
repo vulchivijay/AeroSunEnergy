@@ -113,23 +113,21 @@ function mergeLocaleData<T>(fallback: T, localized: unknown): T {
   return (localized === undefined ? fallback : localized) as T
 }
 
-const defaultConceptCollection: ConceptCollection = {
-  title: 'Basic Electrical Concepts',
-  description: 'Fundamental electrical concepts for practical projects.',
-  components: [],
-}
-
 export function getBasicElectricalConceptData(locale: Locale): ConceptCollection {
   const localeFile = basicElectricalConceptLocales[locale]
   const fallbackFile = basicElectricalConceptLocales.en
 
-  return (
+  const collection =
     localeFile.basic_electrical_concepts ??
     localeFile.electrical_concepts ??
     fallbackFile.basic_electrical_concepts ??
-    fallbackFile.electrical_concepts ??
-    defaultConceptCollection
-  )
+    fallbackFile.electrical_concepts
+
+  if (!collection) {
+    throw new Error(`Missing basic electrical concepts data for locale "${locale}" and English fallback`)
+  }
+
+  return collection
 }
 
 interface LocaleContextValue {

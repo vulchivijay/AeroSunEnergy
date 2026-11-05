@@ -27,21 +27,10 @@ const createWarrantyPolicySchema = (validation: typeof import('@/public/locales/
 
 type WarrantyPolicyFormValues = z.infer<ReturnType<typeof createWarrantyPolicySchema>>
 
-const defaultValues: WarrantyPolicyFormValues = {
-  customerName: '',
-  companyName: '',
-  email: '',
-  phone: '',
-  projectName: '',
-  productLine: '',
-  warrantyStart: '',
-  servicePlan: '',
-  acceptTerms: false,
-}
-
 export default function WarrantyPolicyPage() {
   const { t } = useLocale()
   const content = t.businessForms.warrantyPolicy
+  const defaultValues = content.defaultValues
   const { labels } = content
   const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {
@@ -262,13 +251,8 @@ type FieldProps = {
 }
 
 function Field({ label, name, placeholder, type = 'text', register, error, accent = 'sky' }: FieldProps) {
-  const accentClasses: Record<string, string> = {
-    sky: 'border-sky-200 bg-sky-50/70 focus:border-sky-500 focus:ring-sky-100',
-    emerald: 'border-emerald-200 bg-emerald-50/70 focus:border-emerald-500 focus:ring-emerald-100',
-    cyan: 'border-cyan-200 bg-cyan-50/70 focus:border-cyan-500 focus:ring-cyan-100',
-    blue: 'border-blue-200 bg-blue-50/70 focus:border-blue-500 focus:ring-blue-100',
-    indigo: 'border-indigo-200 bg-indigo-50/70 focus:border-indigo-500 focus:ring-indigo-100',
-  }
+  const { t } = useLocale()
+  const accentClasses = t.componentData.warrantyPolicy.fieldAccentClasses
 
   return (
     <div>
