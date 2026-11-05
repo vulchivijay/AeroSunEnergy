@@ -182,7 +182,7 @@ const solarSlides: SolarSlide[] = [
   },
 ]
 
-function SolarHeroSlider() {
+function SolarHeroSlider({ slides, ariaLabel }: { slides: SolarSlide[]; ariaLabel: string }) {
   const slideClass =
     'group relative flex h-full w-full items-end justify-start overflow-hidden p-6 sm:p-8 lg:p-14 xl:p-18'
 
@@ -190,8 +190,8 @@ function SolarHeroSlider() {
     'absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.32),transparent_24%),radial-gradient(circle_at_80%_20%,rgba(56,189,248,0.18),transparent_30%),linear-gradient(90deg,rgba(2,6,23,0.78)_0%,rgba(15,23,42,0.6)_40%,rgba(15,23,42,0.28)_100%)]'
 
   return (
-    <Slider autoplay interval={5000} pauseOnHover ariaLabel="Solar energy solutions">
-      {solarSlides.map((slide, index) => (
+    <Slider autoplay interval={5000} pauseOnHover ariaLabel={ariaLabel}>
+      {slides.map((slide, index) => (
         <div key={slide.title} className={`${slide.panelClass} relative h-full w-full overflow-hidden`}>
           <div className="absolute inset-0">
             <OptimizedImage
@@ -243,73 +243,16 @@ function SolarHeroSlider() {
 
 export default function SolarEnergyPage() {
   const { t } = useLocale()
-  const solarPage = t.solarPage ?? {
-    hero: {
-      eyebrow: 'AeroSun Energy / Solar Systems',
-      title: 'Solar energy,',
-      titleAccent: 'made for your world.',
-      subtitle: 'Solar energy systems are designed around how they generate power, how they connect to the grid, where they are installed, and which loads they are meant to serve.',
-      lead: 'One source. Many uses.',
-      pathway: 'Choose your solar pathway',
-      options: [
-        { name: 'On-grid', detail: 'Grid tied' },
-        { name: 'Off-grid', detail: 'Standalone' },
-        { name: 'Hybrid', detail: 'Solar + storage' },
-        { name: 'Thermal', detail: 'Heat use' },
-      ],
-    },
-    offer: {
-      eyebrow: 'What We Offer',
-      title: 'Expertise End-to-End Solar Solutions',
-      description: 'We have rich experience in solar rooftop 1 kW to megawatt solar power plants — including solar hybrid systems, solar hot water, solar street lights, solar fencing, solar agriculture pump sets & any solar power services.',
-      cards: offerings,
-    },
-    rooftop: {
-      eyebrow: 'Rooftop Solar',
-      title: 'Solar Rooftop Systems',
-      description: 'Solar rooftop systems generate electricity using solar panels installed on your rooftop. Sized to your power needs and usage, they cut your dependence on grid power and significantly lower your monthly electricity bills.',
-      suitableFor: 'Suitable For',
-      keyBenefits: 'Key Benefits',
-    },
-    systemTypes: {
-      eyebrow: 'System Types',
-      title: 'There are three main types of solar rooftop systems',
-      items: systemTypes,
-    },
-    whySolar: {
-      eyebrow: 'Why Solar',
-      title: 'Why you have to switch to solar today?',
-      items: whySolar,
-    },
-    subsidy: {
-      eyebrow: 'Government of India Scheme',
-      title: 'PM Surya Ghar: Muft Bijli Yojana Subsidy',
-      description: 'Central-government subsidy you can claim on your rooftop solar — AeroSun Energy files the entire application for you.',
-      cards: [
-        { label: 'For Residential Households', value: '₹30,000', note: 'per kW up to 2 kW' },
-        { label: 'Additional Capacity', value: '₹18,000', note: 'per kW for additional capacity up to 3 kW' },
-        { label: 'Maximum Subsidy', value: '₹78,000', note: 'Total subsidy for systems larger than 3 kW' },
-        { label: 'For GHS / RWA', value: '₹18,000', note: 'Common facility subsidy up to 500 kW' },
-      ],
-      strategicEyebrow: 'Strategic view',
-      strategicTitle: 'Which solar systems should AeroSun Energy consider?',
-    },
-  }
-
+  const solarPage = t.solarPage
+  const solarSlidesLocalized = solarPage.hero.slides ?? solarSlides
   const offeringsLocalized = solarPage.offer.cards ?? offerings
-  const rooftopBenefitsLocalized = rooftopBenefits
-  const suitableForLocalized = suitableFor
+  const rooftopBenefitsLocalized = solarPage.rooftop.benefits ?? rooftopBenefits
+  const suitableForLocalized = solarPage.rooftop.suitableForItems ?? suitableFor
   const systemTypesLocalized = solarPage.systemTypes.items ?? systemTypes
   const whySolarLocalized = solarPage.whySolar.items ?? whySolar
-  const comparisonMeta = solarPage.comparison ?? {
-    label: 'Comparison',
-    title: 'Main solar system types',
-    battery: 'Battery',
-    grid: 'Grid',
-    typicalUse: 'Typical use',
-    recommendedFocus: 'Recommended focus',
-    focusTitle: 'Rooftop, hybrid, and solar pumping',
-  }
+  const comparisonMeta = solarPage.comparison
+  const solarComparisonRows = solarPage.comparison.rows ?? comparisonRows
+  const measurement = solarPage.measurement
 
   return (
     <main className="bg-[#fffdf7] pt-6 sm:pt-8 text-slate-900 [&>section]:border-t-4 [&>section]:border-t-orange-400">
@@ -355,7 +298,7 @@ export default function SolarEnergyPage() {
         </div>
       </header>
 
-      <SolarHeroSlider />
+      <SolarHeroSlider slides={solarSlidesLocalized} ariaLabel={solarPage.hero.eyebrow} />
 
       <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-amber-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(120,72,0,0.3)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
@@ -386,7 +329,7 @@ export default function SolarEnergyPage() {
 
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="grid gap-5 sm:grid-cols-2">
-            {rooftopBenefits.map((benefit) => (
+            {rooftopBenefitsLocalized.map((benefit) => (
               <BenefitCard key={benefit} title={benefit.split(' ').slice(0, 3).join(' ') || 'Benefit'} description={benefit} />
             ))}
           </div>
@@ -473,7 +416,7 @@ export default function SolarEnergyPage() {
               </div>
 
               <div className="divide-y divide-slate-200">
-                {comparisonRows.map((row) => (
+                {solarComparisonRows.map((row) => (
                   <div key={row.type} className="grid gap-3 px-4 py-4 text-md text-slate-700 md:grid-cols-[1.3fr_0.9fr_0.8fr_1.4fr] md:gap-0">
                     <div className="font-bold text-slate-900">{row.type}</div>
                     <div>{row.battery}</div>
@@ -489,7 +432,7 @@ export default function SolarEnergyPage() {
             <div className="relative h-72 overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
               <OptimizedImage
                 src="/images/slider/slider-6.png"
-                alt="Solar energy field and rooftop systems"
+                alt={solarPage.featuredImageAlt}
                 fill
                 sizes="(min-width: 1024px) 30vw, 100vw"
                 className="object-cover opacity-85"
@@ -500,7 +443,7 @@ export default function SolarEnergyPage() {
               <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-amber-200">{comparisonMeta.recommendedFocus}</p>
               <h3 className="mt-2 text-xl font-bold text-white">{comparisonMeta.focusTitle}</h3>
               <p className="mt-2 text-base leading-7 text-slate-200">
-                These categories offer clear customer groups and better opportunities to build installation and maintenance capabilities.
+                {comparisonMeta.recommendationDescription}
               </p>
             </div>
           </div>
@@ -509,39 +452,39 @@ export default function SolarEnergyPage() {
 
       <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-amber-200/80 bg-[#fffaf0] p-5 shadow-[0_20px_55px_-42px_rgba(120,72,0,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
-          <SectionEyebrow>How We Measure</SectionEyebrow>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900">How household solar consumption and grid surplus are measured</h2>
+          <SectionEyebrow>{measurement.eyebrow}</SectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900">{measurement.title}</h2>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)]">
             <p className="text-base leading-8 text-slate-700">
-              For a grid-connected house, the most accurate starting point is the recent electricity bill. We measure monthly consumption in <span className="font-bold text-slate-900">units or kWh</span>, then compare it with the estimated solar generation from the planned rooftop system.
+              {measurement.introductionBefore} <span className="font-bold text-slate-900">{measurement.unitLabel}</span>{measurement.introductionAfter}
             </p>
 
             <div className="mt-6 space-y-5">
               <div className="rounded-3xl border border-emerald-200 bg-emerald-50 p-4">
-                <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-700">1. Measure house consumption</p>
+                <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-700">{measurement.consumptionTitle}</p>
                 <p className="mt-2 text-base leading-7 text-slate-700">
-                  We use the last 6–12 months of DISCOM bills to calculate average monthly units consumed. This includes daytime and nighttime usage, which helps us size the rooftop system correctly.
+                  {measurement.consumptionDescription}
                 </p>
               </div>
 
               <div className="rounded-3xl border border-sky-200 bg-sky-50 p-4">
-                <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-sky-700">2. Estimate solar generation</p>
+                <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-sky-700">{measurement.generationTitle}</p>
                 <p className="mt-2 text-base leading-7 text-slate-700">
-                  A rooftop solar system is estimated using system size, sunlight hours, panel efficiency, and site conditions. A simple formula is:<br />
-                  <span className="font-bold text-slate-900">Monthly generation ≈ kWp × sun hours × 30 × performance factor</span>
+                  {measurement.generationDescription}<br />
+                  <span className="font-bold text-slate-900">{measurement.generationFormula}</span>
                 </p>
                 <p className="mt-2 text-md text-slate-600">
-                  Example: 4 kWp × 5 hours × 30 days × 0.8 ≈ 480 units per month.
+                  {measurement.generationExample}
                 </p>
               </div>
 
               <div className="rounded-3xl border border-violet-200 bg-violet-50 p-4">
-                <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-violet-700">3. Measure grid import and export</p>
+                <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-violet-700">{measurement.gridTitle}</p>
                 <p className="mt-2 text-base leading-7 text-slate-700">
-                  In a net-metered home, the grid import equals the electricity used after self-consumption, while the grid surplus is the excess generation that is exported back to the utility after local demand is met.
+                  {measurement.gridDescription}
                 </p>
               </div>
             </div>
@@ -549,31 +492,21 @@ export default function SolarEnergyPage() {
 
           <div className="space-y-5">
             <div className="rounded-4xl border border-slate-200 bg-slate-950 p-5 shadow-[0_28px_70px_-36px_rgba(15,23,42,0.9)]">
-              <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-amber-200">Example</p>
-              <h3 className="mt-2 text-xl font-bold text-white">Household solar balance</h3>
+              <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-amber-200">{measurement.exampleLabel}</p>
+              <h3 className="mt-2 text-xl font-bold text-white">{measurement.exampleTitle}</h3>
               <div className="mt-5 space-y-4 text-md leading-7 text-slate-200">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <span className="font-bold text-white">Monthly house consumption:</span> 600 units
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <span className="font-bold text-white">Solar generation:</span> 480 units
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <span className="font-bold text-white">Self-consumed solar:</span> 300 units
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <span className="font-bold text-white">Grid surplus exported:</span> 180 units
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <span className="font-bold text-white">Net grid import:</span> 300 units
-                </div>
+                {measurement.balanceItems.map((item) => (
+                  <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                    <span className="font-bold text-white">{item.label}</span> {item.value}
+                  </div>
+                ))}
               </div>
             </div>
 
             <div className="rounded-4xl border border-amber-200 bg-amber-50 p-5">
-              <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-amber-700">Key point</p>
+              <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-amber-700">{measurement.keyPointLabel}</p>
               <p className="mt-2 text-base leading-7 text-slate-700">
-                We design the solar array to lower the house’s grid import first, and then measure surplus export only after daytime consumption has been served.
+                {measurement.keyPoint}
               </p>
             </div>
           </div>

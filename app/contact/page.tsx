@@ -28,30 +28,25 @@ const channelIcons = {
 
 export default function Contact() {
   const { t } = useLocale()
-  const c = t.contact as typeof t.contact & {
-    contactUs?: string
-    contactCardTitle?: string
-    faqHeader?: string
-    faqTitle?: string
-  }
+  const c = t.contact
   const footer = t.footer
   const navbar = t.navbar
 
-  const contactUs = c.contactUs ?? 'Contact us'
-  const contactCardTitle = c.contactCardTitle ?? 'Speak with our team'
-  const faqHeader = c.faqHeader ?? 'FAQ'
-  const faqTitle = c.faqTitle ?? 'Common questions'
-  const connectionPrompt = c.connectionPrompt ?? 'Choose the best way to connect or begin planning your energy project.'
-  const projectStory = c.projectStory ?? 'Practical renewable energy, shaped around your project.'
-  const stepIntroLabel = c.stepIntroLabel ?? 'From first question to next step'
-  const stepIntroTitle = c.stepIntroTitle ?? 'A simple way to get started'
-  const stepIntroCopy = c.stepIntroCopy ?? "Tell us what you need, and we'll help you explore the right renewable-energy direction."
-  const submitEnquiry = c.submitEnquiry ?? 'Submit an enquiry'
-  const faqIntro = c.faqIntro ?? 'Explore answers to common questions about solar energy and project planning.'
-  const location = c.location ?? 'Tirupati, India'
-  const energyBadge = c.energyBadge ?? 'Sun'
-  const energyBadgeAccent = c.energyBadgeAccent ?? 'wind'
-  const energyBadgeSuffix = c.energyBadgeSuffix ?? 'better together'
+  const contactUs = c.contactUs
+  const contactCardTitle = c.contactCardTitle
+  const faqHeader = c.faqHeader
+  const faqTitle = c.faqTitle
+  const connectionPrompt = c.connectionPrompt
+  const projectStory = c.projectStory
+  const stepIntroLabel = c.stepIntroLabel
+  const stepIntroTitle = c.stepIntroTitle
+  const stepIntroCopy = c.stepIntroCopy
+  const submitEnquiry = c.submitEnquiry
+  const faqIntro = c.faqIntro
+  const location = c.location
+  const energyBadge = c.energyBadge
+  const energyBadgeAccent = c.energyBadgeAccent
+  const energyBadgeSuffix = c.energyBadgeSuffix
 
   const contactHighlights = c.highlights
 
@@ -62,20 +57,20 @@ export default function Contact() {
 
   const channels = [
     {
-      label: c.channels?.[0]?.label ?? 'Email',
-      value: c.channels?.[0]?.value ?? footer.email,
+      label: c.channels[0].label,
+      value: c.channels[0].value,
       href: `mailto:${footer.email}`,
       icon: channelIcons.email,
     },
     {
-      label: c.channels?.[1]?.label ?? 'Website',
-      value: c.channels?.[1]?.value ?? footer.website,
+      label: c.channels[1].label,
+      value: c.channels[1].value,
       href: footer.website.startsWith('http') ? footer.website : `https://${footer.website}`,
       icon: channelIcons.website,
     },
     {
-      label: c.channels?.[2]?.label ?? 'Estimation',
-      value: c.channels?.[2]?.value ?? 'Open the calculator',
+      label: c.channels[3].label,
+      value: c.channels[3].value,
       href: '/estimation-calculator',
       icon: channelIcons.quote,
     },
@@ -141,7 +136,7 @@ export default function Contact() {
             >
               <OptimizedImage
                 src="/images/slider/slider-7.png"
-                alt="AeroSun energy consultation"
+                alt={c.imageAlt}
                 fill
                 sizes="(min-width: 1024px) 45vw, 100vw"
                 className="object-cover"
@@ -161,7 +156,7 @@ export default function Contact() {
               <div className="flex flex-col justify-center border-b border-white/10 p-6 sm:p-9 lg:border-b-0 lg:border-r">
                 <p className="text-md font-bold uppercase tracking-[0.2em] text-lime-300">{contactUs}</p>
                 <h2 className="mt-4 text-3xl font-black leading-tight tracking-tight sm:text-4xl">{contactCardTitle}</h2>
-                <p className="mt-4 text-base leading-7 text-emerald-50/75">Choose the best way to connect or begin planning your energy project.</p>
+                <p className="mt-4 text-base leading-7 text-emerald-50/75">{connectionPrompt}</p>
               </div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3">
                 {channels.map((channel, index) => (

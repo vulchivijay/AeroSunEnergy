@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import { ErrorExperience } from './components/system/ErrorExperience'
+import { useLocale } from '@/lib/LocaleContext'
 
 export default function Error({
   error,
@@ -10,6 +11,9 @@ export default function Error({
   error: Error & { digest?: string }
   reset: () => void
 }) {
+  const { t } = useLocale()
+  const content = t.systemUi.unexpectedError
+
   useEffect(() => {
     if (process.env.NODE_ENV !== 'production') {
       console.error('AeroSun page error', error)
@@ -19,12 +23,12 @@ export default function Error({
   return (
     <ErrorExperience
       code="500"
-      eyebrow="Unexpected interruption"
-      title="Something Went Wrong on Our Side."
-      description="Our systems encountered an unexpected issue. Please try again shortly. If the problem continues, contact our team."
+      eyebrow={content.eyebrow}
+      title={content.title}
+      description={content.description}
       illustration="control-room"
-      primaryAction={{ label: 'Try Again', onClick: reset }}
-      secondaryAction={{ label: 'Return Home', href: '/' }}
+      primaryAction={{ label: content.tryAgain, onClick: reset }}
+      secondaryAction={{ label: content.returnHome, href: '/' }}
     />
   )
 }

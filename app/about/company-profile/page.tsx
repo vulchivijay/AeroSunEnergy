@@ -222,7 +222,7 @@ function BulletList({ items }: { items: string[] }) {
 
 export default function CompanyProfilePage() {
   const { t } = useLocale()
-  const cp = (t.about as any)?.companyProfile ?? defaultCompanyProfile
+  const cp = t.about.companyProfile ?? defaultCompanyProfile
 
   const missionPoints = cp.missionPoints ?? defaultCompanyProfile.missionPoints
   const solarSolutions = cp.solarSolutions ?? defaultCompanyProfile.solarSolutions
@@ -247,7 +247,7 @@ export default function CompanyProfilePage() {
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:px-10">
           <div className="flex items-center justify-between gap-4 sm:flex-row sm:gap-6 lg:gap-8">
             <p className="inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-white/[0.06] px-3 py-1.5 text-sm font-bold uppercase tracking-[0.2em] text-emerald-100"><span className="h-1.5 w-1.5 rounded-full bg-lime-300" aria-hidden="true" />{cp.badge}</p>
-            <DownloadProfilePdf />
+            <DownloadProfilePdf label={cp.downloadButton} />
           </div>
           <h1 className="mt-7 max-w-4xl text-4xl font-black uppercase leading-[1.05] tracking-[0.045em] sm:text-6xl lg:text-7xl">
             {cp.title}

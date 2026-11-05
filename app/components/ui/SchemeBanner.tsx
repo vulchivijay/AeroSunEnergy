@@ -22,39 +22,7 @@ function getTimeParts(target: Date, now: number) {
 
 export default function SchemeBanner() {
   const { t } = useLocale()
-  const banner = ((t as any).home?.schemeBanner ?? {
-    badge: 'Government Subsidy Initiative',
-    title: 'PM Surya Ghar',
-    titleAccent: 'Muft Bijli Yojana',
-    description: 'Make your rooftop solar dream affordable with up to ₹ 78,000 in central subsidy and a complete application support experience from AeroSun Energy.',
-    ctaPrimary: 'Apply Now',
-    ctaSecondary: 'Know Eligibility',
-    badgeSuffix: 'Subsidy ends 31st March 2027',
-    max: 'Max',
-    perHome: 'per home',
-    offerLabel: 'Offer Window',
-    offerText: 'Limited duration – apply before the current subsidy cycle closes.',
-    cardLabel: 'Subsidy',
-    stats: [
-      { label: 'Days', value: '000' },
-      { label: 'Hours', value: '00' },
-      { label: 'Mins', value: '00' },
-    ],
-  }) as {
-    badge: string
-    title: string
-    titleAccent: string
-    description: string
-    ctaPrimary: string
-    ctaSecondary: string
-    badgeSuffix: string
-    max: string
-    perHome: string
-    offerLabel: string
-    offerText: string
-    cardLabel: string
-    stats: { label: string; value: string }[]
-  }
+  const banner = t.home.schemeBanner
 
   const [now, setNow] = useState<number>(() => Date.now())
 
@@ -69,13 +37,9 @@ export default function SchemeBanner() {
   const stats = useMemo(() => {
     const referenceNow = now ?? TARGET_DATE.getTime()
     const parts = getTimeParts(TARGET_DATE, referenceNow)
-    return (banner.stats ?? [
-      { label: 'Days', value: parts.days },
-      { label: 'Hours', value: parts.hours },
-      { label: 'Mins', value: parts.minutes },
-    ]).map((item: { label: string; value: string }) => ({
+    return banner.stats.map((item, index) => ({
       ...item,
-      value: item.value === '000' || item.value === '00' ? (item.label === 'Days' ? parts.days : item.label === 'Hours' ? parts.hours : parts.minutes) : item.value,
+      value: [parts.days, parts.hours, parts.minutes][index] ?? item.value,
     }))
   }, [banner.stats, now])
 

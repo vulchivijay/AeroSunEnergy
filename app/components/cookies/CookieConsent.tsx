@@ -16,15 +16,7 @@ export function getCookieConsent(): ConsentChoice | null {
 
 export default function CookieConsent() {
   const { t } = useLocale()
-  const labels = {
-    title: t.cookieConsent?.title ?? 'Cookie preferences',
-    headline: t.cookieConsent?.headline ?? 'We use cookies to improve your experience',
-    description:
-      t.cookieConsent?.description ??
-      'We use cookies to remember your preferences, understand website traffic, and improve performance. Essential cookies are required for the website to work. Optional analytics and marketing cookies are only used if you accept them.',
-    reject: t.cookieConsent?.reject ?? 'Reject optional cookies',
-    accept: t.cookieConsent?.accept ?? 'Accept all cookies',
-  }
+  const labels = t.cookieConsent
   const [consent, setConsent] = useState<ConsentChoice | null>(() => {
     if (typeof window === 'undefined') return null
     return getCookieConsent()
@@ -47,7 +39,7 @@ export default function CookieConsent() {
   return (
     <div data-print-hide className="fixed inset-x-0 bottom-0 z-40 flex justify-center p-4 sm:p-6">
       <aside
-        aria-label="Cookie preferences"
+        aria-label={labels.title}
         className="w-full max-w-5xl rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-[0_25px_60px_-20px_rgba(15,23,42,0.5)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-900/95"
       >
         <div>

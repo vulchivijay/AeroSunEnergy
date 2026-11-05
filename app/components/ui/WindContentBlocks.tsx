@@ -58,7 +58,7 @@ export function WindFeatureCard({
   accent?: 'sky' | 'emerald' | 'amber' | 'violet'
 }) {
   const { t } = useLocale()
-  const ui = t.ui ?? {}
+  const ui = t.ui
   const accentClasses: Record<typeof accent, string> = {
     sky: 'border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#f8fbff_50%,#ffffff_100%)] text-sky-700',
     emerald: 'border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f8fffb_50%,#ffffff_100%)] text-emerald-700',
@@ -69,7 +69,7 @@ export function WindFeatureCard({
   return (
     <article className="group rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_22px_45px_-28px_rgba(15,23,42,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-28px_rgba(59,130,246,0.25)]">
       <div className={`mb-5 flex items-center justify-between gap-4 rounded-2xl border px-3 py-2 ${accentClasses[accent]}`}>
-        <span className="text-[12px] font-black uppercase tracking-[0.24em]">{ui.windSolution ?? 'Wind solution'}</span>
+        <span className="text-[12px] font-black uppercase tracking-[0.24em]">{ui.windSolution}</span>
         <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/80 shadow-sm ring-1 ring-black/5">
           {renderWindIcon(accent)}
         </span>
@@ -138,15 +138,15 @@ export function WindInfoPanel({
 
 export function WindCapacityTable({ rows }: { rows: { label: string; value: string; use: string }[] }) {
   const { t } = useLocale()
-  const ui = t.ui ?? {}
+  const ui = t.ui
 
   return (
     <div className="overflow-x-auto rounded-[1.9rem] border border-sky-200 bg-white shadow-[0_20px_34px_-24px_rgba(59,130,246,0.3)] [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-sky-300 [&::-webkit-scrollbar-thumb:hover]:bg-sky-400">
       <div className="min-w-[680px]">
         <div className="grid border-b border-sky-100 bg-[linear-gradient(90deg,#eff6ff_0%,#ffffff_50%,#ecfeff_100%)] text-[12px] font-bold uppercase tracking-[0.2em] text-slate-600 md:grid-cols-[1fr_1.1fr_2fr]">
-          <div className="px-4 py-3">{ui.capacityBand ?? 'Capacity band'}</div>
-          <div className="px-4 py-3">{ui.systemSize ?? 'System size'}</div>
-          <div className="px-4 py-3">{ui.typicalUse ?? 'Typical use'}</div>
+          <div className="px-4 py-3">{ui.capacityBand}</div>
+          <div className="px-4 py-3">{ui.systemSize}</div>
+          <div className="px-4 py-3">{ui.typicalUse}</div>
         </div>
         {rows.map((row) => (
           <div key={row.label} className="grid gap-3 px-4 py-4 text-base text-slate-700 md:grid-cols-[1fr_1.1fr_2fr] md:gap-0">
@@ -162,15 +162,15 @@ export function WindCapacityTable({ rows }: { rows: { label: string; value: stri
 
 export function WindComparisonTable({ rows }: { rows: { system: string; detail: string; use: string }[] }) {
   const { t } = useLocale()
-  const ui = t.ui ?? {}
+  const ui = t.ui
 
   return (
     <div className="overflow-x-auto rounded-[1.9rem] border border-sky-200 bg-white shadow-[0_20px_34px_-24px_rgba(59,130,246,0.3)] [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-sky-300 [&::-webkit-scrollbar-thumb:hover]:bg-sky-400">
       <div className="min-w-[780px]">
         <div className="grid border-b border-sky-100 bg-[linear-gradient(90deg,#ecfeff_0%,#ffffff_50%,#f0fdf4_100%)] text-[12px] font-bold uppercase tracking-[0.2em] text-slate-600 md:grid-cols-[1.2fr_2.3fr_1.8fr]">
-          <div className="px-4 py-3">{ui.systemType ?? 'System type'}</div>
-          <div className="px-4 py-3">{ui.howItWorks ?? 'How it works'}</div>
-          <div className="px-4 py-3">{ui.typicalUse ?? 'Typical use'}</div>
+          <div className="px-4 py-3">{ui.systemType}</div>
+          <div className="px-4 py-3">{ui.howItWorks}</div>
+          <div className="px-4 py-3">{ui.typicalUse}</div>
         </div>
         {rows.map((row) => (
           <div key={row.system} className="grid gap-3 px-4 py-4 text-base text-slate-700 md:grid-cols-[1.2fr_2.3fr_1.8fr] md:gap-0">

@@ -9,35 +9,55 @@ import { trackGoogleAdsConversion } from '@/lib/googleAdsConversion'
 import { useId, useState, type FocusEventHandler } from 'react'
 import { validateZeroBounceEmail } from '@/lib/emailValidation'
 import FormWarningRibbon from '@/app/components/ui/FormWarningRibbon'
+import { useLocale } from '@/lib/LocaleContext'
 
-const siteSurveySchema = z.object({
-  customerName: z.string().trim().min(2, 'Customer name is required.'),
-  email: z.string().trim().email('Please enter a valid email address.'),
+type SiteSurveyValidationMessages = {
+  customerName: string
+  email: string
+  riskyEmail: string
+  phoneMin: string
+  phoneFormat: string
+  propertyType: string
+  siteAddress: string
+  city: string
+  roofType: string
+  availableArea: string
+  avgMonthlyUnits: string
+  peakLoadKw: string
+  backupPriority: string
+  equipmentLoads: string
+  timeline: string
+  notes: string
+}
+
+const createSiteSurveySchema = (messages: SiteSurveyValidationMessages) => z.object({
+  customerName: z.string().trim().min(2, messages.customerName),
+  email: z.string().trim().email(messages.email),
   phone: z
     .string()
     .trim()
-    .min(10, 'Phone number must be at least 10 digits.')
-    .regex(/^[0-9+()\-\s]+$/, 'Phone number can contain only digits, spaces, +, (, ), and -.'),
-  propertyType: z.string().min(1, 'Please select the property type.'),
-  siteAddress: z.string().trim().min(5, 'Please enter the site address.'),
-  city: z.string().trim().min(2, 'Please enter the city.'),
-  roofType: z.string().min(1, 'Please select the roof type.'),
+    .min(10, messages.phoneMin)
+    .regex(/^[0-9+()\-\s]+$/, messages.phoneFormat),
+  propertyType: z.string().min(1, messages.propertyType),
+  siteAddress: z.string().trim().min(5, messages.siteAddress),
+  city: z.string().trim().min(2, messages.city),
+  roofType: z.string().min(1, messages.roofType),
   availableArea: z
     .string()
     .trim()
-    .min(1, 'Please enter the available area in sq ft.'),
+    .min(1, messages.availableArea),
   avgMonthlyUnits: z
     .string()
     .trim()
-    .min(1, 'Please enter monthly electricity usage.'),
-  peakLoadKw: z.string().trim().min(1, 'Please enter the peak load in kW.'),
-  backupPriority: z.string().min(1, 'Please select the backup priority.'),
-  equipmentLoads: z.string().trim().min(20, 'Please describe the main equipment and loads.'),
-  timeline: z.string().min(1, 'Please select an expected timeline.'),
-  notes: z.string().trim().min(10, 'Please add a few notes for the survey team.'),
+    .min(1, messages.avgMonthlyUnits),
+  peakLoadKw: z.string().trim().min(1, messages.peakLoadKw),
+  backupPriority: z.string().min(1, messages.backupPriority),
+  equipmentLoads: z.string().trim().min(20, messages.equipmentLoads),
+  timeline: z.string().min(1, messages.timeline),
+  notes: z.string().trim().min(10, messages.notes),
 })
 
-export type SiteSurveyFormValues = z.infer<typeof siteSurveySchema>
+export type SiteSurveyFormValues = z.infer<ReturnType<typeof createSiteSurveySchema>>
 
 export const defaultSiteSurveyValues: SiteSurveyFormValues = {
   customerName: '',
@@ -57,6 +77,9 @@ export const defaultSiteSurveyValues: SiteSurveyFormValues = {
 }
 
 export function SiteSurveyLoadAssessmentForm() {
+  const { t } = useLocale()
+  const content = t.sharedForms.siteSurvey
+  const siteSurveySchema = createSiteSurveySchema(content.validation)
   const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {
     register,
@@ -83,7 +106,7 @@ export function SiteSurveyLoadAssessmentForm() {
     if (!isAllowed) {
       setError('email', {
         type: 'manual',
-        message: 'This email address appears risky or invalid. Please use a different email address.',
+        message: content.validation.riskyEmail,
       })
       return
     }
@@ -96,33 +119,34 @@ export function SiteSurveyLoadAssessmentForm() {
     if (!isAllowed) {
       setError('email', {
         type: 'manual',
-        message: 'This email address appears risky or invalid. Please use a different email address.',
+        message: content.validation.riskyEmail,
       })
       return
     }
 
-    const subject = `Site Survey & Load Assessment - ${data.customerName}`
+    const mail = content.mail
+    const subject = `${mail.subject} - ${data.customerName}`
     const body = [
-      `Customer Name: ${data.customerName}`,
-      `Email: ${data.email}`,
-      `Phone: ${data.phone}`,
-      `Property Type: ${data.propertyType}`,
-      `Site Address: ${data.siteAddress}`,
-      `City: ${data.city}`,
-      `Roof Type: ${data.roofType}`,
-      `Available Area: ${data.availableArea} sq ft`,
-      `Average Monthly Units: ${data.avgMonthlyUnits} kWh`,
-      `Peak Load: ${data.peakLoadKw} kW`,
-      `Backup Priority: ${data.backupPriority}`,
-      `Equipment / Loads: ${data.equipmentLoads}`,
-      `Expected Timeline: ${data.timeline}`,
+      `${mail.customerName}: ${data.customerName}`,
+      `${mail.email}: ${data.email}`,
+      `${mail.phone}: ${data.phone}`,
+      `${mail.propertyType}: ${data.propertyType}`,
+      `${mail.siteAddress}: ${data.siteAddress}`,
+      `${mail.city}: ${data.city}`,
+      `${mail.roofType}: ${data.roofType}`,
+      `${mail.availableArea}: ${data.availableArea} sq ft`,
+      `${mail.avgMonthlyUnits}: ${data.avgMonthlyUnits} kWh`,
+      `${mail.peakLoad}: ${data.peakLoadKw} kW`,
+      `${mail.backupPriority}: ${data.backupPriority}`,
+      `${mail.equipmentLoads}: ${data.equipmentLoads}`,
+      `${mail.timeline}: ${data.timeline}`,
       '',
-      'Notes:',
+      `${mail.notes}:`,
       data.notes,
     ].join('\n')
 
     const opened = submitMailtoForm({
-      to: 'customercare@aerosunenergy.in',
+      to: t.sharedForms.emailAddress,
       subject,
       body,
     })
@@ -134,7 +158,7 @@ export function SiteSurveyLoadAssessmentForm() {
     reset(defaultSiteSurveyValues)
     setSubmitFeedback({
       type: opened ? 'success' : 'error',
-      message: opened ? 'Your site survey request has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+      message: opened ? content.feedback.success : content.feedback.error,
     })
   }
 
@@ -148,18 +172,18 @@ export function SiteSurveyLoadAssessmentForm() {
               <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
                 <div>
                   <p className="text-[12px] font-black uppercase tracking-[0.38em] text-cyan-200/90">
-                    Site Survey
+                    {content.header.eyebrow}
                   </p>
                   <h1 className="mt-3 text-2xl font-black tracking-[0.06em] sm:text-4xl lg:text-[2.6rem]">
-                    Site Survey & Electricity-Load Assessment Form
+                    {content.header.title}
                   </h1>
                 </div>
                 <div className="rounded-2xl border border-white/15 bg-white/8 px-4 py-3 text-right backdrop-blur-sm">
                   <p className="text-[12px] font-bold uppercase tracking-[0.32em] text-cyan-100/80">
-                    Accurate assessment
+                    {content.header.assessment}
                   </p>
                   <p className="mt-1 text-md font-semibold text-emerald-200">
-                    For the right solution
+                    {content.header.solution}
                   </p>
                 </div>
               </div>
@@ -172,35 +196,35 @@ export function SiteSurveyLoadAssessmentForm() {
                     1
                   </span>
                   <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">
-                    Customer Information
+                    {content.sections.customerInformation}
                   </h2>
                 </div>
 
                 <div className="grid gap-4 md:grid-cols-2">
                   <Field
-                    label="Name*"
+                    label={content.fields.name}
                     name="customerName"
-                    placeholder="Enter your full name"
+                    placeholder={content.placeholders.name}
                     register={register}
                     error={errors.customerName}
                     compact
                   />
 
                   <Field
-                    label="Phone Number*"
+                    label={content.fields.phone}
                     name="phone"
                     type="tel"
-                    placeholder="+91 98765 43210"
+                    placeholder={content.placeholders.phone}
                     register={register}
                     error={errors.phone}
                     compact
                   />
 
                   <Field
-                    label="Email ID*"
+                    label={content.fields.email}
                     name="email"
                     type="email"
-                    placeholder="you@example.com"
+                    placeholder={content.placeholders.email}
                     register={register}
                     error={errors.email}
                     compact
@@ -208,9 +232,9 @@ export function SiteSurveyLoadAssessmentForm() {
                   />
 
                   <Field
-                    label="City*"
+                    label={content.fields.city}
                     name="city"
-                    placeholder="City / district"
+                    placeholder={content.placeholders.city}
                     register={register}
                     error={errors.city}
                     compact
@@ -218,9 +242,9 @@ export function SiteSurveyLoadAssessmentForm() {
 
                   <div className="md:col-span-2">
                     <Field
-                      label="Address*"
+                      label={content.fields.address}
                       name="siteAddress"
-                      placeholder="Plot / building / street address"
+                      placeholder={content.placeholders.address}
                       register={register}
                       error={errors.siteAddress}
                     />
@@ -234,26 +258,26 @@ export function SiteSurveyLoadAssessmentForm() {
                     2
                   </span>
                   <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">
-                    Project / Enquiry Details
+                    {content.sections.projectEnquiryDetails}
                   </h2>
                 </div>
 
                 <div className="grid gap-4">
                   <fieldset>
                     <legend className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
-                      Type of Project
+                      {content.fields.projectType}
                     </legend>
                     <div className="grid grid-cols-2 gap-2 rounded-2xl border border-emerald-200 bg-white/80 p-3 sm:grid-cols-3">
-                      {['Residential', 'Commercial', 'Industrial', 'Agricultural', 'Domestic', 'Other'].map((option) => (
-                        <label key={option} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-2.5 py-2 text-md font-medium text-slate-700">
+                      {content.projectTypes.map((option) => (
+                        <label key={option.value} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-2.5 py-2 text-md font-medium text-slate-700">
                           <input
                             type="radio"
-                            value={option}
+                            value={option.value}
                             {...register('propertyType')}
                             aria-describedby={errors.propertyType ? 'propertyType-error' : undefined}
                             className="h-4 w-4 accent-emerald-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
                           />
-                          <span>{option}</span>
+                          <span>{option.label}</span>
                         </label>
                       ))}
                     </div>
@@ -262,7 +286,7 @@ export function SiteSurveyLoadAssessmentForm() {
 
                   <div>
                     <label htmlFor="roofType" className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
-                      Roof Type
+                      {content.fields.roofType}
                     </label>
                     <select
                       id="roofType"
@@ -271,19 +295,15 @@ export function SiteSurveyLoadAssessmentForm() {
                       aria-describedby={errors.roofType ? 'roofType-error' : undefined}
                       className="w-full rounded-2xl border border-emerald-200 bg-white px-4 py-3 text-md text-slate-900 outline-none transition-all duration-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"
                     >
-                      <option value="">Select roof type</option>
-                      <option value="Concrete roof">Concrete roof</option>
-                      <option value="Metal sheet roof">Metal sheet roof</option>
-                      <option value="Ground mount">Ground mount</option>
-                      <option value="Open land / car park">Open land / car park</option>
-                      <option value="Rooftop with shading">Rooftop with shading</option>
+                      <option value="">{content.placeholders.selectRoofType}</option>
+                      {content.roofTypes.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
                     </select>
                     {errors.roofType && <p id="roofType-error" className="mt-2 text-md text-rose-600">{errors.roofType.message}</p>}
                   </div>
 
                   <div>
                     <label htmlFor="timeline" className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
-                      Preferred Timeline
+                      {content.fields.preferredTimeline}
                     </label>
                     <select
                       id="timeline"
@@ -292,12 +312,8 @@ export function SiteSurveyLoadAssessmentForm() {
                       aria-describedby={errors.timeline ? 'timeline-error' : undefined}
                       className="w-full rounded-2xl border border-emerald-200 bg-white px-4 py-3 text-md text-slate-900 outline-none transition-all duration-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"
                     >
-                      <option value="">Select timeline</option>
-                      <option value="Immediately">Immediately</option>
-                      <option value="Within 1 month">Within 1 month</option>
-                      <option value="1-3 months">1-3 months</option>
-                      <option value="3-6 months">3-6 months</option>
-                      <option value="Planning phase">Planning phase</option>
+                      <option value="">{content.placeholders.selectTimeline}</option>
+                      {content.timelines.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
                     </select>
                     {errors.timeline && <p id="timeline-error" className="mt-2 text-md text-rose-600">{errors.timeline.message}</p>}
                   </div>
@@ -310,33 +326,33 @@ export function SiteSurveyLoadAssessmentForm() {
                     3
                   </span>
                   <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">
-                    Site Location & Accessibility
+                    {content.sections.siteLocationAccessibility}
                   </h2>
                 </div>
 
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                   <Field
-                    label="Available Area*"
+                    label={content.fields.availableArea}
                     name="availableArea"
-                    placeholder="sq ft"
+                    placeholder={content.placeholders.availableArea}
                     register={register}
                     error={errors.availableArea}
                     compact
                   />
 
                   <Field
-                    label="Avg. Monthly Units*"
+                    label={content.fields.avgMonthlyUnits}
                     name="avgMonthlyUnits"
-                    placeholder="units"
+                    placeholder={content.placeholders.avgMonthlyUnits}
                     register={register}
                     error={errors.avgMonthlyUnits}
                     compact
                   />
 
                   <Field
-                    label="Peak Load (kW)*"
+                    label={content.fields.peakLoad}
                     name="peakLoadKw"
-                    placeholder="kW"
+                    placeholder={content.placeholders.peakLoad}
                     register={register}
                     error={errors.peakLoadKw}
                     compact
@@ -344,7 +360,7 @@ export function SiteSurveyLoadAssessmentForm() {
 
                   <div>
                     <label htmlFor="backupPriority" className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
-                      Backup Priority
+                      {content.fields.backupPriority}
                     </label>
                     <select
                       id="backupPriority"
@@ -353,11 +369,8 @@ export function SiteSurveyLoadAssessmentForm() {
                       aria-describedby={errors.backupPriority ? 'backupPriority-error' : undefined}
                       className="w-full rounded-2xl border border-violet-200 bg-white px-4 py-3 text-md text-slate-900 outline-none transition-all duration-200 focus:border-violet-500 focus:ring-4 focus:ring-violet-100"
                     >
-                      <option value="">Select</option>
-                      <option value="Essential loads only">Essential loads only</option>
-                      <option value="Partial backup">Partial backup</option>
-                      <option value="Full backup for all loads">Full backup for all loads</option>
-                      <option value="Export to grid">Export to grid</option>
+                      <option value="">{content.placeholders.select}</option>
+                      {content.backupPriorities.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
                     </select>
                     {errors.backupPriority && <p id="backupPriority-error" className="mt-2 text-md text-rose-600">{errors.backupPriority.message}</p>}
                   </div>
@@ -370,20 +383,20 @@ export function SiteSurveyLoadAssessmentForm() {
                     4
                   </span>
                   <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">
-                    Site Conditions
+                    {content.sections.siteConditions}
                   </h2>
                 </div>
 
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="md:col-span-2">
                     <label htmlFor="equipmentLoads" className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
-                      Major Equipment / Load Details
+                      {content.fields.equipmentLoadDetails}
                     </label>
                     <textarea
                       id="equipmentLoads"
                       {...register('equipmentLoads')}
                       rows={5}
-                      placeholder="Example: 3 ACs, 20 LED lights, 3 HP water pump, 2 computers, 5 kW motor load..."
+                      placeholder={content.placeholders.equipmentLoads}
                       aria-invalid={Boolean(errors.equipmentLoads)}
                       aria-describedby={errors.equipmentLoads ? 'equipmentLoads-error' : undefined}
                       className="w-full rounded-2xl border border-amber-200 bg-white px-4 py-3 text-md text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-amber-500 focus:ring-4 focus:ring-amber-100"
@@ -399,34 +412,34 @@ export function SiteSurveyLoadAssessmentForm() {
                     5
                   </span>
                   <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">
-                    Solar Resource Assessment
+                    {content.sections.solarResourceAssessment}
                   </h2>
                 </div>
 
                 <div className="grid gap-4 md:grid-cols-2">
                   <Field
-                    label="Daily Sunlight (approx.)"
-                    placeholder="hours/day"
+                    label={content.fields.dailySunlight}
+                    placeholder={content.placeholders.dailySunlight}
                     register={register}
                     compact
                   />
 
                   <Field
-                    label="Available Roof / Land Area"
-                    placeholder="sq m"
+                    label={content.fields.availableRoofArea}
+                    placeholder={content.placeholders.availableRoofArea}
                     register={register}
                     compact
                   />
 
                   <div className="md:col-span-2">
                     <label htmlFor="notes" className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
-                      Remarks / Photos
+                      {content.fields.remarksPhotos}
                     </label>
                     <textarea
                       id="notes"
                       {...register('notes')}
                       rows={4}
-                      placeholder="Add notes for the survey team, shading observations, or technical constraints."
+                      placeholder={content.placeholders.notes}
                       aria-invalid={Boolean(errors.notes)}
                       aria-describedby={errors.notes ? 'notes-error' : undefined}
                       className="w-full rounded-2xl border border-emerald-200 bg-white px-4 py-3 text-md text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"
@@ -442,35 +455,35 @@ export function SiteSurveyLoadAssessmentForm() {
                     6
                   </span>
                   <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">
-                    Existing Electrical Connection
+                    {content.sections.existingElectricalConnection}
                   </h2>
                 </div>
 
                 <div className="grid gap-4 md:grid-cols-2">
                   <Field
-                    label="Supply Type"
-                    placeholder="Single Phase / Three Phase"
+                    label={content.fields.supplyType}
+                    placeholder={content.placeholders.supplyType}
                     register={register}
                     compact
                   />
 
                   <Field
-                    label="Connected Load"
-                    placeholder="kW / kVA"
+                    label={content.fields.connectedLoad}
+                    placeholder={content.placeholders.connectedLoad}
                     register={register}
                     compact
                   />
 
                   <Field
-                    label="Meter Type"
-                    placeholder="Single / Net / Bi-directional"
+                    label={content.fields.meterType}
+                    placeholder={content.placeholders.meterType}
                     register={register}
                     compact
                   />
 
                   <Field
-                    label="Tariff Category"
-                    placeholder="Domestic / Commercial"
+                    label={content.fields.tariffCategory}
+                    placeholder={content.placeholders.tariffCategory}
                     register={register}
                     compact
                   />
@@ -483,19 +496,19 @@ export function SiteSurveyLoadAssessmentForm() {
                     7
                   </span>
                   <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">
-                    Detailed Electricity Load Assessment
+                    {content.sections.detailedLoadAssessment}
                   </h2>
                 </div>
 
                 <div className="overflow-x-auto rounded-2xl border border-cyan-200 bg-white/80">
-                  <table className="w-full min-w-[640px] border-collapse text-left" aria-label="Electricity load details">
+                  <table className="w-full min-w-[640px] border-collapse text-left" aria-label={content.loadTable.ariaLabel}>
                     <thead>
                       <tr className="border-b border-cyan-200 bg-cyan-50 text-[12px] font-black uppercase tracking-[0.2em] text-slate-700">
-                        <th scope="col" className="px-3 py-3">No.</th>
-                        <th scope="col" className="px-3 py-3">Equipment</th>
-                        <th scope="col" className="px-3 py-3">Quantity</th>
-                        <th scope="col" className="px-3 py-3">Power</th>
-                        <th scope="col" className="px-3 py-3">Daily Usage</th>
+                        <th scope="col" className="px-3 py-3">{content.loadTable.number}</th>
+                        <th scope="col" className="px-3 py-3">{content.loadTable.equipment}</th>
+                        <th scope="col" className="px-3 py-3">{content.loadTable.quantity}</th>
+                        <th scope="col" className="px-3 py-3">{content.loadTable.power}</th>
+                        <th scope="col" className="px-3 py-3">{content.loadTable.dailyUsage}</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -503,16 +516,16 @@ export function SiteSurveyLoadAssessmentForm() {
                         <tr key={row} className="border-b border-cyan-100 last:border-b-0">
                           <th scope="row" className="border-r border-cyan-100 px-3 py-3 text-md font-semibold text-slate-700">{row}</th>
                           <td className="border-r border-cyan-100 px-3 py-3">
-                            <input aria-label={`Equipment for load ${row}`} className="w-full bg-transparent text-md text-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700" placeholder="Equipment" />
+                            <input aria-label={content.loadTable.equipmentForLoad.replace('{row}', String(row))} className="w-full bg-transparent text-md text-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700" placeholder={content.placeholders.equipment} />
                           </td>
                           <td className="border-r border-cyan-100 px-3 py-3">
-                            <input aria-label={`Quantity for load ${row}`} type="number" min="0" inputMode="numeric" className="w-full bg-transparent text-md text-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700" placeholder="Qty" />
+                            <input aria-label={content.loadTable.quantityForLoad.replace('{row}', String(row))} type="number" min="0" inputMode="numeric" className="w-full bg-transparent text-md text-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700" placeholder={content.placeholders.quantity} />
                           </td>
                           <td className="border-r border-cyan-100 px-3 py-3">
-                            <input aria-label={`Power in watts for load ${row}`} type="number" min="0" inputMode="numeric" className="w-full bg-transparent text-md text-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700" placeholder="W" />
+                            <input aria-label={content.loadTable.powerForLoad.replace('{row}', String(row))} type="number" min="0" inputMode="numeric" className="w-full bg-transparent text-md text-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700" placeholder={content.placeholders.power} />
                           </td>
                           <td className="px-3 py-3">
-                            <input aria-label={`Daily usage in hours for load ${row}`} type="number" min="0" max="24" inputMode="decimal" className="w-full bg-transparent text-md text-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700" placeholder="hrs" />
+                            <input aria-label={content.loadTable.dailyUsageForLoad.replace('{row}', String(row))} type="number" min="0" max="24" inputMode="decimal" className="w-full bg-transparent text-md text-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700" placeholder={content.placeholders.dailyUsage} />
                           </td>
                         </tr>
                       ))}
@@ -527,15 +540,15 @@ export function SiteSurveyLoadAssessmentForm() {
                     8
                   </span>
                   <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">
-                    Special Requirements
+                    {content.sections.specialRequirements}
                   </h2>
                 </div>
 
                 <div className="grid gap-3 sm:grid-cols-2">
-                  {['Battery Backup Required', 'EV Charging', 'Solar Water Pump', 'Hybrid System', 'Power Quality Issues', 'Other'].map((option) => (
-                    <label key={option} className="flex items-center gap-2 rounded-xl border border-rose-200 bg-white px-3 py-2.5 text-md font-medium text-slate-700">
+                  {content.specialRequirements.map((option) => (
+                    <label key={option.value} className="flex items-center gap-2 rounded-xl border border-rose-200 bg-white px-3 py-2.5 text-md font-medium text-slate-700">
                       <input type="checkbox" className="h-4 w-4 accent-rose-600" />
-                      <span>{option}</span>
+                      <span>{option.label}</span>
                     </label>
                   ))}
                 </div>
@@ -547,32 +560,32 @@ export function SiteSurveyLoadAssessmentForm() {
                     9
                   </span>
                   <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">
-                    Survey Findings & Recommendation
+                    {content.sections.surveyFindings}
                   </h2>
                 </div>
 
                 <div className="space-y-4">
                   <div className="grid gap-4 md:grid-cols-2">
                     <Field
-                      label="Recommended System Size"
-                      placeholder="kW"
+                      label={content.fields.recommendedSystemSize}
+                      placeholder={content.placeholders.recommendedSystemSize}
                       register={register}
                       compact
                     />
                     <Field
-                      label="Battery Storage"
-                      placeholder="kWh"
+                      label={content.fields.batteryStorage}
+                      placeholder={content.placeholders.batteryStorage}
                       register={register}
                       compact
                     />
                   </div>
                   <div>
                     <label htmlFor="notes" className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
-                      Key Observations
+                      {content.fields.keyObservations}
                     </label>
                     <textarea
                       rows={4}
-                      placeholder="Summarize key observations and next recommended steps."
+                      placeholder={content.placeholders.keyObservations}
                       className="w-full rounded-2xl border border-lime-200 bg-white px-4 py-3 text-md text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-lime-500 focus:ring-4 focus:ring-lime-100"
                     />
                   </div>
@@ -585,7 +598,7 @@ export function SiteSurveyLoadAssessmentForm() {
                 <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-base text-slate-950 shadow-md shadow-emerald-500/20">
                   ✓
                 </span>
-                Customer Acknowledgement
+                {content.fields.customerAcknowledgement}
               </div>
 
               <button
@@ -593,7 +606,7 @@ export function SiteSurveyLoadAssessmentForm() {
                 disabled={isSubmitting}
                 className="inline-flex w-full items-center justify-center rounded-full bg-white px-5 py-3 text-md font-semibold text-slate-900 transition-all duration-200 hover:-translate-y-0.5 hover:bg-sky-100 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                {isSubmitting ? 'Submitting...' : 'Submit site survey'}
+                {isSubmitting ? content.submitting : content.submit}
               </button>
 
               {submitFeedback ? (
@@ -601,7 +614,7 @@ export function SiteSurveyLoadAssessmentForm() {
                   {submitFeedback.message}
                 </p>
               ) : isSubmitSuccessful && (
-                <p className="text-md font-medium text-emerald-300">Your site survey request has been prepared in your email app.</p>
+                <p className="text-md font-medium text-emerald-300">{content.feedback.success}</p>
               )}
             </div>
           </form>

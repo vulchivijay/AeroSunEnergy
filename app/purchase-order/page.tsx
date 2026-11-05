@@ -6,31 +6,32 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
 import { submitMailtoForm } from '@/lib/submitMailto'
+import { useLocale } from '@/lib/LocaleContext'
 
-const purchaseOrderSchema = z.object({
-  customerName: z.string().trim().min(2, 'Customer name is required.'),
+const createPurchaseOrderSchema = (validation: typeof import('@/public/locales/en/index.json').businessForms.purchaseOrder.validation) => z.object({
+  customerName: z.string().trim().min(2, validation.customerName),
   companyName: z.string().trim().optional().or(z.literal('')),
-  email: z.string().trim().email('Please enter a valid email address.'),
+  email: z.string().trim().email(validation.email),
   phone: z
     .string()
     .trim()
-    .min(10, 'Phone number must be at least 10 digits.')
-    .regex(/^[0-9+()\-\s]+$/, 'Phone number can contain only digits, spaces, +, (, ), and -.'),
-  poNumber: z.string().trim().min(2, 'Please enter the purchase order number.'),
-  projectTitle: z.string().trim().min(3, 'Please enter the project title.'),
-  supplierName: z.string().trim().min(2, 'Please enter the supplier name.'),
-  productLine: z.string().min(1, 'Please select the product line.'),
-  quantity: z.string().trim().min(1, 'Please enter the quantity.'),
-  unitPrice: z.string().trim().min(1, 'Please enter the unit price.'),
-  totalValue: z.string().trim().min(1, 'Please enter the total value.'),
-  deliverySchedule: z.string().trim().min(3, 'Please enter the delivery schedule.'),
-  warranty: z.string().trim().min(3, 'Please enter the warranty details.'),
+    .min(10, validation.phoneLength)
+    .regex(/^[0-9+()\-\s]+$/, validation.phoneFormat),
+  poNumber: z.string().trim().min(2, validation.poNumber),
+  projectTitle: z.string().trim().min(3, validation.projectTitle),
+  supplierName: z.string().trim().min(2, validation.supplierName),
+  productLine: z.string().min(1, validation.productLine),
+  quantity: z.string().trim().min(1, validation.quantity),
+  unitPrice: z.string().trim().min(1, validation.unitPrice),
+  totalValue: z.string().trim().min(1, validation.totalValue),
+  deliverySchedule: z.string().trim().min(3, validation.deliverySchedule),
+  warranty: z.string().trim().min(3, validation.warranty),
   termsAccepted: z.boolean().refine((value) => value === true, {
-    message: 'Please accept the purchase terms and agreement.',
+    message: validation.termsAccepted,
   }),
 })
 
-type PurchaseOrderFormValues = z.infer<typeof purchaseOrderSchema>
+type PurchaseOrderFormValues = z.infer<ReturnType<typeof createPurchaseOrderSchema>>
 
 const defaultValues: PurchaseOrderFormValues = {
   customerName: '',
@@ -50,6 +51,9 @@ const defaultValues: PurchaseOrderFormValues = {
 }
 
 export default function PurchaseOrderPage() {
+  const { t } = useLocale()
+  const content = t.businessForms.purchaseOrder
+  const { labels } = content
   const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {
     register,
@@ -57,33 +61,34 @@ export default function PurchaseOrderPage() {
     reset,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<PurchaseOrderFormValues>({
-    resolver: zodResolver(purchaseOrderSchema),
+    resolver: zodResolver(createPurchaseOrderSchema(content.validation)),
     defaultValues,
     mode: 'onBlur',
     reValidateMode: 'onChange',
   })
 
   const onSubmit = (data: PurchaseOrderFormValues) => {
-    const subject = `Purchase Order Confirmation - ${data.poNumber}`
+    const emailText = content.email
+    const subject = emailText.subject.replace('{poNumber}', data.poNumber)
     const body = [
-      'PURCHASE ORDER AND SUPPLIER AGREEMENT',
-      '===================================',
+      emailText.title,
+      emailText.separator,
       '',
-      `Customer Name: ${data.customerName}`,
-      `Company Name: ${data.companyName || 'Not provided'}`,
-      `Email: ${data.email}`,
-      `Phone: ${data.phone}`,
-      `PO Number: ${data.poNumber}`,
-      `Project Title: ${data.projectTitle}`,
-      `Supplier Name: ${data.supplierName}`,
-      `Product Line: ${data.productLine}`,
-      `Quantity: ${data.quantity}`,
-      `Unit Price: ${data.unitPrice}`,
-      `Total Value: ${data.totalValue}`,
-      `Delivery Schedule: ${data.deliverySchedule}`,
-      `Warranty: ${data.warranty}`,
+      `${emailText.customerName}: ${data.customerName}`,
+      `${emailText.companyName}: ${data.companyName || emailText.notProvided}`,
+      `${emailText.email}: ${data.email}`,
+      `${emailText.phone}: ${data.phone}`,
+      `${emailText.poNumber}: ${data.poNumber}`,
+      `${emailText.projectTitle}: ${data.projectTitle}`,
+      `${emailText.supplierName}: ${data.supplierName}`,
+      `${emailText.productLine}: ${data.productLine}`,
+      `${emailText.quantity}: ${data.quantity}`,
+      `${emailText.unitPrice}: ${data.unitPrice}`,
+      `${emailText.totalValue}: ${data.totalValue}`,
+      `${emailText.deliverySchedule}: ${data.deliverySchedule}`,
+      `${emailText.warranty}: ${data.warranty}`,
       '',
-      'Terms accepted by customer: Yes',
+      emailText.termsAccepted,
     ].join('\n')
 
     const opened = submitMailtoForm({
@@ -95,7 +100,7 @@ export default function PurchaseOrderPage() {
     reset(defaultValues)
     setSubmitFeedback({
       type: opened ? 'success' : 'error',
-      message: opened ? 'Your purchase order has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+      message: opened ? content.feedback.success : content.feedback.error,
     })
   }
 
@@ -104,13 +109,13 @@ export default function PurchaseOrderPage() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 text-center">
           <span className="inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-4 py-2 text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700 shadow-sm backdrop-blur-sm">
-            Purchase order
+            {labels.badge}
           </span>
           <h1 className="mt-5 text-4xl font-black tracking-[0.06em] text-slate-900 sm:text-5xl">
-            Purchase order and supplier agreement template
+            {labels.title}
           </h1>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-slate-600">
-            Use this template to record the purchase order, commercial terms, delivery expectations, and supplier agreement acceptance for renewable energy equipment and services.
+            {labels.description}
           </p>
         </div>
 
@@ -119,40 +124,37 @@ export default function PurchaseOrderPage() {
             <CardContent className="p-5 sm:p-7 lg:p-8">
               <div className="space-y-6">
                 <section>
-                  <h2 className="text-xl font-bold text-slate-900">1. Purchase order summary</h2>
+                  <h2 className="text-xl font-bold text-slate-900">{labels.sections.summary.title}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600">
-                    This purchase order confirms the supply of equipment, materials, installation support, or associated services as agreed between the buyer and the supplier. Final order details are governed by the approved scope, pricing, timelines, and commercial conditions described in this document.
+                    {labels.sections.summary.text}
                   </p>
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-bold text-slate-900">2. Commercial terms</h2>
+                  <h2 className="text-xl font-bold text-slate-900">{labels.sections.commercialTerms.title}</h2>
                   <div className="mt-3 space-y-3 text-md leading-7 text-slate-600">
-                    <p><span className="font-semibold text-slate-800">Advance payment:</span> 30% of the total contract value is payable on order confirmation.</p>
-                    <p><span className="font-semibold text-slate-800">Procurement stage:</span> 40% is payable upon equipment procurement and dispatch scheduling.</p>
-                    <p><span className="font-semibold text-slate-800">Installation stage:</span> 20% is payable upon site installation and commissioning verification.</p>
-                    <p><span className="font-semibold text-slate-800">Final settlement:</span> 10% is retained until final documentation, testing, and closing formalities are completed.</p>
+                    {labels.sections.commercialTerms.items.map((item) => <p key={item.label}><span className="font-semibold text-slate-800">{item.label}</span> {item.text}</p>)}
                   </div>
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-bold text-slate-900">3. Delivery and execution</h2>
+                  <h2 className="text-xl font-bold text-slate-900">{labels.sections.delivery.title}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600">
-                    The supplier shall provide goods and services in accordance with the agreed schedule, quality standards, and site access conditions. Delivery timelines may be revised if client approvals, import constraints, weather, or local access conditions affect execution.
+                    {labels.sections.delivery.text}
                   </p>
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-bold text-slate-900">4. Warranty and support</h2>
+                  <h2 className="text-xl font-bold text-slate-900">{labels.sections.warranty.title}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600">
-                    All supplied equipment, materials, and installation workmanship are subject to the applicable manufacturer warranty and service support terms. Maintenance, after-sales service, and AMC arrangements will be governed by the final scope and contract documents.
+                    {labels.sections.warranty.text}
                   </p>
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-bold text-slate-900">5. Risk and compliance</h2>
+                  <h2 className="text-xl font-bold text-slate-900">{labels.sections.riskCompliance.title}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600">
-                    The supplier shall comply with all relevant quality, safety, labour, and statutory requirements applicable to the project. The buyer remains responsible for site access, local permissions, and any third-party approvals required for project execution.
+                    {labels.sections.riskCompliance.text}
                   </p>
                 </section>
               </div>
@@ -161,71 +163,71 @@ export default function PurchaseOrderPage() {
 
           <Card className="overflow-hidden border border-emerald-100 bg-linear-to-br from-slate-950 via-slate-900 to-emerald-950 text-white shadow-[0_25px_80px_rgba(15,23,42,0.12)]">
             <CardContent className="p-5 sm:p-7">
-              <p className="text-[12px] font-semibold uppercase tracking-[0.32em] text-emerald-200">Order acceptance</p>
-              <h2 className="mt-3 text-2xl font-semibold">Confirm order details</h2>
+              <p className="text-[12px] font-semibold uppercase tracking-[0.32em] text-emerald-200">{labels.formTitle}</p>
+              <h2 className="mt-3 text-2xl font-semibold">{labels.formHeading}</h2>
 
               <form onSubmit={handleSubmit(onSubmit)} noValidate className="mt-6 space-y-4">
                 <Field
-                  label="Customer name"
+                  label={labels.fields.customerName.label}
                   name="customerName"
-                  placeholder="Enter your full name"
+                  placeholder={labels.fields.customerName.placeholder}
                   register={register}
                   error={errors.customerName}
                 />
 
                 <Field
-                  label="Company name"
+                  label={labels.fields.companyName.label}
                   name="companyName"
-                  placeholder="Optional company / organization"
+                  placeholder={labels.fields.companyName.placeholder}
                   register={register}
                   error={errors.companyName}
                 />
 
                 <Field
-                  label="Email address"
+                  label={labels.fields.email.label}
                   name="email"
                   type="email"
-                  placeholder="you@example.com"
+                  placeholder={labels.fields.email.placeholder}
                   register={register}
                   error={errors.email}
                 />
 
                 <Field
-                  label="Phone number"
+                  label={labels.fields.phone.label}
                   name="phone"
                   type="tel"
-                  placeholder="+91 98765 43210"
+                  placeholder={labels.fields.phone.placeholder}
                   register={register}
                   error={errors.phone}
                 />
 
                 <Field
-                  label="Purchase order number"
+                  label={labels.fields.poNumber.label}
                   name="poNumber"
-                  placeholder="PO-2026-001"
+                  placeholder={labels.fields.poNumber.placeholder}
                   register={register}
                   error={errors.poNumber}
                 />
 
                 <Field
-                  label="Project title"
+                  label={labels.fields.projectTitle.label}
                   name="projectTitle"
-                  placeholder="Residential solar installation"
+                  placeholder={labels.fields.projectTitle.placeholder}
                   register={register}
                   error={errors.projectTitle}
                 />
 
                 <Field
-                  label="Supplier name"
+                  label={labels.fields.supplierName.label}
                   name="supplierName"
-                  placeholder="Supplier / vendor name"
+                  placeholder={labels.fields.supplierName.placeholder}
                   register={register}
                   error={errors.supplierName}
                 />
 
                 <div>
                   <label htmlFor="productLine" className="mb-2 block text-md font-semibold text-slate-100">
-                    Product line
+                    {labels.fields.productLine.label}
                   </label>
                   <select
                     id="productLine"
@@ -234,53 +236,48 @@ export default function PurchaseOrderPage() {
                     aria-describedby={errors.productLine ? 'productLine-error' : undefined}
                     className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-600/30"
                   >
-                    <option value="" className="text-slate-900">Select product line</option>
-                    <option value="Solar PV modules" className="text-slate-900">Solar PV modules</option>
-                    <option value="Inverters and controllers" className="text-slate-900">Inverters and controllers</option>
-                    <option value="Batteries and storage" className="text-slate-900">Batteries and storage</option>
-                    <option value="Wind turbine equipment" className="text-slate-900">Wind turbine equipment</option>
-                    <option value="Mounting and balance of system" className="text-slate-900">Mounting and balance of system</option>
-                    <option value="Maintenance and AMC" className="text-slate-900">Maintenance and AMC</option>
+                    <option value="" className="text-slate-900">{labels.fields.productLine.placeholder}</option>
+                    {labels.productOptions.map((option) => <option key={option} value={option} className="text-slate-900">{option}</option>)}
                   </select>
                   {errors.productLine && <p id="productLine-error" className="mt-2 text-md text-rose-300">{errors.productLine.message}</p>}
                 </div>
 
                 <Field
-                  label="Quantity"
+                  label={labels.fields.quantity.label}
                   name="quantity"
-                  placeholder="Example: 12 units"
+                  placeholder={labels.fields.quantity.placeholder}
                   register={register}
                   error={errors.quantity}
                 />
 
                 <Field
-                  label="Unit price"
+                  label={labels.fields.unitPrice.label}
                   name="unitPrice"
-                  placeholder="Example: ₹42,000"
+                  placeholder={labels.fields.unitPrice.placeholder}
                   register={register}
                   error={errors.unitPrice}
                 />
 
                 <Field
-                  label="Total value"
+                  label={labels.fields.totalValue.label}
                   name="totalValue"
-                  placeholder="Example: ₹5,04,000"
+                  placeholder={labels.fields.totalValue.placeholder}
                   register={register}
                   error={errors.totalValue}
                 />
 
                 <Field
-                  label="Delivery schedule"
+                  label={labels.fields.deliverySchedule.label}
                   name="deliverySchedule"
-                  placeholder="Example: 30-45 days from order confirmation"
+                  placeholder={labels.fields.deliverySchedule.placeholder}
                   register={register}
                   error={errors.deliverySchedule}
                 />
 
                 <Field
-                  label="Warranty details"
+                  label={labels.fields.warranty.label}
                   name="warranty"
-                  placeholder="Example: 5 years product warranty"
+                  placeholder={labels.fields.warranty.placeholder}
                   register={register}
                   error={errors.warranty}
                 />
@@ -292,7 +289,7 @@ export default function PurchaseOrderPage() {
                     className="mt-1 h-4 w-4 rounded border-slate-300 text-emerald-500 focus:ring-emerald-400"
                   />
                   <span>
-                    I accept the purchase order terms, commercial conditions, and supplier agreement as stated above.
+                    {labels.fields.termsAccepted}
                   </span>
                 </label>
                 {errors.termsAccepted && <p className="text-md text-rose-300">{errors.termsAccepted.message}</p>}
@@ -302,7 +299,7 @@ export default function PurchaseOrderPage() {
                   disabled={isSubmitting}
                   className="inline-flex w-full items-center justify-center rounded-full bg-white px-5 py-3 text-md font-semibold text-slate-900 transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-100 disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {isSubmitting ? 'Submitting...' : 'Confirm purchase order'}
+                  {isSubmitting ? labels.submitting : labels.submit}
                 </button>
 
                 {submitFeedback ? (
@@ -310,7 +307,7 @@ export default function PurchaseOrderPage() {
                     {submitFeedback.message}
                   </p>
                 ) : isSubmitSuccessful && (
-                  <p className="text-md font-medium text-emerald-300">Your purchase order has been prepared in your email app.</p>
+                  <p className="text-md font-medium text-emerald-300">{content.feedback.success}</p>
                 )}
               </form>
             </CardContent>

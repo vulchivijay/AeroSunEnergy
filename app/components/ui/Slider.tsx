@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useEffect, useRef, useState } from 'react'
+import { useLocale } from '@/lib/LocaleContext'
 
 type SliderProps = {
   children: React.ReactNode
@@ -17,8 +18,11 @@ export default function Slider({
   autoplay = false,
   interval = 5000,
   pauseOnHover = true,
-  ariaLabel = 'Featured content',
+  ariaLabel,
 }: SliderProps) {
+  const { t } = useLocale()
+  const carousel = t.carousel
+  const regionLabel = ariaLabel ?? carousel.regionLabel
   const slidesArray = React.Children.toArray(children)
   const count = slidesArray.length
   const hasMultipleSlides = count > 1
@@ -166,7 +170,7 @@ export default function Slider({
 
   if (count === 1) {
     return (
-      <div role="region" aria-label={ariaLabel} className={`w-full relative overflow-hidden ${className}`}>
+      <div role="region" aria-label={regionLabel} className={`w-full relative overflow-hidden ${className}`}>
         <div className="w-full">{slidesArray[0]}</div>
       </div>
     )
@@ -176,8 +180,8 @@ export default function Slider({
     <div
       ref={viewportRef}
       role="region"
-      aria-roledescription="carousel"
-      aria-label={ariaLabel}
+      aria-roledescription={carousel.roleDescription}
+      aria-label={regionLabel}
       aria-live={autoplay && !rotationPaused ? 'off' : 'polite'}
       tabIndex={0}
       onKeyDown={onKeyDown}
@@ -201,8 +205,10 @@ export default function Slider({
             className="h-full shrink-0"
             style={{ width: slideWidth > 0 ? `${slideWidth}px` : `${percentPerSlide}%` }}
             role="group"
-            aria-roledescription="slide"
-            aria-label={`${i === 0 ? count : i === clonedSlides.length - 1 ? 1 : i} of ${count}`}
+            aria-roledescription={carousel.slideRoleDescription}
+            aria-label={carousel.slidePosition
+              .replace('{current}', String(i === 0 ? count : i === clonedSlides.length - 1 ? 1 : i))
+              .replace('{total}', String(count))}
             aria-hidden={i !== position}
             inert={i !== position}
           >
@@ -213,7 +219,7 @@ export default function Slider({
 
       <button
         type="button"
-        aria-label="Previous slide"
+        aria-label={carousel.previousSlide}
         onClick={prev}
         className="absolute left-4 top-1/2 -translate-y-1/2 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-black/30 text-white shadow-lg transition hover:bg-black/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
       >
@@ -221,7 +227,7 @@ export default function Slider({
       </button>
       <button
         type="button"
-        aria-label="Next slide"
+        aria-label={carousel.nextSlide}
         onClick={next}
         className="absolute right-4 top-1/2 -translate-y-1/2 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-black/30 text-white shadow-lg transition hover:bg-black/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
       >
@@ -237,7 +243,7 @@ export default function Slider({
                 key={i}
                 type="button"
                 onClick={() => goToSlide(i)}
-                aria-label={`Go to slide ${i + 1}`}
+                aria-label={carousel.goToSlide.replace('{number}', String(i + 1))}
                 aria-current={isActive ? 'true' : undefined}
                 className="group flex h-11 w-11 shrink-0 items-center justify-center rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-white"
               >

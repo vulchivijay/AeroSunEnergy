@@ -1,4 +1,12 @@
+'use client'
+
+import { useLocale } from '@/lib/LocaleContext'
+
 export default function FormWarningRibbon() {
+  const { t } = useLocale()
+  const content = t.sharedForms.warningRibbon
+  const email = t.sharedForms.emailAddress
+
   return (
     <div className="w-full">
       <div className="relative overflow-hidden rounded-b-2xl border border-amber-300/90 bg-[linear-gradient(135deg,#fff7ed_0%,#fef3c7_40%,#fffbeb_100%)] shadow-[0_10px_30px_-18px_rgba(146,64,14,0.8)]">
@@ -24,15 +32,15 @@ export default function FormWarningRibbon() {
 
             <div className="flex flex-wrap items-center justify-center gap-2 text-md text-amber-900 sm:text-base">
               <span className="inline-flex rounded-full border border-amber-300 bg-white/80 px-2.5 py-1 text-[12px] font-black uppercase tracking-[0.2em] text-amber-800">
-                Notice
+                {content.notice}
               </span>
               <span className="text-center leading-relaxed">
-                Forms functionality failing due to server issues. Please mail at{' '}
+                {content.message}{' '}
                 <a
-                  href="mailto:customercare@aerosunenergy.in"
+                  href={`mailto:${email}`}
                   className="text-amber-900 underline decoration-1 underline-offset-2 transition hover:text-orange-700"
                 >
-                  customercare@aerosunenergy.in
+                  {email}
                 </a>
               </span>
             </div>

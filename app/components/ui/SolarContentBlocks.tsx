@@ -183,12 +183,6 @@ export const solarSubsidyCards = [
   },
 ]
 
-export const solarCapacityRows = [
-  { usage: '0–150 units', capacity: '1–2 kW', tag: 'Ideal for small homes' },
-  { usage: '150–300 units', capacity: '2–3 kW', tag: 'Balanced family needs' },
-  { usage: '> 300 units', capacity: 'Above 3 kW', tag: 'High-consumption homes' },
-]
-
 export function SectionEyebrow({ children }: { children: ReactNode }) {
   return (
     <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f0fdfa_45%,#ffffff_100%)] px-3.5 py-2 shadow-[0_14px_26px_-20px_rgba(16,185,129,0.9)]">
@@ -321,17 +315,17 @@ export function InfoPanel({
 
 export function CapacityTable() {
   const { t } = useLocale()
-  const ui = t.ui ?? {}
+  const ui = t.ui
 
   return (
     <div className="overflow-x-auto rounded-[1.9rem] border border-emerald-200 bg-white shadow-[0_20px_34px_-24px_rgba(16,185,129,0.3)] [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400">
       <div className="min-w-[620px]">
         <div className="grid border-b border-emerald-100 bg-[linear-gradient(90deg,#ecfdf5_0%,#ffffff_50%,#eff6ff_100%)] text-[12px] font-bold uppercase tracking-[0.2em] text-slate-600 md:grid-cols-3">
-          <div className="px-4 py-3">{ui.averageMonthlyUsage ?? 'Average monthly usage'}</div>
-          <div className="px-4 py-3">{ui.suitableRooftopCapacity ?? 'Suitable rooftop capacity'}</div>
-          <div className="px-4 py-3">{ui.bestFit ?? 'Best fit'}</div>
+          <div className="px-4 py-3">{ui.averageMonthlyUsage}</div>
+          <div className="px-4 py-3">{ui.suitableRooftopCapacity}</div>
+          <div className="px-4 py-3">{ui.bestFit}</div>
         </div>
-        {solarCapacityRows.map((row) => (
+        {t.solarPage.capacityTable.rows.map((row) => (
           <div key={row.usage} className="grid gap-3 px-4 py-4 text-base text-slate-700 md:grid-cols-3 md:gap-0">
             <div className="font-semibold text-slate-900">{row.usage}</div>
             <div className="font-black text-emerald-700">{row.capacity}</div>

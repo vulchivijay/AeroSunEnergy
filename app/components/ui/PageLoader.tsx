@@ -1,16 +1,25 @@
 "use client"
 
 import React from 'react'
+import { useLocale } from '@/lib/LocaleContext'
 
 export default function PageLoader() {
+  const { t } = useLocale()
+  const content = t.systemUi.pageLoader
+
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-white/85 backdrop-blur-sm dark:bg-slate-950/80">
+    <div
+      role="status"
+      aria-live="polite"
+      aria-label={content.accessibilityLabel}
+      className="fixed inset-0 z-[60] flex items-center justify-center bg-white/85 backdrop-blur-sm dark:bg-slate-950/80"
+    >
       <div className="w-full max-w-md px-6">
         <div className="mb-6 flex items-center justify-between text-[12px] font-semibold uppercase tracking-[0.32em] text-slate-600 dark:text-slate-300">
-          <span>Loading</span>
+          <span>{content.loading}</span>
           <span className="inline-flex items-center gap-2">
-            <span className="page-loader-spinner h-3.5 w-3.5 rounded-full border-2 border-[#20A44A]/30 border-t-[#20A44A]" />
-            Route
+            <span aria-hidden="true" className="page-loader-spinner h-3.5 w-3.5 rounded-full border-2 border-[#20A44A]/30 border-t-[#20A44A]" />
+            {content.route}
           </span>
         </div>
 

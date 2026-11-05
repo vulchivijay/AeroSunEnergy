@@ -48,15 +48,7 @@ function getDuration(date: Date): Duration {
 export default function CompanyAge() {
 	const { locale, t } = useLocale()
 	const [duration, setDuration] = useState<Duration | null>(null)
-	const companyAge = t.companyAge ?? {
-		operatingSince: 'Operating since',
-		year: 'year',
-		years: 'years',
-		month: 'month',
-		months: 'months',
-		day: 'day',
-		days: 'days',
-	}
+	const companyAge = t.companyAge
 
 	useEffect(() => {
 		const updateDuration = () => setDuration(getDuration(new Date()))

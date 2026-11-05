@@ -58,7 +58,7 @@ export function HybridFeatureCard({
   accent?: 'emerald' | 'sky' | 'violet' | 'amber'
 }) {
   const { t } = useLocale()
-  const ui = t.ui ?? {}
+  const ui = t.ui
   const accentClasses: Record<typeof accent, string> = {
     emerald: 'border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f8fffb_50%,#ffffff_100%)] text-emerald-700',
     sky: 'border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#f8fbff_50%,#ffffff_100%)] text-sky-700',
@@ -69,7 +69,7 @@ export function HybridFeatureCard({
   return (
     <article className="group rounded-4xl border border-slate-200 bg-white p-5 shadow-[0_22px_45px_-28px_rgba(15,23,42,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-28px_rgba(16,185,129,0.3)]">
       <div className={`mb-5 flex items-center justify-between gap-4 rounded-2xl border px-3 py-2 ${accentClasses[accent]}`}>
-        <span className="text-[12px] font-black uppercase tracking-[0.24em]">{ui.hybridSystem ?? 'Hybrid system'}</span>
+        <span className="text-[12px] font-black uppercase tracking-[0.24em]">{ui.hybridSystem}</span>
         <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/80 shadow-sm ring-1 ring-black/5">
           {renderHybridIcon(accent)}
         </span>
@@ -137,15 +137,15 @@ export function HybridInfoPanel({
 
 export function HybridTable({ rows }: { rows: { label: string; value: string; use: string }[] }) {
   const { t } = useLocale()
-  const ui = t.ui ?? {}
+  const ui = t.ui
 
   return (
     <div className="overflow-x-auto rounded-[1.9rem] border border-emerald-200 bg-white shadow-[0_20px_34px_-24px_rgba(16,185,129,0.3)] scrollbar-thin [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400">
       <div className="min-w-190">
         <div className="grid border-b border-emerald-100 bg-linear-to-r from-emerald-50 via-white to-sky-50 text-[12px] font-bold uppercase tracking-[0.2em] text-slate-600 md:grid-cols-[1.2fr_2.2fr_1.8fr]">
-          <div className="px-4 py-3">{ui.systemType ?? 'System type'}</div>
-          <div className="px-4 py-3">{ui.typicalConfiguration ?? 'Typical configuration'}</div>
-          <div className="px-4 py-3">{ui.customerFit ?? 'Customer fit'}</div>
+          <div className="px-4 py-3">{ui.systemType}</div>
+          <div className="px-4 py-3">{ui.typicalConfiguration}</div>
+          <div className="px-4 py-3">{ui.customerFit}</div>
         </div>
         {rows.map((row) => (
           <div key={row.label} className="grid gap-3 px-4 py-4 text-base text-slate-700 md:grid-cols-[1.2fr_2.2fr_1.8fr] md:gap-0">

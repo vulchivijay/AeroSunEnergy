@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { useLocale } from '@/lib/LocaleContext'
 
 const STORAGE_KEY = 'aerosun_lord_ganesha_modal'
 const LORD_IMAGE_INDEX_KEY = 'aerosun_lord_image_index'
@@ -12,27 +13,18 @@ const LORDS = [
     image: '/images/lordganesha.png',
     width: 558,
     height: 1448,
-    title: 'Lord Ganesha Blessing',
-    description:
-      'Welcome to AeroSun Energy. May Lord Ganesha bring clarity, success, and prosperity to your renewable energy journey.',
   },
   {
     name: 'Balaji',
     image: '/images/lordbalaji.png',
     width: 433,
     height: 577,
-    title: 'Lord Balaji Blessing',
-    description:
-      'Welcome to AeroSun Energy. May Lord Balaji bless your path with abundance, wellbeing, and success.',
   },
   {
     name: 'Shiva',
     image: '/images/lordshiva.png',
     width: 375,
     height: 591,
-    title: 'Lord Shiva Blessing',
-    description:
-      'Welcome to AeroSun Energy. May Lord Shiva bring peace, strength, and harmony to your journey.',
   },
 ] as const
 
@@ -41,6 +33,7 @@ function getIpStorageKey(ip: string) {
 }
 
 export default function Lord() {
+  const { t } = useLocale()
   const [open, setOpen] = useState(false)
   const [lordIndex, setLordIndex] = useState(0)
   const [resolvedIp, setResolvedIp] = useState<string | null>(null)
@@ -131,6 +124,7 @@ export default function Lord() {
   }, [showModal])
 
   const lord = LORDS[lordIndex] ?? LORDS[0]
+  const blessing = t.blessingModal.blessings[lordIndex] ?? t.blessingModal.blessings[0]
 
   const dismiss = useCallback(() => {
     setOpen(false)
@@ -205,7 +199,7 @@ export default function Lord() {
         <button
           ref={closeButtonRef}
           type="button"
-          aria-label="Close blessing modal"
+          aria-label={t.blessingModal.closeLabel}
           className="absolute right-3 top-3 inline-flex min-h-11 min-w-11 items-center justify-center rounded-md p-2 text-gray-600 transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus-visible:outline-emerald-300"
           onClick={dismiss}
         >
@@ -224,9 +218,9 @@ export default function Lord() {
             />
           </div>
 
-          <h2 id="lord-blessing-title" className="text-3xl font-semibold tracking-tight">{lord.title}</h2>
+          <h2 id="lord-blessing-title" className="text-3xl font-semibold tracking-tight">{blessing.title}</h2>
           <p id="lord-blessing-description" className="max-w-md text-md leading-6 text-gray-600 dark:text-gray-300">
-            {lord.description}
+            {blessing.body}
           </p>
 
         </div>

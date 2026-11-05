@@ -23,7 +23,7 @@ export default function CTASection() {
           <div className="relative h-full w-full">
             <OptimizedImage
               src="/images/customdesign-aerosunenergy.png"
-              alt="Next-generation renewable energy technology by AeroSun Energy"
+              alt={c.imageAlt}
               fill
               sizes="42vw"
               className="object-cover opacity-55"

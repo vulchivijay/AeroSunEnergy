@@ -8,32 +8,54 @@ import { submitMailtoForm } from '@/lib/submitMailto'
 import { trackGoogleAdsConversion } from '@/lib/googleAdsConversion'
 import { useState, type FocusEventHandler } from 'react'
 import { validateZeroBounceEmail } from '@/lib/emailValidation'
+import { useLocale } from '@/lib/LocaleContext'
 
-const enquirySchema = z.object({
-  customerName: z.string().trim().min(2, 'Customer name is required.'),
+type EnquiryValidationMessages = {
+  customerName: string
+  phoneMin: string
+  phoneFormat: string
+  email: string
+  address: string
+  city: string
+  state: string
+  serviceType: string
+  propertyType: string
+  availableArea: string
+  roofType: string
+  averageBill: string
+  monthlyConsumption: string
+  connectionType: string
+  expectedSystemCapacity: string
+  installationTimeline: string
+  budgetRange: string
+  projectDetails: string
+}
+
+const createEnquirySchema = (messages: EnquiryValidationMessages) => z.object({
+  customerName: z.string().trim().min(2, messages.customerName),
   phone: z
     .string()
     .trim()
-    .min(10, 'Phone number must be at least 10 digits.')
-    .regex(/^[0-9+()\-\s]+$/, 'Phone number can contain only digits, spaces, +, (, ), and -.'),
-  email: z.string().trim().email('Please enter a valid email address.'),
-  address: z.string().trim().min(3, 'Please enter the address or site location.'),
-  city: z.string().trim().min(2, 'Please enter the city.'),
-  state: z.string().trim().min(2, 'Please enter the state.'),
-  serviceType: z.string().trim().min(1, 'Please select an enquiry type.'),
-  propertyType: z.string().trim().min(2, 'Please select the property type.'),
-  availableArea: z.string().trim().min(2, 'Please enter the available roof or land area.'),
-  roofType: z.string().trim().min(2, 'Please enter the roof type.'),
-  averageBill: z.string().trim().min(1, 'Please enter the average monthly bill.'),
-  monthlyConsumption: z.string().trim().min(1, 'Please enter the average monthly consumption.'),
-  connectionType: z.string().trim().min(2, 'Please select the electricity connection type.'),
-  expectedSystemCapacity: z.string().trim().min(1, 'Please enter the expected system capacity.'),
-  installationTimeline: z.string().trim().min(1, 'Please select the preferred installation timeline.'),
-  budgetRange: z.string().trim().min(1, 'Please select the budget range.'),
-  projectDetails: z.string().trim().min(20, 'Please provide a few more details about your project requirement.'),
+    .min(10, messages.phoneMin)
+    .regex(/^[0-9+()\-\s]+$/, messages.phoneFormat),
+  email: z.string().trim().email(messages.email),
+  address: z.string().trim().min(3, messages.address),
+  city: z.string().trim().min(2, messages.city),
+  state: z.string().trim().min(2, messages.state),
+  serviceType: z.string().trim().min(1, messages.serviceType),
+  propertyType: z.string().trim().min(2, messages.propertyType),
+  availableArea: z.string().trim().min(2, messages.availableArea),
+  roofType: z.string().trim().min(2, messages.roofType),
+  averageBill: z.string().trim().min(1, messages.averageBill),
+  monthlyConsumption: z.string().trim().min(1, messages.monthlyConsumption),
+  connectionType: z.string().trim().min(2, messages.connectionType),
+  expectedSystemCapacity: z.string().trim().min(1, messages.expectedSystemCapacity),
+  installationTimeline: z.string().trim().min(1, messages.installationTimeline),
+  budgetRange: z.string().trim().min(1, messages.budgetRange),
+  projectDetails: z.string().trim().min(20, messages.projectDetails),
 })
 
-export type EnquiryFormValues = z.infer<typeof enquirySchema>
+export type EnquiryFormValues = z.infer<ReturnType<typeof createEnquirySchema>>
 
 export const defaultEnquiryValues: EnquiryFormValues = {
   customerName: '',
@@ -56,6 +78,9 @@ export const defaultEnquiryValues: EnquiryFormValues = {
 }
 
 export function CustomerEnquiryForm() {
+  const { t } = useLocale()
+  const content = t.sharedForms.customerEnquiry
+  const enquirySchema = createEnquirySchema(content.validation)
   const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {
     register,
@@ -82,7 +107,7 @@ export function CustomerEnquiryForm() {
     if (!isAllowed) {
       setError('email', {
         type: 'manual',
-        message: 'This email address appears risky or invalid. Please use a different email address.',
+        message: content.validation.riskyEmail,
       })
       return
     }
@@ -95,36 +120,37 @@ export function CustomerEnquiryForm() {
     if (!isAllowed) {
       setError('email', {
         type: 'manual',
-        message: 'This email address appears risky or invalid. Please use a different email address.',
+        message: content.validation.riskyEmail,
       })
       return
     }
 
-    const subject = `Customer Enquiry - ${data.customerName}`
+    const mail = content.mail
+    const subject = `${mail.subject} - ${data.customerName}`
     const body = [
-      `Customer Name: ${data.customerName}`,
-      `Phone: ${data.phone}`,
-      `Email: ${data.email}`,
-      `Address: ${data.address}`,
-      `City: ${data.city}`,
-      `State: ${data.state}`,
-      `Enquiry Type: ${data.serviceType}`,
-      `Property Type: ${data.propertyType}`,
-      `Available Area: ${data.availableArea}`,
-      `Roof Type: ${data.roofType}`,
-      `Average Monthly Electricity Bill: ${data.averageBill}`,
-      `Average Monthly Consumption: ${data.monthlyConsumption}`,
-      `Connection Type: ${data.connectionType}`,
-      `Expected System Capacity: ${data.expectedSystemCapacity}`,
-      `Installation Timeline: ${data.installationTimeline}`,
-      `Budget Range: ${data.budgetRange}`,
+      `${mail.customerName}: ${data.customerName}`,
+      `${mail.phone}: ${data.phone}`,
+      `${mail.email}: ${data.email}`,
+      `${mail.address}: ${data.address}`,
+      `${mail.city}: ${data.city}`,
+      `${mail.state}: ${data.state}`,
+      `${mail.enquiryType}: ${data.serviceType}`,
+      `${mail.propertyType}: ${data.propertyType}`,
+      `${mail.availableArea}: ${data.availableArea}`,
+      `${mail.roofType}: ${data.roofType}`,
+      `${mail.averageBill}: ${data.averageBill}`,
+      `${mail.monthlyConsumption}: ${data.monthlyConsumption}`,
+      `${mail.connectionType}: ${data.connectionType}`,
+      `${mail.expectedCapacity}: ${data.expectedSystemCapacity}`,
+      `${mail.installationTimeline}: ${data.installationTimeline}`,
+      `${mail.budgetRange}: ${data.budgetRange}`,
       '',
-      'Project Details:',
+      `${mail.projectDetails}:`,
       data.projectDetails,
     ].join('\n')
 
     const opened = submitMailtoForm({
-      to: 'customercare@aerosunenergy.in',
+      to: t.sharedForms.emailAddress,
       subject,
       body,
     })
@@ -136,7 +162,7 @@ export function CustomerEnquiryForm() {
     reset(defaultEnquiryValues)
     setSubmitFeedback({
       type: opened ? 'success' : 'error',
-      message: opened ? 'Your enquiry has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+      message: opened ? content.feedback.success : content.feedback.error,
     })
   }
 
@@ -152,17 +178,17 @@ export function CustomerEnquiryForm() {
                     1
                   </span>
                   <h2 className="text-lg font-black uppercase tracking-[0.2em] text-sky-800 sm:text-xl">
-                    Customer Details
+                    {content.customerDetails}
                   </h2>
                 </div>
 
                 <div className="grid gap-4 md:grid-cols-2">
-                  <Field label="Full Name*" name="customerName" placeholder="Enter your full name" register={register} error={errors.customerName} />
-                  <Field label="Phone Number*" name="phone" type="tel" placeholder="+91 98765 43210" register={register} error={errors.phone} />
-                  <Field label="Email ID*" name="email" type="email" placeholder="you@example.com" register={register} error={errors.email} onBlur={handleEmailBlur} />
-                  <Field label="Address*" name="address" placeholder="Street / local area / city" register={register} error={errors.address} />
-                  <Field label="City*" name="city" placeholder="City name" register={register} error={errors.city} />
-                  <Field label="State*" name="state" placeholder="State" register={register} error={errors.state} />
+                  <Field label={content.fields.fullName} name="customerName" placeholder={content.placeholders.fullName} register={register} error={errors.customerName} />
+                  <Field label={content.fields.phone} name="phone" type="tel" placeholder={content.placeholders.phone} register={register} error={errors.phone} />
+                  <Field label={content.fields.email} name="email" type="email" placeholder={content.placeholders.email} register={register} error={errors.email} onBlur={handleEmailBlur} />
+                  <Field label={content.fields.address} name="address" placeholder={content.placeholders.address} register={register} error={errors.address} />
+                  <Field label={content.fields.city} name="city" placeholder={content.placeholders.city} register={register} error={errors.city} />
+                  <Field label={content.fields.state} name="state" placeholder={content.placeholders.state} register={register} error={errors.state} />
                 </div>
               </div>
 
@@ -172,19 +198,14 @@ export function CustomerEnquiryForm() {
                     2
                   </span>
                   <h2 className="text-lg font-black uppercase tracking-[0.2em] text-emerald-800 sm:text-xl">
-                    Enquiry Type
+                    {content.enquiryType}
                   </h2>
                 </div>
 
                 <div className="grid gap-3 md:grid-cols-2">
-                  <SelectTile label="Rooftop Solar" value="Rooftop Solar" accent="emerald" register={register} />
-                  <SelectTile label="Commercial Solar" value="Commercial Solar" accent="sky" register={register} />
-                  <SelectTile label="Ground-Mounted Solar" value="Ground-Mounted Solar" accent="emerald" register={register} />
-                  <SelectTile label="Wind Energy" value="Wind Energy" accent="blue" register={register} />
-                  <SelectTile label="Solar-Wind Hybrid" value="Solar-Wind Hybrid" accent="violet" register={register} />
-                  <SelectTile label="Battery Storage" value="Battery Storage" accent="amber" register={register} />
-                  <SelectTile label="Solar Water Pumping" value="Solar Water Pumping" accent="emerald" register={register} />
-                  <SelectTile label="Operations & Maintenance" value="Operations & Maintenance" accent="slate" register={register} />
+                  {content.serviceOptions.map((option, index) => (
+                    <SelectTile key={option.value} label={option.label} value={option.value} accent={(['emerald', 'sky', 'emerald', 'blue', 'violet', 'amber', 'emerald', 'slate'] as const)[index] ?? 'slate'} register={register} />
+                  ))}
                 </div>
 
                 {errors.serviceType && <p className="mt-3 text-md text-rose-600">{errors.serviceType.message}</p>}
@@ -197,14 +218,14 @@ export function CustomerEnquiryForm() {
                       3
                     </span>
                     <h2 className="text-lg font-black uppercase tracking-[0.2em] text-violet-800 sm:text-xl">
-                      Property / Site
+                      {content.propertySite}
                     </h2>
                   </div>
 
                   <div className="space-y-4">
-                    <Field label="Property Type*" name="propertyType" placeholder="Residential / Commercial / Industrial" register={register} error={errors.propertyType} />
-                    <Field label="Available Roof / Land Area*" name="availableArea" placeholder="Approx. sq. ft. / acres" register={register} error={errors.availableArea} />
-                    <Field label="Roof Type*" name="roofType" placeholder="RCC / Metal / Tile / Other" register={register} error={errors.roofType} />
+                    <Field label={content.propertyTypeLabel} name="propertyType" placeholder={content.propertyTypePlaceholder} register={register} error={errors.propertyType} />
+                    <Field label={content.availableAreaLabel} name="availableArea" placeholder={content.availableAreaPlaceholder} register={register} error={errors.availableArea} />
+                    <Field label={content.roofTypeLabel} name="roofType" placeholder={content.roofTypePlaceholder} register={register} error={errors.roofType} />
                   </div>
                 </div>
 
@@ -214,14 +235,14 @@ export function CustomerEnquiryForm() {
                       4
                     </span>
                     <h2 className="text-lg font-black uppercase tracking-[0.2em] text-amber-800 sm:text-xl">
-                      Electricity Usage
+                      {content.electricityUsage}
                     </h2>
                   </div>
 
                   <div className="space-y-4">
-                    <Field label="Average Monthly Electricity Bill*" name="averageBill" placeholder="₹ 0" register={register} error={errors.averageBill} />
-                    <Field label="Average Monthly Consumption (Units)*" name="monthlyConsumption" placeholder="Example: 640 units" register={register} error={errors.monthlyConsumption} />
-                    <Field label="Connection Type*" name="connectionType" placeholder="Single phase / Three phase" register={register} error={errors.connectionType} />
+                    <Field label={content.averageBillLabel} name="averageBill" placeholder={content.averageBillPlaceholder} register={register} error={errors.averageBill} />
+                    <Field label={content.monthlyConsumptionLabel} name="monthlyConsumption" placeholder={content.monthlyConsumptionPlaceholder} register={register} error={errors.monthlyConsumption} />
+                    <Field label={content.connectionTypeLabel} name="connectionType" placeholder={content.connectionTypePlaceholder} register={register} error={errors.connectionType} />
                   </div>
                 </div>
               </div>
@@ -233,14 +254,14 @@ export function CustomerEnquiryForm() {
                       5
                     </span>
                     <h2 className="text-lg font-black uppercase tracking-[0.2em] text-emerald-800 sm:text-xl">
-                      Requirements
+                      {content.requirements}
                     </h2>
                   </div>
 
                   <div className="space-y-4">
-                    <Field label="Expected System Capacity (if known)*" name="expectedSystemCapacity" placeholder="Example: 5 kW" register={register} error={errors.expectedSystemCapacity} />
-                    <Field label="Preferred Installation Timeframe*" name="installationTimeline" placeholder="Immediate / 1-3 months / 3-6 months" register={register} error={errors.installationTimeline} />
-                    <Field label="Budget Range*" name="budgetRange" placeholder="Below ₹1 Lakh / ₹1-3 Lakhs" register={register} error={errors.budgetRange} />
+                    <Field label={content.expectedCapacityLabel} name="expectedSystemCapacity" placeholder={content.expectedCapacityPlaceholder} register={register} error={errors.expectedSystemCapacity} />
+                    <Field label={content.installationTimelineLabel} name="installationTimeline" placeholder={content.installationTimelinePlaceholder} register={register} error={errors.installationTimeline} />
+                    <Field label={content.budgetRangeLabel} name="budgetRange" placeholder={content.budgetRangePlaceholder} register={register} error={errors.budgetRange} />
                   </div>
                 </div>
 
@@ -250,19 +271,19 @@ export function CustomerEnquiryForm() {
                       6
                     </span>
                     <h2 className="text-lg font-black uppercase tracking-[0.2em] text-sky-800 sm:text-xl">
-                      Project Details
+                      {content.projectDetails}
                     </h2>
                   </div>
 
                   <div className="md:col-span-2">
                     <label htmlFor="projectDetails" className="mb-2 block text-md font-semibold text-slate-800">
-                      Requirement details*
+                      {content.requirementDetails}
                     </label>
                     <textarea
                       id="projectDetails"
                       {...register('projectDetails')}
                       rows={7}
-                      placeholder="Tell us about your expected load, site conditions, backup needs, voltage preference, and any unique project requirements."
+                      placeholder={content.projectDetailsPlaceholder}
                       aria-invalid={Boolean(errors.projectDetails)}
                       aria-describedby={errors.projectDetails ? 'projectDetails-error' : undefined}
                       className="w-full rounded-2xl border border-sky-200 bg-white/90 px-4 py-3 text-md text-slate-900 shadow-[inset_0_1px_2px_rgba(15,23,42,0.04)] outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
@@ -278,7 +299,7 @@ export function CustomerEnquiryForm() {
                   disabled={isSubmitting}
                   className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(135deg,#0f172a_0%,#0f766e_100%)] px-6 py-3 text-md font-black uppercase tracking-[0.18em] text-white shadow-[0_18px_32px_-18px_rgba(15,118,110,0.85)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_24px_38px_-18px_rgba(15,118,110,0.9)] disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {isSubmitting ? 'Submitting...' : 'Send Enquiry'}
+                  {isSubmitting ? content.submitting : content.submit}
                 </button>
 
                 {submitFeedback ? (
@@ -286,7 +307,7 @@ export function CustomerEnquiryForm() {
                     {submitFeedback.message}
                   </p>
                 ) : isSubmitSuccessful && (
-                  <p className="text-md font-semibold text-emerald-700">Your enquiry has been prepared in your email app.</p>
+                  <p className="text-md font-semibold text-emerald-700">{content.feedback.success}</p>
                 )}
               </div>
             </form>

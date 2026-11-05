@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
+import { useLocale } from '@/lib/LocaleContext'
 
 const tabs = ['In Queue', 'In Progress', 'Completed'] as const
 
@@ -73,6 +74,13 @@ const projectCategories = [
 ]
 
 export default function ProjectsPage() {
+  const { t } = useLocale()
+  const projectsPage = t.projectsPage
+  const projectCategoriesData = projectsPage.projectCategories
+  const projectStepsData = projectsPage.projectSteps
+  const statusMetaData = projectsPage.statusMeta
+  const labels = projectsPage.labels
+
   const [activeTab, setActiveTab] = useState<ProjectStatus>('In Queue')
 
   const filteredProjects = useMemo(
@@ -93,30 +101,27 @@ export default function ProjectsPage() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-white/5 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-emerald-100">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-300 shadow-[0_0_12px_rgba(110,231,183,0.8)]" />
-              Renewable project portfolio
+              {labels.badge}
             </div>
             <h1 className="mt-6 text-4xl font-black tracking-[0.065em] text-white sm:text-6xl lg:text-7xl">
-              Projects.
-              <span className="mt-1 block text-emerald-300">Designed around your energy.</span>
+              {labels.heroTitle}
+              <span className="mt-1 block text-emerald-300">{labels.heroTitleAccent}</span>
             </h1>
             <p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-base sm:leading-8">
-              AeroSun Energy develops practical renewable energy systems for homes, businesses, farms, and industrial operations that need cleaner power, lower operating cost, and long-term resilience.
+              {labels.heroDescription}
             </p>
           </div>
           <div className="flex w-fit items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.06] px-5 py-4 backdrop-blur">
             <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-300/10 text-xl text-emerald-200">↗</span>
             <span className="text-md leading-5 text-slate-300">
-              Project focus
-              <strong className="block text-md font-bold text-white">Plan · Build · Support</strong>
+              {labels.projectFocus}
+              <strong className="block text-md font-bold text-white">{labels.projectFocusSteps}</strong>
             </span>
           </div>
         </div>
         <div className="border-t border-white/10">
           <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-emerald-100/60 sm:px-8 lg:px-10">
-            <span>Residential</span>
-            <span>Commercial & industrial</span>
-            <span>Agriculture & rural</span>
-            <span>Wind & hybrid</span>
+            {labels.projectTypes.map((item) => <span key={item}>{item}</span>)}
           </div>
         </div>
       </header>
@@ -127,12 +132,12 @@ export default function ProjectsPage() {
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-lg text-emerald-800">i</span>
               <div>
-                <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">Our approach</p>
-                <p className="mt-2 text-md leading-7 text-slate-600 sm:text-base">We tailor every system to the site, energy use, operating conditions, and project goals—balancing performance, safety, cost, and long-term service.</p>
+                <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">{labels.approach}</p>
+                <p className="mt-2 text-md leading-7 text-slate-600 sm:text-base">{labels.approachDescription}</p>
               </div>
             </div>
             <div className="mt-6 grid gap-3 border-t border-slate-100 pt-5 sm:grid-cols-2">
-              {projectSteps.map((step, index) => (
+              {projectStepsData.map((step, index) => (
                 <div key={step} className="flex gap-3 rounded-xl bg-[#f4f8fc] p-3">
                   <span className="font-mono text-md font-bold text-emerald-700">0{index + 1}</span>
                   <span className="text-md leading-5 text-slate-600">{step}</span>
@@ -145,9 +150,9 @@ export default function ProjectsPage() {
             <div className="flex items-start gap-4 p-5 sm:p-6">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-md font-bold text-emerald-800">01</span>
               <div className="min-w-0 flex-1">
-                <h2 className="text-lg font-extrabold tracking-tight text-slate-950">Project solutions</h2>
+                <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.solutions}</h2>
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                  {projectCategories.map((project) => (
+                  {projectCategoriesData.map((project) => (
                     <div key={project.title} className="rounded-xl bg-[#f4f8fc] p-4">
                       <div className={`mb-3 h-1.5 rounded-full bg-linear-to-r ${project.accent}`} aria-hidden="true" />
                       <h3 className="text-md font-bold text-slate-900">{project.title}</h3>
@@ -169,10 +174,10 @@ export default function ProjectsPage() {
             <div className="flex items-start gap-4 p-5 sm:p-6">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-md font-bold text-emerald-800">02</span>
               <div className="min-w-0 flex-1">
-                <h2 className="text-lg font-extrabold tracking-tight text-slate-950">Project status overview</h2>
-                <p className="mt-2 text-md leading-6 text-slate-600">Browse the project pipeline by status. Updates will appear here as projects are scheduled, assigned, or completed.</p>
+                <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.statusOverview}</h2>
+                <p className="mt-2 text-md leading-6 text-slate-600">{labels.statusDescription}</p>
                 <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-3">
-                  <div role="group" aria-label="Filter projects by status" className="flex flex-wrap gap-2 border-b border-slate-200 pb-3">
+                  <div role="group" aria-label={labels.statusFilterLabel} className="flex flex-wrap gap-2 border-b border-slate-200 pb-3">
                     {tabs.map((tab) => {
                       const isActive = activeTab === tab
                       return (
@@ -184,7 +189,7 @@ export default function ProjectsPage() {
                           className={`inline-flex min-h-11 items-center gap-2 rounded-full px-4 py-2 text-md font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 ${isActive ? 'bg-slate-900 text-white shadow-[0_16px_30px_-18px_rgba(15,23,42,0.7)]' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
                         >
                           <span className={`inline-flex h-2.5 w-2.5 rounded-full ${isActive ? 'bg-emerald-400' : 'bg-slate-400'}`} aria-hidden="true" />
-                          {tab}
+                          {statusMetaData[tab].label}
                         </button>
                       )
                     })}
@@ -192,15 +197,15 @@ export default function ProjectsPage() {
                   <div className="pt-5">
                     {filteredProjects.length === 0 ? (
                       <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50 px-5 py-10 text-center">
-                        <h3 className="text-xl font-bold tracking-tight text-slate-900">No {activeTab.toLowerCase()} projects yet</h3>
-                        <p className="mx-auto mt-2 max-w-lg text-md leading-7 text-slate-600">New renewable energy opportunities and project updates will appear here as they are scheduled, assigned, or completed.</p>
+                        <h3 className="text-xl font-bold tracking-tight text-slate-900">{labels.emptyProjectsTitle.replace('{status}', statusMetaData[activeTab].label)}</h3>
+                        <p className="mx-auto mt-2 max-w-lg text-md leading-7 text-slate-600">{labels.emptyProjectsDescription}</p>
                       </div>
                     ) : (
                       <div className="grid gap-4 md:grid-cols-2">
                         {filteredProjects.map((project) => (
                           <article key={`${project.title}-${project.location}`} className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                            <span className={`inline-flex rounded-full border px-2.5 py-1 text-[12px] font-bold uppercase tracking-[0.18em] ${statusMeta[project.status].tone}`}>{project.status}</span>
-                            <div className={`mt-4 h-1.5 rounded-full bg-linear-to-r ${statusMeta[project.status].accent}`} aria-hidden="true" />
+                            <span className={`inline-flex rounded-full border px-2.5 py-1 text-[12px] font-bold uppercase tracking-[0.18em] ${statusMetaData[project.status].tone}`}>{statusMetaData[project.status].label}</span>
+                            <div className={`mt-4 h-1.5 rounded-full bg-linear-to-r ${statusMetaData[project.status].accent}`} aria-hidden="true" />
                             <h3 className="mt-4 text-lg font-bold text-slate-900">{project.title}</h3>
                             <p className="mt-2 text-md text-slate-500">{project.location}</p>
                             <p className="mt-3 text-md font-medium text-slate-700">{project.type}</p>
@@ -217,23 +222,23 @@ export default function ProjectsPage() {
           </section>
 
           <p className="mt-7 rounded-2xl border border-emerald-200/80 bg-white p-5 text-md leading-7 text-slate-600">
-            Ready to discuss your site and energy goals?{' '}
-            <a href="/customer-enquiry" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800">Request a project consultation</a>
-            {' '}or <a href="/services" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800">explore our services</a>.
+            {labels.contactPrompt}{' '}
+            <a href="/customer-enquiry" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800">{labels.contactEnquiryLink}</a>
+            {' '}{labels.or}{' '}<a href="/services" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800">{labels.contactServicesLink}</a>.
           </p>
         </article>
 
         <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
-          <nav aria-label="Project page sections" className="overflow-hidden rounded-2xl border border-emerald-200/80 bg-white shadow-sm">
+          <nav aria-label={labels.sectionsLabel} className="overflow-hidden rounded-2xl border border-emerald-200/80 bg-white shadow-sm">
             <div className="border-b border-slate-100 px-5 py-4">
-              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">Find a topic</p>
-              <p className="mt-1 text-md font-bold text-slate-900">Project overview</p>
+              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">{labels.findTopic}</p>
+              <p className="mt-1 text-md font-bold text-slate-900">{labels.projectOverview}</p>
             </div>
             <ol className="space-y-1 p-3">
               {[
-                ['project-approach', 'Our approach'],
-                ['project-categories', 'Project solutions'],
-                ['project-pipeline', 'Project status'],
+                ['project-approach', labels.approach],
+                ['project-categories', labels.solutions],
+                ['project-pipeline', labels.statusOverview],
               ].map(([id, label], index) => (
                 <li key={id}>
                   <a href={`#${id}`} className="flex items-start gap-3 rounded-xl px-3 py-2.5 text-md leading-5 text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-900">
@@ -245,15 +250,15 @@ export default function ProjectsPage() {
             </ol>
           </nav>
           <section className="rounded-2xl bg-[#101c32] p-5 text-white">
-            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-300">Planning priorities</p>
+            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-300">{labels.planningPriorities}</p>
             <ul className="mt-4 space-y-3 text-md leading-6 text-slate-200">
-              {['Site feasibility and energy audit', 'Technology and system design', 'Installation and commissioning', 'Monitoring and maintenance'].map((step) => <li key={step}>{step}</li>)}
+              {labels.planningSteps.map((step) => <li key={step}>{step}</li>)}
             </ul>
           </section>
           <section className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
-            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">Start a conversation</p>
-            <p className="mt-3 text-md leading-6 text-slate-700">Share your project needs and our team can help plan the next steps.</p>
-            <a href="/customer-enquiry" className="mt-4 inline-flex rounded-full bg-[#101c32] px-4 py-2.5 text-md font-bold text-white transition hover:bg-emerald-900">Request consultation</a>
+            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">{labels.startConversation}</p>
+            <p className="mt-3 text-md leading-6 text-slate-700">{labels.startConversationDescription}</p>
+            <a href="/customer-enquiry" className="mt-4 inline-flex rounded-full bg-[#101c32] px-4 py-2.5 text-md font-bold text-white transition hover:bg-emerald-900">{labels.requestConsultation}</a>
           </section>
         </aside>
       </div>

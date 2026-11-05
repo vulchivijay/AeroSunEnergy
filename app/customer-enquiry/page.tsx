@@ -1,165 +1,7 @@
 'use client'
 
 import { useState, type FormEvent, type ReactNode } from 'react'
-
-const technicalSpecifications = [
-  { label: 'Total Solar Capacity', name: 'solar_capacity', type: 'number', unit: 'kWp' },
-  { label: 'Solar Module Technology', name: 'module_technology' },
-  { label: 'Solar Module Manufacturer', name: 'module_manufacturer' },
-  { label: 'Solar Module Model', name: 'module_model' },
-  { label: 'Individual Module Capacity', name: 'module_capacity', type: 'number', unit: 'Wp' },
-  { label: 'Total Number of Modules', name: 'module_quantity', type: 'number', unit: 'modules' },
-  { label: 'Solar Inverter Manufacturer', name: 'inverter_manufacturer' },
-  { label: 'Inverter Model', name: 'inverter_model' },
-  { label: 'Inverter Capacity', name: 'inverter_capacity', type: 'number', unit: 'kW' },
-  { label: 'System Configuration', name: 'technical_configuration' },
-  { label: 'Mounting Structure', name: 'mounting_structure' },
-  { label: 'Mounting Structure Material', name: 'mounting_material' },
-  { label: 'DC Cable Specification', name: 'dc_cable' },
-  { label: 'AC Cable Specification', name: 'ac_cable' },
-  { label: 'Earthing Arrangement', name: 'earthing_arrangement' },
-  { label: 'Lightning Protection', name: 'lightning_protection' },
-  { label: 'Monitoring System', name: 'monitoring_system' },
-  { label: 'Battery Type', name: 'battery_type' },
-  { label: 'Battery Capacity', name: 'battery_capacity', type: 'number', unit: 'kWh' },
-  { label: 'Battery Voltage', name: 'battery_voltage', type: 'number', unit: 'V' },
-  { label: 'Estimated Installation Area', name: 'installation_area', type: 'number', unit: 'sq. ft.' },
-] as const
-
-const billOfMaterials = [
-  'Solar PV Modules',
-  'Solar Inverter',
-  'Mounting Structure',
-  'DC Cables',
-  'AC Cables',
-  'DC Distribution Box',
-  'AC Distribution Box',
-  'DC Protection Devices',
-  'AC Protection Devices',
-  'Earthing Materials',
-  'Lightning Protection',
-  'Connectors',
-  'Monitoring Equipment',
-  'Battery System, if applicable',
-  'Other Accessories',
-]
-
-const priceItems = [
-  'Solar PV Modules',
-  'Solar Inverter',
-  'Mounting Structure',
-  'DC and AC Cables',
-  'Electrical Protection Equipment',
-  'Earthing and Lightning Protection',
-  'Battery System, if applicable',
-  'Monitoring Equipment',
-  'Transportation and Logistics',
-  'Installation and Labour',
-  'Engineering and Project Coordination',
-  'Testing and Commissioning',
-]
-
-const scopeActivities = [
-  'Initial Customer Consultation',
-  'Site Survey',
-  'Technical System Design',
-  'Equipment Procurement',
-  'Solar Module Supply',
-  'Inverter Supply',
-  'Mounting Structure Supply',
-  'Electrical Accessories',
-  'Installation',
-  'Electrical Connections',
-  'Earthing Installation',
-  'Testing and Commissioning',
-  'Customer Handover',
-  'System Operation Guidance',
-  'Monitoring Setup',
-  'After-Sales Support',
-]
-
-const scheduleActivities = [
-  'Customer Approval',
-  'Technical Design Finalisation',
-  'Equipment Procurement',
-  'Material Delivery',
-  'Installation',
-  'Testing and Commissioning',
-  'Final Handover',
-]
-
-const exclusions = [
-  'Civil construction and major structural modifications.',
-  'Roof strengthening and waterproofing repairs.',
-  'Land acquisition or leasing.',
-  'Major electrical infrastructure upgrades.',
-  'Transformer upgrades.',
-  'DISCOM application and statutory fees.',
-  'Government approval charges.',
-  'Net-metering or grid-interconnection charges.',
-  'Additional cable routing beyond the agreed scope.',
-  'Battery replacement after warranty expiry.',
-  'Unforeseen site modifications.',
-  'Taxes or charges not included in the quotation.',
-]
-
-const warrantyItems = [
-  'Solar Modules',
-  'Solar Inverter',
-  'Battery System',
-  'Mounting Structure',
-  'Electrical Accessories',
-  'Installation Workmanship',
-]
-
-const paymentMilestones = [
-  'Advance Payment on Order Confirmation',
-  'Before Equipment Dispatch',
-  'After Installation',
-  'After Testing and Handover',
-]
-
-const termsAndConditions = [
-  'This quotation is valid until the date specified on the first page.',
-  'Prices are subject to equipment availability and supplier confirmation.',
-  'Final project pricing may change if site conditions or customer requirements change.',
-  'Equipment specifications will be confirmed before procurement.',
-  'Installation will be subject to site readiness and applicable safety requirements.',
-  'Grid-connected systems will require applicable DISCOM and statutory approvals.',
-  'Subsidy eligibility is not guaranteed by this quotation.',
-  'Any applicable subsidy will be processed only through the relevant authorised procedure.',
-  'Delivery timelines are subject to supplier availability and logistics.',
-  'Customer changes after order confirmation may result in revised pricing and timelines.',
-  "Warranty coverage will follow the respective manufacturer's written terms.",
-  'Any additional work outside the agreed scope will require a separate quotation or written variation approval.',
-]
-
-const financialParameters = [
-  { label: 'Average Monthly Electricity Bill', name: 'average_monthly_bill', unit: '₹' },
-  { label: 'Estimated Monthly Solar Generation', name: 'estimated_monthly_generation', unit: 'kWh' },
-  { label: 'Estimated Monthly Electricity Savings', name: 'estimated_monthly_savings', unit: '₹' },
-  { label: 'Estimated Annual Electricity Savings', name: 'estimated_annual_savings', unit: '₹' },
-  { label: 'Total Project Investment', name: 'total_project_investment', unit: '₹' },
-  { label: 'Estimated Simple Payback Period', name: 'payback_period', unit: 'Years' },
-]
-
-const quotationSections = [
-  'Company Details',
-  'Customer Details',
-  'Project Overview',
-  'Proposed System Technical Specifications',
-  'Bill of Materials (BOM)',
-  'Project Price Breakdown',
-  'Estimated Energy Generation',
-  'Estimated Financial Benefits',
-  'Project Execution Scope',
-  'Exclusions',
-  'Warranty Details',
-  'Payment Terms',
-  'Quotation Terms and Conditions',
-  'Customer Acceptance',
-  'AeroSun Energy Authorisation',
-]
+import { useLocale } from '@/lib/LocaleContext'
 
 function SectionTitle({ number, title }: { number: string; title: string }) {
   return (
@@ -223,11 +65,13 @@ function SelectField({
   name,
   options,
   required = false,
+  placeholder,
 }: {
   label: string
   name: string
   options: string[]
   required?: boolean
+  placeholder: string
 }) {
   return (
     <label className="block">
@@ -240,7 +84,7 @@ function SelectField({
         defaultValue=""
         className="min-h-10 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-md text-slate-900 outline-none transition focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
       >
-        <option value="" disabled>Select an option</option>
+        <option value="" disabled>{placeholder}</option>
         {options.map((option) => <option key={option} value={option}>{option}</option>)}
       </select>
     </label>
@@ -329,7 +173,10 @@ function ChoiceGroup({
 }
 
 export default function CustomerEnquiryPage() {
+  const { t } = useLocale()
+  const page = t.customerEnquiryPage
   const [feedback, setFeedback] = useState('')
+  const paymentMilestones = page.paymentMilestones
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -343,29 +190,45 @@ export default function CustomerEnquiryPage() {
 
     if (lastPercentageInput instanceof HTMLInputElement) {
       lastPercentageInput.setCustomValidity(
-        Math.abs(totalPercentage - 100) < 0.001 ? '' : 'Payment milestone percentages must add up to 100%.'
+        Math.abs(totalPercentage - 100) < 0.001 ? '' : page.paymentPercentageValidation
       )
       if (!form.reportValidity()) return
     }
 
+    function getFieldLabel(name: string) {
+      const radio = Array.from(form.querySelectorAll<HTMLInputElement>('input[type="radio"]'))
+        .find((input) => input.name === name)
+      if (radio) {
+        return radio.closest('fieldset')?.querySelector('legend')?.textContent?.trim() ?? radio.value
+      }
+
+      const field = form.elements.namedItem(name)
+      if (field instanceof HTMLInputElement || field instanceof HTMLSelectElement || field instanceof HTMLTextAreaElement) {
+        const label = field.getAttribute('aria-label') ?? field.labels?.[0]?.textContent
+        if (label) return label.replace(/\s*\*$/, '').trim()
+      }
+
+      return name.replaceAll('_', ' ')
+    }
+
     const body = [
-      'AEROSUN ENERGY SOLAR PROJECT QUOTATION',
-      'Technical & Commercial Proposal',
+      page.mailtoBodyTitle,
+      page.mailtoBodySubtitle,
       '',
-      ...Array.from(formData.entries()).map(([key, value]) => `${key.replaceAll('_', ' ')}: ${String(value)}`),
+      ...Array.from(formData.entries()).map(([key, value]) => `${getFieldLabel(key)}: ${String(value)}`),
     ].join('\n')
-    const subject = encodeURIComponent(`Solar Project Quotation - ${String(formData.get('customer_name'))}`)
-    window.location.href = `mailto:customercare@aerosunenergy.in?subject=${subject}&body=${encodeURIComponent(body)}`
-    setFeedback('Your completed quotation has been prepared in your email app.')
+    const subject = encodeURIComponent(`${page.mailtoSubjectPrefix}${String(formData.get('customer_name'))}`)
+    window.location.href = `mailto:${page.mailtoRecipient}?subject=${subject}&body=${encodeURIComponent(body)}`
+    setFeedback(page.feedback)
   }
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
       <header className="mb-8">
-        <p className="text-md font-bold uppercase tracking-[0.18em] text-emerald-700">Customer Enquiry</p>
-        <h1 className="mt-2 text-3xl font-black text-slate-950 sm:text-4xl">Solar Project Quotation</h1>
+        <p className="text-md font-bold uppercase tracking-[0.18em] text-emerald-700">{page.eyebrow}</p>
+        <h1 className="mt-2 text-3xl font-black text-slate-950 sm:text-4xl">{page.title}</h1>
         <p className="mt-3 max-w-3xl text-slate-600">
-          Complete the technical and commercial proposal with the customer and project details.
+          {page.description}
         </p>
       </header>
       <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_16rem]">
@@ -383,92 +246,82 @@ export default function CustomerEnquiryPage() {
           className="space-y-6"
         >
       <header className="rounded-2xl bg-[#123c48] p-5 text-white sm:p-7">
-        <p className="text-sm font-bold uppercase tracking-[0.2em] text-lime-300">AeroSun Energy Private Limited</p>
-        <h1 className="mt-2 text-2xl font-black uppercase leading-tight sm:text-4xl">Solar Project Quotation</h1>
-        <p className="mt-2 text-md font-semibold text-emerald-100">Power from Sun, Wind, Water, Fire.</p>
-        <p className="mt-3 text-sm uppercase tracking-wide text-emerald-50/80">Solar Energy System – Technical &amp; Commercial Proposal</p>
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-lime-300">{page.companyName}</p>
+        <h1 className="mt-2 text-2xl font-black uppercase leading-tight sm:text-4xl">{page.title}</h1>
+        <p className="mt-2 text-md font-semibold text-emerald-100">{page.companyTagline}</p>
+        <p className="mt-3 text-sm uppercase tracking-wide text-emerald-50/80">{page.proposalTitle}</p>
         <div className="mt-5 grid gap-3 sm:grid-cols-3">
-          <TextField label="Quotation Reference" name="quotation_reference" placeholder="ASE-SOL-QTN-0001" required />
-          <TextField label="Revision" name="quotation_revision" placeholder="00" required pattern="[0-9]{2}" />
-          <TextField label="Quotation Date" name="quotation_date" type="date" required />
-          <TextField label="Valid Until" name="quotation_valid_until" type="date" required />
+          <TextField label={page.quotationReference} name="quotation_reference" placeholder={page.quotationReferencePlaceholder} required />
+          <TextField label={page.revision} name="quotation_revision" placeholder={page.revisionPlaceholder} required pattern="[0-9]{2}" />
+          <TextField label={page.quotationDate} name="quotation_date" type="date" required />
+          <TextField label={page.validUntil} name="quotation_valid_until" type="date" required />
         </div>
       </header>
 
       <section className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-        <SectionTitle number="01" title="Company Details" />
+        <SectionTitle number="01" title={page.sections[0]} />
         <div className="grid gap-3 text-md text-slate-700 sm:grid-cols-2">
-          <p><strong>AeroSun Energy Private Limited</strong></p>
-          <p><strong>CIN:</strong> U35106AP2026PTC128748</p>
-          <p className="sm:col-span-2"><strong>Registered Office:</strong> D.No. 11-184, Gollavanigunta, T.N. Pallem, Tirupati, Andhra Pradesh – 517501, India.</p>
-          <p><strong>MSME/Udyam:</strong> Registered</p>
-          <p><strong>Startup India:</strong> DPIIT Recognised</p>
-          <p><strong>Website:</strong> aerosunenergy.in</p>
-          <p><strong>Email:</strong> customercare@aerosunenergy.in</p>
-          <p><strong>Phone:</strong> +91 8099181075</p>
+          <p><strong>{page.companyName}</strong></p>
+          <p><strong>{page.company.cin}</strong> {page.company.cinValue}</p>
+          <p className="sm:col-span-2"><strong>{page.company.registeredOffice}</strong> {page.company.registeredOfficeValue}</p>
+          <p><strong>{page.company.msme}</strong> {page.company.msmeValue}</p>
+          <p><strong>{page.company.startupIndia}</strong> {page.company.startupIndiaValue}</p>
+          <p><strong>{page.company.website}</strong> {page.company.websiteValue}</p>
+          <p><strong>{page.company.email}</strong> {page.mailtoRecipient}</p>
+          <p><strong>{page.company.phone}</strong> {page.phoneValue}</p>
         </div>
       </section>
 
       <section className="rounded-2xl border border-sky-200 bg-sky-50/60 p-5">
-        <SectionTitle number="02" title="Customer Details" />
+        <SectionTitle number="02" title={page.sections[1]} />
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          <TextField label="Customer Name" name="customer_name" required minLength={2} placeholder="Full name" />
-          <TextField label="Company / Organisation" name="company_organisation" placeholder="If applicable" />
-          <TextField label="Contact Person" name="contact_person" required minLength={2} />
-          <TextField label="Mobile Number" name="mobile_number" type="tel" required minLength={10} pattern="[0-9+() -]{10,}" placeholder="+91 98765 43210" />
-          <TextField label="Email Address" name="customer_email" type="email" required placeholder="name@example.com" />
-          <TextField label="Customer Enquiry Reference" name="customer_enquiry_reference" />
-          <TextField label="Installation Address" name="installation_address" required className="sm:col-span-2 lg:col-span-3" />
-          <TextField label="District" name="district" required />
-          <TextField label="State" name="state" required />
-          <TextField label="PIN Code" name="pin_code" required pattern="[0-9]{6}" placeholder="6-digit PIN code" />
-          <SelectField label="Customer Category" name="customer_category" required options={['Residential', 'Commercial', 'Industrial', 'Agricultural']} />
-          <TextField label="Site Survey Date" name="site_survey_date" type="date" />
+          <TextField label={page.customerName} name="customer_name" required minLength={2} placeholder={page.customerNamePlaceholder} />
+          <TextField label={page.companyOrganisation} name="company_organisation" placeholder={page.ifApplicable} />
+          <TextField label={page.contactPerson} name="contact_person" required minLength={2} />
+          <TextField label={page.mobileNumber} name="mobile_number" type="tel" required minLength={10} pattern="[0-9+() -]{10,}" placeholder={page.mobileNumberPlaceholder} />
+          <TextField label={page.emailAddress} name="customer_email" type="email" required placeholder={page.emailPlaceholder} />
+          <TextField label={page.customerEnquiryReference} name="customer_enquiry_reference" />
+          <TextField label={page.installationAddress} name="installation_address" required className="sm:col-span-2 lg:col-span-3" />
+          <TextField label={page.district} name="district" required />
+          <TextField label={page.state} name="state" required />
+          <TextField label={page.pinCode} name="pin_code" required pattern="[0-9]{6}" placeholder={page.pinCodePlaceholder} />
+          <SelectField label={page.customerCategory} name="customer_category" required options={page.customerCategories} placeholder={page.selectOption} />
+          <TextField label={page.siteSurveyDate} name="site_survey_date" type="date" />
         </div>
       </section>
 
       <section className="rounded-2xl border border-emerald-200 bg-emerald-50/50 p-5">
-        <SectionTitle number="03" title="Project Overview" />
+        <SectionTitle number="03" title={page.sections[2]} />
         <div className="grid gap-3 sm:grid-cols-2">
-          <TextField label="Project Name" name="project_name" required placeholder="Solar Power Installation" />
-          <TextField label="Proposed System Capacity (kWp)" name="proposed_capacity_kwp" type="number" min={0.01} step="any" required />
+          <TextField label={page.projectName} name="project_name" required placeholder={page.projectNamePlaceholder} />
+          <TextField label={page.proposedCapacity} name="proposed_capacity_kwp" type="number" min={0.01} step="any" required />
           <ChoiceGroup
-            legend="System Configuration"
+            legend={page.systemConfiguration}
             name="system_configuration"
             required
-            options={[
-              'On-Grid Solar System',
-              'Off-Grid Solar System',
-              'Hybrid Solar System',
-              'Grid-Connected Solar with Battery Backup',
-              'Ground-Mounted Solar System',
-              'Rooftop Solar System',
-            ]}
+            options={page.systemConfigurations}
           />
           <ChoiceGroup
-            legend="Installation Type"
+            legend={page.installationType}
             name="installation_type"
             required
-            options={['Residential', 'Commercial', 'Industrial', 'Agricultural', 'Institutional']}
+            options={page.installationTypes}
           />
         </div>
         <div className="mt-4 rounded-xl border border-emerald-100 bg-white p-4">
-          <h3 className="text-md font-bold text-slate-900">Project Objective</h3>
+          <h3 className="text-md font-bold text-slate-900">{page.projectObjective}</h3>
           <p className="mt-2 text-md leading-6 text-slate-700">
-            The proposed solar energy system is intended to utilise solar photovoltaic technology to generate
-            electricity for the customer’s premises. The final system configuration will be based on electricity
-            consumption, available installation area, site conditions, equipment specifications and applicable
-            electrical requirements.
+            {page.projectObjectiveCopy}
           </p>
         </div>
       </section>
 
       <section className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5">
-        <SectionTitle number="04" title="Proposed System Technical Specifications" />
+        <SectionTitle number="04" title={page.sections[3]} />
         <EditableTable
-          rowHeader="Parameter"
-          headers={['Proposed Specification', 'Unit']}
-          rows={technicalSpecifications.map((item) => ({
+          rowHeader={page.parameter}
+          headers={[page.proposedSpecification, page.unit]}
+          rows={page.technicalSpecifications.map((item) => ({
             label: item.label,
             unit: 'unit' in item ? item.unit : '',
             fields: [{
@@ -481,16 +334,16 @@ export default function CustomerEnquiryPage() {
           }))}
         />
         <p className="mt-3 text-sm leading-5 text-slate-600">
-          Final specifications will be confirmed in the approved technical design and equipment datasheets.
+          {page.technicalSpecificationNote}
         </p>
       </section>
 
       <section className="rounded-2xl border border-slate-200 bg-white p-5">
-        <SectionTitle number="05" title="Bill of Materials (BOM)" />
+        <SectionTitle number="05" title={page.sections[4]} />
         <EditableTable
-          rowHeader="Product / Component"
-          headers={['Brand / Model', 'Specification', 'Quantity']}
-          rows={billOfMaterials.map((item, index) => ({
+          rowHeader={page.billOfMaterialsRowHeader}
+          headers={[page.brandModel, page.specification, page.quantity]}
+          rows={page.billOfMaterials.map((item, index) => ({
             label: `${index + 1}. ${item}`,
             fields: [
               { label: item, name: `bom_${index + 1}_brand_model` },
@@ -500,90 +353,72 @@ export default function CustomerEnquiryPage() {
           }))}
         />
         <p className="mt-3 text-sm leading-5 text-slate-600">
-          All equipment supplied will be subject to the specifications and commercial terms agreed in the final
-          purchase order.
+          {page.billOfMaterialsNote}
         </p>
       </section>
 
       <section className="rounded-2xl border border-emerald-200 bg-emerald-50/40 p-5">
-        <SectionTitle number="06" title="Project Price Breakdown" />
+        <SectionTitle number="06" title={page.sections[5]} />
         <div className="overflow-x-auto rounded-xl border border-slate-200">
           <table className="w-full min-w-[520px] border-collapse text-md">
             <thead className="bg-emerald-100 text-left text-sm font-bold uppercase text-emerald-950">
-              <tr><th className="px-3 py-3">S.No.</th><th className="px-3 py-3">Description</th><th className="px-3 py-3">Amount (₹)</th></tr>
+              <tr><th className="px-3 py-3">{page.serialNumber}</th><th className="px-3 py-3">{page.descriptionLabel}</th><th className="px-3 py-3">{page.amountRupees}</th></tr>
             </thead>
             <tbody>
-              {priceItems.map((item, index) => (
+              {page.priceItems.map((item, index) => (
                 <tr key={item} className="border-t border-slate-200 odd:bg-white even:bg-slate-50">
                   <td className="px-3 py-2">{index + 1}</td>
                   <td className="px-3 py-2">{item}</td>
-                  <td className="px-3 py-2"><input name={`price_item_${index + 1}`} type="number" min={0} step="0.01" aria-label={`${item} amount in rupees`} className="min-h-9 w-full rounded-md border border-slate-200 px-2" /></td>
+                  <td className="px-3 py-2"><input name={`price_item_${index + 1}`} type="number" min={0} step="0.01" aria-label={`${item} ${page.amountInRupees}`} className="min-h-9 w-full rounded-md border border-slate-200 px-2" /></td>
                 </tr>
               ))}
               {[
-                ['Subtotal', 'price_subtotal'],
-                ['GST', 'price_gst'],
-                ['Other Applicable Charges', 'price_other_charges'],
-                ['TOTAL PROJECT COST', 'price_total'],
+                [page.subtotal, 'price_subtotal'],
+                [page.gst, 'price_gst'],
+                [page.otherApplicableCharges, 'price_other_charges'],
+                [page.totalProjectCost, 'price_total'],
               ].map(([label, name]) => (
                 <tr key={name} className="border-t border-slate-200 bg-white font-semibold">
                   <th colSpan={2} className="px-3 py-2 text-left">{label}</th>
-                  <td className="px-3 py-2"><input name={name} type="number" min={0} step="0.01" required={name === 'price_total'} aria-label={`${label} in rupees`} className="min-h-9 w-full rounded-md border border-slate-200 px-2" /></td>
+                  <td className="px-3 py-2"><input name={name} type="number" min={0} step="0.01" required={name === 'price_total'} aria-label={`${label} ${page.amountInRupees}`} className="min-h-9 w-full rounded-md border border-slate-200 px-2" /></td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
-          <TextField label="Total Amount in Words" name="total_amount_words" required placeholder="Rupees … only" />
-          <TextField label="GST Treatment / Notes" name="gst_treatment" placeholder="GST charged as applicable to goods and services" />
+          <TextField label={page.totalAmountInWords} name="total_amount_words" required placeholder={page.totalAmountPlaceholder} />
+          <TextField label={page.gstTreatmentNotes} name="gst_treatment" placeholder={page.gstPlaceholder} />
         </div>
         <p className="mt-3 text-sm leading-5 text-slate-600">
-          GST will be charged as applicable to the individual goods and services and the agreed supply structure.
+          {page.gstNote}
         </p>
       </section>
 
       <section className="rounded-2xl border border-sky-200 bg-sky-50/50 p-5">
-        <SectionTitle number="07" title="Estimated Energy Generation" />
+        <SectionTitle number="07" title={page.sections[6]} />
         <EditableTable
-          rowHeader="Parameter"
-          headers={['Estimated Value', 'Unit']}
-          rows={[
-            ['Installed Solar Capacity', 'installed_capacity', 'kWp'],
-            ['Estimated Daily Generation', 'daily_generation', 'kWh'],
-            ['Estimated Monthly Generation', 'monthly_generation', 'kWh'],
-            ['Estimated Annual Generation', 'annual_generation', 'kWh'],
-            ['Estimated Self-Consumption', 'self_consumption', '%'],
-            ['Estimated Grid Export', 'grid_export', 'kWh'],
-            ['Estimated System Performance Ratio', 'performance_ratio', '%'],
-          ].map(([label, name, unit]) => ({
+          rowHeader={page.parameter}
+          headers={[page.estimatedValue, page.unit]}
+          rows={page.generationParameters.map(({ label, name, unit }) => ({
             label,
             unit,
             fields: [{ label, name, type: 'number', min: 0, step: 'any' }],
           }))}
         />
-        <h3 className="mb-3 mt-5 text-md font-bold text-slate-900">Generation assumptions</h3>
+        <h3 className="mb-3 mt-5 text-md font-bold text-slate-900">{page.generationAssumptions}</h3>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            ['Site location', 'generation_site_location'],
-            ['Solar resource assessment', 'solar_resource_assessment'],
-            ['Panel orientation', 'panel_orientation'],
-            ['Panel tilt', 'panel_tilt'],
-            ['Shading assessment', 'shading_assessment'],
-            ['System losses considered', 'system_losses'],
-          ].map(([label, name]) => <TextField key={name} label={label} name={name} />)}
+          {page.generationAssumptionFields.map(({ label, name }) => <TextField key={name} label={label} name={name} />)}
         </div>
         <p className="mt-4 rounded-xl bg-amber-50 p-4 text-sm leading-5 text-amber-950">
-          Actual electricity generation will vary depending on solar irradiation, weather, shading, module
-          temperature, equipment performance, maintenance and grid availability. These estimates are not guaranteed
-          generation figures.
+          {page.generationDisclaimer}
         </p>
       </section>
 
       <section className="rounded-2xl border border-slate-200 bg-white p-5">
-        <SectionTitle number="08" title="Estimated Financial Benefits" />
+        <SectionTitle number="08" title={page.sections[7]} />
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {financialParameters.map((parameter) => (
+          {page.financialParameters.map((parameter) => (
             <TextField
               key={parameter.name}
               label={`${parameter.label} (${parameter.unit})`}
@@ -594,110 +429,107 @@ export default function CustomerEnquiryPage() {
             />
           ))}
         </div>
-        <h3 className="mb-3 mt-5 text-md font-bold text-slate-900">Calculation assumptions</h3>
+        <h3 className="mb-3 mt-5 text-md font-bold text-slate-900">{page.calculationAssumptions}</h3>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          <TextField label="Applicable Electricity Tariff (₹/kWh)" name="electricity_tariff" type="number" min={0} step="any" />
-          <TextField label="Estimated Self-Consumption (%)" name="financial_self_consumption" type="number" min={0} max={100} step="any" />
-          <TextField label="Export Compensation, if applicable (₹/kWh)" name="export_compensation" type="number" min={0} step="any" />
-          <TextField label="Annual Performance Degradation Assumption (%)" name="annual_degradation" type="number" min={0} max={100} step="any" />
-          <SelectField label="Applicable Fixed Charges and Demand Charges" name="fixed_demand_charges" options={['Excluded', 'Included']} />
+          <TextField label={page.electricityTariff} name="electricity_tariff" type="number" min={0} step="any" />
+          <TextField label={page.financialSelfConsumption} name="financial_self_consumption" type="number" min={0} max={100} step="any" />
+          <TextField label={page.exportCompensation} name="export_compensation" type="number" min={0} step="any" />
+          <TextField label={page.annualDegradation} name="annual_degradation" type="number" min={0} max={100} step="any" />
+          <SelectField label={page.fixedDemandCharges} name="fixed_demand_charges" options={page.fixedDemandOptions} placeholder={page.selectOption} />
         </div>
         <p className="mt-4 text-sm leading-5 text-slate-600">
-          Savings and payback estimates are indicative and depend on actual consumption, tariffs, self-consumption,
-          applicable export arrangements and system performance.
+          {page.savingsDisclaimer}
         </p>
       </section>
 
       <section className="rounded-2xl border border-emerald-200 bg-emerald-50/40 p-5">
-        <SectionTitle number="09" title="Project Execution Scope" />
-        <p className="mb-4 text-md text-slate-600">Select whether each activity is included or excluded in the offer.</p>
+        <SectionTitle number="09" title={page.sections[8]} />
+        <p className="mb-4 text-md text-slate-600">{page.scopeInstructions}</p>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {scopeActivities.map((activity, index) => (
+          {page.scopeActivities.map((activity, index) => (
             <SelectField
               key={activity}
               label={activity}
               name={`scope_activity_${index + 1}`}
-              options={['Included', 'Excluded']}
+              options={page.includedExcludedOptions}
+              placeholder={page.selectOption}
             />
           ))}
         </div>
-        <h3 className="mb-3 mt-6 text-md font-bold text-slate-900">Proposed Execution Schedule</h3>
+        <h3 className="mb-3 mt-6 text-md font-bold text-slate-900">{page.scheduleTitle}</h3>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {scheduleActivities.map((activity, index) => (
-            <TextField key={activity} label={`${activity} – Estimated Duration`} name={`schedule_duration_${index + 1}`} placeholder="e.g. 5 working days" />
+          {page.scheduleActivities.map((activity, index) => (
+            <TextField key={activity} label={`${activity}${page.estimatedDuration}`} name={`schedule_duration_${index + 1}`} placeholder={page.durationPlaceholder} />
           ))}
         </div>
         <p className="mt-4 text-sm leading-5 text-slate-600">
-          The execution schedule will begin after the agreed advance payment, technical approvals and site readiness,
-          as applicable.
+          {page.scheduleNote}
         </p>
       </section>
 
       <section className="rounded-2xl border border-amber-200 bg-amber-50/50 p-5">
-        <SectionTitle number="10" title="Exclusions" />
-        <p className="mb-4 text-md text-slate-600">Unless specifically mentioned in the commercial offer, the following are excluded:</p>
+        <SectionTitle number="10" title={page.sections[9]} />
+        <p className="mb-4 text-md text-slate-600">{page.exclusionsIntro}</p>
         <ol className="grid gap-2 sm:grid-cols-2">
-          {exclusions.map((item, index) => (
+          {page.exclusions.map((item, index) => (
             <li key={item} className="flex gap-3 rounded-lg bg-white p-3 text-sm leading-5 text-slate-700">
               <span className="font-mono font-bold text-amber-700">{index + 1}.</span>{item}
             </li>
           ))}
         </ol>
         <label className="mt-4 block">
-          <span className="mb-1.5 block text-sm font-bold text-slate-700">Additional work / separately priced items</span>
-          <textarea name="additional_work" rows={2} placeholder="Any additional work will be communicated and priced separately with customer approval." className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-md" />
+          <span className="mb-1.5 block text-sm font-bold text-slate-700">{page.additionalWork}</span>
+          <textarea name="additional_work" rows={2} placeholder={page.additionalWorkPlaceholder} className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-md" />
         </label>
       </section>
 
       <section className="rounded-2xl border border-slate-200 bg-white p-5">
-        <SectionTitle number="11" title="Warranty Details" />
+        <SectionTitle number="11" title={page.sections[10]} />
         <EditableTable
-          rowHeader="Equipment"
-          headers={['Manufacturer / Warranty Provider', 'Warranty Period']}
-          rows={warrantyItems.map((item, index) => ({
+          rowHeader={page.equipment}
+          headers={[page.manufacturerWarrantyProvider, page.warrantyPeriod]}
+          rows={page.warrantyItems.map((item, index) => ({
             label: item,
             fields: [
-              { label: `${item} manufacturer or provider`, name: `warranty_provider_${index + 1}` },
-              { label: `${item} warranty period`, name: `warranty_period_${index + 1}` },
+              { label: `${item} ${page.manufacturerOrProvider}`, name: `warranty_provider_${index + 1}` },
+              { label: `${item} ${page.warrantyPeriodField}`, name: `warranty_period_${index + 1}` },
             ],
           }))}
         />
         <p className="mt-4 text-sm leading-5 text-slate-600">
-          Warranty coverage is subject to the respective manufacturer’s or service provider’s written warranty terms.
-          AeroSun Energy will communicate the applicable warranty arrangements before order confirmation. No warranty
-          period should be assumed unless stated in the final quotation or supporting warranty document.
+          {page.warrantyCoverageNote}
         </p>
       </section>
 
       <section className="rounded-2xl border border-sky-200 bg-sky-50/50 p-5">
-        <SectionTitle number="12" title="Payment Terms" />
-        <p className="mb-4 text-md text-slate-600">Proposed payment schedule (percentages must total 100%).</p>
+        <SectionTitle number="12" title={page.sections[11]} />
+        <p className="mb-4 text-md text-slate-600">{page.paymentScheduleIntro}</p>
         <div className="grid gap-3 sm:grid-cols-2">
           {paymentMilestones.map((milestone, index) => (
             <div key={milestone} className="grid gap-3 rounded-xl border border-slate-200 bg-white p-4 sm:grid-cols-2">
               <p className="self-center text-md font-semibold text-slate-700">{milestone}</p>
-              <TextField label="Payment Percentage (%)" name={`payment_percentage_${index + 1}`} type="number" min={0} max={100} step={0.01} required />
-              <TextField label="Payment Amount (₹)" name={`payment_amount_${index + 1}`} type="number" min={0} step={0.01} required className="sm:col-span-2" />
+              <TextField label={page.paymentPercentage} name={`payment_percentage_${index + 1}`} type="number" min={0} max={100} step={0.01} required />
+              <TextField label={page.paymentAmount} name={`payment_amount_${index + 1}`} type="number" min={0} step={0.01} required className="sm:col-span-2" />
             </div>
           ))}
         </div>
-        <p className="mt-3 text-right text-md font-black text-emerald-900">Total payment percentage: 100%</p>
+        <p className="mt-3 text-right text-md font-black text-emerald-900">{page.totalPaymentPercentage}</p>
         <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          <TextField label="Account Name" name="bank_account_name" placeholder="AeroSun Energy Private Limited" />
-          <TextField label="Bank Name" name="bank_name" />
-          <TextField label="Account Number" name="bank_account_number" />
-          <TextField label="IFSC Code" name="bank_ifsc" />
-          <TextField label="Branch" name="bank_branch" />
+          <TextField label={page.accountName} name="bank_account_name" placeholder={page.companyName} />
+          <TextField label={page.bankName} name="bank_name" />
+          <TextField label={page.accountNumber} name="bank_account_number" />
+          <TextField label={page.ifscCode} name="bank_ifsc" />
+          <TextField label={page.branch} name="bank_branch" />
         </div>
         <p className="mt-3 text-sm italic text-slate-600">
-          Bank details will be provided through an authenticated company invoice or payment document.
+          {page.bankDetailsNote}
         </p>
       </section>
 
       <section className="rounded-2xl border border-slate-200 bg-white p-5">
-        <SectionTitle number="13" title="Quotation Terms and Conditions" />
+        <SectionTitle number="13" title={page.sections[12]} />
         <ol className="grid gap-2 sm:grid-cols-2">
-          {termsAndConditions.map((term, index) => (
+          {page.termsAndConditions.map((term, index) => (
             <li key={term} className="flex gap-3 rounded-lg bg-slate-50 p-3 text-sm leading-5 text-slate-700">
               <span className="font-mono font-bold text-emerald-700">{index + 1}.</span>{term}
             </li>
@@ -706,62 +538,60 @@ export default function CustomerEnquiryPage() {
       </section>
 
       <section className="rounded-2xl border border-emerald-200 bg-emerald-50/50 p-5">
-        <SectionTitle number="14" title="Customer Acceptance" />
+        <SectionTitle number="14" title={page.sections[13]} />
         <p className="mb-4 text-md leading-6 text-slate-700">
-          I / We have reviewed the technical proposal, equipment specifications, project price, payment schedule and
-          terms and conditions. I / We agree to proceed with the proposed project subject to the final approved scope
-          and purchase agreement.
+          {page.acceptanceCopy}
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
-          <TextField label="Customer Name" name="acceptance_customer_name" required minLength={2} />
-          <TextField label="Signature / Name of Signatory" name="customer_signature" required minLength={2} />
-          <TextField label="Date" name="customer_acceptance_date" type="date" required />
-          <TextField label="Place" name="customer_acceptance_place" required />
+          <TextField label={page.customerName} name="acceptance_customer_name" required minLength={2} />
+          <TextField label={page.signatureName} name="customer_signature" required minLength={2} />
+          <TextField label={page.date} name="customer_acceptance_date" type="date" required />
+          <TextField label={page.place} name="customer_acceptance_place" required />
         </div>
       </section>
 
       <section className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-        <SectionTitle number="15" title="AeroSun Energy Authorisation" />
-        <p className="mb-4 text-md font-semibold text-slate-800">For AeroSun Energy Private Limited</p>
+        <SectionTitle number="15" title={page.sections[14]} />
+        <p className="mb-4 text-md font-semibold text-slate-800">{page.forCompany}</p>
         <div className="grid gap-3 sm:grid-cols-2">
-          <TextField label="Authorised Representative" name="authorised_representative" required minLength={2} />
-          <TextField label="Designation" name="authorised_designation" required />
-          <TextField label="Authorised Signature / Name" name="authorised_signature" required minLength={2} />
-          <TextField label="Authorisation Date" name="authorisation_date" type="date" required />
+          <TextField label={page.authorisedRepresentative} name="authorised_representative" required minLength={2} />
+          <TextField label={page.designation} name="authorised_designation" required />
+          <TextField label={page.authorisedSignature} name="authorised_signature" required minLength={2} />
+          <TextField label={page.authorisationDate} name="authorisation_date" type="date" required />
         </div>
         <label className="mt-3 block">
-          <span className="mb-1.5 block text-sm font-bold text-slate-700">Company Seal</span>
-          <input name="company_seal" placeholder="Company seal / stamp details" className="min-h-10 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-md" />
+          <span className="mb-1.5 block text-sm font-bold text-slate-700">{page.companySeal}</span>
+          <input name="company_seal" placeholder={page.companySealPlaceholder} className="min-h-10 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-md" />
         </label>
       </section>
 
       <section className="rounded-2xl bg-[#123c48] p-5 text-white sm:p-7">
-        <h2 className="text-xl font-black uppercase tracking-wide">Thank You</h2>
-        <p className="mt-2 font-semibold">AeroSun Energy Private Limited</p>
-        <p className="mt-1 text-md text-emerald-100">Power from Sun, Wind, Water, Fire.</p>
+        <h2 className="text-xl font-black uppercase tracking-wide">{page.thankYou}</h2>
+        <p className="mt-2 font-semibold">{page.companyName}</p>
+        <p className="mt-1 text-md text-emerald-100">{page.companyTagline}</p>
         <p className="mt-4 text-sm leading-6 text-emerald-50/80">
-          aerosunenergy.in · customercare@aerosunenergy.in · +91 8099181075
+          {page.company.websiteValue} · {page.mailtoRecipient} · {page.phoneValue}
         </p>
-        <p className="mt-2 font-mono text-sm text-emerald-100/70">Document Reference: ASE-SOL-QTN-0001 | Revision 00</p>
+        <p className="mt-2 font-mono text-sm text-emerald-100/70">{page.documentReference}</p>
       </section>
 
       <div className="flex flex-col gap-3 border-t border-slate-200 pt-5 sm:flex-row sm:items-center sm:justify-between">
         <label className="flex items-start gap-3 text-md leading-6 text-slate-700">
-          <input type="checkbox" name="accept_terms" value="Accepted" required className="mt-1 h-4 w-4 accent-emerald-700" />
-          I have reviewed the quotation details and accept the terms and conditions.
+          <input type="checkbox" name="accept_terms" value={page.acceptanceValue} required className="mt-1 h-4 w-4 accent-emerald-700" />
+          {page.acceptTerms}
         </label>
         <button type="submit" className="inline-flex min-h-12 items-center justify-center rounded-full bg-emerald-800 px-6 py-3 text-md font-bold text-white transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800">
-          Validate &amp; Prepare Quotation
+          {page.submit}
         </button>
       </div>
-      <p className="text-right text-sm text-slate-500">Required fields are marked with an asterisk. Your browser will validate the form before submission.</p>
+      <p className="text-right text-sm text-slate-500">{page.requiredFieldsNote}</p>
       {feedback && <p role="status" aria-live="polite" className="rounded-lg bg-emerald-50 p-3 text-md font-semibold text-emerald-800">{feedback}</p>}
         </form>
         <aside className="rounded-2xl border border-slate-200 bg-white p-5 lg:sticky lg:top-24">
-          <h2 className="mb-4 text-md font-black uppercase tracking-wide text-slate-900">Quotation Sections</h2>
-          <nav aria-label="Quotation sections">
+          <h2 className="mb-4 text-md font-black uppercase tracking-wide text-slate-900">{page.quotationSectionsTitle}</h2>
+          <nav aria-label={page.quotationSectionsAriaLabel}>
             <ol className="space-y-2">
-              {quotationSections.map((section, index) => {
+              {page.sections.map((section, index) => {
                 const number = String(index + 1).padStart(2, '0')
                 return (
                   <li key={number}>

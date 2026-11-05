@@ -76,6 +76,17 @@ type WindSlide = {
   panelClass: string
 }
 
+function getWindAccent(accent: string): 'sky' | 'emerald' | 'amber' | 'violet' {
+  switch (accent) {
+    case 'emerald':
+    case 'amber':
+    case 'violet':
+      return accent
+    default:
+      return 'sky'
+  }
+}
+
 const windSlides: WindSlide[] = [
   {
     badge: 'Urban rooftop',
@@ -145,7 +156,7 @@ const windSlides: WindSlide[] = [
   },
 ]
 
-function WindHeroSlider() {
+function WindHeroSlider({ slides, ariaLabel }: { slides: WindSlide[]; ariaLabel: string }) {
   const slideClass =
     'group relative flex h-full w-full items-end justify-start overflow-hidden p-6 sm:p-8 lg:p-14 xl:p-18'
 
@@ -153,8 +164,8 @@ function WindHeroSlider() {
     'absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.32),transparent_24%),radial-gradient(circle_at_80%_20%,rgba(56,189,248,0.18),transparent_30%),linear-gradient(90deg,rgba(2,6,23,0.78)_0%,rgba(15,23,42,0.6)_40%,rgba(15,23,42,0.28)_100%)]'
 
   return (
-    <Slider autoplay interval={5200} pauseOnHover ariaLabel="Wind energy solutions">
-      {windSlides.map((slide, index) => (
+    <Slider autoplay interval={5200} pauseOnHover ariaLabel={ariaLabel}>
+      {slides.map((slide, index) => (
         <div key={slide.title} className={`${slide.panelClass} relative h-full w-full overflow-hidden`}>
           <div className="absolute inset-0">
             <OptimizedImage
@@ -371,27 +382,16 @@ const serviceSections = [
 
 export default function WindEnergyPage() {
   const { t } = useLocale()
-  const windPage = t.windPage ?? {
-    hero: {
-      eyebrow: 'AeroSun Energy / Wind Systems',
-      title: 'Wind energy,',
-      titleAccent: 'built around your site.',
-      subtitle: 'Wind energy converts the kinetic energy of moving air into electricity or mechanical power. Explore distributed generation, commercial turbines and hybrid renewable systems.',
-      resourceFirst: 'Resource first',
-      siteDesigned: 'Site designed',
-      variants: [
-        { label: 'HAWT', detail: 'Horizontal axis' },
-        { label: 'VAWT', detail: 'Vertical axis' },
-        { label: 'HYBRID', detail: 'Solar + wind' },
-      ],
-    },
-    overview: { eyebrow: 'Overview', title: 'Types of wind energy systems' },
-    classification: { eyebrow: 'Classification', title: 'Design and installation choices', badge: 'Site-sensitive' },
-    electrical: { eyebrow: 'Electrical configuration', title: 'Matching the system to the application' },
-    benefits: { title: 'Key benefits', feasibility: 'Feasibility checks' },
-    capacity: { eyebrow: 'Capacity ranges', title: 'Power capacity categories' },
-    strategy: { eyebrow: 'Strategic recommendation', title: 'Which wind systems should AeroSun Energy focus on?' },
-  }
+  const windPage = t.windPage
+
+  const windSlidesLocalized = windPage.hero.slides ?? windSlides
+  const turbineTypesLocalized = windPage.overview.items ?? turbineTypes
+  const deploymentTypesLocalized = windPage.classification.items ?? deploymentTypes
+  const systemConfigsLocalized = windPage.electrical.rows ?? systemConfigs
+  const keyBenefitsLocalized = windPage.benefits.items ?? keyBenefits
+  const strategicPointsLocalized = windPage.benefits.feasibilityItems ?? strategicPoints
+  const capacityBandsLocalized = windPage.capacity.rows ?? capacityBands
+  const serviceSectionsLocalized = windPage.sections ?? serviceSections
 
   return (
     <main className="bg-[#f0f8fc] pt-6 sm:pt-8 text-slate-900 [&>section]:rounded-2xl [&>section]:border-l-4 [&>section]:border-l-sky-500">
@@ -443,7 +443,7 @@ export default function WindEnergyPage() {
         </div>
       </header>
 
-      <WindHeroSlider />
+      <WindHeroSlider slides={windSlidesLocalized} ariaLabel={windPage.labels.sliderAriaLabel} />
 
       <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-sky-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
@@ -452,13 +452,13 @@ export default function WindEnergyPage() {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
-          {turbineTypes.map((type) => (
+          {turbineTypesLocalized.map((type) => (
             <WindFeatureCard
               key={type.title}
               title={type.title}
               description={type.description}
               points={type.highlights}
-              accent={type.accent}
+              accent={getWindAccent(type.accent)}
             />
           ))}
         </div>
@@ -477,7 +477,7 @@ export default function WindEnergyPage() {
           </div>
 
           <div className="grid gap-4 md:grid-cols-3">
-            {deploymentTypes.map((item, index) => (
+            {deploymentTypesLocalized.map((item, index) => (
               <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-4">
                 <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-lg font-bold text-emerald-300">
                   {index + 1}
@@ -495,20 +495,20 @@ export default function WindEnergyPage() {
           <h2 className="mt-3 text-3xl font-bold text-slate-900">{windPage.electrical.title}</h2>
         </div>
 
-        <WindComparisonTable rows={systemConfigs} />
+        <WindComparisonTable rows={systemConfigsLocalized} />
       </section>
 
       <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-sky-200/80 bg-[#f7fcff] p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.26)] sm:my-8 sm:p-8 lg:p-9">
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="grid gap-5 sm:grid-cols-2">
-            {keyBenefits.map((benefit) => (
+            {keyBenefitsLocalized.map((benefit) => (
               <WindBenefitCard key={benefit} title={benefit.split(' ').slice(0, 3).join(' ') || 'Benefit'} description={benefit} />
             ))}
           </div>
 
           <div className="space-y-5">
-            <WindInfoPanel title={windPage.benefits.title} content={keyBenefits} accent="sky" />
-            <WindInfoPanel title={windPage.benefits.feasibility} content={strategicPoints} accent="emerald" />
+            <WindInfoPanel title={windPage.benefits.title} content={keyBenefitsLocalized} accent="sky" />
+            <WindInfoPanel title={windPage.benefits.feasibility} content={strategicPointsLocalized} accent="emerald" />
           </div>
         </div>
       </section>
@@ -519,7 +519,7 @@ export default function WindEnergyPage() {
           <h2 className="mt-3 text-3xl font-bold text-slate-900">{windPage.capacity.title}</h2>
         </div>
 
-        <WindCapacityTable rows={capacityBands} />
+        <WindCapacityTable rows={capacityBandsLocalized} />
       </section>
 
       <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-sky-200/80 bg-[#f7fcff] p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.26)] sm:my-8 sm:p-8 lg:p-9">
@@ -530,20 +530,20 @@ export default function WindEnergyPage() {
               <h2 className="mt-3 text-3xl font-bold text-slate-900">{windPage.strategy.title}</h2>
               <div className="mt-6 space-y-5 text-base leading-7 text-slate-700">
                 <p>
-                  For AeroSun Energy Private Limited, the most promising early opportunities are small wind turbines, solar–wind hybrid systems, and medium-scale commercial wind applications for agricultural and industrial sites.
+                  {windPage.labels.strategyDescription[0]}
                 </p>
                 <p>
-                  A hybrid design is especially attractive because it can combine wind generation with solar PV, battery storage, and smart controls. This provides more resilient supply and helps customers diversify their renewable energy mix.
+                  {windPage.labels.strategyDescription[1]}
                 </p>
               </div>
             </div>
 
             <div className="rounded-4xl border border-emerald-200 bg-emerald-50 p-5">
-              <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700">AeroSun view</p>
+              <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700">{windPage.labels.aeroSunView}</p>
               <div className="mt-4 space-y-3 text-md leading-7 text-slate-700">
-                <div className="rounded-2xl bg-white p-3">1. Small wind turbines, 1–10 kW</div>
-                <div className="rounded-2xl bg-white p-3">2. Solar–wind hybrid systems</div>
-                <div className="rounded-2xl bg-white p-3">3. Commercial systems, 10–100 kW</div>
+                {windPage.strategy.points.map((point, index) => (
+                  <div key={point} className="rounded-2xl bg-white p-3">{index + 1}. {point}</div>
+                ))}
               </div>
             </div>
           </div>
@@ -552,12 +552,12 @@ export default function WindEnergyPage() {
 
       <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-cyan-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
-          <WindSectionEyebrow>Service Sections</WindSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900">Exploring wind energy applications</h2>
+          <WindSectionEyebrow>{windPage.labels.serviceSections}</WindSectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900">{windPage.labels.serviceSectionsTitle}</h2>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-2">
-          {serviceSections.map((section) => (
+          {serviceSectionsLocalized.map((section) => (
             <div key={section.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="text-2xl font-bold text-slate-900">{section.title}</h3>
               <p className="mt-2 text-base leading-7 text-slate-700">{section.heading}</p>
@@ -565,7 +565,7 @@ export default function WindEnergyPage() {
 
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <div>
-                  <h4 className="text-md font-semibold text-slate-800">Typical applications</h4>
+                  <h4 className="text-md font-semibold text-slate-800">{windPage.labels.applications}</h4>
                   <ul className="mt-2 space-y-2 text-md leading-6 text-slate-600">
                     {section.applications.map((app) => (
                       <li key={app.title} className="flex gap-3">
@@ -584,7 +584,7 @@ export default function WindEnergyPage() {
                 </div>
 
                 <div>
-                  <h4 className="text-md font-semibold text-slate-800">Key benefits</h4>
+                  <h4 className="text-md font-semibold text-slate-800">{windPage.labels.keyBenefits}</h4>
                   <ul className="mt-2 space-y-2 text-md leading-6 text-slate-600">
                     {section.benefits.map((benefit) => (
                       <li key={benefit} className="flex gap-3">
@@ -602,7 +602,7 @@ export default function WindEnergyPage() {
 
               <div className="mt-6 rounded-lg bg-slate-50 p-4 text-md text-slate-700">
                 <div className="flex items-center justify-between">
-                  <div className="font-medium">Illustrative calculation</div>
+                  <div className="font-medium">{windPage.labels.illustrativeCalculation}</div>
                   <div className="text-md text-slate-500">{section.calculation.label}</div>
                 </div>
                 <div className="mt-2 flex gap-2 text-lg font-bold">
@@ -613,7 +613,7 @@ export default function WindEnergyPage() {
               </div>
 
               <div className="mt-6 border-t border-slate-200 pt-4">
-                <h4 className="text-md font-semibold text-slate-800">FAQs</h4>
+                <h4 className="text-md font-semibold text-slate-800">{windPage.labels.faqs}</h4>
                 <div className="mt-2 space-y-3 text-md leading-6 text-slate-600">
                   {section.faqs.map((faq) => (
                     <div key={faq.question} className="flex flex-col gap-1">

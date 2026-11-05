@@ -40,14 +40,7 @@ const coreValueStyles = [
 export default function About() {
   const { t } = useLocale()
   const a = t.about
-  const home = t.home ?? {}
-  const homeSection = home.aboutSection ?? {
-    eyebrow: 'ABOUT',
-    badge: 'Clean Energy Partner',
-    title: 'Powering a sustainable future with purpose.',
-    tags: ['Solar', 'Wind', 'Hybrid'],
-    audience: ['Residential', 'Commercial', 'Industrial', 'Institutional'],
-  }
+  const homeSection = t.home.aboutSection
 
   const features = a.features.map((f, i) => ({
     ...f,
@@ -55,41 +48,35 @@ export default function About() {
     ...featureStyles[i],
   }))
 
-  const statCards = [
-    {
-      title: 'Innovation',
-      value: 'Smart energy systems',
-      tone: 'bg-blue-50 border-blue-200 text-blue-700',
-    },
-    {
-      title: 'Sustainability',
-      value: 'Lower emissions',
-      tone: 'bg-emerald-50 border-emerald-200 text-emerald-700',
-    },
-    {
-      title: 'Reliability',
-      value: 'Future-ready setups',
-      tone: 'bg-amber-50 border-amber-200 text-amber-700',
-    },
-  ]
+  const statCards = homeSection.stats.map((item, index) => ({
+    ...item,
+    tone: [
+      'bg-blue-50 border-blue-200 text-blue-700',
+      'bg-emerald-50 border-emerald-200 text-emerald-700',
+      'bg-amber-50 border-amber-200 text-amber-700',
+    ][index],
+  }))
 
-  const systemCards = [
-    {
-      label: 'Solar',
-      value: 'Photovoltaic generation',
-      tone: 'border-blue-400/20 bg-blue-500/10 text-blue-100',
-    },
-    {
-      label: 'Wind',
-      value: 'Turbines and generators',
-      tone: 'border-emerald-400/20 bg-emerald-500/10 text-emerald-100',
-    },
-    {
-      label: 'Hybrid',
-      value: 'Integrated renewable design',
-      tone: 'border-amber-400/20 bg-amber-500/10 text-amber-100',
-    },
-  ]
+  const systemCards = homeSection.systemCards.map((item, index) => ({
+    ...item,
+    tone: [
+      'border-blue-400/20 bg-blue-500/10 text-blue-100',
+      'border-emerald-400/20 bg-emerald-500/10 text-emerald-100',
+      'border-amber-400/20 bg-amber-500/10 text-amber-100',
+    ][index],
+  }))
+
+  const renderCompanyName = (text: string) => {
+    const [before, after] = text.split('{companyName}')
+
+    return (
+      <>
+        {before}
+        <strong className="text-slate-900">{homeSection.companyName}</strong>
+        {after}
+      </>
+    )
+  }
 
   return (
     <section id="about" className="relative overflow-hidden bg-[#f7f9f5] px-4 py-8 sm:px-6 lg:px-10 lg:py-12">
@@ -100,8 +87,8 @@ export default function About() {
             <div className="flex flex-col gap-4 border-b border-slate-200 pb-5 lg:flex-row lg:items-center lg:justify-between">
               <div className="flex items-baseline justify-start gap-1">
                 <span className="text-xl font-bold tracking-[0.08em] text-[#333333]">{homeSection.eyebrow}</span>
-                <span className="text-3xl font-black tracking-[0.05em] text-[#20A44A]">AeroSun</span>
-                <span className="text-3xl font-black tracking-[0.05em] text-[#F59E0B]">Energy</span>
+                <span className="text-3xl font-black tracking-[0.05em] text-[#20A44A]">{homeSection.brandFirst}</span>
+                <span className="text-3xl font-black tracking-[0.05em] text-[#F59E0B]">{homeSection.brandSecond}</span>
               </div>
 
               <div className="flex flex-wrap items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.22em] text-slate-600">
@@ -135,7 +122,7 @@ export default function About() {
                     {homeSection.badge}
                   </span>
                   <span className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.2em] text-slate-200">
-                    Since 2026
+                    {homeSection.sinceLabel}
                   </span>
                 </div>
 
@@ -164,17 +151,17 @@ export default function About() {
                     <div className="relative h-80 w-full">
                       <OptimizedImage
                         src="/images/founder-aerosunenergy.webp"
-                        alt="Founder of AeroSun Energy"
+                        alt={homeSection.imageAlt}
                         fill
                         sizes="(min-width: 400px) 400px, 100vw"
                         className="bg-white"
                       />
                     </div>
                     <div className="absolute left-4 top-4 rounded-full border border-white/70 bg-white/60 px-3 py-2 text-[12px] font-bold uppercase tracking-[0.24em] text-slate-700 backdrop-blur-sm">
-                      Founder Vision
+                      {homeSection.founderBadge}
                     </div>
                     <div className="absolute bottom-4 right-4 rounded-2xl border border-emerald-200 bg-white/85 px-3 py-2 shadow-lg backdrop-blur-sm">
-                      <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-slate-500">Leadership</p>
+                      <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-slate-500">{homeSection.leadershipLabel}</p>
                       <p className="mt-1 text-md font-semibold text-slate-900">{a.founder.name}</p>
                     </div>
                   </div>
@@ -193,15 +180,13 @@ export default function About() {
 
             <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
               <div className="rounded-[2rem] border border-slate-200 bg-[linear-gradient(135deg,#f8fafc_0%,#ecfeff_35%,#f0fdf4_100%)] p-5 shadow-[0_18px_32px_-26px_rgba(15,23,42,0.3)] sm:p-6">
-                <h3 className="text-2xl font-black tracking-[0.05em] text-slate-900">Our vision and commitment</h3>
+                <h3 className="text-2xl font-black tracking-[0.05em] text-slate-900">{homeSection.visionHeading}</h3>
                 <div className="mt-4 space-y-4 text-base leading-8 text-slate-700">
                   <p>
-                    At <strong className="text-slate-900">AeroSun Energy Private Limited</strong>, we are committed to delivering innovative,
-                    reliable, and sustainable renewable energy solutions tailored to the needs of homes, businesses, and industries.
+                    {renderCompanyName(homeSection.visionIntro)}
                   </p>
                   <p>
-                    AeroSun Energy Private Limited was established with a vision to contribute to a greener future by making renewable energy
-                    solutions more accessible, efficient, and dependable.
+                    {renderCompanyName(homeSection.visionHistory)}
                   </p>
                 </div>
                 <p className="mt-5 rounded-[1.25rem] border border-emerald-200 bg-emerald-50 px-4 py-3 text-base font-medium italic text-emerald-900">
@@ -211,20 +196,17 @@ export default function About() {
 
               <div className="space-y-4 rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_20px_40px_-26px_rgba(15,23,42,0.30)] sm:p-6">
                 <div className="rounded-[1.5rem] bg-[linear-gradient(135deg,#eff6ff_0%,#ffffff_60%,#ecfdf5_100%)] p-5">
-                  <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-sky-700">Solutions</p>
-                  <h4 className="mt-2 text-xl font-bold text-slate-900">Renewable energy for every need</h4>
+                  <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-sky-700">{homeSection.solutionsEyebrow}</p>
+                  <h4 className="mt-2 text-xl font-bold text-slate-900">{homeSection.solutionsTitle}</h4>
                   <p className="mt-3 text-base leading-7 text-slate-700">
-                    We support customers, architects, builders, and project developers in identifying suitable renewable energy systems.
+                    {homeSection.solutionsDescription}
                   </p>
                 </div>
 
                 <div className="rounded-[1.5rem] bg-[linear-gradient(135deg,#ecfdf5_0%,#ffffff_60%,#fff7ed_100%)] p-5">
-                  <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700">System design</p>
+                  <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700">{homeSection.designEyebrow}</p>
                   <ul className="mt-3 space-y-2 text-base leading-7 text-slate-700">
-                    <li>• Solar PV systems for clean electricity generation</li>
-                    <li>• Wind energy solutions for sustainable power</li>
-                    <li>• Hybrid configurations for greater resilience</li>
-                    <li>• Customized energy solutions for site-specific needs</li>
+                    {homeSection.designPoints.map((point) => <li key={point}>{point}</li>)}
                   </ul>
                 </div>
               </div>
@@ -233,10 +215,10 @@ export default function About() {
             <div className="rounded-[2rem] border border-slate-200 bg-slate-900 p-5 text-slate-100 shadow-[0_24px_70px_-30px_rgba(15,23,42,0.9)] sm:p-6">
               <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
                 <div>
-                  <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-300">Technology focus</p>
-                  <h3 className="mt-3 text-2xl font-black tracking-[0.05em] text-white">Solar, wind, and hybrid energy systems</h3>
+                  <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-300">{homeSection.technologyEyebrow}</p>
+                  <h3 className="mt-3 text-2xl font-black tracking-[0.05em] text-white">{homeSection.technologyTitle}</h3>
                   <p className="mt-4 text-lg leading-8 text-slate-300">
-                    Depending on project requirements, systems may be designed for grid-connected or off-grid applications, subject to technical feasibility and approvals.
+                    {homeSection.technologyDescription}
                   </p>
                 </div>
 
@@ -252,12 +234,12 @@ export default function About() {
             </div>
 
             <div className="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_20px_40px_-26px_rgba(15,23,42,0.25)] sm:p-6">
-              <h3 className="text-2xl font-black tracking-[0.05em] text-slate-900">Building a cleaner and more energy-efficient future</h3>
+              <h3 className="text-2xl font-black tracking-[0.05em] text-slate-900">{homeSection.futureHeading}</h3>
               <p className="mt-4 text-lg leading-8 text-slate-700">
-                We believe renewable energy is an important part of creating a sustainable future. By promoting innovative energy technologies and practical renewable energy solutions, AeroSun Energy aims to help customers manage energy costs, reduce environmental impact, and move towards greater energy independence.
+                {homeSection.futureDescription}
               </p>
               <div className="mt-5 inline-flex rounded-full bg-linear-to-r from-emerald-600 to-green-500 px-5 py-3 shadow-lg shadow-emerald-200/60">
-                <span className="text-base font-normal text-white">AeroSun Energy Private Limited — Power from Sun, Wind, Water, Fire.</span>
+                <span className="text-base font-normal text-white">{homeSection.slogan}</span>
               </div>
             </div>
           </CardContent>

@@ -109,8 +109,7 @@ export default function Navbar() {
     const disabled = Boolean(link.disabled)
     const active = isActive(link.href) && !disabled
     const Icon = navigationIcons[link.href] ?? PanelsTopLeft
-    const navbarMeta = t.navbar as Record<string, any>
-    const comingSoonLabel = navbarMeta.comingSoon ?? 'Coming soon'
+    const comingSoonLabel = t.navbar.comingSoon
     const classes = mobile
       ? `flex min-h-12 w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium transition ${
           disabled
@@ -321,11 +320,11 @@ export default function Navbar() {
         <div className="mx-auto flex min-h-8 max-w-[90rem] items-center justify-between gap-3 px-3 py-1 text-[11px] font-semibold tracking-[0.08em] sm:px-6 sm:text-[11px] sm:tracking-[0.12em] lg:px-8">
           <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
             <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6b45e] shadow-[0_0_10px_rgba(214,180,94,0.65)]" aria-hidden="true" />
-            AeroSun Energy Private Limited
+            {t.navbar.brandName}
           </span>
           <span className="ml-3 hidden whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.2em] text-[#c2cbb8] lg:flex lg:items-center lg:gap-2">
             <Sun className="h-3 w-3 text-[#d6b45e]" strokeWidth={1.8} aria-hidden="true" />
-            Power from Sun, Wind, Water, Fire
+            {t.navbar.brandTagline}
           </span>
         </div>
       </div>
@@ -333,7 +332,7 @@ export default function Navbar() {
       <div className="relative mx-auto flex min-h-[5.25rem] max-w-[90rem] items-center justify-between gap-1 px-3 py-2 sm:gap-3 sm:px-6 lg:px-8 max-[319px]:flex-wrap">
         <Logo compact />
 
-        <nav aria-label="Primary navigation" className="hidden min-w-0 flex-1 items-center justify-center xl:flex">
+        <nav aria-label={t.navbar.primaryNavigationLabel} className="hidden min-w-0 flex-1 items-center justify-center xl:flex">
           <div className="relative flex items-start gap-0.5">
             <span className="pointer-events-none absolute left-[8%] right-[8%] top-4 h-px bg-gradient-to-r from-transparent via-[#8aa28b]/65 to-transparent" aria-hidden="true" />
             {navLinks.map((link) => renderNavigationLink(link))}
@@ -360,11 +359,11 @@ export default function Navbar() {
           <a
             href="/aerosun-energy.pdf"
             download="aerosun-energy.pdf"
-            aria-label="Download AeroSun Energy voucher"
+            aria-label={t.navbar.downloadVoucher}
             className="inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-sm font-semibold text-[#e8d4a0] transition hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
           >
             <ArrowDownToLine className="h-4 w-4" aria-hidden="true" />
-            <span className="hidden 2xl:inline">Voucher</span>
+            <span className="hidden 2xl:inline">{t.navbar.voucher}</span>
           </a>
 
           <Link
@@ -391,7 +390,7 @@ export default function Navbar() {
                 ? 'border-[#dcedc8] bg-[#a5d6a7] text-[#173b2c]'
                 : 'border-white/20 bg-white/[0.06] text-[#f4f0e2] hover:border-[#dcedc8] hover:bg-[#a5d6a7] hover:text-[#173b2c]'
             }`}
-            aria-label={menuOpen ? 'Close navigation menu' : t.navbar.toggleMenu}
+            aria-label={menuOpen ? t.navbar.closeMenu : t.navbar.toggleMenu}
             aria-expanded={menuOpen}
             aria-controls="mobile-primary-navigation"
           >
@@ -405,10 +404,10 @@ export default function Navbar() {
         hidden={!menuOpen}
         className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-[#a5d6a7]/30 bg-[#09251e] px-4 pb-6 pt-3 shadow-[0_24px_50px_-22px_rgba(0,0,0,0.8)] sm:px-6 xl:hidden"
       >
-        <nav aria-label="Mobile primary navigation" className="mx-auto max-w-3xl space-y-1">
+        <nav aria-label={t.navbar.mobileNavigationLabel} className="mx-auto max-w-3xl space-y-1">
           <p className="mb-3 flex items-center gap-2 px-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#c5e1a5]">
             <span className="h-px w-5 bg-[#a5d6a7]/70" />
-            Explore AeroSun
+            {t.navbar.exploreLabel}
           </p>
           {navLinks.map((link) => renderNavigationLink(link, true))}
           <div className="border-t border-white/10 px-2 pt-4">
@@ -447,7 +446,7 @@ export default function Navbar() {
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-5 text-sm font-semibold text-[#e8d4a0] transition hover:border-[#dcedc8]/60 hover:bg-[#a5d6a7]/10 hover:text-[#e8f5e9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a5d6a7]"
             >
               <ArrowDownToLine className="h-4 w-4" aria-hidden="true" />
-              Download voucher
+              {t.navbar.downloadVoucher}
             </a>
           </div>
         </nav>
