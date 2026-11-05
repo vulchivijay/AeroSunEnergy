@@ -8,33 +8,38 @@ type Duration = {
 	days: number
 }
 
-const startDate = { year: 2026, month: 9, day: 6 }
+const START_DATE = new Date(2026, 9, 6)
+const DIGITAL_FONT_STYLE = {
+	fontFamily: 'var(--font-digital), "Orbitron", monospace',
+	fontVariantNumeric: 'tabular-nums',
+	fontFeatureSettings: '"tnum" 1',
+} as const
 
 function getDuration(date: Date): Duration {
-	const year = date.getFullYear()
-	const month = date.getMonth()
-	const day = date.getDate()
+	const referenceDate = new Date(date)
+	referenceDate.setHours(0, 0, 0, 0)
 
-	if (
-		year < startDate.year ||
-		(year === startDate.year && month < startDate.month) ||
-		(year === startDate.year && month === startDate.month && day < startDate.day)
-	) {
+	if (referenceDate < START_DATE) {
 		return { years: 0, months: 0, days: 0 }
 	}
 
-	let totalMonths = (year - startDate.year) * 12 + month - startDate.month
-	let days = day - startDate.day
+	let totalMonths =
+		(referenceDate.getFullYear() - START_DATE.getFullYear()) * 12 +
+		(referenceDate.getMonth() - START_DATE.getMonth())
+	let days = referenceDate.getDate() - START_DATE.getDate()
 
 	if (days < 0) {
-		const daysInPreviousMonth = new Date(year, month, 0).getDate()
-		days += daysInPreviousMonth
+		const previousMonth = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), 0)
+		days += previousMonth.getDate()
 		totalMonths -= 1
 	}
 
+	const years = Math.floor(totalMonths / 12)
+	const months = totalMonths % 12
+
 	return {
-		years: Math.floor(totalMonths / 12),
-		months: totalMonths % 12,
+		years,
+		months: months < 0 ? 0 : months,
 		days,
 	}
 }
@@ -44,20 +49,25 @@ export default function CompanyAge() {
 
 	useEffect(() => {
 		const updateDuration = () => setDuration(getDuration(new Date()))
-		let timeout: number
+		let timeout: number | undefined
+
 		const scheduleUpdate = () => {
 			const now = new Date()
 			const nextDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1)
 			timeout = window.setTimeout(() => {
 				updateDuration()
 				scheduleUpdate()
-			}, nextDay.getTime() - now.getTime())
+			}, Math.max(nextDay.getTime() - now.getTime(), 0))
 		}
 
 		updateDuration()
 		scheduleUpdate()
 
-		return () => window.clearTimeout(timeout)
+		return () => {
+			if (timeout !== undefined) {
+				window.clearTimeout(timeout)
+			}
+		}
 	}, [])
 
 	const units = duration
@@ -65,8 +75,12 @@ export default function CompanyAge() {
 				...(duration.years > 0
 					? [{ value: duration.years, label: duration.years === 1 ? 'year' : 'years' }]
 					: []),
-				{ value: duration.months, label: duration.months === 1 ? 'month' : 'months' },
-				{ value: duration.days, label: duration.days === 1 ? 'day' : 'days' },
+				...(duration.years > 0 || duration.months > 0 || duration.days > 0
+					? [{ value: duration.months, label: duration.months === 1 ? 'month' : 'months' }]
+					: []),
+				...(duration.days >= 0
+					? [{ value: duration.days, label: duration.days === 1 ? 'day' : 'days' }]
+					: []),
 			]
 		: null
 
@@ -81,13 +95,13 @@ export default function CompanyAge() {
 		>
 			<span aria-hidden="true">
 				Operating since October{' '}
-				<span className='text-[14px]' style={{ fontFamily: 'var(--font-digital), monospace' }}>6, 2026</span>
+				<span className="text-[14px]" style={DIGITAL_FONT_STYLE}>6, 2026</span>
 			</span>
 			{units && (
-				<span className="inline-flex items-baseline gap-1.5 text-[14px]" aria-hidden="true" style={{ fontFamily: 'var(--font-digital), monospace' }}>
+				<span className="inline-flex items-baseline gap-1.5 text-[14px]" aria-hidden="true" style={DIGITAL_FONT_STYLE}>
 					{units.map(({ value, label }) => (
-						<span key={label} className="whitespace-nowrap">
-							<span className="text-sm font-bold tabular-nums tracking-[0.08em] text-[#A5D6A7]">
+						<span key={`${label}-${value}`} className="whitespace-nowrap">
+							<span className="text-sm font-bold tracking-[0.08em] text-[#A5D6A7]">
 								{String(value).padStart(2, '0')}
 							</span>{' '}
 							{label}

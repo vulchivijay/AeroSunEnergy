@@ -40,6 +40,14 @@ const coreValueStyles = [
 export default function About() {
   const { t } = useLocale()
   const a = t.about
+  const home = t.home ?? {}
+  const homeSection = home.aboutSection ?? {
+    eyebrow: 'ABOUT',
+    badge: 'Clean Energy Partner',
+    title: 'Powering a sustainable future with purpose.',
+    tags: ['Solar', 'Wind', 'Hybrid'],
+    audience: ['Residential', 'Commercial', 'Industrial', 'Institutional'],
+  }
 
   const features = a.features.map((f, i) => ({
     ...f,
@@ -91,15 +99,26 @@ export default function About() {
           <CardContent className="relative space-y-8 p-4 md:p-6 lg:p-8">
             <div className="flex flex-col gap-4 border-b border-slate-200 pb-5 lg:flex-row lg:items-center lg:justify-between">
               <div className="flex items-baseline justify-start gap-1">
-                <span className="text-xl font-bold tracking-[0.08em] text-[#333333]">ABOUT</span>
+                <span className="text-xl font-bold tracking-[0.08em] text-[#333333]">{homeSection.eyebrow}</span>
                 <span className="text-3xl font-black tracking-[0.05em] text-[#20A44A]">AeroSun</span>
                 <span className="text-3xl font-black tracking-[0.05em] text-[#F59E0B]">Energy</span>
               </div>
 
               <div className="flex flex-wrap items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.22em] text-slate-600">
-                <span className="rounded-full border border-blue-200 bg-blue-50 px-3 py-2 text-blue-700">Solar</span>
-                <span className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-2 text-emerald-700">Wind</span>
-                <span className="rounded-full border border-amber-200 bg-amber-50 px-3 py-2 text-amber-700">Hybrid</span>
+                {homeSection.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className={`rounded-full border px-3 py-2 ${
+                      tag.toLowerCase() === 'solar'
+                        ? 'border-blue-200 bg-blue-50 text-blue-700'
+                        : tag.toLowerCase() === 'wind'
+                          ? 'border-emerald-200 bg-emerald-50 text-emerald-700'
+                          : 'border-amber-200 bg-amber-50 text-amber-700'
+                    }`}
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
 
@@ -113,7 +132,7 @@ export default function About() {
               <div className="rounded-[2rem] border border-slate-200 bg-slate-950 p-5 text-white shadow-[0_30px_70px_-30px_rgba(15,23,42,0.95)] sm:p-6 lg:p-7">
                 <div className="flex items-center justify-between gap-3">
                   <span className="inline-flex rounded-full border border-emerald-300/40 bg-emerald-400/10 px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.28em] text-emerald-200">
-                    Clean Energy Partner
+                    {homeSection.badge}
                   </span>
                   <span className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.2em] text-slate-200">
                     Since 2026
@@ -121,7 +140,7 @@ export default function About() {
                 </div>
 
                 <h3 className="mt-5 max-w-lg text-3xl font-black leading-tight tracking-[0.06em] text-white sm:text-4xl lg:text-[3rem]">
-                  Powering a sustainable future with purpose.
+                  {homeSection.title}
                 </h3>
 
                 <p className="mt-4 max-w-xl text-base leading-7 text-slate-300 sm:text-lg">
@@ -129,7 +148,7 @@ export default function About() {
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-3">
-                  {['Residential', 'Commercial', 'Industrial', 'Institutional'].map((item) => (
+                  {(homeSection.audience ?? []).map((item) => (
                     <span key={item} className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.2em] text-slate-100">
                       {item}
                     </span>

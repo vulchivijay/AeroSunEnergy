@@ -80,6 +80,7 @@
       }
     ],
     "startProject": "Start a Project",
+    "comingSoon": "Coming soon",
     "toggleDark": "Toggle dark mode",
     "toggleMenu": "Toggle menu",
     "navigateTo": "Navigate to",
@@ -142,6 +143,248 @@
       "performanceValue": "Solar in daylight, wind beyond it",
       "fieldAdvantageLabel": "Field Advantage",
       "fieldAdvantageValue": "One system, multiple generation windows, minimal dead time."
+    }
+  },
+  "home": {
+    "recognitionHeader": {
+      "badge": "Recognition",
+      "title": "Government-backed credibility for a fast-moving clean energy brand",
+      "status": "Verified credentials"
+    },
+    "recognition": [
+      {
+        "title": "Udyam / MSME",
+        "subtitle": "Recognized enterprise",
+        "badge": "Certified",
+        "icon": "🏛️",
+        "accent": "bg-[#20A44A]/38",
+        "glow": "shadow-[0_0_30px_rgba(32,164,74,0.38)]",
+        "ring": "border-[#90d2a2]",
+        "text": "Micro, Small & Medium Enterprise recognition supporting growth-ready clean energy operations."
+      },
+      {
+        "title": "DPIIT Startup India",
+        "subtitle": "Startup recognition",
+        "badge": "Approved",
+        "icon": "🚀",
+        "accent": "bg-[#f59e0b]/38",
+        "glow": "shadow-[0_0_30px_rgba(245,158,11,0.38)]",
+        "ring": "border-[#e6b35d]",
+        "text": "Official startup recognition for innovation-led renewable energy entrepreneurship and expansion."
+      }
+    ],
+    "heroSlider": [
+      {
+        "badge": "Grid-tied rooftop",
+        "title": "Grid-tied Rooftop",
+        "description": "On-grid PV connected to the utility. Pros: lower cost (no batteries), net-metering, simple setup. Cons: no backup power during outages unless paired with storage.",
+        "tags": ["Lower Capex", "Net Metering"],
+        "image": "/images/slider/slider-1.webp",
+        "badgeClass": "text-sky-100",
+        "chipClass": "text-sky-50",
+        "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
+      },
+      {
+        "badge": "Off-grid autonomy",
+        "title": "Off-grid (Standalone)",
+        "description": "Fully independent systems with PV + batteries + charge controller. Pros: complete autonomy for remote sites. Cons: higher upfront cost and careful energy management required.",
+        "tags": ["Battery-backed", "Remote-ready"],
+        "image": "/images/slider/slider-2.png",
+        "badgeClass": "text-emerald-100",
+        "chipClass": "text-emerald-50",
+        "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
+      },
+      {
+        "badge": "Hybrid resilience",
+        "title": "Hybrid (Grid + Battery)",
+        "description": "PV plus battery storage with ability to work with the grid. Pros: backup power, time-shifting, demand management. Cons: more complex controls and higher cost than grid-only.",
+        "tags": ["Backup power", "Smart control"],
+        "image": "/images/slider/slider-3.png",
+        "badgeClass": "text-pink-100",
+        "chipClass": "text-pink-50",
+        "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
+      }
+    ],
+    "schemeBanner": {
+      "badge": "Government Subsidy Initiative",
+      "title": "PM Surya Ghar",
+      "titleAccent": "Muft Bijli Yojana",
+      "description": "Make your rooftop solar dream affordable with up to ₹ 78,000 in central subsidy and a complete application support experience from AeroSun Energy.",
+      "ctaPrimary": "Apply Now",
+      "ctaSecondary": "Know Eligibility",
+      "badgeSuffix": "Subsidy ends 31st March 2027",
+      "cardLabel": "Subsidy",
+      "max": "Max",
+      "perHome": "per home",
+      "offerLabel": "Offer Window",
+      "offerText": "Limited duration – apply before the current subsidy cycle closes.",
+      "stats": [
+        {"label": "Days", "value": "000"},
+        {"label": "Hours", "value": "00"},
+        {"label": "Mins", "value": "00"}
+      ]
+    },
+    "aboutSection": {
+      "eyebrow": "ABOUT",
+      "badge": "Clean Energy Partner",
+      "title": "Powering a sustainable future with purpose.",
+      "tags": ["Solar", "Wind", "Hybrid"],
+      "audience": ["Residential", "Commercial", "Industrial", "Institutional"]
+    },
+    "offer": {
+      "eyebrow": "What We Offer",
+      "title": "Expertise End-to-End Solar Solutions",
+      "description": "We have rich experience in solar rooftop 1 KW to megawatt solar power plants — including solar hybrid systems, solar hot water, solar street lights, solar fencing, solar agriculture pump sets & any solar power services.",
+      "cards": [
+        {
+          "title": "Solar Rooftop Systems",
+          "description": "On-grid power plants for homes and businesses.",
+          "points": ["On-grid, off-grid and hybrid configurations", "Net metering with state DISCOM", "PM Surya Ghar subsidy assistance", "TATA Power Solar premium panels"],
+          "accent": "emerald"
+        },
+        {
+          "title": "Solar Thermal — Water Heating Solutions",
+          "description": "Solar Hot Water & Heat Pump — efficient, eco-friendly hot water for homes, hotels, hospitals, hostels, commercial establishments and industries.",
+          "points": ["Available in capacities from 100 litres per day (LPD)", "Choice of pressurised and non-pressurised models", "High-performance BIS-certified solar collectors", "Cuts electricity use by minimising geyser usage"],
+          "accent": "amber"
+        },
+        {
+          "title": "Solar Street Lights",
+          "description": "All-in-one lighting powered entirely by sunlight.",
+          "points": ["Integrated all-in-one luminaires starting from 12W", "Auto dusk-to-dawn operation", "Lithium-ion storage, 5+ year life", "Zero electricity bills"],
+          "accent": "sky"
+        }
+      ]
+    },
+    "systemTypes": [
+      {
+        "title": "On-Grid Solar System",
+        "accent": "emerald",
+        "content": ["Grid-connected with net metering — export surplus power to the grid and earn credits.", "The most economical option, with no batteries required."]
+      },
+      {
+        "title": "Off-Grid Solar System",
+        "accent": "amber",
+        "content": ["Battery-backed and fully independent of the grid.", "Ideal for remote sites or areas with frequent, long power cuts."]
+      },
+      {
+        "title": "Hybrid System",
+        "accent": "sky",
+        "content": ["Combines a grid connection with battery backup.", "Cut your bills while keeping essential loads running through outages."]
+      }
+    ],
+    "rooftopSolar": {
+      "eyebrow": "Rooftop Solar",
+      "title": "Solar Rooftop Systems",
+      "description": "Solar rooftop systems generate electricity using solar panels installed on your rooftop. Sized to your power needs and usage, they cut your dependence on grid power and significantly lower your monthly electricity bills.",
+      "benefits": [
+        {"title": "Reduce electricity bills by up to 80–90%", "description": "Lower your monthly spend while improving energy certainty."},
+        {"title": "25+ years of solar panel life", "description": "Long operational life with minimal replacement cycles."},
+        {"title": "Low maintenance and high reliability", "description": "Designed for stable long-term generation with simple upkeep."},
+        {"title": "Environment-friendly renewable energy", "description": "Reduce your environmental impact with clean power generation."},
+        {"title": "Increase property value", "description": "Improve the value and appeal of your property with solar-ready infrastructure."},
+        {"title": "Net Metering facility", "description": "Export excess power to the grid and earn credits where applicable."}
+      ],
+      "panels": [
+        {"title": "Key Benefits", "accent": "emerald", "content": ["Reduce electricity bills by up to 80–90%", "25+ years of solar panel life", "Low maintenance and high reliability", "Environment-friendly renewable energy", "Increase property value", "Net Metering facility to export excess power to the grid"]},
+        {"title": "Suitable For", "accent": "sky", "content": ["Individual Houses", "Apartments & Residential Communities", "Commercial Buildings", "Industries & Factories", "Educational Institutions", "Hospitals & Government Buildings"]}
+      ]
+    },
+    "moreSolarCards": [
+      {
+        "title": "Solar Fencing",
+        "description": "Solar-powered electric fences for farms and estates.",
+        "points": ["Solar-charged energiser", "Up to 10 km perimeter on a single charger", "Audible alarm and battery backup", "Crop and livestock protection"],
+        "accent": "violet"
+      },
+      {
+        "title": "Solar Pumpsets",
+        "description": "Diesel-free water pumping for agriculture.",
+        "points": ["AC and DC pump configurations", "MNRE-approved controllers", "PM-KUSUM scheme assistance", "5-year manufacturer warranty"],
+        "accent": "amber"
+      },
+      {
+        "title": "Operation & Maintenance (AMC)",
+        "description": "Annual care to keep your plant generating at peak.",
+        "points": ["Quarterly preventive maintenance", "Performance ratio monitoring", "24x7 priority support", "Spare parts and inverter service"],
+        "accent": "emerald"
+      }
+    ],
+    "systemTypeSection": {
+      "eyebrow": "System Types",
+      "title": "There are three main types of solar rooftop systems"
+    },
+    "whySolarSection": {
+      "eyebrow": "Why Solar",
+      "title": "Why you have to switch to solar today?"
+    },
+    "whySolar": [
+      {"title": "Reduce Carbon Emissions", "description": "Every kW of solar offsets ~1.2 tonnes of CO₂ a year — shrinking your carbon footprint."},
+      {"title": "Eco-Friendly", "description": "Clean, renewable energy that protects nature for generations to come."},
+      {"title": "Cost Saving", "description": "Slash electricity bills by 70–90% from day one and recover your investment in 4–6 years."},
+      {"title": "Energy Independence", "description": "Generate your own power and cut reliance on the grid and rising tariffs."},
+      {"title": "Unlimited Energy", "description": "Sunlight is infinite — Tirupati enjoys 300+ sunny days every year."},
+      {"title": "Continuous Supply", "description": "Hybrid systems with battery backup keep critical loads running through outages."}
+    ],
+    "subsidy": {
+      "eyebrow": "Government of India Scheme",
+      "title": "PM Surya Ghar: Muft Bijli Yojana Subsidy",
+      "description": "Central-government subsidy you can claim on your rooftop solar — AeroSun Energy files the entire application for you.",
+      "cards": [
+        {"title": "For Residential Households", "description": "₹ 30,000 per kW up to 2 kW"},
+        {"title": "Additional Capacity", "description": "₹ 18,000 per kW for additional capacity up to 3 kW"},
+        {"title": "Maximum Total Subsidy", "description": "₹ 78,000 for systems larger than 3 kW"},
+        {"title": "For GHS / RWA", "description": "₹ 18,000 per kW for common facilities incl. EV charging, up to 500 kW"}
+      ]
+    },
+    "wind": {
+      "eyebrow": "Wind Energy",
+      "title": "Wind power solutions for a greener grid",
+      "cards": [
+        {"title": "Horizontal-Axis Wind Turbines", "description": "Three-blade turbine systems designed for efficient wind capture in higher-resource sites.", "points": ["High efficiency and strong output", "Utility-scale deployment ready", "Directional alignment for optimized generation"], "accent": "sky"},
+        {"title": "Vertical-Axis Wind Turbines", "description": "Multi-directional solutions for compact or noise-sensitive settings.", "points": ["Accepts wind from multiple directions", "Compact footprint for constrained sites", "Flexible siting and installation"], "accent": "emerald"},
+        {"title": "Grid-Connected & Off-Grid Systems", "description": "Wind generation tied to the utility network or battery-backed for remote sites.", "points": ["Grid-tied net metering support", "Battery backup for independent supply", "Suitable for homes, telecom, and farms"], "accent": "amber"}
+      ],
+      "benefits": [
+        {"title": "Clean Power", "description": "Generates renewable electricity with a smaller carbon footprint than fossil alternatives."},
+        {"title": "Energy Security", "description": "Improves resilience by diversifying generation resources beyond solar alone."},
+        {"title": "Lower Cost Of Energy", "description": "Optimizes operational expenses in suitable wind-rich areas and commercial sites."},
+        {"title": "Site Flexibility", "description": "Supports both standalone and integrated deployments across varied geographies."}
+      ],
+      "panels": [
+        {"title": "Ideal for", "accent": "sky", "content": ["Rural and semi-urban infrastructure", "Commercial facilities with high energy demands", "Remote telecom and monitoring stations", "Hybrid renewable campuses and microgrids"]},
+        {"title": "Typical use cases", "accent": "emerald", "content": ["On-grid wind support for energy offset", "Off-grid power for remote operations", "Hybrid systems with solar and battery", "Agricultural and industrial motive loads"]}
+      ],
+      "capacity": [
+        {"label": "Micro", "value": "Below 1 kW", "use": "Small remote and auxiliary loads"},
+        {"label": "Small", "value": "1–10 kW", "use": "Homes, retail, and small commercial sites"},
+        {"label": "Medium", "value": "10–100 kW", "use": "Industrial and campus-level generation"},
+        {"label": "Large", "value": "100 kW–1 MW", "use": "Commercial and utility-oriented installations"}
+      ]
+    },
+    "hybrid": {
+      "eyebrow": "Hybrid Energy",
+      "title": "Solar + Wind hybrid systems for dependable power",
+      "cards": [
+        {"title": "Residential Solar-Wind Hybrid", "description": "Combines solar and wind generation to improve energy reliability for homes and residential communities.", "points": ["Home resilience in changing weather", "Reduced dependence on grid power", "Better balance across seasons"], "accent": "emerald"},
+        {"title": "Agricultural Hybrid Systems", "description": "Supports irrigation, cold storage, and farm power while reducing diesel dependence.", "points": ["Water pumping and field support", "Rural reliability during outages", "Lower operating costs for agriculture"], "accent": "sky"},
+        {"title": "Commercial & Microgrid Hybrid", "description": "Ideal for facilities needing continuity, grid support, and efficient peak-demand management.", "points": ["Critical loads covered during outages", "Demand reduction and operational savings", "Smart integration with storage and controls"], "accent": "violet"}
+      ],
+      "benefits": [
+        {"title": "Load Balancing", "description": "Combines the strengths of both solar and wind for more stable output across conditions."},
+        {"title": "Battery Backup", "description": "Stores energy for critical loads and maintains continuity during outages."},
+        {"title": "Lower Diesel Use", "description": "Cuts dependence on fossil-fuel backup systems for remote and commercial operations."},
+        {"title": "Smart Integration", "description": "Pairs efficiently with controls, inverters, and monitoring for better energy management."}
+      ],
+      "panels": [
+        {"title": "Why hybrid works", "accent": "emerald", "content": ["Solar performs best in daylight while wind can supplement during evenings and overcast periods.", "Hybrid generation improves continuity and reduces seasonal mismatch.", "Store and dispatch power intelligently for higher reliability and savings."]},
+        {"title": "Best fit for", "accent": "sky", "content": ["Homes with variable seasonal loads", "Remote farms and rural facilities", "Commercial buildings with rising tariffs", "Microgrids, campuses, and community sites"]}
+      ],
+      "table": [
+        {"label": "Residential", "value": "Solar + small wind + battery", "use": "Homes and gated communities"},
+        {"label": "Agriculture", "value": "Solar + wind + pump controls", "use": "Irrigation and rural water support"},
+        {"label": "Commercial", "value": "Solar + wind + storage + grid sync", "use": "Factories, campuses, and business parks"}
+      ]
     }
   },
   "about": {
@@ -493,13 +736,82 @@
     "saveSanatanaDharma": "Save Sanatana Dharma",
     "followUs": "Follow Us",
     "scan": "Scan",
-    "devNotice": "This website is under development. Build with",
+    "devNotice": "This website is currently under development. Some content and images may be incomplete, and page titles or locations may change as updates are made.",
     "devNoticeChatGPT": "ChatGPT",
     "devNoticeGitHub": "GitHub",
     "devNoticeAnd": "and",
     "copyright": "© 2026 AeroSun™ Energy Private Limited",
     "registrationNotice": "(Registration is in process)",
-    "allRightsReserved": "All rights reserved."
+    "allRightsReserved": "All rights reserved.",
+    "ourSolutions": "Our Solutions",
+    "contactInformation": "Contact Information",
+    "stayPowered": "Stay Powered by Clean Energy",
+    "newsletterDescription": "Get renewable energy insights, technology updates and sustainable energy solutions.",
+    "newsletterHint": "No newsletter service is connected yet. Subscribe opens an email request to our customer-care address; it does not add you automatically.",
+    "subscribe": "Subscribe",
+    "solarWindHybrid": "Solar · Wind · Hybrid",
+    "developmentNotice": "This website is currently under development. Some content and images may be incomplete, and page titles or locations may change as updates are made."
+  },
+  "ui": {
+    "windSolution": "Wind solution",
+    "hybridSystem": "Hybrid system",
+    "systemType": "System type",
+    "capacityBand": "Capacity band",
+    "systemSize": "System size",
+    "typicalUse": "Typical use",
+    "customerFit": "Customer fit",
+    "typicalConfiguration": "Typical configuration",
+    "howItWorks": "How it works",
+    "comingSoon": "Coming soon"
+  },
+  "cookieConsent": {
+    "title": "Cookie preferences",
+    "headline": "We use cookies to improve your experience",
+    "description": "We use cookies to remember your preferences, understand website traffic, and improve performance. Essential cookies are required for the website to work. Optional analytics and marketing cookies are only used if you accept them.",
+    "reject": "Reject optional cookies",
+    "accept": "Accept all cookies"
+  },
+  "notifications": {
+    "badge": "Updates",
+    "dismiss": "Dismiss notification",
+    "text": "AeroSun Energy Private Limited is committed to providing reliable and sustainable renewable energy solutions through solar, wind, and hybrid energy systems.",
+    "highlight": " Our business approach focuses on sourcing quality equipment, supporting installation and implementation, ",
+    "tail": "and exploring innovative energy solutions tailored to customer needs. As we grow, we aim to expand our technical capabilities and develop advanced renewable energy solutions that contribute to a cleaner, more sustainable future."
+  },
+  "bankEmi": {
+    "badge": "Personal finance · EMI planner",
+    "title": "Make your next move",
+    "titleAccent": "with clarity.",
+    "description": "Shape your loan around your life. Adjust the numbers and see the full repayment picture instantly.",
+    "confidence": "Plan with confidence",
+    "confidenceSub": "A clear estimate, at a glance",
+    "loanDetails": "Your loan details",
+    "loanDetailsSub": "Fine-tune the estimate below",
+    "loanAmount": "Loan amount",
+    "loanTenure": "Loan tenure",
+    "interestRate": "Interest rate",
+    "perAnnum": "p.a.",
+    "monthlyEmi": "Your monthly EMI",
+    "month": "/ month",
+    "fixedMonthly": "Fixed monthly instalment for",
+    "principal": "Principal",
+    "totalInterest": "Total interest",
+    "totalRepayment": "Total repayment",
+    "principalPlus": "Principal + interest",
+    "estimateOnly": "Estimate only. Your lender may apply different rates, fees, and eligibility criteria.",
+    "year": "year",
+    "years": "years",
+    "repaymentSnapshot": "Repayment snapshot",
+    "basedOnDetails": "Based on your loan details",
+    "liveEstimate": "Live estimate"
+  },
+  "solarEstimation": {
+    "savingsTitle": "See how much you save with",
+    "savingsTitleAccent": "solar",
+    "savingsDescription": "A 3 kW rooftop plant in Tirupati typically saves ₹30,000+ a year. Run the numbers for your home below.",
+    "estimateSavings": "Estimate Your Savings",
+    "adjustUsage": "Drag the slider to your average monthly electricity usage.",
+    "monthlyUnits": "Monthly Electricity Units"
   },
   "savoniusRotor": {
     "title": "Savonius Rotor",
@@ -622,6 +934,12 @@
   },
   "estimation": {
     "badge": "Estimation Studio",
+    "savingsTitle": "See how much you save with",
+    "savingsTitleAccent": "solar",
+    "savingsDescription": "A 3 kW rooftop plant in Tirupati typically saves ₹30,000+ a year. Run the numbers for your home below.",
+    "estimateSavings": "Estimate Your Savings",
+    "adjustUsage": "Drag the slider to your average monthly electricity usage.",
+    "monthlyUnits": "Monthly Electricity Units",
     "heading": "Estimate your solar project with a sharper branded dashboard",
     "headingAccent": "sharper branded dashboard",
     "description": "Compare capacity, subsidy, customer pricing, and profit in a layout that follows the same warm, high-contrast visual language used across the AeroSun site.",

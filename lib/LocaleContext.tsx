@@ -8,7 +8,9 @@ import enBasicElectricalConcepts from '@/public/locales/en/basic-electrical-conc
 import hiBasicElectricalConcepts from '@/public/locales/hi/basic-electrical-concepts.json'
 import teBasicElectricalConcepts from '@/public/locales/te/basic-electrical-concepts.json'
 
-const locales = { en, hi, te } as const
+export type Locale = 'en' | 'hi' | 'te'
+
+const locales: Record<Locale, any> = { en, hi, te }
 
 export type ComponentContent = {
   purpose?: string
@@ -45,8 +47,7 @@ type LocaleConceptFile = {
   electrical_concepts?: ConceptCollection
 }
 
-export type Locale = keyof typeof locales
-export type Translations = typeof en
+export type Translations = typeof en | typeof hi | typeof te
 
 const basicElectricalConceptLocales: Record<Locale, LocaleConceptFile> = {
   en: enBasicElectricalConcepts,
@@ -86,18 +87,16 @@ const LocaleContext = createContext<LocaleContextValue>({
 })
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>('en')
+  const [locale, setLocaleState] = useState<Locale>(() => {
+    if (typeof window === 'undefined') return 'en'
 
-  useEffect(() => {
     try {
-      const saved = localStorage.getItem('locale') as Locale | null
-      if (saved && saved in locales) {
-        setLocaleState(saved)
-      }
+      const saved = window.localStorage.getItem('locale') as Locale | null
+      return saved && saved in locales ? saved : 'en'
     } catch {
-      // ignore
+      return 'en'
     }
-  }, [])
+  })
 
   useEffect(() => {
     document.documentElement.lang = locale

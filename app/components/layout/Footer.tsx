@@ -84,6 +84,22 @@ export default function Footer() {
 	const pathname = usePathname() || '/'
 	const footer = t.footer
 	const navLinks = t.navbar.links
+	const footerLabels = {
+		ourSolutions: footer.ourSolutions ?? 'Our Solutions',
+		contactInformation: footer.contactInformation ?? 'Contact Information',
+		stayPowered: footer.stayPowered ?? 'Stay Powered by Clean Energy',
+		newsletterDescription:
+			footer.newsletterDescription ??
+			'Get renewable energy insights, technology updates and sustainable energy solutions.',
+		subscribe: footer.subscribe ?? 'Subscribe',
+		newsletterHint:
+			footer.newsletterHint ??
+			'No newsletter service is connected yet. Subscribe opens an email request to our customer-care address; it does not add you automatically.',
+		solarWindHybrid: footer.solarWindHybrid ?? 'Solar · Wind · Hybrid',
+		developmentNotice:
+			footer.developmentNotice ??
+			'This website is currently under development. Some content and images may be incomplete, and page titles or locations may change as updates are made.',
+	}
 	const queries = t.navbar.quiries || []
 	const quickEnquiries = queries
 	const visibleNavLinks = navLinks
@@ -229,7 +245,7 @@ export default function Footer() {
 					</nav>
 
 					<nav aria-labelledby="footer-solutions">
-						<h2 id="footer-solutions" className="mb-5 text-sm uppercase text-[#A3D977]">Our Solutions</h2>
+						<h2 id="footer-solutions" className="mb-5 text-sm uppercase text-[#A3D977]">{footerLabels.ourSolutions}</h2>
 						<ul className="space-y-1">
 							{solutions.map((solution) => (
 								<li key={solution.label}>
@@ -243,7 +259,7 @@ export default function Footer() {
 					</nav>
 
 					<section aria-labelledby="footer-contact">
-						<h2 id="footer-contact" className="mb-5 text-sm uppercase text-[#A3D977]">Contact Information</h2>
+						<h2 id="footer-contact" className="mb-5 text-sm uppercase text-[#A3D977]">{footerLabels.contactInformation}</h2>
 						<ul className="space-y-4 text-sm leading-6 text-gray-300">
 							<li className="flex items-start gap-3">
 								<MapPin className="mt-1 h-4 w-4 shrink-0 text-[#F5C76A]" aria-hidden="true" />
@@ -277,15 +293,15 @@ export default function Footer() {
 						<div className="mt-6 flex items-center gap-2 border-t border-white/10 pt-4 text-sm text-gray-400">
 							<Sun className="h-4 w-4 text-[#F5C76A]" aria-hidden="true" />
 							<Wind className="h-4 w-4 text-[#A3D977]" aria-hidden="true" />
-							<span>Solar · Wind · Hybrid</span>
+							<span>{footerLabels.solarWindHybrid}</span>
 						</div>
 					</section>
 				</div>
 
 				<section aria-labelledby="footer-newsletter" className="mt-14 grid gap-6 rounded-2xl border border-white/10 bg-white/[0.04] p-6 sm:p-8 lg:grid-cols-[1fr_1fr] lg:items-center">
 					<div>
-						<h2 id="footer-newsletter" className="text-2xl leading-[1.05] tracking-[0.045em] text-white sm:text-3xl">Stay Powered by Clean Energy</h2>
-						<p className="mt-2 max-w-xl text-sm leading-6 text-gray-300">Get renewable energy insights, technology updates and sustainable energy solutions.</p>
+						<h2 id="footer-newsletter" className="text-2xl leading-[1.05] tracking-[0.045em] text-white sm:text-3xl">{footerLabels.stayPowered}</h2>
+						<p className="mt-2 max-w-xl text-sm leading-6 text-gray-300">{footerLabels.newsletterDescription}</p>
 					</div>
 					<form onSubmit={handleNewsletterSubmit} className="w-full">
 						<label htmlFor="footer-newsletter-email" className="sr-only">Email address for clean energy updates</label>
@@ -302,14 +318,14 @@ export default function Footer() {
 									setNewsletterEmail(event.target.value)
 									setNewsletterStatus('')
 								}}
-								placeholder="you@example.com"
+								placeholder={footer.email || 'you@example.com'}
 								className="min-h-12 min-w-0 flex-1 rounded-full border border-white/15 bg-[#071B17] px-5 text-base text-white outline-none transition placeholder:text-gray-400 focus:border-[#A5D6A7] focus:ring-2 focus:ring-[#A5D6A7]/25"
 							/>
 							<button type="submit" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#A5D6A7] px-6 text-sm font-bold text-[#173B2C] transition hover:bg-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7]">
-								Subscribe <Send className="h-4 w-4" aria-hidden="true" />
+								{footerLabels.subscribe} <Send className="h-4 w-4" aria-hidden="true" />
 							</button>
 						</div>
-						<p className="mt-3 text-sm leading-5 text-gray-400">No newsletter service is connected yet. Subscribe opens an email request to our customer-care address; it does not add you automatically.</p>
+						<p className="mt-3 text-sm leading-5 text-gray-400">{footerLabels.newsletterHint}</p>
 						<p role="status" aria-live="polite" className="mt-1 min-h-5 text-sm text-[#DCEDC8]">{newsletterStatus}</p>
 					</form>
 				</section>
@@ -317,7 +333,7 @@ export default function Footer() {
 
 			<div className="border-t border-white/10 bg-black/20">
 				<p className="mx-auto flex max-w-[90rem] justify-center text-sm font-medium text-gray-400 gap-1 border-t border-white/10 px-5 py-5 sm:px-8 lg:flex-row lg:px-10">
-					🚧 This website is currently under development. Some content and images may be incomplete, and page titles or locations may change as updates are made. Images generated with <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-[#A5D6A7] transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7]">ChatGPT.</Link>
+					🚧 {footerLabels.developmentNotice} <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-[#A5D6A7] transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7]">ChatGPT.</Link>
 				</p>
 				<div className="mx-auto flex max-w-[90rem] flex-col items-center justify-between gap-3 border-t border-white/10 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
 					<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[12px] uppercase tracking-[0.14em] text-gray-400">
@@ -325,7 +341,7 @@ export default function Footer() {
 						<Link href="/terms-conditions" aria-current={isActive('/terms-conditions') ? 'page' : undefined} className={`transition-colors hover:text-[#DCEDC8] ${isActive('/terms-conditions') ? 'font-semibold text-[#DCEDC8]' : ''}`}>Terms & Conditions</Link>
 						<Link href="/warranty-policy" aria-current={isActive('/warranty-policy') ? 'page' : undefined} className={`transition-colors hover:text-[#DCEDC8] ${isActive('/warranty-policy') ? 'font-semibold text-[#DCEDC8]' : ''}`}>Warranty & Service Policy</Link>
 					</div>
-					<p className="text-[12px] text-gray-400">Built with Love and fassion by Vulchi Vijaya Kumar Raju (Kshatriya's).</p>
+					<p className="text-[12px] text-gray-400">Built with Love and passion by Vulchi Vijaya Kumar Raju (Kshatriya&apos;s).</p>
 					<p className="text-[12px] text-gray-400">
 						© {new Date().getFullYear()} AeroSun Energy Private Limited. All Rights Reserved.
 					</p>

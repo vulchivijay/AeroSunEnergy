@@ -21,19 +21,9 @@ export default function Slider({
 }: SliderProps) {
   const slidesArray = React.Children.toArray(children)
   const count = slidesArray.length
+  const hasMultipleSlides = count > 1
 
-  if (count === 0) return null
-
-  if (count === 1) {
-    return (
-      <div role="region" aria-label={ariaLabel} className={`w-full relative overflow-hidden ${className}`}>
-        <div className="w-full">{slidesArray[0]}</div>
-      </div>
-    )
-  }
-
-  const clonedSlides = [slidesArray[count - 1], ...slidesArray, slidesArray[0]]
-  const [position, setPosition] = useState(1)
+  const [position, setPosition] = useState(hasMultipleSlides ? 1 : 0)
   const [withTransition, setWithTransition] = useState(true)
   const [slideWidth, setSlideWidth] = useState(0)
   const [dragX, setDragX] = useState(0)
@@ -43,6 +33,7 @@ export default function Slider({
   const [isDocumentHidden, setIsDocumentHidden] = useState(false)
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
   const viewportRef = useRef<HTMLDivElement | null>(null)
+  const clonedSlides = hasMultipleSlides ? [slidesArray[count - 1], ...slidesArray, slidesArray[0]] : slidesArray
 
   useEffect(() => {
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -162,11 +153,24 @@ export default function Slider({
     setWithTransition(true)
   }
 
-  const percentPerSlide = 100 / clonedSlides.length
-  const totalWidth = slideWidth > 0 ? slideWidth * clonedSlides.length : 0
-  const translate = slideWidth > 0 ? `translate3d(${-(position * slideWidth) + dragX}px,0,0)` : `translate3d(${(-position * percentPerSlide).toFixed(6)}%,0,0)`
+  const percentPerSlide = hasMultipleSlides ? 100 / clonedSlides.length : 100
+  const totalWidth = hasMultipleSlides && slideWidth > 0 ? slideWidth * clonedSlides.length : 0
+  const translate =
+    slideWidth > 0
+      ? `translate3d(${-(position * slideWidth) + dragX}px,0,0)`
+      : `translate3d(${(-position * percentPerSlide).toFixed(6)}%,0,0)`
   const activeRealIndex = position === 0 ? count - 1 : position === clonedSlides.length - 1 ? 0 : position - 1
   const rotationPaused = isHovered || isDocumentHidden || prefersReducedMotion
+
+  if (count === 0) return null
+
+  if (count === 1) {
+    return (
+      <div role="region" aria-label={ariaLabel} className={`w-full relative overflow-hidden ${className}`}>
+        <div className="w-full">{slidesArray[0]}</div>
+      </div>
+    )
+  }
 
   return (
     <div

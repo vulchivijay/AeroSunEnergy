@@ -866,7 +866,7 @@ export default function ResearchDevelopmentPage() {
 						</table>
 					</div>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						The important point is that raising money increases resources, but each equity round can reduce the founders' percentage ownership. A smaller percentage of a substantially more valuable company may be worth more than a larger percentage of a company that cannot grow.
+						The important point is that raising money increases resources, but each equity round can reduce the founders&apos; percentage ownership. A smaller percentage of a substantially more valuable company may be worth more than a larger percentage of a company that cannot grow.
 					</p>
 				</div>
 			</section>
@@ -1028,7 +1028,7 @@ export default function ResearchDevelopmentPage() {
 						</table>
 					</div>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						The key question is not whether the rotor turns, but how much useful electricity it can generate at the wind speeds available at the customer's site.
+						The key question is not whether the rotor turns, but how much useful electricity it can generate at the wind speeds available at the customer&apos;s site.
 					</p>
 				</div>
 			</section>
@@ -1054,7 +1054,7 @@ export default function ResearchDevelopmentPage() {
 						))}
 					</div>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						The hybrid system should only be offered where local resource data and the customer's energy needs justify it. Solar plus wind is not automatically better or cheaper than solar alone.
+						The hybrid system should only be offered where local resource data and the customer&apos;s energy needs justify it. Solar plus wind is not automatically better or cheaper than solar alone.
 					</p>
 				</div>
 			</section>
@@ -1323,7 +1323,7 @@ export default function ResearchDevelopmentPage() {
 						</table>
 					</div>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						The important point is that raising money increases resources, but each equity round can reduce the founders' percentage ownership. A smaller percentage of a substantially more valuable company may be worth more than a larger percentage of a company that cannot grow.
+						The important point is that raising money increases resources, but each equity round can reduce the founders&apos; percentage ownership. A smaller percentage of a substantially more valuable company may be worth more than a larger percentage of a company that cannot grow.
 					</p>
 				</div>
 			</section>

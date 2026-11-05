@@ -250,7 +250,6 @@ export function SiteSurveyLoadAssessmentForm() {
                             type="radio"
                             value={option}
                             {...register('propertyType')}
-                            aria-invalid={Boolean(errors.propertyType)}
                             aria-describedby={errors.propertyType ? 'propertyType-error' : undefined}
                             className="h-4 w-4 accent-emerald-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
                           />

@@ -1,6 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import Slider from './Slider'
+import { useLocale } from '@/lib/LocaleContext'
 
 type Slide = {
   badge: string
@@ -13,7 +16,7 @@ type Slide = {
   panelClass: string
 }
 
-const slides: Slide[] = [
+const fallbackSlides: Slide[] = [
   {
     badge: 'Grid-tied rooftop',
     title: 'Grid-tied Rooftop',
@@ -116,6 +119,12 @@ const slides: Slide[] = [
 ]
 
 export default function HomeHeroSlider() {
+  const { t } = useLocale()
+  const slides = ((t.home?.heroSlider as Slide[]) ?? fallbackSlides).map((slide, index) => ({
+    ...slide,
+    image: slide.image || fallbackSlides[index % fallbackSlides.length].image,
+  }))
+
   const slideClass =
     'group relative flex h-full w-full items-end justify-start overflow-hidden p-6 sm:p-8 lg:p-14 xl:p-18'
 

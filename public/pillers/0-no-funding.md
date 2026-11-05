@@ -151,6 +151,149 @@ This is a proposed budget, not a requirement to spend the entire amount immediat
 
 **Important:** Do not spend the wind-generator budget on manufacturing a complete 3 kW prototype yet. First validate the design, obtain supplier quotations and identify funding or incubation support.
 
+For AeroSun Energy, this budget item should help you develop the capability to **survey a customer’s site, calculate solar-system capacity, prepare a technically sound design, estimate generation and create professional quotations**.
+
+You do not need expensive software or a full-time solar engineer immediately. Start with free tools, structured technical documentation and practical training.
+
+# 1. Solar design tools
+
+I recommend starting with these tools:
+
+| Tool | Purpose | Cost approach | Recommendation |
+|---|---|---|---|
+| [OpenSolar](https://www.opensolar.com/free/?utm_source=chatgpt.com) | Rooftop layout, system design and customer proposals | Free platform | **Start here** |
+| [PVWatts](https://pvwatts.nlr.gov/pvwatts.php?utm_source=chatgpt.com) | Preliminary solar generation estimates | Free | Use for initial feasibility |
+| [System Advisor Model (SAM)](https://sam.nrel.gov/download.html%C2%A0?utm_source=chatgpt.com) | Detailed PV performance and financial modelling | Free | Learn after the basics |
+| [PVsyst](https://www.pvsyst.com/en/?utm_source=chatgpt.com) | Professional PV simulation and loss analysis | Paid, with a trial | Consider later |
+
+OpenSolar states that its platform is free for solar professionals. [support.opensolar.com](https://support.opensolar.com/hc/en-us/articles/4410441718297-Is-OpenSolar-really-free-to-use?utm_source=chatgpt.com)
+
+**My recommendation:** Do not purchase PVsyst or other paid software during your initial ₹1 lakh launch. Use OpenSolar, PVWatts and SAM first.
+
+# 2. Technical documentation you should learn
+
+You should be able to understand and prepare the following documents for each customer project.
+
+| Document | What it contains |
+|---|---|
+| Customer electricity analysis | Monthly units, bill, sanctioned load and consumption pattern |
+| Site survey report | Roof area, orientation, shading and installation conditions |
+| Solar system sizing calculation | Required kWp and number of modules |
+| Solar module datasheet | Wattage, Voc, Isc, Vmp, Imp and temperature coefficients |
+| Inverter selection sheet | Capacity, MPPT range, input current and output characteristics |
+| String sizing calculation | Module strings matched to inverter voltage and current limits |
+| Cable sizing calculation | Current, voltage drop, installation method and protection |
+| Single-line diagram (SLD) | Electrical connection and protection architecture |
+| Earthing and lightning protection plan | Applicable safety and protection arrangements |
+| Solar generation estimate | Daily, monthly and annual generation assumptions |
+| Bill of materials (BOM) | Equipment, specifications and quantities |
+| Project quotation | Equipment, labour, taxes and commercial terms |
+| Commissioning checklist | Inspection, testing and handover records |
+
+These documents will become AeroSun's standard engineering documentation package.
+
+# 3. Training recommended
+
+I suggest learning in this order.
+
+**Level 1 – Solar fundamentals**
+- How photovoltaic modules work.
+- Solar irradiation and energy generation.
+- Series and parallel module connections.
+- DC and AC electrical fundamentals.
+- On-grid, off-grid and hybrid systems.
+
+**Level 2 – Solar system design**
+- Customer load analysis.
+- Rooftop site assessment.
+- Solar capacity calculation.
+- Inverter selection.
+- String configuration.
+- Cable and protection selection.
+- Generation and savings estimates.
+
+**Level 3 – Installation and commissioning**
+- Mounting structures.
+- DC and AC wiring.
+- Earthing and surge protection.
+- Isolation and protection devices.
+- Testing and commissioning.
+- Maintenance and troubleshooting.
+
+**Level 4 – Commercial project execution**
+- Supplier quotation comparison.
+- BOM preparation.
+- Project costing.
+- Customer proposal preparation.
+- Installation contractor coordination.
+- Warranty and after-sales management.
+
+## 4. Training available in India
+
+A useful option is the National Institute of Solar Energy (NISE).
+
+Its training portal currently lists a **three-day Performance Evaluation of Solar PV Systems** programme at **₹13,665 including GST**. The FY 2026–27 calendar lists a session for 23–25 February 2027. Confirm availability before applying. [training.nise.res.in](https://training.nise.res.in/trainings?utm_source=chatgpt.com)
+
+- **Training portal:** [NISE Training](https://training.nise.res.in/trainings?utm_source=chatgpt.com)
+- **Contact:** skill@nise.res.in
+- **Phone:** 0124-2853038
+
+For more extensive practical training, investigate the MNRE Suryamitra Solar PV Technician programme. Its published programme description includes classroom learning, laboratory practice, plant exposure and on-the-job training. [Ministry of New and Renewable Energy](https://mnre.gov.in/offerings/schemes-and-services/details/skill-development-in-solar-energy-EDOyIjMtQWa?utm_source=chatgpt.com)
+
+## 5. Recommended budget for AeroSun
+
+Your earlier allocation for this activity was ₹5,000. I suggest using it as follows:
+
+| Item | Initial budget |
+|---|---:|
+| OpenSolar account and practice | ₹0 |
+| PVWatts and SAM | ₹0 |
+| Technical learning materials | ₹500 |
+| Internet and learning resources | ₹500 |
+| Practical site visits / technical exposure | ₹2,000 |
+| Documentation and printing | ₹1,000 |
+| Contingency | ₹1,000 |
+| **Total** | **₹5,000** |
+
+The NISE course would require an additional ₹13,665, plus travel and accommodation if applicable. I would postpone that expense until your cash position allows it.
+
+## 6. Your first 30-day learning programme
+
+| Week | Learning activity | Expected outcome |
+|---|---|---|
+| Week 1 | Solar fundamentals and electrical basics | Understand PV systems |
+| Week 2 | OpenSolar and PVWatts | Design a sample 3 kW rooftop system |
+| Week 3 | Inverter selection, string sizing, cables and protection | Prepare preliminary engineering documents |
+| Week 4 | Quotation, BOM and financial calculations | Prepare a complete sample customer proposal |
+
+### Practical assignment
+
+Use one hypothetical residential customer:
+
+- Solar capacity: 3 kWp
+- Module rating: 550 Wp
+- Proposed module count: 6 modules
+- Total DC capacity: 3.3 kWp
+
+Prepare:
+1. Rooftop layout.
+2. Preliminary generation estimate.
+3. Inverter selection.
+4. String configuration.
+5. BOM.
+6. Single-line diagram.
+7. Customer quotation.
+
+This is a training exercise, not an approved installation design. Actual module and inverter compatibility, voltage limits, protection, roof structure and applicable regulations must be checked before any project is executed.
+
+---
+
+## My recommendation
+
+**Start with OpenSolar and free technical tools. Do not buy expensive software or equipment yet.** Build your ability to prepare a technically complete proposal, and use a qualified solar engineer or licensed contractor for design verification and installation.
+
+I can next prepare a structured **AeroSun Solar Technical Training Workbook**, with lessons, formulas, worked examples, exercises and a sample 3 kW solar project.
+
 # 2. First 90-day business plan
 
 ## Month 1 – Establish operations

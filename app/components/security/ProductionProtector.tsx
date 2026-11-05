@@ -56,7 +56,6 @@ export default function ProductionProtector() {
           },
         })
         // console.log will trigger getter when devtools console is open
-        // eslint-disable-next-line no-console
         console.log(element)
         return detected
       } catch {

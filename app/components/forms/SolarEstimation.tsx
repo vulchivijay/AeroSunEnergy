@@ -8,27 +8,11 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
 import { useLocale } from '@/lib/LocaleContext'
 
-const solarCalculatorSchema = z
-  .object({
-    monthlyUnits: z
-      .number()
-      .min(1, 'Monthly electricity consumption is required')
-      .max(100000, 'Maximum allowed value is 100000 units'),
-    installationCostPerKw: z
-      .number()
-      .min(10000, 'Installation cost must be at least ₹10,000')
-      .max(100000, 'Installation cost cannot exceed ₹1,00,000'),
-    sellingPricePerKw: z
-      .number()
-      .min(10000, 'Selling price must be at least ₹10,000')
-      .max(200000, 'Selling price cannot exceed ₹2,00,000'),
-  })
-  .refine((data) => data.sellingPricePerKw >= data.installationCostPerKw, {
-    path: ['sellingPricePerKw'],
-    message: 'Selling price should be greater than or equal to installation cost',
-  })
-
-type FormData = z.infer<typeof solarCalculatorSchema>
+type FormData = {
+  monthlyUnits: number
+  installationCostPerKw: number
+  sellingPricePerKw: number
+}
 
 type Calculation = {
   recommendedKw: number
@@ -53,10 +37,38 @@ const defaultValues: FormData = {
 export function SolarEstimation() {
   const { t } = useLocale()
   const monthlyUnitsInputId = useId()
-  const e = t.estimation
+  const e = (t as any).estimation ?? {}
+  const validation = e.validation ?? {}
+  const solarCalculatorSchema = z
+    .object({
+      monthlyUnits: z
+        .number()
+        .min(1, validation.monthlyRequired ?? 'Monthly electricity consumption is required')
+        .max(100000, validation.monthlyMax ?? 'Maximum allowed value is 100000 units'),
+      installationCostPerKw: z
+        .number()
+        .min(10000, validation.installationMin ?? 'Installation cost must be at least ₹10,000')
+        .max(100000, validation.installationMax ?? 'Installation cost cannot exceed ₹1,00,000'),
+      sellingPricePerKw: z
+        .number()
+        .min(10000, validation.sellingMin ?? 'Selling price must be at least ₹10,000')
+        .max(200000, validation.sellingMax ?? 'Selling price cannot exceed ₹2,00,000'),
+    })
+    .refine((data) => data.sellingPricePerKw >= data.installationCostPerKw, {
+      path: ['sellingPricePerKw'],
+      message: validation.sellingGreaterThanCost ?? 'Selling price should be greater than or equal to installation cost',
+    })
+  const labels = {
+    heading: e.savingsTitle ?? 'See how much you save with',
+    headingAccent: e.savingsTitleAccent ?? 'solar',
+    description: e.savingsDescription ?? 'A 3 kW rooftop plant in Tirupati typically saves ₹30,000+ a year. Run the numbers for your home below.',
+    estimateSavings: e.estimateSavings ?? 'Estimate Your Savings',
+    adjustUsage: e.adjustUsage ?? 'Drag the slider to your average monthly electricity usage.',
+    monthlyUnits: e.monthlyUnits ?? 'Monthly Electricity Units',
+  }
   const isProduction = process.env.NODE_ENV === 'production'
 
-  const subsidyTiers = e.tiers.map((tier) => ({
+  const subsidyTiers = (e.tiers ?? []).map((tier: any) => ({
     ...tier,
     label: tier.label,
     subsidy: tier.subsidy,
@@ -182,12 +194,12 @@ export function SolarEstimation() {
           </span>
 
           <h1 className="mt-6 text-4xl font-black leading-[0.95] tracking-[0.065em] text-slate-900 sm:text-5xl lg:text-[5rem]">
-            See how much you save with
-            <span className="mt-2 block text-emerald-600">solar</span>
+            {labels.heading}
+            <span className="mt-2 block text-emerald-600">{labels.headingAccent}</span>
           </h1>
 
           <p className="mt-5 text-lg leading-8 text-slate-600">
-            A 3 kW rooftop plant in Tirupati typically saves ₹30,000+ a year. Run the numbers for your home below.
+            {labels.description}
           </p>
         </div>
 
@@ -196,15 +208,15 @@ export function SolarEstimation() {
             <div className="space-y-6">
               <div>
                 <h2 className="text-[2rem] font-black tracking-tighter text-slate-900">
-                  Estimate Your Savings
+                  {labels.estimateSavings}
                 </h2>
-                <p className="mt-2 text-base text-slate-600">Drag the slider to your average monthly electricity usage.</p>
+                <p className="mt-2 text-base text-slate-600">{labels.adjustUsage}</p>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between gap-3">
                   <div>
-                    <label htmlFor={monthlyUnitsInputId} className="text-[12px] font-bold uppercase tracking-[0.26em] text-slate-500">Monthly Electricity Units</label>
+                    <label htmlFor={monthlyUnitsInputId} className="text-[12px] font-bold uppercase tracking-[0.26em] text-slate-500">{labels.monthlyUnits}</label>
                     <div className="mt-2 flex items-center gap-2">
                       <span className="text-[2.4rem] font-black tracking-[0.06em] text-emerald-600">{(values.monthlyUnits ?? defaultValues.monthlyUnits).toLocaleString('en-IN')} units</span>
                     </div>

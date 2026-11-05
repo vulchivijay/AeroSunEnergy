@@ -53,7 +53,6 @@ export default function Navbar() {
   const pathname = usePathname() || '/'
   const [menuOpen, setMenuOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
-  const [isHydrated, setIsHydrated] = useState(false)
   const [expandedMobileSubmenu, setExpandedMobileSubmenu] = useState<string | null>(null)
   const headerRef = useRef<HTMLElement>(null)
   const languageOptions = t.navbar.languages as {
@@ -96,15 +95,7 @@ export default function Navbar() {
     }
   }, [])
 
-  useEffect(() => {
-    setIsHydrated(true)
-    setMenuOpen(false)
-    setLangOpen(false)
-    setExpandedMobileSubmenu(pathname.startsWith('/about') ? '/about' : null)
-  }, [pathname])
-
   function isActive(href: string) {
-    if (!isHydrated) return false
     if (href === '/') return pathname === '/'
     return pathname === href || pathname.startsWith(`${href}/`)
   }
@@ -118,6 +109,8 @@ export default function Navbar() {
     const disabled = Boolean(link.disabled)
     const active = isActive(link.href) && !disabled
     const Icon = navigationIcons[link.href] ?? PanelsTopLeft
+    const navbarMeta = t.navbar as Record<string, any>
+    const comingSoonLabel = navbarMeta.comingSoon ?? 'Coming soon'
     const classes = mobile
       ? `flex min-h-12 w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium transition ${
           disabled
@@ -152,7 +145,7 @@ export default function Navbar() {
         )}
         {disabled && (
           <span className="rounded-full bg-[#f7edda] px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-[#85672f]">
-            Coming soon
+            {comingSoonLabel}
           </span>
         )}
       </span>
@@ -227,7 +220,7 @@ export default function Navbar() {
             className="ml-5 rounded-xl border border-slate-200 bg-white p-2 shadow-lg"
           >
             {link.children.map((child) => {
-              const childActive = isHydrated && pathname === child.href
+              const childActive = pathname === child.href
               const ChildIcon = navigationIcons[child.href] ?? PanelsTopLeft
               return (
                 <Link
@@ -257,7 +250,7 @@ export default function Navbar() {
         <div className="invisible absolute left-1/2 top-full z-[70] min-w-52 -translate-x-1/2 pt-2 opacity-0 transition duration-150 group-hover/nav:visible group-hover/nav:opacity-100 group-focus-within/nav:visible group-focus-within/nav:opacity-100">
           <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-1.5 shadow-[0_20px_50px_-25px_rgba(0,0,0,0.35)]">
             {link.children.map((child) => {
-              const childActive = isHydrated && pathname === child.href
+              const childActive = pathname === child.href
               const ChildIcon = navigationIcons[child.href] ?? PanelsTopLeft
               return (
                 <Link
