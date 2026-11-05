@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { motion } from '@/lib/motion'
 import { OptimizedImage } from '@/app/components/ui'
+import { useLocale } from '@/lib/LocaleContext'
 
 const companyStats = [
   { label: 'Location', value: 'Tirupati, Andhra Pradesh' },
@@ -230,6 +231,39 @@ const ppsReasons = [
 ]
 
 export default function AboutPage() {
+  const { t } = useLocale()
+  const a = t.about as any
+
+  const companyStatsData = Array.isArray(a?.companyStats) ? a.companyStats : companyStats
+  const coreValuesData = Array.isArray(a?.coreValues) ? a.coreValues.map((value: any) => ({
+    title: value.title,
+    description: value.description ?? value.desc,
+  })) : coreValues
+  const founderProfilesData = Array.isArray(a?.leadershipProfiles) ? a.leadershipProfiles : founderProfiles
+  const approvalRowsData = Array.isArray(a?.governanceRows) ? a.governanceRows : approvalRows
+  const pageStrings = {
+    badge: a?.heroBadge ?? 'Company profile · Tirupati, India',
+    companyTitleA: a?.heroTitleA ?? 'AeroSun',
+    companyTitleB: a?.heroTitleB ?? 'Energy',
+    legalLabel: a?.legalLabel ?? 'Private Limited',
+    pitch: a?.heroPitch ?? 'Solar energy • Wind energy • Hybrid renewable energy',
+    promiseLabel: a?.promiseLabel ?? 'Our promise',
+    promiseText: a?.promiseText ?? 'Power from Sun, Wind, Water, Fire.',
+    intro: a?.heroDescription ?? 'AeroSun Energy Private Limited is an Indian renewable-energy company established with the vision of supporting a cleaner, more sustainable and energy-efficient future. Based in Tirupati, Andhra Pradesh, the company aims to develop renewable-energy solutions for residential, agricultural, commercial and industrial customers.',
+    explore: a?.ctaExplore ?? 'Explore our capabilities',
+    leadership: a?.ctaLeadership ?? 'Meet the leadership',
+    companyProfile: a?.ctaCompanyProfile ?? 'Read our company profile',
+    productCatalogue: a?.ctaProductCatalogue ?? 'Browse product catalogue',
+    storyBadge: a?.storyBadge ?? 'The person behind the vision',
+    storyHeading: a?.storyHeading ?? 'Technology roots. A cleaner-energy future.',
+    governanceBadge: a?.governanceBadge ?? 'Governance & compliance',
+    governanceHeading: a?.governanceHeading ?? 'Registrations and approval milestones',
+    governanceDescription: a?.governanceDescription ?? 'Company records and key compliance milestones.',
+    leadershipBadge: a?.leadershipBadge ?? 'People & principles',
+    leadershipHeading: a?.leadershipHeading ?? 'Leadership behind the mission',
+    leadershipIntro: a?.leadershipIntro ?? 'Our work is guided by a commitment to sustainability, integrity, quality, innovation, safety, and continuous improvement.',
+  }
+
   return (
     <main className="overflow-hidden bg-[#f5f6ef] text-slate-900 dark:bg-[#101b17] dark:text-slate-100">
       <section id="story" className="relative isolate overflow-hidden bg-[#14372f] text-white">
@@ -249,37 +283,42 @@ export default function AboutPage() {
           >
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-white/[0.06] px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-emerald-100">
               <span className="h-1.5 w-1.5 rounded-full bg-lime-300" />
-              Company profile &middot; Tirupati, India
+              {pageStrings.badge}
             </div>
             <h1 className="mt-7 text-5xl font-black uppercase leading-[0.92] tracking-[0.075em] text-white sm:text-7xl lg:text-8xl">
-              AeroSun
-              <span className="mt-2 block text-emerald-300">Energy</span>
+              {pageStrings.companyTitleA}
+              <span className="mt-2 block text-emerald-300">{pageStrings.companyTitleB}</span>
             </h1>
             <p className="mt-5 text-md font-bold uppercase tracking-[0.3em] text-emerald-100/65">
-              Private Limited
+              {pageStrings.legalLabel}
             </p>
             <p className="mt-6 max-w-xl text-xl font-medium leading-8 text-white/85 sm:text-2xl">
-              Solar energy <span className="text-lime-300">&middot;</span> Wind energy <span className="text-lime-300">&middot;</span> Hybrid renewable energy
+              {pageStrings.pitch.split(' • ').map((part, index, arr) => (
+                <span key={part}>
+                  {index > 0 && <span className="text-lime-300"> &middot; </span>}
+                  {part}
+                </span>
+              ))}
             </p>
             <div className="mt-8 border-l-2 border-lime-300 pl-5">
-              <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-lime-200">Our promise</p>
-              <p className="mt-2 text-xl font-semibold italic text-white sm:text-2xl">&ldquo;Power from Sun, Wind, Water, Fire&rdquo;</p>
+              <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-lime-200">{pageStrings.promiseLabel}</p>
+              <p className="mt-2 text-xl font-semibold italic text-white sm:text-2xl">&ldquo;{pageStrings.promiseText}&rdquo;</p>
             </div>
             <p className="mt-8 max-w-2xl text-base leading-7 text-emerald-50/85 sm:text-lg sm:leading-8">
-              AeroSun Energy Private Limited is an Indian renewable-energy company established with the vision of supporting a cleaner, more sustainable and energy-efficient future. Based in Tirupati, Andhra Pradesh, the company aims to develop renewable-energy solutions for residential, agricultural, commercial and industrial customers.
+              {pageStrings.intro}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#capabilities" className="rounded-full bg-lime-300 px-5 py-3 text-md font-bold text-emerald-950 transition hover:bg-lime-200">
-                Explore our capabilities
+                {pageStrings.explore}
               </a>
               <a href="#leadership" className="rounded-full border border-white/20 px-5 py-3 text-md font-bold text-white transition hover:bg-white/10">
-                Meet the leadership
+                {pageStrings.leadership}
               </a>
               <Link href="/about/company-profile" className="rounded-full border border-white/20 px-5 py-3 text-md font-bold text-white transition hover:bg-white/10">
-                Read our company profile
+                {pageStrings.companyProfile}
               </Link>
               <Link href="/about/product-catalogue" className="rounded-full border border-white/20 px-5 py-3 text-md font-bold text-white transition hover:bg-white/10">
-                Browse product catalogue
+                {pageStrings.productCatalogue}
               </Link>
             </div>
           </motion.div>
@@ -310,7 +349,7 @@ export default function AboutPage() {
 
         <div className="border-t border-white/10">
           <div className="mx-auto grid max-w-7xl gap-4 px-5 py-5 sm:grid-cols-3 sm:px-8 lg:px-10">
-            {companyStats.map((stat) => (
+            {companyStatsData.map((stat: any) => (
               <div key={stat.label} className="flex items-center justify-between gap-4 sm:justify-start sm:gap-5">
                 <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-100/55">{stat.label}</span>
                 <span className="text-md font-semibold text-white">{stat.value}</span>
@@ -323,9 +362,9 @@ export default function AboutPage() {
       <section className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
         <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
           <div>
-            <p className="text-[12px] font-black uppercase tracking-[0.24em] text-emerald-700 dark:text-emerald-300">The person behind the vision</p>
+            <p className="text-[12px] font-black uppercase tracking-[0.24em] text-emerald-700 dark:text-emerald-300">{pageStrings.storyBadge}</p>
             <h2 className="mt-4 max-w-md text-3xl font-black leading-tight tracking-[0.055em] text-slate-950 dark:text-white sm:text-4xl">
-              Technology roots. A cleaner-energy future.
+              {pageStrings.storyHeading}
             </h2>
             <div className="mt-6 h-1 w-16 rounded-full bg-lime-500" />
           </div>
@@ -353,36 +392,40 @@ export default function AboutPage() {
                 <div className="max-w-2xl">
                   <p className="inline-flex items-center gap-2 rounded-full border border-lime-200/25 bg-white/[0.08] px-3 py-1.5 text-[12px] font-black uppercase tracking-[0.2em] text-lime-200">
                     <span className="h-1.5 w-1.5 rounded-full bg-lime-300" />
-                    Governance &amp; compliance
+                    {pageStrings.governanceBadge}
                   </p>
                   <h2 className="mt-4 text-3xl font-black tracking-[0.055em] sm:text-4xl">
-                    Registrations and approval milestones
+                    {pageStrings.governanceHeading}
                   </h2>
                   <p className="mt-2 text-md leading-6 text-emerald-50/85">
-                    Company records and key compliance milestones.
+                    {pageStrings.governanceDescription}
                   </p>
                 </div>
                 <div className="flex w-fit items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/20 px-4 py-3 backdrop-blur-sm">
-                  <span className="text-3xl font-black leading-none text-lime-200">{approvalRows.length}</span>
+                  <span className="text-3xl font-black leading-none text-lime-200">{approvalRowsData.length}</span>
                   <span className="max-w-20 text-[12px] font-bold uppercase leading-4 tracking-[0.16em] text-emerald-50">Company records</span>
                 </div>
               </div>
             </div>
             <div className="grid gap-3 p-4 sm:grid-cols-2 sm:gap-4 sm:p-6 lg:p-8">
-              {approvalRows.map(([label, , status], index) => (
-                <article key={label} className="group flex min-h-24 items-center gap-3 rounded-2xl border border-slate-200/90 bg-white p-4 shadow-[0_8px_24px_-20px_rgba(15,23,42,0.45)] transition duration-200 hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-[0_16px_30px_-22px_rgba(16,87,58,0.45)] dark:border-slate-700 dark:bg-slate-900 dark:hover:border-emerald-700 sm:gap-4 sm:p-5">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 font-mono text-md font-black text-emerald-800 ring-1 ring-emerald-700/10 transition-colors group-hover:bg-emerald-100 dark:bg-emerald-950/60 dark:text-emerald-200 dark:ring-emerald-300/10 dark:group-hover:bg-emerald-900/60">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <h3 className="text-md font-bold leading-6 text-slate-900 dark:text-white">{label}</h3>
-                    <span className="mt-2 inline-flex max-w-full items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[12px] font-bold uppercase leading-4 tracking-[0.1em] text-emerald-900 dark:border-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-200">
-                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600 dark:bg-emerald-400" />
-                      {status}
+              {approvalRowsData.map((row: any, index: number) => {
+                const label = row.label ?? row[0]
+                const status = row.status ?? row[2] ?? 'Approved'
+                return (
+                  <article key={label} className="group flex min-h-24 items-center gap-3 rounded-2xl border border-slate-200/90 bg-white p-4 shadow-[0_8px_24px_-20px_rgba(15,23,42,0.45)] transition duration-200 hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-[0_16px_30px_-22px_rgba(16,87,58,0.45)] dark:border-slate-700 dark:bg-slate-900 dark:hover:border-emerald-700 sm:gap-4 sm:p-5">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 font-mono text-md font-black text-emerald-800 ring-1 ring-emerald-700/10 transition-colors group-hover:bg-emerald-100 dark:bg-emerald-950/60 dark:text-emerald-200 dark:ring-emerald-300/10 dark:group-hover:bg-emerald-900/60">
+                      {String(index + 1).padStart(2, '0')}
                     </span>
-                  </div>
-                </article>
-              ))}
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-md font-bold leading-6 text-slate-900 dark:text-white">{label}</h3>
+                      <span className="mt-2 inline-flex max-w-full items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[12px] font-bold uppercase leading-4 tracking-[0.1em] text-emerald-900 dark:border-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-200">
+                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600 dark:bg-emerald-400" />
+                        {status}
+                      </span>
+                    </div>
+                  </article>
+                )
+              })}
             </div>
           </div>
         </div>
@@ -391,13 +434,13 @@ export default function AboutPage() {
       <section id="leadership" className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
           <div>
-            <p className="text-[12px] font-black uppercase tracking-[0.24em] text-emerald-700 dark:text-emerald-300">People & principles</p>
-            <h2 className="mt-3 text-3xl font-black tracking-[0.055em] text-slate-950 dark:text-white sm:text-4xl">Leadership behind the mission</h2>
+            <p className="text-[12px] font-black uppercase tracking-[0.24em] text-emerald-700 dark:text-emerald-300">{pageStrings.leadershipBadge}</p>
+            <h2 className="mt-3 text-3xl font-black tracking-[0.055em] text-slate-950 dark:text-white sm:text-4xl">{pageStrings.leadershipHeading}</h2>
             <p className="mt-4 text-base leading-7 text-slate-700 dark:text-slate-200">
-              Our work is guided by a commitment to sustainability, integrity, quality, innovation, safety, and continuous improvement.
+              {pageStrings.leadershipIntro}
             </p>
             <div className="mt-8 space-y-3">
-              {founderProfiles.map((profile) => (
+              {founderProfilesData.map((profile: any) => (
                 <article key={profile.name} className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900/70">
                   <div className="flex items-center gap-3">
                     <span className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-900 text-lg font-black text-lime-300">{profile.initials}</span>
@@ -414,7 +457,7 @@ export default function AboutPage() {
 
           <div>
             <div className="grid gap-3 sm:grid-cols-2">
-              {coreValues.map((value, index) => (
+              {coreValuesData.map((value: any, index: number) => (
                 <article key={value.title} className="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-950/5 dark:border-slate-800 dark:bg-slate-900/70 dark:hover:border-emerald-800">
                   <div className="flex items-center justify-between gap-3">
                     <h3 className="text-md font-extrabold text-slate-950 dark:text-white">{value.title}</h3>
