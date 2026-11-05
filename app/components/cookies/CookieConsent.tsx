@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
 
 const COOKIE_KEY = 'aerosun_cookie_consent'
@@ -9,7 +9,6 @@ type ConsentChoice = 'accepted' | 'declined'
 
 export function getCookieConsent(): ConsentChoice | null {
   if (typeof window === 'undefined') return null
-
   try {
     const value = window.localStorage.getItem(COOKIE_KEY)
     return value === 'accepted' || value === 'declined' ? value : null
@@ -22,21 +21,21 @@ export function getCookieConsent(): ConsentChoice | null {
 export default function CookieConsent() {
   const { t } = useLocale()
   const labels = t.cookieConsent
-  const [consent, setConsent] = useState<ConsentChoice | null>(() => {
-    if (typeof window === 'undefined') return null
-    return getCookieConsent()
-  })
+  const [consent, setConsent] = useState<ConsentChoice | null>(null)
+  const [initialized, setInitialized] = useState(false)
 
+  useEffect(() => {
+    setConsent(getCookieConsent())
+    setInitialized(true)
+  }, [])
   const saveConsent = (choice: ConsentChoice) => {
     setConsent(choice)
-
     if (typeof window !== 'undefined') {
       try {
         window.localStorage.setItem(COOKIE_KEY, choice)
       } catch (error) {
         console.error('Unable to save cookie consent preference.', error)
       }
-
       window.dispatchEvent(
         new CustomEvent('aerosun-cookie-consent', {
           detail: { choice },
@@ -45,7 +44,7 @@ export default function CookieConsent() {
     }
   }
 
-  if (consent !== null) return null
+  if (!initialized || consent !== null) return null
 
   return (
     <div data-print-hide className="fixed inset-x-0 bottom-0 z-[80] flex justify-center p-4 sm:p-6">
