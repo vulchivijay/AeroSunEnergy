@@ -9,7 +9,6 @@ type ConsentChoice = 'accepted' | 'declined'
 
 export function getCookieConsent(): ConsentChoice | null {
   if (typeof window === 'undefined') return null
-
   try {
     const value = window.localStorage.getItem(COOKIE_KEY)
     return value === 'accepted' || value === 'declined' ? value : null
@@ -26,17 +25,14 @@ export default function CookieConsent() {
     if (typeof window === 'undefined') return null
     return getCookieConsent()
   })
-
   const saveConsent = (choice: ConsentChoice) => {
     setConsent(choice)
-
     if (typeof window !== 'undefined') {
       try {
         window.localStorage.setItem(COOKIE_KEY, choice)
       } catch (error) {
         console.error('Unable to save cookie consent preference.', error)
       }
-
       window.dispatchEvent(
         new CustomEvent('aerosun-cookie-consent', {
           detail: { choice },
