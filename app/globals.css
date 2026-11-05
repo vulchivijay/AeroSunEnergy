@@ -288,24 +288,15 @@ h4,
 h5,
 h6 {
   font-family: var(--font-display), sans-serif;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.04em;
 }
 
-html body :is(.font-semibold, .font-bold, .font-extrabold, .font-black):not([class*="tracking-"]) {
-  letter-spacing: 0.01em;
-}
-
-html body .tracking-tight {
-  letter-spacing: -0.01em;
-}
-
-html body .tracking-tighter {
-  letter-spacing: -0.015em;
-}
-
+html body :is(.font-semibold, .font-bold, .font-extrabold, .font-black):not([class*="tracking-"]),
+html body .tracking-tight,
+html body .tracking-tighter,
 strong,
 b {
-  letter-spacing: 0.01em;
+  letter-spacing: 0.04em;
 }
 
 ::selection {
