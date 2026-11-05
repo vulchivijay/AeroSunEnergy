@@ -10,8 +10,13 @@ type ConsentChoice = 'accepted' | 'declined'
 export function getCookieConsent(): ConsentChoice | null {
   if (typeof window === 'undefined') return null
 
-  const value = window.localStorage.getItem(COOKIE_KEY)
-  return value === 'accepted' || value === 'declined' ? value : null
+  try {
+    const value = window.localStorage.getItem(COOKIE_KEY)
+    return value === 'accepted' || value === 'declined' ? value : null
+  } catch (error) {
+    console.error('Unable to read cookie consent preference.', error)
+    return null
+  }
 }
 
 export default function CookieConsent() {
@@ -23,21 +28,27 @@ export default function CookieConsent() {
   })
 
   const saveConsent = (choice: ConsentChoice) => {
+    setConsent(choice)
+
     if (typeof window !== 'undefined') {
-      window.localStorage.setItem(COOKIE_KEY, choice)
+      try {
+        window.localStorage.setItem(COOKIE_KEY, choice)
+      } catch (error) {
+        console.error('Unable to save cookie consent preference.', error)
+      }
+
       window.dispatchEvent(
         new CustomEvent('aerosun-cookie-consent', {
           detail: { choice },
         })
       )
     }
-    setConsent(choice)
   }
 
   if (consent !== null) return null
 
   return (
-    <div data-print-hide className="fixed inset-x-0 bottom-0 z-40 flex justify-center p-4 sm:p-6">
+    <div data-print-hide className="fixed inset-x-0 bottom-0 z-[80] flex justify-center p-4 sm:p-6">
       <aside
         aria-label={labels.title}
         className="w-full max-w-5xl rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-[0_25px_60px_-20px_rgba(15,23,42,0.5)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-900/95"
