@@ -5,26 +5,27 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { submitMailtoForm } from '@/lib/submitMailto'
 import { useState } from 'react'
+import { useLocale } from '@/lib/LocaleContext'
 
-const warrantyPolicySchema = z.object({
-  customerName: z.string().trim().min(2, 'Customer name is required.'),
+const createWarrantyPolicySchema = (validation: typeof import('@/public/locales/en/index.json').businessForms.warrantyPolicy.validation) => z.object({
+  customerName: z.string().trim().min(2, validation.customerName),
   companyName: z.string().trim().optional().or(z.literal('')),
-  email: z.string().trim().email('Please enter a valid email address.'),
+  email: z.string().trim().email(validation.email),
   phone: z
     .string()
     .trim()
-    .min(10, 'Phone number must be at least 10 digits.')
-    .regex(/^[0-9+()\-\s]+$/, 'Phone number can contain only digits, spaces, +, (, ), and -.'),
-  projectName: z.string().trim().min(3, 'Please enter the project name.'),
-  productLine: z.string().min(1, 'Please select the product or service line.'),
-  warrantyStart: z.string().min(1, 'Please enter the warranty start date.'),
-  servicePlan: z.string().min(1, 'Please select the after-sales service plan.'),
+    .min(10, validation.phoneLength)
+    .regex(/^[0-9+()\-\s]+$/, validation.phoneFormat),
+  projectName: z.string().trim().min(3, validation.projectName),
+  productLine: z.string().min(1, validation.productLine),
+  warrantyStart: z.string().min(1, validation.warrantyStart),
+  servicePlan: z.string().min(1, validation.servicePlan),
   acceptTerms: z.boolean().refine((value) => value === true, {
-    message: 'Please confirm that you accept the warranty and service policy terms.',
+    message: validation.acceptTerms,
   }),
 })
 
-type WarrantyPolicyFormValues = z.infer<typeof warrantyPolicySchema>
+type WarrantyPolicyFormValues = z.infer<ReturnType<typeof createWarrantyPolicySchema>>
 
 const defaultValues: WarrantyPolicyFormValues = {
   customerName: '',
@@ -39,6 +40,9 @@ const defaultValues: WarrantyPolicyFormValues = {
 }
 
 export default function WarrantyPolicyPage() {
+  const { t } = useLocale()
+  const content = t.businessForms.warrantyPolicy
+  const { labels } = content
   const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {
     register,
@@ -46,28 +50,29 @@ export default function WarrantyPolicyPage() {
     reset,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<WarrantyPolicyFormValues>({
-    resolver: zodResolver(warrantyPolicySchema),
+    resolver: zodResolver(createWarrantyPolicySchema(content.validation)),
     defaultValues,
     mode: 'onBlur',
     reValidateMode: 'onChange',
   })
 
   const onSubmit = (data: WarrantyPolicyFormValues) => {
-    const subject = `Warranty & After-Sales Policy - ${data.projectName}`
+    const emailText = content.email
+    const subject = emailText.subject.replace('{projectName}', data.projectName)
     const body = [
-      'WARRANTY AND AFTER-SALES SERVICE POLICY',
-      '=====================================',
+      emailText.title,
+      emailText.separator,
       '',
-      `Customer Name: ${data.customerName}`,
-      `Company Name: ${data.companyName || 'Not provided'}`,
-      `Email: ${data.email}`,
-      `Phone: ${data.phone}`,
-      `Project Name: ${data.projectName}`,
-      `Product / Service Line: ${data.productLine}`,
-      `Warranty Start Date: ${data.warrantyStart}`,
-      `Service Plan: ${data.servicePlan}`,
+      `${emailText.customerName}: ${data.customerName}`,
+      `${emailText.companyName}: ${data.companyName || emailText.notProvided}`,
+      `${emailText.email}: ${data.email}`,
+      `${emailText.phone}: ${data.phone}`,
+      `${emailText.projectName}: ${data.projectName}`,
+      `${emailText.productLine}: ${data.productLine}`,
+      `${emailText.warrantyStart}: ${data.warrantyStart}`,
+      `${emailText.servicePlan}: ${data.servicePlan}`,
       '',
-      'Policy terms acknowledged: Yes',
+      emailText.termsAccepted,
     ].join('\n')
 
     const opened = submitMailtoForm({
@@ -79,7 +84,7 @@ export default function WarrantyPolicyPage() {
     reset(defaultValues)
     setSubmitFeedback({
       type: opened ? 'success' : 'error',
-      message: opened ? 'Your warranty acknowledgement has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+      message: opened ? content.feedback.success : content.feedback.error,
     })
   }
 
@@ -98,14 +103,14 @@ export default function WarrantyPolicyPage() {
                   W
                 </div>
                 <div>
-                  <p className="text-[12px] font-black uppercase tracking-[0.36em] text-sky-100/80">Warranty</p>
-                  <h1 className="mt-1 text-2xl font-black tracking-[0.06em] sm:text-3xl">Policy Acknowledgement</h1>
+                  <p className="text-[12px] font-black uppercase tracking-[0.36em] text-sky-100/80">{labels.badge}</p>
+                  <h1 className="mt-1 text-2xl font-black tracking-[0.06em] sm:text-3xl">{labels.title}</h1>
                 </div>
               </div>
 
               <div className="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-sky-100">
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(74,222,128,0.9)]" />
-                Online Support
+                {labels.support}
               </div>
             </div>
           </header>
@@ -113,47 +118,47 @@ export default function WarrantyPolicyPage() {
           <div className="space-y-5 p-4 sm:p-6 lg:p-7">
             <div className="grid gap-5 lg:grid-cols-2">
               <Field
-                label="Customer name"
+                label={labels.fields.customerName.label}
                 name="customerName"
-                placeholder="Enter your full name"
+                placeholder={labels.fields.customerName.placeholder}
                 register={register}
                 error={errors.customerName}
                 accent="sky"
               />
 
               <Field
-                label="Company name"
+                label={labels.fields.companyName.label}
                 name="companyName"
-                placeholder="Optional company / organization"
+                placeholder={labels.fields.companyName.placeholder}
                 register={register}
                 error={errors.companyName}
                 accent="emerald"
               />
 
               <Field
-                label="Email address"
+                label={labels.fields.email.label}
                 name="email"
                 type="email"
-                placeholder="you@example.com"
+                placeholder={labels.fields.email.placeholder}
                 register={register}
                 error={errors.email}
                 accent="cyan"
               />
 
               <Field
-                label="Phone number"
+                label={labels.fields.phone.label}
                 name="phone"
                 type="tel"
-                placeholder="+91 98765 43210"
+                placeholder={labels.fields.phone.placeholder}
                 register={register}
                 error={errors.phone}
                 accent="blue"
               />
 
               <Field
-                label="Project name"
+                label={labels.fields.projectName.label}
                 name="projectName"
-                placeholder="Solar rooftop project"
+                placeholder={labels.fields.projectName.placeholder}
                 register={register}
                 error={errors.projectName}
                 accent="indigo"
@@ -161,7 +166,7 @@ export default function WarrantyPolicyPage() {
 
               <div>
                 <label htmlFor="productLine" className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
-                  Product or service line
+                  {labels.fields.productLine.label}
                 </label>
                 <select
                   id="productLine"
@@ -170,19 +175,14 @@ export default function WarrantyPolicyPage() {
                   aria-describedby={errors.productLine ? 'productLine-error' : undefined}
                   className="h-12 w-full rounded-2xl border border-sky-200 bg-sky-50/70 px-4 text-md text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
                 >
-                  <option value="">Select product line</option>
-                  <option value="Solar PV system">Solar PV system</option>
-                  <option value="Wind energy system">Wind energy system</option>
-                  <option value="Hybrid energy system">Hybrid energy system</option>
-                  <option value="Battery storage">Battery storage</option>
-                  <option value="Maintenance plan">Maintenance plan</option>
-                  <option value="Service request">Service request</option>
+                  <option value="">{labels.fields.productLine.placeholder}</option>
+                  {labels.productOptions.map((option) => <option key={option} value={option}>{option}</option>)}
                 </select>
                 {errors.productLine && <p id="productLine-error" className="mt-2 text-md text-rose-600">{errors.productLine.message}</p>}
               </div>
 
               <Field
-                label="Warranty start date"
+                label={labels.fields.warrantyStart.label}
                 name="warrantyStart"
                 type="date"
                 register={register}
@@ -192,7 +192,7 @@ export default function WarrantyPolicyPage() {
 
               <div>
                 <label htmlFor="servicePlan" className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
-                  After-sales service plan
+                  {labels.fields.servicePlan.label}
                 </label>
                 <select
                   id="servicePlan"
@@ -201,12 +201,8 @@ export default function WarrantyPolicyPage() {
                   aria-describedby={errors.servicePlan ? 'servicePlan-error' : undefined}
                   className="h-12 w-full rounded-2xl border border-emerald-200 bg-emerald-50/70 px-4 text-md text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"
                 >
-                  <option value="">Select service plan</option>
-                  <option value="Basic support">Basic support</option>
-                  <option value="Annual maintenance contract">Annual maintenance contract</option>
-                  <option value="Priority service plan">Priority service plan</option>
-                  <option value="Monitoring and support">Monitoring and support</option>
-                  <option value="Not sure yet">Not sure yet</option>
+                  <option value="">{labels.fields.servicePlan.placeholder}</option>
+                  {labels.serviceOptions.map((option) => <option key={option} value={option}>{option}</option>)}
                 </select>
                 {errors.servicePlan && <p id="servicePlan-error" className="mt-2 text-md text-rose-600">{errors.servicePlan.message}</p>}
               </div>
@@ -220,7 +216,7 @@ export default function WarrantyPolicyPage() {
                   className="mt-1 h-4 w-4 rounded border-slate-300 text-sky-600 focus:ring-sky-500"
                 />
                 <span className="font-medium">
-                  I acknowledge and accept the warranty and after-sales service policy terms as outlined by AeroSun Energy.
+                  {labels.fields.acceptTerms}
                 </span>
               </label>
               {errors.acceptTerms && <p className="mt-2 text-md text-rose-600">{errors.acceptTerms.message}</p>}
@@ -229,7 +225,7 @@ export default function WarrantyPolicyPage() {
             <div className="flex flex-col gap-3 border-t border-slate-200 pt-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-2 text-[12px] font-black uppercase tracking-[0.24em] text-slate-500">
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                Service confirmation
+                {labels.serviceConfirmation}
               </div>
 
               <button
@@ -237,7 +233,7 @@ export default function WarrantyPolicyPage() {
                 disabled={isSubmitting}
                 className="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-md font-black uppercase tracking-[0.18em] text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-sky-900 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                {isSubmitting ? 'Submitting...' : 'Submit acknowledgement'}
+                {isSubmitting ? labels.submitting : labels.submit}
               </button>
 
               {submitFeedback ? (
@@ -245,7 +241,7 @@ export default function WarrantyPolicyPage() {
                   {submitFeedback.message}
                 </p>
               ) : isSubmitSuccessful && (
-                <p className="text-md font-medium text-emerald-700">Your warranty acknowledgement has been prepared in your email app.</p>
+                <p className="text-md font-medium text-emerald-700">{content.feedback.success}</p>
               )}
             </div>
           </div>

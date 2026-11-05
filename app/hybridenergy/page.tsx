@@ -1,3 +1,6 @@
+'use client'
+
+import { useLocale } from '@/lib/LocaleContext'
 import {
   HybridBenefitCard,
   HybridFeatureCard,
@@ -313,7 +316,18 @@ const hybridSlides: HybridSlide[] = [
   },
 ]
 
-function HybridHeroSlider() {
+function getHybridAccent(accent: string): 'emerald' | 'sky' | 'violet' | 'amber' {
+  switch (accent) {
+    case 'sky':
+    case 'violet':
+    case 'amber':
+      return accent
+    default:
+      return 'emerald'
+  }
+}
+
+function HybridHeroSlider({ slides, ariaLabel }: { slides: HybridSlide[]; ariaLabel: string }) {
   const slideClass =
     'group relative flex h-full w-full items-end justify-start overflow-hidden p-6 sm:p-8 lg:p-14 xl:p-18'
 
@@ -321,8 +335,8 @@ function HybridHeroSlider() {
     'absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.32),transparent_24%),radial-gradient(circle_at_80%_20%,rgba(56,189,248,0.18),transparent_30%),linear-gradient(90deg,rgba(2,6,23,0.78)_0%,rgba(15,23,42,0.6)_40%,rgba(15,23,42,0.28)_100%)]'
 
   return (
-    <Slider autoplay interval={5000} pauseOnHover ariaLabel="Hybrid energy solutions">
-      {hybridSlides.map((slide, index) => (
+    <Slider autoplay interval={5000} pauseOnHover ariaLabel={ariaLabel}>
+      {slides.map((slide, index) => (
         <div key={slide.title} className={`${slide.panelClass} relative h-full w-full overflow-hidden`}>
           <div className="absolute inset-0">
             <OptimizedImage
@@ -373,6 +387,17 @@ function HybridHeroSlider() {
 }
 
 export default function HybridEnergyPage() {
+  const { t } = useLocale()
+  const hybridPage = t.hybridPage
+
+  const hybridSlidesLocalized = hybridPage.hero.slides ?? hybridSlides
+  const hybridTypesLocalized = hybridPage.categories.items ?? hybridTypes
+  const integrationTypesLocalized = hybridPage.integration.items ?? integrationTypes
+  const productPrioritiesLocalized = hybridPage.solutions.items ?? productPriorities
+  const projectRowsLocalized = hybridPage.fit.rows ?? projectRows
+  const keyBenefitsLocalized = hybridPage.common.benefits ?? keyBenefits
+  const serviceSectionsLocalized = hybridPage.sections ?? serviceSections
+
   return (
     <main className="bg-[#f1faf5] pt-6 sm:pt-8 text-slate-900 [&>section]:border-t-4 [&>section]:border-t-violet-400">
       <header className="relative mx-auto mb-6 max-w-7xl overflow-hidden rounded-[2.5rem] border border-slate-800 bg-[#10152d] px-5 py-7 text-white shadow-[0_30px_75px_-42px_rgba(28,27,75,0.7)] sm:mb-8 sm:px-8 sm:py-9 lg:px-10 lg:py-11">
@@ -381,35 +406,32 @@ export default function HybridEnergyPage() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-violet-200/25 bg-white/[0.07] px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-violet-200">
               <span className="h-2 w-2 rounded-full bg-emerald-300" aria-hidden="true" />
-              AeroSun Energy <span aria-hidden="true">/</span> Hybrid Systems
+              {hybridPage.hero.eyebrow}
             </div>
             <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.02] tracking-[0.06em] text-white sm:text-5xl lg:text-7xl">
-              Hybrid energy,
-              <span className="block bg-linear-to-r from-emerald-300 via-cyan-200 to-violet-300 bg-clip-text text-transparent">working as one.</span>
+              {hybridPage.hero.title}
+              <span className="block bg-linear-to-r from-emerald-300 via-cyan-200 to-violet-300 bg-clip-text text-transparent">{hybridPage.hero.titleAccent}</span>
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl">
-              Combine solar generation, wind power, storage, and intelligent controls to create more resilient, flexible, and efficient renewable energy systems for homes, businesses, farms, and communities.
+              {hybridPage.hero.subtitle}
             </p>
           </div>
           <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.06] p-5 backdrop-blur-sm sm:p-7">
             <div className="flex items-center justify-between gap-3">
               <div>
-                <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-emerald-200">One coordinated system</p>
-                <p className="mt-1 text-xl font-black tracking-tight text-white sm:text-2xl">Sources work together</p>
+                <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-emerald-200">{hybridPage.hero.tagline}</p>
+                <p className="mt-1 text-xl font-black tracking-tight text-white sm:text-2xl">{hybridPage.hero.supporting}</p>
               </div>
-              <span className="rounded-xl border border-emerald-200/20 bg-emerald-300/10 px-3 py-2 text-[12px] font-bold uppercase tracking-[0.14em] text-emerald-100">Balanced</span>
+              <span className="rounded-xl border border-emerald-200/20 bg-emerald-300/10 px-3 py-2 text-[12px] font-bold uppercase tracking-[0.14em] text-emerald-100">{hybridPage.labels.statusBalanced}</span>
             </div>
             <div className="relative mt-7 grid grid-cols-2 gap-3">
               <svg viewBox="0 0 300 130" preserveAspectRatio="none" className="pointer-events-none absolute inset-x-0 top-7 z-0 h-24 w-full text-emerald-200/50" aria-hidden="true">
                 <path d="M75 5v38q0 12 12 12h126q12 0 12 12v38M225 5v38q0 12-12 12H87q-12 0-12 12v38" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5 6" />
               </svg>
-              {[
-                ['Solar', 'Daylight', 'bg-amber-300 text-slate-950'],
-                ['Wind', 'Moving air', 'bg-sky-300 text-slate-950'],
-              ].map(([label, detail, color]) => (
+              {hybridPage.labels.sources.map(({ label, detail }, index) => (
                 <div key={label} className="relative z-10 rounded-2xl border border-white/15 bg-slate-950/25 p-3.5 text-center sm:p-4">
-                  <span className={`mx-auto flex h-10 w-10 items-center justify-center rounded-full text-md font-black ${color}`}>
-                    {label === 'Solar' ? (
+                  <span className={`mx-auto flex h-10 w-10 items-center justify-center rounded-full text-md font-black ${index === 0 ? 'bg-amber-300 text-slate-950' : 'bg-sky-300 text-slate-950'}`}>
+                    {index === 0 ? (
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42m0-14.14-1.42 1.42M6.35 17.65l-1.42 1.42" /></svg>
                     ) : (
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5" aria-hidden="true"><path d="M3 8h13a3 3 0 1 0-3-3M2 12h17a3 3 0 1 1-3 3M4 16h8" strokeLinecap="round" /></svg>
@@ -420,16 +442,12 @@ export default function HybridEnergyPage() {
                 </div>
               ))}
               <div className="relative z-10 col-span-2 mx-auto w-full max-w-56 rounded-2xl border border-emerald-200/25 bg-emerald-300/10 p-3.5 text-center">
-                <p className="text-md font-bold text-emerald-100">Storage + smart controls</p>
-                <p className="mt-1 text-md text-slate-200">Balance supply with demand</p>
+                <p className="text-md font-bold text-emerald-100">{hybridPage.labels.storageTagline}</p>
+                <p className="mt-1 text-md text-slate-200">{hybridPage.labels.storageSupporting}</p>
               </div>
             </div>
             <div className="mt-5 flex flex-wrap gap-2 border-t border-white/10 pt-4">
-              {[
-                ['Grid', 'Connected'],
-                ['Off-grid', 'Independent'],
-                ['Microgrid', 'Local network'],
-              ].map(([label, detail]) => (
+              {hybridPage.labels.deploymentModes.map(({ label, detail }) => (
                 <span key={label} className="rounded-full border border-white/15 bg-white/[0.05] px-3 py-1.5 text-md text-slate-200">
                   <strong className="font-bold text-white">{label}</strong> · {detail}
                 </span>
@@ -439,22 +457,22 @@ export default function HybridEnergyPage() {
         </div>
       </header>
 
-      <HybridHeroSlider />
+      <HybridHeroSlider slides={hybridSlidesLocalized} ariaLabel={hybridPage.labels.sliderAriaLabel} />
 
       <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-emerald-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(16,87,58,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
-          <HybridSectionEyebrow>Hybrid categories</HybridSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Hybrid systems by grid connection and storage</h2>
+          <HybridSectionEyebrow>{hybridPage.categories.eyebrow}</HybridSectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">{hybridPage.categories.title}</h2>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
-          {hybridTypes.map((type) => (
+          {hybridTypesLocalized.map((type) => (
             <HybridFeatureCard
               key={type.title}
               title={type.title}
               description={type.description}
               points={type.highlights}
-              accent={type.accent}
+              accent={getHybridAccent(type.accent)}
             />
           ))}
         </div>
@@ -464,16 +482,16 @@ export default function HybridEnergyPage() {
         <div className="rounded-4xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-[0_32px_90px_-38px_rgba(15,23,42,1)] sm:p-8">
           <div className="mb-6 flex items-center justify-between gap-3">
             <div>
-              <HybridSectionEyebrow>Electrical integration</HybridSectionEyebrow>
-              <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">AC-coupled vs DC-coupled architectures</h3>
+              <HybridSectionEyebrow>{hybridPage.integration.eyebrow}</HybridSectionEyebrow>
+              <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">{hybridPage.integration.title}</h3>
             </div>
             <div className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.25em] text-slate-200 sm:block">
-              Design-driven
+              {hybridPage.integration.badge}
             </div>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {integrationTypes.map((item, index) => (
+            {integrationTypesLocalized.map((item, index) => (
               <div key={item} className="rounded-3xl border border-white/10 bg-white/5 p-4">
                 <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-lg font-bold text-emerald-300">
                   {index + 1}
@@ -488,34 +506,34 @@ export default function HybridEnergyPage() {
       <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-emerald-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(16,87,58,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="grid gap-5 sm:grid-cols-2">
-            {keyBenefits.map((benefit) => (
-              <HybridBenefitCard key={benefit} title={benefit.split(' ').slice(0, 3).join(' ') || 'Benefit'} description={benefit} />
+            {keyBenefitsLocalized.map((benefit) => (
+              <HybridBenefitCard key={benefit} title={benefit.split(' ').slice(0, 3).join(' ') || hybridPage.labels.benefitFallback} description={benefit} />
             ))}
           </div>
 
           <div className="space-y-5">
-            <HybridInfoPanel title="Why hybrid works" content={keyBenefits} accent="emerald" />
-            <HybridInfoPanel title="Feasibility checklist" content={['Wind resource assessment', 'Storage sizing', 'Load profile analysis', 'Grid approval and safety review']} accent="sky" />
+            <HybridInfoPanel title={hybridPage.common.whyWorks} content={keyBenefitsLocalized} accent="emerald" />
+            <HybridInfoPanel title={hybridPage.common.feasibilityChecklist} content={hybridPage.labels.feasibilityItems} accent="sky" />
           </div>
         </div>
       </section>
 
       <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-violet-200/80 bg-[#f7f5ff] p-5 shadow-[0_20px_55px_-42px_rgba(74,54,130,0.24)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
-          <HybridSectionEyebrow>Our solutions</HybridSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Six hybrid renewable energy service lines</h2>
+          <HybridSectionEyebrow>{hybridPage.solutions.eyebrow}</HybridSectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">{hybridPage.solutions.title}</h2>
         </div>
 
         <div className="space-y-8">
-          {serviceSections.map((service, index) => (
+          {serviceSectionsLocalized.map((service, index) => (
             <article key={service.title} className="rounded-4xl border border-slate-200 bg-white p-5 shadow-[0_20px_44px_-30px_rgba(15,23,42,0.32)] sm:p-8">
               <div className="mb-6 flex items-center justify-between gap-3">
                 <div>
-                  <p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700">Service {index + 1}</p>
+                  <p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700">{hybridPage.labels.servicePrefix} {index + 1}</p>
                   <h3 className="mt-2 text-2xl font-black tracking-[0.04em] text-slate-900 sm:text-3xl">{service.title}</h3>
                 </div>
                 <div className="hidden rounded-full border border-emerald-200 bg-emerald-50 px-3 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-700 sm:block">
-                  Hybrid system
+                  {hybridPage.labels.systemBadge}
                 </div>
               </div>
 
@@ -527,7 +545,7 @@ export default function HybridEnergyPage() {
                   <div className="mt-6 grid gap-4 md:grid-cols-3">
                     {service.applications.map((item) => (
                       <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                        <p className="text-md font-black uppercase tracking-[0.18em] text-slate-600">Application</p>
+                        <p className="text-md font-black uppercase tracking-[0.18em] text-slate-600">{hybridPage.labels.application}</p>
                         <h5 className="mt-3 text-lg font-bold text-slate-900">{item.title}</h5>
                         <p className="mt-2 text-md leading-6 text-slate-700">{item.description}</p>
                       </div>
@@ -536,7 +554,7 @@ export default function HybridEnergyPage() {
                 </div>
 
                 <div className="rounded-[1.8rem] border border-emerald-200 bg-emerald-50 p-5">
-                  <p className="text-[12px] font-black uppercase tracking-[0.26em] text-emerald-700">Benefits</p>
+                  <p className="text-[12px] font-black uppercase tracking-[0.26em] text-emerald-700">{hybridPage.labels.benefits}</p>
                   <ul className="mt-4 space-y-3 text-md leading-7 text-slate-700">
                     {service.benefits.map((benefit) => (
                       <li key={benefit} className="flex items-start gap-3 rounded-2xl bg-white/70 p-3">
@@ -550,7 +568,7 @@ export default function HybridEnergyPage() {
 
               <div className="mt-8 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
                 <div className="rounded-[1.75rem] border border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ffffff_100%)] p-5">
-                  <p className="text-[12px] font-black uppercase tracking-[0.24em] text-sky-700">Example calculation</p>
+                  <p className="text-[12px] font-black uppercase tracking-[0.24em] text-sky-700">{hybridPage.labels.exampleCalculation}</p>
                   <h4 className="mt-3 text-xl font-black tracking-[0.03em] text-slate-900">{service.calculation.label}</h4>
                   <p className="mt-3 font-mono text-md leading-7 text-slate-800">{service.calculation.formula}</p>
                   <div className="mt-4 rounded-2xl bg-slate-900 p-3 text-md font-semibold text-white">{service.calculation.result}</div>
@@ -558,7 +576,7 @@ export default function HybridEnergyPage() {
                 </div>
 
                 <div className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-5">
-                  <p className="text-[12px] font-black uppercase tracking-[0.24em] text-slate-600">Frequently asked questions</p>
+                  <p className="text-[12px] font-black uppercase tracking-[0.24em] text-slate-600">{hybridPage.labels.faqs}</p>
                   <div className="mt-4 space-y-4">
                     {service.faqs.map((item) => (
                       <div key={item.question} className="rounded-2xl border border-slate-200 bg-white p-3.5">
@@ -575,13 +593,13 @@ export default function HybridEnergyPage() {
                   href="/contact"
                   className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-3 text-md font-semibold text-white transition hover:bg-slate-700"
                 >
-                  Request energy assessment
+                  {hybridPage.labels.requestAssessment}
                 </a>
                 <a
                   href="/customer-enquiry"
                   className="inline-flex items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 px-5 py-3 text-md font-semibold text-emerald-700 transition hover:border-emerald-300 hover:bg-emerald-100"
                 >
-                  Enquire now
+                  {hybridPage.labels.enquireNow}
                 </a>
               </div>
             </article>
@@ -591,21 +609,21 @@ export default function HybridEnergyPage() {
 
       <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-emerald-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(16,87,58,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
-          <HybridSectionEyebrow>Application fit</HybridSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900">Typical system combinations</h2>
+          <HybridSectionEyebrow>{hybridPage.fit.eyebrow}</HybridSectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900">{hybridPage.labels.typicalCombinations}</h2>
         </div>
 
-        <HybridTable rows={projectRows} />
+        <HybridTable rows={projectRowsLocalized} />
       </section>
 
       <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-violet-200/80 bg-[#f7f5ff] p-5 shadow-[0_20px_55px_-42px_rgba(74,54,130,0.24)] sm:my-8 sm:p-8 lg:p-9">
         <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)] sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
-              <HybridSectionEyebrow>Recommended launch</HybridSectionEyebrow>
-              <h2 className="mt-3 text-3xl font-bold text-slate-900">AeroSun product priorities</h2>
+              <HybridSectionEyebrow>{hybridPage.labels.recommendedLaunch}</HybridSectionEyebrow>
+              <h2 className="mt-3 text-3xl font-bold text-slate-900">{hybridPage.labels.productPriorities}</h2>
               <div className="mt-6 space-y-3">
-                {productPriorities.map((item, index) => (
+                {productPrioritiesLocalized.map((item, index) => (
                   <div key={item} className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 text-md font-bold text-emerald-700">
                       {index + 1}
@@ -620,7 +638,7 @@ export default function HybridEnergyPage() {
               <div className="relative h-72 overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
                 <OptimizedImage
                   src="/images/slider/slider-13.png"
-                  alt="Hybrid renewable energy deployment"
+                  alt={hybridPage.labels.deploymentAlt}
                   fill
                   sizes="(min-width: 1024px) 35vw, 100vw"
                   className="object-cover opacity-85"
@@ -628,10 +646,10 @@ export default function HybridEnergyPage() {
                 <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-900/30 to-transparent" />
               </div>
               <div className="mt-5 rounded-3xl border border-emerald-400/20 bg-emerald-500/10 p-4">
-                <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-200">Key insight</p>
-                <h3 className="mt-2 text-xl font-bold text-white">Start with credible and practical hybrid offers</h3>
+                <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-200">{hybridPage.labels.keyInsight}</p>
+                <h3 className="mt-2 text-xl font-bold text-white">{hybridPage.labels.insightTitle}</h3>
                 <p className="mt-2 text-base leading-7 text-slate-200">
-                  Evaluate solar + battery hybrid, solar + wind + battery off-grid systems, and commercial grid-connected hybrid designs before moving into larger multi-source microsgrids.
+                  {hybridPage.labels.insightDescription}
                 </p>
               </div>
             </div>

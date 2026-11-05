@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import { ArrowUpRight, Landmark, ShieldCheck } from 'lucide-react'
+import { useLocale } from '@/lib/LocaleContext'
 
 const MIN_LOAN = 25000
 const MAX_LOAN = 2000000
@@ -34,6 +35,8 @@ const formatCurrency = (value: number) => {
 const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max)
 
 export function BankEMICalculator() {
+  const { t } = useLocale()
+  const labels = t.bankEmi
   const [loanAmount, setLoanAmount] = useState(DEFAULT_LOAN)
   const [tenureYears, setTenureYears] = useState(DEFAULT_TENURE)
   const [interestRate, setInterestRate] = useState(DEFAULT_RATE)
@@ -70,14 +73,14 @@ export function BankEMICalculator() {
           <div className="max-w-2xl">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-900/10 bg-white/80 px-3.5 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-900 shadow-sm">
               <Landmark size={14} strokeWidth={2.2} aria-hidden="true" />
-              Personal finance · EMI planner
+              {labels.badge}
             </div>
             <h2 className="text-4xl font-black leading-[1.02] tracking-[0.055em] text-[#122b22] sm:text-5xl lg:text-6xl">
-              Make your next move
-              <span className="mt-1 block text-emerald-700">with clarity.</span>
+              {labels.title}
+              <span className="mt-1 block text-emerald-700">{labels.titleAccent}</span>
             </h2>
             <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
-              Shape your loan around your life. Adjust the numbers and see the full repayment picture instantly.
+              {labels.description}
             </p>
           </div>
           <div className="flex items-center gap-3 self-start rounded-2xl border border-[#dce8df] bg-white/70 px-4 py-3 sm:self-auto">
@@ -85,8 +88,8 @@ export function BankEMICalculator() {
               <ShieldCheck size={19} strokeWidth={1.8} aria-hidden="true" />
             </span>
             <div>
-              <div className="text-md font-bold text-[#18372a]">Plan with confidence</div>
-              <div className="mt-0.5 text-md text-slate-700">A clear estimate, at a glance</div>
+              <div className="text-md font-bold text-[#18372a]">{labels.confidence}</div>
+              <div className="mt-0.5 text-md text-slate-700">{labels.confidenceSub}</div>
             </div>
           </div>
         </header>
@@ -95,18 +98,18 @@ export function BankEMICalculator() {
           <div className="rounded-[28px] border border-[#dce8df] bg-white p-5 shadow-[0_24px_70px_-48px_rgba(18,43,34,0.3)] sm:p-7 lg:p-9">
             <div className="mb-8 flex items-center justify-between border-b border-slate-100 pb-5">
               <div>
-                <p className="text-md font-bold uppercase tracking-[0.17em] text-emerald-800">Your loan details</p>
-                <p className="mt-1 text-md text-slate-600">Fine-tune the estimate below</p>
+                <p className="text-md font-bold uppercase tracking-[0.17em] text-emerald-800">{labels.loanDetails}</p>
+                <p className="mt-1 text-md text-slate-600">{labels.loanDetailsSub}</p>
               </div>
               <span className="rounded-lg bg-[#e6eefb] px-2.5 py-1.5 font-mono text-[12px] font-semibold tracking-wide text-slate-700">
-                INR · ₹
+              {labels.currencyDisplay}
               </span>
             </div>
 
             <div className="space-y-8">
               <div>
                 <div className="mb-4 flex items-center justify-between gap-3">
-                  <label htmlFor="bank-emi-loan" className="text-md font-semibold text-slate-700 sm:text-base">Loan amount</label>
+                  <label htmlFor="bank-emi-loan" className="text-md font-semibold text-slate-700 sm:text-base">{labels.loanAmount}</label>
                   <output htmlFor="bank-emi-loan" className="rounded-xl bg-[#e6eefb] px-3 py-2 text-right text-md font-bold tabular-nums text-[#173c2b] sm:px-4 sm:text-base">
                     {formatCurrency(loanAmount)}
                   </output>
@@ -120,19 +123,19 @@ export function BankEMICalculator() {
                   value={loanAmount}
                   onChange={(event) => setLoanAmount(clamp(Number(event.target.value), MIN_LOAN, MAX_LOAN))}
                   className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-emerald-600"
-                  aria-label="Loan amount"
+                  aria-label={labels.loanAmountAriaLabel}
                 />
                 <div className="mt-2 flex justify-between text-md font-medium tabular-nums text-slate-600">
-                  <span>₹25,000</span>
-                  <span>₹20,00,000</span>
+                  <span>{labels.loanAmountMinimum}</span>
+                  <span>{labels.loanAmountMaximum}</span>
                 </div>
               </div>
 
               <div>
                 <div className="mb-4 flex items-center justify-between gap-3">
-                  <label htmlFor="bank-emi-tenure" className="text-md font-semibold text-slate-700 sm:text-base">Loan tenure</label>
+                  <label htmlFor="bank-emi-tenure" className="text-md font-semibold text-slate-700 sm:text-base">{labels.loanTenure}</label>
                   <output htmlFor="bank-emi-tenure" className="rounded-xl bg-[#e6eefb] px-3 py-2 text-right text-md font-bold tabular-nums text-[#173c2b] sm:px-4 sm:text-base">
-                    {tenureYears} {tenureYears === 1 ? 'year' : 'years'}
+                    {tenureYears} {tenureYears === 1 ? labels.year : labels.years}
                   </output>
                 </div>
                 <input
@@ -144,19 +147,19 @@ export function BankEMICalculator() {
                   value={tenureYears}
                   onChange={(event) => setTenureYears(clamp(Number(event.target.value), MIN_TENURE, MAX_TENURE))}
                   className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-emerald-600"
-                  aria-label="Loan tenure"
+                  aria-label={labels.loanTenureAriaLabel}
                 />
                 <div className="mt-2 flex justify-between text-md font-medium text-slate-600">
-                  <span>1 year</span>
-                  <span>7 years</span>
+                  <span>{labels.loanTenureMinimum}</span>
+                  <span>{labels.loanTenureMaximum}</span>
                 </div>
               </div>
 
               <div>
                 <div className="mb-4 flex items-center justify-between gap-3">
-                  <label htmlFor="bank-emi-rate" className="text-md font-semibold text-slate-700 sm:text-base">Interest rate</label>
+                  <label htmlFor="bank-emi-rate" className="text-md font-semibold text-slate-700 sm:text-base">{labels.interestRate}</label>
                   <output htmlFor="bank-emi-rate" className="rounded-xl bg-[#e6eefb] px-3 py-2 text-right text-md font-bold tabular-nums text-[#173c2b] sm:px-4 sm:text-base">
-                    {interestRate.toFixed(2)}% <span className="text-md font-medium text-slate-700">p.a.</span>
+                    {interestRate.toFixed(2)}% <span className="text-md font-medium text-slate-700">{labels.perAnnum}</span>
                   </output>
                 </div>
                 <input
@@ -168,17 +171,17 @@ export function BankEMICalculator() {
                   value={interestRate}
                   onChange={(event) => setInterestRate(clamp(Number(event.target.value), MIN_RATE, MAX_RATE))}
                   className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-emerald-600"
-                  aria-label="Interest rate"
+                  aria-label={labels.interestRateAriaLabel}
                 />
                 <div className="mt-2 flex justify-between text-md font-medium tabular-nums text-slate-600">
-                  <span>12% p.a.</span>
-                  <span>24% p.a.</span>
+                  <span>{labels.interestRateMinimum}</span>
+                  <span>{labels.interestRateMaximum}</span>
                 </div>
               </div>
             </div>
 
             <p className="mt-8 border-t border-slate-100 pt-5 text-md leading-5 text-slate-600">
-              Estimate only. Your lender may apply different rates, fees, and eligibility criteria.
+              {labels.estimateOnly}
             </p>
           </div>
 
@@ -187,25 +190,25 @@ export function BankEMICalculator() {
             <div className="pointer-events-none absolute -right-7 -top-11 h-44 w-44 rounded-full border border-white/[0.07]" aria-hidden="true" />
             <div className="relative flex items-center justify-between">
               <div>
-                <p className="text-md font-bold uppercase tracking-[0.17em] text-emerald-200/75">Repayment snapshot</p>
-                <p className="mt-1 text-md text-white/80">Based on your loan details</p>
+                <p className="text-md font-bold uppercase tracking-[0.17em] text-emerald-200/75">{labels.repaymentSnapshot}</p>
+                <p className="mt-1 text-md text-white/80">{labels.basedOnDetails}</p>
               </div>
               <span className="rounded-full border border-white/20 bg-white/[0.08] px-3 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white/85">
-                Live estimate
+                {labels.liveEstimate}
               </span>
             </div>
 
             <div className="relative mt-7 rounded-2xl border border-white/[0.09] bg-white/[0.06] p-5 sm:p-6">
-              <p className="text-md font-medium text-white/80">Your monthly EMI</p>
+              <p className="text-md font-medium text-white/80">{labels.monthlyEmi}</p>
               <div className="mt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1">
                 <span className="text-4xl font-bold tracking-[0.045em] text-white sm:text-5xl">
                   {formatCurrency(calculation.emi)}
                 </span>
-                <span className="text-md text-white/80">/ month</span>
+                <span className="text-md text-white/80">{labels.month}</span>
               </div>
               <div className="mt-5 flex items-center gap-2 border-t border-white/10 pt-4 text-md text-white/80">
                 <span className="h-1.5 w-1.5 rounded-full bg-lime-300" aria-hidden="true" />
-                Fixed monthly instalment for {tenureYears} {tenureYears === 1 ? 'year' : 'years'}
+                {labels.fixedMonthly} {tenureYears} {tenureYears === 1 ? labels.year : labels.years}
               </div>
             </div>
 
@@ -216,25 +219,27 @@ export function BankEMICalculator() {
                   background: `conic-gradient(#bef264 0% ${principalShare}%, rgba(255,255,255,0.15) ${principalShare}% 100%)`,
                 }}
                 role="img"
-                aria-label={`Repayment breakdown: ${principalShare.toFixed(0)} percent principal and ${(100 - principalShare).toFixed(0)} percent interest`}
+                aria-label={labels.repaymentBreakdownAriaLabel
+                  .replace('{principal}', principalShare.toFixed(0))
+                  .replace('{interest}', (100 - principalShare).toFixed(0))}
               >
                 <div className="flex h-[5.25rem] w-[5.25rem] flex-col items-center justify-center rounded-full bg-[#26346f] sm:h-24 sm:w-24">
                   <span className="text-xl font-bold tabular-nums text-white">{principalShare.toFixed(0)}%</span>
-                  <span className="mt-0.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-white/80">principal</span>
+                  <span className="mt-0.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-white/80">{labels.principal}</span>
                 </div>
               </div>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-sm bg-lime-300" aria-hidden="true" />
                   <div className="min-w-0">
-                    <p className="text-md text-white/80">Principal</p>
+                    <p className="text-md text-white/80">{labels.principal}</p>
                     <p className="mt-0.5 text-md font-semibold tabular-nums text-white sm:text-base">{formatCurrency(loanAmount)}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-sm bg-white/25" aria-hidden="true" />
                   <div className="min-w-0">
-                    <p className="text-md text-white/80">Total interest</p>
+                    <p className="text-md text-white/80">{labels.totalInterest}</p>
                     <p className="mt-0.5 text-md font-semibold tabular-nums text-white sm:text-base">{formatCurrency(calculation.totalInterest)}</p>
                   </div>
                 </div>
@@ -243,13 +248,13 @@ export function BankEMICalculator() {
 
             <div className="relative flex items-end justify-between gap-4 py-5">
               <div>
-                <p className="text-md text-white/80">Total repayment</p>
+                <p className="text-md text-white/80">{labels.totalRepayment}</p>
                 <p className="mt-1 text-xl font-bold tracking-tight tabular-nums text-white sm:text-2xl">
                   {formatCurrency(calculation.totalAmountPayable)}
                 </p>
               </div>
               <p className="pb-1 text-right text-[12px] leading-4 text-white/80">
-                Principal +<br />interest
+                {labels.principalPlus}
               </p>
             </div>
 
@@ -257,11 +262,11 @@ export function BankEMICalculator() {
               href="/contact"
               className="relative mt-auto inline-flex items-center justify-center gap-2 rounded-xl bg-lime-300 px-5 py-3.5 text-md font-bold text-[#17301f] shadow-[0_8px_24px_-12px_rgba(190,242,100,0.8)] hover:bg-lime-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-200"
             >
-              Talk to our team
+              {labels.contactAction}
               <ArrowUpRight size={17} strokeWidth={2.2} aria-hidden="true" />
             </Link>
             <p className="relative mt-3 text-center text-[12px] leading-4 text-white/80">
-              Final terms are subject to lender approval and eligibility.
+              {labels.lenderTerms}
             </p>
           </div>
         </div>

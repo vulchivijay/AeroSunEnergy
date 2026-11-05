@@ -1,6 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import Slider from './Slider'
+import { useLocale } from '@/lib/LocaleContext'
 
 type Slide = {
   badge: string
@@ -13,7 +16,7 @@ type Slide = {
   panelClass: string
 }
 
-const slides: Slide[] = [
+const fallbackSlides: Slide[] = [
   {
     badge: 'Grid-tied rooftop',
     title: 'Grid-tied Rooftop',
@@ -116,6 +119,12 @@ const slides: Slide[] = [
 ]
 
 export default function HomeHeroSlider() {
+  const { t } = useLocale()
+  const slides = ((t.home?.heroSlider as Slide[]) ?? fallbackSlides).map((slide, index) => ({
+    ...slide,
+    image: slide.image || fallbackSlides[index % fallbackSlides.length].image,
+  }))
+
   const slideClass =
     'group relative flex h-full w-full items-end justify-start overflow-hidden p-6 sm:p-8 lg:p-14 xl:p-18'
 
@@ -123,7 +132,7 @@ export default function HomeHeroSlider() {
     'absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.32),transparent_24%),radial-gradient(circle_at_80%_20%,rgba(56,189,248,0.18),transparent_30%),linear-gradient(90deg,rgba(2,6,23,0.78)_0%,rgba(15,23,42,0.6)_40%,rgba(15,23,42,0.28)_100%)]'
 
   return (
-    <Slider autoplay interval={5000} pauseOnHover ariaLabel="Featured renewable energy solutions">
+    <Slider autoplay interval={5000} pauseOnHover ariaLabel={t.home.heroSliderAriaLabel}>
       {slides.map((slide, index) => (
         <div key={slide.title} className={`${slide.panelClass} relative h-full w-full overflow-hidden`}>
           <div className="absolute inset-0">

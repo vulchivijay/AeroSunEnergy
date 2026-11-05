@@ -41,7 +41,7 @@ export default function Services() {
               <div className="relative min-h-96 md:aspect-video overflow-hidden">
                 <OptimizedImage
                   src="/images/home-business-aerosunenergy.png"
-                  alt="AeroSun Energy manufacturing facility showcasing precision forming and assembly of hybrid energy systems"
+                  alt={s.imageAlt}
                   fill
                   sizes="(min-width: 1024px) 80rem, 92vw"
                   className="object-cover"

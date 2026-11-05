@@ -1,186 +1,51 @@
 'use client'
 
 import { motion } from '@/lib/motion'
+import { useLocale } from '@/lib/LocaleContext'
 
-const ideaValidation = [
-	{
-		title: 'Residential rooftop solar',
-		risk: 'Medium',
-		recommendation: 'Validate first',
-		note: 'Strong market opportunity, especially where electricity bills are high and rooftops are suitable.',
-		accent: 'from-emerald-500 to-green-500',
-	},
-	{
-		title: 'Commercial rooftop solar',
-		risk: 'Medium',
-		recommendation: 'Second segment',
-		note: 'Strong ROI potential for businesses with daytime load and suitable roof area.',
-		accent: 'from-sky-500 to-cyan-500',
-	},
-	{
-		title: 'Solar maintenance & monitoring',
-		risk: 'Low to medium',
-		recommendation: 'Build recurring revenue',
-		note: 'Lower execution complexity and useful for after-sales service relationships.',
-		accent: 'from-violet-500 to-purple-500',
-	},
-	{
-		title: 'Solar-wind hybrid systems',
-		risk: 'Medium to high',
-		recommendation: 'Pilot selectively',
-		note: 'Promising where complementary generation adds value, but not the first launch priority.',
-		accent: 'from-amber-500 to-orange-500',
-	},
-	{
-		title: 'Own-brand low-wind turbine',
-		risk: 'High',
-		recommendation: 'Prototype first',
-		note: 'High technical and commercial risk until independent field testing proves output and reliability.',
-		accent: 'from-rose-500 to-red-500',
-	},
-]
-
-const targetGroups = [
-	{
-		label: 'Homeowners',
-		age: '30–55',
-		profile: 'IT professionals, teachers, doctors, business owners',
-		concern: 'High electricity bills',
-		offer: 'Transparent rooftop solar proposals and savings estimates',
-	},
-	{
-		label: 'Young homeowners',
-		age: '25–35',
-		profile: 'Software engineers, entrepreneurs',
-		concern: 'Upfront installation cost',
-		offer: 'Affordable system options and clearer finance guidance',
-	},
-	{
-		label: 'Agricultural customers',
-		age: '30–60',
-		profile: 'Farmers and agricultural entrepreneurs',
-		concern: 'Pumping costs and unreliable supply',
-		offer: 'Solar pump and agriculture-ready renewable systems',
-	},
-	{
-		label: 'SMEs',
-		age: '30–60',
-		profile: 'Retailers, workshops, hospitality owners',
-		concern: 'Operating costs',
-		offer: 'Commercial solar systems sized to daytime demand',
-	},
-	{
-		label: 'Institutional buyers',
-		age: '30–60',
-		profile: 'Schools, clinics, hotels, property associations',
-		concern: 'Electricity expense and continuity',
-		offer: 'Application-specific solar and hybrid proposals',
-	},
-]
-
-const prototypeRoadmap = [
-	{
-		title: 'Prototype A: Affordable Solar Package',
-		subtitle: 'Service-led, repeatable launch path',
-		bullets: [
-			'Standard enquiry form for bill, roof, usage and ownership details',
-			'Site survey and technical suitability assessment',
-			'Sizing, quotation, subsidy guidance and savings estimate',
-			'Maintenance, warranty and support process',
-		],
-		accent: 'from-emerald-500 to-teal-500',
-	},
-	{
-		title: 'Prototype B: Smart Wind Turbine',
-		subtitle: 'Technology validation before commercial claims',
-		bullets: [
-			'Measure wind speed, output and conversion efficiency',
-			'Test starting speed, gust performance and vibration',
-			'Assess safety, maintenance and real-life reliability',
-			'Do not claim useful output without measured field results',
-		],
-		accent: 'from-sky-500 to-blue-500',
-	},
-	{
-		title: 'Prototype C: Solar + Monitoring',
-		subtitle: 'Natural product differentiator',
-		bullets: [
-			'Track generation, consumption, grid import/export and battery use',
-			'Use proven monitoring equipment rather than proprietary hardware too early',
-			'Offer a simple dashboard and transparent performance reporting',
-			'Build trust through real, measurable customer outcomes',
-		],
-		accent: 'from-violet-500 to-fuchsia-500',
-	},
-]
-
-const redFlags = [
-	{
-		title: 'Wind turbine claims need proof',
-		text: 'Marketing a product as low-wind, silent and low-maintenance requires measured data, output curves, and independent validation.',
-	},
-	{
-		title: 'Too many offerings at launch',
-		text: 'A broad portfolio can dilute trust. Solar-first execution is safer and easier to scale.',
-	},
-	{
-		title: 'Trust depends on proof',
-		text: 'Customers want evidence: working installations, service process, real quotes, warranties and clear policies.',
-	},
-	{
-		title: 'Subsidy and savings claims need caution',
-		text: 'Actual bill savings depend on consumption, net metering, tariffs, roof conditions, system design and equipment choice.',
-	},
-	{
-		title: 'Supplier and warranty compliance must be documented',
-		text: 'Maintain verified product information, certifications, warranty terms and supplier responsibilities.',
-	},
-	{
-		title: 'Working capital and service risk',
-		text: 'Cash flow can get tight when inventory, installation, labour and after-sales support all stack together.',
-	},
-]
-
-const packageOptions = [
-	{
-		name: 'AeroSun Essential',
-		audience: 'Budget-conscious homeowners',
-		positioning: 'Reliable, basic system using suitable established equipment',
-		accent: 'from-emerald-500 to-lime-500',
-	},
-	{
-		name: 'AeroSun Smart',
-		audience: 'Homeowners seeking monitoring',
-		positioning: 'Solar plus smart monitoring and transparent savings reporting',
-		accent: 'from-sky-500 to-cyan-500',
-	},
-	{
-		name: 'AeroSun Backup',
-		audience: 'Customers with outage concerns',
-		positioning: 'Hybrid solar plus suitably sized battery storage for backup use',
-		accent: 'from-violet-500 to-purple-500',
-	},
-]
-
-const validationPlan = [
-	{ period: 'Days 1-15', action: 'Interview homeowners, business owners and electricians', result: 'At least 30 customer conversations' },
-	{ period: 'Days 16-30', action: 'Build a survey, sizing and quotation process', result: '10 qualified site assessments' },
-	{ period: 'Days 31-45', action: 'Test package positioning and proposal formats', result: '10-15 genuine proposals' },
-	{ period: 'Days 46-60', action: 'Complete initial paid installations through partners, where feasible', result: 'First 3-5 paid projects' },
-	{ period: 'Days 61-75', action: 'Collect installation feedback and check economics', result: 'Customer satisfaction and service data' },
-	{ period: 'Days 76-90', action: 'Review conversion, margin and service burden', result: 'Go/no-go decision' },
-]
-
-const finalAssessment = [
-	{ label: 'Residential solar service', value: 'Practical starting opportunity', level: 'High' },
-	{ label: 'Commercial solar', value: 'Attractive expansion opportunity', level: 'High' },
-	{ label: 'Solar maintenance and monitoring', value: 'Recurring revenue potential', level: 'High' },
-	{ label: 'Hybrid systems', value: 'Needs technical and financial validation', level: 'Medium' },
-	{ label: 'Low-wind turbine prototype', value: 'High validation priority before marketing claims', level: 'High' },
-	{ label: 'Broad national marketing', value: 'Premature without delivery proof', level: 'Low initially' },
+type ResearchDevelopmentInlineContent = [
+	string[],
+	string[],
+	[string, string][],
+	[string, string][],
+	string[],
+	string[],
+	[string, string, string][],
+	[string, string][],
+	[string, string, string][],
+	[string, string][],
+	[string, string][],
+	[string, string][],
+	[string, string][],
+	[string, string][],
+	[string, string][],
+	[string, string][],
+	[string, string][],
+	[string, string][],
+	string[],
+	string[],
+	[string, string, string][],
+	[string, string][],
+	[string, string, string][],
+	[string, string][],
+	[string, string][],
 ]
 
 export default function ResearchDevelopmentPage() {
+	const { t } = useLocale()
+	const copy = t.researchDevelopmentPage.component
+	const inline = copy.inline as ResearchDevelopmentInlineContent
+	const ideaValidationAccents = ["from-emerald-500 to-green-500","from-sky-500 to-cyan-500","from-violet-500 to-purple-500","from-amber-500 to-orange-500","from-rose-500 to-red-500"]
+	const ideaValidation = copy.data.ideaValidation.map((item, index) => ({ ...item, accent: ideaValidationAccents[index] }))
+	const targetGroups = copy.data.targetGroups
+	const prototypeRoadmapAccents = ["from-emerald-500 to-teal-500","from-sky-500 to-blue-500","from-violet-500 to-fuchsia-500"]
+	const prototypeRoadmap = copy.data.prototypeRoadmap.map((item, index) => ({ ...item, accent: prototypeRoadmapAccents[index] }))
+	const redFlags = copy.data.redFlags
+	const packageOptionsAccents = ["from-emerald-500 to-lime-500","from-sky-500 to-cyan-500","from-violet-500 to-purple-500"]
+	const packageOptions = copy.data.packageOptions.map((item, index) => ({ ...item, accent: packageOptionsAccents[index] }))
+	const validationPlan = copy.data.validationPlan
+	const finalAssessment = copy.data.finalAssessment
+
 	return (
 		<main className="bg-[radial-gradient(circle_at_top,_rgba(16,185,129,0.10),_transparent_28%),linear-gradient(180deg,#f8fafc_0%,#f1f5f9_100%)] text-slate-900 dark:bg-[radial-gradient(circle_at_top,_rgba(16,185,129,0.14),_transparent_28%),linear-gradient(180deg,#020817_0%,#0f172a_100%)] dark:text-white">
 			<section className="mx-auto max-w-7xl px-4 pb-8 pt-10 sm:px-6 lg:px-8 lg:pt-14">
@@ -194,42 +59,31 @@ export default function ResearchDevelopmentPage() {
 					<div className="relative grid gap-8 p-6 sm:p-8 lg:grid-cols-[1.2fr_0.8fr] lg:p-12">
 						<div>
 							<span className="inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-3 py-1 text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 shadow-sm dark:border-emerald-800/80 dark:bg-slate-900/80 dark:text-emerald-300">
-								Research & Development
-							</span>
+								{copy.text[0]}</span>
 							<h1 className="mt-6 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl lg:text-6xl dark:text-white">
-								AeroSun Energy Private Limited
-							</h1>
+								{copy.text[1]}</h1>
 							<p className="mt-3 text-xl font-medium uppercase tracking-[0.18em] text-slate-600 dark:text-slate-300">
-								Idea validation, prototype, target customers & red flags
-							</p>
+								{copy.text[2]}</p>
 							<p className="mt-5 max-w-2xl text-lg leading-8 text-slate-700 dark:text-slate-300">
-								Validate affordable solar solutions first, while developing the smart wind-turbine concept as a
-								separate product-validation project. Do not invest heavily in manufacturing or market a wind
-								turbine as commercially proven until its performance is independently tested.
-							</p>
+								{copy.text[3]}</p>
 						</div>
 
 						<div className="flex items-center">
 							<div className="w-full rounded-[1.75rem] border border-slate-200/80 bg-white/80 p-5 shadow-[0_30px_60px_-35px_rgba(15,23,42,0.5)] dark:border-slate-700 dark:bg-slate-900/80">
 								<p className="text-[12px] font-black uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
-									Key recommendation
-								</p>
+									{copy.text[4]}</p>
 								<div className="mt-5 rounded-[1.5rem] border border-emerald-200 bg-emerald-50/80 p-4 dark:border-emerald-900/60 dark:bg-emerald-950/20">
 									<p className="text-md leading-7 text-slate-700 dark:text-slate-200">
-										<span className="font-black text-emerald-700 dark:text-emerald-300">Best first move:</span> build
-										a disciplined solar business model in residential and small commercial segments, then validate
-										wind technology as a separate R&D effort before large investment.
-									</p>
+										<span className="font-black text-emerald-700 dark:text-emerald-300">{copy.text[5]}</span> {copy.text[6]}</p>
 								</div>
 								<div className="mt-4 space-y-3">
-									{['Solar-first launch', 'Measured pilot validation', 'Trust over hype'].map((item) => (
+									{inline[0].map((item) => (
 										<div
 											key={item}
 											className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50/90 p-3 dark:border-slate-700 dark:bg-slate-800/80"
 										>
 											<span className="flex h-8 w-8 items-center justify-center rounded-full bg-linear-to-br from-emerald-400 to-teal-500 text-md font-bold text-slate-950">
-												✓
-											</span>
+												{copy.text[7]}</span>
 											<span className="text-md font-medium text-slate-700 dark:text-slate-200">{item}</span>
 										</div>
 									))}
@@ -243,13 +97,9 @@ export default function ResearchDevelopmentPage() {
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-amber-200 bg-linear-to-br from-amber-50 via-white to-yellow-50 p-5 shadow-[0_24px_60px_-40px_rgba(245,158,11,0.45)] dark:border-amber-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
 					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">
-						Recommendation summary
-					</p>
+						{copy.text[8]}</p>
 					<p className="mt-4 text-xl font-semibold leading-9 text-slate-800 dark:text-slate-100">
-						AeroSun Energy can be positioned as a practical solar-solutions business first, with wind innovation
-						treated as a separate prototype and validation program until performance data and product-market fit
-						are proven.
-					</p>
+						{copy.text[9]}</p>
 				</div>
 			</section>
 
@@ -257,11 +107,9 @@ export default function ResearchDevelopmentPage() {
 				<div className="mb-6 flex items-end justify-between gap-3">
 					<div>
 						<p className="text-[12px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">
-							1. Idea validation
-						</p>
+							{copy.text[10]}</p>
 						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-							Which businesses are actually viable right now?
-						</h2>
+							{copy.text[11]}</h2>
 					</div>
 				</div>
 
@@ -276,14 +124,12 @@ export default function ResearchDevelopmentPage() {
 								<p className="text-md font-black text-slate-900 dark:text-white">{item.title}</p>
 								<div className="mt-4 flex items-center justify-between gap-2 rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 dark:border-slate-700 dark:bg-slate-800">
 									<span className="text-[12px] font-bold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
-										Risk
-									</span>
+										{copy.text[12]}</span>
 									<span className="text-md font-bold text-slate-700 dark:text-slate-200">{item.risk}</span>
 								</div>
 								<div className="mt-3 rounded-2xl border border-emerald-100 bg-emerald-50/80 p-2 dark:border-emerald-900/60 dark:bg-emerald-950/20">
 									<p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">
-										Recommendation
-									</p>
+										{copy.text[13]}</p>
 									<p className="mt-1 text-md font-semibold text-emerald-800 dark:text-emerald-300">
 										{item.recommendation}
 									</p>
@@ -296,13 +142,9 @@ export default function ResearchDevelopmentPage() {
 
 				<div className="mt-6 rounded-[1.75rem] border border-sky-100 bg-white/80 p-5 dark:border-sky-900/50 dark:bg-slate-900/75">
 					<p className="text-[12px] font-black uppercase tracking-[0.22em] text-sky-700 dark:text-sky-300">
-						Deep example
-					</p>
+						{copy.text[14]}</p>
 					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
-						A strong example is a high-consumption household in an urban area paying ₹10,000 to ₹15,000 every month on electricity.
-						If a rooftop system can reduce that bill by 60% to 70%, the customer experiences an immediate lifestyle benefit and a clear payback story.
-						That makes residential rooftop solar a strong initial opportunity. A wind turbine, by contrast, is harder to understand unless the company can present actual measured generation data, local wind performance, and maintenance cost over time.
-					</p>
+						{copy.text[15]}</p>
 				</div>
 			</section>
 
@@ -310,11 +152,9 @@ export default function ResearchDevelopmentPage() {
 				<div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
 					<div className="rounded-[2rem] border border-violet-200 bg-linear-to-br from-violet-50 via-white to-fuchsia-50 p-5 dark:border-violet-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
 						<p className="text-[12px] font-black uppercase tracking-[0.28em] text-violet-700 dark:text-violet-300">
-							2. Who should AeroSun target?
-						</p>
+							{copy.text[16]}</p>
 						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-							Priority customer groups
-						</h2>
+							{copy.text[17]}</h2>
 
 						<div className="mt-6 space-y-4">
 							{targetGroups.map((group) => (
@@ -329,13 +169,13 @@ export default function ResearchDevelopmentPage() {
 										</span>
 									</div>
 									<p className="mt-2 text-md text-slate-600 dark:text-slate-300">
-										<span className="font-bold text-slate-800 dark:text-white">Profile:</span> {group.profile}
+										<span className="font-bold text-slate-800 dark:text-white">{copy.text[18]}</span> {group.profile}
 									</p>
 									<p className="mt-1 text-md text-slate-600 dark:text-slate-300">
-										<span className="font-bold text-slate-800 dark:text-white">Main concern:</span> {group.concern}
+										<span className="font-bold text-slate-800 dark:text-white">{copy.text[19]}</span> {group.concern}
 									</p>
 									<p className="mt-1 text-md text-slate-600 dark:text-slate-300">
-										<span className="font-bold text-slate-800 dark:text-white">AeroSun offer:</span> {group.offer}
+										<span className="font-bold text-slate-800 dark:text-white">{copy.text[20]}</span> {group.offer}
 									</p>
 								</div>
 							))}
@@ -343,30 +183,20 @@ export default function ResearchDevelopmentPage() {
 
 						<div className="mt-6 rounded-[1.5rem] border border-violet-100 bg-violet-50/60 p-4 dark:border-violet-900/50 dark:bg-violet-950/20">
 							<p className="text-[12px] font-black uppercase tracking-[0.2em] text-violet-700 dark:text-violet-300">
-								Why this ordering matters
-							</p>
+								{copy.text[21]}</p>
 							<p className="mt-3 text-md leading-7 text-slate-700 dark:text-slate-200">
-								A tech professional with a high monthly bill will likely respond to a clean savings estimate and performance dashboard. A retailer or clinic will respond to reliability, lower operating cost, and simple payback language. This is why AeroSun should not try to sell the same pitch to every customer; the offer should be customized by consumption pattern and budget.
-							</p>
+								{copy.text[22]}</p>
 						</div>
 					</div>
 
 					<div className="rounded-[2rem] border border-slate-200 bg-white/75 p-5 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
 						<p className="text-[12px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
-							Priority order
-						</p>
+							{copy.text[23]}</p>
 						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-							Best launch sequence
-						</h2>
+							{copy.text[24]}</h2>
 
 						<ol className="mt-6 space-y-4">
-							{[
-								'Owner-occupied independent homes with high electricity bills',
-								'Small and medium businesses with substantial daytime consumption',
-								'Farmers with suitable sites and a clear business case for solar pumping',
-								'Schools, clinics, hotels and other institutional customers',
-								'Apartment associations after installation and service proof is established',
-							].map((item, index) => (
+							{inline[1].map((item, index) => (
 								<li
 									key={item}
 									className="flex gap-3 rounded-[1.2rem] border border-slate-200 bg-slate-50/85 p-3 dark:border-slate-700 dark:bg-slate-800/80"
@@ -385,11 +215,9 @@ export default function ResearchDevelopmentPage() {
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
 					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
-						3. Develop a low-cost prototype before expansion
-					</p>
+						{copy.text[25]}</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-						Three practical validation tracks
-					</h2>
+						{copy.text[26]}</h2>
 				</div>
 
 				<div className="grid gap-5 lg:grid-cols-3">
@@ -417,20 +245,17 @@ export default function ResearchDevelopmentPage() {
 
 				<div className="mt-6 rounded-[1.75rem] border border-emerald-100 bg-emerald-50/60 p-5 dark:border-emerald-900/50 dark:bg-emerald-950/20">
 					<p className="text-[12px] font-black uppercase tracking-[0.22em] text-emerald-700 dark:text-emerald-300">
-						Example milestone
-					</p>
+						{copy.text[27]}</p>
 					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-200">
-						A practical example would be a pilot in a single residential neighborhood where 10 homes are offered a single solar package with identical inverters, monitoring and support. If the company can measure actual generation, checkout conversion, installation time and maintenance calls, it learns whether the model is workable before expanding across cities or customer segments.
-					</p>
+						{copy.text[28]}</p>
 				</div>
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
-					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-rose-700 dark:text-rose-300">4. Red flags</p>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-rose-700 dark:text-rose-300">{copy.text[29]}</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-						Risk areas to address before scale-up
-					</h2>
+						{copy.text[30]}</h2>
 				</div>
 
 				<div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -442,8 +267,7 @@ export default function ResearchDevelopmentPage() {
 							<div className="flex items-center gap-2">
 								<span className="h-2.5 w-2.5 rounded-full bg-rose-500" />
 								<p className="text-md font-black uppercase tracking-[0.16em] text-rose-700 dark:text-rose-300">
-									Risk
-								</p>
+									{copy.text[12]}</p>
 							</div>
 							<h3 className="mt-3 text-lg font-black text-slate-900 dark:text-white">{flag.title}</h3>
 							<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{flag.text}</p>
@@ -453,22 +277,18 @@ export default function ResearchDevelopmentPage() {
 
 				<div className="mt-6 rounded-[1.75rem] border border-rose-100 bg-rose-50/60 p-5 dark:border-rose-900/50 dark:bg-rose-950/20">
 					<p className="text-[12px] font-black uppercase tracking-[0.22em] text-rose-700 dark:text-rose-300">
-						Failure example
-					</p>
+						{copy.text[31]}</p>
 					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-200">
-						If AeroSun promises a low-wind turbine with guaranteed savings but cannot produce data from actual site conditions, the company will lose trust quickly. The same can happen if customer promises are based on subsidy assumptions rather than real site assessments. In renewable energy, credibility is built through field results, not just marketing language.
-					</p>
+						{copy.text[32]}</p>
 				</div>
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
 					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">
-						5. Price strategy
-					</p>
+						{copy.text[33]}</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-						A more realistic market position
-					</h2>
+						{copy.text[34]}</h2>
 				</div>
 
 				<div className="grid gap-5 lg:grid-cols-3">
@@ -489,22 +309,18 @@ export default function ResearchDevelopmentPage() {
 
 				<div className="mt-6 rounded-[1.75rem] border border-amber-100 bg-amber-50/60 p-5 dark:border-amber-900/50 dark:bg-amber-950/20">
 					<p className="text-[12px] font-black uppercase tracking-[0.22em] text-amber-700 dark:text-amber-300">
-						Pricing logic example
-					</p>
+						{copy.text[35]}</p>
 					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-200">
-						A customer with a ₹15,000 monthly bill may prefer a basic but dependable package with a clear six-year payback story. A customer with a higher bill and smart-home expectations may pay more for monitoring and output dashboards. The price strategy should therefore not be “cheap solar for everyone”; it should be “clear value at the right price for the right customer.”
-					</p>
+						{copy.text[36]}</p>
 				</div>
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
 					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-indigo-700 dark:text-indigo-300">
-						6. Practical 90-day validation plan
-					</p>
+						{copy.text[37]}</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-						Measure what customers will really pay for
-					</h2>
+						{copy.text[38]}</h2>
 				</div>
 
 				<div className="space-y-4">
@@ -518,14 +334,12 @@ export default function ResearchDevelopmentPage() {
 							</div>
 							<div>
 								<p className="text-[12px] font-black uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
-									Action
-								</p>
+									{copy.text[39]}</p>
 								<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{step.action}</p>
 							</div>
 							<div>
 								<p className="text-[12px] font-black uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
-									Target evidence
-								</p>
+									{copy.text[40]}</p>
 								<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{step.result}</p>
 							</div>
 						</div>
@@ -534,11 +348,9 @@ export default function ResearchDevelopmentPage() {
 
 				<div className="mt-6 rounded-[1.75rem] border border-indigo-100 bg-indigo-50/60 p-5 dark:border-indigo-900/50 dark:bg-indigo-950/20">
 					<p className="text-[12px] font-black uppercase tracking-[0.22em] text-indigo-700 dark:text-indigo-300">
-						What a real validation looks like
-					</p>
+						{copy.text[41]}</p>
 					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-200">
-						During the validation phase, a sales team may learn that homeowners are not asking for “a solar system” in general; they are asking for solar savings certainty, lower bills, and confidence that the installation will be well-managed. This is why the team needs to test objection handling, quote clarity, financing conversation quality, and post-sale service response before scaling up.
-					</p>
+						{copy.text[42]}</p>
 				</div>
 			</section>
 
@@ -546,11 +358,9 @@ export default function ResearchDevelopmentPage() {
 				<div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
 					<div className="rounded-[2rem] border border-slate-200 bg-white/80 p-5 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
 						<p className="text-[12px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
-							7. Final assessment
-						</p>
+							{copy.text[43]}</p>
 						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-							Current assessment of AeroSun
-						</h2>
+							{copy.text[44]}</h2>
 						<div className="mt-6 space-y-3">
 							{finalAssessment.map((item) => (
 								<div
@@ -571,40 +381,31 @@ export default function ResearchDevelopmentPage() {
 
 					<div className="rounded-[2rem] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-cyan-50 p-5 dark:border-emerald-900/60 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
 						<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
-							Recommended operating model
-						</p>
+							{copy.text[45]}</p>
 						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-							Two parallel tracks
-						</h2>
+							{copy.text[46]}</h2>
 						<div className="mt-6 space-y-4">
 							<div className="rounded-[1.5rem] border border-emerald-100 bg-white/80 p-4 dark:border-emerald-900/50 dark:bg-slate-900/75">
 								<p className="text-md font-black uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">
-									Track 1
-								</p>
+									{copy.text[47]}</p>
 								<p className="mt-2 text-base leading-7 text-slate-700 dark:text-slate-300">
-									Sell and install suitable solar systems using proven equipment and qualified partners. Focus on
-									transparent pricing, trust, and dependable after-sales support.
-								</p>
+									{copy.text[48]}</p>
 							</div>
 							<div className="rounded-[1.5rem] border border-sky-100 bg-white/80 p-4 dark:border-sky-900/50 dark:bg-slate-900/75">
 								<p className="text-md font-black uppercase tracking-[0.2em] text-sky-700 dark:text-sky-300">
-									Track 2
-								</p>
+									{copy.text[49]}</p>
 								<p className="mt-2 text-base leading-7 text-slate-700 dark:text-slate-300">
-									Develop the smart wind turbine as a measured technology project with field testing, independent
-									verification, and disciplined proof before strong commercial claims.
-								</p>
+									{copy.text[50]}</p>
 							</div>
 						</div>
 
 						<div className="mt-6 rounded-[1.5rem] border border-slate-200 bg-white/80 p-4 dark:border-slate-700 dark:bg-slate-900/75">
 							<p className="text-[12px] font-black uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
-								Decision questions
-							</p>
+								{copy.text[51]}</p>
 							<ul className="mt-3 space-y-2 text-md leading-6 text-slate-700 dark:text-slate-300">
-								<li>• What is AeroSun’s current stage: website only, solar activity, or prototype stage?</li>
-								<li>• What is the available startup budget for validation?</li>
-								<li>• Which product should be prioritised in the next six months?</li>
+								<li>{copy.text[52]}</li>
+								<li>{copy.text[53]}</li>
+								<li>{copy.text[54]}</li>
 							</ul>
 						</div>
 					</div>
@@ -614,26 +415,17 @@ export default function ResearchDevelopmentPage() {
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-sky-200 bg-linear-to-br from-sky-50 via-white to-cyan-50 p-5 shadow-[0_24px_60px_-40px_rgba(59,130,246,0.45)] dark:border-sky-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
 					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">
-						AeroSun Energy: Competitor analysis, profitability, opportunities and risks in India
-					</p>
+						{copy.text[55]}</p>
 					<h2 className="mt-4 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-						The most relevant comparison is not “who is big,” but “who serves the same customer with the same economics.”
-					</h2>
+						{copy.text[56]}</h2>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						For AeroSun Energy Private Limited, the most useful comparison is not simply which renewable-energy companies are
-						profitable. It is which competitors target the same customers, how they make money, what risks they face, and where a new
-						company can compete successfully.
-					</p>
+						{copy.text[57]}</p>
 					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
-						I would divide the market into three segments: residential and small commercial rooftop solar, solar equipment distribution,
-						installation and maintenance, and wind turbines, hybrid energy systems and smart energy monitoring. The first two are the more
-						practical starting points for AeroSun. The third could provide differentiation, but it requires more technical validation.
-					</p>
+						{copy.text[58]}</p>
 					<div className="mt-6 rounded-[1.5rem] border border-sky-100 bg-white/80 p-4 dark:border-sky-900/50 dark:bg-slate-900/75">
-						<p className="text-[12px] font-black uppercase tracking-[0.22em] text-sky-700 dark:text-sky-300">Example market logic</p>
+						<p className="text-[12px] font-black uppercase tracking-[0.22em] text-sky-700 dark:text-sky-300">{copy.text[59]}</p>
 						<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
-							A competitor like Loom Solar is strong in consumer-facing product sales, while a large EPC player like Tata Power can win large residential and commercial contracts because of brand trust and operational scale. AeroSun should not attempt to beat them in size at the start. It should win where trust, speed, customer education, and after-sales service can create a superior local experience.
-						</p>
+							{copy.text[60]}</p>
 					</div>
 				</div>
 			</section>
@@ -641,23 +433,18 @@ export default function ResearchDevelopmentPage() {
 			<section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-slate-200 bg-white/80 p-5 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
 					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
-						Business funding explained
-					</p>
+						{copy.text[61]}</p>
 					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-						From bootstrapping to IPO: a funding roadmap for AeroSun Energy Private Limited
-					</h2>
+						{copy.text[62]}</h2>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						For AeroSun Energy, funding means obtaining the money needed to start operations, acquire equipment,
-						develop solar and wind prototypes, hire people, win customers and expand the business.
-					</p>
+						{copy.text[63]}</p>
 					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
-						The right choice depends on <span className="font-black text-slate-900 dark:text-white">how much money you need, what it will be used for, how quickly the business generates revenue, and how much ownership you are willing to give investors.</span>
+						{copy.text[64]}<span className="font-black text-slate-900 dark:text-white">{copy.text[65]}</span>
 					</p>
 					<div className="mt-6 rounded-[1.5rem] border border-slate-200 bg-slate-50/85 p-4 dark:border-slate-700 dark:bg-slate-800/80">
-						<p className="text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding example</p>
+						<p className="text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[66]}</p>
 						<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
-							Suppose AeroSun needs ₹5 lakh to test a solar package, build a basic monitoring dashboard, and conduct the first 10 customer site surveys. Bootstrapping or a small grant may be sufficient. However, if the company wants to build a custom wind turbine prototype and run sustained field trials, then an incubator, angel round, or strategic investor may be more realistic.
-						</p>
+							{copy.text[67]}</p>
 					</div>
 				</div>
 			</section>
@@ -665,23 +452,12 @@ export default function ResearchDevelopmentPage() {
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
 					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
-						Funding stages
-					</p>
+						{copy.text[68]}</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-						The main funding stages AeroSun should understand
-					</h2>
+						{copy.text[69]}</h2>
 				</div>
 				<div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-					{[
-						['Bootstrapping', 'Finance using your own capital and revenue.'],
-						['Friends and family', 'Capital from trusted contacts.'],
-						['Grants and incubators', 'Non-dilutive support and technical help.'],
-						['Angel investment', 'Individual investors with equity or convertible instruments.'],
-						['Pre-seed and seed', 'Prototype, validation and early growth capital.'],
-						['Series A', 'Scale a proven artificial or real-world commercial model.'],
-						['Series B and beyond', 'Expand operations, markets and manufacturing capacity.'],
-						['IPO or acquisition', 'Potential exit for investors and public-market capital.'],
-					].map(([stage, detail]) => (
+					{inline[2].map(([stage, detail]) => (
 						<div key={stage} className="rounded-[1.5rem] border border-emerald-100 bg-white/80 p-4 shadow-[0_18px_35px_-25px_rgba(16,185,129,0.45)] dark:border-emerald-900/50 dark:bg-slate-900/75">
 							<p className="text-md font-black uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300">{stage}</p>
 							<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{detail}</p>
@@ -694,34 +470,23 @@ export default function ResearchDevelopmentPage() {
 				<div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
 					<div className="rounded-[2rem] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-cyan-50 p-5 dark:border-emerald-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
 						<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
-							1. Bootstrapping your business
-						</p>
+							{copy.text[70]}</p>
 						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-							What bootstrapping means
-						</h2>
+							{copy.text[71]}</h2>
 						<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-							<span className="font-black text-slate-900 dark:text-white">Bootstrapping means building a business primarily using your own capital and the revenue generated by the business</span>, rather than relying on outside equity investors.
-						</p>
+							<span className="font-black text-slate-900 dark:text-white">{copy.text[72]}</span>{copy.text[73]}</p>
 						<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
-							For AeroSun Energy, this could mean starting with solar equipment sales, installation coordination and maintenance services, then using the profits to finance larger projects and prototype development.
-						</p>
+							{copy.text[74]}</p>
 						<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
 							<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 								<thead className="bg-slate-50 dark:bg-slate-800/80">
 									<tr>
-										<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Initial expenditure</th>
-										<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Illustrative amount</th>
+										<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[75]}</th>
+										<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[76]}</th>
 									</tr>
 								</thead>
 								<tbody>
-									{[
-										['Website, branding and marketing', '₹10,000'],
-										['Tools and testing equipment', '₹20,000'],
-										['Supplier visits and customer acquisition', '₹10,000'],
-										['Prototype and monitoring equipment', '₹25,000'],
-										['Working capital reserve', '₹35,000'],
-										['Total', '₹1,00,000'],
-									].map(([label, value]) => (
+									{inline[3].map(([label, value]) => (
 										<tr key={label} className="border-t border-slate-200 dark:border-slate-700">
 											<td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{label}</td>
 											<td className="px-4 py-3">{value}</td>
@@ -731,12 +496,7 @@ export default function ResearchDevelopmentPage() {
 							</table>
 						</div>
 						<div className="mt-6 space-y-3">
-							{[
-								'You retain ownership of your company.',
-								'You can grow according to actual customer demand.',
-								'You avoid investor dilution.',
-								'Growth may be slower and personal capital is at risk.',
-							].map((item) => (
+							{inline[4].map((item) => (
 								<div key={item} className="flex gap-3 rounded-[1.2rem] border border-emerald-100 bg-white/80 p-3 dark:border-emerald-900/50 dark:bg-slate-900/75">
 									<span className="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500" />
 									<span className="text-md leading-6 text-slate-700 dark:text-slate-300">{item}</span>
@@ -747,18 +507,11 @@ export default function ResearchDevelopmentPage() {
 
 					<div className="rounded-[2rem] border border-slate-200 bg-white/80 p-5 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
 						<p className="text-[12px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
-							When bootstrap makes sense
-						</p>
+							{copy.text[77]}</p>
 						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-							Best use cases
-						</h2>
+							{copy.text[78]}</h2>
 						<ol className="mt-6 space-y-4">
-							{[
-								'You are testing whether customers will purchase residential solar installations.',
-								'You can source equipment from established suppliers.',
-								'You do not need to build a factory immediately.',
-								'You can generate revenue before making large capital commitments.',
-							].map((item, index) => (
+							{inline[5].map((item, index) => (
 								<li key={item} className="flex gap-3 rounded-[1.2rem] border border-slate-200 bg-slate-50/90 p-3 dark:border-slate-700 dark:bg-slate-800/80">
 									<div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-700 text-md font-black text-white">{index + 1}</div>
 									<span className="text-md leading-6 text-slate-700 dark:text-slate-300">{item}</span>
@@ -771,32 +524,28 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-violet-200 bg-linear-to-br from-violet-50 via-white to-fuchsia-50 p-5 dark:border-violet-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-violet-700 dark:text-violet-300">2. Friends and family funding</p>
-					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Small early capital should still be documented</h2>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-violet-700 dark:text-violet-300">{copy.text[79]}</p>
+					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">{copy.text[80]}</h2>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						For example, a relative might invest ₹2 lakh to help AeroSun purchase demonstration equipment and secure its first customers. There are three common arrangements: equity investment, loan, or a gift. Do not rely on a verbal promise — document the amount, purpose, repayment terms, or investor rights.
-					</p>
+						{copy.text[81]}</p>
 				</div>
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-sky-200 bg-linear-to-br from-sky-50 via-white to-cyan-50 p-5 dark:border-sky-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">3. Grants and incubator funding</p>
-					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Use grants where innovation needs proof</h2>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">{copy.text[82]}</p>
+					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">{copy.text[83]}</h2>
 					<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
 						<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 							<thead className="bg-slate-50 dark:bg-slate-800/80">
 								<tr>
-									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding route</th>
-									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Published scheme limit</th>
-									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Intended use</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[84]}</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[85]}</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[86]}</th>
 								</tr>
 							</thead>
 							<tbody>
-								{[
-									['Grant', 'Up to ₹20 lakh', 'Proof of concept, prototype development and product trials'],
-									['Debt or convertible instruments', 'Up to ₹50 lakh', 'Market entry, commercialisation and scaling'],
-								].map(([route, limit, use]) => (
+								{inline[6].map(([route, limit, use]) => (
 									<tr key={route} className="border-t border-slate-200 dark:border-slate-700">
 										<td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{route}</td>
 										<td className="px-4 py-3">{limit}</td>
@@ -807,27 +556,19 @@ export default function ResearchDevelopmentPage() {
 						</table>
 					</div>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						For AeroSun, a grant may be especially useful for a wind-turbine prototype, a hybrid energy controller, field trials or energy-monitoring software. The key is to define one problem, one customer segment, one prototype and measurable milestones.
-					</p>
+						{copy.text[87]}</p>
 				</div>
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
 					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">
-						4. Funding stages in practice
-					</p>
+						{copy.text[88]}</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-						Pre-seed, seed, angel and Series A
-					</h2>
+						{copy.text[89]}</h2>
 				</div>
 				<div className="grid gap-5 lg:grid-cols-2">
-					{[
-						['Pre-seed', 'Used when you need a prototype or first version of a product. Investors look for a clear customer problem, a technical plan and credible milestones.'],
-						['Seed', 'Used to move from a prototype to a validated product and repeatable business model with pilot programmes and initial customers.'],
-						['Angel', 'An individual investor provides capital in exchange for equity, often bringing mentoring and investor relationships as well.'],
-						['Series A', 'Raise after repeated traction and a business model that can grow with capital, usually across engineering, sales and operations.'],
-					].map(([stage, text]) => (
+					{inline[7].map(([stage, text]) => (
 						<div key={stage} className="rounded-[1.7rem] border border-amber-100 bg-white/80 p-5 dark:border-amber-900/50 dark:bg-slate-900/75">
 							<p className="text-md font-black uppercase tracking-[0.18em] text-amber-700 dark:text-amber-300">{stage}</p>
 							<p className="mt-3 text-md leading-7 text-slate-700 dark:text-slate-300">{text}</p>
@@ -838,24 +579,19 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-rose-200 bg-linear-to-br from-rose-50 via-white to-pink-50 p-5 dark:border-rose-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-rose-700 dark:text-rose-300">5. Understand dilution before you raise</p>
-					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Dilution reduces founder ownership</h2>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-rose-700 dark:text-rose-300">{copy.text[90]}</p>
+					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">{copy.text[91]}</h2>
 					<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
 						<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 							<thead className="bg-slate-50 dark:bg-slate-800/80">
 								<tr>
-									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding stage</th>
-									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">New investment</th>
-									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Illustrative post-investment ownership</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[92]}</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[93]}</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[94]}</th>
 								</tr>
 							</thead>
 							<tbody>
-								{[
-									['Founders start the company', '₹1 lakh founder capital', 'Founders: 100%'],
-									['Angel round', '₹25 lakh', 'Founders: 80%; angel: 20%'],
-									['Seed round', '₹75 lakh', 'Founders: 60%; angel: 15%; seed investor: 25%'],
-									['Series A', '₹5 crore', 'Founders: 45%; angel: 11.25%; seed investor: 18.75%; Series A investor: 25%'],
-								].map(([stage, investment, ownership]) => (
+								{inline[8].map(([stage, investment, ownership]) => (
 									<tr key={stage} className="border-t border-slate-200 dark:border-slate-700">
 										<td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{stage}</td>
 										<td className="px-4 py-3">{investment}</td>
@@ -866,22 +602,16 @@ export default function ResearchDevelopmentPage() {
 						</table>
 					</div>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						The important point is that raising money increases resources, but each equity round can reduce the founders' percentage ownership. A smaller percentage of a substantially more valuable company may be worth more than a larger percentage of a company that cannot grow.
-					</p>
+						{copy.text[95]}</p>
 				</div>
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-indigo-200 bg-linear-to-br from-indigo-50 via-white to-purple-50 p-5 dark:border-indigo-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-indigo-700 dark:text-indigo-300">6. Which funding route should AeroSun follow?</p>
-					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">A staged plan is the safest strategy</h2>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-indigo-700 dark:text-indigo-300">{copy.text[96]}</p>
+					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">{copy.text[97]}</h2>
 					<div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-						{[
-							['Stage 1', 'Bootstrap the solar business and generate early revenue.'],
-							['Stage 2', 'Apply for grant or incubator support for a prototype or validation project.'],
-							['Stage 3', 'Raise angel or seed capital only after demand and product evidence are credible.'],
-							['Stage 4', 'Expand with larger financing only after the business model is proven.'],
-						].map(([stage, point]) => (
+						{inline[9].map(([stage, point]) => (
 							<div key={stage} className="rounded-[1.5rem] border border-indigo-100 bg-white/80 p-4 dark:border-indigo-900/50 dark:bg-slate-900/75">
 								<p className="text-md font-black uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">{stage}</p>
 								<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{point}</p>
@@ -893,19 +623,13 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-cyan-50 p-5 shadow-[0_24px_60px_-40px_rgba(16,185,129,0.45)] dark:border-emerald-900/60 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">Final funding recommendation</p>
-					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Do not ask how much you can raise before knowing what milestone you need to fund.</h2>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">{copy.text[98]}</p>
+					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">{copy.text[99]}</h2>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						For AeroSun, the immediate funding path should be: <span className="font-black text-slate-900 dark:text-white">bootstrap the solar business, validate customer demand, apply for incubator or grant support for technology proof, and only then raise angel or seed capital if the prototype and market case are credible.</span>
+						{copy.text[100]}<span className="font-black text-slate-900 dark:text-white">{copy.text[101]}</span>
 					</p>
 					<div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
-						{[
-							['₹1–3 lakh', 'Validate solar-service business and customer demand'],
-							['₹3–10 lakh', 'Develop a structured prototype or monitoring system'],
-							['₹10–50 lakh+', 'Larger prototype, pilot deployment or commercialisation'],
-							['Grant route', 'Use for eligible innovation and proof-of-concept work'],
-							['Equity route', 'Use only when evidence supports product scale'],
-						].map(([amount, note]) => (
+						{inline[10].map(([amount, note]) => (
 							<div key={amount} className="rounded-[1.4rem] border border-emerald-100 bg-white/80 p-4 dark:border-emerald-900/50 dark:bg-slate-900/75">
 								<p className="text-md font-black text-emerald-700 dark:text-emerald-300">{amount}</p>
 								<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{note}</p>
@@ -918,23 +642,19 @@ export default function ResearchDevelopmentPage() {
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
 					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
-						# AeroSun Energy Private Limited
-					</p>
+						{copy.text[102]}</p>
 					<h2 className="mt-4 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-						Prototype ideas for solar, wind and hybrid renewable energy
-					</h2>
+						{copy.text[103]}</h2>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						For AeroSun Energy, I recommend developing three practical prototypes: a solar energy system, a small wind turbine, and an integrated solar–wind hybrid system. Each prototype should be designed around a real customer need, affordable components, measurable energy output, and long-term sustainability.
-					</p>
+						{copy.text[104]}</p>
 					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
-						The objective is not just to build a device that generates electricity. It is to develop a product that can generate useful energy reliably, remain affordable for Indian customers, be repaired locally, and produce enough value to justify its cost.
-					</p>
+						{copy.text[105]}</p>
 					<div className="mt-6 rounded-[1.5rem] border border-emerald-100 bg-white/80 p-4 dark:border-emerald-900/50 dark:bg-slate-900/75">
-						<p className="text-md font-black uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">Recommended order</p>
+						<p className="text-md font-black uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">{copy.text[106]}</p>
 						<ol className="mt-3 space-y-2 text-md leading-6 text-slate-700 dark:text-slate-300">
-							<li>1. Solar prototype — lowest technical risk and best starting point for customer validation.</li>
-							<li>2. Wind prototype — higher technical risk; validate wind resources and actual electrical output.</li>
-							<li>3. Hybrid prototype — combine proven solar and wind components with a controller, battery and energy monitoring.</li>
+							<li>{copy.text[107]}</li>
+							<li>{copy.text[108]}</li>
+							<li>{copy.text[109]}</li>
 						</ol>
 					</div>
 				</div>
@@ -942,29 +662,20 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-sky-200 bg-linear-to-br from-sky-50 via-white to-cyan-50 p-5 shadow-[0_24px_60px_-40px_rgba(59,130,246,0.45)] dark:border-sky-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">1. Prototype A — AeroSun Solar Smart System</p>
-					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">AeroSun Solar Smart 1 kW</h2>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">{copy.text[110]}</p>
+					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">{copy.text[111]}</h2>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						Purpose: build an affordable demonstration system that generates solar electricity and measures where that electricity goes.
-					</p>
+						{copy.text[112]}</p>
 					<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
 						<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 							<thead className="bg-slate-50 dark:bg-slate-800/80">
 								<tr>
-									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Component</th>
-									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Suggested specification</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[113]}</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[114]}</th>
 								</tr>
 							</thead>
 							<tbody>
-								{[
-									['Solar panels', 'Approximately 1 kWp total capacity'],
-									['Inverter', 'Compatible 1 kW inverter, selected for the chosen system architecture'],
-									['Monitoring', 'Energy meter or inverter monitoring'],
-									['Grid measurement', 'Bidirectional meter for an approved grid-connected installation'],
-									['Home-consumption measurement', 'Compatible CT sensor or energy meter'],
-									['Optional battery', 'Small battery system with compatible charge controller or hybrid inverter'],
-									['Demonstration load', 'LED lights, fans and other suitable loads'],
-								].map(([component, spec]) => (
+								{inline[11].map(([component, spec]) => (
 									<tr key={component} className="border-t border-slate-200 dark:border-slate-700">
 										<td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{component}</td>
 										<td className="px-4 py-3">{spec}</td>
@@ -974,16 +685,15 @@ export default function ResearchDevelopmentPage() {
 						</table>
 					</div>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						A 1 kWp solar array has a peak DC rating of approximately 1,000 watts under specified test conditions. Actual output varies with sunlight, panel temperature, shading, orientation and system losses.
-					</p>
+						{copy.text[115]}</p>
 					<div className="mt-6 rounded-[1.5rem] border border-slate-200 bg-slate-50/80 p-4 dark:border-slate-700 dark:bg-slate-900/75">
-						<p className="text-md font-black uppercase tracking-[0.2em] text-slate-700 dark:text-slate-200">What the prototype should prove</p>
+						<p className="text-md font-black uppercase tracking-[0.2em] text-slate-700 dark:text-slate-200">{copy.text[116]}</p>
 						<ul className="mt-3 space-y-2 text-md leading-6 text-slate-700 dark:text-slate-300">
-							<li>• How much electricity does it generate each day?</li>
-							<li>• How much of that electricity does the home consume directly?</li>
-							<li>• How much electricity is imported from and exported to the grid?</li>
-							<li>• How accurately do the monitoring readings match reference measurements?</li>
-							<li>• What is the total installation and maintenance cost?</li>
+							<li>{copy.text[117]}</li>
+							<li>{copy.text[118]}</li>
+							<li>{copy.text[119]}</li>
+							<li>{copy.text[120]}</li>
+							<li>{copy.text[121]}</li>
 						</ul>
 					</div>
 				</div>
@@ -991,34 +701,22 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-cyan-200 bg-linear-to-br from-cyan-50 via-white to-sky-50 p-5 shadow-[0_24px_60px_-40px_rgba(14,165,233,0.45)] dark:border-cyan-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">2. Prototype B — AeroSun Small Wind Turbine</p>
-					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">AeroSun Wind 500</h2>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">{copy.text[122]}</p>
+					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">{copy.text[123]}</h2>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						Purpose: develop a small wind turbine for demonstration, testing and potentially suitable off-grid applications.
-					</p>
+						{copy.text[124]}</p>
 					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
-						For the first prototype, I would investigate a 300–500 W rated horizontal-axis wind turbine using a commercially available generator and a properly engineered rotor. A vertical-axis design could be tested separately as a research comparison.
-					</p>
+						{copy.text[125]}</p>
 					<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
 						<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 							<thead className="bg-slate-50 dark:bg-slate-800/80">
 								<tr>
-									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Component</th>
-									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Purpose</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[113]}</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[126]}</th>
 								</tr>
 							</thead>
 							<tbody>
-								{[
-									['Rotor and blades', 'Capture energy from moving air'],
-									['Generator', 'Convert rotational energy into electricity'],
-									['Mechanical braking or overspeed protection', 'Help control unsafe rotational speeds'],
-									['Rectifier', 'Convert generator output to DC when required'],
-									['Wind charge controller', 'Regulate battery charging and protect the system'],
-									['Battery', 'Store energy when generation exceeds immediate demand'],
-									['Dump load or braking arrangement', 'Safely manage excess power where required'],
-									['Voltage and current sensors', 'Measure electrical output'],
-									['Anemometer', 'Measure wind speed'],
-								].map(([comp, purpose]) => (
+								{inline[12].map(([comp, purpose]) => (
 									<tr key={comp} className="border-t border-slate-200 dark:border-slate-700">
 										<td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{comp}</td>
 										<td className="px-4 py-3">{purpose}</td>
@@ -1028,25 +726,18 @@ export default function ResearchDevelopmentPage() {
 						</table>
 					</div>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						The key question is not whether the rotor turns, but how much useful electricity it can generate at the wind speeds available at the customer's site.
-					</p>
+						{copy.text[127]}</p>
 				</div>
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-violet-200 bg-linear-to-br from-violet-50 via-white to-fuchsia-50 p-5 shadow-[0_24px_60px_-40px_rgba(168,85,247,0.45)] dark:border-violet-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-violet-700 dark:text-violet-300">3. Prototype C — AeroSun Solar–Wind Hybrid System</p>
-					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">AeroSun Hybrid Smart 1 kW</h2>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-violet-700 dark:text-violet-300">{copy.text[128]}</p>
+					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">{copy.text[129]}</h2>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						Purpose: combine solar and wind generation with battery storage and intelligent monitoring. The goal is to supply useful electricity from two renewable sources while managing changes in generation and customer demand.
-					</p>
+						{copy.text[130]}</p>
 					<div className="mt-6 grid gap-4 md:grid-cols-2">
-						{[
-							['Solar array', 'Approximately 600 Wp'],
-							['Wind turbine', 'Approximately 300–500 W rated'],
-							['Battery', 'Appropriately sized low-voltage battery system'],
-							['Monitoring', 'Separate solar, wind, battery, load and grid measurements'],
-						].map(([label, value]) => (
+						{inline[13].map(([label, value]) => (
 							<div key={label} className="rounded-[1.3rem] border border-violet-100 bg-white/80 p-4 dark:border-violet-900/50 dark:bg-slate-900/75">
 								<p className="text-md font-black uppercase tracking-[0.18em] text-violet-700 dark:text-violet-300">{label}</p>
 								<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{value}</p>
@@ -1054,22 +745,16 @@ export default function ResearchDevelopmentPage() {
 						))}
 					</div>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						The hybrid system should only be offered where local resource data and the customer's energy needs justify it. Solar plus wind is not automatically better or cheaper than solar alone.
-					</p>
+						{copy.text[131]}</p>
 				</div>
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-amber-200 bg-linear-to-br from-amber-50 via-white to-yellow-50 p-5 shadow-[0_24px_60px_-40px_rgba(245,158,11,0.45)] dark:border-amber-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">4. Make the prototypes reusable and sustainable</p>
-					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Build for repairability, durability and lower waste</h2>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">{copy.text[132]}</p>
+					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">{copy.text[133]}</h2>
 					<div className="mt-6 grid gap-4 md:grid-cols-2">
-						{[
-							['Modular construction', 'Make controllers, sensors and power electronics replaceable without discarding the whole product.'],
-							['Standard components', 'Use commonly available fasteners, connectors and replacement parts where practical.'],
-							['Repairable electronics', 'Use replaceable controller boards and sensors where safe and practical.'],
-							['Responsible battery management', 'Provide safe inspection, replacement, collection and recycling arrangements.'],
-						].map(([title, text]) => (
+						{inline[14].map(([title, text]) => (
 							<div key={title} className="rounded-[1.5rem] border border-amber-100 bg-white/80 p-4 dark:border-amber-900/50 dark:bg-slate-900/75">
 								<p className="text-md font-black uppercase tracking-[0.2em] text-amber-700 dark:text-amber-300">{title}</p>
 								<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{text}</p>
@@ -1081,18 +766,11 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
-					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">5. Prototype development roadmap</p>
-					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Order of work for AeroSun</h2>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">{copy.text[134]}</p>
+					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">{copy.text[135]}</h2>
 				</div>
 				<div className="space-y-4">
-					{[
-						['1. Requirements', 'Interview customers and identify real energy needs'],
-						['2. Component selection', 'Compare suppliers, datasheets, warranties and applicable standards'],
-						['3. Bench prototype', 'Assemble the solar monitoring system and wind-generator test rig'],
-						['4. Integrated prototype', 'Combine proven solar, wind, battery and monitoring components'],
-						['5. Field testing', 'Measure output, reliability, safety and maintenance requirements'],
-						['6. Economic validation', 'Calculate installation cost, operating cost and expected customer value'],
-					].map(([phase, work]) => (
+					{inline[15].map(([phase, work]) => (
 						<div key={phase} className="grid gap-3 rounded-[1.4rem] border border-emerald-100 bg-white/80 p-4 md:grid-cols-[180px_1fr] dark:border-emerald-900/50 dark:bg-slate-900/75">
 							<div className="flex items-center justify-center rounded-[1rem] bg-emerald-100 px-3 py-2 text-md font-black uppercase tracking-[0.18em] text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">{phase}</div>
 							<p className="text-md leading-6 text-slate-700 dark:text-slate-300">{work}</p>
@@ -1104,17 +782,13 @@ export default function ResearchDevelopmentPage() {
 			<section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-slate-200 bg-white/80 p-5 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
 					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
-						Business funding explained
-					</p>
+						{copy.text[61]}</p>
 					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-						From bootstrapping to IPO: a funding roadmap for AeroSun Energy Private Limited
-					</h2>
+						{copy.text[62]}</h2>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						For AeroSun Energy, funding means obtaining the money needed to start operations, acquire equipment,
-						develop solar and wind prototypes, hire people, win customers and expand the business.
-					</p>
+						{copy.text[63]}</p>
 					<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
-						The right choice depends on <span className="font-black text-slate-900 dark:text-white">how much money you need, what it will be used for, how quickly the business generates revenue, and how much ownership you are willing to give investors.</span>
+						{copy.text[64]}<span className="font-black text-slate-900 dark:text-white">{copy.text[65]}</span>
 					</p>
 				</div>
 			</section>
@@ -1122,23 +796,12 @@ export default function ResearchDevelopmentPage() {
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
 					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
-						Funding stages
-					</p>
+						{copy.text[68]}</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-						The main funding stages AeroSun should understand
-					</h2>
+						{copy.text[69]}</h2>
 				</div>
 				<div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-					{[
-						['Bootstrapping', 'Finance using your own capital and revenue.'],
-						['Friends and family', 'Capital from trusted contacts.'],
-						['Grants and incubators', 'Non-dilutive support and technical help.'],
-						['Angel investment', 'Individual investors with equity or convertible instruments.'],
-						['Pre-seed and seed', 'Prototype, validation and early growth capital.'],
-						['Series A', 'Scale a proven artificial or real-world commercial model.'],
-						['Series B and beyond', 'Expand operations, markets and manufacturing capacity.'],
-						['IPO or acquisition', 'Potential exit for investors and public-market capital.'],
-					].map(([stage, detail]) => (
+					{inline[16].map(([stage, detail]) => (
 						<div key={stage} className="rounded-[1.5rem] border border-emerald-100 bg-white/80 p-4 shadow-[0_18px_35px_-25px_rgba(16,185,129,0.45)] dark:border-emerald-900/50 dark:bg-slate-900/75">
 							<p className="text-md font-black uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300">{stage}</p>
 							<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{detail}</p>
@@ -1151,34 +814,23 @@ export default function ResearchDevelopmentPage() {
 				<div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
 					<div className="rounded-[2rem] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-cyan-50 p-5 dark:border-emerald-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
 						<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">
-							1. Bootstrapping your business
-						</p>
+							{copy.text[70]}</p>
 						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-							What bootstrapping means
-						</h2>
+							{copy.text[71]}</h2>
 						<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-							<span className="font-black text-slate-900 dark:text-white">Bootstrapping means building a business primarily using your own capital and the revenue generated by the business</span>, rather than relying on outside equity investors.
-						</p>
+							<span className="font-black text-slate-900 dark:text-white">{copy.text[72]}</span>{copy.text[73]}</p>
 						<p className="mt-3 text-base leading-8 text-slate-700 dark:text-slate-300">
-							For AeroSun Energy, this could mean starting with solar equipment sales, installation coordination and maintenance services, then using the profits to finance larger projects and prototype development.
-						</p>
+							{copy.text[74]}</p>
 						<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
 							<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 								<thead className="bg-slate-50 dark:bg-slate-800/80">
 									<tr>
-										<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Initial expenditure</th>
-										<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Illustrative amount</th>
+										<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[75]}</th>
+										<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[76]}</th>
 									</tr>
 								</thead>
 								<tbody>
-									{[
-										['Website, branding and marketing', '₹10,000'],
-										['Tools and testing equipment', '₹20,000'],
-										['Supplier visits and customer acquisition', '₹10,000'],
-										['Prototype and monitoring equipment', '₹25,000'],
-										['Working capital reserve', '₹35,000'],
-										['Total', '₹1,00,000'],
-									].map(([label, value]) => (
+									{inline[17].map(([label, value]) => (
 										<tr key={label} className="border-t border-slate-200 dark:border-slate-700">
 											<td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{label}</td>
 											<td className="px-4 py-3">{value}</td>
@@ -1188,12 +840,7 @@ export default function ResearchDevelopmentPage() {
 							</table>
 						</div>
 						<div className="mt-6 space-y-3">
-							{[
-								'You retain ownership of your company.',
-								'You can grow according to actual customer demand.',
-								'You avoid investor dilution.',
-								'Growth may be slower and personal capital is at risk.',
-							].map((item) => (
+							{inline[18].map((item) => (
 								<div key={item} className="flex gap-3 rounded-[1.2rem] border border-emerald-100 bg-white/80 p-3 dark:border-emerald-900/50 dark:bg-slate-900/75">
 									<span className="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500" />
 									<span className="text-md leading-6 text-slate-700 dark:text-slate-300">{item}</span>
@@ -1204,18 +851,11 @@ export default function ResearchDevelopmentPage() {
 
 					<div className="rounded-[2rem] border border-slate-200 bg-white/80 p-5 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.45)] dark:border-slate-700 dark:bg-slate-900/75">
 						<p className="text-[12px] font-black uppercase tracking-[0.28em] text-slate-600 dark:text-slate-300">
-							When bootstrap makes sense
-						</p>
+							{copy.text[77]}</p>
 						<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-							Best use cases
-						</h2>
+							{copy.text[78]}</h2>
 						<ol className="mt-6 space-y-4">
-							{[
-								'You are testing whether customers will purchase residential solar installations.',
-								'You can source equipment from established suppliers.',
-								'You do not need to build a factory immediately.',
-								'You can generate revenue before making large capital commitments.',
-							].map((item, index) => (
+							{inline[19].map((item, index) => (
 								<li key={item} className="flex gap-3 rounded-[1.2rem] border border-slate-200 bg-slate-50/90 p-3 dark:border-slate-700 dark:bg-slate-800/80">
 									<div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-700 text-md font-black text-white">{index + 1}</div>
 									<span className="text-md leading-6 text-slate-700 dark:text-slate-300">{item}</span>
@@ -1228,32 +868,28 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-violet-200 bg-linear-to-br from-violet-50 via-white to-fuchsia-50 p-5 dark:border-violet-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-violet-700 dark:text-violet-300">2. Friends and family funding</p>
-					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Small early capital should still be documented</h2>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-violet-700 dark:text-violet-300">{copy.text[79]}</p>
+					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">{copy.text[80]}</h2>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						For example, a relative might invest ₹2 lakh to help AeroSun purchase demonstration equipment and secure its first customers. There are three common arrangements: equity investment, loan, or a gift. Do not rely on a verbal promise — document the amount, purpose, repayment terms, or investor rights.
-					</p>
+						{copy.text[81]}</p>
 				</div>
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-sky-200 bg-linear-to-br from-sky-50 via-white to-cyan-50 p-5 dark:border-sky-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">3. Grants and incubator funding</p>
-					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Use grants where innovation needs proof</h2>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-sky-700 dark:text-sky-300">{copy.text[82]}</p>
+					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">{copy.text[83]}</h2>
 					<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
 						<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 							<thead className="bg-slate-50 dark:bg-slate-800/80">
 								<tr>
-									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding route</th>
-									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Published scheme limit</th>
-									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Intended use</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[84]}</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[85]}</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[86]}</th>
 								</tr>
 							</thead>
 							<tbody>
-								{[
-									['Grant', 'Up to ₹20 lakh', 'Proof of concept, prototype development and product trials'],
-									['Debt or convertible instruments', 'Up to ₹50 lakh', 'Market entry, commercialisation and scaling'],
-								].map(([route, limit, use]) => (
+								{inline[20].map(([route, limit, use]) => (
 									<tr key={route} className="border-t border-slate-200 dark:border-slate-700">
 										<td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{route}</td>
 										<td className="px-4 py-3">{limit}</td>
@@ -1264,27 +900,19 @@ export default function ResearchDevelopmentPage() {
 						</table>
 					</div>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						For AeroSun, a grant may be especially useful for a wind-turbine prototype, a hybrid energy controller, field trials or energy-monitoring software. The key is to define one problem, one customer segment, one prototype and measurable milestones.
-					</p>
+						{copy.text[87]}</p>
 				</div>
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="mb-6">
 					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300">
-						4. Funding stages in practice
-					</p>
+						{copy.text[88]}</p>
 					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-						Pre-seed, seed, angel and Series A
-					</h2>
+						{copy.text[89]}</h2>
 				</div>
 				<div className="grid gap-5 lg:grid-cols-2">
-					{[
-						['Pre-seed', 'Used when you need a prototype or first version of a product. Investors look for a clear customer problem, a technical plan and credible milestones.'],
-						['Seed', 'Used to move from a prototype to a validated product and repeatable business model with pilot programmes and initial customers.'],
-						['Angel', 'An individual investor provides capital in exchange for equity, often bringing mentoring and investor relationships as well.'],
-						['Series A', 'Raise after repeated traction and a business model that can grow with capital, usually across engineering, sales and operations.'],
-					].map(([stage, text]) => (
+					{inline[21].map(([stage, text]) => (
 						<div key={stage} className="rounded-[1.7rem] border border-amber-100 bg-white/80 p-5 dark:border-amber-900/50 dark:bg-slate-900/75">
 							<p className="text-md font-black uppercase tracking-[0.18em] text-amber-700 dark:text-amber-300">{stage}</p>
 							<p className="mt-3 text-md leading-7 text-slate-700 dark:text-slate-300">{text}</p>
@@ -1295,24 +923,19 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-rose-200 bg-linear-to-br from-rose-50 via-white to-pink-50 p-5 dark:border-rose-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-rose-700 dark:text-rose-300">5. Understand dilution before you raise</p>
-					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Dilution reduces founder ownership</h2>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-rose-700 dark:text-rose-300">{copy.text[90]}</p>
+					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">{copy.text[91]}</h2>
 					<div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900/75">
 						<table className="min-w-full border-collapse text-left text-md text-slate-700 dark:text-slate-300">
 							<thead className="bg-slate-50 dark:bg-slate-800/80">
 								<tr>
-									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Funding stage</th>
-									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">New investment</th>
-									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">Illustrative post-investment ownership</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[92]}</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[93]}</th>
+									<th className="px-4 py-3 text-[12px] font-black uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300">{copy.text[94]}</th>
 								</tr>
 							</thead>
 							<tbody>
-								{[
-									['Founders start the company', '₹1 lakh founder capital', 'Founders: 100%'],
-									['Angel round', '₹25 lakh', 'Founders: 80%; angel: 20%'],
-									['Seed round', '₹75 lakh', 'Founders: 60%; angel: 15%; seed investor: 25%'],
-									['Series A', '₹5 crore', 'Founders: 45%; angel: 11.25%; seed investor: 18.75%; Series A investor: 25%'],
-								].map(([stage, investment, ownership]) => (
+								{inline[22].map(([stage, investment, ownership]) => (
 									<tr key={stage} className="border-t border-slate-200 dark:border-slate-700">
 										<td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{stage}</td>
 										<td className="px-4 py-3">{investment}</td>
@@ -1323,22 +946,16 @@ export default function ResearchDevelopmentPage() {
 						</table>
 					</div>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						The important point is that raising money increases resources, but each equity round can reduce the founders' percentage ownership. A smaller percentage of a substantially more valuable company may be worth more than a larger percentage of a company that cannot grow.
-					</p>
+						{copy.text[95]}</p>
 				</div>
 			</section>
 
 			<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-indigo-200 bg-linear-to-br from-indigo-50 via-white to-purple-50 p-5 dark:border-indigo-900/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-indigo-700 dark:text-indigo-300">6. Which funding route should AeroSun follow?</p>
-					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">A staged plan is the safest strategy</h2>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-indigo-700 dark:text-indigo-300">{copy.text[96]}</p>
+					<h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900 dark:text-white">{copy.text[97]}</h2>
 					<div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-						{[
-							['Stage 1', 'Bootstrap the solar business and generate early revenue.'],
-							['Stage 2', 'Apply for grant or incubator support for a prototype or validation project.'],
-							['Stage 3', 'Raise angel or seed capital only after demand and product evidence are credible.'],
-							['Stage 4', 'Expand with larger financing only after the business model is proven.'],
-						].map(([stage, point]) => (
+						{inline[23].map(([stage, point]) => (
 							<div key={stage} className="rounded-[1.5rem] border border-indigo-100 bg-white/80 p-4 dark:border-indigo-900/50 dark:bg-slate-900/75">
 								<p className="text-md font-black uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">{stage}</p>
 								<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{point}</p>
@@ -1350,19 +967,13 @@ export default function ResearchDevelopmentPage() {
 
 			<section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
 				<div className="rounded-[2rem] border border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-cyan-50 p-5 shadow-[0_24px_60px_-40px_rgba(16,185,129,0.45)] dark:border-emerald-900/60 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
-					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">Final funding recommendation</p>
-					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">Do not ask how much you can raise before knowing what milestone you need to fund.</h2>
+					<p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700 dark:text-emerald-300">{copy.text[98]}</p>
+					<h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white">{copy.text[99]}</h2>
 					<p className="mt-4 text-base leading-8 text-slate-700 dark:text-slate-300">
-						For AeroSun, the immediate funding path should be: <span className="font-black text-slate-900 dark:text-white">bootstrap the solar business, validate customer demand, apply for incubator or grant support for technology proof, and only then raise angel or seed capital if the prototype and market case are credible.</span>
+						{copy.text[100]}<span className="font-black text-slate-900 dark:text-white">{copy.text[101]}</span>
 					</p>
 					<div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
-						{[
-							['₹1–3 lakh', 'Validate solar-service business and customer demand'],
-							['₹3–10 lakh', 'Develop a structured prototype or monitoring system'],
-							['₹10–50 lakh+', 'Larger prototype, pilot deployment or commercialisation'],
-							['Grant route', 'Use for eligible innovation and proof-of-concept work'],
-							['Equity route', 'Use only when evidence supports product scale'],
-						].map(([amount, note]) => (
+						{inline[24].map(([amount, note]) => (
 							<div key={amount} className="rounded-[1.4rem] border border-emerald-100 bg-white/80 p-4 dark:border-emerald-900/50 dark:bg-slate-900/75">
 								<p className="text-md font-black text-emerald-700 dark:text-emerald-300">{amount}</p>
 								<p className="mt-2 text-md leading-6 text-slate-700 dark:text-slate-300">{note}</p>

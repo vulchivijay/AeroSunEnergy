@@ -1,5 +1,7 @@
 'use client'
 
+'use client'
+
 import Link from 'next/link'
 import {
   ArrowRight,
@@ -10,6 +12,7 @@ import {
   Wind,
   Zap,
 } from 'lucide-react'
+import { useLocale } from '@/lib/LocaleContext'
 
 type ErrorAction =
   | { label: string; href: string }
@@ -54,6 +57,7 @@ function ErrorIllustration({
   illustration,
 }: Pick<ErrorExperienceProps, 'code' | 'illustration'>) {
   const isLandscape = illustration === 'landscape'
+  const { t } = useLocale()
 
   return (
     <div
@@ -64,7 +68,7 @@ function ErrorIllustration({
       <div className="absolute inset-5 rounded-[1.5rem] border border-white/[0.07]" />
       <div className="absolute left-8 top-8 flex items-center gap-2 rounded-full border border-white/10 bg-[#071b17]/70 px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-white/60 backdrop-blur">
         <span className={`h-1.5 w-1.5 rounded-full ${isLandscape ? 'bg-[#a3d977]' : 'bg-[#f5c76a]'}`} />
-        {isLandscape ? 'A new direction' : 'System status'}
+        {isLandscape ? t.systemUi.illustration.landscapeStatus : t.systemUi.illustration.systemStatus}
       </div>
 
       <span className="absolute left-1/2 top-[16%] -translate-x-1/2 select-none font-semibold leading-none tracking-[0.08em] text-white/[0.08] [font-size:clamp(7rem,22vw,13rem)]">
@@ -119,6 +123,8 @@ export function ErrorExperience({
   secondaryAction,
   helpfulLinks = [],
 }: ErrorExperienceProps) {
+  const { t } = useLocale()
+
   return (
     <main className="relative isolate overflow-hidden bg-[#071b17] text-white">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_78%_18%,rgba(163,217,119,0.11),transparent_32%),radial-gradient(ellipse_at_15%_85%,rgba(245,199,106,0.08),transparent_34%)]" />
@@ -146,8 +152,8 @@ export function ErrorExperience({
           </div>
 
           {helpfulLinks.length > 0 && (
-            <nav aria-label="Helpful destinations" className="mt-9 border-t border-white/10 pt-5">
-              <p className="text-md font-semibold uppercase tracking-[0.16em] text-white/45">Find your way</p>
+            <nav aria-label={t.systemUi.notFound.helpfulLinksAriaLabel} className="mt-9 border-t border-white/10 pt-5">
+              <p className="text-md font-semibold uppercase tracking-[0.16em] text-white/45">{t.systemUi.notFound.helpfulLinksHeading}</p>
               <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
                 {helpfulLinks.map((link) => (
                   <li key={link.href}>

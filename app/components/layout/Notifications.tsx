@@ -1,23 +1,14 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-
-const notificationText =
-  'AeroSun Energy Private Limited is committed to providing reliable and sustainable renewable energy solutions through solar, wind, and hybrid energy systems.'
-const notificationBoldText =
-  ' Our business approach focuses on sourcing quality equipment, supporting installation and implementation, '
-const notificationEndText = 
-  'and exploring innovative energy solutions tailored to customer needs. As we grow, we aim to expand our technical capabilities and develop advanced renewable energy solutions that contribute to a cleaner, more sustainable future.'
+import { useState } from 'react'
+import { useLocale } from '@/lib/LocaleContext'
 
 export default function Notifications() {
+  const { t } = useLocale()
+  const { text: notificationText, highlight: notificationBoldText, tail: notificationEndText } = t.notifications
   const [isVisible, setIsVisible] = useState(true)
-  const [hasMounted, setHasMounted] = useState(false)
 
-  useEffect(() => {
-    setHasMounted(true)
-  }, [])
-
-  if (!hasMounted || !isVisible) return null
+  if (!isVisible) return null
 
   return (
     <div data-print-hide className="relative min-h-18 overflow-hidden border-b border-emerald-200 bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.18),transparent_36%),linear-gradient(135deg,#f0fdf4_0%,#ecfeff_48%,#f8fafc_100%)] dark:border-slate-700 dark:bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.12),transparent_28%),linear-gradient(135deg,#020617_0%,#0f172a_46%,#111827_100%)] sm:h-15">
@@ -29,7 +20,7 @@ export default function Notifications() {
           <div className="relative flex h-full items-center justify-between gap-2">
             <div className="m-2 flex min-w-0 flex-1 items-center">
               <span className="hidden shrink-0 items-center rounded-full border border-emerald-300/40 bg-emerald-300/10 px-2 py-1 text-[12px] font-bold uppercase tracking-[0.22em] text-emerald-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] sm:text-[12px]">
-                Updates
+                {t.notifications.badge}
               </span>
 
               <p className="min-w-0 flex-1 text-center text-[12px] font-light leading-4 tracking-[0.12em] text-slate-100 lg:text-md lg:tracking-[0.16em]">
@@ -42,7 +33,7 @@ export default function Notifications() {
             <button
               type="button"
               onClick={() => setIsVisible(false)}
-              aria-label="Dismiss notification"
+              aria-label={t.notifications.dismiss}
               className="mx-2 inline-flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 shadow-sm transition hover:border-emerald-300/60 hover:bg-emerald-400/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden="true">

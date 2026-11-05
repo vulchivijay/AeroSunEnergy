@@ -6,28 +6,29 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
 import { submitMailtoForm } from '@/lib/submitMailto'
 import { useState } from 'react'
+import { useLocale } from '@/lib/LocaleContext'
 
-const invoiceSchema = z.object({
-  customerName: z.string().trim().min(2, 'Customer name is required.'),
+const createInvoiceSchema = (validation: typeof import('@/public/locales/en/index.json').businessForms.invoiceReceipt.validation) => z.object({
+  customerName: z.string().trim().min(2, validation.customerName),
   companyName: z.string().trim().optional().or(z.literal('')),
-  email: z.string().trim().email('Please enter a valid email address.'),
+  email: z.string().trim().email(validation.email),
   phone: z
     .string()
     .trim()
-    .min(10, 'Phone number must be at least 10 digits.')
-    .regex(/^[0-9+()\-\s]+$/, 'Phone number can contain only digits, spaces, +, (, ), and -.'),
-  invoiceNumber: z.string().trim().min(2, 'Please enter the invoice number.'),
-  projectName: z.string().trim().min(3, 'Please enter the project name.'),
-  invoiceDate: z.string().min(1, 'Please enter the invoice date.'),
-  amount: z.string().trim().min(1, 'Please enter the invoice amount.'),
-  paymentMode: z.string().min(1, 'Please select the payment mode.'),
-  receiptNote: z.string().trim().min(10, 'Please provide a brief receipt note or remarks.'),
+    .min(10, validation.phoneLength)
+    .regex(/^[0-9+()\-\s]+$/, validation.phoneFormat),
+  invoiceNumber: z.string().trim().min(2, validation.invoiceNumber),
+  projectName: z.string().trim().min(3, validation.projectName),
+  invoiceDate: z.string().min(1, validation.invoiceDate),
+  amount: z.string().trim().min(1, validation.amount),
+  paymentMode: z.string().min(1, validation.paymentMode),
+  receiptNote: z.string().trim().min(10, validation.receiptNote),
   paymentReceived: z.boolean().refine((value) => value === true, {
-    message: 'Please confirm that the payment has been received.',
+    message: validation.paymentReceived,
   }),
 })
 
-type InvoiceFormValues = z.infer<typeof invoiceSchema>
+type InvoiceFormValues = z.infer<ReturnType<typeof createInvoiceSchema>>
 
 const defaultValues: InvoiceFormValues = {
   customerName: '',
@@ -44,6 +45,9 @@ const defaultValues: InvoiceFormValues = {
 }
 
 export default function InvoiceReceiptPage() {
+  const { t } = useLocale()
+  const content = t.businessForms.invoiceReceipt
+  const { labels } = content
   const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {
     register,
@@ -51,30 +55,31 @@ export default function InvoiceReceiptPage() {
     reset,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<InvoiceFormValues>({
-    resolver: zodResolver(invoiceSchema),
+    resolver: zodResolver(createInvoiceSchema(content.validation)),
     defaultValues,
     mode: 'onBlur',
     reValidateMode: 'onChange',
   })
 
   const onSubmit = (data: InvoiceFormValues) => {
-    const subject = `Invoice & Receipt - ${data.invoiceNumber}`
+    const emailText = content.email
+    const subject = emailText.subject.replace('{invoiceNumber}', data.invoiceNumber)
     const body = [
-      'INVOICE AND RECEIPT TEMPLATE',
-      '===========================',
+      emailText.title,
+      emailText.separator,
       '',
-      `Customer Name: ${data.customerName}`,
-      `Company Name: ${data.companyName || 'Not provided'}`,
-      `Email: ${data.email}`,
-      `Phone: ${data.phone}`,
-      `Invoice Number: ${data.invoiceNumber}`,
-      `Project Name: ${data.projectName}`,
-      `Invoice Date: ${data.invoiceDate}`,
-      `Amount: ${data.amount}`,
-      `Payment Mode: ${data.paymentMode}`,
-      `Payment Received: ${data.paymentReceived ? 'Yes' : 'No'}`,
+      `${emailText.customerName}: ${data.customerName}`,
+      `${emailText.companyName}: ${data.companyName || emailText.notProvided}`,
+      `${emailText.email}: ${data.email}`,
+      `${emailText.phone}: ${data.phone}`,
+      `${emailText.invoiceNumber}: ${data.invoiceNumber}`,
+      `${emailText.projectName}: ${data.projectName}`,
+      `${emailText.invoiceDate}: ${data.invoiceDate}`,
+      `${emailText.amount}: ${data.amount}`,
+      `${emailText.paymentMode}: ${data.paymentMode}`,
+      `${emailText.paymentReceived}: ${data.paymentReceived ? emailText.yes : emailText.no}`,
       '',
-      'Receipt Notes:',
+      emailText.receiptNotes,
       data.receiptNote,
     ].join('\n')
 
@@ -87,7 +92,7 @@ export default function InvoiceReceiptPage() {
     reset(defaultValues)
     setSubmitFeedback({
       type: opened ? 'success' : 'error',
-      message: opened ? 'Your invoice has been prepared in your email app.' : 'We could not open your email app. Please try again or email us directly.',
+      message: opened ? content.feedback.success : content.feedback.error,
     })
   }
 
@@ -96,13 +101,13 @@ export default function InvoiceReceiptPage() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 text-center">
           <span className="inline-flex items-center rounded-full border border-orange-200 bg-white/80 px-4 py-2 text-[12px] font-bold uppercase tracking-[0.28em] text-orange-700 shadow-sm backdrop-blur-sm">
-            Invoice
+            {labels.badge}
           </span>
           <h1 className="mt-5 text-4xl font-black tracking-[0.06em] text-slate-900 sm:text-5xl">
-            Invoice and receipt template
+            {labels.title}
           </h1>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-slate-600">
-            Generate a brief invoice and receipt record for payment confirmation, project billing, and customer acknowledgment for renewable energy solutions.
+            {labels.description}
           </p>
         </div>
 
@@ -111,32 +116,30 @@ export default function InvoiceReceiptPage() {
             <CardContent className="p-5 sm:p-7 lg:p-8">
               <div className="space-y-6">
                 <section>
-                  <h2 className="text-xl font-bold text-slate-900">1. Invoice summary</h2>
+                  <h2 className="text-xl font-bold text-slate-900">{labels.sections.summary.title}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600">
-                    The invoice records the project value, purchase order reference, payment mode, and customer acknowledgment for services rendered or equipment supplied. It acts as a commercial record for part payment, final settlement, and receipt tracking.
+                    {labels.sections.summary.text}
                   </p>
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-bold text-slate-900">2. Payment breakdown</h2>
+                  <h2 className="text-xl font-bold text-slate-900">{labels.sections.paymentBreakdown.title}</h2>
                   <div className="mt-3 space-y-3 text-md leading-7 text-slate-600">
-                    <p><span className="font-semibold text-slate-800">Advance:</span> Initial deposit or milestone payment before project execution.</p>
-                    <p><span className="font-semibold text-slate-800">Progress billing:</span> Amount billed at agreed project phases or material dispatch milestones.</p>
-                    <p><span className="font-semibold text-slate-800">Final settlement:</span> Balance payment on commissioning, handover, and final documentation.</p>
+                    {labels.sections.paymentBreakdown.items.map((item) => <p key={item.label}><span className="font-semibold text-slate-800">{item.label}</span> {item.text}</p>)}
                   </div>
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-bold text-slate-900">3. Receipt and acknowledgement</h2>
+                  <h2 className="text-xl font-bold text-slate-900">{labels.sections.acknowledgement.title}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600">
-                    Receipt acknowledgement confirms the customer has received payment documentation and accepted the amount as final, subject to the project agreement, tax conditions, and supporting commercial terms recorded in the transaction.
+                    {labels.sections.acknowledgement.text}
                   </p>
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-bold text-slate-900">4. Support and dispute handling</h2>
+                  <h2 className="text-xl font-bold text-slate-900">{labels.sections.support.title}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600">
-                    Any discrepancy in billing, payment schedule, or receipt details should be reported promptly. Clarifications can be reviewed through the customer support process, the project agreement, and the commercial documentation associated with the project.
+                    {labels.sections.support.text}
                   </p>
                 </section>
               </div>
@@ -145,62 +148,62 @@ export default function InvoiceReceiptPage() {
 
           <Card className="overflow-hidden border border-orange-100 bg-linear-to-br from-slate-950 via-slate-900 to-orange-950 text-white shadow-[0_25px_80px_rgba(15,23,42,0.12)]">
             <CardContent className="p-5 sm:p-7">
-              <p className="text-[12px] font-semibold uppercase tracking-[0.32em] text-orange-200">Receipt form</p>
-              <h2 className="mt-3 text-2xl font-semibold">Create invoice record</h2>
+              <p className="text-[12px] font-semibold uppercase tracking-[0.32em] text-orange-200">{labels.formTitle}</p>
+              <h2 className="mt-3 text-2xl font-semibold">{labels.formHeading}</h2>
 
               <form onSubmit={handleSubmit(onSubmit)} noValidate className="mt-6 space-y-4">
                 <Field
-                  label="Customer name"
+                  label={labels.fields.customerName.label}
                   name="customerName"
-                  placeholder="Enter your full name"
+                  placeholder={labels.fields.customerName.placeholder}
                   register={register}
                   error={errors.customerName}
                 />
 
                 <Field
-                  label="Company name"
+                  label={labels.fields.companyName.label}
                   name="companyName"
-                  placeholder="Optional company / organization"
+                  placeholder={labels.fields.companyName.placeholder}
                   register={register}
                   error={errors.companyName}
                 />
 
                 <Field
-                  label="Email address"
+                  label={labels.fields.email.label}
                   name="email"
                   type="email"
-                  placeholder="you@example.com"
+                  placeholder={labels.fields.email.placeholder}
                   register={register}
                   error={errors.email}
                 />
 
                 <Field
-                  label="Phone number"
+                  label={labels.fields.phone.label}
                   name="phone"
                   type="tel"
-                  placeholder="+91 98765 43210"
+                  placeholder={labels.fields.phone.placeholder}
                   register={register}
                   error={errors.phone}
                 />
 
                 <Field
-                  label="Invoice number"
+                  label={labels.fields.invoiceNumber.label}
                   name="invoiceNumber"
-                  placeholder="INV-2026-001"
+                  placeholder={labels.fields.invoiceNumber.placeholder}
                   register={register}
                   error={errors.invoiceNumber}
                 />
 
                 <Field
-                  label="Project name"
+                  label={labels.fields.projectName.label}
                   name="projectName"
-                  placeholder="Solar rooftop project"
+                  placeholder={labels.fields.projectName.placeholder}
                   register={register}
                   error={errors.projectName}
                 />
 
                 <Field
-                  label="Invoice date"
+                  label={labels.fields.invoiceDate.label}
                   name="invoiceDate"
                   type="date"
                   register={register}
@@ -208,16 +211,16 @@ export default function InvoiceReceiptPage() {
                 />
 
                 <Field
-                  label="Invoice amount"
+                  label={labels.fields.amount.label}
                   name="amount"
-                  placeholder="Example: ₹4,50,000"
+                  placeholder={labels.fields.amount.placeholder}
                   register={register}
                   error={errors.amount}
                 />
 
                 <div>
                   <label htmlFor="paymentMode" className="mb-2 block text-md font-semibold text-slate-100">
-                    Payment mode
+                    {labels.fields.paymentMode.label}
                   </label>
                   <select
                     id="paymentMode"
@@ -226,26 +229,21 @@ export default function InvoiceReceiptPage() {
                     aria-describedby={errors.paymentMode ? 'paymentMode-error' : undefined}
                     className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
                   >
-                    <option value="" className="text-slate-900">Select payment mode</option>
-                    <option value="Bank transfer" className="text-slate-900">Bank transfer</option>
-                    <option value="UPI" className="text-slate-900">UPI</option>
-                    <option value="Cheque" className="text-slate-900">Cheque</option>
-                    <option value="Cash" className="text-slate-900">Cash</option>
-                    <option value="Demand draft" className="text-slate-900">Demand draft</option>
-                    <option value="Other" className="text-slate-900">Other</option>
+                    <option value="" className="text-slate-900">{labels.fields.paymentMode.placeholder}</option>
+                    {labels.paymentOptions.map((option) => <option key={option} value={option} className="text-slate-900">{option}</option>)}
                   </select>
                   {errors.paymentMode && <p id="paymentMode-error" className="mt-2 text-md text-rose-300">{errors.paymentMode.message}</p>}
                 </div>
 
                 <div>
                   <label htmlFor="receiptNote" className="mb-2 block text-md font-semibold text-slate-100">
-                    Receipt note / remarks
+                    {labels.fields.receiptNote.label}
                   </label>
                   <textarea
                     id="receiptNote"
                     {...register('receiptNote')}
                     rows={5}
-                    placeholder="Add booking notes, payment reference, GST detail, and any remarks relevant to the invoice."
+                    placeholder={labels.fields.receiptNote.placeholder}
                     aria-invalid={Boolean(errors.receiptNote)}
                     aria-describedby={errors.receiptNote ? 'receiptNote-error' : undefined}
                     className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
@@ -260,7 +258,7 @@ export default function InvoiceReceiptPage() {
                     className="mt-1 h-4 w-4 rounded border-slate-300 text-orange-500 focus:ring-orange-400"
                   />
                   <span>
-                    I confirm that the payment for this invoice has been received and acknowledged as part of the project record.
+                    {labels.fields.paymentReceived}
                   </span>
                 </label>
                 {errors.paymentReceived && <p className="text-md text-rose-300">{errors.paymentReceived.message}</p>}
@@ -270,7 +268,7 @@ export default function InvoiceReceiptPage() {
                   disabled={isSubmitting}
                   className="inline-flex w-full items-center justify-center rounded-full bg-white px-5 py-3 text-md font-semibold text-slate-900 transition-all duration-200 hover:-translate-y-0.5 hover:bg-orange-100 disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {isSubmitting ? 'Submitting...' : 'Submit invoice'}
+                  {isSubmitting ? labels.submitting : labels.submit}
                 </button>
 
                 {submitFeedback ? (
@@ -278,7 +276,7 @@ export default function InvoiceReceiptPage() {
                     {submitFeedback.message}
                   </p>
                 ) : isSubmitSuccessful && (
-                  <p className="text-md font-medium text-emerald-300">Your invoice has been prepared in your email app.</p>
+                  <p className="text-md font-medium text-emerald-300">{content.feedback.success}</p>
                 )}
               </form>
             </CardContent>

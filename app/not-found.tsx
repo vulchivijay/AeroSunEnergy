@@ -1,23 +1,22 @@
-import { ErrorExperience } from './components/system/ErrorExperience'
+'use client'
 
-const helpfulLinks = [
-  { label: 'Solar energy', href: '/solarenergy' },
-  { label: 'Wind energy', href: '/windenergy' },
-  { label: 'Hybrid energy', href: '/hybridenergy' },
-  { label: 'Contact us', href: '/contact' },
-]
+import { ErrorExperience } from './components/system/ErrorExperience'
+import { useLocale } from '@/lib/LocaleContext'
 
 export default function NotFound() {
+  const { t } = useLocale()
+  const content = t.systemUi.notFound
+
   return (
     <ErrorExperience
       code="404"
-      eyebrow="Page not found"
-      title="Looks Like You’ve Lost Your Way."
-      description="The page you’re looking for may have moved, been removed or is temporarily unavailable. Let’s help you find your way back."
+      eyebrow={content.eyebrow}
+      title={content.title}
+      description={content.description}
       illustration="landscape"
-      primaryAction={{ label: 'Back to Home', href: '/' }}
-      secondaryAction={{ label: 'Explore Our Solutions', href: '/services' }}
-      helpfulLinks={helpfulLinks}
+      primaryAction={{ label: content.backToHome, href: '/' }}
+      secondaryAction={{ label: content.exploreSolutions, href: '/services' }}
+      helpfulLinks={content.helpfulLinks}
     />
   )
 }

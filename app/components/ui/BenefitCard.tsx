@@ -1,3 +1,5 @@
+import { useLocale } from '@/lib/LocaleContext'
+
 type BenefitCardProps = {
   icon: string;
   title: string;
@@ -9,6 +11,8 @@ export default function BenefitCard({
   title,
   description,
 }: BenefitCardProps) {
+  const { t } = useLocale()
+  const ui = t.ui ?? {}
   return (
     <div className="border rounded-xl p-6 shadow-sm">
       <div className="text-4xl mb-4">{icon}</div>

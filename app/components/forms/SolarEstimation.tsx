@@ -8,27 +8,11 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
 import { useLocale } from '@/lib/LocaleContext'
 
-const solarCalculatorSchema = z
-  .object({
-    monthlyUnits: z
-      .number()
-      .min(1, 'Monthly electricity consumption is required')
-      .max(100000, 'Maximum allowed value is 100000 units'),
-    installationCostPerKw: z
-      .number()
-      .min(10000, 'Installation cost must be at least ₹10,000')
-      .max(100000, 'Installation cost cannot exceed ₹1,00,000'),
-    sellingPricePerKw: z
-      .number()
-      .min(10000, 'Selling price must be at least ₹10,000')
-      .max(200000, 'Selling price cannot exceed ₹2,00,000'),
-  })
-  .refine((data) => data.sellingPricePerKw >= data.installationCostPerKw, {
-    path: ['sellingPricePerKw'],
-    message: 'Selling price should be greater than or equal to installation cost',
-  })
-
-type FormData = z.infer<typeof solarCalculatorSchema>
+type FormData = {
+  monthlyUnits: number
+  installationCostPerKw: number
+  sellingPricePerKw: number
+}
 
 type Calculation = {
   recommendedKw: number
@@ -54,14 +38,27 @@ export function SolarEstimation() {
   const { t } = useLocale()
   const monthlyUnitsInputId = useId()
   const e = t.estimation
+  const validation = e.validation
+  const solarCalculatorSchema = z
+    .object({
+      monthlyUnits: z
+        .number()
+        .min(1, validation.monthlyRequired)
+        .max(100000, validation.monthlyMax),
+      installationCostPerKw: z
+        .number()
+        .min(10000, validation.installationMin)
+        .max(100000, validation.installationMax),
+      sellingPricePerKw: z
+        .number()
+        .min(10000, validation.sellingMin)
+        .max(200000, validation.sellingMax),
+    })
+    .refine((data) => data.sellingPricePerKw >= data.installationCostPerKw, {
+      path: ['sellingPricePerKw'],
+      message: validation.sellingGreaterThanCost,
+    })
   const isProduction = process.env.NODE_ENV === 'production'
-
-  const subsidyTiers = e.tiers.map((tier) => ({
-    ...tier,
-    label: tier.label,
-    subsidy: tier.subsidy,
-    note: tier.note,
-  }))
 
   const {
     register,
@@ -182,12 +179,12 @@ export function SolarEstimation() {
           </span>
 
           <h1 className="mt-6 text-4xl font-black leading-[0.95] tracking-[0.065em] text-slate-900 sm:text-5xl lg:text-[5rem]">
-            See how much you save with
-            <span className="mt-2 block text-emerald-600">solar</span>
+            {e.savingsTitle}
+            <span className="mt-2 block text-emerald-600">{e.savingsTitleAccent}</span>
           </h1>
 
           <p className="mt-5 text-lg leading-8 text-slate-600">
-            A 3 kW rooftop plant in Tirupati typically saves ₹30,000+ a year. Run the numbers for your home below.
+            {e.savingsDescription}
           </p>
         </div>
 
@@ -196,21 +193,21 @@ export function SolarEstimation() {
             <div className="space-y-6">
               <div>
                 <h2 className="text-[2rem] font-black tracking-tighter text-slate-900">
-                  Estimate Your Savings
+                  {e.estimateSavings}
                 </h2>
-                <p className="mt-2 text-base text-slate-600">Drag the slider to your average monthly electricity usage.</p>
+                <p className="mt-2 text-base text-slate-600">{e.adjustUsage}</p>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between gap-3">
                   <div>
-                    <label htmlFor={monthlyUnitsInputId} className="text-[12px] font-bold uppercase tracking-[0.26em] text-slate-500">Monthly Electricity Units</label>
+                    <label htmlFor={monthlyUnitsInputId} className="text-[12px] font-bold uppercase tracking-[0.26em] text-slate-500">{e.monthlyUnits}</label>
                     <div className="mt-2 flex items-center gap-2">
-                      <span className="text-[2.4rem] font-black tracking-[0.06em] text-emerald-600">{(values.monthlyUnits ?? defaultValues.monthlyUnits).toLocaleString('en-IN')} units</span>
+                      <span className="text-[2.4rem] font-black tracking-[0.06em] text-emerald-600">{(values.monthlyUnits ?? defaultValues.monthlyUnits).toLocaleString('en-IN')} {e.unitsSuffix}</span>
                     </div>
                   </div>
                   <div className="rounded-full bg-emerald-50 px-3 py-1 text-md font-semibold text-emerald-700">
-                    {calculation ? `${calculation.recommendedKw} kW system` : 'System sizing'}
+                    {calculation ? `${calculation.recommendedKw} ${e.recommendedSystemSuffix}` : e.systemSizing}
                   </div>
                 </div>
 
@@ -218,7 +215,7 @@ export function SolarEstimation() {
                   <input
                     id={monthlyUnitsInputId}
                     type="range"
-                    aria-label="Monthly electricity usage in units"
+                    aria-label={e.monthlyUnitsAriaLabel}
                     min={50}
                     max={4000}
                     step={10}
@@ -230,24 +227,24 @@ export function SolarEstimation() {
                     className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-emerald-600"
                   />
                   <div className="flex items-center justify-between text-md font-semibold text-slate-500">
-                    <span>50 units</span>
-                    <span>4,000 units</span>
+                    <span>{e.monthlyUnitsMinimum}</span>
+                    <span>{e.monthlyUnitsMaximum}</span>
                   </div>
                 </div>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-[20px] border border-slate-200 bg-slate-50/80 p-4 shadow-inner">
-                  <div className="text-md font-bold uppercase tracking-[0.2em] text-slate-500">Plant Size</div>
+                  <div className="text-md font-bold uppercase tracking-[0.2em] text-slate-500">{e.plantSize}</div>
                   <div className="mt-2 text-3xl font-black tracking-[0.06em] text-emerald-600">
-                    {calculation ? `${calculation.recommendedKw} kW` : '—'}
+                    {calculation ? `${calculation.recommendedKw} ${e.capacityUnit}` : '—'}
                   </div>
                 </div>
 
                 <div className="rounded-[20px] border border-slate-200 bg-slate-50/80 p-4 shadow-inner">
-                  <div className="text-md font-bold uppercase tracking-[0.2em] text-slate-500">Roof Required</div>
+                  <div className="text-md font-bold uppercase tracking-[0.2em] text-slate-500">{e.roofRequired}</div>
                   <div className="mt-2 text-3xl font-black tracking-[0.06em] text-emerald-600">
-                    {calculation ? `${Math.max(60, calculation.recommendedKw * 60)} sq ft` : '—'}
+                    {calculation ? `${Math.max(60, calculation.recommendedKw * 60)} ${e.squareFootUnit}` : '—'}
                   </div>
                 </div>
               </div>
@@ -258,7 +255,7 @@ export function SolarEstimation() {
                     name="monthlyUnits"
                     label={e.monthlyUsage}
                     helperText={e.monthlyUsageHelper}
-                    suffix="units"
+                    suffix={e.unitsSuffix}
                     error={errors.monthlyUnits?.message}
                     register={register('monthlyUnits', { valueAsNumber: true })}
                     accentClass="from-emerald-500 via-emerald-500 to-emerald-600"
@@ -269,7 +266,7 @@ export function SolarEstimation() {
                     name="sellingPricePerKw"
                     label={e.sellingPrice}
                     helperText={e.sellingPriceHelper}
-                    suffix="per kW"
+                    suffix={e.perKwSuffix}
                     error={errors.sellingPricePerKw?.message}
                     register={register('sellingPricePerKw', { valueAsNumber: true })}
                     accentClass="from-emerald-500 via-teal-500 to-cyan-600"
@@ -282,7 +279,7 @@ export function SolarEstimation() {
                         name="installationCostPerKw"
                         label={e.installationCost}
                         helperText={e.installationCostHelper}
-                        suffix="per kW"
+                        suffix={e.perKwSuffix}
                         error={errors.installationCostPerKw?.message}
                         register={register('installationCostPerKw', { valueAsNumber: true })}
                         accentClass="from-sky-500 via-blue-500 to-emerald-600"
@@ -306,12 +303,12 @@ export function SolarEstimation() {
           <div className="rounded-[30px] bg-linear-to-br from-[#0b3b2e] via-[#1f7a5a] to-[#48b69a] p-5 text-white shadow-[0_30px_80px_-35px_rgba(11,59,46,0.8)] sm:p-6 lg:p-8">
             <div className="space-y-5">
               <div>
-                <h2 className="text-[2rem] font-black tracking-tighter text-white">Your Estimated Returns</h2>
-                <p className="mt-2 text-base text-emerald-50/90">Based on Tirupati irradiance and ₹8.5/unit average tariff.</p>
+                <h2 className="text-[2rem] font-black tracking-tighter text-white">{e.returnsTitle}</h2>
+                <p className="mt-2 text-base text-emerald-50/90">{e.irradianceTariffAssumption}</p>
               </div>
 
               <div className="rounded-[22px] border border-white/15 bg-white/10 p-5 backdrop-blur-sm">
-                <div className="text-[12px] font-bold uppercase tracking-[0.3em] text-emerald-50">Annual Savings</div>
+                <div className="text-[12px] font-bold uppercase tracking-[0.3em] text-emerald-50">{e.annualSavings}</div>
                 <div className="mt-3 text-5xl font-black tracking-[0.08em] text-white">
                   {calculation ? currency(calculation.profit) : '—'}
                 </div>
@@ -319,27 +316,27 @@ export function SolarEstimation() {
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">Original Cost</div>
+                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">{e.originalCost}</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
                     {calculation ? currency(calculation.totalInstallationCost) : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">Subsidy</div>
+                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">{e.subsidy}</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
                     {calculation ? currency(calculation.subsidy) : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">Net Cost</div>
+                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">{e.netCost}</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
                     {calculation ? currency(calculation.customerPayable) : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">Payback</div>
+                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">{e.payback}</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
-                    {calculation ? `${(calculation.customerPayable / Math.max(1, calculation.profit)).toFixed(1)} yrs` : '—'}
+                    {calculation ? `${(calculation.customerPayable / Math.max(1, calculation.profit)).toFixed(1)} ${e.yearsShort}` : '—'}
                   </div>
                 </div>
               </div>
@@ -349,18 +346,18 @@ export function SolarEstimation() {
                   href="/contact"
                   className="flex-1 rounded-full bg-white px-5 py-4 text-center text-xl font-bold text-slate-900 shadow-[0_20px_30px_-18px_rgba(15,23,42,0.5)] transition hover:bg-emerald-50"
                 >
-                  Enquire Now <span aria-hidden="true">→</span>
+                  {e.enquireNow} <span aria-hidden="true">→</span>
                 </Link>
                 <Link
                   href="/"
                   className="flex-1 rounded-full bg-white px-5 py-4 text-center text-xl font-bold text-slate-900 shadow-[0_20px_30px_-18px_rgba(15,23,42,0.5)] transition hover:bg-emerald-50"
                 >
-                  Contact Us <span aria-hidden="true">→</span>
+                  {e.contactUs} <span aria-hidden="true">→</span>
                 </Link>
               </div>
 
               <p className="text-center text-md leading-6 text-emerald-50/90">
-                Estimates only. Actual figures depend on site conditions and DISCOM tariff.
+                {e.estimatesDisclaimer}
               </p>
             </div>
           </div>

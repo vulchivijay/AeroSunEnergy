@@ -15,7 +15,16 @@ type Metrics = {
 }
 
 export default function PerformanceMonitor() {
-  const [metrics, setMetrics] = useState<Metrics | null>(null)
+  const [metrics, setMetrics] = useState<Metrics | null>(() => {
+    if (typeof window === 'undefined') return null
+
+    try {
+      const stored = sessionStorage.getItem(REPORT_KEY)
+      return stored ? (JSON.parse(stored) as Metrics) : null
+    } catch {
+      return null
+    }
+  })
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -60,16 +69,6 @@ export default function PerformanceMonitor() {
           { metric: 'CLS', value: nextMetrics.cls.toFixed(4) },
         ])
       }
-    }
-
-    try {
-      const stored = sessionStorage.getItem(REPORT_KEY)
-      if (stored) {
-        const parsed = JSON.parse(stored) as Metrics
-        setMetrics(parsed)
-      }
-    } catch {
-      // ignored
     }
 
     if (document.readyState === 'complete') {

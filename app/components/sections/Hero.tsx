@@ -98,7 +98,7 @@ export default function Hero() {
               <div className="relative min-h-screen md:aspect-[4/5] overflow-hidden rounded-[1.5rem]">
                 <OptimizedImage
                   src="/images/home-aerosunenergy.png"
-                  alt="AeroSun Energy hybrid solar and wind installation"
+                  alt={h.imageAlt}
                   fill
                   priority
                   loading="eager"

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useLocale } from '@/lib/LocaleContext'
 
 const eligibilityChecks = [
   {
@@ -118,6 +119,18 @@ const commonRejectionReasons = [
 ]
 
 export default function KnowEligibilityPage() {
+  const { t } = useLocale()
+  const page = t.knowEligibilityPage
+  const eligibilityChecksData = page.eligibilityChecks
+  const subsidyBreakdownData = page.subsidyBreakdown
+  const processStepsData = page.processSteps
+  const importantNotesData = page.importantNotes
+  const schemeOverviewCardsData = page.schemeOverviewCards
+  const schemeEligibilityNotesData = page.schemeEligibilityNotes
+  const pmKusumComponentsData = page.pmKusumComponents
+  const commonRejectionReasonsData = page.commonRejectionReasons
+  const labels = page.labels
+
   return (
     <main className="min-h-screen bg-[#f2f6fb] text-slate-800">
       <header className="relative isolate overflow-hidden bg-[#101c32] text-white">
@@ -131,30 +144,27 @@ export default function KnowEligibilityPage() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-white/5 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-emerald-100">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-300 shadow-[0_0_12px_rgba(110,231,183,0.8)]" />
-              Eligibility · Schemes · Support
+              {labels.badge}
             </div>
             <h1 className="mt-6 text-4xl font-black tracking-[0.065em] text-white sm:text-6xl lg:text-7xl">
-              PM Surya Ghar.
-              <span className="mt-1 block text-emerald-300">Know your eligibility.</span>
+              {labels.heroTitle}
+              <span className="mt-1 block text-emerald-300">{labels.heroTitleAccent}</span>
             </h1>
             <p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-base sm:leading-8">
-              Understand the residential rooftop solar programme, the common eligibility requirements, and how to verify scheme support before planning a project.
+              {labels.heroDescription}
             </p>
           </div>
           <div className="flex w-fit items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.06] px-5 py-4 backdrop-blur">
             <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-300/10 text-xl text-emerald-200">₹</span>
             <span className="text-xs leading-5 text-slate-300">
-              Residential subsidy snapshot
-              <strong className="block text-md font-bold text-white">Up to ₹78,000*</strong>
+              {labels.subsidySnapshot}
+              <strong className="block text-md font-bold text-white">{labels.subsidyAmount}</strong>
             </span>
           </div>
         </div>
         <div className="border-t border-white/10">
           <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-emerald-100/60 sm:px-8 lg:px-10">
-            <span>Residential rooftop solar</span>
-            <span>Subsidy overview</span>
-            <span>PM-KUSUM</span>
-            <span>Application steps</span>
+            {labels.quickLinks.map((item) => <span key={item}>{item}</span>)}
           </div>
         </div>
       </header>
@@ -165,18 +175,14 @@ export default function KnowEligibilityPage() {
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-lg text-emerald-800">i</span>
               <div>
-                <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">Eligibility at a glance</p>
+                <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">{labels.glanceTitle}</p>
                 <p className="mt-2 text-md leading-7 text-slate-600 sm:text-base">
-                  The PM Surya Ghar: Muft Bijli Yojana is a Central Government rooftop solar programme designed to encourage residential households to adopt solar power and reduce their dependence on conventional electricity.
+                  {labels.glanceDescription}
                 </p>
               </div>
             </div>
             <div className="mt-6 grid gap-3 border-t border-slate-100 pt-5 sm:grid-cols-3">
-              {[
-                { label: 'Household', text: 'Residential consumer category' },
-                { label: 'Rooftop', text: 'Suitable space and grid connection' },
-                { label: 'Verify', text: 'Check current portal and DISCOM rules' },
-              ].map((item, index) => (
+              {labels.glanceItems.map((item, index) => (
                 <div key={item.label} className="flex gap-3 rounded-xl bg-[#f4f8fc] p-3">
                   <span className="font-mono text-xs font-bold text-emerald-700">0{index + 1}</span>
                   <span className="text-xs leading-5 text-slate-600">
@@ -186,9 +192,9 @@ export default function KnowEligibilityPage() {
                 </div>
               ))}
             </div>
-            <h2 className="mt-7 text-lg font-extrabold tracking-tight text-slate-950">Check your household eligibility</h2>
+            <h2 className="mt-7 text-lg font-extrabold tracking-tight text-slate-950">{labels.checkEligibility}</h2>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              {eligibilityChecks.map((item, index) => (
+              {eligibilityChecksData.map((item, index) => (
                 <div key={item.title} className="rounded-2xl border border-slate-200 bg-[#f8fafc] p-4">
                   <div className="flex items-start gap-3">
                     <span className="font-mono text-xs font-bold text-emerald-700">{String(index + 1).padStart(2, '0')}</span>
@@ -207,10 +213,10 @@ export default function KnowEligibilityPage() {
               <div className="flex items-start gap-4 p-5 sm:p-6">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-xs font-bold text-emerald-800">01</span>
                 <div className="min-w-0 flex-1">
-                  <h2 className="text-lg font-extrabold tracking-tight text-slate-950">Central subsidy support</h2>
-                  <p className="mt-3 text-md leading-7 text-slate-600 sm:text-base">Indicative central financial assistance for eligible residential systems; final amounts and applicability depend on current scheme rules and verification.</p>
+                  <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.subsidyTitle}</h2>
+                  <p className="mt-3 text-md leading-7 text-slate-600 sm:text-base">{labels.subsidyDescription}</p>
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                    {subsidyBreakdown.map((item) => (
+                    {subsidyBreakdownData.map((item) => (
                       <div key={item.title} className="rounded-xl bg-[#f4f8fc] p-4">
                         <p className="text-[12px] font-black uppercase tracking-[0.16em] text-emerald-800">{item.title}</p>
                         <p className="mt-2 text-xl font-black text-slate-950">{item.value}</p>
@@ -227,18 +233,18 @@ export default function KnowEligibilityPage() {
               <div className="flex items-start gap-4 p-5 sm:p-6">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-xs font-bold text-emerald-800">02</span>
                 <div className="min-w-0 flex-1">
-                  <h2 className="text-lg font-extrabold tracking-tight text-slate-950">Renewable-energy scheme categories</h2>
+                  <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.schemeCategoriesTitle}</h2>
                   <div className="mt-4 grid gap-3">
-                    {schemeOverviewCards.map((card) => (
+                    {schemeOverviewCardsData.map((card) => (
                       <div key={card.title} className="rounded-xl bg-[#f4f8fc] p-4">
                         <h3 className="text-md font-bold text-slate-900">{card.title}</h3>
                         <p className="mt-2 text-md leading-6 text-slate-600">{card.detail}</p>
                       </div>
                     ))}
                   </div>
-                  <h3 className="mt-6 text-md font-bold text-slate-900">PM-KUSUM components</h3>
+                  <h3 className="mt-6 text-md font-bold text-slate-900">{labels.pmKusumTitle}</h3>
                   <div className="mt-3 grid gap-3 sm:grid-cols-3">
-                    {pmKusumComponents.map((item, index) => (
+                    {pmKusumComponentsData.map((item, index) => (
                       <div key={item.title} className="rounded-xl border border-sky-100 bg-sky-50/70 p-4">
                         <span className="font-mono text-xs font-bold text-sky-800">0{index + 1}</span>
                         <h4 className="mt-2 text-md font-bold text-slate-900">{item.title}</h4>
@@ -255,9 +261,9 @@ export default function KnowEligibilityPage() {
               <div className="flex items-start gap-4 p-5 sm:p-6">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-xs font-bold text-emerald-800">03</span>
                 <div className="min-w-0 flex-1">
-                  <h2 className="text-lg font-extrabold tracking-tight text-slate-950">Typical application process</h2>
+                  <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.processTitle}</h2>
                   <ol className="mt-4 space-y-3">
-                    {processSteps.map((step, index) => (
+                    {processStepsData.map((step, index) => (
                       <li key={step} className="flex items-start gap-3 text-md leading-6 text-slate-600">
                         <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 font-mono text-[12px] font-bold text-emerald-800">{index + 1}</span>
                         <span>{step}</span>
@@ -273,18 +279,18 @@ export default function KnowEligibilityPage() {
               <div className="flex items-start gap-4 p-5 sm:p-6">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-xs font-bold text-emerald-800">04</span>
                 <div className="min-w-0 flex-1">
-                  <h2 className="text-lg font-extrabold tracking-tight text-slate-950">Verify before relying on support</h2>
+                  <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.verifyTitle}</h2>
                   <ul className="mt-4 space-y-3">
-                    {[...importantNotes, ...schemeEligibilityNotes].map((note) => (
+                    {[...importantNotesData, ...schemeEligibilityNotesData].map((note) => (
                       <li key={note} className="flex items-start gap-3 text-md leading-6 text-slate-600">
                         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
                         <span>{note}</span>
                       </li>
                     ))}
                   </ul>
-                  <h3 className="mt-6 text-md font-bold text-slate-900">Common reasons support may not apply</h3>
+                  <h3 className="mt-6 text-md font-bold text-slate-900">{labels.rejectionReasonsTitle}</h3>
                   <ul className="mt-3 space-y-2.5">
-                    {commonRejectionReasons.map((reason) => (
+                    {commonRejectionReasonsData.map((reason) => (
                       <li key={reason} className="flex items-start gap-3 text-md leading-6 text-slate-600">
                         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-rose-500" />
                         <span>{reason}</span>
@@ -298,25 +304,25 @@ export default function KnowEligibilityPage() {
           </div>
 
           <p className="mt-7 rounded-2xl border border-emerald-200/80 bg-white p-5 text-md leading-7 text-slate-600">
-            Need help checking your eligibility?{' '}
-            <Link href="/contact" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800">Contact AeroSun</Link>
-            {' '}or <Link href="/solarenergy" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800">view our solar solutions</Link>.
+            {labels.contactPrompt}{' '}
+            <Link href="/contact" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800">{labels.contactLink}</Link>
+            {' '}{labels.or}{' '}<Link href="/solarenergy" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800">{labels.solutionsLink}</Link>.
           </p>
         </article>
 
         <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
-          <nav aria-label="Eligibility guide sections" className="overflow-hidden rounded-2xl border border-emerald-200/80 bg-white shadow-sm">
+          <nav aria-label={labels.sectionsLabel} className="overflow-hidden rounded-2xl border border-emerald-200/80 bg-white shadow-sm">
             <div className="border-b border-slate-100 px-5 py-4">
-              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">Find a topic</p>
-              <p className="mt-1 text-md font-bold text-slate-900">Eligibility guide</p>
+              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">{labels.findTopic}</p>
+              <p className="mt-1 text-md font-bold text-slate-900">{labels.guideTitle}</p>
             </div>
             <ol className="space-y-1 p-3">
               {[
-                ['eligibility-requirements', 'Eligibility requirements'],
-                ['subsidy-overview', 'Subsidy overview'],
-                ['scheme-categories', 'Scheme categories'],
-                ['application-process', 'Application process'],
-                ['verification-and-exclusions', 'Verification & exclusions'],
+                ['eligibility-requirements', labels.checkEligibility],
+                ['subsidy-overview', labels.subsidyTitle],
+                ['scheme-categories', labels.schemeCategoriesTitle],
+                ['application-process', labels.processTitle],
+                ['verification-and-exclusions', labels.verifyTitle],
               ].map(([id, label], index) => (
                 <li key={id}>
                   <a href={`#${id}`} className="flex items-start gap-3 rounded-xl px-3 py-2.5 text-xs leading-5 text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-900">
@@ -329,9 +335,9 @@ export default function KnowEligibilityPage() {
           </nav>
 
           <section className="rounded-2xl bg-[#101c32] p-5 text-white">
-            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-300">Important</p>
-            <p className="mt-3 text-md leading-6 text-slate-200">Subsidy amounts, vendor requirements, and programme rules can change. Confirm the latest details through the official portal and your local DISCOM.</p>
-            <a href="https://pmsuryaghar.gov.in/" target="_blank" rel="noreferrer" className="mt-4 inline-flex text-md font-bold text-emerald-300 underline decoration-emerald-300/50 underline-offset-4 hover:text-white">Visit PM Surya Ghar portal</a>
+            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-300">{labels.important}</p>
+            <p className="mt-3 text-md leading-6 text-slate-200">{labels.importantDescription}</p>
+            <a href="https://pmsuryaghar.gov.in/" target="_blank" rel="noreferrer" className="mt-4 inline-flex text-md font-bold text-emerald-300 underline decoration-emerald-300/50 underline-offset-4 hover:text-white">{labels.portalLink}</a>
           </section>
         </aside>
       </div>

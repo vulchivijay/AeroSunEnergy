@@ -66,7 +66,7 @@ export default function HowItWorks() {
               <div className="relative min-h-96 md:aspect-[16/9] overflow-hidden">
                 <OptimizedImage
                   src="/images/nextgen-aerosunenergy.png"
-                  alt="Next-generation hybrid energy technology by AeroSun - advanced systems for modern renewable infrastructure"
+                  alt={h.nextGenImageAlt}
                   fill
                   sizes="(min-width: 1024px) 80rem, 92vw"
                   className="object-cover"

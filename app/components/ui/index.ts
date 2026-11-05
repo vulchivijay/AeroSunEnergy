@@ -4,8 +4,6 @@ export { default as HomeHeroSlider } from './HomeHeroSlider'
 export { default as PageLoader } from './PageLoader'
 export { ContentLoader } from './ContentLoader'
 export { default as OptimizedImage } from './OptimizedImage'
-export { default as SaveEarthBadge } from '../_SaveEarthBadge'
-export { default as SaveSanatanaBadge } from '../_SaveSanatanaBadge'
 export { default as SchemeBanner } from './SchemeBanner'
 export {
   SectionEyebrow,

@@ -11,8 +11,7 @@ import { ArrowRight, ArrowUpRight, Globe, Mail, MapPin, Phone, Send, Sun, Wind, 
 const socialLinks = [
 	{
 		href: 'https://x.com/AeroSunEnergy',
-		label: 'Follow AeroSun Energy on X (Twitter)',
-		title: 'Follow AeroSun Energy on X (opens in new tab)',
+		platform: 'twitter',
 		dataSocial: 'twitter',
 		icon: (
 			<svg
@@ -28,8 +27,7 @@ const socialLinks = [
 	},
 	{
 		href: 'https://www.linkedin.com/company/aerosun-energy/',
-		label: 'Connect with AeroSun Energy on LinkedIn',
-		title: 'Connect with AeroSun Energy on LinkedIn (opens in new tab)',
+		platform: 'linkedin',
 		dataSocial: 'linkedin',
 		icon: (
 			<svg
@@ -45,8 +43,7 @@ const socialLinks = [
 	},
 	{
 		href: 'https://www.facebook.com/AeroSunEnergyPrivateLimited/',
-		label: 'Like AeroSun Energy on Facebook',
-		title: 'Like AeroSun Energy on Facebook (opens in new tab)',
+		platform: 'facebook',
 		dataSocial: 'facebook',
 		icon: (
 			<svg
@@ -62,8 +59,7 @@ const socialLinks = [
 	},
 	{
 		href: 'https://www.instagram.com/aerosunenergyprivatelimited/',
-		label: 'Follow AeroSun Energy on Instagram',
-		title: 'Follow AeroSun Energy on Instagram (opens in new tab)',
+		platform: 'instagram',
 		dataSocial: 'instagram',
 		icon: (
 			<svg
@@ -77,7 +73,7 @@ const socialLinks = [
 			</svg>
 		),
 	},
-]
+] as const
 
 export default function Footer() {
 	const { t } = useLocale()
@@ -89,26 +85,17 @@ export default function Footer() {
 	const visibleNavLinks = navLinks
 	const [newsletterEmail, setNewsletterEmail] = useState('')
 	const [newsletterStatus, setNewsletterStatus] = useState('')
-	const companyAddress = 'Do.no 11-184, Gollavanigunta, T.N. Pallem, Tirupati, Andhra Pradesh, India - 517501.'
+	const companyAddress = footer.address
 	const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyAddress)}`
 	const websiteUrl = footer.website.startsWith('http') ? footer.website : `https://${footer.website}`
 	const isActive = (href: string) => href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`)
-	const solutions = [
-		{ label: 'Residential Solar Solutions', href: '/solarenergy' },
-		{ label: 'Commercial & Industrial Solar', href: '/solarenergy' },
-		{ label: 'Solar Agricultural Pumps', href: '/solarenergy' },
-		{ label: 'Wind Generator Systems', href: '/windenergy' },
-		{ label: 'Vertical Axis Wind Turbines', href: '/windenergy' },
-		{ label: 'Solar-Wind Hybrid Systems', href: '/hybridenergy' },
-		{ label: 'Battery Energy Storage', href: '/hybridenergy' },
-		{ label: 'Off-grid Power Solutions', href: '/hybridenergy' },
-	]
+	const solutions = footer.solutions
 
 	function handleNewsletterSubmit(event: FormEvent<HTMLFormElement>) {
 		event.preventDefault()
-		const subject = encodeURIComponent('Clean energy newsletter subscription request')
-		const body = encodeURIComponent(`Please add ${newsletterEmail} to the AeroSun Energy clean energy newsletter.`)
-		setNewsletterStatus('Your email app will open with your subscription request.')
+		const subject = encodeURIComponent(footer.newsletterSubject)
+		const body = encodeURIComponent(footer.newsletterBody.replace('{email}', newsletterEmail))
+		setNewsletterStatus(footer.newsletterStatus)
 		window.location.href = `mailto:${footer.email}?subject=${subject}&body=${body}`
 	}
 
@@ -128,24 +115,24 @@ export default function Footer() {
 						<div className="max-w-3xl">
 							<p className="flex items-center gap-3 text-sm font-bold uppercase tracking-[0.24em] text-[#A3D977]">
 								<span className="h-px w-8 bg-[#A3D977]" />
-								AeroSun Energy
+								{t.navbar.brandName}
 							</p>
 							<h2 className="mt-5 text-4xl leading-[1.05] tracking-[0.045em] text-white sm:text-5xl lg:text-6xl">
-								Let&apos;s Build a Cleaner Energy Future Together.
+								{footer.heroTitle}
 							</h2>
 							<p className="mt-5 max-w-2xl text-base leading-7 text-gray-300 sm:text-lg">
-								Power your next project with thoughtful solar, wind and hybrid energy solutions.
+								{footer.heroDescription}
 							</p>
 							<Link
 								href="/contact"
 								className="group mt-8 inline-flex min-h-12 items-center gap-3 rounded-full bg-[#A5D6A7] px-6 py-3 text-sm font-bold text-[#173B2C] transition hover:-translate-y-0.5 hover:bg-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7]"
 							>
-								Talk to Our Energy Experts
+								{footer.contactCta}
 								<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
 							</Link>
 						</div>
 
-						<div className="relative mx-auto flex h-44 w-44 items-center justify-center sm:h-52 sm:w-52" role="img" aria-label="Solar energy orbit illustration">
+						<div className="relative mx-auto flex h-44 w-44 items-center justify-center sm:h-52 sm:w-52" role="img" aria-label={footer.illustrationLabel}>
 							<div className="absolute inset-2 rounded-full border border-[#A3D977]/25" />
 							<div className="absolute inset-5 animate-[spin_28s_linear_infinite] rounded-full border border-dashed border-[#F5C76A]/45 motion-reduce:animate-none" />
 							<div className="absolute inset-0 animate-[spin_38s_linear_infinite_reverse] rounded-full border border-[#A3D977]/20 motion-reduce:animate-none" />
@@ -169,18 +156,18 @@ export default function Footer() {
 						<div className="inline-flex max-w-full rounded-xl bg-white p-2">
 							<Logo />
 						</div>
-						<h2 id="footer-brand" className="mt-6 text-sm font-bold tracking-wide text-white hidden">AeroSun Energy Private Limited</h2>
-						<p className="mt-1 text-sm font-medium text-[#F5C76A] hidden">&ldquo;Power from Sun, Wind, Water, Fire&rdquo;</p>
+						<h2 id="footer-brand" className="mt-6 text-sm font-bold tracking-wide text-white hidden">{t.navbar.brandName}</h2>
+						<p className="mt-1 text-sm font-medium text-[#F5C76A] hidden">&ldquo;{t.navbar.brandTagline}&rdquo;</p>
 						<p className="mt-4 max-w-sm text-sm leading-7 text-gray-300">{footer.brandDesc}</p>
 						<div className="mt-6 flex flex-wrap gap-2" role="group" aria-label={footer.followUs}>
-							{socialLinks.map(({ href, label, title, dataSocial, icon }) => (
+							{socialLinks.map(({ href, platform, dataSocial, icon }) => (
 								<Link
 									key={dataSocial}
 									href={href}
 									target="_blank"
 									rel="noopener noreferrer"
-									aria-label={`${label} (opens in a new tab)`}
-									title={title}
+									aria-label={footer.socialLinks[platform].label}
+									title={footer.socialLinks[platform].title}
 									itemProp="sameAs"
 									data-social={dataSocial}
 									className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] text-gray-300 transition duration-200 hover:-translate-y-1 hover:border-[#A5D6A7] hover:bg-[#A5D6A7] hover:text-[#173B2C] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7]"
@@ -198,7 +185,7 @@ export default function Footer() {
 								<li key={link.label}>
 									{(link as { disabled?: boolean }).disabled ? (
 										<span className="inline-flex min-h-10 items-center gap-2 text-sm text-gray-500">
-											{link.label}<span className="rounded-full bg-white/10 px-2 py-0.5 text-[9px] uppercase tracking-wider">Soon</span>
+											{link.label}<span className="rounded-full bg-white/10 px-2 py-0.5 text-[9px] uppercase tracking-wider">{t.navbar.comingSoon}</span>
 										</span>
 									) : (
 										<Link href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] ${isActive(link.href) ? 'font-semibold text-[#DCEDC8]' : 'text-gray-300 hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]'}`}>
@@ -215,7 +202,7 @@ export default function Footer() {
 								<li key={item.href}>
 									{(item as { disabled?: boolean }).disabled ? (
 										<span className="inline-flex min-h-9 items-center gap-2 text-sm text-gray-500">
-											{item.label}<span className="rounded-full bg-white/10 px-2 py-0.5 text-[9px] uppercase tracking-wider">Soon</span>
+											{item.label}<span className="rounded-full bg-white/10 px-2 py-0.5 text-[9px] uppercase tracking-wider">{t.navbar.comingSoon}</span>
 										</span>
 									) : (
 										<Link href={item.href} aria-current={isActive(item.href) ? 'page' : undefined} className={`group inline-flex min-h-11 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] ${isActive(item.href) ? 'font-semibold text-[#DCEDC8]' : 'text-gray-300 hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]'}`}>
@@ -229,7 +216,7 @@ export default function Footer() {
 					</nav>
 
 					<nav aria-labelledby="footer-solutions">
-						<h2 id="footer-solutions" className="mb-5 text-sm uppercase text-[#A3D977]">Our Solutions</h2>
+						<h2 id="footer-solutions" className="mb-5 text-sm uppercase text-[#A3D977]">{footer.ourSolutions}</h2>
 						<ul className="space-y-1">
 							{solutions.map((solution) => (
 								<li key={solution.label}>
@@ -243,12 +230,12 @@ export default function Footer() {
 					</nav>
 
 					<section aria-labelledby="footer-contact">
-						<h2 id="footer-contact" className="mb-5 text-sm uppercase text-[#A3D977]">Contact Information</h2>
+						<h2 id="footer-contact" className="mb-5 text-sm uppercase text-[#A3D977]">{footer.contactInformation}</h2>
 						<ul className="space-y-4 text-sm leading-6 text-gray-300">
 							<li className="flex items-start gap-3">
 								<MapPin className="mt-1 h-4 w-4 shrink-0 text-[#F5C76A]" aria-hidden="true" />
 								<a href={mapUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] focus-visible:text-[#DCEDC8]">
-									{companyAddress}<span className="sr-only"> (opens in a new tab)</span>
+									{companyAddress}<span className="sr-only"> {footer.opensInNewTab}</span>
 								</a>
 							</li>
 							<li className="flex items-center gap-3">
@@ -257,11 +244,11 @@ export default function Footer() {
 							</li>
 							<li className="flex items-center gap-3">
 								<Phone className="h-4 w-4 shrink-0 text-[#F5C76A]" aria-hidden="true" />
-								<a href="tel:+91-8099181075" className="transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] focus-visible:text-[#DCEDC8]">+91-8099181075</a>
+								<a href={`tel:${footer.phoneHref}`} className="transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] focus-visible:text-[#DCEDC8]">{footer.phone}</a>
 							</li>
 							<li className="flex items-center gap-3">
 								<Globe className="h-4 w-4 shrink-0 text-[#F5C76A]" aria-hidden="true" />
-								<a href={websiteUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] focus-visible:text-[#DCEDC8]">{footer.website}<span className="sr-only"> (opens in a new tab)</span></a>
+								<a href={websiteUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] focus-visible:text-[#DCEDC8]">{footer.website}<span className="sr-only"> {footer.opensInNewTab}</span></a>
 							</li>
 							<li>
 								<Link href="/save-earth" className="group inline-flex min-h-11 items-center gap-2 text-sm text-gray-300 transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] focus-visible:text-[#DCEDC8]">
@@ -269,7 +256,7 @@ export default function Footer() {
 								</Link>
 							</li>
 							<li>
-								<a href={footer.trust?.startsWith('http') ? footer.trust : `https://${footer.trust}`} target="_blank" rel="noopener noreferrer" className="group inline-flex min-h-11 items-center gap-2 text-sm text-gray-300 transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] focus-visible:text-[#DCEDC8]" aria-label={`Visit ${footer.trust} (opens in new tab)`}>
+								<a href={footer.trust?.startsWith('http') ? footer.trust : `https://${footer.trust}`} target="_blank" rel="noopener noreferrer" className="group inline-flex min-h-11 items-center gap-2 text-sm text-gray-300 transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] focus-visible:text-[#DCEDC8]" aria-label={footer.visitTrustLink.replace('{trust}', footer.trust)}>
 									<ArrowUpRight className="h-4 w-4 text-[#A5D6A7]" aria-hidden="true" />{footer.saveSanatanaDharma}
 								</a>
 							</li>
@@ -277,18 +264,18 @@ export default function Footer() {
 						<div className="mt-6 flex items-center gap-2 border-t border-white/10 pt-4 text-sm text-gray-400">
 							<Sun className="h-4 w-4 text-[#F5C76A]" aria-hidden="true" />
 							<Wind className="h-4 w-4 text-[#A3D977]" aria-hidden="true" />
-							<span>Solar · Wind · Hybrid</span>
+							<span>{footer.solarWindHybrid}</span>
 						</div>
 					</section>
 				</div>
 
 				<section aria-labelledby="footer-newsletter" className="mt-14 grid gap-6 rounded-2xl border border-white/10 bg-white/[0.04] p-6 sm:p-8 lg:grid-cols-[1fr_1fr] lg:items-center">
 					<div>
-						<h2 id="footer-newsletter" className="text-2xl leading-[1.05] tracking-[0.045em] text-white sm:text-3xl">Stay Powered by Clean Energy</h2>
-						<p className="mt-2 max-w-xl text-sm leading-6 text-gray-300">Get renewable energy insights, technology updates and sustainable energy solutions.</p>
+						<h2 id="footer-newsletter" className="text-2xl leading-[1.05] tracking-[0.045em] text-white sm:text-3xl">{footer.stayPowered}</h2>
+						<p className="mt-2 max-w-xl text-sm leading-6 text-gray-300">{footer.newsletterDescription}</p>
 					</div>
 					<form onSubmit={handleNewsletterSubmit} className="w-full">
-						<label htmlFor="footer-newsletter-email" className="sr-only">Email address for clean energy updates</label>
+						<label htmlFor="footer-newsletter-email" className="sr-only">{footer.newsletterEmailLabel}</label>
 						<div className="flex flex-col gap-3 sm:flex-row">
 							<input
 								id="footer-newsletter-email"
@@ -302,14 +289,14 @@ export default function Footer() {
 									setNewsletterEmail(event.target.value)
 									setNewsletterStatus('')
 								}}
-								placeholder="you@example.com"
+								placeholder={footer.newsletterPlaceholder}
 								className="min-h-12 min-w-0 flex-1 rounded-full border border-white/15 bg-[#071B17] px-5 text-base text-white outline-none transition placeholder:text-gray-400 focus:border-[#A5D6A7] focus:ring-2 focus:ring-[#A5D6A7]/25"
 							/>
 							<button type="submit" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#A5D6A7] px-6 text-sm font-bold text-[#173B2C] transition hover:bg-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7]">
-								Subscribe <Send className="h-4 w-4" aria-hidden="true" />
+								{footer.subscribe} <Send className="h-4 w-4" aria-hidden="true" />
 							</button>
 						</div>
-						<p className="mt-3 text-sm leading-5 text-gray-400">No newsletter service is connected yet. Subscribe opens an email request to our customer-care address; it does not add you automatically.</p>
+						<p className="mt-3 text-sm leading-5 text-gray-400">{footer.newsletterHint}</p>
 						<p role="status" aria-live="polite" className="mt-1 min-h-5 text-sm text-[#DCEDC8]">{newsletterStatus}</p>
 					</form>
 				</section>
@@ -317,17 +304,17 @@ export default function Footer() {
 
 			<div className="border-t border-white/10 bg-black/20">
 				<p className="mx-auto flex max-w-[90rem] justify-center text-sm font-medium text-gray-400 gap-1 border-t border-white/10 px-5 py-5 sm:px-8 lg:flex-row lg:px-10">
-					🚧 This website is currently under development. Some content and images may be incomplete, and page titles or locations may change as updates are made. Images generated with <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-[#A5D6A7] transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7]">ChatGPT.</Link>
+					🚧 {footer.developmentNotice} <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" aria-label={footer.attributionLinkLabel} className="text-[#A5D6A7] transition-colors hover:text-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7]">{footer.attributionLinkText}</Link>
 				</p>
 				<div className="mx-auto flex max-w-[90rem] flex-col items-center justify-between gap-3 border-t border-white/10 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
 					<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[12px] uppercase tracking-[0.14em] text-gray-400">
-						<Link href="/privacy-policy" aria-current={isActive('/privacy-policy') ? 'page' : undefined} className={`transition-colors hover:text-[#DCEDC8] ${isActive('/privacy-policy') ? 'font-semibold text-[#DCEDC8]' : ''}`}>Privacy Policy</Link>
-						<Link href="/terms-conditions" aria-current={isActive('/terms-conditions') ? 'page' : undefined} className={`transition-colors hover:text-[#DCEDC8] ${isActive('/terms-conditions') ? 'font-semibold text-[#DCEDC8]' : ''}`}>Terms & Conditions</Link>
-						<Link href="/warranty-policy" aria-current={isActive('/warranty-policy') ? 'page' : undefined} className={`transition-colors hover:text-[#DCEDC8] ${isActive('/warranty-policy') ? 'font-semibold text-[#DCEDC8]' : ''}`}>Warranty & Service Policy</Link>
+						{footer.legalLinks.map((link: { href: string; label: string }) => (
+							<Link key={link.href} href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`transition-colors hover:text-[#DCEDC8] ${isActive(link.href) ? 'font-semibold text-[#DCEDC8]' : ''}`}>{link.label}</Link>
+						))}
 					</div>
-					<p className="text-[12px] text-gray-400">Built with Love and fassion by Vulchi Vijaya Kumar Raju (Kshatriya's).</p>
+					<p className="text-[12px] text-gray-400">{footer.attribution}</p>
 					<p className="text-[12px] text-gray-400">
-						© {new Date().getFullYear()} AeroSun Energy Private Limited. All Rights Reserved.
+						{footer.copyright.replace('{year}', String(new Date().getFullYear()))}
 					</p>
 				</div>
 				<div className="border-t border-white/10 px-5 py-4 sm:px-8 lg:px-10">

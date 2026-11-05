@@ -1,5 +1,8 @@
-import { readFileSync } from 'node:fs'
-import { join } from 'node:path'
+
+
+'use client'
+
+import { useLocale } from '@/lib/LocaleContext'
 
 type HeadingBlock = {
   type: 'heading'
@@ -23,10 +26,7 @@ type ContentSection = {
   blocks: ContentBlock[]
 }
 
-const source = readFileSync(
-  join(process.cwd(), 'app', 'research-development', 'content.txt'),
-  'utf8',
-)
+
 
 function slugify(text: string) {
   return text
@@ -245,6 +245,8 @@ function InlineContent({ text }: { text: string }) {
 }
 
 function MathExpression({ expression }: { expression: string }) {
+  const { t } = useLocale()
+  const accessible = t.researchDevelopmentPage.wrapper.accessible
   const normalized = expression.replace(/\s+/g, '')
 
   if (normalized === 'P_{\\text{wind}}') {
@@ -256,7 +258,7 @@ function MathExpression({ expression }: { expression: string }) {
   }
 
   if (normalized === '\\rho') {
-    return <span aria-label="rho" className="font-serif text-lg italic">ρ</span>
+    return <span aria-label={accessible.rho} className="font-serif text-lg italic">ρ</span>
   }
 
   return (
@@ -267,12 +269,15 @@ function MathExpression({ expression }: { expression: string }) {
 }
 
 function DisplayMath({ expression }: { expression: string }) {
+  const { t } = useLocale()
+  const accessible = t.researchDevelopmentPage.wrapper.accessible
+
   if (expression.replace(/\s+/g, '') === 'P_{\\text{wind}}=\\frac{1}{2}\\rhoAv^3') {
     return (
       <div className="my-7 overflow-x-auto rounded-2xl border border-emerald-900/15 bg-emerald-50/80 px-5 py-6 text-center dark:border-emerald-300/15 dark:bg-emerald-950/30">
         <div
           role="math"
-          aria-label="Wind power equals one half times air density times swept area times wind speed cubed"
+          aria-label={accessible.windPowerFormula}
           className="flex items-center justify-center gap-2 font-serif text-2xl text-emerald-950 dark:text-emerald-100 sm:gap-3 sm:text-3xl"
         >
           <span className="italic">P<sub className="text-xs not-italic sm:text-sm">wind</sub></span>
@@ -378,14 +383,19 @@ function createSections(blocks: ContentBlock[]): ContentSection[] {
   return sections
 }
 
-const blocks = parseMarkdown(source)
-const sourceTitle = blocks.find((block): block is HeadingBlock => block.type === 'heading' && block.level === 1)
-const sourceSubtitle = blocks.find((block): block is HeadingBlock => block.type === 'heading' && block.level === 2)
-const heroHeadingIds = new Set([sourceTitle?.id, sourceSubtitle?.id])
-const sections = createSections(blocks.filter((block) => block.type !== 'heading' || !heroHeadingIds.has(block.id)))
-const navigationSections = sections.filter((section): section is ContentSection & { heading: HeadingBlock } => Boolean(section.heading))
+
 
 export default function ResearchDevelopmentPage() {
+  const { t } = useLocale()
+  const copy = t.researchDevelopmentPage.wrapper
+  const inline = copy.inline
+  const blocks = parseMarkdown(copy.content)
+  const sourceTitle = blocks.find((block): block is HeadingBlock => block.type === 'heading' && block.level === 1)
+  const sourceSubtitle = blocks.find((block): block is HeadingBlock => block.type === 'heading' && block.level === 2)
+  const heroHeadingIds = new Set([sourceTitle?.id, sourceSubtitle?.id])
+  const sections = createSections(blocks.filter((block) => block.type !== 'heading' || !heroHeadingIds.has(block.id)))
+  const navigationSections = sections.filter((section): section is ContentSection & { heading: HeadingBlock } => Boolean(section.heading))
+
   return (
     <main className="overflow-hidden bg-[#f5f6ef] text-slate-900 dark:bg-[#101b17] dark:text-slate-100">
       <section className="relative isolate overflow-hidden bg-[#14372f] text-white">
@@ -400,29 +410,27 @@ export default function ResearchDevelopmentPage() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-white/[0.06] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.24em] text-emerald-100">
               <span className="h-1.5 w-1.5 rounded-full bg-lime-300" />
-              Research & development · Solar · Wind · Hybrid
-            </div>
-            <p className="mt-8 text-sm font-bold uppercase tracking-[0.3em] text-emerald-100/65">{sourceTitle?.text ?? 'AeroSun Energy'}</p>
+              {copy.text[0]}</div>
+            <p className="mt-8 text-sm font-bold uppercase tracking-[0.3em] text-emerald-100/65">{sourceTitle?.text ?? copy.text[1]}</p>
             <h1 className="mt-4 max-w-3xl text-4xl font-black leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl">
-              {sourceSubtitle?.text ?? 'Renewable energy research and development'}
+              {sourceSubtitle?.text ?? copy.text[2]}
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-emerald-50/85 sm:text-xl">
-              Practical concepts for solar, wind and hybrid energy—organized around real customer needs, measurable output and responsible validation.
-            </p>
+              {copy.text[3]}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#research-content" className="rounded-full bg-lime-300 px-5 py-3 text-sm font-bold text-emerald-950 transition hover:bg-lime-200">Explore the research</a>
-              {navigationSections[0]?.heading && <a href={`#${navigationSections[0].heading.id}`} className="rounded-full border border-white/20 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/10">Start with the first section</a>}
+              <a href="#research-content" className="rounded-full bg-lime-300 px-5 py-3 text-sm font-bold text-emerald-950 transition hover:bg-lime-200">{copy.text[4]}</a>
+              {navigationSections[0]?.heading && <a href={`#${navigationSections[0].heading.id}`} className="rounded-full border border-white/20 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/10">{copy.text[5]}</a>}
             </div>
           </div>
 
           <aside className="relative mx-auto w-full max-w-md lg:ml-auto">
             <div className="absolute -inset-5 rounded-[2.5rem] bg-emerald-400/15 blur-3xl" />
             <div className="relative rounded-[2rem] border border-white/15 bg-white/[0.07] p-6 shadow-2xl shadow-black/30 backdrop-blur-sm sm:p-8">
-              <p className="text-xs font-bold uppercase tracking-[0.24em] text-lime-200">A measured path to innovation</p>
-              <p className="mt-4 text-2xl font-black leading-tight text-white sm:text-3xl">Design for usefulness. Validate with evidence.</p>
-              <p className="mt-4 text-base leading-7 text-emerald-50/80">A development concept is not a tested product. Every prototype should earn the next step through reliable measurements, safe operation and customer value.</p>
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-lime-200">{copy.text[6]}</p>
+              <p className="mt-4 text-2xl font-black leading-tight text-white sm:text-3xl">{copy.text[7]}</p>
+              <p className="mt-4 text-base leading-7 text-emerald-50/80">{copy.text[8]}</p>
               <div className="mt-7 grid grid-cols-3 gap-2 border-t border-white/10 pt-5">
-                {['Solar', 'Wind', 'Hybrid'].map((item, index) => (
+                {inline[0].map((item, index) => (
                   <div key={item} className="rounded-xl border border-white/10 bg-white/[0.04] p-3">
                     <span className="font-mono text-xs text-lime-200/70">0{index + 1}</span>
                     <p className="mt-1 text-sm font-bold text-white">{item}</p>
@@ -435,11 +443,11 @@ export default function ResearchDevelopmentPage() {
       </section>
 
       {navigationSections.length > 0 && (
-        <nav aria-label="Research and development sections" className="border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900/60">
+        <nav aria-label={copy.text[9]} className="border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900/60">
           <div className="mx-auto max-w-7xl px-5 py-8 sm:px-8 lg:px-10">
             <details>
               <summary className="cursor-pointer list-none text-xs font-black uppercase tracking-[0.24em] text-emerald-800 marker:hidden dark:text-emerald-300">
-                Browse the full guide <span className="ml-2 font-medium normal-case tracking-normal text-slate-500">({navigationSections.length} sections)</span>
+                {copy.text[10]}<span className="ml-2 font-medium normal-case tracking-normal text-slate-500">{copy.text[11]}{navigationSections.length} {copy.text[12]}</span>
               </summary>
               <ol className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                 {navigationSections.map(({ heading }, index) => (
@@ -486,8 +494,8 @@ export default function ResearchDevelopmentPage() {
 
       <section className="bg-[#1d3d43] text-white">
         <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16 lg:px-10">
-          <p className="text-xs font-black uppercase tracking-[0.24em] text-lime-300">AeroSun Energy</p>
-          <p className="mt-3 max-w-3xl text-2xl font-black leading-tight sm:text-3xl">From promising ideas to practical, proven renewable-energy solutions.</p>
+          <p className="text-xs font-black uppercase tracking-[0.24em] text-lime-300">{copy.text[1]}</p>
+          <p className="mt-3 max-w-3xl text-2xl font-black leading-tight sm:text-3xl">{copy.text[13]}</p>
         </div>
       </section>
     </main>
