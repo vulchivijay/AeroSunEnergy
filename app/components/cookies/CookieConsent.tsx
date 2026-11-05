@@ -7,27 +7,34 @@ const COOKIE_KEY = 'aerosun_cookie_consent'
 const CONSENT_EVENT = 'aerosun-cookie-consent'
 
 type ConsentChoice = 'accepted' | 'declined'
+type ConsentSnapshot = 'loading' | 'unanswered' | ConsentChoice
 
 let sessionConsent: ConsentChoice | null = null
 
-export function getCookieConsent(): ConsentChoice | null {
-  if (typeof window === 'undefined') return null
+function getCookieConsent(): ConsentSnapshot {
+  if (typeof window === 'undefined') return 'loading'
 
   try {
-    const value = window.localStorage.getItem(COOKIE_KEY)
-    return value === 'accepted' || value === 'declined' ? value : sessionConsent
+    const storedChoice = window.localStorage.getItem(COOKIE_KEY)
+    if (storedChoice === 'accepted' || storedChoice === 'declined') return storedChoice
+    return sessionConsent ?? 'unanswered'
   } catch (error) {
     console.error('Unable to read cookie consent preference.', error)
-    return sessionConsent
+    return sessionConsent ?? 'unanswered'
   }
 }
 
 function subscribeToCookieConsent(callback: () => void) {
-  window.addEventListener('storage', callback)
+  const handleStorageChange = (event: StorageEvent) => {
+    if (event.key === COOKIE_KEY || event.key === null) sessionConsent = null
+    callback()
+  }
+
+  window.addEventListener('storage', handleStorageChange)
   window.addEventListener(CONSENT_EVENT, callback)
 
   return () => {
-    window.removeEventListener('storage', callback)
+    window.removeEventListener('storage', handleStorageChange)
     window.removeEventListener(CONSENT_EVENT, callback)
   }
 }
@@ -35,7 +42,11 @@ function subscribeToCookieConsent(callback: () => void) {
 export default function CookieConsent() {
   const { t } = useLocale()
   const labels = t.cookieConsent
-  const consent = useSyncExternalStore(subscribeToCookieConsent, getCookieConsent, () => null)
+  const consent = useSyncExternalStore(
+    subscribeToCookieConsent,
+    getCookieConsent,
+    () => 'loading',
+  )
 
   const saveConsent = (choice: ConsentChoice) => {
     sessionConsent = choice
@@ -54,7 +65,7 @@ export default function CookieConsent() {
     }
   }
 
-  if (consent !== null) return null
+  if (consent !== 'unanswered') return null
 
   return (
     <div data-print-hide className="fixed inset-x-0 bottom-0 z-[80] flex justify-center p-4 sm:p-6">

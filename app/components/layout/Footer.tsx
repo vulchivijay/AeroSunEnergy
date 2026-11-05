@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState, type FormEvent } from 'react'
+import { useEffect, useState, type FormEvent } from 'react'
 import Logo from '../brand/Logo'
 import CompanyAge from './CompanyAge'
 import { useLocale } from '@/lib/LocaleContext'
@@ -75,6 +75,8 @@ const socialLinks = [
 	},
 ] as const
 
+const INITIAL_COPYRIGHT_YEAR = 2026
+
 export default function Footer() {
 	const { t } = useLocale()
 	const pathname = usePathname() || '/'
@@ -85,11 +87,17 @@ export default function Footer() {
 	const visibleNavLinks = navLinks
 	const [newsletterEmail, setNewsletterEmail] = useState('')
 	const [newsletterStatus, setNewsletterStatus] = useState('')
+	const [currentYear, setCurrentYear] = useState(INITIAL_COPYRIGHT_YEAR)
 	const companyAddress = footer.address
 	const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyAddress)}`
 	const websiteUrl = footer.website.startsWith('http') ? footer.website : `https://${footer.website}`
 	const isActive = (href: string) => href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`)
 	const solutions = footer.solutions
+
+	useEffect(() => {
+		const updateCurrentYear = () => setCurrentYear(new Date().getFullYear())
+		updateCurrentYear()
+	}, [])
 
 	function handleNewsletterSubmit(event: FormEvent<HTMLFormElement>) {
 		event.preventDefault()
@@ -314,7 +322,7 @@ export default function Footer() {
 					</div>
 					<p className="text-[12px] text-gray-400">{footer.attribution}</p>
 					<p className="text-[12px] text-gray-400">
-						{footer.copyright.replace('{year}', String(new Date().getFullYear()))}
+						{footer.copyright.replace('{year}', String(currentYear))}
 					</p>
 				</div>
 				<div className="border-t border-white/10 px-5 py-4 sm:px-8 lg:px-10">
