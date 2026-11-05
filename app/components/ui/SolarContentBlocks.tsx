@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { useLocale } from '@/lib/LocaleContext'
 
 export type AccentTone = 'emerald' | 'amber' | 'sky' | 'violet'
 
@@ -319,13 +320,16 @@ export function InfoPanel({
 }
 
 export function CapacityTable() {
+  const { t } = useLocale()
+  const ui = t.ui ?? {}
+
   return (
     <div className="overflow-x-auto rounded-[1.9rem] border border-emerald-200 bg-white shadow-[0_20px_34px_-24px_rgba(16,185,129,0.3)] [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400">
       <div className="min-w-[620px]">
         <div className="grid border-b border-emerald-100 bg-[linear-gradient(90deg,#ecfdf5_0%,#ffffff_50%,#eff6ff_100%)] text-[12px] font-bold uppercase tracking-[0.2em] text-slate-600 md:grid-cols-3">
-          <div className="px-4 py-3">Average monthly usage</div>
-          <div className="px-4 py-3">Suitable rooftop capacity</div>
-          <div className="px-4 py-3">Best fit</div>
+          <div className="px-4 py-3">{ui.averageMonthlyUsage ?? 'Average monthly usage'}</div>
+          <div className="px-4 py-3">{ui.suitableRooftopCapacity ?? 'Suitable rooftop capacity'}</div>
+          <div className="px-4 py-3">{ui.bestFit ?? 'Best fit'}</div>
         </div>
         {solarCapacityRows.map((row) => (
           <div key={row.usage} className="grid gap-3 px-4 py-4 text-base text-slate-700 md:grid-cols-3 md:gap-0">

@@ -1,3 +1,6 @@
+'use client'
+
+import { useLocale } from '@/lib/LocaleContext'
 import {
   OptimizedImage,
   Slider,
@@ -367,6 +370,29 @@ const serviceSections = [
 ]
 
 export default function WindEnergyPage() {
+  const { t } = useLocale()
+  const windPage = t.windPage ?? {
+    hero: {
+      eyebrow: 'AeroSun Energy / Wind Systems',
+      title: 'Wind energy,',
+      titleAccent: 'built around your site.',
+      subtitle: 'Wind energy converts the kinetic energy of moving air into electricity or mechanical power. Explore distributed generation, commercial turbines and hybrid renewable systems.',
+      resourceFirst: 'Resource first',
+      siteDesigned: 'Site designed',
+      variants: [
+        { label: 'HAWT', detail: 'Horizontal axis' },
+        { label: 'VAWT', detail: 'Vertical axis' },
+        { label: 'HYBRID', detail: 'Solar + wind' },
+      ],
+    },
+    overview: { eyebrow: 'Overview', title: 'Types of wind energy systems' },
+    classification: { eyebrow: 'Classification', title: 'Design and installation choices', badge: 'Site-sensitive' },
+    electrical: { eyebrow: 'Electrical configuration', title: 'Matching the system to the application' },
+    benefits: { title: 'Key benefits', feasibility: 'Feasibility checks' },
+    capacity: { eyebrow: 'Capacity ranges', title: 'Power capacity categories' },
+    strategy: { eyebrow: 'Strategic recommendation', title: 'Which wind systems should AeroSun Energy focus on?' },
+  }
+
   return (
     <main className="bg-[#f0f8fc] pt-6 sm:pt-8 text-slate-900 [&>section]:rounded-2xl [&>section]:border-l-4 [&>section]:border-l-sky-500">
       <header className="relative mx-auto mb-6 max-w-7xl overflow-hidden rounded-[2.5rem] border border-slate-700 bg-[#0b1c2c] px-5 py-7 text-white shadow-[0_30px_75px_-42px_rgba(7,28,47,0.75)] sm:mb-8 sm:px-8 sm:py-9 lg:px-10 lg:py-11">
@@ -376,32 +402,28 @@ export default function WindEnergyPage() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-sky-200/25 bg-sky-300/10 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-sky-200">
               <span className="h-2 w-2 rounded-full bg-sky-300" aria-hidden="true" />
-              AeroSun Energy <span aria-hidden="true">/</span> Wind Systems
+              {windPage.hero.eyebrow}
             </div>
             <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.02] tracking-[0.06em] text-white sm:text-5xl lg:text-7xl">
-              Wind energy,
-              <span className="block text-sky-300">built around your site.</span>
+              {windPage.hero.title}
+              <span className="block text-sky-300">{windPage.hero.titleAccent}</span>
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl">
-              Wind energy converts the kinetic energy of moving air into electricity or mechanical power. Explore distributed generation, commercial turbines and hybrid renewable systems.
+              {windPage.hero.subtitle}
             </p>
           </div>
           <div className="relative overflow-hidden rounded-[2rem] border border-sky-100/15 bg-slate-900/65 p-5 backdrop-blur-sm sm:p-7">
             <div className="absolute right-0 top-0 h-40 w-40 rounded-bl-full bg-sky-400/10" aria-hidden="true" />
             <div className="relative flex min-h-44 items-center justify-between gap-5">
               <div className="space-y-4">
-                {[
-                  ['HAWT', 'Horizontal axis'],
-                  ['VAWT', 'Vertical axis'],
-                  ['HYBRID', 'Solar + wind'],
-                ].map(([label, detail], index) => (
-                  <div key={label} className="flex items-center gap-3">
+                {windPage.hero.variants.map((variant, index) => (
+                  <div key={variant.label} className="flex items-center gap-3">
                     <span className={`flex h-9 w-9 items-center justify-center rounded-xl text-md font-black ${index === 0 ? 'bg-sky-300 text-slate-950' : index === 1 ? 'bg-cyan-300 text-slate-950' : 'bg-emerald-300 text-slate-950'}`}>
                       {index + 1}
                     </span>
                     <span>
-                      <span className="block text-md font-bold text-white">{label}</span>
-                      <span className="block text-md text-slate-300">{detail}</span>
+                      <span className="block text-md font-bold text-white">{variant.label}</span>
+                      <span className="block text-md text-slate-300">{variant.detail}</span>
                     </span>
                   </div>
                 ))}
@@ -415,7 +437,7 @@ export default function WindEnergyPage() {
               </svg>
             </div>
             <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-4 text-[12px] font-bold uppercase tracking-[0.2em] text-sky-100">
-              <span>Resource first</span><span className="h-px flex-1 mx-3 bg-sky-300/30" aria-hidden="true" /><span>Site designed</span>
+              <span>{windPage.hero.resourceFirst}</span><span className="h-px flex-1 mx-3 bg-sky-300/30" aria-hidden="true" /><span>{windPage.hero.siteDesigned}</span>
             </div>
           </div>
         </div>
@@ -425,8 +447,8 @@ export default function WindEnergyPage() {
 
       <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-sky-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
-          <WindSectionEyebrow>Overview</WindSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Types of wind energy systems</h2>
+          <WindSectionEyebrow>{windPage.overview.eyebrow}</WindSectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">{windPage.overview.title}</h2>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
@@ -446,11 +468,11 @@ export default function WindEnergyPage() {
         <div className="rounded-4xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-[0_32px_90px_-38px_rgba(15,23,42,1)] sm:p-8">
           <div className="mb-6 flex items-center justify-between gap-3">
             <div>
-              <WindSectionEyebrow>Classification</WindSectionEyebrow>
-              <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">Design and installation choices</h3>
+              <WindSectionEyebrow>{windPage.classification.eyebrow}</WindSectionEyebrow>
+              <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">{windPage.classification.title}</h3>
             </div>
             <div className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.25em] text-slate-200 sm:block">
-              Site-sensitive
+              {windPage.classification.badge}
             </div>
           </div>
 
@@ -469,8 +491,8 @@ export default function WindEnergyPage() {
 
       <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-cyan-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
-          <WindSectionEyebrow>Electrical configuration</WindSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900">Matching the system to the application</h2>
+          <WindSectionEyebrow>{windPage.electrical.eyebrow}</WindSectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900">{windPage.electrical.title}</h2>
         </div>
 
         <WindComparisonTable rows={systemConfigs} />
@@ -485,16 +507,16 @@ export default function WindEnergyPage() {
           </div>
 
           <div className="space-y-5">
-            <WindInfoPanel title="Key benefits" content={keyBenefits} accent="sky" />
-            <WindInfoPanel title="Feasibility checks" content={strategicPoints} accent="emerald" />
+            <WindInfoPanel title={windPage.benefits.title} content={keyBenefits} accent="sky" />
+            <WindInfoPanel title={windPage.benefits.feasibility} content={strategicPoints} accent="emerald" />
           </div>
         </div>
       </section>
 
       <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-cyan-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
-          <WindSectionEyebrow>Capacity ranges</WindSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900">Power capacity categories</h2>
+          <WindSectionEyebrow>{windPage.capacity.eyebrow}</WindSectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900">{windPage.capacity.title}</h2>
         </div>
 
         <WindCapacityTable rows={capacityBands} />
@@ -504,8 +526,8 @@ export default function WindEnergyPage() {
         <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)] sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
-              <WindSectionEyebrow>Strategic recommendation</WindSectionEyebrow>
-              <h2 className="mt-3 text-3xl font-bold text-slate-900">Which wind systems should AeroSun Energy focus on?</h2>
+              <WindSectionEyebrow>{windPage.strategy.eyebrow}</WindSectionEyebrow>
+              <h2 className="mt-3 text-3xl font-bold text-slate-900">{windPage.strategy.title}</h2>
               <div className="mt-6 space-y-5 text-base leading-7 text-slate-700">
                 <p>
                   For AeroSun Energy Private Limited, the most promising early opportunities are small wind turbines, solar–wind hybrid systems, and medium-scale commercial wind applications for agricultural and industrial sites.

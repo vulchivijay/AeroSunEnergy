@@ -253,7 +253,7 @@ function SectionHeading({
 }) {
   return (
     <div className="mb-7 max-w-3xl">
-      <p className={`font-mono text-xs font-bold uppercase tracking-[0.2em] ${inverse ? 'text-lime-300' : 'text-emerald-700 dark:text-emerald-300'}`}>
+      <p className={`font-mono text-md font-bold uppercase tracking-[0.2em] ${inverse ? 'text-lime-300' : 'text-emerald-700 dark:text-emerald-300'}`}>
         {number} / {eyebrow}
       </p>
       <h2 className={`mt-3 text-3xl font-black leading-tight tracking-tight sm:text-4xl ${inverse ? 'text-white' : 'text-slate-950 dark:text-white'}`}>
@@ -270,7 +270,7 @@ function BulletList({ items }: { items: string[] }) {
   return (
     <ul className="space-y-2.5">
       {items.map((item) => (
-        <li key={item} className="flex gap-3 text-sm leading-6 text-slate-700 dark:text-slate-200 sm:text-base">
+        <li key={item} className="flex gap-3 text-md leading-6 text-slate-700 dark:text-slate-200 sm:text-base">
           <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-emerald-500" aria-hidden="true" />
           <span>{item}</span>
         </li>
@@ -304,7 +304,7 @@ export default function ProductCataloguePage() {
         />
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:px-10">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-100/20 bg-white/[0.06] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-emerald-100">
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-100/20 bg-white/[0.06] px-3 py-1.5 text-md font-bold uppercase tracking-[0.2em] text-emerald-100">
               <span className="h-1.5 w-1.5 rounded-full bg-lime-300" aria-hidden="true" />
               Product &amp; Services Catalogue · 2026
             </p>
@@ -334,8 +334,8 @@ export default function ProductCataloguePage() {
             ].map(({ label, icon: Icon, description }) => (
               <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.06] p-5">
                 <Icon className="h-5 w-5 text-lime-300" aria-hidden="true" />
-                <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-emerald-100/60">{label}</p>
-                <p className="mt-1 text-sm font-semibold text-white">{description}</p>
+                <p className="mt-4 text-md font-bold uppercase tracking-[0.16em] text-emerald-100/60">{label}</p>
+                <p className="mt-1 text-md font-semibold text-white">{description}</p>
               </div>
             ))}
           </div>
@@ -353,7 +353,7 @@ export default function ProductCataloguePage() {
           <div className="grid gap-5 lg:grid-cols-2">
             <DetailCard title="Suitable for"><BulletList items={residentialSuitableFor} /></DetailCard>
             <DetailCard title="System options">
-              <div className="space-y-4 text-sm leading-6 text-slate-700 dark:text-slate-200">
+              <div className="space-y-4 text-md leading-6 text-slate-700 dark:text-slate-200">
                 <p><strong className="text-slate-950 dark:text-white">Grid-connected solar:</strong> A solar PV system connected to the electricity grid, subject to applicable DISCOM approvals and regulations.</p>
                 <p><strong className="text-slate-950 dark:text-white">Off-grid solar:</strong> A solar system combined with battery storage for applications requiring independent electricity supply.</p>
                 <p><strong className="text-slate-950 dark:text-white">Hybrid solar:</strong> A solar system integrated with suitable energy storage and grid or backup arrangements.</p>
@@ -361,7 +361,7 @@ export default function ProductCataloguePage() {
             </DetailCard>
             <DetailCard title="Key benefits"><BulletList items={residentialBenefits} /></DetailCard>
             <DetailCard title="Customisation">
-              <p className="text-sm leading-6 text-slate-700 dark:text-slate-200">
+              <p className="text-md leading-6 text-slate-700 dark:text-slate-200">
                 System capacity is determined by electricity consumption, rooftop area, solar exposure, budget and
                 applicable regulations.
               </p>
@@ -386,8 +386,8 @@ export default function ProductCataloguePage() {
             <DetailCard title="Our approach">
               <ol className="space-y-3">
                 {commercialProcess.map((step, index) => (
-                  <li key={step} className="flex gap-3 text-sm leading-6 text-slate-700 dark:text-slate-200">
-                    <span className="font-mono text-xs font-bold text-emerald-700 dark:text-lime-300">{String(index + 1).padStart(2, '0')}</span>
+                  <li key={step} className="flex gap-3 text-md leading-6 text-slate-700 dark:text-slate-200">
+                    <span className="font-mono text-md font-bold text-emerald-700 dark:text-lime-300">{String(index + 1).padStart(2, '0')}</span>
                     {step}
                   </li>
                 ))}
@@ -409,7 +409,7 @@ export default function ProductCataloguePage() {
           <div className="grid gap-5 lg:grid-cols-2">
             <DetailCard title="Applications"><BulletList items={agriculturalApplications} /></DetailCard>
             <DetailCard title="Available system configurations">
-              <div className="space-y-4 text-sm leading-6 text-slate-700 dark:text-slate-200">
+              <div className="space-y-4 text-md leading-6 text-slate-700 dark:text-slate-200">
                 <p><strong className="text-slate-950 dark:text-white">Solar pump systems:</strong> Solar PV modules supply electricity to a compatible agricultural pump.</p>
                 <p><strong className="text-slate-950 dark:text-white">Standalone agricultural solar systems:</strong> Independent solar systems designed for suitable agricultural loads.</p>
                 <p><strong className="text-slate-950 dark:text-white">Hybrid agricultural systems:</strong> Solar integrated with battery storage or other compatible power sources.</p>
@@ -417,11 +417,11 @@ export default function ProductCataloguePage() {
             </DetailCard>
             <DetailCard title="Key benefits"><BulletList items={agriculturalBenefits} /></DetailCard>
             <DetailCard title="Important considerations">
-              <p className="text-sm leading-6 text-slate-700 dark:text-slate-200">
+              <p className="text-md leading-6 text-slate-700 dark:text-slate-200">
                 Pump capacity, water requirement, total dynamic head, water source, daily operating hours and site
                 conditions must be evaluated before selecting a system.
               </p>
-              <p className="mt-4 text-sm leading-6 text-slate-700 dark:text-slate-200">
+              <p className="mt-4 text-md leading-6 text-slate-700 dark:text-slate-200">
                 Government subsidy availability depends on the current scheme, state allocation, eligibility,
                 approved equipment and official sanction. Subsidies are not guaranteed by AeroSun Energy.
               </p>
@@ -443,7 +443,7 @@ export default function ProductCataloguePage() {
             <DetailCard title="Suitable for"><BulletList items={offGridSuitableFor} /></DetailCard>
             <DetailCard title="System components"><BulletList items={offGridComponents} /></DetailCard>
             <DetailCard title="System design considerations">
-              <p className="mb-3 text-sm leading-6 text-slate-700 dark:text-slate-200">System sizing considers:</p>
+              <p className="mb-3 text-md leading-6 text-slate-700 dark:text-slate-200">System sizing considers:</p>
               <BulletList items={offGridDesignFactors} />
             </DetailCard>
           </div>
@@ -472,7 +472,7 @@ export default function ProductCataloguePage() {
           <div className="grid gap-5 lg:grid-cols-3">
             <DetailCard title="Applications"><BulletList items={batteryApplications} /></DetailCard>
             <DetailCard title="Storage options">
-              <p className="text-sm leading-6 text-slate-700 dark:text-slate-200">
+              <p className="text-md leading-6 text-slate-700 dark:text-slate-200">
                 Battery selection depends on the application and may include suitable lithium-based or other
                 compatible battery technologies.
               </p>
@@ -491,8 +491,8 @@ export default function ProductCataloguePage() {
             <DetailCard title="Our selection process">
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {batterySelection.map((item, index) => (
-                  <p key={item} className="flex gap-3 rounded-xl bg-emerald-50 p-4 text-sm leading-6 text-slate-700 dark:bg-white/[0.04] dark:text-slate-200">
-                    <span className="font-mono text-xs font-bold text-emerald-700 dark:text-lime-300">{String(index + 1).padStart(2, '0')}</span>
+                  <p key={item} className="flex gap-3 rounded-xl bg-emerald-50 p-4 text-md leading-6 text-slate-700 dark:bg-white/[0.04] dark:text-slate-200">
+                    <span className="font-mono text-md font-bold text-emerald-700 dark:text-lime-300">{String(index + 1).padStart(2, '0')}</span>
                     {item}
                   </p>
                 ))}
@@ -514,7 +514,7 @@ export default function ProductCataloguePage() {
           />
           <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-lime-200/20 bg-lime-200/10 px-5 py-3">
             <Wind className="h-5 w-5 text-lime-300" aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-100/70">Proposed development range</span>
+            <span className="text-md font-bold uppercase tracking-[0.16em] text-emerald-100/70">Proposed development range</span>
             <span className="font-mono text-lg font-bold text-lime-300">100 W – 10 kW</span>
           </div>
           <div className="grid gap-5 lg:grid-cols-2">
@@ -528,18 +528,18 @@ export default function ProductCataloguePage() {
             </div>
           </div>
           <div className="mt-5 rounded-3xl border border-lime-200/20 bg-black/10 p-6 sm:p-8">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-lime-300">Flagship development project</p>
+            <p className="text-md font-bold uppercase tracking-[0.2em] text-lime-300">Flagship development project</p>
             <h3 className="mt-3 text-2xl font-black sm:text-3xl">AeroSun AS-WG-3000</h3>
-            <p className="mt-2 text-sm text-emerald-100/75">Proposed configuration</p>
+            <p className="mt-2 text-md text-emerald-100/75">Proposed configuration</p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {windConfiguration.map((item) => (
-                <p key={item} className="flex gap-3 text-sm leading-6 text-emerald-50">
+                <p key={item} className="flex gap-3 text-md leading-6 text-emerald-50">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-lime-300" aria-hidden="true" />
                   {item}
                 </p>
               ))}
             </div>
-            <p className="mt-6 border-t border-white/15 pt-5 text-sm leading-6 text-emerald-100/80">
+            <p className="mt-6 border-t border-white/15 pt-5 text-md leading-6 text-emerald-100/80">
               <strong className="text-white">Development status:</strong> The AS-WG-3000 is a product-development
               project. Rated output, starting wind speed, power curve, efficiency, reliability and operating limits
               remain subject to engineering validation and physical testing.
@@ -562,7 +562,7 @@ export default function ProductCataloguePage() {
             <DetailCard title="Suitable applications"><BulletList items={hybridApplications} /></DetailCard>
             <DetailCard title="Potential benefits"><BulletList items={hybridBenefits} /></DetailCard>
           </div>
-          <p className="mt-5 rounded-2xl border border-amber-300/50 bg-amber-50 px-5 py-4 text-sm leading-6 text-amber-950 dark:border-amber-200/20 dark:bg-amber-300/10 dark:text-amber-100">
+          <p className="mt-5 rounded-2xl border border-amber-300/50 bg-amber-50 px-5 py-4 text-md leading-6 text-amber-950 dark:border-amber-200/20 dark:bg-amber-300/10 dark:text-amber-100">
             Solar and wind generation depend on environmental conditions. A hybrid system does not guarantee
             uninterrupted power unless its generation capacity, storage, load management and backup arrangements
             are properly designed.
@@ -582,8 +582,8 @@ export default function ProductCataloguePage() {
           <DetailCard title="Our consultation services">
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
               {consultationServices.map((service, index) => (
-                <p key={service} className="flex gap-3 rounded-xl bg-emerald-50 p-4 text-sm leading-6 text-slate-700 dark:bg-white/[0.04] dark:text-slate-200">
-                  <span className="font-mono text-xs font-bold text-emerald-700 dark:text-lime-300">{String(index + 1).padStart(2, '0')}</span>
+                <p key={service} className="flex gap-3 rounded-xl bg-emerald-50 p-4 text-md leading-6 text-slate-700 dark:bg-white/[0.04] dark:text-slate-200">
+                  <span className="font-mono text-md font-bold text-emerald-700 dark:text-lime-300">{String(index + 1).padStart(2, '0')}</span>
                   {service}
                 </p>
               ))}
@@ -593,9 +593,9 @@ export default function ProductCataloguePage() {
           <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {projectProcess.map(({ title, detail }, index) => (
               <li key={title} className="rounded-2xl border border-emerald-900/10 bg-white p-5 dark:border-white/10 dark:bg-white/[0.04]">
-                <span className="font-mono text-sm font-bold text-emerald-700 dark:text-lime-300">{String(index + 1).padStart(2, '0')}</span>
+                <span className="font-mono text-md font-bold text-emerald-700 dark:text-lime-300">{String(index + 1).padStart(2, '0')}</span>
                 <h4 className="mt-3 font-bold text-slate-950 dark:text-white">{title}</h4>
-                <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{detail}</p>
+                <p className="mt-2 text-md leading-6 text-slate-600 dark:text-slate-300">{detail}</p>
               </li>
             ))}
           </ol>
@@ -608,14 +608,14 @@ export default function ProductCataloguePage() {
               eyebrow="Why choose AeroSun Energy?"
               title="Solutions shaped around your requirements."
             />
-            <p className="text-sm leading-6 text-slate-600 dark:text-slate-300">
+            <p className="text-md leading-6 text-slate-600 dark:text-slate-300">
               We aim to build renewable-energy solutions around actual customer requirements rather than offer a
               single configuration for every application.
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {whyChooseAeroSun.map((reason) => (
-              <p key={reason} className="flex gap-3 rounded-xl bg-emerald-50 p-4 text-sm leading-6 text-slate-700 dark:bg-white/[0.04] dark:text-slate-200">
+              <p key={reason} className="flex gap-3 rounded-xl bg-emerald-50 p-4 text-md leading-6 text-slate-700 dark:bg-white/[0.04] dark:text-slate-200">
                 <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-emerald-500" aria-hidden="true" />
                 {reason}
               </p>
@@ -626,9 +626,9 @@ export default function ProductCataloguePage() {
         <section className="overflow-hidden rounded-[2rem] border border-emerald-900/10 bg-white dark:border-white/10 dark:bg-white/[0.04]">
           <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
             <div className="bg-[#14372f] p-7 text-white sm:p-10">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-lime-300">10 / Let’s discuss your energy requirements</p>
+              <p className="text-md font-bold uppercase tracking-[0.2em] text-lime-300">10 / Let’s discuss your energy requirements</p>
               <h2 className="mt-4 text-3xl font-black leading-tight sm:text-4xl">Explore a suitable clean-energy option.</h2>
-              <p className="mt-4 text-sm leading-6 text-emerald-50/85">
+              <p className="mt-4 text-md leading-6 text-emerald-50/85">
                 Whether you are a homeowner, farmer, business owner or institution, AeroSun Energy can help you
                 explore suitable renewable-energy options.
               </p>
@@ -636,25 +636,25 @@ export default function ProductCataloguePage() {
             </div>
             <div className="space-y-5 p-7 sm:p-10">
               <h3 className="text-xl font-bold text-slate-950 dark:text-white">AeroSun Energy Private Limited</h3>
-              <p className="flex gap-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
+              <p className="flex gap-3 text-md leading-6 text-slate-600 dark:text-slate-300">
                 <MapPin className="mt-1 h-4 w-4 shrink-0 text-emerald-700 dark:text-lime-300" aria-hidden="true" />
                 D.No. 11-184, Gollavanigunta, T.N. Pallem, Tirupati, Andhra Pradesh – 517501, India.
               </p>
-              <a className="flex items-center gap-3 text-sm text-slate-700 hover:text-emerald-700 dark:text-slate-200 dark:hover:text-lime-300" href="https://aerosunenergy.in/">
+              <a className="flex items-center gap-3 text-md text-slate-700 hover:text-emerald-700 dark:text-slate-200 dark:hover:text-lime-300" href="https://aerosunenergy.in/">
                 <Globe2 className="h-4 w-4 text-emerald-700 dark:text-lime-300" aria-hidden="true" />
                 aerosunenergy.in
               </a>
-              <a className="flex items-center gap-3 text-sm text-slate-700 hover:text-emerald-700 dark:text-slate-200 dark:hover:text-lime-300" href="mailto:customercare@aerosunenergy.in">
+              <a className="flex items-center gap-3 text-md text-slate-700 hover:text-emerald-700 dark:text-slate-200 dark:hover:text-lime-300" href="mailto:customercare@aerosunenergy.in">
                 <Mail className="h-4 w-4 text-emerald-700 dark:text-lime-300" aria-hidden="true" />
                 customercare@aerosunenergy.in
               </a>
-              <a className="flex items-center gap-3 text-sm text-slate-700 hover:text-emerald-700 dark:text-slate-200 dark:hover:text-lime-300" href="tel:+918099181075">
+              <a className="flex items-center gap-3 text-md text-slate-700 hover:text-emerald-700 dark:text-slate-200 dark:hover:text-lime-300" href="tel:+918099181075">
                 <Phone className="h-4 w-4 text-emerald-700 dark:text-lime-300" aria-hidden="true" />
                 +91 8099181075
               </a>
               <Link
                 href="/contact"
-                className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-emerald-700 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+                className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-emerald-700 px-5 py-2.5 text-md font-bold text-white transition hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
               >
                 Discuss your requirements
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
@@ -663,7 +663,7 @@ export default function ProductCataloguePage() {
           </div>
         </section>
 
-        <p className="rounded-2xl border border-slate-300 bg-slate-100 px-5 py-4 text-xs leading-5 text-slate-600 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-300">
+        <p className="rounded-2xl border border-slate-300 bg-slate-100 px-5 py-4 text-md leading-5 text-slate-600 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-300">
           All systems are subject to technical feasibility, site conditions, applicable approvals and equipment
           availability. Product specifications, savings and generation estimates will be provided based on individual
           project assessments. Government incentives and subsidies are subject to current official scheme rules and

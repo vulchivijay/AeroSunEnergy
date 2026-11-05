@@ -1,3 +1,6 @@
+'use client'
+
+import { useLocale } from '@/lib/LocaleContext'
 import {
   HybridBenefitCard,
   HybridFeatureCard,
@@ -373,6 +376,24 @@ function HybridHeroSlider() {
 }
 
 export default function HybridEnergyPage() {
+  const { t } = useLocale()
+  const hybridPage = t.hybridPage ?? {
+    hero: {
+      eyebrow: 'AeroSun Energy / Hybrid Systems',
+      title: 'Hybrid energy,',
+      titleAccent: 'working as one.',
+      subtitle: 'Hybrid renewable systems combine solar, wind, storage, and control logic to create a more resilient and adaptable energy supply.',
+      tagline: 'Storage + smart controls',
+      supporting: 'Balance supply with demand',
+    },
+    categories: { eyebrow: 'Hybrid categories', title: 'Hybrid systems by grid connection and storage' },
+    integration: { eyebrow: 'Electrical integration', title: 'AC-coupled vs DC-coupled architectures', badge: 'Design-driven' },
+    solutions: { eyebrow: 'Our solutions', title: 'Six hybrid renewable energy service lines' },
+    fit: { eyebrow: 'Application fit', title: 'How hybrid systems align with operational needs' },
+    recommended: { eyebrow: 'Recommended launch', title: 'Recommended launch' },
+    common: { whyWorks: 'Why hybrid works', feasibilityChecklist: 'Feasibility checklist', service: 'Service' },
+  }
+
   return (
     <main className="bg-[#f1faf5] pt-6 sm:pt-8 text-slate-900 [&>section]:border-t-4 [&>section]:border-t-violet-400">
       <header className="relative mx-auto mb-6 max-w-7xl overflow-hidden rounded-[2.5rem] border border-slate-800 bg-[#10152d] px-5 py-7 text-white shadow-[0_30px_75px_-42px_rgba(28,27,75,0.7)] sm:mb-8 sm:px-8 sm:py-9 lg:px-10 lg:py-11">
@@ -381,21 +402,21 @@ export default function HybridEnergyPage() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-violet-200/25 bg-white/[0.07] px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-violet-200">
               <span className="h-2 w-2 rounded-full bg-emerald-300" aria-hidden="true" />
-              AeroSun Energy <span aria-hidden="true">/</span> Hybrid Systems
+              {hybridPage.hero.eyebrow}
             </div>
             <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.02] tracking-[0.06em] text-white sm:text-5xl lg:text-7xl">
-              Hybrid energy,
-              <span className="block bg-linear-to-r from-emerald-300 via-cyan-200 to-violet-300 bg-clip-text text-transparent">working as one.</span>
+              {hybridPage.hero.title}
+              <span className="block bg-linear-to-r from-emerald-300 via-cyan-200 to-violet-300 bg-clip-text text-transparent">{hybridPage.hero.titleAccent}</span>
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl">
-              Combine solar generation, wind power, storage, and intelligent controls to create more resilient, flexible, and efficient renewable energy systems for homes, businesses, farms, and communities.
+              {hybridPage.hero.subtitle}
             </p>
           </div>
           <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.06] p-5 backdrop-blur-sm sm:p-7">
             <div className="flex items-center justify-between gap-3">
               <div>
-                <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-emerald-200">One coordinated system</p>
-                <p className="mt-1 text-xl font-black tracking-tight text-white sm:text-2xl">Sources work together</p>
+                <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-emerald-200">{hybridPage.hero.tagline}</p>
+                <p className="mt-1 text-xl font-black tracking-tight text-white sm:text-2xl">{hybridPage.hero.supporting}</p>
               </div>
               <span className="rounded-xl border border-emerald-200/20 bg-emerald-300/10 px-3 py-2 text-[12px] font-bold uppercase tracking-[0.14em] text-emerald-100">Balanced</span>
             </div>
@@ -443,8 +464,8 @@ export default function HybridEnergyPage() {
 
       <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-emerald-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(16,87,58,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
-          <HybridSectionEyebrow>Hybrid categories</HybridSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Hybrid systems by grid connection and storage</h2>
+          <HybridSectionEyebrow>{hybridPage.categories.eyebrow}</HybridSectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">{hybridPage.categories.title}</h2>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
@@ -464,11 +485,11 @@ export default function HybridEnergyPage() {
         <div className="rounded-4xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-[0_32px_90px_-38px_rgba(15,23,42,1)] sm:p-8">
           <div className="mb-6 flex items-center justify-between gap-3">
             <div>
-              <HybridSectionEyebrow>Electrical integration</HybridSectionEyebrow>
-              <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">AC-coupled vs DC-coupled architectures</h3>
+              <HybridSectionEyebrow>{hybridPage.integration.eyebrow}</HybridSectionEyebrow>
+              <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">{hybridPage.integration.title}</h3>
             </div>
             <div className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.25em] text-slate-200 sm:block">
-              Design-driven
+              {hybridPage.integration.badge}
             </div>
           </div>
 
@@ -494,16 +515,16 @@ export default function HybridEnergyPage() {
           </div>
 
           <div className="space-y-5">
-            <HybridInfoPanel title="Why hybrid works" content={keyBenefits} accent="emerald" />
-            <HybridInfoPanel title="Feasibility checklist" content={['Wind resource assessment', 'Storage sizing', 'Load profile analysis', 'Grid approval and safety review']} accent="sky" />
+            <HybridInfoPanel title={hybridPage.common.whyWorks} content={keyBenefits} accent="emerald" />
+            <HybridInfoPanel title={hybridPage.common.feasibilityChecklist} content={['Wind resource assessment', 'Storage sizing', 'Load profile analysis', 'Grid approval and safety review']} accent="sky" />
           </div>
         </div>
       </section>
 
       <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-violet-200/80 bg-[#f7f5ff] p-5 shadow-[0_20px_55px_-42px_rgba(74,54,130,0.24)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
-          <HybridSectionEyebrow>Our solutions</HybridSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Six hybrid renewable energy service lines</h2>
+          <HybridSectionEyebrow>{hybridPage.solutions.eyebrow}</HybridSectionEyebrow>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">{hybridPage.solutions.title}</h2>
         </div>
 
         <div className="space-y-8">

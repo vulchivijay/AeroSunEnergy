@@ -387,6 +387,122 @@
       ]
     }
   },
+  "solarPage": {
+    "hero": {
+      "eyebrow": "AeroSun Energy / Solar Systems",
+      "title": "Solar energy,",
+      "titleAccent": "made for your world.",
+      "subtitle": "Solar energy systems are designed around how they generate power, how they connect to the grid, where they are installed, and which loads they are meant to serve.",
+      "lead": "One source. Many uses.",
+      "pathway": "Choose your solar pathway",
+      "options": [
+        {"name": "On-grid", "detail": "Grid tied"},
+        {"name": "Off-grid", "detail": "Standalone"},
+        {"name": "Hybrid", "detail": "Solar + storage"},
+        {"name": "Thermal", "detail": "Heat use"}
+      ]
+    },
+    "offer": {
+      "eyebrow": "What We Offer",
+      "title": "Expertise End-to-End Solar Solutions",
+      "description": "We have rich experience in solar rooftop 1 kW to megawatt solar power plants — including solar hybrid systems, solar hot water, solar street lights, solar fencing, solar agriculture pump sets & any solar power services.",
+      "cards": [
+        {"title": "Solar Rooftop Systems", "description": "On-grid power plants for homes and businesses, designed for performance, net metering, and long-term savings.", "points": ["On-grid, off-grid and hybrid configurations", "Net metering with state DISCOM", "PM Surya Ghar subsidy assistance", "TATA Power Solar premium panels"]},
+        {"title": "Solar Thermal — Water Heating Solutions", "description": "Efficient hot water systems for homes, hotels, hospitals, hostels, commercial spaces, and industries.", "points": ["Available in capacities from 100 LPD", "Pressurised and non-pressurised options", "BIS-certified collectors", "Low-maintenance hot water year-round"]},
+        {"title": "Solar Street Lights", "description": "All-in-one solar lighting for roads, compounds, campuses, and public spaces with zero grid dependence.", "points": ["Integrated all-in-one luminaires from 12W", "Auto dusk-to-dawn operation", "Lithium-ion storage with 5+ year life", "Zero electricity bills"]},
+        {"title": "Solar Fencing", "description": "Energy-efficient perimeter protection for farms, estates, and rural properties.", "points": ["Solar-charged energiser", "Up to 10 km perimeter on a single charger", "Audible alarm and battery backup", "Crop and livestock protection"]},
+        {"title": "Solar Pumpsets", "description": "Diesel-free pumping systems for agriculture and irrigation from clean solar power.", "points": ["AC and DC pump configurations", "MNRE-approved controllers", "PM-KUSUM scheme assistance", "5-year manufacturer warranty"]},
+        {"title": "Operation & Maintenance (AMC)", "description": "Annual support plans that keep your plant performing at peak generation and reliability.", "points": ["Quarterly preventive maintenance", "Performance ratio monitoring", "24x7 priority support", "Spare parts and inverter service"]}
+      ]
+    },
+    "rooftop": {
+      "eyebrow": "Rooftop Solar",
+      "title": "Solar Rooftop Systems",
+      "description": "Solar rooftop systems generate electricity using solar panels installed on your rooftop. Sized to your power needs and usage, they cut your dependence on grid power and significantly lower your monthly electricity bills.",
+      "suitableFor": "Suitable For",
+      "keyBenefits": "Key Benefits"
+    },
+    "systemTypes": {
+      "eyebrow": "System Types",
+      "title": "There are three main types of solar rooftop systems",
+      "items": [
+        {"title": "On-grid solar systems", "description": "Connected to the local electricity grid, allowing daytime solar generation to offset consumption and export surplus power where permitted.", "benefits": ["Grid-tied operation", "Lower electricity bills", "Simple utility integration"]},
+        {"title": "Off-grid solar systems", "description": "Standalone power for remote homes, farms, telecom sites and facilities with unreliable grid access, typically with battery backup.", "benefits": ["Independent supply", "Battery storage", "Reliable rural power"]},
+        {"title": "Hybrid solar systems", "description": "Solar plus battery storage and often grid connection or backup generation, giving greater resilience and better load management.", "benefits": ["Backup during outages", "Self-consumption", "Energy flexibility"]}
+      ]
+    },
+    "whySolar": {
+      "eyebrow": "Why Solar",
+      "title": "Why you have to switch to solar today?",
+      "items": [
+        {"title": "Reduce Carbon Emissions", "description": "Every kW of solar offsets ~1.2 tonnes of CO₂ a year — shrinking your carbon footprint."},
+        {"title": "Eco-Friendly", "description": "Clean, renewable energy that protects nature for generations to come."},
+        {"title": "Cost Saving", "description": "Slash electricity bills by 70–90% from day one and recover your investment in 4–6 years."},
+        {"title": "Energy Independence", "description": "Generate your own power and cut reliance on the grid and rising tariffs."},
+        {"title": "Unlimited Energy", "description": "Sunlight is infinite — Tirupati enjoys 300+ sunny days every year."},
+        {"title": "Continuous Supply", "description": "Hybrid systems with battery backup keep critical loads running through outages."}
+      ]
+    },
+    "subsidy": {
+      "eyebrow": "Government of India Scheme",
+      "title": "PM Surya Ghar: Muft Bijli Yojana Subsidy",
+      "description": "Central-government subsidy you can claim on your rooftop solar — AeroSun Energy files the entire application for you.",
+      "cards": [
+        {"label": "For Residential Households", "value": "₹30,000", "note": "per kW up to 2 kW"},
+        {"label": "Additional Capacity", "value": "₹18,000", "note": "per kW for additional capacity up to 3 kW"},
+        {"label": "Maximum Subsidy", "value": "₹78,000", "note": "Total subsidy for systems larger than 3 kW"},
+        {"label": "For GHS / RWA", "value": "₹18,000", "note": "Common facility subsidy up to 500 kW"}
+      ],
+      "strategicEyebrow": "Strategic view",
+      "strategicTitle": "Which solar systems should AeroSun Energy consider?"
+    },
+    "comparison": {
+      "label": "Comparison",
+      "title": "Main solar system types",
+      "battery": "Battery",
+      "grid": "Grid",
+      "typicalUse": "Typical use",
+      "recommendedFocus": "Recommended focus",
+      "focusTitle": "Rooftop, hybrid, and solar pumping"
+    }
+  },
+  "windPage": {
+    "hero": {
+      "eyebrow": "AeroSun Energy / Wind Systems",
+      "title": "Wind energy,",
+      "titleAccent": "built around your site.",
+      "subtitle": "Wind energy converts the kinetic energy of moving air into electricity or mechanical power. Explore distributed generation, commercial turbines and hybrid renewable systems.",
+      "resourceFirst": "Resource first",
+      "siteDesigned": "Site designed",
+      "variants": [
+        {"label": "HAWT", "detail": "Horizontal axis"},
+        {"label": "VAWT", "detail": "Vertical axis"},
+        {"label": "HYBRID", "detail": "Solar + wind"}
+      ]
+    },
+    "overview": {"eyebrow": "Overview", "title": "Types of wind energy systems"},
+    "classification": {"eyebrow": "Classification", "title": "Design and installation choices", "badge": "Site-sensitive"},
+    "electrical": {"eyebrow": "Electrical configuration", "title": "Matching the system to the application"},
+    "benefits": {"title": "Key benefits", "feasibility": "Feasibility checks"},
+    "capacity": {"eyebrow": "Capacity ranges", "title": "Power capacity categories"},
+    "strategy": {"eyebrow": "Strategic recommendation", "title": "Which wind systems should AeroSun Energy focus on?"}
+  },
+  "hybridPage": {
+    "hero": {
+      "eyebrow": "AeroSun Energy / Hybrid Systems",
+      "title": "Hybrid energy,",
+      "titleAccent": "working as one.",
+      "subtitle": "Hybrid renewable systems combine solar, wind, storage, and control logic to create a more resilient and adaptable energy supply.",
+      "tagline": "Storage + smart controls",
+      "supporting": "Balance supply with demand"
+    },
+    "categories": {"eyebrow": "Hybrid categories", "title": "Hybrid systems by grid connection and storage"},
+    "integration": {"eyebrow": "Electrical integration", "title": "AC-coupled vs DC-coupled architectures", "badge": "Design-driven"},
+    "solutions": {"eyebrow": "Our solutions", "title": "Six hybrid renewable energy service lines"},
+    "fit": {"eyebrow": "Application fit", "title": "How hybrid systems align with operational needs"},
+    "recommended": {"eyebrow": "Recommended launch", "title": "Recommended launch"},
+    "common": {"whyWorks": "Why hybrid works", "feasibilityChecklist": "Feasibility checklist", "service": "Service"}
+  },
   "about": {
     "features": [
       {
@@ -761,8 +877,20 @@
     "typicalUse": "Typical use",
     "customerFit": "Customer fit",
     "typicalConfiguration": "Typical configuration",
+    "averageMonthlyUsage": "Average monthly usage",
+    "suitableRooftopCapacity": "Suitable rooftop capacity",
+    "bestFit": "Best fit",
     "howItWorks": "How it works",
     "comingSoon": "Coming soon"
+  },
+  "companyAge": {
+    "operatingSince": "Operating since",
+    "year": "year",
+    "years": "years",
+    "month": "month",
+    "months": "months",
+    "day": "day",
+    "days": "days"
   },
   "cookieConsent": {
     "title": "Cookie preferences",

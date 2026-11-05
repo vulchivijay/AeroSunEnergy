@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useLocale } from '@/lib/LocaleContext'
 
 type Duration = {
 	years: number
@@ -45,7 +46,17 @@ function getDuration(date: Date): Duration {
 }
 
 export default function CompanyAge() {
+	const { locale, t } = useLocale()
 	const [duration, setDuration] = useState<Duration | null>(null)
+	const companyAge = t.companyAge ?? {
+		operatingSince: 'Operating since',
+		year: 'year',
+		years: 'years',
+		month: 'month',
+		months: 'months',
+		day: 'day',
+		days: 'days',
+	}
 
 	useEffect(() => {
 		const updateDuration = () => setDuration(getDuration(new Date()))
@@ -73,29 +84,36 @@ export default function CompanyAge() {
 	const units = duration
 		? [
 				...(duration.years > 0
-					? [{ value: duration.years, label: duration.years === 1 ? 'year' : 'years' }]
+					? [{ value: duration.years, label: duration.years === 1 ? companyAge.year : companyAge.years }]
 					: []),
 				...(duration.years > 0 || duration.months > 0 || duration.days > 0
-					? [{ value: duration.months, label: duration.months === 1 ? 'month' : 'months' }]
+					? [{ value: duration.months, label: duration.months === 1 ? companyAge.month : companyAge.months }]
 					: []),
 				...(duration.days >= 0
-					? [{ value: duration.days, label: duration.days === 1 ? 'day' : 'days' }]
+					? [{ value: duration.days, label: duration.days === 1 ? companyAge.day : companyAge.days }]
 					: []),
 			]
 		: null
+
+	const formatter = new Intl.DateTimeFormat(locale === 'hi' ? 'hi-IN' : locale === 'te' ? 'te-IN' : 'en-US', {
+		month: 'long',
+		day: 'numeric',
+		year: 'numeric',
+	})
+	const formattedStartDate = formatter.format(START_DATE)
 
 	return (
 		<p
 			className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[12px] text-gray-200"
 			aria-label={
 				units
-					? `Operating since October 6, 2026: ${units.map(({ value, label }) => `${value} ${label}`).join(', ')}`
-					: 'Operating since October 6, 2026'
+					? `${companyAge.operatingSince} ${formattedStartDate}: ${units.map(({ value, label }) => `${value} ${label}`).join(', ')}`
+					: `${companyAge.operatingSince} ${formattedStartDate}`
 			}
 		>
 			<span aria-hidden="true">
-				Operating since October{' '}
-				<span className="text-[14px]" style={DIGITAL_FONT_STYLE}>6, 2026</span>
+				{companyAge.operatingSince}{' '}
+				<span className="text-[14px]" style={DIGITAL_FONT_STYLE}>{formattedStartDate}</span>
 			</span>
 			{units && (
 				<span className="inline-flex items-baseline gap-1.5 text-[14px]" aria-hidden="true" style={DIGITAL_FONT_STYLE}>
