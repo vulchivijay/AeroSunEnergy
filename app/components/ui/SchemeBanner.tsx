@@ -24,7 +24,7 @@ export default function SchemeBanner() {
   const { t } = useLocale()
   const banner = t.home.schemeBanner
 
-  const [now, setNow] = useState<number>(() => Date.now())
+  const [now, setNow] = useState<number | null>(null)
 
   useEffect(() => {
     const updateNow = () => setNow(Date.now())
@@ -35,7 +35,9 @@ export default function SchemeBanner() {
   }, [])
 
   const stats = useMemo(() => {
-    const referenceNow = now ?? TARGET_DATE.getTime()
+    if (now === null) return banner.stats
+
+    const referenceNow = now
     const parts = getTimeParts(TARGET_DATE, referenceNow)
     return banner.stats.map((item, index) => ({
       ...item,
