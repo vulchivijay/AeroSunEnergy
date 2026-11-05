@@ -186,7 +186,7 @@ export default function ServicesPage() {
 
           <div className="rounded-4xl border border-slate-200 bg-white p-5 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)]">
             <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-slate-500">{labels.coreModel}</p>
-            <p className="mt-3 text-lg font-semibold text-slate-900">{labels.coreModelSteps}</p>
+            <p className="mt-3 text-md text-slate-900">{labels.coreModelSteps}</p>
           </div>
         </div>
       </header>
