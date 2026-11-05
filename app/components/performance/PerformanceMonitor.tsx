@@ -15,16 +15,7 @@ type Metrics = {
 }
 
 export default function PerformanceMonitor() {
-  const [metrics, setMetrics] = useState<Metrics | null>(() => {
-    if (typeof window === 'undefined') return null
-
-    try {
-      const stored = sessionStorage.getItem(REPORT_KEY)
-      return stored ? (JSON.parse(stored) as Metrics) : null
-    } catch {
-      return null
-    }
-  })
+  const [metrics, setMetrics] = useState<Metrics | null>(null)
 
   useEffect(() => {
     if (typeof window === 'undefined') return

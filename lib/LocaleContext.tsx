@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
+import { createContext, useContext, useEffect, useSyncExternalStore, ReactNode } from 'react'
 import en from '@/public/locales/en/index.json'
 import hi from '@/public/locales/hi/index.json'
 import te from '@/public/locales/te/index.json'
@@ -11,6 +11,27 @@ import teBasicElectricalConcepts from '@/public/locales/te/basic-electrical-conc
 export type Locale = 'en' | 'hi' | 'te'
 
 const locales = { en, hi, te }
+const LOCALE_STORAGE_KEY = 'locale'
+const LOCALE_CHANGE_EVENT = 'aerosun-locale-change'
+
+function getStoredLocale(): Locale {
+  try {
+    const saved = window.localStorage.getItem(LOCALE_STORAGE_KEY)
+    return saved === 'hi' || saved === 'te' ? saved : 'en'
+  } catch {
+    return 'en'
+  }
+}
+
+function subscribeToLocale(callback: () => void) {
+  window.addEventListener('storage', callback)
+  window.addEventListener(LOCALE_CHANGE_EVENT, callback)
+
+  return () => {
+    window.removeEventListener('storage', callback)
+    window.removeEventListener(LOCALE_CHANGE_EVENT, callback)
+  }
+}
 
 export type ComponentContent = {
   purpose?: string
@@ -124,28 +145,23 @@ const LocaleContext = createContext<LocaleContextValue>({
 })
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(() => {
-    if (typeof window === 'undefined') return 'en'
-
-    try {
-      const saved = window.localStorage.getItem('locale') as Locale | null
-      return saved && saved in locales ? saved : 'en'
-    } catch {
-      return 'en'
-    }
-  })
+  const locale = useSyncExternalStore<Locale>(
+    subscribeToLocale,
+    getStoredLocale,
+    () => 'en',
+  )
 
   useEffect(() => {
     document.documentElement.lang = locale
   }, [locale])
 
   const setLocale = (l: Locale) => {
-    setLocaleState(l)
     try {
-      localStorage.setItem('locale', l)
+      window.localStorage.setItem(LOCALE_STORAGE_KEY, l)
     } catch {
       // ignore
     }
+    window.dispatchEvent(new Event(LOCALE_CHANGE_EVENT))
   }
 
   return (
