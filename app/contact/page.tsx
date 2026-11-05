@@ -41,6 +41,17 @@ export default function Contact() {
   const contactCardTitle = c.contactCardTitle ?? 'Speak with our team'
   const faqHeader = c.faqHeader ?? 'FAQ'
   const faqTitle = c.faqTitle ?? 'Common questions'
+  const connectionPrompt = c.connectionPrompt ?? 'Choose the best way to connect or begin planning your energy project.'
+  const projectStory = c.projectStory ?? 'Practical renewable energy, shaped around your project.'
+  const stepIntroLabel = c.stepIntroLabel ?? 'From first question to next step'
+  const stepIntroTitle = c.stepIntroTitle ?? 'A simple way to get started'
+  const stepIntroCopy = c.stepIntroCopy ?? "Tell us what you need, and we'll help you explore the right renewable-energy direction."
+  const submitEnquiry = c.submitEnquiry ?? 'Submit an enquiry'
+  const faqIntro = c.faqIntro ?? 'Explore answers to common questions about solar energy and project planning.'
+  const location = c.location ?? 'Tirupati, India'
+  const energyBadge = c.energyBadge ?? 'Sun'
+  const energyBadgeAccent = c.energyBadgeAccent ?? 'wind'
+  const energyBadgeSuffix = c.energyBadgeSuffix ?? 'better together'
 
   const contactHighlights = c.highlights
 
@@ -51,26 +62,20 @@ export default function Contact() {
 
   const channels = [
     {
-      label: c.channels[0]?.label ?? 'Email',
-      value: c.channels[0]?.value ?? footer.email,
+      label: c.channels?.[0]?.label ?? 'Email',
+      value: c.channels?.[0]?.value ?? footer.email,
       href: `mailto:${footer.email}`,
       icon: channelIcons.email,
     },
     {
-      label: c.channels[1]?.label ?? 'Website',
-      value: c.channels[1]?.value ?? footer.website,
+      label: c.channels?.[1]?.label ?? 'Website',
+      value: c.channels?.[1]?.value ?? footer.website,
       href: footer.website.startsWith('http') ? footer.website : `https://${footer.website}`,
       icon: channelIcons.website,
     },
-    // {
-    //   label: c.channels[2]?.label ?? 'trust',
-    //   value: c.channels[2]?.value ?? 'sanatanadharmam.in',
-    //   href: 'https://sanatanadharmam.in',
-    //   icon: channelIcons.quote,
-    // },
     {
-      label: c.channels[3]?.label ?? 'Estimation',
-      value: c.channels[3]?.value ?? 'Open the calculator',
+      label: c.channels?.[2]?.label ?? 'Estimation',
+      value: c.channels?.[2]?.value ?? 'Open the calculator',
       href: '/estimation-calculator',
       icon: channelIcons.quote,
     },
@@ -84,7 +89,7 @@ export default function Contact() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-5 flex items-center justify-between border-b border-slate-300 pb-4 dark:border-slate-800">
             <p className="text-md font-black uppercase tracking-[0.22em] text-emerald-900 dark:text-emerald-300">AeroSun Energy <span className="mx-2 text-lime-600">/</span> {contactUs}</p>
-            <span className="hidden text-md font-semibold uppercase tracking-[0.18em] text-slate-500 sm:block">Tirupati, India</span>
+            <span className="hidden text-md font-semibold uppercase tracking-[0.18em] text-slate-500 sm:block">{location}</span>
           </div>
 
           <div className="grid min-h-[34rem] overflow-hidden rounded-[2rem] bg-[#dfff72] lg:grid-cols-[1fr_0.92fr]">
@@ -101,7 +106,7 @@ export default function Contact() {
                   <span className="h-2 w-2 rounded-full bg-emerald-800" />
                   {navbar.startProject}
                 </p>
-                <h1 className="mt-10 max-w-2xl text-5xl font-black leading-[0.9] tracking-[0.075em] text-text-slate-950 sm:text-6xl sm:text-slate-950 lg:text-7xl">
+                <h1 className="mt-10 max-w-2xl text-5xl font-black leading-[0.9] tracking-[0.075em] text-slate-950 sm:text-6xl lg:text-7xl">
                   {c.heroTitle}
                 </h1>
                 <p className="mt-7 max-w-xl text-base leading-8 text-emerald-950/80 sm:text-lg">
@@ -143,10 +148,10 @@ export default function Contact() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#10251f]/75 via-transparent to-[#10251f]/10" />
               <div className="absolute right-8 top-8 flex h-28 w-28 items-center justify-center rounded-full border border-white/70 bg-lime-300 text-center text-[12px] font-black uppercase leading-4 tracking-[0.16em] text-emerald-950 shadow-xl sm:right-12 sm:top-12 sm:h-36 sm:w-36">
-                Sun <span className="mx-1 text-emerald-700">+</span> wind<br />better together
+                {energyBadge} <span className="mx-1 text-emerald-700">+</span> {energyBadgeAccent}<br />{energyBadgeSuffix}
               </div>
               <div className="absolute bottom-7 left-7 max-w-xs border-l-2 border-lime-300 pl-4 text-md font-semibold leading-6 text-white sm:bottom-10 sm:left-10">
-                Practical renewable energy, shaped around your project.
+                {projectStory}
               </div>
             </motion.div>
           </div>
@@ -196,13 +201,13 @@ export default function Contact() {
           <section className="mt-20 sm:mt-28">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
               <div>
-                <p className="text-md font-black uppercase tracking-[0.2em] text-emerald-800 dark:text-emerald-300">From first question to next step</p>
-                <h2 className="mt-4 max-w-xl text-4xl font-black leading-tight tracking-[0.05em] text-slate-950 sm:text-5xl dark:text-white">A simple way to get started</h2>
+                <p className="text-md font-black uppercase tracking-[0.2em] text-emerald-800 dark:text-emerald-300">{stepIntroLabel}</p>
+                <h2 className="mt-4 max-w-xl text-4xl font-black leading-tight tracking-[0.05em] text-slate-950 sm:text-5xl dark:text-white">{stepIntroTitle}</h2>
               </div>
               <div className="flex flex-col justify-between gap-5 border-t border-slate-300 pt-5 sm:flex-row sm:items-end dark:border-slate-800">
-                <p className="max-w-md text-base leading-7 text-slate-600 dark:text-slate-300">Tell us what you need, and we&apos;ll help you explore the right renewable-energy direction.</p>
+                <p className="max-w-md text-base leading-7 text-slate-600 dark:text-slate-300">{stepIntroCopy}</p>
                 <Link href="/customer-enquiry" className="inline-flex w-fit items-center gap-3 text-md font-bold text-emerald-900 transition hover:gap-4 dark:text-lime-300">
-                  Submit an enquiry <span aria-hidden="true">&rarr;</span>
+                  {submitEnquiry} <span aria-hidden="true">&rarr;</span>
                 </Link>
               </div>
             </div>
@@ -221,7 +226,7 @@ export default function Contact() {
             <div className="flex flex-col justify-start p-6 sm:p-10">
               <p className="text-md font-black uppercase tracking-[0.2em] text-emerald-900 dark:text-lime-300">{faqHeader}</p>
               <h2 className="mt-4 text-4xl font-black leading-tight tracking-[0.05em] text-emerald-950 dark:text-white sm:text-5xl">{faqTitle}</h2>
-              <p className="mt-5 text-base leading-7 text-emerald-950/75 dark:text-emerald-50/75">Explore answers to common questions about solar energy and project planning.</p>
+              <p className="mt-5 text-base leading-7 text-emerald-950/75 dark:text-emerald-50/75">{faqIntro}</p>
             </div>
             <div className="space-y-3 bg-[#f3f0e5] p-4 sm:p-6 lg:p-8 dark:bg-slate-900">
               {solarFaqs.map((faq) => (
