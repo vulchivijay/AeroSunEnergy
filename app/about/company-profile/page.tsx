@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { ArrowRight, Globe2, Mail, MapPin, Phone, Sun, Wind, Zap } from 'lucide-react'
 import DownloadProfilePdf from './DownloadProfilePdf'
