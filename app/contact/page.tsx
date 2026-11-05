@@ -5,8 +5,9 @@ import { motion } from '@/lib/motion'
 import FaqCard, { solarFaqs } from '@/app/components/ui/FaqCard'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
+import type { ReactNode } from 'react'
 
-const channelIcons = {
+const channelIconComponents: Record<string, ReactNode> = {
   email: (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 6h16v12H4z" />
@@ -28,6 +29,7 @@ const channelIcons = {
 
 export default function Contact() {
   const { t } = useLocale()
+  const channelIconIds = t.componentData.contact.channelIconIds
   const c = t.contact
   const footer = t.footer
   const navbar = t.navbar
@@ -60,19 +62,19 @@ export default function Contact() {
       label: c.channels[0].label,
       value: c.channels[0].value,
       href: `mailto:${footer.email}`,
-      icon: channelIcons.email,
+      icon: channelIconComponents[channelIconIds[0]],
     },
     {
       label: c.channels[1].label,
       value: c.channels[1].value,
       href: footer.website.startsWith('http') ? footer.website : `https://${footer.website}`,
-      icon: channelIcons.website,
+      icon: channelIconComponents[channelIconIds[1]],
     },
     {
       label: c.channels[3].label,
       value: c.channels[3].value,
       href: '/estimation-calculator',
-      icon: channelIcons.quote,
+      icon: channelIconComponents[channelIconIds[2]],
     },
   ]
 

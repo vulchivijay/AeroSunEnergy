@@ -25,16 +25,16 @@ import {
 import Logo from '../brand/Logo'
 import { useLocale, type Locale } from '@/lib/LocaleContext'
 
-const navigationIcons: Record<string, LucideIcon> = {
-  '/': House,
-  '/about': Info,
-  '/about/company-profile': Building2,
-  '/about/product-catalogue': PackageOpen,
-  '/solarenergy': Sun,
-  '/windenergy': Wind,
-  '/hybridenergy': Zap,
-  '/services': PanelsTopLeft,
-  '/contact': Mail,
+const navigationIconComponents: Record<string, LucideIcon> = {
+  house: House,
+  info: Info,
+  building: Building2,
+  package: PackageOpen,
+  sun: Sun,
+  wind: Wind,
+  zap: Zap,
+  panels: PanelsTopLeft,
+  mail: Mail,
 }
 
 function isLocale(value: string): value is Locale {
@@ -61,6 +61,10 @@ export default function Navbar() {
     shortLabel: string
   }[]
   const navLinks = t.navbar.links
+  const navigationIconIds: Record<string, string> = t.navbar.navigationIconIds
+
+  const getNavigationIcon = (href: string) =>
+    navigationIconComponents[navigationIconIds[href]] ?? PanelsTopLeft
 
   useEffect(() => {
     const handlePointerDown = (event: PointerEvent) => {
@@ -108,7 +112,7 @@ export default function Navbar() {
   function renderNavigationLink(link: NavigationLink, mobile = false) {
     const disabled = Boolean(link.disabled)
     const active = isActive(link.href) && !disabled
-    const Icon = navigationIcons[link.href] ?? PanelsTopLeft
+    const Icon = getNavigationIcon(link.href)
     const comingSoonLabel = t.navbar.comingSoon
     const classes = mobile
       ? `flex min-h-12 w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium transition ${
@@ -220,7 +224,7 @@ export default function Navbar() {
           >
             {link.children.map((child) => {
               const childActive = pathname === child.href
-              const ChildIcon = navigationIcons[child.href] ?? PanelsTopLeft
+              const ChildIcon = getNavigationIcon(child.href)
               return (
                 <Link
                   key={child.href}
@@ -250,7 +254,7 @@ export default function Navbar() {
           <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-1.5 shadow-[0_20px_50px_-25px_rgba(0,0,0,0.35)]">
             {link.children.map((child) => {
               const childActive = pathname === child.href
-              const ChildIcon = navigationIcons[child.href] ?? PanelsTopLeft
+              const ChildIcon = getNavigationIcon(child.href)
               return (
                 <Link
                   key={child.href}

@@ -5,29 +5,19 @@ import { Card, CardContent } from './../ui/Card'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
 
-const stepStyles = [
-  { icon: '📍', imageSrc: '/images/forming-aerosunenergy.png', imageAlt: 'Site assessment and planning process by AeroSun Energy', color: 'from-primary to-blue-400', cardBg: 'bg-blue-100/90 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700', iconBg: 'bg-blue-300 dark:bg-blue-800', nodeBg: 'from-blue-700 to-blue-500' },
-  { icon: '📐', imageSrc: '/images/customdesign-aerosunenergy.png', imageAlt: 'Custom hybrid system design by AeroSun Energy', color: 'from-secondary to-teal-400', cardBg: 'bg-emerald-100/90 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700', iconBg: 'bg-emerald-300 dark:bg-emerald-800', nodeBg: 'from-emerald-700 to-teal-500' },
-  { icon: '🔧', imageSrc: '/images/installation-aerosunenergy.png', imageAlt: 'Installation of AeroSun hybrid turbine system', color: 'from-accent to-yellow-400', cardBg: 'bg-amber-100/90 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700', iconBg: 'bg-amber-300 dark:bg-amber-800', nodeBg: 'from-amber-700 to-yellow-500' },
-  { icon: '📊', imageSrc: '/images/smart-vawt-aerosunenergy.png', imageAlt: 'Smart monitoring dashboard for AeroSun Energy systems', color: 'from-primary to-secondary', cardBg: 'bg-violet-100/90 dark:bg-violet-900/55 border-violet-300 dark:border-violet-700', iconBg: 'bg-violet-300 dark:bg-violet-800', nodeBg: 'from-violet-700 to-purple-500' },
-  { icon: '⚡', imageSrc: '/images/minimal-maintainance-aerosunenergy.png', imageAlt: 'Continuous clean power output from AeroSun hybrid systems', color: 'from-secondary to-green-400', cardBg: 'bg-cyan-100/90 dark:bg-cyan-900/55 border-cyan-300 dark:border-cyan-700', iconBg: 'bg-cyan-300 dark:bg-cyan-800', nodeBg: 'from-cyan-700 to-green-500' },
-]
-
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-}
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: 'easeOut' as const } },
-}
-
 export default function HowItWorks() {
   const { t } = useLocale()
   const h = t.howItWorks
+  const componentData = t.componentData.howItWorks
+  const cardVariants = {
+    ...componentData.cardVariants,
+    visible: {
+      ...componentData.cardVariants.visible,
+      transition: { ...componentData.cardVariants.visible.transition, ease: 'easeOut' as const },
+    },
+  }
 
-  const steps = h.steps.map((step, i) => ({ ...step, ...stepStyles[i] }))
+  const steps = h.steps.map((step, i) => ({ ...step, ...componentData.stepStyles[i] }))
 
   return (
     <section id="how-it-works" className="px-4 sm:px-2 lg:px-12 py-16 md:py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
@@ -89,7 +79,7 @@ export default function HowItWorks() {
 
           <motion.div
             className="flex flex-col gap-6"
-            variants={containerVariants}
+            variants={componentData.containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}

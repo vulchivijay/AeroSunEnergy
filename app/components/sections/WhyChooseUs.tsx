@@ -5,39 +5,31 @@ import { Lightbulb, ShieldCheck, Layers, MapPin } from 'lucide-react'
 import { Card, CardContent } from './../ui/Card'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
+import type { ReactNode } from 'react'
 
-const reasonIcons = [
-  <Lightbulb key="lightbulb" className="h-8 w-8 text-blue-800 dark:text-blue-100" />,
-  <ShieldCheck key="shield" className="h-8 w-8 text-emerald-800 dark:text-emerald-100" />,
-  <Layers key="layers" className="h-8 w-8 text-amber-800 dark:text-amber-100" />,
-  <MapPin key="mappin" className="h-8 w-8 text-indigo-800 dark:text-indigo-100" />,
-]
-
-const reasonStyles = [
-  { cardBg: 'bg-blue-100/85 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700 hover:border-blue-500', iconBg: 'bg-blue-300 dark:bg-blue-800' },
-  { cardBg: 'bg-emerald-100/85 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700 hover:border-emerald-500', iconBg: 'bg-emerald-300 dark:bg-emerald-800' },
-  { cardBg: 'bg-amber-100/85 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700 hover:border-amber-500', iconBg: 'bg-amber-300 dark:bg-amber-800' },
-  { cardBg: 'bg-indigo-100/85 dark:bg-indigo-900/55 border-indigo-300 dark:border-indigo-700 hover:border-indigo-500', iconBg: 'bg-indigo-300 dark:bg-indigo-800' },
-]
-
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.15 } },
-}
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' as const } },
+const reasonIconComponents: Record<string, ReactNode> = {
+  lightbulb: <Lightbulb className="h-8 w-8 text-blue-800 dark:text-blue-100" />,
+  shield: <ShieldCheck className="h-8 w-8 text-emerald-800 dark:text-emerald-100" />,
+  layers: <Layers className="h-8 w-8 text-amber-800 dark:text-amber-100" />,
+  mappin: <MapPin className="h-8 w-8 text-indigo-800 dark:text-indigo-100" />,
 }
 
 export default function WhyChooseUs() {
   const { t } = useLocale()
   const w = t.whyChooseUs
+  const componentData = t.componentData.whyChooseUs
+  const cardVariants = {
+    ...componentData.cardVariants,
+    visible: {
+      ...componentData.cardVariants.visible,
+      transition: { ...componentData.cardVariants.visible.transition, ease: 'easeOut' as const },
+    },
+  }
 
   const reasons = w.items.map((item, i) => ({
     ...item,
-    icon: reasonIcons[i],
-    ...reasonStyles[i],
+    icon: reasonIconComponents[componentData.iconIds[i]],
+    ...componentData.styles[i],
   }))
 
   return (
@@ -91,7 +83,7 @@ export default function WhyChooseUs() {
       <div className="px-4 sm:px-2 lg:px-12 py-24">
         <motion.div
           className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-4"
-          variants={containerVariants}
+          variants={componentData.containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}

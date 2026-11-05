@@ -4322,7 +4322,18 @@
         "exploreLabel": "Explore AeroSun",
         "closeMenu": "Close navigation menu",
         "voucher": "Voucher",
-        "downloadVoucher": "Download AeroSun Energy voucher"
+        "downloadVoucher": "Download AeroSun Energy voucher",
+        "navigationIconIds": {
+            "/": "house",
+            "/about": "info",
+            "/about/company-profile": "building",
+            "/about/product-catalogue": "package",
+            "/solarenergy": "sun",
+            "/windenergy": "wind",
+            "/hybridenergy": "zap",
+            "/services": "panels",
+            "/contact": "mail"
+        }
     },
     "logo": {
         "homeTitle": "Go to AeroSun Energy homepage",
@@ -4446,6 +4457,84 @@
                 "image": "/images/slider/slider-3.png",
                 "badgeClass": "text-pink-100",
                 "chipClass": "text-pink-50",
+                "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
+            },
+            {
+                "badge": "Urban rooftop",
+                "title": "Vertical Axis Turbine for Rooftops",
+                "description": "Compact rooftop wind systems are ideal for urban and semi-urban spaces where low-noise output, compact footprint, and adaptive installation matter most.",
+                "tags": [
+                    "Low-noise",
+                    "Rooftop"
+                ],
+                "image": "/images/slider/slider-7.png",
+                "badgeClass": "text-sky-100",
+                "chipClass": "text-sky-50",
+                "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
+            },
+            {
+                "badge": "Commercial wind",
+                "title": "Large Wind Systems for Industry",
+                "description": "High-capacity turbines support factories, warehouses, and business campuses by reducing dependency on grid supply and improving renewable generation at scale.",
+                "tags": [
+                    "Industrial",
+                    "High output"
+                ],
+                "image": "/images/slider/slider-8.png",
+                "badgeClass": "text-emerald-100",
+                "chipClass": "text-emerald-50",
+                "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
+            },
+            {
+                "badge": "Farm power",
+                "title": "Wind for Agriculture & Irrigation",
+                "description": "Farm-based wind systems help power pumping, processing, and site loads while lowering energy costs in rural and peri-urban locations.",
+                "tags": [
+                    "Agri-ready",
+                    "Load support"
+                ],
+                "image": "/images/slider/slider-9.png",
+                "badgeClass": "text-amber-100",
+                "chipClass": "text-amber-50",
+                "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
+            },
+            {
+                "badge": "Solar + wind",
+                "title": "Continuous Renewable Generation",
+                "description": "Combined solar and wind generation creates a more reliable energy mix, covering daytime production and filling gaps during low-sun or high-wind periods.",
+                "tags": [
+                    "24/7 supply",
+                    "Balanced output"
+                ],
+                "image": "/images/slider/slider-13.png",
+                "badgeClass": "text-emerald-100",
+                "chipClass": "text-emerald-50",
+                "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
+            },
+            {
+                "badge": "Smart control",
+                "title": "Hybrid Microgrid Energy Management",
+                "description": "Integrated controls coordinate solar, wind, storage, and load demand for better efficiency, backup readiness, and digital monitoring.",
+                "tags": [
+                    "Smart dispatch",
+                    "Battery sync"
+                ],
+                "image": "/images/slider/slider-14.png",
+                "badgeClass": "text-violet-100",
+                "chipClass": "text-violet-50",
+                "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
+            },
+            {
+                "badge": "Remote resilience",
+                "title": "Off-grid Hybrid for Isolated Locations",
+                "description": "Solar-wind hybrid systems with battery storage support remote homes, telecom towers, and rural sites where grid access is limited or unavailable.",
+                "tags": [
+                    "Off-grid",
+                    "Remote-ready"
+                ],
+                "image": "/images/slider/slider-15.png",
+                "badgeClass": "text-sky-100",
+                "chipClass": "text-sky-50",
                 "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
             }
         ],
@@ -5768,6 +5857,11 @@
         ]
     },
     "about": {
+        "serviceAccents": [
+            "from-emerald-500 to-green-600",
+            "from-sky-500 to-blue-600",
+            "from-violet-500 to-purple-600"
+        ],
         "companyProfile": {
             "badge": "Company profile · 2026",
             "downloadButton": "Download Company Profile PDF",
@@ -9955,6 +10049,11 @@
             "startConversationDescription": "Share your project needs and our team can help plan the next steps.",
             "requestConsultation": "Request consultation"
         },
+        "statusTabs": [
+            "In Queue",
+            "In Progress",
+            "Completed"
+        ],
         "projectSteps": [
             "Energy audit and site feasibility",
             "System design and technology selection",
@@ -10023,7 +10122,8 @@
                 "tone": "border-emerald-200 bg-emerald-50 text-emerald-700",
                 "accent": "from-emerald-500 via-green-500 to-lime-500"
             }
-        }
+        },
+        "projectCards": []
     },
     "customerAgreementPage": {
         "hero": {
@@ -10234,6 +10334,13 @@
             ]
         },
         "form": {
+            "defaultValues": {
+                "customerName": "",
+                "companyName": "",
+                "email": "",
+                "phone": "",
+                "agreed": false
+            },
             "title": "Customer Agreement & Payment Terms",
             "agreement": "Agreement",
             "referenceLabel": "Ref.",
@@ -10340,6 +10447,19 @@
     },
     "businessForms": {
         "installationChecklist": {
+            "defaultValues": {
+                "customerName": "",
+                "companyName": "",
+                "email": "",
+                "phone": "",
+                "projectName": "",
+                "siteLocation": "",
+                "installationDate": "",
+                "checklistStatus": "",
+                "safetyCheck": false,
+                "commissioningCheck": false,
+                "notes": ""
+            },
             "sections": [
                 {
                     "title": "Customer enquiry and requirement collection",
@@ -10587,6 +10707,19 @@
             }
         },
         "invoiceReceipt": {
+            "defaultValues": {
+                "customerName": "",
+                "companyName": "",
+                "email": "",
+                "phone": "",
+                "invoiceNumber": "",
+                "projectName": "",
+                "invoiceDate": "",
+                "amount": "",
+                "paymentMode": "",
+                "receiptNote": "",
+                "paymentReceived": false
+            },
             "labels": {
                 "badge": "Invoice",
                 "title": "Invoice and receipt template",
@@ -10715,6 +10848,22 @@
             }
         },
         "purchaseOrder": {
+            "defaultValues": {
+                "customerName": "",
+                "companyName": "",
+                "email": "",
+                "phone": "",
+                "poNumber": "",
+                "projectTitle": "",
+                "supplierName": "",
+                "productLine": "",
+                "quantity": "",
+                "unitPrice": "",
+                "totalValue": "",
+                "deliverySchedule": "",
+                "warranty": "",
+                "termsAccepted": false
+            },
             "labels": {
                 "badge": "Purchase order",
                 "title": "Purchase order and supplier agreement template",
@@ -10868,6 +11017,17 @@
             }
         },
         "warrantyPolicy": {
+            "defaultValues": {
+                "customerName": "",
+                "companyName": "",
+                "email": "",
+                "phone": "",
+                "projectName": "",
+                "productLine": "",
+                "warrantyStart": "",
+                "servicePlan": "",
+                "acceptTerms": false
+            },
             "labels": {
                 "badge": "Warranty",
                 "title": "Policy Acknowledgement",
@@ -10956,6 +11116,140 @@
                 "termsAccepted": "Policy terms acknowledged: Yes"
             }
         }
+    },
+    "ninetyDayTrackerPage": {
+        "sheetRows": [
+            [
+                "Dashboard",
+                "Overall business performance and financial summary"
+            ],
+            [
+                "Expenses",
+                "Track spending, GST, payments and receipts"
+            ],
+            [
+                "Leads",
+                "Manage customer enquiries and follow-ups"
+            ],
+            [
+                "Orders",
+                "Track confirmed projects, payments and outstanding balances"
+            ],
+            [
+                "Activities",
+                "Manage daily tasks and 90-day milestones"
+            ],
+            [
+                "Setup",
+                "Edit capital, reserve and business targets"
+            ]
+        ],
+        "assumptionItems": [
+            "Starting capital: ₹1,00,000",
+            "Emergency reserve target: ₹35,000",
+            "Customer conversation target: 50",
+            "Initial paid project target: 1",
+            "Tracking period: 4 November 2026 – 1 February 2027"
+        ],
+        "actionPlan": [
+            {
+                "title": "Stage 1: Generate revenue",
+                "points": [
+                    "Start solar rooftop consultations and coordination services.",
+                    "Convert enquiries into paid site surveys and design support.",
+                    "Collect customer advances under written agreements before procurement."
+                ]
+            },
+            {
+                "title": "Stage 2: Build the support network",
+                "points": [
+                    "Develop supplier and contractor relationships for installation and procurement.",
+                    "Maintain low-overhead operations without renting office, factory or warehouse space.",
+                    "Keep focus on revenue-generating activities and customer follow-up."
+                ]
+            },
+            {
+                "title": "Stage 3: Secure funding and incubation support",
+                "points": [
+                    "Apply for Startup India, MSME and innovation programme support.",
+                    "Prepare technology and business plan documents for incubators and lenders.",
+                    "Use external technical support instead of spending on unnecessary infrastructure."
+                ]
+            },
+            {
+                "title": "Stage 4: Develop the wind prototype",
+                "points": [
+                    "Validate the 3 kW wind generator through design, BOM and testing.",
+                    "Use outsourced fabrication and contract work before full manufacturing.",
+                    "Do not invest heavily in a complete prototype before funding is confirmed."
+                ]
+            },
+            {
+                "title": "Stage 5: Scale with control",
+                "points": [
+                    "Start small-scale manufacturing through contract manufacturing only when demand is proven.",
+                    "Review dashboard weekly and update the tracker every day.",
+                    "Protect the ₹1 lakh capital and avoid unnecessary spending."
+                ]
+            }
+        ],
+        "phases": [
+            {
+                "period": "Days 1–15",
+                "title": "Business preparation",
+                "actions": [
+                    "Finalise the company profile.",
+                    "Finalise the solar product catalogue.",
+                    "Prepare quotation and customer enquiry formats.",
+                    "Create a supplier database.",
+                    "Identify local solar installation contractors.",
+                    "Prepare a basic customer site-survey checklist.",
+                    "Set up a customer enquiry tracking sheet."
+                ],
+                "outcome": "AeroSun is ready to approach customers professionally."
+            },
+            {
+                "period": "Days 16–30",
+                "title": "Customer acquisition",
+                "actions": [
+                    "Approach homeowners.",
+                    "Approach farmers.",
+                    "Approach small industries.",
+                    "Approach shops and commercial buildings.",
+                    "Approach schools and institutions.",
+                    "Approach farmhouses and remote properties."
+                ],
+                "target": "Set a target of 50 genuine customer conversations.",
+                "note": "This is a target, not a guaranteed conversion figure."
+            },
+            {
+                "period": "Days 31–60",
+                "title": "First commercial projects",
+                "actions": [
+                    "Conduct site surveys.",
+                    "Prepare quotations.",
+                    "Compare supplier prices.",
+                    "Close your first customer order.",
+                    "Coordinate installation through qualified contractors.",
+                    "Collect customer feedback and project documentation."
+                ],
+                "outcome": "First paid project or project coordination assignment."
+            },
+            {
+                "period": "Days 61–90",
+                "title": "Technology and funding",
+                "actions": [
+                    "Finalise the preliminary AS-WG-3000 design.",
+                    "Obtain component quotations.",
+                    "Prepare a prototype budget.",
+                    "Approach incubators.",
+                    "Prepare a technical pitch deck.",
+                    "Explore government-supported prototype funding.",
+                    "Identify a suitable testing facility."
+                ],
+                "outcome": "A credible wind-generator development and funding proposal."
+            }
+        ]
     },
     "knowEligibilityPage": {
         "labels": {
@@ -11107,5 +11401,726 @@
             "Wind turbine or hybrid project without the specific qualifying rooftop solar configuration under that scheme",
             "Non-DCR-compliant modules, ineligible equipment, or failure to complete the official portal process"
         ]
+    },
+    "componentData": {
+        "about": {
+            "featureIconIds": [
+                "speed",
+                "savings",
+                "trust"
+            ],
+            "featureStyles": [
+                {
+                    "cardBg": "bg-blue-100/90 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700 hover:border-blue-500",
+                    "iconBg": "bg-blue-300 dark:bg-blue-800"
+                },
+                {
+                    "cardBg": "bg-emerald-100/90 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700 hover:border-emerald-500",
+                    "iconBg": "bg-emerald-300 dark:bg-emerald-800"
+                },
+                {
+                    "cardBg": "bg-amber-100/90 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700 hover:border-amber-500",
+                    "iconBg": "bg-amber-300 dark:bg-amber-800"
+                }
+            ],
+            "statCardTones": [
+                "bg-blue-50 border-blue-200 text-blue-700",
+                "bg-emerald-50 border-emerald-200 text-emerald-700",
+                "bg-amber-50 border-amber-200 text-amber-700"
+            ],
+            "systemCardTones": [
+                "border-blue-400/20 bg-blue-500/10 text-blue-100",
+                "border-emerald-400/20 bg-emerald-500/10 text-emerald-100",
+                "border-amber-400/20 bg-amber-500/10 text-amber-100"
+            ]
+        },
+        "benefits": {
+            "iconIds": [
+                "trending",
+                "globe",
+                "shield",
+                "infinity"
+            ],
+            "styles": [
+                {
+                    "bg": "bg-blue-50 dark:bg-blue-900/20",
+                    "border": "border-blue-100 dark:border-blue-800"
+                },
+                {
+                    "bg": "bg-green-50 dark:bg-green-900/20",
+                    "border": "border-green-100 dark:border-green-800"
+                },
+                {
+                    "bg": "bg-yellow-50 dark:bg-yellow-900/20",
+                    "border": "border-yellow-100 dark:border-yellow-800"
+                },
+                {
+                    "bg": "bg-purple-50 dark:bg-purple-900/20",
+                    "border": "border-purple-100 dark:border-purple-800"
+                }
+            ],
+            "containerVariants": {
+                "hidden": {},
+                "visible": {
+                    "transition": {
+                        "staggerChildren": 0.1
+                    }
+                }
+            },
+            "cardVariants": {
+                "hidden": {
+                    "opacity": 0,
+                    "scale": 0.95,
+                    "y": 20
+                },
+                "visible": {
+                    "opacity": 1,
+                    "scale": 1,
+                    "y": 0,
+                    "transition": {
+                        "duration": 0.3,
+                        "ease": "easeOut"
+                    }
+                }
+            }
+        },
+        "features": {
+            "iconIds": [
+                "clock",
+                "gitmerge",
+                "wrench",
+                "layers",
+                "leaf",
+                "mappin"
+            ],
+            "styles": [
+                {
+                    "cardBg": "bg-blue-200/70 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700 hover:border-blue-500",
+                    "iconBg": "bg-blue-300 dark:bg-blue-800"
+                },
+                {
+                    "cardBg": "bg-emerald-200/70 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700 hover:border-emerald-500",
+                    "iconBg": "bg-emerald-300 dark:bg-emerald-800"
+                },
+                {
+                    "cardBg": "bg-amber-200/70 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700 hover:border-amber-500",
+                    "iconBg": "bg-amber-300 dark:bg-amber-800"
+                },
+                {
+                    "cardBg": "bg-indigo-200/70 dark:bg-indigo-900/55 border-indigo-300 dark:border-indigo-700 hover:border-indigo-500",
+                    "iconBg": "bg-indigo-300 dark:bg-indigo-800"
+                },
+                {
+                    "cardBg": "bg-green-200/70 dark:bg-green-900/55 border-green-300 dark:border-green-700 hover:border-green-500",
+                    "iconBg": "bg-green-300 dark:bg-green-800"
+                },
+                {
+                    "cardBg": "bg-cyan-200/70 dark:bg-cyan-900/55 border-cyan-300 dark:border-cyan-700 hover:border-cyan-500",
+                    "iconBg": "bg-cyan-300 dark:bg-cyan-800"
+                }
+            ],
+            "containerVariants": {
+                "hidden": {},
+                "visible": {
+                    "transition": {
+                        "staggerChildren": 0.12
+                    }
+                }
+            },
+            "cardVariants": {
+                "hidden": {
+                    "opacity": 0,
+                    "y": 30
+                },
+                "visible": {
+                    "opacity": 1,
+                    "y": 0,
+                    "transition": {
+                        "duration": 0.55,
+                        "ease": "easeOut"
+                    }
+                }
+            }
+        },
+        "howItWorks": {
+            "stepStyles": [
+                {
+                    "icon": "??",
+                    "imageSrc": "/images/forming-aerosunenergy.png",
+                    "imageAlt": "Site assessment and planning process by AeroSun Energy",
+                    "color": "from-primary to-blue-400",
+                    "cardBg": "bg-blue-100/90 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700",
+                    "iconBg": "bg-blue-300 dark:bg-blue-800",
+                    "nodeBg": "from-blue-700 to-blue-500"
+                },
+                {
+                    "icon": "??",
+                    "imageSrc": "/images/customdesign-aerosunenergy.png",
+                    "imageAlt": "Custom hybrid system design by AeroSun Energy",
+                    "color": "from-secondary to-teal-400",
+                    "cardBg": "bg-emerald-100/90 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700",
+                    "iconBg": "bg-emerald-300 dark:bg-emerald-800",
+                    "nodeBg": "from-emerald-700 to-teal-500"
+                },
+                {
+                    "icon": "??",
+                    "imageSrc": "/images/installation-aerosunenergy.png",
+                    "imageAlt": "Installation of AeroSun hybrid turbine system",
+                    "color": "from-accent to-yellow-400",
+                    "cardBg": "bg-amber-100/90 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700",
+                    "iconBg": "bg-amber-300 dark:bg-amber-800",
+                    "nodeBg": "from-amber-700 to-yellow-500"
+                },
+                {
+                    "icon": "??",
+                    "imageSrc": "/images/smart-vawt-aerosunenergy.png",
+                    "imageAlt": "Smart monitoring dashboard for AeroSun Energy systems",
+                    "color": "from-primary to-secondary",
+                    "cardBg": "bg-violet-100/90 dark:bg-violet-900/55 border-violet-300 dark:border-violet-700",
+                    "iconBg": "bg-violet-300 dark:bg-violet-800",
+                    "nodeBg": "from-violet-700 to-purple-500"
+                },
+                {
+                    "icon": "?",
+                    "imageSrc": "/images/minimal-maintainance-aerosunenergy.png",
+                    "imageAlt": "Continuous clean power output from AeroSun hybrid systems",
+                    "color": "from-secondary to-green-400",
+                    "cardBg": "bg-cyan-100/90 dark:bg-cyan-900/55 border-cyan-300 dark:border-cyan-700",
+                    "iconBg": "bg-cyan-300 dark:bg-cyan-800",
+                    "nodeBg": "from-cyan-700 to-green-500"
+                }
+            ],
+            "containerVariants": {
+                "hidden": {},
+                "visible": {
+                    "transition": {
+                        "staggerChildren": 0.1
+                    }
+                }
+            },
+            "cardVariants": {
+                "hidden": {
+                    "opacity": 0,
+                    "y": 40
+                },
+                "visible": {
+                    "opacity": 1,
+                    "y": 0,
+                    "transition": {
+                        "duration": 0.3,
+                        "ease": "easeOut"
+                    }
+                }
+            }
+        },
+        "useCases": {
+            "styles": [
+                {
+                    "emoji": "???",
+                    "imageSrc": "/images/infra-aerosunenergy.png",
+                    "imageAlt": "Hybrid solar and wind infrastructure for roads and highways",
+                    "tagColor": "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300",
+                    "color": "from-primary to-blue-400",
+                    "cardBg": "bg-blue-100/85 dark:bg-blue-950/45 border-blue-300 dark:border-blue-700"
+                },
+                {
+                    "emoji": "??",
+                    "imageSrc": "/images/urbangreen-aerosunenergy.png",
+                    "imageAlt": "AeroSun hybrid installation for public parks and open spaces",
+                    "tagColor": "bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300",
+                    "color": "from-secondary to-teal-400",
+                    "cardBg": "bg-emerald-100/85 dark:bg-emerald-950/45 border-emerald-300 dark:border-emerald-700"
+                },
+                {
+                    "emoji": "??",
+                    "imageSrc": "/images/roof-turbine-aerosunenergy.png",
+                    "imageAlt": "Residential rooftop turbine and hybrid solar installation",
+                    "tagColor": "bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300",
+                    "color": "from-accent to-yellow-400",
+                    "cardBg": "bg-amber-100/85 dark:bg-amber-950/45 border-amber-300 dark:border-amber-700"
+                },
+                {
+                    "emoji": "??",
+                    "imageSrc": "/images/industries-aerosunenergy.png",
+                    "imageAlt": "Commercial and industrial AeroSun hybrid energy installation",
+                    "tagColor": "bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300",
+                    "color": "from-pink-400 to-rose-400",
+                    "cardBg": "bg-purple-100/85 dark:bg-purple-950/45 border-purple-300 dark:border-purple-700"
+                }
+            ],
+            "containerVariants": {
+                "hidden": {},
+                "visible": {
+                    "transition": {
+                        "staggerChildren": 0.15
+                    }
+                }
+            },
+            "cardVariants": {
+                "hidden": {
+                    "opacity": 0,
+                    "y": 30
+                },
+                "visible": {
+                    "opacity": 1,
+                    "y": 0,
+                    "transition": {
+                        "duration": 0.55,
+                        "ease": "easeOut"
+                    }
+                }
+            }
+        },
+        "whyChooseUs": {
+            "iconIds": [
+                "lightbulb",
+                "shield",
+                "layers",
+                "mappin"
+            ],
+            "styles": [
+                {
+                    "cardBg": "bg-blue-100/85 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700 hover:border-blue-500",
+                    "iconBg": "bg-blue-300 dark:bg-blue-800"
+                },
+                {
+                    "cardBg": "bg-emerald-100/85 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700 hover:border-emerald-500",
+                    "iconBg": "bg-emerald-300 dark:bg-emerald-800"
+                },
+                {
+                    "cardBg": "bg-amber-100/85 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700 hover:border-amber-500",
+                    "iconBg": "bg-amber-300 dark:bg-amber-800"
+                },
+                {
+                    "cardBg": "bg-indigo-100/85 dark:bg-indigo-900/55 border-indigo-300 dark:border-indigo-700 hover:border-indigo-500",
+                    "iconBg": "bg-indigo-300 dark:bg-indigo-800"
+                }
+            ],
+            "containerVariants": {
+                "hidden": {},
+                "visible": {
+                    "transition": {
+                        "staggerChildren": 0.15
+                    }
+                }
+            },
+            "cardVariants": {
+                "hidden": {
+                    "opacity": 0,
+                    "y": 30
+                },
+                "visible": {
+                    "opacity": 1,
+                    "y": 0,
+                    "transition": {
+                        "duration": 0.55,
+                        "ease": "easeOut"
+                    }
+                }
+            }
+        },
+        "services": {
+            "styles": [
+                {
+                    "emoji": "??",
+                    "color": "from-red-400 to-rose-400",
+                    "cardBg": "bg-rose-100/90 dark:bg-rose-900/50 border-rose-300 dark:border-rose-700 hover:border-rose-500",
+                    "iconBg": "bg-rose-300 dark:bg-rose-800"
+                },
+                {
+                    "emoji": "??",
+                    "color": "from-violet-400 to-rose-400",
+                    "cardBg": "bg-violet-100/90 dark:bg-violet-900/50 border-violet-300 dark:border-violet-700 hover:border-violet-500",
+                    "iconBg": "bg-violet-300 dark:bg-violet-800"
+                },
+                {
+                    "emoji": "??",
+                    "color": "from-purple-400 to-rose-400",
+                    "cardBg": "bg-purple-100/90 dark:bg-purple-900/50 border-purple-300 dark:border-purple-700 hover:border-purple-500",
+                    "iconBg": "bg-purple-300 dark:bg-purple-800"
+                },
+                {
+                    "emoji": "??",
+                    "color": "from-yellow-400 to-cyan-400",
+                    "cardBg": "bg-amber-100/90 dark:bg-amber-900/50 border-amber-300 dark:border-amber-700 hover:border-amber-500",
+                    "iconBg": "bg-amber-300 dark:bg-amber-800"
+                },
+                {
+                    "emoji": "??",
+                    "color": "from-pink-400 to-rose-400",
+                    "cardBg": "bg-cyan-100/90 dark:bg-cyan-900/50 border-cyan-300 dark:border-cyan-700 hover:border-cyan-500",
+                    "iconBg": "bg-cyan-300 dark:bg-cyan-800"
+                }
+            ]
+        },
+        "windGenerators": {
+            "styles": [
+                {
+                    "id": "h-darrieus",
+                    "imageSrc": "/images/h-darrieus-turbine-aerosunenergy.png",
+                    "imageAlt": "H-Darrieus wind turbine by AeroSun Energy",
+                    "badgeColor": "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300",
+                    "accentFrom": "from-blue-400",
+                    "accentTo": "to-purple-400"
+                },
+                {
+                    "id": "flower",
+                    "imageSrc": "/images/helical-turbine-aerosunenergy.png",
+                    "imageAlt": "Helical flower-style vertical wind turbine by AeroSun Energy",
+                    "badgeColor": "bg-pink-100 text-pink-700 dark:bg-pink-900 dark:text-pink-300",
+                    "accentFrom": "from-pink-400",
+                    "accentTo": "to-rose-400"
+                },
+                {
+                    "id": "savonius",
+                    "imageSrc": "/images/savonius-turbine-aerosunenergy.png",
+                    "imageAlt": "Savonius vertical-axis wind turbine by AeroSun Energy",
+                    "badgeColor": "bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-300",
+                    "accentFrom": "from-teal-400",
+                    "accentTo": "to-cyan-400"
+                },
+                {
+                    "id": "rooftop-vawt",
+                    "imageSrc": "/images/roof-turbine-aerosunenergy.png",
+                    "imageAlt": "Rooftop vertical wind turbine by AeroSun Energy",
+                    "badgeColor": "bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-300",
+                    "accentFrom": "from-orange-400",
+                    "accentTo": "to-yellow-400"
+                }
+            ]
+        },
+        "solarContentBlocks": {
+            "iconColors": {
+                "emerald": "text-emerald-700",
+                "amber": "text-amber-700",
+                "sky": "text-sky-700",
+                "violet": "text-violet-700"
+            },
+            "checkBackgrounds": {
+                "emerald": "bg-emerald-100 text-emerald-700",
+                "amber": "bg-amber-100 text-amber-700",
+                "sky": "bg-sky-100 text-sky-700",
+                "violet": "bg-violet-100 text-violet-700"
+            },
+            "featureClasses": {
+                "emerald": "border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f8fffb_50%,#ffffff_100%)] text-emerald-700",
+                "amber": "border-amber-200 bg-[linear-gradient(135deg,#fff7ed_0%,#fffdf8_50%,#ffffff_100%)] text-amber-700",
+                "sky": "border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#f8fbff_50%,#ffffff_100%)] text-sky-700",
+                "violet": "border-violet-200 bg-[linear-gradient(135deg,#f5f3ff_0%,#faf7ff_50%,#ffffff_100%)] text-violet-700"
+            },
+            "infoThemes": {
+                "emerald": "border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#ffffff_100%)] text-emerald-900",
+                "amber": "border-amber-200 bg-[linear-gradient(135deg,#fff7ed_0%,#ffffff_100%)] text-amber-900",
+                "sky": "border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ffffff_100%)] text-sky-900"
+            },
+            "defaultFeature": {
+                "title": "Solar Rooftop Systems",
+                "description": "On-grid power plants for homes and businesses.",
+                "points": [
+                    "On-grid, off-grid and hybrid configurations",
+                    "Net metering with state DISCOM",
+                    "PM Surya Ghar subsidy assistance",
+                    "TATA Power Solar premium panels"
+                ],
+                "accent": "emerald"
+            },
+            "defaultBenefit": {
+                "title": "Reduce electricity bills by up to 80?90%",
+                "description": "Lower your monthly spend while improving energy certainty."
+            },
+            "defaultInfo": {
+                "title": "Key Benefits",
+                "content": [
+                    "Reduce electricity bills by up to 80?90%",
+                    "25+ years of solar panel life",
+                    "Low maintenance and high reliability",
+                    "Environment-friendly renewable energy"
+                ],
+                "accent": "emerald"
+            },
+            "offerings": [
+                {
+                    "title": "Solar Rooftop Systems",
+                    "description": "On-grid power plants for homes and businesses.",
+                    "points": [
+                        "On-grid, off-grid and hybrid configurations",
+                        "Net metering with state DISCOM",
+                        "PM Surya Ghar subsidy assistance",
+                        "TATA Power Solar premium panels"
+                    ],
+                    "accent": "emerald"
+                },
+                {
+                    "title": "Solar Thermal ? Water Heating Solutions",
+                    "description": "Solar Hot Water & Heat Pump ? efficient, eco-friendly hot water for homes, hotels, hospitals, hostels, commercial establishments and industries.",
+                    "points": [
+                        "Available in capacities from 100 litres per day (LPD)",
+                        "Choice of pressurised and non-pressurised models",
+                        "High-performance BIS-certified solar collectors",
+                        "Cuts electricity use by minimising geyser usage"
+                    ],
+                    "accent": "amber"
+                },
+                {
+                    "title": "Solar Street Lights",
+                    "description": "All-in-one lighting powered entirely by sunlight.",
+                    "points": [
+                        "Integrated all-in-one luminaires starting from 12W",
+                        "Auto dusk-to-dawn operation",
+                        "Lithium-ion storage, 5+ year life",
+                        "Zero electricity bills"
+                    ],
+                    "accent": "sky"
+                },
+                {
+                    "title": "Solar Fencing",
+                    "description": "Solar-powered electric fences for farms and estates.",
+                    "points": [
+                        "Solar-charged energiser",
+                        "Up to 10 km perimeter on a single charger",
+                        "Audible alarm and battery backup",
+                        "Crop and livestock protection"
+                    ],
+                    "accent": "violet"
+                },
+                {
+                    "title": "Solar Pumpsets",
+                    "description": "Diesel-free water pumping for agriculture.",
+                    "points": [
+                        "AC and DC pump configurations",
+                        "MNRE-approved controllers",
+                        "PM-KUSUM scheme assistance",
+                        "5-year manufacturer warranty"
+                    ],
+                    "accent": "amber"
+                },
+                {
+                    "title": "Operation & Maintenance (AMC)",
+                    "description": "Annual care to keep your plant generating at peak.",
+                    "points": [
+                        "Quarterly preventive maintenance",
+                        "Performance ratio monitoring",
+                        "24x7 priority support",
+                        "Spare parts and inverter service"
+                    ],
+                    "accent": "emerald"
+                }
+            ],
+            "rooftopBenefits": [
+                {
+                    "title": "Reduce electricity bills by up to 80?90%",
+                    "description": "Lower your monthly spend while improving energy certainty."
+                },
+                {
+                    "title": "25+ years of solar panel life",
+                    "description": "Long operational life with minimal replacement cycles."
+                },
+                {
+                    "title": "Low maintenance and high reliability",
+                    "description": "Designed for stable long-term generation with simple upkeep."
+                },
+                {
+                    "title": "Environment-friendly renewable energy",
+                    "description": "Reduce your environmental impact with clean power generation."
+                },
+                {
+                    "title": "Increase property value",
+                    "description": "Improve the value and appeal of your property with solar-ready infrastructure."
+                },
+                {
+                    "title": "Net Metering facility",
+                    "description": "Export excess power to the grid and earn credits where applicable."
+                }
+            ],
+            "whySolar": [
+                {
+                    "title": "Reduce Carbon Emissions",
+                    "description": "Every kW of solar offsets ~1.2 tonnes of CO? a year ? shrinking your carbon footprint."
+                },
+                {
+                    "title": "Eco-Friendly",
+                    "description": "Clean, renewable energy that protects nature for generations to come."
+                },
+                {
+                    "title": "Cost Saving",
+                    "description": "Slash electricity bills by 70?90% from day one and recover your investment in 4?6 years."
+                },
+                {
+                    "title": "Energy Independence",
+                    "description": "Generate your own power and cut reliance on the grid and rising tariffs."
+                },
+                {
+                    "title": "Unlimited Energy",
+                    "description": "Sunlight is infinite ? Tirupati enjoys 300+ sunny days every year."
+                },
+                {
+                    "title": "Continuous Supply",
+                    "description": "Hybrid systems with battery backup keep critical loads running through outages."
+                }
+            ],
+            "subsidyCards": [
+                {
+                    "label": "For Residential Households",
+                    "value": "? 30,000",
+                    "note": "per kW up to 2 kW"
+                },
+                {
+                    "label": "Additional Capacity",
+                    "value": "? 18,000",
+                    "note": "per kW for additional capacity up to 3 kW"
+                },
+                {
+                    "label": "Maximum Total Subsidy",
+                    "value": "? 78,000",
+                    "note": "maximum total subsidy for systems larger than 3 kW"
+                },
+                {
+                    "label": "For GHS / RWA",
+                    "value": "? 18,000",
+                    "note": "per kW ? common facilities incl. EV charging, up to 500 kW"
+                }
+            ]
+        },
+        "hybridContentBlocks": {
+            "iconColors": {
+                "emerald": "text-emerald-700",
+                "sky": "text-sky-700",
+                "violet": "text-violet-700",
+                "amber": "text-amber-700"
+            },
+            "checkBackgrounds": {
+                "emerald": "bg-emerald-100 text-emerald-700",
+                "sky": "bg-sky-100 text-sky-700",
+                "violet": "bg-violet-100 text-violet-700",
+                "amber": "bg-amber-100 text-amber-700"
+            },
+            "featureClasses": {
+                "emerald": "border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f8fffb_50%,#ffffff_100%)] text-emerald-700",
+                "sky": "border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#f8fbff_50%,#ffffff_100%)] text-sky-700",
+                "violet": "border-violet-200 bg-[linear-gradient(135deg,#f5f3ff_0%,#faf7ff_50%,#ffffff_100%)] text-violet-700",
+                "amber": "border-amber-200 bg-[linear-gradient(135deg,#fffbeb_0%,#fffdf6_50%,#ffffff_100%)] text-amber-700"
+            },
+            "infoThemes": {
+                "emerald": "border-emerald-200 bg-linear-to-br from-emerald-50 via-white to-white text-emerald-900",
+                "sky": "border-sky-200 bg-linear-to-br from-sky-50 via-white to-white text-sky-900",
+                "violet": "border-violet-200 bg-linear-to-br from-violet-50 via-white to-white text-violet-900"
+            }
+        },
+        "windContentBlocks": {
+            "iconColors": {
+                "sky": "text-sky-700",
+                "emerald": "text-emerald-700",
+                "amber": "text-amber-700",
+                "violet": "text-violet-700"
+            },
+            "checkBackgrounds": {
+                "sky": "bg-sky-100 text-sky-700",
+                "emerald": "bg-emerald-100 text-emerald-700",
+                "amber": "bg-amber-100 text-amber-700",
+                "violet": "bg-violet-100 text-violet-700"
+            },
+            "featureClasses": {
+                "sky": "border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#f8fbff_50%,#ffffff_100%)] text-sky-700",
+                "emerald": "border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f8fffb_50%,#ffffff_100%)] text-emerald-700",
+                "amber": "border-amber-200 bg-[linear-gradient(135deg,#fffbeb_0%,#fffdf6_50%,#ffffff_100%)] text-amber-700",
+                "violet": "border-violet-200 bg-[linear-gradient(135deg,#f5f3ff_0%,#faf7ff_50%,#ffffff_100%)] text-violet-700"
+            },
+            "infoThemes": {
+                "sky": "border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ffffff_100%)] text-sky-900",
+                "emerald": "border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#ffffff_100%)] text-emerald-900",
+                "amber": "border-amber-200 bg-[linear-gradient(135deg,#fffbeb_0%,#ffffff_100%)] text-amber-900"
+            }
+        },
+        "solarEstimation": {
+            "defaultValues": {
+                "monthlyUnits": 360,
+                "installationCostPerKw": 54300,
+                "sellingPricePerKw": 65000
+            },
+            "summaryStatAccents": [
+                "from-primary/90 to-custom-orange/90",
+                "from-custom-blue/90 to-primary/90",
+                "from-custom-red/90 to-custom-violet/90"
+            ]
+        },
+        "footer": {
+            "socialLinks": [
+                {
+                    "href": "https://x.com/AeroSunEnergy",
+                    "platform": "twitter",
+                    "dataSocial": "twitter",
+                    "iconId": "twitter"
+                },
+                {
+                    "href": "https://www.linkedin.com/company/aerosun-energy/",
+                    "platform": "linkedin",
+                    "dataSocial": "linkedin",
+                    "iconId": "linkedin"
+                },
+                {
+                    "href": "https://www.facebook.com/AeroSunEnergyPrivateLimited/",
+                    "platform": "facebook",
+                    "dataSocial": "facebook",
+                    "iconId": "facebook"
+                },
+                {
+                    "href": "https://www.instagram.com/aerosunenergyprivatelimited/",
+                    "platform": "instagram",
+                    "dataSocial": "instagram",
+                    "iconId": "instagram"
+                }
+            ]
+        },
+        "contact": {
+            "channelIconIds": [
+                "email",
+                "website",
+                "quote"
+            ]
+        },
+        "warrantyPolicy": {
+            "fieldAccentClasses": {
+                "sky": "border-sky-200 bg-sky-50/70 focus:border-sky-500 focus:ring-sky-100",
+                "emerald": "border-emerald-200 bg-emerald-50/70 focus:border-emerald-500 focus:ring-emerald-100",
+                "cyan": "border-cyan-200 bg-cyan-50/70 focus:border-cyan-500 focus:ring-cyan-100",
+                "blue": "border-blue-200 bg-blue-50/70 focus:border-blue-500 focus:ring-blue-100",
+                "indigo": "border-indigo-200 bg-indigo-50/70 focus:border-indigo-500 focus:ring-indigo-100"
+            }
+        },
+        "companyAge": {
+            "digitalFontStyle": {
+                "fontFamily": "var(--font-digital), \"Orbitron\", monospace",
+                "fontVariantNumeric": "tabular-nums",
+                "fontFeatureSettings": "\"tnum\" 1"
+            }
+        },
+        "lordModal": {
+            "lords": [
+                {
+                    "name": "Ganesha",
+                    "image": "/images/lordganesha.png",
+                    "width": 558,
+                    "height": 1448
+                },
+                {
+                    "name": "Balaji",
+                    "image": "/images/lordbalaji.png",
+                    "width": 433,
+                    "height": 577
+                },
+                {
+                    "name": "Shiva",
+                    "image": "/images/lordshiva.png",
+                    "width": 375,
+                    "height": 591
+                }
+            ]
+        },
+        "consentAwareTracking": {
+            "adsTagIds": [
+                "AW-18547983243",
+                "AW-18551268371"
+            ]
+        }
     }
 }

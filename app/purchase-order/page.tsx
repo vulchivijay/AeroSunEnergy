@@ -33,26 +33,10 @@ const createPurchaseOrderSchema = (validation: typeof import('@/public/locales/e
 
 type PurchaseOrderFormValues = z.infer<ReturnType<typeof createPurchaseOrderSchema>>
 
-const defaultValues: PurchaseOrderFormValues = {
-  customerName: '',
-  companyName: '',
-  email: '',
-  phone: '',
-  poNumber: '',
-  projectTitle: '',
-  supplierName: '',
-  productLine: '',
-  quantity: '',
-  unitPrice: '',
-  totalValue: '',
-  deliverySchedule: '',
-  warranty: '',
-  termsAccepted: false,
-}
-
 export default function PurchaseOrderPage() {
   const { t } = useLocale()
   const content = t.businessForms.purchaseOrder
+  const defaultValues = content.defaultValues
   const { labels } = content
   const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {

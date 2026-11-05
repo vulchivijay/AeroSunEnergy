@@ -4,66 +4,46 @@ import { motion } from '@/lib/motion'
 import { Card, CardContent } from '@/app/components/ui/Card'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
+import type { ReactNode } from 'react'
 
-const featureIcons = [
-  (
-    <svg key="speed" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-800 dark:text-blue-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+const featureIconComponents: Record<string, ReactNode> = {
+  speed: (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-800 dark:text-blue-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3l4 9H5l1 9 13-13h-6l2-5H5z" />
     </svg>
   ),
-  (
-    <svg key="savings" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-emerald-800 dark:text-emerald-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  savings: (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-emerald-800 dark:text-emerald-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>
   ),
-  (
-    <svg key="trust" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-amber-800 dark:text-amber-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  trust: (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-amber-800 dark:text-amber-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
     </svg>
   ),
-]
-
-const featureStyles = [
-  { cardBg: 'bg-blue-100/90 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700 hover:border-blue-500', iconBg: 'bg-blue-300 dark:bg-blue-800' },
-  { cardBg: 'bg-emerald-100/90 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700 hover:border-emerald-500', iconBg: 'bg-emerald-300 dark:bg-emerald-800' },
-  { cardBg: 'bg-amber-100/90 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700 hover:border-amber-500', iconBg: 'bg-amber-300 dark:bg-amber-800' },
-]
-
-const coreValueStyles = [
-  'bg-blue-50 dark:bg-blue-900/20',
-  'bg-green-50 dark:bg-green-900/20',
-  'bg-yellow-50 dark:bg-yellow-900/20',
-  'bg-purple-50 dark:bg-purple-900/20',
-  'bg-pink-50 dark:bg-pink-900/20',
-]
+}
 
 export default function About() {
   const { t } = useLocale()
   const a = t.about
   const homeSection = t.home.aboutSection
+  const componentData = t.componentData.about
 
   const features = a.features.map((f, i) => ({
     ...f,
-    icon: featureIcons[i],
-    ...featureStyles[i],
+    icon: featureIconComponents[componentData.featureIconIds[i]],
+    ...componentData.featureStyles[i],
   }))
 
   const statCards = homeSection.stats.map((item, index) => ({
     ...item,
-    tone: [
-      'bg-blue-50 border-blue-200 text-blue-700',
-      'bg-emerald-50 border-emerald-200 text-emerald-700',
-      'bg-amber-50 border-amber-200 text-amber-700',
-    ][index],
+    tone: componentData.statCardTones[index],
   }))
 
   const systemCards = homeSection.systemCards.map((item, index) => ({
     ...item,
-    tone: [
-      'border-blue-400/20 bg-blue-500/10 text-blue-100',
-      'border-emerald-400/20 bg-emerald-500/10 text-emerald-100',
-      'border-amber-400/20 bg-amber-500/10 text-amber-100',
-    ][index],
+    tone: componentData.systemCardTones[index],
   }))
 
   const renderCompanyName = (text: string) => {

@@ -5,19 +5,11 @@ import { Card, CardContent } from './../ui/Card'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
 
-const serviceStyles = [
-  { emoji: '💰', color: 'from-red-400 to-rose-400', cardBg: 'bg-rose-100/90 dark:bg-rose-900/50 border-rose-300 dark:border-rose-700 hover:border-rose-500', iconBg: 'bg-rose-300 dark:bg-rose-800' },
-  { emoji: '🌍', color: 'from-violet-400 to-rose-400', cardBg: 'bg-violet-100/90 dark:bg-violet-900/50 border-violet-300 dark:border-violet-700 hover:border-violet-500', iconBg: 'bg-violet-300 dark:bg-violet-800' },
-  { emoji: '📡', color: 'from-purple-400 to-rose-400', cardBg: 'bg-purple-100/90 dark:bg-purple-900/50 border-purple-300 dark:border-purple-700 hover:border-purple-500', iconBg: 'bg-purple-300 dark:bg-purple-800' },
-  { emoji: '🔧', color: 'from-yellow-400 to-cyan-400', cardBg: 'bg-amber-100/90 dark:bg-amber-900/50 border-amber-300 dark:border-amber-700 hover:border-amber-500', iconBg: 'bg-amber-300 dark:bg-amber-800' },
-  { emoji: '📐', color: 'from-pink-400 to-rose-400', cardBg: 'bg-cyan-100/90 dark:bg-cyan-900/50 border-cyan-300 dark:border-cyan-700 hover:border-cyan-500', iconBg: 'bg-cyan-300 dark:bg-cyan-800' },
-]
-
 export default function Services() {
   const { t } = useLocale()
   const s = t.services
 
-  const services = s.items.map((item, i) => ({ ...item, ...serviceStyles[i] }))
+  const services = s.items.map((item, i) => ({ ...item, ...t.componentData.services.styles[i] }))
 
   return (
     <section id="services" className="px-4 sm:px-2 lg:px-12 py-16 md:py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">

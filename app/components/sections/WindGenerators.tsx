@@ -4,18 +4,11 @@ import Link from 'next/link'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
 
-const generatorStyles = [
-  { id: 'h-darrieus', imageSrc: '/images/h-darrieus-turbine-aerosunenergy.png', imageAlt: 'H-Darrieus wind turbine by AeroSun Energy', badgeColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300', accentFrom: 'from-blue-400', accentTo: 'to-purple-400' },
-  { id: 'flower', imageSrc: '/images/helical-turbine-aerosunenergy.png', imageAlt: 'Helical flower-style vertical wind turbine by AeroSun Energy', badgeColor: 'bg-pink-100 text-pink-700 dark:bg-pink-900 dark:text-pink-300', accentFrom: 'from-pink-400', accentTo: 'to-rose-400' },
-  { id: 'savonius', imageSrc: '/images/savonius-turbine-aerosunenergy.png', imageAlt: 'Savonius vertical-axis wind turbine by AeroSun Energy', badgeColor: 'bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-300', accentFrom: 'from-teal-400', accentTo: 'to-cyan-400' },
-  { id: 'rooftop-vawt', imageSrc: '/images/roof-turbine-aerosunenergy.png', imageAlt: 'Rooftop vertical wind turbine by AeroSun Energy', badgeColor: 'bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-300', accentFrom: 'from-orange-400', accentTo: 'to-yellow-400' },
-]
-
 export default function WindGenerators() {
   const { t } = useLocale()
   const w = t.windGenerators
 
-  const generators = w.items.map((item, i) => ({ ...item, ...generatorStyles[i] }))
+  const generators = w.items.map((item, i) => ({ ...item, ...t.componentData.windGenerators.styles[i] }))
 
   return (
     <section id="wind-generators" className="px-4 sm:px-2 lg:px-12 py-16 md:py-24 bg-gray-50 dark:bg-gray-900 border-t-2 border-stone-100 overflow-hidden">

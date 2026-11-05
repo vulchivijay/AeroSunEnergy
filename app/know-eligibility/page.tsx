@@ -3,132 +3,9 @@
 import Link from 'next/link'
 import { useLocale } from '@/lib/LocaleContext'
 
-const eligibilityChecks = [
-  {
-    title: 'Residential status',
-    detail:
-      'The scheme is primarily for residential households that own or occupy a suitable rooftop in India and wish to install rooftop solar.',
-  },
-  {
-    title: 'Rooftop ownership',
-    detail:
-      'The applicant should have a roof or suitable rooftop space where the solar panels can be installed and connected in compliance with local electrical requirements.',
-  },
-  {
-    title: 'Electricity connection',
-    detail:
-      'A valid electricity connection and a proper consumer account are typically required so the system can be connected to the grid, billed, and net-metered correctly.',
-  },
-  {
-    title: 'System capacity',
-    detail:
-      'The eligible system is normally sized based on the household’s average consumption and roof suitability. The subsidy is generally provided for a rooftop solar system up to the approved cap.',
-  },
-  {
-    title: 'Approved vendor and installation',
-    detail:
-      'The rooftop solar project should typically be installed by an empanelled or registered vendor and follow the portal and DISCOM process for application and commissioning.',
-  },
-  {
-    title: 'Official portal compliance',
-    detail:
-      'Applicants are expected to apply through the official PM Surya Ghar portal and comply with the required verification, installation, and subsidy claim steps.',
-  },
-]
-
-const subsidyBreakdown = [
-  {
-    title: 'First 2 kW',
-    value: '₹30,000 per kW',
-    note: 'For eligible residential households',
-  },
-  {
-    title: 'Additional capacity up to 3 kW',
-    value: '₹18,000 per kW',
-    note: 'For the next part of the system',
-  },
-  {
-    title: 'Maximum overall benefit',
-    value: '₹78,000',
-    note: 'Capped for eligible systems',
-  },
-  {
-    title: 'Common facilities / GHS / RWA',
-    value: '₹18,000 per kW',
-    note: 'For suitable shared facilities up to the approved limit',
-  },
-]
-
-const processSteps = [
-  'Check your household electricity consumption and roof suitability.',
-  'Register on the official PM Surya Ghar portal and upload the required details.',
-  'Select a registered solar vendor and confirm the proposed rooftop system.',
-  'Complete technical feasibility and net-metering requirements with the DISCOM.',
-  'Install the rooftop solar system and complete commissioning.',
-  'Submit the required documents for subsidy verification and receive the support amount as per scheme rules.',
-]
-
-const importantNotes = [
-  'Subsidy amounts, rules, and programme conditions can change, so always verify the latest information on the official PM Surya Ghar portal and your local DISCOM portal.',
-  'The scheme is for a residential rooftop solar application and may have specific requirements based on state rules, consumer category, and vendor empanelment.',
-  'AeroSun Energy can help with application guidance, documentation support, vendor coordination, and installation planning for eligible homes.',
-]
-
-const schemeOverviewCards = [
-  {
-    title: 'Residential rooftop solar',
-    detail: 'PM Surya Ghar focuses on grid-connected residential rooftops and is the most relevant scheme for household customers. It is not a general commercial or industrial subsidy route.',
-  },
-  {
-    title: 'Agricultural solarisation',
-    detail: 'PM-KUSUM supports agricultural solar pumps, solarisation of existing pumping systems, and decentralised renewable energy where the farmer or eligible entity qualifies under the scheme rules.',
-  },
-  {
-    title: 'Developer and commercial categories',
-    detail: 'Some schemes support renewable-energy developers, farmer groups, cooperatives, FPOs, and common facility applications, while others are strictly limited to eligible residential connections.',
-  },
-]
-
-const schemeEligibilityNotes = [
-  'Eligibility depends on customer category, location, electricity connection, land ownership, installation type, equipment quality, and scheme-specific documentation.',
-  'Before promising a subsidy, AeroSun should verify the customer’s residential or agricultural category, the applicable state process, and the relevant funding rules.',
-  'Projects that do not meet the scheme’s technical or consumer-category requirements may still be viable as non-subsidised renewable energy installations.',
-]
-
-const pmKusumComponents = [
-  {
-    title: 'Component A',
-    detail: 'Decentralised grid-connected renewable power plants for eligible farmer groups, cooperatives, panchayats, FPOs, WUAs, and similar entities.',
-  },
-  {
-    title: 'Component B',
-    detail: 'Standalone solar agricultural pumps, mainly for eligible farmers and agricultural end-users seeking off-grid or standalone irrigation solutions.',
-  },
-  {
-    title: 'Component C',
-    detail: 'Solarisation of existing grid-connected agricultural pumps and feeders, where the state implementation process and grid conditions permit the programme.',
-  },
-]
-
-const commonRejectionReasons = [
-  'Commercial, industrial, or institutional electricity connection rather than a residential category',
-  'No qualifying agricultural land or beneficiary documentation',
-  'Standalone off-grid solar system where the scheme only supports eligible grid-connected rooftop solar',
-  'Wind turbine or hybrid project without the specific qualifying rooftop solar configuration under that scheme',
-  'Non-DCR-compliant modules, ineligible equipment, or failure to complete the official portal process',
-]
-
 export default function KnowEligibilityPage() {
   const { t } = useLocale()
   const page = t.knowEligibilityPage
-  const eligibilityChecksData = page.eligibilityChecks
-  const subsidyBreakdownData = page.subsidyBreakdown
-  const processStepsData = page.processSteps
-  const importantNotesData = page.importantNotes
-  const schemeOverviewCardsData = page.schemeOverviewCards
-  const schemeEligibilityNotesData = page.schemeEligibilityNotes
-  const pmKusumComponentsData = page.pmKusumComponents
-  const commonRejectionReasonsData = page.commonRejectionReasons
   const labels = page.labels
 
   return (
@@ -194,7 +71,7 @@ export default function KnowEligibilityPage() {
             </div>
             <h2 className="mt-7 text-lg font-extrabold tracking-tight text-slate-950">{labels.checkEligibility}</h2>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              {eligibilityChecksData.map((item, index) => (
+              {page.eligibilityChecks.map((item, index) => (
                 <div key={item.title} className="rounded-2xl border border-slate-200 bg-[#f8fafc] p-4">
                   <div className="flex items-start gap-3">
                     <span className="font-mono text-xs font-bold text-emerald-700">{String(index + 1).padStart(2, '0')}</span>
@@ -216,7 +93,7 @@ export default function KnowEligibilityPage() {
                   <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.subsidyTitle}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600 sm:text-base">{labels.subsidyDescription}</p>
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                    {subsidyBreakdownData.map((item) => (
+                    {page.subsidyBreakdown.map((item) => (
                       <div key={item.title} className="rounded-xl bg-[#f4f8fc] p-4">
                         <p className="text-[12px] font-black uppercase tracking-[0.16em] text-emerald-800">{item.title}</p>
                         <p className="mt-2 text-xl font-black text-slate-950">{item.value}</p>
@@ -235,7 +112,7 @@ export default function KnowEligibilityPage() {
                 <div className="min-w-0 flex-1">
                   <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.schemeCategoriesTitle}</h2>
                   <div className="mt-4 grid gap-3">
-                    {schemeOverviewCardsData.map((card) => (
+                    {page.schemeOverviewCards.map((card) => (
                       <div key={card.title} className="rounded-xl bg-[#f4f8fc] p-4">
                         <h3 className="text-md font-bold text-slate-900">{card.title}</h3>
                         <p className="mt-2 text-md leading-6 text-slate-600">{card.detail}</p>
@@ -244,7 +121,7 @@ export default function KnowEligibilityPage() {
                   </div>
                   <h3 className="mt-6 text-md font-bold text-slate-900">{labels.pmKusumTitle}</h3>
                   <div className="mt-3 grid gap-3 sm:grid-cols-3">
-                    {pmKusumComponentsData.map((item, index) => (
+                    {page.pmKusumComponents.map((item, index) => (
                       <div key={item.title} className="rounded-xl border border-sky-100 bg-sky-50/70 p-4">
                         <span className="font-mono text-xs font-bold text-sky-800">0{index + 1}</span>
                         <h4 className="mt-2 text-md font-bold text-slate-900">{item.title}</h4>
@@ -263,7 +140,7 @@ export default function KnowEligibilityPage() {
                 <div className="min-w-0 flex-1">
                   <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.processTitle}</h2>
                   <ol className="mt-4 space-y-3">
-                    {processStepsData.map((step, index) => (
+                    {page.processSteps.map((step, index) => (
                       <li key={step} className="flex items-start gap-3 text-md leading-6 text-slate-600">
                         <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 font-mono text-[12px] font-bold text-emerald-800">{index + 1}</span>
                         <span>{step}</span>
@@ -281,7 +158,7 @@ export default function KnowEligibilityPage() {
                 <div className="min-w-0 flex-1">
                   <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.verifyTitle}</h2>
                   <ul className="mt-4 space-y-3">
-                    {[...importantNotesData, ...schemeEligibilityNotesData].map((note) => (
+                    {[...page.importantNotes, ...page.schemeEligibilityNotes].map((note) => (
                       <li key={note} className="flex items-start gap-3 text-md leading-6 text-slate-600">
                         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
                         <span>{note}</span>
@@ -290,7 +167,7 @@ export default function KnowEligibilityPage() {
                   </ul>
                   <h3 className="mt-6 text-md font-bold text-slate-900">{labels.rejectionReasonsTitle}</h3>
                   <ul className="mt-3 space-y-2.5">
-                    {commonRejectionReasonsData.map((reason) => (
+                    {page.commonRejectionReasons.map((reason) => (
                       <li key={reason} className="flex items-start gap-3 text-md leading-6 text-slate-600">
                         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-rose-500" />
                         <span>{reason}</span>

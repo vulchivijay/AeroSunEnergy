@@ -28,16 +28,11 @@ type Calculation = {
   badgeTone: string
 }
 
-const defaultValues: FormData = {
-  monthlyUnits: 360,
-  installationCostPerKw: 54300,
-  sellingPricePerKw: 65000,
-}
-
 export function SolarEstimation() {
   const { t } = useLocale()
   const monthlyUnitsInputId = useId()
   const e = t.estimation
+  const defaultValues: FormData = t.componentData.solarEstimation.defaultValues
   const validation = e.validation
   const solarCalculatorSchema = z
     .object({
@@ -147,19 +142,19 @@ export function SolarEstimation() {
     {
       label: e.recommendedCapacity,
       value: `${calculation.recommendedKw} kW`,
-      accent: 'from-primary/90 to-custom-orange/90',
     },
     {
       label: e.profitMargin,
       value: `${calculation.profitMargin.toFixed(1)}%`,
-      accent: 'from-custom-blue/90 to-primary/90',
     },
     {
       label: e.subsidyBand,
       value: calculation.subsidy >= 78000 ? '3 kW +' : `${calculation.recommendedKw} kW`,
-      accent: 'from-custom-red/90 to-custom-violet/90',
     },
-  ]
+  ].map((stat, index) => ({
+    ...stat,
+    accent: t.componentData.solarEstimation.summaryStatAccents[index],
+  }))
 
   const currency = (amount: number) =>
     new Intl.NumberFormat('en-IN', {

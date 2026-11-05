@@ -10,11 +10,6 @@ type Duration = {
 }
 
 const START_DATE = new Date(2026, 9, 6)
-const DIGITAL_FONT_STYLE = {
-	fontFamily: 'var(--font-digital), "Orbitron", monospace',
-	fontVariantNumeric: 'tabular-nums',
-	fontFeatureSettings: '"tnum" 1',
-} as const
 
 function getDuration(date: Date): Duration {
 	const referenceDate = new Date(date)
@@ -49,6 +44,7 @@ export default function CompanyAge() {
 	const { locale, t } = useLocale()
 	const [duration, setDuration] = useState<Duration | null>(null)
 	const companyAge = t.companyAge
+	const digitalFontStyle = t.componentData.companyAge.digitalFontStyle
 
 	useEffect(() => {
 		const updateDuration = () => setDuration(getDuration(new Date()))
@@ -105,10 +101,10 @@ export default function CompanyAge() {
 		>
 			<span aria-hidden="true">
 				{companyAge.operatingSince}{' '}
-				<span className="text-[14px]" style={DIGITAL_FONT_STYLE}>{formattedStartDate}</span>
+				<span className="text-[14px]" style={digitalFontStyle}>{formattedStartDate}</span>
 			</span>
 			{units && (
-				<span className="inline-flex items-baseline gap-1.5 text-[14px]" aria-hidden="true" style={DIGITAL_FONT_STYLE}>
+				<span className="inline-flex items-baseline gap-1.5 text-[14px]" aria-hidden="true" style={digitalFontStyle}>
 					{units.map(({ value, label }) => (
 						<span key={`${label}-${value}`} className="whitespace-nowrap">
 							<span className="text-sm font-bold tracking-[0.08em] text-[#A5D6A7]">

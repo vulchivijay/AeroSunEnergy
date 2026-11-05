@@ -3,126 +3,12 @@
 import Link from 'next/link'
 import { motion } from '@/lib/motion'
 import { ArrowRight, BarChart3, Download, Sheet, WalletCards } from 'lucide-react'
-
-const sheetRows = [
-  ['Dashboard', 'Overall business performance and financial summary'],
-  ['Expenses', 'Track spending, GST, payments and receipts'],
-  ['Leads', 'Manage customer enquiries and follow-ups'],
-  ['Orders', 'Track confirmed projects, payments and outstanding balances'],
-  ['Activities', 'Manage daily tasks and 90-day milestones'],
-  ['Setup', 'Edit capital, reserve and business targets'],
-] as const
-
-const assumptionItems = [
-  'Starting capital: ₹1,00,000',
-  'Emergency reserve target: ₹35,000',
-  'Customer conversation target: 50',
-  'Initial paid project target: 1',
-  'Tracking period: 4 November 2026 – 1 February 2027',
-] as const
-
-const actionPlan = [
-  {
-    title: 'Stage 1: Generate revenue',
-    points: [
-      'Start solar rooftop consultations and coordination services.',
-      'Convert enquiries into paid site surveys and design support.',
-      'Collect customer advances under written agreements before procurement.',
-    ],
-  },
-  {
-    title: 'Stage 2: Build the support network',
-    points: [
-      'Develop supplier and contractor relationships for installation and procurement.',
-      'Maintain low-overhead operations without renting office, factory or warehouse space.',
-      'Keep focus on revenue-generating activities and customer follow-up.',
-    ],
-  },
-  {
-    title: 'Stage 3: Secure funding and incubation support',
-    points: [
-      'Apply for Startup India, MSME and innovation programme support.',
-      'Prepare technology and business plan documents for incubators and lenders.',
-      'Use external technical support instead of spending on unnecessary infrastructure.',
-    ],
-  },
-  {
-    title: 'Stage 4: Develop the wind prototype',
-    points: [
-      'Validate the 3 kW wind generator through design, BOM and testing.',
-      'Use outsourced fabrication and contract work before full manufacturing.',
-      'Do not invest heavily in a complete prototype before funding is confirmed.',
-    ],
-  },
-  {
-    title: 'Stage 5: Scale with control',
-    points: [
-      'Start small-scale manufacturing through contract manufacturing only when demand is proven.',
-      'Review dashboard weekly and update the tracker every day.',
-      'Protect the ₹1 lakh capital and avoid unnecessary spending.',
-    ],
-  },
-] as const
-
-const ninetyDayPhases = [
-  {
-    period: 'Days 1–15',
-    title: 'Business preparation',
-    actions: [
-      'Finalise the company profile.',
-      'Finalise the solar product catalogue.',
-      'Prepare quotation and customer enquiry formats.',
-      'Create a supplier database.',
-      'Identify local solar installation contractors.',
-      'Prepare a basic customer site-survey checklist.',
-      'Set up a customer enquiry tracking sheet.',
-    ],
-    outcome: 'AeroSun is ready to approach customers professionally.',
-  },
-  {
-    period: 'Days 16–30',
-    title: 'Customer acquisition',
-    actions: [
-      'Approach homeowners.',
-      'Approach farmers.',
-      'Approach small industries.',
-      'Approach shops and commercial buildings.',
-      'Approach schools and institutions.',
-      'Approach farmhouses and remote properties.',
-    ],
-    target: 'Set a target of 50 genuine customer conversations.',
-    note: 'This is a target, not a guaranteed conversion figure.',
-  },
-  {
-    period: 'Days 31–60',
-    title: 'First commercial projects',
-    actions: [
-      'Conduct site surveys.',
-      'Prepare quotations.',
-      'Compare supplier prices.',
-      'Close your first customer order.',
-      'Coordinate installation through qualified contractors.',
-      'Collect customer feedback and project documentation.',
-    ],
-    outcome: 'First paid project or project coordination assignment.',
-  },
-  {
-    period: 'Days 61–90',
-    title: 'Technology and funding',
-    actions: [
-      'Finalise the preliminary AS-WG-3000 design.',
-      'Obtain component quotations.',
-      'Prepare a prototype budget.',
-      'Approach incubators.',
-      'Prepare a technical pitch deck.',
-      'Explore government-supported prototype funding.',
-      'Identify a suitable testing facility.',
-    ],
-    outcome: 'A credible wind-generator development and funding proposal.',
-  },
-] as const
+import { useLocale } from '@/lib/LocaleContext'
 
 export default function NinetyDayTrackerPage() {
+  const { t } = useLocale()
+  const trackerPage = t.ninetyDayTrackerPage
+
   return (
     <main className="overflow-hidden bg-[#f5f0e7] text-[#202b43] dark:bg-[#111827] dark:text-slate-100">
       <section id="tracker" className="relative isolate overflow-hidden bg-[#19243d] text-white">
@@ -236,7 +122,7 @@ export default function NinetyDayTrackerPage() {
           </div>
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {actionPlan.map((stage, index) => (
+            {trackerPage.actionPlan.map((stage, index) => (
               <div
                 key={stage.title}
                 className="rounded-[1.5rem] border border-[#c9cde0] bg-[#fbfaf7] p-5 shadow-[0_20px_45px_-35px_rgba(25,36,61,0.25)] dark:border-[#3d4863] dark:bg-[#222d43]"
@@ -283,7 +169,7 @@ export default function NinetyDayTrackerPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {sheetRows.map(([sheet, purpose]) => (
+                  {trackerPage.sheetRows.map(([sheet, purpose]) => (
                     <tr key={sheet} className="border-t border-[#e5ded2] dark:border-[#3d4863]">
                       <td className="px-5 py-4 font-bold text-[#202b43] dark:text-white">{sheet}</td>
                       <td className="px-5 py-4">{purpose}</td>
@@ -302,7 +188,7 @@ export default function NinetyDayTrackerPage() {
             Preconfigured assumptions
           </p>
           <ul className="mt-6 space-y-3 text-lg leading-8 text-[#3d3442] dark:text-[#f1e7e5]">
-            {assumptionItems.map((item) => (
+            {trackerPage.assumptionItems.map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#ed7357]" aria-hidden="true" />
                 <span>{item}</span>
@@ -324,7 +210,7 @@ export default function NinetyDayTrackerPage() {
         </div>
 
         <div className="grid gap-5 lg:grid-cols-2">
-          {ninetyDayPhases.map((phase, index) => (
+          {trackerPage.phases.map((phase, index) => (
             <article
               key={phase.period}
               className="overflow-hidden rounded-[1.75rem] border border-[#bdcfcd] bg-[#fbfaf7] shadow-[0_20px_45px_-35px_rgba(25,36,61,0.25)] dark:border-[#3d5a62] dark:bg-[#222d43]"

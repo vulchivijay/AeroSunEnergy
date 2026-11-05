@@ -5,8 +5,6 @@ import { motion } from '@/lib/motion'
 import { OptimizedImage } from '@/app/components/ui'
 import { useLocale } from '@/lib/LocaleContext'
 
-const serviceAccents = ['from-emerald-500 to-green-600', 'from-sky-500 to-blue-600', 'from-violet-500 to-purple-600']
-
 export default function AboutPage() {
   const { t } = useLocale()
   const a = t.about
@@ -353,7 +351,7 @@ export default function AboutPage() {
           <div className="grid gap-4 lg:grid-cols-3">
             {content.serviceGroups.map((group, index) => (
               <article key={group.title} className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-[#f8f9f5] p-5 transition hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-950/5 dark:border-slate-800 dark:bg-slate-950/70 dark:hover:border-emerald-800 sm:p-6">
-                <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${serviceAccents[index]}`} />
+                <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${a.serviceAccents[index]}`} />
                 <p className="font-mono text-md font-bold text-emerald-700/60 dark:text-emerald-300/60">0{index + 1} / {content.solutionsLabel.toUpperCase()}</p>
                 <h3 className="mt-4 text-xl font-black text-slate-950 dark:text-white">{group.title}</h3>
                 <ul className="mt-5 space-y-3">

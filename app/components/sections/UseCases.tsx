@@ -5,28 +5,19 @@ import Link from 'next/link'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
 
-const useCaseStyles = [
-  { emoji: '🛣️', imageSrc: '/images/infra-aerosunenergy.png', imageAlt: 'Hybrid solar and wind infrastructure for roads and highways', tagColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300', color: 'from-primary to-blue-400', cardBg: 'bg-blue-100/85 dark:bg-blue-950/45 border-blue-300 dark:border-blue-700' },
-  { emoji: '🌳', imageSrc: '/images/urbangreen-aerosunenergy.png', imageAlt: 'AeroSun hybrid installation for public parks and open spaces', tagColor: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300', color: 'from-secondary to-teal-400', cardBg: 'bg-emerald-100/85 dark:bg-emerald-950/45 border-emerald-300 dark:border-emerald-700' },
-  { emoji: '🏡', imageSrc: '/images/roof-turbine-aerosunenergy.png', imageAlt: 'Residential rooftop turbine and hybrid solar installation', tagColor: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300', color: 'from-accent to-yellow-400', cardBg: 'bg-amber-100/85 dark:bg-amber-950/45 border-amber-300 dark:border-amber-700' },
-  { emoji: '🏭', imageSrc: '/images/industries-aerosunenergy.png', imageAlt: 'Commercial and industrial AeroSun hybrid energy installation', tagColor: 'bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300', color: 'from-pink-400 to-rose-400', cardBg: 'bg-purple-100/85 dark:bg-purple-950/45 border-purple-300 dark:border-purple-700' },
-]
-
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.15 } },
-}
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' as const } },
-}
-
 export default function UseCases() {
   const { t } = useLocale()
   const u = t.useCases
+  const componentData = t.componentData.useCases
+  const cardVariants = {
+    ...componentData.cardVariants,
+    visible: {
+      ...componentData.cardVariants.visible,
+      transition: { ...componentData.cardVariants.visible.transition, ease: 'easeOut' as const },
+    },
+  }
 
-  const useCases = u.items.map((item, i) => ({ ...item, ...useCaseStyles[i] }))
+  const useCases = u.items.map((item, i) => ({ ...item, ...componentData.styles[i] }))
 
   return (
     <section id="use-cases" className="py-12 px-6 sm:px-3 lg:px-12 overflow-hidden">
@@ -50,7 +41,7 @@ export default function UseCases() {
 
         <motion.div
           className="flex flex-col gap-8"
-          variants={containerVariants}
+          variants={componentData.containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}

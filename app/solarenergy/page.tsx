@@ -12,96 +12,6 @@ import {
   SubsidyCard,
 } from '../components/ui'
 
-const offerings = [
-  {
-    title: 'Solar Rooftop Systems',
-    description:
-      'On-grid power plants for homes and businesses, designed for performance, net metering, and long-term savings.',
-    points: ['On-grid, off-grid and hybrid configurations', 'Net metering with state DISCOM', 'PM Surya Ghar subsidy assistance', 'TATA Power Solar premium panels'],
-  },
-  {
-    title: 'Solar Thermal — Water Heating Solutions',
-    description:
-      'Efficient hot water systems for homes, hotels, hospitals, hostels, commercial spaces, and industries.',
-    points: ['Available in capacities from 100 LPD', 'Pressurised and non-pressurised options', 'BIS-certified collectors', 'Low-maintenance hot water year-round'],
-  },
-  {
-    title: 'Solar Street Lights',
-    description:
-      'All-in-one solar lighting for roads, compounds, campuses, and public spaces with zero grid dependence.',
-    points: ['Integrated all-in-one luminaires from 12W', 'Auto dusk-to-dawn operation', 'Lithium-ion storage with 5+ year life', 'Zero electricity bills'],
-  },
-  {
-    title: 'Solar Fencing',
-    description:
-      'Energy-efficient perimeter protection for farms, estates, and rural properties.',
-    points: ['Solar-charged energiser', 'Up to 10 km perimeter on a single charger', 'Audible alarm and battery backup', 'Crop and livestock protection'],
-  },
-  {
-    title: 'Solar Pumpsets',
-    description:
-      'Diesel-free pumping systems for agriculture and irrigation from clean solar power.',
-    points: ['AC and DC pump configurations', 'MNRE-approved controllers', 'PM-KUSUM scheme assistance', '5-year manufacturer warranty'],
-  },
-  {
-    title: 'Operation & Maintenance (AMC)',
-    description:
-      'Annual support plans that keep your plant performing at peak generation and reliability.',
-    points: ['Quarterly preventive maintenance', 'Performance ratio monitoring', '24x7 priority support', 'Spare parts and inverter service'],
-  },
-]
-
-const rooftopBenefits = [
-  'Reduce electricity bills by up to 80–90%',
-  '25+ years of solar panel life',
-  'Low maintenance and high reliability',
-  'Environment-friendly renewable energy',
-  'Increase property value',
-  'Net Metering facility to export excess power to the grid',
-  'Eligible for government subsidies (as applicable)',
-]
-
-const suitableFor = ['Individual Houses', 'Apartments & Residential Communities', 'Commercial Buildings', 'Industries & Factories', 'Educational Institutions', 'Hospitals & Government Buildings']
-
-const systemTypes = [
-  {
-    title: 'On-grid solar systems',
-    description:
-      'Connected to the local electricity grid, allowing daytime solar generation to offset consumption and export surplus power where permitted.',
-    benefits: ['Grid-tied operation', 'Lower electricity bills', 'Simple utility integration'],
-  },
-  {
-    title: 'Off-grid solar systems',
-    description:
-      'Standalone power for remote homes, farms, telecom sites and facilities with unreliable grid access, typically with battery backup.',
-    benefits: ['Independent supply', 'Battery storage', 'Reliable rural power'],
-  },
-  {
-    title: 'Hybrid solar systems',
-    description:
-      'Solar plus battery storage and often grid connection or backup generation, giving greater resilience and better load management.',
-    benefits: ['Backup during outages', 'Self-consumption', 'Energy flexibility'],
-  },
-]
-
-const whySolar = [
-  { title: 'Reduce Carbon Emissions', description: 'Every kW of solar offsets ~1.2 tonnes of CO₂ a year — shrinking your carbon footprint.' },
-  { title: 'Eco-Friendly', description: 'Clean, renewable energy that protects nature for generations to come.' },
-  { title: 'Cost Saving', description: 'Slash electricity bills by 70–90% from day one and recover your investment in 4–6 years.' },
-  { title: 'Energy Independence', description: 'Generate your own power and cut reliance on the grid and rising tariffs.' },
-  { title: 'Unlimited Energy', description: 'Sunlight is infinite — Tirupati enjoys 300+ sunny days every year.' },
-  { title: 'Continuous Supply', description: 'Hybrid systems with battery backup keep critical loads running through outages.' },
-]
-
-const comparisonRows = [
-  { type: 'On-grid solar PV', battery: 'Usually no', grid: 'Yes', use: 'Homes, shops, offices' },
-  { type: 'Off-grid solar PV', battery: 'Usually yes', grid: 'No', use: 'Remote homes, farms' },
-  { type: 'Hybrid solar PV', battery: 'Usually included', grid: 'Often yes', use: 'Homes and businesses needing backup' },
-  { type: 'Rooftop solar', battery: 'Depends', grid: 'Either', use: 'Residential and commercial buildings' },
-  { type: 'Ground-mounted solar', battery: 'Depends', grid: 'Either', use: 'Farms, industries, solar farms' },
-  { type: 'Floating solar', battery: 'Depends', grid: 'Either', use: 'Reservoirs, water bodies' },
-]
-
 type SolarSlide = {
   badge: string
   title: string
@@ -112,75 +22,6 @@ type SolarSlide = {
   chipClass: string
   panelClass: string
 }
-
-const solarSlides: SolarSlide[] = [
-  {
-    badge: 'Grid-tied rooftop',
-    title: 'Rooftop Solar for Homes & Businesses',
-    description:
-      'On-grid PV systems designed to cut daytime electricity costs, offset consumption with net metering, and lower long-term energy bills without requiring heavy battery storage.',
-    image: '/images/slider/slider-1.webp',
-    tags: ['Lower Capex', 'Net Metering'],
-    badgeClass: 'text-sky-100',
-    chipClass: 'text-sky-50',
-    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
-  },
-  {
-    badge: 'Off-grid autonomy',
-    title: 'Off-grid Solar for Remote Power',
-    description:
-      'Standalone systems with batteries and controls for homes, farms, telecom sites, and facilities where grid reliability is weak or unavailable.',
-    image: '/images/slider/slider-2.png',
-    tags: ['Battery-backed', 'Remote-ready'],
-    badgeClass: 'text-emerald-100',
-    chipClass: 'text-emerald-50',
-    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
-  },
-  {
-    badge: 'Hybrid resilience',
-    title: 'Hybrid Solar with Backup',
-    description:
-      'Integrated solar + battery systems that keep essential loads running during outages while reducing grid dependence and managing peak demand smartly.',
-    image: '/images/slider/slider-3.png',
-    tags: ['Backup power', 'Smart control'],
-    badgeClass: 'text-pink-100',
-    chipClass: 'text-pink-50',
-    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
-  },
-  {
-    badge: 'Agricultural pumping',
-    title: 'Solar Water Pumping for Agriculture',
-    description:
-      'Diesel-free solar pumpsets for irrigation and water access, reducing energy costs and supporting sustainable farming practices across rural and semi-urban areas.',
-    image: '/images/slider/slider-4.png',
-    tags: [],
-    badgeClass: 'text-slate-100',
-    chipClass: 'text-slate-100',
-    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
-  },
-  {
-    badge: 'Commercial scale',
-    title: 'Commercial & Industrial Solar',
-    description:
-      'High-output rooftop and ground-mounted systems for businesses that want lower operating costs, cleaner power, and stronger sustainability performance.',
-    image: '/images/slider/slider-5.png',
-    tags: ['High yield', 'Grid support'],
-    badgeClass: 'text-slate-100',
-    chipClass: 'text-slate-100',
-    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
-  },
-  {
-    badge: 'Water pumping',
-    title: 'Solar Pumpsets & Agriculture',
-    description:
-      'Diesel-free pumping systems that support irrigation, water access, and lower energy costs for agricultural operations across rural and semi-urban sites.',
-    image: '/images/slider/slider-6.png',
-    tags: ['Irrigation', 'PM-KUSUM'],
-    badgeClass: 'text-violet-100',
-    chipClass: 'text-violet-50',
-    panelClass: 'bg-linear-to-br from-slate-700 via-slate-800 to-slate-950',
-  },
-]
 
 function SolarHeroSlider({ slides, ariaLabel }: { slides: SolarSlide[]; ariaLabel: string }) {
   const slideClass =
@@ -244,14 +85,14 @@ function SolarHeroSlider({ slides, ariaLabel }: { slides: SolarSlide[]; ariaLabe
 export default function SolarEnergyPage() {
   const { t } = useLocale()
   const solarPage = t.solarPage
-  const solarSlidesLocalized = solarPage.hero.slides ?? solarSlides
-  const offeringsLocalized = solarPage.offer.cards ?? offerings
-  const rooftopBenefitsLocalized = solarPage.rooftop.benefits ?? rooftopBenefits
-  const suitableForLocalized = solarPage.rooftop.suitableForItems ?? suitableFor
-  const systemTypesLocalized = solarPage.systemTypes.items ?? systemTypes
-  const whySolarLocalized = solarPage.whySolar.items ?? whySolar
+  const solarSlidesLocalized = solarPage.hero.slides as SolarSlide[]
+  const offeringsLocalized = solarPage.offer.cards
+  const rooftopBenefitsLocalized = solarPage.rooftop.benefits
+  const suitableForLocalized = solarPage.rooftop.suitableForItems
+  const systemTypesLocalized = solarPage.systemTypes.items
+  const whySolarLocalized = solarPage.whySolar.items
   const comparisonMeta = solarPage.comparison
-  const solarComparisonRows = solarPage.comparison.rows ?? comparisonRows
+  const solarComparisonRows = solarPage.comparison.rows
   const measurement = solarPage.measurement
 
   return (

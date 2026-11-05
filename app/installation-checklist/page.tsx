@@ -31,23 +31,10 @@ const createChecklistSchema = (validation: typeof import('@/public/locales/en/in
 
 type ChecklistFormValues = z.infer<ReturnType<typeof createChecklistSchema>>
 
-const defaultValues: ChecklistFormValues = {
-	customerName: '',
-	companyName: '',
-	email: '',
-	phone: '',
-	projectName: '',
-	siteLocation: '',
-	installationDate: '',
-	checklistStatus: '',
-	safetyCheck: false,
-	commissioningCheck: false,
-	notes: '',
-}
-
 export default function InstallationChecklistPage() {
 	const { t } = useLocale()
 	const content = t.businessForms.installationChecklist
+	const defaultValues = content.defaultValues
 	const { labels } = content
 	const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
 	const {

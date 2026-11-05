@@ -3,14 +3,7 @@ import { useLocale } from '@/lib/LocaleContext'
 
 export type AccentTone = 'emerald' | 'amber' | 'sky' | 'violet'
 
-const renderSolarIcon = (accent: AccentTone) => {
-  const colorClass = {
-    emerald: 'text-emerald-700',
-    amber: 'text-amber-700',
-    sky: 'text-sky-700',
-    violet: 'text-violet-700',
-  }[accent]
-
+const renderSolarIcon = (colorClass: string) => {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={`h-4 w-4 ${colorClass}`} aria-hidden="true">
       <circle cx="12" cy="12" r="4" />
@@ -19,14 +12,7 @@ const renderSolarIcon = (accent: AccentTone) => {
   )
 }
 
-const renderCheckIcon = (accent: AccentTone) => {
-  const bgClass = {
-    emerald: 'bg-emerald-100 text-emerald-700',
-    amber: 'bg-amber-100 text-amber-700',
-    sky: 'bg-sky-100 text-sky-700',
-    violet: 'bg-violet-100 text-violet-700',
-  }[accent]
-
+const renderCheckIcon = (bgClass: string) => {
   return (
     <div className={`flex h-10 w-10 items-center justify-center rounded-2xl shadow-inner ${bgClass}`}>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-4 w-4" aria-hidden="true">
@@ -35,153 +21,6 @@ const renderCheckIcon = (accent: AccentTone) => {
     </div>
   )
 }
-
-export const solarOfferings = [
-  {
-    title: 'Solar Rooftop Systems',
-    description: 'On-grid power plants for homes and businesses.',
-    points: [
-      'On-grid, off-grid and hybrid configurations',
-      'Net metering with state DISCOM',
-      'PM Surya Ghar subsidy assistance',
-      'TATA Power Solar premium panels',
-    ],
-    accent: 'emerald' as const,
-  },
-  {
-    title: 'Solar Thermal — Water Heating Solutions',
-    description:
-      'Solar Hot Water & Heat Pump — efficient, eco-friendly hot water for homes, hotels, hospitals, hostels, commercial establishments and industries.',
-    points: [
-      'Available in capacities from 100 litres per day (LPD)',
-      'Choice of pressurised and non-pressurised models',
-      'High-performance BIS-certified solar collectors',
-      'Cuts electricity use by minimising geyser usage',
-    ],
-    accent: 'amber' as const,
-  },
-  {
-    title: 'Solar Street Lights',
-    description: 'All-in-one lighting powered entirely by sunlight.',
-    points: [
-      'Integrated all-in-one luminaires starting from 12W',
-      'Auto dusk-to-dawn operation',
-      'Lithium-ion storage, 5+ year life',
-      'Zero electricity bills',
-    ],
-    accent: 'sky' as const,
-  },
-  {
-    title: 'Solar Fencing',
-    description: 'Solar-powered electric fences for farms and estates.',
-    points: [
-      'Solar-charged energiser',
-      'Up to 10 km perimeter on a single charger',
-      'Audible alarm and battery backup',
-      'Crop and livestock protection',
-    ],
-    accent: 'violet' as const,
-  },
-  {
-    title: 'Solar Pumpsets',
-    description: 'Diesel-free water pumping for agriculture.',
-    points: [
-      'AC and DC pump configurations',
-      'MNRE-approved controllers',
-      'PM-KUSUM scheme assistance',
-      '5-year manufacturer warranty',
-    ],
-    accent: 'amber' as const,
-  },
-  {
-    title: 'Operation & Maintenance (AMC)',
-    description: 'Annual care to keep your plant generating at peak.',
-    points: [
-      'Quarterly preventive maintenance',
-      'Performance ratio monitoring',
-      '24x7 priority support',
-      'Spare parts and inverter service',
-    ],
-    accent: 'emerald' as const,
-  },
-]
-
-export const solarRooftopBenefits = [
-  {
-    title: 'Reduce electricity bills by up to 80–90%',
-    description: 'Lower your monthly spend while improving energy certainty.',
-  },
-  {
-    title: '25+ years of solar panel life',
-    description: 'Long operational life with minimal replacement cycles.',
-  },
-  {
-    title: 'Low maintenance and high reliability',
-    description: 'Designed for stable long-term generation with simple upkeep.',
-  },
-  {
-    title: 'Environment-friendly renewable energy',
-    description: 'Reduce your environmental impact with clean power generation.',
-  },
-  {
-    title: 'Increase property value',
-    description: 'Improve the value and appeal of your property with solar-ready infrastructure.',
-  },
-  {
-    title: 'Net Metering facility',
-    description: 'Export excess power to the grid and earn credits where applicable.',
-  },
-]
-
-export const solarWhySolar = [
-  {
-    title: 'Reduce Carbon Emissions',
-    description: 'Every kW of solar offsets ~1.2 tonnes of CO₂ a year — shrinking your carbon footprint.',
-  },
-  {
-    title: 'Eco-Friendly',
-    description: 'Clean, renewable energy that protects nature for generations to come.',
-  },
-  {
-    title: 'Cost Saving',
-    description: 'Slash electricity bills by 70–90% from day one and recover your investment in 4–6 years.',
-  },
-  {
-    title: 'Energy Independence',
-    description: 'Generate your own power and cut reliance on the grid and rising tariffs.',
-  },
-  {
-    title: 'Unlimited Energy',
-    description: 'Sunlight is infinite — Tirupati enjoys 300+ sunny days every year.',
-  },
-  {
-    title: 'Continuous Supply',
-    description: 'Hybrid systems with battery backup keep critical loads running through outages.',
-  },
-]
-
-export const solarSubsidyCards = [
-  {
-    label: 'For Residential Households',
-    value: '₹ 30,000',
-    note: 'per kW up to 2 kW',
-  },
-  {
-    label: 'Additional Capacity',
-    value: '₹ 18,000',
-    note: 'per kW for additional capacity up to 3 kW',
-  },
-  {
-    label: 'Maximum Total Subsidy',
-    value: '₹ 78,000',
-    note: 'maximum total subsidy for systems larger than 3 kW',
-  },
-  {
-    label: 'For GHS / RWA',
-    value: '₹ 18,000',
-    note: 'per kW • common facilities incl. EV charging, up to 500 kW',
-  },
-]
 
 export function SectionEyebrow({ children }: { children: ReactNode }) {
   return (
@@ -193,41 +32,43 @@ export function SectionEyebrow({ children }: { children: ReactNode }) {
 }
 
 export function FeatureCard({
-  title = 'Solar Rooftop Systems',
-  description = 'On-grid power plants for homes and businesses.',
-  points = [
-    'On-grid, off-grid and hybrid configurations',
-    'Net metering with state DISCOM',
-    'PM Surya Ghar subsidy assistance',
-    'TATA Power Solar premium panels',
-  ],
-  accent = 'emerald',
+  title,
+  description,
+  points,
+  accent,
 }: {
   title?: string
   description?: string
   points?: string[]
   accent?: AccentTone
 }) {
-  const accentClasses: Record<AccentTone, string> = {
-    emerald: 'border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f8fffb_50%,#ffffff_100%)] text-emerald-700',
-    amber: 'border-amber-200 bg-[linear-gradient(135deg,#fff7ed_0%,#fffdf8_50%,#ffffff_100%)] text-amber-700',
-    sky: 'border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#f8fbff_50%,#ffffff_100%)] text-sky-700',
-    violet: 'border-violet-200 bg-[linear-gradient(135deg,#f5f3ff_0%,#faf7ff_50%,#ffffff_100%)] text-violet-700',
+  const { t } = useLocale()
+  const componentData = t.componentData.solarContentBlocks
+  const defaultFeature = componentData.defaultFeature
+  const accentIds: Record<string, AccentTone> = {
+    emerald: 'emerald',
+    amber: 'amber',
+    sky: 'sky',
+    violet: 'violet',
   }
+  const featureAccent = accent ?? accentIds[defaultFeature.accent]
+  const featureTitle = title ?? defaultFeature.title
+  const featureDescription = description ?? defaultFeature.description
+  const featurePoints = points ?? defaultFeature.points
 
   return (
     <article className="group rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_22px_45px_-28px_rgba(15,23,42,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-28px_rgba(16,185,129,0.3)]">
-      <div className={`mb-5 flex items-center justify-between gap-4 rounded-2xl border px-3 py-2 ${accentClasses[accent]}`}>
+      <div className={`mb-5 flex items-center justify-between gap-4 rounded-2xl border px-3 py-2 ${componentData.featureClasses[featureAccent]}`}>
         <span className="text-[12px] font-black uppercase tracking-[0.24em]">Solar solution</span>
         <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/80 shadow-sm ring-1 ring-black/5">
-          {renderSolarIcon(accent)}
+          {renderSolarIcon(componentData.iconColors[featureAccent])}
         </span>
       </div>
-      <h3 className="text-2xl font-black tracking-[0.05em] text-slate-900">{title}</h3>
-      <p className="mt-4 text-base leading-7 text-slate-700">{description}</p>
-      {points.length > 0 && (
+      <h3 className="text-2xl font-black tracking-[0.05em] text-slate-900">{featureTitle}</h3>
+      <p className="mt-4 text-base leading-7 text-slate-700">{featureDescription}</p>
+      {featurePoints.length > 0 && (
         <ul className="mt-5 space-y-3 text-base text-slate-700">
-          {points.map((point) => (
+          {featurePoints.map((point) => (
             <li key={point} className="flex items-start gap-3 rounded-xl bg-slate-50/80 p-2.5">
               <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[12px] font-black text-emerald-700">✓</span>
               <span>{point}</span>
@@ -240,19 +81,22 @@ export function FeatureCard({
 }
 
 export function BenefitCard({
-  title = 'Reduce electricity bills by up to 80–90%',
-  description = 'Lower your monthly spend while improving energy certainty.',
+  title,
+  description,
 }: {
   title?: string
   description?: string
 }) {
+  const { t } = useLocale()
+  const defaults = t.componentData.solarContentBlocks.defaultBenefit
+
   return (
     <div className="rounded-[1.7rem] border border-emerald-200 bg-[linear-gradient(135deg,#ffffff_0%,#ecfdf5_100%)] p-5 shadow-[0_18px_32px_-26px_rgba(16,185,129,0.45)]">
       <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-emerald-500 to-lime-500 text-lg font-black text-slate-950 shadow-lg shadow-emerald-500/20">
         ✓
       </div>
-      <h3 className="text-xl font-black tracking-[0.04em] text-slate-900">{title}</h3>
-      <p className="mt-3 text-base leading-7 text-slate-700">{description}</p>
+      <h3 className="text-xl font-black tracking-[0.04em] text-slate-900">{title ?? defaults.title}</h3>
+      <p className="mt-3 text-base leading-7 text-slate-700">{description ?? defaults.description}</p>
     </div>
   )
 }
@@ -276,33 +120,34 @@ export function SubsidyCard({
 }
 
 export function InfoPanel({
-  title = 'Key Benefits',
-  content = [
-    'Reduce electricity bills by up to 80–90%',
-    '25+ years of solar panel life',
-    'Low maintenance and high reliability',
-    'Environment-friendly renewable energy',
-  ],
-  accent = 'emerald',
+  title,
+  content,
+  accent,
 }: {
   title?: string
   content?: string[]
   accent?: 'emerald' | 'amber' | 'sky'
 }) {
-  const theme: Record<'emerald' | 'amber' | 'sky', string> = {
-    emerald: 'border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#ffffff_100%)] text-emerald-900',
-    amber: 'border-amber-200 bg-[linear-gradient(135deg,#fff7ed_0%,#ffffff_100%)] text-amber-900',
-    sky: 'border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ffffff_100%)] text-sky-900',
+  const { t } = useLocale()
+  const componentData = t.componentData.solarContentBlocks
+  const defaultInfo = componentData.defaultInfo
+  const accentIds: Record<string, 'emerald' | 'amber' | 'sky'> = {
+    emerald: 'emerald',
+    amber: 'amber',
+    sky: 'sky',
   }
+  const infoAccent = accent ?? accentIds[defaultInfo.accent]
+  const infoTitle = title ?? defaultInfo.title
+  const infoContent = content ?? defaultInfo.content
 
   return (
-    <div className={`rounded-[1.8rem] border p-5 shadow-[0_12px_28px_-24px_rgba(15,23,42,0.28)] ${theme[accent]}`}>
+    <div className={`rounded-[1.8rem] border p-5 shadow-[0_12px_28px_-24px_rgba(15,23,42,0.28)] ${componentData.infoThemes[infoAccent]}`}>
       <div className="mb-3 flex items-center gap-3">
-        {renderCheckIcon(accent)}
-        <h3 className="text-xl font-black tracking-[0.04em]">{title}</h3>
+        {renderCheckIcon(componentData.checkBackgrounds[infoAccent])}
+        <h3 className="text-xl font-black tracking-[0.04em]">{infoTitle}</h3>
       </div>
       <ul className="mt-4 space-y-3 text-base leading-7">
-        {content.map((item) => (
+        {infoContent.map((item) => (
           <li key={item} className="flex items-start gap-3">
             <span className="mt-2 h-2.5 w-2.5 rounded-full bg-current" />
             <span>{item}</span>
