@@ -45,28 +45,9 @@ export default function ProductionProtector() {
       }
     }
 
-    const detectByConsole = () => {
-      try {
-        let detected = false
-        const element: any = new Image()
-        Object.defineProperty(element, 'id', {
-          get() {
-            detected = true
-            return 'devtools'
-          },
-        })
-        // console.log will trigger getter when devtools console is open
-        console.log(element)
-        return detected
-      } catch {
-        return false
-      }
-    }
-
     const check = () => {
       try {
-        if (detectBySize()) return true
-        if (detectByConsole()) return true
+        return detectBySize()
       } catch {}
       return false
     }
