@@ -5864,7 +5864,6 @@
         ],
         "companyProfile": {
             "badge": "Company profile · 2026",
-            "downloadButton": "Download Company Profile PDF",
             "title": "AeroSun Energy",
             "subtitle": "Private Limited",
             "motto": "Power from Sun, Wind, Water, Fire.",
@@ -7337,7 +7336,6 @@
     "productCataloguePage": {
         "hero": {
             "badge": "Product & Services Catalogue · 2026",
-            "downloadButton": "Download Product Catalogue PDF",
             "title": "Solar & Renewable",
             "titleAccent": "Energy Solutions",
             "tagline": "Power from Sun, Wind, Water, Fire.",

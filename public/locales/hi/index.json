@@ -319,7 +319,7 @@
         "schemeBanner": {
             "badge": "सरकारी सब्सिडी पहल",
             "title": "PM Surya Ghar",
-            "titleAccent": "Muft Bijli Yojana",
+            "titleAccent": "मुफ़्त बिजली योजना",
             "description": "अपने रूफटॉप सोलर सपने को ₹ 78,000 तक की केंद्रीय सब्सिडी के साथ आसानी से बनाएं और AeroSun Energy से Complete application support पाएं।",
             "ctaPrimary": "अभी आवेदन करें",
             "ctaSecondary": "एलिजिबिलिटी देखें",
@@ -1837,8 +1837,7 @@
                 "विनिर्माण और आपूर्तिकर्ता साझेदारियों का विस्तार करना।",
                 "एक क्षेत्रीय नवीकरणीय ऊर्जा सेवा नेटवर्क बनाना।",
                 "अतिरिक्त भारतीय बाजारों तक विस्तार करना।"
-            ],
-            "downloadButton": "कंपनी प्रोफ़ाइल डाउनलोड करें PDF"
+            ]
         },
         "features": [
             {
@@ -1971,7 +1970,7 @@
                 "status": "भेजा गया"
             },
             {
-                "label": "Accountant",
+                "label": "लेखाकार",
                 "status": "नियुक्त"
             },
             {
@@ -1991,7 +1990,7 @@
                 "status": "DPIIT द्वारा अनुमोदित"
             },
             {
-                "label": "Trademark",
+                "label": "व्यापार-चिह्न",
                 "status": "भेजा गया"
             }
         ],
@@ -7055,7 +7054,7 @@
         "pageLoader": {
             "accessibilityLabel": "पेज लोड हो रहा है",
             "loading": "लोड हो रहा है",
-            "route": "Route"
+            "route": "पृष्ठ"
         }
     },
     "solarFaqs": {
@@ -7542,7 +7541,7 @@
             "description": "विवरण",
             "specification": "विशिष्टता/ब्रांड (अस्थायी)",
             "quantity": "मात्रा",
-            "unit": "Unit",
+            "unit": "इकाई",
             "unitPrice": "इकाई मूल्य (₹)",
             "amount": "राशि (₹)",
             "items": [
@@ -7642,7 +7641,6 @@
     "productCataloguePage": {
         "hero": {
             "badge": "उत्पाद एवं सेवा कैटलॉग · 2026",
-            "downloadButton": "उत्पाद कैटलॉग डाउनलोड करें PDF",
             "title": "सौर एवं नवीकरणीय",
             "titleAccent": "ऊर्जा समाधान",
             "tagline": "सूर्य, पवन, जल, अग्नि से शक्ति।",
@@ -9361,7 +9359,7 @@
                 "label": "मॉड्यूल की कुल संख्या",
                 "name": "मॉड्यूल_मात्रा",
                 "type": "number",
-                "unit": "modules"
+                "unit": "मॉड्यूल"
             },
             {
                 "label": "सोलर इन्वर्टर निर्माता",
@@ -9483,7 +9481,7 @@
         "gstPlaceholder": "GST वस्तुओं और सेवाओं पर लागू अनुसार शुल्क लिया जाता है",
         "gstNote": "GST का शुल्क व्यक्तिगत वस्तुओं और सेवाओं और सहमत आपूर्ति संरचना पर लागू होगा।",
         "estimatedValue": "अनुमानित मूल्य",
-        "unit": "Unit",
+        "unit": "इकाई",
         "generationParameters": [
             {
                 "label": "स्थापित सौर क्षमता",
@@ -9578,7 +9576,7 @@
             {
                 "label": "अनुमानित सरल भुगतान अवधि",
                 "name": "पेबैक_अवधि",
-                "unit": "Years"
+                "unit": "वर्ष"
             }
         ],
         "calculationAssumptions": "गणना धारणाएँ",
@@ -11420,7 +11418,7 @@
                         "height": 512
                     },
                     "image": "https://aerosunenergy.in/images/logo.png",
-                    "description": "AeroSun Energy provides solar, wind, and hybrid renewable energy systems for residential, commercial, industrial, agricultural, and infrastructure projects across India.",
+                    "description": "AeroSun Energy भारत भर में आवासीय, वाणिज्यिक, औद्योगिक, कृषि और बुनियादी ढाँचा परियोजनाओं के लिए सौर, पवन और हाइब्रिड नवीकरणीय ऊर्जा प्रणालियाँ उपलब्ध कराती है।",
                     "email": "customercare@aerosunenergy.in",
                     "telephone": "+91-8099181075",
                     "address": {
@@ -11451,7 +11449,7 @@
                     "@id": "https://aerosunenergy.in/#website",
                     "url": "https://aerosunenergy.in",
                     "name": "AeroSun Energy",
-                    "description": "Solar, wind and hybrid renewable energy solutions for homes, businesses and industries in India.",
+                    "description": "भारत में घरों, व्यवसायों और उद्योगों के लिए सौर, पवन और हाइब्रिड नवीकरणीय ऊर्जा समाधान।",
                     "inLanguage": "en-IN",
                     "publisher": {
                         "@id": "https://aerosunenergy.in/#organization"
@@ -11468,7 +11466,7 @@
                     "about": {
                         "@id": "https://aerosunenergy.in/#organization"
                     },
-                    "description": "AeroSun Energy offers solar panels, wind turbines, hybrid systems, and energy infrastructure solutions across India for homes, businesses, and larger projects.",
+                    "description": "AeroSun Energy भारत भर में घरों, व्यवसायों और बड़े प्रोजेक्ट्स के लिए सौर पैनल, पवन टर्बाइन, हाइब्रिड प्रणालियाँ और ऊर्जा संबंधी बुनियादी ढाँचे के समाधान उपलब्ध कराती है।",
                     "inLanguage": "en-IN"
                 },
                 {
@@ -11478,7 +11476,7 @@
                     "url": "https://aerosunenergy.in",
                     "image": "https://aerosunenergy.in/images/logo.png",
                     "logo": "https://aerosunenergy.in/images/logo.png",
-                    "description": "Renewable energy company specializing in solar energy systems, wind turbines, and hybrid energy solutions across India.",
+                    "description": "भारत भर में सौर ऊर्जा प्रणालियों, पवन टर्बाइनों और हाइब्रिड ऊर्जा समाधानों में विशेषज्ञता रखने वाली नवीकरणीय ऊर्जा कंपनी।",
                     "areaServed": {
                         "@type": "Country",
                         "name": "India"
@@ -11499,7 +11497,7 @@
                                 "itemOffered": {
                                     "@type": "Service",
                                     "name": "Solar Energy Solutions",
-                                    "description": "Rooftop solar, commercial solar, and sustainable energy system design and installation."
+                                    "description": "छत पर सौर ऊर्जा, वाणिज्यिक सौर परियोजनाएँ तथा टिकाऊ ऊर्जा प्रणालियों का डिज़ाइन और स्थापना।"
                                 }
                             },
                             {
@@ -11507,7 +11505,7 @@
                                 "itemOffered": {
                                     "@type": "Service",
                                     "name": "Wind Energy Solutions",
-                                    "description": "Wind turbine systems for sites requiring efficient renewable power generation."
+                                    "description": "कुशल नवीकरणीय बिजली उत्पादन की ज़रूरत वाले स्थलों के लिए पवन टर्बाइन प्रणालियाँ।"
                                 }
                             },
                             {
@@ -11515,7 +11513,7 @@
                                 "itemOffered": {
                                     "@type": "Service",
                                     "name": "Hybrid Energy Systems",
-                                    "description": "Integrated solar and wind hybrid power systems with smart monitoring and storage support."
+                                    "description": "स्मार्ट निगरानी और भंडारण सहायता वाली एकीकृत सौर-पवन हाइब्रिड बिजली प्रणालियाँ।"
                                 }
                             }
                         ]
@@ -11667,7 +11665,7 @@
                 {
                     "icon": "??",
                     "imageSrc": "/images/forming-aerosunenergy.png",
-                    "imageAlt": "Site assessment and planning process by AeroSun Energy",
+                    "imageAlt": "AeroSun Energy द्वारा स्थल मूल्यांकन और योजना प्रक्रिया",
                     "color": "from-primary to-blue-400",
                     "cardBg": "bg-blue-100/90 dark:bg-blue-900/55 border-blue-300 dark:border-blue-700",
                     "iconBg": "bg-blue-300 dark:bg-blue-800",
@@ -11676,7 +11674,7 @@
                 {
                     "icon": "??",
                     "imageSrc": "/images/customdesign-aerosunenergy.png",
-                    "imageAlt": "Custom hybrid system design by AeroSun Energy",
+                    "imageAlt": "AeroSun Energy द्वारा अनुकूलित हाइब्रिड प्रणाली का डिज़ाइन",
                     "color": "from-secondary to-teal-400",
                     "cardBg": "bg-emerald-100/90 dark:bg-emerald-900/55 border-emerald-300 dark:border-emerald-700",
                     "iconBg": "bg-emerald-300 dark:bg-emerald-800",
@@ -11685,7 +11683,7 @@
                 {
                     "icon": "??",
                     "imageSrc": "/images/installation-aerosunenergy.png",
-                    "imageAlt": "Installation of AeroSun hybrid turbine system",
+                    "imageAlt": "AeroSun हाइब्रिड टर्बाइन प्रणाली की स्थापना",
                     "color": "from-accent to-yellow-400",
                     "cardBg": "bg-amber-100/90 dark:bg-amber-900/55 border-amber-300 dark:border-amber-700",
                     "iconBg": "bg-amber-300 dark:bg-amber-800",
@@ -11694,7 +11692,7 @@
                 {
                     "icon": "??",
                     "imageSrc": "/images/smart-vawt-aerosunenergy.png",
-                    "imageAlt": "Smart monitoring dashboard for AeroSun Energy systems",
+                    "imageAlt": "AeroSun Energy प्रणालियों के लिए स्मार्ट निगरानी डैशबोर्ड",
                     "color": "from-primary to-secondary",
                     "cardBg": "bg-violet-100/90 dark:bg-violet-900/55 border-violet-300 dark:border-violet-700",
                     "iconBg": "bg-violet-300 dark:bg-violet-800",
@@ -11703,7 +11701,7 @@
                 {
                     "icon": "?",
                     "imageSrc": "/images/minimal-maintainance-aerosunenergy.png",
-                    "imageAlt": "Continuous clean power output from AeroSun hybrid systems",
+                    "imageAlt": "AeroSun हाइब्रिड प्रणालियों से निरंतर स्वच्छ बिजली उत्पादन",
                     "color": "from-secondary to-green-400",
                     "cardBg": "bg-cyan-100/90 dark:bg-cyan-900/55 border-cyan-300 dark:border-cyan-700",
                     "iconBg": "bg-cyan-300 dark:bg-cyan-800",
@@ -11738,7 +11736,7 @@
                 {
                     "emoji": "???",
                     "imageSrc": "/images/infra-aerosunenergy.png",
-                    "imageAlt": "Hybrid solar and wind infrastructure for roads and highways",
+                    "imageAlt": "सड़कों और राजमार्गों के लिए सौर-पवन हाइब्रिड बुनियादी ढाँचा",
                     "tagColor": "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300",
                     "color": "from-primary to-blue-400",
                     "cardBg": "bg-blue-100/85 dark:bg-blue-950/45 border-blue-300 dark:border-blue-700"
@@ -11746,7 +11744,7 @@
                 {
                     "emoji": "??",
                     "imageSrc": "/images/urbangreen-aerosunenergy.png",
-                    "imageAlt": "AeroSun hybrid installation for public parks and open spaces",
+                    "imageAlt": "सार्वजनिक पार्कों और खुले स्थानों के लिए AeroSun हाइब्रिड स्थापना",
                     "tagColor": "bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300",
                     "color": "from-secondary to-teal-400",
                     "cardBg": "bg-emerald-100/85 dark:bg-emerald-950/45 border-emerald-300 dark:border-emerald-700"
@@ -11754,7 +11752,7 @@
                 {
                     "emoji": "??",
                     "imageSrc": "/images/roof-turbine-aerosunenergy.png",
-                    "imageAlt": "Residential rooftop turbine and hybrid solar installation",
+                    "imageAlt": "आवासीय छत पर टर्बाइन और हाइब्रिड सौर प्रणाली की स्थापना",
                     "tagColor": "bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300",
                     "color": "from-accent to-yellow-400",
                     "cardBg": "bg-amber-100/85 dark:bg-amber-950/45 border-amber-300 dark:border-amber-700"
@@ -11762,7 +11760,7 @@
                 {
                     "emoji": "??",
                     "imageSrc": "/images/industries-aerosunenergy.png",
-                    "imageAlt": "Commercial and industrial AeroSun hybrid energy installation",
+                    "imageAlt": "वाणिज्यिक और औद्योगिक क्षेत्रों में AeroSun हाइब्रिड ऊर्जा प्रणाली की स्थापना",
                     "tagColor": "bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300",
                     "color": "from-pink-400 to-rose-400",
                     "cardBg": "bg-purple-100/85 dark:bg-purple-950/45 border-purple-300 dark:border-purple-700"
@@ -11878,7 +11876,7 @@
                 {
                     "id": "h-darrieus",
                     "imageSrc": "/images/h-darrieus-turbine-aerosunenergy.png",
-                    "imageAlt": "H-Darrieus wind turbine by AeroSun Energy",
+                    "imageAlt": "AeroSun Energy का H-Darrieus पवन टर्बाइन",
                     "badgeColor": "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300",
                     "accentFrom": "from-blue-400",
                     "accentTo": "to-purple-400"
@@ -11886,7 +11884,7 @@
                 {
                     "id": "flower",
                     "imageSrc": "/images/helical-turbine-aerosunenergy.png",
-                    "imageAlt": "Helical flower-style vertical wind turbine by AeroSun Energy",
+                    "imageAlt": "AeroSun Energy का फूल के आकार के कुंडलित ब्लेड वाला ऊर्ध्वाधर पवन टर्बाइन",
                     "badgeColor": "bg-pink-100 text-pink-700 dark:bg-pink-900 dark:text-pink-300",
                     "accentFrom": "from-pink-400",
                     "accentTo": "to-rose-400"
@@ -11894,7 +11892,7 @@
                 {
                     "id": "savonius",
                     "imageSrc": "/images/savonius-turbine-aerosunenergy.png",
-                    "imageAlt": "Savonius vertical-axis wind turbine by AeroSun Energy",
+                    "imageAlt": "AeroSun Energy का Savonius ऊर्ध्वाधर-अक्ष पवन टर्बाइन",
                     "badgeColor": "bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-300",
                     "accentFrom": "from-teal-400",
                     "accentTo": "to-cyan-400"
@@ -11902,7 +11900,7 @@
                 {
                     "id": "rooftop-vawt",
                     "imageSrc": "/images/roof-turbine-aerosunenergy.png",
-                    "imageAlt": "Rooftop vertical wind turbine by AeroSun Energy",
+                    "imageAlt": "AeroSun Energy का छत पर लगाया जाने वाला ऊर्ध्वाधर पवन टर्बाइन",
                     "badgeColor": "bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-300",
                     "accentFrom": "from-orange-400",
                     "accentTo": "to-yellow-400"
@@ -11934,170 +11932,170 @@
                 "sky": "border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ffffff_100%)] text-sky-900"
             },
             "defaultFeature": {
-                "title": "Solar Rooftop Systems",
-                "description": "On-grid power plants for homes and businesses.",
+                "title": "छत पर सौर ऊर्जा प्रणालियाँ",
+                "description": "घरों और व्यवसायों के लिए ग्रिड से जुड़ी सौर ऊर्जा प्रणालियाँ।",
                 "points": [
-                    "On-grid, off-grid and hybrid configurations",
-                    "Net metering with state DISCOM",
-                    "PM Surya Ghar subsidy assistance",
-                    "TATA Power Solar premium panels"
+                    "ऑन-ग्रिड, ऑफ-ग्रिड और हाइब्रिड विन्यास",
+                    "राज्य DISCOM के साथ नेट मीटरिंग",
+                    "PM Surya Ghar योजना की सब्सिडी पाने में सहायता",
+                    "TATA Power Solar के प्रीमियम पैनल"
                 ],
                 "accent": "emerald"
             },
             "defaultBenefit": {
-                "title": "Reduce electricity bills by up to 80?90%",
-                "description": "Lower your monthly spend while improving energy certainty."
+                "title": "बिजली के बिल में 80–90% तक की बचत करें",
+                "description": "ऊर्जा आपूर्ति की विश्वसनीयता बढ़ाते हुए मासिक खर्च घटाएँ।"
             },
             "defaultInfo": {
-                "title": "Key Benefits",
+                "title": "मुख्य लाभ",
                 "content": [
-                    "Reduce electricity bills by up to 80?90%",
-                    "25+ years of solar panel life",
-                    "Low maintenance and high reliability",
-                    "Environment-friendly renewable energy"
+                    "बिजली के बिल में 80–90% तक की बचत करें",
+                    "सौर पैनलों का 25+ वर्षों का जीवनकाल",
+                    "कम रखरखाव और उच्च विश्वसनीयता",
+                    "पर्यावरण के अनुकूल नवीकरणीय ऊर्जा"
                 ],
                 "accent": "emerald"
             },
             "offerings": [
                 {
-                    "title": "Solar Rooftop Systems",
-                    "description": "On-grid power plants for homes and businesses.",
+                    "title": "छत पर सौर ऊर्जा प्रणालियाँ",
+                    "description": "घरों और व्यवसायों के लिए ग्रिड से जुड़ी सौर ऊर्जा प्रणालियाँ।",
                     "points": [
-                        "On-grid, off-grid and hybrid configurations",
-                        "Net metering with state DISCOM",
-                        "PM Surya Ghar subsidy assistance",
-                        "TATA Power Solar premium panels"
+                        "ऑन-ग्रिड, ऑफ-ग्रिड और हाइब्रिड विन्यास",
+                        "राज्य DISCOM के साथ नेट मीटरिंग",
+                        "PM Surya Ghar योजना की सब्सिडी पाने में सहायता",
+                        "TATA Power Solar के प्रीमियम पैनल"
                     ],
                     "accent": "emerald"
                 },
                 {
-                    "title": "Solar Thermal ? Water Heating Solutions",
-                    "description": "Solar Hot Water & Heat Pump ? efficient, eco-friendly hot water for homes, hotels, hospitals, hostels, commercial establishments and industries.",
+                    "title": "सौर तापीय ऊर्जा और जल तापन समाधान",
+                    "description": "सौर गर्म पानी और हीट पंप—घरों, होटलों, अस्पतालों, छात्रावासों, व्यावसायिक प्रतिष्ठानों और उद्योगों के लिए ऊर्जा-कुशल, पर्यावरण-अनुकूल गर्म पानी।",
                     "points": [
-                        "Available in capacities from 100 litres per day (LPD)",
-                        "Choice of pressurised and non-pressurised models",
-                        "High-performance BIS-certified solar collectors",
-                        "Cuts electricity use by minimising geyser usage"
+                        "100 लीटर प्रतिदिन (LPD) से शुरू होने वाली क्षमता में उपलब्ध",
+                        "प्रेशरयुक्त और बिना प्रेशर वाले मॉडल का विकल्प",
+                        "उच्च प्रदर्शन वाले BIS-प्रमाणित सौर कलेक्टर",
+                        "गीज़र का उपयोग घटाकर बिजली की खपत कम करें"
                     ],
                     "accent": "amber"
                 },
                 {
-                    "title": "Solar Street Lights",
-                    "description": "All-in-one lighting powered entirely by sunlight.",
+                    "title": "सौर स्ट्रीट लाइटें",
+                    "description": "पूरी तरह सूर्य के प्रकाश से चलने वाली ऑल-इन-वन लाइटें।",
                     "points": [
-                        "Integrated all-in-one luminaires starting from 12W",
-                        "Auto dusk-to-dawn operation",
-                        "Lithium-ion storage, 5+ year life",
-                        "Zero electricity bills"
+                        "12W से शुरू होने वाले एकीकृत ऑल-इन-वन ल्यूमिनेयर",
+                        "शाम से सुबह तक स्वचालित संचालन",
+                        "लिथियम-आयन भंडारण, 5+ वर्षों का जीवनकाल",
+                        "बिजली का बिल शून्य"
                     ],
                     "accent": "sky"
                 },
                 {
-                    "title": "Solar Fencing",
-                    "description": "Solar-powered electric fences for farms and estates.",
+                    "title": "सौर ऊर्जा से चलने वाली बाड़",
+                    "description": "खेतों और संपत्तियों के लिए सौर ऊर्जा से चलने वाली बिजली की बाड़।",
                     "points": [
-                        "Solar-charged energiser",
-                        "Up to 10 km perimeter on a single charger",
-                        "Audible alarm and battery backup",
-                        "Crop and livestock protection"
+                        "सौर ऊर्जा से चार्ज होने वाला विद्युतीकरण उपकरण",
+                        "एक चार्जर से 10 km तक की परिधि की सुरक्षा",
+                        "श्रव्य अलार्म और बैटरी बैकअप",
+                        "फ़सलों और पशुधन की सुरक्षा"
                     ],
                     "accent": "violet"
                 },
                 {
-                    "title": "Solar Pumpsets",
-                    "description": "Diesel-free water pumping for agriculture.",
+                    "title": "सौर पंप सेट",
+                    "description": "कृषि के लिए डीज़ल-मुक्त जल पंपिंग।",
                     "points": [
-                        "AC and DC pump configurations",
-                        "MNRE-approved controllers",
-                        "PM-KUSUM scheme assistance",
-                        "5-year manufacturer warranty"
+                        "AC और DC पंप विन्यास",
+                        "MNRE-अनुमोदित कंट्रोलर",
+                        "PM-KUSUM योजना के लिए सहायता",
+                        "निर्माता की 5-वर्षीय वारंटी"
                     ],
                     "accent": "amber"
                 },
                 {
-                    "title": "Operation & Maintenance (AMC)",
-                    "description": "Annual care to keep your plant generating at peak.",
+                    "title": "संचालन एवं रखरखाव (AMC)",
+                    "description": "आपके संयंत्र से अधिकतम उत्पादन बनाए रखने के लिए वार्षिक रखरखाव।",
                     "points": [
-                        "Quarterly preventive maintenance",
-                        "Performance ratio monitoring",
-                        "24x7 priority support",
-                        "Spare parts and inverter service"
+                        "हर तिमाही निवारक रखरखाव",
+                        "प्रदर्शन अनुपात की निगरानी",
+                        "24x7 प्राथमिकता सहायता",
+                        "स्पेयर पार्ट्स और इन्वर्टर सेवा"
                     ],
                     "accent": "emerald"
                 }
             ],
             "rooftopBenefits": [
                 {
-                    "title": "Reduce electricity bills by up to 80?90%",
-                    "description": "Lower your monthly spend while improving energy certainty."
+                    "title": "बिजली के बिल में 80–90% तक की बचत करें",
+                    "description": "ऊर्जा आपूर्ति की विश्वसनीयता बढ़ाते हुए मासिक खर्च घटाएँ।"
                 },
                 {
-                    "title": "25+ years of solar panel life",
-                    "description": "Long operational life with minimal replacement cycles."
+                    "title": "सौर पैनलों का 25+ वर्षों का जीवनकाल",
+                    "description": "कम से कम पुर्ज़े बदलने के साथ लंबा परिचालन जीवन।"
                 },
                 {
-                    "title": "Low maintenance and high reliability",
-                    "description": "Designed for stable long-term generation with simple upkeep."
+                    "title": "कम रखरखाव और उच्च विश्वसनीयता",
+                    "description": "आसान रखरखाव के साथ लंबे समय तक स्थिर उत्पादन के लिए डिज़ाइन किया गया।"
                 },
                 {
-                    "title": "Environment-friendly renewable energy",
-                    "description": "Reduce your environmental impact with clean power generation."
+                    "title": "पर्यावरण के अनुकूल नवीकरणीय ऊर्जा",
+                    "description": "स्वच्छ बिजली उत्पादन से पर्यावरण पर अपना प्रभाव कम करें।"
                 },
                 {
-                    "title": "Increase property value",
-                    "description": "Improve the value and appeal of your property with solar-ready infrastructure."
+                    "title": "संपत्ति का मूल्य बढ़ाएँ",
+                    "description": "सौर ऊर्जा के लिए तैयार बुनियादी ढाँचे से अपनी संपत्ति का मूल्य और आकर्षण बढ़ाएँ।"
                 },
                 {
-                    "title": "Net Metering facility",
-                    "description": "Export excess power to the grid and earn credits where applicable."
+                    "title": "नेट मीटरिंग की सुविधा",
+                    "description": "जहाँ लागू हो, अतिरिक्त बिजली ग्रिड को भेजें और क्रेडिट प्राप्त करें।"
                 }
             ],
             "whySolar": [
                 {
-                    "title": "Reduce Carbon Emissions",
-                    "description": "Every kW of solar offsets ~1.2 tonnes of CO? a year ? shrinking your carbon footprint."
+                    "title": "कार्बन उत्सर्जन घटाएँ",
+                    "description": "सौर ऊर्जा का हर kW सालाना लगभग 1.2 टन CO₂ उत्सर्जन की भरपाई करता है—इससे आपका कार्बन फ़ुटप्रिंट घटता है।"
                 },
                 {
-                    "title": "Eco-Friendly",
-                    "description": "Clean, renewable energy that protects nature for generations to come."
+                    "title": "पर्यावरण-अनुकूल",
+                    "description": "स्वच्छ नवीकरणीय ऊर्जा, जो आने वाली पीढ़ियों के लिए प्रकृति की रक्षा करती है।"
                 },
                 {
-                    "title": "Cost Saving",
-                    "description": "Slash electricity bills by 70?90% from day one and recover your investment in 4?6 years."
+                    "title": "लागत में बचत",
+                    "description": "पहले दिन से बिजली के बिल में 70–90% तक बचत करें और 4–6 वर्षों में अपना निवेश वसूलें।"
                 },
                 {
-                    "title": "Energy Independence",
-                    "description": "Generate your own power and cut reliance on the grid and rising tariffs."
+                    "title": "ऊर्जा आत्मनिर्भरता",
+                    "description": "अपनी बिजली खुद बनाएँ और ग्रिड तथा बढ़ती दरों पर निर्भरता घटाएँ।"
                 },
                 {
-                    "title": "Unlimited Energy",
-                    "description": "Sunlight is infinite ? Tirupati enjoys 300+ sunny days every year."
+                    "title": "असीमित ऊर्जा",
+                    "description": "सूर्य का प्रकाश असीमित है—तिरुपति में हर साल 300+ दिन धूप रहती है।"
                 },
                 {
-                    "title": "Continuous Supply",
-                    "description": "Hybrid systems with battery backup keep critical loads running through outages."
+                    "title": "निरंतर आपूर्ति",
+                    "description": "बैटरी बैकअप वाले हाइब्रिड तंत्र बिजली कटौती के दौरान भी ज़रूरी उपकरणों को चालू रखते हैं।"
                 }
             ],
             "subsidyCards": [
                 {
-                    "label": "For Residential Households",
-                    "value": "? 30,000",
-                    "note": "per kW up to 2 kW"
+                    "label": "आवासीय घरों के लिए",
+                    "value": "₹30,000",
+                    "note": "2 kW तक प्रति kW"
                 },
                 {
-                    "label": "Additional Capacity",
-                    "value": "? 18,000",
-                    "note": "per kW for additional capacity up to 3 kW"
+                    "label": "अतिरिक्त क्षमता",
+                    "value": "₹18,000",
+                    "note": "3 kW तक की अतिरिक्त क्षमता के लिए प्रति kW"
                 },
                 {
-                    "label": "Maximum Total Subsidy",
-                    "value": "? 78,000",
-                    "note": "maximum total subsidy for systems larger than 3 kW"
+                    "label": "अधिकतम कुल सब्सिडी",
+                    "value": "₹78,000",
+                    "note": "3 kW से अधिक क्षमता वाले तंत्रों के लिए अधिकतम कुल सब्सिडी"
                 },
                 {
-                    "label": "For GHS / RWA",
-                    "value": "? 18,000",
-                    "note": "per kW ? common facilities incl. EV charging, up to 500 kW"
+                    "label": "GHS / RWA के लिए",
+                    "value": "₹18,000",
+                    "note": "EV चार्जिंग सहित साझा सुविधाओं के लिए प्रति kW, 500 kW तक"
                 }
             ]
         },
