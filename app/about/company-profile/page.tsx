@@ -41,7 +41,7 @@ function SectionHeading({
       </h2>
       {description && (
         <p
-          className={`mt-4 text-base leading-7 ${inverse ? "text-emerald-50/80" : "text-slate-600 dark:text-slate-300"}`}
+          className={`mt-4 text-sm leading-7 ${inverse ? "text-emerald-50/80" : "text-slate-600 dark:text-slate-300"}`}
         >
           {description}
         </p>
@@ -56,7 +56,7 @@ function BulletList({ items }: { items: string[] }) {
       {items.map((item) => (
         <li
           key={item}
-          className="flex gap-3 text-md leading-6 text-slate-700 dark:text-slate-200 sm:text-base"
+          className="flex gap-3 text-md leading-6 text-slate-700 dark:text-slate-200 sm:text-sm"
         >
           <span
             className="mt-2 h-2 w-2 shrink-0 rounded-full bg-emerald-500"
@@ -107,7 +107,7 @@ export default function CompanyProfilePage() {
           <p className="mt-5 text-lg font-bold uppercase tracking-[0.22em] text-emerald-100/75 sm:text-xl">
             {cp.motto}
           </p>
-          <p className="mt-6 max-w-3xl text-base leading-7 text-emerald-50/85 sm:text-lg sm:leading-8">
+          <p className="mt-6 max-w-3xl text-sm leading-7 text-emerald-50/85 sm:text-lg sm:leading-8">
             {cp.intro}
           </p>
           <a

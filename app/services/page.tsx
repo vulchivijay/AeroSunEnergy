@@ -58,7 +58,7 @@ export default function ServicesPage() {
               <h1 className="mt-5 text-5xl font-black leading-[0.98] tracking-[-0.05em] text-white sm:text-6xl lg:text-8xl">
                 {labels.title}
               </h1>
-              <p className="mt-6 max-w-2xl text-base leading-7 text-white/75 sm:text-xl sm:leading-8">
+              <p className="mt-6 max-w-2xl text-sm leading-7 text-white/75 sm:text-xl sm:leading-8">
                 {labels.description}
               </p>
             </div>
@@ -110,7 +110,7 @@ export default function ServicesPage() {
                     <Icon className="h-5 w-5" strokeWidth={1.8} aria-hidden="true" />
                   </span>
                 </div>
-                <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">{service.description}</p>
+                <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600 sm:text-sm">{service.description}</p>
                 <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
                   {service.points.map((point) => (
                     <li key={point} className="flex items-start gap-2.5 rounded-xl bg-[#f6f8f4] px-3 py-2.5 text-sm leading-5 text-slate-700">
@@ -232,7 +232,7 @@ export default function ServicesPage() {
             <div className="max-w-3xl">
               <p className="text-[10px] font-black uppercase tracking-[0.25em] text-emerald-800">{labels.completeSolutions}</p>
               <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">{labels.completeSolutionsTitle}</h2>
-              <p className="mt-4 text-base leading-7 text-slate-600">{labels.completeSolutionsDescription}</p>
+              <p className="mt-4 text-sm leading-7 text-slate-600">{labels.completeSolutionsDescription}</p>
             </div>
             <span className="w-fit rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-800">
               {labels.endToEndSupport}
@@ -266,7 +266,7 @@ export default function ServicesPage() {
         <div className="mb-9 max-w-3xl">
           <p className="text-[10px] font-black uppercase tracking-[0.25em] text-sky-800">{labels.systemTypes}</p>
           <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">{labels.systemTypesTitle}</h2>
-          <p className="mt-4 text-base leading-7 text-slate-600">{labels.systemTypesDescription}</p>
+          <p className="mt-4 text-sm leading-7 text-slate-600">{labels.systemTypesDescription}</p>
         </div>
 
         <div className="grid gap-4 xl:grid-cols-3">

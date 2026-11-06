@@ -21,7 +21,7 @@ export default function TermsPage() {
               <h1 className="mt-6 text-4xl font-black tracking-[0.065em] text-white sm:text-6xl lg:text-7xl">
                 {content.titleStart} <span className="text-lime-300">{content.titleJoiner}</span> {content.titleEnd}
               </h1>
-              <p className="mt-5 max-w-2xl text-md leading-7 text-emerald-50/75 sm:text-base sm:leading-8">
+              <p className="mt-5 max-w-2xl text-md leading-7 text-emerald-50/75 sm:text-sm sm:leading-8">
                 {content.description}
               </p>
             </div>
@@ -71,7 +71,7 @@ export default function TermsPage() {
         <article className="min-w-0">
           <div className="mb-8 rounded-3xl border border-emerald-900/10 bg-white p-6 shadow-[0_20px_55px_-42px_rgba(15,23,42,0.5)] sm:p-8">
             <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">{content.readLabel}</p>
-            <p className="mt-3 max-w-4xl text-base leading-8 text-slate-700">
+            <p className="mt-3 max-w-4xl text-sm leading-8 text-slate-700">
               {content.intro}
             </p>
           </div>
@@ -89,7 +89,7 @@ export default function TermsPage() {
                   </span>
                   <div className="min-w-0">
                     <h2 className="text-lg font-extrabold tracking-tight text-slate-950 sm:text-xl">{section.heading}</h2>
-                    <p className="mt-3 text-md leading-7 text-slate-600 sm:text-base">{section.content}</p>
+                    <p className="mt-3 text-md leading-7 text-slate-600 sm:text-sm">{section.content}</p>
                     <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
                       {section.bullets.map((item) => (
                         <li key={item} className="flex items-start gap-3 rounded-xl bg-[#f5f7f2] px-3 py-3 text-md leading-6 text-slate-700">

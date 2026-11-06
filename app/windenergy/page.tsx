@@ -27,7 +27,7 @@ export default function WindEnergyPage() {
   const serviceSectionsLocalized = windPage.sections
 
   return (
-    <main className="bg-[#f0f8fc] pt-6 sm:pt-8 text-slate-900 [&>section]:rounded-2xl [&>section]:border-l-4 [&>section]:border-l-sky-500">
+    <main className="bg-[#ffffff] pt-6 sm:pt-8 text-slate-900 [&>section]:rounded-2xl [&>section]:border-l-4 [&>section]:border-l-sky-500 overflow-hidden">
       <header className="relative mx-auto mb-6 max-w-7xl overflow-hidden rounded-[2.5rem] border border-slate-700 bg-[#0b1c2c] px-5 py-7 text-white shadow-[0_30px_75px_-42px_rgba(7,28,47,0.75)] sm:mb-8 sm:px-8 sm:py-9 lg:px-10 lg:py-11">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(125,211,252,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(125,211,252,0.055)_1px,transparent_1px)] bg-size-[36px_36px]" aria-hidden="true" />
         <div className="absolute inset-y-0 right-0 w-2/3 bg-[radial-gradient(ellipse_at_80%_48%,rgba(14,165,233,0.24),transparent_58%)]" aria-hidden="true" />
@@ -115,7 +115,7 @@ export default function WindEnergyPage() {
                 <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-lg font-bold text-emerald-300">
                   {index + 1}
                 </div>
-                <p className="text-base leading-7 text-slate-100">{item}</p>
+                <p className="text-sm leading-7 text-slate-100">{item}</p>
               </div>
             ))}
           </div>
@@ -161,7 +161,7 @@ export default function WindEnergyPage() {
             <div>
               <WindSectionEyebrow>{windPage.strategy.eyebrow}</WindSectionEyebrow>
               <h2 className="mt-3 text-3xl font-bold text-slate-900">{windPage.strategy.title}</h2>
-              <div className="mt-6 space-y-5 text-base leading-7 text-slate-700">
+              <div className="mt-6 space-y-5 text-sm leading-7 text-slate-700">
                 <p>
                   {windPage.labels.strategyDescription[0]}
                 </p>
@@ -193,7 +193,7 @@ export default function WindEnergyPage() {
           {serviceSectionsLocalized.map((section) => (
             <div key={section.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="text-2xl font-bold text-slate-900">{section.title}</h3>
-              <p className="mt-2 text-base leading-7 text-slate-700">{section.heading}</p>
+              <p className="mt-2 text-sm leading-7 text-slate-700">{section.heading}</p>
               <p className="mt-4 text-md leading-6 text-slate-600">{section.overview}</p>
 
               <div className="mt-6 grid gap-4 sm:grid-cols-2">

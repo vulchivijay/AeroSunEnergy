@@ -81,7 +81,7 @@ export default function Contact() {
   const contactEmail = footer.email
 
   return (
-    <main className="overflow-hidden bg-[#f3f0e5] text-slate-950 dark:bg-slate-950 dark:text-white">
+    <main className="overflow-hidden bg-[#ffffff] text-slate-950 dark:bg-slate-950 dark:text-white">
       <section className="px-5 pb-16 pt-6 sm:px-8 sm:pb-24 sm:pt-10 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-5 flex items-center justify-between border-b border-slate-300 pb-4 dark:border-slate-800">
@@ -106,7 +106,7 @@ export default function Contact() {
                 <h1 className="mt-10 max-w-2xl text-5xl font-black leading-[0.9] tracking-[0.075em] text-slate-950 sm:text-6xl lg:text-7xl">
                   {c.heroTitle}
                 </h1>
-                <p className="mt-7 max-w-xl text-base leading-8 text-emerald-950/80 sm:text-lg">
+                <p className="mt-7 max-w-xl text-sm leading-8 text-emerald-950/80 sm:text-lg">
                   {c.heroDescription}
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
@@ -158,7 +158,7 @@ export default function Contact() {
               <div className="flex flex-col justify-center border-b border-white/10 p-6 sm:p-9 lg:border-b-0 lg:border-r">
                 <p className="text-md font-bold uppercase tracking-[0.2em] text-lime-300">{contactUs}</p>
                 <h2 className="mt-4 text-3xl font-black leading-tight tracking-tight sm:text-4xl">{contactCardTitle}</h2>
-                <p className="mt-4 text-base leading-7 text-emerald-50/75">{connectionPrompt}</p>
+                <p className="mt-4 text-sm leading-7 text-emerald-50/75">{connectionPrompt}</p>
               </div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3">
                 {channels.map((channel, index) => (
@@ -173,7 +173,7 @@ export default function Contact() {
                     <span className="min-w-0">
                       <span className="block font-mono text-md font-bold text-lime-300">0{index + 1}</span>
                       <span className="mt-3 block text-md font-bold uppercase tracking-[0.14em] text-white/60">{channel.label}</span>
-                      <span className="mt-1 block break-words text-base font-semibold leading-6 text-white group-hover:text-lime-200">{channel.value}</span>
+                      <span className="mt-1 block break-words text-sm font-semibold leading-6 text-white group-hover:text-lime-200">{channel.value}</span>
                     </span>
                     <span className="ml-auto text-lg text-lime-300 transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
                     <span className="sr-only">Open {channel.label}</span>
@@ -189,7 +189,7 @@ export default function Contact() {
                 <span className="font-mono text-md font-bold text-emerald-800 dark:text-lime-300">0{index + 1}</span>
                 <div>
                   <p className="text-md font-bold uppercase tracking-[0.16em] text-slate-600 dark:text-slate-300">{item.label}</p>
-                  <p className="mt-2 text-base leading-7 text-slate-800 dark:text-slate-200">{item.value}</p>
+                  <p className="mt-2 text-sm leading-7 text-slate-800 dark:text-slate-200">{item.value}</p>
                 </div>
               </article>
             ))}
@@ -202,7 +202,7 @@ export default function Contact() {
                 <h2 className="mt-4 max-w-xl text-4xl font-black leading-tight tracking-[0.05em] text-slate-950 sm:text-5xl dark:text-white">{stepIntroTitle}</h2>
               </div>
               <div className="flex flex-col justify-between gap-5 border-t border-slate-300 pt-5 sm:flex-row sm:items-end dark:border-slate-800">
-                <p className="max-w-md text-base leading-7 text-slate-600 dark:text-slate-300">{stepIntroCopy}</p>
+                <p className="max-w-md text-sm leading-7 text-slate-600 dark:text-slate-300">{stepIntroCopy}</p>
                 <Link href="/customer-enquiry" className="inline-flex w-fit items-center gap-3 text-md font-bold text-emerald-900 transition hover:gap-4 dark:text-lime-300">
                   {submitEnquiry} <span aria-hidden="true">&rarr;</span>
                 </Link>
@@ -213,7 +213,7 @@ export default function Contact() {
                 <article key={step.title} className="bg-[#f3f0e5] p-6 sm:p-8 dark:bg-slate-950">
                   <span className="font-mono text-md font-bold text-emerald-700 dark:text-lime-300">{step.number} <span className="text-slate-600 dark:text-slate-400">/ 03</span></span>
                   <h3 className="mt-8 text-2xl font-black text-slate-950 dark:text-white">{step.title}</h3>
-                  <p className="mt-3 text-base leading-7 text-slate-700 dark:text-slate-300">{step.description}</p>
+                  <p className="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-300">{step.description}</p>
                 </article>
               ))}
             </div>
@@ -223,7 +223,7 @@ export default function Contact() {
             <div className="flex flex-col justify-start p-6 sm:p-10">
               <p className="text-md font-black uppercase tracking-[0.2em] text-emerald-900 dark:text-lime-300">{faqHeader}</p>
               <h2 className="mt-4 text-4xl font-black leading-tight tracking-[0.05em] text-emerald-950 dark:text-white sm:text-5xl">{faqTitle}</h2>
-              <p className="mt-5 text-base leading-7 text-emerald-950/75 dark:text-emerald-50/75">{faqIntro}</p>
+              <p className="mt-5 text-sm leading-7 text-emerald-950/75 dark:text-emerald-50/75">{faqIntro}</p>
             </div>
             <div className="space-y-3 bg-[#f3f0e5] p-4 sm:p-6 lg:p-8 dark:bg-slate-900">
               {solarFaqs.map((faq) => (

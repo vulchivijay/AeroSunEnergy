@@ -23,7 +23,7 @@ export function SharedHeroSlider({
   return (
     <Slider autoplay interval={interval} pauseOnHover ariaLabel={ariaLabel}>
       {slides.map((slide, index) => (
-        <div key={slide.title} className={`${slide.panelClass} relative h-full w-full overflow-hidden`}>
+        <div key={slide.title} className={`${slide.panelClass} relative min-h-[clamp(480px,56vw,760px)] w-full`}>
           <div className="absolute inset-0">
             <OptimizedImage
               src={slide.image}
@@ -37,7 +37,7 @@ export function SharedHeroSlider({
             />
           </div>
           <div className={`${slideOverlay} absolute inset-0`} />
-          <div className="group relative flex h-full w-full items-end justify-start overflow-hidden p-6 sm:p-8 lg:p-14 xl:p-18">
+          <div className="group relative flex min-h-[clamp(480px,56vw,760px)] w-full items-end justify-start p-4 sm:p-8 lg:p-14 xl:p-18">
             <HeroSlideContent slide={slide} />
           </div>
         </div>

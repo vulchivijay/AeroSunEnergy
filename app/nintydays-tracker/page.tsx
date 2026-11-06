@@ -49,7 +49,7 @@ export default function NinetyDayTrackerPage() {
               BUSINESS EXECUTION PLAN
             </p>
 
-            <p className="mt-8 max-w-2xl text-base leading-7 text-[#e2e7f1] sm:text-lg sm:leading-8">
+            <p className="mt-8 max-w-2xl text-sm leading-7 text-[#e2e7f1] sm:text-lg sm:leading-8">
               I&apos;ve created the AeroSun Energy 90-Day Business Execution
               Tracker in Excel.
             </p>
@@ -158,7 +158,7 @@ export default function NinetyDayTrackerPage() {
                     {stage.title}
                   </h3>
                 </div>
-                <ul className="space-y-3 text-base leading-7 text-[#4c566d] dark:text-[#d4d9e5]">
+                <ul className="space-y-3 text-sm leading-7 text-[#4c566d] dark:text-[#d4d9e5]">
                   {stage.points.map((point) => (
                     <li key={point} className="flex items-start gap-3">
                       <span
@@ -189,7 +189,7 @@ export default function NinetyDayTrackerPage() {
 
           <div className="overflow-hidden rounded-[1.75rem] border border-[#d8cdbb] bg-[#fffdf8] shadow-[0_24px_60px_-40px_rgba(25,36,61,0.3)] dark:border-[#3d4863] dark:bg-[#222d43]">
             <div className="overflow-x-auto">
-              <table className="min-w-full text-left text-base text-[#4c566d] dark:text-[#d4d9e5]">
+              <table className="min-w-full text-left text-sm text-[#4c566d] dark:text-[#d4d9e5]">
                 <thead className="bg-[#f0e6d8] text-[#202b43] dark:bg-[#303a52] dark:text-white">
                   <tr>
                     <th className="px-5 py-4 font-black uppercase tracking-[0.16em] text-[#9b4b42] dark:text-[#ffac91]">
@@ -268,7 +268,7 @@ export default function NinetyDayTrackerPage() {
                   </div>
                 </div>
                 <div className="p-5">
-                  <ul className="space-y-3 text-base leading-7 text-[#4c566d] dark:text-[#d4d9e5]">
+                  <ul className="space-y-3 text-sm leading-7 text-[#4c566d] dark:text-[#d4d9e5]">
                     {phase.actions.map((action) => (
                       <li key={action} className="flex items-start gap-3">
                         <span

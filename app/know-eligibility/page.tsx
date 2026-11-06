@@ -27,7 +27,7 @@ export default function KnowEligibilityPage() {
               {labels.heroTitle}
               <span className="mt-1 block text-emerald-300">{labels.heroTitleAccent}</span>
             </h1>
-            <p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-base sm:leading-8">
+            <p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-sm sm:leading-8">
               {labels.heroDescription}
             </p>
           </div>
@@ -53,7 +53,7 @@ export default function KnowEligibilityPage() {
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-lg text-emerald-800">i</span>
               <div>
                 <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">{labels.glanceTitle}</p>
-                <p className="mt-2 text-md leading-7 text-slate-600 sm:text-base">
+                <p className="mt-2 text-md leading-7 text-slate-600 sm:text-sm">
                   {labels.glanceDescription}
                 </p>
               </div>
@@ -91,7 +91,7 @@ export default function KnowEligibilityPage() {
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-xs font-bold text-emerald-800">01</span>
                 <div className="min-w-0 flex-1">
                   <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.subsidyTitle}</h2>
-                  <p className="mt-3 text-md leading-7 text-slate-600 sm:text-base">{labels.subsidyDescription}</p>
+                  <p className="mt-3 text-md leading-7 text-slate-600 sm:text-sm">{labels.subsidyDescription}</p>
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
                     {page.subsidyBreakdown.map((item) => (
                       <div key={item.title} className="rounded-xl bg-[#f4f8fc] p-4">

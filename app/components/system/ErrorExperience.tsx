@@ -140,7 +140,7 @@ export function ErrorExperience({
           <h1 className="mt-4 text-4xl font-semibold leading-[1.05] tracking-[0.05em] text-white sm:text-5xl">
             {title}
           </h1>
-          <p className="mt-5 max-w-lg text-base leading-7 text-white/70 sm:text-lg sm:leading-8">
+          <p className="mt-5 max-w-lg text-sm leading-7 text-white/70 sm:text-lg sm:leading-8">
             {description}
           </p>
 

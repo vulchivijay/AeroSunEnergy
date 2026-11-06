@@ -38,7 +38,7 @@ function SectionHeading({
         {title}
       </h2>
       {description && (
-        <p className={`mt-4 text-base leading-7 ${inverse ? 'text-emerald-50/80' : 'text-slate-600 dark:text-slate-300'}`}>{description}</p>
+        <p className={`mt-4 text-sm leading-7 ${inverse ? 'text-emerald-50/80' : 'text-slate-600 dark:text-slate-300'}`}>{description}</p>
       )}
     </div>
   )
@@ -48,7 +48,7 @@ function BulletList({ items }: { items: string[] }) {
   return (
     <ul className="space-y-2.5">
       {items.map((item) => (
-        <li key={item} className="flex gap-3 text-md leading-6 text-slate-700 dark:text-slate-200 sm:text-base">
+        <li key={item} className="flex gap-3 text-md leading-6 text-slate-700 dark:text-slate-200 sm:text-sm">
           <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-emerald-500" aria-hidden="true" />
           <span>{item}</span>
         </li>
@@ -66,7 +66,7 @@ function DetailCard({
 }) {
   return (
     <div className="rounded-2xl border border-emerald-900/10 bg-white p-5 dark:border-white/10 dark:bg-white/[0.04] sm:p-6">
-      <h3 className="mb-4 text-base font-bold text-slate-950 dark:text-white">{title}</h3>
+      <h3 className="mb-4 text-sm font-bold text-slate-950 dark:text-white">{title}</h3>
       {children}
     </div>
   )
@@ -95,7 +95,7 @@ export default function ProductCataloguePage() {
           <p className="mt-5 text-lg font-bold uppercase tracking-[0.22em] text-emerald-100/75 sm:text-xl">
             {c.hero.tagline}
           </p>
-          <p className="mt-6 max-w-3xl text-base leading-7 text-emerald-50/85 sm:text-lg sm:leading-8">
+          <p className="mt-6 max-w-3xl text-sm leading-7 text-emerald-50/85 sm:text-lg sm:leading-8">
             {c.hero.description}
           </p>
           <a
@@ -283,11 +283,11 @@ export default function ProductCataloguePage() {
           </div>
           <div className="grid gap-5 lg:grid-cols-2">
             <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 sm:p-6">
-              <h3 className="mb-4 text-base font-bold">{c.wind.applicationsLabel}</h3>
+              <h3 className="mb-4 text-sm font-bold">{c.wind.applicationsLabel}</h3>
               <BulletList items={c.wind.applications} />
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 sm:p-6">
-              <h3 className="mb-4 text-base font-bold">{c.wind.focusLabel}</h3>
+              <h3 className="mb-4 text-sm font-bold">{c.wind.focusLabel}</h3>
               <BulletList items={c.wind.focus} />
             </div>
           </div>

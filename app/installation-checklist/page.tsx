@@ -97,7 +97,7 @@ export default function InstallationChecklistPage() {
 							{labels.heroTitle}
 							<span className="mt-1 block text-amber-300">{labels.heroTitleAccent}</span>
 						</h1>
-						<p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-base sm:leading-8">
+						<p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-sm sm:leading-8">
 							{labels.heroDescription}
 						</p>
 					</div>
@@ -123,7 +123,7 @@ export default function InstallationChecklistPage() {
 							<span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-lg text-amber-800">i</span>
 							<div>
 								<p className="text-[12px] font-black uppercase tracking-[0.2em] text-amber-800">{labels.glanceTitle}</p>
-								<p className="mt-2 text-md leading-7 text-slate-600 sm:text-base">
+								<p className="mt-2 text-md leading-7 text-slate-600 sm:text-sm">
 									{labels.glanceDescription}
 								</p>
 							</div>
@@ -154,7 +154,7 @@ export default function InstallationChecklistPage() {
 									</span>
 									<div className="min-w-0 flex-1">
 										<h2 className="text-lg font-extrabold tracking-tight text-slate-950">{section.title}</h2>
-										<p className="mt-3 text-md leading-7 text-slate-600 sm:text-base">{section.text}</p>
+										<p className="mt-3 text-md leading-7 text-slate-600 sm:text-sm">{section.text}</p>
 										<ul className="mt-4 space-y-2.5">
 											{section.points.map((item) => (
 												<li key={item} className="flex items-start gap-3 text-md leading-6 text-slate-600">

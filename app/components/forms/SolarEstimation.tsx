@@ -190,7 +190,7 @@ export function SolarEstimation() {
                 <h2 className="text-[2rem] font-black tracking-tighter text-slate-900">
                   {e.estimateSavings}
                 </h2>
-                <p className="mt-2 text-base text-slate-600">{e.adjustUsage}</p>
+                <p className="mt-2 text-sm text-slate-600">{e.adjustUsage}</p>
               </div>
 
               <div className="space-y-4">
@@ -299,7 +299,7 @@ export function SolarEstimation() {
             <div className="space-y-5">
               <div>
                 <h2 className="text-[2rem] font-black tracking-tighter text-white">{e.returnsTitle}</h2>
-                <p className="mt-2 text-base text-emerald-50/90">{e.irradianceTariffAssumption}</p>
+                <p className="mt-2 text-sm text-emerald-50/90">{e.irradianceTariffAssumption}</p>
               </div>
 
               <div className="rounded-[22px] border border-white/15 bg-white/10 p-5 backdrop-blur-sm">
@@ -404,7 +404,7 @@ function InputField({
         {...register}
         aria-invalid={Boolean(error)}
         aria-describedby={`${name}-help${error ? ` ${name}-error` : ''}`}
-        className={`mt-3 w-full rounded-2xl border px-4 py-3 text-base font-semibold text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 dark:text-white dark:placeholder:text-slate-400 ${error ? 'border-rose-400 bg-rose-50/80 dark:border-rose-500/40 dark:bg-rose-950/25' : 'border-slate-200 bg-white/90 dark:border-white/10 dark:bg-slate-950/60'}`}
+        className={`mt-3 w-full rounded-2xl border px-4 py-3 text-sm font-semibold text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 dark:text-white dark:placeholder:text-slate-400 ${error ? 'border-rose-400 bg-rose-50/80 dark:border-rose-500/40 dark:bg-rose-950/25' : 'border-slate-200 bg-white/90 dark:border-white/10 dark:bg-slate-950/60'}`}
       />
 
       <p id={`${name}-help`} className="mt-2 text-md leading-5 text-slate-500 dark:text-slate-400">

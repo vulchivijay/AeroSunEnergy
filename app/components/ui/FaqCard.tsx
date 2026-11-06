@@ -43,7 +43,7 @@ export default function FaqCard({ question, answer, defaultOpen = false }: FaqCa
         aria-label={`${displayQuestion} — ${isOpen ? t.solarFaqs.collapseAnswer : t.solarFaqs.expandAnswer}`}
         id={questionId}
       >
-        <span className="text-base font-black tracking-[0.03em] text-[#1f2a44] sm:text-lg">{displayQuestion}</span>
+        <span className="text-sm font-black tracking-[0.03em] text-[#1f2a44] sm:text-lg">{displayQuestion}</span>
         <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-lg font-bold transition ${isOpen ? 'border-[#F59E0B]/60 bg-[#F59E0B] text-white' : 'border-[#F59E0B]/60 bg-[#fff3df] text-[#D97706]'}`}>
           {isOpen ? '−' : '+'}
         </span>
@@ -56,7 +56,7 @@ export default function FaqCard({ question, answer, defaultOpen = false }: FaqCa
         hidden={!isOpen}
         className="border-t border-[#f0e3ce] px-5 pb-5 pt-4 sm:px-6"
       >
-        <p className="text-base leading-8 text-slate-700">{displayAnswer}</p>
+        <p className="text-sm leading-8 text-slate-700">{displayAnswer}</p>
       </div>
     </div>
   );

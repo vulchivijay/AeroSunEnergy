@@ -49,7 +49,7 @@ export default function ProjectsPage() {
               {labels.heroTitle}
               <span className="mt-1 block text-emerald-300">{labels.heroTitleAccent}</span>
             </h1>
-            <p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-base sm:leading-8">
+            <p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-sm sm:leading-8">
               {labels.heroDescription}
             </p>
           </div>
@@ -75,7 +75,7 @@ export default function ProjectsPage() {
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-lg text-emerald-800">i</span>
               <div>
                 <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">{labels.approach}</p>
-                <p className="mt-2 text-md leading-7 text-slate-600 sm:text-base">{labels.approachDescription}</p>
+                <p className="mt-2 text-md leading-7 text-slate-600 sm:text-sm">{labels.approachDescription}</p>
               </div>
             </div>
             <div className="mt-6 grid gap-3 border-t border-slate-100 pt-5 sm:grid-cols-2">

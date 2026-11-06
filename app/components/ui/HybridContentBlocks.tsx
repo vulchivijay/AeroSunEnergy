@@ -109,7 +109,7 @@ export function HybridTable({ rows }: { rows: { label: string; value: string; us
           <div className="px-4 py-3">{ui.customerFit}</div>
         </div>
         {rows.map((row) => (
-          <div key={row.label} className="grid gap-3 px-4 py-4 text-base text-slate-700 md:grid-cols-[1.2fr_2.2fr_1.8fr] md:gap-0">
+          <div key={row.label} className="grid gap-3 px-4 py-4 text-sm text-slate-700 md:grid-cols-[1.2fr_2.2fr_1.8fr] md:gap-0">
             <div className="font-semibold text-slate-900">{row.label}</div>
             <div>{row.value}</div>
             <div>{row.use}</div>

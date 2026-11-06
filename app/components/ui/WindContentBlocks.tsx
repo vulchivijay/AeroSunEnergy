@@ -109,7 +109,7 @@ export function WindCapacityTable({ rows }: { rows: { label: string; value: stri
           <div className="px-4 py-3">{ui.typicalUse}</div>
         </div>
         {rows.map((row) => (
-          <div key={row.label} className="grid gap-3 px-4 py-4 text-base text-slate-700 md:grid-cols-[1fr_1.1fr_2fr] md:gap-0">
+          <div key={row.label} className="grid gap-3 px-4 py-4 text-sm text-slate-700 md:grid-cols-[1fr_1.1fr_2fr] md:gap-0">
             <div className="font-semibold text-slate-900">{row.label}</div>
             <div className="font-black text-sky-700">{row.value}</div>
             <div>{row.use}</div>
@@ -133,7 +133,7 @@ export function WindComparisonTable({ rows }: { rows: { system: string; detail: 
           <div className="px-4 py-3">{ui.typicalUse}</div>
         </div>
         {rows.map((row) => (
-          <div key={row.system} className="grid gap-3 px-4 py-4 text-base text-slate-700 md:grid-cols-[1.2fr_2.3fr_1.8fr] md:gap-0">
+          <div key={row.system} className="grid gap-3 px-4 py-4 text-sm text-slate-700 md:grid-cols-[1.2fr_2.3fr_1.8fr] md:gap-0">
             <div className="font-semibold text-slate-900">{row.system}</div>
             <div>{row.detail}</div>
             <div>{row.use}</div>

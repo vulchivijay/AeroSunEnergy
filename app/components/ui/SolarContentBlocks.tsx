@@ -154,7 +154,7 @@ export function CapacityTable() {
           <div className="px-4 py-3">{ui.bestFit}</div>
         </div>
         {t.solarPage.capacityTable.rows.map((row) => (
-          <div key={row.usage} className="grid gap-3 px-4 py-4 text-base text-slate-700 md:grid-cols-3 md:gap-0">
+          <div key={row.usage} className="grid gap-3 px-4 py-4 text-sm text-slate-700 md:grid-cols-3 md:gap-0">
             <div className="font-semibold text-slate-900">{row.usage}</div>
             <div className="font-black text-emerald-700">{row.capacity}</div>
             <div>{row.tag}</div>

@@ -26,7 +26,7 @@ export default function PrivacyPolicyPage() {
               {content.title}
               <span className="mt-1 block text-sky-300">{content.titleAccent}</span>
             </h1>
-            <p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-base sm:leading-8">
+            <p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-sm sm:leading-8">
               {content.description}
             </p>
           </div>
@@ -52,7 +52,7 @@ export default function PrivacyPolicyPage() {
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-lg text-sky-800">i</span>
               <div>
                 <p className="text-[12px] font-black uppercase tracking-[0.2em] text-sky-800">{content.summaryTitle}</p>
-                <p className="mt-2 text-md leading-7 text-slate-600 sm:text-base">
+                <p className="mt-2 text-md leading-7 text-slate-600 sm:text-sm">
                   {content.summary}
                 </p>
               </div>
@@ -83,7 +83,7 @@ export default function PrivacyPolicyPage() {
                   </span>
                   <div className="min-w-0 flex-1">
                     <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{section.heading}</h2>
-                    <p className="mt-3 text-md leading-7 text-slate-600 sm:text-base">{section.content}</p>
+                    <p className="mt-3 text-md leading-7 text-slate-600 sm:text-sm">{section.content}</p>
                     <ul className="mt-4 space-y-2.5">
                       {section.bullets.map((item) => (
                         <li key={item} className="flex items-start gap-3 text-md leading-6 text-slate-600">

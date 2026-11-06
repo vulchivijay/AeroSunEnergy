@@ -311,7 +311,7 @@ function DisplayMath({ expression }: { expression: string }) {
             P<sub className="text-xs not-italic sm:text-md">wind</sub>
           </span>
           <span>=</span>
-          <span className="inline-grid text-center text-base leading-tight sm:text-lg">
+          <span className="inline-grid text-center text-sm leading-tight sm:text-lg">
             <span>1</span>
             <span className="border-t border-current">2</span>
           </span>
@@ -326,7 +326,7 @@ function DisplayMath({ expression }: { expression: string }) {
   }
 
   return (
-    <pre className="my-7 overflow-x-auto rounded-2xl border border-emerald-900/15 bg-emerald-50/80 px-5 py-4 text-center font-mono text-base text-emerald-950 dark:border-emerald-300/15 dark:bg-emerald-950/30 dark:text-emerald-100">
+    <pre className="my-7 overflow-x-auto rounded-2xl border border-emerald-900/15 bg-emerald-50/80 px-5 py-4 text-center font-mono text-sm text-emerald-950 dark:border-emerald-300/15 dark:bg-emerald-950/30 dark:text-emerald-100">
       <code>{expression}</code>
     </pre>
   );
@@ -365,7 +365,7 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
 
   if (block.type === "paragraph") {
     return (
-      <p className="my-4 text-base leading-8 text-slate-700 dark:text-slate-300">
+      <p className="my-4 text-sm leading-8 text-slate-700 dark:text-slate-300">
         {block.lines.map((line, index) => (
           <span key={index}>
             {index > 0 ? " " : ""}
@@ -380,7 +380,7 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
     const List = block.ordered ? "ol" : "ul";
     return (
       <List
-        className={`my-5 space-y-3 pl-6 text-base leading-8 text-slate-700 marker:font-bold marker:text-emerald-700 dark:text-slate-300 dark:marker:text-emerald-300 ${block.ordered ? "list-decimal" : "list-disc"}`}
+        className={`my-5 space-y-3 pl-6 text-sm leading-8 text-slate-700 marker:font-bold marker:text-emerald-700 dark:text-slate-300 dark:marker:text-emerald-300 ${block.ordered ? "list-decimal" : "list-disc"}`}
       >
         {block.items.map((item, index) => (
           <li key={index} className="pl-1">
@@ -560,7 +560,7 @@ export default function ResearchDevelopmentPage() {
               <p className="mt-4 text-2xl font-black leading-tight text-white sm:text-3xl">
                 {copy.text[7]}
               </p>
-              <p className="mt-4 text-base leading-7 text-emerald-50/80">
+              <p className="mt-4 text-sm leading-7 text-emerald-50/80">
                 {copy.text[8]}
               </p>
               <div className="mt-7 grid grid-cols-3 gap-2 border-t border-white/10 pt-5">

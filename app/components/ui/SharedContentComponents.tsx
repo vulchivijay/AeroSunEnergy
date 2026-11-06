@@ -57,9 +57,9 @@ export function ContentFeatureCard({
         <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/80 shadow-sm ring-1 ring-black/5">{icon}</span>
       </div>
       <h3 className={`text-2xl font-black ${titleClassName}`}>{title}</h3>
-      <p className="mt-4 text-base leading-7 text-slate-700">{description}</p>
+      <p className="mt-4 text-sm leading-7 text-slate-700">{description}</p>
       {points.length > 0 && (
-        <ul className="mt-5 space-y-3 text-base text-slate-700">
+        <ul className="mt-5 space-y-3 text-sm text-slate-700">
           {points.map((point) => (
             <li key={point} className="flex items-start gap-3 rounded-xl bg-slate-50/80 p-2.5">
               <span className={`mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[12px] font-black ${pointIconClassName}`}>✓</span>
@@ -89,7 +89,7 @@ export function ContentBenefitCard({
     <div className={cardClassName}>
       <div className={`mb-3 flex h-12 w-12 items-center justify-center rounded-2xl text-lg font-black ${iconClassName}`}>✓</div>
       <h3 className={`text-xl font-black ${titleClassName}`}>{title}</h3>
-      <p className="mt-3 text-base leading-7 text-slate-700">{description}</p>
+      <p className="mt-3 text-sm leading-7 text-slate-700">{description}</p>
     </div>
   )
 }
@@ -113,7 +113,7 @@ export function ContentInfoPanel({
         <ContentCheckIcon backgroundClassName={checkBackgroundClassName} />
         <h3 className={`text-xl font-black ${titleClassName}`}>{title}</h3>
       </div>
-      <ul className="mt-4 space-y-3 text-base leading-7">
+      <ul className="mt-4 space-y-3 text-sm leading-7">
         {content.map((item) => (
           <li key={item} className="flex items-start gap-3">
             <span className="mt-2 h-2.5 w-2.5 rounded-full bg-current" />

@@ -66,7 +66,7 @@ export default function About() {
             <h2 className="mt-7 max-w-3xl text-4xl font-black leading-[1.06] tracking-[-0.045em] text-emerald-950 sm:text-5xl lg:text-7xl">
               {content.title}
             </h2>
-            <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+            <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-600 sm:text-lg sm:leading-8">
               {about.paragraph1}
             </p>
 
@@ -131,7 +131,7 @@ export default function About() {
               </span>
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">{item.title}</p>
-                <p className="mt-1 text-base font-semibold text-slate-900 sm:text-lg">{item.value}</p>
+                <p className="mt-1 text-sm font-semibold text-slate-900 sm:text-lg">{item.value}</p>
               </div>
             </div>
           ))}
@@ -142,11 +142,11 @@ export default function About() {
             <span className="absolute -right-6 -top-14 font-serif text-[15rem] leading-none text-emerald-900/[0.045]" aria-hidden="true">“</span>
             <div className="relative">
               <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-emerald-700">{content.visionHeading}</p>
-              <div className="mt-6 space-y-4 text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
+              <div className="mt-6 space-y-4 text-sm leading-7 text-slate-700 sm:text-lg sm:leading-8">
                 <p>{renderCompanyName(content.visionIntro)}</p>
                 <p>{renderCompanyName(content.visionHistory)}</p>
               </div>
-              <blockquote className="mt-7 border-l-2 border-emerald-600 pl-4 text-base font-semibold italic leading-7 text-emerald-900 sm:text-lg">
+              <blockquote className="mt-7 border-l-2 border-emerald-600 pl-4 text-sm font-semibold italic leading-7 text-emerald-900 sm:text-lg">
                 “{about.quote}”
               </blockquote>
             </div>
@@ -197,7 +197,7 @@ export default function About() {
         <div className="mt-5 flex flex-col gap-5 rounded-[1.75rem] border border-amber-200 bg-[linear-gradient(110deg,#fff8e9,#ffffff_48%,#eaf6eb)] p-6 shadow-sm sm:p-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
             <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-amber-800">{content.futureHeading}</p>
-            <p className="mt-3 text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">{content.futureDescription}</p>
+            <p className="mt-3 text-sm leading-7 text-slate-700 sm:text-lg sm:leading-8">{content.futureDescription}</p>
           </div>
           <p className="max-w-sm border-l-2 border-emerald-600 pl-4 text-sm font-bold leading-6 text-emerald-900 lg:text-right">
             {content.slogan}

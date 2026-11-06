@@ -77,7 +77,7 @@ export default function AboutPage() {
               <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-lime-200">{pageStrings.promiseLabel}</p>
               <p className="mt-2 text-xl font-semibold italic text-white sm:text-2xl">&ldquo;{pageStrings.promiseText}&rdquo;</p>
             </div>
-            <p className="mt-8 max-w-2xl text-base leading-7 text-emerald-50/85 sm:text-lg sm:leading-8">
+            <p className="mt-8 max-w-2xl text-sm leading-7 text-emerald-50/85 sm:text-lg sm:leading-8">
               {pageStrings.intro}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -111,7 +111,7 @@ export default function AboutPage() {
                 <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
                   <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-lime-200">{content.founderRole}</p>
                   <h2 className="mt-2 text-2xl font-black tracking-tight text-white sm:text-3xl">{content.founderName}</h2>
-                  <p className="mt-2 max-w-sm text-base leading-7 text-white/85">
+                  <p className="mt-2 max-w-sm text-sm leading-7 text-white/85">
                     {content.founderImageBio}
                   </p>
                 </div>
@@ -141,7 +141,7 @@ export default function AboutPage() {
             </h2>
             <div className="mt-6 h-1 w-16 rounded-full bg-lime-500" />
           </div>
-          <div className="space-y-5 text-base leading-8 text-slate-700 dark:text-slate-200 sm:text-lg">
+          <div className="space-y-5 text-sm leading-8 text-slate-700 dark:text-slate-200 sm:text-lg">
             <p>
               {content.founderBioParagraph1.map((segment, index) => {
                 const text = index === 0 || index === 2
@@ -218,7 +218,7 @@ export default function AboutPage() {
           <div>
             <p className="text-[12px] font-black uppercase tracking-[0.24em] text-emerald-700 dark:text-emerald-300">{pageStrings.leadershipBadge}</p>
             <h2 className="mt-3 text-3xl font-black tracking-[0.055em] text-slate-950 dark:text-white sm:text-4xl">{pageStrings.leadershipHeading}</h2>
-            <p className="mt-4 text-base leading-7 text-slate-700 dark:text-slate-200">
+            <p className="mt-4 text-sm leading-7 text-slate-700 dark:text-slate-200">
               {pageStrings.leadershipIntro}
             </p>
             <div className="mt-8 space-y-3">
@@ -231,7 +231,7 @@ export default function AboutPage() {
                       <p className="mt-0.5 text-[12px] font-bold uppercase tracking-[0.15em] text-emerald-700 dark:text-emerald-300">{profile.role}</p>
                     </div>
                   </div>
-                  <p className="mt-3 text-base leading-7 text-slate-700 dark:text-slate-300">{profile.description}</p>
+                  <p className="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-300">{profile.description}</p>
                 </article>
               ))}
             </div>
@@ -245,7 +245,7 @@ export default function AboutPage() {
                     <h3 className="text-md font-extrabold text-slate-950 dark:text-white">{value.title}</h3>
                     <span className="font-mono text-[12px] font-bold text-emerald-700/50 dark:text-emerald-300/50">0{index + 1}</span>
                   </div>
-                  <p className="mt-3 text-base leading-7 text-slate-700 dark:text-slate-300">{value.description}</p>
+                  <p className="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-300">{value.description}</p>
                 </article>
               ))}
             </div>
@@ -260,7 +260,7 @@ export default function AboutPage() {
               <p className="text-[12px] font-black uppercase tracking-[0.24em] text-lime-300">{content.whySectionBadge}</p>
               <h2 className="mt-3 max-w-2xl text-3xl font-black tracking-[0.055em] text-white sm:text-4xl">{content.whyHeading}</h2>
             </div>
-            <p className="max-w-lg text-base leading-7 text-emerald-50/85">{content.whyDescription}</p>
+            <p className="max-w-lg text-sm leading-7 text-emerald-50/85">{content.whyDescription}</p>
           </div>
           <div className="mt-8 grid grid-cols-2 gap-3 xl:grid-cols-4">
             {content.companyStrengthsStats.map((stat) => (
@@ -275,7 +275,7 @@ export default function AboutPage() {
               <h3 className="text-lg font-extrabold text-white">{content.strengthsHeading}</h3>
               <ul className="mt-4 space-y-3">
                 {content.companyStrengths.map((item) => (
-                  <li key={item} className="flex gap-3 text-base leading-7 text-emerald-50/90"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-lime-300" />{item}</li>
+                  <li key={item} className="flex gap-3 text-sm leading-7 text-emerald-50/90"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-lime-300" />{item}</li>
                 ))}
               </ul>
             </div>
@@ -283,7 +283,7 @@ export default function AboutPage() {
               <h3 className="text-lg font-extrabold text-white">{content.customerReasonsHeading}</h3>
               <ul className="mt-4 space-y-3">
                 {content.whyChooseUs.map((item) => (
-                  <li key={item} className="flex gap-3 text-base leading-7 text-emerald-50/90"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-300" />{item}</li>
+                  <li key={item} className="flex gap-3 text-sm leading-7 text-emerald-50/90"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-300" />{item}</li>
                 ))}
               </ul>
             </div>
@@ -292,7 +292,7 @@ export default function AboutPage() {
             {content.reasons.map((reason) => (
               <article key={reason.title} className="border-l border-lime-300/70 pl-4">
                 <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-lime-200">{reason.title}</p>
-                <p className="mt-2 text-base leading-7 text-emerald-50/85">{reason.text}</p>
+                <p className="mt-2 text-sm leading-7 text-emerald-50/85">{reason.text}</p>
               </article>
             ))}
           </div>
@@ -314,7 +314,7 @@ export default function AboutPage() {
               {content.currentGoals.map((goal, index) => (
                 <li key={goal} className="flex gap-3 border-b border-amber-100 pb-3 last:border-0 dark:border-amber-900/40">
                   <span className="font-mono text-md font-bold text-amber-700 dark:text-amber-300">{String(index + 1).padStart(2, '0')}</span>
-                  <span className="text-base leading-7 text-slate-700 dark:text-slate-200">{goal}</span>
+                  <span className="text-sm leading-7 text-slate-700 dark:text-slate-200">{goal}</span>
                 </li>
               ))}
             </ol>
@@ -329,7 +329,7 @@ export default function AboutPage() {
                   <h4 className="mt-1 text-md font-extrabold text-slate-950 dark:text-white">{group.title}</h4>
                   <ul className="mt-3 space-y-2">
                     {group.items.map((item) => (
-                      <li key={item} className="flex gap-2 text-base leading-7 text-slate-700 dark:text-slate-300"><span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-indigo-500" />{item}</li>
+                      <li key={item} className="flex gap-2 text-sm leading-7 text-slate-700 dark:text-slate-300"><span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-indigo-500" />{item}</li>
                     ))}
                   </ul>
                 </div>
@@ -356,7 +356,7 @@ export default function AboutPage() {
                 <h3 className="mt-4 text-xl font-black text-slate-950 dark:text-white">{group.title}</h3>
                 <ul className="mt-5 space-y-3">
                   {group.items.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-base leading-7 text-slate-700 dark:text-slate-300"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600 dark:bg-emerald-400" />{item}</li>
+                    <li key={item} className="flex items-start gap-3 text-sm leading-7 text-slate-700 dark:text-slate-300"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600 dark:bg-emerald-400" />{item}</li>
                   ))}
                 </ul>
               </article>
@@ -382,7 +382,7 @@ export default function AboutPage() {
                   {group.points.map((point, index) => (
                     <li key={point} className="flex gap-4 border-b border-white/10 pb-4 last:border-0 last:pb-0">
                       <span className={`font-mono text-md font-bold ${group.accent}`}>0{index + 1}</span>
-                      <span className="text-base leading-7 text-emerald-50/90">{point}</span>
+                      <span className="text-sm leading-7 text-emerald-50/90">{point}</span>
                     </li>
                   ))}
                 </ul>
@@ -413,7 +413,7 @@ export default function AboutPage() {
               {content.qualityPoints.map((point, index) => (
                 <div key={point} className="flex gap-4 py-3 first:pt-0 last:pb-0">
                   <span className="font-mono text-md font-bold text-emerald-800/60 dark:text-emerald-200/60">0{index + 1}</span>
-                  <p className="text-base leading-7 text-slate-700 dark:text-slate-200">{point}</p>
+                  <p className="text-sm leading-7 text-slate-700 dark:text-slate-200">{point}</p>
                 </div>
               ))}
             </div>
@@ -424,7 +424,7 @@ export default function AboutPage() {
               {content.ethicsPoints.map((point, index) => (
                 <div key={point} className="flex gap-4 py-3 first:pt-0 last:pb-0">
                   <span className="font-mono text-md font-bold text-amber-800/60 dark:text-amber-200/60">0{index + 1}</span>
-                  <p className="text-base leading-7 text-slate-700 dark:text-slate-200">{point}</p>
+                  <p className="text-sm leading-7 text-slate-700 dark:text-slate-200">{point}</p>
                 </div>
               ))}
             </div>

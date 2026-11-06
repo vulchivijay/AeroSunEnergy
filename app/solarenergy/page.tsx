@@ -26,7 +26,7 @@ export default function SolarEnergyPage() {
   const measurement = solarPage.measurement
 
   return (
-    <main className="bg-[#fffdf7] pt-6 sm:pt-8 text-slate-900 [&>section]:border-t-4 [&>section]:border-t-orange-400">
+    <main className="bg-[#ffffff] pt-6 sm:pt-8 text-slate-900 [&>section]:border-t-4 [&>section]:border-t-orange-400 overflow-hidden">
       <header className="relative mx-auto mb-6 max-w-7xl overflow-hidden rounded-[2.5rem] border border-amber-200 bg-[radial-gradient(ellipse_at_82%_15%,rgba(251,191,36,0.28),transparent_35%),linear-gradient(125deg,#fffdf7_0%,#fff4d6_58%,#fffaf0_100%)] px-5 py-7 shadow-[0_28px_70px_-44px_rgba(120,72,0,0.42)] sm:mb-8 sm:px-8 sm:py-9 lg:px-10 lg:py-11">
         <div className="relative z-10 grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
           <div>
@@ -75,7 +75,7 @@ export default function SolarEnergyPage() {
         <div className="mb-8 max-w-3xl">
           <SectionEyebrow>{solarPage.offer.eyebrow}</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">{solarPage.offer.title}</h2>
-          <p className="mt-4 text-base leading-8 text-slate-700">{solarPage.offer.description}</p>
+          <p className="mt-4 text-sm leading-8 text-slate-700">{solarPage.offer.description}</p>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
@@ -95,7 +95,7 @@ export default function SolarEnergyPage() {
         <div className="mb-8 max-w-3xl">
           <SectionEyebrow>{solarPage.rooftop.eyebrow}</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900">{solarPage.rooftop.title}</h2>
-          <p className="mt-4 text-base leading-8 text-slate-700">{solarPage.rooftop.description}</p>
+          <p className="mt-4 text-sm leading-8 text-slate-700">{solarPage.rooftop.description}</p>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
@@ -142,7 +142,7 @@ export default function SolarEnergyPage() {
         <div className="mb-8 max-w-3xl">
           <SectionEyebrow>{solarPage.subsidy.eyebrow}</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900">{solarPage.subsidy.title}</h2>
-          <p className="mt-4 text-base leading-8 text-slate-700">{solarPage.subsidy.description}</p>
+          <p className="mt-4 text-sm leading-8 text-slate-700">{solarPage.subsidy.description}</p>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -161,10 +161,10 @@ export default function SolarEnergyPage() {
           <SectionEyebrow>{solarPage.subsidy.strategicEyebrow}</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900">{solarPage.subsidy.strategicTitle}</h2>
           <div className="mt-6 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-3xl border border-slate-200 bg-white p-5 text-base leading-7 text-slate-700">
+            <div className="rounded-3xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700">
               Start by evaluating rooftop solar, hybrid systems, and agricultural solar water pumping. These categories give actionable customer segments and manageable project scopes.
             </div>
-            <div className="rounded-3xl border border-slate-200 bg-white p-5 text-base leading-7 text-slate-700">
+            <div className="rounded-3xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700">
               Solar EV charging, off-grid systems, and solar street lighting also have strong use cases, especially in public infrastructure and rural applications.
             </div>
           </div>
@@ -213,7 +213,7 @@ export default function SolarEnergyPage() {
             <div className="mt-5 rounded-3xl border border-amber-400/20 bg-amber-500/10 p-4">
               <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-amber-200">{comparisonMeta.recommendedFocus}</p>
               <h3 className="mt-2 text-xl font-bold text-white">{comparisonMeta.focusTitle}</h3>
-              <p className="mt-2 text-base leading-7 text-slate-200">
+              <p className="mt-2 text-sm leading-7 text-slate-200">
                 {comparisonMeta.recommendationDescription}
               </p>
             </div>
@@ -229,21 +229,21 @@ export default function SolarEnergyPage() {
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)]">
-            <p className="text-base leading-8 text-slate-700">
+            <p className="text-sm leading-8 text-slate-700">
               {measurement.introductionBefore} <span className="font-bold text-slate-900">{measurement.unitLabel}</span>{measurement.introductionAfter}
             </p>
 
             <div className="mt-6 space-y-5">
               <div className="rounded-3xl border border-emerald-200 bg-emerald-50 p-4">
                 <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-700">{measurement.consumptionTitle}</p>
-                <p className="mt-2 text-base leading-7 text-slate-700">
+                <p className="mt-2 text-sm leading-7 text-slate-700">
                   {measurement.consumptionDescription}
                 </p>
               </div>
 
               <div className="rounded-3xl border border-sky-200 bg-sky-50 p-4">
                 <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-sky-700">{measurement.generationTitle}</p>
-                <p className="mt-2 text-base leading-7 text-slate-700">
+                <p className="mt-2 text-sm leading-7 text-slate-700">
                   {measurement.generationDescription}<br />
                   <span className="font-bold text-slate-900">{measurement.generationFormula}</span>
                 </p>
@@ -254,7 +254,7 @@ export default function SolarEnergyPage() {
 
               <div className="rounded-3xl border border-violet-200 bg-violet-50 p-4">
                 <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-violet-700">{measurement.gridTitle}</p>
-                <p className="mt-2 text-base leading-7 text-slate-700">
+                <p className="mt-2 text-sm leading-7 text-slate-700">
                   {measurement.gridDescription}
                 </p>
               </div>
@@ -276,7 +276,7 @@ export default function SolarEnergyPage() {
 
             <div className="rounded-4xl border border-amber-200 bg-amber-50 p-5">
               <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-amber-700">{measurement.keyPointLabel}</p>
-              <p className="mt-2 text-base leading-7 text-slate-700">
+              <p className="mt-2 text-sm leading-7 text-slate-700">
                 {measurement.keyPoint}
               </p>
             </div>

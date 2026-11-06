@@ -87,7 +87,7 @@ export default function InvoiceReceiptPage() {
           <h1 className="mt-5 text-4xl font-black tracking-[0.06em] text-slate-900 sm:text-5xl">
             {labels.title}
           </h1>
-          <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-slate-600">
+          <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-slate-600">
             {labels.description}
           </p>
         </div>

@@ -92,7 +92,7 @@ export default function CustomerAgreementPage() {
               {content.hero.titleStart}
               <span className="mt-1 block text-sky-300">{content.hero.titleEnd}</span>
             </h1>
-            <p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-base sm:leading-8">
+            <p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-sm sm:leading-8">
               {content.hero.description}
             </p>
           </div>
@@ -118,7 +118,7 @@ export default function CustomerAgreementPage() {
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-100 text-lg text-indigo-800">i</span>
               <div>
                 <p className="text-[12px] font-black uppercase tracking-[0.2em] text-indigo-800">{content.overview.title}</p>
-                <p className="mt-2 text-md leading-7 text-slate-600 sm:text-base">
+                <p className="mt-2 text-md leading-7 text-slate-600 sm:text-sm">
                     {content.overview.description}
                 </p>
               </div>
@@ -154,7 +154,7 @@ export default function CustomerAgreementPage() {
                   </span>
                   <div className="min-w-0 flex-1">
                     <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{section.title.replace(/^(?:\d+\.\s*)/, '')}</h2>
-                    <p className="mt-3 text-md leading-7 text-slate-600 sm:text-base">{section.text}</p>
+                    <p className="mt-3 text-md leading-7 text-slate-600 sm:text-sm">{section.text}</p>
                     <ul className="mt-4 space-y-2.5">
                       {section.points.map((point) => (
                         <li key={point} className="flex items-start gap-3 text-md leading-6 text-slate-600">
