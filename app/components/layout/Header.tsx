@@ -54,6 +54,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
   const [expandedMobileSubmenu, setExpandedMobileSubmenu] = useState<string | null>(null)
+  const [dismissedDesktopSubmenu, setDismissedDesktopSubmenu] = useState<string | null>(null)
   const headerRef = useRef<HTMLElement>(null)
   const languageOptions = t.navbar.languages as {
     code: Locale
@@ -247,10 +248,24 @@ export default function Navbar() {
       )
     }
 
+    const submenuDismissed = dismissedDesktopSubmenu === link.href
+
     return (
-      <div key={link.href} className="group/nav relative z-20">
+      <div
+        key={link.href}
+        className="group/nav relative z-20"
+        onMouseLeave={() => {
+          if (submenuDismissed) setDismissedDesktopSubmenu(null)
+        }}
+      >
         {parentLink}
-        <div className="invisible absolute left-1/2 top-full z-[70] min-w-52 -translate-x-1/2 pt-2 opacity-0 transition duration-150 group-hover/nav:visible group-hover/nav:opacity-100 group-focus-within/nav:visible group-focus-within/nav:opacity-100">
+        <div
+          className={`invisible absolute left-1/2 top-full z-[70] min-w-52 -translate-x-1/2 pt-2 opacity-0 transition duration-150 ${
+            submenuDismissed
+              ? ''
+              : 'group-hover/nav:visible group-hover/nav:opacity-100 group-focus-within/nav:visible group-focus-within/nav:opacity-100'
+          }`}
+        >
           <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-1.5 shadow-[0_20px_50px_-25px_rgba(0,0,0,0.35)]">
             {link.children.map((child) => {
               const childActive = pathname === child.href
@@ -259,6 +274,7 @@ export default function Navbar() {
                 <Link
                   key={child.href}
                   href={child.href}
+                  onClick={() => setDismissedDesktopSubmenu(link.href)}
                   aria-current={childActive ? 'page' : undefined}
                   className={`flex items-center rounded-lg px-3 py-2.5 text-left text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 ${
                     childActive
