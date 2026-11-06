@@ -1,6 +1,14 @@
 import type { NextConfig } from 'next'
 
 const SITE_URL = 'https://aerosunenergy.in'
+const productionCacheHeaders: { key: string; value: string }[] =
+  process.env.NODE_ENV === 'production'
+    ? [{ key: 'Cache-Control', value: 'public, max-age=86400, must-revalidate' }]
+    : []
+const noCacheHeaders: { key: string; value: string }[] =
+  process.env.NODE_ENV === 'production'
+    ? [{ key: 'Cache-Control', value: 'no-store, no-cache, must-revalidate' }]
+    : []
 
 const nextConfig: NextConfig = {
   output: 'export',
@@ -46,7 +54,7 @@ const nextConfig: NextConfig = {
         headers: [
           { key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive, nosnippet' },
           { key: 'X-Content-Type-Options', value: 'nosniff' },
-          { key: 'Cache-Control', value: 'no-store, no-cache, must-revalidate' },
+          ...noCacheHeaders,
         ],
       },
       {
@@ -54,46 +62,26 @@ const nextConfig: NextConfig = {
         headers: [
           { key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive, nosnippet' },
           { key: 'X-Content-Type-Options', value: 'nosniff' },
-          { key: 'Cache-Control', value: 'no-store, no-cache, must-revalidate' },
+          ...noCacheHeaders,
         ],
       },
       {
         source: '/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=0, must-revalidate',
-          },
-        ],
+        headers: productionCacheHeaders,
       },
       {
         source: '/_next/static/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
+        headers: productionCacheHeaders,
       },
       {
         source: '/images/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=86400, stale-while-revalidate=604800',
-          },
-        ],
+        headers: productionCacheHeaders,
       },
       {
         source: '/favicon.ico',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=86400, stale-while-revalidate=604800',
-          },
-        ],
+        headers: productionCacheHeaders,
       },
-    ]
+    ].filter(({ headers }) => headers.length > 0)
   },
 }
 

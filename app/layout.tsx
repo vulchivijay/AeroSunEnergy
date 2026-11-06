@@ -142,6 +142,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${roboto.variable} ${poppins.variable} ${orbitron.variable} bg-white text-gray-900 transition-colors duration-150`}>
+        {/* Keep the body free of the dark class while dark mode is temporarily paused. */}
         {process.env.NODE_ENV === 'production' ? <ProductionProtector /> : null}
         <JsonLd />
         <ConsentAwareTracking gtmId={GTM_ID} gaMeasurementId={GA_MEASUREMENT_ID} />
