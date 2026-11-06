@@ -1,14 +1,6 @@
 import type { NextConfig } from 'next'
 
 const SITE_URL = 'https://aerosunenergy.in'
-const productionCacheHeaders: { key: string; value: string }[] =
-  process.env.NODE_ENV === 'production'
-    ? [{ key: 'Cache-Control', value: 'public, max-age=86400, must-revalidate' }]
-    : []
-const noCacheHeaders: { key: string; value: string }[] =
-  process.env.NODE_ENV === 'production'
-    ? [{ key: 'Cache-Control', value: 'no-store, no-cache, must-revalidate' }]
-    : []
 
 const nextConfig: NextConfig = {
   output: 'export',
@@ -48,13 +40,15 @@ const nextConfig: NextConfig = {
     ]
   },
   async headers() {
-    return [
+    const docsHeaders = [
       {
         source: '/docs',
         headers: [
           { key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive, nosnippet' },
           { key: 'X-Content-Type-Options', value: 'nosniff' },
-          ...noCacheHeaders,
+          ...(process.env.NODE_ENV === 'production'
+            ? [{ key: 'Cache-Control', value: 'no-store, no-cache, must-revalidate' }]
+            : []),
         ],
       },
       {
@@ -62,26 +56,26 @@ const nextConfig: NextConfig = {
         headers: [
           { key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive, nosnippet' },
           { key: 'X-Content-Type-Options', value: 'nosniff' },
-          ...noCacheHeaders,
+          ...(process.env.NODE_ENV === 'production'
+            ? [{ key: 'Cache-Control', value: 'no-store, no-cache, must-revalidate' }]
+            : []),
         ],
       },
-      {
-        source: '/:path*',
-        headers: productionCacheHeaders,
-      },
-      {
-        source: '/_next/static/:path*',
-        headers: productionCacheHeaders,
-      },
-      {
-        source: '/images/:path*',
-        headers: productionCacheHeaders,
-      },
-      {
-        source: '/favicon.ico',
-        headers: productionCacheHeaders,
-      },
-    ].filter(({ headers }) => headers.length > 0)
+    ]
+
+    if (process.env.NODE_ENV !== 'production') return docsHeaders
+
+    const productionCacheHeaders = [
+      { key: 'Cache-Control', value: 'public, max-age=86400, must-revalidate' },
+    ]
+
+    return [
+      ...docsHeaders,
+      { source: '/:path*', headers: productionCacheHeaders },
+      { source: '/_next/static/:path*', headers: productionCacheHeaders },
+      { source: '/images/:path*', headers: productionCacheHeaders },
+      { source: '/favicon.ico', headers: productionCacheHeaders },
+    ]
   },
 }
 
