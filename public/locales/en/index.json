@@ -5864,6 +5864,7 @@
             "subtitle": "Private Limited",
             "motto": "Power from Sun, Wind, Water, Fire.",
             "intro": "An Indian renewable-energy company focused on developing and delivering practical clean-energy solutions using solar and wind power for households, agriculture, businesses and remote communities.",
+            "downloadLabel": "Download company profile (PDF)",
             "officeLabel": "Registered office",
             "officeText": "D.No. 11-184, Gollavanigunta, T.N. Pallem, Tirupati, Andhra Pradesh – 517501, India",
             "cinLabel": "Corporate identity number",
@@ -7336,6 +7337,7 @@
             "titleAccent": "Energy Solutions",
             "tagline": "Power from Sun, Wind, Water, Fire.",
             "description": "Energy requirements differ for every home, farm and business. We aim to provide customised renewable-energy solutions designed around electricity consumption, site conditions, available resources and customer requirements, with a portfolio focused on solar, wind-energy development, battery storage and integrated renewable-energy systems.",
+            "downloadLabel": "Download product catalogue",
             "audiences": [
                 {
                     "label": "Homes",
@@ -8574,7 +8576,8 @@
     },
     "notifications": {
         "badge": "Updates",
-        "dismiss": "Dismiss notification",
+        "toggleOpen": "Show notification",
+        "toggleClose": "Hide notification",
         "text": "AeroSun Energy Private Limited is committed to providing reliable and sustainable renewable energy solutions through solar, wind, and hybrid energy systems.",
         "highlight": " Our business approach focuses on sourcing quality equipment, supporting installation and implementation, ",
         "tail": "and exploring innovative energy solutions tailored to customer needs. As we grow, we aim to expand our technical capabilities and develop advanced renewable energy solutions that contribute to a cleaner, more sustainable future."

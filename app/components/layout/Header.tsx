@@ -321,7 +321,7 @@ export default function Navbar() {
       <div className="absolute -right-12 top-0 h-32 w-32 rounded-full bg-cyan-400/10 blur-3xl" />
 
       <div className="relative border-b border-white/[0.07] bg-[#04130f] text-[#e8ecd9] hidden">
-        <div className="mx-auto flex min-h-8 max-w-[90rem] items-center justify-between gap-3 px-3 py-1 text-[11px] font-semibold tracking-[0.08em] sm:px-6 sm:text-[11px] sm:tracking-[0.12em] lg:px-8">
+        <div className="mx-auto flex min-h-8 w-full items-center justify-between gap-3 px-3 py-1 text-[11px] font-semibold tracking-[0.08em] sm:px-6 sm:text-[11px] sm:tracking-[0.12em] lg:px-8">
           <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
             <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6b45e] shadow-[0_0_10px_rgba(214,180,94,0.65)]" aria-hidden="true" />
             {t.navbar.brandName}
@@ -333,7 +333,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="relative mx-auto flex min-h-[5.25rem] max-w-[90rem] items-center justify-between gap-1 px-3 py-2 sm:gap-3 sm:px-6 lg:px-8 max-[319px]:flex-wrap">
+      <div className="relative mx-auto flex min-h-[5.25rem] w-full items-center justify-between gap-1 px-3 py-2 sm:gap-3 sm:px-6 lg:px-8 max-[319px]:flex-wrap">
         <Logo compact />
 
         <nav aria-label={t.navbar.primaryNavigationLabel} className="hidden min-w-0 flex-1 items-center justify-center xl:flex">

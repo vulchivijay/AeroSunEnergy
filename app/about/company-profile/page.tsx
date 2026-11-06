@@ -3,6 +3,7 @@
 import Link from "next/link";
 import {
   ArrowRight,
+  Download,
   Globe2,
   Mail,
   MapPin,
@@ -109,6 +110,14 @@ export default function CompanyProfilePage() {
           <p className="mt-6 max-w-3xl text-base leading-7 text-emerald-50/85 sm:text-lg sm:leading-8">
             {cp.intro}
           </p>
+          <a
+            href="/aerosun-energy.pdf"
+            download
+            className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-lime-300 px-5 py-3 text-sm font-bold text-emerald-950 transition hover:bg-lime-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-200"
+          >
+            <Download className="h-4 w-4" aria-hidden="true" />
+            {cp.downloadLabel}
+          </a>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-5">
               <p className="text-md font-bold uppercase tracking-[0.16em] text-emerald-100/60">

@@ -1,10 +1,10 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import Slider from './Slider'
 import { useLocale } from '@/lib/LocaleContext'
 import { HeroSlideContent, type HeroSlideData } from './HeroSlideContent'
+import OptimizedImage from './OptimizedImage'
 
 type Slide = HeroSlideData & { panelClass: string }
 
@@ -20,7 +20,7 @@ export default function HomeHeroSlider() {
       {slides.map((slide, index) => (
         <div key={slide.title} className={`${slide.panelClass} relative h-full w-full overflow-hidden`}>
           <div className="absolute inset-0">
-            <Image
+            <OptimizedImage
               src={slide.image}
               alt={slide.title}
               fill

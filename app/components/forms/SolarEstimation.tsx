@@ -28,6 +28,16 @@ type Calculation = {
   badgeTone: string
 }
 
+const currencyFormatter = new Intl.NumberFormat('en-IN', {
+  style: 'currency',
+  currency: 'INR',
+  maximumFractionDigits: 0,
+  currencyDisplay: 'narrowSymbol',
+})
+
+const formatCurrency = (amount: number) =>
+  currencyFormatter.format(amount).replace('₹', '₹ ')
+
 export function SolarEstimation() {
   const { t } = useLocale()
   const monthlyUnitsInputId = useId()
@@ -153,14 +163,6 @@ export function SolarEstimation() {
     ...stat,
     accent: t.componentData.solarEstimation.summaryStatAccents[index],
   }))
-
-  const currency = (amount: number) =>
-    new Intl.NumberFormat('en-IN', {
-      style: 'currency',
-      currency: 'INR',
-      maximumFractionDigits: 0,
-      currencyDisplay: 'narrowSymbol',
-    }).format(amount).replace('₹', '₹ ')
 
   return (
     <section className="relative isolate overflow-hidden bg-[#fff4e8] px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
@@ -303,7 +305,7 @@ export function SolarEstimation() {
               <div className="rounded-[22px] border border-white/15 bg-white/10 p-5 backdrop-blur-sm">
                 <div className="text-[12px] font-bold uppercase tracking-[0.3em] text-emerald-50">{e.annualSavings}</div>
                 <div className="mt-3 text-5xl font-black tracking-[0.08em] text-white">
-                  {calculation ? currency(calculation.profit) : '—'}
+                  {calculation ? formatCurrency(calculation.profit) : '—'}
                 </div>
               </div>
 
@@ -311,19 +313,19 @@ export function SolarEstimation() {
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
                   <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">{e.originalCost}</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
-                    {calculation ? currency(calculation.totalInstallationCost) : '—'}
+                    {calculation ? formatCurrency(calculation.totalInstallationCost) : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
                   <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">{e.subsidy}</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
-                    {calculation ? currency(calculation.subsidy) : '—'}
+                    {calculation ? formatCurrency(calculation.subsidy) : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
                   <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">{e.netCost}</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
-                    {calculation ? currency(calculation.customerPayable) : '—'}
+                    {calculation ? formatCurrency(calculation.customerPayable) : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
