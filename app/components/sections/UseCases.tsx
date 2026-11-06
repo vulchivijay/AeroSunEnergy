@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from '@/lib/motion'
+import { withEaseOutCardTransition } from '@/lib/cardVariants'
 import Link from 'next/link'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
@@ -9,13 +10,7 @@ export default function UseCases() {
   const { t } = useLocale()
   const u = t.useCases
   const componentData = t.componentData.useCases
-  const cardVariants = {
-    ...componentData.cardVariants,
-    visible: {
-      ...componentData.cardVariants.visible,
-      transition: { ...componentData.cardVariants.visible.transition, ease: 'easeOut' as const },
-    },
-  }
+  const cardVariants = withEaseOutCardTransition(componentData.cardVariants)
 
   const useCases = u.items.map((item, i) => ({ ...item, ...componentData.styles[i] }))
 

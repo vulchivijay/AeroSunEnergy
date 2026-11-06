@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from '@/lib/motion'
+import { withEaseOutCardTransition } from '@/lib/cardVariants'
 import { Card, CardContent } from './../ui/Card'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
@@ -9,13 +10,7 @@ export default function HowItWorks() {
   const { t } = useLocale()
   const h = t.howItWorks
   const componentData = t.componentData.howItWorks
-  const cardVariants = {
-    ...componentData.cardVariants,
-    visible: {
-      ...componentData.cardVariants.visible,
-      transition: { ...componentData.cardVariants.visible.transition, ease: 'easeOut' as const },
-    },
-  }
+  const cardVariants = withEaseOutCardTransition(componentData.cardVariants)
 
   const steps = h.steps.map((step, i) => ({ ...step, ...componentData.stepStyles[i] }))
 

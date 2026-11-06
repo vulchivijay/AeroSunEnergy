@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from '@/lib/motion'
+import { withEaseOutCardTransition } from '@/lib/cardVariants'
 import { TrendingDown, Globe, ShieldCheck, Infinity } from 'lucide-react'
 import { Card, CardContent } from './../ui/Card'
 import { useLocale } from '@/lib/LocaleContext'
@@ -18,13 +19,7 @@ export default function Benefits() {
 	const { t } = useLocale()
 	const b = t.benefits
 	const componentData = t.componentData.benefits
-	const cardVariants = {
-		...componentData.cardVariants,
-		visible: {
-			...componentData.cardVariants.visible,
-			transition: { ...componentData.cardVariants.visible.transition, ease: 'easeOut' as const },
-		},
-	}
+	const cardVariants = withEaseOutCardTransition(componentData.cardVariants)
 
 	const benefits = b.items.map((item, i) => ({
 		...item,

@@ -89,8 +89,6 @@ export function SolarEstimation() {
   }, [monthlyUnits, installationCostPerKw, sellingPricePerKw, expectedInstallationCostPerKw, expectedSellingPricePerKw, setValue])
 
   const calculation: Calculation = (() => {
-    const recommendedKw = Math.max(1, Math.round(monthlyUnits / 120))
-
     let subsidy = 0
     if (recommendedKw === 1) {
       subsidy = 30000

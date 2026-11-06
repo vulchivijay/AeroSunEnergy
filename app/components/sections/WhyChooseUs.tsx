@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from '@/lib/motion'
+import { withEaseOutCardTransition } from '@/lib/cardVariants'
 import { Lightbulb, ShieldCheck, Layers, MapPin } from 'lucide-react'
 import { Card, CardContent } from './../ui/Card'
 import { useLocale } from '@/lib/LocaleContext'
@@ -18,13 +19,7 @@ export default function WhyChooseUs() {
   const { t } = useLocale()
   const w = t.whyChooseUs
   const componentData = t.componentData.whyChooseUs
-  const cardVariants = {
-    ...componentData.cardVariants,
-    visible: {
-      ...componentData.cardVariants.visible,
-      transition: { ...componentData.cardVariants.visible.transition, ease: 'easeOut' as const },
-    },
-  }
+  const cardVariants = withEaseOutCardTransition(componentData.cardVariants)
 
   const reasons = w.items.map((item, i) => ({
     ...item,

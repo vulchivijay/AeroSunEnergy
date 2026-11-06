@@ -3,9 +3,11 @@
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { submitMailtoForm } from '@/lib/submitMailto'
-import { useId, useState } from 'react'
+import { submitMailtoFormAndReset } from '@/lib/submitMailto'
+import { useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
+import { SharedFormField } from '@/app/components/forms/SharedFormField'
+import { createBusinessContactSchema } from '@/app/components/forms/businessContactSchema'
 
 type AgreementFormValues = {
   customerName: string
@@ -21,14 +23,12 @@ export default function CustomerAgreementPage() {
   const formCopy = content.form
   const defaultValues = formCopy.defaultValues
   const agreementSchema = z.object({
-    customerName: z.string().trim().min(2, formCopy.validation.customerNameRequired),
-    companyName: z.string().trim().optional().or(z.literal('')),
-    email: z.string().trim().email(formCopy.validation.invalidEmail),
-    phone: z
-      .string()
-      .trim()
-      .min(10, formCopy.validation.phoneMinimum)
-      .regex(/^[0-9+()\-\s]+$/, formCopy.validation.phonePattern),
+    ...createBusinessContactSchema({
+      customerName: formCopy.validation.customerNameRequired,
+      email: formCopy.validation.invalidEmail,
+      phoneLength: formCopy.validation.phoneMinimum,
+      phoneFormat: formCopy.validation.phonePattern,
+    }).shape,
     agreed: z.boolean().refine((value) => value === true, {
       message: formCopy.validation.acceptanceRequired,
     }),
@@ -61,16 +61,15 @@ export default function CustomerAgreementPage() {
       formCopy.submission.paymentAcknowledged,
     ].join('\n')
 
-    const opened = submitMailtoForm({
+    submitMailtoFormAndReset({
       to: content.contact.emailLabel,
       subject,
       body,
-    })
-
-    reset(defaultValues)
-    setSubmitFeedback({
-      type: opened ? 'success' : 'error',
-      message: opened ? formCopy.submission.success : formCopy.submission.error,
+      defaultValues,
+      reset,
+      setFeedback: setSubmitFeedback,
+      successMessage: formCopy.submission.success,
+      errorMessage: formCopy.submission.error,
     })
   }
 
@@ -414,24 +413,18 @@ type FieldProps = {
 }
 
 function Field({ label, name, placeholder, type = 'text', register, error, compact = false, dark = false }: FieldProps) {
-  const generatedId = useId()
-  const inputId = name ?? generatedId
-
   return (
-    <div className={compact ? '' : 'md:col-span-2'}>
-      <label htmlFor={inputId} className={`mb-2 block text-[12px] font-black uppercase tracking-[0.22em] ${dark ? 'text-slate-200' : 'text-slate-700'}`}>
-        {label}
-      </label>
-      <input
-        id={inputId}
-        type={type}
-        {...(name ? register(name) : {})}
-        placeholder={placeholder}
-        aria-invalid={Boolean(error)}
-        aria-describedby={error ? `${inputId}-error` : undefined}
-        className={`h-11 w-full rounded-2xl border px-4 py-3 text-md outline-none transition-all duration-200 placeholder:text-slate-600 focus:ring-4 ${dark ? 'border-white/10 bg-white/5 text-white placeholder:text-slate-400 focus:border-indigo-400 focus:ring-indigo-600/30' : 'border-slate-200 bg-white text-slate-900 focus:border-sky-500 focus:ring-sky-100'}`}
-      />
-      {error && <p id={`${inputId}-error`} className="mt-2 text-md text-rose-300">{error.message}</p>}
-    </div>
+    <SharedFormField
+      label={label}
+      name={name}
+      placeholder={placeholder}
+      type={type}
+      register={register}
+      error={error}
+      wrapperClassName={compact ? '' : 'md:col-span-2'}
+      labelClassName={`mb-2 block text-[12px] font-black uppercase tracking-[0.22em] ${dark ? 'text-slate-200' : 'text-slate-700'}`}
+      inputClassName={`h-11 w-full rounded-2xl border px-4 py-3 text-md outline-none transition-all duration-200 placeholder:text-slate-600 focus:ring-4 ${dark ? 'border-white/10 bg-white/5 text-white placeholder:text-slate-400 focus:border-indigo-400 focus:ring-indigo-600/30' : 'border-slate-200 bg-white text-slate-900 focus:border-sky-500 focus:ring-sky-100'}`}
+      errorClassName="mt-2 text-md text-rose-300"
+    />
   )
 }

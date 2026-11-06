@@ -18,3 +18,32 @@ export function submitMailtoForm({
 
   return false
 }
+
+export function submitMailtoFormAndReset<TValues>({
+  to,
+  subject,
+  body,
+  defaultValues,
+  reset,
+  setFeedback,
+  successMessage,
+  errorMessage,
+}: {
+  to: string
+  subject: string
+  body: string
+  defaultValues: TValues
+  reset: (values: TValues) => void
+  setFeedback: (feedback: { type: 'success' | 'error'; message: string }) => void
+  successMessage: string
+  errorMessage: string
+}) {
+  const opened = submitMailtoForm({ to, subject, body })
+  reset(defaultValues)
+  setFeedback({
+    type: opened ? 'success' : 'error',
+    message: opened ? successMessage : errorMessage,
+  })
+
+  return opened
+}

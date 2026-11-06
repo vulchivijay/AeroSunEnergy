@@ -3,19 +3,14 @@
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { submitMailtoForm } from '@/lib/submitMailto'
+import { submitMailtoFormAndReset } from '@/lib/submitMailto'
 import { useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
+import { SharedFormField } from '@/app/components/forms/SharedFormField'
+import { createBusinessContactSchema } from '@/app/components/forms/businessContactSchema'
 
 const createWarrantyPolicySchema = (validation: typeof import('@/public/locales/en/index.json').businessForms.warrantyPolicy.validation) => z.object({
-  customerName: z.string().trim().min(2, validation.customerName),
-  companyName: z.string().trim().optional().or(z.literal('')),
-  email: z.string().trim().email(validation.email),
-  phone: z
-    .string()
-    .trim()
-    .min(10, validation.phoneLength)
-    .regex(/^[0-9+()\-\s]+$/, validation.phoneFormat),
+  ...createBusinessContactSchema(validation).shape,
   projectName: z.string().trim().min(3, validation.projectName),
   productLine: z.string().min(1, validation.productLine),
   warrantyStart: z.string().min(1, validation.warrantyStart),
@@ -64,16 +59,15 @@ export default function WarrantyPolicyPage() {
       emailText.termsAccepted,
     ].join('\n')
 
-    const opened = submitMailtoForm({
+    submitMailtoFormAndReset({
       to: 'customercare@aerosunenergy.in',
       subject,
       body,
-    })
-
-    reset(defaultValues)
-    setSubmitFeedback({
-      type: opened ? 'success' : 'error',
-      message: opened ? content.feedback.success : content.feedback.error,
+      defaultValues,
+      reset,
+      setFeedback: setSubmitFeedback,
+      successMessage: content.feedback.success,
+      errorMessage: content.feedback.error,
     })
   }
 
@@ -255,20 +249,16 @@ function Field({ label, name, placeholder, type = 'text', register, error, accen
   const accentClasses = t.componentData.warrantyPolicy.fieldAccentClasses
 
   return (
-    <div>
-      <label htmlFor={name} className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
-        {label}
-      </label>
-      <input
-        id={name}
-        type={type}
-        {...register(name)}
-        placeholder={placeholder}
-        aria-invalid={Boolean(error)}
-        aria-describedby={error ? `${name}-error` : undefined}
-        className={`h-12 w-full rounded-2xl border px-4 text-md text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:ring-4 ${accentClasses[accent]}`}
-      />
-      {error && <p id={`${name}-error`} className="mt-2 text-md text-rose-600">{error.message}</p>}
-    </div>
+    <SharedFormField
+      label={label}
+      name={name}
+      placeholder={placeholder}
+      type={type}
+      register={register}
+      error={error}
+      labelClassName="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700"
+      inputClassName={`h-12 w-full rounded-2xl border px-4 text-md text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:ring-4 ${accentClasses[accent]}`}
+      errorClassName="mt-2 text-md text-rose-600"
+    />
   )
 }

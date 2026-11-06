@@ -2,6 +2,12 @@
 
 import type { ReactNode } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
+import {
+  ContentBenefitCard,
+  ContentFeatureCard,
+  ContentInfoPanel,
+  ContentSectionEyebrow,
+} from './SharedContentComponents'
 
 const renderWindIcon = (colorClass: string) => {
   return (
@@ -13,22 +19,15 @@ const renderWindIcon = (colorClass: string) => {
   )
 }
 
-const renderCheckIcon = (bgClass: string) => {
-  return (
-    <div className={`flex h-10 w-10 items-center justify-center rounded-2xl shadow-inner ${bgClass}`}>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-4 w-4" aria-hidden="true">
-        <path d="M5 13.5 9 17l10-10" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    </div>
-  )
-}
-
 export function WindSectionEyebrow({ children }: { children: ReactNode }) {
   return (
-    <div className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ecfeff_45%,#ffffff_100%)] px-3.5 py-2 shadow-[0_14px_26px_-20px_rgba(59,130,246,0.9)]">
-      <span className="inline-flex h-2.5 w-2.5 items-center justify-center rounded-full bg-linear-to-r from-sky-500 to-cyan-500 shadow-[0_0_0_4px_rgba(59,130,246,0.12)]" aria-hidden="true" />
-      <p className="text-[12px] font-black uppercase tracking-[0.24em] text-sky-700">{children}</p>
-    </div>
+    <ContentSectionEyebrow
+      className="border border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ecfeff_45%,#ffffff_100%)] shadow-[0_14px_26px_-20px_rgba(59,130,246,0.9)]"
+      dotClassName="bg-linear-to-r from-sky-500 to-cyan-500 shadow-[0_0_0_4px_rgba(59,130,246,0.12)]"
+      labelClassName="text-sky-700"
+    >
+      {children}
+    </ContentSectionEyebrow>
   )
 }
 
@@ -48,38 +47,29 @@ export function WindFeatureCard({
   const componentData = t.componentData.windContentBlocks
 
   return (
-    <article className="group rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_22px_45px_-28px_rgba(15,23,42,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-28px_rgba(59,130,246,0.25)]">
-      <div className={`mb-5 flex items-center justify-between gap-4 rounded-2xl border px-3 py-2 ${componentData.featureClasses[accent]}`}>
-        <span className="text-[12px] font-black uppercase tracking-[0.24em]">{ui.windSolution}</span>
-        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/80 shadow-sm ring-1 ring-black/5">
-          {renderWindIcon(componentData.iconColors[accent])}
-        </span>
-      </div>
-      <h3 className="text-2xl font-black tracking-[0.05em] text-slate-900">{title}</h3>
-      <p className="mt-4 text-base leading-7 text-slate-700">{description}</p>
-      {points.length > 0 && (
-        <ul className="mt-5 space-y-3 text-base text-slate-700">
-          {points.map((point) => (
-            <li key={point} className="flex items-start gap-3 rounded-xl bg-slate-50/80 p-2.5">
-              <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sky-100 text-[12px] font-black text-sky-700">✓</span>
-              <span>{point}</span>
-            </li>
-          ))}
-        </ul>
-      )}
-    </article>
+    <ContentFeatureCard
+      title={title}
+      description={description}
+      points={points}
+      label={ui.windSolution}
+      icon={renderWindIcon(componentData.iconColors[accent])}
+      cardClassName="group rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_22px_45px_-28px_rgba(15,23,42,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-28px_rgba(59,130,246,0.25)]"
+      featureClassName={componentData.featureClasses[accent]}
+      titleClassName="tracking-[0.05em] text-slate-900"
+      pointIconClassName="bg-sky-100 text-sky-700"
+    />
   )
 }
 
 export function WindBenefitCard({ title, description }: { title: string; description: string }) {
   return (
-    <div className="rounded-[1.7rem] border border-sky-200 bg-[linear-gradient(135deg,#ffffff_0%,#eff6ff_100%)] p-5 shadow-[0_18px_32px_-26px_rgba(59,130,246,0.4)]">
-      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-sky-700 to-cyan-700 text-lg font-black text-white shadow-lg shadow-sky-500/20">
-        ✓
-      </div>
-      <h3 className="text-xl font-black tracking-[0.04em] text-slate-900">{title}</h3>
-      <p className="mt-3 text-base leading-7 text-slate-700">{description}</p>
-    </div>
+    <ContentBenefitCard
+      title={title}
+      description={description}
+      cardClassName="rounded-[1.7rem] border border-sky-200 bg-[linear-gradient(135deg,#ffffff_0%,#eff6ff_100%)] p-5 shadow-[0_18px_32px_-26px_rgba(59,130,246,0.4)]"
+      iconClassName="bg-linear-to-br from-sky-700 to-cyan-700 text-white shadow-lg shadow-sky-500/20"
+      titleClassName="tracking-[0.04em] text-slate-900"
+    />
   )
 }
 
@@ -96,21 +86,13 @@ export function WindInfoPanel({
   const componentData = t.componentData.windContentBlocks
 
   return (
-    <div className={`rounded-[1.8rem] border p-5 shadow-[0_12px_28px_-24px_rgba(15,23,42,0.28)] ${componentData.infoThemes[accent]}`}>
-      <div className="mb-3 flex items-center gap-3">
-        {renderCheckIcon(componentData.checkBackgrounds[accent])}
-        <h3 className="text-xl font-black tracking-[0.04em]">{title}</h3>
-      </div>
-      <ul className="mt-4 space-y-3 text-base leading-7">
-        {content.map((item) => (
-          <li key={item} className="flex items-start gap-3">
-            <span className="mt-2 h-2.5 w-2.5 rounded-full bg-current" />
-            <span>{item}</span>
-          </li>
-        ))}
-
-      </ul>
-    </div>
+    <ContentInfoPanel
+      title={title}
+      content={content}
+      themeClassName={componentData.infoThemes[accent]}
+      checkBackgroundClassName={componentData.checkBackgrounds[accent]}
+      titleClassName="tracking-[0.04em]"
+    />
   )
 }
 

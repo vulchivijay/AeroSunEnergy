@@ -28,259 +28,6 @@ body {
   color: #0f172a;
 }
 
-@media (min-width: 1024px) and (max-width: 1440px) {
-  .header-label {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    clip: rect(0, 0, 0, 0) !important;
-    white-space: nowrap !important;
-    border: 0 !important;
-  }
-}
-
-html.dark body {
-  background:
-    radial-gradient(circle at top, rgba(245, 158, 11, 0.08), transparent 24%),
-    linear-gradient(180deg, #020817 0%, #0f172a 100%);
-  color: #e2e8f0;
-}
-
-html.dark main {
-  color: #e2e8f0;
-}
-
-html.dark :is(
-  [class~="bg-white"],
-  [class~="bg-white/50"],
-  [class~="bg-white/60"],
-  [class~="bg-white/70"],
-  [class~="bg-white/75"],
-  [class~="bg-white/80"],
-  [class~="bg-white/85"],
-  [class~="bg-white/90"],
-  [class~="bg-white/95"],
-  [class~="bg-slate-50"],
-  [class~="bg-gray-50"],
-  [class~="bg-zinc-50"],
-  [class~="bg-neutral-50"],
-  [class~="bg-stone-50"],
-  [class~="bg-amber-50"],
-  [class~="bg-yellow-50"],
-  [class~="bg-orange-50"],
-  [class~="bg-sky-50"],
-  [class~="bg-blue-50"],
-  [class~="bg-indigo-50"],
-  [class~="bg-violet-50"],
-  [class~="bg-purple-50"],
-  [class~="bg-emerald-50"],
-  [class~="bg-green-50"],
-  [class~="bg-lime-50"],
-  [class~="bg-teal-50"],
-  [class~="bg-cyan-50"],
-  [class~="bg-rose-50"],
-  [class~="bg-red-50"],
-  [class~="bg-pink-50"],
-  [class*="bg-slate-50/"],
-  [class*="bg-gray-50/"],
-  [class*="bg-zinc-50/"],
-  [class*="bg-neutral-50/"],
-  [class*="bg-stone-50/"],
-  [class*="bg-amber-50/"],
-  [class*="bg-yellow-50/"],
-  [class*="bg-orange-50/"],
-  [class*="bg-sky-50/"],
-  [class*="bg-blue-50/"],
-  [class*="bg-indigo-50/"],
-  [class*="bg-violet-50/"],
-  [class*="bg-purple-50/"],
-  [class*="bg-emerald-50/"],
-  [class*="bg-green-50/"],
-  [class*="bg-lime-50/"],
-  [class*="bg-teal-50/"],
-  [class*="bg-cyan-50/"],
-  [class*="bg-rose-50/"],
-  [class*="bg-red-50/"],
-  [class*="bg-pink-50/"]
-):not([class*="dark:bg-"]) {
-  background-color: #1e293b;
-}
-
-html.dark :is(
-  [class~="bg-slate-100"],
-  [class~="bg-gray-100"],
-  [class~="bg-zinc-100"],
-  [class~="bg-neutral-100"],
-  [class~="bg-stone-100"],
-  [class~="bg-amber-100"],
-  [class~="bg-yellow-100"],
-  [class~="bg-orange-100"],
-  [class~="bg-sky-100"],
-  [class~="bg-blue-100"],
-  [class~="bg-indigo-100"],
-  [class~="bg-violet-100"],
-  [class~="bg-purple-100"],
-  [class~="bg-emerald-100"],
-  [class~="bg-green-100"],
-  [class~="bg-lime-100"],
-  [class~="bg-teal-100"],
-  [class~="bg-cyan-100"],
-  [class~="bg-rose-100"],
-  [class~="bg-red-100"],
-  [class~="bg-pink-100"],
-  [class*="bg-slate-100/"],
-  [class*="bg-gray-100/"],
-  [class*="bg-zinc-100/"],
-  [class*="bg-neutral-100/"],
-  [class*="bg-stone-100/"],
-  [class*="bg-amber-100/"],
-  [class*="bg-yellow-100/"],
-  [class*="bg-orange-100/"],
-  [class*="bg-sky-100/"],
-  [class*="bg-blue-100/"],
-  [class*="bg-indigo-100/"],
-  [class*="bg-violet-100/"],
-  [class*="bg-purple-100/"],
-  [class*="bg-emerald-100/"],
-  [class*="bg-green-100/"],
-  [class*="bg-lime-100/"],
-  [class*="bg-teal-100/"],
-  [class*="bg-cyan-100/"],
-  [class*="bg-rose-100/"],
-  [class*="bg-red-100/"],
-  [class*="bg-pink-100/"]
-):not([class*="dark:bg-"]) {
-  background-color: #263449;
-}
-
-html.dark [class*="text-[#"]:not([class*="dark:text-"]) {
-  color: #e2e8f0;
-}
-
-html.dark :is(
-  [class~="text-custom-blue"],
-  [class~="text-custom-deep-blue"]
-):not([class*="dark:text-"]) {
-  color: #bfdbfe;
-}
-
-html.dark :is(
-  [class~="text-custom-red"],
-  [class~="text-custom-orange"]
-):not([class*="dark:text-"]) {
-  color: #fecaca;
-}
-
-html.dark :is(
-  [class~="text-custom-yellow"],
-  [class~="text-custom-violet"]
-):not([class*="dark:text-"]) {
-  color: #fde68a;
-}
-
-html.dark :is(
-  [class~="text-slate-950"],
-  [class~="text-slate-900"],
-  [class~="text-slate-800"],
-  [class~="text-gray-950"],
-  [class~="text-gray-900"],
-  [class~="text-gray-800"],
-  [class~="text-zinc-950"],
-  [class~="text-zinc-900"],
-  [class~="text-zinc-800"],
-  [class~="text-neutral-950"],
-  [class~="text-neutral-900"],
-  [class~="text-neutral-800"],
-  [class~="text-stone-950"],
-  [class~="text-stone-900"],
-  [class~="text-stone-800"]
-):not([class*="dark:text-"]) {
-  color: #f1f5f9;
-}
-
-html.dark :is(
-  [class~="text-slate-700"],
-  [class~="text-gray-700"],
-  [class~="text-zinc-700"],
-  [class~="text-neutral-700"],
-  [class~="text-stone-700"],
-  [class~="text-slate-600"],
-  [class~="text-gray-600"],
-  [class~="text-zinc-600"],
-  [class~="text-neutral-600"],
-  [class~="text-stone-600"]
-):not([class*="dark:text-"]) {
-  color: #cbd5e1;
-}
-
-html.dark :is(
-  [class~="text-slate-500"],
-  [class~="text-gray-500"],
-  [class~="text-zinc-500"],
-  [class~="text-neutral-500"],
-  [class~="text-stone-500"],
-  [class~="text-slate-400"],
-  [class~="text-gray-400"],
-  [class~="text-zinc-400"],
-  [class~="text-neutral-400"],
-  [class~="text-stone-400"]
-):not([class*="dark:text-"]) {
-  color: #aebacc;
-}
-
-html.dark :is(
-  [class~="text-emerald-900"],
-  [class~="text-emerald-800"],
-  [class~="text-emerald-700"],
-  [class~="text-green-900"],
-  [class~="text-green-800"],
-  [class~="text-green-700"],
-  [class~="text-teal-900"],
-  [class~="text-teal-800"],
-  [class~="text-teal-700"],
-  [class~="text-cyan-900"],
-  [class~="text-cyan-800"],
-  [class~="text-cyan-700"],
-  [class~="text-sky-900"],
-  [class~="text-sky-800"],
-  [class~="text-sky-700"],
-  [class~="text-blue-900"],
-  [class~="text-blue-800"],
-  [class~="text-blue-700"],
-  [class~="text-indigo-900"],
-  [class~="text-indigo-800"],
-  [class~="text-indigo-700"],
-  [class~="text-violet-900"],
-  [class~="text-violet-800"],
-  [class~="text-violet-700"],
-  [class~="text-purple-900"],
-  [class~="text-purple-800"],
-  [class~="text-purple-700"],
-  [class~="text-amber-900"],
-  [class~="text-amber-800"],
-  [class~="text-amber-700"],
-  [class~="text-yellow-900"],
-  [class~="text-yellow-800"],
-  [class~="text-yellow-700"],
-  [class~="text-orange-900"],
-  [class~="text-orange-800"],
-  [class~="text-orange-700"],
-  [class~="text-rose-900"],
-  [class~="text-rose-800"],
-  [class~="text-rose-700"],
-  [class~="text-red-900"],
-  [class~="text-red-800"],
-  [class~="text-red-700"],
-  [class~="text-pink-900"],
-  [class~="text-pink-800"],
-  [class~="text-pink-700"]
-):not([class*="dark:text-"]) {
-  color: #cbd5e1;
-}
-
 h1,
 h2,
 h3,
@@ -291,6 +38,7 @@ h6 {
   letter-spacing: 0.04em;
 }
 
+/* Apply letter-spacing to bold text and headings, but not to tracking classes */
 html body :is(.font-semibold, .font-bold, .font-extrabold, .font-black):not([class*="tracking-"]),
 html body .tracking-tight,
 html body .tracking-tighter,
@@ -298,6 +46,7 @@ strong,
 b {
   letter-spacing: 0.04em;
 }
+/* Apply letter-spacing to headings, but not to tracking classes */
 
 ::selection {
   background: rgba(32, 164, 74, 0.2);
@@ -422,4 +171,18 @@ a {
 .page-loader-spinner {
   display: inline-block;
   animation: page-loader-spin 0.9s linear infinite;
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .header-label {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
 }
