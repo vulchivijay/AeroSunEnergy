@@ -30,18 +30,18 @@ function SectionHeading({
   return (
     <div className="mb-8 max-w-3xl">
       <p
-        className={`font-mono text-md font-bold uppercase tracking-[0.2em] ${inverse ? "text-lime-300" : "text-emerald-700 dark:text-emerald-300"}`}
+        className={`font-mono text-md font-bold uppercase tracking-[0.2em] ${inverse ? "text-lime-300" : "text-emerald-700 "}`}
       >
         {number} / {eyebrow}
       </p>
       <h2
-        className={`mt-3 text-3xl font-black leading-tight tracking-tight sm:text-4xl ${inverse ? "text-white" : "text-slate-950 dark:text-white"}`}
+        className={`mt-3 text-3xl font-black leading-tight tracking-tight sm:text-4xl ${inverse ? "text-white" : "text-slate-950 "}`}
       >
         {title}
       </h2>
       {description && (
         <p
-          className={`mt-4 text-sm leading-7 ${inverse ? "text-emerald-50/80" : "text-slate-600 dark:text-slate-300"}`}
+          className={`mt-4 text-sm leading-7 ${inverse ? "text-emerald-50/80" : "text-slate-600 "}`}
         >
           {description}
         </p>
@@ -56,7 +56,7 @@ function BulletList({ items }: { items: string[] }) {
       {items.map((item) => (
         <li
           key={item}
-          className="flex gap-3 text-md leading-6 text-slate-700 dark:text-slate-200 sm:text-sm"
+          className="flex gap-3 text-md leading-6 text-slate-700  sm:text-sm"
         >
           <span
             className="mt-2 h-2 w-2 shrink-0 rounded-full bg-emerald-500"
@@ -86,7 +86,7 @@ export default function CompanyProfilePage() {
   const futurePriorities = cp.futurePriorities;
 
   return (
-    <main className="overflow-hidden bg-[#f5f6ef] text-slate-900 dark:bg-[#101b17] dark:text-slate-100">
+    <main className="overflow-hidden bg-[#f5f6ef] text-slate-900  ">
       <section className="relative isolate overflow-hidden bg-[#14372f] text-white">
         <div
           className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_8%,rgba(52,211,153,0.2),transparent_38%),radial-gradient(ellipse_at_5%_100%,rgba(163,217,119,0.11),transparent_35%)]"
@@ -185,7 +185,7 @@ export default function CompanyProfilePage() {
             eyebrow={cp.section2Eyebrow}
             title={cp.section2Title}
           />
-          <p className="max-w-4xl rounded-3xl border border-emerald-900/10 bg-white p-6 text-lg leading-8 text-slate-700 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-200 sm:p-8">
+          <p className="max-w-4xl rounded-3xl border border-emerald-900/10 bg-white p-6 text-lg leading-8 text-slate-700    sm:p-8">
             {cp.section2Text}
           </p>
         </section>
@@ -196,7 +196,7 @@ export default function CompanyProfilePage() {
             eyebrow={cp.section3Eyebrow}
             title={cp.section3Title}
           />
-          <div className="rounded-3xl border border-emerald-900/10 bg-white p-6 dark:border-white/10 dark:bg-white/[0.04] sm:p-8">
+          <div className="rounded-3xl border border-emerald-900/10 bg-white p-6   sm:p-8">
             <BulletList items={missionPoints} />
           </div>
         </section>
@@ -208,8 +208,8 @@ export default function CompanyProfilePage() {
             title={cp.section4Title}
           />
           <div className="grid gap-5 lg:grid-cols-3">
-            <article className="rounded-3xl border border-emerald-900/10 bg-white p-6 dark:border-white/10 dark:bg-white/[0.04] sm:p-7">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-100 text-emerald-800 dark:bg-emerald-900/50 dark:text-emerald-200">
+            <article className="rounded-3xl border border-emerald-900/10 bg-white p-6   sm:p-7">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-100 text-emerald-800  ">
                 <Sun className="h-5 w-5" aria-hidden="true" />
               </div>
               <h3 className="mt-5 text-xl font-bold">{cp.solarTitle}</h3>
@@ -217,35 +217,35 @@ export default function CompanyProfilePage() {
                 <BulletList items={solarSolutions} />
               </div>
             </article>
-            <article className="rounded-3xl border border-emerald-900/10 bg-white p-6 dark:border-white/10 dark:bg-white/[0.04] sm:p-7">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-sky-800 dark:bg-sky-900/50 dark:text-sky-200">
+            <article className="rounded-3xl border border-emerald-900/10 bg-white p-6   sm:p-7">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-sky-800  ">
                 <Wind className="h-5 w-5" aria-hidden="true" />
               </div>
               <h3 className="mt-5 text-xl font-bold">{cp.windTitle}</h3>
-              <p className="mt-3 text-md leading-6 text-slate-600 dark:text-slate-300">
+              <p className="mt-3 text-md leading-6 text-slate-600 ">
                 {cp.windProductIntro}
               </p>
               <div className="mt-4">
                 <BulletList items={windDevelopment} />
               </div>
             </article>
-            <article className="rounded-3xl border border-emerald-900/10 bg-white p-6 dark:border-white/10 dark:bg-white/[0.04] sm:p-7">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-100 text-violet-800 dark:bg-violet-900/50 dark:text-violet-200">
+            <article className="rounded-3xl border border-emerald-900/10 bg-white p-6   sm:p-7">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-100 text-violet-800  ">
                 <Zap className="h-5 w-5" aria-hidden="true" />
               </div>
               <h3 className="mt-5 text-xl font-bold">{cp.hybridTitle}</h3>
-              <p className="mt-3 text-md leading-6 text-slate-600 dark:text-slate-300">
+              <p className="mt-3 text-md leading-6 text-slate-600 ">
                 {cp.hybridIntro}
               </p>
               <div className="mt-4">
                 <BulletList items={hybridApplications} />
               </div>
-              <p className="mt-4 text-md leading-6 text-slate-600 dark:text-slate-300">
+              <p className="mt-4 text-md leading-6 text-slate-600 ">
                 {cp.hybridFinal}
               </p>
             </article>
           </div>
-          <p className="mt-5 rounded-2xl border border-amber-300/50 bg-amber-50 px-5 py-4 text-md leading-6 text-amber-950 dark:border-amber-200/20 dark:bg-amber-300/10 dark:text-amber-100">
+          <p className="mt-5 rounded-2xl border border-amber-300/50 bg-amber-50 px-5 py-4 text-md leading-6 text-amber-950   ">
             {cp.waitNote}
           </p>
         </section>
@@ -256,7 +256,7 @@ export default function CompanyProfilePage() {
             eyebrow={cp.productSectionEyebrow}
             title={cp.productSectionTitle}
           />
-          <div className="overflow-hidden rounded-3xl border border-emerald-900/10 bg-white dark:border-white/10 dark:bg-white/[0.04]">
+          <div className="overflow-hidden rounded-3xl border border-emerald-900/10 bg-white  ">
             <div className="grid grid-cols-[0.8fr_1.2fr] bg-emerald-950 px-5 py-4 text-md font-bold uppercase tracking-[0.16em] text-emerald-50 sm:px-7">
               <span>{cp.productTableCategory}</span>
               <span>{cp.productTableServices}</span>
@@ -266,14 +266,14 @@ export default function CompanyProfilePage() {
                 key={category}
                 className={`grid grid-cols-[0.8fr_1.2fr] gap-3 px-5 py-4 text-md leading-6 sm:px-7 ${
                   index % 2 === 0
-                    ? "bg-white dark:bg-transparent"
-                    : "bg-emerald-50/70 dark:bg-white/[0.03]"
+                    ? "bg-white "
+                    : "bg-emerald-50/70 "
                 }`}
               >
-                <span className="font-semibold text-slate-900 dark:text-slate-100">
+                <span className="font-semibold text-slate-900 ">
                   {category}
                 </span>
-                <span className="text-slate-600 dark:text-slate-300">
+                <span className="text-slate-600 ">
                   {description}
                 </span>
               </div>
@@ -289,7 +289,7 @@ export default function CompanyProfilePage() {
               title={cp.innovationTitle}
               description={cp.innovationDescription}
             />
-            <p className="rounded-2xl border-l-4 border-lime-500 bg-white px-5 py-4 text-md leading-6 text-slate-600 dark:bg-white/[0.04] dark:text-slate-300">
+            <p className="rounded-2xl border-l-4 border-lime-500 bg-white px-5 py-4 text-md leading-6 text-slate-600  ">
               {cp.innovationNote}
             </p>
           </div>
@@ -297,12 +297,12 @@ export default function CompanyProfilePage() {
             {innovationFocus.map((item, index) => (
               <li
                 key={item}
-                className="flex gap-4 rounded-2xl border border-emerald-900/10 bg-white p-5 dark:border-white/10 dark:bg-white/[0.04]"
+                className="flex gap-4 rounded-2xl border border-emerald-900/10 bg-white p-5  "
               >
-                <span className="font-mono text-md font-bold text-emerald-700 dark:text-lime-300">
+                <span className="font-mono text-md font-bold text-emerald-700 ">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className="text-md leading-6 text-slate-700 dark:text-slate-200">
+                <span className="text-md leading-6 text-slate-700 ">
                   {item}
                 </span>
               </li>
@@ -321,12 +321,12 @@ export default function CompanyProfilePage() {
             {developmentSteps.map((step, index) => (
               <li
                 key={step}
-                className="rounded-2xl border border-emerald-900/10 bg-white p-5 dark:border-white/10 dark:bg-white/[0.04]"
+                className="rounded-2xl border border-emerald-900/10 bg-white p-5  "
               >
-                <span className="font-mono text-md font-bold text-emerald-700 dark:text-lime-300">
+                <span className="font-mono text-md font-bold text-emerald-700 ">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <p className="mt-3 text-md leading-6 text-slate-700 dark:text-slate-200">
+                <p className="mt-3 text-md leading-6 text-slate-700 ">
                   {step}
                 </p>
               </li>
@@ -352,7 +352,7 @@ export default function CompanyProfilePage() {
               description={cp.manufacturingDescription}
             />
             <BulletList items={manufacturingModel} />
-            <p className="mt-5 text-md leading-6 text-slate-600 dark:text-slate-300">
+            <p className="mt-5 text-md leading-6 text-slate-600 ">
               {cp.manufacturingNote}
             </p>
           </div>
@@ -398,7 +398,7 @@ export default function CompanyProfilePage() {
             {reasonsToWorkWithUs.map((reason) => (
               <div
                 key={reason}
-                className="rounded-2xl border border-emerald-900/10 bg-white p-5 text-md font-semibold leading-6 text-slate-700 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-200"
+                className="rounded-2xl border border-emerald-900/10 bg-white p-5 text-md font-semibold leading-6 text-slate-700   "
               >
                 {reason}
               </div>
@@ -417,12 +417,12 @@ export default function CompanyProfilePage() {
             {futurePriorities.map((priority, index) => (
               <div
                 key={priority}
-                className="flex gap-4 rounded-2xl border border-emerald-900/10 bg-white p-5 dark:border-white/10 dark:bg-white/[0.04]"
+                className="flex gap-4 rounded-2xl border border-emerald-900/10 bg-white p-5  "
               >
-                <span className="font-mono text-md font-bold text-emerald-700 dark:text-lime-300">
+                <span className="font-mono text-md font-bold text-emerald-700 ">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <p className="text-md leading-6 text-slate-700 dark:text-slate-200">
+                <p className="text-md leading-6 text-slate-700 ">
                   {priority}
                 </p>
               </div>
@@ -430,7 +430,7 @@ export default function CompanyProfilePage() {
           </div>
         </section>
 
-        <section className="overflow-hidden rounded-[2rem] border border-emerald-900/10 bg-white dark:border-white/10 dark:bg-white/[0.04]">
+        <section className="overflow-hidden rounded-[2rem] border border-emerald-900/10 bg-white  ">
           <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
             <div className="bg-[#14372f] p-7 text-white sm:p-10">
               <p className="text-md font-bold uppercase tracking-[0.2em] text-lime-300">
@@ -444,42 +444,42 @@ export default function CompanyProfilePage() {
               </p>
             </div>
             <div className="space-y-5 p-7 sm:p-10">
-              <h3 className="text-xl font-bold text-slate-950 dark:text-white">
+              <h3 className="text-xl font-bold text-slate-950 ">
                 {cp.contactCompany}
               </h3>
-              <p className="flex gap-3 text-md leading-6 text-slate-600 dark:text-slate-300">
+              <p className="flex gap-3 text-md leading-6 text-slate-600 ">
                 <MapPin
-                  className="mt-1 h-4 w-4 shrink-0 text-emerald-700 dark:text-lime-300"
+                  className="mt-1 h-4 w-4 shrink-0 text-emerald-700 "
                   aria-hidden="true"
                 />
                 {cp.officeText}.
               </p>
               <a
-                className="flex items-center gap-3 text-md text-slate-700 hover:text-emerald-700 dark:text-slate-200 dark:hover:text-lime-300"
+                className="flex items-center gap-3 text-md text-slate-700 hover:text-emerald-700  "
                 href="https://aerosunenergy.in/"
               >
                 <Globe2
-                  className="h-4 w-4 text-emerald-700 dark:text-lime-300"
+                  className="h-4 w-4 text-emerald-700 "
                   aria-hidden="true"
                 />
                 {cp.contactWebsite}
               </a>
               <a
-                className="flex items-center gap-3 text-md text-slate-700 hover:text-emerald-700 dark:text-slate-200 dark:hover:text-lime-300"
+                className="flex items-center gap-3 text-md text-slate-700 hover:text-emerald-700  "
                 href="mailto:customercare@aerosunenergy.in"
               >
                 <Mail
-                  className="h-4 w-4 text-emerald-700 dark:text-lime-300"
+                  className="h-4 w-4 text-emerald-700 "
                   aria-hidden="true"
                 />
                 {cp.contactEmail}
               </a>
               <a
-                className="flex items-center gap-3 text-md text-slate-700 hover:text-emerald-700 dark:text-slate-200 dark:hover:text-lime-300"
+                className="flex items-center gap-3 text-md text-slate-700 hover:text-emerald-700  "
                 href="tel:+918099181075"
               >
                 <Phone
-                  className="h-4 w-4 text-emerald-700 dark:text-lime-300"
+                  className="h-4 w-4 text-emerald-700 "
                   aria-hidden="true"
                 />
                 {cp.contactPhone}

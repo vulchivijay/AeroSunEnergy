@@ -31,14 +31,14 @@ function SectionHeading({
 }) {
   return (
     <div className="mb-7 max-w-3xl">
-      <p className={`font-mono text-md font-bold uppercase tracking-[0.2em] ${inverse ? 'text-lime-300' : 'text-emerald-700 dark:text-emerald-300'}`}>
+      <p className={`font-mono text-md font-bold uppercase tracking-[0.2em] ${inverse ? 'text-lime-300' : 'text-emerald-700 '}`}>
         {number} / {eyebrow}
       </p>
-      <h2 className={`mt-3 text-3xl font-black leading-tight tracking-tight sm:text-4xl ${inverse ? 'text-white' : 'text-slate-950 dark:text-white'}`}>
+      <h2 className={`mt-3 text-3xl font-black leading-tight tracking-tight sm:text-4xl ${inverse ? 'text-white' : 'text-slate-950 '}`}>
         {title}
       </h2>
       {description && (
-        <p className={`mt-4 text-sm leading-7 ${inverse ? 'text-emerald-50/80' : 'text-slate-600 dark:text-slate-300'}`}>{description}</p>
+        <p className={`mt-4 text-sm leading-7 ${inverse ? 'text-emerald-50/80' : 'text-slate-600 '}`}>{description}</p>
       )}
     </div>
   )
@@ -48,7 +48,7 @@ function BulletList({ items }: { items: string[] }) {
   return (
     <ul className="space-y-2.5">
       {items.map((item) => (
-        <li key={item} className="flex gap-3 text-md leading-6 text-slate-700 dark:text-slate-200 sm:text-sm">
+        <li key={item} className="flex gap-3 text-md leading-6 text-slate-700  sm:text-sm">
           <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-emerald-500" aria-hidden="true" />
           <span>{item}</span>
         </li>
@@ -65,8 +65,8 @@ function DetailCard({
   children: React.ReactNode
 }) {
   return (
-    <div className="rounded-2xl border border-emerald-900/10 bg-white p-5 dark:border-white/10 dark:bg-white/[0.04] sm:p-6">
-      <h3 className="mb-4 text-sm font-bold text-slate-950 dark:text-white">{title}</h3>
+    <div className="rounded-2xl border border-emerald-900/10 bg-white p-5   sm:p-6">
+      <h3 className="mb-4 text-sm font-bold text-slate-950 ">{title}</h3>
       {children}
     </div>
   )
@@ -77,7 +77,7 @@ export default function ProductCataloguePage() {
   const c = t.productCataloguePage
 
   return (
-    <main className="overflow-hidden bg-[#f5f6ef] text-slate-900 dark:bg-[#101b17] dark:text-slate-100">
+    <main className="overflow-hidden bg-[#f5f6ef] text-slate-900  ">
       <section className="relative isolate overflow-hidden bg-[#14372f] text-white">
         <div
           className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_8%,rgba(52,211,153,0.2),transparent_38%),radial-gradient(ellipse_at_5%_100%,rgba(163,217,119,0.11),transparent_35%)]"
@@ -132,20 +132,20 @@ export default function ProductCataloguePage() {
           <div className="grid gap-5 lg:grid-cols-2">
             <DetailCard title={c.residential.suitableForLabel}><BulletList items={c.residential.suitableFor} /></DetailCard>
             <DetailCard title={c.residential.systemOptionsLabel}>
-              <div className="space-y-4 text-md leading-6 text-slate-700 dark:text-slate-200">
+              <div className="space-y-4 text-md leading-6 text-slate-700 ">
                 {c.residential.systemOptions.map(({ label, description }) => (
-                  <p key={label}><strong className="text-slate-950 dark:text-white">{label}</strong> {description}</p>
+                  <p key={label}><strong className="text-slate-950 ">{label}</strong> {description}</p>
                 ))}
               </div>
             </DetailCard>
             <DetailCard title={c.residential.benefitsLabel}><BulletList items={c.residential.benefits} /></DetailCard>
             <DetailCard title={c.residential.customisationLabel}>
-              <p className="text-md leading-6 text-slate-700 dark:text-slate-200">
+              <p className="text-md leading-6 text-slate-700 ">
                 {c.residential.customisation}
               </p>
             </DetailCard>
           </div>
-          <p className="mt-5 font-semibold italic text-emerald-800 dark:text-lime-300">
+          <p className="mt-5 font-semibold italic text-emerald-800 ">
             {c.residential.tagline}
           </p>
         </section>
@@ -164,15 +164,15 @@ export default function ProductCataloguePage() {
             <DetailCard title={c.commercial.approachLabel}>
               <ol className="space-y-3">
                 {c.commercial.process.map((step, index) => (
-                  <li key={step} className="flex gap-3 text-md leading-6 text-slate-700 dark:text-slate-200">
-                    <span className="font-mono text-md font-bold text-emerald-700 dark:text-lime-300">{String(index + 1).padStart(2, '0')}</span>
+                  <li key={step} className="flex gap-3 text-md leading-6 text-slate-700 ">
+                    <span className="font-mono text-md font-bold text-emerald-700 ">{String(index + 1).padStart(2, '0')}</span>
                     {step}
                   </li>
                 ))}
               </ol>
             </DetailCard>
           </div>
-          <p className="mt-5 font-semibold italic text-emerald-800 dark:text-lime-300">
+          <p className="mt-5 font-semibold italic text-emerald-800 ">
             {c.commercial.tagline}
           </p>
         </section>
@@ -187,23 +187,23 @@ export default function ProductCataloguePage() {
           <div className="grid gap-5 lg:grid-cols-2">
             <DetailCard title={c.agricultural.applicationsLabel}><BulletList items={c.agricultural.applications} /></DetailCard>
             <DetailCard title={c.agricultural.configurationsLabel}>
-              <div className="space-y-4 text-md leading-6 text-slate-700 dark:text-slate-200">
+              <div className="space-y-4 text-md leading-6 text-slate-700 ">
                 {c.agricultural.configurations.map(({ label, description }) => (
-                  <p key={label}><strong className="text-slate-950 dark:text-white">{label}</strong> {description}</p>
+                  <p key={label}><strong className="text-slate-950 ">{label}</strong> {description}</p>
                 ))}
               </div>
             </DetailCard>
             <DetailCard title={c.agricultural.benefitsLabel}><BulletList items={c.agricultural.benefits} /></DetailCard>
             <DetailCard title={c.agricultural.considerationsLabel}>
-              <p className="text-md leading-6 text-slate-700 dark:text-slate-200">
+              <p className="text-md leading-6 text-slate-700 ">
                 {c.agricultural.considerations}
               </p>
-              <p className="mt-4 text-md leading-6 text-slate-700 dark:text-slate-200">
+              <p className="mt-4 text-md leading-6 text-slate-700 ">
                 {c.agricultural.subsidyNote}
               </p>
             </DetailCard>
           </div>
-          <p className="mt-5 font-semibold italic text-emerald-800 dark:text-lime-300">
+          <p className="mt-5 font-semibold italic text-emerald-800 ">
             {c.agricultural.tagline}
           </p>
         </section>
@@ -219,7 +219,7 @@ export default function ProductCataloguePage() {
             <DetailCard title={c.offGrid.suitableForLabel}><BulletList items={c.offGrid.suitableFor} /></DetailCard>
             <DetailCard title={c.offGrid.componentsLabel}><BulletList items={c.offGrid.components} /></DetailCard>
             <DetailCard title={c.offGrid.designLabel}>
-              <p className="mb-3 text-md leading-6 text-slate-700 dark:text-slate-200">{c.offGrid.sizingIntro}</p>
+              <p className="mb-3 text-md leading-6 text-slate-700 ">{c.offGrid.sizingIntro}</p>
               <BulletList items={c.offGrid.designFactors} />
             </DetailCard>
           </div>
@@ -228,7 +228,7 @@ export default function ProductCataloguePage() {
               <BulletList items={c.offGrid.benefits} />
             </DetailCard>
           </div>
-          <p className="mt-5 font-semibold italic text-emerald-800 dark:text-lime-300">
+          <p className="mt-5 font-semibold italic text-emerald-800 ">
             {c.offGrid.tagline}
           </p>
         </section>
@@ -243,7 +243,7 @@ export default function ProductCataloguePage() {
           <div className="grid gap-5 lg:grid-cols-3">
             <DetailCard title={c.battery.applicationsLabel}><BulletList items={c.battery.applications} /></DetailCard>
             <DetailCard title={c.battery.optionsLabel}>
-              <p className="text-md leading-6 text-slate-700 dark:text-slate-200">
+              <p className="text-md leading-6 text-slate-700 ">
                 {c.battery.options}
               </p>
             </DetailCard>
@@ -255,15 +255,15 @@ export default function ProductCataloguePage() {
             <DetailCard title={c.battery.selectionLabel}>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {c.battery.selection.map((item, index) => (
-                  <p key={item} className="flex gap-3 rounded-xl bg-emerald-50 p-4 text-md leading-6 text-slate-700 dark:bg-white/[0.04] dark:text-slate-200">
-                    <span className="font-mono text-md font-bold text-emerald-700 dark:text-lime-300">{String(index + 1).padStart(2, '0')}</span>
+                  <p key={item} className="flex gap-3 rounded-xl bg-emerald-50 p-4 text-md leading-6 text-slate-700  ">
+                    <span className="font-mono text-md font-bold text-emerald-700 ">{String(index + 1).padStart(2, '0')}</span>
                     {item}
                   </p>
                 ))}
               </div>
             </DetailCard>
           </div>
-          <p className="mt-5 font-semibold italic text-emerald-800 dark:text-lime-300">
+          <p className="mt-5 font-semibold italic text-emerald-800 ">
             {c.battery.tagline}
           </p>
         </section>
@@ -324,10 +324,10 @@ export default function ProductCataloguePage() {
             <DetailCard title={c.hybrid.applicationsLabel}><BulletList items={c.hybrid.applications} /></DetailCard>
             <DetailCard title={c.hybrid.benefitsLabel}><BulletList items={c.hybrid.benefits} /></DetailCard>
           </div>
-          <p className="mt-5 rounded-2xl border border-amber-300/50 bg-amber-50 px-5 py-4 text-md leading-6 text-amber-950 dark:border-amber-200/20 dark:bg-amber-300/10 dark:text-amber-100">
+          <p className="mt-5 rounded-2xl border border-amber-300/50 bg-amber-50 px-5 py-4 text-md leading-6 text-amber-950   ">
             {c.hybrid.caveat}
           </p>
-          <p className="mt-5 font-semibold italic text-emerald-800 dark:text-lime-300">
+          <p className="mt-5 font-semibold italic text-emerald-800 ">
             {c.hybrid.tagline}
           </p>
         </section>
@@ -342,39 +342,39 @@ export default function ProductCataloguePage() {
           <DetailCard title={c.consultation.servicesLabel}>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
               {c.consultation.services.map((service, index) => (
-                <p key={service} className="flex gap-3 rounded-xl bg-emerald-50 p-4 text-md leading-6 text-slate-700 dark:bg-white/[0.04] dark:text-slate-200">
-                  <span className="font-mono text-md font-bold text-emerald-700 dark:text-lime-300">{String(index + 1).padStart(2, '0')}</span>
+                <p key={service} className="flex gap-3 rounded-xl bg-emerald-50 p-4 text-md leading-6 text-slate-700  ">
+                  <span className="font-mono text-md font-bold text-emerald-700 ">{String(index + 1).padStart(2, '0')}</span>
                   {service}
                 </p>
               ))}
             </div>
           </DetailCard>
-          <h3 className="mb-5 mt-8 text-xl font-bold text-slate-950 dark:text-white">{c.consultation.processLabel}</h3>
+          <h3 className="mb-5 mt-8 text-xl font-bold text-slate-950 ">{c.consultation.processLabel}</h3>
           <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {c.consultation.process.map(({ title, detail }, index) => (
-              <li key={title} className="rounded-2xl border border-emerald-900/10 bg-white p-5 dark:border-white/10 dark:bg-white/[0.04]">
-                <span className="font-mono text-md font-bold text-emerald-700 dark:text-lime-300">{String(index + 1).padStart(2, '0')}</span>
-                <h4 className="mt-3 font-bold text-slate-950 dark:text-white">{title}</h4>
-                <p className="mt-2 text-md leading-6 text-slate-600 dark:text-slate-300">{detail}</p>
+              <li key={title} className="rounded-2xl border border-emerald-900/10 bg-white p-5  ">
+                <span className="font-mono text-md font-bold text-emerald-700 ">{String(index + 1).padStart(2, '0')}</span>
+                <h4 className="mt-3 font-bold text-slate-950 ">{title}</h4>
+                <p className="mt-2 text-md leading-6 text-slate-600 ">{detail}</p>
               </li>
             ))}
           </ol>
         </section>
 
-        <section className="grid gap-8 rounded-[2rem] border border-emerald-900/10 bg-white p-6 dark:border-white/10 dark:bg-white/[0.04] sm:p-10 lg:grid-cols-[0.7fr_1.3fr]">
+        <section className="grid gap-8 rounded-[2rem] border border-emerald-900/10 bg-white p-6   sm:p-10 lg:grid-cols-[0.7fr_1.3fr]">
           <div>
             <SectionHeading
               number="09"
               eyebrow={c.whyChoose.eyebrow}
               title={c.whyChoose.title}
             />
-            <p className="text-md leading-6 text-slate-600 dark:text-slate-300">
+            <p className="text-md leading-6 text-slate-600 ">
               {c.whyChoose.description}
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {c.whyChoose.reasons.map((reason) => (
-              <p key={reason} className="flex gap-3 rounded-xl bg-emerald-50 p-4 text-md leading-6 text-slate-700 dark:bg-white/[0.04] dark:text-slate-200">
+              <p key={reason} className="flex gap-3 rounded-xl bg-emerald-50 p-4 text-md leading-6 text-slate-700  ">
                 <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-emerald-500" aria-hidden="true" />
                 {reason}
               </p>
@@ -382,7 +382,7 @@ export default function ProductCataloguePage() {
           </div>
         </section>
 
-        <section className="overflow-hidden rounded-[2rem] border border-emerald-900/10 bg-white dark:border-white/10 dark:bg-white/[0.04]">
+        <section className="overflow-hidden rounded-[2rem] border border-emerald-900/10 bg-white  ">
           <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
             <div className="bg-[#14372f] p-7 text-white sm:p-10">
               <p className="text-md font-bold uppercase tracking-[0.2em] text-lime-300">10 / {c.contact.eyebrow}</p>
@@ -393,21 +393,21 @@ export default function ProductCataloguePage() {
               <p className="mt-5 text-lg font-semibold italic text-emerald-100">{c.contact.tagline}</p>
             </div>
             <div className="space-y-5 p-7 sm:p-10">
-              <h3 className="text-xl font-bold text-slate-950 dark:text-white">{c.contact.company}</h3>
-              <p className="flex gap-3 text-md leading-6 text-slate-600 dark:text-slate-300">
-                <MapPin className="mt-1 h-4 w-4 shrink-0 text-emerald-700 dark:text-lime-300" aria-hidden="true" />
+              <h3 className="text-xl font-bold text-slate-950 ">{c.contact.company}</h3>
+              <p className="flex gap-3 text-md leading-6 text-slate-600 ">
+                <MapPin className="mt-1 h-4 w-4 shrink-0 text-emerald-700 " aria-hidden="true" />
                 {c.contact.address}
               </p>
-              <a className="flex items-center gap-3 text-md text-slate-700 hover:text-emerald-700 dark:text-slate-200 dark:hover:text-lime-300" href="https://aerosunenergy.in/">
-                <Globe2 className="h-4 w-4 text-emerald-700 dark:text-lime-300" aria-hidden="true" />
+              <a className="flex items-center gap-3 text-md text-slate-700 hover:text-emerald-700  " href="https://aerosunenergy.in/">
+                <Globe2 className="h-4 w-4 text-emerald-700 " aria-hidden="true" />
                 aerosunenergy.in
               </a>
-              <a className="flex items-center gap-3 text-md text-slate-700 hover:text-emerald-700 dark:text-slate-200 dark:hover:text-lime-300" href="mailto:customercare@aerosunenergy.in">
-                <Mail className="h-4 w-4 text-emerald-700 dark:text-lime-300" aria-hidden="true" />
+              <a className="flex items-center gap-3 text-md text-slate-700 hover:text-emerald-700  " href="mailto:customercare@aerosunenergy.in">
+                <Mail className="h-4 w-4 text-emerald-700 " aria-hidden="true" />
                 {c.contact.email}
               </a>
-              <a className="flex items-center gap-3 text-md text-slate-700 hover:text-emerald-700 dark:text-slate-200 dark:hover:text-lime-300" href="tel:+918099181075">
-                <Phone className="h-4 w-4 text-emerald-700 dark:text-lime-300" aria-hidden="true" />
+              <a className="flex items-center gap-3 text-md text-slate-700 hover:text-emerald-700  " href="tel:+918099181075">
+                <Phone className="h-4 w-4 text-emerald-700 " aria-hidden="true" />
                 {c.contact.phone}
               </a>
               <Link
@@ -421,7 +421,7 @@ export default function ProductCataloguePage() {
           </div>
         </section>
 
-        <p className="rounded-2xl border border-slate-300 bg-slate-100 px-5 py-4 text-md leading-5 text-slate-600 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-300">
+        <p className="rounded-2xl border border-slate-300 bg-slate-100 px-5 py-4 text-md leading-5 text-slate-600   ">
           {c.disclaimer}
         </p>
       </div>

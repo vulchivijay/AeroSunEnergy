@@ -225,7 +225,7 @@ function InlineContent({ text }: { text: string }) {
           href={linkMatch[2].replace(/\\&/g, "&")}
           target="_blank"
           rel="noreferrer"
-          className="font-semibold text-emerald-800 underline decoration-emerald-500/40 underline-offset-4 transition hover:text-emerald-600 dark:text-emerald-300 dark:hover:text-emerald-200"
+          className="font-semibold text-emerald-800 underline decoration-emerald-500/40 underline-offset-4 transition hover:text-emerald-600  "
         >
           <InlineContent text={linkMatch[1]} />
         </a>
@@ -239,7 +239,7 @@ function InlineContent({ text }: { text: string }) {
       return (
         <strong
           key={index}
-          className="font-bold text-slate-950 dark:text-white"
+          className="font-bold text-slate-950 "
         >
           {part.slice(2, -2)}
         </strong>
@@ -249,7 +249,7 @@ function InlineContent({ text }: { text: string }) {
       return (
         <code
           key={index}
-          className="rounded bg-emerald-950/[0.06] px-1.5 py-0.5 font-mono text-[0.92em] text-emerald-950 dark:bg-white/10 dark:text-emerald-100"
+          className="rounded bg-emerald-950/[0.06] px-1.5 py-0.5 font-mono text-[0.92em] text-emerald-950  "
         >
           {part.slice(1, -1)}
         </code>
@@ -287,7 +287,7 @@ function MathExpression({ expression }: { expression: string }) {
   }
 
   return (
-    <span className="rounded bg-emerald-950/[0.06] px-1.5 py-0.5 font-mono text-md text-emerald-950 dark:bg-white/10 dark:text-emerald-100">
+    <span className="rounded bg-emerald-950/[0.06] px-1.5 py-0.5 font-mono text-md text-emerald-950  ">
       {expression}
     </span>
   );
@@ -301,11 +301,11 @@ function DisplayMath({ expression }: { expression: string }) {
     expression.replace(/\s+/g, "") === "P_{\\text{wind}}=\\frac{1}{2}\\rhoAv^3"
   ) {
     return (
-      <div className="my-7 overflow-x-auto rounded-2xl border border-emerald-900/15 bg-emerald-50/80 px-5 py-6 text-center dark:border-emerald-300/15 dark:bg-emerald-950/30">
+      <div className="my-7 overflow-x-auto rounded-2xl border border-emerald-900/15 bg-emerald-50/80 px-5 py-6 text-center  ">
         <div
           role="math"
           aria-label={accessible.windPowerFormula}
-          className="flex items-center justify-center gap-2 font-serif text-2xl text-emerald-950 dark:text-emerald-100 sm:gap-3 sm:text-3xl"
+          className="flex items-center justify-center gap-2 font-serif text-2xl text-emerald-950  sm:gap-3 sm:text-3xl"
         >
           <span className="italic">
             P<sub className="text-xs not-italic sm:text-md">wind</sub>
@@ -326,7 +326,7 @@ function DisplayMath({ expression }: { expression: string }) {
   }
 
   return (
-    <pre className="my-7 overflow-x-auto rounded-2xl border border-emerald-900/15 bg-emerald-50/80 px-5 py-4 text-center font-mono text-sm text-emerald-950 dark:border-emerald-300/15 dark:bg-emerald-950/30 dark:text-emerald-100">
+    <pre className="my-7 overflow-x-auto rounded-2xl border border-emerald-900/15 bg-emerald-50/80 px-5 py-4 text-center font-mono text-sm text-emerald-950   ">
       <code>{expression}</code>
     </pre>
   );
@@ -335,7 +335,7 @@ function DisplayMath({ expression }: { expression: string }) {
 function MarkdownBlockView({ block }: { block: ContentBlock }) {
   if (block.type === "heading") {
     if (block.level === 1) return null;
-    const classes = "font-black tracking-tight text-slate-950 dark:text-white";
+    const classes = "font-black tracking-tight text-slate-950 ";
     if (block.level === 2) {
       return (
         <h3
@@ -365,7 +365,7 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
 
   if (block.type === "paragraph") {
     return (
-      <p className="my-4 text-sm leading-8 text-slate-700 dark:text-slate-300">
+      <p className="my-4 text-sm leading-8 text-slate-700 ">
         {block.lines.map((line, index) => (
           <span key={index}>
             {index > 0 ? " " : ""}
@@ -380,7 +380,7 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
     const List = block.ordered ? "ol" : "ul";
     return (
       <List
-        className={`my-5 space-y-3 pl-6 text-sm leading-8 text-slate-700 marker:font-bold marker:text-emerald-700 dark:text-slate-300 dark:marker:text-emerald-300 ${block.ordered ? "list-decimal" : "list-disc"}`}
+        className={`my-5 space-y-3 pl-6 text-sm leading-8 text-slate-700 marker:font-bold marker:text-emerald-700   ${block.ordered ? "list-decimal" : "list-disc"}`}
       >
         {block.items.map((item, index) => (
           <li key={index} className="pl-1">
@@ -393,7 +393,7 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
 
   if (block.type === "table") {
     return (
-      <div className="my-7 overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-900/70">
+      <div className="my-7 overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm  ">
         <table className="w-full min-w-[34rem] border-collapse text-left text-md leading-6">
           <thead className="bg-emerald-950 text-white">
             <tr>
@@ -410,14 +410,14 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
                 key={rowIndex}
                 className={
                   rowIndex % 2
-                    ? "bg-slate-50/80 dark:bg-slate-800/50"
-                    : "bg-white dark:bg-slate-900/70"
+                    ? "bg-slate-50/80 "
+                    : "bg-white "
                 }
               >
                 {block.headers.map((_, cellIndex) => (
                   <td
                     key={cellIndex}
-                    className="border-t border-slate-200 px-4 py-3 align-top text-slate-700 dark:border-slate-700 dark:text-slate-300"
+                    className="border-t border-slate-200 px-4 py-3 align-top text-slate-700  "
                   >
                     <InlineContent text={row[cellIndex] ?? ""} />
                   </td>
@@ -451,7 +451,7 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
 
   if (block.type === "quote") {
     return (
-      <blockquote className="my-6 border-l-4 border-lime-400 bg-emerald-50/80 px-5 py-4 text-lg font-medium leading-8 text-emerald-950 dark:bg-emerald-950/40 dark:text-emerald-100">
+      <blockquote className="my-6 border-l-4 border-lime-400 bg-emerald-50/80 px-5 py-4 text-lg font-medium leading-8 text-emerald-950  ">
         {block.lines.map((line, index) => (
           <p key={index}>
             {index > 0 && <br />}
@@ -463,7 +463,7 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
   }
 
   return (
-    <hr className="my-10 border-0 border-t border-emerald-900/15 dark:border-white/10" />
+    <hr className="my-10 border-0 border-t border-emerald-900/15 " />
   );
 }
 
@@ -509,7 +509,7 @@ export default function ResearchDevelopmentPage() {
   );
 
   return (
-    <main className="overflow-hidden bg-[#f5f6ef] text-slate-900 dark:bg-[#101b17] dark:text-slate-100">
+    <main className="overflow-hidden bg-[#f5f6ef] text-slate-900  ">
       <section className="relative isolate overflow-hidden bg-[#14372f] text-white">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_8%,rgba(52,211,153,0.2),transparent_38%),radial-gradient(ellipse_at_5%_100%,rgba(163,217,119,0.11),transparent_35%)]" />
         <div className="absolute -right-36 top-12 -z-10 h-[34rem] w-[34rem] rounded-full border border-white/[0.08] sm:right-[-8rem]">
@@ -584,11 +584,11 @@ export default function ResearchDevelopmentPage() {
       {navigationSections.length > 0 && (
         <nav
           aria-label={copy.text[9]}
-          className="border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900/60"
+          className="border-b border-slate-200 bg-white  "
         >
           <div className="mx-auto max-w-7xl px-5 py-8 sm:px-8 lg:px-10">
             <details>
-              <summary className="cursor-pointer list-none text-xs font-black uppercase tracking-[0.24em] text-emerald-800 marker:hidden dark:text-emerald-300">
+              <summary className="cursor-pointer list-none text-xs font-black uppercase tracking-[0.24em] text-emerald-800 marker:hidden ">
                 {copy.text[10]}
                 <span className="ml-2 font-medium normal-case tracking-normal text-slate-500">
                   {copy.text[11]}
@@ -600,12 +600,12 @@ export default function ResearchDevelopmentPage() {
                   <li key={heading.id}>
                     <a
                       href={`#${heading.id}`}
-                      className="group flex gap-3 rounded-xl border border-slate-200 bg-[#f7f8f2] px-3 py-2.5 text-md leading-6 text-slate-700 transition hover:border-emerald-300 hover:bg-emerald-50 dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-300 dark:hover:border-emerald-700 dark:hover:bg-emerald-950/30"
+                      className="group flex gap-3 rounded-xl border border-slate-200 bg-[#f7f8f2] px-3 py-2.5 text-md leading-6 text-slate-700 transition hover:border-emerald-300 hover:bg-emerald-50     "
                     >
-                      <span className="font-mono text-xs font-bold text-emerald-700 dark:text-emerald-300">
+                      <span className="font-mono text-xs font-bold text-emerald-700 ">
                         {String(index + 1).padStart(2, "0")}
                       </span>
-                      <span className="group-hover:text-emerald-800 dark:group-hover:text-emerald-200">
+                      <span className="group-hover:text-emerald-800 ">
                         {heading.text}
                       </span>
                     </a>
@@ -625,12 +625,12 @@ export default function ResearchDevelopmentPage() {
             className={
               sectionIndex % 2 === 0
                 ? "scroll-mt-8"
-                : "scroll-mt-8 border-y border-slate-200 bg-white/70 dark:border-slate-800 dark:bg-slate-900/30"
+                : "scroll-mt-8 border-y border-slate-200 bg-white/70  "
             }
           >
             <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16 lg:px-10">
               {section.heading && (
-                <div className="mb-8 grid gap-4 border-b border-emerald-900/10 pb-6 sm:grid-cols-[auto_1fr] sm:items-start dark:border-white/10">
+                <div className="mb-8 grid gap-4 border-b border-emerald-900/10 pb-6 sm:grid-cols-[auto_1fr] sm:items-start ">
                   <span className="flex h-11 w-11 items-center justify-center rounded-full bg-emerald-900 font-mono text-md font-bold text-lime-300">
                     {String(
                       navigationSections.findIndex(
@@ -638,7 +638,7 @@ export default function ResearchDevelopmentPage() {
                       ) + 1,
                     ).padStart(2, "0")}
                   </span>
-                  <h2 className="max-w-4xl text-3xl font-black leading-tight tracking-tight text-slate-950 dark:text-white sm:text-4xl">
+                  <h2 className="max-w-4xl text-3xl font-black leading-tight tracking-tight text-slate-950  sm:text-4xl">
                     <InlineContent text={section.heading.text} />
                   </h2>
                 </div>

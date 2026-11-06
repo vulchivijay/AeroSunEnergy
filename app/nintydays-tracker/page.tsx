@@ -16,7 +16,7 @@ export default function NinetyDayTrackerPage() {
   const trackerPage = t.ninetyDayTrackerPage;
 
   return (
-    <main className="overflow-hidden bg-[#f5f0e7] text-[#202b43] dark:bg-[#111827] dark:text-slate-100">
+    <main className="overflow-hidden bg-[#f5f0e7] text-[#202b43]  ">
       <section
         id="tracker"
         className="relative isolate overflow-hidden bg-[#19243d] text-white"
@@ -132,13 +132,13 @@ export default function NinetyDayTrackerPage() {
         </div>
       </section>
 
-      <section className="bg-[#e7e9f1] px-5 py-14 dark:bg-[#1b2437] sm:px-8 sm:py-20 lg:px-10">
+      <section className="bg-[#e7e9f1] px-5 py-14  sm:px-8 sm:py-20 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10">
-            <p className="text-[12px] font-black uppercase tracking-[0.24em] text-[#9b4b42] dark:text-[#ffac91]">
+            <p className="text-[12px] font-black uppercase tracking-[0.24em] text-[#9b4b42] ">
               Clear 90-day plan
             </p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-black leading-tight tracking-[0.055em] text-[#202b43] dark:text-white sm:text-4xl">
+            <h2 className="mt-4 max-w-3xl text-3xl font-black leading-tight tracking-[0.055em] text-[#202b43]  sm:text-4xl">
               The execution plan is simple: generate revenue, secure funding,
               validate product, and scale only after demand is proven.
             </h2>
@@ -148,17 +148,17 @@ export default function NinetyDayTrackerPage() {
             {trackerPage.actionPlan.map((stage, index) => (
               <div
                 key={stage.title}
-                className="rounded-[1.5rem] border border-[#c9cde0] bg-[#fbfaf7] p-5 shadow-[0_20px_45px_-35px_rgba(25,36,61,0.25)] dark:border-[#3d4863] dark:bg-[#222d43]"
+                className="rounded-[1.5rem] border border-[#c9cde0] bg-[#fbfaf7] p-5 shadow-[0_20px_45px_-35px_rgba(25,36,61,0.25)]  "
               >
                 <div className="mb-4 flex items-center gap-3">
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-linear-to-br from-[#f2b84b] to-[#ed7357] text-md font-black text-[#30243a]">
                     {index + 1}
                   </span>
-                  <h3 className="text-xl font-black text-[#202b43] dark:text-white">
+                  <h3 className="text-xl font-black text-[#202b43] ">
                     {stage.title}
                   </h3>
                 </div>
-                <ul className="space-y-3 text-sm leading-7 text-[#4c566d] dark:text-[#d4d9e5]">
+                <ul className="space-y-3 text-sm leading-7 text-[#4c566d] ">
                   {stage.points.map((point) => (
                     <li key={point} className="flex items-start gap-3">
                       <span
@@ -178,24 +178,24 @@ export default function NinetyDayTrackerPage() {
       <section className="mx-auto max-w-7xl px-5 pb-14 sm:px-8 sm:pb-20 lg:px-10">
         <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
           <div>
-            <p className="text-[12px] font-black uppercase tracking-[0.24em] text-[#9b4b42] dark:text-[#ffac91]">
+            <p className="text-[12px] font-black uppercase tracking-[0.24em] text-[#9b4b42] ">
               What&apos;s included?
             </p>
-            <h2 className="mt-4 max-w-md text-3xl font-black leading-tight tracking-[0.055em] text-[#202b43] dark:text-white sm:text-4xl">
+            <h2 className="mt-4 max-w-md text-3xl font-black leading-tight tracking-[0.055em] text-[#202b43]  sm:text-4xl">
               Business execution workbook
             </h2>
             <div className="mt-6 h-1 w-16 rounded-full bg-[#ed7357]" />
           </div>
 
-          <div className="overflow-hidden rounded-[1.75rem] border border-[#d8cdbb] bg-[#fffdf8] shadow-[0_24px_60px_-40px_rgba(25,36,61,0.3)] dark:border-[#3d4863] dark:bg-[#222d43]">
+          <div className="overflow-hidden rounded-[1.75rem] border border-[#d8cdbb] bg-[#fffdf8] shadow-[0_24px_60px_-40px_rgba(25,36,61,0.3)]  ">
             <div className="overflow-x-auto">
-              <table className="min-w-full text-left text-sm text-[#4c566d] dark:text-[#d4d9e5]">
-                <thead className="bg-[#f0e6d8] text-[#202b43] dark:bg-[#303a52] dark:text-white">
+              <table className="min-w-full text-left text-sm text-[#4c566d] ">
+                <thead className="bg-[#f0e6d8] text-[#202b43]  ">
                   <tr>
-                    <th className="px-5 py-4 font-black uppercase tracking-[0.16em] text-[#9b4b42] dark:text-[#ffac91]">
+                    <th className="px-5 py-4 font-black uppercase tracking-[0.16em] text-[#9b4b42] ">
                       Sheet
                     </th>
-                    <th className="px-5 py-4 font-black uppercase tracking-[0.16em] text-[#9b4b42] dark:text-[#ffac91]">
+                    <th className="px-5 py-4 font-black uppercase tracking-[0.16em] text-[#9b4b42] ">
                       Purpose
                     </th>
                   </tr>
@@ -204,9 +204,9 @@ export default function NinetyDayTrackerPage() {
                   {trackerPage.sheetRows.map(([sheet, purpose]) => (
                     <tr
                       key={sheet}
-                      className="border-t border-[#e5ded2] dark:border-[#3d4863]"
+                      className="border-t border-[#e5ded2] "
                     >
-                      <td className="px-5 py-4 font-bold text-[#202b43] dark:text-white">
+                      <td className="px-5 py-4 font-bold text-[#202b43] ">
                         {sheet}
                       </td>
                       <td className="px-5 py-4">{purpose}</td>
@@ -219,12 +219,12 @@ export default function NinetyDayTrackerPage() {
         </div>
       </section>
 
-      <section className="bg-[#f5f0e7] px-5 py-14 dark:bg-[#111827] sm:px-8 sm:pb-20 lg:px-10">
-        <div className="mx-auto max-w-7xl rounded-[2rem] border border-[#e5b997] bg-[#f7e3d3] p-7 shadow-[0_24px_60px_-40px_rgba(237,115,87,0.35)] dark:border-[#754a4c] dark:bg-[#332b38]">
-          <p className="text-[12px] font-black uppercase tracking-[0.28em] text-[#9b4b42] dark:text-[#ffac91]">
+      <section className="bg-[#f5f0e7] px-5 py-14  sm:px-8 sm:pb-20 lg:px-10">
+        <div className="mx-auto max-w-7xl rounded-[2rem] border border-[#e5b997] bg-[#f7e3d3] p-7 shadow-[0_24px_60px_-40px_rgba(237,115,87,0.35)]  ">
+          <p className="text-[12px] font-black uppercase tracking-[0.28em] text-[#9b4b42] ">
             Preconfigured assumptions
           </p>
-          <ul className="mt-6 space-y-3 text-lg leading-8 text-[#3d3442] dark:text-[#f1e7e5]">
+          <ul className="mt-6 space-y-3 text-lg leading-8 text-[#3d3442] ">
             {trackerPage.assumptionItems.map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <span
@@ -238,13 +238,13 @@ export default function NinetyDayTrackerPage() {
         </div>
       </section>
 
-      <section className="bg-[#e5efed] px-5 py-14 dark:bg-[#172b32] sm:px-8 sm:pb-20 lg:px-10">
+      <section className="bg-[#e5efed] px-5 py-14  sm:px-8 sm:pb-20 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8">
-            <p className="text-[12px] font-black uppercase tracking-[0.24em] text-[#a34f41] dark:text-[#ffac91]">
+            <p className="text-[12px] font-black uppercase tracking-[0.24em] text-[#a34f41] ">
               90-day action plan
             </p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-black leading-tight tracking-[0.055em] text-[#202b43] dark:text-white sm:text-4xl">
+            <h2 className="mt-4 max-w-3xl text-3xl font-black leading-tight tracking-[0.055em] text-[#202b43]  sm:text-4xl">
               A practical timeline from business preparation to technology and
               funding
             </h2>
@@ -254,7 +254,7 @@ export default function NinetyDayTrackerPage() {
             {trackerPage.phases.map((phase, index) => (
               <article
                 key={phase.period}
-                className="overflow-hidden rounded-[1.75rem] border border-[#bdcfcd] bg-[#fbfaf7] shadow-[0_20px_45px_-35px_rgba(25,36,61,0.25)] dark:border-[#3d5a62] dark:bg-[#222d43]"
+                className="overflow-hidden rounded-[1.75rem] border border-[#bdcfcd] bg-[#fbfaf7] shadow-[0_20px_45px_-35px_rgba(25,36,61,0.25)]  "
               >
                 <div className="flex flex-wrap items-center gap-3 bg-[#273854] px-5 py-4 text-white">
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#f2b84b] text-md font-black text-[#30243a]">
@@ -268,7 +268,7 @@ export default function NinetyDayTrackerPage() {
                   </div>
                 </div>
                 <div className="p-5">
-                  <ul className="space-y-3 text-sm leading-7 text-[#4c566d] dark:text-[#d4d9e5]">
+                  <ul className="space-y-3 text-sm leading-7 text-[#4c566d] ">
                     {phase.actions.map((action) => (
                       <li key={action} className="flex items-start gap-3">
                         <span
@@ -280,21 +280,21 @@ export default function NinetyDayTrackerPage() {
                     ))}
                   </ul>
                   {"target" in phase && (
-                    <div className="mt-5 rounded-2xl border border-[#e5b997] bg-[#f7e3d3] p-4 dark:border-[#754a4c] dark:bg-[#332b38]">
-                      <p className="font-bold text-[#723f3d] dark:text-[#ffd0b6]">
+                    <div className="mt-5 rounded-2xl border border-[#e5b997] bg-[#f7e3d3] p-4  ">
+                      <p className="font-bold text-[#723f3d] ">
                         {phase.target}
                       </p>
-                      <p className="mt-1 text-md text-[#784f4a] dark:text-[#e8c2b9]">
+                      <p className="mt-1 text-md text-[#784f4a] ">
                         {phase.note}
                       </p>
                     </div>
                   )}
                   {"outcome" in phase && (
-                    <div className="mt-5 rounded-2xl border border-[#bdcfcd] bg-[#e5efed] p-4 dark:border-[#3d5a62] dark:bg-[#172b32]">
-                      <p className="text-[12px] font-black uppercase tracking-[0.18em] text-[#356c68] dark:text-[#8bd1c4]">
+                    <div className="mt-5 rounded-2xl border border-[#bdcfcd] bg-[#e5efed] p-4  ">
+                      <p className="text-[12px] font-black uppercase tracking-[0.18em] text-[#356c68] ">
                         Expected result
                       </p>
-                      <p className="mt-1 font-semibold text-[#293e4b] dark:text-[#e2f0ed]">
+                      <p className="mt-1 font-semibold text-[#293e4b] ">
                         {phase.outcome}
                       </p>
                     </div>
@@ -306,8 +306,8 @@ export default function NinetyDayTrackerPage() {
         </div>
       </section>
 
-      <section className="bg-[#19243d] px-5 py-14 text-white dark:bg-[#0d1424] sm:px-8 sm:pb-20 lg:px-10">
-        <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-[#263451] p-7 shadow-[0_24px_60px_-40px_rgba(0,0,0,0.55)] dark:bg-[#182238]">
+      <section className="bg-[#19243d] px-5 py-14 text-white  sm:px-8 sm:pb-20 lg:px-10">
+        <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-[#263451] p-7 shadow-[0_24px_60px_-40px_rgba(0,0,0,0.55)] ">
           <p className="text-[12px] font-black uppercase tracking-[0.28em] text-[#f2b84b]">
             Recommendation
           </p>

@@ -118,17 +118,17 @@ export function SolarEstimation() {
     const profitMargin = (annualSavings / Math.max(1, customerPayable)) * 100
 
     let profitStatus: Calculation['profitStatus'] = 'Low'
-    let profitTone = 'text-rose-700 dark:text-rose-300'
-    let badgeTone = 'bg-rose-500/10 text-rose-700 ring-rose-500/20 dark:text-rose-300'
+    let profitTone = 'text-rose-700 '
+    let badgeTone = 'bg-rose-500/10 text-rose-700 ring-rose-500/20 '
 
     if (profitMargin >= 20) {
       profitStatus = 'Excellent'
-      profitTone = 'text-emerald-700 dark:text-emerald-300'
-      badgeTone = 'bg-emerald-500/10 text-emerald-700 ring-emerald-500/20 dark:text-emerald-300'
+      profitTone = 'text-emerald-700 '
+      badgeTone = 'bg-emerald-500/10 text-emerald-700 ring-emerald-500/20 '
     } else if (profitMargin >= 10) {
       profitStatus = 'Average'
-      profitTone = 'text-amber-700 dark:text-amber-300'
-      badgeTone = 'bg-amber-500/10 text-amber-700 ring-amber-500/20 dark:text-amber-300'
+      profitTone = 'text-amber-700 '
+      badgeTone = 'bg-amber-500/10 text-amber-700 ring-amber-500/20 '
     }
 
     return {
@@ -384,14 +384,14 @@ function InputField({
   placeholder,
 }: InputFieldProps) {
   return (
-    <div className="rounded-[22px] border border-slate-200 bg-linear-to-b from-white via-slate-50 to-slate-100 p-4 shadow-[0_18px_35px_-30px_rgba(15,23,42,0.45)] transition-transform duration-200 hover:-translate-y-0.5 dark:border-white/10 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+    <div className="rounded-[22px] border border-slate-200 bg-linear-to-b from-white via-slate-50 to-slate-100 p-4 shadow-[0_18px_35px_-30px_rgba(15,23,42,0.45)] transition-transform duration-200 hover:-translate-y-0.5    ">
       <div className={`h-1.5 rounded-full bg-linear-to-r ${accentClass}`} aria-hidden="true" />
 
       <div className="mt-4 flex items-center justify-between gap-3">
-        <label htmlFor={name} className="text-[12px] font-bold uppercase tracking-[0.24em] text-slate-600 dark:text-slate-300">
+        <label htmlFor={name} className="text-[12px] font-bold uppercase tracking-[0.24em] text-slate-600 ">
           {label}
         </label>
-        <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[12px] font-bold uppercase tracking-[0.18em] text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
+        <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[12px] font-bold uppercase tracking-[0.18em] text-emerald-700  ">
           {suffix}
         </span>
       </div>
@@ -404,15 +404,15 @@ function InputField({
         {...register}
         aria-invalid={Boolean(error)}
         aria-describedby={`${name}-help${error ? ` ${name}-error` : ''}`}
-        className={`mt-3 w-full rounded-2xl border px-4 py-3 text-sm font-semibold text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 dark:text-white dark:placeholder:text-slate-400 ${error ? 'border-rose-400 bg-rose-50/80 dark:border-rose-500/40 dark:bg-rose-950/25' : 'border-slate-200 bg-white/90 dark:border-white/10 dark:bg-slate-950/60'}`}
+        className={`mt-3 w-full rounded-2xl border px-4 py-3 text-sm font-semibold text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100   ${error ? 'border-rose-400 bg-rose-50/80  ' : 'border-slate-200 bg-white/90  '}`}
       />
 
-      <p id={`${name}-help`} className="mt-2 text-md leading-5 text-slate-500 dark:text-slate-400">
+      <p id={`${name}-help`} className="mt-2 text-md leading-5 text-slate-500 ">
         {helperText}
       </p>
 
       {error && (
-        <p id={`${name}-error`} className="mt-2 text-md font-medium text-rose-600 dark:text-rose-300">
+        <p id={`${name}-error`} className="mt-2 text-md font-medium text-rose-600 ">
           {error}
         </p>
       )}
@@ -433,18 +433,18 @@ function ResultCard({
   value,
   detail,
   accentClass,
-  valueTone = 'text-custom-deep-blue dark:text-white',
+  valueTone = 'text-custom-deep-blue ',
 }: ResultCardProps) {
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white/82 p-4 shadow-sm dark:border-white/10 dark:bg-slate-950/45">
+    <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white/82 p-4 shadow-sm  ">
       <div className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r ${accentClass}`} aria-hidden="true" />
-      <p className="text-md font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
+      <p className="text-md font-semibold uppercase tracking-[0.28em] text-slate-500 ">
         {title}
       </p>
       <p className={`mt-3 text-2xl font-semibold tracking-tight ${valueTone}`}>
         {value}
       </p>
-      <p className="mt-2 text-md leading-6 text-slate-500 dark:text-slate-400">
+      <p className="mt-2 text-md leading-6 text-slate-500 ">
         {detail}
       </p>
     </div>

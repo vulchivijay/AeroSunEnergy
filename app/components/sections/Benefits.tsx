@@ -28,7 +28,7 @@ export default function Benefits() {
 	}))
 
 	return (
-		<section id="benefits" className="px-4 sm:px-2 lg:px-12 py-16 md:py-24 bg-white dark:bg-gray-950 overflow-hidden">
+		<section id="benefits" className="px-4 sm:px-2 lg:px-12 py-16 md:py-24 bg-white  overflow-hidden">
 			<div className="max-w-7xl mx-auto">
 				<motion.div
 					className="text-center mb-12"
@@ -37,8 +37,8 @@ export default function Benefits() {
 					viewport={{ once: true }}
 					transition={{ duration: 0.4 }}
 				>
-					<span className="text-secondary font-semibold uppercase tracking-widest text-lg text-gray-900 dark:text-gray-100">{b.sectionBadge}</span>
-					<h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-gray-100">
+					<span className="text-secondary font-semibold uppercase tracking-widest text-lg text-gray-900 ">{b.sectionBadge}</span>
+					<h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 ">
 						{b.heading}
 					</h2>
 					<div className="mt-4 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary" />
@@ -54,7 +54,7 @@ export default function Benefits() {
 				>
 					<div className="relative max-w-7xl mx-auto">
 						<div className="absolute inset-0 bg-linear-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-md blur-3xl" aria-hidden="true" />
-						<div className="relative overflow-hidden rounded-md border border-white/20 bg-white/90 shadow-2xl backdrop-blur-sm dark:border-white/10 dark:bg-slate-950/90">
+						<div className="relative overflow-hidden rounded-md border border-white/20 bg-white/90 shadow-2xl backdrop-blur-sm  ">
 							<div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-md font-semibold uppercase tracking-widest text-white backdrop-blur-md">
 								{b.imageBadge}
 							</div>
@@ -92,11 +92,11 @@ export default function Benefits() {
 						>
 							<Card className={`flex h-full w-full hover:shadow-lg hover:scale-105 transition-all duration-150 ${ben.bg} ${ben.border}`}>
 								<CardContent className="flex h-full w-full flex-col">
-									<div className="mb-5 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white dark:bg-gray-700 shadow-sm">
+									<div className="mb-5 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white  shadow-sm">
 										{ben.icon}
 									</div>
-									<h3 className="mb-3 text-lg font-bold text-gray-900 dark:text-gray-100">{ben.title}</h3>
-									<p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">{ben.desc}</p>
+									<h3 className="mb-3 text-lg font-bold text-gray-900 ">{ben.title}</h3>
+									<p className="text-lg leading-relaxed text-gray-700 ">{ben.desc}</p>
 								</CardContent>
 							</Card>
 						</motion.div>
