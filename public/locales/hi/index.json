@@ -1243,6 +1243,58 @@
                     "chipClass": "text-emerald-50",
                     "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
                     "image": "/images/slider/slider-8.png"
+                },
+                {
+                    "badge": "कृषि पवन ऊर्जा",
+                    "title": "खेतों और जल प्रणालियों के लिए पवन ऊर्जा",
+                    "description": "साइट मूल्यांकन में पर्याप्त पवन संसाधन पाए जाने पर छोटे पवन टर्बाइन सिंचाई, जल पंपिंग और दूरस्थ कृषि संचालन में ऊर्जा योजना का पूरक बन सकते हैं।",
+                    "tags": [
+                        "कृषि",
+                        "साइट मूल्यांकन"
+                    ],
+                    "badgeClass": "text-lime-100",
+                    "chipClass": "text-lime-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-9.png"
+                },
+                {
+                    "badge": "पवन संसाधन मूल्यांकन",
+                    "title": "पवन संसाधन के आधार पर परियोजना योजना",
+                    "description": "पवन की स्थिति, भूभाग, पहुँच और ऊर्जा मांग की समीक्षा से यह तय करने में मदद मिलती है कि किसी स्थान पर पवन ऊर्जा स्थापना व्यावहारिक है या नहीं।",
+                    "tags": [
+                        "व्यवहार्यता",
+                        "संसाधन समीक्षा"
+                    ],
+                    "badgeClass": "text-cyan-100",
+                    "chipClass": "text-cyan-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-10.png"
+                },
+                {
+                    "badge": "पवन और भंडारण",
+                    "title": "बैटरी भंडारण के साथ पवन ऊर्जा",
+                    "description": "उपयुक्त भंडारण और नियंत्रण के साथ पवन उत्पादन जोड़ने से अधिक स्थिर ऊर्जा उपयोग में मदद मिल सकती है; यह सिस्टम आकार और तकनीकी समीक्षा पर निर्भर करता है।",
+                    "tags": [
+                        "बैटरी भंडारण",
+                        "सिस्टम डिज़ाइन"
+                    ],
+                    "badgeClass": "text-violet-100",
+                    "chipClass": "text-violet-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-11.png"
+                },
+                {
+                    "badge": "वितरित पवन ऊर्जा",
+                    "title": "जुड़े हुए समुदायों के लिए पवन प्रणालियाँ",
+                    "description": "नवीकरणीय ऊर्जा मिश्रण चाहने वाले समुदायों और सुविधाओं के लिए वितरित पवन ऊर्जा पर सौर और ग्रिड आपूर्ति के साथ विचार किया जा सकता है।",
+                    "tags": [
+                        "वितरित ऊर्जा",
+                        "स्थान आधारित"
+                    ],
+                    "badgeClass": "text-amber-100",
+                    "chipClass": "text-amber-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-12.png"
                 }
             ]
         },
@@ -1462,6 +1514,58 @@
                     "chipClass": "text-violet-50",
                     "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
                     "image": "/images/slider/slider-14.png"
+                },
+                {
+                    "badge": "सौर, पवन और भंडारण",
+                    "title": "नवीकरणीय ऊर्जा का संतुलित मिश्रण",
+                    "description": "पूरक ऊर्जा स्रोतों को भंडारण के साथ जोड़ने से समन्वित सिस्टम डिज़ाइन द्वारा ऊर्जा आपूर्ति को साइट की मांग के अनुरूप बनाया जा सकता है।",
+                    "tags": [
+                        "एकीकृत प्रणालियाँ",
+                        "ऊर्जा संतुलन"
+                    ],
+                    "badgeClass": "text-amber-100",
+                    "chipClass": "text-amber-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-15.png"
+                },
+                {
+                    "badge": "विश्वसनीय ऊर्जा",
+                    "title": "महत्वपूर्ण लोड के लिए हाइब्रिड ऊर्जा",
+                    "description": "उचित रूप से डिज़ाइन किया गया हाइब्रिड सिस्टम ग्रिड बाधाओं के दौरान निरंतरता बनाए रखने के लिए ऊर्जा उत्पादन, बैटरी भंडारण और प्राथमिकता वाले लोड का समन्वय कर सकता है।",
+                    "tags": [
+                        "बैकअप योजना",
+                        "प्राथमिकता वाले लोड"
+                    ],
+                    "badgeClass": "text-sky-100",
+                    "chipClass": "text-sky-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-16.png"
+                },
+                {
+                    "badge": "ऊर्जा प्रबंधन",
+                    "title": "उत्पादन, भंडारण और मांग का समन्वय",
+                    "description": "निगरानी और नियंत्रण रणनीतियाँ नवीकरणीय उत्पादन तथा संग्रहित ऊर्जा को बदलते खपत पैटर्न के अनुरूप करने में मदद करती हैं।",
+                    "tags": [
+                        "स्मार्ट निगरानी",
+                        "लोड प्रबंधन"
+                    ],
+                    "badgeClass": "text-emerald-100",
+                    "chipClass": "text-emerald-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-17.png"
+                },
+                {
+                    "badge": "जुड़ी हुई ऊर्जा प्रणालियाँ",
+                    "title": "घरों और व्यवसायों के लिए हाइब्रिड समाधान",
+                    "description": "सौर, पवन, भंडारण और ग्रिड कनेक्शन को ग्राहक की आवश्यकताओं, साइट की स्थिति और तकनीकी व्यवहार्यता के अनुसार जोड़ा जा सकता है।",
+                    "tags": [
+                        "घर और व्यवसाय",
+                        "अनुकूलित डिज़ाइन"
+                    ],
+                    "badgeClass": "text-rose-100",
+                    "chipClass": "text-rose-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-18.png"
                 }
             ]
         },
@@ -1638,6 +1742,7 @@
             "subtitle": "प्राइवेट लिमिटेड",
             "motto": "सूर्य, पवन, जल, अग्नि से ऊर्जा।",
             "intro": "एक भारतीय नवीकरणीय ऊर्जा कंपनी है जो घरेलू, कृषि, वाणिज्यिक और दूर-दराज क्षेत्रों के लिए व्यवहारिक स्वच्छ ऊर्जा समाधान विकसित करने पर केंद्रित है।",
+            "downloadLabel": "कंपनी प्रोफाइल डाउनलोड करें (PDF)",
             "officeLabel": "पंजीकृत कार्यालय",
             "officeText": "डी.नो. 11-184, गोल्लावनिगुंटा, टी.एन. पल्लेम, तिरुपति, आंध्र प्रदेश – 517501, भारत",
             "cinLabel": "कॉर्पोरेट पहचान संख्या",
@@ -2653,7 +2758,8 @@
     },
     "notifications": {
         "badge": "अपडेट्स",
-        "dismiss": "नोटिफ़िकेशन बंद करें",
+        "toggleOpen": "नोटिफ़िकेशन दिखाएँ",
+        "toggleClose": "नोटिफ़िकेशन छिपाएँ",
         "text": "AeroSun Energy Private Limited सौर, पवन और हाइब्रिड ऊर्जा प्रणालियों के माध्यम से विश्वसनीय और टिकाऊ नवीकरणीय ऊर्जा समाधानों के लिए प्रतिबद्ध है।",
         "highlight": " हमारा व्यावसायिक दृष्टिकोण गुणवत्तापूर्ण उपकरणों की आपूर्ति, स्थापना और कार्यान्वयन का समर्थन करने पर केंद्रित है, ",
         "tail": "और ग्राहकों की आवश्यकताओं के अनुसार नवाचारपूर्ण ऊर्जा समाधान खोज रहे हैं। हम बढ़ते हुए अपनी तकनीकी क्षमताओं का विस्तार करना और स्वच्छ, अधिक टिकाऊ भविष्य में योगदान देने वाले उन्नत नवीकरणीय ऊर्जा समाधान विकसित करना चाहते हैं।"
@@ -7641,6 +7747,7 @@
             "titleAccent": "ऊर्जा समाधान",
             "tagline": "सूर्य, पवन, जल, अग्नि से शक्ति।",
             "description": "हर घर, खेत और व्यवसाय के लिए ऊर्जा आवश्यकताएँ अलग-अलग होती हैं। हमारा लक्ष्य सौर, पवन-ऊर्जा विकास, बैटरी भंडारण और एकीकृत नवीकरणीय-ऊर्जा प्रणालियों पर केंद्रित पोर्टफोलियो के साथ, बिजली की खपत, साइट की स्थिति, उपलब्ध संसाधनों और ग्राहक आवश्यकताओं के आधार पर डिज़ाइन किए गए अनुकूलित नवीकरणीय-ऊर्जा समाधान प्रदान करना है।",
+            "downloadLabel": "उत्पाद कैटलॉग डाउनलोड करें",
             "audiences": [
                 {
                     "label": "होम्स",
@@ -11911,7 +12018,7 @@
                 "violet": "text-violet-700"
             },
             "checkBackgrounds": {
-                "emerald": "bg-emerald-100 text-emerald-700",
+                "emerald": "bg-emerald-700 text-white",
                 "amber": "bg-amber-100 text-amber-700",
                 "sky": "bg-sky-100 text-sky-700",
                 "violet": "bg-violet-100 text-violet-700"
@@ -12103,7 +12210,7 @@
                 "amber": "text-amber-700"
             },
             "checkBackgrounds": {
-                "emerald": "bg-emerald-100 text-emerald-700",
+                "emerald": "bg-emerald-700 text-white",
                 "sky": "bg-sky-100 text-sky-700",
                 "violet": "bg-violet-100 text-violet-700",
                 "amber": "bg-amber-100 text-amber-700"
@@ -12129,7 +12236,7 @@
             },
             "checkBackgrounds": {
                 "sky": "bg-sky-100 text-sky-700",
-                "emerald": "bg-emerald-100 text-emerald-700",
+                "emerald": "bg-emerald-700 text-white",
                 "amber": "bg-amber-100 text-amber-700",
                 "violet": "bg-violet-100 text-violet-700"
             },

@@ -5464,6 +5464,58 @@
                     "chipClass": "text-emerald-50",
                     "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
                     "image": "/images/slider/slider-8.png"
+                },
+                {
+                    "badge": "Agricultural wind",
+                    "title": "Wind Energy for Farms and Water Systems",
+                    "description": "Small wind turbines can complement farm energy plans for irrigation, water pumping, and remote operations when site assessment confirms a suitable resource.",
+                    "tags": [
+                        "Agriculture",
+                        "Site assessed"
+                    ],
+                    "badgeClass": "text-lime-100",
+                    "chipClass": "text-lime-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-9.png"
+                },
+                {
+                    "badge": "Wind resource assessment",
+                    "title": "Plan Wind Projects Around the Resource",
+                    "description": "A careful review of wind conditions, terrain, access, and energy demand helps determine whether a wind installation is practical for a site.",
+                    "tags": [
+                        "Feasibility",
+                        "Resource review"
+                    ],
+                    "badgeClass": "text-cyan-100",
+                    "chipClass": "text-cyan-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-10.png"
+                },
+                {
+                    "badge": "Wind and storage",
+                    "title": "Wind Generation with Battery Storage",
+                    "description": "Pairing wind generation with suitable storage and controls can support more consistent energy use, subject to system sizing and technical review.",
+                    "tags": [
+                        "Battery storage",
+                        "System design"
+                    ],
+                    "badgeClass": "text-violet-100",
+                    "chipClass": "text-violet-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-11.png"
+                },
+                {
+                    "badge": "Distributed wind",
+                    "title": "Wind Systems for Connected Communities",
+                    "description": "Distributed wind can be considered alongside solar and grid supply for communities and facilities seeking a site-specific renewable energy mix.",
+                    "tags": [
+                        "Distributed energy",
+                        "Site specific"
+                    ],
+                    "badgeClass": "text-amber-100",
+                    "chipClass": "text-amber-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-12.png"
                 }
             ]
         },
@@ -5683,6 +5735,58 @@
                     "chipClass": "text-violet-50",
                     "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
                     "image": "/images/slider/slider-14.png"
+                },
+                {
+                    "badge": "Solar, wind and storage",
+                    "title": "A Balanced Mix of Renewable Energy",
+                    "description": "Combining complementary generation sources with storage can help match energy supply to site demand through coordinated system design.",
+                    "tags": [
+                        "Integrated systems",
+                        "Energy balance"
+                    ],
+                    "badgeClass": "text-amber-100",
+                    "chipClass": "text-amber-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-15.png"
+                },
+                {
+                    "badge": "Resilient power",
+                    "title": "Hybrid Energy for Essential Loads",
+                    "description": "A suitably designed hybrid system can coordinate generation, battery storage, and priority loads to support continuity during grid interruptions.",
+                    "tags": [
+                        "Backup planning",
+                        "Priority loads"
+                    ],
+                    "badgeClass": "text-sky-100",
+                    "chipClass": "text-sky-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-16.png"
+                },
+                {
+                    "badge": "Energy management",
+                    "title": "Coordinate Generation, Storage and Demand",
+                    "description": "Monitoring and control strategies help align renewable generation and stored energy with changing consumption patterns.",
+                    "tags": [
+                        "Smart monitoring",
+                        "Load management"
+                    ],
+                    "badgeClass": "text-emerald-100",
+                    "chipClass": "text-emerald-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-17.png"
+                },
+                {
+                    "badge": "Connected energy systems",
+                    "title": "Hybrid Solutions for Homes and Businesses",
+                    "description": "Solar, wind, storage, and grid connections can be combined to suit customer requirements, site conditions, and technical feasibility.",
+                    "tags": [
+                        "Homes and businesses",
+                        "Custom designed"
+                    ],
+                    "badgeClass": "text-rose-100",
+                    "chipClass": "text-rose-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-18.png"
                 }
             ]
         },
@@ -5864,6 +5968,7 @@
             "subtitle": "Private Limited",
             "motto": "Power from Sun, Wind, Water, Fire.",
             "intro": "An Indian renewable-energy company focused on developing and delivering practical clean-energy solutions using solar and wind power for households, agriculture, businesses and remote communities.",
+            "downloadLabel": "Download company profile (PDF)",
             "officeLabel": "Registered office",
             "officeText": "D.No. 11-184, Gollavanigunta, T.N. Pallem, Tirupati, Andhra Pradesh – 517501, India",
             "cinLabel": "Corporate identity number",
@@ -7336,6 +7441,7 @@
             "titleAccent": "Energy Solutions",
             "tagline": "Power from Sun, Wind, Water, Fire.",
             "description": "Energy requirements differ for every home, farm and business. We aim to provide customised renewable-energy solutions designed around electricity consumption, site conditions, available resources and customer requirements, with a portfolio focused on solar, wind-energy development, battery storage and integrated renewable-energy systems.",
+            "downloadLabel": "Download product catalogue",
             "audiences": [
                 {
                     "label": "Homes",
@@ -8574,7 +8680,8 @@
     },
     "notifications": {
         "badge": "Updates",
-        "dismiss": "Dismiss notification",
+        "toggleOpen": "Show notification",
+        "toggleClose": "Hide notification",
         "text": "AeroSun Energy Private Limited is committed to providing reliable and sustainable renewable energy solutions through solar, wind, and hybrid energy systems.",
         "highlight": " Our business approach focuses on sourcing quality equipment, supporting installation and implementation, ",
         "tail": "and exploring innovative energy solutions tailored to customer needs. As we grow, we aim to expand our technical capabilities and develop advanced renewable energy solutions that contribute to a cleaner, more sustainable future."
@@ -11911,7 +12018,7 @@
                 "violet": "text-violet-700"
             },
             "checkBackgrounds": {
-                "emerald": "bg-emerald-100 text-emerald-700",
+                "emerald": "bg-emerald-700 text-white",
                 "amber": "bg-amber-100 text-amber-700",
                 "sky": "bg-sky-100 text-sky-700",
                 "violet": "bg-violet-100 text-violet-700"
@@ -12103,7 +12210,7 @@
                 "amber": "text-amber-700"
             },
             "checkBackgrounds": {
-                "emerald": "bg-emerald-100 text-emerald-700",
+                "emerald": "bg-emerald-700 text-white",
                 "sky": "bg-sky-100 text-sky-700",
                 "violet": "bg-violet-100 text-violet-700",
                 "amber": "bg-amber-100 text-amber-700"
@@ -12129,7 +12236,7 @@
             },
             "checkBackgrounds": {
                 "sky": "bg-sky-100 text-sky-700",
-                "emerald": "bg-emerald-100 text-emerald-700",
+                "emerald": "bg-emerald-700 text-white",
                 "amber": "bg-amber-100 text-amber-700",
                 "violet": "bg-violet-100 text-violet-700"
             },

@@ -54,6 +54,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
   const [expandedMobileSubmenu, setExpandedMobileSubmenu] = useState<string | null>(null)
+  const [dismissedDesktopSubmenu, setDismissedDesktopSubmenu] = useState<string | null>(null)
   const headerRef = useRef<HTMLElement>(null)
   const languageOptions = t.navbar.languages as {
     code: Locale
@@ -247,10 +248,24 @@ export default function Navbar() {
       )
     }
 
+    const submenuDismissed = dismissedDesktopSubmenu === link.href
+
     return (
-      <div key={link.href} className="group/nav relative z-20">
+      <div
+        key={link.href}
+        className="group/nav relative z-20"
+        onMouseLeave={() => {
+          if (submenuDismissed) setDismissedDesktopSubmenu(null)
+        }}
+      >
         {parentLink}
-        <div className="invisible absolute left-1/2 top-full z-[70] min-w-52 -translate-x-1/2 pt-2 opacity-0 transition duration-150 group-hover/nav:visible group-hover/nav:opacity-100 group-focus-within/nav:visible group-focus-within/nav:opacity-100">
+        <div
+          className={`invisible absolute left-1/2 top-full z-[70] min-w-52 -translate-x-1/2 pt-2 opacity-0 transition duration-150 ${
+            submenuDismissed
+              ? ''
+              : 'group-hover/nav:visible group-hover/nav:opacity-100 group-focus-within/nav:visible group-focus-within/nav:opacity-100'
+          }`}
+        >
           <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-1.5 shadow-[0_20px_50px_-25px_rgba(0,0,0,0.35)]">
             {link.children.map((child) => {
               const childActive = pathname === child.href
@@ -259,6 +274,7 @@ export default function Navbar() {
                 <Link
                   key={child.href}
                   href={child.href}
+                  onClick={() => setDismissedDesktopSubmenu(link.href)}
                   aria-current={childActive ? 'page' : undefined}
                   className={`flex items-center rounded-lg px-3 py-2.5 text-left text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 ${
                     childActive
@@ -314,14 +330,13 @@ export default function Navbar() {
   return (
     <header
       ref={headerRef}
-      data-print-hide
       className="sticky top-0 z-50 bg-[linear-gradient(135deg,rgba(5,46,30,0.96),rgba(8,64,59,0.9),rgba(15,23,42,0.98))] text-white shadow-[0_18px_42px_-30px_rgba(3,18,12,0.9)]"
     >
       <div className="absolute -left-10 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-emerald-400/15 blur-3xl" />
       <div className="absolute -right-12 top-0 h-32 w-32 rounded-full bg-cyan-400/10 blur-3xl" />
 
       <div className="relative border-b border-white/[0.07] bg-[#04130f] text-[#e8ecd9] hidden">
-        <div className="mx-auto flex min-h-8 max-w-[90rem] items-center justify-between gap-3 px-3 py-1 text-[11px] font-semibold tracking-[0.08em] sm:px-6 sm:text-[11px] sm:tracking-[0.12em] lg:px-8">
+        <div className="mx-auto flex min-h-8 w-full items-center justify-between gap-3 px-3 py-1 text-[11px] font-semibold tracking-[0.08em] sm:px-6 sm:text-[11px] sm:tracking-[0.12em] lg:px-8">
           <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
             <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6b45e] shadow-[0_0_10px_rgba(214,180,94,0.65)]" aria-hidden="true" />
             {t.navbar.brandName}
@@ -333,7 +348,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="relative mx-auto flex min-h-[5.25rem] max-w-[90rem] items-center justify-between gap-1 px-3 py-2 sm:gap-3 sm:px-6 lg:px-8 max-[319px]:flex-wrap">
+      <div className="relative mx-auto flex min-h-[5.25rem] w-full items-center justify-between gap-1 px-3 py-2 sm:gap-3 sm:px-6 lg:px-8 max-[319px]:flex-wrap">
         <Logo compact />
 
         <nav aria-label={t.navbar.primaryNavigationLabel} className="hidden min-w-0 flex-1 items-center justify-center xl:flex">

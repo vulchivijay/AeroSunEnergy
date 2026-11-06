@@ -79,7 +79,7 @@ export function BankEMICalculator() {
               {labels.title}
               <span className="mt-1 block text-emerald-700">{labels.titleAccent}</span>
             </h2>
-            <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
+            <p className="mt-4 max-w-xl text-sm leading-7 text-slate-600 sm:text-lg">
               {labels.description}
             </p>
           </div>
@@ -109,8 +109,8 @@ export function BankEMICalculator() {
             <div className="space-y-8">
               <div>
                 <div className="mb-4 flex items-center justify-between gap-3">
-                  <label htmlFor="bank-emi-loan" className="text-md font-semibold text-slate-700 sm:text-base">{labels.loanAmount}</label>
-                  <output htmlFor="bank-emi-loan" className="rounded-xl bg-[#e6eefb] px-3 py-2 text-right text-md font-bold tabular-nums text-[#173c2b] sm:px-4 sm:text-base">
+                  <label htmlFor="bank-emi-loan" className="text-md font-semibold text-slate-700 sm:text-sm">{labels.loanAmount}</label>
+                  <output htmlFor="bank-emi-loan" className="rounded-xl bg-[#e6eefb] px-3 py-2 text-right text-md font-bold tabular-nums text-[#173c2b] sm:px-4 sm:text-sm">
                     {formatCurrency(loanAmount)}
                   </output>
                 </div>
@@ -133,8 +133,8 @@ export function BankEMICalculator() {
 
               <div>
                 <div className="mb-4 flex items-center justify-between gap-3">
-                  <label htmlFor="bank-emi-tenure" className="text-md font-semibold text-slate-700 sm:text-base">{labels.loanTenure}</label>
-                  <output htmlFor="bank-emi-tenure" className="rounded-xl bg-[#e6eefb] px-3 py-2 text-right text-md font-bold tabular-nums text-[#173c2b] sm:px-4 sm:text-base">
+                  <label htmlFor="bank-emi-tenure" className="text-md font-semibold text-slate-700 sm:text-sm">{labels.loanTenure}</label>
+                  <output htmlFor="bank-emi-tenure" className="rounded-xl bg-[#e6eefb] px-3 py-2 text-right text-md font-bold tabular-nums text-[#173c2b] sm:px-4 sm:text-sm">
                     {tenureYears} {tenureYears === 1 ? labels.year : labels.years}
                   </output>
                 </div>
@@ -157,8 +157,8 @@ export function BankEMICalculator() {
 
               <div>
                 <div className="mb-4 flex items-center justify-between gap-3">
-                  <label htmlFor="bank-emi-rate" className="text-md font-semibold text-slate-700 sm:text-base">{labels.interestRate}</label>
-                  <output htmlFor="bank-emi-rate" className="rounded-xl bg-[#e6eefb] px-3 py-2 text-right text-md font-bold tabular-nums text-[#173c2b] sm:px-4 sm:text-base">
+                  <label htmlFor="bank-emi-rate" className="text-md font-semibold text-slate-700 sm:text-sm">{labels.interestRate}</label>
+                  <output htmlFor="bank-emi-rate" className="rounded-xl bg-[#e6eefb] px-3 py-2 text-right text-md font-bold tabular-nums text-[#173c2b] sm:px-4 sm:text-sm">
                     {interestRate.toFixed(2)}% <span className="text-md font-medium text-slate-700">{labels.perAnnum}</span>
                   </output>
                 </div>
@@ -233,14 +233,14 @@ export function BankEMICalculator() {
                   <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-sm bg-lime-300" aria-hidden="true" />
                   <div className="min-w-0">
                     <p className="text-md text-white/80">{labels.principal}</p>
-                    <p className="mt-0.5 text-md font-semibold tabular-nums text-white sm:text-base">{formatCurrency(loanAmount)}</p>
+                    <p className="mt-0.5 text-md font-semibold tabular-nums text-white sm:text-sm">{formatCurrency(loanAmount)}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-sm bg-white/25" aria-hidden="true" />
                   <div className="min-w-0">
                     <p className="text-md text-white/80">{labels.totalInterest}</p>
-                    <p className="mt-0.5 text-md font-semibold tabular-nums text-white sm:text-base">{formatCurrency(calculation.totalInterest)}</p>
+                    <p className="mt-0.5 text-md font-semibold tabular-nums text-white sm:text-sm">{formatCurrency(calculation.totalInterest)}</p>
                   </div>
                 </div>
               </div>

@@ -1,9 +1,10 @@
 'use client'
 
 import { useLocale } from '@/lib/LocaleContext'
+import { getAccentOrDefault } from '@/lib/utils/utils'
+import { SharedHeroSlider, type HeroSliderSlide } from '../components/ui/SharedHeroSlider'
 import {
   OptimizedImage,
-  Slider,
   WindBenefitCard,
   WindCapacityTable,
   WindComparisonTable,
@@ -11,87 +12,6 @@ import {
   WindInfoPanel,
   WindSectionEyebrow,
 } from '../components/ui'
-
-type WindSlide = {
-  badge: string
-  title: string
-  description: string
-  image: string
-  tags: string[]
-  badgeClass: string
-  chipClass: string
-  panelClass: string
-}
-
-function getWindAccent(accent: string): 'sky' | 'emerald' | 'amber' | 'violet' {
-  switch (accent) {
-    case 'emerald':
-    case 'amber':
-    case 'violet':
-      return accent
-    default:
-      return 'sky'
-  }
-}
-
-function WindHeroSlider({ slides, ariaLabel }: { slides: WindSlide[]; ariaLabel: string }) {
-  const slideClass =
-    'group relative flex h-full w-full items-end justify-start overflow-hidden p-6 sm:p-8 lg:p-14 xl:p-18'
-
-  const slideOverlay =
-    'absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.32),transparent_24%),radial-gradient(circle_at_80%_20%,rgba(56,189,248,0.18),transparent_30%),linear-gradient(90deg,rgba(2,6,23,0.78)_0%,rgba(15,23,42,0.6)_40%,rgba(15,23,42,0.28)_100%)]'
-
-  return (
-    <Slider autoplay interval={5200} pauseOnHover ariaLabel={ariaLabel}>
-      {slides.map((slide, index) => (
-        <div key={slide.title} className={`${slide.panelClass} relative h-full w-full overflow-hidden`}>
-          <div className="absolute inset-0">
-            <OptimizedImage
-              src={slide.image}
-              alt={slide.title}
-              fill
-              priority={index === 0}
-              loading={index === 0 ? 'eager' : 'lazy'}
-              sizes="100vw"
-              className="object-cover object-center"
-              style={{ filter: 'saturate(1.12) brightness(0.68)' }}
-            />
-          </div>
-          <div className={`${slideOverlay} absolute inset-0`} />
-
-          <div className={slideClass}>
-            <div className="relative z-10 w-full max-w-3xl rounded-[28px] border border-white/15 bg-slate-950/30 p-4 shadow-[0_24px_60px_-30px_rgba(15,23,42,0.9)] backdrop-blur-[3px] sm:p-6 lg:p-8">
-              <span
-                className={`mb-4 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[12px] uppercase tracking-[0.28em] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.04)] ${slide.badgeClass}`}
-              >
-                {slide.badge}
-              </span>
-
-              <h1 className="max-w-2xl text-3xl font-black leading-none tracking-[0.06em] text-white sm:text-4xl lg:text-[4rem]">
-                {slide.title}
-              </h1>
-
-              <p className="mt-4 max-w-xl text-md leading-7 text-slate-100/95 sm:text-base lg:text-lg">
-                {slide.description}
-              </p>
-
-              <div className="mt-6 flex flex-wrap gap-2">
-                {slide.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className={`rounded-full border border-white/15 bg-slate-950/50 px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] ${slide.chipClass}`}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
-    </Slider>
-  )
-}
 
 export default function WindEnergyPage() {
   const { t } = useLocale()
@@ -107,7 +27,7 @@ export default function WindEnergyPage() {
   const serviceSectionsLocalized = windPage.sections
 
   return (
-    <main className="bg-[#f0f8fc] pt-6 sm:pt-8 text-slate-900 [&>section]:rounded-2xl [&>section]:border-l-4 [&>section]:border-l-sky-500">
+    <main className="bg-[#ffffff] pt-6 sm:pt-8 text-slate-900 [&>section]:rounded-2xl [&>section]:border-l-4 [&>section]:border-l-sky-500 overflow-hidden">
       <header className="relative mx-auto mb-6 max-w-7xl overflow-hidden rounded-[2.5rem] border border-slate-700 bg-[#0b1c2c] px-5 py-7 text-white shadow-[0_30px_75px_-42px_rgba(7,28,47,0.75)] sm:mb-8 sm:px-8 sm:py-9 lg:px-10 lg:py-11">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(125,211,252,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(125,211,252,0.055)_1px,transparent_1px)] bg-size-[36px_36px]" aria-hidden="true" />
         <div className="absolute inset-y-0 right-0 w-2/3 bg-[radial-gradient(ellipse_at_80%_48%,rgba(14,165,233,0.24),transparent_58%)]" aria-hidden="true" />
@@ -156,7 +76,7 @@ export default function WindEnergyPage() {
         </div>
       </header>
 
-      <WindHeroSlider slides={windSlidesLocalized} ariaLabel={windPage.labels.sliderAriaLabel} />
+      <SharedHeroSlider slides={windSlidesLocalized as HeroSliderSlide[]} ariaLabel={windPage.labels.sliderAriaLabel} interval={5200} />
 
       <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-sky-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.28)] sm:my-8 sm:p-8 lg:p-9">
         <div className="mb-8 max-w-3xl">
@@ -171,7 +91,7 @@ export default function WindEnergyPage() {
               title={type.title}
               description={type.description}
               points={type.highlights}
-              accent={getWindAccent(type.accent)}
+              accent={getAccentOrDefault(type.accent, ['emerald', 'amber', 'violet'] as const, 'sky')}
             />
           ))}
         </div>
@@ -195,7 +115,7 @@ export default function WindEnergyPage() {
                 <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-lg font-bold text-emerald-300">
                   {index + 1}
                 </div>
-                <p className="text-base leading-7 text-slate-100">{item}</p>
+                <p className="text-sm leading-7 text-slate-100">{item}</p>
               </div>
             ))}
           </div>
@@ -241,7 +161,7 @@ export default function WindEnergyPage() {
             <div>
               <WindSectionEyebrow>{windPage.strategy.eyebrow}</WindSectionEyebrow>
               <h2 className="mt-3 text-3xl font-bold text-slate-900">{windPage.strategy.title}</h2>
-              <div className="mt-6 space-y-5 text-base leading-7 text-slate-700">
+              <div className="mt-6 space-y-5 text-sm leading-7 text-slate-700">
                 <p>
                   {windPage.labels.strategyDescription[0]}
                 </p>
@@ -273,7 +193,7 @@ export default function WindEnergyPage() {
           {serviceSectionsLocalized.map((section) => (
             <div key={section.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="text-2xl font-bold text-slate-900">{section.title}</h3>
-              <p className="mt-2 text-base leading-7 text-slate-700">{section.heading}</p>
+              <p className="mt-2 text-sm leading-7 text-slate-700">{section.heading}</p>
               <p className="mt-4 text-md leading-6 text-slate-600">{section.overview}</p>
 
               <div className="mt-6 grid gap-4 sm:grid-cols-2">

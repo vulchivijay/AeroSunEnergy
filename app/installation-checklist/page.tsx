@@ -3,19 +3,14 @@
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { submitMailtoForm } from '@/lib/submitMailto'
+import { submitMailtoFormAndReset } from '@/lib/submitMailto'
 import { useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
+import { SharedFormField } from '@/app/components/forms/SharedFormField'
+import { createBusinessContactSchema } from '@/app/components/forms/businessContactSchema'
 
 const createChecklistSchema = (validation: typeof import('@/public/locales/en/index.json').businessForms.installationChecklist.validation) => z.object({
-	customerName: z.string().trim().min(2, validation.customerName),
-	companyName: z.string().trim().optional().or(z.literal('')),
-	email: z.string().trim().email(validation.email),
-	phone: z
-		.string()
-		.trim()
-		.min(10, validation.phoneLength)
-		.regex(/^[0-9+()\-\s]+$/, validation.phoneFormat),
+	...createBusinessContactSchema(validation).shape,
 	projectName: z.string().trim().min(3, validation.projectName),
 	siteLocation: z.string().trim().min(3, validation.siteLocation),
 	installationDate: z.string().min(1, validation.installationDate),
@@ -71,16 +66,15 @@ export default function InstallationChecklistPage() {
 			data.notes,
 		].join('\n')
 
-		const opened = submitMailtoForm({
+		submitMailtoFormAndReset({
 			to: 'customercare@aerosunenergy.in',
 			subject,
 			body,
-		})
-
-		reset(defaultValues)
-		setSubmitFeedback({
-			type: opened ? 'success' : 'error',
-			message: opened ? content.feedback.success : content.feedback.error,
+			defaultValues,
+			reset,
+			setFeedback: setSubmitFeedback,
+			successMessage: content.feedback.success,
+			errorMessage: content.feedback.error,
 		})
 	}
 
@@ -103,7 +97,7 @@ export default function InstallationChecklistPage() {
 							{labels.heroTitle}
 							<span className="mt-1 block text-amber-300">{labels.heroTitleAccent}</span>
 						</h1>
-						<p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-base sm:leading-8">
+						<p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-sm sm:leading-8">
 							{labels.heroDescription}
 						</p>
 					</div>
@@ -129,7 +123,7 @@ export default function InstallationChecklistPage() {
 							<span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-lg text-amber-800">i</span>
 							<div>
 								<p className="text-[12px] font-black uppercase tracking-[0.2em] text-amber-800">{labels.glanceTitle}</p>
-								<p className="mt-2 text-md leading-7 text-slate-600 sm:text-base">
+								<p className="mt-2 text-md leading-7 text-slate-600 sm:text-sm">
 									{labels.glanceDescription}
 								</p>
 							</div>
@@ -160,7 +154,7 @@ export default function InstallationChecklistPage() {
 									</span>
 									<div className="min-w-0 flex-1">
 										<h2 className="text-lg font-extrabold tracking-tight text-slate-950">{section.title}</h2>
-										<p className="mt-3 text-md leading-7 text-slate-600 sm:text-base">{section.text}</p>
+										<p className="mt-3 text-md leading-7 text-slate-600 sm:text-sm">{section.text}</p>
 										<ul className="mt-4 space-y-2.5">
 											{section.points.map((item) => (
 												<li key={item} className="flex items-start gap-3 text-md leading-6 text-slate-600">
@@ -294,20 +288,16 @@ type FieldProps = {
 
 function Field({ label, name, placeholder, type = 'text', register, error }: FieldProps) {
 	return (
-		<div>
-			<label htmlFor={name} className="mb-2 block text-md font-semibold text-slate-100">
-				{label}
-			</label>
-			<input
-				id={name}
-				type={type}
-				{...register(name)}
-				placeholder={placeholder}
-				aria-invalid={Boolean(error)}
-				aria-describedby={error ? `${name}-error` : undefined}
-				className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white placeholder:text-slate-300 outline-none transition-all duration-200 focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
-			/>
-			{error && <p id={`${name}-error`} className="mt-2 text-md text-rose-300">{error.message}</p>}
-		</div>
+		<SharedFormField
+			label={label}
+			name={name}
+			placeholder={placeholder}
+			type={type}
+			register={register}
+			error={error}
+			labelClassName="mb-2 block text-md font-semibold text-slate-100"
+			inputClassName="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white placeholder:text-slate-300 outline-none transition-all duration-200 focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
+			errorClassName="mt-2 text-md text-rose-300"
+		/>
 	)
 }

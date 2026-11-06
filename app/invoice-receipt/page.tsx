@@ -4,19 +4,14 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
-import { submitMailtoForm } from '@/lib/submitMailto'
+import { submitMailtoFormAndReset } from '@/lib/submitMailto'
 import { useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
+import { SharedFormField } from '@/app/components/forms/SharedFormField'
+import { createBusinessContactSchema } from '@/app/components/forms/businessContactSchema'
 
 const createInvoiceSchema = (validation: typeof import('@/public/locales/en/index.json').businessForms.invoiceReceipt.validation) => z.object({
-  customerName: z.string().trim().min(2, validation.customerName),
-  companyName: z.string().trim().optional().or(z.literal('')),
-  email: z.string().trim().email(validation.email),
-  phone: z
-    .string()
-    .trim()
-    .min(10, validation.phoneLength)
-    .regex(/^[0-9+()\-\s]+$/, validation.phoneFormat),
+  ...createBusinessContactSchema(validation).shape,
   invoiceNumber: z.string().trim().min(2, validation.invoiceNumber),
   projectName: z.string().trim().min(3, validation.projectName),
   invoiceDate: z.string().min(1, validation.invoiceDate),
@@ -70,16 +65,15 @@ export default function InvoiceReceiptPage() {
       data.receiptNote,
     ].join('\n')
 
-    const opened = submitMailtoForm({
+    submitMailtoFormAndReset({
       to: 'customercare@aerosunenergy.in',
       subject,
       body,
-    })
-
-    reset(defaultValues)
-    setSubmitFeedback({
-      type: opened ? 'success' : 'error',
-      message: opened ? content.feedback.success : content.feedback.error,
+      defaultValues,
+      reset,
+      setFeedback: setSubmitFeedback,
+      successMessage: content.feedback.success,
+      errorMessage: content.feedback.error,
     })
   }
 
@@ -93,7 +87,7 @@ export default function InvoiceReceiptPage() {
           <h1 className="mt-5 text-4xl font-black tracking-[0.06em] text-slate-900 sm:text-5xl">
             {labels.title}
           </h1>
-          <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-slate-600">
+          <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-slate-600">
             {labels.description}
           </p>
         </div>
@@ -285,20 +279,16 @@ type FieldProps = {
 
 function Field({ label, name, placeholder, type = 'text', register, error }: FieldProps) {
   return (
-    <div>
-      <label htmlFor={name} className="mb-2 block text-md font-semibold text-slate-100">
-        {label}
-      </label>
-      <input
-        id={name}
-        type={type}
-        {...register(name)}
-        placeholder={placeholder}
-        aria-invalid={Boolean(error)}
-        aria-describedby={error ? `${name}-error` : undefined}
-        className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
-      />
-      {error && <p id={`${name}-error`} className="mt-2 text-md text-rose-300">{error.message}</p>}
-    </div>
+    <SharedFormField
+      label={label}
+      name={name}
+      placeholder={placeholder}
+      type={type}
+      register={register}
+      error={error}
+      labelClassName="mb-2 block text-md font-semibold text-slate-100"
+      inputClassName="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
+      errorClassName="mt-2 text-md text-rose-300"
+    />
   )
 }

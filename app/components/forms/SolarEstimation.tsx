@@ -28,6 +28,16 @@ type Calculation = {
   badgeTone: string
 }
 
+const currencyFormatter = new Intl.NumberFormat('en-IN', {
+  style: 'currency',
+  currency: 'INR',
+  maximumFractionDigits: 0,
+  currencyDisplay: 'narrowSymbol',
+})
+
+const formatCurrency = (amount: number) =>
+  currencyFormatter.format(amount).replace('₹', '₹ ')
+
 export function SolarEstimation() {
   const { t } = useLocale()
   const monthlyUnitsInputId = useId()
@@ -89,8 +99,6 @@ export function SolarEstimation() {
   }, [monthlyUnits, installationCostPerKw, sellingPricePerKw, expectedInstallationCostPerKw, expectedSellingPricePerKw, setValue])
 
   const calculation: Calculation = (() => {
-    const recommendedKw = Math.max(1, Math.round(monthlyUnits / 120))
-
     let subsidy = 0
     if (recommendedKw === 1) {
       subsidy = 30000
@@ -110,17 +118,17 @@ export function SolarEstimation() {
     const profitMargin = (annualSavings / Math.max(1, customerPayable)) * 100
 
     let profitStatus: Calculation['profitStatus'] = 'Low'
-    let profitTone = 'text-rose-700 dark:text-rose-300'
-    let badgeTone = 'bg-rose-500/10 text-rose-700 ring-rose-500/20 dark:text-rose-300'
+    let profitTone = 'text-rose-700 '
+    let badgeTone = 'bg-rose-500/10 text-rose-700 ring-rose-500/20 '
 
     if (profitMargin >= 20) {
       profitStatus = 'Excellent'
-      profitTone = 'text-emerald-700 dark:text-emerald-300'
-      badgeTone = 'bg-emerald-500/10 text-emerald-700 ring-emerald-500/20 dark:text-emerald-300'
+      profitTone = 'text-emerald-700 '
+      badgeTone = 'bg-emerald-500/10 text-emerald-700 ring-emerald-500/20 '
     } else if (profitMargin >= 10) {
       profitStatus = 'Average'
-      profitTone = 'text-amber-700 dark:text-amber-300'
-      badgeTone = 'bg-amber-500/10 text-amber-700 ring-amber-500/20 dark:text-amber-300'
+      profitTone = 'text-amber-700 '
+      badgeTone = 'bg-amber-500/10 text-amber-700 ring-amber-500/20 '
     }
 
     return {
@@ -156,14 +164,6 @@ export function SolarEstimation() {
     accent: t.componentData.solarEstimation.summaryStatAccents[index],
   }))
 
-  const currency = (amount: number) =>
-    new Intl.NumberFormat('en-IN', {
-      style: 'currency',
-      currency: 'INR',
-      maximumFractionDigits: 0,
-      currencyDisplay: 'narrowSymbol',
-    }).format(amount).replace('₹', '₹ ')
-
   return (
     <section className="relative isolate overflow-hidden bg-[#fff4e8] px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
       <div className="mx-auto max-w-7xl">
@@ -190,7 +190,7 @@ export function SolarEstimation() {
                 <h2 className="text-[2rem] font-black tracking-tighter text-slate-900">
                   {e.estimateSavings}
                 </h2>
-                <p className="mt-2 text-base text-slate-600">{e.adjustUsage}</p>
+                <p className="mt-2 text-sm text-slate-600">{e.adjustUsage}</p>
               </div>
 
               <div className="space-y-4">
@@ -299,13 +299,13 @@ export function SolarEstimation() {
             <div className="space-y-5">
               <div>
                 <h2 className="text-[2rem] font-black tracking-tighter text-white">{e.returnsTitle}</h2>
-                <p className="mt-2 text-base text-emerald-50/90">{e.irradianceTariffAssumption}</p>
+                <p className="mt-2 text-sm text-emerald-50/90">{e.irradianceTariffAssumption}</p>
               </div>
 
               <div className="rounded-[22px] border border-white/15 bg-white/10 p-5 backdrop-blur-sm">
                 <div className="text-[12px] font-bold uppercase tracking-[0.3em] text-emerald-50">{e.annualSavings}</div>
                 <div className="mt-3 text-5xl font-black tracking-[0.08em] text-white">
-                  {calculation ? currency(calculation.profit) : '—'}
+                  {calculation ? formatCurrency(calculation.profit) : '—'}
                 </div>
               </div>
 
@@ -313,19 +313,19 @@ export function SolarEstimation() {
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
                   <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">{e.originalCost}</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
-                    {calculation ? currency(calculation.totalInstallationCost) : '—'}
+                    {calculation ? formatCurrency(calculation.totalInstallationCost) : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
                   <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">{e.subsidy}</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
-                    {calculation ? currency(calculation.subsidy) : '—'}
+                    {calculation ? formatCurrency(calculation.subsidy) : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
                   <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">{e.netCost}</div>
                   <div className="mt-3 text-[2rem] font-black tracking-[0.06em] text-white">
-                    {calculation ? currency(calculation.customerPayable) : '—'}
+                    {calculation ? formatCurrency(calculation.customerPayable) : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
@@ -384,14 +384,14 @@ function InputField({
   placeholder,
 }: InputFieldProps) {
   return (
-    <div className="rounded-[22px] border border-slate-200 bg-linear-to-b from-white via-slate-50 to-slate-100 p-4 shadow-[0_18px_35px_-30px_rgba(15,23,42,0.45)] transition-transform duration-200 hover:-translate-y-0.5 dark:border-white/10 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+    <div className="rounded-[22px] border border-slate-200 bg-linear-to-b from-white via-slate-50 to-slate-100 p-4 shadow-[0_18px_35px_-30px_rgba(15,23,42,0.45)] transition-transform duration-200 hover:-translate-y-0.5    ">
       <div className={`h-1.5 rounded-full bg-linear-to-r ${accentClass}`} aria-hidden="true" />
 
       <div className="mt-4 flex items-center justify-between gap-3">
-        <label htmlFor={name} className="text-[12px] font-bold uppercase tracking-[0.24em] text-slate-600 dark:text-slate-300">
+        <label htmlFor={name} className="text-[12px] font-bold uppercase tracking-[0.24em] text-slate-600 ">
           {label}
         </label>
-        <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[12px] font-bold uppercase tracking-[0.18em] text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
+        <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[12px] font-bold uppercase tracking-[0.18em] text-emerald-700  ">
           {suffix}
         </span>
       </div>
@@ -404,15 +404,15 @@ function InputField({
         {...register}
         aria-invalid={Boolean(error)}
         aria-describedby={`${name}-help${error ? ` ${name}-error` : ''}`}
-        className={`mt-3 w-full rounded-2xl border px-4 py-3 text-base font-semibold text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 dark:text-white dark:placeholder:text-slate-400 ${error ? 'border-rose-400 bg-rose-50/80 dark:border-rose-500/40 dark:bg-rose-950/25' : 'border-slate-200 bg-white/90 dark:border-white/10 dark:bg-slate-950/60'}`}
+        className={`mt-3 w-full rounded-2xl border px-4 py-3 text-sm font-semibold text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100   ${error ? 'border-rose-400 bg-rose-50/80  ' : 'border-slate-200 bg-white/90  '}`}
       />
 
-      <p id={`${name}-help`} className="mt-2 text-md leading-5 text-slate-500 dark:text-slate-400">
+      <p id={`${name}-help`} className="mt-2 text-md leading-5 text-slate-500 ">
         {helperText}
       </p>
 
       {error && (
-        <p id={`${name}-error`} className="mt-2 text-md font-medium text-rose-600 dark:text-rose-300">
+        <p id={`${name}-error`} className="mt-2 text-md font-medium text-rose-600 ">
           {error}
         </p>
       )}
@@ -433,18 +433,18 @@ function ResultCard({
   value,
   detail,
   accentClass,
-  valueTone = 'text-custom-deep-blue dark:text-white',
+  valueTone = 'text-custom-deep-blue ',
 }: ResultCardProps) {
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white/82 p-4 shadow-sm dark:border-white/10 dark:bg-slate-950/45">
+    <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white/82 p-4 shadow-sm  ">
       <div className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r ${accentClass}`} aria-hidden="true" />
-      <p className="text-md font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
+      <p className="text-md font-semibold uppercase tracking-[0.28em] text-slate-500 ">
         {title}
       </p>
       <p className={`mt-3 text-2xl font-semibold tracking-tight ${valueTone}`}>
         {value}
       </p>
-      <p className="mt-2 text-md leading-6 text-slate-500 dark:text-slate-400">
+      <p className="mt-2 text-md leading-6 text-slate-500 ">
         {detail}
       </p>
     </div>

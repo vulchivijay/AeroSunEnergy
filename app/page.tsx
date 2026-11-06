@@ -1,6 +1,7 @@
 'use client'
 
 import { useLocale } from '@/lib/LocaleContext'
+import { getAccentOrDefault } from '@/lib/utils/utils'
 import { BankEMICalculator } from './components/forms/BankEMICalculator'
 import { SolarEstimation } from './components/forms/SolarEstimation'
 import About from './components/sections/About'
@@ -23,58 +24,6 @@ import {
   WindInfoPanel,
   WindSectionEyebrow,
 } from './components/ui'
-
-function getSolarAccent(accent: string): 'emerald' | 'amber' | 'sky' | 'violet' {
-  switch (accent) {
-    case 'amber':
-    case 'sky':
-    case 'violet':
-      return accent
-    default:
-      return 'emerald'
-  }
-}
-
-function getSolarPanelAccent(accent: string): 'emerald' | 'amber' | 'sky' {
-  switch (accent) {
-    case 'amber':
-    case 'sky':
-      return accent
-    default:
-      return 'emerald'
-  }
-}
-
-function getWindPanelAccent(accent: string): 'sky' | 'emerald' | 'amber' {
-  switch (accent) {
-    case 'emerald':
-    case 'amber':
-      return accent
-    default:
-      return 'sky'
-  }
-}
-
-function getHybridAccent(accent: string): 'emerald' | 'sky' | 'violet' | 'amber' {
-  switch (accent) {
-    case 'sky':
-    case 'violet':
-    case 'amber':
-      return accent
-    default:
-      return 'emerald'
-  }
-}
-
-function getHybridPanelAccent(accent: string): 'emerald' | 'sky' | 'violet' {
-  switch (accent) {
-    case 'sky':
-    case 'violet':
-      return accent
-    default:
-      return 'emerald'
-  }
-}
 
 function RecognitionHighlight() {
   const { t } = useLocale()
@@ -165,7 +114,7 @@ export default function Home() {
               title={card.title}
               description={card.description}
               points={card.points}
-              accent={getSolarAccent(card.accent)}
+              accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
             />
           ))}
         </div>
@@ -177,7 +126,7 @@ export default function Home() {
               title={card.title}
               description={card.description}
               points={card.points}
-              accent={getSolarAccent(card.accent)}
+              accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
             />
           ))}
         </div>
@@ -202,7 +151,7 @@ export default function Home() {
 
           <div className="mt-8 grid gap-5 lg:grid-cols-2">
             {home.rooftopSolar.panels.map((panel) => (
-              <InfoPanel key={panel.title} title={panel.title} accent={getSolarPanelAccent(panel.accent)} content={panel.content} />
+              <InfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['amber', 'sky'] as const, 'emerald')} content={panel.content} />
             ))}
           </div>
         </div>
@@ -216,7 +165,7 @@ export default function Home() {
           </div>
           <div className="grid gap-5 lg:grid-cols-3">
             {systemTypes.map((item) => (
-              <InfoPanel key={item.title} title={item.title} accent={getSolarPanelAccent(item.accent)} content={item.content} />
+              <InfoPanel key={item.title} title={item.title} accent={getAccentOrDefault(item.accent, ['amber', 'sky'] as const, 'emerald')} content={item.content} />
             ))}
           </div>
         </div>
@@ -275,7 +224,7 @@ export default function Home() {
               title={card.title}
               description={card.description}
               points={card.points}
-              accent={getSolarAccent(card.accent)}
+              accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
             />
           ))}
         </div>
@@ -288,7 +237,7 @@ export default function Home() {
 
         <div className="mt-10 grid gap-5 lg:grid-cols-2">
           {wind.panels.map((panel) => (
-          <WindInfoPanel key={panel.title} title={panel.title} accent={getWindPanelAccent(panel.accent)} content={panel.content} />
+          <WindInfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['emerald', 'amber'] as const, 'sky')} content={panel.content} />
           ))}
         </div>
 
@@ -312,7 +261,7 @@ export default function Home() {
               title={card.title}
               description={card.description}
               points={card.points}
-              accent={getHybridAccent(card.accent)}
+              accent={getAccentOrDefault(card.accent, ['sky', 'violet', 'amber'] as const, 'emerald')}
             />
           ))}
         </div>
@@ -325,7 +274,7 @@ export default function Home() {
 
         <div className="mt-10 grid gap-5 lg:grid-cols-2">
           {hybrid.panels.map((panel) => (
-          <HybridInfoPanel key={panel.title} title={panel.title} accent={getHybridPanelAccent(panel.accent)} content={panel.content} />
+          <HybridInfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['sky', 'violet'] as const, 'emerald')} content={panel.content} />
           ))}
         </div>
 

@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from '@/lib/motion'
+import { withEaseOutCardTransition } from '@/lib/cardVariants'
 import { Card, CardContent } from './../ui/Card'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
@@ -9,18 +10,12 @@ export default function HowItWorks() {
   const { t } = useLocale()
   const h = t.howItWorks
   const componentData = t.componentData.howItWorks
-  const cardVariants = {
-    ...componentData.cardVariants,
-    visible: {
-      ...componentData.cardVariants.visible,
-      transition: { ...componentData.cardVariants.visible.transition, ease: 'easeOut' as const },
-    },
-  }
+  const cardVariants = withEaseOutCardTransition(componentData.cardVariants)
 
   const steps = h.steps.map((step, i) => ({ ...step, ...componentData.stepStyles[i] }))
 
   return (
-    <section id="how-it-works" className="px-4 sm:px-2 lg:px-12 py-16 md:py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
+    <section id="how-it-works" className="px-4 sm:px-2 lg:px-12 py-16 md:py-24 bg-gray-50  overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-12"
@@ -29,11 +24,11 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
-          <span className="text-primary uppercase tracking-widest text-lg text-gray-900 dark:text-gray-100">{h.sectionBadge}</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 font-semibold dark:text-white">
+          <span className="text-primary uppercase tracking-widest text-lg text-gray-900 ">{h.sectionBadge}</span>
+          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 font-semibold ">
             {h.heading}
           </h2>
-          <p className="mt-4 text-lg text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">
+          <p className="mt-4 text-lg text-gray-900  max-w-3xl mx-auto">
             {h.description}
           </p>
           <div className="mt-6 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary" />
@@ -49,7 +44,7 @@ export default function HowItWorks() {
         >
           <div className="relative max-w-7xl mx-auto">
             <div className="absolute inset-0 bg-linear-to-r from-primary/20 via-accent/20 to-secondary/20 rounded-md blur-3xl" aria-hidden="true" />
-            <div className="relative overflow-hidden rounded-md border border-white/20 bg-white/90 shadow-2xl backdrop-blur-sm dark:border-white/10 dark:bg-slate-950/90">
+            <div className="relative overflow-hidden rounded-md border border-white/20 bg-white/90 shadow-2xl backdrop-blur-sm  ">
               <div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-md font-semibold uppercase tracking-widest text-white backdrop-blur-md">
                 {h.nextGenBadge}
               </div>
@@ -108,10 +103,10 @@ export default function HowItWorks() {
                         <p className={`text-lg uppercase tracking-widest mb-1`}>
                           {h.stepLabel} {step.number}
                         </p>
-                        <h3 className="text-xl font-extrabold text-gray-900 dark:text-gray-100 mb-3">
+                        <h3 className="text-xl font-extrabold text-gray-900  mb-3">
                           {step.title}
                         </h3>
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p className="text-gray-600  leading-relaxed">
                           {step.description}
                         </p>
                       </div>

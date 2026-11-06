@@ -191,18 +191,17 @@ export default function Slider({
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
       onPointerCancel={endDrag}
-      className={`w-full relative overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${className}`}
-      style={{ minHeight: '480px', height: 'clamp(480px, 56vw, 760px)' }}
+      className={`relative w-full min-h-[clamp(480px,56vw,760px)] overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${className}`}
     >
       <div
-        className={`flex h-full ${withTransition ? 'transition-transform duration-500 ease-in-out motion-reduce:transition-none' : ''}`}
+        className={`flex min-h-[clamp(480px,56vw,760px)] ${withTransition ? 'transition-transform duration-500 ease-in-out motion-reduce:transition-none' : ''}`}
         style={{ width: slideWidth > 0 ? `${totalWidth}px` : `${clonedSlides.length * 100}%`, transform: translate }}
         onTransitionEnd={onTransitionEnd}
       >
         {clonedSlides.map((child, i) => (
           <div
             key={i}
-            className="h-full shrink-0"
+            className="min-h-[clamp(480px,56vw,760px)] shrink-0"
             style={{ width: slideWidth > 0 ? `${slideWidth}px` : `${percentPerSlide}%` }}
             role="group"
             aria-roledescription={carousel.slideRoleDescription}
@@ -212,7 +211,7 @@ export default function Slider({
             aria-hidden={i !== position}
             inert={i !== position}
           >
-            <div className="h-full w-full flex flex-col min-h-0">{child}</div>
+            <div className="flex min-h-[clamp(480px,56vw,760px)] w-full flex-col">{child}</div>
           </div>
         ))}
       </div>
@@ -221,7 +220,7 @@ export default function Slider({
         type="button"
         aria-label={carousel.previousSlide}
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-black/30 text-white shadow-lg transition hover:bg-black/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        className="absolute left-4 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-black/30 text-white shadow-lg transition hover:bg-black/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white md:flex"
       >
         ‹
       </button>
@@ -229,12 +228,12 @@ export default function Slider({
         type="button"
         aria-label={carousel.nextSlide}
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-black/30 text-white shadow-lg transition hover:bg-black/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        className="absolute right-4 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-black/30 text-white shadow-lg transition hover:bg-black/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white md:flex"
       >
         ›
       </button>
 
-      <div className="absolute inset-x-0 bottom-3 z-20 flex justify-center px-3 sm:bottom-5">
+      <div className="absolute inset-x-0 bottom-3 z-20 hidden justify-center px-3 sm:bottom-5 xl:flex">
         <div className="flex max-w-[calc(100vw-2.5rem)] flex-wrap items-center justify-center">
           {slidesArray.map((_, i) => {
             const isActive = activeRealIndex === i

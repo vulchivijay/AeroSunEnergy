@@ -71,7 +71,6 @@ export default function Footer() {
 	return (
 		<footer
 			id="contact"
-			data-print-hide
 			className="relative w-full overflow-hidden bg-[radial-gradient(ellipse_at_75%_5%,rgba(163,217,119,0.12),transparent_34%),linear-gradient(145deg,#071B17_0%,#0B2922_52%,#071B17_100%)] text-white"
 		>
 			<div className="pointer-events-none absolute -right-40 top-0 h-[34rem] w-[34rem] rounded-full border border-[#F5C76A]/[0.08]" aria-hidden="true" />
@@ -89,7 +88,7 @@ export default function Footer() {
 							<h2 className="mt-5 text-4xl leading-[1.05] tracking-[0.045em] text-white sm:text-5xl lg:text-6xl">
 								{footer.heroTitle}
 							</h2>
-							<p className="mt-5 max-w-2xl text-base leading-7 text-gray-300 sm:text-lg">
+							<p className="mt-5 max-w-2xl text-sm leading-7 text-gray-300 sm:text-lg">
 								{footer.heroDescription}
 							</p>
 							<Link
@@ -259,7 +258,7 @@ export default function Footer() {
 									setNewsletterStatus('')
 								}}
 								placeholder={footer.newsletterPlaceholder}
-								className="min-h-12 min-w-0 flex-1 rounded-full border border-white/15 bg-[#071B17] px-5 text-base text-white outline-none transition placeholder:text-gray-400 focus:border-[#A5D6A7] focus:ring-2 focus:ring-[#A5D6A7]/25"
+								className="min-h-12 min-w-0 flex-1 rounded-full border border-white/15 bg-[#071B17] px-5 text-sm text-white outline-none transition placeholder:text-gray-400 focus:border-[#A5D6A7] focus:ring-2 focus:ring-[#A5D6A7]/25"
 							/>
 							<button type="submit" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#A5D6A7] px-6 text-sm font-bold text-[#173B2C] transition hover:bg-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7]">
 								{footer.subscribe} <Send className="h-4 w-4" aria-hidden="true" />

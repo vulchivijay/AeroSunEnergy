@@ -11,15 +11,15 @@ export default function WindGenerators() {
   const generators = w.items.map((item, i) => ({ ...item, ...t.componentData.windGenerators.styles[i] }))
 
   return (
-    <section id="wind-generators" className="px-4 sm:px-2 lg:px-12 py-16 md:py-24 bg-gray-50 dark:bg-gray-900 border-t-2 border-stone-100 overflow-hidden">
+    <section id="wind-generators" className="px-4 sm:px-2 lg:px-12 py-16 md:py-24 bg-gray-50  border-t-2 border-stone-100 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="text-primary uppercase tracking-widest text-lg text-gray-900 dark:text-gray-100">{w.sectionBadge}</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 font-semibold dark:text-white">
+          <span className="text-primary uppercase tracking-widest text-lg text-gray-900 ">{w.sectionBadge}</span>
+          <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 font-semibold ">
             {w.heading}
           </h2>
-          <p className="mt-4 text-lg text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">
+          <p className="mt-4 text-lg text-gray-900  max-w-3xl mx-auto">
             {w.description}
           </p>
           <div className="mt-6 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary" />
@@ -30,10 +30,10 @@ export default function WindGenerators() {
           {generators.map((gen, idx) => (
             <div
               key={gen.id}
-              className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-10 items-center bg-white dark:bg-gray-800 rounded-md shadow-2xl overflow-hidden`}
+              className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-10 items-center bg-white  rounded-md shadow-2xl overflow-hidden`}
             >
               {/* Illustration panel */}
-              <div className={`flex-shrink-0 flex items-center justify-center w-full lg:w-72 h-64 bg-linear-to-br ${gen.accentFrom} ${gen.accentTo} bg-opacity-10 dark:bg-opacity-20`}>
+              <div className={`flex-shrink-0 flex items-center justify-center w-full lg:w-72 h-64 bg-linear-to-br ${gen.accentFrom} ${gen.accentTo} bg-opacity-10 `}>
                 <div className="relative h-full w-full">
                   <OptimizedImage
                     src={gen.imageSrc}
@@ -50,14 +50,14 @@ export default function WindGenerators() {
                 <span className={`inline-block text-md font-semibold tracking-widest px-3 py-1 rounded-md mb-4 ${gen.badgeColor}`}>
                   {gen.badge}
                 </span>
-                <h3 className="text-2xl font-semibold tracking-widest text-gray-900 dark:text-gray-100 mb-1">{gen.title}</h3>
-                <p className="mb-4 text-lg font-medium text-gray-600 text-primary dark:text-gray-300">{gen.subtitle}</p>
-                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">{gen.description}</p>
+                <h3 className="text-2xl font-semibold tracking-widest text-gray-900  mb-1">{gen.title}</h3>
+                <p className="mb-4 text-lg font-medium text-gray-600 text-primary ">{gen.subtitle}</p>
+                <p className="text-lg text-gray-600  leading-relaxed mb-6">{gen.description}</p>
 
                 {/* Key specs */}
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
                   {gen.highlights.map((h) => (
-                    <li key={h} className="flex items-start gap-2 text-lg text-gray-700 dark:text-gray-300">
+                    <li key={h} className="flex items-start gap-2 text-lg text-gray-700 ">
                       <svg className="h-4 w-4 mt-0.5 text-secondary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>

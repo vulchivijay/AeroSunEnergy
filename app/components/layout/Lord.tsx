@@ -174,13 +174,13 @@ export default function Lord() {
         aria-labelledby="lord-blessing-title"
         aria-describedby="lord-blessing-description"
         tabIndex={-1}
-        className="relative z-10 w-full max-w-xl rounded-2xl bg-white p-6 text-gray-900 shadow-[0_25px_80px_rgba(0,0,0,0.25)] dark:bg-gray-800 dark:text-gray-100"
+        className="relative z-10 w-full max-w-xl rounded-2xl bg-white p-6 text-gray-900 shadow-[0_25px_80px_rgba(0,0,0,0.25)]  "
       >
         <button
           ref={closeButtonRef}
           type="button"
           aria-label={t.blessingModal.closeLabel}
-          className="absolute right-3 top-3 inline-flex min-h-11 min-w-11 items-center justify-center rounded-md p-2 text-gray-600 transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus-visible:outline-emerald-300"
+          className="absolute right-3 top-3 inline-flex min-h-11 min-w-11 items-center justify-center rounded-md p-2 text-gray-600 transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600   "
           onClick={dismiss}
         >
           ✕
@@ -199,7 +199,7 @@ export default function Lord() {
           </div>
 
           <h2 id="lord-blessing-title" className="text-3xl font-semibold tracking-tight">{blessing.title}</h2>
-          <p id="lord-blessing-description" className="max-w-md text-md leading-6 text-gray-600 dark:text-gray-300">
+          <p id="lord-blessing-description" className="max-w-md text-md leading-6 text-gray-600 ">
             {blessing.body}
           </p>
 

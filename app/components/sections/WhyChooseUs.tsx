@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from '@/lib/motion'
+import { withEaseOutCardTransition } from '@/lib/cardVariants'
 import { Lightbulb, ShieldCheck, Layers, MapPin } from 'lucide-react'
 import { Card, CardContent } from './../ui/Card'
 import { useLocale } from '@/lib/LocaleContext'
@@ -8,23 +9,17 @@ import { OptimizedImage } from '@/app/components/ui'
 import type { ReactNode } from 'react'
 
 const reasonIconComponents: Record<string, ReactNode> = {
-  lightbulb: <Lightbulb className="h-8 w-8 text-blue-800 dark:text-blue-100" />,
-  shield: <ShieldCheck className="h-8 w-8 text-emerald-800 dark:text-emerald-100" />,
-  layers: <Layers className="h-8 w-8 text-amber-800 dark:text-amber-100" />,
-  mappin: <MapPin className="h-8 w-8 text-indigo-800 dark:text-indigo-100" />,
+  lightbulb: <Lightbulb className="h-8 w-8 text-blue-800 " />,
+  shield: <ShieldCheck className="h-8 w-8 text-emerald-800 " />,
+  layers: <Layers className="h-8 w-8 text-amber-800 " />,
+  mappin: <MapPin className="h-8 w-8 text-indigo-800 " />,
 }
 
 export default function WhyChooseUs() {
   const { t } = useLocale()
   const w = t.whyChooseUs
   const componentData = t.componentData.whyChooseUs
-  const cardVariants = {
-    ...componentData.cardVariants,
-    visible: {
-      ...componentData.cardVariants.visible,
-      transition: { ...componentData.cardVariants.visible.transition, ease: 'easeOut' as const },
-    },
-  }
+  const cardVariants = withEaseOutCardTransition(componentData.cardVariants)
 
   const reasons = w.items.map((item, i) => ({
     ...item,
@@ -33,7 +28,7 @@ export default function WhyChooseUs() {
   }))
 
   return (
-    <section id="why-us" className="bg-gray-50 dark:bg-gray-900 overflow-hidden">
+    <section id="why-us" className="bg-gray-50  overflow-hidden">
       <motion.div
         className="text-center"
         initial={{ opacity: 0, y: 30 }}
@@ -41,8 +36,8 @@ export default function WhyChooseUs() {
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
       >
-        <span className="text-primary uppercase tracking-widest text-lg text-gray-900 dark:text-gray-100">{w.sectionBadge}</span>
-        <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 font-semibold dark:text-gray-100">
+        <span className="text-primary uppercase tracking-widest text-lg text-gray-900 ">{w.sectionBadge}</span>
+        <h2 className="mt-2 text-3xl sm:text-4xl text-gray-600 font-semibold ">
           {w.heading}
         </h2>
         <div className="mt-6 mx-auto w-16 h-1 rounded-md bg-linear-to-r from-primary to-secondary"></div>
@@ -57,7 +52,7 @@ export default function WhyChooseUs() {
       >
         <div className="relative">
           <div className="absolute inset-0 rounded-md bg-linear-to-r from-accent/20 via-primary/20 to-secondary/20 blur-3xl" aria-hidden="true" />
-          <div className="relative overflow-hidden rounded-md border border-white/20 bg-white/90 shadow-2xl backdrop-blur-sm dark:border-white/10 dark:bg-slate-950/90">
+          <div className="relative overflow-hidden rounded-md border border-white/20 bg-white/90 shadow-2xl backdrop-blur-sm  ">
             <div className="absolute left-6 top-6 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-md font-semibold uppercase tracking-widest text-white backdrop-blur-md">
               {w.imageBadge}
             </div>
@@ -99,8 +94,8 @@ export default function WhyChooseUs() {
                   <div className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl p-1 text-2xl shadow-xl ${r.iconBg}`}>
                     {r.icon}
                   </div>
-                  <h3 className="mb-2 text-lg font-bold text-gray-900 dark:text-gray-100">{r.title}</h3>
-                  <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">{r.desc}</p>
+                  <h3 className="mb-2 text-lg font-bold text-gray-900 ">{r.title}</h3>
+                  <p className="text-lg leading-relaxed text-gray-700 ">{r.desc}</p>
                 </CardContent>
               </Card>
             </motion.div>

@@ -1,7 +1,7 @@
 "use client"
 
 import Image, { ImageProps } from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { generateImagePlaceholder } from '@/lib/imagePlaceholder'
 
 type Props = Omit<ImageProps, 'src'> & {
@@ -17,9 +17,24 @@ export default function OptimizedImage({
   blurDataURL,
   skeletonClassName,
   onLoad,
+  onError,
   ...rest
 }: Props) {
-  const [isLoading, setIsLoading] = useState(true)
+  const [settledSrc, setSettledSrc] = useState<string | null>(null)
+  const [spinnerSrc, setSpinnerSrc] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (settledSrc === src) return
+
+    const timeoutId = window.setTimeout(() => {
+      setSpinnerSrc(src)
+    }, 2000)
+
+    return () => window.clearTimeout(timeoutId)
+  }, [src, settledSrc])
+
+  const isLoading = settledSrc !== src
+  const showSpinner = spinnerSrc === src && isLoading
 
   const computedBlurDataURL =
     blurDataURL ??
@@ -33,11 +48,19 @@ export default function OptimizedImage({
     >
       {isLoading && (
         <div
-          className={`absolute inset-0 animate-pulse bg-linear-to-br from-slate-200 via-slate-100 to-slate-200 motion-reduce:animate-none dark:from-slate-800 dark:via-slate-700 dark:to-slate-800 ${
+          className={`absolute inset-0 animate-pulse bg-linear-to-br from-slate-200 via-slate-100 to-slate-200 motion-reduce:animate-none    ${
             skeletonClassName ?? ''
           }`}
           aria-hidden="true"
         />
+      )}
+      {showSpinner && (
+        <div className="absolute inset-0 flex items-center justify-center" role="status" aria-label="Loading image">
+          <span
+            className="h-9 w-9 animate-spin rounded-full border-4 border-slate-400/40 border-t-slate-700   motion-reduce:animate-none"
+            aria-hidden="true"
+          />
+        </div>
       )}
 
       <Image
@@ -50,8 +73,14 @@ export default function OptimizedImage({
         blurDataURL={computedBlurDataURL}
         sizes={rest.sizes ?? '100vw'}
         onLoad={(event) => {
-          setIsLoading(false)
+          setSettledSrc(src)
+          setSpinnerSrc((current) => current === src ? null : current)
           onLoad?.(event)
+        }}
+        onError={(event) => {
+          setSettledSrc(src)
+          setSpinnerSrc((current) => current === src ? null : current)
+          onError?.(event)
         }}
         {...rest}
       />
