@@ -65,7 +65,7 @@ export function FeatureCard({
       cardClassName="group rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_22px_45px_-28px_rgba(15,23,42,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-28px_rgba(16,185,129,0.3)]"
       featureClassName={componentData.featureClasses[featureAccent]}
       titleClassName="tracking-[0.05em] text-slate-900"
-      pointIconClassName="bg-emerald-100 text-emerald-700"
+      pointIconClassName="bg-emerald-700 text-white"
     />
   )
 }
@@ -85,7 +85,7 @@ export function BenefitCard({
       title={title ?? defaults.title}
       description={description ?? defaults.description}
       cardClassName="rounded-[1.7rem] border border-emerald-200 bg-[linear-gradient(135deg,#ffffff_0%,#ecfdf5_100%)] p-5 shadow-[0_18px_32px_-26px_rgba(16,185,129,0.45)]"
-      iconClassName="bg-linear-to-br from-emerald-500 to-lime-500 text-slate-950 shadow-lg shadow-emerald-500/20"
+      iconClassName="bg-linear-to-br from-emerald-700 to-lime-700 text-white shadow-lg shadow-emerald-500/20"
       titleClassName="tracking-[0.04em] text-slate-900"
     />
   )

@@ -234,7 +234,7 @@ export default function Slider({
         ›
       </button>
 
-      <div className="absolute inset-x-0 bottom-3 z-20 flex justify-center px-3 sm:bottom-5">
+      <div className="absolute inset-x-0 bottom-3 z-20 hidden justify-center px-3 sm:bottom-5 xl:flex">
         <div className="flex max-w-[calc(100vw-2.5rem)] flex-wrap items-center justify-center">
           {slidesArray.map((_, i) => {
             const isActive = activeRealIndex === i

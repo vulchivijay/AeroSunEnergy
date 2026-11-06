@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { ChevronDown, ChevronUp } from 'lucide-react'
+import { ChevronDown, ChevronUp, Megaphone } from 'lucide-react'
 import { useLocale } from '@/lib/LocaleContext'
 
 export default function Notifications() {
@@ -15,46 +15,47 @@ export default function Notifications() {
   }, [])
 
   return (
-    <div data-print-hide className={`relative overflow-hidden border-b border-emerald-200 bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.18),transparent_36%),linear-gradient(135deg,#f0fdf4_0%,#ecfeff_48%,#f8fafc_100%)] dark:border-slate-700 dark:bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.12),transparent_28%),linear-gradient(135deg,#020617_0%,#0f172a_46%,#111827_100%)] ${isExpanded ? 'min-h-18 sm:h-15' : 'py-1'}`}>
-      <div className="h-full">
-        <div className="relative h-full overflow-hidden border border-emerald-200/70 bg-[linear-gradient(135deg,rgba(5,46,30,0.96),rgba(8,64,59,0.9),rgba(15,23,42,0.98))] shadow-[0_18px_40px_-24px_rgba(16,185,129,0.85)] dark:border-emerald-500/15">
-          <div className="absolute -left-10 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-emerald-400/15 blur-3xl" />
-          <div className="absolute -right-12 top-0 h-32 w-32 rounded-full bg-cyan-400/10 blur-3xl" />
-
-          <div className="relative flex h-full items-center justify-between gap-2">
-            {isExpanded ? (
-              <div className="m-2 flex min-w-0 flex-1 items-center">
-                <span className="hidden shrink-0 items-center rounded-full border border-emerald-300/40 bg-emerald-300/10 px-2 py-1 text-[12px] font-bold uppercase tracking-[0.22em] text-emerald-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] sm:text-[12px]">
-                  {t.notifications.badge}
-                </span>
-
-                <p className="min-w-0 flex-1 text-center text-[12px] font-light leading-4 tracking-[0.12em] text-slate-100 lg:text-md lg:tracking-[0.16em]">
-                  {notificationText}
-                  <span className="text-gray-200 italic underline underline-offset-4">{notificationBoldText}</span>
-                  {notificationEndText}
-                </p>
-              </div>
-            ) : (
-              <span className="ml-3 text-xs font-bold uppercase tracking-[0.16em] text-emerald-100">
-                {t.notifications.badge}
-              </span>
-            )}
-
-            <button
-              type="button"
-              onClick={() => setIsExpanded((expanded) => !expanded)}
-              aria-label={isExpanded ? t.notifications.toggleClose : t.notifications.toggleOpen}
-              aria-expanded={isExpanded}
-              className="mx-2 inline-flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 shadow-sm transition hover:border-emerald-300/60 hover:bg-emerald-400/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            >
-              {isExpanded ? (
-                <ChevronUp className="h-4 w-4" aria-hidden="true" />
-              ) : (
-                <ChevronDown className="h-4 w-4" aria-hidden="true" />
-              )}
-            </button>
-          </div>
+    <div data-print-hide className="border-b border-emerald-950/10 bg-[#f3f7f1] px-3 py-2 dark:border-white/10 dark:bg-[#0b1713] sm:px-5">
+      <div className="relative mx-auto flex w-full items-center gap-3 overflow-hidden rounded-xl border border-emerald-900/15 bg-white shadow-[0_8px_24px_-18px_rgba(6,78,59,0.5)] dark:border-emerald-300/15 dark:bg-[#10251d]">
+        <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-lime-400 via-emerald-500 to-teal-600" aria-hidden="true" />
+        <div className="ml-3 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-950 text-lime-300 shadow-sm dark:bg-emerald-300/10">
+          <Megaphone className="h-4 w-4" aria-hidden="true" />
         </div>
+
+        <div id="site-notification-content" hidden={!isExpanded} className="min-w-0 flex-1 py-2">
+          <div className="mb-1 flex items-center gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_0_3px_rgba(16,185,129,0.12)]" aria-hidden="true" />
+            <span className="text-[10px] uppercase tracking-[0.2em] text-emerald-800 dark:text-emerald-300">
+              {t.notifications.badge}
+            </span>
+          </div>
+          <p className="text-xs leading-relaxed text-slate-700 dark:text-slate-200 sm:text-sm">
+            {notificationText}
+            <span className="underline underline-offset-4 text-emerald-800 dark:text-emerald-300">{notificationBoldText}</span>
+            {notificationEndText}
+          </p>
+        </div>
+
+        {!isExpanded && (
+          <span className="min-w-0 flex-1 truncate text-xs font-bold uppercase tracking-[0.18em] text-emerald-900 dark:text-emerald-100">
+            {t.notifications.badge}
+          </span>
+        )}
+
+        <button
+          type="button"
+          onClick={() => setIsExpanded((expanded) => !expanded)}
+          aria-label={isExpanded ? t.notifications.toggleClose : t.notifications.toggleOpen}
+          aria-expanded={isExpanded}
+          aria-controls="site-notification-content"
+          className="mr-2 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-emerald-900/10 text-emerald-900 transition hover:border-emerald-500/40 hover:bg-emerald-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 dark:border-white/10 dark:text-emerald-100 dark:hover:bg-white/10 dark:focus-visible:outline-emerald-300"
+        >
+          {isExpanded ? (
+            <ChevronUp className="h-4 w-4" aria-hidden="true" />
+          ) : (
+            <ChevronDown className="h-4 w-4" aria-hidden="true" />
+          )}
+        </button>
       </div>
     </div>
   )

@@ -56,7 +56,7 @@ export function HybridFeatureCard({
       cardClassName="group rounded-4xl border border-slate-200 bg-white p-5 shadow-[0_22px_45px_-28px_rgba(15,23,42,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-28px_rgba(16,185,129,0.3)]"
       featureClassName={componentData.featureClasses[accent]}
       titleClassName="tracking-tighter text-slate-900"
-      pointIconClassName="bg-emerald-100 text-emerald-700"
+      pointIconClassName="bg-emerald-700 text-white"
     />
   )
 }
@@ -67,7 +67,7 @@ export function HybridBenefitCard({ title, description }: { title: string; descr
       title={title}
       description={description}
       cardClassName="rounded-[1.7rem] border border-emerald-200 bg-[linear-gradient(135deg,#ffffff_0%,#ecfdf5_100%)] p-5 shadow-[0_18px_32px_-26px_rgba(16,185,129,0.45)]"
-      iconClassName="bg-linear-to-br from-emerald-500 to-teal-500 text-slate-950 shadow-lg shadow-emerald-500/20"
+      iconClassName="bg-linear-to-br from-emerald-700 to-teal-700 text-white shadow-lg shadow-emerald-500/20"
       titleClassName="tracking-tighter text-slate-900"
     />
   )

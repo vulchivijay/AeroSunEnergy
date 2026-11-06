@@ -93,7 +93,7 @@ export default function TermsPage() {
                     <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
                       {section.bullets.map((item) => (
                         <li key={item} className="flex items-start gap-3 rounded-xl bg-[#f5f7f2] px-3 py-3 text-md leading-6 text-slate-700">
-                          <span className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-200 text-[12px] font-black text-emerald-900">
+                          <span className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-700 text-[12px] font-black text-white">
                             ✓
                           </span>
                           <span>{item}</span>

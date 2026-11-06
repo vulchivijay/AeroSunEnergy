@@ -184,7 +184,7 @@ export default function HybridEnergyPage() {
                   <ul className="mt-4 space-y-3 text-md leading-7 text-slate-700">
                     {service.benefits.map((benefit) => (
                       <li key={benefit} className="flex items-start gap-3 rounded-2xl bg-white/70 p-3">
-                        <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[12px] font-black text-emerald-700">✓</span>
+                        <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-700 text-[12px] font-black text-white">✓</span>
                         <span>{benefit}</span>
                       </li>
                     ))}
