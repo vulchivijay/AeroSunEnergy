@@ -1243,6 +1243,58 @@
                     "chipClass": "వచనం-పచ్చ-50",
                     "panelClass": "bg-linear-to-br-slate-700 వయా-slate-800 to-slate-950",
                     "image": "/images/slider/slider-8.png"
+                },
+                {
+                    "badge": "వ్యవసాయ పవన శక్తి",
+                    "title": "వ్యవసాయం మరియు నీటి వ్యవస్థల కోసం పవన శక్తి",
+                    "description": "స్థల పరిశీలనలో తగిన పవన వనరు నిర్ధారితమైతే, చిన్న పవన టర్బైన్‌లు సాగునీరు, నీటి పంపింగ్ మరియు దూర ప్రాంత వ్యవసాయ కార్యకలాపాలకు శక్తి ప్రణాళికలో తోడ్పడగలవు.",
+                    "tags": [
+                        "వ్యవసాయం",
+                        "స్థల పరిశీలన"
+                    ],
+                    "badgeClass": "text-lime-100",
+                    "chipClass": "text-lime-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-9.png"
+                },
+                {
+                    "badge": "పవన వనరుల అంచనా",
+                    "title": "పవన వనరులకు అనుగుణంగా ప్రాజెక్ట్ ప్రణాళిక",
+                    "description": "పవన పరిస్థితులు, భూభాగం, ప్రవేశ సౌకర్యం మరియు శక్తి అవసరాలను సమీక్షించడం ద్వారా ఆ స్థలంలో పవన విద్యుత్ ఏర్పాటు ఆచరణ సాధ్యమా అని నిర్ణయించవచ్చు.",
+                    "tags": [
+                        "సాధ్యత",
+                        "వనరుల సమీక్ష"
+                    ],
+                    "badgeClass": "text-cyan-100",
+                    "chipClass": "text-cyan-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-10.png"
+                },
+                {
+                    "badge": "పవన శక్తి మరియు నిల్వ",
+                    "title": "బ్యాటరీ నిల్వతో పవన విద్యుత్",
+                    "description": "తగిన నిల్వ మరియు నియంత్రణలతో పవన ఉత్పత్తిని జతచేయడం స్థిరమైన శక్తి వినియోగానికి తోడ్పడవచ్చు; ఇది వ్యవస్థ పరిమాణం మరియు సాంకేతిక సమీక్షపై ఆధారపడి ఉంటుంది.",
+                    "tags": [
+                        "బ్యాటరీ నిల్వ",
+                        "వ్యవస్థ రూపకల్పన"
+                    ],
+                    "badgeClass": "text-violet-100",
+                    "chipClass": "text-violet-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-11.png"
+                },
+                {
+                    "badge": "విభజిత పవన శక్తి",
+                    "title": "అనుసంధానిత సమాజాల కోసం పవన వ్యవస్థలు",
+                    "description": "ప్రత్యేక స్థలానికి అనుగుణమైన పునరుత్పాదక శక్తి మిశ్రమం కోసం సమాజాలు మరియు సదుపాయాలు సౌర, గ్రిడ్ సరఫరాతో పాటు విభజిత పవన శక్తిని పరిశీలించవచ్చు.",
+                    "tags": [
+                        "విభజిత శక్తి",
+                        "స్థలానుకూలం"
+                    ],
+                    "badgeClass": "text-amber-100",
+                    "chipClass": "text-amber-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-12.png"
                 }
             ]
         },
@@ -1462,6 +1514,58 @@
                     "chipClass": "టెక్స్ట్-వైలెట్-50",
                     "panelClass": "bg-linear-to-br-slate-700 వయా-slate-800 to-slate-950",
                     "image": "/images/slider/slider-14.png"
+                },
+                {
+                    "badge": "సౌర, పవన మరియు నిల్వ",
+                    "title": "సమతుల్య పునరుత్పాదక శక్తి మిశ్రమం",
+                    "description": "పూరక ఉత్పత్తి వనరులను నిల్వతో కలపడం ద్వారా సమన్వయ వ్యవస్థ రూపకల్పనతో శక్తి సరఫరాను స్థల అవసరాలకు అనుగుణంగా చేయవచ్చు.",
+                    "tags": [
+                        "సమగ్ర వ్యవస్థలు",
+                        "శక్తి సమతుల్యత"
+                    ],
+                    "badgeClass": "text-amber-100",
+                    "chipClass": "text-amber-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-15.png"
+                },
+                {
+                    "badge": "నమ్మకమైన విద్యుత్",
+                    "title": "ముఖ్యమైన లోడ్‌ల కోసం హైబ్రిడ్ శక్తి",
+                    "description": "సరిగ్గా రూపొందించిన హైబ్రిడ్ వ్యవస్థ గ్రిడ్ అంతరాయాల సమయంలో నిరంతరతకు మద్దతుగా ఉత్పత్తి, బ్యాటరీ నిల్వ మరియు ప్రాధాన్యత గల లోడ్‌లను సమన్వయం చేయగలదు.",
+                    "tags": [
+                        "బ్యాకప్ ప్రణాళిక",
+                        "ప్రాధాన్యత లోడ్‌లు"
+                    ],
+                    "badgeClass": "text-sky-100",
+                    "chipClass": "text-sky-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-16.png"
+                },
+                {
+                    "badge": "శక్తి నిర్వహణ",
+                    "title": "ఉత్పత్తి, నిల్వ మరియు డిమాండ్ సమన్వయం",
+                    "description": "పర్యవేక్షణ మరియు నియంత్రణ వ్యూహాలు మారుతున్న వినియోగ విధానాలకు పునరుత్పాదక ఉత్పత్తి మరియు నిల్వ చేసిన శక్తిని సరిపోల్చడంలో సహాయపడతాయి.",
+                    "tags": [
+                        "స్మార్ట్ పర్యవేక్షణ",
+                        "లోడ్ నిర్వహణ"
+                    ],
+                    "badgeClass": "text-emerald-100",
+                    "chipClass": "text-emerald-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-17.png"
+                },
+                {
+                    "badge": "అనుసంధానిత శక్తి వ్యవస్థలు",
+                    "title": "గృహాలు మరియు వ్యాపారాల కోసం హైబ్రిడ్ పరిష్కారాలు",
+                    "description": "కస్టమర్ అవసరాలు, స్థల పరిస్థితులు మరియు సాంకేతిక సాధ్యతకు అనుగుణంగా సౌర, పవన, నిల్వ మరియు గ్రిడ్ అనుసంధానాన్ని కలపవచ్చు.",
+                    "tags": [
+                        "గృహాలు మరియు వ్యాపారాలు",
+                        "అనుకూల రూపకల్పన"
+                    ],
+                    "badgeClass": "text-rose-100",
+                    "chipClass": "text-rose-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-18.png"
                 }
             ]
         },

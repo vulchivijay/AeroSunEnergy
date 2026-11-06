@@ -5464,6 +5464,58 @@
                     "chipClass": "text-emerald-50",
                     "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
                     "image": "/images/slider/slider-8.png"
+                },
+                {
+                    "badge": "Agricultural wind",
+                    "title": "Wind Energy for Farms and Water Systems",
+                    "description": "Small wind turbines can complement farm energy plans for irrigation, water pumping, and remote operations when site assessment confirms a suitable resource.",
+                    "tags": [
+                        "Agriculture",
+                        "Site assessed"
+                    ],
+                    "badgeClass": "text-lime-100",
+                    "chipClass": "text-lime-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-9.png"
+                },
+                {
+                    "badge": "Wind resource assessment",
+                    "title": "Plan Wind Projects Around the Resource",
+                    "description": "A careful review of wind conditions, terrain, access, and energy demand helps determine whether a wind installation is practical for a site.",
+                    "tags": [
+                        "Feasibility",
+                        "Resource review"
+                    ],
+                    "badgeClass": "text-cyan-100",
+                    "chipClass": "text-cyan-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-10.png"
+                },
+                {
+                    "badge": "Wind and storage",
+                    "title": "Wind Generation with Battery Storage",
+                    "description": "Pairing wind generation with suitable storage and controls can support more consistent energy use, subject to system sizing and technical review.",
+                    "tags": [
+                        "Battery storage",
+                        "System design"
+                    ],
+                    "badgeClass": "text-violet-100",
+                    "chipClass": "text-violet-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-11.png"
+                },
+                {
+                    "badge": "Distributed wind",
+                    "title": "Wind Systems for Connected Communities",
+                    "description": "Distributed wind can be considered alongside solar and grid supply for communities and facilities seeking a site-specific renewable energy mix.",
+                    "tags": [
+                        "Distributed energy",
+                        "Site specific"
+                    ],
+                    "badgeClass": "text-amber-100",
+                    "chipClass": "text-amber-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-12.png"
                 }
             ]
         },
@@ -5683,6 +5735,58 @@
                     "chipClass": "text-violet-50",
                     "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
                     "image": "/images/slider/slider-14.png"
+                },
+                {
+                    "badge": "Solar, wind and storage",
+                    "title": "A Balanced Mix of Renewable Energy",
+                    "description": "Combining complementary generation sources with storage can help match energy supply to site demand through coordinated system design.",
+                    "tags": [
+                        "Integrated systems",
+                        "Energy balance"
+                    ],
+                    "badgeClass": "text-amber-100",
+                    "chipClass": "text-amber-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-15.png"
+                },
+                {
+                    "badge": "Resilient power",
+                    "title": "Hybrid Energy for Essential Loads",
+                    "description": "A suitably designed hybrid system can coordinate generation, battery storage, and priority loads to support continuity during grid interruptions.",
+                    "tags": [
+                        "Backup planning",
+                        "Priority loads"
+                    ],
+                    "badgeClass": "text-sky-100",
+                    "chipClass": "text-sky-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-16.png"
+                },
+                {
+                    "badge": "Energy management",
+                    "title": "Coordinate Generation, Storage and Demand",
+                    "description": "Monitoring and control strategies help align renewable generation and stored energy with changing consumption patterns.",
+                    "tags": [
+                        "Smart monitoring",
+                        "Load management"
+                    ],
+                    "badgeClass": "text-emerald-100",
+                    "chipClass": "text-emerald-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-17.png"
+                },
+                {
+                    "badge": "Connected energy systems",
+                    "title": "Hybrid Solutions for Homes and Businesses",
+                    "description": "Solar, wind, storage, and grid connections can be combined to suit customer requirements, site conditions, and technical feasibility.",
+                    "tags": [
+                        "Homes and businesses",
+                        "Custom designed"
+                    ],
+                    "badgeClass": "text-rose-100",
+                    "chipClass": "text-rose-50",
+                    "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
+                    "image": "/images/slider/slider-18.png"
                 }
             ]
         },
