@@ -71,7 +71,6 @@ export default function Footer() {
 	return (
 		<footer
 			id="contact"
-			data-print-hide
 			className="relative w-full overflow-hidden bg-[radial-gradient(ellipse_at_75%_5%,rgba(163,217,119,0.12),transparent_34%),linear-gradient(145deg,#071B17_0%,#0B2922_52%,#071B17_100%)] text-white"
 		>
 			<div className="pointer-events-none absolute -right-40 top-0 h-[34rem] w-[34rem] rounded-full border border-[#F5C76A]/[0.08]" aria-hidden="true" />

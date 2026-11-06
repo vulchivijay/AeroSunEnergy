@@ -31,6 +31,7 @@ function TextField({
   step,
   pattern,
   className = "",
+  labelTextClassName = "text-slate-700",
 }: {
   label: string;
   name: string;
@@ -43,10 +44,11 @@ function TextField({
   step?: number | "any";
   pattern?: string;
   className?: string;
+  labelTextClassName?: string;
 }) {
   return (
-    <label className={`block ${className}`}>
-      <span className="mb-1.5 block text-md font-bold text-slate-700">
+    <label className={`block min-w-0 ${className}`}>
+      <span className={`mb-1.5 block text-md font-bold ${labelTextClassName}`}>
         {label}
         {required && <span aria-hidden="true"> *</span>}
       </span>
@@ -60,7 +62,7 @@ function TextField({
         minLength={minLength}
         step={step}
         pattern={pattern}
-        className="min-h-10 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-md text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
+        className="min-h-10 w-full min-w-0 max-w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-md text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
       />
     </label>
   );
@@ -80,7 +82,7 @@ function SelectField({
   placeholder: string;
 }) {
   return (
-    <label className="block">
+    <label className="block min-w-0">
       <span className="mb-1.5 block text-md font-bold text-slate-700">
         {label}
         {required && <span aria-hidden="true"> *</span>}
@@ -89,7 +91,7 @@ function SelectField({
         name={name}
         required={required}
         defaultValue=""
-        className="min-h-10 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-md text-slate-900 outline-none transition focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
+        className="min-h-10 w-full min-w-0 max-w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-md text-slate-900 outline-none transition focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
       >
         <option value="" disabled>
           {placeholder}
@@ -190,7 +192,7 @@ function ChoiceGroup({
   required?: boolean;
 }) {
   return (
-    <fieldset>
+    <fieldset className="min-w-0">
       <legend className="mb-2 text-md font-bold text-slate-700">
         {legend}
         {required && <span aria-hidden="true"> *</span>}
@@ -199,14 +201,14 @@ function ChoiceGroup({
         {options.map((option, index) => (
           <label
             key={option}
-            className="flex items-start gap-2 rounded-lg border border-slate-200 bg-white p-2.5 text-md leading-5 text-slate-700"
+            className="flex min-w-0 items-start gap-2 rounded-lg border border-slate-200 bg-white p-2.5 text-md leading-5 text-slate-700"
           >
             <input
               type="radio"
               name={name}
               value={option}
               required={required && index === 0}
-              className="mt-1 accent-emerald-700"
+              className="mt-1 shrink-0 accent-emerald-700"
             />
             {option}
           </label>
@@ -316,7 +318,7 @@ export default function CustomerEnquiryPage() {
                 lastPercentageInput.setCustomValidity("");
             }
           }}
-          className="space-y-6"
+          className="min-w-0 space-y-6"
         >
           <header className="rounded-2xl bg-[#123c48] p-5 text-white sm:p-7">
             <p className="text-md font-bold uppercase tracking-[0.2em] text-lime-300">
@@ -331,12 +333,13 @@ export default function CustomerEnquiryPage() {
             <p className="mt-3 text-md uppercase tracking-wide text-emerald-50/80">
               {page.proposalTitle}
             </p>
-            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+            <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               <TextField
                 label={page.quotationReference}
                 name="quotation_reference"
                 placeholder={page.quotationReferencePlaceholder}
                 required
+                labelTextClassName="text-white"
               />
               <TextField
                 label={page.revision}
@@ -344,18 +347,21 @@ export default function CustomerEnquiryPage() {
                 placeholder={page.revisionPlaceholder}
                 required
                 pattern="[0-9]{2}"
+                labelTextClassName="text-white"
               />
               <TextField
                 label={page.quotationDate}
                 name="quotation_date"
                 type="date"
                 required
+                labelTextClassName="text-white"
               />
               <TextField
                 label={page.validUntil}
                 name="quotation_valid_until"
                 type="date"
                 required
+                labelTextClassName="text-white"
               />
             </div>
           </header>
@@ -782,7 +788,7 @@ export default function CustomerEnquiryPage() {
                 name="additional_work"
                 rows={2}
                 placeholder={page.additionalWorkPlaceholder}
-                className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-md"
+                className="w-full min-w-0 max-w-full resize-y rounded-lg border border-slate-300 bg-white px-3 py-2 text-md"
               />
             </label>
           </section>
@@ -954,7 +960,7 @@ export default function CustomerEnquiryPage() {
               <input
                 name="company_seal"
                 placeholder={page.companySealPlaceholder}
-                className="min-h-10 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-md"
+                className="min-h-10 w-full min-w-0 max-w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-md"
               />
             </label>
           </section>
@@ -1007,7 +1013,7 @@ export default function CustomerEnquiryPage() {
             </p>
           )}
         </form>
-        <aside className="rounded-2xl border border-slate-200 bg-white p-5 lg:sticky lg:top-24">
+        <aside className="min-w-0 rounded-2xl border border-slate-200 bg-white p-5 lg:sticky lg:top-24">
           <h2 className="mb-4 text-md font-black uppercase tracking-wide text-slate-900">
             {page.quotationSectionsTitle}
           </h2>

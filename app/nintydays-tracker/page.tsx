@@ -175,7 +175,7 @@ export default function NinetyDayTrackerPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 pb-14 sm:px-8 sm:pb-20 lg:px-10">
+      <section className="mx-auto max-w-7xl px-5 pt-14 pb-14 sm:px-8 sm:pt-20 sm:pb-20 lg:px-10">
         <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
           <div>
             <p className="text-[12px] font-black uppercase tracking-[0.24em] text-[#9b4b42] ">
