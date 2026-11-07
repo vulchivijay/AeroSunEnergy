@@ -145,7 +145,7 @@ export default function Navbar() {
             }`}>
               <Icon className="h-4 w-4" strokeWidth={1.7} aria-hidden="true" />
               {disabled && (
-                <span className="absolute -left-2 -top-1 z-10 whitespace-nowrap rounded-t-md rounded-br-md border border-[#e7c779]/50 bg-[#09251e] px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.1em] text-[#f4d994] shadow-md">
+                <span className="absolute -left-4 -top-1 z-10 whitespace-nowrap rounded-t-md rounded-br-md border border-[#e7c779]/50 bg-[#09251e] px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.1em] text-[#f4d994] shadow-md">
                   {comingSoonLabel}
                 </span>
               )}
