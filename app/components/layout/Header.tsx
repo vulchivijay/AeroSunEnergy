@@ -24,6 +24,7 @@ import {
 } from 'lucide-react'
 import Logo from '../brand/Logo'
 import { useLocale, type Locale } from '@/lib/LocaleContext'
+import { isProductionComingSoonLink } from '@/lib/navigation'
 
 const navigationIconComponents: Record<string, LucideIcon> = {
   house: House,
@@ -111,7 +112,7 @@ export default function Navbar() {
   }
 
   function renderNavigationLink(link: NavigationLink, mobile = false) {
-    const disabled = Boolean(link.disabled)
+    const disabled = Boolean(link.disabled) || isProductionComingSoonLink(link.href)
     const active = isActive(link.href) && !disabled
     const Icon = getNavigationIcon(link.href)
     const comingSoonLabel = t.navbar.comingSoon

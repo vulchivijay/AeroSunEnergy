@@ -77,6 +77,7 @@ export const metadata: Metadata = {
     shortcut: '/images/logo.png',
     apple: '/images/logo.png',
   },
+  manifest: '/site.webmanifest',
   applicationName: 'AeroSun Energy',
   authors: [{ name: 'AeroSun Energy', url: 'https://aerosunenergy.in' }],
   creator: 'AeroSun Energy',

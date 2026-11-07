@@ -6,6 +6,7 @@ import { useEffect, useState, type FormEvent, type ReactNode } from 'react'
 import Logo from '../brand/Logo'
 import CompanyAge from './CompanyAge'
 import { useLocale } from '@/lib/LocaleContext'
+import { isProductionComingSoonLink } from '@/lib/navigation'
 import { ArrowRight, ArrowUpRight, Globe, Mail, MapPin, Phone, Send, Sun, Wind, Zap } from 'lucide-react'
 
 const socialIconComponents: Record<string, ReactNode> = {
@@ -151,7 +152,7 @@ export default function Footer() {
 						<ul className="space-y-1">
 							{visibleNavLinks.map((link) => (
 								<li key={link.label}>
-									{(link as { disabled?: boolean }).disabled ? (
+									{(link as { disabled?: boolean }).disabled || isProductionComingSoonLink(link.href) ? (
 										<span className="inline-flex min-h-10 items-center gap-2 text-sm text-gray-500">
 											{link.label}<span className="rounded-full bg-white/10 px-2 py-0.5 text-[9px] uppercase tracking-wider">{t.navbar.comingSoon}</span>
 										</span>
@@ -188,10 +189,16 @@ export default function Footer() {
 						<ul className="space-y-1">
 							{solutions.map((solution) => (
 								<li key={solution.label}>
-									<Link href={solution.href} aria-current={isActive(solution.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] ${isActive(solution.href) ? 'font-semibold text-[#DCEDC8]' : 'text-gray-300 hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]'}`}>
-										<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(solution.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
-										{solution.label}
-									</Link>
+									{isProductionComingSoonLink(solution.href) ? (
+										<span className="inline-flex min-h-10 items-center gap-2 text-sm text-gray-500">
+											{solution.label}<span className="rounded-full bg-white/10 px-2 py-0.5 text-[9px] uppercase tracking-wider">{t.navbar.comingSoon}</span>
+										</span>
+									) : (
+										<Link href={solution.href} aria-current={isActive(solution.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] ${isActive(solution.href) ? 'font-semibold text-[#DCEDC8]' : 'text-gray-300 hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]'}`}>
+											<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(solution.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
+											{solution.label}
+										</Link>
+									)}
 								</li>
 							))}
 						</ul>
