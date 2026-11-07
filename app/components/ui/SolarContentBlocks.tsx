@@ -60,7 +60,7 @@ export function FeatureCard({
       title={featureTitle}
       description={featureDescription}
       points={featurePoints}
-      label="Solar solution"
+      label={t.ui.solarSolution}
       icon={renderSolarIcon(componentData.iconColors[featureAccent])}
       cardClassName="group rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_22px_45px_-28px_rgba(15,23,42,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-28px_rgba(16,185,129,0.3)]"
       featureClassName={componentData.featureClasses[featureAccent]}

@@ -112,7 +112,7 @@ export default function CompanyProfilePage() {
           </p>
           <a
             href="/company-profile.pdf"
-            download
+            download="company-profile.pdf"
             className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-lime-300 px-5 py-3 text-sm font-bold text-emerald-950 transition hover:bg-lime-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-200"
           >
             <Download className="h-4 w-4" aria-hidden="true" />

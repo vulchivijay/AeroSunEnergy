@@ -8,7 +8,7 @@ The content below uses the company information and business direction establishe
 
 # AEROSUN ENERGY PRIVATE LIMITED
 
-### Power from Sun, Wind, Water, Fire.
+### Power from Sun and Wind.
 
 **Company Profile | 2026**
 
@@ -32,7 +32,7 @@ We aim to combine renewable-energy products, customised system design, engineeri
 
 Our long-term direction includes the development of customised small wind generators, solar power systems and integrated solar–wind hybrid solutions.
 
-**Our guiding principle: Power from Sun, Wind, Water, Fire..**
+**Our guiding principle: Power from Sun and Wind..**
 
 ## 2. Our Vision
 
@@ -214,7 +214,7 @@ AeroSun Energy's long-term development priorities include:
 
 **AEROSUN ENERGY PRIVATE LIMITED**
 
-_Power from Sun, Wind, Water, Fire.._
+_Power from Sun and Wind.._
 
 Registered Office:  
 D.No. 11-184, Gollavanigunta, T.N. Pallem, Tirupati, Andhra Pradesh – 517501, India.

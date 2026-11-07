@@ -176,7 +176,7 @@ export default function Contact() {
                       <span className="mt-1 block break-words text-sm font-semibold leading-6 text-white group-hover:text-lime-200">{channel.value}</span>
                     </span>
                     <span className="ml-auto text-lg text-lime-300 transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
-                    <span className="sr-only">Open {channel.label}</span>
+                    <span className="sr-only">{t.ui.openLink} {channel.label}</span>
                   </a>
                 ))}
               </div>

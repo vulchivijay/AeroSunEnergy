@@ -163,10 +163,10 @@ export default function SolarEnergyPage() {
           <h2 className="mt-3 text-3xl font-bold text-slate-900">{solarPage.subsidy.strategicTitle}</h2>
           <div className="mt-6 grid gap-6 lg:grid-cols-2">
             <div className="rounded-3xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700">
-              Start by evaluating rooftop solar, hybrid systems, and agricultural solar water pumping. These categories give actionable customer segments and manageable project scopes.
+              {solarPage.subsidy.strategyOverview}
             </div>
             <div className="rounded-3xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700">
-              Solar EV charging, off-grid systems, and solar street lighting also have strong use cases, especially in public infrastructure and rural applications.
+              {solarPage.subsidy.strategyAdditionalOptions}
             </div>
           </div>
           
@@ -181,7 +181,7 @@ export default function SolarEnergyPage() {
 
             <div className="mt-6 overflow-hidden rounded-3xl border border-slate-200">
               <div className="grid grid-cols-1 border-b border-slate-200 bg-slate-50 text-md font-semibold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-[1.3fr_0.9fr_0.8fr_1.4fr]">
-                <div className="px-4 py-3">{t.ui?.systemType ?? 'System type'}</div>
+                <div className="px-4 py-3">{t.ui.systemType}</div>
                 <div className="px-4 py-3">{comparisonMeta.battery}</div>
                 <div className="px-4 py-3">{comparisonMeta.grid}</div>
                 <div className="px-4 py-3">{comparisonMeta.typicalUse}</div>

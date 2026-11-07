@@ -100,7 +100,7 @@ export default function ProductCataloguePage() {
           </p>
           <a
             href="/product-catalogue.pdf"
-            download
+            download="product-catalogue.pdf"
             className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-lime-300 px-5 py-3 text-sm font-bold text-emerald-950 transition hover:bg-lime-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-200"
           >
             <Download className="h-4 w-4" aria-hidden="true" />
@@ -293,7 +293,7 @@ export default function ProductCataloguePage() {
           </div>
           <div className="mt-5 rounded-3xl border border-lime-200/20 bg-black/10 p-6 sm:p-8">
             <p className="text-md font-bold uppercase tracking-[0.2em] text-lime-300">{c.wind.projectLabel}</p>
-            <h3 className="mt-3 text-2xl font-black sm:text-3xl">AeroSun AS-WG-3000</h3>
+            <h3 className="mt-3 text-2xl font-black sm:text-3xl">{c.wind.productName}</h3>
             <p className="mt-2 text-md text-emerald-100/75">{c.wind.configurationLabel}</p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {c.wind.configuration.map((item) => (
@@ -304,7 +304,8 @@ export default function ProductCataloguePage() {
               ))}
             </div>
             <p className="mt-6 border-t border-white/15 pt-5 text-md leading-6 text-emerald-100/80">
-              <strong className="text-white">{c.wind.statusLabel}</strong> The AS-WG-3000 {c.wind.status}
+              <strong className="text-white">{c.wind.statusLabel}</strong>{' '}
+              {c.wind.statusTemplate.replace('{status}', c.wind.status)}
             </p>
           </div>
           <p className="mt-6 font-semibold italic text-lime-300">

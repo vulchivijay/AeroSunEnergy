@@ -3,6 +3,7 @@
 import Image, { ImageProps } from 'next/image'
 import { useEffect, useState } from 'react'
 import { generateImagePlaceholder } from '@/lib/imagePlaceholder'
+import { useLocale } from '@/lib/LocaleContext'
 
 type Props = Omit<ImageProps, 'src'> & {
   src: string
@@ -20,6 +21,7 @@ export default function OptimizedImage({
   onError,
   ...rest
 }: Props) {
+  const { t } = useLocale()
   const [settledSrc, setSettledSrc] = useState<string | null>(null)
   const [spinnerSrc, setSpinnerSrc] = useState<string | null>(null)
 
@@ -55,7 +57,7 @@ export default function OptimizedImage({
         />
       )}
       {showSpinner && (
-        <div className="absolute inset-0 flex items-center justify-center" role="status" aria-label="Loading image">
+        <div className="absolute inset-0 flex items-center justify-center" role="status" aria-label={t.ui.loadingImage}>
           <span
             className="h-9 w-9 animate-spin rounded-full border-4 border-slate-400/40 border-t-slate-700   motion-reduce:animate-none"
             aria-hidden="true"

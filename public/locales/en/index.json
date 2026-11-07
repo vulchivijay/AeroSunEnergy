@@ -4057,7 +4057,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Prepared as an environmental awareness initiative by AeroSun Energy Private Limited — Power from Sun, Wind, Water, Fire."
+            "text": "Prepared as an environmental awareness initiative by AeroSun Energy Private Limited — Power from Sun and Wind."
           },
           {
             "type": "paragraph",
@@ -4318,7 +4318,7 @@
     "startProjectTitle": "Start a renewable energy project with AeroSun Energy",
     "startProjectAriaLabel": "Contact AeroSun Energy to start your project",
     "brandName": "AeroSun Energy Private Limited",
-    "brandTagline": "Power from Sun, Wind, Water, Fire",
+    "brandTagline": "Power from Sun and Wind",
     "primaryNavigationLabel": "Primary navigation",
     "mobileNavigationLabel": "Mobile primary navigation",
     "exploreLabel": "Explore AeroSun",
@@ -4360,6 +4360,7 @@
       "exploreTitle": "Learn how AeroSun Energy hybrid systems work",
       "exploreAriaLabel": "Explore the AeroSun Energy system details",
       "quote": "Get a Free Quote",
+      "estimateSavings": "Estimate Savings",
       "quoteTitle": "Get a free quote for AeroSun Energy systems",
       "quoteAriaLabel": "Request a free quote from AeroSun Energy"
     },
@@ -4636,7 +4637,7 @@
       ],
       "futureHeading": "Building a cleaner and more energy-efficient future",
       "futureDescription": "We believe renewable energy is an important part of creating a sustainable future. By promoting innovative energy technologies and practical renewable energy solutions, AeroSun Energy aims to help customers manage energy costs, reduce environmental impact, and move towards greater energy independence.",
-      "slogan": "AeroSun Energy Private Limited — Power from Sun, Wind, Water, Fire."
+      "slogan": "AeroSun Energy Private Limited — Power from Sun and Wind."
     },
     "offer": {
       "eyebrow": "What We Offer",
@@ -5348,7 +5349,9 @@
         }
       ],
       "strategicEyebrow": "Strategic view",
-      "strategicTitle": "Which solar systems should AeroSun Energy consider?"
+      "strategicTitle": "Which solar systems should AeroSun Energy consider?",
+      "strategyOverview": "Start by evaluating rooftop solar, hybrid systems, and agricultural solar water pumping. These categories give actionable customer segments and manageable project scopes.",
+      "strategyAdditionalOptions": "Solar EV charging, off-grid systems, and solar street lighting also have strong use cases, especially in public infrastructure and rural applications."
     },
     "comparison": {
       "label": "Comparison",
@@ -5972,7 +5975,7 @@
       "badge": "Company profile · 2026",
       "title": "AeroSun Energy",
       "subtitle": "Private Limited",
-      "motto": "Power from Sun, Wind, Water, Fire.",
+      "motto": "Power from Sun and Wind.",
       "intro": "An Indian renewable-energy company focused on developing and delivering practical clean-energy solutions using solar and wind power for households, agriculture, businesses and remote communities.",
       "downloadLabel": "Download company profile (PDF)",
       "officeLabel": "Registered office",
@@ -6031,7 +6034,7 @@
       "futureDescription": "AeroSun Energy’s long-term development priorities include:",
       "contactEyebrow": "Contact us",
       "contactTitle": "Let’s build a cleaner energy future.",
-      "contactTagline": "Power from Sun, Wind, Water, Fire..",
+      "contactTagline": "Power from Sun and Wind..",
       "contactCompany": "AeroSun Energy Private Limited",
       "contactAction": "Contact our team",
       "contactWebsite": "aerosunenergy.in",
@@ -6237,7 +6240,7 @@
     "legalLabel": "Private Limited",
     "heroPitch": "Solar energy • Wind energy • Hybrid renewable energy",
     "promiseLabel": "Our promise",
-    "promiseText": "Power from Sun, Wind, Water, Fire.",
+    "promiseText": "Power from Sun and Wind.",
     "heroDescription": "AeroSun Energy Private Limited is an Indian renewable-energy company established with the vision of supporting a cleaner, more sustainable and energy-efficient future. Based in Tirupati, Andhra Pradesh, the company aims to develop renewable-energy solutions for residential, agricultural, commercial and industrial customers.",
     "ctaExplore": "Explore our capabilities",
     "ctaLeadership": "Meet the leadership",
@@ -7429,6 +7432,9 @@
     "windSolution": "Wind solution",
     "hybridSystem": "Hybrid system",
     "systemType": "System type",
+    "loadingImage": "Loading image",
+    "solarSolution": "Solar solution",
+    "openLink": "Open",
     "capacityBand": "Capacity band",
     "systemSize": "System size",
     "typicalUse": "Typical use",
@@ -7445,7 +7451,7 @@
       "badge": "Product & Services Catalogue · 2026",
       "title": "Solar & Renewable",
       "titleAccent": "Energy Solutions",
-      "tagline": "Power from Sun, Wind, Water, Fire.",
+      "tagline": "Power from Sun and Wind.",
       "description": "Energy requirements differ for every home, farm and business. We aim to provide customised renewable-energy solutions designed around electricity consumption, site conditions, available resources and customer requirements, with a portfolio focused on solar, wind-energy development, battery storage and integrated renewable-energy systems.",
       "downloadLabel": "Download product catalogue",
       "audiences": [
@@ -7699,7 +7705,9 @@
         "Direct-drive permanent-magnet generator concept.",
         "Electrical power conversion and protection."
       ],
+      "productName": "AeroSun AS-WG-3000",
       "statusLabel": "Development status:",
+      "statusTemplate": "The AS-WG-3000 {status}",
       "status": "is a product-development project. Rated output, starting wind speed, power curve, efficiency, reliability and operating limits remain subject to engineering validation and physical testing.",
       "tagline": "AeroSun Energy – Exploring new possibilities in wind energy."
     },
@@ -7735,7 +7743,7 @@
         "Reduced dependence on a single generation source."
       ],
       "caveat": "Solar and wind generation depend on environmental conditions. A hybrid system does not guarantee uninterrupted power unless its generation capacity, storage, load management and backup arrangements are properly designed.",
-      "tagline": "AeroSun Energy – Power from Sun, Wind, Water, Fire."
+      "tagline": "AeroSun Energy – Power from Sun and Wind."
     },
     "consultation": {
       "eyebrow": "Consultation & feasibility assessment",
@@ -7805,7 +7813,7 @@
       "eyebrow": "Let’s discuss your energy requirements",
       "title": "Explore a suitable clean-energy option.",
       "description": "Whether you are a homeowner, farmer, business owner or institution, AeroSun Energy can help you explore suitable renewable-energy options.",
-      "tagline": "Power from Sun, Wind, Water, Fire.",
+      "tagline": "Power from Sun and Wind.",
       "company": "AeroSun Energy Private Limited",
       "address": "D.No. 11-184, Gollavanigunta, T.N. Pallem, Tirupati, Andhra Pradesh – 517501, India.",
       "email": "customercare@aerosunenergy.in",
@@ -9149,7 +9157,7 @@
     "title": "Solar Project Quotation",
     "description": "Complete the technical and commercial proposal with the customer and project details.",
     "companyName": "AeroSun Energy Private Limited",
-    "companyTagline": "Power from Sun, Wind, Water, Fire.",
+    "companyTagline": "Power from Sun and Wind.",
     "proposalTitle": "Solar Energy System – Technical & Commercial Proposal",
     "phoneValue": "+91 8099181075",
     "revisionPlaceholder": "00",
@@ -9843,6 +9851,7 @@
         "Improved energy resilience"
       ],
       "serviceStructure": "Service structure",
+      "division": "DIVISION",
       "serviceStructureTitle": "Three core renewable energy service divisions",
       "commonCapabilities": "Common capabilities",
       "commonCapabilitiesTitle": "Services applicable across solar, wind, and hybrid projects",
@@ -11225,6 +11234,44 @@
     }
   },
   "ninetyDayTrackerPage": {
+    "hero": {
+      "badge": "Business tracker",
+      "title": "90-Day Tracker",
+      "planTitle": "Business execution plan",
+      "description": "I've created the AeroSun Energy 90-Day Business Execution Tracker in Excel.",
+      "downloadLabel": "Download AeroSun 90-Day Business Execution Tracker (.xlsx)",
+      "contactLabel": "Connect with AeroSun Energy"
+    },
+    "overview": {
+      "title": "Execution overview",
+      "capitalLabel": "Capital",
+      "highlights": [
+        "Expense tracking and GST visibility",
+        "Lead conversion and follow-up control",
+        "Order and receivables monitoring",
+        "Daily action and milestone review"
+      ]
+    },
+    "plan": {
+      "eyebrow": "Clear 90-day plan",
+      "summary": "The execution plan is simple: generate revenue, secure funding, validate product, and scale only after demand is proven.",
+      "phasesEyebrow": "90-day action plan",
+      "phasesTitle": "A practical timeline from business preparation to technology and funding",
+      "expectedResult": "Expected result"
+    },
+    "workbook": {
+      "eyebrow": "What's included?",
+      "title": "Business execution workbook",
+      "sheetColumn": "Sheet",
+      "purposeColumn": "Purpose"
+    },
+    "assumptionsTitle": "Preconfigured assumptions",
+    "recommendation": {
+      "eyebrow": "Recommendation",
+      "description": "The workbook includes automatic calculations, dropdown selections, overdue follow-up highlighting and a dashboard.",
+      "personalEyebrow": "My recommendation:",
+      "personalDescription": "Update the Expenses, Leads and Activities sheets at least once every day. Review the Dashboard every week. This will help you control your ₹1 lakh investment and avoid unnecessary spending."
+    },
     "sheetRows": [
       [
         "Dashboard",

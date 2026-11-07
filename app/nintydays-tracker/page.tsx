@@ -37,21 +37,20 @@ export default function NinetyDayTrackerPage() {
           >
             <div className="inline-flex items-center gap-2 rounded-full border border-amber-100/25 bg-white/[0.06] px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-amber-100">
               <span className="h-1.5 w-1.5 rounded-full bg-[#f2b84b]" />
-              Business tracker
+              {trackerPage.hero.badge}
             </div>
 
             <h1 className="mt-7 text-5xl font-black uppercase leading-[0.92] tracking-[0.075em] text-white sm:text-7xl lg:text-8xl">
               AeroSun Energy
-              <span className="mt-2 block text-[#f2b84b]">90-Day Tracker</span>
+              <span className="mt-2 block text-[#f2b84b]">{trackerPage.hero.title}</span>
             </h1>
 
             <p className="mt-5 text-md font-bold uppercase tracking-[0.3em] text-[#f4c77c]">
-              BUSINESS EXECUTION PLAN
+              {trackerPage.hero.planTitle}
             </p>
 
             <p className="mt-8 max-w-2xl text-sm leading-7 text-[#e2e7f1] sm:text-lg sm:leading-8">
-              I&apos;ve created the AeroSun Energy 90-Day Business Execution
-              Tracker in Excel.
+              {trackerPage.hero.description}
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -60,13 +59,13 @@ export default function NinetyDayTrackerPage() {
                 className="inline-flex items-center gap-2 rounded-full bg-[#f2b84b] px-5 py-3 text-md font-bold text-[#30243a] transition hover:bg-[#ffd47a]"
               >
                 <Download className="h-4 w-4" aria-hidden="true" />
-                Download AeroSun 90-Day Business Execution Tracker (.xlsx)
+                {trackerPage.hero.downloadLabel}
               </a>
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-md font-bold text-white transition hover:bg-white/10"
               >
-                Connect with AeroSun Energy
+                {trackerPage.hero.contactLabel}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
@@ -83,7 +82,7 @@ export default function NinetyDayTrackerPage() {
               <div className="relative overflow-hidden rounded-[1.5rem] bg-[linear-gradient(155deg,#37466b_0%,#202c49_55%,#3b3557_100%)] p-6">
                 <div className="flex items-center justify-between gap-3">
                   <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-[#d7deee]">
-                    Execution overview
+                    {trackerPage.overview.title}
                   </p>
                   <BarChart3
                     className="h-6 w-6 text-[#f2b84b]"
@@ -95,7 +94,7 @@ export default function NinetyDayTrackerPage() {
                   <div className="flex items-end justify-between gap-3">
                     <div>
                       <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-[#d7deee]">
-                        Capital
+                        {trackerPage.overview.capitalLabel}
                       </p>
                       <p className="mt-2 text-3xl font-black text-white">
                         ₹1,00,000
@@ -109,12 +108,7 @@ export default function NinetyDayTrackerPage() {
                 </div>
 
                 <div className="mt-5 space-y-3">
-                  {[
-                    "Expense tracking and GST visibility",
-                    "Lead conversion and follow-up control",
-                    "Order and receivables monitoring",
-                    "Daily action and milestone review",
-                  ].map((item) => (
+                  {trackerPage.overview.highlights.map((item) => (
                     <div
                       key={item}
                       className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-md text-[#edf0f7]"
@@ -136,11 +130,10 @@ export default function NinetyDayTrackerPage() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-10">
             <p className="text-[12px] font-black uppercase tracking-[0.24em] text-[#9b4b42] ">
-              Clear 90-day plan
+              {trackerPage.plan.eyebrow}
             </p>
             <h2 className="mt-4 max-w-3xl text-3xl font-black leading-tight tracking-[0.055em] text-[#202b43]  sm:text-4xl">
-              The execution plan is simple: generate revenue, secure funding,
-              validate product, and scale only after demand is proven.
+              {trackerPage.plan.summary}
             </h2>
           </div>
 
@@ -179,10 +172,10 @@ export default function NinetyDayTrackerPage() {
         <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
           <div>
             <p className="text-[12px] font-black uppercase tracking-[0.24em] text-[#9b4b42] ">
-              What&apos;s included?
+              {trackerPage.workbook.eyebrow}
             </p>
             <h2 className="mt-4 max-w-md text-3xl font-black leading-tight tracking-[0.055em] text-[#202b43]  sm:text-4xl">
-              Business execution workbook
+              {trackerPage.workbook.title}
             </h2>
             <div className="mt-6 h-1 w-16 rounded-full bg-[#ed7357]" />
           </div>
@@ -193,10 +186,10 @@ export default function NinetyDayTrackerPage() {
                 <thead className="bg-[#f0e6d8] text-[#202b43]  ">
                   <tr>
                     <th className="px-5 py-4 font-black uppercase tracking-[0.16em] text-[#9b4b42] ">
-                      Sheet
+                      {trackerPage.workbook.sheetColumn}
                     </th>
                     <th className="px-5 py-4 font-black uppercase tracking-[0.16em] text-[#9b4b42] ">
-                      Purpose
+                      {trackerPage.workbook.purposeColumn}
                     </th>
                   </tr>
                 </thead>
@@ -222,7 +215,7 @@ export default function NinetyDayTrackerPage() {
       <section className="bg-[#f5f0e7] px-5 py-14  sm:px-8 sm:pb-20 lg:px-10">
         <div className="mx-auto max-w-7xl rounded-[2rem] border border-[#e5b997] bg-[#f7e3d3] p-7 shadow-[0_24px_60px_-40px_rgba(237,115,87,0.35)]  ">
           <p className="text-[12px] font-black uppercase tracking-[0.28em] text-[#9b4b42] ">
-            Preconfigured assumptions
+            {trackerPage.assumptionsTitle}
           </p>
           <ul className="mt-6 space-y-3 text-lg leading-8 text-[#3d3442] ">
             {trackerPage.assumptionItems.map((item) => (
@@ -242,11 +235,10 @@ export default function NinetyDayTrackerPage() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-8">
             <p className="text-[12px] font-black uppercase tracking-[0.24em] text-[#a34f41] ">
-              90-day action plan
+              {trackerPage.plan.phasesEyebrow}
             </p>
             <h2 className="mt-4 max-w-3xl text-3xl font-black leading-tight tracking-[0.055em] text-[#202b43]  sm:text-4xl">
-              A practical timeline from business preparation to technology and
-              funding
+              {trackerPage.plan.phasesTitle}
             </h2>
           </div>
 
@@ -292,7 +284,7 @@ export default function NinetyDayTrackerPage() {
                   {"outcome" in phase && (
                     <div className="mt-5 rounded-2xl border border-[#bdcfcd] bg-[#e5efed] p-4  ">
                       <p className="text-[12px] font-black uppercase tracking-[0.18em] text-[#356c68] ">
-                        Expected result
+                        {trackerPage.plan.expectedResult}
                       </p>
                       <p className="mt-1 font-semibold text-[#293e4b] ">
                         {phase.outcome}
@@ -309,20 +301,17 @@ export default function NinetyDayTrackerPage() {
       <section className="bg-[#19243d] px-5 py-14 text-white  sm:px-8 sm:pb-20 lg:px-10">
         <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-[#263451] p-7 shadow-[0_24px_60px_-40px_rgba(0,0,0,0.55)] ">
           <p className="text-[12px] font-black uppercase tracking-[0.28em] text-[#f2b84b]">
-            Recommendation
+            {trackerPage.recommendation.eyebrow}
           </p>
           <p className="mt-5 text-xl leading-9 text-[#edf0f7]">
-            The workbook includes automatic calculations, dropdown selections,
-            overdue follow-up highlighting and a dashboard.
+            {trackerPage.recommendation.description}
           </p>
           <div className="mt-6 rounded-[1.4rem] border border-[#ed7357]/40 bg-[#ed7357]/10 p-5">
             <p className="text-[12px] font-black uppercase tracking-[0.22em] text-[#ffac91]">
-              My recommendation:
+              {trackerPage.recommendation.personalEyebrow}
             </p>
             <p className="mt-3 text-lg leading-8 text-[#edf0f7]">
-              Update the Expenses, Leads and Activities sheets at least once
-              every day. Review the Dashboard every week. This will help you
-              control your ₹1 lakh investment and avoid unnecessary spending.
+              {trackerPage.recommendation.personalDescription}
             </p>
           </div>
         </div>

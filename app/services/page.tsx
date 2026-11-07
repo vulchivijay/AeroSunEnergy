@@ -104,7 +104,7 @@ export default function ServicesPage() {
                 <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${service.accent}`} />
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <span className="font-mono text-xs font-bold tracking-[0.18em] text-emerald-800">DIVISION 0{index + 1}</span>
+                    <span className="font-mono text-xs font-bold tracking-[0.18em] text-emerald-800">{labels.division} 0{index + 1}</span>
                     <h3 className="mt-3 text-2xl font-black tracking-tight text-slate-950 sm:text-3xl">{service.title}</h3>
                   </div>
                   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#eef5eb] text-emerald-800 transition group-hover:bg-emerald-800 group-hover:text-white">
