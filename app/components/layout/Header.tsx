@@ -138,6 +138,12 @@ export default function Navbar() {
           <span>{link.label}</span>
         ) : (
           <>
+            {disabled && (
+              <span className="mb-0.5 inline-flex items-center gap-1 rounded-t-md rounded-br-md border border-[#e7c779]/35 bg-[#f7edda]/10 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.12em] text-[#f4d994]">
+                <span className="h-1 w-1 rounded-full bg-[#f5c76a]" aria-hidden="true" />
+                {comingSoonLabel}
+              </span>
+            )}
             <span className={`flex h-8 w-8 items-center justify-center rounded-full border transition-all duration-300 ${
               active
                 ? 'border-[#dcedc8] bg-[#a5d6a7] text-[#173b2c] shadow-[0_0_22px_-5px_rgba(165,214,167,0.45)]'
@@ -149,7 +155,7 @@ export default function Navbar() {
           </>
         )}
         {disabled && (
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-[#e7c779]/35 bg-[#f7edda]/10 px-2 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-[#f4d994]">
+          <span className={`${mobile ? 'inline-flex' : 'hidden'} items-center gap-1.5 rounded-full border border-[#e7c779]/35 bg-[#f7edda]/10 px-2 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-[#f4d994]`}>
             <span className="h-1.5 w-1.5 rounded-full bg-[#f5c76a]" aria-hidden="true" />
             {comingSoonLabel}
           </span>

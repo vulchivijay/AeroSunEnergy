@@ -48,8 +48,8 @@ export default function Footer() {
 	const quickEnquiries = queries
 	const visibleNavLinks = navLinks
 	const comingSoonBadge = (
-		<span className="inline-flex shrink-0 items-center gap-1.5 rounded-md border border-[#F5C76A]/20 bg-[#F5C76A]/[0.07] px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-[#F5C76A]">
-			<span className="h-1.5 w-1.5 rounded-full bg-[#F5C76A]" aria-hidden="true" />
+		<span className="inline-flex items-center gap-1.5 border-l border-[#F5C76A]/45 pl-2 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#F5C76A]">
+			<span className="h-px w-2 bg-[#F5C76A]/70" aria-hidden="true" />
 			{t.navbar.comingSoon}
 		</span>
 	)
@@ -159,7 +159,7 @@ export default function Footer() {
 							{visibleNavLinks.map((link) => (
 								<li key={link.label}>
 									{(link as { disabled?: boolean }).disabled || isProductionComingSoonLink(link.href) ? (
-										<span className="flex min-h-10 w-full items-center justify-between gap-3 text-sm text-gray-400">
+										<span className="flex min-h-10 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-gray-400">
 											<span className="min-w-0">{link.label}</span>{comingSoonBadge}
 										</span>
 									) : (
@@ -176,7 +176,7 @@ export default function Footer() {
 							{quickEnquiries.map((item) => (
 								<li key={item.href}>
 									{(item as { disabled?: boolean }).disabled || isProductionComingSoonLink(item.href) ? (
-										<span className="flex min-h-9 w-full items-center justify-between gap-3 text-sm text-gray-400">
+										<span className="flex min-h-9 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-gray-400">
 											<span className="min-w-0">{item.label}</span>{comingSoonBadge}
 										</span>
 									) : (
@@ -196,7 +196,7 @@ export default function Footer() {
 							{solutions.map((solution) => (
 								<li key={solution.label}>
 									{isProductionComingSoonLink(solution.href) ? (
-										<span className="flex min-h-10 w-full items-center justify-between gap-3 text-sm text-gray-400">
+										<span className="flex min-h-10 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-gray-400">
 											<span className="min-w-0">{solution.label}</span>{comingSoonBadge}
 										</span>
 									) : (
