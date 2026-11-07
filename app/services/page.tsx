@@ -15,6 +15,7 @@ import {
 } from 'lucide-react'
 import { OptimizedImage } from '@/app/components/ui'
 import { useLocale } from '@/lib/LocaleContext'
+import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 
 const divisionIcons = [Sun, Wind, Zap, Gauge]
 const capabilityIcons = [Compass, DraftingCompass, Settings2, ArrowRight, Gauge, Lightbulb]
@@ -293,6 +294,7 @@ export default function ServicesPage() {
           ))}
         </div>
       </section>
+      <TirupatiEnergySection />
     </main>
   )
 }

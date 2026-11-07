@@ -1,6 +1,7 @@
 'use client'
 
 import { useLocale } from '@/lib/LocaleContext'
+import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 import { SharedHeroSlider, type HeroSliderSlide } from '../components/ui/SharedHeroSlider'
 import {
   CapacityTable,
@@ -283,6 +284,7 @@ export default function SolarEnergyPage() {
           </div>
         </div>
       </section>
+      <TirupatiEnergySection />
     </main>
   )
 }
