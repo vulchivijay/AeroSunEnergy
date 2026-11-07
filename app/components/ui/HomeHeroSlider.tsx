@@ -43,13 +43,13 @@ export default function HomeHeroSlider() {
                   href="/contact"
                   className="rounded-full bg-emerald-500 px-5 py-3 text-md font-black uppercase tracking-[0.18em] text-emerald-950 shadow-[0_18px_30px_-18px_rgba(16,185,129,0.9)] transition hover:bg-emerald-400"
                 >
-                  Get Free Quote
+                  {t.hero.buttons.quote}
                 </Link>
                 <Link
                   href="/estimation-calculator"
                   className="rounded-full border border-white/15 bg-white/8 px-5 py-3 text-md font-black uppercase tracking-[0.18em] text-white backdrop-blur-sm transition hover:border-white/30 hover:bg-white/12"
                 >
-                  Estimate Savings
+                  {t.hero.buttons.estimateSavings}
                 </Link>
                 </>
               }

@@ -8,7 +8,7 @@ You can send it to manufacturers, distributors, OEMs and contract manufacturers.
 
 # AEROSUN ENERGY PRIVATE LIMITED
 
-**Power from Sun, Wind, Water, Fire.**
+**Power from Sun and Wind.**
 
 **SUPPLIER REGISTRATION & REQUEST FOR QUOTATION (RFQ)**
 
@@ -321,17 +321,17 @@ We hereby confirm that the information provided in this registration form is acc
 
 We agree to provide supporting documents and technical information when requested for supplier evaluation.
 
-**Authorised Person:** ****\*\*\*\*****\_\_****\*\*\*\*****
+**Authorised Person:** \***\*\*\*\*\*\*\***\_\_\***\*\*\*\*\*\*\***
 
-**Designation:** ******\*\*******\_\_\_\_******\*\*******
+**Designation:** **\*\***\*\***\*\***\_\_\_\_**\*\***\*\***\*\***
 
-**Company Name:** ******\*\*******\_******\*\*******
+**Company Name:** **\*\***\*\***\*\***\_**\*\***\*\***\*\***
 
-**Signature:** ******\*\*\*\*******\_\_******\*\*\*\*******
+**Signature:** **\*\***\*\*\*\***\*\***\_\_**\*\***\*\*\*\***\*\***
 
-**Company Seal:** ******\*\*******\_\_******\*\*******
+**Company Seal:** **\*\***\*\***\*\***\_\_**\*\***\*\***\*\***
 
-**Date:** ********\*\*********\_\_********\*\*********
+**Date:** **\*\*\*\***\*\***\*\*\*\***\_\_**\*\*\*\***\*\***\*\*\*\***
 
 ---
 
@@ -382,7 +382,7 @@ We look forward to receiving your response and exploring potential business oppo
 Best regards,
 
 **AeroSun Energy Private Limited**  
-Power from Sun, Wind, Water, Fire..
+Power from Sun and Wind..
 
 Email: customercare@aerosunenergy.in  
 Phone: +91 8099181075  

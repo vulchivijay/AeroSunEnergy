@@ -8,7 +8,7 @@ The template below includes technical specifications, equipment pricing, install
 
 # AEROSUN ENERGY PRIVATE LIMITED
 
-### Power from Sun, Wind, Water, Fire.
+### Power from Sun and Wind.
 
 **SOLAR ENERGY SYSTEM – TECHNICAL & COMMERCIAL PROPOSAL**
 
@@ -164,7 +164,7 @@ All equipment supplied will be subject to the specifications and commercial term
 
 **Total Amount in Words:**
 
-Rupees ********\*\*\*\*********\_\_********\*\*\*\********* only.
+Rupees **\*\*\*\***\*\*\*\***\*\*\*\***\_\_**\*\*\*\***\*\*\*\***\*\*\*\*** only.
 
 **GST Treatment:** GST will be charged as applicable to the individual goods and services and the agreed supply structure.
 
@@ -312,10 +312,10 @@ AeroSun Energy will communicate the applicable warranty arrangements before orde
 **Payment Details:**
 
 Account Name: AeroSun Energy Private Limited  
-Bank Name: ****\*\*\*\*****\_\_****\*\*\*\*****  
-Account Number: ****\*\*****\_****\*\*****  
-IFSC Code: ****\*\*\*\*****\_\_\_****\*\*\*\*****  
-Branch: ******\*\*******\_\_******\*\*******
+Bank Name: \***\*\*\*\*\*\*\***\_\_\***\*\*\*\*\*\*\***  
+Account Number: \***\*\*\*\*\***\_\***\*\*\*\*\***  
+IFSC Code: \***\*\*\*\*\*\*\***\_\_\_\***\*\*\*\*\*\*\***  
+Branch: **\*\***\*\***\*\***\_\_**\*\***\*\***\*\***
 
 _Bank details will be provided through an authenticated company invoice or payment document._
 
@@ -344,13 +344,13 @@ I / We have reviewed the technical proposal, equipment specifications, project p
 
 I / We agree to proceed with the proposed project subject to the final approved scope and purchase agreement.
 
-**Customer Name:** ****\*\*\*\*****\_\_****\*\*\*\*****
+**Customer Name:** \***\*\*\*\*\*\*\***\_\_\***\*\*\*\*\*\*\***
 
-**Signature:** ******\*\*******\_\_\_******\*\*******
+**Signature:** **\*\***\*\***\*\***\_\_\_**\*\***\*\***\*\***
 
-**Date:** ******\*\*\*\*******\_\_\_******\*\*\*\*******
+**Date:** **\*\***\*\*\*\***\*\***\_\_\_**\*\***\*\*\*\***\*\***
 
-**Place:** ******\*\*\*\*******\_\_******\*\*\*\*******
+**Place:** **\*\***\*\*\*\***\*\***\_\_**\*\***\*\*\*\***\*\***
 
 ---
 
@@ -360,11 +360,11 @@ For AeroSun Energy Private Limited
 
 **Authorised Representative:** **\*\*\*\***\_\_**\*\*\*\***
 
-**Designation:** ******\*\*******\_\_******\*\*******
+**Designation:** **\*\***\*\***\*\***\_\_**\*\***\*\***\*\***
 
-**Signature:** ******\*\*******\_\_\_\_******\*\*******
+**Signature:** **\*\***\*\***\*\***\_\_\_\_**\*\***\*\***\*\***
 
-**Date:** ******\*\*\*\*******\_\_\_\_******\*\*\*\*******
+**Date:** **\*\***\*\*\*\***\*\***\_\_\_\_**\*\***\*\*\*\***\*\***
 
 **Company Seal:**
 
@@ -374,7 +374,7 @@ For AeroSun Energy Private Limited
 
 **AEROSUN ENERGY PRIVATE LIMITED**
 
-### Power from Sun, Wind, Water, Fire..
+### Power from Sun and Wind..
 
 Website: https://aerosunenergy.in/  
 Email: customercare@aerosunenergy.in  

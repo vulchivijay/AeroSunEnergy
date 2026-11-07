@@ -3,7 +3,7 @@ Below is detailed, website-ready content for **AeroSun Energy’s six hybrid ren
 The calculations use illustrative assumptions to explain how a system might perform. Actual generation and savings depend on the site’s solar resource, wind speeds, load profile, system design, equipment efficiency, tariffs, battery losses, and operating conditions. These examples should not be presented as guaranteed performance.
 
 # Hybrid Renewable Energy Solutions
-## Power from Sun, Wind, Water, Fire
+## Power from Sun and Wind
 
 At **AeroSun Energy**, our hybrid renewable energy solutions bring together solar power, wind energy, battery storage, and intelligent energy management to help homes, businesses, farms, institutions, and remote communities make better use of renewable electricity.
 
@@ -920,7 +920,7 @@ Every site has different energy needs, renewable resources, and operating priori
 
 Whether you are planning a commercial installation, an agricultural power system, an off-grid facility, or a campus microgrid, the first step is to understand your energy demand and assess the available resources.
 
-**AeroSun Energy — Power from Sun, Wind, Water, Fire.**
+**AeroSun Energy — Power from Sun and Wind.**
 
 **Contact us to discuss your hybrid renewable energy requirements.**
 
