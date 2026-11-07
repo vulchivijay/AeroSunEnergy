@@ -24,6 +24,7 @@ import {
 } from 'lucide-react'
 import Logo from '../brand/Logo'
 import { useLocale, type Locale } from '@/lib/LocaleContext'
+import { isProductionComingSoonLink } from '@/lib/navigation'
 
 const navigationIconComponents: Record<string, LucideIcon> = {
   house: House,
@@ -111,7 +112,7 @@ export default function Navbar() {
   }
 
   function renderNavigationLink(link: NavigationLink, mobile = false) {
-    const disabled = Boolean(link.disabled)
+    const disabled = Boolean(link.disabled) || isProductionComingSoonLink(link.href)
     const active = isActive(link.href) && !disabled
     const Icon = getNavigationIcon(link.href)
     const comingSoonLabel = t.navbar.comingSoon
@@ -137,18 +138,24 @@ export default function Navbar() {
           <span>{link.label}</span>
         ) : (
           <>
-            <span className={`flex h-8 w-8 items-center justify-center rounded-full border transition-all duration-300 ${
+            <span className={`relative flex h-8 w-8 items-center justify-center rounded-full border transition-all duration-300 ${
               active
                 ? 'border-[#dcedc8] bg-[#a5d6a7] text-[#173b2c] shadow-[0_0_22px_-5px_rgba(165,214,167,0.45)]'
                 : 'border-white/15 bg-white/[0.05] text-[#d5ded8] group-hover:border-[#dcedc8] group-hover:bg-[#a5d6a7] group-hover:text-[#173b2c]'
             }`}>
               <Icon className="h-4 w-4" strokeWidth={1.7} aria-hidden="true" />
+              {disabled && (
+                <span className="absolute -left-4 -top-1 z-10 whitespace-nowrap rounded-t-md rounded-br-md border border-[#e7c779]/50 bg-[#09251e] px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.1em] text-[#f4d994] shadow-md">
+                  {comingSoonLabel}
+                </span>
+              )}
             </span>
             <span className="whitespace-nowrap">{link.label}</span>
           </>
         )}
         {disabled && (
-          <span className="rounded-full bg-[#f7edda] px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-[#85672f]">
+          <span className={`${mobile ? 'inline-flex' : 'hidden'} items-center gap-1.5 rounded-full border border-[#e7c779]/35 bg-[#f7edda]/10 px-2 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-[#f4d994]`}>
+            <span className="h-1.5 w-1.5 rounded-full bg-[#f5c76a]" aria-hidden="true" />
             {comingSoonLabel}
           </span>
         )}
