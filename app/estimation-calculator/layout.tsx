@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   description:
     'Use AeroSun Energy’s solar estimation calculator to estimate rooftop solar capacity, savings potential, payback period, and return on investment for homes and businesses in India.',
   keywords: [
+    'solar estimation calculator Tirupati',
+    'solar savings calculator Tirupati',
+    'rooftop solar estimate Tirupati',
+    'solar cost calculator Tirupati',
+    'solar system size calculator Tirupati',
+    'solar installation estimate Tirupati',
+    'home solar calculator Tirupati',
+    'commercial solar estimate Tirupati',
     'solar estimation calculator',
     'solar savings calculator',
     'rooftop solar estimate',

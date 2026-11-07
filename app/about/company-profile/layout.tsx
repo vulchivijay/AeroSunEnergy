@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     'agricultural renewable energy',
     'off-grid renewable energy',
     'renewable energy company Tirupati',
+    'solar energy company in Tirupati',
+    'wind energy solutions in Tirupati',
+    'hybrid energy solutions in Tirupati',
     'AeroSun Energy vision and mission',
   ],
   alternates: {

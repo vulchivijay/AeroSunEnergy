@@ -48,11 +48,11 @@ const BING_SITE_VERIFICATION = process.env.BING_SITE_VERIFICATION || 'CFCE648996
 
 export const metadata: Metadata = {
   title: {
-    default: 'Solar Energy Solutions for Homes & Businesses | AeroSun Energy',
+    default: 'Solar Energy Solutions in Tirupati | AeroSun Energy',
     template: '%s | AeroSun Energy',
   },
   description:
-    'AeroSun Energy designs and installs solar, wind, and hybrid renewable energy systems for homes, businesses, farms, and industrial projects across India.',
+    'AeroSun Energy is based in Tirupati, Andhra Pradesh, offering solar, wind, and hybrid energy solutions for homes, farms, businesses, and industries.',
   keywords: [
     'solar energy',
     'wind energy',
@@ -70,6 +70,30 @@ export const metadata: Metadata = {
     'off-grid solar systems',
     'hybrid power solutions',
     'wind energy solutions',
+    'solar energy in Tirupati',
+    'wind energy in Tirupati',
+    'solar energy solutions in Tirupati',
+    'solar power in Tirupati',
+    'solar panel installation in Tirupati',
+    'rooftop solar in Tirupati',
+    'solar company in Tirupati',
+    'solar installer in Tirupati',
+    'rooftop solar company in Tirupati',
+    'solar for homes in Tirupati',
+    'solar for businesses in Tirupati',
+    'solar for farms in Tirupati',
+    'agricultural solar power in Tirupati',
+    'solar water pumping system in Tirupati',
+    'commercial solar systems in Tirupati',
+    'industrial solar systems in Tirupati',
+    'on-grid solar in Tirupati',
+    'off-grid solar in Tirupati',
+    'hybrid solar systems in Tirupati',
+    'wind power solutions in Tirupati',
+    'wind energy solutions in Tirupati',
+    'solar wind hybrid systems in Tirupati',
+    'renewable energy company in Tirupati',
+    'renewable energy solutions in Tirupati Andhra Pradesh',
   ],
   metadataBase: new URL('https://aerosunenergy.in'),
   icons: {
@@ -108,9 +132,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'AeroSun Energy | Solar, Wind & Hybrid Energy Solutions in India',
+    title: 'Solar Energy Solutions in Tirupati | AeroSun Energy',
     description:
-      'AeroSun Energy designs and installs solar, wind, and hybrid renewable energy systems for homes, businesses, farms, and infrastructure across India.',
+      'Based in Tirupati, Andhra Pradesh, AeroSun Energy provides solar, wind, and hybrid energy solutions for homes, farms, businesses, and industries.',
     url: 'https://aerosunenergy.in',
     siteName: 'AeroSun Energy',
     locale: 'en_IN',
@@ -126,9 +150,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AeroSun Energy | Solar, Wind & Hybrid Energy Solutions in India',
+    title: 'Solar Energy Solutions in Tirupati | AeroSun Energy',
     description:
-      'AeroSun Energy delivers solar, wind, and hybrid renewable energy systems for homes, businesses, and infrastructure across India.',
+      'Based in Tirupati, Andhra Pradesh, AeroSun Energy provides solar, wind, and hybrid renewable energy solutions.',
     images: ['https://aerosunenergy.in/images/og-image.png'],
   },
   verification: {

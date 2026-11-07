@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   description:
     'Explore AeroSun Energy’s residential, commercial, agricultural, off-grid, battery, wind and hybrid renewable-energy solutions, consultation services and project process.',
   keywords: [
+    'solar products in Tirupati',
+    'solar panels and systems in Tirupati',
+    'commercial solar solutions in Tirupati',
+    'agricultural solar systems in Tirupati',
+    'off-grid solar systems in Tirupati',
+    'wind energy systems in Tirupati',
+    'solar wind hybrid systems in Tirupati',
+    'renewable energy products Tirupati',
     'AeroSun Energy product catalogue',
     'residential rooftop solar',
     'commercial industrial solar',

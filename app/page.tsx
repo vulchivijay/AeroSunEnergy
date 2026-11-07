@@ -83,6 +83,7 @@ function RecognitionHighlight() {
 export default function Home() {
   const { t } = useLocale()
   const home = t.home
+  const tirupatiSeo = home.tirupatiSeo
   const offer = home.offer
   const solarCards = offer.cards
   const systemTypes = home.systemTypes
@@ -95,6 +96,19 @@ export default function Home() {
     <main>
       <HomeHeroSlider />
       <SchemeBanner />
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-10">
+        <div className="rounded-3xl border border-emerald-200 bg-emerald-50 p-6 sm:p-8">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-800">
+            {tirupatiSeo.eyebrow}
+          </p>
+          <h2 className="mt-3 text-2xl font-black tracking-tight text-slate-900 sm:text-3xl">
+            {tirupatiSeo.title}
+          </h2>
+          <p className="mt-4 max-w-4xl text-base leading-7 text-slate-700">
+            {tirupatiSeo.description}
+          </p>
+        </div>
+      </section>
       {/* Solar Section */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
         <div className="mb-8">
