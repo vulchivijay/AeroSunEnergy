@@ -47,6 +47,12 @@ export default function Footer() {
 	const queries = t.navbar.quiries || []
 	const quickEnquiries = queries
 	const visibleNavLinks = navLinks
+	const comingSoonBadge = (
+		<span className="inline-flex shrink-0 items-center gap-1.5 rounded-md border border-[#F5C76A]/20 bg-[#F5C76A]/[0.07] px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-[#F5C76A]">
+			<span className="h-1.5 w-1.5 rounded-full bg-[#F5C76A]" aria-hidden="true" />
+			{t.navbar.comingSoon}
+		</span>
+	)
 	const [newsletterEmail, setNewsletterEmail] = useState('')
 	const [newsletterStatus, setNewsletterStatus] = useState('')
 	const [currentYear, setCurrentYear] = useState(INITIAL_COPYRIGHT_YEAR)
@@ -153,8 +159,8 @@ export default function Footer() {
 							{visibleNavLinks.map((link) => (
 								<li key={link.label}>
 									{(link as { disabled?: boolean }).disabled || isProductionComingSoonLink(link.href) ? (
-										<span className="inline-flex min-h-10 items-center gap-2 text-sm text-gray-500">
-											{link.label}<span className="rounded-full bg-white/10 px-2 py-0.5 text-[9px] uppercase tracking-wider">{t.navbar.comingSoon}</span>
+										<span className="flex min-h-10 w-full items-center justify-between gap-3 text-sm text-gray-400">
+											<span className="min-w-0">{link.label}</span>{comingSoonBadge}
 										</span>
 									) : (
 										<Link href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] ${isActive(link.href) ? 'font-semibold text-[#DCEDC8]' : 'text-gray-300 hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]'}`}>
@@ -169,9 +175,9 @@ export default function Footer() {
 						<ul className="space-y-1">
 							{quickEnquiries.map((item) => (
 								<li key={item.href}>
-									{(item as { disabled?: boolean }).disabled ? (
-										<span className="inline-flex min-h-9 items-center gap-2 text-sm text-gray-500">
-											{item.label}<span className="rounded-full bg-white/10 px-2 py-0.5 text-[9px] uppercase tracking-wider">{t.navbar.comingSoon}</span>
+									{(item as { disabled?: boolean }).disabled || isProductionComingSoonLink(item.href) ? (
+										<span className="flex min-h-9 w-full items-center justify-between gap-3 text-sm text-gray-400">
+											<span className="min-w-0">{item.label}</span>{comingSoonBadge}
 										</span>
 									) : (
 										<Link href={item.href} aria-current={isActive(item.href) ? 'page' : undefined} className={`group inline-flex min-h-11 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] ${isActive(item.href) ? 'font-semibold text-[#DCEDC8]' : 'text-gray-300 hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]'}`}>
@@ -190,8 +196,8 @@ export default function Footer() {
 							{solutions.map((solution) => (
 								<li key={solution.label}>
 									{isProductionComingSoonLink(solution.href) ? (
-										<span className="inline-flex min-h-10 items-center gap-2 text-sm text-gray-500">
-											{solution.label}<span className="rounded-full bg-white/10 px-2 py-0.5 text-[9px] uppercase tracking-wider">{t.navbar.comingSoon}</span>
+										<span className="flex min-h-10 w-full items-center justify-between gap-3 text-sm text-gray-400">
+											<span className="min-w-0">{solution.label}</span>{comingSoonBadge}
 										</span>
 									) : (
 										<Link href={solution.href} aria-current={isActive(solution.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] ${isActive(solution.href) ? 'font-semibold text-[#DCEDC8]' : 'text-gray-300 hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]'}`}>

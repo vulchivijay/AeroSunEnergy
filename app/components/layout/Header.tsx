@@ -149,7 +149,8 @@ export default function Navbar() {
           </>
         )}
         {disabled && (
-          <span className="rounded-full bg-[#f7edda] px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-[#85672f]">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-[#e7c779]/35 bg-[#f7edda]/10 px-2 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-[#f4d994]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#f5c76a]" aria-hidden="true" />
             {comingSoonLabel}
           </span>
         )}
