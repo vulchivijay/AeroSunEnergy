@@ -4,6 +4,7 @@ const SITE_URL = 'https://aerosunenergy.in'
 
 const nextConfig: NextConfig = {
   output: 'export',
+  productionBrowserSourceMaps: true,
   images: {
     unoptimized: true,
   },

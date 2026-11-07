@@ -97,7 +97,7 @@ export default function CookieConsent() {
             <button
               type="button"
               onClick={() => saveConsent('accepted')}
-              className="inline-flex min-h-11 text-nowrap items-center justify-center rounded-full bg-[#20A44A] px-5 py-2.5 text-md text-white shadow-lg shadow-emerald-600/20 transition hover:bg-[#18833a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+              className="inline-flex min-h-11 text-nowrap items-center justify-center rounded-full bg-[#15803D] px-5 py-2.5 text-md text-white shadow-lg shadow-emerald-600/20 transition hover:bg-[#18833a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
             >
               {labels.accept}
             </button>
