@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   description:
     'AeroSun Energy offers renewable energy services including solar consultation, wind energy support, hybrid system design, installation, maintenance, and technical support for homes, businesses, farms, and industrial projects in India.',
   keywords: [
+    'solar energy services in Tirupati',
+    'wind energy services in Tirupati',
+    'renewable energy services in Tirupati',
+    'solar installation services in Tirupati',
+    'solar system design in Tirupati',
+    'solar project consultation in Tirupati',
+    'renewable energy company in Tirupati',
     'renewable energy services',
     'solar energy services India',
     'wind energy services',

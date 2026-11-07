@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   description:
     'Learn about AeroSun Energy, a trusted renewable energy company delivering solar, wind, and hybrid power solutions for homes, businesses, farms, and industrial projects in India.',
   keywords: [
+    'renewable energy company in Tirupati',
+    'solar company in Tirupati Andhra Pradesh',
+    'wind energy company in Tirupati',
+    'solar and wind energy solutions in Tirupati',
+    'hybrid renewable energy company in Tirupati',
     'about AeroSun Energy',
     'AeroSun Energy company profile',
     'solar company in India',

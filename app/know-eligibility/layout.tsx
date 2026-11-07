@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   description:
     'Understand rooftop solar and subsidy eligibility with AeroSun Energy, including household requirements, system sizing, and renewable energy project suitability in India.',
   keywords: [
+    'solar eligibility check Tirupati',
+    'rooftop solar eligibility Tirupati',
+    'solar subsidy eligibility Tirupati',
+    'PM Surya Ghar eligibility Tirupati',
+    'residential solar eligibility Tirupati',
+    'commercial solar eligibility Tirupati',
+    'solar project feasibility Tirupati',
+    'solar roof suitability Tirupati',
     'solar eligibility check',
     'rooftop solar eligibility India',
     'PM Surya Ghar eligibility',

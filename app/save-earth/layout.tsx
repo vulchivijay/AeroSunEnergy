@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   description:
     'Learn how rooftop solar, wind, and hybrid renewable energy solutions help reduce emissions, protect the environment, and build a cleaner future with AeroSun Energy.',
   keywords: [
+    'clean energy solutions in Tirupati',
+    'renewable energy in Tirupati Andhra Pradesh',
+    'solar energy for a greener Tirupati',
+    'solar and wind energy Tirupati',
+    'sustainable energy solutions Tirupati',
     'Save Earth initiative',
     'renewable energy and climate action',
     'solar for environment',

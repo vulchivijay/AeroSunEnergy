@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   description:
     'Hybrid solar and wind energy systems combining PV, wind turbines, storage, and intelligent controls for reliable power generation for homes, businesses, farms, and microgrids in India.',
   keywords: [
+    'hybrid energy systems in Tirupati',
+    'solar wind hybrid system in Tirupati',
+    'solar and wind energy solutions in Tirupati',
+    'hybrid solar power in Tirupati',
+    'solar battery hybrid system in Tirupati',
+    'off-grid hybrid system in Tirupati',
+    'hybrid power solutions in Tirupati',
     'hybrid solar and wind energy',
     'solar wind hybrid system',
     'hybrid renewable energy',

@@ -5,6 +5,18 @@ export const metadata: Metadata = {
   description:
     'AeroSun Energy designs and installs rooftop solar, off-grid solar, hybrid solar, and commercial solar systems for homes, businesses, farms, and industrial sites in India.',
   keywords: [
+    'solar energy in Tirupati',
+    'solar energy solutions in Tirupati',
+    'solar panel installation in Tirupati',
+    'rooftop solar in Tirupati',
+    'solar company in Tirupati',
+    'commercial solar in Tirupati',
+    'solar for homes in Tirupati',
+    'solar for farms in Tirupati',
+    'agricultural solar power in Tirupati',
+    'solar water pumping system in Tirupati',
+    'off-grid solar in Tirupati',
+    'hybrid solar systems in Tirupati',
     'solar energy systems India',
     'rooftop solar solution',
     'off-grid solar system',

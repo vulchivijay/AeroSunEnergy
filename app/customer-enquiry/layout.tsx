@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   description:
     'Submit your solar, wind, and hybrid energy enquiry to AeroSun Energy for expert advice, renewable energy consultation, and project-specific quotations in India.',
   keywords: [
+    'solar energy enquiry Tirupati',
+    'solar quote request Tirupati',
+    'wind energy enquiry Tirupati',
+    'hybrid energy enquiry Tirupati',
+    'renewable energy consultation Tirupati',
+    'solar project enquiry Tirupati',
+    'commercial solar enquiry Tirupati',
+    'residential solar enquiry Tirupati',
     'customer enquiry AeroSun Energy',
     'solar energy enquiry',
     'wind energy enquiry',

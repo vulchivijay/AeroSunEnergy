@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   description:
     'Explore AeroSun Energy rooftop solar, wind, hybrid, and renewable energy projects for homes, businesses, agricultural sites, and industrial facilities across India.',
   keywords: [
+    'solar projects in Tirupati',
+    'rooftop solar projects Tirupati',
+    'commercial solar projects Tirupati',
+    'wind energy projects Tirupati',
+    'hybrid energy projects Tirupati',
+    'agricultural solar projects Tirupati',
+    'solar water pumping projects Tirupati',
+    'renewable energy projects Andhra Pradesh',
     'AeroSun Energy projects',
     'solar projects India',
     'rooftop solar projects',

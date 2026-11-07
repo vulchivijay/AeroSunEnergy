@@ -5,6 +5,7 @@ import { getAccentOrDefault } from '@/lib/utils/utils'
 import { BankEMICalculator } from './components/forms/BankEMICalculator'
 import { SolarEstimation } from './components/forms/SolarEstimation'
 import About from './components/sections/About'
+import TirupatiEnergySection from './components/sections/TirupatiEnergySection'
 import {
   BenefitCard,
   CapacityTable,
@@ -95,6 +96,7 @@ export default function Home() {
     <main>
       <HomeHeroSlider />
       <SchemeBanner />
+      <TirupatiEnergySection />
       {/* Solar Section */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
         <div className="mb-8">

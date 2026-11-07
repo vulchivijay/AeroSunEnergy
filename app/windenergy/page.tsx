@@ -1,6 +1,7 @@
 'use client'
 
 import { useLocale } from '@/lib/LocaleContext'
+import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 import { getAccentOrDefault } from '@/lib/utils/utils'
 import { SharedHeroSlider, type HeroSliderSlide } from '../components/ui/SharedHeroSlider'
 import {
@@ -260,6 +261,7 @@ export default function WindEnergyPage() {
           ))}
         </div>
       </section>
+      <TirupatiEnergySection />
     </main>
   )
 }
