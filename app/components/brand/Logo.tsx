@@ -44,7 +44,7 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
           </span>
           <span
             data-brand-name
-            className={`whitespace-nowrap text-xl font-bold tracking-wider drop-shadow-xl sm:text-2xl ${compact ? "text-[#F59E0B]" : "text-[#F59E0B]"}`}
+            className={`whitespace-nowrap text-xl font-bold tracking-wider drop-shadow-xl sm:text-2xl ${compact ? "text-[#F59E0B]" : "text-[#B45309]"}`}
           >
             Energy
           </span>

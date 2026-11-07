@@ -69,7 +69,7 @@ export default function OptimizedImage({
         src={src}
         alt={alt}
         className={`${className} object-cover transition-opacity duration-300 ${
-          isLoading ? 'opacity-0' : 'opacity-100'
+          isLoading && !rest.priority ? 'opacity-0' : 'opacity-100'
         }`}
         placeholder={placeholder ?? (computedBlurDataURL ? 'blur' : 'empty')}
         blurDataURL={computedBlurDataURL}

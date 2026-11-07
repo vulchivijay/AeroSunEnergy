@@ -188,7 +188,7 @@ export default function About() {
                 </span>
                 <p className="relative text-[10px] font-bold uppercase tracking-[0.2em]">{label}</p>
                 <p className="relative mt-8 text-sm font-semibold leading-6 text-slate-800">{value}</p>
-                <span className="absolute bottom-4 right-4 font-mono text-[10px] opacity-40">0{index + 1}</span>
+                <span className="absolute bottom-4 right-4 font-mono text-[10px] text-slate-600">0{index + 1}</span>
               </article>
             ))}
           </div>
