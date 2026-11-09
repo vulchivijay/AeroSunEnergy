@@ -149,11 +149,14 @@ You can also run the check directly:
 npm run google:index-check
 ```
 
-### Preview the production build
+### Preview the static export
 
 ```bash
+npm run build
 npm start
 ```
+
+The start command serves the generated `out/` directory and listens on the `PORT` environment variable (8080 by default), so it can also run as a Cloud Run container.
 
 ### Lint
 
