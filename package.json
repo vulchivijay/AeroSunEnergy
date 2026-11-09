@@ -16,7 +16,7 @@
     "build": "next build",
     "google:index-check": "node scripts/submit-indexnow.js",
     "postbuild": "node scripts/submit-indexnow.js",
-    "start": "next start",
+    "start": "node scripts/serve-static.js",
     "lint": "eslint .",
     "audit:prod": "npm audit --omit=dev"
   },
