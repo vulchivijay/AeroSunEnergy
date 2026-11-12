@@ -31,22 +31,22 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
             data-brand-name
             className={
               compact
-                ? "relative whitespace-nowrap pr-2 text-xl font-bold tracking-wider text-[#20A44A] drop-shadow-xl sm:text-3xl"
-                : "relative whitespace-nowrap pr-3 text-xl font-bold tracking-wider text-[#20A44A] drop-shadow-xl sm:text-3xl"
+                ? "relative whitespace-nowrap pr-2 text-2xl font-bold tracking-wider text-[#20A44A] drop-shadow-xl sm:text-3xl"
+                : "relative whitespace-nowrap pr-3 text-2xl font-bold tracking-wider text-[#20A44A] drop-shadow-xl sm:text-3xl"
             }
           >
-            AeroSun
+            {t.logo.wordmark}
             <sup
-              className={`absolute right-0 text-[8px] ${compact ? "top-1 text-white" : "top-2 text-black"}`}
+              className={`absolute right-0 text-[10px] ${compact ? "top-1 text-white" : "top-2 text-black"}`}
             >
-              TM
+              {t.logo.trademark}
             </sup>
           </span>
           <span
             data-brand-name
-            className={`whitespace-nowrap text-xl font-bold tracking-wider drop-shadow-xl sm:text-3xl ${compact ? "text-[#F59E0B]" : "text-[#F59E0B]"}`}
+            className={`whitespace-nowrap text-2xl font-bold tracking-wider drop-shadow-xl sm:text-3xl ${compact ? "text-[#F59E0B]" : "text-[#F59E0B]"}`}
           >
-            Energy
+            {t.logo.wordmarkSuffix}
           </span>
         </div>
         <div

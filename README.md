@@ -203,6 +203,7 @@ The app must run as a Next.js server for login and signup API routes; static-onl
 - **Sitemap & robots.txt** — located in `public/`
 - **Bing Webmaster** — site verification via `msvalidate.01` meta tag
 - **Google Tag Manager** — GTM container loaded in the root layout
+- **Build configuration report** — `npm run build` reports whether Search Console, Google Analytics, and GTM variables are configured without printing their values; tracking scripts still require cookie consent
 - **IndexNow** — URLs are submitted automatically after every production build
 
 ---

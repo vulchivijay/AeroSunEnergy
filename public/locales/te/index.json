@@ -98,7 +98,7 @@
     "startProjectTitle": "AeroSun Energy తో పునరుత్పాదక శక్తి ప్రాజెక్ట్ ప్రారంభించండి",
     "startProjectAriaLabel": "మీ ప్రాజెక్ట్ ప్రారంభించడానికి AeroSun Energy ని సంప్రదించండి",
     "brandName": "AeroSun Energy Private Limited",
-    "brandTagline": "సూర్యుడు, గాలి, నీరు, అగ్ని నుండి శక్తి",
+    "brandTagline": "సూర్యుడు, గాలి నుండి శక్తి",
     "primaryNavigationLabel": "ప్రాథమిక నావిగేషన్",
     "mobileNavigationLabel": "మొబైల్ ప్రాథమిక నావిగేషన్",
     "exploreLabel": "AeroSunని అన్వేషించండి",
@@ -166,6 +166,9 @@
     "homeTitle": "AeroSun Energy హోమ్‌పేజీకి వెళ్లండి",
     "homeAriaLabel": "AeroSun Energy లోగో - హోమ్‌పేజీకి వెళ్లండి",
     "imageAlt": "AeroSun Energy లోగో",
+    "wordmark": "AeroSun",
+    "wordmarkSuffix": "Energy",
+    "trademark": "TM",
     "tagline": "Private Limited"
   },
   "hero": {
@@ -256,7 +259,7 @@
         "phoneLabel": "కాల్ చేయండి",
         "emailLabel": "ఇమెయిల్",
         "mapCta": "మ్యాప్ తెరవండి",
-        "registrationNote": "GSTIN, CIN మరియు ఇతర చట్టబద్ధ గుర్తింపులను వర్తించినప్పుడు, అధికారిక రికార్డులతో ధృవీకరించిన తర్వాత మాత్రమే చూపాలి.",
+        "identifiersText": "CIN: U35106AP2026PTC128748; ఉద్యమ్/MSME: UDYAM-AP-02-0123235; Startup India సర్టిఫికెట్ నంబర్: DIPP290751.",
         "contactCta": "AeroSun Energyను సంప్రదించండి"
       },
       "evidence": {
@@ -351,7 +354,7 @@
         }
       ],
       "rewardNoteTitle": "రివార్డ్ నిబంధనలు:",
-      "rewardNote": "ఇప్పటివరకు స్థిరమైన ప్రోత్సాహకం ప్రకటించలేదు. వర్తించే రివార్డ్, అర్హత, నిబంధనలను AeroSun నేరుగా నిర్ధారిస్తుంది; రిఫరల్ సమర్పణ రివార్డ్‌కు హామీ కాదు.",
+      "rewardNote": "రిఫర్ చేసిన ప్రాజెక్ట్ ఇన్‌స్టాలేషన్ పూర్తయ్యాక రిఫరల్ ప్రోత్సాహకం అందించబడుతుంది. వర్తించే ప్రోత్సాహకం మరియు నిబంధనలను AeroSun నేరుగా తెలియజేస్తుంది.",
       "form": {
         "title": "పొరుగువారు లేదా స్నేహితుడిని పరిచయం చేయండి",
         "description": "మీ వివరాలు, వారి వివరాలు, సౌర విద్యుత్ కోసం వారు పరిశీలిస్తున్న ఆస్తి PIN కోడ్‌ను నమోదు చేయండి.",

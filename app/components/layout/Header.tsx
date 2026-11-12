@@ -124,7 +124,7 @@ export default function Navbar() {
               ? 'bg-[#a5d6a7]/15 text-[#dcedc8] ring-1 ring-inset ring-[#a5d6a7]/40'
               : 'text-white/75 hover:bg-[#a5d6a7]/10 hover:text-[#dcedc8]'
         }`
-      : `group relative z-10 flex min-w-[3.55rem] flex-col items-center gap-1 rounded-xl px-2 py-1.5 text-[13px] transition-colors 2xl:min-w-[4rem] 2xl:text-sm ${
+      : `group relative z-10 flex w-full min-w-[3.55rem] flex-col items-center gap-1 rounded-xl px-2 py-1.5 text-[13px] transition-colors 2xl:min-w-[4rem] 2xl:text-sm ${
           active
             ? 'bg-[#a5d6a7]/10 text-[#dcedc8]'
             : disabled
@@ -359,7 +359,7 @@ export default function Navbar() {
         <Logo compact />
 
         <nav aria-label={t.navbar.primaryNavigationLabel} className="hidden min-w-0 flex-1 items-center justify-center xl:flex">
-          <div className="relative flex items-start gap-2">
+          <div className="relative grid w-full grid-flow-col auto-cols-fr items-center gap-1">
             <span className="pointer-events-none absolute left-[8%] right-[8%] top-4 h-px bg-gradient-to-r from-transparent via-[#8aa28b]/65 to-transparent" aria-hidden="true" />
             {navLinks.map((link) => renderNavigationLink(link))}
           </div>

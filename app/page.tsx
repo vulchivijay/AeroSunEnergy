@@ -105,9 +105,9 @@ export default function Home() {
       <HomeHeroSlider />
       <SchemeBanner />
       <CompanyTrustSection />
-      <ProjectEvidenceSection />
       <SolarJourneySection />
       <QuoteTransparencySection />
+      <ProjectEvidenceSection />
       <TirupatiEnergySection />
       {/* Solar Section */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
@@ -227,7 +227,7 @@ export default function Home() {
         </div>
       </section>
       {/* Wind Energy Section */}
-      <section className="hidden mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
         <div className="mb-8">
           <WindSectionEyebrow>{wind.eyebrow}</WindSectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
@@ -264,7 +264,7 @@ export default function Home() {
         </div>
       </section>
       {/* Hybrid Energy Section */}
-      <section className="hidden mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
         <div className="mb-8">
           <HybridSectionEyebrow>{hybrid.eyebrow}</HybridSectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
@@ -300,8 +300,8 @@ export default function Home() {
           <HybridTable rows={hybrid.table} />
         </div>
       </section>
-      <RecognitionHighlight />
       <About />
+      <RecognitionHighlight />
       <SolarEstimation />
       <BankEMICalculator />
       <Brands />
