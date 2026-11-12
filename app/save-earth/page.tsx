@@ -42,7 +42,7 @@ function renderBlocks(blocks: DocumentaryBlock[]) {
 
     if (block.type === 'paragraph') {
       return (
-        <p key={`paragraph-${index}`} className="mt-4 text-md leading-7 text-slate-600 sm:text-sm sm:leading-8">
+        <p key={`paragraph-${index}`} className="mt-4 text-md leading-7">
           {block.text}
         </p>
       )
@@ -53,7 +53,7 @@ function renderBlocks(blocks: DocumentaryBlock[]) {
       return (
         <ListTag
           key={`list-${index}`}
-          className={`mt-4 space-y-2.5 pl-6 text-md leading-7 text-slate-600 marker:font-bold marker:text-emerald-600 sm:text-sm sm:leading-8 ${
+          className={`mt-4 space-y-2.5 pl-6 text-md leading-7 text-slate-600 marker:font-bold marker:text-emerald-600 ${
             block.ordered ? 'list-decimal' : 'list-disc'
           }`}
         >
@@ -127,7 +127,7 @@ export default function SaveEarthPage() {
             <p className="mt-4 max-w-2xl text-2xl font-semibold leading-tight tracking-tight text-emerald-100 sm:text-4xl">
               {content.subtitle}
             </p>
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-300 sm:text-lg sm:leading-8">
+            <p className="mt-6 max-w-xl text-md leading-7 text-slate-300">
               {content.tagline}
             </p>
             <div className="mt-9 flex flex-wrap gap-3">

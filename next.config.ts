@@ -3,10 +3,10 @@ import type { NextConfig } from 'next'
 const SITE_URL = 'https://aerosunenergy.in'
 
 const nextConfig: NextConfig = {
-  output: 'export',
   productionBrowserSourceMaps: true,
   images: {
     unoptimized: true,
+    qualities: [70, 75],
   },
   async redirects() {
     return [
@@ -76,6 +76,7 @@ const nextConfig: NextConfig = {
       { source: '/_next/static/:path*', headers: productionCacheHeaders },
       { source: '/images/:path*', headers: productionCacheHeaders },
       { source: '/favicon.ico', headers: productionCacheHeaders },
+      { source: '/api/:path*', headers: [{ key: 'Cache-Control', value: 'no-store' }] },
     ]
   },
 }
