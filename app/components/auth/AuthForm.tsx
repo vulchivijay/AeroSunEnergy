@@ -1,18 +1,32 @@
 'use client'
 
-import { useState, type FormEvent } from 'react'
+import { useEffect, useState, type FormEvent } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { useLocale } from '@/lib/LocaleContext'
+import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 
 type AuthFormProps = {
   mode: 'login' | 'signup'
 }
 
+function getErrorMessage(code: string | undefined, messages: Record<string, string>): string {
+  return code && Object.prototype.hasOwnProperty.call(messages, code)
+    ? messages[code]
+    : messages.genericError
+}
+
 export default function AuthForm({ mode }: AuthFormProps) {
   const isSignup = mode === 'signup'
   const router = useRouter()
+  const { t } = useLocale()
+  const auth = t.auth
   const [pending, setPending] = useState(false)
   const [error, setError] = useState('')
+
+  useEffect(() => {
+    document.title = isSignup ? auth.signupTitle : auth.loginTitle
+  }, [auth.loginTitle, auth.signupTitle, isSignup])
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -23,7 +37,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
     const payload = Object.fromEntries(formData.entries())
 
     if (isSignup && payload.password !== payload.confirmPassword) {
-      setError('Passwords do not match.')
+      setError(auth.errors.passwordMismatch)
       setPending(false)
       return
     }
@@ -37,13 +51,13 @@ export default function AuthForm({ mode }: AuthFormProps) {
       const result = (await response.json()) as { error?: string }
 
       if (!response.ok) {
-        setError(result.error ?? 'Unable to continue. Please try again.')
+        setError(getErrorMessage(result.error, auth.errors))
         return
       }
 
       router.replace('/dashboard')
     } catch {
-      setError('Unable to reach the server. Check your connection and try again.')
+      setError(auth.errors.networkError)
     } finally {
       setPending(false)
     }
@@ -56,55 +70,53 @@ export default function AuthForm({ mode }: AuthFormProps) {
 
       <section className="w-full max-w-md rounded-3xl border border-emerald-950/10 bg-white p-6 shadow-[0_28px_80px_-42px_rgba(4,47,30,0.35)] sm:p-9">
         <div className="mb-8">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-emerald-700">AeroSun Energy</p>
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-emerald-700">{auth.brand}</p>
           <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
-            {isSignup ? 'Create your account' : 'Welcome back'}
+            {isSignup ? auth.signupHeading : auth.loginHeading}
           </h1>
           <p className="mt-2 text-sm leading-6 text-slate-600">
-            {isSignup
-              ? 'Sign up to get started with AeroSun Energy.'
-              : 'Sign in to continue to your AeroSun Energy account.'}
+            {isSignup ? auth.signupDescription : auth.loginDescription}
           </p>
         </div>
 
         <form className="space-y-5" onSubmit={handleSubmit}>
           {isSignup && (
             <label className="block text-sm font-semibold text-slate-800">
-              Full name
+              {auth.fullName}
               <input
                 autoComplete="name"
                 className="mt-2 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10"
                 maxLength={100}
                 minLength={2}
                 name="name"
-                placeholder="Your name"
+                placeholder={auth.namePlaceholder}
                 required
               />
             </label>
           )}
 
           <label className="block text-sm font-semibold text-slate-800">
-            Email address
+            {auth.emailAddress}
             <input
               autoComplete="email"
               className="mt-2 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10"
               maxLength={254}
               name="email"
-              placeholder="you@example.com"
+              placeholder={auth.emailPlaceholder}
               required
               type="email"
             />
           </label>
 
           <label className="block text-sm font-semibold text-slate-800">
-            Password
+            {auth.password}
             <input
               autoComplete={isSignup ? 'new-password' : 'current-password'}
               className="mt-2 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10"
               maxLength={128}
               minLength={isSignup ? 12 : 1}
               name="password"
-              placeholder={isSignup ? 'At least 12 characters' : 'Your password'}
+              placeholder={isSignup ? auth.signupPasswordHint : auth.passwordPlaceholder}
               required
               type="password"
             />
@@ -112,19 +124,21 @@ export default function AuthForm({ mode }: AuthFormProps) {
 
           {isSignup && (
             <label className="block text-sm font-semibold text-slate-800">
-              Confirm password
+              {auth.confirmPassword}
               <input
                 autoComplete="new-password"
                 className="mt-2 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10"
                 maxLength={128}
                 minLength={12}
                 name="confirmPassword"
-                placeholder="Re-enter your password"
+                placeholder={auth.confirmPasswordPlaceholder}
                 required
                 type="password"
               />
             </label>
           )}
+
+          <FormDataNotice />
 
           {error && (
             <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800" role="alert">
@@ -137,17 +151,17 @@ export default function AuthForm({ mode }: AuthFormProps) {
             disabled={pending}
             type="submit"
           >
-            {pending ? 'Please wait...' : isSignup ? 'Create account' : 'Sign in'}
+            {pending ? auth.pending : isSignup ? auth.submitSignup : auth.submitLogin}
           </button>
         </form>
 
         <p className="mt-7 text-center text-sm text-slate-600">
-          {isSignup ? 'Already have an account?' : 'New to AeroSun Energy?'}{' '}
+          {isSignup ? auth.alreadyHaveAccount : auth.newToAeroSun}{' '}
           <Link
             className="font-bold text-emerald-800 underline-offset-4 hover:underline"
             href={isSignup ? '/login' : '/signup'}
           >
-            {isSignup ? 'Sign in' : 'Create an account'}
+            {isSignup ? auth.loginLink : auth.signupLink}
           </Link>
         </p>
       </section>

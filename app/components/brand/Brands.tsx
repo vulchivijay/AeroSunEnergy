@@ -1,0 +1,195 @@
+'use client'
+
+import Image from 'next/image'
+import { useLocale } from '@/lib/LocaleContext'
+
+const brandImages = [
+  { file: 'adani-solar.png', name: 'Adani Solar', hue: 160, prices: ['₹21.5–34/Wp'], basis: 'Non-DCR to DCR retail examples.' },
+  { file: 'amara-raja-solar.png', name: 'Amara Raja Solar', hue: 215, prices: [], basis: 'No current public module price verified.' },
+  { file: 'emmvee-solar.png', name: 'Emmvee Solar', hue: 270, prices: ['₹21–22/Wp · DCR', '₹14–15/Wp · non-DCR'], basis: 'Company-reported pricing; bulk/module realization.' },
+  { file: 'goldi-solar.png', name: 'Goldi Solar', hue: 40, prices: ['₹23–28/Wp'], basis: 'Estimated market range; confirm the exact model.' },
+  { file: 'havells.png', name: 'Havells', hue: 350, prices: ['₹28–33/Wp'], basis: 'Seller-listed range.' },
+  { file: 'insolation-energy.png', name: 'Insolation Energy', hue: 24, prices: ['₹20–22.5/Wp · DCR', '₹13–14/Wp · non-DCR'], basis: 'Reported module-price signals; bulk basis.' },
+  { file: 'jakson-solar.png', name: 'Jakson Solar', hue: 195, prices: ['≈ ₹26/Wp'], basis: 'Retail listing for a 330 W module.' },
+  { file: 'loom-solar.png', name: 'Loom Solar', hue: 82, prices: ['₹18.2/Wp · non-DCR', '₹28.2/Wp · DCR'], basis: 'Retail examples for different models.' },
+  { file: 'luminous.png', name: 'Luminous', hue: 245, prices: ['₹21.0/Wp · DCR', '₹24.8/Wp · non-DCR'], basis: 'Listed examples; different models and wattages.' },
+  { file: 'microtek-solar.png', name: 'Microtek Solar', hue: 12, prices: ['₹20.2–22.2/Wp · non-DCR', '≈ ₹24.5/Wp · DCR'], basis: 'Official-store examples plus a distributor price list.' },
+  { file: 'premier-energies.png', name: 'Premier Energies', hue: 285, prices: ['₹23–24/Wp · DCR'], basis: 'Company call cited prevailing retail DCR pricing; bulk pricing may differ.' },
+  { file: 'rayzon-solar.png', name: 'Rayzon Solar', hue: 185, prices: ['₹15/Wp · non-DCR', '₹28.2/Wp · DCR'], basis: 'Dealer-listed TOPCon examples.' },
+  { file: 'renew-power.png', name: 'ReNew Power', hue: 135, prices: ['₹24.70/Wp · DCR'], basis: 'ReNew’s listed DCR module price includes GST.' },
+  { file: 'renewsys-solar.png', name: 'RenewSys Solar', hue: 46, prices: ['₹25.60/Wp · DCR'], basis: 'Full-truckload price, ex-works plus GST.' },
+  { file: 'saatvik-solar.png', name: 'Saatvik Solar', hue: 305, prices: ['₹20–21/Wp · DCR', '₹12–13/Wp · non-DCR'], basis: 'Reported module realizations, not retail quotes.' },
+  { file: 'servotech-power-systems.png', name: 'Servotech', hue: 5, prices: ['≈ ₹25/Wp'], basis: 'Company-stated average; model-specific quote needed.' },
+  { file: 'tata-power-solar.png', name: 'Tata Power Solar', hue: 225, prices: ['₹26–32/Wp'], basis: 'Dealer/market listings; varies by model and DCR status.' },
+  { file: 'vikram-solar.png', name: 'Vikram Solar', hue: 165, prices: ['₹18.6–30/Wp'], basis: 'Non-DCR to DCR market examples.' },
+  { file: 'waaree-energies.png', name: 'Waaree Energies', hue: 29, prices: ['₹17.4/Wp · non-DCR', '₹27.9/Wp · DCR'], basis: 'Official-store examples; listed prices exclude GST.' },
+]
+
+function getHighestListedPrice(prices: string[]): number | null {
+  const values = prices.flatMap((price) => (price.match(/\d+(?:\.\d+)?/g) ?? []).map(Number))
+  return values.length > 0 ? Math.max(...values) : null
+}
+
+const sortedBrands = [...brandImages].sort((first, second) => {
+  const firstPrice = getHighestListedPrice(first.prices)
+  const secondPrice = getHighestListedPrice(second.prices)
+
+  if (firstPrice === null) return secondPrice === null ? 0 : 1
+  if (secondPrice === null) return -1
+  return secondPrice - firstPrice
+})
+
+export default function Brands() {
+  const { t } = useLocale()
+  const section = t.home.brandSection
+
+  return (
+    <section
+      className="relative isolate overflow-hidden bg-[#10152D] px-4 py-16 sm:px-6 lg:px-10 lg:py-20"
+      aria-labelledby="brand-section-title"
+    >
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_8%_0%,rgba(124,92,214,0.32),transparent_36%),radial-gradient(ellipse_at_92%_85%,rgba(15,159,140,0.22),transparent_32%)]"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-size-[48px_48px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)]"
+        aria-hidden="true"
+      />
+      <div className="relative mx-auto max-w-7xl">
+        <header className="mb-10 grid gap-7 rounded-[2rem] border border-white/10 bg-white/[0.055] p-6 shadow-[0_30px_90px_-50px_rgba(0,0,0,0.8)] backdrop-blur-sm sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div>
+            <p className="inline-flex items-center gap-2 rounded-full border border-violet-200/20 bg-violet-300/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.24em] text-violet-100">
+              <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_14px_rgba(110,231,183,0.9)]" aria-hidden="true" />
+              {section.eyebrow}
+            </p>
+            <h2 id="brand-section-title" className="mt-5 max-w-3xl text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl">
+              {section.title}
+            </h2>
+            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300">
+              {section.subtitle}
+            </p>
+            <p className="mt-5 max-w-3xl border-l-2 border-amber-300/70 pl-4 text-sm leading-6 text-slate-300">
+              {section.priceDisclaimer}
+            </p>
+          </div>
+          <p className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-black/15 px-4 py-3 text-sm font-semibold text-violet-100 lg:mb-1">
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-violet-300/15 text-violet-200" aria-hidden="true">
+              ↓
+            </span>
+            {section.priceOrder}
+          </p>
+        </header>
+
+        <ul className="grid list-none grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {sortedBrands.map((brand, index) => {
+            const maxPrice = getHighestListedPrice(brand.prices)
+            const formattedMaxPrice = maxPrice?.toLocaleString('en-IN', { maximumFractionDigits: 2 })
+
+            return (
+              <li
+                key={brand.file}
+                className="group relative overflow-hidden rounded-[1.75rem] border p-4 shadow-[0_22px_55px_-38px_rgba(0,0,0,0.75)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_30px_65px_-38px_rgba(0,0,0,0.85)]"
+                style={{
+                  borderColor: `hsl(${brand.hue} 68% 72%)`,
+                  background: `linear-gradient(145deg, hsl(${brand.hue} 82% 95%), #fff 48%, hsl(${brand.hue} 76% 89%))`,
+                  boxShadow: `0 22px 55px -38px hsl(${brand.hue} 75% 55% / 0.8)`,
+                }}
+              >
+                <div
+                  className="absolute inset-x-6 top-0 h-1 rounded-b-full"
+                  style={{ backgroundColor: `hsl(${brand.hue} 82% 43%)` }}
+                  aria-hidden="true"
+                />
+                <div className="mb-3 flex min-h-10 items-start justify-between gap-2">
+                  <span
+                    className="rounded-full border bg-white/75 px-2.5 py-1 text-[10px] font-black tracking-[0.16em] text-slate-700"
+                    style={{ borderColor: `hsl(${brand.hue} 65% 78%)` }}
+                  >
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <div className="flex max-w-[82%] flex-col items-end gap-1">
+                    {index === 0 && maxPrice !== null && (
+                      <span className="rounded-full bg-slate-950 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.12em] text-white shadow-sm">
+                        {section.topPriceLabel}
+                      </span>
+                    )}
+                    {brand.prices.length > 0 ? (
+                      brand.prices.map((price) => (
+                        <span
+                          key={price}
+                          className="rounded-full border px-2.5 py-1 text-right text-[10px] font-bold leading-4"
+                          style={{
+                            backgroundColor: `hsl(${brand.hue} 76% 92%)`,
+                            borderColor: `hsl(${brand.hue} 64% 76%)`,
+                            color: `hsl(${brand.hue} 58% 25%)`,
+                          }}
+                        >
+                          {price}
+                        </span>
+                      ))
+                    ) : (
+                      <span
+                        className="rounded-full border px-2.5 py-1 text-right text-[10px] font-bold leading-4"
+                        style={{
+                          backgroundColor: `hsl(${brand.hue} 76% 92%)`,
+                          borderColor: `hsl(${brand.hue} 64% 76%)`,
+                          color: `hsl(${brand.hue} 58% 25%)`,
+                        }}
+                      >
+                        {section.quoteRequired}
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <div
+                  className="flex h-[180px] items-center justify-center overflow-hidden rounded-2xl border border-white/80 p-2 shadow-inner"
+                  style={{
+                    background: `radial-gradient(circle at 50% 0%, white, hsl(${brand.hue} 75% 96%) 78%)`,
+                    boxShadow: `inset 0 0 0 1px hsl(${brand.hue} 55% 90%)`,
+                  }}
+                >
+                  <Image
+                    src={`/brands/${brand.file}`}
+                    alt={brand.name}
+                    width={200}
+                    height={200}
+                    sizes="180px"
+                    unoptimized
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+                <h3 className="mt-4 text-center text-lg font-extrabold tracking-tight text-slate-900">
+                  {brand.name}
+                </h3>
+                {maxPrice !== null && formattedMaxPrice ? (
+                  <div
+                    className="mt-3 flex items-end justify-between rounded-2xl border px-3.5 py-2.5"
+                    style={{
+                      borderColor: `hsl(${brand.hue} 58% 78%)`,
+                      backgroundColor: `hsl(${brand.hue} 78% 94%)`,
+                    }}
+                  >
+                    <span className="pb-0.5 text-[10px] font-black uppercase tracking-[0.16em] text-slate-600">
+                      {section.maxListedLabel}
+                    </span>
+                    <span className="text-xl font-black tabular-nums text-slate-950">
+                      ₹{formattedMaxPrice}<span className="ml-1 text-xs font-bold text-slate-600">/Wp</span>
+                    </span>
+                  </div>
+                ) : (
+                  <div className="mt-3 rounded-2xl border border-dashed border-slate-300 bg-white/70 px-3.5 py-2.5 text-center text-sm font-bold text-slate-600">
+                    {section.quoteRequired}
+                  </div>
+                )}
+                <p className="mt-3 rounded-xl border border-white/70 bg-white/60 px-3 py-2 text-center text-[11px] leading-5 text-slate-600">
+                  {brand.basis}
+                </p>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+    </section>
+  )
+}

@@ -3,7 +3,9 @@
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { submitMailtoFormAndReset } from '@/lib/submitMailto'
+import { submitMailtoForm } from '@/lib/submitMailto'
+import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
+import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
 import { SharedFormField } from '@/app/components/forms/SharedFormField'
@@ -14,6 +16,19 @@ type AgreementFormValues = {
   companyName?: string
   email: string
   phone: string
+  agreementNumber?: string
+  agreementDate?: string
+  projectReference?: string
+  projectType?: string
+  systemCapacity?: string
+  projectLocation?: string
+  quotedAmount?: string
+  siteAccessDate?: string
+  scopeItems?: string[]
+  acceptanceCustomerName?: string
+  signature?: string
+  acceptanceDate?: string
+  acceptancePlace?: string
   agreed: boolean
 }
 
@@ -29,6 +44,19 @@ export default function CustomerAgreementPage() {
       phoneLength: formCopy.validation.phoneMinimum,
       phoneFormat: formCopy.validation.phonePattern,
     }).shape,
+    agreementNumber: z.string().max(200).optional(),
+    agreementDate: z.string().max(100).optional(),
+    projectReference: z.string().max(200).optional(),
+    projectType: z.string().max(200).optional(),
+    systemCapacity: z.string().max(200).optional(),
+    projectLocation: z.string().max(300).optional(),
+    quotedAmount: z.string().max(200).optional(),
+    siteAccessDate: z.string().max(100).optional(),
+    scopeItems: z.array(z.string().max(200)).max(100).optional(),
+    acceptanceCustomerName: z.string().max(100).optional(),
+    signature: z.string().max(200).optional(),
+    acceptanceDate: z.string().max(100).optional(),
+    acceptancePlace: z.string().max(200).optional(),
     agreed: z.boolean().refine((value) => value === true, {
       message: formCopy.validation.acceptanceRequired,
     }),
@@ -46,7 +74,15 @@ export default function CustomerAgreementPage() {
     reValidateMode: 'onChange',
   })
 
-  const onSubmit = (data: AgreementFormValues) => {
+  const onSubmit = async (data: AgreementFormValues) => {
+    let referenceCode: string
+    try {
+      referenceCode = await submitWebsiteForm('customer_agreement', data)
+    } catch {
+      setSubmitFeedback({ type: 'error', message: t.formSubmission.error })
+      return
+    }
+
     const subject = `${formCopy.submission.subject} - ${data.customerName}`
     const body = [
       formCopy.submission.heading,
@@ -61,15 +97,11 @@ export default function CustomerAgreementPage() {
       formCopy.submission.paymentAcknowledged,
     ].join('\n')
 
-    submitMailtoFormAndReset({
-      to: content.contact.emailLabel,
-      subject,
-      body,
-      defaultValues,
-      reset,
-      setFeedback: setSubmitFeedback,
-      successMessage: formCopy.submission.success,
-      errorMessage: formCopy.submission.error,
+    submitMailtoForm({ to: content.contact.emailLabel, subject, body })
+    reset(defaultValues)
+    setSubmitFeedback({
+      type: 'success',
+      message: `${formCopy.submission.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`,
     })
   }
 
@@ -249,9 +281,9 @@ export default function CustomerAgreementPage() {
                       <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">{formCopy.agreementDetails}</h2>
                     </div>
                     <div className="space-y-4">
-                      <Field label={formCopy.agreementNumber} placeholder={formCopy.agreementNumberPlaceholder} register={register} compact />
-                      <Field label={formCopy.date} placeholder={formCopy.datePlaceholder} register={register} compact />
-                      <Field label={formCopy.projectReference} placeholder={formCopy.projectReferencePlaceholder} register={register} compact />
+                      <Field label={formCopy.agreementNumber} name="agreementNumber" placeholder={formCopy.agreementNumberPlaceholder} register={register} compact />
+                      <Field label={formCopy.date} name="agreementDate" placeholder={formCopy.datePlaceholder} register={register} compact />
+                      <Field label={formCopy.projectReference} name="projectReference" placeholder={formCopy.projectReferencePlaceholder} register={register} compact />
                     </div>
                   </div>
 
@@ -281,17 +313,17 @@ export default function CustomerAgreementPage() {
                       <div className="grid grid-cols-2 gap-2 rounded-2xl border border-violet-200 bg-white/80 p-2.5 sm:grid-cols-3">
                         {formCopy.projectTypeOptions.map((option) => (
                           <label key={option} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-2 py-2 text-[12px] font-medium text-slate-700">
-                            <input type="radio" name="projectType" value={option} className="h-4 w-4 accent-violet-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-700" />
+                            <input type="radio" value={option} {...register('projectType')} className="h-4 w-4 accent-violet-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-700" />
                             <span>{option}</span>
                           </label>
                         ))}
                       </div>
                     </fieldset>
 
-                    <Field label={formCopy.systemCapacity} placeholder={formCopy.systemCapacityPlaceholder} register={register} compact />
-                    <Field label={formCopy.projectLocation} placeholder={formCopy.projectLocationPlaceholder} register={register} compact />
-                    <Field label={formCopy.quotedAmount} placeholder={formCopy.quotedAmountPlaceholder} register={register} compact />
-                    <Field label={formCopy.siteAccessDate} placeholder={formCopy.datePlaceholder} register={register} compact />
+                    <Field label={formCopy.systemCapacity} name="systemCapacity" placeholder={formCopy.systemCapacityPlaceholder} register={register} compact />
+                    <Field label={formCopy.projectLocation} name="projectLocation" placeholder={formCopy.projectLocationPlaceholder} register={register} compact />
+                    <Field label={formCopy.quotedAmount} name="quotedAmount" placeholder={formCopy.quotedAmountPlaceholder} register={register} compact />
+                    <Field label={formCopy.siteAccessDate} name="siteAccessDate" placeholder={formCopy.datePlaceholder} register={register} compact />
                   </div>
                 </div>
 
@@ -326,7 +358,7 @@ export default function CustomerAgreementPage() {
                     <div className="space-y-2 text-md text-slate-700">
                       {formCopy.scopeItems.map((item) => (
                         <label key={item} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2.5">
-                          <input type="checkbox" className="h-4 w-4 accent-emerald-600" />
+                          <input type="checkbox" value={item} {...register('scopeItems')} className="h-4 w-4 accent-emerald-600" />
                           <span>{item}</span>
                         </label>
                       ))}
@@ -362,12 +394,12 @@ export default function CustomerAgreementPage() {
                     {formCopy.acceptanceStatement}
                   </p>
 
-                  <Field label={formCopy.customerName} placeholder={formCopy.customerNameAcceptancePlaceholder} register={register} compact dark />
-                  <Field label={formCopy.signature} placeholder={formCopy.signaturePlaceholder} register={register} compact dark />
+                  <Field label={formCopy.customerName} name="acceptanceCustomerName" placeholder={formCopy.customerNameAcceptancePlaceholder} register={register} compact dark />
+                  <Field label={formCopy.signature} name="signature" placeholder={formCopy.signaturePlaceholder} register={register} compact dark />
 
                   <div className="grid gap-4 sm:grid-cols-2">
-                    <Field label={formCopy.date} placeholder={formCopy.datePlaceholder} register={register} compact dark />
-                    <Field label={formCopy.place} placeholder={formCopy.placePlaceholder} register={register} compact dark />
+                    <Field label={formCopy.date} name="acceptanceDate" placeholder={formCopy.datePlaceholder} register={register} compact dark />
+                    <Field label={formCopy.place} name="acceptancePlace" placeholder={formCopy.placePlaceholder} register={register} compact dark />
                   </div>
 
                   <label className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 text-md leading-6 text-slate-200">
@@ -376,12 +408,13 @@ export default function CustomerAgreementPage() {
                   </label>
                   {errors.agreed && <p id="agreed-error" className="text-md text-rose-300">{errors.agreed.message}</p>}
 
+                  <FormDataNotice className="text-slate-300" />
                   <button
                     type="submit"
                     disabled={isSubmitting}
                     className="inline-flex w-full items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-md font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-indigo-900 disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    {isSubmitting ? formCopy.sending : formCopy.submit}
+                    {isSubmitting ? t.formSubmission.saving : formCopy.submit}
                   </button>
 
                   {submitFeedback ? (

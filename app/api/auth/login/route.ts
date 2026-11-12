@@ -2,14 +2,23 @@ import { z } from 'zod'
 import type { RowDataPacket } from 'mysql2/promise'
 import { authJson, readAuthJson } from '@/lib/auth/http'
 import { getDatabasePool } from '@/lib/auth/database'
+import { authErrorCodes, isAuthErrorCode } from '@/lib/auth/errorCodes'
 import { hashPassword, verifyPassword } from '@/lib/auth/password'
 import { createSession, setSessionCookie } from '@/lib/auth/session'
 
 export const runtime = 'nodejs'
 
 const loginSchema = z.object({
-  email: z.string().trim().email('Enter a valid email address.').max(254).transform((email) => email.toLowerCase()),
-  password: z.string().min(1, 'Enter your password.').max(128),
+  email: z
+    .string()
+    .trim()
+    .email(authErrorCodes.emailInvalid)
+    .max(254, authErrorCodes.emailInvalid)
+    .transform((email) => email.toLowerCase()),
+  password: z
+    .string()
+    .min(1, authErrorCodes.passwordRequired)
+    .max(128, authErrorCodes.passwordTooLong),
 })
 
 type StoredUser = RowDataPacket & {
@@ -25,7 +34,8 @@ export async function POST(request: Request) {
 
   const parsed = loginSchema.safeParse(body.data)
   if (!parsed.success) {
-    return authJson({ error: parsed.error.issues[0]?.message ?? 'Check the information and try again.' }, 400)
+    const issueCode = parsed.error.issues[0]?.message
+    return authJson({ error: isAuthErrorCode(issueCode) ? issueCode : authErrorCodes.invalidInput }, 400)
   }
 
   try {
@@ -38,11 +48,11 @@ export async function POST(request: Request) {
 
     if (!user) {
       await hashPassword(parsed.data.password)
-      return authJson({ error: 'Invalid email or password.' }, 401)
+      return authJson({ error: authErrorCodes.invalidCredentials }, 401)
     }
 
     if (!(await verifyPassword(parsed.data.password, user.password_hash))) {
-      return authJson({ error: 'Invalid email or password.' }, 401)
+      return authJson({ error: authErrorCodes.invalidCredentials }, 401)
     }
 
     const connection = await pool.getConnection()
@@ -58,6 +68,6 @@ export async function POST(request: Request) {
     return response
   } catch (error) {
     console.error('Auth login failed.', error)
-    return authJson({ error: 'Login is temporarily unavailable. Please try again later.' }, 503)
+    return authJson({ error: authErrorCodes.loginUnavailable }, 503)
   }
 }

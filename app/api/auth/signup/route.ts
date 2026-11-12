@@ -2,6 +2,7 @@ import { z } from 'zod'
 import type { PoolConnection, ResultSetHeader } from 'mysql2/promise'
 import { authJson, readAuthJson } from '@/lib/auth/http'
 import { getDatabasePool } from '@/lib/auth/database'
+import { authErrorCodes, isAuthErrorCode } from '@/lib/auth/errorCodes'
 import { hashPassword } from '@/lib/auth/password'
 import { createSession, setSessionCookie } from '@/lib/auth/session'
 
@@ -9,14 +10,22 @@ export const runtime = 'nodejs'
 
 const signupSchema = z
   .object({
-    name: z.string().trim().min(2, 'Enter your name.').max(100, 'Name is too long.'),
-    email: z.string().trim().email('Enter a valid email address.').max(254).transform((email) => email.toLowerCase()),
-    password: z.string().min(12, 'Use at least 12 characters for your password.').max(128),
-    confirmPassword: z.string().min(1, 'Confirm your password.'),
+    name: z.string().trim().min(2, authErrorCodes.nameRequired).max(100, authErrorCodes.nameTooLong),
+    email: z
+      .string()
+      .trim()
+      .email(authErrorCodes.emailInvalid)
+      .max(254, authErrorCodes.emailInvalid)
+      .transform((email) => email.toLowerCase()),
+    password: z
+      .string()
+      .min(12, authErrorCodes.passwordTooShort)
+      .max(128, authErrorCodes.passwordTooLong),
+    confirmPassword: z.string().min(1, authErrorCodes.confirmPasswordRequired),
   })
   .refine((details) => details.password === details.confirmPassword, {
     path: ['confirmPassword'],
-    message: 'Passwords do not match.',
+    message: authErrorCodes.passwordMismatch,
   })
 
 function isDuplicateEmailError(error: unknown): boolean {
@@ -29,7 +38,8 @@ export async function POST(request: Request) {
 
   const parsed = signupSchema.safeParse(body.data)
   if (!parsed.success) {
-    return authJson({ error: parsed.error.issues[0]?.message ?? 'Check the information and try again.' }, 400)
+    const issueCode = parsed.error.issues[0]?.message
+    return authJson({ error: isAuthErrorCode(issueCode) ? issueCode : authErrorCodes.invalidInput }, 400)
   }
 
   let connection: PoolConnection | undefined
@@ -59,11 +69,11 @@ export async function POST(request: Request) {
     }
 
     if (isDuplicateEmailError(error)) {
-      return authJson({ error: 'Unable to create an account with those details.' }, 409)
+      return authJson({ error: authErrorCodes.duplicateAccount }, 409)
     }
 
     console.error('Auth signup failed.', error)
-    return authJson({ error: 'Signup is temporarily unavailable. Please try again later.' }, 503)
+    return authJson({ error: authErrorCodes.signupUnavailable }, 503)
   } finally {
     connection?.release()
   }

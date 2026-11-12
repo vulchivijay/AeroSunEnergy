@@ -7,6 +7,13 @@ import { SolarEstimation } from './components/forms/SolarEstimation'
 import About from './components/sections/About'
 import TirupatiEnergySection from './components/sections/TirupatiEnergySection'
 import {
+  CompanyTrustSection,
+  ProjectEvidenceSection,
+  QuoteTransparencySection,
+  SolarJourneySection,
+} from './components/sections/HomeTrustSections'
+import { ReferralProgramSection } from './components/sections/ReferralProgramSection'
+import {
   BenefitCard,
   CapacityTable,
   FeatureCard,
@@ -25,6 +32,7 @@ import {
   WindInfoPanel,
   WindSectionEyebrow,
 } from './components/ui'
+import { Brands } from './components/brand'
 
 function RecognitionHighlight() {
   const { t } = useLocale()
@@ -96,6 +104,10 @@ export default function Home() {
     <main>
       <HomeHeroSlider />
       <SchemeBanner />
+      <CompanyTrustSection />
+      <ProjectEvidenceSection />
+      <SolarJourneySection />
+      <QuoteTransparencySection />
       <TirupatiEnergySection />
       {/* Solar Section */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
@@ -199,6 +211,10 @@ export default function Home() {
             {subsidy.description}
           </p>
 
+          <p className="mt-4 max-w-4xl rounded-xl border border-emerald-200 bg-white/70 px-4 py-3 text-sm leading-6 text-slate-700">
+            {t.subsidyNotice}
+          </p>
+
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {subsidy.cards.map((item) => (
               <BenefitCard key={item.title} title={item.title} description={item.description} />
@@ -211,7 +227,7 @@ export default function Home() {
         </div>
       </section>
       {/* Wind Energy Section */}
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
+      <section className="hidden mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
         <div className="mb-8">
           <WindSectionEyebrow>{wind.eyebrow}</WindSectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
@@ -248,7 +264,7 @@ export default function Home() {
         </div>
       </section>
       {/* Hybrid Energy Section */}
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
+      <section className="hidden mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
         <div className="mb-8">
           <HybridSectionEyebrow>{hybrid.eyebrow}</HybridSectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
@@ -284,10 +300,12 @@ export default function Home() {
           <HybridTable rows={hybrid.table} />
         </div>
       </section>
-      <About />
       <RecognitionHighlight />
+      <About />
       <SolarEstimation />
       <BankEMICalculator />
+      <Brands />
+      <ReferralProgramSection />
     </main>
   )
 }

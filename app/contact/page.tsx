@@ -2,10 +2,12 @@
 
 import Link from 'next/link'
 import { motion } from '@/lib/motion'
+import { useState, type FormEvent, type ReactNode } from 'react'
 import FaqCard, { solarFaqs } from '@/app/components/ui/FaqCard'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
-import type { ReactNode } from 'react'
+import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
+import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 
 const channelIconComponents: Record<string, ReactNode> = {
   email: (
@@ -29,6 +31,8 @@ const channelIconComponents: Record<string, ReactNode> = {
 
 export default function Contact() {
   const { t } = useLocale()
+  const [formStatus, setFormStatus] = useState<{ type: 'success' | 'error'; referenceCode?: string } | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const channelIconIds = t.componentData.contact.channelIconIds
   const c = t.contact
   const footer = t.footer
@@ -51,6 +55,31 @@ export default function Contact() {
   const energyBadgeSuffix = c.energyBadgeSuffix
 
   const contactHighlights = c.highlights
+
+  async function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const form = event.currentTarget
+    const formData = new FormData(form)
+    setIsSubmitting(true)
+    setFormStatus(null)
+
+    try {
+      const referenceCode = await submitWebsiteForm('contact', {
+        fullName: String(formData.get('fullName') ?? '').trim(),
+        email: String(formData.get('email') ?? '').trim(),
+        phone: String(formData.get('phone') ?? '').trim(),
+        projectType: String(formData.get('projectType') ?? '').trim(),
+        usage: String(formData.get('usage') ?? '').trim(),
+        message: String(formData.get('message') ?? '').trim(),
+      })
+      setFormStatus({ type: 'success', referenceCode })
+      form.reset()
+    } catch {
+      setFormStatus({ type: 'error' })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   const contactSteps = c.steps.map((step, index) => ({
     ...step,
@@ -194,6 +223,54 @@ export default function Contact() {
               </article>
             ))}
           </div>
+
+          <section className="mt-16 overflow-hidden rounded-[2rem] border border-emerald-950/10 bg-[#f3f0e5] shadow-[0_28px_80px_-48px_rgba(16,37,31,0.5)] sm:mt-20" aria-labelledby="contact-form-title">
+            <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
+              <div className="bg-[#10251f] p-6 text-white sm:p-9">
+                <p className="text-xs font-black uppercase tracking-[0.2em] text-lime-300">{contactUs}</p>
+                <h2 id="contact-form-title" className="mt-3 text-3xl font-black leading-tight">{c.form.title}</h2>
+                <p className="mt-4 text-sm leading-7 text-emerald-50/75">{c.form.description}</p>
+              </div>
+              <form className="grid gap-4 p-5 sm:grid-cols-2 sm:p-8" onSubmit={handleContactSubmit}>
+                <label className="block text-sm font-semibold text-slate-800">
+                  {c.form.fullName}
+                  <input className="mt-1.5 min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="fullName" type="text" autoComplete="name" minLength={2} maxLength={100} required />
+                </label>
+                <label className="block text-sm font-semibold text-slate-800">
+                  {c.form.email}
+                  <input className="mt-1.5 min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="email" type="email" autoComplete="email" maxLength={254} required />
+                </label>
+                <label className="block text-sm font-semibold text-slate-800">
+                  {c.form.phone}
+                  <input className="mt-1.5 min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="phone" type="tel" autoComplete="tel" maxLength={24} />
+                </label>
+                <label className="block text-sm font-semibold text-slate-800">
+                  {c.form.projectType}
+                  <input className="mt-1.5 min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="projectType" type="text" maxLength={120} required placeholder={c.form.projectTypePlaceholder} />
+                </label>
+                <label className="block text-sm font-semibold text-slate-800 sm:col-span-2">
+                  {c.form.usage}
+                  <input className="mt-1.5 min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="usage" type="text" maxLength={120} placeholder={c.form.usagePlaceholder} />
+                </label>
+                <label className="block text-sm font-semibold text-slate-800 sm:col-span-2">
+                  {c.form.message}
+                  <textarea className="mt-1.5 min-h-32 w-full rounded-xl border border-slate-300 bg-white px-3.5 py-3 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="message" minLength={10} maxLength={3000} required placeholder={c.form.messagePlaceholder} />
+                </label>
+                <div className="space-y-3 sm:col-span-2">
+                  <FormDataNotice />
+                  {formStatus?.type === 'error' && <p className="text-sm font-semibold text-rose-700" role="alert">{t.formSubmission.error}</p>}
+                  {formStatus?.type === 'success' && (
+                    <p className="text-sm font-semibold text-emerald-800" role="status" aria-live="polite">
+                      {c.form.success} {t.formSubmission.referenceLabel}: <span className="font-mono">{formStatus.referenceCode}</span>
+                    </p>
+                  )}
+                  <button className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-emerald-800 px-6 py-3 text-sm font-bold text-white transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800 disabled:cursor-wait disabled:opacity-70 sm:w-auto" type="submit" disabled={isSubmitting}>
+                    {isSubmitting ? t.formSubmission.saving : c.form.submit}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
 
           <section className="mt-20 sm:mt-28">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
