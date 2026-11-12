@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Orbitron, Poppins, Roboto } from 'next/font/google'
 import { JsonLd } from '@/app/components/seo'
 import { LocaleProvider } from '@/lib/LocaleContext'
@@ -162,6 +162,10 @@ export const metadata: Metadata = {
       'msvalidate.01': BING_SITE_VERIFICATION,
     },
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#052e1e',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

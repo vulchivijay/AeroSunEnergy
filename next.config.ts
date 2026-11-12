@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   productionBrowserSourceMaps: true,
   images: {
     unoptimized: true,
+    qualities: [70, 75],
   },
   async redirects() {
     return [

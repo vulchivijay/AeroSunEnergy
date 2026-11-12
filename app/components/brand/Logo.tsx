@@ -16,10 +16,10 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
       className={`relative flex items-center gap-2 font-(--font-logo) ${compact ? "w-max max-w-auto" : "max-w-full"}`}
     >
       <Image
-        src="/images/logo.webp"
+        src="/images/logo.png"
         alt={t.logo.imageAlt}
-        width={512}
-        height={401}
+        width={80}
+        height={62}
         priority
         className="h-auto w-16 shrink-0 object-contain sm:w-20"
       />
@@ -31,8 +31,8 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
             data-brand-name
             className={
               compact
-                ? "relative whitespace-nowrap pr-2 text-xl font-bold tracking-wider text-[#20A44A] drop-shadow-xl sm:text-2xl"
-                : "relative whitespace-nowrap pr-3 text-xl font-bold tracking-wider text-[#20A44A] drop-shadow-xl sm:text-2xl"
+                ? "relative whitespace-nowrap pr-2 text-xl font-bold tracking-wider text-[#20A44A] drop-shadow-xl sm:text-3xl"
+                : "relative whitespace-nowrap pr-3 text-xl font-bold tracking-wider text-[#20A44A] drop-shadow-xl sm:text-3xl"
             }
           >
             AeroSun
@@ -44,7 +44,7 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
           </span>
           <span
             data-brand-name
-            className={`whitespace-nowrap text-xl font-bold tracking-wider drop-shadow-xl sm:text-2xl ${compact ? "text-[#F59E0B]" : "text-[#B45309]"}`}
+            className={`whitespace-nowrap text-xl font-bold tracking-wider drop-shadow-xl sm:text-3xl ${compact ? "text-[#F59E0B]" : "text-[#F59E0B]"}`}
           >
             Energy
           </span>
@@ -52,8 +52,8 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
         <div
           className={
             compact
-              ? "whitespace-nowrap text-[11px] text-white"
-              : "whitespace-nowrap text-[11px] text-black"
+              ? "whitespace-nowrap text-[12px] text-white"
+              : "whitespace-nowrap text-[12px] text-black"
           }
         >
           ---- {t.navbar.brandTagline} ----
