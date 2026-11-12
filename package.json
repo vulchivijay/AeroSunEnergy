@@ -14,14 +14,16 @@
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build",
+    "db:migrate": "node scripts/migrate-auth.mjs",
     "google:index-check": "node scripts/submit-indexnow.js",
     "postbuild": "node scripts/submit-indexnow.js",
-    "start": "node scripts/serve-static.js",
+    "start": "next start -H 0.0.0.0",
     "lint": "eslint .",
     "audit:prod": "npm audit --omit=dev"
   },
   "dependencies": {
     "@hookform/resolvers": "^6.0.0",
+    "mysql2": "^3.24.6",
     "next": "^16.4.3",
     "react": "^19",
     "react-dom": "^19",

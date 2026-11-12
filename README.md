@@ -24,7 +24,7 @@ Key highlights communicated on the site:
 
 | Layer | Technology |
 |---|---|
-| Framework | [Next.js 16](https://nextjs.org/) (static export) |
+| Framework | [Next.js 16](https://nextjs.org/) |
 | UI library | [React 19](https://react.dev/) |
 | Language | TypeScript 6 |
 | Styling | [Tailwind CSS 4](https://tailwindcss.com/) |
@@ -111,7 +111,7 @@ AeroSunEnergy/
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) 18 or later
+- [Node.js](https://nodejs.org/) 22.19 or later
 - npm (bundled with Node.js)
 
 ### Install dependencies
@@ -134,7 +134,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 npm run build
 ```
 
-The site is exported as a static site into the `out/` directory. The `postbuild` step automatically submits the sitemap via IndexNow and prints a Google index verification summary.
+The production build runs as a Next.js server so authentication API routes can securely connect to Cloud SQL. The `postbuild` step automatically submits the sitemap via IndexNow and prints a Google index verification summary.
 
 To enable the Google index verification step, set these environment variables before running the build:
 
@@ -149,14 +149,33 @@ You can also run the check directly:
 npm run google:index-check
 ```
 
-### Preview the static export
+### Run the production server
 
 ```bash
 npm run build
 npm start
 ```
 
-The start command serves the generated `out/` directory and listens on the `PORT` environment variable (8080 by default), so it can also run as a Cloud Run container.
+The Next.js server listens on the `PORT` environment variable (8080 by default), so it can run as a Cloud Run container.
+
+### Configure Cloud SQL authentication
+
+Set these server-only environment variables on the Cloud Run service. Do not prefix database credentials with `NEXT_PUBLIC_`.
+
+```text
+INSTANCE_UNIX_SOCKET=/cloudsql/PROJECT_ID:REGION:INSTANCE_ID
+DB_NAME=your_database
+DB_USER=your_database_user
+DB_PASS=your_database_password
+```
+
+Attach the Cloud SQL instance to the Cloud Run service and grant its service account the Cloud SQL Client role. Apply the auth tables to the target database:
+
+```bash
+npm run db:migrate
+```
+
+Run the migration in an environment that can reach the Cloud SQL Unix socket and has the variables above configured. It creates the `auth_users` and `auth_sessions` tables.
 
 ### Lint
 
@@ -168,7 +187,7 @@ npm run lint
 
 ## Deployment
 
-The project is configured for **static export** (`output: 'export'` in `next.config.ts`) and is hosted at [aerosunenergy.in](https://aerosunenergy.in). Any static hosting provider (Hostinger, Vercel, Netlify, GitHub Pages, etc.) can serve the `out/` directory directly.
+The app must run as a Next.js server for login and signup API routes; static-only hosting is no longer sufficient. Deploy the server to Cloud Run with its Cloud SQL connection configured. The public website remains available at [aerosunenergy.in](https://aerosunenergy.in).
 
 ---
 
