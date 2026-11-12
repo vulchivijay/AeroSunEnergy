@@ -4467,6 +4467,92 @@
         "text": "Official startup recognition for innovation-led renewable energy entrepreneurship and expansion."
       }
     ],
+    "trustSections": {
+      "company": {
+        "eyebrow": "A real team, clear details",
+        "title": "Know who you’re working with.",
+        "description": "Start with the company behind the proposal, a verifiable office address, and direct ways to reach the team.",
+        "legalEntityLabel": "Legal business name",
+        "officeLabel": "Office address",
+        "phoneLabel": "Call",
+        "emailLabel": "Email",
+        "mapCta": "Open map",
+        "registrationNote": "GSTIN, CIN, and other statutory identifiers should be shown only when applicable and verified against official records.",
+        "contactCta": "Contact AeroSun Energy"
+      },
+      "evidence": {
+        "eyebrow": "Project proof, not promises",
+        "title": "Real work deserves real evidence.",
+        "description": "Solar is a significant purchase. Project photos, customer feedback, equipment details, and generation results should be genuine, project-specific, and shared with permission.",
+        "items": [
+          {
+            "title": "Customer-approved photos",
+            "description": "Use real installation photos only when the project is identified accurately and the customer has approved publication."
+          },
+          {
+            "title": "Verified project details",
+            "description": "Show the installed system size and panel or inverter model only when those details match the actual project."
+          },
+          {
+            "title": "Performance with context",
+            "description": "Clearly label generation and savings as estimates or measured results, and explain the period and conditions."
+          }
+        ],
+        "note": "We do not present generic stock imagery, invented testimonials, or unverified production figures as AeroSun project evidence.",
+        "cta": "Discuss your site"
+      },
+      "journey": {
+        "eyebrow": "A clear path from bill to build",
+        "title": "Know what happens at every step.",
+        "description": "A practical rooftop solar decision starts with your electricity use and ends with a site-specific scope—not a one-size-fits-all promise.",
+        "steps": [
+          {
+            "title": "Share a recent bill",
+            "description": "Use your bill to start an indicative system and savings estimate."
+          },
+          {
+            "title": "Talk through your goals",
+            "description": "Discuss usage patterns, budget, backup needs, and the kind of property."
+          },
+          {
+            "title": "Survey the site",
+            "description": "Review roof space, shading, electrical conditions, and installation requirements."
+          },
+          {
+            "title": "Review the proposal",
+            "description": "Check the proposed capacity, equipment models, scope, costs, and assumptions in writing."
+          },
+          {
+            "title": "Install and hand over",
+            "description": "Confirm the agreed installation scope, commissioning steps, and support contacts."
+          }
+        ],
+        "estimateNote": "Calculator results are indicative. Final system design, generation, price, and eligibility depend on bill details, site conditions, selected equipment, and applicable approvals.",
+        "cta": "Start a free assessment"
+      },
+      "proposal": {
+        "eyebrow": "Clear scope. No surprises.",
+        "title": "Make the quotation easy to understand.",
+        "description": "A written proposal should let you compare the system, costs, assumptions, and support before you decide.",
+        "quoteHeading": "What to check in your quote",
+        "quoteItems": [
+          "System capacity and the exact panel and inverter make/model",
+          "Equipment, mounting structure, wiring, installation, and commissioning scope",
+          "Itemized price, applicable taxes, payment schedule, and exclusions",
+          "Any subsidy assumptions, eligibility conditions, and customer responsibilities",
+          "Expected timeline, approvals, and handover documents"
+        ],
+        "warrantyHeading": "Warranty and support, clearly separated",
+        "warrantyItems": [
+          "Manufacturer product and performance warranties vary by model; verify the official terms for the selected equipment.",
+          "Workmanship and service coverage should be stated separately in the written proposal or agreement.",
+          "Monitoring, maintenance, response channels, and any service charges should match the agreed scope."
+        ],
+        "brandCta": "View featured brands and price notes",
+        "warrantyCta": "Request warranty or service support",
+        "quoteCta": "Request a project quotation"
+      }
+    },
     "brandSection": {
       "eyebrow": "Our brand directory",
       "title": "Explore solar brands in one place",

@@ -194,15 +194,15 @@ A customer with solar panels is effectively advertising the concept to the entir
 
 90-day AeroSun public reach plan
 Month 1: Build credibility
-Google Business Profile
-Instagram
-Facebook
-YouTube
-LinkedIn company page
-WhatsApp Business
-Professional AeroSun website
-Solar calculator
-enquiry tracking
+Google Business Profile - No
+Instagram - Done
+Facebook - Done
+YouTube - No
+LinkedIn company page - Done
+WhatsApp Business - No
+Professional AeroSun website - Inprogress
+Solar calculator - Done
+enquiry tracking - No
 
 Publish 3 useful pieces of content/week.
 

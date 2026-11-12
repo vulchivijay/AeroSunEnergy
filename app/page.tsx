@@ -7,6 +7,12 @@ import { SolarEstimation } from './components/forms/SolarEstimation'
 import About from './components/sections/About'
 import TirupatiEnergySection from './components/sections/TirupatiEnergySection'
 import {
+  CompanyTrustSection,
+  ProjectEvidenceSection,
+  QuoteTransparencySection,
+  SolarJourneySection,
+} from './components/sections/HomeTrustSections'
+import {
   BenefitCard,
   CapacityTable,
   FeatureCard,
@@ -97,6 +103,7 @@ export default function Home() {
     <main>
       <HomeHeroSlider />
       <SchemeBanner />
+      <CompanyTrustSection />
       <TirupatiEnergySection />
       {/* Solar Section */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
@@ -291,6 +298,9 @@ export default function Home() {
       </section>
       <About />
       <RecognitionHighlight />
+      <ProjectEvidenceSection />
+      <SolarJourneySection />
+      <QuoteTransparencySection />
       <SolarEstimation />
       <BankEMICalculator />
       <Brands />

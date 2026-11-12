@@ -143,7 +143,7 @@ export default function Brands() {
                   </div>
                 </div>
                 <div
-                  className="flex h-[140px] items-center justify-center overflow-hidden rounded-2xl border border-white/80 p-3 shadow-inner"
+                  className="flex h-[180px] items-center justify-center overflow-hidden rounded-2xl border border-white/80 p-2 shadow-inner"
                   style={{
                     background: `radial-gradient(circle at 50% 0%, white, hsl(${brand.hue} 75% 96%) 78%)`,
                     boxShadow: `inset 0 0 0 1px hsl(${brand.hue} 55% 90%)`,
@@ -152,13 +152,14 @@ export default function Brands() {
                   <Image
                     src={`/brands/${brand.file}`}
                     alt={brand.name}
-                    width={150}
-                    height={150}
-                    sizes="(max-width: 640px) 40vw, 150px"
-                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                    width={200}
+                    height={200}
+                    sizes="180px"
+                    unoptimized
+                    className="h-full w-full object-contain"
                   />
                 </div>
-                <h3 className="mt-4 text-center text-base font-extrabold tracking-tight text-slate-900">
+                <h3 className="mt-4 text-center text-lg font-extrabold tracking-tight text-slate-900">
                   {brand.name}
                 </h3>
                 {maxPrice !== null && formattedMaxPrice ? (
