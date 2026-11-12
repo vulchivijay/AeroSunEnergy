@@ -3,7 +3,9 @@
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { submitMailtoFormAndReset } from '@/lib/submitMailto'
+import { submitMailtoForm } from '@/lib/submitMailto'
+import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
+import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
 import { SharedFormField } from '@/app/components/forms/SharedFormField'
@@ -46,7 +48,15 @@ export default function CustomerAgreementPage() {
     reValidateMode: 'onChange',
   })
 
-  const onSubmit = (data: AgreementFormValues) => {
+  const onSubmit = async (data: AgreementFormValues) => {
+    let referenceCode: string
+    try {
+      referenceCode = await submitWebsiteForm('customer_agreement', data)
+    } catch {
+      setSubmitFeedback({ type: 'error', message: t.formSubmission.error })
+      return
+    }
+
     const subject = `${formCopy.submission.subject} - ${data.customerName}`
     const body = [
       formCopy.submission.heading,
@@ -61,15 +71,11 @@ export default function CustomerAgreementPage() {
       formCopy.submission.paymentAcknowledged,
     ].join('\n')
 
-    submitMailtoFormAndReset({
-      to: content.contact.emailLabel,
-      subject,
-      body,
-      defaultValues,
-      reset,
-      setFeedback: setSubmitFeedback,
-      successMessage: formCopy.submission.success,
-      errorMessage: formCopy.submission.error,
+    submitMailtoForm({ to: content.contact.emailLabel, subject, body })
+    reset(defaultValues)
+    setSubmitFeedback({
+      type: 'success',
+      message: `${formCopy.submission.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`,
     })
   }
 
@@ -376,12 +382,13 @@ export default function CustomerAgreementPage() {
                   </label>
                   {errors.agreed && <p id="agreed-error" className="text-md text-rose-300">{errors.agreed.message}</p>}
 
+                  <FormDataNotice className="text-slate-300" />
                   <button
                     type="submit"
                     disabled={isSubmitting}
                     className="inline-flex w-full items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-md font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-indigo-900 disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    {isSubmitting ? formCopy.sending : formCopy.submit}
+                    {isSubmitting ? t.formSubmission.saving : formCopy.submit}
                   </button>
 
                   {submitFeedback ? (

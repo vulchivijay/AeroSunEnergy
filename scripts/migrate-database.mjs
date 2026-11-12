@@ -40,14 +40,17 @@ const pool = createPool({
 })
 
 try {
-  const schema = await readFile(new URL('../database/auth-schema.sql', import.meta.url), 'utf8')
-  const statements = schema.split(';').map((statement) => statement.trim()).filter(Boolean)
+  const schemaFiles = ['auth-schema.sql', 'referral-schema.sql', 'website-form-submissions-schema.sql']
+  for (const schemaFile of schemaFiles) {
+    const schema = await readFile(new URL(`../database/${schemaFile}`, import.meta.url), 'utf8')
+    const statements = schema.split(';').map((statement) => statement.trim()).filter(Boolean)
 
-  for (const statement of statements) {
-    await pool.query(statement)
+    for (const statement of statements) {
+      await pool.query(statement)
+    }
   }
 
-  console.log('Auth schema migration complete.')
+  console.log('Database schema migration complete.')
 } finally {
   await pool.end()
 }

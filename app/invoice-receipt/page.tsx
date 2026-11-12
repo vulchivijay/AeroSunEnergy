@@ -4,7 +4,9 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
-import { submitMailtoFormAndReset } from '@/lib/submitMailto'
+import { submitMailtoForm } from '@/lib/submitMailto'
+import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
+import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
 import { SharedFormField } from '@/app/components/forms/SharedFormField'
@@ -43,7 +45,15 @@ export default function InvoiceReceiptPage() {
     reValidateMode: 'onChange',
   })
 
-  const onSubmit = (data: InvoiceFormValues) => {
+  const onSubmit = async (data: InvoiceFormValues) => {
+    let referenceCode: string
+    try {
+      referenceCode = await submitWebsiteForm('invoice_receipt', data)
+    } catch {
+      setSubmitFeedback({ type: 'error', message: t.formSubmission.error })
+      return
+    }
+
     const emailText = content.email
     const subject = emailText.subject.replace('{invoiceNumber}', data.invoiceNumber)
     const body = [
@@ -65,15 +75,11 @@ export default function InvoiceReceiptPage() {
       data.receiptNote,
     ].join('\n')
 
-    submitMailtoFormAndReset({
-      to: 'customercare@aerosunenergy.in',
-      subject,
-      body,
-      defaultValues,
-      reset,
-      setFeedback: setSubmitFeedback,
-      successMessage: content.feedback.success,
-      errorMessage: content.feedback.error,
+    submitMailtoForm({ to: 'customercare@aerosunenergy.in', subject, body })
+    reset(defaultValues)
+    setSubmitFeedback({
+      type: 'success',
+      message: `${content.feedback.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`,
     })
   }
 
@@ -244,12 +250,13 @@ export default function InvoiceReceiptPage() {
                 </label>
                 {errors.paymentReceived && <p className="text-md text-rose-300">{errors.paymentReceived.message}</p>}
 
+                <FormDataNotice className="text-slate-300" />
                 <button
                   type="submit"
                   disabled={isSubmitting}
                   className="inline-flex w-full items-center justify-center rounded-full bg-white px-5 py-3 text-md font-semibold text-slate-900 transition-all duration-200 hover:-translate-y-0.5 hover:bg-orange-100 disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {isSubmitting ? labels.submitting : labels.submit}
+                  {isSubmitting ? t.formSubmission.saving : labels.submit}
                 </button>
 
                 {submitFeedback ? (

@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build",
-    "db:migrate": "node scripts/migrate-auth.mjs",
+    "db:migrate": "node scripts/migrate-database.mjs",
     "google:index-check": "node scripts/submit-indexnow.js",
     "postbuild": "node scripts/submit-indexnow.js",
     "start": "next start -H 0.0.0.0",

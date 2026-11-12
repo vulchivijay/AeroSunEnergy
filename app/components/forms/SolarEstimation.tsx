@@ -7,6 +7,8 @@ import { useForm, useWatch, type UseFormRegisterReturn } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
 import { useLocale } from '@/lib/LocaleContext'
+import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
+import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 
 type FormData = {
   monthlyBill: number
@@ -64,6 +66,8 @@ export function SolarEstimation() {
   const [showLeadForm, setShowLeadForm] = useState(false)
   const [whatsAppFallbackUrl, setWhatsAppFallbackUrl] = useState<string | null>(null)
   const [leadFormError, setLeadFormError] = useState('')
+  const [leadFormReference, setLeadFormReference] = useState('')
+  const [leadFormPending, setLeadFormPending] = useState(false)
   const e = t.estimation
   const defaultValues: FormData = t.componentData.solarEstimation.defaultValues
   const validation = e.validation
@@ -190,7 +194,7 @@ export function SolarEstimation() {
     accent: t.componentData.solarEstimation.summaryStatAccents[index],
   }))
 
-  function handleLeadFormSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleLeadFormSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const formData = new FormData(event.currentTarget)
     const name = String(formData.get('name') ?? '').trim()
@@ -206,6 +210,8 @@ export function SolarEstimation() {
     }
 
     setLeadFormError('')
+    setLeadFormReference('')
+    setLeadFormPending(true)
 
     const message = [
       e.whatsAppGreeting,
@@ -221,13 +227,35 @@ export function SolarEstimation() {
       `${e.roofRequired}: ${roofArea} ${e.squareFootUnit}`,
     ].join('\n')
     const url = `https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(message)}`
-    const whatsAppWindow = window.open(url, '_blank')
+    const whatsAppWindow = window.open('about:blank', '_blank')
 
-    if (whatsAppWindow) {
-      whatsAppWindow.opener = null
+    try {
+      const referenceCode = await submitWebsiteForm('solar_assessment', {
+        name,
+        phone,
+        pinCode,
+        propertyType,
+        monthlyBill,
+        recommendedKw: calculation.recommendedKw,
+        annualGeneration: calculation.annualGeneration,
+        annualSavings: calculation.profit,
+        twentyFiveYearSavings: calculation.profit * SAVINGS_ESTIMATE_YEARS,
+        roofArea,
+      })
+      setLeadFormReference(referenceCode)
+      if (whatsAppWindow) {
+        whatsAppWindow.opener = null
+        whatsAppWindow.location.href = url
+        setWhatsAppFallbackUrl(null)
+      } else {
+        setWhatsAppFallbackUrl(url)
+      }
+    } catch {
+      whatsAppWindow?.close()
+      setLeadFormError(t.formSubmission.error)
       setWhatsAppFallbackUrl(null)
-    } else {
-      setWhatsAppFallbackUrl(url)
+    } finally {
+      setLeadFormPending(false)
     }
   }
 
@@ -539,9 +567,10 @@ export function SolarEstimation() {
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <button
                   type="submit"
-                  className="inline-flex min-h-12 items-center justify-center rounded-full bg-emerald-800 px-6 py-3 text-sm font-bold text-white transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+                  disabled={leadFormPending}
+                  className="inline-flex min-h-12 items-center justify-center rounded-full bg-emerald-800 px-6 py-3 text-sm font-bold text-white transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 disabled:cursor-wait disabled:opacity-70"
                 >
-                  {e.whatsAppMyReport} <span className="ml-2" aria-hidden="true">↗</span>
+                  {leadFormPending ? t.formSubmission.saving : e.whatsAppMyReport} <span className="ml-2" aria-hidden="true">↗</span>
                 </button>
                 <button
                   type="button"
@@ -563,6 +592,14 @@ export function SolarEstimation() {
                   {leadFormError}
                 </p>
               )}
+              {leadFormReference && (
+                <p className="mt-4 text-sm font-semibold text-emerald-800" role="status" aria-live="polite">
+                  {t.formSubmission.success} {t.formSubmission.referenceLabel}: <span className="font-mono">{leadFormReference}</span>
+                </p>
+              )}
+              <div className="mt-4">
+                <FormDataNotice />
+              </div>
             </form>
           </section>
         )}

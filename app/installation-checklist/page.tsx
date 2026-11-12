@@ -3,7 +3,9 @@
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { submitMailtoFormAndReset } from '@/lib/submitMailto'
+import { submitMailtoForm } from '@/lib/submitMailto'
+import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
+import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
 import { SharedFormField } from '@/app/components/forms/SharedFormField'
@@ -44,7 +46,15 @@ export default function InstallationChecklistPage() {
 		reValidateMode: 'onChange',
 	})
 
-	const onSubmit = (data: ChecklistFormValues) => {
+	const onSubmit = async (data: ChecklistFormValues) => {
+		let referenceCode: string
+		try {
+			referenceCode = await submitWebsiteForm('installation_checklist', data)
+		} catch {
+			setSubmitFeedback({ type: 'error', message: t.formSubmission.error })
+			return
+		}
+
 		const emailText = content.email
 		const subject = emailText.subject.replace('{projectName}', data.projectName)
 		const body = [
@@ -66,15 +76,11 @@ export default function InstallationChecklistPage() {
 			data.notes,
 		].join('\n')
 
-		submitMailtoFormAndReset({
-			to: 'customercare@aerosunenergy.in',
-			subject,
-			body,
-			defaultValues,
-			reset,
-			setFeedback: setSubmitFeedback,
-			successMessage: content.feedback.success,
-			errorMessage: content.feedback.error,
+		submitMailtoForm({ to: 'customercare@aerosunenergy.in', subject, body })
+		reset(defaultValues)
+		setSubmitFeedback({
+			type: 'success',
+			message: `${content.feedback.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`,
 		})
 	}
 
@@ -256,12 +262,13 @@ export default function InstallationChecklistPage() {
 								{errors.notes && <p id="notes-error" className="mt-2 text-md text-rose-300">{errors.notes.message}</p>}
 							</div>
 
+							<FormDataNotice className="text-amber-100/70" />
 							<button
 								type="submit"
 								disabled={isSubmitting}
 								className="inline-flex w-full items-center justify-center rounded-xl bg-amber-300 px-4 py-3 text-md font-bold text-slate-900 transition hover:bg-amber-200 disabled:cursor-not-allowed disabled:opacity-70"
 							>
-								{isSubmitting ? labels.submitting : labels.submit}
+								{isSubmitting ? t.formSubmission.saving : labels.submit}
 							</button>
 
 							{submitFeedback && (

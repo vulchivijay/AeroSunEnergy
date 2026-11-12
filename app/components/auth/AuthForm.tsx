@@ -4,6 +4,7 @@ import { useEffect, useState, type FormEvent } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useLocale } from '@/lib/LocaleContext'
+import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 
 type AuthFormProps = {
   mode: 'login' | 'signup'
@@ -136,6 +137,8 @@ export default function AuthForm({ mode }: AuthFormProps) {
               />
             </label>
           )}
+
+          <FormDataNotice />
 
           {error && (
             <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800" role="alert">

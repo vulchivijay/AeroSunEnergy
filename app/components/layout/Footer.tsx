@@ -8,6 +8,8 @@ import CompanyAge from './CompanyAge'
 import { useLocale } from '@/lib/LocaleContext'
 import { isProductionComingSoonLink } from '@/lib/navigation'
 import { ArrowRight, ArrowUpRight, Globe, Mail, MapPin, Phone, Send, Sun, Wind, Zap } from 'lucide-react'
+import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
+import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 
 const socialIconComponents: Record<string, ReactNode> = {
 	twitter: (
@@ -55,6 +57,8 @@ export default function Footer() {
 	)
 	const [newsletterEmail, setNewsletterEmail] = useState('')
 	const [newsletterStatus, setNewsletterStatus] = useState('')
+	const [newsletterPending, setNewsletterPending] = useState(false)
+	const [newsletterFailed, setNewsletterFailed] = useState(false)
 	const [currentYear, setCurrentYear] = useState(INITIAL_COPYRIGHT_YEAR)
 	const companyAddress = footer.address
 	const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyAddress)}`
@@ -67,12 +71,20 @@ export default function Footer() {
 		updateCurrentYear()
 	}, [])
 
-	function handleNewsletterSubmit(event: FormEvent<HTMLFormElement>) {
+	async function handleNewsletterSubmit(event: FormEvent<HTMLFormElement>) {
 		event.preventDefault()
-		const subject = encodeURIComponent(footer.newsletterSubject)
-		const body = encodeURIComponent(footer.newsletterBody.replace('{email}', newsletterEmail))
-		setNewsletterStatus(footer.newsletterStatus)
-		window.location.href = `mailto:${footer.email}?subject=${subject}&body=${body}`
+		setNewsletterPending(true)
+		setNewsletterFailed(false)
+		try {
+			await submitWebsiteForm('newsletter', { email: newsletterEmail.trim() })
+			setNewsletterStatus(footer.newsletterStatus)
+			setNewsletterEmail('')
+		} catch {
+			setNewsletterFailed(true)
+			setNewsletterStatus(t.formSubmission.error)
+		} finally {
+			setNewsletterPending(false)
+		}
 	}
 
 	return (
@@ -273,12 +285,13 @@ export default function Footer() {
 								placeholder={footer.newsletterPlaceholder}
 								className="min-h-12 min-w-0 flex-1 rounded-full border border-white/15 bg-[#071B17] px-5 text-sm text-white outline-none transition placeholder:text-gray-400 focus:border-[#A5D6A7] focus:ring-2 focus:ring-[#A5D6A7]/25"
 							/>
-							<button type="submit" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#A5D6A7] px-6 text-sm font-bold text-[#173B2C] transition hover:bg-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7]">
-								{footer.subscribe} <Send className="h-4 w-4" aria-hidden="true" />
+							<button type="submit" disabled={newsletterPending} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#A5D6A7] px-6 text-sm font-bold text-[#173B2C] transition hover:bg-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7] disabled:cursor-wait disabled:opacity-70">
+								{newsletterPending ? t.formSubmission.saving : footer.subscribe} <Send className="h-4 w-4" aria-hidden="true" />
 							</button>
 						</div>
 						<p className="mt-3 text-sm leading-5 text-gray-400">{footer.newsletterHint}</p>
-						<p role="status" aria-live="polite" className="mt-1 min-h-5 text-sm text-[#DCEDC8]">{newsletterStatus}</p>
+						<FormDataNotice className="text-gray-400" />
+						<p role={newsletterFailed ? 'alert' : 'status'} aria-live="polite" className={`mt-1 min-h-5 text-sm ${newsletterFailed ? 'text-rose-300' : 'text-[#DCEDC8]'}`}>{newsletterStatus}</p>
 					</form>
 				</section>
 			</div>

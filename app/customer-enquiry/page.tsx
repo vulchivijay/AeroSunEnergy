@@ -2,6 +2,8 @@
 
 import { useState, type FormEvent, type ReactNode } from "react";
 import { useLocale } from "@/lib/LocaleContext";
+import { FormDataNotice } from "@/app/components/forms/FormDataNotice";
+import { submitWebsiteForm } from "@/lib/websiteFormSubmission";
 
 function SectionTitle({ number, title }: { number: string; title: string }) {
   return (
@@ -221,10 +223,11 @@ function ChoiceGroup({
 export default function CustomerEnquiryPage() {
   const { t } = useLocale();
   const page = t.customerEnquiryPage;
-  const [feedback, setFeedback] = useState("");
+  const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const paymentMilestones = page.paymentMilestones;
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     const formData = new FormData(form);
@@ -248,46 +251,63 @@ export default function CustomerEnquiryPage() {
       if (!form.reportValidity()) return;
     }
 
-    function getFieldLabel(name: string) {
-      const radio = Array.from(
-        form.querySelectorAll<HTMLInputElement>('input[type="radio"]'),
-      ).find((input) => input.name === name);
-      if (radio) {
-        return (
-          radio
-            .closest("fieldset")
-            ?.querySelector("legend")
-            ?.textContent?.trim() ?? radio.value
-        );
+    setIsSubmitting(true);
+    setFeedback(null);
+    try {
+      const submissionData = Object.fromEntries(
+        Array.from(formData.entries()).map(([key, value]) => [key, String(value)]),
+      );
+      const referenceCode = await submitWebsiteForm("customer_enquiry", submissionData);
+
+      function getFieldLabel(name: string) {
+        const radio = Array.from(
+          form.querySelectorAll<HTMLInputElement>('input[type="radio"]'),
+        ).find((input) => input.name === name);
+        if (radio) {
+          return (
+            radio
+              .closest("fieldset")
+              ?.querySelector("legend")
+              ?.textContent?.trim() ?? radio.value
+          );
+        }
+
+        const field = form.elements.namedItem(name);
+        if (
+          field instanceof HTMLInputElement ||
+          field instanceof HTMLSelectElement ||
+          field instanceof HTMLTextAreaElement
+        ) {
+          const label =
+            field.getAttribute("aria-label") ?? field.labels?.[0]?.textContent;
+          if (label) return label.replace(/\s*\*$/, "").trim();
+        }
+
+        return name.replaceAll("_", " ");
       }
 
-      const field = form.elements.namedItem(name);
-      if (
-        field instanceof HTMLInputElement ||
-        field instanceof HTMLSelectElement ||
-        field instanceof HTMLTextAreaElement
-      ) {
-        const label =
-          field.getAttribute("aria-label") ?? field.labels?.[0]?.textContent;
-        if (label) return label.replace(/\s*\*$/, "").trim();
-      }
-
-      return name.replaceAll("_", " ");
+      const body = [
+        page.mailtoBodyTitle,
+        page.mailtoBodySubtitle,
+        "",
+        ...Array.from(formData.entries()).map(
+          ([key, value]) => `${getFieldLabel(key)}: ${String(value)}`,
+        ),
+      ].join("\n");
+      const subject = encodeURIComponent(
+        `${page.mailtoSubjectPrefix}${String(formData.get("customer_name"))}`,
+      );
+      window.location.href = `mailto:${page.mailtoRecipient}?subject=${subject}&body=${encodeURIComponent(body)}`;
+      setFeedback({
+        type: "success",
+        message: `${page.feedback} ${t.formSubmission.referenceLabel}: ${referenceCode}`,
+      });
+    } catch {
+      setFeedback({ type: "error", message: t.formSubmission.error });
+    } finally {
+      setIsSubmitting(false);
     }
 
-    const body = [
-      page.mailtoBodyTitle,
-      page.mailtoBodySubtitle,
-      "",
-      ...Array.from(formData.entries()).map(
-        ([key, value]) => `${getFieldLabel(key)}: ${String(value)}`,
-      ),
-    ].join("\n");
-    const subject = encodeURIComponent(
-      `${page.mailtoSubjectPrefix}${String(formData.get("customer_name"))}`,
-    );
-    window.location.href = `mailto:${page.mailtoRecipient}?subject=${subject}&body=${encodeURIComponent(body)}`;
-    setFeedback(page.feedback);
   }
 
   return (
@@ -995,21 +1015,24 @@ export default function CustomerEnquiryPage() {
             </label>
             <button
               type="submit"
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-emerald-800 px-6 py-3 text-md font-bold text-white transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800"
+              disabled={isSubmitting}
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-emerald-800 px-6 py-3 text-md font-bold text-white transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800 disabled:cursor-wait disabled:opacity-70"
             >
-              {page.submit}
+              {isSubmitting ? t.formSubmission.saving : page.submit}
             </button>
           </div>
           <p className="text-right text-md text-slate-500">
             {page.requiredFieldsNote}
           </p>
+          <FormDataNotice />
+          {isSubmitting && <p className="text-md text-emerald-800" role="status">{t.formSubmission.saving}</p>}
           {feedback && (
             <p
-              role="status"
+              role={feedback.type === "error" ? "alert" : "status"}
               aria-live="polite"
-              className="rounded-lg bg-emerald-50 p-3 text-md font-semibold text-emerald-800"
+              className={`rounded-lg p-3 text-md font-semibold ${feedback.type === "error" ? "bg-rose-50 text-rose-800" : "bg-emerald-50 text-emerald-800"}`}
             >
-              {feedback}
+              {feedback.message}
             </p>
           )}
         </form>

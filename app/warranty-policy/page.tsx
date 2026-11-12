@@ -3,7 +3,9 @@
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { submitMailtoFormAndReset } from '@/lib/submitMailto'
+import { submitMailtoForm } from '@/lib/submitMailto'
+import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
+import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
 import { SharedFormField } from '@/app/components/forms/SharedFormField'
@@ -40,7 +42,15 @@ export default function WarrantyPolicyPage() {
     reValidateMode: 'onChange',
   })
 
-  const onSubmit = (data: WarrantyPolicyFormValues) => {
+  const onSubmit = async (data: WarrantyPolicyFormValues) => {
+    let referenceCode: string
+    try {
+      referenceCode = await submitWebsiteForm('warranty_policy', data)
+    } catch {
+      setSubmitFeedback({ type: 'error', message: t.formSubmission.error })
+      return
+    }
+
     const emailText = content.email
     const subject = emailText.subject.replace('{projectName}', data.projectName)
     const body = [
@@ -59,15 +69,11 @@ export default function WarrantyPolicyPage() {
       emailText.termsAccepted,
     ].join('\n')
 
-    submitMailtoFormAndReset({
-      to: 'customercare@aerosunenergy.in',
-      subject,
-      body,
-      defaultValues,
-      reset,
-      setFeedback: setSubmitFeedback,
-      successMessage: content.feedback.success,
-      errorMessage: content.feedback.error,
+    submitMailtoForm({ to: 'customercare@aerosunenergy.in', subject, body })
+    reset(defaultValues)
+    setSubmitFeedback({
+      type: 'success',
+      message: `${content.feedback.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`,
     })
   }
 
@@ -205,6 +211,7 @@ export default function WarrantyPolicyPage() {
               {errors.acceptTerms && <p className="mt-2 text-md text-rose-600">{errors.acceptTerms.message}</p>}
             </div>
 
+            <FormDataNotice />
             <div className="flex flex-col gap-3 border-t border-slate-200 pt-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-2 text-[12px] font-black uppercase tracking-[0.24em] text-slate-500">
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
@@ -216,7 +223,7 @@ export default function WarrantyPolicyPage() {
                 disabled={isSubmitting}
                 className="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-md font-black uppercase tracking-[0.18em] text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-sky-900 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                {isSubmitting ? labels.submitting : labels.submit}
+                {isSubmitting ? t.formSubmission.saving : labels.submit}
               </button>
 
               {submitFeedback ? (

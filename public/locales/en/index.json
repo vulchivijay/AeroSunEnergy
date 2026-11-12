@@ -4553,6 +4553,53 @@
         "quoteCta": "Request a project quotation"
       }
     },
+    "referralProgram": {
+      "eyebrow": "Share solar with your neighbourhood",
+      "title": "Good energy is better when it’s shared.",
+      "description": "Know a neighbour or friend considering solar? Introduce them to AeroSun and help them start a site-specific conversation.",
+      "steps": [
+        {
+          "title": "Make an introduction",
+          "description": "Share your contact details and your friend’s details only after getting their permission."
+        },
+        {
+          "title": "We follow up",
+          "description": "Our team will contact them to understand their property and solar requirements."
+        },
+        {
+          "title": "Track the referral",
+          "description": "Keep the reference code shown after submission so you can ask us about the referral."
+        }
+      ],
+      "rewardNoteTitle": "Reward terms:",
+      "rewardNote": "No fixed incentive has been announced. AeroSun will confirm any applicable reward, eligibility, and terms directly; submitting a referral does not guarantee a reward.",
+      "form": {
+        "title": "Introduce a neighbour or friend",
+        "description": "Enter your details, their details, and the PIN code for the property they are considering for solar.",
+        "referrerNameLabel": "Your name",
+        "referrerPhoneLabel": "Your mobile number",
+        "referredNameLabel": "Friend’s name",
+        "referredPhoneLabel": "Friend’s mobile number",
+        "postalCodeLabel": "Project PIN code",
+        "propertyTypeLabel": "Property type",
+        "propertyTypePlaceholder": "Select property type",
+        "propertyTypes": [
+          { "value": "house", "label": "Independent house" },
+          { "value": "apartment", "label": "Apartment" },
+          { "value": "commercial", "label": "Business / commercial" },
+          { "value": "other", "label": "Other" }
+        ],
+        "consent": "I have permission from my friend to share their contact details with AeroSun Energy so the team can contact them about solar.",
+        "privacyPrefix": "We use these details to follow up on this referral. See our",
+        "privacyLink": "Privacy Policy",
+        "submit": "Submit referral",
+        "submitting": "Submitting referral…",
+        "successTitle": "Referral received",
+        "successDescription": "Thank you. AeroSun Energy will review the referral and follow up.",
+        "referenceLabel": "Your referral reference",
+        "error": "We couldn’t submit the referral. Check your details and try again."
+      }
+    },
     "brandSection": {
       "eyebrow": "Our brand directory",
       "title": "Explore solar brands in one place",
@@ -6712,7 +6759,7 @@
       "titleAccent": "Handled with care.",
       "description": "Our privacy policy explains what information we collect, why we use it, and the choices available to you.",
       "updatedLabel": "Last updated",
-      "effectiveDate": "30 October 2026",
+      "effectiveDate": "12 November 2026",
       "headerTopics": [
         "Information we collect",
         "How we use it",
@@ -6830,6 +6877,24 @@
             "Effective date revised whenever the policy changes",
             "Continued use indicates acceptance of updates"
           ]
+        },
+        {
+          "heading": "11. Referral program information",
+          "content": "When you submit a referral, we collect your name and mobile number, the referred person’s name and mobile number, the project PIN code, property type, and your confirmation that you have permission to share their details. We use this information to record and manage the referral, contact the referred person about solar, and respond to questions about referral status and applicable terms.",
+          "bullets": [
+            "Referral contact details and basic project information",
+            "Permission confirmation recorded with the submission",
+            "Details used to follow up on and manage the referral"
+          ]
+        },
+        {
+          "heading": "12. Website form submissions",
+          "content": "Information entered into contact, newsletter, solar assessment, customer enquiry, warranty, purchase-order, invoice or receipt, agreement, and installation-checklist forms is stored in our database so we can respond to enquiries or manage the related request. Please provide only information needed for the form and do not enter passwords or unrelated sensitive information.",
+          "bullets": [
+            "Contact details and project information you submit",
+            "Business and document details entered in the relevant forms",
+            "Records used to respond to or manage the submitted request"
+          ]
         }
       ],
       "clarification": "Need clarification? Please use the",
@@ -6843,6 +6908,8 @@
         "Customer contact details and business information",
         "Project enquiries and energy requirements",
         "Technical site and feasibility information",
+        "Referral contact details and referral status",
+        "Information submitted through website forms and business records",
         "Website usage, diagnostics, and security logs"
       ],
       "principlesTitle": "Our principles",
@@ -7460,6 +7527,16 @@
       "termsAccepted": "Terms Accepted"
     }
   },
+  "formDataNotice": {
+    "prefix": "Submitting stores the information you provide in AeroSun Energy’s database so we can respond to or manage your request. See our",
+    "link": "Privacy Policy"
+  },
+  "formSubmission": {
+    "saving": "Saving submission…",
+    "success": "Your request has been saved.",
+    "error": "We couldn’t save your submission. Check your connection and try again.",
+    "referenceLabel": "Submission reference"
+  },
   "footer": {
     "brandDesc": "Delivering clean, reliable, and affordable renewable energy solutions across India.",
     "email": "customercare@aerosunenergy.in",
@@ -7481,7 +7558,7 @@
     "contactInformation": "Contact Information",
     "stayPowered": "Stay Powered by Clean Energy",
     "newsletterDescription": "Get renewable energy insights, technology updates and sustainable energy solutions.",
-    "newsletterHint": "No newsletter service is connected yet. Subscribe opens an email request to our customer-care address; it does not add you automatically.",
+    "newsletterHint": "Your address will be saved as an update request. Automated newsletter delivery is not enabled yet.",
     "subscribe": "Subscribe",
     "solarWindHybrid": "Solar · Wind · Hybrid",
     "developmentNotice": "This website is currently under development. Some content and images may be incomplete, and page titles or locations may change as updates are made.",
@@ -7550,7 +7627,7 @@
     "newsletterPlaceholder": "you@example.com",
     "newsletterSubject": "Clean energy newsletter subscription request",
     "newsletterBody": "Please add {email} to the AeroSun Energy clean energy newsletter.",
-    "newsletterStatus": "Your email app will open with your subscription request.",
+    "newsletterStatus": "Your update request has been saved. Automated newsletter delivery is not enabled yet.",
     "attributionLinkLabel": "Open ChatGPT in a new tab",
     "attributionLinkText": "ChatGPT.",
     "legalLinks": [
@@ -9800,7 +9877,7 @@
     "whatHappensNext": "What happens next",
     "projectBrief": "Project brief",
     "projectBriefTitle": "Send a concise enquiry",
-    "projectBriefCopy": "Share your project details below and your email app will open with a formatted brief. This keeps the experience quick on mobile and desktop while still feeling polished.",
+    "projectBriefCopy": "Share your project details below. Your enquiry will be saved securely so the AeroSun team can review it and follow up.",
     "builtForClarity": "Built for clarity",
     "builtForClarityTitle": "Designed for modern project conversations",
     "builtForClarityCopy": "This contact page follows the same visual rhythm as the home page: luminous gradients, glassy cards, and strong contrast for key calls to action.",
@@ -9815,6 +9892,8 @@
     "emailDirect": "Email directly",
     "openEmailDraft": "Open email draft",
     "form": {
+      "title": "Send us a project enquiry",
+      "description": "Tell us a little about your project and our team will follow up.",
       "fullName": "Full name",
       "fullNamePlaceholder": "Your name",
       "email": "Email address",
@@ -9826,7 +9905,10 @@
       "usage": "Approx. usage",
       "usagePlaceholder": "Monthly units or kW target",
       "message": "Message",
-      "messagePlaceholder": "Tell us where the site is, what you want to power, and when you want to start."
+      "messagePlaceholder": "Tell us where the site is, what you want to power, and when you want to start.",
+      "submit": "Send enquiry",
+      "submitting": "Saving enquiry…",
+      "success": "Your enquiry has been saved."
     },
     "highlights": [
       {
