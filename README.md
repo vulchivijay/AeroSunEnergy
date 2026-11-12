@@ -167,15 +167,18 @@ INSTANCE_UNIX_SOCKET=/cloudsql/PROJECT_ID:REGION:INSTANCE_ID
 DB_NAME=your_database
 DB_USER=your_database_user
 DB_PASS=your_database_password
+DASHBOARD_ADMIN_EMAILS=admin@example.com
 ```
 
-Attach the Cloud SQL instance to the Cloud Run service and grant its service account the Cloud SQL Client role. Apply the authentication and referral-program tables to the target database:
+Attach the Cloud SQL instance to the Cloud Run service and grant its service account the Cloud SQL Client role. Apply the authentication, referral, and website-form tables to the target database:
 
 ```bash
 npm run db:migrate
 ```
 
 Run the migration in an environment that can reach the Cloud SQL Unix socket and has the variables above configured. It creates the `auth_users`, `auth_sessions`, `solar_referrals`, and `website_form_submissions` tables. Website form records are stored with a generated reference code and a `new` status; the migration does not run automatically during deployment.
+
+Set `DASHBOARD_ADMIN_EMAILS` to a comma-separated list of registered account email addresses permitted to access `/dashboard`. The dashboard requires this server-only allowlist and omits password hashes and session tokens from its views.
 
 For local development on Windows, the Cloud Run Unix socket is not available. Install and run the [Cloud SQL Auth Proxy](https://cloud.google.com/sql/docs/mysql/connect-auth-proxy) on `127.0.0.1:3306`, then add `DB_HOST=127.0.0.1` and `DB_PORT=3306` to `.env.local`. The TCP settings take precedence over `INSTANCE_UNIX_SOCKET`; keep `DB_HOST` unset on Cloud Run so it continues using the mounted Unix socket.
 
