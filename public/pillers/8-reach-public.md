@@ -15,10 +15,11 @@ Your message can be simple:
 “AeroSun Energy: Helping homes and businesses reduce electricity costs with smarter solar solutions.”
 
 2. Build 5 customer acquisition channels
-   Channel What AeroSun should doGoogle Search & Maps Create/optimize Google Business Profile and collect genuine installation reviews
+   Channel What AeroSun should do Google Search & Maps Create/optimize Google Business Profile and collect genuine installation reviews
    Instagram + Facebook Short educational videos and before/after installations
    YouTube Telugu + English solar education
    WhatsApp Business Quotations, customer enquiries and follow-ups
+   
    Local partnerships Builders, electricians, architects, factories, schools and commercial property owners
 
 For a new solar company, I would not spend heavily on branding ads initially. Spend money where you can capture people already thinking about electricity bills or solar.

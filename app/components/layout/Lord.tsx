@@ -180,13 +180,13 @@ export default function Lord() {
           ref={closeButtonRef}
           type="button"
           aria-label={t.blessingModal.closeLabel}
-          className="absolute right-2 top-2 inline-flex min-h-6 min-w-6 items-center justify-center rounded-md p-1 text-gray-600 transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600   "
+          className="absolute right-2 top-2 inline-flex rounded-md p-2 text-gray-600 transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
           onClick={dismiss}
         >
           ✕
         </button>
 
-        <div className="flex flex-col items-center gap-1 text-center">
+        <div className="flex flex-col items-center text-center">
           <div className="overflow-hidden p-6">
             <Image
               src={lord.image}
@@ -198,8 +198,8 @@ export default function Lord() {
             />
           </div>
 
-          <h2 id="lord-blessing-title" className="text-3xl font-semibold tracking-tight">{blessing.title}</h2>
-          <p id="lord-blessing-description" className="max-w-md text-md leading-6 text-gray-600 ">
+          <h2 id="lord-blessing-title" className="mb-2 text-3xl font-semibold tracking-tight">{blessing.title}</h2>
+          <p id="lord-blessing-description" className="max-w-md text-[14px] text-gray-900">
             {blessing.body}
           </p>
 
