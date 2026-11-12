@@ -25,6 +25,7 @@ import {
   WindInfoPanel,
   WindSectionEyebrow,
 } from './components/ui'
+import { Brands } from './components/brand'
 
 function RecognitionHighlight() {
   const { t } = useLocale()
@@ -292,6 +293,7 @@ export default function Home() {
       <RecognitionHighlight />
       <SolarEstimation />
       <BankEMICalculator />
+      <Brands />
     </main>
   )
 }
