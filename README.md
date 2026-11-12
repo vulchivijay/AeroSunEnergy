@@ -177,6 +177,8 @@ npm run db:migrate
 
 Run the migration in an environment that can reach the Cloud SQL Unix socket and has the variables above configured. It creates the `auth_users` and `auth_sessions` tables.
 
+For local development on Windows, the Cloud Run Unix socket is not available. Install and run the [Cloud SQL Auth Proxy](https://cloud.google.com/sql/docs/mysql/connect-auth-proxy) on `127.0.0.1:3306`, then add `DB_HOST=127.0.0.1` and `DB_PORT=3306` to `.env.local`. The TCP settings take precedence over `INSTANCE_UNIX_SOCKET`; keep `DB_HOST` unset on Cloud Run so it continues using the mounted Unix socket.
+
 ### Lint
 
 ```bash

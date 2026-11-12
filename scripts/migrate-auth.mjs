@@ -4,19 +4,35 @@ import { loadEnvConfig } from '@next/env'
 
 loadEnvConfig(process.cwd())
 
-const required = {
-  socketPath: process.env.INSTANCE_UNIX_SOCKET,
-  database: process.env.DB_NAME,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
+const socketPath = process.env.INSTANCE_UNIX_SOCKET?.trim()
+const host = process.env.DB_HOST?.trim()
+const database = process.env.DB_NAME
+const user = process.env.DB_USER
+const password = process.env.DB_PASS
+
+if (!database || !user || !password) {
+  throw new Error('Database configuration is incomplete.')
 }
 
-if (Object.values(required).some((value) => !value)) {
-  throw new Error('Cloud SQL configuration is incomplete.')
+let connectionTarget
+if (host) {
+  const portValue = process.env.DB_PORT
+  const port = portValue ? Number(portValue) : 3306
+  if (!Number.isInteger(port) || port < 1 || port > 65535) {
+    throw new Error('DB_PORT must be a valid TCP port.')
+  }
+  connectionTarget = { host, port }
+} else if (socketPath) {
+  connectionTarget = { socketPath }
+} else {
+  throw new Error('Configure either DB_HOST or INSTANCE_UNIX_SOCKET.')
 }
 
 const pool = createPool({
-  ...required,
+  ...connectionTarget,
+  database,
+  user,
+  password,
   waitForConnections: true,
   connectionLimit: 1,
   connectTimeout: 10_000,
