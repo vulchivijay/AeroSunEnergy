@@ -92,6 +92,7 @@ export default function KnowEligibilityPage() {
                 <div className="min-w-0 flex-1">
                   <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.subsidyTitle}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600 sm:text-sm">{labels.subsidyDescription}</p>
+                  <p className="mt-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm leading-6 text-emerald-950">{t.subsidyNotice}</p>
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
                     {page.subsidyBreakdown.map((item) => (
                       <div key={item.title} className="rounded-xl bg-[#f4f8fc] p-4">

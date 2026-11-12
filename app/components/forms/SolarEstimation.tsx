@@ -336,6 +336,10 @@ export function SolarEstimation() {
                 </div>
               </div>
 
+              <p className="rounded-xl border border-emerald-100/20 bg-white/10 px-4 py-3 text-sm leading-6 text-emerald-50">
+                {t.subsidyNotice}
+              </p>
+
               <div className="mt-4 flex w-full flex-col gap-4 sm:flex-row">
                 <Link
                   href="/contact"

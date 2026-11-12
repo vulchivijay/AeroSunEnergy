@@ -144,6 +144,7 @@ export default function SolarEnergyPage() {
           <SectionEyebrow>{solarPage.subsidy.eyebrow}</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-bold text-slate-900">{solarPage.subsidy.title}</h2>
           <p className="mt-4 text-sm leading-8 text-slate-700">{solarPage.subsidy.description}</p>
+          <p className="mt-4 rounded-xl border border-amber-200 bg-amber-50/70 px-4 py-3 text-sm leading-6 text-slate-700">{t.subsidyNotice}</p>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">

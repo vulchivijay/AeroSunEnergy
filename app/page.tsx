@@ -199,6 +199,10 @@ export default function Home() {
             {subsidy.description}
           </p>
 
+          <p className="mt-4 max-w-4xl rounded-xl border border-emerald-200 bg-white/70 px-4 py-3 text-sm leading-6 text-slate-700">
+            {t.subsidyNotice}
+          </p>
+
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {subsidy.cards.map((item) => (
               <BenefitCard key={item.title} title={item.title} description={item.description} />

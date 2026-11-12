@@ -106,6 +106,8 @@ export default function SchemeBanner() {
                 </div>
               </div>
 
+              <p className="mt-4 text-xs leading-5 text-emerald-50/90">{t.subsidyNotice}</p>
+
               <div className="mt-5 grid grid-cols-3 gap-3">
                 {stats.map((item: { label: string; value: string }) => (
                   <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 px-2 py-3 text-center">
