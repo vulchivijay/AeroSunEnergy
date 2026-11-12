@@ -4387,6 +4387,9 @@
     "homeTitle": "Go to AeroSun Energy homepage",
     "homeAriaLabel": "AeroSun Energy logo - go to homepage",
     "imageAlt": "AeroSun Energy logo",
+    "wordmark": "AeroSun",
+    "wordmarkSuffix": "Energy",
+    "trademark": "TM",
     "tagline": "Private Limited"
   },
   "hero": {
@@ -4477,7 +4480,7 @@
         "phoneLabel": "Call",
         "emailLabel": "Email",
         "mapCta": "Open map",
-        "registrationNote": "GSTIN, CIN, and other statutory identifiers should be shown only when applicable and verified against official records.",
+        "identifiersText": "CIN: U35106AP2026PTC128748; Udyam/MSME: UDYAM-AP-02-0123235; Startup India certificate no.: DIPP290751.",
         "contactCta": "Contact AeroSun Energy"
       },
       "evidence": {
@@ -4572,7 +4575,7 @@
         }
       ],
       "rewardNoteTitle": "Reward terms:",
-      "rewardNote": "No fixed incentive has been announced. AeroSun will confirm any applicable reward, eligibility, and terms directly; submitting a referral does not guarantee a reward.",
+      "rewardNote": "A referral incentive will be provided after the referred installation is complete. AeroSun will confirm the applicable incentive and terms directly.",
       "form": {
         "title": "Introduce a neighbour or friend",
         "description": "Enter your details, their details, and the PIN code for the property they are considering for solar.",

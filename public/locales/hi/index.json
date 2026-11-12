@@ -98,11 +98,11 @@
     "startProjectTitle": "AeroSun Energy के साथ नवीकरणीय ऊर्जा प्रोजेक्ट शुरू करें",
     "startProjectAriaLabel": "अपना प्रोजेक्ट शुरू करने के लिए AeroSun Energy से संपर्क करें",
     "brandName": "AeroSun Energy Private Limited",
-    "brandTagline": "सूर्य, पवन, जल, अग्नि से शक्ति",
+    "brandTagline": "सूर्य और पवन से ऊर्जा",
     "primaryNavigationLabel": "प्राथमिक नेविगेशन",
     "mobileNavigationLabel": "मोबाइल प्राथमिक नेविगेशन",
     "exploreLabel": "AeroSun",
-    "closeMenu": "एक्सप्लोर करें नेविगेशन मेनू बंद करें",
+    "closeMenu": "नेविगेशन मेनू बंद करें",
     "voucher": "वाउचर",
     "downloadVoucher": "AeroSun Energy वाउचर डाउनलोड करें",
     "navigationIconIds": {
@@ -166,6 +166,9 @@
     "homeTitle": "AeroSun Energy होमपेज पर जाएं",
     "homeAriaLabel": "AeroSun Energy लोगो - होमपेज पर जाएं",
     "imageAlt": "AeroSun Energy लोगो",
+    "wordmark": "AeroSun",
+    "wordmarkSuffix": "Energy",
+    "trademark": "TM",
     "tagline": "Private Limited"
   },
   "hero": {
@@ -256,7 +259,7 @@
         "phoneLabel": "कॉल करें",
         "emailLabel": "ईमेल",
         "mapCta": "मैप खोलें",
-        "registrationNote": "GSTIN, CIN और अन्य वैधानिक पहचान केवल लागू होने और आधिकारिक रिकॉर्ड से सत्यापित होने पर ही दिखाएं।",
+        "identifiersText": "CIN: U35106AP2026PTC128748; उद्यम/MSME: UDYAM-AP-02-0123235; Startup India प्रमाणपत्र संख्या: DIPP290751।",
         "contactCta": "AeroSun Energy से संपर्क करें"
       },
       "evidence": {
@@ -351,7 +354,7 @@
         }
       ],
       "rewardNoteTitle": "रिवॉर्ड की शर्तें:",
-      "rewardNote": "अभी कोई निश्चित प्रोत्साहन घोषित नहीं किया गया है। लागू रिवॉर्ड, पात्रता और शर्तों की पुष्टि AeroSun सीधे करेगा; रेफ़रल सबमिट करने से रिवॉर्ड की गारंटी नहीं मिलती।",
+      "rewardNote": "रेफ़र किए गए प्रोजेक्ट का इंस्टॉलेशन पूरा होने के बाद रेफ़रल प्रोत्साहन दिया जाएगा। लागू प्रोत्साहन और शर्तों की पुष्टि AeroSun सीधे करेगा।",
       "form": {
         "title": "पड़ोसी या मित्र का परिचय कराएं",
         "description": "अपनी जानकारी, मित्र की जानकारी और उस संपत्ति का PIN कोड दें जहां वे सोलर लगाने पर विचार कर रहे हैं।",

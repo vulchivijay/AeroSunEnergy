@@ -13,6 +13,7 @@
   },
   "scripts": {
     "dev": "next dev --webpack",
+    "prebuild": "node scripts/report-google-integrations.mjs",
     "build": "next build",
     "db:migrate": "node scripts/migrate-database.mjs",
     "google:index-check": "node scripts/submit-indexnow.js",

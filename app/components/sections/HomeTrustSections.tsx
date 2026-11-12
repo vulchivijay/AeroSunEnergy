@@ -44,7 +44,7 @@ export function CompanyTrustSection() {
             <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-4 sm:col-span-2">
               <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-100/65">{content.legalEntityLabel}</p>
               <p className="mt-2 text-lg font-bold text-white">{t.home.aboutSection.companyName}</p>
-              <p className="mt-3 text-xs leading-5 text-emerald-50/65">{content.registrationNote}</p>
+              <p className="mt-3 text-xs leading-5 text-emerald-50/65">{content.identifiersText}</p>
             </div>
 
             <a
