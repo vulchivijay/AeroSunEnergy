@@ -359,7 +359,7 @@ export default function Navbar() {
         <Logo compact />
 
         <nav aria-label={t.navbar.primaryNavigationLabel} className="hidden min-w-0 flex-1 items-center justify-center xl:flex">
-          <div className="relative flex items-start gap-0.5">
+          <div className="relative flex items-start gap-2">
             <span className="pointer-events-none absolute left-[8%] right-[8%] top-4 h-px bg-gradient-to-r from-transparent via-[#8aa28b]/65 to-transparent" aria-hidden="true" />
             {navLinks.map((link) => renderNavigationLink(link))}
           </div>
