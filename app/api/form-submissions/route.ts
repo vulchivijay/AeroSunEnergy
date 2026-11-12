@@ -109,7 +109,26 @@ const allowedFields: Record<FormType, (field: string) => boolean> = {
   warranty_policy: (field) => ['customerName', 'companyName', 'email', 'phone', 'projectName', 'productLine', 'warrantyStart', 'servicePlan', 'acceptTerms'].includes(field),
   purchase_order: (field) => ['customerName', 'companyName', 'email', 'phone', 'poNumber', 'projectTitle', 'supplierName', 'productLine', 'quantity', 'unitPrice', 'totalValue', 'deliverySchedule', 'warranty', 'termsAccepted'].includes(field),
   invoice_receipt: (field) => ['customerName', 'companyName', 'email', 'phone', 'invoiceNumber', 'projectName', 'invoiceDate', 'amount', 'paymentMode', 'receiptNote', 'paymentReceived'].includes(field),
-  customer_agreement: (field) => ['customerName', 'companyName', 'email', 'phone', 'agreed'].includes(field),
+  customer_agreement: (field) => [
+    'customerName',
+    'companyName',
+    'email',
+    'phone',
+    'agreementNumber',
+    'agreementDate',
+    'projectReference',
+    'projectType',
+    'systemCapacity',
+    'projectLocation',
+    'quotedAmount',
+    'siteAccessDate',
+    'scopeItems',
+    'acceptanceCustomerName',
+    'signature',
+    'acceptanceDate',
+    'acceptancePlace',
+    'agreed',
+  ].includes(field),
   installation_checklist: (field) => ['customerName', 'companyName', 'email', 'phone', 'projectName', 'siteLocation', 'installationDate', 'checklistStatus', 'safetyCheck', 'commissioningCheck', 'notes'].includes(field),
 }
 
@@ -125,16 +144,19 @@ const requiredFields: Record<FormType, string[]> = {
   installation_checklist: ['customerName', 'email', 'phone', 'projectName', 'siteLocation', 'installationDate', 'checklistStatus', 'safetyCheck', 'commissioningCheck', 'notes'],
 }
 
-const scalarSchema = z.union([
+const submissionValueSchema = z.union([
   z.string().max(4_000),
   z.number().finite(),
   z.boolean(),
+  z.array(z.string().max(200)).max(100),
 ])
 
 const requestSchema = z.object({
   formType: z.enum(formTypes),
-  data: z.record(z.string().regex(/^[A-Za-z][A-Za-z0-9_]{0,63}$/), scalarSchema),
+  data: z.record(z.string().regex(/^[A-Za-z][A-Za-z0-9_]{0,63}$/), submissionValueSchema),
 }).strict()
+
+type SubmissionValue = string | number | boolean | string[]
 
 type BodyResult =
   | { ok: true; data: unknown }
@@ -203,7 +225,7 @@ function getErrorCode(error: unknown): string {
   return 'UNKNOWN'
 }
 
-function hasRequiredValues(formType: FormType, data: Record<string, string | number | boolean>): boolean {
+function hasRequiredValues(formType: FormType, data: Record<string, SubmissionValue>): boolean {
   return requiredFields[formType].every((field) => {
     const value = data[field]
     return typeof value === 'string' ? value.trim().length > 0 : value === true || (typeof value === 'number' && Number.isFinite(value))
@@ -220,7 +242,7 @@ function isValidPhone(value: unknown): boolean {
   return digitCount >= 10 && digitCount <= 13
 }
 
-function isValidSubmission(formType: FormType, data: Record<string, string | number | boolean>): boolean {
+function isValidSubmission(formType: FormType, data: Record<string, SubmissionValue>): boolean {
   const entries = Object.entries(data)
   if (entries.length === 0 || entries.length > 180) return false
   if (entries.some(([field]) => !allowedFields[formType](field))) return false
