@@ -221,8 +221,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <RecognitionHighlight />
       <About />
+      <RecognitionHighlight />
       <CompanyTrustSection />
       <SolarJourneySection />
       <QuoteTransparencySection />
