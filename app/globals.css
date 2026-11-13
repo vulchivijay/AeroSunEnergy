@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 :root {
+  --india-saffron: #ff9933;
+  --india-white: #ffffff;
+  --india-green: #138808;
+  --ashoka-chakra-blue: #000080;
   --brand-green: #20a44a;
   --brand-green-deep: #157a38;
   --brand-gold: #f59e0b;
