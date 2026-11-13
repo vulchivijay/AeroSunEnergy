@@ -104,11 +104,6 @@ export default function Home() {
     <main>
       <HomeHeroSlider />
       <SchemeBanner />
-      <CompanyTrustSection />
-      <SolarJourneySection />
-      <QuoteTransparencySection />
-      <ProjectEvidenceSection />
-      <TirupatiEnergySection />
       {/* Solar Section */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
         <div className="mb-8">
@@ -226,6 +221,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <About />
+      <RecognitionHighlight />
+      <CompanyTrustSection />
+      <SolarJourneySection />
+      <QuoteTransparencySection />
+      <ProjectEvidenceSection />
+      <TirupatiEnergySection />
       {/* Wind Energy Section */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
         <div className="mb-8">
@@ -300,8 +302,6 @@ export default function Home() {
           <HybridTable rows={hybrid.table} />
         </div>
       </section>
-      <About />
-      <RecognitionHighlight />
       <SolarEstimation />
       <BankEMICalculator />
       <Brands />

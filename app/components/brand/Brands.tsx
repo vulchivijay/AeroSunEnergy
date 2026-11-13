@@ -81,7 +81,7 @@ export default function Brands() {
           </p>
         </header>
 
-        <ul className="grid list-none grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        <ul className="flex list-none flex-wrap justify-center gap-3 sm:gap-4 lg:gap-5">
           {sortedBrands.map((brand, index) => {
             const maxPrice = getHighestListedPrice(brand.prices)
             const formattedMaxPrice = maxPrice?.toLocaleString('en-IN', { maximumFractionDigits: 2 })
@@ -89,7 +89,7 @@ export default function Brands() {
             return (
               <li
                 key={brand.file}
-                className="group relative overflow-hidden rounded-[1.75rem] border p-4 shadow-[0_22px_55px_-38px_rgba(0,0,0,0.75)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_30px_65px_-38px_rgba(0,0,0,0.85)]"
+                className="group relative flex h-full flex-[0_0_30%] flex-col overflow-hidden rounded-[1.5rem] border p-3 shadow-[0_22px_55px_-38px_rgba(0,0,0,0.75)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_30px_65px_-38px_rgba(0,0,0,0.85)] sm:flex-[0_0_22%] sm:rounded-[1.75rem] sm:p-4 lg:flex-[0_0_18%] xl:flex-[0_0_15%]"
                 style={{
                   borderColor: `hsl(${brand.hue} 68% 72%)`,
                   background: `linear-gradient(145deg, hsl(${brand.hue} 82% 95%), #fff 48%, hsl(${brand.hue} 76% 89%))`,
@@ -101,49 +101,16 @@ export default function Brands() {
                   style={{ backgroundColor: `hsl(${brand.hue} 82% 43%)` }}
                   aria-hidden="true"
                 />
-                <div className="mb-3 flex min-h-10 items-start justify-between gap-2">
+                <div className="mb-3 flex h-8 items-center justify-between gap-2">
                   <span
                     className="rounded-full border bg-white/75 px-2.5 py-1 text-[10px] font-black tracking-[0.16em] text-slate-700"
                     style={{ borderColor: `hsl(${brand.hue} 65% 78%)` }}
                   >
                     {String(index + 1).padStart(2, '0')}
                   </span>
-                  <div className="flex max-w-[82%] flex-col items-end gap-1">
-                    {index === 0 && maxPrice !== null && (
-                      <span className="rounded-full bg-slate-950 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.12em] text-white shadow-sm">
-                        {section.topPriceLabel}
-                      </span>
-                    )}
-                    {brand.prices.length > 0 ? (
-                      brand.prices.map((price) => (
-                        <span
-                          key={price}
-                          className="rounded-full border px-2.5 py-1 text-right text-[10px] font-bold leading-4"
-                          style={{
-                            backgroundColor: `hsl(${brand.hue} 76% 92%)`,
-                            borderColor: `hsl(${brand.hue} 64% 76%)`,
-                            color: `hsl(${brand.hue} 58% 25%)`,
-                          }}
-                        >
-                          {price}
-                        </span>
-                      ))
-                    ) : (
-                      <span
-                        className="rounded-full border px-2.5 py-1 text-right text-[10px] font-bold leading-4"
-                        style={{
-                          backgroundColor: `hsl(${brand.hue} 76% 92%)`,
-                          borderColor: `hsl(${brand.hue} 64% 76%)`,
-                          color: `hsl(${brand.hue} 58% 25%)`,
-                        }}
-                      >
-                        {section.quoteRequired}
-                      </span>
-                    )}
-                  </div>
                 </div>
                 <div
-                  className="flex h-[180px] items-center justify-center overflow-hidden rounded-2xl border border-white/80 p-2 shadow-inner"
+                  className="relative flex h-[100px] items-center justify-center overflow-hidden rounded-2xl border border-white/80 shadow-inner sm:h-[120px] sm:p-2 lg:h-[140px]"
                   style={{
                     background: `radial-gradient(circle at 50% 0%, white, hsl(${brand.hue} 75% 96%) 78%)`,
                     boxShadow: `inset 0 0 0 1px hsl(${brand.hue} 55% 90%)`,
@@ -152,37 +119,57 @@ export default function Brands() {
                   <Image
                     src={`/brands/${brand.file}`}
                     alt={brand.name}
-                    width={200}
-                    height={200}
-                    sizes="180px"
+                    width={150}
+                    height={150}
+                    sizes="160px"
                     unoptimized
-                    className="h-full w-full object-contain"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <h3 className="mt-4 text-center text-lg font-extrabold tracking-tight text-slate-900">
+                <h3 className="mt-3 flex min-h-12 items-center justify-center text-center text-base font-extrabold leading-5 tracking-tight text-slate-900 sm:text-lg sm:leading-6 sr-only">
                   {brand.name}
                 </h3>
+                <div className="mt-2 flex min-h-[4.5rem] flex-col items-center justify-center gap-1">
+                  {index === 0 && maxPrice !== null && (
+                    <span className="rounded-full bg-slate-950 px-2.5 py-1 text-center text-[9px] font-black uppercase leading-3 tracking-[0.12em] text-white shadow-sm">
+                      {section.topPriceLabel}
+                    </span>
+                  )}
+                  {brand.prices.map((price) => (
+                    <span
+                      key={price}
+                      className="w-full max-w-[14rem] rounded-full border px-2 py-1 text-center text-[9px] font-bold leading-4 sm:text-[10px]"
+                      style={{
+                        backgroundColor: `hsl(${brand.hue} 76% 92%)`,
+                        borderColor: `hsl(${brand.hue} 64% 76%)`,
+                        color: `hsl(${brand.hue} 58% 25%)`,
+                      }}
+                    >
+                      {price}
+                    </span>
+                  ))}
+                </div>
                 {maxPrice !== null && formattedMaxPrice ? (
                   <div
-                    className="mt-3 flex items-end justify-between rounded-2xl border px-3.5 py-2.5"
+                    className="sr-only mt-3 flex min-h-[4.5rem] flex-col items-center justify-center rounded-2xl border px-2 py-2 text-center"
                     style={{
                       borderColor: `hsl(${brand.hue} 58% 78%)`,
                       backgroundColor: `hsl(${brand.hue} 78% 94%)`,
                     }}
                   >
-                    <span className="pb-0.5 text-[10px] font-black uppercase tracking-[0.16em] text-slate-600">
+                    <span className="text-[9px] font-black uppercase tracking-[0.12em] text-slate-600">
                       {section.maxListedLabel}
                     </span>
-                    <span className="text-xl font-black tabular-nums text-slate-950">
+                    <span className="text-lg font-black tabular-nums text-slate-950 sm:text-xl">
                       ₹{formattedMaxPrice}<span className="ml-1 text-xs font-bold text-slate-600">/Wp</span>
                     </span>
                   </div>
                 ) : (
-                  <div className="mt-3 rounded-2xl border border-dashed border-slate-300 bg-white/70 px-3.5 py-2.5 text-center text-sm font-bold text-slate-600">
+                  <div className="sr-only mt-3 flex min-h-[4.5rem] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white/70 px-2 py-2 text-center text-sm font-bold text-slate-600">
                     {section.quoteRequired}
                   </div>
                 )}
-                <p className="mt-3 rounded-xl border border-white/70 bg-white/60 px-3 py-2 text-center text-[11px] leading-5 text-slate-600">
+                <p className="sr-only mt-auto flex min-h-[5.5rem] items-center justify-center rounded-xl border border-white/70 bg-white/60 px-2 py-2 text-center text-[10px] leading-4 text-slate-600 sm:text-[11px] sm:leading-5">
                   {brand.basis}
                 </p>
               </li>
