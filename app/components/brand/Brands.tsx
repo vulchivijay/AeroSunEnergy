@@ -110,7 +110,7 @@ export default function Brands() {
                   </span>
                 </div>
                 <div
-                  className="relative flex h-[150px] items-center justify-center overflow-hidden rounded-2xl border border-white/80 p-1.5 shadow-inner sm:h-[170px] sm:p-2 lg:h-[190px]"
+                  className="relative flex h-[100px] items-center justify-center overflow-hidden rounded-2xl border border-white/80 shadow-inner sm:h-[120px] sm:p-2 lg:h-[140px]"
                   style={{
                     background: `radial-gradient(circle at 50% 0%, white, hsl(${brand.hue} 75% 96%) 78%)`,
                     boxShadow: `inset 0 0 0 1px hsl(${brand.hue} 55% 90%)`,
@@ -119,14 +119,14 @@ export default function Brands() {
                   <Image
                     src={`/brands/${brand.file}`}
                     alt={brand.name}
-                    width={200}
-                    height={200}
-                    sizes="180px"
+                    width={150}
+                    height={150}
+                    sizes="160px"
                     unoptimized
                     className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <h3 className="mt-3 flex min-h-12 items-center justify-center text-center text-base font-extrabold leading-5 tracking-tight text-slate-900 sm:text-lg sm:leading-6">
+                <h3 className="mt-3 flex min-h-12 items-center justify-center text-center text-base font-extrabold leading-5 tracking-tight text-slate-900 sm:text-lg sm:leading-6 sr-only">
                   {brand.name}
                 </h3>
                 <div className="mt-2 flex min-h-[4.5rem] flex-col items-center justify-center gap-1">
@@ -151,7 +151,7 @@ export default function Brands() {
                 </div>
                 {maxPrice !== null && formattedMaxPrice ? (
                   <div
-                    className="mt-3 flex min-h-[4.5rem] flex-col items-center justify-center rounded-2xl border px-2 py-2 text-center"
+                    className="sr-only mt-3 flex min-h-[4.5rem] flex-col items-center justify-center rounded-2xl border px-2 py-2 text-center"
                     style={{
                       borderColor: `hsl(${brand.hue} 58% 78%)`,
                       backgroundColor: `hsl(${brand.hue} 78% 94%)`,
@@ -165,11 +165,11 @@ export default function Brands() {
                     </span>
                   </div>
                 ) : (
-                  <div className="mt-3 flex min-h-[4.5rem] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white/70 px-2 py-2 text-center text-sm font-bold text-slate-600">
+                  <div className="sr-only mt-3 flex min-h-[4.5rem] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white/70 px-2 py-2 text-center text-sm font-bold text-slate-600">
                     {section.quoteRequired}
                   </div>
                 )}
-                <p className="mt-auto flex min-h-[5.5rem] items-center justify-center rounded-xl border border-white/70 bg-white/60 px-2 py-2 text-center text-[10px] leading-4 text-slate-600 sm:text-[11px] sm:leading-5">
+                <p className="sr-only mt-auto flex min-h-[5.5rem] items-center justify-center rounded-xl border border-white/70 bg-white/60 px-2 py-2 text-center text-[10px] leading-4 text-slate-600 sm:text-[11px] sm:leading-5">
                   {brand.basis}
                 </p>
               </li>
