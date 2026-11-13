@@ -1,46 +1,34 @@
-import { createPool, type Pool } from 'mysql2/promise'
+import { Pool } from 'pg'
 
 let pool: Pool | undefined
 
 export function getDatabasePool(): Pool {
   if (pool) return pool
 
-  const socketPath = process.env._INSTANCE_UNIX_SOCKET?.trim()
-  const host = process.env.DB_HOST?.trim()
-  const database = process.env._DB_NAME
-  const user = process.env._DB_USER
-  const password = process.env._DB_PASS
-
-  if (!database || !user || !password) {
-    throw new Error('Database configuration is incomplete.')
+  const connectionString = process.env.DATABASE_URL?.trim()
+  if (!connectionString) {
+    throw new Error('DATABASE_URL is required.')
   }
 
-  let connectionTarget: { socketPath: string } | { host: string; port: number }
-  if (host) {
-    const portValue = process.env.DB_PORT
-    const port = portValue ? Number(portValue) : 3306
-    if (!Number.isInteger(port) || port < 1 || port > 65535) {
-      throw new Error('DB_PORT must be a valid TCP port.')
-    }
-    connectionTarget = { host, port }
-  } else if (socketPath) {
-    connectionTarget = { socketPath }
-  } else {
-    throw new Error('Configure either DB_HOST or _INSTANCE_UNIX_SOCKET.')
+  let protocol: string
+  try {
+    protocol = new URL(connectionString).protocol
+  } catch {
+    throw new Error('DATABASE_URL must be a valid PostgreSQL connection URI.')
+  }
+  if (protocol !== 'postgres:' && protocol !== 'postgresql:') {
+    throw new Error('DATABASE_URL must use the PostgreSQL protocol.')
   }
 
-  pool = createPool({
-    ...connectionTarget,
-    database,
-    user,
-    password,
-    waitForConnections: true,
-    connectionLimit: 5,
-    queueLimit: 0,
-    connectTimeout: 10_000,
-    supportBigNumbers: true,
-    bigNumberStrings: true,
-    charset: 'utf8mb4',
+  pool = new Pool({
+    connectionString,
+    max: 5,
+    connectionTimeoutMillis: 10_000,
+    idleTimeoutMillis: 30_000,
+  })
+
+  pool.on('error', (error) => {
+    console.error('Unexpected error from an idle database connection.', error)
   })
 
   return pool

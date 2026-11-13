@@ -1,4 +1,4 @@
-import type { RowDataPacket } from 'mysql2/promise'
+import type { QueryResultRow } from 'pg'
 import { getDatabasePool } from '@/lib/auth/database'
 import { isDashboardAdmin } from '@/lib/auth/admin'
 import { getSessionToken, getSessionUser } from '@/lib/auth/session'
@@ -35,12 +35,12 @@ const tableQueries: Record<DashboardTable, { from: string; select: string; order
   },
   users: {
     from: 'auth_users',
-    select: 'CAST(id AS CHAR) AS id, name, email, created_at',
+    select: 'id::text AS id, name, email, created_at',
     orderBy: 'created_at DESC, id DESC',
   },
   sessions: {
     from: 'auth_sessions AS s JOIN auth_users AS u ON u.id = s.user_id',
-    select: "CAST(s.id AS CHAR) AS id, CAST(s.user_id AS CHAR) AS user_id, u.name, u.email, s.created_at, s.expires_at, CASE WHEN s.expires_at > UTC_TIMESTAMP() THEN 'active' ELSE 'expired' END AS status",
+    select: "s.id::text AS id, s.user_id::text AS user_id, u.name, u.email, s.created_at, s.expires_at, CASE WHEN s.expires_at > CURRENT_TIMESTAMP THEN 'active' ELSE 'expired' END AS status",
     orderBy: 's.created_at DESC, s.id DESC',
   },
 }
@@ -100,21 +100,23 @@ export async function GET(request: Request) {
   }
 
   const query = tableQueries[table]
-  const whereClause = formType ? ' WHERE form_type = ?' : ''
+  const whereClause = formType ? ' WHERE form_type = $1' : ''
   const queryValues: (string | number)[] = formType ? [formType] : []
 
   try {
     const pool = getDatabasePool()
-    const [countRows] = await pool.execute<RowDataPacket[]>(
-      `SELECT COUNT(*) AS total FROM ${query.from}${whereClause}`,
+    const { rows: countRows } = await pool.query<QueryResultRow & { total: string }>(
+      `SELECT COUNT(*)::text AS total FROM ${query.from}${whereClause}`,
       queryValues,
     )
     const total = Number(countRows[0]?.total ?? 0)
     const pageCount = Math.max(1, Math.ceil(total / PAGE_SIZE))
     const page = Math.min(requestedPage, pageCount)
     const offset = (page - 1) * PAGE_SIZE
-    const [rows] = await pool.execute<RowDataPacket[]>(
-      `SELECT ${query.select} FROM ${query.from}${whereClause} ORDER BY ${query.orderBy} LIMIT ? OFFSET ?`,
+    const limitPlaceholder = `$${queryValues.length + 1}`
+    const offsetPlaceholder = `$${queryValues.length + 2}`
+    const { rows } = await pool.query<QueryResultRow>(
+      `SELECT ${query.select} FROM ${query.from}${whereClause} ORDER BY ${query.orderBy} LIMIT ${limitPlaceholder} OFFSET ${offsetPlaceholder}`,
       [...queryValues, PAGE_SIZE, offset],
     )
 

@@ -1,56 +1,88 @@
 import { readFile } from 'node:fs/promises'
-import { createPool } from 'mysql2/promise'
+import { Pool } from 'pg'
 import { loadEnvConfig } from '@next/env'
 
 loadEnvConfig(process.cwd())
 
-const socketPath = process.env._INSTANCE_UNIX_SOCKET?.trim()
-const host = process.env.DB_HOST?.trim()
-const database = process.env._DB_NAME
-const user = process.env._DB_USER
-const password = process.env._DB_PASS
-
-if (!database || !user || !password) {
-  throw new Error('Database configuration is incomplete.')
+const databaseUrl = process.env.DATABASE_URL?.trim()
+if (!databaseUrl) {
+  throw new Error('DATABASE_URL is required.')
 }
 
-let connectionTarget
-if (host) {
-  const portValue = process.env.DB_PORT
-  const port = portValue ? Number(portValue) : 3306
-  if (!Number.isInteger(port) || port < 1 || port > 65535) {
-    throw new Error('DB_PORT must be a valid TCP port.')
-  }
-  connectionTarget = { host, port }
-} else if (socketPath) {
-  connectionTarget = { socketPath }
-} else {
-  throw new Error('Configure either DB_HOST or _INSTANCE_UNIX_SOCKET.')
+let targetUrl
+try {
+  targetUrl = new URL(databaseUrl)
+} catch {
+  throw new Error('DATABASE_URL must be a valid PostgreSQL connection URI.')
 }
 
-const pool = createPool({
-  ...connectionTarget,
-  database,
-  user,
-  password,
-  waitForConnections: true,
-  connectionLimit: 1,
-  connectTimeout: 10_000,
-  charset: 'utf8mb4',
-})
+if (targetUrl.protocol !== 'postgres:' && targetUrl.protocol !== 'postgresql:') {
+  throw new Error('DATABASE_URL must use the PostgreSQL protocol.')
+}
+
+const databaseName = decodeURIComponent(targetUrl.pathname.replace(/^\/+/, ''))
+if (!databaseName) {
+  throw new Error('DATABASE_URL must include a target database name.')
+}
+
+const schemaFiles = ['auth-schema.sql', 'referral-schema.sql', 'website-form-submissions-schema.sql']
+const adminUrl = process.env.DATABASE_ADMIN_URL?.trim()
+  ? new URL(process.env.DATABASE_ADMIN_URL)
+  : new URL(targetUrl)
+
+if (adminUrl.protocol !== 'postgres:' && adminUrl.protocol !== 'postgresql:') {
+  throw new Error('DATABASE_ADMIN_URL must use the PostgreSQL protocol.')
+}
+
+if (!adminUrl.pathname || adminUrl.pathname === '/') {
+  adminUrl.pathname = '/postgres'
+} else if (!process.env.DATABASE_ADMIN_URL?.trim()) {
+  adminUrl.pathname = '/postgres'
+}
+
+const adminPool = new Pool({ connectionString: adminUrl.toString(), max: 1 })
+let migrationPool
 
 try {
-  const schemaFiles = ['auth-schema.sql', 'referral-schema.sql', 'website-form-submissions-schema.sql']
-  for (const schemaFile of schemaFiles) {
-    const schema = await readFile(new URL(`../database/${schemaFile}`, import.meta.url), 'utf8')
-    const statements = schema.split(';').map((statement) => statement.trim()).filter(Boolean)
-
-    for (const statement of statements) {
-      await pool.query(statement)
+  if (databaseName !== 'postgres') {
+    const { rows } = await adminPool.query(
+      'SELECT EXISTS (SELECT 1 FROM pg_database WHERE datname = $1) AS exists',
+      [databaseName],
+    )
+    if (!rows[0]?.exists) {
+      const quotedDatabaseName = `"${databaseName.replaceAll('"', '""')}"`
+      await adminPool.query(`CREATE DATABASE ${quotedDatabaseName}`)
+      console.log(`Created PostgreSQL database "${databaseName}".`)
     }
   }
 
-  console.log('Database schema migration complete.')
+  migrationPool = new Pool({ connectionString: databaseUrl, max: 1 })
+  const client = await migrationPool.connect()
+  let transactionStarted = false
+  try {
+    await client.query('BEGIN')
+    transactionStarted = true
+    for (const schemaFile of schemaFiles) {
+      const schema = await readFile(new URL(`../database/${schemaFile}`, import.meta.url), 'utf8')
+      await client.query(schema)
+    }
+    await client.query('COMMIT')
+    transactionStarted = false
+  } catch (error) {
+    if (transactionStarted) {
+      try {
+        await client.query('ROLLBACK')
+      } catch (rollbackError) {
+        console.error('PostgreSQL schema migration rollback failed.', rollbackError)
+      }
+    }
+    throw error
+  } finally {
+    client.release()
+  }
+
+  console.log('PostgreSQL database schema migration complete.')
 } finally {
-  await pool.end()
+  if (migrationPool) await migrationPool.end()
+  await adminPool.end()
 }

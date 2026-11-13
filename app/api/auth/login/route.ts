@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import type { RowDataPacket } from 'mysql2/promise'
+import type { QueryResultRow } from 'pg'
 import { authJson, readAuthJson } from '@/lib/auth/http'
 import { getDatabasePool } from '@/lib/auth/database'
 import { authErrorCodes, isAuthErrorCode } from '@/lib/auth/errorCodes'
@@ -21,7 +21,7 @@ const loginSchema = z.object({
     .max(128, authErrorCodes.passwordTooLong),
 })
 
-type StoredUser = RowDataPacket & {
+type StoredUser = QueryResultRow & {
   id: string
   name: string
   email: string
@@ -40,11 +40,11 @@ export async function POST(request: Request) {
 
   try {
     const pool = getDatabasePool()
-    const [users] = await pool.execute<StoredUser[]>(
-      'SELECT CAST(id AS CHAR) AS id, name, email, password_hash FROM auth_users WHERE email = ? LIMIT 1',
+    const { rows } = await pool.query<StoredUser>(
+      'SELECT id::text AS id, name, email, password_hash FROM auth_users WHERE email = $1 LIMIT 1',
       [parsed.data.email],
     )
-    const user = users[0]
+    const user = rows[0]
 
     if (!user) {
       await hashPassword(parsed.data.password)
@@ -55,7 +55,7 @@ export async function POST(request: Request) {
       return authJson({ error: authErrorCodes.invalidCredentials }, 401)
     }
 
-    const connection = await pool.getConnection()
+    const connection = await pool.connect()
     let token: string
     try {
       token = await createSession(connection, user.id)

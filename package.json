@@ -24,8 +24,8 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^6.0.0",
-    "mysql2": "^3.24.6",
     "next": "^16.4.3",
+    "pg": "^8.23.1",
     "react": "^19",
     "react-dom": "^19",
     "react-hook-form": "^7.91.0",
@@ -39,6 +39,7 @@
     "@react-three/fiber": "^9.8.2",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^26",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.6.1",
