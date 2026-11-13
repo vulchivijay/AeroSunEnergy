@@ -134,7 +134,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 npm run build
 ```
 
-The production build runs as a Next.js server so authentication API routes can securely connect to Cloud SQL. The `postbuild` step automatically submits the sitemap via IndexNow and prints a Google index verification summary.
+The production build runs as a Next.js server so authentication and form API routes can connect to PostgreSQL on AlloyDB. The `prebuild` step loads `.env` and prints whether Google integration and AlloyDB environment variables are present without displaying their values. Google tracking scripts still require cookie consent. The `postbuild` step automatically submits the sitemap via IndexNow and prints a Google index verification summary.
 
 To enable the Google index verification step, set these environment variables before running the build:
 
@@ -142,6 +142,8 @@ To enable the Google index verification step, set these environment variables be
 GOOGLE_CUSTOM_SEARCH_API_KEY=your_google_api_key
 GOOGLE_CUSTOM_SEARCH_CX=your_programmable_search_engine_id
 ```
+
+GTM and Analytics IDs are read during the build for prerendered pages. Set `_NEXT_PUBLIC_GTM_ID` and either `_NEXT_PUBLIC_GA_MEASUREMENT_ID` or `NEXT_PUBLIC_GA_STREAM_ID` in the build environment (or `.env`) before `npm run build`. The prebuild status output checks for their presence but never prints values.
 
 You can also run the check directly:
 
@@ -158,29 +160,34 @@ npm start
 
 The Next.js server listens on the `PORT` environment variable (8080 by default), so it can run as a Cloud Run container.
 
-### Configure Cloud SQL authentication
+### Configure AlloyDB PostgreSQL
 
-Set these server-only environment variables on the Cloud Run service. Do not prefix database credentials with `NEXT_PUBLIC_`.
+Set these server-only PostgreSQL variables on the Cloud Run service. Do not prefix database credentials with `NEXT_PUBLIC_`; store production credentials in Secret Manager.
 
 ```text
-_INSTANCE_UNIX_SOCKET=/cloudsql/PROJECT_ID:REGION:INSTANCE_ID
-_DB_NAME=your_database
-_DB_USER=your_database_user
-_DB_PASS=your_database_password
+_DB_HOST=ALLOYDB_HOST
+_DB_PORT=5432
+_DB_NAME=aerosunenergy
+_DB_USER=application_user
+_DB_PASSWORD=application_user_password
+_DB_SSL=true
+# Optional; used only by db:migrate when creating the database.
+_DB_ADMIN_USER=database_admin
+_DB_ADMIN_PASSWORD=database_admin_password
 DASHBOARD_ADMIN_EMAILS=admin@example.com
 ```
 
-Attach the Cloud SQL instance to the Cloud Run service and grant its service account the Cloud SQL Client role. Apply the authentication, referral, and website-form tables to the target database:
+Connect through the AlloyDB Auth Proxy or a supported AlloyDB endpoint. For local development, run the [AlloyDB Auth Proxy](https://cloud.google.com/alloydb/docs/auth-proxy/overview), set `_DB_HOST=127.0.0.1`, and set `_DB_SSL=false` for the local proxy connection.
+
+Apply the schema to the target database:
 
 ```bash
 npm run db:migrate
 ```
 
-Run the migration in an environment that can reach the Cloud SQL Unix socket and has the variables above configured. It creates the `auth_users`, `auth_sessions`, `solar_referrals`, and `website_form_submissions` tables. Website form records are stored with a generated reference code and a `new` status; the migration does not run automatically during deployment.
+This is a schema setup only; it doesn't import existing rows from another database. It creates the target database if it doesn't exist, then creates the `auth_users`, `auth_sessions`, `solar_referrals`, and `website_form_submissions` tables. Database creation requires a PostgreSQL role with `CREATEDB`; set both `_DB_ADMIN_USER` and `_DB_ADMIN_PASSWORD` for a separate administrative connection when the application role doesn't have that privilege. The target role needs permission to create tables, indexes, and functions. Website form records from every supported form type share `website_form_submissions`, distinguished by `form_type` and stored as JSONB. Referral records use `solar_referrals`; all tables are in the same configured database. The migration does not run automatically during deployment.
 
 Set `DASHBOARD_ADMIN_EMAILS` to a comma-separated list of registered account email addresses permitted to access `/dashboard`. The dashboard requires this server-only allowlist and omits password hashes and session tokens from its views.
-
-For local development on Windows, the Cloud Run Unix socket is not available. Install and run the [Cloud SQL Auth Proxy](https://cloud.google.com/sql/docs/mysql/connect-auth-proxy) on `127.0.0.1:3306`, then add `DB_HOST=127.0.0.1` and `DB_PORT=3306` to `.env.local`. The TCP settings take precedence over `_INSTANCE_UNIX_SOCKET`; keep `DB_HOST` unset on Cloud Run so it continues using the mounted Unix socket.
 
 ### Lint
 
@@ -192,7 +199,7 @@ npm run lint
 
 ## Deployment
 
-The app must run as a Next.js server for login and signup API routes; static-only hosting is no longer sufficient. Deploy the server to Cloud Run with its Cloud SQL connection configured. The public website remains available at [aerosunenergy.in](https://aerosunenergy.in).
+The app must run as a Next.js server for login, signup, dashboard, referral, and form-submission API routes; static-only hosting is no longer sufficient. Deploy the server to Cloud Run with its AlloyDB PostgreSQL connection configured. The public website remains available at [aerosunenergy.in](https://aerosunenergy.in).
 
 ---
 

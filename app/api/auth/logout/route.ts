@@ -9,7 +9,7 @@ export async function POST() {
   if (!token) return authJson({ success: true })
 
   try {
-    await getDatabasePool().execute('DELETE FROM auth_sessions WHERE token_hash = ?', [hashSessionToken(token)])
+    await getDatabasePool().query('DELETE FROM auth_sessions WHERE token_hash = $1', [hashSessionToken(token)])
     const response = authJson({ success: true })
     clearSessionCookie(response)
     return response

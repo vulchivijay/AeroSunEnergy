@@ -1,46 +1,42 @@
-import { createPool, type Pool } from 'mysql2/promise'
+import { Pool } from 'pg'
 
 let pool: Pool | undefined
 
 export function getDatabasePool(): Pool {
   if (pool) return pool
 
-  const socketPath = process.env._INSTANCE_UNIX_SOCKET?.trim()
-  const host = process.env.DB_HOST?.trim()
-  const database = process.env._DB_NAME
-  const user = process.env._DB_USER
-  const password = process.env._DB_PASS
+  const host = process.env._DB_HOST?.trim()
+  const database = process.env._DB_NAME?.trim()
+  const user = process.env._DB_USER?.trim()
+  const password = process.env._DB_PASSWORD
+  const portValue = process.env._DB_PORT?.trim()
+  const port = portValue ? Number(portValue) : 5432
+  const sslValue = (process.env._DB_SSL ?? 'true').trim().toLowerCase()
 
-  if (!database || !user || !password) {
-    throw new Error('Database configuration is incomplete.')
+  if (!host || !database || !user || !password) {
+    throw new Error('_DB_HOST, _DB_NAME, _DB_USER, and _DB_PASSWORD are required.')
+  }
+  if (!Number.isInteger(port) || port < 1 || port > 65535) {
+    throw new Error('_DB_PORT must be a valid TCP port.')
+  }
+  if (sslValue !== 'true' && sslValue !== 'false') {
+    throw new Error('_DB_SSL must be "true" or "false".')
   }
 
-  let connectionTarget: { socketPath: string } | { host: string; port: number }
-  if (host) {
-    const portValue = process.env.DB_PORT
-    const port = portValue ? Number(portValue) : 3306
-    if (!Number.isInteger(port) || port < 1 || port > 65535) {
-      throw new Error('DB_PORT must be a valid TCP port.')
-    }
-    connectionTarget = { host, port }
-  } else if (socketPath) {
-    connectionTarget = { socketPath }
-  } else {
-    throw new Error('Configure either DB_HOST or _INSTANCE_UNIX_SOCKET.')
-  }
-
-  pool = createPool({
-    ...connectionTarget,
+  pool = new Pool({
+    host,
+    port,
     database,
     user,
     password,
-    waitForConnections: true,
-    connectionLimit: 5,
-    queueLimit: 0,
-    connectTimeout: 10_000,
-    supportBigNumbers: true,
-    bigNumberStrings: true,
-    charset: 'utf8mb4',
+    ssl: sslValue === 'true',
+    max: 5,
+    connectionTimeoutMillis: 10_000,
+    idleTimeoutMillis: 30_000,
+  })
+
+  pool.on('error', (error) => {
+    console.error('Unexpected error from an idle database connection.', error)
   })
 
   return pool

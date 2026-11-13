@@ -2,6 +2,31 @@ Now that AeroSun Energy's company registration and certificates are complete, th
 
 My recommendation is to proceed in stages. Don't immediately invest heavily in manufacturing or inventory. First, establish compliance, obtain Startup India recognition, validate your products and secure your first customers.
 
+NEXTPUBLICGTMID=GTM-TFWLRV46
+NEXTPUBLICGAMEASUREMENT-ID=G-10T7WCKV01
+NEXTPUBLICGASTREAM-ID=16333654387
+GOOGLESITEVERIFICATION=4ake-o4myYSacZqH6saBrPJVLpD7JqBSdZr7OKjy6sk
+BINGSITEVERIFICATION=CFCE648996D804079C4F28B5C09CE9D3
+DBHOST=53e44008-91e8-4702-8dca-e3d368eb1132.a.asia-southeast1.alloydb.s.cloud.goog.
+DBPORT=5432
+DBNAME=AeroSunEnergy_DB
+DBUSER=aerosunenergy_app
+DBPASSWORD=AeroSunEnergy@6
+DBSSL=true
+DBADMINUSER=postgres
+DBADMINPASSWORD=^K1&D|l]EP4cg?rr
+
+CREATE DATABASE AeroSunEnergy_DB;
+REATE ROLE aerosunenergy_app
+WITH LOGIN PASSWORD 'AeroSunEnergy@6';
+GRANT CONNECT ON DATABASE AeroSunEnergy_DB
+TO aerosunenergy_app;
+GRANT USAGE, CREATE ON SCHEMA public TO aerosunenergy_app;
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON ALL TABLES IN SCHEMA public TO aerosunenergy_app;
+GRANT USAGE, SELECT, UPDATE
+ON ALL SEQUENCES IN SCHEMA public TO aerosunenergy_app;
+
 # AeroSun Energy – Next Steps After Registration
 
 ## Phase 1: Complete business and statutory formalities
@@ -1723,6 +1748,7 @@ Build relationships with qualified installation partners and equipment suppliers
 Your first commercial objective should be to secure **5–10 genuine customers or pilot projects**, collect feedback and document the results.
 
 # AeroSun Energy – Commercial Launch Plan
+
 ## First 5–10 Customers and Pilot Projects
 
 Now that Phase 1 and Phase 2 are complete, we should begin **Phase 3B: Commercial Launch and Customer Acquisition** alongside wind-generator development.
@@ -1733,14 +1759,14 @@ The immediate objective is to establish AeroSun Energy as a renewable-energy sol
 
 I recommend launching with these six services.
 
-| No. | Service | Target customers | Priority |
-|---|---|---|---|
-| 1 | Residential rooftop solar | Individual homeowners | Very High |
-| 2 | Commercial rooftop solar | Shops, offices, warehouses and businesses | Very High |
-| 3 | Agricultural solar pumps | Farmers and agricultural landowners | High |
-| 4 | Off-grid solar systems | Rural homes, farms and remote facilities | High |
-| 5 | Solar–wind hybrid solutions | Farms, remote sites and small businesses | Development / Pilot |
-| 6 | Renewable-energy consultation | Homeowners, businesses and farmers | Very High |
+| No. | Service                       | Target customers                          | Priority            |
+| --- | ----------------------------- | ----------------------------------------- | ------------------- |
+| 1   | Residential rooftop solar     | Individual homeowners                     | Very High           |
+| 2   | Commercial rooftop solar      | Shops, offices, warehouses and businesses | Very High           |
+| 3   | Agricultural solar pumps      | Farmers and agricultural landowners       | High                |
+| 4   | Off-grid solar systems        | Rural homes, farms and remote facilities  | High                |
+| 5   | Solar–wind hybrid solutions   | Farms, remote sites and small businesses  | Development / Pilot |
+| 6   | Renewable-energy consultation | Homeowners, businesses and farmers        | Very High           |
 
 ### My commercial recommendation
 
@@ -1760,16 +1786,16 @@ Build a network of qualified local contractors and technical partners.
 
 ### Partner categories
 
-| Partner | Responsibility |
-|---|---|
-| Solar EPC contractor | Solar system design and installation |
-| Electrical contractor | Wiring, protection and commissioning |
-| Structural fabricator | Rooftop mounting structures |
-| Solar equipment distributor | Modules, inverters and accessories |
-| Battery supplier | Battery systems and warranty |
-| Agricultural equipment dealer | Solar pump distribution |
-| Wind turbine fabricator | Prototype manufacturing |
-| Civil contractor | Foundations and structural work |
+| Partner                       | Responsibility                       |
+| ----------------------------- | ------------------------------------ |
+| Solar EPC contractor          | Solar system design and installation |
+| Electrical contractor         | Wiring, protection and commissioning |
+| Structural fabricator         | Rooftop mounting structures          |
+| Solar equipment distributor   | Modules, inverters and accessories   |
+| Battery supplier              | Battery systems and warranty         |
+| Agricultural equipment dealer | Solar pump distribution              |
+| Wind turbine fabricator       | Prototype manufacturing              |
+| Civil contractor              | Foundations and structural work      |
 
 ### Partner selection criteria
 
@@ -1792,14 +1818,14 @@ For grid-connected installations, ensure applicable DISCOM approvals and scheme 
 
 These packages will make it easier for customers to understand your offerings.
 
-| Package | Suggested configuration | Target customer |
-|---|---|---|
-| Home Solar Basic | 1–2 kW | Small households |
-| Home Solar Plus | 3–5 kW | Medium and large households |
-| Business Solar | 5–20 kW | Shops and offices |
-| Commercial Solar | 20–100 kW | Warehouses and industries |
-| Agriculture Solar | Capacity based on pump requirement | Farmers |
-| Hybrid Energy | Solar + wind + battery | Remote locations and farms |
+| Package           | Suggested configuration            | Target customer             |
+| ----------------- | ---------------------------------- | --------------------------- |
+| Home Solar Basic  | 1–2 kW                             | Small households            |
+| Home Solar Plus   | 3–5 kW                             | Medium and large households |
+| Business Solar    | 5–20 kW                            | Shops and offices           |
+| Commercial Solar  | 20–100 kW                          | Warehouses and industries   |
+| Agriculture Solar | Capacity based on pump requirement | Farmers                     |
+| Hybrid Energy     | Solar + wind + battery             | Remote locations and farms  |
 
 These are proposed sales categories, not fixed product specifications. Final capacity should depend on electricity consumption, site conditions, applicable regulations and customer requirements.
 
@@ -1812,6 +1838,7 @@ I recommend concentrating on five customer acquisition channels.
 ### A. Local direct marketing
 
 Start in:
+
 - Tirupati.
 - Chittoor.
 - Madanapalle.
@@ -1819,6 +1846,7 @@ Start in:
 - Nearby agricultural areas.
 
 Approach:
+
 - Individual homeowners.
 - Farmers.
 - Commercial building owners.
@@ -1841,6 +1869,7 @@ Use local search targeting and measure genuine enquiries, calls and qualified le
 ### C. Social media
 
 Publish:
+
 - Solar installation demonstrations.
 - Solar savings explanations.
 - Customer education.
@@ -1853,6 +1882,7 @@ Do not publish fabricated customer installations or performance figures.
 ### D. Referral programme
 
 Build relationships with:
+
 - Electricians.
 - Builders.
 - Architects.
@@ -1865,6 +1895,7 @@ Offer transparent referral arrangements where legally and commercially appropria
 ### E. Direct business development
 
 Contact:
+
 - Schools.
 - Colleges.
 - Hospitals.
@@ -1881,18 +1912,18 @@ Offer an initial energy-consumption assessment.
 
 Instead of trying to sell all six services equally, use this initial customer mix.
 
-| Customer | Proposed project | Objective |
-|---|---|---|
-| 1 | Residential rooftop solar | First reference project |
-| 2 | Residential rooftop solar | Validate sales process |
-| 3 | Residential rooftop solar | Collect customer feedback |
-| 4 | Commercial rooftop solar | Business customer reference |
-| 5 | Commercial rooftop solar | Validate commercial offering |
-| 6 | Agricultural solar pump | Agricultural market validation |
-| 7 | Agricultural solar pump | Validate installation process |
-| 8 | Off-grid solar system | Remote application demonstration |
-| 9 | Solar consultation / feasibility project | Build consulting capability |
-| 10 | Solar–wind hybrid pilot | Demonstrate technology development |
+| Customer | Proposed project                         | Objective                          |
+| -------- | ---------------------------------------- | ---------------------------------- |
+| 1        | Residential rooftop solar                | First reference project            |
+| 2        | Residential rooftop solar                | Validate sales process             |
+| 3        | Residential rooftop solar                | Collect customer feedback          |
+| 4        | Commercial rooftop solar                 | Business customer reference        |
+| 5        | Commercial rooftop solar                 | Validate commercial offering       |
+| 6        | Agricultural solar pump                  | Agricultural market validation     |
+| 7        | Agricultural solar pump                  | Validate installation process      |
+| 8        | Off-grid solar system                    | Remote application demonstration   |
+| 9        | Solar consultation / feasibility project | Build consulting capability        |
+| 10       | Solar–wind hybrid pilot                  | Demonstrate technology development |
 
 These are acquisition targets, not confirmed customers or commitments.
 
@@ -1919,16 +1950,16 @@ This evidence will become valuable for future sales, partnerships and investor p
 
 AeroSun Energy can earn revenue through several channels.
 
-| Revenue source | Business model |
-|---|---|
-| Solar equipment | Product margin |
-| Solar installation | EPC/service margin |
-| Agricultural solar pumps | Equipment and installation margin |
-| Off-grid systems | System integration margin |
-| Hybrid energy | Design and integration margin |
-| Consultation | Professional service fee |
-| Maintenance | Annual maintenance contracts |
-| Wind generators | Future manufacturing and product sales |
+| Revenue source           | Business model                         |
+| ------------------------ | -------------------------------------- |
+| Solar equipment          | Product margin                         |
+| Solar installation       | EPC/service margin                     |
+| Agricultural solar pumps | Equipment and installation margin      |
+| Off-grid systems         | System integration margin              |
+| Hybrid energy            | Design and integration margin          |
+| Consultation             | Professional service fee               |
+| Maintenance              | Annual maintenance contracts           |
+| Wind generators          | Future manufacturing and product sales |
 
 For the initial stage, avoid purchasing large quantities of inventory. Obtain supplier quotations against actual customer requirements.
 
@@ -1945,14 +1976,14 @@ Have a written agreement covering scope, exclusions, warranties, approvals and p
 
 # 7. 60-day commercial launch schedule
 
-| Period | Activities | Expected deliverables |
-|---|---|---|
-| Days 1–10 | Identify EPC partners and equipment suppliers | Partner database |
-| Days 11–20 | Finalise service packages and quotations | Sales documents |
-| Days 21–30 | Launch website enquiries and marketing | Qualified leads |
-| Days 31–40 | Conduct customer meetings and site surveys | Customer proposals |
-| Days 41–50 | Secure initial orders | Confirmed projects |
-| Days 51–60 | Execute initial installations and document results | Reference projects |
+| Period     | Activities                                         | Expected deliverables |
+| ---------- | -------------------------------------------------- | --------------------- |
+| Days 1–10  | Identify EPC partners and equipment suppliers      | Partner database      |
+| Days 11–20 | Finalise service packages and quotations           | Sales documents       |
+| Days 21–30 | Launch website enquiries and marketing             | Qualified leads       |
+| Days 31–40 | Conduct customer meetings and site surveys         | Customer proposals    |
+| Days 41–50 | Secure initial orders                              | Confirmed projects    |
+| Days 51–60 | Execute initial installations and document results | Reference projects    |
 
 The target is to build a pipeline capable of securing 5–10 customers or pilot projects. Actual conversions will depend on pricing, lead quality, financing and execution capacity.
 
@@ -1962,18 +1993,18 @@ The target is to build a pipeline capable of securing 5–10 customers or pilot 
 
 I recommend preparing these 10 business documents:
 
-| No. | Document |
-|---|---|
-| 1 | Company profile |
-| 2 | Solar product catalogue |
-| 3 | Wind and hybrid product brochure |
-| 4 | Customer requirement form |
-| 5 | Site survey form |
-| 6 | Solar quotation template |
-| 7 | Commercial proposal template |
-| 8 | Installation partner agreement |
-| 9 | Customer service and warranty document |
-| 10 | Project completion and commissioning report |
+| No. | Document                                    |
+| --- | ------------------------------------------- |
+| 1   | Company profile                             |
+| 2   | Solar product catalogue                     |
+| 3   | Wind and hybrid product brochure            |
+| 4   | Customer requirement form                   |
+| 5   | Site survey form                            |
+| 6   | Solar quotation template                    |
+| 7   | Commercial proposal template                |
+| 8   | Installation partner agreement              |
+| 9   | Customer service and warranty document      |
+| 10  | Project completion and commissioning report |
 
 ---
 
@@ -1981,16 +2012,16 @@ I recommend preparing these 10 business documents:
 
 Track the following KPIs every week:
 
-| KPI | Initial 60-day target |
-|---|---:|
-| Qualified customer enquiries | 50 |
-| Customer meetings | 20 |
-| Site surveys | 15 |
-| Quotations submitted | 12 |
-| Confirmed customers/projects | 5–10 |
-| Installation partners | 3–5 |
-| Equipment suppliers | 5–8 |
-| Customer testimonials | 3 |
+| KPI                          | Initial 60-day target |
+| ---------------------------- | --------------------: |
+| Qualified customer enquiries |                    50 |
+| Customer meetings            |                    20 |
+| Site surveys                 |                    15 |
+| Quotations submitted         |                    12 |
+| Confirmed customers/projects |                  5–10 |
+| Installation partners        |                   3–5 |
+| Equipment suppliers          |                   5–8 |
+| Customer testimonials        |                     3 |
 
 These are proposed business-development targets, not guaranteed results.
 

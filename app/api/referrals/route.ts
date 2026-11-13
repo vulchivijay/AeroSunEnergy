@@ -1,6 +1,5 @@
 import { randomBytes } from 'node:crypto'
 import { z } from 'zod'
-import type { ResultSetHeader } from 'mysql2/promise'
 import { getDatabasePool } from '@/lib/auth/database'
 
 export const runtime = 'nodejs'
@@ -127,7 +126,7 @@ export async function POST(request: Request) {
   const referenceCode = `ASR-${randomBytes(8).toString('hex').toUpperCase()}`
 
   try {
-    await getDatabasePool().execute<ResultSetHeader>(
+    await getDatabasePool().query(
       `INSERT INTO solar_referrals (
         reference_code,
         referrer_name,
@@ -137,7 +136,7 @@ export async function POST(request: Request) {
         postal_code,
         property_type,
         referrer_permission_confirmed_at
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)`,
+      ) VALUES ($1, $2, $3, $4, $5, $6, $7, CURRENT_TIMESTAMP)`,
       [
         referenceCode,
         referral.referrerName,

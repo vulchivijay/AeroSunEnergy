@@ -4480,29 +4480,38 @@
         "phoneLabel": "Call",
         "emailLabel": "Email",
         "mapCta": "Open map",
-        "identifiersText": "CIN: U35106AP2026PTC128748; Udyam/MSME: UDYAM-AP-02-0123235; Startup India certificate no.: DIPP290751.",
+        "identifiersText": "CIN: U35106AP2026PTC128748.",
         "contactCta": "Contact AeroSun Energy"
       },
       "evidence": {
-        "eyebrow": "Project proof, not promises",
-        "title": "Real work deserves real evidence.",
-        "description": "Solar is a significant purchase. Project photos, customer feedback, equipment details, and generation results should be genuine, project-specific, and shared with permission.",
-        "items": [
+        "eyebrow": "Customer testimonials",
+        "title": "Hear from our customers.",
+        "description": "We’re preparing this space for customer feedback. The cards below are placeholders, not actual testimonials.",
+        "placeholderLabel": "Testimonial placeholder",
+        "previousLabel": "Previous testimonial",
+        "nextLabel": "Next testimonial",
+        "testimonials": [
           {
-            "title": "Customer-approved photos",
-            "description": "Use real installation photos only when the project is identified accurately and the customer has approved publication."
+            "quote": "[Add an approved customer quote about installation here.]",
+            "customer": "[Customer name]",
+            "location": "[City, State]",
+            "system": "[System type and capacity]"
           },
           {
-            "title": "Verified project details",
-            "description": "Show the installed system size and panel or inverter model only when those details match the actual project."
+            "quote": "[Add an approved customer quote about service and support here.]",
+            "customer": "[Customer name]",
+            "location": "[City, State]",
+            "system": "[System type and capacity]"
           },
           {
-            "title": "Performance with context",
-            "description": "Clearly label generation and savings as estimates or measured results, and explain the period and conditions."
+            "quote": "[Add an approved customer quote about their system experience here.]",
+            "customer": "[Customer name]",
+            "location": "[City, State]",
+            "system": "[System type and capacity]"
           }
         ],
-        "note": "We do not present generic stock imagery, invented testimonials, or unverified production figures as AeroSun project evidence.",
-        "cta": "Discuss your site"
+        "note": "Replace each placeholder only with the customer’s exact feedback and permission to publish it.",
+        "cta": "Share your experience"
       },
       "journey": {
         "eyebrow": "A clear path from bill to build",

@@ -314,13 +314,13 @@ export async function POST(request: Request) {
   const referenceCode = `ASF-${randomBytes(8).toString('hex').toUpperCase()}`
 
   try {
-    await getDatabasePool().execute(
+    await getDatabasePool().query(
       `INSERT INTO website_form_submissions (
         reference_code,
         form_type,
         payload,
         status
-      ) VALUES (?, ?, ?, 'new')`,
+      ) VALUES ($1, $2, $3::jsonb, 'new')`,
       [referenceCode, formType, JSON.stringify(data)],
     )
 
