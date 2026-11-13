@@ -134,7 +134,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 npm run build
 ```
 
-The production build runs as a Next.js server so authentication and form API routes can connect to PostgreSQL on AlloyDB. The `postbuild` step automatically submits the sitemap via IndexNow and prints a Google index verification summary.
+The production build runs as a Next.js server so authentication and form API routes can connect to PostgreSQL on AlloyDB. The `prebuild` step loads `.env` and prints whether Google integration and AlloyDB environment variables are present without displaying their values. Google tracking scripts still require cookie consent. The `postbuild` step automatically submits the sitemap via IndexNow and prints a Google index verification summary.
 
 To enable the Google index verification step, set these environment variables before running the build:
 
@@ -142,6 +142,8 @@ To enable the Google index verification step, set these environment variables be
 GOOGLE_CUSTOM_SEARCH_API_KEY=your_google_api_key
 GOOGLE_CUSTOM_SEARCH_CX=your_programmable_search_engine_id
 ```
+
+GTM and Analytics IDs are read during the build for prerendered pages. Set `_NEXT_PUBLIC_GTM_ID` and either `_NEXT_PUBLIC_GA_MEASUREMENT_ID` or `NEXT_PUBLIC_GA_STREAM_ID` in the build environment (or `.env`) before `npm run build`. The prebuild status output checks for their presence but never prints values.
 
 You can also run the check directly:
 
