@@ -1,9 +1,10 @@
 'use client'
 
 import {
+  ArrowLeft,
+  ArrowRight,
   ArrowUpRight,
   BadgeCheck,
-  Camera,
   ClipboardCheck,
   FileCheck2,
   Mail,
@@ -12,9 +13,8 @@ import {
   ShieldCheck,
 } from 'lucide-react'
 import Link from 'next/link'
+import { useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
-
-const proofIcons = [Camera, BadgeCheck, ClipboardCheck]
 
 export function CompanyTrustSection() {
   const { t } = useLocale()
@@ -43,8 +43,8 @@ export function CompanyTrustSection() {
           <div className="grid gap-3 sm:grid-cols-2">
             <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-4 sm:col-span-2">
               <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-100/65">{content.legalEntityLabel}</p>
-              <p className="mt-2 text-lg font-bold text-white">{t.home.aboutSection.companyName}</p>
-              <p className="mt-3 text-xs leading-5 text-emerald-50/65">{content.identifiersText}</p>
+              <p className="mt-2 text-xl font-bold text-white">{t.home.aboutSection.companyName}</p>
+              <p className="mt-3 text-lg leading-5 text-white">{content.identifiersText}</p>
             </div>
 
             <a
@@ -71,7 +71,7 @@ export function CompanyTrustSection() {
                 <Phone className="h-5 w-5 shrink-0 text-[#A3D977]" aria-hidden="true" />
                 <span>
                   <span className="block text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-100/65">{content.phoneLabel}</span>
-                  <span className="mt-1 block text-sm font-semibold text-white">{footer.phone}</span>
+                  <span className="mt-1 block text-sm text-white">{footer.phone}</span>
                 </span>
               </a>
               <a
@@ -81,7 +81,7 @@ export function CompanyTrustSection() {
                 <Mail className="h-5 w-5 shrink-0 text-[#A3D977]" aria-hidden="true" />
                 <span className="min-w-0">
                   <span className="block text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-100/65">{content.emailLabel}</span>
-                  <span className="mt-1 block break-all text-sm font-semibold text-white">{footer.email}</span>
+                  <span className="mt-1 block break-all text-sm text-white">{footer.email}</span>
                 </span>
               </a>
             </div>
@@ -102,38 +102,73 @@ export function CompanyTrustSection() {
 export function ProjectEvidenceSection() {
   const { t } = useLocale()
   const content = t.home.trustSections.evidence
+  const [activeIndex, setActiveIndex] = useState(0)
+  const testimonials = content.testimonials.map(
+    (_, index) => content.testimonials[(activeIndex + index) % content.testimonials.length],
+  )
+
+  const showPrevious = () => {
+    setActiveIndex((index) => (index - 1 + content.testimonials.length) % content.testimonials.length)
+  }
+  const showNext = () => {
+    setActiveIndex((index) => (index + 1) % content.testimonials.length)
+  }
 
   return (
-    <section className="bg-[#f5f2e9] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="project-evidence-title">
+    <section className="bg-[#f5f2e9] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="testimonials-title">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
-          <div>
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-amber-800">{content.eyebrow}</p>
-            <h2 id="project-evidence-title" className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
-              {content.title}
-            </h2>
-          </div>
-          <p className="max-w-3xl text-sm leading-7 text-slate-600 sm:text-base">{content.description}</p>
+        <div className="max-w-3xl">
+          <p className="text-xs font-black uppercase tracking-[0.24em] text-amber-800">{content.eyebrow}</p>
+          <h2 id="testimonials-title" className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
+            {content.title}
+          </h2>
         </div>
+        <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600 sm:text-base">{content.description}</p>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {content.items.map((item, index) => {
-            const Icon = proofIcons[index] ?? ShieldCheck
-            return (
-              <article key={item.title} className="rounded-3xl border border-amber-900/10 bg-white p-5 shadow-[0_20px_50px_-40px_rgba(15,23,42,0.5)] sm:p-6">
-                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-100 text-amber-900">
-                  <Icon className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <h3 className="mt-5 text-lg font-extrabold text-slate-950">{item.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{item.description}</p>
+        <div className="mt-8 grid grid-cols-[auto_minmax(0,1fr)_auto] items-stretch gap-2 sm:gap-4">
+          <button
+            type="button"
+            onClick={showPrevious}
+            aria-label={content.previousLabel}
+            className="my-auto flex h-10 w-10 items-center justify-center rounded-full border border-amber-900/15 bg-white text-slate-900 shadow-sm transition hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-800 sm:h-12 sm:w-12"
+          >
+            <ArrowLeft className="h-5 w-5" aria-hidden="true" />
+          </button>
+
+          <div className="grid min-w-0 grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3" aria-live="polite">
+            {testimonials.map((testimonial, index) => (
+              <article
+                key={`${activeIndex}-${index}`}
+                className={`flex min-h-64 flex-col justify-between rounded-3xl border border-amber-900/10 bg-white p-6 shadow-[0_20px_50px_-40px_rgba(15,23,42,0.5)] sm:p-8 ${index === 1 ? 'hidden md:flex' : ''} ${index === 2 ? 'hidden lg:flex' : ''}`}
+              >
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-amber-800">{content.placeholderLabel}</p>
+                  <blockquote className="mt-5 text-lg font-semibold leading-8 text-slate-900 sm:text-xl">
+                    “{testimonial.quote}”
+                  </blockquote>
+                </div>
+                <div className="mt-8 border-t border-slate-100 pt-5">
+                  <p className="font-bold text-slate-950">{testimonial.customer}</p>
+                  <p className="mt-1 text-sm text-slate-600">{testimonial.location}</p>
+                  <p className="mt-3 text-sm font-medium text-emerald-800">{testimonial.system}</p>
+                </div>
               </article>
-            )
-          })}
+            ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={showNext}
+            aria-label={content.nextLabel}
+            className="my-auto flex h-10 w-10 items-center justify-center rounded-full border border-amber-900/15 bg-white text-slate-900 shadow-sm transition hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-800 sm:h-12 sm:w-12"
+          >
+            <ArrowRight className="h-5 w-5" aria-hidden="true" />
+          </button>
         </div>
 
         <div className="mt-5 flex flex-col gap-4 rounded-2xl border border-amber-200 bg-amber-50 p-5 sm:flex-row sm:items-center sm:justify-between">
           <p className="max-w-3xl text-sm leading-6 text-amber-950">{content.note}</p>
-          <Link href="/customer-enquiry" className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-amber-950 underline decoration-amber-400 underline-offset-4">
+          <Link href="/contact" className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-amber-950 underline decoration-amber-400 underline-offset-4">
             {content.cta}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
