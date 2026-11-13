@@ -81,7 +81,7 @@ export default function Brands() {
           </p>
         </header>
 
-        <ul className="flex list-none flex-wrap justify-center gap-3 sm:gap-4 lg:gap-5">
+        <ul className="flex list-none flex-wrap justify-center gap-2 sm:gap-4 lg:gap-5">
           {sortedBrands.map((brand, index) => {
             const maxPrice = getHighestListedPrice(brand.prices)
             const formattedMaxPrice = maxPrice?.toLocaleString('en-IN', { maximumFractionDigits: 2 })
