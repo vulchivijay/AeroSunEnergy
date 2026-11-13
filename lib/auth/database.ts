@@ -5,11 +5,11 @@ let pool: Pool | undefined
 export function getDatabasePool(): Pool {
   if (pool) return pool
 
-  const socketPath = process.env.INSTANCE_UNIX_SOCKET?.trim()
+  const socketPath = process.env._INSTANCE_UNIX_SOCKET?.trim()
   const host = process.env.DB_HOST?.trim()
-  const database = process.env.DB_NAME
-  const user = process.env.DB_USER
-  const password = process.env.DB_PASS
+  const database = process.env._DB_NAME
+  const user = process.env._DB_USER
+  const password = process.env._DB_PASS
 
   if (!database || !user || !password) {
     throw new Error('Database configuration is incomplete.')
@@ -26,7 +26,7 @@ export function getDatabasePool(): Pool {
   } else if (socketPath) {
     connectionTarget = { socketPath }
   } else {
-    throw new Error('Configure either DB_HOST or INSTANCE_UNIX_SOCKET.')
+    throw new Error('Configure either DB_HOST or _INSTANCE_UNIX_SOCKET.')
   }
 
   pool = createPool({

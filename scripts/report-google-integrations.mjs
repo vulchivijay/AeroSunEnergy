@@ -1,22 +1,24 @@
 function isConfigured(...names) {
-  return names.some((name) => Boolean(process.env[name]?.trim()))
+  return names.some((name) => Boolean(process.env[name]?.trim()));
 }
 
 function report(label, configured) {
-  console.log(`- ${label}: ${configured ? 'CONFIGURED' : 'NOT CONFIGURED'}`)
+  console.log(`- ${label}: ${configured ? "CONFIGURED" : "NOT CONFIGURED"}`);
 }
 
-console.log('Google integration configuration (build environment):')
+console.log("Google integration configuration (build environment):");
 report(
-  'Google Search Console verification',
-  isConfigured('GOOGLE_SITE_VERIFICATION'),
-)
+  "Google Search Console verification",
+  isConfigured("_GOOGLE_SITE_VERIFICATION"),
+);
 report(
-  'Google Analytics measurement ID',
-  isConfigured('NEXT_PUBLIC_GA_MEASUREMENT_ID', 'GA_MEASUREMENT_ID'),
-)
+  "Google Analytics measurement ID",
+  isConfigured("_NEXT_PUBLIC_GA_MEASUREMENT_ID", "GA_MEASUREMENT_ID"),
+);
 report(
-  'Google Tag Manager container ID',
-  isConfigured('NEXT_PUBLIC_GTM_ID', 'GTM_ID'),
-)
-console.log('Configured means an environment variable is present; tracking scripts still require cookie consent.')
+  "Google Tag Manager container ID",
+  isConfigured("_NEXT_PUBLIC_GTM_ID", "GTM_ID"),
+);
+console.log(
+  "Configured means an environment variable is present; tracking scripts still require cookie consent.",
+);
