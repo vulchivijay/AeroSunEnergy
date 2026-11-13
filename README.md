@@ -160,16 +160,22 @@ The Next.js server listens on the `PORT` environment variable (8080 by default),
 
 ### Configure AlloyDB PostgreSQL
 
-Set a server-only PostgreSQL connection URI on the Cloud Run service. Do not prefix database credentials with `NEXT_PUBLIC_`; store production credentials in Secret Manager.
+Set these server-only PostgreSQL variables on the Cloud Run service. Do not prefix database credentials with `NEXT_PUBLIC_`; store production credentials in Secret Manager.
 
 ```text
-DATABASE_URL=postgresql://USER:PASSWORD@HOST:5432/aerosunenergy?sslmode=require
-# Optional: an admin connection URI with CREATEDB privileges, used only by db:migrate.
-DATABASE_ADMIN_URL=postgresql://ADMIN_USER:PASSWORD@HOST:5432/postgres?sslmode=require
+_DB_HOST=ALLOYDB_HOST
+_DB_PORT=5432
+_DB_NAME=aerosunenergy
+_DB_USER=application_user
+_DB_PASSWORD=application_user_password
+_DB_SSL=true
+# Optional; used only by db:migrate when creating the database.
+_DB_ADMIN_USER=database_admin
+_DB_ADMIN_PASSWORD=database_admin_password
 DASHBOARD_ADMIN_EMAILS=admin@example.com
 ```
 
-Connect through the AlloyDB Auth Proxy or a supported AlloyDB endpoint. For local development, run the [AlloyDB Auth Proxy](https://cloud.google.com/alloydb/docs/auth-proxy/overview) and point `DATABASE_URL` at its local PostgreSQL port.
+Connect through the AlloyDB Auth Proxy or a supported AlloyDB endpoint. For local development, run the [AlloyDB Auth Proxy](https://cloud.google.com/alloydb/docs/auth-proxy/overview), set `_DB_HOST=127.0.0.1`, and set `_DB_SSL=false` for the local proxy connection.
 
 Apply the schema to the target database:
 
@@ -177,7 +183,7 @@ Apply the schema to the target database:
 npm run db:migrate
 ```
 
-This is a schema setup only; it doesn't import existing rows from another database. It creates the target database if it doesn't exist, then creates the `auth_users`, `auth_sessions`, `solar_referrals`, and `website_form_submissions` tables. Database creation requires a PostgreSQL role with `CREATEDB`; set `DATABASE_ADMIN_URL` to a separate administrative connection when the application role doesn't have that privilege. The target role needs permission to create tables, indexes, and functions. Website form records from every supported form type share `website_form_submissions`, distinguished by `form_type` and stored as JSONB. Referral records use `solar_referrals`; all tables are in the same configured database. The migration does not run automatically during deployment.
+This is a schema setup only; it doesn't import existing rows from another database. It creates the target database if it doesn't exist, then creates the `auth_users`, `auth_sessions`, `solar_referrals`, and `website_form_submissions` tables. Database creation requires a PostgreSQL role with `CREATEDB`; set both `_DB_ADMIN_USER` and `_DB_ADMIN_PASSWORD` for a separate administrative connection when the application role doesn't have that privilege. The target role needs permission to create tables, indexes, and functions. Website form records from every supported form type share `website_form_submissions`, distinguished by `form_type` and stored as JSONB. Referral records use `solar_referrals`; all tables are in the same configured database. The migration does not run automatically during deployment.
 
 Set `DASHBOARD_ADMIN_EMAILS` to a comma-separated list of registered account email addresses permitted to access `/dashboard`. The dashboard requires this server-only allowlist and omits password hashes and session tokens from its views.
 

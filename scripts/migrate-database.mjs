@@ -4,43 +4,38 @@ import { loadEnvConfig } from '@next/env'
 
 loadEnvConfig(process.cwd())
 
-const databaseUrl = process.env.DATABASE_URL?.trim()
-if (!databaseUrl) {
-  throw new Error('DATABASE_URL is required.')
-}
+const host = process.env._DB_HOST?.trim()
+const databaseName = process.env._DB_NAME?.trim()
+const user = process.env._DB_USER?.trim()
+const password = process.env._DB_PASSWORD
+const portValue = process.env._DB_PORT?.trim()
+const port = portValue ? Number(portValue) : 5432
+const sslValue = (process.env._DB_SSL ?? 'true').trim().toLowerCase()
+const adminUser = process.env._DB_ADMIN_USER?.trim()
+const adminPassword = process.env._DB_ADMIN_PASSWORD
 
-let targetUrl
-try {
-  targetUrl = new URL(databaseUrl)
-} catch {
-  throw new Error('DATABASE_URL must be a valid PostgreSQL connection URI.')
+if (!host || !databaseName || !user || !password) {
+  throw new Error('_DB_HOST, _DB_NAME, _DB_USER, and _DB_PASSWORD are required.')
 }
-
-if (targetUrl.protocol !== 'postgres:' && targetUrl.protocol !== 'postgresql:') {
-  throw new Error('DATABASE_URL must use the PostgreSQL protocol.')
+if (!Number.isInteger(port) || port < 1 || port > 65535) {
+  throw new Error('_DB_PORT must be a valid TCP port.')
 }
-
-const databaseName = decodeURIComponent(targetUrl.pathname.replace(/^\/+/, ''))
-if (!databaseName) {
-  throw new Error('DATABASE_URL must include a target database name.')
+if (sslValue !== 'true' && sslValue !== 'false') {
+  throw new Error('_DB_SSL must be "true" or "false".')
+}
+if (Boolean(adminUser) !== Boolean(adminPassword)) {
+  throw new Error('Set both _DB_ADMIN_USER and _DB_ADMIN_PASSWORD, or leave both unset.')
 }
 
 const schemaFiles = ['auth-schema.sql', 'referral-schema.sql', 'website-form-submissions-schema.sql']
-const adminUrl = process.env.DATABASE_ADMIN_URL?.trim()
-  ? new URL(process.env.DATABASE_ADMIN_URL)
-  : new URL(targetUrl)
-
-if (adminUrl.protocol !== 'postgres:' && adminUrl.protocol !== 'postgresql:') {
-  throw new Error('DATABASE_ADMIN_URL must use the PostgreSQL protocol.')
-}
-
-if (!adminUrl.pathname || adminUrl.pathname === '/') {
-  adminUrl.pathname = '/postgres'
-} else if (!process.env.DATABASE_ADMIN_URL?.trim()) {
-  adminUrl.pathname = '/postgres'
-}
-
-const adminPool = new Pool({ connectionString: adminUrl.toString(), max: 1 })
+const connectionOptions = { host, port, ssl: sslValue === 'true' }
+const adminPool = new Pool({
+  ...connectionOptions,
+  database: 'postgres',
+  user: adminUser || user,
+  password: adminUser ? adminPassword : password,
+  max: 1,
+})
 let migrationPool
 
 try {
@@ -56,7 +51,13 @@ try {
     }
   }
 
-  migrationPool = new Pool({ connectionString: databaseUrl, max: 1 })
+  migrationPool = new Pool({
+    ...connectionOptions,
+    database: databaseName,
+    user,
+    password,
+    max: 1,
+  })
   const client = await migrationPool.connect()
   let transactionStarted = false
   try {

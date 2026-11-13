@@ -5,23 +5,31 @@ let pool: Pool | undefined
 export function getDatabasePool(): Pool {
   if (pool) return pool
 
-  const connectionString = process.env.DATABASE_URL?.trim()
-  if (!connectionString) {
-    throw new Error('DATABASE_URL is required.')
-  }
+  const host = process.env._DB_HOST?.trim()
+  const database = process.env._DB_NAME?.trim()
+  const user = process.env._DB_USER?.trim()
+  const password = process.env._DB_PASSWORD
+  const portValue = process.env._DB_PORT?.trim()
+  const port = portValue ? Number(portValue) : 5432
+  const sslValue = (process.env._DB_SSL ?? 'true').trim().toLowerCase()
 
-  let protocol: string
-  try {
-    protocol = new URL(connectionString).protocol
-  } catch {
-    throw new Error('DATABASE_URL must be a valid PostgreSQL connection URI.')
+  if (!host || !database || !user || !password) {
+    throw new Error('_DB_HOST, _DB_NAME, _DB_USER, and _DB_PASSWORD are required.')
   }
-  if (protocol !== 'postgres:' && protocol !== 'postgresql:') {
-    throw new Error('DATABASE_URL must use the PostgreSQL protocol.')
+  if (!Number.isInteger(port) || port < 1 || port > 65535) {
+    throw new Error('_DB_PORT must be a valid TCP port.')
+  }
+  if (sslValue !== 'true' && sslValue !== 'false') {
+    throw new Error('_DB_SSL must be "true" or "false".')
   }
 
   pool = new Pool({
-    connectionString,
+    host,
+    port,
+    database,
+    user,
+    password,
+    ssl: sslValue === 'true',
     max: 5,
     connectionTimeoutMillis: 10_000,
     idleTimeoutMillis: 30_000,
