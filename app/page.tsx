@@ -1,21 +1,20 @@
 'use client'
 
+import { ArrowUpRight } from 'lucide-react'
 import { useLocale } from '@/lib/LocaleContext'
 import { getAccentOrDefault } from '@/lib/utils/utils'
 import { BankEMICalculator } from './components/forms/BankEMICalculator'
 import { SolarEstimation } from './components/forms/SolarEstimation'
-import About from './components/sections/About'
 import TirupatiEnergySection from './components/sections/TirupatiEnergySection'
 import {
   CompanyTrustSection,
   ProjectEvidenceSection,
   QuoteTransparencySection,
   SolarJourneySection,
+  WhySolarSection,
 } from './components/sections/HomeTrustSections'
-import { ReferralProgramSection } from './components/sections/ReferralProgramSection'
 import {
   BenefitCard,
-  CapacityTable,
   FeatureCard,
   HomeHeroSlider,
   HybridBenefitCard,
@@ -33,6 +32,12 @@ import {
   WindSectionEyebrow,
 } from './components/ui'
 import { Brands } from './components/brand'
+
+const homeBenefitAccents = ['emerald', 'sky', 'amber', 'violet'] as const
+
+function getHomeBenefitAccent(index: number) {
+  return homeBenefitAccents[index % homeBenefitAccents.length] ?? 'emerald'
+}
 
 function RecognitionHighlight() {
   const { t } = useLocale()
@@ -139,8 +144,8 @@ export default function Home() {
           </p>
 
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {home.rooftopSolar.benefits.map((benefit) => (
-              <BenefitCard key={benefit.title} title={benefit.title} description={benefit.description} />
+            {home.rooftopSolar.benefits.map((benefit, index) => (
+              <BenefitCard key={benefit.title} title={benefit.title} description={benefit.description} accent={getHomeBenefitAccent(index)} />
             ))}
           </div>
 
@@ -174,45 +179,76 @@ export default function Home() {
           </div>
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {whySolar.map((item) => (
-              <BenefitCard key={item.title} title={item.title} description={item.description} />
+            {whySolar.map((item, index) => (
+              <BenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
             ))}
           </div>
         </div>
         
-        <div className="mt-12 rounded-4xl border border-emerald-200 bg-emerald-50 p-6 lg:p-8">
-          <div className="mb-6">
+      </section>
+      <section className="bg-[#f8f7f2] px-4 py-10 sm:px-6 lg:px-10 lg:py-14">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 xl:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] xl:gap-10">
+          <div className="max-w-2xl">
             <SectionEyebrow>{subsidy.eyebrow}</SectionEyebrow>
-            <h3 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">
+            <h2 className="mt-5 text-3xl font-bold leading-tight tracking-tight text-[#102b28] sm:text-4xl lg:text-[2.75rem]">
               {subsidy.title}
-            </h3>
+            </h2>
+            <p className="mt-5 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+              {subsidy.description}
+            </p>
+            <a
+              href="https://pmsuryaghar.gov.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-1 border-b border-[#12865e]/40 pb-1 text-sm font-bold text-[#087a61] transition-colors hover:border-[#087a61] hover:text-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61]"
+            >
+              {subsidy.portalCta}
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </a>
           </div>
 
-          <p className="max-w-4xl text-lg leading-8 text-slate-700">
-            {subsidy.description}
-          </p>
-
-          <p className="mt-4 max-w-4xl rounded-xl border border-emerald-200 bg-white/70 px-4 py-3 text-sm leading-6 text-slate-700">
-            {t.subsidyNotice}
-          </p>
-
-          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {subsidy.cards.map((item) => (
-              <BenefitCard key={item.title} title={item.title} description={item.description} />
-            ))}
-          </div>
-
-          <div className="mt-8">
-            <CapacityTable />
+          <div className="overflow-hidden rounded-[22px] border border-[#e7e4dc] bg-white shadow-[0_20px_55px_-40px_rgba(16,43,40,0.4)]">
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[620px] border-collapse text-left">
+                <caption className="sr-only">{subsidy.title}</caption>
+                <thead className="bg-[#102e2a] text-white">
+                  <tr className="text-[10px] font-bold uppercase tracking-[0.16em] sm:text-[11px]">
+                    <th scope="col" className="px-5 py-5 sm:px-6">
+                      {t.ui.averageMonthlyUsage}
+                    </th>
+                    <th scope="col" className="px-5 py-5 sm:px-6">
+                      {t.ui.suitableRooftopCapacity}
+                    </th>
+                    <th scope="col" className="px-5 py-5 sm:px-6">
+                      {t.ui.bestFit}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#e5e7e5]">
+                  {t.solarPage.capacityTable.rows.map((row) => (
+                    <tr key={row.usage} className="text-sm">
+                      <td className="px-5 py-5 text-[#172a28] sm:px-6">{row.usage}</td>
+                      <td className="px-5 py-5 font-bold text-[#087a61] sm:px-6">{row.capacity}</td>
+                      <td className="px-5 py-5 text-slate-500 sm:px-6">{row.tag}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="bg-[#fff4e5] px-5 py-4 text-xs leading-5 text-slate-600 sm:px-6 sm:text-[13px]">
+              {subsidy.notice}
+            </p>
           </div>
         </div>
       </section>
-      <About />
       <RecognitionHighlight />
       <CompanyTrustSection />
+      <WhySolarSection />
       <SolarJourneySection />
       <QuoteTransparencySection />
       <ProjectEvidenceSection />
+      <SolarEstimation />
+      <BankEMICalculator />
       <TirupatiEnergySection />
       {/* Wind Energy Section */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
@@ -236,8 +272,8 @@ export default function Home() {
         </div>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {wind.benefits.map((item) => (
-            <WindBenefitCard key={item.title} title={item.title} description={item.description} />
+          {wind.benefits.map((item, index) => (
+            <WindBenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
           ))}
         </div>
 
@@ -273,8 +309,8 @@ export default function Home() {
         </div>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {hybrid.benefits.map((item) => (
-            <HybridBenefitCard key={item.title} title={item.title} description={item.description} />
+          {hybrid.benefits.map((item, index) => (
+            <HybridBenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
           ))}
         </div>
 
@@ -288,10 +324,7 @@ export default function Home() {
           <HybridTable rows={hybrid.table} />
         </div>
       </section>
-      <SolarEstimation />
-      <BankEMICalculator />
       <Brands />
-      <ReferralProgramSection />
     </main>
   )
 }

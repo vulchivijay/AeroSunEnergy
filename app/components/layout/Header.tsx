@@ -369,7 +369,7 @@ export default function Navbar() {
               aria-label={t.navbar.languageLabel}
               aria-expanded={langOpen}
               aria-controls="desktop-language-options"
-              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#333333]/20 bg-white/50 px-3 text-[12px] tracking-wider text-[#333333] transition hover:border-[#333333]/40 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#333333]"
+              className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-[#333333]/20 bg-white/50 px-3 text-[12px] tracking-wider text-[#333333] transition hover:border-[#333333]/40 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#333333]"
             >
               <Globe2 className="h-4 w-4 text-[#333333]" aria-hidden="true" />
               {languageOptions.find((option) => option.code === locale)?.shortLabel}
@@ -382,7 +382,7 @@ export default function Navbar() {
             href="/aerosun-energy.pdf"
             download="aerosun-energy.pdf"
             aria-label={t.navbar.downloadVoucher}
-            className="inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-sm font-semibold text-[#333333] transition hover:bg-[#333333]/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#333333]"
+            className="inline-flex min-h-11 bg-[#F59E0B] items-center gap-2 rounded-xl px-3 text-sm font-semibold text-[#ffffff] transition hover:bg-[#20A44A] hover:text-[#ffffff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#333333]"
           >
             <ArrowDownToLine className="h-4 w-4" aria-hidden="true" />
             <span className="hidden 2xl:inline">{t.navbar.voucher}</span>
@@ -393,7 +393,7 @@ export default function Navbar() {
             title={t.navbar.startProjectTitle}
             aria-label={t.navbar.startProjectAriaLabel}
             data-cta="start-project"
-            className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-[#20A44A] px-4 text-sm font-bold text-white shadow-[0_8px_24px_-12px_rgba(32,164,74,0.45)] transition hover:-translate-y-0.5 hover:bg-[#18833a] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#20A44A]"
+            className="group inline-flex min-h-11 items-center gap-1 rounded-xl bg-[#20A44A] px-4 text-sm text-white shadow-[0_8px_24px_-12px_rgba(32,164,74,0.45)] transition hover:-translate-y-0.5 hover:bg-[#18833a] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#20A44A]"
           >
             {t.navbar.startProject}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />

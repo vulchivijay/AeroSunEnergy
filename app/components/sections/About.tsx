@@ -142,28 +142,28 @@ export default function About() {
         <div className="mt-12 grid gap-5 xl:grid-cols-[1.1fr_0.9fr] xl:gap-7">
           <article className="relative overflow-hidden rounded-[1.75rem] border border-white/70 bg-[linear-gradient(135deg,#FF9933_0%,#FFFFFF_35%,#FFFFFF_70%,#138808_100%)] p-3 text-[#102b28] shadow-[0_28px_70px_-34px_rgba(16,45,42,0.35)] sm:p-4">
             <span className="absolute -right-6 -top-14 font-serif text-[15rem] leading-none text-[#e77924]/[0.10]" aria-hidden="true">“</span>
+            <div className="pointer-events-none absolute left-1/2 top-1/2 z-20 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center text-center">
+              <svg
+                viewBox="0 0 100 100"
+                className="h-16 w-16 text-[#000080] drop-shadow-[0_2px_3px_rgba(0,0,128,0.3)] sm:h-20 sm:w-20"
+                aria-hidden="true"
+              >
+                <circle cx="50" cy="50" r="36" fill="none" stroke="#000080" strokeWidth="2.5" />
+                <circle cx="50" cy="50" r="7" fill="#000080" />
+                <g stroke="#000080" strokeWidth="1.8">
+                  {Array.from({ length: 12 }, (_, index) => (
+                    <line key={index} x1="50" y1="15" x2="50" y2="85" transform={`rotate(${index * 15} 50 50)`} />
+                  ))}
+                </g>
+              </svg>
+              <p className="mt-2 bg-white/95 px-4 py-1 text-center text-xs font-black uppercase tracking-[0.2em] text-[#087a45] sm:text-sm">
+                Make in India
+              </p>
+            </div>
             <div className="relative p-3 sm:p-5">
               <div className="space-y-4 text-sm leading-7 text-[#374b44] sm:text-lg sm:leading-8">
                 <p>{renderCompanyName(content.visionIntro)}</p>
                 <p>{renderCompanyName(content.visionHistory)}</p>
-              </div>
-              <div className="mt-7 flex min-h-44 w-full flex-col items-center justify-center text-center">
-                <svg
-                  viewBox="0 0 100 100"
-                  className="mx-auto h-16 w-16 text-[#000080] drop-shadow-[0_2px_3px_rgba(0,0,128,0.3)] sm:h-20 sm:w-20"
-                  aria-hidden="true"
-                >
-                  <circle cx="50" cy="50" r="36" fill="none" stroke="#000080" strokeWidth="2.5" />
-                  <circle cx="50" cy="50" r="7" fill="#000080" />
-                  <g stroke="#000080" strokeWidth="1.8">
-                    {Array.from({ length: 12 }, (_, index) => (
-                      <line key={index} x1="50" y1="15" x2="50" y2="85" transform={`rotate(${index * 15} 50 50)`} />
-                    ))}
-                  </g>
-                </svg>
-                <p className="mx-auto mt-2 rounded-full border border-[#138808]/25 bg-white/95 px-4 py-1 text-center text-xs font-black uppercase tracking-[0.2em] text-[#087a45] shadow-sm sm:text-sm">
-                  Make in India
-                </p>
               </div>
             </div>
           </article>

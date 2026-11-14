@@ -65,7 +65,7 @@ export function ReferralProgramSection() {
   return (
     <section
       id="referral-program"
-      className="relative isolate overflow-hidden bg-[#0B2922] px-4 py-14 text-white sm:px-6 lg:px-10 lg:py-18"
+      className="relative isolate overflow-hidden bg-[linear-gradient(120deg,#312e81_0%,#4c1d95_55%,#701a75_100%)] px-4 py-14 text-white sm:px-6 lg:px-10 lg:py-18"
       aria-labelledby="referral-program-title"
     >
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 lg:gap-10 xl:grid-cols-[0.82fr_1.18fr] xl:items-center">

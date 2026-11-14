@@ -8,6 +8,7 @@ import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
+import { ReferralProgramSection } from '@/app/components/sections/ReferralProgramSection'
 
 const channelIconComponents: Record<string, ReactNode> = {
   email: (
@@ -182,7 +183,7 @@ export default function Contact() {
             </motion.div>
           </div>
 
-          <section className="mt-5 overflow-hidden rounded-[2rem] bg-[#10251f] text-white">
+          <section className="mt-5 overflow-hidden rounded-[2rem] bg-[linear-gradient(120deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] text-white">
             <div className="grid lg:grid-cols-[0.75fr_1.25fr]">
               <div className="flex flex-col justify-center border-b border-white/10 p-6 sm:p-9 lg:border-b-0 lg:border-r">
                 <p className="text-md font-bold uppercase tracking-[0.2em] text-lime-300">{contactUs}</p>
@@ -224,12 +225,12 @@ export default function Contact() {
             ))}
           </div>
 
-          <section className="mt-16 overflow-hidden rounded-[2rem] border border-emerald-950/10 bg-[#f3f0e5] shadow-[0_28px_80px_-48px_rgba(16,37,31,0.5)] sm:mt-20" aria-labelledby="contact-form-title">
+          <section className="mt-16 overflow-hidden rounded-[2rem] border border-indigo-900/10 bg-[linear-gradient(125deg,#e0f2fe_0%,#ede9fe_52%,#fce7f3_100%)] shadow-[0_28px_80px_-48px_rgba(49,46,129,0.2)] sm:mt-20" aria-labelledby="contact-form-title">
             <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
-              <div className="bg-[#10251f] p-6 text-white sm:p-9">
-                <p className="text-xs font-black uppercase tracking-[0.2em] text-lime-300">{contactUs}</p>
+              <div className="bg-[linear-gradient(145deg,#bfdbfe_0%,#ddd6fe_52%,#fbcfe8_100%)] p-6 text-slate-900 sm:p-9">
+                <p className="text-xs font-black uppercase tracking-[0.2em] text-indigo-900">{contactUs}</p>
                 <h2 id="contact-form-title" className="mt-3 text-3xl font-black leading-tight">{c.form.title}</h2>
-                <p className="mt-4 text-sm leading-7 text-emerald-50/75">{c.form.description}</p>
+                <p className="mt-4 text-sm leading-7 text-slate-700">{c.form.description}</p>
               </div>
               <form className="grid gap-4 p-5 sm:grid-cols-2 sm:p-8" onSubmit={handleContactSubmit}>
                 <label className="block text-sm font-semibold text-slate-800">
@@ -295,19 +296,36 @@ export default function Contact() {
               ))}
             </div>
           </section>
+        </div>
+      </section>
+      <ReferralProgramSection />
+      <section
+        className="relative isolate overflow-hidden bg-gradient-to-br from-sky-100 via-indigo-50 to-fuchsia-100 px-5 py-16 sm:px-8 lg:px-10"
+        aria-labelledby="contact-faq-title"
+      >
+        <div className="pointer-events-none absolute -left-20 top-8 h-64 w-64 rounded-full bg-sky-300/30 blur-3xl" aria-hidden="true" />
+        <div className="pointer-events-none absolute -bottom-20 right-0 h-72 w-72 rounded-full bg-fuchsia-300/25 blur-3xl" aria-hidden="true" />
+        <div className="relative mx-auto max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-12">
+            <header className="flex flex-col justify-center py-2 sm:py-5">
+              <p className="inline-flex w-fit items-center gap-2 rounded-full border border-indigo-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-indigo-900">
+                <span className="h-2 w-2 rounded-full bg-fuchsia-500" aria-hidden="true" />
+                {faqHeader}
+              </p>
+              <h2 id="contact-faq-title" className="mt-5 text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-5xl">
+                {faqTitle}
+              </h2>
+              <p className="mt-5 max-w-md text-sm leading-7 text-slate-700 sm:text-base">
+                {faqIntro}
+              </p>
+            </header>
 
-          <section className="mt-20 grid overflow-hidden rounded-[2rem] shadow-2xl border border-emerald-950/20 bg-[#dfff72] sm:mt-28 lg:grid-cols-[0.7fr_1.3fr]  ">
-            <div className="flex flex-col justify-start p-6 sm:p-10">
-              <p className="text-md font-black uppercase tracking-[0.2em] text-emerald-900 ">{faqHeader}</p>
-              <h2 className="mt-4 text-4xl font-black leading-tight tracking-[0.05em] text-emerald-950  sm:text-5xl">{faqTitle}</h2>
-              <p className="mt-5 text-sm leading-7 text-emerald-950/75 ">{faqIntro}</p>
-            </div>
-            <div className="space-y-3 bg-[#f3f0e5] p-4 sm:p-6 lg:p-8 ">
+            <div className="space-y-3 rounded-[2rem] border border-white/80 bg-white/65 p-3 shadow-[0_24px_70px_-42px_rgba(49,46,129,0.35)] backdrop-blur-sm sm:p-5">
               {solarFaqs.map((faq) => (
                 <FaqCard key={faq.question} question={faq.question} answer={faq.answer} />
               ))}
             </div>
-          </section>
+          </div>
         </div>
       </section>
     </main>

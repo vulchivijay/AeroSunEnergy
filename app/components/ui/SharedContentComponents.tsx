@@ -12,9 +12,9 @@ export function ContentSectionEyebrow({
   labelClassName: string
 }) {
   return (
-    <div className={`inline-flex items-center gap-2 rounded-full px-3.5 py-2 ${className}`}>
-      <span className={`inline-flex h-2.5 w-2.5 items-center justify-center rounded-full ${dotClassName}`} aria-hidden="true" />
-      <p className={`text-[12px] font-black uppercase tracking-[0.24em] ${labelClassName}`}>{children}</p>
+    <div className={`inline-flex items-center gap-2 ${className}`}>
+      <span className={`inline-flex h-2 w-2 items-center justify-center rounded-full ${dotClassName}`} aria-hidden="true" />
+      <p className={`text-[11px] font-bold uppercase tracking-[0.22em] ${labelClassName}`}>{children}</p>
     </div>
   )
 }
@@ -52,18 +52,18 @@ export function ContentFeatureCard({
 }) {
   return (
     <article className={cardClassName}>
-      <div className={`mb-5 flex items-center justify-between gap-4 rounded-2xl border px-3 py-2 ${featureClassName}`}>
-        <span className="text-[12px] font-black uppercase tracking-[0.24em]">{label}</span>
-        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/80 shadow-sm ring-1 ring-black/5">{icon}</span>
+      <div className="mb-5 flex items-center justify-between gap-4 border-b border-slate-200 pb-4">
+        <span className={`text-[11px] font-bold uppercase tracking-[0.2em] ${featureClassName}`}>{label}</span>
+        <span className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white/80">{icon}</span>
       </div>
       <h3 className={`text-2xl font-black ${titleClassName}`}>{title}</h3>
-      <p className="mt-4 text-sm leading-7 text-slate-700">{description}</p>
+      <p className="mt-3 text-sm leading-7 text-slate-600">{description}</p>
       {points.length > 0 && (
-        <ul className="mt-5 space-y-3 text-sm text-slate-700">
+        <ul className="mt-5 divide-y divide-slate-200 text-sm text-slate-700">
           {points.map((point) => (
-            <li key={point} className="flex items-start gap-3 rounded-xl bg-slate-50/80 p-2.5">
-              <span className={`mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[12px] font-black ${pointIconClassName}`}>✓</span>
-              <span>{point}</span>
+            <li key={point} className="flex items-start gap-3 py-3 first:pt-0 last:pb-0">
+              <span className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-black ${pointIconClassName}`}>✓</span>
+              <span className="leading-6">{point}</span>
             </li>
           ))}
         </ul>
@@ -87,9 +87,13 @@ export function ContentBenefitCard({
 }) {
   return (
     <div className={cardClassName}>
-      <div className={`mb-3 flex h-12 w-12 items-center justify-center rounded-2xl text-lg font-black ${iconClassName}`}>✓</div>
-      <h3 className={`text-xl font-black ${titleClassName}`}>{title}</h3>
-      <p className="mt-3 text-sm leading-7 text-slate-700">{description}</p>
+      <div className="flex items-start gap-3">
+        <div className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-bold ${iconClassName}`}>✓</div>
+        <div>
+          <h3 className={`text-lg font-bold ${titleClassName}`}>{title}</h3>
+          <p className="mt-2 text-sm leading-6 text-slate-600">{description}</p>
+        </div>
+      </div>
     </div>
   )
 }
@@ -108,15 +112,15 @@ export function ContentInfoPanel({
   titleClassName: string
 }) {
   return (
-    <div className={`rounded-[1.8rem] border p-5 shadow-[0_12px_28px_-24px_rgba(15,23,42,0.28)] ${themeClassName}`}>
+    <div className={`border-t border-slate-200 pt-5 ${themeClassName}`}>
       <div className="mb-3 flex items-center gap-3">
         <ContentCheckIcon backgroundClassName={checkBackgroundClassName} />
-        <h3 className={`text-xl font-black ${titleClassName}`}>{title}</h3>
+        <h3 className={`text-lg font-bold ${titleClassName}`}>{title}</h3>
       </div>
-      <ul className="mt-4 space-y-3 text-sm leading-7">
+      <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-600">
         {content.map((item) => (
           <li key={item} className="flex items-start gap-3">
-            <span className="mt-2 h-2.5 w-2.5 rounded-full bg-current" />
+            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-current" />
             <span>{item}</span>
           </li>
         ))}

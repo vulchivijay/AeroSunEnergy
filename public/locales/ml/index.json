@@ -1,10 +1,10 @@
 {
   "subsidyNotice": "Please note: The subsidy is capped at Rs. 78,000 for on-grid rooftop solar systems that are 3 kWp or higher.",
   "tirupatiSeo": {
-    "eyebrow": "Renewable energy in Tirupati, Andhra Pradesh",
-    "title": "Solar and wind energy solutions in Tirupati",
-    "description": "AeroSun Energy is based in Tirupati and helps homes, farms, and businesses explore solar energy solutions in Tirupati, including rooftop, commercial, and agricultural solar options. We also help assess wind energy and solar-wind hybrid concepts; suitability depends on the conditions and requirements at each project site. Contact us to discuss your renewable energy needs in Tirupati.",
-    "contactCta": "Discuss your Tirupati energy project"
+    "eyebrow": "ആന്ധ്രാപ്രദേശിലെ തിരുപ്പതിയിൽ",
+    "title": "തിരുപ്പതിയിൽ സോളാർ, കാറ്റാടി, ഹൈബ്രിഡ് ഊർജം",
+    "description": "തിരുപ്പതിയിലെ വീടുകൾക്കും കൃഷിയിടങ്ങൾക്കും സ്ഥാപനങ്ങൾക്കും സോളാർ, കാറ്റാടി, ഹൈബ്രിഡ് ഊർജ ഓപ്ഷനുകൾ പരിചയപ്പെടാൻ AeroSun Energy സഹായിക്കുന്നു. അനുയോജ്യമായ പരിഹാരം നിങ്ങളുടെ സ്ഥലത്തെയും ഊർജ ആവശ്യങ്ങളെയും ആശ്രയിച്ചിരിക്കുന്നു.",
+    "contactCta": "ഞങ്ങളുടെ ടീമുമായി സംസാരിക്കുക"
   },
   "saveEarthPage": {
     "title": "SAVE EARTH",
@@ -4491,6 +4491,13 @@
         "eyebrow": "A real team, clear details",
         "title": "Know who you’re working with.",
         "description": "Start with the company behind the proposal, a verifiable office address, and direct ways to reach the team.",
+        "residentialServiceDescription": "AeroSun Energy ആന്ധ്രാപ്രദേശിലെ തിരുപ്പതി ജില്ലയിൽ വീടുകൾക്കായി റെസിഡൻഷ്യൽ റൂഫ്‌ടോപ്പ് സോളാർ സംവിധാനങ്ങൾ നൽകുന്നു. തിരുപ്പതിയിലും ചിറ്റൂർ, ശ്രീകാളഹസ്തി, പുത്തൂർ തുടങ്ങിയ സമീപ പ്രദേശങ്ങളിലുമുള്ള വീട്ടുടമകൾക്ക് മേൽക്കൂരയും വൈദ്യുതി ഉപയോഗവും അടിസ്ഥാനമാക്കി എഴുത്തുപരമായ എസ്റ്റിമേറ്റ് അഭ്യർത്ഥിക്കാം. റെസിഡൻഷ്യൽ ക്വോട്ടിൽ GST, ഇൻസ്റ്റാളേഷൻ, മൗണ്ടിംഗ് ഘടന, Polycab അല്ലെങ്കിൽ Finolex വയറിംഗ് എന്നിവ ഉൾപ്പെടും; പ്രത്യേകം വ്യക്തമാക്കിയിട്ടില്ലെങ്കിൽ നെറ്റ് മീറ്ററും അധിക അനുമതികളും ഉൾപ്പെടില്ല. Adani, Waaree, Tata, Renewsolar പാനൽ ഓപ്ഷനുകളും തിരഞ്ഞെടുത്ത സിസ്റ്റത്തിനനുസരിച്ച് Polycab, Waaree, Deye അല്ലെങ്കിൽ X Watt ഇൻവെർട്ടർ ഓപ്ഷനുകളും ലഭ്യമാണ്. വ്യക്തമാക്കിയ പാനൽ വാറന്റി 25 വർഷവും ഇൻവെർട്ടർ വാറന്റി 8 വർഷവുമാണ്; ബാധകമായ നിർമ്മാതൃ നിബന്ധനകൾക്ക് വിധേയമാണ്. റെസിഡൻഷ്യൽ വില 7 ദിവസത്തേക്ക് സാധുവാണ്; വാണിജ്യ പദ്ധതികൾ പ്രത്യേകം വിലയിരുത്തി ക്വോട്ട് ചെയ്യുന്നു.",
+        "serviceFacts": [
+          { "label": "DISCOM", "value": "APSPDCL" },
+          { "label": "ജില്ല", "value": "തിരുപ്പതി" },
+          { "label": "ക്വോട്ട് കാലാവധി", "value": "7 ദിവസം" },
+          { "label": "ഇൻവെർട്ടർ വാറന്റി", "value": "പറഞ്ഞിരിക്കുന്ന 8 വർഷം" }
+        ],
         "legalEntityLabel": "Legal business name",
         "officeLabel": "Office address",
         "phoneLabel": "Call",
@@ -4498,6 +4505,24 @@
         "mapCta": "Open map",
         "identifiersText": "CIN: U35106AP2026PTC128748.",
         "contactCta": "Contact AeroSun Energy"
+      },
+      "whySolar": {
+        "eyebrow": "എന്തുകൊണ്ട് സോളാർ",
+        "title": "തിരുപ്പതിയിൽ സോളാർ തിരഞ്ഞെടുക്കുന്നതിന് മുമ്പ് പരിശോധിക്കേണ്ട കാര്യങ്ങൾ",
+        "cards": [
+          {
+            "title": "നിങ്ങളുടെ വൈദ്യുതി ഉപയോഗത്തിന് അനുസൃതമായ രൂപകൽപ്പന",
+            "description": "പ്രയോജനകരമായ ഒരു സോളാർ നിർദേശം നിങ്ങളുടെ വൈദ്യുതി ബിൽ, മേൽക്കൂരയിലെ സ്ഥലം, പകൽസമയത്തെ വൈദ്യുതി ഉപയോഗം എന്നിവയിൽ നിന്നാണ് തുടങ്ങുന്നത്—എല്ലാവർക്കും ഒരേ പാക്കേജിൽ നിന്നല്ല. തിരുപ്പതിക്കായുള്ള ഞങ്ങളുടെ റെസിഡൻഷ്യൽ ക്വോട്ടിൽ സിസ്റ്റത്തിന്റെ പരിധിയും തിരഞ്ഞെടുത്ത ഉപകരണങ്ങളും രേഖപ്പെടുത്തുന്നതിനാൽ നിങ്ങൾക്ക് അറിവോടെ താരതമ്യം ചെയ്യാം."
+          },
+          {
+            "title": "റെസിഡൻഷ്യൽ സബ്സിഡി മാർഗനിർദേശം",
+            "description": "യോഗ്യരായ റെസിഡൻഷ്യൽ ഉപഭോക്താക്കൾക്ക് ക്വോട്ടേഷൻ സമയത്ത് നിലവിലെ PM Surya Ghar സബ്സിഡിയെക്കുറിച്ച് മാർഗനിർദേശം ചോദിക്കാം. യോഗ്യത, രേഖകൾ, ബാധകമായ തുക എന്നിവ നിർദ്ദിഷ്ട സ്വത്തിനും നിലവിലെ പദ്ധതി നിയമങ്ങൾക്കും അനുസരിച്ച് ഉറപ്പാക്കണം."
+          },
+          {
+            "title": "തീരുമാനിക്കുന്നതിന് മുമ്പ് ജോലിയുടെ പരിധി വ്യക്തമാക്കുക",
+            "description": "GST, ഇൻസ്റ്റാളേഷൻ, മൗണ്ടിംഗ് ഘടന, വയറിംഗ് എന്നിവയിൽ എന്തെല്ലാം ഉൾപ്പെടുന്നുവെന്ന് നിർദേശം വ്യക്തമാക്കണം; നെറ്റ് മീറ്ററിംഗ് അല്ലെങ്കിൽ അധിക അനുമതികൾ ഉൾപ്പെടുത്തിയിട്ടില്ലെങ്കിൽ അവയും പ്രത്യേകം പറയണം. ഇതിലൂടെ പിന്നീട് അപ്രതീക്ഷിത ചെലവുകൾ ഒഴിവാക്കാം."
+          }
+        ]
       },
       "evidence": {
         "eyebrow": "Customer testimonials",
@@ -4649,7 +4674,8 @@
       "quoteRequired": "Quote required",
       "priceOrder": "Ranked by highest listed price",
       "maxListedLabel": "Max listed",
-      "topPriceLabel": "Highest listed"
+      "topPriceLabel": "Highest listed",
+      "moreBrandsAvailable": "ഇനിയും നിരവധി ബ്രാൻഡുകൾ ലഭ്യമാണ്"
     },
     "heroSliderAriaLabel": "Featured renewable energy solutions",
     "heroSlider": [
@@ -5063,26 +5089,10 @@
     ],
     "subsidy": {
       "eyebrow": "Government of India Scheme",
-      "title": "PM Surya Ghar: Muft Bijli Yojana Subsidy",
-      "description": "Central-government subsidy you can claim on your rooftop solar — AeroSun Energy files the entire application for you.",
-      "cards": [
-        {
-          "title": "For Residential Households",
-          "description": "₹ 30,000 per kW up to 2 kW"
-        },
-        {
-          "title": "Additional Capacity",
-          "description": "₹ 18,000 per kW for additional capacity up to 3 kW"
-        },
-        {
-          "title": "Maximum Total Subsidy",
-          "description": "₹ 78,000 for systems larger than 3 kW"
-        },
-        {
-          "title": "For GHS / RWA",
-          "description": "₹ 18,000 per kW for common facilities incl. EV charging, up to 500 kW"
-        }
-      ]
+      "title": "PM Surya Ghar: Muft Bijli Yojana",
+      "description": "ദേശീയ പോർട്ടൽ വഴി അർഹരായ ഗാർഹിക ഉപഭോക്താക്കൾക്ക് കേന്ദ്ര സാമ്പത്തിക സഹായം ലഭ്യമായേക്കാം. വാസസ്ഥലങ്ങളിലെ മേൽക്കൂര സോളാർ ശേഷിക്ക് സഹായം 3 kW വരെ പരിമിതമാണ്; അന്തിമ അർഹതയും തുകയും പദ്ധതി നിബന്ധനകളെയും അപേക്ഷയെയും ആശ്രയിച്ചിരിക്കും.",
+      "portalCta": "ഔദ്യോഗിക പോർട്ടൽ സന്ദർശിക്കുക",
+      "notice": "ശേഷിയെക്കുറിച്ചുള്ള സൂചനാപരമായ മാർഗ്ഗനിർദ്ദേശം മാത്രമാണിത്. സബ്സിഡി നിയമങ്ങൾ, വൈദ്യുതി നിരക്കുകൾ, സാങ്കേതിക സാധ്യത, DISCOM ആവശ്യകതകൾ എന്നിവ മാറാം. പുതിയ വിവരങ്ങൾ ഔദ്യോഗിക പോർട്ടലിൽ സ്ഥിരീകരിക്കുക."
     },
     "wind": {
       "eyebrow": "Wind Energy",
@@ -5473,19 +5483,19 @@
     "capacityTable": {
       "rows": [
         {
-          "usage": "0–150 units",
+          "usage": "0–150 യൂണിറ്റുകൾ",
           "capacity": "1–2 kW",
-          "tag": "Ideal for small homes"
+          "tag": "ചെറിയ വീടുകൾക്ക് അനുയോജ്യം"
         },
         {
-          "usage": "150–300 units",
+          "usage": "150–300 യൂണിറ്റുകൾ",
           "capacity": "2–3 kW",
-          "tag": "Balanced family needs"
+          "tag": "കുടുംബ ഉപയോഗത്തിന് അനുയോജ്യം"
         },
         {
-          "usage": "> 300 units",
-          "capacity": "Above 3 kW",
-          "tag": "High-consumption homes"
+          "usage": "300-ൽ കൂടുതൽ യൂണിറ്റുകൾ",
+          "capacity": "3 kW-ൽ കൂടുതൽ",
+          "tag": "ഉയർന്ന ഉപഭോഗമുള്ള വീടുകൾ"
         }
       ]
     },
@@ -7700,9 +7710,9 @@
     "typicalUse": "Typical use",
     "customerFit": "Customer fit",
     "typicalConfiguration": "Typical configuration",
-    "averageMonthlyUsage": "Average monthly usage",
-    "suitableRooftopCapacity": "Suitable rooftop capacity",
-    "bestFit": "Best fit",
+    "averageMonthlyUsage": "ശരാശരി മാസ ഉപഭോഗം",
+    "suitableRooftopCapacity": "അനുയോജ്യമായ മേൽക്കൂര ശേഷി",
+    "bestFit": "അനുയോജ്യമായ ഉപയോഗം",
     "howItWorks": "How it works",
     "comingSoon": "Coming soon"
   },
@@ -10003,41 +10013,42 @@
     "savingsTitle": "See how much you save with",
     "savingsTitleAccent": "solar",
     "savingsDescription": "A 3 kW rooftop plant in Tirupati typically saves ₹30,000+ a year. Run the numbers for your home below.",
-    "estimateSavings": "Estimate Your Savings",
     "adjustUsage": "Enter your average monthly electricity bill to see your estimated solar plan.",
-    "monthlyUnits": "Monthly Electricity Units",
     "monthlyBill": "Monthly electricity bill",
-    "monthlyBillHelper": "Use your typical bill. Monthly units are estimated using an average tariff of ₹8.5 per unit.",
     "monthlyBillAriaLabel": "Monthly electricity bill in rupees",
     "monthlyBillMinimum": "₹500",
     "monthlyBillMaximum": "₹50,000",
-    "billSuffix": "per month",
     "estimatedMonthlyUsage": "Estimated monthly usage",
-    "heading": "Estimate your solar project with a sharper branded dashboard",
-    "headingAccent": "sharper branded dashboard",
-    "description": "Compare capacity, subsidy, customer pricing, and profit in a layout that follows the same warm, high-contrast visual language used across the AeroSun site.",
-    "liveCalculation": "Live calculation",
-    "subsidyAware": "Subsidy aware",
-    "responsiveLayout": "Responsive layout",
     "recommendedCapacity": "Recommended capacity",
     "profitMargin": "Profit margin",
     "subsidyBand": "Subsidy band",
-    "monthlyUsage": "Monthly electricity usage",
-    "monthlyUsageHelper": "Average consumption from recent bills",
     "installationCost": "Your installation cost",
     "installationCostHelper": "Panels, inverter, wiring, labor, and setup",
     "sellingPrice": "Customer selling price",
     "sellingPriceHelper": "Quoted price shared with the client",
-    "monthlyUnitsAriaLabel": "Monthly electricity usage in units",
-    "monthlyUnitsMinimum": "50 units",
-    "monthlyUnitsMaximum": "4,000 units",
     "unitsSuffix": "units",
     "perKwSuffix": "per kW",
-    "recommendedSystemSuffix": "kW system",
-    "systemSizing": "System sizing",
     "capacityUnit": "kW",
     "squareFootUnit": "sq ft",
     "plantSize": "Plant Size",
+    "calculator": {
+      "homeOption": "വീട്",
+      "commercialOption": "വാണിജ്യം",
+      "billAmount": "ബിൽ തുക",
+      "systemSize": "സിസ്റ്റം ശേഷി",
+      "idealSystemSize": "നിങ്ങൾക്ക് അനുയോജ്യമായ സിസ്റ്റം വലുപ്പം",
+      "averageDailyGeneration": "യൂണിറ്റ്/ദിവസം ശരാശരി",
+      "pricingBreakdown": "വിലയുടെ വിശദാംശങ്ങൾ",
+      "priceBeforeSubsidy": "വില (സബ്സിഡിയും GSTയും ഒഴികെ)",
+      "governmentSubsidy": "സർക്കാർ സബ്സിഡി (PM Surya Ghar)",
+      "effectiveCost": "കണക്കാക്കിയ അന്തിമ ചെലവ്",
+      "taxesExtra": "*നികുതിയും നെറ്റ് മീറ്ററിംഗ് ചാർജും അധികം",
+      "quoteCta": "സൗജന്യ ക്വോട്ട് നേടുക",
+      "monthSuffix": "/മാസം",
+      "residentialSubsidyNote": "യോഗ്യമായ റെസിഡൻഷ്യൽ സിസ്റ്റങ്ങൾക്ക് PM Surya Ghar പ്രകാരം ₹78,000 വരെ സഹായം ലഭിച്ചേക്കാം. അന്തിമ തുക യോഗ്യതയെയും നിലവിലെ പദ്ധതി നിയമങ്ങളെയും ആശ്രയിച്ചിരിക്കും.",
+      "commercialSubsidyNote": "വാണിജ്യ കണക്കുകളിൽ PM Surya Ghar റെസിഡൻഷ്യൽ സബ്സിഡി ഉൾപ്പെടുത്തിയിട്ടില്ല.",
+      "assumptions": "സൂചനാത്മക വില ₹70,000/kW എന്നും മേൽക്കൂര സ്ഥലം 60 ചതുരശ്ര അടി/kW എന്നും കണക്കാക്കുന്നു. ഉൽപ്പാദനം 120 യൂണിറ്റ്/kW/മാസം എന്നും ലാഭം ₹8.5/യൂണിറ്റ് എന്നും കണക്കാക്കുന്നു. യഥാർത്ഥ വിലയും ഉൽപ്പാദനവും സിസ്റ്റത്തിനും സ്ഥലത്തിനും അനുസരിച്ച് മാറും."
+    },
     "roofRequired": "Roof Required",
     "returnsTitle": "Your Estimated Returns",
     "irradianceTariffAssumption": "Indicative estimate using ₹8.5/unit and 120 units per kW each month; actual generation depends on the site.",
@@ -10051,7 +10062,6 @@
     "payback": "Payback",
     "yearsShort": "yrs",
     "yearSuffix": "year",
-    "enquireNow": "Enquire Now",
     "contactUs": "Contact Us",
     "estimatesDisclaimer": "Estimates only. The 25-year projection assumes constant tariff and output; actual savings depend on site conditions, system performance and DISCOM tariff.",
     "freeAssessmentCta": "Get My Free Solar Assessment",
@@ -10076,50 +10086,6 @@
     "whatsAppUnavailable": "WhatsApp contact is unavailable. Please contact AeroSun directly.",
     "openWhatsAppFallback": "WhatsApp did not open? Continue to your report",
     "cancelAssessment": "Cancel",
-    "pleaseFix": "Please fix the validation errors to view the estimate.",
-    "liveOutput": "Live output",
-    "projectedSolarProfile": "Projected solar profile",
-    "pending": "Pending",
-    "recommendedCapacityLabel": "Recommended capacity",
-    "basedOnUsage": "Based on your monthly usage and the current pricing assumptions.",
-    "totalSystemSellingPrice": "Total system selling price",
-    "beforeSubsidy": "Before subsidy deduction",
-    "totalInstallationCost": "Total installation cost",
-    "projectSideCost": "Your project-side cost",
-    "netSubsidyBand": "Net subsidy band",
-    "matchedEstimate": "Matched to your estimate",
-    "subsidyLadder": "Subsidy ladder",
-    "quickPricingBands": "Quick pricing bands",
-    "calculationLogic": "Calculation logic",
-    "whatEstimateIncludes": "What the estimate includes",
-    "nextStep": "Next step",
-    "turnEstimateIntoQuote": "Turn the estimate into a site-ready quote.",
-    "nextStepCopy": "Share the numbers with your customer, or move directly to a project discussion for a tailored system design.",
-    "contactTeam": "Contact the team",
-    "exploreServices": "Explore services",
-    "updateInputs": "Update the inputs to reveal the live estimate.",
-    "formulaNotes": [
-      "Capacity is derived from monthly usage divided by 120 and rounded to the nearest kW.",
-      "Customer payable amount is shown after subsidy, using the selected capacity band.",
-      "Profit compares your selling price against installation cost, not against subsidy."
-    ],
-    "tiers": [
-      {
-        "label": "1 kW",
-        "subsidy": "₹30,000",
-        "note": "Compact homes and starter rooftops"
-      },
-      {
-        "label": "2 kW",
-        "subsidy": "₹60,000",
-        "note": "Balanced demand for family homes"
-      },
-      {
-        "label": "3 kW +",
-        "subsidy": "₹78,000",
-        "note": "Higher-usage homes and business sites"
-      }
-    ],
     "validation": {
       "monthlyBillRequired": "Enter your monthly electricity bill.",
       "monthlyBillMin": "Monthly bill must be at least ₹500.",

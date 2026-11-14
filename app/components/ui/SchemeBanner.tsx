@@ -46,82 +46,75 @@ export default function SchemeBanner() {
   }, [banner.stats, now])
 
   return (
-    <section className="relative overflow-hidden border-b border-emerald-100 bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.15),_transparent_30%),linear-gradient(135deg,#f0fdf4_0%,#ecfeff_28%,#f8fafc_100%)] px-4 py-8 sm:px-6 lg:px-10 lg:py-12">
-      <div className="absolute inset-0 opacity-70">
-        <div className="absolute -left-16 top-10 h-56 w-56 rounded-full bg-emerald-200/40 blur-3xl" />
-        <div className="absolute right-0 top-0 h-72 w-72 rounded-full bg-cyan-200/40 blur-3xl" />
-        <div className="absolute bottom-0 left-1/3 h-40 w-40 rounded-full bg-lime-200/40 blur-3xl" />
-      </div>
+    <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#cffafe] via-[#c7d2fe] to-[#fbcfe8] px-4 py-9 text-[#172554] sm:px-6 sm:py-11 lg:px-10 lg:py-12">
+      <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-32 h-80 w-80 rounded-full bg-white/55 blur-3xl" />
+      <div aria-hidden="true" className="pointer-events-none absolute -bottom-40 left-1/4 h-80 w-80 rounded-full bg-[#ede9fe]/55 blur-3xl" />
 
-      <div className="relative mx-auto max-w-[1400px]">
-        <div className="rounded-[32px] border border-emerald-200/80 bg-white/75 p-5 shadow-[0_30px_80px_-45px_rgba(16,185,129,0.8)] backdrop-blur-sm sm:p-7 lg:p-8">
-          <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-700 sm:text-[12px]">
-                <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
+      <div className="relative mx-auto max-w-7xl">
+        <div className="grid items-center gap-x-10 gap-y-7 lg:grid-cols-[minmax(0,1fr)_auto]">
+          <div className="flex min-w-0 items-start gap-4 sm:gap-6">
+            <span aria-hidden="true" className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/75 text-2xl font-black text-indigo-800 shadow-lg shadow-indigo-950/10 ring-1 ring-indigo-900/10 sm:h-14 sm:w-14 sm:text-3xl">
+              ₹
+            </span>
+            <div className="min-w-0">
+              <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-indigo-900 sm:text-xs">
+                <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-amber-500" />
                 {banner.badge}
               </div>
-
-              <h2 className="mt-6 text-4xl font-black leading-[0.95] tracking-[0.06em] text-slate-900 sm:text-5xl xl:text-[5rem]">
-                {banner.title}
-                <span className="mt-2 block text-emerald-600">{banner.titleAccent}</span>
+              <h2 className="mt-3 text-[26px] font-bold leading-tight tracking-tight text-slate-950 sm:text-3xl lg:text-4xl">
+                {banner.title}{' '}
+                <span className="font-semibold text-indigo-800">{banner.titleAccent}</span>
               </h2>
-
-              <p className="mt-5 max-w-xl text-lg text-slate-700 sm:text-xl">
+              <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-700 sm:text-base sm:leading-7">
                 {banner.description}
               </p>
-
-              <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-amber-200 bg-linear-to-r from-amber-50 via-orange-50 to-rose-50 px-4 py-2.5 shadow-[0_12px_24px_-18px_rgba(245,158,11,0.7)]">
-                <span className="inline-flex h-2.5 w-2.5 rounded-full bg-linear-to-r from-red-500 to-amber-500 shadow-[0_0_0_4px_rgba(251,191,36,0.18)]" />
-                <span className="text-[12px] font-black uppercase tracking-[0.18em] text-amber-700 sm:text-[12px]">
-                  {banner.badgeSuffix}
-                </span>
-              </div>
-
-              <div className="mt-7 flex flex-wrap items-center gap-3">
-                <Link
-                  href="/contact"
-                  className="rounded-full bg-emerald-700 px-5 py-3 text-md font-bold uppercase tracking-[0.14em] text-white shadow-[0_18px_28px_-18px_rgba(5,150,105,0.9)] transition hover:bg-emerald-800"
-                >
-                  {banner.ctaPrimary}
-                </Link>
-                <Link
-                  href="/know-eligibility"
-                  className="rounded-full border border-slate-200 bg-white px-5 py-3 text-md font-bold uppercase tracking-[0.14em] text-slate-700 transition hover:border-emerald-200 hover:text-emerald-700"
-                >
-                  {banner.ctaSecondary}
-                </Link>
-              </div>
             </div>
+          </div>
 
-            <div className="rounded-[28px] border border-emerald-200 bg-linear-to-br from-slate-900 via-slate-800 to-emerald-950 p-5 text-white shadow-[0_28px_60px_-28px_rgba(15,23,42,0.9)]">
-              <div className="flex items-center justify-between gap-3 border-b border-white/10 pb-4">
-                <div>
-                  <div className="text-[12px] font-bold uppercase tracking-[0.22em] text-emerald-200">{banner.cardLabel}</div>
-                  <div className="mt-2 text-4xl font-black tracking-[0.05em] text-white">₹ 78,000</div>
-                </div>
-                <div className="rounded-lg border border-emerald-400/40 bg-emerald-500/10 px-3 py-2 text-right">
-                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-200">{banner.max}</div>
-                  <div className="text-md font-semibold text-white">{banner.perHome}</div>
-                </div>
-              </div>
+          <div className="flex flex-wrap items-center gap-3 pl-16 lg:pl-0">
+            <Link
+              href="/contact"
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-indigo-700 px-5 text-sm font-bold text-white shadow-md shadow-indigo-950/20 transition hover:bg-indigo-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700"
+            >
+              {banner.ctaPrimary}
+            </Link>
+            <Link
+              href="/know-eligibility"
+              className="inline-flex min-h-12 items-center justify-center rounded-full border border-indigo-900/25 bg-white/45 px-5 text-sm font-bold text-slate-800 transition hover:bg-white/75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700"
+            >
+              {banner.ctaSecondary}
+            </Link>
+          </div>
+        </div>
 
-              <p className="mt-4 text-xs leading-5 text-emerald-50/90">{t.subsidyNotice}</p>
-
-              <div className="mt-5 grid grid-cols-3 gap-3">
-                {stats.map((item: { label: string; value: string }) => (
-                  <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 px-2 py-3 text-center">
-                    <div className="text-2xl font-black tracking-[0.06em] text-white sm:text-3xl">{item.value}</div>
-                    <div className="mt-1 text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-100">{item.label}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-5 rounded-2xl border border-emerald-300/30 bg-emerald-400/10 p-4">
-                <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-100">{banner.offerLabel}</div>
-                <div className="mt-2 text-lg text-white">{banner.offerText}</div>
-              </div>
+        <div className="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="rounded-2xl border border-indigo-900/10 bg-white/70 p-4 shadow-sm shadow-indigo-950/5 backdrop-blur-sm">
+            <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-indigo-900">{banner.cardLabel}</div>
+            <div className="mt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1">
+              <span className="text-2xl font-bold text-indigo-800 sm:text-3xl">₹ 78,000</span>
+              <span className="text-sm text-slate-700">{banner.max} {banner.perHome}</span>
             </div>
+          </div>
+
+          <p className="rounded-2xl border border-indigo-900/10 bg-white/70 p-4 text-sm leading-6 text-slate-700 shadow-sm shadow-indigo-950/5 backdrop-blur-sm">
+            {t.subsidyNotice}
+          </p>
+
+          <div className="rounded-2xl border border-indigo-900/10 bg-white/70 p-4 shadow-sm shadow-indigo-950/5 backdrop-blur-sm">
+            <div className="text-[11px] font-bold uppercase tracking-[0.16em] text-indigo-900">{banner.badgeSuffix}</div>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {stats.map((item: { label: string; value: string }) => (
+                <div key={item.label} className="min-w-[4.25rem] rounded-lg bg-indigo-950/5 px-2.5 py-1.5 text-center">
+                  <span className="text-sm font-bold tabular-nums text-slate-900">{item.value}</span>
+                  <span className="ml-1 text-[10px] text-slate-600">{item.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-indigo-900/10 bg-white/70 p-4 shadow-sm shadow-indigo-950/5 backdrop-blur-sm">
+            <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-indigo-900">{banner.offerLabel}</div>
+            <p className="mt-2 text-sm leading-6 text-slate-700">{banner.offerText}</p>
           </div>
         </div>
       </div>

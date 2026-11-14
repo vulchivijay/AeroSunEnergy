@@ -22,9 +22,9 @@ const renderHybridIcon = (colorClass: string) => {
 export function HybridSectionEyebrow({ children }: { children: ReactNode }) {
   return (
     <ContentSectionEyebrow
-      className="border border-emerald-200 bg-[linear-gradient(135deg,#ecfdf5_0%,#f5f3ff_45%,#ffffff_100%)] shadow-[0_14px_26px_-20px_rgba(16,185,129,0.9)]"
-      dotClassName="bg-linear-to-r from-emerald-500 to-violet-500 shadow-[0_0_0_4px_rgba(16,185,129,0.12)]"
-      labelClassName="text-emerald-700"
+      className="py-1"
+      dotClassName="bg-violet-600"
+      labelClassName="text-violet-700"
     >
       {children}
     </ContentSectionEyebrow>
@@ -53,21 +53,36 @@ export function HybridFeatureCard({
       points={points}
       label={ui.hybridSystem}
       icon={renderHybridIcon(componentData.iconColors[accent])}
-      cardClassName="group rounded-4xl border border-slate-200 bg-white p-5 shadow-[0_22px_45px_-28px_rgba(15,23,42,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-28px_rgba(16,185,129,0.3)]"
-      featureClassName={componentData.featureClasses[accent]}
+      cardClassName="group h-full border-t border-slate-300 py-6 transition-colors hover:border-violet-600"
+      featureClassName={componentData.iconColors[accent]}
       titleClassName="tracking-tighter text-slate-900"
-      pointIconClassName="bg-emerald-700 text-white"
+      pointIconClassName="bg-violet-50 text-violet-700"
     />
   )
 }
 
-export function HybridBenefitCard({ title, description }: { title: string; description: string }) {
+export function HybridBenefitCard({
+  title,
+  description,
+  accent = 'violet',
+}: {
+  title: string
+  description: string
+  accent?: 'emerald' | 'sky' | 'violet' | 'amber'
+}) {
+  const borderColors = {
+    emerald: 'border-l-[#b6d9c6]',
+    sky: 'border-l-[#b8d8ec]',
+    violet: 'border-l-[#d0c3e6]',
+    amber: 'border-l-[#efd9ad]',
+  }
+
   return (
     <ContentBenefitCard
       title={title}
       description={description}
-      cardClassName="rounded-[1.7rem] border border-emerald-200 bg-[linear-gradient(135deg,#ffffff_0%,#ecfdf5_100%)] p-5 shadow-[0_18px_32px_-26px_rgba(16,185,129,0.45)]"
-      iconClassName="bg-linear-to-br from-emerald-700 to-teal-700 text-white shadow-lg shadow-emerald-500/20"
+      cardClassName={`rounded-2xl border-l-4 ${borderColors[accent]} bg-[#f0edfa] p-5`}
+      iconClassName="bg-violet-100 text-violet-700"
       titleClassName="tracking-tighter text-slate-900"
     />
   )
@@ -89,7 +104,7 @@ export function HybridInfoPanel({
     <ContentInfoPanel
       title={title}
       content={content}
-      themeClassName={componentData.infoThemes[accent]}
+      themeClassName="bg-transparent text-slate-900"
       checkBackgroundClassName={componentData.checkBackgrounds[accent]}
       titleClassName="tracking-tighter"
     />
@@ -101,15 +116,15 @@ export function HybridTable({ rows }: { rows: { label: string; value: string; us
   const ui = t.ui
 
   return (
-    <div className="overflow-x-auto rounded-[1.9rem] border border-emerald-200 bg-white shadow-[0_20px_34px_-24px_rgba(16,185,129,0.3)] scrollbar-thin [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400">
+    <div className="overflow-x-auto border-y border-slate-300 bg-transparent scrollbar-thin [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-violet-300 [&::-webkit-scrollbar-thumb:hover]:bg-violet-400">
       <div className="min-w-190">
-        <div className="grid border-b border-emerald-100 bg-linear-to-r from-emerald-50 via-white to-sky-50 text-[12px] font-bold uppercase tracking-[0.2em] text-slate-600 md:grid-cols-[1.2fr_2.2fr_1.8fr]">
+        <div className="grid border-b border-slate-200 bg-[#f7f7f1] text-[11px] font-bold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-[1.2fr_2.2fr_1.8fr]">
           <div className="px-4 py-3">{ui.systemType}</div>
           <div className="px-4 py-3">{ui.typicalConfiguration}</div>
           <div className="px-4 py-3">{ui.customerFit}</div>
         </div>
         {rows.map((row) => (
-          <div key={row.label} className="grid gap-3 px-4 py-4 text-sm text-slate-700 md:grid-cols-[1.2fr_2.2fr_1.8fr] md:gap-0">
+          <div key={row.label} className="grid gap-3 border-b border-slate-200 px-4 py-4 text-sm text-slate-600 last:border-b-0 md:grid-cols-[1.2fr_2.2fr_1.8fr] md:gap-0">
             <div className="font-semibold text-slate-900">{row.label}</div>
             <div>{row.value}</div>
             <div>{row.use}</div>
