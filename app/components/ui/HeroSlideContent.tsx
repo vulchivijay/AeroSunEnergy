@@ -22,7 +22,7 @@ export function HeroSlideContent({
       <span className={`mb-4 inline-flex max-w-full whitespace-normal break-words rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.16em] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.04)] sm:text-[12px] sm:tracking-[0.28em] ${slide.badgeClass}`}>
         {slide.badge}
       </span>
-      <h1 className="max-w-2xl break-words text-3xl font-black leading-tight tracking-[0.01em] text-white sm:text-4xl sm:leading-none sm:tracking-[0.06em] lg:text-[4rem]">
+      <h1 className="text-3xl font-black leading-tight tracking-[0.01em] text-white sm:text-4xl sm:leading-none sm:tracking-[0.06em] lg:text-[4rem]">
         {slide.title}
       </h1>
       <p className="mt-4 max-w-xl break-words text-sm leading-6 text-slate-100 sm:text-sm sm:leading-7 lg:text-lg">

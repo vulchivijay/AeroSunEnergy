@@ -39,52 +39,38 @@ function RecognitionHighlight() {
   const recognitions = t.home.recognition
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f9f5] px-4 py-8 sm:px-6 lg:px-10 lg:py-12">
-      <div className='mx-auto max-w-7xl '>
-        <div className="relative overflow-hidden rounded-[38px] border border-[#cfe8d2] bg-[radial-gradient(circle_at_top_left,rgba(13,122,53,0.2),transparent_18%),radial-gradient(circle_at_bottom_right,rgba(183,95,0,0.2),transparent_22%),linear-gradient(135deg,#eaf6ee_0%,#d7ecdf_35%,#fdf1d8_100%)] shadow-[0_32px_90px_-40px_rgba(13,122,53,0.45)]">
-          <div className="absolute -left-16 top-7 h-52 w-52 rounded-full bg-[#20A44A]/50 blur-3xl" aria-hidden="true" />
-          <div className="absolute -right-16 bottom-0 h-60 w-60 rounded-full bg-[#F59E0B]/50 blur-3xl" aria-hidden="true" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(24,37,31,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(24,37,31,0.06)_1px,transparent_1px)] bg-size-[34px_34px]" aria-hidden="true" />
-          <div className="relative z-10 flex flex-col gap-6 p-5 sm:p-6 lg:flex-row lg:items-end lg:justify-between lg:p-8">
-            <div className="max-w-2xl">
-              <p className="inline-flex rounded-full bg-amber-500 text-[12px] font-black uppercase tracking-[0.38em] text-amber-950 py-1 px-2">{t.home.recognitionHeader.badge}</p>
-              <h2 className="mt-3 text-3xl font-black tracking-[0.07em] text-[#18251F] sm:text-4xl">
-                {t.home.recognitionHeader.title}
-              </h2>
-            </div>
-            <div className="inline-flex items-center gap-3 rounded-full border border-[#d9f0df] bg-white/80 px-4 py-2.5 text-[12px] font-black uppercase tracking-[0.28em] text-[#1d5f3f] backdrop-blur-sm">
-              <span className="flex h-2.5 w-2.5 items-center justify-center rounded-full bg-[#20A44A] shadow-[0_0_18px_rgba(32,164,74,0.9)]" />
-              {t.home.recognitionHeader.status}
-            </div>
+    <section className="bg-[#f7f7f2] px-4 py-8 sm:px-6 lg:px-10 lg:py-12">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 overflow-hidden rounded-[30px] border border-[#e2e8e2] bg-white shadow-[0_20px_60px_-40px_rgba(24,37,31,0.3)] lg:grid-cols-[1.05fr_1fr_1fr]">
+          <div className="flex flex-col justify-center bg-[#e1ece3] p-7 sm:p-9 lg:p-11">
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#137c63]">
+              {t.home.recognitionHeader.badge}
+            </p>
+            <h2 className="mt-4 max-w-md text-3xl font-bold leading-tight tracking-tight text-[#152b29] sm:text-4xl">
+              {t.home.recognitionHeader.title}
+            </h2>
+            <p className="mt-4 max-w-lg text-sm leading-6 text-[#597079] sm:text-base sm:leading-7">
+              {t.home.recognitionHeader.description}
+            </p>
           </div>
-          <div className="relative z-10 grid gap-5 p-5 pb-7 sm:p-6 lg:grid-cols-[1.1fr_1.1fr] lg:p-8 lg:pb-10">
-            {recognitions.map((item) => (
-              <div
-                key={item.title}
-                className={`group relative overflow-hidden rounded-[30px] border bg-white/80 p-5 shadow-[0_20px_45px_-30px_rgba(24,37,31,0.35)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_55px_-30px_rgba(24,37,31,0.45)] ${item.ring}`}
-              >
-                <div className={`absolute inset-x-0 top-0 h-1.5 bg-linear-to-r ${item.accent}`} />
-                <div className="flex items-center justify-between gap-3">
-                  <div className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-linear-to-br ${item.accent} text-2xl text-white ${item.glow}`}>
-                    {item.icon}
-                  </div>
-                  <span className={`rounded-full border border-[#e7f4ea] ${item.accent} px-2.5 py-1 text-[12px] font-black uppercase tracking-[0.22em] text-[#18251F]`}>
-                    {item.badge}
-                  </span>
-                </div>
-                <div className="mt-5">
-                  <h3 className="text-2xl font-black tracking-tighter text-[#18251F]">{item.title}</h3>
-                  <p className="mt-1 text-md text-[#335247]">{item.subtitle}</p>
-                </div>
-                <div className="mt-5 rounded-2xl border border-[#e9efe9] bg-[#f8faf8] p-3 text-md leading-6 text-[#234136]">
-                  {item.text}
-                </div>
-              </div>
-            ))}
-          </div>
+          {recognitions.map((item, index) => (
+            <div
+              key={item.title}
+              className="flex min-w-0 flex-col justify-center border-t border-[#e5e9e5] bg-white p-7 sm:p-9 lg:border-l lg:border-t-0 lg:p-11"
+            >
+              <span className={`inline-flex w-fit rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] ${index === 0 ? 'bg-[#eaf2e9] text-[#14785e]' : 'bg-[#fff1dc] text-[#a95600]'}`}>
+                {item.subtitle}
+              </span>
+              <h3 className="mt-6 text-2xl font-semibold leading-tight tracking-tight text-[#152b29] sm:text-[26px]">
+                {item.title}
+              </h3>
+              <p className="mt-3 max-w-lg text-sm leading-6 text-[#597079] sm:text-base sm:leading-7">
+                {item.text}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
-      
     </section>
   )
 }

@@ -4459,20 +4459,21 @@
   },
   "home": {
     "recognitionHeader": {
-      "badge": "Recognition",
-      "title": "Government-backed credibility for a fast-moving clean energy brand",
+      "badge": "சான்றுகள்",
+      "title": "அரசு ஆதரவுடன் கூடிய நிறுவனச் சான்றுகள்.",
+      "description": "திட்டத் தகுதிச் சரிபார்ப்புக்காக AeroSun Energy Private Limited தனது நிறுவனச் சான்றுகளைத் தெளிவாகப் பகிர்கிறது.",
       "status": "Verified credentials"
     },
     "recognition": [
       {
         "title": "Udyam / MSME",
-        "subtitle": "Recognized enterprise",
+        "subtitle": "அங்கீகரிக்கப்பட்ட நிறுவனம்",
         "badge": "Certified",
         "icon": "🏛️",
         "accent": "bg-[#20A44A]/38",
         "glow": "shadow-[0_0_30px_rgba(32,164,74,0.38)]",
         "ring": "border-[#90d2a2]",
-        "text": "Micro, Small & Medium Enterprise recognition supporting growth-ready clean energy operations."
+        "text": "வளர்ச்சிக்குத் தயாரான தூய்மையான ஆற்றல் தீர்வுகளுக்கு ஆதரவளிக்கும் குறு, சிறு மற்றும் நடுத்தர நிறுவன அங்கீகாரம்."
       },
       {
         "title": "DPIIT Startup India",
@@ -4482,7 +4483,7 @@
         "accent": "bg-[#f59e0b]/38",
         "glow": "shadow-[0_0_30px_rgba(245,158,11,0.38)]",
         "ring": "border-[#e6b35d]",
-        "text": "Official startup recognition for innovation-led renewable energy entrepreneurship and expansion."
+        "text": "புதுமை சார்ந்த புதுப்பிக்கத்தக்க ஆற்றல் தொழில்முனைவு மற்றும் விரிவாக்கத்திற்கான அதிகாரப்பூர்வ அங்கீகாரம்."
       }
     ],
     "trustSections": {
