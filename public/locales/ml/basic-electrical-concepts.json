@@ -1,0 +1,1121 @@
+{
+  "basic_electrical_concepts": {
+    "title": "Basic Electrical Concepts",
+    "description": "Learn the fundamental electrical components and concepts essential for DIY wind and solar projects.",
+    "meta": {
+      "title": "Basic Electrical Concepts for DIY Wind and Solar Projects",
+      "description": "Understand key electrical components and concepts to build your own wind and solar energy systems.",
+      "keywords": [
+        "basic electrical concepts",
+        "electrical components",
+        "DIY wind projects",
+        "DIY solar projects"
+      ],
+      "canonical": "https://aerosunenergy.in/basic-electrical-concepts"
+    },
+    "openGraph": {
+      "title": "Basic Electrical Concepts for DIY Wind and Solar Projects",
+      "description": "Understand key electrical components and concepts to build your own wind and solar energy systems.",
+      "image": "https://aerosunenergy.in/images/basic-electrical-concepts.jpg",
+      "url": "https://aerosunenergy.in/basic-electrical-concepts"
+    },
+    "schema": {
+      "@type": "TechArticle",
+      "headline": "Basic Electrical Concepts Explained",
+      "author": "AeroSun Energy",
+      "description": "Learn the fundamental electrical components and concepts essential for DIY wind and solar projects.",
+      "keywords": [
+        "basic electrical concepts",
+        "electrical components",
+        "DIY wind projects",
+        "DIY solar projects"
+      ],
+      "url": "https://aerosunenergy.in/basic-electrical-concepts",
+      "image": "https://aerosunenergy.in/images/basic-electrical-concepts.jpg",
+      "datePublished": "2024-06-01",
+      "dateModified": "2024-06-01",
+      "mainEntityOfPage": "https://aerosunenergy.in/basic-electrical-concepts",
+      "publisher": {
+        "@type": "Organization",
+        "name": "AeroSun Energy",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://aerosunenergy.in/images/logo.png"
+        }
+      }
+    },
+    "components": [
+      {
+        "name": "DC Motor",
+        "category": "Motor",
+        "content": {
+          "purpose": "Converts electrical energy into mechanical motion",
+          "working": "Current flowing through coils creates a magnetic field that rotates the motor shaft",
+          "types": [
+            "Brushed DC Motor",
+            "Brushless DC Motor"
+          ],
+          "applications": [
+            "Fans",
+            "Toys",
+            "Wind generator systems"
+          ],
+          "benefits": [
+            "Simple design",
+            "Low cost",
+            "Easy speed control"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/dc-motor.png"
+      },
+      {
+        "name": "AC Motor",
+        "category": "Motor",
+        "content": {
+          "purpose": "Converts AC electrical energy into mechanical motion",
+          "working": "Uses alternating current to create a rotating magnetic field",
+          "types": [
+            "Induction Motor",
+            "Synchronous Motor"
+          ],
+          "applications": [
+            "Pumps",
+            "Fans",
+            "Industrial machines"
+          ],
+          "benefits": [
+            "Efficient",
+            "Durable",
+            "Low maintenance"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/ac-motor.png"
+      },
+      {
+        "name": "Generator",
+        "category": "Generator",
+        "content": {
+          "purpose": "Converts mechanical energy into electrical energy",
+          "working": "Rotating a coil in a magnetic field induces voltage",
+          "types": [
+            "DC Generator",
+            "AC Generator"
+          ],
+          "applications": [
+            "Wind turbines",
+            "Backup power systems"
+          ],
+          "benefits": [
+            "Energy generation",
+            "Renewable integration"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/generator.png"
+      },
+      {
+        "name": "Battery",
+        "category": "Storage",
+        "content": {
+          "purpose": "Stores electrical energy for later use",
+          "working": "Chemical reactions produce and store electrical energy",
+          "types": [
+            "Lithium-ion",
+            "Lead-acid",
+            "NiMH"
+          ],
+          "applications": [
+            "Solar storage",
+            "Electronics",
+            "Backup systems"
+          ],
+          "benefits": [
+            "Portable energy",
+            "Rechargeable",
+            "Essential for off-grid systems"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/battery.png"
+      },
+      {
+        "name": "LED",
+        "category": "Output",
+        "content": {
+          "purpose": "Produces light when current flows",
+          "working": "Electrons emit photons when passing through semiconductor material",
+          "types": [
+            "Standard LED",
+            "RGB LED",
+            "High-power LED"
+          ],
+          "applications": [
+            "Indicators",
+            "Lighting",
+            "Displays"
+          ],
+          "benefits": [
+            "Energy efficient",
+            "Long lifespan"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/led.png"
+      },
+      {
+        "name": "Resistor",
+        "category": "Passive",
+        "content": {
+          "purpose": "Limits current flow in circuits",
+          "working": "Dissipates electrical energy as heat",
+          "types": [
+            "Carbon film",
+            "Metal film",
+            "Wire wound"
+          ],
+          "applications": [
+            "LED protection",
+            "Voltage division"
+          ],
+          "benefits": [
+            "Prevents damage",
+            "Controls current"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/resistor.png"
+      },
+      {
+        "name": "Capacitor",
+        "category": "Passive",
+        "content": {
+          "purpose": "Stores electrical charge temporarily",
+          "working": "Stores energy in an electric field between plates",
+          "types": [
+            "Electrolytic",
+            "Ceramic",
+            "Film"
+          ],
+          "applications": [
+            "Power smoothing",
+            "Timing circuits"
+          ],
+          "benefits": [
+            "Stabilizes voltage",
+            "Improves circuit performance"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/capacitor.png"
+      },
+      {
+        "name": "Diode",
+        "category": "Control",
+        "content": {
+          "purpose": "Allows current in one direction only",
+          "working": "Uses PN junction to block reverse current",
+          "types": [
+            "Rectifier",
+            "Zener",
+            "Schottky"
+          ],
+          "applications": [
+            "Rectifiers",
+            "Protection circuits"
+          ],
+          "benefits": [
+            "Prevents damage",
+            "Enables AC to DC conversion"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/diode.png"
+      },
+      {
+        "name": "Transistor",
+        "category": "Active",
+        "content": {
+          "purpose": "Acts as a switch or amplifier",
+          "working": "Controls current using a small input signal",
+          "types": [
+            "BJT",
+            "MOSFET"
+          ],
+          "applications": [
+            "Switching circuits",
+            "Amplifiers"
+          ],
+          "benefits": [
+            "High efficiency",
+            "Fast operation"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/transistor.png"
+      },
+      {
+        "name": "Relay",
+        "category": "Control",
+        "content": {
+          "purpose": "Controls high power circuits using low power signals",
+          "working": "Electromagnetic coil switches contacts",
+          "types": [
+            "Electromechanical",
+            "Solid-state"
+          ],
+          "applications": [
+            "Automation",
+            "Switching systems"
+          ],
+          "benefits": [
+            "Electrical isolation",
+            "Safe control"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/relay.png"
+      },
+      {
+        "name": "Solar Panel",
+        "category": "Power",
+        "content": {
+          "purpose": "Converts sunlight into electrical energy",
+          "working": "Photovoltaic cells generate electricity when exposed to sunlight",
+          "types": [
+            "Monocrystalline",
+            "Polycrystalline",
+            "Thin-film"
+          ],
+          "applications": [
+            "Home solar systems",
+            "Charging batteries"
+          ],
+          "benefits": [
+            "Renewable",
+            "Eco-friendly",
+            "Low maintenance"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/solar-panel.png"
+      },
+      {
+        "name": "Solar Charge Controller",
+        "category": "Controller",
+        "content": {
+          "purpose": "Regulates voltage and current from solar panels to batteries",
+          "working": "Prevents overcharging and controls energy flow",
+          "types": [
+            "PWM",
+            "MPPT"
+          ],
+          "applications": [
+            "Solar systems",
+            "Battery protection"
+          ],
+          "benefits": [
+            "Extends battery life",
+            "Improves efficiency"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/solar-charge-controller.png"
+      },
+      {
+        "name": "Voltage Regulator",
+        "category": "Control",
+        "content": {
+          "purpose": "Maintains constant voltage output",
+          "working": "Adjusts output voltage regardless of input variation",
+          "types": [
+            "Linear regulator",
+            "Switching regulator"
+          ],
+          "applications": [
+            "Power supplies",
+            "Electronics circuits"
+          ],
+          "benefits": [
+            "Protects components",
+            "Stable performance"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/voltage-regulator.png"
+      },
+      {
+        "name": "Bridge Rectifier",
+        "category": "Conversion",
+        "content": {
+          "purpose": "Converts AC voltage to DC voltage",
+          "working": "Uses four diodes arranged in a bridge configuration",
+          "types": [
+            "Full bridge",
+            "Half wave"
+          ],
+          "applications": [
+            "Power adapters",
+            "Generators"
+          ],
+          "benefits": [
+            "Efficient conversion",
+            "Reliable output"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/bridge-rectifier.png"
+      },
+      {
+        "name": "Buck Converter",
+        "category": "Conversion",
+        "content": {
+          "purpose": "Reduces DC voltage efficiently",
+          "working": "Uses switching and inductors to step down voltage",
+          "types": [
+            "Synchronous",
+            "Non-synchronous"
+          ],
+          "applications": [
+            "Battery-powered devices",
+            "Power regulation"
+          ],
+          "benefits": [
+            "High efficiency",
+            "Low heat loss"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/buck-converter.png"
+      },
+      {
+        "name": "Boost Converter",
+        "category": "Conversion",
+        "content": {
+          "purpose": "Increases DC voltage",
+          "working": "Stores energy in inductor and releases at higher voltage",
+          "types": [
+            "Basic boost",
+            "Synchronous boost"
+          ],
+          "applications": [
+            "LED drivers",
+            "Battery systems"
+          ],
+          "benefits": [
+            "Efficient voltage increase",
+            "Compact design"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/boost-converter.png"
+      },
+      {
+        "name": "Wind Turbine",
+        "category": "Renewable",
+        "content": {
+          "purpose": "Converts wind energy into electrical energy",
+          "working": "Wind rotates blades connected to generator",
+          "types": [
+            "Horizontal axis",
+            "Vertical axis"
+          ],
+          "applications": [
+            "Renewable energy systems",
+            "Off-grid power"
+          ],
+          "benefits": [
+            "Clean energy",
+            "Sustainable"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/wind-turbine.png"
+      },
+      {
+        "name": "Inverter",
+        "category": "Conversion",
+        "content": {
+          "purpose": "Converts DC into AC",
+          "working": "Switches DC rapidly to simulate AC waveform",
+          "types": [
+            "Pure sine wave",
+            "Modified sine wave"
+          ],
+          "applications": [
+            "Home backup",
+            "Solar systems"
+          ],
+          "benefits": [
+            "Supports AC devices",
+            "Efficient conversion"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/inverter.png"
+      },
+      {
+        "name": "Transformer",
+        "category": "Power",
+        "content": {
+          "purpose": "Changes AC voltage levels",
+          "working": "Uses electromagnetic induction between coils",
+          "types": [
+            "Step-up",
+            "Step-down"
+          ],
+          "applications": [
+            "Power transmission",
+            "Adapters"
+          ],
+          "benefits": [
+            "Efficient voltage conversion"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/transformer.png"
+      },
+      {
+        "name": "Battery Management System (BMS)",
+        "category": "Controller",
+        "content": {
+          "purpose": "Monitors and protects battery systems",
+          "working": "Controls charging, discharging, and temperature",
+          "types": [
+            "Passive BMS",
+            "Active BMS"
+          ],
+          "applications": [
+            "EV batteries",
+            "Solar storage"
+          ],
+          "benefits": [
+            "Improves safety",
+            "Extends battery life"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/battery-management-system-bms.png"
+      },
+      {
+        "name": "Multimeter",
+        "category": "Measurement",
+        "content": {
+          "purpose": "Measures voltage, current, and resistance",
+          "working": "Uses internal circuits to calculate electrical values",
+          "types": [
+            "Digital multimeter",
+            "Analog multimeter"
+          ],
+          "applications": [
+            "Circuit testing",
+            "Battery checking"
+          ],
+          "benefits": [
+            "Accurate readings",
+            "Essential tool"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/multimeter.png"
+      },
+      {
+        "name": "Ammeter",
+        "category": "Measurement",
+        "content": {
+          "purpose": "Measures electric current",
+          "working": "Connected in series to measure flow of current",
+          "types": [
+            "Analog",
+            "Digital"
+          ],
+          "applications": [
+            "Circuit analysis",
+            "Electrical testing"
+          ],
+          "benefits": [
+            "Accurate current monitoring"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/ammeter.png"
+      },
+      {
+        "name": "Voltmeter",
+        "category": "Measurement",
+        "content": {
+          "purpose": "Measures voltage across components",
+          "working": "Connected in parallel to measure potential difference",
+          "types": [
+            "Analog",
+            "Digital"
+          ],
+          "applications": [
+            "Battery testing",
+            "Circuit diagnostics"
+          ],
+          "benefits": [
+            "Precise voltage reading"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/voltmeter.png"
+      },
+      {
+        "name": "Temperature Sensor",
+        "category": "Sensor",
+        "content": {
+          "purpose": "Detects temperature changes",
+          "working": "Changes resistance or voltage based on temperature",
+          "types": [
+            "Thermistor",
+            "LM35",
+            "DS18B20"
+          ],
+          "applications": [
+            "Weather monitoring",
+            "Battery protection"
+          ],
+          "benefits": [
+            "Accurate sensing",
+            "Essential for automation"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/temperature-sensor.png"
+      },
+      {
+        "name": "Light Sensor (LDR)",
+        "category": "Sensor",
+        "content": {
+          "purpose": "Detects light intensity",
+          "working": "Resistance decreases as light increases",
+          "types": [
+            "Photoresistor"
+          ],
+          "applications": [
+            "Street lights",
+            "Automatic lighting"
+          ],
+          "benefits": [
+            "Simple",
+            "Low cost"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/light-sensor-ldr.png"
+      },
+      {
+        "name": "IR Sensor",
+        "category": "Sensor",
+        "content": {
+          "purpose": "Detects objects using infrared light",
+          "working": "Emits IR rays and detects reflection",
+          "types": [
+            "Active IR",
+            "Passive IR"
+          ],
+          "applications": [
+            "Obstacle detection",
+            "Security systems"
+          ],
+          "benefits": [
+            "Non-contact sensing",
+            "Fast response"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/ir-sensor.png"
+      },
+      {
+        "name": "MOSFET",
+        "category": "Active",
+        "content": {
+          "purpose": "Acts as a high-speed electronic switch",
+          "working": "Voltage at gate controls current flow between drain and source",
+          "types": [
+            "N-channel",
+            "P-channel"
+          ],
+          "applications": [
+            "Power supplies",
+            "Motor control"
+          ],
+          "benefits": [
+            "High efficiency",
+            "Fast switching"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/mosfet.png"
+      },
+      {
+        "name": "555 Timer IC",
+        "category": "IC",
+        "content": {
+          "purpose": "Generates timing pulses",
+          "working": "Charges and discharges capacitor to create oscillations",
+          "types": [
+            "Astable",
+            "Monostable",
+            "Bistable"
+          ],
+          "applications": [
+            "Blinking LEDs",
+            "Timers",
+            "PWM circuits"
+          ],
+          "benefits": [
+            "Versatile",
+            "Low cost"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/555-timer-ic.png"
+      },
+      {
+        "name": "Operational Amplifier (Op-Amp)",
+        "category": "IC",
+        "content": {
+          "purpose": "Amplifies electrical signals",
+          "working": "Amplifies difference between input signals",
+          "types": [
+            "Inverting",
+            "Non-inverting"
+          ],
+          "applications": [
+            "Signal processing",
+            "Audio systems"
+          ],
+          "benefits": [
+            "High gain",
+            "Versatile"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/operational-amplifier-op-amp.png"
+      },
+      {
+        "name": "Arduino",
+        "category": "Microcontroller",
+        "content": {
+          "purpose": "Controls and automates electronic systems",
+          "working": "Executes programmed instructions to control devices",
+          "types": [
+            "Arduino Uno",
+            "Arduino Nano"
+          ],
+          "applications": [
+            "Automation",
+            "IoT projects"
+          ],
+          "benefits": [
+            "Easy to learn",
+            "Highly flexible"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/arduino.png"
+      },
+      {
+        "name": "Electrical Wire",
+        "category": "Connection",
+        "content": {
+          "purpose": "Conducts electricity between components",
+          "working": "Allows flow of current through conductive material",
+          "types": [
+            "Solid wire",
+            "Stranded wire"
+          ],
+          "applications": [
+            "Circuit connections",
+            "Power transmission"
+          ],
+          "benefits": [
+            "Flexible",
+            "Efficient conduction"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/electrical-wire.png"
+      },
+      {
+        "name": "Breadboard",
+        "category": "Prototyping",
+        "content": {
+          "purpose": "Temporary circuit building without soldering",
+          "working": "Internal connections allow easy component placement",
+          "types": [
+            "Full-size",
+            "Half-size"
+          ],
+          "applications": [
+            "Testing circuits",
+            "Learning electronics"
+          ],
+          "benefits": [
+            "Reusable",
+            "Easy to modify"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/breadboard.png"
+      },
+      {
+        "name": "Printed Circuit Board (PCB)",
+        "category": "Infrastructure",
+        "content": {
+          "purpose": "Holds and connects electronic components permanently",
+          "working": "Copper tracks conduct electricity between components",
+          "types": [
+            "Single layer",
+            "Double layer",
+            "Multilayer"
+          ],
+          "applications": [
+            "Electronics devices",
+            "Industrial systems"
+          ],
+          "benefits": [
+            "Compact",
+            "Reliable"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/printed-circuit-board-pcb.png"
+      },
+      {
+        "name": "Soldering Iron",
+        "category": "Tool",
+        "content": {
+          "purpose": "Joins components using molten solder",
+          "working": "Heats solder to create permanent connections",
+          "types": [
+            "Basic iron",
+            "Temperature-controlled"
+          ],
+          "applications": [
+            "PCB assembly",
+            "Repairs"
+          ],
+          "benefits": [
+            "Strong connections",
+            "Durable"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/soldering-iron.png"
+      },
+      {
+        "name": "Fuse",
+        "category": "Protection",
+        "content": {
+          "purpose": "Protects circuits from excessive current",
+          "working": "Melts and breaks circuit when current exceeds limit",
+          "types": [
+            "Glass fuse",
+            "Cartridge fuse"
+          ],
+          "applications": [
+            "Power supplies",
+            "Home wiring"
+          ],
+          "benefits": [
+            "Simple",
+            "Reliable protection"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/fuse.png"
+      },
+      {
+        "name": "Circuit Breaker",
+        "category": "Protection",
+        "content": {
+          "purpose": "Automatically disconnects circuit during faults",
+          "working": "Trips when current exceeds safe limit",
+          "types": [
+            "MCB",
+            "MCCB"
+          ],
+          "applications": [
+            "Home wiring",
+            "Industrial systems"
+          ],
+          "benefits": [
+            "Reusable",
+            "Safe operation"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/circuit-breaker.png"
+      },
+      {
+        "name": "Electrical Connector",
+        "category": "Connection",
+        "content": {
+          "purpose": "Connects electrical circuits securely",
+          "working": "Provides removable connection between wires",
+          "types": [
+            "Terminal blocks",
+            "Plug connectors"
+          ],
+          "applications": [
+            "Wiring systems",
+            "Electronics"
+          ],
+          "benefits": [
+            "Easy connection",
+            "Safe disconnection"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/electrical-connector.png"
+      },
+      {
+        "name": "Switch",
+        "category": "Control",
+        "content": {
+          "purpose": "Controls ON/OFF state of circuit",
+          "working": "Opens or closes electrical path",
+          "types": [
+            "Toggle",
+            "Push button",
+            "Rocker"
+          ],
+          "applications": [
+            "Lighting",
+            "Devices"
+          ],
+          "benefits": [
+            "Simple control",
+            "Reliable"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/switch.png"
+      },
+      {
+        "name": "Terminal Block",
+        "category": "Connection",
+        "content": {
+          "purpose": "Connects multiple wires securely",
+          "working": "Uses screws or clamps to hold wires",
+          "types": [
+            "Screw type",
+            "Spring clamp"
+          ],
+          "applications": [
+            "Control panels",
+            "Distribution systems"
+          ],
+          "benefits": [
+            "Organized wiring",
+            "Secure connection"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/terminal-block.png"
+      },
+      {
+        "name": "Heat Shrink Tube",
+        "category": "Protection",
+        "content": {
+          "purpose": "Insulates and protects wires",
+          "working": "Shrinks when heated to form tight insulation",
+          "types": [
+            "Standard",
+            "Adhesive-lined"
+          ],
+          "applications": [
+            "Wire protection",
+            "Cable insulation"
+          ],
+          "benefits": [
+            "Durable",
+            "Water resistant"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/heat-shrink-tube.png"
+      },
+      {
+        "name": "Solar Power System",
+        "category": "System",
+        "content": {
+          "purpose": "Generates and stores electricity from sunlight",
+          "working": "Solar panel → charge controller → battery → inverter → load",
+          "components": [
+            "Solar panel",
+            "Battery",
+            "Charge controller",
+            "Inverter"
+          ],
+          "applications": [
+            "Homes",
+            "Off-grid systems"
+          ],
+          "benefits": [
+            "Renewable energy",
+            "Cost savings"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/solar-power-system.png"
+      },
+      {
+        "name": "Wind Energy System",
+        "category": "System",
+        "content": {
+          "purpose": "Generates electricity using wind",
+          "working": "Wind turbine → generator → rectifier → battery",
+          "components": [
+            "Blades",
+            "Motor/generator",
+            "Rectifier",
+            "Battery"
+          ],
+          "applications": [
+            "Off-grid power",
+            "DIY projects"
+          ],
+          "benefits": [
+            "Clean energy",
+            "Low cost"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/wind-energy-system.png"
+      },
+      {
+        "name": "Hybrid Solar Wind System",
+        "category": "System",
+        "content": {
+          "purpose": "Combines solar and wind for continuous energy",
+          "working": "Solar + wind → controller → battery → load",
+          "components": [
+            "Solar panel",
+            "Wind turbine",
+            "Controller",
+            "Battery"
+          ],
+          "applications": [
+            "Remote areas",
+            "Backup systems"
+          ],
+          "benefits": [
+            "Reliable energy",
+            "Max efficiency"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/hybrid-solar-wind-system.png"
+      },
+      {
+        "name": "LED Circuit DIY",
+        "category": "DIY",
+        "content": {
+          "purpose": "Demonstrates basic circuit design",
+          "working": "Battery → resistor → LED → return path",
+          "components": [
+            "Battery",
+            "Resistor",
+            "LED"
+          ],
+          "applications": [
+            "Learning electronics"
+          ],
+          "benefits": [
+            "Easy to build",
+            "Beginner friendly"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/led-circuit-diy.png"
+      },
+      {
+        "name": "Motor as Generator DIY",
+        "category": "DIY",
+        "content": {
+          "purpose": "Generates electricity using a motor",
+          "working": "Rotating motor shaft produces voltage",
+          "components": [
+            "DC motor",
+            "LED",
+            "Wires"
+          ],
+          "applications": [
+            "Wind energy",
+            "Learning projects"
+          ],
+          "benefits": [
+            "Low cost",
+            "Simple setup"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/motor-as-generator-diy.png"
+      },
+      {
+        "name": "Battery Charging System",
+        "category": "System",
+        "content": {
+          "purpose": "Charges batteries safely",
+          "working": "Power source → controller → battery",
+          "components": [
+            "Power source",
+            "Controller",
+            "Battery"
+          ],
+          "applications": [
+            "Solar systems",
+            "Backup systems"
+          ],
+          "benefits": [
+            "Battery protection",
+            "Efficient charging"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/battery-charging-system.png"
+      },
+      {
+        "name": "DC to AC System",
+        "category": "System",
+        "content": {
+          "purpose": "Converts DC power into AC power",
+          "working": "Battery → inverter → AC output",
+          "components": [
+            "Battery",
+            "Inverter"
+          ],
+          "applications": [
+            "Home appliances"
+          ],
+          "benefits": [
+            "Supports AC loads"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/dc-to-ac-system.png"
+      },
+      {
+        "name": "Energy Storage System",
+        "category": "System",
+        "content": {
+          "purpose": "Stores energy for later use",
+          "working": "Stores excess energy in batteries",
+          "components": [
+            "Battery",
+            "BMS",
+            "Controller"
+          ],
+          "applications": [
+            "Solar",
+            "Wind"
+          ],
+          "benefits": [
+            "Reliable supply",
+            "Energy backup"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/energy-storage-system.png"
+      },
+      {
+        "name": "Off-Grid System",
+        "category": "System",
+        "content": {
+          "purpose": "Provides electricity without grid connection",
+          "working": "Renewable sources → storage → load",
+          "components": [
+            "Solar/wind",
+            "Battery",
+            "Controller"
+          ],
+          "applications": [
+            "Remote areas"
+          ],
+          "benefits": [
+            "Energy independence"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/off-grid-system.png"
+      },
+      {
+        "name": "Home Electrical System",
+        "category": "System",
+        "content": {
+          "purpose": "Distributes electricity safely in homes",
+          "working": "Grid → breaker → wiring → appliances",
+          "components": [
+            "Breaker",
+            "Wires",
+            "Switches"
+          ],
+          "applications": [
+            "Residential buildings"
+          ],
+          "benefits": [
+            "Safe distribution",
+            "Efficient usage"
+          ]
+        },
+        "image": "/images/basic-electrical-concepts/home-electrical-system.png"
+      }
+    ]
+  }
+}

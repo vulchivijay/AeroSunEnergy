@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, type FormEvent } from 'react'
-import { ArrowUpRight, Gift, UsersRound } from 'lucide-react'
+import { ArrowUpRight, Gift } from 'lucide-react'
 import Link from 'next/link'
 import { useLocale } from '@/lib/LocaleContext'
 
@@ -68,74 +68,82 @@ export function ReferralProgramSection() {
       className="relative isolate overflow-hidden bg-[#0B2922] px-4 py-14 text-white sm:px-6 lg:px-10 lg:py-18"
       aria-labelledby="referral-program-title"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_8%_0%,rgba(163,217,119,0.17),transparent_35%),radial-gradient(ellipse_at_94%_100%,rgba(245,199,106,0.12),transparent_32%)]" aria-hidden="true" />
-      <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <div>
-          <p className="text-xs font-black uppercase tracking-[0.24em] text-[#A3D977]">{content.eyebrow}</p>
-          <h2 id="referral-program-title" className="mt-3 max-w-xl text-3xl font-black tracking-tight sm:text-4xl">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 lg:gap-10 xl:grid-cols-[0.82fr_1.18fr] xl:items-center">
+        <div className="min-w-0">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-100 sm:text-xs">
+            {content.eyebrow}
+          </p>
+          <h2 id="referral-program-title" className="mt-5 max-w-2xl text-4xl font-black leading-[1.02] tracking-tight sm:text-5xl lg:text-6xl">
             {content.title}
           </h2>
-          <p className="mt-4 max-w-xl text-sm leading-7 text-emerald-50/75 sm:text-base">
+          <p className="mt-5 max-w-2xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
             {content.description}
           </p>
 
-          <ol className="mt-7 space-y-3">
+          <ol className="mt-8 space-y-3 sm:mt-10">
             {content.steps.map((step, index) => (
-              <li key={step.title} className="flex gap-4 rounded-2xl border border-white/10 bg-white/[0.06] p-4">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#A3D977] text-sm font-black text-[#0B2922]">
-                  {index + 1}
+              <li key={step.title} className="flex gap-4 rounded-2xl bg-white/10 p-4 sm:p-5">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-base font-black text-[#ffbd4a]">
+                  {String(index + 1).padStart(2, '0')}
                 </span>
-                <span>
+                <span className="min-w-0">
                   <span className="block font-bold text-white">{step.title}</span>
-                  <span className="mt-1 block text-sm leading-6 text-emerald-50/70">{step.description}</span>
+                  <span className="mt-1 block text-sm leading-6 text-white/75">{step.description}</span>
                 </span>
               </li>
             ))}
           </ol>
 
-          <div className="mt-5 flex gap-3 rounded-2xl border border-amber-200/20 bg-amber-100/10 p-4">
-            <Gift className="mt-0.5 h-5 w-5 shrink-0 text-amber-200" aria-hidden="true" />
-            <p className="text-sm leading-6 text-amber-50">
-              <span className="font-bold">{content.rewardNoteTitle} </span>
+          <div className="mt-4 flex gap-3 rounded-2xl bg-white/10 p-4">
+            <Gift className="mt-0.5 h-5 w-5 shrink-0 text-[#ffbd4a]" aria-hidden="true" />
+            <p className="text-sm leading-6 text-white/85">
+              <span className="font-bold text-white">{content.rewardNoteTitle} </span>
               {content.rewardNote}
             </p>
           </div>
         </div>
 
-        <div className="rounded-3xl border border-white/10 bg-white p-5 text-slate-900 shadow-[0_30px_90px_-45px_rgba(0,0,0,0.7)] sm:p-7">
-          <div className="flex items-start gap-3">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-900">
-              <UsersRound className="h-5 w-5" aria-hidden="true" />
-            </span>
-            <div>
-              <h3 className="text-xl font-extrabold">{formContent.title}</h3>
-              <p className="mt-1 text-sm leading-6 text-slate-600">{formContent.description}</p>
+        <div className="min-w-0 rounded-[28px] bg-[#f8f7f1] p-5 text-slate-900 shadow-[0_28px_70px_-38px_rgba(0,0,0,0.28)] sm:rounded-[32px] sm:p-7 lg:p-9">
+          <div className="flex items-start justify-between gap-4">
+            <div className="min-w-0">
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#087a61] sm:text-[11px]">
+                {formContent.title}
+              </p>
+              <h3 className="mt-3 text-2xl font-bold leading-tight text-[#122b2a] sm:text-3xl">
+                {formContent.conversationTitle}
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                {formContent.description}
+              </p>
             </div>
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#e8f0e8] text-[#087a61]">
+              <ArrowUpRight className="h-5 w-5" aria-hidden="true" />
+            </span>
           </div>
 
-          <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <label className="block text-sm font-semibold text-slate-800">
+          <form className="mt-6 space-y-5 sm:mt-7" onSubmit={handleSubmit}>
+            <div className="grid grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-2 sm:gap-y-5">
+              <label className="block text-xs font-medium text-slate-600 sm:text-sm">
                 {formContent.referrerNameLabel}
-                <input className={inputClassName} name="referrerName" type="text" autoComplete="name" minLength={2} maxLength={100} required />
+                <input className={inputClassName} name="referrerName" type="text" autoComplete="name" placeholder={formContent.referrerNameLabel} minLength={2} maxLength={100} required />
               </label>
-              <label className="block text-sm font-semibold text-slate-800">
+              <label className="block text-xs font-medium text-slate-600 sm:text-sm">
                 {formContent.referrerPhoneLabel}
-                <input className={inputClassName} name="referrerPhone" type="tel" inputMode="tel" autoComplete="tel" maxLength={16} required />
+                <input className={inputClassName} name="referrerPhone" type="tel" inputMode="tel" autoComplete="tel" placeholder={formContent.referrerPhoneLabel} maxLength={16} required />
               </label>
-              <label className="block text-sm font-semibold text-slate-800">
+              <label className="block text-xs font-medium text-slate-600 sm:text-sm">
                 {formContent.referredNameLabel}
-                <input className={inputClassName} name="referredName" type="text" minLength={2} maxLength={100} required />
+                <input className={inputClassName} name="referredName" type="text" placeholder={formContent.referredNameLabel} minLength={2} maxLength={100} required />
               </label>
-              <label className="block text-sm font-semibold text-slate-800">
+              <label className="block text-xs font-medium text-slate-600 sm:text-sm">
                 {formContent.referredPhoneLabel}
-                <input className={inputClassName} name="referredPhone" type="tel" inputMode="tel" maxLength={16} required />
+                <input className={inputClassName} name="referredPhone" type="tel" inputMode="tel" placeholder={formContent.referredPhoneLabel} maxLength={16} required />
               </label>
-              <label className="block text-sm font-semibold text-slate-800">
+              <label className="block text-xs font-medium text-slate-600 sm:text-sm">
                 {formContent.postalCodeLabel}
-                <input className={inputClassName} name="postalCode" type="text" inputMode="numeric" autoComplete="postal-code" pattern="[0-9]{6}" maxLength={6} required />
+                <input className={inputClassName} name="postalCode" type="text" inputMode="numeric" autoComplete="postal-code" placeholder={formContent.postalCodeLabel} pattern="[0-9]{6}" maxLength={6} required />
               </label>
-              <label className="block text-sm font-semibold text-slate-800">
+              <label className="block text-xs font-medium text-slate-600 sm:text-sm">
                 {formContent.propertyTypeLabel}
                 <select className={inputClassName} name="propertyType" defaultValue="" required>
                   <option value="" disabled>{formContent.propertyTypePlaceholder}</option>
@@ -146,7 +154,7 @@ export function ReferralProgramSection() {
               </label>
             </div>
 
-            <label className="flex cursor-pointer items-start gap-3 rounded-xl bg-slate-50 p-3.5 text-sm leading-6 text-slate-700">
+            <label className="flex cursor-pointer items-start gap-3 text-xs leading-5 text-slate-500 sm:text-sm">
               <input className="mt-1 h-4 w-4 shrink-0 accent-emerald-800" name="consent" type="checkbox" value="true" required />
               <span>{formContent.consent}</span>
             </label>
@@ -172,7 +180,7 @@ export function ReferralProgramSection() {
             )}
 
             <button
-              className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#A3D977] px-5 py-3 text-sm font-extrabold text-[#0B2922] transition hover:bg-[#c7efa4] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0B2922] disabled:cursor-wait disabled:opacity-70"
+              className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#17865e] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#126f4e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#17865e] disabled:cursor-wait disabled:opacity-70"
               type="submit"
               disabled={status === 'submitting'}
             >

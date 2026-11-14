@@ -37,7 +37,7 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
           >
             {t.logo.wordmark}
             <sup
-              className={`absolute right-0 text-[10px] ${compact ? "top-1 text-white" : "top-2 text-black"}`}
+              className={`absolute right-0 text-[10px] text-[#333333] ${compact ? "top-1" : "top-2"}`}
             >
               {t.logo.trademark}
             </sup>
@@ -50,11 +50,11 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
           </span>
         </div>
         <div
-          className={
+          className={`text-[12px] text-[#333333]
             compact
-              ? "whitespace-nowrap text-[12px] text-white"
-              : "whitespace-nowrap text-[12px] text-black"
-          }
+              ? "whitespace-nowrap"
+              : "whitespace-nowrap"
+          `}
         >
           ---- {t.navbar.brandTagline} ----
         </div>

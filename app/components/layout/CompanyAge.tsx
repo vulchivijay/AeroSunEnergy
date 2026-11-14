@@ -83,7 +83,14 @@ export default function CompanyAge() {
 			]
 		: null
 
-	const formatter = new Intl.DateTimeFormat(locale === 'hi' ? 'hi-IN' : locale === 'te' ? 'te-IN' : 'en-US', {
+	const formatter = new Intl.DateTimeFormat({
+		en: 'en-US',
+		hi: 'hi-IN',
+		te: 'te-IN',
+		ta: 'ta-IN',
+		kn: 'kn-IN',
+		ml: 'ml-IN',
+	}[locale], {
 		month: 'long',
 		day: 'numeric',
 		year: 'numeric',

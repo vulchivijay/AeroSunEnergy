@@ -5,21 +5,12 @@ import { useLocale } from '@/lib/LocaleContext'
 
 const brandImages = [
   { file: 'adani-solar.png', name: 'Adani Solar', hue: 160, prices: ['₹21.5–34/Wp'], basis: 'Non-DCR to DCR retail examples.' },
-  { file: 'amara-raja-solar.png', name: 'Amara Raja Solar', hue: 215, prices: [], basis: 'No current public module price verified.' },
-  { file: 'emmvee-solar.png', name: 'Emmvee Solar', hue: 270, prices: ['₹21–22/Wp · DCR', '₹14–15/Wp · non-DCR'], basis: 'Company-reported pricing; bulk/module realization.' },
-  { file: 'goldi-solar.png', name: 'Goldi Solar', hue: 40, prices: ['₹23–28/Wp'], basis: 'Estimated market range; confirm the exact model.' },
   { file: 'havells.png', name: 'Havells', hue: 350, prices: ['₹28–33/Wp'], basis: 'Seller-listed range.' },
-  { file: 'insolation-energy.png', name: 'Insolation Energy', hue: 24, prices: ['₹20–22.5/Wp · DCR', '₹13–14/Wp · non-DCR'], basis: 'Reported module-price signals; bulk basis.' },
-  { file: 'jakson-solar.png', name: 'Jakson Solar', hue: 195, prices: ['≈ ₹26/Wp'], basis: 'Retail listing for a 330 W module.' },
   { file: 'loom-solar.png', name: 'Loom Solar', hue: 82, prices: ['₹18.2/Wp · non-DCR', '₹28.2/Wp · DCR'], basis: 'Retail examples for different models.' },
   { file: 'luminous.png', name: 'Luminous', hue: 245, prices: ['₹21.0/Wp · DCR', '₹24.8/Wp · non-DCR'], basis: 'Listed examples; different models and wattages.' },
-  { file: 'microtek-solar.png', name: 'Microtek Solar', hue: 12, prices: ['₹20.2–22.2/Wp · non-DCR', '≈ ₹24.5/Wp · DCR'], basis: 'Official-store examples plus a distributor price list.' },
-  { file: 'premier-energies.png', name: 'Premier Energies', hue: 285, prices: ['₹23–24/Wp · DCR'], basis: 'Company call cited prevailing retail DCR pricing; bulk pricing may differ.' },
   { file: 'rayzon-solar.png', name: 'Rayzon Solar', hue: 185, prices: ['₹15/Wp · non-DCR', '₹28.2/Wp · DCR'], basis: 'Dealer-listed TOPCon examples.' },
-  { file: 'renew-power.png', name: 'ReNew Power', hue: 135, prices: ['₹24.70/Wp · DCR'], basis: 'ReNew’s listed DCR module price includes GST.' },
   { file: 'renewsys-solar.png', name: 'RenewSys Solar', hue: 46, prices: ['₹25.60/Wp · DCR'], basis: 'Full-truckload price, ex-works plus GST.' },
   { file: 'saatvik-solar.png', name: 'Saatvik Solar', hue: 305, prices: ['₹20–21/Wp · DCR', '₹12–13/Wp · non-DCR'], basis: 'Reported module realizations, not retail quotes.' },
-  { file: 'servotech-power-systems.png', name: 'Servotech', hue: 5, prices: ['≈ ₹25/Wp'], basis: 'Company-stated average; model-specific quote needed.' },
   { file: 'tata-power-solar.png', name: 'Tata Power Solar', hue: 225, prices: ['₹26–32/Wp'], basis: 'Dealer/market listings; varies by model and DCR status.' },
   { file: 'vikram-solar.png', name: 'Vikram Solar', hue: 165, prices: ['₹18.6–30/Wp'], basis: 'Non-DCR to DCR market examples.' },
   { file: 'waaree-energies.png', name: 'Waaree Energies', hue: 29, prices: ['₹17.4/Wp · non-DCR', '₹27.9/Wp · DCR'], basis: 'Official-store examples; listed prices exclude GST.' },
@@ -57,31 +48,33 @@ export default function Brands() {
         aria-hidden="true"
       />
       <div className="relative mx-auto max-w-7xl">
-        <header className="mb-10 grid gap-7 rounded-[2rem] border border-white/10 bg-white/[0.055] p-6 shadow-[0_30px_90px_-50px_rgba(0,0,0,0.8)] backdrop-blur-sm sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end">
-          <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-violet-200/20 bg-violet-300/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.24em] text-violet-100">
-              <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_14px_rgba(110,231,183,0.9)]" aria-hidden="true" />
-              {section.eyebrow}
-            </p>
-            <h2 id="brand-section-title" className="mt-5 max-w-3xl text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl">
-              {section.title}
-            </h2>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300">
-              {section.subtitle}
-            </p>
-            <p className="mt-5 max-w-3xl border-l-2 border-amber-300/70 pl-4 text-sm leading-6 text-slate-300">
-              {section.priceDisclaimer}
+        <header className="mb-7 border-t border-white/15 pt-5 sm:mb-8 sm:pt-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div className="min-w-0">
+              <p className="inline-flex items-center gap-2 rounded-full border border-violet-200/20 bg-violet-300/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.24em] text-violet-100">
+                <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_14px_rgba(110,231,183,0.9)]" aria-hidden="true" />
+                {section.eyebrow}
+              </p>
+              <h2 id="brand-section-title" className="mt-4 max-w-3xl text-2xl font-black tracking-tight text-white sm:text-3xl lg:text-4xl">
+                {section.title}
+              </h2>
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
+                {section.subtitle}
+              </p>
+            </div>
+            <p className="inline-flex w-fit shrink-0 items-center gap-2 rounded-2xl border border-white/10 bg-black/15 px-4 py-3 text-sm font-semibold text-violet-100">
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-violet-300/15 text-violet-200" aria-hidden="true">
+                ↓
+              </span>
+              {section.priceOrder}
             </p>
           </div>
-          <p className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-black/15 px-4 py-3 text-sm font-semibold text-violet-100 lg:mb-1">
-            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-violet-300/15 text-violet-200" aria-hidden="true">
-              ↓
-            </span>
-            {section.priceOrder}
+          <p className="mt-4 max-w-3xl border-l-2 border-amber-300/70 pl-4 text-xs leading-5 text-slate-300 sm:text-sm sm:leading-6">
+            {section.priceDisclaimer}
           </p>
         </header>
 
-        <ul className="flex list-none flex-wrap justify-center gap-2 sm:gap-4 lg:gap-6">
+        <ul className="grid list-none grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
           {sortedBrands.map((brand, index) => {
             const maxPrice = getHighestListedPrice(brand.prices)
             const formattedMaxPrice = maxPrice?.toLocaleString('en-IN', { maximumFractionDigits: 2 })
@@ -89,7 +82,7 @@ export default function Brands() {
             return (
               <li
                 key={brand.file}
-                className="group relative flex h-full flex-[0_0_30%] flex-col overflow-hidden rounded-[1.5rem] border p-3 shadow-[0_22px_55px_-38px_rgba(0,0,0,0.75)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_30px_65px_-38px_rgba(0,0,0,0.85)] sm:flex-[0_0_22%] sm:rounded-[1.75rem] sm:p-4 lg:flex-[0_0_18%] xl:flex-[0_0_15%]"
+                className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-[1.25rem] border p-3 shadow-[0_22px_55px_-38px_rgba(0,0,0,0.75)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_65px_-38px_rgba(0,0,0,0.85)] sm:rounded-[1.5rem] sm:p-4"
                 style={{
                   borderColor: `hsl(${brand.hue} 68% 72%)`,
                   background: `linear-gradient(145deg, hsl(${brand.hue} 82% 95%), #fff 48%, hsl(${brand.hue} 76% 89%))`,
@@ -97,20 +90,7 @@ export default function Brands() {
                 }}
               >
                 <div
-                  className="absolute inset-x-6 top-0 h-1 rounded-b-full"
-                  style={{ backgroundColor: `hsl(${brand.hue} 82% 43%)` }}
-                  aria-hidden="true"
-                />
-                <div className="mb-3 flex h-8 items-center justify-between gap-2">
-                  <span
-                    className="rounded-full border bg-white/75 px-2.5 py-1 text-[10px] font-black tracking-[0.16em] text-slate-700"
-                    style={{ borderColor: `hsl(${brand.hue} 65% 78%)` }}
-                  >
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                </div>
-                <div
-                  className="relative flex h-[100px] items-center justify-center overflow-hidden rounded-2xl border border-white/80 shadow-inner sm:h-[120px] sm:p-2 lg:h-[140px]"
+                  className="relative flex h-24 items-center justify-center overflow-hidden rounded-xl border border-white/80 shadow-inner sm:h-28 sm:p-2"
                   style={{
                     background: `radial-gradient(circle at 50% 0%, white, hsl(${brand.hue} 75% 96%) 78%)`,
                     boxShadow: `inset 0 0 0 1px hsl(${brand.hue} 55% 90%)`,
@@ -126,10 +106,10 @@ export default function Brands() {
                     className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <h3 className="mt-3 flex min-h-12 items-center justify-center text-center text-base font-extrabold leading-5 tracking-tight text-slate-900 sm:text-lg sm:leading-6 sr-only">
+                <h3 className="sr-only">
                   {brand.name}
                 </h3>
-                <div className="mt-2 flex min-h-[4.5rem] flex-col items-center justify-center gap-1">
+                <div className="mt-2 flex min-h-[2.5rem] flex-col items-center justify-center gap-1">
                   {index === 0 && maxPrice !== null && (
                     <span className="rounded-full bg-slate-950 px-2.5 py-1 text-center text-[9px] font-black uppercase leading-3 tracking-[0.12em] text-white shadow-sm">
                       {section.topPriceLabel}
@@ -165,7 +145,7 @@ export default function Brands() {
                     </span>
                   </div>
                 ) : (
-                  <div className="sr-only mt-3 flex min-h-[4.5rem] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white/70 px-2 py-2 text-center text-sm font-bold text-slate-600">
+                  <div className="mt-2 flex min-h-8 items-center justify-center rounded-xl border border-dashed border-slate-300 bg-white/70 px-2 py-1 text-center text-[10px] font-bold text-slate-600">
                     {section.quoteRequired}
                   </div>
                 )}
