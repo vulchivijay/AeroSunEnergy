@@ -17,7 +17,7 @@
     "build": "next build",
     "db:migrate": "node scripts/migrate-database.mjs",
     "google:index-check": "node scripts/submit-indexnow.js",
-    "postbuild": "node scripts/submit-indexnow.js",
+    "postbuild": "node scripts/submit-indexnow.js --non-blocking",
     "start": "next start -H 0.0.0.0",
     "lint": "eslint .",
     "audit:prod": "npm audit --omit=dev"
