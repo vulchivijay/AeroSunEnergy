@@ -12,15 +12,12 @@ function report(label, configured) {
 
 console.log("Production build environment status (values are not printed):");
 console.log("Google integrations:");
+report("_GOOGLE_SITE_VERIFICATION", isConfigured("_GOOGLE_SITE_VERIFICATION"));
 report(
-  "_GOOGLE_SITE_VERIFICATION",
-  isConfigured("_GOOGLE_SITE_VERIFICATION"),
-);
-report(
-  "Google Analytics measurement ID (_NEXT_PUBLIC_GA_MEASUREMENT_ID, NEXT_PUBLIC_GA_STREAM_ID, or GA_MEASUREMENT_ID)",
+  "Google Analytics measurement ID (_NEXT_PUBLIC_GA_MEASUREMENT_ID, _NEXT_PUBLIC_GA_STREAM_ID, or GA_MEASUREMENT_ID)",
   isConfigured(
     "_NEXT_PUBLIC_GA_MEASUREMENT_ID",
-    "NEXT_PUBLIC_GA_STREAM_ID",
+    "_NEXT_PUBLIC_GA_STREAM_ID",
     "GA_MEASUREMENT_ID",
   ),
 );
@@ -28,10 +25,7 @@ report(
   "Google Tag Manager container ID (_NEXT_PUBLIC_GTM_ID or GTM_ID)",
   isConfigured("_NEXT_PUBLIC_GTM_ID", "GTM_ID"),
 );
-report(
-  "BING_SITE_VERIFICATION",
-  isConfigured("BING_SITE_VERIFICATION"),
-);
+report("BING_SITE_VERIFICATION", isConfigured("BING_SITE_VERIFICATION"));
 console.log("AlloyDB application connection:");
 for (const name of [
   "_DB_HOST",

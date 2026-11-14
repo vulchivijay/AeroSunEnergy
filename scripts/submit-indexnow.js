@@ -15,6 +15,22 @@ async function submitIndexNow() {
   }
 
   const key = fs.readFileSync(keyPath, 'utf8').trim();
+  const verificationKeyPath = path.join(__dirname, '../public', `${key}.txt`);
+
+  if (!fs.existsSync(verificationKeyPath)) {
+    return {
+      status: 'failed',
+      details: `Missing IndexNow verification file; publish the key at https://${host}/${key}.txt.`,
+    };
+  }
+
+  if (fs.readFileSync(verificationKeyPath, 'utf8').trim() !== key) {
+    return {
+      status: 'failed',
+      details: `IndexNow verification file must contain the key value: ${verificationKeyPath}`,
+    };
+  }
+
   const payload = {
     host,
     key,
@@ -90,6 +106,7 @@ function printResult(label, result) {
 }
 
 async function main() {
+  const nonBlocking = process.argv.includes('--non-blocking');
   console.log('Post-build SEO checks');
 
   const indexNowResult = await submitIndexNow().catch((error) => ({
@@ -109,7 +126,9 @@ async function main() {
 
   console.log(hasFailure ? 'Build finished with SEO check failures.' : 'Build finished with SEO checks complete.');
 
-  if (hasFailure) {
+  if (hasFailure && nonBlocking) {
+    console.log('SEO check failures are non-blocking for this build.');
+  } else if (hasFailure) {
     process.exitCode = 1;
   }
 }

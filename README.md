@@ -134,7 +134,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 npm run build
 ```
 
-The production build runs as a Next.js server so authentication and form API routes can connect to PostgreSQL on AlloyDB. The `prebuild` step loads `.env` and prints whether Google integration and AlloyDB environment variables are present without displaying their values. Google tracking scripts still require cookie consent. The `postbuild` step automatically submits the sitemap via IndexNow and prints a Google index verification summary.
+The production build runs as a Next.js server so authentication and form API routes can connect to PostgreSQL on AlloyDB. The `prebuild` step loads `.env` and prints whether Google integration and AlloyDB environment variables are present without displaying their values. Google tracking scripts still require cookie consent. The `postbuild` step submits the sitemap via IndexNow and prints a Google index verification summary; external SEO check failures are reported but do not fail an otherwise successful build. IndexNow requires the key to be available at `https://aerosunenergy.in/<key>.txt` with the file contents exactly matching the key. Run `npm run google:index-check` to run the SEO checks in strict mode.
 
 To enable the Google index verification step, set these environment variables before running the build:
 
@@ -143,7 +143,7 @@ GOOGLE_CUSTOM_SEARCH_API_KEY=your_google_api_key
 GOOGLE_CUSTOM_SEARCH_CX=your_programmable_search_engine_id
 ```
 
-GTM and Analytics IDs are read during the build for prerendered pages. Set `_NEXT_PUBLIC_GTM_ID` and either `_NEXT_PUBLIC_GA_MEASUREMENT_ID` or `NEXT_PUBLIC_GA_STREAM_ID` in the build environment (or `.env`) before `npm run build`. The prebuild status output checks for their presence but never prints values.
+GTM and Analytics IDs are read during the build for prerendered pages. Set `_NEXT_PUBLIC_GTM_ID` and either `_NEXT_PUBLIC_GA_MEASUREMENT_ID` or `_NEXT_PUBLIC_GA_STREAM_ID` in the build environment (or `.env`) before `npm run build`. The prebuild status output checks for their presence but never prints values.
 
 You can also run the check directly:
 
@@ -163,6 +163,8 @@ The Next.js server listens on the `PORT` environment variable (8080 by default),
 ### Configure AlloyDB PostgreSQL
 
 Set these server-only PostgreSQL variables on the Cloud Run service. Do not prefix database credentials with `NEXT_PUBLIC_`; store production credentials in Secret Manager.
+
+Cloud Run service environment variables and secrets are available to the running service, not to the Cloud Build buildpack. Therefore, the `prebuild` report may show the database variables as `NOT PRESENT` during deployment; this is expected and does not mean they failed to reach the service. The API reads them when handling requests, so they do not need to be embedded in the build. Updating a service variable or secret creates a new Cloud Run revision.
 
 ```text
 _DB_HOST=ALLOYDB_HOST

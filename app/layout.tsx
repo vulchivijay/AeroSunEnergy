@@ -44,7 +44,7 @@ const orbitron = Orbitron({
 const GTM_ID = process.env._NEXT_PUBLIC_GTM_ID || process.env.GTM_ID;
 const GA_MEASUREMENT_ID =
   process.env._NEXT_PUBLIC_GA_MEASUREMENT_ID ||
-  process.env.NEXT_PUBLIC_GA_STREAM_ID ||
+  process.env._NEXT_PUBLIC_GA_STREAM_ID ||
   process.env.GA_MEASUREMENT_ID;
 const _GOOGLE_SITE_VERIFICATION =
   process.env._GOOGLE_SITE_VERIFICATION || undefined;
