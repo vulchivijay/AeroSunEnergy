@@ -24,7 +24,7 @@ export default function PageLoader() {
         </div>
 
         <div className="page-loader-track relative h-1.5 overflow-hidden rounded-full bg-slate-200/80 ">
-          <div className="page-loader-progress absolute inset-y-0 left-0 w-1/3 rounded-full bg-linear-to-r from-[#20A44A] via-[#34d399] to-[#f59e0b]" />
+          <div className="page-loader-progress absolute inset-y-0 left-0 w-1/3 rounded-full bg-linear-to-r from-[#FF9933] via-white to-[#138808]" />
         </div>
       </div>
     </div>
