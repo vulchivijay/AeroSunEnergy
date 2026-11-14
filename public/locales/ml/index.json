@@ -4674,7 +4674,8 @@
       "quoteRequired": "Quote required",
       "priceOrder": "Ranked by highest listed price",
       "maxListedLabel": "Max listed",
-      "topPriceLabel": "Highest listed"
+      "topPriceLabel": "Highest listed",
+      "moreBrandsAvailable": "ഇനിയും നിരവധി ബ്രാൻഡുകൾ ലഭ്യമാണ്"
     },
     "heroSliderAriaLabel": "Featured renewable energy solutions",
     "heroSlider": [
@@ -10030,6 +10031,24 @@
     "capacityUnit": "kW",
     "squareFootUnit": "sq ft",
     "plantSize": "Plant Size",
+    "calculator": {
+      "homeOption": "വീട്",
+      "commercialOption": "വാണിജ്യം",
+      "billAmount": "ബിൽ തുക",
+      "systemSize": "സിസ്റ്റം ശേഷി",
+      "idealSystemSize": "നിങ്ങൾക്ക് അനുയോജ്യമായ സിസ്റ്റം വലുപ്പം",
+      "averageDailyGeneration": "യൂണിറ്റ്/ദിവസം ശരാശരി",
+      "pricingBreakdown": "വിലയുടെ വിശദാംശങ്ങൾ",
+      "priceBeforeSubsidy": "വില (സബ്സിഡിയും GSTയും ഒഴികെ)",
+      "governmentSubsidy": "സർക്കാർ സബ്സിഡി (PM Surya Ghar)",
+      "effectiveCost": "കണക്കാക്കിയ അന്തിമ ചെലവ്",
+      "taxesExtra": "*നികുതിയും നെറ്റ് മീറ്ററിംഗ് ചാർജും അധികം",
+      "quoteCta": "സൗജന്യ ക്വോട്ട് നേടുക",
+      "monthSuffix": "/മാസം",
+      "residentialSubsidyNote": "യോഗ്യമായ റെസിഡൻഷ്യൽ സിസ്റ്റങ്ങൾക്ക് PM Surya Ghar പ്രകാരം ₹78,000 വരെ സഹായം ലഭിച്ചേക്കാം. അന്തിമ തുക യോഗ്യതയെയും നിലവിലെ പദ്ധതി നിയമങ്ങളെയും ആശ്രയിച്ചിരിക്കും.",
+      "commercialSubsidyNote": "വാണിജ്യ കണക്കുകളിൽ PM Surya Ghar റെസിഡൻഷ്യൽ സബ്സിഡി ഉൾപ്പെടുത്തിയിട്ടില്ല.",
+      "assumptions": "സൂചനാത്മക വില ₹70,000/kW എന്നും മേൽക്കൂര സ്ഥലം 60 ചതുരശ്ര അടി/kW എന്നും കണക്കാക്കുന്നു. ഉൽപ്പാദനം 120 യൂണിറ്റ്/kW/മാസം എന്നും ലാഭം ₹8.5/യൂണിറ്റ് എന്നും കണക്കാക്കുന്നു. യഥാർത്ഥ വിലയും ഉൽപ്പാദനവും സിസ്റ്റത്തിനും സ്ഥലത്തിനും അനുസരിച്ച് മാറും."
+    },
     "roofRequired": "Roof Required",
     "returnsTitle": "Your Estimated Returns",
     "irradianceTariffAssumption": "Indicative estimate using ₹8.5/unit and 120 units per kW each month; actual generation depends on the site.",

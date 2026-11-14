@@ -4674,7 +4674,8 @@
       "quoteRequired": "Quote required",
       "priceOrder": "Ranked by highest listed price",
       "maxListedLabel": "Max listed",
-      "topPriceLabel": "Highest listed"
+      "topPriceLabel": "Highest listed",
+      "moreBrandsAvailable": "இன்னும் பல பிராண்டுகள் கிடைக்கின்றன"
     },
     "heroSliderAriaLabel": "Featured renewable energy solutions",
     "heroSlider": [
@@ -10030,6 +10031,24 @@
     "capacityUnit": "kW",
     "squareFootUnit": "sq ft",
     "plantSize": "Plant Size",
+    "calculator": {
+      "homeOption": "வீடு",
+      "commercialOption": "வணிகம்",
+      "billAmount": "மின் கட்டணத் தொகை",
+      "systemSize": "அமைப்பின் திறன்",
+      "idealSystemSize": "உங்களுக்கு ஏற்ற அமைப்பின் திறன்",
+      "averageDailyGeneration": "யூனிட்கள்/நாள் சராசரி",
+      "pricingBreakdown": "விலை விவரம்",
+      "priceBeforeSubsidy": "விலை (மானியம் மற்றும் GST தவிர்த்து)",
+      "governmentSubsidy": "அரசு மானியம் (PM Surya Ghar)",
+      "effectiveCost": "மதிப்பிடப்பட்ட இறுதிச் செலவு",
+      "taxesExtra": "*வரிகள் மற்றும் நெட் மீட்டர் கட்டணம் கூடுதல்",
+      "quoteCta": "இலவச விலைமதிப்பீடு பெறுங்கள்",
+      "monthSuffix": "/மாதம்",
+      "residentialSubsidyNote": "தகுதியுள்ள குடியிருப்பு அமைப்புகளுக்கு PM Surya Ghar திட்டத்தின் கீழ் ₹78,000 வரை உதவி கிடைக்கலாம். இறுதித் தொகை தகுதி மற்றும் தற்போதைய திட்ட விதிகளைப் பொறுத்தது.",
+      "commercialSubsidyNote": "வணிக மதிப்பீடுகளில் PM Surya Ghar குடியிருப்பு மானியம் சேர்க்கப்படாது.",
+      "assumptions": "குறிப்புக்கான விலை ₹70,000/kW என்றும், கூரை இடம் 60 சதுர அடி/kW என்றும் கணக்கிடப்படுகிறது. உற்பத்தி மதிப்பீடு 120 யூனிட்கள்/kW/மாதம் என்றும், சேமிப்பு ₹8.5/யூனிட் என்றும் கருதுகிறது. உண்மையான விலையும் உற்பத்தியும் அமைப்பு மற்றும் தளத்தைப் பொறுத்து மாறும்."
+    },
     "roofRequired": "Roof Required",
     "returnsTitle": "Your Estimated Returns",
     "irradianceTariffAssumption": "Indicative estimate using ₹8.5/unit and 120 units per kW each month; actual generation depends on the site.",

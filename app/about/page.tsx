@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { motion } from '@/lib/motion'
 import { OptimizedImage } from '@/app/components/ui'
+import About from '@/app/components/sections/About'
 import { useLocale } from '@/lib/LocaleContext'
 
 export default function AboutPage() {
@@ -431,6 +432,7 @@ export default function AboutPage() {
           </article>
         </div>
       </section>
+      <About />
     </main>
   )
 }

@@ -4662,7 +4662,8 @@
       "quoteRequired": "Quote required",
       "priceOrder": "Ranked by highest listed price",
       "maxListedLabel": "Max listed",
-      "topPriceLabel": "Highest listed"
+      "topPriceLabel": "Highest listed",
+      "moreBrandsAvailable": "Many more brands available"
     },
     "heroSliderAriaLabel": "Featured renewable energy solutions",
     "heroSlider": [
@@ -10018,6 +10019,24 @@
     "capacityUnit": "kW",
     "squareFootUnit": "sq ft",
     "plantSize": "Plant Size",
+    "calculator": {
+      "homeOption": "Home",
+      "commercialOption": "Commercial",
+      "billAmount": "Bill Amount",
+      "systemSize": "System Size",
+      "idealSystemSize": "Your ideal system size",
+      "averageDailyGeneration": "units/day avg",
+      "pricingBreakdown": "Pricing breakdown",
+      "priceBeforeSubsidy": "Price (Excl. Subsidy & GST)",
+      "governmentSubsidy": "Govt Subsidy (PM Surya Ghar)",
+      "effectiveCost": "Effective cost",
+      "taxesExtra": "*Taxes + net-metering extra",
+      "quoteCta": "Get Free Quote",
+      "monthSuffix": "/month",
+      "residentialSubsidyNote": "Eligible residential systems may receive up to ₹78,000 under PM Surya Ghar. Final support depends on eligibility and current scheme rules.",
+      "commercialSubsidyNote": "The PM Surya Ghar residential subsidy is not included for commercial estimates.",
+      "assumptions": "Indicative price uses ₹70,000/kW; roof space uses 60 sq ft/kW. Generation assumes 120 units/kW/month and savings use ₹8.5 per unit. Actual prices and output vary by system and site."
+    },
     "roofRequired": "Roof Required",
     "returnsTitle": "Your Estimated Returns",
     "irradianceTariffAssumption": "Indicative estimate using ₹8.5/unit and 120 units per kW each month; actual generation depends on the site.",

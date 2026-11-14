@@ -1,44 +1,30 @@
 'use client'
 
-import { useEffect, useId, useState, type FormEvent } from 'react'
-import Link from 'next/link'
-import { z } from 'zod'
-import { useForm, useWatch, type UseFormRegisterReturn } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { Card, CardContent } from '@/app/components/ui/Card'
-import { useLocale } from '@/lib/LocaleContext'
+import { useId, useState, type FormEvent } from 'react'
+import { Calculator, Landmark, Tag, type LucideIcon } from 'lucide-react'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
+import { useLocale } from '@/lib/LocaleContext'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 
-type FormData = {
-  monthlyBill: number
-  installationCostPerKw: number
-  sellingPricePerKw: number
-}
+type InputMode = 'bill' | 'systemSize'
 
 type Calculation = {
   recommendedKw: number
+  monthlyUnits: number
   annualGeneration: number
+  dailyGeneration: number
+  annualSavings: number
+  roofArea: number
+  totalPrice: number
   subsidy: number
-  totalInstallationCost: number
-  totalSellingPrice: number
-  customerPayable: number
-  profit: number
-  commission: number
-  profitMargin: number
-  profitStatus: 'Low' | 'Average' | 'Excellent'
-  profitTone: string
-  badgeTone: string
+  effectiveCost: number
 }
 
-function LeadSummary({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex items-start justify-between gap-4 border-b border-white/10 pb-2 text-sm last:border-b-0 last:pb-0">
-      <span className="text-emerald-100/75">{label}</span>
-      <span className="text-right font-bold text-white">{value}</span>
-    </div>
-  )
-}
+const AVERAGE_TARIFF_PER_UNIT = 8.5
+const MONTHLY_GENERATION_PER_KW = 120
+const ROOF_AREA_PER_KW = 60
+const ESTIMATED_PRICE_PER_KW = 70000
+const SAVINGS_ESTIMATE_YEARS = 25
 
 const currencyFormatter = new Intl.NumberFormat('en-IN', {
   style: 'currency',
@@ -47,151 +33,106 @@ const currencyFormatter = new Intl.NumberFormat('en-IN', {
   currencyDisplay: 'narrowSymbol',
 })
 
-const AVERAGE_TARIFF_PER_UNIT = 8.5
-const MONTHLY_GENERATION_PER_KW = 120
-const ROOF_AREA_PER_KW = 60
-const SAVINGS_ESTIMATE_YEARS = 25
-
 const formatCurrency = (amount: number) =>
   currencyFormatter.format(amount).replace('₹', '₹ ')
 
+const clamp = (value: number, min: number, max: number) =>
+  Math.min(max, Math.max(min, value))
+
+function LeadSummary({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex items-start justify-between gap-4 border-b border-white/10 pb-2 text-sm last:border-b-0 last:pb-0">
+      <span className="text-blue-100/75">{label}</span>
+      <span className="text-right font-bold text-white">{value}</span>
+    </div>
+  )
+}
+
+function PriceItem({
+  icon: Icon,
+  label,
+  value,
+  valueClassName,
+}: {
+  icon: LucideIcon
+  label: string
+  value: string
+  valueClassName: string
+}) {
+  return (
+    <div className="min-w-0 text-center">
+      <Icon className="mx-auto h-5 w-5 text-slate-400" aria-hidden="true" />
+      <p className="mt-2 text-xs leading-5 text-slate-500">{label}</p>
+      <p className={`mt-1 whitespace-nowrap text-lg font-extrabold tracking-tight sm:text-xl ${valueClassName}`}>
+        {value}
+      </p>
+    </div>
+  )
+}
+
 export function SolarEstimation() {
   const { t } = useLocale()
+  const e = t.estimation
+  const calculatorText = e.calculator
+  const defaultValues = t.componentData.solarEstimation.defaultValues
+  const initialSystemSize = Math.max(
+    1,
+    Math.ceil(defaultValues.monthlyBill / AVERAGE_TARIFF_PER_UNIT / MONTHLY_GENERATION_PER_KW),
+  )
   const monthlyBillInputId = useId()
+  const systemSizeInputId = useId()
   const leadFormId = useId()
   const leadNameInputId = useId()
   const leadPhoneInputId = useId()
   const leadPinInputId = useId()
   const leadPropertyTypeInputId = useId()
+  const [inputMode, setInputMode] = useState<InputMode>('bill')
+  const [monthlyBillInput, setMonthlyBillInput] = useState(String(defaultValues.monthlyBill))
+  const [systemSizeInput, setSystemSizeInput] = useState(String(initialSystemSize))
+  const [selectedPropertyIndex, setSelectedPropertyIndex] = useState(0)
   const [showLeadForm, setShowLeadForm] = useState(false)
   const [whatsAppFallbackUrl, setWhatsAppFallbackUrl] = useState<string | null>(null)
   const [leadFormError, setLeadFormError] = useState('')
   const [leadFormReference, setLeadFormReference] = useState('')
   const [leadFormPending, setLeadFormPending] = useState(false)
-  const e = t.estimation
-  const defaultValues: FormData = t.componentData.solarEstimation.defaultValues
-  const validation = e.validation
-  const solarCalculatorSchema = z
-    .object({
-      monthlyBill: z
-        .number({ error: validation.monthlyBillRequired })
-        .min(500, validation.monthlyBillMin)
-        .max(50000, validation.monthlyBillMax),
-      installationCostPerKw: z
-        .number()
-        .min(10000, validation.installationMin)
-        .max(100000, validation.installationMax),
-      sellingPricePerKw: z
-        .number()
-        .min(10000, validation.sellingMin)
-        .max(200000, validation.sellingMax),
-    })
-    .refine((data) => data.sellingPricePerKw >= data.installationCostPerKw, {
-      path: ['sellingPricePerKw'],
-      message: validation.sellingGreaterThanCost,
-    })
-  const isProduction = process.env.NODE_ENV === 'production'
 
-  const {
-    register,
-    control,
-    setValue,
-    formState: { errors },
-  } = useForm<FormData>({
-    resolver: zodResolver(solarCalculatorSchema),
-    mode: 'onChange',
-    defaultValues,
-  })
-
-  const values = useWatch({ control, defaultValue: defaultValues })
-  const monthlyBill = Number(values.monthlyBill ?? defaultValues.monthlyBill)
-  const monthlyUnits = Math.round(monthlyBill / AVERAGE_TARIFF_PER_UNIT)
-  const installationCostPerKw = Number(values.installationCostPerKw ?? defaultValues.installationCostPerKw)
-  const sellingPricePerKw = Number(values.sellingPricePerKw ?? defaultValues.sellingPricePerKw)
-
-  const recommendedKw = Math.max(1, Math.round(monthlyUnits / MONTHLY_GENERATION_PER_KW))
-  const expectedInstallationCostPerKw = Math.round(54300 + Math.max(0, recommendedKw - 1) * 1800)
-  const expectedSellingPricePerKw = Math.round(65000 + Math.max(0, recommendedKw - 1) * 2200)
-
-  useEffect(() => {
-    const installationNeedsSync = Math.abs(installationCostPerKw - expectedInstallationCostPerKw) > 0
-    const sellingNeedsSync = Math.abs(sellingPricePerKw - expectedSellingPricePerKw) > 0
-
-    if (installationNeedsSync) {
-      setValue('installationCostPerKw', expectedInstallationCostPerKw, { shouldValidate: true, shouldDirty: true })
-    }
-
-    if (sellingNeedsSync) {
-      setValue('sellingPricePerKw', expectedSellingPricePerKw, { shouldValidate: true, shouldDirty: true })
-    }
-  }, [monthlyUnits, installationCostPerKw, sellingPricePerKw, expectedInstallationCostPerKw, expectedSellingPricePerKw, setValue])
-
-  const calculation: Calculation = (() => {
-    let subsidy = 0
-    if (recommendedKw === 1) {
-      subsidy = 30000
-    } else if (recommendedKw === 2) {
-      subsidy = 60000
-    } else {
-      subsidy = 78000
-    }
-
-    const totalInstallationCost = recommendedKw * installationCostPerKw
-    const totalSellingPrice = recommendedKw * sellingPricePerKw
-    const customerPayable = Math.max(0, totalSellingPrice - subsidy)
-
-    const annualGeneration = recommendedKw * MONTHLY_GENERATION_PER_KW * 12
-    const annualSavings = Math.min(monthlyBill * 12, annualGeneration * AVERAGE_TARIFF_PER_UNIT)
-    const profit = annualSavings
-    const commission = totalInstallationCost * 0.1
-    const profitMargin = (annualSavings / Math.max(1, customerPayable)) * 100
-
-    let profitStatus: Calculation['profitStatus'] = 'Low'
-    let profitTone = 'text-rose-700 '
-    let badgeTone = 'bg-rose-500/10 text-rose-700 ring-rose-500/20 '
-
-    if (profitMargin >= 20) {
-      profitStatus = 'Excellent'
-      profitTone = 'text-emerald-700 '
-      badgeTone = 'bg-emerald-500/10 text-emerald-700 ring-emerald-500/20 '
-    } else if (profitMargin >= 10) {
-      profitStatus = 'Average'
-      profitTone = 'text-amber-700 '
-      badgeTone = 'bg-amber-500/10 text-amber-700 ring-amber-500/20 '
-    }
-
-    return {
-      recommendedKw,
-      annualGeneration,
-      subsidy,
-      totalInstallationCost,
-      totalSellingPrice,
-      customerPayable,
-      profit,
-      commission,
-      profitMargin,
-      profitStatus,
-      profitTone,
-      badgeTone,
-    }
-  })()
-  const summaryStats = [
-    {
-      label: e.recommendedCapacity,
-      value: `${calculation.recommendedKw} kW`,
-    },
-    {
-      label: e.profitMargin,
-      value: `${calculation.profitMargin.toFixed(1)}%`,
-    },
-    {
-      label: e.subsidyBand,
-      value: calculation.subsidy >= 78000 ? '3 kW +' : `${calculation.recommendedKw} kW`,
-    },
-  ].map((stat, index) => ({
-    ...stat,
-    accent: t.componentData.solarEstimation.summaryStatAccents[index],
-  }))
+  const billAmount = clamp(Number(monthlyBillInput) || 500, 500, 50000)
+  const monthlyUnitsFromBill = Math.round(billAmount / AVERAGE_TARIFF_PER_UNIT)
+  const selectedSystemSize = clamp(Math.round(Number(systemSizeInput) || 1), 1, 50)
+  const recommendedKw =
+    inputMode === 'bill'
+      ? Math.max(1, Math.ceil(monthlyUnitsFromBill / MONTHLY_GENERATION_PER_KW))
+      : selectedSystemSize
+  const monthlyUnits =
+    inputMode === 'bill'
+      ? monthlyUnitsFromBill
+      : recommendedKw * MONTHLY_GENERATION_PER_KW
+  const monthlyBill =
+    inputMode === 'bill'
+      ? billAmount
+      : Math.round(monthlyUnits * AVERAGE_TARIFF_PER_UNIT)
+  const annualGeneration = recommendedKw * MONTHLY_GENERATION_PER_KW * 12
+  const annualSavings = Math.min(
+    monthlyBill * 12,
+    annualGeneration * AVERAGE_TARIFF_PER_UNIT,
+  )
+  const subsidy =
+    selectedPropertyIndex === 0
+      ? recommendedKw >= 3
+        ? 78000
+        : recommendedKw * 30000
+      : 0
+  const calculation: Calculation = {
+    recommendedKw,
+    monthlyUnits,
+    annualGeneration,
+    dailyGeneration: Math.round(annualGeneration / 365),
+    annualSavings,
+    roofArea: recommendedKw * ROOF_AREA_PER_KW,
+    totalPrice: recommendedKw * ESTIMATED_PRICE_PER_KW,
+    subsidy,
+    effectiveCost: Math.max(0, recommendedKw * ESTIMATED_PRICE_PER_KW - subsidy),
+  }
 
   async function handleLeadFormSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -199,9 +140,13 @@ export function SolarEstimation() {
     const name = String(formData.get('name') ?? '').trim()
     const phone = String(formData.get('phone') ?? '').trim()
     const pinCode = String(formData.get('pinCode') ?? '').trim()
-    const propertyType = String(formData.get('propertyType') ?? '')
+    const submittedPropertyIndex = Number(formData.get('propertyType'))
+    const propertyType =
+      e.propertyTypeOptions[submittedPropertyIndex] ??
+      e.propertyTypeOptions[selectedPropertyIndex] ??
+      calculatorText.homeOption
     const whatsAppNumber = t.footer.phoneHref.replace(/\D/g, '')
-    const roofArea = Math.max(60, calculation.recommendedKw * ROOF_AREA_PER_KW)
+    const twentyFiveYearSavings = calculation.annualSavings * SAVINGS_ESTIMATE_YEARS
 
     if (!whatsAppNumber) {
       setLeadFormError(e.whatsAppUnavailable)
@@ -221,9 +166,10 @@ export function SolarEstimation() {
       `${e.monthlyBill}: ${formatCurrency(monthlyBill)}`,
       `${e.recommendedCapacity}: ${calculation.recommendedKw} ${e.capacityUnit}`,
       `${e.annualGeneration}: ${calculation.annualGeneration.toLocaleString('en-IN')} ${e.generationUnit}`,
-      `${e.annualSavings}: ${formatCurrency(calculation.profit)}`,
-      `${e.twentyFiveYearSavings}: ${formatCurrency(calculation.profit * SAVINGS_ESTIMATE_YEARS)}`,
-      `${e.roofRequired}: ${roofArea} ${e.squareFootUnit}`,
+      `${e.annualSavings}: ${formatCurrency(calculation.annualSavings)}`,
+      `${e.twentyFiveYearSavings}: ${formatCurrency(twentyFiveYearSavings)}`,
+      `${e.roofRequired}: ${calculation.roofArea} ${e.squareFootUnit}`,
+      `${calculatorText.effectiveCost}: ${formatCurrency(calculation.effectiveCost)}`,
     ].join('\n')
     const url = `https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(message)}`
     const whatsAppWindow = window.open('about:blank', '_blank')
@@ -237,9 +183,9 @@ export function SolarEstimation() {
         monthlyBill,
         recommendedKw: calculation.recommendedKw,
         annualGeneration: calculation.annualGeneration,
-        annualSavings: calculation.profit,
-        twentyFiveYearSavings: calculation.profit * SAVINGS_ESTIMATE_YEARS,
-        roofArea,
+        annualSavings: calculation.annualSavings,
+        twentyFiveYearSavings,
+        roofArea: calculation.roofArea,
       })
       setLeadFormReference(referenceCode)
       if (whatsAppWindow) {
@@ -258,422 +204,393 @@ export function SolarEstimation() {
     }
   }
 
+  function normalizeMonthlyBill() {
+    setMonthlyBillInput(String(clamp(Math.round(Number(monthlyBillInput) || 500), 500, 50000)))
+  }
+
+  function normalizeSystemSize() {
+    setSystemSizeInput(String(clamp(Math.round(Number(systemSizeInput) || 1), 1, 50)))
+  }
+
+  const currentPropertyType =
+    e.propertyTypeOptions[selectedPropertyIndex] ?? calculatorText.homeOption
+
   return (
-    <section className="relative isolate overflow-hidden bg-[#fff4e8] px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
-      <div className="mx-auto max-w-7xl">
-        <div className="grid items-stretch gap-5 lg:grid-cols-[1.05fr_0.95fr] xl:gap-6">
-          <div className="rounded-[2rem] border border-slate-200 bg-white/85 p-5 shadow-[0_25px_60px_-35px_rgba(15,23,42,0.35)] backdrop-blur-sm sm:p-7 lg:p-8">
-            <div className="mb-8">
-              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-3.5 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-700 shadow-sm backdrop-blur-md">
-                <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                {e.badge}
-              </span>
-              <h1 className="mt-4 max-w-xl text-3xl font-extrabold leading-tight tracking-[-0.04em] text-slate-900 sm:text-4xl">
-                {e.savingsTitle} <span className="text-emerald-600">{e.savingsTitleAccent}</span>
-              </h1>
-              <p className="mt-3 max-w-xl text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
-                {e.savingsDescription}
-              </p>
+    <section className="bg-linear-to-br from-[#dcecff] via-[#ede8ff] to-[#d8f4f3] px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] shadow-[0_30px_90px_-40px_rgba(2,12,27,0.65)]">
+        <div className="grid lg:grid-cols-[minmax(300px,0.75fr)_1.45fr]">
+          <div className="bg-linear-to-br from-[#4568b6] via-[#5c55ae] to-[#3f7798] p-6 text-white sm:p-8 lg:p-10">
+            <h1 className="max-w-sm text-3xl font-black leading-tight tracking-tight sm:text-4xl">
+              {e.savingsTitle} <span className="text-emerald-400">{e.savingsTitleAccent}</span>
+            </h1>
+            <p className="mt-3 max-w-sm text-sm leading-6 text-blue-100/80">
+              {e.savingsDescription}
+            </p>
+
+            <div className="mt-7 inline-flex rounded-full bg-white/10 p-1" role="group" aria-label={e.leadPropertyType}>
+              <button
+                type="button"
+                aria-pressed={selectedPropertyIndex === 0}
+                onClick={() => setSelectedPropertyIndex(0)}
+                className={`rounded-full px-5 py-2.5 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
+                  selectedPropertyIndex === 0
+                    ? 'bg-emerald-500 text-white shadow-sm'
+                    : 'text-blue-100/75 hover:text-white'
+                }`}
+              >
+                {calculatorText.homeOption}
+              </button>
+              <button
+                type="button"
+                aria-pressed={selectedPropertyIndex !== 0}
+                onClick={() => setSelectedPropertyIndex(1)}
+                className={`rounded-full px-5 py-2.5 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
+                  selectedPropertyIndex !== 0
+                    ? 'bg-emerald-500 text-white shadow-sm'
+                    : 'text-blue-100/75 hover:text-white'
+                }`}
+              >
+                {calculatorText.commercialOption}
+              </button>
             </div>
 
-            <div className="space-y-6">
-              <p className="text-sm text-slate-600">{e.adjustUsage}</p>
-              <div className="space-y-4">
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <label htmlFor={monthlyBillInputId} className="text-sm font-medium text-slate-500">{e.monthlyBill}</label>
-                  <span className="text-xl font-extrabold tabular-nums text-emerald-600 sm:text-2xl">{formatCurrency(monthlyBill)}</span>
-                </div>
+            <div className="mt-8">
+              <div className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-blue-100/80">
+                {inputMode === 'bill' ? calculatorText.billAmount : calculatorText.systemSize}
+              </div>
+              <div className="inline-flex rounded-full bg-white/10 p-1" role="group" aria-label={e.adjustUsage}>
+                <button
+                  type="button"
+                  aria-pressed={inputMode === 'bill'}
+                  onClick={() => setInputMode('bill')}
+                  className={`rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
+                    inputMode === 'bill' ? 'bg-white text-[#203f63]' : 'text-blue-100/75 hover:text-white'
+                  }`}
+                >
+                  {calculatorText.billAmount}
+                </button>
+                <button
+                  type="button"
+                  aria-pressed={inputMode === 'systemSize'}
+                  onClick={() => setInputMode('systemSize')}
+                  className={`rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
+                    inputMode === 'systemSize' ? 'bg-white text-[#203f63]' : 'text-blue-100/75 hover:text-white'
+                  }`}
+                >
+                  {calculatorText.systemSize}
+                </button>
+              </div>
 
-                <div className="space-y-3">
-                  <input
-                    type="hidden"
-                    {...register('monthlyBill', { valueAsNumber: true })}
-                    value={monthlyBill}
-                  />
-                  <input
-                    id={monthlyBillInputId}
-                    type="range"
-                    aria-label={e.monthlyBillAriaLabel}
-                    min={500}
-                    max={50000}
-                    step={10}
-                    value={Math.min(50000, Math.max(500, monthlyBill))}
-                    onChange={(event) => {
-                      const nextValue = Number(event.target.value)
-                      setValue('monthlyBill', nextValue, { shouldValidate: true, shouldDirty: true })
-                    }}
-                    className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-emerald-600"
-                  />
-                  <div className="flex items-center justify-between text-sm font-medium text-slate-500">
+              {inputMode === 'bill' ? (
+                <div className="mt-4">
+                  <label htmlFor={monthlyBillInputId} className="sr-only">
+                    {e.monthlyBillAriaLabel}
+                  </label>
+                  <div className="flex items-center rounded-2xl border border-white/15 bg-white/10 px-4 py-3.5 focus-within:ring-2 focus-within:ring-emerald-400">
+                    <span className="text-xl font-bold text-blue-100" aria-hidden="true">₹</span>
+                    <input
+                      id={monthlyBillInputId}
+                      type="number"
+                      inputMode="numeric"
+                      min={500}
+                      max={50000}
+                      step={100}
+                      value={monthlyBillInput}
+                      onChange={(event) => setMonthlyBillInput(event.target.value)}
+                      onBlur={normalizeMonthlyBill}
+                      className="min-w-0 flex-1 bg-transparent px-3 text-2xl font-extrabold tabular-nums text-white outline-none placeholder:text-blue-100/50"
+                    />
+                    <span className="whitespace-nowrap text-sm text-blue-100/70">{calculatorText.monthSuffix}</span>
+                  </div>
+                  <div className="mt-2 flex justify-between text-xs text-blue-100/60">
                     <span>{e.monthlyBillMinimum}</span>
                     <span>{e.monthlyBillMaximum}</span>
                   </div>
-                  <p className="text-sm font-medium text-slate-500">
-                    {e.estimatedMonthlyUsage}: {monthlyUnits.toLocaleString('en-IN')} {e.unitsSuffix}
-                  </p>
                 </div>
-              </div>
-
-              <div className="grid gap-3 sm:grid-cols-2">
-                <div className="rounded-[1.1rem] border border-slate-200 bg-slate-50/80 p-4 shadow-inner">
-                  <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500">{e.plantSize}</div>
-                  <div className="mt-3 text-2xl font-extrabold tracking-tight text-emerald-600 sm:text-3xl">
-                    {calculation ? `${calculation.recommendedKw} ${e.capacityUnit}` : '—'}
-                  </div>
-                </div>
-
-                <div className="rounded-[1.1rem] border border-slate-200 bg-slate-50/80 p-4 shadow-inner">
-                  <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500">{e.roofRequired}</div>
-                  <div className="mt-3 text-2xl font-extrabold tracking-tight text-emerald-600 sm:text-3xl">
-                    {calculation ? `${Math.max(60, calculation.recommendedKw * ROOF_AREA_PER_KW)} ${e.squareFootUnit}` : '—'}
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-2">
-                <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-                  <InputField
-                    name="sellingPricePerKw"
-                    label={e.sellingPrice}
-                    helperText={e.sellingPriceHelper}
-                    suffix={e.perKwSuffix}
-                    error={errors.sellingPricePerKw?.message}
-                    register={register('sellingPricePerKw', { valueAsNumber: true })}
-                    accentClass="from-emerald-500 via-teal-500 to-cyan-600"
-                    placeholder="65000"
-                  />
-
-                  {!isProduction && (
-                    <div className="mb-4">
-                      <InputField
-                        name="installationCostPerKw"
-                        label={e.installationCost}
-                        helperText={e.installationCostHelper}
-                        suffix={e.perKwSuffix}
-                        error={errors.installationCostPerKw?.message}
-                        register={register('installationCostPerKw', { valueAsNumber: true })}
-                        accentClass="from-sky-500 via-blue-500 to-emerald-600"
-                        placeholder="54300"
-                      />
-                    </div>
-                  )}
-
-                  {isProduction && (
+              ) : (
+                <div className="mt-4">
+                  <label htmlFor={systemSizeInputId} className="sr-only">
+                    {calculatorText.systemSize}
+                  </label>
+                  <div className="flex items-center rounded-2xl border border-white/15 bg-white/10 px-4 py-3.5 focus-within:ring-2 focus-within:ring-emerald-400">
                     <input
-                      type="hidden"
-                      {...register('installationCostPerKw', { valueAsNumber: true })}
-                      value={defaultValues.installationCostPerKw}
+                      id={systemSizeInputId}
+                      type="number"
+                      inputMode="numeric"
+                      min={1}
+                      max={50}
+                      step={1}
+                      value={systemSizeInput}
+                      onChange={(event) => setSystemSizeInput(event.target.value)}
+                      onBlur={normalizeSystemSize}
+                      className="min-w-0 flex-1 bg-transparent px-1 text-2xl font-extrabold tabular-nums text-white outline-none"
                     />
-                  )}
+                    <span className="text-sm font-bold text-blue-100">{e.capacityUnit}</span>
+                  </div>
+                  <div className="mt-2 flex justify-between text-xs text-blue-100/60">
+                    <span>1 {e.capacityUnit}</span>
+                    <span>50 {e.capacityUnit}</span>
+                  </div>
                 </div>
+              )}
+
+              <p className="mt-4 text-sm text-blue-100/75">
+                {e.estimatedMonthlyUsage}: {calculation.monthlyUnits.toLocaleString('en-IN')} {e.unitsSuffix}
+              </p>
+
+              <div
+                className={`mt-6 rounded-2xl border p-4 ${
+                  selectedPropertyIndex === 0
+                    ? 'border-emerald-300/15 bg-emerald-400/50'
+                    : 'border-white/10 bg-white/5'
+                }`}
+              >
+                <p
+                  className={`text-sm ${
+                    selectedPropertyIndex === 0 ? 'text-green-100/60' : 'text-blue-100/80'
+                  }`}
+                >
+                  {selectedPropertyIndex === 0
+                    ? calculatorText.residentialSubsidyNote
+                    : calculatorText.commercialSubsidyNote}
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2rem] bg-linear-to-br from-[#0b3b2e] via-[#1f7a5a] to-[#48b69a] p-5 text-white shadow-[0_30px_80px_-35px_rgba(11,59,46,0.8)] sm:p-6 lg:p-8">
-            <div className="relative z-10 space-y-5">
-              <div>
-                <h2 className="text-2xl font-extrabold tracking-tight text-white sm:text-[1.75rem]">{e.returnsTitle}</h2>
-                <p className="mt-2 text-sm leading-6 text-emerald-50/90">{e.irradianceTariffAssumption}</p>
-              </div>
+          <div className="bg-linear-to-br from-[#f7faff] via-[#f2f4ff] to-[#eef9fb] p-5 sm:p-7 lg:p-9">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_8px_24px_-20px_rgba(15,48,80,0.5)] sm:p-6">
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
+                  {calculatorText.idealSystemSize}
+                </p>
+                <p className="mt-3 text-4xl font-black tracking-tight text-sky-700">
+                  {calculation.recommendedKw}<span className="ml-1 text-xl">kW</span>
+                </p>
+                <p className="mt-2 text-sm text-slate-500">
+                  {calculation.dailyGeneration} {calculatorText.averageDailyGeneration}
+                </p>
+              </article>
 
-              <div className="rounded-[1.25rem] border border-white/15 bg-white/10 p-5 backdrop-blur-sm sm:p-6">
-                <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-50">{e.annualSavings}</div>
-                <div className="mt-2 text-4xl font-black tracking-tight text-white sm:text-5xl">
-                  {calculation ? formatCurrency(calculation.profit) : '—'}
-                </div>
-              </div>
+              <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_8px_24px_-20px_rgba(15,48,80,0.5)] sm:p-6">
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
+                  {e.annualSavings}
+                </p>
+                <p className="mt-3 text-3xl font-black tracking-tight text-emerald-600 sm:text-4xl">
+                  ~{formatCurrency(calculation.annualSavings)}
+                </p>
+              </article>
 
-              <div className="grid grid-cols-2 gap-2.5 sm:gap-3 xl:grid-cols-3">
-                <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[9px] font-bold uppercase tracking-[0.14em] text-emerald-50">{e.annualGeneration}</div>
-                  <div className="mt-2 text-lg font-extrabold tracking-tight text-white sm:text-xl">
-                    {calculation ? `${calculation.annualGeneration.toLocaleString('en-IN')} ${e.generationUnit}` : '—'}
-                  </div>
-                </div>
-                <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[9px] font-bold uppercase tracking-[0.14em] text-emerald-50">{e.twentyFiveYearSavings}</div>
-                  <div className="mt-2 text-lg font-extrabold tracking-tight text-white sm:text-xl">
-                    {calculation ? formatCurrency(calculation.profit * SAVINGS_ESTIMATE_YEARS) : '—'}
-                  </div>
-                </div>
-                <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[9px] font-bold uppercase tracking-[0.14em] text-emerald-50">{e.originalCost}</div>
-                  <div className="mt-2 text-lg font-extrabold tracking-tight text-white sm:text-xl">
-                    {calculation ? formatCurrency(calculation.totalInstallationCost) : '—'}
-                  </div>
-                </div>
-                <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[9px] font-bold uppercase tracking-[0.14em] text-emerald-50">{e.subsidy}</div>
-                  <div className="mt-2 text-lg font-extrabold tracking-tight text-white sm:text-xl">
-                    {calculation ? formatCurrency(calculation.subsidy) : '—'}
-                  </div>
-                </div>
-                <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[9px] font-bold uppercase tracking-[0.14em] text-emerald-50">{e.netCost}</div>
-                  <div className="mt-2 text-lg font-extrabold tracking-tight text-white sm:text-xl">
-                    {calculation ? formatCurrency(calculation.customerPayable) : '—'}
-                  </div>
-                </div>
-                <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[9px] font-bold uppercase tracking-[0.14em] text-emerald-50">{e.payback}</div>
-                  <div className="mt-2 text-lg font-extrabold tracking-tight text-white sm:text-xl">
-                    {calculation ? `${(calculation.customerPayable / Math.max(1, calculation.profit)).toFixed(1)} ${e.yearsShort}` : '—'}
-                  </div>
-                </div>
-              </div>
+              <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_8px_24px_-20px_rgba(15,48,80,0.5)] sm:p-6">
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
+                  {e.annualGeneration}
+                </p>
+                <p className="mt-2 text-2xl font-black tracking-tight text-slate-950">
+                  {calculation.annualGeneration.toLocaleString('en-IN')} <span className="text-sm font-semibold">{e.generationUnit}</span>
+                </p>
+              </article>
 
-              <p className="rounded-xl border border-emerald-100/20 bg-white/10 px-4 py-3 text-sm leading-6 text-emerald-50">
-                {t.subsidyNotice}
-              </p>
-
-              <div className="mt-4 flex w-full flex-col gap-3 sm:flex-row">
-                <button
-                  type="button"
-                  aria-expanded={showLeadForm}
-                  aria-controls={leadFormId}
-                  onClick={() => {
-                    setShowLeadForm(true)
-                    setWhatsAppFallbackUrl(null)
-                    setLeadFormError('')
-                  }}
-                  className="flex-1 rounded-full bg-[#F5C76A] px-5 py-3.5 text-center text-base font-bold text-[#10251F] shadow-[0_20px_30px_-18px_rgba(15,23,42,0.5)] transition hover:bg-[#ffda8b]"
-                >
-                  {e.freeAssessmentCta} <span aria-hidden="true">→</span>
-                </button>
-                <Link
-                  href="/contact"
-                  className="flex-1 rounded-full bg-white px-5 py-3.5 text-center text-base font-bold text-slate-900 shadow-[0_20px_30px_-18px_rgba(15,23,42,0.5)] transition hover:bg-emerald-50"
-                >
-                  {e.contactUs} <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-
-              <p className="text-center text-sm leading-6 text-emerald-50/90">
-                {e.estimatesDisclaimer}
-              </p>
+              <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_8px_24px_-20px_rgba(15,48,80,0.5)] sm:p-6">
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
+                  {e.roofRequired}
+                </p>
+                <p className="mt-2 text-2xl font-black tracking-tight text-slate-950">
+                  {calculation.roofArea.toLocaleString('en-IN')} <span className="text-sm font-semibold">{e.squareFootUnit}</span>
+                </p>
+              </article>
             </div>
+
+            <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
+                  {calculatorText.pricingBreakdown}
+                </h3>
+                <p className="text-xs font-semibold text-slate-400">
+                  {calculation.recommendedKw} {e.capacityUnit} · {currentPropertyType}
+                </p>
+              </div>
+
+              <div className="mt-5 grid gap-4 sm:grid-cols-3">
+                <PriceItem
+                  icon={Tag}
+                  label={calculatorText.priceBeforeSubsidy}
+                  value={formatCurrency(calculation.totalPrice)}
+                  valueClassName="text-slate-950"
+                />
+                <PriceItem
+                  icon={Landmark}
+                  label={calculatorText.governmentSubsidy}
+                  value={formatCurrency(calculation.subsidy)}
+                  valueClassName="text-emerald-600"
+                />
+                <PriceItem
+                  icon={Calculator}
+                  label={calculatorText.effectiveCost}
+                  value={formatCurrency(calculation.effectiveCost)}
+                  valueClassName="text-emerald-700"
+                />
+              </div>
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-center text-sm font-semibold text-slate-600">
+                <span className="whitespace-nowrap">{formatCurrency(calculation.totalPrice)}</span>
+                <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-violet-100 font-mono text-base font-black text-violet-700">-</span>
+                <span className="whitespace-nowrap">{formatCurrency(calculation.subsidy)}</span>
+                <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-violet-100 font-mono text-base font-black text-violet-700">=</span>
+                <span className="whitespace-nowrap">{formatCurrency(calculation.effectiveCost)}</span>
+              </div>
+              <p className="mt-4 text-right text-xs text-slate-500">{calculatorText.taxesExtra}</p>
+            </div>
+
+            <button
+              type="button"
+              aria-expanded={showLeadForm}
+              aria-controls={leadFormId}
+              onClick={() => {
+                setShowLeadForm(true)
+                setWhatsAppFallbackUrl(null)
+                setLeadFormError('')
+              }}
+              className="mt-5 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-2xl bg-emerald-500 px-5 py-4 text-base font-extrabold text-white shadow-[0_12px_24px_-14px_rgba(16,185,129,0.75)] transition hover:bg-emerald-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+            >
+              {calculatorText.quoteCta}
+              <span aria-hidden="true">→</span>
+            </button>
+            <p className="mt-4 text-center text-xs leading-5 text-slate-500">
+              {calculatorText.assumptions}
+            </p>
           </div>
         </div>
+      </div>
 
-        {showLeadForm && (
-          <section
-            id={leadFormId}
-            className="mt-8 grid overflow-hidden rounded-[30px] border border-emerald-900/10 bg-white shadow-[0_30px_90px_-40px_rgba(15,23,42,0.45)] lg:grid-cols-[0.85fr_1.15fr]"
-            aria-labelledby={`${leadFormId}-title`}
-          >
-            <div className="bg-[#0B3B2E] p-6 text-white sm:p-8">
-              <p className="text-sm font-black uppercase tracking-[0.24em] text-emerald-200">{e.freeAssessmentLabel}</p>
-              <h2 id={`${leadFormId}-title`} className="mt-3 text-3xl font-black tracking-tight">{e.freeAssessmentCta}</h2>
-              <div className="mt-6 space-y-3">
-                <LeadSummary label={e.monthlyBill} value={formatCurrency(monthlyBill)} />
-                <LeadSummary label={e.recommendedCapacity} value={`${calculation.recommendedKw} ${e.capacityUnit}`} />
-                <LeadSummary label={e.annualGeneration} value={`${calculation.annualGeneration.toLocaleString('en-IN')} ${e.generationUnit}`} />
-                <LeadSummary label={e.annualSavings} value={`${formatCurrency(calculation.profit)}/${e.yearSuffix}`} />
-                <LeadSummary label={e.twentyFiveYearSavings} value={formatCurrency(calculation.profit * SAVINGS_ESTIMATE_YEARS)} />
-                <LeadSummary label={e.roofRequired} value={`${Math.max(60, calculation.recommendedKw * ROOF_AREA_PER_KW)} ${e.squareFootUnit}`} />
-              </div>
-              <p className="mt-6 text-sm leading-5 text-emerald-50/80">{e.whatsAppDisclosure}</p>
+      {showLeadForm && (
+        <section
+          id={leadFormId}
+          className="mx-auto mt-8 grid max-w-7xl overflow-hidden rounded-[2rem] border border-white/10 bg-white shadow-[0_30px_90px_-40px_rgba(2,12,27,0.65)] lg:grid-cols-[0.85fr_1.15fr]"
+          aria-labelledby={`${leadFormId}-title`}
+        >
+          <div className="bg-linear-to-br from-[#4568b6] via-[#5c55ae] to-[#3f7798] p-6 text-white sm:p-8">
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-blue-200">
+              {e.freeAssessmentLabel}
+            </p>
+            <h2 id={`${leadFormId}-title`} className="mt-3 text-3xl font-black tracking-tight">
+              {e.freeAssessmentCta}
+            </h2>
+            <div className="mt-6 space-y-3">
+              <LeadSummary label={e.leadPropertyType} value={currentPropertyType} />
+              <LeadSummary label={e.monthlyBill} value={formatCurrency(monthlyBill)} />
+              <LeadSummary label={e.recommendedCapacity} value={`${calculation.recommendedKw} ${e.capacityUnit}`} />
+              <LeadSummary label={e.annualGeneration} value={`${calculation.annualGeneration.toLocaleString('en-IN')} ${e.generationUnit}`} />
+              <LeadSummary label={e.annualSavings} value={`${formatCurrency(calculation.annualSavings)}/${e.yearSuffix}`} />
+              <LeadSummary label={e.twentyFiveYearSavings} value={formatCurrency(calculation.annualSavings * SAVINGS_ESTIMATE_YEARS)} />
+              <LeadSummary label={e.roofRequired} value={`${calculation.roofArea} ${e.squareFootUnit}`} />
+              <LeadSummary label={calculatorText.effectiveCost} value={formatCurrency(calculation.effectiveCost)} />
+            </div>
+            <p className="mt-6 text-sm leading-5 text-blue-100/80">{e.whatsAppDisclosure}</p>
+          </div>
+
+          <form onSubmit={handleLeadFormSubmit} className="p-6 sm:p-8">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <label className="block">
+                <span className="mb-1.5 block text-sm font-bold text-slate-700">{e.leadName}</span>
+                <input
+                  id={leadNameInputId}
+                  name="name"
+                  type="text"
+                  autoComplete="name"
+                  minLength={2}
+                  maxLength={100}
+                  required
+                  placeholder={e.leadNamePlaceholder}
+                  className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
+                />
+              </label>
+              <label className="block">
+                <span className="mb-1.5 block text-sm font-bold text-slate-700">{e.leadMobile}</span>
+                <input
+                  id={leadPhoneInputId}
+                  name="phone"
+                  type="tel"
+                  inputMode="tel"
+                  autoComplete="tel"
+                  pattern="([+]91[ -]?)?[6-9][0-9]{4}[ -]?[0-9]{5}"
+                  maxLength={15}
+                  required
+                  placeholder={e.leadMobilePlaceholder}
+                  className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
+                />
+              </label>
+              <label className="block">
+                <span className="mb-1.5 block text-sm font-bold text-slate-700">{e.leadPinCode}</span>
+                <input
+                  id={leadPinInputId}
+                  name="pinCode"
+                  type="text"
+                  inputMode="numeric"
+                  autoComplete="postal-code"
+                  pattern="[1-9][0-9]{5}"
+                  maxLength={6}
+                  required
+                  placeholder={e.leadPinCodePlaceholder}
+                  className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
+                />
+              </label>
+              <label className="block">
+                <span className="mb-1.5 block text-sm font-bold text-slate-700">{e.leadPropertyType}</span>
+                <select
+                  id={leadPropertyTypeInputId}
+                  name="propertyType"
+                  required
+                  value={selectedPropertyIndex}
+                  onChange={(event) => setSelectedPropertyIndex(Number(event.target.value))}
+                  className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
+                >
+                  {e.propertyTypeOptions.map((propertyType, index) => (
+                    <option key={propertyType} value={index}>{propertyType}</option>
+                  ))}
+                </select>
+              </label>
             </div>
 
-            <form onSubmit={handleLeadFormSubmit} className="p-6 sm:p-8">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <label className="block">
-                  <span className="mb-1.5 block text-sm font-bold text-slate-700">{e.leadName}</span>
-                  <input
-                    id={leadNameInputId}
-                    name="name"
-                    type="text"
-                    autoComplete="name"
-                    minLength={2}
-                    maxLength={100}
-                    required
-                    placeholder={e.leadNamePlaceholder}
-                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-100"
-                  />
-                </label>
-                <label className="block">
-                  <span className="mb-1.5 block text-sm font-bold text-slate-700">{e.leadMobile}</span>
-                  <input
-                    id={leadPhoneInputId}
-                    name="phone"
-                    type="tel"
-                    inputMode="tel"
-                    autoComplete="tel"
-                    pattern="([+]91[ -]?)?[6-9][0-9]{4}[ -]?[0-9]{5}"
-                    maxLength={15}
-                    required
-                    placeholder={e.leadMobilePlaceholder}
-                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-100"
-                  />
-                </label>
-                <label className="block">
-                  <span className="mb-1.5 block text-sm font-bold text-slate-700">{e.leadPinCode}</span>
-                  <input
-                    id={leadPinInputId}
-                    name="pinCode"
-                    type="text"
-                    inputMode="numeric"
-                    autoComplete="postal-code"
-                    pattern="[1-9][0-9]{5}"
-                    maxLength={6}
-                    required
-                    placeholder={e.leadPinCodePlaceholder}
-                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-100"
-                  />
-                </label>
-                <label className="block">
-                  <span className="mb-1.5 block text-sm font-bold text-slate-700">{e.leadPropertyType}</span>
-                  <select
-                    id={leadPropertyTypeInputId}
-                    name="propertyType"
-                    required
-                    defaultValue=""
-                    className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-100"
-                  >
-                    <option value="" disabled>{e.propertyTypePlaceholder}</option>
-                    {e.propertyTypeOptions.map((propertyType) => (
-                      <option key={propertyType} value={propertyType}>{propertyType}</option>
-                    ))}
-                  </select>
-                </label>
-              </div>
-
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <button
-                  type="submit"
-                  disabled={leadFormPending}
-                  className="inline-flex min-h-12 items-center justify-center rounded-full bg-emerald-800 px-6 py-3 text-sm font-bold text-white transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 disabled:cursor-wait disabled:opacity-70"
-                >
-                  {leadFormPending ? t.formSubmission.saving : e.whatsAppMyReport} <span className="ml-2" aria-hidden="true">↗</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setShowLeadForm(false)}
-                  className="inline-flex min-h-12 items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-100"
-                >
-                  {e.cancelAssessment}
-                </button>
-              </div>
-              {whatsAppFallbackUrl && (
-                <p className="mt-4 text-sm font-semibold text-emerald-800" aria-live="polite">
-                  <a href={whatsAppFallbackUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
-                    {e.openWhatsAppFallback}
-                  </a>
-                </p>
-              )}
-              {leadFormError && (
-                <p className="mt-4 text-sm font-semibold text-rose-700" role="alert">
-                  {leadFormError}
-                </p>
-              )}
-              {leadFormReference && (
-                <p className="mt-4 text-sm font-semibold text-emerald-800" role="status" aria-live="polite">
-                  {t.formSubmission.success} {t.formSubmission.referenceLabel}: <span className="font-mono">{leadFormReference}</span>
-                </p>
-              )}
-              <div className="mt-4">
-                <FormDataNotice />
-              </div>
-            </form>
-          </section>
-        )}
-      </div>
-    </section>
-  )
-}
-
-type InputFieldProps = {
-  name: keyof FormData
-  label: string
-  helperText: string
-  suffix: string
-  error?: string
-  register: UseFormRegisterReturn
-  accentClass: string
-  placeholder: string
-  min?: number
-  max?: number
-}
-
-function InputField({
-  name,
-  label,
-  helperText,
-  suffix,
-  error,
-  register,
-  accentClass,
-  placeholder,
-  min,
-  max,
-}: InputFieldProps) {
-  return (
-    <div className="rounded-[22px] border border-slate-200 bg-linear-to-b from-white via-slate-50 to-slate-100 p-4 shadow-[0_18px_35px_-30px_rgba(15,23,42,0.45)] transition-transform duration-200 hover:-translate-y-0.5    ">
-      <div className={`h-1.5 rounded-full bg-linear-to-r ${accentClass}`} aria-hidden="true" />
-
-      <div className="mt-4 flex items-center justify-between gap-3">
-        <label htmlFor={name} className="text-[12px] font-bold uppercase tracking-[0.24em] text-slate-600 ">
-          {label}
-        </label>
-        <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[12px] font-bold uppercase tracking-[0.18em] text-emerald-700  ">
-          {suffix}
-        </span>
-      </div>
-
-      <input
-        id={name}
-        type="number"
-        inputMode="numeric"
-        placeholder={placeholder}
-        min={min}
-        max={max}
-        {...register}
-        aria-invalid={Boolean(error)}
-        aria-describedby={`${name}-help${error ? ` ${name}-error` : ''}`}
-        className={`mt-3 w-full rounded-2xl border px-4 py-3 text-sm font-semibold text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100   ${error ? 'border-rose-400 bg-rose-50/80  ' : 'border-slate-200 bg-white/90  '}`}
-      />
-
-      <p id={`${name}-help`} className="mt-2 text-sm leading-5 text-slate-500 ">
-        {helperText}
-      </p>
-
-      {error && (
-        <p id={`${name}-error`} className="mt-2 text-md font-medium text-rose-600 ">
-          {error}
-        </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <button
+                type="submit"
+                disabled={leadFormPending}
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-emerald-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 disabled:cursor-wait disabled:opacity-70"
+              >
+                {leadFormPending ? t.formSubmission.saving : e.whatsAppMyReport}
+                <span className="ml-2" aria-hidden="true">↗</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowLeadForm(false)}
+                className="inline-flex min-h-12 items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-500"
+              >
+                {e.cancelAssessment}
+              </button>
+            </div>
+            {whatsAppFallbackUrl && (
+              <p className="mt-4 text-sm font-semibold text-emerald-800" aria-live="polite">
+                <a href={whatsAppFallbackUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
+                  {e.openWhatsAppFallback}
+                </a>
+              </p>
+            )}
+            {leadFormError && (
+              <p className="mt-4 text-sm font-semibold text-rose-700" role="alert">
+                {leadFormError}
+              </p>
+            )}
+            {leadFormReference && (
+              <p className="mt-4 text-sm font-semibold text-emerald-800" role="status" aria-live="polite">
+                {t.formSubmission.success} {t.formSubmission.referenceLabel}:{' '}
+                <span className="font-mono">{leadFormReference}</span>
+              </p>
+            )}
+            <div className="mt-4">
+              <FormDataNotice />
+            </div>
+          </form>
+        </section>
       )}
-    </div>
-  )
-}
-
-type ResultCardProps = {
-  title: string
-  value: string
-  detail: string
-  accentClass: string
-  valueTone?: string
-}
-
-function ResultCard({
-  title,
-  value,
-  detail,
-  accentClass,
-  valueTone = 'text-custom-deep-blue ',
-}: ResultCardProps) {
-  return (
-    <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white/82 p-4 shadow-sm  ">
-      <div className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r ${accentClass}`} aria-hidden="true" />
-      <p className="text-md font-semibold uppercase tracking-[0.28em] text-slate-500 ">
-        {title}
-      </p>
-      <p className={`mt-3 text-2xl font-semibold tracking-tight ${valueTone}`}>
-        {value}
-      </p>
-      <p className="mt-2 text-sm leading-6 text-slate-500 ">
-        {detail}
-      </p>
-    </div>
+    </section>
   )
 }

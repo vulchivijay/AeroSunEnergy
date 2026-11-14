@@ -441,7 +441,8 @@
       "quoteRequired": "ధర కోసం కోట్ అవసరం",
       "priceOrder": "గరిష్ఠంగా పేర్కొన్న ధర ఆధారంగా క్రమబద్ధీకరించబడింది",
       "maxListedLabel": "గరిష్ఠంగా పేర్కొన్న ధర",
-      "topPriceLabel": "అత్యధిక ధర"
+      "topPriceLabel": "అత్యధిక ధర",
+      "moreBrandsAvailable": "ఇంకా అనేక బ్రాండ్లు అందుబాటులో ఉన్నాయి"
     },
     "heroSlider": [
       {
@@ -3234,6 +3235,24 @@
     "capacityUnit": "kW",
     "squareFootUnit": "చ.అ",
     "plantSize": "మొక్క పరిమాణం",
+    "calculator": {
+      "homeOption": "గృహం",
+      "commercialOption": "వాణిజ్య",
+      "billAmount": "బిల్లు మొత్తం",
+      "systemSize": "సిస్టమ్ సామర్థ్యం",
+      "idealSystemSize": "మీకు సరిపోయే సిస్టమ్ పరిమాణం",
+      "averageDailyGeneration": "యూనిట్లు/రోజు సగటు",
+      "pricingBreakdown": "ధరల వివరాలు",
+      "priceBeforeSubsidy": "ధర (సబ్సిడీ మరియు GST మినహా)",
+      "governmentSubsidy": "ప్రభుత్వ సబ్సిడీ (PM Surya Ghar)",
+      "effectiveCost": "చెల్లించాల్సిన అంచనా ఖర్చు",
+      "taxesExtra": "*పన్నులు మరియు నెట్ మీటరింగ్ అదనం",
+      "quoteCta": "ఉచిత కోట్ పొందండి",
+      "monthSuffix": "/నెల",
+      "residentialSubsidyNote": "అర్హత గల గృహ సిస్టమ్‌లకు PM Surya Ghar కింద ₹78,000 వరకు సహాయం లభించవచ్చు. తుది మొత్తం అర్హత మరియు ప్రస్తుత పథకం నియమాలపై ఆధారపడి ఉంటుంది.",
+      "commercialSubsidyNote": "వాణిజ్య అంచనాల్లో PM Surya Ghar గృహ సబ్సిడీ చేర్చబడదు.",
+      "assumptions": "సూచనాత్మక ధర ₹70,000/kW, పైకప్పు స్థలం 60 చదరపు అడుగులు/kW ఆధారంగా ఉన్నాయి. ఉత్పత్తి అంచనా 120 యూనిట్లు/kW/నెల, పొదుపు ₹8.5/యూనిట్ ఆధారంగా ఉంటుంది. వాస్తవ ధరలు, ఉత్పత్తి సిస్టమ్ మరియు సైట్‌ను బట్టి మారుతాయి."
+    },
     "roofRequired": "పైకప్పు అవసరం",
     "returnsTitle": "మీ అంచనా వేసిన రాబడులు",
     "irradianceTariffAssumption": "₹8.5/యూనిట్ మరియు ప్రతి kWకు నెలకు 120 యూనిట్ల అంచనా ఆధారంగా; వాస్తవ ఉత్పత్తి సైట్‌పై ఆధారపడి ఉంటుంది.",

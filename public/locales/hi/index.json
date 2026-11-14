@@ -440,7 +440,8 @@
       "quoteRequired": "कोटेशन आवश्यक",
       "priceOrder": "अधिकतम सूचीबद्ध कीमत के अनुसार क्रमबद्ध",
       "maxListedLabel": "अधिकतम सूचीबद्ध",
-      "topPriceLabel": "सबसे अधिक"
+      "topPriceLabel": "सबसे अधिक",
+      "moreBrandsAvailable": "इसके अलावा कई और ब्रांड उपलब्ध हैं"
     },
     "heroSlider": [
       {
@@ -3233,6 +3234,24 @@
     "capacityUnit": "kW",
     "squareFootUnit": "वर्ग फ़ुट",
     "plantSize": "पौधे का आकार",
+    "calculator": {
+      "homeOption": "घर",
+      "commercialOption": "व्यावसायिक",
+      "billAmount": "बिल राशि",
+      "systemSize": "सिस्टम क्षमता",
+      "idealSystemSize": "आपके लिए उपयुक्त सिस्टम क्षमता",
+      "averageDailyGeneration": "यूनिट/दिन औसत",
+      "pricingBreakdown": "मूल्य विवरण",
+      "priceBeforeSubsidy": "कीमत (सब्सिडी और GST से पहले)",
+      "governmentSubsidy": "सरकारी सब्सिडी (PM Surya Ghar)",
+      "effectiveCost": "प्रभावी लागत",
+      "taxesExtra": "*कर और नेट मीटरिंग शुल्क अतिरिक्त",
+      "quoteCta": "निःशुल्क कोटेशन पाएं",
+      "monthSuffix": "/माह",
+      "residentialSubsidyNote": "पात्र आवासीय सिस्टम को PM Surya Ghar के तहत ₹78,000 तक की सहायता मिल सकती है। अंतिम राशि पात्रता और मौजूदा योजना नियमों पर निर्भर करती है।",
+      "commercialSubsidyNote": "व्यावसायिक अनुमान में PM Surya Ghar की आवासीय सब्सिडी शामिल नहीं है।",
+      "assumptions": "संकेतात्मक कीमत ₹70,000/kW और छत की जगह 60 वर्ग फ़ुट/kW मानकर चलती है। उत्पादन का अनुमान 120 यूनिट/kW/माह और बचत ₹8.5 प्रति यूनिट के आधार पर है। वास्तविक कीमत और उत्पादन सिस्टम तथा साइट के अनुसार बदलते हैं।"
+    },
     "roofRequired": "छत की आवश्यकता है",
     "returnsTitle": "आपका अनुमानित रिटर्न",
     "irradianceTariffAssumption": "₹8.5/यूनिट और 120 यूनिट प्रति kW प्रति माह के सांकेतिक अनुमान पर आधारित; वास्तविक उत्पादन साइट पर निर्भर करता है।",

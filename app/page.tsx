@@ -5,7 +5,6 @@ import { useLocale } from '@/lib/LocaleContext'
 import { getAccentOrDefault } from '@/lib/utils/utils'
 import { BankEMICalculator } from './components/forms/BankEMICalculator'
 import { SolarEstimation } from './components/forms/SolarEstimation'
-import About from './components/sections/About'
 import TirupatiEnergySection from './components/sections/TirupatiEnergySection'
 import {
   CompanyTrustSection,
@@ -236,13 +235,14 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <About />
       <RecognitionHighlight />
       <CompanyTrustSection />
       <WhySolarSection />
       <SolarJourneySection />
       <QuoteTransparencySection />
       <ProjectEvidenceSection />
+      <SolarEstimation />
+      <BankEMICalculator />
       <TirupatiEnergySection />
       {/* Wind Energy Section */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
@@ -318,8 +318,6 @@ export default function Home() {
           <HybridTable rows={hybrid.table} />
         </div>
       </section>
-      <SolarEstimation />
-      <BankEMICalculator />
       <Brands />
     </main>
   )

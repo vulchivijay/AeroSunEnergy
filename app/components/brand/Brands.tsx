@@ -5,14 +5,7 @@ import { useLocale } from '@/lib/LocaleContext'
 
 const brandImages = [
   { file: 'adani-solar.png', name: 'Adani Solar', hue: 160, prices: ['₹21.5–34/Wp'], basis: 'Non-DCR to DCR retail examples.' },
-  { file: 'havells.png', name: 'Havells', hue: 350, prices: ['₹28–33/Wp'], basis: 'Seller-listed range.' },
-  { file: 'loom-solar.png', name: 'Loom Solar', hue: 82, prices: ['₹18.2/Wp · non-DCR', '₹28.2/Wp · DCR'], basis: 'Retail examples for different models.' },
-  { file: 'luminous.png', name: 'Luminous', hue: 245, prices: ['₹21.0/Wp · DCR', '₹24.8/Wp · non-DCR'], basis: 'Listed examples; different models and wattages.' },
-  { file: 'rayzon-solar.png', name: 'Rayzon Solar', hue: 185, prices: ['₹15/Wp · non-DCR', '₹28.2/Wp · DCR'], basis: 'Dealer-listed TOPCon examples.' },
-  { file: 'renewsys-solar.png', name: 'RenewSys Solar', hue: 46, prices: ['₹25.60/Wp · DCR'], basis: 'Full-truckload price, ex-works plus GST.' },
-  { file: 'saatvik-solar.png', name: 'Saatvik Solar', hue: 305, prices: ['₹20–21/Wp · DCR', '₹12–13/Wp · non-DCR'], basis: 'Reported module realizations, not retail quotes.' },
   { file: 'tata-power-solar.png', name: 'Tata Power Solar', hue: 225, prices: ['₹26–32/Wp'], basis: 'Dealer/market listings; varies by model and DCR status.' },
-  { file: 'vikram-solar.png', name: 'Vikram Solar', hue: 165, prices: ['₹18.6–30/Wp'], basis: 'Non-DCR to DCR market examples.' },
   { file: 'waaree-energies.png', name: 'Waaree Energies', hue: 29, prices: ['₹17.4/Wp · non-DCR', '₹27.9/Wp · DCR'], basis: 'Official-store examples; listed prices exclude GST.' },
 ]
 
@@ -70,7 +63,7 @@ export default function Brands() {
           </p>
         </header>
 
-        <ul className="grid list-none grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+        <ul className="flex list-none flex-wrap items-stretch justify-center gap-4 sm:gap-5">
           {sortedBrands.map((brand, index) => {
             const maxPrice = getHighestListedPrice(brand.prices)
             const formattedMaxPrice = maxPrice?.toLocaleString('en-IN', { maximumFractionDigits: 2 })
@@ -78,7 +71,7 @@ export default function Brands() {
             return (
               <li
                 key={brand.file}
-                className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-[1.25rem] border p-3 shadow-[0_22px_55px_-38px_rgba(0,0,0,0.75)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_65px_-38px_rgba(0,0,0,0.85)] sm:rounded-[1.5rem] sm:p-4"
+                className="group relative flex h-full w-full max-w-[18rem] min-w-0 flex-col overflow-hidden rounded-[1.25rem] border p-3 shadow-[0_22px_55px_-38px_rgba(0,0,0,0.75)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_65px_-38px_rgba(0,0,0,0.85)] sm:rounded-[1.5rem] sm:p-4"
                 style={{
                   borderColor: `hsl(${brand.hue} 68% 72%)`,
                   background: `linear-gradient(145deg, hsl(${brand.hue} 82% 95%), #fff 48%, hsl(${brand.hue} 76% 89%))`,
@@ -152,6 +145,9 @@ export default function Brands() {
             )
           })}
         </ul>
+        <p className="pointer-events-none mt-10 select-none text-center text-2xl font-black uppercase tracking-[0.18em] text-white/20 sm:mt-12 sm:text-4xl lg:text-5xl">
+          {section.moreBrandsAvailable}
+        </p>
       </div>
     </section>
   )

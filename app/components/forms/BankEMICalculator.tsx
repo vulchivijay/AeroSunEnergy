@@ -62,10 +62,10 @@ export function BankEMICalculator() {
   }, [interestRate, loanAmount, tenureYears])
 
   return (
-    <section className="relative isolate overflow-hidden border-y border-[#d9e3f3] bg-[#edf3ff] px-4 py-14 sm:px-6 sm:py-18 lg:px-8 lg:py-24">
-      <div className="pointer-events-none absolute -right-36 -top-40 h-[28rem] w-[28rem] rounded-full border border-blue-900/[0.06]" aria-hidden="true" />
-      <div className="pointer-events-none absolute -right-20 -top-24 h-96 w-96 rounded-full border border-blue-900/[0.06]" aria-hidden="true" />
-      <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-[1.35fr_1fr_1fr] xl:items-center xl:gap-5">
+    <section className="relative isolate overflow-hidden border-y border-[#cfe4ee] bg-linear-to-br from-[#e1f3f7] via-[#e2eafb] to-[#e7e9ff] px-4 py-14 sm:px-6 sm:py-18 lg:px-8 lg:py-24">
+      <div className="pointer-events-none absolute -right-36 -top-40 h-[28rem] w-[28rem] rounded-full border border-cyan-900/[0.06]" aria-hidden="true" />
+      <div className="pointer-events-none absolute -right-20 -top-24 h-96 w-96 rounded-full border border-cyan-900/[0.06]" aria-hidden="true" />
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-[1.35fr_1fr_1fr] xl:items-center xl:gap-5">
         <header className="flex min-w-0 flex-col justify-center py-4 md:col-span-2 xl:col-span-1 xl:pr-8">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-900/10 bg-white/80 px-3.5 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-900 shadow-sm">
             <Landmark size={14} strokeWidth={2.2} aria-hidden="true" />
@@ -73,7 +73,7 @@ export function BankEMICalculator() {
           </div>
           <h2 className="max-w-xl text-4xl font-black leading-[1.02] tracking-[0.055em] text-[#122b22] sm:text-5xl lg:text-6xl">
             {labels.title}
-            <span className="mt-1 block text-emerald-700">{labels.titleAccent}</span>
+            <span className="text-emerald-700"> {labels.titleAccent}</span>
           </h2>
           <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
             {labels.description}
