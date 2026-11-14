@@ -12,6 +12,7 @@ import {
   ProjectEvidenceSection,
   QuoteTransparencySection,
   SolarJourneySection,
+  WhySolarSection,
 } from './components/sections/HomeTrustSections'
 import {
   BenefitCard,
@@ -238,6 +239,7 @@ export default function Home() {
       <About />
       <RecognitionHighlight />
       <CompanyTrustSection />
+      <WhySolarSection />
       <SolarJourneySection />
       <QuoteTransparencySection />
       <ProjectEvidenceSection />

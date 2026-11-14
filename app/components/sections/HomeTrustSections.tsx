@@ -5,16 +5,27 @@ import {
   ArrowRight,
   ArrowUpRight,
   BadgeCheck,
+  CalendarDays,
   ClipboardCheck,
   FileCheck2,
   Mail,
   MapPin,
   Phone,
   ShieldCheck,
+  Sun,
+  Zap,
 } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
+
+const serviceFactIcons = [Sun, MapPin, CalendarDays, Zap]
+const serviceFactStyles = [
+  'border-emerald-200 bg-emerald-50 text-emerald-800',
+  'border-sky-200 bg-sky-50 text-sky-800',
+  'border-amber-200 bg-amber-50 text-amber-800',
+  'border-violet-200 bg-violet-50 text-violet-800',
+]
 
 export function CompanyTrustSection() {
   const { t } = useLocale()
@@ -24,13 +35,13 @@ export function CompanyTrustSection() {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-[#0B2922] px-4 py-12 text-white sm:px-6 lg:px-10 lg:py-16"
+      className="relative isolate bg-[#0B2922] px-4 py-12 text-white sm:px-6 lg:px-10 lg:py-16"
       aria-labelledby="company-trust-title"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_8%_0%,rgba(163,217,119,0.17),transparent_35%),radial-gradient(ellipse_at_94%_100%,rgba(245,199,106,0.12),transparent_32%)]" aria-hidden="true" />
       <div className="relative mx-auto max-w-7xl">
-        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-          <div>
+        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <div className="lg:sticky lg:top-24 lg:self-start">
             <p className="text-xs font-black uppercase tracking-[0.24em] text-[#A3D977]">{content.eyebrow}</p>
             <h2 id="company-trust-title" className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">
               {content.title}
@@ -85,6 +96,32 @@ export function CompanyTrustSection() {
                 </span>
               </a>
             </div>
+
+            <div className="rounded-2xl border border-white/60 bg-[#f8f7f2] p-5 text-slate-800 shadow-sm sm:col-span-2 sm:p-6">
+              <p className="text-sm leading-7 text-slate-700 sm:text-base sm:leading-8">
+                {content.residentialServiceDescription}
+              </p>
+              <div className="mt-5 grid grid-cols-2 gap-3 xl:grid-cols-4">
+                {content.serviceFacts.map((fact, index) => {
+                  const Icon = serviceFactIcons[index] ?? BadgeCheck
+                  const style = serviceFactStyles[index] ?? 'border-slate-200 bg-slate-50 text-slate-700'
+
+                  return (
+                    <div key={fact.label} className={`flex min-w-0 items-center gap-3 rounded-xl border p-3 ${style}`}>
+                      <Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
+                      <span className="min-w-0">
+                        <span className="block text-[9px] font-bold uppercase tracking-[0.12em] opacity-75 sm:text-[10px]">
+                          {fact.label}
+                        </span>
+                        <span className="mt-1 block text-sm font-bold text-slate-900">
+                          {fact.value}
+                        </span>
+                      </span>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -94,6 +131,38 @@ export function CompanyTrustSection() {
         >
           {content.contactCta}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
         </Link>
+      </div>
+    </section>
+  )
+}
+
+export function WhySolarSection() {
+  const { t } = useLocale()
+  const content = t.home.trustSections.whySolar
+
+  return (
+    <section
+      className="bg-[#f5f8fc] px-4 py-14 text-slate-950 sm:px-6 lg:px-10 lg:py-16"
+      aria-labelledby="why-solar-title"
+    >
+      <div className="mx-auto max-w-7xl">
+        <p className="inline-flex rounded-full bg-[#eaf3fc] px-4 py-2 text-xs font-black uppercase tracking-[0.12em] text-[#075da8]">
+          {content.eyebrow}
+        </p>
+        <h2 id="why-solar-title" className="mt-4 text-3xl font-black tracking-tight sm:text-4xl">
+          {content.title}
+        </h2>
+        <div className="mt-8 grid gap-5 lg:grid-cols-3">
+          {content.cards.map((card) => (
+            <article
+              key={card.title}
+              className="h-full rounded-2xl border border-[#d1e2f2] border-l-4 border-l-[#0865b2] bg-white p-6 shadow-[0_8px_24px_-20px_rgba(15,48,80,0.45)] sm:p-8"
+            >
+              <h3 className="text-xl font-bold leading-8 text-slate-950">{card.title}</h3>
+              <p className="mt-4 text-base leading-8 text-slate-700">{card.description}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )
@@ -115,15 +184,17 @@ export function ProjectEvidenceSection() {
   }
 
   return (
-    <section className="bg-[#f5f2e9] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="testimonials-title">
+    <section className="bg-[#e8f0e9] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="testimonials-title">
       <div className="mx-auto max-w-7xl">
-        <div className="max-w-3xl">
-          <p className="text-xs font-black uppercase tracking-[0.24em] text-amber-800">{content.eyebrow}</p>
-          <h2 id="testimonials-title" className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
-            {content.title}
-          </h2>
+        <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          <div>
+            <p className="text-xs font-black uppercase tracking-[0.24em] text-emerald-800">{content.eyebrow}</p>
+            <h2 id="testimonials-title" className="mt-3 text-3xl font-black tracking-tight text-[#102b28] sm:text-4xl">
+              {content.title}
+            </h2>
+          </div>
+          <p className="max-w-3xl text-sm leading-7 text-slate-600 sm:text-base lg:pb-1">{content.description}</p>
         </div>
-        <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600 sm:text-base">{content.description}</p>
 
         <div className="mt-8 grid grid-cols-[auto_minmax(0,1fr)_auto] items-stretch gap-2 sm:gap-4">
           <button
@@ -139,10 +210,10 @@ export function ProjectEvidenceSection() {
             {testimonials.map((testimonial, index) => (
               <article
                 key={`${activeIndex}-${index}`}
-                className={`flex min-h-64 flex-col justify-between rounded-3xl border border-amber-900/10 bg-white p-6 shadow-[0_20px_50px_-40px_rgba(15,23,42,0.5)] sm:p-8 ${index === 1 ? 'hidden md:flex' : ''} ${index === 2 ? 'hidden lg:flex' : ''}`}
+                className={`flex min-h-64 flex-col justify-between rounded-[1.5rem] border border-[#cbd5cc] bg-[#f8f7f2] p-6 shadow-[0_20px_50px_-40px_rgba(16,43,40,0.35)] sm:p-8 ${index === 1 ? 'hidden md:flex' : ''} ${index === 2 ? 'hidden lg:flex' : ''}`}
               >
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-amber-800">{content.placeholderLabel}</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c46a18]">{content.placeholderLabel}</p>
                   <blockquote className="mt-5 text-lg font-semibold leading-8 text-slate-900 sm:text-xl">
                     “{testimonial.quote}”
                   </blockquote>
@@ -166,9 +237,9 @@ export function ProjectEvidenceSection() {
           </button>
         </div>
 
-        <div className="mt-5 flex flex-col gap-4 rounded-2xl border border-amber-200 bg-amber-50 p-5 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-5 flex flex-col gap-4 rounded-2xl border border-amber-300 bg-[#fff3df] p-5 sm:flex-row sm:items-center sm:justify-between">
           <p className="max-w-3xl text-sm leading-6 text-amber-950">{content.note}</p>
-          <Link href="/contact" className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-amber-950 underline decoration-amber-400 underline-offset-4">
+          <Link href="/contact" className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-amber-950 underline decoration-amber-500 underline-offset-4">
             {content.cta}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
@@ -218,60 +289,66 @@ export function QuoteTransparencySection() {
   const content = t.home.trustSections.proposal
 
   return (
-    <section className="bg-[#f7f9f8] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="quote-transparency-title">
-      <div className="mx-auto max-w-7xl">
-        <div className="max-w-3xl">
-          <p className="text-xs font-black uppercase tracking-[0.24em] text-sky-800">{content.eyebrow}</p>
-          <h2 id="quote-transparency-title" className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">{content.title}</h2>
-          <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">{content.description}</p>
-        </div>
+    <section
+      className="relative isolate bg-[#102d2c] px-4 py-14 text-white sm:px-6 lg:px-10 lg:py-18"
+      aria-labelledby="quote-transparency-title"
+    >
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_10%_0%,rgba(245,158,11,0.12),transparent_35%),radial-gradient(ellipse_at_100%_100%,rgba(56,189,248,0.1),transparent_32%)]" aria-hidden="true" />
+      <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:gap-12">
+        <header className="lg:sticky lg:top-24 lg:self-start">
+          <p className="text-xs font-black uppercase tracking-[0.24em] text-amber-300">{content.eyebrow}</p>
+          <h2 id="quote-transparency-title" className="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl">
+            {content.title}
+          </h2>
+          <p className="mt-4 max-w-xl text-sm leading-7 text-slate-200 sm:text-base">{content.description}</p>
+        </header>
 
-        <div className="mt-8 grid gap-5 lg:grid-cols-2">
-          <article className="rounded-3xl border border-sky-200 bg-white p-6 shadow-sm sm:p-7">
+        <div className="space-y-4">
+          <article className="rounded-[1.75rem] border border-white/10 bg-white/[0.06] p-5 shadow-[0_24px_60px_-40px_rgba(0,0,0,0.6)] sm:p-7">
             <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-100 text-sky-900">
+              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-300 text-[#102d2c]">
                 <FileCheck2 className="h-5 w-5" aria-hidden="true" />
               </span>
-              <h3 className="text-xl font-extrabold text-slate-950">{content.quoteHeading}</h3>
+              <h3 className="text-xl font-extrabold text-white">{content.quoteHeading}</h3>
             </div>
-            <ul className="mt-5 space-y-3">
+            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
               {content.quoteItems.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm leading-6 text-slate-700">
-                  <ClipboardCheck className="mt-1 h-4 w-4 shrink-0 text-sky-700" aria-hidden="true" />
+                <li key={item} className="flex items-start gap-3 rounded-xl bg-black/10 p-3 text-sm leading-6 text-slate-200">
+                  <ClipboardCheck className="mt-1 h-4 w-4 shrink-0 text-sky-300" aria-hidden="true" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </article>
 
-          <article className="rounded-3xl border border-emerald-200 bg-[#eff8f2] p-6 shadow-sm sm:p-7">
+          <article className="rounded-[1.75rem] border border-white/10 bg-white/[0.06] p-5 shadow-[0_24px_60px_-40px_rgba(0,0,0,0.6)] sm:p-7">
             <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-900">
+              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-200 text-sky-950">
                 <ShieldCheck className="h-5 w-5" aria-hidden="true" />
               </span>
-              <h3 className="text-xl font-extrabold text-slate-950">{content.warrantyHeading}</h3>
+              <h3 className="text-xl font-extrabold text-white">{content.warrantyHeading}</h3>
             </div>
-            <ul className="mt-5 space-y-3">
+            <ul className="mt-5 grid gap-3">
               {content.warrantyItems.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm leading-6 text-slate-700">
-                  <BadgeCheck className="mt-1 h-4 w-4 shrink-0 text-emerald-700" aria-hidden="true" />
+                <li key={item} className="flex items-start gap-3 rounded-xl bg-black/10 p-3 text-sm leading-6 text-slate-200">
+                  <BadgeCheck className="mt-1 h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </article>
-        </div>
 
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Link href="/#brand-section-title" className="inline-flex min-h-11 items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-800 transition hover:border-emerald-600 hover:text-emerald-800">
-            {content.brandCta}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
-          <Link href="/warranty-policy" className="inline-flex min-h-11 items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-bold text-white transition hover:bg-emerald-900">
-            {content.warrantyCta}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
-          <Link href="/customer-enquiry" className="inline-flex min-h-11 items-center gap-2 rounded-full bg-amber-300 px-5 py-3 text-sm font-bold text-amber-950 transition hover:bg-amber-200">
-            {content.quoteCta}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
+          <div className="flex flex-col gap-3 rounded-[1.5rem] bg-amber-400 p-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-end sm:p-5">
+            <Link href="/#brand-section-title" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-center text-sm font-bold text-slate-900 transition hover:bg-amber-50">
+              {content.brandCta}<ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+            </Link>
+            <Link href="/warranty-policy" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-center text-sm font-bold text-slate-900 transition hover:bg-amber-50">
+              {content.warrantyCta}<ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+            </Link>
+            <Link href="/customer-enquiry" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[#102d2c] px-4 py-3 text-center text-sm font-bold text-white transition hover:bg-[#173c3a]">
+              {content.quoteCta}<ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

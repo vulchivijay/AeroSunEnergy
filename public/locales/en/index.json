@@ -4491,6 +4491,13 @@
         "eyebrow": "A real team, clear details",
         "title": "Know who you’re working with.",
         "description": "Start with the company behind the proposal, a verifiable office address, and direct ways to reach the team.",
+        "residentialServiceDescription": "AeroSun Energy provides residential rooftop solar for homes in Tirupati, Tirupati district, Andhra Pradesh. Homeowners in Tirupati and nearby areas such as Chittoor, Srikalahasti, and Puttur can request a written estimate based on their roof and electricity use. Residential quotes include GST, installation, mounting structure and Polycab or Finolex wiring; net meter and extra approvals are excluded unless specifically stated. Panel options include Adani, Waaree, Tata and Renewsolar, with Polycab, Waaree, Deye or X Watt inverter options according to the selected system. Stated panel warranty is 25 years and inverter warranty is 8 years, subject to the applicable manufacturer terms. Residential pricing is valid for 7 days; commercial projects are assessed and quoted manually.",
+        "serviceFacts": [
+          { "label": "DISCOM", "value": "APSPDCL" },
+          { "label": "District", "value": "Tirupati" },
+          { "label": "Quote validity", "value": "7 Days" },
+          { "label": "Inverter warranty", "value": "Stated 8 Years" }
+        ],
         "legalEntityLabel": "Legal business name",
         "officeLabel": "Office address",
         "phoneLabel": "Call",
@@ -4498,6 +4505,24 @@
         "mapCta": "Open map",
         "identifiersText": "CIN: U35106AP2026PTC128748.",
         "contactCta": "Contact AeroSun Energy"
+      },
+      "whySolar": {
+        "eyebrow": "Why Solar",
+        "title": "What to Review Before Choosing Solar in Tirupati",
+        "cards": [
+          {
+            "title": "Designed Around Your Consumption",
+            "description": "A useful solar proposal starts with your electricity bill, roof space and daytime consumption—not a generic package. Our residential quote for Tirupati records the system scope and selected equipment so you can make an informed comparison."
+          },
+          {
+            "title": "Residential Subsidy Guidance",
+            "description": "Eligible residential customers can ask for current PM Surya Ghar subsidy guidance during their quotation. Eligibility, documentation and applicable amounts should always be confirmed for the specific property and current programme rules."
+          },
+          {
+            "title": "Clear Scope Before You Decide",
+            "description": "The proposal states what is included—GST, installation, mounting structure and wiring—and flags exclusions such as net metering or extra approvals unless they are explicitly included. This helps prevent unexpected costs later."
+          }
+        ]
       },
       "evidence": {
         "eyebrow": "Customer testimonials",
