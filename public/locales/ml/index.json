@@ -1,0 +1,42 @@
+{
+  "navbar": {
+    "languages": [
+      { "code": "en", "label": "ഇംഗ്ലീഷ്", "shortLabel": "EN" },
+      { "code": "hi", "label": "ഹിന്ദി", "shortLabel": "HI" },
+      { "code": "te", "label": "തെലുങ്ക്", "shortLabel": "TE" },
+      { "code": "ta", "label": "തമിഴ്", "shortLabel": "TA" },
+      { "code": "kn", "label": "കന്നഡ", "shortLabel": "KN" },
+      { "code": "ml", "label": "മലയാളം", "shortLabel": "ML" }
+    ],
+    "links": [
+      { "label": "ഹോം" },
+      {
+        "label": "ഞങ്ങളെക്കുറിച്ച്",
+        "children": [
+          { "label": "കമ്പനി പ്രൊഫൈൽ" },
+          { "label": "ഉൽപ്പന്ന കാറ്റലോഗ്" }
+        ]
+      },
+      { "label": "സൗരോർജ്ജം" },
+      { "label": "കാറ്റിൽ നിന്നുള്ള ഊർജ്ജം" },
+      { "label": "ഹൈബ്രിഡ് ഊർജ്ജം" },
+      { "label": "സേവനങ്ങൾ" },
+      { "label": "ബന്ധപ്പെടുക" }
+    ],
+    "startProject": "പദ്ധതി ആരംഭിക്കുക",
+    "comingSoon": "ഉടൻ വരുന്നു",
+    "toggleDark": "ഡാർക്ക് മോഡ് മാറ്റുക",
+    "toggleMenu": "മെനു മാറ്റുക",
+    "navigateTo": "ഇതിലേക്ക് പോകുക",
+    "goTo": "പോകുക",
+    "section": "വിഭാഗം",
+    "languageLabel": "ഭാഷ",
+    "aboutSubmenuLabel": "ഞങ്ങളെക്കുറിച്ചുള്ള ഉപമെനു തുറക്കുക അല്ലെങ്കിൽ അടയ്ക്കുക",
+    "brandTagline": "സൂര്യനിൽ നിന്നും കാറ്റിൽ നിന്നും ഊർജ്ജം",
+    "primaryNavigationLabel": "പ്രധാന നാവിഗേഷൻ",
+    "mobileNavigationLabel": "മൊബൈൽ പ്രധാന നാവിഗേഷൻ",
+    "exploreLabel": "പര്യവേക്ഷണം ചെയ്യുക",
+    "closeMenu": "നാവിഗേഷൻ മെനു അടയ്ക്കുക",
+    "voucher": "വൗച്ചർ"
+  }
+}

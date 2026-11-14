@@ -1,0 +1,42 @@
+{
+  "navbar": {
+    "languages": [
+      { "code": "en", "label": "ஆங்கிலம்", "shortLabel": "EN" },
+      { "code": "hi", "label": "இந்தி", "shortLabel": "HI" },
+      { "code": "te", "label": "தெலுங்கு", "shortLabel": "TE" },
+      { "code": "ta", "label": "தமிழ்", "shortLabel": "TA" },
+      { "code": "kn", "label": "கன்னடம்", "shortLabel": "KN" },
+      { "code": "ml", "label": "மலையாளம்", "shortLabel": "ML" }
+    ],
+    "links": [
+      { "label": "முகப்பு" },
+      {
+        "label": "எங்களைப் பற்றி",
+        "children": [
+          { "label": "நிறுவன விவரம்" },
+          { "label": "தயாரிப்பு பட்டியல்" }
+        ]
+      },
+      { "label": "சூரிய ஆற்றல்" },
+      { "label": "காற்றாலை ஆற்றல்" },
+      { "label": "கலப்பு ஆற்றல்" },
+      { "label": "சேவைகள்" },
+      { "label": "தொடர்பு" }
+    ],
+    "startProject": "திட்டத்தைத் தொடங்குங்கள்",
+    "comingSoon": "விரைவில்",
+    "toggleDark": "இருண்ட பயன்முறையை மாற்று",
+    "toggleMenu": "மெனுவை மாற்று",
+    "navigateTo": "செல்லவும்",
+    "goTo": "செல்",
+    "section": "பிரிவு",
+    "languageLabel": "மொழி",
+    "aboutSubmenuLabel": "எங்களைப் பற்றிய துணைமெனுவைத் திறக்கவும் அல்லது மூடவும்",
+    "brandTagline": "சூரியன் மற்றும் காற்றிலிருந்து ஆற்றல்",
+    "primaryNavigationLabel": "முதன்மை வழிசெலுத்தல்",
+    "mobileNavigationLabel": "கைபேசி முதன்மை வழிசெலுத்தல்",
+    "exploreLabel": "ஆராயுங்கள்",
+    "closeMenu": "வழிசெலுத்தல் மெனுவை மூடவும்",
+    "voucher": "வவுச்சர்"
+  }
+}

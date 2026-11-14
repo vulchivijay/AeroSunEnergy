@@ -22,6 +22,21 @@
         "code": "te",
         "label": "तेलुगु",
         "shortLabel": "TE"
+      },
+      {
+        "code": "ta",
+        "label": "तमिल",
+        "shortLabel": "TA"
+      },
+      {
+        "code": "kn",
+        "label": "कन्नड़",
+        "shortLabel": "KN"
+      },
+      {
+        "code": "ml",
+        "label": "मलयालम",
+        "shortLabel": "ML"
       }
     ],
     "links": [

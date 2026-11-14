@@ -1,0 +1,42 @@
+{
+  "navbar": {
+    "languages": [
+      { "code": "en", "label": "ಇಂಗ್ಲಿಷ್", "shortLabel": "EN" },
+      { "code": "hi", "label": "ಹಿಂದಿ", "shortLabel": "HI" },
+      { "code": "te", "label": "ತೆಲುಗು", "shortLabel": "TE" },
+      { "code": "ta", "label": "ತಮಿಳು", "shortLabel": "TA" },
+      { "code": "kn", "label": "ಕನ್ನಡ", "shortLabel": "KN" },
+      { "code": "ml", "label": "ಮಲಯಾಳಂ", "shortLabel": "ML" }
+    ],
+    "links": [
+      { "label": "ಮುಖಪುಟ" },
+      {
+        "label": "ನಮ್ಮ ಬಗ್ಗೆ",
+        "children": [
+          { "label": "ಕಂಪನಿ ವಿವರ" },
+          { "label": "ಉತ್ಪನ್ನಗಳ ಪಟ್ಟಿ" }
+        ]
+      },
+      { "label": "ಸೌರಶಕ್ತಿ" },
+      { "label": "ಪವನಶಕ್ತಿ" },
+      { "label": "ಹೈಬ್ರಿಡ್ ಶಕ್ತಿ" },
+      { "label": "ಸೇವೆಗಳು" },
+      { "label": "ಸಂಪರ್ಕ" }
+    ],
+    "startProject": "ಯೋಜನೆ ಆರಂಭಿಸಿ",
+    "comingSoon": "ಶೀಘ್ರದಲ್ಲೇ",
+    "toggleDark": "ಡಾರ್ಕ್ ಮೋಡ್ ಬದಲಿಸಿ",
+    "toggleMenu": "ಮೆನು ಬದಲಿಸಿ",
+    "navigateTo": "ಗೆ ಹೋಗಿ",
+    "goTo": "ಹೋಗಿ",
+    "section": "ವಿಭಾಗ",
+    "languageLabel": "ಭಾಷೆ",
+    "aboutSubmenuLabel": "ನಮ್ಮ ಬಗ್ಗೆ ಉಪಮೆನುವನ್ನು ತೆರೆಯಿರಿ ಅಥವಾ ಮುಚ್ಚಿರಿ",
+    "brandTagline": "ಸೂರ್ಯ ಮತ್ತು ಗಾಳಿಯಿಂದ ಶಕ್ತಿ",
+    "primaryNavigationLabel": "ಮುಖ್ಯ ನ್ಯಾವಿಗೇಶನ್",
+    "mobileNavigationLabel": "ಮೊಬೈಲ್ ಮುಖ್ಯ ನ್ಯಾವಿಗೇಶನ್",
+    "exploreLabel": "ಅನ್ವೇಷಿಸಿ",
+    "closeMenu": "ನ್ಯಾವಿಗೇಶನ್ ಮೆನುವನ್ನು ಮುಚ್ಚಿರಿ",
+    "voucher": "ವೌಚರ್"
+  }
+}

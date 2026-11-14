@@ -22,6 +22,21 @@
         "code": "te",
         "label": "తెలుగు",
         "shortLabel": "TE"
+      },
+      {
+        "code": "ta",
+        "label": "తమిళం",
+        "shortLabel": "TA"
+      },
+      {
+        "code": "kn",
+        "label": "కన్నడ",
+        "shortLabel": "KN"
+      },
+      {
+        "code": "ml",
+        "label": "మలయాళం",
+        "shortLabel": "ML"
       }
     ],
     "links": [

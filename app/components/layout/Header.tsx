@@ -23,7 +23,7 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import Logo from '../brand/Logo'
-import { useLocale, type Locale } from '@/lib/LocaleContext'
+import { isLocale, useLocale, type Locale } from '@/lib/LocaleContext'
 import { isProductionComingSoonLink } from '@/lib/navigation'
 
 const navigationIconComponents: Record<string, LucideIcon> = {
@@ -36,10 +36,6 @@ const navigationIconComponents: Record<string, LucideIcon> = {
   zap: Zap,
   panels: PanelsTopLeft,
   mail: Mail,
-}
-
-function isLocale(value: string): value is Locale {
-  return value === 'en' || value === 'hi' || value === 'te'
 }
 
 type NavigationLink = {

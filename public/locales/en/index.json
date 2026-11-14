@@ -4243,6 +4243,21 @@
         "code": "te",
         "label": "Telugu",
         "shortLabel": "TE"
+      },
+      {
+        "code": "ta",
+        "label": "Tamil",
+        "shortLabel": "TA"
+      },
+      {
+        "code": "kn",
+        "label": "Kannada",
+        "shortLabel": "KN"
+      },
+      {
+        "code": "ml",
+        "label": "Malayalam",
+        "shortLabel": "ML"
       }
     ],
     "links": [
