@@ -22,8 +22,8 @@ const renderWindIcon = (colorClass: string) => {
 export function WindSectionEyebrow({ children }: { children: ReactNode }) {
   return (
     <ContentSectionEyebrow
-      className="border border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ecfeff_45%,#ffffff_100%)] shadow-[0_14px_26px_-20px_rgba(59,130,246,0.9)]"
-      dotClassName="bg-linear-to-r from-sky-500 to-cyan-500 shadow-[0_0_0_4px_rgba(59,130,246,0.12)]"
+      className="py-1"
+      dotClassName="bg-sky-600"
       labelClassName="text-sky-700"
     >
       {children}
@@ -53,21 +53,36 @@ export function WindFeatureCard({
       points={points}
       label={ui.windSolution}
       icon={renderWindIcon(componentData.iconColors[accent])}
-      cardClassName="group rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_22px_45px_-28px_rgba(15,23,42,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-28px_rgba(59,130,246,0.25)]"
-      featureClassName={componentData.featureClasses[accent]}
+      cardClassName="group h-full border-t border-slate-300 py-6 transition-colors hover:border-sky-600"
+      featureClassName={componentData.iconColors[accent]}
       titleClassName="tracking-[0.05em] text-slate-900"
-      pointIconClassName="bg-sky-100 text-sky-700"
+      pointIconClassName="bg-sky-50 text-sky-700"
     />
   )
 }
 
-export function WindBenefitCard({ title, description }: { title: string; description: string }) {
+export function WindBenefitCard({
+  title,
+  description,
+  accent = 'sky',
+}: {
+  title: string
+  description: string
+  accent?: 'sky' | 'emerald' | 'amber' | 'violet'
+}) {
+  const borderColors = {
+    sky: 'border-l-[#b8d8ec]',
+    emerald: 'border-l-[#b6d9c6]',
+    amber: 'border-l-[#efd9ad]',
+    violet: 'border-l-[#d0c3e6]',
+  }
+
   return (
     <ContentBenefitCard
       title={title}
       description={description}
-      cardClassName="rounded-[1.7rem] border border-sky-200 bg-[linear-gradient(135deg,#ffffff_0%,#eff6ff_100%)] p-5 shadow-[0_18px_32px_-26px_rgba(59,130,246,0.4)]"
-      iconClassName="bg-linear-to-br from-sky-700 to-cyan-700 text-white shadow-lg shadow-sky-500/20"
+      cardClassName={`rounded-2xl border-l-4 ${borderColors[accent]} bg-[#eaf1f8] p-5`}
+      iconClassName="bg-sky-100 text-sky-700"
       titleClassName="tracking-[0.04em] text-slate-900"
     />
   )
@@ -89,7 +104,7 @@ export function WindInfoPanel({
     <ContentInfoPanel
       title={title}
       content={content}
-      themeClassName={componentData.infoThemes[accent]}
+      themeClassName="bg-transparent text-slate-900"
       checkBackgroundClassName={componentData.checkBackgrounds[accent]}
       titleClassName="tracking-[0.04em]"
     />
@@ -101,15 +116,15 @@ export function WindCapacityTable({ rows }: { rows: { label: string; value: stri
   const ui = t.ui
 
   return (
-    <div className="overflow-x-auto rounded-[1.9rem] border border-sky-200 bg-white shadow-[0_20px_34px_-24px_rgba(59,130,246,0.3)] [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-sky-300 [&::-webkit-scrollbar-thumb:hover]:bg-sky-400">
+    <div className="overflow-x-auto border-y border-slate-300 bg-transparent [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-sky-300 [&::-webkit-scrollbar-thumb:hover]:bg-sky-400">
       <div className="min-w-[680px]">
-        <div className="grid border-b border-sky-100 bg-[linear-gradient(90deg,#eff6ff_0%,#ffffff_50%,#ecfeff_100%)] text-[12px] font-bold uppercase tracking-[0.2em] text-slate-600 md:grid-cols-[1fr_1.1fr_2fr]">
+        <div className="grid border-b border-slate-200 bg-[#f7f7f1] text-[11px] font-bold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-[1fr_1.1fr_2fr]">
           <div className="px-4 py-3">{ui.capacityBand}</div>
           <div className="px-4 py-3">{ui.systemSize}</div>
           <div className="px-4 py-3">{ui.typicalUse}</div>
         </div>
         {rows.map((row) => (
-          <div key={row.label} className="grid gap-3 px-4 py-4 text-sm text-slate-700 md:grid-cols-[1fr_1.1fr_2fr] md:gap-0">
+          <div key={row.label} className="grid gap-3 border-b border-slate-200 px-4 py-4 text-sm text-slate-600 last:border-b-0 md:grid-cols-[1fr_1.1fr_2fr] md:gap-0">
             <div className="font-semibold text-slate-900">{row.label}</div>
             <div className="font-black text-sky-700">{row.value}</div>
             <div>{row.use}</div>
@@ -125,15 +140,15 @@ export function WindComparisonTable({ rows }: { rows: { system: string; detail: 
   const ui = t.ui
 
   return (
-    <div className="overflow-x-auto rounded-[1.9rem] border border-sky-200 bg-white shadow-[0_20px_34px_-24px_rgba(59,130,246,0.3)] [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-sky-300 [&::-webkit-scrollbar-thumb:hover]:bg-sky-400">
+    <div className="overflow-x-auto border-y border-slate-300 bg-transparent [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-sky-300 [&::-webkit-scrollbar-thumb:hover]:bg-sky-400">
       <div className="min-w-[780px]">
-        <div className="grid border-b border-sky-100 bg-[linear-gradient(90deg,#ecfeff_0%,#ffffff_50%,#f0fdf4_100%)] text-[12px] font-bold uppercase tracking-[0.2em] text-slate-600 md:grid-cols-[1.2fr_2.3fr_1.8fr]">
+        <div className="grid border-b border-slate-200 bg-[#f7f7f1] text-[11px] font-bold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-[1.2fr_2.3fr_1.8fr]">
           <div className="px-4 py-3">{ui.systemType}</div>
           <div className="px-4 py-3">{ui.howItWorks}</div>
           <div className="px-4 py-3">{ui.typicalUse}</div>
         </div>
         {rows.map((row) => (
-          <div key={row.system} className="grid gap-3 px-4 py-4 text-sm text-slate-700 md:grid-cols-[1.2fr_2.3fr_1.8fr] md:gap-0">
+          <div key={row.system} className="grid gap-3 border-b border-slate-200 px-4 py-4 text-sm text-slate-600 last:border-b-0 md:grid-cols-[1.2fr_2.3fr_1.8fr] md:gap-0">
             <div className="font-semibold text-slate-900">{row.system}</div>
             <div>{row.detail}</div>
             <div>{row.use}</div>

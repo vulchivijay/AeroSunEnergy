@@ -139,6 +139,7 @@ export function CompanyTrustSection() {
 export function WhySolarSection() {
   const { t } = useLocale()
   const content = t.home.trustSections.whySolar
+  const borderColors = ['border-l-[#b8d7ec]', 'border-l-[#c5dfc2]', 'border-l-[#efd9ad]'] as const
 
   return (
     <section
@@ -153,10 +154,10 @@ export function WhySolarSection() {
           {content.title}
         </h2>
         <div className="mt-8 grid gap-5 lg:grid-cols-3">
-          {content.cards.map((card) => (
+          {content.cards.map((card, index) => (
             <article
               key={card.title}
-              className="h-full rounded-2xl border border-[#d1e2f2] border-l-4 border-l-[#0865b2] bg-white p-6 shadow-[0_8px_24px_-20px_rgba(15,48,80,0.45)] sm:p-8"
+              className={`h-full rounded-2xl border border-[#d1e2f2] border-l-4 ${borderColors[index % borderColors.length]} bg-white p-6 shadow-[0_8px_24px_-20px_rgba(15,48,80,0.45)] sm:p-8`}
             >
               <h3 className="text-xl font-bold leading-8 text-slate-950">{card.title}</h3>
               <p className="mt-4 text-base leading-8 text-slate-700">{card.description}</p>
@@ -210,18 +211,18 @@ export function ProjectEvidenceSection() {
             {testimonials.map((testimonial, index) => (
               <article
                 key={`${activeIndex}-${index}`}
-                className={`flex min-h-64 flex-col justify-between rounded-[1.5rem] border border-[#cbd5cc] bg-[#f8f7f2] p-6 shadow-[0_20px_50px_-40px_rgba(16,43,40,0.35)] sm:p-8 ${index === 1 ? 'hidden md:flex' : ''} ${index === 2 ? 'hidden lg:flex' : ''}`}
+                className={`flex min-h-64 flex-col justify-between rounded-[1.5rem] border border-[#cbd5cc] bg-white p-6 opacity-100 blur-none backdrop-blur-none shadow-[0_20px_50px_-40px_rgba(16,43,40,0.35)] sm:p-8 ${index === 1 ? 'hidden md:flex' : ''} ${index === 2 ? 'hidden lg:flex' : ''}`}
               >
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c46a18]">{content.placeholderLabel}</p>
-                  <blockquote className="mt-5 text-lg font-semibold leading-8 text-slate-900 sm:text-xl">
+                  <blockquote className="mt-5 text-lg font-semibold leading-8 text-slate-950 opacity-100 blur-none sm:text-xl">
                     “{testimonial.quote}”
                   </blockquote>
                 </div>
                 <div className="mt-8 border-t border-slate-100 pt-5">
-                  <p className="font-bold text-slate-950">{testimonial.customer}</p>
-                  <p className="mt-1 text-sm text-slate-600">{testimonial.location}</p>
-                  <p className="mt-3 text-sm font-medium text-emerald-800">{testimonial.system}</p>
+                  <p className="font-bold text-slate-950 opacity-100 blur-none">{testimonial.customer}</p>
+                  <p className="mt-1 text-sm text-slate-700 opacity-100 blur-none">{testimonial.location}</p>
+                  <p className="mt-3 text-sm font-medium text-emerald-900 opacity-100 blur-none">{testimonial.system}</p>
                 </div>
               </article>
             ))}

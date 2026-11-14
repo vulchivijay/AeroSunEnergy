@@ -33,6 +33,12 @@ import {
 } from './components/ui'
 import { Brands } from './components/brand'
 
+const homeBenefitAccents = ['emerald', 'sky', 'amber', 'violet'] as const
+
+function getHomeBenefitAccent(index: number) {
+  return homeBenefitAccents[index % homeBenefitAccents.length] ?? 'emerald'
+}
+
 function RecognitionHighlight() {
   const { t } = useLocale()
   const recognitions = t.home.recognition
@@ -138,8 +144,8 @@ export default function Home() {
           </p>
 
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {home.rooftopSolar.benefits.map((benefit) => (
-              <BenefitCard key={benefit.title} title={benefit.title} description={benefit.description} />
+            {home.rooftopSolar.benefits.map((benefit, index) => (
+              <BenefitCard key={benefit.title} title={benefit.title} description={benefit.description} accent={getHomeBenefitAccent(index)} />
             ))}
           </div>
 
@@ -173,8 +179,8 @@ export default function Home() {
           </div>
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {whySolar.map((item) => (
-              <BenefitCard key={item.title} title={item.title} description={item.description} />
+            {whySolar.map((item, index) => (
+              <BenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
             ))}
           </div>
         </div>
@@ -266,8 +272,8 @@ export default function Home() {
         </div>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {wind.benefits.map((item) => (
-            <WindBenefitCard key={item.title} title={item.title} description={item.description} />
+          {wind.benefits.map((item, index) => (
+            <WindBenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
           ))}
         </div>
 
@@ -303,8 +309,8 @@ export default function Home() {
         </div>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {hybrid.benefits.map((item) => (
-            <HybridBenefitCard key={item.title} title={item.title} description={item.description} />
+          {hybrid.benefits.map((item, index) => (
+            <HybridBenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
           ))}
         </div>
 
