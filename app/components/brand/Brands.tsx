@@ -36,13 +36,9 @@ export default function Brands() {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-[#10152D] px-4 py-16 sm:px-6 lg:px-10 lg:py-20"
+      className="relative isolate overflow-hidden bg-[linear-gradient(120deg,#312e81_0%,#4c1d95_55%,#701a75_100%)] px-4 py-16 sm:px-6 lg:px-10 lg:py-20"
       aria-labelledby="brand-section-title"
     >
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_8%_0%,rgba(124,92,214,0.32),transparent_36%),radial-gradient(ellipse_at_92%_85%,rgba(15,159,140,0.22),transparent_32%)]"
-        aria-hidden="true"
-      />
       <div
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-size-[48px_48px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)]"
         aria-hidden="true"

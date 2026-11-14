@@ -175,7 +175,6 @@ export function SolarEstimation() {
       badgeTone,
     }
   })()
-
   const summaryStats = [
     {
       label: e.recommendedCapacity,
@@ -262,46 +261,35 @@ export function SolarEstimation() {
   return (
     <section className="relative isolate overflow-hidden bg-[#fff4e8] px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-8 text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-4 py-1.5 text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700 shadow-sm backdrop-blur-md">
-            <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
-            {e.badge}
-          </span>
+        <div className="grid items-stretch gap-5 lg:grid-cols-[1.05fr_0.95fr] xl:gap-6">
+          <div className="rounded-[2rem] border border-slate-200 bg-white/85 p-5 shadow-[0_25px_60px_-35px_rgba(15,23,42,0.35)] backdrop-blur-sm sm:p-7 lg:p-8">
+            <div className="mb-8">
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-3.5 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-700 shadow-sm backdrop-blur-md">
+                <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                {e.badge}
+              </span>
+              <h1 className="mt-4 max-w-xl text-3xl font-extrabold leading-tight tracking-[-0.04em] text-slate-900 sm:text-4xl">
+                {e.savingsTitle} <span className="text-emerald-600">{e.savingsTitleAccent}</span>
+              </h1>
+              <p className="mt-3 max-w-xl text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
+                {e.savingsDescription}
+              </p>
+            </div>
 
-          <h1 className="mt-6 text-4xl font-black leading-[0.95] tracking-[0.065em] text-slate-900 sm:text-5xl lg:text-[5rem]">
-            {e.savingsTitle}
-            <span className="mt-2 block text-emerald-600">{e.savingsTitleAccent}</span>
-          </h1>
-
-          <p className="mt-5 text-lg leading-8 text-slate-600">
-            {e.savingsDescription}
-          </p>
-        </div>
-
-        <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="rounded-[30px] border border-slate-200 bg-white/85 p-5 shadow-[0_25px_60px_-35px_rgba(15,23,42,0.35)] backdrop-blur-sm sm:p-6 lg:p-8">
             <div className="space-y-6">
-              <div>
-                <h2 className="text-[2rem] font-black tracking-tighter text-slate-900">
-                  {e.estimateSavings}
-                </h2>
-                <p className="mt-2 text-sm text-slate-600">{e.adjustUsage}</p>
-              </div>
-
+              <p className="text-sm text-slate-600">{e.adjustUsage}</p>
               <div className="space-y-4">
-                <div className="flex items-center justify-between gap-3">
-                  <div>
-                    <label htmlFor={monthlyBillInputId} className="text-[12px] font-bold uppercase tracking-[0.26em] text-slate-500">{e.monthlyBill}</label>
-                    <div className="mt-2 flex items-center gap-2">
-                      <span className="text-[2.4rem] font-black tracking-[0.06em] text-emerald-600">{formatCurrency(monthlyBill)}</span>
-                    </div>
-                  </div>
-                  <div className="rounded-full bg-emerald-50 px-3 py-1 text-md font-semibold text-emerald-700">
-                    {calculation ? `${calculation.recommendedKw} ${e.recommendedSystemSuffix}` : e.systemSizing}
-                  </div>
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <label htmlFor={monthlyBillInputId} className="text-sm font-medium text-slate-500">{e.monthlyBill}</label>
+                  <span className="text-xl font-extrabold tabular-nums text-emerald-600 sm:text-2xl">{formatCurrency(monthlyBill)}</span>
                 </div>
 
                 <div className="space-y-3">
+                  <input
+                    type="hidden"
+                    {...register('monthlyBill', { valueAsNumber: true })}
+                    value={monthlyBill}
+                  />
                   <input
                     id={monthlyBillInputId}
                     type="range"
@@ -316,47 +304,34 @@ export function SolarEstimation() {
                     }}
                     className="h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-emerald-400 via-amber-400 to-slate-200 accent-emerald-600"
                   />
-                  <div className="flex items-center justify-between text-md font-semibold text-slate-500">
+                  <div className="flex items-center justify-between text-sm font-medium text-slate-500">
                     <span>{e.monthlyBillMinimum}</span>
                     <span>{e.monthlyBillMaximum}</span>
                   </div>
-                  <p className="text-xs font-medium text-slate-500">
+                  <p className="text-sm font-medium text-slate-500">
                     {e.estimatedMonthlyUsage}: {monthlyUnits.toLocaleString('en-IN')} {e.unitsSuffix}
                   </p>
                 </div>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-[20px] border border-slate-200 bg-slate-50/80 p-4 shadow-inner">
-                  <div className="text-md font-bold uppercase tracking-[0.2em] text-slate-500">{e.plantSize}</div>
-                  <div className="mt-2 text-3xl font-black tracking-[0.06em] text-emerald-600">
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div className="rounded-[1.1rem] border border-slate-200 bg-slate-50/80 p-4 shadow-inner">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500">{e.plantSize}</div>
+                  <div className="mt-3 text-2xl font-extrabold tracking-tight text-emerald-600 sm:text-3xl">
                     {calculation ? `${calculation.recommendedKw} ${e.capacityUnit}` : '—'}
                   </div>
                 </div>
 
-                <div className="rounded-[20px] border border-slate-200 bg-slate-50/80 p-4 shadow-inner">
-                  <div className="text-md font-bold uppercase tracking-[0.2em] text-slate-500">{e.roofRequired}</div>
-                  <div className="mt-2 text-3xl font-black tracking-[0.06em] text-emerald-600">
+                <div className="rounded-[1.1rem] border border-slate-200 bg-slate-50/80 p-4 shadow-inner">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500">{e.roofRequired}</div>
+                  <div className="mt-3 text-2xl font-extrabold tracking-tight text-emerald-600 sm:text-3xl">
                     {calculation ? `${Math.max(60, calculation.recommendedKw * ROOF_AREA_PER_KW)} ${e.squareFootUnit}` : '—'}
                   </div>
                 </div>
               </div>
 
               <div className="pt-2">
-                <div className="mt-4 grid gap-4 md:grid-cols-3">
-                  <InputField
-                    name="monthlyBill"
-                    label={e.monthlyBill}
-                    helperText={e.monthlyBillHelper}
-                    suffix={e.billSuffix}
-                    error={errors.monthlyBill?.message}
-                    register={register('monthlyBill', { valueAsNumber: true })}
-                    accentClass="from-emerald-500 via-emerald-500 to-emerald-600"
-                    placeholder="3060"
-                    min={500}
-                    max={50000}
-                  />
-
+                <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
                   <InputField
                     name="sellingPricePerKw"
                     label={e.sellingPrice}
@@ -395,54 +370,54 @@ export function SolarEstimation() {
             </div>
           </div>
 
-          <div className="rounded-[30px] bg-linear-to-br from-[#0b3b2e] via-[#1f7a5a] to-[#48b69a] p-5 text-white shadow-[0_30px_80px_-35px_rgba(11,59,46,0.8)] sm:p-6 lg:p-8">
-            <div className="space-y-5">
+          <div className="relative overflow-hidden rounded-[2rem] bg-linear-to-br from-[#0b3b2e] via-[#1f7a5a] to-[#48b69a] p-5 text-white shadow-[0_30px_80px_-35px_rgba(11,59,46,0.8)] sm:p-6 lg:p-8">
+            <div className="relative z-10 space-y-5">
               <div>
-                <h2 className="text-[2rem] font-black tracking-tighter text-white">{e.returnsTitle}</h2>
-                <p className="mt-2 text-sm text-emerald-50/90">{e.irradianceTariffAssumption}</p>
+                <h2 className="text-2xl font-extrabold tracking-tight text-white sm:text-[1.75rem]">{e.returnsTitle}</h2>
+                <p className="mt-2 text-sm leading-6 text-emerald-50/90">{e.irradianceTariffAssumption}</p>
               </div>
 
-              <div className="rounded-[22px] border border-white/15 bg-white/10 p-5 backdrop-blur-sm">
-                <div className="text-[12px] font-bold uppercase tracking-[0.3em] text-emerald-50">{e.annualSavings}</div>
-                <div className="mt-3 text-4xl font-black tracking-[0.08em] text-white">
+              <div className="rounded-[1.25rem] border border-white/15 bg-white/10 p-5 backdrop-blur-sm sm:p-6">
+                <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-50">{e.annualSavings}</div>
+                <div className="mt-2 text-4xl font-black tracking-tight text-white sm:text-5xl">
                   {calculation ? formatCurrency(calculation.profit) : '—'}
                 </div>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-2 gap-2.5 sm:gap-3 xl:grid-cols-3">
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">{e.annualGeneration}</div>
-                  <div className="mt-3 text-2xl font-black tracking-[0.02em] text-white">
+                  <div className="text-[9px] font-bold uppercase tracking-[0.14em] text-emerald-50">{e.annualGeneration}</div>
+                  <div className="mt-2 text-lg font-extrabold tracking-tight text-white sm:text-xl">
                     {calculation ? `${calculation.annualGeneration.toLocaleString('en-IN')} ${e.generationUnit}` : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">{e.twentyFiveYearSavings}</div>
-                  <div className="mt-3 text-2xl font-black tracking-[0.02em] text-white">
+                  <div className="text-[9px] font-bold uppercase tracking-[0.14em] text-emerald-50">{e.twentyFiveYearSavings}</div>
+                  <div className="mt-2 text-lg font-extrabold tracking-tight text-white sm:text-xl">
                     {calculation ? formatCurrency(calculation.profit * SAVINGS_ESTIMATE_YEARS) : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">{e.originalCost}</div>
-                  <div className="mt-3 text-2xl font-black tracking-[0.06em] text-white">
+                  <div className="text-[9px] font-bold uppercase tracking-[0.14em] text-emerald-50">{e.originalCost}</div>
+                  <div className="mt-2 text-lg font-extrabold tracking-tight text-white sm:text-xl">
                     {calculation ? formatCurrency(calculation.totalInstallationCost) : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">{e.subsidy}</div>
-                  <div className="mt-3 text-2xl font-black tracking-[0.06em] text-white">
+                  <div className="text-[9px] font-bold uppercase tracking-[0.14em] text-emerald-50">{e.subsidy}</div>
+                  <div className="mt-2 text-lg font-extrabold tracking-tight text-white sm:text-xl">
                     {calculation ? formatCurrency(calculation.subsidy) : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">{e.netCost}</div>
-                  <div className="mt-3 text-2xl font-black tracking-[0.06em] text-white">
+                  <div className="text-[9px] font-bold uppercase tracking-[0.14em] text-emerald-50">{e.netCost}</div>
+                  <div className="mt-2 text-lg font-extrabold tracking-tight text-white sm:text-xl">
                     {calculation ? formatCurrency(calculation.customerPayable) : '—'}
                   </div>
                 </div>
                 <div className="rounded-[18px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
-                  <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-50">{e.payback}</div>
-                  <div className="mt-3 text-2xl font-black tracking-[0.06em] text-white">
+                  <div className="text-[9px] font-bold uppercase tracking-[0.14em] text-emerald-50">{e.payback}</div>
+                  <div className="mt-2 text-lg font-extrabold tracking-tight text-white sm:text-xl">
                     {calculation ? `${(calculation.customerPayable / Math.max(1, calculation.profit)).toFixed(1)} ${e.yearsShort}` : '—'}
                   </div>
                 </div>
@@ -452,7 +427,7 @@ export function SolarEstimation() {
                 {t.subsidyNotice}
               </p>
 
-              <div className="mt-4 flex w-full flex-col gap-4 sm:flex-row">
+              <div className="mt-4 flex w-full flex-col gap-3 sm:flex-row">
                 <button
                   type="button"
                   aria-expanded={showLeadForm}
@@ -462,19 +437,19 @@ export function SolarEstimation() {
                     setWhatsAppFallbackUrl(null)
                     setLeadFormError('')
                   }}
-                  className="flex-1 rounded-full bg-[#F5C76A] px-5 py-4 text-center text-lg font-bold text-[#10251F] shadow-[0_20px_30px_-18px_rgba(15,23,42,0.5)] transition hover:bg-[#ffda8b]"
+                  className="flex-1 rounded-full bg-[#F5C76A] px-5 py-3.5 text-center text-base font-bold text-[#10251F] shadow-[0_20px_30px_-18px_rgba(15,23,42,0.5)] transition hover:bg-[#ffda8b]"
                 >
                   {e.freeAssessmentCta} <span aria-hidden="true">→</span>
                 </button>
                 <Link
                   href="/contact"
-                  className="flex-1 rounded-full bg-white px-5 py-4 text-center text-xl font-bold text-slate-900 shadow-[0_20px_30px_-18px_rgba(15,23,42,0.5)] transition hover:bg-emerald-50"
+                  className="flex-1 rounded-full bg-white px-5 py-3.5 text-center text-base font-bold text-slate-900 shadow-[0_20px_30px_-18px_rgba(15,23,42,0.5)] transition hover:bg-emerald-50"
                 >
                   {e.contactUs} <span aria-hidden="true">→</span>
                 </Link>
               </div>
 
-              <p className="text-center text-md leading-6 text-emerald-50/90">
+              <p className="text-center text-sm leading-6 text-emerald-50/90">
                 {e.estimatesDisclaimer}
               </p>
             </div>
@@ -488,7 +463,7 @@ export function SolarEstimation() {
             aria-labelledby={`${leadFormId}-title`}
           >
             <div className="bg-[#0B3B2E] p-6 text-white sm:p-8">
-              <p className="text-xs font-black uppercase tracking-[0.24em] text-emerald-200">{e.freeAssessmentLabel}</p>
+              <p className="text-sm font-black uppercase tracking-[0.24em] text-emerald-200">{e.freeAssessmentLabel}</p>
               <h2 id={`${leadFormId}-title`} className="mt-3 text-3xl font-black tracking-tight">{e.freeAssessmentCta}</h2>
               <div className="mt-6 space-y-3">
                 <LeadSummary label={e.monthlyBill} value={formatCurrency(monthlyBill)} />
@@ -498,7 +473,7 @@ export function SolarEstimation() {
                 <LeadSummary label={e.twentyFiveYearSavings} value={formatCurrency(calculation.profit * SAVINGS_ESTIMATE_YEARS)} />
                 <LeadSummary label={e.roofRequired} value={`${Math.max(60, calculation.recommendedKw * ROOF_AREA_PER_KW)} ${e.squareFootUnit}`} />
               </div>
-              <p className="mt-6 text-xs leading-5 text-emerald-50/80">{e.whatsAppDisclosure}</p>
+              <p className="mt-6 text-sm leading-5 text-emerald-50/80">{e.whatsAppDisclosure}</p>
             </div>
 
             <form onSubmit={handleLeadFormSubmit} className="p-6 sm:p-8">
@@ -659,7 +634,7 @@ function InputField({
         className={`mt-3 w-full rounded-2xl border px-4 py-3 text-sm font-semibold text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100   ${error ? 'border-rose-400 bg-rose-50/80  ' : 'border-slate-200 bg-white/90  '}`}
       />
 
-      <p id={`${name}-help`} className="mt-2 text-md leading-5 text-slate-500 ">
+      <p id={`${name}-help`} className="mt-2 text-sm leading-5 text-slate-500 ">
         {helperText}
       </p>
 
@@ -696,7 +671,7 @@ function ResultCard({
       <p className={`mt-3 text-2xl font-semibold tracking-tight ${valueTone}`}>
         {value}
       </p>
-      <p className="mt-2 text-md leading-6 text-slate-500 ">
+      <p className="mt-2 text-sm leading-6 text-slate-500 ">
         {detail}
       </p>
     </div>

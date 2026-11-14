@@ -1,10 +1,10 @@
 {
   "subsidyNotice": "Please note: The subsidy is capped at Rs. 78,000 for on-grid rooftop solar systems that are 3 kWp or higher.",
   "tirupatiSeo": {
-    "eyebrow": "Renewable energy in Tirupati, Andhra Pradesh",
-    "title": "Solar and wind energy solutions in Tirupati",
-    "description": "AeroSun Energy is based in Tirupati and helps homes, farms, and businesses explore solar energy solutions in Tirupati, including rooftop, commercial, and agricultural solar options. We also help assess wind energy and solar-wind hybrid concepts; suitability depends on the conditions and requirements at each project site. Contact us to discuss your renewable energy needs in Tirupati.",
-    "contactCta": "Discuss your Tirupati energy project"
+    "eyebrow": "ஆந்திரப் பிரதேசம், திருப்பதியில்",
+    "title": "திருப்பதியில் சூரிய, காற்றாலை மற்றும் கலப்பு ஆற்றல்",
+    "description": "திருப்பதியில் உள்ள வீடுகள், பண்ணைகள் மற்றும் வணிகங்களுக்கு சூரிய, காற்றாலை மற்றும் கலப்பு ஆற்றல் விருப்பங்களைப் புரிந்துகொள்ள AeroSun Energy உதவுகிறது. சரியான தீர்வு உங்கள் இடம் மற்றும் ஆற்றல் தேவைகளைப் பொறுத்தது.",
+    "contactCta": "எங்கள் குழுவுடன் பேசுங்கள்"
   },
   "saveEarthPage": {
     "title": "SAVE EARTH",
@@ -5063,26 +5063,10 @@
     ],
     "subsidy": {
       "eyebrow": "Government of India Scheme",
-      "title": "PM Surya Ghar: Muft Bijli Yojana Subsidy",
-      "description": "Central-government subsidy you can claim on your rooftop solar — AeroSun Energy files the entire application for you.",
-      "cards": [
-        {
-          "title": "For Residential Households",
-          "description": "₹ 30,000 per kW up to 2 kW"
-        },
-        {
-          "title": "Additional Capacity",
-          "description": "₹ 18,000 per kW for additional capacity up to 3 kW"
-        },
-        {
-          "title": "Maximum Total Subsidy",
-          "description": "₹ 78,000 for systems larger than 3 kW"
-        },
-        {
-          "title": "For GHS / RWA",
-          "description": "₹ 18,000 per kW for common facilities incl. EV charging, up to 500 kW"
-        }
-      ]
+      "title": "PM Surya Ghar: Muft Bijli Yojana",
+      "description": "தேசிய போர்டல் மூலம் தகுதியுள்ள வீட்டு மின்நுகர்வோருக்கு மத்திய நிதி உதவி கிடைக்கலாம். குடியிருப்பு கூரை சூரிய மின்சக்திக்கு 3 kW வரை மட்டுமே உதவி வழங்கப்படும்; இறுதி தகுதியும் தொகையும் திட்ட விதிகள் மற்றும் விண்ணப்பத்தைப் பொறுத்தது.",
+      "portalCta": "அதிகாரப்பூர்வ போர்ட்டலைப் பார்வையிடவும்",
+      "notice": "இது திறன் குறித்த வழிகாட்டுதல் மட்டுமே. மானிய விதிகள், மின்கட்டணங்கள், தொழில்நுட்ப சாத்தியம் மற்றும் DISCOM தேவைகள் மாறக்கூடும். தற்போதைய விவரங்களை அதிகாரப்பூர்வ போர்ட்டலில் உறுதிப்படுத்தவும்."
     },
     "wind": {
       "eyebrow": "Wind Energy",
@@ -5473,19 +5457,19 @@
     "capacityTable": {
       "rows": [
         {
-          "usage": "0–150 units",
+          "usage": "0–150 யூனிட்கள்",
           "capacity": "1–2 kW",
-          "tag": "Ideal for small homes"
+          "tag": "சிறிய வீடுகளுக்கு ஏற்றது"
         },
         {
-          "usage": "150–300 units",
+          "usage": "150–300 யூனிட்கள்",
           "capacity": "2–3 kW",
-          "tag": "Balanced family needs"
+          "tag": "குடும்பத் தேவைகளுக்கு ஏற்றது"
         },
         {
-          "usage": "> 300 units",
-          "capacity": "Above 3 kW",
-          "tag": "High-consumption homes"
+          "usage": "300-க்கும் மேற்பட்ட யூனிட்கள்",
+          "capacity": "3 kW-க்கு மேல்",
+          "tag": "அதிக நுகர்வு கொண்ட வீடுகள்"
         }
       ]
     },
@@ -7700,9 +7684,9 @@
     "typicalUse": "Typical use",
     "customerFit": "Customer fit",
     "typicalConfiguration": "Typical configuration",
-    "averageMonthlyUsage": "Average monthly usage",
-    "suitableRooftopCapacity": "Suitable rooftop capacity",
-    "bestFit": "Best fit",
+    "averageMonthlyUsage": "சராசரி மாதாந்திர பயன்பாடு",
+    "suitableRooftopCapacity": "பொருத்தமான கூரை சூரிய திறன்",
+    "bestFit": "பொருத்தமான பயன்பாடு",
     "howItWorks": "How it works",
     "comingSoon": "Coming soon"
   },
@@ -10003,38 +9987,21 @@
     "savingsTitle": "See how much you save with",
     "savingsTitleAccent": "solar",
     "savingsDescription": "A 3 kW rooftop plant in Tirupati typically saves ₹30,000+ a year. Run the numbers for your home below.",
-    "estimateSavings": "Estimate Your Savings",
     "adjustUsage": "Enter your average monthly electricity bill to see your estimated solar plan.",
-    "monthlyUnits": "Monthly Electricity Units",
     "monthlyBill": "Monthly electricity bill",
-    "monthlyBillHelper": "Use your typical bill. Monthly units are estimated using an average tariff of ₹8.5 per unit.",
     "monthlyBillAriaLabel": "Monthly electricity bill in rupees",
     "monthlyBillMinimum": "₹500",
     "monthlyBillMaximum": "₹50,000",
-    "billSuffix": "per month",
     "estimatedMonthlyUsage": "Estimated monthly usage",
-    "heading": "Estimate your solar project with a sharper branded dashboard",
-    "headingAccent": "sharper branded dashboard",
-    "description": "Compare capacity, subsidy, customer pricing, and profit in a layout that follows the same warm, high-contrast visual language used across the AeroSun site.",
-    "liveCalculation": "Live calculation",
-    "subsidyAware": "Subsidy aware",
-    "responsiveLayout": "Responsive layout",
     "recommendedCapacity": "Recommended capacity",
     "profitMargin": "Profit margin",
     "subsidyBand": "Subsidy band",
-    "monthlyUsage": "Monthly electricity usage",
-    "monthlyUsageHelper": "Average consumption from recent bills",
     "installationCost": "Your installation cost",
     "installationCostHelper": "Panels, inverter, wiring, labor, and setup",
     "sellingPrice": "Customer selling price",
     "sellingPriceHelper": "Quoted price shared with the client",
-    "monthlyUnitsAriaLabel": "Monthly electricity usage in units",
-    "monthlyUnitsMinimum": "50 units",
-    "monthlyUnitsMaximum": "4,000 units",
     "unitsSuffix": "units",
     "perKwSuffix": "per kW",
-    "recommendedSystemSuffix": "kW system",
-    "systemSizing": "System sizing",
     "capacityUnit": "kW",
     "squareFootUnit": "sq ft",
     "plantSize": "Plant Size",
@@ -10051,7 +10018,6 @@
     "payback": "Payback",
     "yearsShort": "yrs",
     "yearSuffix": "year",
-    "enquireNow": "Enquire Now",
     "contactUs": "Contact Us",
     "estimatesDisclaimer": "Estimates only. The 25-year projection assumes constant tariff and output; actual savings depend on site conditions, system performance and DISCOM tariff.",
     "freeAssessmentCta": "Get My Free Solar Assessment",
@@ -10076,50 +10042,6 @@
     "whatsAppUnavailable": "WhatsApp contact is unavailable. Please contact AeroSun directly.",
     "openWhatsAppFallback": "WhatsApp did not open? Continue to your report",
     "cancelAssessment": "Cancel",
-    "pleaseFix": "Please fix the validation errors to view the estimate.",
-    "liveOutput": "Live output",
-    "projectedSolarProfile": "Projected solar profile",
-    "pending": "Pending",
-    "recommendedCapacityLabel": "Recommended capacity",
-    "basedOnUsage": "Based on your monthly usage and the current pricing assumptions.",
-    "totalSystemSellingPrice": "Total system selling price",
-    "beforeSubsidy": "Before subsidy deduction",
-    "totalInstallationCost": "Total installation cost",
-    "projectSideCost": "Your project-side cost",
-    "netSubsidyBand": "Net subsidy band",
-    "matchedEstimate": "Matched to your estimate",
-    "subsidyLadder": "Subsidy ladder",
-    "quickPricingBands": "Quick pricing bands",
-    "calculationLogic": "Calculation logic",
-    "whatEstimateIncludes": "What the estimate includes",
-    "nextStep": "Next step",
-    "turnEstimateIntoQuote": "Turn the estimate into a site-ready quote.",
-    "nextStepCopy": "Share the numbers with your customer, or move directly to a project discussion for a tailored system design.",
-    "contactTeam": "Contact the team",
-    "exploreServices": "Explore services",
-    "updateInputs": "Update the inputs to reveal the live estimate.",
-    "formulaNotes": [
-      "Capacity is derived from monthly usage divided by 120 and rounded to the nearest kW.",
-      "Customer payable amount is shown after subsidy, using the selected capacity band.",
-      "Profit compares your selling price against installation cost, not against subsidy."
-    ],
-    "tiers": [
-      {
-        "label": "1 kW",
-        "subsidy": "₹30,000",
-        "note": "Compact homes and starter rooftops"
-      },
-      {
-        "label": "2 kW",
-        "subsidy": "₹60,000",
-        "note": "Balanced demand for family homes"
-      },
-      {
-        "label": "3 kW +",
-        "subsidy": "₹78,000",
-        "note": "Higher-usage homes and business sites"
-      }
-    ],
     "validation": {
       "monthlyBillRequired": "Enter your monthly electricity bill.",
       "monthlyBillMin": "Monthly bill must be at least ₹500.",
