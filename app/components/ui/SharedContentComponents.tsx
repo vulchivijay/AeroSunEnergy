@@ -1,5 +1,28 @@
 import type { ReactNode } from 'react'
 
+export type ContentAccent = 'emerald' | 'amber' | 'sky' | 'violet'
+
+export const contentAccentText: Record<ContentAccent, string> = {
+  emerald: 'text-emerald-700',
+  amber: 'text-amber-700',
+  sky: 'text-sky-700',
+  violet: 'text-violet-700',
+}
+
+export const contentCheckBackgrounds: Record<ContentAccent, string> = {
+  emerald: 'bg-emerald-700 text-white',
+  amber: 'bg-amber-100 text-amber-700',
+  sky: 'bg-sky-100 text-sky-700',
+  violet: 'bg-violet-100 text-violet-700',
+}
+
+export const contentBenefitBorders: Record<ContentAccent, string> = {
+  emerald: 'border-l-[#b6d9c6]',
+  amber: 'border-l-[#efd9ad]',
+  sky: 'border-l-[#b8d8ec]',
+  violet: 'border-l-[#d0c3e6]',
+}
+
 export function ContentSectionEyebrow({
   children,
   className,
@@ -14,7 +37,7 @@ export function ContentSectionEyebrow({
   return (
     <div className={`inline-flex items-center gap-2 ${className}`}>
       <span className={`inline-flex h-2 w-2 items-center justify-center rounded-full ${dotClassName}`} aria-hidden="true" />
-      <p className={`text-[11px] font-bold uppercase tracking-[0.22em] ${labelClassName}`}>{children}</p>
+      <p className={`text-sm font-bold uppercase tracking-[0.22em] ${labelClassName}`}>{children}</p>
     </div>
   )
 }
@@ -53,7 +76,7 @@ export function ContentFeatureCard({
   return (
     <article className={cardClassName}>
       <div className="mb-5 flex items-center justify-between gap-4 border-b border-slate-200 pb-4">
-        <span className={`text-[11px] font-bold uppercase tracking-[0.2em] ${featureClassName}`}>{label}</span>
+        <span className={`text-sm font-bold uppercase tracking-[0.2em] ${featureClassName}`}>{label}</span>
         <span className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white/80">{icon}</span>
       </div>
       <h3 className={`text-2xl font-black ${titleClassName}`}>{title}</h3>
@@ -62,7 +85,7 @@ export function ContentFeatureCard({
         <ul className="mt-5 divide-y divide-slate-200 text-sm text-slate-700">
           {points.map((point) => (
             <li key={point} className="flex items-start gap-3 py-3 first:pt-0 last:pb-0">
-              <span className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-black ${pointIconClassName}`}>✓</span>
+              <span className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-sm font-black ${pointIconClassName}`}>✓</span>
               <span className="leading-6">{point}</span>
             </li>
           ))}

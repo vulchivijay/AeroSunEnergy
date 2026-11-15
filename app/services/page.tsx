@@ -43,7 +43,7 @@ export default function ServicesPage() {
 
         <div className="mx-auto flex min-h-[620px] max-w-7xl flex-col justify-between px-5 py-10 sm:min-h-[680px] sm:px-8 sm:py-14 lg:px-10">
           <div className="flex items-center justify-between gap-4">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.22em] text-white/90 backdrop-blur-md sm:text-xs">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.22em] text-white/90 backdrop-blur-md sm:text-xs">
               <span className="h-1.5 w-1.5 rounded-full bg-lime-300" aria-hidden="true" />
               {labels.badge}
             </span>
@@ -65,7 +65,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="max-w-md rounded-[1.5rem] border border-white/15 bg-[#0b2119]/65 p-5 backdrop-blur-lg sm:p-6 lg:ml-auto">
-              <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-lime-300">{labels.coreModel}</p>
+              <p className="text-sm font-bold uppercase tracking-[0.24em] text-lime-300">{labels.coreModel}</p>
               <p className="mt-3 text-lg font-semibold leading-7 text-white sm:text-xl">{labels.coreModelSteps}</p>
               <div className="mt-5 flex items-center gap-2" aria-hidden="true">
                 <span className="h-1 w-12 rounded-full bg-lime-300" />
@@ -79,7 +79,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-2 gap-3 border-t border-white/20 pt-5 sm:grid-cols-4 sm:gap-0 sm:divide-x sm:divide-white/20">
             {labels.portfolioBenefits.map((benefit, index) => (
               <div key={benefit} className="flex items-center gap-2 px-2 text-xs font-medium text-white/80 sm:px-5 sm:first:pl-0">
-                <span className="font-mono text-[10px] text-lime-300">0{index + 1}</span>
+                <span className="font-mono text-sm text-lime-300">0{index + 1}</span>
                 {benefit}
               </div>
             ))}
@@ -90,7 +90,7 @@ export default function ServicesPage() {
       <section id="service-divisions" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
         <div className="mb-9 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-3xl">
-            <p className="text-[10px] font-black uppercase tracking-[0.25em] text-emerald-800">{labels.serviceStructure}</p>
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-emerald-800">{labels.serviceStructure}</p>
             <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">{labels.serviceStructureTitle}</h2>
           </div>
           <p className="max-w-sm text-sm leading-6 text-slate-600">{labels.completeSolutionsDescription}</p>
@@ -130,7 +130,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
           <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
             <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.25em] text-amber-800">{labels.commonCapabilities}</p>
+              <p className="text-sm font-black uppercase tracking-[0.25em] text-amber-800">{labels.commonCapabilities}</p>
               <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">{labels.commonCapabilitiesTitle}</h2>
               <span className="mt-6 block h-1 w-16 rounded-full bg-gradient-to-r from-amber-500 to-emerald-600" aria-hidden="true" />
             </div>
@@ -157,7 +157,7 @@ export default function ServicesPage() {
       <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
         <div className="overflow-hidden rounded-[2rem] bg-[#123326] p-6 text-white shadow-[0_30px_75px_-42px_rgba(6,78,59,0.5)] sm:p-10 lg:p-12">
           <div className="mb-8 max-w-3xl">
-            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-lime-300">{labels.deliveryModel}</p>
+            <p className="text-sm font-bold uppercase tracking-[0.25em] text-lime-300">{labels.deliveryModel}</p>
             <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">{labels.deliveryModelTitle}</h2>
           </div>
           <div className="grid gap-3 xl:grid-cols-2">
@@ -167,7 +167,7 @@ export default function ServicesPage() {
                   <h3 className="text-xl font-bold text-white">{pkg.name}</h3>
                   <span className="font-mono text-xs font-bold text-lime-300">PACKAGE 0{index + 1}</span>
                 </div>
-                <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-100/65">{pkg.customers}</p>
+                <p className="mt-2 text-sm font-bold uppercase tracking-[0.18em] text-emerald-100/65">{pkg.customers}</p>
                 <ul className="mt-5 grid gap-2 sm:grid-cols-2">
                   {pkg.services.map((service) => (
                     <li key={service} className="flex items-start gap-2 text-sm leading-6 text-white/80">
@@ -185,16 +185,16 @@ export default function ServicesPage() {
       <section className="mx-auto max-w-7xl px-5 pb-16 sm:px-8 sm:pb-20 lg:px-10">
         <div className="grid gap-6 lg:grid-cols-[1fr_0.92fr]">
           <article className="rounded-[1.8rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-            <p className="text-[10px] font-black uppercase tracking-[0.25em] text-sky-800">{labels.roadmap}</p>
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-800">{labels.roadmap}</p>
             <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950">{labels.roadmapTitle}</h2>
             <div className="relative mt-7 space-y-4 before:absolute before:bottom-7 before:left-[1.15rem] before:top-7 before:w-px before:bg-emerald-200">
               {page.labels.roadmapPhases.map((phase, index) => (
                 <div key={phase.label} className="relative flex gap-4 rounded-2xl bg-[#f6f8f4] p-4">
-                  <span className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-4 border-white bg-emerald-700 font-mono text-[10px] font-bold text-white shadow-sm">
+                  <span className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-4 border-white bg-emerald-700 font-mono text-sm font-bold text-white shadow-sm">
                     0{index + 1}
                   </span>
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-800">{phase.label}</p>
+                    <p className="text-sm font-bold uppercase tracking-[0.18em] text-emerald-800">{phase.label}</p>
                     <p className="mt-1 text-sm font-semibold leading-6 text-slate-800">{phase.description}</p>
                   </div>
                 </div>
@@ -213,7 +213,7 @@ export default function ServicesPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#071b16] via-[#071b16]/50 to-transparent" />
             </div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-lime-300">{labels.finalRecommendation}</p>
+            <p className="text-sm font-bold uppercase tracking-[0.24em] text-lime-300">{labels.finalRecommendation}</p>
             <h3 className="mt-3 max-w-lg text-3xl font-black tracking-tight sm:text-4xl">{labels.finalRecommendationTitle}</h3>
             <ul className="mt-5 space-y-2.5">
               {labels.recommendationItems.map((item) => (
@@ -231,11 +231,11 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
           <div className="mb-9 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-3xl">
-              <p className="text-[10px] font-black uppercase tracking-[0.25em] text-emerald-800">{labels.completeSolutions}</p>
+              <p className="text-sm font-black uppercase tracking-[0.25em] text-emerald-800">{labels.completeSolutions}</p>
               <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">{labels.completeSolutionsTitle}</h2>
               <p className="mt-4 text-sm leading-7 text-slate-600">{labels.completeSolutionsDescription}</p>
             </div>
-            <span className="w-fit rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-800">
+            <span className="w-fit rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] text-emerald-800">
               {labels.endToEndSupport}
             </span>
           </div>
@@ -265,7 +265,7 @@ export default function ServicesPage() {
 
       <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
         <div className="mb-9 max-w-3xl">
-          <p className="text-[10px] font-black uppercase tracking-[0.25em] text-sky-800">{labels.systemTypes}</p>
+          <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-800">{labels.systemTypes}</p>
           <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">{labels.systemTypesTitle}</h2>
           <p className="mt-4 text-sm leading-7 text-slate-600">{labels.systemTypesDescription}</p>
         </div>
@@ -275,7 +275,7 @@ export default function ServicesPage() {
             <article key={system.type} className={`rounded-[1.6rem] border p-6 shadow-[0_18px_42px_-32px_rgba(15,23,42,0.32)] ${system.accent}`}>
               <div className="flex items-center justify-between gap-3">
                 <span className="font-mono text-xs font-bold tracking-[0.2em] opacity-70">SYSTEM 0{index + 1}</span>
-                <span className="rounded-full bg-white/80 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.15em] text-slate-700">{system.badge}</span>
+                <span className="rounded-full bg-white/80 px-3 py-1 text-sm font-bold uppercase tracking-[0.15em] text-slate-700">{system.badge}</span>
               </div>
               <h3 className="mt-5 text-2xl font-black">{system.type}</h3>
               <p className="mt-3 text-sm leading-6">{system.description}</p>

@@ -1,8 +1,10 @@
 'use client'
 
 import Script from 'next/script'
+import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
+import { trackGoogleAdsPageViewConversion } from '@/lib/googleAdsConversion'
 
 const COOKIE_KEY = 'aerosun_cookie_consent'
 
@@ -14,6 +16,7 @@ export default function ConsentAwareTracking({
   gaMeasurementId?: string
 }) {
   const { t } = useLocale()
+  const pathname = usePathname()
   const adsTagIds = t.componentData.consentAwareTracking.adsTagIds
   const [hasConsent, setHasConsent] = useState(false)
 
@@ -36,6 +39,12 @@ export default function ConsentAwareTracking({
       window.removeEventListener('storage', syncConsent)
     }
   }, [])
+
+  useEffect(() => {
+    if (hasConsent) {
+      trackGoogleAdsPageViewConversion()
+    }
+  }, [hasConsent, pathname])
 
   if (!hasConsent) return null
 

@@ -50,7 +50,7 @@ export default function About() {
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
           <div className="min-w-0">
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#087a61]">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#087a61]">
               {content.eyebrow} {content.brandFirst} {content.brandSecond}
             </p>
 
@@ -88,7 +88,7 @@ export default function About() {
               {about.quote}
             </blockquote>
             <div className="mt-8 border-t border-white/20 pt-5">
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#f5a640]">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#f5a640]">
                 {content.visionHeading}
               </p>
             </div>
@@ -102,7 +102,7 @@ export default function About() {
                 0{index + 1} ·
               </span>
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#087a61]">{item.title}</p>
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#087a61]">{item.title}</p>
                 <p className="mt-2 text-base font-semibold leading-6 text-[#102b28] sm:text-lg">{item.value}</p>
               </div>
             </div>
@@ -121,7 +121,7 @@ export default function About() {
               />
             </div>
             <div className="min-w-0">
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#087a61]">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#087a61]">
                 {content.leadershipLabel} · {content.founderBadge}
               </p>
               <h3 className="mt-2 text-2xl font-bold tracking-tight text-[#102b28] sm:text-3xl">
@@ -170,13 +170,13 @@ export default function About() {
 
           <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-1">
             <article className="rounded-[1.75rem] border border-[#eadfc7] bg-gradient-to-br from-[#fffaf0] to-[#f3e8d5] p-6 shadow-[0_20px_50px_-32px_rgba(92,68,31,0.3)] sm:p-7">
-              <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#087a61]">{content.solutionsEyebrow}</p>
+              <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#087a61]">{content.solutionsEyebrow}</p>
               <h3 className="mt-3 text-2xl font-extrabold leading-tight tracking-[-0.03em] text-[#102b28]">{content.solutionsTitle}</h3>
               <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">{content.solutionsDescription}</p>
             </article>
 
             <article className="rounded-[1.75rem] border border-[#c9e0e4] bg-gradient-to-br from-[#edf7f8] to-[#d7eaed] p-6 shadow-[0_20px_50px_-32px_rgba(32,77,85,0.32)] sm:p-7">
-              <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#087a61]">{content.designEyebrow}</p>
+              <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#087a61]">{content.designEyebrow}</p>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
                 {content.designPoints.map((point) => (
                   <li key={point} className="flex items-start gap-2.5 text-sm font-medium leading-6 text-[#29443c]">
@@ -191,7 +191,7 @@ export default function About() {
 
         <div className="mt-5 grid gap-5 xl:grid-cols-[0.8fr_1.2fr]">
           <article className="rounded-[1.75rem] border border-[#d6dced] bg-gradient-to-br from-[#f1f3fc] to-[#e0e7f3] p-6 shadow-[0_20px_50px_-32px_rgba(48,57,95,0.32)] sm:p-8">
-            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#087a61]">{content.technologyEyebrow}</p>
+            <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#087a61]">{content.technologyEyebrow}</p>
             <h3 className="mt-3 text-2xl font-extrabold leading-tight tracking-[-0.03em] text-[#102b28]">{content.technologyTitle}</h3>
             <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">{content.technologyDescription}</p>
           </article>
@@ -202,9 +202,9 @@ export default function About() {
                 <span className="absolute -right-3 -top-3 opacity-10" aria-hidden="true">
                   <Icon className="h-20 w-20" strokeWidth={1} />
                 </span>
-                <p className="relative text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#087a61]">{label}</p>
+                <p className="relative text-sm font-extrabold uppercase tracking-[0.2em] text-[#087a61]">{label}</p>
                 <p className="relative mt-8 text-sm font-semibold leading-6 text-[#243c35]">{value}</p>
-                <span className="absolute bottom-4 right-4 font-mono text-[10px] font-semibold text-slate-500">0{index + 1}</span>
+                <span className="absolute bottom-4 right-4 font-mono text-sm font-semibold text-slate-500">0{index + 1}</span>
               </article>
             ))}
           </div>
@@ -212,7 +212,7 @@ export default function About() {
 
         <div className="mt-5 flex flex-col gap-5 rounded-[1.75rem] border border-white/10 bg-gradient-to-r from-[#263753] to-[#45345f] p-6 text-white shadow-[0_28px_70px_-34px_rgba(38,42,75,0.62)] sm:p-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.24em] text-[#f6bd67]">{content.futureHeading}</p>
+            <p className="text-sm font-extrabold uppercase tracking-[0.24em] text-[#f6bd67]">{content.futureHeading}</p>
             <p className="mt-3 text-sm leading-7 text-emerald-50/90 sm:text-lg sm:leading-8">{content.futureDescription}</p>
           </div>
           <p className="max-w-sm border-l-2 border-[#f6bd67] pl-4 text-sm font-bold leading-6 text-white lg:text-right">

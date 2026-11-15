@@ -25,7 +25,7 @@ export default function Notifications() {
         <div id="site-notification-content" hidden={!isExpanded} className="min-w-0 flex-1 py-2">
           <div className="mb-1 flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-white shadow-[0_0_0_3px_rgba(16,185,129,0.12)]" aria-hidden="true" />
-            <span className="text-[10px] uppercase tracking-[0.2em] text-white">
+            <span className="text-sm uppercase tracking-[0.2em] text-white">
               {t.notifications.badge}
             </span>
           </div>

@@ -27,3 +27,22 @@ export function trackGoogleAdsConversion() {
     currency: 'INR',
   })
 }
+
+export function trackGoogleAdsPageViewConversion() {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  if (window.localStorage.getItem('aerosun_cookie_consent') !== 'accepted') {
+    return
+  }
+
+  window.dataLayer = window.dataLayer || []
+  window.gtag = window.gtag || function gtag() {
+    window.dataLayer?.push(arguments)
+  }
+
+  window.gtag('event', 'conversion', {
+    send_to: 'AW-18572658321/iJWsCKDM3bgdEJGNkZhF',
+  })
+}

@@ -2,19 +2,16 @@ import type { ReactNode } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
 import {
   ContentBenefitCard,
+  contentAccentText,
+  contentBenefitBorders,
+  contentCheckBackgrounds,
   ContentFeatureCard,
   ContentInfoPanel,
   ContentSectionEyebrow,
+  type ContentAccent,
 } from './SharedContentComponents'
 
-export type AccentTone = 'emerald' | 'amber' | 'sky' | 'violet'
-
-const benefitBorderClasses: Record<AccentTone, string> = {
-  emerald: 'border-l-[#b6d9c6]',
-  amber: 'border-l-[#efd9ad]',
-  sky: 'border-l-[#b8d8ec]',
-  violet: 'border-l-[#d0c3e6]',
-}
+export type AccentTone = ContentAccent
 
 const renderSolarIcon = (colorClass: string) => {
   return (
@@ -41,36 +38,24 @@ export function FeatureCard({
   title,
   description,
   points,
-  accent,
+  accent = 'emerald',
 }: {
-  title?: string
-  description?: string
-  points?: string[]
+  title: string
+  description: string
+  points: string[]
   accent?: AccentTone
 }) {
   const { t } = useLocale()
-  const componentData = t.componentData.solarContentBlocks
-  const defaultFeature = componentData.defaultFeature
-  const accentIds: Record<string, AccentTone> = {
-    emerald: 'emerald',
-    amber: 'amber',
-    sky: 'sky',
-    violet: 'violet',
-  }
-  const featureAccent = accent ?? accentIds[defaultFeature.accent]
-  const featureTitle = title ?? defaultFeature.title
-  const featureDescription = description ?? defaultFeature.description
-  const featurePoints = points ?? defaultFeature.points
 
   return (
     <ContentFeatureCard
-      title={featureTitle}
-      description={featureDescription}
-      points={featurePoints}
+      title={title}
+      description={description}
+      points={points}
       label={t.ui.solarSolution}
-      icon={renderSolarIcon(componentData.iconColors[featureAccent])}
+      icon={renderSolarIcon(contentAccentText[accent])}
       cardClassName="group h-full border-t border-slate-300 py-6 transition-colors hover:border-emerald-600"
-      featureClassName={componentData.iconColors[featureAccent]}
+      featureClassName={contentAccentText[accent]}
       titleClassName="tracking-[0.05em] text-slate-900"
       pointIconClassName="bg-emerald-50 text-emerald-700"
     />
@@ -82,18 +67,15 @@ export function BenefitCard({
   description,
   accent = 'emerald',
 }: {
-  title?: string
-  description?: string
+  title: string
+  description: string
   accent?: AccentTone
 }) {
-  const { t } = useLocale()
-  const defaults = t.componentData.solarContentBlocks.defaultBenefit
-
   return (
     <ContentBenefitCard
-      title={title ?? defaults.title}
-      description={description ?? defaults.description}
-      cardClassName={`rounded-2xl border-l-4 ${benefitBorderClasses[accent]} bg-[#edf3e9] p-5`}
+      title={title}
+      description={description}
+      cardClassName={`rounded-2xl border-l-4 ${contentBenefitBorders[accent]} bg-[#edf3e9] p-5`}
       iconClassName="bg-emerald-50 text-emerald-700"
       titleClassName="tracking-[0.04em] text-slate-900"
     />
@@ -111,7 +93,7 @@ export function SubsidyCard({
 }) {
   return (
     <div className="border-t border-emerald-200 py-5">
-      <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700">{label}</p>
+      <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-700">{label}</p>
       <div className="mt-3 text-3xl font-bold tracking-tight text-slate-900">{value}</div>
       <p className="mt-2 text-sm leading-6 text-slate-600">{note}</p>
     </div>
@@ -123,28 +105,17 @@ export function InfoPanel({
   content,
   accent,
 }: {
-  title?: string
-  content?: string[]
-  accent?: 'emerald' | 'amber' | 'sky'
+  title: string
+  content: string[]
+  accent?: Exclude<ContentAccent, 'violet'>
 }) {
-  const { t } = useLocale()
-  const componentData = t.componentData.solarContentBlocks
-  const defaultInfo = componentData.defaultInfo
-  const accentIds: Record<string, 'emerald' | 'amber' | 'sky'> = {
-    emerald: 'emerald',
-    amber: 'amber',
-    sky: 'sky',
-  }
-  const infoAccent = accent ?? accentIds[defaultInfo.accent]
-  const infoTitle = title ?? defaultInfo.title
-  const infoContent = content ?? defaultInfo.content
 
   return (
     <ContentInfoPanel
-      title={infoTitle}
-      content={infoContent}
+      title={title}
+      content={content}
       themeClassName="bg-transparent text-slate-900"
-      checkBackgroundClassName={componentData.checkBackgrounds[infoAccent]}
+      checkBackgroundClassName={contentCheckBackgrounds[accent ?? 'emerald']}
       titleClassName="tracking-[0.04em]"
     />
   )
@@ -157,7 +128,7 @@ export function CapacityTable() {
   return (
     <div className="overflow-x-auto border-y border-slate-300 bg-transparent [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400">
       <div className="min-w-[620px]">
-        <div className="grid border-b border-slate-200 bg-[#f7f7f1] text-[11px] font-bold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-3">
+        <div className="grid border-b border-slate-200 bg-[#f7f7f1] text-sm font-bold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-3">
           <div className="px-4 py-3">{ui.averageMonthlyUsage}</div>
           <div className="px-4 py-3">{ui.suitableRooftopCapacity}</div>
           <div className="px-4 py-3">{ui.bestFit}</div>

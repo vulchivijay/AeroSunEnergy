@@ -70,7 +70,7 @@ export function ReferralProgramSection() {
     >
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 lg:gap-10 xl:grid-cols-[0.82fr_1.18fr] xl:items-center">
         <div className="min-w-0">
-          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-100 sm:text-xs">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-100 sm:text-xs">
             {content.eyebrow}
           </p>
           <h2 id="referral-program-title" className="mt-5 max-w-2xl text-4xl font-black leading-[1.02] tracking-tight sm:text-5xl lg:text-6xl">
@@ -106,7 +106,7 @@ export function ReferralProgramSection() {
         <div className="min-w-0 rounded-[28px] bg-[#f8f7f1] p-5 text-slate-900 shadow-[0_28px_70px_-38px_rgba(0,0,0,0.28)] sm:rounded-[32px] sm:p-7 lg:p-9">
           <div className="flex items-start justify-between gap-4">
             <div className="min-w-0">
-              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#087a61] sm:text-[11px]">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#087a61] sm:text-sm">
                 {formContent.title}
               </p>
               <h3 className="mt-3 text-2xl font-bold leading-tight text-[#122b2a] sm:text-3xl">

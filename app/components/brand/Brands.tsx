@@ -100,14 +100,14 @@ export default function Brands() {
                 </h3>
                 <div className="mt-2 flex min-h-[2.5rem] flex-col items-center justify-center gap-1">
                   {index === 0 && maxPrice !== null && (
-                    <span className="rounded-full bg-slate-950 px-2.5 py-1 text-center text-[9px] font-black uppercase leading-3 tracking-[0.12em] text-white shadow-sm">
+                    <span className="rounded-full bg-slate-950 px-2.5 py-1 text-center text-xs font-black uppercase leading-3 tracking-[0.12em] text-white shadow-sm">
                       {section.topPriceLabel}
                     </span>
                   )}
                   {brand.prices.map((price) => (
                     <span
                       key={price}
-                      className="w-full max-w-[14rem] rounded-full border px-2 py-1 text-center text-[9px] font-bold leading-4 sm:text-[10px]"
+                      className="w-full max-w-[14rem] rounded-full border px-2 py-1 text-center text-[12px] font-bold leading-4 sm:text-[12px]"
                       style={{
                         backgroundColor: `hsl(${brand.hue} 76% 92%)`,
                         borderColor: `hsl(${brand.hue} 64% 76%)`,
@@ -126,7 +126,7 @@ export default function Brands() {
                       backgroundColor: `hsl(${brand.hue} 78% 94%)`,
                     }}
                   >
-                    <span className="text-[9px] font-black uppercase tracking-[0.12em] text-slate-600">
+                    <span className="text-[12px] font-black uppercase tracking-[0.12em] text-slate-600">
                       {section.maxListedLabel}
                     </span>
                     <span className="text-lg font-black tabular-nums text-slate-950 sm:text-xl">
@@ -134,11 +134,11 @@ export default function Brands() {
                     </span>
                   </div>
                 ) : (
-                  <div className="mt-2 flex min-h-8 items-center justify-center rounded-xl border border-dashed border-slate-300 bg-white/70 px-2 py-1 text-center text-[10px] font-bold text-slate-600">
+                  <div className="mt-2 flex min-h-8 items-center justify-center rounded-xl border border-dashed border-slate-300 bg-white/70 px-2 py-1 text-center text-sm font-bold text-slate-600">
                     {section.quoteRequired}
                   </div>
                 )}
-                <p className="sr-only mt-auto flex min-h-[5.5rem] items-center justify-center rounded-xl border border-white/70 bg-white/60 px-2 py-2 text-center text-[10px] leading-4 text-slate-600 sm:text-[11px] sm:leading-5">
+                <p className="sr-only mt-auto flex min-h-[5.5rem] items-center justify-center rounded-xl border border-white/70 bg-white/60 px-2 py-2 text-center text-sm leading-4 text-slate-600 sm:text-sm sm:leading-5">
                   {brand.basis}
                 </p>
               </li>

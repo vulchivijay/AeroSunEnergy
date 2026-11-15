@@ -1,6 +1,7 @@
 "use client"
 
 import Link from 'next/link'
+import { Info } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
 
@@ -57,7 +58,7 @@ export default function SchemeBanner() {
               ₹
             </span>
             <div className="min-w-0">
-              <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-indigo-900 sm:text-xs">
+              <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-indigo-900 sm:text-xs">
                 <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-amber-500" />
                 {banner.badge}
               </div>
@@ -87,34 +88,42 @@ export default function SchemeBanner() {
           </div>
         </div>
 
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-          <div className="rounded-2xl border border-indigo-900/10 bg-white/70 p-4 shadow-sm shadow-indigo-950/5 backdrop-blur-sm">
-            <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-indigo-900">{banner.cardLabel}</div>
-            <div className="mt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1">
-              <span className="text-2xl font-bold text-indigo-800 sm:text-3xl">₹ 78,000</span>
-              <span className="text-sm text-slate-700">{banner.max} {banner.perHome}</span>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="relative isolate overflow-hidden rounded-[26px] border border-emerald-300/70 bg-gradient-to-br from-[#064e3b] to-[#047857] p-5 text-white shadow-xl shadow-emerald-950/15">
+            <div aria-hidden="true" className="pointer-events-none absolute -right-10 -top-12 -z-10 h-36 w-36 rounded-full bg-lime-300/15 blur-2xl" />
+            <div className="text-sm font-bold uppercase tracking-[0.18em] text-emerald-100">{banner.cardLabel}</div>
+            <div className="mt-3 text-3xl font-black tracking-tight text-lime-200 sm:text-4xl">₹ 78,000</div>
+            <div className="mt-2 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-emerald-50">
+              {banner.max} {banner.perHome}
             </div>
           </div>
 
-          <p className="rounded-2xl border border-indigo-900/10 bg-white/70 p-4 text-sm leading-6 text-slate-700 shadow-sm shadow-indigo-950/5 backdrop-blur-sm">
-            {t.subsidyNotice}
-          </p>
+          <div className="relative flex items-start gap-3 overflow-hidden rounded-[26px] border border-amber-200 bg-gradient-to-br from-[#fffdf7] to-[#fff3d8] p-5 shadow-lg shadow-amber-950/5">
+            <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-amber-400 text-amber-950 shadow-sm shadow-amber-900/10">
+              <Info className="h-5 w-5" aria-hidden="true" />
+            </span>
+            <p className="text-sm font-medium leading-6 text-amber-950 sm:text-[15px] sm:leading-7">
+              {t.subsidyNotice}
+            </p>
+          </div>
 
-          <div className="rounded-2xl border border-indigo-900/10 bg-white/70 p-4 shadow-sm shadow-indigo-950/5 backdrop-blur-sm">
-            <div className="text-[11px] font-bold uppercase tracking-[0.16em] text-indigo-900">{banner.badgeSuffix}</div>
-            <div className="mt-3 flex flex-wrap gap-2">
+          <div className="relative isolate overflow-hidden rounded-[26px] border border-slate-700 bg-gradient-to-br from-[#172554] via-[#1e3a8a] to-[#312e81] p-5 text-white shadow-xl shadow-indigo-950/15">
+            <div aria-hidden="true" className="pointer-events-none absolute -bottom-16 -right-10 -z-10 h-40 w-40 rounded-full bg-cyan-300/15 blur-2xl" />
+            <div className="text-sm font-bold uppercase tracking-[0.16em] text-cyan-100">{banner.badgeSuffix}</div>
+            <div className="mt-4 grid grid-cols-3 gap-2">
               {stats.map((item: { label: string; value: string }) => (
-                <div key={item.label} className="min-w-[4.25rem] rounded-lg bg-indigo-950/5 px-2.5 py-1.5 text-center">
-                  <span className="text-sm font-bold tabular-nums text-slate-900">{item.value}</span>
-                  <span className="ml-1 text-[10px] text-slate-600">{item.label}</span>
+                <div key={item.label} className="min-w-0 rounded-xl border border-white/15 bg-white/10 px-1.5 py-2.5 text-center shadow-inner shadow-white/5">
+                  <span className="block text-2xl font-black leading-none tabular-nums text-cyan-200 sm:text-[27px]">{item.value}</span>
+                  <span className="mt-1.5 block truncate text-sm font-semibold uppercase tracking-wide text-indigo-100">{item.label}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="rounded-2xl border border-indigo-900/10 bg-white/70 p-4 shadow-sm shadow-indigo-950/5 backdrop-blur-sm">
-            <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-indigo-900">{banner.offerLabel}</div>
-            <p className="mt-2 text-sm leading-6 text-slate-700">{banner.offerText}</p>
+          <div className="relative isolate overflow-hidden rounded-[26px] border border-violet-200 bg-gradient-to-br from-white to-violet-100 p-5 shadow-lg shadow-violet-950/10">
+            <div aria-hidden="true" className="pointer-events-none absolute -right-8 -top-10 -z-10 h-28 w-28 rounded-full bg-fuchsia-300/30 blur-2xl" />
+            <div className="text-sm font-bold uppercase tracking-[0.18em] text-violet-800">{banner.offerLabel}</div>
+            <p className="mt-3 text-[15px] font-semibold leading-6 text-violet-950 sm:text-base sm:leading-7">{banner.offerText}</p>
           </div>
         </div>
       </div>
