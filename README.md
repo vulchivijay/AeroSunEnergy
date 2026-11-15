@@ -134,7 +134,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 npm run build
 ```
 
-The production build runs as a Next.js server so authentication and form API routes can connect to PostgreSQL on AlloyDB. The `prebuild` step loads `.env` and prints whether Google integration and AlloyDB environment variables are present without displaying their values. Google tracking scripts still require cookie consent. The `postbuild` step submits the sitemap via IndexNow and prints a Google index verification summary; external SEO check failures are reported but do not fail an otherwise successful build. IndexNow requires the key to be available at `https://aerosunenergy.in/<key>.txt` with the file contents exactly matching the key. Run `npm run google:index-check` to run the SEO checks in strict mode.
+The production build runs as a Next.js server so authentication and form API routes can connect to MongoDB. The `prebuild` step loads `.env` and prints whether Google integration and MongoDB environment variables are present without displaying their values. Google tracking scripts still require cookie consent. The `postbuild` step submits the sitemap via IndexNow and prints a Google index verification summary; external SEO check failures are reported but do not fail an otherwise successful build. IndexNow requires the key to be available at `https://aerosunenergy.in/<key>.txt` with the file contents exactly matching the key. Run `npm run google:index-check` to run the SEO checks in strict mode.
 
 To enable the Google index verification step, set these environment variables before running the build:
 
@@ -160,34 +160,27 @@ npm start
 
 The Next.js server listens on the `PORT` environment variable (8080 by default), so it can run as a Cloud Run container.
 
-### Configure AlloyDB PostgreSQL
+### Configure MongoDB
 
-Set these server-only PostgreSQL variables on the Cloud Run service. Do not prefix database credentials with `NEXT_PUBLIC_`; store production credentials in Secret Manager.
+Set these server-only MongoDB variables on the Cloud Run service. Do not prefix database credentials with `NEXT_PUBLIC_`; store production credentials in Secret Manager. `MONGODB_URI` should be a MongoDB connection string for MongoDB Atlas or your MongoDB server, and `MONGODB_DB` is the database name.
 
 Cloud Run service environment variables and secrets are available to the running service, not to the Cloud Build buildpack. Therefore, the `prebuild` report may show the database variables as `NOT PRESENT` during deployment; this is expected and does not mean they failed to reach the service. The API reads them when handling requests, so they do not need to be embedded in the build. Updating a service variable or secret creates a new Cloud Run revision.
 
 ```text
-_DB_HOST=ALLOYDB_HOST
-_DB_PORT=5432
-_DB_NAME=aerosunenergy
-_DB_USER=application_user
-_DB_PASSWORD=application_user_password
-_DB_SSL=true
-# Optional; used only by db:migrate when creating the database.
-_DB_ADMIN_USER=database_admin
-_DB_ADMIN_PASSWORD=database_admin_password
+MONGODB_URI=mongodb+srv://application_user:password@cluster.example.mongodb.net/
+MONGODB_DB=aerosunenergy
 DASHBOARD_ADMIN_EMAILS=admin@example.com
 ```
 
-Connect through the AlloyDB Auth Proxy or a supported AlloyDB endpoint. For local development, run the [AlloyDB Auth Proxy](https://cloud.google.com/alloydb/docs/auth-proxy/overview), set `_DB_HOST=127.0.0.1`, and set `_DB_SSL=false` for the local proxy connection.
+URL-encode any special characters in the connection-string username or password. For local development, run MongoDB locally and set `MONGODB_URI=mongodb://127.0.0.1:27017/`.
 
-Apply the schema to the target database:
+Create the required indexes before deployment (the application also ensures them on its first database connection):
 
 ```bash
 npm run db:migrate
 ```
 
-This is a schema setup only; it doesn't import existing rows from another database. It creates the target database if it doesn't exist, then creates the `auth_users`, `auth_sessions`, `solar_referrals`, and `website_form_submissions` tables. Database creation requires a PostgreSQL role with `CREATEDB`; set both `_DB_ADMIN_USER` and `_DB_ADMIN_PASSWORD` for a separate administrative connection when the application role doesn't have that privilege. The target role needs permission to create tables, indexes, and functions. Website form records from every supported form type share `website_form_submissions`, distinguished by `form_type` and stored as JSONB. Referral records use `solar_referrals`; all tables are in the same configured database. The migration does not run automatically during deployment.
+This creates indexes for the `auth_users`, `auth_sessions`, `solar_referrals`, and `website_form_submissions` collections. Existing PostgreSQL records are not copied automatically; export and migrate any existing user, session, referral, and form-submission data before switching production traffic.
 
 Set `DASHBOARD_ADMIN_EMAILS` to a comma-separated list of registered account email addresses permitted to access `/dashboard`. The dashboard requires this server-only allowlist and omits password hashes and session tokens from its views.
 
@@ -201,7 +194,7 @@ npm run lint
 
 ## Deployment
 
-The app must run as a Next.js server for login, signup, dashboard, referral, and form-submission API routes; static-only hosting is no longer sufficient. Deploy the server to Cloud Run with its AlloyDB PostgreSQL connection configured. The public website remains available at [aerosunenergy.in](https://aerosunenergy.in).
+The app must run as a Next.js server for login, signup, dashboard, referral, and form-submission API routes; static-only hosting is no longer sufficient. Deploy the server to Cloud Run with its MongoDB connection configured. The public website remains available at [aerosunenergy.in](https://aerosunenergy.in).
 
 ---
 

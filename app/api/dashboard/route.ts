@@ -1,5 +1,5 @@
-import type { QueryResultRow } from 'pg'
-import { getDatabasePool } from '@/lib/auth/database'
+import { ObjectId, type Document } from 'mongodb'
+import { getDatabase, type AuthSessionDocument, type AuthUserDocument } from '@/lib/auth/database'
 import { isDashboardAdmin } from '@/lib/auth/admin'
 import { getSessionToken, getSessionUser } from '@/lib/auth/session'
 
@@ -21,29 +21,7 @@ const formTypes = [
 
 type DashboardTable = (typeof tableNames)[number]
 type FormType = (typeof formTypes)[number]
-
-const tableQueries: Record<DashboardTable, { from: string; select: string; orderBy: string }> = {
-  submissions: {
-    from: 'website_form_submissions',
-    select: 'id, reference_code, form_type, payload, status, created_at, updated_at',
-    orderBy: 'created_at DESC, id DESC',
-  },
-  referrals: {
-    from: 'solar_referrals',
-    select: 'id, reference_code, referrer_name, referrer_phone, referred_name, referred_phone, postal_code, property_type, status, referrer_permission_confirmed_at, created_at, updated_at',
-    orderBy: 'created_at DESC, id DESC',
-  },
-  users: {
-    from: 'auth_users',
-    select: 'id::text AS id, name, email, created_at',
-    orderBy: 'created_at DESC, id DESC',
-  },
-  sessions: {
-    from: 'auth_sessions AS s JOIN auth_users AS u ON u.id = s.user_id',
-    select: "s.id::text AS id, s.user_id::text AS user_id, u.name, u.email, s.created_at, s.expires_at, CASE WHEN s.expires_at > CURRENT_TIMESTAMP THEN 'active' ELSE 'expired' END AS status",
-    orderBy: 's.created_at DESC, s.id DESC',
-  },
-}
+type DashboardDocument = Document & { _id: ObjectId; created_at?: Date; updated_at?: Date }
 
 function isDashboardTable(value: string): value is DashboardTable {
   return tableNames.some((table) => table === value)
@@ -65,6 +43,11 @@ function getErrorCode(error: unknown): string {
     return error.code
   }
   return 'UNKNOWN'
+}
+
+function dashboardRow(document: DashboardDocument): Record<string, unknown> {
+  const { _id, ...fields } = document
+  return { id: _id.toHexString(), ...fields }
 }
 
 export async function GET(request: Request) {
@@ -99,26 +82,59 @@ export async function GET(request: Request) {
     return jsonResponse({ error: 'invalid_form_type' }, 400)
   }
 
-  const query = tableQueries[table]
-  const whereClause = formType ? ' WHERE form_type = $1' : ''
-  const queryValues: (string | number)[] = formType ? [formType] : []
-
   try {
-    const pool = getDatabasePool()
-    const { rows: countRows } = await pool.query<QueryResultRow & { total: string }>(
-      `SELECT COUNT(*)::text AS total FROM ${query.from}${whereClause}`,
-      queryValues,
-    )
-    const total = Number(countRows[0]?.total ?? 0)
+    const database = await getDatabase()
+    const filter = table === 'submissions' && formType ? { form_type: formType } : {}
+    const collectionNames: Record<DashboardTable, string> = {
+      submissions: 'website_form_submissions',
+      referrals: 'solar_referrals',
+      users: 'auth_users',
+      sessions: 'auth_sessions',
+    }
+    const collection = database.collection<DashboardDocument>(collectionNames[table])
+    const total = await collection.countDocuments(filter)
     const pageCount = Math.max(1, Math.ceil(total / PAGE_SIZE))
     const page = Math.min(requestedPage, pageCount)
-    const offset = (page - 1) * PAGE_SIZE
-    const limitPlaceholder = `$${queryValues.length + 1}`
-    const offsetPlaceholder = `$${queryValues.length + 2}`
-    const { rows } = await pool.query<QueryResultRow>(
-      `SELECT ${query.select} FROM ${query.from}${whereClause} ORDER BY ${query.orderBy} LIMIT ${limitPlaceholder} OFFSET ${offsetPlaceholder}`,
-      [...queryValues, PAGE_SIZE, offset],
-    )
+    const documents = await collection
+      .find(filter, {
+        projection: table === 'users'
+          ? { password_hash: 0 }
+          : table === 'sessions'
+            ? { token_hash: 0 }
+            : undefined,
+      })
+      .sort({ created_at: -1, _id: -1 })
+      .skip((page - 1) * PAGE_SIZE)
+      .limit(PAGE_SIZE)
+      .toArray()
+
+    let rows: Record<string, unknown>[]
+    if (table === 'sessions') {
+      const sessions = documents as AuthSessionDocument[]
+      const userIds = [...new Map(sessions.map((session) => [session.user_id.toHexString(), session.user_id])).values()]
+      const accounts = userIds.length
+        ? await database.collection<AuthUserDocument>('auth_users')
+          .find({ _id: { $in: userIds } }, { projection: { name: 1, email: 1 } })
+          .toArray()
+        : []
+      const accountsById = new Map(accounts.map((account) => [account._id.toHexString(), account]))
+      const now = new Date()
+      rows = sessions.flatMap((session) => {
+        const account = accountsById.get(session.user_id.toHexString())
+        if (!account) return []
+        return [{
+          id: session._id.toHexString(),
+          user_id: session.user_id.toHexString(),
+          name: account.name,
+          email: account.email,
+          created_at: session.created_at,
+          expires_at: session.expires_at,
+          status: session.expires_at > now ? 'active' : 'expired',
+        }]
+      })
+    } else {
+      rows = documents.map(dashboardRow)
+    }
 
     return jsonResponse({ table, page, pageSize: PAGE_SIZE, total, rows }, 200)
   } catch (error) {

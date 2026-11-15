@@ -1,5 +1,5 @@
 import { authJson } from '@/lib/auth/http'
-import { getDatabasePool } from '@/lib/auth/database'
+import { getDatabase } from '@/lib/auth/database'
 import { clearSessionCookie, getSessionToken, hashSessionToken } from '@/lib/auth/session'
 
 export const runtime = 'nodejs'
@@ -9,7 +9,7 @@ export async function POST() {
   if (!token) return authJson({ success: true })
 
   try {
-    await getDatabasePool().query('DELETE FROM auth_sessions WHERE token_hash = $1', [hashSessionToken(token)])
+    await (await getDatabase()).collection('auth_sessions').deleteOne({ token_hash: hashSessionToken(token) })
     const response = authJson({ success: true })
     clearSessionCookie(response)
     return response

@@ -1,13 +1,13 @@
 import { createHash, randomBytes } from 'node:crypto'
 import { cookies } from 'next/headers'
-import type { PoolClient, QueryResultRow } from 'pg'
-import { getDatabasePool } from './database'
+import { ObjectId } from 'mongodb'
+import { getDatabase, type AuthSessionDocument, type AuthUserDocument } from './database'
 
 const SESSION_MAX_AGE_SECONDS = 60 * 60 * 24 * 30
 const SESSION_COOKIE_NAME =
   process.env.NODE_ENV === 'production' ? '__Host-aerosun-session' : 'aerosun-session'
 
-type AuthUser = QueryResultRow & {
+type AuthUser = {
   id: string
   name: string
   email: string
@@ -17,13 +17,19 @@ export function hashSessionToken(token: string): string {
   return createHash('sha256').update(token).digest('hex')
 }
 
-export async function createSession(connection: PoolClient, userId: string): Promise<string> {
+export async function createSession(userId: ObjectId): Promise<string> {
   const token = randomBytes(32).toString('hex')
-  await connection.query('DELETE FROM auth_sessions WHERE expires_at <= CURRENT_TIMESTAMP')
-  await connection.query(
-    "INSERT INTO auth_sessions (user_id, token_hash, expires_at) VALUES ($1, $2, CURRENT_TIMESTAMP + INTERVAL '30 days')",
-    [userId, hashSessionToken(token)],
-  )
+  const database = await getDatabase()
+  const sessions = database.collection<AuthSessionDocument>('auth_sessions')
+  const now = new Date()
+  await sessions.deleteMany({ expires_at: { $lte: now } })
+  await sessions.insertOne({
+    _id: new ObjectId(),
+    user_id: userId,
+    token_hash: hashSessionToken(token),
+    created_at: now,
+    expires_at: new Date(now.getTime() + SESSION_MAX_AGE_SECONDS * 1000),
+  })
   return token
 }
 
@@ -47,15 +53,15 @@ export async function getSessionToken(): Promise<string | null> {
 }
 
 export async function getSessionUser(token: string): Promise<AuthUser | null> {
-  const { rows } = await getDatabasePool().query<AuthUser>(
-    `SELECT u.id::text AS id, u.name, u.email
-     FROM auth_sessions AS s
-     JOIN auth_users AS u ON u.id = s.user_id
-     WHERE s.token_hash = $1 AND s.expires_at > CURRENT_TIMESTAMP
-     LIMIT 1`,
-    [hashSessionToken(token)],
-  )
-  return rows[0] ?? null
+  const database = await getDatabase()
+  const session = await database.collection<AuthSessionDocument>('auth_sessions').findOne({
+    token_hash: hashSessionToken(token),
+    expires_at: { $gt: new Date() },
+  })
+  if (!session) return null
+
+  const user = await database.collection<AuthUserDocument>('auth_users').findOne({ _id: session.user_id })
+  return user ? { id: user._id.toHexString(), name: user.name, email: user.email } : null
 }
 
 export function sessionCookieName(): string {

@@ -1,43 +1,60 @@
-import { Pool } from 'pg'
+import { MongoClient, ObjectId, type Db, type Document } from 'mongodb'
 
-let pool: Pool | undefined
+export interface AuthUserDocument extends Document {
+  _id: ObjectId
+  name: string
+  email: string
+  password_hash: string
+  created_at: Date
+}
 
-export function getDatabasePool(): Pool {
-  if (pool) return pool
+export interface AuthSessionDocument extends Document {
+  _id: ObjectId
+  user_id: ObjectId
+  token_hash: string
+  expires_at: Date
+  created_at: Date
+}
 
-  const host = process.env._DB_HOST?.trim()
-  const database = process.env._DB_NAME?.trim()
-  const user = process.env._DB_USER?.trim()
-  const password = process.env._DB_PASSWORD
-  const portValue = process.env._DB_PORT?.trim()
-  const port = portValue ? Number(portValue) : 5432
-  const sslValue = (process.env._DB_SSL ?? 'true').trim().toLowerCase()
+let databasePromise: Promise<Db> | undefined
 
-  if (!host || !database || !user || !password) {
-    throw new Error('_DB_HOST, _DB_NAME, _DB_USER, and _DB_PASSWORD are required.')
+async function connectDatabase(): Promise<Db> {
+  const uri = process.env.MONGODB_URI?.trim()
+  const databaseName = process.env.MONGODB_DB?.trim()
+  if (!uri || !databaseName) {
+    throw new Error('MONGODB_URI and MONGODB_DB are required.')
   }
-  if (!Number.isInteger(port) || port < 1 || port > 65535) {
-    throw new Error('_DB_PORT must be a valid TCP port.')
-  }
-  if (sslValue !== 'true' && sslValue !== 'false') {
-    throw new Error('_DB_SSL must be "true" or "false".')
-  }
 
-  pool = new Pool({
-    host,
-    port,
-    database,
-    user,
-    password,
-    ssl: sslValue === 'true',
-    max: 5,
-    connectionTimeoutMillis: 10_000,
-    idleTimeoutMillis: 30_000,
+  const client = new MongoClient(uri, {
+    maxPoolSize: 5,
+    serverSelectionTimeoutMS: 10_000,
   })
 
-  pool.on('error', (error) => {
-    console.error('Unexpected error from an idle database connection.', error)
-  })
+  try {
+    await client.connect()
+    const database = client.db(databaseName)
+    await Promise.all([
+      database.collection('auth_users').createIndex({ email: 1 }, { unique: true, name: 'uq_auth_users_email' }),
+      database.collection('auth_sessions').createIndex({ token_hash: 1 }, { unique: true, name: 'uq_auth_sessions_token_hash' }),
+      database.collection('auth_sessions').createIndex({ expires_at: 1 }, { name: 'ix_auth_sessions_expires_at' }),
+      database.collection('solar_referrals').createIndex({ reference_code: 1 }, { unique: true, name: 'uq_solar_referrals_reference_code' }),
+      database.collection('solar_referrals').createIndex({ status: 1, created_at: -1 }, { name: 'ix_solar_referrals_status_created_at' }),
+      database.collection('website_form_submissions').createIndex({ reference_code: 1 }, { unique: true, name: 'uq_website_form_submissions_reference_code' }),
+      database.collection('website_form_submissions').createIndex({ form_type: 1, status: 1, created_at: -1 }, { name: 'ix_website_form_submissions_type_status_created' }),
+    ])
+    return database
+  } catch (error) {
+    await client.close()
+    throw error
+  }
+}
 
-  return pool
+export function getDatabase(): Promise<Db> {
+  if (!databasePromise) {
+    databasePromise = connectDatabase().catch((error: unknown) => {
+      databasePromise = undefined
+      throw error
+    })
+  }
+  return databasePromise
 }
