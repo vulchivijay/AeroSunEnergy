@@ -130,7 +130,7 @@ function EditableTable({
   return (
     <div className="overflow-x-auto rounded-xl border border-slate-200">
       <table className="w-full min-w-[640px] border-collapse text-left text-md">
-        <thead className="bg-emerald-50 text-[11px] font-bold uppercase tracking-wide text-emerald-950">
+        <thead className="bg-emerald-50 text-sm font-bold uppercase tracking-wide text-emerald-950">
           <tr>
             <th className="border-b border-r border-emerald-100 px-3 py-2.5">
               {rowHeader}

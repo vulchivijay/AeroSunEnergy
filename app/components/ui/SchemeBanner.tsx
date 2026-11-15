@@ -58,7 +58,7 @@ export default function SchemeBanner() {
               ₹
             </span>
             <div className="min-w-0">
-              <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-indigo-900 sm:text-xs">
+              <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-indigo-900 sm:text-xs">
                 <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-amber-500" />
                 {banner.badge}
               </div>
@@ -91,7 +91,7 @@ export default function SchemeBanner() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           <div className="relative isolate overflow-hidden rounded-[26px] border border-emerald-300/70 bg-gradient-to-br from-[#064e3b] to-[#047857] p-5 text-white shadow-xl shadow-emerald-950/15">
             <div aria-hidden="true" className="pointer-events-none absolute -right-10 -top-12 -z-10 h-36 w-36 rounded-full bg-lime-300/15 blur-2xl" />
-            <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-100">{banner.cardLabel}</div>
+            <div className="text-sm font-bold uppercase tracking-[0.18em] text-emerald-100">{banner.cardLabel}</div>
             <div className="mt-3 text-3xl font-black tracking-tight text-lime-200 sm:text-4xl">₹ 78,000</div>
             <div className="mt-2 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-emerald-50">
               {banner.max} {banner.perHome}
@@ -109,12 +109,12 @@ export default function SchemeBanner() {
 
           <div className="relative isolate overflow-hidden rounded-[26px] border border-slate-700 bg-gradient-to-br from-[#172554] via-[#1e3a8a] to-[#312e81] p-5 text-white shadow-xl shadow-indigo-950/15">
             <div aria-hidden="true" className="pointer-events-none absolute -bottom-16 -right-10 -z-10 h-40 w-40 rounded-full bg-cyan-300/15 blur-2xl" />
-            <div className="text-[11px] font-bold uppercase tracking-[0.16em] text-cyan-100">{banner.badgeSuffix}</div>
+            <div className="text-sm font-bold uppercase tracking-[0.16em] text-cyan-100">{banner.badgeSuffix}</div>
             <div className="mt-4 grid grid-cols-3 gap-2">
               {stats.map((item: { label: string; value: string }) => (
                 <div key={item.label} className="min-w-0 rounded-xl border border-white/15 bg-white/10 px-1.5 py-2.5 text-center shadow-inner shadow-white/5">
                   <span className="block text-2xl font-black leading-none tabular-nums text-cyan-200 sm:text-[27px]">{item.value}</span>
-                  <span className="mt-1.5 block truncate text-[10px] font-semibold uppercase tracking-wide text-indigo-100">{item.label}</span>
+                  <span className="mt-1.5 block truncate text-sm font-semibold uppercase tracking-wide text-indigo-100">{item.label}</span>
                 </div>
               ))}
             </div>
@@ -122,7 +122,7 @@ export default function SchemeBanner() {
 
           <div className="relative isolate overflow-hidden rounded-[26px] border border-violet-200 bg-gradient-to-br from-white to-violet-100 p-5 shadow-lg shadow-violet-950/10">
             <div aria-hidden="true" className="pointer-events-none absolute -right-8 -top-10 -z-10 h-28 w-28 rounded-full bg-fuchsia-300/30 blur-2xl" />
-            <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-violet-800">{banner.offerLabel}</div>
+            <div className="text-sm font-bold uppercase tracking-[0.18em] text-violet-800">{banner.offerLabel}</div>
             <p className="mt-3 text-[15px] font-semibold leading-6 text-violet-950 sm:text-base sm:leading-7">{banner.offerText}</p>
           </div>
         </div>

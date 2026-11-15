@@ -110,7 +110,7 @@ export function WindCapacityTable({ rows }: { rows: { label: string; value: stri
   return (
     <div className="overflow-x-auto rounded-2xl border border-sky-200 bg-gradient-to-br from-[#f0f9ff] via-[#e6f7fb] to-[#f0fdfa] [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-sky-300 [&::-webkit-scrollbar-thumb:hover]:bg-sky-400">
       <div className="min-w-[680px]">
-        <div className="grid border-b border-slate-200 bg-[#f7f7f1] text-[11px] font-bold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-[1fr_1.1fr_2fr]">
+        <div className="grid border-b border-slate-200 bg-[#f7f7f1] text-sm font-bold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-[1fr_1.1fr_2fr]">
           <div className="px-4 py-3">{ui.capacityBand}</div>
           <div className="px-4 py-3">{ui.systemSize}</div>
           <div className="px-4 py-3">{ui.typicalUse}</div>
@@ -134,7 +134,7 @@ export function WindComparisonTable({ rows }: { rows: { system: string; detail: 
   return (
     <div className="overflow-x-auto rounded-2xl border border-cyan-200 bg-gradient-to-br from-[#ecfeff] via-[#f0f9ff] to-[#e6f4fa] [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-sky-300 [&::-webkit-scrollbar-thumb:hover]:bg-sky-400">
       <div className="min-w-[780px]">
-        <div className="grid border-b border-slate-200 bg-[#f7f7f1] text-[11px] font-bold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-[1.2fr_2.3fr_1.8fr]">
+        <div className="grid border-b border-slate-200 bg-[#f7f7f1] text-sm font-bold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-[1.2fr_2.3fr_1.8fr]">
           <div className="px-4 py-3">{ui.systemType}</div>
           <div className="px-4 py-3">{ui.howItWorks}</div>
           <div className="px-4 py-3">{ui.typicalUse}</div>

@@ -48,7 +48,7 @@ function RecognitionHighlight() {
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 overflow-hidden rounded-[30px] border border-[#e2e8e2] bg-white shadow-[0_20px_60px_-40px_rgba(24,37,31,0.3)] lg:grid-cols-[1.05fr_1fr_1fr]">
           <div className="flex flex-col justify-center bg-[#e1ece3] p-7 sm:p-9 lg:p-11">
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#137c63]">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
               {t.home.recognitionHeader.badge}
             </p>
             <h2 className="mt-4 max-w-md text-3xl font-bold leading-tight tracking-tight text-[#152b29] sm:text-4xl">
@@ -63,7 +63,7 @@ function RecognitionHighlight() {
               key={item.title}
               className="flex min-w-0 flex-col justify-center border-t border-[#e5e9e5] bg-white p-7 sm:p-9 lg:border-l lg:border-t-0 lg:p-11"
             >
-              <span className={`inline-flex w-fit rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] ${index === 0 ? 'bg-[#eaf2e9] text-[#14785e]' : 'bg-[#fff1dc] text-[#a95600]'}`}>
+              <span className={`inline-flex w-fit rounded-full px-3 py-1 text-sm font-bold uppercase tracking-[0.14em] ${index === 0 ? 'bg-[#eaf2e9] text-[#14785e]' : 'bg-[#fff1dc] text-[#a95600]'}`}>
                 {item.subtitle}
               </span>
               <h3 className="mt-6 text-2xl font-semibold leading-tight tracking-tight text-[#152b29] sm:text-[26px]">
@@ -212,7 +212,7 @@ export default function Home() {
               <table className="w-full min-w-[620px] border-collapse text-left">
                 <caption className="sr-only">{subsidy.title}</caption>
                 <thead className="bg-[#102e2a] text-white">
-                  <tr className="text-[10px] font-bold uppercase tracking-[0.16em] sm:text-[11px]">
+                  <tr className="text-sm font-bold uppercase tracking-[0.16em] sm:text-sm">
                     <th scope="col" className="px-5 py-5 sm:px-6">
                       {t.ui.averageMonthlyUsage}
                     </th>

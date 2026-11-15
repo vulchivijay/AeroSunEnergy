@@ -110,7 +110,7 @@ export function HybridTable({ rows }: { rows: { label: string; value: string; us
   return (
     <div className="overflow-x-auto border-y border-slate-300 bg-transparent scrollbar-thin [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-violet-300 [&::-webkit-scrollbar-thumb:hover]:bg-violet-400">
       <div className="min-w-190">
-        <div className="grid border-b border-slate-200 bg-[#f7f7f1] text-[11px] font-bold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-[1.2fr_2.2fr_1.8fr]">
+        <div className="grid border-b border-slate-200 bg-[#f7f7f1] text-sm font-bold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-[1.2fr_2.2fr_1.8fr]">
           <div className="px-4 py-3">{ui.systemType}</div>
           <div className="px-4 py-3">{ui.typicalConfiguration}</div>
           <div className="px-4 py-3">{ui.customerFit}</div>

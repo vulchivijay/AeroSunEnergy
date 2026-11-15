@@ -234,7 +234,7 @@ export default function DashboardDataTabs() {
                             <dl className="mt-3 grid gap-x-5 gap-y-2 sm:grid-cols-2">
                               {getSubmissionDetails(row.payload).map(([key, value]) => (
                                 <div key={key} className="min-w-0 rounded-lg bg-slate-50 p-2.5">
-                                  <dt className="break-words text-[11px] font-bold uppercase tracking-wide text-slate-500">{key.replace(/_/g, ' ')}</dt>
+                                  <dt className="break-words text-sm font-bold uppercase tracking-wide text-slate-500">{key.replace(/_/g, ' ')}</dt>
                                   <dd className="mt-1 break-words text-sm text-slate-800">{formatValue(value)}</dd>
                                 </div>
                               ))}

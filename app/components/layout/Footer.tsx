@@ -50,7 +50,7 @@ export default function Footer() {
 	const quickEnquiries = queries
 	const visibleNavLinks = navLinks
 	const comingSoonBadge = (
-		<span className="inline-flex items-center gap-1.5 border-l border-[#F5C76A]/45 pl-2 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#F5C76A]">
+		<span className="inline-flex items-center gap-1.5 border-l border-[#F5C76A]/45 pl-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#F5C76A]">
 			<span className="h-px w-2 bg-[#F5C76A]/70" aria-hidden="true" />
 			{t.navbar.comingSoon}
 		</span>

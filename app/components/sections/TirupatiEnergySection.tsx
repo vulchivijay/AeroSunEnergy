@@ -13,7 +13,7 @@ export default function TirupatiEnergySection() {
       <div className="mx-auto max-w-7xl">
         <div className="relative rounded-[2rem] border border-[#cfe0d1] bg-[#eaf2e9] p-6 sm:p-9 lg:px-12 lg:py-10">
           <div className="max-w-4xl pt-20 sm:pt-32 lg:pt-0 lg:pr-52">
-            <p className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#087a61] sm:text-xs">
+            <p className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-[#087a61] sm:text-xs">
               {content.eyebrow}
             </p>
 

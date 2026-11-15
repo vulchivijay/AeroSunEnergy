@@ -93,7 +93,7 @@ export function SubsidyCard({
 }) {
   return (
     <div className="border-t border-emerald-200 py-5">
-      <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700">{label}</p>
+      <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-700">{label}</p>
       <div className="mt-3 text-3xl font-bold tracking-tight text-slate-900">{value}</div>
       <p className="mt-2 text-sm leading-6 text-slate-600">{note}</p>
     </div>
@@ -128,7 +128,7 @@ export function CapacityTable() {
   return (
     <div className="overflow-x-auto border-y border-slate-300 bg-transparent [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400">
       <div className="min-w-[620px]">
-        <div className="grid border-b border-slate-200 bg-[#f7f7f1] text-[11px] font-bold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-3">
+        <div className="grid border-b border-slate-200 bg-[#f7f7f1] text-sm font-bold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-3">
           <div className="px-4 py-3">{ui.averageMonthlyUsage}</div>
           <div className="px-4 py-3">{ui.suitableRooftopCapacity}</div>
           <div className="px-4 py-3">{ui.bestFit}</div>

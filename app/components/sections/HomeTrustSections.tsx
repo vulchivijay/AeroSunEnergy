@@ -53,8 +53,8 @@ export function CompanyTrustSection() {
 
           <div className="grid gap-3 sm:grid-cols-2">
             <div className="rounded-2xl border border-white/80 bg-white/70 p-4 shadow-sm sm:col-span-2">
-              <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">{content.legalEntityLabel}</p>
-              <p className="mt-2 text-xl font-bold text-slate-950">{t.home.aboutSection.companyName}</p>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">{content.legalEntityLabel}</p>
+              <p className="mt-2 text-xl font-bold text-slate-950">{t.about.companyProfile.contactCompany}</p>
               <p className="mt-3 text-md font-semibold leading-5 text-slate-700">{content.identifiersText}</p>
             </div>
 
@@ -66,7 +66,7 @@ export function CompanyTrustSection() {
             >
               <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-indigo-600" aria-hidden="true" />
               <span className="min-w-0">
-                <span className="block text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">{content.officeLabel}</span>
+                <span className="block text-sm font-bold uppercase tracking-[0.18em] text-slate-500">{content.officeLabel}</span>
                 <span className="mt-1 block text-sm leading-6 text-slate-700">{footer.address}</span>
                 <span className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-indigo-700">
                   {content.mapCta}<ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
@@ -81,7 +81,7 @@ export function CompanyTrustSection() {
               >
                 <Phone className="h-5 w-5 shrink-0 text-indigo-600" aria-hidden="true" />
                 <span>
-                  <span className="block text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">{content.phoneLabel}</span>
+                  <span className="block text-sm font-bold uppercase tracking-[0.18em] text-slate-500">{content.phoneLabel}</span>
                   <span className="mt-1 block text-sm text-slate-700">{footer.phone}</span>
                 </span>
               </a>
@@ -91,7 +91,7 @@ export function CompanyTrustSection() {
               >
                 <Mail className="h-5 w-5 shrink-0 text-indigo-600" aria-hidden="true" />
                 <span className="min-w-0">
-                  <span className="block text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">{content.emailLabel}</span>
+                  <span className="block text-sm font-bold uppercase tracking-[0.18em] text-slate-500">{content.emailLabel}</span>
                   <span className="mt-1 block break-all text-sm text-slate-700">{footer.email}</span>
                 </span>
               </a>
@@ -110,7 +110,7 @@ export function CompanyTrustSection() {
                     <div key={fact.label} className={`flex min-w-0 items-center gap-3 rounded-xl border p-3 ${style}`}>
                       <Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
                       <span className="min-w-0">
-                        <span className="block text-[9px] font-bold uppercase tracking-[0.12em] opacity-75 sm:text-[10px]">
+                        <span className="block text-xs font-bold uppercase tracking-[0.12em] opacity-75 sm:text-sm">
                           {fact.label}
                         </span>
                         <span className="mt-1 block text-sm font-bold text-slate-900">
