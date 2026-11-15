@@ -15,7 +15,7 @@ export default function ThankYouPage() {
 
       <section className="relative mx-auto grid min-h-[min(720px,calc(100svh-10rem))] max-w-7xl items-center gap-12 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-10">
         <div className="max-w-2xl">
-          <p className="flex items-center gap-3 text-md font-bold uppercase tracking-[0.22em] text-[#c2df9e]">
+          <p className="flex w-fit items-center gap-3 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-md font-bold uppercase tracking-[0.22em] text-[#c2df9e]">
             <span className="h-px w-8 bg-[#f5c76a]" />
             Message received
           </p>

@@ -74,7 +74,7 @@ export default function ProjectsPage() {
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-lg text-emerald-800">i</span>
               <div>
-                <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">{labels.approach}</p>
+                <p className="inline-flex w-fit rounded-full border border-emerald-800/15 bg-emerald-50 px-3 py-1.5 text-[12px] font-black uppercase tracking-[0.18em] text-emerald-800">{labels.approach}</p>
                 <p className="mt-2 text-md leading-7 text-slate-600 sm:text-sm">{labels.approachDescription}</p>
               </div>
             </div>
@@ -173,7 +173,7 @@ export default function ProjectsPage() {
         <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
           <nav aria-label={labels.sectionsLabel} className="overflow-hidden rounded-2xl border border-emerald-200/80 bg-white shadow-sm">
             <div className="border-b border-slate-100 px-5 py-4">
-              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">{labels.findTopic}</p>
+              <p className="inline-flex w-fit rounded-full border border-emerald-800/10 bg-emerald-50 px-3 py-1.5 text-[12px] font-black uppercase tracking-[0.18em] text-emerald-800">{labels.findTopic}</p>
               <p className="mt-1 text-md font-bold text-slate-900">{labels.projectOverview}</p>
             </div>
             <ol className="space-y-1 p-3">
@@ -192,13 +192,13 @@ export default function ProjectsPage() {
             </ol>
           </nav>
           <section className="rounded-2xl bg-[#101c32] p-5 text-white">
-            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-300">{labels.planningPriorities}</p>
+            <p className="inline-flex w-fit rounded-full border border-emerald-300/20 bg-white/[0.06] px-3 py-1.5 text-[12px] font-black uppercase tracking-[0.18em] text-emerald-300">{labels.planningPriorities}</p>
             <ul className="mt-4 space-y-3 text-md leading-6 text-slate-200">
               {labels.planningSteps.map((step) => <li key={step}>{step}</li>)}
             </ul>
           </section>
           <section className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
-            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">{labels.startConversation}</p>
+            <p className="inline-flex w-fit rounded-full border border-emerald-800/10 bg-white/75 px-3 py-1.5 text-[12px] font-black uppercase tracking-[0.18em] text-emerald-800">{labels.startConversation}</p>
             <p className="mt-3 text-md leading-6 text-slate-700">{labels.startConversationDescription}</p>
             <a href="/customer-enquiry" className="mt-4 inline-flex rounded-full bg-[#101c32] px-4 py-2.5 text-md font-bold text-white transition hover:bg-emerald-900">{labels.requestConsultation}</a>
           </section>

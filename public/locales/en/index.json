@@ -4813,76 +4813,6 @@
         }
       ]
     },
-    "aboutSection": {
-      "eyebrow": "ABOUT",
-      "brandFirst": "AeroSun",
-      "brandSecond": "Energy",
-      "badge": "Clean Energy Partner",
-      "title": "Powering a sustainable future with purpose.",
-      "tags": [
-        "Solar",
-        "Wind",
-        "Hybrid"
-      ],
-      "audience": [
-        "Residential",
-        "Commercial",
-        "Industrial",
-        "Institutional"
-      ],
-      "sinceLabel": "Since 2026",
-      "imageAlt": "Founder of AeroSun Energy",
-      "founderBadge": "Founder Vision",
-      "leadershipLabel": "Leadership",
-      "stats": [
-        {
-          "title": "Innovation",
-          "value": "Smart energy systems"
-        },
-        {
-          "title": "Sustainability",
-          "value": "Lower emissions"
-        },
-        {
-          "title": "Reliability",
-          "value": "Future-ready setups"
-        }
-      ],
-      "companyName": "AeroSun Energy Private Limited",
-      "visionHeading": "Our vision and commitment",
-      "visionIntro": "At {companyName}, we are committed to delivering innovative, reliable, and sustainable renewable energy solutions tailored to the needs of homes, businesses, and industries.",
-      "visionHistory": "{companyName} was established with a vision to contribute to a greener future by making renewable energy solutions more accessible, efficient, and dependable.",
-      "solutionsEyebrow": "Solutions",
-      "solutionsTitle": "Renewable energy for every need",
-      "solutionsDescription": "We support customers, architects, builders, and project developers in identifying suitable renewable energy systems.",
-      "designEyebrow": "System design",
-      "designPoints": [
-        "• Solar PV systems for clean electricity generation",
-        "• Wind energy solutions for sustainable power",
-        "• Hybrid configurations for greater resilience",
-        "• Customized energy solutions for site-specific needs"
-      ],
-      "technologyEyebrow": "Technology focus",
-      "technologyTitle": "Solar, wind, and hybrid energy systems",
-      "technologyDescription": "Depending on project requirements, systems may be designed for grid-connected or off-grid applications, subject to technical feasibility and approvals.",
-      "systemCards": [
-        {
-          "label": "Solar",
-          "value": "Photovoltaic generation"
-        },
-        {
-          "label": "Wind",
-          "value": "Turbines and generators"
-        },
-        {
-          "label": "Hybrid",
-          "value": "Integrated renewable design"
-        }
-      ],
-      "futureHeading": "Building a cleaner and more energy-efficient future",
-      "futureDescription": "We believe renewable energy is an important part of creating a sustainable future. By promoting innovative energy technologies and practical renewable energy solutions, AeroSun Energy aims to help customers manage energy costs, reduce environmental impact, and move towards greater energy independence.",
-      "slogan": "AeroSun Energy Private Limited — Power from Sun and Wind."
-    },
     "offer": {
       "eyebrow": "What We Offer",
       "title": "Expertise End-to-End Solar Solutions",
@@ -6405,13 +6335,6 @@
         "desc": "Engineered for low maintenance and peak performance across all climates — urban rooftops, open highways, rural farmland, and public parks alike."
       }
     ],
-    "founder": {
-      "name": "Vulchi Vijaya Kumar",
-      "title": "Founder & Visionary Leader",
-      "bio": "Driving India's renewable energy revolution with cutting-edge hybrid technology solutions that empower communities and businesses across the nation."
-    },
-    "paragraph1": "AeroSun Energy is India's first specialized manufacturer of portable and low-wind smart turbines. Founded by Vulchi Vijaya Kumar, AeroSun Energy is driven by the belief that clean wind energy should be accessible, affordable, and scalable — from rooftops in remote villages to commercial buildings in the heart of modern cities.",
-    "paragraph2": "With strong roots in innovation, sustainability, and rural empowerment, AeroSun Energy designs advanced wind energy systems that operate silently, generate power at low wind speeds, and require minimal maintenance. Our solutions are built to perform reliably across diverse Indian environments.",
     "quote": "Clean energy works best when the solution fits the life around it",
     "coreValuesHeading": "Our Core Values",
     "coreValues": [
@@ -6777,6 +6700,69 @@
         "Customer privacy and careful handling of project data.",
         "Environmental responsibility across equipment choice, battery handling and lifecycle planning."
       ]
+    },
+    "aboutSection": {
+      "eyebrow": "ABOUT",
+      "brandFirst": "AeroSun",
+      "brandSecond": "Energy",
+      "badge": "Clean Energy Partner",
+      "title": "Powering a sustainable future with purpose.",
+      "tags": [
+        "Solar",
+        "Wind",
+        "Hybrid"
+      ],
+      "audience": [
+        "Residential",
+        "Commercial",
+        "Industrial",
+        "Institutional"
+      ],
+      "stats": [
+        {
+          "title": "Innovation",
+          "value": "Smart energy systems"
+        },
+        {
+          "title": "Sustainability",
+          "value": "Lower emissions"
+        },
+        {
+          "title": "Reliability",
+          "value": "Future-ready setups"
+        }
+      ],
+      "visionHeading": "Our vision and commitment",
+      "solutionsEyebrow": "Solutions",
+      "solutionsTitle": "Renewable energy for every need",
+      "solutionsDescription": "We support customers, architects, builders, and project developers in identifying suitable renewable energy systems.",
+      "designEyebrow": "System design",
+      "designPoints": [
+        "• Solar PV systems for clean electricity generation",
+        "• Wind energy solutions for sustainable power",
+        "• Hybrid configurations for greater resilience",
+        "• Customized energy solutions for site-specific needs"
+      ],
+      "technologyEyebrow": "Technology focus",
+      "technologyTitle": "Solar, wind, and hybrid energy systems",
+      "technologyDescription": "Depending on project requirements, systems may be designed for grid-connected or off-grid applications, subject to technical feasibility and approvals.",
+      "systemCards": [
+        {
+          "label": "Solar",
+          "value": "Photovoltaic generation"
+        },
+        {
+          "label": "Wind",
+          "value": "Turbines and generators"
+        },
+        {
+          "label": "Hybrid",
+          "value": "Integrated renewable design"
+        }
+      ],
+      "futureHeading": "Building a cleaner and more energy-efficient future",
+      "futureDescription": "We believe renewable energy is an important part of creating a sustainable future. By promoting innovative energy technologies and practical renewable energy solutions, AeroSun Energy aims to help customers manage energy costs, reduce environmental impact, and move towards greater energy independence.",
+      "slogan": "AeroSun Energy Private Limited — Power from Sun and Wind."
     }
   },
   "legalPages": {

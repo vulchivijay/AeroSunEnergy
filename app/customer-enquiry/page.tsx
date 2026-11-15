@@ -313,7 +313,7 @@ export default function CustomerEnquiryPage() {
   return (
     <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
       <header className="mb-8">
-        <p className="text-md font-bold uppercase tracking-[0.18em] text-emerald-700">
+        <p className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-800/15 bg-white/80 px-4 py-2 text-md font-bold uppercase tracking-[0.18em] text-emerald-700">
           {page.eyebrow}
         </p>
         <h1 className="mt-2 text-3xl font-black text-slate-950 sm:text-4xl">

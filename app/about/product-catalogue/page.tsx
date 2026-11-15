@@ -292,7 +292,7 @@ export default function ProductCataloguePage() {
             </div>
           </div>
           <div className="mt-5 rounded-3xl border border-lime-200/20 bg-black/10 p-6 sm:p-8">
-            <p className="text-md font-bold uppercase tracking-[0.2em] text-lime-300">{c.wind.projectLabel}</p>
+            <p className="inline-flex w-fit rounded-full border border-lime-300/20 bg-black/10 px-4 py-2 text-md font-bold uppercase tracking-[0.18em] text-lime-300">{c.wind.projectLabel}</p>
             <h3 className="mt-3 text-2xl font-black sm:text-3xl">{c.wind.productName}</h3>
             <p className="mt-2 text-md text-emerald-100/75">{c.wind.configurationLabel}</p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -386,7 +386,7 @@ export default function ProductCataloguePage() {
         <section className="overflow-hidden rounded-[2rem] border border-emerald-900/10 bg-white  ">
           <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
             <div className="bg-[#14372f] p-7 text-white sm:p-10">
-              <p className="text-md font-bold uppercase tracking-[0.2em] text-lime-300">10 / {c.contact.eyebrow}</p>
+              <p className="inline-flex w-fit rounded-full border border-lime-300/20 bg-white/[0.06] px-4 py-2 text-md font-bold uppercase tracking-[0.18em] text-lime-300">10 / {c.contact.eyebrow}</p>
               <h2 className="mt-4 text-3xl font-black leading-tight sm:text-4xl">{c.contact.title}</h2>
               <p className="mt-4 text-md leading-6 text-emerald-50/85">
                 {c.contact.description}

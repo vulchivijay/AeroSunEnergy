@@ -42,7 +42,7 @@ export function CompanyTrustSection() {
       <div className="relative mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div className="lg:sticky lg:top-24 lg:self-start">
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-indigo-700">{content.eyebrow}</p>
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-indigo-700/15 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-indigo-700">{content.eyebrow}</p>
             <h2 id="company-trust-title" className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
               {content.title}
             </h2>
@@ -147,7 +147,7 @@ export function WhySolarSection() {
       aria-labelledby="why-solar-title"
     >
       <div className="mx-auto max-w-7xl">
-        <p className="inline-flex rounded-full bg-[#eaf3fc] px-4 py-2 text-xs font-black uppercase tracking-[0.12em] text-[#075da8]">
+        <p className="inline-flex w-fit rounded-full border border-[#075da8]/15 bg-[#eaf3fc] px-4 py-2 text-xs font-black uppercase tracking-[0.12em] text-[#075da8]">
           {content.eyebrow}
         </p>
         <h2 id="why-solar-title" className="mt-4 text-3xl font-black tracking-tight sm:text-4xl">
@@ -189,7 +189,7 @@ export function ProjectEvidenceSection() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-emerald-800">{content.eyebrow}</p>
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-800/15 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-emerald-800">{content.eyebrow}</p>
             <h2 id="testimonials-title" className="mt-3 text-3xl font-black tracking-tight text-[#102b28] sm:text-4xl">
               {content.title}
             </h2>
@@ -257,7 +257,7 @@ export function SolarJourneySection() {
     <section className="bg-[#eaf4ef] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="solar-journey-title">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
-          <p className="text-xs font-black uppercase tracking-[0.24em] text-emerald-800">{content.eyebrow}</p>
+          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-800/15 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-emerald-800">{content.eyebrow}</p>
           <h2 id="solar-journey-title" className="mt-3 text-3xl font-black tracking-tight text-emerald-950 sm:text-4xl">
             {content.title}
           </h2>
@@ -297,7 +297,7 @@ export function QuoteTransparencySection() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_10%_0%,rgba(129,140,248,0.13),transparent_35%),radial-gradient(ellipse_at_100%_100%,rgba(56,189,248,0.12),transparent_32%)]" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:gap-12">
         <header className="lg:sticky lg:top-24 lg:self-start">
-          <p className="text-xs font-black uppercase tracking-[0.24em] text-indigo-700">{content.eyebrow}</p>
+          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-indigo-700/15 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-indigo-700">{content.eyebrow}</p>
           <h2 id="quote-transparency-title" className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
             {content.title}
           </h2>
