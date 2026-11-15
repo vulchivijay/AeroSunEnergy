@@ -1,24 +1,21 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type FormEvent } from 'react'
 
-type DashboardTable = 'submissions' | 'referrals' | 'users' | 'sessions'
-type DashboardRow = Record<string, unknown>
-
+type DashboardRole = 'admin' | 'operator' | 'monitor'
+type DashboardRow = Record<string, unknown> & { id?: string }
 type DashboardResponse = {
-  table: DashboardTable
+  collection: string
   page: number
   pageSize: number
   total: number
+  role: DashboardRole
   rows: DashboardRow[]
 }
-
-const tabs: { id: DashboardTable; label: string; description: string }[] = [
-  { id: 'submissions', label: 'Website forms', description: 'Contact, newsletter, solar assessment, and business-form submissions.' },
-  { id: 'referrals', label: 'Referrals', description: 'Customer referrals and their current status.' },
-  { id: 'users', label: 'Accounts', description: 'Registered account details. Password hashes are never shown.' },
-  { id: 'sessions', label: 'Sessions', description: 'Session metadata only. Session tokens are never shown.' },
-]
+type CollectionsResponse = {
+  collections: string[]
+  role: DashboardRole
+}
 
 const formTypeOptions = [
   ['all', 'All form types'],
@@ -32,48 +29,31 @@ const formTypeOptions = [
   ['customer_agreement', 'Customer agreement'],
   ['installation_checklist', 'Installation checklist'],
 ] as const
-const dashboardTables: DashboardTable[] = ['submissions', 'referrals', 'users', 'sessions']
 
-const tableColumns: Record<Exclude<DashboardTable, 'submissions'>, { key: string; label: string }[]> = {
-  referrals: [
-    { key: 'id', label: 'ID' },
-    { key: 'reference_code', label: 'Reference' },
-    { key: 'referrer_name', label: 'Referrer' },
-    { key: 'referrer_phone', label: 'Referrer phone' },
-    { key: 'referred_name', label: 'Referred person' },
-    { key: 'referred_phone', label: 'Referred phone' },
-    { key: 'postal_code', label: 'PIN code' },
-    { key: 'property_type', label: 'Property' },
-    { key: 'status', label: 'Status' },
-    { key: 'referrer_permission_confirmed_at', label: 'Permission confirmed' },
-    { key: 'created_at', label: 'Submitted' },
-    { key: 'updated_at', label: 'Updated' },
-  ],
-  users: [
-    { key: 'id', label: 'Account ID' },
-    { key: 'name', label: 'Name' },
-    { key: 'email', label: 'Email' },
-    { key: 'created_at', label: 'Created' },
-  ],
-  sessions: [
-    { key: 'id', label: 'Session ID' },
-    { key: 'user_id', label: 'Account ID' },
-    { key: 'name', label: 'Account' },
-    { key: 'email', label: 'Email' },
-    { key: 'status', label: 'Status' },
-    { key: 'created_at', label: 'Created' },
-    { key: 'expires_at', label: 'Expires' },
-  ],
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null && !Array.isArray(value)
+}
+
+function isDashboardRole(value: unknown): value is DashboardRole {
+  return value === 'admin' || value === 'operator' || value === 'monitor'
+}
+
+function isCollectionsResponse(value: unknown): value is CollectionsResponse {
+  return isRecord(value) &&
+    Array.isArray(value.collections) &&
+    value.collections.every((collection) => typeof collection === 'string') &&
+    isDashboardRole(value.role)
 }
 
 function isDashboardResponse(value: unknown): value is DashboardResponse {
-  if (typeof value !== 'object' || value === null) return false
-  if (!('table' in value) || !dashboardTables.includes(value.table as DashboardTable)) return false
-  if (!('page' in value) || typeof value.page !== 'number') return false
-  if (!('pageSize' in value) || typeof value.pageSize !== 'number') return false
-  if (!('total' in value) || typeof value.total !== 'number') return false
-  if (!('rows' in value) || !Array.isArray(value.rows)) return false
-  return value.rows.every((row) => typeof row === 'object' && row !== null && !Array.isArray(row))
+  return isRecord(value) &&
+    typeof value.collection === 'string' &&
+    typeof value.page === 'number' &&
+    typeof value.pageSize === 'number' &&
+    typeof value.total === 'number' &&
+    isDashboardRole(value.role) &&
+    Array.isArray(value.rows) &&
+    value.rows.every(isRecord)
 }
 
 function formatValue(value: unknown): string {
@@ -83,42 +63,174 @@ function formatValue(value: unknown): string {
   return JSON.stringify(value) ?? String(value)
 }
 
-function getSubmissionDetails(payload: unknown): [string, unknown][] {
-  let value = payload
-  if (typeof payload === 'string') {
-    try {
-      value = JSON.parse(payload) as unknown
-    } catch {
-      return [['Submission payload', payload]]
-    }
-  }
-  if (typeof value !== 'object' || value === null || Array.isArray(value)) {
-    return [['Submission payload', value]]
-  }
-  return Object.entries(value)
+function formatCollectionName(collection: string): string {
+  return collection.replace(/_/g, ' ')
 }
 
-function formatDate(value: unknown): string {
-  if (typeof value !== 'string' || !value) return formatValue(value)
-  const date = new Date(value)
-  return Number.isNaN(date.getTime())
-    ? value
-    : new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'short' }).format(date)
+function recordTitle(row: DashboardRow): string {
+  const title = row.reference_code ?? row.email ?? row.name ?? row.form_type ?? row.id
+  return typeof title === 'string' && title ? title : 'Record'
+}
+
+function editableJson(row: DashboardRow): string {
+  const fields = Object.fromEntries(Object.entries(row).filter(([key]) => key !== 'id'))
+  return JSON.stringify(fields, null, 2)
+}
+
+async function getApiError(response: Response): Promise<string> {
+  try {
+    const body: unknown = await response.json()
+    if (isRecord(body) && typeof body.error === 'string') return body.error.replace(/_/g, ' ')
+  } catch {
+    return `Request failed (${response.status}).`
+  }
+  return `Request failed (${response.status}).`
+}
+
+type UserAccessManagerProps = {
+  row: DashboardRow
+  actorRole: DashboardRole
+  onSaved: () => void
+}
+
+function UserAccessManager({ row, actorRole, onSaved }: UserAccessManagerProps) {
+  const [role, setRole] = useState<DashboardRole>(isDashboardRole(row.role) ? row.role : 'monitor')
+  const [approved, setApproved] = useState(row.approved === true)
+  const [saving, setSaving] = useState(false)
+  const [error, setError] = useState('')
+  const isAdminAccount = row.role === 'admin'
+  const disabled = actorRole === 'operator' && isAdminAccount
+
+  async function saveAccess() {
+    if (typeof row.id !== 'string') {
+      setError('This account has no supported record ID.')
+      return
+    }
+
+    setSaving(true)
+    setError('')
+    try {
+      const response = await fetch('/api/dashboard', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'manage_user', id: row.id, role, approved }),
+      })
+      if (!response.ok) throw new Error(await getApiError(response))
+      onSaved()
+    } catch (saveError) {
+      setError(saveError instanceof Error ? saveError.message : 'Account access could not be updated.')
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  return (
+    <div className="mt-4 rounded-xl border border-emerald-100 bg-emerald-50/50 p-3">
+      <p className="text-xs font-bold uppercase tracking-wide text-emerald-900">Account access</p>
+      <div className="mt-2 flex flex-wrap items-center gap-3">
+        <label className="flex items-center gap-2 text-sm text-slate-700">
+          Role
+          <select
+            value={role}
+            disabled={disabled || saving}
+            onChange={(event) => {
+              if (isDashboardRole(event.target.value)) setRole(event.target.value)
+            }}
+            className="min-h-9 rounded-lg border border-slate-300 bg-white px-2 text-sm disabled:opacity-60"
+          >
+            <option value="monitor">Monitor</option>
+            <option value="operator">Operator</option>
+            {actorRole === 'admin' && <option value="admin">Admin</option>}
+          </select>
+        </label>
+        <label className="flex items-center gap-2 text-sm text-slate-700">
+          <input
+            type="checkbox"
+            checked={approved}
+            disabled={disabled || saving}
+            onChange={(event) => setApproved(event.target.checked)}
+            className="size-4 accent-emerald-800"
+          />
+          Approved to sign in
+        </label>
+        <button
+          type="button"
+          disabled={disabled || saving}
+          onClick={() => void saveAccess()}
+          className="min-h-9 rounded-full bg-emerald-800 px-4 text-xs font-bold text-white hover:bg-emerald-900 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          {saving ? 'Saving…' : 'Save access'}
+        </button>
+      </div>
+      {disabled && <p className="mt-2 text-xs text-slate-600">Only an admin can change an admin account.</p>}
+      {error && <p className="mt-2 text-xs text-rose-700" role="alert">{error}</p>}
+    </div>
+  )
 }
 
 export default function DashboardDataTabs() {
-  const [activeTable, setActiveTable] = useState<DashboardTable>('submissions')
+  const [collections, setCollections] = useState<string[]>([])
+  const [activeCollection, setActiveCollection] = useState('')
+  const [role, setRole] = useState<DashboardRole>('monitor')
   const [formType, setFormType] = useState('all')
   const [page, setPage] = useState(1)
   const [data, setData] = useState<DashboardResponse | null>(null)
+  const [loadingCollections, setLoadingCollections] = useState(true)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
+  const [actionError, setActionError] = useState('')
   const [retryCount, setRetryCount] = useState(0)
+  const [showCreateForm, setShowCreateForm] = useState(false)
+  const [createJson, setCreateJson] = useState('{\n  \n}')
+  const [editingId, setEditingId] = useState<string | null>(null)
+  const [editJson, setEditJson] = useState('')
+  const [savingRecord, setSavingRecord] = useState(false)
 
   useEffect(() => {
     const controller = new AbortController()
-    const params = new URLSearchParams({ table: activeTable, page: String(page) })
-    if (activeTable === 'submissions' && formType !== 'all') params.set('formType', formType)
+
+    async function loadCollections() {
+      setLoadingCollections(true)
+      try {
+        const response = await fetch('/api/dashboard?list=collections', {
+          cache: 'no-store',
+          signal: controller.signal,
+        })
+        const result: unknown = await response.json()
+        if (!response.ok || !isCollectionsResponse(result)) {
+          throw new Error('Collections could not be loaded.')
+        }
+        setCollections(result.collections)
+        setRole(result.role)
+        setActiveCollection((current) => {
+          if (current && result.collections.includes(current)) return current
+          return result.collections.includes('website_form_submissions')
+            ? 'website_form_submissions'
+            : result.collections[0] ?? ''
+        })
+      } catch (loadError) {
+        if (loadError instanceof Error && loadError.name === 'AbortError') return
+        setError('Collections could not be loaded. Please try again.')
+      } finally {
+        if (!controller.signal.aborted) setLoadingCollections(false)
+      }
+    }
+
+    void loadCollections()
+    return () => controller.abort()
+  }, [retryCount])
+
+  useEffect(() => {
+    if (!activeCollection) return
+
+    const controller = new AbortController()
+    const params = new URLSearchParams({
+      collection: activeCollection,
+      page: String(page),
+    })
+    if (activeCollection === 'website_form_submissions' && formType !== 'all') {
+      params.set('formType', formType)
+    }
 
     async function loadData() {
       setLoading(true)
@@ -133,6 +245,7 @@ export default function DashboardDataTabs() {
           throw new Error('Dashboard records could not be loaded.')
         }
         setData(result)
+        setRole(result.role)
       } catch (loadError) {
         if (loadError instanceof Error && loadError.name === 'AbortError') return
         setData(null)
@@ -144,32 +257,80 @@ export default function DashboardDataTabs() {
 
     void loadData()
     return () => controller.abort()
-  }, [activeTable, formType, page, retryCount])
+  }, [activeCollection, formType, page, retryCount])
 
   const pageCount = data ? Math.max(1, Math.ceil(data.total / data.pageSize)) : 1
+  const isAccountCollection = activeCollection === 'auth_users' || activeCollection === 'auth_sessions'
+  const canEditRecords =
+    (role === 'admin' && activeCollection === 'auth_users') ||
+    ((role === 'admin' || role === 'operator') && !isAccountCollection)
+  const canCreateRecords = (role === 'admin' || role === 'operator') && !isAccountCollection
+  const canDeleteRecords = role === 'admin' || (role === 'operator' && !isAccountCollection)
 
-  function chooseTable(table: DashboardTable) {
-    setActiveTable(table)
+  function chooseCollection(collection: string) {
+    setActiveCollection(collection)
     setPage(1)
+    setFormType('all')
+    setActionError('')
+    setEditingId(null)
+  }
+
+  async function submitRecord(event: FormEvent<HTMLFormElement>, mode: 'create' | 'update', id?: string) {
+    event.preventDefault()
+    setSavingRecord(true)
+    setActionError('')
+    try {
+      const parsed: unknown = JSON.parse(mode === 'create' ? createJson : editJson)
+      if (!isRecord(parsed)) throw new Error('Enter a JSON object.')
+      const response = await fetch('/api/dashboard', {
+        method: mode === 'create' ? 'POST' : 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(mode === 'create'
+          ? { collection: activeCollection, document: parsed }
+          : { collection: activeCollection, id, document: parsed }),
+      })
+      if (!response.ok) throw new Error(await getApiError(response))
+      setShowCreateForm(false)
+      setEditingId(null)
+      setCreateJson('{\n  \n}')
+      setRetryCount((current) => current + 1)
+    } catch (saveError) {
+      setActionError(saveError instanceof Error ? saveError.message : 'The record could not be saved.')
+    } finally {
+      setSavingRecord(false)
+    }
+  }
+
+  async function deleteRecord(id: string) {
+    if (!window.confirm('Delete this record? This cannot be undone.')) return
+    setActionError('')
+    try {
+      const params = new URLSearchParams({ collection: activeCollection, id })
+      const response = await fetch(`/api/dashboard?${params.toString()}`, { method: 'DELETE' })
+      if (!response.ok) throw new Error(await getApiError(response))
+      setRetryCount((current) => current + 1)
+    } catch (deleteError) {
+      setActionError(deleteError instanceof Error ? deleteError.message : 'The record could not be deleted.')
+    }
   }
 
   return (
     <section className="mt-7 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_24px_70px_-44px_rgba(15,23,42,0.28)]">
       <div className="border-b border-slate-200 bg-slate-50/80 px-5 pt-5 sm:px-7">
-        <div className="flex flex-wrap gap-2" role="group" aria-label="Database tables">
-          {tabs.map((tab) => (
+        <div className="flex flex-wrap gap-2" role="group" aria-label="Database collections">
+          {collections.map((collection) => (
             <button
-              key={tab.id}
+              key={collection}
               type="button"
-              aria-pressed={activeTable === tab.id}
-              onClick={() => chooseTable(tab.id)}
-              className={`min-h-11 rounded-t-xl border px-4 text-sm font-bold transition ${
-                activeTable === tab.id
+              aria-pressed={activeCollection === collection}
+              onClick={() => chooseCollection(collection)}
+              className={`min-h-11 rounded-t-xl border px-4 text-sm font-bold capitalize transition ${
+                activeCollection === collection
                   ? 'border-slate-200 border-b-white bg-white text-emerald-900'
                   : 'border-transparent text-slate-500 hover:bg-white/70 hover:text-slate-900'
               }`}
             >
-              {tab.label}
+              {formatCollectionName(collection)}
             </button>
           ))}
         </div>
@@ -178,25 +339,66 @@ export default function DashboardDataTabs() {
       <div className="p-5 sm:p-7" aria-live="polite">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="text-xl font-bold text-slate-950">{tabs.find((tab) => tab.id === activeTable)?.label}</h2>
-            <p className="mt-1 text-sm leading-6 text-slate-600">{tabs.find((tab) => tab.id === activeTable)?.description}</p>
+            <h2 className="text-xl font-bold capitalize text-slate-950">{formatCollectionName(activeCollection || 'Collections')}</h2>
+            <p className="mt-1 text-sm leading-6 text-slate-600">
+              {role === 'admin'
+                ? 'Admin access · manage collection records and account roles.'
+                : role === 'operator'
+                  ? 'Operator access · manage business records and approved account roles.'
+                  : 'Monitor access · read-only view of collection records.'}
+            </p>
           </div>
-          {activeTable === 'submissions' && (
-            <label className="grid gap-1.5 text-xs font-bold uppercase tracking-wide text-slate-500">
-              Filter by form
-              <select
-                value={formType}
-                onChange={(event) => {
-                  setFormType(event.target.value)
-                  setPage(1)
+          <div className="flex flex-wrap items-end gap-3">
+            {activeCollection === 'website_form_submissions' && (
+              <label className="grid gap-1.5 text-xs font-bold uppercase tracking-wide text-slate-500">
+                Filter by form
+                <select
+                  value={formType}
+                  onChange={(event) => {
+                    setFormType(event.target.value)
+                    setPage(1)
+                  }}
+                  className="min-h-10 rounded-xl border border-slate-300 bg-white px-3 text-sm font-medium normal-case tracking-normal text-slate-800 outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
+                >
+                  {formTypeOptions.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+                </select>
+              </label>
+            )}
+            {canCreateRecords && (
+              <button
+                type="button"
+                onClick={() => {
+                  setShowCreateForm((current) => !current)
+                  setEditingId(null)
+                  setActionError('')
                 }}
-                className="min-h-10 rounded-xl border border-slate-300 bg-white px-3 text-sm font-medium normal-case tracking-normal text-slate-800 outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
+                className="min-h-10 rounded-full bg-emerald-800 px-4 text-sm font-bold text-white hover:bg-emerald-900"
               >
-                {formTypeOptions.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
-              </select>
-            </label>
-          )}
+                {showCreateForm ? 'Cancel' : 'New record'}
+              </button>
+            )}
+          </div>
         </div>
+
+        {canCreateRecords && showCreateForm && (
+          <form onSubmit={(event) => void submitRecord(event, 'create')} className="mt-5 rounded-2xl border border-emerald-200 bg-emerald-50/40 p-4">
+            <label className="grid gap-2 text-sm font-bold text-slate-800">
+              New record (JSON)
+              <textarea
+                value={createJson}
+                onChange={(event) => setCreateJson(event.target.value)}
+                rows={7}
+                spellCheck={false}
+                className="w-full rounded-xl border border-slate-300 bg-white p-3 font-mono text-xs text-slate-800 outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
+              />
+            </label>
+            <button type="submit" disabled={savingRecord} className="mt-3 min-h-10 rounded-full bg-emerald-800 px-4 text-sm font-bold text-white hover:bg-emerald-900 disabled:opacity-50">
+              {savingRecord ? 'Saving…' : 'Create record'}
+            </button>
+          </form>
+        )}
+
+        {actionError && <p className="mt-4 rounded-xl bg-rose-50 p-3 text-sm text-rose-800" role="alert">{actionError}</p>}
 
         {error ? (
           <div className="mt-6 rounded-2xl border border-rose-200 bg-rose-50 p-5 text-sm text-rose-800" role="alert">
@@ -205,66 +407,88 @@ export default function DashboardDataTabs() {
               Retry
             </button>
           </div>
-        ) : loading ? (
+        ) : loadingCollections || (activeCollection !== '' && loading) ? (
           <div className="mt-6 rounded-2xl bg-slate-50 px-5 py-12 text-center text-sm font-medium text-slate-500" role="status">
             Loading records…
           </div>
+        ) : !activeCollection ? (
+          <div className="mt-6 rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-5 py-12 text-center">
+            <p className="font-semibold text-slate-800">No collections found</p>
+            <p className="mt-1 text-sm text-slate-500">Database collections will appear here when available.</p>
+          </div>
         ) : data?.rows.length ? (
           <>
-            <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200">
-              {activeTable === 'submissions' ? (
-                <table className="min-w-[760px] w-full text-left text-sm">
-                  <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
-                    <tr>
-                      {['ID', 'Reference', 'Form', 'Status', 'Submitted', 'Updated', 'Stored fields'].map((heading) => <th key={heading} className="px-4 py-3 font-bold">{heading}</th>)}
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-100">
-                    {data.rows.map((row) => (
-                      <tr key={formatValue(row.id)} className="align-top text-slate-700">
-                        <td className="whitespace-nowrap px-4 py-4 text-xs text-slate-500">{formatValue(row.id)}</td>
-                        <td className="whitespace-nowrap px-4 py-4 font-mono text-xs font-semibold text-emerald-900">{formatValue(row.reference_code)}</td>
-                        <td className="whitespace-nowrap px-4 py-4">{formatValue(row.form_type).replace(/_/g, ' ')}</td>
-                        <td className="px-4 py-4"><span className="rounded-full bg-amber-50 px-2.5 py-1 text-xs font-bold capitalize text-amber-800">{formatValue(row.status)}</span></td>
-                        <td className="whitespace-nowrap px-4 py-4 text-xs text-slate-500">{formatDate(row.created_at)}</td>
-                        <td className="whitespace-nowrap px-4 py-4 text-xs text-slate-500">{formatDate(row.updated_at)}</td>
-                        <td className="px-4 py-4">
-                          <details className="max-w-2xl">
-                            <summary className="cursor-pointer font-semibold text-emerald-800 underline underline-offset-2">View fields</summary>
-                            <dl className="mt-3 grid gap-x-5 gap-y-2 sm:grid-cols-2">
-                              {getSubmissionDetails(row.payload).map(([key, value]) => (
-                                <div key={key} className="min-w-0 rounded-lg bg-slate-50 p-2.5">
-                                  <dt className="break-words text-sm font-bold uppercase tracking-wide text-slate-500">{key.replace(/_/g, ' ')}</dt>
-                                  <dd className="mt-1 break-words text-sm text-slate-800">{formatValue(value)}</dd>
-                                </div>
-                              ))}
-                            </dl>
-                          </details>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              ) : (
-                <table className="min-w-full text-left text-sm">
-                  <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
-                    <tr>
-                      {tableColumns[activeTable].map((column) => <th key={column.key} className="whitespace-nowrap px-4 py-3 font-bold">{column.label}</th>)}
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-100">
-                    {data.rows.map((row) => (
-                      <tr key={formatValue(row.id)} className="text-slate-700">
-                        {tableColumns[activeTable].map((column) => (
-                          <td key={column.key} className="whitespace-nowrap px-4 py-3">
-                            {column.key.endsWith('_at') ? formatDate(row[column.key]) : formatValue(row[column.key])}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              )}
+            <div className="mt-6 grid gap-3">
+              {data.rows.map((row, index) => {
+                const id = typeof row.id === 'string' ? row.id : ''
+                const isEditing = id !== '' && editingId === id
+                return (
+                  <article key={id || `${data.collection}-${index}`} className="rounded-2xl border border-slate-200 p-4 sm:p-5">
+                    <div className="flex flex-wrap items-start justify-between gap-3">
+                      <div className="min-w-0">
+                        <h3 className="break-all font-semibold text-slate-900">{recordTitle(row)}</h3>
+                        {id && <p className="mt-1 break-all font-mono text-xs text-slate-500">{id}</p>}
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {canEditRecords && id && (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setEditingId(isEditing ? null : id)
+                              setEditJson(editableJson(row))
+                              setActionError('')
+                            }}
+                            className="min-h-9 rounded-full border border-slate-300 px-3 text-xs font-bold text-slate-700 hover:bg-slate-50"
+                          >
+                            {isEditing ? 'Cancel edit' : 'Edit'}
+                          </button>
+                        )}
+                        {canDeleteRecords && id && (
+                          <button
+                            type="button"
+                            onClick={() => void deleteRecord(id)}
+                            className="min-h-9 rounded-full border border-rose-200 px-3 text-xs font-bold text-rose-700 hover:bg-rose-50"
+                          >
+                            Delete
+                          </button>
+                        )}
+                      </div>
+                    </div>
+
+                    {isEditing ? (
+                      <form onSubmit={(event) => void submitRecord(event, 'update', id)} className="mt-4">
+                        <label className="grid gap-2 text-sm font-bold text-slate-800">
+                          Update record (JSON)
+                          <textarea
+                            value={editJson}
+                            onChange={(event) => setEditJson(event.target.value)}
+                            rows={8}
+                            spellCheck={false}
+                            className="w-full rounded-xl border border-slate-300 bg-white p-3 font-mono text-xs text-slate-800 outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
+                          />
+                        </label>
+                        <button type="submit" disabled={savingRecord} className="mt-3 min-h-10 rounded-full bg-emerald-800 px-4 text-sm font-bold text-white hover:bg-emerald-900 disabled:opacity-50">
+                          {savingRecord ? 'Saving…' : 'Save changes'}
+                        </button>
+                      </form>
+                    ) : (
+                      <details className="mt-3">
+                        <summary className="cursor-pointer text-sm font-semibold text-emerald-800 underline underline-offset-2">View record data</summary>
+                        <pre className="mt-3 max-h-96 overflow-auto rounded-xl bg-slate-50 p-4 text-xs leading-5 text-slate-700">{JSON.stringify(row, null, 2)}</pre>
+                      </details>
+                    )}
+
+                    {activeCollection === 'auth_users' && (role === 'admin' || role === 'operator') && (
+                      <UserAccessManager
+                        key={`${id}-${String(row.role)}-${String(row.approved)}`}
+                        row={row}
+                        actorRole={role}
+                        onSaved={() => setRetryCount((current) => current + 1)}
+                      />
+                    )}
+                  </article>
+                )
+              })}
             </div>
 
             <div className="mt-4 flex flex-col gap-3 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
@@ -292,7 +516,7 @@ export default function DashboardDataTabs() {
         ) : (
           <div className="mt-6 rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-5 py-12 text-center">
             <p className="font-semibold text-slate-800">No records found</p>
-            <p className="mt-1 text-sm text-slate-500">New submissions will appear here after they are saved.</p>
+            <p className="mt-1 text-sm text-slate-500">Records in this collection will appear here.</p>
           </div>
         )}
       </div>

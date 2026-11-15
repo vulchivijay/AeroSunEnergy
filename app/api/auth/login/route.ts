@@ -45,6 +45,10 @@ async function postLogin(request: Request) {
       return authJson({ error: authErrorCodes.invalidCredentials }, 401)
     }
 
+    if (user.approved !== true) {
+      return authJson({ error: authErrorCodes.accountPendingApproval }, 403)
+    }
+
     const token = await createSession(user._id)
 
     const response = authJson({ user: { id: user._id.toHexString(), name: user.name, email: user.email } })

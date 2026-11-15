@@ -23,6 +23,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
   const auth = t.auth
   const [pending, setPending] = useState(false)
   const [error, setError] = useState('')
+  const [notice, setNotice] = useState('')
 
   useEffect(() => {
     document.title = isSignup ? auth.signupTitle : auth.loginTitle
@@ -32,8 +33,10 @@ export default function AuthForm({ mode }: AuthFormProps) {
     event.preventDefault()
     setPending(true)
     setError('')
+    setNotice('')
 
-    const formData = new FormData(event.currentTarget)
+    const formElement = event.currentTarget
+    const formData = new FormData(formElement)
     const payload = Object.fromEntries(formData.entries())
 
     if (isSignup && payload.password !== payload.confirmPassword) {
@@ -48,10 +51,16 @@ export default function AuthForm({ mode }: AuthFormProps) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       })
-      const result = (await response.json()) as { error?: string }
+      const result = (await response.json()) as { error?: string; pendingApproval?: boolean }
 
       if (!response.ok) {
         setError(getErrorMessage(result.error, auth.errors))
+        return
+      }
+
+      if (isSignup && result.pendingApproval) {
+        formElement.reset()
+        setNotice(auth.signupPendingApproval)
         return
       }
 
@@ -143,6 +152,12 @@ export default function AuthForm({ mode }: AuthFormProps) {
           {error && (
             <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800" role="alert">
               {error}
+            </p>
+          )}
+
+          {notice && (
+            <p className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900" role="status">
+              {notice}
             </p>
           )}
 
