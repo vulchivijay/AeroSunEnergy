@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Data Dashboard',
-  robots: { index: false, follow: false },
+  robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
 }
 
 function DatabaseUnavailable() {
@@ -50,7 +50,8 @@ export default async function DashboardPage() {
           <div>
             <p className="inline-flex w-fit items-center rounded-full border border-emerald-800/15 bg-emerald-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-emerald-700">AeroSun Energy · {user.role}</p>
             <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">Data dashboard</h1>
-            <p className="mt-2 text-sm text-slate-600">Signed in as {user.name} ({user.email})</p>
+            <p className="mt-2 text-sm font-semibold text-slate-700">Signed in as {user.name || user.email}</p>
+            <p className="mt-1 text-xs text-slate-500">{user.email} · {user.role}</p>
           </div>
           <LogoutButton />
         </div>

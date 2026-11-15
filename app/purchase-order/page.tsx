@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -11,6 +10,8 @@ import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useLocale } from '@/lib/LocaleContext'
 import { SharedFormField } from '@/app/components/forms/SharedFormField'
 import { createBusinessContactSchema } from '@/app/components/forms/businessContactSchema'
+import { getFirstFormErrorMessage } from '@/lib/formValidation'
+import { useToast } from '@/app/components/ui/ToastProvider'
 
 const createPurchaseOrderSchema = (validation: typeof import('@/public/locales/en/index.json').businessForms.purchaseOrder.validation) => z.object({
   ...createBusinessContactSchema(validation).shape,
@@ -32,15 +33,15 @@ type PurchaseOrderFormValues = z.infer<ReturnType<typeof createPurchaseOrderSche
 
 export default function PurchaseOrderPage() {
   const { t } = useLocale()
+  const toast = useToast()
   const content = t.businessForms.purchaseOrder
   const defaultValues = content.defaultValues
   const { labels } = content
-  const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
   } = useForm<PurchaseOrderFormValues>({
     resolver: zodResolver(createPurchaseOrderSchema(content.validation)),
     defaultValues,
@@ -53,7 +54,7 @@ export default function PurchaseOrderPage() {
     try {
       referenceCode = await submitWebsiteForm('purchase_order', data)
     } catch {
-      setSubmitFeedback({ type: 'error', message: t.formSubmission.error })
+      toast.error(t.formSubmission.error)
       return
     }
 
@@ -82,10 +83,7 @@ export default function PurchaseOrderPage() {
 
     submitMailtoForm({ to: 'customercare@aerosunenergy.in', subject, body })
     reset(defaultValues)
-    setSubmitFeedback({
-      type: 'success',
-      message: `${content.feedback.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`,
-    })
+    toast.success(`${content.feedback.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`)
   }
 
   return (
@@ -150,7 +148,11 @@ export default function PurchaseOrderPage() {
               <p className="text-[12px] font-semibold uppercase tracking-[0.32em] text-emerald-200">{labels.formTitle}</p>
               <h2 className="mt-3 text-2xl font-semibold">{labels.formHeading}</h2>
 
-              <form onSubmit={handleSubmit(onSubmit)} noValidate className="mt-6 space-y-4">
+              <form
+                onSubmit={handleSubmit(onSubmit, (formErrors) => toast.error(getFirstFormErrorMessage(formErrors) ?? t.formSubmission.error))}
+                noValidate
+                className="mt-6 space-y-4"
+              >
                 <Field
                   label={labels.fields.customerName.label}
                   name="customerName"
@@ -287,13 +289,6 @@ export default function PurchaseOrderPage() {
                   {isSubmitting ? t.formSubmission.saving : labels.submit}
                 </button>
 
-                {submitFeedback ? (
-                  <p className={`text-md font-medium ${submitFeedback.type === 'success' ? 'text-emerald-300' : 'text-rose-300'}`}>
-                    {submitFeedback.message}
-                  </p>
-                ) : isSubmitSuccessful && (
-                  <p className="text-md font-medium text-emerald-300">{content.feedback.success}</p>
-                )}
               </form>
             </CardContent>
           </Card>

@@ -7,10 +7,11 @@ import { Card, CardContent } from '@/app/components/ui/Card'
 import { submitMailtoForm } from '@/lib/submitMailto'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
-import { useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
 import { SharedFormField } from '@/app/components/forms/SharedFormField'
 import { createBusinessContactSchema } from '@/app/components/forms/businessContactSchema'
+import { getFirstFormErrorMessage } from '@/lib/formValidation'
+import { useToast } from '@/app/components/ui/ToastProvider'
 
 const createInvoiceSchema = (validation: typeof import('@/public/locales/en/index.json').businessForms.invoiceReceipt.validation) => z.object({
   ...createBusinessContactSchema(validation).shape,
@@ -29,15 +30,15 @@ type InvoiceFormValues = z.infer<ReturnType<typeof createInvoiceSchema>>
 
 export default function InvoiceReceiptPage() {
   const { t } = useLocale()
+  const toast = useToast()
   const content = t.businessForms.invoiceReceipt
   const defaultValues = content.defaultValues
   const { labels } = content
-  const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
   } = useForm<InvoiceFormValues>({
     resolver: zodResolver(createInvoiceSchema(content.validation)),
     defaultValues,
@@ -50,7 +51,7 @@ export default function InvoiceReceiptPage() {
     try {
       referenceCode = await submitWebsiteForm('invoice_receipt', data)
     } catch {
-      setSubmitFeedback({ type: 'error', message: t.formSubmission.error })
+      toast.error(t.formSubmission.error)
       return
     }
 
@@ -77,10 +78,7 @@ export default function InvoiceReceiptPage() {
 
     submitMailtoForm({ to: 'customercare@aerosunenergy.in', subject, body })
     reset(defaultValues)
-    setSubmitFeedback({
-      type: 'success',
-      message: `${content.feedback.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`,
-    })
+    toast.success(`${content.feedback.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`)
   }
 
   return (
@@ -138,7 +136,11 @@ export default function InvoiceReceiptPage() {
               <p className="text-[12px] font-semibold uppercase tracking-[0.32em] text-orange-200">{labels.formTitle}</p>
               <h2 className="mt-3 text-2xl font-semibold">{labels.formHeading}</h2>
 
-              <form onSubmit={handleSubmit(onSubmit)} noValidate className="mt-6 space-y-4">
+              <form
+                onSubmit={handleSubmit(onSubmit, (formErrors) => toast.error(getFirstFormErrorMessage(formErrors) ?? t.formSubmission.error))}
+                noValidate
+                className="mt-6 space-y-4"
+              >
                 <Field
                   label={labels.fields.customerName.label}
                   name="customerName"
@@ -259,13 +261,6 @@ export default function InvoiceReceiptPage() {
                   {isSubmitting ? t.formSubmission.saving : labels.submit}
                 </button>
 
-                {submitFeedback ? (
-                  <p className={`text-md font-medium ${submitFeedback.type === 'success' ? 'text-emerald-300' : 'text-rose-300'}`}>
-                    {submitFeedback.message}
-                  </p>
-                ) : isSubmitSuccessful && (
-                  <p className="text-md font-medium text-emerald-300">{content.feedback.success}</p>
-                )}
               </form>
             </CardContent>
           </Card>

@@ -6,10 +6,11 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { submitMailtoForm } from '@/lib/submitMailto'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
-import { useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
 import { SharedFormField } from '@/app/components/forms/SharedFormField'
 import { createBusinessContactSchema } from '@/app/components/forms/businessContactSchema'
+import { getFirstFormErrorMessage } from '@/lib/formValidation'
+import { useToast } from '@/app/components/ui/ToastProvider'
 
 const createWarrantyPolicySchema = (validation: typeof import('@/public/locales/en/index.json').businessForms.warrantyPolicy.validation) => z.object({
   ...createBusinessContactSchema(validation).shape,
@@ -26,15 +27,15 @@ type WarrantyPolicyFormValues = z.infer<ReturnType<typeof createWarrantyPolicySc
 
 export default function WarrantyPolicyPage() {
   const { t } = useLocale()
+  const toast = useToast()
   const content = t.businessForms.warrantyPolicy
   const defaultValues = content.defaultValues
   const { labels } = content
-  const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
   } = useForm<WarrantyPolicyFormValues>({
     resolver: zodResolver(createWarrantyPolicySchema(content.validation)),
     defaultValues,
@@ -47,7 +48,7 @@ export default function WarrantyPolicyPage() {
     try {
       referenceCode = await submitWebsiteForm('warranty_policy', data)
     } catch {
-      setSubmitFeedback({ type: 'error', message: t.formSubmission.error })
+      toast.error(t.formSubmission.error)
       return
     }
 
@@ -71,17 +72,14 @@ export default function WarrantyPolicyPage() {
 
     submitMailtoForm({ to: 'customercare@aerosunenergy.in', subject, body })
     reset(defaultValues)
-    setSubmitFeedback({
-      type: 'success',
-      message: `${content.feedback.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`,
-    })
+    toast.success(`${content.feedback.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`)
   }
 
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.10),transparent_14%),linear-gradient(180deg,#f8fafc_0%,#edf6ff_34%,#f8fafc_100%)] px-4 py-8 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-5xl">
         <form
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(onSubmit, (formErrors) => toast.error(getFirstFormErrorMessage(formErrors) ?? t.formSubmission.error))}
           noValidate
           className="overflow-hidden rounded-[28px] border border-sky-200 bg-white/90 shadow-[0_30px_90px_-35px_rgba(15,23,42,0.45)] backdrop-blur-sm"
         >
@@ -226,13 +224,6 @@ export default function WarrantyPolicyPage() {
                 {isSubmitting ? t.formSubmission.saving : labels.submit}
               </button>
 
-              {submitFeedback ? (
-                <p className={`text-md font-medium ${submitFeedback.type === 'success' ? 'text-emerald-700' : 'text-rose-600'}`}>
-                  {submitFeedback.message}
-                </p>
-              ) : isSubmitSuccessful && (
-                <p className="text-md font-medium text-emerald-700">{content.feedback.success}</p>
-              )}
             </div>
           </div>
         </form>

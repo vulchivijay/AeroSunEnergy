@@ -10,6 +10,7 @@ import { isProductionComingSoonLink } from '@/lib/navigation'
 import { ArrowRight, ArrowUpRight, Globe, Mail, MapPin, Phone, Send, Sun, Wind, Zap } from 'lucide-react'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
+import { useToast } from '@/app/components/ui/ToastProvider'
 
 const socialIconComponents: Record<string, ReactNode> = {
 	twitter: (
@@ -38,6 +39,7 @@ const INITIAL_COPYRIGHT_YEAR = 2026
 
 export default function Footer() {
 	const { t } = useLocale()
+	const toast = useToast()
 	const pathname = usePathname() || '/'
 	const footer = t.footer
 	const socialMetadataByPlatform: Record<string, { label: string; title: string }> = footer.socialLinks
@@ -56,9 +58,7 @@ export default function Footer() {
 		</span>
 	)
 	const [newsletterEmail, setNewsletterEmail] = useState('')
-	const [newsletterStatus, setNewsletterStatus] = useState('')
 	const [newsletterPending, setNewsletterPending] = useState(false)
-	const [newsletterFailed, setNewsletterFailed] = useState(false)
 	const [currentYear, setCurrentYear] = useState(INITIAL_COPYRIGHT_YEAR)
 	const companyAddress = footer.address
 	const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyAddress)}`
@@ -74,14 +74,12 @@ export default function Footer() {
 	async function handleNewsletterSubmit(event: FormEvent<HTMLFormElement>) {
 		event.preventDefault()
 		setNewsletterPending(true)
-		setNewsletterFailed(false)
 		try {
 			await submitWebsiteForm('newsletter', { email: newsletterEmail.trim() })
-			setNewsletterStatus(footer.newsletterStatus)
+			toast.success(footer.newsletterStatus)
 			setNewsletterEmail('')
 		} catch {
-			setNewsletterFailed(true)
-			setNewsletterStatus(t.formSubmission.error)
+			toast.error(t.formSubmission.error)
 		} finally {
 			setNewsletterPending(false)
 		}
@@ -280,7 +278,6 @@ export default function Footer() {
 								value={newsletterEmail}
 								onChange={(event) => {
 									setNewsletterEmail(event.target.value)
-									setNewsletterStatus('')
 								}}
 								placeholder={footer.newsletterPlaceholder}
 								className="min-h-12 min-w-0 flex-1 rounded-full border border-white/15 bg-[#071B17] px-5 text-sm text-white outline-none transition placeholder:text-gray-400 focus:border-[#A5D6A7] focus:ring-2 focus:ring-[#A5D6A7]/25"
@@ -291,7 +288,6 @@ export default function Footer() {
 						</div>
 						<p className="mt-3 text-sm leading-5 text-gray-400">{footer.newsletterHint}</p>
 						<FormDataNotice className="text-gray-400" />
-						<p role={newsletterFailed ? 'alert' : 'status'} aria-live="polite" className={`mt-1 min-h-5 text-sm ${newsletterFailed ? 'text-rose-300' : 'text-[#DCEDC8]'}`}>{newsletterStatus}</p>
 					</form>
 				</section>
 			</div>

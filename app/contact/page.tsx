@@ -9,6 +9,7 @@ import { OptimizedImage } from '@/app/components/ui'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { ReferralProgramSection } from '@/app/components/sections/ReferralProgramSection'
+import { useToast } from '@/app/components/ui/ToastProvider'
 
 const channelIconComponents: Record<string, ReactNode> = {
   email: (
@@ -32,7 +33,7 @@ const channelIconComponents: Record<string, ReactNode> = {
 
 export default function Contact() {
   const { t } = useLocale()
-  const [formStatus, setFormStatus] = useState<{ type: 'success' | 'error'; referenceCode?: string } | null>(null)
+  const toast = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const channelIconIds = t.componentData.contact.channelIconIds
   const c = t.contact
@@ -62,7 +63,6 @@ export default function Contact() {
     const form = event.currentTarget
     const formData = new FormData(form)
     setIsSubmitting(true)
-    setFormStatus(null)
 
     try {
       const referenceCode = await submitWebsiteForm('contact', {
@@ -73,10 +73,10 @@ export default function Contact() {
         usage: String(formData.get('usage') ?? '').trim(),
         message: String(formData.get('message') ?? '').trim(),
       })
-      setFormStatus({ type: 'success', referenceCode })
+      toast.success(`${c.form.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`)
       form.reset()
     } catch {
-      setFormStatus({ type: 'error' })
+      toast.error(t.formSubmission.error)
     } finally {
       setIsSubmitting(false)
     }
@@ -259,12 +259,6 @@ export default function Contact() {
                 </label>
                 <div className="space-y-3 sm:col-span-2">
                   <FormDataNotice />
-                  {formStatus?.type === 'error' && <p className="text-sm font-semibold text-rose-700" role="alert">{t.formSubmission.error}</p>}
-                  {formStatus?.type === 'success' && (
-                    <p className="text-sm font-semibold text-emerald-800" role="status" aria-live="polite">
-                      {c.form.success} {t.formSubmission.referenceLabel}: <span className="font-mono">{formStatus.referenceCode}</span>
-                    </p>
-                  )}
                   <button className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-emerald-800 px-6 py-3 text-sm font-bold text-white transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800 disabled:cursor-wait disabled:opacity-70 sm:w-auto" type="submit" disabled={isSubmitting}>
                     {isSubmitting ? t.formSubmission.saving : c.form.submit}
                   </button>

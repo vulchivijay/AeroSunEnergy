@@ -6,10 +6,11 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { submitMailtoForm } from '@/lib/submitMailto'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
-import { useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
 import { SharedFormField } from '@/app/components/forms/SharedFormField'
 import { createBusinessContactSchema } from '@/app/components/forms/businessContactSchema'
+import { getFirstFormErrorMessage } from '@/lib/formValidation'
+import { useToast } from '@/app/components/ui/ToastProvider'
 
 const createChecklistSchema = (validation: typeof import('@/public/locales/en/index.json').businessForms.installationChecklist.validation) => z.object({
 	...createBusinessContactSchema(validation).shape,
@@ -30,10 +31,10 @@ type ChecklistFormValues = z.infer<ReturnType<typeof createChecklistSchema>>
 
 export default function InstallationChecklistPage() {
 	const { t } = useLocale()
+	const toast = useToast()
 	const content = t.businessForms.installationChecklist
 	const defaultValues = content.defaultValues
 	const { labels } = content
-	const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
 	const {
 		register,
 		handleSubmit,
@@ -51,7 +52,7 @@ export default function InstallationChecklistPage() {
 		try {
 			referenceCode = await submitWebsiteForm('installation_checklist', data)
 		} catch {
-			setSubmitFeedback({ type: 'error', message: t.formSubmission.error })
+			toast.error(t.formSubmission.error)
 			return
 		}
 
@@ -78,10 +79,7 @@ export default function InstallationChecklistPage() {
 
 		submitMailtoForm({ to: 'customercare@aerosunenergy.in', subject, body })
 		reset(defaultValues)
-		setSubmitFeedback({
-			type: 'success',
-			message: `${content.feedback.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`,
-		})
+		toast.success(`${content.feedback.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`)
 	}
 
 	return (
@@ -216,7 +214,11 @@ export default function InstallationChecklistPage() {
 					<div className="rounded-2xl border border-amber-200 bg-[#101c32] p-5 text-white shadow-sm">
 						<p className="text-[12px] font-black uppercase tracking-[0.2em] text-amber-300">{labels.submissionForm}</p>
 						<h2 className="mt-2 text-xl font-extrabold tracking-tight">{labels.recordStatus}</h2>
-						<form onSubmit={handleSubmit(onSubmit)} noValidate className="mt-5 space-y-4">
+						<form
+							onSubmit={handleSubmit(onSubmit, (formErrors) => toast.error(getFirstFormErrorMessage(formErrors) ?? t.formSubmission.error))}
+							noValidate
+							className="mt-5 space-y-4"
+						>
 							{(['customerName', 'companyName', 'email', 'phone', 'projectName', 'siteLocation', 'installationDate'] as const).map((name) => (
 								<Field key={name} {...labels.fields[name]} name={name} type={name === 'email' ? 'email' : name === 'phone' ? 'tel' : name === 'installationDate' ? 'date' : 'text'} register={register} error={errors[name]} />
 							))}
@@ -271,11 +273,6 @@ export default function InstallationChecklistPage() {
 								{isSubmitting ? t.formSubmission.saving : labels.submit}
 							</button>
 
-							{submitFeedback && (
-								<p className={`rounded-xl border px-3 py-2 text-md ${submitFeedback.type === 'success' ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-200' : 'border-rose-500/30 bg-rose-500/10 text-rose-200'}`}>
-									{submitFeedback.message}
-								</p>
-							)}
 						</form>
 					</div>
 				</aside>

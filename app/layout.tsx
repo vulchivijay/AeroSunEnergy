@@ -9,6 +9,7 @@ import ConsentAwareTracking from "@/app/components/cookies/ConsentAwareTracking"
 import Notifications from "@/app/components/layout/Notifications";
 import { NetworkStatus } from "@/app/components/system/NetworkStatus";
 import ProductionProtector from "@/app/components/security/ProductionProtector";
+import { ToastProvider } from "@/app/components/ui/ToastProvider";
 
 import "./globals.css";
 
@@ -191,13 +192,15 @@ export default function RootLayout({
         />
         <PerformanceMonitor />
         <LocaleProvider>
-          <NetworkStatus />
-          <Notifications />
-          <Header />
-          <Lord />
-          {children}
-          <Footer />
-          <CookieConsent />
+          <ToastProvider>
+            <NetworkStatus />
+            <Notifications />
+            <Header />
+            <Lord />
+            {children}
+            <Footer />
+            <CookieConsent />
+          </ToastProvider>
         </LocaleProvider>
       </body>
     </html>

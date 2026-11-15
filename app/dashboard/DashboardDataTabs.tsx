@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState, type FormEvent } from 'react'
+import { useToast } from '@/app/components/ui/ToastProvider'
 
 type DashboardRole = 'admin' | 'operator' | 'monitor'
 type DashboardRow = Record<string, unknown> & { id?: string }
@@ -94,21 +95,20 @@ type UserAccessManagerProps = {
 }
 
 function UserAccessManager({ row, actorRole, onSaved }: UserAccessManagerProps) {
+  const toast = useToast()
   const [role, setRole] = useState<DashboardRole>(isDashboardRole(row.role) ? row.role : 'monitor')
   const [approved, setApproved] = useState(row.approved === true)
   const [saving, setSaving] = useState(false)
-  const [error, setError] = useState('')
   const isAdminAccount = row.role === 'admin'
   const disabled = actorRole === 'operator' && isAdminAccount
 
   async function saveAccess() {
     if (typeof row.id !== 'string') {
-      setError('This account has no supported record ID.')
+      toast.error('This account has no supported record ID.')
       return
     }
 
     setSaving(true)
-    setError('')
     try {
       const response = await fetch('/api/dashboard', {
         method: 'PATCH',
@@ -116,9 +116,10 @@ function UserAccessManager({ row, actorRole, onSaved }: UserAccessManagerProps) 
         body: JSON.stringify({ action: 'manage_user', id: row.id, role, approved }),
       })
       if (!response.ok) throw new Error(await getApiError(response))
+      toast.success('Account access updated.')
       onSaved()
     } catch (saveError) {
-      setError(saveError instanceof Error ? saveError.message : 'Account access could not be updated.')
+      toast.error(saveError instanceof Error ? saveError.message : 'Account access could not be updated.')
     } finally {
       setSaving(false)
     }
@@ -163,12 +164,12 @@ function UserAccessManager({ row, actorRole, onSaved }: UserAccessManagerProps) 
         </button>
       </div>
       {disabled && <p className="mt-2 text-xs text-slate-600">Only an admin can change an admin account.</p>}
-      {error && <p className="mt-2 text-xs text-rose-700" role="alert">{error}</p>}
     </div>
   )
 }
 
 export default function DashboardDataTabs() {
+  const toast = useToast()
   const [collections, setCollections] = useState<string[]>([])
   const [activeCollection, setActiveCollection] = useState('')
   const [role, setRole] = useState<DashboardRole>('monitor')
@@ -178,7 +179,6 @@ export default function DashboardDataTabs() {
   const [loadingCollections, setLoadingCollections] = useState(true)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
-  const [actionError, setActionError] = useState('')
   const [retryCount, setRetryCount] = useState(0)
   const [showCreateForm, setShowCreateForm] = useState(false)
   const [createJson, setCreateJson] = useState('{\n  \n}')
@@ -211,6 +211,7 @@ export default function DashboardDataTabs() {
       } catch (loadError) {
         if (loadError instanceof Error && loadError.name === 'AbortError') return
         setError('Collections could not be loaded. Please try again.')
+        toast.error('Collections could not be loaded. Please try again.')
       } finally {
         if (!controller.signal.aborted) setLoadingCollections(false)
       }
@@ -218,7 +219,7 @@ export default function DashboardDataTabs() {
 
     void loadCollections()
     return () => controller.abort()
-  }, [retryCount])
+  }, [retryCount, toast])
 
   useEffect(() => {
     if (!activeCollection) return
@@ -250,6 +251,7 @@ export default function DashboardDataTabs() {
         if (loadError instanceof Error && loadError.name === 'AbortError') return
         setData(null)
         setError('Records could not be loaded. Please try again.')
+        toast.error('Records could not be loaded. Please try again.')
       } finally {
         if (!controller.signal.aborted) setLoading(false)
       }
@@ -257,7 +259,7 @@ export default function DashboardDataTabs() {
 
     void loadData()
     return () => controller.abort()
-  }, [activeCollection, formType, page, retryCount])
+  }, [activeCollection, formType, page, retryCount, toast])
 
   const pageCount = data ? Math.max(1, Math.ceil(data.total / data.pageSize)) : 1
   const isAccountCollection = activeCollection === 'auth_users' || activeCollection === 'auth_sessions'
@@ -271,14 +273,12 @@ export default function DashboardDataTabs() {
     setActiveCollection(collection)
     setPage(1)
     setFormType('all')
-    setActionError('')
     setEditingId(null)
   }
 
   async function submitRecord(event: FormEvent<HTMLFormElement>, mode: 'create' | 'update', id?: string) {
     event.preventDefault()
     setSavingRecord(true)
-    setActionError('')
     try {
       const parsed: unknown = JSON.parse(mode === 'create' ? createJson : editJson)
       if (!isRecord(parsed)) throw new Error('Enter a JSON object.')
@@ -294,8 +294,9 @@ export default function DashboardDataTabs() {
       setEditingId(null)
       setCreateJson('{\n  \n}')
       setRetryCount((current) => current + 1)
+      toast.success(mode === 'create' ? 'Record created.' : 'Record updated.')
     } catch (saveError) {
-      setActionError(saveError instanceof Error ? saveError.message : 'The record could not be saved.')
+      toast.error(saveError instanceof Error ? saveError.message : 'The record could not be saved.')
     } finally {
       setSavingRecord(false)
     }
@@ -303,14 +304,14 @@ export default function DashboardDataTabs() {
 
   async function deleteRecord(id: string) {
     if (!window.confirm('Delete this record? This cannot be undone.')) return
-    setActionError('')
     try {
       const params = new URLSearchParams({ collection: activeCollection, id })
       const response = await fetch(`/api/dashboard?${params.toString()}`, { method: 'DELETE' })
       if (!response.ok) throw new Error(await getApiError(response))
       setRetryCount((current) => current + 1)
+      toast.success('Record deleted.')
     } catch (deleteError) {
-      setActionError(deleteError instanceof Error ? deleteError.message : 'The record could not be deleted.')
+      toast.error(deleteError instanceof Error ? deleteError.message : 'The record could not be deleted.')
     }
   }
 
@@ -370,7 +371,6 @@ export default function DashboardDataTabs() {
                 onClick={() => {
                   setShowCreateForm((current) => !current)
                   setEditingId(null)
-                  setActionError('')
                 }}
                 className="min-h-10 rounded-full bg-emerald-800 px-4 text-sm font-bold text-white hover:bg-emerald-900"
               >
@@ -397,8 +397,6 @@ export default function DashboardDataTabs() {
             </button>
           </form>
         )}
-
-        {actionError && <p className="mt-4 rounded-xl bg-rose-50 p-3 text-sm text-rose-800" role="alert">{actionError}</p>}
 
         {error ? (
           <div className="mt-6 rounded-2xl border border-rose-200 bg-rose-50 p-5 text-sm text-rose-800" role="alert">
@@ -436,7 +434,6 @@ export default function DashboardDataTabs() {
                             onClick={() => {
                               setEditingId(isEditing ? null : id)
                               setEditJson(editableJson(row))
-                              setActionError('')
                             }}
                             className="min-h-9 rounded-full border border-slate-300 px-3 text-xs font-bold text-slate-700 hover:bg-slate-50"
                           >

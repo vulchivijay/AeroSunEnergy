@@ -4,6 +4,7 @@ import { useState, type FormEvent } from 'react'
 import { ArrowUpRight, Gift } from 'lucide-react'
 import Link from 'next/link'
 import { useLocale } from '@/lib/LocaleContext'
+import { useToast } from '@/app/components/ui/ToastProvider'
 
 type ReferralResponse = {
   referenceCode: string
@@ -20,16 +21,16 @@ function isReferralResponse(value: unknown): value is ReferralResponse {
 
 export function ReferralProgramSection() {
   const { t } = useLocale()
+  const toast = useToast()
   const content = t.home.referralProgram
   const formContent = content.form
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
-  const [referenceCode, setReferenceCode] = useState('')
+  const [submitting, setSubmitting] = useState(false)
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const form = event.currentTarget
     const formData = new FormData(form)
-    setStatus('submitting')
+    setSubmitting(true)
 
     try {
       const response = await fetch('/api/referrals', {
@@ -48,15 +49,16 @@ export function ReferralProgramSection() {
       const result: unknown = await response.json()
 
       if (!response.ok || !isReferralResponse(result)) {
-        setStatus('error')
+        toast.error(formContent.error)
         return
       }
 
-      setReferenceCode(result.referenceCode)
-      setStatus('success')
+      toast.success(`${formContent.successTitle} ${formContent.successDescription} ${formContent.referenceLabel}: ${result.referenceCode}`)
       form.reset()
     } catch {
-      setStatus('error')
+      toast.error(formContent.error)
+    } finally {
+      setSubmitting(false)
     }
   }
 
@@ -166,26 +168,13 @@ export function ReferralProgramSection() {
               </Link>.
             </p>
 
-            {status === 'error' && (
-              <p className="rounded-xl bg-red-50 px-3.5 py-3 text-sm text-red-800" role="alert">
-                {formContent.error}
-              </p>
-            )}
-            {status === 'success' && (
-              <div className="rounded-xl bg-emerald-50 px-3.5 py-3 text-sm text-emerald-900" role="status" aria-live="polite">
-                <p className="font-bold">{formContent.successTitle}</p>
-                <p className="mt-1">{formContent.successDescription}</p>
-                <p className="mt-2 font-semibold">{formContent.referenceLabel}: <span className="font-mono">{referenceCode}</span></p>
-              </div>
-            )}
-
             <button
               className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#17865e] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#126f4e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#17865e] disabled:cursor-wait disabled:opacity-70"
               type="submit"
-              disabled={status === 'submitting'}
+              disabled={submitting}
             >
-              {status === 'submitting' ? formContent.submitting : formContent.submit}
-              {status !== 'submitting' && <ArrowUpRight className="h-4 w-4" aria-hidden="true" />}
+              {submitting ? formContent.submitting : formContent.submit}
+              {!submitting && <ArrowUpRight className="h-4 w-4" aria-hidden="true" />}
             </button>
           </form>
         </div>

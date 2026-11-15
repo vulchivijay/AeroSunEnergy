@@ -4,6 +4,7 @@ import { useState, type FormEvent, type ReactNode } from "react";
 import { useLocale } from "@/lib/LocaleContext";
 import { FormDataNotice } from "@/app/components/forms/FormDataNotice";
 import { submitWebsiteForm } from "@/lib/websiteFormSubmission";
+import { useToast } from "@/app/components/ui/ToastProvider";
 
 function SectionTitle({ number, title }: { number: string; title: string }) {
   return (
@@ -222,8 +223,8 @@ function ChoiceGroup({
 
 export default function CustomerEnquiryPage() {
   const { t } = useLocale();
+  const toast = useToast();
   const page = t.customerEnquiryPage;
-  const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const paymentMilestones = page.paymentMilestones;
 
@@ -252,7 +253,6 @@ export default function CustomerEnquiryPage() {
     }
 
     setIsSubmitting(true);
-    setFeedback(null);
     try {
       const submissionData = Object.fromEntries(
         Array.from(formData.entries()).map(([key, value]) => [key, String(value)]),
@@ -297,13 +297,10 @@ export default function CustomerEnquiryPage() {
       const subject = encodeURIComponent(
         `${page.mailtoSubjectPrefix}${String(formData.get("customer_name"))}`,
       );
+      toast.success(`${page.feedback} ${t.formSubmission.referenceLabel}: ${referenceCode}`);
       window.location.href = `mailto:${page.mailtoRecipient}?subject=${subject}&body=${encodeURIComponent(body)}`;
-      setFeedback({
-        type: "success",
-        message: `${page.feedback} ${t.formSubmission.referenceLabel}: ${referenceCode}`,
-      });
     } catch {
-      setFeedback({ type: "error", message: t.formSubmission.error });
+      toast.error(t.formSubmission.error);
     } finally {
       setIsSubmitting(false);
     }
@@ -1026,15 +1023,6 @@ export default function CustomerEnquiryPage() {
           </p>
           <FormDataNotice />
           {isSubmitting && <p className="text-md text-emerald-800" role="status">{t.formSubmission.saving}</p>}
-          {feedback && (
-            <p
-              role={feedback.type === "error" ? "alert" : "status"}
-              aria-live="polite"
-              className={`rounded-lg p-3 text-md font-semibold ${feedback.type === "error" ? "bg-rose-50 text-rose-800" : "bg-emerald-50 text-emerald-800"}`}
-            >
-              {feedback.message}
-            </p>
-          )}
         </form>
         <aside className="min-w-0 rounded-2xl border border-slate-200 bg-white p-5 lg:sticky lg:top-24">
           <h2 className="mb-4 text-md font-black uppercase tracking-wide text-slate-900">

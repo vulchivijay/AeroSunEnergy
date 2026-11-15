@@ -4359,6 +4359,7 @@
     "signupTitle": "Create account",
     "loginHeading": "Welcome back",
     "signupHeading": "Create your account",
+    "loginSuccess": "Signed in successfully.",
     "loginDescription": "Sign in to continue to your AeroSun Energy account.",
     "signupDescription": "Sign up to get started with AeroSun Energy.",
     "signupPendingApproval": "Your account has been created and is awaiting administrator approval. You can sign in after it is approved.",
