@@ -4,9 +4,13 @@ import type { ReactNode } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
 import {
   ContentBenefitCard,
+  contentAccentText,
+  contentBenefitBorders,
+  contentCheckBackgrounds,
   ContentFeatureCard,
   ContentInfoPanel,
   ContentSectionEyebrow,
+  type ContentAccent,
 } from './SharedContentComponents'
 
 const renderWindIcon = (colorClass: string) => {
@@ -40,21 +44,19 @@ export function WindFeatureCard({
   title: string
   description: string
   points?: string[]
-  accent?: 'sky' | 'emerald' | 'amber' | 'violet'
+  accent?: ContentAccent
 }) {
   const { t } = useLocale()
   const ui = t.ui
-  const componentData = t.componentData.windContentBlocks
-
   return (
     <ContentFeatureCard
       title={title}
       description={description}
       points={points}
       label={ui.windSolution}
-      icon={renderWindIcon(componentData.iconColors[accent])}
+      icon={renderWindIcon(contentAccentText[accent])}
       cardClassName="group h-full border-t border-slate-300 py-6 transition-colors hover:border-sky-600"
-      featureClassName={componentData.iconColors[accent]}
+      featureClassName={contentAccentText[accent]}
       titleClassName="tracking-[0.05em] text-slate-900"
       pointIconClassName="bg-sky-50 text-sky-700"
     />
@@ -68,20 +70,13 @@ export function WindBenefitCard({
 }: {
   title: string
   description: string
-  accent?: 'sky' | 'emerald' | 'amber' | 'violet'
+  accent?: ContentAccent
 }) {
-  const borderColors = {
-    sky: 'border-l-[#b8d8ec]',
-    emerald: 'border-l-[#b6d9c6]',
-    amber: 'border-l-[#efd9ad]',
-    violet: 'border-l-[#d0c3e6]',
-  }
-
   return (
     <ContentBenefitCard
       title={title}
       description={description}
-      cardClassName={`rounded-2xl border-l-4 ${borderColors[accent]} bg-[#eaf1f8] p-5`}
+      cardClassName={`rounded-2xl border-l-4 ${contentBenefitBorders[accent]} bg-[#eaf1f8] p-5`}
       iconClassName="bg-sky-100 text-sky-700"
       titleClassName="tracking-[0.04em] text-slate-900"
     />
@@ -95,17 +90,14 @@ export function WindInfoPanel({
 }: {
   title: string
   content: string[]
-  accent?: 'sky' | 'emerald' | 'amber'
+  accent?: Exclude<ContentAccent, 'violet'>
 }) {
-  const { t } = useLocale()
-  const componentData = t.componentData.windContentBlocks
-
   return (
     <ContentInfoPanel
       title={title}
       content={content}
       themeClassName="bg-transparent text-slate-900"
-      checkBackgroundClassName={componentData.checkBackgrounds[accent]}
+      checkBackgroundClassName={contentCheckBackgrounds[accent]}
       titleClassName="tracking-[0.04em]"
     />
   )

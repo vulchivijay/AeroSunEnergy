@@ -1,5 +1,28 @@
 import type { ReactNode } from 'react'
 
+export type ContentAccent = 'emerald' | 'amber' | 'sky' | 'violet'
+
+export const contentAccentText: Record<ContentAccent, string> = {
+  emerald: 'text-emerald-700',
+  amber: 'text-amber-700',
+  sky: 'text-sky-700',
+  violet: 'text-violet-700',
+}
+
+export const contentCheckBackgrounds: Record<ContentAccent, string> = {
+  emerald: 'bg-emerald-700 text-white',
+  amber: 'bg-amber-100 text-amber-700',
+  sky: 'bg-sky-100 text-sky-700',
+  violet: 'bg-violet-100 text-violet-700',
+}
+
+export const contentBenefitBorders: Record<ContentAccent, string> = {
+  emerald: 'border-l-[#b6d9c6]',
+  amber: 'border-l-[#efd9ad]',
+  sky: 'border-l-[#b8d8ec]',
+  violet: 'border-l-[#d0c3e6]',
+}
+
 export function ContentSectionEyebrow({
   children,
   className,
