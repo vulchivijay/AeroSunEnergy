@@ -1,5 +1,6 @@
 import { z } from 'zod'
 import { MongoServerError, ObjectId } from 'mongodb'
+import { withApiLogging } from '@/lib/apiLogging'
 import { authJson, readAuthJson } from '@/lib/auth/http'
 import { getDatabase, type AuthUserDocument } from '@/lib/auth/database'
 import { authErrorCodes, isAuthErrorCode } from '@/lib/auth/errorCodes'
@@ -36,7 +37,7 @@ function isDuplicateEmailError(error: unknown): boolean {
   )
 }
 
-export async function POST(request: Request) {
+async function postSignup(request: Request) {
   const body = await readAuthJson(request)
   if ('error' in body) return body.error
 
@@ -82,3 +83,5 @@ export async function POST(request: Request) {
     return authJson({ error: authErrorCodes.signupUnavailable }, 503)
   }
 }
+
+export const POST = withApiLogging(postSignup)

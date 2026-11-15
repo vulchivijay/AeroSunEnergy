@@ -1,4 +1,5 @@
 import { ObjectId, type Document } from 'mongodb'
+import { withApiLogging } from '@/lib/apiLogging'
 import { getDatabase, type AuthSessionDocument, type AuthUserDocument } from '@/lib/auth/database'
 import { isDashboardAdmin } from '@/lib/auth/admin'
 import { getSessionToken, getSessionUser } from '@/lib/auth/session'
@@ -56,7 +57,7 @@ function dashboardRow(document: DashboardDocument): Record<string, unknown> {
   return { id: _id.toHexString(), ...fields }
 }
 
-export async function GET(request: Request) {
+async function getDashboard(request: Request) {
   const token = await getSessionToken()
   if (!token) return jsonResponse({ error: 'unauthorized' }, 401)
 
@@ -148,3 +149,5 @@ export async function GET(request: Request) {
     return jsonResponse({ error: 'service_unavailable' }, 503)
   }
 }
+
+export const GET = withApiLogging(getDashboard)

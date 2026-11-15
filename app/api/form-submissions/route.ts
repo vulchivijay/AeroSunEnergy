@@ -1,6 +1,7 @@
 import { randomBytes } from 'node:crypto'
 import { z } from 'zod'
 import { ObjectId } from 'mongodb'
+import { withApiLogging } from '@/lib/apiLogging'
 import { getDatabase } from '@/lib/auth/database'
 
 export const runtime = 'nodejs'
@@ -299,7 +300,7 @@ function isValidSubmission(formType: FormType, data: Record<string, SubmissionVa
   return true
 }
 
-export async function POST(request: Request) {
+async function postSubmission(request: Request) {
   let body: BodyResult
   try {
     body = await readSubmissionBody(request)
@@ -338,3 +339,5 @@ export async function POST(request: Request) {
     return jsonResponse({ error: 'service_unavailable' }, 503)
   }
 }
+
+export const POST = withApiLogging(postSubmission)

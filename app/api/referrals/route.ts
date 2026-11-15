@@ -1,6 +1,7 @@
 import { randomBytes } from 'node:crypto'
 import { z } from 'zod'
 import { ObjectId } from 'mongodb'
+import { withApiLogging } from '@/lib/apiLogging'
 import { getDatabase } from '@/lib/auth/database'
 
 export const runtime = 'nodejs'
@@ -111,7 +112,7 @@ function getErrorCode(error: unknown): string {
   return 'UNKNOWN'
 }
 
-export async function POST(request: Request) {
+async function postReferral(request: Request) {
   let body: BodyResult
   try {
     body = await readReferralBody(request)
@@ -155,3 +156,5 @@ export async function POST(request: Request) {
     return jsonResponse({ error: 'service_unavailable' }, 503)
   }
 }
+
+export const POST = withApiLogging(postReferral)
