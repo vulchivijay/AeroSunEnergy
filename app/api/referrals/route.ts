@@ -1,6 +1,7 @@
 import { randomBytes } from 'node:crypto'
 import { z } from 'zod'
-import { getDatabasePool } from '@/lib/auth/database'
+import { ObjectId } from 'mongodb'
+import { getDatabase } from '@/lib/auth/database'
 
 export const runtime = 'nodejs'
 
@@ -126,27 +127,21 @@ export async function POST(request: Request) {
   const referenceCode = `ASR-${randomBytes(8).toString('hex').toUpperCase()}`
 
   try {
-    await getDatabasePool().query(
-      `INSERT INTO solar_referrals (
-        reference_code,
-        referrer_name,
-        referrer_phone,
-        referred_name,
-        referred_phone,
-        postal_code,
-        property_type,
-        referrer_permission_confirmed_at
-      ) VALUES ($1, $2, $3, $4, $5, $6, $7, CURRENT_TIMESTAMP)`,
-      [
-        referenceCode,
-        referral.referrerName,
-        referral.referrerPhone,
-        referral.referredName,
-        referral.referredPhone,
-        referral.postalCode,
-        referral.propertyType,
-      ],
-    )
+    const now = new Date()
+    await (await getDatabase()).collection('solar_referrals').insertOne({
+      _id: new ObjectId(),
+      reference_code: referenceCode,
+      referrer_name: referral.referrerName,
+      referrer_phone: referral.referrerPhone,
+      referred_name: referral.referredName,
+      referred_phone: referral.referredPhone,
+      postal_code: referral.postalCode,
+      property_type: referral.propertyType,
+      status: 'new',
+      referrer_permission_confirmed_at: now,
+      created_at: now,
+      updated_at: now,
+    })
 
     return jsonResponse({ referenceCode }, 201)
   } catch (error) {

@@ -1,7 +1,6 @@
 import { z } from 'zod'
-import type { QueryResultRow } from 'pg'
 import { authJson, readAuthJson } from '@/lib/auth/http'
-import { getDatabasePool } from '@/lib/auth/database'
+import { getDatabase, type AuthUserDocument } from '@/lib/auth/database'
 import { authErrorCodes, isAuthErrorCode } from '@/lib/auth/errorCodes'
 import { hashPassword, verifyPassword } from '@/lib/auth/password'
 import { createSession, setSessionCookie } from '@/lib/auth/session'
@@ -21,13 +20,6 @@ const loginSchema = z.object({
     .max(128, authErrorCodes.passwordTooLong),
 })
 
-type StoredUser = QueryResultRow & {
-  id: string
-  name: string
-  email: string
-  password_hash: string
-}
-
 export async function POST(request: Request) {
   const body = await readAuthJson(request)
   if ('error' in body) return body.error
@@ -39,12 +31,9 @@ export async function POST(request: Request) {
   }
 
   try {
-    const pool = getDatabasePool()
-    const { rows } = await pool.query<StoredUser>(
-      'SELECT id::text AS id, name, email, password_hash FROM auth_users WHERE email = $1 LIMIT 1',
-      [parsed.data.email],
-    )
-    const user = rows[0]
+    const user = await (await getDatabase())
+      .collection<AuthUserDocument>('auth_users')
+      .findOne({ email: parsed.data.email })
 
     if (!user) {
       await hashPassword(parsed.data.password)
@@ -55,15 +44,9 @@ export async function POST(request: Request) {
       return authJson({ error: authErrorCodes.invalidCredentials }, 401)
     }
 
-    const connection = await pool.connect()
-    let token: string
-    try {
-      token = await createSession(connection, user.id)
-    } finally {
-      connection.release()
-    }
+    const token = await createSession(user._id)
 
-    const response = authJson({ user: { id: user.id, name: user.name, email: user.email } })
+    const response = authJson({ user: { id: user._id.toHexString(), name: user.name, email: user.email } })
     setSessionCookie(response, token)
     return response
   } catch (error) {

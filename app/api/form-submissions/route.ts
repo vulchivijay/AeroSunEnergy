@@ -1,6 +1,7 @@
 import { randomBytes } from 'node:crypto'
 import { z } from 'zod'
-import { getDatabasePool } from '@/lib/auth/database'
+import { ObjectId } from 'mongodb'
+import { getDatabase } from '@/lib/auth/database'
 
 export const runtime = 'nodejs'
 
@@ -314,15 +315,16 @@ export async function POST(request: Request) {
   const referenceCode = `ASF-${randomBytes(8).toString('hex').toUpperCase()}`
 
   try {
-    await getDatabasePool().query(
-      `INSERT INTO website_form_submissions (
-        reference_code,
-        form_type,
-        payload,
-        status
-      ) VALUES ($1, $2, $3::jsonb, 'new')`,
-      [referenceCode, formType, JSON.stringify(data)],
-    )
+    const now = new Date()
+    await (await getDatabase()).collection('website_form_submissions').insertOne({
+      _id: new ObjectId(),
+      reference_code: referenceCode,
+      form_type: formType,
+      payload: data,
+      status: 'new',
+      created_at: now,
+      updated_at: now,
+    })
 
     return jsonResponse({ referenceCode }, 201)
   } catch (error) {

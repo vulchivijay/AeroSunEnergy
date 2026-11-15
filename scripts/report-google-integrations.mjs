@@ -26,19 +26,8 @@ report(
   isConfigured("_NEXT_PUBLIC_GTM_ID", "GTM_ID"),
 );
 report("BING_SITE_VERIFICATION", isConfigured("BING_SITE_VERIFICATION"));
-console.log("AlloyDB application connection:");
-for (const name of [
-  "_DB_HOST",
-  "_DB_PORT",
-  "_DB_NAME",
-  "_DB_USER",
-  "_DB_PASSWORD",
-  "_DB_SSL",
-]) {
-  report(name, isConfigured(name));
-}
-console.log("AlloyDB database-creation credentials (optional):");
-for (const name of ["_DB_ADMIN_USER", "_DB_ADMIN_PASSWORD"]) {
+console.log("MongoDB application connection:");
+for (const name of ["MONGODB_URI", "MONGODB_DB"]) {
   report(name, isConfigured(name));
 }
 console.log(
