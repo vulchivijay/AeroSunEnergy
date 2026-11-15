@@ -27,7 +27,7 @@ report(
 );
 report("BING_SITE_VERIFICATION", isConfigured("BING_SITE_VERIFICATION"));
 console.log("MongoDB application connection:");
-for (const name of ["MONGODB_URI", "MONGODB_DB"]) {
+for (const name of ["_MONGODB_URI", "_MONGODB_DB"]) {
   report(name, isConfigured(name));
 }
 console.log(

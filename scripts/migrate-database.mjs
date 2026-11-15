@@ -3,11 +3,11 @@ import { loadEnvConfig } from '@next/env'
 
 loadEnvConfig(process.cwd())
 
-const uri = process.env.MONGODB_URI?.trim()
-const databaseName = process.env.MONGODB_DB?.trim()
+const uri = process.env._MONGODB_URI?.trim()
+const databaseName = process.env._MONGODB_DB?.trim()
 
 if (!uri || !databaseName) {
-  throw new Error('MONGODB_URI and MONGODB_DB are required.')
+  throw new Error('_MONGODB_URI and _MONGODB_DB are required.')
 }
 
 const client = new MongoClient(uri, {

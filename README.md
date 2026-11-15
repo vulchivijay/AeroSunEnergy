@@ -162,17 +162,17 @@ The Next.js server listens on the `PORT` environment variable (8080 by default),
 
 ### Configure MongoDB
 
-Set these server-only MongoDB variables on the Cloud Run service. Do not prefix database credentials with `NEXT_PUBLIC_`; store production credentials in Secret Manager. `MONGODB_URI` should be a MongoDB connection string for MongoDB Atlas or your MongoDB server, and `MONGODB_DB` is the database name.
+Set these server-only variables on the Cloud Run service. The application connects through the MongoDB-compatible endpoint provided by Firestore; use the connection string and database ID from your Google Cloud configuration. Store the URI in Secret Manager.
 
 Cloud Run service environment variables and secrets are available to the running service, not to the Cloud Build buildpack. Therefore, the `prebuild` report may show the database variables as `NOT PRESENT` during deployment; this is expected and does not mean they failed to reach the service. The API reads them when handling requests, so they do not need to be embedded in the build. Updating a service variable or secret creates a new Cloud Run revision.
 
 ```text
-MONGODB_URI=mongodb+srv://application_user:password@cluster.example.mongodb.net/
-MONGODB_DB=aerosunenergy
+_MONGODB_URI=FIRESTORE_MONGODB_COMPATIBLE_CONNECTION_STRING
+_MONGODB_DB=FIRESTORE_DATABASE_ID
 DASHBOARD_ADMIN_EMAILS=admin@example.com
 ```
 
-URL-encode any special characters in the connection-string username or password. For local development, run MongoDB locally and set `MONGODB_URI=mongodb://127.0.0.1:27017/`.
+Use the exact connection string and authentication options shown for the Firestore MongoDB-compatible endpoint. Do not add `NEXT_PUBLIC_` to these server-only variables.
 
 Create the required indexes before deployment (the application also ensures them on its first database connection):
 

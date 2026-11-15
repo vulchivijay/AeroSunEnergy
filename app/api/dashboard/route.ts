@@ -39,8 +39,14 @@ function jsonResponse(body: unknown, status: number): Response {
 }
 
 function getErrorCode(error: unknown): string {
-  if (typeof error === 'object' && error !== null && 'code' in error && typeof error.code === 'string') {
-    return error.code
+  if (typeof error === 'object' && error !== null) {
+    const name = 'name' in error && typeof error.name === 'string' ? error.name : undefined
+    const code = 'code' in error && (typeof error.code === 'string' || typeof error.code === 'number')
+      ? String(error.code)
+      : undefined
+    if (name && code) return `${name} (${code})`
+    if (name) return name
+    if (code) return code
   }
   return 'UNKNOWN'
 }
