@@ -171,7 +171,7 @@ export default function Footer() {
 							{visibleNavLinks.map((link) => (
 								<li key={link.label}>
 									{(link as { disabled?: boolean }).disabled || isProductionComingSoonLink(link.href) ? (
-										<span className="flex min-h-10 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-gray-400">
+										<span className="flex min-h-10 w-full flex-col items-start justify-center gap-0.5 py-1 text-[9px] text-gray-400">
 											<span className="min-w-0">{link.label}</span>{comingSoonBadge}
 										</span>
 									) : (
@@ -188,7 +188,7 @@ export default function Footer() {
 							{quickEnquiries.map((item) => (
 								<li key={item.href}>
 									{(item as { disabled?: boolean }).disabled || isProductionComingSoonLink(item.href) ? (
-										<span className="flex min-h-9 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-gray-400">
+										<span className="flex min-h-9 w-full flex-col items-start justify-center gap-0.5 py-1 text-[9px] text-gray-400">
 											<span className="min-w-0">{item.label}</span>{comingSoonBadge}
 										</span>
 									) : (
@@ -208,7 +208,7 @@ export default function Footer() {
 							{solutions.map((solution) => (
 								<li key={solution.label}>
 									{isProductionComingSoonLink(solution.href) ? (
-										<span className="flex min-h-10 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-gray-400">
+										<span className="flex min-h-10 w-full flex-col items-start justify-center gap-0.5 py-1 text-[9px] text-gray-400">
 											<span className="min-w-0">{solution.label}</span>{comingSoonBadge}
 										</span>
 									) : (
