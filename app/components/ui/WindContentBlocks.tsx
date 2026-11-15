@@ -55,7 +55,7 @@ export function WindFeatureCard({
       points={points}
       label={ui.windSolution}
       icon={renderWindIcon(contentAccentText[accent])}
-      cardClassName="group h-full border-t border-slate-300 py-6 transition-colors hover:border-sky-600"
+      cardClassName="group h-full rounded-3xl border border-sky-200 bg-gradient-to-br from-[#e0f2fe] via-[#f0f9ff] to-[#ecfeff] p-6 shadow-sm transition-colors hover:border-sky-400"
       featureClassName={contentAccentText[accent]}
       titleClassName="tracking-[0.05em] text-slate-900"
       pointIconClassName="bg-sky-50 text-sky-700"
@@ -76,7 +76,7 @@ export function WindBenefitCard({
     <ContentBenefitCard
       title={title}
       description={description}
-      cardClassName={`rounded-2xl border-l-4 ${contentBenefitBorders[accent]} bg-[#eaf1f8] p-5`}
+      cardClassName={`rounded-2xl border-l-4 ${contentBenefitBorders[accent]} bg-gradient-to-br from-[#e6f4fa] via-[#eff9f7] to-[#f0fdfa] p-5`}
       iconClassName="bg-sky-100 text-sky-700"
       titleClassName="tracking-[0.04em] text-slate-900"
     />
@@ -96,7 +96,7 @@ export function WindInfoPanel({
     <ContentInfoPanel
       title={title}
       content={content}
-      themeClassName="bg-transparent text-slate-900"
+      themeClassName="rounded-2xl border border-cyan-200 bg-gradient-to-br from-[#e0f7fa] via-[#f0f9ff] to-[#ecfeff] p-5 text-slate-900"
       checkBackgroundClassName={contentCheckBackgrounds[accent]}
       titleClassName="tracking-[0.04em]"
     />
@@ -108,7 +108,7 @@ export function WindCapacityTable({ rows }: { rows: { label: string; value: stri
   const ui = t.ui
 
   return (
-    <div className="overflow-x-auto border-y border-slate-300 bg-transparent [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-sky-300 [&::-webkit-scrollbar-thumb:hover]:bg-sky-400">
+    <div className="overflow-x-auto rounded-2xl border border-sky-200 bg-gradient-to-br from-[#f0f9ff] via-[#e6f7fb] to-[#f0fdfa] [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-sky-300 [&::-webkit-scrollbar-thumb:hover]:bg-sky-400">
       <div className="min-w-[680px]">
         <div className="grid border-b border-slate-200 bg-[#f7f7f1] text-[11px] font-bold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-[1fr_1.1fr_2fr]">
           <div className="px-4 py-3">{ui.capacityBand}</div>
@@ -132,7 +132,7 @@ export function WindComparisonTable({ rows }: { rows: { system: string; detail: 
   const ui = t.ui
 
   return (
-    <div className="overflow-x-auto border-y border-slate-300 bg-transparent [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-sky-300 [&::-webkit-scrollbar-thumb:hover]:bg-sky-400">
+    <div className="overflow-x-auto rounded-2xl border border-cyan-200 bg-gradient-to-br from-[#ecfeff] via-[#f0f9ff] to-[#e6f4fa] [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-sky-300 [&::-webkit-scrollbar-thumb:hover]:bg-sky-400">
       <div className="min-w-[780px]">
         <div className="grid border-b border-slate-200 bg-[#f7f7f1] text-[11px] font-bold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-[1.2fr_2.3fr_1.8fr]">
           <div className="px-4 py-3">{ui.systemType}</div>

@@ -211,18 +211,18 @@ export function ProjectEvidenceSection() {
             {testimonials.map((testimonial, index) => (
               <article
                 key={`${activeIndex}-${index}`}
-                className={`flex min-h-64 flex-col justify-between rounded-[1.5rem] border border-[#cbd5cc] bg-white p-6 opacity-100 blur-none backdrop-blur-none shadow-[0_20px_50px_-40px_rgba(16,43,40,0.35)] sm:p-8 ${index === 1 ? 'hidden md:flex' : ''} ${index === 2 ? 'hidden lg:flex' : ''}`}
+                className={`flex min-h-64 flex-col justify-between rounded-[1.5rem] border border-[#cbd5cc] bg-white p-6 shadow-[0_20px_50px_-40px_rgba(16,43,40,0.35)] sm:p-8 ${index === 1 ? 'hidden md:flex' : ''} ${index === 2 ? 'hidden lg:flex' : ''}`}
               >
-                <div>
+                <div className="blur-md">
                   <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c46a18]">{content.placeholderLabel}</p>
-                  <blockquote className="mt-5 text-lg font-semibold leading-8 text-slate-950 opacity-100 blur-none sm:text-xl">
+                  <blockquote className="mt-5 text-lg font-semibold leading-8 text-slate-950 sm:text-xl">
                     “{testimonial.quote}”
                   </blockquote>
                 </div>
-                <div className="mt-8 border-t border-slate-100 pt-5">
-                  <p className="font-bold text-slate-950 opacity-100 blur-none">{testimonial.customer}</p>
-                  <p className="mt-1 text-sm text-slate-700 opacity-100 blur-none">{testimonial.location}</p>
-                  <p className="mt-3 text-sm font-medium text-emerald-900 opacity-100 blur-none">{testimonial.system}</p>
+                <div className="mt-8 border-t border-slate-100 pt-5 blur-md">
+                  <p className="font-bold text-slate-950">{testimonial.customer}</p>
+                  <p className="mt-1 text-sm text-slate-700">{testimonial.location}</p>
+                  <p className="mt-3 text-sm font-medium text-emerald-900">{testimonial.system}</p>
                 </div>
               </article>
             ))}

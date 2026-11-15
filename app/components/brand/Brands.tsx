@@ -107,7 +107,7 @@ export default function Brands() {
                   {brand.prices.map((price) => (
                     <span
                       key={price}
-                      className="w-full max-w-[14rem] rounded-full border px-2 py-1 text-center text-[9px] font-bold leading-4 sm:text-[10px]"
+                      className="w-full max-w-[14rem] rounded-full border px-2 py-1 text-center text-[12px] font-bold leading-4 sm:text-[12px]"
                       style={{
                         backgroundColor: `hsl(${brand.hue} 76% 92%)`,
                         borderColor: `hsl(${brand.hue} 64% 76%)`,
@@ -126,7 +126,7 @@ export default function Brands() {
                       backgroundColor: `hsl(${brand.hue} 78% 94%)`,
                     }}
                   >
-                    <span className="text-[9px] font-black uppercase tracking-[0.12em] text-slate-600">
+                    <span className="text-[12px] font-black uppercase tracking-[0.12em] text-slate-600">
                       {section.maxListedLabel}
                     </span>
                     <span className="text-lg font-black tabular-nums text-slate-950 sm:text-xl">
