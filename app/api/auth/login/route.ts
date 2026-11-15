@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { withApiLogging } from '@/lib/apiLogging'
 import { authJson, readAuthJson } from '@/lib/auth/http'
 import { getDatabase, type AuthUserDocument } from '@/lib/auth/database'
 import { authErrorCodes, isAuthErrorCode } from '@/lib/auth/errorCodes'
@@ -20,7 +21,7 @@ const loginSchema = z.object({
     .max(128, authErrorCodes.passwordTooLong),
 })
 
-export async function POST(request: Request) {
+async function postLogin(request: Request) {
   const body = await readAuthJson(request)
   if ('error' in body) return body.error
 
@@ -54,3 +55,5 @@ export async function POST(request: Request) {
     return authJson({ error: authErrorCodes.loginUnavailable }, 503)
   }
 }
+
+export const POST = withApiLogging(postLogin)

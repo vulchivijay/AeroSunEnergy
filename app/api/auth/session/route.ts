@@ -1,9 +1,10 @@
 import { authJson } from '@/lib/auth/http'
+import { withApiLogging } from '@/lib/apiLogging'
 import { getSessionToken, getSessionUser } from '@/lib/auth/session'
 
 export const runtime = 'nodejs'
 
-export async function GET() {
+async function getSession() {
   const token = await getSessionToken()
   if (!token) return authJson({ user: null })
 
@@ -15,3 +16,5 @@ export async function GET() {
     return authJson({ error: 'Session lookup is temporarily unavailable.' }, 503)
   }
 }
+
+export const GET = withApiLogging(getSession)

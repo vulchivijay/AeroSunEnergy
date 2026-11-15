@@ -1,10 +1,11 @@
 import { authJson } from '@/lib/auth/http'
+import { withApiLogging } from '@/lib/apiLogging'
 import { getDatabase } from '@/lib/auth/database'
 import { clearSessionCookie, getSessionToken, hashSessionToken } from '@/lib/auth/session'
 
 export const runtime = 'nodejs'
 
-export async function POST() {
+async function postLogout() {
   const token = await getSessionToken()
   if (!token) return authJson({ success: true })
 
@@ -20,3 +21,5 @@ export async function POST() {
     return response
   }
 }
+
+export const POST = withApiLogging(postLogout)
