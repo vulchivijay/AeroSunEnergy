@@ -44,75 +44,75 @@ export default function AboutPage() {
   const systems = aboutSection.systemCards.map((item, index) => ({
     ...item,
     tone: [
-      'border-[#d4dcef] bg-gradient-to-br from-[#f1f3fc] to-[#e0e8f6] shadow-[0_16px_38px_-24px_rgba(48,57,95,0.3)]',
-      'border-[#eadbb7] bg-gradient-to-br from-[#fff8e9] to-[#f3e6c6] shadow-[0_16px_38px_-24px_rgba(91,70,30,0.28)]',
-      'border-[#c7e0dc] bg-gradient-to-br from-[#edf8f7] to-[#d6ebe7] shadow-[0_16px_38px_-24px_rgba(16,68,61,0.3)]',
-    ][index] ?? 'border-[#d4d7e3] bg-gradient-to-br from-[#f4f3f8] to-[#e6e5ed] shadow-sm',
+      'border-teal-100 bg-[#e8f0ea] shadow-[0_16px_38px_-24px_rgba(15,76,70,0.18)]',
+      'border-amber-100 bg-[#fff4dd] shadow-[0_16px_38px_-24px_rgba(146,64,14,0.18)]',
+      'border-slate-200 bg-[#e8eef3] shadow-[0_16px_38px_-24px_rgba(30,58,80,0.18)]',
+    ][index] ?? 'border-slate-200 bg-slate-100 shadow-sm',
     Icon: systemIcons[index] ?? Zap,
   }))
   return (
-    <main className="overflow-hidden bg-[#f5f6ef] text-slate-900  ">
-      <section id="story" className="relative isolate overflow-hidden bg-[linear-gradient(135deg,#172554_0%,#4338ca_48%,#0369a1_100%)] text-white">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_8%,rgba(129,140,248,0.3),transparent_38%),radial-gradient(ellipse_at_5%_100%,rgba(56,189,248,0.2),transparent_35%)]" />
-        <div className="absolute -right-36 top-20 -z-10 h-[34rem] w-[34rem] rounded-full border border-white/[0.08] sm:right-[-8rem]">
-          <div className="absolute inset-10 rounded-full border border-white/[0.08]" />
-          <div className="absolute inset-20 rounded-full border border-white/[0.08]" />
-          <div className="absolute inset-32 rounded-full border border-white/[0.08]" />
+    <main className="overflow-hidden bg-[#f7f7f2] text-[#112c2a]">
+      <section id="story" className="relative isolate overflow-hidden bg-[#e8f0ea] text-[#112c2a]">
+        <div className="pointer-events-none absolute inset-0 -z-10" />
+        <div className="absolute -right-36 top-20 -z-10 h-[34rem] w-[34rem] rounded-full border border-teal-900/[0.08] sm:right-[-8rem]">
+          <div className="absolute inset-10 rounded-full border border-teal-900/[0.08]" />
+          <div className="absolute inset-20 rounded-full border border-teal-900/[0.08]" />
+          <div className="absolute inset-32 rounded-full border border-teal-900/[0.08]" />
         </div>
 
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:px-10 lg:py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20 lg:px-10 lg:py-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-white/[0.06] px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-emerald-100">
-              <span className="h-1.5 w-1.5 rounded-full bg-lime-300" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-teal-800/15 bg-white/70 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-teal-800">
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
               {pageStrings.badge}
             </div>
-            <h1 className="mt-7 text-5xl font-black uppercase leading-[0.92] tracking-[0.075em] text-white sm:text-7xl lg:text-8xl">
+            <h1 className="mt-7 text-5xl font-black uppercase leading-[0.92] tracking-[0.075em] text-[#112c2a] sm:text-7xl lg:text-8xl">
               {pageStrings.companyTitleA}
-              <span className="mt-2 block text-emerald-300">{pageStrings.companyTitleB}</span>
+              <span className="mt-2 block text-teal-700">{pageStrings.companyTitleB}</span>
             </h1>
-            <p className="mt-5 text-md font-bold uppercase tracking-[0.3em] text-emerald-100/65">
+            <p className="mt-5 text-md font-bold uppercase tracking-[0.3em] text-slate-600">
               {pageStrings.legalLabel}
             </p>
-            <p className="mt-6 max-w-xl text-xl font-medium leading-8 text-white/85 sm:text-2xl">
+            <p className="mt-6 max-w-xl text-xl font-medium leading-8 text-slate-700 sm:text-2xl">
               {pageStrings.pitch.split(' • ').map((part, index) => (
                 <span key={part}>
-                  {index > 0 && <span className="text-lime-300"> &middot; </span>}
+                  {index > 0 && <span className="text-amber-600"> &middot; </span>}
                   {part}
                 </span>
               ))}
             </p>
-            <div className="mt-8 border-l-2 border-lime-300 pl-5">
-              <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-lime-200">{pageStrings.promiseLabel}</p>
-              <p className="mt-2 text-xl font-semibold italic text-white sm:text-2xl">&ldquo;{pageStrings.promiseText}&rdquo;</p>
+            <div className="mt-8 border-l-2 border-teal-600 pl-5">
+              <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-teal-800">{pageStrings.promiseLabel}</p>
+              <p className="mt-2 text-xl font-semibold italic text-[#112c2a] sm:text-2xl">&ldquo;{pageStrings.promiseText}&rdquo;</p>
             </div>
-            <p className="mt-8 max-w-2xl text-sm leading-7 text-emerald-50/85 sm:text-lg sm:leading-8">
+            <p className="mt-8 max-w-2xl text-sm leading-7 text-slate-600 sm:text-lg sm:leading-8">
               {pageStrings.intro}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#capabilities" className="rounded-full bg-lime-300 px-5 py-3 text-md font-bold text-emerald-950 transition hover:bg-lime-200">
+              <a href="#capabilities" className="rounded-xl bg-teal-800 px-5 py-3 text-md font-bold text-white shadow-lg shadow-teal-950/10 transition hover:-translate-y-0.5 hover:bg-teal-900 hover:shadow-xl">
                 {pageStrings.explore}
               </a>
-              <a href="#leadership" className="rounded-full border border-white/20 px-5 py-3 text-md font-bold text-white transition hover:bg-white/10">
+              <a href="#leadership" className="rounded-xl border border-teal-900/20 px-5 py-3 text-md font-bold text-teal-900 transition hover:-translate-y-0.5 hover:bg-white/60">
                 {pageStrings.leadership}
               </a>
-              <Link href="/about/company-profile" className="rounded-full border border-white/20 px-5 py-3 text-md font-bold text-white transition hover:bg-white/10">
+              <Link href="/about/company-profile" className="rounded-xl border border-teal-900/20 px-5 py-3 text-md font-bold text-teal-900 transition hover:-translate-y-0.5 hover:bg-white/60">
                 {pageStrings.companyProfile}
               </Link>
-              <Link href="/about/product-catalogue" className="rounded-full border border-white/20 px-5 py-3 text-md font-bold text-white transition hover:bg-white/10">
+              <Link href="/about/product-catalogue" className="rounded-xl border border-teal-900/20 px-5 py-3 text-md font-bold text-teal-900 transition hover:-translate-y-0.5 hover:bg-white/60">
                 {pageStrings.productCatalogue}
               </Link>
             </div>
           </motion.div>
 
           <div className="relative mx-auto w-full max-w-md lg:ml-auto">
-            <div className="absolute -inset-5 rounded-[2.5rem] bg-emerald-400/15 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.07] p-3 shadow-2xl shadow-black/30 backdrop-blur-sm">
-              <div className="relative h-[26rem] overflow-hidden rounded-[1.5rem] bg-[linear-gradient(155deg,#31594b_0%,#14372f_55%,#24463a_100%)] sm:h-[32rem]">
+            <div className="absolute -inset-5 rounded-[2.5rem] bg-teal-700/10 blur-3xl" />
+            <div className="relative overflow-hidden rounded-[1.5rem] border border-white/80 bg-white/80 p-2 shadow-[0_24px_70px_-35px_rgba(15,55,50,0.28)]">
+              <div className="relative h-[26rem] overflow-hidden rounded-[1.15rem] bg-[#0d2d2b] sm:h-[32rem]">
                 <OptimizedImage
                   src="/images/founder-aerosunenergy.webp"
                   alt={content.founderImageAlt}
@@ -120,9 +120,9 @@ export default function AboutPage() {
                   sizes="(min-width: 1024px) 38vw, 90vw"
                   className="object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0b1c17]/95 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/10 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
-                  <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-lime-200">{content.founderRole}</p>
+                  <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-amber-300">{content.founderRole}</p>
                   <h2 className="mt-2 text-2xl font-black tracking-tight text-white sm:text-3xl">{content.founderName}</h2>
                   <p className="mt-2 max-w-sm text-sm leading-7 text-white/85">
                     {content.founderImageBio}
@@ -133,72 +133,72 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="border-t border-white/10">
+        <div className="border-t border-teal-900/15">
           <div className="mx-auto grid max-w-7xl gap-4 px-5 py-5 sm:grid-cols-3 sm:px-8 lg:px-10">
             {companyStatsData.map((stat) => (
               <div key={stat.label} className="flex items-center justify-between gap-4 sm:justify-start sm:gap-5">
-                <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-100/55">{stat.label}</span>
-                <span className="text-md font-semibold text-white">{stat.value}</span>
+                <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-teal-800/70">{stat.label}</span>
+                <span className="text-md font-semibold text-[#112c2a]">{stat.value}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[linear-gradient(135deg,#eef2ff_0%,#dbeafe_52%,#f5f3ff_100%)]">
-        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
-          <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
-            <p className="text-[12px] font-black uppercase tracking-[0.24em] text-emerald-700 ">{pageStrings.storyBadge}</p>
-            <h2 className="mt-4 max-w-md text-3xl font-black leading-tight tracking-[0.055em] text-slate-950  sm:text-4xl">
+      <section className="bg-[#f8f6ef]">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:px-10">
+          <div className="grid gap-5 border-b border-[#cbd6cc] pb-7 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-x-8 lg:gap-x-12 lg:pb-9">
+            <h2 className="mt-0 max-w-4xl border-l-[3px] border-teal-700 pl-5 text-4xl font-black leading-[1.05] tracking-[-0.04em] text-[#112c2a] sm:text-5xl lg:text-6xl">
               {pageStrings.storyHeading}
             </h2>
-            <div className="mt-6 h-1 w-16 rounded-full bg-lime-500" />
+            <p className="mb-1 inline-flex w-fit items-center gap-2 rounded-full border border-teal-900/10 bg-[#e7efe8] px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] text-teal-800 before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-['']">{pageStrings.storyBadge}</p>
+            <div className="h-px w-full bg-gradient-to-r from-teal-800/30 via-amber-500/30 to-transparent sm:col-span-2" />
           </div>
-          <div className="space-y-5 text-sm leading-8 text-slate-700  sm:text-lg">
-            <p>
+          <div className="grid gap-7 pt-8 text-sm leading-7 text-slate-600 sm:grid-cols-2 sm:text-base sm:leading-8 lg:grid-cols-3 lg:gap-10">
+            <p className="border-l-2 border-[#dce9df] pl-5">
               {content.founderBioParagraph1.map((segment, index) => {
                 const text = index === 0 || index === 2
                 return text ? (
-                  <strong key={segment} className={index === 0 ? 'font-bold text-slate-950 ' : 'font-bold text-emerald-800 '}>
+                  <strong key={segment} className={index === 0 ? 'font-bold text-[#112c2a]' : 'font-bold text-teal-800'}>
                     {segment}
                   </strong>
                 ) : segment
               })}
             </p>
-            <p>
+            <p className="border-l-2 border-[#dce9df] pl-5">
               {content.founderBioParagraph2.map((segment, index) => index === 1 ? (
-                <strong key={segment} className="font-bold text-emerald-800 ">{segment}</strong>
+                <strong key={segment} className="font-bold text-teal-800">{segment}</strong>
               ) : segment)}
             </p>
-            <p>
+            <p className="border-l-2 border-[#dce9df] pl-5">
               {content.founderBioParagraph3}
             </p>
           </div>
         </div>
       </section>
 
-      <section id="compliance" className="border-y border-slate-200 bg-[linear-gradient(135deg,#fff7ed_0%,#fef3c7_50%,#fff1f2_100%)]">
-        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
-          <div className="overflow-hidden rounded-[2rem] border border-emerald-900/10 bg-[#f7faf6] shadow-[0_28px_70px_-46px_rgba(20,55,47,0.45)]  ">
-            <div className="relative overflow-hidden bg-[linear-gradient(115deg,#14372f_0%,#1d5140_58%,#285d43_100%)] px-5 py-7 text-white sm:px-8 sm:py-9">
+      <section id="compliance" className="border-y border-teal-100 bg-[#edf4f2]">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:px-10">
+          <div className="overflow-hidden rounded-[2.5rem] border border-teal-900/10 bg-white/90 shadow-[0_32px_80px_-48px_rgba(15,118,110,0.35)]">
+            <div className="relative overflow-hidden bg-[#123b38] px-5 py-7 text-white sm:px-8 sm:py-9">
               <div className="absolute -right-12 -top-24 h-64 w-64 rounded-full border border-white/10" aria-hidden="true" />
               <div className="absolute -right-2 -top-14 h-44 w-44 rounded-full border border-white/10" aria-hidden="true" />
               <div className="relative flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
                 <div className="max-w-2xl">
-                  <p className="inline-flex items-center gap-2 rounded-full border border-lime-200/25 bg-white/[0.08] px-3 py-1.5 text-[12px] font-black uppercase tracking-[0.2em] text-lime-200">
-                    <span className="h-1.5 w-1.5 rounded-full bg-lime-300" />
+                  <p className="inline-flex items-center gap-2 rounded-full border border-amber-200/30 bg-white/[0.08] px-3 py-1.5 text-[12px] font-black uppercase tracking-[0.2em] text-amber-200">
+                    <span className="h-1.5 w-1.5 rounded-full bg-amber-300" />
                     {pageStrings.governanceBadge}
                   </p>
                   <h2 className="mt-4 text-3xl font-black tracking-[0.055em] sm:text-4xl">
                     {pageStrings.governanceHeading}
                   </h2>
-                  <p className="mt-2 text-md leading-6 text-emerald-50/85">
+                  <p className="mt-2 text-md leading-6 text-indigo-50/90">
                     {pageStrings.governanceDescription}
                   </p>
                 </div>
                 <div className="flex w-fit items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/20 px-4 py-3 backdrop-blur-sm">
-                  <span className="text-3xl font-black leading-none text-lime-200">{approvalRowsData.length}</span>
-                  <span className="max-w-20 text-[12px] font-bold uppercase leading-4 tracking-[0.16em] text-emerald-50">{content.companyRecordsLabel}</span>
+                  <span className="text-3xl font-black leading-none text-amber-200">{approvalRowsData.length}</span>
+                  <span className="max-w-20 text-[12px] font-bold uppercase leading-4 tracking-[0.16em] text-indigo-50">{content.companyRecordsLabel}</span>
                 </div>
               </div>
             </div>
@@ -207,14 +207,14 @@ export default function AboutPage() {
                 const label = row.label
                 const status = row.status
                 return (
-                  <article key={label} className="group flex min-h-24 items-center gap-3 rounded-2xl border border-slate-200/90 bg-white p-4 shadow-[0_8px_24px_-20px_rgba(15,23,42,0.45)] transition duration-200 hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-[0_16px_30px_-22px_rgba(16,87,58,0.45)]    sm:gap-4 sm:p-5">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 font-mono text-md font-black text-emerald-800 ring-1 ring-emerald-700/10 transition-colors group-hover:bg-emerald-100    ">
+                  <article key={label} className="group flex min-h-24 items-center gap-3 rounded-2xl border border-indigo-100 bg-white p-4 shadow-[0_8px_24px_-20px_rgba(15,23,42,0.35)] transition duration-200 hover:-translate-y-0.5 hover:border-violet-300 hover:shadow-[0_16px_30px_-22px_rgba(49,46,129,0.2)] sm:gap-4 sm:p-5">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-indigo-50 font-mono text-md font-black text-indigo-800 ring-1 ring-indigo-700/10 transition-colors group-hover:bg-indigo-100">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <div className="min-w-0 flex-1">
                       <h3 className="text-md font-bold leading-6 text-slate-900 ">{label}</h3>
-                      <span className="mt-2 inline-flex max-w-full items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[12px] font-bold uppercase leading-4 tracking-[0.1em] text-emerald-900   ">
-                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600 " />
+                      <span className="mt-2 inline-flex max-w-full items-center gap-1.5 rounded-full border border-violet-200 bg-violet-50 px-2.5 py-1 text-[12px] font-bold uppercase leading-4 tracking-[0.1em] text-violet-900">
+                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-violet-600" />
                         {status}
                       </span>
                     </div>
@@ -226,37 +226,37 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="leadership" className="bg-[linear-gradient(135deg,#fdf2f8_0%,#fae8ff_52%,#f5f3ff_100%)]">
-        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
-          <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
-            <p className="text-[12px] font-black uppercase tracking-[0.24em] text-emerald-700 ">{pageStrings.leadershipBadge}</p>
-            <h2 className="mt-3 text-3xl font-black tracking-[0.055em] text-slate-950  sm:text-4xl">{pageStrings.leadershipHeading}</h2>
-            <p className="mt-4 text-sm leading-7 text-slate-700 ">
+      <section id="leadership" className="bg-[#f8f7f1]">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:px-10">
+          <div className="grid gap-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-x-8 lg:gap-x-12">
+            <p className="order-1 inline-flex w-fit items-center gap-2 rounded-full border border-teal-900/10 bg-[#e7efe8] px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] text-teal-800 before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] sm:order-2 sm:mb-1 sm:justify-self-end">{pageStrings.leadershipBadge}</p>
+            <h2 className="order-2 mt-0 max-w-4xl border-l-[3px] border-teal-700 pl-5 text-4xl font-black leading-[1.05] tracking-[-0.04em] text-[#112c2a] sm:order-1 sm:text-5xl lg:text-6xl">{pageStrings.leadershipHeading}</h2>
+            <p className="mt-0 border-b border-[#cbd6cc] pb-6 text-sm leading-7 text-slate-600 sm:col-span-2 sm:text-base sm:leading-8">
               {pageStrings.leadershipIntro}
             </p>
-            <div className="mt-8 space-y-3">
+            <div className="mt-0 grid gap-px overflow-hidden rounded-[1.75rem] border border-slate-200 bg-slate-200 shadow-[0_24px_60px_-40px_rgba(15,55,50,0.2)] sm:col-span-2 sm:grid-cols-2 lg:grid-cols-3">
               {founderProfilesData.map((profile) => (
-                <article key={profile.name} className="rounded-2xl border border-slate-200 bg-white p-4  ">
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-900 text-lg font-black text-lime-300">{profile.initials}</span>
+                <article key={profile.name} className="flex flex-col items-start gap-5 bg-white px-6 py-7 first:bg-[#dce9df] sm:px-8 sm:py-9 lg:px-7 xl:px-9">
+                  <div className="flex flex-col items-start gap-4">
+                    <span className="text-3xl font-black text-[#112c2a]">{profile.initials}</span>
                     <div>
-                      <h3 className="text-lg font-bold text-slate-950 ">{profile.name}</h3>
-                      <p className="mt-0.5 text-[12px] font-bold uppercase tracking-[0.15em] text-emerald-700 ">{profile.role}</p>
+                      <h3 className="text-xl font-bold text-[#112c2a] sm:text-2xl">{profile.name}</h3>
+                      <p className="mt-2 text-[12px] font-bold uppercase tracking-[0.15em] text-teal-700">{profile.role}</p>
                     </div>
                   </div>
-                  <p className="mt-3 text-sm leading-7 text-slate-700 ">{profile.description}</p>
+                  <p className="text-sm leading-7 text-slate-600">{profile.description}</p>
                 </article>
               ))}
             </div>
           </div>
 
-          <div>
+          <div className="mt-16 border-t border-[#cbd6cc] pt-10">
             <div className="grid gap-3 sm:grid-cols-2">
               {coreValuesData.map((value, index) => (
-                <article key={value.title} className="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-950/5   ">
+                <article key={value.title} className="group rounded-xl border border-white/90 bg-white/85 p-5 shadow-sm transition hover:-translate-y-1 hover:border-teal-200 hover:shadow-lg hover:shadow-teal-950/5">
                   <div className="flex items-center justify-between gap-3">
                     <h3 className="text-md font-extrabold text-slate-950 ">{value.title}</h3>
-                    <span className="font-mono text-[12px] font-bold text-emerald-700/50 ">0{index + 1}</span>
+                    <span className="font-mono text-[12px] font-bold text-teal-700/60">0{index + 1}</span>
                   </div>
                   <p className="mt-3 text-sm leading-7 text-slate-700 ">{value.description}</p>
                 </article>
@@ -266,60 +266,60 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[linear-gradient(125deg,#111827_0%,#312e81_52%,#1e3a8a_100%)] text-white">
-        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
+      <section className="bg-[#0d2b29] text-white">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-[12px] font-black uppercase tracking-[0.24em] text-lime-300">{content.whySectionBadge}</p>
+              <p className="text-[12px] font-black uppercase tracking-[0.24em] text-amber-300">{content.whySectionBadge}</p>
               <h2 className="mt-3 max-w-2xl text-3xl font-black tracking-[0.055em] text-white sm:text-4xl">{content.whyHeading}</h2>
             </div>
-            <p className="max-w-lg text-sm leading-7 text-emerald-50/85">{content.whyDescription}</p>
+            <p className="max-w-lg text-sm leading-7 text-indigo-100/90">{content.whyDescription}</p>
           </div>
-          <div className="mt-8 grid grid-cols-2 gap-3 xl:grid-cols-4">
+          <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
             {content.companyStrengthsStats.map((stat) => (
               <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/[0.05] p-5">
-                <p className="text-3xl font-black tracking-tight text-lime-300">{stat.value}</p>
-                <p className="mt-2 text-[12px] font-bold uppercase tracking-[0.17em] text-emerald-50/60">{stat.label}</p>
+                <p className="text-3xl font-black tracking-tight text-amber-300">{stat.value}</p>
+                <p className="mt-2 text-[12px] font-bold uppercase tracking-[0.17em] text-indigo-100/65">{stat.label}</p>
               </div>
             ))}
           </div>
           <div className="mt-5 grid gap-5 lg:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 sm:p-6">
+            <div className="rounded-2xl border border-indigo-100/15 bg-indigo-950/25 p-5 sm:p-6">
               <h3 className="text-lg font-extrabold text-white">{content.strengthsHeading}</h3>
               <ul className="mt-4 space-y-3">
                 {content.companyStrengths.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm leading-7 text-emerald-50/90"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-lime-300" />{item}</li>
+                  <li key={item} className="flex gap-3 text-sm leading-7 text-indigo-50/90"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300" />{item}</li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 sm:p-6">
+            <div className="rounded-2xl border border-indigo-100/15 bg-indigo-950/25 p-5 sm:p-6">
               <h3 className="text-lg font-extrabold text-white">{content.customerReasonsHeading}</h3>
               <ul className="mt-4 space-y-3">
                 {content.whyChooseUs.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm leading-7 text-emerald-50/90"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-300" />{item}</li>
+                  <li key={item} className="flex gap-3 text-sm leading-7 text-indigo-50/90"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-300" />{item}</li>
                 ))}
               </ul>
             </div>
           </div>
           <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
             {content.reasons.map((reason) => (
-              <article key={reason.title} className="border-l border-lime-300/70 pl-4">
-                <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-lime-200">{reason.title}</p>
-                <p className="mt-2 text-sm leading-7 text-emerald-50/85">{reason.text}</p>
+              <article key={reason.title} className="border-l border-amber-300/70 pl-4">
+                <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-amber-200">{reason.title}</p>
+                <p className="mt-2 text-sm leading-7 text-indigo-100/90">{reason.text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="roadmap" className="bg-[linear-gradient(135deg,#ecfeff_0%,#e0f2fe_50%,#eef2ff_100%)]">
-        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
+      <section id="roadmap" className="bg-[#f6f1e8]">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
           <div className="mb-8 max-w-3xl">
             <p className="text-[12px] font-black uppercase tracking-[0.24em] text-amber-700 ">{content.roadmapBadge}</p>
             <h2 className="mt-3 text-3xl font-black tracking-[0.055em] text-slate-950  sm:text-4xl">{content.roadmapHeading}</h2>
           </div>
-          <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
-            <article className="rounded-3xl border border-amber-200 bg-[#fffdf6] p-5   sm:p-7">
+          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+            <article className="rounded-[2rem] border border-amber-200 bg-[#fffdf6] p-6 shadow-[0_24px_60px_-40px_rgba(120,53,15,0.25)] sm:p-8">
               <div className="flex items-center justify-between gap-4">
                 <h3 className="text-lg font-extrabold text-slate-950 ">{content.immediatePrioritiesHeading}</h3>
                 <span className="rounded-full bg-amber-100 px-3 py-1 text-[12px] font-bold uppercase tracking-[0.16em] text-amber-900  ">{content.currentStatusLabel}</span>
@@ -333,7 +333,7 @@ export default function AboutPage() {
                 ))}
               </ol>
             </article>
-            <article className="rounded-3xl border border-indigo-200 bg-[#f8f8ff] p-5   sm:p-7">
+            <article className="rounded-[2rem] border border-indigo-200 bg-[#f8f8ff] p-6 shadow-[0_24px_60px_-40px_rgba(49,46,129,0.2)] sm:p-8">
               <h3 className="text-lg font-extrabold text-slate-950 ">{content.growthRoadmapHeading}</h3>
               <div className="mt-6 space-y-5">
                 {content.futureGoals.map((group, index) => (
@@ -354,24 +354,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="capabilities" className="border-y border-slate-200 bg-[linear-gradient(135deg,#eff6ff_0%,#dbeafe_52%,#e0f2fe_100%)]">
-        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
+      <section id="capabilities" className="border-y border-slate-200 bg-[#e9f0f2]">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
           <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-[12px] font-black uppercase tracking-[0.24em] text-emerald-700 ">{content.servicesBadge}</p>
+              <p className="text-[12px] font-black uppercase tracking-[0.24em] text-violet-700">{content.servicesBadge}</p>
               <h2 className="mt-3 max-w-3xl text-3xl font-black tracking-[0.055em] text-slate-950  sm:text-4xl">{content.servicesHeading}</h2>
             </div>
             <span className="text-md font-semibold text-slate-600 ">{content.servicesAudience}</span>
           </div>
-          <div className="grid gap-4 lg:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {content.serviceGroups.map((group, index) => (
-              <article key={group.title} className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-[#f8f9f5] p-5 transition hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-950/5    sm:p-6">
+              <article key={group.title} className="group relative overflow-hidden rounded-2xl border border-sky-100 bg-white/85 p-5 shadow-sm transition hover:-translate-y-1 hover:border-violet-300 hover:shadow-xl hover:shadow-violet-950/10 sm:p-6">
                 <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${a.serviceAccents[index]}`} />
-                <p className="font-mono text-md font-bold text-emerald-700/60 ">0{index + 1} / {content.solutionsLabel.toUpperCase()}</p>
+                <p className="font-mono text-md font-bold text-violet-700/65">0{index + 1} / {content.solutionsLabel.toUpperCase()}</p>
                 <h3 className="mt-4 text-xl font-black text-slate-950 ">{group.title}</h3>
                 <ul className="mt-5 space-y-3">
                   {group.items.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm leading-7 text-slate-700 "><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600 " />{item}</li>
+                    <li key={item} className="flex items-start gap-3 text-sm leading-7 text-slate-700"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500" />{item}</li>
                   ))}
                 </ul>
               </article>
@@ -380,61 +380,61 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[linear-gradient(125deg,#312e81_0%,#4338ca_50%,#1e1b4b_100%)] text-white">
-        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
+      <section className="bg-[#f3f2ec] text-[#172b2b]">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
           <div className="mb-8 max-w-3xl">
-            <p className="text-[12px] font-black uppercase tracking-[0.24em] text-lime-300">{content.commitmentsBadge}</p>
-            <h2 className="mt-3 text-3xl font-black tracking-[0.055em] text-white sm:text-4xl">{content.commitmentsHeading}</h2>
+            <p className="text-[12px] font-black uppercase tracking-[0.24em] text-teal-700">{content.commitmentsBadge}</p>
+            <h2 className="mt-3 text-3xl font-black tracking-[0.055em] text-[#172b2b] sm:text-4xl">{content.commitmentsHeading}</h2>
           </div>
           <div className="grid gap-5 lg:grid-cols-2">
             {[
-              { title: content.promiseGroupTitle, points: content.promisePoints, accent: 'text-lime-300' },
-              { title: content.missionGroupTitle, points: content.missionPoints, accent: 'text-sky-300' },
+              { title: content.promiseGroupTitle, points: content.promisePoints, accent: 'text-amber-700' },
+              { title: content.missionGroupTitle, points: content.missionPoints, accent: 'text-teal-700' },
             ].map((group) => (
-              <article key={group.title} className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 sm:p-7">
+              <article key={group.title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
                 <h3 className={`text-md font-black uppercase tracking-[0.2em] ${group.accent}`}>{group.title}</h3>
                 <ul className="mt-5 space-y-4">
                   {group.points.map((point, index) => (
-                    <li key={point} className="flex gap-4 border-b border-white/10 pb-4 last:border-0 last:pb-0">
+                    <li key={point} className="flex gap-4 border-b border-slate-200 pb-4 last:border-0 last:pb-0">
                       <span className={`font-mono text-md font-bold ${group.accent}`}>0{index + 1}</span>
-                      <span className="text-sm leading-7 text-emerald-50/90">{point}</span>
+                      <span className="text-sm leading-7 text-slate-700">{point}</span>
                     </li>
                   ))}
                 </ul>
               </article>
             ))}
           </div>
-          <div className="mt-8 flex flex-col gap-5 rounded-2xl border border-lime-200/20 bg-lime-200/[0.06] p-5 sm:flex-row sm:items-center sm:justify-between sm:p-7">
+          <div className="mt-8 flex flex-col gap-5 rounded-2xl border border-amber-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-7">
             <div>
-              <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-lime-200">{content.contactCalloutTitle}</p>
-              <p className="mt-2 text-lg font-bold text-white">{content.contactCalloutDescription}</p>
+              <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-amber-800">{content.contactCalloutTitle}</p>
+              <p className="mt-2 text-lg font-bold text-[#172b2b]">{content.contactCalloutDescription}</p>
             </div>
-            <a href="/contact" className="inline-flex items-center justify-center rounded-full bg-lime-300 px-5 py-3 text-md font-bold text-emerald-950 transition hover:bg-lime-200">
+            <a href="/contact" className="inline-flex items-center justify-center rounded-xl bg-teal-800 px-5 py-3 text-md font-bold text-white transition hover:bg-teal-900">
               {content.contactAction} <span aria-hidden="true" className="ml-2">&rarr;</span>
             </a>
           </div>
         </div>
       </section>
 
-      <section className="bg-[linear-gradient(135deg,#fff7ed_0%,#fce7f3_48%,#fff7ed_100%)]">
-        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
+      <section className="bg-[#eef2f6]">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
           <div className="mb-8 max-w-3xl">
             <p className="text-[12px] font-black uppercase tracking-[0.24em] text-sky-700 ">{content.workBadge}</p>
             <h2 className="mt-3 text-3xl font-black tracking-[0.055em] text-slate-950  sm:text-4xl">{content.workHeading}</h2>
           </div>
           <div className="grid gap-5 lg:grid-cols-2">
-            <article className="rounded-3xl bg-[#eaf4ef] p-5  sm:p-7">
-              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800 ">{content.qualityHeading}</p>
-              <div className="mt-5 divide-y divide-emerald-900/10 ">
+            <article className="rounded-[2rem] border border-indigo-100 bg-gradient-to-br from-[#f8fafc] to-[#e0e7ff] p-6 shadow-sm sm:p-8">
+              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-indigo-800">{content.qualityHeading}</p>
+              <div className="mt-5 divide-y divide-indigo-900/10">
                 {content.qualityPoints.map((point, index) => (
                   <div key={point} className="flex gap-4 py-3 first:pt-0 last:pb-0">
-                    <span className="font-mono text-md font-bold text-emerald-800/60 ">0{index + 1}</span>
+                    <span className="font-mono text-md font-bold text-indigo-800/65">0{index + 1}</span>
                     <p className="text-sm leading-7 text-slate-700 ">{point}</p>
                   </div>
                 ))}
               </div>
             </article>
-            <article className="rounded-3xl bg-[#f1f0e9] p-5  sm:p-7">
+            <article className="rounded-[2rem] border border-amber-100 bg-gradient-to-br from-[#fffbeb] to-[#fff1e6] p-6 shadow-sm sm:p-8">
               <p className="text-[12px] font-black uppercase tracking-[0.2em] text-amber-800 ">{content.ethicsHeading}</p>
               <div className="mt-5 divide-y divide-slate-900/10 ">
                 {content.ethicsPoints.map((point, index) => (
@@ -448,32 +448,32 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <section id="about" className="relative isolate overflow-hidden bg-[linear-gradient(135deg,#f5f3ff_0%,#e0f2fe_50%,#fdf2f8_100%)] px-4 py-14 text-[#102b28] sm:px-6 sm:py-20 lg:px-10 lg:py-24">
-        <div className="pointer-events-none absolute -right-28 top-0 h-[30rem] w-[30rem] rounded-full border border-emerald-800/10" aria-hidden="true" />
-        <div className="pointer-events-none absolute -right-20 top-8 h-[25rem] w-[25rem] rounded-full border border-emerald-800/[0.06]" aria-hidden="true" />
+      <section id="about" className="relative isolate overflow-hidden bg-[#e6efe9] px-4 py-20 text-[#112c2a] sm:px-6 sm:py-28 lg:px-10 lg:py-32">
+        <div className="pointer-events-none absolute -right-28 top-0 h-[30rem] w-[30rem] rounded-full border border-teal-800/10" aria-hidden="true" />
+        <div className="pointer-events-none absolute -right-20 top-8 h-[25rem] w-[25rem] rounded-full border border-amber-700/[0.08]" aria-hidden="true" />
 
         <div className="relative mx-auto max-w-7xl">
           <motion.div
-            className="grid items-center gap-10 xl:grid-cols-[1.05fr_0.95fr] xl:gap-14"
+            className="grid items-center gap-12 xl:grid-cols-[1.15fr_0.85fr] xl:gap-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
           >
             <div className="min-w-0">
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#087a61]">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-teal-800">
                 {aboutSection.eyebrow} {aboutSection.brandFirst} {aboutSection.brandSecond}
               </p>
 
-              <h2 className="mt-6 max-w-3xl text-4xl font-black leading-[1.04] tracking-[-0.045em] text-[#102b28] sm:text-5xl lg:text-7xl">
+              <h2 className="mt-6 max-w-3xl text-4xl font-black leading-[1.04] tracking-[-0.045em] text-[#112c2a] sm:text-5xl lg:text-7xl">
                 {aboutSection.title}
               </h2>
               <div className="mt-8 flex flex-wrap gap-2.5">
                 {aboutSection.tags.map((tag, index) => {
                   const Icon = systemIcons[index] ?? Zap
                   return (
-                    <span key={tag} className="inline-flex items-center gap-2 rounded-full border border-[#d3dfd5] bg-white/80 px-3.5 py-2 text-xs font-semibold text-[#173b34]">
-                      <Icon className="h-3.5 w-3.5 text-[#087a61]" aria-hidden="true" />
+                    <span key={tag} className="inline-flex items-center gap-2 rounded-full border border-teal-900/15 bg-white/80 px-3.5 py-2 text-xs font-semibold text-[#112c2a]">
+                    <Icon className="h-3.5 w-3.5 text-teal-700" aria-hidden="true" />
                       {tag}
                     </span>
                   )
@@ -482,53 +482,53 @@ export default function AboutPage() {
 
               <div className="mt-8 flex flex-wrap gap-2 text-xs font-medium text-slate-600">
                 {aboutSection.audience.map((item) => (
-                  <span key={item} className="rounded-full border border-[#d3dfd5] bg-white/60 px-3 py-2">
+                  <span key={item} className="rounded-full border border-slate-300 bg-white/65 px-3 py-2">
                     {item}
                   </span>
                 ))}
               </div>
             </div>
 
-            <article className="relative overflow-hidden rounded-[2rem] bg-[#102d2a] p-7 text-white shadow-[0_30px_75px_-35px_rgba(16,45,42,0.4)] sm:p-10 lg:p-12">
-              <span className="block font-serif text-5xl font-bold leading-none text-[#f5a640]" aria-hidden="true">“</span>
+            <article className="relative overflow-hidden rounded-[1.5rem] bg-[#0d2b29] p-7 text-white shadow-[0_30px_75px_-35px_rgba(13,43,41,0.35)] sm:p-10 lg:p-12">
+              <span className="block font-serif text-5xl font-bold leading-none text-amber-400" aria-hidden="true">“</span>
               <blockquote className="mt-5 text-2xl font-semibold leading-snug tracking-tight sm:text-3xl">
                 {a.quote}
               </blockquote>
               <div className="mt-8 border-t border-white/20 pt-5">
-                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#f5a640]">
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-300">
                   {aboutSection.visionHeading}
                 </p>
               </div>
             </article>
           </motion.div>
 
-          <div className="mt-12 grid gap-4 border-y border-[#cbd8ce] py-6 sm:mt-16 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-[#cbd8ce] sm:py-7">
+          <div className="mt-12 grid gap-4 border-y border-teal-900/15 py-6 sm:mt-16 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-teal-900/15 sm:py-7">
             {stats.map((item, index) => (
               <div key={item.title} className="flex items-start gap-4 px-2 py-2 sm:px-6 sm:first:pl-2">
-                <span className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#087a61]">
+                <span className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-teal-700">
                   0{index + 1} ·
                 </span>
                 <div>
-                  <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#087a61]">{item.title}</p>
-                  <p className="mt-2 text-base font-semibold leading-6 text-[#102b28] sm:text-lg">{item.value}</p>
+                  <p className="text-sm font-bold uppercase tracking-[0.2em] text-teal-800">{item.title}</p>
+                  <p className="mt-2 text-base font-semibold leading-6 text-[#112c2a] sm:text-lg">{item.value}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 grid gap-5 xl:grid-cols-2 xl:gap-7">
-            <article className="rounded-[1.75rem] border border-[#eadfc7] bg-gradient-to-br from-[#fffaf0] to-[#f3e8d5] p-6 shadow-[0_20px_50px_-32px_rgba(92,68,31,0.3)] sm:p-7">
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#087a61]">{aboutSection.solutionsEyebrow}</p>
-              <h3 className="mt-3 text-2xl font-extrabold leading-tight tracking-[-0.03em] text-[#102b28]">{aboutSection.solutionsTitle}</h3>
+          <div className="mt-14 grid gap-6 xl:grid-cols-2 xl:gap-8">
+            <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+              <p className="text-sm font-bold uppercase tracking-[0.24em] text-teal-700">{aboutSection.solutionsEyebrow}</p>
+              <h3 className="mt-3 text-2xl font-extrabold leading-tight tracking-[-0.03em] text-[#112c2a]">{aboutSection.solutionsTitle}</h3>
               <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">{aboutSection.solutionsDescription}</p>
             </article>
 
-            <article className="rounded-[1.75rem] border border-[#c9e0e4] bg-gradient-to-br from-[#edf7f8] to-[#d7eaed] p-6 shadow-[0_20px_50px_-32px_rgba(32,77,85,0.32)] sm:p-7">
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#087a61]">{aboutSection.designEyebrow}</p>
+            <article className="rounded-[1.5rem] border border-teal-100 bg-[#f7fbf8] p-6 shadow-sm sm:p-8">
+              <p className="text-sm font-bold uppercase tracking-[0.24em] text-teal-700">{aboutSection.designEyebrow}</p>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
                 {aboutSection.designPoints.map((point) => (
-                  <li key={point} className="flex items-start gap-2.5 text-sm font-medium leading-6 text-[#29443c]">
-                    <Check className="mt-1 h-4 w-4 shrink-0 text-[#087a61]" strokeWidth={2.5} aria-hidden="true" />
+                  <li key={point} className="flex items-start gap-2.5 text-sm font-medium leading-6 text-slate-700">
+                  <Check className="mt-1 h-4 w-4 shrink-0 text-teal-700" strokeWidth={2.5} aria-hidden="true" />
                     <span>{point.replace(/^[•]\s*/, '')}</span>
                   </li>
                 ))}
@@ -536,10 +536,10 @@ export default function AboutPage() {
             </article>
           </div>
 
-          <div className="mt-5 grid gap-5 xl:grid-cols-[0.8fr_1.2fr]">
-            <article className="rounded-[1.75rem] border border-[#d6dced] bg-gradient-to-br from-[#f1f3fc] to-[#e0e7f3] p-6 shadow-[0_20px_50px_-32px_rgba(48,57,95,0.32)] sm:p-8">
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#087a61]">{aboutSection.technologyEyebrow}</p>
-              <h3 className="mt-3 text-2xl font-extrabold leading-tight tracking-[-0.03em] text-[#102b28]">{aboutSection.technologyTitle}</h3>
+          <div className="mt-6 grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
+            <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+              <p className="text-sm font-bold uppercase tracking-[0.24em] text-slate-500">{aboutSection.technologyEyebrow}</p>
+              <h3 className="mt-3 text-2xl font-extrabold leading-tight tracking-[-0.03em] text-[#112c2a]">{aboutSection.technologyTitle}</h3>
               <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">{aboutSection.technologyDescription}</p>
             </article>
 
@@ -549,20 +549,20 @@ export default function AboutPage() {
                   <span className="absolute -right-3 -top-3 opacity-10" aria-hidden="true">
                     <Icon className="h-20 w-20" strokeWidth={1} />
                   </span>
-                  <p className="relative text-sm font-extrabold uppercase tracking-[0.2em] text-[#087a61]">{label}</p>
-                  <p className="relative mt-8 text-sm font-semibold leading-6 text-[#243c35]">{value}</p>
+                  <p className="relative text-sm font-extrabold uppercase tracking-[0.2em] text-teal-800">{label}</p>
+                  <p className="relative mt-8 text-sm font-semibold leading-6 text-slate-700">{value}</p>
                   <span className="absolute bottom-4 right-4 font-mono text-sm font-semibold text-slate-500">0{index + 1}</span>
                 </article>
               ))}
             </div>
           </div>
 
-          <div className="mt-5 flex flex-col gap-5 rounded-[1.75rem] border border-white/10 bg-gradient-to-r from-[#263753] to-[#45345f] p-6 text-white shadow-[0_28px_70px_-34px_rgba(38,42,75,0.62)] sm:p-8 lg:flex-row lg:items-end lg:justify-between">
+          <div className="mt-5 flex flex-col gap-5 rounded-[1.5rem] border border-teal-900/10 bg-[#123b38] p-6 text-white shadow-[0_24px_60px_-40px_rgba(13,43,41,0.35)] sm:p-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              <p className="text-sm font-extrabold uppercase tracking-[0.24em] text-[#f6bd67]">{aboutSection.futureHeading}</p>
-              <p className="mt-3 text-sm leading-7 text-emerald-50/90 sm:text-lg sm:leading-8">{aboutSection.futureDescription}</p>
+              <p className="text-sm font-extrabold uppercase tracking-[0.24em] text-amber-300">{aboutSection.futureHeading}</p>
+              <p className="mt-3 text-sm leading-7 text-teal-50/90 sm:text-lg sm:leading-8">{aboutSection.futureDescription}</p>
             </div>
-            <p className="max-w-sm border-l-2 border-[#f6bd67] pl-4 text-sm font-bold leading-6 text-white lg:text-right">
+            <p className="max-w-sm border-l-2 border-amber-400 pl-4 text-sm font-bold leading-6 text-white lg:text-right">
               {aboutSection.slogan}
             </p>
           </div>
