@@ -26,7 +26,7 @@ const renderHybridIcon = (colorClass: string) => {
 export function HybridSectionEyebrow({ children }: { children: ReactNode }) {
   return (
     <ContentSectionEyebrow
-      className="py-1"
+      className="py-2"
       dotClassName="bg-violet-600"
       labelClassName="text-violet-700"
     >

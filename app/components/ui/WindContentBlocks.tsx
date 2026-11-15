@@ -26,7 +26,7 @@ const renderWindIcon = (colorClass: string) => {
 export function WindSectionEyebrow({ children }: { children: ReactNode }) {
   return (
     <ContentSectionEyebrow
-      className="py-1"
+      className="py-2"
       dotClassName="bg-sky-600"
       labelClassName="text-sky-700"
     >

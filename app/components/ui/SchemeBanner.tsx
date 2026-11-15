@@ -58,7 +58,7 @@ export default function SchemeBanner() {
               ₹
             </span>
             <div className="min-w-0">
-              <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-indigo-900 sm:text-xs">
+              <div className="inline-flex items-center gap-2 rounded-full border border-indigo-900/10 bg-white/70 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-indigo-900 sm:text-xs">
                 <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-amber-500" />
                 {banner.badge}
               </div>

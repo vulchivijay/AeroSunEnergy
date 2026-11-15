@@ -25,7 +25,7 @@ const renderSolarIcon = (colorClass: string) => {
 export function SectionEyebrow({ children }: { children: ReactNode }) {
   return (
     <ContentSectionEyebrow
-      className="py-1"
+      className="py-2"
       dotClassName="bg-emerald-600"
       labelClassName="text-emerald-700"
     >

@@ -554,7 +554,7 @@ export default function ResearchDevelopmentPage() {
           <aside className="relative mx-auto w-full max-w-md lg:ml-auto">
             <div className="absolute -inset-5 rounded-[2.5rem] bg-emerald-400/15 blur-3xl" />
             <div className="relative rounded-[2rem] border border-white/15 bg-white/[0.07] p-6 shadow-2xl shadow-black/30 backdrop-blur-sm sm:p-8">
-              <p className="text-xs font-bold uppercase tracking-[0.24em] text-lime-200">
+              <p className="inline-flex w-fit rounded-full border border-lime-200/20 bg-white/[0.06] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-lime-200">
                 {copy.text[6]}
               </p>
               <p className="mt-4 text-2xl font-black leading-tight text-white sm:text-3xl">
@@ -662,7 +662,7 @@ export default function ResearchDevelopmentPage() {
 
       <section className="bg-[#1d3d43] text-white">
         <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16 lg:px-10">
-          <p className="text-xs font-black uppercase tracking-[0.24em] text-lime-300">
+          <p className="inline-flex w-fit rounded-full border border-lime-300/20 bg-white/[0.06] px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-lime-300">
             {copy.text[1]}
           </p>
           <p className="mt-3 max-w-3xl text-2xl font-black leading-tight sm:text-3xl">

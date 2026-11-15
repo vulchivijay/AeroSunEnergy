@@ -84,7 +84,7 @@ export default async function DashboardPage() {
       <section className="mx-auto w-full max-w-7xl">
         <div className="flex flex-col justify-between gap-6 rounded-3xl border border-emerald-950/10 bg-white p-6 shadow-[0_28px_80px_-42px_rgba(4,47,30,0.35)] sm:flex-row sm:items-center sm:p-9">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-emerald-700">AeroSun Energy · Admin</p>
+            <p className="inline-flex w-fit items-center rounded-full border border-emerald-800/15 bg-emerald-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-emerald-700">AeroSun Energy · Admin</p>
             <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">Data dashboard</h1>
             <p className="mt-2 text-sm text-slate-600">Signed in as {user.name} ({user.email})</p>
           </div>

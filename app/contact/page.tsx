@@ -129,7 +129,7 @@ export default function Contact() {
               <div className="pointer-events-none absolute -bottom-36 -left-36 h-[28rem] w-[28rem] rounded-full border border-emerald-950/10" aria-hidden="true" />
               <div className="pointer-events-none absolute -bottom-20 -left-20 h-80 w-80 rounded-full border border-emerald-950/10" aria-hidden="true" />
               <div className="relative">
-                <p className="inline-flex items-center gap-3 text-md font-black uppercase tracking-[0.2em] text-emerald-950">
+                <p className="inline-flex items-center gap-3 rounded-full border border-emerald-950/15 bg-white/35 px-4 py-2 text-md font-black uppercase tracking-[0.2em] text-emerald-950">
                   <span className="h-2 w-2 rounded-full bg-emerald-800" />
                   {navbar.startProject}
                 </p>

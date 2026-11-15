@@ -189,7 +189,7 @@ export default function SaveEarthPage() {
             className="overflow-hidden rounded-[1.75rem] border border-emerald-950/10 bg-white shadow-[0_18px_50px_-38px_rgba(15,23,42,0.4)]"
           >
             <div className="border-b border-slate-100 px-5 py-5">
-              <p className="text-[12px] font-extrabold uppercase tracking-[0.22em] text-emerald-700">
+              <p className="inline-flex w-fit rounded-full border border-emerald-800/15 bg-emerald-50 px-3 py-1.5 text-[12px] font-extrabold uppercase tracking-[0.18em] text-emerald-700">
                 {content.navigateGuide}
               </p>
               <p className="mt-1 text-md font-semibold text-slate-900">{content.contentsTitle}</p>
@@ -222,7 +222,7 @@ export default function SaveEarthPage() {
           >
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-8 bg-lime-300" />
-              <p className="text-[12px] font-extrabold uppercase tracking-[0.24em] text-lime-200">
+              <p className="inline-flex w-fit rounded-full border border-lime-200/20 bg-white/[0.06] px-3 py-1.5 text-[12px] font-extrabold uppercase tracking-[0.2em] text-lime-200">
                 {content.documentaryLabel}
               </p>
             </div>
@@ -260,7 +260,7 @@ export default function SaveEarthPage() {
           <footer className="rounded-[2rem] border border-emerald-900/10 bg-white p-6 shadow-[0_20px_65px_-48px_rgba(15,23,42,0.42)] sm:p-9">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="text-[12px] font-extrabold uppercase tracking-[0.22em] text-emerald-700">
+                <p className="inline-flex w-fit rounded-full border border-emerald-800/15 bg-emerald-50 px-3 py-1.5 text-[12px] font-extrabold uppercase tracking-[0.18em] text-emerald-700">
                   {content.footerBadge}
                 </p>
                 <p className="mt-2 max-w-xl text-lg font-bold leading-7 text-slate-900">

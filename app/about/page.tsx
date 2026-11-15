@@ -270,7 +270,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-[12px] font-black uppercase tracking-[0.24em] text-amber-300">{content.whySectionBadge}</p>
+              <p className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-amber-200 before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-300 before:content-['']">{content.whySectionBadge}</p>
               <h2 className="mt-3 max-w-2xl text-3xl font-black tracking-[0.055em] text-white sm:text-4xl">{content.whyHeading}</h2>
             </div>
             <p className="max-w-lg text-sm leading-7 text-indigo-100/90">{content.whyDescription}</p>
@@ -315,7 +315,7 @@ export default function AboutPage() {
       <section id="roadmap" className="bg-[#f6f1e8]">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
           <div className="mb-8 max-w-3xl">
-            <p className="text-[12px] font-black uppercase tracking-[0.24em] text-amber-700 ">{content.roadmapBadge}</p>
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-700/15 bg-white/70 px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-amber-800 before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-['']">{content.roadmapBadge}</p>
             <h2 className="mt-3 text-3xl font-black tracking-[0.055em] text-slate-950  sm:text-4xl">{content.roadmapHeading}</h2>
           </div>
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
@@ -358,7 +358,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
           <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-[12px] font-black uppercase tracking-[0.24em] text-violet-700">{content.servicesBadge}</p>
+              <p className="inline-flex w-fit items-center gap-2 rounded-full border border-teal-900/10 bg-white/75 px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-teal-800 before:h-1.5 before:w-1.5 before:rounded-full before:bg-teal-600 before:content-['']">{content.servicesBadge}</p>
               <h2 className="mt-3 max-w-3xl text-3xl font-black tracking-[0.055em] text-slate-950  sm:text-4xl">{content.servicesHeading}</h2>
             </div>
             <span className="text-md font-semibold text-slate-600 ">{content.servicesAudience}</span>
@@ -383,7 +383,7 @@ export default function AboutPage() {
       <section className="bg-[#f3f2ec] text-[#172b2b]">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
           <div className="mb-8 max-w-3xl">
-            <p className="text-[12px] font-black uppercase tracking-[0.24em] text-teal-700">{content.commitmentsBadge}</p>
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-teal-900/10 bg-white/75 px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-teal-800 before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-['']">{content.commitmentsBadge}</p>
             <h2 className="mt-3 text-3xl font-black tracking-[0.055em] text-[#172b2b] sm:text-4xl">{content.commitmentsHeading}</h2>
           </div>
           <div className="grid gap-5 lg:grid-cols-2">
@@ -419,7 +419,7 @@ export default function AboutPage() {
       <section className="bg-[#eef2f6]">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
           <div className="mb-8 max-w-3xl">
-            <p className="text-[12px] font-black uppercase tracking-[0.24em] text-sky-700 ">{content.workBadge}</p>
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-sky-800/10 bg-white/75 px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-sky-800 before:h-1.5 before:w-1.5 before:rounded-full before:bg-sky-500 before:content-['']">{content.workBadge}</p>
             <h2 className="mt-3 text-3xl font-black tracking-[0.055em] text-slate-950  sm:text-4xl">{content.workHeading}</h2>
           </div>
           <div className="grid gap-5 lg:grid-cols-2">
@@ -461,7 +461,7 @@ export default function AboutPage() {
             transition={{ duration: 0.5, ease: 'easeOut' }}
           >
             <div className="min-w-0">
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-teal-800">
+              <p className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-teal-900/10 bg-white/75 px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] text-teal-800 before:h-1.5 before:w-1.5 before:shrink-0 before:rounded-full before:bg-amber-500 before:content-['']">
                 {aboutSection.eyebrow} {aboutSection.brandFirst} {aboutSection.brandSecond}
               </p>
 

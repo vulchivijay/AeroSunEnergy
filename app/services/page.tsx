@@ -55,7 +55,7 @@ export default function ServicesPage() {
 
           <div className="grid items-end gap-10 py-16 lg:grid-cols-[1.25fr_0.75fr] lg:py-20">
             <div className="max-w-4xl">
-              <p className="text-xs font-bold uppercase tracking-[0.28em] text-lime-300">{labels.portfolio}</p>
+              <p className="inline-flex w-fit rounded-full border border-lime-300/25 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-lime-300">{labels.portfolio}</p>
               <h1 className="mt-5 text-5xl font-black leading-[0.98] tracking-[-0.05em] text-white sm:text-6xl lg:text-8xl">
                 {labels.title}
               </h1>
@@ -65,7 +65,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="max-w-md rounded-[1.5rem] border border-white/15 bg-[#0b2119]/65 p-5 backdrop-blur-lg sm:p-6 lg:ml-auto">
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-lime-300">{labels.coreModel}</p>
+              <p className="inline-flex w-fit rounded-full border border-lime-300/25 bg-white/10 px-3 py-1.5 text-sm font-bold uppercase tracking-[0.2em] text-lime-300">{labels.coreModel}</p>
               <p className="mt-3 text-lg font-semibold leading-7 text-white sm:text-xl">{labels.coreModelSteps}</p>
               <div className="mt-5 flex items-center gap-2" aria-hidden="true">
                 <span className="h-1 w-12 rounded-full bg-lime-300" />
@@ -90,7 +90,7 @@ export default function ServicesPage() {
       <section id="service-divisions" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
         <div className="mb-9 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-3xl">
-            <p className="text-sm font-black uppercase tracking-[0.25em] text-emerald-800">{labels.serviceStructure}</p>
+            <p className="inline-flex w-fit rounded-full border border-emerald-800/15 bg-emerald-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-emerald-800">{labels.serviceStructure}</p>
             <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">{labels.serviceStructureTitle}</h2>
           </div>
           <p className="max-w-sm text-sm leading-6 text-slate-600">{labels.completeSolutionsDescription}</p>
@@ -130,7 +130,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
           <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
             <div>
-              <p className="text-sm font-black uppercase tracking-[0.25em] text-amber-800">{labels.commonCapabilities}</p>
+              <p className="inline-flex w-fit rounded-full border border-amber-800/15 bg-amber-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-amber-800">{labels.commonCapabilities}</p>
               <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">{labels.commonCapabilitiesTitle}</h2>
               <span className="mt-6 block h-1 w-16 rounded-full bg-gradient-to-r from-amber-500 to-emerald-600" aria-hidden="true" />
             </div>
@@ -157,7 +157,7 @@ export default function ServicesPage() {
       <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
         <div className="overflow-hidden rounded-[2rem] bg-[#123326] p-6 text-white shadow-[0_30px_75px_-42px_rgba(6,78,59,0.5)] sm:p-10 lg:p-12">
           <div className="mb-8 max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.25em] text-lime-300">{labels.deliveryModel}</p>
+            <p className="inline-flex w-fit rounded-full border border-lime-300/25 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-lime-300">{labels.deliveryModel}</p>
             <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">{labels.deliveryModelTitle}</h2>
           </div>
           <div className="grid gap-3 xl:grid-cols-2">
@@ -185,7 +185,7 @@ export default function ServicesPage() {
       <section className="mx-auto max-w-7xl px-5 pb-16 sm:px-8 sm:pb-20 lg:px-10">
         <div className="grid gap-6 lg:grid-cols-[1fr_0.92fr]">
           <article className="rounded-[1.8rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-            <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-800">{labels.roadmap}</p>
+            <p className="inline-flex w-fit rounded-full border border-sky-800/15 bg-sky-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-sky-800">{labels.roadmap}</p>
             <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950">{labels.roadmapTitle}</h2>
             <div className="relative mt-7 space-y-4 before:absolute before:bottom-7 before:left-[1.15rem] before:top-7 before:w-px before:bg-emerald-200">
               {page.labels.roadmapPhases.map((phase, index) => (
@@ -213,7 +213,7 @@ export default function ServicesPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#071b16] via-[#071b16]/50 to-transparent" />
             </div>
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-lime-300">{labels.finalRecommendation}</p>
+            <p className="inline-flex w-fit rounded-full border border-lime-300/25 bg-black/25 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-lime-300">{labels.finalRecommendation}</p>
             <h3 className="mt-3 max-w-lg text-3xl font-black tracking-tight sm:text-4xl">{labels.finalRecommendationTitle}</h3>
             <ul className="mt-5 space-y-2.5">
               {labels.recommendationItems.map((item) => (
@@ -231,7 +231,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
           <div className="mb-9 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-3xl">
-              <p className="text-sm font-black uppercase tracking-[0.25em] text-emerald-800">{labels.completeSolutions}</p>
+              <p className="inline-flex w-fit rounded-full border border-emerald-800/15 bg-emerald-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-emerald-800">{labels.completeSolutions}</p>
               <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">{labels.completeSolutionsTitle}</h2>
               <p className="mt-4 text-sm leading-7 text-slate-600">{labels.completeSolutionsDescription}</p>
             </div>
@@ -265,7 +265,7 @@ export default function ServicesPage() {
 
       <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
         <div className="mb-9 max-w-3xl">
-          <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-800">{labels.systemTypes}</p>
+          <p className="inline-flex w-fit rounded-full border border-sky-800/15 bg-sky-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-sky-800">{labels.systemTypes}</p>
           <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">{labels.systemTypesTitle}</h2>
           <p className="mt-4 text-sm leading-7 text-slate-600">{labels.systemTypesDescription}</p>
         </div>
