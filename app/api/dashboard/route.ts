@@ -180,14 +180,17 @@ async function getDashboard(request: Request): Promise<Response> {
     const collectionNames = await getExistingCollectionNames(database)
     const searchParams = new URL(request.url).searchParams
     if (searchParams.get('list') === 'collections') {
-      return jsonResponse({ collections: collectionNames, role: access.role }, 200)
+      return jsonResponse({
+        collections: collectionNames.filter((name) => name !== 'auth_sessions'),
+        role: access.role,
+      }, 200)
     }
 
     const collectionName = searchParams.get('collection')
     if (!collectionName || !collectionNameIsValid(collectionName)) {
       return jsonResponse({ error: 'invalid_collection' }, 400)
     }
-    if (!collectionNames.includes(collectionName)) {
+    if (collectionName === 'auth_sessions' || !collectionNames.includes(collectionName)) {
       return jsonResponse({ error: 'collection_not_found' }, 404)
     }
 
