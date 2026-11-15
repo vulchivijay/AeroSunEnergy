@@ -1,5 +1,6 @@
 import { useId, type InputHTMLAttributes } from 'react'
 import type { FieldPath, FieldValues, UseFormRegister } from 'react-hook-form'
+import { INDIAN_MOBILE_HTML_PATTERN, MAX_EMAIL_LENGTH } from '@/lib/validation/contact'
 
 type SharedFormFieldProps<TFieldValues extends FieldValues> = {
   label: string
@@ -37,6 +38,9 @@ export function SharedFormField<TFieldValues extends FieldValues>({
       <input
         id={inputId}
         type={type}
+        maxLength={type === 'email' ? MAX_EMAIL_LENGTH : type === 'tel' ? 13 : undefined}
+        inputMode={type === 'tel' ? 'tel' : undefined}
+        pattern={type === 'tel' ? INDIAN_MOBILE_HTML_PATTERN : undefined}
         {...(name ? register(name) : {})}
         placeholder={placeholder}
         aria-invalid={Boolean(error)}

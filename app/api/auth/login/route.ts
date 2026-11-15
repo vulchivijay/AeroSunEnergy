@@ -5,15 +5,12 @@ import { getDatabase, type AuthUserDocument } from '@/lib/auth/database'
 import { authErrorCodes, isAuthErrorCode } from '@/lib/auth/errorCodes'
 import { hashPassword, verifyPassword } from '@/lib/auth/password'
 import { createSession, setSessionCookie } from '@/lib/auth/session'
+import { createEmailAddressSchema } from '@/lib/validation/contact'
 
 export const runtime = 'nodejs'
 
 const loginSchema = z.object({
-  email: z
-    .string()
-    .trim()
-    .email(authErrorCodes.emailInvalid)
-    .max(254, authErrorCodes.emailInvalid)
+  email: createEmailAddressSchema(authErrorCodes.emailInvalid)
     .transform((email) => email.toLowerCase()),
   password: z
     .string()

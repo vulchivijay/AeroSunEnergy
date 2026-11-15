@@ -30,6 +30,7 @@ function TextField({
   placeholder,
   min,
   max,
+  maxLength,
   minLength,
   step,
   pattern,
@@ -43,6 +44,7 @@ function TextField({
   placeholder?: string;
   min?: number;
   max?: number;
+  maxLength?: number;
   minLength?: number;
   step?: number | "any";
   pattern?: string;
@@ -62,6 +64,7 @@ function TextField({
         placeholder={placeholder}
         min={min}
         max={max}
+        maxLength={maxLength}
         minLength={minLength}
         step={step}
         pattern={pattern}
@@ -443,7 +446,8 @@ export default function CustomerEnquiryPage() {
                 type="tel"
                 required
                 minLength={10}
-                pattern="[0-9+() -]{10,}"
+                maxLength={13}
+                pattern="(?:\+?91)?[6-9][0-9]{9}"
                 placeholder={page.mobileNumberPlaceholder}
               />
               <TextField
@@ -451,6 +455,7 @@ export default function CustomerEnquiryPage() {
                 name="customer_email"
                 type="email"
                 required
+                maxLength={254}
                 placeholder={page.emailPlaceholder}
               />
               <TextField

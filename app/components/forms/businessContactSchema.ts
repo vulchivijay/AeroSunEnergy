@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { createEmailAddressSchema, createIndianMobileSchema } from '@/lib/validation/contact'
 
 export type BusinessContactValidation = {
   customerName: string
@@ -11,11 +12,7 @@ export function createBusinessContactSchema(validation: BusinessContactValidatio
   return z.object({
     customerName: z.string().trim().min(2, validation.customerName),
     companyName: z.string().trim().optional().or(z.literal('')),
-    email: z.string().trim().email(validation.email),
-    phone: z
-      .string()
-      .trim()
-      .min(10, validation.phoneLength)
-      .regex(/^[0-9+()\-\s]+$/, validation.phoneFormat),
+    email: createEmailAddressSchema(validation.email),
+    phone: createIndianMobileSchema(validation.phoneFormat, validation.phoneLength),
   })
 }
