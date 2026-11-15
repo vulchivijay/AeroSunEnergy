@@ -5,6 +5,7 @@ import { Calculator, Landmark, Tag, type LucideIcon } from 'lucide-react'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { useLocale } from '@/lib/LocaleContext'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
+import { useToast } from '@/app/components/ui/ToastProvider'
 
 type InputMode = 'bill' | 'systemSize'
 
@@ -72,6 +73,7 @@ function PriceItem({
 
 export function SolarEstimation() {
   const { t } = useLocale()
+  const toast = useToast()
   const e = t.estimation
   const calculatorText = e.calculator
   const defaultValues = t.componentData.solarEstimation.defaultValues
@@ -92,8 +94,6 @@ export function SolarEstimation() {
   const [selectedPropertyIndex, setSelectedPropertyIndex] = useState(0)
   const [showLeadForm, setShowLeadForm] = useState(false)
   const [whatsAppFallbackUrl, setWhatsAppFallbackUrl] = useState<string | null>(null)
-  const [leadFormError, setLeadFormError] = useState('')
-  const [leadFormReference, setLeadFormReference] = useState('')
   const [leadFormPending, setLeadFormPending] = useState(false)
 
   const billAmount = clamp(Number(monthlyBillInput) || 500, 500, 50000)
@@ -149,12 +149,10 @@ export function SolarEstimation() {
     const twentyFiveYearSavings = calculation.annualSavings * SAVINGS_ESTIMATE_YEARS
 
     if (!whatsAppNumber) {
-      setLeadFormError(e.whatsAppUnavailable)
+      toast.error(e.whatsAppUnavailable)
       return
     }
 
-    setLeadFormError('')
-    setLeadFormReference('')
     setLeadFormPending(true)
 
     const message = [
@@ -187,7 +185,7 @@ export function SolarEstimation() {
         twentyFiveYearSavings,
         roofArea: calculation.roofArea,
       })
-      setLeadFormReference(referenceCode)
+      toast.success(`${t.formSubmission.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`)
       if (whatsAppWindow) {
         whatsAppWindow.opener = null
         whatsAppWindow.location.href = url
@@ -197,7 +195,7 @@ export function SolarEstimation() {
       }
     } catch {
       whatsAppWindow?.close()
-      setLeadFormError(t.formSubmission.error)
+      toast.error(t.formSubmission.error)
       setWhatsAppFallbackUrl(null)
     } finally {
       setLeadFormPending(false)
@@ -447,7 +445,6 @@ export function SolarEstimation() {
               onClick={() => {
                 setShowLeadForm(true)
                 setWhatsAppFallbackUrl(null)
-                setLeadFormError('')
               }}
               className="mt-5 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-2xl bg-emerald-500 px-5 py-4 text-base font-extrabold text-white shadow-[0_12px_24px_-14px_rgba(16,185,129,0.75)] transition hover:bg-emerald-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
             >
@@ -572,17 +569,6 @@ export function SolarEstimation() {
                 <a href={whatsAppFallbackUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
                   {e.openWhatsAppFallback}
                 </a>
-              </p>
-            )}
-            {leadFormError && (
-              <p className="mt-4 text-sm font-semibold text-rose-700" role="alert">
-                {leadFormError}
-              </p>
-            )}
-            {leadFormReference && (
-              <p className="mt-4 text-sm font-semibold text-emerald-800" role="status" aria-live="polite">
-                {t.formSubmission.success} {t.formSubmission.referenceLabel}:{' '}
-                <span className="font-mono">{leadFormReference}</span>
               </p>
             )}
             <div className="mt-4">

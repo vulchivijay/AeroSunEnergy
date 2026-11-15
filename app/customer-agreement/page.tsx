@@ -6,10 +6,11 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { submitMailtoForm } from '@/lib/submitMailto'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
-import { useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
 import { SharedFormField } from '@/app/components/forms/SharedFormField'
 import { createBusinessContactSchema } from '@/app/components/forms/businessContactSchema'
+import { getFirstFormErrorMessage } from '@/lib/formValidation'
+import { useToast } from '@/app/components/ui/ToastProvider'
 
 type AgreementFormValues = {
   customerName: string
@@ -34,6 +35,7 @@ type AgreementFormValues = {
 
 export default function CustomerAgreementPage() {
   const { t } = useLocale()
+  const toast = useToast()
   const content = t.customerAgreementPage
   const formCopy = content.form
   const defaultValues = formCopy.defaultValues
@@ -61,12 +63,11 @@ export default function CustomerAgreementPage() {
       message: formCopy.validation.acceptanceRequired,
     }),
   })
-  const [submitFeedback, setSubmitFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
   } = useForm<AgreementFormValues>({
     resolver: zodResolver(agreementSchema),
     defaultValues,
@@ -79,7 +80,7 @@ export default function CustomerAgreementPage() {
     try {
       referenceCode = await submitWebsiteForm('customer_agreement', data)
     } catch {
-      setSubmitFeedback({ type: 'error', message: t.formSubmission.error })
+      toast.error(t.formSubmission.error)
       return
     }
 
@@ -99,10 +100,7 @@ export default function CustomerAgreementPage() {
 
     submitMailtoForm({ to: content.contact.emailLabel, subject, body })
     reset(defaultValues)
-    setSubmitFeedback({
-      type: 'success',
-      message: `${formCopy.submission.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`,
-    })
+    toast.success(`${formCopy.submission.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`)
   }
 
   return (
@@ -242,7 +240,11 @@ export default function CustomerAgreementPage() {
 
       <section id="customer-agreement-form" className="scroll-mt-28 mx-auto max-w-7xl px-5 pb-14 sm:px-8 lg:px-10">
         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-          <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5 p-3 sm:p-5 lg:p-6">
+          <form
+            onSubmit={handleSubmit(onSubmit, (formErrors) => toast.error(getFirstFormErrorMessage(formErrors) ?? t.formSubmission.error))}
+            noValidate
+            className="space-y-5 p-3 sm:p-5 lg:p-6"
+          >
             <header className="overflow-hidden rounded-[26px] border border-indigo-200 bg-linear-to-r from-[#0c1f51] via-[#153c78] to-[#0d6685] p-4 text-white sm:p-5">
               <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                 <div className="flex items-center gap-4">
@@ -417,13 +419,6 @@ export default function CustomerAgreementPage() {
                     {isSubmitting ? t.formSubmission.saving : formCopy.submit}
                   </button>
 
-                  {submitFeedback ? (
-                    <p className={`text-md font-medium ${submitFeedback.type === 'success' ? 'text-emerald-300' : 'text-rose-300'}`}>
-                      {submitFeedback.message}
-                    </p>
-                  ) : isSubmitSuccessful && (
-                    <p className="text-md font-medium text-emerald-300">{formCopy.submission.success}</p>
-                  )}
                 </div>
               </aside>
             </div>

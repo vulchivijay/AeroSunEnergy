@@ -11,6 +11,7 @@ type AuthUser = {
   id: string
   name: string
   email: string
+  role: 'admin' | 'operator' | 'monitor'
 }
 
 export function hashSessionToken(token: string): string {
@@ -61,7 +62,14 @@ export async function getSessionUser(token: string): Promise<AuthUser | null> {
   if (!session) return null
 
   const user = await database.collection<AuthUserDocument>('auth_users').findOne({ _id: session.user_id })
-  return user ? { id: user._id.toHexString(), name: user.name, email: user.email } : null
+  if (!user || user.approved !== true) return null
+
+  return {
+    id: user._id.toHexString(),
+    name: user.name,
+    email: user.email,
+    role: user.role === 'admin' || user.role === 'operator' ? user.role : 'monitor',
+  }
 }
 
 export function sessionCookieName(): string {

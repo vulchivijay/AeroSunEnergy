@@ -2,28 +2,29 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { useToast } from '@/app/components/ui/ToastProvider'
 
 export default function LogoutButton() {
   const router = useRouter()
-  const [error, setError] = useState('')
+  const toast = useToast()
   const [pending, setPending] = useState(false)
 
   async function handleLogout() {
     setPending(true)
-    setError('')
 
     try {
       const response = await fetch('/api/auth/logout', { method: 'POST' })
       if (!response.ok) {
         const result = (await response.json()) as { error?: string }
-        setError(result.error ?? 'Unable to sign out. Please try again.')
+        toast.error(result.error ?? 'Unable to sign out. Please try again.')
         return
       }
 
+      toast.success('Signed out.')
       router.replace('/login')
       router.refresh()
     } catch {
-      setError('Unable to reach the server. Please try again.')
+      toast.error('Unable to reach the server. Please try again.')
     } finally {
       setPending(false)
     }
@@ -39,7 +40,6 @@ export default function LogoutButton() {
       >
         {pending ? 'Signing out...' : 'Sign out'}
       </button>
-      {error && <p className="mt-3 text-sm text-red-700" role="alert">{error}</p>}
     </div>
   )
 }

@@ -5,6 +5,8 @@ export interface AuthUserDocument extends Document {
   name: string
   email: string
   password_hash: string
+  role?: 'admin' | 'operator' | 'monitor'
+  approved?: boolean
   created_at: Date
 }
 

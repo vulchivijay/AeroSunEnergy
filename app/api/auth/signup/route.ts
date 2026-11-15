@@ -5,7 +5,6 @@ import { authJson, readAuthJson } from '@/lib/auth/http'
 import { getDatabase, type AuthUserDocument } from '@/lib/auth/database'
 import { authErrorCodes, isAuthErrorCode } from '@/lib/auth/errorCodes'
 import { hashPassword } from '@/lib/auth/password'
-import { createSession, setSessionCookie } from '@/lib/auth/session'
 
 export const runtime = 'nodejs'
 
@@ -57,23 +56,11 @@ async function postSignup(request: Request) {
       name: parsed.data.name,
       email: parsed.data.email,
       password_hash: passwordHash,
+      role: 'monitor',
+      approved: false,
       created_at: now,
     })
-    let token: string
-    try {
-      token = await createSession(userId)
-    } catch (error) {
-      try {
-        await users.deleteOne({ _id: userId })
-      } catch (cleanupError) {
-        console.error('Auth signup account cleanup failed.', cleanupError)
-      }
-      throw error
-    }
-
-    const response = authJson({ user: { name: parsed.data.name, email: parsed.data.email } }, 201)
-    setSessionCookie(response, token)
-    return response
+    return authJson({ pendingApproval: true }, 202)
   } catch (error) {
     if (isDuplicateEmailError(error)) {
       return authJson({ error: authErrorCodes.duplicateAccount }, 409)

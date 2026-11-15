@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useLocale } from '@/lib/LocaleContext'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
+import { useToast } from '@/app/components/ui/ToastProvider'
 
 type AuthFormProps = {
   mode: 'login' | 'signup'
@@ -20,9 +21,9 @@ export default function AuthForm({ mode }: AuthFormProps) {
   const isSignup = mode === 'signup'
   const router = useRouter()
   const { t } = useLocale()
+  const toast = useToast()
   const auth = t.auth
   const [pending, setPending] = useState(false)
-  const [error, setError] = useState('')
 
   useEffect(() => {
     document.title = isSignup ? auth.signupTitle : auth.loginTitle
@@ -31,13 +32,13 @@ export default function AuthForm({ mode }: AuthFormProps) {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     setPending(true)
-    setError('')
 
-    const formData = new FormData(event.currentTarget)
+    const formElement = event.currentTarget
+    const formData = new FormData(formElement)
     const payload = Object.fromEntries(formData.entries())
 
     if (isSignup && payload.password !== payload.confirmPassword) {
-      setError(auth.errors.passwordMismatch)
+      toast.error(auth.errors.passwordMismatch)
       setPending(false)
       return
     }
@@ -48,16 +49,23 @@ export default function AuthForm({ mode }: AuthFormProps) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       })
-      const result = (await response.json()) as { error?: string }
+      const result = (await response.json()) as { error?: string; pendingApproval?: boolean }
 
       if (!response.ok) {
-        setError(getErrorMessage(result.error, auth.errors))
+        toast.error(getErrorMessage(result.error, auth.errors))
         return
       }
 
+      if (isSignup && result.pendingApproval) {
+        formElement.reset()
+        toast.success(auth.signupPendingApproval)
+        return
+      }
+
+      toast.success(auth.loginSuccess)
       router.replace('/dashboard')
     } catch {
-      setError(auth.errors.networkError)
+      toast.error(auth.errors.networkError)
     } finally {
       setPending(false)
     }
@@ -139,12 +147,6 @@ export default function AuthForm({ mode }: AuthFormProps) {
           )}
 
           <FormDataNotice />
-
-          {error && (
-            <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800" role="alert">
-              {error}
-            </p>
-          )}
 
           <button
             className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-emerald-800 px-5 text-sm font-bold text-white transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-emerald-800 disabled:cursor-wait disabled:opacity-65"

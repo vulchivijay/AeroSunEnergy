@@ -10,6 +10,7 @@ export const authErrorCodes = {
   passwordMismatch: 'passwordMismatch',
   duplicateAccount: 'duplicateAccount',
   invalidCredentials: 'invalidCredentials',
+  accountPendingApproval: 'accountPendingApproval',
   signupUnavailable: 'signupUnavailable',
   loginUnavailable: 'loginUnavailable',
   invalidRequestContentType: 'invalidRequestContentType',
