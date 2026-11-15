@@ -3,20 +3,13 @@ import { z } from 'zod'
 import { ObjectId } from 'mongodb'
 import { withApiLogging } from '@/lib/apiLogging'
 import { getDatabase } from '@/lib/auth/database'
+import { createIndianMobileSchema } from '@/lib/validation/contact'
 
 export const runtime = 'nodejs'
 
 const MAX_REQUEST_LENGTH = 8_192
 
-const indianMobileSchema = z
-  .string()
-  .trim()
-  .max(24)
-  .refine((value) => /^(?:\+?91)?[6-9]\d{9}$/.test(value.replace(/[\s()-]/g, '')))
-  .transform((value) => {
-    const digits = value.replace(/[\s()-]/g, '').replace(/^\+/, '')
-    return digits.length === 12 ? digits.slice(2) : digits
-  })
+const indianMobileSchema = createIndianMobileSchema('Enter a valid Indian mobile number.')
 
 const referralSchema = z
   .object({

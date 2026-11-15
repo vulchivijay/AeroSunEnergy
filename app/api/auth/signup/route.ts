@@ -5,17 +5,14 @@ import { authJson, readAuthJson } from '@/lib/auth/http'
 import { getDatabase, type AuthUserDocument } from '@/lib/auth/database'
 import { authErrorCodes, isAuthErrorCode } from '@/lib/auth/errorCodes'
 import { hashPassword } from '@/lib/auth/password'
+import { createEmailAddressSchema } from '@/lib/validation/contact'
 
 export const runtime = 'nodejs'
 
 const signupSchema = z
   .object({
     name: z.string().trim().min(2, authErrorCodes.nameRequired).max(100, authErrorCodes.nameTooLong),
-    email: z
-      .string()
-      .trim()
-      .email(authErrorCodes.emailInvalid)
-      .max(254, authErrorCodes.emailInvalid)
+    email: createEmailAddressSchema(authErrorCodes.emailInvalid)
       .transform((email) => email.toLowerCase()),
     password: z
       .string()

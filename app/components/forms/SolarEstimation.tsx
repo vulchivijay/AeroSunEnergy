@@ -508,8 +508,8 @@ export function SolarEstimation() {
                   type="tel"
                   inputMode="tel"
                   autoComplete="tel"
-                  pattern="([+]91[ -]?)?[6-9][0-9]{4}[ -]?[0-9]{5}"
-                  maxLength={15}
+                  pattern="(?:\+?91)?[6-9][0-9]{9}"
+                  maxLength={13}
                   required
                   placeholder={e.leadMobilePlaceholder}
                   className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"

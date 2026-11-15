@@ -7529,8 +7529,8 @@
       "customerNameRequired": "Customer name is required.",
       "emailInvalid": "Please enter a valid email address.",
       "riskyEmail": "This email address appears risky or invalid. Please use a different email address.",
-      "phoneMinLength": "Phone number must be at least 10 digits.",
-      "phoneInvalid": "Phone number can contain only digits, spaces, +, (, ), and -.",
+      "phoneMinLength": "Use a 10-digit Indian mobile number, optionally with +91.",
+      "phoneInvalid": "Enter a valid Indian mobile number starting with 6-9, optionally with +91.",
       "projectTypeRequired": "Please select a project type.",
       "siteLocationRequired": "Please enter the site location.",
       "systemCapacityRequired": "Please enter the system capacity.",
@@ -9000,8 +9000,8 @@
     "customerEnquiry": {
       "validation": {
         "customerName": "Customer name is required.",
-        "phoneMin": "Phone number must be at least 10 digits.",
-        "phoneFormat": "Phone number can contain only digits, spaces, +, (, ), and -.",
+        "phoneMin": "Use a 10-digit Indian mobile number, optionally with +91.",
+        "phoneFormat": "Enter a valid Indian mobile number starting with 6-9, optionally with +91.",
         "email": "Please enter a valid email address.",
         "riskyEmail": "This email address appears risky or invalid. Please use a different email address.",
         "address": "Please enter the address or site location.",
@@ -9127,8 +9127,8 @@
         "customerName": "Customer name is required.",
         "email": "Please enter a valid email address.",
         "riskyEmail": "This email address appears risky or invalid. Please use a different email address.",
-        "phoneMin": "Phone number must be at least 10 digits.",
-        "phoneFormat": "Phone number can contain only digits, spaces, +, (, ), and -.",
+        "phoneMin": "Use a 10-digit Indian mobile number, optionally with +91.",
+        "phoneFormat": "Enter a valid Indian mobile number starting with 6-9, optionally with +91.",
         "propertyType": "Please select the property type.",
         "siteAddress": "Please enter the site address.",
         "city": "Please enter the city.",
@@ -10783,8 +10783,8 @@
       "validation": {
         "customerNameRequired": "Customer name is required.",
         "invalidEmail": "Please enter a valid email address.",
-        "phoneMinimum": "Phone number must be at least 10 digits.",
-        "phonePattern": "Phone number can contain only digits, spaces, +, (, ), and -.",
+        "phoneMinimum": "Use a 10-digit Indian mobile number, optionally with +91.",
+        "phonePattern": "Enter a valid Indian mobile number starting with 6-9, optionally with +91.",
         "acceptanceRequired": "Please confirm that you accept the agreement and payment terms."
       },
       "submission": {
@@ -11030,8 +11030,8 @@
       "validation": {
         "customerName": "Customer name is required.",
         "email": "Please enter a valid email address.",
-        "phoneLength": "Phone number must be at least 10 digits.",
-        "phoneFormat": "Phone number can contain only digits, spaces, +, (, ), and -.",
+        "phoneLength": "Use a 10-digit Indian mobile number, optionally with +91.",
+        "phoneFormat": "Enter a valid Indian mobile number starting with 6-9, optionally with +91.",
         "projectName": "Please enter the project name.",
         "siteLocation": "Please enter the site location.",
         "installationDate": "Please enter the installation date.",
@@ -11171,8 +11171,8 @@
       "validation": {
         "customerName": "Customer name is required.",
         "email": "Please enter a valid email address.",
-        "phoneLength": "Phone number must be at least 10 digits.",
-        "phoneFormat": "Phone number can contain only digits, spaces, +, (, ), and -.",
+        "phoneLength": "Use a 10-digit Indian mobile number, optionally with +91.",
+        "phoneFormat": "Enter a valid Indian mobile number starting with 6-9, optionally with +91.",
         "invoiceNumber": "Please enter the invoice number.",
         "projectName": "Please enter the project name.",
         "invoiceDate": "Please enter the invoice date.",
@@ -11336,8 +11336,8 @@
       "validation": {
         "customerName": "Customer name is required.",
         "email": "Please enter a valid email address.",
-        "phoneLength": "Phone number must be at least 10 digits.",
-        "phoneFormat": "Phone number can contain only digits, spaces, +, (, ), and -.",
+        "phoneLength": "Use a 10-digit Indian mobile number, optionally with +91.",
+        "phoneFormat": "Enter a valid Indian mobile number starting with 6-9, optionally with +91.",
         "poNumber": "Please enter the purchase order number.",
         "projectTitle": "Please enter the project title.",
         "supplierName": "Please enter the supplier name.",
@@ -11446,8 +11446,8 @@
       "validation": {
         "customerName": "Customer name is required.",
         "email": "Please enter a valid email address.",
-        "phoneLength": "Phone number must be at least 10 digits.",
-        "phoneFormat": "Phone number can contain only digits, spaces, +, (, ), and -.",
+        "phoneLength": "Use a 10-digit Indian mobile number, optionally with +91.",
+        "phoneFormat": "Enter a valid Indian mobile number starting with 6-9, optionally with +91.",
         "projectName": "Please enter the project name.",
         "productLine": "Please select the product or service line.",
         "warrantyStart": "Please enter the warranty start date.",

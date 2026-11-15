@@ -1,6 +1,7 @@
 'use client'
 
-import { useEffect, useState, type FormEvent } from 'react'
+import { Fragment, useEffect, useState, type FormEvent } from 'react'
+import { Database, FileText, MailPlus, Users, type LucideIcon } from 'lucide-react'
 import { useToast } from '@/app/components/ui/ToastProvider'
 
 type DashboardRole = 'admin' | 'operator' | 'monitor'
@@ -30,6 +31,11 @@ const formTypeOptions = [
   ['customer_agreement', 'Customer agreement'],
   ['installation_checklist', 'Installation checklist'],
 ] as const
+const collectionIcons: Record<string, LucideIcon> = {
+  auth_users: Users,
+  website_form_submissions: MailPlus,
+  solar_referrals: FileText,
+}
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value)
@@ -65,12 +71,12 @@ function formatValue(value: unknown): string {
 }
 
 function formatCollectionName(collection: string): string {
+  if (collection === 'website_form_submissions') return 'Form submissions'
   return collection.replace(/_/g, ' ')
 }
 
-function recordTitle(row: DashboardRow): string {
-  const title = row.reference_code ?? row.email ?? row.name ?? row.form_type ?? row.id
-  return typeof title === 'string' && title ? title : 'Record'
+function getCollectionIcon(collection: string): LucideIcon {
+  return collectionIcons[collection] ?? Database
 }
 
 function editableJson(row: DashboardRow): string {
@@ -268,6 +274,12 @@ export default function DashboardDataTabs() {
     ((role === 'admin' || role === 'operator') && !isAccountCollection)
   const canCreateRecords = (role === 'admin' || role === 'operator') && !isAccountCollection
   const canDeleteRecords = role === 'admin' || (role === 'operator' && !isAccountCollection)
+  const hasUserAccessControls =
+    activeCollection === 'auth_users' && (role === 'admin' || role === 'operator')
+  const hasActions = canEditRecords || canDeleteRecords || hasUserAccessControls
+  const columns = data
+    ? [...new Set(data.rows.flatMap((row) => Object.keys(row)))]
+    : []
 
   function chooseCollection(collection: string) {
     setActiveCollection(collection)
@@ -319,21 +331,25 @@ export default function DashboardDataTabs() {
     <section className="mt-7 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_24px_70px_-44px_rgba(15,23,42,0.28)]">
       <div className="border-b border-slate-200 bg-slate-50/80 px-5 pt-5 sm:px-7">
         <div className="flex flex-wrap gap-2" role="group" aria-label="Database collections">
-          {collections.map((collection) => (
-            <button
-              key={collection}
-              type="button"
-              aria-pressed={activeCollection === collection}
-              onClick={() => chooseCollection(collection)}
-              className={`min-h-11 rounded-t-xl border px-4 text-sm font-bold capitalize transition ${
-                activeCollection === collection
-                  ? 'border-slate-200 border-b-white bg-white text-emerald-900'
-                  : 'border-transparent text-slate-500 hover:bg-white/70 hover:text-slate-900'
-              }`}
-            >
-              {formatCollectionName(collection)}
-            </button>
-          ))}
+          {collections.map((collection) => {
+            const Icon = getCollectionIcon(collection)
+            return (
+              <button
+                key={collection}
+                type="button"
+                aria-pressed={activeCollection === collection}
+                onClick={() => chooseCollection(collection)}
+                className={`min-h-11 rounded-t-xl border px-4 text-sm font-bold capitalize transition ${
+                  activeCollection === collection
+                    ? 'border-slate-200 border-b-white bg-white text-emerald-900'
+                    : 'border-transparent text-slate-500 hover:bg-white/70 hover:text-slate-900'
+                }`}
+              >
+                <Icon className="mr-2 inline-block h-4 w-4 align-[-3px]" aria-hidden="true" />
+                {formatCollectionName(collection)}
+              </button>
+            )
+          })}
         </div>
       </div>
 
@@ -416,76 +432,92 @@ export default function DashboardDataTabs() {
           </div>
         ) : data?.rows.length ? (
           <>
-            <div className="mt-6 grid gap-3">
-              {data.rows.map((row, index) => {
+            <div className="mt-6 overflow-x-auto overscroll-x-contain rounded-2xl border border-slate-200" tabIndex={0} aria-label={`${formatCollectionName(activeCollection)} records table`}>
+              <table className="min-w-max w-full text-left text-sm">
+                <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
+                  <tr>
+                    {columns.map((column) => (
+                      <th key={column} className="whitespace-nowrap px-4 py-3 font-bold">
+                        {column.replace(/_/g, ' ')}
+                      </th>
+                    ))}
+                    {hasActions && <th className="whitespace-nowrap px-4 py-3 font-bold">Actions</th>}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100">
+                  {data.rows.map((row, index) => {
                 const id = typeof row.id === 'string' ? row.id : ''
                 const isEditing = id !== '' && editingId === id
                 return (
-                  <article key={id || `${data.collection}-${index}`} className="rounded-2xl border border-slate-200 p-4 sm:p-5">
-                    <div className="flex flex-wrap items-start justify-between gap-3">
-                      <div className="min-w-0">
-                        <h3 className="break-all font-semibold text-slate-900">{recordTitle(row)}</h3>
-                        {id && <p className="mt-1 break-all font-mono text-xs text-slate-500">{id}</p>}
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {canEditRecords && id && (
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setEditingId(isEditing ? null : id)
-                              setEditJson(editableJson(row))
-                            }}
-                            className="min-h-9 rounded-full border border-slate-300 px-3 text-xs font-bold text-slate-700 hover:bg-slate-50"
-                          >
-                            {isEditing ? 'Cancel edit' : 'Edit'}
-                          </button>
-                        )}
-                        {canDeleteRecords && id && (
-                          <button
-                            type="button"
-                            onClick={() => void deleteRecord(id)}
-                            className="min-h-9 rounded-full border border-rose-200 px-3 text-xs font-bold text-rose-700 hover:bg-rose-50"
-                          >
-                            Delete
-                          </button>
-                        )}
-                      </div>
-                    </div>
-
-                    {isEditing ? (
-                      <form onSubmit={(event) => void submitRecord(event, 'update', id)} className="mt-4">
-                        <label className="grid gap-2 text-sm font-bold text-slate-800">
-                          Update record (JSON)
-                          <textarea
-                            value={editJson}
-                            onChange={(event) => setEditJson(event.target.value)}
-                            rows={8}
-                            spellCheck={false}
-                            className="w-full rounded-xl border border-slate-300 bg-white p-3 font-mono text-xs text-slate-800 outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
-                          />
-                        </label>
-                        <button type="submit" disabled={savingRecord} className="mt-3 min-h-10 rounded-full bg-emerald-800 px-4 text-sm font-bold text-white hover:bg-emerald-900 disabled:opacity-50">
-                          {savingRecord ? 'Saving…' : 'Save changes'}
-                        </button>
-                      </form>
-                    ) : (
-                      <details className="mt-3">
-                        <summary className="cursor-pointer text-sm font-semibold text-emerald-800 underline underline-offset-2">View record data</summary>
-                        <pre className="mt-3 max-h-96 overflow-auto rounded-xl bg-slate-50 p-4 text-xs leading-5 text-slate-700">{JSON.stringify(row, null, 2)}</pre>
-                      </details>
+                  <Fragment key={id || `${data.collection}-${index}`}>
+                    <tr className="align-top text-slate-700">
+                      {columns.map((column) => (
+                        <td key={column} className="min-w-[8rem] max-w-[28rem] whitespace-normal px-4 py-3">
+                          <div className="break-words">{formatValue(row[column])}</div>
+                        </td>
+                      ))}
+                      {hasActions && (
+                        <td className="min-w-[12rem] px-4 py-3">
+                          <div className="flex flex-wrap gap-2">
+                            {canEditRecords && id && (
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setEditingId(isEditing ? null : id)
+                                  setEditJson(editableJson(row))
+                                }}
+                                className="min-h-9 rounded-full border border-slate-300 px-3 text-xs font-bold text-slate-700 hover:bg-slate-50"
+                              >
+                                {isEditing ? 'Cancel edit' : 'Edit'}
+                              </button>
+                            )}
+                            {canDeleteRecords && id && (
+                              <button
+                                type="button"
+                                onClick={() => void deleteRecord(id)}
+                                className="min-h-9 rounded-full border border-rose-200 px-3 text-xs font-bold text-rose-700 hover:bg-rose-50"
+                              >
+                                Delete
+                              </button>
+                            )}
+                          </div>
+                          {hasUserAccessControls && (
+                            <UserAccessManager
+                              key={`${id}-${String(row.role)}-${String(row.approved)}`}
+                              row={row}
+                              actorRole={role}
+                              onSaved={() => setRetryCount((current) => current + 1)}
+                            />
+                          )}
+                        </td>
+                      )}
+                    </tr>
+                    {isEditing && (
+                      <tr>
+                        <td colSpan={columns.length + Number(hasActions)} className="bg-slate-50 p-4">
+                          <form onSubmit={(event) => void submitRecord(event, 'update', id)} className="max-w-4xl">
+                            <label className="grid gap-2 text-sm font-bold text-slate-800">
+                              Update record (JSON)
+                              <textarea
+                                value={editJson}
+                                onChange={(event) => setEditJson(event.target.value)}
+                                rows={8}
+                                spellCheck={false}
+                                className="w-full rounded-xl border border-slate-300 bg-white p-3 font-mono text-xs text-slate-800 outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
+                              />
+                            </label>
+                            <button type="submit" disabled={savingRecord} className="mt-3 min-h-10 rounded-full bg-emerald-800 px-4 text-sm font-bold text-white hover:bg-emerald-900 disabled:opacity-50">
+                              {savingRecord ? 'Saving…' : 'Save changes'}
+                            </button>
+                          </form>
+                        </td>
+                      </tr>
                     )}
-
-                    {activeCollection === 'auth_users' && (role === 'admin' || role === 'operator') && (
-                      <UserAccessManager
-                        key={`${id}-${String(row.role)}-${String(row.approved)}`}
-                        row={row}
-                        actorRole={role}
-                        onSaved={() => setRetryCount((current) => current + 1)}
-                      />
-                    )}
-                  </article>
+                  </Fragment>
                 )
               })}
+                </tbody>
+              </table>
             </div>
 
             <div className="mt-4 flex flex-col gap-3 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">

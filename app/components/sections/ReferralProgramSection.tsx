@@ -5,6 +5,7 @@ import { ArrowUpRight, Gift } from 'lucide-react'
 import Link from 'next/link'
 import { useLocale } from '@/lib/LocaleContext'
 import { useToast } from '@/app/components/ui/ToastProvider'
+import { INDIAN_MOBILE_HTML_PATTERN } from '@/lib/validation/contact'
 
 type ReferralResponse = {
   referenceCode: string
@@ -131,7 +132,7 @@ export function ReferralProgramSection() {
               </label>
               <label className="block text-xs font-medium text-slate-600 sm:text-sm">
                 {formContent.referrerPhoneLabel}
-                <input className={inputClassName} name="referrerPhone" type="tel" inputMode="tel" autoComplete="tel" placeholder={formContent.referrerPhoneLabel} maxLength={16} required />
+                <input className={inputClassName} name="referrerPhone" type="tel" inputMode="tel" autoComplete="tel" placeholder={formContent.referrerPhoneLabel} pattern={INDIAN_MOBILE_HTML_PATTERN} maxLength={13} required />
               </label>
               <label className="block text-xs font-medium text-slate-600 sm:text-sm">
                 {formContent.referredNameLabel}
@@ -139,7 +140,7 @@ export function ReferralProgramSection() {
               </label>
               <label className="block text-xs font-medium text-slate-600 sm:text-sm">
                 {formContent.referredPhoneLabel}
-                <input className={inputClassName} name="referredPhone" type="tel" inputMode="tel" placeholder={formContent.referredPhoneLabel} maxLength={16} required />
+                <input className={inputClassName} name="referredPhone" type="tel" inputMode="tel" placeholder={formContent.referredPhoneLabel} pattern={INDIAN_MOBILE_HTML_PATTERN} maxLength={13} required />
               </label>
               <label className="block text-xs font-medium text-slate-600 sm:text-sm">
                 {formContent.postalCodeLabel}

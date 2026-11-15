@@ -243,7 +243,7 @@ export default function Contact() {
                 </label>
                 <label className="block text-sm font-semibold text-slate-800">
                   {c.form.phone}
-                  <input className="mt-1.5 min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="phone" type="tel" autoComplete="tel" maxLength={24} />
+                  <input className="mt-1.5 min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="phone" type="tel" autoComplete="tel" inputMode="tel" pattern="(?:\+?91)?[6-9][0-9]{9}" maxLength={13} />
                 </label>
                 <label className="block text-sm font-semibold text-slate-800">
                   {c.form.projectType}

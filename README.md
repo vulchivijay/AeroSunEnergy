@@ -181,7 +181,7 @@ npm run db:migrate
 
 This creates indexes for the `auth_users`, `auth_sessions`, `solar_referrals`, and `website_form_submissions` collections. Existing PostgreSQL records are not copied automatically; export and migrate any existing user, session, referral, and form-submission data before switching production traffic.
 
-New accounts are created in the `auth_users` collection with `approved: false` and `role: "monitor"`. They cannot sign in until an administrator or operator sets `approved: true` and chooses `role: "monitor"` or `"operator"` in Firestore. Only an admin can assign the `"admin"` role. Set `approved: false` to suspend sign-in. Admins can read and manage all collections; operators can read all collections, manage business records, and approve/assign monitor or operator roles; monitors are read-only. Credential and token fields are always redacted from dashboard output. Existing accounts without `approved: true` remain unapproved until reviewed.
+New accounts are created in the `auth_users` collection with `approved: false` and `role: "monitor"`. They cannot sign in until an administrator or operator sets `approved: true` and chooses `role: "monitor"` or `"operator"` in Firestore. Only an admin can assign the `"admin"` role. Set `approved: false` to suspend sign-in. Admins can read and manage visible collections; operators can read visible collections, manage business records, and approve/assign monitor or operator roles; monitors are read-only. The `auth_sessions` collection is intentionally hidden from the dashboard. Credential and token fields are always redacted from dashboard output. Existing accounts without `approved: true` remain unapproved until reviewed.
 
 ### Lint
 

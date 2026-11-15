@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { ObjectId } from 'mongodb'
 import { withApiLogging } from '@/lib/apiLogging'
 import { getDatabase } from '@/lib/auth/database'
+import { isValidEmailAddress, normalizeIndianMobileNumber } from '@/lib/validation/contact'
 
 export const runtime = 'nodejs'
 
@@ -241,13 +242,11 @@ function hasRequiredValues(formType: FormType, data: Record<string, SubmissionVa
 }
 
 function isValidEmail(value: unknown): boolean {
-  return typeof value === 'string' && z.string().max(254).email().safeParse(value).success
+  return isValidEmailAddress(value)
 }
 
 function isValidPhone(value: unknown): boolean {
-  if (typeof value !== 'string' || !/^[0-9+()\-\s]{10,24}$/.test(value)) return false
-  const digitCount = value.replace(/\D/g, '').length
-  return digitCount >= 10 && digitCount <= 13
+  return typeof value === 'string' && normalizeIndianMobileNumber(value) !== null
 }
 
 function isValidSubmission(formType: FormType, data: Record<string, SubmissionValue>): boolean {
@@ -300,6 +299,22 @@ function isValidSubmission(formType: FormType, data: Record<string, SubmissionVa
   return true
 }
 
+function normalizeSubmissionData(formType: FormType, data: Record<string, SubmissionValue>): Record<string, SubmissionValue> {
+  const normalized = { ...data }
+  const emailField = formType === 'customer_enquiry' ? 'customer_email' : 'email'
+  if (typeof normalized[emailField] === 'string') {
+    normalized[emailField] = normalized[emailField].trim()
+  }
+
+  const phoneField = formType === 'customer_enquiry' ? 'mobile_number' : 'phone'
+  if (typeof normalized[phoneField] === 'string' && normalized[phoneField].trim()) {
+    const mobileNumber = normalizeIndianMobileNumber(normalized[phoneField])
+    if (mobileNumber) normalized[phoneField] = mobileNumber
+  }
+
+  return normalized
+}
+
 async function postSubmission(request: Request) {
   let body: BodyResult
   try {
@@ -318,7 +333,8 @@ async function postSubmission(request: Request) {
     return jsonResponse({ error: 'invalid_input' }, 400)
   }
 
-  const { formType, data } = parsed.data
+  const { formType } = parsed.data
+  const data = normalizeSubmissionData(formType, parsed.data.data)
   const referenceCode = `ASF-${randomBytes(8).toString('hex').toUpperCase()}`
 
   try {
