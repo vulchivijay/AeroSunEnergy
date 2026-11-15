@@ -149,7 +149,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-8 grid gap-5 lg:grid-cols-2">
+          <div className="mt-8">
             {home.rooftopSolar.panels.map((panel) => (
               <InfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['amber', 'sky'] as const, 'emerald')} content={panel.content} />
             ))}
