@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowUpRight, Check, Sun, Wind, Zap } from 'lucide-react'
+import { Check, Sun, Wind, Zap } from 'lucide-react'
 import { motion } from '@/lib/motion'
 import { OptimizedImage } from '@/app/components/ui'
 import { useLocale } from '@/lib/LocaleContext'
@@ -50,18 +50,6 @@ export default function AboutPage() {
     ][index] ?? 'border-[#d4d7e3] bg-gradient-to-br from-[#f4f3f8] to-[#e6e5ed] shadow-sm',
     Icon: systemIcons[index] ?? Zap,
   }))
-  const renderCompanyName = (text: string) => {
-    const [before, after] = text.split('{companyName}')
-
-    return (
-      <>
-        {before}
-        <strong className="font-bold text-[#087a45]">{aboutSection.companyName}</strong>
-        {after}
-      </>
-    )
-  }
-
   return (
     <main className="overflow-hidden bg-[#f5f6ef] text-slate-900  ">
       <section id="story" className="relative isolate overflow-hidden bg-[#14372f] text-white">
@@ -476,10 +464,6 @@ export default function AboutPage() {
               <h2 className="mt-6 max-w-3xl text-4xl font-black leading-[1.04] tracking-[-0.045em] text-[#102b28] sm:text-5xl lg:text-7xl">
                 {aboutSection.title}
               </h2>
-              <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-                {a.paragraph1}
-              </p>
-
               <div className="mt-8 flex flex-wrap gap-2.5">
                 {aboutSection.tags.map((tag, index) => {
                   const Icon = systemIcons[index] ?? Zap
@@ -528,84 +512,24 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <div className="mt-10 border-y border-[#cbd8ce] py-5 sm:mt-12 sm:py-6">
-            <div className="grid items-center gap-5 sm:grid-cols-[auto_1fr_auto] sm:gap-7">
-              <div className="relative h-28 w-28 overflow-hidden rounded-2xl border border-[#d3dfd5] bg-white sm:h-32 sm:w-32">
-                <OptimizedImage
-                  src="/images/founder-aerosunenergy.webp"
-                  alt={aboutSection.imageAlt}
-                  fill
-                  sizes="(min-width: 640px) 128px, 112px"
-                  className="object-cover object-center"
-                />
-              </div>
-              <div className="min-w-0">
-                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#087a61]">
-                  {aboutSection.leadershipLabel} · {aboutSection.founderBadge}
-                </p>
-                <h3 className="mt-2 text-2xl font-bold tracking-tight text-[#102b28] sm:text-3xl">
-                  {a.founder.name}
-                </h3>
-              </div>
-              <div className="flex items-center justify-between gap-4 sm:flex-col sm:items-end">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-600">
-                  {aboutSection.sinceLabel}
-                </p>
-                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#cbd8ce] bg-white text-[#087a61]" aria-hidden="true">
-                  <ArrowUpRight className="h-5 w-5" />
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-12 grid gap-5 xl:grid-cols-[1.1fr_0.9fr] xl:gap-7">
-            <article className="relative overflow-hidden rounded-[1.75rem] border border-white/70 bg-[linear-gradient(135deg,#FF9933_0%,#FFFFFF_35%,#FFFFFF_70%,#138808_100%)] p-3 text-[#102b28] shadow-[0_28px_70px_-34px_rgba(16,45,42,0.35)] sm:p-4">
-              <span className="absolute -right-6 -top-14 font-serif text-[15rem] leading-none text-[#e77924]/[0.10]" aria-hidden="true">“</span>
-              <div className="pointer-events-none absolute left-1/2 top-1/2 z-20 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center text-center">
-                <svg
-                  viewBox="0 0 100 100"
-                  className="h-16 w-16 text-[#000080] drop-shadow-[0_2px_3px_rgba(0,0,128,0.3)] sm:h-20 sm:w-20"
-                  aria-hidden="true"
-                >
-                  <circle cx="50" cy="50" r="36" fill="none" stroke="#000080" strokeWidth="2.5" />
-                  <circle cx="50" cy="50" r="7" fill="#000080" />
-                  <g stroke="#000080" strokeWidth="1.8">
-                    {Array.from({ length: 12 }, (_, index) => (
-                      <line key={index} x1="50" y1="15" x2="50" y2="85" transform={`rotate(${index * 15} 50 50)`} />
-                    ))}
-                  </g>
-                </svg>
-                <p className="mt-2 bg-white/95 px-4 py-1 text-center text-xs font-black uppercase tracking-[0.2em] text-[#087a45] sm:text-sm">
-                  Make in India
-                </p>
-              </div>
-              <div className="relative p-3 sm:p-5">
-                <div className="space-y-4 text-sm leading-7 text-[#374b44] sm:text-lg sm:leading-8">
-                  <p>{renderCompanyName(aboutSection.visionIntro)}</p>
-                  <p>{renderCompanyName(aboutSection.visionHistory)}</p>
-                </div>
-              </div>
+          <div className="mt-12 grid gap-5 xl:grid-cols-2 xl:gap-7">
+            <article className="rounded-[1.75rem] border border-[#eadfc7] bg-gradient-to-br from-[#fffaf0] to-[#f3e8d5] p-6 shadow-[0_20px_50px_-32px_rgba(92,68,31,0.3)] sm:p-7">
+              <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#087a61]">{aboutSection.solutionsEyebrow}</p>
+              <h3 className="mt-3 text-2xl font-extrabold leading-tight tracking-[-0.03em] text-[#102b28]">{aboutSection.solutionsTitle}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">{aboutSection.solutionsDescription}</p>
             </article>
 
-            <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-1">
-              <article className="rounded-[1.75rem] border border-[#eadfc7] bg-gradient-to-br from-[#fffaf0] to-[#f3e8d5] p-6 shadow-[0_20px_50px_-32px_rgba(92,68,31,0.3)] sm:p-7">
-                <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#087a61]">{aboutSection.solutionsEyebrow}</p>
-                <h3 className="mt-3 text-2xl font-extrabold leading-tight tracking-[-0.03em] text-[#102b28]">{aboutSection.solutionsTitle}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">{aboutSection.solutionsDescription}</p>
-              </article>
-
-              <article className="rounded-[1.75rem] border border-[#c9e0e4] bg-gradient-to-br from-[#edf7f8] to-[#d7eaed] p-6 shadow-[0_20px_50px_-32px_rgba(32,77,85,0.32)] sm:p-7">
-                <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#087a61]">{aboutSection.designEyebrow}</p>
-                <ul className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
-                  {aboutSection.designPoints.map((point) => (
-                    <li key={point} className="flex items-start gap-2.5 text-sm font-medium leading-6 text-[#29443c]">
-                      <Check className="mt-1 h-4 w-4 shrink-0 text-[#087a61]" strokeWidth={2.5} aria-hidden="true" />
-                      <span>{point.replace(/^[•]\s*/, '')}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            </div>
+            <article className="rounded-[1.75rem] border border-[#c9e0e4] bg-gradient-to-br from-[#edf7f8] to-[#d7eaed] p-6 shadow-[0_20px_50px_-32px_rgba(32,77,85,0.32)] sm:p-7">
+              <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#087a61]">{aboutSection.designEyebrow}</p>
+              <ul className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
+                {aboutSection.designPoints.map((point) => (
+                  <li key={point} className="flex items-start gap-2.5 text-sm font-medium leading-6 text-[#29443c]">
+                    <Check className="mt-1 h-4 w-4 shrink-0 text-[#087a61]" strokeWidth={2.5} aria-hidden="true" />
+                    <span>{point.replace(/^[•]\s*/, '')}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
           </div>
 
           <div className="mt-5 grid gap-5 xl:grid-cols-[0.8fr_1.2fr]">
