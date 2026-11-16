@@ -4215,6 +4215,14 @@
       {
         "title": "Lord Shiva Blessing",
         "body": "Welcome to AeroSun Energy. May Lord Shiva bring peace, strength, and harmony to your journey."
+      },
+      {
+        "title": "Lord Rama Blessing",
+        "body": "Welcome to AeroSun Energy. May Lord Rama guide your journey with courage, righteousness, and prosperity."
+      },
+      {
+        "title": "Lord Krishna Blessing",
+        "body": "Welcome to AeroSun Energy. May Lord Krishna fill your life with wisdom, joy, and harmony."
       }
     ]
   },
@@ -12399,6 +12407,18 @@
           "image": "/images/lordshiva.png",
           "width": 375,
           "height": 591
+        },
+        {
+          "name": "Rama",
+          "image": "/images/lordrama.png",
+          "width": 1082,
+          "height": 1453
+        },
+        {
+          "name": "Krishna",
+          "image": "/images/lordkrishna.png",
+          "width": 1082,
+          "height": 1453
         }
       ]
     },

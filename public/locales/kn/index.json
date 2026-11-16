@@ -4215,6 +4215,14 @@
       {
         "title": "Lord Shiva Blessing",
         "body": "Welcome to AeroSun Energy. May Lord Shiva bring peace, strength, and harmony to your journey."
+      },
+      {
+        "title": "ಶ್ರೀರಾಮನ ಆಶೀರ್ವಾದ",
+        "body": "AeroSun Energyಗೆ ಸ್ವಾಗತ. ಶ್ರೀರಾಮನು ನಿಮ್ಮ ಪ್ರಯಾಣಕ್ಕೆ ಧೈರ್ಯ, ಧರ್ಮನಿಷ್ಠೆ ಮತ್ತು ಸಮೃದ್ಧಿಯನ್ನು ಕರುಣಿಸಲಿ."
+      },
+      {
+        "title": "ಶ್ರೀಕೃಷ್ಣನ ಆಶೀರ್ವಾದ",
+        "body": "AeroSun Energyಗೆ ಸ್ವಾಗತ. ಶ್ರೀಕೃಷ್ಣನು ನಿಮ್ಮ ಜೀವನವನ್ನು ಜ್ಞಾನ, ಸಂತೋಷ ಮತ್ತು ಸಾಮರಸ್ಯದಿಂದ ತುಂಬಲಿ."
       }
     ]
   },
@@ -12399,6 +12407,18 @@
           "image": "/images/lordshiva.png",
           "width": 375,
           "height": 591
+        },
+        {
+          "name": "Rama",
+          "image": "/images/lordrama.png",
+          "width": 1082,
+          "height": 1453
+        },
+        {
+          "name": "Krishna",
+          "image": "/images/lordkrishna.png",
+          "width": 1082,
+          "height": 1453
         }
       ]
     },
