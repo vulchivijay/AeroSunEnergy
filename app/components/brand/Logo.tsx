@@ -29,15 +29,15 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
         >
           <span
             data-brand-name
-            className={
+            className={`relative whitespace-nowrap pr-2 text-2xl font-bold tracking-wider text-[#20A44A] sm:text-3xl
               compact
-                ? "relative whitespace-nowrap pr-2 text-2xl font-bold tracking-wider text-[#137c63] sm:text-3xl"
-                : "relative whitespace-nowrap pr-3 text-2xl font-bold tracking-wider text-[#137c63] sm:text-3xl"
-            }
+                ? ""
+                : ""
+            `}
           >
             {t.logo.wordmark}
             <sup
-              className={`absolute right-0 text-[10px] font-normal ${compact ? "top-1 text-[#ffffff]" : "top-2 text-[#333333]"}`}
+              className={`absolute right-0 text-[10px] font-normal top-1 text-[#ffffff] ${compact ? "" : ""}`}
             >
               {t.logo.trademark}
             </sup>
@@ -50,10 +50,10 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
           </span>
         </div>
         <div
-          className={`text-[12px] 
+          className={`text-[12px] whitespace-nowrap
             compact
-              ? "text-[#ffffff] whitespace-nowrap"
-              : "text-[#333333] whitespace-nowrap"
+              ? "text-[#ffffff]"
+              : "text-[#333333]"
           `}
         >
           ---- {t.navbar.brandTagline} ----

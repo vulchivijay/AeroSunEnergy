@@ -88,12 +88,14 @@ export default function Footer() {
 	return (
 		<footer
 			id="contact"
-			className="relative w-full overflow-hidden border-t border-white/25 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(23,37,84,0.96))] text-white/90 shadow-[0_-12px_40px_-28px_rgba(15,23,42,0.75)] before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-amber-400 before:via-white/40 before:to-sky-300"
+			className="relative w-full overflow-hidden border-t border-white/25 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(23,37,84,0.96),rgba(23,37,84,0.96))] text-white/90 shadow-[0_-12px_40px_-28px_rgba(15,23,42,0.75)] before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-amber-400 before:via-white/40 before:to-sky-300"
 		>
 			<div className="pointer-events-none absolute -right-40 top-0 h-[34rem] w-[34rem] rounded-full border border-amber-700/10" aria-hidden="true" />
+
 			<div className="pointer-events-none absolute -right-24 top-16 h-[24rem] w-[24rem] rounded-full border border-slate-500/10" aria-hidden="true" />
 
 			<div className="relative mx-auto max-w-7xl px-5 pb-14 pt-14 sm:px-8 sm:pb-20 sm:pt-20 lg:px-10">
+
 				<section className="relative mb-14 overflow-hidden rounded-[2rem] border border-white/90 bg-[linear-gradient(135deg,#ffffff_0%,#f8fafc_52%,#eef2ff_100%)] p-7 text-slate-900 shadow-[0_30px_90px_-45px_rgba(15,23,42,0.22)] sm:p-10 lg:mb-20 lg:p-14">
 					<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_88%_45%,rgba(245,199,106,0.18),transparent_35%)]" aria-hidden="true" />
 					<div className="relative grid items-center gap-10 lg:grid-cols-[1fr_auto]">
@@ -139,7 +141,7 @@ export default function Footer() {
 
 				<div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1.1fr_1fr] lg:gap-x-8">
 					<section aria-labelledby="footer-brand">
-						<div className="inline-flex max-w-full rounded-xl bg-white p-2">
+						<div className="inline-flex max-w-full p-2">
 							<Logo />
 						</div>
 						<h2 id="footer-brand" className="mt-6 hidden text-sm font-bold tracking-wide text-slate-900">{t.navbar.brandName}</h2>
@@ -291,6 +293,7 @@ export default function Footer() {
 						<FormDataNotice className="text-slate-600" />
 					</form>
 				</section>
+
 			</div>
 
 			<div className="border-t border-white/15 bg-white/5 backdrop-blur">

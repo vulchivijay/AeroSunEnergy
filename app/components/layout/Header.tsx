@@ -115,10 +115,10 @@ export default function Navbar() {
     const classes = mobile
       ? `flex min-h-12 w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium transition ${
           disabled
-            ? 'cursor-not-allowed text-slate-500'
+            ? 'cursor-not-allowed text-white/50'
             : active
               ? 'bg-linear-to-r from-[#137c63] to-[#20A44A] text-white shadow-[0_8px_20px_-12px_rgba(19,124,99,0.8)] ring-1 ring-inset ring-white/40'
-              : 'text-[#173b2c] hover:bg-white/70 hover:text-[#137c63] hover:shadow-sm'
+              : 'text-white/90 hover:bg-white/10 hover:text-amber-100 hover:shadow-sm'
         }`
       : `group relative z-10 flex w-auto flex-col items-center gap-1 rounded-xl px-2 py-1.5 text-[13px] transition-colors 2xl:text-sm ${
           active
@@ -204,7 +204,7 @@ export default function Navbar() {
               className={`flex min-h-12 min-w-0 flex-1 items-center rounded-xl px-4 py-3 text-sm font-medium transition ${
                 active
                   ? 'bg-[#18833a] text-white ring-1 ring-inset ring-[#18833a]/50'
-                  : 'text-[#333333] hover:bg-[#18833a] hover:text-white'
+                  : 'text-white/90 hover:bg-white/10 hover:text-amber-100'
               }`}
             >
               {link.label}
@@ -215,7 +215,7 @@ export default function Navbar() {
               aria-label={t.navbar.aboutSubmenuLabel}
               aria-expanded={submenuOpen}
               aria-controls="mobile-about-submenu"
-              className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-[#333333] transition hover:bg-[#333333]/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#333333]"
+              className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-white/80 transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
             >
               <ChevronDown
                 className={`h-4 w-4 transition-transform ${submenuOpen ? 'rotate-180' : ''}`}
@@ -226,7 +226,7 @@ export default function Navbar() {
           <div
             id="mobile-about-submenu"
             hidden={!submenuOpen}
-            className="ml-5 rounded-xl border border-slate-200 bg-white p-2 shadow-lg"
+            className="ml-5 rounded-xl border border-white/15 bg-indigo-950/40 p-2 shadow-lg backdrop-blur-xl"
           >
             {link.children.map((child) => {
               const childActive = pathname === child.href
@@ -237,10 +237,10 @@ export default function Navbar() {
                   href={child.href}
                   onClick={closeMenu}
                   aria-current={childActive ? 'page' : undefined}
-                  className={`flex min-h-10 items-center rounded-lg px-3 py-2 text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#333333] ${
+                  className={`flex min-h-10 items-center rounded-lg px-3 py-2 text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300 ${
                     childActive
                       ? 'bg-[#18833a]  text-white'
-                      : 'text-[#333333] hover:bg-[#18833a] hover:text-white'
+                      : 'text-white/85 hover:bg-white/10 hover:text-amber-100'
                   }`}
                 >
                   <ChildIcon className="mr-3 h-4 w-4 shrink-0" strokeWidth={1.7} aria-hidden="true" />
@@ -306,7 +306,7 @@ export default function Navbar() {
         role="group"
         aria-label={t.navbar.languageLabel}
         className={inline
-          ? 'mt-2 grid gap-1 rounded-xl border border-[#333333]/15 bg-white/60 p-1.5 text-[#333333]'
+          ? 'mt-2 grid gap-1 rounded-xl border border-white/15 bg-white/10 p-1.5 text-white'
           : 'absolute right-0 top-[calc(100%+0.65rem)] z-[60] w-48 overflow-hidden rounded-2xl border border-[#333333]/15 bg-[#e5e7eb] p-1.5 text-[#333333] shadow-[0_20px_50px_-25px_rgba(0,0,0,0.25)]'}
       >
         {languageOptions.map((option) => (
@@ -320,12 +320,16 @@ export default function Navbar() {
             aria-pressed={locale === option.code}
             className={`flex min-h-11 w-full items-center justify-between rounded-xl px-3 text-sm transition ${
               locale === option.code
-                ? 'bg-[#333333]/10  text-[#333333]'
-                : 'text-[#333333] hover:bg-[#333333]/5'
+                ? inline
+                  ? 'bg-white/15 font-semibold text-white'
+                  : 'bg-[#333333]/10 text-[#333333]'
+                : inline
+                  ? 'text-white/85 hover:bg-white/10'
+                  : 'text-[#333333] hover:bg-[#333333]/5'
             }`}
           >
             <span>{option.label}</span>
-            {locale === option.code && <Check className="h-4 w-4 text-[#333333]" aria-hidden="true" />}
+            {locale === option.code && <Check className={`h-4 w-4 ${inline ? 'text-white' : 'text-[#333333]'}`} aria-hidden="true" />}
           </button>
         ))}
       </div>
@@ -427,35 +431,35 @@ export default function Navbar() {
       <div
         id="mobile-primary-navigation"
         hidden={!menuOpen}
-        className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-white/50 bg-white/80 px-4 pb-6 pt-3 text-[#173b2c] shadow-[0_24px_50px_-22px_rgba(15,23,42,0.3)] backdrop-blur-2xl sm:px-6 xl:hidden"
+        className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-white/20 bg-[linear-gradient(135deg,rgba(23,37,84,1),rgba(49,46,129,1),rgba(15,23,42,1))] px-4 pb-6 pt-3 text-white shadow-[0_20px_40px_-24px_rgba(15,23,42,0.8)] backdrop-blur-2xl sm:px-6 xl:hidden"
       >
         <nav aria-label={t.navbar.mobileNavigationLabel} className="mx-auto max-w-3xl space-y-1">
-          <p className="mb-3 flex items-center gap-2 px-2 text-sm  uppercase tracking-[0.2em] text-[#137c63]">
-            <span className="h-px w-5 bg-emerald-700/35" />
+          <p className="mb-3 flex items-center gap-2 px-2 text-sm uppercase tracking-[0.2em] text-sky-200">
+            <span className="h-px w-5 bg-white/35" />
             {t.navbar.exploreLabel}
           </p>
           {navLinks.map((link) => renderNavigationLink(link, true))}
-          <div className="border-t border-emerald-900/15 px-2 pt-4">
+          <div className="border-t border-white/15 px-2 pt-4">
             <button
               type="button"
               onClick={() => setLangOpen((open) => !open)}
               aria-label={t.navbar.languageLabel}
               aria-expanded={langOpen}
               aria-controls="mobile-language-options"
-              className="flex min-h-12 w-full items-center justify-between rounded-xl px-3 py-3 text-sm  text-[#173b2c] transition hover:bg-emerald-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+              className="flex min-h-12 w-full items-center justify-between rounded-xl px-3 py-3 text-sm text-white/90 transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
             >
               <span className="flex items-center gap-3">
-                <Globe2 className="h-4 w-4 text-emerald-700" aria-hidden="true" />
+                <Globe2 className="h-4 w-4 text-sky-200" aria-hidden="true" />
                 {t.navbar.languageLabel}
-                <span className="text-xs  text-emerald-700">
+                <span className="text-xs text-sky-200">
                   {languageOptions.find((option) => option.code === locale)?.label}
                 </span>
               </span>
-              <ChevronDown className={`h-4 w-4 text-emerald-700 transition-transform ${langOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+              <ChevronDown className={`h-4 w-4 text-sky-200 transition-transform ${langOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
             </button>
             {renderLanguageOptions('mobile-language-options', langOpen, true)}
           </div>
-          <div className="grid gap-3 border-t border-emerald-900/15 pt-4 sm:grid-cols-2">
+          <div className="grid gap-3 border-t border-white/15 pt-4 sm:grid-cols-2">
             <Link
               href="/contact"
               prefetch={false}
