@@ -76,9 +76,9 @@ export function ReferralProgramSection() {
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-100 sm:text-xs">
             {content.eyebrow}
           </p>
-          <h2 id="referral-program-title" className="mt-5 max-w-2xl text-4xl font-black leading-[1.02] tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 id="referral-program-title" className="mt-5 max-w-2xl text-4xl font-black leading-[1.02] tracking-tight sm:text-5xl lg:text-6xl">
             {content.title}
-          </h2>
+          </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
             {content.description}
           </p>

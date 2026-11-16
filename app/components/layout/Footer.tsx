@@ -50,7 +50,7 @@ export default function Footer() {
 	const navLinks = t.navbar.links
 	const queries = t.navbar.quiries || []
 	const quickEnquiries = queries
-	const visibleNavLinks = navLinks
+	const visibleNavLinks = [...navLinks, { label: footer.referralProgram, href: '/referral-programme' }]
 	const comingSoonBadge = (
 		<span className="inline-flex items-center gap-1.5 border-l border-amber-200/30 pl-2 text-[9px] uppercase tracking-[0.16em] text-amber-200">
 			<span className="h-px w-2 bg-amber-200/70" aria-hidden="true" />

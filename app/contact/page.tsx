@@ -8,7 +8,6 @@ import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
-import { ReferralProgramSection } from '@/app/components/sections/ReferralProgramSection'
 import { useToast } from '@/app/components/ui/ToastProvider'
 
 const channelIconComponents: Record<string, ReactNode> = {
@@ -39,6 +38,7 @@ export default function Contact() {
   const c = t.contact
   const footer = t.footer
   const navbar = t.navbar
+  const referralProgram = t.home.referralProgram
 
   const contactUs = c.contactUs
   const contactCardTitle = c.contactCardTitle
@@ -292,7 +292,24 @@ export default function Contact() {
           </section>
         </div>
       </section>
-      <ReferralProgramSection />
+      <section className="border-y border-slate-200 bg-slate-50 px-4 py-10 sm:px-6 lg:px-10" aria-labelledby="contact-referral-title">
+        <div className="mx-auto flex max-w-7xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#137c63]">{referralProgram.eyebrow}</p>
+            <h2 id="contact-referral-title" className="mt-2 text-2xl font-black tracking-tight text-slate-950 sm:text-3xl">
+              {referralProgram.title}
+            </h2>
+            <p className="mt-2 text-sm leading-6 text-slate-600 sm:text-base">{referralProgram.description}</p>
+          </div>
+          <Link
+            href="/referral-programme"
+            className="inline-flex min-h-12 shrink-0 items-center justify-center gap-3 rounded-full bg-[#087a61] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61]"
+          >
+            {referralProgram.form.title}
+            <span aria-hidden="true">&rarr;</span>
+          </Link>
+        </div>
+      </section>
       <section
         className="relative isolate overflow-hidden bg-gradient-to-br from-sky-100 via-indigo-50 to-fuchsia-100 px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
         aria-labelledby="contact-faq-title"
