@@ -50,7 +50,7 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
           </span>
         </div>
         <div
-          className={`text-[12px] whitespace-nowrap
+          className={`max-w-[16rem] whitespace-normal break-keep text-[12px] leading-tight line-clamp-2
             compact
               ? "text-[#ffffff]"
               : "text-[#333333]"

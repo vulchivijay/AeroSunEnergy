@@ -80,7 +80,7 @@ export default function Navbar() {
     }
 
     const handleResize = () => {
-      if (window.innerWidth >= 1280) {
+      if (window.innerWidth >= 1536) {
         setMenuOpen(false)
         setLangOpen(false)
       }
@@ -120,7 +120,7 @@ export default function Navbar() {
               ? 'bg-linear-to-r from-[#137c63] to-[#20A44A] text-white shadow-[0_8px_20px_-12px_rgba(19,124,99,0.8)] ring-1 ring-inset ring-white/40'
               : 'text-white/90 hover:bg-white/10 hover:text-amber-100 hover:shadow-sm'
         }`
-      : `group relative z-10 flex w-auto flex-col items-center gap-1 rounded-xl px-2 py-1.5 text-[13px] transition-colors 2xl:text-sm ${
+      : `group relative z-10 flex h-full min-w-0 flex-col items-center gap-1 rounded-xl px-1 py-1.5 text-sm transition-colors 2xl:text-sm ${
           active
             ? 'bg-linear-to-r from-[#137c63] to-[#20A44A] text-white shadow-[0_8px_20px_-12px_rgba(19,124,99,0.8)]'
             : disabled
@@ -129,7 +129,7 @@ export default function Navbar() {
         }`
 
     const content = (
-      <span className={mobile ? 'flex w-full items-center justify-between gap-3' : 'flex flex-col items-center gap-1'}>
+      <span className={mobile ? 'flex w-full items-center justify-between gap-3' : 'flex w-full min-w-0 flex-col items-center gap-1'}>
         {mobile ? (
           <span>{link.label}</span>
         ) : (
@@ -146,7 +146,7 @@ export default function Navbar() {
                 </span>
               )}
             </span>
-            <span className="whitespace-nowrap">{link.label}</span>
+            <span className="min-w-0 w-full max-w-full whitespace-normal break-keep text-center leading-tight line-clamp-2">{link.label}</span>
           </>
         )}
         {disabled && (
@@ -258,7 +258,7 @@ export default function Navbar() {
     return (
       <div
         key={link.href}
-        className="group/nav relative z-20"
+        className="group/nav relative z-20 h-full min-w-0"
         onMouseLeave={() => {
           if (submenuDismissed) setDismissedDesktopSubmenu(null)
         }}
@@ -360,14 +360,14 @@ export default function Navbar() {
       <div className="relative mx-auto flex min-h-[5.25rem] w-full items-center justify-between gap-1 px-3 py-2 sm:gap-3 sm:px-6 lg:px-8 max-[319px]:flex-wrap">
         <Logo compact />
 
-        <nav aria-label={t.navbar.primaryNavigationLabel} className="hidden min-w-0 flex-1 items-center justify-center xl:flex">
-          <div className="relative grid w-full grid-flow-col auto-cols-max items-center justify-center gap-2">
-            <span className="pointer-events-none absolute left-[8%] right-[8%] top-4 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" aria-hidden="true" />
+        <nav aria-label={t.navbar.primaryNavigationLabel} className="hidden min-w-0 flex-1 items-center justify-center 2xl:flex">
+          <div className="relative grid w-full min-w-0 grid-flow-col auto-cols-fr items-stretch justify-center gap-1">
+            <span className="pointer-events-none absolute left-[8%] right-[8%] top-[1.375rem] h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" aria-hidden="true" />
             {navLinks.map((link) => renderNavigationLink(link))}
           </div>
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-2 border-l border-white/20 pl-3 2xl:gap-3 2xl:pl-5 xl:flex">
+        <div className="hidden shrink-0 items-center gap-2 border-l border-white/20 pl-3 2xl:flex 2xl:gap-3 2xl:pl-5">
           <div className="relative">
             <button
               type="button"
@@ -390,8 +390,10 @@ export default function Navbar() {
             aria-label={t.navbar.downloadVoucher}
             className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-amber-300/70 bg-linear-to-r from-amber-500 to-orange-500 px-3 text-sm  text-white shadow-[0_10px_24px_-12px_rgba(245,158,11,0.75)] transition hover:-translate-y-0.5 hover:from-emerald-600 hover:to-emerald-500 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
           >
-            <ArrowDownToLine className="h-4 w-4" aria-hidden="true" />
-            <span className="hidden 2xl:inline">{t.navbar.voucher}</span>
+            <ArrowDownToLine className="h-4 w-4 shrink-0" aria-hidden="true" />
+            <span className="hidden min-w-0 max-w-[7rem] 2xl:block">
+              <span className="block whitespace-normal break-keep text-center leading-tight line-clamp-2">{t.navbar.voucher}</span>
+            </span>
           </a>
 
           <Link
@@ -402,12 +404,12 @@ export default function Navbar() {
             data-cta="start-project"
             className="group inline-flex min-h-11 items-center gap-1 rounded-xl border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-4 text-sm  text-white shadow-[0_12px_28px_-12px_rgba(19,124,99,0.7)] ring-1 ring-inset ring-white/15 transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-emerald-400"
           >
-            {t.navbar.startProject}
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+            <span className="min-w-0 max-w-[8rem] whitespace-normal break-keep text-center leading-tight line-clamp-2">{t.navbar.startProject}</span>
+            <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
           </Link>
         </div>
 
-        <div className="flex shrink-0 items-center gap-2 xl:hidden">
+        <div className="flex shrink-0 items-center gap-2 2xl:hidden">
           <button
             type="button"
             onClick={() => {
@@ -431,7 +433,7 @@ export default function Navbar() {
       <div
         id="mobile-primary-navigation"
         hidden={!menuOpen}
-        className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-white/20 bg-[linear-gradient(135deg,rgba(23,37,84,1),rgba(49,46,129,1),rgba(15,23,42,1))] px-4 pb-6 pt-3 text-white shadow-[0_20px_40px_-24px_rgba(15,23,42,0.8)] backdrop-blur-2xl sm:px-6 xl:hidden"
+        className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-white/20 bg-[linear-gradient(135deg,rgba(23,37,84,1),rgba(49,46,129,1),rgba(15,23,42,1))] px-4 pb-6 pt-3 text-white shadow-[0_20px_40px_-24px_rgba(15,23,42,0.8)] backdrop-blur-2xl sm:px-6 2xl:hidden"
       >
         <nav aria-label={t.navbar.mobileNavigationLabel} className="mx-auto max-w-3xl space-y-1">
           <p className="mb-3 flex items-center gap-2 px-2 text-sm uppercase tracking-[0.2em] text-sky-200">
@@ -464,10 +466,10 @@ export default function Navbar() {
               href="/contact"
               prefetch={false}
               onClick={closeMenu}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-5 text-sm  text-white shadow-[0_10px_24px_-12px_rgba(19,124,99,0.7)] ring-1 ring-inset ring-white/15 transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-5 text-center text-sm text-white shadow-[0_10px_24px_-12px_rgba(19,124,99,0.7)] ring-1 ring-inset ring-white/15 transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
             >
-              {t.navbar.startProject}
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              <span className="min-w-0 max-w-[9rem] whitespace-normal break-keep leading-tight line-clamp-2">{t.navbar.startProject}</span>
+              <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
             </Link>
             <a
               href="/aerosun-energy.pdf"
@@ -475,8 +477,8 @@ export default function Navbar() {
               onClick={closeMenu}
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-amber-300/70 bg-white/60 px-5 text-sm  text-amber-800 shadow-sm transition hover:border-amber-500/60 hover:bg-amber-50 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
             >
-              <ArrowDownToLine className="h-4 w-4" aria-hidden="true" />
-              {t.navbar.downloadVoucher}
+              <ArrowDownToLine className="h-4 w-4 shrink-0" aria-hidden="true" />
+              <span className="min-w-0 max-w-[9rem] whitespace-normal break-keep leading-tight line-clamp-2">{t.navbar.downloadVoucher}</span>
             </a>
           </div>
         </nav>
