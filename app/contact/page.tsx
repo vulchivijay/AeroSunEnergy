@@ -111,52 +111,52 @@ export default function Contact() {
   const contactEmail = footer.email
 
   return (
-    <main className="overflow-hidden bg-[#ffffff] text-slate-950  ">
-      <section className="px-5 pb-16 pt-6 sm:px-8 sm:pb-24 sm:pt-10 lg:px-10">
+    <main className="overflow-hidden bg-white text-slate-950">
+      <section className="px-4 pb-12 pt-6 sm:px-6 sm:pb-16 sm:pt-8 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-5 flex items-center justify-between border-b border-slate-300 pb-4 ">
-            <p className="text-md font-black uppercase tracking-[0.22em] text-emerald-900 ">AeroSun Energy <span className="mx-2 text-lime-600">/</span> {contactUs}</p>
-            <span className="hidden text-md font-semibold uppercase tracking-[0.18em] text-slate-500 sm:block">{location}</span>
+          <div className="mb-5 flex items-center justify-between border-b border-slate-200 pb-4">
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-[#137c63]">AeroSun Energy <span className="mx-2 text-amber-600">/</span> {contactUs}</p>
+            <span className="hidden text-sm font-semibold uppercase tracking-[0.18em] text-slate-500 sm:block">{location}</span>
           </div>
 
-          <div className="grid min-h-[34rem] overflow-hidden rounded-[2rem] bg-[#dfff72] lg:grid-cols-[1fr_0.92fr]">
+          <div className="grid min-h-[34rem] overflow-hidden rounded-[30px] border border-slate-200 bg-[linear-gradient(135deg,#dbeafe_0%,#e0f2fe_55%,#ecfdf5_100%)] lg:grid-cols-[1fr_0.92fr]">
             <motion.div
               initial={{ opacity: 0, x: -18 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.45, ease: 'easeOut' }}
               className="relative flex flex-col justify-between overflow-hidden p-7 sm:p-11 lg:p-14"
             >
-              <div className="pointer-events-none absolute -bottom-36 -left-36 h-[28rem] w-[28rem] rounded-full border border-emerald-950/10" aria-hidden="true" />
-              <div className="pointer-events-none absolute -bottom-20 -left-20 h-80 w-80 rounded-full border border-emerald-950/10" aria-hidden="true" />
+              <div className="pointer-events-none absolute -bottom-36 -left-36 h-[28rem] w-[28rem] rounded-full border border-sky-900/10" aria-hidden="true" />
+              <div className="pointer-events-none absolute -bottom-20 -left-20 h-80 w-80 rounded-full border border-sky-900/10" aria-hidden="true" />
               <div className="relative">
-                <p className="inline-flex items-center gap-3 rounded-full border border-emerald-950/15 bg-white/35 px-4 py-2 text-md font-black uppercase tracking-[0.2em] text-emerald-950">
-                  <span className="h-2 w-2 rounded-full bg-emerald-800" />
+                <p className="inline-flex items-center gap-3 rounded-full border border-sky-900/15 bg-white/60 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-slate-800">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#137c63]" />
                   {navbar.startProject}
                 </p>
-                <h1 className="mt-10 max-w-2xl text-5xl font-black leading-[0.9] tracking-[0.075em] text-slate-950 sm:text-6xl lg:text-7xl">
+                <h1 className="mt-8 max-w-2xl text-4xl font-black leading-[1.02] tracking-tighter text-slate-950 sm:text-6xl lg:text-7xl">
                   {c.heroTitle}
                 </h1>
-                <p className="mt-7 max-w-xl text-sm leading-8 text-emerald-950/80 sm:text-lg">
+                <p className="mt-6 max-w-xl text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
                   {c.heroDescription}
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
                     href={`mailto:${contactEmail}`}
-                    className="inline-flex items-center justify-center rounded-full bg-[#10251f] px-6 py-3.5 text-md font-bold text-white transition hover:-translate-y-0.5 hover:bg-emerald-900"
+                    className="inline-flex items-center justify-center rounded-full bg-[#087a61] px-6 py-3.5 text-sm font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61]"
                   >
                     {c.emailButton}
                   </Link>
                   <Link
                     href="/estimation-calculator"
-                    className="inline-flex items-center justify-center rounded-full border border-emerald-950/25 px-6 py-3.5 text-md font-bold text-emerald-950 transition hover:bg-white/50"
+                    className="inline-flex items-center justify-center rounded-full border border-sky-900/20 bg-white/40 px-6 py-3.5 text-sm font-bold text-slate-800 transition hover:bg-white/75"
                   >
                     {c.estimationButton}
                   </Link>
                 </div>
               </div>
-              <div className="relative mt-12 flex items-end justify-between gap-4 border-t border-emerald-950/20 pt-4">
-                <span className="text-md font-bold uppercase tracking-[0.18em] text-emerald-950/70">{c.badge}</span>
-                <span className="text-right text-md font-black text-emerald-950">{c.projectBrief}</span>
+              <div className="relative mt-12 flex items-end justify-between gap-4 border-t border-sky-900/15 pt-4">
+                <span className="text-sm font-bold uppercase tracking-[0.18em] text-slate-600">{c.badge}</span>
+                <span className="text-right text-sm font-black text-slate-900">{c.projectBrief}</span>
               </div>
             </motion.div>
 
@@ -164,7 +164,7 @@ export default function Contact() {
               initial={{ opacity: 0, scale: 1.03 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.08 }}
-              className="relative min-h-80 overflow-hidden bg-[#172a21] lg:min-h-full"
+              className="relative min-h-80 overflow-hidden bg-[#102a43] lg:min-h-full"
             >
               <OptimizedImage
                 src="/images/slider/slider-7.png"
@@ -173,11 +173,11 @@ export default function Contact() {
                 sizes="(min-width: 1024px) 45vw, 100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#10251f]/75 via-transparent to-[#10251f]/10" />
-              <div className="absolute right-8 top-8 flex h-28 w-28 items-center justify-center rounded-full border border-white/70 bg-lime-300 text-center text-[12px] font-black uppercase leading-4 tracking-[0.16em] text-emerald-950 shadow-xl sm:right-12 sm:top-12 sm:h-36 sm:w-36">
-                {energyBadge} <span className="mx-1 text-emerald-700">+</span> {energyBadgeAccent}<br />{energyBadgeSuffix}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#102a43]/75 via-transparent to-[#102a43]/10" />
+              <div className="absolute right-8 top-8 flex h-28 w-28 items-center justify-center rounded-full border border-white/70 bg-amber-300 text-center text-[12px] font-black uppercase leading-4 tracking-[0.16em] text-slate-900 shadow-xl sm:right-12 sm:top-12 sm:h-36 sm:w-36">
+                {energyBadge} <span className="mx-1 text-[#137c63]">+</span> {energyBadgeAccent}<br />{energyBadgeSuffix}
               </div>
-              <div className="absolute bottom-7 left-7 max-w-xs border-l-2 border-lime-300 pl-4 text-md font-semibold leading-6 text-white sm:bottom-10 sm:left-10">
+              <div className="absolute bottom-7 left-7 max-w-xs border-l-2 border-amber-300 pl-4 text-sm font-semibold leading-7 text-white sm:bottom-10 sm:left-10">
                 {projectStory}
               </div>
             </motion.div>
@@ -186,9 +186,9 @@ export default function Contact() {
           <section className="mt-5 overflow-hidden rounded-[2rem] bg-[linear-gradient(120deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] text-white">
             <div className="grid lg:grid-cols-[0.75fr_1.25fr]">
               <div className="flex flex-col justify-center border-b border-white/10 p-6 sm:p-9 lg:border-b-0 lg:border-r">
-                <p className="text-md font-bold uppercase tracking-[0.2em] text-lime-300">{contactUs}</p>
-                <h2 className="mt-4 text-3xl font-black leading-tight tracking-tight sm:text-4xl">{contactCardTitle}</h2>
-                <p className="mt-4 text-sm leading-7 text-emerald-50/75">{connectionPrompt}</p>
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-200">{contactUs}</p>
+                <h2 className="mt-4 text-3xl font-black leading-tight tracking-tighter sm:text-4xl">{contactCardTitle}</h2>
+                <p className="mt-4 text-sm leading-7 text-sky-100/85">{connectionPrompt}</p>
               </div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3">
                 {channels.map((channel, index) => (
@@ -197,15 +197,15 @@ export default function Contact() {
                     href={channel.href}
                     className="group flex min-h-36 items-start gap-4 border-b border-white/10 p-6 transition-colors hover:bg-white/[0.06] sm:p-7 lg:border-b-0 lg:border-r lg:last:border-r-0"
                   >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-lime-300 text-emerald-950 transition-transform group-hover:rotate-[-8deg]">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-amber-300 text-slate-900 transition-transform group-hover:rotate-[-8deg]">
                       {channel.icon}
                     </span>
                     <span className="min-w-0">
-                      <span className="block font-mono text-md font-bold text-lime-300">0{index + 1}</span>
-                      <span className="mt-3 block text-md font-bold uppercase tracking-[0.14em] text-white/60">{channel.label}</span>
-                      <span className="mt-1 block break-words text-sm font-semibold leading-6 text-white group-hover:text-lime-200">{channel.value}</span>
+                      <span className="block font-mono text-sm font-bold text-amber-200">0{index + 1}</span>
+                      <span className="mt-3 block text-sm font-bold uppercase tracking-[0.14em] text-white/75">{channel.label}</span>
+                      <span className="mt-1 block break-words text-sm font-semibold leading-6 text-white group-hover:text-amber-200">{channel.value}</span>
                     </span>
-                    <span className="ml-auto text-lg text-lime-300 transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
+                    <span className="ml-auto text-lg text-amber-200 transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
                     <span className="sr-only">{t.ui.openLink} {channel.label}</span>
                   </a>
                 ))}
@@ -215,21 +215,21 @@ export default function Contact() {
 
           <div className="mt-5 grid gap-3 sm:grid-cols-3">
             {contactHighlights.map((item, index) => (
-              <article key={item.label} className="flex gap-4 border-t-2 border-emerald-800/20 bg-white/55 p-5  ">
-                <span className="font-mono text-md font-bold text-emerald-800 ">0{index + 1}</span>
+              <article key={item.label} className="flex gap-4 border-t-2 border-[#137c63]/25 bg-white p-5">
+                <span className="font-mono text-sm font-bold text-[#137c63]">0{index + 1}</span>
                 <div>
-                  <p className="text-md font-bold uppercase tracking-[0.16em] text-slate-600 ">{item.label}</p>
-                  <p className="mt-2 text-sm leading-7 text-slate-800 ">{item.value}</p>
+                  <p className="text-sm font-bold uppercase tracking-[0.16em] text-slate-600">{item.label}</p>
+                  <p className="mt-2 text-sm leading-7 text-slate-800">{item.value}</p>
                 </div>
               </article>
             ))}
           </div>
 
-          <section className="mt-16 overflow-hidden rounded-[2rem] border border-indigo-900/10 bg-[linear-gradient(125deg,#e0f2fe_0%,#ede9fe_52%,#fce7f3_100%)] shadow-[0_28px_80px_-48px_rgba(49,46,129,0.2)] sm:mt-20" aria-labelledby="contact-form-title">
+          <section className="mt-12 overflow-hidden rounded-[30px] border border-slate-200 bg-[linear-gradient(125deg,#e0f2fe_0%,#ede9fe_52%,#fce7f3_100%)] shadow-[0_20px_55px_-40px_rgba(49,46,129,0.2)] sm:mt-16" aria-labelledby="contact-form-title">
             <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
               <div className="bg-[linear-gradient(145deg,#bfdbfe_0%,#ddd6fe_52%,#fbcfe8_100%)] p-6 text-slate-900 sm:p-9">
                 <p className="text-xs font-black uppercase tracking-[0.2em] text-indigo-900">{contactUs}</p>
-                <h2 id="contact-form-title" className="mt-3 text-3xl font-black leading-tight">{c.form.title}</h2>
+                <h2 id="contact-form-title" className="mt-3 text-3xl font-black leading-tight tracking-tighter">{c.form.title}</h2>
                 <p className="mt-4 text-sm leading-7 text-slate-700">{c.form.description}</p>
               </div>
               <form className="grid gap-4 p-5 sm:grid-cols-2 sm:p-8" onSubmit={handleContactSubmit}>
@@ -259,7 +259,7 @@ export default function Contact() {
                 </label>
                 <div className="space-y-3 sm:col-span-2">
                   <FormDataNotice />
-                  <button className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-emerald-800 px-6 py-3 text-sm font-bold text-white transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800 disabled:cursor-wait disabled:opacity-70 sm:w-auto" type="submit" disabled={isSubmitting}>
+                  <button className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#087a61] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61] disabled:cursor-wait disabled:opacity-70 sm:w-auto" type="submit" disabled={isSubmitting}>
                     {isSubmitting ? t.formSubmission.saving : c.form.submit}
                   </button>
                 </div>
@@ -267,25 +267,25 @@ export default function Contact() {
             </div>
           </section>
 
-          <section className="mt-20 sm:mt-28">
+          <section className="mt-12 sm:mt-16">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
               <div>
-                <p className="text-md font-black uppercase tracking-[0.2em] text-emerald-800 ">{stepIntroLabel}</p>
-                <h2 className="mt-4 max-w-xl text-4xl font-black leading-tight tracking-[0.05em] text-slate-950 sm:text-5xl ">{stepIntroTitle}</h2>
+                <p className="text-sm font-black uppercase tracking-[0.2em] text-[#137c63]">{stepIntroLabel}</p>
+                <h2 className="mt-4 max-w-xl text-4xl font-black leading-tight tracking-tighter text-slate-950 sm:text-5xl">{stepIntroTitle}</h2>
               </div>
-              <div className="flex flex-col justify-between gap-5 border-t border-slate-300 pt-5 sm:flex-row sm:items-end ">
-                <p className="max-w-md text-sm leading-7 text-slate-600 ">{stepIntroCopy}</p>
-                <Link href="/customer-enquiry" className="inline-flex w-fit items-center gap-3 text-md font-bold text-emerald-900 transition hover:gap-4 ">
+              <div className="flex flex-col justify-between gap-5 border-t border-slate-200 pt-5 sm:flex-row sm:items-end">
+                <p className="max-w-md text-sm leading-7 text-slate-600">{stepIntroCopy}</p>
+                <Link href="/customer-enquiry" className="inline-flex w-fit items-center gap-3 text-sm font-bold text-[#087a61] transition hover:gap-4">
                   {submitEnquiry} <span aria-hidden="true">&rarr;</span>
                 </Link>
               </div>
             </div>
-            <div className="mt-8 grid gap-px overflow-hidden rounded-2xl bg-slate-300  lg:grid-cols-3">
+            <div className="mt-8 grid gap-px overflow-hidden rounded-[22px] border border-slate-200 bg-slate-200 lg:grid-cols-3">
               {contactSteps.map((step) => (
-                <article key={step.title} className="bg-[#f3f0e5] p-6 sm:p-8 ">
-                  <span className="font-mono text-md font-bold text-emerald-700 ">{step.number} <span className="text-slate-600 ">/ 03</span></span>
-                  <h3 className="mt-8 text-2xl font-black text-slate-950 ">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-700 ">{step.description}</p>
+                <article key={step.title} className="bg-white p-6 sm:p-8">
+                  <span className="font-mono text-sm font-bold text-[#137c63]">{step.number} <span className="text-slate-500">/ 03</span></span>
+                  <h3 className="mt-8 text-2xl font-black text-slate-950">{step.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-700">{step.description}</p>
                 </article>
               ))}
             </div>
@@ -294,7 +294,7 @@ export default function Contact() {
       </section>
       <ReferralProgramSection />
       <section
-        className="relative isolate overflow-hidden bg-gradient-to-br from-sky-100 via-indigo-50 to-fuchsia-100 px-5 py-16 sm:px-8 lg:px-10"
+        className="relative isolate overflow-hidden bg-gradient-to-br from-sky-100 via-indigo-50 to-fuchsia-100 px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
         aria-labelledby="contact-faq-title"
       >
         <div className="pointer-events-none absolute -left-20 top-8 h-64 w-64 rounded-full bg-sky-300/30 blur-3xl" aria-hidden="true" />
@@ -306,7 +306,7 @@ export default function Contact() {
                 <span className="h-2 w-2 rounded-full bg-fuchsia-500" aria-hidden="true" />
                 {faqHeader}
               </p>
-              <h2 id="contact-faq-title" className="mt-5 text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-5xl">
+              <h2 id="contact-faq-title" className="mt-5 text-4xl font-black leading-tight tracking-tighter text-slate-950 sm:text-5xl">
                 {faqTitle}
               </h2>
               <p className="mt-5 max-w-md text-sm leading-7 text-slate-700 sm:text-base">
@@ -314,7 +314,7 @@ export default function Contact() {
               </p>
             </header>
 
-            <div className="space-y-3 rounded-[2rem] border border-white/80 bg-white/65 p-3 shadow-[0_24px_70px_-42px_rgba(49,46,129,0.35)] backdrop-blur-sm sm:p-5">
+            <div className="space-y-3 rounded-[30px] border border-white/80 bg-white/75 p-3 shadow-[0_20px_55px_-40px_rgba(49,46,129,0.25)] backdrop-blur-sm sm:p-5">
               {solarFaqs.map((faq) => (
                 <FaqCard key={faq.question} question={faq.question} answer={faq.answer} />
               ))}

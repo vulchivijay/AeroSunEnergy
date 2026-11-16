@@ -311,17 +311,17 @@ export default function CustomerEnquiryPage() {
   }
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-      <header className="mb-8">
-        <p className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-800/15 bg-white/80 px-4 py-2 text-md font-bold uppercase tracking-[0.18em] text-emerald-700">
+    <main className="min-h-screen w-full bg-[#f7f7f2] px-4 py-10 sm:px-6 lg:px-8">
+      <header className="mx-auto mb-8 max-w-7xl rounded-[30px] border border-sky-100/80 bg-linear-to-br from-white/75 via-sky-50/65 to-cyan-100/55 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_28px_70px_-40px_rgba(24,37,31,0.35)] backdrop-blur-2xl ring-1 ring-inset ring-white/60 sm:p-8">
+        <p className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-800/15 bg-[#eaf2e9] px-4 py-2 text-md font-bold uppercase tracking-[0.18em] text-emerald-800">
           {page.eyebrow}
         </p>
-        <h1 className="mt-2 text-3xl font-black text-slate-950 sm:text-4xl">
+        <h1 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
           {page.title}
         </h1>
-        <p className="mt-3 max-w-3xl text-slate-600">{page.description}</p>
+        <p className="mt-3 max-w-3xl text-md leading-7 text-slate-600 sm:text-lg sm:leading-8">{page.description}</p>
       </header>
-      <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_16rem]">
+      <div className="mx-auto grid max-w-7xl items-start gap-8 lg:grid-cols-[minmax(0,1fr)_16rem]">
         <form
           onSubmit={handleSubmit}
           onInput={(event) => {
@@ -338,9 +338,9 @@ export default function CustomerEnquiryPage() {
                 lastPercentageInput.setCustomValidity("");
             }
           }}
-          className="min-w-0 space-y-6"
+          className="min-w-0 space-y-6 rounded-[30px] border border-slate-200 bg-white p-3 shadow-[0_20px_60px_-40px_rgba(24,37,31,0.3)] sm:p-5 lg:p-6"
         >
-          <header className="rounded-2xl bg-[#123c48] p-5 text-white sm:p-7">
+          <header className="rounded-[26px] border border-white/30 bg-linear-to-br from-sky-900/65 via-cyan-800/55 to-slate-900/65 p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.24),0_28px_60px_-35px_rgba(15,23,42,0.8)] backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:p-7">
             <p className="text-md font-bold uppercase tracking-[0.2em] text-lime-300">
               {page.companyName}
             </p>
@@ -1029,7 +1029,7 @@ export default function CustomerEnquiryPage() {
           <FormDataNotice />
           {isSubmitting && <p className="text-md text-emerald-800" role="status">{t.formSubmission.saving}</p>}
         </form>
-        <aside className="min-w-0 rounded-2xl border border-slate-200 bg-white p-5 lg:sticky lg:top-24">
+        <aside className="min-w-0 rounded-[26px] border border-slate-200 bg-white p-5 shadow-[0_20px_60px_-40px_rgba(24,37,31,0.3)] lg:sticky lg:top-24">
           <h2 className="mb-4 text-md font-black uppercase tracking-wide text-slate-900">
             {page.quotationSectionsTitle}
           </h2>

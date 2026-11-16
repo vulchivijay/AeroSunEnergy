@@ -13,7 +13,7 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
       title={t.logo.homeTitle}
       aria-label={t.logo.homeAriaLabel}
       data-logo="brand"
-      className={`relative flex items-center gap-2 font-(--font-logo) ${compact ? "w-max max-w-auto" : "max-w-full"}`}
+      className={`relative flex items-center gap-2 font-(--font-logo) ${compact ? "w-max max-w-auto rounded-2xl border border-white/70 bg-white/45 px-2 py-1 shadow-[0_12px_30px_-18px_rgba(15,23,42,0.35)] backdrop-blur-lg" : "max-w-full"}`}
     >
       <Image
         src="/images/logo.png"
@@ -31,8 +31,8 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
             data-brand-name
             className={
               compact
-                ? "relative whitespace-nowrap pr-2 text-2xl font-bold tracking-wider text-[#20A44A] drop-shadow-xl sm:text-3xl"
-                : "relative whitespace-nowrap pr-3 text-2xl font-bold tracking-wider text-[#20A44A] drop-shadow-xl sm:text-3xl"
+                ? "relative whitespace-nowrap pr-2 text-2xl font-bold tracking-wider text-[#137c63] drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)] sm:text-3xl"
+                : "relative whitespace-nowrap pr-3 text-2xl font-bold tracking-wider text-[#137c63] drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)] sm:text-3xl"
             }
           >
             {t.logo.wordmark}
@@ -44,13 +44,13 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
           </span>
           <span
             data-brand-name
-            className={`whitespace-nowrap text-2xl font-bold tracking-wider drop-shadow-xl sm:text-3xl ${compact ? "text-[#F59E0B]" : "text-[#F59E0B]"}`}
+            className={`whitespace-nowrap text-2xl font-bold tracking-wider text-[#F59E0B] drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)] sm:text-3xl`}
           >
             {t.logo.wordmarkSuffix}
           </span>
         </div>
         <div
-          className={`text-[12px] text-[#333333]
+          className={`text-[12px] font-semibold text-[#173b2c]
             compact
               ? "whitespace-nowrap"
               : "whitespace-nowrap"

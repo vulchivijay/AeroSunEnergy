@@ -115,17 +115,17 @@ export default function Navbar() {
     const classes = mobile
       ? `flex min-h-12 w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium transition ${
           disabled
-            ? 'cursor-not-allowed text-[#333333]'
+            ? 'cursor-not-allowed text-slate-500'
             : active
-              ? 'bg-[#18833a] text-white ring-1 ring-inset ring-[#18833a]/50'
-              : 'text-[#333333] hover:bg-[#18833a] hover:text-white'
+              ? 'bg-linear-to-r from-[#137c63] to-[#20A44A] text-white shadow-[0_8px_20px_-12px_rgba(19,124,99,0.8)] ring-1 ring-inset ring-white/40'
+              : 'text-[#173b2c] hover:bg-white/70 hover:text-[#137c63] hover:shadow-sm'
         }`
       : `group relative z-10 flex w-auto flex-col items-center gap-1 rounded-xl px-2 py-1.5 text-[13px] transition-colors 2xl:text-sm ${
           active
-            ? 'bg-[#18833a] text-white'
+            ? 'bg-linear-to-r from-[#137c63] to-[#20A44A] text-white shadow-[0_8px_20px_-12px_rgba(19,124,99,0.8)]'
             : disabled
-              ? 'cursor-not-allowed text-[#333333]'
-              : 'text-[#333333] hover:bg-[#18833a] hover:text-white'
+              ? 'cursor-not-allowed text-slate-500'
+              : 'text-[#173b2c] hover:bg-white/70 hover:text-[#137c63] hover:shadow-sm'
         }`
 
     const content = (
@@ -136,8 +136,8 @@ export default function Navbar() {
           <>
             <span className={`relative flex h-8 w-8 items-center justify-center rounded-full border transition-all duration-300 ${
               active
-                ? 'border-white/30 bg-white/10 text-white'
-                : 'border-[#333333]/15 bg-white/50 text-[#333333] group-hover:border-white/40 group-hover:bg-white/10 group-hover:text-white'
+                ? 'border-white/45 bg-white/20 text-white shadow-[0_0_16px_rgba(255,255,255,0.2)]'
+                : 'border-emerald-800/15 bg-white/65 text-[#137c63] shadow-[0_4px_12px_-8px_rgba(15,23,42,0.35)] group-hover:border-emerald-600/40 group-hover:bg-white group-hover:text-[#137c63]'
             }`}>
               <Icon className="h-4 w-4" strokeWidth={1.7} aria-hidden="true" />
               {disabled && (
@@ -335,19 +335,19 @@ export default function Navbar() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 bg-[linear-gradient(135deg,#e5e7eb,#e5e7eb)] text-[#333333] shadow-[0_18px_42px_-30px_rgba(0,0,0,0.25)]"
+      className="sticky top-0 z-50 border-b border-white/50 bg-white/45 text-[#173b2c] shadow-[0_18px_42px_-30px_rgba(15,23,42,0.28)] backdrop-blur-2xl"
     >
-      <div className="absolute -left-10 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-[#333333]/[0.03] blur-3xl" />
-      <div className="absolute -right-12 top-0 h-32 w-32 rounded-full bg-[#333333]/[0.03] blur-3xl" />
+      <div className="absolute -left-10 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-emerald-300/25 blur-3xl" />
+      <div className="absolute -right-12 top-0 h-32 w-32 rounded-full bg-amber-200/30 blur-3xl" />
 
-      <div className="relative hidden border-b border-[#333333]/10 bg-[#e5e7eb] text-[#333333]">
+      <div className="relative hidden border-b border-white/40 bg-white/20 text-[#173b2c] backdrop-blur-xl">
         <div className="mx-auto flex min-h-8 w-full items-center justify-between gap-3 px-3 py-1 text-sm font-semibold tracking-[0.08em] sm:px-6 sm:text-sm sm:tracking-[0.12em] lg:px-8">
           <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
             <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6b45e] shadow-[0_0_10px_rgba(214,180,94,0.65)]" aria-hidden="true" />
             {t.navbar.brandName}
           </span>
-          <span className="ml-3 hidden whitespace-nowrap text-sm font-medium uppercase tracking-[0.2em] text-[#333333] lg:flex lg:items-center lg:gap-2">
-            <Sun className="h-3 w-3 text-[#333333]" strokeWidth={1.8} aria-hidden="true" />
+          <span className="ml-3 hidden whitespace-nowrap text-sm font-semibold uppercase tracking-[0.2em] text-[#137c63] lg:flex lg:items-center lg:gap-2">
+            <Sun className="h-3 w-3 text-amber-500" strokeWidth={1.8} aria-hidden="true" />
             {t.navbar.brandTagline}
           </span>
         </div>
@@ -358,12 +358,12 @@ export default function Navbar() {
 
         <nav aria-label={t.navbar.primaryNavigationLabel} className="hidden min-w-0 flex-1 items-center justify-center xl:flex">
           <div className="relative grid w-full grid-flow-col auto-cols-max items-center justify-center gap-2">
-            <span className="pointer-events-none absolute left-[8%] right-[8%] top-4 h-px bg-gradient-to-r from-transparent via-[#333333]/20 to-transparent" aria-hidden="true" />
+            <span className="pointer-events-none absolute left-[8%] right-[8%] top-4 h-px bg-gradient-to-r from-transparent via-emerald-700/25 to-transparent" aria-hidden="true" />
             {navLinks.map((link) => renderNavigationLink(link))}
           </div>
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-2 border-l border-[#333333]/15 pl-3 2xl:gap-3 2xl:pl-5 xl:flex">
+        <div className="hidden shrink-0 items-center gap-2 border-l border-emerald-900/15 pl-3 2xl:gap-3 2xl:pl-5 xl:flex">
           <div className="relative">
             <button
               type="button"
@@ -371,11 +371,11 @@ export default function Navbar() {
               aria-label={t.navbar.languageLabel}
               aria-expanded={langOpen}
               aria-controls="desktop-language-options"
-              className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-[#333333]/20 bg-white/50 px-3 text-[12px] tracking-wider text-[#333333] transition hover:border-[#333333]/40 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#333333]"
+              className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-emerald-800/20 bg-white/55 px-3 text-[12px] font-semibold tracking-wider text-[#173b2c] shadow-[0_6px_18px_-12px_rgba(15,23,42,0.35)] transition hover:border-emerald-600/50 hover:bg-white/90 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
             >
-              <Globe2 className="h-4 w-4 text-[#333333]" aria-hidden="true" />
+              <Globe2 className="h-4 w-4 text-emerald-700" aria-hidden="true" />
               {languageOptions.find((option) => option.code === locale)?.shortLabel}
-              <ChevronDown className={`h-3.5 w-3.5 text-[#333333] transition-transform ${langOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+              <ChevronDown className={`h-3.5 w-3.5 text-emerald-700 transition-transform ${langOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
             </button>
             {renderLanguageOptions('desktop-language-options', langOpen)}
           </div>
@@ -384,7 +384,7 @@ export default function Navbar() {
             href="/aerosun-energy.pdf"
             download="aerosun-energy.pdf"
             aria-label={t.navbar.downloadVoucher}
-            className="inline-flex min-h-11 bg-[#F59E0B] items-center gap-2 rounded-xl px-3 text-sm font-semibold text-[#ffffff] transition hover:bg-[#20A44A] hover:text-[#ffffff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#333333]"
+            className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-amber-300/70 bg-linear-to-r from-amber-500 to-orange-500 px-3 text-sm font-bold text-white shadow-[0_10px_24px_-12px_rgba(245,158,11,0.75)] transition hover:-translate-y-0.5 hover:from-emerald-600 hover:to-emerald-500 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
           >
             <ArrowDownToLine className="h-4 w-4" aria-hidden="true" />
             <span className="hidden 2xl:inline">{t.navbar.voucher}</span>
@@ -396,7 +396,7 @@ export default function Navbar() {
             title={t.navbar.startProjectTitle}
             aria-label={t.navbar.startProjectAriaLabel}
             data-cta="start-project"
-            className="group inline-flex min-h-11 items-center gap-1 rounded-xl bg-[#18833a] px-4 text-sm text-white shadow-[0_8px_24px_-12px_rgba(32,164,74,0.45)] transition hover:-translate-y-0.5 hover:bg-[#126b2e] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#20A44A]"
+            className="group inline-flex min-h-11 items-center gap-1 rounded-xl border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-4 text-sm font-bold text-white shadow-[0_12px_28px_-12px_rgba(19,124,99,0.7)] ring-1 ring-inset ring-white/15 transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-emerald-400"
           >
             {t.navbar.startProject}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
@@ -412,8 +412,8 @@ export default function Navbar() {
             }}
             className={`inline-flex h-11 w-11 items-center justify-center rounded-full border shadow-[0_6px_18px_-10px_rgba(0,0,0,0.2)] transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#333333] ${
               menuOpen
-                ? 'border-[#333333]/30 bg-white text-[#333333]'
-                : 'border-[#333333]/20 bg-white/50 text-[#333333] hover:border-[#333333]/40 hover:bg-white'
+                ? 'border-emerald-600/50 bg-white/90 text-emerald-800 ring-2 ring-emerald-200'
+                : 'border-white/70 bg-white/60 text-emerald-800 hover:border-emerald-500/50 hover:bg-white/90'
             }`}
             aria-label={menuOpen ? t.navbar.closeMenu : t.navbar.toggleMenu}
             aria-expanded={menuOpen}
@@ -427,40 +427,40 @@ export default function Navbar() {
       <div
         id="mobile-primary-navigation"
         hidden={!menuOpen}
-        className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-[#333333]/15 bg-[#e5e7eb] px-4 pb-6 pt-3 shadow-[0_24px_50px_-22px_rgba(0,0,0,0.25)] sm:px-6 xl:hidden"
+        className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-white/50 bg-white/80 px-4 pb-6 pt-3 text-[#173b2c] shadow-[0_24px_50px_-22px_rgba(15,23,42,0.3)] backdrop-blur-2xl sm:px-6 xl:hidden"
       >
         <nav aria-label={t.navbar.mobileNavigationLabel} className="mx-auto max-w-3xl space-y-1">
-          <p className="mb-3 flex items-center gap-2 px-2 text-sm font-bold uppercase tracking-[0.2em] text-[#333333]">
-            <span className="h-px w-5 bg-[#333333]/30" />
+          <p className="mb-3 flex items-center gap-2 px-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
+            <span className="h-px w-5 bg-emerald-700/35" />
             {t.navbar.exploreLabel}
           </p>
           {navLinks.map((link) => renderNavigationLink(link, true))}
-          <div className="border-t border-[#333333]/15 px-2 pt-4">
+          <div className="border-t border-emerald-900/15 px-2 pt-4">
             <button
               type="button"
               onClick={() => setLangOpen((open) => !open)}
               aria-label={t.navbar.languageLabel}
               aria-expanded={langOpen}
               aria-controls="mobile-language-options"
-              className="flex min-h-12 w-full items-center justify-between rounded-xl px-3 py-3 text-sm font-medium text-[#333333] transition hover:bg-[#333333]/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#333333]"
+              className="flex min-h-12 w-full items-center justify-between rounded-xl px-3 py-3 text-sm font-semibold text-[#173b2c] transition hover:bg-emerald-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
             >
               <span className="flex items-center gap-3">
-                <Globe2 className="h-4 w-4 text-[#333333]" aria-hidden="true" />
+                <Globe2 className="h-4 w-4 text-emerald-700" aria-hidden="true" />
                 {t.navbar.languageLabel}
-                <span className="text-xs text-[#333333]">
+                <span className="text-xs font-semibold text-emerald-700">
                   {languageOptions.find((option) => option.code === locale)?.label}
                 </span>
               </span>
-              <ChevronDown className={`h-4 w-4 text-[#333333] transition-transform ${langOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+              <ChevronDown className={`h-4 w-4 text-emerald-700 transition-transform ${langOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
             </button>
             {renderLanguageOptions('mobile-language-options', langOpen, true)}
           </div>
-          <div className="grid gap-3 border-t border-[#333333]/15 pt-4 sm:grid-cols-2">
+          <div className="grid gap-3 border-t border-emerald-900/15 pt-4 sm:grid-cols-2">
             <Link
               href="/contact"
               prefetch={false}
               onClick={closeMenu}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#18833a] px-5 text-sm font-bold text-white transition hover:bg-[#126b2e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#20A44A]"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-5 text-sm font-bold text-white shadow-[0_10px_24px_-12px_rgba(19,124,99,0.7)] ring-1 ring-inset ring-white/15 transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
             >
               {t.navbar.startProject}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -469,7 +469,7 @@ export default function Navbar() {
               href="/aerosun-energy.pdf"
               download="aerosun-energy.pdf"
               onClick={closeMenu}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#333333]/20 bg-white/50 px-5 text-sm font-semibold text-[#333333] transition hover:border-[#333333]/40 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#333333]"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-amber-300/70 bg-white/60 px-5 text-sm font-bold text-amber-800 shadow-sm transition hover:border-amber-500/60 hover:bg-amber-50 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
             >
               <ArrowDownToLine className="h-4 w-4" aria-hidden="true" />
               {t.navbar.downloadVoucher}

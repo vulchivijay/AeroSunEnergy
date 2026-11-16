@@ -44,15 +44,15 @@ export default function AboutPage() {
   const systems = aboutSection.systemCards.map((item, index) => ({
     ...item,
     tone: [
-      'border-teal-100 bg-[#e8f0ea] shadow-[0_16px_38px_-24px_rgba(15,76,70,0.18)]',
-      'border-amber-100 bg-[#fff4dd] shadow-[0_16px_38px_-24px_rgba(146,64,14,0.18)]',
-      'border-slate-200 bg-[#e8eef3] shadow-[0_16px_38px_-24px_rgba(30,58,80,0.18)]',
+      'border-[#dce9df] bg-[#eaf2e9] shadow-sm',
+      'border-amber-100 bg-[#fff8ed] shadow-sm',
+      'border-slate-200 bg-slate-50 shadow-sm',
     ][index] ?? 'border-slate-200 bg-slate-100 shadow-sm',
     Icon: systemIcons[index] ?? Zap,
   }))
   return (
-    <main className="overflow-hidden bg-[#f7f7f2] text-[#112c2a]">
-      <section id="story" className="relative isolate overflow-hidden bg-[#e8f0ea] text-[#112c2a]">
+    <main className="overflow-hidden bg-white text-slate-900">
+      <section id="story" className="relative isolate overflow-hidden bg-[radial-gradient(ellipse_at_82%_15%,rgba(99,102,241,0.13),transparent_35%),linear-gradient(125deg,#f8fafc_0%,#e0e7ff_58%,#f5f3ff_100%)] text-[#152b29]">
         <div className="pointer-events-none absolute inset-0 -z-10" />
         <div className="absolute -right-36 top-20 -z-10 h-[34rem] w-[34rem] rounded-full border border-teal-900/[0.08] sm:right-[-8rem]">
           <div className="absolute inset-10 rounded-full border border-teal-900/[0.08]" />
@@ -60,50 +60,50 @@ export default function AboutPage() {
           <div className="absolute inset-32 rounded-full border border-teal-900/[0.08]" />
         </div>
 
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20 lg:px-10 lg:py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:px-10 lg:py-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-teal-800/15 bg-white/70 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-teal-800">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#137c63]/15 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
               <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
               {pageStrings.badge}
             </div>
-            <h1 className="mt-7 text-5xl font-black uppercase leading-[0.92] tracking-[0.075em] text-[#112c2a] sm:text-7xl lg:text-8xl">
+            <h1 className="mt-6 text-4xl font-black leading-[1.02] tracking-tighter text-[#152b29] sm:text-6xl lg:text-7xl">
               {pageStrings.companyTitleA}
-              <span className="mt-2 block text-teal-700">{pageStrings.companyTitleB}</span>
+              <span className="mt-2 block text-[#137c63]">{pageStrings.companyTitleB}</span>
             </h1>
-            <p className="mt-5 text-md font-bold uppercase tracking-[0.3em] text-slate-600">
+            <p className="mt-5 text-sm font-bold uppercase tracking-[0.2em] text-slate-600">
               {pageStrings.legalLabel}
             </p>
-            <p className="mt-6 max-w-xl text-xl font-medium leading-8 text-slate-700 sm:text-2xl">
+            <p className="mt-6 max-w-xl text-lg font-medium leading-8 text-slate-700 sm:text-xl">
               {pageStrings.pitch.split(' • ').map((part, index) => (
                 <span key={part}>
-                  {index > 0 && <span className="text-amber-600"> &middot; </span>}
+                  {index > 0 && <span className="text-[#137c63]"> &middot; </span>}
                   {part}
                 </span>
               ))}
             </p>
-            <div className="mt-8 border-l-2 border-teal-600 pl-5">
-              <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-teal-800">{pageStrings.promiseLabel}</p>
+            <div className="mt-8 border-l-2 border-[#087a61] pl-5">
+              <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-[#137c63]">{pageStrings.promiseLabel}</p>
               <p className="mt-2 text-xl font-semibold italic text-[#112c2a] sm:text-2xl">&ldquo;{pageStrings.promiseText}&rdquo;</p>
             </div>
             <p className="mt-8 max-w-2xl text-sm leading-7 text-slate-600 sm:text-lg sm:leading-8">
               {pageStrings.intro}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#capabilities" className="rounded-xl bg-teal-800 px-5 py-3 text-md font-bold text-white shadow-lg shadow-teal-950/10 transition hover:-translate-y-0.5 hover:bg-teal-900 hover:shadow-xl">
+              <a href="#capabilities" className="rounded-full bg-[#087a61] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61]">
                 {pageStrings.explore}
               </a>
-              <a href="#leadership" className="rounded-xl border border-teal-900/20 px-5 py-3 text-md font-bold text-teal-900 transition hover:-translate-y-0.5 hover:bg-white/60">
+              <a href="#leadership" className="rounded-full border border-[#137c63]/30 bg-white/50 px-5 py-3 text-sm font-bold text-[#075e4b] transition hover:bg-white/80">
                 {pageStrings.leadership}
               </a>
-              <Link href="/about/company-profile" className="rounded-xl border border-teal-900/20 px-5 py-3 text-md font-bold text-teal-900 transition hover:-translate-y-0.5 hover:bg-white/60">
+              <Link href="/about/company-profile" className="rounded-full border border-[#137c63]/30 bg-white/50 px-5 py-3 text-sm font-bold text-[#075e4b] transition hover:bg-white/80">
                 {pageStrings.companyProfile}
               </Link>
-              <Link href="/about/product-catalogue" className="rounded-xl border border-teal-900/20 px-5 py-3 text-md font-bold text-teal-900 transition hover:-translate-y-0.5 hover:bg-white/60">
+              <Link href="/about/product-catalogue" className="rounded-full border border-[#137c63]/30 bg-white/50 px-5 py-3 text-sm font-bold text-[#075e4b] transition hover:bg-white/80">
                 {pageStrings.productCatalogue}
               </Link>
             </div>
@@ -111,8 +111,8 @@ export default function AboutPage() {
 
           <div className="relative mx-auto w-full max-w-md lg:ml-auto">
             <div className="absolute -inset-5 rounded-[2.5rem] bg-teal-700/10 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[1.5rem] border border-white/80 bg-white/80 p-2 shadow-[0_24px_70px_-35px_rgba(15,55,50,0.28)]">
-              <div className="relative h-[26rem] overflow-hidden rounded-[1.15rem] bg-[#0d2d2b] sm:h-[32rem]">
+            <div className="relative overflow-hidden rounded-[30px] border border-[#e2e8e2] bg-white p-2 shadow-[0_20px_55px_-40px_rgba(23,37,84,0.25)]">
+              <div className="relative h-[26rem] overflow-hidden rounded-[22px] bg-[#172554] sm:h-[32rem]">
                 <OptimizedImage
                   src="/images/founder-aerosunenergy.webp"
                   alt={content.founderImageAlt}
@@ -133,33 +133,33 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="border-t border-teal-900/15">
-          <div className="mx-auto grid max-w-7xl gap-4 px-5 py-5 sm:grid-cols-3 sm:px-8 lg:px-10">
+        <div className="border-t border-[#cbd6cc]">
+          <div className="mx-auto grid max-w-7xl gap-4 px-4 py-5 sm:grid-cols-3 sm:px-6 lg:px-10">
             {companyStatsData.map((stat) => (
               <div key={stat.label} className="flex items-center justify-between gap-4 sm:justify-start sm:gap-5">
-                <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-teal-800/70">{stat.label}</span>
-                <span className="text-md font-semibold text-[#112c2a]">{stat.value}</span>
+                <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-[#137c63]">{stat.label}</span>
+                <span className="text-sm font-semibold text-[#152b29]">{stat.value}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f8f6ef]">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:px-10">
+      <section className="bg-[#f7f7f2]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="grid gap-5 border-b border-[#cbd6cc] pb-7 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-x-8 lg:gap-x-12 lg:pb-9">
-            <h2 className="mt-0 max-w-4xl border-l-[3px] border-teal-700 pl-5 text-4xl font-black leading-[1.05] tracking-[-0.04em] text-[#112c2a] sm:text-5xl lg:text-6xl">
+            <h2 className="mt-0 max-w-4xl border-l-[3px] border-[#087a61] pl-5 text-3xl font-black leading-[1.05] tracking-tighter text-[#152b29] sm:text-4xl lg:text-5xl">
               {pageStrings.storyHeading}
             </h2>
-            <p className="mb-1 inline-flex w-fit items-center gap-2 rounded-full border border-teal-900/10 bg-[#e7efe8] px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] text-teal-800 before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-['']">{pageStrings.storyBadge}</p>
-            <div className="h-px w-full bg-gradient-to-r from-teal-800/30 via-amber-500/30 to-transparent sm:col-span-2" />
+            <p className="mb-1 inline-flex w-fit items-center gap-2 rounded-full border border-[#137c63]/15 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-['']">{pageStrings.storyBadge}</p>
+            <div className="h-px w-full bg-gradient-to-r from-[#137c63]/25 via-amber-500/25 to-transparent sm:col-span-2" />
           </div>
           <div className="grid gap-7 pt-8 text-sm leading-7 text-slate-600 sm:grid-cols-2 sm:text-base sm:leading-8 lg:grid-cols-3 lg:gap-10">
             <p className="border-l-2 border-[#dce9df] pl-5">
               {content.founderBioParagraph1.map((segment, index) => {
                 const text = index === 0 || index === 2
                 return text ? (
-                  <strong key={segment} className={index === 0 ? 'font-bold text-[#112c2a]' : 'font-bold text-teal-800'}>
+                  <strong key={segment} className={index === 0 ? 'font-bold text-[#152b29]' : 'font-bold text-[#137c63]'}>
                     {segment}
                   </strong>
                 ) : segment
@@ -167,7 +167,7 @@ export default function AboutPage() {
             </p>
             <p className="border-l-2 border-[#dce9df] pl-5">
               {content.founderBioParagraph2.map((segment, index) => index === 1 ? (
-                <strong key={segment} className="font-bold text-teal-800">{segment}</strong>
+                <strong key={segment} className="font-bold text-[#137c63]">{segment}</strong>
               ) : segment)}
             </p>
             <p className="border-l-2 border-[#dce9df] pl-5">
@@ -177,26 +177,26 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="compliance" className="border-y border-teal-100 bg-[#edf4f2]">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:px-10">
-          <div className="overflow-hidden rounded-[2.5rem] border border-teal-900/10 bg-white/90 shadow-[0_32px_80px_-48px_rgba(15,118,110,0.35)]">
-            <div className="relative overflow-hidden bg-[#123b38] px-5 py-7 text-white sm:px-8 sm:py-9">
+      <section id="compliance" className="border-y border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="overflow-hidden rounded-[30px] border border-[#e2e8e2] bg-white shadow-[0_20px_55px_-40px_rgba(23,37,84,0.25)]">
+            <div className="relative overflow-hidden bg-[linear-gradient(145deg,#172554_0%,#1e3a8a_55%,#312e81_100%)] px-5 py-7 text-white sm:px-8 sm:py-9">
               <div className="absolute -right-12 -top-24 h-64 w-64 rounded-full border border-white/10" aria-hidden="true" />
               <div className="absolute -right-2 -top-14 h-44 w-44 rounded-full border border-white/10" aria-hidden="true" />
               <div className="relative flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
                 <div className="max-w-2xl">
-                  <p className="inline-flex items-center gap-2 rounded-full border border-amber-200/30 bg-white/[0.08] px-3 py-1.5 text-[12px] font-black uppercase tracking-[0.2em] text-amber-200">
+                  <p className="inline-flex items-center gap-2 rounded-full border border-amber-200/30 bg-white/[0.08] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-amber-200">
                     <span className="h-1.5 w-1.5 rounded-full bg-amber-300" />
                     {pageStrings.governanceBadge}
                   </p>
-                  <h2 className="mt-4 text-3xl font-black tracking-[0.055em] sm:text-4xl">
+                  <h2 className="mt-4 text-3xl font-black tracking-tighter sm:text-4xl">
                     {pageStrings.governanceHeading}
                   </h2>
-                  <p className="mt-2 text-md leading-6 text-indigo-50/90">
+                  <p className="mt-2 text-sm leading-7 text-indigo-50/90">
                     {pageStrings.governanceDescription}
                   </p>
                 </div>
-                <div className="flex w-fit items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/20 px-4 py-3 backdrop-blur-sm">
+                <div className="flex w-fit items-center gap-3 rounded-2xl border border-white/15 bg-white/[0.08] px-4 py-3">
                   <span className="text-3xl font-black leading-none text-amber-200">{approvalRowsData.length}</span>
                   <span className="max-w-20 text-[12px] font-bold uppercase leading-4 tracking-[0.16em] text-indigo-50">{content.companyRecordsLabel}</span>
                 </div>
@@ -207,14 +207,14 @@ export default function AboutPage() {
                 const label = row.label
                 const status = row.status
                 return (
-                  <article key={label} className="group flex min-h-24 items-center gap-3 rounded-2xl border border-indigo-100 bg-white p-4 shadow-[0_8px_24px_-20px_rgba(15,23,42,0.35)] transition duration-200 hover:-translate-y-0.5 hover:border-violet-300 hover:shadow-[0_16px_30px_-22px_rgba(49,46,129,0.2)] sm:gap-4 sm:p-5">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-indigo-50 font-mono text-md font-black text-indigo-800 ring-1 ring-indigo-700/10 transition-colors group-hover:bg-indigo-100">
+                  <article key={label} className="group flex min-h-24 items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-lg sm:gap-4 sm:p-5">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#eaf2e9] font-mono text-sm font-black text-[#14785e] ring-1 ring-[#087a61]/10 transition-colors group-hover:bg-[#dce9df]">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <div className="min-w-0 flex-1">
-                      <h3 className="text-md font-bold leading-6 text-slate-900 ">{label}</h3>
-                      <span className="mt-2 inline-flex max-w-full items-center gap-1.5 rounded-full border border-violet-200 bg-violet-50 px-2.5 py-1 text-[12px] font-bold uppercase leading-4 tracking-[0.1em] text-violet-900">
-                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-violet-600" />
+                      <h3 className="text-sm font-bold leading-6 text-slate-900">{label}</h3>
+                      <span className="mt-2 inline-flex max-w-full items-center gap-1.5 rounded-full border border-[#cfe3d3] bg-[#eaf2e9] px-2.5 py-1 text-[12px] font-bold uppercase leading-4 tracking-[0.1em] text-[#14785e]">
+                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#087a61]" />
                         {status}
                       </span>
                     </div>
@@ -226,22 +226,22 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="leadership" className="bg-[#f8f7f1]">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:px-10">
+      <section id="leadership" className="bg-[#f7f7f2]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="grid gap-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-x-8 lg:gap-x-12">
-            <p className="order-1 inline-flex w-fit items-center gap-2 rounded-full border border-teal-900/10 bg-[#e7efe8] px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] text-teal-800 before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] sm:order-2 sm:mb-1 sm:justify-self-end">{pageStrings.leadershipBadge}</p>
-            <h2 className="order-2 mt-0 max-w-4xl border-l-[3px] border-teal-700 pl-5 text-4xl font-black leading-[1.05] tracking-[-0.04em] text-[#112c2a] sm:order-1 sm:text-5xl lg:text-6xl">{pageStrings.leadershipHeading}</h2>
+            <p className="order-1 inline-flex w-fit items-center gap-2 rounded-full border border-[#137c63]/15 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] sm:order-2 sm:mb-1 sm:justify-self-end">{pageStrings.leadershipBadge}</p>
+            <h2 className="order-2 mt-0 max-w-4xl border-l-[3px] border-[#087a61] pl-5 text-3xl font-black leading-[1.05] tracking-tighter text-[#152b29] sm:order-1 sm:text-4xl lg:text-5xl">{pageStrings.leadershipHeading}</h2>
             <p className="mt-0 border-b border-[#cbd6cc] pb-6 text-sm leading-7 text-slate-600 sm:col-span-2 sm:text-base sm:leading-8">
               {pageStrings.leadershipIntro}
             </p>
-            <div className="mt-0 grid gap-px overflow-hidden rounded-[1.75rem] border border-slate-200 bg-slate-200 shadow-[0_24px_60px_-40px_rgba(15,55,50,0.2)] sm:col-span-2 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-0 grid gap-px overflow-hidden rounded-[30px] border border-slate-200 bg-slate-200 sm:col-span-2 sm:grid-cols-2 lg:grid-cols-3">
               {founderProfilesData.map((profile) => (
-                <article key={profile.name} className="flex flex-col items-start gap-5 bg-white px-6 py-7 first:bg-[#dce9df] sm:px-8 sm:py-9 lg:px-7 xl:px-9">
+                <article key={profile.name} className="flex flex-col items-start gap-5 bg-white px-6 py-7 first:bg-[#eaf2e9] sm:px-8 sm:py-9 lg:px-7 xl:px-9">
                   <div className="flex flex-col items-start gap-4">
-                    <span className="text-3xl font-black text-[#112c2a]">{profile.initials}</span>
+                    <span className="text-3xl font-black text-[#152b29]">{profile.initials}</span>
                     <div>
-                      <h3 className="text-xl font-bold text-[#112c2a] sm:text-2xl">{profile.name}</h3>
-                      <p className="mt-2 text-[12px] font-bold uppercase tracking-[0.15em] text-teal-700">{profile.role}</p>
+                      <h3 className="text-xl font-bold text-[#152b29] sm:text-2xl">{profile.name}</h3>
+                      <p className="mt-2 text-[12px] font-bold uppercase tracking-[0.15em] text-[#137c63]">{profile.role}</p>
                     </div>
                   </div>
                   <p className="text-sm leading-7 text-slate-600">{profile.description}</p>
@@ -250,15 +250,15 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mt-16 border-t border-[#cbd6cc] pt-10">
+          <div className="mt-12 border-t border-[#cbd6cc] pt-8">
             <div className="grid gap-3 sm:grid-cols-2">
               {coreValuesData.map((value, index) => (
-                <article key={value.title} className="group rounded-xl border border-white/90 bg-white/85 p-5 shadow-sm transition hover:-translate-y-1 hover:border-teal-200 hover:shadow-lg hover:shadow-teal-950/5">
+                <article key={value.title} className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-lg">
                   <div className="flex items-center justify-between gap-3">
-                    <h3 className="text-md font-extrabold text-slate-950 ">{value.title}</h3>
-                    <span className="font-mono text-[12px] font-bold text-teal-700/60">0{index + 1}</span>
+                    <h3 className="text-sm font-extrabold text-slate-950">{value.title}</h3>
+                    <span className="font-mono text-[12px] font-bold text-[#137c63]">0{index + 1}</span>
                   </div>
-                  <p className="mt-3 text-sm leading-7 text-slate-700 ">{value.description}</p>
+                  <p className="mt-3 text-sm leading-7 text-slate-700">{value.description}</p>
                 </article>
               ))}
             </div>
@@ -266,37 +266,37 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#0d2b29] text-white">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
+      <section className="bg-[linear-gradient(145deg,#172554_0%,#1e3a8a_55%,#312e81_100%)] text-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-amber-200 before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-300 before:content-['']">{content.whySectionBadge}</p>
-              <h2 className="mt-3 max-w-2xl text-3xl font-black tracking-[0.055em] text-white sm:text-4xl">{content.whyHeading}</h2>
+              <p className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-amber-200 before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-300 before:content-['']">{content.whySectionBadge}</p>
+              <h2 className="mt-3 max-w-2xl text-3xl font-black tracking-tighter text-white sm:text-4xl">{content.whyHeading}</h2>
             </div>
-            <p className="max-w-lg text-sm leading-7 text-indigo-100/90">{content.whyDescription}</p>
+            <p className="max-w-lg text-sm leading-7 text-slate-200">{content.whyDescription}</p>
           </div>
           <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
             {content.companyStrengthsStats.map((stat) => (
               <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/[0.05] p-5">
                 <p className="text-3xl font-black tracking-tight text-amber-300">{stat.value}</p>
-                <p className="mt-2 text-[12px] font-bold uppercase tracking-[0.17em] text-indigo-100/65">{stat.label}</p>
+                <p className="mt-2 text-[12px] font-bold uppercase tracking-[0.17em] text-slate-300">{stat.label}</p>
               </div>
             ))}
           </div>
           <div className="mt-5 grid gap-5 lg:grid-cols-2">
-            <div className="rounded-2xl border border-indigo-100/15 bg-indigo-950/25 p-5 sm:p-6">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 sm:p-6">
               <h3 className="text-lg font-extrabold text-white">{content.strengthsHeading}</h3>
               <ul className="mt-4 space-y-3">
                 {content.companyStrengths.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm leading-7 text-indigo-50/90"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300" />{item}</li>
+                  <li key={item} className="flex gap-3 text-sm leading-7 text-slate-100"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300" />{item}</li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl border border-indigo-100/15 bg-indigo-950/25 p-5 sm:p-6">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 sm:p-6">
               <h3 className="text-lg font-extrabold text-white">{content.customerReasonsHeading}</h3>
               <ul className="mt-4 space-y-3">
                 {content.whyChooseUs.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm leading-7 text-indigo-50/90"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-300" />{item}</li>
+                  <li key={item} className="flex gap-3 text-sm leading-7 text-slate-100"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300" />{item}</li>
                 ))}
               </ul>
             </div>
@@ -305,45 +305,45 @@ export default function AboutPage() {
             {content.reasons.map((reason) => (
               <article key={reason.title} className="border-l border-amber-300/70 pl-4">
                 <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-amber-200">{reason.title}</p>
-                <p className="mt-2 text-sm leading-7 text-indigo-100/90">{reason.text}</p>
+                <p className="mt-2 text-sm leading-7 text-slate-200">{reason.text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="roadmap" className="bg-[#f6f1e8]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
+      <section id="roadmap" className="bg-[#f7f7f2]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 max-w-3xl">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-700/15 bg-white/70 px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-amber-800 before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-['']">{content.roadmapBadge}</p>
-            <h2 className="mt-3 text-3xl font-black tracking-[0.055em] text-slate-950  sm:text-4xl">{content.roadmapHeading}</h2>
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[#137c63]/15 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-['']">{content.roadmapBadge}</p>
+            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-4xl">{content.roadmapHeading}</h2>
           </div>
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-            <article className="rounded-[2rem] border border-amber-200 bg-[#fffdf6] p-6 shadow-[0_24px_60px_-40px_rgba(120,53,15,0.25)] sm:p-8">
+            <article className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
               <div className="flex items-center justify-between gap-4">
-                <h3 className="text-lg font-extrabold text-slate-950 ">{content.immediatePrioritiesHeading}</h3>
-                <span className="rounded-full bg-amber-100 px-3 py-1 text-[12px] font-bold uppercase tracking-[0.16em] text-amber-900  ">{content.currentStatusLabel}</span>
+                <h3 className="text-lg font-extrabold text-slate-950">{content.immediatePrioritiesHeading}</h3>
+                <span className="rounded-full bg-[#fff1dc] px-3 py-1 text-[12px] font-bold uppercase tracking-[0.16em] text-[#a95600]">{content.currentStatusLabel}</span>
               </div>
               <ol className="mt-6 space-y-3">
                 {content.currentGoals.map((goal, index) => (
-                  <li key={goal} className="flex gap-3 border-b border-amber-100 pb-3 last:border-0 ">
-                    <span className="font-mono text-md font-bold text-amber-700 ">{String(index + 1).padStart(2, '0')}</span>
-                    <span className="text-sm leading-7 text-slate-700 ">{goal}</span>
+                  <li key={goal} className="flex gap-3 border-b border-slate-200 pb-3 last:border-0">
+                    <span className="font-mono text-sm font-bold text-[#a95600]">{String(index + 1).padStart(2, '0')}</span>
+                    <span className="text-sm leading-7 text-slate-700">{goal}</span>
                   </li>
                 ))}
               </ol>
             </article>
-            <article className="rounded-[2rem] border border-indigo-200 bg-[#f8f8ff] p-6 shadow-[0_24px_60px_-40px_rgba(49,46,129,0.2)] sm:p-8">
-              <h3 className="text-lg font-extrabold text-slate-950 ">{content.growthRoadmapHeading}</h3>
+            <article className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+              <h3 className="text-lg font-extrabold text-slate-950">{content.growthRoadmapHeading}</h3>
               <div className="mt-6 space-y-5">
                 {content.futureGoals.map((group, index) => (
-                  <div key={group.title} className="relative border-l border-indigo-200 pl-5 ">
-                    <span className="absolute -left-[5px] top-1 h-2.5 w-2.5 rounded-full bg-indigo-500 ring-4 ring-[#f8f8ff] " />
-                    <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-indigo-700 ">{content.phaseLabel} 0{index + 1}</p>
-                    <h4 className="mt-1 text-md font-extrabold text-slate-950 ">{group.title}</h4>
+                  <div key={group.title} className="relative border-l border-[#cbd6cc] pl-5">
+                    <span className="absolute -left-[5px] top-1 h-2.5 w-2.5 rounded-full bg-[#087a61] ring-4 ring-white" />
+                    <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-[#137c63]">{content.phaseLabel} 0{index + 1}</p>
+                    <h4 className="mt-1 text-sm font-extrabold text-slate-950">{group.title}</h4>
                     <ul className="mt-3 space-y-2">
                       {group.items.map((item) => (
-                        <li key={item} className="flex gap-2 text-sm leading-7 text-slate-700 "><span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-indigo-500" />{item}</li>
+                        <li key={item} className="flex gap-2 text-sm leading-7 text-slate-700"><span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#087a61]" />{item}</li>
                       ))}
                     </ul>
                   </div>
@@ -354,24 +354,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="capabilities" className="border-y border-slate-200 bg-[#e9f0f2]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
+      <section id="capabilities" className="border-y border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="inline-flex w-fit items-center gap-2 rounded-full border border-teal-900/10 bg-white/75 px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-teal-800 before:h-1.5 before:w-1.5 before:rounded-full before:bg-teal-600 before:content-['']">{content.servicesBadge}</p>
-              <h2 className="mt-3 max-w-3xl text-3xl font-black tracking-[0.055em] text-slate-950  sm:text-4xl">{content.servicesHeading}</h2>
+              <h2 className="mt-3 max-w-3xl text-3xl font-black tracking-tighter text-slate-950 sm:text-4xl">{content.servicesHeading}</h2>
             </div>
-            <span className="text-md font-semibold text-slate-600 ">{content.servicesAudience}</span>
+            <span className="text-sm font-semibold text-slate-600">{content.servicesAudience}</span>
           </div>
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {content.serviceGroups.map((group, index) => (
-              <article key={group.title} className="group relative overflow-hidden rounded-2xl border border-sky-100 bg-white/85 p-5 shadow-sm transition hover:-translate-y-1 hover:border-violet-300 hover:shadow-xl hover:shadow-violet-950/10 sm:p-6">
+              <article key={group.title} className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-lg sm:p-6">
                 <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${a.serviceAccents[index]}`} />
-                <p className="font-mono text-md font-bold text-violet-700/65">0{index + 1} / {content.solutionsLabel.toUpperCase()}</p>
-                <h3 className="mt-4 text-xl font-black text-slate-950 ">{group.title}</h3>
+                <p className="font-mono text-sm font-bold text-[#137c63]">0{index + 1} / {content.solutionsLabel.toUpperCase()}</p>
+                <h3 className="mt-4 text-xl font-black text-slate-950">{group.title}</h3>
                 <ul className="mt-5 space-y-3">
                   {group.items.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm leading-7 text-slate-700"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500" />{item}</li>
+                    <li key={item} className="flex items-start gap-3 text-sm leading-7 text-slate-700"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#087a61]" />{item}</li>
                   ))}
                 </ul>
               </article>
@@ -380,11 +380,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#f3f2ec] text-[#172b2b]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
+      <section className="bg-[#f7f7f2] text-[#152b29]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 max-w-3xl">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-teal-900/10 bg-white/75 px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-teal-800 before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-['']">{content.commitmentsBadge}</p>
-            <h2 className="mt-3 text-3xl font-black tracking-[0.055em] text-[#172b2b] sm:text-4xl">{content.commitmentsHeading}</h2>
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[#137c63]/15 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-['']">{content.commitmentsBadge}</p>
+            <h2 className="mt-3 text-3xl font-black tracking-tighter text-[#152b29] sm:text-4xl">{content.commitmentsHeading}</h2>
           </div>
           <div className="grid gap-5 lg:grid-cols-2">
             {[
@@ -404,43 +404,43 @@ export default function AboutPage() {
               </article>
             ))}
           </div>
-          <div className="mt-8 flex flex-col gap-5 rounded-2xl border border-amber-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-7">
+          <div className="mt-8 flex flex-col gap-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-7">
             <div>
-              <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-amber-800">{content.contactCalloutTitle}</p>
-              <p className="mt-2 text-lg font-bold text-[#172b2b]">{content.contactCalloutDescription}</p>
+              <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-[#a95600]">{content.contactCalloutTitle}</p>
+              <p className="mt-2 text-lg font-bold text-[#152b29]">{content.contactCalloutDescription}</p>
             </div>
-            <a href="/contact" className="inline-flex items-center justify-center rounded-xl bg-teal-800 px-5 py-3 text-md font-bold text-white transition hover:bg-teal-900">
+            <a href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#087a61] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[#075e4b]">
               {content.contactAction} <span aria-hidden="true" className="ml-2">&rarr;</span>
             </a>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#eef2f6]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 max-w-3xl">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-sky-800/10 bg-white/75 px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-sky-800 before:h-1.5 before:w-1.5 before:rounded-full before:bg-sky-500 before:content-['']">{content.workBadge}</p>
-            <h2 className="mt-3 text-3xl font-black tracking-[0.055em] text-slate-950  sm:text-4xl">{content.workHeading}</h2>
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[#137c63]/15 bg-[#eaf2e9] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-['']">{content.workBadge}</p>
+            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-4xl">{content.workHeading}</h2>
           </div>
           <div className="grid gap-5 lg:grid-cols-2">
-            <article className="rounded-[2rem] border border-indigo-100 bg-gradient-to-br from-[#f8fafc] to-[#e0e7ff] p-6 shadow-sm sm:p-8">
-              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-indigo-800">{content.qualityHeading}</p>
-              <div className="mt-5 divide-y divide-indigo-900/10">
+            <article className="rounded-4xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-[#137c63]">{content.qualityHeading}</p>
+              <div className="mt-5 divide-y divide-slate-200">
                 {content.qualityPoints.map((point, index) => (
                   <div key={point} className="flex gap-4 py-3 first:pt-0 last:pb-0">
-                    <span className="font-mono text-md font-bold text-indigo-800/65">0{index + 1}</span>
-                    <p className="text-sm leading-7 text-slate-700 ">{point}</p>
+                    <span className="font-mono text-sm font-bold text-[#137c63]">0{index + 1}</span>
+                    <p className="text-sm leading-7 text-slate-700">{point}</p>
                   </div>
                 ))}
               </div>
             </article>
-            <article className="rounded-[2rem] border border-amber-100 bg-gradient-to-br from-[#fffbeb] to-[#fff1e6] p-6 shadow-sm sm:p-8">
-              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-amber-800 ">{content.ethicsHeading}</p>
-              <div className="mt-5 divide-y divide-slate-900/10 ">
+            <article className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-[#a95600]">{content.ethicsHeading}</p>
+              <div className="mt-5 divide-y divide-slate-200">
                 {content.ethicsPoints.map((point, index) => (
                   <div key={point} className="flex gap-4 py-3 first:pt-0 last:pb-0">
-                    <span className="font-mono text-md font-bold text-amber-800/60 ">0{index + 1}</span>
-                    <p className="text-sm leading-7 text-slate-700 ">{point}</p>
+                    <span className="font-mono text-sm font-bold text-[#a95600]">0{index + 1}</span>
+                    <p className="text-sm leading-7 text-slate-700">{point}</p>
                   </div>
                 ))}
               </div>
@@ -448,7 +448,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <section id="about" className="relative isolate overflow-hidden bg-[#e6efe9] px-4 py-20 text-[#112c2a] sm:px-6 sm:py-28 lg:px-10 lg:py-32">
+      <section id="about" className="relative isolate overflow-hidden bg-[#e1ece3] px-4 py-12 text-[#152b29] sm:px-6 sm:py-14 lg:px-10 lg:py-16">
         <div className="pointer-events-none absolute -right-28 top-0 h-[30rem] w-[30rem] rounded-full border border-teal-800/10" aria-hidden="true" />
         <div className="pointer-events-none absolute -right-20 top-8 h-[25rem] w-[25rem] rounded-full border border-amber-700/[0.08]" aria-hidden="true" />
 
@@ -465,7 +465,7 @@ export default function AboutPage() {
                 {aboutSection.eyebrow} {aboutSection.brandFirst} {aboutSection.brandSecond}
               </p>
 
-              <h2 className="mt-6 max-w-3xl text-4xl font-black leading-[1.04] tracking-[-0.045em] text-[#112c2a] sm:text-5xl lg:text-7xl">
+              <h2 className="mt-6 max-w-3xl text-4xl font-black leading-[1.04] tracking-tighter text-[#152b29] sm:text-5xl lg:text-6xl">
                 {aboutSection.title}
               </h2>
               <div className="mt-8 flex flex-wrap gap-2.5">
@@ -489,7 +489,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <article className="relative overflow-hidden rounded-[1.5rem] bg-[#0d2b29] p-7 text-white shadow-[0_30px_75px_-35px_rgba(13,43,41,0.35)] sm:p-10 lg:p-12">
+            <article className="relative overflow-hidden rounded-[22px] bg-[linear-gradient(145deg,#172554_0%,#1e3a8a_55%,#312e81_100%)] p-7 text-white shadow-[0_20px_55px_-40px_rgba(23,37,84,0.35)] sm:p-10 lg:p-12">
               <span className="block font-serif text-5xl font-bold leading-none text-amber-400" aria-hidden="true">“</span>
               <blockquote className="mt-5 text-2xl font-semibold leading-snug tracking-tight sm:text-3xl">
                 {a.quote}
@@ -516,15 +516,15 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <div className="mt-14 grid gap-6 xl:grid-cols-2 xl:gap-8">
-            <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-teal-700">{aboutSection.solutionsEyebrow}</p>
-              <h3 className="mt-3 text-2xl font-extrabold leading-tight tracking-[-0.03em] text-[#112c2a]">{aboutSection.solutionsTitle}</h3>
+          <div className="mt-12 grid gap-5 xl:grid-cols-2 xl:gap-6">
+            <article className="rounded-[22px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">{aboutSection.solutionsEyebrow}</p>
+              <h3 className="mt-3 text-2xl font-extrabold leading-tight tracking-tight text-[#152b29]">{aboutSection.solutionsTitle}</h3>
               <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">{aboutSection.solutionsDescription}</p>
             </article>
 
-            <article className="rounded-[1.5rem] border border-teal-100 bg-[#f7fbf8] p-6 shadow-sm sm:p-8">
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-teal-700">{aboutSection.designEyebrow}</p>
+            <article className="rounded-[22px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">{aboutSection.designEyebrow}</p>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
                 {aboutSection.designPoints.map((point) => (
                   <li key={point} className="flex items-start gap-2.5 text-sm font-medium leading-6 text-slate-700">
@@ -536,8 +536,8 @@ export default function AboutPage() {
             </article>
           </div>
 
-          <div className="mt-6 grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
-            <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <div className="mt-5 grid gap-5 xl:grid-cols-[0.9fr_1.1fr]">
+            <article className="rounded-[22px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
               <p className="text-sm font-bold uppercase tracking-[0.24em] text-slate-500">{aboutSection.technologyEyebrow}</p>
               <h3 className="mt-3 text-2xl font-extrabold leading-tight tracking-[-0.03em] text-[#112c2a]">{aboutSection.technologyTitle}</h3>
               <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">{aboutSection.technologyDescription}</p>
@@ -545,7 +545,7 @@ export default function AboutPage() {
 
             <div className="grid gap-3 sm:grid-cols-3">
               {systems.map(({ label, value, tone, Icon }, index) => (
-                <article key={label} className={`relative overflow-hidden rounded-[1.5rem] border p-5 ${tone}`}>
+                <article key={label} className={`relative overflow-hidden rounded-[22px] border p-5 ${tone}`}>
                   <span className="absolute -right-3 -top-3 opacity-10" aria-hidden="true">
                     <Icon className="h-20 w-20" strokeWidth={1} />
                   </span>
@@ -557,7 +557,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mt-5 flex flex-col gap-5 rounded-[1.5rem] border border-teal-900/10 bg-[#123b38] p-6 text-white shadow-[0_24px_60px_-40px_rgba(13,43,41,0.35)] sm:p-8 lg:flex-row lg:items-end lg:justify-between">
+          <div className="mt-5 flex flex-col gap-5 rounded-[22px] border border-white/10 bg-[linear-gradient(145deg,#172554_0%,#1e3a8a_55%,#312e81_100%)] p-6 text-white shadow-[0_20px_55px_-40px_rgba(23,37,84,0.35)] sm:p-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
               <p className="text-sm font-extrabold uppercase tracking-[0.24em] text-amber-300">{aboutSection.futureHeading}</p>
               <p className="mt-3 text-sm leading-7 text-teal-50/90 sm:text-lg sm:leading-8">{aboutSection.futureDescription}</p>
