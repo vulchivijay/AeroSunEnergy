@@ -4215,6 +4215,14 @@
       {
         "title": "Lord Shiva Blessing",
         "body": "Welcome to AeroSun Energy. May Lord Shiva bring peace, strength, and harmony to your journey."
+      },
+      {
+        "title": "ಶ್ರೀರಾಮನ ಆಶೀರ್ವಾದ",
+        "body": "AeroSun Energyಗೆ ಸ್ವಾಗತ. ಶ್ರೀರಾಮನು ನಿಮ್ಮ ಪ್ರಯಾಣಕ್ಕೆ ಧೈರ್ಯ, ಧರ್ಮನಿಷ್ಠೆ ಮತ್ತು ಸಮೃದ್ಧಿಯನ್ನು ಕರುಣಿಸಲಿ."
+      },
+      {
+        "title": "ಶ್ರೀಕೃಷ್ಣನ ಆಶೀರ್ವಾದ",
+        "body": "AeroSun Energyಗೆ ಸ್ವಾಗತ. ಶ್ರೀಕೃಷ್ಣನು ನಿಮ್ಮ ಜೀವನವನ್ನು ಜ್ಞಾನ, ಸಂತೋಷ ಮತ್ತು ಸಾಮರಸ್ಯದಿಂದ ತುಂಬಲಿ."
       }
     ]
   },
@@ -4496,10 +4504,22 @@
         "description": "Start with the company behind the proposal, a verifiable office address, and direct ways to reach the team.",
         "residentialServiceDescription": "AeroSun Energy ಆಂಧ್ರ ಪ್ರದೇಶದ ತಿರುಪತಿ ಜಿಲ್ಲೆಯಲ್ಲಿ ಮನೆಗಳಿಗೆ ವಸತಿ ಮೇಲ್ಛಾವಣಿ ಸೌರ ವ್ಯವಸ್ಥೆಗಳನ್ನು ಒದಗಿಸುತ್ತದೆ. ತಿರುಪತಿ ಮತ್ತು ಚಿತ್ತೂರು, ಶ್ರೀಕಾಳಹಸ್ತಿ, ಪುತ್ತೂರು ಮುಂತಾದ ಹತ್ತಿರದ ಪ್ರದೇಶಗಳ ಮನೆಮಾಲೀಕರು ತಮ್ಮ ಮೇಲ್ಛಾವಣಿ ಮತ್ತು ವಿದ್ಯುತ್ ಬಳಕೆಯ ಆಧಾರದ ಮೇಲೆ ಲಿಖಿತ ಅಂದಾಜನ್ನು ಕೇಳಬಹುದು. ವಸತಿ ಕೊಟೇಶನ್‌ಗಳಲ್ಲಿ GST, ಸ್ಥಾಪನೆ, ಮೌಂಟಿಂಗ್ ರಚನೆ ಮತ್ತು Polycab ಅಥವಾ Finolex ವೈರಿಂಗ್ ಸೇರಿವೆ; ಸ್ಪಷ್ಟವಾಗಿ ಹೇಳದಿದ್ದರೆ ನೆಟ್ ಮೀಟರ್ ಮತ್ತು ಹೆಚ್ಚುವರಿ ಅನುಮತಿಗಳು ಸೇರಿರುವುದಿಲ್ಲ. ಪ್ಯಾನೆಲ್ ಆಯ್ಕೆಗಳಲ್ಲಿ Adani, Waaree, Tata ಮತ್ತು Renewsolar ಇವೆ; ಆಯ್ಕೆ ಮಾಡಿದ ವ್ಯವಸ್ಥೆಯ ಪ್ರಕಾರ Polycab, Waaree, Deye ಅಥವಾ X Watt ಇನ್ವರ್ಟರ್ ಆಯ್ಕೆಗಳು ಲಭ್ಯ. ತಿಳಿಸಿದ ಪ್ಯಾನೆಲ್ ವಾರಂಟಿ 25 ವರ್ಷ, ಇನ್ವರ್ಟರ್ ವಾರಂಟಿ 8 ವರ್ಷ; ಇವು ಅನ್ವಯಿಸುವ ತಯಾರಕರ ಷರತ್ತುಗಳಿಗೆ ಒಳಪಟ್ಟಿವೆ. ವಸತಿ ಬೆಲೆ 7 ದಿನಗಳವರೆಗೆ ಮಾನ್ಯ; ವಾಣಿಜ್ಯ ಯೋಜನೆಗಳನ್ನು ಪ್ರತ್ಯೇಕವಾಗಿ ಪರಿಶೀಲಿಸಿ ಕೊಟೇಶನ್ ನೀಡಲಾಗುತ್ತದೆ.",
         "serviceFacts": [
-          { "label": "DISCOM", "value": "APSPDCL" },
-          { "label": "ಜಿಲ್ಲೆ", "value": "ತಿರುಪತಿ" },
-          { "label": "ಕೊಟೇಶನ್ ಮಾನ್ಯತೆ", "value": "7 ದಿನಗಳು" },
-          { "label": "ಇನ್ವರ್ಟರ್ ವಾರಂಟಿ", "value": "ಹೇಳಿರುವುದು 8 ವರ್ಷ" }
+          {
+            "label": "DISCOM",
+            "value": "APSPDCL"
+          },
+          {
+            "label": "ಜಿಲ್ಲೆ",
+            "value": "ತಿರುಪತಿ"
+          },
+          {
+            "label": "ಕೊಟೇಶನ್ ಮಾನ್ಯತೆ",
+            "value": "7 ದಿನಗಳು"
+          },
+          {
+            "label": "ಇನ್ವರ್ಟರ್ ವಾರಂಟಿ",
+            "value": "ಹೇಳಿರುವುದು 8 ವರ್ಷ"
+          }
         ],
         "legalEntityLabel": "Legal business name",
         "officeLabel": "Office address",
@@ -4629,6 +4649,89 @@
       ],
       "rewardNoteTitle": "Reward terms:",
       "rewardNote": "A referral incentive will be provided after the referred installation is complete. AeroSun will confirm the applicable incentive and terms directly.",
+      "landing": {
+        "badge": "ರೆಫರಲ್ ಕಾರ್ಯಕ್ರಮ · ಈಗ ಪ್ರಾರಂಭ",
+        "titlePrefix": "₹1,500–₹3,000 ಗಳಿಸಿ",
+        "titleHighlight": "ನೀವು ಸೂಚಿಸುವ ಪ್ರತಿ kWಗೆ",
+        "description": "ನಿಮ್ಮ ಸ್ನೇಹಿತರು ಮತ್ತು ಕುಟುಂಬದವರನ್ನು AeroSun Energyಗೆ ಪರಿಚಯಿಸಿ. ಅವರ ಸೌರ ವ್ಯವಸ್ಥೆ ಸ್ಥಾಪನೆಯಾದಾಗ ನೀವು ಗಳಿಸಬಹುದು—ಮಾರಾಟ ಬೇಡ, ಪರಿಚಯಿಸಿದರೆ ಸಾಕು.",
+        "earningsNote": "5 kW ವ್ಯವಸ್ಥೆಗೆ ಪ್ರತಿ ರೆಫರಲ್‌ನಿಂದ ₹15,000 ವರೆಗೆ ಗಳಿಸಬಹುದು.",
+        "benefits": [
+          "ಸೇರುವುದು ಉಚಿತ",
+          "ಪರಿಶೀಲನೆಯ ನಂತರ ನೇರ ಬ್ಯಾಂಕ್ ವರ್ಗಾವಣೆ",
+          "ರೆಫರಲ್ ಮಿತಿ ಇಲ್ಲ"
+        ],
+        "processEyebrow": "ಸರಳ 3 ಹಂತಗಳ ಪ್ರಕ್ರಿಯೆ",
+        "processTitle": "ಇದು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ",
+        "processSteps": [
+          {
+            "title": "ರೆಫರಲ್ ಸಲ್ಲಿಸಿ",
+            "description": "ಮೇಲಿನ ಫಾರ್ಮ್‌ನಲ್ಲಿ ನಿಮ್ಮ ಮತ್ತು ಸೌರಶಕ್ತಿಯಲ್ಲಿ ಆಸಕ್ತಿ ಹೊಂದಿರುವ ನಿಮ್ಮ ಸ್ನೇಹಿತರ ವಿವರಗಳನ್ನು ಅವರ ಅನುಮತಿಯೊಂದಿಗೆ ನಮೂದಿಸಿ."
+          },
+          {
+            "title": "ನಾವು ಸಂಪರ್ಕಿಸುತ್ತೇವೆ",
+            "description": "ಅವರ ಆಸ್ತಿ ಮತ್ತು ಸೌರ ಅಗತ್ಯಗಳನ್ನು ತಿಳಿಯಲು ನಮ್ಮ ತಂಡ ಅವರನ್ನು ಸಂಪರ್ಕಿಸುತ್ತದೆ."
+          },
+          {
+            "title": "ಬಹುಮಾನ ಪಡೆಯಿರಿ",
+            "description": "ಸ್ಥಾಪನೆ ಪೂರ್ಣಗೊಂಡು ಪರಿಶೀಲನೆಯಾದ ಬಳಿಕ ಅರ್ಹ ರೆಫರಲ್‌ಗೆ ನೀವು ಬಹುಮಾನ ಪಡೆಯಬಹುದು."
+          }
+        ],
+        "earningsEyebrow": "ನಿಮ್ಮ ಗಳಿಕೆ",
+        "earningsTitle": "ನೀವು ಎಷ್ಟು ಗಳಿಸಬಹುದು?",
+        "earningsDescription": "ಬಹುಮಾನವು ಸ್ಥಾಪಿತ ವ್ಯವಸ್ಥೆಯ ಸಾಮರ್ಥ್ಯವನ್ನು ಆಧರಿಸಿದೆ ಮತ್ತು ಸ್ಥಾಪನೆ ಪೂರ್ಣಗೊಂಡು ಪರಿಶೀಲನೆಯಾದ ಬಳಿಕ ಪಾವತಿಸಲಾಗುತ್ತದೆ. ಯಶಸ್ವಿ ರೆಫರಲ್‌ಗಳಿಗೆ ಮಿತಿ ಇಲ್ಲ.",
+        "basicTitle": "ಮೂಲ ರೆಫರಲ್",
+        "basicRate": "₹1,500",
+        "perKilowatt": "/kW",
+        "basicDescription": "ರೆಫರಲ್ ಹಂಚಿಕೊಳ್ಳಿ; ಹೆಚ್ಚುವರಿ ದಾಖಲೆಗಳ ಸಹಾಯ ಅಗತ್ಯವಿಲ್ಲ.",
+        "guidedTitle": "ದಾಖಲೆಗಳ ಸಹಾಯದೊಂದಿಗೆ",
+        "guidedRate": "₹3,000",
+        "topRateBadge": "ಅತ್ಯುತ್ತಮ ದರ",
+        "guidedDescription": "ಹೆಚ್ಚಿನ ಬಹುಮಾನಕ್ಕಾಗಿ ಸ್ಥಳ ಪರಿಶೀಲನೆ ಮತ್ತು ಅಗತ್ಯ ದಾಖಲೆಗಳ ಹಂತಗಳಲ್ಲಿ ಗ್ರಾಹಕರಿಗೆ ಸಹಾಯ ಮಾಡಿ.",
+        "guidanceTasks": [
+          "ಮನೆಯ ಮೇಲ್ಛಾವಣಿ ಪರಿಶೀಲನೆಗಾಗಿ ಸ್ಥಳ ಭೇಟಿಯನ್ನು ಏರ್ಪಡಿಸಲು ಸಹಾಯ ಮಾಡಿ",
+          "ಆಧಾರ್ ಮತ್ತು ವಿದ್ಯುತ್ ಬಿಲ್ ಸಂಗ್ರಹಿಸಲು ಸಹಾಯ ಮಾಡಿ",
+          "ಬ್ಯಾಂಕ್ ಸಾಲದ ವಿಚಾರಣೆಯಲ್ಲಿ ಗ್ರಾಹಕರಿಗೆ ಮಾರ್ಗದರ್ಶನ ನೀಡಿ",
+          "ಸಂಬಂಧಿತ ವಿದ್ಯುತ್ ವಿತರಣಾ ಕಚೇರಿಗೆ ದಾಖಲೆ ಸಲ್ಲಿಸಲು ಮಾರ್ಗದರ್ಶನ ನೀಡಿ"
+        ],
+        "guidedBonus": "ಮೂಲ ರೆಫರಲ್‌ಗಿಂತ ₹1,500/kW ಹೆಚ್ಚು",
+        "rewardTiers": [
+          {
+            "systemSize": "3 kW ವ್ಯವಸ್ಥೆ",
+            "basicReward": "₹4,500",
+            "guidedReward": "₹9,000"
+          },
+          {
+            "systemSize": "5 kW ವ್ಯವಸ್ಥೆ",
+            "basicReward": "₹7,500",
+            "guidedReward": "₹15,000"
+          },
+          {
+            "systemSize": "10 kW ವ್ಯವಸ್ಥೆ",
+            "basicReward": "₹15,000",
+            "guidedReward": "₹30,000"
+          }
+        ],
+        "guidanceNoteTitle": "ದಾಖಲೆಗಳ ಸಹಾಯದಲ್ಲಿ ಸೇರಿರುವುದು:",
+        "guidanceNote": "ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ದಾಖಲೆಗಳ ಸಹಾಯ ಮಾತ್ರ; ರೆಫರ್ ಮಾಡುವವರು ಸ್ಥಾಪನಾ ಕೆಲಸ ಮಾಡುವ ಅಗತ್ಯವಿಲ್ಲ.",
+        "termsNotice": "ಬಹುಮಾನಗಳು ರೆಫರಲ್ ಅರ್ಹತೆ, ಪೂರ್ಣಗೊಂಡ ಮತ್ತು ಪರಿಶೀಲಿಸಿದ ಸ್ಥಾಪನೆ ಹಾಗೂ ಕಾರ್ಯಕ್ರಮದ ನಿಯಮಗಳಿಗೆ ಒಳಪಟ್ಟಿರುತ್ತವೆ. ಪಾವತಿಗೆ ಮೊದಲು AeroSun ಅರ್ಹತೆಯನ್ನು ದೃಢಪಡಿಸುತ್ತದೆ.",
+        "faqEyebrow": "ಪ್ರಶ್ನೆಗಳು ಮತ್ತು ಉತ್ತರಗಳು",
+        "faqTitle": "ಪದೇಪದೇ ಕೇಳಲಾಗುವ ಪ್ರಶ್ನೆಗಳು",
+        "faqs": [
+          {
+            "question": "ನನಗೆ ಪಾವತಿ ಯಾವಾಗ ಸಿಗುತ್ತದೆ?",
+            "answer": "ಸೌರ ವ್ಯವಸ್ಥೆ ಸಂಪೂರ್ಣವಾಗಿ ಸ್ಥಾಪಿಸಿ ಪರಿಶೀಲಿಸಿದ ನಂತರ. ಅರ್ಹ ಬಹುಮಾನಗಳನ್ನು ಸಾಮಾನ್ಯವಾಗಿ 7–14 ದಿನಗಳಲ್ಲಿ ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲಾಗುತ್ತದೆ."
+          },
+          {
+            "question": "ಪಾವತಿ ಹೇಗೆ ಮಾಡಲಾಗುತ್ತದೆ?",
+            "answer": "ನೇರ ಬ್ಯಾಂಕ್ ವರ್ಗಾವಣೆಯ ಮೂಲಕ. ಅರ್ಹ ರೆಫರಲ್‌ಗೆ ಪಾವತಿ ಸಿದ್ಧವಾದಾಗ ಬ್ಯಾಂಕ್ ವಿವರಗಳನ್ನು ಪಡೆಯಲಾಗುತ್ತದೆ."
+          },
+          {
+            "question": "ರೆಫರಲ್‌ಗಳಿಗೆ ಮಿತಿ ಇದೆಯೇ?",
+            "answer": "ರೆಫರಲ್‌ಗಳಿಗೆ ಮಿತಿ ಇಲ್ಲ. ಕಾರ್ಯಕ್ರಮದ ನಿಯಮಗಳ ಪ್ರಕಾರ ಪ್ರತಿ ಯಶಸ್ವಿ ಸ್ಥಾಪನೆಗೆ ಬಹುಮಾನ ಸಿಗಬಹುದು."
+          }
+        ],
+        "trustNote": "AeroSun Energy · ರೆಫರಲ್ ವಿವರಗಳು ಸುರಕ್ಷಿತ · ಬಹುಮಾನಗಳು ಪರಿಶೀಲನೆಗೆ ಒಳಪಟ್ಟಿವೆ"
+      },
       "form": {
         "title": "Introduce a neighbour or friend",
         "conversationTitle": "ಸಂಭಾಷಣೆಯನ್ನು ಆರಂಭಿಸೋಣ.",
@@ -4690,7 +4793,7 @@
           "Lower Capex",
           "Net Metering"
         ],
-        "image": "/images/slider/slider-1.webp",
+        "image": "/images/slider/slider-1.png",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -5245,7 +5348,7 @@
           "badgeClass": "text-sky-100",
           "chipClass": "text-sky-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-1.webp"
+          "image": "/images/slider/slider-1.png"
         },
         {
           "badge": "Off-grid autonomy",
@@ -7571,6 +7674,7 @@
     "website": "aerosunenergy.in",
     "trust": "sanatanadharmam.in",
     "quickLinks": "Quick Links",
+    "referralProgram": "ರೆಫರಲ್ ಕಾರ್ಯಕ್ರಮ",
     "quickEnquiries": "Quick Enquiries",
     "saveEarth": "Save Earth",
     "saveSanatanaDharma": "Save Sanatana Dharma",
@@ -12387,6 +12491,18 @@
           "image": "/images/lordshiva.png",
           "width": 375,
           "height": 591
+        },
+        {
+          "name": "Rama",
+          "image": "/images/lordrama.png",
+          "width": 1082,
+          "height": 1453
+        },
+        {
+          "name": "Krishna",
+          "image": "/images/lordkrishna.png",
+          "width": 1082,
+          "height": 1453
         }
       ]
     },

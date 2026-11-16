@@ -50,10 +50,10 @@ export default function Footer() {
 	const navLinks = t.navbar.links
 	const queries = t.navbar.quiries || []
 	const quickEnquiries = queries
-	const visibleNavLinks = navLinks
+	const visibleNavLinks = [...navLinks, { label: footer.referralProgram, href: '/referral-programme' }]
 	const comingSoonBadge = (
-		<span className="inline-flex items-center gap-1.5 border-l border-amber-700/25 pl-2 text-[9px] uppercase tracking-[0.16em] text-amber-800">
-			<span className="h-px w-2 bg-amber-700/70" aria-hidden="true" />
+		<span className="inline-flex items-center gap-1.5 border-l border-amber-200/30 pl-2 text-[9px] uppercase tracking-[0.16em] text-amber-200">
+			<span className="h-px w-2 bg-amber-200/70" aria-hidden="true" />
 			{t.navbar.comingSoon}
 		</span>
 	)
@@ -88,12 +88,14 @@ export default function Footer() {
 	return (
 		<footer
 			id="contact"
-			className="relative w-full overflow-hidden border-t border-slate-200/80 bg-[radial-gradient(ellipse_at_75%_5%,rgba(255,255,255,0.95),transparent_34%),radial-gradient(ellipse_at_10%_85%,rgba(226,232,240,0.65),transparent_36%),linear-gradient(145deg,#ffffff_0%,#f8fafc_48%,#e2e8f0_100%)] text-slate-800 shadow-[0_-12px_40px_-28px_rgba(19,124,99,0.28)] before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-amber-400 before:via-slate-200 before:to-[#137c63]"
+			className="relative w-full overflow-hidden border-t border-white/25 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(23,37,84,0.96),rgba(23,37,84,0.96))] text-white/90 shadow-[0_-12px_40px_-28px_rgba(15,23,42,0.75)] before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-amber-400 before:via-white/40 before:to-sky-300"
 		>
 			<div className="pointer-events-none absolute -right-40 top-0 h-[34rem] w-[34rem] rounded-full border border-amber-700/10" aria-hidden="true" />
+
 			<div className="pointer-events-none absolute -right-24 top-16 h-[24rem] w-[24rem] rounded-full border border-slate-500/10" aria-hidden="true" />
 
 			<div className="relative mx-auto max-w-7xl px-5 pb-14 pt-14 sm:px-8 sm:pb-20 sm:pt-20 lg:px-10">
+
 				<section className="relative mb-14 overflow-hidden rounded-[2rem] border border-white/90 bg-[linear-gradient(135deg,#ffffff_0%,#f8fafc_52%,#eef2ff_100%)] p-7 text-slate-900 shadow-[0_30px_90px_-45px_rgba(15,23,42,0.22)] sm:p-10 lg:mb-20 lg:p-14">
 					<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_88%_45%,rgba(245,199,106,0.18),transparent_35%)]" aria-hidden="true" />
 					<div className="relative grid items-center gap-10 lg:grid-cols-[1fr_auto]">
@@ -135,16 +137,16 @@ export default function Footer() {
 					</div>
 				</section>
 
-				<div className="mb-10 h-px w-full origin-left animate-[pulse_3s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-indigo-300/80 to-transparent motion-reduce:animate-none" aria-hidden="true" />
+				<div className="mb-10 h-px w-full origin-left animate-[pulse_3s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-indigo-200/60 to-transparent motion-reduce:animate-none" aria-hidden="true" />
 
 				<div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1.1fr_1fr] lg:gap-x-8">
 					<section aria-labelledby="footer-brand">
-						<div className="inline-flex max-w-full rounded-xl bg-white p-2">
+						<div className="inline-flex max-w-full p-2">
 							<Logo />
 						</div>
 						<h2 id="footer-brand" className="mt-6 hidden text-sm font-bold tracking-wide text-slate-900">{t.navbar.brandName}</h2>
 						<p className="mt-1 text-sm font-medium text-[#F5C76A] hidden">&ldquo;{t.navbar.brandTagline}&rdquo;</p>
-						<p className="mt-4 max-w-sm text-sm leading-7 text-slate-600">{footer.brandDesc}</p>
+						<p className="mt-4 max-w-sm text-sm leading-7 text-white/75">{footer.brandDesc}</p>
 						<div className="mt-6 flex flex-wrap gap-2" role="group" aria-label={footer.followUs}>
 							{socialLinks.map(({ href, platform, dataSocial, icon }) => (
 								<Link
@@ -165,16 +167,16 @@ export default function Footer() {
 					</section>
 
 					<nav aria-labelledby="footer-navigation">
-						<h2 id="footer-navigation" className="mb-5 text-sm uppercase text-[#137c63]">{footer.quickLinks}</h2>
+						<h2 id="footer-navigation" className="mb-5 text-sm uppercase text-sky-200">{footer.quickLinks}</h2>
 						<ul className="space-y-1">
 							{visibleNavLinks.map((link) => (
 								<li key={link.label}>
 									{(link as { disabled?: boolean }).disabled || isProductionComingSoonLink(link.href) ? (
-										<span className="flex min-h-10 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-slate-500">
+										<span className="flex min-h-10 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-white/50">
 											<span className="min-w-0">{link.label}</span>{comingSoonBadge}
 										</span>
 									) : (
-										<Link href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#137c63] ${isActive(link.href) ? 'font-semibold text-[#137c63]' : 'text-slate-700 hover:text-[#137c63] focus-visible:text-[#137c63]'}`}>
+										<Link href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(link.href) ? 'font-semibold text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
 											<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(link.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
 											{link.label}
 										</Link>
@@ -182,16 +184,16 @@ export default function Footer() {
 								</li>
 							))}
 						</ul>
-						<h3 className="mb-3 mt-7 text-sm uppercase text-amber-800">{footer.quickEnquiries}</h3>
+						<h3 className="mb-3 mt-7 text-sm uppercase text-amber-200">{footer.quickEnquiries}</h3>
 						<ul className="space-y-1">
 							{quickEnquiries.map((item) => (
 								<li key={item.href}>
 									{(item as { disabled?: boolean }).disabled || isProductionComingSoonLink(item.href) ? (
-										<span className="flex min-h-9 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-slate-500">
+										<span className="flex min-h-9 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-white/50">
 											<span className="min-w-0">{item.label}</span>{comingSoonBadge}
 										</span>
 									) : (
-										<Link href={item.href} prefetch={item.href !== '/installation-checklist' && item.href !== '/customer-agreement'} aria-current={isActive(item.href) ? 'page' : undefined} className={`group inline-flex min-h-11 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#137c63] ${isActive(item.href) ? 'font-semibold text-[#137c63]' : 'text-slate-700 hover:text-[#137c63] focus-visible:text-[#137c63]'}`}>
+										<Link href={item.href} prefetch={item.href !== '/installation-checklist' && item.href !== '/customer-agreement'} aria-current={isActive(item.href) ? 'page' : undefined} className={`group inline-flex min-h-11 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(item.href) ? 'font-semibold text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
 											<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(item.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
 											{item.label}
 										</Link>
@@ -202,16 +204,16 @@ export default function Footer() {
 					</nav>
 
 					<nav aria-labelledby="footer-solutions">
-						<h2 id="footer-solutions" className="mb-5 text-sm uppercase text-[#137c63]">{footer.ourSolutions}</h2>
+						<h2 id="footer-solutions" className="mb-5 text-sm uppercase text-sky-200">{footer.ourSolutions}</h2>
 						<ul className="space-y-1">
 							{solutions.map((solution) => (
 								<li key={solution.label}>
 									{isProductionComingSoonLink(solution.href) ? (
-										<span className="flex min-h-10 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-slate-500">
+										<span className="flex min-h-10 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-white/50">
 											<span className="min-w-0">{solution.label}</span>{comingSoonBadge}
 										</span>
 									) : (
-										<Link href={solution.href} aria-current={isActive(solution.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#137c63] ${isActive(solution.href) ? 'font-semibold text-[#137c63]' : 'text-slate-700 hover:text-[#137c63] focus-visible:text-[#137c63]'}`}>
+										<Link href={solution.href} aria-current={isActive(solution.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(solution.href) ? 'font-semibold text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
 											<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(solution.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
 											{solution.label}
 										</Link>
@@ -222,40 +224,40 @@ export default function Footer() {
 					</nav>
 
 					<section aria-labelledby="footer-contact">
-						<h2 id="footer-contact" className="mb-5 text-sm uppercase text-[#137c63]">{footer.contactInformation}</h2>
-						<ul className="space-y-4 text-sm leading-6 text-slate-700">
+						<h2 id="footer-contact" className="mb-5 text-sm uppercase text-sky-200">{footer.contactInformation}</h2>
+						<ul className="space-y-4 text-sm leading-6 text-white/80">
 							<li className="flex items-start gap-3">
-								<MapPin className="mt-1 h-4 w-4 shrink-0 text-amber-700" aria-hidden="true" />
-								<a href={mapUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#137c63] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#137c63] focus-visible:text-[#137c63]">
+								<MapPin className="mt-1 h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />
+								<a href={mapUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 focus-visible:text-amber-100">
 									{companyAddress}<span className="sr-only"> {footer.opensInNewTab}</span>
 								</a>
 							</li>
 							<li className="flex items-center gap-3">
-								<Mail className="h-4 w-4 shrink-0 text-amber-700" aria-hidden="true" />
-								<a href={`mailto:${footer.email}`} className="break-all transition-colors hover:text-[#137c63] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#137c63] focus-visible:text-[#137c63]">{footer.email}</a>
+								<Mail className="h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />
+								<a href={`mailto:${footer.email}`} className="break-all transition-colors hover:text-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 focus-visible:text-amber-100">{footer.email}</a>
 							</li>
 							<li className="flex items-center gap-3">
-								<Phone className="h-4 w-4 shrink-0 text-amber-700" aria-hidden="true" />
-								<a href={`tel:${footer.phoneHref}`} className="transition-colors hover:text-[#137c63] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#137c63] focus-visible:text-[#137c63]">{footer.phone}</a>
+								<Phone className="h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />
+								<a href={`tel:${footer.phoneHref}`} className="transition-colors hover:text-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 focus-visible:text-amber-100">{footer.phone}</a>
 							</li>
 							<li className="flex items-center gap-3">
-								<Globe className="h-4 w-4 shrink-0 text-amber-700" aria-hidden="true" />
-								<a href={websiteUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#137c63] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#137c63] focus-visible:text-[#137c63]">{footer.website}<span className="sr-only"> {footer.opensInNewTab}</span></a>
+								<Globe className="h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />
+								<a href={websiteUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 focus-visible:text-amber-100">{footer.website}<span className="sr-only"> {footer.opensInNewTab}</span></a>
 							</li>
 							<li>
-								<Link href="/save-earth" className="group inline-flex min-h-11 items-center gap-2 text-sm text-slate-700 transition-colors hover:text-[#137c63] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#137c63] focus-visible:text-[#137c63]">
-									<ArrowUpRight className="h-4 w-4 text-[#137c63]" aria-hidden="true" />{footer.saveEarth}
+								<Link href="/save-earth" className="group inline-flex min-h-11 items-center gap-2 text-sm text-white/80 transition-colors hover:text-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 focus-visible:text-amber-100">
+									<ArrowUpRight className="h-4 w-4 text-sky-200" aria-hidden="true" />{footer.saveEarth}
 								</Link>
 							</li>
 							<li>
-								<a href={footer.trust?.startsWith('http') ? footer.trust : `https://${footer.trust}`} target="_blank" rel="noopener noreferrer" className="group inline-flex min-h-11 items-center gap-2 text-sm text-slate-700 transition-colors hover:text-[#137c63] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#137c63] focus-visible:text-[#137c63]" aria-label={footer.visitTrustLink.replace('{trust}', footer.trust)}>
-									<ArrowUpRight className="h-4 w-4 text-[#137c63]" aria-hidden="true" />{footer.saveSanatanaDharma}
+								<a href={footer.trust?.startsWith('http') ? footer.trust : `https://${footer.trust}`} target="_blank" rel="noopener noreferrer" className="group inline-flex min-h-11 items-center gap-2 text-sm text-white/80 transition-colors hover:text-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 focus-visible:text-amber-100" aria-label={footer.visitTrustLink.replace('{trust}', footer.trust)}>
+									<ArrowUpRight className="h-4 w-4 text-sky-200" aria-hidden="true" />{footer.saveSanatanaDharma}
 								</a>
 							</li>
 						</ul>
-						<div className="mt-6 flex items-center gap-2 border-t border-slate-300/70 pt-4 text-sm text-slate-600">
-							<Sun className="h-4 w-4 text-amber-700" aria-hidden="true" />
-							<Wind className="h-4 w-4 text-[#137c63]" aria-hidden="true" />
+						<div className="mt-6 flex items-center gap-2 border-t border-white/20 pt-4 text-sm text-white/75">
+							<Sun className="h-4 w-4 text-amber-300" aria-hidden="true" />
+							<Wind className="h-4 w-4 text-sky-200" aria-hidden="true" />
 							<span>{footer.solarWindHybrid}</span>
 						</div>
 					</section>
@@ -291,24 +293,25 @@ export default function Footer() {
 						<FormDataNotice className="text-slate-600" />
 					</form>
 				</section>
+
 			</div>
 
-			<div className="border-t border-slate-300/70 bg-white/55 backdrop-blur">
-				<p className="mx-auto flex max-w-[90rem] justify-center gap-1 border-t border-slate-300/70 p-5 text-sm font-medium text-slate-600 sm:px-8 lg:flex-row lg:px-10">
-					🚧 {footer.developmentNotice} <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" aria-label={footer.attributionLinkLabel} className="text-[#137c63] transition-colors hover:text-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#137c63]">{footer.attributionLinkText}</Link>
+			<div className="border-t border-white/15 bg-white/5 backdrop-blur">
+				<p className="mx-auto flex max-w-[90rem] justify-center gap-1 border-t border-white/15 p-5 text-sm font-medium text-white/75 sm:px-8 lg:flex-row lg:px-10">
+					🚧 {footer.developmentNotice} <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" aria-label={footer.attributionLinkLabel} className="text-amber-200 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200">{footer.attributionLinkText}</Link>
 				</p>
-				<div className="mx-auto flex max-w-[90rem] flex-col items-center justify-between gap-3 border-t border-slate-300/70 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
-					<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[12px] uppercase tracking-[0.14em] text-slate-600">
+				<div className="mx-auto flex max-w-[90rem] flex-col items-center justify-between gap-3 border-t border-white/15 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
+					<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[12px] uppercase tracking-[0.14em] text-white/70">
 						{footer.legalLinks.map((link: { href: string; label: string }) => (
-							<Link key={link.href} href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`transition-colors hover:text-[#137c63] ${isActive(link.href) ? 'font-semibold text-[#137c63]' : ''}`}>{link.label}</Link>
+							<Link key={link.href} href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`transition-colors hover:text-amber-100 ${isActive(link.href) ? 'font-semibold text-amber-200' : ''}`}>{link.label}</Link>
 						))}
 					</div>
-					<p className="text-[12px] text-slate-600">{footer.attribution}</p>
-					<p className="text-[12px] text-slate-600">
+					<p className="text-[12px] text-white/70">{footer.attribution}</p>
+					<p className="text-[12px] text-white/70">
 						{footer.copyright.replace('{year}', String(currentYear))}
 					</p>
 				</div>
-				<div className="border-t border-white/10 px-5 py-4 sm:px-8 lg:px-10">
+				<div className="border-t border-white/15 px-5 py-4 sm:px-8 lg:px-10">
 					<CompanyAge />
 				</div>
 			</div>

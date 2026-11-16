@@ -8,7 +8,6 @@ import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
-import { ReferralProgramSection } from '@/app/components/sections/ReferralProgramSection'
 import { useToast } from '@/app/components/ui/ToastProvider'
 
 const channelIconComponents: Record<string, ReactNode> = {
@@ -39,6 +38,7 @@ export default function Contact() {
   const c = t.contact
   const footer = t.footer
   const navbar = t.navbar
+  const referralProgram = t.home.referralProgram
 
   const contactUs = c.contactUs
   const contactCardTitle = c.contactCardTitle
@@ -235,15 +235,15 @@ export default function Contact() {
               <form className="grid gap-4 p-5 sm:grid-cols-2 sm:p-8" onSubmit={handleContactSubmit}>
                 <label className="block text-sm font-semibold text-slate-800">
                   {c.form.fullName}
-                  <input className="mt-1.5 min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="fullName" type="text" autoComplete="name" minLength={2} maxLength={100} required />
+                  <input className="mt-1.5 min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="fullName" type="text" autoComplete="name" minLength={2} maxLength={100} required placeholder={c.form.fullName} />
                 </label>
                 <label className="block text-sm font-semibold text-slate-800">
                   {c.form.email}
-                  <input className="mt-1.5 min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="email" type="email" autoComplete="email" maxLength={254} required />
+                  <input className="mt-1.5 min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="email" type="email" autoComplete="email" maxLength={254} required placeholder={c.form.email} />
                 </label>
                 <label className="block text-sm font-semibold text-slate-800">
                   {c.form.phone}
-                  <input className="mt-1.5 min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="phone" type="tel" autoComplete="tel" inputMode="tel" pattern="(?:\+?91)?[6-9][0-9]{9}" maxLength={13} />
+                  <input className="mt-1.5 min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="phone" type="tel" autoComplete="tel" inputMode="tel" pattern="(?:\+?91)?[6-9][0-9]{9}" maxLength={13} placeholder={c.form.phone} />
                 </label>
                 <label className="block text-sm font-semibold text-slate-800">
                   {c.form.projectType}
@@ -292,7 +292,24 @@ export default function Contact() {
           </section>
         </div>
       </section>
-      <ReferralProgramSection />
+      <section className="border-y border-slate-200 bg-slate-50 px-4 py-10 sm:px-6 lg:px-10" aria-labelledby="contact-referral-title">
+        <div className="mx-auto flex max-w-7xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#137c63]">{referralProgram.eyebrow}</p>
+            <h2 id="contact-referral-title" className="mt-2 text-2xl font-black tracking-tight text-slate-950 sm:text-3xl">
+              {referralProgram.title}
+            </h2>
+            <p className="mt-2 text-sm leading-6 text-slate-600 sm:text-base">{referralProgram.description}</p>
+          </div>
+          <Link
+            href="/referral-programme"
+            className="inline-flex min-h-12 shrink-0 items-center justify-center gap-3 rounded-full bg-[#087a61] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61]"
+          >
+            {referralProgram.form.title}
+            <span aria-hidden="true">&rarr;</span>
+          </Link>
+        </div>
+      </section>
       <section
         className="relative isolate overflow-hidden bg-gradient-to-br from-sky-100 via-indigo-50 to-fuchsia-100 px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
         aria-labelledby="contact-faq-title"

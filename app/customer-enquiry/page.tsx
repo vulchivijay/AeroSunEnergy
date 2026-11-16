@@ -61,7 +61,7 @@ function TextField({
         name={name}
         type={type}
         required={required}
-        placeholder={placeholder}
+        placeholder={placeholder ?? (type === "date" ? undefined : label)}
         min={min}
         max={max}
         maxLength={maxLength}
@@ -168,6 +168,7 @@ function EditableTable({
                     type={field.type ?? "text"}
                     min={field.min}
                     step={field.step}
+                    placeholder={field.label}
                     aria-label={`${row.label}: ${field.label}`}
                     className="min-h-9 w-full rounded-md border border-slate-200 bg-white px-2 text-md text-slate-900 outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
                   />
@@ -613,6 +614,7 @@ export default function CustomerEnquiryPage() {
                           type="number"
                           min={0}
                           step="0.01"
+                          placeholder="0.00"
                           aria-label={`${item} ${page.amountInRupees}`}
                           className="min-h-9 w-full rounded-md border border-slate-200 px-2"
                         />
@@ -639,6 +641,7 @@ export default function CustomerEnquiryPage() {
                           min={0}
                           step="0.01"
                           required={name === "price_total"}
+                          placeholder="0.00"
                           aria-label={`${label} ${page.amountInRupees}`}
                           className="min-h-9 w-full rounded-md border border-slate-200 px-2"
                         />

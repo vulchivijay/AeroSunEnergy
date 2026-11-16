@@ -4215,6 +4215,14 @@
       {
         "title": "Lord Shiva Blessing",
         "body": "Welcome to AeroSun Energy. May Lord Shiva bring peace, strength, and harmony to your journey."
+      },
+      {
+        "title": "Lord Rama Blessing",
+        "body": "Welcome to AeroSun Energy. May Lord Rama guide your journey with courage, righteousness, and prosperity."
+      },
+      {
+        "title": "Lord Krishna Blessing",
+        "body": "Welcome to AeroSun Energy. May Lord Krishna fill your life with wisdom, joy, and harmony."
       }
     ]
   },
@@ -4496,10 +4504,22 @@
         "description": "Start with the company behind the proposal, a verifiable office address, and direct ways to reach the team.",
         "residentialServiceDescription": "AeroSun Energy provides residential rooftop solar for homes in Tirupati, Tirupati district, Andhra Pradesh. Homeowners in Tirupati and nearby areas such as Chittoor, Srikalahasti, and Puttur can request a written estimate based on their roof and electricity use. Residential quotes include GST, installation, mounting structure and Polycab or Finolex wiring; net meter and extra approvals are excluded unless specifically stated. Panel options include Adani, Waaree, Tata and Renewsolar, with Polycab, Waaree, Deye or X Watt inverter options according to the selected system. Stated panel warranty is 25 years and inverter warranty is 8 years, subject to the applicable manufacturer terms. Residential pricing is valid for 7 days; commercial projects are assessed and quoted manually.",
         "serviceFacts": [
-          { "label": "DISCOM", "value": "APSPDCL" },
-          { "label": "District", "value": "Tirupati" },
-          { "label": "Quote validity", "value": "7 Days" },
-          { "label": "Inverter warranty", "value": "Stated 8 Years" }
+          {
+            "label": "DISCOM",
+            "value": "APSPDCL"
+          },
+          {
+            "label": "District",
+            "value": "Tirupati"
+          },
+          {
+            "label": "Quote validity",
+            "value": "7 Days"
+          },
+          {
+            "label": "Inverter warranty",
+            "value": "Stated 8 Years"
+          }
         ],
         "legalEntityLabel": "Legal business name",
         "officeLabel": "Office address",
@@ -4629,6 +4649,89 @@
       ],
       "rewardNoteTitle": "Reward terms:",
       "rewardNote": "A referral incentive will be provided after the referred installation is complete. AeroSun will confirm the applicable incentive and terms directly.",
+      "landing": {
+        "badge": "Referral programme · now live",
+        "titlePrefix": "Earn ₹1,500–₹3,000",
+        "titleHighlight": "for every kW you refer",
+        "description": "Refer friends and family to AeroSun Energy. When their solar system is installed, you earn—no selling, just sharing.",
+        "earningsNote": "A 5 kW system can earn you up to ₹15,000 per referral.",
+        "benefits": [
+          "Free to join",
+          "Direct bank transfer after verification",
+          "No referral limit"
+        ],
+        "processEyebrow": "Simple 3-step process",
+        "processTitle": "How it works",
+        "processSteps": [
+          {
+            "title": "Submit a referral",
+            "description": "Enter your details and your interested friend's details in the form above, with their permission."
+          },
+          {
+            "title": "We follow up",
+            "description": "Our team contacts them to understand their property and solar requirements."
+          },
+          {
+            "title": "Earn rewards",
+            "description": "Once installation is complete and verified, you can receive the reward for an eligible referral."
+          }
+        ],
+        "earningsEyebrow": "Your earnings",
+        "earningsTitle": "How much can you earn?",
+        "earningsDescription": "Rewards are based on installed capacity and paid after installation is complete and verified. There is no cap on successful referrals.",
+        "basicTitle": "Basic referral",
+        "basicRate": "₹1,500",
+        "perKilowatt": "/kW",
+        "basicDescription": "Share a referral; no additional paperwork support is needed.",
+        "guidedTitle": "With documentation support",
+        "guidedRate": "₹3,000",
+        "topRateBadge": "Top rate",
+        "guidedDescription": "Help the customer with key site and documentation steps for the higher reward.",
+        "guidanceTasks": [
+          "Help arrange a rooftop site visit",
+          "Help gather Aadhaar and the electricity bill",
+          "Guide the customer through a bank-loan enquiry",
+          "Guide document submission to the relevant DISCOM"
+        ],
+        "guidedBonus": "₹1,500/kW more than a basic referral",
+        "rewardTiers": [
+          {
+            "systemSize": "3 kW system",
+            "basicReward": "₹4,500",
+            "guidedReward": "₹9,000"
+          },
+          {
+            "systemSize": "5 kW system",
+            "basicReward": "₹7,500",
+            "guidedReward": "₹15,000"
+          },
+          {
+            "systemSize": "10 kW system",
+            "basicReward": "₹15,000",
+            "guidedReward": "₹30,000"
+          }
+        ],
+        "guidanceNoteTitle": "Documentation support includes:",
+        "guidanceNote": "Guidance and paperwork support only; the referrer is not expected to perform installation work.",
+        "termsNotice": "Rewards are subject to referral eligibility, completed and verified installation, and programme terms. AeroSun will confirm eligibility before processing payment.",
+        "faqEyebrow": "Questions & answers",
+        "faqTitle": "Frequently asked questions",
+        "faqs": [
+          {
+            "question": "When will I get paid?",
+            "answer": "After the solar system is fully installed and verified. Eligible rewards are generally processed within 7–14 days."
+          },
+          {
+            "question": "How is payment made?",
+            "answer": "By direct bank transfer. Bank details are collected when an eligible referral is ready for payout."
+          },
+          {
+            "question": "Is there a referral limit?",
+            "answer": "There is no cap on referrals. Each successful installation may qualify for a reward under the programme terms."
+          }
+        ],
+        "trustNote": "AeroSun Energy · Secure referral details · Rewards subject to verification"
+      },
       "form": {
         "title": "Introduce a neighbour or friend",
         "conversationTitle": "Let’s start a conversation.",
@@ -4641,10 +4744,22 @@
         "propertyTypeLabel": "Property type",
         "propertyTypePlaceholder": "Select property type",
         "propertyTypes": [
-          { "value": "house", "label": "Independent house" },
-          { "value": "apartment", "label": "Apartment" },
-          { "value": "commercial", "label": "Business / commercial" },
-          { "value": "other", "label": "Other" }
+          {
+            "value": "house",
+            "label": "Independent house"
+          },
+          {
+            "value": "apartment",
+            "label": "Apartment"
+          },
+          {
+            "value": "commercial",
+            "label": "Business / commercial"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          }
         ],
         "consent": "I have permission from my friend to share their contact details with AeroSun Energy so the team can contact them about solar.",
         "privacyPrefix": "We use these details to follow up on this referral. See our",
@@ -4678,7 +4793,7 @@
           "Lower Capex",
           "Net Metering"
         ],
-        "image": "/images/slider/slider-1.webp",
+        "image": "/images/slider/slider-1.png",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -5233,7 +5348,7 @@
           "badgeClass": "text-sky-100",
           "chipClass": "text-sky-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-1.webp"
+          "image": "/images/slider/slider-1.png"
         },
         {
           "badge": "Off-grid autonomy",
@@ -7559,6 +7674,7 @@
     "website": "aerosunenergy.in",
     "trust": "sanatanadharmam.in",
     "quickLinks": "Quick Links",
+    "referralProgram": "Referral Programme",
     "quickEnquiries": "Quick Enquiries",
     "saveEarth": "Save Earth",
     "saveSanatanaDharma": "Save Sanatana Dharma",
@@ -12375,6 +12491,18 @@
           "image": "/images/lordshiva.png",
           "width": 375,
           "height": 591
+        },
+        {
+          "name": "Rama",
+          "image": "/images/lordrama.png",
+          "width": 1082,
+          "height": 1453
+        },
+        {
+          "name": "Krishna",
+          "image": "/images/lordkrishna.png",
+          "width": 1082,
+          "height": 1453
         }
       ]
     },

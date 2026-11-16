@@ -30,7 +30,7 @@ export default function ServicesPage() {
       <header className="relative isolate min-h-[620px] overflow-hidden bg-[#102a43] text-white sm:min-h-[680px]">
         <div className="absolute inset-0 -z-10">
           <OptimizedImage
-            src="/images/slider/slider-1.webp"
+            src="/images/slider/slider-1.png"
             alt={labels.heroImageAlt}
             fill
             priority

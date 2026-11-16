@@ -13,7 +13,7 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
       title={t.logo.homeTitle}
       aria-label={t.logo.homeAriaLabel}
       data-logo="brand"
-      className={`relative flex items-center gap-2 font-(--font-logo) ${compact ? "w-max max-w-auto rounded-2xl border border-white/70 bg-white/45 px-2 py-1 shadow-[0_12px_30px_-18px_rgba(15,23,42,0.35)] backdrop-blur-lg" : "max-w-full"}`}
+      className={`relative flex items-center gap-2 font-(--font-logo) ${compact ? "w-max max-w-auto px-2 py-1" : "max-w-full"}`}
     >
       <Image
         src="/images/logo.png"
@@ -29,31 +29,31 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
         >
           <span
             data-brand-name
-            className={
+            className={`relative whitespace-nowrap pr-2 text-2xl font-bold tracking-wider text-[#20A44A] sm:text-3xl
               compact
-                ? "relative whitespace-nowrap pr-2 text-2xl font-bold tracking-wider text-[#137c63] drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)] sm:text-3xl"
-                : "relative whitespace-nowrap pr-3 text-2xl font-bold tracking-wider text-[#137c63] drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)] sm:text-3xl"
-            }
+                ? ""
+                : ""
+            `}
           >
             {t.logo.wordmark}
             <sup
-              className={`absolute right-0 text-[10px] text-[#333333] ${compact ? "top-1" : "top-2"}`}
+              className={`absolute right-0 text-[10px] font-normal top-1 text-[#ffffff] ${compact ? "" : ""}`}
             >
               {t.logo.trademark}
             </sup>
           </span>
           <span
             data-brand-name
-            className={`whitespace-nowrap text-2xl font-bold tracking-wider text-[#F59E0B] drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)] sm:text-3xl`}
+            className={`whitespace-nowrap text-2xl font-bold tracking-wider text-[#F59E0B] sm:text-3xl`}
           >
             {t.logo.wordmarkSuffix}
           </span>
         </div>
         <div
-          className={`text-[12px] font-semibold text-[#173b2c]
+          className={`max-w-[16rem] whitespace-normal break-keep text-[12px] leading-tight line-clamp-2
             compact
-              ? "whitespace-nowrap"
-              : "whitespace-nowrap"
+              ? "text-[#ffffff]"
+              : "text-[#333333]"
           `}
         >
           ---- {t.navbar.brandTagline} ----

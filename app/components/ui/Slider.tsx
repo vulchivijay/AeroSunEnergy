@@ -170,7 +170,7 @@ export default function Slider({
 
   if (count === 1) {
     return (
-      <div role="region" aria-label={regionLabel} className={`w-full relative overflow-hidden ${className}`}>
+      <div role="region" aria-label={regionLabel} className={`w-full relative h-[clamp(640px,56vw,760px)] overflow-hidden ${className}`}>
         <div className="w-full">{slidesArray[0]}</div>
       </div>
     )
@@ -191,17 +191,17 @@ export default function Slider({
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
       onPointerCancel={endDrag}
-      className={`relative w-full min-h-[clamp(480px,56vw,760px)] overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${className}`}
+      className={`relative h-[clamp(640px,56vw,760px)] w-full overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${className}`}
     >
       <div
-        className={`flex min-h-[clamp(480px,56vw,760px)] ${withTransition ? 'transition-transform duration-500 ease-in-out motion-reduce:transition-none' : ''}`}
+        className={`flex h-[clamp(640px,56vw,760px)] ${withTransition ? 'transition-transform duration-500 ease-in-out motion-reduce:transition-none' : ''}`}
         style={{ width: slideWidth > 0 ? `${totalWidth}px` : `${clonedSlides.length * 100}%`, transform: translate }}
         onTransitionEnd={onTransitionEnd}
       >
         {clonedSlides.map((child, i) => (
           <div
             key={i}
-            className="min-h-[clamp(480px,56vw,760px)] shrink-0"
+            className="h-[clamp(640px,56vw,760px)] shrink-0"
             style={{ width: slideWidth > 0 ? `${slideWidth}px` : `${percentPerSlide}%` }}
             role="group"
             aria-roledescription={carousel.slideRoleDescription}
@@ -211,7 +211,7 @@ export default function Slider({
             aria-hidden={i !== position}
             inert={i !== position}
           >
-            <div className="flex min-h-[clamp(480px,56vw,760px)] w-full flex-col">{child}</div>
+            <div className="flex h-[clamp(640px,56vw,760px)] w-full flex-col">{child}</div>
           </div>
         ))}
       </div>

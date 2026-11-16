@@ -92,6 +92,7 @@ export function SolarEstimation() {
   const [monthlyBillInput, setMonthlyBillInput] = useState(String(defaultValues.monthlyBill))
   const [systemSizeInput, setSystemSizeInput] = useState(String(initialSystemSize))
   const [selectedPropertyIndex, setSelectedPropertyIndex] = useState(0)
+  const [leadPropertyIndex, setLeadPropertyIndex] = useState<number | ''>('')
   const [showLeadForm, setShowLeadForm] = useState(false)
   const [whatsAppFallbackUrl, setWhatsAppFallbackUrl] = useState<string | null>(null)
   const [leadFormPending, setLeadFormPending] = useState(false)
@@ -536,10 +537,11 @@ export function SolarEstimation() {
                   id={leadPropertyTypeInputId}
                   name="propertyType"
                   required
-                  value={selectedPropertyIndex}
-                  onChange={(event) => setSelectedPropertyIndex(Number(event.target.value))}
+                  value={leadPropertyIndex}
+                  onChange={(event) => setLeadPropertyIndex(event.target.value === '' ? '' : Number(event.target.value))}
                   className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
                 >
+                  <option value="" disabled>{e.propertyTypePlaceholder}</option>
                   {e.propertyTypeOptions.map((propertyType, index) => (
                     <option key={propertyType} value={index}>{propertyType}</option>
                   ))}
