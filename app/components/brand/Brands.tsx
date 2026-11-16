@@ -45,36 +45,36 @@ export default function Brands() {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-[linear-gradient(120deg,#312e81_0%,#4c1d95_55%,#701a75_100%)] px-4 py-16 sm:px-6 lg:px-10 lg:py-20"
+      className="relative isolate overflow-hidden bg-[linear-gradient(120deg,#ffffff_0%,#f8fafc_48%,#e8eef5_100%)] px-4 py-16 sm:px-6 lg:px-10 lg:py-20"
       aria-labelledby="brand-section-title"
     >
       <div
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-size-[48px_48px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-size-[48px_48px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)]"
         aria-hidden="true"
       />
       <div className="relative mx-auto max-w-7xl">
-        <header className="mb-7 border-t border-white/15 pt-5 sm:mb-8 sm:pt-6">
+        <header className="mb-7 border-t border-slate-300/70 pt-5 sm:mb-8 sm:pt-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="min-w-0">
-              <p className="inline-flex items-center gap-2 rounded-full border border-violet-200/20 bg-violet-300/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.24em] text-violet-100">
-                <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_14px_rgba(110,231,183,0.9)]" aria-hidden="true" />
+              <p className="inline-flex items-center gap-2 rounded-full border border-amber-700/20 bg-amber-100/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.24em] text-amber-900">
+                <span className="h-2 w-2 rounded-full bg-emerald-600 shadow-[0_0_14px_rgba(5,150,105,0.45)]" aria-hidden="true" />
                 {section.eyebrow}
               </p>
-              <h2 id="brand-section-title" className="mt-4 max-w-3xl text-2xl font-black tracking-tight text-white sm:text-3xl lg:text-4xl">
+              <h2 id="brand-section-title" className="mt-4 max-w-3xl text-2xl font-black tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
                 {section.title}
               </h2>
-              <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
                 {section.subtitle}
               </p>
             </div>
-            <p className="inline-flex w-fit shrink-0 items-center gap-2 rounded-2xl border border-white/10 bg-black/15 px-4 py-3 text-sm font-semibold text-violet-100">
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-violet-300/15 text-violet-200" aria-hidden="true">
+            <p className="inline-flex w-fit shrink-0 items-center gap-2 rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-sm font-semibold text-slate-800 shadow-sm">
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-amber-100 text-amber-800" aria-hidden="true">
                 ↓
               </span>
               {section.priceOrder}
             </p>
           </div>
-          <p className="mt-4 max-w-3xl border-l-2 border-amber-300/70 pl-4 text-xs leading-5 text-slate-300 sm:text-sm sm:leading-6">
+          <p className="mt-4 max-w-3xl border-l-2 border-amber-500 pl-4 text-xs leading-5 text-slate-600 sm:text-sm sm:leading-6">
             {section.priceDisclaimer}
           </p>
         </header>

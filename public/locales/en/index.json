@@ -4496,10 +4496,22 @@
         "description": "Start with the company behind the proposal, a verifiable office address, and direct ways to reach the team.",
         "residentialServiceDescription": "AeroSun Energy provides residential rooftop solar for homes in Tirupati, Tirupati district, Andhra Pradesh. Homeowners in Tirupati and nearby areas such as Chittoor, Srikalahasti, and Puttur can request a written estimate based on their roof and electricity use. Residential quotes include GST, installation, mounting structure and Polycab or Finolex wiring; net meter and extra approvals are excluded unless specifically stated. Panel options include Adani, Waaree, Tata and Renewsolar, with Polycab, Waaree, Deye or X Watt inverter options according to the selected system. Stated panel warranty is 25 years and inverter warranty is 8 years, subject to the applicable manufacturer terms. Residential pricing is valid for 7 days; commercial projects are assessed and quoted manually.",
         "serviceFacts": [
-          { "label": "DISCOM", "value": "APSPDCL" },
-          { "label": "District", "value": "Tirupati" },
-          { "label": "Quote validity", "value": "7 Days" },
-          { "label": "Inverter warranty", "value": "Stated 8 Years" }
+          {
+            "label": "DISCOM",
+            "value": "APSPDCL"
+          },
+          {
+            "label": "District",
+            "value": "Tirupati"
+          },
+          {
+            "label": "Quote validity",
+            "value": "7 Days"
+          },
+          {
+            "label": "Inverter warranty",
+            "value": "Stated 8 Years"
+          }
         ],
         "legalEntityLabel": "Legal business name",
         "officeLabel": "Office address",
@@ -4641,10 +4653,22 @@
         "propertyTypeLabel": "Property type",
         "propertyTypePlaceholder": "Select property type",
         "propertyTypes": [
-          { "value": "house", "label": "Independent house" },
-          { "value": "apartment", "label": "Apartment" },
-          { "value": "commercial", "label": "Business / commercial" },
-          { "value": "other", "label": "Other" }
+          {
+            "value": "house",
+            "label": "Independent house"
+          },
+          {
+            "value": "apartment",
+            "label": "Apartment"
+          },
+          {
+            "value": "commercial",
+            "label": "Business / commercial"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          }
         ],
         "consent": "I have permission from my friend to share their contact details with AeroSun Energy so the team can contact them about solar.",
         "privacyPrefix": "We use these details to follow up on this referral. See our",
@@ -4678,7 +4702,7 @@
           "Lower Capex",
           "Net Metering"
         ],
-        "image": "/images/slider/slider-1.webp",
+        "image": "/images/slider/slider-1.png",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -5233,7 +5257,7 @@
           "badgeClass": "text-sky-100",
           "chipClass": "text-sky-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-1.webp"
+          "image": "/images/slider/slider-1.png"
         },
         {
           "badge": "Off-grid autonomy",

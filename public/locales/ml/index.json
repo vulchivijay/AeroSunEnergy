@@ -4496,10 +4496,22 @@
         "description": "Start with the company behind the proposal, a verifiable office address, and direct ways to reach the team.",
         "residentialServiceDescription": "AeroSun Energy ആന്ധ്രാപ്രദേശിലെ തിരുപ്പതി ജില്ലയിൽ വീടുകൾക്കായി റെസിഡൻഷ്യൽ റൂഫ്‌ടോപ്പ് സോളാർ സംവിധാനങ്ങൾ നൽകുന്നു. തിരുപ്പതിയിലും ചിറ്റൂർ, ശ്രീകാളഹസ്തി, പുത്തൂർ തുടങ്ങിയ സമീപ പ്രദേശങ്ങളിലുമുള്ള വീട്ടുടമകൾക്ക് മേൽക്കൂരയും വൈദ്യുതി ഉപയോഗവും അടിസ്ഥാനമാക്കി എഴുത്തുപരമായ എസ്റ്റിമേറ്റ് അഭ്യർത്ഥിക്കാം. റെസിഡൻഷ്യൽ ക്വോട്ടിൽ GST, ഇൻസ്റ്റാളേഷൻ, മൗണ്ടിംഗ് ഘടന, Polycab അല്ലെങ്കിൽ Finolex വയറിംഗ് എന്നിവ ഉൾപ്പെടും; പ്രത്യേകം വ്യക്തമാക്കിയിട്ടില്ലെങ്കിൽ നെറ്റ് മീറ്ററും അധിക അനുമതികളും ഉൾപ്പെടില്ല. Adani, Waaree, Tata, Renewsolar പാനൽ ഓപ്ഷനുകളും തിരഞ്ഞെടുത്ത സിസ്റ്റത്തിനനുസരിച്ച് Polycab, Waaree, Deye അല്ലെങ്കിൽ X Watt ഇൻവെർട്ടർ ഓപ്ഷനുകളും ലഭ്യമാണ്. വ്യക്തമാക്കിയ പാനൽ വാറന്റി 25 വർഷവും ഇൻവെർട്ടർ വാറന്റി 8 വർഷവുമാണ്; ബാധകമായ നിർമ്മാതൃ നിബന്ധനകൾക്ക് വിധേയമാണ്. റെസിഡൻഷ്യൽ വില 7 ദിവസത്തേക്ക് സാധുവാണ്; വാണിജ്യ പദ്ധതികൾ പ്രത്യേകം വിലയിരുത്തി ക്വോട്ട് ചെയ്യുന്നു.",
         "serviceFacts": [
-          { "label": "DISCOM", "value": "APSPDCL" },
-          { "label": "ജില്ല", "value": "തിരുപ്പതി" },
-          { "label": "ക്വോട്ട് കാലാവധി", "value": "7 ദിവസം" },
-          { "label": "ഇൻവെർട്ടർ വാറന്റി", "value": "പറഞ്ഞിരിക്കുന്ന 8 വർഷം" }
+          {
+            "label": "DISCOM",
+            "value": "APSPDCL"
+          },
+          {
+            "label": "ജില്ല",
+            "value": "തിരുപ്പതി"
+          },
+          {
+            "label": "ക്വോട്ട് കാലാവധി",
+            "value": "7 ദിവസം"
+          },
+          {
+            "label": "ഇൻവെർട്ടർ വാറന്റി",
+            "value": "പറഞ്ഞിരിക്കുന്ന 8 വർഷം"
+          }
         ],
         "legalEntityLabel": "Legal business name",
         "officeLabel": "Office address",
@@ -4690,7 +4702,7 @@
           "Lower Capex",
           "Net Metering"
         ],
-        "image": "/images/slider/slider-1.webp",
+        "image": "/images/slider/slider-1.png",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -5245,7 +5257,7 @@
           "badgeClass": "text-sky-100",
           "chipClass": "text-sky-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-1.webp"
+          "image": "/images/slider/slider-1.png"
         },
         {
           "badge": "Off-grid autonomy",

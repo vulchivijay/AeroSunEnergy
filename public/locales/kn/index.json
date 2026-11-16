@@ -4496,10 +4496,22 @@
         "description": "Start with the company behind the proposal, a verifiable office address, and direct ways to reach the team.",
         "residentialServiceDescription": "AeroSun Energy ಆಂಧ್ರ ಪ್ರದೇಶದ ತಿರುಪತಿ ಜಿಲ್ಲೆಯಲ್ಲಿ ಮನೆಗಳಿಗೆ ವಸತಿ ಮೇಲ್ಛಾವಣಿ ಸೌರ ವ್ಯವಸ್ಥೆಗಳನ್ನು ಒದಗಿಸುತ್ತದೆ. ತಿರುಪತಿ ಮತ್ತು ಚಿತ್ತೂರು, ಶ್ರೀಕಾಳಹಸ್ತಿ, ಪುತ್ತೂರು ಮುಂತಾದ ಹತ್ತಿರದ ಪ್ರದೇಶಗಳ ಮನೆಮಾಲೀಕರು ತಮ್ಮ ಮೇಲ್ಛಾವಣಿ ಮತ್ತು ವಿದ್ಯುತ್ ಬಳಕೆಯ ಆಧಾರದ ಮೇಲೆ ಲಿಖಿತ ಅಂದಾಜನ್ನು ಕೇಳಬಹುದು. ವಸತಿ ಕೊಟೇಶನ್‌ಗಳಲ್ಲಿ GST, ಸ್ಥಾಪನೆ, ಮೌಂಟಿಂಗ್ ರಚನೆ ಮತ್ತು Polycab ಅಥವಾ Finolex ವೈರಿಂಗ್ ಸೇರಿವೆ; ಸ್ಪಷ್ಟವಾಗಿ ಹೇಳದಿದ್ದರೆ ನೆಟ್ ಮೀಟರ್ ಮತ್ತು ಹೆಚ್ಚುವರಿ ಅನುಮತಿಗಳು ಸೇರಿರುವುದಿಲ್ಲ. ಪ್ಯಾನೆಲ್ ಆಯ್ಕೆಗಳಲ್ಲಿ Adani, Waaree, Tata ಮತ್ತು Renewsolar ಇವೆ; ಆಯ್ಕೆ ಮಾಡಿದ ವ್ಯವಸ್ಥೆಯ ಪ್ರಕಾರ Polycab, Waaree, Deye ಅಥವಾ X Watt ಇನ್ವರ್ಟರ್ ಆಯ್ಕೆಗಳು ಲಭ್ಯ. ತಿಳಿಸಿದ ಪ್ಯಾನೆಲ್ ವಾರಂಟಿ 25 ವರ್ಷ, ಇನ್ವರ್ಟರ್ ವಾರಂಟಿ 8 ವರ್ಷ; ಇವು ಅನ್ವಯಿಸುವ ತಯಾರಕರ ಷರತ್ತುಗಳಿಗೆ ಒಳಪಟ್ಟಿವೆ. ವಸತಿ ಬೆಲೆ 7 ದಿನಗಳವರೆಗೆ ಮಾನ್ಯ; ವಾಣಿಜ್ಯ ಯೋಜನೆಗಳನ್ನು ಪ್ರತ್ಯೇಕವಾಗಿ ಪರಿಶೀಲಿಸಿ ಕೊಟೇಶನ್ ನೀಡಲಾಗುತ್ತದೆ.",
         "serviceFacts": [
-          { "label": "DISCOM", "value": "APSPDCL" },
-          { "label": "ಜಿಲ್ಲೆ", "value": "ತಿರುಪತಿ" },
-          { "label": "ಕೊಟೇಶನ್ ಮಾನ್ಯತೆ", "value": "7 ದಿನಗಳು" },
-          { "label": "ಇನ್ವರ್ಟರ್ ವಾರಂಟಿ", "value": "ಹೇಳಿರುವುದು 8 ವರ್ಷ" }
+          {
+            "label": "DISCOM",
+            "value": "APSPDCL"
+          },
+          {
+            "label": "ಜಿಲ್ಲೆ",
+            "value": "ತಿರುಪತಿ"
+          },
+          {
+            "label": "ಕೊಟೇಶನ್ ಮಾನ್ಯತೆ",
+            "value": "7 ದಿನಗಳು"
+          },
+          {
+            "label": "ಇನ್ವರ್ಟರ್ ವಾರಂಟಿ",
+            "value": "ಹೇಳಿರುವುದು 8 ವರ್ಷ"
+          }
         ],
         "legalEntityLabel": "Legal business name",
         "officeLabel": "Office address",
@@ -4690,7 +4702,7 @@
           "Lower Capex",
           "Net Metering"
         ],
-        "image": "/images/slider/slider-1.webp",
+        "image": "/images/slider/slider-1.png",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -5245,7 +5257,7 @@
           "badgeClass": "text-sky-100",
           "chipClass": "text-sky-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-1.webp"
+          "image": "/images/slider/slider-1.png"
         },
         {
           "badge": "Off-grid autonomy",
