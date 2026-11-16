@@ -1,5 +1,5 @@
 {
-  "subsidyNotice": "Please note: The subsidy is capped at Rs. 78,000 for on-grid rooftop solar systems that are 3 kWp or higher.",
+  "subsidyNotice": "ദയവായി ശ്രദ്ധിക്കുക: 3 kWp അല്ലെങ്കിൽ അതിലധികം ശേഷിയുള്ള ഓൺ-ഗ്രിഡ് മേൽക്കൂര സോളാർ സംവിധാനങ്ങൾക്ക് സബ്സിഡി പരമാവധി Rs. 78,000 ആണ്.",
   "tirupatiSeo": {
     "eyebrow": "ആന്ധ്രാപ്രദേശിലെ തിരുപ്പതിയിൽ",
     "title": "തിരുപ്പതിയിൽ സോളാർ, കാറ്റാടി, ഹൈബ്രിഡ് ഊർജം",
@@ -4227,13 +4227,13 @@
     ]
   },
   "carousel": {
-    "regionLabel": "Featured content",
-    "roleDescription": "carousel",
-    "slideRoleDescription": "slide",
-    "slidePosition": "{current} of {total}",
-    "previousSlide": "Previous slide",
-    "nextSlide": "Next slide",
-    "goToSlide": "Go to slide {number}"
+    "regionLabel": "തിരഞ്ഞെടുത്ത ഉള്ളടക്കം",
+    "roleDescription": "കറൂസൽ",
+    "slideRoleDescription": "സ്ലൈഡ്",
+    "slidePosition": "{current} / {total}",
+    "previousSlide": "മുമ്പത്തെ സ്ലൈഡ്",
+    "nextSlide": "അടുത്ത സ്ലൈഡ്",
+    "goToSlide": "{number}-ാം സ്ലൈഡിലേക്ക് പോകുക"
   },
   "navbar": {
     "languages": [
@@ -4310,23 +4310,23 @@
     ],
     "quiries": [
       {
-        "label": "Projects",
+        "label": "പ്രോജക്റ്റുകൾ",
         "href": "/projects"
       },
       {
-        "label": "Customer Enquiry",
+        "label": "ഉപഭോക്തൃ അന്വേഷണം",
         "href": "/customer-enquiry"
       },
       {
-        "label": "Know Eligibility",
+        "label": "യോഗ്യത അറിയുക",
         "href": "/know-eligibility"
       },
       {
-        "label": "Installation Checklist",
+        "label": "ഇൻസ്റ്റലേഷൻ പരിശോധനപ്പട്ടിക",
         "href": "/installation-checklist"
       },
       {
-        "label": "Customer Agreement",
+        "label": "ഉപഭോക്തൃ കരാർ",
         "href": "/customer-agreement"
       }
     ],
@@ -4339,8 +4339,8 @@
     "section": "വിഭാഗം",
     "languageLabel": "ഭാഷ",
     "aboutSubmenuLabel": "ഞങ്ങളെക്കുറിച്ചുള്ള ഉപമെനു തുറക്കുക അല്ലെങ്കിൽ അടയ്ക്കുക",
-    "startProjectTitle": "Start a renewable energy project with AeroSun Energy",
-    "startProjectAriaLabel": "Contact AeroSun Energy to start your project",
+    "startProjectTitle": "AeroSun Energyയുമായി പുനരുപയോഗ ഊർജ പദ്ധതി ആരംഭിക്കുക",
+    "startProjectAriaLabel": "നിങ്ങളുടെ പദ്ധതി ആരംഭിക്കാൻ AeroSun Energyയെ ബന്ധപ്പെടുക",
     "brandName": "AeroSun Energy Private Limited",
     "brandTagline": "സൂര്യനിൽ നിന്നും കാറ്റിൽ നിന്നും ഊർജ്ജം",
     "primaryNavigationLabel": "പ്രധാന നാവിഗേഷൻ",
@@ -4348,7 +4348,7 @@
     "exploreLabel": "പര്യവേക്ഷണം ചെയ്യുക",
     "closeMenu": "നാവിഗേഷൻ മെനു അടയ്ക്കുക",
     "voucher": "വൗച്ചർ",
-    "downloadVoucher": "Download AeroSun Energy voucher",
+    "downloadVoucher": "AeroSun Energy വൗച്ചർ ഡൗൺലോഡ് ചെയ്യുക",
     "navigationIconIds": {
       "/": "house",
       "/about": "info",
@@ -4410,9 +4410,9 @@
     }
   },
   "logo": {
-    "homeTitle": "Go to AeroSun Energy homepage",
-    "homeAriaLabel": "AeroSun Energy logo - go to homepage",
-    "imageAlt": "AeroSun Energy logo",
+    "homeTitle": "AeroSun Energy ഹോം പേജ് തുറക്കുക",
+    "homeAriaLabel": "AeroSun Energy ലോഗോ — ഹോം പേജിലേക്ക് പോകുക",
+    "imageAlt": "AeroSun Energy ലോഗോ",
     "wordmark": "AeroSun",
     "wordmarkSuffix": "Energy",
     "trademark": "TM",
@@ -4434,8 +4434,8 @@
       "explore": "Explore the System",
       "exploreTitle": "Learn how AeroSun Energy hybrid systems work",
       "exploreAriaLabel": "Explore the AeroSun Energy system details",
-      "quote": "Get a Free Quote",
-      "estimateSavings": "Estimate Savings",
+      "quote": "സൗജന്യ ക്വട്ടേഷൻ നേടുക",
+      "estimateSavings": "ലാഭം കണക്കാക്കുക",
       "quoteTitle": "Get a free quote for AeroSun Energy systems",
       "quoteAriaLabel": "Request a free quote from AeroSun Energy"
     },
@@ -4473,13 +4473,13 @@
       "badge": "അംഗീകാര രേഖകൾ",
       "title": "സർക്കാർ പിന്തുണയുള്ള സ്ഥാപന അംഗീകാരങ്ങൾ.",
       "description": "പദ്ധതി പരിശോധനയ്ക്കായി AeroSun Energy Private Limited കമ്പനിയുടെ രേഖകൾ വ്യക്തമായി പങ്കിടുന്നു.",
-      "status": "Verified credentials"
+      "status": "സ്ഥിരീകരിച്ച അംഗീകാരങ്ങൾ"
     },
     "recognition": [
       {
         "title": "Udyam / MSME",
         "subtitle": "അംഗീകൃത സംരംഭം",
-        "badge": "Certified",
+        "badge": "സർട്ടിഫൈഡ്",
         "icon": "🏛️",
         "accent": "bg-[#20A44A]/38",
         "glow": "shadow-[0_0_30px_rgba(32,164,74,0.38)]",
@@ -4488,8 +4488,8 @@
       },
       {
         "title": "DPIIT Startup India",
-        "subtitle": "Startup recognition",
-        "badge": "Approved",
+        "subtitle": "സ്റ്റാർട്ടപ്പ് അംഗീകാരം",
+        "badge": "അംഗീകാരം ലഭിച്ചു",
         "icon": "🚀",
         "accent": "bg-[#f59e0b]/38",
         "glow": "shadow-[0_0_30px_rgba(245,158,11,0.38)]",
@@ -4499,13 +4499,13 @@
     ],
     "trustSections": {
       "company": {
-        "eyebrow": "A real team, clear details",
-        "title": "Know who you’re working with.",
-        "description": "Start with the company behind the proposal, a verifiable office address, and direct ways to reach the team.",
+        "eyebrow": "യഥാർത്ഥ ടീം, വ്യക്തമായ വിവരങ്ങൾ",
+        "title": "നിങ്ങൾ ആരോടാണ് പ്രവർത്തിക്കുന്നതെന്ന് അറിയൂ.",
+        "description": "നിർദ്ദേശത്തിന് പിന്നിലുള്ള സ്ഥാപനം, സ്ഥിരീകരിക്കാവുന്ന ഓഫീസ് വിലാസം, ടീമിനെ നേരിട്ട് ബന്ധപ്പെടാനുള്ള മാർഗങ്ങൾ എന്നിവ ആദ്യം അറിയുക.",
         "residentialServiceDescription": "AeroSun Energy ആന്ധ്രാപ്രദേശിലെ തിരുപ്പതി ജില്ലയിൽ വീടുകൾക്കായി റെസിഡൻഷ്യൽ റൂഫ്‌ടോപ്പ് സോളാർ സംവിധാനങ്ങൾ നൽകുന്നു. തിരുപ്പതിയിലും ചിറ്റൂർ, ശ്രീകാളഹസ്തി, പുത്തൂർ തുടങ്ങിയ സമീപ പ്രദേശങ്ങളിലുമുള്ള വീട്ടുടമകൾക്ക് മേൽക്കൂരയും വൈദ്യുതി ഉപയോഗവും അടിസ്ഥാനമാക്കി എഴുത്തുപരമായ എസ്റ്റിമേറ്റ് അഭ്യർത്ഥിക്കാം. റെസിഡൻഷ്യൽ ക്വോട്ടിൽ GST, ഇൻസ്റ്റാളേഷൻ, മൗണ്ടിംഗ് ഘടന, Polycab അല്ലെങ്കിൽ Finolex വയറിംഗ് എന്നിവ ഉൾപ്പെടും; പ്രത്യേകം വ്യക്തമാക്കിയിട്ടില്ലെങ്കിൽ നെറ്റ് മീറ്ററും അധിക അനുമതികളും ഉൾപ്പെടില്ല. Adani, Waaree, Tata, Renewsolar പാനൽ ഓപ്ഷനുകളും തിരഞ്ഞെടുത്ത സിസ്റ്റത്തിനനുസരിച്ച് Polycab, Waaree, Deye അല്ലെങ്കിൽ X Watt ഇൻവെർട്ടർ ഓപ്ഷനുകളും ലഭ്യമാണ്. വ്യക്തമാക്കിയ പാനൽ വാറന്റി 25 വർഷവും ഇൻവെർട്ടർ വാറന്റി 8 വർഷവുമാണ്; ബാധകമായ നിർമ്മാതൃ നിബന്ധനകൾക്ക് വിധേയമാണ്. റെസിഡൻഷ്യൽ വില 7 ദിവസത്തേക്ക് സാധുവാണ്; വാണിജ്യ പദ്ധതികൾ പ്രത്യേകം വിലയിരുത്തി ക്വോട്ട് ചെയ്യുന്നു.",
         "serviceFacts": [
           {
-            "label": "DISCOM",
+            "label": "വൈദ്യുതി വിതരണ സ്ഥാപനം",
             "value": "APSPDCL"
           },
           {
@@ -4521,13 +4521,13 @@
             "value": "പറഞ്ഞിരിക്കുന്ന 8 വർഷം"
           }
         ],
-        "legalEntityLabel": "Legal business name",
-        "officeLabel": "Office address",
-        "phoneLabel": "Call",
-        "emailLabel": "Email",
-        "mapCta": "Open map",
+        "legalEntityLabel": "നിയമപരമായ സ്ഥാപനനാമം",
+        "officeLabel": "ഓഫീസ് വിലാസം",
+        "phoneLabel": "ഫോൺ",
+        "emailLabel": "ഇമെയിൽ",
+        "mapCta": "മാപ്പ് തുറക്കുക",
         "identifiersText": "CIN: U35106AP2026PTC128748.",
-        "contactCta": "Contact AeroSun Energy"
+        "contactCta": "AeroSun Energy-യെ ബന്ധപ്പെടുക"
       },
       "whySolar": {
         "eyebrow": "എന്തുകൊണ്ട് സോളാർ",
@@ -4548,85 +4548,85 @@
         ]
       },
       "evidence": {
-        "eyebrow": "Customer testimonials",
-        "title": "Hear from our customers.",
-        "description": "We’re preparing this space for customer feedback. The cards below are placeholders, not actual testimonials.",
-        "placeholderLabel": "Testimonial placeholder",
-        "previousLabel": "Previous testimonial",
-        "nextLabel": "Next testimonial",
+        "eyebrow": "ഉപഭോക്തൃ അഭിപ്രായങ്ങൾ",
+        "title": "ഞങ്ങളുടെ ഉപഭോക്താക്കളുടെ അനുഭവം അറിയൂ.",
+        "description": "ഉപഭോക്തൃ പ്രതികരണങ്ങൾക്കായി ഈ ഭാഗം തയ്യാറാക്കുകയാണ്. താഴെയുള്ള കാർഡുകൾ മാതൃകകൾ മാത്രമാണ്; യഥാർത്ഥ ഉപഭോക്തൃ സാക്ഷ്യങ്ങളല്ല.",
+        "placeholderLabel": "സാക്ഷ്യത്തിനുള്ള മാതൃക",
+        "previousLabel": "മുമ്പത്തെ അഭിപ്രായം",
+        "nextLabel": "അടുത്ത അഭിപ്രായം",
         "testimonials": [
           {
-            "quote": "[Add an approved customer quote about installation here.]",
-            "customer": "[Customer name]",
-            "location": "[City, State]",
-            "system": "[System type and capacity]"
+            "quote": "[ഇൻസ്റ്റാളേഷനെക്കുറിച്ചുള്ള അംഗീകൃത ഉപഭോക്തൃ അഭിപ്രായം ഇവിടെ ചേർക്കുക.]",
+            "customer": "[ഉപഭോക്താവിന്റെ പേര്]",
+            "location": "[നഗരം, സംസ്ഥാനം]",
+            "system": "[സംവിധാനത്തിന്റെ തരം, ശേഷി]"
           },
           {
-            "quote": "[Add an approved customer quote about service and support here.]",
-            "customer": "[Customer name]",
-            "location": "[City, State]",
-            "system": "[System type and capacity]"
+            "quote": "[സേവനത്തെയും പിന്തുണയെയും കുറിച്ചുള്ള അംഗീകൃത ഉപഭോക്തൃ അഭിപ്രായം ഇവിടെ ചേർക്കുക.]",
+            "customer": "[ഉപഭോക്താവിന്റെ പേര്]",
+            "location": "[നഗരം, സംസ്ഥാനം]",
+            "system": "[സംവിധാനത്തിന്റെ തരം, ശേഷി]"
           },
           {
-            "quote": "[Add an approved customer quote about their system experience here.]",
-            "customer": "[Customer name]",
-            "location": "[City, State]",
-            "system": "[System type and capacity]"
+            "quote": "[സംവിധാനത്തെക്കുറിച്ചുള്ള അനുഭവവുമായി ബന്ധപ്പെട്ട അംഗീകൃത ഉപഭോക്തൃ അഭിപ്രായം ഇവിടെ ചേർക്കുക.]",
+            "customer": "[ഉപഭോക്താവിന്റെ പേര്]",
+            "location": "[നഗരം, സംസ്ഥാനം]",
+            "system": "[സംവിധാനത്തിന്റെ തരം, ശേഷി]"
           }
         ],
-        "note": "Replace each placeholder only with the customer’s exact feedback and permission to publish it.",
-        "cta": "Share your experience"
+        "note": "ഓരോ മാതൃകയും ഉപഭോക്താവിന്റെ യഥാർത്ഥ പ്രതികരണവും പ്രസിദ്ധീകരിക്കാനുള്ള അനുമതിയും ലഭിച്ച ശേഷം മാത്രം മാറ്റിസ്ഥാപിക്കുക.",
+        "cta": "നിങ്ങളുടെ അനുഭവം പങ്കിടുക"
       },
       "journey": {
-        "eyebrow": "A clear path from bill to build",
-        "title": "Know what happens at every step.",
-        "description": "A practical rooftop solar decision starts with your electricity use and ends with a site-specific scope—not a one-size-fits-all promise.",
+        "eyebrow": "ബില്ലിൽ നിന്ന് നിർമാണത്തിലേക്ക് വ്യക്തമായ വഴി",
+        "title": "ഓരോ ഘട്ടത്തിലും എന്ത് സംഭവിക്കുമെന്ന് അറിയൂ.",
+        "description": "പ്രായോഗികമായ മേൽക്കൂര സോളാർ തീരുമാനം തുടങ്ങുന്നത് നിങ്ങളുടെ വൈദ്യുതി ഉപയോഗത്തിൽ നിന്നാണ്; അവസാനിക്കുന്നത് സ്ഥലത്തിനനുസരിച്ചുള്ള പദ്ധതിയിലാണ്—എല്ലാവർക്കും ഒരേ വാഗ്ദാനത്തിലല്ല.",
         "steps": [
           {
-            "title": "Share a recent bill",
-            "description": "Use your bill to start an indicative system and savings estimate."
+            "title": "സമീപകാല ബിൽ പങ്കിടുക",
+            "description": "ഏകദേശ സംവിധാനവും ലാഭവും കണക്കാക്കാൻ ബിൽ ഉപയോഗിക്കുക."
           },
           {
-            "title": "Talk through your goals",
-            "description": "Discuss usage patterns, budget, backup needs, and the kind of property."
+            "title": "നിങ്ങളുടെ ലക്ഷ്യങ്ങൾ ചർച്ച ചെയ്യുക",
+            "description": "ഉപയോഗരീതി, ബജറ്റ്, ബാക്കപ്പ് ആവശ്യം, കെട്ടിടത്തിന്റെ തരം എന്നിവ ചർച്ച ചെയ്യുക."
           },
           {
-            "title": "Survey the site",
-            "description": "Review roof space, shading, electrical conditions, and installation requirements."
+            "title": "സ്ഥലം പരിശോധിക്കുക",
+            "description": "മേൽക്കൂരയിലെ സ്ഥലം, നിഴൽ, വൈദ്യുത സാഹചര്യങ്ങൾ, ഇൻസ്റ്റാളേഷൻ ആവശ്യങ്ങൾ എന്നിവ വിലയിരുത്തുക."
           },
           {
-            "title": "Review the proposal",
-            "description": "Check the proposed capacity, equipment models, scope, costs, and assumptions in writing."
+            "title": "നിർദ്ദേശം പരിശോധിക്കുക",
+            "description": "നിർദ്ദേശിച്ച ശേഷി, ഉപകരണ മോഡലുകൾ, പ്രവർത്തനപരിധി, ചെലവുകൾ, കണക്കിലെടുത്ത അനുമാനങ്ങൾ എന്നിവ എഴുത്തിൽ പരിശോധിക്കുക."
           },
           {
-            "title": "Install and hand over",
-            "description": "Confirm the agreed installation scope, commissioning steps, and support contacts."
+            "title": "ഇൻസ്റ്റാൾ ചെയ്ത് കൈമാറുക",
+            "description": "അംഗീകരിച്ച ഇൻസ്റ്റാളേഷൻ പരിധി, കമ്മീഷനിംഗ് ഘട്ടങ്ങൾ, പിന്തുണാ ബന്ധപ്പെടൽ വിവരങ്ങൾ എന്നിവ ഉറപ്പാക്കുക."
           }
         ],
-        "estimateNote": "Calculator results are indicative. Final system design, generation, price, and eligibility depend on bill details, site conditions, selected equipment, and applicable approvals.",
-        "cta": "Start a free assessment"
+        "estimateNote": "കാൽക്കുലേറ്ററിലെ ഫലങ്ങൾ ഏകദേശമാണ്. അന്തിമ സംവിധാന രൂപകൽപ്പന, ഉൽപ്പാദനം, വില, യോഗ്യത എന്നിവ ബിൽ വിവരങ്ങൾ, സ്ഥലസാഹചര്യങ്ങൾ, തിരഞ്ഞെടുത്ത ഉപകരണങ്ങൾ, ബാധകമായ അനുമതികൾ എന്നിവയെ ആശ്രയിച്ചിരിക്കും.",
+        "cta": "സൗജന്യ വിലയിരുത്തൽ ആരംഭിക്കുക"
       },
       "proposal": {
-        "eyebrow": "Clear scope. No surprises.",
-        "title": "Make the quotation easy to understand.",
-        "description": "A written proposal should let you compare the system, costs, assumptions, and support before you decide.",
-        "quoteHeading": "What to check in your quote",
+        "eyebrow": "വ്യക്തമായ പരിധി. അപ്രതീക്ഷിതത്വങ്ങളില്ല.",
+        "title": "ക്വട്ടേഷൻ മനസ്സിലാക്കാൻ എളുപ്പമാക്കൂ.",
+        "description": "തീരുമാനിക്കുന്നതിന് മുമ്പ് സംവിധാനം, ചെലവ്, അനുമാനങ്ങൾ, പിന്തുണ എന്നിവ താരതമ്യം ചെയ്യാൻ എഴുത്തുപരമായ നിർദ്ദേശം നിങ്ങളെ സഹായിക്കണം.",
+        "quoteHeading": "ക്വട്ടേഷനിൽ പരിശോധിക്കേണ്ടത്",
         "quoteItems": [
-          "System capacity and the exact panel and inverter make/model",
-          "Equipment, mounting structure, wiring, installation, and commissioning scope",
-          "Itemized price, applicable taxes, payment schedule, and exclusions",
-          "Any subsidy assumptions, eligibility conditions, and customer responsibilities",
-          "Expected timeline, approvals, and handover documents"
+          "സംവിധാന ശേഷിയും പാനൽ, ഇൻവെർട്ടർ എന്നിവയുടെ കൃത്യമായ ബ്രാൻഡും മോഡലും",
+          "ഉപകരണങ്ങൾ, മൗണ്ടിംഗ് ഘടന, വയറിംഗ്, ഇൻസ്റ്റാളേഷൻ, കമ്മീഷനിംഗ് എന്നിവയുടെ പരിധി",
+          "ഇനം തിരിച്ചുള്ള വില, ബാധകമായ നികുതികൾ, പേയ്മെന്റ് ഷെഡ്യൂൾ, ഒഴിവാക്കിയവ",
+          "സബ്സിഡി സംബന്ധിച്ച അനുമാനങ്ങൾ, യോഗ്യതാ നിബന്ധനകൾ, ഉപഭോക്താവിന്റെ ഉത്തരവാദിത്തങ്ങൾ",
+          "പ്രതീക്ഷിക്കുന്ന സമയക്രമം, അനുമതികൾ, കൈമാറ്റ രേഖകൾ"
         ],
-        "warrantyHeading": "Warranty and support, clearly separated",
+        "warrantyHeading": "വാറന്റിയും പിന്തുണയും വ്യക്തമായി വേർതിരിച്ച്",
         "warrantyItems": [
-          "Manufacturer product and performance warranties vary by model; verify the official terms for the selected equipment.",
-          "Workmanship and service coverage should be stated separately in the written proposal or agreement.",
-          "Monitoring, maintenance, response channels, and any service charges should match the agreed scope."
+          "നിർമ്മാതാവിന്റെ ഉൽപ്പന്ന, പ്രകടന വാറന്റികൾ മോഡലനുസരിച്ച് വ്യത്യാസപ്പെടും; തിരഞ്ഞെടുത്ത ഉപകരണത്തിന്റെ ഔദ്യോഗിക നിബന്ധനകൾ പരിശോധിക്കുക.",
+          "ജോലിയുടെ ഗുണനിലവാരവും സേവന പരിരക്ഷയും എഴുത്തുപരമായ നിർദ്ദേശത്തിലോ കരാറിലോ പ്രത്യേകം വ്യക്തമാക്കണം.",
+          "നിരീക്ഷണം, പരിപാലനം, പ്രതികരണ മാർഗങ്ങൾ, സേവന നിരക്കുകൾ എന്നിവ അംഗീകരിച്ച പ്രവർത്തനപരിധിയുമായി പൊരുത്തപ്പെടണം."
         ],
-        "brandCta": "View featured brands and price notes",
-        "warrantyCta": "Request warranty or service support",
-        "quoteCta": "Request a project quotation"
+        "brandCta": "തിരഞ്ഞെടുത്ത ബ്രാൻഡുകളും വിലക്കുറിപ്പുകളും കാണുക",
+        "warrantyCta": "വാറന്റി അല്ലെങ്കിൽ സേവന പിന്തുണ അഭ്യർത്ഥിക്കുക",
+        "quoteCta": "പദ്ധതി ക്വട്ടേഷൻ അഭ്യർത്ഥിക്കുക"
       }
     },
     "referralProgram": {
@@ -4773,25 +4773,25 @@
       }
     },
     "brandSection": {
-      "eyebrow": "Our brand directory",
-      "title": "Explore solar brands in one place",
-      "subtitle": "Discover the solar and energy brands featured across our solutions.",
-      "priceDisclaimer": "Indicative prices per Wp. Final pricing varies by model, DCR status, GST, seller and order quantity; confirm a current quote before purchase.",
-      "quoteRequired": "Quote required",
-      "priceOrder": "Ranked by highest listed price",
-      "maxListedLabel": "Max listed",
-      "topPriceLabel": "Highest listed",
+      "eyebrow": "ഞങ്ങളുടെ ബ്രാൻഡ് ഡയറക്ടറി",
+      "title": "സോളാർ ബ്രാൻഡുകൾ ഒരിടത്ത് കാണൂ",
+      "subtitle": "ഞങ്ങളുടെ പരിഹാരങ്ങളിൽ ഉൾപ്പെടുത്തിയിട്ടുള്ള സോളാർ, ഊർജ ബ്രാൻഡുകൾ പരിചയപ്പെടുക.",
+      "priceDisclaimer": "Wp-പ്രകാരമുള്ള ഏകദേശ വിലകൾ. മോഡൽ, DCR നില, GST, വിൽപ്പനക്കാരൻ, ഓർഡർ അളവ് എന്നിവ അനുസരിച്ച് അന്തിമ വില മാറാം; വാങ്ങുന്നതിന് മുമ്പ് നിലവിലെ ക്വട്ടേഷൻ സ്ഥിരീകരിക്കുക.",
+      "quoteRequired": "ക്വട്ടേഷൻ ആവശ്യമാണ്",
+      "priceOrder": "ഏറ്റവും ഉയർന്ന ലിസ്റ്റ് വിലയുടെ ക്രമത്തിൽ",
+      "maxListedLabel": "ലിസ്റ്റിലെ പരമാവധി",
+      "topPriceLabel": "ഏറ്റവും ഉയർന്ന ലിസ്റ്റ് വില",
       "moreBrandsAvailable": "ഇനിയും നിരവധി ബ്രാൻഡുകൾ ലഭ്യമാണ്"
     },
-    "heroSliderAriaLabel": "Featured renewable energy solutions",
+    "heroSliderAriaLabel": "തിരഞ്ഞെടുത്ത സോളാർ, കാറ്റാടി, ഹൈബ്രിഡ് ഊർജ പരിഹാരങ്ങൾ",
     "heroSlider": [
       {
-        "badge": "Grid-tied rooftop",
-        "title": "Grid-tied Rooftop",
-        "description": "On-grid PV connected to the utility. Pros: lower cost (no batteries), net-metering, simple setup. Cons: no backup power during outages unless paired with storage.",
+        "badge": "ഗ്രിഡുമായി ബന്ധിപ്പിച്ച മേൽക്കൂര സോളാർ",
+        "title": "ഗ്രിഡ് കണക്റ്റഡ് മേൽക്കൂര സോളാർ",
+        "description": "യൂട്ടിലിറ്റി ഗ്രിഡുമായി ബന്ധിപ്പിച്ച ഓൺ-ഗ്രിഡ് PV സംവിധാനം. ഗുണങ്ങൾ: കുറഞ്ഞ ചെലവ് (ബാറ്ററി ആവശ്യമില്ല), നെറ്റ് മീറ്ററിംഗ്, ലളിതമായ സജ്ജീകരണം. പരിമിതി: സംഭരണ സംവിധാനത്തോടൊപ്പം ചേർത്തില്ലെങ്കിൽ വൈദ്യുതി മുടക്കത്തിൽ ബാക്കപ്പ് ലഭിക്കില്ല.",
         "tags": [
-          "Lower Capex",
-          "Net Metering"
+          "കുറഞ്ഞ മൂലധന ചെലവ്",
+          "നെറ്റ് മീറ്ററിംഗ്"
         ],
         "image": "/images/slider/slider-1.png",
         "badgeClass": "text-sky-100",
@@ -4799,12 +4799,12 @@
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
       },
       {
-        "badge": "Off-grid autonomy",
-        "title": "Off-grid (Standalone)",
-        "description": "Fully independent systems with PV + batteries + charge controller. Pros: complete autonomy for remote sites. Cons: higher upfront cost and careful energy management required.",
+        "badge": "ഓഫ്-ഗ്രിഡ് സ്വയംപര്യാപ്തത",
+        "title": "ഓഫ്-ഗ്രിഡ് (സ്വതന്ത്ര സംവിധാനം)",
+        "description": "PV, ബാറ്ററികൾ, ചാർജ് കൺട്രോളർ എന്നിവയടങ്ങിയ പൂർണമായും സ്വതന്ത്ര സംവിധാനങ്ങൾ. ഗുണങ്ങൾ: വിദൂര സ്ഥലങ്ങളിൽ പൂർണ സ്വയംപര്യാപ്തത. പരിമിതി: തുടക്കച്ചെലവ് കൂടുതലും ഊർജം ശ്രദ്ധാപൂർവം നിയന്ത്രിക്കേണ്ടതുമാണ്.",
         "tags": [
-          "Battery-backed",
-          "Remote-ready"
+          "ബാറ്ററി ബാക്കപ്പോടെ",
+          "വിദൂര സ്ഥലങ്ങൾക്ക് അനുയോജ്യം"
         ],
         "image": "/images/slider/slider-2.png",
         "badgeClass": "text-emerald-100",
@@ -4812,12 +4812,12 @@
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
       },
       {
-        "badge": "Hybrid resilience",
-        "title": "Hybrid (Grid + Battery)",
-        "description": "PV plus battery storage with ability to work with the grid. Pros: backup power, time-shifting, demand management. Cons: more complex controls and higher cost than grid-only.",
+        "badge": "ഹൈബ്രിഡ് പ്രതിരോധശേഷി",
+        "title": "ഹൈബ്രിഡ് (ഗ്രിഡ് + ബാറ്ററി)",
+        "description": "ഗ്രിഡിനൊപ്പം പ്രവർത്തിക്കാവുന്ന PV, ബാറ്ററി സംഭരണ സംവിധാനം. ഗുണങ്ങൾ: ബാക്കപ്പ് വൈദ്യുതി, ഉപയോഗസമയം ക്രമീകരിക്കൽ, ആവശ്യ നിയന്ത്രണം. പരിമിതി: ഗ്രിഡ് മാത്രം ഉപയോഗിക്കുന്ന സംവിധാനത്തേക്കാൾ നിയന്ത്രണം സങ്കീർണ്ണവും ചെലവ് കൂടുതലുമാണ്.",
         "tags": [
-          "Backup power",
-          "Smart control"
+          "ബാക്കപ്പ് വൈദ്യുതി",
+          "സ്മാർട്ട് നിയന്ത്രണം"
         ],
         "image": "/images/slider/slider-3.png",
         "badgeClass": "text-pink-100",
@@ -4825,12 +4825,12 @@
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
       },
       {
-        "badge": "Urban rooftop",
-        "title": "Vertical Axis Turbine for Rooftops",
-        "description": "Compact rooftop wind systems are ideal for urban and semi-urban spaces where low-noise output, compact footprint, and adaptive installation matter most.",
+        "badge": "നഗര മേൽക്കൂരകൾ",
+        "title": "മേൽക്കൂരകൾക്കായുള്ള ലംബ അച്ചുതണ്ട് ടർബൈൻ",
+        "description": "ശബ്ദം കുറഞ്ഞ ഉൽപ്പാദനം, ഒതുങ്ങിയ രൂപം, സാഹചര്യത്തിനനുസരിച്ചുള്ള ഇൻസ്റ്റാളേഷൻ എന്നിവ പ്രധാനമായ നഗര, അർധനഗര ഇടങ്ങൾക്ക് ഒതുങ്ങിയ മേൽക്കൂര കാറ്റാടി സംവിധാനങ്ങൾ അനുയോജ്യമാണ്.",
         "tags": [
-          "Low-noise",
-          "Rooftop"
+          "കുറഞ്ഞ ശബ്ദം",
+          "മേൽക്കൂര"
         ],
         "image": "/images/slider/slider-7.png",
         "badgeClass": "text-sky-100",
@@ -4838,12 +4838,12 @@
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
       },
       {
-        "badge": "Commercial wind",
-        "title": "Large Wind Systems for Industry",
-        "description": "High-capacity turbines support factories, warehouses, and business campuses by reducing dependency on grid supply and improving renewable generation at scale.",
+        "badge": "വാണിജ്യ കാറ്റാടി വൈദ്യുതി",
+        "title": "വ്യവസായങ്ങൾക്കായുള്ള വലിയ കാറ്റാടി സംവിധാനങ്ങൾ",
+        "description": "ഗ്രിഡ് വൈദ്യുതിയെ ആശ്രയിക്കുന്നത് കുറയ്ക്കാനും വൻതോതിൽ പുനരുപയോഗ ഊർജ ഉൽപ്പാദനം മെച്ചപ്പെടുത്താനും ഉയർന്ന ശേഷിയുള്ള ടർബൈനുകൾ ഫാക്ടറികൾക്കും വെയർഹൗസുകൾക്കും ബിസിനസ് ക്യാമ്പസുകൾക്കും സഹായിക്കുന്നു.",
         "tags": [
-          "Industrial",
-          "High output"
+          "വ്യവസായം",
+          "ഉയർന്ന ഉൽപ്പാദനം"
         ],
         "image": "/images/slider/slider-8.png",
         "badgeClass": "text-emerald-100",
@@ -4851,12 +4851,12 @@
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
       },
       {
-        "badge": "Farm power",
-        "title": "Wind for Agriculture & Irrigation",
-        "description": "Farm-based wind systems help power pumping, processing, and site loads while lowering energy costs in rural and peri-urban locations.",
+        "badge": "കൃഷിക്കുള്ള വൈദ്യുതി",
+        "title": "കൃഷിക്കും ജലസേചനത്തിനും കാറ്റാടി വൈദ്യുതി",
+        "description": "ഗ്രാമീണ, നഗരപ്രാന്ത പ്രദേശങ്ങളിൽ ഊർജ ചെലവ് കുറയ്ക്കുന്നതിനൊപ്പം പമ്പിംഗ്, സംസ്കരണം, സ്ഥലത്തെ മറ്റു ലോഡുകൾ എന്നിവയ്ക്കും കൃഷിയിടങ്ങളിലെ കാറ്റാടി സംവിധാനങ്ങൾ വൈദ്യുതി നൽകുന്നു.",
         "tags": [
-          "Agri-ready",
-          "Load support"
+          "കൃഷിക്ക് അനുയോജ്യം",
+          "ലോഡ് പിന്തുണ"
         ],
         "image": "/images/slider/slider-9.png",
         "badgeClass": "text-amber-100",
@@ -4864,12 +4864,12 @@
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
       },
       {
-        "badge": "Solar + wind",
-        "title": "Continuous Renewable Generation",
-        "description": "Combined solar and wind generation creates a more reliable energy mix, covering daytime production and filling gaps during low-sun or high-wind periods.",
+        "badge": "സോളാർ + കാറ്റാടി",
+        "title": "തുടർച്ചയായ പുനരുപയോഗ ഊർജ ഉൽപ്പാദനം",
+        "description": "സോളാറും കാറ്റാടിയും ചേർന്നുള്ള ഉൽപ്പാദനം കൂടുതൽ വിശ്വസനീയമായ ഊർജ മിശ്രിതം സൃഷ്ടിക്കുന്നു; പകൽ സമയത്തെ ഉൽപ്പാദനത്തോടൊപ്പം സൂര്യപ്രകാശം കുറവുള്ളതോ കാറ്റ് ശക്തമായതോ ആയ സമയത്തെ കുറവും നികത്തുന്നു.",
         "tags": [
-          "24/7 supply",
-          "Balanced output"
+          "24/7 വൈദ്യുതി",
+          "സമതുലിത ഉൽപ്പാദനം"
         ],
         "image": "/images/slider/slider-13.png",
         "badgeClass": "text-emerald-100",
@@ -4877,12 +4877,12 @@
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
       },
       {
-        "badge": "Smart control",
-        "title": "Hybrid Microgrid Energy Management",
-        "description": "Integrated controls coordinate solar, wind, storage, and load demand for better efficiency, backup readiness, and digital monitoring.",
+        "badge": "സ്മാർട്ട് നിയന്ത്രണം",
+        "title": "ഹൈബ്രിഡ് മൈക്രോഗ്രിഡ് ഊർജ മാനേജ്മെന്റ്",
+        "description": "കാര്യക്ഷമത, ബാക്കപ്പ് സജ്ജത, ഡിജിറ്റൽ നിരീക്ഷണം എന്നിവ മെച്ചപ്പെടുത്താൻ സംയോജിത നിയന്ത്രണ സംവിധാനങ്ങൾ സോളാർ, കാറ്റാടി, സംഭരണം, വൈദ്യുതി ആവശ്യം എന്നിവ ഏകോപിപ്പിക്കുന്നു.",
         "tags": [
-          "Smart dispatch",
-          "Battery sync"
+          "സ്മാർട്ട് വൈദ്യുതി വിതരണം",
+          "ബാറ്ററി സമന്വയം"
         ],
         "image": "/images/slider/slider-14.png",
         "badgeClass": "text-violet-100",
@@ -4890,12 +4890,12 @@
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
       },
       {
-        "badge": "Remote resilience",
-        "title": "Off-grid Hybrid for Isolated Locations",
-        "description": "Solar-wind hybrid systems with battery storage support remote homes, telecom towers, and rural sites where grid access is limited or unavailable.",
+        "badge": "വിദൂര പ്രദേശങ്ങളിലെ വിശ്വാസ്യത",
+        "title": "ഒറ്റപ്പെട്ട സ്ഥലങ്ങൾക്കായുള്ള ഓഫ്-ഗ്രിഡ് ഹൈബ്രിഡ്",
+        "description": "ഗ്രിഡ് കണക്ഷൻ പരിമിതമോ ലഭ്യമല്ലാത്തതോ ആയ വിദൂര വീടുകൾക്കും ടെലികോം ടവറുകൾക്കും ഗ്രാമീണ കേന്ദ്രങ്ങൾക്കും ബാറ്ററി സംഭരണമുള്ള സോളാർ-കാറ്റാടി ഹൈബ്രിഡ് സംവിധാനങ്ങൾ പിന്തുണ നൽകുന്നു.",
         "tags": [
-          "Off-grid",
-          "Remote-ready"
+          "ഓഫ്-ഗ്രിഡ്",
+          "വിദൂര സ്ഥലങ്ങൾക്ക് അനുയോജ്യം"
         ],
         "image": "/images/slider/slider-15.png",
         "badgeClass": "text-sky-100",
@@ -4904,68 +4904,68 @@
       }
     ],
     "schemeBanner": {
-      "badge": "Government Subsidy Initiative",
+      "badge": "സർക്കാർ സബ്സിഡി പദ്ധതി",
       "title": "PM Surya Ghar",
       "titleAccent": "Muft Bijli Yojana",
-      "description": "Make your rooftop solar dream affordable with up to ₹ 78,000 in central subsidy and a complete application support experience from AeroSun Energy.",
-      "ctaPrimary": "Apply Now",
-      "ctaSecondary": "Know Eligibility",
-      "badgeSuffix": "Subsidy ends 31st March 2027",
-      "cardLabel": "Subsidy",
-      "max": "Max",
-      "perHome": "per home",
-      "offerLabel": "Offer Window",
-      "offerText": "Limited duration – apply before the current subsidy cycle closes.",
+      "description": "കേന്ദ്ര സബ്സിഡിയായി ₹ 78,000 വരെ ലഭിക്കുകയും AeroSun Energyയിൽ നിന്ന് അപേക്ഷയ്ക്ക് സമഗ്ര പിന്തുണ ലഭിക്കുകയും ചെയ്യുന്നതിനാൽ നിങ്ങളുടെ മേൽക്കൂര സോളാർ പദ്ധതി ചെലവുകുറച്ച് നടപ്പാക്കാം.",
+      "ctaPrimary": "ഇപ്പോൾ അപേക്ഷിക്കുക",
+      "ctaSecondary": "യോഗ്യത അറിയുക",
+      "badgeSuffix": "സബ്സിഡി 2027 മാർച്ച് 31-ന് അവസാനിക്കും",
+      "cardLabel": "സബ്സിഡി",
+      "max": "പരമാവധി",
+      "perHome": "ഓരോ വീടിനും",
+      "offerLabel": "ഓഫർ കാലയളവ്",
+      "offerText": "പരിമിത കാലത്തേക്ക് മാത്രം — നിലവിലെ സബ്സിഡി കാലയളവ് അവസാനിക്കുന്നതിന് മുമ്പ് അപേക്ഷിക്കുക.",
       "stats": [
         {
-          "label": "Days",
+          "label": "ദിവസങ്ങൾ",
           "value": "000"
         },
         {
-          "label": "Hours",
+          "label": "മണിക്കൂറുകൾ",
           "value": "00"
         },
         {
-          "label": "Mins",
+          "label": "മിനിറ്റുകൾ",
           "value": "00"
         }
       ]
     },
     "offer": {
-      "eyebrow": "What We Offer",
-      "title": "Expertise End-to-End Solar Solutions",
-      "description": "We have rich experience in solar rooftop 1 KW to megawatt solar power plants — including solar hybrid systems, solar hot water, solar street lights, solar fencing, solar agriculture pump sets & any solar power services.",
+      "eyebrow": "ഞങ്ങൾ നൽകുന്നത്",
+      "title": "ആരംഭം മുതൽ അവസാനം വരെ സോളാർ പരിഹാരങ്ങളിൽ വൈദഗ്ധ്യം",
+      "description": "1 KW മുതൽ മെഗാവാട്ട് ശേഷിയുള്ള സോളാർ മേൽക്കൂര പ്ലാന്റുകൾ, സോളാർ ഹൈബ്രിഡ് സംവിധാനങ്ങൾ, സോളാർ വാട്ടർ ഹീറ്റർ, സോളാർ സ്ട്രീറ്റ് ലൈറ്റുകൾ, സോളാർ ഫെൻസിംഗ്, കാർഷിക സോളാർ പമ്പ് സെറ്റുകൾ തുടങ്ങി വിവിധ സോളാർ സേവനങ്ങളിൽ ഞങ്ങൾക്ക് മികച്ച പരിചയമുണ്ട്.",
       "cards": [
         {
-          "title": "Solar Rooftop Systems",
-          "description": "On-grid power plants for homes and businesses.",
+          "title": "സോളാർ മേൽക്കൂര സംവിധാനങ്ങൾ",
+          "description": "വീടുകൾക്കും ബിസിനസുകൾക്കുമായി ഓൺ-ഗ്രിഡ് വൈദ്യുതി പ്ലാന്റുകൾ.",
           "points": [
-            "On-grid, off-grid and hybrid configurations",
-            "Net metering with state DISCOM",
-            "PM Surya Ghar subsidy assistance",
-            "TATA Power Solar premium panels"
+            "ഓൺ-ഗ്രിഡ്, ഓഫ്-ഗ്രിഡ്, ഹൈബ്രിഡ് സംവിധാനങ്ങൾ",
+            "സംസ്ഥാന DISCOM-നൊപ്പം നെറ്റ് മീറ്ററിംഗ്",
+            "PM Surya Ghar സബ്സിഡി സഹായം",
+            "TATA Power Solar പ്രീമിയം പാനലുകൾ"
           ],
           "accent": "emerald"
         },
         {
-          "title": "Solar Thermal — Water Heating Solutions",
-          "description": "Solar Hot Water & Heat Pump — efficient, eco-friendly hot water for homes, hotels, hospitals, hostels, commercial establishments and industries.",
+          "title": "സോളാർ താപം — വെള്ളം ചൂടാക്കൽ പരിഹാരങ്ങൾ",
+          "description": "സോളാർ ചൂടുവെള്ളവും ഹീറ്റ് പമ്പും — വീടുകൾ, ഹോട്ടലുകൾ, ആശുപത്രികൾ, ഹോസ്റ്റലുകൾ, വാണിജ്യ സ്ഥാപനങ്ങൾ, വ്യവസായങ്ങൾ എന്നിവയ്ക്ക് കാര്യക്ഷമവും പരിസ്ഥിതി സൗഹൃദവുമായ ചൂടുവെള്ളം.",
           "points": [
-            "Available in capacities from 100 litres per day (LPD)",
-            "Choice of pressurised and non-pressurised models",
-            "High-performance BIS-certified solar collectors",
-            "Cuts electricity use by minimising geyser usage"
+            "പ്രതിദിനം 100 ലിറ്റർ (LPD) മുതൽ ശേഷികൾ ലഭ്യം",
+            "പ്രഷറൈസ്ഡ്, നോൺ-പ്രഷറൈസ്ഡ് മോഡലുകൾ തിരഞ്ഞെടുക്കാം",
+            "ഉയർന്ന പ്രകടനമുള്ള BIS-സർട്ടിഫൈഡ് സോളാർ കളക്ടറുകൾ",
+            "ഗീസറിന്റെ ഉപയോഗം കുറച്ച് വൈദ്യുതി ചെലവ് കുറയ്ക്കുന്നു"
           ],
           "accent": "amber"
         },
         {
-          "title": "Solar Street Lights",
-          "description": "All-in-one lighting powered entirely by sunlight.",
+          "title": "സോളാർ സ്ട്രീറ്റ് ലൈറ്റുകൾ",
+          "description": "സൂര്യപ്രകാശം മാത്രം ഉപയോഗിച്ച് പ്രവർത്തിക്കുന്ന സംയോജിത ലൈറ്റിംഗ്.",
           "points": [
-            "Integrated all-in-one luminaires starting from 12W",
-            "Auto dusk-to-dawn operation",
-            "Lithium-ion storage, 5+ year life",
-            "Zero electricity bills"
+            "12W മുതൽ ലഭിക്കുന്ന സംയോജിത ഓൾ-ഇൻ-വൺ ലൈറ്റുകൾ",
+            "സന്ധ്യ മുതൽ പുലർച്ചെ വരെ സ്വയം പ്രവർത്തനം",
+            "ലിഥിയം-അയൺ സംഭരണം, 5+ വർഷത്തെ ആയുസ്സ്",
+            "വൈദ്യുതി ബിൽ ഇല്ല"
           ],
           "accent": "sky"
         }
@@ -4973,338 +4973,338 @@
     },
     "systemTypes": [
       {
-        "title": "On-Grid Solar System",
+        "title": "ഓൺ-ഗ്രിഡ് സോളാർ സംവിധാനം",
         "accent": "emerald",
         "content": [
-          "Grid-connected with net metering — export surplus power to the grid and earn credits.",
-          "The most economical option, with no batteries required."
+          "നെറ്റ് മീറ്ററിംഗോടെയുള്ള ഗ്രിഡ് കണക്ഷൻ — മിച്ച വൈദ്യുതി ഗ്രിഡിലേക്ക് നൽകി ക്രെഡിറ്റ് നേടുക.",
+          "ബാറ്ററി ആവശ്യമില്ലാത്തതിനാൽ ഏറ്റവും ചെലവുകുറഞ്ഞ തിരഞ്ഞെടുപ്പ്."
         ]
       },
       {
-        "title": "Off-Grid Solar System",
+        "title": "ഓഫ്-ഗ്രിഡ് സോളാർ സംവിധാനം",
         "accent": "amber",
         "content": [
-          "Battery-backed and fully independent of the grid.",
-          "Ideal for remote sites or areas with frequent, long power cuts."
+          "ബാറ്ററി ബാക്കപ്പോടുകൂടി ഗ്രിഡിൽ നിന്ന് പൂർണമായും സ്വതന്ത്രം.",
+          "വിദൂര സ്ഥലങ്ങൾക്കും പതിവായി ദീർഘനേരം വൈദ്യുതി മുടങ്ങുന്ന പ്രദേശങ്ങൾക്കും അനുയോജ്യം."
         ]
       },
       {
-        "title": "Hybrid System",
+        "title": "ഹൈബ്രിഡ് സംവിധാനം",
         "accent": "sky",
         "content": [
-          "Combines a grid connection with battery backup.",
-          "Cut your bills while keeping essential loads running through outages."
+          "ഗ്രിഡ് കണക്ഷനും ബാറ്ററി ബാക്കപ്പും ഒരുമിപ്പിക്കുന്നു.",
+          "ബിൽ കുറയ്ക്കുന്നതിനൊപ്പം വൈദ്യുതി മുടക്കത്തിലും ആവശ്യമായ ഉപകരണങ്ങൾ പ്രവർത്തിപ്പിക്കുക."
         ]
       }
     ],
     "rooftopSolar": {
-      "eyebrow": "Rooftop Solar",
-      "title": "Solar Rooftop Systems",
-      "description": "Solar rooftop systems generate electricity using solar panels installed on your rooftop. Sized to your power needs and usage, they cut your dependence on grid power and significantly lower your monthly electricity bills.",
+      "eyebrow": "മേൽക്കൂര സോളാർ",
+      "title": "സോളാർ മേൽക്കൂര സംവിധാനങ്ങൾ",
+      "description": "മേൽക്കൂരയിൽ സ്ഥാപിച്ച സോളാർ പാനലുകൾ ഉപയോഗിച്ചാണ് മേൽക്കൂര സോളാർ സംവിധാനങ്ങൾ വൈദ്യുതി ഉൽപ്പാദിപ്പിക്കുന്നത്. നിങ്ങളുടെ വൈദ്യുതി ആവശ്യത്തിനും ഉപയോഗത്തിനും അനുസരിച്ച് ശേഷി നിശ്ചയിക്കുന്നതിനാൽ ഗ്രിഡിനെ ആശ്രയിക്കുന്നത് കുറയുകയും പ്രതിമാസ വൈദ്യുതി ബിൽ ഗണ്യമായി താഴുകയും ചെയ്യും.",
       "benefits": [
         {
-          "title": "Reduce electricity bills by up to 80–90%",
-          "description": "Lower your monthly spend while improving energy certainty."
+          "title": "വൈദ്യുതി ബിൽ 80–90% വരെ കുറയ്ക്കുക",
+          "description": "ഊർജ ലഭ്യത കൂടുതൽ ഉറപ്പാക്കിക്കൊണ്ട് പ്രതിമാസ ചെലവ് കുറയ്ക്കുക."
         },
         {
-          "title": "25+ years of solar panel life",
-          "description": "Long operational life with minimal replacement cycles."
+          "title": "സോളാർ പാനലിന് 25+ വർഷത്തെ ആയുസ്സ്",
+          "description": "കുറഞ്ഞ മാറ്റിസ്ഥാപിക്കൽ ആവശ്യമുള്ള ദീർഘകാല പ്രവർത്തനക്ഷമത."
         },
         {
-          "title": "Low maintenance and high reliability",
-          "description": "Designed for stable long-term generation with simple upkeep."
+          "title": "കുറഞ്ഞ പരിപാലനം, ഉയർന്ന വിശ്വാസ്യത",
+          "description": "ലളിതമായ പരിപാലനത്തോടെ ദീർഘകാലം സ്ഥിരമായ ഉൽപ്പാദനത്തിനായി രൂപകൽപ്പന ചെയ്തത്."
         },
         {
-          "title": "Environment-friendly renewable energy",
-          "description": "Reduce your environmental impact with clean power generation."
+          "title": "പരിസ്ഥിതി സൗഹൃദ പുനരുപയോഗ ഊർജം",
+          "description": "ശുദ്ധമായ വൈദ്യുതി ഉൽപ്പാദനത്തിലൂടെ പരിസ്ഥിതിയിലേക്കുള്ള ആഘാതം കുറയ്ക്കുക."
         },
         {
-          "title": "Increase property value",
-          "description": "Improve the value and appeal of your property with solar-ready infrastructure."
+          "title": "സ്വത്തിന്റെ മൂല്യം വർധിപ്പിക്കുക",
+          "description": "സോളാർ സൗകര്യമുള്ള അടിസ്ഥാനസൗകര്യങ്ങളിലൂടെ സ്വത്തിന്റെ മൂല്യവും ആകർഷണവും ഉയർത്തുക."
         },
         {
-          "title": "Net Metering facility",
-          "description": "Export excess power to the grid and earn credits where applicable."
+          "title": "നെറ്റ് മീറ്ററിംഗ് സൗകര്യം",
+          "description": "മിച്ച വൈദ്യുതി ഗ്രിഡിലേക്ക് നൽകി ബാധകമായിടത്ത് ക്രെഡിറ്റ് നേടുക."
         }
       ],
       "panels": [
         {
-          "title": "Suitable For",
+          "title": "ആർക്കെല്ലാം അനുയോജ്യം",
           "accent": "sky",
           "content": [
-            "Individual Houses",
-            "Apartments & Residential Communities",
-            "Commercial Buildings",
-            "Industries & Factories",
-            "Educational Institutions",
-            "Hospitals & Government Buildings"
+            "വ്യക്തിഗത വീടുകൾ",
+            "അപ്പാർട്ട്മെന്റുകളും താമസസമുച്ചയങ്ങളും",
+            "വാണിജ്യ കെട്ടിടങ്ങൾ",
+            "വ്യവസായങ്ങളും ഫാക്ടറികളും",
+            "വിദ്യാഭ്യാസ സ്ഥാപനങ്ങൾ",
+            "ആശുപത്രികളും സർക്കാർ കെട്ടിടങ്ങളും"
           ]
         }
       ]
     },
     "moreSolarCards": [
       {
-        "title": "Solar Fencing",
-        "description": "Solar-powered electric fences for farms and estates.",
+        "title": "സോളാർ വേലി",
+        "description": "കൃഷിയിടങ്ങൾക്കും എസ്റ്റേറ്റുകൾക്കുമായി സോളാർ ഉപയോഗിച്ച് പ്രവർത്തിക്കുന്ന വൈദ്യുത വേലികൾ.",
         "points": [
-          "Solar-charged energiser",
-          "Up to 10 km perimeter on a single charger",
-          "Audible alarm and battery backup",
-          "Crop and livestock protection"
+          "സോളാർ ചാർജ് ചെയ്യുന്ന എനർജൈസർ",
+          "ഒറ്റ ചാർജറിൽ 10 km വരെ ചുറ്റളവ്",
+          "ശ്രവ്യ അലാറവും ബാറ്ററി ബാക്കപ്പും",
+          "വിളകളുടെയും കന്നുകാലികളുടെയും സംരക്ഷണം"
         ],
         "accent": "violet"
       },
       {
-        "title": "Solar Pumpsets",
-        "description": "Diesel-free water pumping for agriculture.",
+        "title": "സോളാർ പമ്പ് സെറ്റുകൾ",
+        "description": "കൃഷിക്കായി ഡീസൽ രഹിത ജലപമ്പിംഗ്.",
         "points": [
-          "AC and DC pump configurations",
-          "MNRE-approved controllers",
-          "PM-KUSUM scheme assistance",
-          "5-year manufacturer warranty"
+          "AC, DC പമ്പ് സംവിധാനങ്ങൾ",
+          "MNRE അംഗീകരിച്ച കൺട്രോളറുകൾ",
+          "PM-KUSUM പദ്ധതി സഹായം",
+          "നിർമ്മാതാവിന്റെ 5 വർഷ വാറന്റി"
         ],
         "accent": "amber"
       },
       {
-        "title": "Operation & Maintenance (AMC)",
-        "description": "Annual care to keep your plant generating at peak.",
+        "title": "പ്രവർത്തനവും പരിപാലനവും (AMC)",
+        "description": "പ്ലാന്റ് മികച്ച ഉൽപ്പാദനം തുടരാൻ വാർഷിക പരിചരണം.",
         "points": [
-          "Quarterly preventive maintenance",
-          "Performance ratio monitoring",
-          "24x7 priority support",
-          "Spare parts and inverter service"
+          "ത്രൈമാസ പ്രതിരോധ പരിപാലനം",
+          "പ്രകടന അനുപാത നിരീക്ഷണം",
+          "24x7 മുൻഗണനാ പിന്തുണ",
+          "സ്പെയർ പാർട്സും ഇൻവെർട്ടർ സേവനവും"
         ],
         "accent": "emerald"
       }
     ],
     "systemTypeSection": {
-      "eyebrow": "System Types",
-      "title": "There are three main types of solar rooftop systems"
+      "eyebrow": "സംവിധാനങ്ങളുടെ തരം",
+      "title": "മേൽക്കൂര സോളാർ സംവിധാനങ്ങൾക്ക് മൂന്ന് പ്രധാന തരങ്ങളുണ്ട്"
     },
     "whySolarSection": {
-      "eyebrow": "Why Solar",
-      "title": "Why you have to switch to solar today?"
+      "eyebrow": "സോളാർ തിരഞ്ഞെടുക്കുന്നതെന്തിന്",
+      "title": "ഇന്നുതന്നെ സോളാറിലേക്ക് മാറേണ്ടതെന്തിന്?"
     },
     "whySolar": [
       {
-        "title": "Reduce Carbon Emissions",
-        "description": "Every kW of solar offsets ~1.2 tonnes of CO₂ a year — shrinking your carbon footprint."
+        "title": "കാർബൺ പുറന്തള്ളൽ കുറയ്ക്കുക",
+        "description": "ഓരോ kW സോളാറും വർഷംതോറും ഏകദേശം 1.2 ടൺ CO₂ പുറന്തള്ളൽ ഒഴിവാക്കി നിങ്ങളുടെ കാർബൺ പാദമുദ്ര കുറയ്ക്കുന്നു."
       },
       {
-        "title": "Eco-Friendly",
-        "description": "Clean, renewable energy that protects nature for generations to come."
+        "title": "പരിസ്ഥിതി സൗഹൃദം",
+        "description": "തലമുറകളോളം പ്രകൃതിയെ സംരക്ഷിക്കുന്ന ശുദ്ധവും പുനരുപയോഗിക്കാവുന്നതുമായ ഊർജം."
       },
       {
-        "title": "Cost Saving",
-        "description": "Slash electricity bills by 70–90% from day one and recover your investment in 4–6 years."
+        "title": "ചെലവ് ലാഭം",
+        "description": "ആദ്യ ദിവസം മുതൽ വൈദ്യുതി ബിൽ 70–90% കുറയ്ക്കുകയും 4–6 വർഷത്തിനുള്ളിൽ നിക്ഷേപം തിരിച്ചുപിടിക്കുകയും ചെയ്യുക."
       },
       {
-        "title": "Energy Independence",
-        "description": "Generate your own power and cut reliance on the grid and rising tariffs."
+        "title": "ഊർജ സ്വാതന്ത്ര്യം",
+        "description": "സ്വന്തമായി വൈദ്യുതി ഉൽപ്പാദിപ്പിച്ച് ഗ്രിഡിനെയും ഉയരുന്ന നിരക്കുകളെയും ആശ്രയിക്കുന്നത് കുറയ്ക്കുക."
       },
       {
-        "title": "Unlimited Energy",
-        "description": "Sunlight is infinite — Tirupati enjoys 300+ sunny days every year."
+        "title": "അവസാനമില്ലാത്ത ഊർജം",
+        "description": "സൂര്യപ്രകാശം അനന്തമാണ് — Tirupatiയിൽ ഓരോ വർഷവും 300-ലധികം സൂര്യപ്രകാശമുള്ള ദിവസങ്ങളുണ്ട്."
       },
       {
-        "title": "Continuous Supply",
-        "description": "Hybrid systems with battery backup keep critical loads running through outages."
+        "title": "തുടർച്ചയായ വൈദ്യുതി വിതരണം",
+        "description": "ബാറ്ററി ബാക്കപ്പുള്ള ഹൈബ്രിഡ് സംവിധാനങ്ങൾ വൈദ്യുതി മുടക്കത്തിലും നിർണായക ഉപകരണങ്ങൾ പ്രവർത്തിപ്പിക്കുന്നു."
       }
     ],
     "subsidy": {
-      "eyebrow": "Government of India Scheme",
+      "eyebrow": "ഇന്ത്യാ ഗവൺമെന്റ് പദ്ധതി",
       "title": "PM Surya Ghar: Muft Bijli Yojana",
       "description": "ദേശീയ പോർട്ടൽ വഴി അർഹരായ ഗാർഹിക ഉപഭോക്താക്കൾക്ക് കേന്ദ്ര സാമ്പത്തിക സഹായം ലഭ്യമായേക്കാം. വാസസ്ഥലങ്ങളിലെ മേൽക്കൂര സോളാർ ശേഷിക്ക് സഹായം 3 kW വരെ പരിമിതമാണ്; അന്തിമ അർഹതയും തുകയും പദ്ധതി നിബന്ധനകളെയും അപേക്ഷയെയും ആശ്രയിച്ചിരിക്കും.",
       "portalCta": "ഔദ്യോഗിക പോർട്ടൽ സന്ദർശിക്കുക",
       "notice": "ശേഷിയെക്കുറിച്ചുള്ള സൂചനാപരമായ മാർഗ്ഗനിർദ്ദേശം മാത്രമാണിത്. സബ്സിഡി നിയമങ്ങൾ, വൈദ്യുതി നിരക്കുകൾ, സാങ്കേതിക സാധ്യത, DISCOM ആവശ്യകതകൾ എന്നിവ മാറാം. പുതിയ വിവരങ്ങൾ ഔദ്യോഗിക പോർട്ടലിൽ സ്ഥിരീകരിക്കുക."
     },
     "wind": {
-      "eyebrow": "Wind Energy",
-      "title": "Wind power solutions for a greener grid",
+      "eyebrow": "കാറ്റാടി ഊർജം",
+      "title": "ഹരിത ഗ്രിഡിനായി കാറ്റാടി വൈദ്യുതി പരിഹാരങ്ങൾ",
       "cards": [
         {
-          "title": "Horizontal-Axis Wind Turbines",
-          "description": "Three-blade turbine systems designed for efficient wind capture in higher-resource sites.",
+          "title": "തിരശ്ചീന അച്ചുതണ്ടുള്ള കാറ്റാടി ടർബൈനുകൾ",
+          "description": "കാറ്റ് സമൃദ്ധമായ സ്ഥലങ്ങളിൽ കാര്യക്ഷമമായി കാറ്റ് പിടിച്ചെടുക്കാൻ രൂപകൽപ്പന ചെയ്ത മൂന്ന് ബ്ലേഡുകളുള്ള ടർബൈൻ സംവിധാനങ്ങൾ.",
           "points": [
-            "High efficiency and strong output",
-            "Utility-scale deployment ready",
-            "Directional alignment for optimized generation"
+            "ഉയർന്ന കാര്യക്ഷമതയും ശക്തമായ ഉൽപ്പാദനവും",
+            "യൂട്ടിലിറ്റി-സ്കെയിൽ വിന്യാസത്തിന് സജ്ജം",
+            "മികച്ച ഉൽപ്പാദനത്തിനായി കാറ്റിന്റെ ദിശയ്ക്കനുസരിച്ചുള്ള ക്രമീകരണം"
           ],
           "accent": "sky"
         },
         {
-          "title": "Vertical-Axis Wind Turbines",
-          "description": "Multi-directional solutions for compact or noise-sensitive settings.",
+          "title": "ലംബ അച്ചുതണ്ടുള്ള കാറ്റാടി ടർബൈനുകൾ",
+          "description": "പരിമിതമായ സ്ഥലങ്ങൾക്കും ശബ്ദം കുറയ്ക്കേണ്ട ഇടങ്ങൾക്കും അനുയോജ്യമായ പലദിശാ പരിഹാരങ്ങൾ.",
           "points": [
-            "Accepts wind from multiple directions",
-            "Compact footprint for constrained sites",
-            "Flexible siting and installation"
+            "പല ദിശകളിൽ നിന്നുള്ള കാറ്റ് സ്വീകരിക്കുന്നു",
+            "പരിമിത സ്ഥലത്ത് ഒതുങ്ങുന്ന രൂപകൽപ്പന",
+            "വിന്യാസത്തിലും ഇൻസ്റ്റാളേഷനിലും വഴക്കം"
           ],
           "accent": "emerald"
         },
         {
-          "title": "Grid-Connected & Off-Grid Systems",
-          "description": "Wind generation tied to the utility network or battery-backed for remote sites.",
+          "title": "ഗ്രിഡ് കണക്റ്റഡ്, ഓഫ്-ഗ്രിഡ് സംവിധാനങ്ങൾ",
+          "description": "യൂട്ടിലിറ്റി ഗ്രിഡുമായി ബന്ധിപ്പിച്ചോ ബാറ്ററി ബാക്കപ്പോടെ വിദൂര സ്ഥലങ്ങൾക്കായോ ഉപയോഗിക്കാവുന്ന കാറ്റാടി ഉൽപ്പാദനം.",
           "points": [
-            "Grid-tied net metering support",
-            "Battery backup for independent supply",
-            "Suitable for homes, telecom, and farms"
+            "ഗ്രിഡ് കണക്ഷനോടുകൂടിയ നെറ്റ് മീറ്ററിംഗ് പിന്തുണ",
+            "സ്വതന്ത്ര വൈദ്യുതി വിതരണത്തിനുള്ള ബാറ്ററി ബാക്കപ്പ്",
+            "വീടുകൾക്കും ടെലികോം സംവിധാനങ്ങൾക്കും കൃഷിയിടങ്ങൾക്കും അനുയോജ്യം"
           ],
           "accent": "amber"
         }
       ],
       "benefits": [
         {
-          "title": "Clean Power",
-          "description": "Generates renewable electricity with a smaller carbon footprint than fossil alternatives."
+          "title": "ശുദ്ധമായ വൈദ്യുതി",
+          "description": "ഫോസിൽ ഇന്ധനങ്ങൾക്ക് പകരമായുള്ള സ്രോതസ്സുകളെക്കാൾ കുറഞ്ഞ കാർബൺ പാദമുദ്രയോടെ പുനരുപയോഗ വൈദ്യുതി ഉൽപ്പാദിപ്പിക്കുന്നു."
         },
         {
-          "title": "Energy Security",
-          "description": "Improves resilience by diversifying generation resources beyond solar alone."
+          "title": "ഊർജ സുരക്ഷ",
+          "description": "സോളാറിനപ്പുറം മറ്റു ഉൽപ്പാദന സ്രോതസ്സുകൾ കൂടി ഉൾപ്പെടുത്തി പ്രതിരോധശേഷി വർധിപ്പിക്കുന്നു."
         },
         {
-          "title": "Lower Cost Of Energy",
-          "description": "Optimizes operational expenses in suitable wind-rich areas and commercial sites."
+          "title": "ഊർജച്ചെലവ് കുറയ്ക്കുക",
+          "description": "കാറ്റ് സമൃദ്ധമായ അനുയോജ്യ മേഖലകളിലും വാണിജ്യ കേന്ദ്രങ്ങളിലും പ്രവർത്തന ചെലവ് മെച്ചപ്പെടുത്തുന്നു."
         },
         {
-          "title": "Site Flexibility",
-          "description": "Supports both standalone and integrated deployments across varied geographies."
+          "title": "സ്ഥല വിന്യാസത്തിലെ വഴക്കം",
+          "description": "വ്യത്യസ്ത ഭൂമിശാസ്ത്ര സാഹചര്യങ്ങളിൽ സ്വതന്ത്രമായും സംയോജിതമായും വിന്യസിക്കാം."
         }
       ],
       "panels": [
         {
-          "title": "Ideal for",
+          "title": "ഏറ്റവും അനുയോജ്യം",
           "accent": "sky",
           "content": [
-            "Rural and semi-urban infrastructure",
-            "Commercial facilities with high energy demands",
-            "Remote telecom and monitoring stations",
-            "Hybrid renewable campuses and microgrids"
+            "ഗ്രാമീണ, അർധനഗര അടിസ്ഥാനസൗകര്യങ്ങൾ",
+            "ഉയർന്ന ഊർജ ആവശ്യമുള്ള വാണിജ്യ കേന്ദ്രങ്ങൾ",
+            "വിദൂര ടെലികോം, നിരീക്ഷണ സ്റ്റേഷനുകൾ",
+            "ഹൈബ്രിഡ് പുനരുപയോഗ ഊർജ ക്യാമ്പസുകളും മൈക്രോഗ്രിഡുകളും"
           ]
         },
         {
-          "title": "Typical use cases",
+          "title": "സാധാരണ ഉപയോഗങ്ങൾ",
           "accent": "emerald",
           "content": [
-            "On-grid wind support for energy offset",
-            "Off-grid power for remote operations",
-            "Hybrid systems with solar and battery",
-            "Agricultural and industrial motive loads"
+            "ഊർജ ഉപയോഗം കുറയ്ക്കാൻ ഓൺ-ഗ്രിഡ് കാറ്റാടി പിന്തുണ",
+            "വിദൂര പ്രവർത്തനങ്ങൾക്ക് ഓഫ്-ഗ്രിഡ് വൈദ്യുതി",
+            "സോളാറും ബാറ്ററിയുമുള്ള ഹൈബ്രിഡ് സംവിധാനങ്ങൾ",
+            "കൃഷി, വ്യവസായ ആവശ്യങ്ങൾക്കുള്ള വൈദ്യുത ലോഡുകൾ"
           ]
         }
       ],
       "capacity": [
         {
-          "label": "Micro",
-          "value": "Below 1 kW",
-          "use": "Small remote and auxiliary loads"
+          "label": "മൈക്രോ",
+          "value": "1 kW-ൽ താഴെ",
+          "use": "ചെറിയ വിദൂര, സഹായക വൈദ്യുതി ലോഡുകൾ"
         },
         {
-          "label": "Small",
+          "label": "ചെറുത്",
           "value": "1–10 kW",
-          "use": "Homes, retail, and small commercial sites"
+          "use": "വീടുകൾ, റീട്ടെയിൽ, ചെറുകിട വാണിജ്യ കേന്ദ്രങ്ങൾ"
         },
         {
-          "label": "Medium",
+          "label": "ഇടത്തരം",
           "value": "10–100 kW",
-          "use": "Industrial and campus-level generation"
+          "use": "വ്യവസായ, ക്യാമ്പസ് തലത്തിലുള്ള ഉൽപ്പാദനം"
         },
         {
-          "label": "Large",
+          "label": "വലുത്",
           "value": "100 kW–1 MW",
-          "use": "Commercial and utility-oriented installations"
+          "use": "വാണിജ്യ, യൂട്ടിലിറ്റി ആവശ്യങ്ങൾക്കുള്ള ഇൻസ്റ്റാളേഷനുകൾ"
         }
       ]
     },
     "hybrid": {
-      "eyebrow": "Hybrid Energy",
-      "title": "Solar + Wind hybrid systems for dependable power",
+      "eyebrow": "ഹൈബ്രിഡ് ഊർജം",
+      "title": "വിശ്വസനീയ വൈദ്യുതിക്കായി സോളാർ + കാറ്റാടി ഹൈബ്രിഡ് സംവിധാനങ്ങൾ",
       "cards": [
         {
-          "title": "Residential Solar-Wind Hybrid",
-          "description": "Combines solar and wind generation to improve energy reliability for homes and residential communities.",
+          "title": "വാസസ്ഥല സോളാർ-കാറ്റാടി ഹൈബ്രിഡ്",
+          "description": "വീടുകൾക്കും താമസസമുച്ചയങ്ങൾക്കും കൂടുതൽ വിശ്വസനീയമായ ഊർജം നൽകാൻ സോളാറും കാറ്റാടിയും സംയോജിപ്പിക്കുന്നു.",
           "points": [
-            "Home resilience in changing weather",
-            "Reduced dependence on grid power",
-            "Better balance across seasons"
+            "മാറുന്ന കാലാവസ്ഥയിൽ വീടുകൾക്ക് കൂടുതൽ ഊർജ പ്രതിരോധം",
+            "ഗ്രിഡ് വൈദ്യുതിയെ ആശ്രയിക്കുന്നത് കുറയ്ക്കുന്നു",
+            "വ്യത്യസ്ത സീസണുകളിൽ മെച്ചപ്പെട്ട സമതുലനം"
           ],
           "accent": "emerald"
         },
         {
-          "title": "Agricultural Hybrid Systems",
-          "description": "Supports irrigation, cold storage, and farm power while reducing diesel dependence.",
+          "title": "കാർഷിക ഹൈബ്രിഡ് സംവിധാനങ്ങൾ",
+          "description": "ഡീസലിനെ ആശ്രയിക്കുന്നത് കുറയ്ക്കുന്നതിനൊപ്പം ജലസേചനം, കോൾഡ് സ്റ്റോറേജ്, കൃഷിയിടങ്ങളിലെ വൈദ്യുതി ആവശ്യങ്ങൾ എന്നിവയ്ക്ക് പിന്തുണ നൽകുന്നു.",
           "points": [
-            "Water pumping and field support",
-            "Rural reliability during outages",
-            "Lower operating costs for agriculture"
+            "ജല പമ്പിംഗിനും കൃഷിയിടങ്ങൾക്കും പിന്തുണ",
+            "വൈദ്യുതി മുടക്കത്തിലും ഗ്രാമപ്രദേശങ്ങളിൽ വിശ്വാസ്യത",
+            "കൃഷിയുടെ പ്രവർത്തന ചെലവ് കുറയ്ക്കുന്നു"
           ],
           "accent": "sky"
         },
         {
-          "title": "Commercial & Microgrid Hybrid",
-          "description": "Ideal for facilities needing continuity, grid support, and efficient peak-demand management.",
+          "title": "വാണിജ്യ, മൈക്രോഗ്രിഡ് ഹൈബ്രിഡ്",
+          "description": "തുടർച്ചയായ വൈദ്യുതി, ഗ്രിഡ് പിന്തുണ, തിരക്കേറിയ സമയത്തെ വൈദ്യുതി ആവശ്യത്തിന്റെ കാര്യക്ഷമ നിയന്ത്രണം എന്നിവ വേണ്ട കേന്ദ്രങ്ങൾക്ക് അനുയോജ്യം.",
           "points": [
-            "Critical loads covered during outages",
-            "Demand reduction and operational savings",
-            "Smart integration with storage and controls"
+            "വൈദ്യുതി മുടക്കത്തിലും നിർണായക ലോഡുകൾക്ക് വൈദ്യുതി",
+            "ആവശ്യവും പ്രവർത്തന ചെലവും കുറയ്ക്കുന്നു",
+            "സംഭരണവും നിയന്ത്രണ സംവിധാനങ്ങളുമായുള്ള സ്മാർട്ട് സംയോജനം"
           ],
           "accent": "violet"
         }
       ],
       "benefits": [
         {
-          "title": "Load Balancing",
-          "description": "Combines the strengths of both solar and wind for more stable output across conditions."
+          "title": "ലോഡ് സന്തുലനം",
+          "description": "വ്യത്യസ്ത സാഹചര്യങ്ങളിലും കൂടുതൽ സ്ഥിരമായ ഉൽപ്പാദനത്തിനായി സോളാറിന്റെയും കാറ്റാടിയുടെയും നേട്ടങ്ങൾ കൂട്ടിച്ചേർക്കുന്നു."
         },
         {
-          "title": "Battery Backup",
-          "description": "Stores energy for critical loads and maintains continuity during outages."
+          "title": "ബാറ്ററി ബാക്കപ്പ്",
+          "description": "നിർണായക ആവശ്യങ്ങൾക്കായി ഊർജം സംഭരിക്കുകയും വൈദ്യുതി മുടക്കത്തിലും തുടർച്ച നിലനിർത്തുകയും ചെയ്യുന്നു."
         },
         {
-          "title": "Lower Diesel Use",
-          "description": "Cuts dependence on fossil-fuel backup systems for remote and commercial operations."
+          "title": "ഡീസൽ ഉപയോഗം കുറയ്ക്കുക",
+          "description": "വിദൂര, വാണിജ്യ പ്രവർത്തനങ്ങളിലെ ഫോസിൽ ഇന്ധന ബാക്കപ്പ് സംവിധാനങ്ങളെ ആശ്രയിക്കുന്നത് കുറയ്ക്കുന്നു."
         },
         {
-          "title": "Smart Integration",
-          "description": "Pairs efficiently with controls, inverters, and monitoring for better energy management."
+          "title": "സ്മാർട്ട് സംയോജനം",
+          "description": "മെച്ചപ്പെട്ട ഊർജ നിയന്ത്രണത്തിനായി കൺട്രോളറുകൾ, ഇൻവെർട്ടറുകൾ, നിരീക്ഷണ സംവിധാനങ്ങൾ എന്നിവയുമായി കാര്യക്ഷമമായി ബന്ധിപ്പിക്കുന്നു."
         }
       ],
       "panels": [
         {
-          "title": "Why hybrid works",
+          "title": "ഹൈബ്രിഡ് പ്രവർത്തിക്കുന്നതെങ്ങനെ",
           "accent": "emerald",
           "content": [
-            "Solar performs best in daylight while wind can supplement during evenings and overcast periods.",
-            "Hybrid generation improves continuity and reduces seasonal mismatch.",
-            "Store and dispatch power intelligently for higher reliability and savings."
+            "പകൽ സമയത്ത് സോളാർ മികച്ച രീതിയിൽ പ്രവർത്തിക്കുമ്പോൾ വൈകുന്നേരങ്ങളിലും മേഘാവൃത സമയങ്ങളിലും കാറ്റാടി അധിക ഊർജം നൽകാം.",
+            "ഹൈബ്രിഡ് ഉൽപ്പാദനം വൈദ്യുതി തുടർച്ച മെച്ചപ്പെടുത്തുകയും സീസണുകൾക്കിടയിലെ വ്യത്യാസം കുറയ്ക്കുകയും ചെയ്യുന്നു.",
+            "കൂടുതൽ വിശ്വാസ്യതക്കും ലാഭത്തിനുമായി വൈദ്യുതി ബുദ്ധിപൂർവം സംഭരിച്ച് വിതരണം ചെയ്യുക."
           ]
         },
         {
-          "title": "Best fit for",
+          "title": "ഏറ്റവും അനുയോജ്യം",
           "accent": "sky",
           "content": [
-            "Homes with variable seasonal loads",
-            "Remote farms and rural facilities",
-            "Commercial buildings with rising tariffs",
-            "Microgrids, campuses, and community sites"
+            "സീസണനുസരിച്ച് മാറുന്ന ലോഡുകളുള്ള വീടുകൾ",
+            "വിദൂര കൃഷിയിടങ്ങളും ഗ്രാമീണ കേന്ദ്രങ്ങളും",
+            "ഉയരുന്ന വൈദ്യുതി നിരക്കുള്ള വാണിജ്യ കെട്ടിടങ്ങൾ",
+            "മൈക്രോഗ്രിഡുകൾ, ക്യാമ്പസുകൾ, സമൂഹ കേന്ദ്രങ്ങൾ"
           ]
         }
       ],
       "table": [
         {
-          "label": "Residential",
-          "value": "Solar + small wind + battery",
-          "use": "Homes and gated communities"
+          "label": "വാസസ്ഥലം",
+          "value": "സോളാർ + ചെറുകാറ്റാടി + ബാറ്ററി",
+          "use": "വീടുകളും ഗേറ്റഡ് താമസസമുച്ചയങ്ങളും"
         },
         {
-          "label": "Agriculture",
-          "value": "Solar + wind + pump controls",
-          "use": "Irrigation and rural water support"
+          "label": "കൃഷി",
+          "value": "സോളാർ + കാറ്റാടി + പമ്പ് നിയന്ത്രണങ്ങൾ",
+          "use": "ജലസേചനവും ഗ്രാമീണ ജല ആവശ്യങ്ങളും"
         },
         {
-          "label": "Commercial",
-          "value": "Solar + wind + storage + grid sync",
-          "use": "Factories, campuses, and business parks"
+          "label": "വാണിജ്യം",
+          "value": "സോളാർ + കാറ്റാടി + സംഭരണം + ഗ്രിഡ് സമന്വയം",
+          "use": "ഫാക്ടറികൾ, ക്യാമ്പസുകൾ, ബിസിനസ് പാർക്കുകൾ"
         }
       ]
     }
@@ -7659,143 +7659,143 @@
     }
   },
   "formDataNotice": {
-    "prefix": "Submitting stores the information you provide in AeroSun Energy’s database so we can respond to or manage your request. See our",
-    "link": "Privacy Policy"
+    "prefix": "നിങ്ങളുടെ അഭ്യർത്ഥനയ്ക്ക് മറുപടി നൽകാനോ അത് കൈകാര്യം ചെയ്യാനോ നിങ്ങൾ നൽകുന്ന വിവരങ്ങൾ AeroSun Energyയുടെ ഡാറ്റാബേസിൽ സൂക്ഷിക്കും. ഞങ്ങളുടെ",
+    "link": "സ്വകാര്യതാ നയം"
   },
   "formSubmission": {
-    "saving": "Saving submission…",
-    "success": "Your request has been saved.",
-    "error": "We couldn’t save your submission. Check your connection and try again.",
-    "referenceLabel": "Submission reference"
+    "saving": "സമർപ്പിക്കുന്നു…",
+    "success": "നിങ്ങളുടെ അഭ്യർത്ഥന സംരക്ഷിച്ചു.",
+    "error": "നിങ്ങളുടെ സമർപ്പണം സംരക്ഷിക്കാനായില്ല. കണക്ഷൻ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക.",
+    "referenceLabel": "സമർപ്പണ റഫറൻസ്"
   },
   "footer": {
-    "brandDesc": "Delivering clean, reliable, and affordable renewable energy solutions across India.",
+    "brandDesc": "ഇന്ത്യയിലുടനീളം ശുദ്ധവും വിശ്വസനീയവും ചെലവുകുറഞ്ഞതുമായ പുനരുപയോഗ ഊർജ പരിഹാരങ്ങൾ നൽകുന്നു.",
     "email": "customercare@aerosunenergy.in",
     "website": "aerosunenergy.in",
     "trust": "sanatanadharmam.in",
-    "quickLinks": "Quick Links",
+    "quickLinks": "ദ്രുത ലിങ്കുകൾ",
     "referralProgram": "റഫറൽ പ്രോഗ്രാം",
-    "quickEnquiries": "Quick Enquiries",
-    "saveEarth": "Save Earth",
-    "saveSanatanaDharma": "Save Sanatana Dharma",
-    "followUs": "Follow Us",
-    "scan": "Scan",
-    "devNotice": "This website is currently under development. Some content and images may be incomplete, and page titles or locations may change as updates are made.",
+    "quickEnquiries": "ദ്രുത അന്വേഷണങ്ങൾ",
+    "saveEarth": "ഭൂമിയെ സംരക്ഷിക്കുക",
+    "saveSanatanaDharma": "സനാതന ധർമ്മം സംരക്ഷിക്കുക",
+    "followUs": "ഞങ്ങളെ പിന്തുടരുക",
+    "scan": "സ്കാൻ ചെയ്യുക",
+    "devNotice": "ഈ വെബ്സൈറ്റ് ഇപ്പോൾ വികസനത്തിലാണ്. ചില ഉള്ളടക്കങ്ങളും ചിത്രങ്ങളും അപൂർണമായിരിക്കാം; പുതുക്കലുകൾക്കനുസരിച്ച് പേജ് ശീർഷകങ്ങളോ സ്ഥാനങ്ങളോ മാറാം.",
     "devNoticeChatGPT": "ChatGPT",
     "devNoticeGitHub": "GitHub",
     "devNoticeAnd": "and",
-    "registrationNotice": "(Registration is in process)",
-    "allRightsReserved": "All rights reserved.",
-    "ourSolutions": "Our Solutions",
-    "contactInformation": "Contact Information",
-    "stayPowered": "Stay Powered by Clean Energy",
-    "newsletterDescription": "Get renewable energy insights, technology updates and sustainable energy solutions.",
-    "newsletterHint": "Your address will be saved as an update request. Automated newsletter delivery is not enabled yet.",
-    "subscribe": "Subscribe",
-    "solarWindHybrid": "Solar · Wind · Hybrid",
-    "developmentNotice": "This website is currently under development. Some content and images may be incomplete, and page titles or locations may change as updates are made.",
-    "heroTitle": "Let's Build a Cleaner Energy Future Together.",
-    "heroDescription": "Power your next project with thoughtful solar, wind and hybrid energy solutions.",
-    "contactCta": "Talk to Our Energy Experts",
-    "illustrationLabel": "Solar energy orbit illustration",
+    "registrationNotice": "(രജിസ്ട്രേഷൻ പുരോഗമിക്കുന്നു)",
+    "allRightsReserved": "എല്ലാ അവകാശങ്ങളും സംവരണം ചെയ്തിരിക്കുന്നു.",
+    "ourSolutions": "ഞങ്ങളുടെ പരിഹാരങ്ങൾ",
+    "contactInformation": "ബന്ധപ്പെടാനുള്ള വിവരങ്ങൾ",
+    "stayPowered": "ശുദ്ധ ഊർജത്തോടെ മുന്നേറൂ",
+    "newsletterDescription": "പുനരുപയോഗ ഊർജം, സാങ്കേതിക പുതുക്കലുകൾ, സുസ്ഥിര ഊർജ പരിഹാരങ്ങൾ എന്നിവയെക്കുറിച്ചുള്ള വിവരങ്ങൾ നേടുക.",
+    "newsletterHint": "നിങ്ങളുടെ വിലാസം അപ്ഡേറ്റ് അഭ്യർത്ഥനയായി സംരക്ഷിക്കും. സ്വയമേവയുള്ള വാർത്താക്കുറിപ്പ് വിതരണം ഇതുവരെ സജ്ജമാക്കിയിട്ടില്ല.",
+    "subscribe": "സബ്സ്ക്രൈബ് ചെയ്യുക",
+    "solarWindHybrid": "സോളാർ · കാറ്റാടി · ഹൈബ്രിഡ്",
+    "developmentNotice": "ഈ വെബ്സൈറ്റ് ഇപ്പോൾ വികസനത്തിലാണ്. ചില ഉള്ളടക്കങ്ങളും ചിത്രങ്ങളും അപൂർണമായിരിക്കാം; പുതുക്കലുകൾക്കനുസരിച്ച് പേജ് ശീർഷകങ്ങളോ സ്ഥാനങ്ങളോ മാറാം.",
+    "heroTitle": "ശുദ്ധമായ ഊർജ ഭാവി നമുക്ക് ഒരുമിച്ച് സൃഷ്ടിക്കാം.",
+    "heroDescription": "ശ്രദ്ധാപൂർവം രൂപപ്പെടുത്തിയ സോളാർ, കാറ്റാടി, ഹൈബ്രിഡ് ഊർജ പരിഹാരങ്ങളിലൂടെ നിങ്ങളുടെ അടുത്ത പദ്ധതിക്ക് ഊർജം പകരൂ.",
+    "contactCta": "ഞങ്ങളുടെ ഊർജ വിദഗ്ധരുമായി സംസാരിക്കുക",
+    "illustrationLabel": "സോളാർ ഊർജ പരിക്രമണ ചിത്രം",
     "socialLinks": {
       "twitter": {
-        "label": "Follow AeroSun Energy on X (Twitter), opens in a new tab",
-        "title": "Follow AeroSun Energy on X (opens in new tab)"
+        "label": "പുതിയ ടാബിൽ AeroSun Energyയെ X (Twitter)-ൽ പിന്തുടരുക",
+        "title": "പുതിയ ടാബിൽ AeroSun Energyയുടെ X പേജ് തുറക്കുക"
       },
       "linkedin": {
-        "label": "Connect with AeroSun Energy on LinkedIn, opens in a new tab",
-        "title": "Connect with AeroSun Energy on LinkedIn (opens in new tab)"
+        "label": "പുതിയ ടാബിൽ AeroSun Energyയുമായി LinkedIn-ൽ ബന്ധപ്പെടുക",
+        "title": "പുതിയ ടാബിൽ AeroSun Energyയുടെ LinkedIn പേജ് തുറക്കുക"
       },
       "facebook": {
-        "label": "Like AeroSun Energy on Facebook, opens in a new tab",
-        "title": "Like AeroSun Energy on Facebook (opens in new tab)"
+        "label": "പുതിയ ടാബിൽ AeroSun Energyയുടെ Facebook പേജ് ലൈക്ക് ചെയ്യുക",
+        "title": "പുതിയ ടാബിൽ AeroSun Energyയുടെ Facebook പേജ് തുറക്കുക"
       },
       "instagram": {
-        "label": "Follow AeroSun Energy on Instagram, opens in a new tab",
-        "title": "Follow AeroSun Energy on Instagram (opens in new tab)"
+        "label": "പുതിയ ടാബിൽ AeroSun Energyയെ Instagram-ൽ പിന്തുടരുക",
+        "title": "പുതിയ ടാബിൽ AeroSun Energyയുടെ Instagram പേജ് തുറക്കുക"
       }
     },
     "solutions": [
       {
-        "label": "Residential Solar Solutions",
+        "label": "ഗാർഹിക സൗരോർജ പരിഹാരങ്ങൾ",
         "href": "/solarenergy"
       },
       {
-        "label": "Commercial & Industrial Solar",
+        "label": "വാണിജ്യ, വ്യാവസായിക സൗരോർജം",
         "href": "/solarenergy"
       },
       {
-        "label": "Solar Agricultural Pumps",
+        "label": "കൃഷിക്കുള്ള സൗര പമ്പുകൾ",
         "href": "/solarenergy"
       },
       {
-        "label": "Wind Generator Systems",
+        "label": "കാറ്റാടി വൈദ്യുതോൽപ്പാദന സംവിധാനങ്ങൾ",
         "href": "/windenergy"
       },
       {
-        "label": "Vertical Axis Wind Turbines",
+        "label": "ലംബ അച്ചുതണ്ടുള്ള കാറ്റാടി ടർബൈനുകൾ",
         "href": "/windenergy"
       },
       {
-        "label": "Solar-Wind Hybrid Systems",
+        "label": "സൗര-കാറ്റാടി ഹൈബ്രിഡ് സംവിധാനങ്ങൾ",
         "href": "/hybridenergy"
       },
       {
-        "label": "Battery Energy Storage",
+        "label": "ബാറ്ററി ഊർജ സംഭരണം",
         "href": "/hybridenergy"
       },
       {
-        "label": "Off-grid Power Solutions",
+        "label": "ഗ്രിഡ് ബന്ധമില്ലാത്ത വൈദ്യുതി പരിഹാരങ്ങൾ",
         "href": "/hybridenergy"
       }
     ],
     "address": "Do.no 11-184, Gollavanigunta, T.N. Pallem, Tirupati, Andhra Pradesh, India - 517501.",
     "phone": "+91-8099181075",
     "phoneHref": "+91-8099181075",
-    "opensInNewTab": "(opens in a new tab)",
-    "visitTrustLink": "Visit {trust} (opens in new tab)",
-    "newsletterEmailLabel": "Email address for clean energy updates",
+    "opensInNewTab": "(പുതിയ ടാബിൽ തുറക്കും)",
+    "visitTrustLink": "{trust} സന്ദർശിക്കുക (പുതിയ ടാബിൽ തുറക്കും)",
+    "newsletterEmailLabel": "ശുദ്ധ ഊർജ അപ്ഡേറ്റുകൾക്കുള്ള ഇമെയിൽ വിലാസം",
     "newsletterPlaceholder": "you@example.com",
-    "newsletterSubject": "Clean energy newsletter subscription request",
-    "newsletterBody": "Please add {email} to the AeroSun Energy clean energy newsletter.",
-    "newsletterStatus": "Your update request has been saved. Automated newsletter delivery is not enabled yet.",
-    "attributionLinkLabel": "Open ChatGPT in a new tab",
+    "newsletterSubject": "ശുദ്ധ ഊർജ വാർത്താക്കുറിപ്പ് സബ്സ്ക്രിപ്ഷൻ അഭ്യർത്ഥന",
+    "newsletterBody": "AeroSun Energyയുടെ ശുദ്ധ ഊർജ വാർത്താക്കുറിപ്പിൽ {email} ചേർക്കുക.",
+    "newsletterStatus": "നിങ്ങളുടെ അപ്ഡേറ്റ് അഭ്യർത്ഥന സംരക്ഷിച്ചു. സ്വയമേവയുള്ള വാർത്താക്കുറിപ്പ് വിതരണം ഇതുവരെ സജ്ജമാക്കിയിട്ടില്ല.",
+    "attributionLinkLabel": "പുതിയ ടാബിൽ ChatGPT തുറക്കുക",
     "attributionLinkText": "ChatGPT.",
     "legalLinks": [
       {
-        "label": "Privacy Policy",
+        "label": "സ്വകാര്യതാ നയം",
         "href": "/privacy-policy"
       },
       {
-        "label": "Terms & Conditions",
+        "label": "നിബന്ധനകളും വ്യവസ്ഥകളും",
         "href": "/terms-conditions"
       },
       {
-        "label": "Warranty & Service Policy",
+        "label": "വാറന്റി, സേവന നയം",
         "href": "/warranty-policy"
       }
     ],
-    "attribution": "Built with Love and passion by Vulchi Vijaya Kumar Raju (Kshatriya's).",
-    "copyright": "© {year} AeroSun Energy Private Limited. All Rights Reserved."
+    "attribution": "Vulchi Vijaya Kumar Raju (Kshatriya's) സ്നേഹത്തോടെയും ആവേശത്തോടെയും നിർമ്മിച്ചത്.",
+    "copyright": "© {year} AeroSun Energy Private Limited. എല്ലാ അവകാശങ്ങളും സംവരണം ചെയ്തിരിക്കുന്നു."
   },
   "ui": {
-    "windSolution": "Wind solution",
-    "hybridSystem": "Hybrid system",
-    "systemType": "System type",
-    "loadingImage": "Loading image",
-    "solarSolution": "Solar solution",
-    "openLink": "Open",
-    "capacityBand": "Capacity band",
-    "systemSize": "System size",
-    "typicalUse": "Typical use",
-    "customerFit": "Customer fit",
-    "typicalConfiguration": "Typical configuration",
+    "windSolution": "കാറ്റാടി പരിഹാരം",
+    "hybridSystem": "ഹൈബ്രിഡ് സംവിധാനം",
+    "systemType": "സംവിധാനത്തിന്റെ തരം",
+    "loadingImage": "ചിത്രം ലോഡ് ചെയ്യുന്നു",
+    "solarSolution": "സോളാർ പരിഹാരം",
+    "openLink": "തുറക്കുക",
+    "capacityBand": "ശേഷി പരിധി",
+    "systemSize": "സംവിധാന വലുപ്പം",
+    "typicalUse": "സാധാരണ ഉപയോഗം",
+    "customerFit": "ഉപഭോക്താവിന് അനുയോജ്യം",
+    "typicalConfiguration": "സാധാരണ ക്രമീകരണം",
     "averageMonthlyUsage": "ശരാശരി മാസ ഉപഭോഗം",
     "suitableRooftopCapacity": "അനുയോജ്യമായ മേൽക്കൂര ശേഷി",
     "bestFit": "അനുയോജ്യമായ ഉപയോഗം",
-    "howItWorks": "How it works",
-    "comingSoon": "Coming soon"
+    "howItWorks": "പ്രവർത്തിക്കുന്ന വിധം",
+    "comingSoon": "ഉടൻ വരുന്നു"
   },
   "productCataloguePage": {
     "hero": {
@@ -9044,52 +9044,52 @@
     }
   },
   "notifications": {
-    "badge": "Updates",
-    "toggleOpen": "Show notification",
-    "toggleClose": "Hide notification",
-    "text": "AeroSun Energy Private Limited is committed to providing reliable and sustainable renewable energy solutions through solar, wind, and hybrid energy systems.",
-    "highlight": " Our business approach focuses on sourcing quality equipment, supporting installation and implementation, ",
-    "tail": "and exploring innovative energy solutions tailored to customer needs. As we grow, we aim to expand our technical capabilities and develop advanced renewable energy solutions that contribute to a cleaner, more sustainable future."
+    "badge": "അറിയിപ്പുകൾ",
+    "toggleOpen": "അറിയിപ്പ് കാണിക്കുക",
+    "toggleClose": "അറിയിപ്പ് മറയ്ക്കുക",
+    "text": "സൗര, കാറ്റാടി, ഹൈബ്രിഡ് ഊർജ സംവിധാനങ്ങളിലൂടെ വിശ്വസനീയവും സുസ്ഥിരവുമായ പുനരുപയോഗ ഊർജ പരിഹാരങ്ങൾ നൽകാൻ AeroSun Energy Private Limited പ്രതിജ്ഞാബദ്ധമാണ്.",
+    "highlight": " ഞങ്ങളുടെ ബിസിനസ് സമീപനം ഗുണമേന്മയുള്ള ഉപകരണങ്ങൾ ലഭ്യമാക്കുന്നതിലും, ഇൻസ്റ്റലേഷനും നടപ്പാക്കലിനും പിന്തുണ നൽകുന്നതിലും ശ്രദ്ധ കേന്ദ്രീകരിക്കുന്നു, ",
+    "tail": "കൂടാതെ ഉപഭോക്തൃ ആവശ്യങ്ങൾക്കനുസരിച്ചുള്ള നവീന ഊർജ പരിഹാരങ്ങൾ അന്വേഷിക്കുന്നു. വളരുന്നതിനനുസരിച്ച്, കൂടുതൽ ശുദ്ധവും സുസ്ഥിരവുമായ ഭാവിക്ക് സംഭാവന നൽകുന്ന നൂതന പുനരുപയോഗ ഊർജ പരിഹാരങ്ങൾ വികസിപ്പിക്കുകയും സാങ്കേതിക ശേഷി വർധിപ്പിക്കുകയും ചെയ്യുകയാണ് ഞങ്ങളുടെ ലക്ഷ്യം."
   },
   "bankEmi": {
-    "badge": "Personal finance · EMI planner",
-    "title": "Make your next move",
-    "titleAccent": "with clarity.",
-    "description": "Shape your loan around your life. Adjust the numbers and see the full repayment picture instantly.",
-    "confidence": "Plan with confidence",
-    "confidenceSub": "A clear estimate, at a glance",
-    "loanDetails": "Your loan details",
-    "loanDetailsSub": "Fine-tune the estimate below",
-    "loanAmount": "Loan amount",
-    "loanTenure": "Loan tenure",
-    "interestRate": "Interest rate",
-    "perAnnum": "p.a.",
-    "monthlyEmi": "Your monthly EMI",
-    "month": "/ month",
-    "fixedMonthly": "Fixed monthly instalment for",
-    "principal": "Principal",
-    "totalInterest": "Total interest",
-    "totalRepayment": "Total repayment",
-    "principalPlus": "Principal + interest",
-    "estimateOnly": "Estimate only. Your lender may apply different rates, fees, and eligibility criteria.",
-    "year": "year",
-    "years": "years",
-    "repaymentSnapshot": "Repayment snapshot",
-    "basedOnDetails": "Based on your loan details",
-    "liveEstimate": "Live estimate",
+    "badge": "വ്യക്തിഗത ധനകാര്യം · EMI കാൽക്കുലേറ്റർ",
+    "title": "അടുത്ത ചുവടുവെപ്പ്",
+    "titleAccent": "ആത്മവിശ്വാസത്തോടെ.",
+    "description": "നിങ്ങളുടെ ജീവിതസാഹചര്യത്തിന് അനുയോജ്യമായി വായ്പ ക്രമീകരിക്കുക. കണക്കുകൾ മാറ്റി മൊത്തം തിരിച്ചടവ് ഉടൻ കാണുക.",
+    "confidence": "ആത്മവിശ്വാസത്തോടെ ആസൂത്രണം ചെയ്യുക",
+    "confidenceSub": "ഒറ്റനോട്ടത്തിൽ വ്യക്തമായ കണക്ക്",
+    "loanDetails": "നിങ്ങളുടെ വായ്പാ വിവരങ്ങൾ",
+    "loanDetailsSub": "താഴെ കണക്ക് ക്രമീകരിക്കുക",
+    "loanAmount": "വായ്പാ തുക",
+    "loanTenure": "വായ്പാ കാലാവധി",
+    "interestRate": "പലിശ നിരക്ക്",
+    "perAnnum": "വർഷത്തിൽ",
+    "monthlyEmi": "നിങ്ങളുടെ പ്രതിമാസ EMI",
+    "month": "/ മാസം",
+    "fixedMonthly": "സ്ഥിരമായ പ്രതിമാസ ഗഡു —",
+    "principal": "മുതൽ തുക",
+    "totalInterest": "മൊത്തം പലിശ",
+    "totalRepayment": "മൊത്തം തിരിച്ചടവ്",
+    "principalPlus": "മുതൽ തുക + പലിശ",
+    "estimateOnly": "ഇത് ഏകദേശ കണക്കാണ്. നിങ്ങളുടെ വായ്പാദാതാവ് വ്യത്യസ്ത നിരക്കുകളും ഫീസുകളും യോഗ്യതാ നിബന്ധനകളും പ്രയോഗിച്ചേക്കാം.",
+    "year": "വർഷം",
+    "years": "വർഷങ്ങൾ",
+    "repaymentSnapshot": "തിരിച്ചടവിന്റെ സംഗ്രഹം",
+    "basedOnDetails": "നിങ്ങളുടെ വായ്പാ വിവരങ്ങളെ അടിസ്ഥാനമാക്കി",
+    "liveEstimate": "തത്സമയ കണക്ക്",
     "currencyDisplay": "INR · ₹",
-    "loanAmountAriaLabel": "Loan amount",
+    "loanAmountAriaLabel": "വായ്പാ തുക",
     "loanAmountMinimum": "₹25,000",
     "loanAmountMaximum": "₹20,00,000",
-    "loanTenureAriaLabel": "Loan tenure",
-    "loanTenureMinimum": "1 year",
-    "loanTenureMaximum": "7 years",
-    "interestRateAriaLabel": "Interest rate",
-    "interestRateMinimum": "12% p.a.",
-    "interestRateMaximum": "24% p.a.",
-    "repaymentBreakdownAriaLabel": "Repayment breakdown: {principal} percent principal and {interest} percent interest",
-    "contactAction": "Talk to our team",
-    "lenderTerms": "Final terms are subject to lender approval and eligibility."
+    "loanTenureAriaLabel": "വായ്പാ കാലാവധി",
+    "loanTenureMinimum": "1 വർഷം",
+    "loanTenureMaximum": "7 വർഷം",
+    "interestRateAriaLabel": "പലിശ നിരക്ക്",
+    "interestRateMinimum": "12% വർഷത്തിൽ",
+    "interestRateMaximum": "24% വർഷത്തിൽ",
+    "repaymentBreakdownAriaLabel": "തിരിച്ചടവ് വിഭജനം: {principal} ശതമാനം മുതൽ തുകയും {interest} ശതമാനം പലിശയും",
+    "contactAction": "ഞങ്ങളുടെ ടീമുമായി സംസാരിക്കുക",
+    "lenderTerms": "അന്തിമ നിബന്ധനകൾ വായ്പാദാതാവിന്റെ അംഗീകാരത്തിനും യോഗ്യതയ്ക്കും വിധേയമാണ്."
   },
   "solarEstimation": {
     "savingsTitle": "See how much you save with",
@@ -10090,28 +10090,28 @@
     ]
   },
   "estimation": {
-    "badge": "Estimation Studio",
-    "savingsTitle": "See how much you save with",
-    "savingsTitleAccent": "solar",
-    "savingsDescription": "A 3 kW rooftop plant in Tirupati typically saves ₹30,000+ a year. Run the numbers for your home below.",
-    "adjustUsage": "Enter your average monthly electricity bill to see your estimated solar plan.",
-    "monthlyBill": "Monthly electricity bill",
-    "monthlyBillAriaLabel": "Monthly electricity bill in rupees",
+    "badge": "സോളാർ കണക്ക്",
+    "savingsTitle": "സോളാർ ഉപയോഗിച്ച് എത്ര ലാഭിക്കാമെന്ന്",
+    "savingsTitleAccent": "അറിയൂ",
+    "savingsDescription": "Tirupatiയിൽ 3 kW മേൽക്കൂര പ്ലാന്റ് സാധാരണയായി വർഷം ₹30,000-ത്തിലധികം ലാഭം നൽകും. നിങ്ങളുടെ വീടിനുള്ള കണക്ക് താഴെ പരിശോധിക്കുക.",
+    "adjustUsage": "ഏകദേശ സോളാർ പദ്ധതി കാണാൻ നിങ്ങളുടെ ശരാശരി പ്രതിമാസ വൈദ്യുതി ബിൽ നൽകുക.",
+    "monthlyBill": "പ്രതിമാസ വൈദ്യുതി ബിൽ",
+    "monthlyBillAriaLabel": "രൂപയിലെ പ്രതിമാസ വൈദ്യുതി ബിൽ",
     "monthlyBillMinimum": "₹500",
     "monthlyBillMaximum": "₹50,000",
-    "estimatedMonthlyUsage": "Estimated monthly usage",
-    "recommendedCapacity": "Recommended capacity",
-    "profitMargin": "Profit margin",
-    "subsidyBand": "Subsidy band",
-    "installationCost": "Your installation cost",
-    "installationCostHelper": "Panels, inverter, wiring, labor, and setup",
-    "sellingPrice": "Customer selling price",
-    "sellingPriceHelper": "Quoted price shared with the client",
-    "unitsSuffix": "units",
-    "perKwSuffix": "per kW",
+    "estimatedMonthlyUsage": "ഏകദേശ പ്രതിമാസ ഉപയോഗം",
+    "recommendedCapacity": "ശുപാർശ ചെയ്യുന്ന ശേഷി",
+    "profitMargin": "ലാഭ വിഹിതം",
+    "subsidyBand": "സബ്സിഡി പരിധി",
+    "installationCost": "നിങ്ങളുടെ ഇൻസ്റ്റാളേഷൻ ചെലവ്",
+    "installationCostHelper": "പാനലുകൾ, ഇൻവെർട്ടർ, വയറിംഗ്, തൊഴിൽ, സജ്ജീകരണം",
+    "sellingPrice": "ഉപഭോക്താവിനുള്ള വിൽപ്പന വില",
+    "sellingPriceHelper": "ഉപഭോക്താവിന് നൽകിയ ക്വട്ടേഷൻ വില",
+    "unitsSuffix": "യൂണിറ്റുകൾ",
+    "perKwSuffix": "ഓരോ kW-നും",
     "capacityUnit": "kW",
-    "squareFootUnit": "sq ft",
-    "plantSize": "Plant Size",
+    "squareFootUnit": "ചതുരശ്ര അടി",
+    "plantSize": "പ്ലാന്റ് ശേഷി",
     "calculator": {
       "homeOption": "വീട്",
       "commercialOption": "വാണിജ്യം",
@@ -10130,52 +10130,52 @@
       "commercialSubsidyNote": "വാണിജ്യ കണക്കുകളിൽ PM Surya Ghar റെസിഡൻഷ്യൽ സബ്സിഡി ഉൾപ്പെടുത്തിയിട്ടില്ല.",
       "assumptions": "സൂചനാത്മക വില ₹70,000/kW എന്നും മേൽക്കൂര സ്ഥലം 60 ചതുരശ്ര അടി/kW എന്നും കണക്കാക്കുന്നു. ഉൽപ്പാദനം 120 യൂണിറ്റ്/kW/മാസം എന്നും ലാഭം ₹8.5/യൂണിറ്റ് എന്നും കണക്കാക്കുന്നു. യഥാർത്ഥ വിലയും ഉൽപ്പാദനവും സിസ്റ്റത്തിനും സ്ഥലത്തിനും അനുസരിച്ച് മാറും."
     },
-    "roofRequired": "Roof Required",
-    "returnsTitle": "Your Estimated Returns",
-    "irradianceTariffAssumption": "Indicative estimate using ₹8.5/unit and 120 units per kW each month; actual generation depends on the site.",
-    "annualSavings": "Annual Savings",
-    "annualGeneration": "Estimated generation",
-    "generationUnit": "units/year",
-    "twentyFiveYearSavings": "Estimated 25-year savings",
-    "originalCost": "Original Cost",
-    "subsidy": "Subsidy",
-    "netCost": "Net Cost",
-    "payback": "Payback",
-    "yearsShort": "yrs",
-    "yearSuffix": "year",
-    "contactUs": "Contact Us",
-    "estimatesDisclaimer": "Estimates only. The 25-year projection assumes constant tariff and output; actual savings depend on site conditions, system performance and DISCOM tariff.",
-    "freeAssessmentCta": "Get My Free Solar Assessment",
-    "freeAssessmentLabel": "Free solar assessment",
-    "leadName": "Name",
-    "leadNamePlaceholder": "Your full name",
-    "leadMobile": "Mobile",
+    "roofRequired": "ആവശ്യമായ മേൽക്കൂര സ്ഥലം",
+    "returnsTitle": "നിങ്ങളുടെ ഏകദേശ ലാഭം",
+    "irradianceTariffAssumption": "ഒരു യൂണിറ്റിന് ₹8.5, ഓരോ kW-നും പ്രതിമാസം 120 യൂണിറ്റ് എന്ന അനുമാനത്തിലുള്ള ഏകദേശ കണക്ക്; യഥാർത്ഥ ഉൽപ്പാദനം സ്ഥലത്തെ ആശ്രയിക്കുന്നു.",
+    "annualSavings": "വാർഷിക ലാഭം",
+    "annualGeneration": "ഏകദേശ ഉൽപ്പാദനം",
+    "generationUnit": "യൂണിറ്റ്/വർഷം",
+    "twentyFiveYearSavings": "25 വർഷത്തെ ഏകദേശ ലാഭം",
+    "originalCost": "യഥാർത്ഥ ചെലവ്",
+    "subsidy": "സബ്സിഡി",
+    "netCost": "അറ്റ ചെലവ്",
+    "payback": "നിക്ഷേപം തിരിച്ചുപിടിക്കുന്ന കാലം",
+    "yearsShort": "വർഷം",
+    "yearSuffix": "വർഷം",
+    "contactUs": "ഞങ്ങളെ ബന്ധപ്പെടുക",
+    "estimatesDisclaimer": "ഇവ ഏകദേശ കണക്കുകൾ മാത്രമാണ്. 25 വർഷത്തെ പ്രവചനത്തിൽ നിരക്കും ഉൽപ്പാദനവും സ്ഥിരമാണെന്ന് കണക്കാക്കുന്നു; യഥാർത്ഥ ലാഭം സ്ഥലസാഹചര്യങ്ങൾ, സംവിധാനത്തിന്റെ പ്രകടനം, DISCOM നിരക്ക് എന്നിവയെ ആശ്രയിച്ചിരിക്കും.",
+    "freeAssessmentCta": "സൗജന്യ സോളാർ വിലയിരുത്തൽ നേടുക",
+    "freeAssessmentLabel": "സൗജന്യ സോളാർ വിലയിരുത്തൽ",
+    "leadName": "പേര്",
+    "leadNamePlaceholder": "നിങ്ങളുടെ പൂർണ പേര്",
+    "leadMobile": "മൊബൈൽ നമ്പർ",
     "leadMobilePlaceholder": "+91 98765 43210",
-    "leadPinCode": "PIN code",
-    "leadPinCodePlaceholder": "6-digit PIN code",
-    "leadPropertyType": "Property type",
-    "propertyTypePlaceholder": "Select property type",
+    "leadPinCode": "പിൻകോഡ്",
+    "leadPinCodePlaceholder": "6 അക്ക പിൻകോഡ്",
+    "leadPropertyType": "സ്വത്തിന്റെ തരം",
+    "propertyTypePlaceholder": "സ്വത്തിന്റെ തരം തിരഞ്ഞെടുക്കുക",
     "propertyTypeOptions": [
-      "Residential",
-      "Commercial",
-      "Industrial",
-      "Agricultural"
+      "വാസസ്ഥലം",
+      "വാണിജ്യം",
+      "വ്യവസായം",
+      "കാർഷികം"
     ],
-    "whatsAppMyReport": "WhatsApp My Report",
-    "whatsAppGreeting": "Hello AeroSun Energy, I would like a free solar assessment.",
-    "whatsAppDisclosure": "Your details and estimate will be prefilled in WhatsApp. The message is sent only after you confirm it there.",
-    "whatsAppUnavailable": "WhatsApp contact is unavailable. Please contact AeroSun directly.",
-    "openWhatsAppFallback": "WhatsApp did not open? Continue to your report",
-    "cancelAssessment": "Cancel",
+    "whatsAppMyReport": "എന്റെ റിപ്പോർട്ട് WhatsApp ചെയ്യുക",
+    "whatsAppGreeting": "നമസ്കാരം AeroSun Energy, എനിക്ക് സൗജന്യ സോളാർ വിലയിരുത്തൽ വേണം.",
+    "whatsAppDisclosure": "നിങ്ങളുടെ വിവരങ്ങളും കണക്കും WhatsApp-ൽ മുൻകൂട്ടി ചേർക്കും. അവിടെ നിങ്ങൾ സ്ഥിരീകരിച്ച ശേഷമേ സന്ദേശം അയയ്ക്കൂ.",
+    "whatsAppUnavailable": "WhatsApp വഴി ബന്ധപ്പെടാനാകുന്നില്ല. AeroSun-നെ നേരിട്ട് ബന്ധപ്പെടുക.",
+    "openWhatsAppFallback": "WhatsApp തുറന്നില്ലേ? റിപ്പോർട്ടിലേക്ക് തുടരുക",
+    "cancelAssessment": "റദ്ദാക്കുക",
     "validation": {
-      "monthlyBillRequired": "Enter your monthly electricity bill.",
-      "monthlyBillMin": "Monthly bill must be at least ₹500.",
-      "monthlyBillMax": "Monthly bill cannot exceed ₹50,000.",
-      "installationMin": "Installation cost must be at least ₹10,000",
-      "installationMax": "Installation cost cannot exceed ₹1,00,000",
-      "sellingMin": "Selling price must be at least ₹10,000",
-      "sellingMax": "Selling price cannot exceed ₹2,00,000",
-      "sellingGreaterThanCost": "Selling price should be greater than or equal to installation cost"
+      "monthlyBillRequired": "നിങ്ങളുടെ പ്രതിമാസ വൈദ്യുതി ബിൽ നൽകുക.",
+      "monthlyBillMin": "പ്രതിമാസ ബിൽ കുറഞ്ഞത് ₹500 ആയിരിക്കണം.",
+      "monthlyBillMax": "പ്രതിമാസ ബിൽ ₹50,000 കവിയരുത്.",
+      "installationMin": "ഇൻസ്റ്റാളേഷൻ ചെലവ് കുറഞ്ഞത് ₹10,000 ആയിരിക്കണം.",
+      "installationMax": "ഇൻസ്റ്റാളേഷൻ ചെലവ് ₹1,00,000 കവിയരുത്.",
+      "sellingMin": "വിൽപ്പന വില കുറഞ്ഞത് ₹10,000 ആയിരിക്കണം.",
+      "sellingMax": "വിൽപ്പന വില ₹2,00,000 കവിയരുത്.",
+      "sellingGreaterThanCost": "വിൽപ്പന വില ഇൻസ്റ്റാളേഷൻ ചെലവിന് തുല്യമോ അതിലധികമോ ആയിരിക്കണം."
     }
   },
   "servicesPage": {
