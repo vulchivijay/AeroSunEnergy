@@ -4310,23 +4310,23 @@
     ],
     "quiries": [
       {
-        "label": "Projects",
+        "label": "പ്രോജക്റ്റുകൾ",
         "href": "/projects"
       },
       {
-        "label": "Customer Enquiry",
+        "label": "ഉപഭോക്തൃ അന്വേഷണം",
         "href": "/customer-enquiry"
       },
       {
-        "label": "Know Eligibility",
+        "label": "യോഗ്യത അറിയുക",
         "href": "/know-eligibility"
       },
       {
-        "label": "Installation Checklist",
+        "label": "ഇൻസ്റ്റലേഷൻ പരിശോധനപ്പട്ടിക",
         "href": "/installation-checklist"
       },
       {
-        "label": "Customer Agreement",
+        "label": "ഉപഭോക്തൃ കരാർ",
         "href": "/customer-agreement"
       }
     ],
@@ -7673,9 +7673,9 @@
     "email": "customercare@aerosunenergy.in",
     "website": "aerosunenergy.in",
     "trust": "sanatanadharmam.in",
-    "quickLinks": "Quick Links",
+    "quickLinks": "ദ്രുത ലിങ്കുകൾ",
     "referralProgram": "റഫറൽ പ്രോഗ്രാം",
-    "quickEnquiries": "Quick Enquiries",
+    "quickEnquiries": "ദ്രുത അന്വേഷണങ്ങൾ",
     "saveEarth": "Save Earth",
     "saveSanatanaDharma": "Save Sanatana Dharma",
     "followUs": "Follow Us",
@@ -7686,7 +7686,7 @@
     "devNoticeAnd": "and",
     "registrationNotice": "(Registration is in process)",
     "allRightsReserved": "All rights reserved.",
-    "ourSolutions": "Our Solutions",
+    "ourSolutions": "ഞങ്ങളുടെ പരിഹാരങ്ങൾ",
     "contactInformation": "Contact Information",
     "stayPowered": "Stay Powered by Clean Energy",
     "newsletterDescription": "Get renewable energy insights, technology updates and sustainable energy solutions.",
@@ -7718,35 +7718,35 @@
     },
     "solutions": [
       {
-        "label": "Residential Solar Solutions",
+        "label": "ഗാർഹിക സൗരോർജ പരിഹാരങ്ങൾ",
         "href": "/solarenergy"
       },
       {
-        "label": "Commercial & Industrial Solar",
+        "label": "വാണിജ്യ, വ്യാവസായിക സൗരോർജം",
         "href": "/solarenergy"
       },
       {
-        "label": "Solar Agricultural Pumps",
+        "label": "കൃഷിക്കുള്ള സൗര പമ്പുകൾ",
         "href": "/solarenergy"
       },
       {
-        "label": "Wind Generator Systems",
+        "label": "കാറ്റാടി വൈദ്യുതോൽപ്പാദന സംവിധാനങ്ങൾ",
         "href": "/windenergy"
       },
       {
-        "label": "Vertical Axis Wind Turbines",
+        "label": "ലംബ അച്ചുതണ്ടുള്ള കാറ്റാടി ടർബൈനുകൾ",
         "href": "/windenergy"
       },
       {
-        "label": "Solar-Wind Hybrid Systems",
+        "label": "സൗര-കാറ്റാടി ഹൈബ്രിഡ് സംവിധാനങ്ങൾ",
         "href": "/hybridenergy"
       },
       {
-        "label": "Battery Energy Storage",
+        "label": "ബാറ്ററി ഊർജ സംഭരണം",
         "href": "/hybridenergy"
       },
       {
-        "label": "Off-grid Power Solutions",
+        "label": "ഗ്രിഡ് ബന്ധമില്ലാത്ത വൈദ്യുതി പരിഹാരങ്ങൾ",
         "href": "/hybridenergy"
       }
     ],
@@ -7764,15 +7764,15 @@
     "attributionLinkText": "ChatGPT.",
     "legalLinks": [
       {
-        "label": "Privacy Policy",
+        "label": "സ്വകാര്യതാ നയം",
         "href": "/privacy-policy"
       },
       {
-        "label": "Terms & Conditions",
+        "label": "നിബന്ധനകളും വ്യവസ്ഥകളും",
         "href": "/terms-conditions"
       },
       {
-        "label": "Warranty & Service Policy",
+        "label": "വാറന്റി, സേവന നയം",
         "href": "/warranty-policy"
       }
     ],
@@ -9044,12 +9044,12 @@
     }
   },
   "notifications": {
-    "badge": "Updates",
-    "toggleOpen": "Show notification",
-    "toggleClose": "Hide notification",
-    "text": "AeroSun Energy Private Limited is committed to providing reliable and sustainable renewable energy solutions through solar, wind, and hybrid energy systems.",
-    "highlight": " Our business approach focuses on sourcing quality equipment, supporting installation and implementation, ",
-    "tail": "and exploring innovative energy solutions tailored to customer needs. As we grow, we aim to expand our technical capabilities and develop advanced renewable energy solutions that contribute to a cleaner, more sustainable future."
+    "badge": "അറിയിപ്പുകൾ",
+    "toggleOpen": "അറിയിപ്പ് കാണിക്കുക",
+    "toggleClose": "അറിയിപ്പ് മറയ്ക്കുക",
+    "text": "സൗര, കാറ്റാടി, ഹൈബ്രിഡ് ഊർജ സംവിധാനങ്ങളിലൂടെ വിശ്വസനീയവും സുസ്ഥിരവുമായ പുനരുപയോഗ ഊർജ പരിഹാരങ്ങൾ നൽകാൻ AeroSun Energy Private Limited പ്രതിജ്ഞാബദ്ധമാണ്.",
+    "highlight": " ഞങ്ങളുടെ ബിസിനസ് സമീപനം ഗുണമേന്മയുള്ള ഉപകരണങ്ങൾ ലഭ്യമാക്കുന്നതിലും, ഇൻസ്റ്റലേഷനും നടപ്പാക്കലിനും പിന്തുണ നൽകുന്നതിലും ശ്രദ്ധ കേന്ദ്രീകരിക്കുന്നു, ",
+    "tail": "കൂടാതെ ഉപഭോക്തൃ ആവശ്യങ്ങൾക്കനുസരിച്ചുള്ള നവീന ഊർജ പരിഹാരങ്ങൾ അന്വേഷിക്കുന്നു. വളരുന്നതിനനുസരിച്ച്, കൂടുതൽ ശുദ്ധവും സുസ്ഥിരവുമായ ഭാവിക്ക് സംഭാവന നൽകുന്ന നൂതന പുനരുപയോഗ ഊർജ പരിഹാരങ്ങൾ വികസിപ്പിക്കുകയും സാങ്കേതിക ശേഷി വർധിപ്പിക്കുകയും ചെയ്യുകയാണ് ഞങ്ങളുടെ ലക്ഷ്യം."
   },
   "bankEmi": {
     "badge": "Personal finance · EMI planner",
