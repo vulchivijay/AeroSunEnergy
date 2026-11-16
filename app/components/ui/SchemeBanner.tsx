@@ -75,6 +75,7 @@ export default function SchemeBanner() {
           <div className="flex flex-wrap items-center gap-3 pl-16 lg:pl-0">
             <Link
               href="/contact"
+              prefetch={false}
               className="inline-flex min-h-12 items-center justify-center rounded-full bg-indigo-700 px-5 text-sm font-bold text-white shadow-md shadow-indigo-950/20 transition hover:bg-indigo-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700"
             >
               {banner.ctaPrimary}

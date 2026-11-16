@@ -194,6 +194,7 @@ export function BankEMICalculator() {
 
             <Link
               href="/contact"
+              prefetch={false}
               className="mt-7 inline-flex w-full flex-wrap items-center justify-center gap-2 rounded-full bg-lime-300 px-4 py-3.5 text-center text-sm font-bold text-[#17301f] shadow-[0_8px_24px_-12px_rgba(190,242,100,0.8)] transition hover:bg-lime-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-200 sm:px-5 sm:text-md"
             >
               {labels.contactAction}

@@ -5,6 +5,7 @@ import { ArrowRight, ArrowUpRight, Check, Sun } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Thank You',
   description: 'Thank you for contacting AeroSun Energy. We look forward to helping with your renewable energy project.',
+  robots: { index: false, follow: false },
 }
 
 export default function ThankYouPage() {

@@ -117,15 +117,15 @@ export default function Navbar() {
           disabled
             ? 'cursor-not-allowed text-[#333333]'
             : active
-              ? 'bg-[#20A44A] text-white ring-1 ring-inset ring-[#20A44A]/50'
-              : 'text-[#333333] hover:bg-[#20A44A] hover:text-white'
+              ? 'bg-[#18833a] text-white ring-1 ring-inset ring-[#18833a]/50'
+              : 'text-[#333333] hover:bg-[#18833a] hover:text-white'
         }`
       : `group relative z-10 flex w-auto flex-col items-center gap-1 rounded-xl px-2 py-1.5 text-[13px] transition-colors 2xl:text-sm ${
           active
-            ? 'bg-[#20A44A] text-white'
+            ? 'bg-[#18833a] text-white'
             : disabled
               ? 'cursor-not-allowed text-[#333333]'
-              : 'text-[#333333] hover:bg-[#20A44A] hover:text-white'
+              : 'text-[#333333] hover:bg-[#18833a] hover:text-white'
         }`
 
     const content = (
@@ -141,7 +141,7 @@ export default function Navbar() {
             }`}>
               <Icon className="h-4 w-4" strokeWidth={1.7} aria-hidden="true" />
               {disabled && (
-                <span className="absolute -left-6 -top-1 z-10 whitespace-nowrap rounded-t-md rounded-br-md border border-[#333333]/20 bg-[#e5e7eb] px-1.5 py-0.5 text-[9px] cursor-default font-bold uppercase tracking-[0.1em] text-[#333333] shadow-md">
+                <span className="absolute left-[50%] -top-1 translate-[-50%] z-10 whitespace-nowrap rounded-t-md rounded-br-md border border-[#333333]/20 bg-[#e5e7eb] px-1.5 py-0.5 text-[9px] cursor-default font-bold uppercase tracking-[0.1em] text-[#333333] shadow-md">
                   {comingSoonLabel}
                 </span>
               )}
@@ -176,6 +176,7 @@ export default function Navbar() {
       <Link
         key={link.href}
         href={link.href}
+        prefetch={link.href !== '/contact'}
         onClick={mobile ? closeMenu : undefined}
         aria-current={active ? 'page' : undefined}
         aria-label={`${t.navbar.goTo} ${link.label}`}
@@ -196,13 +197,14 @@ export default function Navbar() {
           <div className="flex items-center gap-1">
             <Link
               href={link.href}
+              prefetch={link.href !== '/contact'}
               onClick={closeMenu}
               aria-current={active ? 'page' : undefined}
               aria-label={`${t.navbar.goTo} ${link.label}`}
               className={`flex min-h-12 min-w-0 flex-1 items-center rounded-xl px-4 py-3 text-sm font-medium transition ${
                 active
-                  ? 'bg-[#20A44A] text-white ring-1 ring-inset ring-[#20A44A]/50'
-                  : 'text-[#333333] hover:bg-[#20A44A] hover:text-white'
+                  ? 'bg-[#18833a] text-white ring-1 ring-inset ring-[#18833a]/50'
+                  : 'text-[#333333] hover:bg-[#18833a] hover:text-white'
               }`}
             >
               {link.label}
@@ -237,8 +239,8 @@ export default function Navbar() {
                   aria-current={childActive ? 'page' : undefined}
                   className={`flex min-h-10 items-center rounded-lg px-3 py-2 text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#333333] ${
                     childActive
-                      ? 'bg-[#20A44A] font-semibold text-white'
-                      : 'text-[#333333] hover:bg-[#20A44A] hover:text-white'
+                      ? 'bg-[#18833a] font-semibold text-white'
+                      : 'text-[#333333] hover:bg-[#18833a] hover:text-white'
                   }`}
                 >
                   <ChildIcon className="mr-3 h-4 w-4 shrink-0" strokeWidth={1.7} aria-hidden="true" />
@@ -281,8 +283,8 @@ export default function Navbar() {
                   aria-current={childActive ? 'page' : undefined}
                   className={`flex items-center rounded-lg px-3 py-2.5 text-left text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#333333] ${
                     childActive
-                      ? 'bg-[#20A44A] font-semibold text-white'
-                      : 'text-[#333333] hover:bg-[#20A44A] hover:text-white'
+                      ? 'bg-[#18833a] font-semibold text-white'
+                      : 'text-[#333333] hover:bg-[#18833a] hover:text-white'
                   }`}
                 >
                   <ChildIcon className="mr-3 h-4 w-4 shrink-0" strokeWidth={1.7} aria-hidden="true" />
@@ -390,10 +392,11 @@ export default function Navbar() {
 
           <Link
             href="/contact"
+            prefetch={false}
             title={t.navbar.startProjectTitle}
             aria-label={t.navbar.startProjectAriaLabel}
             data-cta="start-project"
-            className="group inline-flex min-h-11 items-center gap-1 rounded-xl bg-[#20A44A] px-4 text-sm text-white shadow-[0_8px_24px_-12px_rgba(32,164,74,0.45)] transition hover:-translate-y-0.5 hover:bg-[#18833a] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#20A44A]"
+            className="group inline-flex min-h-11 items-center gap-1 rounded-xl bg-[#18833a] px-4 text-sm text-white shadow-[0_8px_24px_-12px_rgba(32,164,74,0.45)] transition hover:-translate-y-0.5 hover:bg-[#126b2e] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#20A44A]"
           >
             {t.navbar.startProject}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
@@ -455,8 +458,9 @@ export default function Navbar() {
           <div className="grid gap-3 border-t border-[#333333]/15 pt-4 sm:grid-cols-2">
             <Link
               href="/contact"
+              prefetch={false}
               onClick={closeMenu}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#20A44A] px-5 text-sm font-bold text-white transition hover:bg-[#18833a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#20A44A]"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#18833a] px-5 text-sm font-bold text-white transition hover:bg-[#126b2e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#20A44A]"
             >
               {t.navbar.startProject}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />

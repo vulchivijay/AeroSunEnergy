@@ -41,6 +41,7 @@ export default function HomeHeroSlider() {
                 <>
                 <Link
                   href="/contact"
+                  prefetch={false}
                   className="rounded-full bg-emerald-500 px-5 py-3 text-md font-black uppercase tracking-[0.18em] text-emerald-950 shadow-[0_18px_30px_-18px_rgba(16,185,129,0.9)] transition hover:bg-emerald-400"
                 >
                   {t.hero.buttons.quote}

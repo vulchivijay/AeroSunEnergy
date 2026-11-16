@@ -52,7 +52,7 @@ export default function Footer() {
 	const quickEnquiries = queries
 	const visibleNavLinks = navLinks
 	const comingSoonBadge = (
-		<span className="inline-flex items-center gap-1.5 border-l border-[#F5C76A]/45 pl-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#F5C76A]">
+		<span className="inline-flex items-center gap-1.5 border-l border-[#F5C76A]/45 pl-2 text-[9px] uppercase tracking-[0.16em] text-[#F5C76A]">
 			<span className="h-px w-2 bg-[#F5C76A]/70" aria-hidden="true" />
 			{t.navbar.comingSoon}
 		</span>
@@ -110,6 +110,7 @@ export default function Footer() {
 							</p>
 							<Link
 								href="/contact"
+								prefetch={false}
 								className="group mt-8 inline-flex min-h-12 items-center gap-3 rounded-full bg-[#A5D6A7] px-6 py-3 text-sm font-bold text-[#173B2C] transition hover:-translate-y-0.5 hover:bg-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7]"
 							>
 								{footer.contactCta}
@@ -169,7 +170,7 @@ export default function Footer() {
 							{visibleNavLinks.map((link) => (
 								<li key={link.label}>
 									{(link as { disabled?: boolean }).disabled || isProductionComingSoonLink(link.href) ? (
-										<span className="flex min-h-10 w-full flex-col items-start justify-center gap-0.5 py-1 text-[9px] text-gray-400">
+										<span className="flex min-h-10 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-gray-400">
 											<span className="min-w-0">{link.label}</span>{comingSoonBadge}
 										</span>
 									) : (
@@ -186,11 +187,11 @@ export default function Footer() {
 							{quickEnquiries.map((item) => (
 								<li key={item.href}>
 									{(item as { disabled?: boolean }).disabled || isProductionComingSoonLink(item.href) ? (
-										<span className="flex min-h-9 w-full flex-col items-start justify-center gap-0.5 py-1 text-[9px] text-gray-400">
+										<span className="flex min-h-9 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-gray-400">
 											<span className="min-w-0">{item.label}</span>{comingSoonBadge}
 										</span>
 									) : (
-										<Link href={item.href} aria-current={isActive(item.href) ? 'page' : undefined} className={`group inline-flex min-h-11 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] ${isActive(item.href) ? 'font-semibold text-[#DCEDC8]' : 'text-gray-300 hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]'}`}>
+										<Link href={item.href} prefetch={item.href !== '/installation-checklist' && item.href !== '/customer-agreement'} aria-current={isActive(item.href) ? 'page' : undefined} className={`group inline-flex min-h-11 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A5D6A7] ${isActive(item.href) ? 'font-semibold text-[#DCEDC8]' : 'text-gray-300 hover:text-[#DCEDC8] focus-visible:text-[#DCEDC8]'}`}>
 											<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(item.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
 											{item.label}
 										</Link>
@@ -206,7 +207,7 @@ export default function Footer() {
 							{solutions.map((solution) => (
 								<li key={solution.label}>
 									{isProductionComingSoonLink(solution.href) ? (
-										<span className="flex min-h-10 w-full flex-col items-start justify-center gap-0.5 py-1 text-[9px] text-gray-400">
+										<span className="flex min-h-10 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-gray-400">
 											<span className="min-w-0">{solution.label}</span>{comingSoonBadge}
 										</span>
 									) : (

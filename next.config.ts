@@ -3,6 +3,9 @@ import type { NextConfig } from 'next'
 const SITE_URL = 'https://aerosunenergy.in'
 
 const nextConfig: NextConfig = {
+  experimental: {
+    inlineCss: true,
+  },
   productionBrowserSourceMaps: true,
   images: {
     unoptimized: true,

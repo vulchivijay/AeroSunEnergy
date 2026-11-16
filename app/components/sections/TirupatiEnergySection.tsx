@@ -44,6 +44,7 @@ export default function TirupatiEnergySection() {
           <div className="mt-7 flex justify-end">
             <Link
               href="/contact"
+              prefetch={false}
               className="relative z-10 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#12865e] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#0f704e] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#087a61]"
             >
               {content.contactCta}

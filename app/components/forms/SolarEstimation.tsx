@@ -232,7 +232,7 @@ export function SolarEstimation() {
                 onClick={() => setSelectedPropertyIndex(0)}
                 className={`rounded-full px-5 py-2.5 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
                   selectedPropertyIndex === 0
-                    ? 'bg-emerald-500 text-white shadow-sm'
+                    ? 'bg-emerald-700 text-white shadow-sm'
                     : 'text-blue-100/75 hover:text-white'
                 }`}
               >
@@ -244,7 +244,7 @@ export function SolarEstimation() {
                 onClick={() => setSelectedPropertyIndex(1)}
                 className={`rounded-full px-5 py-2.5 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
                   selectedPropertyIndex !== 0
-                    ? 'bg-emerald-500 text-white shadow-sm'
+                    ? 'bg-emerald-700 text-white shadow-sm'
                     : 'text-blue-100/75 hover:text-white'
                 }`}
               >
@@ -400,10 +400,10 @@ export function SolarEstimation() {
 
             <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
+                <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
                   {calculatorText.pricingBreakdown}
-                </h3>
-                <p className="text-xs font-semibold text-slate-400">
+                </h2>
+                <p className="text-xs font-semibold text-slate-600">
                   {calculation.recommendedKw} {e.capacityUnit} · {currentPropertyType}
                 </p>
               </div>
@@ -446,7 +446,7 @@ export function SolarEstimation() {
                 setShowLeadForm(true)
                 setWhatsAppFallbackUrl(null)
               }}
-              className="mt-5 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-2xl bg-emerald-500 px-5 py-4 text-base font-extrabold text-white shadow-[0_12px_24px_-14px_rgba(16,185,129,0.75)] transition hover:bg-emerald-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+              className="mt-5 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-2xl bg-emerald-700 px-5 py-4 text-base font-extrabold text-white shadow-[0_12px_24px_-14px_rgba(16,185,129,0.75)] transition hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
             >
               {calculatorText.quoteCta}
               <span aria-hidden="true">→</span>
