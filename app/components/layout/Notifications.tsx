@@ -15,8 +15,8 @@ export default function Notifications() {
   }, [])
 
   return (
-    <div className="border-b border-sky-900/10 bg-[linear-gradient(135deg,#e4edfa,#f6eadb)] px-3 py-2 text-slate-800 shadow-[0_18px_42px_-30px_rgba(15,23,42,0.3)] sm:px-5">
-      <div className="relative mx-auto flex w-full items-center gap-3 overflow-hidden rounded-xl border border-indigo-200/20 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] text-white shadow-[0_18px_42px_-30px_rgba(15,23,42,0.75)]">
+    <div className="border-b border-sky-900/10 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] px-3 py-2 text-slate-800 shadow-[0_18px_42px_-30px_rgba(15,23,42,0.3)] sm:px-5">
+      <div className="relative mx-auto flex w-full items-center gap-3 overflow-hidden bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] text-white shadow-[0_18px_42px_-30px_rgba(15,23,42,0.75)]">
         <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-amber-300 via-sky-400 to-violet-500" aria-hidden="true" />
         <div className="ml-3 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-950/80 text-white shadow-sm">
           <Megaphone className="h-4 w-4" aria-hidden="true" />
