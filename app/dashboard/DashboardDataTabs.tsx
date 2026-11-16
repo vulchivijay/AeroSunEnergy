@@ -405,6 +405,7 @@ export default function DashboardDataTabs() {
                 onChange={(event) => setCreateJson(event.target.value)}
                 rows={7}
                 spellCheck={false}
+                placeholder="Enter a JSON object for the new record."
                 className="w-full rounded-xl border border-slate-300 bg-white p-3 font-mono text-xs text-slate-800 outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
               />
             </label>
@@ -503,6 +504,7 @@ export default function DashboardDataTabs() {
                                 onChange={(event) => setEditJson(event.target.value)}
                                 rows={8}
                                 spellCheck={false}
+                                placeholder="Enter the updated JSON object."
                                 className="w-full rounded-xl border border-slate-300 bg-white p-3 font-mono text-xs text-slate-800 outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
                               />
                             </label>
