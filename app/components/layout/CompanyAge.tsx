@@ -98,7 +98,7 @@ export default function CompanyAge() {
 	const formattedStartDate = formatter.format(START_DATE)
 
 	return (
-		<p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[12px] text-gray-200">
+		<p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[12px] text-slate-600">
 			<span>
 				{companyAge.operatingSince}{' '}
 				<span className="text-[14px]" style={digitalFontStyle}>{formattedStartDate}</span>
@@ -107,7 +107,7 @@ export default function CompanyAge() {
 				<span className="inline-flex items-baseline gap-1.5 text-[14px]" style={digitalFontStyle}>
 					{units.map(({ value, label }) => (
 						<span key={`${label}-${value}`} className="whitespace-nowrap">
-							<span className="text-sm font-bold tracking-[0.08em] text-[#A5D6A7]">
+							<span className="text-sm font-bold tracking-[0.08em] text-[#137c63]">
 								{String(value).padStart(2, '0')}
 							</span>{' '}
 							{label}

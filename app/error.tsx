@@ -1,8 +1,12 @@
 'use client'
 
+import dynamic from 'next/dynamic'
 import { useEffect } from 'react'
-import { ErrorExperience } from './components/system/ErrorExperience'
 import { useLocale } from '@/lib/LocaleContext'
+
+const ErrorExperience = dynamic(() =>
+  import('./components/system/ErrorExperience').then((module) => module.ErrorExperience),
+)
 
 export default function Error({
   error,

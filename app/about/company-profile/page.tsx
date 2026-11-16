@@ -30,18 +30,18 @@ function SectionHeading({
   return (
     <div className="mb-8 max-w-3xl">
       <p
-        className={`font-mono text-md font-bold uppercase tracking-[0.2em] ${inverse ? "text-lime-300" : "text-emerald-700 "}`}
+        className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? "border-amber-300/20 bg-white/[0.08] text-amber-200" : "border-teal-900/10 bg-white/75 text-teal-800"}`}
       >
         {number} / {eyebrow}
       </p>
       <h2
-        className={`mt-3 text-3xl font-black leading-tight tracking-tight sm:text-4xl ${inverse ? "text-white" : "text-slate-950 "}`}
+        className={`mt-4 text-3xl font-black leading-[1.05] tracking-tighter sm:text-4xl lg:text-5xl ${inverse ? "text-white" : "text-[#152b29]"}`}
       >
         {title}
       </h2>
       {description && (
         <p
-          className={`mt-4 text-sm leading-7 ${inverse ? "text-emerald-50/80" : "text-slate-600 "}`}
+          className={`mt-4 text-sm leading-7 sm:text-base sm:leading-8 ${inverse ? "text-indigo-100/90" : "text-slate-600"}`}
         >
           {description}
         </p>
@@ -56,10 +56,10 @@ function BulletList({ items }: { items: string[] }) {
       {items.map((item) => (
         <li
           key={item}
-          className="flex gap-3 text-md leading-6"
+          className="flex gap-3 text-sm leading-7 text-slate-700 sm:text-base"
         >
           <span
-            className="mt-2 h-2 w-2 shrink-0 rounded-full bg-emerald-500"
+            className="mt-2 h-2 w-2 shrink-0 rounded-full bg-teal-600"
             aria-hidden="true"
           />
           <span>{item}</span>
@@ -86,77 +86,77 @@ export default function CompanyProfilePage() {
   const futurePriorities = cp.futurePriorities;
 
   return (
-    <main className="overflow-hidden bg-[#f5f6ef] text-slate-900  ">
-      <section className="relative isolate overflow-hidden bg-[#14372f] text-white">
+    <main className="overflow-hidden bg-white text-slate-900">
+      <section className="relative isolate overflow-hidden bg-[radial-gradient(ellipse_at_75%_8%,rgba(245,158,11,0.12),transparent_38%),linear-gradient(125deg,#fffdf7_0%,#fef3c7_58%,#fff7ed_100%)] text-[#152b29]">
         <div
-          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_8%,rgba(52,211,153,0.2),transparent_38%),radial-gradient(ellipse_at_5%_100%,rgba(163,217,119,0.11),transparent_35%)]"
+          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_8%,rgba(217,119,6,0.1),transparent_38%),radial-gradient(ellipse_at_5%_100%,rgba(251,191,36,0.12),transparent_35%)]"
           aria-hidden="true"
         />
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:px-10">
-          <p className="inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-white/[0.06] px-3 py-1.5 text-md font-bold uppercase tracking-[0.2em] text-emerald-100">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+          <p className="inline-flex items-center gap-2 rounded-full border border-[#137c63]/15 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
             <span
-              className="h-1.5 w-1.5 rounded-full bg-lime-300"
+              className="h-1.5 w-1.5 rounded-full bg-amber-500"
               aria-hidden="true"
             />
             {cp.badge}
           </p>
-          <h1 className="mt-7 max-w-4xl text-4xl font-black uppercase leading-[1.05] tracking-[0.045em] sm:text-6xl lg:text-7xl">
+          <h1 className="mt-6 max-w-4xl text-4xl font-black leading-[1.02] tracking-tighter text-[#152b29] sm:text-6xl lg:text-7xl">
             {cp.title}
-            <span className="mt-2 block text-emerald-300">{cp.subtitle}</span>
+            <span className="mt-2 block text-[#137c63]">{cp.subtitle}</span>
           </h1>
-          <p className="mt-5 text-lg font-bold uppercase tracking-[0.22em] text-emerald-100/75 sm:text-xl">
+          <p className="mt-5 text-sm font-bold uppercase tracking-[0.2em] text-slate-600">
             {cp.motto}
           </p>
-          <p className="mt-6 max-w-3xl text-sm leading-7 text-emerald-50/85 sm:text-lg sm:leading-8">
+          <p className="mt-6 max-w-3xl text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
             {cp.intro}
           </p>
           <a
             href="/company-profile.pdf"
             download="company-profile.pdf"
-            className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-lime-300 px-5 py-3 text-sm font-bold text-emerald-950 transition hover:bg-lime-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-200"
+            className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#087a61] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61]"
           >
             <Download className="h-4 w-4" aria-hidden="true" />
             {cp.downloadLabel}
           </a>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-5">
-              <p className="text-md font-bold uppercase tracking-[0.16em] text-emerald-100/60">
+            <div className="rounded-2xl border border-[#e2e8e2] bg-white/85 p-5">
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#137c63]">
                 {cp.officeLabel}
               </p>
-              <p className="mt-2 text-md leading-6 text-white">
+              <p className="mt-2 text-sm leading-7 text-[#152b29]">
                 {cp.officeText}
               </p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-5">
-              <p className="text-md font-bold uppercase tracking-[0.16em] text-emerald-100/60">
+            <div className="rounded-2xl border border-[#e2e8e2] bg-white/85 p-5">
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#137c63]">
                 {cp.cinLabel}
               </p>
-              <p className="mt-2 font-mono text-lg font-bold tracking-wide text-lime-200">
+              <p className="mt-2 font-mono text-lg font-bold tracking-wide text-[#137c63]">
                 U35106AP2026PTC128748
               </p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-5 sm:col-span-2 lg:col-span-1">
-              <p className="text-md font-bold uppercase tracking-[0.16em] text-emerald-100/60">
+            <div className="rounded-2xl border border-[#e2e8e2] bg-white/85 p-5 sm:col-span-2 lg:col-span-1">
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#137c63]">
                 {cp.focusLabel}
               </p>
-              <div className="mt-3 flex flex-wrap gap-2 text-md font-semibold text-white">
+              <div className="mt-3 flex flex-wrap gap-2 text-sm font-semibold text-[#152b29]">
                 {cp.focusTags?.map((tag: string, idx: number) => (
                   <span key={tag} className="inline-flex items-center gap-1.5">
                     {idx === 0 && (
                       <Sun
-                        className="h-4 w-4 text-lime-300"
+                        className="h-4 w-4 text-[#137c63]"
                         aria-hidden="true"
                       />
                     )}
                     {idx === 1 && (
                       <Wind
-                        className="h-4 w-4 text-lime-300"
+                        className="h-4 w-4 text-[#137c63]"
                         aria-hidden="true"
                       />
                     )}
                     {idx === 2 && (
                       <Zap
-                        className="h-4 w-4 text-lime-300"
+                        className="h-4 w-4 text-[#137c63]"
                         aria-hidden="true"
                       />
                     )}
@@ -169,7 +169,7 @@ export default function CompanyProfilePage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-7xl space-y-16 px-5 py-14 sm:space-y-20 sm:px-8 sm:py-20 lg:px-10">
+      <div className="mx-auto max-w-7xl space-y-12 px-4 py-12 sm:space-y-16 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
         <section>
           <SectionHeading
             number="01"
@@ -185,7 +185,7 @@ export default function CompanyProfilePage() {
             eyebrow={cp.section2Eyebrow}
             title={cp.section2Title}
           />
-          <p className="max-w-4xl rounded-3xl border border-emerald-900/10 bg-white p-6 text-lg leading-8 text-slate-700    sm:p-8">
+          <p className="max-w-4xl rounded-[22px] border border-slate-200 bg-slate-50 p-6 text-base leading-8 text-slate-700 sm:p-8 sm:text-lg">
             {cp.section2Text}
           </p>
         </section>
@@ -196,7 +196,7 @@ export default function CompanyProfilePage() {
             eyebrow={cp.section3Eyebrow}
             title={cp.section3Title}
           />
-          <div className="rounded-3xl border border-emerald-900/10 bg-white p-6   sm:p-8">
+          <div className="rounded-[22px] border border-slate-200 bg-slate-50 p-6 sm:p-8">
             <BulletList items={missionPoints} />
           </div>
         </section>
@@ -208,8 +208,8 @@ export default function CompanyProfilePage() {
             title={cp.section4Title}
           />
           <div className="grid gap-5 lg:grid-cols-3">
-            <article className="rounded-3xl border border-emerald-900/10 bg-white p-6   sm:p-7">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-100 text-emerald-800  ">
+            <article className="rounded-[22px] border border-slate-200 bg-white p-6 sm:p-7">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-50 text-teal-800">
                 <Sun className="h-5 w-5" aria-hidden="true" />
               </div>
               <h3 className="mt-5 text-xl font-bold">{cp.solarTitle}</h3>
@@ -217,35 +217,35 @@ export default function CompanyProfilePage() {
                 <BulletList items={solarSolutions} />
               </div>
             </article>
-            <article className="rounded-3xl border border-emerald-900/10 bg-white p-6   sm:p-7">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-sky-800  ">
+            <article className="rounded-[22px] border border-slate-200 bg-white p-6 sm:p-7">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-50 text-sky-800">
                 <Wind className="h-5 w-5" aria-hidden="true" />
               </div>
               <h3 className="mt-5 text-xl font-bold">{cp.windTitle}</h3>
-              <p className="mt-3 text-md leading-6 text-slate-600 ">
+              <p className="mt-3 text-sm leading-7 text-slate-600">
                 {cp.windProductIntro}
               </p>
               <div className="mt-4">
                 <BulletList items={windDevelopment} />
               </div>
             </article>
-            <article className="rounded-3xl border border-emerald-900/10 bg-white p-6   sm:p-7">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-100 text-violet-800  ">
+            <article className="rounded-[22px] border border-slate-200 bg-white p-6 sm:p-7">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-50 text-amber-800">
                 <Zap className="h-5 w-5" aria-hidden="true" />
               </div>
               <h3 className="mt-5 text-xl font-bold">{cp.hybridTitle}</h3>
-              <p className="mt-3 text-md leading-6 text-slate-600 ">
+              <p className="mt-3 text-sm leading-7 text-slate-600">
                 {cp.hybridIntro}
               </p>
               <div className="mt-4">
                 <BulletList items={hybridApplications} />
               </div>
-              <p className="mt-4 text-md leading-6 text-slate-600 ">
+              <p className="mt-4 text-sm leading-7 text-slate-600">
                 {cp.hybridFinal}
               </p>
             </article>
           </div>
-          <p className="mt-5 rounded-2xl border border-amber-300/50 bg-amber-50 px-5 py-4 text-md leading-6 text-amber-950   ">
+          <p className="mt-5 rounded-2xl border border-amber-200 bg-[#fff8ed] px-5 py-4 text-sm leading-7 text-amber-950">
             {cp.waitNote}
           </p>
         </section>
@@ -256,24 +256,24 @@ export default function CompanyProfilePage() {
             eyebrow={cp.productSectionEyebrow}
             title={cp.productSectionTitle}
           />
-          <div className="overflow-hidden rounded-3xl border border-emerald-900/10 bg-white  ">
-            <div className="grid grid-cols-[0.8fr_1.2fr] bg-emerald-950 px-5 py-4 text-md font-bold uppercase tracking-[0.16em] text-emerald-50 sm:px-7">
+          <div className="overflow-hidden rounded-[22px] border border-slate-200 bg-white">
+            <div className="grid grid-cols-1 gap-2 bg-[linear-gradient(145deg,#713f12_0%,#92400e_55%,#a16207_100%)] px-5 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white sm:grid-cols-[0.8fr_1.2fr] sm:gap-0 sm:px-7">
               <span>{cp.productTableCategory}</span>
               <span>{cp.productTableServices}</span>
             </div>
             {productsAndServices.map(([category, description], index) => (
               <div
                 key={category}
-                className={`grid grid-cols-[0.8fr_1.2fr] gap-3 px-5 py-4 text-md leading-6 sm:px-7 ${
+                className={`grid grid-cols-1 gap-1 px-5 py-4 text-sm leading-7 sm:grid-cols-[0.8fr_1.2fr] sm:gap-3 sm:px-7 ${
                   index % 2 === 0
-                    ? "bg-white "
-                    : "bg-emerald-50/70 "
+                    ? "bg-white"
+                    : "bg-slate-50"
                 }`}
               >
-                <span className="font-semibold text-slate-900 ">
+                <span className="font-semibold text-[#112c2a]">
                   {category}
                 </span>
-                <span className="text-slate-600 ">
+                <span className="text-slate-600">
                   {description}
                 </span>
               </div>
@@ -289,7 +289,7 @@ export default function CompanyProfilePage() {
               title={cp.innovationTitle}
               description={cp.innovationDescription}
             />
-            <p className="rounded-2xl border-l-4 border-lime-500 bg-white px-5 py-4 text-md leading-6 text-slate-600  ">
+            <p className="rounded-2xl border-l-4 border-amber-500 bg-white px-5 py-4 text-sm leading-7 text-slate-600 shadow-sm">
               {cp.innovationNote}
             </p>
           </div>
@@ -297,12 +297,12 @@ export default function CompanyProfilePage() {
             {innovationFocus.map((item, index) => (
               <li
                 key={item}
-                className="flex gap-4 rounded-2xl border border-emerald-900/10 bg-white p-5  "
+                className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
               >
-                <span className="font-mono text-md font-bold text-emerald-700 ">
+                <span className="font-mono text-sm font-bold text-teal-700">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className="text-md leading-6 text-slate-700 ">
+                <span className="text-sm leading-7 text-slate-700">
                   {item}
                 </span>
               </li>
@@ -321,12 +321,12 @@ export default function CompanyProfilePage() {
             {developmentSteps.map((step, index) => (
               <li
                 key={step}
-                className="rounded-2xl border border-emerald-900/10 bg-white p-5  "
+                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
               >
-                <span className="font-mono text-md font-bold text-emerald-700 ">
+                <span className="font-mono text-sm font-bold text-teal-700">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <p className="mt-3 text-md leading-6 text-slate-700 ">
+                <p className="mt-3 text-sm leading-7 text-slate-700">
                   {step}
                 </p>
               </li>
@@ -352,13 +352,13 @@ export default function CompanyProfilePage() {
               description={cp.manufacturingDescription}
             />
             <BulletList items={manufacturingModel} />
-            <p className="mt-5 text-md leading-6 text-slate-600 ">
+            <p className="mt-5 text-sm leading-7 text-slate-600">
               {cp.manufacturingNote}
             </p>
           </div>
         </section>
 
-        <section className="rounded-[2rem] bg-[#14372f] p-6 text-white sm:p-10">
+        <section className="rounded-[30px] bg-[linear-gradient(145deg,#713f12_0%,#92400e_55%,#a16207_100%)] p-6 text-white shadow-[0_24px_60px_-40px_rgba(120,53,15,0.35)] sm:p-10">
           <SectionHeading
             number="10"
             eyebrow={cp.qualityEyebrow}
@@ -370,17 +370,17 @@ export default function CompanyProfilePage() {
             {qualityPractices.map((practice) => (
               <div
                 key={practice}
-                className="flex gap-3 text-md leading-6 text-emerald-50"
+                className="flex gap-3 text-sm leading-7 text-indigo-50/90"
               >
                 <span
-                  className="mt-2 h-2 w-2 shrink-0 rounded-full bg-lime-300"
+                  className="mt-2 h-2 w-2 shrink-0 rounded-full bg-amber-300"
                   aria-hidden="true"
                 />
                 {practice}
               </div>
             ))}
           </div>
-          <p className="mt-7 border-t border-white/15 pt-5 text-md leading-6 text-emerald-100/80">
+          <p className="mt-7 border-t border-white/15 pt-5 text-sm leading-7 text-indigo-100/90">
             {cp.qualityNote}
           </p>
         </section>
@@ -398,7 +398,7 @@ export default function CompanyProfilePage() {
             {reasonsToWorkWithUs.map((reason) => (
               <div
                 key={reason}
-                className="rounded-2xl border border-emerald-900/10 bg-white p-5 text-md font-semibold leading-6 text-slate-700   "
+                className="rounded-2xl border border-slate-200 bg-white p-5 text-sm font-semibold leading-7 text-slate-700 shadow-sm"
               >
                 {reason}
               </div>
@@ -417,12 +417,12 @@ export default function CompanyProfilePage() {
             {futurePriorities.map((priority, index) => (
               <div
                 key={priority}
-                className="flex gap-4 rounded-2xl border border-emerald-900/10 bg-white p-5  "
+                className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
               >
-                <span className="font-mono text-md font-bold text-emerald-700 ">
+                <span className="font-mono text-sm font-bold text-teal-700">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <p className="text-md leading-6 text-slate-700 ">
+                <p className="text-sm leading-7 text-slate-700">
                   {priority}
                 </p>
               </div>
@@ -430,63 +430,63 @@ export default function CompanyProfilePage() {
           </div>
         </section>
 
-        <section className="overflow-hidden rounded-[2rem] border border-emerald-900/10 bg-white  ">
+        <section className="overflow-hidden rounded-[30px] border border-slate-200 bg-white">
           <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
-            <div className="bg-[#14372f] p-7 text-white sm:p-10">
-              <p className="inline-flex w-fit rounded-full border border-lime-300/20 bg-white/[0.06] px-4 py-2 text-md font-bold uppercase tracking-[0.18em] text-lime-300">
+            <div className="bg-[linear-gradient(145deg,#713f12_0%,#92400e_55%,#a16207_100%)] p-7 text-white sm:p-10">
+              <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-amber-200">
                 13 / {cp.contactEyebrow}
               </p>
-              <h2 className="mt-4 text-3xl font-black leading-tight sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-black leading-[1.05] tracking-tighter sm:text-4xl">
                 {cp.contactTitle}
               </h2>
-              <p className="mt-4 text-lg font-semibold italic text-emerald-100">
+              <p className="mt-4 text-lg font-semibold italic text-indigo-100">
                 {cp.contactTagline}
               </p>
             </div>
             <div className="space-y-5 p-7 sm:p-10">
-              <h3 className="text-xl font-bold text-slate-950 ">
+              <h3 className="text-xl font-bold text-[#112c2a]">
                 {cp.contactCompany}
               </h3>
-              <p className="flex gap-3 text-md leading-6 text-slate-600 ">
+              <p className="flex gap-3 text-sm leading-7 text-slate-600">
                 <MapPin
-                  className="mt-1 h-4 w-4 shrink-0 text-emerald-700 "
+                  className="mt-1 h-4 w-4 shrink-0 text-teal-700"
                   aria-hidden="true"
                 />
                 {cp.officeText}.
               </p>
               <a
-                className="flex items-center gap-3 text-md text-slate-700 hover:text-emerald-700  "
+                className="flex items-center gap-3 text-sm text-slate-700 transition hover:text-teal-800"
                 href="https://aerosunenergy.in/"
               >
                 <Globe2
-                  className="h-4 w-4 text-emerald-700 "
+                  className="h-4 w-4 text-teal-700"
                   aria-hidden="true"
                 />
                 {cp.contactWebsite}
               </a>
               <a
-                className="flex items-center gap-3 text-md text-slate-700 hover:text-emerald-700  "
+                className="flex items-center gap-3 text-sm text-slate-700 transition hover:text-teal-800"
                 href="mailto:customercare@aerosunenergy.in"
               >
                 <Mail
-                  className="h-4 w-4 text-emerald-700 "
+                  className="h-4 w-4 text-teal-700"
                   aria-hidden="true"
                 />
                 {cp.contactEmail}
               </a>
               <a
-                className="flex items-center gap-3 text-md text-slate-700 hover:text-emerald-700  "
+                className="flex items-center gap-3 text-sm text-slate-700 transition hover:text-teal-800"
                 href="tel:+918099181075"
               >
                 <Phone
-                  className="h-4 w-4 text-emerald-700 "
+                  className="h-4 w-4 text-teal-700"
                   aria-hidden="true"
                 />
                 {cp.contactPhone}
               </a>
               <Link
                 href="/contact"
-                className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-emerald-700 px-5 py-2.5 text-md font-bold text-white transition hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+                className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-[#087a61] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61]"
               >
                 {cp.contactAction}
                 <ArrowRight

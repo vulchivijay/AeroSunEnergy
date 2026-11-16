@@ -110,7 +110,7 @@ export function CompanyTrustSection() {
                     <div key={fact.label} className={`flex min-w-0 items-center gap-3 rounded-xl border p-3 ${style}`}>
                       <Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
                       <span className="min-w-0">
-                        <span className="block text-xs font-bold uppercase tracking-[0.12em] opacity-75 sm:text-sm">
+                        <span className="block text-xs font-bold uppercase tracking-[0.12em] sm:text-sm">
                           {fact.label}
                         </span>
                         <span className="mt-1 block text-sm font-bold text-slate-900">
@@ -127,6 +127,7 @@ export function CompanyTrustSection() {
 
         <Link
           href="/contact"
+          prefetch={false}
           className="mt-7 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#A3D977] px-5 py-3 text-sm font-bold text-slate-900 transition hover:bg-[#c7efa4] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
           {content.contactCta}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
@@ -214,7 +215,7 @@ export function ProjectEvidenceSection() {
                 className={`flex min-h-64 flex-col justify-between rounded-[1.5rem] border border-[#cbd5cc] bg-white p-6 shadow-[0_20px_50px_-40px_rgba(16,43,40,0.35)] sm:p-8 ${index === 1 ? 'hidden md:flex' : ''} ${index === 2 ? 'hidden lg:flex' : ''}`}
               >
                 <div className="blur-md">
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c46a18]">{content.placeholderLabel}</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-amber-800">{content.placeholderLabel}</p>
                   <blockquote className="mt-5 text-lg font-semibold leading-8 text-slate-950 sm:text-xl">
                     “{testimonial.quote}”
                   </blockquote>
@@ -240,7 +241,7 @@ export function ProjectEvidenceSection() {
 
         <div className="mt-5 flex flex-col gap-4 rounded-2xl border border-amber-300 bg-[#fff3df] p-5 sm:flex-row sm:items-center sm:justify-between">
           <p className="max-w-3xl text-sm leading-6 text-amber-950">{content.note}</p>
-          <Link href="/contact" className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-amber-950 underline decoration-amber-500 underline-offset-4">
+          <Link href="/contact" prefetch={false} className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-amber-950 underline decoration-amber-500 underline-offset-4">
             {content.cta}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>

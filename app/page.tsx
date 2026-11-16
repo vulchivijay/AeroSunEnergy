@@ -54,7 +54,7 @@ function RecognitionHighlight() {
             <h2 className="mt-4 max-w-md text-3xl font-bold leading-tight tracking-tight text-[#152b29] sm:text-4xl">
               {t.home.recognitionHeader.title}
             </h2>
-            <p className="mt-4 max-w-lg text-sm leading-6 text-[#597079] sm:text-base sm:leading-7">
+            <p className="mt-4 max-w-lg text-sm leading-6 text-slate-700 sm:text-base sm:leading-7">
               {t.home.recognitionHeader.description}
             </p>
           </div>
