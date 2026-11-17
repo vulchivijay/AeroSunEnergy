@@ -45,7 +45,7 @@ export default function Brands() {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-[linear-gradient(120deg,#ffffff_0%,#f8fafc_48%,#e8eef5_100%)] px-4 py-16 sm:px-6 lg:px-10 lg:py-20"
+      className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-16 sm:px-6 lg:px-10 lg:py-20"
       aria-labelledby="brand-section-title"
     >
       <div
@@ -57,13 +57,13 @@ export default function Brands() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="min-w-0">
               <p className="inline-flex items-center gap-2 rounded-full border border-amber-700/20 bg-amber-100/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.24em] text-amber-900">
-                <span className="h-2 w-2 rounded-full bg-emerald-600 shadow-[0_0_14px_rgba(5,150,105,0.45)]" aria-hidden="true" />
+                <span className="h-2 w-2 rounded-full bg-emerald-600 shadow-sm" aria-hidden="true" />
                 {section.eyebrow}
               </p>
               <h2 id="brand-section-title" className="mt-4 max-w-3xl text-2xl font-black tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
                 {section.title}
               </h2>
-              <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-black sm:text-base">
                 {section.subtitle}
               </p>
             </div>
@@ -87,7 +87,7 @@ export default function Brands() {
             return (
               <li
                 key={brand.file}
-                className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-[1.25rem] border p-3 shadow-[0_22px_55px_-38px_rgba(0,0,0,0.75)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_65px_-38px_rgba(0,0,0,0.85)] sm:rounded-[1.5rem] sm:p-4"
+                className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border p-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-4"
                 style={{
                   borderColor: `hsl(${brand.hue} 68% 72%)`,
                   background: `linear-gradient(145deg, hsl(${brand.hue} 82% 95%), #fff 48%, hsl(${brand.hue} 76% 89%))`,
@@ -95,7 +95,7 @@ export default function Brands() {
                 }}
               >
                 <div
-                  className="relative flex h-24 items-center justify-center overflow-hidden rounded-xl border border-white/80 shadow-inner sm:h-28 sm:p-2"
+                  className="relative flex h-24 items-center justify-center overflow-hidden rounded-2xl border border-white/80 shadow-inner sm:h-28 sm:p-2"
                   style={{
                     background: `radial-gradient(circle at 50% 0%, white, hsl(${brand.hue} 75% 96%) 78%)`,
                     boxShadow: `inset 0 0 0 1px hsl(${brand.hue} 55% 90%)`,
@@ -150,11 +150,11 @@ export default function Brands() {
                     </span>
                   </div>
                 ) : (
-                  <div className="mt-2 flex min-h-8 items-center justify-center rounded-xl border border-dashed border-slate-300 bg-white/70 px-2 py-1 text-center text-sm font-bold text-slate-600">
+                  <div className="mt-2 flex min-h-8 items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white/70 px-2 py-1 text-center text-sm font-bold text-slate-600">
                     {section.quoteRequired}
                   </div>
                 )}
-                <p className="sr-only mt-auto flex min-h-[5.5rem] items-center justify-center rounded-xl border border-white/70 bg-white/60 px-2 py-2 text-center text-sm leading-4 text-slate-600 sm:text-sm sm:leading-5">
+                <p className="sr-only mt-auto flex min-h-[5.5rem] items-center justify-center rounded-2xl border border-white/70 bg-white/60 px-2 py-2 text-center text-sm leading-4 text-slate-600 sm:text-sm sm:leading-5">
                   {brand.basis}
                 </p>
               </li>

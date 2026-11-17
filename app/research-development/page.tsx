@@ -249,7 +249,7 @@ function InlineContent({ text }: { text: string }) {
       return (
         <code
           key={index}
-          className="rounded bg-emerald-950/[0.06] px-1.5 py-0.5 font-mono text-[0.92em] text-emerald-950  "
+          className="rounded-2xl bg-emerald-950/[0.06] px-1.5 py-0.5 font-mono text-[0.92em] text-emerald-950  "
         >
           {part.slice(1, -1)}
         </code>
@@ -287,7 +287,7 @@ function MathExpression({ expression }: { expression: string }) {
   }
 
   return (
-    <span className="rounded bg-emerald-950/[0.06] px-1.5 py-0.5 font-mono text-md text-emerald-950  ">
+    <span className="rounded-2xl bg-emerald-950/[0.06] px-1.5 py-0.5 font-mono text-md text-emerald-950  ">
       {expression}
     </span>
   );
@@ -432,7 +432,7 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
 
   if (block.type === "code") {
     return (
-      <div className="my-7 overflow-hidden rounded-2xl border border-emerald-900/20 bg-[#10251f] shadow-lg shadow-emerald-950/10">
+      <div className="my-7 overflow-hidden rounded-2xl border border-emerald-900/20 bg-[#10251f] shadow-sm shadow-emerald-950/10">
         {block.language && (
           <p className="border-b border-white/10 px-4 py-2 font-mono text-xs uppercase tracking-[0.18em] text-emerald-200/70">
             {block.language}
@@ -510,7 +510,7 @@ export default function ResearchDevelopmentPage() {
 
   return (
     <main className="overflow-hidden bg-[#f5f6ef] text-slate-900  ">
-      <section className="relative isolate overflow-hidden bg-[#14372f] text-white">
+      <section className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] text-slate-900">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_8%,rgba(52,211,153,0.2),transparent_38%),radial-gradient(ellipse_at_5%_100%,rgba(163,217,119,0.11),transparent_35%)]" />
         <div className="absolute -right-36 top-12 -z-10 h-[34rem] w-[34rem] rounded-full border border-white/[0.08] sm:right-[-8rem]">
           <div className="absolute inset-10 rounded-full border border-white/[0.08]" />
@@ -520,17 +520,17 @@ export default function ResearchDevelopmentPage() {
 
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:px-10 lg:py-24">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-white/[0.06] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.24em] text-emerald-100">
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-800/20 bg-white/70 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.24em] text-emerald-800">
               <span className="h-1.5 w-1.5 rounded-full bg-lime-300" />
               {copy.text[0]}
             </div>
-            <p className="mt-8 text-md font-bold uppercase tracking-[0.3em] text-emerald-100/65">
+            <p className="mt-8 text-md font-bold uppercase tracking-[0.3em] text-emerald-800">
               {sourceTitle?.text ?? copy.text[1]}
             </p>
-            <h1 className="mt-4 max-w-3xl text-4xl font-black leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="mt-4 max-w-3xl text-4xl font-black leading-[1.02] tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
               {sourceSubtitle?.text ?? copy.text[2]}
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-emerald-50/85 sm:text-xl">
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-700 sm:text-xl">
               {copy.text[3]}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -543,7 +543,7 @@ export default function ResearchDevelopmentPage() {
               {navigationSections[0]?.heading && (
                 <a
                   href={`#${navigationSections[0].heading.id}`}
-                  className="rounded-full border border-white/20 px-5 py-3 text-md font-bold text-white transition hover:bg-white/10"
+                  className="rounded-full border border-emerald-800/30 px-5 py-3 text-md font-bold text-emerald-900 transition hover:bg-emerald-50"
                 >
                   {copy.text[5]}
                 </a>
@@ -552,8 +552,8 @@ export default function ResearchDevelopmentPage() {
           </div>
 
           <aside className="relative mx-auto w-full max-w-md lg:ml-auto">
-            <div className="absolute -inset-5 rounded-[2.5rem] bg-emerald-400/15 blur-3xl" />
-            <div className="relative rounded-[2rem] border border-white/15 bg-white/[0.07] p-6 shadow-2xl shadow-black/30 backdrop-blur-sm sm:p-8">
+            <div className="absolute -inset-5 rounded-4xl bg-emerald-400/15 blur-3xl" />
+            <div className="relative rounded-2xl border border-white/15 bg-[#14372f] p-6 shadow-sm shadow-black/30 backdrop-blur-sm sm:p-8">
               <p className="inline-flex w-fit rounded-full border border-lime-200/20 bg-white/[0.06] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-lime-200">
                 {copy.text[6]}
               </p>
@@ -567,7 +567,7 @@ export default function ResearchDevelopmentPage() {
                 {inline[0].map((item, index) => (
                   <div
                     key={item}
-                    className="rounded-xl border border-white/10 bg-white/[0.04] p-3"
+                    className="rounded-2xl border border-white/10 bg-white/[0.04] p-3"
                   >
                     <span className="font-mono text-xs text-lime-200/70">
                       0{index + 1}
@@ -600,7 +600,7 @@ export default function ResearchDevelopmentPage() {
                   <li key={heading.id}>
                     <a
                       href={`#${heading.id}`}
-                      className="group flex gap-3 rounded-xl border border-slate-200 bg-[#f7f8f2] px-3 py-2.5 text-md leading-6 text-slate-700 transition hover:border-emerald-300 hover:bg-emerald-50     "
+                      className="group flex gap-3 rounded-2xl border border-slate-200 bg-[#f7f8f2] px-3 py-2.5 text-md leading-6 text-slate-700 transition hover:border-emerald-300 hover:bg-emerald-50     "
                     >
                       <span className="font-mono text-xs font-bold text-emerald-700 ">
                         {String(index + 1).padStart(2, "0")}
@@ -624,11 +624,11 @@ export default function ResearchDevelopmentPage() {
             id={section.heading?.id}
             className={
               sectionIndex % 2 === 0
-                ? "scroll-mt-8"
-                : "scroll-mt-8 border-y border-slate-200 bg-white/70  "
+                ? "scroll-mt-8 bg-gradient-to-br from-[#f1f2f6] to-white"
+                : "scroll-mt-8 border-y border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6]"
             }
           >
-            <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16 lg:px-10">
+            <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
               {section.heading && (
                 <div className="mb-8 grid gap-4 border-b border-emerald-900/10 pb-6 sm:grid-cols-[auto_1fr] sm:items-start ">
                   <span className="flex h-11 w-11 items-center justify-center rounded-full bg-emerald-900 font-mono text-md font-bold text-lime-300">
@@ -645,7 +645,7 @@ export default function ResearchDevelopmentPage() {
               )}
               <div
                 className={
-                  section.heading ? "max-w-5xl sm:ml-[3.75rem]" : "max-w-5xl"
+                  section.heading ? "max-w-5xl sm:ml-15" : "max-w-5xl"
                 }
               >
                 {section.blocks.map((block, blockIndex) => (
@@ -660,9 +660,9 @@ export default function ResearchDevelopmentPage() {
         ))}
       </div>
 
-      <section className="bg-[#1d3d43] text-white">
-        <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16 lg:px-10">
-          <p className="inline-flex w-fit rounded-full border border-lime-300/20 bg-white/[0.06] px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-lime-300">
+      <section className={`text-slate-900 ${sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <p className="inline-flex w-fit rounded-full border border-emerald-800/20 bg-white/70 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-emerald-800">
             {copy.text[1]}
           </p>
           <p className="mt-3 max-w-3xl text-2xl font-black leading-tight sm:text-3xl">

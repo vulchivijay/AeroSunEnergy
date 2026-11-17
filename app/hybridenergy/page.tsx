@@ -56,13 +56,13 @@ export default function HybridEnergyPage() {
               {hybridPage.hero.subtitle}
             </p>
           </div>
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.06] p-5 backdrop-blur-sm sm:p-7">
+          <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-white/[0.06] p-5 backdrop-blur-sm sm:p-6">
             <div className="flex items-center justify-between gap-3">
               <div>
                 <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-emerald-200">{hybridPage.hero.tagline}</p>
                 <p className="mt-1 text-xl font-black tracking-tight text-white sm:text-2xl">{hybridPage.hero.supporting}</p>
               </div>
-              <span className="rounded-xl border border-emerald-200/20 bg-emerald-300/10 px-3 py-2 text-[12px] font-bold uppercase tracking-[0.14em] text-emerald-100">{hybridPage.labels.statusBalanced}</span>
+              <span className="rounded-2xl border border-emerald-200/20 bg-emerald-300/10 px-3 py-2 text-[12px] font-bold uppercase tracking-[0.14em] text-emerald-100">{hybridPage.labels.statusBalanced}</span>
             </div>
             <div className="relative mt-7 grid grid-cols-2 gap-3">
               <svg viewBox="0 0 300 130" preserveAspectRatio="none" className="pointer-events-none absolute inset-x-0 top-7 z-0 h-24 w-full text-emerald-200/50" aria-hidden="true">
@@ -99,8 +99,8 @@ export default function HybridEnergyPage() {
 
       <SharedHeroSlider slides={hybridSlidesLocalized} ariaLabel={hybridPage.labels.sliderAriaLabel} />
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
-        <div className="mb-9 max-w-3xl">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+        <div className="mb-8 max-w-3xl">
           <HybridSectionEyebrow>{hybridPage.categories.eyebrow}</HybridSectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{hybridPage.categories.title}</h2>
         </div>
@@ -118,8 +118,8 @@ export default function HybridEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
-        <div className="rounded-4xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-[0_32px_90px_-38px_rgba(15,23,42,1)] sm:p-8">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+        <div className="rounded-2xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-sm sm:p-8">
           <div className="mb-6 flex items-center justify-between gap-3">
             <div>
               <HybridSectionEyebrow>{hybridPage.integration.eyebrow}</HybridSectionEyebrow>
@@ -132,7 +132,7 @@ export default function HybridEnergyPage() {
 
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {integrationTypesLocalized.map((item, index) => (
-              <div key={item} className="rounded-3xl border border-white/10 bg-white/5 p-4">
+              <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-4">
                 <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-lg font-bold text-emerald-300">
                   {index + 1}
                 </div>
@@ -143,7 +143,7 @@ export default function HybridEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="grid gap-5 sm:grid-cols-2">
             {keyBenefitsLocalized.map((benefit) => (
@@ -158,15 +158,15 @@ export default function HybridEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
-        <div className="mb-9 max-w-3xl">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+        <div className="mb-8 max-w-3xl">
           <HybridSectionEyebrow>{hybridPage.solutions.eyebrow}</HybridSectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{hybridPage.solutions.title}</h2>
         </div>
 
         <div className="space-y-8">
           {serviceSectionsLocalized.map((service, index) => (
-            <article key={service.title} className="rounded-4xl border border-slate-200 bg-white p-5 shadow-[0_20px_44px_-30px_rgba(15,23,42,0.32)] sm:p-8">
+            <article key={service.title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
               <div className="mb-6 flex items-center justify-between gap-3">
                 <div>
                   <p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700">{hybridPage.labels.servicePrefix} {index + 1}</p>
@@ -193,7 +193,7 @@ export default function HybridEnergyPage() {
                   </div>
                 </div>
 
-                <div className="rounded-[1.8rem] border border-emerald-200 bg-emerald-50 p-5">
+                <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
                   <p className="text-[12px] font-black uppercase tracking-[0.26em] text-emerald-700">{hybridPage.labels.benefits}</p>
                   <ul className="mt-4 space-y-3 text-md leading-7 text-slate-700">
                     {service.benefits.map((benefit) => (
@@ -207,7 +207,7 @@ export default function HybridEnergyPage() {
               </div>
 
               <div className="mt-8 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
-                <div className="rounded-[1.75rem] border border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ffffff_100%)] p-5">
+                <div className="rounded-2xl border border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ffffff_100%)] p-5">
                   <p className="text-[12px] font-black uppercase tracking-[0.24em] text-sky-700">{hybridPage.labels.exampleCalculation}</p>
                   <h4 className="mt-3 text-xl font-black tracking-[0.03em] text-slate-900">{service.calculation.label}</h4>
                   <p className="mt-3 font-mono text-md leading-7 text-slate-800">{service.calculation.formula}</p>
@@ -215,7 +215,7 @@ export default function HybridEnergyPage() {
                   <p className="mt-4 text-md leading-6 text-slate-700">{service.calculation.note}</p>
                 </div>
 
-                <div className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-5">
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
                   <p className="text-[12px] font-black uppercase tracking-[0.24em] text-slate-600">{hybridPage.labels.faqs}</p>
                   <div className="mt-4 space-y-4">
                     {service.faqs.map((item) => (
@@ -247,8 +247,8 @@ export default function HybridEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
-        <div className="mb-9 max-w-3xl">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+        <div className="mb-8 max-w-3xl">
           <HybridSectionEyebrow>{hybridPage.fit.eyebrow}</HybridSectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{hybridPage.labels.typicalCombinations}</h2>
         </div>
@@ -256,8 +256,8 @@ export default function HybridEnergyPage() {
         <HybridTable rows={projectRowsLocalized} />
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
-        <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)] sm:p-8">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
               <HybridSectionEyebrow>{hybridPage.labels.recommendedLaunch}</HybridSectionEyebrow>
@@ -274,7 +274,7 @@ export default function HybridEnergyPage() {
               </div>
             </div>
 
-            <div className="overflow-hidden rounded-4xl border border-slate-200 bg-slate-950 p-5 shadow-[0_28px_70px_-36px_rgba(15,23,42,0.9)]">
+            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 p-5 shadow-sm">
               <div className="relative h-72 overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
                 <OptimizedImage
                   src="/images/slider/slider-13.png"
@@ -285,7 +285,7 @@ export default function HybridEnergyPage() {
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-900/30 to-transparent" />
               </div>
-              <div className="mt-5 rounded-3xl border border-emerald-400/20 bg-emerald-500/10 p-4">
+              <div className="mt-5 rounded-2xl border border-emerald-400/20 bg-emerald-500/10 p-4">
                 <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-200">{hybridPage.labels.keyInsight}</p>
                 <h3 className="mt-2 text-xl font-bold text-white">{hybridPage.labels.insightTitle}</h3>
                 <p className="mt-2 text-sm leading-7 text-slate-200">
@@ -296,7 +296,7 @@ export default function HybridEnergyPage() {
           </div>
         </div>
       </section>
-      <TirupatiEnergySection />
+      <TirupatiEnergySection background="first" />
     </main>
   )
 }

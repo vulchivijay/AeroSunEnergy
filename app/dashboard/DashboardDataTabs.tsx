@@ -189,7 +189,7 @@ function UserAccessManager({ row, actorRole, onSaved }: UserAccessManagerProps) 
   }
 
   return (
-    <div className="mt-4 rounded-xl border border-emerald-100 bg-emerald-50/50 p-3">
+    <div className="mt-4 rounded-2xl border border-emerald-100 bg-emerald-50/50 p-3">
       <p className="text-xs font-bold uppercase tracking-wide text-emerald-900">Account access</p>
       <div className="mt-2 flex flex-wrap items-center gap-3">
         <label className="flex items-center gap-2 text-sm text-slate-700">
@@ -200,7 +200,7 @@ function UserAccessManager({ row, actorRole, onSaved }: UserAccessManagerProps) 
             onChange={(event) => {
               if (isDashboardRole(event.target.value)) setRole(event.target.value)
             }}
-            className="min-h-9 rounded-lg border border-slate-300 bg-white px-2 text-sm disabled:opacity-60"
+            className="min-h-9 rounded-xl border border-slate-300 bg-white px-2 text-sm disabled:opacity-60"
           >
             <option value="monitor">Monitor</option>
             <option value="operator">Operator</option>
@@ -388,7 +388,7 @@ export default function DashboardDataTabs() {
   }
 
   return (
-    <section className="mt-7 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_24px_70px_-44px_rgba(15,23,42,0.28)]">
+    <section className="mt-7 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
       <div className="border-b border-slate-200 bg-slate-50/80 px-5 pt-5 sm:px-7">
         <div className="flex flex-wrap gap-2" role="group" aria-label="Database collections">
           {collections.map((collection) => {

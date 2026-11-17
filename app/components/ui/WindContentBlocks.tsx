@@ -55,7 +55,7 @@ export function WindFeatureCard({
       points={points}
       label={ui.windSolution}
       icon={renderWindIcon(contentAccentText[accent])}
-      cardClassName="group h-full rounded-3xl border border-sky-200 bg-gradient-to-br from-[#e0f2fe] via-[#f0f9ff] to-[#ecfeff] p-6 shadow-sm transition-colors hover:border-sky-400"
+      cardClassName="group h-full rounded-2xl border border-sky-200 bg-gradient-to-br from-[#e0f2fe] via-[#f0f9ff] to-[#ecfeff] p-6 shadow-sm transition-colors hover:border-sky-400"
       featureClassName={contentAccentText[accent]}
       titleClassName="tracking-[0.05em] text-slate-900"
       pointIconClassName="bg-sky-50 text-sky-700"

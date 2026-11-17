@@ -74,31 +74,31 @@ export default function InvoiceReceiptPage() {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <Card className="overflow-hidden border border-slate-200 bg-white/85 shadow-[0_25px_80px_rgba(15,23,42,0.08)] backdrop-blur-md">
+          <Card className="overflow-hidden border border-slate-200 bg-white/85 shadow-sm backdrop-blur-md">
             <CardContent className="p-5 sm:p-7 lg:p-8">
               <div className="space-y-6">
-                <section>
+                <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
                   <h2 className="text-xl font-bold text-slate-900">{labels.sections.summary.title}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600">
                     {labels.sections.summary.text}
                   </p>
                 </section>
 
-                <section>
+                <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
                   <h2 className="text-xl font-bold text-slate-900">{labels.sections.paymentBreakdown.title}</h2>
                   <div className="mt-3 space-y-3 text-md leading-7 text-slate-600">
                     {labels.sections.paymentBreakdown.items.map((item) => <p key={item.label}><span className="font-semibold text-slate-800">{item.label}</span> {item.text}</p>)}
                   </div>
                 </section>
 
-                <section>
+                <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
                   <h2 className="text-xl font-bold text-slate-900">{labels.sections.acknowledgement.title}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600">
                     {labels.sections.acknowledgement.text}
                   </p>
                 </section>
 
-                <section>
+                <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
                   <h2 className="text-xl font-bold text-slate-900">{labels.sections.support.title}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600">
                     {labels.sections.support.text}
@@ -108,7 +108,7 @@ export default function InvoiceReceiptPage() {
             </CardContent>
           </Card>
 
-          <Card className="overflow-hidden border border-orange-100 bg-linear-to-br from-slate-950 via-slate-900 to-orange-950 text-white shadow-[0_25px_80px_rgba(15,23,42,0.12)]">
+          <Card className="overflow-hidden border border-orange-100 bg-linear-to-br from-slate-950 via-slate-900 to-orange-950 text-white shadow-sm">
             <CardContent className="p-5 sm:p-7">
               <p className="text-[12px] font-semibold uppercase tracking-[0.32em] text-orange-200">{labels.formTitle}</p>
               <h2 className="mt-3 text-2xl font-semibold">{labels.formHeading}</h2>
@@ -193,7 +193,7 @@ export default function InvoiceReceiptPage() {
                     {...register('paymentMode')}
                     aria-invalid={Boolean(errors.paymentMode)}
                     aria-describedby={errors.paymentMode ? 'paymentMode-error' : undefined}
-                    className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
+                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
                   >
                     <option value="" className="text-slate-900">{labels.fields.paymentMode.placeholder}</option>
                     {labels.paymentOptions.map((option) => <option key={option} value={option} className="text-slate-900">{option}</option>)}
@@ -212,7 +212,7 @@ export default function InvoiceReceiptPage() {
                     placeholder={labels.fields.receiptNote.placeholder}
                     aria-invalid={Boolean(errors.receiptNote)}
                     aria-describedby={errors.receiptNote ? 'receiptNote-error' : undefined}
-                    className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
+                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
                   />
                   {errors.receiptNote && <p id="receiptNote-error" className="mt-2 text-md text-rose-300">{errors.receiptNote.message}</p>}
                 </div>
@@ -266,7 +266,7 @@ function Field({ label, name, placeholder, type = 'text', register, error }: Fie
       register={register}
       error={error}
       labelClassName="mb-2 block text-md font-semibold text-slate-100"
-      inputClassName="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
+      inputClassName="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
       errorClassName="mt-2 text-md text-rose-300"
     />
   )

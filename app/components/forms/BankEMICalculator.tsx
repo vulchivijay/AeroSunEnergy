@@ -62,7 +62,7 @@ export function BankEMICalculator() {
   }, [interestRate, loanAmount, tenureYears])
 
   return (
-    <section className="relative isolate overflow-hidden border-y border-[#cfe4ee] bg-linear-to-br from-[#e1f3f7] via-[#e2eafb] to-[#e7e9ff] px-4 py-14 sm:px-6 sm:py-18 lg:px-8 lg:py-24">
+    <section className="relative isolate overflow-hidden border-y border-[#cfe4ee] bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-14 sm:px-6 sm:py-18 lg:px-8 lg:py-24">
       <div className="pointer-events-none absolute -right-36 -top-40 h-[28rem] w-[28rem] rounded-full border border-cyan-900/[0.06]" aria-hidden="true" />
       <div className="pointer-events-none absolute -right-20 -top-24 h-96 w-96 rounded-full border border-cyan-900/[0.06]" aria-hidden="true" />
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-[1.35fr_1fr_1fr] xl:items-center xl:gap-5">
@@ -80,7 +80,7 @@ export function BankEMICalculator() {
           </p>
         </header>
 
-        <div className="min-w-0 rounded-[28px] border border-[#dce8df] bg-white p-4 shadow-[0_24px_70px_-48px_rgba(18,43,34,0.3)] sm:p-7 xl:p-8">
+        <div className="min-w-0 rounded-2xl border border-[#dce8df] bg-white p-4 shadow-sm sm:p-7 xl:p-8">
           <div className="mb-7">
             <p className="text-md font-bold uppercase tracking-[0.17em] text-emerald-800">
               {labels.loanDetails}
@@ -91,7 +91,7 @@ export function BankEMICalculator() {
             <div>
               <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
                 <label htmlFor="bank-emi-loan" className="text-md font-semibold text-slate-700 sm:text-sm">{labels.loanAmount}</label>
-                <output htmlFor="bank-emi-loan" className="ml-auto whitespace-nowrap rounded-lg bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:rounded-xl sm:px-4 sm:py-2 sm:text-sm">
+                <output htmlFor="bank-emi-loan" className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
                   {formatCurrency(loanAmount)}
                 </output>
               </div>
@@ -111,7 +111,7 @@ export function BankEMICalculator() {
             <div>
               <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
                 <label htmlFor="bank-emi-tenure" className="text-md font-semibold text-slate-700 sm:text-sm">{labels.loanTenure}</label>
-                <output htmlFor="bank-emi-tenure" className="ml-auto whitespace-nowrap rounded-lg bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:rounded-xl sm:px-4 sm:py-2 sm:text-sm">
+                <output htmlFor="bank-emi-tenure" className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
                   {tenureYears} {tenureYears === 1 ? labels.year : labels.years}
                 </output>
               </div>
@@ -131,7 +131,7 @@ export function BankEMICalculator() {
             <div>
               <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
                 <label htmlFor="bank-emi-rate" className="text-md font-semibold text-slate-700 sm:text-sm">{labels.interestRate}</label>
-                <output htmlFor="bank-emi-rate" className="ml-auto whitespace-nowrap rounded-lg bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:rounded-xl sm:px-4 sm:py-2 sm:text-sm">
+                <output htmlFor="bank-emi-rate" className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
                   {interestRate.toFixed(2)}% <span className="text-md font-medium text-slate-700">{labels.perAnnum}</span>
                 </output>
               </div>
@@ -154,7 +154,7 @@ export function BankEMICalculator() {
           </p>
         </div>
 
-        <aside className="relative flex min-w-0 flex-col overflow-hidden rounded-[28px] bg-[#26346f] p-4 text-white shadow-[0_28px_70px_-30px_rgba(38,52,111,0.55)] sm:p-7 xl:p-8">
+        <aside className="relative flex min-w-0 flex-col overflow-hidden rounded-2xl bg-[#26346f] p-4 text-white shadow-sm sm:p-7 xl:p-8">
           <div className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full border border-white/[0.07]" aria-hidden="true" />
           <div className="pointer-events-none absolute -right-7 -top-11 h-44 w-44 rounded-full border border-white/[0.07]" aria-hidden="true" />
           <div className="relative z-10 flex flex-1 flex-col">
@@ -195,7 +195,7 @@ export function BankEMICalculator() {
             <Link
               href="/contact"
               prefetch={false}
-              className="mt-7 inline-flex w-full flex-wrap items-center justify-center gap-2 rounded-full bg-lime-300 px-4 py-3.5 text-center text-sm font-bold text-[#17301f] shadow-[0_8px_24px_-12px_rgba(190,242,100,0.8)] transition hover:bg-lime-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-200 sm:px-5 sm:text-md"
+              className="mt-7 inline-flex w-full flex-wrap items-center justify-center gap-2 rounded-full bg-lime-300 px-4 py-3.5 text-center text-sm font-bold text-[#17301f] shadow-sm transition hover:bg-lime-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-200 sm:px-5 sm:text-md"
             >
               {labels.contactAction}
               <ArrowUpRight size={17} strokeWidth={2.2} aria-hidden="true" />

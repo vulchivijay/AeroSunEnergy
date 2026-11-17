@@ -77,38 +77,38 @@ export default function PurchaseOrderPage() {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-          <Card className="overflow-hidden border border-slate-200 bg-white/85 shadow-[0_25px_80px_rgba(15,23,42,0.08)] backdrop-blur-md">
+          <Card className="overflow-hidden border border-slate-200 bg-white/85 shadow-sm backdrop-blur-md">
             <CardContent className="p-5 sm:p-7 lg:p-8">
               <div className="space-y-6">
-                <section>
+                <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
                   <h2 className="text-xl font-bold text-slate-900">{labels.sections.summary.title}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600">
                     {labels.sections.summary.text}
                   </p>
                 </section>
 
-                <section>
+                <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
                   <h2 className="text-xl font-bold text-slate-900">{labels.sections.commercialTerms.title}</h2>
                   <div className="mt-3 space-y-3 text-md leading-7 text-slate-600">
                     {labels.sections.commercialTerms.items.map((item) => <p key={item.label}><span className="font-semibold text-slate-800">{item.label}</span> {item.text}</p>)}
                   </div>
                 </section>
 
-                <section>
+                <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
                   <h2 className="text-xl font-bold text-slate-900">{labels.sections.delivery.title}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600">
                     {labels.sections.delivery.text}
                   </p>
                 </section>
 
-                <section>
+                <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
                   <h2 className="text-xl font-bold text-slate-900">{labels.sections.warranty.title}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600">
                     {labels.sections.warranty.text}
                   </p>
                 </section>
 
-                <section>
+                <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
                   <h2 className="text-xl font-bold text-slate-900">{labels.sections.riskCompliance.title}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600">
                     {labels.sections.riskCompliance.text}
@@ -118,7 +118,7 @@ export default function PurchaseOrderPage() {
             </CardContent>
           </Card>
 
-          <Card className="overflow-hidden border border-emerald-100 bg-linear-to-br from-slate-950 via-slate-900 to-emerald-950 text-white shadow-[0_25px_80px_rgba(15,23,42,0.12)]">
+          <Card className="overflow-hidden border border-emerald-100 bg-linear-to-br from-slate-950 via-slate-900 to-emerald-950 text-white shadow-sm">
             <CardContent className="p-5 sm:p-7">
               <p className="text-[12px] font-semibold uppercase tracking-[0.32em] text-emerald-200">{labels.formTitle}</p>
               <h2 className="mt-3 text-2xl font-semibold">{labels.formHeading}</h2>
@@ -195,7 +195,7 @@ export default function PurchaseOrderPage() {
                     {...register('productLine')}
                     aria-invalid={Boolean(errors.productLine)}
                     aria-describedby={errors.productLine ? 'productLine-error' : undefined}
-                    className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-600/30"
+                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-600/30"
                   >
                     <option value="" className="text-slate-900">{labels.fields.productLine.placeholder}</option>
                     {labels.productOptions.map((option) => <option key={option} value={option} className="text-slate-900">{option}</option>)}
@@ -292,7 +292,7 @@ function Field({ label, name, placeholder, type = 'text', register, error }: Fie
       register={register}
       error={error}
       labelClassName="mb-2 block text-md font-semibold text-slate-100"
-      inputClassName="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-600/30"
+      inputClassName="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-600/30"
       errorClassName="mt-2 text-md text-rose-300"
     />
   )

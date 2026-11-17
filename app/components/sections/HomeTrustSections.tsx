@@ -35,7 +35,7 @@ export function CompanyTrustSection() {
 
   return (
     <section
-      className="relative isolate bg-linear-to-br from-[#e4edfa] via-[#efe8f4] to-[#f6eadb] px-4 py-12 text-slate-900 sm:px-6 lg:px-10 lg:py-16"
+      className="relative isolate bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 text-slate-900 sm:px-6 lg:px-10 lg:py-16 sm:py-14"
       aria-labelledby="company-trust-title"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_8%_0%,rgba(99,102,241,0.12),transparent_35%),radial-gradient(ellipse_at_94%_100%,rgba(14,165,233,0.11),transparent_32%)]" aria-hidden="true" />
@@ -141,7 +141,7 @@ export function WhySolarSection() {
 
   return (
     <section
-      className="bg-[#f5f8fc] px-4 py-14 text-slate-950 sm:px-6 lg:px-10 lg:py-16"
+      className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 text-slate-950 sm:px-6 lg:px-10 lg:py-16 sm:py-14"
       aria-labelledby="why-solar-title"
     >
       <div className="mx-auto max-w-7xl">
@@ -155,7 +155,7 @@ export function WhySolarSection() {
           {content.cards.map((card, index) => (
             <article
               key={card.title}
-              className={`h-full rounded-2xl border border-[#d1e2f2] border-l-4 ${borderColors[index % borderColors.length]} bg-white p-6 shadow-[0_8px_24px_-20px_rgba(15,48,80,0.45)] sm:p-8`}
+              className={`h-full rounded-2xl border border-[#d1e2f2] border-l-4 ${borderColors[index % borderColors.length]} bg-white p-6 shadow-sm sm:p-8`}
             >
               <h3 className="text-xl font-bold leading-8 text-slate-950">{card.title}</h3>
               <p className="mt-4 text-base leading-8 text-slate-700">{card.description}</p>
@@ -183,7 +183,7 @@ export function ProjectEvidenceSection() {
   }
 
   return (
-    <section className="bg-[#e8f0e9] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="testimonials-title">
+    <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="testimonials-title">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
@@ -192,7 +192,7 @@ export function ProjectEvidenceSection() {
               {content.title}
             </h2>
           </div>
-          <p className="max-w-3xl text-sm leading-7 text-slate-600 sm:text-base lg:pb-1">{content.description}</p>
+          <p className="max-w-3xl text-sm leading-7 text-black sm:text-base lg:pb-1">{content.description}</p>
         </div>
 
         <div className="mt-8 grid grid-cols-[auto_minmax(0,1fr)_auto] items-stretch gap-2 sm:gap-4">
@@ -209,7 +209,7 @@ export function ProjectEvidenceSection() {
             {testimonials.map((testimonial, index) => (
               <article
                 key={`${activeIndex}-${index}`}
-                className={`flex min-h-64 flex-col justify-between rounded-[1.5rem] border border-[#cbd5cc] bg-white p-6 shadow-[0_20px_50px_-40px_rgba(16,43,40,0.35)] sm:p-8 ${index === 1 ? 'hidden md:flex' : ''} ${index === 2 ? 'hidden lg:flex' : ''}`}
+                className={`flex min-h-64 flex-col justify-between rounded-2xl border border-[#cbd5cc] bg-white p-6 shadow-sm sm:p-8 ${index === 1 ? 'hidden md:flex' : ''} ${index === 2 ? 'hidden lg:flex' : ''}`}
               >
                 <div className="blur-md">
                   <p className="text-xs font-bold uppercase tracking-[0.18em] text-amber-800">{content.placeholderLabel}</p>
@@ -252,7 +252,7 @@ export function SolarJourneySection() {
   const content = t.home.trustSections.journey
 
   return (
-    <section className="bg-[#eaf4ef] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="solar-journey-title">
+    <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="solar-journey-title">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
           <p className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-800/15 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-emerald-800">{content.eyebrow}</p>
@@ -264,7 +264,7 @@ export function SolarJourneySection() {
 
         <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {content.steps.map((step, index) => (
-            <li key={step.title} className="relative rounded-3xl border border-emerald-900/10 bg-white p-5 shadow-sm">
+            <li key={step.title} className="relative rounded-2xl border border-emerald-900/10 bg-white p-5 shadow-sm">
               <span className="font-mono text-xs font-bold tracking-[0.15em] text-emerald-700">{String(index + 1).padStart(2, '0')}</span>
               <h3 className="mt-4 text-base font-extrabold text-slate-950">{step.title}</h3>
               <p className="mt-2 text-sm leading-6 text-slate-600">{step.description}</p>
@@ -289,7 +289,7 @@ export function QuoteTransparencySection() {
 
   return (
     <section
-      className="relative isolate bg-linear-to-br from-[#e7eafd] via-[#f1e8f3] to-[#e4f2f5] px-4 py-14 text-slate-900 sm:px-6 lg:px-10 lg:py-18"
+      className="relative isolate bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-14 text-slate-900 sm:px-6 lg:px-10 lg:py-18"
       aria-labelledby="quote-transparency-title"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_10%_0%,rgba(129,140,248,0.13),transparent_35%),radial-gradient(ellipse_at_100%_100%,rgba(56,189,248,0.12),transparent_32%)]" aria-hidden="true" />
@@ -303,7 +303,7 @@ export function QuoteTransparencySection() {
         </header>
 
         <div className="space-y-4">
-          <article className="rounded-[1.75rem] border border-white/80 bg-white/75 p-5 shadow-[0_24px_60px_-40px_rgba(48,57,95,0.3)] sm:p-7">
+          <article className="rounded-2xl border border-white/80 bg-white/75 p-5 shadow-sm sm:p-6">
             <div className="flex items-center gap-3">
               <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-300 text-slate-900">
                 <FileCheck2 className="h-5 w-5" aria-hidden="true" />
@@ -312,7 +312,7 @@ export function QuoteTransparencySection() {
             </div>
             <ul className="mt-5 grid gap-3 sm:grid-cols-2">
               {content.quoteItems.map((item) => (
-                <li key={item} className="flex items-start gap-3 rounded-xl bg-slate-100/80 p-3 text-sm leading-6 text-slate-700">
+                <li key={item} className="flex items-start gap-3 rounded-2xl bg-slate-100/80 p-3 text-sm leading-6 text-slate-700">
                   <ClipboardCheck className="mt-1 h-4 w-4 shrink-0 text-sky-700" aria-hidden="true" />
                   <span>{item}</span>
                 </li>
@@ -320,7 +320,7 @@ export function QuoteTransparencySection() {
             </ul>
           </article>
 
-          <article className="rounded-[1.75rem] border border-white/80 bg-white/75 p-5 shadow-[0_24px_60px_-40px_rgba(48,57,95,0.3)] sm:p-7">
+          <article className="rounded-2xl border border-white/80 bg-white/75 p-5 shadow-sm sm:p-6">
             <div className="flex items-center gap-3">
               <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-200 text-sky-950">
                 <ShieldCheck className="h-5 w-5" aria-hidden="true" />
@@ -329,7 +329,7 @@ export function QuoteTransparencySection() {
             </div>
             <ul className="mt-5 grid gap-3">
               {content.warrantyItems.map((item) => (
-                <li key={item} className="flex items-start gap-3 rounded-xl bg-slate-100/80 p-3 text-sm leading-6 text-slate-700">
+                <li key={item} className="flex items-start gap-3 rounded-2xl bg-slate-100/80 p-3 text-sm leading-6 text-slate-700">
                   <BadgeCheck className="mt-1 h-4 w-4 shrink-0 text-amber-700" aria-hidden="true" />
                   <span>{item}</span>
                 </li>
@@ -337,7 +337,7 @@ export function QuoteTransparencySection() {
             </ul>
           </article>
 
-          <div className="flex flex-col gap-3 rounded-[1.5rem] bg-amber-300 p-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-end sm:p-5">
+          <div className="flex flex-col gap-3 rounded-2xl bg-amber-300 p-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-end sm:p-5">
             <Link href="/#brand-section-title" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-center text-sm font-semibold text-slate-900 transition hover:bg-amber-50">
               {content.brandCta}<ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
             </Link>

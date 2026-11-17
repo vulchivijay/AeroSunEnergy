@@ -71,7 +71,7 @@ export default function CookieConsent() {
     <div className="fixed inset-x-0 bottom-0 z-[80] flex justify-center p-4 sm:p-6">
       <aside
         aria-label={labels.title}
-        className="w-full max-w-5xl rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-[0_25px_60px_-20px_rgba(15,23,42,0.5)] backdrop-blur-xl  "
+        className="w-full max-w-5xl rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-lg backdrop-blur-xl"
       >
         <div>
           <div className="w-full">
@@ -97,7 +97,7 @@ export default function CookieConsent() {
             <button
               type="button"
               onClick={() => saveConsent('accepted')}
-              className="inline-flex min-h-11 text-nowrap items-center justify-center rounded-full bg-[#15803D] px-5 py-2.5 text-md text-white shadow-lg shadow-emerald-600/20 transition hover:bg-[#18833a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+              className="inline-flex min-h-11 text-nowrap items-center justify-center rounded-full bg-[#15803D] px-5 py-2.5 text-md text-white shadow-sm shadow-emerald-600/20 transition hover:bg-[#18833a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
             >
               {labels.accept}
             </button>

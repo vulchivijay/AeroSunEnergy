@@ -87,7 +87,7 @@ export default function CompanyProfilePage() {
 
   return (
     <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative isolate overflow-hidden bg-[radial-gradient(ellipse_at_75%_8%,rgba(245,158,11,0.12),transparent_38%),linear-gradient(125deg,#fffdf7_0%,#fef3c7_58%,#fff7ed_100%)] text-[#152b29]">
+      <section className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] text-[#152b29]">
         <div
           className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_8%,rgba(217,119,6,0.1),transparent_38%),radial-gradient(ellipse_at_5%_100%,rgba(251,191,36,0.12),transparent_35%)]"
           aria-hidden="true"
@@ -170,7 +170,7 @@ export default function CompanyProfilePage() {
       </section>
 
       <div className="mx-auto max-w-7xl space-y-12 px-4 py-12 sm:space-y-16 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        <section>
+        <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
           <SectionHeading
             number="01"
             eyebrow={cp.section1Eyebrow}
@@ -179,36 +179,36 @@ export default function CompanyProfilePage() {
           />
         </section>
 
-        <section>
+        <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
           <SectionHeading
             number="02"
             eyebrow={cp.section2Eyebrow}
             title={cp.section2Title}
           />
-          <p className="max-w-4xl rounded-[22px] border border-slate-200 bg-slate-50 p-6 text-base leading-8 text-slate-700 sm:p-8 sm:text-lg">
+          <p className="max-w-4xl rounded-2xl border border-slate-200 bg-slate-50 p-6 text-base leading-8 text-slate-700 sm:p-8 sm:text-lg">
             {cp.section2Text}
           </p>
         </section>
 
-        <section>
+        <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
           <SectionHeading
             number="03"
             eyebrow={cp.section3Eyebrow}
             title={cp.section3Title}
           />
-          <div className="rounded-[22px] border border-slate-200 bg-slate-50 p-6 sm:p-8">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
             <BulletList items={missionPoints} />
           </div>
         </section>
 
-        <section>
+        <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
           <SectionHeading
             number="04"
             eyebrow={cp.section4Eyebrow}
             title={cp.section4Title}
           />
           <div className="grid gap-5 lg:grid-cols-3">
-            <article className="rounded-[22px] border border-slate-200 bg-white p-6 sm:p-7">
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-50 text-teal-800">
                 <Sun className="h-5 w-5" aria-hidden="true" />
               </div>
@@ -217,7 +217,7 @@ export default function CompanyProfilePage() {
                 <BulletList items={solarSolutions} />
               </div>
             </article>
-            <article className="rounded-[22px] border border-slate-200 bg-white p-6 sm:p-7">
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-50 text-sky-800">
                 <Wind className="h-5 w-5" aria-hidden="true" />
               </div>
@@ -229,7 +229,7 @@ export default function CompanyProfilePage() {
                 <BulletList items={windDevelopment} />
               </div>
             </article>
-            <article className="rounded-[22px] border border-slate-200 bg-white p-6 sm:p-7">
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-50 text-amber-800">
                 <Zap className="h-5 w-5" aria-hidden="true" />
               </div>
@@ -250,13 +250,13 @@ export default function CompanyProfilePage() {
           </p>
         </section>
 
-        <section>
+        <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
           <SectionHeading
             number="05"
             eyebrow={cp.productSectionEyebrow}
             title={cp.productSectionTitle}
           />
-          <div className="overflow-hidden rounded-[22px] border border-slate-200 bg-white">
+          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
             <div className="grid grid-cols-1 gap-2 bg-[linear-gradient(145deg,#713f12_0%,#92400e_55%,#a16207_100%)] px-5 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white sm:grid-cols-[0.8fr_1.2fr] sm:gap-0 sm:px-7">
               <span>{cp.productTableCategory}</span>
               <span>{cp.productTableServices}</span>
@@ -281,7 +281,7 @@ export default function CompanyProfilePage() {
           </div>
         </section>
 
-        <section className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+        <section className="bg-gradient-to-br from-white to-[#f1f2f6] grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <SectionHeading
               number="06"
@@ -310,7 +310,7 @@ export default function CompanyProfilePage() {
           </ol>
         </section>
 
-        <section>
+        <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
           <SectionHeading
             number="07"
             eyebrow={cp.technologyDevelopmentEyebrow}
@@ -334,7 +334,7 @@ export default function CompanyProfilePage() {
           </ol>
         </section>
 
-        <section className="grid gap-10 lg:grid-cols-2">
+        <section className="bg-gradient-to-br from-white to-[#f1f2f6] grid gap-10 lg:grid-cols-2">
           <div>
             <SectionHeading
               number="08"
@@ -358,19 +358,18 @@ export default function CompanyProfilePage() {
           </div>
         </section>
 
-        <section className="rounded-[30px] bg-[linear-gradient(145deg,#713f12_0%,#92400e_55%,#a16207_100%)] p-6 text-white shadow-[0_24px_60px_-40px_rgba(120,53,15,0.35)] sm:p-10">
+        <section className="bg-gradient-to-br from-[#f1f2f6] to-white rounded-2xl p-6 shadow-sm sm:p-8">
           <SectionHeading
             number="10"
             eyebrow={cp.qualityEyebrow}
             title={cp.qualityTitle}
             description={cp.qualityDescription}
-            inverse
           />
           <div className="grid gap-x-10 gap-y-4 sm:grid-cols-2 lg:grid-cols-4">
             {qualityPractices.map((practice) => (
               <div
                 key={practice}
-                className="flex gap-3 text-sm leading-7 text-indigo-50/90"
+                className="flex gap-3 text-sm leading-7 text-slate-700"
               >
                 <span
                   className="mt-2 h-2 w-2 shrink-0 rounded-full bg-amber-300"
@@ -380,12 +379,12 @@ export default function CompanyProfilePage() {
               </div>
             ))}
           </div>
-          <p className="mt-7 border-t border-white/15 pt-5 text-sm leading-7 text-indigo-100/90">
+          <p className="mt-7 border-t border-slate-200 pt-5 text-sm leading-7 text-slate-700">
             {cp.qualityNote}
           </p>
         </section>
 
-        <section className="grid gap-10 lg:grid-cols-2">
+        <section className="bg-gradient-to-br from-white to-[#f1f2f6] grid gap-10 lg:grid-cols-2">
           <div>
             <SectionHeading
               number="11"
@@ -406,7 +405,7 @@ export default function CompanyProfilePage() {
           </div>
         </section>
 
-        <section>
+        <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
           <SectionHeading
             number="12"
             eyebrow={cp.futureEyebrow}
@@ -430,7 +429,7 @@ export default function CompanyProfilePage() {
           </div>
         </section>
 
-        <section className="overflow-hidden rounded-[30px] border border-slate-200 bg-white">
+        <section className="bg-gradient-to-br from-white to-[#f1f2f6] overflow-hidden rounded-2xl border border-slate-200 bg-white">
           <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
             <div className="bg-[linear-gradient(145deg,#713f12_0%,#92400e_55%,#a16207_100%)] p-7 text-white sm:p-10">
               <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-amber-200">

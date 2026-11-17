@@ -58,7 +58,7 @@ export default function WindEnergyPage() {
               {windPage.hero.subtitle}
             </p>
           </div>
-          <div className="relative overflow-hidden rounded-[2rem] border border-sky-100/15 bg-slate-900/65 p-5 backdrop-blur-sm sm:p-7">
+          <div className="relative overflow-hidden rounded-2xl border border-sky-100/15 bg-slate-900/65 p-5 backdrop-blur-sm sm:p-6">
             <div className="absolute right-0 top-0 h-40 w-40 rounded-bl-full bg-sky-400/10" aria-hidden="true" />
             <div className="relative flex min-h-44 items-center justify-between gap-5">
               <div className="space-y-4">
@@ -91,8 +91,8 @@ export default function WindEnergyPage() {
 
       <SharedHeroSlider slides={windSlidesLocalized} ariaLabel={windPage.labels.sliderAriaLabel} interval={5200} />
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
-        <div className="mb-9 max-w-3xl">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+        <div className="mb-8 max-w-3xl">
           <WindSectionEyebrow>{windPage.overview.eyebrow}</WindSectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.overview.title}</h2>
         </div>
@@ -110,8 +110,8 @@ export default function WindEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
-        <div className="rounded-4xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-[0_32px_90px_-38px_rgba(15,23,42,1)] sm:p-8">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+        <div className="rounded-2xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-sm sm:p-8">
           <div className="mb-6 flex items-center justify-between gap-3">
             <div>
               <WindSectionEyebrow>{windPage.classification.eyebrow}</WindSectionEyebrow>
@@ -135,8 +135,8 @@ export default function WindEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
-        <div className="mb-9 max-w-3xl">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+        <div className="mb-8 max-w-3xl">
           <WindSectionEyebrow>{windPage.electrical.eyebrow}</WindSectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.electrical.title}</h2>
         </div>
@@ -144,7 +144,7 @@ export default function WindEnergyPage() {
         <WindComparisonTable rows={systemConfigsLocalized} />
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="grid gap-5 sm:grid-cols-2">
             {keyBenefitsLocalized.map((benefit) => (
@@ -159,8 +159,8 @@ export default function WindEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
-        <div className="mb-9 max-w-3xl">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+        <div className="mb-8 max-w-3xl">
           <WindSectionEyebrow>{windPage.capacity.eyebrow}</WindSectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.capacity.title}</h2>
         </div>
@@ -168,8 +168,8 @@ export default function WindEnergyPage() {
         <WindCapacityTable rows={capacityBandsLocalized} />
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
-        <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)] sm:p-8">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
               <WindSectionEyebrow>{windPage.strategy.eyebrow}</WindSectionEyebrow>
@@ -184,7 +184,7 @@ export default function WindEnergyPage() {
               </div>
             </div>
 
-            <div className="rounded-4xl border border-emerald-200 bg-emerald-50 p-5">
+            <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
               <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700">{windPage.labels.aeroSunView}</p>
               <div className="mt-4 space-y-3 text-md leading-7 text-slate-700">
                 {windPage.strategy.points.map((point, index) => (
@@ -196,8 +196,8 @@ export default function WindEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
-        <div className="mb-9 max-w-3xl">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+        <div className="mb-8 max-w-3xl">
           <WindSectionEyebrow>{windPage.labels.serviceSections}</WindSectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.labels.serviceSectionsTitle}</h2>
         </div>
@@ -246,7 +246,7 @@ export default function WindEnergyPage() {
                 </div>
               </div>
 
-              <div className="mt-6 rounded-lg bg-slate-50 p-4 text-md text-slate-700">
+              <div className="mt-6 rounded-2xl bg-slate-50 p-4 text-md text-slate-700">
                 <div className="flex items-center justify-between">
                   <div className="font-medium">{windPage.labels.illustrativeCalculation}</div>
                   <div className="text-md text-slate-500">{section.calculation.label}</div>
@@ -273,7 +273,7 @@ export default function WindEnergyPage() {
           ))}
         </div>
       </section>
-      <TirupatiEnergySection />
+      <TirupatiEnergySection background="second" />
     </main>
   )
 }

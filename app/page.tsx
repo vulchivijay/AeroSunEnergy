@@ -44,9 +44,9 @@ function RecognitionHighlight() {
   const recognitions = t.home.recognition
 
   return (
-    <section className="bg-[#f7f7f2] px-4 py-8 sm:px-6 lg:px-10 lg:py-12">
+    <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 lg:py-16 sm:py-14">
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 overflow-hidden rounded-[30px] border border-[#e2e8e2] bg-white shadow-[0_20px_60px_-40px_rgba(24,37,31,0.3)] lg:grid-cols-[1.05fr_1fr_1fr]">
+        <div className="grid grid-cols-1 overflow-hidden rounded-2xl border border-[#e2e8e2] bg-white shadow-sm lg:grid-cols-[1.05fr_1fr_1fr]">
           <div className="flex flex-col justify-center bg-[#e1ece3] p-7 sm:p-9 lg:p-11">
             <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[#137c63]/15 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
               {t.home.recognitionHeader.badge}
@@ -96,97 +96,93 @@ export default function Home() {
       <HomeHeroSlider />
       <SchemeBanner />
       {/* Solar Section */}
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
-        <div className="mb-8">
-          <SectionEyebrow>{offer.eyebrow}</SectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
-            {offer.title}
-          </h2>
-        </div>
-        
-        <div className="mb-10 text-lg leading-8 text-slate-700">
-          {offer.description}
-        </div>
-        <div className="grid gap-6 lg:grid-cols-3">
-          {solarCards.map((card) => (
-            <FeatureCard
-              key={card.title}
-              title={card.title}
-              description={card.description}
-              points={card.points}
-              accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
-            />
-          ))}
-        </div>
-
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {home.moreSolarCards.map((card) => (
-            <FeatureCard
-              key={card.title}
-              title={card.title}
-              description={card.description}
-              points={card.points}
-              accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
-            />
-          ))}
-        </div>
-        
-        <div className="mt-12 rounded-4xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
-          <div className="mb-6">
-            <SectionEyebrow>{home.rooftopSolar.eyebrow}</SectionEyebrow>
-            <h3 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">
-              {home.rooftopSolar.title}
-            </h3>
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
+        <div className="mx-auto max-w-7xl">  
+          <div className="mb-8">
+            <SectionEyebrow>{offer.eyebrow}</SectionEyebrow>
+            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
+              {offer.title}
+            </h2>
           </div>
-
-          <p className="max-w-4xl text-lg leading-8 text-slate-700">
-            {home.rooftopSolar.description}
-          </p>
-
-          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {home.rooftopSolar.benefits.map((benefit, index) => (
-              <BenefitCard key={benefit.title} title={benefit.title} description={benefit.description} accent={getHomeBenefitAccent(index)} />
+          <div className="mb-10 text-lg leading-8 text-black">
+            {offer.description}
+          </div>
+          <div className="grid gap-6 lg:grid-cols-3">
+            {solarCards.map((card) => (
+              <FeatureCard
+                key={card.title}
+                title={card.title}
+                description={card.description}
+                points={card.points}
+                accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
+              />
             ))}
           </div>
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {home.moreSolarCards.map((card) => (
+              <FeatureCard
+                key={card.title}
+                title={card.title}
+                description={card.description}
+                points={card.points}
+                accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
+              />
+            ))}
+          </div>
+          <div className="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
+            <div className="mb-6">
+              <SectionEyebrow>{home.rooftopSolar.eyebrow}</SectionEyebrow>
+              <h3 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">
+                {home.rooftopSolar.title}
+              </h3>
+            </div>
 
-          <div className="mt-8">
-            {home.rooftopSolar.panels.map((panel) => (
-              <InfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['amber', 'sky'] as const, 'emerald')} content={panel.content} />
-            ))}
-          </div>
-        </div>
-        
-        <div className="mt-12 rounded-4xl border border-slate-200 bg-white p-6 lg:p-8">
-          <div className="mb-6">
-            <SectionEyebrow>{home.systemTypeSection.eyebrow}</SectionEyebrow>
-            <h3 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">
-              {home.systemTypeSection.title}
-            </h3>
-          </div>
-          <div className="grid gap-5 lg:grid-cols-3">
-            {systemTypes.map((item) => (
-              <InfoPanel key={item.title} title={item.title} accent={getAccentOrDefault(item.accent, ['amber', 'sky'] as const, 'emerald')} content={item.content} />
-            ))}
-          </div>
-        </div>
-        
-        <div className="mt-12 rounded-4xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
-          <div className="mb-6">
-            <SectionEyebrow>{home.whySolarSection.eyebrow}</SectionEyebrow>
-            <h3 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">
-              {home.whySolarSection.title}
-            </h3>
-          </div>
+            <p className="max-w-4xl text-lg leading-8 text-slate-700">
+              {home.rooftopSolar.description}
+            </p>
 
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {whySolar.map((item, index) => (
-              <BenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
-            ))}
+            <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {home.rooftopSolar.benefits.map((benefit, index) => (
+                <BenefitCard key={benefit.title} title={benefit.title} description={benefit.description} accent={getHomeBenefitAccent(index)} />
+              ))}
+            </div>
+
+            <div className="mt-8">
+              {home.rooftopSolar.panels.map((panel) => (
+                <InfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['amber', 'sky'] as const, 'emerald')} content={panel.content} />
+              ))}
+            </div>
+          </div>
+          <div className="mt-12 rounded-2xl border border-slate-200 bg-white p-6 lg:p-8">
+            <div className="mb-6">
+              <SectionEyebrow>{home.systemTypeSection.eyebrow}</SectionEyebrow>
+              <h3 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">
+                {home.systemTypeSection.title}
+              </h3>
+            </div>
+            <div className="grid gap-5 lg:grid-cols-3">
+              {systemTypes.map((item) => (
+                <InfoPanel key={item.title} title={item.title} accent={getAccentOrDefault(item.accent, ['amber', 'sky'] as const, 'emerald')} content={item.content} />
+              ))}
+            </div>
+          </div>
+          <div className="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
+            <div className="mb-6">
+              <SectionEyebrow>{home.whySolarSection.eyebrow}</SectionEyebrow>
+              <h3 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">
+                {home.whySolarSection.title}
+              </h3>
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {whySolar.map((item, index) => (
+                <BenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
+              ))}
+            </div>
           </div>
         </div>
-        
       </section>
-      <section className="bg-[#f8f7f2] px-4 py-10 sm:px-6 lg:px-10 lg:py-14">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 lg:px-10 lg:py-16 sm:py-14">
         <div className="mx-auto grid max-w-7xl items-center gap-8 xl:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] xl:gap-10">
           <div className="max-w-2xl">
             <SectionEyebrow>{subsidy.eyebrow}</SectionEyebrow>
@@ -207,7 +203,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="overflow-hidden rounded-[22px] border border-[#e7e4dc] bg-white shadow-[0_20px_55px_-40px_rgba(16,43,40,0.4)]">
+          <div className="overflow-hidden rounded-2xl border border-[#e7e4dc] bg-white shadow-sm">
             <div className="overflow-x-auto">
               <table className="w-full min-w-[620px] border-collapse text-left">
                 <caption className="sr-only">{subsidy.title}</caption>
@@ -251,77 +247,73 @@ export default function Home() {
       <BankEMICalculator />
       <TirupatiEnergySection />
       {/* Wind Energy Section */}
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
-        <div className="mb-8">
-          <WindSectionEyebrow>{wind.eyebrow}</WindSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
-            {wind.title}
-          </h2>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-3">
-          {wind.cards.map((card) => (
-            <WindFeatureCard
-              key={card.title}
-              title={card.title}
-              description={card.description}
-              points={card.points}
-              accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
-            />
-          ))}
-        </div>
-
-        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {wind.benefits.map((item, index) => (
-            <WindBenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
-          ))}
-        </div>
-
-        <div className="mt-10 grid gap-5 lg:grid-cols-2">
-          {wind.panels.map((panel) => (
-          <WindInfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['emerald', 'amber'] as const, 'sky')} content={panel.content} />
-          ))}
-        </div>
-
-        <div className="mt-8">
-          <WindCapacityTable rows={wind.capacity} />
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-8">
+            <WindSectionEyebrow>{wind.eyebrow}</WindSectionEyebrow>
+            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
+              {wind.title}
+            </h2>
+          </div>
+          <div className="grid gap-6 lg:grid-cols-3">
+            {wind.cards.map((card) => (
+              <WindFeatureCard
+                key={card.title}
+                title={card.title}
+                description={card.description}
+                points={card.points}
+                accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
+              />
+            ))}
+          </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {wind.benefits.map((item, index) => (
+              <WindBenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
+            ))}
+          </div>
+          <div className="mt-10 grid gap-5 lg:grid-cols-2">
+            {wind.panels.map((panel) => (
+            <WindInfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['emerald', 'amber'] as const, 'sky')} content={panel.content} />
+            ))}
+          </div>
+          <div className="mt-8">
+            <WindCapacityTable rows={wind.capacity} />
+          </div>
         </div>
       </section>
       {/* Hybrid Energy Section */}
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
-        <div className="mb-8">
-          <HybridSectionEyebrow>{hybrid.eyebrow}</HybridSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
-            {hybrid.title}
-          </h2>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-3">
-          {hybrid.cards.map((card) => (
-            <HybridFeatureCard
-              key={card.title}
-              title={card.title}
-              description={card.description}
-              points={card.points}
-              accent={getAccentOrDefault(card.accent, ['sky', 'violet', 'amber'] as const, 'emerald')}
-            />
-          ))}
-        </div>
-
-        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {hybrid.benefits.map((item, index) => (
-            <HybridBenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
-          ))}
-        </div>
-
-        <div className="mt-10 grid gap-5 lg:grid-cols-2">
-          {hybrid.panels.map((panel) => (
-          <HybridInfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['sky', 'violet'] as const, 'emerald')} content={panel.content} />
-          ))}
-        </div>
-
-        <div className="mt-8">
-          <HybridTable rows={hybrid.table} />
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
+        <div className="mx-auto max-w-7xl ">
+          <div className="mb-8">
+            <HybridSectionEyebrow>{hybrid.eyebrow}</HybridSectionEyebrow>
+            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
+              {hybrid.title}
+            </h2>
+          </div>
+          <div className="grid gap-6 lg:grid-cols-3">
+            {hybrid.cards.map((card) => (
+              <HybridFeatureCard
+                key={card.title}
+                title={card.title}
+                description={card.description}
+                points={card.points}
+                accent={getAccentOrDefault(card.accent, ['sky', 'violet', 'amber'] as const, 'emerald')}
+              />
+            ))}
+          </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {hybrid.benefits.map((item, index) => (
+              <HybridBenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
+            ))}
+          </div>
+          <div className="mt-10 grid gap-5 lg:grid-cols-2">
+            {hybrid.panels.map((panel) => (
+            <HybridInfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['sky', 'violet'] as const, 'emerald')} content={panel.content} />
+            ))}
+          </div>
+          <div className="mt-8">
+            <HybridTable rows={hybrid.table} />
+          </div>
         </div>
       </section>
       <Brands />

@@ -61,12 +61,12 @@ export default function WarrantyPolicyPage() {
         <form
           onSubmit={handleSubmit(onSubmit, (formErrors) => toast.error(getFirstFormErrorMessage(formErrors) ?? t.formSubmission.error))}
           noValidate
-          className="overflow-hidden rounded-[28px] border border-sky-200 bg-white/90 shadow-[0_30px_90px_-35px_rgba(15,23,42,0.45)] backdrop-blur-sm"
+          className="overflow-hidden rounded-2xl border border-sky-200 bg-white/90 shadow-sm backdrop-blur-sm"
         >
           <header className="bg-linear-to-r from-[#0b1e46] via-[#123b72] to-[#0d6d8d] px-5 py-5 text-white sm:px-7">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-xl font-black shadow-[0_18px_40px_-18px_rgba(255,255,255,0.8)]">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-xl font-black shadow-sm">
                   W
                 </div>
                 <div>
@@ -76,7 +76,7 @@ export default function WarrantyPolicyPage() {
               </div>
 
               <div className="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-sky-100">
-                <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(74,222,128,0.9)]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-sm" />
                 {labels.support}
               </div>
             </div>
@@ -140,7 +140,7 @@ export default function WarrantyPolicyPage() {
                   {...register('productLine')}
                   aria-invalid={Boolean(errors.productLine)}
                   aria-describedby={errors.productLine ? 'productLine-error' : undefined}
-                  className="h-12 w-full rounded-2xl border border-sky-200 bg-sky-50/70 px-4 text-md text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
+                  className="h-12 w-full rounded-xl border border-sky-200 bg-sky-50/70 px-4 text-md text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
                 >
                   <option value="">{labels.fields.productLine.placeholder}</option>
                   {labels.productOptions.map((option) => <option key={option} value={option}>{option}</option>)}
@@ -166,7 +166,7 @@ export default function WarrantyPolicyPage() {
                   {...register('servicePlan')}
                   aria-invalid={Boolean(errors.servicePlan)}
                   aria-describedby={errors.servicePlan ? 'servicePlan-error' : undefined}
-                  className="h-12 w-full rounded-2xl border border-emerald-200 bg-emerald-50/70 px-4 text-md text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"
+                  className="h-12 w-full rounded-xl border border-emerald-200 bg-emerald-50/70 px-4 text-md text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"
                 >
                   <option value="">{labels.fields.servicePlan.placeholder}</option>
                   {labels.serviceOptions.map((option) => <option key={option} value={option}>{option}</option>)}
@@ -175,7 +175,7 @@ export default function WarrantyPolicyPage() {
               </div>
             </div>
 
-            <div className="rounded-[26px] border border-slate-200 bg-linear-to-br from-slate-50 via-white to-sky-50 p-4">
+            <div className="rounded-2xl border border-slate-200 bg-linear-to-br from-slate-50 via-white to-sky-50 p-4">
               <label className="flex items-start gap-3 text-md leading-6 text-slate-700">
                 <input
                   type="checkbox"
@@ -235,7 +235,7 @@ function Field({ label, name, placeholder, type = 'text', register, error, accen
       register={register}
       error={error}
       labelClassName="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700"
-      inputClassName={`h-12 w-full rounded-2xl border px-4 text-md text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:ring-4 ${accentClasses[accent]}`}
+      inputClassName={`h-12 w-full rounded-xl border px-4 text-md text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:ring-4 ${accentClasses[accent]}`}
       errorClassName="mt-2 text-md text-rose-600"
     />
   )

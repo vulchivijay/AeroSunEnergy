@@ -64,7 +64,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="max-w-md rounded-[22px] border border-white/15 bg-[#102a43]/65 p-5 backdrop-blur-lg sm:p-6 lg:ml-auto">
+            <div className="max-w-md rounded-2xl border border-white/15 bg-[#102a43]/65 p-5 backdrop-blur-lg sm:p-6 lg:ml-auto">
               <p className="inline-flex w-fit rounded-full border border-amber-300/25 bg-white/10 px-3 py-1.5 text-sm font-bold uppercase tracking-[0.2em] text-amber-200">{labels.coreModel}</p>
               <p className="mt-3 text-lg font-semibold leading-7 text-white sm:text-xl">{labels.coreModelSteps}</p>
               <div className="mt-5 flex items-center gap-2" aria-hidden="true">
@@ -87,8 +87,8 @@ export default function ServicesPage() {
         </div>
       </header>
 
-      <section id="service-divisions" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
-        <div className="mb-9 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <section id="service-divisions" className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-3xl">
             <p className="inline-flex w-fit rounded-full border border-emerald-800/15 bg-emerald-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-emerald-800">{labels.serviceStructure}</p>
             <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{labels.serviceStructureTitle}</h2>
@@ -100,7 +100,7 @@ export default function ServicesPage() {
           {page.servicePackages.map((service, index) => {
             const Icon = divisionIcons[index] ?? Zap
             return (
-              <article key={service.title} className="group relative overflow-hidden rounded-[22px] border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-lg sm:p-8">
+              <article key={service.title} className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-md sm:p-8">
                 <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${service.accent}`} />
                 <div className="flex items-start justify-between gap-4">
                   <div>
@@ -114,7 +114,7 @@ export default function ServicesPage() {
                 <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600 sm:text-sm">{service.description}</p>
                 <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
                   {service.points.map((point) => (
-                    <li key={point} className="flex items-start gap-2.5 rounded-xl bg-slate-50 px-3 py-2.5 text-sm leading-5 text-slate-700">
+                    <li key={point} className="flex items-start gap-2.5 rounded-2xl bg-slate-50 px-3 py-2.5 text-sm leading-5 text-slate-700">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#137c63]" aria-hidden="true" />
                       {point}
                     </li>
@@ -126,8 +126,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white border-y border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
             <div>
               <p className="inline-flex w-fit rounded-full border border-amber-800/15 bg-amber-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-amber-800">{labels.commonCapabilities}</p>
@@ -154,8 +154,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
-        <div className="overflow-hidden rounded-[30px] bg-[linear-gradient(135deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] p-6 text-white shadow-[0_24px_70px_-45px_rgba(16,42,67,0.5)] sm:p-10 lg:p-12">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+        <div className="overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] p-6 text-white shadow-sm sm:p-8 lg:p-12">
           <div className="mb-8 max-w-3xl">
             <p className="inline-flex w-fit rounded-full border border-amber-300/25 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-amber-200">{labels.deliveryModel}</p>
             <h2 className="mt-3 text-3xl font-black tracking-tighter sm:text-5xl">{labels.deliveryModelTitle}</h2>
@@ -182,9 +182,9 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-14 lg:px-10">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-14 lg:px-10">
         <div className="grid gap-6 lg:grid-cols-[1fr_0.92fr]">
-          <article className="rounded-[22px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <p className="inline-flex w-fit rounded-full border border-sky-800/15 bg-sky-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-sky-800">{labels.roadmap}</p>
             <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950">{labels.roadmapTitle}</h2>
             <div className="relative mt-7 space-y-4 before:absolute before:bottom-7 before:left-[1.15rem] before:top-7 before:w-px before:bg-emerald-200">
@@ -202,7 +202,7 @@ export default function ServicesPage() {
             </div>
           </article>
 
-          <article className="relative isolate flex min-h-[420px] flex-col justify-end overflow-hidden rounded-[1.8rem] bg-slate-950 p-6 text-white sm:p-8">
+          <article className="relative isolate flex min-h-[420px] flex-col justify-end overflow-hidden rounded-2xl bg-slate-950 p-6 text-white sm:p-8">
             <div className="absolute inset-0 -z-10">
               <OptimizedImage
                 src="/images/slider/slider-2.png"
@@ -227,9 +227,9 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
-          <div className="mb-9 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] border-t border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-3xl">
               <p className="inline-flex w-fit rounded-full border border-emerald-800/15 bg-emerald-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-emerald-800">{labels.completeSolutions}</p>
               <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{labels.completeSolutionsTitle}</h2>
@@ -242,7 +242,7 @@ export default function ServicesPage() {
 
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {page.solarPillars.map((service, index) => (
-              <article key={service.title} className="group overflow-hidden rounded-[22px] border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-lg">
+              <article key={service.title} className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-md">
                 <div className={`h-1.5 bg-gradient-to-r ${service.accent}`} />
                 <div className="p-5 sm:p-6">
                   <p className="font-mono text-xs font-bold tracking-[0.18em] text-[#137c63]">0{index + 1} / {labels.ourServices}</p>
@@ -263,8 +263,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
-        <div className="mb-9 max-w-3xl">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+        <div className="mb-8 max-w-3xl">
           <p className="inline-flex w-fit rounded-full border border-sky-800/15 bg-sky-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-sky-800">{labels.systemTypes}</p>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{labels.systemTypesTitle}</h2>
           <p className="mt-4 text-sm leading-7 text-slate-600">{labels.systemTypesDescription}</p>
@@ -272,7 +272,7 @@ export default function ServicesPage() {
 
         <div className="grid gap-4 xl:grid-cols-3">
           {page.systemTypes.map((system, index) => (
-            <article key={system.type} className={`rounded-[22px] border p-6 shadow-sm ${system.accent}`}>
+            <article key={system.type} className={`rounded-2xl border p-6 shadow-sm ${system.accent}`}>
               <div className="flex items-center justify-between gap-3">
                 <span className="font-mono text-xs font-bold tracking-[0.2em] opacity-70">SYSTEM 0{index + 1}</span>
                 <span className="rounded-full bg-white/80 px-3 py-1 text-sm font-bold uppercase tracking-[0.15em] text-slate-700">{system.badge}</span>
@@ -287,14 +287,14 @@ export default function ServicesPage() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 rounded-xl bg-white/75 px-4 py-3 text-sm leading-6 text-slate-700">
+              <p className="mt-6 rounded-2xl bg-white/75 px-4 py-3 text-sm leading-6 text-slate-700">
                 <span className="font-bold">{labels.bestFor}</span> {system.bestFor}
               </p>
             </article>
           ))}
         </div>
       </section>
-      <TirupatiEnergySection />
+      <TirupatiEnergySection background="first" />
     </main>
   )
 }

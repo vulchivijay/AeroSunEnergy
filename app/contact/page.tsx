@@ -104,14 +104,14 @@ export default function Contact() {
 
   return (
     <main className="overflow-hidden bg-white text-slate-950">
-      <section className="px-4 pb-12 pt-6 sm:px-6 sm:pb-16 sm:pt-8 lg:px-10">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 pb-12 pt-6 sm:px-6 sm:pb-16 sm:pt-8 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-5 flex items-center justify-between border-b border-slate-200 pb-4">
             <p className="text-sm font-black uppercase tracking-[0.2em] text-[#137c63]">AeroSun Energy <span className="mx-2 text-amber-600">/</span> {contactUs}</p>
             <span className="hidden text-sm font-semibold uppercase tracking-[0.18em] text-slate-500 sm:block">{location}</span>
           </div>
 
-          <div className="grid min-h-[34rem] overflow-hidden rounded-[30px] border border-slate-200 bg-[linear-gradient(135deg,#dbeafe_0%,#e0f2fe_55%,#ecfdf5_100%)] lg:grid-cols-[1fr_0.92fr]">
+          <div className="grid min-h-[34rem] overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(135deg,#dbeafe_0%,#e0f2fe_55%,#ecfdf5_100%)] lg:grid-cols-[1fr_0.92fr]">
             <motion.div
               initial={{ opacity: 0, x: -18 }}
               animate={{ opacity: 1, x: 0 }}
@@ -160,7 +160,7 @@ export default function Contact() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#102a43]/75 via-transparent to-[#102a43]/10" />
-              <div className="absolute right-8 top-8 flex h-28 w-28 items-center justify-center rounded-full border border-white/70 bg-amber-300 text-center text-[12px] font-black uppercase leading-4 tracking-[0.16em] text-slate-900 shadow-xl sm:right-12 sm:top-12 sm:h-36 sm:w-36">
+              <div className="absolute right-8 top-8 flex h-28 w-28 items-center justify-center rounded-full border border-white/70 bg-amber-300 text-center text-[12px] font-black uppercase leading-4 tracking-[0.16em] text-slate-900 shadow-sm sm:right-12 sm:top-12 sm:h-36 sm:w-36">
                 {energyBadge} <span className="mx-1 text-[#137c63]">+</span> {energyBadgeAccent}<br />{energyBadgeSuffix}
               </div>
               <div className="absolute bottom-7 left-7 max-w-xs border-l-2 border-amber-300 pl-4 text-sm font-semibold leading-7 text-white sm:bottom-10 sm:left-10">
@@ -169,7 +169,7 @@ export default function Contact() {
             </motion.div>
           </div>
 
-          <section className="mt-5 overflow-hidden rounded-[2rem] bg-[linear-gradient(120deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] text-white">
+          <section className="mt-5 overflow-hidden rounded-2xl bg-[linear-gradient(120deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] text-white">
             <div className="grid lg:grid-cols-[0.75fr_1.25fr]">
               <div className="flex flex-col justify-center border-b border-white/10 p-6 sm:p-9 lg:border-b-0 lg:border-r">
                 <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-200">{contactUs}</p>
@@ -211,7 +211,7 @@ export default function Contact() {
             ))}
           </div>
 
-          <section className="mt-12 overflow-hidden rounded-[30px] border border-slate-200 bg-[linear-gradient(125deg,#e0f2fe_0%,#ede9fe_52%,#fce7f3_100%)] shadow-[0_20px_55px_-40px_rgba(49,46,129,0.2)] sm:mt-16" aria-labelledby="contact-form-title">
+          <section className="mt-12 overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(125deg,#e0f2fe_0%,#ede9fe_52%,#fce7f3_100%)] shadow-sm sm:mt-16" aria-labelledby="contact-form-title">
             <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
               <div className="bg-[linear-gradient(145deg,#bfdbfe_0%,#ddd6fe_52%,#fbcfe8_100%)] p-6 text-slate-900 sm:p-9">
                 <p className="text-xs font-black uppercase tracking-[0.2em] text-indigo-900">{contactUs}</p>
@@ -266,7 +266,7 @@ export default function Contact() {
                 </Link>
               </div>
             </div>
-            <div className="mt-8 grid gap-px overflow-hidden rounded-[22px] border border-slate-200 bg-slate-200 lg:grid-cols-3">
+            <div className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 lg:grid-cols-3">
               {contactSteps.map((step) => (
                 <article key={step.title} className="bg-white p-6 sm:p-8">
                   <span className="font-mono text-sm font-bold text-[#137c63]">{step.number} <span className="text-slate-500">/ 03</span></span>
@@ -278,7 +278,7 @@ export default function Contact() {
           </section>
         </div>
       </section>
-      <section className="border-y border-slate-200 bg-slate-50 px-4 py-10 sm:px-6 lg:px-10" aria-labelledby="contact-referral-title">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white border-y border-slate-200 bg-slate-50 px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16" aria-labelledby="contact-referral-title">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <div className="max-w-3xl">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#137c63]">{referralProgram.eyebrow}</p>
@@ -297,7 +297,7 @@ export default function Contact() {
         </div>
       </section>
       <section
-        className="relative isolate overflow-hidden bg-gradient-to-br from-sky-100 via-indigo-50 to-fuchsia-100 px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
+        className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
         aria-labelledby="contact-faq-title"
       >
         <div className="pointer-events-none absolute -left-20 top-8 h-64 w-64 rounded-full bg-sky-300/30 blur-3xl" aria-hidden="true" />
@@ -317,7 +317,7 @@ export default function Contact() {
               </p>
             </header>
 
-            <div className="space-y-3 rounded-[30px] border border-white/80 bg-white/75 p-3 shadow-[0_20px_55px_-40px_rgba(49,46,129,0.25)] backdrop-blur-sm sm:p-5">
+            <div className="space-y-3 rounded-2xl border border-white/80 bg-white/75 p-3 shadow-sm backdrop-blur-sm sm:p-5">
               {solarFaqs.map((faq) => (
                 <FaqCard key={faq.question} question={faq.question} answer={faq.answer} />
               ))}

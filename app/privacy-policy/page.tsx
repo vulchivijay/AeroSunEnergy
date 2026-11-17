@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1fr_auto] lg:px-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-sky-100/20 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-sky-100">
-              <span className="h-1.5 w-1.5 rounded-full bg-sky-300 shadow-[0_0_12px_rgba(125,211,252,0.8)]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-sky-300 shadow-sm" />
               {content.badge}
             </div>
             <h1 className="mt-6 text-4xl font-black tracking-tighter text-white sm:text-6xl lg:text-7xl">
@@ -45,9 +45,9 @@ export default function PrivacyPolicyPage() {
         </div>
       </header>
 
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[minmax(0,1fr)_290px] lg:gap-12 lg:px-10">
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[minmax(0,1fr)_290px] lg:gap-12 lg:px-10 lg:py-16">
         <article className="min-w-0">
-          <div className="mb-8 rounded-[22px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <div className="mb-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-lg text-sky-800">i</span>
               <div>
@@ -59,7 +59,7 @@ export default function PrivacyPolicyPage() {
             </div>
             <div className="mt-6 grid gap-3 border-t border-slate-100 pt-5 sm:grid-cols-3">
               {content.summaryItems.map((item, index) => (
-                <div key={item.label} className="flex gap-3 rounded-xl bg-slate-50 p-3">
+                <div key={item.label} className="flex gap-3 rounded-2xl bg-slate-50 p-3">
                   <span className="font-mono text-sm font-bold text-sky-700">0{index + 1}</span>
                   <span className="text-sm leading-5 text-slate-600">
                     <strong className="block text-sm text-slate-900">{item.label}</strong>
@@ -75,7 +75,7 @@ export default function PrivacyPolicyPage() {
               <section
                 key={section.heading}
                 id={`privacy-${index + 1}`}
-                className="scroll-mt-28 overflow-hidden rounded-[22px] border border-slate-200 bg-white"
+                className={`scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200 ${index % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}
               >
                 <div className="flex items-start gap-4 p-5 sm:p-6">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-sky-200 bg-sky-50 font-mono text-sm font-bold text-sky-800">
@@ -109,7 +109,7 @@ export default function PrivacyPolicyPage() {
         </article>
 
         <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
-          <nav aria-label={content.navLabel} className="overflow-hidden rounded-[22px] border border-slate-200 bg-white">
+          <nav aria-label={content.navLabel} className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
             <div className="border-b border-slate-100 px-5 py-4">
               <p className="text-[12px] font-black uppercase tracking-[0.2em] text-sky-800">{content.findTopic}</p>
               <p className="mt-1 text-sm font-bold text-slate-900">{content.contents}</p>
@@ -129,14 +129,14 @@ export default function PrivacyPolicyPage() {
             </ol>
           </nav>
 
-          <section className="rounded-[22px] bg-[linear-gradient(135deg,#102a43_0%,#1d4e89_55%,#312e81_100%)] p-5 text-white">
-            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-sky-300">{content.protectedInfoTitle}</p>
-            <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-100">
+          <section className={`rounded-2xl p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
+            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-sky-800">{content.protectedInfoTitle}</p>
+            <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
               {content.protectedInfo.map((item) => <li key={item}>{item}</li>)}
             </ul>
           </section>
 
-          <section className="rounded-[22px] border border-[#dce9df] bg-[#eaf2e9] p-5">
+          <section className={`rounded-2xl border border-[#dce9df] p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}>
             <p className="text-[12px] font-black uppercase tracking-[0.2em] text-[#137c63]">{content.principlesTitle}</p>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
               {content.principles.map((item) => <li key={item}>{item}</li>)}
