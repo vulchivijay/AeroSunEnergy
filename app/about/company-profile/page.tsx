@@ -464,16 +464,13 @@ export default function CompanyProfilePage() {
                 />
                 {cp.contactWebsite}
               </a>
-              <a
-                className="flex items-center gap-3 text-sm text-slate-700 transition hover:text-teal-800"
-                href="mailto:customercare@aerosunenergy.in"
-              >
+              <div className="flex items-center gap-3 text-sm text-slate-700">
                 <Mail
                   className="h-4 w-4 text-teal-700"
                   aria-hidden="true"
                 />
                 {cp.contactEmail}
-              </a>
+              </div>
               <a
                 className="flex items-center gap-3 text-sm text-slate-700 transition hover:text-teal-800"
                 href="tel:+918099181075"

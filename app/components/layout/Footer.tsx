@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useState, type FormEvent, type ReactNode } from 'react'
+import { Fragment, useEffect, useState, type FormEvent, type ReactNode } from 'react'
 import Logo from '../brand/Logo'
 import CompanyAge from './CompanyAge'
 import { useLocale } from '@/lib/LocaleContext'
@@ -234,7 +234,7 @@ export default function Footer() {
 							</li>
 							<li className="flex items-center gap-3">
 								<Mail className="h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />
-								<a href={`mailto:${footer.email}`} className="break-all transition-colors hover:text-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 focus-visible:text-amber-100">{footer.email}</a>
+								<span className="break-all">{footer.email}</span>
 							</li>
 							<li className="flex items-center gap-3">
 								<Phone className="h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />
@@ -303,11 +303,11 @@ export default function Footer() {
 				<div className="flex w-full flex-col items-center justify-between gap-1 border-t border-white/15 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
 					<div className="flex flex-wrap items-center justify-center gap-1 text-[12px] uppercase tracking-[0.14em] text-white/70">
 						{footer.legalLinks.map((link: { href: string; label: string }) => (
-              <>
-                <Link key={link.href} href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`transition-colors hover:text-amber-100 ${isActive(link.href) ? 'text-amber-200' : ''}`}>
+              <Fragment key={link.href}>
+                <Link href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`transition-colors hover:text-amber-100 ${isActive(link.href) ? 'text-amber-200' : ''}`}>
                 {link.label}</Link>
                 <span className="inline-flex px-1 text-amber-500 last:hidden">|</span>
-              </>
+              </Fragment>
 							
 						))}
 					</div>

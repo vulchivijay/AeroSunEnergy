@@ -3,7 +3,6 @@
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { submitMailtoForm } from '@/lib/submitMailto'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useLocale } from '@/lib/LocaleContext'
@@ -52,25 +51,6 @@ export default function WarrantyPolicyPage() {
       return
     }
 
-    const emailText = content.email
-    const subject = emailText.subject.replace('{projectName}', data.projectName)
-    const body = [
-      emailText.title,
-      emailText.separator,
-      '',
-      `${emailText.customerName}: ${data.customerName}`,
-      `${emailText.companyName}: ${data.companyName || emailText.notProvided}`,
-      `${emailText.email}: ${data.email}`,
-      `${emailText.phone}: ${data.phone}`,
-      `${emailText.projectName}: ${data.projectName}`,
-      `${emailText.productLine}: ${data.productLine}`,
-      `${emailText.warrantyStart}: ${data.warrantyStart}`,
-      `${emailText.servicePlan}: ${data.servicePlan}`,
-      '',
-      emailText.termsAccepted,
-    ].join('\n')
-
-    submitMailtoForm({ to: 'customercare@aerosunenergy.in', subject, body })
     reset(defaultValues)
     toast.success(`${content.feedback.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`)
   }

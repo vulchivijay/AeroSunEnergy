@@ -206,7 +206,7 @@ function parseMarkdown(markdown: string): ContentBlock[] {
 
 function InlineContent({ text }: { text: string }) {
   const parts = text.split(
-    /(\\\(.+?\\\)|\[[^\]]+\]\((?:https?:\/\/|mailto:)[^)]+\)|\*\*.+?\*\*|__.+?__|`[^`]+`|\*[^*]+\*|_[^_]+_)/g,
+    /(\\\(.+?\\\)|\[[^\]]+\]\(https?:\/\/[^)]+\)|\*\*.+?\*\*|__.+?__|`[^`]+`|\*[^*]+\*|_[^_]+_)/g,
   );
 
   return parts.map((part, index) => {
@@ -216,7 +216,7 @@ function InlineContent({ text }: { text: string }) {
     }
 
     const linkMatch = part.match(
-      /^\[([^\]]+)\]\(((?:https?:\/\/|mailto:)[^)]+)\)$/,
+      /^\[([^\]]+)\]\((https?:\/\/[^)]+)\)$/,
     );
     if (linkMatch) {
       return (

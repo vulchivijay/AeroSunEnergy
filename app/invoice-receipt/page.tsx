@@ -4,7 +4,6 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
-import { submitMailtoForm } from '@/lib/submitMailto'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useLocale } from '@/lib/LocaleContext'
@@ -55,28 +54,6 @@ export default function InvoiceReceiptPage() {
       return
     }
 
-    const emailText = content.email
-    const subject = emailText.subject.replace('{invoiceNumber}', data.invoiceNumber)
-    const body = [
-      emailText.title,
-      emailText.separator,
-      '',
-      `${emailText.customerName}: ${data.customerName}`,
-      `${emailText.companyName}: ${data.companyName || emailText.notProvided}`,
-      `${emailText.email}: ${data.email}`,
-      `${emailText.phone}: ${data.phone}`,
-      `${emailText.invoiceNumber}: ${data.invoiceNumber}`,
-      `${emailText.projectName}: ${data.projectName}`,
-      `${emailText.invoiceDate}: ${data.invoiceDate}`,
-      `${emailText.amount}: ${data.amount}`,
-      `${emailText.paymentMode}: ${data.paymentMode}`,
-      `${emailText.paymentReceived}: ${data.paymentReceived ? emailText.yes : emailText.no}`,
-      '',
-      emailText.receiptNotes,
-      data.receiptNote,
-    ].join('\n')
-
-    submitMailtoForm({ to: 'customercare@aerosunenergy.in', subject, body })
     reset(defaultValues)
     toast.success(`${content.feedback.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`)
   }

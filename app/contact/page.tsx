@@ -89,12 +89,6 @@ export default function Contact() {
 
   const channels = [
     {
-      label: c.channels[0].label,
-      value: c.channels[0].value,
-      href: `mailto:${footer.email}`,
-      icon: channelIconComponents[channelIconIds[0]],
-    },
-    {
       label: c.channels[1].label,
       value: c.channels[1].value,
       href: footer.website.startsWith('http') ? footer.website : `https://${footer.website}`,
@@ -107,8 +101,6 @@ export default function Contact() {
       icon: channelIconComponents[channelIconIds[2]],
     },
   ]
-
-  const contactEmail = footer.email
 
   return (
     <main className="overflow-hidden bg-white text-slate-950">
@@ -140,12 +132,6 @@ export default function Contact() {
                   {c.heroDescription}
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  <Link
-                    href={`mailto:${contactEmail}`}
-                    className="inline-flex items-center justify-center rounded-full bg-[#087a61] px-6 py-3.5 text-sm font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61]"
-                  >
-                    {c.emailButton}
-                  </Link>
                   <Link
                     href="/estimation-calculator"
                     className="inline-flex items-center justify-center rounded-full border border-sky-900/20 bg-white/40 px-6 py-3.5 text-sm font-bold text-slate-800 transition hover:bg-white/75"

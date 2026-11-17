@@ -7625,8 +7625,8 @@
       "submit": "Submit Quotation"
     },
     "feedback": {
-      "success": "Your quotation request has been prepared in your email app.",
-      "error": "We could not open your email app. Please try again or email us directly."
+      "success": "Your quotation request has been submitted successfully.",
+      "error": "There was a problem submitting your request. Please try again."
     },
     "validation": {
       "customerNameRequired": "Customer name is required.",
@@ -9124,8 +9124,8 @@
         "projectDetails": "Please provide a few more details about your project requirement."
       },
       "feedback": {
-        "success": "Your enquiry has been prepared in your email app.",
-        "error": "We could not open your email app. Please try again or email us directly."
+        "success": "Your enquiry has been submitted successfully.",
+        "error": "There was a problem submitting your request. Please try again."
       },
       "submitting": "Submitting...",
       "submit": "Send Enquiry",
@@ -9246,8 +9246,8 @@
         "notes": "Please add a few notes for the survey team."
       },
       "feedback": {
-        "success": "Your site survey request has been prepared in your email app.",
-        "error": "We could not open your email app. Please try again or email us directly."
+        "success": "Your site survey request has been submitted successfully.",
+        "error": "There was a problem submitting your request. Please try again."
       },
       "submitting": "Submitting...",
       "submit": "Submit site survey",
@@ -9970,13 +9970,10 @@
     "documentReference": "Document Reference: ASE-SOL-QTN-0001 | Revision 00",
     "selectOption": "Select an option",
     "paymentPercentageValidation": "Payment milestone percentages must add up to 100%.",
-    "mailtoBodyTitle": "AEROSUN ENERGY SOLAR PROJECT QUOTATION",
-    "mailtoBodySubtitle": "Technical & Commercial Proposal",
-    "mailtoSubjectPrefix": "Solar Project Quotation - ",
-    "mailtoRecipient": "customercare@aerosunenergy.in",
-    "feedback": "Your completed quotation has been prepared in your email app.",
+    "contactEmail": "customercare@aerosunenergy.in",
+    "feedback": "Your completed quotation has been submitted successfully.",
     "acceptTerms": "I have reviewed the quotation details and accept the terms and conditions.",
-    "submit": "Validate & Prepare Quotation",
+    "submit": "Submit Quotation",
     "requiredFieldsNote": "Required fields are marked with an asterisk. Your browser will validate the form before submission.",
     "quotationSectionsTitle": "Quotation Sections",
     "quotationSectionsAriaLabel": "Quotation sections"
@@ -9991,7 +9988,6 @@
     "imageAlt": "AeroSun Energy consultation",
     "heroTitle": "Let’s shape a contact plan for your solar + wind project",
     "heroDescription": "Use this page to brief our team about rooftops, roads, parks, or commercial land. We’ll respond with a practical system direction, estimated scale, and the next steps to move forward.",
-    "emailButton": "Email us",
     "estimationButton": "Open estimation",
     "location": "Tirupati, India",
     "energyBadge": "Sun",
@@ -10902,8 +10898,8 @@
         "phone": "Phone",
         "status": "Status: Agreement accepted",
         "paymentAcknowledged": "Payment terms acknowledged by customer.",
-        "success": "Your agreement submission has been prepared in your email app.",
-        "error": "We could not open your email app. Please try again or email us directly."
+        "success": "Your agreement has been submitted successfully.",
+        "error": "There was a problem submitting your request. Please try again."
       }
     }
   },
@@ -11145,8 +11141,8 @@
         "notes": "Please add a few notes for the installation and commissioning team."
       },
       "feedback": {
-        "success": "Your checklist has been prepared in your email app.",
-        "error": "We could not open your email app. Please try again or email us directly."
+        "success": "Your checklist has been submitted successfully.",
+        "error": "There was a problem submitting your request. Please try again."
       },
       "email": {
         "subject": "Installation & Commissioning Checklist - {projectName}",
@@ -11286,8 +11282,8 @@
         "paymentReceived": "Please confirm that the payment has been received."
       },
       "feedback": {
-        "success": "Your invoice has been prepared in your email app.",
-        "error": "We could not open your email app. Please try again or email us directly."
+        "success": "Your invoice has been submitted successfully.",
+        "error": "There was a problem submitting your request. Please try again."
       },
       "email": {
         "subject": "Invoice & Receipt - {invoiceNumber}",
@@ -11454,8 +11450,8 @@
         "termsAccepted": "Please accept the purchase terms and agreement."
       },
       "feedback": {
-        "success": "Your purchase order has been prepared in your email app.",
-        "error": "We could not open your email app. Please try again or email us directly."
+        "success": "Your purchase order has been submitted successfully.",
+        "error": "There was a problem submitting your request. Please try again."
       },
       "email": {
         "subject": "Purchase Order Confirmation - {poNumber}",
@@ -11559,8 +11555,8 @@
         "acceptTerms": "Please confirm that you accept the warranty and service policy terms."
       },
       "feedback": {
-        "success": "Your warranty acknowledgement has been prepared in your email app.",
-        "error": "We could not open your email app. Please try again or email us directly."
+        "success": "Your warranty acknowledgement has been submitted successfully.",
+        "error": "There was a problem submitting your request. Please try again."
       },
       "email": {
         "subject": "Warranty & After-Sales Policy - {projectName}",

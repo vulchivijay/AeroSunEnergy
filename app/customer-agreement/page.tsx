@@ -3,7 +3,6 @@
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { submitMailtoForm } from '@/lib/submitMailto'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useLocale } from '@/lib/LocaleContext'
@@ -84,21 +83,6 @@ export default function CustomerAgreementPage() {
       return
     }
 
-    const subject = `${formCopy.submission.subject} - ${data.customerName}`
-    const body = [
-      formCopy.submission.heading,
-      formCopy.submission.separator,
-      '',
-      `${formCopy.submission.customerName}: ${data.customerName}`,
-      `${formCopy.submission.companyName}: ${data.companyName || formCopy.submission.notProvided}`,
-      `${formCopy.submission.email}: ${data.email}`,
-      `${formCopy.submission.phone}: ${data.phone}`,
-      '',
-      formCopy.submission.status,
-      formCopy.submission.paymentAcknowledged,
-    ].join('\n')
-
-    submitMailtoForm({ to: content.contact.emailLabel, subject, body })
     reset(defaultValues)
     toast.success(`${formCopy.submission.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`)
   }
@@ -202,7 +186,7 @@ export default function CustomerAgreementPage() {
 
           <p className="mt-7 rounded-2xl border border-indigo-200/80 bg-white p-5 text-md leading-7 text-slate-600">
             {content.contact.question}{' '}
-            <a href={`mailto:${content.contact.emailLabel}`} className="font-bold text-indigo-800 underline decoration-indigo-300 underline-offset-4">{content.contact.emailLabel}</a>.
+            <span className="font-bold text-indigo-800">{content.contact.emailLabel}</span>.
           </p>
         </article>
 
