@@ -103,7 +103,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
             role={item.kind === 'error' ? 'alert' : 'status'}
             aria-live={item.kind === 'error' ? 'assertive' : 'polite'}
             aria-atomic="true"
-            className={`pointer-events-auto flex items-start gap-3 rounded-2xl border bg-white p-4 shadow-sm ${
+            className={`pointer-events-auto flex items-start gap-3 rounded-2xl border bg-white p-4 shadow-md ${
               item.kind === 'success'
                 ? 'border-emerald-200'
                 : item.kind === 'error'

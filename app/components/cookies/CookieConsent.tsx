@@ -71,7 +71,7 @@ export default function CookieConsent() {
     <div className="fixed inset-x-0 bottom-0 z-[80] flex justify-center p-4 sm:p-6">
       <aside
         aria-label={labels.title}
-        className="w-full max-w-5xl rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-sm backdrop-blur-xl  "
+        className="w-full max-w-5xl rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-lg backdrop-blur-xl"
       >
         <div>
           <div className="w-full">

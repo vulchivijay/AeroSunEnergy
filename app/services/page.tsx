@@ -100,7 +100,7 @@ export default function ServicesPage() {
           {page.servicePackages.map((service, index) => {
             const Icon = divisionIcons[index] ?? Zap
             return (
-              <article key={service.title} className="group relative overflow-hidden rounded-[22px] border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-sm sm:p-8">
+              <article key={service.title} className="group relative overflow-hidden rounded-[22px] border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-md sm:p-8">
                 <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${service.accent}`} />
                 <div className="flex items-start justify-between gap-4">
                   <div>
@@ -242,7 +242,7 @@ export default function ServicesPage() {
 
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {page.solarPillars.map((service, index) => (
-              <article key={service.title} className="group overflow-hidden rounded-[22px] border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-sm">
+              <article key={service.title} className="group overflow-hidden rounded-[22px] border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-md">
                 <div className={`h-1.5 bg-gradient-to-r ${service.accent}`} />
                 <div className="p-5 sm:p-6">
                   <p className="font-mono text-xs font-bold tracking-[0.18em] text-[#137c63]">0{index + 1} / {labels.ourServices}</p>

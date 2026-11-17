@@ -271,7 +271,7 @@ export default function Navbar() {
               : 'group-hover/nav:visible group-hover/nav:opacity-100 group-focus-within/nav:visible group-focus-within/nav:opacity-100'
           }`}
         >
-          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-1.5 shadow-sm">
+          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-1.5 shadow-lg">
             {link.children.map((child) => {
               const childActive = pathname === child.href
               const ChildIcon = getNavigationIcon(child.href)
@@ -307,7 +307,7 @@ export default function Navbar() {
         aria-label={t.navbar.languageLabel}
         className={inline
           ? 'mt-2 grid gap-1 rounded-xl border border-white/15 bg-white/10 p-1.5 text-white'
-          : 'absolute right-0 top-[calc(100%+0.65rem)] z-[60] w-48 overflow-hidden rounded-2xl border border-[#333333]/15 bg-[#e5e7eb] p-1.5 text-[#333333] shadow-sm'}
+          : 'absolute right-0 top-[calc(100%+0.65rem)] z-[60] w-48 overflow-hidden rounded-2xl border border-[#333333]/15 bg-[#e5e7eb] p-1.5 text-[#333333] shadow-lg'}
       >
         {languageOptions.map((option) => (
           <button
@@ -339,7 +339,7 @@ export default function Navbar() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 border-b border-white/25 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] text-white shadow-sm ring-1 ring-inset ring-white/10 backdrop-blur-2xl"
+      className="sticky top-0 z-50 border-b border-white/25 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] text-white shadow-md ring-1 ring-inset ring-white/10 backdrop-blur-2xl"
     >
       <div className="absolute -left-10 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-sky-300/20 blur-3xl" />
       <div className="absolute -right-12 top-0 h-32 w-32 rounded-full bg-amber-200/20 blur-3xl" />
@@ -433,7 +433,7 @@ export default function Navbar() {
       <div
         id="mobile-primary-navigation"
         hidden={!menuOpen}
-        className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-white/20 bg-[linear-gradient(135deg,rgba(23,37,84,1),rgba(49,46,129,1),rgba(15,23,42,1))] px-4 pb-6 pt-3 text-white shadow-sm backdrop-blur-2xl sm:px-6 2xl:hidden"
+        className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-white/20 bg-[linear-gradient(135deg,rgba(23,37,84,1),rgba(49,46,129,1),rgba(15,23,42,1))] px-4 pb-6 pt-3 text-white shadow-lg backdrop-blur-2xl sm:px-6 2xl:hidden"
       >
         <nav aria-label={t.navbar.mobileNavigationLabel} className="mx-auto max-w-3xl space-y-1">
           <p className="mb-3 flex items-center gap-2 px-2 text-sm uppercase tracking-[0.2em] text-sky-200">

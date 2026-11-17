@@ -207,7 +207,7 @@ export default function AboutPage() {
                 const label = row.label
                 const status = row.status
                 return (
-                  <article key={label} className="group flex min-h-24 items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-sm sm:gap-4 sm:p-5">
+                  <article key={label} className="group flex min-h-24 items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-md sm:gap-4 sm:p-5">
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#eaf2e9] font-mono text-sm font-black text-[#14785e] ring-1 ring-[#087a61]/10 transition-colors group-hover:bg-[#dce9df]">
                       {String(index + 1).padStart(2, '0')}
                     </span>
@@ -253,7 +253,7 @@ export default function AboutPage() {
           <div className="mt-12 border-t border-[#cbd6cc] pt-8">
             <div className="grid gap-3 sm:grid-cols-2">
               {coreValuesData.map((value, index) => (
-                <article key={value.title} className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-sm">
+                <article key={value.title} className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-md">
                   <div className="flex items-center justify-between gap-3">
                     <h3 className="text-sm font-extrabold text-slate-950">{value.title}</h3>
                     <span className="font-mono text-[12px] font-bold text-[#137c63]">0{index + 1}</span>
@@ -365,7 +365,7 @@ export default function AboutPage() {
           </div>
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {content.serviceGroups.map((group, index) => (
-              <article key={group.title} className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-sm sm:p-6">
+              <article key={group.title} className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-md sm:p-6">
                 <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${a.serviceAccents[index]}`} />
                 <p className="font-mono text-sm font-bold text-[#137c63]">0{index + 1} / {content.solutionsLabel.toUpperCase()}</p>
                 <h3 className="mt-4 text-xl font-black text-slate-950">{group.title}</h3>

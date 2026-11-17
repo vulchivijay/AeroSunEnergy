@@ -87,7 +87,7 @@ export default function Brands() {
             return (
               <li
                 key={brand.file}
-                className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-[1.25rem] border p-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-sm sm:rounded-[1.5rem] sm:p-4"
+                className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-[1.25rem] border p-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:rounded-[1.5rem] sm:p-4"
                 style={{
                   borderColor: `hsl(${brand.hue} 68% 72%)`,
                   background: `linear-gradient(145deg, hsl(${brand.hue} 82% 95%), #fff 48%, hsl(${brand.hue} 76% 89%))`,
