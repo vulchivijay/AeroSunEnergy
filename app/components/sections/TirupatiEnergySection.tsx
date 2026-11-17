@@ -9,7 +9,7 @@ export default function TirupatiEnergySection() {
   const content = t.tirupatiSeo
 
   return (
-    <section className="bg-[#f8f7f2] px-4 py-10 sm:px-6 lg:px-10 lg:py-14">
+    <section className="bg-gradient-to-br from-[#ced6e0] to-[#b8c4d2] px-4 py-10 sm:px-6 lg:px-10 lg:py-14">
       <div className="mx-auto max-w-7xl">
         <div className="relative rounded-[2rem] border border-[#cfe0d1] bg-[#eaf2e9] p-6 sm:p-9 lg:px-12 lg:py-10">
           <div className="max-w-4xl pt-20 sm:pt-32 lg:pt-0 lg:pr-52">

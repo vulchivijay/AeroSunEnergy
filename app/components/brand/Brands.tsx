@@ -45,7 +45,7 @@ export default function Brands() {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-[linear-gradient(120deg,#ffffff_0%,#f8fafc_48%,#e8eef5_100%)] px-4 py-16 sm:px-6 lg:px-10 lg:py-20"
+      className="relative isolate overflow-hidden bg-gradient-to-br from-[#f1f2f6] to-[#e2e5ed] px-4 py-16 sm:px-6 lg:px-10 lg:py-20"
       aria-labelledby="brand-section-title"
     >
       <div

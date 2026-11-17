@@ -215,7 +215,7 @@ export function SolarEstimation() {
     e.propertyTypeOptions[selectedPropertyIndex] ?? calculatorText.homeOption
 
   return (
-    <section className="bg-linear-to-br from-[#dcecff] via-[#ede8ff] to-[#d8f4f3] px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
+    <section className="bg-gradient-to-br from-[#dfe4ea] to-[#cbd3de] px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
       <div className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] shadow-[0_30px_90px_-40px_rgba(2,12,27,0.65)]">
         <div className="grid lg:grid-cols-[minmax(300px,0.75fr)_1.45fr]">
           <div className="bg-linear-to-br from-[#4568b6] via-[#5c55ae] to-[#3f7798] p-6 text-white sm:p-8 lg:p-10">
