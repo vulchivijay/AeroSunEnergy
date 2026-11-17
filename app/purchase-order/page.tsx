@@ -4,7 +4,6 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Card, CardContent } from '@/app/components/ui/Card'
-import { submitMailtoForm } from '@/lib/submitMailto'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useLocale } from '@/lib/LocaleContext'
@@ -58,30 +57,6 @@ export default function PurchaseOrderPage() {
       return
     }
 
-    const emailText = content.email
-    const subject = emailText.subject.replace('{poNumber}', data.poNumber)
-    const body = [
-      emailText.title,
-      emailText.separator,
-      '',
-      `${emailText.customerName}: ${data.customerName}`,
-      `${emailText.companyName}: ${data.companyName || emailText.notProvided}`,
-      `${emailText.email}: ${data.email}`,
-      `${emailText.phone}: ${data.phone}`,
-      `${emailText.poNumber}: ${data.poNumber}`,
-      `${emailText.projectTitle}: ${data.projectTitle}`,
-      `${emailText.supplierName}: ${data.supplierName}`,
-      `${emailText.productLine}: ${data.productLine}`,
-      `${emailText.quantity}: ${data.quantity}`,
-      `${emailText.unitPrice}: ${data.unitPrice}`,
-      `${emailText.totalValue}: ${data.totalValue}`,
-      `${emailText.deliverySchedule}: ${data.deliverySchedule}`,
-      `${emailText.warranty}: ${data.warranty}`,
-      '',
-      emailText.termsAccepted,
-    ].join('\n')
-
-    submitMailtoForm({ to: 'customercare@aerosunenergy.in', subject, body })
     reset(defaultValues)
     toast.success(`${content.feedback.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`)
   }

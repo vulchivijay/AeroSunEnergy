@@ -31,7 +31,7 @@ export default function Notifications() {
           </div>
           <p className="text-xs leading-relaxed text-white sm:text-sm">
             {notificationText}
-            <span className="underline underline-offset-4 text-[#F59E0B]">{notificationBoldText}</span>
+            <span className="text-xs underline underline-offset-4 text-[#ffb321] sm:text-sm">{notificationBoldText}</span>
             {notificationEndText}
           </p>
         </div>

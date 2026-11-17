@@ -28,52 +28,63 @@ export default function SolarEnergyPage() {
 
   return (
     <main className="overflow-hidden bg-white text-slate-900">
-      <header className="relative isolate overflow-hidden bg-[radial-gradient(ellipse_at_82%_15%,rgba(251,191,36,0.28),transparent_35%),linear-gradient(125deg,#fffdf7_0%,#fff4d6_58%,#fffaf0_100%)] px-4 py-10 sm:px-6 lg:px-10 lg:py-14">
-        <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#137c63]/15 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-500" aria-hidden="true" />
+      <header className="relative isolate min-h-[620px] overflow-hidden bg-[#102a43] text-white sm:min-h-[680px]">
+        <div className="absolute inset-0 -z-10">
+          {solarSlidesLocalized[0] && (
+            <OptimizedImage
+              src={solarSlidesLocalized[0].image}
+              alt={solarSlidesLocalized[0].title}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover opacity-50"
+            />
+          )}
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,25,47,0.94)_0%,rgba(22,48,82,0.78)_52%,rgba(22,48,82,0.28)_100%)]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#102a43]/80 via-transparent to-[#102a43]/25" />
+        </div>
+
+        <div className="mx-auto flex min-h-[620px] max-w-7xl flex-col justify-between px-4 py-10 sm:min-h-[680px] sm:px-6 sm:py-14 lg:px-10">
+          <div className="flex items-center gap-4">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.22em] text-white/90 backdrop-blur-md sm:text-xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-300" aria-hidden="true" />
               {solarPage.hero.eyebrow}
-            </div>
-            <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.02] tracking-tighter text-[#152b29] sm:text-5xl lg:text-7xl">
-              {solarPage.hero.title}
-              <span className="block text-[#137c63]">{solarPage.hero.titleAccent}</span>
-            </h1>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
-              {solarPage.hero.subtitle}
-            </p>
+            </span>
           </div>
-          <div className="relative isolate overflow-hidden rounded-[26px] bg-[linear-gradient(145deg,#71300c_0%,#92370b_55%,#a94208_100%)] p-5 text-white shadow-[0_24px_55px_-30px_rgba(120,55,5,0.4)] sm:p-7">
-            <div className="absolute right-[-2.5rem] top-[-3.5rem] h-48 w-48 rounded-full border border-white/15" aria-hidden="true" />
-            <div className="absolute right-[-0.25rem] top-[-1.25rem] h-32 w-32 rounded-full border border-white/15" aria-hidden="true" />
-            <div className="flex items-center gap-4">
-              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/15 ring-1 ring-white/25">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="h-8 w-8" aria-hidden="true">
-                  <circle cx="12" cy="12" r="4" />
-                  <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" strokeLinecap="round" />
-                </svg>
-              </span>
-              <div>
-                <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-amber-200">{solarPage.hero.lead}</p>
-                <p className="mt-1 text-xl font-black tracking-tight sm:text-2xl">{solarPage.hero.pathway}</p>
+
+          <div className="grid items-end gap-10 py-16 lg:grid-cols-[1.25fr_0.75fr] lg:py-20">
+            <div className="max-w-4xl">
+              <h1 className="text-5xl font-black leading-[0.98] tracking-tighter text-white sm:text-6xl lg:text-8xl">
+                {solarPage.hero.title}
+                <span className="block text-amber-200">{solarPage.hero.titleAccent}</span>
+              </h1>
+              <p className="mt-6 max-w-2xl text-sm leading-7 text-white/75 sm:text-xl sm:leading-8">
+                {solarPage.hero.subtitle}
+              </p>
+            </div>
+
+            <div className="relative max-w-md rounded-[22px] border border-white/15 bg-[#102a43]/65 p-5 backdrop-blur-lg sm:p-6 lg:ml-auto">
+              <p className="inline-flex w-fit rounded-full border border-amber-300/25 bg-white/10 px-3 py-1.5 text-sm font-bold uppercase tracking-[0.2em] text-amber-200">{solarPage.hero.lead}</p>
+              <p className="mt-3 text-lg font-semibold leading-7 text-white sm:text-xl">{solarPage.hero.pathway}</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 border-t border-white/20 pt-5 sm:grid-cols-4 sm:gap-0 sm:divide-x sm:divide-white/20">
+            {solarPage.hero.options.map(({ name, detail }, index) => (
+              <div key={name} className="flex flex-col justify-center px-2 py-2 sm:px-5 sm:first:pl-0">
+                <span className="font-mono text-sm text-amber-200">0{index + 1}</span>
+                <p className="mt-1 font-bold text-white">{name}</p>
+                <p className="mt-1 text-sm text-white/75">{detail}</p>
               </div>
-            </div>
-            <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/15 bg-white/15">
-              {solarPage.hero.options.map(({ name, detail }) => (
-                <div key={name} className="bg-white/[0.08] p-3.5 sm:p-4">
-                  <p className="font-bold text-white">{name}</p>
-                  <p className="mt-1 text-sm text-indigo-50">{detail}</p>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </header>
 
       <SharedHeroSlider slides={solarSlidesLocalized} ariaLabel={solarPage.hero.eyebrow} />
 
-      <section className="mx-auto my-6 max-w-7xl rounded-4xl border border-slate-200 bg-white p-5 sm:my-8 sm:p-8 lg:p-9">
-        <div className="mb-8 max-w-3xl">
+      <section id="solar-offerings" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+        <div className="mb-9 max-w-3xl">
           <SectionEyebrow>{solarPage.offer.eyebrow}</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">{solarPage.offer.title}</h2>
           <p className="mt-4 text-sm leading-8 text-slate-700">{solarPage.offer.description}</p>
@@ -92,29 +103,31 @@ export default function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto my-6 max-w-7xl rounded-4xl border border-slate-200 bg-slate-50 p-5 sm:my-8 sm:p-8 lg:p-9">
-        <div className="mb-8 max-w-3xl">
-          <SectionEyebrow>{solarPage.rooftop.eyebrow}</SectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">{solarPage.rooftop.title}</h2>
-          <p className="mt-4 text-sm leading-8 text-slate-700">{solarPage.rooftop.description}</p>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-          <div className="grid gap-5 sm:grid-cols-2">
-            {rooftopBenefitsLocalized.map((benefit) => (
-              <BenefitCard key={benefit} title={benefit.split(' ').slice(0, 3).join(' ') || 'Benefit'} description={benefit} />
-            ))}
+      <section className="border-y border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+          <div className="mb-9 max-w-3xl">
+            <SectionEyebrow>{solarPage.rooftop.eyebrow}</SectionEyebrow>
+            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">{solarPage.rooftop.title}</h2>
+            <p className="mt-4 text-sm leading-8 text-slate-700">{solarPage.rooftop.description}</p>
           </div>
 
-          <div className="space-y-5">
-            <InfoPanel title={solarPage.rooftop.suitableFor} content={suitableForLocalized} accent="emerald" />
-            <InfoPanel title={solarPage.rooftop.keyBenefits} content={rooftopBenefitsLocalized} accent="sky" />
+          <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+            <div className="grid gap-5 sm:grid-cols-2">
+              {rooftopBenefitsLocalized.map((benefit) => (
+                <BenefitCard key={benefit} title={benefit.split(' ').slice(0, 3).join(' ') || 'Benefit'} description={benefit} />
+              ))}
+            </div>
+
+            <div className="space-y-5">
+              <InfoPanel title={solarPage.rooftop.suitableFor} content={suitableForLocalized} accent="emerald" />
+              <InfoPanel title={solarPage.rooftop.keyBenefits} content={rooftopBenefitsLocalized} accent="sky" />
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto my-6 max-w-7xl rounded-4xl border border-slate-200 bg-white p-5 sm:my-8 sm:p-8 lg:p-9">
-        <div className="mb-8 max-w-3xl">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+        <div className="mb-9 max-w-3xl">
           <SectionEyebrow>{solarPage.systemTypes.eyebrow}</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">{solarPage.systemTypes.title}</h2>
         </div>
@@ -126,21 +139,23 @@ export default function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto my-6 max-w-7xl rounded-4xl border border-slate-200 bg-slate-50 p-5 sm:my-8 sm:p-8 lg:p-9">
-        <div className="mb-8 max-w-3xl">
-          <SectionEyebrow>{solarPage.whySolar.eyebrow}</SectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">{solarPage.whySolar.title}</h2>
-        </div>
+      <section className="border-y border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+          <div className="mb-9 max-w-3xl">
+            <SectionEyebrow>{solarPage.whySolar.eyebrow}</SectionEyebrow>
+            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">{solarPage.whySolar.title}</h2>
+          </div>
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {whySolarLocalized.map((item) => (
-            <BenefitCard key={item.title} title={item.title} description={item.description} />
-          ))}
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {whySolarLocalized.map((item) => (
+              <BenefitCard key={item.title} title={item.title} description={item.description} />
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto my-6 max-w-7xl rounded-4xl border border-slate-200 bg-white p-5 sm:my-8 sm:p-8 lg:p-9">
-        <div className="mb-8 max-w-3xl">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+        <div className="mb-9 max-w-3xl">
           <SectionEyebrow>{solarPage.subsidy.eyebrow}</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">{solarPage.subsidy.title}</h2>
           <p className="mt-4 text-sm leading-8 text-slate-700">{solarPage.subsidy.description}</p>
@@ -158,23 +173,24 @@ export default function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto my-6 max-w-7xl rounded-4xl border border-slate-200 bg-slate-50 p-5 sm:my-8 sm:p-8 lg:p-9">
-        <div className="rounded-4xl border border-slate-200 bg-white p-6 sm:p-8">
-          <SectionEyebrow>{solarPage.subsidy.strategicEyebrow}</SectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">{solarPage.subsidy.strategicTitle}</h2>
-          <div className="mt-6 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-3xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700">
-              {solarPage.subsidy.strategyOverview}
-            </div>
-            <div className="rounded-3xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700">
-              {solarPage.subsidy.strategyAdditionalOptions}
+      <section className="border-y border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+          <div className="rounded-[22px] border border-slate-200 bg-white p-6 sm:p-8">
+            <SectionEyebrow>{solarPage.subsidy.strategicEyebrow}</SectionEyebrow>
+            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">{solarPage.subsidy.strategicTitle}</h2>
+            <div className="mt-6 grid gap-6 lg:grid-cols-2">
+              <div className="rounded-3xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700">
+                {solarPage.subsidy.strategyOverview}
+              </div>
+              <div className="rounded-3xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700">
+                {solarPage.subsidy.strategyAdditionalOptions}
+              </div>
             </div>
           </div>
-          
         </div>
       </section>
 
-      <section className="mx-auto my-6 max-w-7xl rounded-4xl border border-slate-200 bg-white p-5 sm:my-8 sm:p-8 lg:p-9">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="rounded-4xl border border-slate-200 bg-slate-50 p-6">
             <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-[#137c63]">{comparisonMeta.label}</p>
@@ -223,64 +239,66 @@ export default function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto my-6 max-w-7xl rounded-4xl border border-slate-200 bg-slate-50 p-5 sm:my-8 sm:p-8 lg:p-9">
-        <div className="mb-8 max-w-3xl">
-          <SectionEyebrow>{measurement.eyebrow}</SectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">{measurement.title}</h2>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="rounded-4xl border border-slate-200 bg-white p-6">
-            <p className="text-sm leading-8 text-slate-700">
-              {measurement.introductionBefore} <span className="font-bold text-slate-900">{measurement.unitLabel}</span>{measurement.introductionAfter}
-            </p>
-
-            <div className="mt-6 space-y-5">
-              <div className="rounded-3xl border border-[#dce9df] bg-[#eaf2e9] p-4">
-                <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-[#14785e]">{measurement.consumptionTitle}</p>
-                <p className="mt-2 text-sm leading-7 text-slate-700">
-                  {measurement.consumptionDescription}
-                </p>
-              </div>
-
-              <div className="rounded-3xl border border-sky-200 bg-sky-50 p-4">
-                <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-sky-700">{measurement.generationTitle}</p>
-                <p className="mt-2 text-sm leading-7 text-slate-700">
-                  {measurement.generationDescription}<br />
-                  <span className="font-bold text-slate-900">{measurement.generationFormula}</span>
-                </p>
-                <p className="mt-2 text-md text-slate-600">
-                  {measurement.generationExample}
-                </p>
-              </div>
-
-              <div className="rounded-3xl border border-[#dce9df] bg-[#f7fbf8] p-4">
-                <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-[#137c63]">{measurement.gridTitle}</p>
-                <p className="mt-2 text-sm leading-7 text-slate-700">
-                  {measurement.gridDescription}
-                </p>
-              </div>
-            </div>
+      <section className="border-y border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+          <div className="mb-9 max-w-3xl">
+            <SectionEyebrow>{measurement.eyebrow}</SectionEyebrow>
+            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">{measurement.title}</h2>
           </div>
 
-          <div className="space-y-5">
-            <div className="rounded-4xl border border-slate-200 bg-[linear-gradient(145deg,#71300c_0%,#92370b_55%,#a94208_100%)] p-5 shadow-[0_20px_55px_-40px_rgba(120,55,5,0.4)]">
-              <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-amber-200">{measurement.exampleLabel}</p>
-              <h3 className="mt-2 text-xl font-bold text-white">{measurement.exampleTitle}</h3>
-              <div className="mt-5 space-y-4 text-md leading-7 text-slate-200">
-                {measurement.balanceItems.map((item) => (
-                  <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 p-3">
-                    <span className="font-bold text-white">{item.label}</span> {item.value}
-                  </div>
-                ))}
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="rounded-[22px] border border-slate-200 bg-white p-6">
+              <p className="text-sm leading-8 text-slate-700">
+                {measurement.introductionBefore} <span className="font-bold text-slate-900">{measurement.unitLabel}</span>{measurement.introductionAfter}
+              </p>
+
+              <div className="mt-6 space-y-5">
+                <div className="rounded-3xl border border-[#dce9df] bg-[#eaf2e9] p-4">
+                  <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-[#14785e]">{measurement.consumptionTitle}</p>
+                  <p className="mt-2 text-sm leading-7 text-slate-700">
+                    {measurement.consumptionDescription}
+                  </p>
+                </div>
+
+                <div className="rounded-3xl border border-sky-200 bg-sky-50 p-4">
+                  <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-sky-700">{measurement.generationTitle}</p>
+                  <p className="mt-2 text-sm leading-7 text-slate-700">
+                    {measurement.generationDescription}<br />
+                    <span className="font-bold text-slate-900">{measurement.generationFormula}</span>
+                  </p>
+                  <p className="mt-2 text-md text-slate-600">
+                    {measurement.generationExample}
+                  </p>
+                </div>
+
+                <div className="rounded-3xl border border-[#dce9df] bg-[#f7fbf8] p-4">
+                  <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-[#137c63]">{measurement.gridTitle}</p>
+                  <p className="mt-2 text-sm leading-7 text-slate-700">
+                    {measurement.gridDescription}
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="rounded-4xl border border-amber-200 bg-amber-50 p-5">
-              <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-amber-700">{measurement.keyPointLabel}</p>
-              <p className="mt-2 text-sm leading-7 text-slate-700">
-                {measurement.keyPoint}
-              </p>
+            <div className="space-y-5">
+              <div className="rounded-[22px] border border-slate-200 bg-[linear-gradient(145deg,#71300c_0%,#92370b_55%,#a94208_100%)] p-5 shadow-[0_20px_55px_-40px_rgba(120,55,5,0.4)]">
+                <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-amber-200">{measurement.exampleLabel}</p>
+                <h3 className="mt-2 text-xl font-bold text-white">{measurement.exampleTitle}</h3>
+                <div className="mt-5 space-y-4 text-md leading-7 text-slate-200">
+                  {measurement.balanceItems.map((item) => (
+                    <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                      <span className="font-bold text-white">{item.label}</span> {item.value}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-[22px] border border-amber-200 bg-amber-50 p-5">
+                <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-amber-700">{measurement.keyPointLabel}</p>
+                <p className="mt-2 text-sm leading-7 text-slate-700">
+                  {measurement.keyPoint}
+                </p>
+              </div>
             </div>
           </div>
         </div>

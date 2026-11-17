@@ -50,7 +50,7 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
           </span>
         </div>
         <div
-          className={`max-w-[16rem] whitespace-normal break-keep text-[12px] leading-tight line-clamp-2
+          className={`max-w-[16rem] whitespace-normal break-keep text-[12px] tracking-[0.08em] line-clamp-2
             compact
               ? "text-[#ffffff]"
               : "text-[#333333]"

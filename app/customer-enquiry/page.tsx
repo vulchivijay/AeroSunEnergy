@@ -263,46 +263,7 @@ export default function CustomerEnquiryPage() {
       );
       const referenceCode = await submitWebsiteForm("customer_enquiry", submissionData);
 
-      function getFieldLabel(name: string) {
-        const radio = Array.from(
-          form.querySelectorAll<HTMLInputElement>('input[type="radio"]'),
-        ).find((input) => input.name === name);
-        if (radio) {
-          return (
-            radio
-              .closest("fieldset")
-              ?.querySelector("legend")
-              ?.textContent?.trim() ?? radio.value
-          );
-        }
-
-        const field = form.elements.namedItem(name);
-        if (
-          field instanceof HTMLInputElement ||
-          field instanceof HTMLSelectElement ||
-          field instanceof HTMLTextAreaElement
-        ) {
-          const label =
-            field.getAttribute("aria-label") ?? field.labels?.[0]?.textContent;
-          if (label) return label.replace(/\s*\*$/, "").trim();
-        }
-
-        return name.replaceAll("_", " ");
-      }
-
-      const body = [
-        page.mailtoBodyTitle,
-        page.mailtoBodySubtitle,
-        "",
-        ...Array.from(formData.entries()).map(
-          ([key, value]) => `${getFieldLabel(key)}: ${String(value)}`,
-        ),
-      ].join("\n");
-      const subject = encodeURIComponent(
-        `${page.mailtoSubjectPrefix}${String(formData.get("customer_name"))}`,
-      );
       toast.success(`${page.feedback} ${t.formSubmission.referenceLabel}: ${referenceCode}`);
-      window.location.href = `mailto:${page.mailtoRecipient}?subject=${subject}&body=${encodeURIComponent(body)}`;
     } catch {
       toast.error(t.formSubmission.error);
     } finally {
@@ -412,7 +373,7 @@ export default function CustomerEnquiryPage() {
                 {page.company.websiteValue}
               </p>
               <p>
-                <strong>{page.company.email}</strong> {page.mailtoRecipient}
+                <strong>{page.company.email}</strong> {page.contactEmail}
               </p>
               <p>
                 <strong>{page.company.phone}</strong> {page.phoneValue}
@@ -999,7 +960,7 @@ export default function CustomerEnquiryPage() {
               {page.companyTagline}
             </p>
             <p className="mt-4 text-md leading-6 text-emerald-50/80">
-              {page.company.websiteValue} · {page.mailtoRecipient} ·{" "}
+              {page.company.websiteValue} · {page.contactEmail} ·{" "}
               {page.phoneValue}
             </p>
             <p className="mt-2 font-mono text-md text-emerald-100/70">

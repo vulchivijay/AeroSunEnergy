@@ -403,10 +403,10 @@ export default function ProductCataloguePage() {
                 <Globe2 className="h-4 w-4 text-teal-700" aria-hidden="true" />
                 aerosunenergy.in
               </a>
-              <a className="flex items-center gap-3 text-sm text-slate-700 transition hover:text-teal-800" href="mailto:customercare@aerosunenergy.in">
+              <div className="flex items-center gap-3 text-sm text-slate-700">
                 <Mail className="h-4 w-4 text-teal-700" aria-hidden="true" />
                 {c.contact.email}
-              </a>
+              </div>
               <a className="flex items-center gap-3 text-sm text-slate-700 transition hover:text-teal-800" href="tel:+918099181075">
                 <Phone className="h-4 w-4 text-teal-700" aria-hidden="true" />
                 {c.contact.phone}

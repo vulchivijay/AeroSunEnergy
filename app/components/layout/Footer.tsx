@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useState, type FormEvent, type ReactNode } from 'react'
+import { Fragment, useEffect, useState, type FormEvent, type ReactNode } from 'react'
 import Logo from '../brand/Logo'
 import CompanyAge from './CompanyAge'
 import { useLocale } from '@/lib/LocaleContext'
@@ -96,24 +96,24 @@ export default function Footer() {
 
 			<div className="relative mx-auto max-w-7xl px-5 pb-14 pt-14 sm:px-8 sm:pb-20 sm:pt-20 lg:px-10">
 
-				<section className="relative mb-14 overflow-hidden rounded-[2rem] border border-white/90 bg-[linear-gradient(135deg,#ffffff_0%,#f8fafc_52%,#eef2ff_100%)] p-7 text-slate-900 shadow-[0_30px_90px_-45px_rgba(15,23,42,0.22)] sm:p-10 lg:mb-20 lg:p-14">
+				<section className="relative mb-14 overflow-hidden rounded-4xl bg-[linear-gradient(135deg,#d72b0b_0%,#f99104_52%,#faf206_100%)] p-7 text-slate-900 sm:p-10 lg:mb-20 lg:p-14 shadow-2xl">
 					<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_88%_45%,rgba(245,199,106,0.18),transparent_35%)]" aria-hidden="true" />
 					<div className="relative grid items-center gap-10 lg:grid-cols-[1fr_auto]">
 						<div className="max-w-3xl">
-							<p className="flex items-center gap-3 text-sm font-bold uppercase tracking-[0.24em] text-[#137c63]">
-								<span className="h-px w-8 bg-[#137c63]" />
+							<p className="flex items-center gap-3 text-sm  uppercase tracking-[0.24em] text-white">
+								<span className="h-px w-8 bg-white" />
 								{t.navbar.brandName}
 							</p>
-							<h2 className="mt-5 text-4xl leading-[1.05] tracking-[0.045em] text-slate-900 sm:text-5xl lg:text-6xl">
+							<h2 className="mt-5 text-4xl leading-[1.05] tracking-[0.045em] text-slate-200 sm:text-5xl lg:text-6xl">
 								{footer.heroTitle}
 							</h2>
-							<p className="mt-5 max-w-2xl text-sm leading-7 text-slate-600 sm:text-lg">
+							<p className="mt-5 max-w-2xl text-sm leading-7 text-slate-100 sm:text-lg">
 								{footer.heroDescription}
 							</p>
 							<Link
 								href="/contact"
 								prefetch={false}
-								className="group mt-8 inline-flex min-h-12 items-center gap-3 rounded-full bg-[#A5D6A7] px-6 py-3 text-sm font-bold text-[#173B2C] transition hover:-translate-y-0.5 hover:bg-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7]"
+								className="group mt-8 inline-flex min-h-12 items-center gap-3 rounded-full bg-[#148161] px-6 py-3 text-sm text-white transition hover:-translate-y-0.5 hover:bg-[#148161] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7]"
 							>
 								{footer.contactCta}
 								<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
@@ -144,7 +144,7 @@ export default function Footer() {
 						<div className="inline-flex max-w-full p-2">
 							<Logo />
 						</div>
-						<h2 id="footer-brand" className="mt-6 hidden text-sm font-bold tracking-wide text-slate-900">{t.navbar.brandName}</h2>
+						<h2 id="footer-brand" className="mt-6 hidden text-sm  tracking-wide text-slate-900">{t.navbar.brandName}</h2>
 						<p className="mt-1 text-sm font-medium text-[#F5C76A] hidden">&ldquo;{t.navbar.brandTagline}&rdquo;</p>
 						<p className="mt-4 max-w-sm text-sm leading-7 text-white/75">{footer.brandDesc}</p>
 						<div className="mt-6 flex flex-wrap gap-2" role="group" aria-label={footer.followUs}>
@@ -158,7 +158,7 @@ export default function Footer() {
 									title={socialMetadataByPlatform[platform].title}
 									itemProp="sameAs"
 									data-social={dataSocial}
-									className="group flex h-11 w-11 items-center justify-center rounded-full border border-slate-300/70 bg-white/70 text-slate-600 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[#A5D6A7] hover:bg-[#A5D6A7] hover:text-[#173B2C] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#137c63]"
+									className="group flex h-11 w-11 items-center justify-center rounded-full border border-slate-300/70 bg-white/70 text-slate-600 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[#A5D6A7] hover:bg-[#073515] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#137c63]"
 								>
 									{icon}
 								</Link>
@@ -176,7 +176,7 @@ export default function Footer() {
 											<span className="min-w-0">{link.label}</span>{comingSoonBadge}
 										</span>
 									) : (
-										<Link href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(link.href) ? 'font-semibold text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
+										<Link href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(link.href) ? ' text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
 											<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(link.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
 											{link.label}
 										</Link>
@@ -193,7 +193,7 @@ export default function Footer() {
 											<span className="min-w-0">{item.label}</span>{comingSoonBadge}
 										</span>
 									) : (
-										<Link href={item.href} prefetch={item.href !== '/installation-checklist' && item.href !== '/customer-agreement'} aria-current={isActive(item.href) ? 'page' : undefined} className={`group inline-flex min-h-11 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(item.href) ? 'font-semibold text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
+										<Link href={item.href} prefetch={item.href !== '/installation-checklist' && item.href !== '/customer-agreement'} aria-current={isActive(item.href) ? 'page' : undefined} className={`group inline-flex min-h-11 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(item.href) ? ' text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
 											<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(item.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
 											{item.label}
 										</Link>
@@ -213,7 +213,7 @@ export default function Footer() {
 											<span className="min-w-0">{solution.label}</span>{comingSoonBadge}
 										</span>
 									) : (
-										<Link href={solution.href} aria-current={isActive(solution.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(solution.href) ? 'font-semibold text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
+										<Link href={solution.href} aria-current={isActive(solution.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(solution.href) ? ' text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
 											<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(solution.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
 											{solution.label}
 										</Link>
@@ -234,7 +234,7 @@ export default function Footer() {
 							</li>
 							<li className="flex items-center gap-3">
 								<Mail className="h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />
-								<a href={`mailto:${footer.email}`} className="break-all transition-colors hover:text-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 focus-visible:text-amber-100">{footer.email}</a>
+								<span className="break-all">{footer.email}</span>
 							</li>
 							<li className="flex items-center gap-3">
 								<Phone className="h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />
@@ -263,10 +263,10 @@ export default function Footer() {
 					</section>
 				</div>
 
-				<section aria-labelledby="footer-newsletter" className="mt-14 grid gap-6 rounded-2xl border border-slate-200 bg-white/75 p-6 shadow-[0_20px_60px_-45px_rgba(15,23,42,0.3)] backdrop-blur-xl sm:p-8 lg:grid-cols-[1fr_1fr] lg:items-center">
+				<section aria-labelledby="footer-newsletter" className="mt-14 grid gap-6 rounded-2xl bg-[#147e62] p-6 shadow-xl sm:p-8 lg:grid-cols-[1fr_1fr] lg:items-center">
 					<div>
-						<h2 id="footer-newsletter" className="text-2xl leading-[1.05] tracking-[0.045em] text-slate-900 sm:text-3xl">{footer.stayPowered}</h2>
-						<p className="mt-2 max-w-xl text-sm leading-6 text-slate-600">{footer.newsletterDescription}</p>
+						<h2 id="footer-newsletter" className="text-2xl leading-[1.05] tracking-[0.045em] text-slate-200 sm:text-3xl">{footer.stayPowered}</h2>
+						<p className="mt-2 max-w-xl text-sm tracking-[0.06em] leading-6 text-slate-100">{footer.newsletterDescription}</p>
 					</div>
 					<form onSubmit={handleNewsletterSubmit} className="w-full">
 						<label htmlFor="footer-newsletter-email" className="sr-only">{footer.newsletterEmailLabel}</label>
@@ -283,32 +283,36 @@ export default function Footer() {
 									setNewsletterEmail(event.target.value)
 								}}
 								placeholder={footer.newsletterPlaceholder}
-								className="min-h-12 min-w-0 flex-1 rounded-full border border-slate-300 bg-white px-5 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-[#137c63] focus:ring-2 focus:ring-emerald-700/20"
+								className="min-h-12 min-w-0 flex-1 rounded-full border border-slate-300 bg-white px-5 text-sm text-slate-900 outline-none transition placeholder:text-slate-800 placeholder:text-sm placeholder:tracking-[0.09em] focus:border-[#137c63] focus:ring-2 focus:ring-emerald-700/20"
 							/>
-							<button type="submit" disabled={newsletterPending} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#A5D6A7] px-6 text-sm font-bold text-[#173B2C] transition hover:bg-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7] disabled:cursor-wait disabled:opacity-70">
+							<button type="submit" disabled={newsletterPending} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 text-sm text-[#1fa34a] transition hover:bg-[#DCEDC8] tracking-[0.045em] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7] disabled:cursor-wait disabled:opacity-70">
 								{newsletterPending ? t.formSubmission.saving : footer.subscribe} <Send className="h-4 w-4" aria-hidden="true" />
 							</button>
 						</div>
-						<p className="mt-3 text-sm leading-5 text-slate-500">{footer.newsletterHint}</p>
-						<FormDataNotice className="text-slate-600" />
+						<p className="mt-3 text-sm tracking-[0.06em] leading-5 text-slate-200">{footer.newsletterHint}</p>
+						<FormDataNotice className="text-slate-200 tracking-[0.06em]" />
 					</form>
 				</section>
 
 			</div>
 
 			<div className="border-t border-white/15 bg-white/5 backdrop-blur">
-				<p className="mx-auto flex max-w-[90rem] justify-center gap-1 border-t border-white/15 p-5 text-sm font-medium text-white/75 sm:px-8 lg:flex-row lg:px-10">
-					🚧 {footer.developmentNotice} <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" aria-label={footer.attributionLinkLabel} className="text-amber-200 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200">{footer.attributionLinkText}</Link>
+				<p className="flex flex-row w-full justify-center gap-1 border-t border-white/15 p-5 text-sm text-white/75 sm:px-8 lg:px-10">
+					🚧 {footer.developmentNotice} <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" aria-label={footer.attributionLinkLabel} className="text-amber-500 animate-pulse transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200">{footer.attributionLinkText}</Link>
 				</p>
-				<div className="mx-auto flex max-w-[90rem] flex-col items-center justify-between gap-3 border-t border-white/15 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
-					<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[12px] uppercase tracking-[0.14em] text-white/70">
+				<div className="flex w-full flex-col items-center justify-between gap-1 border-t border-white/15 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
+					<div className="flex flex-wrap items-center justify-center gap-1 text-[12px] uppercase tracking-[0.14em] text-white/70">
 						{footer.legalLinks.map((link: { href: string; label: string }) => (
-							<Link key={link.href} href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`transition-colors hover:text-amber-100 ${isActive(link.href) ? 'font-semibold text-amber-200' : ''}`}>{link.label}</Link>
+              <Fragment key={link.href}>
+                <Link href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`transition-colors hover:text-amber-100 ${isActive(link.href) ? 'text-amber-200' : ''}`}>
+                {link.label}</Link>
+                <span className="inline-flex px-1 text-amber-500 last:hidden">|</span>
+              </Fragment>
+							
 						))}
 					</div>
-					<p className="text-[12px] text-white/70">{footer.attribution}</p>
-					<p className="text-[12px] text-white/70">
-						{footer.copyright.replace('{year}', String(currentYear))}
+					<p className="text-[13px] text-white/70">
+            {footer.attribution} {footer.copyright.replace('{year}', String(currentYear))}
 					</p>
 				</div>
 				<div className="border-t border-white/15 px-5 py-4 sm:px-8 lg:px-10">

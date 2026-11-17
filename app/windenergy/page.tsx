@@ -18,7 +18,7 @@ export default function WindEnergyPage() {
   const { t } = useLocale()
   const windPage = t.windPage
 
-  const windSlidesLocalized = windPage.hero.slides
+  const windSlidesLocalized = windPage.hero.slides as HeroSliderSlide[]
   const turbineTypesLocalized = windPage.overview.items
   const deploymentTypesLocalized = windPage.classification.items
   const systemConfigsLocalized = windPage.electrical.rows
@@ -28,17 +28,29 @@ export default function WindEnergyPage() {
   const serviceSectionsLocalized = windPage.sections
 
   return (
-    <main className="bg-[#ffffff] pt-6 sm:pt-8 text-slate-900 [&>section]:rounded-2xl [&>section]:border-l-4 [&>section]:border-l-sky-500 overflow-hidden">
-      <header className="relative mx-auto mb-6 max-w-7xl overflow-hidden rounded-[2.5rem] border border-slate-700 bg-[#0b1c2c] px-5 py-7 text-white shadow-[0_30px_75px_-42px_rgba(7,28,47,0.75)] sm:mb-8 sm:px-8 sm:py-9 lg:px-10 lg:py-11">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(125,211,252,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(125,211,252,0.055)_1px,transparent_1px)] bg-size-[36px_36px]" aria-hidden="true" />
-        <div className="absolute inset-y-0 right-0 w-2/3 bg-[radial-gradient(ellipse_at_80%_48%,rgba(14,165,233,0.24),transparent_58%)]" aria-hidden="true" />
-        <div className="relative grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+    <main className="overflow-hidden bg-white text-slate-900">
+      <header className="relative isolate min-h-[620px] overflow-hidden bg-[#102a43] text-white sm:min-h-[680px]">
+        <div className="absolute inset-0 -z-10">
+          {windSlidesLocalized[0] && (
+            <OptimizedImage
+              src={windSlidesLocalized[0].image}
+              alt={windSlidesLocalized[0].title}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover opacity-50"
+            />
+          )}
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,25,47,0.94)_0%,rgba(22,48,82,0.78)_52%,rgba(22,48,82,0.28)_100%)]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#102a43]/80 via-transparent to-[#102a43]/25" />
+        </div>
+        <div className="relative mx-auto grid min-h-[620px] w-full max-w-7xl items-center gap-8 px-4 py-10 sm:min-h-[680px] sm:px-6 sm:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-10">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-sky-200/25 bg-sky-300/10 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-sky-200">
               <span className="h-2 w-2 rounded-full bg-sky-300" aria-hidden="true" />
               {windPage.hero.eyebrow}
             </div>
-            <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.02] tracking-[0.06em] text-white sm:text-5xl lg:text-7xl">
+            <h1 className="mt-6 max-w-3xl text-5xl font-black leading-[0.98] tracking-tighter text-white sm:text-6xl lg:text-8xl">
               {windPage.hero.title}
               <span className="block text-sky-300">{windPage.hero.titleAccent}</span>
             </h1>
@@ -77,12 +89,12 @@ export default function WindEnergyPage() {
         </div>
       </header>
 
-      <SharedHeroSlider slides={windSlidesLocalized as HeroSliderSlide[]} ariaLabel={windPage.labels.sliderAriaLabel} interval={5200} />
+      <SharedHeroSlider slides={windSlidesLocalized} ariaLabel={windPage.labels.sliderAriaLabel} interval={5200} />
 
-      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-sky-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.28)] sm:my-8 sm:p-8 lg:p-9">
-        <div className="mb-8 max-w-3xl">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+        <div className="mb-9 max-w-3xl">
           <WindSectionEyebrow>{windPage.overview.eyebrow}</WindSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">{windPage.overview.title}</h2>
+          <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.overview.title}</h2>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
@@ -98,7 +110,7 @@ export default function WindEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-sky-200/80 bg-[#f7fcff] p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.26)] sm:my-8 sm:p-8 lg:p-9">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
         <div className="rounded-4xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-[0_32px_90px_-38px_rgba(15,23,42,1)] sm:p-8">
           <div className="mb-6 flex items-center justify-between gap-3">
             <div>
@@ -123,16 +135,16 @@ export default function WindEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-cyan-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.28)] sm:my-8 sm:p-8 lg:p-9">
-        <div className="mb-8 max-w-3xl">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+        <div className="mb-9 max-w-3xl">
           <WindSectionEyebrow>{windPage.electrical.eyebrow}</WindSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900">{windPage.electrical.title}</h2>
+          <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.electrical.title}</h2>
         </div>
 
         <WindComparisonTable rows={systemConfigsLocalized} />
       </section>
 
-      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-sky-200/80 bg-[#f7fcff] p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.26)] sm:my-8 sm:p-8 lg:p-9">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="grid gap-5 sm:grid-cols-2">
             {keyBenefitsLocalized.map((benefit) => (
@@ -147,21 +159,21 @@ export default function WindEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-cyan-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.28)] sm:my-8 sm:p-8 lg:p-9">
-        <div className="mb-8 max-w-3xl">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+        <div className="mb-9 max-w-3xl">
           <WindSectionEyebrow>{windPage.capacity.eyebrow}</WindSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900">{windPage.capacity.title}</h2>
+          <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.capacity.title}</h2>
         </div>
 
         <WindCapacityTable rows={capacityBandsLocalized} />
       </section>
 
-      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-sky-200/80 bg-[#f7fcff] p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.26)] sm:my-8 sm:p-8 lg:p-9">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
         <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)] sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
               <WindSectionEyebrow>{windPage.strategy.eyebrow}</WindSectionEyebrow>
-              <h2 className="mt-3 text-3xl font-bold text-slate-900">{windPage.strategy.title}</h2>
+              <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.strategy.title}</h2>
               <div className="mt-6 space-y-5 text-sm leading-7 text-slate-700">
                 <p>
                   {windPage.labels.strategyDescription[0]}
@@ -184,10 +196,10 @@ export default function WindEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto my-6 max-w-7xl rounded-[2rem] border border-cyan-200/80 bg-white p-5 shadow-[0_20px_55px_-42px_rgba(14,79,115,0.28)] sm:my-8 sm:p-8 lg:p-9">
-        <div className="mb-8 max-w-3xl">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+        <div className="mb-9 max-w-3xl">
           <WindSectionEyebrow>{windPage.labels.serviceSections}</WindSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900">{windPage.labels.serviceSectionsTitle}</h2>
+          <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.labels.serviceSectionsTitle}</h2>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-2">
