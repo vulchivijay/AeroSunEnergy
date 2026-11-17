@@ -39,7 +39,7 @@ export default function ProjectsPage() {
           <div className="absolute inset-20 rounded-full border border-emerald-100/10" />
           <div className="absolute inset-32 rounded-full border border-emerald-100/10" />
         </div>
-        <div className="mx-auto my-6 grid w-[calc(100%-2rem)] max-w-7xl items-center gap-10 rounded-[30px] border border-white/35 bg-white/20 px-5 py-14 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:px-8 sm:py-20 lg:my-8 lg:grid-cols-[1fr_auto] lg:px-10">
+        <div className="mx-auto my-6 grid w-[calc(100%-2rem)] max-w-7xl items-center gap-10 rounded-2xl border border-white/35 bg-white/20 px-5 py-14 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:px-8 sm:py-20 lg:my-8 lg:grid-cols-[1fr_auto] lg:px-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-white/5 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-emerald-100">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-300 shadow-sm" />
@@ -68,9 +68,9 @@ export default function ProjectsPage() {
         </div>
       </header>
 
-      <div className="mx-auto grid max-w-7xl gap-8 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-[minmax(0,1fr)_290px] lg:gap-12 lg:px-10">
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[minmax(0,1fr)_290px] lg:gap-12 lg:px-10 lg:py-16">
         <article className="min-w-0">
-          <section id="project-approach" className="scroll-mt-28 mb-8 rounded-3xl border border-emerald-200/80 bg-gradient-to-br from-white to-[#f1f2f6] p-6 shadow-sm sm:p-8">
+          <section id="project-approach" className="scroll-mt-28 mb-8 rounded-2xl border border-emerald-200/80 bg-gradient-to-br from-white to-[#f1f2f6] p-6 shadow-sm sm:p-8">
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-lg text-emerald-800">i</span>
               <div>
@@ -80,7 +80,7 @@ export default function ProjectsPage() {
             </div>
             <div className="mt-6 grid gap-3 border-t border-slate-100 pt-5 sm:grid-cols-2">
               {projectStepsData.map((step, index) => (
-                <div key={step} className="flex gap-3 rounded-xl bg-[#f4f8fc] p-3">
+                <div key={step} className="flex gap-3 rounded-2xl bg-[#f4f8fc] p-3">
                   <span className="font-mono text-md font-bold text-emerald-700">0{index + 1}</span>
                   <span className="text-md leading-5 text-slate-600">{step}</span>
                 </div>
@@ -95,7 +95,7 @@ export default function ProjectsPage() {
                 <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.solutions}</h2>
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
                   {projectCategoriesData.map((project) => (
-                    <div key={project.title} className="rounded-xl bg-[#f4f8fc] p-4">
+                    <div key={project.title} className="rounded-2xl bg-[#f4f8fc] p-4">
                       <div className={`mb-3 h-1.5 rounded-full bg-linear-to-r ${project.accent}`} aria-hidden="true" />
                       <h3 className="text-md font-bold text-slate-900">{project.title}</h3>
                       <p className="mt-2 text-md leading-6 text-slate-600">{project.description}</p>
@@ -138,14 +138,14 @@ export default function ProjectsPage() {
                   </div>
                   <div className="pt-5">
                     {filteredProjects.length === 0 ? (
-                      <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50 px-5 py-10 text-center">
+                      <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-5 py-10 text-center">
                         <h3 className="text-xl font-bold tracking-tight text-slate-900">{labels.emptyProjectsTitle.replace('{status}', statusMetaData[activeTab].label)}</h3>
                         <p className="mx-auto mt-2 max-w-lg text-md leading-7 text-slate-600">{labels.emptyProjectsDescription}</p>
                       </div>
                     ) : (
                       <div className="grid gap-4 md:grid-cols-2">
                         {filteredProjects.map((project) => (
-                          <article key={`${project.title}-${project.location}`} className="rounded-xl border border-slate-200 bg-slate-50 p-5">
+                          <article key={`${project.title}-${project.location}`} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
                             <span className={`inline-flex rounded-full border px-2.5 py-1 text-[12px] font-bold uppercase tracking-[0.18em] ${statusMetaData[project.status].tone}`}>{statusMetaData[project.status].label}</span>
                             <div className={`mt-4 h-1.5 rounded-full bg-linear-to-r ${statusMetaData[project.status].accent}`} aria-hidden="true" />
                             <h3 className="mt-4 text-lg font-bold text-slate-900">{project.title}</h3>

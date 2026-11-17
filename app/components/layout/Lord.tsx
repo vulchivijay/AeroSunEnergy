@@ -174,13 +174,13 @@ export default function Lord() {
         aria-labelledby="lord-blessing-title"
         aria-describedby="lord-blessing-description"
         tabIndex={-1}
-        className="relative z-10 w-full max-w-md rounded-2xl bg-white p-6 text-gray-900 shadow-lg"
+        className="relative z-10 w-full max-w-md rounded-3xl bg-white p-6 text-gray-900 shadow-lg"
       >
         <button
           ref={closeButtonRef}
           type="button"
           aria-label={t.blessingModal.closeLabel}
-          className="absolute right-2 top-2 inline-flex rounded-md p-2 text-gray-600 transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+          className="absolute right-2 top-2 inline-flex rounded-full p-2 text-gray-600 transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
           onClick={dismiss}
         >
           ✕

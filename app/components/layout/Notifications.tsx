@@ -48,7 +48,7 @@ export default function Notifications() {
           aria-label={isExpanded ? t.notifications.toggleClose : t.notifications.toggleOpen}
           aria-expanded={isExpanded}
           aria-controls="site-notification-content"
-          className="mr-2 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/20 text-white transition hover:border-amber-300/60 hover:bg-white/10 hover:text-amber-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
+          className="mr-2 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/20 text-white transition hover:border-amber-300/60 hover:bg-white/10 hover:text-amber-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
         >
           {isExpanded ? (
             <ChevronUp className="h-4 w-4" aria-hidden="true" />

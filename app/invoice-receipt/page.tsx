@@ -193,7 +193,7 @@ export default function InvoiceReceiptPage() {
                     {...register('paymentMode')}
                     aria-invalid={Boolean(errors.paymentMode)}
                     aria-describedby={errors.paymentMode ? 'paymentMode-error' : undefined}
-                    className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
+                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
                   >
                     <option value="" className="text-slate-900">{labels.fields.paymentMode.placeholder}</option>
                     {labels.paymentOptions.map((option) => <option key={option} value={option} className="text-slate-900">{option}</option>)}
@@ -212,7 +212,7 @@ export default function InvoiceReceiptPage() {
                     placeholder={labels.fields.receiptNote.placeholder}
                     aria-invalid={Boolean(errors.receiptNote)}
                     aria-describedby={errors.receiptNote ? 'receiptNote-error' : undefined}
-                    className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
+                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
                   />
                   {errors.receiptNote && <p id="receiptNote-error" className="mt-2 text-md text-rose-300">{errors.receiptNote.message}</p>}
                 </div>
@@ -266,7 +266,7 @@ function Field({ label, name, placeholder, type = 'text', register, error }: Fie
       register={register}
       error={error}
       labelClassName="mb-2 block text-md font-semibold text-slate-100"
-      inputClassName="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
+      inputClassName="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
       errorClassName="mt-2 text-md text-rose-300"
     />
   )

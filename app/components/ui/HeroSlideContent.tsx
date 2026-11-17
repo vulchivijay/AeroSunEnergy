@@ -18,7 +18,7 @@ export function HeroSlideContent({
   actions?: ReactNode
 }) {
   return (
-    <div className="relative z-10 w-full min-w-0 max-w-3xl rounded-[24px] border border-white/15 bg-slate-950/40 p-4 shadow-sm backdrop-blur-[3px] sm:rounded-[28px] sm:p-6 lg:p-8">
+    <div className="relative z-10 w-full min-w-0 max-w-3xl rounded-2xl border border-white/15 bg-slate-950/40 p-4 shadow-sm backdrop-blur-[3px] sm:p-6 lg:p-8">
       <span className={`mb-4 inline-flex max-w-full whitespace-normal break-words rounded-full border border-white/15 bg-white/10 px-3 py-1 text-sm uppercase tracking-[0.16em] text-white shadow-sm sm:text-[12px] sm:tracking-[0.28em] ${slide.badgeClass}`}>
         {slide.badge}
       </span>

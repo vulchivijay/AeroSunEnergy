@@ -17,9 +17,9 @@ export default function TirupatiEnergySection({
       : 'bg-gradient-to-br from-[#f1f2f6] to-white'
 
   return (
-    <section className={`${backgroundClassName} px-4 py-10 sm:px-6 lg:px-10 lg:py-14`}>
+    <section className={`${backgroundClassName} px-4 py-12 sm:px-6 lg:px-10 lg:py-16 sm:py-14`}>
       <div className="mx-auto max-w-7xl">
-        <div className="relative rounded-[2rem] border border-[#cfe0d1] bg-[#eaf2e9] p-6 sm:p-9 lg:px-12 lg:py-10">
+        <div className="relative rounded-2xl border border-[#cfe0d1] bg-[#eaf2e9] p-6 sm:p-8 lg:px-12 lg:py-10">
           <div className="max-w-4xl pt-20 sm:pt-32 lg:pt-0 lg:pr-52">
             <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[#087a61]/15 bg-white/80 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#087a61] sm:text-xs">
               {content.eyebrow}

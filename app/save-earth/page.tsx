@@ -68,7 +68,7 @@ function renderBlocks(blocks: DocumentaryBlock[]) {
 
     if (block.type === 'table') {
       return (
-        <div key={`table-${index}`} className="my-7 overflow-hidden rounded-[22px] border border-slate-200">
+        <div key={`table-${index}`} className="my-7 overflow-hidden rounded-2xl border border-slate-200">
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-slate-200 text-left text-md">
               <thead className="bg-slate-50 text-md font-bold uppercase tracking-wider text-[#137c63]">
@@ -147,8 +147,8 @@ export default function SaveEarthPage() {
           </div>
 
           <div className="relative mx-auto w-full max-w-sm lg:ml-auto">
-            <div className="rounded-[22px] border border-white/15 bg-white/[0.08] p-5 shadow-sm shadow-black/20">
-              <div className="flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-[18px] bg-[linear-gradient(155deg,#7c2d12_0%,#9a3412_58%,#78350f_100%)] p-7">
+            <div className="rounded-2xl border border-white/15 bg-white/[0.08] p-5 shadow-sm shadow-black/20">
+              <div className="flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-2xl bg-[linear-gradient(155deg,#7c2d12_0%,#9a3412_58%,#78350f_100%)] p-7">
                 <div className="flex items-center justify-between text-[12px] font-bold uppercase tracking-[0.22em] text-amber-100">
                   <span>{content.fieldNotes}</span>
                   <span className="h-2 w-2 rounded-full bg-amber-300" />
@@ -182,11 +182,11 @@ export default function SaveEarthPage() {
         </div>
       </header>
 
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-12 lg:px-10">
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-12 lg:px-10 lg:py-16">
         <aside className="lg:sticky lg:top-28 lg:self-start">
           <nav
             aria-label={content.contentsAriaLabel}
-            className="overflow-hidden rounded-[22px] border border-slate-200 bg-white"
+            className="overflow-hidden rounded-2xl border border-slate-200 bg-white"
           >
             <div className="border-b border-slate-100 px-5 py-5">
               <p className="inline-flex w-fit rounded-full border border-[#137c63]/15 bg-[#eaf2e9] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
@@ -218,7 +218,7 @@ export default function SaveEarthPage() {
         <article className="min-w-0 space-y-8">
           <section
             id="documentary"
-            className="scroll-mt-28 overflow-hidden rounded-[30px] border border-amber-200/20 bg-gradient-to-br from-white to-[#f1f2f6] p-6 text-slate-900 shadow-sm sm:p-9"
+            className="scroll-mt-28 overflow-hidden rounded-2xl border border-amber-200/20 bg-gradient-to-br from-white to-[#f1f2f6] p-6 text-slate-900 shadow-sm sm:p-8"
           >
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-8 bg-amber-300" />
@@ -233,7 +233,7 @@ export default function SaveEarthPage() {
             <section
               key={section.heading.id}
               id={section.heading.id}
-              className={`scroll-mt-28 overflow-hidden rounded-[22px] border border-slate-200 ${index % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}
+              className={`scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200 ${index % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}
             >
               <div
                 className={`border-b border-slate-100 px-6 py-7 sm:px-9 sm:py-8 ${
@@ -257,7 +257,7 @@ export default function SaveEarthPage() {
             </section>
           ))}
 
-          <footer className="rounded-[22px] border border-slate-200 bg-white p-6 sm:p-9">
+          <footer className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="inline-flex w-fit rounded-full border border-[#137c63]/15 bg-[#eaf2e9] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">

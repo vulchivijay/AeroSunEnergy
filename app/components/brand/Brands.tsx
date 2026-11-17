@@ -87,7 +87,7 @@ export default function Brands() {
             return (
               <li
                 key={brand.file}
-                className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-[1.25rem] border p-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:rounded-[1.5rem] sm:p-4"
+                className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border p-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-4"
                 style={{
                   borderColor: `hsl(${brand.hue} 68% 72%)`,
                   background: `linear-gradient(145deg, hsl(${brand.hue} 82% 95%), #fff 48%, hsl(${brand.hue} 76% 89%))`,
@@ -95,7 +95,7 @@ export default function Brands() {
                 }}
               >
                 <div
-                  className="relative flex h-24 items-center justify-center overflow-hidden rounded-xl border border-white/80 shadow-inner sm:h-28 sm:p-2"
+                  className="relative flex h-24 items-center justify-center overflow-hidden rounded-2xl border border-white/80 shadow-inner sm:h-28 sm:p-2"
                   style={{
                     background: `radial-gradient(circle at 50% 0%, white, hsl(${brand.hue} 75% 96%) 78%)`,
                     boxShadow: `inset 0 0 0 1px hsl(${brand.hue} 55% 90%)`,
@@ -150,11 +150,11 @@ export default function Brands() {
                     </span>
                   </div>
                 ) : (
-                  <div className="mt-2 flex min-h-8 items-center justify-center rounded-xl border border-dashed border-slate-300 bg-white/70 px-2 py-1 text-center text-sm font-bold text-slate-600">
+                  <div className="mt-2 flex min-h-8 items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white/70 px-2 py-1 text-center text-sm font-bold text-slate-600">
                     {section.quoteRequired}
                   </div>
                 )}
-                <p className="sr-only mt-auto flex min-h-[5.5rem] items-center justify-center rounded-xl border border-white/70 bg-white/60 px-2 py-2 text-center text-sm leading-4 text-slate-600 sm:text-sm sm:leading-5">
+                <p className="sr-only mt-auto flex min-h-[5.5rem] items-center justify-center rounded-2xl border border-white/70 bg-white/60 px-2 py-2 text-center text-sm leading-4 text-slate-600 sm:text-sm sm:leading-5">
                   {brand.basis}
                 </p>
               </li>

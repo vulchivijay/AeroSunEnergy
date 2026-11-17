@@ -65,7 +65,7 @@ function DetailCard({
   children: React.ReactNode
 }) {
   return (
-    <div className="rounded-[22px] border border-slate-200 bg-white p-5 sm:p-6">
+    <div className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
       <h3 className="mb-4 text-sm font-bold text-[#152b29]">{title}</h3>
       {children}
     </div>
@@ -255,7 +255,7 @@ export default function ProductCataloguePage() {
             <DetailCard title={c.battery.selectionLabel}>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {c.battery.selection.map((item, index) => (
-                  <p key={item} className="flex gap-3 rounded-xl bg-[#f7fbf8] p-4 text-sm leading-7 text-slate-700">
+                  <p key={item} className="flex gap-3 rounded-2xl bg-[#f7fbf8] p-4 text-sm leading-7 text-slate-700">
                     <span className="font-mono text-sm font-bold text-teal-700">{String(index + 1).padStart(2, '0')}</span>
                     {item}
                   </p>
@@ -268,7 +268,7 @@ export default function ProductCataloguePage() {
           </p>
         </section>
 
-        <section className="bg-gradient-to-br from-white to-[#f1f2f6] rounded-[30px] p-6 shadow-sm sm:p-10">
+        <section className="bg-gradient-to-br from-white to-[#f1f2f6] rounded-2xl p-6 shadow-sm sm:p-8">
           <SectionHeading
             number="06"
             eyebrow={c.wind.eyebrow}
@@ -290,7 +290,7 @@ export default function ProductCataloguePage() {
               <BulletList items={c.wind.focus} />
             </div>
           </div>
-          <div className="mt-5 rounded-[22px] border border-amber-200/20 bg-black/10 p-6 sm:p-8">
+          <div className="mt-5 rounded-2xl border border-amber-200/20 bg-black/10 p-6 sm:p-8">
             <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-amber-800">{c.wind.projectLabel}</p>
             <h3 className="mt-3 text-2xl font-black sm:text-3xl">{c.wind.productName}</h3>
             <p className="mt-2 text-sm text-slate-700">{c.wind.configurationLabel}</p>
@@ -342,7 +342,7 @@ export default function ProductCataloguePage() {
           <DetailCard title={c.consultation.servicesLabel}>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
               {c.consultation.services.map((service, index) => (
-                <p key={service} className="flex gap-3 rounded-xl bg-[#f7fbf8] p-4 text-sm leading-7 text-slate-700">
+                <p key={service} className="flex gap-3 rounded-2xl bg-[#f7fbf8] p-4 text-sm leading-7 text-slate-700">
                   <span className="font-mono text-sm font-bold text-teal-700">{String(index + 1).padStart(2, '0')}</span>
                   {service}
                 </p>
@@ -361,7 +361,7 @@ export default function ProductCataloguePage() {
           </ol>
         </section>
 
-        <section className="bg-gradient-to-br from-[#f1f2f6] to-white grid gap-8 rounded-[30px] border border-slate-200 bg-slate-50 p-6 sm:p-10 lg:grid-cols-[0.7fr_1.3fr]">
+        <section className="bg-gradient-to-br from-[#f1f2f6] to-white grid gap-8 rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8 lg:grid-cols-[0.7fr_1.3fr]">
           <div>
             <SectionHeading
               number="09"
@@ -374,7 +374,7 @@ export default function ProductCataloguePage() {
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {c.whyChoose.reasons.map((reason) => (
-              <p key={reason} className="flex gap-3 rounded-xl bg-white p-4 text-sm leading-7 text-slate-700">
+              <p key={reason} className="flex gap-3 rounded-2xl bg-white p-4 text-sm leading-7 text-slate-700">
                 <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-teal-600" aria-hidden="true" />
                 {reason}
               </p>
@@ -382,7 +382,7 @@ export default function ProductCataloguePage() {
           </div>
         </section>
 
-        <section className="bg-gradient-to-br from-white to-[#f1f2f6] overflow-hidden rounded-[30px] border border-slate-200 bg-white">
+        <section className="bg-gradient-to-br from-white to-[#f1f2f6] overflow-hidden rounded-2xl border border-slate-200 bg-white">
           <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
             <div className="bg-[linear-gradient(145deg,#581c87_0%,#7e22ce_55%,#a21caf_100%)] p-7 text-white sm:p-10">
               <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-amber-200">10 / {c.contact.eyebrow}</p>
@@ -412,7 +412,7 @@ export default function ProductCataloguePage() {
               </a>
               <Link
                 href="/contact"
-                className="group inline-flex min-h-11 items-center gap-2 rounded-xl bg-teal-800 px-5 py-2.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-teal-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+                className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-teal-800 px-5 py-2.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-teal-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
               >
                 {c.contact.action}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />

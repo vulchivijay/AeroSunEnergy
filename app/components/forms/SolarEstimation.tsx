@@ -215,8 +215,8 @@ export function SolarEstimation() {
     e.propertyTypeOptions[selectedPropertyIndex] ?? calculatorText.homeOption
 
   return (
-    <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
-      <div className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] shadow-sm">
+    <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 lg:py-16 sm:py-14">
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl shadow-sm">
         <div className="grid lg:grid-cols-[minmax(300px,0.75fr)_1.45fr]">
           <div className="bg-linear-to-br from-[#4568b6] via-[#5c55ae] to-[#3f7798] p-6 text-white sm:p-8 lg:p-10">
             <h1 className="max-w-sm text-3xl font-black leading-tight tracking-tight sm:text-4xl">
@@ -297,7 +297,7 @@ export function SolarEstimation() {
                       value={monthlyBillInput}
                       onChange={(event) => setMonthlyBillInput(event.target.value)}
                       onBlur={normalizeMonthlyBill}
-                      className="min-w-0 flex-1 bg-transparent px-3 text-2xl font-extrabold tabular-nums text-white outline-none placeholder:text-blue-100/50"
+                      className="min-w-0 flex-1 bg-transparent px-3 text-2xl font-extrabold tabular-nums text-white outline-none placeholder:text-blue-100/50 rounded-xl"
                     />
                     <span className="whitespace-nowrap text-sm text-blue-100/70">{calculatorText.monthSuffix}</span>
                   </div>
@@ -322,7 +322,7 @@ export function SolarEstimation() {
                       value={systemSizeInput}
                       onChange={(event) => setSystemSizeInput(event.target.value)}
                       onBlur={normalizeSystemSize}
-                      className="min-w-0 flex-1 bg-transparent px-1 text-2xl font-extrabold tabular-nums text-white outline-none"
+                      className="min-w-0 flex-1 bg-transparent px-1 text-2xl font-extrabold tabular-nums text-white outline-none rounded-xl"
                     />
                     <span className="text-sm font-bold text-blue-100">{e.capacityUnit}</span>
                   </div>
@@ -447,7 +447,7 @@ export function SolarEstimation() {
                 setShowLeadForm(true)
                 setWhatsAppFallbackUrl(null)
               }}
-              className="mt-5 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-2xl bg-emerald-700 px-5 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+              className="mt-5 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-full bg-emerald-700 px-5 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
             >
               {calculatorText.quoteCta}
               <span aria-hidden="true">→</span>
@@ -462,7 +462,7 @@ export function SolarEstimation() {
       {showLeadForm && (
         <section
           id={leadFormId}
-          className="mx-auto mt-8 grid max-w-7xl overflow-hidden rounded-[2rem] border border-white/10 bg-white shadow-sm lg:grid-cols-[0.85fr_1.15fr]"
+          className="mx-auto mt-8 grid max-w-7xl overflow-hidden rounded-2xl border border-white/10 bg-white shadow-sm lg:grid-cols-[0.85fr_1.15fr]"
           aria-labelledby={`${leadFormId}-title`}
         >
           <div className="bg-linear-to-br from-[#4568b6] via-[#5c55ae] to-[#3f7798] p-6 text-white sm:p-8">

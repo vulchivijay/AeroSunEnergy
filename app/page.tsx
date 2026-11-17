@@ -44,9 +44,9 @@ function RecognitionHighlight() {
   const recognitions = t.home.recognition
 
   return (
-    <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-8 sm:px-6 lg:px-10 lg:py-12">
+    <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 lg:py-16 sm:py-14">
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 overflow-hidden rounded-[30px] border border-[#e2e8e2] bg-white shadow-sm lg:grid-cols-[1.05fr_1fr_1fr]">
+        <div className="grid grid-cols-1 overflow-hidden rounded-2xl border border-[#e2e8e2] bg-white shadow-sm lg:grid-cols-[1.05fr_1fr_1fr]">
           <div className="flex flex-col justify-center bg-[#e1ece3] p-7 sm:p-9 lg:p-11">
             <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[#137c63]/15 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
               {t.home.recognitionHeader.badge}
@@ -96,7 +96,7 @@ export default function Home() {
       <HomeHeroSlider />
       <SchemeBanner />
       {/* Solar Section */}
-      <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl">  
           <div className="mb-8">
             <SectionEyebrow>{offer.eyebrow}</SectionEyebrow>
@@ -129,7 +129,7 @@ export default function Home() {
               />
             ))}
           </div>
-          <div className="mt-12 rounded-4xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
+          <div className="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
             <div className="mb-6">
               <SectionEyebrow>{home.rooftopSolar.eyebrow}</SectionEyebrow>
               <h3 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">
@@ -153,7 +153,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="mt-12 rounded-4xl border border-slate-200 bg-white p-6 lg:p-8">
+          <div className="mt-12 rounded-2xl border border-slate-200 bg-white p-6 lg:p-8">
             <div className="mb-6">
               <SectionEyebrow>{home.systemTypeSection.eyebrow}</SectionEyebrow>
               <h3 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">
@@ -166,7 +166,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="mt-12 rounded-4xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
+          <div className="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
             <div className="mb-6">
               <SectionEyebrow>{home.whySolarSection.eyebrow}</SectionEyebrow>
               <h3 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">
@@ -182,7 +182,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-10 sm:px-6 lg:px-10 lg:py-14">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 lg:px-10 lg:py-16 sm:py-14">
         <div className="mx-auto grid max-w-7xl items-center gap-8 xl:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] xl:gap-10">
           <div className="max-w-2xl">
             <SectionEyebrow>{subsidy.eyebrow}</SectionEyebrow>
@@ -203,7 +203,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="overflow-hidden rounded-[22px] border border-[#e7e4dc] bg-white shadow-sm">
+          <div className="overflow-hidden rounded-2xl border border-[#e7e4dc] bg-white shadow-sm">
             <div className="overflow-x-auto">
               <table className="w-full min-w-[620px] border-collapse text-left">
                 <caption className="sr-only">{subsidy.title}</caption>
@@ -247,7 +247,7 @@ export default function Home() {
       <BankEMICalculator />
       <TirupatiEnergySection />
       {/* Wind Energy Section */}
-      <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 lg:px-10">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8">
             <WindSectionEyebrow>{wind.eyebrow}</WindSectionEyebrow>
@@ -282,7 +282,7 @@ export default function Home() {
         </div>
       </section>
       {/* Hybrid Energy Section */}
-      <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl ">
           <div className="mb-8">
             <HybridSectionEyebrow>{hybrid.eyebrow}</HybridSectionEyebrow>

@@ -70,7 +70,7 @@ export function ReferralProgramSection() {
     <>
     <section
       aria-labelledby="referral-landing-title"
-      className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-10 text-slate-900 sm:px-6 lg:px-10 lg:py-14"
+      className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 text-slate-900 sm:px-6 lg:px-10 lg:py-16 sm:py-14"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_10%_0%,rgba(129,140,248,0.13),transparent_35%),radial-gradient(ellipse_at_100%_100%,rgba(56,189,248,0.12),transparent_32%)]" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
@@ -88,13 +88,13 @@ export function ReferralProgramSection() {
           </p>
         </div>
 
-        <aside className="rounded-[1.75rem] border border-white/80 bg-white/75 p-5 shadow-sm sm:p-6">
-          <p className="rounded-xl border-l-2 border-amber-500 bg-[#fff3df] px-4 py-3 text-sm font-semibold leading-6 text-amber-950">
+        <aside className="rounded-2xl border border-white/80 bg-white/75 p-5 shadow-sm sm:p-6">
+          <p className="rounded-2xl border-l-2 border-amber-500 bg-[#fff3df] px-4 py-3 text-sm font-semibold leading-6 text-amber-950">
             {landing.earningsNote}
           </p>
           <ul className="mt-4 grid gap-2 sm:grid-cols-3 lg:grid-cols-1">
             {landing.benefits.map((benefit, index) => (
-              <li key={benefit} className="flex items-center gap-3 rounded-xl border border-slate-100 bg-white/80 p-3 text-sm font-semibold text-slate-700">
+              <li key={benefit} className="flex items-center gap-3 rounded-2xl border border-slate-100 bg-white/80 p-3 text-sm font-semibold text-slate-700">
                 <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-black ${index === 0 ? 'bg-emerald-100 text-emerald-800' : index === 1 ? 'bg-sky-100 text-sky-800' : 'bg-amber-100 text-amber-800'}`} aria-hidden="true">
                   ✓
                 </span>
@@ -153,7 +153,7 @@ export function ReferralProgramSection() {
           </div>
         </div>
 
-        <div className="min-w-0 rounded-[28px] bg-[#f8f7f1] p-5 text-slate-900 shadow-sm sm:rounded-[32px] sm:p-7 lg:p-9">
+        <div className="min-w-0 rounded-2xl bg-[#f8f7f1] p-5 text-slate-900 shadow-sm sm:p-7 lg:p-9">
           <div className="flex items-start justify-between gap-4">
             <div className="min-w-0">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#087a61] sm:text-sm">
@@ -241,7 +241,7 @@ export function ReferralProgramSection() {
         </div>
         <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {landing.processSteps.map((step, index) => (
-            <li key={step.title} className="rounded-3xl border border-emerald-900/10 bg-white p-5 shadow-sm sm:p-6">
+            <li key={step.title} className="rounded-2xl border border-emerald-900/10 bg-white p-5 shadow-sm sm:p-6">
               <span className="font-mono text-xs font-bold tracking-[0.15em] text-emerald-700">
                 {String(index + 1).padStart(2, '0')}
               </span>
@@ -269,7 +269,7 @@ export function ReferralProgramSection() {
         </div>
 
         <div className="mt-8 grid gap-4 lg:grid-cols-2">
-          <article className="rounded-[1.75rem] border border-white/80 border-l-4 border-l-[#b8d8ec] bg-white/80 p-5 shadow-sm sm:p-7">
+          <article className="rounded-2xl border border-white/80 border-l-4 border-l-[#b8d8ec] bg-white/80 p-5 shadow-sm sm:p-6">
             <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">{landing.basicTitle}</p>
             <p className="mt-2 text-3xl font-black text-[#087a61]">
               {landing.basicRate}<span className="ml-1 text-sm font-bold text-slate-500">{landing.perKilowatt}</span>
@@ -277,7 +277,7 @@ export function ReferralProgramSection() {
             <p className="mt-3 text-sm leading-6 text-slate-600">{landing.basicDescription}</p>
             <div className="mt-4 space-y-2">
               {landing.rewardTiers.map((tier) => (
-                <div key={tier.systemSize} className="flex items-center justify-between gap-3 rounded-xl border border-slate-100 bg-white/80 px-3 py-2.5 text-sm">
+                <div key={tier.systemSize} className="flex items-center justify-between gap-3 rounded-2xl border border-slate-100 bg-white/80 px-3 py-2.5 text-sm">
                   <span className="text-slate-600">{tier.systemSize}</span>
                   <strong className="text-[#087a61]">{tier.basicReward}</strong>
                 </div>
@@ -285,7 +285,7 @@ export function ReferralProgramSection() {
             </div>
           </article>
 
-          <article className="rounded-[1.75rem] border border-white/80 border-l-4 border-l-[#c5dfc2] bg-[linear-gradient(135deg,#e7f2eb_0%,#ffffff_55%,#e8e7f8_100%)] p-5 text-slate-900 shadow-sm sm:p-7">
+          <article className="rounded-2xl border border-white/80 border-l-4 border-l-[#c5dfc2] bg-[linear-gradient(135deg,#e7f2eb_0%,#ffffff_55%,#e8e7f8_100%)] p-5 text-slate-900 shadow-sm sm:p-6">
             <div className="flex items-start justify-between gap-3">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.12em] text-emerald-800">{landing.guidedTitle}</p>
@@ -300,7 +300,7 @@ export function ReferralProgramSection() {
             <p className="mt-3 text-sm leading-6 text-slate-600">{landing.guidedDescription}</p>
             <ul className="mt-4 space-y-2 text-xs leading-5 text-slate-700 sm:text-sm">
               {landing.guidanceTasks.map((task) => (
-                <li key={task} className="flex gap-2 rounded-xl bg-white/70 p-3">
+                <li key={task} className="flex gap-2 rounded-2xl bg-white/70 p-3">
                   <span className="text-emerald-700" aria-hidden="true">✓</span>
                   <span>{task}</span>
                 </li>
@@ -309,7 +309,7 @@ export function ReferralProgramSection() {
             <p className="mt-3 text-xs font-bold text-emerald-900">{landing.guidedBonus}</p>
             <div className="mt-4 space-y-2">
               {landing.rewardTiers.map((tier) => (
-                <div key={tier.systemSize} className="flex items-center justify-between gap-3 rounded-xl border border-emerald-900/10 bg-white/80 px-3 py-2.5 text-sm">
+                <div key={tier.systemSize} className="flex items-center justify-between gap-3 rounded-2xl border border-emerald-900/10 bg-white/80 px-3 py-2.5 text-sm">
                   <span className="text-slate-600">{tier.systemSize}</span>
                   <strong className="text-emerald-900">{tier.guidedReward}</strong>
                 </div>
@@ -328,7 +328,7 @@ export function ReferralProgramSection() {
       </div>
     </section>
 
-    <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-14 sm:px-6 lg:px-10 lg:py-16" aria-labelledby="referral-faq-title">
+    <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 lg:px-10 lg:py-16 sm:py-14" aria-labelledby="referral-faq-title">
       <div className="mx-auto max-w-7xl">
         <p className="inline-flex w-fit rounded-full border border-[#075da8]/15 bg-[#eaf3fc] px-4 py-2 text-xs font-black uppercase tracking-[0.12em] text-[#075da8]">
           {landing.faqEyebrow}

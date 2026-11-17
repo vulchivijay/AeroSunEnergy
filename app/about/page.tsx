@@ -110,9 +110,9 @@ export default function AboutPage() {
           </motion.div>
 
           <div className="relative mx-auto w-full max-w-md lg:ml-auto">
-            <div className="absolute -inset-5 rounded-[2.5rem] bg-teal-700/10 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[30px] border border-[#e2e8e2] bg-white p-2 shadow-sm">
-              <div className="relative h-[26rem] overflow-hidden rounded-[22px] bg-[#172554] sm:h-[32rem]">
+            <div className="absolute -inset-5 rounded-4xl bg-teal-700/10 blur-3xl" />
+            <div className="relative overflow-hidden rounded-2xl border border-[#e2e8e2] bg-white p-2 shadow-sm">
+              <div className="relative h-[26rem] overflow-hidden rounded-2xl bg-[#172554] sm:h-[32rem]">
                 <OptimizedImage
                   src="/images/founder-aerosunenergy.webp"
                   alt={content.founderImageAlt}
@@ -179,7 +179,7 @@ export default function AboutPage() {
 
       <section id="compliance" className="bg-gradient-to-br from-white to-[#f1f2f6] border-y border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-          <div className="overflow-hidden rounded-[30px] border border-[#e2e8e2] bg-white shadow-sm">
+          <div className="overflow-hidden rounded-2xl border border-[#e2e8e2] bg-white shadow-sm">
             <div className="relative overflow-hidden bg-[linear-gradient(145deg,#172554_0%,#1e3a8a_55%,#312e81_100%)] px-5 py-7 text-white sm:px-8 sm:py-9">
               <div className="absolute -right-12 -top-24 h-64 w-64 rounded-full border border-white/10" aria-hidden="true" />
               <div className="absolute -right-2 -top-14 h-44 w-44 rounded-full border border-white/10" aria-hidden="true" />
@@ -234,7 +234,7 @@ export default function AboutPage() {
             <p className="mt-0 border-b border-[#cbd6cc] pb-6 text-sm leading-7 text-slate-600 sm:col-span-2 sm:text-base sm:leading-8">
               {pageStrings.leadershipIntro}
             </p>
-            <div className="mt-0 grid gap-px overflow-hidden rounded-[30px] border border-slate-200 bg-slate-200 sm:col-span-2 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-0 grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 sm:col-span-2 sm:grid-cols-2 lg:grid-cols-3">
               {founderProfilesData.map((profile) => (
                 <article key={profile.name} className="flex flex-col items-start gap-5 bg-white px-6 py-7 first:bg-[#eaf2e9] sm:px-8 sm:py-9 lg:px-7 xl:px-9">
                   <div className="flex flex-col items-start gap-4">
@@ -319,7 +319,7 @@ export default function AboutPage() {
             <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-4xl">{content.roadmapHeading}</h2>
           </div>
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-            <article className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
               <div className="flex items-center justify-between gap-4">
                 <h3 className="text-lg font-extrabold text-slate-950">{content.immediatePrioritiesHeading}</h3>
                 <span className="rounded-full bg-[#fff1dc] px-3 py-1 text-[12px] font-bold uppercase tracking-[0.16em] text-[#a95600]">{content.currentStatusLabel}</span>
@@ -333,7 +333,7 @@ export default function AboutPage() {
                 ))}
               </ol>
             </article>
-            <article className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
               <h3 className="text-lg font-extrabold text-slate-950">{content.growthRoadmapHeading}</h3>
               <div className="mt-6 space-y-5">
                 {content.futureGoals.map((group, index) => (
@@ -391,7 +391,7 @@ export default function AboutPage() {
               { title: content.promiseGroupTitle, points: content.promisePoints, accent: 'text-amber-700' },
               { title: content.missionGroupTitle, points: content.missionPoints, accent: 'text-teal-700' },
             ].map((group) => (
-              <article key={group.title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
+              <article key={group.title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
                 <h3 className={`text-md font-black uppercase tracking-[0.2em] ${group.accent}`}>{group.title}</h3>
                 <ul className="mt-5 space-y-4">
                   {group.points.map((point, index) => (
@@ -404,7 +404,7 @@ export default function AboutPage() {
               </article>
             ))}
           </div>
-          <div className="mt-8 flex flex-col gap-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-7">
+          <div className="mt-8 flex flex-col gap-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-6">
             <div>
               <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-[#a95600]">{content.contactCalloutTitle}</p>
               <p className="mt-2 text-lg font-bold text-[#152b29]">{content.contactCalloutDescription}</p>
@@ -423,7 +423,7 @@ export default function AboutPage() {
             <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-4xl">{content.workHeading}</h2>
           </div>
           <div className="grid gap-5 lg:grid-cols-2">
-            <article className="rounded-4xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+            <article className="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
               <p className="text-[12px] font-black uppercase tracking-[0.2em] text-[#137c63]">{content.qualityHeading}</p>
               <div className="mt-5 divide-y divide-slate-200">
                 {content.qualityPoints.map((point, index) => (
@@ -434,7 +434,7 @@ export default function AboutPage() {
                 ))}
               </div>
             </article>
-            <article className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
               <p className="text-[12px] font-black uppercase tracking-[0.2em] text-[#a95600]">{content.ethicsHeading}</p>
               <div className="mt-5 divide-y divide-slate-200">
                 {content.ethicsPoints.map((point, index) => (
@@ -489,7 +489,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <article className="relative overflow-hidden rounded-[22px] bg-[linear-gradient(145deg,#172554_0%,#1e3a8a_55%,#312e81_100%)] p-7 text-white shadow-sm sm:p-10 lg:p-12">
+            <article className="relative overflow-hidden rounded-2xl bg-[linear-gradient(145deg,#172554_0%,#1e3a8a_55%,#312e81_100%)] p-7 text-white shadow-sm sm:p-10 lg:p-12">
               <span className="block font-serif text-5xl font-bold leading-none text-amber-400" aria-hidden="true">“</span>
               <blockquote className="mt-5 text-2xl font-semibold leading-snug tracking-tight sm:text-3xl">
                 {a.quote}
@@ -517,13 +517,13 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-12 grid gap-5 xl:grid-cols-2 xl:gap-6">
-            <article className="rounded-[22px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
               <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">{aboutSection.solutionsEyebrow}</p>
               <h3 className="mt-3 text-2xl font-extrabold leading-tight tracking-tight text-[#152b29]">{aboutSection.solutionsTitle}</h3>
               <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">{aboutSection.solutionsDescription}</p>
             </article>
 
-            <article className="rounded-[22px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
               <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">{aboutSection.designEyebrow}</p>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
                 {aboutSection.designPoints.map((point) => (
@@ -537,7 +537,7 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-5 grid gap-5 xl:grid-cols-[0.9fr_1.1fr]">
-            <article className="rounded-[22px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
               <p className="text-sm font-bold uppercase tracking-[0.24em] text-slate-500">{aboutSection.technologyEyebrow}</p>
               <h3 className="mt-3 text-2xl font-extrabold leading-tight tracking-[-0.03em] text-[#112c2a]">{aboutSection.technologyTitle}</h3>
               <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">{aboutSection.technologyDescription}</p>
@@ -545,7 +545,7 @@ export default function AboutPage() {
 
             <div className="grid gap-3 sm:grid-cols-3">
               {systems.map(({ label, value, tone, Icon }, index) => (
-                <article key={label} className={`relative overflow-hidden rounded-[22px] border p-5 ${tone}`}>
+                <article key={label} className={`relative overflow-hidden rounded-2xl border p-5 ${tone}`}>
                   <span className="absolute -right-3 -top-3 opacity-10" aria-hidden="true">
                     <Icon className="h-20 w-20" strokeWidth={1} />
                   </span>
@@ -557,7 +557,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mt-5 flex flex-col gap-5 rounded-[22px] border border-white/10 bg-[linear-gradient(145deg,#172554_0%,#1e3a8a_55%,#312e81_100%)] p-6 text-white shadow-sm sm:p-8 lg:flex-row lg:items-end lg:justify-between">
+          <div className="mt-5 flex flex-col gap-5 rounded-2xl border border-white/10 bg-[linear-gradient(145deg,#172554_0%,#1e3a8a_55%,#312e81_100%)] p-6 text-white shadow-sm sm:p-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
               <p className="text-sm font-extrabold uppercase tracking-[0.24em] text-amber-300">{aboutSection.futureHeading}</p>
               <p className="mt-3 text-sm leading-7 text-teal-50/90 sm:text-lg sm:leading-8">{aboutSection.futureDescription}</p>

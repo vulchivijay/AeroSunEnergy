@@ -80,7 +80,7 @@ export function BankEMICalculator() {
           </p>
         </header>
 
-        <div className="min-w-0 rounded-[28px] border border-[#dce8df] bg-white p-4 shadow-sm sm:p-7 xl:p-8">
+        <div className="min-w-0 rounded-2xl border border-[#dce8df] bg-white p-4 shadow-sm sm:p-7 xl:p-8">
           <div className="mb-7">
             <p className="text-md font-bold uppercase tracking-[0.17em] text-emerald-800">
               {labels.loanDetails}
@@ -91,7 +91,7 @@ export function BankEMICalculator() {
             <div>
               <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
                 <label htmlFor="bank-emi-loan" className="text-md font-semibold text-slate-700 sm:text-sm">{labels.loanAmount}</label>
-                <output htmlFor="bank-emi-loan" className="ml-auto whitespace-nowrap rounded-lg bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:rounded-xl sm:px-4 sm:py-2 sm:text-sm">
+                <output htmlFor="bank-emi-loan" className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
                   {formatCurrency(loanAmount)}
                 </output>
               </div>
@@ -111,7 +111,7 @@ export function BankEMICalculator() {
             <div>
               <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
                 <label htmlFor="bank-emi-tenure" className="text-md font-semibold text-slate-700 sm:text-sm">{labels.loanTenure}</label>
-                <output htmlFor="bank-emi-tenure" className="ml-auto whitespace-nowrap rounded-lg bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:rounded-xl sm:px-4 sm:py-2 sm:text-sm">
+                <output htmlFor="bank-emi-tenure" className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
                   {tenureYears} {tenureYears === 1 ? labels.year : labels.years}
                 </output>
               </div>
@@ -131,7 +131,7 @@ export function BankEMICalculator() {
             <div>
               <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
                 <label htmlFor="bank-emi-rate" className="text-md font-semibold text-slate-700 sm:text-sm">{labels.interestRate}</label>
-                <output htmlFor="bank-emi-rate" className="ml-auto whitespace-nowrap rounded-lg bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:rounded-xl sm:px-4 sm:py-2 sm:text-sm">
+                <output htmlFor="bank-emi-rate" className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
                   {interestRate.toFixed(2)}% <span className="text-md font-medium text-slate-700">{labels.perAnnum}</span>
                 </output>
               </div>
@@ -154,7 +154,7 @@ export function BankEMICalculator() {
           </p>
         </div>
 
-        <aside className="relative flex min-w-0 flex-col overflow-hidden rounded-[28px] bg-[#26346f] p-4 text-white shadow-sm sm:p-7 xl:p-8">
+        <aside className="relative flex min-w-0 flex-col overflow-hidden rounded-2xl bg-[#26346f] p-4 text-white shadow-sm sm:p-7 xl:p-8">
           <div className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full border border-white/[0.07]" aria-hidden="true" />
           <div className="pointer-events-none absolute -right-7 -top-11 h-44 w-44 rounded-full border border-white/[0.07]" aria-hidden="true" />
           <div className="relative z-10 flex flex-1 flex-col">

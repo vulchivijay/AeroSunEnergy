@@ -111,7 +111,7 @@ export default function Contact() {
             <span className="hidden text-sm font-semibold uppercase tracking-[0.18em] text-slate-500 sm:block">{location}</span>
           </div>
 
-          <div className="grid min-h-[34rem] overflow-hidden rounded-[30px] border border-slate-200 bg-[linear-gradient(135deg,#dbeafe_0%,#e0f2fe_55%,#ecfdf5_100%)] lg:grid-cols-[1fr_0.92fr]">
+          <div className="grid min-h-[34rem] overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(135deg,#dbeafe_0%,#e0f2fe_55%,#ecfdf5_100%)] lg:grid-cols-[1fr_0.92fr]">
             <motion.div
               initial={{ opacity: 0, x: -18 }}
               animate={{ opacity: 1, x: 0 }}
@@ -169,7 +169,7 @@ export default function Contact() {
             </motion.div>
           </div>
 
-          <section className="mt-5 overflow-hidden rounded-[2rem] bg-[linear-gradient(120deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] text-white">
+          <section className="mt-5 overflow-hidden rounded-2xl bg-[linear-gradient(120deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] text-white">
             <div className="grid lg:grid-cols-[0.75fr_1.25fr]">
               <div className="flex flex-col justify-center border-b border-white/10 p-6 sm:p-9 lg:border-b-0 lg:border-r">
                 <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-200">{contactUs}</p>
@@ -211,7 +211,7 @@ export default function Contact() {
             ))}
           </div>
 
-          <section className="mt-12 overflow-hidden rounded-[30px] border border-slate-200 bg-[linear-gradient(125deg,#e0f2fe_0%,#ede9fe_52%,#fce7f3_100%)] shadow-sm sm:mt-16" aria-labelledby="contact-form-title">
+          <section className="mt-12 overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(125deg,#e0f2fe_0%,#ede9fe_52%,#fce7f3_100%)] shadow-sm sm:mt-16" aria-labelledby="contact-form-title">
             <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
               <div className="bg-[linear-gradient(145deg,#bfdbfe_0%,#ddd6fe_52%,#fbcfe8_100%)] p-6 text-slate-900 sm:p-9">
                 <p className="text-xs font-black uppercase tracking-[0.2em] text-indigo-900">{contactUs}</p>
@@ -266,7 +266,7 @@ export default function Contact() {
                 </Link>
               </div>
             </div>
-            <div className="mt-8 grid gap-px overflow-hidden rounded-[22px] border border-slate-200 bg-slate-200 lg:grid-cols-3">
+            <div className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 lg:grid-cols-3">
               {contactSteps.map((step) => (
                 <article key={step.title} className="bg-white p-6 sm:p-8">
                   <span className="font-mono text-sm font-bold text-[#137c63]">{step.number} <span className="text-slate-500">/ 03</span></span>
@@ -278,7 +278,7 @@ export default function Contact() {
           </section>
         </div>
       </section>
-      <section className="bg-gradient-to-br from-[#f1f2f6] to-white border-y border-slate-200 bg-slate-50 px-4 py-10 sm:px-6 lg:px-10" aria-labelledby="contact-referral-title">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white border-y border-slate-200 bg-slate-50 px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16" aria-labelledby="contact-referral-title">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <div className="max-w-3xl">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#137c63]">{referralProgram.eyebrow}</p>
@@ -317,7 +317,7 @@ export default function Contact() {
               </p>
             </header>
 
-            <div className="space-y-3 rounded-[30px] border border-white/80 bg-white/75 p-3 shadow-sm backdrop-blur-sm sm:p-5">
+            <div className="space-y-3 rounded-2xl border border-white/80 bg-white/75 p-3 shadow-sm backdrop-blur-sm sm:p-5">
               {solarFaqs.map((faq) => (
                 <FaqCard key={faq.question} question={faq.question} answer={faq.answer} />
               ))}

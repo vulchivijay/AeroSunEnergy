@@ -47,11 +47,11 @@ export default function ThankYouPage() {
         </div>
 
         <div
-          className="relative mx-auto flex aspect-[1.08] w-full max-w-[34rem] items-center justify-center overflow-hidden rounded-[2rem] border border-white/10 bg-[#092d25] shadow-sm"
+          className="relative mx-auto flex aspect-[1.08] w-full max-w-[34rem] items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-[#092d25] shadow-sm"
           aria-hidden="true"
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(245,199,106,0.18),transparent_32%),linear-gradient(155deg,rgba(163,217,119,0.08),transparent_55%)]" />
-          <div className="absolute inset-5 rounded-[1.5rem] border border-white/[0.07]" />
+          <div className="absolute inset-5 rounded-2xl border border-white/[0.07]" />
           <div className="absolute left-8 top-8 flex items-center gap-2 rounded-full border border-white/10 bg-[#071b17]/70 px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-white/60 backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-[#a3d977]" />
             All systems positive

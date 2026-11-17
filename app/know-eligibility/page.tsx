@@ -17,7 +17,7 @@ export default function KnowEligibilityPage() {
           <div className="absolute inset-20 rounded-full border border-emerald-100/10" />
           <div className="absolute inset-32 rounded-full border border-emerald-100/10" />
         </div>
-        <div className="mx-auto my-6 grid w-[calc(100%-2rem)] max-w-7xl items-center gap-10 rounded-[30px] border border-white/35 bg-white/20 px-5 py-14 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:px-8 sm:py-20 lg:my-8 lg:grid-cols-[1fr_auto] lg:px-10">
+        <div className="mx-auto my-6 grid w-[calc(100%-2rem)] max-w-7xl items-center gap-10 rounded-2xl border border-white/35 bg-white/20 px-5 py-14 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:px-8 sm:py-20 lg:my-8 lg:grid-cols-[1fr_auto] lg:px-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-white/5 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-emerald-100">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-300 shadow-sm" />
@@ -46,9 +46,9 @@ export default function KnowEligibilityPage() {
         </div>
       </header>
 
-      <div className="mx-auto grid max-w-7xl gap-8 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-[minmax(0,1fr)_290px] lg:gap-12 lg:px-10">
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[minmax(0,1fr)_290px] lg:gap-12 lg:px-10 lg:py-16">
         <article className="min-w-0">
-          <section id="eligibility-requirements" className="scroll-mt-28 mb-8 rounded-3xl border border-emerald-200/80 bg-gradient-to-br from-white to-[#f1f2f6] p-6 shadow-sm sm:p-8">
+          <section id="eligibility-requirements" className="scroll-mt-28 mb-8 rounded-2xl border border-emerald-200/80 bg-gradient-to-br from-white to-[#f1f2f6] p-6 shadow-sm sm:p-8">
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-lg text-emerald-800">i</span>
               <div>
@@ -60,7 +60,7 @@ export default function KnowEligibilityPage() {
             </div>
             <div className="mt-6 grid gap-3 border-t border-slate-100 pt-5 sm:grid-cols-3">
               {labels.glanceItems.map((item, index) => (
-                <div key={item.label} className="flex gap-3 rounded-xl bg-[#f4f8fc] p-3">
+                <div key={item.label} className="flex gap-3 rounded-2xl bg-[#f4f8fc] p-3">
                   <span className="font-mono text-xs font-bold text-emerald-700">0{index + 1}</span>
                   <span className="text-xs leading-5 text-slate-600">
                     <strong className="block text-md text-slate-900">{item.label}</strong>
@@ -92,10 +92,10 @@ export default function KnowEligibilityPage() {
                 <div className="min-w-0 flex-1">
                   <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.subsidyTitle}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600 sm:text-sm">{labels.subsidyDescription}</p>
-                  <p className="mt-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm leading-6 text-emerald-950">{t.subsidyNotice}</p>
+                  <p className="mt-3 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm leading-6 text-emerald-950">{t.subsidyNotice}</p>
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
                     {page.subsidyBreakdown.map((item) => (
-                      <div key={item.title} className="rounded-xl bg-[#f4f8fc] p-4">
+                      <div key={item.title} className="rounded-2xl bg-[#f4f8fc] p-4">
                         <p className="text-[12px] font-black uppercase tracking-[0.16em] text-emerald-800">{item.title}</p>
                         <p className="mt-2 text-xl font-black text-slate-950">{item.value}</p>
                         <p className="mt-1 text-xs leading-5 text-slate-600">{item.note}</p>
@@ -114,7 +114,7 @@ export default function KnowEligibilityPage() {
                   <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.schemeCategoriesTitle}</h2>
                   <div className="mt-4 grid gap-3">
                     {page.schemeOverviewCards.map((card) => (
-                      <div key={card.title} className="rounded-xl bg-[#f4f8fc] p-4">
+                      <div key={card.title} className="rounded-2xl bg-[#f4f8fc] p-4">
                         <h3 className="text-md font-bold text-slate-900">{card.title}</h3>
                         <p className="mt-2 text-md leading-6 text-slate-600">{card.detail}</p>
                       </div>
@@ -123,7 +123,7 @@ export default function KnowEligibilityPage() {
                   <h3 className="mt-6 text-md font-bold text-slate-900">{labels.pmKusumTitle}</h3>
                   <div className="mt-3 grid gap-3 sm:grid-cols-3">
                     {page.pmKusumComponents.map((item, index) => (
-                      <div key={item.title} className="rounded-xl border border-sky-100 bg-sky-50/70 p-4">
+                      <div key={item.title} className="rounded-2xl border border-sky-100 bg-sky-50/70 p-4">
                         <span className="font-mono text-xs font-bold text-sky-800">0{index + 1}</span>
                         <h4 className="mt-2 text-md font-bold text-slate-900">{item.title}</h4>
                         <p className="mt-2 text-xs leading-6 text-slate-600">{item.detail}</p>

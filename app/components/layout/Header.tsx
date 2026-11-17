@@ -141,7 +141,7 @@ export default function Navbar() {
             }`}>
               <Icon className="h-4 w-4" strokeWidth={1.7} aria-hidden="true" />
               {disabled && (
-                <span className="absolute left-[50%] -top-1 translate-[-50%] z-10 whitespace-nowrap rounded-t-md rounded-br-md border border-[#333333]/20 bg-[#e5e7eb] px-1.5 py-0.5 text-[9px] cursor-default  uppercase tracking-[0.1em] text-[#333333] shadow-sm">
+                <span className="absolute left-[50%] -top-1 translate-[-50%] z-10 whitespace-nowrap rounded-t-2xl rounded-br-2xl border border-[#333333]/20 bg-[#e5e7eb] px-1.5 py-0.5 text-[9px] cursor-default  uppercase tracking-[0.1em] text-[#333333] shadow-sm">
                   {comingSoonLabel}
                 </span>
               )}
@@ -215,7 +215,7 @@ export default function Navbar() {
               aria-label={t.navbar.aboutSubmenuLabel}
               aria-expanded={submenuOpen}
               aria-controls="mobile-about-submenu"
-              className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-white/80 transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
+              className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-white/80 transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
             >
               <ChevronDown
                 className={`h-4 w-4 transition-transform ${submenuOpen ? 'rotate-180' : ''}`}
@@ -226,7 +226,7 @@ export default function Navbar() {
           <div
             id="mobile-about-submenu"
             hidden={!submenuOpen}
-            className="ml-5 rounded-xl border border-white/15 bg-indigo-950/40 p-2 shadow-sm backdrop-blur-xl"
+            className="ml-5 rounded-2xl border border-white/15 bg-indigo-950/40 p-2 shadow-sm backdrop-blur-xl"
           >
             {link.children.map((child) => {
               const childActive = pathname === child.href
@@ -237,7 +237,7 @@ export default function Navbar() {
                   href={child.href}
                   onClick={closeMenu}
                   aria-current={childActive ? 'page' : undefined}
-                  className={`flex min-h-10 items-center rounded-lg px-3 py-2 text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300 ${
+                  className={`flex min-h-10 items-center rounded-xl px-3 py-2 text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300 ${
                     childActive
                       ? 'bg-[#18833a]  text-white'
                       : 'text-white/85 hover:bg-white/10 hover:text-amber-100'
@@ -271,7 +271,7 @@ export default function Navbar() {
               : 'group-hover/nav:visible group-hover/nav:opacity-100 group-focus-within/nav:visible group-focus-within/nav:opacity-100'
           }`}
         >
-          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-1.5 shadow-lg">
+          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-1.5 shadow-lg">
             {link.children.map((child) => {
               const childActive = pathname === child.href
               const ChildIcon = getNavigationIcon(child.href)
@@ -281,7 +281,7 @@ export default function Navbar() {
                   href={child.href}
                   onClick={() => setDismissedDesktopSubmenu(link.href)}
                   aria-current={childActive ? 'page' : undefined}
-                  className={`flex items-center rounded-lg px-3 py-2.5 text-left text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#333333] ${
+                  className={`flex items-center rounded-xl px-3 py-2.5 text-left text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#333333] ${
                     childActive
                       ? 'bg-[#18833a]  text-white'
                       : 'text-[#333333] hover:bg-[#18833a] hover:text-white'
@@ -306,7 +306,7 @@ export default function Navbar() {
         role="group"
         aria-label={t.navbar.languageLabel}
         className={inline
-          ? 'mt-2 grid gap-1 rounded-xl border border-white/15 bg-white/10 p-1.5 text-white'
+          ? 'mt-2 grid gap-1 rounded-2xl border border-white/15 bg-white/10 p-1.5 text-white'
           : 'absolute right-0 top-[calc(100%+0.65rem)] z-[60] w-48 overflow-hidden rounded-2xl border border-[#333333]/15 bg-[#e5e7eb] p-1.5 text-[#333333] shadow-lg'}
       >
         {languageOptions.map((option) => (
@@ -318,7 +318,7 @@ export default function Navbar() {
               setLangOpen(false)
             }}
             aria-pressed={locale === option.code}
-            className={`flex min-h-11 w-full items-center justify-between rounded-xl px-3 text-sm transition ${
+            className={`flex min-h-11 w-full items-center justify-between rounded-full px-3 text-sm transition ${
               locale === option.code
                 ? inline
                   ? 'bg-white/15 font-semibold text-white'
@@ -375,7 +375,7 @@ export default function Navbar() {
               aria-label={t.navbar.languageLabel}
               aria-expanded={langOpen}
               aria-controls="desktop-language-options"
-              className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/25 bg-white/10 px-3 text-[12px]  tracking-wider text-white shadow-sm transition hover:border-white/50 hover:bg-white/20 hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 text-[12px]  tracking-wider text-white shadow-sm transition hover:border-white/50 hover:bg-white/20 hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
             >
               <Globe2 className="h-4 w-4 text-sky-200" aria-hidden="true" />
               {languageOptions.find((option) => option.code === locale)?.shortLabel}
@@ -388,7 +388,7 @@ export default function Navbar() {
             href="/aerosun-energy.pdf"
             download="aerosun-energy.pdf"
             aria-label={t.navbar.downloadVoucher}
-            className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-amber-300/70 bg-linear-to-r from-amber-500 to-orange-500 px-3 text-sm  text-white shadow-sm transition hover:-translate-y-0.5 hover:from-emerald-600 hover:to-emerald-500 hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-amber-300/70 bg-linear-to-r from-amber-500 to-orange-500 px-3 text-sm  text-white shadow-sm transition hover:-translate-y-0.5 hover:from-emerald-600 hover:to-emerald-500 hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
           >
             <ArrowDownToLine className="h-4 w-4 shrink-0" aria-hidden="true" />
             <span className="hidden min-w-0 max-w-[7rem] 2xl:block">
@@ -402,7 +402,7 @@ export default function Navbar() {
             title={t.navbar.startProjectTitle}
             aria-label={t.navbar.startProjectAriaLabel}
             data-cta="start-project"
-            className="group inline-flex min-h-11 items-center gap-1 rounded-xl border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-4 text-sm  text-white shadow-sm ring-1 ring-inset ring-white/15 transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-emerald-400"
+            className="group inline-flex min-h-11 items-center gap-1 rounded-full border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-4 text-sm  text-white shadow-sm ring-1 ring-inset ring-white/15 transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-emerald-400"
           >
             <span className="min-w-0 max-w-[8rem] whitespace-normal break-keep text-center leading-tight line-clamp-2">{t.navbar.startProject}</span>
             <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
@@ -448,7 +448,7 @@ export default function Navbar() {
               aria-label={t.navbar.languageLabel}
               aria-expanded={langOpen}
               aria-controls="mobile-language-options"
-              className="flex min-h-12 w-full items-center justify-between rounded-xl px-3 py-3 text-sm text-white/90 transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
+              className="flex min-h-12 w-full items-center justify-between rounded-full px-3 py-3 text-sm text-white/90 transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
             >
               <span className="flex items-center gap-3">
                 <Globe2 className="h-4 w-4 text-sky-200" aria-hidden="true" />
