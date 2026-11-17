@@ -77,10 +77,6 @@
       {
         "label": "సంప్రదించండి",
         "href": "/contact"
-      },
-      {
-        "label": "ఫైనాన్స్",
-        "href": "/finance"
       }
     ],
     "quiries": [
@@ -91,6 +87,10 @@
       {
         "label": "ఎలిజిబిలిటీ చూడండి",
         "href": "/know-eligibility"
+      },
+      {
+        "label": "ఫైనాన్స్",
+        "href": "/finance"
       }
     ],
     "startProject": "ప్రాజెక్ట్ ప్రారంభించండి",
@@ -3034,7 +3034,7 @@
     "legalLinks": [
       {
         "label": "నిబంధనలు & షరతులు",
-        "href": "/terms-conditions"
+        "href": "/billing/terms-conditions"
       },
       {
         "label": "వారంటీ & సర్వీస్ పాలసీ",

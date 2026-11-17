@@ -17,6 +17,11 @@ export const metadata: Metadata = {
 
 const billingLinks = [
   {
+    title: 'Terms & Conditions',
+    description: 'Review the terms governing website use and renewable energy service engagements.',
+    href: '/billing/terms-conditions',
+  },
+  {
     title: 'Customer Enquiry',
     description: 'Submit project requirements and prepare a customer quotation.',
     href: '/billing/customer-enquiry',

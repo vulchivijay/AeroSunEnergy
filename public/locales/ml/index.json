@@ -4306,10 +4306,6 @@
       {
         "label": "ബന്ധപ്പെടുക",
         "href": "/contact"
-      },
-      {
-        "label": "ധനസഹായം",
-        "href": "/finance"
       }
     ],
     "quiries": [
@@ -4320,6 +4316,10 @@
       {
         "label": "യോഗ്യത അറിയുക",
         "href": "/know-eligibility"
+      },
+      {
+        "label": "ധനസഹായം",
+        "href": "/finance"
       }
     ],
     "startProject": "പദ്ധതി ആരംഭിക്കുക",
@@ -7755,7 +7755,7 @@
     "legalLinks": [
       {
         "label": "നിബന്ധനകളും വ്യവസ്ഥകളും",
-        "href": "/terms-conditions"
+        "href": "/billing/terms-conditions"
       },
       {
         "label": "വാറന്റി, സേവന നയം",

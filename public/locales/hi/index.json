@@ -77,10 +77,6 @@
       {
         "label": "संपर्क करें",
         "href": "/contact"
-      },
-      {
-        "label": "वित्तपोषण",
-        "href": "/finance"
       }
     ],
     "quiries": [
@@ -91,6 +87,10 @@
       {
         "label": "एलिजिबिलिटी देखें",
         "href": "/know-eligibility"
+      },
+      {
+        "label": "वित्तपोषण",
+        "href": "/finance"
       }
     ],
     "startProject": "प्रोजेक्ट शुरू करें",
@@ -3033,7 +3033,7 @@
     "legalLinks": [
       {
         "label": "नियम एवं शर्तें",
-        "href": "/terms-conditions"
+        "href": "/billing/terms-conditions"
       },
       {
         "label": "वारंटी एवं सेवा नीति",

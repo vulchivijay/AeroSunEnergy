@@ -31,7 +31,7 @@ function DatabaseUnavailable() {
 
 export default async function DashboardPage() {
   const token = await getSessionToken()
-  if (!token) redirect('/login')
+  if (!token) redirect('/auth')
 
   let user
   try {
@@ -41,7 +41,7 @@ export default async function DashboardPage() {
     return <DatabaseUnavailable />
   }
 
-  if (!user) redirect('/login')
+  if (!user) redirect('/auth')
 
   return (
     <main className="min-h-[65vh] bg-[#f7faf7] px-4 py-12 sm:px-6 sm:py-16">

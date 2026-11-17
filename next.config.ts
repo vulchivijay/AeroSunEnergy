@@ -29,6 +29,21 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/login',
+        destination: '/auth/login',
+        permanent: true,
+      },
+      {
+        source: '/signup',
+        destination: '/auth/signup',
+        permanent: true,
+      },
+      {
+        source: '/terms-conditions',
+        destination: '/billing/terms-conditions',
+        permanent: true,
+      },
+      {
         source: '/customer-enquiry',
         destination: '/billing/customer-enquiry',
         permanent: true,

@@ -4306,10 +4306,6 @@
       {
         "label": "தொடர்பு",
         "href": "/contact"
-      },
-      {
-        "label": "நிதி",
-        "href": "/finance"
       }
     ],
     "quiries": [
@@ -4320,6 +4316,10 @@
       {
         "label": "தகுதியை அறியவும்",
         "href": "/know-eligibility"
+      },
+      {
+        "label": "நிதி",
+        "href": "/finance"
       }
     ],
     "startProject": "திட்டத்தைத் தொடங்குங்கள்",
@@ -7755,7 +7755,7 @@
     "legalLinks": [
       {
         "label": "விதிமுறைகள் மற்றும் நிபந்தனைகள்",
-        "href": "/terms-conditions"
+        "href": "/billing/terms-conditions"
       },
       {
         "label": "உத்தரவாதம் மற்றும் சேவை கொள்கை",

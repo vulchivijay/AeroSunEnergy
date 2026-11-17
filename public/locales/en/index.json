@@ -4306,10 +4306,6 @@
       {
         "label": "Contact",
         "href": "/contact"
-      },
-      {
-        "label": "Finance",
-        "href": "/finance"
       }
     ],
     "quiries": [
@@ -4320,6 +4316,10 @@
       {
         "label": "Know Eligibility",
         "href": "/know-eligibility"
+      },
+      {
+        "label": "Finance",
+        "href": "/finance"
       }
     ],
     "startProject": "Start a Project",
@@ -4350,7 +4350,6 @@
       "/windenergy": "wind",
       "/hybridenergy": "zap",
       "/services": "panels",
-      "/finance": "bank",
       "/contact": "mail"
     }
   },
@@ -7852,7 +7851,7 @@
     "legalLinks": [
       {
         "label": "Terms & Conditions",
-        "href": "/terms-conditions"
+        "href": "/billing/terms-conditions"
       },
       {
         "label": "Warranty & Service Policy",

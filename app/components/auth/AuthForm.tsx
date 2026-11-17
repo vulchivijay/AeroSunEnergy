@@ -161,7 +161,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
           {isSignup ? auth.alreadyHaveAccount : auth.newToAeroSun}{' '}
           <Link
             className="font-bold text-emerald-800 underline-offset-4 hover:underline"
-            href={isSignup ? '/login' : '/signup'}
+            href={isSignup ? '/auth/login' : '/auth/signup'}
           >
             {isSignup ? auth.loginLink : auth.signupLink}
           </Link>

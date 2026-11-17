@@ -4306,10 +4306,6 @@
       {
         "label": "ಸಂಪರ್ಕ",
         "href": "/contact"
-      },
-      {
-        "label": "ಹಣಕಾಸು",
-        "href": "/finance"
       }
     ],
     "quiries": [
@@ -4320,6 +4316,10 @@
       {
         "label": "Know Eligibility",
         "href": "/know-eligibility"
+      },
+      {
+        "label": "ಹಣಕಾಸು",
+        "href": "/finance"
       }
     ],
     "startProject": "ಯೋಜನೆ ಆರಂಭಿಸಿ",
@@ -7755,7 +7755,7 @@
     "legalLinks": [
       {
         "label": "ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು",
-        "href": "/terms-conditions"
+        "href": "/billing/terms-conditions"
       },
       {
         "label": "ವಾರಂಟಿ ಮತ್ತು ಸೇವಾ ನೀತಿ",
