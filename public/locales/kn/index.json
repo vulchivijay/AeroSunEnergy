@@ -4087,15 +4087,15 @@
       "helpfulLinks": [
         {
           "label": "Solar energy",
-          "href": "/solarenergy"
+          "href": "/solar-energy"
         },
         {
           "label": "Wind energy",
-          "href": "/windenergy"
+          "href": "/wind-energy"
         },
         {
           "label": "Hybrid energy",
-          "href": "/hybridenergy"
+          "href": "/hybrid-energy"
         },
         {
           "label": "Contact us",
@@ -4289,15 +4289,15 @@
       },
       {
         "label": "ಸೌರಶಕ್ತಿ",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "ಪವನಶಕ್ತಿ",
-        "href": "/windenergy"
+        "href": "/wind-energy"
       },
       {
         "label": "ಹೈಬ್ರಿಡ್ ಶಕ್ತಿ",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       },
       {
         "label": "ಸೇವೆಗಳು",
@@ -4316,6 +4316,14 @@
       {
         "label": "Know Eligibility",
         "href": "/know-eligibility"
+      },
+      {
+        "label": "ಹಣಕಾಸು",
+        "href": "/finance"
+      },
+      {
+        "label": "ನೀತಿಗಳು",
+        "href": "/policies"
       }
     ],
     "startProject": "ಯೋಜನೆ ಆರಂಭಿಸಿ",
@@ -4342,9 +4350,9 @@
       "/about": "info",
       "/about/company-profile": "building",
       "/about/product-catalogue": "package",
-      "/solarenergy": "sun",
-      "/windenergy": "wind",
-      "/hybridenergy": "zap",
+      "/solar-energy": "sun",
+      "/wind-energy": "wind",
+      "/hybrid-energy": "zap",
       "/services": "panels",
       "/contact": "mail"
     }
@@ -4750,8 +4758,7 @@
           }
         ],
         "consent": "I have permission from my friend to share their contact details with AeroSun Energy so the team can contact them about solar.",
-        "privacyPrefix": "We use these details to follow up on this referral. See our",
-        "privacyLink": "Privacy Policy",
+        "privacyPrefix": "We use these details to follow up on this referral.",
         "submit": "Submit referral",
         "submitting": "Submitting referral…",
         "successTitle": "Referral received",
@@ -7647,8 +7654,7 @@
     }
   },
   "formDataNotice": {
-    "prefix": "ನೀವು ಸಲ್ಲಿಸುವ ಮಾಹಿತಿಯನ್ನು ನಿಮ್ಮ ವಿನಂತಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸಲು ಅಥವಾ ಅದನ್ನು ನಿರ್ವಹಿಸಲು AeroSun Energyಯ ಡೇಟಾಬೇಸ್‌ನಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾಗುತ್ತದೆ. ನಮ್ಮ",
-    "link": "ಗೌಪ್ಯತಾ ನೀತಿ"
+    "prefix": "ನೀವು ಸಲ್ಲಿಸುವ ಮಾಹಿತಿಯನ್ನು ನಿಮ್ಮ ವಿನಂತಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸಲು ಅಥವಾ ಅದನ್ನು ನಿರ್ವಹಿಸಲು AeroSun Energyಯ ಡೇಟಾಬೇಸ್‌ನಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾಗುತ್ತದೆ."
   },
   "formSubmission": {
     "saving": "ಸಲ್ಲಿಕೆ ಉಳಿಸಲಾಗುತ್ತಿದೆ…",
@@ -7707,35 +7713,35 @@
     "solutions": [
       {
         "label": "ವಸತಿ ಸೌರ ಪರಿಹಾರಗಳು",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "ವಾಣಿಜ್ಯ ಮತ್ತು ಕೈಗಾರಿಕಾ ಸೌರಶಕ್ತಿ",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "ಕೃಷಿ ಸೌರ ಪಂಪ್‌ಗಳು",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "ಗಾಳಿ ವಿದ್ಯುತ್ ಉತ್ಪಾದನಾ ವ್ಯವಸ್ಥೆಗಳು",
-        "href": "/windenergy"
+        "href": "/wind-energy"
       },
       {
         "label": "ಲಂಬ ಅಕ್ಷದ ಗಾಳಿ ಟರ್ಬೈನ್‌ಗಳು",
-        "href": "/windenergy"
+        "href": "/wind-energy"
       },
       {
         "label": "ಸೌರ-ಗಾಳಿ ಹೈಬ್ರಿಡ್ ವ್ಯವಸ್ಥೆಗಳು",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       },
       {
         "label": "ಬ್ಯಾಟರಿ ಶಕ್ತಿ ಸಂಗ್ರಹಣೆ",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       },
       {
         "label": "ಗ್ರಿಡ್ ಸಂಪರ್ಕವಿಲ್ಲದ ವಿದ್ಯುತ್ ಪರಿಹಾರಗಳು",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       }
     ],
     "address": "Do.no 11-184, Gollavanigunta, T.N. Pallem, Tirupati, Andhra Pradesh, India - 517501.",
@@ -7752,16 +7758,16 @@
     "attributionLinkText": "ChatGPT.",
     "legalLinks": [
       {
-        "label": "ಗೌಪ್ಯತಾ ನೀತಿ",
-        "href": "/privacy-policy"
-      },
-      {
         "label": "ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು",
-        "href": "/terms-conditions"
+        "href": "/auth/dashboard/billing/terms-conditions"
       },
       {
         "label": "ವಾರಂಟಿ ಮತ್ತು ಸೇವಾ ನೀತಿ",
-        "href": "/warranty-policy"
+        "href": "/auth/dashboard/billing/warranty-policy"
+      },
+      {
+        "label": "ರದ್ದತಿ ಮತ್ತು ಮರುಪಾವತಿ ನೀತಿ",
+        "href": "/cancellation"
       }
     ],
     "attribution": "Built with Love and passion by Vulchi Vijaya Kumar Raju (Kshatriya's).",
@@ -10008,22 +10014,33 @@
     "emailDirect": "Email directly",
     "openEmailDraft": "Open email draft",
     "form": {
-      "title": "Send us a project enquiry",
-      "description": "Tell us a little about your project and our team will follow up.",
-      "fullName": "Full name",
-      "fullNamePlaceholder": "Your name",
-      "email": "Email address",
-      "emailPlaceholder": "you@example.com",
-      "phone": "Phone number",
-      "phonePlaceholder": "Optional contact number",
+      "title": "ಸೌರಶಕ್ತಿಗಾಗಿ ನಮ್ಮೊಂದಿಗೆ ಸಂಪರ್ಕಿಸಿ",
+      "description": "ನಿಮ್ಮ ಸಂಪರ್ಕ ವಿವರಗಳು ಮತ್ತು ಸೌರಶಕ್ತಿಯ ಅಗತ್ಯಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ. ನಮ್ಮ ತಂಡ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತದೆ.",
+      "fullName": "ಪೂರ್ಣ ಹೆಸರು",
+      "fullNamePlaceholder": "ಪೂರ್ಣ ಹೆಸರು",
+      "email": "ಇಮೇಲ್ ವಿಳಾಸ",
+      "emailPlaceholder": "ಇಮೇಲ್ ವಿಳಾಸ ನಮೂದಿಸಿ",
+      "phone": "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
+      "phonePlaceholder": "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ",
+      "solarNeed": "ಸೌರಶಕ್ತಿಯ ಅಗತ್ಯ",
+      "solarNeedPlaceholder": "ಯಾವ ಅಗತ್ಯಕ್ಕೆ ಸೌರಶಕ್ತಿ?",
+      "state": "ರಾಜ್ಯ",
+      "statePlaceholder": "ರಾಜ್ಯ ಆಯ್ಕೆಮಾಡಿ",
+      "monthlyAverageElectricityBill": "ಸರಾಸರಿ ಮಾಸಿಕ ವಿದ್ಯುತ್ ಬಿಲ್ ಆಯ್ಕೆಮಾಡಿ",
+      "monthlyAverageElectricityBillPlaceholder": "ಸರಾಸರಿ ಮಾಸಿಕ ವಿದ್ಯುತ್ ಬಿಲ್",
+      "interestedInFinancing": "ಹಣಕಾಸು ನೆರವಿನಲ್ಲಿ ಆಸಕ್ತಿಯಿದೆಯೇ?",
+      "interestedInFinancingPlaceholder": "ಹಣಕಾಸು ನೆರವಿನಲ್ಲಿ ಆಸಕ್ತಿ",
+      "solarNeedOptions": ["ವಸತಿ", "ವಾಣಿಜ್ಯ", "ಕೈಗಾರಿಕೆ", "ಕೃಷಿ", "ಇತರೆ"],
+      "electricityBillOptions": ["₹1,500ಕ್ಕಿಂತ ಕಡಿಮೆ", "₹1,500 – ₹3,000", "₹3,000 – ₹5,000", "₹5,000 – ₹10,000", "₹10,000ಕ್ಕಿಂತ ಹೆಚ್ಚು"],
+      "financingOptions": ["ಹೌದು", "ಇಲ್ಲ", "ಖಚಿತವಿಲ್ಲ"],
       "projectType": "Project type",
       "projectTypePlaceholder": "Rooftop, park, road, commercial",
       "usage": "Approx. usage",
       "usagePlaceholder": "Monthly units or kW target",
       "message": "Message",
       "messagePlaceholder": "Tell us where the site is, what you want to power, and when you want to start.",
-      "submit": "Send enquiry",
-      "submitting": "Saving enquiry…",
+      "submit": "ಸಲ್ಲಿಸಿ",
+      "submitting": "ಸಲ್ಲಿಸಲಾಗುತ್ತಿದೆ…",
       "success": "Your enquiry has been saved."
     },
     "highlights": [
@@ -10129,6 +10146,13 @@
     "yearSuffix": "ವರ್ಷ",
     "contactUs": "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ",
     "estimatesDisclaimer": "ಇವು ಅಂದಾಜುಗಳು ಮಾತ್ರ. 25 ವರ್ಷದ ಮುನ್ಸೂಚನೆ ಸ್ಥಿರ ವಿದ್ಯುತ್ ದರ ಮತ್ತು ಉತ್ಪಾದನೆಯನ್ನು ಊಹಿಸುತ್ತದೆ; ನೈಜ ಉಳಿತಾಯವು ಸ್ಥಳದ ಪರಿಸ್ಥಿತಿಗಳು, ವ್ಯವಸ್ಥೆಯ ಕಾರ್ಯಕ್ಷಮತೆ ಮತ್ತು DISCOM ದರವನ್ನು ಅವಲಂಬಿಸುತ್ತದೆ.",
+    "quoteHeroTitle": "ಸೌರಶಕ್ತಿಗೆ ಬದಲಾಗಿ ☀️ ನಿಮ್ಮ ವಿದ್ಯುತ್ ಬಿಲ್ ಅನ್ನು 90% ಕಡಿಮೆ ಮಾಡಿ",
+    "quoteHeroSubtitle": "3 ಹಂತಗಳಲ್ಲಿ ಉಚಿತ ವೈಯಕ್ತಿಕಗೊಳಿಸಿದ ಕೊಟೇಶನ್ ಪಡೆಯಿರಿ",
+    "quoteHeroNamePlaceholder": "ಪೂರ್ಣ ಹೆಸರು",
+    "quoteHeroMobilePlaceholder": "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
+    "quoteHeroSubmit": "ಪ್ರಾರಂಭಿಸಿ",
+    "quoteHeroDisclosurePrefix": "ಈ ಫಾರ್ಮ್ ಸಲ್ಲಿಸುವ ಮೂಲಕ, ನೀವು ಒಪ್ಪುತ್ತೀರಿ",
+    "quoteHeroTerms": "ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು",
     "freeAssessmentCta": "ನನ್ನ ಉಚಿತ ಸೌರ ಮೌಲ್ಯಮಾಪನ ಪಡೆಯಿರಿ",
     "freeAssessmentLabel": "ಉಚಿತ ಸೌರ ಮೌಲ್ಯಮಾಪನ",
     "leadName": "ಹೆಸರು",
@@ -11782,7 +11806,37 @@
       "guideTitle": "Eligibility guide",
       "important": "Important",
       "importantDescription": "Subsidy amounts, vendor requirements, and programme rules can change. Confirm the latest details through the official portal and your local DISCOM.",
-      "portalLink": "Visit PM Surya Ghar portal"
+      "portalLink": "PM Surya Ghar ಪೋರ್ಟಲ್ ತೆರೆಯಿರಿ",
+      "consumerRegistration": {
+        "eyebrow": "ಪೋರ್ಟಲ್ ಮಾರ್ಗದರ್ಶಿ",
+        "titleAccent": "ಗ್ರಾಹಕ",
+        "title": "ನೋಂದಣಿ ಪ್ರಕ್ರಿಯೆ",
+        "description": "ಅಧಿಕೃತ PM Surya Ghar ಪೋರ್ಟಲ್‌ನಲ್ಲಿ ಈ ಹಂತಗಳನ್ನು ಅನುಸರಿಸಿ. ಪೋರ್ಟಲ್ ಪುಟಗಳು ಮತ್ತು ಮೆನುಗಳು ಬದಲಾಗಬಹುದು; ಅಲ್ಲಿ ನೀಡಿರುವ ಇತ್ತೀಚಿನ ಸೂಚನೆಗಳನ್ನು ಅನುಸರಿಸಿ.",
+        "stepLabel": "ಹಂತ",
+        "portalLink": "ಅಧಿಕೃತ ಪೋರ್ಟಲ್ ತೆರೆಯಿರಿ",
+        "benefits": {
+          "title": "ಪ್ರಯೋಜನಗಳು",
+          "residentialTitle": "ವಸತಿ ಕುಟುಂಬಗಳಿಗೆ ಸಬ್ಸಿಡಿ",
+          "communityTitle": "GHS/RWA",
+          "communityAccent": "ಸಬ್ಸಿಡಿ",
+          "communitySubtitle": "ಗುಂಪು ವಸತಿ ಸಂಘ / ನಿವಾಸಿಗಳ ಕಲ್ಯಾಣ ಸಂಘ",
+          "communityDetails": "EV ಚಾರ್ಜಿಂಗ್ ಸೇರಿದಂತೆ ಸಾಮಾನ್ಯ ಸೌಲಭ್ಯಗಳಿಗೆ, ಪ್ರತಿ ಮನೆಗೆ 3 kW ಆಧಾರದಲ್ಲಿ ಗರಿಷ್ಠ 500 kW ಸಾಮರ್ಥ್ಯ. GHS/RWA ನಿವಾಸಿಗಳು ಅಳವಡಿಸುವ ವೈಯಕ್ತಿಕ ಮೇಲ್ಛಾವಣಿ ಘಟಕಗಳೂ ಈ ಮಿತಿಯಲ್ಲಿ ಸೇರಿವೆ.",
+          "specialStatesNote": "ವಿಶೇಷ ರಾಜ್ಯಗಳಲ್ಲಿ, ಪ್ರಸ್ತುತ ಯೋಜನಾ ನಿಯಮಗಳಿಗೆ ಒಳಪಟ್ಟು ಪ್ರತಿ kWಗೆ ಹೆಚ್ಚುವರಿ 10% ಸಬ್ಸಿಡಿ ಅನ್ವಯಿಸಬಹುದು.",
+          "capacityTitle": "ಕುಟುಂಬಗಳಿಗೆ ಸೂಕ್ತವಾದ ಮೇಲ್ಛಾವಣಿ ಸೌರ ಘಟಕದ ಸಾಮರ್ಥ್ಯ",
+          "consumptionLabel": "ಸರಾಸರಿ ಮಾಸಿಕ ವಿದ್ಯುತ್ ಬಳಕೆ (ಯೂನಿಟ್‌ಗಳು)",
+          "capacityLabel": "ಸೂಕ್ತ ಮೇಲ್ಛಾವಣಿ ಸೌರ ಘಟಕದ ಸಾಮರ್ಥ್ಯ",
+          "consumptionValues": ["0–150", "150–300", ">300"],
+          "capacityValues": ["1–2 kW", "2–3 kW", "3 kWಗಿಂತ ಹೆಚ್ಚು"]
+        },
+        "steps": [
+          {"title":"ಅಧಿಕೃತ ವೆಬ್‌ಸೈಟ್‌ಗೆ ಭೇಟಿ ನೀಡಿ","description":"ಗ್ರಾಹಕರ ನೋಂದಣಿ ಆರಂಭಿಸಲು PM Surya Ghar ಪೋರ್ಟಲ್ ತೆರೆಯಿರಿ.","url":"https://pmsuryaghar.gov.in/"},
+          {"title":"Consumer Login ತೆರೆಯಿರಿ","description":"ಗ್ರಾಹಕ ಪುಟದಲ್ಲಿ “Apply Now” ಆಯ್ಕೆಮಾಡಿ ಅಥವಾ Login ಮೆನುವಿನಲ್ಲಿ “Consumer Login” ಆಯ್ಕೆಮಾಡಿ."},
+          {"title":"ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ಪರಿಶೀಲಿಸಿ","description":"ನೋಂದಾಯಿತ ಗ್ರಾಹಕ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ, captcha ಪೂರ್ಣಗೊಳಿಸಿ, ಮಾರ್ಗಸೂಚಿಗಳನ್ನು ಓದಿರುವುದನ್ನು ದೃಢೀಕರಿಸಿ “Verify” ಆಯ್ಕೆಮಾಡಿ."},
+          {"title":"OTP ಮೂಲಕ ಲಾಗಿನ್ ಮಾಡಿ","description":"SMS ಮೂಲಕ ಬಂದ ಒನ್-ಟೈಮ್ ಪಾಸ್‌ವರ್ಡ್ ನಮೂದಿಸಿ “Login” ಆಯ್ಕೆಮಾಡಿ."},
+          {"title":"ಗ್ರಾಹಕ ಪ್ರೊಫೈಲ್ ಉಳಿಸಿ","description":"ನಿಮ್ಮ ಹೆಸರು, ಇಮೇಲ್, ವಿಳಾಸ, ರಾಜ್ಯ, ಜಿಲ್ಲೆ ಮತ್ತು PIN ಕೋಡ್ ನಮೂದಿಸಿ ಪ್ರೊಫೈಲ್ ಉಳಿಸಿ."},
+          {"title":"ಮೇಲ್ಛಾವಣಿ ಸೌರ ಅರ್ಜಿ ಆರಂಭಿಸಿ","description":"“Apply for Solar Rooftop” ಅಥವಾ Vendor Selection ಆಯ್ಕೆಮಾಡಿ. ರಾಜ್ಯ ಮತ್ತು ವಿದ್ಯುತ್ ವಿತರಣಾ ಸಂಸ್ಥೆಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿ, ಗ್ರಾಹಕ ಖಾತೆ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ, ವಿವರಗಳನ್ನು ಪಡೆಯಿರಿ ಮತ್ತು “Next” ಆಯ್ಕೆಮಾಡಿ."}
+        ]
+      }
     },
     "eligibilityChecks": [
       {
@@ -11885,6 +11939,62 @@
       "Wind turbine or hybrid project without the specific qualifying rooftop solar configuration under that scheme",
       "Non-DCR-compliant modules, ineligible equipment, or failure to complete the official portal process"
     ]
+  },
+  "financePage": {
+    "eyebrow": "PM Surya Ghar: Muft Bijli Yojana",
+    "title": "ಗ್ರಾಹಕರ ಹಣಕಾಸು ಆಯ್ಕೆಗಳು",
+    "description": "ಪ್ರಮಾಣಿತ ಮೇಲ್ಛಾವಣಿ ಸೌರ ಸಾಲ ಉತ್ಪನ್ನವನ್ನು ಪರಿಶೀಲಿಸಿ; ₹2 ಲಕ್ಷದವರೆಗಿನ ಮತ್ತು ಅದಕ್ಕಿಂತ ಹೆಚ್ಚಿನ ಸಾಲಗಳ ಷರತ್ತುಗಳನ್ನು ಹೋಲಿಸಿ.",
+    "comparisonLink": "ಸಾಲದ ಹೋಲಿಕೆ ನೋಡಿ",
+    "applicationLink": "ಅರ್ಜಿ ಮತ್ತು ಮುಖ್ಯ ಸೂಚನೆ",
+    "loanBands": [
+      {"title":"₹2 ಲಕ್ಷದವರೆಗಿನ ಸಾಲ","amount":"ಗರಿಷ್ಠ ₹2 ಲಕ್ಷ"},
+      {"title":"₹2 ಲಕ್ಷಕ್ಕಿಂತ ಹೆಚ್ಚಿನ ಸಾಲ","amount":"ಗರಿಷ್ಠ ₹6 ಲಕ್ಷ"}
+    ],
+    "productTitle": "PM Surya Ghar: ಪ್ರಮಾಣಿತ ಸಾಲ ಉತ್ಪನ್ನ",
+    "tableDescription": "ಕೆಳಗಿನ ವಿವರಗಳು ಒದಗಿಸಿದ ಉಲ್ಲೇಖ ಮಾಹಿತಿಯ ಆಧಾರದಲ್ಲಿವೆ. ಎರಡೂ ಸಾಲ ವರ್ಗಗಳಿಗೆ ಒಂದೇ ಆಗಿರುವ ಷರತ್ತುಗಳನ್ನು ಒಟ್ಟಿಗೆ ತೋರಿಸಲಾಗಿದೆ.",
+    "headers": {"number":"ಕ್ರ.ಸಂ.","item":"ವಿವರ","upToTwoLakhs":"ಅರ್ಹತಾ ಮಾನದಂಡಗಳು (ಸಾಲ ₹2 ಲಕ್ಷದವರೆಗೆ)","aboveTwoLakhs":"ಅರ್ಹತಾ ಷರತ್ತುಗಳು (ಸಾಲ ₹2 ಲಕ್ಷಕ್ಕಿಂತ ಹೆಚ್ಚು)"},
+    "rows": [
+      {"number":"1","item":"ಉದ್ದೇಶ","upToTwoLakhs":"ಮೇಲ್ಛಾವಣಿ ಸೌರ ಸ್ಥಾಪನೆ","aboveTwoLakhs":"ಮೇಲ್ಛಾವಣಿ ಸೌರ ಸ್ಥಾಪನೆ"},
+      {"number":"2","item":"ಸಾಲದ ಮೊತ್ತ","upToTwoLakhs":"ಗರಿಷ್ಠ ಸಾಲ ₹2 ಲಕ್ಷ","aboveTwoLakhs":"ಗರಿಷ್ಠ ಸಾಲ ₹6 ಲಕ್ಷ"},
+      {"number":"3","item":"ವಯಸ್ಸು ಮತ್ತು ಇತರ ಅರ್ಹತಾ ಷರತ್ತುಗಳು","upToTwoLakhs":["ವಯಸ್ಸು 65 ವರ್ಷಗಳವರೆಗೆ; ಸಾಲಗಾರ 70 ವರ್ಷ ತಲುಪುವ ಮೊದಲು ಮರುಪಾವತಿ ಪೂರ್ಣಗೊಳ್ಳಬೇಕು.","ವೈಯಕ್ತಿಕ ಅರ್ಜಿದಾರರಿಗೆ.","CIBIL ಅಂಕ 680 ಅಥವಾ ಹೆಚ್ಚು; ಹೊಸ ಕ್ರೆಡಿಟ್ (NTC) ಗ್ರಾಹಕರೂ ಅರ್ಹರು.","DISCOM ಗ್ರಾಹಕ ಸಂಖ್ಯೆ ಪರಿಶೀಲನೆಗೆ ಮಾತ್ರ ಅಗತ್ಯ.","MNRE ಸೂಚಿಸಿದಂತೆ ಸಾಕಷ್ಟು ಮೇಲ್ಛಾವಣಿ ಜಾಗ ಇರಬೇಕು.","ಬ್ಯಾಂಕ್ ಉಳಿತಾಯ ಖಾತೆ ಕಡ್ಡಾಯ."],"aboveTwoLakhs":[],"shared":true},
+      {"number":"4","item":"PAN","upToTwoLakhs":"ಅಗತ್ಯವಿಲ್ಲ","aboveTwoLakhs":"PAN ಕಡ್ಡಾಯ"},
+      {"number":"5","item":"ಸಾಲಗಾರರ ಪಾಲು","upToTwoLakhs":"ಒಟ್ಟು ಯೋಜನಾ ವೆಚ್ಚದ ಕನಿಷ್ಠ 10%","aboveTwoLakhs":"ಒಟ್ಟು ಯೋಜನಾ ವೆಚ್ಚದ ಕನಿಷ್ಠ 20%"},
+      {"number":"6","item":"ಬಡ್ಡಿದರ (ಫ್ಲೋಟಿಂಗ್)","upToTwoLakhs":["RBI ರೆಪೊ ದರ + 0.50%.","ಉಲ್ಲೇಖದಲ್ಲಿ ವಾರ್ಷಿಕ 6.00% ಎಂದು ಸೂಚಿಸಲಾಗಿದೆ; ಜಾರಿಗೆ ಬಂದ ದಿನಾಂಕ ನೀಡಿಲ್ಲ."],"aboveTwoLakhs":["ಗೃಹಸಾಲ ಗ್ರಾಹಕರಿಗೆ: ಅವರ ಗೃಹಸಾಲದ ಅದೇ ದರ.","ಇತರ ಗ್ರಾಹಕರಿಗೆ: ಗೃಹಸಾಲದ ದರ + 100 ಬೇಸಿಸ್ ಪಾಯಿಂಟ್‌ಗಳು."]},
+      {"number":"7","item":"ಅವಧಿ","upToTwoLakhs":["ಮೊರಟೋರಿಯಂ ಅವಧಿ ಸೇರಿ ಗರಿಷ್ಠ 120 ತಿಂಗಳು.","ಕನಿಷ್ಠ ಅವಧಿ ಇಲ್ಲ.","ಮುಂಚಿತ ಮರುಪಾವತಿ ಶುಲ್ಕವಿಲ್ಲ."],"aboveTwoLakhs":[],"shared":true},
+      {"number":"8","item":"ಭದ್ರತೆ","upToTwoLakhs":"ಬ್ಯಾಂಕ್ ಹಣಕಾಸಿನಿಂದ ಖರೀದಿಸಿದ ಮೇಲ್ಛಾವಣಿ ಸೌರ ಉಪಕರಣಗಳ ಮೇಲೆ ಹೈಪೋಥಿಕೇಶನ್.","aboveTwoLakhs":"","shared":true},
+      {"number":"9","item":"ಪ್ರಕ್ರಿಯಾ ಶುಲ್ಕ","upToTwoLakhs":"ಶೂನ್ಯ","aboveTwoLakhs":"","shared":true},
+      {"number":"10","item":"ಹಣಕಾಸು ನೆರವು (ಸಬ್ಸಿಡಿ)","upToTwoLakhs":["1 kWಗೆ ₹30,000.","2 kWಗೆ ₹60,000.","3 kWಗೆ ₹78,000.","ಸಾಲಗಾರ PM Surya Ghar ಪೋರ್ಟಲ್‌ನಲ್ಲಿ ಸಬ್ಸಿಡಿಗೆ ಕ್ಲೇಮ್ ಸಲ್ಲಿಸಬೇಕು."],"aboveTwoLakhs":["ಸಬ್ಸಿಡಿ ಮೊತ್ತ: ₹78,000.","ಸಾಲಗಾರ PM Surya Ghar ಪೋರ್ಟಲ್‌ನಲ್ಲಿ ಸಬ್ಸಿಡಿಗೆ ಕ್ಲೇಮ್ ಸಲ್ಲಿಸಬೇಕು."]},
+      {"number":"11","item":"ನಿವ್ವಳ ವಾರ್ಷಿಕ ಆದಾಯ","upToTwoLakhs":"ಅಗತ್ಯವಿಲ್ಲ","aboveTwoLakhs":"ಕನಿಷ್ಠ ₹3 ಲಕ್ಷ"},
+      {"number":"12","item":"ಅಗತ್ಯ ದಾಖಲೆಗಳು","upToTwoLakhs":"ಆಧಾರ್ ಸಂಖ್ಯೆ","aboveTwoLakhs":["KYC ದಾಖಲೆಗಳು.","ಕಳೆದ ಎರಡು ವರ್ಷಗಳ ಆದಾಯ ತೆರಿಗೆ ರಿಟರ್ನ್‌ಗಳು ಅಥವಾ Form 16.","ಆರು ತಿಂಗಳ ವೇತನ ವಿವರಗಳು.","ವಿದ್ಯುತ್ ಬಿಲ್ ಪ್ರತಿ."]},
+      {"number":"13","item":"ಮೊರಟೋರಿಯಂ ಅವಧಿ","upToTwoLakhs":"ಹಣ ವಿತರಿಸಿದ ದಿನಾಂಕದಿಂದ ಆರು ತಿಂಗಳು. ಈ ಅವಧಿಯಲ್ಲಿ ಸಾಲಗಾರನು ಸಾಲದ ಕಂತು ಪಾವತಿಸಬೇಕಾಗಿಲ್ಲ.","aboveTwoLakhs":"","shared":true},
+      {"number":"14","item":"ಹಣ ವಿತರಣೆ","upToTwoLakhs":"ಸಾಲದ ಹಣವನ್ನು ಮಾರಾಟಗಾರರಿಗೆ ಎರಡು ಹಂತಗಳಲ್ಲಿ ವಿತರಿಸಲಾಗುತ್ತದೆ.","aboveTwoLakhs":"","shared":true},
+      {"number":"15","item":"ಇತರ ಷರತ್ತುಗಳು","upToTwoLakhs":["ಅರ್ಜಿಯನ್ನು ಸಾಲಗಾರರು ಸ್ವತಃ ಅಥವಾ ಸಹಾಯದಿಂದ ಸಲ್ಲಿಸಬಹುದು.","3 kWವರೆಗಿನ ಸಾಲಗಳಿಗೆ ವಿಮೆ ಕಡ್ಡಾಯವಲ್ಲ.","3 kW ಮೀರಿದ ಸಾಲಗಳಿಗೆ ಸಂಪೂರ್ಣ ಸ್ಥಾಪನಾ ವೆಚ್ಚದ ವಿಮೆ ಅಗತ್ಯ; ವೆಚ್ಚವನ್ನು ಗ್ರಾಹಕರು ಭರಿಸುತ್ತಾರೆ.","65 ವರ್ಷ ಅಥವಾ ಅದಕ್ಕಿಂತ ಮೇಲ್ಪಟ್ಟ ಅರ್ಜಿದಾರರು ಯೋಜನೆಯ ಪ್ರಕಾರ ಒಬ್ಬ ಸಹ-ಸಾಲಗಾರರನ್ನು (ಸಂಗಾತಿ ಅಥವಾ ಮಕ್ಕಳು) ಸೇರಿಸಬಹುದು."],"aboveTwoLakhs":[],"shared":true},
+      {"number":"16","item":"ಸಾಲದ ಅರ್ಜಿ","upToTwoLakhs":"PM Surya Ghar ಪೋರ್ಟಲ್‌ಗೆ ಲಾಗಿನ್ ಮಾಡಿ ಸಾಲದ ಅರ್ಜಿಯನ್ನು ಆರಂಭಿಸಿ.","aboveTwoLakhs":"","shared":true}
+    ],
+    "disclaimerTitle": "ಅರ್ಜಿ ಸಲ್ಲಿಸುವ ಮೊದಲು ಪರಿಶೀಲಿಸಿ",
+    "disclaimer": "ಬಡ್ಡಿದರಗಳು, ಮಿತಿಗಳು, ಶುಲ್ಕಗಳು, ಅರ್ಹತೆ, ದಾಖಲೆಗಳು, ವಿಮಾ ಷರತ್ತುಗಳು ಮತ್ತು ಸಬ್ಸಿಡಿ ನಿಯಮಗಳು ಬದಲಾಗಬಹುದು ಹಾಗೂ ಸಾಲದಾತರ ಪ್ರಕಾರ ಭಿನ್ನವಾಗಿರಬಹುದು. ಉಲ್ಲೇಖದಲ್ಲಿ ಜಾರಿಗೆ ಬಂದ ದಿನಾಂಕವಿಲ್ಲ. ಇದು ಸಾಮಾನ್ಯ ಮಾಹಿತಿ ಮಾತ್ರ; ಸಾಲದ ಕೊಡುಗೆ, ಖಾತರಿ ಅಥವಾ ಹಣಕಾಸು ಸಲಹೆಯಲ್ಲ. ಪ್ರಸ್ತುತ ಷರತ್ತುಗಳನ್ನು ಬ್ಯಾಂಕ್ ಮತ್ತು ಅಧಿಕೃತ ಯೋಜನಾ ಪೋರ್ಟಲ್‌ನಲ್ಲಿ ದೃಢೀಕರಿಸಿ.",
+    "applicationTitle": "ಅಧಿಕೃತ ಪೋರ್ಟಲ್ ಮೂಲಕ ಅರ್ಜಿ ಸಲ್ಲಿಸಿ",
+    "applicationDescription": "ಉಲ್ಲೇಖದ ಪ್ರಕಾರ, ಸಾಲಗಾರರು PM Surya Ghar ಪೋರ್ಟಲ್ ಮೂಲಕ ಸಾಲದ ಅರ್ಜಿಯನ್ನು ಆರಂಭಿಸಬೇಕು. ಅನ್ವಯಿಸುವ ಸಾಲ ಉತ್ಪನ್ನ ಮತ್ತು ಅಂತಿಮ ಷರತ್ತುಗಳನ್ನು ಬ್ಯಾಂಕ್ ದೃಢೀಕರಿಸುತ್ತದೆ.",
+    "portalLink": "PM Surya Ghar ಪೋರ್ಟಲ್ ತೆರೆಯಿರಿ",
+    "applicationJourney": {
+      "eyebrow": "PM Surya Ghar: Muft Bijli Yojana",
+      "titleAccent": "ಗ್ರಾಹಕರ",
+      "title": "ಅರ್ಜಿ ಪ್ರಯಾಣ",
+      "stakeholders": ["ಗ್ರಾಹಕರು", "ಮಾರಾಟಗಾರರು", "DISCOM", "REC"],
+      "applyLabel": "ಮೇಲ್ಛಾವಣಿ ಸೌರಕ್ಕೆ ಅರ್ಜಿ ಸಲ್ಲಿಸಿ",
+      "steps": [
+        {"title":"ಗ್ರಾಹಕರ ನೋಂದಣಿ","description":"ನಿಮ್ಮ ಅರ್ಜಿ ಪ್ರಯಾಣ ಆರಂಭಿಸಲು ನೋಂದಾಯಿಸಿ."},
+        {"title":"ಅರ್ಜಿ ಸಲ್ಲಿಕೆ","description":"ನಿಮ್ಮ ಅರ್ಜಿಯನ್ನು ಸಲ್ಲಿಸಿ."},
+        {"title":"ಸಾಧ್ಯತಾ ಅನುಮೋದನೆ","description":"ನಿಮ್ಮ ಸ್ಥಳ ಸೌರ ಸ್ಥಾಪನೆಗೆ ಸೂಕ್ತವೇ ಎಂದು ಪರಿಶೀಲಿಸಿ."},
+        {"title":"ಮಾರಾಟಗಾರರ ಆಯ್ಕೆ","description":"ಸ್ಥಾಪನೆಗೆ ಸೂಕ್ತ ಮಾರಾಟಗಾರರನ್ನು ಆಯ್ಕೆಮಾಡಿ."},
+        {"title":"ಯೋಜನಾ ಪರಿಶೀಲನೆ","description":"ನಿಯಮ ಪಾಲನೆಯ ಪರಿಶೀಲನೆಗೆ DISCOM ಸ್ಥಳವನ್ನು ಪರಿಶೀಲಿಸುತ್ತದೆ."},
+        {"title":"ಸೌರ ಸ್ಥಾಪನೆ ವಿವರಗಳು","description":"ಮೇಲ್ಛಾವಣಿ ಸೌರ ಸ್ಥಾಪನೆಗೆ ಬೇಕಾದ ವಿವರಗಳನ್ನು ನೀಡಿ."},
+        {"title":"ಕೆಲಸ ಆರಂಭ","description":"ಸ್ಥಾಪನಾ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಆರಂಭಿಸಿ."},
+        {"title":"ಯೋಜನಾ ಕಾರ್ಯಾರಂಭ","description":"DISCOM ಮೇಲ್ಛಾವಣಿ ಸೌರ ಸ್ಥಾಪನೆಯನ್ನು ಪ್ರಮಾಣೀಕರಿಸುತ್ತದೆ."},
+        {"title":"ಸಬ್ಸಿಡಿ ವಿನಂತಿ","description":"ಸಬ್ಸಿಡಿ ಪಡೆಯಲು ವಿನಂತಿಯನ್ನು ಸಲ್ಲಿಸಿ."},
+        {"title":"ಸಬ್ಸಿಡಿ ವಿತರಣೆ","description":"ಅನುಮೋದನೆಯ ನಂತರ ಸಬ್ಸಿಡಿ ವಿತರಿಸಲಾಗುತ್ತದೆ."}
+      ]
+    }
   },
   "componentData": {
     "jsonLdSchema": {

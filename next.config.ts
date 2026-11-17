@@ -24,6 +24,106 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       {
+        source: '/estimation-calculator',
+        destination: '/solar-calculator',
+        permanent: true,
+      },
+      {
+        source: '/login',
+        destination: '/auth/login',
+        permanent: true,
+      },
+      {
+        source: '/signup',
+        destination: '/auth/signup',
+        permanent: true,
+      },
+      {
+        source: '/privacy-policy',
+        destination: '/policies',
+        permanent: true,
+      },
+      {
+        source: '/solarenergy',
+        destination: '/solar-energy',
+        permanent: true,
+      },
+      {
+        source: '/windenergy',
+        destination: '/wind-energy',
+        permanent: true,
+      },
+      {
+        source: '/hybridenergy',
+        destination: '/hybrid-energy',
+        permanent: true,
+      },
+      {
+        source: '/cancellation-refund',
+        destination: '/cancellation',
+        permanent: true,
+      },
+      {
+        source: '/dashboard',
+        destination: '/auth/dashboard',
+        permanent: true,
+      },
+      {
+        source: '/billing/:path*',
+        destination: '/auth/dashboard/billing/:path*',
+        permanent: true,
+      },
+      {
+        source: '/auth/billing/:path*',
+        destination: '/auth/dashboard/billing/:path*',
+        permanent: true,
+      },
+      {
+        source: '/terms-conditions',
+        destination: '/auth/dashboard/billing/terms-conditions',
+        permanent: true,
+      },
+      {
+        source: '/customer-enquiry',
+        destination: '/auth/dashboard/billing/customer-enquiry',
+        permanent: true,
+      },
+      {
+        source: '/customer-agreement',
+        destination: '/auth/dashboard/billing/customer-agreement',
+        permanent: true,
+      },
+      {
+        source: '/installation-checklist',
+        destination: '/auth/dashboard/billing/installation-checklist',
+        permanent: true,
+      },
+      {
+        source: '/invoice-receipt',
+        destination: '/auth/dashboard/billing/invoice-receipt',
+        permanent: true,
+      },
+      {
+        source: '/purchase-order',
+        destination: '/auth/dashboard/billing/purchase-order',
+        permanent: true,
+      },
+      {
+        source: '/warranty-policy',
+        destination: '/auth/dashboard/billing/warranty-policy',
+        permanent: true,
+      },
+      {
+        source: '/nintydays-tracker',
+        destination: '/auth/dashboard/billing/nintydays-tracker',
+        permanent: true,
+      },
+      {
+        source: '/research-development',
+        destination: '/auth/dashboard/billing/research-development',
+        permanent: true,
+      },
+      {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.aerosunenergy.in' }],
         destination: `${SITE_URL}/:path*`,

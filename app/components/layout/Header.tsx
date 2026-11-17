@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import {
   ArrowDownToLine,
   ArrowRight,
+  Banknote,
   Building2,
   Check,
   ChevronDown,
@@ -30,6 +31,7 @@ const navigationIconComponents: Record<string, LucideIcon> = {
   house: House,
   info: Info,
   building: Building2,
+  bank: Banknote,
   package: PackageOpen,
   sun: Sun,
   wind: Wind,

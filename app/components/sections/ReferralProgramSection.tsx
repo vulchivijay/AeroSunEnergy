@@ -2,7 +2,6 @@
 
 import { useState, type FormEvent } from 'react'
 import { ArrowUpRight, Gift } from 'lucide-react'
-import Link from 'next/link'
 import { useLocale } from '@/lib/LocaleContext'
 import { useToast } from '@/app/components/ui/ToastProvider'
 import { INDIAN_MOBILE_HTML_PATTERN } from '@/lib/validation/contact'
@@ -210,10 +209,7 @@ export function ReferralProgramSection() {
             </label>
 
             <p className="text-xs leading-5 text-slate-500">
-              {formContent.privacyPrefix}{' '}
-              <Link className="font-semibold text-emerald-800 underline underline-offset-2" href="/privacy-policy">
-                {formContent.privacyLink}
-              </Link>.
+              {formContent.privacyPrefix}
             </p>
 
             <button

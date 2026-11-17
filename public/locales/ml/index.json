@@ -4087,15 +4087,15 @@
       "helpfulLinks": [
         {
           "label": "Solar energy",
-          "href": "/solarenergy"
+          "href": "/solar-energy"
         },
         {
           "label": "Wind energy",
-          "href": "/windenergy"
+          "href": "/wind-energy"
         },
         {
           "label": "Hybrid energy",
-          "href": "/hybridenergy"
+          "href": "/hybrid-energy"
         },
         {
           "label": "Contact us",
@@ -4289,15 +4289,15 @@
       },
       {
         "label": "സൗരോർജ്ജം",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "കാറ്റിൽ നിന്നുള്ള ഊർജ്ജം",
-        "href": "/windenergy"
+        "href": "/wind-energy"
       },
       {
         "label": "ഹൈബ്രിഡ് ഊർജ്ജം",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       },
       {
         "label": "സേവനങ്ങൾ",
@@ -4316,6 +4316,14 @@
       {
         "label": "യോഗ്യത അറിയുക",
         "href": "/know-eligibility"
+      },
+      {
+        "label": "ധനസഹായം",
+        "href": "/finance"
+      },
+      {
+        "label": "നയങ്ങൾ",
+        "href": "/policies"
       }
     ],
     "startProject": "പദ്ധതി ആരംഭിക്കുക",
@@ -4342,9 +4350,9 @@
       "/about": "info",
       "/about/company-profile": "building",
       "/about/product-catalogue": "package",
-      "/solarenergy": "sun",
-      "/windenergy": "wind",
-      "/hybridenergy": "zap",
+      "/solar-energy": "sun",
+      "/wind-energy": "wind",
+      "/hybrid-energy": "zap",
       "/services": "panels",
       "/contact": "mail"
     }
@@ -4750,8 +4758,7 @@
           }
         ],
         "consent": "I have permission from my friend to share their contact details with AeroSun Energy so the team can contact them about solar.",
-        "privacyPrefix": "We use these details to follow up on this referral. See our",
-        "privacyLink": "Privacy Policy",
+        "privacyPrefix": "We use these details to follow up on this referral.",
         "submit": "Submit referral",
         "submitting": "Submitting referral…",
         "successTitle": "Referral received",
@@ -7647,8 +7654,7 @@
     }
   },
   "formDataNotice": {
-    "prefix": "നിങ്ങളുടെ അഭ്യർത്ഥനയ്ക്ക് മറുപടി നൽകാനോ അത് കൈകാര്യം ചെയ്യാനോ നിങ്ങൾ നൽകുന്ന വിവരങ്ങൾ AeroSun Energyയുടെ ഡാറ്റാബേസിൽ സൂക്ഷിക്കും. ഞങ്ങളുടെ",
-    "link": "സ്വകാര്യതാ നയം"
+    "prefix": "നിങ്ങളുടെ അഭ്യർത്ഥനയ്ക്ക് മറുപടി നൽകാനോ അത് കൈകാര്യം ചെയ്യാനോ നിങ്ങൾ നൽകുന്ന വിവരങ്ങൾ AeroSun Energyയുടെ ഡാറ്റാബേസിൽ സൂക്ഷിക്കും."
   },
   "formSubmission": {
     "saving": "സമർപ്പിക്കുന്നു…",
@@ -7707,35 +7713,35 @@
     "solutions": [
       {
         "label": "ഗാർഹിക സൗരോർജ പരിഹാരങ്ങൾ",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "വാണിജ്യ, വ്യാവസായിക സൗരോർജം",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "കൃഷിക്കുള്ള സൗര പമ്പുകൾ",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "കാറ്റാടി വൈദ്യുതോൽപ്പാദന സംവിധാനങ്ങൾ",
-        "href": "/windenergy"
+        "href": "/wind-energy"
       },
       {
         "label": "ലംബ അച്ചുതണ്ടുള്ള കാറ്റാടി ടർബൈനുകൾ",
-        "href": "/windenergy"
+        "href": "/wind-energy"
       },
       {
         "label": "സൗര-കാറ്റാടി ഹൈബ്രിഡ് സംവിധാനങ്ങൾ",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       },
       {
         "label": "ബാറ്ററി ഊർജ സംഭരണം",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       },
       {
         "label": "ഗ്രിഡ് ബന്ധമില്ലാത്ത വൈദ്യുതി പരിഹാരങ്ങൾ",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       }
     ],
     "address": "Do.no 11-184, Gollavanigunta, T.N. Pallem, Tirupati, Andhra Pradesh, India - 517501.",
@@ -7752,16 +7758,16 @@
     "attributionLinkText": "ChatGPT.",
     "legalLinks": [
       {
-        "label": "സ്വകാര്യതാ നയം",
-        "href": "/privacy-policy"
-      },
-      {
         "label": "നിബന്ധനകളും വ്യവസ്ഥകളും",
-        "href": "/terms-conditions"
+        "href": "/auth/dashboard/billing/terms-conditions"
       },
       {
         "label": "വാറന്റി, സേവന നയം",
-        "href": "/warranty-policy"
+        "href": "/auth/dashboard/billing/warranty-policy"
+      },
+      {
+        "label": "റദ്ദാക്കലും റീഫണ്ട് നയവും",
+        "href": "/cancellation"
       }
     ],
     "attribution": "Vulchi Vijaya Kumar Raju (Kshatriya's) സ്നേഹത്തോടെയും ആവേശത്തോടെയും നിർമ്മിച്ചത്.",
@@ -10008,22 +10014,33 @@
     "emailDirect": "Email directly",
     "openEmailDraft": "Open email draft",
     "form": {
-      "title": "Send us a project enquiry",
-      "description": "Tell us a little about your project and our team will follow up.",
-      "fullName": "Full name",
-      "fullNamePlaceholder": "Your name",
-      "email": "Email address",
-      "emailPlaceholder": "you@example.com",
-      "phone": "Phone number",
-      "phonePlaceholder": "Optional contact number",
+      "title": "സൗരോർജത്തിനായി ഞങ്ങളുമായി ബന്ധപ്പെടുക",
+      "description": "നിങ്ങളുടെ ബന്ധപ്പെടാനുള്ള വിവരങ്ങളും സൗരോർജ ആവശ്യങ്ങളും പങ്കിടൂ. ഞങ്ങളുടെ സംഘം നിങ്ങളെ ബന്ധപ്പെടും.",
+      "fullName": "പൂർണ്ണ പേര്",
+      "fullNamePlaceholder": "പൂർണ്ണ പേര്",
+      "email": "ഇമെയിൽ വിലാസം",
+      "emailPlaceholder": "ഇമെയിൽ വിലാസം നൽകുക",
+      "phone": "മൊബൈൽ നമ്പർ",
+      "phonePlaceholder": "മൊബൈൽ നമ്പർ നൽകുക",
+      "solarNeed": "സൗരോർജ ആവശ്യം",
+      "solarNeedPlaceholder": "ഏത് ആവശ്യത്തിനാണ് സൗരോർജം?",
+      "state": "സംസ്ഥാനം",
+      "statePlaceholder": "സംസ്ഥാനം തിരഞ്ഞെടുക്കുക",
+      "monthlyAverageElectricityBill": "ശരാശരി മാസ വൈദ്യുതി ബിൽ തിരഞ്ഞെടുക്കുക",
+      "monthlyAverageElectricityBillPlaceholder": "ശരാശരി മാസ വൈദ്യുതി ബിൽ",
+      "interestedInFinancing": "ധനസഹായത്തിൽ താൽപ്പര്യമുണ്ടോ?",
+      "interestedInFinancingPlaceholder": "ധനസഹായത്തിൽ താൽപ്പര്യം",
+      "solarNeedOptions": ["വാസസ്ഥലം", "വാണിജ്യം", "വ്യവസായം", "കൃഷി", "മറ്റുള്ളവ"],
+      "electricityBillOptions": ["₹1,500-ൽ താഴെ", "₹1,500 – ₹3,000", "₹3,000 – ₹5,000", "₹5,000 – ₹10,000", "₹10,000-ൽ കൂടുതൽ"],
+      "financingOptions": ["അതെ", "ഇല്ല", "ഉറപ്പില്ല"],
       "projectType": "Project type",
       "projectTypePlaceholder": "Rooftop, park, road, commercial",
       "usage": "Approx. usage",
       "usagePlaceholder": "Monthly units or kW target",
       "message": "Message",
       "messagePlaceholder": "Tell us where the site is, what you want to power, and when you want to start.",
-      "submit": "Send enquiry",
-      "submitting": "Saving enquiry…",
+      "submit": "സമർപ്പിക്കുക",
+      "submitting": "സമർപ്പിക്കുന്നു…",
       "success": "Your enquiry has been saved."
     },
     "highlights": [
@@ -10129,6 +10146,13 @@
     "yearSuffix": "വർഷം",
     "contactUs": "ഞങ്ങളെ ബന്ധപ്പെടുക",
     "estimatesDisclaimer": "ഇവ ഏകദേശ കണക്കുകൾ മാത്രമാണ്. 25 വർഷത്തെ പ്രവചനത്തിൽ നിരക്കും ഉൽപ്പാദനവും സ്ഥിരമാണെന്ന് കണക്കാക്കുന്നു; യഥാർത്ഥ ലാഭം സ്ഥലസാഹചര്യങ്ങൾ, സംവിധാനത്തിന്റെ പ്രകടനം, DISCOM നിരക്ക് എന്നിവയെ ആശ്രയിച്ചിരിക്കും.",
+    "quoteHeroTitle": "സൗരോർജത്തിലേക്ക് മാറൂ ☀️ നിങ്ങളുടെ വൈദ്യുതി ബിൽ 90% കുറയ്ക്കൂ",
+    "quoteHeroSubtitle": "3 ഘട്ടങ്ങളിൽ സൗജന്യ വ്യക്തിഗത ക്വട്ടേഷൻ നേടൂ",
+    "quoteHeroNamePlaceholder": "പൂർണ്ണ പേര്",
+    "quoteHeroMobilePlaceholder": "മൊബൈൽ നമ്പർ",
+    "quoteHeroSubmit": "തുടങ്ങുക",
+    "quoteHeroDisclosurePrefix": "ഈ ഫോം സമർപ്പിക്കുന്നതിലൂടെ, നിങ്ങൾ സമ്മതിക്കുന്നു",
+    "quoteHeroTerms": "നിബന്ധനകളും വ്യവസ്ഥകളും",
     "freeAssessmentCta": "സൗജന്യ സോളാർ വിലയിരുത്തൽ നേടുക",
     "freeAssessmentLabel": "സൗജന്യ സോളാർ വിലയിരുത്തൽ",
     "leadName": "പേര്",
@@ -11782,7 +11806,37 @@
       "guideTitle": "Eligibility guide",
       "important": "Important",
       "importantDescription": "Subsidy amounts, vendor requirements, and programme rules can change. Confirm the latest details through the official portal and your local DISCOM.",
-      "portalLink": "Visit PM Surya Ghar portal"
+      "portalLink": "PM Surya Ghar പോർട്ടൽ തുറക്കുക",
+      "consumerRegistration": {
+        "eyebrow": "പോർട്ടൽ മാർഗ്ഗനിർദ്ദേശം",
+        "titleAccent": "ഉപഭോക്തൃ",
+        "title": "രജിസ്ട്രേഷൻ നടപടിക്രമം",
+        "description": "ഔദ്യോഗിക PM Surya Ghar പോർട്ടലിൽ ഈ ഘട്ടങ്ങൾ പിന്തുടരുക. പോർട്ടൽ പേജുകളും മെനുകളും മാറാം; അവിടെ കാണിക്കുന്ന ഏറ്റവും പുതിയ നിർദ്ദേശങ്ങൾ പിന്തുടരുക.",
+        "stepLabel": "ഘട്ടം",
+        "portalLink": "ഔദ്യോഗിക പോർട്ടൽ തുറക്കുക",
+        "benefits": {
+          "title": "ആനുകൂല്യങ്ങൾ",
+          "residentialTitle": "വാസഗൃഹങ്ങൾക്കുള്ള സബ്സിഡി",
+          "communityTitle": "GHS/RWA",
+          "communityAccent": "സബ്സിഡി",
+          "communitySubtitle": "ഗ്രൂപ്പ് ഹൗസിംഗ് സൊസൈറ്റി / റെസിഡന്റ് വെൽഫെയർ അസോസിയേഷൻ",
+          "communityDetails": "EV ചാർജിംഗ് ഉൾപ്പെടെയുള്ള പൊതുസൗകര്യങ്ങൾക്ക്, ഓരോ വീടിനും 3 kW എന്ന നിരക്കിൽ പരമാവധി 500 kW ശേഷി. GHS/RWA നിവാസികൾ സ്ഥാപിക്കുന്ന വ്യക്തിഗത മേൽക്കൂര സോളാർ സംവിധാനങ്ങളും ഈ പരിധിയിൽ ഉൾപ്പെടുന്നു.",
+          "specialStatesNote": "പ്രത്യേക സംസ്ഥാനങ്ങളിൽ നിലവിലെ പദ്ധതി ചട്ടങ്ങൾക്ക് വിധേയമായി ഓരോ kWക്കും 10% അധിക സബ്സിഡി ലഭിച്ചേക്കാം.",
+          "capacityTitle": "ഗൃഹങ്ങൾക്ക് അനുയോജ്യമായ മേൽക്കൂര സോളാർ പ്ലാന്റ് ശേഷി",
+          "consumptionLabel": "ശരാശരി മാസ വൈദ്യുതി ഉപഭോഗം (യൂണിറ്റുകൾ)",
+          "capacityLabel": "അനുയോജ്യമായ മേൽക്കൂര സോളാർ പ്ലാന്റ് ശേഷി",
+          "consumptionValues": ["0–150", "150–300", ">300"],
+          "capacityValues": ["1–2 kW", "2–3 kW", "3 kW-ൽ കൂടുതൽ"]
+        },
+        "steps": [
+          {"title":"ഔദ്യോഗിക വെബ്സൈറ്റ് സന്ദർശിക്കുക","description":"ഉപഭോക്തൃ രജിസ്ട്രേഷൻ ആരംഭിക്കാൻ PM Surya Ghar പോർട്ടൽ തുറക്കുക.","url":"https://pmsuryaghar.gov.in/"},
+          {"title":"Consumer Login തുറക്കുക","description":"ഉപഭോക്തൃ പേജിൽ “Apply Now” തിരഞ്ഞെടുക്കുക, അല്ലെങ്കിൽ Login മെനുവിൽ “Consumer Login” തിരഞ്ഞെടുക്കുക."},
+          {"title":"മൊബൈൽ നമ്പർ പരിശോധിക്കുക","description":"രജിസ്റ്റർ ചെയ്ത ഉപഭോക്തൃ മൊബൈൽ നമ്പർ നൽകുക, captcha പൂർത്തിയാക്കുക, മാർഗ്ഗനിർദ്ദേശങ്ങൾ വായിച്ചതായി സ്ഥിരീകരിച്ച് “Verify” തിരഞ്ഞെടുക്കുക."},
+          {"title":"OTP ഉപയോഗിച്ച് ലോഗിൻ ചെയ്യുക","description":"SMS വഴി ലഭിച്ച ഒറ്റത്തവണ പാസ്‌വേഡ് നൽകി “Login” തിരഞ്ഞെടുക്കുക."},
+          {"title":"ഉപഭോക്തൃ പ്രൊഫൈൽ സംരക്ഷിക്കുക","description":"പേര്, ഇമെയിൽ, വിലാസം, സംസ്ഥാനം, ജില്ല, PIN കോഡ് എന്നിവ നൽകി പ്രൊഫൈൽ സംരക്ഷിക്കുക."},
+          {"title":"മേൽക്കൂര സോളാർ അപേക്ഷ ആരംഭിക്കുക","description":"“Apply for Solar Rooftop” അല്ലെങ്കിൽ Vendor Selection തിരഞ്ഞെടുക്കുക. സംസ്ഥാനവും വൈദ്യുതി വിതരണ സ്ഥാപനവും തിരഞ്ഞെടുത്ത് ഉപഭോക്തൃ അക്കൗണ്ട് നമ്പർ നൽകി വിവരങ്ങൾ ലഭ്യമാക്കി “Next” തിരഞ്ഞെടുക്കുക."}
+        ]
+      }
     },
     "eligibilityChecks": [
       {
@@ -11885,6 +11939,62 @@
       "Wind turbine or hybrid project without the specific qualifying rooftop solar configuration under that scheme",
       "Non-DCR-compliant modules, ineligible equipment, or failure to complete the official portal process"
     ]
+  },
+  "financePage": {
+    "eyebrow": "PM Surya Ghar: Muft Bijli Yojana",
+    "title": "ഉപഭോക്തൃ ധനസഹായ മാർഗങ്ങൾ",
+    "description": "മേൽക്കൂര സോളാറിനുള്ള സ്റ്റാൻഡേർഡ് വായ്പാ ഉൽപ്പന്നം പരിശോധിച്ച് ₹2 ലക്ഷം വരെയും അതിൽ കൂടുതലുമായ വായ്പകളുടെ വ്യവസ്ഥകൾ താരതമ്യം ചെയ്യുക.",
+    "comparisonLink": "വായ്പാ താരതമ്യം കാണുക",
+    "applicationLink": "അപേക്ഷയും പ്രധാന അറിയിപ്പും",
+    "loanBands": [
+      {"title":"₹2 ലക്ഷം വരെയുള്ള വായ്പ","amount":"പരമാവധി ₹2 ലക്ഷം"},
+      {"title":"₹2 ലക്ഷത്തിന് മുകളിലുള്ള വായ്പ","amount":"പരമാവധി ₹6 ലക്ഷം"}
+    ],
+    "productTitle": "PM Surya Ghar: സ്റ്റാൻഡേർഡ് വായ്പാ ഉൽപ്പന്നം",
+    "tableDescription": "താഴെയുള്ള വിവരങ്ങൾ നൽകിയ റഫറൻസ് രേഖയിൽ നിന്നുള്ളതാണ്. രണ്ടു വായ്പാ വിഭാഗങ്ങൾക്കും പൊതുവായ വ്യവസ്ഥകൾ ഒരുമിച്ച് നൽകിയിരിക്കുന്നു.",
+    "headers": {"number":"ക്രമ നമ്പർ","item":"ഇനം","upToTwoLakhs":"യോഗ്യതാ മാനദണ്ഡങ്ങൾ (വായ്പ ₹2 ലക്ഷം വരെ)","aboveTwoLakhs":"യോഗ്യതാ വ്യവസ്ഥകൾ (വായ്പ ₹2 ലക്ഷത്തിന് മുകളിൽ)"},
+    "rows": [
+      {"number":"1","item":"ലക്ഷ്യം","upToTwoLakhs":"മേൽക്കൂര സോളാർ സ്ഥാപിക്കൽ","aboveTwoLakhs":"മേൽക്കൂര സോളാർ സ്ഥാപിക്കൽ"},
+      {"number":"2","item":"വായ്പാ തുക","upToTwoLakhs":"പരമാവധി വായ്പ ₹2 ലക്ഷം","aboveTwoLakhs":"പരമാവധി വായ്പ ₹6 ലക്ഷം"},
+      {"number":"3","item":"പ്രായവും മറ്റ് യോഗ്യതാ വ്യവസ്ഥകളും","upToTwoLakhs":["പ്രായം 65 വയസ്സ് വരെ; വായ്പയെടുത്തയാൾക്ക് 70 വയസ്സ് തികയുന്നതിന് മുമ്പ് തിരിച്ചടവ് പൂർത്തിയാക്കണം.","വ്യക്തിഗത അപേക്ഷകർക്ക്.","CIBIL സ്കോർ 680 അല്ലെങ്കിൽ അതിൽ കൂടുതൽ; പുതിയ ക്രെഡിറ്റ് (NTC) ഉപഭോക്താക്കളും യോഗ്യരാണ്.","DISCOM ഉപഭോക്തൃ നമ്പർ പരിശോധനയ്ക്കായി മാത്രം ആവശ്യമാണ്.","MNRE നിർദേശിക്കുന്നത്ര മതിയായ മേൽക്കൂര വിസ്തീർണം വേണം.","ബാങ്കിൽ സേവിംഗ്സ് അക്കൗണ്ട് നിർബന്ധമാണ്."],"aboveTwoLakhs":[],"shared":true},
+      {"number":"4","item":"PAN","upToTwoLakhs":"ആവശ്യമില്ല","aboveTwoLakhs":"PAN നിർബന്ധമാണ്"},
+      {"number":"5","item":"വായ്പയെടുക്കുന്നയാളുടെ വിഹിതം","upToTwoLakhs":"മൊത്തം പദ്ധതി ചെലവിന്റെ കുറഞ്ഞത് 10%","aboveTwoLakhs":"മൊത്തം പദ്ധതി ചെലവിന്റെ കുറഞ്ഞത് 20%"},
+      {"number":"6","item":"പലിശ നിരക്ക് (ഫ്ലോട്ടിംഗ്)","upToTwoLakhs":["RBI റിപ്പോ നിരക്ക് + 0.50%.","നൽകിയ റഫറൻസിൽ വാർഷികം 6.00% എന്നാണ്; പ്രാബല്യ തീയതി നൽകിയിട്ടില്ല."],"aboveTwoLakhs":["ഭവനവായ്പാ ഉപഭോക്താക്കൾക്ക്: അവരുടെ ഭവനവായ്പയുടെ അതേ നിരക്ക്.","മറ്റ് ഉപഭോക്താക്കൾക്ക്: ഭവനവായ്പാ നിരക്ക് + 100 ബേസിസ് പോയിന്റുകൾ."]},
+      {"number":"7","item":"കാലാവധി","upToTwoLakhs":["മൊറട്ടോറിയം കാലയളവ് ഉൾപ്പെടെ പരമാവധി 120 മാസം.","കുറഞ്ഞ കാലാവധി ഇല്ല.","മുൻകൂർ തിരിച്ചടവിന് ചാർജില്ല."],"aboveTwoLakhs":[],"shared":true},
+      {"number":"8","item":"ഈട്","upToTwoLakhs":"ബാങ്ക് ധനസഹായം ഉപയോഗിച്ച് വാങ്ങിയ മേൽക്കൂര സോളാർ ഉപകരണങ്ങളുടെ ഹൈപ്പോത്തിക്കേഷൻ.","aboveTwoLakhs":"","shared":true},
+      {"number":"9","item":"പ്രോസസ്സിംഗ് ഫീസ്","upToTwoLakhs":"പൂജ്യം","aboveTwoLakhs":"","shared":true},
+      {"number":"10","item":"സാമ്പത്തിക സഹായം (സബ്സിഡി)","upToTwoLakhs":["1 kW-ന് ₹30,000.","2 kW-ന് ₹60,000.","3 kW-ന് ₹78,000.","വായ്പയെടുത്തയാൾ PM Surya Ghar പോർട്ടലിൽ സബ്സിഡിക്ക് അപേക്ഷിക്കണം."],"aboveTwoLakhs":["സബ്സിഡി തുക: ₹78,000.","വായ്പയെടുത്തയാൾ PM Surya Ghar പോർട്ടലിൽ സബ്സിഡിക്ക് അപേക്ഷിക്കണം."]},
+      {"number":"11","item":"അറ്റ വാർഷിക വരുമാനം","upToTwoLakhs":"ആവശ്യമില്ല","aboveTwoLakhs":"കുറഞ്ഞത് ₹3 ലക്ഷം"},
+      {"number":"12","item":"ആവശ്യമായ രേഖകൾ","upToTwoLakhs":"ആധാർ നമ്പർ","aboveTwoLakhs":["KYC രേഖകൾ.","കഴിഞ്ഞ രണ്ടു വർഷത്തെ ആദായനികുതി റിട്ടേണുകൾ അല്ലെങ്കിൽ Form 16.","ആറ് മാസത്തെ ശമ്പള സ്റ്റേറ്റ്മെന്റുകൾ.","വൈദ്യുതി ബില്ലിന്റെ പകർപ്പ്."]},
+      {"number":"13","item":"മൊറട്ടോറിയം കാലയളവ്","upToTwoLakhs":"വായ്പ വിതരണം ചെയ്ത തീയതി മുതൽ ആറുമാസം. ഈ കാലയളവിൽ വായ്പയുടെ തിരിച്ചടവ് നടത്തേണ്ടതില്ല.","aboveTwoLakhs":"","shared":true},
+      {"number":"14","item":"വായ്പ വിതരണം","upToTwoLakhs":"വായ്പ തുക രണ്ട് ഘട്ടങ്ങളിലായി വെണ്ടർക്ക് നൽകും.","aboveTwoLakhs":"","shared":true},
+      {"number":"15","item":"മറ്റ് വ്യവസ്ഥകൾ","upToTwoLakhs":["അപേക്ഷ വായ്പയെടുക്കുന്നയാൾക്ക് സ്വയം അല്ലെങ്കിൽ സഹായത്തോടെ സമർപ്പിക്കാം.","3 kW വരെയുള്ള വായ്പയ്ക്ക് ഇൻഷുറൻസ് നിർബന്ധമല്ല.","3 kW-ന് മുകളിലുള്ള വായ്പയ്ക്ക് മൊത്തം സ്ഥാപിക്കൽ ചെലവിനുള്ള ഇൻഷുറൻസ് വേണം; ചെലവ് ഉപഭോക്താവ് വഹിക്കണം.","65 വയസ്സോ അതിൽ കൂടുതലോ ഉള്ള അപേക്ഷകർക്ക് പദ്ധതി അനുവദിക്കുന്നപക്ഷം ഒരു സഹവായ്പയെടുക്കുന്നയാളെ (പങ്കാളി അല്ലെങ്കിൽ മകൻ/മകൾ) ചേർക്കാം."],"aboveTwoLakhs":[],"shared":true},
+      {"number":"16","item":"വായ്പാ അപേക്ഷ","upToTwoLakhs":"PM Surya Ghar പോർട്ടലിൽ ലോഗിൻ ചെയ്ത് വായ്പാ അപേക്ഷ ആരംഭിക്കുക.","aboveTwoLakhs":"","shared":true}
+    ],
+    "disclaimerTitle": "അപേക്ഷിക്കുന്നതിന് മുമ്പ് സ്ഥിരീകരിക്കുക",
+    "disclaimer": "വായ്പാ നിരക്കുകൾ, പരിധികൾ, ഫീസ്, യോഗ്യത, രേഖകൾ, ഇൻഷുറൻസ് വ്യവസ്ഥകൾ, സബ്സിഡി നിയമങ്ങൾ എന്നിവ മാറാം; വായ്പാദാതാവിനെ ആശ്രയിച്ച് വ്യത്യാസപ്പെടാം. റഫറൻസിൽ പ്രാബല്യ തീയതി നൽകിയിട്ടില്ല. ഇത് പൊതുവിവരത്തിനായി മാത്രമാണ്; വായ്പാ ഓഫറോ ഗ്യാരണ്ടിയോ സാമ്പത്തിക ഉപദേശമോ അല്ല. നിലവിലെ വ്യവസ്ഥകൾ ബാങ്കിലും ഔദ്യോഗിക പദ്ധതി പോർട്ടലിലും സ്ഥിരീകരിക്കുക.",
+    "applicationTitle": "ഔദ്യോഗിക പോർട്ടൽ വഴി അപേക്ഷിക്കുക",
+    "applicationDescription": "റഫറൻസ് പ്രകാരം വായ്പയെടുക്കുന്നയാൾ PM Surya Ghar പോർട്ടൽ വഴി വായ്പാ അപേക്ഷ ആരംഭിക്കണം. ബാധകമായ വായ്പാ ഉൽപ്പന്നവും അന്തിമ വ്യവസ്ഥകളും ബാങ്ക് സ്ഥിരീകരിക്കും.",
+    "portalLink": "PM Surya Ghar പോർട്ടൽ തുറക്കുക",
+    "applicationJourney": {
+      "eyebrow": "PM Surya Ghar: Muft Bijli Yojana",
+      "titleAccent": "ഉപഭോക്തൃ",
+      "title": "അപേക്ഷാ യാത്ര",
+      "stakeholders": ["ഉപഭോക്താവ്", "വെണ്ടർ", "DISCOM", "REC"],
+      "applyLabel": "മേൽക്കൂര സോളാറിന് അപേക്ഷിക്കുക",
+      "steps": [
+        {"title":"ഉപഭോക്തൃ രജിസ്ട്രേഷൻ","description":"അപേക്ഷാ യാത്ര ആരംഭിക്കാൻ രജിസ്റ്റർ ചെയ്യുക."},
+        {"title":"അപേക്ഷ സമർപ്പിക്കൽ","description":"നിങ്ങളുടെ അപേക്ഷ സമർപ്പിക്കുക."},
+        {"title":"സാധ്യതാ അംഗീകാരം","description":"നിങ്ങളുടെ സ്ഥലത്ത് സോളാർ സ്ഥാപിക്കാനാകുമോ എന്ന് പരിശോധിക്കുക."},
+        {"title":"വെണ്ടർ തിരഞ്ഞെടുക്കൽ","description":"സ്ഥാപനത്തിനായി അനുയോജ്യമായ വെണ്ടറെ തിരഞ്ഞെടുക്കുക."},
+        {"title":"പദ്ധതി പരിശോധന","description":"ചട്ടങ്ങൾ പാലിക്കുന്നുണ്ടോയെന്ന് DISCOM സ്ഥലം പരിശോധിക്കും."},
+        {"title":"സോളാർ സ്ഥാപിക്കൽ വിവരങ്ങൾ","description":"മേൽക്കൂര സോളാർ സ്ഥാപിക്കാനുള്ള വിവരങ്ങൾ നൽകുക."},
+        {"title":"പ്രവൃത്തി ആരംഭം","description":"സ്ഥാപിക്കൽ പ്രക്രിയ ആരംഭിക്കുക."},
+        {"title":"പദ്ധതി കമ്മീഷനിംഗ്","description":"DISCOM മേൽക്കൂര സോളാർ സ്ഥാപിക്കൽ സാക്ഷ്യപ്പെടുത്തും."},
+        {"title":"സബ്സിഡി അഭ്യർത്ഥന","description":"സബ്സിഡി ലഭിക്കാൻ അഭ്യർത്ഥന സമർപ്പിക്കുക."},
+        {"title":"സബ്സിഡി വിതരണം","description":"അംഗീകാരത്തിന് ശേഷം സബ്സിഡി വിതരണം ചെയ്യും."}
+      ]
+    }
   },
   "componentData": {
     "jsonLdSchema": {

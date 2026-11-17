@@ -21,7 +21,7 @@ export default function LogoutButton() {
       }
 
       toast.success('Signed out.')
-      router.replace('/login')
+      router.replace('/auth')
       router.refresh()
     } catch {
       toast.error('Unable to reach the server. Please try again.')

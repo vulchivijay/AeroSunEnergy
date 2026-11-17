@@ -47,7 +47,7 @@ export default function HomeHeroSlider() {
                   {t.hero.buttons.quote}
                 </Link>
                 <Link
-                  href="/estimation-calculator"
+                  href="/solar-calculator"
                   className="rounded-full border border-white/15 bg-white/8 px-5 py-3 text-md font-black uppercase tracking-[0.18em] text-white backdrop-blur-sm transition hover:border-white/30 hover:bg-white/12"
                 >
                   {t.hero.buttons.estimateSavings}

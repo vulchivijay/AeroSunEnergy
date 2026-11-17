@@ -4087,15 +4087,15 @@
       "helpfulLinks": [
         {
           "label": "Solar energy",
-          "href": "/solarenergy"
+          "href": "/solar-energy"
         },
         {
           "label": "Wind energy",
-          "href": "/windenergy"
+          "href": "/wind-energy"
         },
         {
           "label": "Hybrid energy",
-          "href": "/hybridenergy"
+          "href": "/hybrid-energy"
         },
         {
           "label": "Contact us",
@@ -4289,15 +4289,15 @@
       },
       {
         "label": "Solar Energy",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "Wind Energy",
-        "href": "/windenergy"
+        "href": "/wind-energy"
       },
       {
         "label": "Hybrid Energy",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       },
       {
         "label": "Services",
@@ -4316,6 +4316,14 @@
       {
         "label": "Know Eligibility",
         "href": "/know-eligibility"
+      },
+      {
+        "label": "Finance",
+        "href": "/finance"
+      },
+      {
+        "label": "Policies",
+        "href": "/policies"
       }
     ],
     "startProject": "Start a Project",
@@ -4342,9 +4350,9 @@
       "/about": "info",
       "/about/company-profile": "building",
       "/about/product-catalogue": "package",
-      "/solarenergy": "sun",
-      "/windenergy": "wind",
-      "/hybridenergy": "zap",
+      "/solar-energy": "sun",
+      "/wind-energy": "wind",
+      "/hybrid-energy": "zap",
       "/services": "panels",
       "/contact": "mail"
     }
@@ -4750,8 +4758,7 @@
           }
         ],
         "consent": "I have permission from my friend to share their contact details with AeroSun Energy so the team can contact them about solar.",
-        "privacyPrefix": "We use these details to follow up on this referral. See our",
-        "privacyLink": "Privacy Policy",
+        "privacyPrefix": "We use these details to follow up on this referral.",
         "submit": "Submit referral",
         "submitting": "Submitting referral…",
         "successTitle": "Referral received",
@@ -7176,6 +7183,102 @@
       "questions": "For questions about these terms, please use the",
       "contactLink": "contact page",
       "questionsEnd": "or the official contact details published on the website."
+    },
+    "cancellationRefund": {
+      "badge": "Customer policy · Rooftop solar",
+      "title": "Cancellation and Refund Policy",
+      "description": "Terms governing cancellation and refunds for rooftop solar photovoltaic system supply, installation, and commissioning by AeroSun Energy Private Limited.",
+      "headerTopics": [
+        "Clear process",
+        "Refund eligibility",
+        "Customer support"
+      ],
+      "intro": "These Terms and Conditions govern the supply, installation, and commissioning of rooftop solar photovoltaic systems by AeroSun Energy Private Limited (\"AeroSun\" or the \"Company\") for residential and Micro, Small & Medium Enterprise customers (\"Client\" or \"Customer\"). By signing the Purchase Order, both parties agree to be bound by these terms. Please read carefully and contact us for any clarifications before signing.",
+      "commitmentTitle": "Our commitment",
+      "commitment": "AeroSun is committed to delivering high-quality solar solutions with professional service, transparency, and long-term support to ensure optimal system performance throughout its lifecycle.",
+      "definitionsTitle": "Definitions",
+      "definitions": [
+        {
+          "term": "DPR",
+          "definition": "Detailed Project Report containing system design, component specifications, and installation plan."
+        },
+        {
+          "term": "DISCOM",
+          "definition": "State electricity distribution company."
+        },
+        {
+          "term": "Net Metering",
+          "definition": "Bi-directional metering system allowing export of excess solar generation to the grid."
+        },
+        {
+          "term": "Commissioning",
+          "definition": "System activation and handover after successful installation and testing."
+        },
+        {
+          "term": "ALMM",
+          "definition": "Approved List of Models and Manufacturers (for subsidized projects)."
+        },
+        {
+          "term": "Business Days",
+          "definition": "Monday to Saturday, excluding public holidays."
+        }
+      ],
+      "policyTitle": "Cancellation and refund policy",
+      "clientCancellationTitle": "Cancellation by Client",
+      "clientCancellation": "The token amount of ₹15,000 for residential clients, along with any transportation charges incurred (if applicable), shall be strictly non-refundable under all circumstances, whether prior to or after the supply of materials.",
+      "automaticRefundTitle": "Automatic refund eligibility (100% refund)",
+      "automaticRefundIntro": "Full refund within 30 days in the following cases:",
+      "automaticRefundCases": [
+        "DISCOM feasibility/approval denied (provided no fault of Client).",
+        "Site found technically unsuitable by AeroSun's assessment (structural issues, shading, access).",
+        "Loan rejected by an approved lender (application submitted before order placement).",
+        "Force majeure preventing project execution (beyond 90 days)."
+      ],
+      "companyCancellationTitle": "Cancellation by AeroSun",
+      "companyCancellationCases": [
+        {
+          "heading": "1. Non-payment",
+          "description": "If Client fails to make payment beyond 60 days of the due date.",
+          "refund": "Pro-rata basis minus costs incurred."
+        },
+        {
+          "heading": "2. Site access denial",
+          "description": "If Client repeatedly denies site access without valid reason.",
+          "refund": "Minus costs incurred and Rs. 10,000 administrative charges."
+        },
+        {
+          "heading": "3. Force majeure",
+          "description": "If the project becomes impossible to execute.",
+          "refund": "Full refund minus actual verifiable costs incurred."
+        },
+        {
+          "heading": "4. Regulatory changes",
+          "description": "If government policies make the project unviable.",
+          "refund": "Full refund minus costs incurred."
+        }
+      ],
+      "refundLabel": "Refund",
+      "companyRefundTimeline": "All AeroSun-initiated cancellations (except non-payment) will result in a refund within 15 days.",
+      "refundProcessTitle": "Refund process",
+      "refundProcess": [
+        "Client must submit a cancellation request in writing (email is acceptable).",
+        "AeroSun will assess and communicate refund eligibility within 7 business days.",
+        "Refund will be processed to the original payment source/bank account.",
+        "Refund timeline will be as specified in the respective clauses above.",
+        "Any deductions will be itemized and communicated to Client."
+      ],
+      "contactTitle": "Contact information",
+      "contactIntro": "For any queries, support, or complaints:",
+      "emailLabel": "Email",
+      "email": "customercare@aerosunenergy.in",
+      "phoneLabel": "Phone",
+      "phone": "+91-8099181075",
+      "websiteLabel": "Website",
+      "website": "aerosunenergy.in",
+      "addressLabel": "Office address",
+      "address": "Do.no 11-184, Gollavanigunta, T.N. Pallem, Tirupati, Andhra Pradesh, India - 517501.",
+      "moreQuestions": "For further assistance, please visit our",
+      "contactLink": "contact page"
     }
   },
   "howItWorks": {
@@ -7647,8 +7750,7 @@
     }
   },
   "formDataNotice": {
-    "prefix": "Submitting stores the information you provide in AeroSun Energy’s database so we can respond to or manage your request. See our",
-    "link": "Privacy Policy"
+    "prefix": "Submitting stores the information you provide in AeroSun Energy’s database so we can respond to or manage your request."
   },
   "formSubmission": {
     "saving": "Saving submission…",
@@ -7707,35 +7809,35 @@
     "solutions": [
       {
         "label": "Residential Solar Solutions",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "Commercial & Industrial Solar",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "Solar Agricultural Pumps",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "Wind Generator Systems",
-        "href": "/windenergy"
+        "href": "/wind-energy"
       },
       {
         "label": "Vertical Axis Wind Turbines",
-        "href": "/windenergy"
+        "href": "/wind-energy"
       },
       {
         "label": "Solar-Wind Hybrid Systems",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       },
       {
         "label": "Battery Energy Storage",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       },
       {
         "label": "Off-grid Power Solutions",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       }
     ],
     "address": "Do.no 11-184, Gollavanigunta, T.N. Pallem, Tirupati, Andhra Pradesh, India - 517501.",
@@ -7752,16 +7854,16 @@
     "attributionLinkText": "ChatGPT.",
     "legalLinks": [
       {
-        "label": "Privacy Policy",
-        "href": "/privacy-policy"
-      },
-      {
         "label": "Terms & Conditions",
-        "href": "/terms-conditions"
+        "href": "/auth/dashboard/billing/terms-conditions"
       },
       {
         "label": "Warranty & Service Policy",
-        "href": "/warranty-policy"
+        "href": "/auth/dashboard/billing/warranty-policy"
+      },
+      {
+        "label": "Cancellation & Refund Policy",
+        "href": "/cancellation"
       }
     ],
     "attribution": "Built with Love and passion by Vulchi Vijaya Kumar Raju (Kshatriya's).",
@@ -10008,22 +10110,27 @@
     "emailDirect": "Email directly",
     "openEmailDraft": "Open email draft",
     "form": {
-      "title": "Send us a project enquiry",
-      "description": "Tell us a little about your project and our team will follow up.",
-      "fullName": "Full name",
-      "fullNamePlaceholder": "Your name",
-      "email": "Email address",
-      "emailPlaceholder": "you@example.com",
-      "phone": "Phone number",
-      "phonePlaceholder": "Optional contact number",
-      "projectType": "Project type",
-      "projectTypePlaceholder": "Rooftop, park, road, commercial",
-      "usage": "Approx. usage",
-      "usagePlaceholder": "Monthly units or kW target",
-      "message": "Message",
-      "messagePlaceholder": "Tell us where the site is, what you want to power, and when you want to start.",
-      "submit": "Send enquiry",
-      "submitting": "Saving enquiry…",
+      "title": "Connect With Us To Go Solar",
+      "description": "Share your contact details and solar requirements. Our team will follow up.",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Full Name",
+      "email": "Email Address",
+      "emailPlaceholder": "Enter Email Address",
+      "phone": "Mobile Number",
+      "phonePlaceholder": "Enter Mobile Number",
+      "solarNeed": "Solar Need For",
+      "solarNeedPlaceholder": "Solar Need For",
+      "state": "State",
+      "statePlaceholder": "State",
+      "monthlyAverageElectricityBill": "Select Monthly Average Electricity Bill",
+      "monthlyAverageElectricityBillPlaceholder": "Monthly Average Electricity Bill",
+      "interestedInFinancing": "Interested in Financing?",
+      "interestedInFinancingPlaceholder": "Interested in Financing?",
+      "solarNeedOptions": ["Residential", "Commercial", "Industrial", "Agricultural", "Other"],
+      "electricityBillOptions": ["Below ₹1,500", "₹1,500 – ₹3,000", "₹3,000 – ₹5,000", "₹5,000 – ₹10,000", "Above ₹10,000"],
+      "financingOptions": ["Yes", "No", "Not sure"],
+      "submit": "Submit",
+      "submitting": "Submitting…",
       "success": "Your enquiry has been saved."
     },
     "highlights": [
@@ -10129,6 +10236,13 @@
     "yearSuffix": "year",
     "contactUs": "Contact Us",
     "estimatesDisclaimer": "Estimates only. The 25-year projection assumes constant tariff and output; actual savings depend on site conditions, system performance and DISCOM tariff.",
+    "quoteHeroTitle": "Go Solar ☀️ and Reduce Your Electricity Bill By 90%",
+    "quoteHeroSubtitle": "GET FREE PERSONALIZED QUOTE IN 3 STEPS",
+    "quoteHeroNamePlaceholder": "Full Name",
+    "quoteHeroMobilePlaceholder": "Mobile Number",
+    "quoteHeroSubmit": "Get Started",
+    "quoteHeroDisclosurePrefix": "By submitting this form, you agree to our",
+    "quoteHeroTerms": "Terms & Conditions",
     "freeAssessmentCta": "Get My Free Solar Assessment",
     "freeAssessmentLabel": "Free solar assessment",
     "leadName": "Name",
@@ -11782,7 +11896,56 @@
       "guideTitle": "Eligibility guide",
       "important": "Important",
       "importantDescription": "Subsidy amounts, vendor requirements, and programme rules can change. Confirm the latest details through the official portal and your local DISCOM.",
-      "portalLink": "Visit PM Surya Ghar portal"
+      "portalLink": "Visit PM Surya Ghar portal",
+      "consumerRegistration": {
+        "eyebrow": "Portal walkthrough",
+        "titleAccent": "Consumer",
+        "title": "Registration Process",
+        "description": "Follow these steps on the official PM Surya Ghar portal. Portal screens and menu names may change, so use the latest instructions shown there.",
+        "stepLabel": "Step",
+        "portalLink": "Open official portal",
+        "benefits": {
+          "title": "Benefits",
+          "residentialTitle": "Subsidy for Residential Households",
+          "communityTitle": "Subsidy for",
+          "communityAccent": "GHS/RWA",
+          "communitySubtitle": "Group Housing Society / Resident Welfare Association",
+          "communityDetails": "For common facilities, including EV charging, up to 500 kW capacity at 3 kW per house. The upper limit includes individual rooftop plants installed by residents in the GHS/RWA.",
+          "specialStatesNote": "For special states, an additional 10% subsidy may apply per kW, subject to current scheme rules.",
+          "capacityTitle": "Suitable Rooftop Solar Plant Capacity for Households",
+          "consumptionLabel": "Average Monthly Electricity Consumption (units)",
+          "capacityLabel": "Suitable Rooftop Solar Plant Capacity",
+          "consumptionValues": ["0–150", "150–300", ">300"],
+          "capacityValues": ["1–2 kW", "2–3 kW", "Above 3 kW"]
+        },
+        "steps": [
+          {
+            "title": "Visit the official website",
+            "description": "Open the PM Surya Ghar portal to begin your consumer registration.",
+            "url": "https://pmsuryaghar.gov.in/"
+          },
+          {
+            "title": "Open Consumer Login",
+            "description": "Choose “Apply Now” on the consumer page, or open the Login menu and select “Consumer Login”."
+          },
+          {
+            "title": "Verify your mobile number",
+            "description": "Enter your registered consumer mobile number, complete the captcha, accept the guideline confirmation, and select “Verify”."
+          },
+          {
+            "title": "Log in with the OTP",
+            "description": "Enter the one-time password received by SMS and select “Login”."
+          },
+          {
+            "title": "Save your consumer profile",
+            "description": "Enter your name, email, address, state, district, and PIN code, then save the profile."
+          },
+          {
+            "title": "Start the rooftop-solar application",
+            "description": "Choose “Apply for Solar Rooftop” or Vendor Selection. Select your state and electricity distribution company, enter your consumer account number, fetch your details, and continue with “Next”."
+          }
+        ]
+      }
     },
     "eligibilityChecks": [
       {
@@ -11885,6 +12048,226 @@
       "Wind turbine or hybrid project without the specific qualifying rooftop solar configuration under that scheme",
       "Non-DCR-compliant modules, ineligible equipment, or failure to complete the official portal process"
     ]
+  },
+  "financePage": {
+    "eyebrow": "PM Surya Ghar: Muft Bijli Yojana",
+    "title": "Consumer Financing Options",
+    "description": "Review the standard rooftop-solar loan product and compare the stated conditions for loans up to ₹2 lakh and above ₹2 lakh.",
+    "comparisonLink": "View loan comparison",
+    "applicationLink": "Application and important notice",
+    "loanBands": [
+      {
+        "title": "Loan amount up to ₹2 lakh",
+        "amount": "Maximum ₹2 lakh"
+      },
+      {
+        "title": "Loan amount above ₹2 lakh",
+        "amount": "Maximum ₹6 lakh"
+      }
+    ],
+    "productTitle": "PM Surya Ghar: Standard Loan Product",
+    "tableDescription": "The details below reproduce the supplied reference material. Common conditions are shown across both loan amount categories.",
+    "headers": {
+      "number": "S.No.",
+      "item": "Item",
+      "upToTwoLakhs": "Eligibility Criteria (Loan Amount up to ₹2 lakh)",
+      "aboveTwoLakhs": "Eligibility Conditions (Loan Amount more than ₹2 lakh)"
+    },
+    "rows": [
+      {
+        "number": "1",
+        "item": "Objective",
+        "upToTwoLakhs": "Solar rooftop installation",
+        "aboveTwoLakhs": "Solar rooftop installation"
+      },
+      {
+        "number": "2",
+        "item": "Loan amount",
+        "upToTwoLakhs": "Maximum loan amount ₹2 lakh",
+        "aboveTwoLakhs": "Maximum loan amount ₹6 lakh"
+      },
+      {
+        "number": "3",
+        "item": "Age and other eligibility conditions",
+        "upToTwoLakhs": [
+          "Age up to 65 years; repayment should finish before the borrower turns 70.",
+          "For individual applicants.",
+          "CIBIL score of 680 or above; New-to-Credit (NTC) customers are also eligible.",
+          "DISCOM consumer number required for validation only.",
+          "Adequate rooftop area as specified by MNRE.",
+          "Savings account with the bank is mandatory."
+        ],
+        "aboveTwoLakhs": [],
+        "shared": true
+      },
+      {
+        "number": "4",
+        "item": "PAN",
+        "upToTwoLakhs": "Not required",
+        "aboveTwoLakhs": "PAN is mandatory"
+      },
+      {
+        "number": "5",
+        "item": "Borrower margin",
+        "upToTwoLakhs": "Minimum 10% of the total project cost",
+        "aboveTwoLakhs": "Minimum 20% of the total project cost"
+      },
+      {
+        "number": "6",
+        "item": "Interest rate (floating)",
+        "upToTwoLakhs": [
+          "RBI repo rate + 0.50%.",
+          "The supplied reference states 6.00% p.a.; its effective date was not provided."
+        ],
+        "aboveTwoLakhs": [
+          "Home-loan customers: same rate as their home loan.",
+          "Non-home-loan customers: home-loan rate + 100 basis points."
+        ]
+      },
+      {
+        "number": "7",
+        "item": "Duration",
+        "upToTwoLakhs": [
+          "Maximum 120 months, including the moratorium period.",
+          "No minimum period.",
+          "No prepayment charges."
+        ],
+        "aboveTwoLakhs": [],
+        "shared": true
+      },
+      {
+        "number": "8",
+        "item": "Security",
+        "upToTwoLakhs": "Hypothecation of rooftop-solar equipment purchased using bank finance.",
+        "aboveTwoLakhs": "",
+        "shared": true
+      },
+      {
+        "number": "9",
+        "item": "Processing fee",
+        "upToTwoLakhs": "Zero",
+        "aboveTwoLakhs": "",
+        "shared": true
+      },
+      {
+        "number": "10",
+        "item": "Financial assistance (subsidy)",
+        "upToTwoLakhs": [
+          "₹30,000 for 1 kW.",
+          "₹60,000 for 2 kW.",
+          "₹78,000 for 3 kW.",
+          "The borrower claims the subsidy through the PM Surya Ghar portal."
+        ],
+        "aboveTwoLakhs": [
+          "Subsidy amount: ₹78,000.",
+          "The borrower claims the subsidy through the PM Surya Ghar portal."
+        ]
+      },
+      {
+        "number": "11",
+        "item": "Net annual income",
+        "upToTwoLakhs": "Not required",
+        "aboveTwoLakhs": "Minimum ₹3 lakh"
+      },
+      {
+        "number": "12",
+        "item": "Required documents",
+        "upToTwoLakhs": "Aadhaar number",
+        "aboveTwoLakhs": [
+          "KYC documents.",
+          "Income-tax returns or Form 16 for the previous two years.",
+          "Six months' salary statements.",
+          "Copy of electricity bill."
+        ]
+      },
+      {
+        "number": "13",
+        "item": "Moratorium period",
+        "upToTwoLakhs": "Six months from the date of disbursement. During the moratorium, the borrower is not required to make loan repayments.",
+        "aboveTwoLakhs": "",
+        "shared": true
+      },
+      {
+        "number": "14",
+        "item": "Disbursement",
+        "upToTwoLakhs": "Loan disbursement is made to the vendor in two tranches.",
+        "aboveTwoLakhs": "",
+        "shared": true
+      },
+      {
+        "number": "15",
+        "item": "Other covenants",
+        "upToTwoLakhs": [
+          "The application may be completed by the borrower or with assistance.",
+          "No mandatory insurance for loans up to 3 kW.",
+          "For loans above 3 kW, insurance is taken for the total installation cost and is paid by the customer.",
+          "Applicants aged 65 or older may add one co-borrower (spouse or child), as allowed under the scheme."
+        ],
+        "aboveTwoLakhs": [],
+        "shared": true
+      },
+      {
+        "number": "16",
+        "item": "Loan application",
+        "upToTwoLakhs": "Initiate the loan application by logging in to the PM Surya Ghar portal.",
+        "aboveTwoLakhs": "",
+        "shared": true
+      }
+    ],
+    "disclaimerTitle": "Please verify before applying",
+    "disclaimer": "Loan rates, limits, fees, eligibility, required documents, insurance conditions, and subsidy rules may change and can vary by lender. The reference material does not state an effective date. This page is for general information only and is not a loan offer, guarantee, or financial advice. Confirm all current terms directly with the bank and on the official scheme portal.",
+    "applicationTitle": "Apply through the official portal",
+    "applicationDescription": "The reference material directs borrowers to initiate the loan application through the PM Surya Ghar portal. Your bank will confirm the applicable loan product and final terms.",
+    "portalLink": "Open PM Surya Ghar portal",
+    "applicationJourney": {
+      "eyebrow": "PM Surya Ghar: Muft Bijli Yojana",
+      "titleAccent": "Consumer",
+      "title": "Application Journey",
+      "stakeholders": ["Consumer", "Vendor", "DISCOM", "REC"],
+      "applyLabel": "Apply for Rooftop Solar",
+      "steps": [
+        {
+          "title": "Consumer Registration",
+          "description": "Sign up to start your application journey."
+        },
+        {
+          "title": "Application Submission",
+          "description": "Submit your application."
+        },
+        {
+          "title": "Feasibility Approval",
+          "description": "Check if your location is solar-ready."
+        },
+        {
+          "title": "Vendor Selection",
+          "description": "Choose the best vendor for installation."
+        },
+        {
+          "title": "Project Inspection",
+          "description": "DISCOM inspects the site for compliance."
+        },
+        {
+          "title": "Solar Installation Details",
+          "description": "Provide the details for your rooftop solar installation."
+        },
+        {
+          "title": "Work Start",
+          "description": "Begin the installation process."
+        },
+        {
+          "title": "Project Commissioning",
+          "description": "DISCOM certifies your rooftop solar installation."
+        },
+        {
+          "title": "Subsidy Request",
+          "description": "Submit your request to redeem the subsidy."
+        },
+        {
+          "title": "Subsidy Disbursal",
+          "description": "The subsidy is disbursed after approval."
+        }
+      ]
+    }
   },
   "componentData": {
     "jsonLdSchema": {

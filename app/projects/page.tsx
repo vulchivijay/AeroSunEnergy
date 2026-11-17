@@ -165,7 +165,7 @@ export default function ProjectsPage() {
 
           <p className="mt-7 rounded-2xl border border-emerald-200/80 bg-white p-5 text-md leading-7 text-slate-600">
             {labels.contactPrompt}{' '}
-            <a href="/customer-enquiry" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800">{labels.contactEnquiryLink}</a>
+            <a href="/auth/dashboard/billing/customer-enquiry" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800">{labels.contactEnquiryLink}</a>
             {' '}{labels.or}{' '}<a href="/services" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800">{labels.contactServicesLink}</a>.
           </p>
         </article>
@@ -200,7 +200,7 @@ export default function ProjectsPage() {
           <section className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <p className="inline-flex w-fit rounded-full border border-emerald-800/10 bg-white/75 px-3 py-1.5 text-[12px] font-black uppercase tracking-[0.18em] text-emerald-800">{labels.startConversation}</p>
             <p className="mt-3 text-md leading-6 text-slate-700">{labels.startConversationDescription}</p>
-            <a href="/customer-enquiry" className="mt-4 inline-flex rounded-full bg-[#101c32] px-4 py-2.5 text-md font-bold text-white transition hover:bg-emerald-900">{labels.requestConsultation}</a>
+            <a href="/auth/dashboard/billing/customer-enquiry" className="mt-4 inline-flex rounded-full bg-[#101c32] px-4 py-2.5 text-md font-bold text-white transition hover:bg-emerald-900">{labels.requestConsultation}</a>
           </section>
         </aside>
       </div>
