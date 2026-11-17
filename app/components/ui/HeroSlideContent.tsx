@@ -22,7 +22,7 @@ export function HeroSlideContent({
   const isLight = variant === 'light'
 
   return (
-    <div className={`relative z-10 w-full min-w-0 max-w-3xl rounded-2xl p-4 sm:p-6 lg:p-8 ${isLight ? 'border-0 bg-transparent shadow-none' : 'border border-white/25 bg-[#172554]/95 shadow-lg shadow-slate-950/20 backdrop-blur-[3px]'}`}>
+    <div className={`relative z-10 w-full min-w-0 max-w-auto rounded-2xl p-4 sm:p-6 lg:p-8 shadow-sm backdrop-blur-[3px] ${isLight ? '' : ' shadow-slate-950/20'}`}>
       <span className={`mb-4 inline-flex max-w-full whitespace-normal break-words rounded-full border px-3 py-1 text-sm uppercase tracking-[0.16em] shadow-sm sm:text-[12px] sm:tracking-[0.28em] ${isLight ? 'border-transparent bg-transparent text-black' : `border-white/15 bg-white/10 text-white ${slide.badgeClass}`}`}>
         {slide.badge}
       </span>

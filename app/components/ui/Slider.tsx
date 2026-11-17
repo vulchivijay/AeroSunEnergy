@@ -220,7 +220,7 @@ export default function Slider({
         type="button"
         aria-label={carousel.previousSlide}
         onClick={prev}
-        className="absolute left-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white shadow-sm transition hover:bg-black/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:left-4 sm:h-12 sm:w-12"
+        className="absolute left-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-[#137c63] text-white shadow-sm transition hover:bg-[#0f5f4b] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F59E0B] sm:left-4 sm:h-12 sm:w-12"
       >
         ‹
       </button>
@@ -228,7 +228,7 @@ export default function Slider({
         type="button"
         aria-label={carousel.nextSlide}
         onClick={next}
-        className="absolute right-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white shadow-sm transition hover:bg-black/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:right-4 sm:h-12 sm:w-12"
+        className="absolute right-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-[#137c63] text-white shadow-sm transition hover:bg-[#0f5f4b] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F59E0B] sm:right-4 sm:h-12 sm:w-12"
       >
         ›
       </button>
@@ -244,14 +244,14 @@ export default function Slider({
                 onClick={() => goToSlide(i)}
                 aria-label={carousel.goToSlide.replace('{number}', String(i + 1))}
                 aria-current={isActive ? 'true' : undefined}
-                className="group flex h-11 w-11 shrink-0 items-center justify-center rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-white"
+                className="group flex h-11 w-11 shrink-0 items-center justify-center rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#F59E0B]"
               >
                 <span
                   aria-hidden="true"
                   className={`rounded-full transition-all duration-300 ${
                     isActive
-                      ? 'h-2 w-4 bg-white sm:h-2.5 sm:w-8'
-                      : 'h-2 w-2 bg-white/40 group-hover:bg-white/60 sm:h-2.5 sm:w-2.5'
+                      ? 'h-2 w-4 bg-[#F59E0B] sm:h-2.5 sm:w-8'
+                      : 'h-2 w-2 bg-[#20A44A]/70 group-hover:bg-[#20A44A] sm:h-2.5 sm:w-2.5'
                   }`}
                 />
               </button>
