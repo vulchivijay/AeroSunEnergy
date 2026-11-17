@@ -4314,20 +4314,8 @@
         "href": "/projects"
       },
       {
-        "label": "ಗ್ರಾಹಕರ ವಿಚಾರಣೆ",
-        "href": "/customer-enquiry"
-      },
-      {
         "label": "ಅರ್ಹತೆ ತಿಳಿಯಿರಿ",
         "href": "/know-eligibility"
-      },
-      {
-        "label": "ಸ್ಥಾಪನಾ ಪರಿಶೀಲನಾ ಪಟ್ಟಿ",
-        "href": "/installation-checklist"
-      },
-      {
-        "label": "ಗ್ರಾಹಕರ ಒಪ್ಪಂದ",
-        "href": "/customer-agreement"
       }
     ],
     "startProject": "ಯೋಜನೆ ಆರಂಭಿಸಿ",

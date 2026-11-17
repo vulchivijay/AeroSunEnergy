@@ -4314,20 +4314,8 @@
         "href": "/projects"
       },
       {
-        "label": "ഉപഭോക്തൃ അന്വേഷണം",
-        "href": "/customer-enquiry"
-      },
-      {
         "label": "യോഗ്യത അറിയുക",
         "href": "/know-eligibility"
-      },
-      {
-        "label": "ഇൻസ്റ്റലേഷൻ പരിശോധനപ്പട്ടിക",
-        "href": "/installation-checklist"
-      },
-      {
-        "label": "ഉപഭോക്തൃ കരാർ",
-        "href": "/customer-agreement"
       }
     ],
     "startProject": "പദ്ധതി ആരംഭിക്കുക",

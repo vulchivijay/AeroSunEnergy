@@ -4314,20 +4314,8 @@
         "href": "/projects"
       },
       {
-        "label": "வாடிக்கையாளர் விசாரணை",
-        "href": "/customer-enquiry"
-      },
-      {
         "label": "தகுதியை அறியவும்",
         "href": "/know-eligibility"
-      },
-      {
-        "label": "நிறுவல் சரிபார்ப்புப் பட்டியல்",
-        "href": "/installation-checklist"
-      },
-      {
-        "label": "வாடிக்கையாளர் ஒப்பந்தம்",
-        "href": "/customer-agreement"
       }
     ],
     "startProject": "திட்டத்தைத் தொடங்குங்கள்",

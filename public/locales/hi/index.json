@@ -85,20 +85,8 @@
         "href": "/projects"
       },
       {
-        "label": "ग्राहक पूछताछ",
-        "href": "/customer-enquiry"
-      },
-      {
         "label": "एलिजिबिलिटी देखें",
         "href": "/know-eligibility"
-      },
-      {
-        "label": "स्थापना चेकलिस्ट",
-        "href": "/installation-checklist"
-      },
-      {
-        "label": "ग्राहक समझौता",
-        "href": "/customer-agreement"
       }
     ],
     "startProject": "प्रोजेक्ट शुरू करें",

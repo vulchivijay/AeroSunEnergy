@@ -4314,20 +4314,8 @@
         "href": "/projects"
       },
       {
-        "label": "Customer Enquiry",
-        "href": "/customer-enquiry"
-      },
-      {
         "label": "Know Eligibility",
         "href": "/know-eligibility"
-      },
-      {
-        "label": "Installation Checklist",
-        "href": "/installation-checklist"
-      },
-      {
-        "label": "Customer Agreement",
-        "href": "/customer-agreement"
       }
     ],
     "startProject": "Start a Project",
