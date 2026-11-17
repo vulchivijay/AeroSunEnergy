@@ -218,11 +218,11 @@ export default function SaveEarthPage() {
         <article className="min-w-0 space-y-8">
           <section
             id="documentary"
-            className="scroll-mt-28 overflow-hidden rounded-[30px] border border-amber-200/20 bg-[linear-gradient(135deg,#78350f_0%,#b45309_55%,#7c2d12_100%)] p-6 text-white shadow-[0_24px_70px_-45px_rgba(120,53,15,0.45)] sm:p-9"
+            className="scroll-mt-28 overflow-hidden rounded-[30px] border border-amber-200/20 bg-gradient-to-br from-white to-[#f1f2f6] p-6 text-slate-900 shadow-[0_24px_70px_-45px_rgba(120,53,15,0.45)] sm:p-9"
           >
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-8 bg-amber-300" />
-              <p className="inline-flex w-fit rounded-full border border-amber-200/20 bg-white/[0.08] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-amber-100">
+              <p className="inline-flex w-fit rounded-full border border-amber-800/20 bg-white/70 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-amber-800">
                 {content.documentaryLabel}
               </p>
             </div>
@@ -233,7 +233,7 @@ export default function SaveEarthPage() {
             <section
               key={section.heading.id}
               id={section.heading.id}
-              className="scroll-mt-28 overflow-hidden rounded-[22px] border border-slate-200 bg-white"
+              className={`scroll-mt-28 overflow-hidden rounded-[22px] border border-slate-200 ${index % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}
             >
               <div
                 className={`border-b border-slate-100 px-6 py-7 sm:px-9 sm:py-8 ${

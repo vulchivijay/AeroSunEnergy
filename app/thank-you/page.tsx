@@ -10,21 +10,21 @@ export const metadata: Metadata = {
 
 export default function ThankYouPage() {
   return (
-    <main className="relative isolate overflow-hidden bg-[#071b17] text-white">
+    <main className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] text-slate-900">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_78%_18%,rgba(163,217,119,0.12),transparent_32%),radial-gradient(ellipse_at_15%_85%,rgba(245,199,106,0.09),transparent_34%)]" />
       <div className="pointer-events-none absolute inset-0 opacity-[0.035] [background-image:linear-gradient(to_right,rgba(255,255,255,0.6)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.6)_1px,transparent_1px)] [background-size:64px_64px]" />
 
-      <section className="relative mx-auto grid min-h-[min(720px,calc(100svh-10rem))] max-w-7xl items-center gap-12 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-10">
+      <section className="relative mx-auto grid min-h-[min(720px,calc(100svh-10rem))] max-w-7xl items-center gap-12 bg-gradient-to-br from-white to-[#f1f2f6] px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-10">
         <div className="max-w-2xl">
-          <p className="flex w-fit items-center gap-3 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-md font-bold uppercase tracking-[0.22em] text-[#c2df9e]">
+          <p className="flex w-fit items-center gap-3 rounded-full border border-emerald-800/20 bg-white/70 px-4 py-2 text-md font-bold uppercase tracking-[0.22em] text-emerald-800">
             <span className="h-px w-8 bg-[#f5c76a]" />
             Message received
           </p>
           <h1 className="mt-7 text-4xl font-semibold leading-[1.05] tracking-[0.04em] sm:text-6xl">
             Thank you
-            <span className="block text-[#d6e8b9]">for reaching out.</span>
+            <span className="block text-emerald-800">for reaching out.</span>
           </h1>
-          <p className="mt-6 max-w-xl text-sm leading-7 text-white/70 sm:text-lg sm:leading-8">
+          <p className="mt-6 max-w-xl text-sm leading-7 text-slate-700 sm:text-lg sm:leading-8">
             Your message is in good hands. The AeroSun Energy team will review your enquiry and get back to you soon.
           </p>
 
@@ -38,7 +38,7 @@ export default function ThankYouPage() {
             </Link>
             <Link
               href="/services"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-6 py-3 text-md font-semibold text-white transition hover:border-white/40 hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-slate-400 bg-white/70 px-6 py-3 text-md font-semibold text-slate-900 transition hover:border-slate-500 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-900"
             >
               Explore our solutions
               <ArrowUpRight className="h-4 w-4" aria-hidden="true" />

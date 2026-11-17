@@ -75,7 +75,7 @@ export default function PrivacyPolicyPage() {
               <section
                 key={section.heading}
                 id={`privacy-${index + 1}`}
-                className="scroll-mt-28 overflow-hidden rounded-[22px] border border-slate-200 bg-white"
+                className={`scroll-mt-28 overflow-hidden rounded-[22px] border border-slate-200 ${index % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}
               >
                 <div className="flex items-start gap-4 p-5 sm:p-6">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-sky-200 bg-sky-50 font-mono text-sm font-bold text-sky-800">
@@ -129,14 +129,14 @@ export default function PrivacyPolicyPage() {
             </ol>
           </nav>
 
-          <section className="rounded-[22px] bg-[linear-gradient(135deg,#102a43_0%,#1d4e89_55%,#312e81_100%)] p-5 text-white">
-            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-sky-300">{content.protectedInfoTitle}</p>
-            <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-100">
+          <section className={`rounded-[22px] p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
+            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-sky-800">{content.protectedInfoTitle}</p>
+            <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
               {content.protectedInfo.map((item) => <li key={item}>{item}</li>)}
             </ul>
           </section>
 
-          <section className="rounded-[22px] border border-[#dce9df] bg-[#eaf2e9] p-5">
+          <section className={`rounded-[22px] border border-[#dce9df] p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}>
             <p className="text-[12px] font-black uppercase tracking-[0.2em] text-[#137c63]">{content.principlesTitle}</p>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
               {content.principles.map((item) => <li key={item}>{item}</li>)}

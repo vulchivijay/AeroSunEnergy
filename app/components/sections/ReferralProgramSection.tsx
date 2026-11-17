@@ -70,7 +70,7 @@ export function ReferralProgramSection() {
     <>
     <section
       aria-labelledby="referral-landing-title"
-      className="relative isolate overflow-hidden bg-linear-to-br from-[#e7eafd] via-[#f1e8f3] to-[#e4f2f5] px-4 py-10 text-slate-900 sm:px-6 lg:px-10 lg:py-14"
+      className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-10 text-slate-900 sm:px-6 lg:px-10 lg:py-14"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_10%_0%,rgba(129,140,248,0.13),transparent_35%),radial-gradient(ellipse_at_100%_100%,rgba(56,189,248,0.12),transparent_32%)]" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
@@ -115,39 +115,39 @@ export function ReferralProgramSection() {
 
     <section
       id="referral-program"
-      className="relative isolate overflow-hidden bg-[linear-gradient(120deg,#312e81_0%,#4c1d95_55%,#701a75_100%)] px-4 py-14 text-white sm:px-6 lg:px-10 lg:py-18"
+      className="relative isolate overflow-hidden bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-14 text-slate-900 sm:px-6 lg:px-10 lg:py-18"
       aria-labelledby="referral-program-title"
     >
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 lg:gap-10 xl:grid-cols-[0.82fr_1.18fr] xl:items-center">
         <div className="min-w-0">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-100 sm:text-xs">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-800 sm:text-xs">
             {content.eyebrow}
           </p>
-          <h2 id="referral-program-title" className="mt-5 max-w-2xl text-4xl font-black leading-[1.02] tracking-tight sm:text-5xl lg:text-6xl">
+          <h2 id="referral-program-title" className="mt-5 max-w-2xl text-4xl font-black leading-[1.02] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
             {content.title}
           </h2>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
+          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
             {content.description}
           </p>
 
           <ol className="mt-8 space-y-3 sm:mt-10">
             {content.steps.map((step, index) => (
-              <li key={step.title} className="flex gap-4 rounded-2xl bg-white/10 p-4 sm:p-5">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-base font-black text-[#ffbd4a]">
+              <li key={step.title} className="flex gap-4 rounded-2xl bg-white/70 p-4 sm:p-5">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-base font-black text-amber-800">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <span className="min-w-0">
-                  <span className="block font-bold text-white">{step.title}</span>
-                  <span className="mt-1 block text-sm leading-6 text-white/75">{step.description}</span>
+                  <span className="block font-bold text-slate-950">{step.title}</span>
+                  <span className="mt-1 block text-sm leading-6 text-slate-600">{step.description}</span>
                 </span>
               </li>
             ))}
           </ol>
 
-          <div className="mt-4 flex gap-3 rounded-2xl bg-white/10 p-4">
-            <Gift className="mt-0.5 h-5 w-5 shrink-0 text-[#ffbd4a]" aria-hidden="true" />
-            <p className="text-sm leading-6 text-white/85">
-              <span className="font-bold text-white">{content.rewardNoteTitle} </span>
+          <div className="mt-4 flex gap-3 rounded-2xl bg-white/70 p-4">
+            <Gift className="mt-0.5 h-5 w-5 shrink-0 text-amber-800" aria-hidden="true" />
+            <p className="text-sm leading-6 text-slate-700">
+              <span className="font-bold text-slate-950">{content.rewardNoteTitle} </span>
               {content.rewardNote}
             </p>
           </div>
@@ -229,7 +229,7 @@ export function ReferralProgramSection() {
       </div>
     </section>
 
-    <section className="bg-[#eaf4ef] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="referral-process-title">
+    <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="referral-process-title">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
           <p className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-800/15 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-emerald-800">
@@ -253,7 +253,7 @@ export function ReferralProgramSection() {
       </div>
     </section>
 
-    <section className="relative isolate overflow-hidden bg-linear-to-br from-[#e7eafd] via-[#f1e8f3] to-[#e4f2f5] px-4 py-14 text-slate-900 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="referral-earnings-title">
+    <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-14 text-slate-900 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="referral-earnings-title">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_10%_0%,rgba(129,140,248,0.13),transparent_35%),radial-gradient(ellipse_at_100%_100%,rgba(56,189,248,0.12),transparent_32%)]" aria-hidden="true" />
       <div className="relative mx-auto max-w-7xl">
         <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
@@ -328,7 +328,7 @@ export function ReferralProgramSection() {
       </div>
     </section>
 
-    <section className="bg-[#f5f8fc] px-4 py-14 sm:px-6 lg:px-10 lg:py-16" aria-labelledby="referral-faq-title">
+    <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-14 sm:px-6 lg:px-10 lg:py-16" aria-labelledby="referral-faq-title">
       <div className="mx-auto max-w-7xl">
         <p className="inline-flex w-fit rounded-full border border-[#075da8]/15 bg-[#eaf3fc] px-4 py-2 text-xs font-black uppercase tracking-[0.12em] text-[#075da8]">
           {landing.faqEyebrow}

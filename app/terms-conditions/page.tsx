@@ -81,7 +81,7 @@ export default function TermsPage() {
               <section
                 key={section.heading}
                 id={`terms-${index + 1}`}
-                className="scroll-mt-28 rounded-[22px] border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md sm:p-7"
+                className={`scroll-mt-28 rounded-[22px] border border-slate-200 p-5 shadow-sm transition-shadow hover:shadow-md sm:p-7 ${index % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}
               >
                 <div className="flex items-start gap-4">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#3730a3] text-sm font-black text-white">
@@ -107,14 +107,14 @@ export default function TermsPage() {
           </div>
 
           <div className="mt-8 grid gap-5 md:grid-cols-2">
-            <section className="rounded-[22px] bg-[linear-gradient(135deg,#1e1b4b_0%,#3730a3_55%,#4338ca_100%)] p-6 text-white">
-              <p className="text-[12px] font-black uppercase tracking-[0.22em] text-amber-200">{content.keyPointsTitle}</p>
+            <section className={`rounded-[22px] p-6 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
+              <p className="text-[12px] font-black uppercase tracking-[0.22em] text-amber-800">{content.keyPointsTitle}</p>
               <h2 className="mt-2 text-xl font-black">{content.responsibleTitle}</h2>
-              <ul className="mt-4 space-y-3 text-sm leading-7 text-violet-100">
+              <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
                 {content.keyPoints.map((item) => <li key={item}>{item}</li>)}
               </ul>
             </section>
-            <section className="rounded-[22px] border border-amber-200 bg-[#fff8ed] p-6">
+            <section className={`rounded-[22px] border border-amber-200 p-6 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}>
               <p className="text-[12px] font-black uppercase tracking-[0.22em] text-amber-800">{content.importantTitle}</p>
               <h2 className="mt-2 text-xl font-black text-slate-900">{content.projectInfoTitle}</h2>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">

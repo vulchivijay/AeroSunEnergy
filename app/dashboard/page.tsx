@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 function DatabaseUnavailable() {
   return (
     <main className="flex min-h-[65vh] items-center justify-center bg-[#f7faf7] px-4 py-16">
-      <section className="w-full max-w-lg rounded-3xl border border-emerald-950/10 bg-white p-8 text-center shadow-[0_28px_80px_-42px_rgba(4,47,30,0.35)]">
+      <section className="w-full max-w-lg rounded-3xl border border-emerald-950/10 bg-gradient-to-br from-white to-[#f1f2f6] p-8 text-center shadow-[0_28px_80px_-42px_rgba(4,47,30,0.35)]">
         <h1 className="text-2xl font-bold text-slate-950">Dashboard is temporarily unavailable</h1>
         <p className="mt-3 text-sm leading-6 text-slate-600">
           We could not verify your account right now. Please try again in a moment.
@@ -45,7 +45,7 @@ export default async function DashboardPage() {
 
   return (
     <main className="min-h-[65vh] bg-[#f7faf7] px-4 py-12 sm:px-6 sm:py-16">
-      <section className="mx-auto w-full max-w-7xl">
+      <section className="mx-auto w-full max-w-7xl bg-gradient-to-br from-white to-[#f1f2f6]">
         <div className="flex flex-col justify-between gap-6 rounded-3xl border border-emerald-950/10 bg-white p-6 shadow-[0_28px_80px_-42px_rgba(4,47,30,0.35)] sm:flex-row sm:items-center sm:p-9">
           <div>
             <p className="inline-flex w-fit items-center rounded-full border border-emerald-800/15 bg-emerald-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-emerald-700">AeroSun Energy · {user.role}</p>

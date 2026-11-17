@@ -127,7 +127,7 @@ export default function InstallationChecklistPage() {
 							<section
 								key={section.title}
 								id={`checklist-phase-${index + 1}`}
-								className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-[0_15px_45px_-40px_rgba(15,23,42,0.5)]"
+								className={`scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 shadow-[0_15px_45px_-40px_rgba(15,23,42,0.5)] ${index % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}
 							>
 								<div className="flex items-start gap-4 p-5 sm:p-6">
 									<span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-amber-200 bg-amber-50 font-mono text-md font-bold text-amber-800">
@@ -181,7 +181,7 @@ export default function InstallationChecklistPage() {
 						</ol>
 					</nav>
 
-					<section className="rounded-2xl border border-amber-200 bg-white p-5">
+					<section className={`rounded-2xl border border-amber-200 p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
 						<p className="text-[12px] font-black uppercase tracking-[0.2em] text-amber-800">{labels.projectEssentials}</p>
 						<ul className="mt-4 space-y-3 text-md leading-6 text-slate-700">
 							{labels.projectEssentialsItems.map((item) => <li key={item}>{item}</li>)}

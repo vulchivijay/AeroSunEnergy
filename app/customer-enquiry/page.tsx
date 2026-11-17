@@ -348,7 +348,7 @@ export default function CustomerEnquiryPage() {
             </div>
           </header>
 
-          <section className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <section className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <SectionTitle number="01" title={page.sections[0]} />
             <div className="grid gap-3 text-md text-slate-700 sm:grid-cols-2">
               <p>
@@ -381,7 +381,7 @@ export default function CustomerEnquiryPage() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-sky-200 bg-sky-50/60 p-5">
+          <section className="rounded-2xl border border-sky-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
             <SectionTitle number="02" title={page.sections[1]} />
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               <TextField
@@ -454,7 +454,7 @@ export default function CustomerEnquiryPage() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-emerald-200 bg-emerald-50/50 p-5">
+          <section className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <SectionTitle number="03" title={page.sections[2]} />
             <div className="grid gap-3 sm:grid-cols-2">
               <TextField
@@ -494,7 +494,7 @@ export default function CustomerEnquiryPage() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5">
+          <section className="rounded-2xl border border-slate-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
             <SectionTitle number="04" title={page.sections[3]} />
             <EditableTable
               rowHeader={page.parameter}
@@ -525,7 +525,7 @@ export default function CustomerEnquiryPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-slate-200 bg-white p-5">
+          <section className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <SectionTitle number="05" title={page.sections[4]} />
             <EditableTable
               rowHeader={page.billOfMaterialsRowHeader}
@@ -550,7 +550,7 @@ export default function CustomerEnquiryPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-emerald-200 bg-emerald-50/40 p-5">
+          <section className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
             <SectionTitle number="06" title={page.sections[5]} />
             <div className="overflow-x-auto rounded-xl border border-slate-200">
               <table className="w-full min-w-[520px] border-collapse text-md">
@@ -630,7 +630,7 @@ export default function CustomerEnquiryPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-sky-200 bg-sky-50/50 p-5">
+          <section className="rounded-2xl border border-sky-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <SectionTitle number="07" title={page.sections[6]} />
             <EditableTable
               rowHeader={page.parameter}
@@ -654,7 +654,7 @@ export default function CustomerEnquiryPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-slate-200 bg-white p-5">
+          <section className="rounded-2xl border border-slate-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
             <SectionTitle number="08" title={page.sections[7]} />
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {page.financialParameters.map((parameter) => (
@@ -714,7 +714,7 @@ export default function CustomerEnquiryPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-emerald-200 bg-emerald-50/40 p-5">
+          <section className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <SectionTitle number="09" title={page.sections[8]} />
             <p className="mb-4 text-md text-slate-600">
               {page.scopeInstructions}
@@ -748,7 +748,7 @@ export default function CustomerEnquiryPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-amber-200 bg-amber-50/50 p-5">
+          <section className="rounded-2xl border border-amber-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
             <SectionTitle number="10" title={page.sections[9]} />
             <p className="mb-4 text-md text-slate-600">
               {page.exclusionsIntro}
@@ -779,7 +779,7 @@ export default function CustomerEnquiryPage() {
             </label>
           </section>
 
-          <section className="rounded-2xl border border-slate-200 bg-white p-5">
+          <section className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <SectionTitle number="11" title={page.sections[10]} />
             <EditableTable
               rowHeader={page.equipment}
@@ -803,7 +803,7 @@ export default function CustomerEnquiryPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-sky-200 bg-sky-50/50 p-5">
+          <section className="rounded-2xl border border-sky-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
             <SectionTitle number="12" title={page.sections[11]} />
             <p className="mb-4 text-md text-slate-600">
               {page.paymentScheduleIntro}
@@ -860,7 +860,7 @@ export default function CustomerEnquiryPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-slate-200 bg-white p-5">
+          <section className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <SectionTitle number="13" title={page.sections[12]} />
             <ol className="grid gap-2 sm:grid-cols-2">
               {page.termsAndConditions.map((term, index) => (
@@ -877,7 +877,7 @@ export default function CustomerEnquiryPage() {
             </ol>
           </section>
 
-          <section className="rounded-2xl border border-emerald-200 bg-emerald-50/50 p-5">
+          <section className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
             <SectionTitle number="14" title={page.sections[13]} />
             <p className="mb-4 text-md leading-6 text-slate-700">
               {page.acceptanceCopy}
@@ -909,7 +909,7 @@ export default function CustomerEnquiryPage() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <section className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <SectionTitle number="15" title={page.sections[14]} />
             <p className="mb-4 text-md font-semibold text-slate-800">
               {page.forCompany}
@@ -951,19 +951,19 @@ export default function CustomerEnquiryPage() {
             </label>
           </section>
 
-          <section className="rounded-2xl bg-[#123c48] p-5 text-white sm:p-7">
+          <section className="rounded-2xl bg-gradient-to-br from-[#f1f2f6] to-white p-5 text-slate-900 sm:p-7">
             <h2 className="text-xl font-black uppercase tracking-wide">
               {page.thankYou}
             </h2>
             <p className="mt-2 font-semibold">{page.companyName}</p>
-            <p className="mt-1 text-md text-emerald-100">
+            <p className="mt-1 text-md text-emerald-800">
               {page.companyTagline}
             </p>
-            <p className="mt-4 text-md leading-6 text-emerald-50/80">
+            <p className="mt-4 text-md leading-6 text-slate-700">
               {page.company.websiteValue} · {page.contactEmail} ·{" "}
               {page.phoneValue}
             </p>
-            <p className="mt-2 font-mono text-md text-emerald-100/70">
+            <p className="mt-2 font-mono text-md text-emerald-800">
               {page.documentReference}
             </p>
           </section>

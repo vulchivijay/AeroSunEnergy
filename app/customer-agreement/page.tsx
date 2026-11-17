@@ -127,7 +127,7 @@ export default function CustomerAgreementPage() {
 
       <div className="mx-auto grid max-w-7xl gap-8 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-[minmax(0,1fr)_290px] lg:gap-12 lg:px-10">
         <article className="min-w-0">
-          <section className="mb-8 rounded-3xl border border-indigo-200/80 bg-white p-6 shadow-[0_20px_55px_-42px_rgba(15,23,42,0.5)] sm:p-8">
+          <section className="mb-8 rounded-3xl border border-indigo-200/80 bg-gradient-to-br from-white to-[#f1f2f6] p-6 shadow-[0_20px_55px_-42px_rgba(15,23,42,0.5)] sm:p-8">
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-100 text-lg text-indigo-800">i</span>
               <div>
@@ -161,7 +161,7 @@ export default function CustomerAgreementPage() {
 
           <div className="space-y-4">
             {content.sections.map((section, index) => (
-              <section key={section.title} id={`agreement-process-${index + 1}`} className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-[0_15px_45px_-40px_rgba(15,23,42,0.5)]">
+              <section key={section.title} id={`agreement-process-${index + 1}`} className={`scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 shadow-[0_15px_45px_-40px_rgba(15,23,42,0.5)] ${index % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}>
                 <div className="flex items-start gap-4 p-5 sm:p-6">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-indigo-200 bg-indigo-50 font-mono text-md font-bold text-indigo-800">
                     {String(index + 1).padStart(2, '0')}
@@ -213,16 +213,16 @@ export default function CustomerAgreementPage() {
               </li>
             </ol>
           </nav>
-          <section className="rounded-2xl bg-[#101c32] p-5 text-white">
-            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-indigo-300">{content.beforeAccepting.title}</p>
-            <ul className="mt-4 space-y-3 text-md leading-6 text-slate-200">
+          <section className={`rounded-2xl p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}>
+            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-indigo-800">{content.beforeAccepting.title}</p>
+            <ul className="mt-4 space-y-3 text-md leading-6 text-slate-700">
               {content.beforeAccepting.items.map((item) => <li key={item}>{item}</li>)}
             </ul>
           </section>
         </aside>
       </div>
 
-      <section id="customer-agreement-form" className="scroll-mt-28 mx-auto max-w-7xl px-5 pb-16 sm:px-8 lg:px-10">
+      <section id="customer-agreement-form" className={`scroll-mt-28 mx-auto max-w-7xl px-5 pb-16 sm:px-8 lg:px-10 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
           <form
             onSubmit={handleSubmit(onSubmit, (formErrors) => toast.error(getFirstFormErrorMessage(formErrors) ?? t.formSubmission.error))}
@@ -259,7 +259,7 @@ export default function CustomerAgreementPage() {
             </header>
 
             <div className="grid gap-5 xl:grid-cols-[1.2fr_0.8fr]">
-              <section className="space-y-5">
+              <section className={`space-y-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}>
                 <div className="grid gap-4 lg:grid-cols-2">
                   <div className="rounded-[22px] border border-sky-200 bg-linear-to-br from-[#ebf8ff] via-white to-[#f5fbff] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] sm:p-5">
                     <div className="mb-3 flex items-center gap-3">
@@ -314,7 +314,7 @@ export default function CustomerAgreementPage() {
                 </div>
 
                 <div className="grid gap-4 lg:grid-cols-2">
-                  <section className="rounded-3xl border border-amber-200 bg-linear-to-br from-[#fffaf1] via-white to-[#fffef7] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
+                  <section className={`rounded-3xl border border-amber-200 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
                     <div className="mb-3 flex items-center gap-3 border-b border-amber-200 pb-3">
                       <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-orange-500 text-lg font-black text-slate-950 shadow-lg shadow-amber-500/25">4</span>
                       <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">{formCopy.commercialTerms}</h2>
@@ -335,7 +335,7 @@ export default function CustomerAgreementPage() {
                     </div>
                   </section>
 
-                  <section className="rounded-3xl border border-emerald-200 bg-linear-to-br from-[#edfdf7] via-white to-[#f5fff9] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
+                  <section className={`rounded-3xl border border-emerald-200 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}>
                     <div className="mb-3 flex items-center gap-3 border-b border-emerald-200 pb-3">
                       <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-teal-500 text-lg font-black text-slate-950 shadow-lg shadow-emerald-500/25">5</span>
                       <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">{formCopy.scopeOfWork}</h2>
@@ -352,7 +352,7 @@ export default function CustomerAgreementPage() {
                   </section>
                 </div>
 
-                <section className="rounded-3xl border border-rose-200 bg-linear-to-br from-[#fff5f5] via-white to-[#fffafb] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5">
+                <section className={`rounded-3xl border border-rose-200 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
                   <div className="mb-3 flex items-center gap-3 border-b border-rose-200 pb-3">
                     <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-rose-500 to-pink-500 text-lg font-black text-white shadow-lg shadow-rose-500/25">6</span>
                     <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">{formCopy.termsAndConditions}</h2>

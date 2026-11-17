@@ -80,35 +80,35 @@ export default function PurchaseOrderPage() {
           <Card className="overflow-hidden border border-slate-200 bg-white/85 shadow-[0_25px_80px_rgba(15,23,42,0.08)] backdrop-blur-md">
             <CardContent className="p-5 sm:p-7 lg:p-8">
               <div className="space-y-6">
-                <section>
+                <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
                   <h2 className="text-xl font-bold text-slate-900">{labels.sections.summary.title}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600">
                     {labels.sections.summary.text}
                   </p>
                 </section>
 
-                <section>
+                <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
                   <h2 className="text-xl font-bold text-slate-900">{labels.sections.commercialTerms.title}</h2>
                   <div className="mt-3 space-y-3 text-md leading-7 text-slate-600">
                     {labels.sections.commercialTerms.items.map((item) => <p key={item.label}><span className="font-semibold text-slate-800">{item.label}</span> {item.text}</p>)}
                   </div>
                 </section>
 
-                <section>
+                <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
                   <h2 className="text-xl font-bold text-slate-900">{labels.sections.delivery.title}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600">
                     {labels.sections.delivery.text}
                   </p>
                 </section>
 
-                <section>
+                <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
                   <h2 className="text-xl font-bold text-slate-900">{labels.sections.warranty.title}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600">
                     {labels.sections.warranty.text}
                   </p>
                 </section>
 
-                <section>
+                <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
                   <h2 className="text-xl font-bold text-slate-900">{labels.sections.riskCompliance.title}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600">
                     {labels.sections.riskCompliance.text}

@@ -48,7 +48,7 @@ export default function KnowEligibilityPage() {
 
       <div className="mx-auto grid max-w-7xl gap-8 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-[minmax(0,1fr)_290px] lg:gap-12 lg:px-10">
         <article className="min-w-0">
-          <section id="eligibility-requirements" className="scroll-mt-28 mb-8 rounded-3xl border border-emerald-200/80 bg-white p-6 shadow-[0_20px_55px_-42px_rgba(15,23,42,0.5)] sm:p-8">
+          <section id="eligibility-requirements" className="scroll-mt-28 mb-8 rounded-3xl border border-emerald-200/80 bg-gradient-to-br from-white to-[#f1f2f6] p-6 shadow-[0_20px_55px_-42px_rgba(15,23,42,0.5)] sm:p-8">
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-lg text-emerald-800">i</span>
               <div>
@@ -86,7 +86,7 @@ export default function KnowEligibilityPage() {
           </section>
 
           <div className="space-y-4">
-            <section id="subsidy-overview" className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-[0_15px_45px_-40px_rgba(15,23,42,0.5)]">
+            <section id="subsidy-overview" className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-[#f1f2f6] to-white shadow-[0_15px_45px_-40px_rgba(15,23,42,0.5)]">
               <div className="flex items-start gap-4 p-5 sm:p-6">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-xs font-bold text-emerald-800">01</span>
                 <div className="min-w-0 flex-1">
@@ -107,7 +107,7 @@ export default function KnowEligibilityPage() {
               <div className="h-px bg-linear-to-r from-emerald-100 via-sky-100 to-transparent" />
             </section>
 
-            <section id="scheme-categories" className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-[0_15px_45px_-40px_rgba(15,23,42,0.5)]">
+            <section id="scheme-categories" className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white to-[#f1f2f6] shadow-[0_15px_45px_-40px_rgba(15,23,42,0.5)]">
               <div className="flex items-start gap-4 p-5 sm:p-6">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-xs font-bold text-emerald-800">02</span>
                 <div className="min-w-0 flex-1">
@@ -135,7 +135,7 @@ export default function KnowEligibilityPage() {
               <div className="h-px bg-linear-to-r from-emerald-100 via-sky-100 to-transparent" />
             </section>
 
-            <section id="application-process" className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-[0_15px_45px_-40px_rgba(15,23,42,0.5)]">
+            <section id="application-process" className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-[#f1f2f6] to-white shadow-[0_15px_45px_-40px_rgba(15,23,42,0.5)]">
               <div className="flex items-start gap-4 p-5 sm:p-6">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-xs font-bold text-emerald-800">03</span>
                 <div className="min-w-0 flex-1">
@@ -153,7 +153,7 @@ export default function KnowEligibilityPage() {
               <div className="h-px bg-linear-to-r from-emerald-100 via-sky-100 to-transparent" />
             </section>
 
-            <section id="verification-and-exclusions" className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-[0_15px_45px_-40px_rgba(15,23,42,0.5)]">
+            <section id="verification-and-exclusions" className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white to-[#f1f2f6] shadow-[0_15px_45px_-40px_rgba(15,23,42,0.5)]">
               <div className="flex items-start gap-4 p-5 sm:p-6">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-xs font-bold text-emerald-800">04</span>
                 <div className="min-w-0 flex-1">
@@ -212,10 +212,10 @@ export default function KnowEligibilityPage() {
             </ol>
           </nav>
 
-          <section className="rounded-2xl bg-[#101c32] p-5 text-white">
-            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-300">{labels.important}</p>
-            <p className="mt-3 text-md leading-6 text-slate-200">{labels.importantDescription}</p>
-            <a href="https://pmsuryaghar.gov.in/" target="_blank" rel="noreferrer" className="mt-4 inline-flex text-md font-bold text-emerald-300 underline decoration-emerald-300/50 underline-offset-4 hover:text-white">{labels.portalLink}</a>
+          <section className="rounded-2xl bg-gradient-to-br from-[#f1f2f6] to-white p-5">
+            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-emerald-800">{labels.important}</p>
+            <p className="mt-3 text-md leading-6 text-slate-700">{labels.importantDescription}</p>
+            <a href="https://pmsuryaghar.gov.in/" target="_blank" rel="noreferrer" className="mt-4 inline-flex text-md font-bold text-emerald-800 underline decoration-emerald-300/50 underline-offset-4 hover:text-emerald-950">{labels.portalLink}</a>
           </section>
         </aside>
       </div>
