@@ -76,7 +76,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
       <div className="absolute -left-24 top-8 -z-10 h-64 w-64 rounded-full bg-emerald-200/50 blur-3xl" aria-hidden="true" />
       <div className="absolute -right-20 bottom-0 -z-10 h-72 w-72 rounded-full bg-amber-100/70 blur-3xl" aria-hidden="true" />
 
-      <section className="w-full max-w-md rounded-3xl border border-emerald-950/10 bg-gradient-to-br from-white to-[#f1f2f6] p-6 shadow-[0_28px_80px_-42px_rgba(4,47,30,0.35)] sm:p-9">
+      <section className="w-full max-w-md rounded-3xl border border-emerald-950/10 bg-gradient-to-br from-white to-[#f1f2f6] p-6 shadow-sm sm:p-9">
         <div className="mb-8">
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-emerald-700">{auth.brand}</p>
           <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">

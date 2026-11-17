@@ -100,7 +100,7 @@ export default function ServicesPage() {
           {page.servicePackages.map((service, index) => {
             const Icon = divisionIcons[index] ?? Zap
             return (
-              <article key={service.title} className="group relative overflow-hidden rounded-[22px] border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-lg sm:p-8">
+              <article key={service.title} className="group relative overflow-hidden rounded-[22px] border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-sm sm:p-8">
                 <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${service.accent}`} />
                 <div className="flex items-start justify-between gap-4">
                   <div>
@@ -155,7 +155,7 @@ export default function ServicesPage() {
       </section>
 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
-        <div className="overflow-hidden rounded-[30px] bg-[linear-gradient(135deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] p-6 text-white shadow-[0_24px_70px_-45px_rgba(16,42,67,0.5)] sm:p-10 lg:p-12">
+        <div className="overflow-hidden rounded-[30px] bg-[linear-gradient(135deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] p-6 text-white shadow-sm sm:p-10 lg:p-12">
           <div className="mb-8 max-w-3xl">
             <p className="inline-flex w-fit rounded-full border border-amber-300/25 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-amber-200">{labels.deliveryModel}</p>
             <h2 className="mt-3 text-3xl font-black tracking-tighter sm:text-5xl">{labels.deliveryModelTitle}</h2>
@@ -242,7 +242,7 @@ export default function ServicesPage() {
 
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {page.solarPillars.map((service, index) => (
-              <article key={service.title} className="group overflow-hidden rounded-[22px] border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-lg">
+              <article key={service.title} className="group overflow-hidden rounded-[22px] border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-sm">
                 <div className={`h-1.5 bg-gradient-to-r ${service.accent}`} />
                 <div className="p-5 sm:p-6">
                   <p className="font-mono text-xs font-bold tracking-[0.18em] text-[#137c63]">0{index + 1} / {labels.ourServices}</p>

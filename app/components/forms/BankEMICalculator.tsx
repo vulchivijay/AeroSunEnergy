@@ -80,7 +80,7 @@ export function BankEMICalculator() {
           </p>
         </header>
 
-        <div className="min-w-0 rounded-[28px] border border-[#dce8df] bg-white p-4 shadow-[0_24px_70px_-48px_rgba(18,43,34,0.3)] sm:p-7 xl:p-8">
+        <div className="min-w-0 rounded-[28px] border border-[#dce8df] bg-white p-4 shadow-sm sm:p-7 xl:p-8">
           <div className="mb-7">
             <p className="text-md font-bold uppercase tracking-[0.17em] text-emerald-800">
               {labels.loanDetails}
@@ -154,7 +154,7 @@ export function BankEMICalculator() {
           </p>
         </div>
 
-        <aside className="relative flex min-w-0 flex-col overflow-hidden rounded-[28px] bg-[#26346f] p-4 text-white shadow-[0_28px_70px_-30px_rgba(38,52,111,0.55)] sm:p-7 xl:p-8">
+        <aside className="relative flex min-w-0 flex-col overflow-hidden rounded-[28px] bg-[#26346f] p-4 text-white shadow-sm sm:p-7 xl:p-8">
           <div className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full border border-white/[0.07]" aria-hidden="true" />
           <div className="pointer-events-none absolute -right-7 -top-11 h-44 w-44 rounded-full border border-white/[0.07]" aria-hidden="true" />
           <div className="relative z-10 flex flex-1 flex-col">
@@ -195,7 +195,7 @@ export function BankEMICalculator() {
             <Link
               href="/contact"
               prefetch={false}
-              className="mt-7 inline-flex w-full flex-wrap items-center justify-center gap-2 rounded-full bg-lime-300 px-4 py-3.5 text-center text-sm font-bold text-[#17301f] shadow-[0_8px_24px_-12px_rgba(190,242,100,0.8)] transition hover:bg-lime-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-200 sm:px-5 sm:text-md"
+              className="mt-7 inline-flex w-full flex-wrap items-center justify-center gap-2 rounded-full bg-lime-300 px-4 py-3.5 text-center text-sm font-bold text-[#17301f] shadow-sm transition hover:bg-lime-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-200 sm:px-5 sm:text-md"
             >
               {labels.contactAction}
               <ArrowUpRight size={17} strokeWidth={2.2} aria-hidden="true" />

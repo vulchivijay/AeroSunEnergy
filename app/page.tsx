@@ -46,7 +46,7 @@ function RecognitionHighlight() {
   return (
     <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-8 sm:px-6 lg:px-10 lg:py-12">
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 overflow-hidden rounded-[30px] border border-[#e2e8e2] bg-white shadow-[0_20px_60px_-40px_rgba(24,37,31,0.3)] lg:grid-cols-[1.05fr_1fr_1fr]">
+        <div className="grid grid-cols-1 overflow-hidden rounded-[30px] border border-[#e2e8e2] bg-white shadow-sm lg:grid-cols-[1.05fr_1fr_1fr]">
           <div className="flex flex-col justify-center bg-[#e1ece3] p-7 sm:p-9 lg:p-11">
             <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[#137c63]/15 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
               {t.home.recognitionHeader.badge}
@@ -203,7 +203,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="overflow-hidden rounded-[22px] border border-[#e7e4dc] bg-white shadow-[0_20px_55px_-40px_rgba(16,43,40,0.4)]">
+          <div className="overflow-hidden rounded-[22px] border border-[#e7e4dc] bg-white shadow-sm">
             <div className="overflow-x-auto">
               <table className="w-full min-w-[620px] border-collapse text-left">
                 <caption className="sr-only">{subsidy.title}</caption>

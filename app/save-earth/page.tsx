@@ -118,7 +118,7 @@ export default function SaveEarthPage() {
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:px-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-3 rounded-full border border-amber-200/25 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-amber-100">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-300 shadow-[0_0_16px_rgba(251,191,36,0.7)]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-300 shadow-sm" />
               {content.heroBadge}
             </div>
             <h1 className="mt-6 text-4xl font-black tracking-tighter text-white sm:text-6xl lg:text-7xl">
@@ -147,7 +147,7 @@ export default function SaveEarthPage() {
           </div>
 
           <div className="relative mx-auto w-full max-w-sm lg:ml-auto">
-            <div className="rounded-[22px] border border-white/15 bg-white/[0.08] p-5 shadow-xl shadow-black/20">
+            <div className="rounded-[22px] border border-white/15 bg-white/[0.08] p-5 shadow-sm shadow-black/20">
               <div className="flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-[18px] bg-[linear-gradient(155deg,#7c2d12_0%,#9a3412_58%,#78350f_100%)] p-7">
                 <div className="flex items-center justify-between text-[12px] font-bold uppercase tracking-[0.22em] text-amber-100">
                   <span>{content.fieldNotes}</span>
@@ -218,7 +218,7 @@ export default function SaveEarthPage() {
         <article className="min-w-0 space-y-8">
           <section
             id="documentary"
-            className="scroll-mt-28 overflow-hidden rounded-[30px] border border-amber-200/20 bg-gradient-to-br from-white to-[#f1f2f6] p-6 text-slate-900 shadow-[0_24px_70px_-45px_rgba(120,53,15,0.45)] sm:p-9"
+            className="scroll-mt-28 overflow-hidden rounded-[30px] border border-amber-200/20 bg-gradient-to-br from-white to-[#f1f2f6] p-6 text-slate-900 shadow-sm sm:p-9"
           >
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-8 bg-amber-300" />

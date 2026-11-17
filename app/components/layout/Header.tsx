@@ -117,12 +117,12 @@ export default function Navbar() {
           disabled
             ? 'cursor-not-allowed text-white/50'
             : active
-              ? 'bg-linear-to-r from-[#137c63] to-[#20A44A] text-white shadow-[0_8px_20px_-12px_rgba(19,124,99,0.8)] ring-1 ring-inset ring-white/40'
+              ? 'bg-linear-to-r from-[#137c63] to-[#20A44A] text-white shadow-sm ring-1 ring-inset ring-white/40'
               : 'text-white/90 hover:bg-white/10 hover:text-amber-100 hover:shadow-sm'
         }`
       : `group relative z-10 flex h-full min-w-0 flex-col items-center gap-1 rounded-xl px-1 py-1.5 text-sm transition-colors 2xl:text-[13px] ${
           active
-            ? 'bg-linear-to-r from-[#137c63] to-[#20A44A] text-white shadow-[0_8px_20px_-12px_rgba(19,124,99,0.8)]'
+            ? 'bg-linear-to-r from-[#137c63] to-[#20A44A] text-white shadow-sm'
             : disabled
               ? 'cursor-not-allowed text-white/50'
               : 'text-white/90 hover:bg-white/10 hover:text-amber-100 hover:shadow-sm'
@@ -136,12 +136,12 @@ export default function Navbar() {
           <>
             <span className={`relative flex h-8 w-8 items-center justify-center rounded-full border transition-all duration-300 ${
               active
-                ? 'border-white/45 bg-white/20 text-white shadow-[0_0_16px_rgba(255,255,255,0.2)]'
-                : 'border-white/25 bg-white/10 text-white/90 shadow-[0_4px_12px_-8px_rgba(15,23,42,0.35)] group-hover:border-amber-200/50 group-hover:bg-white/15 group-hover:text-amber-100'
+                ? 'border-white/45 bg-white/20 text-white shadow-sm'
+                : 'border-white/25 bg-white/10 text-white/90 shadow-sm group-hover:border-amber-200/50 group-hover:bg-white/15 group-hover:text-amber-100'
             }`}>
               <Icon className="h-4 w-4" strokeWidth={1.7} aria-hidden="true" />
               {disabled && (
-                <span className="absolute left-[50%] -top-1 translate-[-50%] z-10 whitespace-nowrap rounded-t-md rounded-br-md border border-[#333333]/20 bg-[#e5e7eb] px-1.5 py-0.5 text-[9px] cursor-default  uppercase tracking-[0.1em] text-[#333333] shadow-md">
+                <span className="absolute left-[50%] -top-1 translate-[-50%] z-10 whitespace-nowrap rounded-t-md rounded-br-md border border-[#333333]/20 bg-[#e5e7eb] px-1.5 py-0.5 text-[9px] cursor-default  uppercase tracking-[0.1em] text-[#333333] shadow-sm">
                   {comingSoonLabel}
                 </span>
               )}
@@ -226,7 +226,7 @@ export default function Navbar() {
           <div
             id="mobile-about-submenu"
             hidden={!submenuOpen}
-            className="ml-5 rounded-xl border border-white/15 bg-indigo-950/40 p-2 shadow-lg backdrop-blur-xl"
+            className="ml-5 rounded-xl border border-white/15 bg-indigo-950/40 p-2 shadow-sm backdrop-blur-xl"
           >
             {link.children.map((child) => {
               const childActive = pathname === child.href
@@ -271,7 +271,7 @@ export default function Navbar() {
               : 'group-hover/nav:visible group-hover/nav:opacity-100 group-focus-within/nav:visible group-focus-within/nav:opacity-100'
           }`}
         >
-          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-1.5 shadow-[0_20px_50px_-25px_rgba(0,0,0,0.35)]">
+          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-1.5 shadow-sm">
             {link.children.map((child) => {
               const childActive = pathname === child.href
               const ChildIcon = getNavigationIcon(child.href)
@@ -307,7 +307,7 @@ export default function Navbar() {
         aria-label={t.navbar.languageLabel}
         className={inline
           ? 'mt-2 grid gap-1 rounded-xl border border-white/15 bg-white/10 p-1.5 text-white'
-          : 'absolute right-0 top-[calc(100%+0.65rem)] z-[60] w-48 overflow-hidden rounded-2xl border border-[#333333]/15 bg-[#e5e7eb] p-1.5 text-[#333333] shadow-[0_20px_50px_-25px_rgba(0,0,0,0.25)]'}
+          : 'absolute right-0 top-[calc(100%+0.65rem)] z-[60] w-48 overflow-hidden rounded-2xl border border-[#333333]/15 bg-[#e5e7eb] p-1.5 text-[#333333] shadow-sm'}
       >
         {languageOptions.map((option) => (
           <button
@@ -339,7 +339,7 @@ export default function Navbar() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 border-b border-white/25 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] text-white shadow-[0_18px_42px_-30px_rgba(15,23,42,0.75)] ring-1 ring-inset ring-white/10 backdrop-blur-2xl"
+      className="sticky top-0 z-50 border-b border-white/25 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] text-white shadow-sm ring-1 ring-inset ring-white/10 backdrop-blur-2xl"
     >
       <div className="absolute -left-10 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-sky-300/20 blur-3xl" />
       <div className="absolute -right-12 top-0 h-32 w-32 rounded-full bg-amber-200/20 blur-3xl" />
@@ -347,7 +347,7 @@ export default function Navbar() {
       <div className="relative hidden border-b border-white/15 bg-white/5 text-white/90 backdrop-blur-xl">
         <div className="mx-auto flex min-h-8 w-full items-center justify-between gap-3 px-3 py-1 text-sm  tracking-[0.08em] sm:px-6 sm:text-sm sm:tracking-[0.12em] lg:px-8">
           <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
-            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6b45e] shadow-[0_0_10px_rgba(214,180,94,0.65)]" aria-hidden="true" />
+            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6b45e] shadow-sm" aria-hidden="true" />
             {t.navbar.brandName}
           </span>
           <span className="ml-3 hidden whitespace-nowrap text-sm  uppercase tracking-[0.2em] text-white/80 lg:flex lg:items-center lg:gap-2">
@@ -375,7 +375,7 @@ export default function Navbar() {
               aria-label={t.navbar.languageLabel}
               aria-expanded={langOpen}
               aria-controls="desktop-language-options"
-              className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/25 bg-white/10 px-3 text-[12px]  tracking-wider text-white shadow-[0_6px_18px_-12px_rgba(15,23,42,0.35)] transition hover:border-white/50 hover:bg-white/20 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
+              className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/25 bg-white/10 px-3 text-[12px]  tracking-wider text-white shadow-sm transition hover:border-white/50 hover:bg-white/20 hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
             >
               <Globe2 className="h-4 w-4 text-sky-200" aria-hidden="true" />
               {languageOptions.find((option) => option.code === locale)?.shortLabel}
@@ -388,7 +388,7 @@ export default function Navbar() {
             href="/aerosun-energy.pdf"
             download="aerosun-energy.pdf"
             aria-label={t.navbar.downloadVoucher}
-            className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-amber-300/70 bg-linear-to-r from-amber-500 to-orange-500 px-3 text-sm  text-white shadow-[0_10px_24px_-12px_rgba(245,158,11,0.75)] transition hover:-translate-y-0.5 hover:from-emerald-600 hover:to-emerald-500 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
+            className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-amber-300/70 bg-linear-to-r from-amber-500 to-orange-500 px-3 text-sm  text-white shadow-sm transition hover:-translate-y-0.5 hover:from-emerald-600 hover:to-emerald-500 hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
           >
             <ArrowDownToLine className="h-4 w-4 shrink-0" aria-hidden="true" />
             <span className="hidden min-w-0 max-w-[7rem] 2xl:block">
@@ -402,7 +402,7 @@ export default function Navbar() {
             title={t.navbar.startProjectTitle}
             aria-label={t.navbar.startProjectAriaLabel}
             data-cta="start-project"
-            className="group inline-flex min-h-11 items-center gap-1 rounded-xl border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-4 text-sm  text-white shadow-[0_12px_28px_-12px_rgba(19,124,99,0.7)] ring-1 ring-inset ring-white/15 transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-emerald-400"
+            className="group inline-flex min-h-11 items-center gap-1 rounded-xl border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-4 text-sm  text-white shadow-sm ring-1 ring-inset ring-white/15 transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-emerald-400"
           >
             <span className="min-w-0 max-w-[8rem] whitespace-normal break-keep text-center leading-tight line-clamp-2">{t.navbar.startProject}</span>
             <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
@@ -416,7 +416,7 @@ export default function Navbar() {
               setMenuOpen((open) => !open)
               setLangOpen(false)
             }}
-            className={`inline-flex h-11 w-11 items-center justify-center rounded-full border shadow-[0_6px_18px_-10px_rgba(0,0,0,0.35)] transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300 ${
+            className={`inline-flex h-11 w-11 items-center justify-center rounded-full border shadow-sm transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300 ${
               menuOpen
                 ? 'border-white/50 bg-white/20 text-white ring-2 ring-white/20'
                 : 'border-white/30 bg-white/10 text-white hover:border-amber-200/50 hover:bg-white/20'
@@ -433,7 +433,7 @@ export default function Navbar() {
       <div
         id="mobile-primary-navigation"
         hidden={!menuOpen}
-        className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-white/20 bg-[linear-gradient(135deg,rgba(23,37,84,1),rgba(49,46,129,1),rgba(15,23,42,1))] px-4 pb-6 pt-3 text-white shadow-[0_20px_40px_-24px_rgba(15,23,42,0.8)] backdrop-blur-2xl sm:px-6 2xl:hidden"
+        className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-white/20 bg-[linear-gradient(135deg,rgba(23,37,84,1),rgba(49,46,129,1),rgba(15,23,42,1))] px-4 pb-6 pt-3 text-white shadow-sm backdrop-blur-2xl sm:px-6 2xl:hidden"
       >
         <nav aria-label={t.navbar.mobileNavigationLabel} className="mx-auto max-w-3xl space-y-1">
           <p className="mb-3 flex items-center gap-2 px-2 text-sm uppercase tracking-[0.2em] text-sky-200">
@@ -466,7 +466,7 @@ export default function Navbar() {
               href="/contact"
               prefetch={false}
               onClick={closeMenu}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-5 text-center text-sm text-white shadow-[0_10px_24px_-12px_rgba(19,124,99,0.7)] ring-1 ring-inset ring-white/15 transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-5 text-center text-sm text-white shadow-sm ring-1 ring-inset ring-white/15 transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
             >
               <span className="min-w-0 max-w-[9rem] whitespace-normal break-keep leading-tight line-clamp-2">{t.navbar.startProject}</span>
               <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
@@ -475,7 +475,7 @@ export default function Navbar() {
               href="/aerosun-energy.pdf"
               download="aerosun-energy.pdf"
               onClick={closeMenu}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-amber-300/70 bg-white/60 px-5 text-sm  text-amber-800 shadow-sm transition hover:border-amber-500/60 hover:bg-amber-50 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-amber-300/70 bg-white/60 px-5 text-sm  text-amber-800 shadow-sm transition hover:border-amber-500/60 hover:bg-amber-50 hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
             >
               <ArrowDownToLine className="h-4 w-4 shrink-0" aria-hidden="true" />
               <span className="min-w-0 max-w-[9rem] whitespace-normal break-keep leading-tight line-clamp-2">{t.navbar.downloadVoucher}</span>

@@ -81,7 +81,7 @@ export default function TermsPage() {
               <section
                 key={section.heading}
                 id={`terms-${index + 1}`}
-                className={`scroll-mt-28 rounded-[22px] border border-slate-200 p-5 shadow-sm transition-shadow hover:shadow-md sm:p-7 ${index % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}
+                className={`scroll-mt-28 rounded-[22px] border border-slate-200 p-5 shadow-sm transition-shadow hover:shadow-sm sm:p-7 ${index % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}
               >
                 <div className="flex items-start gap-4">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#3730a3] text-sm font-black text-white">

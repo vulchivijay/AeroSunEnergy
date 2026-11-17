@@ -174,7 +174,7 @@ export default function Lord() {
         aria-labelledby="lord-blessing-title"
         aria-describedby="lord-blessing-description"
         tabIndex={-1}
-        className="relative z-10 w-full max-w-md rounded-2xl bg-white p-6 text-gray-900 shadow-[0_25px_80px_rgba(0,0,0,0.25)]  "
+        className="relative z-10 w-full max-w-md rounded-2xl bg-white p-6 text-gray-900 shadow-sm  "
       >
         <button
           ref={closeButtonRef}

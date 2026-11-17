@@ -38,7 +38,7 @@ export default function TirupatiEnergySection({
             <div className="absolute inset-2 rounded-full border border-[#3d5a80]/45" />
             <div className="absolute inset-5 motion-safe:animate-[spin_28s_linear_infinite] rounded-full border border-dashed border-[#7b2cbf]/60 motion-reduce:animate-none" />
             <div className="absolute inset-0 motion-safe:animate-[spin_38s_linear_infinite_reverse] rounded-full border border-[#1d3557]/35 motion-reduce:animate-none" />
-            <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-[#ff6b6b] text-[#183153] shadow-[0_0_45px_rgba(255,107,107,0.4)] sm:h-16 sm:w-16 lg:h-20 lg:w-20">
+            <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-[#ff6b6b] text-[#183153] shadow-sm sm:h-16 sm:w-16 lg:h-20 lg:w-20">
               <Sun className="h-6 w-6 motion-safe:animate-[spin_20s_linear_infinite] motion-reduce:animate-none sm:h-9 sm:w-9 lg:h-10 lg:w-10" strokeWidth={1.5} />
             </div>
             <span className="absolute right-1 top-2 flex h-6 w-6 items-center justify-center rounded-full border border-white/10 bg-[#254d70] text-[#9bf6ff] sm:right-2 sm:top-3 sm:h-8 sm:w-8">

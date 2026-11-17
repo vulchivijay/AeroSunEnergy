@@ -88,7 +88,7 @@ export function ReferralProgramSection() {
           </p>
         </div>
 
-        <aside className="rounded-[1.75rem] border border-white/80 bg-white/75 p-5 shadow-[0_24px_60px_-40px_rgba(48,57,95,0.3)] sm:p-6">
+        <aside className="rounded-[1.75rem] border border-white/80 bg-white/75 p-5 shadow-sm sm:p-6">
           <p className="rounded-xl border-l-2 border-amber-500 bg-[#fff3df] px-4 py-3 text-sm font-semibold leading-6 text-amber-950">
             {landing.earningsNote}
           </p>
@@ -153,7 +153,7 @@ export function ReferralProgramSection() {
           </div>
         </div>
 
-        <div className="min-w-0 rounded-[28px] bg-[#f8f7f1] p-5 text-slate-900 shadow-[0_28px_70px_-38px_rgba(0,0,0,0.28)] sm:rounded-[32px] sm:p-7 lg:p-9">
+        <div className="min-w-0 rounded-[28px] bg-[#f8f7f1] p-5 text-slate-900 shadow-sm sm:rounded-[32px] sm:p-7 lg:p-9">
           <div className="flex items-start justify-between gap-4">
             <div className="min-w-0">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#087a61] sm:text-sm">
@@ -269,7 +269,7 @@ export function ReferralProgramSection() {
         </div>
 
         <div className="mt-8 grid gap-4 lg:grid-cols-2">
-          <article className="rounded-[1.75rem] border border-white/80 border-l-4 border-l-[#b8d8ec] bg-white/80 p-5 shadow-[0_24px_60px_-40px_rgba(48,57,95,0.3)] sm:p-7">
+          <article className="rounded-[1.75rem] border border-white/80 border-l-4 border-l-[#b8d8ec] bg-white/80 p-5 shadow-sm sm:p-7">
             <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">{landing.basicTitle}</p>
             <p className="mt-2 text-3xl font-black text-[#087a61]">
               {landing.basicRate}<span className="ml-1 text-sm font-bold text-slate-500">{landing.perKilowatt}</span>
@@ -285,7 +285,7 @@ export function ReferralProgramSection() {
             </div>
           </article>
 
-          <article className="rounded-[1.75rem] border border-white/80 border-l-4 border-l-[#c5dfc2] bg-[linear-gradient(135deg,#e7f2eb_0%,#ffffff_55%,#e8e7f8_100%)] p-5 text-slate-900 shadow-[0_24px_60px_-40px_rgba(48,57,95,0.3)] sm:p-7">
+          <article className="rounded-[1.75rem] border border-white/80 border-l-4 border-l-[#c5dfc2] bg-[linear-gradient(135deg,#e7f2eb_0%,#ffffff_55%,#e8e7f8_100%)] p-5 text-slate-900 shadow-sm sm:p-7">
             <div className="flex items-start justify-between gap-3">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.12em] text-emerald-800">{landing.guidedTitle}</p>
@@ -338,7 +338,7 @@ export function ReferralProgramSection() {
         </h2>
         <dl className="mt-7 grid gap-4 sm:grid-cols-3">
           {landing.faqs.map((faq, index) => (
-            <div key={faq.question} className={`h-full rounded-2xl border border-[#d1e2f2] border-l-4 ${index === 0 ? 'border-l-[#b8d7ec]' : index === 1 ? 'border-l-[#c5dfc2]' : 'border-l-[#efd9ad]'} bg-white p-5 shadow-[0_8px_24px_-20px_rgba(15,48,80,0.45)] sm:p-6`}>
+            <div key={faq.question} className={`h-full rounded-2xl border border-[#d1e2f2] border-l-4 ${index === 0 ? 'border-l-[#b8d7ec]' : index === 1 ? 'border-l-[#c5dfc2]' : 'border-l-[#efd9ad]'} bg-white p-5 shadow-sm sm:p-6`}>
               <dt className="font-bold leading-6 text-slate-950">{faq.question}</dt>
               <dd className="mt-2 text-sm leading-6 text-slate-600">{faq.answer}</dd>
             </div>

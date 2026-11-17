@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1fr_auto] lg:px-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-sky-100/20 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-sky-100">
-              <span className="h-1.5 w-1.5 rounded-full bg-sky-300 shadow-[0_0_12px_rgba(125,211,252,0.8)]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-sky-300 shadow-sm" />
               {content.badge}
             </div>
             <h1 className="mt-6 text-4xl font-black tracking-tighter text-white sm:text-6xl lg:text-7xl">

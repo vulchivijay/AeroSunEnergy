@@ -47,7 +47,7 @@ export default function ThankYouPage() {
         </div>
 
         <div
-          className="relative mx-auto flex aspect-[1.08] w-full max-w-[34rem] items-center justify-center overflow-hidden rounded-[2rem] border border-white/10 bg-[#092d25] shadow-[0_35px_100px_-45px_rgba(0,0,0,0.8)]"
+          className="relative mx-auto flex aspect-[1.08] w-full max-w-[34rem] items-center justify-center overflow-hidden rounded-[2rem] border border-white/10 bg-[#092d25] shadow-sm"
           aria-hidden="true"
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(245,199,106,0.18),transparent_32%),linear-gradient(155deg,rgba(163,217,119,0.08),transparent_55%)]" />
@@ -63,7 +63,7 @@ export default function ThankYouPage() {
           <div className="absolute right-[22%] top-[25%] h-16 w-16 rounded-full bg-[#f5c76a]/20 blur-2xl" />
           <Sun className="absolute right-[23%] top-[25%] h-10 w-10 text-[#f5c76a]" strokeWidth={1.2} />
 
-          <div className="relative flex h-32 w-32 items-center justify-center rounded-full border border-[#a3d977]/40 bg-[#a3d977]/[0.08] shadow-[0_0_70px_-20px_rgba(163,217,119,0.5)] sm:h-40 sm:w-40">
+          <div className="relative flex h-32 w-32 items-center justify-center rounded-full border border-[#a3d977]/40 bg-[#a3d977]/[0.08] shadow-sm sm:h-40 sm:w-40">
             <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#a3d977] text-[#10251f] sm:h-24 sm:w-24">
               <Check className="h-11 w-11 sm:h-14 sm:w-14" strokeWidth={2} />
             </div>

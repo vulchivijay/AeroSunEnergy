@@ -111,7 +111,7 @@ export default function AboutPage() {
 
           <div className="relative mx-auto w-full max-w-md lg:ml-auto">
             <div className="absolute -inset-5 rounded-[2.5rem] bg-teal-700/10 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[30px] border border-[#e2e8e2] bg-white p-2 shadow-[0_20px_55px_-40px_rgba(23,37,84,0.25)]">
+            <div className="relative overflow-hidden rounded-[30px] border border-[#e2e8e2] bg-white p-2 shadow-sm">
               <div className="relative h-[26rem] overflow-hidden rounded-[22px] bg-[#172554] sm:h-[32rem]">
                 <OptimizedImage
                   src="/images/founder-aerosunenergy.webp"
@@ -179,7 +179,7 @@ export default function AboutPage() {
 
       <section id="compliance" className="bg-gradient-to-br from-white to-[#f1f2f6] border-y border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-          <div className="overflow-hidden rounded-[30px] border border-[#e2e8e2] bg-white shadow-[0_20px_55px_-40px_rgba(23,37,84,0.25)]">
+          <div className="overflow-hidden rounded-[30px] border border-[#e2e8e2] bg-white shadow-sm">
             <div className="relative overflow-hidden bg-[linear-gradient(145deg,#172554_0%,#1e3a8a_55%,#312e81_100%)] px-5 py-7 text-white sm:px-8 sm:py-9">
               <div className="absolute -right-12 -top-24 h-64 w-64 rounded-full border border-white/10" aria-hidden="true" />
               <div className="absolute -right-2 -top-14 h-44 w-44 rounded-full border border-white/10" aria-hidden="true" />
@@ -207,7 +207,7 @@ export default function AboutPage() {
                 const label = row.label
                 const status = row.status
                 return (
-                  <article key={label} className="group flex min-h-24 items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-lg sm:gap-4 sm:p-5">
+                  <article key={label} className="group flex min-h-24 items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-sm sm:gap-4 sm:p-5">
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#eaf2e9] font-mono text-sm font-black text-[#14785e] ring-1 ring-[#087a61]/10 transition-colors group-hover:bg-[#dce9df]">
                       {String(index + 1).padStart(2, '0')}
                     </span>
@@ -253,7 +253,7 @@ export default function AboutPage() {
           <div className="mt-12 border-t border-[#cbd6cc] pt-8">
             <div className="grid gap-3 sm:grid-cols-2">
               {coreValuesData.map((value, index) => (
-                <article key={value.title} className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-lg">
+                <article key={value.title} className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-sm">
                   <div className="flex items-center justify-between gap-3">
                     <h3 className="text-sm font-extrabold text-slate-950">{value.title}</h3>
                     <span className="font-mono text-[12px] font-bold text-[#137c63]">0{index + 1}</span>
@@ -365,7 +365,7 @@ export default function AboutPage() {
           </div>
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {content.serviceGroups.map((group, index) => (
-              <article key={group.title} className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-lg sm:p-6">
+              <article key={group.title} className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-sm sm:p-6">
                 <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${a.serviceAccents[index]}`} />
                 <p className="font-mono text-sm font-bold text-[#137c63]">0{index + 1} / {content.solutionsLabel.toUpperCase()}</p>
                 <h3 className="mt-4 text-xl font-black text-slate-950">{group.title}</h3>
@@ -489,7 +489,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <article className="relative overflow-hidden rounded-[22px] bg-[linear-gradient(145deg,#172554_0%,#1e3a8a_55%,#312e81_100%)] p-7 text-white shadow-[0_20px_55px_-40px_rgba(23,37,84,0.35)] sm:p-10 lg:p-12">
+            <article className="relative overflow-hidden rounded-[22px] bg-[linear-gradient(145deg,#172554_0%,#1e3a8a_55%,#312e81_100%)] p-7 text-white shadow-sm sm:p-10 lg:p-12">
               <span className="block font-serif text-5xl font-bold leading-none text-amber-400" aria-hidden="true">“</span>
               <blockquote className="mt-5 text-2xl font-semibold leading-snug tracking-tight sm:text-3xl">
                 {a.quote}
@@ -557,7 +557,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mt-5 flex flex-col gap-5 rounded-[22px] border border-white/10 bg-[linear-gradient(145deg,#172554_0%,#1e3a8a_55%,#312e81_100%)] p-6 text-white shadow-[0_20px_55px_-40px_rgba(23,37,84,0.35)] sm:p-8 lg:flex-row lg:items-end lg:justify-between">
+          <div className="mt-5 flex flex-col gap-5 rounded-[22px] border border-white/10 bg-[linear-gradient(145deg,#172554_0%,#1e3a8a_55%,#312e81_100%)] p-6 text-white shadow-sm sm:p-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
               <p className="text-sm font-extrabold uppercase tracking-[0.24em] text-amber-300">{aboutSection.futureHeading}</p>
               <p className="mt-3 text-sm leading-7 text-teal-50/90 sm:text-lg sm:leading-8">{aboutSection.futureDescription}</p>

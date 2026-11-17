@@ -217,7 +217,7 @@ export default function SolarEnergyPage() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-4xl border border-slate-200 bg-[linear-gradient(145deg,#71300c_0%,#92370b_55%,#a94208_100%)] p-5 shadow-[0_20px_55px_-40px_rgba(120,55,5,0.4)]">
+          <div className="overflow-hidden rounded-4xl border border-slate-200 bg-[linear-gradient(145deg,#71300c_0%,#92370b_55%,#a94208_100%)] p-5 shadow-sm">
             <div className="relative h-72 overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
               <OptimizedImage
                 src="/images/slider/slider-6.png"
@@ -281,7 +281,7 @@ export default function SolarEnergyPage() {
             </div>
 
             <div className="space-y-5">
-              <div className="rounded-[22px] border border-slate-200 bg-[linear-gradient(145deg,#71300c_0%,#92370b_55%,#a94208_100%)] p-5 shadow-[0_20px_55px_-40px_rgba(120,55,5,0.4)]">
+              <div className="rounded-[22px] border border-slate-200 bg-[linear-gradient(145deg,#71300c_0%,#92370b_55%,#a94208_100%)] p-5 shadow-sm">
                 <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-amber-200">{measurement.exampleLabel}</p>
                 <h3 className="mt-2 text-xl font-bold text-white">{measurement.exampleTitle}</h3>
                 <div className="mt-5 space-y-4 text-md leading-7 text-slate-200">

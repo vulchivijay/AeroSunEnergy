@@ -88,7 +88,7 @@ export default function Footer() {
 	return (
 		<footer
 			id="contact"
-			className="relative w-full overflow-hidden border-t border-white/25 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(23,37,84,0.96),rgba(23,37,84,0.96))] text-white/90 shadow-[0_-12px_40px_-28px_rgba(15,23,42,0.75)] before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-amber-400 before:via-white/40 before:to-sky-300"
+			className="relative w-full overflow-hidden border-t border-white/25 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(23,37,84,0.96),rgba(23,37,84,0.96))] text-white/90 shadow-sm before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-amber-400 before:via-white/40 before:to-sky-300"
 		>
 			<div className="pointer-events-none absolute -right-40 top-0 h-[34rem] w-[34rem] rounded-full border border-amber-700/10" aria-hidden="true" />
 
@@ -96,7 +96,7 @@ export default function Footer() {
 
 			<div className="relative mx-auto max-w-7xl px-5 pb-14 pt-14 sm:px-8 sm:pb-20 sm:pt-20 lg:px-10">
 
-				<section className="relative mb-14 overflow-hidden rounded-4xl bg-[linear-gradient(135deg,#d72b0b_0%,#f99104_52%,#faf206_100%)] p-7 text-slate-900 sm:p-10 lg:mb-20 lg:p-14 shadow-2xl">
+				<section className="relative mb-14 overflow-hidden rounded-4xl bg-[linear-gradient(135deg,#d72b0b_0%,#f99104_52%,#faf206_100%)] p-7 text-slate-900 sm:p-10 lg:mb-20 lg:p-14 shadow-sm">
 					<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_88%_45%,rgba(245,199,106,0.18),transparent_35%)]" aria-hidden="true" />
 					<div className="relative grid items-center gap-10 lg:grid-cols-[1fr_auto]">
 						<div className="max-w-3xl">
@@ -124,7 +124,7 @@ export default function Footer() {
 							<div className="absolute inset-2 rounded-full border border-emerald-700/25" />
 							<div className="absolute inset-5 animate-[spin_28s_linear_infinite] rounded-full border border-dashed border-amber-500/50 motion-reduce:animate-none" />
 							<div className="absolute inset-0 animate-[spin_38s_linear_infinite_reverse] rounded-full border border-emerald-700/20 motion-reduce:animate-none" />
-							<div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-[#F5C76A] text-slate-900 shadow-[0_0_60px_rgba(245,199,106,0.3)]">
+							<div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-[#F5C76A] text-slate-900 shadow-sm">
 								<Sun className="h-10 w-10 motion-safe:animate-[spin_20s_linear_infinite] motion-reduce:animate-none" strokeWidth={1.5} aria-hidden="true" />
 							</div>
 							<span className="absolute right-5 top-6 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-white/85 text-[#137c63] shadow-sm">
@@ -263,7 +263,7 @@ export default function Footer() {
 					</section>
 				</div>
 
-				<section aria-labelledby="footer-newsletter" className="mt-14 grid gap-6 rounded-2xl bg-[#147e62] p-6 shadow-xl sm:p-8 lg:grid-cols-[1fr_1fr] lg:items-center">
+				<section aria-labelledby="footer-newsletter" className="mt-14 grid gap-6 rounded-2xl bg-[#147e62] p-6 shadow-sm sm:p-8 lg:grid-cols-[1fr_1fr] lg:items-center">
 					<div>
 						<h2 id="footer-newsletter" className="text-2xl leading-[1.05] tracking-[0.045em] text-slate-200 sm:text-3xl">{footer.stayPowered}</h2>
 						<p className="mt-2 max-w-xl text-sm tracking-[0.06em] leading-6 text-slate-100">{footer.newsletterDescription}</p>

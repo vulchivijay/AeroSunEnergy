@@ -216,7 +216,7 @@ export function SolarEstimation() {
 
   return (
     <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
-      <div className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] shadow-[0_30px_90px_-40px_rgba(2,12,27,0.65)]">
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] shadow-sm">
         <div className="grid lg:grid-cols-[minmax(300px,0.75fr)_1.45fr]">
           <div className="bg-linear-to-br from-[#4568b6] via-[#5c55ae] to-[#3f7798] p-6 text-white sm:p-8 lg:p-10">
             <h1 className="max-w-sm text-3xl font-black leading-tight tracking-tight sm:text-4xl">
@@ -359,7 +359,7 @@ export function SolarEstimation() {
 
           <div className="bg-linear-to-br from-[#f7faff] via-[#f2f4ff] to-[#eef9fb] p-5 sm:p-7 lg:p-9">
             <div className="grid gap-4 sm:grid-cols-2">
-              <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_8px_24px_-20px_rgba(15,48,80,0.5)] sm:p-6">
+              <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
                 <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
                   {calculatorText.idealSystemSize}
                 </p>
@@ -371,7 +371,7 @@ export function SolarEstimation() {
                 </p>
               </article>
 
-              <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_8px_24px_-20px_rgba(15,48,80,0.5)] sm:p-6">
+              <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
                 <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
                   {e.annualSavings}
                 </p>
@@ -380,7 +380,7 @@ export function SolarEstimation() {
                 </p>
               </article>
 
-              <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_8px_24px_-20px_rgba(15,48,80,0.5)] sm:p-6">
+              <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
                 <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
                   {e.annualGeneration}
                 </p>
@@ -389,7 +389,7 @@ export function SolarEstimation() {
                 </p>
               </article>
 
-              <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_8px_24px_-20px_rgba(15,48,80,0.5)] sm:p-6">
+              <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
                 <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
                   {e.roofRequired}
                 </p>
@@ -447,7 +447,7 @@ export function SolarEstimation() {
                 setShowLeadForm(true)
                 setWhatsAppFallbackUrl(null)
               }}
-              className="mt-5 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-2xl bg-emerald-700 px-5 py-4 text-base font-extrabold text-white shadow-[0_12px_24px_-14px_rgba(16,185,129,0.75)] transition hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+              className="mt-5 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-2xl bg-emerald-700 px-5 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
             >
               {calculatorText.quoteCta}
               <span aria-hidden="true">→</span>
@@ -462,7 +462,7 @@ export function SolarEstimation() {
       {showLeadForm && (
         <section
           id={leadFormId}
-          className="mx-auto mt-8 grid max-w-7xl overflow-hidden rounded-[2rem] border border-white/10 bg-white shadow-[0_30px_90px_-40px_rgba(2,12,27,0.65)] lg:grid-cols-[0.85fr_1.15fr]"
+          className="mx-auto mt-8 grid max-w-7xl overflow-hidden rounded-[2rem] border border-white/10 bg-white shadow-sm lg:grid-cols-[0.85fr_1.15fr]"
           aria-labelledby={`${leadFormId}-title`}
         >
           <div className="bg-linear-to-br from-[#4568b6] via-[#5c55ae] to-[#3f7798] p-6 text-white sm:p-8">

@@ -358,7 +358,7 @@ export default function CompanyProfilePage() {
           </div>
         </section>
 
-        <section className="bg-gradient-to-br from-[#f1f2f6] to-white rounded-[30px] p-6 shadow-[0_24px_60px_-40px_rgba(120,53,15,0.35)] sm:p-10">
+        <section className="bg-gradient-to-br from-[#f1f2f6] to-white rounded-[30px] p-6 shadow-sm sm:p-10">
           <SectionHeading
             number="10"
             eyebrow={cp.qualityEyebrow}

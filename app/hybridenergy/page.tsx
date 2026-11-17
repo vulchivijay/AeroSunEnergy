@@ -119,7 +119,7 @@ export default function HybridEnergyPage() {
       </section>
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
-        <div className="rounded-4xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-[0_32px_90px_-38px_rgba(15,23,42,1)] sm:p-8">
+        <div className="rounded-4xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-sm sm:p-8">
           <div className="mb-6 flex items-center justify-between gap-3">
             <div>
               <HybridSectionEyebrow>{hybridPage.integration.eyebrow}</HybridSectionEyebrow>
@@ -166,7 +166,7 @@ export default function HybridEnergyPage() {
 
         <div className="space-y-8">
           {serviceSectionsLocalized.map((service, index) => (
-            <article key={service.title} className="rounded-4xl border border-slate-200 bg-white p-5 shadow-[0_20px_44px_-30px_rgba(15,23,42,0.32)] sm:p-8">
+            <article key={service.title} className="rounded-4xl border border-slate-200 bg-white p-5 shadow-sm sm:p-8">
               <div className="mb-6 flex items-center justify-between gap-3">
                 <div>
                   <p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700">{hybridPage.labels.servicePrefix} {index + 1}</p>
@@ -257,7 +257,7 @@ export default function HybridEnergyPage() {
       </section>
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
-        <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)] sm:p-8">
+        <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
               <HybridSectionEyebrow>{hybridPage.labels.recommendedLaunch}</HybridSectionEyebrow>
@@ -274,7 +274,7 @@ export default function HybridEnergyPage() {
               </div>
             </div>
 
-            <div className="overflow-hidden rounded-4xl border border-slate-200 bg-slate-950 p-5 shadow-[0_28px_70px_-36px_rgba(15,23,42,0.9)]">
+            <div className="overflow-hidden rounded-4xl border border-slate-200 bg-slate-950 p-5 shadow-sm">
               <div className="relative h-72 overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
                 <OptimizedImage
                   src="/images/slider/slider-13.png"

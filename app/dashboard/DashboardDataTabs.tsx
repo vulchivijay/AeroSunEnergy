@@ -388,7 +388,7 @@ export default function DashboardDataTabs() {
   }
 
   return (
-    <section className="mt-7 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_24px_70px_-44px_rgba(15,23,42,0.28)]">
+    <section className="mt-7 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
       <div className="border-b border-slate-200 bg-slate-50/80 px-5 pt-5 sm:px-7">
         <div className="flex flex-wrap gap-2" role="group" aria-label="Database collections">
           {collections.map((collection) => {

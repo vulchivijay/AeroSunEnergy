@@ -432,7 +432,7 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
 
   if (block.type === "code") {
     return (
-      <div className="my-7 overflow-hidden rounded-2xl border border-emerald-900/20 bg-[#10251f] shadow-lg shadow-emerald-950/10">
+      <div className="my-7 overflow-hidden rounded-2xl border border-emerald-900/20 bg-[#10251f] shadow-sm shadow-emerald-950/10">
         {block.language && (
           <p className="border-b border-white/10 px-4 py-2 font-mono text-xs uppercase tracking-[0.18em] text-emerald-200/70">
             {block.language}
@@ -553,7 +553,7 @@ export default function ResearchDevelopmentPage() {
 
           <aside className="relative mx-auto w-full max-w-md lg:ml-auto">
             <div className="absolute -inset-5 rounded-[2.5rem] bg-emerald-400/15 blur-3xl" />
-            <div className="relative rounded-[2rem] border border-white/15 bg-[#14372f] p-6 shadow-2xl shadow-black/30 backdrop-blur-sm sm:p-8">
+            <div className="relative rounded-[2rem] border border-white/15 bg-[#14372f] p-6 shadow-sm shadow-black/30 backdrop-blur-sm sm:p-8">
               <p className="inline-flex w-fit rounded-full border border-lime-200/20 bg-white/[0.06] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-lime-200">
                 {copy.text[6]}
               </p>

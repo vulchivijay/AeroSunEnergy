@@ -77,7 +77,7 @@ export default function PurchaseOrderPage() {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-          <Card className="overflow-hidden border border-slate-200 bg-white/85 shadow-[0_25px_80px_rgba(15,23,42,0.08)] backdrop-blur-md">
+          <Card className="overflow-hidden border border-slate-200 bg-white/85 shadow-sm backdrop-blur-md">
             <CardContent className="p-5 sm:p-7 lg:p-8">
               <div className="space-y-6">
                 <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
@@ -118,7 +118,7 @@ export default function PurchaseOrderPage() {
             </CardContent>
           </Card>
 
-          <Card className="overflow-hidden border border-emerald-100 bg-linear-to-br from-slate-950 via-slate-900 to-emerald-950 text-white shadow-[0_25px_80px_rgba(15,23,42,0.12)]">
+          <Card className="overflow-hidden border border-emerald-100 bg-linear-to-br from-slate-950 via-slate-900 to-emerald-950 text-white shadow-sm">
             <CardContent className="p-5 sm:p-7">
               <p className="text-[12px] font-semibold uppercase tracking-[0.32em] text-emerald-200">{labels.formTitle}</p>
               <h2 className="mt-3 text-2xl font-semibold">{labels.formHeading}</h2>

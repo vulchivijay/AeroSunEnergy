@@ -155,7 +155,7 @@ export function WhySolarSection() {
           {content.cards.map((card, index) => (
             <article
               key={card.title}
-              className={`h-full rounded-2xl border border-[#d1e2f2] border-l-4 ${borderColors[index % borderColors.length]} bg-white p-6 shadow-[0_8px_24px_-20px_rgba(15,48,80,0.45)] sm:p-8`}
+              className={`h-full rounded-2xl border border-[#d1e2f2] border-l-4 ${borderColors[index % borderColors.length]} bg-white p-6 shadow-sm sm:p-8`}
             >
               <h3 className="text-xl font-bold leading-8 text-slate-950">{card.title}</h3>
               <p className="mt-4 text-base leading-8 text-slate-700">{card.description}</p>
@@ -209,7 +209,7 @@ export function ProjectEvidenceSection() {
             {testimonials.map((testimonial, index) => (
               <article
                 key={`${activeIndex}-${index}`}
-                className={`flex min-h-64 flex-col justify-between rounded-[1.5rem] border border-[#cbd5cc] bg-white p-6 shadow-[0_20px_50px_-40px_rgba(16,43,40,0.35)] sm:p-8 ${index === 1 ? 'hidden md:flex' : ''} ${index === 2 ? 'hidden lg:flex' : ''}`}
+                className={`flex min-h-64 flex-col justify-between rounded-[1.5rem] border border-[#cbd5cc] bg-white p-6 shadow-sm sm:p-8 ${index === 1 ? 'hidden md:flex' : ''} ${index === 2 ? 'hidden lg:flex' : ''}`}
               >
                 <div className="blur-md">
                   <p className="text-xs font-bold uppercase tracking-[0.18em] text-amber-800">{content.placeholderLabel}</p>
@@ -303,7 +303,7 @@ export function QuoteTransparencySection() {
         </header>
 
         <div className="space-y-4">
-          <article className="rounded-[1.75rem] border border-white/80 bg-white/75 p-5 shadow-[0_24px_60px_-40px_rgba(48,57,95,0.3)] sm:p-7">
+          <article className="rounded-[1.75rem] border border-white/80 bg-white/75 p-5 shadow-sm sm:p-7">
             <div className="flex items-center gap-3">
               <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-300 text-slate-900">
                 <FileCheck2 className="h-5 w-5" aria-hidden="true" />
@@ -320,7 +320,7 @@ export function QuoteTransparencySection() {
             </ul>
           </article>
 
-          <article className="rounded-[1.75rem] border border-white/80 bg-white/75 p-5 shadow-[0_24px_60px_-40px_rgba(48,57,95,0.3)] sm:p-7">
+          <article className="rounded-[1.75rem] border border-white/80 bg-white/75 p-5 shadow-sm sm:p-7">
             <div className="flex items-center gap-3">
               <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-200 text-sky-950">
                 <ShieldCheck className="h-5 w-5" aria-hidden="true" />

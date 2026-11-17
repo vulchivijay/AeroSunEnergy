@@ -61,17 +61,17 @@ export default function InstallationChecklistPage() {
 
 	return (
 		<main className="min-h-screen bg-[#f7f7f2] text-slate-800">
-			<header className="relative isolate overflow-hidden border-b border-white/25 bg-linear-to-br from-slate-950/75 via-amber-950/60 to-sky-950/75 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_30px_80px_-40px_rgba(15,23,42,0.8)] backdrop-blur-2xl ring-1 ring-inset ring-white/10">
+			<header className="relative isolate overflow-hidden border-b border-white/25 bg-linear-to-br from-slate-950/75 via-amber-950/60 to-sky-950/75 text-white shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/10">
 				<div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_18%_90%,rgba(245,158,11,0.22),transparent_38%),radial-gradient(ellipse_at_88%_10%,rgba(14,165,233,0.2),transparent_34%)]" />
 				<div className="absolute -right-20 top-[-12rem] -z-10 h-[35rem] w-[35rem] rounded-full border border-amber-100/10">
 					<div className="absolute inset-10 rounded-full border border-amber-100/10" />
 					<div className="absolute inset-20 rounded-full border border-amber-100/10" />
 					<div className="absolute inset-32 rounded-full border border-amber-100/10" />
 				</div>
-				<div className="mx-auto my-6 grid w-[calc(100%-2rem)] max-w-7xl items-center gap-10 rounded-[30px] border border-white/35 bg-white/20 px-5 py-14 shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_28px_75px_-35px_rgba(15,23,42,0.75)] backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:px-8 sm:py-20 lg:my-8 lg:grid-cols-[1fr_auto] lg:px-10">
+				<div className="mx-auto my-6 grid w-[calc(100%-2rem)] max-w-7xl items-center gap-10 rounded-[30px] border border-white/35 bg-white/20 px-5 py-14 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:px-8 sm:py-20 lg:my-8 lg:grid-cols-[1fr_auto] lg:px-10">
 					<div className="max-w-3xl">
 						<div className="inline-flex items-center gap-2 rounded-full border border-amber-100/20 bg-white/5 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-amber-100">
-							<span className="h-1.5 w-1.5 rounded-full bg-amber-300 shadow-[0_0_12px_rgba(252,211,77,0.8)]" />
+							<span className="h-1.5 w-1.5 rounded-full bg-amber-300 shadow-sm" />
 							{labels.badge}
 						</div>
 						<h1 className="mt-6 text-4xl font-black tracking-[0.065em] text-white sm:text-6xl lg:text-7xl">
@@ -99,7 +99,7 @@ export default function InstallationChecklistPage() {
 
 			<div className="mx-auto grid max-w-7xl gap-8 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-12 lg:px-10">
 				<article className="min-w-0">
-					<div className="mb-8 rounded-3xl border border-amber-200/80 bg-white p-6 shadow-[0_20px_55px_-42px_rgba(15,23,42,0.5)] sm:p-8">
+					<div className="mb-8 rounded-3xl border border-amber-200/80 bg-white p-6 shadow-sm sm:p-8">
 						<div className="flex items-start gap-4">
 							<span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-lg text-amber-800">i</span>
 							<div>
@@ -127,7 +127,7 @@ export default function InstallationChecklistPage() {
 							<section
 								key={section.title}
 								id={`checklist-phase-${index + 1}`}
-								className={`scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 shadow-[0_15px_45px_-40px_rgba(15,23,42,0.5)] ${index % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}
+								className={`scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 shadow-sm ${index % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}
 							>
 								<div className="flex items-start gap-4 p-5 sm:p-6">
 									<span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-amber-200 bg-amber-50 font-mono text-md font-bold text-amber-800">

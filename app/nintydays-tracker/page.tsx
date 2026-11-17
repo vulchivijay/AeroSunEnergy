@@ -78,7 +78,7 @@ export default function NinetyDayTrackerPage() {
             className="relative mx-auto w-full max-w-md lg:ml-auto"
           >
             <div className="absolute -inset-5 rounded-[2.5rem] bg-[#ed7357]/20 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.07] p-4 shadow-2xl shadow-black/30 backdrop-blur-sm">
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.07] p-4 shadow-sm shadow-black/30 backdrop-blur-sm">
               <div className="relative overflow-hidden rounded-[1.5rem] bg-[linear-gradient(155deg,#37466b_0%,#202c49_55%,#3b3557_100%)] p-6">
                 <div className="flex items-center justify-between gap-3">
                   <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-[#d7deee]">
@@ -141,7 +141,7 @@ export default function NinetyDayTrackerPage() {
             {trackerPage.actionPlan.map((stage, index) => (
               <div
                 key={stage.title}
-                className="rounded-[1.5rem] border border-[#c9cde0] bg-[#fbfaf7] p-5 shadow-[0_20px_45px_-35px_rgba(25,36,61,0.25)]  "
+                className="rounded-[1.5rem] border border-[#c9cde0] bg-[#fbfaf7] p-5 shadow-sm  "
               >
                 <div className="mb-4 flex items-center gap-3">
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-linear-to-br from-[#f2b84b] to-[#ed7357] text-md font-black text-[#30243a]">
@@ -180,7 +180,7 @@ export default function NinetyDayTrackerPage() {
             <div className="mt-6 h-1 w-16 rounded-full bg-[#ed7357]" />
           </div>
 
-          <div className="overflow-hidden rounded-[1.75rem] border border-[#d8cdbb] bg-[#fffdf8] shadow-[0_24px_60px_-40px_rgba(25,36,61,0.3)]  ">
+          <div className="overflow-hidden rounded-[1.75rem] border border-[#d8cdbb] bg-[#fffdf8] shadow-sm  ">
             <div className="overflow-x-auto">
               <table className="min-w-full text-left text-sm text-[#4c566d] ">
                 <thead className="bg-[#f0e6d8] text-[#202b43]  ">
@@ -213,7 +213,7 @@ export default function NinetyDayTrackerPage() {
       </section>
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-5 py-14 sm:px-8 sm:pb-20 lg:px-10">
-        <div className="mx-auto max-w-7xl rounded-[2rem] border border-[#e5b997] bg-[#f7e3d3] p-7 shadow-[0_24px_60px_-40px_rgba(237,115,87,0.35)]  ">
+        <div className="mx-auto max-w-7xl rounded-[2rem] border border-[#e5b997] bg-[#f7e3d3] p-7 shadow-sm  ">
           <p className="text-[12px] font-black uppercase tracking-[0.28em] text-[#9b4b42] ">
             {trackerPage.assumptionsTitle}
           </p>
@@ -246,7 +246,7 @@ export default function NinetyDayTrackerPage() {
             {trackerPage.phases.map((phase, index) => (
               <article
                 key={phase.period}
-                className="overflow-hidden rounded-[1.75rem] border border-[#bdcfcd] bg-[#fbfaf7] shadow-[0_20px_45px_-35px_rgba(25,36,61,0.25)]  "
+                className="overflow-hidden rounded-[1.75rem] border border-[#bdcfcd] bg-[#fbfaf7] shadow-sm  "
               >
                 <div className="flex flex-wrap items-center gap-3 bg-[#273854] px-5 py-4 text-white">
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#f2b84b] text-md font-black text-[#30243a]">
@@ -299,7 +299,7 @@ export default function NinetyDayTrackerPage() {
       </section>
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-5 py-14 text-slate-900 sm:px-8 sm:pb-20 lg:px-10">
-        <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-[#263451] p-7 shadow-[0_24px_60px_-40px_rgba(0,0,0,0.55)] ">
+        <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-[#263451] p-7 shadow-sm ">
           <p className="text-[12px] font-black uppercase tracking-[0.28em] text-amber-800">
             {trackerPage.recommendation.eyebrow}
           </p>

@@ -57,7 +57,7 @@ export default function Brands() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="min-w-0">
               <p className="inline-flex items-center gap-2 rounded-full border border-amber-700/20 bg-amber-100/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.24em] text-amber-900">
-                <span className="h-2 w-2 rounded-full bg-emerald-600 shadow-[0_0_14px_rgba(5,150,105,0.45)]" aria-hidden="true" />
+                <span className="h-2 w-2 rounded-full bg-emerald-600 shadow-sm" aria-hidden="true" />
                 {section.eyebrow}
               </p>
               <h2 id="brand-section-title" className="mt-4 max-w-3xl text-2xl font-black tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
@@ -87,7 +87,7 @@ export default function Brands() {
             return (
               <li
                 key={brand.file}
-                className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-[1.25rem] border p-3 shadow-[0_22px_55px_-38px_rgba(0,0,0,0.75)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_65px_-38px_rgba(0,0,0,0.85)] sm:rounded-[1.5rem] sm:p-4"
+                className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-[1.25rem] border p-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-sm sm:rounded-[1.5rem] sm:p-4"
                 style={{
                   borderColor: `hsl(${brand.hue} 68% 72%)`,
                   background: `linear-gradient(145deg, hsl(${brand.hue} 82% 95%), #fff 48%, hsl(${brand.hue} 76% 89%))`,

@@ -160,7 +160,7 @@ export default function Contact() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#102a43]/75 via-transparent to-[#102a43]/10" />
-              <div className="absolute right-8 top-8 flex h-28 w-28 items-center justify-center rounded-full border border-white/70 bg-amber-300 text-center text-[12px] font-black uppercase leading-4 tracking-[0.16em] text-slate-900 shadow-xl sm:right-12 sm:top-12 sm:h-36 sm:w-36">
+              <div className="absolute right-8 top-8 flex h-28 w-28 items-center justify-center rounded-full border border-white/70 bg-amber-300 text-center text-[12px] font-black uppercase leading-4 tracking-[0.16em] text-slate-900 shadow-sm sm:right-12 sm:top-12 sm:h-36 sm:w-36">
                 {energyBadge} <span className="mx-1 text-[#137c63]">+</span> {energyBadgeAccent}<br />{energyBadgeSuffix}
               </div>
               <div className="absolute bottom-7 left-7 max-w-xs border-l-2 border-amber-300 pl-4 text-sm font-semibold leading-7 text-white sm:bottom-10 sm:left-10">
@@ -211,7 +211,7 @@ export default function Contact() {
             ))}
           </div>
 
-          <section className="mt-12 overflow-hidden rounded-[30px] border border-slate-200 bg-[linear-gradient(125deg,#e0f2fe_0%,#ede9fe_52%,#fce7f3_100%)] shadow-[0_20px_55px_-40px_rgba(49,46,129,0.2)] sm:mt-16" aria-labelledby="contact-form-title">
+          <section className="mt-12 overflow-hidden rounded-[30px] border border-slate-200 bg-[linear-gradient(125deg,#e0f2fe_0%,#ede9fe_52%,#fce7f3_100%)] shadow-sm sm:mt-16" aria-labelledby="contact-form-title">
             <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
               <div className="bg-[linear-gradient(145deg,#bfdbfe_0%,#ddd6fe_52%,#fbcfe8_100%)] p-6 text-slate-900 sm:p-9">
                 <p className="text-xs font-black uppercase tracking-[0.2em] text-indigo-900">{contactUs}</p>
@@ -317,7 +317,7 @@ export default function Contact() {
               </p>
             </header>
 
-            <div className="space-y-3 rounded-[30px] border border-white/80 bg-white/75 p-3 shadow-[0_20px_55px_-40px_rgba(49,46,129,0.25)] backdrop-blur-sm sm:p-5">
+            <div className="space-y-3 rounded-[30px] border border-white/80 bg-white/75 p-3 shadow-sm backdrop-blur-sm sm:p-5">
               {solarFaqs.map((faq) => (
                 <FaqCard key={faq.question} question={faq.question} answer={faq.answer} />
               ))}
