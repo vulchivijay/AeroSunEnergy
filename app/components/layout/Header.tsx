@@ -120,7 +120,7 @@ export default function Navbar() {
               ? 'bg-linear-to-r from-[#137c63] to-[#20A44A] text-white shadow-[0_8px_20px_-12px_rgba(19,124,99,0.8)] ring-1 ring-inset ring-white/40'
               : 'text-white/90 hover:bg-white/10 hover:text-amber-100 hover:shadow-sm'
         }`
-      : `group relative z-10 flex h-full min-w-0 flex-col items-center gap-1 rounded-xl px-1 py-1.5 text-sm transition-colors 2xl:text-sm ${
+      : `group relative z-10 flex h-full min-w-0 flex-col items-center gap-1 rounded-xl px-1 py-1.5 text-sm transition-colors 2xl:text-[13px] ${
           active
             ? 'bg-linear-to-r from-[#137c63] to-[#20A44A] text-white shadow-[0_8px_20px_-12px_rgba(19,124,99,0.8)]'
             : disabled
@@ -357,11 +357,11 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="relative mx-auto flex min-h-[5.25rem] w-full items-center justify-between gap-1 px-3 py-2 sm:gap-3 sm:px-6 lg:px-8 max-[319px]:flex-wrap">
+      <div className="relative mx-auto flex min-h-[5.25rem] w-full items-center justify-between gap-1 p-2 sm:px-3 max-[319px]:flex-wrap">
         <Logo compact />
 
         <nav aria-label={t.navbar.primaryNavigationLabel} className="hidden min-w-0 flex-1 items-center justify-center 2xl:flex">
-          <div className="relative grid w-full min-w-0 grid-flow-col auto-cols-fr items-stretch justify-center gap-1">
+          <div className="relative grid min-w-0 grid-flow-col auto-cols-fr items-stretch justify-center gap-1">
             <span className="pointer-events-none absolute left-[8%] right-[8%] top-[1.375rem] h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" aria-hidden="true" />
             {navLinks.map((link) => renderNavigationLink(link))}
           </div>
