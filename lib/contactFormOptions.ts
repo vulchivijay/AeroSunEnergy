@@ -1,0 +1,60 @@
+export const solarNeedOptions = [
+  { value: 'residential', label: 'Residential' },
+  { value: 'commercial', label: 'Commercial' },
+  { value: 'industrial', label: 'Industrial' },
+  { value: 'agricultural', label: 'Agricultural' },
+  { value: 'other', label: 'Other' },
+] as const
+
+export const indianStates = [
+  'Andhra Pradesh',
+  'Arunachal Pradesh',
+  'Assam',
+  'Bihar',
+  'Chhattisgarh',
+  'Goa',
+  'Gujarat',
+  'Haryana',
+  'Himachal Pradesh',
+  'Jharkhand',
+  'Karnataka',
+  'Kerala',
+  'Madhya Pradesh',
+  'Maharashtra',
+  'Manipur',
+  'Meghalaya',
+  'Mizoram',
+  'Nagaland',
+  'Odisha',
+  'Punjab',
+  'Rajasthan',
+  'Sikkim',
+  'Tamil Nadu',
+  'Telangana',
+  'Tripura',
+  'Uttar Pradesh',
+  'Uttarakhand',
+  'West Bengal',
+  'Andaman and Nicobar Islands',
+  'Chandigarh',
+  'Dadra and Nagar Haveli and Daman and Diu',
+  'Delhi',
+  'Jammu and Kashmir',
+  'Ladakh',
+  'Lakshadweep',
+  'Puducherry',
+] as const
+
+export const electricityBillOptions = [
+  { value: 'below_1500', label: 'Below ₹1,500' },
+  { value: '1500_3000', label: '₹1,500 – ₹3,000' },
+  { value: '3000_5000', label: '₹3,000 – ₹5,000' },
+  { value: '5000_10000', label: '₹5,000 – ₹10,000' },
+  { value: 'above_10000', label: 'Above ₹10,000' },
+] as const
+
+export const financingOptions = [
+  { value: 'yes', label: 'Yes' },
+  { value: 'no', label: 'No' },
+  { value: 'not_sure', label: 'Not sure' },
+] as const

@@ -18,6 +18,18 @@ export interface AuthSessionDocument extends Document {
   created_at: Date
 }
 
+export type WebsiteFormSubmissionValue = string | number | boolean | string[]
+
+export interface WebsiteFormSubmissionDocument extends Document {
+  _id: ObjectId
+  reference_code: string
+  form_type: string
+  payload: Record<string, WebsiteFormSubmissionValue>
+  status: string
+  created_at: Date
+  updated_at: Date
+}
+
 let databasePromise: Promise<Db> | undefined
 
 async function connectDatabase(): Promise<Db> {

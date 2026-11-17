@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     'AeroSun Energy business dashboard',
   ],
   alternates: {
-    canonical: '/nintydays-tracker',
+    canonical: '/billing/nintydays-tracker',
   },
   openGraph: {
     title: '90-Day Business Execution Tracker | AeroSun Energy',
     description:
       'Track leads, expenses, orders, and business execution milestones with the AeroSun Energy 90-day business tracker.',
-    url: 'https://aerosunenergy.in/nintydays-tracker',
+    url: 'https://aerosunenergy.in/billing/nintydays-tracker',
     siteName: 'AeroSun Energy',
     type: 'website',
   },

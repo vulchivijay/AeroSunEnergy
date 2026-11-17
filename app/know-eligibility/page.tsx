@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useLocale } from '@/lib/LocaleContext'
+import ConsumerRegistrationProcess from '@/app/components/sections/ConsumerRegistrationProcess'
 
 export default function KnowEligibilityPage() {
   const { t } = useLocale()
@@ -148,6 +149,7 @@ export default function KnowEligibilityPage() {
                       </li>
                     ))}
                   </ol>
+                  <ConsumerRegistrationProcess />
                 </div>
               </div>
               <div className="h-px bg-linear-to-r from-emerald-100 via-sky-100 to-transparent" />

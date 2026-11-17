@@ -4306,6 +4306,10 @@
       {
         "label": "தொடர்பு",
         "href": "/contact"
+      },
+      {
+        "label": "நிதி",
+        "href": "/finance"
       }
     ],
     "quiries": [
@@ -4750,8 +4754,7 @@
           }
         ],
         "consent": "I have permission from my friend to share their contact details with AeroSun Energy so the team can contact them about solar.",
-        "privacyPrefix": "We use these details to follow up on this referral. See our",
-        "privacyLink": "Privacy Policy",
+        "privacyPrefix": "We use these details to follow up on this referral.",
         "submit": "Submit referral",
         "submitting": "Submitting referral…",
         "successTitle": "Referral received",
@@ -7647,8 +7650,7 @@
     }
   },
   "formDataNotice": {
-    "prefix": "Submitting stores the information you provide in AeroSun Energy’s database so we can respond to or manage your request. See our",
-    "link": "Privacy Policy"
+    "prefix": "நீங்கள் வழங்கும் தகவல், உங்கள் கோரிக்கைக்கு பதிலளிக்க அல்லது அதை நிர்வகிக்க AeroSun Energy தரவுத்தளத்தில் சேமிக்கப்படும்."
   },
   "formSubmission": {
     "saving": "சமர்ப்பிப்பு சேமிக்கப்படுகிறது…",
@@ -7752,16 +7754,20 @@
     "attributionLinkText": "ChatGPT.",
     "legalLinks": [
       {
-        "label": "தனியுரிமைக் கொள்கை",
-        "href": "/privacy-policy"
-      },
-      {
         "label": "விதிமுறைகள் மற்றும் நிபந்தனைகள்",
         "href": "/terms-conditions"
       },
       {
         "label": "உத்தரவாதம் மற்றும் சேவை கொள்கை",
-        "href": "/warranty-policy"
+        "href": "/billing/warranty-policy"
+      },
+      {
+        "label": "ரத்து மற்றும் பணத்திரும்பப் பெறுதல் கொள்கை",
+        "href": "/cancellation-refund"
+      },
+      {
+        "label": "பில்லிங் மற்றும் திட்ட ஆவணங்கள்",
+        "href": "/billing"
       }
     ],
     "attribution": "Built with Love and passion by Vulchi Vijaya Kumar Raju (Kshatriya's).",
@@ -10008,22 +10014,33 @@
     "emailDirect": "Email directly",
     "openEmailDraft": "Open email draft",
     "form": {
-      "title": "Send us a project enquiry",
-      "description": "Tell us a little about your project and our team will follow up.",
-      "fullName": "Full name",
-      "fullNamePlaceholder": "Your name",
-      "email": "Email address",
-      "emailPlaceholder": "you@example.com",
-      "phone": "Phone number",
-      "phonePlaceholder": "Optional contact number",
+      "title": "சூரிய ஆற்றலுக்காக எங்களுடன் இணையுங்கள்",
+      "description": "உங்கள் தொடர்பு விவரங்களையும் சூரிய ஆற்றல் தேவைகளையும் பகிருங்கள். எங்கள் குழு உங்களைத் தொடர்புகொள்ளும்.",
+      "fullName": "முழுப் பெயர்",
+      "fullNamePlaceholder": "முழுப் பெயர்",
+      "email": "மின்னஞ்சல் முகவரி",
+      "emailPlaceholder": "மின்னஞ்சல் முகவரியை உள்ளிடவும்",
+      "phone": "கைபேசி எண்",
+      "phonePlaceholder": "கைபேசி எண்ணை உள்ளிடவும்",
+      "solarNeed": "சூரிய ஆற்றல் தேவை",
+      "solarNeedPlaceholder": "எதற்கான சூரிய ஆற்றல்?",
+      "state": "மாநிலம்",
+      "statePlaceholder": "மாநிலத்தைத் தேர்ந்தெடுக்கவும்",
+      "monthlyAverageElectricityBill": "சராசரி மாத மின்சாரக் கட்டணத்தைத் தேர்ந்தெடுக்கவும்",
+      "monthlyAverageElectricityBillPlaceholder": "சராசரி மாத மின்சாரக் கட்டணம்",
+      "interestedInFinancing": "நிதி உதவியில் விருப்பமா?",
+      "interestedInFinancingPlaceholder": "நிதி உதவியில் விருப்பம்",
+      "solarNeedOptions": ["குடியிருப்பு", "வணிகம்", "தொழில்துறை", "விவசாயம்", "மற்றவை"],
+      "electricityBillOptions": ["₹1,500க்கு கீழ்", "₹1,500 – ₹3,000", "₹3,000 – ₹5,000", "₹5,000 – ₹10,000", "₹10,000க்கு மேல்"],
+      "financingOptions": ["ஆம்", "இல்லை", "உறுதியாகத் தெரியவில்லை"],
       "projectType": "Project type",
       "projectTypePlaceholder": "Rooftop, park, road, commercial",
       "usage": "Approx. usage",
       "usagePlaceholder": "Monthly units or kW target",
       "message": "Message",
       "messagePlaceholder": "Tell us where the site is, what you want to power, and when you want to start.",
-      "submit": "Send enquiry",
-      "submitting": "Saving enquiry…",
+      "submit": "சமர்ப்பிக்கவும்",
+      "submitting": "சமர்ப்பிக்கப்படுகிறது…",
       "success": "Your enquiry has been saved."
     },
     "highlights": [
@@ -10129,6 +10146,13 @@
     "yearSuffix": "ஆண்டு",
     "contactUs": "எங்களைத் தொடர்புகொள்ளுங்கள்",
     "estimatesDisclaimer": "மதிப்பீடுகள் மட்டுமே. 25 ஆண்டு கணிப்பு, மின்கட்டணமும் மின் உற்பத்தியும் மாறாது எனக் கருதுகிறது; உண்மையான சேமிப்பு தள நிலைமைகள், அமைப்பின் செயல்திறன் மற்றும் DISCOM மின்கட்டணத்தைப் பொறுத்தது.",
+    "quoteHeroTitle": "சூரிய ஆற்றலுக்கு மாறுங்கள் ☀️ உங்கள் மின்சாரக் கட்டணத்தை 90% குறைக்கவும்",
+    "quoteHeroSubtitle": "3 படிகளில் இலவச தனிப்பயன் மதிப்பீட்டைப் பெறுங்கள்",
+    "quoteHeroNamePlaceholder": "முழுப் பெயர்",
+    "quoteHeroMobilePlaceholder": "கைபேசி எண்",
+    "quoteHeroSubmit": "தொடங்குங்கள்",
+    "quoteHeroDisclosurePrefix": "இந்தப் படிவத்தைச் சமர்ப்பிப்பதன் மூலம், நீங்கள் ஒப்புக்கொள்கிறீர்கள்",
+    "quoteHeroTerms": "விதிமுறைகள் மற்றும் நிபந்தனைகள்",
     "freeAssessmentCta": "எனக்கான இலவச சூரிய மின்சார மதிப்பீட்டைப் பெறுங்கள்",
     "freeAssessmentLabel": "இலவச சூரிய மின்சார மதிப்பீடு",
     "leadName": "பெயர்",
@@ -11782,7 +11806,37 @@
       "guideTitle": "Eligibility guide",
       "important": "Important",
       "importantDescription": "Subsidy amounts, vendor requirements, and programme rules can change. Confirm the latest details through the official portal and your local DISCOM.",
-      "portalLink": "Visit PM Surya Ghar portal"
+      "portalLink": "PM Surya Ghar இணையதளத்தைத் திறக்கவும்",
+      "consumerRegistration": {
+        "eyebrow": "இணையதள வழிகாட்டி",
+        "titleAccent": "நுகர்வோர்",
+        "title": "பதிவு நடைமுறை",
+        "description": "அதிகாரப்பூர்வ PM Surya Ghar இணையதளத்தில் இந்தப் படிகளைப் பின்பற்றுங்கள். இணையதளப் பக்கங்களும் மெனுக்களும் மாறக்கூடும்; அங்கு காட்டப்படும் சமீபத்திய வழிமுறைகளைப் பின்பற்றவும்.",
+        "stepLabel": "படி",
+        "portalLink": "அதிகாரப்பூர்வ இணையதளத்தைத் திறக்கவும்",
+        "benefits": {
+          "title": "நன்மைகள்",
+          "residentialTitle": "குடியிருப்பு குடும்பங்களுக்கான மானியம்",
+          "communityTitle": "GHS/RWA",
+          "communityAccent": "மானியம்",
+          "communitySubtitle": "குழு வீட்டு வசதி சங்கம் / குடியிருப்போர் நலச் சங்கம்",
+          "communityDetails": "EV சார்ஜிங் உட்பட பொதுவான வசதிகளுக்கு, ஒவ்வொரு வீட்டிற்கும் 3 kW என்ற அளவில் அதிகபட்சம் 500 kW திறன். GHS/RWA குடியிருப்போர் நிறுவும் தனிப்பட்ட கூரை சூரிய அமைப்புகளும் இந்த வரம்பில் அடங்கும்.",
+          "specialStatesNote": "சிறப்பு மாநிலங்களில், தற்போதைய திட்ட விதிகளுக்கு உட்பட்டு ஒவ்வொரு kWக்கும் கூடுதலாக 10% மானியம் கிடைக்கலாம்.",
+          "capacityTitle": "குடும்பங்களுக்கான பொருத்தமான கூரை சூரிய மின் நிலையத் திறன்",
+          "consumptionLabel": "சராசரி மாத மின்சாரப் பயன்பாடு (அலகுகள்)",
+          "capacityLabel": "பொருத்தமான கூரை சூரிய மின் நிலையத் திறன்",
+          "consumptionValues": ["0–150", "150–300", ">300"],
+          "capacityValues": ["1–2 kW", "2–3 kW", "3 kWக்கு மேல்"]
+        },
+        "steps": [
+          {"title":"அதிகாரப்பூர்வ இணையதளத்தைப் பார்வையிடவும்","description":"நுகர்வோர் பதிவைத் தொடங்க PM Surya Ghar இணையதளத்தைத் திறக்கவும்.","url":"https://pmsuryaghar.gov.in/"},
+          {"title":"Consumer Login-ஐத் திறக்கவும்","description":"நுகர்வோர் பக்கத்தில் “Apply Now” என்பதைத் தேர்ந்தெடுக்கவும் அல்லது Login மெனுவில் “Consumer Login” என்பதைத் தேர்ந்தெடுக்கவும்."},
+          {"title":"கைபேசி எண்ணைச் சரிபார்க்கவும்","description":"பதிவு செய்யப்பட்ட நுகர்வோர் கைபேசி எண்ணை உள்ளிட்டு, captcha-வை முடித்து, வழிகாட்டுதல்களைப் படித்ததை உறுதிசெய்து “Verify” என்பதைத் தேர்ந்தெடுக்கவும்."},
+          {"title":"OTP மூலம் உள்நுழையவும்","description":"SMS மூலம் கிடைத்த ஒருமுறை கடவுச்சொல்லை உள்ளிட்டு “Login” என்பதைத் தேர்ந்தெடுக்கவும்."},
+          {"title":"நுகர்வோர் சுயவிவரத்தைச் சேமிக்கவும்","description":"உங்கள் பெயர், மின்னஞ்சல், முகவரி, மாநிலம், மாவட்டம், PIN குறியீட்டை உள்ளிட்டு சுயவிவரத்தைச் சேமிக்கவும்."},
+          {"title":"கூரை சூரிய மின் விண்ணப்பத்தைத் தொடங்கவும்","description":"“Apply for Solar Rooftop” அல்லது Vendor Selection என்பதைத் தேர்ந்தெடுக்கவும். மாநிலம் மற்றும் மின்விநியோக நிறுவனத்தைத் தேர்ந்தெடுத்து, நுகர்வோர் கணக்கு எண்ணை உள்ளிட்டு, விவரங்களைப் பெற்று “Next” என்பதைத் தேர்ந்தெடுக்கவும்."}
+        ]
+      }
     },
     "eligibilityChecks": [
       {
@@ -11885,6 +11939,62 @@
       "Wind turbine or hybrid project without the specific qualifying rooftop solar configuration under that scheme",
       "Non-DCR-compliant modules, ineligible equipment, or failure to complete the official portal process"
     ]
+  },
+  "financePage": {
+    "eyebrow": "PM Surya Ghar: Muft Bijli Yojana",
+    "title": "நுகர்வோர் நிதி விருப்பங்கள்",
+    "description": "கூரை சூரிய மின் அமைப்புக்கான தரநிலை கடன் தயாரிப்பைப் பார்வையிட்டு, ₹2 லட்சம் வரையிலான மற்றும் அதற்கு மேற்பட்ட கடன்களின் நிபந்தனைகளை ஒப்பிடுங்கள்.",
+    "comparisonLink": "கடன் ஒப்பீட்டைப் பார்க்கவும்",
+    "applicationLink": "விண்ணப்பம் மற்றும் முக்கிய அறிவிப்பு",
+    "loanBands": [
+      {"title":"₹2 லட்சம் வரை கடன்","amount":"அதிகபட்சம் ₹2 லட்சம்"},
+      {"title":"₹2 லட்சத்துக்கு மேல் கடன்","amount":"அதிகபட்சம் ₹6 லட்சம்"}
+    ],
+    "productTitle": "PM Surya Ghar: தரநிலை கடன் தயாரிப்பு",
+    "tableDescription": "கீழே உள்ள விவரங்கள் வழங்கப்பட்ட குறிப்புப் பொருளிலிருந்து எடுக்கப்பட்டவை. இரு கடன் வகைகளுக்கும் பொதுவான நிபந்தனைகள் ஒன்றாகக் காட்டப்பட்டுள்ளன.",
+    "headers": {"number":"வ.எண்","item":"விவரம்","upToTwoLakhs":"தகுதி அளவுகோல்கள் (கடன் ₹2 லட்சம் வரை)","aboveTwoLakhs":"தகுதி நிபந்தனைகள் (கடன் ₹2 லட்சத்துக்கு மேல்)"},
+    "rows": [
+      {"number":"1","item":"நோக்கம்","upToTwoLakhs":"கூரை சூரிய மின் அமைப்பு நிறுவுதல்","aboveTwoLakhs":"கூரை சூரிய மின் அமைப்பு நிறுவுதல்"},
+      {"number":"2","item":"கடன் தொகை","upToTwoLakhs":"அதிகபட்ச கடன் தொகை ₹2 லட்சம்","aboveTwoLakhs":"அதிகபட்ச கடன் தொகை ₹6 லட்சம்"},
+      {"number":"3","item":"வயது மற்றும் பிற தகுதி நிபந்தனைகள்","upToTwoLakhs":["வயது 65 வரை; கடன் பெறுபவர் 70 வயதை அடைவதற்கு முன் திருப்பிச் செலுத்துதல் முடிக்கப்பட வேண்டும்.","தனிநபர் விண்ணப்பதாரர்களுக்கு.","CIBIL மதிப்பெண் 680 அல்லது அதற்கு மேல்; புதிய கடன் (NTC) வாடிக்கையாளர்களும் தகுதியுடையவர்கள்.","DISCOM நுகர்வோர் எண் சரிபார்ப்புக்கு மட்டும் தேவை.","MNRE நிர்ணயிக்கும் அளவுக்கு போதுமான கூரைப் பரப்பளவு இருக்க வேண்டும்.","வங்கியில் சேமிப்புக் கணக்கு கட்டாயம்."],"aboveTwoLakhs":[],"shared":true},
+      {"number":"4","item":"PAN","upToTwoLakhs":"தேவையில்லை","aboveTwoLakhs":"PAN கட்டாயம்"},
+      {"number":"5","item":"கடன் பெறுபவரின் பங்கு","upToTwoLakhs":"மொத்த திட்டச் செலவில் குறைந்தது 10%","aboveTwoLakhs":"மொத்த திட்டச் செலவில் குறைந்தது 20%"},
+      {"number":"6","item":"வட்டி விகிதம் (மாறும்)","upToTwoLakhs":["RBI ரெப்போ விகிதம் + 0.50%.","வழங்கப்பட்ட குறிப்பில் ஆண்டுக்கு 6.00% என உள்ளது; நடைமுறைத் தேதி குறிப்பிடப்படவில்லை."],"aboveTwoLakhs":["வீட்டுக் கடன் வாடிக்கையாளர்கள்: அவர்களின் வீட்டுக் கடன் விகிதம்.","மற்ற வாடிக்கையாளர்கள்: வீட்டுக் கடன் விகிதம் + 100 அடிப்படைப் புள்ளிகள்."]},
+      {"number":"7","item":"காலம்","upToTwoLakhs":["மொரட்டோரியம் காலம் உட்பட அதிகபட்சம் 120 மாதங்கள்.","குறைந்தபட்ச காலம் இல்லை.","முன்கூட்டிச் செலுத்தும் கட்டணம் இல்லை."],"aboveTwoLakhs":[],"shared":true},
+      {"number":"8","item":"பிணையம்","upToTwoLakhs":"வங்கிக் கடன் மூலம் வாங்கிய கூரை சூரிய உபகரணங்களின் மீது ஹைப்போதிகேஷன்.","aboveTwoLakhs":"","shared":true},
+      {"number":"9","item":"செயலாக்கக் கட்டணம்","upToTwoLakhs":"பூஜ்ஜியம்","aboveTwoLakhs":"","shared":true},
+      {"number":"10","item":"நிதி உதவி (மானியம்)","upToTwoLakhs":["1 kWக்கு ₹30,000.","2 kWக்கு ₹60,000.","3 kWக்கு ₹78,000.","கடன் பெறுபவர் PM Surya Ghar இணையதளத்தில் மானியத்தைக் கோர வேண்டும்."],"aboveTwoLakhs":["மானியத் தொகை: ₹78,000.","கடன் பெறுபவர் PM Surya Ghar இணையதளத்தில் மானியத்தைக் கோர வேண்டும்."]},
+      {"number":"11","item":"நிகர ஆண்டு வருமானம்","upToTwoLakhs":"தேவையில்லை","aboveTwoLakhs":"குறைந்தது ₹3 லட்சம்"},
+      {"number":"12","item":"தேவையான ஆவணங்கள்","upToTwoLakhs":"ஆதார் எண்","aboveTwoLakhs":["KYC ஆவணங்கள்.","கடந்த 2 ஆண்டுகளுக்கான வருமான வரி அறிக்கைகள் அல்லது Form 16.","ஆறு மாத சம்பள அறிக்கைகள்.","மின்சாரக் கட்டண நகல்."]},
+      {"number":"13","item":"மொரட்டோரியம் காலம்","upToTwoLakhs":"கடன் வழங்கப்பட்ட நாளிலிருந்து ஆறு மாதங்கள். இந்தக் காலத்தில் கடன் தவணை செலுத்த வேண்டியதில்லை.","aboveTwoLakhs":"","shared":true},
+      {"number":"14","item":"கடன் வழங்கல்","upToTwoLakhs":"கடன் தொகை விற்பனையாளருக்கு இரண்டு தவணைகளில் வழங்கப்படும்.","aboveTwoLakhs":"","shared":true},
+      {"number":"15","item":"பிற நிபந்தனைகள்","upToTwoLakhs":["விண்ணப்பத்தை கடன் பெறுபவர் தனியாகவோ உதவியுடனோ செய்யலாம்.","3 kW வரையிலான கடன்களுக்கு காப்பீடு கட்டாயமில்லை.","3 kWக்கு மேற்பட்ட கடன்களுக்கு மொத்த நிறுவல் செலவுக்கான காப்பீட்டுச் செலவை வாடிக்கையாளர் ஏற்க வேண்டும்.","65 வயது அல்லது அதற்கு மேற்பட்ட விண்ணப்பதாரர்கள் திட்ட விதிகளின்படி ஒரு இணைக் கடன் பெறுபவரை (துணைவர் அல்லது பிள்ளை) சேர்க்கலாம்."],"aboveTwoLakhs":[],"shared":true},
+      {"number":"16","item":"கடன் விண்ணப்பம்","upToTwoLakhs":"PM Surya Ghar இணையதளத்தில் உள்நுழைந்து கடன் விண்ணப்பத்தைத் தொடங்கவும்.","aboveTwoLakhs":"","shared":true}
+    ],
+    "disclaimerTitle": "விண்ணப்பிக்கும் முன் சரிபார்க்கவும்",
+    "disclaimer": "வட்டி விகிதங்கள், வரம்புகள், கட்டணங்கள், தகுதி, ஆவணங்கள், காப்பீட்டு நிபந்தனைகள் மற்றும் மானிய விதிகள் மாறக்கூடும்; கடன் வழங்குநருக்கு ஏற்ப வேறுபடலாம். குறிப்புப் பொருளில் நடைமுறைத் தேதி இல்லை. இது பொதுத் தகவல் மட்டுமே; கடன் சலுகை, உத்தரவாதம் அல்லது நிதி ஆலோசனை அல்ல. தற்போதைய நிபந்தனைகளை வங்கி மற்றும் அதிகாரப்பூர்வ திட்ட இணையதளத்தில் உறுதிப்படுத்தவும்.",
+    "applicationTitle": "அதிகாரப்பூர்வ இணையதளத்தில் விண்ணப்பிக்கவும்",
+    "applicationDescription": "குறிப்புப் பொருளின்படி, கடன் விண்ணப்பத்தை PM Surya Ghar இணையதளத்தில் தொடங்க வேண்டும். பொருந்தும் கடன் தயாரிப்பு மற்றும் இறுதி நிபந்தனைகளை வங்கி உறுதிப்படுத்தும்.",
+    "portalLink": "PM Surya Ghar இணையதளத்தைத் திறக்கவும்",
+    "applicationJourney": {
+      "eyebrow": "PM Surya Ghar: Muft Bijli Yojana",
+      "titleAccent": "நுகர்வோர்",
+      "title": "விண்ணப்பப் பயணம்",
+      "stakeholders": ["நுகர்வோர்", "விற்பனையாளர்", "DISCOM", "REC"],
+      "applyLabel": "கூரை சூரிய மின்சாரத்திற்கு விண்ணப்பிக்கவும்",
+      "steps": [
+        {"title":"நுகர்வோர் பதிவு","description":"விண்ணப்பப் பயணத்தைத் தொடங்க பதிவு செய்யவும்."},
+        {"title":"விண்ணப்பச் சமர்ப்பிப்பு","description":"உங்கள் விண்ணப்பத்தைச் சமர்ப்பிக்கவும்."},
+        {"title":"சாத்தியக்கூறு ஒப்புதல்","description":"உங்கள் இடம் சூரிய மின் அமைப்புக்கு ஏற்றதா எனச் சரிபார்க்கவும்."},
+        {"title":"விற்பனையாளர் தேர்வு","description":"நிறுவலுக்குச் சிறந்த விற்பனையாளரைத் தேர்ந்தெடுக்கவும்."},
+        {"title":"திட்ட ஆய்வு","description":"விதிமுறைகளுடன் இணக்கத்தைச் சரிபார்க்க DISCOM தளத்தை ஆய்வு செய்யும்."},
+        {"title":"சூரிய நிறுவல் விவரங்கள்","description":"கூரை சூரிய மின் நிறுவலுக்கான விவரங்களை வழங்கவும்."},
+        {"title":"பணி தொடக்கம்","description":"நிறுவல் செயல்முறையைத் தொடங்கவும்."},
+        {"title":"திட்டச் செயல்படுத்தல்","description":"DISCOM கூரை சூரிய மின் நிறுவலைச் சான்றளிக்கும்."},
+        {"title":"மானியக் கோரிக்கை","description":"மானியத்தைப் பெறுவதற்கான கோரிக்கையைச் சமர்ப்பிக்கவும்."},
+        {"title":"மானிய வழங்கல்","description":"ஒப்புதலுக்குப் பிறகு மானியம் வழங்கப்படும்."}
+      ]
+    }
   },
   "componentData": {
     "jsonLdSchema": {

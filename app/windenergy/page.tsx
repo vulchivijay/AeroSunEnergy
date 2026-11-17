@@ -3,7 +3,7 @@
 import { useLocale } from '@/lib/LocaleContext'
 import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 import { getAccentOrDefault } from '@/lib/utils/utils'
-import { SharedHeroSlider, type HeroSliderSlide } from '../components/ui/SharedHeroSlider'
+import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
 import {
   OptimizedImage,
   WindBenefitCard,
@@ -89,7 +89,7 @@ export default function WindEnergyPage() {
         </div>
       </header>
 
-      <SharedHeroSlider slides={windSlidesLocalized} ariaLabel={windPage.labels.sliderAriaLabel} interval={5200} />
+      {/* <SharedHeroSlider slides={windSlidesLocalized} ariaLabel={windPage.labels.sliderAriaLabel} interval={5200} /> */}
 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
         <div className="mb-8 max-w-3xl">

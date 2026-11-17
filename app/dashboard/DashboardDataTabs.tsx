@@ -32,7 +32,7 @@ const formTypeOptions = [
   ['installation_checklist', 'Installation checklist'],
 ] as const
 const formSubmissionFields: Record<string, string[]> = {
-  contact: ['fullName', 'email', 'phone', 'projectType', 'message'],
+  contact: ['fullName', 'email', 'phone', 'solarNeed', 'state', 'monthlyAverageElectricityBill', 'interestedInFinancing', 'projectType', 'message'],
   newsletter: ['email'],
   solar_assessment: ['name', 'phone', 'propertyType', 'monthlyBill', 'pinCode'],
   customer_enquiry: ['customer_name', 'customer_email', 'mobile_number', 'project_name', 'price_total'],

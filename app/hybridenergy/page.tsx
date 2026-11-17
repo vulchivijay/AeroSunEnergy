@@ -3,7 +3,7 @@
 import { useLocale } from '@/lib/LocaleContext'
 import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 import { getAccentOrDefault } from '@/lib/utils/utils'
-import { SharedHeroSlider, type HeroSliderSlide } from '../components/ui/SharedHeroSlider'
+import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
 import {
   HybridBenefitCard,
   HybridFeatureCard,
@@ -97,7 +97,7 @@ export default function HybridEnergyPage() {
         </div>
       </header>
 
-      <SharedHeroSlider slides={hybridSlidesLocalized} ariaLabel={hybridPage.labels.sliderAriaLabel} />
+      {/* <SharedHeroSlider slides={hybridSlidesLocalized} ariaLabel={hybridPage.labels.sliderAriaLabel} /> */}
 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
         <div className="mb-8 max-w-3xl">
@@ -236,7 +236,7 @@ export default function HybridEnergyPage() {
                   {hybridPage.labels.requestAssessment}
                 </a>
                 <a
-                  href="/customer-enquiry"
+                  href="/billing/customer-enquiry"
                   className="inline-flex items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 px-5 py-3 text-md font-semibold text-emerald-700 transition hover:border-emerald-300 hover:bg-emerald-100"
                 >
                   {hybridPage.labels.enquireNow}

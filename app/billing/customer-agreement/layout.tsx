@@ -32,13 +32,13 @@ export const metadata: Metadata = {
     'solar and wind service agreement',
   ],
   alternates: {
-    canonical: '/customer-agreement',
+    canonical: '/billing/customer-agreement',
   },
   openGraph: {
     title: 'Customer Agreement for Solar, Wind & Hybrid Project Terms | AeroSun Energy',
     description:
       'AeroSun Energy customer agreement and payment terms for solar, wind, and hybrid energy solutions.',
-    url: 'https://aerosunenergy.in/customer-agreement',
+    url: 'https://aerosunenergy.in/billing/customer-agreement',
     siteName: 'AeroSun Energy',
     type: 'website',
   },

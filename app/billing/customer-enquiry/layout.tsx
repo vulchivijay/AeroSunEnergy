@@ -40,13 +40,13 @@ export const metadata: Metadata = {
     'renewable power solution enquiry',
   ],
   alternates: {
-    canonical: '/customer-enquiry',
+    canonical: '/billing/customer-enquiry',
   },
   openGraph: {
     title: 'Customer Enquiry for Solar, Wind & Hybrid Energy Solutions | AeroSun Energy',
     description:
       'Share your renewable energy requirements and request expert advice for solar, wind, and hybrid power solutions.',
-    url: 'https://aerosunenergy.in/customer-enquiry',
+    url: 'https://aerosunenergy.in/billing/customer-enquiry',
     siteName: 'AeroSun Energy',
     type: 'website',
   },

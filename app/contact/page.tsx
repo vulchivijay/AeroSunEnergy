@@ -9,6 +9,7 @@ import { OptimizedImage } from '@/app/components/ui'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useToast } from '@/app/components/ui/ToastProvider'
+import { electricityBillOptions, financingOptions, indianStates, solarNeedOptions } from '@/lib/contactFormOptions'
 
 const channelIconComponents: Record<string, ReactNode> = {
   email: (
@@ -69,9 +70,10 @@ export default function Contact() {
         fullName: String(formData.get('fullName') ?? '').trim(),
         email: String(formData.get('email') ?? '').trim(),
         phone: String(formData.get('phone') ?? '').trim(),
-        projectType: String(formData.get('projectType') ?? '').trim(),
-        usage: String(formData.get('usage') ?? '').trim(),
-        message: String(formData.get('message') ?? '').trim(),
+        solarNeed: String(formData.get('solarNeed') ?? '').trim(),
+        state: String(formData.get('state') ?? '').trim(),
+        monthlyAverageElectricityBill: String(formData.get('monthlyAverageElectricityBill') ?? '').trim(),
+        interestedInFinancing: String(formData.get('interestedInFinancing') ?? '').trim(),
       })
       toast.success(`${c.form.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`)
       form.reset()
@@ -97,7 +99,7 @@ export default function Contact() {
     {
       label: c.channels[3].label,
       value: c.channels[3].value,
-      href: '/estimation-calculator',
+      href: '/solar-calculator',
       icon: channelIconComponents[channelIconIds[2]],
     },
   ]
@@ -133,7 +135,7 @@ export default function Contact() {
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
-                    href="/estimation-calculator"
+                    href="/solar-calculator"
                     className="inline-flex items-center justify-center rounded-full border border-sky-900/20 bg-white/40 px-6 py-3.5 text-sm font-bold text-slate-800 transition hover:bg-white/75"
                   >
                     {c.estimationButton}
@@ -218,34 +220,50 @@ export default function Contact() {
                 <h2 id="contact-form-title" className="mt-3 text-3xl font-black leading-tight tracking-tighter">{c.form.title}</h2>
                 <p className="mt-4 text-sm leading-7 text-slate-700">{c.form.description}</p>
               </div>
-              <form className="grid gap-4 p-5 sm:grid-cols-2 sm:p-8" onSubmit={handleContactSubmit}>
+              <form className="grid gap-4 p-5 sm:p-8" onSubmit={handleContactSubmit}>
                 <label className="block text-sm font-semibold text-slate-800">
-                  {c.form.fullName}
-                  <input className="mt-1.5 min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="fullName" type="text" autoComplete="name" minLength={2} maxLength={100} required placeholder={c.form.fullName} />
-                </label>
-                <label className="block text-sm font-semibold text-slate-800">
-                  {c.form.email}
-                  <input className="mt-1.5 min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="email" type="email" autoComplete="email" maxLength={254} required placeholder={c.form.email} />
+                  {c.form.fullName} <span className="text-red-600" aria-hidden="true">*</span>
+                  <input className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="fullName" type="text" autoComplete="name" minLength={2} maxLength={100} required placeholder={c.form.fullNamePlaceholder} />
                 </label>
                 <label className="block text-sm font-semibold text-slate-800">
-                  {c.form.phone}
-                  <input className="mt-1.5 min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="phone" type="tel" autoComplete="tel" inputMode="tel" pattern="(?:\+?91)?[6-9][0-9]{9}" maxLength={13} placeholder={c.form.phone} />
+                  {c.form.phone} <span className="text-red-600" aria-hidden="true">*</span>
+                  <input className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="phone" type="tel" autoComplete="tel" inputMode="tel" pattern="(?:\+?91)?[6-9][0-9]{9}" maxLength={13} required placeholder={c.form.phonePlaceholder} />
                 </label>
                 <label className="block text-sm font-semibold text-slate-800">
-                  {c.form.projectType}
-                  <input className="mt-1.5 min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="projectType" type="text" maxLength={120} required placeholder={c.form.projectTypePlaceholder} />
+                  {c.form.solarNeed} <span className="text-red-600" aria-hidden="true">*</span>
+                  <select className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="solarNeed" required defaultValue="">
+                    <option value="" disabled>{c.form.solarNeedPlaceholder}</option>
+                    {solarNeedOptions.map((option, index) => <option key={option.value} value={option.value}>{c.form.solarNeedOptions[index]}</option>)}
+                  </select>
                 </label>
-                <label className="block text-sm font-semibold text-slate-800 sm:col-span-2">
-                  {c.form.usage}
-                  <input className="mt-1.5 min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="usage" type="text" maxLength={120} placeholder={c.form.usagePlaceholder} />
+                <label className="block text-sm font-semibold text-slate-800">
+                  {c.form.state} <span className="text-red-600" aria-hidden="true">*</span>
+                  <select className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="state" required defaultValue="">
+                    <option value="" disabled>{c.form.statePlaceholder}</option>
+                    {indianStates.map((state) => <option key={state} value={state}>{state}</option>)}
+                  </select>
                 </label>
-                <label className="block text-sm font-semibold text-slate-800 sm:col-span-2">
-                  {c.form.message}
-                  <textarea className="mt-1.5 min-h-32 w-full rounded-xl border border-slate-300 bg-white px-3.5 py-3 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="message" minLength={10} maxLength={3000} required placeholder={c.form.messagePlaceholder} />
+                <label className="block text-sm font-semibold text-slate-800">
+                  {c.form.monthlyAverageElectricityBill} <span className="text-red-600" aria-hidden="true">*</span>
+                  <select className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="monthlyAverageElectricityBill" required defaultValue="">
+                    <option value="" disabled>{c.form.monthlyAverageElectricityBillPlaceholder}</option>
+                    {electricityBillOptions.map((option, index) => <option key={option.value} value={option.value}>{c.form.electricityBillOptions[index]}</option>)}
+                  </select>
                 </label>
-                <div className="space-y-3 sm:col-span-2">
+                <label className="block text-sm font-semibold text-slate-800">
+                  {c.form.interestedInFinancing}
+                  <select className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="interestedInFinancing" defaultValue="">
+                    <option value="" disabled>{c.form.interestedInFinancingPlaceholder}</option>
+                    {financingOptions.map((option, index) => <option key={option.value} value={option.value}>{c.form.financingOptions[index]}</option>)}
+                  </select>
+                </label>
+                <label className="block text-sm font-semibold text-slate-800">
+                  {c.form.email} <span className="text-red-600" aria-hidden="true">*</span>
+                  <input className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="email" type="email" autoComplete="email" maxLength={254} required placeholder={c.form.emailPlaceholder} />
+                </label>
+                <div className="space-y-3">
                   <FormDataNotice />
-                  <button className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#087a61] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61] disabled:cursor-wait disabled:opacity-70 sm:w-auto" type="submit" disabled={isSubmitting}>
+                  <button className="inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#087a61] px-6 py-3 text-base font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61] disabled:cursor-wait disabled:opacity-70" type="submit" disabled={isSubmitting}>
                     {isSubmitting ? t.formSubmission.saving : c.form.submit}
                   </button>
                 </div>
@@ -261,7 +279,7 @@ export default function Contact() {
               </div>
               <div className="flex flex-col justify-between gap-5 border-t border-slate-200 pt-5 sm:flex-row sm:items-end">
                 <p className="max-w-md text-sm leading-7 text-slate-600">{stepIntroCopy}</p>
-                <Link href="/customer-enquiry" className="inline-flex w-fit items-center gap-3 text-sm font-bold text-[#087a61] transition hover:gap-4">
+                <Link href="/billing/customer-enquiry" className="inline-flex w-fit items-center gap-3 text-sm font-bold text-[#087a61] transition hover:gap-4">
                   {submitEnquiry} <span aria-hidden="true">&rarr;</span>
                 </Link>
               </div>

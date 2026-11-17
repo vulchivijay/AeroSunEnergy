@@ -2,8 +2,9 @@ import { randomBytes } from 'node:crypto'
 import { z } from 'zod'
 import { ObjectId } from 'mongodb'
 import { withApiLogging } from '@/lib/apiLogging'
-import { getDatabase } from '@/lib/auth/database'
+import { getDatabase, type WebsiteFormSubmissionDocument, type WebsiteFormSubmissionValue } from '@/lib/auth/database'
 import { isValidEmailAddress, normalizeIndianMobileNumber } from '@/lib/validation/contact'
+import { electricityBillOptions, financingOptions, indianStates, solarNeedOptions } from '@/lib/contactFormOptions'
 
 export const runtime = 'nodejs'
 
@@ -92,7 +93,18 @@ const customerEnquiryFields = new Set([
 ])
 
 const allowedFields: Record<FormType, (field: string) => boolean> = {
-  contact: (field) => ['fullName', 'email', 'phone', 'projectType', 'usage', 'message'].includes(field),
+  contact: (field) => [
+    'fullName',
+    'email',
+    'phone',
+    'projectType',
+    'usage',
+    'message',
+    'solarNeed',
+    'state',
+    'monthlyAverageElectricityBill',
+    'interestedInFinancing',
+  ].includes(field),
   newsletter: (field) => field === 'email',
   solar_assessment: (field) => [
     'name',
@@ -136,7 +148,7 @@ const allowedFields: Record<FormType, (field: string) => boolean> = {
 }
 
 const requiredFields: Record<FormType, string[]> = {
-  contact: ['fullName', 'email', 'projectType', 'message'],
+  contact: ['fullName', 'email'],
   newsletter: ['email'],
   solar_assessment: ['name', 'phone', 'pinCode', 'propertyType', 'monthlyBill'],
   customer_enquiry: ['quotation_reference', 'customer_name', 'customer_email', 'mobile_number', 'project_name', 'pin_code', 'price_total', 'accept_terms'],
@@ -159,7 +171,7 @@ const requestSchema = z.object({
   data: z.record(z.string().regex(/^[A-Za-z][A-Za-z0-9_]{0,63}$/), submissionValueSchema),
 }).strict()
 
-type SubmissionValue = string | number | boolean | string[]
+type SubmissionValue = WebsiteFormSubmissionValue
 
 type BodyResult =
   | { ok: true; data: unknown }
@@ -235,10 +247,24 @@ function getErrorCode(error: unknown): string {
 }
 
 function hasRequiredValues(formType: FormType, data: Record<string, SubmissionValue>): boolean {
-  return requiredFields[formType].every((field) => {
+  const required = formType === 'contact'
+    ? [
+      ...requiredFields.contact,
+      ...(hasSolarQualificationFields(data)
+        ? ['phone', 'solarNeed', 'state', 'monthlyAverageElectricityBill']
+        : ['projectType', 'message']),
+    ]
+    : requiredFields[formType]
+
+  return required.every((field) => {
     const value = data[field]
     return typeof value === 'string' ? value.trim().length > 0 : value === true || (typeof value === 'number' && Number.isFinite(value))
   })
+}
+
+function hasSolarQualificationFields(data: Record<string, SubmissionValue>): boolean {
+  return ['solarNeed', 'state', 'monthlyAverageElectricityBill', 'interestedInFinancing']
+    .some((field) => data[field] !== undefined)
 }
 
 function isValidEmail(value: unknown): boolean {
@@ -280,7 +306,28 @@ function isValidSubmission(formType: FormType, data: Record<string, SubmissionVa
 
   if (formType === 'contact' && (
     typeof data.fullName !== 'string' ||
-    data.fullName.trim().length < 2 ||
+    data.fullName.trim().length < 2
+  )) {
+    return false
+  }
+
+  if (formType === 'contact' && hasSolarQualificationFields(data)) {
+    if (
+      typeof data.phone !== 'string' ||
+      typeof data.solarNeed !== 'string' ||
+      !solarNeedOptions.some((option) => option.value === data.solarNeed) ||
+      typeof data.state !== 'string' ||
+      !indianStates.some((state) => state === data.state) ||
+      typeof data.monthlyAverageElectricityBill !== 'string' ||
+      !electricityBillOptions.some((option) => option.value === data.monthlyAverageElectricityBill) ||
+      (data.interestedInFinancing !== undefined &&
+        data.interestedInFinancing !== '' &&
+        (typeof data.interestedInFinancing !== 'string' ||
+          !financingOptions.some((option) => option.value === data.interestedInFinancing)))
+    ) {
+      return false
+    }
+  } else if (formType === 'contact' && (
     typeof data.message !== 'string' ||
     data.message.trim().length < 10
   )) {
@@ -339,7 +386,7 @@ async function postSubmission(request: Request) {
 
   try {
     const now = new Date()
-    await (await getDatabase()).collection('website_form_submissions').insertOne({
+    await (await getDatabase()).collection<WebsiteFormSubmissionDocument>('website_form_submissions').insertOne({
       _id: new ObjectId(),
       reference_code: referenceCode,
       form_type: formType,

@@ -1758,3 +1758,110 @@ There are a few business decisions that should be reflected in the final policie
 **Legal recommendation:** Have an Indian lawyer review these documents before publication, particularly the cancellation, refund, warranty, liability, and consumer-rights provisions. These templates should reflect your actual business practices; publishing a policy does not by itself establish legal compliance.
 
 The five policies are now drafted as separate website pages, ready for your final business-specific details and legal review.
+
+
+This Privacy Policy (“Policy”) applies to the website, www.freyrenergy.com (“Website”) and its services (“Services”) owned and operated by Freyr Energy Services Private Limited (“Company”). This Policy describes the Website’s use and sharing of Personal Information submitted by its users receiving the Services (the “User(s)” or “you” or “your). The Services offered adhere to all the laws, rules, regulations and policies (“Applicable Laws”) with regard to the collection, use, disclosure, retention and protection of your information including Personal Information, that the Website is likely to have access to as a result of your use of the Website.
+
+1. What the Company collects from you
+
+1.1. Any data about you, by which you, as a person can be identified, including without limitation, your name, gender, business name, its address, email address, date of birth, date of incorporation, any identity proof number, phone number, device id etc., to which Freyr Energy Pvt Ltd has or is likely to have access to, by virtue of your consensual submission is your “Personal Information”. In this instance, your device ID is utilized to send notifications and keep you informed about all potential events. Personal Information shall also include the information of such third parties that Freyr Energy Pvt Ltd may have access to during the course of providing the Services to you. Freyr Energy Pvt Ltd may also collect recurring information of your geographic locations on a continuous basis. Freyr Energy Pvt Ltd collects such Personal Information from you because of your voluntary submission of such information on the Website.
+
+1.2. Freyr Energy Pvt Ltd may collect such anonymous data that is not associated with or linked to any Personal Information (“Anonymous Data”) and which, by itself, does not permit the identification of any individual User. Anonymous Data includes without limitation, unique identifiers of the device on which the website is accessed, such as VPN, information of Wi-Fi connectivity and such other information. Freyr Energy Pvt Ltd may also store these unique identifiers and may create a profile for you based on such Anonymous Data.
+
+1.3. In addition, Freyr Energy Pvt Ltd shall automatically collect certain other information, including but not limited to usernames, passwords, and other security and usage related information, whenever you visit the Website or utilize the Services such as Time Stamp, Geo Stamp, IP address, version and identification number of the device, browser type, browser language, the date and time of your request, your profile, other websites visited by you, search terms used, your mobile carrier data, platform type, number of clicks, phone number, requested status of other Users and various status information with regard to the Services provided through Freyr Energy Pvt Ltd (“Usage Information”). Such Usage Information collected is not associated with any Personal Information and is only tagged to the unique identifier for a particular device.
+
+1.4. Freyr Energy Pvt Ltd uses data collection devices such as “cookies” on your device (a) in providing Services; and (b) to allow you to enter your password less frequently during a session. You are always at an option to decline Freyr Energy Pvt Ltd cookies if the application permits.
+
+2. How the information collected is being used
+
+2.1. Freyr Energy Pvt Ltd may use the Personal Information and other information collected as mentioned above for any of the following purposes:
+
+2.1.1. to effectively provide the Services;
+
+2.1.2. for the purposes of software verification or administering software upgrades;
+
+2.1.3. to allow you to participate in surveys regarding the Services;
+
+2.1.4. to maintain the quality of the Services and provide general statistics regarding its use;
+
+2.1.5. to deliver Services, including email notifications, confirmations, technical notices, updates, security alerts and support and administrative messages that you may request;
+
+2.1.6. archival or backup purposes;
+
+2.1.7. to alert you about updated information and other such new or updated services that may be offered to other Users;
+
+2.1.8. to allow access to exclusive features or functionality of FreyrEnergy App;
+
+2.1.9. to resolve disputes and troubleshoot problems.
+
+3. Sharing of the collected information
+
+3.1. Freyr Energy Pvt Ltd may share the Personal Information received from you:
+
+3.1.1. with the Company’s affiliates in connection with matters relating to the consumption of Services by you to help detect and prevent identity theft, fraud and other potentially illegal acts; to prevent abuse of Services; and to facilitate joint or co-branded services that you request, where such services are provided by more than one corporate entity other than the Company; and
+
+3.1.2. if required to do so by law or regulation; to its legal counsel, law enforcement officers, governmental authorities who have asserted their lawful authority to obtain the information or where the Company has in good faith reasonable grounds to believe that such disclosure is reasonably necessary to enforce this Policy.
+
+3.1.3. The Company shall not rent, sell, or otherwise provide Personal Information received from you to third parties without your consent, except as described in this Policy or as required by law. However, subject to the applicable laws, the Company and its affiliates reserve the right to share, and transfer some or all of the Personal Information to other business entities should the Company, or its assets, plan to merge with, or be acquired by that business entity.
+
+4. Security of Personal Information
+
+4.1. The Company has implemented commercially reasonable physical, managerial, operational and technical security measures to protect the loss, misuse, alteration and security of the Personal Information received from you in the Company’s care. The Company’s security practices and procedures limit access to Personal Information on need to know basis only. Such measures may include, where appropriate, the use of firewalls, secure server facilities, implementing proper access rights management systems and processes, careful selection of processors, standard authentication and encryption policies for its servers and other technically and commercially reasonable measures.
+
+4.2. The Company is committed to protecting the security of any Personal Information and uses reasonable efforts including a variety of security technologies and procedures to help protect such Personal Information from any unauthorized access, use or disclosure. The Company will take all reasonable measures in furtherance of the above commitment. However, the Company cannot guarantee that the Personal Information received from you and other information stored on the servers will be absolutely protected. Company’s systems and the communications networks through which you access FreyrEnergy App may be subject to security breaches and failures due to circumstances beyond Company’s reasonable control. These may include computer “hacking”, data theft among others. In such situations, the Company will try to rectify the problems as soon as possible.
+
+4.3. The User hereby acknowledges and understands that all Personal Information provided in using the Website is with their knowledgeable consent and at the User’s own risk. The Company tries to protect your data on FreyrEnergy App but is not responsible for misuse of your data by another User or by a third party.
+
+4.4. The Company does not guarantee that your data will always be intact or that your data will not be erased or formatted. However, the Company shall take necessary precautions to the best of its abilities to safeguard your data without being erased or lost.
+
+5. Your obligations
+
+5.1. As a User of the Website, you have certain obligations to other users. Some of these obligations are imposed by applicable laws and regulations, and others have become common practice for Services as offered by Freyr Energy Pvt Ltd.
+
+5.1.1. You must, at all times, abide by the terms and conditions of then existing Privacy Policy. This includes respecting all intellectual property rights that may belong to third parties;
+
+5.1.2. You must not upload or insert any picture or comments that may be deemed to be injurious, violent, offensive, racist or xenophobic, or which may otherwise violate the purpose and spirit of FreyrEnergy App, Company and its community of users;
+
+5.1.3. You must keep your username and passwords confidential and not share it with others; and
+
+5.1.4. All information given must be genuine and true to your best knowledge. The Company shall not be held responsible in case of any fraudulent information given at the time of registration for using FreyrEnergy App.
+
+5.2. Any violation of the guidelines as mention in this Clause 5 may lead to the restriction, suspension or termination of your account with FreyrEnergy App, at the sole discretion of the Company.
+
+6. International transfer of data
+
+In the process of providing Services to you, Freyr Energy Pvt Ltd may transfer the Personal Information and other information that it collects to affiliated entities or other third parties across borders, and from your country or jurisdiction to other countries or jurisdictions around the world. You understand, acknowledge and consent to transferring information and permitting the transfer of information, including Personal Information, to a country and jurisdiction that does not have the same data protection laws as your jurisdiction. You hereby consent to the transfer of your information across countries or jurisdictions around the world.
+
+7. Governing Law
+
+The usage of the Services is exclusively governed by the laws of India and the jurisdiction of the courts in India. The Company expressly disclaims any implied warranties or liabilities imputed by the laws of any other jurisdiction.
+
+8. Modifications
+
+Any changes in this Policy by the Company shall be posted on the Website to reflect changes in its Privacy Policy so that you are always aware of what information Freyr Energy Pvt Ltd collects, uses, and under what circumstances, if any, FreyrEnergy App may disclose it. You should periodically review the Privacy Policy for the latest information on Freyr Energy Pvt Ltd privacy practices. Once posted, those changes are effective immediately. Continued access or use of FreyrEnergy App constitutes your acceptance of the changes and the amended Policy.
+
+9. Advertisements
+
+Freyr Energy Pvt Ltd may use third-party advertising companies to serve advertisements when you contact it. These companies may use information (not including name, address, email address, or telephone number of the User) about your visits to the website and other websites in order to provide advertisements about goods and services of interest to you.
+
+10. Questions/Grievances
+
+Any grievances or questions regarding this statement should be directed to the following e-mail address: sales@freyrenergy.com
+
+11. Consent for Communication
+
+By selecting “Get Quote” or “Book Free Consultation” you consent to receive SMS, RCS, or other communication messages from our business regarding your inquiry or related services.
+
+ 
+
+I agree and consent to receive all communications at the mobile number provided, even if this mobile number is registered under DND/NCPR list under TRAI regulations. And for that purpose, I further authorize the Company to share/disclose the information to any third-party service provider or any affiliates, group companies, their authorized agents, or third-party service providers.
+
+Freyr Energy Services Pvt Ltd. retains the copyright on all the textual entries, graphics, and trademarks displayed on this website. All the textual entries, graphics, and trademarks displayed on this website are owned and used under a license, wherever necessary, by Freyr Energy.
+
+One may not distribute any textual entries or graphics on the website without the express written consent of Freyr Energy. Also, one may not, without the permission of Freyr Energy, copy and distribute this information on any other server, or modify or reuse the textual entries or graphics on any system.
+
+No reproduction of any part of this website may be sold or distributed for commercial gain, nor shall it be modified or incorporated in any other work, publication, or website, whether in hard copy or electronic format, including postings to any other website. Freyr Energy Service Pvt Ltd reserves all the other rights.
+
+The information on this website has been included in good faith and is for general purposes only. It should not be relied upon for any specific purpose and no representation or warranty is given as regards its accuracy or completeness.
+
+The officers, employees, or agents of Freyr Energy shall not be liable for any loss, damage, or expense arising out of any access to or use of this website or any website linked to it, other websites maintained by third parties over whom Freyr Energy has no control. Freyr Energy makes no representations as to the accuracy or any other aspect of information contained in other Websites, including, without limitation, any loss of profit, indirect, incidental, or consequential loss.

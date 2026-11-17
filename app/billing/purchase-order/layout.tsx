@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     'renewable supply documentation',
   ],
   alternates: {
-    canonical: '/purchase-order',
+    canonical: '/billing/purchase-order',
   },
   openGraph: {
     title: 'Purchase Order for Solar, Wind & Renewable Energy Equipment | AeroSun Energy',
     description:
       'AeroSun Energy purchase order workflow for renewable energy equipment and project procurement requirements.',
-    url: 'https://aerosunenergy.in/purchase-order',
+    url: 'https://aerosunenergy.in/billing/purchase-order',
     siteName: 'AeroSun Energy',
     type: 'website',
   },

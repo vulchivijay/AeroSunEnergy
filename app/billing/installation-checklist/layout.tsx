@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     'AeroSun Energy project readiness',
   ],
   alternates: {
-    canonical: '/installation-checklist',
+    canonical: '/billing/installation-checklist',
   },
   openGraph: {
     title: 'Solar Installation Checklist & Project Commissioning Guide | AeroSun Energy',
     description:
       'Prepare and track safe, accurate installation and commissioning checks for solar and renewable energy projects.',
-    url: 'https://aerosunenergy.in/installation-checklist',
+    url: 'https://aerosunenergy.in/billing/installation-checklist',
     siteName: 'AeroSun Energy',
     type: 'website',
   },

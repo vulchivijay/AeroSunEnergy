@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     'AeroSun Energy transaction receipt',
   ],
   alternates: {
-    canonical: '/invoice-receipt',
+    canonical: '/billing/invoice-receipt',
   },
   openGraph: {
     title: 'Invoice & Receipt | AeroSun Energy',
     description:
       'AeroSun Energy invoice and payment receipt documentation for solar and renewable energy project transactions.',
-    url: 'https://aerosunenergy.in/invoice-receipt',
+    url: 'https://aerosunenergy.in/billing/invoice-receipt',
     siteName: 'AeroSun Energy',
     type: 'website',
   },

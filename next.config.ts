@@ -24,6 +24,51 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       {
+        source: '/estimation-calculator',
+        destination: '/solar-calculator',
+        permanent: true,
+      },
+      {
+        source: '/customer-enquiry',
+        destination: '/billing/customer-enquiry',
+        permanent: true,
+      },
+      {
+        source: '/customer-agreement',
+        destination: '/billing/customer-agreement',
+        permanent: true,
+      },
+      {
+        source: '/installation-checklist',
+        destination: '/billing/installation-checklist',
+        permanent: true,
+      },
+      {
+        source: '/invoice-receipt',
+        destination: '/billing/invoice-receipt',
+        permanent: true,
+      },
+      {
+        source: '/purchase-order',
+        destination: '/billing/purchase-order',
+        permanent: true,
+      },
+      {
+        source: '/warranty-policy',
+        destination: '/billing/warranty-policy',
+        permanent: true,
+      },
+      {
+        source: '/nintydays-tracker',
+        destination: '/billing/nintydays-tracker',
+        permanent: true,
+      },
+      {
+        source: '/research-development',
+        destination: '/billing/research-development',
+        permanent: true,
+      },
+      {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.aerosunenergy.in' }],
         destination: `${SITE_URL}/:path*`,

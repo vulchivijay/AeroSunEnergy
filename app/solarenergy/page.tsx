@@ -2,7 +2,7 @@
 
 import { useLocale } from '@/lib/LocaleContext'
 import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
-import { SharedHeroSlider, type HeroSliderSlide } from '../components/ui/SharedHeroSlider'
+import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
 import {
   CapacityTable,
   FeatureCard,
@@ -81,7 +81,7 @@ export default function SolarEnergyPage() {
         </div>
       </header>
 
-      <SharedHeroSlider slides={solarSlidesLocalized} ariaLabel={solarPage.hero.eyebrow} />
+      {/* <SharedHeroSlider slides={solarSlidesLocalized} ariaLabel={solarPage.hero.eyebrow} /> */}
 
       <section id="solar-offerings" className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
         <div className="mb-8 max-w-3xl">
