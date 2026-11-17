@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     'solar order refund process',
     'renewable energy project refunds',
     'solar cancellation refund timelines',
+    'solar customer cancellation request',
+    'rooftop solar refund conditions',
+    'solar project cancellation charges',
+    'renewable energy refund timeline',
+    'solar order cancellation policy India',
+    'DISCOM approval refund policy',
+    'solar installation refund eligibility',
   ],
   alternates: {
     canonical: '/cancellation',

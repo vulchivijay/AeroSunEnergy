@@ -4,34 +4,27 @@ import Link from 'next/link'
 import Slider from './Slider'
 import { useLocale } from '@/lib/LocaleContext'
 import { HeroSlideContent, type HeroSlideData } from './HeroSlideContent'
-import OptimizedImage from './OptimizedImage'
 
 type Slide = HeroSlideData & { panelClass: string }
+
+const slideBackgrounds = [
+  'bg-linear-to-br from-[#0b3d3a] via-[#0f766e] to-[#17324d]',
+  'bg-linear-to-br from-[#102a43] via-[#1d4e6f] to-[#0b3c5d]',
+  'bg-linear-to-br from-[#134e4a] via-[#2b766c] to-[#1b3d4f]',
+  'bg-linear-to-br from-[#1e3a5f] via-[#345b7a] to-[#17324d]',
+] as const
 
 export default function HomeHeroSlider() {
   const { t } = useLocale()
   const slides = t.home.heroSlider as Slide[]
 
   const slideOverlay =
-    'absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.32),transparent_24%),radial-gradient(circle_at_80%_20%,rgba(56,189,248,0.18),transparent_30%),linear-gradient(90deg,rgba(2,6,23,0.78)_0%,rgba(15,23,42,0.6)_40%,rgba(15,23,42,0.28)_100%)]'
+    'absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.18),transparent_24%),radial-gradient(circle_at_80%_20%,rgba(56,189,248,0.12),transparent_30%),linear-gradient(90deg,rgba(2,6,23,0.36)_0%,rgba(15,23,42,0.2)_45%,rgba(15,23,42,0.1)_100%)]'
 
   return (
     <Slider autoplay interval={5000} pauseOnHover ariaLabel={t.home.heroSliderAriaLabel}>
       {slides.map((slide, index) => (
-        <div key={slide.title} className={`${slide.panelClass} relative h-[clamp(640px,56vw,760px)] w-full`}>
-          <div className="absolute inset-0">
-            <OptimizedImage
-              src={slide.image}
-              alt={slide.title}
-              fill
-              priority={index === 0}
-              loading={index === 0 ? 'eager' : 'lazy'}
-              quality={70}
-              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1400px"
-              className="object-cover object-center"
-              style={{ filter: 'saturate(1.12) brightness(0.68)' }}
-            />
-          </div>
+        <div key={slide.title} className={`${slideBackgrounds[index % slideBackgrounds.length]} relative h-[clamp(640px,56vw,760px)] w-full`}>
           <div className={`${slideOverlay} absolute inset-0`} />
 
           <div className="group relative flex h-[clamp(640px,56vw,760px)] w-full items-end justify-start p-4 sm:p-8 lg:p-14 xl:p-18">
