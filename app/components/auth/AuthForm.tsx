@@ -63,7 +63,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
       }
 
       toast.success(auth.loginSuccess)
-      router.replace('/dashboard')
+      router.replace('/auth/dashboard')
     } catch {
       toast.error(auth.errors.networkError)
     } finally {

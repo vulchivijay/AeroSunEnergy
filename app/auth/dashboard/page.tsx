@@ -21,7 +21,7 @@ function DatabaseUnavailable() {
         <p className="mt-3 text-sm leading-6 text-slate-600">
           We could not verify your account right now. Please try again in a moment.
         </p>
-        <Link className="mt-6 inline-flex min-h-11 items-center rounded-full bg-emerald-800 px-5 text-sm font-bold text-white hover:bg-emerald-900" href="/dashboard">
+        <Link className="mt-6 inline-flex min-h-11 items-center rounded-full bg-emerald-800 px-5 text-sm font-bold text-white hover:bg-emerald-900" href="/auth/dashboard">
           Try again
         </Link>
       </section>
