@@ -16,7 +16,7 @@ import {
 import {
   BenefitCard,
   FeatureCard,
-  // HomeHeroSlider,
+  HomeHeroSlider,
   HybridBenefitCard,
   HybridFeatureCard,
   HybridInfoPanel,
@@ -93,7 +93,7 @@ export default function Home() {
 
   return (
     <main>
-      {/* <HomeHeroSlider /> */}
+      <HomeHeroSlider />
       <SchemeBanner />
       {/* Solar Section */}
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">

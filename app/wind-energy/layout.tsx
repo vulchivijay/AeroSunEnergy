@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     'renewable wind power',
     'AeroSun Energy wind',
     'wind energy solutions India',
+    'small wind energy in Tirupati',
   ],
   alternates: {
     canonical: '/wind-energy',

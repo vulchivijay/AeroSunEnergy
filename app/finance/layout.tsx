@@ -4,6 +4,23 @@ export const metadata: Metadata = {
   title: 'Solar Financing Options | PM Surya Ghar Loan Guide | AeroSun Energy',
   description:
     'Review the PM Surya Ghar standard solar-loan product, eligibility conditions, loan limits, subsidy and application steps. Confirm current terms with your bank.',
+  keywords: [
+    'PM Surya Ghar solar loan',
+    'rooftop solar financing',
+    'solar loan eligibility in India',
+    'solar subsidy and loan guide',
+    'AeroSun Energy finance',
+    'rooftop solar loan interest',
+    'PM Surya Ghar financing eligibility',
+    'solar bank loan application',
+    'residential solar loan India',
+    'solar loan for homeowners',
+    'solar financing guide India',
+    'solar project payment options',
+    'solar subsidy application process',
+    'solar loan repayment terms',
+    'AeroSun solar financing guide',
+  ],
   alternates: {
     canonical: '/finance',
   },

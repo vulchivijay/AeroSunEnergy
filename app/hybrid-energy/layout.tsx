@@ -18,6 +18,8 @@ export const metadata: Metadata = {
     'AeroSun Energy hybrid',
     'reliable renewable power India',
     'solar wind battery systems',
+    'hybrid renewable energy in Tirupati',
+    'solar wind power for commercial sites',
   ],
   alternates: {
     canonical: '/hybrid-energy',
