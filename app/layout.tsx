@@ -62,6 +62,8 @@ export const metadata: Metadata = {
   keywords: [
     "solar energy",
     "wind energy",
+    "solar energy panels",
+    "wind energy turbines",
     "renewable energy",
     "hybrid energy systems",
     "solar power solutions",
@@ -69,7 +71,7 @@ export const metadata: Metadata = {
     "solar energy solutions",
     "solar panel installation",
     "renewable energy solutions",
-    "solar wind hybrid system",
+    "solar wind hybrid solutions",
     "AeroSun Energy",
     "solar energy in India",
     "on-grid solar systems",

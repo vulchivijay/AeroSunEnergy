@@ -91,6 +91,10 @@
       {
         "label": "ఫైనాన్స్",
         "href": "/finance"
+      },
+      {
+        "label": "విధానాలు",
+        "href": "/policies"
       }
     ],
     "startProject": "ప్రాజెక్ట్ ప్రారంభించండి",

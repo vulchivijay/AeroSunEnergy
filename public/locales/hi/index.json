@@ -91,6 +91,10 @@
       {
         "label": "वित्तपोषण",
         "href": "/finance"
+      },
+      {
+        "label": "नीतियाँ",
+        "href": "/policies"
       }
     ],
     "startProject": "प्रोजेक्ट शुरू करें",

@@ -4320,6 +4320,10 @@
       {
         "label": "ധനസഹായം",
         "href": "/finance"
+      },
+      {
+        "label": "നയങ്ങൾ",
+        "href": "/policies"
       }
     ],
     "startProject": "പദ്ധതി ആരംഭിക്കുക",

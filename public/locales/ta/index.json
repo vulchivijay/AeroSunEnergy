@@ -4320,6 +4320,10 @@
       {
         "label": "நிதி",
         "href": "/finance"
+      },
+      {
+        "label": "கொள்கைகள்",
+        "href": "/policies"
       }
     ],
     "startProject": "திட்டத்தைத் தொடங்குங்கள்",
