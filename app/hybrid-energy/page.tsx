@@ -236,7 +236,7 @@ export default function HybridEnergyPage() {
                   {hybridPage.labels.requestAssessment}
                 </a>
                 <a
-                  href="/auth/billing/customer-enquiry"
+                  href="/auth/dashboard/billing/customer-enquiry"
                   className="inline-flex items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 px-5 py-3 text-md font-semibold text-emerald-700 transition hover:border-emerald-300 hover:bg-emerald-100"
                 >
                   {hybridPage.labels.enquireNow}

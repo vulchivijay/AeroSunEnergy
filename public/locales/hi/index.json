@@ -3037,11 +3037,11 @@
     "legalLinks": [
       {
         "label": "नियम एवं शर्तें",
-        "href": "/auth/billing/terms-conditions"
+        "href": "/auth/dashboard/billing/terms-conditions"
       },
       {
         "label": "वारंटी एवं सेवा नीति",
-        "href": "/auth/billing/warranty-policy"
+        "href": "/auth/dashboard/billing/warranty-policy"
       },
       {
         "label": "रद्दीकरण एवं रिफंड नीति",

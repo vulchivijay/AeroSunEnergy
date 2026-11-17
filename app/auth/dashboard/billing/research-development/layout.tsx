@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     'Explore AeroSun Energy research and development concepts for solar, small wind and hybrid systems, with prototype specifications, testing guidance and practical development roadmaps.',
   alternates: {
-    canonical: '/auth/billing/research-development',
+    canonical: '/auth/dashboard/billing/research-development',
   },
   robots: {
     index: false,

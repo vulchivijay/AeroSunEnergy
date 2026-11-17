@@ -70,52 +70,57 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/billing/:path*',
-        destination: '/auth/billing/:path*',
+        destination: '/auth/dashboard/billing/:path*',
+        permanent: true,
+      },
+      {
+        source: '/auth/billing/:path*',
+        destination: '/auth/dashboard/billing/:path*',
         permanent: true,
       },
       {
         source: '/terms-conditions',
-        destination: '/auth/billing/terms-conditions',
+        destination: '/auth/dashboard/billing/terms-conditions',
         permanent: true,
       },
       {
         source: '/customer-enquiry',
-        destination: '/auth/billing/customer-enquiry',
+        destination: '/auth/dashboard/billing/customer-enquiry',
         permanent: true,
       },
       {
         source: '/customer-agreement',
-        destination: '/auth/billing/customer-agreement',
+        destination: '/auth/dashboard/billing/customer-agreement',
         permanent: true,
       },
       {
         source: '/installation-checklist',
-        destination: '/auth/billing/installation-checklist',
+        destination: '/auth/dashboard/billing/installation-checklist',
         permanent: true,
       },
       {
         source: '/invoice-receipt',
-        destination: '/auth/billing/invoice-receipt',
+        destination: '/auth/dashboard/billing/invoice-receipt',
         permanent: true,
       },
       {
         source: '/purchase-order',
-        destination: '/auth/billing/purchase-order',
+        destination: '/auth/dashboard/billing/purchase-order',
         permanent: true,
       },
       {
         source: '/warranty-policy',
-        destination: '/auth/billing/warranty-policy',
+        destination: '/auth/dashboard/billing/warranty-policy',
         permanent: true,
       },
       {
         source: '/nintydays-tracker',
-        destination: '/auth/billing/nintydays-tracker',
+        destination: '/auth/dashboard/billing/nintydays-tracker',
         permanent: true,
       },
       {
         source: '/research-development',
-        destination: '/auth/billing/research-development',
+        destination: '/auth/dashboard/billing/research-development',
         permanent: true,
       },
       {

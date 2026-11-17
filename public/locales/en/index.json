@@ -7855,11 +7855,11 @@
     "legalLinks": [
       {
         "label": "Terms & Conditions",
-        "href": "/auth/billing/terms-conditions"
+        "href": "/auth/dashboard/billing/terms-conditions"
       },
       {
         "label": "Warranty & Service Policy",
-        "href": "/auth/billing/warranty-policy"
+        "href": "/auth/dashboard/billing/warranty-policy"
       },
       {
         "label": "Cancellation & Refund Policy",

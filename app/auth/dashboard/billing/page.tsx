@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     'Access AeroSun Energy customer enquiries, agreements, installation checklists, invoices, purchase orders, warranty support, and project resources.',
   alternates: {
-    canonical: '/auth/billing',
+    canonical: '/auth/dashboard/billing',
   },
   robots: {
     index: false,
@@ -23,47 +23,47 @@ const billingLinks = [
   {
     title: 'Terms & Conditions',
     description: 'Review the terms governing website use and renewable energy service engagements.',
-    href: '/auth/billing/terms-conditions',
+    href: '/auth/dashboard/billing/terms-conditions',
   },
   {
     title: 'Customer Enquiry',
     description: 'Submit project requirements and prepare a customer quotation.',
-    href: '/auth/billing/customer-enquiry',
+    href: '/auth/dashboard/billing/customer-enquiry',
   },
   {
     title: 'Customer Agreement',
     description: 'Review project scope, payment terms, and customer acceptance.',
-    href: '/auth/billing/customer-agreement',
+    href: '/auth/dashboard/billing/customer-agreement',
   },
   {
     title: 'Installation Checklist',
     description: 'Review installation and commissioning checks for a project.',
-    href: '/auth/billing/installation-checklist',
+    href: '/auth/dashboard/billing/installation-checklist',
   },
   {
     title: 'Invoice & Receipt',
     description: 'Prepare an invoice and record project payments.',
-    href: '/auth/billing/invoice-receipt',
+    href: '/auth/dashboard/billing/invoice-receipt',
   },
   {
     title: 'Purchase Order',
     description: 'Create a purchase order for project equipment and services.',
-    href: '/auth/billing/purchase-order',
+    href: '/auth/dashboard/billing/purchase-order',
   },
   {
     title: 'Warranty & Service Policy',
     description: 'Review warranty coverage and service support information.',
-    href: '/auth/billing/warranty-policy',
+    href: '/auth/dashboard/billing/warranty-policy',
   },
   {
     title: '90-Day Tracker',
     description: 'Track business execution milestones and progress.',
-    href: '/auth/billing/nintydays-tracker',
+    href: '/auth/dashboard/billing/nintydays-tracker',
   },
   {
     title: 'Research & Development',
     description: 'Explore renewable energy research and development resources.',
-    href: '/auth/billing/research-development',
+    href: '/auth/dashboard/billing/research-development',
   },
 ]
 

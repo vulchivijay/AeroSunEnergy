@@ -279,7 +279,7 @@ export default function Contact() {
               </div>
               <div className="flex flex-col justify-between gap-5 border-t border-slate-200 pt-5 sm:flex-row sm:items-end">
                 <p className="max-w-md text-sm leading-7 text-slate-600">{stepIntroCopy}</p>
-                <Link href="/auth/billing/customer-enquiry" className="inline-flex w-fit items-center gap-3 text-sm font-bold text-[#087a61] transition hover:gap-4">
+                <Link href="/auth/dashboard/billing/customer-enquiry" className="inline-flex w-fit items-center gap-3 text-sm font-bold text-[#087a61] transition hover:gap-4">
                   {submitEnquiry} <span aria-hidden="true">&rarr;</span>
                 </Link>
               </div>

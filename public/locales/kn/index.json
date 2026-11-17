@@ -7759,11 +7759,11 @@
     "legalLinks": [
       {
         "label": "ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು",
-        "href": "/auth/billing/terms-conditions"
+        "href": "/auth/dashboard/billing/terms-conditions"
       },
       {
         "label": "ವಾರಂಟಿ ಮತ್ತು ಸೇವಾ ನೀತಿ",
-        "href": "/auth/billing/warranty-policy"
+        "href": "/auth/dashboard/billing/warranty-policy"
       },
       {
         "label": "ರದ್ದತಿ ಮತ್ತು ಮರುಪಾವತಿ ನೀತಿ",

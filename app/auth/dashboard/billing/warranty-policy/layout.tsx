@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     'solar and wind system guarantee',
   ],
   alternates: {
-    canonical: '/auth/billing/warranty-policy',
+    canonical: '/auth/dashboard/billing/warranty-policy',
   },
   openGraph: {
     title: 'Warranty Policy for Solar, Wind & Hybrid Energy Systems | AeroSun Energy',
     description:
       'Understand AeroSun Energy warranty coverage, support commitments, and service terms for renewable energy systems.',
-    url: 'https://aerosunenergy.in/auth/billing/warranty-policy',
+    url: 'https://aerosunenergy.in/auth/dashboard/billing/warranty-policy',
     siteName: 'AeroSun Energy',
     type: 'website',
   },
