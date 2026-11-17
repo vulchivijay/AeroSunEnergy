@@ -4,12 +4,20 @@ import Link from 'next/link'
 import { ArrowUpRight, Sun, Wind, Zap } from 'lucide-react'
 import { useLocale } from '@/lib/LocaleContext'
 
-export default function TirupatiEnergySection() {
+export default function TirupatiEnergySection({
+  background = 'second',
+}: {
+  background?: 'first' | 'second'
+}) {
   const { t } = useLocale()
   const content = t.tirupatiSeo
+  const backgroundClassName =
+    background === 'first'
+      ? 'bg-gradient-to-br from-white to-[#f1f2f6]'
+      : 'bg-gradient-to-br from-[#f1f2f6] to-white'
 
   return (
-    <section className="bg-gradient-to-br from-[#ced6e0] to-[#b8c4d2] px-4 py-10 sm:px-6 lg:px-10 lg:py-14">
+    <section className={`${backgroundClassName} px-4 py-10 sm:px-6 lg:px-10 lg:py-14`}>
       <div className="mx-auto max-w-7xl">
         <div className="relative rounded-[2rem] border border-[#cfe0d1] bg-[#eaf2e9] p-6 sm:p-9 lg:px-12 lg:py-10">
           <div className="max-w-4xl pt-20 sm:pt-32 lg:pt-0 lg:pr-52">

@@ -104,7 +104,7 @@ export default function Contact() {
 
   return (
     <main className="overflow-hidden bg-white text-slate-950">
-      <section className="px-4 pb-12 pt-6 sm:px-6 sm:pb-16 sm:pt-8 lg:px-10">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 pb-12 pt-6 sm:px-6 sm:pb-16 sm:pt-8 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-5 flex items-center justify-between border-b border-slate-200 pb-4">
             <p className="text-sm font-black uppercase tracking-[0.2em] text-[#137c63]">AeroSun Energy <span className="mx-2 text-amber-600">/</span> {contactUs}</p>
@@ -278,7 +278,7 @@ export default function Contact() {
           </section>
         </div>
       </section>
-      <section className="border-y border-slate-200 bg-slate-50 px-4 py-10 sm:px-6 lg:px-10" aria-labelledby="contact-referral-title">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white border-y border-slate-200 bg-slate-50 px-4 py-10 sm:px-6 lg:px-10" aria-labelledby="contact-referral-title">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <div className="max-w-3xl">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#137c63]">{referralProgram.eyebrow}</p>
@@ -297,7 +297,7 @@ export default function Contact() {
         </div>
       </section>
       <section
-        className="relative isolate overflow-hidden bg-gradient-to-br from-sky-100 via-indigo-50 to-fuchsia-100 px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
+        className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
         aria-labelledby="contact-faq-title"
       >
         <div className="pointer-events-none absolute -left-20 top-8 h-64 w-64 rounded-full bg-sky-300/30 blur-3xl" aria-hidden="true" />

@@ -52,7 +52,7 @@ export default function AboutPage() {
   }))
   return (
     <main className="overflow-hidden bg-white text-slate-900">
-      <section id="story" className="relative isolate overflow-hidden bg-[radial-gradient(ellipse_at_82%_15%,rgba(99,102,241,0.13),transparent_35%),linear-gradient(125deg,#f8fafc_0%,#e0e7ff_58%,#f5f3ff_100%)] text-[#152b29]">
+      <section id="story" className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] text-[#152b29]">
         <div className="pointer-events-none absolute inset-0 -z-10" />
         <div className="absolute -right-36 top-20 -z-10 h-[34rem] w-[34rem] rounded-full border border-teal-900/[0.08] sm:right-[-8rem]">
           <div className="absolute inset-10 rounded-full border border-teal-900/[0.08]" />
@@ -145,7 +145,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#f7f7f2]">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="grid gap-5 border-b border-[#cbd6cc] pb-7 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-x-8 lg:gap-x-12 lg:pb-9">
             <h2 className="mt-0 max-w-4xl border-l-[3px] border-[#087a61] pl-5 text-3xl font-black leading-[1.05] tracking-tighter text-[#152b29] sm:text-4xl lg:text-5xl">
@@ -177,7 +177,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="compliance" className="border-y border-slate-200 bg-white">
+      <section id="compliance" className="bg-gradient-to-br from-white to-[#f1f2f6] border-y border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="overflow-hidden rounded-[30px] border border-[#e2e8e2] bg-white shadow-[0_20px_55px_-40px_rgba(23,37,84,0.25)]">
             <div className="relative overflow-hidden bg-[linear-gradient(145deg,#172554_0%,#1e3a8a_55%,#312e81_100%)] px-5 py-7 text-white sm:px-8 sm:py-9">
@@ -226,7 +226,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="leadership" className="bg-[#f7f7f2]">
+      <section id="leadership" className="bg-gradient-to-br from-[#f1f2f6] to-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="grid gap-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-x-8 lg:gap-x-12">
             <p className="order-1 inline-flex w-fit items-center gap-2 rounded-full border border-[#137c63]/15 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] sm:order-2 sm:mb-1 sm:justify-self-end">{pageStrings.leadershipBadge}</p>
@@ -266,37 +266,37 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[linear-gradient(145deg,#172554_0%,#1e3a8a_55%,#312e81_100%)] text-white">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] text-slate-900">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-amber-200 before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-300 before:content-['']">{content.whySectionBadge}</p>
-              <h2 className="mt-3 max-w-2xl text-3xl font-black tracking-tighter text-white sm:text-4xl">{content.whyHeading}</h2>
+              <p className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-amber-900 before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-300 before:content-['']">{content.whySectionBadge}</p>
+              <h2 className="mt-3 max-w-2xl text-3xl font-black tracking-tighter text-[#152b29] sm:text-4xl">{content.whyHeading}</h2>
             </div>
-            <p className="max-w-lg text-sm leading-7 text-slate-200">{content.whyDescription}</p>
+            <p className="max-w-lg text-sm leading-7 text-slate-700">{content.whyDescription}</p>
           </div>
           <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
             {content.companyStrengthsStats.map((stat) => (
               <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/[0.05] p-5">
-                <p className="text-3xl font-black tracking-tight text-amber-300">{stat.value}</p>
-                <p className="mt-2 text-[12px] font-bold uppercase tracking-[0.17em] text-slate-300">{stat.label}</p>
+                <p className="text-3xl font-black tracking-tight text-amber-800">{stat.value}</p>
+                <p className="mt-2 text-[12px] font-bold uppercase tracking-[0.17em] text-slate-700">{stat.label}</p>
               </div>
             ))}
           </div>
           <div className="mt-5 grid gap-5 lg:grid-cols-2">
             <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 sm:p-6">
-              <h3 className="text-lg font-extrabold text-white">{content.strengthsHeading}</h3>
+              <h3 className="text-lg font-extrabold text-slate-950">{content.strengthsHeading}</h3>
               <ul className="mt-4 space-y-3">
                 {content.companyStrengths.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm leading-7 text-slate-100"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300" />{item}</li>
+                  <li key={item} className="flex gap-3 text-sm leading-7 text-slate-700"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300" />{item}</li>
                 ))}
               </ul>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 sm:p-6">
-              <h3 className="text-lg font-extrabold text-white">{content.customerReasonsHeading}</h3>
+              <h3 className="text-lg font-extrabold text-slate-950">{content.customerReasonsHeading}</h3>
               <ul className="mt-4 space-y-3">
                 {content.whyChooseUs.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm leading-7 text-slate-100"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300" />{item}</li>
+                  <li key={item} className="flex gap-3 text-sm leading-7 text-slate-700"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300" />{item}</li>
                 ))}
               </ul>
             </div>
@@ -304,15 +304,15 @@ export default function AboutPage() {
           <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
             {content.reasons.map((reason) => (
               <article key={reason.title} className="border-l border-amber-300/70 pl-4">
-                <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-amber-200">{reason.title}</p>
-                <p className="mt-2 text-sm leading-7 text-slate-200">{reason.text}</p>
+                <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-amber-800">{reason.title}</p>
+                <p className="mt-2 text-sm leading-7 text-slate-700">{reason.text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="roadmap" className="bg-[#f7f7f2]">
+      <section id="roadmap" className="bg-gradient-to-br from-[#f1f2f6] to-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 max-w-3xl">
             <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[#137c63]/15 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-['']">{content.roadmapBadge}</p>
@@ -354,7 +354,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="capabilities" className="border-y border-slate-200 bg-white">
+      <section id="capabilities" className="bg-gradient-to-br from-white to-[#f1f2f6] border-y border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -380,7 +380,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#f7f7f2] text-[#152b29]">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white text-[#152b29]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 max-w-3xl">
             <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[#137c63]/15 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-['']">{content.commitmentsBadge}</p>
@@ -416,7 +416,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 max-w-3xl">
             <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[#137c63]/15 bg-[#eaf2e9] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-['']">{content.workBadge}</p>
@@ -448,7 +448,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <section id="about" className="relative isolate overflow-hidden bg-[#e1ece3] px-4 py-12 text-[#152b29] sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+      <section id="about" className="relative isolate overflow-hidden bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 text-[#152b29] sm:px-6 sm:py-14 lg:px-10 lg:py-16">
         <div className="pointer-events-none absolute -right-28 top-0 h-[30rem] w-[30rem] rounded-full border border-teal-800/10" aria-hidden="true" />
         <div className="pointer-events-none absolute -right-20 top-8 h-[25rem] w-[25rem] rounded-full border border-amber-700/[0.08]" aria-hidden="true" />
 

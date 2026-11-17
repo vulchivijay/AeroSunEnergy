@@ -83,7 +83,7 @@ export default function SolarEnergyPage() {
 
       <SharedHeroSlider slides={solarSlidesLocalized} ariaLabel={solarPage.hero.eyebrow} />
 
-      <section id="solar-offerings" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+      <section id="solar-offerings" className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
         <div className="mb-9 max-w-3xl">
           <SectionEyebrow>{solarPage.offer.eyebrow}</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">{solarPage.offer.title}</h2>
@@ -103,7 +103,7 @@ export default function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-slate-50">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white border-y border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
           <div className="mb-9 max-w-3xl">
             <SectionEyebrow>{solarPage.rooftop.eyebrow}</SectionEyebrow>
@@ -126,7 +126,7 @@ export default function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
         <div className="mb-9 max-w-3xl">
           <SectionEyebrow>{solarPage.systemTypes.eyebrow}</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">{solarPage.systemTypes.title}</h2>
@@ -139,7 +139,7 @@ export default function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-slate-50">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white border-y border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
           <div className="mb-9 max-w-3xl">
             <SectionEyebrow>{solarPage.whySolar.eyebrow}</SectionEyebrow>
@@ -154,7 +154,7 @@ export default function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
         <div className="mb-9 max-w-3xl">
           <SectionEyebrow>{solarPage.subsidy.eyebrow}</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">{solarPage.subsidy.title}</h2>
@@ -173,7 +173,7 @@ export default function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-slate-50">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white border-y border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
           <div className="rounded-[22px] border border-slate-200 bg-white p-6 sm:p-8">
             <SectionEyebrow>{solarPage.subsidy.strategicEyebrow}</SectionEyebrow>
@@ -190,7 +190,7 @@ export default function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="rounded-4xl border border-slate-200 bg-slate-50 p-6">
             <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-[#137c63]">{comparisonMeta.label}</p>
@@ -239,7 +239,7 @@ export default function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-slate-50">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white border-y border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
           <div className="mb-9 max-w-3xl">
             <SectionEyebrow>{measurement.eyebrow}</SectionEyebrow>
@@ -303,7 +303,7 @@ export default function SolarEnergyPage() {
           </div>
         </div>
       </section>
-      <TirupatiEnergySection />
+      <TirupatiEnergySection background="first" />
     </main>
   )
 }

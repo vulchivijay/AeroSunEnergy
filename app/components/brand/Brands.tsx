@@ -45,7 +45,7 @@ export default function Brands() {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-gradient-to-br from-[#f1f2f6] to-[#e2e5ed] px-4 py-16 sm:px-6 lg:px-10 lg:py-20"
+      className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-16 sm:px-6 lg:px-10 lg:py-20"
       aria-labelledby="brand-section-title"
     >
       <div
@@ -63,7 +63,7 @@ export default function Brands() {
               <h2 id="brand-section-title" className="mt-4 max-w-3xl text-2xl font-black tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
                 {section.title}
               </h2>
-              <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-black sm:text-base">
                 {section.subtitle}
               </p>
             </div>

@@ -35,7 +35,7 @@ export function CompanyTrustSection() {
 
   return (
     <section
-      className="relative isolate bg-gradient-to-br from-white to-[#f7f9fc] px-4 py-12 text-slate-900 sm:px-6 lg:px-10 lg:py-16"
+      className="relative isolate bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 text-slate-900 sm:px-6 lg:px-10 lg:py-16"
       aria-labelledby="company-trust-title"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_8%_0%,rgba(99,102,241,0.12),transparent_35%),radial-gradient(ellipse_at_94%_100%,rgba(14,165,233,0.11),transparent_32%)]" aria-hidden="true" />
@@ -141,7 +141,7 @@ export function WhySolarSection() {
 
   return (
     <section
-      className="bg-gradient-to-br from-[#dfe4ea] to-[#cbd3de] px-4 py-14 text-slate-950 sm:px-6 lg:px-10 lg:py-16"
+      className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-14 text-slate-950 sm:px-6 lg:px-10 lg:py-16"
       aria-labelledby="why-solar-title"
     >
       <div className="mx-auto max-w-7xl">
@@ -183,7 +183,7 @@ export function ProjectEvidenceSection() {
   }
 
   return (
-    <section className="bg-gradient-to-br from-white to-[#f7f9fc] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="testimonials-title">
+    <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="testimonials-title">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
@@ -192,7 +192,7 @@ export function ProjectEvidenceSection() {
               {content.title}
             </h2>
           </div>
-          <p className="max-w-3xl text-sm leading-7 text-slate-600 sm:text-base lg:pb-1">{content.description}</p>
+          <p className="max-w-3xl text-sm leading-7 text-black sm:text-base lg:pb-1">{content.description}</p>
         </div>
 
         <div className="mt-8 grid grid-cols-[auto_minmax(0,1fr)_auto] items-stretch gap-2 sm:gap-4">
@@ -252,7 +252,7 @@ export function SolarJourneySection() {
   const content = t.home.trustSections.journey
 
   return (
-    <section className="bg-gradient-to-br from-[#f1f2f6] to-[#e2e5ed] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="solar-journey-title">
+    <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="solar-journey-title">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
           <p className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-800/15 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-emerald-800">{content.eyebrow}</p>
@@ -289,7 +289,7 @@ export function QuoteTransparencySection() {
 
   return (
     <section
-      className="relative isolate bg-gradient-to-br from-[#ced6e0] to-[#b8c4d2] px-4 py-14 text-slate-900 sm:px-6 lg:px-10 lg:py-18"
+      className="relative isolate bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-14 text-slate-900 sm:px-6 lg:px-10 lg:py-18"
       aria-labelledby="quote-transparency-title"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_10%_0%,rgba(129,140,248,0.13),transparent_35%),radial-gradient(ellipse_at_100%_100%,rgba(56,189,248,0.12),transparent_32%)]" aria-hidden="true" />

@@ -91,7 +91,7 @@ export default function WindEnergyPage() {
 
       <SharedHeroSlider slides={windSlidesLocalized} ariaLabel={windPage.labels.sliderAriaLabel} interval={5200} />
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
         <div className="mb-9 max-w-3xl">
           <WindSectionEyebrow>{windPage.overview.eyebrow}</WindSectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.overview.title}</h2>
@@ -110,7 +110,7 @@ export default function WindEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
         <div className="rounded-4xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-[0_32px_90px_-38px_rgba(15,23,42,1)] sm:p-8">
           <div className="mb-6 flex items-center justify-between gap-3">
             <div>
@@ -135,7 +135,7 @@ export default function WindEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
         <div className="mb-9 max-w-3xl">
           <WindSectionEyebrow>{windPage.electrical.eyebrow}</WindSectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.electrical.title}</h2>
@@ -144,7 +144,7 @@ export default function WindEnergyPage() {
         <WindComparisonTable rows={systemConfigsLocalized} />
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="grid gap-5 sm:grid-cols-2">
             {keyBenefitsLocalized.map((benefit) => (
@@ -159,7 +159,7 @@ export default function WindEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
         <div className="mb-9 max-w-3xl">
           <WindSectionEyebrow>{windPage.capacity.eyebrow}</WindSectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.capacity.title}</h2>
@@ -168,7 +168,7 @@ export default function WindEnergyPage() {
         <WindCapacityTable rows={capacityBandsLocalized} />
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
         <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_40px_-28px_rgba(15,23,42,0.25)] sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
@@ -196,7 +196,7 @@ export default function WindEnergyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
         <div className="mb-9 max-w-3xl">
           <WindSectionEyebrow>{windPage.labels.serviceSections}</WindSectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.labels.serviceSectionsTitle}</h2>
@@ -273,7 +273,7 @@ export default function WindEnergyPage() {
           ))}
         </div>
       </section>
-      <TirupatiEnergySection />
+      <TirupatiEnergySection background="second" />
     </main>
   )
 }

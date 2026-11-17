@@ -78,7 +78,7 @@ export default function ProductCataloguePage() {
 
   return (
     <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative isolate overflow-hidden bg-[radial-gradient(ellipse_at_75%_8%,rgba(56,189,248,0.14),transparent_38%),linear-gradient(125deg,#f8fafc_0%,#e0f2fe_58%,#f5f3ff_100%)] text-[#152b29]">
+      <section className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] text-[#152b29]">
         <div
           className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_8%,rgba(99,102,241,0.08),transparent_38%),radial-gradient(ellipse_at_5%_100%,rgba(56,189,248,0.1),transparent_35%)]"
           aria-hidden="true"
@@ -122,7 +122,7 @@ export default function ProductCataloguePage() {
       </section>
 
       <div className="mx-auto max-w-7xl space-y-12 px-4 py-12 sm:space-y-16 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        <section>
+        <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
           <SectionHeading
             number="01"
             eyebrow={c.residential.eyebrow}
@@ -150,7 +150,7 @@ export default function ProductCataloguePage() {
           </p>
         </section>
 
-        <section>
+        <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
           <SectionHeading
             number="02"
             eyebrow={c.commercial.eyebrow}
@@ -177,7 +177,7 @@ export default function ProductCataloguePage() {
           </p>
         </section>
 
-        <section>
+        <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
           <SectionHeading
             number="03"
             eyebrow={c.agricultural.eyebrow}
@@ -208,7 +208,7 @@ export default function ProductCataloguePage() {
           </p>
         </section>
 
-        <section>
+        <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
           <SectionHeading
             number="04"
             eyebrow={c.offGrid.eyebrow}
@@ -233,7 +233,7 @@ export default function ProductCataloguePage() {
           </p>
         </section>
 
-        <section>
+        <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
           <SectionHeading
             number="05"
             eyebrow={c.battery.eyebrow}
@@ -268,18 +268,17 @@ export default function ProductCataloguePage() {
           </p>
         </section>
 
-        <section className="rounded-[30px] bg-[linear-gradient(145deg,#581c87_0%,#7e22ce_55%,#a21caf_100%)] p-6 text-white shadow-[0_24px_60px_-40px_rgba(88,28,135,0.35)] sm:p-10">
+        <section className="bg-gradient-to-br from-white to-[#f1f2f6] rounded-[30px] p-6 shadow-[0_24px_60px_-40px_rgba(88,28,135,0.35)] sm:p-10">
           <SectionHeading
             number="06"
             eyebrow={c.wind.eyebrow}
             title={c.wind.title}
             description={c.wind.description}
-            inverse
           />
           <div className="mb-6 inline-flex flex-wrap items-center gap-3 rounded-full border border-amber-200/20 bg-white/[0.08] px-5 py-3">
-            <Wind className="h-5 w-5 text-amber-300" aria-hidden="true" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-indigo-100/80">{c.wind.developmentRangeLabel}</span>
-            <span className="font-mono text-lg font-bold text-amber-200">100 W – 10 kW</span>
+            <Wind className="h-5 w-5 text-amber-700" aria-hidden="true" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-700">{c.wind.developmentRangeLabel}</span>
+            <span className="font-mono text-lg font-bold text-amber-800">100 W – 10 kW</span>
           </div>
           <div className="grid gap-5 lg:grid-cols-2">
             <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-5 sm:p-6">
@@ -292,28 +291,28 @@ export default function ProductCataloguePage() {
             </div>
           </div>
           <div className="mt-5 rounded-[22px] border border-amber-200/20 bg-black/10 p-6 sm:p-8">
-            <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-amber-200">{c.wind.projectLabel}</p>
+            <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-amber-800">{c.wind.projectLabel}</p>
             <h3 className="mt-3 text-2xl font-black sm:text-3xl">{c.wind.productName}</h3>
-            <p className="mt-2 text-sm text-indigo-100/80">{c.wind.configurationLabel}</p>
+            <p className="mt-2 text-sm text-slate-700">{c.wind.configurationLabel}</p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {c.wind.configuration.map((item) => (
-                <p key={item} className="flex gap-3 text-sm leading-7 text-indigo-50">
+                <p key={item} className="flex gap-3 text-sm leading-7 text-slate-700">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-amber-300" aria-hidden="true" />
                   {item}
                 </p>
               ))}
             </div>
-            <p className="mt-6 border-t border-white/15 pt-5 text-sm leading-7 text-indigo-100/90">
-              <strong className="text-white">{c.wind.statusLabel}</strong>{' '}
+            <p className="mt-6 border-t border-slate-200 pt-5 text-sm leading-7 text-slate-700">
+              <strong className="text-slate-950">{c.wind.statusLabel}</strong>{' '}
               {c.wind.statusTemplate.replace('{status}', c.wind.status)}
             </p>
           </div>
-          <p className="mt-6 font-semibold italic text-amber-200">
+          <p className="mt-6 font-semibold italic text-amber-800">
             {c.wind.tagline}
           </p>
         </section>
 
-        <section>
+        <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
           <SectionHeading
             number="07"
             eyebrow={c.hybrid.eyebrow}
@@ -333,7 +332,7 @@ export default function ProductCataloguePage() {
           </p>
         </section>
 
-        <section>
+        <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
           <SectionHeading
             number="08"
             eyebrow={c.consultation.eyebrow}
@@ -362,7 +361,7 @@ export default function ProductCataloguePage() {
           </ol>
         </section>
 
-        <section className="grid gap-8 rounded-[30px] border border-slate-200 bg-slate-50 p-6 sm:p-10 lg:grid-cols-[0.7fr_1.3fr]">
+        <section className="bg-gradient-to-br from-[#f1f2f6] to-white grid gap-8 rounded-[30px] border border-slate-200 bg-slate-50 p-6 sm:p-10 lg:grid-cols-[0.7fr_1.3fr]">
           <div>
             <SectionHeading
               number="09"
@@ -383,7 +382,7 @@ export default function ProductCataloguePage() {
           </div>
         </section>
 
-        <section className="overflow-hidden rounded-[30px] border border-slate-200 bg-white">
+        <section className="bg-gradient-to-br from-white to-[#f1f2f6] overflow-hidden rounded-[30px] border border-slate-200 bg-white">
           <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
             <div className="bg-[linear-gradient(145deg,#581c87_0%,#7e22ce_55%,#a21caf_100%)] p-7 text-white sm:p-10">
               <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-amber-200">10 / {c.contact.eyebrow}</p>

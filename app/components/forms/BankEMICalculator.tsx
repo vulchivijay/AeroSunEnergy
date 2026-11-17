@@ -62,7 +62,7 @@ export function BankEMICalculator() {
   }, [interestRate, loanAmount, tenureYears])
 
   return (
-    <section className="relative isolate overflow-hidden border-y border-[#cfe4ee] bg-gradient-to-br from-[#f1f2f6] to-[#e2e5ed] px-4 py-14 sm:px-6 sm:py-18 lg:px-8 lg:py-24">
+    <section className="relative isolate overflow-hidden border-y border-[#cfe4ee] bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-14 sm:px-6 sm:py-18 lg:px-8 lg:py-24">
       <div className="pointer-events-none absolute -right-36 -top-40 h-[28rem] w-[28rem] rounded-full border border-cyan-900/[0.06]" aria-hidden="true" />
       <div className="pointer-events-none absolute -right-20 -top-24 h-96 w-96 rounded-full border border-cyan-900/[0.06]" aria-hidden="true" />
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-[1.35fr_1fr_1fr] xl:items-center xl:gap-5">

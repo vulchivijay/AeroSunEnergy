@@ -87,7 +87,7 @@ export default function ServicesPage() {
         </div>
       </header>
 
-      <section id="service-divisions" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+      <section id="service-divisions" className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
         <div className="mb-9 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-3xl">
             <p className="inline-flex w-fit rounded-full border border-emerald-800/15 bg-emerald-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-emerald-800">{labels.serviceStructure}</p>
@@ -126,7 +126,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-white">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white border-y border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
           <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
             <div>
@@ -154,7 +154,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
         <div className="overflow-hidden rounded-[30px] bg-[linear-gradient(135deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] p-6 text-white shadow-[0_24px_70px_-45px_rgba(16,42,67,0.5)] sm:p-10 lg:p-12">
           <div className="mb-8 max-w-3xl">
             <p className="inline-flex w-fit rounded-full border border-amber-300/25 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-amber-200">{labels.deliveryModel}</p>
@@ -182,7 +182,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-14 lg:px-10">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-14 lg:px-10">
         <div className="grid gap-6 lg:grid-cols-[1fr_0.92fr]">
           <article className="rounded-[22px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <p className="inline-flex w-fit rounded-full border border-sky-800/15 bg-sky-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-sky-800">{labels.roadmap}</p>
@@ -227,7 +227,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="border-t border-slate-200 bg-white">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
           <div className="mb-9 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-3xl">
@@ -263,7 +263,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
         <div className="mb-9 max-w-3xl">
           <p className="inline-flex w-fit rounded-full border border-sky-800/15 bg-sky-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-sky-800">{labels.systemTypes}</p>
           <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{labels.systemTypesTitle}</h2>
@@ -294,7 +294,7 @@ export default function ServicesPage() {
           ))}
         </div>
       </section>
-      <TirupatiEnergySection />
+      <TirupatiEnergySection background="first" />
     </main>
   )
 }

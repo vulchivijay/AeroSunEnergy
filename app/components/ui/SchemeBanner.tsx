@@ -47,7 +47,7 @@ export default function SchemeBanner() {
   }, [banner.stats, now])
 
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f7f9fc] px-4 py-9 text-[#172554] sm:px-6 sm:py-11 lg:px-10 lg:py-12">
+    <section className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-9 text-[#172554] sm:px-6 sm:py-11 lg:px-10 lg:py-12">
       <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-32 h-80 w-80 rounded-full bg-white/55 blur-3xl" />
       <div aria-hidden="true" className="pointer-events-none absolute -bottom-40 left-1/4 h-80 w-80 rounded-full bg-[#ede9fe]/55 blur-3xl" />
 

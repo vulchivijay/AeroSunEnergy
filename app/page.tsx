@@ -44,7 +44,7 @@ function RecognitionHighlight() {
   const recognitions = t.home.recognition
 
   return (
-    <section className="bg-gradient-to-br from-[#ced6e0] to-[#b8c4d2] px-4 py-8 sm:px-6 lg:px-10 lg:py-12">
+    <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-8 sm:px-6 lg:px-10 lg:py-12">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 overflow-hidden rounded-[30px] border border-[#e2e8e2] bg-white shadow-[0_20px_60px_-40px_rgba(24,37,31,0.3)] lg:grid-cols-[1.05fr_1fr_1fr]">
           <div className="flex flex-col justify-center bg-[#e1ece3] p-7 sm:p-9 lg:p-11">
@@ -96,7 +96,7 @@ export default function Home() {
       <HomeHeroSlider />
       <SchemeBanner />
       {/* Solar Section */}
-      <section className="bg-gradient-to-br from-[#dfe4ea] to-[#cbd3de] px-4 py-12 sm:px-6 lg:px-10">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-7xl">  
           <div className="mb-8">
             <SectionEyebrow>{offer.eyebrow}</SectionEyebrow>
@@ -104,7 +104,7 @@ export default function Home() {
               {offer.title}
             </h2>
           </div>
-          <div className="mb-10 text-lg leading-8 text-slate-700">
+          <div className="mb-10 text-lg leading-8 text-black">
             {offer.description}
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
@@ -182,7 +182,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-gradient-to-br from-[#f1f2f6] to-[#e2e5ed] px-4 py-10 sm:px-6 lg:px-10 lg:py-14">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-10 sm:px-6 lg:px-10 lg:py-14">
         <div className="mx-auto grid max-w-7xl items-center gap-8 xl:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] xl:gap-10">
           <div className="max-w-2xl">
             <SectionEyebrow>{subsidy.eyebrow}</SectionEyebrow>
@@ -247,7 +247,7 @@ export default function Home() {
       <BankEMICalculator />
       <TirupatiEnergySection />
       {/* Wind Energy Section */}
-      <section className="bg-gradient-to-br from-white to-[#f7f9fc] px-4 py-12 sm:px-6 lg:px-10">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8">
             <WindSectionEyebrow>{wind.eyebrow}</WindSectionEyebrow>
@@ -282,7 +282,7 @@ export default function Home() {
         </div>
       </section>
       {/* Hybrid Energy Section */}
-      <section className="bg-gradient-to-br from-[#dfe4ea] to-[#cbd3de] px-4 py-12 sm:px-6 lg:px-10">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-7xl ">
           <div className="mb-8">
             <HybridSectionEyebrow>{hybrid.eyebrow}</HybridSectionEyebrow>
