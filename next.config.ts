@@ -44,53 +44,78 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/solarenergy',
+        destination: '/solar-energy',
+        permanent: true,
+      },
+      {
+        source: '/windenergy',
+        destination: '/wind-energy',
+        permanent: true,
+      },
+      {
+        source: '/hybridenergy',
+        destination: '/hybrid-energy',
+        permanent: true,
+      },
+      {
+        source: '/cancellation-refund',
+        destination: '/cancellation',
+        permanent: true,
+      },
+      {
         source: '/dashboard',
         destination: '/auth/dashboard',
         permanent: true,
       },
       {
+        source: '/billing/:path*',
+        destination: '/auth/billing/:path*',
+        permanent: true,
+      },
+      {
         source: '/terms-conditions',
-        destination: '/billing/terms-conditions',
+        destination: '/auth/billing/terms-conditions',
         permanent: true,
       },
       {
         source: '/customer-enquiry',
-        destination: '/billing/customer-enquiry',
+        destination: '/auth/billing/customer-enquiry',
         permanent: true,
       },
       {
         source: '/customer-agreement',
-        destination: '/billing/customer-agreement',
+        destination: '/auth/billing/customer-agreement',
         permanent: true,
       },
       {
         source: '/installation-checklist',
-        destination: '/billing/installation-checklist',
+        destination: '/auth/billing/installation-checklist',
         permanent: true,
       },
       {
         source: '/invoice-receipt',
-        destination: '/billing/invoice-receipt',
+        destination: '/auth/billing/invoice-receipt',
         permanent: true,
       },
       {
         source: '/purchase-order',
-        destination: '/billing/purchase-order',
+        destination: '/auth/billing/purchase-order',
         permanent: true,
       },
       {
         source: '/warranty-policy',
-        destination: '/billing/warranty-policy',
+        destination: '/auth/billing/warranty-policy',
         permanent: true,
       },
       {
         source: '/nintydays-tracker',
-        destination: '/billing/nintydays-tracker',
+        destination: '/auth/billing/nintydays-tracker',
         permanent: true,
       },
       {
         source: '/research-development',
-        destination: '/billing/research-development',
+        destination: '/auth/billing/research-development',
         permanent: true,
       },
       {

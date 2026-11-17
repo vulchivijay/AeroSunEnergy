@@ -286,7 +286,7 @@ export function SolarEstimation() {
           </button>
           <p className="mt-4 text-center text-xs leading-5 text-slate-500">
             {e.quoteHeroDisclosurePrefix}{' '}
-            <Link href="/billing/terms-conditions" className="underline underline-offset-2 hover:text-slate-800">
+            <Link href="/auth/billing/terms-conditions" className="underline underline-offset-2 hover:text-slate-800">
               {e.quoteHeroTerms}
             </Link>.
           </p>

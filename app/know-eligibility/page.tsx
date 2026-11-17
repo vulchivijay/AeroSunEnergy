@@ -186,7 +186,7 @@ export default function KnowEligibilityPage() {
           <p className="mt-7 rounded-2xl border border-emerald-200/80 bg-white p-5 text-md leading-7 text-slate-600">
             {labels.contactPrompt}{' '}
             <Link href="/contact" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800">{labels.contactLink}</Link>
-            {' '}{labels.or}{' '}<Link href="/solarenergy" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800">{labels.solutionsLink}</Link>.
+            {' '}{labels.or}{' '}<Link href="/solar-energy" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800">{labels.solutionsLink}</Link>.
           </p>
         </article>
 

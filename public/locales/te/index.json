@@ -60,15 +60,15 @@
       },
       {
         "label": "సౌర శక్తి",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "పవన శక్తి",
-        "href": "/windenergy"
+        "href": "/wind-energy"
       },
       {
         "label": "హైబ్రిడ్ శక్తి",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       },
       {
         "label": "సర్వీసులు",
@@ -121,9 +121,9 @@
       "/about": "info",
       "/about/company-profile": "building",
       "/about/product-catalogue": "package",
-      "/solarenergy": "sun",
-      "/windenergy": "wind",
-      "/hybridenergy": "zap",
+      "/solar-energy": "sun",
+      "/wind-energy": "wind",
+      "/hybrid-energy": "zap",
       "/services": "panels",
       "/contact": "mail"
     }
@@ -2992,35 +2992,35 @@
     "solutions": [
       {
         "label": "నివాస సౌర పరిష్కారాలు",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "కమర్షియల్ & ఇండస్ట్రియల్ సోలార్",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "సోలార్ అగ్రికల్చరల్ పంపులు",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "గాలి జనరేటర్ సిస్టమ్స్",
-        "href": "/windenergy"
+        "href": "/wind-energy"
       },
       {
         "label": "వర్టికల్ యాక్సిస్ విండ్ టర్బైన్లు",
-        "href": "/windenergy"
+        "href": "/wind-energy"
       },
       {
         "label": "సోలార్-విండ్ హైబ్రిడ్ సిస్టమ్స్",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       },
       {
         "label": "బ్యాటరీ శక్తి నిల్వ",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       },
       {
         "label": "ఆఫ్-గ్రిడ్ పవర్ సొల్యూషన్స్",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       }
     ],
     "address": "డో.నెం 11-184, గొల్లవానిగుంట, T.N. పల్లెం, తిరుపతి, ఆంధ్రప్రదేశ్, భారతదేశం - 517501.",
@@ -3038,19 +3038,15 @@
     "legalLinks": [
       {
         "label": "నిబంధనలు & షరతులు",
-        "href": "/billing/terms-conditions"
+        "href": "/auth/billing/terms-conditions"
       },
       {
         "label": "వారంటీ & సర్వీస్ పాలసీ",
-        "href": "/billing/warranty-policy"
+        "href": "/auth/billing/warranty-policy"
       },
       {
         "label": "రద్దు మరియు రీఫండ్ విధానం",
-        "href": "/cancellation-refund"
-      },
-      {
-        "label": "బిల్లింగ్ & ప్రాజెక్ట్ పత్రాలు",
-        "href": "/billing"
+        "href": "/cancellation"
       }
     ],
     "attribution": "వల్చి విజయ కుమార్ రాజు (క్షత్రియులు) ప్రేమ మరియు అభిరుచితో నిర్మించారు."
@@ -7472,15 +7468,15 @@
       "helpfulLinks": [
         {
           "label": "సౌర శక్తి",
-          "href": "/solarenergy"
+          "href": "/solar-energy"
         },
         {
           "label": "గాలి శక్తి",
-          "href": "/windenergy"
+          "href": "/wind-energy"
         },
         {
           "label": "హైబ్రిడ్ శక్తి",
-          "href": "/hybridenergy"
+          "href": "/hybrid-energy"
         },
         {
           "label": "మమ్మల్ని సంప్రదించండి",

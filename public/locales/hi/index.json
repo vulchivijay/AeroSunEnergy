@@ -60,15 +60,15 @@
       },
       {
         "label": "सौर ऊर्जा",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "पवन ऊर्जा",
-        "href": "/windenergy"
+        "href": "/wind-energy"
       },
       {
         "label": "हाइब्रिड ऊर्जा",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       },
       {
         "label": "सर्विसेज",
@@ -121,9 +121,9 @@
       "/about": "info",
       "/about/company-profile": "building",
       "/about/product-catalogue": "package",
-      "/solarenergy": "sun",
-      "/windenergy": "wind",
-      "/hybridenergy": "zap",
+      "/solar-energy": "sun",
+      "/wind-energy": "wind",
+      "/hybrid-energy": "zap",
       "/services": "panels",
       "/contact": "mail"
     }
@@ -2991,35 +2991,35 @@
     "solutions": [
       {
         "label": "आवासीय सौर समाधान",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "वाणिज्यिक एवं औद्योगिक सौर",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "सौर कृषि पंप",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "पवन जनरेटर सिस्टम",
-        "href": "/windenergy"
+        "href": "/wind-energy"
       },
       {
         "label": "ऊर्ध्वाधर अक्ष पवन टर्बाइन",
-        "href": "/windenergy"
+        "href": "/wind-energy"
       },
       {
         "label": "सौर-पवन हाइब्रिड सिस्टम",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       },
       {
         "label": "बैटरी ऊर्जा भंडारण",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       },
       {
         "label": "ऑफ-ग्रिड पावर सॉल्यूशंस",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       }
     ],
     "address": "Do.no. 11-184, गोलावनिगुंटा, टी.एन. पल्लेम, तिरूपति, आंध्र प्रदेश, भारत - 517501.",
@@ -3037,19 +3037,15 @@
     "legalLinks": [
       {
         "label": "नियम एवं शर्तें",
-        "href": "/billing/terms-conditions"
+        "href": "/auth/billing/terms-conditions"
       },
       {
         "label": "वारंटी एवं सेवा नीति",
-        "href": "/billing/warranty-policy"
+        "href": "/auth/billing/warranty-policy"
       },
       {
         "label": "रद्दीकरण एवं रिफंड नीति",
-        "href": "/cancellation-refund"
-      },
-      {
-        "label": "बिलिंग और परियोजना दस्तावेज़",
-        "href": "/billing"
+        "href": "/cancellation"
       }
     ],
     "attribution": "वल्ची विजया कुमार राजू (क्षत्रिय) द्वारा प्यार और जुनून के साथ निर्मित।"
@@ -7471,15 +7467,15 @@
       "helpfulLinks": [
         {
           "label": "सौर ऊर्जा",
-          "href": "/solarenergy"
+          "href": "/solar-energy"
         },
         {
           "label": "पवन ऊर्जा",
-          "href": "/windenergy"
+          "href": "/wind-energy"
         },
         {
           "label": "हाइब्रिड ऊर्जा",
-          "href": "/hybridenergy"
+          "href": "/hybrid-energy"
         },
         {
           "label": "हमसे संपर्क करें",

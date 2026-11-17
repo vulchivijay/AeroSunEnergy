@@ -4087,15 +4087,15 @@
       "helpfulLinks": [
         {
           "label": "Solar energy",
-          "href": "/solarenergy"
+          "href": "/solar-energy"
         },
         {
           "label": "Wind energy",
-          "href": "/windenergy"
+          "href": "/wind-energy"
         },
         {
           "label": "Hybrid energy",
-          "href": "/hybridenergy"
+          "href": "/hybrid-energy"
         },
         {
           "label": "Contact us",
@@ -4289,15 +4289,15 @@
       },
       {
         "label": "സൗരോർജ്ജം",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "കാറ്റിൽ നിന്നുള്ള ഊർജ്ജം",
-        "href": "/windenergy"
+        "href": "/wind-energy"
       },
       {
         "label": "ഹൈബ്രിഡ് ഊർജ്ജം",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       },
       {
         "label": "സേവനങ്ങൾ",
@@ -4350,9 +4350,9 @@
       "/about": "info",
       "/about/company-profile": "building",
       "/about/product-catalogue": "package",
-      "/solarenergy": "sun",
-      "/windenergy": "wind",
-      "/hybridenergy": "zap",
+      "/solar-energy": "sun",
+      "/wind-energy": "wind",
+      "/hybrid-energy": "zap",
       "/services": "panels",
       "/contact": "mail"
     }
@@ -7713,35 +7713,35 @@
     "solutions": [
       {
         "label": "ഗാർഹിക സൗരോർജ പരിഹാരങ്ങൾ",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "വാണിജ്യ, വ്യാവസായിക സൗരോർജം",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "കൃഷിക്കുള്ള സൗര പമ്പുകൾ",
-        "href": "/solarenergy"
+        "href": "/solar-energy"
       },
       {
         "label": "കാറ്റാടി വൈദ്യുതോൽപ്പാദന സംവിധാനങ്ങൾ",
-        "href": "/windenergy"
+        "href": "/wind-energy"
       },
       {
         "label": "ലംബ അച്ചുതണ്ടുള്ള കാറ്റാടി ടർബൈനുകൾ",
-        "href": "/windenergy"
+        "href": "/wind-energy"
       },
       {
         "label": "സൗര-കാറ്റാടി ഹൈബ്രിഡ് സംവിധാനങ്ങൾ",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       },
       {
         "label": "ബാറ്ററി ഊർജ സംഭരണം",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       },
       {
         "label": "ഗ്രിഡ് ബന്ധമില്ലാത്ത വൈദ്യുതി പരിഹാരങ്ങൾ",
-        "href": "/hybridenergy"
+        "href": "/hybrid-energy"
       }
     ],
     "address": "Do.no 11-184, Gollavanigunta, T.N. Pallem, Tirupati, Andhra Pradesh, India - 517501.",
@@ -7759,19 +7759,15 @@
     "legalLinks": [
       {
         "label": "നിബന്ധനകളും വ്യവസ്ഥകളും",
-        "href": "/billing/terms-conditions"
+        "href": "/auth/billing/terms-conditions"
       },
       {
         "label": "വാറന്റി, സേവന നയം",
-        "href": "/billing/warranty-policy"
+        "href": "/auth/billing/warranty-policy"
       },
       {
         "label": "റദ്ദാക്കലും റീഫണ്ട് നയവും",
-        "href": "/cancellation-refund"
-      },
-      {
-        "label": "ബില്ലിംഗും പ്രോജക്റ്റ് രേഖകളും",
-        "href": "/billing"
+        "href": "/cancellation"
       }
     ],
     "attribution": "Vulchi Vijaya Kumar Raju (Kshatriya's) സ്നേഹത്തോടെയും ആവേശത്തോടെയും നിർമ്മിച്ചത്.",
