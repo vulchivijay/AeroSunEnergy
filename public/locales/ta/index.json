@@ -4320,10 +4320,6 @@
       {
         "label": "நிதி",
         "href": "/finance"
-      },
-      {
-        "label": "கொள்கைகள்",
-        "href": "/policies"
       }
     ],
     "startProject": "திட்டத்தைத் தொடங்குங்கள்",
@@ -7758,12 +7754,8 @@
     "attributionLinkText": "ChatGPT.",
     "legalLinks": [
       {
-        "label": "விதிமுறைகள் மற்றும் நிபந்தனைகள்",
-        "href": "/auth/dashboard/billing/terms-conditions"
-      },
-      {
-        "label": "உத்தரவாதம் மற்றும் சேவை கொள்கை",
-        "href": "/auth/dashboard/billing/warranty-policy"
+        "label": "தனியுரிமைக் கொள்கை",
+        "href": "/policies"
       },
       {
         "label": "ரத்து மற்றும் பணத்திரும்பப் பெறுதல் கொள்கை",

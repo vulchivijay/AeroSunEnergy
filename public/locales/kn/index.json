@@ -4320,10 +4320,6 @@
       {
         "label": "ಹಣಕಾಸು",
         "href": "/finance"
-      },
-      {
-        "label": "ನೀತಿಗಳು",
-        "href": "/policies"
       }
     ],
     "startProject": "ಯೋಜನೆ ಆರಂಭಿಸಿ",
@@ -7758,12 +7754,8 @@
     "attributionLinkText": "ChatGPT.",
     "legalLinks": [
       {
-        "label": "ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು",
-        "href": "/auth/dashboard/billing/terms-conditions"
-      },
-      {
-        "label": "ವಾರಂಟಿ ಮತ್ತು ಸೇವಾ ನೀತಿ",
-        "href": "/auth/dashboard/billing/warranty-policy"
+        "label": "ಗೌಪ್ಯತಾ ನೀತಿ",
+        "href": "/policies"
       },
       {
         "label": "ರದ್ದತಿ ಮತ್ತು ಮರುಪಾವತಿ ನೀತಿ",

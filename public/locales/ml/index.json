@@ -4320,10 +4320,6 @@
       {
         "label": "ധനസഹായം",
         "href": "/finance"
-      },
-      {
-        "label": "നയങ്ങൾ",
-        "href": "/policies"
       }
     ],
     "startProject": "പദ്ധതി ആരംഭിക്കുക",
@@ -7758,12 +7754,8 @@
     "attributionLinkText": "ChatGPT.",
     "legalLinks": [
       {
-        "label": "നിബന്ധനകളും വ്യവസ്ഥകളും",
-        "href": "/auth/dashboard/billing/terms-conditions"
-      },
-      {
-        "label": "വാറന്റി, സേവന നയം",
-        "href": "/auth/dashboard/billing/warranty-policy"
+        "label": "സ്വകാര്യതാ നയം",
+        "href": "/policies"
       },
       {
         "label": "റദ്ദാക്കലും റീഫണ്ട് നയവും",
