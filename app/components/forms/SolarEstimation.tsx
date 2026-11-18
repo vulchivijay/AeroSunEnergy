@@ -1,8 +1,7 @@
 'use client'
 
-import { useId, useRef, useState, type FormEvent } from 'react'
-import Link from 'next/link'
-import { Calculator, Landmark, Smartphone, Tag, UserRound, type LucideIcon } from 'lucide-react'
+import { useId, useState, type FormEvent } from 'react'
+import { Calculator, Landmark, Tag, type LucideIcon } from 'lucide-react'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { useLocale } from '@/lib/LocaleContext'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
@@ -85,13 +84,10 @@ export function SolarEstimation() {
   const monthlyBillInputId = useId()
   const systemSizeInputId = useId()
   const leadFormId = useId()
-  const quoteNameInputId = useId()
-  const quotePhoneInputId = useId()
   const leadNameInputId = useId()
   const leadPhoneInputId = useId()
   const leadPinInputId = useId()
   const leadPropertyTypeInputId = useId()
-  const calculatorRef = useRef<HTMLDivElement>(null)
   const [inputMode, setInputMode] = useState<InputMode>('bill')
   const [monthlyBillInput, setMonthlyBillInput] = useState(String(defaultValues.monthlyBill))
   const [systemSizeInput, setSystemSizeInput] = useState(String(initialSystemSize))
@@ -102,17 +98,6 @@ export function SolarEstimation() {
   const [showLeadForm, setShowLeadForm] = useState(false)
   const [whatsAppFallbackUrl, setWhatsAppFallbackUrl] = useState<string | null>(null)
   const [leadFormPending, setLeadFormPending] = useState(false)
-
-  function handleQuoteIntroSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    const formData = new FormData(event.currentTarget)
-    setLeadNameValue(String(formData.get('quoteName') ?? '').trim())
-    setLeadPhoneValue(String(formData.get('quotePhone') ?? '').trim())
-    setWhatsAppFallbackUrl(null)
-    requestAnimationFrame(() => {
-      calculatorRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    })
-  }
 
   const billAmount = clamp(Number(monthlyBillInput) || 500, 500, 50000)
   const monthlyUnitsFromBill = Math.round(billAmount / AVERAGE_TARIFF_PER_UNIT)
@@ -233,72 +218,23 @@ export function SolarEstimation() {
 
   return (
     <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 lg:py-16 sm:py-14">
-      <div className="mx-auto mb-8 max-w-7xl rounded-2xl border border-lime-100 bg-white px-5 py-8 shadow-[0_4px_22px_rgba(101,163,13,0.12)] sm:px-8 sm:py-10 lg:px-12">
-        <h2 className="text-center text-3xl font-black leading-tight tracking-tight text-[#285b80] sm:text-4xl lg:text-5xl">
-          {e.quoteHeroTitle}
-        </h2>
-        <p className="mt-4 text-center text-lg font-medium text-slate-900 sm:text-2xl">
-          {e.quoteHeroSubtitle}
+      <div className="mx-auto mb-8 max-w-7xl">
+        <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-indigo-900 sm:text-sm">
+          <span className="h-1.5 w-1.5 rounded-full bg-amber-500" aria-hidden="true" />
+          {e.solarCalculatorEyebrow}
         </p>
-        <form onSubmit={handleQuoteIntroSubmit} className="mx-auto mt-7 max-w-3xl">
-          <div className="grid gap-3 sm:grid-cols-2">
-            <label htmlFor={quoteNameInputId} className="relative block">
-              <span className="sr-only">{e.leadName}</span>
-              <UserRound className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" aria-hidden="true" />
-              <input
-                id={quoteNameInputId}
-                name="quoteName"
-                type="text"
-                autoComplete="name"
-                minLength={2}
-                maxLength={100}
-                required
-                value={leadNameValue}
-                onChange={(event) => setLeadNameValue(event.target.value)}
-                placeholder={e.quoteHeroNamePlaceholder}
-                className="min-h-14 w-full rounded-xl border border-slate-300 bg-white py-3 pl-12 pr-4 text-base text-slate-900 outline-none transition focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
-              />
-            </label>
-            <label htmlFor={quotePhoneInputId} className="relative block">
-              <span className="sr-only">{e.leadMobile}</span>
-              <Smartphone className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" aria-hidden="true" />
-              <input
-                id={quotePhoneInputId}
-                name="quotePhone"
-                type="tel"
-                inputMode="tel"
-                autoComplete="tel"
-                pattern="(?:\+?91)?[6-9][0-9]{9}"
-                maxLength={13}
-                required
-                value={leadPhoneValue}
-                onChange={(event) => setLeadPhoneValue(event.target.value)}
-                placeholder={e.quoteHeroMobilePlaceholder}
-                className="min-h-14 w-full rounded-xl border border-slate-300 bg-white py-3 pl-12 pr-4 text-base text-slate-900 outline-none transition focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
-              />
-            </label>
-          </div>
-          <button
-            type="submit"
-            className="mt-5 min-h-14 w-full rounded-xl bg-gradient-to-b from-lime-300 to-lime-500 px-6 py-3 text-lg font-extrabold text-[#285b80] shadow-sm transition hover:from-lime-200 hover:to-lime-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime-600"
-          >
-            {e.quoteHeroSubmit}
-          </button>
-          <p className="mt-4 text-center text-xs leading-5 text-slate-500">
-            {e.quoteHeroDisclosurePrefix}{' '}
-            <Link href="/auth/dashboard/billing/terms-conditions" className="underline underline-offset-2 hover:text-slate-800">
-              {e.quoteHeroTerms}
-            </Link>.
-          </p>
-        </form>
+        <h1 className="max-w-6xl text-left text-3xl font-black leading-tight tracking-tight text-black sm:text-4xl lg:text-5xl">
+          {e.solarCalculatorTitle}{' '}
+          <span className="text-indigo-700">{e.solarCalculatorTitleAccent}</span>
+        </h1>
       </div>
 
       <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl shadow-sm">
-        <div ref={calculatorRef} className="grid scroll-mt-6 lg:grid-cols-[minmax(300px,0.75fr)_1.45fr]">
+        <div className="grid lg:grid-cols-[minmax(300px,0.75fr)_1.45fr]">
           <div className="bg-linear-to-br from-[#4568b6] via-[#5c55ae] to-[#3f7798] p-6 text-white sm:p-8 lg:p-10">
-            <h1 className="max-w-sm text-3xl font-black leading-tight tracking-tight sm:text-4xl">
+            <h2 className="max-w-sm text-3xl font-black leading-tight tracking-tight sm:text-4xl">
               {e.savingsTitle} <span className="text-emerald-400">{e.savingsTitleAccent}</span>
-            </h1>
+            </h2>
             <p className="mt-3 max-w-sm text-sm leading-6 text-blue-100/80">
               {e.savingsDescription}
             </p>

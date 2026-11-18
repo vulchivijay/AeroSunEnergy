@@ -17,6 +17,7 @@ import {
   Menu,
   PanelsTopLeft,
   PackageOpen,
+  Phone,
   Sun,
   Wind,
   X,
@@ -353,15 +354,15 @@ export default function Navbar() {
       <div className="absolute -left-10 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-sky-300/20 blur-3xl" />
       <div className="absolute -right-12 top-0 h-32 w-32 rounded-full bg-amber-200/20 blur-3xl" />
 
-      <div className="relative hidden border-b border-white/15 bg-white/5 text-white/90 backdrop-blur-xl">
+      <div className="relative border-b border-white/15 bg-white/5 text-white/90 backdrop-blur-xl">
         <div className="mx-auto flex min-h-8 w-full items-center justify-between gap-3 px-3 py-1 text-sm  tracking-[0.08em] sm:px-6 sm:text-sm sm:tracking-[0.12em] lg:px-8">
           <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
             <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6b45e] shadow-sm" aria-hidden="true" />
-            {t.navbar.brandName}
+            {t.navbar.companyRegistration}
           </span>
           <span className="ml-3 hidden whitespace-nowrap text-sm  uppercase tracking-[0.2em] text-white/80 lg:flex lg:items-center lg:gap-2">
-            <Sun className="h-3 w-3 text-amber-500" strokeWidth={1.8} aria-hidden="true" />
-            {t.navbar.brandTagline}
+            <Phone className="h-3 w-3 text-amber-500" strokeWidth={1.8} aria-hidden="true" />
+            {t.navbar.companyMobile}
           </span>
         </div>
       </div>
