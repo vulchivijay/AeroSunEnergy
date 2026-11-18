@@ -56,7 +56,7 @@ export function CompanyTrustSection() {
             <div className="rounded-2xl border border-white/80 bg-white/70 p-4 shadow-sm sm:col-span-2">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">{content.legalEntityLabel}</p>
               <p className="mt-2 text-xl font-bold text-slate-950">{t.about.companyProfile.contactCompany}</p>
-              <p className="mt-3 text-sm font-semibold leading-5 text-slate-700">{content.identifiersText}</p>
+              <p className="sr-only mt-3 text-sm font-semibold leading-5 text-slate-700">{content.identifiersText}</p>
             </div>
 
             <a
