@@ -4335,6 +4335,8 @@
     "startProjectAriaLabel": "നിങ്ങളുടെ പദ്ധതി ആരംഭിക്കാൻ AeroSun Energyയെ ബന്ധപ്പെടുക",
     "brandName": "AeroSun Energy Private Limited",
     "brandTagline": "സൂര്യനിൽ നിന്നും കാറ്റിൽ നിന്നും ഊർജ്ജം",
+    "companyRegistration": "CIN:U35106AP2026PTC128748",
+    "companyMobile": "Mobile: 8099181075",
     "primaryNavigationLabel": "പ്രധാന നാവിഗേഷൻ",
     "mobileNavigationLabel": "മൊബൈൽ പ്രധാന നാവിഗേഷൻ",
     "exploreLabel": "പര്യവേക്ഷണം ചെയ്യുക",
@@ -4772,7 +4774,15 @@
       "priceOrder": "ഏറ്റവും ഉയർന്ന ലിസ്റ്റ് വിലയുടെ ക്രമത്തിൽ",
       "maxListedLabel": "ലിസ്റ്റിലെ പരമാവധി",
       "topPriceLabel": "ഏറ്റവും ഉയർന്ന ലിസ്റ്റ് വില",
-      "moreBrandsAvailable": "ഇനിയും നിരവധി ബ്രാൻഡുകൾ ലഭ്യമാണ്"
+      "freyrEnergy": "Freyr Energy",
+      "materialTypesLabel": "മൊഡ്യൂൾ തരങ്ങൾ",
+      "undefinedMaterialType": "വ്യക്തമാക്കിയിട്ടില്ല",
+      "materialTypes": {
+        "monocrystalline": "മോണോക്രിസ്റ്റലിൻ",
+        "polycrystalline": "പോളിക്രിസ്റ്റലിൻ",
+        "thinFilm": "തിൻ-ഫിലിം"
+      },
+      "moreBrandsAvailable": "ഞങ്ങൾക്ക് കൂടുതൽ ബ്രാൻഡുകൾ ഉണ്ട്"
     },
     "heroSliderAriaLabel": "തിരഞ്ഞെടുത്ത സോളാർ, കാറ്റാടി, ഹൈബ്രിഡ് ഊർജ പരിഹാരങ്ങൾ",
     "heroSlider": [
@@ -4784,7 +4794,7 @@
           "കുറഞ്ഞ മൂലധന ചെലവ്",
           "നെറ്റ് മീറ്ററിംഗ്"
         ],
-        "image": "/images/slider/slider-1.png",
+        "image": "/images/slider/slider-1.webp",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4797,7 +4807,7 @@
           "ബാറ്ററി ബാക്കപ്പോടെ",
           "വിദൂര സ്ഥലങ്ങൾക്ക് അനുയോജ്യം"
         ],
-        "image": "/images/slider/slider-2.png",
+        "image": "/images/slider/slider-2.webp",
         "badgeClass": "text-emerald-100",
         "chipClass": "text-emerald-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4810,7 +4820,7 @@
           "ബാക്കപ്പ് വൈദ്യുതി",
           "സ്മാർട്ട് നിയന്ത്രണം"
         ],
-        "image": "/images/slider/slider-3.png",
+        "image": "/images/slider/slider-3.webp",
         "badgeClass": "text-pink-100",
         "chipClass": "text-pink-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4823,7 +4833,7 @@
           "കുറഞ്ഞ ശബ്ദം",
           "മേൽക്കൂര"
         ],
-        "image": "/images/slider/slider-7.png",
+        "image": "/images/slider/slider-7.webp",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4836,7 +4846,7 @@
           "വ്യവസായം",
           "ഉയർന്ന ഉൽപ്പാദനം"
         ],
-        "image": "/images/slider/slider-8.png",
+        "image": "/images/slider/slider-8.webp",
         "badgeClass": "text-emerald-100",
         "chipClass": "text-emerald-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4849,7 +4859,7 @@
           "കൃഷിക്ക് അനുയോജ്യം",
           "ലോഡ് പിന്തുണ"
         ],
-        "image": "/images/slider/slider-9.png",
+        "image": "/images/slider/slider-9.webp",
         "badgeClass": "text-amber-100",
         "chipClass": "text-amber-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4862,7 +4872,7 @@
           "24/7 വൈദ്യുതി",
           "സമതുലിത ഉൽപ്പാദനം"
         ],
-        "image": "/images/slider/slider-13.png",
+        "image": "/images/slider/slider-13.webp",
         "badgeClass": "text-emerald-100",
         "chipClass": "text-emerald-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4875,7 +4885,7 @@
           "സ്മാർട്ട് വൈദ്യുതി വിതരണം",
           "ബാറ്ററി സമന്വയം"
         ],
-        "image": "/images/slider/slider-14.png",
+        "image": "/images/slider/slider-14.webp",
         "badgeClass": "text-violet-100",
         "chipClass": "text-violet-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4888,7 +4898,7 @@
           "ഓഫ്-ഗ്രിഡ്",
           "വിദൂര സ്ഥലങ്ങൾക്ക് അനുയോജ്യം"
         ],
-        "image": "/images/slider/slider-15.png",
+        "image": "/images/slider/slider-15.webp",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4907,20 +4917,7 @@
       "perHome": "ഓരോ വീടിനും",
       "offerLabel": "ഓഫർ കാലയളവ്",
       "offerText": "പരിമിത കാലത്തേക്ക് മാത്രം — നിലവിലെ സബ്സിഡി കാലയളവ് അവസാനിക്കുന്നതിന് മുമ്പ് അപേക്ഷിക്കുക.",
-      "stats": [
-        {
-          "label": "ദിവസങ്ങൾ",
-          "value": "000"
-        },
-        {
-          "label": "മണിക്കൂറുകൾ",
-          "value": "00"
-        },
-        {
-          "label": "മിനിറ്റുകൾ",
-          "value": "00"
-        }
-      ]
+      "daysLabel": "ദിവസങ്ങൾ"
     },
     "offer": {
       "eyebrow": "ഞങ്ങൾ നൽകുന്നത്",
@@ -5339,7 +5336,7 @@
           "badgeClass": "text-sky-100",
           "chipClass": "text-sky-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-1.png"
+          "image": "/images/slider/slider-1.webp"
         },
         {
           "badge": "Off-grid autonomy",
@@ -5352,7 +5349,7 @@
           "badgeClass": "text-emerald-100",
           "chipClass": "text-emerald-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-2.png"
+          "image": "/images/slider/slider-2.webp"
         },
         {
           "badge": "Hybrid resilience",
@@ -5365,7 +5362,7 @@
           "badgeClass": "text-pink-100",
           "chipClass": "text-pink-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-3.png"
+          "image": "/images/slider/slider-3.webp"
         },
         {
           "badge": "Agricultural pumping",
@@ -5375,7 +5372,7 @@
           "badgeClass": "text-slate-100",
           "chipClass": "text-slate-100",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-4.png"
+          "image": "/images/slider/slider-4.webp"
         },
         {
           "badge": "Commercial scale",
@@ -5388,7 +5385,7 @@
           "badgeClass": "text-slate-100",
           "chipClass": "text-slate-100",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-5.png"
+          "image": "/images/slider/slider-5.webp"
         },
         {
           "badge": "Water pumping",
@@ -5401,7 +5398,7 @@
           "badgeClass": "text-violet-100",
           "chipClass": "text-violet-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-6.png"
+          "image": "/images/slider/slider-6.webp"
         }
       ]
     },
@@ -5714,7 +5711,7 @@
           "badgeClass": "text-sky-100",
           "chipClass": "text-sky-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-7.png"
+          "image": "/images/slider/slider-7.webp"
         },
         {
           "badge": "Commercial wind",
@@ -5727,7 +5724,7 @@
           "badgeClass": "text-emerald-100",
           "chipClass": "text-emerald-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-8.png"
+          "image": "/images/slider/slider-8.webp"
         },
         {
           "badge": "Agricultural wind",
@@ -5740,7 +5737,7 @@
           "badgeClass": "text-lime-100",
           "chipClass": "text-lime-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-9.png"
+          "image": "/images/slider/slider-9.webp"
         },
         {
           "badge": "Wind resource assessment",
@@ -5753,7 +5750,7 @@
           "badgeClass": "text-cyan-100",
           "chipClass": "text-cyan-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-10.png"
+          "image": "/images/slider/slider-10.webp"
         },
         {
           "badge": "Wind and storage",
@@ -5766,7 +5763,7 @@
           "badgeClass": "text-violet-100",
           "chipClass": "text-violet-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-11.png"
+          "image": "/images/slider/slider-11.webp"
         },
         {
           "badge": "Distributed wind",
@@ -5779,7 +5776,7 @@
           "badgeClass": "text-amber-100",
           "chipClass": "text-amber-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-12.png"
+          "image": "/images/slider/slider-12.webp"
         }
       ]
     },
@@ -5985,7 +5982,7 @@
           "badgeClass": "text-emerald-100",
           "chipClass": "text-emerald-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-13.png"
+          "image": "/images/slider/slider-13.webp"
         },
         {
           "badge": "Smart control",
@@ -5998,7 +5995,7 @@
           "badgeClass": "text-violet-100",
           "chipClass": "text-violet-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-14.png"
+          "image": "/images/slider/slider-14.webp"
         },
         {
           "badge": "Solar, wind and storage",
@@ -6011,7 +6008,7 @@
           "badgeClass": "text-amber-100",
           "chipClass": "text-amber-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-15.png"
+          "image": "/images/slider/slider-15.webp"
         },
         {
           "badge": "Resilient power",
@@ -6024,7 +6021,7 @@
           "badgeClass": "text-sky-100",
           "chipClass": "text-sky-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-16.png"
+          "image": "/images/slider/slider-16.webp"
         },
         {
           "badge": "Energy management",
@@ -6037,7 +6034,7 @@
           "badgeClass": "text-emerald-100",
           "chipClass": "text-emerald-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-17.png"
+          "image": "/images/slider/slider-17.webp"
         },
         {
           "badge": "Connected energy systems",
@@ -6050,7 +6047,7 @@
           "badgeClass": "text-rose-100",
           "chipClass": "text-rose-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-18.png"
+          "image": "/images/slider/slider-18.webp"
         }
       ]
     },
@@ -9038,17 +9035,37 @@
     "tail": "കൂടാതെ ഉപഭോക്തൃ ആവശ്യങ്ങൾക്കനുസരിച്ചുള്ള നവീന ഊർജ പരിഹാരങ്ങൾ അന്വേഷിക്കുന്നു. വളരുന്നതിനനുസരിച്ച്, കൂടുതൽ ശുദ്ധവും സുസ്ഥിരവുമായ ഭാവിക്ക് സംഭാവന നൽകുന്ന നൂതന പുനരുപയോഗ ഊർജ പരിഹാരങ്ങൾ വികസിപ്പിക്കുകയും സാങ്കേതിക ശേഷി വർധിപ്പിക്കുകയും ചെയ്യുകയാണ് ഞങ്ങളുടെ ലക്ഷ്യം."
   },
   "bankEmi": {
-    "badge": "വ്യക്തിഗത ധനകാര്യം · EMI കാൽക്കുലേറ്റർ",
-    "title": "അടുത്ത ചുവടുവെപ്പ്",
-    "titleAccent": "ആത്മവിശ്വാസത്തോടെ.",
-    "description": "നിങ്ങളുടെ ജീവിതസാഹചര്യത്തിന് അനുയോജ്യമായി വായ്പ ക്രമീകരിക്കുക. കണക്കുകൾ മാറ്റി മൊത്തം തിരിച്ചടവ് ഉടൻ കാണുക.",
+    "badge": "PM Surya Ghar · സോളാർ ലോൺ EMI",
+    "title": "നിങ്ങളുടെ സോളാർ ലോൺ ആസൂത്രണം ചെയ്യൂ",
+    "titleAccent": "വ്യക്തതയോടെ.",
+    "description": "PM Surya Ghar വായ്പാ പരിധി, വായ്പയെടുക്കുന്നയാളുടെ വിഹിതം, പലിശ നിരക്ക് എന്നിവയെ അടിസ്ഥാനമാക്കി റൂഫ്‌ടോപ്പ് സോളാർ EMI കണക്കാക്കുക.",
     "confidence": "ആത്മവിശ്വാസത്തോടെ ആസൂത്രണം ചെയ്യുക",
     "confidenceSub": "ഒറ്റനോട്ടത്തിൽ വ്യക്തമായ കണക്ക്",
     "loanDetails": "നിങ്ങളുടെ വായ്പാ വിവരങ്ങൾ",
-    "loanDetailsSub": "താഴെ കണക്ക് ക്രമീകരിക്കുക",
+    "loanDetailsSub": "വായ്പാ വിഭാഗം തിരഞ്ഞെടുത്ത് കണക്ക് ക്രമീകരിക്കുക",
+    "loanCategory": "വായ്പാ വിഭാഗം",
+    "loanUpToTwoLakhs": "₹2 ലക്ഷം വരെ",
+    "loanAboveTwoLakhs": "₹2 ലക്ഷത്തിന് മുകളിൽ · പരമാവധി ₹6 ലക്ഷം",
     "loanAmount": "വായ്പാ തുക",
-    "loanTenure": "വായ്പാ കാലാവധി",
+    "loanTenure": "മൊത്തം വായ്പാ കാലാവധി",
+    "projectCost": "കണക്കാക്കിയ പദ്ധതി ചെലവ്",
+    "borrowerContribution": "വായ്പയെടുക്കുന്നയാളുടെ കുറഞ്ഞ വിഹിതം",
+    "borrowerMargin": "കുറഞ്ഞ വായ്പയെടുക്കുന്നയാളുടെ വിഹിതം",
+    "panRequirement": "PAN ആവശ്യം",
+    "panNotRequired": "ആവശ്യമില്ല",
+    "panMandatory": "നിർബന്ധം",
     "interestRate": "പലിശ നിരക്ക്",
+    "repoRate": "RBI റിപ്പോ നിരക്ക്",
+    "repoRateAriaLabel": "RBI റിപ്പോ നിരക്ക്",
+    "repoRateNote": "വായ്പാ നിരക്ക് = റിപ്പോ നിരക്ക് + 0.50%. നൽകിയ റഫറൻസിൽ വർഷം 6.00% (5.50% റിപ്പോ) എന്നാണ്; പ്രാബല്യ തീയതി നൽകിയിട്ടില്ല.",
+    "calculatedInterestRate": "കണക്കാക്കിയ വായ്പാ നിരക്ക്",
+    "customerType": "ഉപഭോക്തൃ വിഭാഗം",
+    "homeLoanCustomer": "ഹോം ലോൺ ഉപഭോക്താവ്",
+    "nonHomeLoanCustomer": "ഹോം ലോൺ ഉപഭോക്താവല്ല",
+    "homeLoanRate": "നിങ്ങളുടെ നിലവിലെ ഹോം ലോൺ നിരക്ക്",
+    "homeLoanRateAriaLabel": "നിലവിലെ ഹോം ലോൺ പലിശ നിരക്ക്",
+    "homeLoanRateNote": "ഹോം ലോൺ ഉപഭോക്താക്കൾക്ക് ഇതേ നിരക്ക്; മറ്റുള്ളവർക്ക് 1.00 ശതമാന പോയിന്റ് ചേർക്കുക.",
+    "enterHomeLoanRate": "EMI കണക്കാക്കാൻ സാധുവായ ഹോം ലോൺ നിരക്ക് (0–30%) നൽകുക.",
     "perAnnum": "വർഷത്തിൽ",
     "monthlyEmi": "നിങ്ങളുടെ പ്രതിമാസ EMI",
     "month": "/ മാസം",
@@ -9057,9 +9074,16 @@
     "totalInterest": "മൊത്തം പലിശ",
     "totalRepayment": "മൊത്തം തിരിച്ചടവ്",
     "principalPlus": "മുതൽ തുക + പലിശ",
-    "estimateOnly": "ഇത് ഏകദേശ കണക്കാണ്. നിങ്ങളുടെ വായ്പാദാതാവ് വ്യത്യസ്ത നിരക്കുകളും ഫീസുകളും യോഗ്യതാ നിബന്ധനകളും പ്രയോഗിച്ചേക്കാം.",
+    "estimateOnly": "ഫിനാൻസ് പേജിലെ നൽകിയിരിക്കുന്ന നിബന്ധനകളെ അടിസ്ഥാനമാക്കിയുള്ള ഏകദേശ കണക്ക്. അന്തിമ അനുമതിയും നിലവിലെ നിരക്കുകളും ബാങ്ക് തീരുമാനിക്കും.",
     "year": "വർഷം",
     "years": "വർഷങ്ങൾ",
+    "tenureMonth": "മാസം",
+    "tenureMonths": "മാസങ്ങൾ",
+    "repaymentMonths": "EMI പേയ്‌മെന്റുകൾ",
+    "moratoriumCalculationNote": "പരമാവധി കാലാവധി 120 മാസമാണ്; ഇതിൽ ആറുമാസത്തെ മൊറട്ടോറിയവും ഉൾപ്പെടുന്നു. EMI ശേഷിക്കുന്ന മാസങ്ങൾക്കായി കണക്കാക്കുന്നു; മൊറട്ടോറിയം കാലത്തെ പലിശയുടെ രീതി റഫറൻസിൽ വ്യക്തമല്ലാത്തതിനാൽ അത് ഉൾപ്പെടുത്തിയിട്ടില്ല.",
+    "guidelineSummary": "മാർഗ്ഗനിർദ്ദേശ സംഗ്രഹം",
+    "eligibilitySummary": "65 വയസ്സുവരെ പ്രായമുള്ള വ്യക്തിഗത അപേക്ഷകർക്ക്; തിരിച്ചടവ് 70 വയസ്സിന് മുമ്പ് പൂർത്തിയാക്കണം. CIBIL 680+ ഉള്ളവർക്കും പുതിയ ക്രെഡിറ്റ് ഉപഭോക്താക്കൾക്കും അർഹതയുണ്ടാകാം. DISCOM ഉപഭോക്തൃ നമ്പർ, മതിയായ മേൽക്കൂര വിസ്തീർണം, ബാങ്ക് സേവിംഗ്സ് അക്കൗണ്ട് എന്നിവ ആവശ്യമാണ്.",
+    "financePageLink": "പൂർണ്ണ പദ്ധതിയുടെ നിബന്ധനകളും യോഗ്യതയും",
     "repaymentSnapshot": "തിരിച്ചടവിന്റെ സംഗ്രഹം",
     "basedOnDetails": "നിങ്ങളുടെ വായ്പാ വിവരങ്ങളെ അടിസ്ഥാനമാക്കി",
     "liveEstimate": "തത്സമയ കണക്ക്",
@@ -10138,13 +10162,9 @@
     "yearSuffix": "വർഷം",
     "contactUs": "ഞങ്ങളെ ബന്ധപ്പെടുക",
     "estimatesDisclaimer": "ഇവ ഏകദേശ കണക്കുകൾ മാത്രമാണ്. 25 വർഷത്തെ പ്രവചനത്തിൽ നിരക്കും ഉൽപ്പാദനവും സ്ഥിരമാണെന്ന് കണക്കാക്കുന്നു; യഥാർത്ഥ ലാഭം സ്ഥലസാഹചര്യങ്ങൾ, സംവിധാനത്തിന്റെ പ്രകടനം, DISCOM നിരക്ക് എന്നിവയെ ആശ്രയിച്ചിരിക്കും.",
-    "quoteHeroTitle": "സൗരോർജത്തിലേക്ക് മാറൂ ☀️ നിങ്ങളുടെ വൈദ്യുതി ബിൽ 90% കുറയ്ക്കൂ",
-    "quoteHeroSubtitle": "3 ഘട്ടങ്ങളിൽ സൗജന്യ വ്യക്തിഗത ക്വട്ടേഷൻ നേടൂ",
-    "quoteHeroNamePlaceholder": "പൂർണ്ണ പേര്",
-    "quoteHeroMobilePlaceholder": "മൊബൈൽ നമ്പർ",
-    "quoteHeroSubmit": "തുടങ്ങുക",
-    "quoteHeroDisclosurePrefix": "ഈ ഫോം സമർപ്പിക്കുന്നതിലൂടെ, നിങ്ങൾ സമ്മതിക്കുന്നു",
-    "quoteHeroTerms": "നിബന്ധനകളും വ്യവസ്ഥകളും",
+    "solarCalculatorEyebrow": "സോളാർ ലാഭം കണക്കാക്കൽ",
+    "solarCalculatorTitle": "സൗരോർജത്തിലേക്ക് മാറൂ",
+    "solarCalculatorTitleAccent": "നിങ്ങളുടെ വൈദ്യുതി ബിൽ 80% മുതൽ 90% വരെ കുറയ്ക്കൂ",
     "freeAssessmentCta": "സൗജന്യ സോളാർ വിലയിരുത്തൽ നേടുക",
     "freeAssessmentLabel": "സൗജന്യ സോളാർ വിലയിരുത്തൽ",
     "leadName": "പേര്",
@@ -12000,12 +12020,12 @@
           "logo": {
             "@type": "ImageObject",
             "@id": "https://aerosunenergy.in/#logo",
-            "url": "https://aerosunenergy.in/images/logo.png",
-            "contentUrl": "https://aerosunenergy.in/images/logo.png",
+            "url": "https://aerosunenergy.in/images/logo.webp",
+            "contentUrl": "https://aerosunenergy.in/images/logo.webp",
             "width": 512,
             "height": 512
           },
-          "image": "https://aerosunenergy.in/images/logo.png",
+          "image": "https://aerosunenergy.in/images/logo.webp",
           "description": "AeroSun Energy provides solar, wind, and hybrid renewable energy systems for residential, commercial, industrial, agricultural, and infrastructure projects across India.",
           "email": "customercare@aerosunenergy.in",
           "telephone": "+91-8099181075",
@@ -12062,8 +12082,8 @@
           "@id": "https://aerosunenergy.in/#localbusiness",
           "name": "AeroSun Energy",
           "url": "https://aerosunenergy.in",
-          "image": "https://aerosunenergy.in/images/logo.png",
-          "logo": "https://aerosunenergy.in/images/logo.png",
+          "image": "https://aerosunenergy.in/images/logo.webp",
+          "logo": "https://aerosunenergy.in/images/logo.webp",
           "description": "Renewable energy company specializing in solar energy systems, wind turbines, and hybrid energy solutions across India.",
           "areaServed": {
             "@type": "Country",
@@ -12562,31 +12582,31 @@
       "lords": [
         {
           "name": "Ganesha",
-          "image": "/images/lordganesha.png",
+          "image": "/images/lordganesha.webp",
           "width": 558,
           "height": 1448
         },
         {
           "name": "Balaji",
-          "image": "/images/lordbalaji.png",
+          "image": "/images/lordbalaji.webp",
           "width": 433,
           "height": 577
         },
         {
           "name": "Shiva",
-          "image": "/images/lordshiva.png",
+          "image": "/images/lordshiva.webp",
           "width": 375,
           "height": 591
         },
         {
           "name": "Rama",
-          "image": "/images/lordrama.png",
+          "image": "/images/lordrama.webp",
           "width": 1082,
           "height": 1453
         },
         {
           "name": "Krishna",
-          "image": "/images/lordkrishna.png",
+          "image": "/images/lordkrishna.webp",
           "width": 1082,
           "height": 1453
         }

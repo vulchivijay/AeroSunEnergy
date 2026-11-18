@@ -3,26 +3,38 @@
 import Image from 'next/image'
 import { useLocale } from '@/lib/LocaleContext'
 
-const brandImages = [
-  { file: 'adani-solar.png', name: 'Adani Solar', hue: 160, prices: ['₹21.5–34/Wp'], basis: 'Non-DCR to DCR retail examples.' },
-  { file: 'amara-raja-solar.png', name: 'Amara Raja Solar', hue: 215, prices: [], basis: 'No current public module price verified.' },
-  { file: 'emmvee-solar.png', name: 'Emmvee Solar', hue: 270, prices: ['₹21–22/Wp · DCR', '₹14–15/Wp · non-DCR'], basis: 'Company-reported pricing; bulk/module realization.' },
-  { file: 'goldi-solar.png', name: 'Goldi Solar', hue: 40, prices: ['₹23–28/Wp'], basis: 'Estimated market range; confirm the exact model.' },
-  { file: 'havells.png', name: 'Havells', hue: 350, prices: ['₹28–33/Wp'], basis: 'Seller-listed range.' },
-  { file: 'insolation-energy.png', name: 'Insolation Energy', hue: 24, prices: ['₹20–22.5/Wp · DCR', '₹13–14/Wp · non-DCR'], basis: 'Reported module-price signals; bulk basis.' },
-  { file: 'jakson-solar.png', name: 'Jakson Solar', hue: 195, prices: ['≈ ₹26/Wp'], basis: 'Retail listing for a 330 W module.' },
-  { file: 'loom-solar.png', name: 'Loom Solar', hue: 82, prices: ['₹18.2/Wp · non-DCR', '₹28.2/Wp · DCR'], basis: 'Retail examples for different models.' },
-  { file: 'luminous.png', name: 'Luminous', hue: 245, prices: ['₹21.0/Wp · DCR', '₹24.8/Wp · non-DCR'], basis: 'Listed examples; different models and wattages.' },
-  { file: 'microtek-solar.png', name: 'Microtek Solar', hue: 12, prices: ['₹20.2–22.2/Wp · non-DCR', '≈ ₹24.5/Wp · DCR'], basis: 'Official-store examples plus a distributor price list.' },
-  { file: 'premier-energies.png', name: 'Premier Energies', hue: 285, prices: ['₹23–24/Wp · DCR'], basis: 'Company call cited prevailing retail DCR pricing; bulk pricing may differ.' },
-  { file: 'rayzon-solar.png', name: 'Rayzon Solar', hue: 185, prices: ['₹15/Wp · non-DCR', '₹28.2/Wp · DCR'], basis: 'Dealer-listed TOPCon examples.' },
-  { file: 'renew-power.png', name: 'ReNew Power', hue: 135, prices: ['₹24.70/Wp · DCR'], basis: 'ReNew’s listed DCR module price includes GST.' },
-  { file: 'renewsys-solar.png', name: 'RenewSys Solar', hue: 46, prices: ['₹25.60/Wp · DCR'], basis: 'Full-truckload price, ex-works plus GST.' },
-  { file: 'saatvik-solar.png', name: 'Saatvik Solar', hue: 305, prices: ['₹20–21/Wp · DCR', '₹12–13/Wp · non-DCR'], basis: 'Reported module realizations, not retail quotes.' },
-  { file: 'servotech-power-systems.png', name: 'Servotech', hue: 5, prices: ['≈ ₹25/Wp'], basis: 'Company-stated average; model-specific quote needed.' },
-  { file: 'tata-power-solar.png', name: 'Tata Power Solar', hue: 225, prices: ['₹26–32/Wp'], basis: 'Dealer/market listings; varies by model and DCR status.' },
-  { file: 'vikram-solar.png', name: 'Vikram Solar', hue: 165, prices: ['₹18.6–30/Wp'], basis: 'Non-DCR to DCR market examples.' },
-  { file: 'waaree-energies.png', name: 'Waaree Energies', hue: 29, prices: ['₹17.4/Wp · non-DCR', '₹27.9/Wp · DCR'], basis: 'Official-store examples; listed prices exclude GST.' },
+type MaterialType = 'monocrystalline' | 'polycrystalline' | 'thinFilm'
+
+type Brand = {
+  file: string
+  name: string
+  hue: number
+  prices: string[]
+  basis: string
+  materialTypes: MaterialType[]
+}
+
+const brandImages: Brand[] = [
+  { file: 'adani-solar.webp', name: 'Adani Solar', hue: 160, prices: ['₹21.5–34/Wp'], basis: 'Non-DCR to DCR retail examples.', materialTypes: [] },
+  { file: 'amara-raja-solar.webp', name: 'Amara Raja Solar', hue: 215, prices: [], basis: 'No current public module price verified.', materialTypes: [] },
+  { file: 'emmvee-solar.webp', name: 'Emmvee Solar', hue: 270, prices: ['₹21–22/Wp · DCR', '₹14–15/Wp · non-DCR'], basis: 'Company-reported pricing; bulk/module realization.', materialTypes: [] },
+  { file: 'freyr-energy.webp', name: 'Freyr Energy', hue: 198, prices: ['Monocrystalline: ₹40–₹60/W', 'Polycrystalline: ₹30–₹45/W', 'Thin-film: ₹20–₹35/W'], basis: 'Indicative price ranges by module technology; confirm the exact model and quote.', materialTypes: ['monocrystalline', 'polycrystalline', 'thinFilm'] },
+  { file: 'goldi-solar.webp', name: 'Goldi Solar', hue: 40, prices: ['₹23–28/Wp'], basis: 'Estimated market range; confirm the exact model.', materialTypes: [] },
+  { file: 'havells.webp', name: 'Havells', hue: 350, prices: ['₹28–33/Wp'], basis: 'Seller-listed range.', materialTypes: [] },
+  { file: 'insolation-energy.webp', name: 'Insolation Energy', hue: 24, prices: ['₹20–22.5/Wp · DCR', '₹13–14/Wp · non-DCR'], basis: 'Reported module-price signals; bulk basis.', materialTypes: [] },
+  { file: 'jakson-solar.webp', name: 'Jakson Solar', hue: 195, prices: ['≈ ₹26/Wp'], basis: 'Retail listing for a 330 W module.', materialTypes: [] },
+  { file: 'loom-solar.webp', name: 'Loom Solar', hue: 82, prices: ['₹18.2/Wp · non-DCR', '₹28.2/Wp · DCR'], basis: 'Retail examples for different models.', materialTypes: [] },
+  { file: 'luminous.webp', name: 'Luminous', hue: 245, prices: ['₹21.0/Wp · DCR', '₹24.8/Wp · non-DCR'], basis: 'Listed examples; different models and wattages.', materialTypes: [] },
+  { file: 'microtek-solar.webp', name: 'Microtek Solar', hue: 12, prices: ['₹20.2–22.2/Wp · non-DCR', '≈ ₹24.5/Wp · DCR'], basis: 'Official-store examples plus a distributor price list.', materialTypes: [] },
+  { file: 'premier-energies.webp', name: 'Premier Energies', hue: 285, prices: ['₹23–24/Wp · DCR'], basis: 'Company call cited prevailing retail DCR pricing; bulk pricing may differ.', materialTypes: [] },
+  { file: 'rayzon-solar.webp', name: 'Rayzon Solar', hue: 185, prices: ['₹15/Wp · non-DCR', '₹28.2/Wp · DCR'], basis: 'Dealer-listed TOPCon examples.', materialTypes: [] },
+  { file: 'renew-power.webp', name: 'ReNew Power', hue: 135, prices: ['₹24.70/Wp · DCR'], basis: 'ReNew’s listed DCR module price includes GST.', materialTypes: [] },
+  { file: 'renewsys-solar.webp', name: 'RenewSys Solar', hue: 46, prices: ['₹25.60/Wp · DCR'], basis: 'Full-truckload price, ex-works plus GST.', materialTypes: [] },
+  { file: 'saatvik-solar.webp', name: 'Saatvik Solar', hue: 305, prices: ['₹20–21/Wp · DCR', '₹12–13/Wp · non-DCR'], basis: 'Reported module realizations, not retail quotes.', materialTypes: [] },
+  { file: 'servotech-power-systems.webp', name: 'Servotech', hue: 5, prices: ['≈ ₹25/Wp'], basis: 'Company-stated average; model-specific quote needed.', materialTypes: [] },
+  { file: 'tata-power-solar.webp', name: 'Tata Power Solar', hue: 225, prices: ['₹26–32/Wp'], basis: 'Dealer/market listings; varies by model and DCR status.', materialTypes: [] },
+  { file: 'vikram-solar.webp', name: 'Vikram Solar', hue: 165, prices: ['₹18.6–30/Wp'], basis: 'Non-DCR to DCR market examples.', materialTypes: [] },
+  { file: 'waaree-energies.webp', name: 'Waaree Energies', hue: 29, prices: ['₹17.4/Wp · non-DCR', '₹27.9/Wp · DCR'], basis: 'Official-store examples; listed prices exclude GST.', materialTypes: [] },
 ]
 
 function getHighestListedPrice(prices: string[]): number | null {
@@ -38,6 +50,9 @@ const sortedBrands = [...brandImages].sort((first, second) => {
   if (secondPrice === null) return -1
   return secondPrice - firstPrice
 })
+
+const featuredBrandNames = new Set(['Adani Solar', 'Freyr Energy', 'Tata Power Solar', 'Waaree Energies'])
+const featuredBrands = sortedBrands.filter((brand) => featuredBrandNames.has(brand.name))
 
 export default function Brands() {
   const { t } = useLocale()
@@ -79,15 +94,21 @@ export default function Brands() {
           </p>
         </header>
 
-        <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
-          {sortedBrands.map((brand, index) => {
+        <ul className="mx-auto grid max-w-5xl list-none grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+          {featuredBrands.map((brand, index) => {
             const maxPrice = getHighestListedPrice(brand.prices)
             const formattedMaxPrice = maxPrice?.toLocaleString('en-IN', { maximumFractionDigits: 2 })
+            const brandName =
+              brand.name === 'Freyr Energy' ? section.freyrEnergy : brand.name
 
             return (
               <li
                 key={brand.file}
-                className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border p-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-4"
+                className={`group relative flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border p-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-4 ${
+                  index === featuredBrands.length - 1
+                    ? 'sm:col-span-2 sm:mx-auto sm:w-1/2 lg:col-span-1 lg:col-start-2 lg:w-full'
+                    : ''
+                }`}
                 style={{
                   borderColor: `hsl(${brand.hue} 68% 72%)`,
                   background: `linear-gradient(145deg, hsl(${brand.hue} 82% 95%), #fff 48%, hsl(${brand.hue} 76% 89%))`,
@@ -95,7 +116,7 @@ export default function Brands() {
                 }}
               >
                 <div
-                  className="relative flex h-24 items-center justify-center overflow-hidden rounded-2xl border border-white/80 shadow-inner sm:h-28 sm:p-2"
+                  className="hidden relative h-24 items-center justify-center overflow-hidden rounded-2xl border border-white/80 shadow-inner sm:h-28 sm:p-2"
                   style={{
                     background: `radial-gradient(circle at 50% 0%, white, hsl(${brand.hue} 75% 96%) 78%)`,
                     boxShadow: `inset 0 0 0 1px hsl(${brand.hue} 55% 90%)`,
@@ -103,7 +124,7 @@ export default function Brands() {
                 >
                   <Image
                     src={`/brands/${brand.file}`}
-                    alt={brand.name}
+                    alt={brandName}
                     width={150}
                     height={150}
                     sizes="160px"
@@ -111,9 +132,30 @@ export default function Brands() {
                     className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <h3 className="mt-2 text-center text-sm font-bold text-slate-900">
-                  {brand.name}
+                <h3 className="mt-2 text-center text-xl font-bold text-slate-900">
+                  {brandName}
                 </h3>
+                <div className="mt-2">
+                  <p className="text-center text-[10px] font-bold uppercase tracking-wide text-slate-500">
+                    {section.materialTypesLabel}
+                  </p>
+                  <div className="mt-1 flex min-h-7 flex-wrap items-center justify-center gap-1">
+                    {brand.materialTypes.length > 0 ? (
+                      brand.materialTypes.map((materialType) => (
+                        <span
+                          key={materialType}
+                          className="rounded-full border border-slate-300 bg-white/80 px-2 py-1 text-center text-[10px] font-semibold text-slate-700"
+                        >
+                          {section.materialTypes[materialType]}
+                        </span>
+                      ))
+                    ) : (
+                      <span className="text-center text-xs text-slate-500">
+                        {section.undefinedMaterialType}
+                      </span>
+                    )}
+                  </div>
+                </div>
                 <div className="mt-2 flex min-h-[2.5rem] flex-col items-center justify-center gap-1">
                   {index === 0 && maxPrice !== null && (
                     <span className="rounded-full bg-slate-950 px-2.5 py-1 text-center text-xs font-black uppercase leading-3 tracking-[0.12em] text-white shadow-sm">
@@ -161,6 +203,13 @@ export default function Brands() {
             )
           })}
         </ul>
+        <p
+          aria-hidden="true"
+          className="mt-5 select-none text-center text-3xl font-black uppercase tracking-[0.2em] text-slate-900/[0.08] sm:text-5xl"
+        >
+          {section.moreBrandsAvailable}
+        </p>
+        <span className="sr-only">{section.moreBrandsAvailable}</span>
       </div>
     </section>
   )

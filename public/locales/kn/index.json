@@ -4335,6 +4335,8 @@
     "startProjectAriaLabel": "Contact AeroSun Energy to start your project",
     "brandName": "AeroSun Energy Private Limited",
     "brandTagline": "ಸೂರ್ಯ ಮತ್ತು ಗಾಳಿಯಿಂದ ಶಕ್ತಿ",
+    "companyRegistration": "CIN:U35106AP2026PTC128748",
+    "companyMobile": "Mobile: 8099181075",
     "primaryNavigationLabel": "ಮುಖ್ಯ ನ್ಯಾವಿಗೇಶನ್",
     "mobileNavigationLabel": "ಮೊಬೈಲ್ ಮುಖ್ಯ ನ್ಯಾವಿಗೇಶನ್",
     "exploreLabel": "ಅನ್ವೇಷಿಸಿ",
@@ -4772,7 +4774,15 @@
       "priceOrder": "ಪಟ್ಟಿಯಲ್ಲಿನ ಗರಿಷ್ಠ ಬೆಲೆಯ ಆಧಾರದ ಮೇಲೆ ಕ್ರಮಗೊಳಿಸಲಾಗಿದೆ",
       "maxListedLabel": "ಪಟ್ಟಿಯ ಗರಿಷ್ಠ ಬೆಲೆ",
       "topPriceLabel": "ಅತ್ಯಧಿಕ ಪಟ್ಟಿಬದ್ಧ ಬೆಲೆ",
-      "moreBrandsAvailable": "ಇನ್ನೂ ಹಲವು ಬ್ರ್ಯಾಂಡ್‌ಗಳು ಲಭ್ಯವಿವೆ"
+      "freyrEnergy": "Freyr Energy",
+      "materialTypesLabel": "ಮಾಡ್ಯೂಲ್ ಪ್ರಕಾರಗಳು",
+      "undefinedMaterialType": "ನಿರ್ದಿಷ್ಟಪಡಿಸಿಲ್ಲ",
+      "materialTypes": {
+        "monocrystalline": "ಮೊನೋಕ್ರಿಸ್ಟಲೈನ್",
+        "polycrystalline": "ಪಾಲಿಕ್ರಿಸ್ಟಲೈನ್",
+        "thinFilm": "ಥಿನ್-ಫಿಲ್ಮ್"
+      },
+      "moreBrandsAvailable": "ನಮ್ಮ ಬಳಿ ಇನ್ನೂ ಹೆಚ್ಚಿನ ಬ್ರ್ಯಾಂಡ್‌ಗಳಿವೆ"
     },
     "heroSliderAriaLabel": "ವೈಶಿಷ್ಟ್ಯಗೊಳಿಸಿದ ನವೀಕರಿಸಬಹುದಾದ ಇಂಧನ ಪರಿಹಾರಗಳು",
     "heroSlider": [
@@ -4784,7 +4794,7 @@
           "ಕಡಿಮೆ ಬಂಡವಾಳ ವೆಚ್ಚ",
           "ನೆಟ್ ಮೀಟರಿಂಗ್"
         ],
-        "image": "/images/slider/slider-1.png",
+        "image": "/images/slider/slider-1.webp",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4797,7 +4807,7 @@
           "ಬ್ಯಾಟರಿ ಬ್ಯಾಕಪ್",
           "ದೂರದ ಸ್ಥಳಗಳಿಗೆ ಸೂಕ್ತ"
         ],
-        "image": "/images/slider/slider-2.png",
+        "image": "/images/slider/slider-2.webp",
         "badgeClass": "text-emerald-100",
         "chipClass": "text-emerald-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4810,7 +4820,7 @@
           "ಬ್ಯಾಕಪ್ ವಿದ್ಯುತ್",
           "ಸ್ಮಾರ್ಟ್ ನಿಯಂತ್ರಣ"
         ],
-        "image": "/images/slider/slider-3.png",
+        "image": "/images/slider/slider-3.webp",
         "badgeClass": "text-pink-100",
         "chipClass": "text-pink-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4823,7 +4833,7 @@
           "ಕಡಿಮೆ ಶಬ್ದ",
           "ಮೇಲ್ಛಾವಣಿ"
         ],
-        "image": "/images/slider/slider-7.png",
+        "image": "/images/slider/slider-7.webp",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4836,7 +4846,7 @@
           "ಕೈಗಾರಿಕಾ",
           "ಹೆಚ್ಚಿನ ಉತ್ಪಾದನೆ"
         ],
-        "image": "/images/slider/slider-8.png",
+        "image": "/images/slider/slider-8.webp",
         "badgeClass": "text-emerald-100",
         "chipClass": "text-emerald-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4849,7 +4859,7 @@
           "ಕೃಷಿಗೆ ಸಿದ್ಧ",
           "ವಿದ್ಯುತ್ ಭಾರಕ್ಕೆ ಬೆಂಬಲ"
         ],
-        "image": "/images/slider/slider-9.png",
+        "image": "/images/slider/slider-9.webp",
         "badgeClass": "text-amber-100",
         "chipClass": "text-amber-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4862,7 +4872,7 @@
           "24/7 ಪೂರೈಕೆ",
           "ಸಮತೋಲಿತ ಉತ್ಪಾದನೆ"
         ],
-        "image": "/images/slider/slider-13.png",
+        "image": "/images/slider/slider-13.webp",
         "badgeClass": "text-emerald-100",
         "chipClass": "text-emerald-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4875,7 +4885,7 @@
           "ಸ್ಮಾರ್ಟ್ ವಿದ್ಯುತ್ ವಿತರಣೆ",
           "ಬ್ಯಾಟರಿ ಸಮನ್ವಯ"
         ],
-        "image": "/images/slider/slider-14.png",
+        "image": "/images/slider/slider-14.webp",
         "badgeClass": "text-violet-100",
         "chipClass": "text-violet-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4888,7 +4898,7 @@
           "ಆಫ್-ಗ್ರಿಡ್",
           "ದೂರದ ಸ್ಥಳಗಳಿಗೆ ಸೂಕ್ತ"
         ],
-        "image": "/images/slider/slider-15.png",
+        "image": "/images/slider/slider-15.webp",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4907,20 +4917,7 @@
       "perHome": "ಪ್ರತಿ ಮನೆಗೆ",
       "offerLabel": "ಆಫರ್ ಅವಧಿ",
       "offerText": "ಸೀಮಿತ ಅವಧಿ — ಪ್ರಸ್ತುತ ಸಬ್ಸಿಡಿ ಚಕ್ರ ಮುಗಿಯುವ ಮೊದಲು ಅರ್ಜಿ ಸಲ್ಲಿಸಿ.",
-      "stats": [
-        {
-          "label": "ದಿನಗಳು",
-          "value": "000"
-        },
-        {
-          "label": "ಗಂಟೆಗಳು",
-          "value": "00"
-        },
-        {
-          "label": "ನಿಮಿಷಗಳು",
-          "value": "00"
-        }
-      ]
+      "daysLabel": "ದಿನಗಳು"
     },
     "offer": {
       "eyebrow": "ನಮ್ಮ ಕೊಡುಗೆಗಳು",
@@ -5339,7 +5336,7 @@
           "badgeClass": "text-sky-100",
           "chipClass": "text-sky-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-1.png"
+          "image": "/images/slider/slider-1.webp"
         },
         {
           "badge": "Off-grid autonomy",
@@ -5352,7 +5349,7 @@
           "badgeClass": "text-emerald-100",
           "chipClass": "text-emerald-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-2.png"
+          "image": "/images/slider/slider-2.webp"
         },
         {
           "badge": "Hybrid resilience",
@@ -5365,7 +5362,7 @@
           "badgeClass": "text-pink-100",
           "chipClass": "text-pink-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-3.png"
+          "image": "/images/slider/slider-3.webp"
         },
         {
           "badge": "Agricultural pumping",
@@ -5375,7 +5372,7 @@
           "badgeClass": "text-slate-100",
           "chipClass": "text-slate-100",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-4.png"
+          "image": "/images/slider/slider-4.webp"
         },
         {
           "badge": "Commercial scale",
@@ -5388,7 +5385,7 @@
           "badgeClass": "text-slate-100",
           "chipClass": "text-slate-100",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-5.png"
+          "image": "/images/slider/slider-5.webp"
         },
         {
           "badge": "Water pumping",
@@ -5401,7 +5398,7 @@
           "badgeClass": "text-violet-100",
           "chipClass": "text-violet-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-6.png"
+          "image": "/images/slider/slider-6.webp"
         }
       ]
     },
@@ -5714,7 +5711,7 @@
           "badgeClass": "text-sky-100",
           "chipClass": "text-sky-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-7.png"
+          "image": "/images/slider/slider-7.webp"
         },
         {
           "badge": "Commercial wind",
@@ -5727,7 +5724,7 @@
           "badgeClass": "text-emerald-100",
           "chipClass": "text-emerald-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-8.png"
+          "image": "/images/slider/slider-8.webp"
         },
         {
           "badge": "Agricultural wind",
@@ -5740,7 +5737,7 @@
           "badgeClass": "text-lime-100",
           "chipClass": "text-lime-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-9.png"
+          "image": "/images/slider/slider-9.webp"
         },
         {
           "badge": "Wind resource assessment",
@@ -5753,7 +5750,7 @@
           "badgeClass": "text-cyan-100",
           "chipClass": "text-cyan-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-10.png"
+          "image": "/images/slider/slider-10.webp"
         },
         {
           "badge": "Wind and storage",
@@ -5766,7 +5763,7 @@
           "badgeClass": "text-violet-100",
           "chipClass": "text-violet-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-11.png"
+          "image": "/images/slider/slider-11.webp"
         },
         {
           "badge": "Distributed wind",
@@ -5779,7 +5776,7 @@
           "badgeClass": "text-amber-100",
           "chipClass": "text-amber-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-12.png"
+          "image": "/images/slider/slider-12.webp"
         }
       ]
     },
@@ -5985,7 +5982,7 @@
           "badgeClass": "text-emerald-100",
           "chipClass": "text-emerald-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-13.png"
+          "image": "/images/slider/slider-13.webp"
         },
         {
           "badge": "Smart control",
@@ -5998,7 +5995,7 @@
           "badgeClass": "text-violet-100",
           "chipClass": "text-violet-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-14.png"
+          "image": "/images/slider/slider-14.webp"
         },
         {
           "badge": "Solar, wind and storage",
@@ -6011,7 +6008,7 @@
           "badgeClass": "text-amber-100",
           "chipClass": "text-amber-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-15.png"
+          "image": "/images/slider/slider-15.webp"
         },
         {
           "badge": "Resilient power",
@@ -6024,7 +6021,7 @@
           "badgeClass": "text-sky-100",
           "chipClass": "text-sky-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-16.png"
+          "image": "/images/slider/slider-16.webp"
         },
         {
           "badge": "Energy management",
@@ -6037,7 +6034,7 @@
           "badgeClass": "text-emerald-100",
           "chipClass": "text-emerald-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-17.png"
+          "image": "/images/slider/slider-17.webp"
         },
         {
           "badge": "Connected energy systems",
@@ -6050,7 +6047,7 @@
           "badgeClass": "text-rose-100",
           "chipClass": "text-rose-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-18.png"
+          "image": "/images/slider/slider-18.webp"
         }
       ]
     },
@@ -9038,17 +9035,37 @@
     "tail": "ಹಾಗೂ ಗ್ರಾಹಕರ ಅಗತ್ಯಗಳಿಗೆ ಹೊಂದುವ ನವೀನ ಇಂಧನ ಪರಿಹಾರಗಳನ್ನು ಅನ್ವೇಷಿಸುತ್ತದೆ. ಬೆಳೆಯುತ್ತಾ ಹೋದಂತೆ, ಸ್ವಚ್ಛ ಮತ್ತು ಹೆಚ್ಚು ಸುಸ್ಥಿರ ಭವಿಷ್ಯಕ್ಕೆ ಕೊಡುಗೆ ನೀಡುವ ಸುಧಾರಿತ ನವೀಕರಿಸಬಹುದಾದ ಇಂಧನ ಪರಿಹಾರಗಳನ್ನು ಅಭಿವೃದ್ಧಿಪಡಿಸಿ ನಮ್ಮ ತಾಂತ್ರಿಕ ಸಾಮರ್ಥ್ಯವನ್ನು ವಿಸ್ತರಿಸುವ ಗುರಿ ಹೊಂದಿದ್ದೇವೆ."
   },
   "bankEmi": {
-    "badge": "ವೈಯಕ್ತಿಕ ಹಣಕಾಸು · EMI ಯೋಜಕ",
-    "title": "ನಿಮ್ಮ ಮುಂದಿನ ಹೆಜ್ಜೆ ಇಡಿ",
+    "badge": "PM Surya Ghar · ಸೌರ ಸಾಲ EMI",
+    "title": "ನಿಮ್ಮ ಸೌರ ಸಾಲವನ್ನು ಯೋಜಿಸಿ",
     "titleAccent": "ಸ್ಪಷ್ಟತೆಯೊಂದಿಗೆ.",
-    "description": "ನಿಮ್ಮ ಜೀವನಕ್ಕೆ ಹೊಂದುವಂತೆ ಸಾಲವನ್ನು ರೂಪಿಸಿ. ಮೊತ್ತಗಳನ್ನು ಬದಲಿಸಿ, ಸಂಪೂರ್ಣ ಮರುಪಾವತಿ ವಿವರವನ್ನು ತಕ್ಷಣ ನೋಡಿ.",
+    "description": "PM Surya Ghar ಸಾಲದ ಮಿತಿ, ಸಾಲಗಾರರ ಪಾಲು ಮತ್ತು ಬಡ್ಡಿದರದ ಉಲ್ಲೇಖಗಳ ಆಧಾರದ ಮೇಲೆ ಮೇಲ್ಛಾವಣಿ ಸೌರ EMI ಅಂದಾಜಿಸಿ.",
     "confidence": "ವಿಶ್ವಾಸದಿಂದ ಯೋಜಿಸಿ",
     "confidenceSub": "ಒಂದೇ ನೋಟದಲ್ಲಿ ಸ್ಪಷ್ಟ ಅಂದಾಜು",
     "loanDetails": "ನಿಮ್ಮ ಸಾಲದ ವಿವರಗಳು",
-    "loanDetailsSub": "ಕೆಳಗಿನ ಅಂದಾಜನ್ನು ನಿಮ್ಮ ಅಗತ್ಯಕ್ಕೆ ತಕ್ಕಂತೆ ಹೊಂದಿಸಿ",
+    "loanDetailsSub": "ಸಾಲದ ವರ್ಗವನ್ನು ಆಯ್ಕೆಮಾಡಿ ಅಂದಾಜನ್ನು ಹೊಂದಿಸಿ",
+    "loanCategory": "ಸಾಲದ ವರ್ಗ",
+    "loanUpToTwoLakhs": "₹2 ಲಕ್ಷದವರೆಗೆ",
+    "loanAboveTwoLakhs": "₹2 ಲಕ್ಷಕ್ಕಿಂತ ಹೆಚ್ಚು · ಗರಿಷ್ಠ ₹6 ಲಕ್ಷ",
     "loanAmount": "ಸಾಲದ ಮೊತ್ತ",
-    "loanTenure": "ಸಾಲದ ಅವಧಿ",
+    "loanTenure": "ಒಟ್ಟು ಸಾಲದ ಅವಧಿ",
+    "projectCost": "ಅಂದಾಜು ಯೋಜನಾ ವೆಚ್ಚ",
+    "borrowerContribution": "ಕನಿಷ್ಠ ಸಾಲಗಾರರ ಕೊಡುಗೆ",
+    "borrowerMargin": "ಕನಿಷ್ಠ ಸಾಲಗಾರರ ಪಾಲು",
+    "panRequirement": "PAN ಅಗತ್ಯ",
+    "panNotRequired": "ಅಗತ್ಯವಿಲ್ಲ",
+    "panMandatory": "ಕಡ್ಡಾಯ",
     "interestRate": "ಬಡ್ಡಿ ದರ",
+    "repoRate": "RBI ರೆಪೊ ದರ",
+    "repoRateAriaLabel": "RBI ರೆಪೊ ದರ",
+    "repoRateNote": "ಸಾಲದ ದರ = ರೆಪೊ ದರ + 0.50%. ಉಲ್ಲೇಖದಲ್ಲಿ ವರ್ಷಕ್ಕೆ 6.00% (5.50% ರೆಪೊ) ಇದೆ; ಜಾರಿಗೆ ಬಂದ ದಿನಾಂಕ ನೀಡಿಲ್ಲ.",
+    "calculatedInterestRate": "ಲೆಕ್ಕಿಸಿದ ಸಾಲದ ದರ",
+    "customerType": "ಗ್ರಾಹಕರ ಪ್ರಕಾರ",
+    "homeLoanCustomer": "ಗೃಹಸಾಲ ಗ್ರಾಹಕ",
+    "nonHomeLoanCustomer": "ಗೃಹಸಾಲ ಗ್ರಾಹಕರಲ್ಲ",
+    "homeLoanRate": "ನಿಮ್ಮ ಪ್ರಸ್ತುತ ಗೃಹಸಾಲದ ದರ",
+    "homeLoanRateAriaLabel": "ಪ್ರಸ್ತುತ ಗೃಹಸಾಲದ ಬಡ್ಡಿ ದರ",
+    "homeLoanRateNote": "ಗೃಹಸಾಲ ಗ್ರಾಹಕರಿಗೆ ಇದೇ ದರ; ಇತರ ಗ್ರಾಹಕರಿಗೆ 1.00 ಶೇಕಡಾ ಅಂಕ ಸೇರಿಸಲಾಗುತ್ತದೆ.",
+    "enterHomeLoanRate": "EMI ಲೆಕ್ಕಿಸಲು ಮಾನ್ಯ ಗೃಹಸಾಲದ ದರವನ್ನು (0–30%) ನಮೂದಿಸಿ.",
     "perAnnum": "ವಾರ್ಷಿಕ",
     "monthlyEmi": "ನಿಮ್ಮ ಮಾಸಿಕ EMI",
     "month": "/ ತಿಂಗಳು",
@@ -9057,9 +9074,16 @@
     "totalInterest": "ಒಟ್ಟು ಬಡ್ಡಿ",
     "totalRepayment": "ಒಟ್ಟು ಮರುಪಾವತಿ",
     "principalPlus": "ಅಸಲು + ಬಡ್ಡಿ",
-    "estimateOnly": "ಇದು ಅಂದಾಜು ಮಾತ್ರ. ನಿಮ್ಮ ಸಾಲದಾತರು ವಿಭಿನ್ನ ದರಗಳು, ಶುಲ್ಕಗಳು ಮತ್ತು ಅರ್ಹತಾ ಮಾನದಂಡಗಳನ್ನು ಅನ್ವಯಿಸಬಹುದು.",
+    "estimateOnly": "ಫೈನಾನ್ಸ್ ಪುಟದಲ್ಲಿನ ಒದಗಿಸಿದ ಷರತ್ತುಗಳ ಆಧಾರದ ಅಂದಾಜು. ಅಂತಿಮ ಅನುಮೋದನೆ ಮತ್ತು ಪ್ರಸ್ತುತ ದರಗಳನ್ನು ಬ್ಯಾಂಕ್ ನಿರ್ಧರಿಸುತ್ತದೆ.",
     "year": "ವರ್ಷ",
     "years": "ವರ್ಷಗಳು",
+    "tenureMonth": "ತಿಂಗಳು",
+    "tenureMonths": "ತಿಂಗಳುಗಳು",
+    "repaymentMonths": "EMI ಪಾವತಿಗಳು",
+    "moratoriumCalculationNote": "ಗರಿಷ್ಠ ಅವಧಿ 120 ತಿಂಗಳು; ಇದರಲ್ಲಿ ಆರು ತಿಂಗಳ ಮೊರಟೋರಿಯಂ ಸೇರಿದೆ. EMI ಉಳಿದ ತಿಂಗಳುಗಳಿಗೆ ಅಂದಾಜಿಸಲಾಗಿದೆ; ಮೊರಟೋರಿಯಂ ಅವಧಿಯ ಬಡ್ಡಿ ಬಗ್ಗೆ ಉಲ್ಲೇಖದಲ್ಲಿ ಮಾಹಿತಿ ಇಲ್ಲದ ಕಾರಣ ಅದನ್ನು ಸೇರಿಸಿಲ್ಲ.",
+    "guidelineSummary": "ಮಾರ್ಗಸೂಚಿಗಳ ಸಾರಾಂಶ",
+    "eligibilitySummary": "65 ವರ್ಷ ವಯಸ್ಸಿನವರೆಗಿನ ವೈಯಕ್ತಿಕ ಅರ್ಜಿದಾರರು; ಮರುಪಾವತಿ 70 ವರ್ಷ ವಯಸ್ಸಿನ ಮೊದಲು ಪೂರ್ಣಗೊಳ್ಳಬೇಕು. CIBIL 680+ ಅಥವಾ ಹೊಸ ಕ್ರೆಡಿಟ್ ಗ್ರಾಹಕರು ಅರ್ಹರಾಗಿರಬಹುದು. DISCOM ಗ್ರಾಹಕ ಸಂಖ್ಯೆ, ಸಾಕಷ್ಟು ಮೇಲ್ಛಾವಣಿ ಪ್ರದೇಶ ಮತ್ತು ಬ್ಯಾಂಕ್ ಉಳಿತಾಯ ಖಾತೆ ಅಗತ್ಯ.",
+    "financePageLink": "ಪೂರ್ಣ ಯೋಜನಾ ಷರತ್ತುಗಳು ಮತ್ತು ಅರ್ಹತೆ",
     "repaymentSnapshot": "ಮರುಪಾವತಿಯ ಸಾರಾಂಶ",
     "basedOnDetails": "ನಿಮ್ಮ ಸಾಲದ ವಿವರಗಳ ಆಧಾರದಲ್ಲಿ",
     "liveEstimate": "ನೇರ ಅಂದಾಜು",
@@ -10138,13 +10162,9 @@
     "yearSuffix": "ವರ್ಷ",
     "contactUs": "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ",
     "estimatesDisclaimer": "ಇವು ಅಂದಾಜುಗಳು ಮಾತ್ರ. 25 ವರ್ಷದ ಮುನ್ಸೂಚನೆ ಸ್ಥಿರ ವಿದ್ಯುತ್ ದರ ಮತ್ತು ಉತ್ಪಾದನೆಯನ್ನು ಊಹಿಸುತ್ತದೆ; ನೈಜ ಉಳಿತಾಯವು ಸ್ಥಳದ ಪರಿಸ್ಥಿತಿಗಳು, ವ್ಯವಸ್ಥೆಯ ಕಾರ್ಯಕ್ಷಮತೆ ಮತ್ತು DISCOM ದರವನ್ನು ಅವಲಂಬಿಸುತ್ತದೆ.",
-    "quoteHeroTitle": "ಸೌರಶಕ್ತಿಗೆ ಬದಲಾಗಿ ☀️ ನಿಮ್ಮ ವಿದ್ಯುತ್ ಬಿಲ್ ಅನ್ನು 90% ಕಡಿಮೆ ಮಾಡಿ",
-    "quoteHeroSubtitle": "3 ಹಂತಗಳಲ್ಲಿ ಉಚಿತ ವೈಯಕ್ತಿಕಗೊಳಿಸಿದ ಕೊಟೇಶನ್ ಪಡೆಯಿರಿ",
-    "quoteHeroNamePlaceholder": "ಪೂರ್ಣ ಹೆಸರು",
-    "quoteHeroMobilePlaceholder": "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
-    "quoteHeroSubmit": "ಪ್ರಾರಂಭಿಸಿ",
-    "quoteHeroDisclosurePrefix": "ಈ ಫಾರ್ಮ್ ಸಲ್ಲಿಸುವ ಮೂಲಕ, ನೀವು ಒಪ್ಪುತ್ತೀರಿ",
-    "quoteHeroTerms": "ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು",
+    "solarCalculatorEyebrow": "ಸೌರ ಉಳಿತಾಯ ಅಂದಾಜು",
+    "solarCalculatorTitle": "ಸೌರಶಕ್ತಿಗೆ ಬದಲಾಗಿ",
+    "solarCalculatorTitleAccent": "ನಿಮ್ಮ ವಿದ್ಯುತ್ ಬಿಲ್ ಅನ್ನು 80% ರಿಂದ 90% ವರೆಗೆ ಕಡಿಮೆ ಮಾಡಿ",
     "freeAssessmentCta": "ನನ್ನ ಉಚಿತ ಸೌರ ಮೌಲ್ಯಮಾಪನ ಪಡೆಯಿರಿ",
     "freeAssessmentLabel": "ಉಚಿತ ಸೌರ ಮೌಲ್ಯಮಾಪನ",
     "leadName": "ಹೆಸರು",
@@ -12000,12 +12020,12 @@
           "logo": {
             "@type": "ImageObject",
             "@id": "https://aerosunenergy.in/#logo",
-            "url": "https://aerosunenergy.in/images/logo.png",
-            "contentUrl": "https://aerosunenergy.in/images/logo.png",
+            "url": "https://aerosunenergy.in/images/logo.webp",
+            "contentUrl": "https://aerosunenergy.in/images/logo.webp",
             "width": 512,
             "height": 512
           },
-          "image": "https://aerosunenergy.in/images/logo.png",
+          "image": "https://aerosunenergy.in/images/logo.webp",
           "description": "AeroSun Energy provides solar, wind, and hybrid renewable energy systems for residential, commercial, industrial, agricultural, and infrastructure projects across India.",
           "email": "customercare@aerosunenergy.in",
           "telephone": "+91-8099181075",
@@ -12062,8 +12082,8 @@
           "@id": "https://aerosunenergy.in/#localbusiness",
           "name": "AeroSun Energy",
           "url": "https://aerosunenergy.in",
-          "image": "https://aerosunenergy.in/images/logo.png",
-          "logo": "https://aerosunenergy.in/images/logo.png",
+          "image": "https://aerosunenergy.in/images/logo.webp",
+          "logo": "https://aerosunenergy.in/images/logo.webp",
           "description": "Renewable energy company specializing in solar energy systems, wind turbines, and hybrid energy solutions across India.",
           "areaServed": {
             "@type": "Country",
@@ -12562,31 +12582,31 @@
       "lords": [
         {
           "name": "Ganesha",
-          "image": "/images/lordganesha.png",
+          "image": "/images/lordganesha.webp",
           "width": 558,
           "height": 1448
         },
         {
           "name": "Balaji",
-          "image": "/images/lordbalaji.png",
+          "image": "/images/lordbalaji.webp",
           "width": 433,
           "height": 577
         },
         {
           "name": "Shiva",
-          "image": "/images/lordshiva.png",
+          "image": "/images/lordshiva.webp",
           "width": 375,
           "height": 591
         },
         {
           "name": "Rama",
-          "image": "/images/lordrama.png",
+          "image": "/images/lordrama.webp",
           "width": 1082,
           "height": 1453
         },
         {
           "name": "Krishna",
-          "image": "/images/lordkrishna.png",
+          "image": "/images/lordkrishna.webp",
           "width": 1082,
           "height": 1453
         }

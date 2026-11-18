@@ -105,9 +105,9 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://aerosunenergy.in"),
   icons: {
-    icon: "/images/logo.png",
-    shortcut: "/images/logo.png",
-    apple: "/images/logo.png",
+    icon: "/images/logo.webp",
+    shortcut: "/images/logo.webp",
+    apple: "/images/logo.webp",
   },
   manifest: "/site.webmanifest",
   applicationName: "AeroSun Energy",
@@ -149,7 +149,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://aerosunenergy.in/images/og-image.png",
+        url: "https://aerosunenergy.in/images/og-image.webp",
         width: 1200,
         height: 630,
         alt: "AeroSun Energy – Solar & Wind Energy Solutions",
@@ -161,7 +161,7 @@ export const metadata: Metadata = {
     title: "Solar Energy Solutions in Tirupati | AeroSun Energy",
     description:
       "Based in Tirupati, Andhra Pradesh, AeroSun Energy provides solar, wind, and hybrid renewable energy solutions.",
-    images: ["https://aerosunenergy.in/images/og-image.png"],
+    images: ["https://aerosunenergy.in/images/og-image.webp"],
   },
   verification: {
     google: _GOOGLE_SITE_VERIFICATION,

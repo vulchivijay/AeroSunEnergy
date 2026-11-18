@@ -4335,6 +4335,8 @@
     "startProjectAriaLabel": "Contact AeroSun Energy to start your project",
     "brandName": "AeroSun Energy Private Limited",
     "brandTagline": "Power from Sun and Wind",
+    "companyRegistration": "CIN:U35106AP2026PTC128748",
+    "companyMobile": "Mobile: 8099181075",
     "primaryNavigationLabel": "Primary navigation",
     "mobileNavigationLabel": "Mobile primary navigation",
     "exploreLabel": "Explore AeroSun",
@@ -4772,7 +4774,15 @@
       "priceOrder": "Ranked by highest listed price",
       "maxListedLabel": "Max listed",
       "topPriceLabel": "Highest listed",
-      "moreBrandsAvailable": "Many more brands available"
+      "freyrEnergy": "Freyr Energy",
+      "materialTypesLabel": "Module types",
+      "undefinedMaterialType": "Undefined",
+      "materialTypes": {
+        "monocrystalline": "Monocrystalline",
+        "polycrystalline": "Polycrystalline",
+        "thinFilm": "Thin-film"
+      },
+      "moreBrandsAvailable": "We have more brands"
     },
     "heroSliderAriaLabel": "Featured renewable energy solutions",
     "heroSlider": [
@@ -4784,7 +4794,7 @@
           "Lower Capex",
           "Net Metering"
         ],
-        "image": "/images/slider/slider-1.png",
+        "image": "/images/slider/slider-1.webp",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4797,7 +4807,7 @@
           "Battery-backed",
           "Remote-ready"
         ],
-        "image": "/images/slider/slider-2.png",
+        "image": "/images/slider/slider-2.webp",
         "badgeClass": "text-emerald-100",
         "chipClass": "text-emerald-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4810,7 +4820,7 @@
           "Backup power",
           "Smart control"
         ],
-        "image": "/images/slider/slider-3.png",
+        "image": "/images/slider/slider-3.webp",
         "badgeClass": "text-pink-100",
         "chipClass": "text-pink-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4823,7 +4833,7 @@
           "Low-noise",
           "Rooftop"
         ],
-        "image": "/images/slider/slider-7.png",
+        "image": "/images/slider/slider-7.webp",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4836,7 +4846,7 @@
           "Industrial",
           "High output"
         ],
-        "image": "/images/slider/slider-8.png",
+        "image": "/images/slider/slider-8.webp",
         "badgeClass": "text-emerald-100",
         "chipClass": "text-emerald-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4849,7 +4859,7 @@
           "Agri-ready",
           "Load support"
         ],
-        "image": "/images/slider/slider-9.png",
+        "image": "/images/slider/slider-9.webp",
         "badgeClass": "text-amber-100",
         "chipClass": "text-amber-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4862,7 +4872,7 @@
           "24/7 supply",
           "Balanced output"
         ],
-        "image": "/images/slider/slider-13.png",
+        "image": "/images/slider/slider-13.webp",
         "badgeClass": "text-emerald-100",
         "chipClass": "text-emerald-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4875,7 +4885,7 @@
           "Smart dispatch",
           "Battery sync"
         ],
-        "image": "/images/slider/slider-14.png",
+        "image": "/images/slider/slider-14.webp",
         "badgeClass": "text-violet-100",
         "chipClass": "text-violet-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4888,7 +4898,7 @@
           "Off-grid",
           "Remote-ready"
         ],
-        "image": "/images/slider/slider-15.png",
+        "image": "/images/slider/slider-15.webp",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -4907,20 +4917,7 @@
       "perHome": "per home",
       "offerLabel": "Offer Window",
       "offerText": "Limited duration – apply before the current subsidy cycle closes.",
-      "stats": [
-        {
-          "label": "Days",
-          "value": "000"
-        },
-        {
-          "label": "Hours",
-          "value": "00"
-        },
-        {
-          "label": "Mins",
-          "value": "00"
-        }
-      ]
+      "daysLabel": "Days"
     },
     "offer": {
       "eyebrow": "What We Offer",
@@ -5339,7 +5336,7 @@
           "badgeClass": "text-sky-100",
           "chipClass": "text-sky-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-1.png"
+          "image": "/images/slider/slider-1.webp"
         },
         {
           "badge": "Off-grid autonomy",
@@ -5352,7 +5349,7 @@
           "badgeClass": "text-emerald-100",
           "chipClass": "text-emerald-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-2.png"
+          "image": "/images/slider/slider-2.webp"
         },
         {
           "badge": "Hybrid resilience",
@@ -5365,7 +5362,7 @@
           "badgeClass": "text-pink-100",
           "chipClass": "text-pink-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-3.png"
+          "image": "/images/slider/slider-3.webp"
         },
         {
           "badge": "Agricultural pumping",
@@ -5375,7 +5372,7 @@
           "badgeClass": "text-slate-100",
           "chipClass": "text-slate-100",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-4.png"
+          "image": "/images/slider/slider-4.webp"
         },
         {
           "badge": "Commercial scale",
@@ -5388,7 +5385,7 @@
           "badgeClass": "text-slate-100",
           "chipClass": "text-slate-100",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-5.png"
+          "image": "/images/slider/slider-5.webp"
         },
         {
           "badge": "Water pumping",
@@ -5401,7 +5398,7 @@
           "badgeClass": "text-violet-100",
           "chipClass": "text-violet-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-6.png"
+          "image": "/images/slider/slider-6.webp"
         }
       ]
     },
@@ -5714,7 +5711,7 @@
           "badgeClass": "text-sky-100",
           "chipClass": "text-sky-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-7.png"
+          "image": "/images/slider/slider-7.webp"
         },
         {
           "badge": "Commercial wind",
@@ -5727,7 +5724,7 @@
           "badgeClass": "text-emerald-100",
           "chipClass": "text-emerald-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-8.png"
+          "image": "/images/slider/slider-8.webp"
         },
         {
           "badge": "Agricultural wind",
@@ -5740,7 +5737,7 @@
           "badgeClass": "text-lime-100",
           "chipClass": "text-lime-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-9.png"
+          "image": "/images/slider/slider-9.webp"
         },
         {
           "badge": "Wind resource assessment",
@@ -5753,7 +5750,7 @@
           "badgeClass": "text-cyan-100",
           "chipClass": "text-cyan-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-10.png"
+          "image": "/images/slider/slider-10.webp"
         },
         {
           "badge": "Wind and storage",
@@ -5766,7 +5763,7 @@
           "badgeClass": "text-violet-100",
           "chipClass": "text-violet-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-11.png"
+          "image": "/images/slider/slider-11.webp"
         },
         {
           "badge": "Distributed wind",
@@ -5779,7 +5776,7 @@
           "badgeClass": "text-amber-100",
           "chipClass": "text-amber-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-12.png"
+          "image": "/images/slider/slider-12.webp"
         }
       ]
     },
@@ -5985,7 +5982,7 @@
           "badgeClass": "text-emerald-100",
           "chipClass": "text-emerald-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-13.png"
+          "image": "/images/slider/slider-13.webp"
         },
         {
           "badge": "Smart control",
@@ -5998,7 +5995,7 @@
           "badgeClass": "text-violet-100",
           "chipClass": "text-violet-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-14.png"
+          "image": "/images/slider/slider-14.webp"
         },
         {
           "badge": "Solar, wind and storage",
@@ -6011,7 +6008,7 @@
           "badgeClass": "text-amber-100",
           "chipClass": "text-amber-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-15.png"
+          "image": "/images/slider/slider-15.webp"
         },
         {
           "badge": "Resilient power",
@@ -6024,7 +6021,7 @@
           "badgeClass": "text-sky-100",
           "chipClass": "text-sky-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-16.png"
+          "image": "/images/slider/slider-16.webp"
         },
         {
           "badge": "Energy management",
@@ -6037,7 +6034,7 @@
           "badgeClass": "text-emerald-100",
           "chipClass": "text-emerald-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-17.png"
+          "image": "/images/slider/slider-17.webp"
         },
         {
           "badge": "Connected energy systems",
@@ -6050,7 +6047,7 @@
           "badgeClass": "text-rose-100",
           "chipClass": "text-rose-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-18.png"
+          "image": "/images/slider/slider-18.webp"
         }
       ]
     },
@@ -9134,17 +9131,37 @@
     "tail": "and exploring innovative energy solutions tailored to customer needs. As we grow, we aim to expand our technical capabilities and develop advanced renewable energy solutions that contribute to a cleaner, more sustainable future."
   },
   "bankEmi": {
-    "badge": "Personal finance · EMI planner",
-    "title": "Make your next move",
+    "badge": "PM Surya Ghar · Solar loan EMI",
+    "title": "Plan your solar loan",
     "titleAccent": "with clarity.",
-    "description": "Shape your loan around your life. Adjust the numbers and see the full repayment picture instantly.",
+    "description": "Estimate your rooftop-solar EMI using the standard PM Surya Ghar loan limits, borrower margin, and rate references.",
     "confidence": "Plan with confidence",
     "confidenceSub": "A clear estimate, at a glance",
     "loanDetails": "Your loan details",
-    "loanDetailsSub": "Fine-tune the estimate below",
+    "loanDetailsSub": "Choose a loan band and adjust the estimate",
+    "loanCategory": "Loan category",
+    "loanUpToTwoLakhs": "Up to ₹2 lakh",
+    "loanAboveTwoLakhs": "Above ₹2 lakh · max ₹6 lakh",
     "loanAmount": "Loan amount",
-    "loanTenure": "Loan tenure",
+    "loanTenure": "Total loan term",
+    "projectCost": "Estimated project cost",
+    "borrowerContribution": "Minimum borrower contribution",
+    "borrowerMargin": "Minimum borrower margin",
+    "panRequirement": "PAN requirement",
+    "panNotRequired": "Not required",
+    "panMandatory": "Mandatory",
     "interestRate": "Interest rate",
+    "repoRate": "RBI repo rate",
+    "repoRateAriaLabel": "RBI repo rate",
+    "repoRateNote": "Loan rate = repo rate + 0.50%. The source reference lists 6.00% p.a. (5.50% repo); its effective date was not provided.",
+    "calculatedInterestRate": "Calculated loan rate",
+    "customerType": "Customer type",
+    "homeLoanCustomer": "Home-loan customer",
+    "nonHomeLoanCustomer": "Not a home-loan customer",
+    "homeLoanRate": "Your current home-loan rate",
+    "homeLoanRateAriaLabel": "Current home-loan interest rate",
+    "homeLoanRateNote": "Home-loan customers use this rate; other customers add 1.00 percentage point.",
+    "enterHomeLoanRate": "Enter a valid home-loan rate (0–30%) to calculate EMI.",
     "perAnnum": "p.a.",
     "monthlyEmi": "Your monthly EMI",
     "month": "/ month",
@@ -9153,9 +9170,16 @@
     "totalInterest": "Total interest",
     "totalRepayment": "Total repayment",
     "principalPlus": "Principal + interest",
-    "estimateOnly": "Estimate only. Your lender may apply different rates, fees, and eligibility criteria.",
+    "estimateOnly": "Illustrative estimate based on the supplied finance-page terms. Lender approval and current rates apply.",
     "year": "year",
     "years": "years",
+    "tenureMonth": "month",
+    "tenureMonths": "months",
+    "repaymentMonths": "EMI payments",
+    "moratoriumCalculationNote": "Maximum term is 120 months including a six-month moratorium. EMI is estimated over the remaining months; interest accrued during the moratorium is excluded because the reference does not specify its treatment.",
+    "guidelineSummary": "Guideline summary",
+    "eligibilitySummary": "For individuals up to age 65; repayment must end before age 70. CIBIL 680+ or new-to-credit applicants may qualify. A DISCOM consumer number, adequate rooftop area, and a bank savings account are required.",
+    "financePageLink": "Full scheme terms and eligibility",
     "repaymentSnapshot": "Repayment snapshot",
     "basedOnDetails": "Based on your loan details",
     "liveEstimate": "Live estimate",
@@ -10228,13 +10252,9 @@
     "yearSuffix": "year",
     "contactUs": "Contact Us",
     "estimatesDisclaimer": "Estimates only. The 25-year projection assumes constant tariff and output; actual savings depend on site conditions, system performance and DISCOM tariff.",
-    "quoteHeroTitle": "Go Solar ☀️ and Reduce Your Electricity Bill By 90%",
-    "quoteHeroSubtitle": "GET FREE PERSONALIZED QUOTE IN 3 STEPS",
-    "quoteHeroNamePlaceholder": "Full Name",
-    "quoteHeroMobilePlaceholder": "Mobile Number",
-    "quoteHeroSubmit": "Get Started",
-    "quoteHeroDisclosurePrefix": "By submitting this form, you agree to our",
-    "quoteHeroTerms": "Terms & Conditions",
+    "solarCalculatorEyebrow": "Solar Savings Estimate",
+    "solarCalculatorTitle": "Go Solar and",
+    "solarCalculatorTitleAccent": "Reduce Your Electricity Bill By 80% to 90%",
     "freeAssessmentCta": "Get My Free Solar Assessment",
     "freeAssessmentLabel": "Free solar assessment",
     "leadName": "Name",
@@ -12273,12 +12293,12 @@
           "logo": {
             "@type": "ImageObject",
             "@id": "https://aerosunenergy.in/#logo",
-            "url": "https://aerosunenergy.in/images/logo.png",
-            "contentUrl": "https://aerosunenergy.in/images/logo.png",
+            "url": "https://aerosunenergy.in/images/logo.webp",
+            "contentUrl": "https://aerosunenergy.in/images/logo.webp",
             "width": 512,
             "height": 512
           },
-          "image": "https://aerosunenergy.in/images/logo.png",
+          "image": "https://aerosunenergy.in/images/logo.webp",
           "description": "AeroSun Energy provides solar, wind, and hybrid renewable energy systems for residential, commercial, industrial, agricultural, and infrastructure projects across India.",
           "email": "customercare@aerosunenergy.in",
           "telephone": "+91-8099181075",
@@ -12335,8 +12355,8 @@
           "@id": "https://aerosunenergy.in/#localbusiness",
           "name": "AeroSun Energy",
           "url": "https://aerosunenergy.in",
-          "image": "https://aerosunenergy.in/images/logo.png",
-          "logo": "https://aerosunenergy.in/images/logo.png",
+          "image": "https://aerosunenergy.in/images/logo.webp",
+          "logo": "https://aerosunenergy.in/images/logo.webp",
           "description": "Renewable energy company specializing in solar energy systems, wind turbines, and hybrid energy solutions across India.",
           "areaServed": {
             "@type": "Country",
@@ -12835,31 +12855,31 @@
       "lords": [
         {
           "name": "Ganesha",
-          "image": "/images/lordganesha.png",
+          "image": "/images/lordganesha.webp",
           "width": 558,
           "height": 1448
         },
         {
           "name": "Balaji",
-          "image": "/images/lordbalaji.png",
+          "image": "/images/lordbalaji.webp",
           "width": 433,
           "height": 577
         },
         {
           "name": "Shiva",
-          "image": "/images/lordshiva.png",
+          "image": "/images/lordshiva.webp",
           "width": 375,
           "height": 591
         },
         {
           "name": "Rama",
-          "image": "/images/lordrama.png",
+          "image": "/images/lordrama.webp",
           "width": 1082,
           "height": 1453
         },
         {
           "name": "Krishna",
-          "image": "/images/lordkrishna.png",
+          "image": "/images/lordkrishna.webp",
           "width": 1082,
           "height": 1453
         }

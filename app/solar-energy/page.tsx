@@ -224,7 +224,7 @@ export default function SolarEnergyPage() {
           <div className="overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(145deg,#71300c_0%,#92370b_55%,#a94208_100%)] p-5 shadow-sm">
             <div className="relative h-72 overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
               <OptimizedImage
-                src="/images/slider/slider-6.png"
+                src="/images/slider/slider-6.webp"
                 alt={solarPage.featuredImageAlt}
                 fill
                 sizes="(min-width: 1024px) 30vw, 100vw"
