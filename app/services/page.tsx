@@ -30,7 +30,7 @@ export default function ServicesPage() {
       <header className="relative isolate min-h-[620px] overflow-hidden bg-[#102a43] text-white sm:min-h-[680px]">
         <div className="absolute inset-0 -z-10">
           <OptimizedImage
-            src="/images/slider/slider-1.png"
+            src="/images/slider/slider-1.webp"
             alt={labels.heroImageAlt}
             fill
             priority
@@ -205,7 +205,7 @@ export default function ServicesPage() {
           <article className="relative isolate flex min-h-[420px] flex-col justify-end overflow-hidden rounded-2xl bg-slate-950 p-6 text-white sm:p-8">
             <div className="absolute inset-0 -z-10">
               <OptimizedImage
-                src="/images/slider/slider-2.png"
+                src="/images/slider/slider-2.webp"
                 alt={labels.roadmapImageAlt}
                 fill
                 sizes="(min-width: 1024px) 45vw, 100vw"

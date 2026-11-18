@@ -155,7 +155,7 @@ export default function Contact() {
               className="relative min-h-80 overflow-hidden bg-[#102a43] lg:min-h-full"
             >
               <OptimizedImage
-                src="/images/slider/slider-7.png"
+                src="/images/slider/slider-7.webp"
                 alt={c.imageAlt}
                 fill
                 sizes="(min-width: 1024px) 45vw, 100vw"

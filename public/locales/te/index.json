@@ -554,7 +554,7 @@
           "తక్కువ క్యాపెక్స్",
           "నెట్ మీటరింగ్"
         ],
-        "image": "/images/slider/slider-1.png",
+        "image": "/images/slider/slider-1.webp",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -567,7 +567,7 @@
           "బ్యాటరీ-బ్యాక్",
           "రిమోట్-రెడీ"
         ],
-        "image": "/images/slider/slider-2.png",
+        "image": "/images/slider/slider-2.webp",
         "badgeClass": "text-emerald-100",
         "chipClass": "text-emerald-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -580,7 +580,7 @@
           "బ్యాకప్ పవర్",
           "స్మార్ట్ కంట్రోల్"
         ],
-        "image": "/images/slider/slider-3.png",
+        "image": "/images/slider/slider-3.webp",
         "badgeClass": "text-pink-100",
         "chipClass": "text-pink-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -593,7 +593,7 @@
           "తక్కువ శబ్దం",
           "పైకప్పు"
         ],
-        "image": "/images/slider/slider-7.png",
+        "image": "/images/slider/slider-7.webp",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -606,7 +606,7 @@
           "పారిశ్రామిక",
           "అధిక ఉత్పత్తి"
         ],
-        "image": "/images/slider/slider-8.png",
+        "image": "/images/slider/slider-8.webp",
         "badgeClass": "text-emerald-100",
         "chipClass": "text-emerald-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -619,7 +619,7 @@
           "వ్యవసాయానికి అనుకూలం",
           "విద్యుత్ అవసరాలకు తోడ్పాటు"
         ],
-        "image": "/images/slider/slider-9.png",
+        "image": "/images/slider/slider-9.webp",
         "badgeClass": "text-amber-100",
         "chipClass": "text-amber-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -632,7 +632,7 @@
           "24/7 సరఫరా",
           "సమతుల్య ఉత్పత్తి"
         ],
-        "image": "/images/slider/slider-13.png",
+        "image": "/images/slider/slider-13.webp",
         "badgeClass": "text-emerald-100",
         "chipClass": "text-emerald-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -645,7 +645,7 @@
           "స్మార్ట్ విద్యుత్ పంపిణీ",
           "బ్యాటరీ సమన్వయం"
         ],
-        "image": "/images/slider/slider-14.png",
+        "image": "/images/slider/slider-14.webp",
         "badgeClass": "text-violet-100",
         "chipClass": "text-violet-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -658,7 +658,7 @@
           "గ్రిడ్‌-స్వతంత్ర",
           "మారుమూల ప్రాంతాలకు సిద్ధం"
         ],
-        "image": "/images/slider/slider-15.png",
+        "image": "/images/slider/slider-15.webp",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
@@ -1109,7 +1109,7 @@
           "badgeClass": "వచన-ఆకాశం-100",
           "chipClass": "టెక్స్ట్-స్కై-50",
           "panelClass": "bg-linear-to-br-slate-700 వయా-slate-800 to-slate-950",
-          "image": "/images/slider/slider-1.png"
+          "image": "/images/slider/slider-1.webp"
         },
         {
           "badge": "ఆఫ్-గ్రిడ్ స్వయంప్రతిపత్తి",
@@ -1122,7 +1122,7 @@
           "badgeClass": "వచనం-పచ్చ-100",
           "chipClass": "వచనం-పచ్చ-50",
           "panelClass": "bg-linear-to-br-slate-700 వయా-slate-800 to-slate-950",
-          "image": "/images/slider/slider-2.png"
+          "image": "/images/slider/slider-2.webp"
         },
         {
           "badge": "హైబ్రిడ్ స్థితిస్థాపకత",
@@ -1135,7 +1135,7 @@
           "badgeClass": "టెక్స్ట్-పింక్-100",
           "chipClass": "టెక్స్ట్-పింక్-50",
           "panelClass": "bg-linear-to-br-slate-700 వయా-slate-800 to-slate-950",
-          "image": "/images/slider/slider-3.png"
+          "image": "/images/slider/slider-3.webp"
         },
         {
           "badge": "వ్యవసాయ పంపింగ్",
@@ -1145,7 +1145,7 @@
           "badgeClass": "టెక్స్ట్-స్లేట్-100",
           "chipClass": "టెక్స్ట్-స్లేట్-100",
           "panelClass": "bg-linear-to-br-slate-700 వయా-slate-800 to-slate-950",
-          "image": "/images/slider/slider-4.png"
+          "image": "/images/slider/slider-4.webp"
         },
         {
           "badge": "వాణిజ్య స్థాయి",
@@ -1158,7 +1158,7 @@
           "badgeClass": "టెక్స్ట్-స్లేట్-100",
           "chipClass": "టెక్స్ట్-స్లేట్-100",
           "panelClass": "bg-linear-to-br-slate-700 వయా-slate-800 to-slate-950",
-          "image": "/images/slider/slider-5.png"
+          "image": "/images/slider/slider-5.webp"
         },
         {
           "badge": "నీటి పంపింగ్",
@@ -1171,7 +1171,7 @@
           "badgeClass": "టెక్స్ట్-వైలెట్-100",
           "chipClass": "టెక్స్ట్-వైలెట్-50",
           "panelClass": "bg-linear-to-br-slate-700 వయా-slate-800 to-slate-950",
-          "image": "/images/slider/slider-6.png"
+          "image": "/images/slider/slider-6.webp"
         }
       ]
     },
@@ -1485,7 +1485,7 @@
           "badgeClass": "వచన-ఆకాశం-100",
           "chipClass": "టెక్స్ట్-స్కై-50",
           "panelClass": "bg-linear-to-br-slate-700 వయా-slate-800 to-slate-950",
-          "image": "/images/slider/slider-7.png"
+          "image": "/images/slider/slider-7.webp"
         },
         {
           "badge": "వాణిజ్య గాలి",
@@ -1498,7 +1498,7 @@
           "badgeClass": "వచనం-పచ్చ-100",
           "chipClass": "వచనం-పచ్చ-50",
           "panelClass": "bg-linear-to-br-slate-700 వయా-slate-800 to-slate-950",
-          "image": "/images/slider/slider-8.png"
+          "image": "/images/slider/slider-8.webp"
         },
         {
           "badge": "వ్యవసాయ పవన శక్తి",
@@ -1511,7 +1511,7 @@
           "badgeClass": "text-lime-100",
           "chipClass": "text-lime-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-9.png"
+          "image": "/images/slider/slider-9.webp"
         },
         {
           "badge": "పవన వనరుల అంచనా",
@@ -1524,7 +1524,7 @@
           "badgeClass": "text-cyan-100",
           "chipClass": "text-cyan-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-10.png"
+          "image": "/images/slider/slider-10.webp"
         },
         {
           "badge": "పవన శక్తి మరియు నిల్వ",
@@ -1537,7 +1537,7 @@
           "badgeClass": "text-violet-100",
           "chipClass": "text-violet-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-11.png"
+          "image": "/images/slider/slider-11.webp"
         },
         {
           "badge": "విభజిత పవన శక్తి",
@@ -1550,7 +1550,7 @@
           "badgeClass": "text-amber-100",
           "chipClass": "text-amber-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-12.png"
+          "image": "/images/slider/slider-12.webp"
         }
       ]
     },
@@ -1756,7 +1756,7 @@
           "badgeClass": "వచనం-పచ్చ-100",
           "chipClass": "వచనం-పచ్చ-50",
           "panelClass": "bg-linear-to-br-slate-700 వయా-slate-800 to-slate-950",
-          "image": "/images/slider/slider-13.png"
+          "image": "/images/slider/slider-13.webp"
         },
         {
           "badge": "స్మార్ట్ నియంత్రణ",
@@ -1769,7 +1769,7 @@
           "badgeClass": "టెక్స్ట్-వైలెట్-100",
           "chipClass": "టెక్స్ట్-వైలెట్-50",
           "panelClass": "bg-linear-to-br-slate-700 వయా-slate-800 to-slate-950",
-          "image": "/images/slider/slider-14.png"
+          "image": "/images/slider/slider-14.webp"
         },
         {
           "badge": "సౌర, పవన మరియు నిల్వ",
@@ -1782,7 +1782,7 @@
           "badgeClass": "text-amber-100",
           "chipClass": "text-amber-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-15.png"
+          "image": "/images/slider/slider-15.webp"
         },
         {
           "badge": "నమ్మకమైన విద్యుత్",
@@ -1795,7 +1795,7 @@
           "badgeClass": "text-sky-100",
           "chipClass": "text-sky-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-16.png"
+          "image": "/images/slider/slider-16.webp"
         },
         {
           "badge": "శక్తి నిర్వహణ",
@@ -1808,7 +1808,7 @@
           "badgeClass": "text-emerald-100",
           "chipClass": "text-emerald-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-17.png"
+          "image": "/images/slider/slider-17.webp"
         },
         {
           "badge": "అనుసంధానిత శక్తి వ్యవస్థలు",
@@ -1821,7 +1821,7 @@
           "badgeClass": "text-rose-100",
           "chipClass": "text-rose-50",
           "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950",
-          "image": "/images/slider/slider-18.png"
+          "image": "/images/slider/slider-18.webp"
         }
       ]
     },
@@ -12000,12 +12000,12 @@
           "logo": {
             "@type": "ImageObject",
             "@id": "https://aerosunenergy.in/#logo",
-            "url": "https://aerosunenergy.in/images/logo.png",
-            "contentUrl": "https://aerosunenergy.in/images/logo.png",
+            "url": "https://aerosunenergy.in/images/logo.webp",
+            "contentUrl": "https://aerosunenergy.in/images/logo.webp",
             "width": 512,
             "height": 512
           },
-          "image": "https://aerosunenergy.in/images/logo.png",
+          "image": "https://aerosunenergy.in/images/logo.webp",
           "description": "AeroSun Energy భారతదేశవ్యాప్తంగా నివాస, వాణిజ్య, పారిశ్రామిక, వ్యవసాయ, మౌలిక సదుపాయాల ప్రాజెక్టుల కోసం సౌర, పవన, హైబ్రిడ్ పునరుత్పాదక శక్తి వ్యవస్థలను అందిస్తుంది.",
           "email": "customercare@aerosunenergy.in",
           "telephone": "+91-8099181075",
@@ -12062,8 +12062,8 @@
           "@id": "https://aerosunenergy.in/#localbusiness",
           "name": "AeroSun Energy",
           "url": "https://aerosunenergy.in",
-          "image": "https://aerosunenergy.in/images/logo.png",
-          "logo": "https://aerosunenergy.in/images/logo.png",
+          "image": "https://aerosunenergy.in/images/logo.webp",
+          "logo": "https://aerosunenergy.in/images/logo.webp",
           "description": "భారతదేశవ్యాప్తంగా సౌర విద్యుత్ వ్యవస్థలు, పవన టర్బైన్లు, హైబ్రిడ్ శక్తి పరిష్కారాల్లో ప్రత్యేకత కలిగిన పునరుత్పాదక ఇంధన సంస్థ.",
           "areaServed": {
             "@type": "Country",
@@ -12562,31 +12562,31 @@
       "lords": [
         {
           "name": "Ganesha",
-          "image": "/images/lordganesha.png",
+          "image": "/images/lordganesha.webp",
           "width": 558,
           "height": 1448
         },
         {
           "name": "Balaji",
-          "image": "/images/lordbalaji.png",
+          "image": "/images/lordbalaji.webp",
           "width": 433,
           "height": 577
         },
         {
           "name": "Shiva",
-          "image": "/images/lordshiva.png",
+          "image": "/images/lordshiva.webp",
           "width": 375,
           "height": 591
         },
         {
           "name": "Rama",
-          "image": "/images/lordrama.png",
+          "image": "/images/lordrama.webp",
           "width": 1082,
           "height": 1453
         },
         {
           "name": "Krishna",
-          "image": "/images/lordkrishna.png",
+          "image": "/images/lordkrishna.webp",
           "width": 1082,
           "height": 1453
         }

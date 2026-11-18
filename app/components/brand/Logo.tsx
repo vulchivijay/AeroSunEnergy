@@ -16,7 +16,7 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
       className={`relative flex items-center gap-2 font-(--font-logo) ${compact ? "w-max max-w-auto px-2 py-1" : "max-w-full"}`}
     >
       <Image
-        src="/images/logo.png"
+        src="/images/logo.webp"
         alt={t.logo.imageAlt}
         width={80}
         height={62}

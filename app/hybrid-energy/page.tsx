@@ -281,7 +281,7 @@ export default function HybridEnergyPage() {
             <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 p-5 shadow-sm">
               <div className="relative h-72 overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
                 <OptimizedImage
-                  src="/images/slider/slider-13.png"
+                  src="/images/slider/slider-13.webp"
                   alt={hybridPage.labels.deploymentAlt}
                   fill
                   sizes="(min-width: 1024px) 35vw, 100vw"
