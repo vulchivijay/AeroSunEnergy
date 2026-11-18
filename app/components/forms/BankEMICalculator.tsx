@@ -134,7 +134,7 @@ export function BankEMICalculator() {
         </p>
       </header>
 
-      <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-2xl shadow-sm lg:grid-cols-2 xl:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)]">
+      <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-2xl shadow-sm lg:grid-cols-2 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
         <div className="min-w-0 bg-linear-to-r from-amber-500 to-orange-500 p-5 text-white sm:p-7 lg:p-10">
           <div className="mb-7">
             <p className="text-md font-bold uppercase tracking-[0.17em] text-white">

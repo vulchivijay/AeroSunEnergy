@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 
 const REPORT_KEY = 'aerosun_performance_report'
 
@@ -93,7 +94,7 @@ export default function PerformanceMonitor() {
         {rows.map((row) => (
           <div key={row.label} className="flex items-center justify-between gap-4">
             <span className="text-slate-400">{row.label}</span>
-            <span className="font-semibold text-white">{row.value}</span>
+            <span className="font-semibold text-white"><DigitalNumber value={row.value} /></span>
           </div>
         ))}
       </div>

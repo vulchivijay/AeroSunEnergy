@@ -4330,6 +4330,18 @@
     "goTo": "പോകുക",
     "section": "വിഭാഗം",
     "languageLabel": "ഭാഷ",
+    "dashboardPages": {
+      "overview": "അവലോകനം",
+      "customerEnquiry": "ഉപഭോക്തൃ അന്വേഷണം",
+      "customerAgreement": "ഉപഭോക്തൃ കരാർ",
+      "installationChecklist": "ഇൻസ്റ്റാളേഷൻ ചെക്ക്ലിസ്റ്റ്",
+      "invoiceReceipt": "ഇൻവോയ്സ് & രസീത്",
+      "purchaseOrder": "പർച്ചേസ് ഓർഡർ",
+      "warrantyPolicy": "വാറന്റി നയം",
+      "tracker": "90 ദിവസത്തെ ട്രാക്കർ",
+      "researchDevelopment": "ഗവേഷണവും വികസനവും",
+      "termsConditions": "നിബന്ധനകളും വ്യവസ്ഥകളും"
+    },
     "aboutSubmenuLabel": "ഞങ്ങളെക്കുറിച്ചുള്ള ഉപമെനു തുറക്കുക അല്ലെങ്കിൽ അടയ്ക്കുക",
     "startProjectTitle": "AeroSun Energyയുമായി പുനരുപയോഗ ഊർജ പദ്ധതി ആരംഭിക്കുക",
     "startProjectAriaLabel": "നിങ്ങളുടെ പദ്ധതി ആരംഭിക്കാൻ AeroSun Energyയെ ബന്ധപ്പെടുക",
@@ -7749,11 +7761,11 @@
     "attributionLinkText": "ChatGPT.",
     "legalLinks": [
       {
-        "label": "സ്വകാര്യതാ നയം",
+        "label": "നയങ്ങൾ",
         "href": "/policies"
       },
       {
-        "label": "റദ്ദാക്കലും റീഫണ്ട് നയവും",
+        "label": "റദ്ദാക്കലും റീഫണ്ടും",
         "href": "/cancellation"
       }
     ],

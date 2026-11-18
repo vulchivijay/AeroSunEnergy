@@ -4330,6 +4330,18 @@
     "goTo": "Go to",
     "section": "section",
     "languageLabel": "Language",
+    "dashboardPages": {
+      "overview": "Overview",
+      "customerEnquiry": "Customer enquiry",
+      "customerAgreement": "Customer agreement",
+      "installationChecklist": "Installation checklist",
+      "invoiceReceipt": "Invoice & receipt",
+      "purchaseOrder": "Purchase order",
+      "warrantyPolicy": "Warranty policy",
+      "tracker": "90-day tracker",
+      "researchDevelopment": "Research & development",
+      "termsConditions": "Terms & conditions"
+    },
     "aboutSubmenuLabel": "Toggle About submenu",
     "startProjectTitle": "Start a renewable energy project with AeroSun Energy",
     "startProjectAriaLabel": "Contact AeroSun Energy to start your project",
@@ -7845,11 +7857,11 @@
     "attributionLinkText": "ChatGPT.",
     "legalLinks": [
       {
-        "label": "Privacy Policy",
+        "label": "Policies",
         "href": "/policies"
       },
       {
-        "label": "Cancellation & Refund Policy",
+        "label": "Cancellation & Refund",
         "href": "/cancellation"
       }
     ],

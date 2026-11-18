@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Solar Installation Checklist & Project Commissioning Guide | AeroSun Energy',
-  description:
-    'Use the AeroSun Energy installation and commissioning checklist to confirm site readiness, safety compliance, commissioning checks, and renewable energy project execution.',
+  title: 'Installation Checklist',
+  description: 'Secure installation checklist for authorized AeroSun Energy users.',
   keywords: [
     'installation checklist AeroSun Energy',
     'solar installation checklist',
@@ -30,13 +29,12 @@ export const metadata: Metadata = {
     'AeroSun Energy project readiness',
   ],
   alternates: {
-    canonical: '/auth/dashboard/billing/installation-checklist',
+    canonical: '/auth/dashboard/installation-checklist',
   },
   openGraph: {
-    title: 'Solar Installation Checklist & Project Commissioning Guide | AeroSun Energy',
-    description:
-      'Prepare and track safe, accurate installation and commissioning checks for solar and renewable energy projects.',
-    url: 'https://aerosunenergy.in/auth/dashboard/billing/installation-checklist',
+    title: 'Installation Checklist | AeroSun Energy Dashboard',
+    description: 'Secure installation checklist for authorized AeroSun Energy users.',
+    url: 'https://aerosunenergy.in/auth/dashboard/installation-checklist',
     siteName: 'AeroSun Energy',
     type: 'website',
   },

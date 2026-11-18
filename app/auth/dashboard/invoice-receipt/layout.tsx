@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Invoice & Receipt | AeroSun Energy',
-  description:
-    'Record and confirm invoice details, payment status, and receipt information for AeroSun Energy renewable energy projects, solar installations, and service transactions.',
+  title: 'Invoice & Receipt',
+  description: 'Secure invoice and receipt workspace for authorized AeroSun Energy users.',
   keywords: [
     'invoice receipt AeroSun Energy',
     'solar invoice template',
@@ -30,13 +29,12 @@ export const metadata: Metadata = {
     'AeroSun Energy transaction receipt',
   ],
   alternates: {
-    canonical: '/auth/dashboard/billing/invoice-receipt',
+    canonical: '/auth/dashboard/invoice-receipt',
   },
   openGraph: {
-    title: 'Invoice & Receipt | AeroSun Energy',
-    description:
-      'AeroSun Energy invoice and payment receipt documentation for solar and renewable energy project transactions.',
-    url: 'https://aerosunenergy.in/auth/dashboard/billing/invoice-receipt',
+    title: 'Invoice & Receipt | AeroSun Energy Dashboard',
+    description: 'Secure invoice and receipt workspace for authorized AeroSun Energy users.',
+    url: 'https://aerosunenergy.in/auth/dashboard/invoice-receipt',
     siteName: 'AeroSun Energy',
     type: 'website',
   },

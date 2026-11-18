@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Check, Sun, Wind, Zap } from 'lucide-react'
 import { motion } from '@/lib/motion'
 import { OptimizedImage } from '@/app/components/ui'
+import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import { useLocale } from '@/lib/LocaleContext'
 
 const systemIcons = [Sun, Wind, Zap]
@@ -138,7 +139,7 @@ export default function AboutPage() {
             {companyStatsData.map((stat) => (
               <div key={stat.label} className="flex items-center justify-between gap-4 sm:justify-start sm:gap-5">
                 <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-[#137c63]">{stat.label}</span>
-                <span className="text-sm font-semibold text-[#152b29]">{stat.value}</span>
+                <span className="text-sm font-semibold text-[#152b29]"><DigitalNumber value={stat.value} /></span>
               </div>
             ))}
           </div>
@@ -197,7 +198,7 @@ export default function AboutPage() {
                   </p>
                 </div>
                 <div className="flex w-fit items-center gap-3 rounded-2xl border border-white/15 bg-white/[0.08] px-4 py-3">
-                  <span className="text-3xl font-black leading-none text-amber-200">{approvalRowsData.length}</span>
+                  <span className="text-3xl font-black leading-none text-amber-200"><DigitalNumber value={approvalRowsData.length} /></span>
                   <span className="max-w-20 text-[12px] font-bold uppercase leading-4 tracking-[0.16em] text-indigo-50">{content.companyRecordsLabel}</span>
                 </div>
               </div>
@@ -209,7 +210,7 @@ export default function AboutPage() {
                 return (
                   <article key={label} className="group flex min-h-24 items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-md sm:gap-4 sm:p-5">
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#eaf2e9] font-mono text-sm font-black text-[#14785e] ring-1 ring-[#087a61]/10 transition-colors group-hover:bg-[#dce9df]">
-                      {String(index + 1).padStart(2, '0')}
+                      <DigitalNumber value={String(index + 1).padStart(2, '0')} />
                     </span>
                     <div className="min-w-0 flex-1">
                       <h3 className="text-sm font-bold leading-6 text-slate-900">{label}</h3>
@@ -278,7 +279,7 @@ export default function AboutPage() {
           <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
             {content.companyStrengthsStats.map((stat) => (
               <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/[0.05] p-5">
-                <p className="text-3xl font-black tracking-tight text-amber-800">{stat.value}</p>
+                <p className="text-3xl font-black tracking-tight text-amber-800"><DigitalNumber value={stat.value} /></p>
                 <p className="mt-2 text-[12px] font-bold uppercase tracking-[0.17em] text-slate-700">{stat.label}</p>
               </div>
             ))}
@@ -327,7 +328,7 @@ export default function AboutPage() {
               <ol className="mt-6 space-y-3">
                 {content.currentGoals.map((goal, index) => (
                   <li key={goal} className="flex gap-3 border-b border-slate-200 pb-3 last:border-0">
-                    <span className="font-mono text-sm font-bold text-[#a95600]">{String(index + 1).padStart(2, '0')}</span>
+                    <span className="font-mono text-sm font-bold text-[#a95600]"><DigitalNumber value={String(index + 1).padStart(2, '0')} /></span>
                     <span className="text-sm leading-7 text-slate-700">{goal}</span>
                   </li>
                 ))}

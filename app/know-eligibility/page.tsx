@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useLocale } from '@/lib/LocaleContext'
+import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import ConsumerRegistrationProcess from '@/app/components/sections/ConsumerRegistrationProcess'
 
 export default function KnowEligibilityPage() {
@@ -62,7 +63,7 @@ export default function KnowEligibilityPage() {
             <div className="mt-6 grid gap-3 border-t border-slate-100 pt-5 sm:grid-cols-3">
               {labels.glanceItems.map((item, index) => (
                 <div key={item.label} className="flex gap-3 rounded-2xl bg-[#f4f8fc] p-3">
-                  <span className="font-mono text-xs font-bold text-emerald-700">0{index + 1}</span>
+                  <span className="font-mono text-xs font-bold text-emerald-700"><DigitalNumber value={`0${index + 1}`} /></span>
                   <span className="text-xs leading-5 text-slate-600">
                     <strong className="block text-md text-slate-900">{item.label}</strong>
                     {item.text}
@@ -75,7 +76,7 @@ export default function KnowEligibilityPage() {
               {page.eligibilityChecks.map((item, index) => (
                 <div key={item.title} className="rounded-2xl border border-slate-200 bg-[#f8fafc] p-4">
                   <div className="flex items-start gap-3">
-                    <span className="font-mono text-xs font-bold text-emerald-700">{String(index + 1).padStart(2, '0')}</span>
+                    <span className="font-mono text-xs font-bold text-emerald-700"><DigitalNumber value={String(index + 1).padStart(2, '0')} /></span>
                     <div>
                       <h3 className="text-md font-bold text-slate-900">{item.title}</h3>
                       <p className="mt-2 text-md leading-6 text-slate-600">{item.detail}</p>
@@ -89,7 +90,7 @@ export default function KnowEligibilityPage() {
           <div className="space-y-4">
             <section id="subsidy-overview" className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-[#f1f2f6] to-white shadow-sm">
               <div className="flex items-start gap-4 p-5 sm:p-6">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-xs font-bold text-emerald-800">01</span>
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-xs font-bold text-emerald-800"><DigitalNumber value="01" /></span>
                 <div className="min-w-0 flex-1">
                   <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.subsidyTitle}</h2>
                   <p className="mt-3 text-md leading-7 text-slate-600 sm:text-sm">{labels.subsidyDescription}</p>
@@ -98,7 +99,7 @@ export default function KnowEligibilityPage() {
                     {page.subsidyBreakdown.map((item) => (
                       <div key={item.title} className="rounded-2xl bg-[#f4f8fc] p-4">
                         <p className="text-[12px] font-black uppercase tracking-[0.16em] text-emerald-800">{item.title}</p>
-                        <p className="mt-2 text-xl font-black text-slate-950">{item.value}</p>
+                        <p className="mt-2 text-xl font-black text-slate-950"><DigitalNumber value={item.value} /></p>
                         <p className="mt-1 text-xs leading-5 text-slate-600">{item.note}</p>
                       </div>
                     ))}
@@ -110,7 +111,7 @@ export default function KnowEligibilityPage() {
 
             <section id="scheme-categories" className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white to-[#f1f2f6] shadow-sm">
               <div className="flex items-start gap-4 p-5 sm:p-6">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-xs font-bold text-emerald-800">02</span>
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-xs font-bold text-emerald-800"><DigitalNumber value="02" /></span>
                 <div className="min-w-0 flex-1">
                   <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.schemeCategoriesTitle}</h2>
                   <div className="mt-4 grid gap-3">
@@ -125,7 +126,7 @@ export default function KnowEligibilityPage() {
                   <div className="mt-3 grid gap-3 sm:grid-cols-3">
                     {page.pmKusumComponents.map((item, index) => (
                       <div key={item.title} className="rounded-2xl border border-sky-100 bg-sky-50/70 p-4">
-                        <span className="font-mono text-xs font-bold text-sky-800">0{index + 1}</span>
+                        <span className="font-mono text-xs font-bold text-sky-800"><DigitalNumber value={`0${index + 1}`} /></span>
                         <h4 className="mt-2 text-md font-bold text-slate-900">{item.title}</h4>
                         <p className="mt-2 text-xs leading-6 text-slate-600">{item.detail}</p>
                       </div>
@@ -138,13 +139,13 @@ export default function KnowEligibilityPage() {
 
             <section id="application-process" className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-[#f1f2f6] to-white shadow-sm">
               <div className="flex items-start gap-4 p-5 sm:p-6">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-xs font-bold text-emerald-800">03</span>
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-xs font-bold text-emerald-800"><DigitalNumber value="03" /></span>
                 <div className="min-w-0 flex-1">
                   <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.processTitle}</h2>
                   <ol className="mt-4 space-y-3">
                     {page.processSteps.map((step, index) => (
                       <li key={step} className="flex items-start gap-3 text-md leading-6 text-slate-600">
-                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 font-mono text-[12px] font-bold text-emerald-800">{index + 1}</span>
+                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 font-mono text-[12px] font-bold text-emerald-800"><DigitalNumber value={index + 1} /></span>
                         <span>{step}</span>
                       </li>
                     ))}
@@ -157,7 +158,7 @@ export default function KnowEligibilityPage() {
 
             <section id="verification-and-exclusions" className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white to-[#f1f2f6] shadow-sm">
               <div className="flex items-start gap-4 p-5 sm:p-6">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-xs font-bold text-emerald-800">04</span>
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-xs font-bold text-emerald-800"><DigitalNumber value="04" /></span>
                 <div className="min-w-0 flex-1">
                   <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.verifyTitle}</h2>
                   <ul className="mt-4 space-y-3">
@@ -206,7 +207,7 @@ export default function KnowEligibilityPage() {
               ].map(([id, label], index) => (
                 <li key={id}>
                   <a href={`#${id}`} className="flex items-start gap-3 rounded-xl px-3 py-2.5 text-xs leading-5 text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-900">
-                    <span className="font-mono font-bold text-emerald-700/70">{String(index + 1).padStart(2, '0')}</span>
+                    <span className="font-mono font-bold text-emerald-700/70"><DigitalNumber value={String(index + 1).padStart(2, '0')} /></span>
                     <span>{label}</span>
                   </a>
                 </li>

@@ -50,7 +50,7 @@ export default function ConsumerRegistrationProcess() {
                   <Icon className="h-6 w-6" aria-hidden="true" />
                 </span>
                 <span className="font-mono text-xs font-bold uppercase tracking-wider text-sky-800">
-                  {process.stepLabel} {String(index + 1).padStart(2, '0')}
+                  {process.stepLabel} <DigitalNumber value={String(index + 1).padStart(2, '0')} />
                 </span>
               </div>
               <h4 className="mt-4 font-bold text-slate-950">{step.title}</h4>
@@ -81,7 +81,7 @@ export default function ConsumerRegistrationProcess() {
               {eligibility.subsidyBreakdown.slice(0, 3).map((item) => (
                 <article key={item.title} className="text-center">
                   <p className="text-sm text-slate-700">{item.title}</p>
-                  <p className="mt-1 text-xl font-black text-sky-700">{item.value}</p>
+                  <p className="mt-1 text-xl font-black text-sky-700"><DigitalNumber value={item.value} /></p>
                   <p className="mt-1 text-xs leading-5 text-slate-600">{item.note}</p>
                 </article>
               ))}
@@ -95,7 +95,7 @@ export default function ConsumerRegistrationProcess() {
             {eligibility.subsidyBreakdown.slice(3, 4).map((item) => (
               <article key={item.title} className="mt-4">
                 <p className="text-sm text-slate-700">{item.title}</p>
-                <p className="mt-1 text-xl font-black text-sky-700">{item.value}</p>
+                <p className="mt-1 text-xl font-black text-sky-700"><DigitalNumber value={item.value} /></p>
                 <p className="mx-auto mt-2 max-w-xl text-xs leading-5 text-slate-600">{benefits.communityDetails}</p>
               </article>
             ))}

@@ -46,7 +46,7 @@ export default function BackToTop() {
         ))}
         <circle cx="16" cy="16" r="2" fill="currentColor" />
       </svg>
-      <ArrowUp className="relative z-10" width={30} height={30} strokeWidth={2.25} color='#000080' aria-hidden="true" />
+      <ArrowUp className="relative z-10 animate-bounce" width={24} height={24} strokeWidth={1.5} color='#000000' aria-hidden="true" />
     </button>
   )
 }

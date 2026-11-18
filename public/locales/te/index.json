@@ -101,6 +101,18 @@
     "goTo": "వెళ్ళు",
     "section": "విభాగం",
     "languageLabel": "భాష",
+    "dashboardPages": {
+      "overview": "అవలోకనం",
+      "customerEnquiry": "కస్టమర్ విచారణ",
+      "customerAgreement": "కస్టమర్ ఒప్పందం",
+      "installationChecklist": "ఇన్‌స్టాలేషన్ చెక్‌లిస్ట్",
+      "invoiceReceipt": "ఇన్‌వాయిస్ & రసీదు",
+      "purchaseOrder": "కొనుగోలు ఆర్డర్",
+      "warrantyPolicy": "వారంటీ విధానం",
+      "tracker": "90-రోజుల ట్రాకర్",
+      "researchDevelopment": "పరిశోధన & అభివృద్ధి",
+      "termsConditions": "నిబంధనలు & షరతులు"
+    },
     "aboutSubmenuLabel": "మా గురించి ఉపమెనూను తెరవండి లేదా మూసివేయండి",
     "startProjectTitle": "AeroSun Energy తో పునరుత్పాదక శక్తి ప్రాజెక్ట్ ప్రారంభించండి",
     "startProjectAriaLabel": "మీ ప్రాజెక్ట్ ప్రారంభించడానికి AeroSun Energy ని సంప్రదించండి",
@@ -3028,11 +3040,11 @@
     "attributionLinkText": "ChatGPT.",
     "legalLinks": [
       {
-        "label": "గోప్యతా విధానం",
+        "label": "విధానాలు",
         "href": "/policies"
       },
       {
-        "label": "రద్దు మరియు రీఫండ్ విధానం",
+        "label": "రద్దు మరియు రీఫండ్",
         "href": "/cancellation"
       }
     ],

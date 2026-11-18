@@ -101,6 +101,18 @@
     "goTo": "जाएं",
     "section": "अनुभाग",
     "languageLabel": "भाषा",
+    "dashboardPages": {
+      "overview": "अवलोकन",
+      "customerEnquiry": "ग्राहक पूछताछ",
+      "customerAgreement": "ग्राहक अनुबंध",
+      "installationChecklist": "स्थापना चेकलिस्ट",
+      "invoiceReceipt": "चालान और रसीद",
+      "purchaseOrder": "खरीद आदेश",
+      "warrantyPolicy": "वारंटी नीति",
+      "tracker": "90-दिन ट्रैकर",
+      "researchDevelopment": "अनुसंधान एवं विकास",
+      "termsConditions": "नियम एवं शर्तें"
+    },
     "aboutSubmenuLabel": "हमारे बारे में सबमेनू खोलें या बंद करें",
     "startProjectTitle": "AeroSun Energy के साथ नवीकरणीय ऊर्जा प्रोजेक्ट शुरू करें",
     "startProjectAriaLabel": "अपना प्रोजेक्ट शुरू करने के लिए AeroSun Energy से संपर्क करें",
@@ -3027,11 +3039,11 @@
     "attributionLinkText": "चैटGPT.",
     "legalLinks": [
       {
-        "label": "गोपनीयता नीति",
+        "label": "नीतियाँ",
         "href": "/policies"
       },
       {
-        "label": "रद्दीकरण एवं रिफंड नीति",
+        "label": "रद्दीकरण एवं रिफंड",
         "href": "/cancellation"
       }
     ],

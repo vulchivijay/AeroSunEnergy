@@ -3,6 +3,7 @@
 import { Fragment, useEffect, useState, type FormEvent } from 'react'
 import { Database, FileText, MailPlus, Users, type LucideIcon } from 'lucide-react'
 import { useToast } from '@/app/components/ui/ToastProvider'
+import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 
 type DashboardRole = 'admin' | 'operator' | 'monitor'
 type DashboardRow = Record<string, unknown> & { id?: string }
@@ -81,6 +82,17 @@ function formatValue(value: unknown): string {
   return JSON.stringify(value) ?? String(value)
 }
 
+function renderNumericValue(value: unknown) {
+  if (typeof value === 'number') return <DigitalNumber value={value} />
+  if (
+    typeof value === 'string' &&
+    /^[\s₹$+-]*\d[\d,. /:-]*(?:[a-zA-Z²/]+)?\s*%?$/.test(value)
+  ) {
+    return <DigitalNumber value={value} />
+  }
+  return formatValue(value)
+}
+
 function formatFieldLabel(field: string): string {
   return field
     .replace(/([a-z])([A-Z])/g, '$1 $2')
@@ -108,7 +120,7 @@ function renderSubmissionDetails(row: DashboardRow) {
     .filter((field) => payload[field] !== undefined && payload[field] !== null && payload[field] !== '')
     .map((field) => [
       field,
-      /date/i.test(field) ? formatSubmissionDate(payload[field]) : formatValue(payload[field]),
+      /date/i.test(field) ? formatSubmissionDate(payload[field]) : payload[field],
     ] as const)
 
   if (details.length === 0) return '—'
@@ -119,7 +131,7 @@ function renderSubmissionDetails(row: DashboardRow) {
         <div key={field} className="min-w-0">
           <dt className="inline text-xs font-semibold text-slate-500">{formatFieldLabel(field)}: </dt>
           <dd className={`inline text-sm text-slate-800 ${field === 'message' ? 'line-clamp-2' : 'break-words'}`}>
-            {value}
+            {renderNumericValue(value)}
           </dd>
         </div>
       ))}
@@ -388,9 +400,10 @@ export default function DashboardDataTabs() {
   }
 
   return (
-    <section className="mt-7 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-      <div className="border-b border-slate-200 bg-slate-50/80 px-5 pt-5 sm:px-7">
-        <div className="flex flex-wrap gap-2" role="group" aria-label="Database collections">
+    <section className="mt-6 grid overflow-hidden rounded-2xl border border-white/50 bg-white/25 shadow-sm backdrop-blur-xl lg:grid-cols-[230px_minmax(0,1fr)]">
+      <aside className="border-b border-white/45 bg-white/20 p-4 lg:border-b-0 lg:border-r lg:p-5">
+        <p className="px-2 text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">Workspace</p>
+        <nav className="mt-3 flex gap-2 overflow-x-auto pb-1 lg:flex-col lg:overflow-visible" aria-label="Database collections">
           {collections.map((collection) => {
             const Icon = getCollectionIcon(collection)
             return (
@@ -399,21 +412,28 @@ export default function DashboardDataTabs() {
                 type="button"
                 aria-pressed={activeCollection === collection}
                 onClick={() => chooseCollection(collection)}
-                className={`min-h-11 rounded-t-xl border px-4 text-sm font-bold capitalize transition ${
+                className={`flex min-h-11 min-w-fit items-center rounded-xl border px-3 text-left text-sm font-bold capitalize transition lg:w-full ${
                   activeCollection === collection
-                    ? 'border-slate-200 border-b-white bg-white text-emerald-900'
-                    : 'border-transparent text-slate-500 hover:bg-white/70 hover:text-slate-900'
+                    ? 'border-emerald-200 bg-emerald-50 text-emerald-900'
+                    : 'border-transparent text-slate-600 hover:bg-white hover:text-slate-950'
                 }`}
               >
-                <Icon className="mr-2 inline-block h-4 w-4 align-[-3px]" aria-hidden="true" />
+                <Icon className="mr-2 h-4 w-4 shrink-0" aria-hidden="true" />
                 {formatCollectionName(collection)}
               </button>
             )
           })}
+        </nav>
+        <div className="mt-5 hidden rounded-xl border border-white/60 bg-white/55 p-3 lg:block">
+          <p className="text-[11px] font-bold uppercase tracking-wide text-slate-500">Access level</p>
+          <p className="mt-1 text-sm font-bold capitalize text-slate-900">{role}</p>
+          <p className="mt-1 text-xs leading-5 text-slate-500">
+            {role === 'admin' ? 'Full record management' : role === 'operator' ? 'Business record management' : 'Read-only access'}
+          </p>
         </div>
-      </div>
+      </aside>
 
-      <div className="p-5 sm:p-7" aria-live="polite">
+      <div className="min-w-0 p-4 sm:p-6 lg:p-8" aria-live="polite">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="text-xl font-bold capitalize text-slate-950">{formatCollectionName(activeCollection || 'Collections')}</h2>
@@ -454,6 +474,30 @@ export default function DashboardDataTabs() {
               </button>
             )}
           </div>
+        </div>
+
+        <div className="mt-6 grid gap-3 sm:grid-cols-3">
+          <article className="rounded-2xl border border-white/60 bg-white/45 p-4">
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">Matching records</p>
+            <p className="mt-2 text-3xl font-semibold text-slate-950">
+              <DigitalNumber value={data ? data.total.toLocaleString() : '—'} />
+            </p>
+            <p className="mt-1 truncate text-xs text-slate-500">{formatCollectionName(activeCollection || 'Collections')}</p>
+          </article>
+          <article className="rounded-2xl border border-white/60 bg-white/45 p-4">
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">Visible on this page</p>
+            <p className="mt-2 text-3xl font-semibold text-slate-950">
+              <DigitalNumber value={data ? data.rows.length : '—'} />
+            </p>
+            <p className="mt-1 text-xs text-slate-500">Records currently loaded</p>
+          </article>
+          <article className="rounded-2xl border border-white/60 bg-white/45 p-4">
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">Page</p>
+            <p className="mt-2 text-3xl font-semibold text-slate-950">
+              <DigitalNumber value={data ? `${data.page} / ${pageCount}` : '—'} />
+            </p>
+            <p className="mt-1 text-xs text-slate-500">Pagination position</p>
+          </article>
         </div>
 
         {canCreateRecords && showCreateForm && (
@@ -518,12 +562,12 @@ export default function DashboardDataTabs() {
                             {column === 'payload'
                               ? isFormSubmissions
                                 ? renderSubmissionDetails(row)
-                                : formatValue(row[column])
+                                : renderNumericValue(row[column])
                               : column === 'created_at' || column === 'updated_at'
-                                ? formatSubmissionDate(row[column])
+                                ? renderNumericValue(formatSubmissionDate(row[column]))
                                 : isFormSubmissions && column === 'form_type'
                                   ? formTypeOptions.find(([value]) => value === row[column])?.[1] ?? formatValue(row[column])
-                                  : formatValue(row[column])}
+                                  : renderNumericValue(row[column])}
                           </div>
                         </td>
                       ))}
@@ -593,7 +637,9 @@ export default function DashboardDataTabs() {
             </div>
 
             <div className="mt-4 flex flex-col gap-3 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
-              <p>{data.total.toLocaleString()} records · Page {data.page} of {pageCount}</p>
+              <p>
+                <DigitalNumber value={`${data.total.toLocaleString()} records · Page ${data.page} of ${pageCount}`} />
+              </p>
               <div className="flex gap-2">
                 <button
                   type="button"

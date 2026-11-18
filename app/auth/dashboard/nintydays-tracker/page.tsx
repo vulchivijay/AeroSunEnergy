@@ -56,7 +56,7 @@ export default function NinetyDayTrackerPage() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="sandbox:/mnt/data/AeroSun_90_Day_Business_Execution_Tracker.xlsx"
+                href="/pillers/AeroSun_90_Day_Business_Execution_Tracker.xlsx"
                 className="inline-flex items-center gap-2 rounded-full bg-[#f2b84b] px-5 py-3 text-md font-bold text-[#30243a] transition hover:bg-[#ffd47a]"
               >
                 <Download className="h-4 w-4" aria-hidden="true" />

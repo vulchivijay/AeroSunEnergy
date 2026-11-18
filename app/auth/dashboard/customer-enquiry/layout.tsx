@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Customer Enquiry for Solar, Wind & Hybrid Energy Solutions | AeroSun Energy',
-  description:
-    'Submit your solar, wind, and hybrid energy enquiry to AeroSun Energy for expert advice, renewable energy consultation, and project-specific quotations in India.',
+  title: 'Customer Enquiry',
+  description: 'Secure customer enquiry workspace for authorized AeroSun Energy users.',
   keywords: [
     'solar energy enquiry Tirupati',
     'solar quote request Tirupati',
@@ -40,13 +39,12 @@ export const metadata: Metadata = {
     'renewable power solution enquiry',
   ],
   alternates: {
-    canonical: '/auth/dashboard/billing/customer-enquiry',
+    canonical: '/auth/dashboard/customer-enquiry',
   },
   openGraph: {
-    title: 'Customer Enquiry for Solar, Wind & Hybrid Energy Solutions | AeroSun Energy',
-    description:
-      'Share your renewable energy requirements and request expert advice for solar, wind, and hybrid power solutions.',
-    url: 'https://aerosunenergy.in/auth/dashboard/billing/customer-enquiry',
+    title: 'Customer Enquiry | AeroSun Energy Dashboard',
+    description: 'Secure customer enquiry workspace for authorized AeroSun Energy users.',
+    url: 'https://aerosunenergy.in/auth/dashboard/customer-enquiry',
     siteName: 'AeroSun Energy',
     type: 'website',
   },

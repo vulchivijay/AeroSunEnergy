@@ -4330,6 +4330,18 @@
     "goTo": "ಹೋಗಿ",
     "section": "ವಿಭಾಗ",
     "languageLabel": "ಭಾಷೆ",
+    "dashboardPages": {
+      "overview": "ಅವಲೋಕನ",
+      "customerEnquiry": "ಗ್ರಾಹಕ ವಿಚಾರಣೆ",
+      "customerAgreement": "ಗ್ರಾಹಕ ಒಪ್ಪಂದ",
+      "installationChecklist": "ಅನುಸ್ಥಾಪನಾ ಪರಿಶೀಲನಾ ಪಟ್ಟಿ",
+      "invoiceReceipt": "ಇನ್ವಾಯ್ಸ್ ಮತ್ತು ರಸೀದಿ",
+      "purchaseOrder": "ಖರೀದಿ ಆದೇಶ",
+      "warrantyPolicy": "ವಾರಂಟಿ ನೀತಿ",
+      "tracker": "90 ದಿನಗಳ ಟ್ರ್ಯಾಕರ್",
+      "researchDevelopment": "ಸಂಶೋಧನೆ ಮತ್ತು ಅಭಿವೃದ್ಧಿ",
+      "termsConditions": "ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು"
+    },
     "aboutSubmenuLabel": "ನಮ್ಮ ಬಗ್ಗೆ ಉಪಮೆನುವನ್ನು ತೆರೆಯಿರಿ ಅಥವಾ ಮುಚ್ಚಿರಿ",
     "startProjectTitle": "Start a renewable energy project with AeroSun Energy",
     "startProjectAriaLabel": "Contact AeroSun Energy to start your project",
@@ -7749,11 +7761,11 @@
     "attributionLinkText": "ChatGPT.",
     "legalLinks": [
       {
-        "label": "ಗೌಪ್ಯತಾ ನೀತಿ",
+        "label": "ನೀತಿಗಳು",
         "href": "/policies"
       },
       {
-        "label": "ರದ್ದತಿ ಮತ್ತು ಮರುಪಾವತಿ ನೀತಿ",
+        "label": "ರದ್ದತಿ ಮತ್ತು ಮರುಪಾವತಿ",
         "href": "/cancellation"
       }
     ],
