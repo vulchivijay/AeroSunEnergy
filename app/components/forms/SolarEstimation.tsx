@@ -43,7 +43,7 @@ const clamp = (value: number, min: number, max: number) =>
 function LeadSummary({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-start justify-between gap-4 border-b border-white/10 pb-2 text-sm last:border-b-0 last:pb-0">
-      <span className="text-blue-100/75">{label}</span>
+      <span className="text-emerald-100/75">{label}</span>
       <span className="text-right font-bold text-white">{value}</span>
     </div>
   )
@@ -231,11 +231,11 @@ export function SolarEstimation() {
 
       <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl shadow-sm">
         <div className="grid lg:grid-cols-[minmax(300px,0.75fr)_1.45fr]">
-          <div className="bg-linear-to-br from-[#4568b6] via-[#5c55ae] to-[#3f7798] p-6 text-white sm:p-8 lg:p-10">
+          <div className="bg-linear-to-br from-[#123b2a] via-[#166534] to-[#92400e] p-6 text-white sm:p-8 lg:p-10">
             <h2 className="max-w-sm text-3xl font-black leading-tight tracking-tight sm:text-4xl">
               {e.savingsTitle} <span className="text-emerald-400">{e.savingsTitleAccent}</span>
             </h2>
-            <p className="mt-3 max-w-sm text-sm leading-6 text-blue-100/80">
+            <p className="mt-3 max-w-sm text-sm leading-6 text-emerald-100/80">
               {e.savingsDescription}
             </p>
 
@@ -246,8 +246,8 @@ export function SolarEstimation() {
                 onClick={() => setSelectedPropertyIndex(0)}
                 className={`rounded-full px-5 py-2.5 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
                   selectedPropertyIndex === 0
-                    ? 'bg-emerald-700 text-white shadow-sm'
-                    : 'text-blue-100/75 hover:text-white'
+                    ? 'bg-white text-emerald-950 shadow-sm'
+                    : 'text-emerald-100/75 hover:text-white'
                 }`}
               >
                 {calculatorText.homeOption}
@@ -258,8 +258,8 @@ export function SolarEstimation() {
                 onClick={() => setSelectedPropertyIndex(1)}
                 className={`rounded-full px-5 py-2.5 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
                   selectedPropertyIndex !== 0
-                    ? 'bg-emerald-700 text-white shadow-sm'
-                    : 'text-blue-100/75 hover:text-white'
+                    ? 'bg-white text-emerald-950 shadow-sm'
+                    : 'text-emerald-100/75 hover:text-white'
                 }`}
               >
                 {calculatorText.commercialOption}
@@ -267,7 +267,7 @@ export function SolarEstimation() {
             </div>
 
             <div className="mt-8">
-              <div className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-blue-100/80">
+              <div className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-emerald-100/80">
                 {inputMode === 'bill' ? calculatorText.billAmount : calculatorText.systemSize}
               </div>
               <div className="inline-flex rounded-full bg-white/10 p-1" role="group" aria-label={e.adjustUsage}>
@@ -276,7 +276,7 @@ export function SolarEstimation() {
                   aria-pressed={inputMode === 'bill'}
                   onClick={() => setInputMode('bill')}
                   className={`rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
-                    inputMode === 'bill' ? 'bg-white text-[#203f63]' : 'text-blue-100/75 hover:text-white'
+                    inputMode === 'bill' ? 'bg-white text-emerald-950' : 'text-emerald-100/75 hover:text-white'
                   }`}
                 >
                   {calculatorText.billAmount}
@@ -286,7 +286,7 @@ export function SolarEstimation() {
                   aria-pressed={inputMode === 'systemSize'}
                   onClick={() => setInputMode('systemSize')}
                   className={`rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
-                    inputMode === 'systemSize' ? 'bg-white text-[#203f63]' : 'text-blue-100/75 hover:text-white'
+                    inputMode === 'systemSize' ? 'bg-white text-emerald-950' : 'text-emerald-100/75 hover:text-white'
                   }`}
                 >
                   {calculatorText.systemSize}
@@ -299,7 +299,7 @@ export function SolarEstimation() {
                     {e.monthlyBillAriaLabel}
                   </label>
                   <div className="flex items-center rounded-2xl border border-white/15 bg-white/10 px-4 py-3.5 focus-within:ring-2 focus-within:ring-emerald-400">
-                    <span className="text-xl font-bold text-blue-100" aria-hidden="true">₹</span>
+                    <span className="text-xl font-bold text-emerald-100" aria-hidden="true">₹</span>
                     <input
                       id={monthlyBillInputId}
                       type="number"
@@ -310,11 +310,11 @@ export function SolarEstimation() {
                       value={monthlyBillInput}
                       onChange={(event) => setMonthlyBillInput(event.target.value)}
                       onBlur={normalizeMonthlyBill}
-                      className="min-w-0 flex-1 bg-transparent px-3 text-2xl font-extrabold tabular-nums text-white outline-none placeholder:text-blue-100/50 rounded-xl"
+                      className="min-w-0 flex-1 bg-transparent px-3 text-2xl font-extrabold tabular-nums text-white outline-none placeholder:text-emerald-100/50 rounded-xl"
                     />
-                    <span className="whitespace-nowrap text-sm text-blue-100/70">{calculatorText.monthSuffix}</span>
+                    <span className="whitespace-nowrap text-sm text-emerald-100/70">{calculatorText.monthSuffix}</span>
                   </div>
-                  <div className="mt-2 flex justify-between text-xs text-blue-100/60">
+                  <div className="mt-2 flex justify-between text-xs text-emerald-100/60">
                     <span>{e.monthlyBillMinimum}</span>
                     <span>{e.monthlyBillMaximum}</span>
                   </div>
@@ -337,16 +337,16 @@ export function SolarEstimation() {
                       onBlur={normalizeSystemSize}
                       className="min-w-0 flex-1 bg-transparent px-1 text-2xl font-extrabold tabular-nums text-white outline-none rounded-xl"
                     />
-                    <span className="text-sm font-bold text-blue-100">{e.capacityUnit}</span>
+                    <span className="text-sm font-bold text-emerald-100">{e.capacityUnit}</span>
                   </div>
-                  <div className="mt-2 flex justify-between text-xs text-blue-100/60">
+                  <div className="mt-2 flex justify-between text-xs text-emerald-100/60">
                     <span>1 {e.capacityUnit}</span>
                     <span>50 {e.capacityUnit}</span>
                   </div>
                 </div>
               )}
 
-              <p className="mt-4 text-sm text-blue-100/75">
+              <p className="mt-4 text-sm text-emerald-100/75">
                 {e.estimatedMonthlyUsage}: {calculation.monthlyUnits.toLocaleString('en-IN')} {e.unitsSuffix}
               </p>
 
@@ -359,7 +359,7 @@ export function SolarEstimation() {
               >
                 <p
                   className={`text-sm ${
-                    selectedPropertyIndex === 0 ? 'text-green-100/60' : 'text-blue-100/80'
+                    selectedPropertyIndex === 0 ? 'text-emerald-100/60' : 'text-emerald-100/80'
                   }`}
                 >
                   {selectedPropertyIndex === 0
@@ -478,8 +478,8 @@ export function SolarEstimation() {
           className="mx-auto mt-8 grid max-w-7xl overflow-hidden rounded-2xl border border-white/10 bg-white shadow-sm lg:grid-cols-[0.85fr_1.15fr]"
           aria-labelledby={`${leadFormId}-title`}
         >
-          <div className="bg-linear-to-br from-[#4568b6] via-[#5c55ae] to-[#3f7798] p-6 text-white sm:p-8">
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-blue-200">
+          <div className="bg-linear-to-br from-[#123b2a] via-[#166534] to-[#92400e] p-6 text-white sm:p-8">
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-amber-100">
               {e.freeAssessmentLabel}
             </p>
             <h2 id={`${leadFormId}-title`} className="mt-3 text-3xl font-black tracking-tight">
@@ -495,7 +495,7 @@ export function SolarEstimation() {
               <LeadSummary label={e.roofRequired} value={`${calculation.roofArea} ${e.squareFootUnit}`} />
               <LeadSummary label={calculatorText.effectiveCost} value={formatCurrency(calculation.effectiveCost)} />
             </div>
-            <p className="mt-6 text-sm leading-5 text-blue-100/80">{e.whatsAppDisclosure}</p>
+            <p className="mt-6 text-sm leading-5 text-emerald-100/80">{e.whatsAppDisclosure}</p>
           </div>
 
           <form onSubmit={handleLeadFormSubmit} className="p-6 sm:p-8">
