@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Customer Agreement for Solar, Wind & Hybrid Project Terms | AeroSun Energy',
-  description:
-    'Review AeroSun Energy customer agreement terms, project scope, payment conditions, and acceptance details for solar, wind, and hybrid renewable energy projects in India.',
+  title: 'Customer Agreement',
+  description: 'Secure customer agreement workspace for authorized AeroSun Energy users.',
   keywords: [
     'customer agreement AeroSun Energy',
     'solar project agreement',
@@ -32,13 +31,12 @@ export const metadata: Metadata = {
     'solar and wind service agreement',
   ],
   alternates: {
-    canonical: '/auth/dashboard/billing/customer-agreement',
+    canonical: '/auth/dashboard/customer-agreement',
   },
   openGraph: {
-    title: 'Customer Agreement for Solar, Wind & Hybrid Project Terms | AeroSun Energy',
-    description:
-      'AeroSun Energy customer agreement and payment terms for solar, wind, and hybrid energy solutions.',
-    url: 'https://aerosunenergy.in/auth/dashboard/billing/customer-agreement',
+    title: 'Customer Agreement | AeroSun Energy Dashboard',
+    description: 'Secure customer agreement workspace for authorized AeroSun Energy users.',
+    url: 'https://aerosunenergy.in/auth/dashboard/customer-agreement',
     siteName: 'AeroSun Energy',
     type: 'website',
   },

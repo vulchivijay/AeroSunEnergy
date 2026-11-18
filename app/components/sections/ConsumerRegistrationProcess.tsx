@@ -8,6 +8,7 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import { useLocale } from '@/lib/LocaleContext'
+import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 
 const stepIcons: LucideIcon[] = [
   Monitor,
@@ -49,7 +50,7 @@ export default function ConsumerRegistrationProcess() {
                   <Icon className="h-6 w-6" aria-hidden="true" />
                 </span>
                 <span className="font-mono text-xs font-bold uppercase tracking-wider text-sky-800">
-                  {process.stepLabel} {String(index + 1).padStart(2, '0')}
+                  {process.stepLabel} <DigitalNumber value={String(index + 1).padStart(2, '0')} />
                 </span>
               </div>
               <h4 className="mt-4 font-bold text-slate-950">{step.title}</h4>
@@ -80,7 +81,7 @@ export default function ConsumerRegistrationProcess() {
               {eligibility.subsidyBreakdown.slice(0, 3).map((item) => (
                 <article key={item.title} className="text-center">
                   <p className="text-sm text-slate-700">{item.title}</p>
-                  <p className="mt-1 text-xl font-black text-sky-700">{item.value}</p>
+                  <p className="mt-1 text-xl font-black text-sky-700"><DigitalNumber value={item.value} /></p>
                   <p className="mt-1 text-xs leading-5 text-slate-600">{item.note}</p>
                 </article>
               ))}
@@ -94,7 +95,7 @@ export default function ConsumerRegistrationProcess() {
             {eligibility.subsidyBreakdown.slice(3, 4).map((item) => (
               <article key={item.title} className="mt-4">
                 <p className="text-sm text-slate-700">{item.title}</p>
-                <p className="mt-1 text-xl font-black text-sky-700">{item.value}</p>
+                <p className="mt-1 text-xl font-black text-sky-700"><DigitalNumber value={item.value} /></p>
                 <p className="mx-auto mt-2 max-w-xl text-xs leading-5 text-slate-600">{benefits.communityDetails}</p>
               </article>
             ))}
@@ -106,19 +107,19 @@ export default function ConsumerRegistrationProcess() {
         </p>
         <div className="mt-5">
           <h4 className="text-center text-lg font-bold text-slate-950">{benefits.capacityTitle}</h4>
-          <div className="mt-3 overflow-x-auto rounded-2xl border border-slate-300">
-            <table className="w-full min-w-[560px] text-sm">
-              <tbody>
-                <tr className="border-b border-slate-200">
-                  <th scope="row" className="px-4 py-3 text-left font-medium text-slate-600">{benefits.consumptionLabel}</th>
+          <div className="mt-3 overflow-x-auto rounded-2xl border border-emerald-100">
+            <table className="w-full min-w-[560px] text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
+              <tbody className="divide-y divide-emerald-100">
+                <tr className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
+                  <th scope="row" className="bg-amber-700 text-left font-bold text-white">{benefits.consumptionLabel}</th>
                   {benefits.consumptionValues.map((value) => (
-                    <td key={value} className="border-l border-slate-200 px-4 py-3 text-center text-slate-900">{value}</td>
+                    <td key={value} className="border-l border-slate-200 px-4 py-3 text-center text-slate-900"><DigitalNumber value={value} /></td>
                   ))}
                 </tr>
-                <tr>
-                  <th scope="row" className="px-4 py-3 text-left font-medium text-slate-600">{benefits.capacityLabel}</th>
+                <tr className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
+                  <th scope="row" className="bg-amber-700 text-left font-bold text-white">{benefits.capacityLabel}</th>
                   {benefits.capacityValues.map((value) => (
-                    <td key={value} className="border-l border-slate-200 px-4 py-3 text-center text-slate-900">{value}</td>
+                    <td key={value} className="border-l border-slate-200 px-4 py-3 text-center text-slate-900"><DigitalNumber value={value} /></td>
                   ))}
                 </tr>
               </tbody>

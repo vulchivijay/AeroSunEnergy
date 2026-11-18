@@ -69,58 +69,78 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/auth/dashboard/billing',
+        destination: '/auth/dashboard',
+        permanent: true,
+      },
+      {
+        source: '/auth/dashboard/billing/:path*',
+        destination: '/auth/dashboard/:path*',
+        permanent: true,
+      },
+      {
+        source: '/billing',
+        destination: '/auth/dashboard',
+        permanent: true,
+      },
+      {
         source: '/billing/:path*',
-        destination: '/auth/dashboard/billing/:path*',
+        destination: '/auth/dashboard/:path*',
+        permanent: true,
+      },
+      {
+        source: '/auth/billing',
+        destination: '/auth/dashboard',
         permanent: true,
       },
       {
         source: '/auth/billing/:path*',
-        destination: '/auth/dashboard/billing/:path*',
+        destination: '/auth/dashboard/:path*',
         permanent: true,
       },
       {
         source: '/terms-conditions',
-        destination: '/auth/dashboard/billing/terms-conditions',
+        destination: '/auth/dashboard/terms-conditions',
         permanent: true,
       },
       {
         source: '/customer-enquiry',
-        destination: '/auth/dashboard/billing/customer-enquiry',
+        destination: '/auth/dashboard/customer-enquiry',
         permanent: true,
       },
       {
         source: '/customer-agreement',
-        destination: '/auth/dashboard/billing/customer-agreement',
+        destination: '/auth/dashboard/customer-agreement',
         permanent: true,
       },
       {
         source: '/installation-checklist',
-        destination: '/auth/dashboard/billing/installation-checklist',
+        destination: '/auth/dashboard/installation-checklist',
         permanent: true,
       },
       {
         source: '/invoice-receipt',
-        destination: '/auth/dashboard/billing/invoice-receipt',
+        destination: '/auth/dashboard/invoice-receipt',
         permanent: true,
       },
       {
         source: '/purchase-order',
-        destination: '/auth/dashboard/billing/purchase-order',
+        destination: '/auth/dashboard/purchase-order',
         permanent: true,
       },
       {
         source: '/warranty-policy',
-        destination: '/auth/dashboard/billing/warranty-policy',
+        destination: '/auth/dashboard/warranty-policy',
         permanent: true,
       },
       {
         source: '/nintydays-tracker',
-        destination: '/auth/dashboard/billing/nintydays-tracker',
+        destination: '/auth/dashboard/nintydays-tracker',
         permanent: true,
       },
       {
         source: '/research-development',
-        destination: '/auth/dashboard/billing/research-development',
+        destination: '/auth/dashboard/research-development',
         permanent: true,
       },
       {
@@ -144,6 +164,22 @@ const nextConfig: NextConfig = {
     ]
   },
   async headers() {
+    const dashboardHeaders = [
+      {
+        source: '/auth/dashboard',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive, nosnippet' },
+          { key: 'Cache-Control', value: 'private, no-store, no-cache, must-revalidate' },
+        ],
+      },
+      {
+        source: '/auth/dashboard/:path*',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive, nosnippet' },
+          { key: 'Cache-Control', value: 'private, no-store, no-cache, must-revalidate' },
+        ],
+      },
+    ]
     const docsHeaders = [
       {
         source: '/docs',
@@ -167,7 +203,7 @@ const nextConfig: NextConfig = {
       },
     ]
 
-    if (process.env.NODE_ENV !== 'production') return docsHeaders
+    if (process.env.NODE_ENV !== 'production') return [...docsHeaders, ...dashboardHeaders]
 
     const productionCacheHeaders = [
       { key: 'Cache-Control', value: 'public, max-age=86400, must-revalidate' },
@@ -180,6 +216,7 @@ const nextConfig: NextConfig = {
       { source: '/images/:path*', headers: productionCacheHeaders },
       { source: '/favicon.ico', headers: productionCacheHeaders },
       { source: '/api/:path*', headers: [{ key: 'Cache-Control', value: 'no-store' }] },
+      ...dashboardHeaders,
     ]
   },
 }

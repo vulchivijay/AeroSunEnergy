@@ -10,6 +10,7 @@ import {
   WalletCards,
 } from "lucide-react";
 import { useLocale } from "@/lib/LocaleContext";
+import { DigitalNumber } from "@/app/components/ui/DigitalNumber";
 
 export default function NinetyDayTrackerPage() {
   const { t } = useLocale();
@@ -55,7 +56,7 @@ export default function NinetyDayTrackerPage() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="sandbox:/mnt/data/AeroSun_90_Day_Business_Execution_Tracker.xlsx"
+                href="/pillers/AeroSun_90_Day_Business_Execution_Tracker.xlsx"
                 className="inline-flex items-center gap-2 rounded-full bg-[#f2b84b] px-5 py-3 text-md font-bold text-[#30243a] transition hover:bg-[#ffd47a]"
               >
                 <Download className="h-4 w-4" aria-hidden="true" />
@@ -180,29 +181,29 @@ export default function NinetyDayTrackerPage() {
             <div className="mt-6 h-1 w-16 rounded-full bg-[#ed7357]" />
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-[#d8cdbb] bg-[#fffdf8] shadow-sm  ">
+          <div className="overflow-hidden rounded-2xl border border-emerald-100 bg-[#fffdf8] shadow-sm">
             <div className="overflow-x-auto">
-              <table className="min-w-full text-left text-sm text-[#4c566d] ">
-                <thead className="bg-[#f0e6d8] text-[#202b43]  ">
+              <table className="min-w-full text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
+                <thead className="bg-amber-700 font-bold text-white">
                   <tr>
-                    <th className="px-5 py-4 font-black uppercase tracking-[0.16em] text-[#9b4b42] ">
+                    <th className="font-black uppercase tracking-[0.16em]">
                       {trackerPage.workbook.sheetColumn}
                     </th>
-                    <th className="px-5 py-4 font-black uppercase tracking-[0.16em] text-[#9b4b42] ">
+                    <th className="font-black uppercase tracking-[0.16em]">
                       {trackerPage.workbook.purposeColumn}
                     </th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className="divide-y divide-emerald-100">
                   {trackerPage.sheetRows.map(([sheet, purpose]) => (
                     <tr
                       key={sheet}
-                      className="border-t border-[#e5ded2] "
+                      className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70"
                     >
-                      <td className="px-5 py-4 font-bold text-[#202b43] ">
-                        {sheet}
+                      <td className="font-bold text-slate-900">
+                        <DigitalNumber value={sheet} />
                       </td>
-                      <td className="px-5 py-4">{purpose}</td>
+                      <td className="px-5 py-4"><DigitalNumber value={purpose} /></td>
                     </tr>
                   ))}
                 </tbody>

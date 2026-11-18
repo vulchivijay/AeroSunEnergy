@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms and Conditions | AeroSun Energy',
-  description:
-    'Read the AeroSun Energy website terms and conditions covering service scope, usage rules, intellectual property, liability, and governing law.',
+  title: 'Terms & Conditions',
+  description: 'Secure terms and conditions workspace for authorized AeroSun Energy users.',
   keywords: [
     'AeroSun Energy terms and conditions',
     'website terms and conditions',
@@ -31,13 +30,12 @@ export const metadata: Metadata = {
     'green energy company policy',
   ],
   alternates: {
-    canonical: '/auth/dashboard/billing/terms-conditions',
+    canonical: '/auth/dashboard/terms-conditions',
   },
   openGraph: {
-    title: 'Terms and Conditions | AeroSun Energy',
-    description:
-      'Review the legal terms for using the AeroSun Energy website and engaging with our renewable energy services.',
-    url: 'https://aerosunenergy.in/auth/dashboard/billing/terms-conditions',
+    title: 'Terms & Conditions | AeroSun Energy Dashboard',
+    description: 'Secure terms and conditions workspace for authorized AeroSun Energy users.',
+    url: 'https://aerosunenergy.in/auth/dashboard/terms-conditions',
     siteName: 'AeroSun Energy',
     type: 'website',
   },

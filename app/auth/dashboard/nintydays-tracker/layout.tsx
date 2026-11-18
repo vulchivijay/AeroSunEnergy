@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '90-Day Business Execution Tracker | AeroSun Energy',
-  description:
-    'AeroSun Energy 90-Day Business Execution Tracker for planning cash flow, leads, activities, and project execution milestones in a simple Excel dashboard.',
+  title: '90-Day Tracker',
+  description: 'Secure 90-day tracker for authorized AeroSun Energy users.',
   keywords: [
     '90-day business tracker',
     'business execution tracker',
@@ -22,13 +21,12 @@ export const metadata: Metadata = {
     'AeroSun Energy planning spreadsheet',
   ],
   alternates: {
-    canonical: '/auth/dashboard/billing/nintydays-tracker',
+    canonical: '/auth/dashboard/nintydays-tracker',
   },
   openGraph: {
-    title: '90-Day Business Execution Tracker | AeroSun Energy',
-    description:
-      'Track leads, expenses, orders, and business execution milestones with the AeroSun Energy 90-day business tracker.',
-    url: 'https://aerosunenergy.in/auth/dashboard/billing/nintydays-tracker',
+    title: '90-Day Tracker | AeroSun Energy Dashboard',
+    description: 'Secure 90-day tracker for authorized AeroSun Energy users.',
+    url: 'https://aerosunenergy.in/auth/dashboard/nintydays-tracker',
     siteName: 'AeroSun Energy',
     type: 'website',
   },

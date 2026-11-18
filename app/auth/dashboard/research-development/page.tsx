@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale } from "@/lib/LocaleContext";
+import { DigitalNumber } from "@/app/components/ui/DigitalNumber";
 
 type HeadingBlock = {
   type: "heading";
@@ -204,7 +205,13 @@ function parseMarkdown(markdown: string): ContentBlock[] {
   return blocks;
 }
 
-function InlineContent({ text }: { text: string }) {
+function InlineContent({
+  text,
+  digitalNumbers = false,
+}: {
+  text: string;
+  digitalNumbers?: boolean;
+}) {
   const parts = text.split(
     /(\\\(.+?\\\)|\[[^\]]+\]\(https?:\/\/[^)]+\)|\*\*.+?\*\*|__.+?__|`[^`]+`|\*[^*]+\*|_[^_]+_)/g,
   );
@@ -227,7 +234,7 @@ function InlineContent({ text }: { text: string }) {
           rel="noreferrer"
           className="font-semibold text-emerald-800 underline decoration-emerald-500/40 underline-offset-4 transition hover:text-emerald-600  "
         >
-          <InlineContent text={linkMatch[1]} />
+          <InlineContent text={linkMatch[1]} digitalNumbers={digitalNumbers} />
         </a>
       );
     }
@@ -241,7 +248,7 @@ function InlineContent({ text }: { text: string }) {
           key={index}
           className="font-bold text-slate-950 "
         >
-          {part.slice(2, -2)}
+          {digitalNumbers ? <DigitalNumber value={part.slice(2, -2)} /> : part.slice(2, -2)}
         </strong>
       );
     }
@@ -251,7 +258,7 @@ function InlineContent({ text }: { text: string }) {
           key={index}
           className="rounded-2xl bg-emerald-950/[0.06] px-1.5 py-0.5 font-mono text-[0.92em] text-emerald-950  "
         >
-          {part.slice(1, -1)}
+          {digitalNumbers ? <DigitalNumber value={part.slice(1, -1)} /> : part.slice(1, -1)}
         </code>
       );
     }
@@ -261,7 +268,7 @@ function InlineContent({ text }: { text: string }) {
     ) {
       return <em key={index}>{part.slice(1, -1)}</em>;
     }
-    return part;
+    return digitalNumbers ? <DigitalNumber key={index} value={part} /> : part;
   });
 }
 
@@ -393,9 +400,9 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
 
   if (block.type === "table") {
     return (
-      <div className="my-7 overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm  ">
-        <table className="w-full min-w-[34rem] border-collapse text-left text-md leading-6">
-          <thead className="bg-emerald-950 text-white">
+      <div className="my-7 overflow-x-auto rounded-2xl border border-emerald-100 bg-white shadow-sm">
+        <table className="w-full min-w-[34rem] border-collapse text-left text-sm leading-6 text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
+          <thead className="bg-amber-700 font-bold text-white">
             <tr>
               {block.headers.map((cell, index) => (
                 <th key={index} className="px-4 py-3 font-bold">
@@ -404,22 +411,15 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
               ))}
             </tr>
           </thead>
-          <tbody>
+          <tbody className="divide-y divide-emerald-100">
             {block.rows.map((row, rowIndex) => (
-              <tr
-                key={rowIndex}
-                className={
-                  rowIndex % 2
-                    ? "bg-slate-50/80 "
-                    : "bg-white "
-                }
-              >
+              <tr key={rowIndex} className={`transition-colors hover:bg-emerald-100/70 ${rowIndex % 2 ? 'bg-emerald-50/70' : 'bg-white'}`}>
                 {block.headers.map((_, cellIndex) => (
                   <td
                     key={cellIndex}
                     className="border-t border-slate-200 px-4 py-3 align-top text-slate-700  "
                   >
-                    <InlineContent text={row[cellIndex] ?? ""} />
+                    <InlineContent text={row[cellIndex] ?? ""} digitalNumbers />
                   </td>
                 ))}
               </tr>

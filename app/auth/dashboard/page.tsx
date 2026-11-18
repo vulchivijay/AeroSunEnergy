@@ -1,8 +1,4 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
-import { redirect } from 'next/navigation'
-import LogoutButton from '@/app/components/auth/LogoutButton'
-import { getSessionToken, getSessionUser } from '@/lib/auth/session'
 import DashboardDataTabs from './DashboardDataTabs'
 
 export const runtime = 'nodejs'
@@ -13,51 +9,13 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
 }
 
-function DatabaseUnavailable() {
+export default function DashboardPage() {
   return (
-    <main className="flex min-h-[65vh] items-center justify-center bg-[#f7faf7] px-4 py-16">
-      <section className="w-full max-w-lg rounded-2xl border border-emerald-950/10 bg-gradient-to-br from-white to-[#f1f2f6] p-8 text-center shadow-sm">
-        <h1 className="text-2xl font-bold text-slate-950">Dashboard is temporarily unavailable</h1>
-        <p className="mt-3 text-sm leading-6 text-slate-600">
-          We could not verify your account right now. Please try again in a moment.
-        </p>
-        <Link className="mt-6 inline-flex min-h-11 items-center rounded-full bg-emerald-800 px-5 text-sm font-bold text-white hover:bg-emerald-900" href="/auth/dashboard">
-          Try again
-        </Link>
-      </section>
-    </main>
-  )
-}
-
-export default async function DashboardPage() {
-  const token = await getSessionToken()
-  if (!token) redirect('/auth')
-
-  let user
-  try {
-    user = await getSessionUser(token)
-  } catch (error) {
-    console.error('Dashboard authentication check failed.', error)
-    return <DatabaseUnavailable />
-  }
-
-  if (!user) redirect('/auth')
-
-  return (
-    <main className="min-h-[65vh] bg-[#f7faf7] px-4 py-12 sm:px-6 sm:py-16">
-      <section className="mx-auto w-full max-w-7xl bg-gradient-to-br from-white to-[#f1f2f6]">
-        <div className="flex flex-col justify-between gap-6 rounded-2xl border border-emerald-950/10 bg-white p-6 shadow-sm sm:flex-row sm:items-center sm:p-8">
-          <div>
-            <p className="inline-flex w-fit items-center rounded-full border border-emerald-800/15 bg-emerald-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-emerald-700">AeroSun Energy · {user.role}</p>
-            <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">Data dashboard</h1>
-            <p className="mt-2 text-sm font-semibold text-slate-700">Signed in as {user.name || user.email}</p>
-            <p className="mt-1 text-xs text-slate-500">{user.email} · {user.role}</p>
-          </div>
-          <LogoutButton />
-        </div>
-
+    <main className="min-h-screen bg-[radial-gradient(ellipse_at_0%_100%,#e8b9c5_0%,transparent_42%),linear-gradient(115deg,#9ca2c8_0%,#bca9c0_55%,#8e96c3_100%)] px-4 py-5 sm:px-6 sm:py-8 lg:px-8">
+      <div className="mx-auto w-full max-w-[1600px]">
+        <h1 className="sr-only">Dashboard</h1>
         <DashboardDataTabs />
-      </section>
+      </div>
     </main>
   )
 }

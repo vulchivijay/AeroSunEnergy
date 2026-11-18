@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
+import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import { useLocale } from '@/lib/LocaleContext'
 
 const serviceFactIcons = [Sun, MapPin, CalendarDays, Zap]
@@ -55,7 +56,7 @@ export function CompanyTrustSection() {
             <div className="rounded-2xl border border-white/80 bg-white/70 p-4 shadow-sm sm:col-span-2">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">{content.legalEntityLabel}</p>
               <p className="mt-2 text-xl font-bold text-slate-950">{t.about.companyProfile.contactCompany}</p>
-              <p className="mt-3 text-md font-semibold leading-5 text-slate-700">{content.identifiersText}</p>
+              <p className="sr-only mt-3 text-sm font-semibold leading-5 text-slate-700">{content.identifiersText}</p>
             </div>
 
             <a
@@ -111,7 +112,7 @@ export function CompanyTrustSection() {
                           {fact.label}
                         </span>
                         <span className="mt-1 block text-sm font-bold text-slate-900">
-                          {fact.value}
+                          <DigitalNumber value={fact.value} />
                         </span>
                       </span>
                     </div>
@@ -341,10 +342,10 @@ export function QuoteTransparencySection() {
             <Link href="/#brand-section-title" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-center text-sm font-semibold text-slate-900 transition hover:bg-amber-50">
               {content.brandCta}<ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
             </Link>
-            <Link href="/auth/dashboard/billing/warranty-policy" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-center text-sm font-semibold text-slate-900 transition hover:bg-amber-50">
+            <Link href="/auth/dashboard/warranty-policy" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-center text-sm font-semibold text-slate-900 transition hover:bg-amber-50">
               {content.warrantyCta}<ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
             </Link>
-            <Link href="/auth/dashboard/billing/customer-enquiry" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-indigo-700 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-indigo-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700">
+            <Link href="/auth/dashboard/customer-enquiry" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-indigo-700 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-indigo-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700">
               {content.quoteCta}<ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
             </Link>
           </div>

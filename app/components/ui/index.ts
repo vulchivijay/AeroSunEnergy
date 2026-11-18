@@ -5,6 +5,7 @@ export { default as PageLoader } from './PageLoader'
 export { ContentLoader } from './ContentLoader'
 export { default as OptimizedImage } from './OptimizedImage'
 export { default as SchemeBanner } from './SchemeBanner'
+export { DigitalNumber } from './DigitalNumber'
 export {
   SectionEyebrow,
   FeatureCard,

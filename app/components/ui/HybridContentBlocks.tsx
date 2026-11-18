@@ -2,6 +2,7 @@
 
 import type { ReactNode } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
+import { DigitalNumber } from './DigitalNumber'
 import {
   ContentBenefitCard,
   contentAccentText,
@@ -108,21 +109,28 @@ export function HybridTable({ rows }: { rows: { label: string; value: string; us
   const ui = t.ui
 
   return (
-    <div className="overflow-x-auto border-y border-slate-300 bg-transparent scrollbar-thin [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-violet-300 [&::-webkit-scrollbar-thumb:hover]:bg-violet-400">
-      <div className="min-w-190">
-        <div className="grid border-b border-slate-200 bg-[#f7f7f1] text-sm font-bold uppercase tracking-[0.18em] text-slate-600 md:grid-cols-[1.2fr_2.2fr_1.8fr]">
-          <div className="px-4 py-3">{ui.systemType}</div>
-          <div className="px-4 py-3">{ui.typicalConfiguration}</div>
-          <div className="px-4 py-3">{ui.customerFit}</div>
-        </div>
+    <div className="overflow-x-auto rounded-2xl border border-emerald-200 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400">
+      <table
+        aria-label={`${ui.systemType}, ${ui.typicalConfiguration}, ${ui.customerFit}`}
+        className="w-full min-w-[760px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3"
+      >
+        <thead className="bg-amber-700 text-sm font-bold uppercase tracking-[0.18em] text-white">
+          <tr>
+            <th scope="col">{ui.systemType}</th>
+            <th scope="col">{ui.typicalConfiguration}</th>
+            <th scope="col">{ui.customerFit}</th>
+          </tr>
+        </thead>
+        <tbody>
         {rows.map((row) => (
-          <div key={row.label} className="grid gap-3 border-b border-slate-200 px-4 py-4 text-sm text-slate-600 last:border-b-0 md:grid-cols-[1.2fr_2.2fr_1.8fr] md:gap-0">
-            <div className="font-semibold text-slate-900">{row.label}</div>
-            <div>{row.value}</div>
-            <div>{row.use}</div>
-          </div>
+          <tr key={row.label} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
+            <th scope="row" className="font-semibold text-slate-900"><DigitalNumber value={row.label} /></th>
+            <td className="text-slate-700"><DigitalNumber value={row.value} /></td>
+            <td className="text-slate-700"><DigitalNumber value={row.use} /></td>
+          </tr>
         ))}
-      </div>
+        </tbody>
+      </table>
     </div>
   )
 }

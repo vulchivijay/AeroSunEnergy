@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Research & Development | Solar, Wind & Hybrid Energy | AeroSun Energy',
-  description:
-    'Explore AeroSun Energy research and development concepts for solar, small wind and hybrid systems, with prototype specifications, testing guidance and practical development roadmaps.',
+  title: 'Research & Development',
+  description: 'Secure research and development workspace for authorized AeroSun Energy users.',
   keywords: [
     'solar energy research and development',
     'small wind energy research',
@@ -22,7 +21,14 @@ export const metadata: Metadata = {
     'clean energy research projects',
   ],
   alternates: {
-    canonical: '/auth/dashboard/billing/research-development',
+    canonical: '/auth/dashboard/research-development',
+  },
+  openGraph: {
+    title: 'Research & Development | AeroSun Dashboard',
+    description: 'Secure research and development workspace for authorized AeroSun Energy users.',
+    url: 'https://aerosunenergy.in/auth/dashboard/research-development',
+    siteName: 'AeroSun Energy',
+    type: 'website',
   },
   robots: {
     index: false,

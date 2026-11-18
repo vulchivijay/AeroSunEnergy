@@ -132,9 +132,9 @@ function EditableTable({
   }[];
 }) {
   return (
-    <div className="overflow-x-auto rounded-xl border border-slate-200">
-      <table className="w-full min-w-[640px] border-collapse text-left text-md">
-        <thead className="bg-emerald-50 text-sm font-bold uppercase tracking-wide text-emerald-950">
+    <div className="overflow-x-auto rounded-xl border border-emerald-100">
+      <table className="w-full min-w-[640px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
+        <thead className="bg-amber-700 text-sm font-bold uppercase tracking-wide text-white">
           <tr>
             <th className="border-b border-r border-emerald-100 px-3 py-2.5">
               {rowHeader}
@@ -149,9 +149,9 @@ function EditableTable({
             ))}
           </tr>
         </thead>
-        <tbody>
+        <tbody className="divide-y divide-emerald-100">
           {rows.map((row) => (
-            <tr key={row.label} className="odd:bg-white even:bg-slate-50">
+            <tr key={row.label} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
               <th
                 scope="row"
                 className="min-w-52 border-b border-r border-slate-100 px-3 py-2 text-left font-semibold text-slate-700"
@@ -552,20 +552,20 @@ export default function CustomerEnquiryPage() {
 
           <section className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
             <SectionTitle number="06" title={page.sections[5]} />
-            <div className="overflow-x-auto rounded-xl border border-slate-200">
-              <table className="w-full min-w-[520px] border-collapse text-md">
-                <thead className="bg-emerald-100 text-left text-md font-bold uppercase text-emerald-950">
+            <div className="overflow-x-auto rounded-xl border border-emerald-100">
+              <table className="w-full min-w-[520px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
+                <thead className="bg-amber-700 font-bold uppercase text-white">
                   <tr>
                     <th className="px-3 py-3">{page.serialNumber}</th>
                     <th className="px-3 py-3">{page.descriptionLabel}</th>
                     <th className="px-3 py-3">{page.amountRupees}</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className="divide-y divide-emerald-100">
                   {page.priceItems.map((item, index) => (
                     <tr
                       key={item}
-                      className="border-t border-slate-200 odd:bg-white even:bg-slate-50"
+                      className="border-t border-emerald-100 odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70"
                     >
                       <td className="px-3 py-2">{index + 1}</td>
                       <td className="px-3 py-2">{item}</td>
@@ -590,7 +590,7 @@ export default function CustomerEnquiryPage() {
                   ].map(([label, name]) => (
                     <tr
                       key={name}
-                      className="border-t border-slate-200 bg-white font-semibold"
+                      className="border-t border-emerald-100 odd:bg-white even:bg-emerald-50/70 font-semibold transition-colors hover:bg-emerald-100/70"
                     >
                       <th colSpan={2} className="px-3 py-2 text-left">
                         {label}

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowUpRight, BadgeIndianRupee, Landmark } from 'lucide-react'
 import { useLocale } from '@/lib/LocaleContext'
 import ConsumerApplicationJourney from '@/app/components/sections/ConsumerApplicationJourney'
+import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 
 type LoanTermsValue = string | string[]
 
@@ -11,12 +12,12 @@ function renderTerms(value: LoanTermsValue) {
   if (Array.isArray(value)) {
     return (
       <ul className="list-disc space-y-1.5 pl-5">
-        {value.map((term) => <li key={term}>{term}</li>)}
+        {value.map((term) => <li key={term}><DigitalNumber value={term} /></li>)}
       </ul>
     )
   }
 
-  return <p>{value}</p>
+  return <p><DigitalNumber value={value} /></p>
 }
 
 export default function FinancePage() {
@@ -49,7 +50,7 @@ export default function FinancePage() {
           {page.loanBands.map((band) => (
             <article key={band.title} className="rounded-2xl border border-sky-100 bg-white p-5 shadow-sm sm:p-6">
               <p className="text-sm font-bold uppercase tracking-[0.14em] text-sky-800">{band.title}</p>
-              <p className="mt-2 text-2xl font-black text-slate-950">{band.amount}</p>
+              <p className="mt-2 text-2xl font-black text-slate-950"><DigitalNumber value={band.amount} /></p>
             </article>
           ))}
         </div>
@@ -64,8 +65,8 @@ export default function FinancePage() {
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[900px] border-collapse text-left text-sm">
-              <thead className="bg-sky-100 text-slate-950">
+            <table className="w-full min-w-[900px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
+              <thead className="bg-amber-700 font-bold text-white">
                 <tr>
                   <th scope="col" className="w-16 border border-slate-300 px-4 py-3">{page.headers.number}</th>
                   <th scope="col" className="w-56 border border-slate-300 px-4 py-3">{page.headers.item}</th>
@@ -75,8 +76,8 @@ export default function FinancePage() {
               </thead>
               <tbody>
                 {page.rows.map((row) => (
-                  <tr key={row.number} className="odd:bg-white even:bg-slate-50">
-                    <th scope="row" className="border border-slate-300 px-4 py-4 align-top font-bold">{row.number}</th>
+                  <tr key={row.number} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
+                    <th scope="row" className="border border-slate-300 px-4 py-4 align-top font-bold"><DigitalNumber value={row.number} /></th>
                     <th scope="row" className="border border-slate-300 px-4 py-4 align-top font-semibold">{row.item}</th>
                     <td colSpan={row.shared ? 2 : 1} className="border border-slate-300 px-4 py-4 align-top leading-6 text-slate-700">
                       {renderTerms(row.upToTwoLakhs)}

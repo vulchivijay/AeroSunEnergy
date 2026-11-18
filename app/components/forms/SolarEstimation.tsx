@@ -3,6 +3,7 @@
 import { useId, useState, type FormEvent } from 'react'
 import { Calculator, Landmark, Tag, type LucideIcon } from 'lucide-react'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
+import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import { useLocale } from '@/lib/LocaleContext'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useToast } from '@/app/components/ui/ToastProvider'
@@ -51,7 +52,9 @@ function LeadSummary({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-start justify-between gap-4 border-b border-white/10 pb-2 text-sm last:border-b-0 last:pb-0">
       <span className="text-emerald-100/75">{label}</span>
-      <span className="text-right font-bold text-white">{value}</span>
+      <span className="text-right font-bold text-white">
+        <DigitalNumber value={value} />
+      </span>
     </div>
   )
 }
@@ -72,7 +75,7 @@ function PriceItem({
       <Icon className="mx-auto h-5 w-5 text-slate-400" aria-hidden="true" />
       <p className="mt-2 text-xs leading-5 text-slate-500">{label}</p>
       <p className={`mt-1 whitespace-nowrap text-lg font-extrabold tracking-tight sm:text-xl ${valueClassName}`}>
-        {value}
+        <DigitalNumber value={value} />
       </p>
     </div>
   )
@@ -319,13 +322,13 @@ export function SolarEstimation() {
                       value={monthlyBillInput}
                       onChange={(event) => setMonthlyBillInput(event.target.value)}
                       onBlur={normalizeMonthlyBill}
-                      className="min-w-0 flex-1 bg-transparent px-3 text-2xl font-extrabold tabular-nums text-white outline-none placeholder:text-emerald-100/50 rounded-xl"
+                      className="min-w-0 flex-1 bg-transparent px-3 text-2xl font-[family-name:var(--font-digital)] font-extrabold tabular-nums text-white outline-none placeholder:text-emerald-100/50 rounded-xl"
                     />
                     <span className="whitespace-nowrap text-sm text-emerald-100/70">{calculatorText.monthSuffix}</span>
                   </div>
                   <div className="mt-2 flex justify-between text-xs text-emerald-100/60">
-                    <span>{e.monthlyBillMinimum}</span>
-                    <span>{e.monthlyBillMaximum}</span>
+                    <span><DigitalNumber value={e.monthlyBillMinimum} /></span>
+                    <span><DigitalNumber value={e.monthlyBillMaximum} /></span>
                   </div>
                 </div>
               ) : (
@@ -344,19 +347,19 @@ export function SolarEstimation() {
                       value={systemSizeInput}
                       onChange={(event) => setSystemSizeInput(event.target.value)}
                       onBlur={normalizeSystemSize}
-                      className="min-w-0 flex-1 bg-transparent px-1 text-2xl font-extrabold tabular-nums text-white outline-none rounded-xl"
+                      className="min-w-0 flex-1 bg-transparent px-1 text-2xl font-[family-name:var(--font-digital)] font-extrabold tabular-nums text-white outline-none rounded-xl"
                     />
                     <span className="text-sm font-bold text-emerald-100">{e.capacityUnit}</span>
                   </div>
                   <div className="mt-2 flex justify-between text-xs text-emerald-100/60">
-                    <span>1 {e.capacityUnit}</span>
-                    <span>100 MW</span>
+                    <span><DigitalNumber value={`1 ${e.capacityUnit}`} /></span>
+                    <span><DigitalNumber value="100 MW" /></span>
                   </div>
                 </div>
               )}
 
               <p className="mt-4 text-sm text-emerald-100/75">
-                {e.estimatedMonthlyUsage}: {calculation.monthlyUnits.toLocaleString('en-IN')} {e.unitsSuffix}
+                {e.estimatedMonthlyUsage}: <DigitalNumber value={calculation.monthlyUnits.toLocaleString('en-IN')} /> {e.unitsSuffix}
               </p>
 
               <div
@@ -386,10 +389,10 @@ export function SolarEstimation() {
                   {calculatorText.idealSystemSize}
                 </p>
                 <p className="mt-3 text-4xl font-black tracking-tight text-sky-700">
-                  {formatSystemCapacity(calculation.recommendedKw, e.capacityUnit)}
+                  <DigitalNumber value={formatSystemCapacity(calculation.recommendedKw, e.capacityUnit)} />
                 </p>
                 <p className="mt-2 text-sm text-slate-500">
-                  {calculation.dailyGeneration} {calculatorText.averageDailyGeneration}
+                  <DigitalNumber value={calculation.dailyGeneration} /> {calculatorText.averageDailyGeneration}
                 </p>
               </article>
 
@@ -398,7 +401,7 @@ export function SolarEstimation() {
                   {e.annualSavings}
                 </p>
                 <p className="mt-3 text-3xl font-black tracking-tight text-emerald-600 sm:text-4xl">
-                  ~{formatCurrency(calculation.annualSavings)}
+                  ~<DigitalNumber value={formatCurrency(calculation.annualSavings)} />
                 </p>
               </article>
 
@@ -407,7 +410,7 @@ export function SolarEstimation() {
                   {e.annualGeneration}
                 </p>
                 <p className="mt-2 text-2xl font-black tracking-tight text-slate-950">
-                  {calculation.annualGeneration.toLocaleString('en-IN')} <span className="text-sm font-semibold">{e.generationUnit}</span>
+                  <DigitalNumber value={calculation.annualGeneration.toLocaleString('en-IN')} /> <span className="text-sm font-semibold">{e.generationUnit}</span>
                 </p>
               </article>
 
@@ -416,7 +419,7 @@ export function SolarEstimation() {
                   {e.roofRequired}
                 </p>
                 <p className="mt-2 text-2xl font-black tracking-tight text-slate-950">
-                  {calculation.roofArea.toLocaleString('en-IN')} <span className="text-sm font-semibold">{e.squareFootUnit}</span>
+                  <DigitalNumber value={calculation.roofArea.toLocaleString('en-IN')} /> <span className="text-sm font-semibold">{e.squareFootUnit}</span>
                 </p>
               </article>
             </div>
@@ -427,7 +430,7 @@ export function SolarEstimation() {
                   {calculatorText.pricingBreakdown}
                 </h2>
                 <p className="text-xs font-semibold text-slate-600">
-                  {formatSystemCapacity(calculation.recommendedKw, e.capacityUnit)} · {currentPropertyType}
+                  <DigitalNumber value={formatSystemCapacity(calculation.recommendedKw, e.capacityUnit)} /> · {currentPropertyType}
                 </p>
               </div>
 
