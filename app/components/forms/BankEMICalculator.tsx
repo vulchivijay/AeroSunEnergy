@@ -405,42 +405,44 @@ export function BankEMICalculator() {
               </div>
 
               <dl className="mt-4 space-y-3 border-t border-white/15 pt-4">
-              <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-xs sm:text-sm">
-                <dt className="min-w-0 text-white/80">{labels.principal}</dt>
-                <dd style={digitalFontStyle} className="ml-auto shrink-0 text-right font-semibold tabular-nums text-white">{formatCurrency(loanAmount)}</dd>
-              </div>
-              <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-xs sm:text-sm">
-                <dt className="min-w-0 text-white/80">{labels.projectCost}</dt>
-                <dd style={digitalFontStyle} className="ml-auto shrink-0 text-right font-semibold tabular-nums text-white">
-                  {formatCurrency(estimatedProjectCost)}
-                </dd>
-              </div>
-              <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-xs sm:text-sm">
-                <dt className="min-w-0 text-white/80">{labels.borrowerContribution}</dt>
-                <dd style={digitalFontStyle} className="ml-auto shrink-0 text-right font-semibold tabular-nums text-white">
-                  {formatCurrency(borrowerContribution)}
-                </dd>
-              </div>
-              <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-xs sm:text-sm">
-                <dt className="min-w-0 text-white/80">{labels.totalInterest}</dt>
-                <dd style={digitalFontStyle} className="ml-auto shrink-0 text-right font-semibold tabular-nums text-white">
-                  {calculation ? formatCurrency(calculation.totalInterest) : '—'}
-                </dd>
-              </div>
-              <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-xs sm:text-sm">
-                <dt className="min-w-0 text-white/80">{labels.totalRepayment}</dt>
-                <dd style={digitalFontStyle} className="ml-auto shrink-0 text-right font-semibold tabular-nums text-white">
-                  {calculation ? formatCurrency(calculation.totalAmountPayable) : '—'}
-                </dd>
-              </div>
-              {calculation && (
                 <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-xs sm:text-sm">
-                  <dt className="min-w-0 text-white/80">{labels.repaymentMonths}</dt>
+                  <dt className="min-w-0 text-white/80">{labels.principal}</dt>
                   <dd style={digitalFontStyle} className="ml-auto shrink-0 text-right font-semibold tabular-nums text-white">
-                    {calculation.repaymentMonths} {labels.tenureMonths}
+                    {formatCurrency(loanAmount)}
                   </dd>
                 </div>
-              )}
+                <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-xs sm:text-sm">
+                  <dt className="min-w-0 text-white/80">{labels.projectCost}</dt>
+                  <dd style={digitalFontStyle} className="ml-auto shrink-0 text-right font-semibold tabular-nums text-white">
+                    {formatCurrency(estimatedProjectCost)}
+                  </dd>
+                </div>
+                <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-xs sm:text-sm">
+                  <dt className="min-w-0 text-white/80">{labels.borrowerContribution}</dt>
+                  <dd style={digitalFontStyle} className="ml-auto shrink-0 text-right font-semibold tabular-nums text-white">
+                    {formatCurrency(borrowerContribution)}
+                  </dd>
+                </div>
+                <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-xs sm:text-sm">
+                  <dt className="min-w-0 text-white/80">{labels.totalInterest}</dt>
+                  <dd style={digitalFontStyle} className="ml-auto shrink-0 text-right font-semibold tabular-nums text-white">
+                    {calculation ? formatCurrency(calculation.totalInterest) : '—'}
+                  </dd>
+                </div>
+                <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-xs sm:text-sm">
+                  <dt className="min-w-0 text-white/80">{labels.totalRepayment}</dt>
+                  <dd style={digitalFontStyle} className="ml-auto shrink-0 text-right font-semibold tabular-nums text-white">
+                    {calculation ? formatCurrency(calculation.totalAmountPayable) : '—'}
+                  </dd>
+                </div>
+                {calculation && (
+                  <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-xs sm:text-sm">
+                    <dt className="min-w-0 text-white/80">{labels.repaymentMonths}</dt>
+                    <dd style={digitalFontStyle} className="ml-auto shrink-0 text-right font-semibold tabular-nums text-white">
+                      {calculation.repaymentMonths} {labels.tenureMonths}
+                    </dd>
+                  </div>
+                )}
               </dl>
             </div>
 
