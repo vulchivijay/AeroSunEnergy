@@ -201,7 +201,7 @@ export default function Slider({
         {clonedSlides.map((child, i) => (
           <div
             key={i}
-            className="h-[clamp(640px,56vw,760px)] shrink-0"
+            className={`h-[clamp(640px,56vw,760px)] shrink-0 ${i === position ? 'slider-slide-active' : ''}`}
             style={{ width: slideWidth > 0 ? `${slideWidth}px` : `${percentPerSlide}%` }}
             role="group"
             aria-roledescription={carousel.slideRoleDescription}

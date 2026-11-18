@@ -107,6 +107,7 @@ export default function Navbar() {
   function closeMenu() {
     setMenuOpen(false)
     setLangOpen(false)
+    setExpandedMobileSubmenu(null)
   }
 
   function renderNavigationLink(link: NavigationLink, mobile = false) {
@@ -179,7 +180,13 @@ export default function Navbar() {
         key={link.href}
         href={link.href}
         prefetch={link.href !== '/contact'}
-        onClick={mobile ? closeMenu : undefined}
+        onClick={() => {
+          if (mobile) {
+            closeMenu()
+          } else if (link.children?.length) {
+            setDismissedDesktopSubmenu(link.href)
+          }
+        }}
         aria-current={active ? 'page' : undefined}
         aria-label={`${t.navbar.goTo} ${link.label}`}
         className={classes}
