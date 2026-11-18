@@ -44,7 +44,7 @@ export default function HomeHeroSlider() {
             <span className="h-14 w-px bg-gradient-to-b from-transparent via-[#137c63]/50 to-transparent" />
           </div>
           <div className="group relative flex h-[clamp(640px,56vw,760px)] w-full items-center justify-start p-4 sm:p-8 lg:pl-[9vw] lg:pr-[7vw]">
-            <div className="relative w-full max-w-[1000px] overflow-hidden rounded-[28px] border border-white/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.94),rgba(244,250,246,0.82))] shadow-[0_28px_80px_rgba(15,23,42,0.22)] backdrop-blur-xl before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-[linear-gradient(90deg,#20a44a_0%,#20a44a_48%,#0ea5e9_48%,#0ea5e9_76%,#f59e0b_76%,#f59e0b_100%)] before:content-[''] after:absolute after:-right-14 after:-top-16 after:h-36 after:w-36 after:rounded-full after:border after:border-[#137c63]/10 after:content-[''] lg:w-[88%] lg:max-w-[860px]">
+            <div className="relative w-full overflow-hidden rounded-[28px] border border-white/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.94),rgba(244,250,246,0.82))] shadow-[0_28px_80px_rgba(15,23,42,0.22)] backdrop-blur-xl before:absolute before:inset-y-0 before:left-0 before:w-1 before:bg-[linear-gradient(180deg,#ff9933_0%,#ff9933_33%,#ffffff_33%,#ffffff_66%,#138808_66%,#138808_100%)] before:shadow-[0_0_0_1px_rgba(15,23,42,0.12)] before:content-[''] after:absolute after:-right-14 after:-top-16 after:h-36 after:w-36 after:rounded-full after:border after:border-[#137c63]/10 after:content-[''] lg:w-1/2">
               <div className="absolute right-5 top-6 h-14 w-14 rounded-full border border-[#20a44a]/15 sm:h-20 sm:w-20" aria-hidden="true" />
               <div className="absolute right-10 top-11 h-2.5 w-2.5 rounded-full bg-[#20a44a]/70 shadow-[0_0_18px_rgba(32,164,74,0.5)] sm:right-13 sm:top-15" aria-hidden="true" />
               <HeroSlideContent
@@ -54,13 +54,13 @@ export default function HomeHeroSlider() {
                   <Link
                     href="/contact"
                     prefetch={false}
-                    className="rounded-full bg-[#137c63] px-5 py-3 text-md font-black uppercase tracking-[0.18em] text-white shadow-[0_12px_30px_rgba(19,124,99,0.24)] transition hover:-translate-y-0.5 hover:bg-[#0f5f4b]"
+                    className="rounded-full bg-[#137c63] px-4 py-2 text-md font-black uppercase tracking-[0.18em] text-white shadow-[0_12px_30px_rgba(19,124,99,0.24)] transition hover:-translate-y-0.5 hover:bg-[#0f5f4b]"
                   >
                     {t.hero.buttons.quote}
                   </Link>
                   <Link
                     href="/solar-calculator"
-                    className="rounded-full border border-[#137c63]/20 bg-white/70 px-5 py-3 text-md font-black uppercase tracking-[0.18em] text-[#102b28] transition hover:-translate-y-0.5 hover:border-[#137c63]/40 hover:bg-white"
+                    className="rounded-full border border-[#137c63]/20 bg-white/70 px-4 py-2 text-md font-black uppercase tracking-[0.18em] text-[#102b28] transition hover:-translate-y-0.5 hover:border-[#137c63]/40 hover:bg-white"
                   >
                     {t.hero.buttons.estimateSavings}
                   </Link>
