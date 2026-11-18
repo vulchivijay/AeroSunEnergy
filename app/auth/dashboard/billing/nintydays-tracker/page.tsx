@@ -10,6 +10,7 @@ import {
   WalletCards,
 } from "lucide-react";
 import { useLocale } from "@/lib/LocaleContext";
+import { DigitalNumber } from "@/app/components/ui/DigitalNumber";
 
 export default function NinetyDayTrackerPage() {
   const { t } = useLocale();
@@ -200,9 +201,9 @@ export default function NinetyDayTrackerPage() {
                       className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70"
                     >
                       <td className="font-bold text-slate-900">
-                        {sheet}
+                        <DigitalNumber value={sheet} />
                       </td>
-                      <td className="px-5 py-4">{purpose}</td>
+                      <td className="px-5 py-4"><DigitalNumber value={purpose} /></td>
                     </tr>
                   ))}
                 </tbody>

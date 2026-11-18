@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
+import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import { useLocale } from '@/lib/LocaleContext'
 
 const serviceFactIcons = [Sun, MapPin, CalendarDays, Zap]
@@ -111,7 +112,7 @@ export function CompanyTrustSection() {
                           {fact.label}
                         </span>
                         <span className="mt-1 block text-sm font-bold text-slate-900">
-                          {fact.value}
+                          <DigitalNumber value={fact.value} />
                         </span>
                       </span>
                     </div>

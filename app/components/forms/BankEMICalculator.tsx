@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import { ArrowUpRight, Landmark } from 'lucide-react'
 import { useLocale } from '@/lib/LocaleContext'
+import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 
 type LoanBand = 'upToTwoLakhs' | 'aboveTwoLakhs'
 
@@ -39,11 +40,13 @@ const formatCurrency = (value: number) => {
 }
 
 const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max)
+const rangeTrackStyle = {
+  background: '#ffffff',
+}
 
 export function BankEMICalculator() {
   const { t } = useLocale()
   const labels = t.bankEmi
-  const digitalFontStyle = t.componentData.companyAge.digitalFontStyle
   const [loanBand, setLoanBand] = useState<LoanBand>('upToTwoLakhs')
   const [loanAmount, setLoanAmount] = useState(DEFAULT_LOAN)
   const [tenureMonths, setTenureMonths] = useState(DEFAULT_TENURE_MONTHS)
@@ -132,17 +135,17 @@ export function BankEMICalculator() {
       </header>
 
       <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-2xl shadow-sm lg:grid-cols-2 xl:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)]">
-        <div className="min-w-0 bg-linear-to-r from-amber-500 to-orange-500 p-5 text-slate-900 sm:p-7 lg:p-10">
+        <div className="min-w-0 bg-linear-to-r from-amber-500 to-orange-500 p-5 text-white sm:p-7 lg:p-10">
           <div className="mb-7">
-            <p className="text-md font-bold uppercase tracking-[0.17em] text-slate-900">
+            <p className="text-md font-bold uppercase tracking-[0.17em] text-white">
               {labels.loanDetails}
             </p>
-            <p className="mt-1 text-sm leading-5 text-slate-700">{labels.loanDetailsSub}</p>
+            <p className="mt-1 text-sm leading-5 text-white">{labels.loanDetailsSub}</p>
           </div>
 
           <div className="space-y-6 sm:space-y-7">
             <div>
-              <p className="text-md font-semibold text-slate-900 sm:text-sm">{labels.loanCategory}</p>
+              <p className="text-md font-semibold text-white sm:text-sm">{labels.loanCategory}</p>
               <div className="mt-3 grid grid-cols-2 gap-2" role="group" aria-label={labels.loanCategory}>
                 <button
                   type="button"
@@ -183,9 +186,9 @@ export function BankEMICalculator() {
 
             <div>
               <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
-                <label htmlFor="bank-emi-loan" className="text-md font-semibold text-slate-900 sm:text-sm">{labels.loanAmount}</label>
-                <output htmlFor="bank-emi-loan" style={digitalFontStyle} className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
-                  {formatCurrency(loanAmount)}
+                <label htmlFor="bank-emi-loan" className="text-md font-semibold text-white sm:text-sm">{labels.loanAmount}</label>
+                <output htmlFor="bank-emi-loan" className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
+                  <DigitalNumber value={formatCurrency(loanAmount)} />
                 </output>
               </div>
               <input
@@ -198,20 +201,21 @@ export function BankEMICalculator() {
                 onChange={(event) =>
                   setLoanAmount(clamp(Number(event.target.value), minLoanAmount, maxLoanAmount))
                 }
-                className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-[#064e3b] via-[#0f766e] to-[#064e3b] accent-emerald-900"
+                style={rangeTrackStyle}
+                className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full accent-emerald-950"
                 aria-label={labels.loanAmountAriaLabel}
               />
-              <div className="mt-2 flex justify-between text-xs text-slate-700">
-                <span>{formatCurrency(minLoanAmount)}</span>
-                <span>{formatCurrency(maxLoanAmount)}</span>
+              <div className="mt-2 flex justify-between text-xs text-white">
+                <span><DigitalNumber value={formatCurrency(minLoanAmount)} /></span>
+                <span><DigitalNumber value={formatCurrency(maxLoanAmount)} /></span>
               </div>
             </div>
 
             <div>
               <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
-                <label htmlFor="bank-emi-tenure" className="text-md font-semibold text-slate-900 sm:text-sm">{labels.loanTenure}</label>
-                <output htmlFor="bank-emi-tenure" style={digitalFontStyle} className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
-                  {formatTenure(tenureMonths)}
+                <label htmlFor="bank-emi-tenure" className="text-md font-semibold text-white sm:text-sm">{labels.loanTenure}</label>
+                <output htmlFor="bank-emi-tenure" className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
+                  <DigitalNumber value={formatTenure(tenureMonths)} />
                 </output>
               </div>
               <input
@@ -226,12 +230,13 @@ export function BankEMICalculator() {
                     clamp(Number(event.target.value), MIN_TENURE_MONTHS, MAX_TENURE_MONTHS),
                   )
                 }
-                className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-[#064e3b] via-[#0f766e] to-[#064e3b] accent-emerald-900"
+                style={rangeTrackStyle}
+                className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full accent-emerald-950"
                 aria-label={labels.loanTenureAriaLabel}
               />
-              <div className="mt-2 flex justify-between text-xs text-slate-700">
-                <span>{formatTenure(MIN_TENURE_MONTHS)}</span>
-                <span>{formatTenure(MAX_TENURE_MONTHS)}</span>
+              <div className="mt-2 flex justify-between text-xs text-white">
+                <span><DigitalNumber value={formatTenure(MIN_TENURE_MONTHS)} /></span>
+                <span><DigitalNumber value={formatTenure(MAX_TENURE_MONTHS)} /></span>
               </div>
             </div>
 
@@ -239,11 +244,11 @@ export function BankEMICalculator() {
               {loanBand === 'upToTwoLakhs' ? (
                 <>
                   <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
-                    <label htmlFor="bank-emi-repo-rate" className="text-md font-semibold text-slate-900 sm:text-sm">
+                    <label htmlFor="bank-emi-repo-rate" className="text-md font-semibold text-white sm:text-sm">
                       {labels.repoRate}
                     </label>
-                    <output htmlFor="bank-emi-repo-rate" style={digitalFontStyle} className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
-                      {repoRate.toFixed(2)}% <span className="text-md font-medium text-slate-700">{labels.perAnnum}</span>
+                    <output htmlFor="bank-emi-repo-rate" className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
+                      <DigitalNumber value={repoRate.toFixed(2)} />% <span className="text-md font-medium text-slate-700">{labels.perAnnum}</span>
                     </output>
                   </div>
                   <input
@@ -256,17 +261,18 @@ export function BankEMICalculator() {
                     onChange={(event) =>
                       setRepoRate(clamp(Number(event.target.value), MIN_REPO_RATE, MAX_REPO_RATE))
                     }
-                    className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full bg-linear-to-r from-[#064e3b] via-[#0f766e] to-[#064e3b] accent-emerald-900"
+                    style={rangeTrackStyle}
+                    className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full accent-emerald-950"
                     aria-label={labels.repoRateAriaLabel}
                   />
-                  <p className="mt-2 text-xs leading-5 text-slate-700">{labels.repoRateNote}</p>
-                  <p className="mt-2 text-sm font-bold text-orange-950">
-                    {labels.calculatedInterestRate}: {(repoRate + 0.5).toFixed(2)}% {labels.perAnnum}
+                  <p className="mt-2 text-xs leading-5 text-white">{labels.repoRateNote}</p>
+                  <p className="mt-2 text-sm font-bold text-white">
+                    {labels.calculatedInterestRate}: <DigitalNumber value={(repoRate + 0.5).toFixed(2)} />% {labels.perAnnum}
                   </p>
                 </>
               ) : (
                 <>
-                  <p className="text-md font-semibold text-slate-900 sm:text-sm">{labels.customerType}</p>
+                  <p className="text-md font-semibold text-white sm:text-sm">{labels.customerType}</p>
                   <div className="mt-3 grid grid-cols-2 gap-2" role="group" aria-label={labels.customerType}>
                     <button
                       type="button"
@@ -293,7 +299,7 @@ export function BankEMICalculator() {
                       {labels.nonHomeLoanCustomer}
                     </button>
                   </div>
-                  <label htmlFor="bank-emi-home-loan-rate" className="mt-4 block text-sm font-semibold text-slate-900">
+                  <label htmlFor="bank-emi-home-loan-rate" className="mt-4 block text-sm font-semibold text-white">
                     {labels.homeLoanRate}
                   </label>
                   <div className="mt-2 flex items-center rounded-xl border border-orange-200 bg-white px-3 py-2.5 focus-within:ring-2 focus-within:ring-orange-400">
@@ -306,8 +312,7 @@ export function BankEMICalculator() {
                       inputMode="decimal"
                       value={homeLoanRateInput}
                       onChange={(event) => setHomeLoanRateInput(event.target.value)}
-                      style={digitalFontStyle}
-                      className="min-w-0 flex-1 bg-transparent text-lg font-bold tabular-nums text-slate-900 outline-none"
+                      className="min-w-0 flex-1 bg-transparent text-lg font-[family-name:var(--font-digital)] font-bold tabular-nums text-slate-900 outline-none"
                       aria-label={labels.homeLoanRateAriaLabel}
                       aria-invalid={
                         homeLoanRateInput !== '' &&
@@ -318,13 +323,13 @@ export function BankEMICalculator() {
                     />
                     <span className="text-sm font-bold text-slate-600">%</span>
                   </div>
-                  <p className="mt-2 text-xs leading-5 text-slate-700">{labels.homeLoanRateNote}</p>
+                  <p className="mt-2 text-xs leading-5 text-white">{labels.homeLoanRateNote}</p>
                   {calculation ? (
-                    <p className="mt-2 text-sm font-bold text-orange-950">
-                      {labels.calculatedInterestRate}: {calculation.interestRate.toFixed(2)}% {labels.perAnnum}
+                    <p className="mt-2 text-sm font-bold text-white">
+                      {labels.calculatedInterestRate}: <DigitalNumber value={calculation.interestRate.toFixed(2)} />% {labels.perAnnum}
                     </p>
                   ) : (
-                    <p className="mt-2 text-xs font-semibold text-orange-950" role="status">
+                    <p className="mt-2 text-xs font-semibold text-white" role="status">
                       {labels.enterHomeLoanRate}
                     </p>
                   )}
@@ -334,7 +339,7 @@ export function BankEMICalculator() {
           </div>
 
           <div className="mt-6 rounded-2xl border border-white/60 bg-white/85 p-4 sm:mt-7">
-            <p className="text-sm font-bold text-orange-950">{labels.guidelineSummary}</p>
+            <p className="text-sm font-bold text-[#071b2f]">{labels.guidelineSummary}</p>
             <dl className="mt-3 space-y-2 text-sm">
               <div className="flex justify-between gap-3">
                 <dt className="text-slate-600">{labels.borrowerMargin}</dt>
@@ -358,7 +363,7 @@ export function BankEMICalculator() {
               <ArrowUpRight size={14} aria-hidden="true" />
             </Link>
           </div>
-          <p className="mt-4 text-xs leading-5 text-slate-700">{labels.estimateOnly}</p>
+          <p className="mt-4 text-xs leading-5 text-white">{labels.estimateOnly}</p>
         </div>
 
         <aside className="relative flex min-w-0 flex-col overflow-hidden bg-linear-to-br from-[#fffaf3] via-[#fff7ed] to-[#ffedd5] p-5 text-slate-900 sm:p-7 lg:p-9">
@@ -370,12 +375,11 @@ export function BankEMICalculator() {
               <p className="relative text-xs font-bold uppercase tracking-[0.18em] text-slate-500">{labels.monthlyEmi}</p>
               <div className="relative mt-3 flex flex-wrap items-baseline justify-center gap-x-2 gap-y-1">
                 <span
-                  style={digitalFontStyle}
                   className={`tabular-nums tracking-tight text-orange-700 ${
                     calculation ? 'text-3xl font-semibold sm:text-4xl' : 'text-sm font-medium'
                   }`}
                 >
-                  {calculation ? formatCurrency(calculation.emi) : labels.enterHomeLoanRate}
+                  {calculation ? <DigitalNumber value={formatCurrency(calculation.emi)} /> : labels.enterHomeLoanRate}
                 </span>
                 {calculation && <span className="text-sm text-slate-500 sm:text-md">{labels.month}</span>}
               </div>
@@ -383,8 +387,8 @@ export function BankEMICalculator() {
                 <div className="relative mt-4 flex flex-wrap justify-center gap-2">
                   <span className="rounded-full border border-orange-900/10 bg-orange-50 px-3 py-1 text-xs text-orange-950">
                     {labels.calculatedInterestRate}:{' '}
-                    <span style={digitalFontStyle} className="font-bold text-orange-950">
-                      {calculation.interestRate.toFixed(2)}%
+                    <span className="font-bold text-orange-950">
+                      <DigitalNumber value={calculation.interestRate.toFixed(2)} />%
                     </span>
                   </span>
                   <span className="rounded-full border border-orange-900/10 bg-orange-50 px-3 py-1 text-xs text-orange-950">
@@ -407,39 +411,39 @@ export function BankEMICalculator() {
               <dl className="mt-4 space-y-3 border-t border-slate-200 pt-4">
                 <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-xs sm:text-sm">
                   <dt className="min-w-0 text-slate-600">{labels.principal}</dt>
-                  <dd style={digitalFontStyle} className="ml-auto shrink-0 text-right font-semibold tabular-nums text-slate-950">
-                    {formatCurrency(loanAmount)}
+                  <dd className="ml-auto shrink-0 text-right font-semibold tabular-nums text-slate-950">
+                    <DigitalNumber value={formatCurrency(loanAmount)} />
                   </dd>
                 </div>
                 <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-xs sm:text-sm">
                   <dt className="min-w-0 text-slate-600">{labels.projectCost}</dt>
-                  <dd style={digitalFontStyle} className="ml-auto shrink-0 text-right font-semibold tabular-nums text-slate-950">
-                    {formatCurrency(estimatedProjectCost)}
+                  <dd className="ml-auto shrink-0 text-right font-semibold tabular-nums text-slate-950">
+                    <DigitalNumber value={formatCurrency(estimatedProjectCost)} />
                   </dd>
                 </div>
                 <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-xs sm:text-sm">
                   <dt className="min-w-0 text-slate-600">{labels.borrowerContribution}</dt>
-                  <dd style={digitalFontStyle} className="ml-auto shrink-0 text-right font-semibold tabular-nums text-slate-950">
-                    {formatCurrency(borrowerContribution)}
+                  <dd className="ml-auto shrink-0 text-right font-semibold tabular-nums text-slate-950">
+                    <DigitalNumber value={formatCurrency(borrowerContribution)} />
                   </dd>
                 </div>
                 <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-xs sm:text-sm">
                   <dt className="min-w-0 text-slate-600">{labels.totalInterest}</dt>
-                  <dd style={digitalFontStyle} className="ml-auto shrink-0 text-right font-semibold tabular-nums text-slate-950">
-                    {calculation ? formatCurrency(calculation.totalInterest) : '—'}
+                  <dd className="ml-auto shrink-0 text-right font-semibold tabular-nums text-slate-950">
+                    <DigitalNumber value={calculation ? formatCurrency(calculation.totalInterest) : '—'} />
                   </dd>
                 </div>
                 <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-xs sm:text-sm">
                   <dt className="min-w-0 text-slate-600">{labels.totalRepayment}</dt>
-                  <dd style={digitalFontStyle} className="ml-auto shrink-0 text-right font-semibold tabular-nums text-slate-950">
-                    {calculation ? formatCurrency(calculation.totalAmountPayable) : '—'}
+                  <dd className="ml-auto shrink-0 text-right font-semibold tabular-nums text-slate-950">
+                    <DigitalNumber value={calculation ? formatCurrency(calculation.totalAmountPayable) : '—'} />
                   </dd>
                 </div>
                 {calculation && (
                   <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-xs sm:text-sm">
                     <dt className="min-w-0 text-slate-600">{labels.repaymentMonths}</dt>
-                    <dd style={digitalFontStyle} className="ml-auto shrink-0 text-right font-semibold tabular-nums text-slate-950">
-                      {calculation.repaymentMonths} {labels.tenureMonths}
+                    <dd className="ml-auto shrink-0 text-right font-semibold tabular-nums text-slate-950">
+                      <DigitalNumber value={calculation.repaymentMonths} /> {labels.tenureMonths}
                     </dd>
                   </div>
                 )}

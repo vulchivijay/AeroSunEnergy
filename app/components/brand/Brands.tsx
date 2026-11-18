@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import { useLocale } from '@/lib/LocaleContext'
 
 type MaterialType = 'monocrystalline' | 'polycrystalline' | 'thinFilm'
@@ -172,7 +173,7 @@ export default function Brands() {
                         color: `hsl(${brand.hue} 58% 25%)`,
                       }}
                     >
-                      {price}
+                      <DigitalNumber value={price} />
                     </span>
                   ))}
                 </div>
@@ -188,7 +189,7 @@ export default function Brands() {
                       {section.maxListedLabel}
                     </span>
                     <span className="text-lg font-black tabular-nums text-slate-950 sm:text-xl">
-                      ₹{formattedMaxPrice}<span className="ml-1 text-xs font-bold text-slate-600">/Wp</span>
+                      <DigitalNumber value={`₹${formattedMaxPrice}`} /><span className="ml-1 text-xs font-bold text-slate-600">/Wp</span>
                     </span>
                   </div>
                 ) : (

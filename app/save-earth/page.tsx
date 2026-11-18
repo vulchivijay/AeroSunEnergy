@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useLocale } from '@/lib/LocaleContext'
+import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 
 type DocumentaryBlock =
   | { type: 'heading'; level: 2 | 3; text: string; id: string }
@@ -85,7 +86,7 @@ function renderBlocks(blocks: DocumentaryBlock[]) {
                   <tr key={rowIndex} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
                     {row.map((cell, cellIndex) => (
                       <td key={cellIndex} className="px-5 py-4 align-top leading-6">
-                        {cell}
+                        <DigitalNumber value={cell} />
                       </td>
                     ))}
                   </tr>

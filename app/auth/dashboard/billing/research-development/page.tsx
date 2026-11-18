@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale } from "@/lib/LocaleContext";
+import { DigitalNumber } from "@/app/components/ui/DigitalNumber";
 
 type HeadingBlock = {
   type: "heading";
@@ -204,7 +205,13 @@ function parseMarkdown(markdown: string): ContentBlock[] {
   return blocks;
 }
 
-function InlineContent({ text }: { text: string }) {
+function InlineContent({
+  text,
+  digitalNumbers = false,
+}: {
+  text: string;
+  digitalNumbers?: boolean;
+}) {
   const parts = text.split(
     /(\\\(.+?\\\)|\[[^\]]+\]\(https?:\/\/[^)]+\)|\*\*.+?\*\*|__.+?__|`[^`]+`|\*[^*]+\*|_[^_]+_)/g,
   );
@@ -227,7 +234,7 @@ function InlineContent({ text }: { text: string }) {
           rel="noreferrer"
           className="font-semibold text-emerald-800 underline decoration-emerald-500/40 underline-offset-4 transition hover:text-emerald-600  "
         >
-          <InlineContent text={linkMatch[1]} />
+          <InlineContent text={linkMatch[1]} digitalNumbers={digitalNumbers} />
         </a>
       );
     }
@@ -241,7 +248,7 @@ function InlineContent({ text }: { text: string }) {
           key={index}
           className="font-bold text-slate-950 "
         >
-          {part.slice(2, -2)}
+          {digitalNumbers ? <DigitalNumber value={part.slice(2, -2)} /> : part.slice(2, -2)}
         </strong>
       );
     }
@@ -251,7 +258,7 @@ function InlineContent({ text }: { text: string }) {
           key={index}
           className="rounded-2xl bg-emerald-950/[0.06] px-1.5 py-0.5 font-mono text-[0.92em] text-emerald-950  "
         >
-          {part.slice(1, -1)}
+          {digitalNumbers ? <DigitalNumber value={part.slice(1, -1)} /> : part.slice(1, -1)}
         </code>
       );
     }
@@ -261,7 +268,7 @@ function InlineContent({ text }: { text: string }) {
     ) {
       return <em key={index}>{part.slice(1, -1)}</em>;
     }
-    return part;
+    return digitalNumbers ? <DigitalNumber key={index} value={part} /> : part;
   });
 }
 
@@ -412,7 +419,7 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
                     key={cellIndex}
                     className="border-t border-slate-200 px-4 py-3 align-top text-slate-700  "
                   >
-                    <InlineContent text={row[cellIndex] ?? ""} />
+                    <InlineContent text={row[cellIndex] ?? ""} digitalNumbers />
                   </td>
                 ))}
               </tr>

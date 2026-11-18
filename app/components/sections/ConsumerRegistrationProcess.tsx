@@ -8,6 +8,7 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import { useLocale } from '@/lib/LocaleContext'
+import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 
 const stepIcons: LucideIcon[] = [
   Monitor,
@@ -112,13 +113,13 @@ export default function ConsumerRegistrationProcess() {
                 <tr className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
                   <th scope="row" className="bg-amber-700 text-left font-bold text-white">{benefits.consumptionLabel}</th>
                   {benefits.consumptionValues.map((value) => (
-                    <td key={value} className="border-l border-slate-200 px-4 py-3 text-center text-slate-900">{value}</td>
+                    <td key={value} className="border-l border-slate-200 px-4 py-3 text-center text-slate-900"><DigitalNumber value={value} /></td>
                   ))}
                 </tr>
                 <tr className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
                   <th scope="row" className="bg-amber-700 text-left font-bold text-white">{benefits.capacityLabel}</th>
                   {benefits.capacityValues.map((value) => (
-                    <td key={value} className="border-l border-slate-200 px-4 py-3 text-center text-slate-900">{value}</td>
+                    <td key={value} className="border-l border-slate-200 px-4 py-3 text-center text-slate-900"><DigitalNumber value={value} /></td>
                   ))}
                 </tr>
               </tbody>

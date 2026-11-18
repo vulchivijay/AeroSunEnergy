@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { ArrowUpRight, Info } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import { useLocale } from '@/lib/LocaleContext'
 
 const TARGET_DATE = new Date('2027-03-31T23:59:59+05:30')
@@ -155,9 +156,9 @@ export default function SchemeBanner() {
                   <tbody className="divide-y divide-emerald-100">
                     {capacityRows.map((row) => (
                       <tr key={row.usage} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
-                        <td className="px-5 py-5 text-[#172a28] sm:px-6">{row.usage}</td>
-                        <td className="px-5 py-5 font-bold text-[#087a61] sm:px-6">{row.capacity}</td>
-                        <td className="px-5 py-5 text-slate-500 sm:px-6">{row.tag}</td>
+                        <td className="px-5 py-5 text-[#172a28] sm:px-6"><DigitalNumber value={row.usage} /></td>
+                        <td className="px-5 py-5 font-bold text-[#087a61] sm:px-6"><DigitalNumber value={row.capacity} /></td>
+                        <td className="px-5 py-5 text-slate-500 sm:px-6"><DigitalNumber value={row.tag} /></td>
                       </tr>
                     ))}
                   </tbody>
