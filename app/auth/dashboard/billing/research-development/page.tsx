@@ -393,9 +393,9 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
 
   if (block.type === "table") {
     return (
-      <div className="my-7 overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm  ">
-        <table className="w-full min-w-[34rem] border-collapse text-left text-md leading-6">
-          <thead className="bg-emerald-950 text-white">
+      <div className="my-7 overflow-x-auto rounded-2xl border border-emerald-100 bg-white shadow-sm">
+        <table className="w-full min-w-[34rem] border-collapse text-left text-sm leading-6 text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
+          <thead className="bg-amber-700 font-bold text-white">
             <tr>
               {block.headers.map((cell, index) => (
                 <th key={index} className="px-4 py-3 font-bold">
@@ -404,16 +404,9 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
               ))}
             </tr>
           </thead>
-          <tbody>
+          <tbody className="divide-y divide-emerald-100">
             {block.rows.map((row, rowIndex) => (
-              <tr
-                key={rowIndex}
-                className={
-                  rowIndex % 2
-                    ? "bg-slate-50/80 "
-                    : "bg-white "
-                }
-              >
+              <tr key={rowIndex} className={`transition-colors hover:bg-emerald-100/70 ${rowIndex % 2 ? 'bg-emerald-50/70' : 'bg-white'}`}>
                 {block.headers.map((_, cellIndex) => (
                   <td
                     key={cellIndex}

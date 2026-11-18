@@ -64,8 +64,8 @@ export default function FinancePage() {
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[900px] border-collapse text-left text-sm">
-              <thead className="bg-sky-100 text-slate-950">
+            <table className="w-full min-w-[900px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
+              <thead className="bg-amber-700 font-bold text-white">
                 <tr>
                   <th scope="col" className="w-16 border border-slate-300 px-4 py-3">{page.headers.number}</th>
                   <th scope="col" className="w-56 border border-slate-300 px-4 py-3">{page.headers.item}</th>
@@ -75,7 +75,7 @@ export default function FinancePage() {
               </thead>
               <tbody>
                 {page.rows.map((row) => (
-                  <tr key={row.number} className="odd:bg-white even:bg-slate-50">
+                  <tr key={row.number} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
                     <th scope="row" className="border border-slate-300 px-4 py-4 align-top font-bold">{row.number}</th>
                     <th scope="row" className="border border-slate-300 px-4 py-4 align-top font-semibold">{row.item}</th>
                     <td colSpan={row.shared ? 2 : 1} className="border border-slate-300 px-4 py-4 align-top leading-6 text-slate-700">

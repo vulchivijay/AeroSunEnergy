@@ -1,7 +1,7 @@
 "use client"
 
 import Link from 'next/link'
-import { Info } from 'lucide-react'
+import { ArrowUpRight, Info } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
 
@@ -15,7 +15,9 @@ function getDaysRemaining(target: Date, now: number) {
 export default function SchemeBanner() {
   const { t } = useLocale()
   const banner = t.home.schemeBanner
+  const capacityGuide = banner.capacityGuide
   const digitalFontStyle = t.componentData.companyAge.digitalFontStyle
+  const capacityRows = t.solarPage.capacityTable.rows
 
   const [now, setNow] = useState<number | null>(null)
 
@@ -95,7 +97,7 @@ export default function SchemeBanner() {
             <div aria-hidden="true" className="pointer-events-none absolute -bottom-16 -right-10 -z-10 h-40 w-40 rounded-full bg-cyan-300/15 blur-2xl" />
             <div className="text-sm font-bold uppercase tracking-[0.16em] text-cyan-100">{banner.badgeSuffix}</div>
             <div className="mt-4 flex justify-center">
-              <div className="w-full max-w-40 rounded-2xl border border-white/20 bg-white/10 px-4 py-4 text-center shadow-inner shadow-white/5">
+              <div className="w-full max-w-40 px-4 py-4 text-center shadow-white/5">
                 <span
                   className="block text-4xl font-bold leading-none tabular-nums text-cyan-200"
                   style={digitalFontStyle}
@@ -113,6 +115,58 @@ export default function SchemeBanner() {
             <div aria-hidden="true" className="pointer-events-none absolute -right-8 -top-10 -z-10 h-28 w-28 rounded-full bg-fuchsia-300/30 blur-2xl" />
             <div className="text-sm font-bold uppercase tracking-[0.18em] text-violet-800">{banner.offerLabel}</div>
             <p className="mt-3 text-[15px] font-semibold leading-6 text-violet-950 sm:text-base sm:leading-7">{banner.offerText}</p>
+          </div>
+        </div>
+
+        <div className="mt-10 border-t border-indigo-900/10 pt-8">
+          <div className="grid items-start gap-6 xl:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] xl:gap-10">
+            <div className="max-w-2xl">
+              <p className="text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+                {capacityGuide.description}
+              </p>
+              <a
+                href="https://pmsuryaghar.gov.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-1 border-b border-[#12865e]/40 pb-1 text-sm font-bold text-[#087a61] transition-colors hover:border-[#087a61] hover:text-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61]"
+              >
+                {capacityGuide.portalCta}
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </div>
+
+            <div className="overflow-hidden rounded-2xl border border-[#e7e4dc] bg-white shadow-sm">
+              <div className="overflow-x-auto">
+                <table className="w-full min-w-[620px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
+                  <caption className="sr-only">{t.ui.suitableRooftopCapacity}</caption>
+                  <thead className="bg-amber-700 font-bold text-white">
+                    <tr className="text-sm font-bold uppercase tracking-[0.16em]">
+                      <th scope="col" className="px-5 py-5 sm:px-6">
+                        {t.ui.averageMonthlyUsage}
+                      </th>
+                      <th scope="col" className="px-5 py-5 sm:px-6">
+                        {t.ui.suitableRooftopCapacity}
+                      </th>
+                      <th scope="col" className="px-5 py-5 sm:px-6">
+                        {t.ui.bestFit}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-emerald-100">
+                    {capacityRows.map((row) => (
+                      <tr key={row.usage} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
+                        <td className="px-5 py-5 text-[#172a28] sm:px-6">{row.usage}</td>
+                        <td className="px-5 py-5 font-bold text-[#087a61] sm:px-6">{row.capacity}</td>
+                        <td className="px-5 py-5 text-slate-500 sm:px-6">{row.tag}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="bg-[#fff4e5] px-5 py-4 text-xs leading-5 text-slate-600 sm:px-6 sm:text-[13px]">
+                {capacityGuide.notice}
+              </p>
+            </div>
           </div>
         </div>
       </div>

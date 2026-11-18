@@ -4917,7 +4917,12 @@
       "perHome": "per home",
       "offerLabel": "Offer Window",
       "offerText": "Limited duration – apply before the current subsidy cycle closes.",
-      "daysLabel": "Days"
+      "daysLabel": "Days",
+      "capacityGuide": {
+        "description": "Eligible residential consumers may receive up to ₹78,000 in central assistance through the national portal. Assistance is capped at 3 kW of residential rooftop solar capacity; final eligibility and amount depend on scheme rules and the application.",
+        "portalCta": "Visit the official portal",
+        "notice": "Illustrative capacity guide only. Subsidy rules, tariffs, technical feasibility and DISCOM requirements can change. Confirm details on the official portal."
+      }
     },
     "offer": {
       "eyebrow": "What We Offer",
@@ -5099,13 +5104,6 @@
         "description": "Hybrid systems with battery backup keep critical loads running through outages."
       }
     ],
-    "subsidy": {
-      "eyebrow": "Government of India Scheme",
-      "title": "PM Surya Ghar: Muft Bijli Yojana",
-      "description": "Central financial assistance may be available to eligible residential consumers through the national portal. The published assistance is capped at 3 kW of residential rooftop solar capacity; final eligibility and amount depend on scheme rules and the application.",
-      "portalCta": "Visit the official portal",
-      "notice": "Illustrative capacity guide only. Subsidy rules, tariffs, technical feasibility and DISCOM requirements can change. Confirm details on the official portal."
-    },
     "wind": {
       "eyebrow": "Wind Energy",
       "title": "Wind power solutions for a greener grid",

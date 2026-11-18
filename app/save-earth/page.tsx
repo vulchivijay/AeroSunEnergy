@@ -68,10 +68,10 @@ function renderBlocks(blocks: DocumentaryBlock[]) {
 
     if (block.type === 'table') {
       return (
-        <div key={`table-${index}`} className="my-7 overflow-hidden rounded-2xl border border-slate-200">
+        <div key={`table-${index}`} className="my-7 overflow-hidden rounded-2xl border border-emerald-100">
           <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-slate-200 text-left text-md">
-              <thead className="bg-slate-50 text-md font-bold uppercase tracking-wider text-[#137c63]">
+            <table className="min-w-full divide-y divide-emerald-100 text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
+              <thead className="bg-amber-700 font-bold uppercase tracking-wider text-white">
                 <tr>
                   {block.headers.map((header, headerIndex) => (
                     <th key={headerIndex} scope="col" className="px-5 py-4">
@@ -80,9 +80,9 @@ function renderBlocks(blocks: DocumentaryBlock[]) {
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 bg-white text-slate-600">
+              <tbody className="divide-y divide-emerald-100 bg-white text-slate-700">
                 {block.rows.map((row, rowIndex) => (
-                  <tr key={rowIndex} className="transition-colors hover:bg-slate-50">
+                  <tr key={rowIndex} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
                     {row.map((cell, cellIndex) => (
                       <td key={cellIndex} className="px-5 py-4 align-top leading-6">
                         {cell}

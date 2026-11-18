@@ -493,9 +493,9 @@ export default function DashboardDataTabs() {
           </div>
         ) : data?.rows.length ? (
           <>
-            <div className="mt-6 overflow-x-auto overscroll-x-contain rounded-2xl border border-slate-200" tabIndex={0} aria-label={`${formatCollectionName(activeCollection)} records table`}>
-              <table className="min-w-max w-full text-left text-sm">
-                <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
+            <div className="mt-6 overflow-x-auto overscroll-x-contain rounded-2xl border border-emerald-100" tabIndex={0} aria-label={`${formatCollectionName(activeCollection)} records table`}>
+              <table className="min-w-max w-full text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
+                <thead className="bg-amber-700 text-xs font-bold uppercase tracking-wide text-white">
                   <tr>
                     {columns.map((column) => (
                       <th key={column} className="whitespace-nowrap px-4 py-3 font-bold">
@@ -505,13 +505,13 @@ export default function DashboardDataTabs() {
                     {hasActions && <th className="whitespace-nowrap px-4 py-3 font-bold">Actions</th>}
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-100">
+                <tbody className="divide-y divide-emerald-100">
                   {data.rows.map((row, index) => {
                 const id = typeof row.id === 'string' ? row.id : ''
                 const isEditing = id !== '' && editingId === id
                 return (
                   <Fragment key={id || `${data.collection}-${index}`}>
-                    <tr className="align-top text-slate-700">
+                    <tr className="align-top text-slate-700 odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
                       {columns.map((column) => (
                         <td key={column} className={`${column === 'payload' ? 'min-w-[20rem] max-w-[34rem]' : 'min-w-[8rem] max-w-[28rem]'} whitespace-normal px-4 py-3`}>
                           <div className="break-words">
@@ -564,8 +564,8 @@ export default function DashboardDataTabs() {
                       )}
                     </tr>
                     {isEditing && (
-                      <tr>
-                        <td colSpan={columns.length + Number(hasActions)} className="bg-slate-50 p-4">
+                      <tr className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
+                        <td colSpan={columns.length + Number(hasActions)} className="p-4">
                           <form onSubmit={(event) => void submitRecord(event, 'update', id)} className="max-w-4xl">
                             <label className="grid gap-2 text-sm font-bold text-slate-800">
                               Update record (JSON)

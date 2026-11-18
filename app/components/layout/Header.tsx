@@ -83,7 +83,7 @@ export default function Navbar() {
     }
 
     const handleResize = () => {
-      if (window.innerWidth >= 1536) {
+      if (window.innerWidth >= 1280) {
         setMenuOpen(false)
         setLangOpen(false)
       }
@@ -124,7 +124,7 @@ export default function Navbar() {
               ? 'bg-linear-to-r from-[#137c63] to-[#20A44A] text-white shadow-sm ring-1 ring-inset ring-white/40'
               : 'text-white/90 hover:bg-white/10 hover:text-amber-100 hover:shadow-sm'
         }`
-      : `group relative z-10 flex h-full min-w-0 flex-col items-center gap-1 rounded-xl px-1 py-1.5 text-sm transition-colors 2xl:text-[13px] ${
+      : `group relative z-10 flex h-full min-w-0 flex-col items-center gap-1 rounded-xl px-1 py-1.5 text-sm transition-colors xl:text-xs 2xl:text-[13px] ${
           active
             ? 'bg-linear-to-r from-[#137c63] to-[#20A44A] text-white shadow-sm'
             : disabled
@@ -360,7 +360,7 @@ export default function Navbar() {
             <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6b45e] shadow-sm" aria-hidden="true" />
             {t.navbar.companyRegistration}
           </span>
-          <span className="ml-3 hidden whitespace-nowrap text-sm  uppercase tracking-[0.2em] text-white/80 lg:flex lg:items-center lg:gap-2">
+          <span className="ml-3 flex whitespace-nowrap text-sm uppercase tracking-[0.2em] text-white/80 items-center gap-2">
             <Phone className="h-3 w-3 text-amber-500" strokeWidth={1.8} aria-hidden="true" />
             {t.navbar.companyMobile}
           </span>
@@ -370,14 +370,14 @@ export default function Navbar() {
       <div className="relative mx-auto flex min-h-[5.25rem] w-full items-center justify-between gap-1 p-2 sm:px-3 max-[319px]:flex-wrap">
         <Logo compact />
 
-        <nav aria-label={t.navbar.primaryNavigationLabel} className="hidden min-w-0 flex-1 items-center justify-center 2xl:flex">
+        <nav aria-label={t.navbar.primaryNavigationLabel} className="hidden min-w-0 flex-1 items-center justify-center xl:flex">
           <div className="relative grid min-w-0 grid-flow-col auto-cols-fr items-stretch justify-center gap-1">
             <span className="pointer-events-none absolute left-[8%] right-[8%] top-[1.375rem] h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" aria-hidden="true" />
             {navLinks.map((link) => renderNavigationLink(link))}
           </div>
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-2 border-l border-white/20 pl-3 2xl:flex 2xl:gap-3 2xl:pl-5">
+        <div className="hidden shrink-0 items-center gap-2 border-l border-white/20 pl-3 xl:flex 2xl:gap-3 2xl:pl-5">
           <div className="relative">
             <button
               type="button"
@@ -419,7 +419,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="flex shrink-0 items-center gap-2 2xl:hidden">
+        <div className="flex shrink-0 items-center gap-2 xl:hidden">
           <button
             type="button"
             onClick={() => {
@@ -443,7 +443,7 @@ export default function Navbar() {
       <div
         id="mobile-primary-navigation"
         hidden={!menuOpen}
-        className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-white/20 bg-[linear-gradient(135deg,rgba(23,37,84,1),rgba(49,46,129,1),rgba(15,23,42,1))] px-4 pb-6 pt-3 text-white shadow-lg backdrop-blur-2xl sm:px-6 2xl:hidden"
+        className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-white/20 bg-[linear-gradient(135deg,rgba(23,37,84,1),rgba(49,46,129,1),rgba(15,23,42,1))] px-4 pb-6 pt-3 text-white shadow-lg backdrop-blur-2xl sm:px-6 xl:hidden"
       >
         <nav aria-label={t.navbar.mobileNavigationLabel} className="mx-auto max-w-3xl space-y-1">
           <p className="mb-3 flex items-center gap-2 px-2 text-sm uppercase tracking-[0.2em] text-sky-200">

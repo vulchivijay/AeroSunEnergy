@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Orbitron, Poppins, Roboto } from "next/font/google";
 import { JsonLd } from "@/app/components/seo";
 import { LocaleProvider } from "@/lib/LocaleContext";
-import { Header, Footer, Lord } from "@/app/components/layout";
+import { BackToTop, Header, Footer, Lord } from "@/app/components/layout";
 import { PerformanceMonitor } from "@/app/components/performance";
 import CookieConsent from "@/app/components/cookies/CookieConsent";
 import ConsentAwareTracking from "@/app/components/cookies/ConsentAwareTracking";
@@ -201,6 +201,7 @@ export default function RootLayout({
             <Lord />
             {children}
             <Footer />
+            <BackToTop />
             <CookieConsent />
           </ToastProvider>
         </LocaleProvider>

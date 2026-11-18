@@ -1,6 +1,5 @@
 'use client'
 
-import { ArrowUpRight } from 'lucide-react'
 import { useLocale } from '@/lib/LocaleContext'
 import { getAccentOrDefault } from '@/lib/utils/utils'
 import { BankEMICalculator } from './components/forms/BankEMICalculator'
@@ -87,7 +86,6 @@ export default function Home() {
   const solarCards = offer.cards
   const systemTypes = home.systemTypes
   const whySolar = home.whySolar
-  const subsidy = home.subsidy
   const wind = home.wind
   const hybrid = home.hybrid
 
@@ -179,61 +177,6 @@ export default function Home() {
                 <BenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-      <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 lg:px-10 lg:py-16 sm:py-14">
-        <div className="mx-auto grid max-w-7xl items-center gap-8 xl:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] xl:gap-10">
-          <div className="max-w-2xl">
-            <SectionEyebrow>{subsidy.eyebrow}</SectionEyebrow>
-            <h2 className="mt-5 text-3xl font-bold leading-tight tracking-tight text-[#102b28] sm:text-4xl lg:text-[2.75rem]">
-              {subsidy.title}
-            </h2>
-            <p className="mt-5 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-              {subsidy.description}
-            </p>
-            <a
-              href="https://pmsuryaghar.gov.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-1 border-b border-[#12865e]/40 pb-1 text-sm font-bold text-[#087a61] transition-colors hover:border-[#087a61] hover:text-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61]"
-            >
-              {subsidy.portalCta}
-              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-            </a>
-          </div>
-
-          <div className="overflow-hidden rounded-2xl border border-[#e7e4dc] bg-white shadow-sm">
-            <div className="overflow-x-auto">
-              <table className="w-full min-w-[620px] border-collapse text-left">
-                <caption className="sr-only">{subsidy.title}</caption>
-                <thead className="bg-[#102e2a] text-white">
-                  <tr className="text-sm font-bold uppercase tracking-[0.16em] sm:text-sm">
-                    <th scope="col" className="px-5 py-5 sm:px-6">
-                      {t.ui.averageMonthlyUsage}
-                    </th>
-                    <th scope="col" className="px-5 py-5 sm:px-6">
-                      {t.ui.suitableRooftopCapacity}
-                    </th>
-                    <th scope="col" className="px-5 py-5 sm:px-6">
-                      {t.ui.bestFit}
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-[#e5e7e5]">
-                  {t.solarPage.capacityTable.rows.map((row) => (
-                    <tr key={row.usage} className="text-sm">
-                      <td className="px-5 py-5 text-[#172a28] sm:px-6">{row.usage}</td>
-                      <td className="px-5 py-5 font-bold text-[#087a61] sm:px-6">{row.capacity}</td>
-                      <td className="px-5 py-5 text-slate-500 sm:px-6">{row.tag}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="bg-[#fff4e5] px-5 py-4 text-xs leading-5 text-slate-600 sm:px-6 sm:text-[13px]">
-              {subsidy.notice}
-            </p>
           </div>
         </div>
       </section>
