@@ -98,7 +98,7 @@ export default function SchemeBanner() {
             <div aria-hidden="true" className="pointer-events-none absolute -bottom-16 -right-10 -z-10 h-40 w-40 rounded-full bg-cyan-300/15 blur-2xl" />
             <div className="text-sm font-bold uppercase tracking-[0.16em] text-cyan-100">{banner.badgeSuffix}</div>
             <div className="mt-4 flex justify-center">
-              <div className="w-full max-w-40 px-4 py-4 text-center shadow-white/5">
+              <div className="w-full max-w-40 rounded-2xl border border-white/20 bg-white/10 px-4 py-4 text-center shadow-inner shadow-white/5">
                 <span
                   className="block text-4xl font-bold leading-none tabular-nums text-cyan-200"
                   style={digitalFontStyle}

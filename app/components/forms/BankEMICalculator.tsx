@@ -47,6 +47,7 @@ const rangeTrackStyle = {
 export function BankEMICalculator() {
   const { t } = useLocale()
   const labels = t.bankEmi
+  const digitalFontStyle = t.componentData.companyAge.digitalFontStyle
   const [loanBand, setLoanBand] = useState<LoanBand>('upToTwoLakhs')
   const [loanAmount, setLoanAmount] = useState(DEFAULT_LOAN)
   const [tenureMonths, setTenureMonths] = useState(DEFAULT_TENURE_MONTHS)
@@ -312,6 +313,7 @@ export function BankEMICalculator() {
                       inputMode="decimal"
                       value={homeLoanRateInput}
                       onChange={(event) => setHomeLoanRateInput(event.target.value)}
+                      style={digitalFontStyle}
                       className="min-w-0 flex-1 bg-transparent text-lg font-[family-name:var(--font-digital)] font-bold tabular-nums text-slate-900 outline-none"
                       aria-label={labels.homeLoanRateAriaLabel}
                       aria-invalid={
