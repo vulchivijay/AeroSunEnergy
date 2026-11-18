@@ -1,6 +1,7 @@
 'use client'
 
 import { useLocale } from '@/lib/LocaleContext'
+import { getSliderImagePath } from '@/lib/sliderImages'
 import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 import { getAccentOrDefault } from '@/lib/utils/utils'
 import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
@@ -18,7 +19,10 @@ export default function WindEnergyPage() {
   const { t } = useLocale()
   const windPage = t.windPage
 
-  const windSlidesLocalized = windPage.hero.slides as HeroSliderSlide[]
+  const windSlidesLocalized: HeroSliderSlide[] = windPage.hero.slides.map((slide, index) => ({
+    ...slide,
+    image: getSliderImagePath(index + 7),
+  }))
   const turbineTypesLocalized = windPage.overview.items
   const deploymentTypesLocalized = windPage.classification.items
   const systemConfigsLocalized = windPage.electrical.rows

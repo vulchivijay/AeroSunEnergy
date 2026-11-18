@@ -1,6 +1,7 @@
 'use client'
 
 import { useLocale } from '@/lib/LocaleContext'
+import { getSliderImagePath } from '@/lib/sliderImages'
 import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
 import {
@@ -16,7 +17,10 @@ import {
 export default function SolarEnergyPage() {
   const { t } = useLocale()
   const solarPage = t.solarPage
-  const solarSlidesLocalized = solarPage.hero.slides as HeroSliderSlide[]
+  const solarSlidesLocalized: HeroSliderSlide[] = solarPage.hero.slides.map((slide, index) => ({
+    ...slide,
+    image: getSliderImagePath(index + 1),
+  }))
   const offeringsLocalized = solarPage.offer.cards
   const rooftopBenefitsLocalized = solarPage.rooftop.benefits
   const suitableForLocalized = solarPage.rooftop.suitableForItems
