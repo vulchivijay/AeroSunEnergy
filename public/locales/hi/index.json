@@ -91,10 +91,6 @@
       {
         "label": "वित्तपोषण",
         "href": "/finance"
-      },
-      {
-        "label": "नीतियाँ",
-        "href": "/policies"
       }
     ],
     "startProject": "प्रोजेक्ट शुरू करें",
@@ -3036,12 +3032,8 @@
     "attributionLinkText": "चैटGPT.",
     "legalLinks": [
       {
-        "label": "नियम एवं शर्तें",
-        "href": "/auth/dashboard/billing/terms-conditions"
-      },
-      {
-        "label": "वारंटी एवं सेवा नीति",
-        "href": "/auth/dashboard/billing/warranty-policy"
+        "label": "गोपनीयता नीति",
+        "href": "/policies"
       },
       {
         "label": "रद्दीकरण एवं रिफंड नीति",

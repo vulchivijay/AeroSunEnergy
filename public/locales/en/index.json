@@ -4320,10 +4320,6 @@
       {
         "label": "Finance",
         "href": "/finance"
-      },
-      {
-        "label": "Policies",
-        "href": "/policies"
       }
     ],
     "startProject": "Start a Project",
@@ -7854,12 +7850,8 @@
     "attributionLinkText": "ChatGPT.",
     "legalLinks": [
       {
-        "label": "Terms & Conditions",
-        "href": "/auth/dashboard/billing/terms-conditions"
-      },
-      {
-        "label": "Warranty & Service Policy",
-        "href": "/auth/dashboard/billing/warranty-policy"
+        "label": "Privacy Policy",
+        "href": "/policies"
       },
       {
         "label": "Cancellation & Refund Policy",

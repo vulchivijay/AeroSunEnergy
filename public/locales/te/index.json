@@ -91,10 +91,6 @@
       {
         "label": "ఫైనాన్స్",
         "href": "/finance"
-      },
-      {
-        "label": "విధానాలు",
-        "href": "/policies"
       }
     ],
     "startProject": "ప్రాజెక్ట్ ప్రారంభించండి",
@@ -3037,12 +3033,8 @@
     "attributionLinkText": "ChatGPT.",
     "legalLinks": [
       {
-        "label": "నిబంధనలు & షరతులు",
-        "href": "/auth/dashboard/billing/terms-conditions"
-      },
-      {
-        "label": "వారంటీ & సర్వీస్ పాలసీ",
-        "href": "/auth/dashboard/billing/warranty-policy"
+        "label": "గోప్యతా విధానం",
+        "href": "/policies"
       },
       {
         "label": "రద్దు మరియు రీఫండ్ విధానం",

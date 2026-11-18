@@ -50,7 +50,7 @@ export default function Footer() {
 	const navLinks = t.navbar.links
 	const queries = t.navbar.quiries || []
 	const quickEnquiries = queries
-	const visibleNavLinks = [...navLinks, { label: footer.referralProgram, href: '/referral-programme' }]
+	const visibleNavLinks = [...navLinks.filter((link) => link.href !== '/policies'), { label: footer.referralProgram, href: '/referral-programme' }]
 	const comingSoonBadge = (
 		<span className="inline-flex items-center gap-1.5 border-l border-amber-200/30 pl-2 text-[9px] uppercase tracking-[0.16em] text-amber-200">
 			<span className="h-px w-2 bg-amber-200/70" aria-hidden="true" />
@@ -147,7 +147,7 @@ export default function Footer() {
 						<h2 id="footer-brand" className="mt-6 hidden text-sm  tracking-wide text-slate-900">{t.navbar.brandName}</h2>
 						<p className="mt-1 text-sm font-medium text-[#F5C76A] hidden">&ldquo;{t.navbar.brandTagline}&rdquo;</p>
 						<p className="mt-4 max-w-sm text-sm leading-7 text-white/75">{footer.brandDesc}</p>
-						<div className="mt-6 flex flex-wrap gap-2" role="group" aria-label={footer.followUs}>
+						<div className="mt-6 flex flex-wrap gap-3" role="group" aria-label={footer.followUs}>
 							{socialLinks.map(({ href, platform, dataSocial, icon }) => (
 								<Link
 									key={dataSocial}
