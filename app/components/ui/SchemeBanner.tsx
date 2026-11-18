@@ -2,28 +2,20 @@
 
 import Link from 'next/link'
 import { Info } from 'lucide-react'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
 
 const TARGET_DATE = new Date('2027-03-31T23:59:59+05:30')
 
-function getTimeParts(target: Date, now: number) {
+function getDaysRemaining(target: Date, now: number) {
   const diff = Math.max(target.getTime() - now, 0)
-  const totalSeconds = Math.floor(diff / 1000)
-  const days = Math.floor(totalSeconds / 86400)
-  const hours = Math.floor((totalSeconds % 86400) / 3600)
-  const minutes = Math.floor((totalSeconds % 3600) / 60)
-
-  return {
-    days: String(days).padStart(3, '0'),
-    hours: String(hours).padStart(2, '0'),
-    minutes: String(minutes).padStart(2, '0'),
-  }
+  return String(Math.floor(diff / 86400000)).padStart(3, '0')
 }
 
 export default function SchemeBanner() {
   const { t } = useLocale()
   const banner = t.home.schemeBanner
+  const digitalFontStyle = t.componentData.companyAge.digitalFontStyle
 
   const [now, setNow] = useState<number | null>(null)
 
@@ -31,20 +23,11 @@ export default function SchemeBanner() {
     const updateNow = () => setNow(Date.now())
     updateNow()
 
-    const interval = window.setInterval(updateNow, 1000)
+    const interval = window.setInterval(updateNow, 60000)
     return () => window.clearInterval(interval)
   }, [])
 
-  const stats = useMemo(() => {
-    if (now === null) return banner.stats
-
-    const referenceNow = now
-    const parts = getTimeParts(TARGET_DATE, referenceNow)
-    return banner.stats.map((item, index) => ({
-      ...item,
-      value: [parts.days, parts.hours, parts.minutes][index] ?? item.value,
-    }))
-  }, [banner.stats, now])
+  const daysRemaining = now === null ? '000' : getDaysRemaining(TARGET_DATE, now)
 
   return (
     <section className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-9 text-[#172554] sm:px-6 sm:py-11 lg:px-10 lg:py-12">
@@ -111,13 +94,18 @@ export default function SchemeBanner() {
           <div className="relative isolate overflow-hidden rounded-2xl border border-slate-700 bg-gradient-to-br from-[#172554] via-[#1e3a8a] to-[#312e81] p-5 text-white shadow-sm shadow-indigo-950/15">
             <div aria-hidden="true" className="pointer-events-none absolute -bottom-16 -right-10 -z-10 h-40 w-40 rounded-full bg-cyan-300/15 blur-2xl" />
             <div className="text-sm font-bold uppercase tracking-[0.16em] text-cyan-100">{banner.badgeSuffix}</div>
-            <div className="mt-4 grid grid-cols-3 gap-2">
-              {stats.map((item: { label: string; value: string }) => (
-                <div key={item.label} className="min-w-0 rounded-2xl border border-white/15 bg-white/10 px-1.5 py-2.5 text-center shadow-inner shadow-white/5">
-                  <span className="block text-2xl font-black leading-none tabular-nums text-cyan-200 sm:text-[27px]">{item.value}</span>
-                  <span className="mt-1.5 block truncate text-sm font-semibold uppercase tracking-wide text-indigo-100">{item.label}</span>
-                </div>
-              ))}
+            <div className="mt-4 flex justify-center">
+              <div className="w-full max-w-40 rounded-2xl border border-white/20 bg-white/10 px-4 py-4 text-center shadow-inner shadow-white/5">
+                <span
+                  className="block text-4xl font-bold leading-none tabular-nums text-cyan-200"
+                  style={digitalFontStyle}
+                >
+                  {daysRemaining}
+                </span>
+                <span className="mt-2 block text-base font-semibold uppercase tracking-wide text-indigo-100">
+                  {banner.daysLabel}
+                </span>
+              </div>
             </div>
           </div>
 

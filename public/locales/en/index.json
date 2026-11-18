@@ -4774,7 +4774,15 @@
       "priceOrder": "Ranked by highest listed price",
       "maxListedLabel": "Max listed",
       "topPriceLabel": "Highest listed",
-      "moreBrandsAvailable": "Many more brands available"
+      "freyrEnergy": "Freyr Energy",
+      "materialTypesLabel": "Module types",
+      "undefinedMaterialType": "Undefined",
+      "materialTypes": {
+        "monocrystalline": "Monocrystalline",
+        "polycrystalline": "Polycrystalline",
+        "thinFilm": "Thin-film"
+      },
+      "moreBrandsAvailable": "We have more brands"
     },
     "heroSliderAriaLabel": "Featured renewable energy solutions",
     "heroSlider": [
@@ -4909,20 +4917,7 @@
       "perHome": "per home",
       "offerLabel": "Offer Window",
       "offerText": "Limited duration – apply before the current subsidy cycle closes.",
-      "stats": [
-        {
-          "label": "Days",
-          "value": "000"
-        },
-        {
-          "label": "Hours",
-          "value": "00"
-        },
-        {
-          "label": "Mins",
-          "value": "00"
-        }
-      ]
+      "daysLabel": "Days"
     },
     "offer": {
       "eyebrow": "What We Offer",
@@ -9136,17 +9131,37 @@
     "tail": "and exploring innovative energy solutions tailored to customer needs. As we grow, we aim to expand our technical capabilities and develop advanced renewable energy solutions that contribute to a cleaner, more sustainable future."
   },
   "bankEmi": {
-    "badge": "Personal finance · EMI planner",
-    "title": "Make your next move",
+    "badge": "PM Surya Ghar · Solar loan EMI",
+    "title": "Plan your solar loan",
     "titleAccent": "with clarity.",
-    "description": "Shape your loan around your life. Adjust the numbers and see the full repayment picture instantly.",
+    "description": "Estimate your rooftop-solar EMI using the standard PM Surya Ghar loan limits, borrower margin, and rate references.",
     "confidence": "Plan with confidence",
     "confidenceSub": "A clear estimate, at a glance",
     "loanDetails": "Your loan details",
-    "loanDetailsSub": "Fine-tune the estimate below",
+    "loanDetailsSub": "Choose a loan band and adjust the estimate",
+    "loanCategory": "Loan category",
+    "loanUpToTwoLakhs": "Up to ₹2 lakh",
+    "loanAboveTwoLakhs": "Above ₹2 lakh · max ₹6 lakh",
     "loanAmount": "Loan amount",
-    "loanTenure": "Loan tenure",
+    "loanTenure": "Total loan term",
+    "projectCost": "Estimated project cost",
+    "borrowerContribution": "Minimum borrower contribution",
+    "borrowerMargin": "Minimum borrower margin",
+    "panRequirement": "PAN requirement",
+    "panNotRequired": "Not required",
+    "panMandatory": "Mandatory",
     "interestRate": "Interest rate",
+    "repoRate": "RBI repo rate",
+    "repoRateAriaLabel": "RBI repo rate",
+    "repoRateNote": "Loan rate = repo rate + 0.50%. The source reference lists 6.00% p.a. (5.50% repo); its effective date was not provided.",
+    "calculatedInterestRate": "Calculated loan rate",
+    "customerType": "Customer type",
+    "homeLoanCustomer": "Home-loan customer",
+    "nonHomeLoanCustomer": "Not a home-loan customer",
+    "homeLoanRate": "Your current home-loan rate",
+    "homeLoanRateAriaLabel": "Current home-loan interest rate",
+    "homeLoanRateNote": "Home-loan customers use this rate; other customers add 1.00 percentage point.",
+    "enterHomeLoanRate": "Enter a valid home-loan rate (0–30%) to calculate EMI.",
     "perAnnum": "p.a.",
     "monthlyEmi": "Your monthly EMI",
     "month": "/ month",
@@ -9155,9 +9170,16 @@
     "totalInterest": "Total interest",
     "totalRepayment": "Total repayment",
     "principalPlus": "Principal + interest",
-    "estimateOnly": "Estimate only. Your lender may apply different rates, fees, and eligibility criteria.",
+    "estimateOnly": "Illustrative estimate based on the supplied finance-page terms. Lender approval and current rates apply.",
     "year": "year",
     "years": "years",
+    "tenureMonth": "month",
+    "tenureMonths": "months",
+    "repaymentMonths": "EMI payments",
+    "moratoriumCalculationNote": "Maximum term is 120 months including a six-month moratorium. EMI is estimated over the remaining months; interest accrued during the moratorium is excluded because the reference does not specify its treatment.",
+    "guidelineSummary": "Guideline summary",
+    "eligibilitySummary": "For individuals up to age 65; repayment must end before age 70. CIBIL 680+ or new-to-credit applicants may qualify. A DISCOM consumer number, adequate rooftop area, and a bank savings account are required.",
+    "financePageLink": "Full scheme terms and eligibility",
     "repaymentSnapshot": "Repayment snapshot",
     "basedOnDetails": "Based on your loan details",
     "liveEstimate": "Live estimate",
