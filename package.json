@@ -50,6 +50,6 @@
     "postcss": "^8",
     "tailwind-merge": "^3.7.0",
     "three": "^0.187.0",
-    "typescript": "^7.0.2"
+    "typescript": "^6.0.3"
   }
 }
