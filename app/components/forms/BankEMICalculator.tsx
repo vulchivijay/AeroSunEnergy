@@ -86,8 +86,8 @@ export function BankEMICalculator() {
       emi,
       totalAmountPayable,
       totalInterest,
-        interestRate,
-        repaymentMonths: months,
+      interestRate,
+      repaymentMonths: months,
     }
   }, [homeLoanRateInput, isHomeLoanCustomer, loanAmount, loanBand, repoRate, tenureMonths])
 
@@ -103,9 +103,9 @@ export function BankEMICalculator() {
 
     if (years > 0) parts.push(`${years} ${years === 1 ? labels.year : labels.years}`)
     if (remainingMonths > 0) {
-        parts.push(
-          `${remainingMonths} ${remainingMonths === 1 ? labels.tenureMonth : labels.tenureMonths}`,
-        )
+      parts.push(
+        `${remainingMonths} ${remainingMonths === 1 ? labels.tenureMonth : labels.tenureMonths}`,
+      )
     }
 
     return parts.join(' ')
