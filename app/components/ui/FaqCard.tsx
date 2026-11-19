@@ -33,7 +33,7 @@ export default function FaqCard({ question, answer, defaultOpen = false }: FaqCa
   const displayAnswer = localizedFaq?.answer ?? answer;
 
   return (
-    <div className={`overflow-hidden rounded-2xl border bg-white/80 p-0 shadow-sm transition-all duration-300 ${isOpen ? 'border-[#F59E0B]/70 bg-[#fffaf1]' : 'border-[#d8c9ab]/70'}`}>
+    <div className={`overflow-hidden rounded-2xl border bg-white/24 p-0 transition-all duration-300 ${isOpen ? 'border-[#F59E0B]/70 bg-[#fffaf1]' : 'border-[#d8c9ab]/70'}`}>
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}

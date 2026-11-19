@@ -10208,8 +10208,8 @@
         "value": "sanatanadharmam.in"
       },
       {
-        "label": "Estimation",
-        "value": "Open the calculator"
+        "label": "Finance",
+        "value": "Open the finance page"
       }
     ]
   },
@@ -10246,13 +10246,60 @@
       "pricingBreakdown": "Pricing breakdown",
       "priceBeforeSubsidy": "Price (Excl. Subsidy & GST)",
       "governmentSubsidy": "Govt Subsidy (PM Surya Ghar)",
-      "effectiveCost": "Effective cost",
-      "taxesExtra": "*Taxes + net-metering extra",
+      "effectiveCost": "Cost after subsidy (before GST/metering)",
+      "taxesExtra": "*The estimate below includes indicative GST; metering fees may vary.",
+      "finalEffectiveCost": "Estimated final cost after subsidy",
+      "finalEffectiveCostBeforeMetering": "Estimated cost before net-metering fees",
+      "gstEstimate": "Estimated GST (8.9% EPC)",
+      "netMeteringFee": "Net-metering fee",
+      "netMeteringVaries": "Varies",
+      "netMeteringNotIncluded": "Not included",
+      "netMeteringEligibilityCheck": "Assume I qualify for the APERC waiver (domestic PM Surya Ghar, contracted load up to 10 kW).",
+      "netMeteringPotentialWaiverNote": "A waiver may apply if eligible; confirm your PM Surya Ghar status and contracted load with your DISCOM.",
+      "netMeteringWaiverNote": "This estimate assumes the waiver applies to an eligible domestic PM Surya Ghar installation with contracted load up to 10 kW. Confirm eligibility and charges with your DISCOM.",
+      "netMeteringVariesNote": "Net-metering fees are not included here; confirm charges with your DISCOM.",
+      "epcGstAssumption": "GST estimate uses the selected EPC split: 70% of contract value at 5% and 30% at 18% (8.9% blended). Actual tax treatment may differ.",
+      "apercOrderLabel": "View APERC order",
       "quoteCta": "Get Free Quote",
       "monthSuffix": "/month",
       "residentialSubsidyNote": "Eligible residential systems may receive up to ₹78,000 under PM Surya Ghar. Final support depends on eligibility and current scheme rules.",
       "commercialSubsidyNote": "The PM Surya Ghar residential subsidy is not included for commercial estimates.",
       "assumptions": "Indicative price uses ₹70,000/kW; roof space uses 60 sq ft/kW. Generation assumes 120 units/kW/month and savings use ₹8.5 per unit. Actual prices and output vary by system and site."
+    },
+    "solarGstGuide": {
+      "eyebrow": "Solar cost guide",
+      "title": "GST on Solar Systems in India",
+      "intro": "GST rates depend on the HSN classification and how the solar equipment and services are supplied. Use these points as a guide when reviewing a quote.",
+      "componentsTitle": "GST Rates by Solar Component",
+      "components": [
+        "Solar PV modules and specified renewable-energy devices are subject to 5% GST from September 22, 2025.",
+        "Other components may have different rates depending on their HSN classification and whether they are supplied separately or as part of a system."
+      ],
+      "billingTitle": "How Home Rooftop Solar Billing Works",
+      "billing": "A complete residential rooftop installation supplied under an Engineering, Procurement and Construction (EPC) contract may be treated as a composite supply. The tax treatment of the full contract can differ from the rate for PV modules alone. Ask your installer for an itemized quotation and the GST basis used for goods and services.",
+      "itcTitle": "Input Tax Credit (ITC)",
+      "itc": "Individual homeowners generally cannot claim ITC for a personal residential installation. Eligible GST-registered businesses may be able to claim ITC, subject to applicable GST rules and conditions.",
+      "quoteTip": "For a more tailored estimate, share your planned system capacity (for example, 3 kW or 5 kW) and whether you are buying equipment and installation together as an EPC package or purchasing them separately.",
+      "disclaimer": "GST treatment can depend on current notifications, HSN classification, and contract terms. Confirm the applicable rate with your installer or a tax professional.",
+      "sourcesTitle": "Further reading",
+      "sources": [
+        {
+          "label": "Shriram Finance — GST on Solar Panels",
+          "url": "https://www.shriramfinance.in/gst/gst-on-solar-panels"
+        },
+        {
+          "label": "BUSY — GST Rates for Solar Panels",
+          "url": "https://busy.in/gst-rates/solar-panel/"
+        },
+        {
+          "label": "Tally Solutions — Solar HSN Codes and GST Rates",
+          "url": "https://tallysolutions.com/gst/solar-hsn-code-gst-rate/"
+        },
+        {
+          "label": "TwoTax — GST 2.0 and Solar Power",
+          "url": "https://www.twotax.in/blog-details/-gst-2-0-solar-power-in-india-how-the-5-tax-rate-makes-solar-systems-affordable-"
+        }
+      ]
     },
     "roofRequired": "Roof Required",
     "returnsTitle": "Your Estimated Returns",

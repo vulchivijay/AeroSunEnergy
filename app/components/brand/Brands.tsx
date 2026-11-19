@@ -205,7 +205,7 @@ export default function Brands() {
         </ul>
         <p
           aria-hidden="true"
-          className="mt-22 select-none text-center text-3xl font-black uppercase tracking-[0.2em] text-slate-900/[0.14] sm:text-5xl"
+          className="mt-22 select-none bg-[linear-gradient(145deg,#ff9933_0%,#ff9933_33%,#ffffff_33%,#ffffff_66%,#138808_66%,#138808_100%)] bg-clip-text text-center text-3xl font-black uppercase tracking-[0.2em] text-transparent drop-shadow-[0_1px_2px_rgba(15,23,42,0.4)] sm:text-5xl"
         >
           {section.moreBrandsAvailable}
         </p>

@@ -20,12 +20,19 @@ type Calculation = {
   totalPrice: number
   subsidy: number
   effectiveCost: number
+  gstEstimate: number
+  netMeteringCharge: number | null
+  netMeteringWaiverAvailable: boolean
+  netMeteringWaived: boolean
+  finalEffectiveCost: number
 }
 
 const AVERAGE_TARIFF_PER_UNIT = 8.5
 const MONTHLY_GENERATION_PER_KW = 120
 const ROOF_AREA_PER_KW = 60
 const ESTIMATED_PRICE_PER_KW = 70000
+const EPC_GST_ESTIMATE_RATE = 0.7 * 0.05 + 0.3 * 0.18
+const AP_NET_METERING_WAIVER_MAX_KW = 10
 const SAVINGS_ESTIMATE_YEARS = 25
 const KW_PER_MW = 1000
 const MAX_SYSTEM_SIZE_KW = 100 * KW_PER_MW
@@ -86,6 +93,7 @@ export function SolarEstimation() {
   const toast = useToast()
   const e = t.estimation
   const calculatorText = e.calculator
+  const solarGstGuide = e.solarGstGuide
   const defaultValues = t.componentData.solarEstimation.defaultValues
   const initialSystemSize = Math.max(
     1,
@@ -102,6 +110,7 @@ export function SolarEstimation() {
   const [monthlyBillInput, setMonthlyBillInput] = useState(String(defaultValues.monthlyBill))
   const [systemSizeInput, setSystemSizeInput] = useState(String(initialSystemSize))
   const [selectedPropertyIndex, setSelectedPropertyIndex] = useState(0)
+  const [assumeNetMeteringWaiver, setAssumeNetMeteringWaiver] = useState(false)
   const [leadPropertyIndex, setLeadPropertyIndex] = useState<number | ''>('')
   const [leadNameValue, setLeadNameValue] = useState('')
   const [leadPhoneValue, setLeadPhoneValue] = useState('')
@@ -135,6 +144,12 @@ export function SolarEstimation() {
         ? 78000
         : recommendedKw * 30000
       : 0
+  const totalPrice = recommendedKw * ESTIMATED_PRICE_PER_KW
+  const gstEstimate = Math.round(totalPrice * EPC_GST_ESTIMATE_RATE)
+  const netMeteringWaiverAvailable =
+    selectedPropertyIndex === 0 && recommendedKw <= AP_NET_METERING_WAIVER_MAX_KW
+  const netMeteringWaived = netMeteringWaiverAvailable && assumeNetMeteringWaiver
+  const netMeteringCharge = netMeteringWaived ? 0 : null
   const calculation: Calculation = {
     recommendedKw,
     monthlyUnits,
@@ -142,9 +157,17 @@ export function SolarEstimation() {
     dailyGeneration: Math.round(annualGeneration / 365),
     annualSavings,
     roofArea: recommendedKw * ROOF_AREA_PER_KW,
-    totalPrice: recommendedKw * ESTIMATED_PRICE_PER_KW,
+    totalPrice,
     subsidy,
-    effectiveCost: Math.max(0, recommendedKw * ESTIMATED_PRICE_PER_KW - subsidy),
+    effectiveCost: Math.max(0, totalPrice - subsidy),
+    gstEstimate,
+    netMeteringCharge,
+    netMeteringWaiverAvailable,
+    netMeteringWaived,
+    finalEffectiveCost: Math.max(
+      0,
+      totalPrice + gstEstimate + (netMeteringCharge ?? 0) - subsidy,
+    ),
   }
 
   async function handleLeadFormSubmit(event: FormEvent<HTMLFormElement>) {
@@ -181,6 +204,9 @@ export function SolarEstimation() {
       `${e.twentyFiveYearSavings}: ${formatCurrency(twentyFiveYearSavings)}`,
       `${e.roofRequired}: ${calculation.roofArea} ${e.squareFootUnit}`,
       `${calculatorText.effectiveCost}: ${formatCurrency(calculation.effectiveCost)}`,
+      `${calculatorText.gstEstimate}: ${formatCurrency(calculation.gstEstimate)}`,
+      `${calculatorText.netMeteringFee}: ${calculation.netMeteringCharge === 0 ? formatCurrency(0) : calculation.netMeteringWaiverAvailable ? calculatorText.netMeteringNotIncluded : calculatorText.netMeteringVaries}`,
+      `${calculation.netMeteringWaived ? calculatorText.finalEffectiveCost : calculatorText.finalEffectiveCostBeforeMetering}: ${formatCurrency(calculation.finalEffectiveCost)}`,
     ].join('\n')
     const url = `https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(message)}`
     const whatsAppWindow = window.open('about:blank', '_blank')
@@ -424,7 +450,7 @@ export function SolarEstimation() {
               </article>
             </div>
 
-            <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
+            <div className="mt-5 rounded-2xl border border-amber-200/80 bg-linear-to-br from-amber-50 via-orange-50 to-amber-100 p-5 sm:p-6">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
                   {calculatorText.pricingBreakdown}
@@ -455,6 +481,87 @@ export function SolarEstimation() {
                 />
               </div>
               <p className="mt-4 text-right text-xs text-slate-500">{calculatorText.taxesExtra}</p>
+            </div>
+
+            <div className="mt-4 rounded-2xl border border-emerald-200/80 bg-linear-to-br from-emerald-50 via-green-50 to-emerald-100 p-5 shadow-sm sm:p-6">
+              <span className="inline-flex items-center rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-indigo-900">
+                {calculation.netMeteringWaived
+                  ? calculatorText.finalEffectiveCost
+                  : calculatorText.finalEffectiveCostBeforeMetering}
+              </span>
+
+              <div className="mt-4 grid gap-3 text-sm sm:grid-cols-2">
+                <div className="flex items-start justify-between gap-3">
+                  <span className="text-slate-600">{calculatorText.gstEstimate}</span>
+                  <span className="font-semibold text-slate-900">{formatCurrency(calculation.gstEstimate)}</span>
+                </div>
+                <div className="flex items-start justify-between gap-3">
+                  <span className="text-slate-600">{calculatorText.netMeteringFee}</span>
+                  <span className="text-right font-semibold text-slate-900">
+                    {calculation.netMeteringCharge === 0
+                      ? formatCurrency(calculation.netMeteringCharge)
+                      : calculation.netMeteringWaiverAvailable
+                        ? calculatorText.netMeteringNotIncluded
+                        : calculatorText.netMeteringVaries}
+                  </span>
+                </div>
+              </div>
+
+              {calculation.netMeteringWaiverAvailable && (
+                <label className="mt-4 flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-3 text-sm leading-5 text-slate-700">
+                  <input
+                    type="checkbox"
+                    checked={assumeNetMeteringWaiver}
+                    onChange={(event) => setAssumeNetMeteringWaiver(event.target.checked)}
+                    className="mt-1 h-4 w-4 shrink-0 accent-emerald-700"
+                  />
+                  <span>{calculatorText.netMeteringEligibilityCheck}</span>
+                </label>
+              )}
+
+              <div className="mt-4 flex flex-wrap items-end justify-between gap-3 border-t border-slate-200 pt-4">
+                <span className="text-sm font-bold text-slate-700">
+                  {calculation.netMeteringWaived
+                    ? calculatorText.finalEffectiveCost
+                    : calculatorText.finalEffectiveCostBeforeMetering}
+                </span>
+                <span className="text-2xl font-black tracking-tight text-emerald-700">
+                  <DigitalNumber value={formatCurrency(calculation.finalEffectiveCost)} />
+                </span>
+              </div>
+
+              <p className="mt-3 text-xs leading-5 text-slate-500">
+                {calculatorText.epcGstAssumption}
+              </p>
+              {calculation.netMeteringWaived ? (
+                <p className="mt-2 text-xs leading-5 text-slate-500">
+                  {calculatorText.netMeteringWaiverNote}{' '}
+                  <a
+                    href="https://aperc.gov.in/admin/upload/ProceedingsonwaiverofApplicationfeeandMeterCosttoSRTSupto10kW.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-sky-700 underline underline-offset-2"
+                  >
+                    {calculatorText.apercOrderLabel}
+                  </a>
+                </p>
+              ) : (
+                <p className="mt-2 text-xs leading-5 text-amber-800">
+                  {calculation.netMeteringWaiverAvailable
+                    ? calculatorText.netMeteringPotentialWaiverNote
+                    : calculatorText.netMeteringVariesNote}{' '}
+                  {calculation.netMeteringWaiverAvailable && (
+                    <a
+                      href="https://aperc.gov.in/admin/upload/ProceedingsonwaiverofApplicationfeeandMeterCosttoSRTSupto10kW.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-sky-700 underline underline-offset-2"
+                    >
+                      {calculatorText.apercOrderLabel}
+                    </a>
+                  )}
+                </p>
+              )}
             </div>
 
             <button
@@ -502,6 +609,21 @@ export function SolarEstimation() {
               <LeadSummary label={e.twentyFiveYearSavings} value={formatCurrency(calculation.annualSavings * SAVINGS_ESTIMATE_YEARS)} />
               <LeadSummary label={e.roofRequired} value={`${calculation.roofArea} ${e.squareFootUnit}`} />
               <LeadSummary label={calculatorText.effectiveCost} value={formatCurrency(calculation.effectiveCost)} />
+              <LeadSummary label={calculatorText.gstEstimate} value={formatCurrency(calculation.gstEstimate)} />
+              <LeadSummary
+                label={calculatorText.netMeteringFee}
+                value={calculation.netMeteringCharge === 0
+                  ? formatCurrency(0)
+                  : calculation.netMeteringWaiverAvailable
+                    ? calculatorText.netMeteringNotIncluded
+                    : calculatorText.netMeteringVaries}
+              />
+              <LeadSummary
+                label={calculation.netMeteringWaived
+                  ? calculatorText.finalEffectiveCost
+                  : calculatorText.finalEffectiveCostBeforeMetering}
+                value={formatCurrency(calculation.finalEffectiveCost)}
+              />
             </div>
             <p className="mt-6 text-sm leading-5 text-emerald-100/80">{e.whatsAppDisclosure}</p>
           </div>
@@ -604,6 +726,63 @@ export function SolarEstimation() {
           </form>
         </section>
       )}
+
+      <section
+        className="mx-auto mt-10 max-w-7xl rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
+        aria-labelledby={`${leadFormId}-gst-title`}
+      >
+        <p className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-700">
+          {solarGstGuide.eyebrow}
+        </p>
+        <h2
+          id={`${leadFormId}-gst-title`}
+          className="mt-2 text-2xl font-black tracking-tight text-slate-950 sm:text-3xl"
+        >
+          {solarGstGuide.title}
+        </h2>
+        <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-600">
+          {solarGstGuide.intro}
+        </p>
+
+        <div className="mt-6 grid gap-4 lg:grid-cols-3">
+          <article className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <h3 className="font-bold text-slate-900">{solarGstGuide.componentsTitle}</h3>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-600">
+              {solarGstGuide.components.map((point) => <li key={point}>{point}</li>)}
+            </ul>
+          </article>
+          <article className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <h3 className="font-bold text-slate-900">{solarGstGuide.billingTitle}</h3>
+            <p className="mt-3 text-sm leading-6 text-slate-600">{solarGstGuide.billing}</p>
+          </article>
+          <article className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <h3 className="font-bold text-slate-900">{solarGstGuide.itcTitle}</h3>
+            <p className="mt-3 text-sm leading-6 text-slate-600">{solarGstGuide.itc}</p>
+          </article>
+        </div>
+
+        <p className="mt-5 rounded-2xl bg-emerald-50 p-4 text-sm leading-6 text-emerald-950">
+          {solarGstGuide.quoteTip}
+        </p>
+        <p className="mt-4 text-xs leading-5 text-slate-500">{solarGstGuide.disclaimer}</p>
+        <div className="mt-5 border-t border-slate-200 pt-4">
+          <h3 className="text-sm font-bold text-slate-800">{solarGstGuide.sourcesTitle}</h3>
+          <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            {solarGstGuide.sources.map((source) => (
+              <li key={source.url}>
+                <a
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sky-700 underline decoration-sky-300 underline-offset-4 hover:text-sky-900"
+                >
+                  {source.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </section>
   )
 }

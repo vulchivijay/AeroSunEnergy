@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { ArrowUpRight, BadgeIndianRupee, Landmark } from 'lucide-react'
 import { useLocale } from '@/lib/LocaleContext'
+import { BankEMICalculator } from '@/app/components/forms/BankEMICalculator'
 import ConsumerApplicationJourney from '@/app/components/sections/ConsumerApplicationJourney'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 
@@ -44,6 +45,8 @@ export default function FinancePage() {
           </div>
         </div>
       </section>
+
+      <BankEMICalculator />
 
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-10">
         <div className="mb-6 grid gap-4 sm:grid-cols-2">
