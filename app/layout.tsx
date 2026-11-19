@@ -106,9 +106,13 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://aerosunenergy.in"),
   icons: {
-    icon: "/images/logo.webp",
-    shortcut: "/images/logo.webp",
-    apple: "/images/logo.webp",
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon", sizes: "256x256" },
+      { url: "/icon-192x192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512x512.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
   },
   manifest: "/site.webmanifest",
   applicationName: "AeroSun Energy",
