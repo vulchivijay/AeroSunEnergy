@@ -156,7 +156,7 @@ export default function SaveEarthPage() {
                 </div>
                 <div>
                   <div className="text-[clamp(7rem,20vw,11rem)] font-black leading-[0.8] tracking-[-0.1em] text-white/10">
-                    {content.heroNumber}
+                    <DigitalNumber value={content.heroNumber} />
                   </div>
                   <p className="-mt-5 max-w-[15rem] text-3xl font-extrabold leading-tight tracking-tight text-white">
                     {content.everyActionMatters}

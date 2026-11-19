@@ -83,7 +83,7 @@ export function CompanyTrustSection() {
                 <Phone className="h-5 w-5 shrink-0 text-indigo-600" aria-hidden="true" />
                 <span>
                   <span className="block text-sm font-bold uppercase tracking-[0.18em] text-slate-500">{content.phoneLabel}</span>
-                  <span className="mt-1 block text-sm text-slate-700">{footer.phone}</span>
+                  <span className="mt-1 block text-sm text-slate-700"><DigitalNumber value={footer.phone} /></span>
                 </span>
               </a>
               <div className="flex items-center gap-3 rounded-2xl border border-white/80 bg-white/75 p-4 shadow-sm">
