@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from '@/lib/motion'
-import { useState, type FormEvent, type ReactNode } from 'react'
+import { useEffect, useState, type FormEvent, type ReactNode } from 'react'
 import FaqCard, { solarFaqs } from '@/app/components/ui/FaqCard'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
@@ -32,11 +32,17 @@ const channelIconComponents: Record<string, ReactNode> = {
 }
 
 export default function Contact() {
-  const { t } = useLocale()
+  const { locale, t } = useLocale()
   const toast = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const channelIconIds = t.componentData.contact.channelIconIds
   const c = t.contact
+  const [selectedSubmit, setSelectedSubmit] = useState<{
+    locale: typeof locale
+    label: string
+  } | null>(null)
+  const submitVariants = c.form.submitVariants
+  const submitLabel = selectedSubmit?.locale === locale ? selectedSubmit.label : c.form.submit
   const footer = t.footer
   const navbar = t.navbar
   const referralProgram = t.home.referralProgram
@@ -58,6 +64,15 @@ export default function Contact() {
   const energyBadgeSuffix = c.energyBadgeSuffix
 
   const contactHighlights = c.highlights
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * submitVariants.length)
+    // Keep the first render deterministic for SSR; select a variant after hydration.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setSelectedSubmit({ locale, label: submitVariants[randomIndex] })
+    // LocaleProvider rebuilds merged arrays on unrelated renders; only locale changes require a new choice.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [locale])
 
   async function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -264,7 +279,7 @@ export default function Contact() {
                 <div className="space-y-3">
                   <FormDataNotice />
                   <button className="inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#087a61] px-6 py-3 text-base font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61] disabled:cursor-wait disabled:opacity-70" type="submit" disabled={isSubmitting}>
-                    {isSubmitting ? t.formSubmission.saving : c.form.submit}
+                    {isSubmitting ? t.formSubmission.saving : submitLabel}
                   </button>
                 </div>
               </form>

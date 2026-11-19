@@ -52,7 +52,7 @@ const sortedBrands = [...brandImages].sort((first, second) => {
   return secondPrice - firstPrice
 })
 
-const featuredBrandNames = new Set(['Adani Solar', 'Freyr Energy', 'Tata Power Solar', 'Waaree Energies'])
+const featuredBrandNames = new Set(['Adani Solar', 'Tata Power Solar', 'Waaree Energies'])
 const featuredBrands = sortedBrands.filter((brand) => featuredBrandNames.has(brand.name))
 
 export default function Brands() {
@@ -95,7 +95,10 @@ export default function Brands() {
           </p>
         </header>
 
-        <ul className="mx-auto grid max-w-5xl list-none grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
+        <ul
+          className="mx-auto grid max-w-5xl list-none justify-items-center gap-5 sm:gap-6 lg:gap-8"
+          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 18rem), 1fr))' }}
+        >
           {featuredBrands.map((brand, index) => {
             const maxPrice = getHighestListedPrice(brand.prices)
             const formattedMaxPrice = maxPrice?.toLocaleString('en-IN', { maximumFractionDigits: 2 })
@@ -105,11 +108,7 @@ export default function Brands() {
             return (
               <li
                 key={brand.file}
-                className={`group relative flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border p-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-4 ${
-                  index === featuredBrands.length - 1
-                    ? 'sm:col-span-2 sm:mx-auto sm:w-1/2 lg:col-span-1 lg:col-start-2 lg:w-full'
-                    : ''
-                }`}
+                className="group relative flex h-full w-full max-w-sm min-w-0 flex-col overflow-hidden rounded-2xl border p-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-4"
                 style={{
                   borderColor: `hsl(${brand.hue} 68% 72%)`,
                   background: `linear-gradient(145deg, hsl(${brand.hue} 82% 95%), #fff 48%, hsl(${brand.hue} 76% 89%))`,
@@ -206,7 +205,7 @@ export default function Brands() {
         </ul>
         <p
           aria-hidden="true"
-          className="mt-22 select-none text-center text-3xl font-black uppercase tracking-[0.2em] text-slate-900/[0.08] sm:text-5xl"
+          className="mt-22 select-none text-center text-3xl font-black uppercase tracking-[0.2em] text-slate-900/[0.14] sm:text-5xl"
         >
           {section.moreBrandsAvailable}
         </p>

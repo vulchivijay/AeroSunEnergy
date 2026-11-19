@@ -4925,6 +4925,7 @@
       "ctaSecondary": "യോഗ്യത അറിയുക",
       "badgeSuffix": "സബ്സിഡി 2027 മാർച്ച് 31-ന് അവസാനിക്കും",
       "cardLabel": "സബ്സിഡി",
+      "subsidyAmount": "₹ 78,000",
       "max": "പരമാവധി",
       "perHome": "ഓരോ വീടിനും",
       "offerLabel": "ഓഫർ കാലയളവ്",
@@ -10065,7 +10066,13 @@
       "usagePlaceholder": "Monthly units or kW target",
       "message": "Message",
       "messagePlaceholder": "Tell us where the site is, what you want to power, and when you want to start.",
-      "submit": "സമർപ്പിക്കുക",
+      "submit": "സൗജന്യ ക്വട്ടേഷൻ നേടൂ",
+      "submitVariants": [
+        "സൗജന്യ ക്വട്ടേഷൻ നേടൂ",
+        "ക്വട്ടേഷൻ അഭ്യർത്ഥിക്കുക",
+        "സൗജന്യ കൺസൾട്ടേഷൻ അഭ്യർത്ഥിക്കുക",
+        "ഞങ്ങളുടെ വിദഗ്ധരുമായി സംസാരിക്കുക"
+      ],
       "submitting": "സമർപ്പിക്കുന്നു…",
       "success": "Your enquiry has been saved."
     },
