@@ -95,7 +95,7 @@ export default function Brands() {
           </p>
         </header>
 
-        <ul className="mx-auto grid max-w-5xl list-none grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+        <ul className="mx-auto grid max-w-5xl list-none grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
           {featuredBrands.map((brand, index) => {
             const maxPrice = getHighestListedPrice(brand.prices)
             const formattedMaxPrice = maxPrice?.toLocaleString('en-IN', { maximumFractionDigits: 2 })
@@ -137,7 +137,7 @@ export default function Brands() {
                   {brandName}
                 </h3>
                 <div className="mt-2">
-                  <p className="text-center text-[10px] font-bold uppercase tracking-wide text-slate-500">
+                  <p className="text-center text-xs font-bold uppercase tracking-wide text-slate-500">
                     {section.materialTypesLabel}
                   </p>
                   <div className="mt-1 flex min-h-7 flex-wrap items-center justify-center gap-1">
@@ -145,7 +145,7 @@ export default function Brands() {
                       brand.materialTypes.map((materialType) => (
                         <span
                           key={materialType}
-                          className="rounded-full border border-slate-300 bg-white/80 px-2 py-1 text-center text-[10px] font-semibold text-slate-700"
+                          className="rounded-full border border-slate-300 bg-white/80 px-2 py-1 text-center text-xs font-semibold text-slate-700"
                         >
                           {section.materialTypes[materialType]}
                         </span>
@@ -159,14 +159,14 @@ export default function Brands() {
                 </div>
                 <div className="mt-2 flex min-h-[2.5rem] flex-col items-center justify-center gap-1">
                   {index === 0 && maxPrice !== null && (
-                    <span className="rounded-full bg-slate-950 px-2.5 py-1 text-center text-xs font-black uppercase leading-3 tracking-[0.12em] text-white shadow-sm">
+                    <span className="rounded-full bg-slate-950 px-2 py-1 text-center text-[10px] leading-3 tracking-[0.12em] text-white shadow-sm">
                       {section.topPriceLabel}
                     </span>
                   )}
                   {brand.prices.map((price) => (
                     <span
                       key={price}
-                      className="w-full max-w-[14rem] rounded-full border px-2 py-1 text-center text-[12px] font-bold leading-4 sm:text-[12px]"
+                      className="w-full max-w-[14rem] rounded-full border px-2 py-1 text-center text-xs font-bold leading-4"
                       style={{
                         backgroundColor: `hsl(${brand.hue} 76% 92%)`,
                         borderColor: `hsl(${brand.hue} 64% 76%)`,
@@ -185,7 +185,7 @@ export default function Brands() {
                       backgroundColor: `hsl(${brand.hue} 78% 94%)`,
                     }}
                   >
-                    <span className="text-[12px] font-black uppercase tracking-[0.12em] text-slate-600">
+                    <span className="text-xs font-black uppercase tracking-[0.12em] text-slate-600">
                       {section.maxListedLabel}
                     </span>
                     <span className="text-lg font-black tabular-nums text-slate-950 sm:text-xl">
@@ -206,11 +206,10 @@ export default function Brands() {
         </ul>
         <p
           aria-hidden="true"
-          className="mt-5 select-none text-center text-3xl font-black uppercase tracking-[0.2em] text-slate-900/[0.08] sm:text-5xl"
+          className="mt-22 select-none text-center text-3xl font-black uppercase tracking-[0.2em] text-slate-900/[0.08] sm:text-5xl"
         >
           {section.moreBrandsAvailable}
         </p>
-        <span className="sr-only">{section.moreBrandsAvailable}</span>
       </div>
     </section>
   )
