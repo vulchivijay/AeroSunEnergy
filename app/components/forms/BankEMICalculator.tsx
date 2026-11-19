@@ -135,18 +135,18 @@ export function BankEMICalculator() {
         </p>
       </header>
 
-      <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-2xl shadow-sm lg:grid-cols-2 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
-        <div className="min-w-0 bg-linear-to-br from-[#eaf3e9] via-[#f2f7ef] to-[#e3efe4] p-5 text-[#173c2b] sm:p-7 lg:p-10">
+        <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-2xl shadow-sm lg:grid-cols-2 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+          <div className="min-w-0 rounded-3xl border border-[#dce8df] bg-linear-to-br from-[#eaf3e9] via-[#f2f7ef] to-[#e3efe4] p-4 text-[#173c2b] shadow-[0_24px_70px_-52px_rgba(15,23,42,0.55)] sm:p-6 xl:p-7">
           <div className="mb-7">
-            <p className="text-md font-bold uppercase tracking-[0.17em] text-[#173c2b]">
+            <p className="text-md font-bold uppercase tracking-[0.17em] text-emerald-800">
               {labels.loanDetails}
             </p>
-            <p className="mt-1 text-sm leading-5 text-slate-600">{labels.loanDetailsSub}</p>
+              <p className="mt-1 text-sm leading-5 text-slate-600">{labels.loanDetailsSub}</p>
           </div>
 
           <div className="space-y-6 sm:space-y-7">
             <div>
-              <p className="text-md font-semibold text-[#173c2b] sm:text-sm">{labels.loanCategory}</p>
+              <p className="text-md font-semibold text-slate-700 sm:text-sm">{labels.loanCategory}</p>
               <div className="mt-3 grid grid-cols-2 gap-2" role="group" aria-label={labels.loanCategory}>
                 <button
                   type="button"
@@ -158,9 +158,9 @@ export function BankEMICalculator() {
                     )
                   }}
                   style={indiaFlagGradientStyle}
-                  className={`rounded-xl px-3 py-3 text-sm font-bold transition hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-700 ${
+                  className={`rounded-xl px-3 py-3 text-sm font-bold transition hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 ${
                     loanBand === 'upToTwoLakhs'
-                      ? 'text-orange-950 shadow-lg'
+                      ? 'text-emerald-950 shadow-lg'
                       : 'text-slate-700 shadow-md'
                   }`}
                 >
@@ -176,9 +176,9 @@ export function BankEMICalculator() {
                     )
                   }}
                   style={indiaFlagGradientStyle}
-                  className={`rounded-xl px-3 py-3 text-sm font-bold transition hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-700 ${
+                  className={`rounded-xl px-3 py-3 text-sm font-bold transition hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 ${
                     loanBand === 'aboveTwoLakhs'
-                      ? 'text-orange-950 shadow-lg'
+                      ? 'text-emerald-950 shadow-lg'
                       : 'text-slate-700 shadow-md'
                   }`}
                 >
@@ -189,9 +189,9 @@ export function BankEMICalculator() {
 
             <div>
               <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
-                <label htmlFor="bank-emi-loan" className="text-md font-semibold text-[#173c2b] sm:text-sm">{labels.loanAmount}</label>
-                <output htmlFor="bank-emi-loan" className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
-                  <DigitalNumber value={formatCurrency(loanAmount)} />
+                <label htmlFor="bank-emi-loan" className="text-md font-semibold text-slate-700 sm:text-sm">{labels.loanAmount}</label>
+                <output htmlFor="bank-emi-loan" style={digitalFontStyle} className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
+                  {formatCurrency(loanAmount)}
                 </output>
               </div>
               <input
@@ -205,20 +205,20 @@ export function BankEMICalculator() {
                   setLoanAmount(clamp(Number(event.target.value), minLoanAmount, maxLoanAmount))
                 }
                 style={indiaFlagGradientStyle}
-                className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full accent-emerald-950"
+                className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full accent-emerald-600"
                 aria-label={labels.loanAmountAriaLabel}
               />
-              <div className="mt-2 flex justify-between text-xs text-slate-700">
-                <span><DigitalNumber value={formatCurrency(minLoanAmount)} /></span>
-                <span><DigitalNumber value={formatCurrency(maxLoanAmount)} /></span>
+              <div className="mt-2 flex justify-between text-xs text-slate-500">
+                <span>{formatCurrency(minLoanAmount)}</span>
+                <span>{formatCurrency(maxLoanAmount)}</span>
               </div>
             </div>
 
             <div>
               <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
-                <label htmlFor="bank-emi-tenure" className="text-md font-semibold text-[#173c2b] sm:text-sm">{labels.loanTenure}</label>
-                <output htmlFor="bank-emi-tenure" className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
-                  <DigitalNumber value={formatTenure(tenureMonths)} />
+                <label htmlFor="bank-emi-tenure" className="text-md font-semibold text-slate-700 sm:text-sm">{labels.loanTenure}</label>
+                <output htmlFor="bank-emi-tenure" style={digitalFontStyle} className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
+                  {formatTenure(tenureMonths)}
                 </output>
               </div>
               <input
@@ -234,12 +234,12 @@ export function BankEMICalculator() {
                   )
                 }
                 style={indiaFlagGradientStyle}
-                className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full accent-emerald-950"
+                className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full accent-emerald-600"
                 aria-label={labels.loanTenureAriaLabel}
               />
-              <div className="mt-2 flex justify-between text-xs text-slate-700">
-                <span><DigitalNumber value={formatTenure(MIN_TENURE_MONTHS)} /></span>
-                <span><DigitalNumber value={formatTenure(MAX_TENURE_MONTHS)} /></span>
+              <div className="mt-2 flex justify-between text-xs text-slate-500">
+                <span>{formatTenure(MIN_TENURE_MONTHS)}</span>
+                <span>{formatTenure(MAX_TENURE_MONTHS)}</span>
               </div>
             </div>
 
@@ -247,7 +247,7 @@ export function BankEMICalculator() {
               {loanBand === 'upToTwoLakhs' ? (
                 <>
                   <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
-                    <label htmlFor="bank-emi-repo-rate" className="text-md font-semibold text-[#173c2b] sm:text-sm">
+                    <label htmlFor="bank-emi-repo-rate" className="text-md font-semibold text-slate-700 sm:text-sm">
                       {labels.repoRate}
                     </label>
                     <output htmlFor="bank-emi-repo-rate" className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
@@ -265,17 +265,17 @@ export function BankEMICalculator() {
                       setRepoRate(clamp(Number(event.target.value), MIN_REPO_RATE, MAX_REPO_RATE))
                     }
                     style={indiaFlagGradientStyle}
-                    className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full accent-emerald-950"
+                    className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full accent-emerald-600"
                     aria-label={labels.repoRateAriaLabel}
                   />
-                  <p className="mt-2 text-xs leading-5 text-slate-700">{labels.repoRateNote}</p>
-                  <p className="mt-2 text-sm font-bold text-[#173c2b]">
-                    {labels.calculatedInterestRate}: <DigitalNumber value={(repoRate + 0.5).toFixed(2)} />% {labels.perAnnum}
+                  <p className="mt-2 text-xs leading-5 text-slate-600">{labels.repoRateNote}</p>
+                  <p className="mt-2 text-sm font-bold text-emerald-800">
+                    {labels.calculatedInterestRate}: {(repoRate + 0.5).toFixed(2)}% {labels.perAnnum}
                   </p>
                 </>
               ) : (
                 <>
-                  <p className="text-md font-semibold text-[#173c2b] sm:text-sm">{labels.customerType}</p>
+                  <p className="text-md font-semibold text-slate-700 sm:text-sm">{labels.customerType}</p>
                   <div className="mt-3 grid grid-cols-2 gap-2" role="group" aria-label={labels.customerType}>
                     <button
                       type="button"
@@ -302,7 +302,7 @@ export function BankEMICalculator() {
                       {labels.nonHomeLoanCustomer}
                     </button>
                   </div>
-                  <label htmlFor="bank-emi-home-loan-rate" className="mt-4 block text-sm font-semibold text-[#173c2b]">
+                  <label htmlFor="bank-emi-home-loan-rate" className="mt-4 block text-sm font-semibold text-slate-700">
                     {labels.homeLoanRate}
                   </label>
                   <div className="mt-2 flex items-center rounded-xl border border-orange-200 bg-white px-3 py-2.5 focus-within:ring-2 focus-within:ring-orange-400">
@@ -327,13 +327,13 @@ export function BankEMICalculator() {
                     />
                     <span className="text-sm font-bold text-slate-600">%</span>
                   </div>
-                  <p className="mt-2 text-xs leading-5 text-slate-700">{labels.homeLoanRateNote}</p>
+                  <p className="mt-2 text-xs leading-5 text-slate-600">{labels.homeLoanRateNote}</p>
                   {calculation ? (
-                    <p className="mt-2 text-sm font-bold text-[#173c2b]">
-                      {labels.calculatedInterestRate}: <DigitalNumber value={calculation.interestRate.toFixed(2)} />% {labels.perAnnum}
+                    <p className="mt-2 text-sm font-bold text-emerald-800">
+                      {labels.calculatedInterestRate}: {calculation.interestRate.toFixed(2)}% {labels.perAnnum}
                     </p>
                   ) : (
-                    <p className="mt-2 text-xs font-semibold text-[#173c2b]" role="status">
+                    <p className="mt-2 text-xs font-semibold text-amber-800" role="status">
                       {labels.enterHomeLoanRate}
                     </p>
                   )}
@@ -342,8 +342,8 @@ export function BankEMICalculator() {
             </div>
           </div>
 
-          <div className="mt-6 rounded-2xl border border-[#cfe0d1] bg-white/85 p-4 sm:mt-7">
-            <p className="text-sm font-bold text-[#071b2f]">{labels.guidelineSummary}</p>
+          <div className="mt-6 rounded-2xl border border-emerald-100 bg-emerald-50/70 p-4 sm:mt-7">
+            <p className="text-sm font-bold text-emerald-950">{labels.guidelineSummary}</p>
             <dl className="mt-3 space-y-2 text-sm">
               <div className="flex justify-between gap-3">
                 <dt className="text-slate-600">{labels.borrowerMargin}</dt>
@@ -367,7 +367,7 @@ export function BankEMICalculator() {
               <ArrowUpRight size={14} aria-hidden="true" />
             </Link>
           </div>
-          <p className="mt-4 text-xs leading-5 text-slate-700">{labels.estimateOnly}</p>
+          <p className="mt-4 text-xs leading-5 text-slate-600">{labels.estimateOnly}</p>
         </div>
 
         <aside className="relative flex min-w-0 flex-col overflow-hidden bg-linear-to-br from-[#fffaf3] via-[#fff7ed] to-[#ffedd5] p-5 text-slate-900 sm:p-7 lg:p-9">
