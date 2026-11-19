@@ -11,6 +11,7 @@ import { ArrowRight, ArrowUpRight, Globe, Mail, MapPin, Phone, Send, Sun, Wind, 
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useToast } from '@/app/components/ui/ToastProvider'
+import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 
 const socialIconComponents: Record<string, ReactNode> = {
 	twitter: (
@@ -238,7 +239,7 @@ export default function Footer() {
 							</li>
 							<li className="flex items-center gap-3">
 								<Phone className="h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />
-								<a href={`tel:${footer.phoneHref}`} className="transition-colors hover:text-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 focus-visible:text-amber-100">{footer.phone}</a>
+								<a href={`tel:${footer.phoneHref}`} className="transition-colors hover:text-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 focus-visible:text-amber-100"><DigitalNumber value={footer.phone} /></a>
 							</li>
 							<li className="flex items-center gap-3">
 								<Globe className="h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />
@@ -312,7 +313,7 @@ export default function Footer() {
 						))}
 					</div>
 					<p className="text-[13px] text-white/70">
-            {footer.attribution} {footer.copyright.replace('{year}', String(currentYear))}
+            {footer.attribution} <DigitalNumber value={footer.copyright.replace('{year}', String(currentYear))} />
 					</p>
 				</div>
 				<div className="border-t border-white/15 px-5 py-4 sm:px-8 lg:px-10">

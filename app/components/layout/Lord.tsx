@@ -164,7 +164,7 @@ export default function Lord() {
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+    <div className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto px-4 py-4 sm:py-6">
       <div className="absolute inset-0 bg-black/55 backdrop-blur-[2px]" aria-hidden="true" />
 
       <div
