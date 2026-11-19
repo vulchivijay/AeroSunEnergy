@@ -4925,6 +4925,7 @@
       "ctaSecondary": "ಅರ್ಹತೆ ತಿಳಿಯಿರಿ",
       "badgeSuffix": "ಸಬ್ಸಿಡಿ 31st March 2027ರಂದು ಮುಗಿಯುತ್ತದೆ",
       "cardLabel": "ಸಬ್ಸಿಡಿ",
+      "subsidyAmount": "₹ 78,000",
       "max": "ಗರಿಷ್ಠ",
       "perHome": "ಪ್ರತಿ ಮನೆಗೆ",
       "offerLabel": "ಆಫರ್ ಅವಧಿ",
@@ -10065,7 +10066,13 @@
       "usagePlaceholder": "Monthly units or kW target",
       "message": "Message",
       "messagePlaceholder": "Tell us where the site is, what you want to power, and when you want to start.",
-      "submit": "ಸಲ್ಲಿಸಿ",
+      "submit": "ಉಚಿತ ದರಪಟ್ಟಿ ಪಡೆಯಿರಿ",
+      "submitVariants": [
+        "ಉಚಿತ ದರಪಟ್ಟಿ ಪಡೆಯಿರಿ",
+        "ದರಪಟ್ಟಿಯನ್ನು ವಿನಂತಿಸಿ",
+        "ಉಚಿತ ಸಮಾಲೋಚನೆಯನ್ನು ವಿನಂತಿಸಿ",
+        "ನಮ್ಮ ತಜ್ಞರೊಂದಿಗೆ ಮಾತನಾಡಿ"
+      ],
       "submitting": "ಸಲ್ಲಿಸಲಾಗುತ್ತಿದೆ…",
       "success": "Your enquiry has been saved."
     },

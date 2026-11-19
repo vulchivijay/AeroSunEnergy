@@ -79,7 +79,9 @@ export default function SchemeBanner() {
           <div className="relative isolate overflow-hidden rounded-2xl border border-emerald-300/70 bg-gradient-to-br from-[#064e3b] to-[#047857] p-5 text-white shadow-sm shadow-emerald-950/15">
             <div aria-hidden="true" className="pointer-events-none absolute -right-10 -top-12 -z-10 h-36 w-36 rounded-full bg-lime-300/15 blur-2xl" />
             <div className="text-sm font-bold uppercase tracking-[0.18em] text-emerald-100">{banner.cardLabel}</div>
-            <div className="mt-3 text-3xl font-black tracking-tight text-lime-200 sm:text-4xl">₹ 78,000</div>
+            <div className="mt-3 text-3xl font-black tracking-tight text-lime-200 sm:text-4xl">
+              <DigitalNumber value={banner.subsidyAmount} />
+            </div>
             <div className="mt-2 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-emerald-50">
               {banner.max} {banner.perHome}
             </div>
@@ -98,7 +100,7 @@ export default function SchemeBanner() {
             <div aria-hidden="true" className="pointer-events-none absolute -bottom-16 -right-10 -z-10 h-40 w-40 rounded-full bg-cyan-300/15 blur-2xl" />
             <div className="text-sm font-bold uppercase tracking-[0.16em] text-cyan-100">{banner.badgeSuffix}</div>
             <div className="mt-4 flex justify-center">
-              <div className="w-full max-w-40 rounded-2xl border border-white/20 bg-white/10 px-4 py-4 text-center shadow-inner shadow-white/5">
+              <div className="w-full max-w-40 rounded-2xl border border-white/20 px-4 py-4 text-center shadow-inner shadow-white/5">
                 <span
                   className="block text-4xl font-bold leading-none tabular-nums text-cyan-200"
                   style={digitalFontStyle}

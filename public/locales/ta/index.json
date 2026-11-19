@@ -4925,6 +4925,7 @@
       "ctaSecondary": "தகுதியை அறியுங்கள்",
       "badgeSuffix": "மானியம் 31 மார்ச் 2027 அன்று முடிவடைகிறது",
       "cardLabel": "மானியம்",
+      "subsidyAmount": "₹ 78,000",
       "max": "அதிகபட்சம்",
       "perHome": "ஒவ்வொரு வீட்டிற்கும்",
       "offerLabel": "சலுகைக் காலம்",
@@ -10065,7 +10066,13 @@
       "usagePlaceholder": "Monthly units or kW target",
       "message": "Message",
       "messagePlaceholder": "Tell us where the site is, what you want to power, and when you want to start.",
-      "submit": "சமர்ப்பிக்கவும்",
+      "submit": "இலவச விலைப்புள்ளி பெறுங்கள்",
+      "submitVariants": [
+        "இலவச விலைப்புள்ளி பெறுங்கள்",
+        "விலைப்புள்ளி கோருங்கள்",
+        "இலவச ஆலோசனையை கோருங்கள்",
+        "எங்கள் நிபுணர்களுடன் பேசுங்கள்"
+      ],
       "submitting": "சமர்ப்பிக்கப்படுகிறது…",
       "success": "Your enquiry has been saved."
     },

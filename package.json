@@ -13,8 +13,9 @@
   },
   "scripts": {
     "dev": "next dev --webpack",
-    "prebuild": "node scripts/report-google-integrations.mjs",
+    "prebuild": "npm run clean:cache && node scripts/report-google-integrations.mjs",
     "build": "next build",
+    "clean:cache": "node -e \"require('node:fs').rmSync('.next', { recursive: true, force: true }); require('node:fs').rmSync('tsconfig.tsbuildinfo', { force: true })\"",
     "db:migrate": "node scripts/migrate-database.mjs",
     "google:index-check": "node scripts/submit-indexnow.js",
     "postbuild": "node scripts/submit-indexnow.js --non-blocking",

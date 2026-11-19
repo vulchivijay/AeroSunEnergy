@@ -40,9 +40,16 @@ const formatCurrency = (value: number) => {
 }
 
 const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max)
+const getRangePoints = (min: number, max: number, step: number) =>
+  Array.from({ length: 7 }, (_, index) => {
+    const value = min + ((max - min) * index) / 6
+    return Number((min + Math.round((value - min) / step) * step).toFixed(6))
+  })
 const indiaFlagGradientStyle = {
   background: 'linear-gradient(135deg, #ff9933 0%, #ffffff 50%, #138808 100%)',
 }
+const rangeInputClassName =
+  'mt-4 h-2 w-full cursor-pointer accent-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600/40 focus-visible:ring-offset-2'
 
 export function BankEMICalculator() {
   const { t } = useLocale()
@@ -200,14 +207,19 @@ export function BankEMICalculator() {
                 min={minLoanAmount}
                 max={maxLoanAmount}
                 step={1000}
+                list="bank-emi-loan-points"
                 value={loanAmount}
                 onChange={(event) =>
                   setLoanAmount(clamp(Number(event.target.value), minLoanAmount, maxLoanAmount))
                 }
-                style={indiaFlagGradientStyle}
-                className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full accent-emerald-600"
+                className={rangeInputClassName}
                 aria-label={labels.loanAmountAriaLabel}
               />
+              <datalist id="bank-emi-loan-points">
+                {getRangePoints(minLoanAmount, maxLoanAmount, 1000).map((point) => (
+                  <option key={point} value={point} />
+                ))}
+              </datalist>
               <div className="mt-2 flex justify-between text-xs text-slate-500">
                 <span>{formatCurrency(minLoanAmount)}</span>
                 <span>{formatCurrency(maxLoanAmount)}</span>
@@ -227,16 +239,21 @@ export function BankEMICalculator() {
                 min={MIN_TENURE_MONTHS}
                 max={MAX_TENURE_MONTHS}
                 step={1}
+                list="bank-emi-tenure-points"
                 value={tenureMonths}
                 onChange={(event) =>
                   setTenureMonths(
                     clamp(Number(event.target.value), MIN_TENURE_MONTHS, MAX_TENURE_MONTHS),
                   )
                 }
-                style={indiaFlagGradientStyle}
-                className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full accent-emerald-600"
+                className={rangeInputClassName}
                 aria-label={labels.loanTenureAriaLabel}
               />
+              <datalist id="bank-emi-tenure-points">
+                {getRangePoints(MIN_TENURE_MONTHS, MAX_TENURE_MONTHS, 1).map((point) => (
+                  <option key={point} value={point} />
+                ))}
+              </datalist>
               <div className="mt-2 flex justify-between text-xs text-slate-500">
                 <span>{formatTenure(MIN_TENURE_MONTHS)}</span>
                 <span>{formatTenure(MAX_TENURE_MONTHS)}</span>
@@ -260,14 +277,19 @@ export function BankEMICalculator() {
                     min={MIN_REPO_RATE}
                     max={MAX_REPO_RATE}
                     step={0.01}
+                    list="bank-emi-repo-rate-points"
                     value={repoRate}
                     onChange={(event) =>
                       setRepoRate(clamp(Number(event.target.value), MIN_REPO_RATE, MAX_REPO_RATE))
                     }
-                    style={indiaFlagGradientStyle}
-                    className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full accent-emerald-600"
+                    className={rangeInputClassName}
                     aria-label={labels.repoRateAriaLabel}
                   />
+                  <datalist id="bank-emi-repo-rate-points">
+                    {getRangePoints(MIN_REPO_RATE, MAX_REPO_RATE, 0.01).map((point) => (
+                      <option key={point} value={point} />
+                    ))}
+                  </datalist>
                   <p className="mt-2 text-xs leading-5 text-slate-600">{labels.repoRateNote}</p>
                   <p className="mt-2 text-sm font-bold text-emerald-800">
                     {labels.calculatedInterestRate}: {(repoRate + 0.5).toFixed(2)}% {labels.perAnnum}

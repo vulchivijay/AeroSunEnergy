@@ -4925,6 +4925,7 @@
       "ctaSecondary": "Know Eligibility",
       "badgeSuffix": "Subsidy ends 31st March 2027",
       "cardLabel": "Subsidy",
+      "subsidyAmount": "₹ 78,000",
       "max": "Max",
       "perHome": "per home",
       "offerLabel": "Offer Window",
@@ -10155,7 +10156,13 @@
       "solarNeedOptions": ["Residential", "Commercial", "Industrial", "Agricultural", "Other"],
       "electricityBillOptions": ["Below ₹1,500", "₹1,500 – ₹3,000", "₹3,000 – ₹5,000", "₹5,000 – ₹10,000", "Above ₹10,000"],
       "financingOptions": ["Yes", "No", "Not sure"],
-      "submit": "Submit",
+      "submit": "Get a Free Quote",
+      "submitVariants": [
+        "Get a Free Quote",
+        "Request a Quote",
+        "Request Free Consultation",
+        "Talk to Our Experts"
+      ],
       "submitting": "Submitting…",
       "success": "Your enquiry has been saved."
     },
