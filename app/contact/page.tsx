@@ -6,6 +6,7 @@ import { useEffect, useState, type FormEvent, type ReactNode } from 'react'
 import FaqCard, { solarFaqs } from '@/app/components/ui/FaqCard'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
+import { SolarEstimation } from '@/app/components/forms/SolarEstimation'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useToast } from '@/app/components/ui/ToastProvider'
@@ -114,20 +115,19 @@ export default function Contact() {
     {
       label: c.channels[3].label,
       value: c.channels[3].value,
-      href: '/solar-calculator',
+      href: '/finance',
       icon: channelIconComponents[channelIconIds[2]],
     },
   ]
 
   return (
-    <main className="overflow-hidden bg-white text-slate-950">
-      <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 pb-12 pt-6 sm:px-6 sm:pb-16 sm:pt-8 lg:px-10">
-        <div className="mx-auto max-w-7xl">
+    <main className="overflow-hidden">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6]overflow-hidden text-slate-950">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-5 flex items-center justify-between border-b border-slate-200 pb-4">
             <p className="text-sm font-black uppercase tracking-[0.2em] text-[#137c63]">AeroSun Energy <span className="mx-2 text-amber-600">/</span> {contactUs}</p>
             <span className="hidden text-sm font-semibold uppercase tracking-[0.18em] text-slate-500 sm:block">{location}</span>
           </div>
-
           <div className="grid min-h-[34rem] overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(135deg,#dbeafe_0%,#e0f2fe_55%,#ecfdf5_100%)] lg:grid-cols-[1fr_0.92fr]">
             <motion.div
               initial={{ opacity: 0, x: -18 }}
@@ -162,7 +162,6 @@ export default function Contact() {
                 <span className="text-right text-sm font-black text-slate-900">{c.projectBrief}</span>
               </div>
             </motion.div>
-
             <motion.div
               initial={{ opacity: 0, scale: 1.03 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -185,15 +184,14 @@ export default function Contact() {
               </div>
             </motion.div>
           </div>
-
-          <section className="mt-5 overflow-hidden rounded-2xl bg-[linear-gradient(120deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] text-white">
+          <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(120deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] text-white">
             <div className="grid lg:grid-cols-[0.75fr_1.25fr]">
               <div className="flex flex-col justify-center border-b border-white/10 p-6 sm:p-9 lg:border-b-0 lg:border-r">
-                <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-200">{contactUs}</p>
-                <h2 className="mt-4 text-3xl font-black leading-tight tracking-tighter sm:text-4xl">{contactCardTitle}</h2>
-                <p className="mt-4 text-sm leading-7 text-sky-100/85">{connectionPrompt}</p>
+                  <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-200">{contactUs}</p>
+                  <h2 className="mt-4 text-3xl font-black leading-tight tracking-tighter sm:text-4xl">{contactCardTitle}</h2>
+                  <p className="mt-4 text-sm leading-7 text-sky-100/85">{connectionPrompt}</p>
               </div>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-2">
                 {channels.map((channel, index) => (
                   <a
                     key={channel.label}
@@ -214,21 +212,24 @@ export default function Contact() {
                 ))}
               </div>
             </div>
-          </section>
-
-          <div className="mt-5 grid gap-3 sm:grid-cols-3">
-            {contactHighlights.map((item, index) => (
-              <article key={item.label} className="flex gap-4 border-t-2 border-[#137c63]/25 bg-white p-5">
-                <span className="font-mono text-sm font-bold text-[#137c63]">0{index + 1}</span>
-                <div>
-                  <p className="text-sm font-bold uppercase tracking-[0.16em] text-slate-600">{item.label}</p>
-                  <p className="mt-2 text-sm leading-7 text-slate-800">{item.value}</p>
-                </div>
-              </article>
-            ))}
           </div>
-
-          <section className="mt-12 overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(125deg,#e0f2fe_0%,#ede9fe_52%,#fce7f3_100%)] shadow-sm sm:mt-16" aria-labelledby="contact-form-title">
+          <div className="mt-5">
+            <div className="grid gap-3 sm:grid-cols-3">
+              {contactHighlights.map((item, index) => (
+                <article key={item.label} className="flex gap-4 border-t-2 border-[#137c63]/25 bg-white p-5">
+                  <span className="font-mono text-sm font-bold text-[#137c63]">0{index + 1}</span>
+                  <div>
+                    <p className="text-sm font-bold uppercase tracking-[0.16em] text-slate-600">{item.label}</p>
+                    <p className="mt-2 text-sm leading-7 text-slate-800">{item.value}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+        <SolarEstimation />
+        <div className="px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16" aria-labelledby="contact-form-title">
+          <div className="overflow-hidden mx-auto max-w-7xl rounded-2xl border border-slate-200">
             <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
               <div className="bg-[linear-gradient(145deg,#bfdbfe_0%,#ddd6fe_52%,#fbcfe8_100%)] p-6 text-slate-900 sm:p-9">
                 <p className="text-xs font-black uppercase tracking-[0.2em] text-indigo-900">{contactUs}</p>
@@ -284,9 +285,11 @@ export default function Contact() {
                 </div>
               </form>
             </div>
-          </section>
+          </div>
+        </div>
 
-          <section className="mt-12 sm:mt-16">
+        <div className="overflow-hidden bg-[linear-gradient(135deg,#dbeafe_0%,#e0f2fe_55%,#ecfdf5_100%)] text-white px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="mx-auto max-w-7xl rounded-2xl border border-slate-200 ">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
               <div>
                 <p className="text-sm font-black uppercase tracking-[0.2em] text-[#137c63]">{stepIntroLabel}</p>
@@ -308,10 +311,11 @@ export default function Contact() {
                 </article>
               ))}
             </div>
-          </section>
+          </div>
         </div>
       </section>
-      <section className="bg-gradient-to-br from-[#f1f2f6] to-white border-y border-slate-200 bg-slate-50 px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16" aria-labelledby="contact-referral-title">
+      
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white border-y border-slate-200 bg-slate-50 px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16" aria-labelledby="contact-referral-title">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <div className="max-w-3xl">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#137c63]">{referralProgram.eyebrow}</p>
@@ -329,32 +333,32 @@ export default function Contact() {
           </Link>
         </div>
       </section>
+
       <section
         className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
         aria-labelledby="contact-faq-title"
       >
         <div className="pointer-events-none absolute -left-20 top-8 h-64 w-64 rounded-full bg-sky-300/30 blur-3xl" aria-hidden="true" />
         <div className="pointer-events-none absolute -bottom-20 right-0 h-72 w-72 rounded-full bg-fuchsia-300/25 blur-3xl" aria-hidden="true" />
-        <div className="relative mx-auto max-w-7xl">
-          <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-12">
-            <header className="flex flex-col justify-center py-2 sm:py-5">
-              <p className="inline-flex w-fit items-center gap-2 rounded-full border border-indigo-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-indigo-900">
-                <span className="h-2 w-2 rounded-full bg-fuchsia-500" aria-hidden="true" />
-                {faqHeader}
-              </p>
-              <h2 id="contact-faq-title" className="mt-5 text-4xl font-black leading-tight tracking-tighter text-slate-950 sm:text-5xl">
-                {faqTitle}
-              </h2>
-              <p className="mt-5 max-w-md text-sm leading-7 text-slate-700 sm:text-base">
-                {faqIntro}
-              </p>
-            </header>
 
-            <div className="space-y-3 rounded-2xl border border-white/80 bg-white/75 p-3 shadow-sm backdrop-blur-sm sm:p-5">
-              {solarFaqs.map((faq) => (
-                <FaqCard key={faq.question} question={faq.question} answer={faq.answer} />
-              ))}
-            </div>
+        <div className="relative mx-auto max-w-7xl">
+          <header className="py-2 sm:py-5">
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-indigo-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-indigo-900">
+              <span className="h-2 w-2 rounded-full bg-fuchsia-500" aria-hidden="true" />
+              {faqHeader}
+            </p>
+            <h2 id="contact-faq-title" className="mt-5 text-4xl font-black leading-tight tracking-tighter text-slate-950 sm:text-5xl">
+              {faqTitle}
+            </h2>
+            <p className="mt-5 max-w-md text-sm leading-7 text-slate-700 sm:text-base">
+              {faqIntro}
+            </p>
+          </header>
+
+          <div className="space-y-3 py-3 sm:py-5">
+            {solarFaqs.map((faq) => (
+              <FaqCard key={faq.question} question={faq.question} answer={faq.answer} />
+            ))}
           </div>
         </div>
       </section>

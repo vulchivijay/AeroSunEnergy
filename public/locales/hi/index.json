@@ -3312,8 +3312,8 @@
         "value": "कैलकुलेटर खोलें"
       },
       {
-        "label": "अनुमान",
-        "value": "कैलकुलेटर खोलें"
+        "label": "वित्तपोषण",
+        "value": "वित्त पृष्ठ खोलें"
       }
     ],
     "contactUs": "हमसे संपर्क करें",
@@ -3366,13 +3366,60 @@
       "pricingBreakdown": "मूल्य विवरण",
       "priceBeforeSubsidy": "कीमत (सब्सिडी और GST से पहले)",
       "governmentSubsidy": "सरकारी सब्सिडी (PM Surya Ghar)",
-      "effectiveCost": "प्रभावी लागत",
-      "taxesExtra": "*कर और नेट मीटरिंग शुल्क अतिरिक्त",
+      "effectiveCost": "सब्सिडी के बाद (GST/मीटर शुल्क से पहले)",
+      "taxesExtra": "*नीचे दिए अनुमान में सांकेतिक GST शामिल है; मीटर शुल्क अलग हो सकते हैं।",
+      "finalEffectiveCost": "सब्सिडी के बाद अनुमानित अंतिम लागत",
+      "finalEffectiveCostBeforeMetering": "नेट मीटरिंग शुल्क से पहले अनुमानित लागत",
+      "gstEstimate": "अनुमानित GST (8.9% EPC)",
+      "netMeteringFee": "नेट मीटरिंग शुल्क",
+      "netMeteringVaries": "अलग-अलग हो सकता है",
+      "netMeteringNotIncluded": "शामिल नहीं",
+      "netMeteringEligibilityCheck": "मानें कि मैं APERC छूट के लिए पात्र हूँ (घरेलू PM Surya Ghar, 10 kW तक अनुबंधित लोड)।",
+      "netMeteringPotentialWaiverNote": "पात्र होने पर छूट मिल सकती है; अपने DISCOM से PM Surya Ghar स्थिति और अनुबंधित लोड की पुष्टि करें।",
+      "netMeteringWaiverNote": "यह अनुमान मानता है कि 10 kW तक अनुबंधित लोड वाला पात्र घरेलू PM Surya Ghar सिस्टम इस छूट के योग्य है। अपने DISCOM से पात्रता और शुल्क की पुष्टि करें।",
+      "netMeteringVariesNote": "यहाँ नेट मीटरिंग शुल्क शामिल नहीं है; अपने DISCOM से शुल्क की पुष्टि करें।",
+      "epcGstAssumption": "GST अनुमान में EPC विभाजन माना गया है: अनुबंध मूल्य का 70% पर 5% और 30% पर 18% (कुल मिलाकर 8.9%)। वास्तविक कर व्यवहार अलग हो सकता है।",
+      "apercOrderLabel": "APERC आदेश देखें",
       "quoteCta": "निःशुल्क कोटेशन पाएं",
       "monthSuffix": "/माह",
       "residentialSubsidyNote": "पात्र आवासीय सिस्टम को PM Surya Ghar के तहत ₹78,000 तक की सहायता मिल सकती है। अंतिम राशि पात्रता और मौजूदा योजना नियमों पर निर्भर करती है।",
       "commercialSubsidyNote": "व्यावसायिक अनुमान में PM Surya Ghar की आवासीय सब्सिडी शामिल नहीं है।",
       "assumptions": "संकेतात्मक कीमत ₹70,000/kW और छत की जगह 60 वर्ग फ़ुट/kW मानकर चलती है। उत्पादन का अनुमान 120 यूनिट/kW/माह और बचत ₹8.5 प्रति यूनिट के आधार पर है। वास्तविक कीमत और उत्पादन सिस्टम तथा साइट के अनुसार बदलते हैं।"
+    },
+    "solarGstGuide": {
+      "eyebrow": "सौर लागत मार्गदर्शिका",
+      "title": "भारत में सोलर सिस्टम पर GST",
+      "intro": "GST दरें HSN वर्गीकरण और सौर उपकरणों व सेवाओं की आपूर्ति के तरीके पर निर्भर करती हैं। कोटेशन देखते समय इन बिंदुओं को मार्गदर्शक के रूप में उपयोग करें।",
+      "componentsTitle": "सौर घटकों पर GST दरें",
+      "components": [
+        "22 सितंबर 2025 से सोलर PV मॉड्यूल और निर्दिष्ट नवीकरणीय ऊर्जा उपकरणों पर 5% GST लागू है।",
+        "अन्य घटकों पर उनकी HSN श्रेणी और उन्हें अलग से या सिस्टम के हिस्से के रूप में आपूर्ति किए जाने के आधार पर अलग दरें लागू हो सकती हैं।"
+      ],
+      "billingTitle": "घर के रूफटॉप सोलर बिलिंग की प्रक्रिया",
+      "billing": "Engineering, Procurement and Construction (EPC) अनुबंध के तहत पूरी आवासीय रूफटॉप स्थापना को composite supply माना जा सकता है। पूरे अनुबंध पर कर का व्यवहार केवल PV मॉड्यूल की दर से अलग हो सकता है। इंस्टॉलर से वस्तुओं और सेवाओं के लिए GST आधार सहित मदवार कोटेशन मांगें।",
+      "itcTitle": "इनपुट टैक्स क्रेडिट (ITC)",
+      "itc": "व्यक्तिगत घर मालिक आमतौर पर निजी आवासीय स्थापना के लिए ITC का दावा नहीं कर सकते। पात्र GST-पंजीकृत व्यवसाय लागू GST नियमों और शर्तों के अधीन ITC का दावा कर सकते हैं।",
+      "quoteTip": "अधिक उपयुक्त अनुमान के लिए अपनी नियोजित सिस्टम क्षमता (जैसे 3 kW या 5 kW) और यह बताएं कि उपकरण व स्थापना EPC पैकेज के रूप में साथ खरीद रहे हैं या अलग-अलग।",
+      "disclaimer": "GST का व्यवहार मौजूदा अधिसूचनाओं, HSN वर्गीकरण और अनुबंध की शर्तों पर निर्भर हो सकता है। लागू दर की पुष्टि अपने इंस्टॉलर या कर विशेषज्ञ से करें।",
+      "sourcesTitle": "और जानकारी",
+      "sources": [
+        {
+          "label": "Shriram Finance — GST on Solar Panels",
+          "url": "https://www.shriramfinance.in/gst/gst-on-solar-panels"
+        },
+        {
+          "label": "BUSY — GST Rates for Solar Panels",
+          "url": "https://busy.in/gst-rates/solar-panel/"
+        },
+        {
+          "label": "Tally Solutions — Solar HSN Codes and GST Rates",
+          "url": "https://tallysolutions.com/gst/solar-hsn-code-gst-rate/"
+        },
+        {
+          "label": "TwoTax — GST 2.0 and Solar Power",
+          "url": "https://www.twotax.in/blog-details/-gst-2-0-solar-power-in-india-how-the-5-tax-rate-makes-solar-systems-affordable-"
+        }
+      ]
     },
     "roofRequired": "छत की आवश्यकता है",
     "returnsTitle": "आपका अनुमानित रिटर्न",
