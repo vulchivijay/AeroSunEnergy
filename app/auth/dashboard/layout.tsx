@@ -42,12 +42,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
 
   return (
     <div className="min-h-screen">
-<<<<<<< HEAD
       <DashboardHeader user={user}>{children}</DashboardHeader>
-=======
-      <DashboardHeader user={user} />
-      {children}
->>>>>>> origin/main
     </div>
   )
 }

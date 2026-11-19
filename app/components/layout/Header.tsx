@@ -356,20 +356,12 @@ export default function Navbar() {
       <div className="absolute -right-12 top-0 h-32 w-32 rounded-full bg-amber-200/20 blur-3xl" />
 
       <div className="relative border-b border-white/15 bg-white/5 text-white/90 backdrop-blur-xl">
-<<<<<<< HEAD
-        <div className="mx-auto flex flex-col min-h-8 w-full lg:items-center lg:justify-between lg:gap-3 px-3 py-1 text-xs tracking-[0.08em] sm:px-6 sm:text-sm sm:tracking-[0.12em] lg:flex-row lg:px-8">
-=======
-        <div className="mx-auto flex min-h-8 w-full items-center justify-between gap-3 px-3 py-1 text-xs tracking-[0.08em] sm:px-6 sm:text-sm sm:tracking-[0.12em] lg:px-8">
->>>>>>> origin/main
+        <div className="mx-auto flex min-h-8 w-full flex-col items-start gap-1 px-3 py-1 text-xs tracking-[0.08em] sm:px-6 sm:text-sm sm:tracking-[0.12em] lg:flex-row lg:items-center lg:justify-between lg:gap-3 lg:px-8">
           <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
             <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6b45e] shadow-sm" aria-hidden="true" />
             {t.navbar.companyRegistration}
           </span>
-<<<<<<< HEAD
-          <span className="lg:ml-3 flex whitespace-nowrap uppercase text-white/80 items-center gap-2">
-=======
-          <span className="ml-3 flex whitespace-nowrap uppercase text-white/80 items-center gap-2">
->>>>>>> origin/main
+          <span className="flex items-center gap-2 whitespace-nowrap uppercase text-white/80 lg:ml-3">
             <Phone className="h-3 w-3 text-amber-500" strokeWidth={1.8} aria-hidden="true" />
             <DigitalNumber value={t.navbar.companyMobile} />
           </span>
