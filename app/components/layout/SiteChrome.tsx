@@ -1,12 +1,12 @@
 'use client'
 
 import type { ReactNode } from 'react'
-import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import Script from 'next/script'
 import { usePathname } from 'next/navigation'
 
 import Link from 'next/link'
-import { Fragment, useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore, type FormEvent } from 'react'
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react'
 import Logo from '@/app/components/brand/Logo'
 import { isLocale, LocaleProvider, useLocale, type Locale } from '@/lib/LocaleContext'
 import { isProductionComingSoonLink } from '@/lib/navigation'
@@ -17,6 +17,22 @@ import { ToastContext, useToast, type ToastApi, type ToastKind } from '@/app/com
 import { trackGoogleAdsPageViewConversion } from '@/lib/googleAdsConversion'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import en from '@/public/locales/en/index.json'
+
+const DeferredOverlays = dynamic(() => import('./DeferredOverlays'), {
+  ssr: false,
+  loading: () => null,
+})
+
+function DeferredOverlayLoader() {
+  const [isReady, setIsReady] = useState(false)
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setIsReady(true), 1000)
+    return () => window.clearTimeout(timer)
+  }, [])
+
+  return isReady ? <DeferredOverlays /> : null
+}
 
 export default function SiteChrome({
   children,
@@ -38,17 +54,16 @@ export default function SiteChrome({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(en.componentData.jsonLdSchema) }}
       />
       <ConsentAwareTracking gtmId={gtmId} gaMeasurementId={gaMeasurementId} />
-      <PerformanceMonitor />
+      {process.env.NODE_ENV !== 'production' ? <PerformanceMonitor /> : null}
       <LocaleProvider>
         <ToastProvider>
           <NetworkStatus />
           <Notifications />
-          <Lord />
+          <DeferredOverlayLoader />
           {!isDashboardRoute && <Navbar />}
           {children}
           {!isDashboardRoute && <Footer />}
           <BackToTop />
-          <CookieConsent />
         </ToastProvider>
       </LocaleProvider>
     </>
@@ -612,316 +627,6 @@ function ConsentAwareTracking({
         `}
       </Script>
     </>
-  )
-}
-
-const COOKIE_KEY = 'aerosun_cookie_consent'
-const CONSENT_EVENT = 'aerosun-cookie-consent'
-
-type ConsentChoice = 'accepted' | 'declined'
-type ConsentSnapshot = 'loading' | 'unanswered' | ConsentChoice
-
-let sessionConsent: ConsentChoice | null = null
-
-function getCookieConsent(): ConsentSnapshot {
-  if (typeof window === 'undefined') return 'loading'
-
-  try {
-    const storedChoice = window.localStorage.getItem(COOKIE_KEY)
-    if (storedChoice === 'accepted' || storedChoice === 'declined') return storedChoice
-    return sessionConsent ?? 'unanswered'
-  } catch (error) {
-    console.error('Unable to read cookie consent preference.', error)
-    return sessionConsent ?? 'unanswered'
-  }
-}
-
-function subscribeToCookieConsent(callback: () => void) {
-  const handleStorageChange = (event: StorageEvent) => {
-    if (event.key === COOKIE_KEY || event.key === null) sessionConsent = null
-    callback()
-  }
-
-  window.addEventListener('storage', handleStorageChange)
-  window.addEventListener(CONSENT_EVENT, callback)
-
-  return () => {
-    window.removeEventListener('storage', handleStorageChange)
-    window.removeEventListener(CONSENT_EVENT, callback)
-  }
-}
-
-function CookieConsent() {
-  const { t } = useLocale()
-  const labels = t.cookieConsent
-  const consent = useSyncExternalStore(
-    subscribeToCookieConsent,
-    getCookieConsent,
-    () => 'loading',
-  )
-
-  const saveConsent = (choice: ConsentChoice) => {
-    sessionConsent = choice
-
-    if (typeof window !== 'undefined') {
-      try {
-        window.localStorage.setItem(COOKIE_KEY, choice)
-      } catch (error) {
-        console.error('Unable to save cookie consent preference.', error)
-      }
-      window.dispatchEvent(
-        new CustomEvent(CONSENT_EVENT, {
-          detail: { choice },
-        })
-      )
-    }
-  }
-
-  if (consent !== 'unanswered') return null
-
-  return (
-    <div className="fixed inset-x-0 bottom-0 z-[80] flex justify-center p-4 sm:p-6">
-      <aside
-        aria-label={labels.title}
-        className="w-full max-w-5xl rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-lg backdrop-blur-xl"
-      >
-        <div>
-          <div className="w-full">
-            <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700 ">
-              {labels.title}
-            </p>
-            <h2 className="mt-2 text-2xl font-bold text-slate-900 ">
-              {labels.headline}
-            </h2>
-            <p className="mt-3 text-md leading-7 text-slate-600 ">
-              {labels.description}
-            </p>
-          </div>
-
-          <div className="mt-5 flex flex-col gap-2 border-t border-slate-200 pt-4 sm:flex-row sm:justify-end ">
-            <button
-              type="button"
-              onClick={() => saveConsent('declined')}
-              className="inline-flex min-h-11 text-nowrap items-center justify-center rounded-full border border-slate-300 bg-white px-5 py-2.5 text-md text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700     "
-            >
-              {labels.reject}
-            </button>
-            <button
-              type="button"
-              onClick={() => saveConsent('accepted')}
-              className="inline-flex min-h-11 text-nowrap items-center justify-center rounded-full bg-[#15803D] px-5 py-2.5 text-md text-white shadow-sm shadow-emerald-600/20 transition hover:bg-[#18833a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
-            >
-              {labels.accept}
-            </button>
-          </div>
-        </div>
-      </aside>
-    </div>
-  )
-}
-
-const STORAGE_KEY = 'aerosun_lord_ganesha_modal'
-const LORD_IMAGE_INDEX_KEY = 'aerosun_lord_image_index'
-const MODAL_TTL_MS = 24 * 60 * 60 * 1000
-function getIpStorageKey(ip: string) {
-  return `${STORAGE_KEY}:${ip}`
-}
-
-function Lord() {
-  const { t } = useLocale()
-  const lords = t.componentData.lordModal.lords
-  const [open, setOpen] = useState(false)
-  const [lordIndex, setLordIndex] = useState(0)
-  const [resolvedIp, setResolvedIp] = useState<string | null>(null)
-  const [isReady, setIsReady] = useState(false)
-  const dialogRef = useRef<HTMLDivElement | null>(null)
-  const closeButtonRef = useRef<HTMLButtonElement | null>(null)
-  const showModal = useCallback(() => {
-    const storedIndex = Number(localStorage.getItem(LORD_IMAGE_INDEX_KEY))
-    const nextIndex =
-      Number.isInteger(storedIndex) && storedIndex >= 0
-        ? storedIndex % lords.length
-        : 0
-
-    setLordIndex(nextIndex)
-    localStorage.setItem(LORD_IMAGE_INDEX_KEY, String((nextIndex + 1) % lords.length))
-    setOpen(true)
-  }, [lords.length])
-
-  useEffect(() => {
-    let cancelled = false
-
-    const resolveIp = async () => {
-      try {
-        const response = await fetch('https://api.ipify.org?format=json', {
-          method: 'GET',
-          cache: 'no-store',
-        })
-
-        if (!response.ok) {
-          throw new Error('Unable to resolve IP')
-        }
-
-        const data = (await response.json()) as { ip?: string }
-        const ip = data.ip ?? 'unknown'
-
-        if (cancelled) return
-
-        setResolvedIp(ip)
-        setIsReady(true)
-
-        const storageKey = getIpStorageKey(ip)
-        const existing = localStorage.getItem(storageKey)
-
-        if (!existing) {
-          showModal()
-          return
-        }
-
-        try {
-          const parsed = JSON.parse(existing) as { ts?: number }
-          const shouldShow = !parsed.ts || Date.now() - Number(parsed.ts) >= MODAL_TTL_MS
-          if (shouldShow) {
-            showModal()
-          }
-        } catch {
-          showModal()
-        }
-      } catch {
-        if (cancelled) return
-
-        const fallbackKey = getIpStorageKey('unknown')
-        const existing = localStorage.getItem(fallbackKey)
-        setResolvedIp('unknown')
-        setIsReady(true)
-
-        if (!existing) {
-          showModal()
-          return
-        }
-
-        try {
-          const parsed = JSON.parse(existing) as { ts?: number }
-          const shouldShow = !parsed.ts || Date.now() - Number(parsed.ts) >= MODAL_TTL_MS
-          if (shouldShow) {
-            showModal()
-          }
-        } catch {
-          showModal()
-        }
-      }
-    }
-
-    void resolveIp()
-
-    return () => {
-      cancelled = true
-    }
-  }, [showModal])
-
-  const lord = lords[lordIndex] ?? lords[0]
-  const blessing = t.blessingModal.blessings[lordIndex] ?? t.blessingModal.blessings[0]
-
-  const dismiss = useCallback(() => {
-    setOpen(false)
-    if (resolvedIp) {
-      localStorage.setItem(getIpStorageKey(resolvedIp), JSON.stringify({ ts: Date.now() }))
-    }
-  }, [resolvedIp])
-
-  useEffect(() => {
-    if (!open) return
-
-    const previouslyFocused = document.activeElement
-    closeButtonRef.current?.focus()
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        event.preventDefault()
-        dismiss()
-        return
-      }
-
-      if (event.key !== 'Tab' || !dialogRef.current) return
-
-      const focusableElements = Array.from(
-        dialogRef.current.querySelectorAll<HTMLElement>(
-          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
-        )
-      ).filter((element) => element.getClientRects().length > 0)
-      const firstElement = focusableElements[0]
-      const lastElement = focusableElements[focusableElements.length - 1]
-
-      if (!firstElement || !lastElement) {
-        event.preventDefault()
-        dialogRef.current.focus()
-      } else if (event.shiftKey && document.activeElement === firstElement) {
-        event.preventDefault()
-        lastElement.focus()
-      } else if (!event.shiftKey && document.activeElement === lastElement) {
-        event.preventDefault()
-        firstElement.focus()
-      }
-    }
-
-    document.addEventListener('keydown', handleKeyDown)
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown)
-      if (previouslyFocused instanceof HTMLElement && previouslyFocused.isConnected) {
-        previouslyFocused.focus()
-      }
-    }
-  }, [dismiss, open])
-
-  if (!isReady) {
-    return <div className="hidden" aria-hidden="true" />
-  }
-
-  if (!open) return null
-
-  return (
-    <div className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto px-4 py-4 sm:py-6">
-      <div className="absolute inset-0 bg-black/55 backdrop-blur-[2px]" aria-hidden="true" />
-
-      <div
-        ref={dialogRef}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="lord-blessing-title"
-        aria-describedby="lord-blessing-description"
-        tabIndex={-1}
-        className="relative z-10 w-full max-w-md rounded-3xl bg-white p-6 text-gray-900 shadow-lg"
-      >
-        <button
-          ref={closeButtonRef}
-          type="button"
-          aria-label={t.blessingModal.closeLabel}
-          className="absolute right-4 top-4 inline-flex items-center justify-center w-6 h-6 rounded-sm text-gray-600 transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
-          onClick={dismiss}
-        >
-          ✕
-        </button>
-
-        <div className="flex flex-col items-center text-center">
-          <div className="overflow-hidden p-6">
-            <Image
-              src={lord.image}
-              alt={`Lord ${lord.name}`}
-              width={lord.width}
-              height={lord.height}
-              priority
-              className="m-auto h-72 w-auto max-w-full object-contain"
-            />
-          </div>
-
-          <h2 id="lord-blessing-title" className="mb-2 text-3xl font-semibold tracking-tight">{blessing.title}</h2>
-          <p id="lord-blessing-description" className="max-w-md text-[14px] text-gray-900">
-            {blessing.body}
-          </p>
-
-        </div>
-      </div>
-    </div>
   )
 }
 
@@ -1607,8 +1312,19 @@ function Navbar() {
       <div className="relative border-b border-white/15 bg-white/5 text-white/90 backdrop-blur-xl">
         <div className="mx-auto flex min-h-8 w-full flex-col items-start gap-1 px-3 py-1 text-xs tracking-[0.08em] sm:px-6 sm:text-sm sm:tracking-[0.12em] lg:flex-row lg:items-center lg:justify-between lg:gap-3 lg:px-8">
           <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
-            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6b45e] shadow-sm" aria-hidden="true" />
+            <Building2 className="h-3.5 w-3.5 shrink-0 text-[#d6b45e]" strokeWidth={1.8} aria-hidden="true" />
             {t.navbar.companyRegistration}
+          </span>
+          <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
+            <svg className="h-3.5 w-5 shrink-0 rounded-[2px] shadow-sm" viewBox="0 0 30 20" role="img" aria-label="Indian flag">
+              <rect width="30" height="20" fill="#138808" />
+              <rect width="30" height="13.34" fill="#fff" />
+              <rect width="30" height="6.67" fill="#ff9933" />
+              <circle cx="15" cy="10" r="3" fill="none" stroke="#000080" strokeWidth=".7" />
+              <circle cx="15" cy="10" r=".55" fill="#000080" />
+              <path d="M15 7v6m-3-3h6m-5.12-2.12 4.24 4.24m0-4.24-4.24 4.24" stroke="#000080" strokeWidth=".45" />
+            </svg>
+            {t.navbar.patrioticLine}
           </span>
           <span className="flex items-center gap-2 whitespace-nowrap uppercase text-white/80 lg:ml-3">
             <Phone className="h-3 w-3 text-amber-500" strokeWidth={1.8} aria-hidden="true" />

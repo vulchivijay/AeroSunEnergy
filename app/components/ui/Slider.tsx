@@ -27,17 +27,21 @@ export default function Slider({
   const count = slidesArray.length
   const hasMultipleSlides = count > 1
 
-  const [position, setPosition] = useState(hasMultipleSlides ? 1 : 0)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [position, setPosition] = useState(1)
   const [withTransition, setWithTransition] = useState(true)
   const [slideWidth, setSlideWidth] = useState(0)
   const [dragX, setDragX] = useState(0)
   const dragStartX = useRef<number | null>(null)
   const dragging = useRef(false)
+  const [isDragging, setIsDragging] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
   const [isDocumentHidden, setIsDocumentHidden] = useState(false)
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
   const viewportRef = useRef<HTMLDivElement | null>(null)
-  const clonedSlides = hasMultipleSlides ? [slidesArray[count - 1], ...slidesArray, slidesArray[0]] : slidesArray
+  const visibleIndices = hasMultipleSlides
+    ? [(activeIndex - 1 + count) % count, activeIndex, (activeIndex + 1) % count]
+    : [0]
 
   useEffect(() => {
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -76,43 +80,51 @@ export default function Slider({
   }, [])
 
   const next = () => {
-    setPosition((prev) => prev + 1)
+    if (position !== 1) return
+    if (prefersReducedMotion) {
+      setActiveIndex((index) => (index + 1) % count)
+      return
+    }
+    setPosition(2)
     setWithTransition(true)
   }
 
   const prev = () => {
-    setPosition((prev) => prev - 1)
+    if (position !== 1) return
+    if (prefersReducedMotion) {
+      setActiveIndex((index) => (index - 1 + count) % count)
+      return
+    }
+    setPosition(0)
     setWithTransition(true)
   }
 
-  const onTransitionEnd = () => {
-    if (position === clonedSlides.length - 1) {
-      setWithTransition(false)
-      setPosition(1)
-    }
-
-    if (position === 0) {
-      setWithTransition(false)
-      setPosition(count)
-    }
+  const onTransitionEnd = (event: React.TransitionEvent<HTMLDivElement>) => {
+    if (event.target !== event.currentTarget || event.propertyName !== 'transform' || position === 1) return
+    setWithTransition(false)
+    setActiveIndex((index) => (index + (position === 2 ? 1 : -1) + count) % count)
+    setPosition(1)
+    window.requestAnimationFrame(() => setWithTransition(true))
   }
 
   useEffect(() => {
     if (!autoplay) return
-    if (isHovered || isDocumentHidden || prefersReducedMotion || dragging.current) return
+    if (isHovered || isDocumentHidden || prefersReducedMotion || isDragging || position !== 1) return
 
     const id = window.setInterval(() => {
-      setPosition((prev) => prev + 1)
+      setPosition(2)
       setWithTransition(true)
     }, interval)
 
     return () => clearInterval(id)
-  }, [autoplay, interval, isHovered, isDocumentHidden, prefersReducedMotion])
+  }, [autoplay, interval, isHovered, isDocumentHidden, prefersReducedMotion, isDragging, position])
 
   const onPointerDown = (e: React.PointerEvent) => {
     if (e.target instanceof Element && e.target.closest('button, a, input, select, textarea')) return
+    if (position !== 1) return
     dragStartX.current = e.clientX
     dragging.current = true
+    setIsDragging(true)
     setWithTransition(false)
     e.currentTarget.setPointerCapture(e.pointerId)
   }
@@ -126,6 +138,7 @@ export default function Slider({
     if (!dragging.current) return
 
     dragging.current = false
+    setIsDragging(false)
     const threshold = Math.max(50, slideWidth > 0 ? slideWidth * 0.15 : (viewportRef.current ? viewportRef.current.clientWidth * 0.15 : 50))
 
     if (dragX > threshold) {
@@ -153,17 +166,16 @@ export default function Slider({
   }
 
   const goToSlide = (i: number) => {
-    setPosition(i + 1)
-    setWithTransition(true)
+    if (position !== 1) return
+    setActiveIndex(i)
   }
 
-  const percentPerSlide = hasMultipleSlides ? 100 / clonedSlides.length : 100
-  const totalWidth = hasMultipleSlides && slideWidth > 0 ? slideWidth * clonedSlides.length : 0
+  const percentPerSlide = hasMultipleSlides ? 100 / visibleIndices.length : 100
+  const totalWidth = hasMultipleSlides && slideWidth > 0 ? slideWidth * visibleIndices.length : 0
   const translate =
     slideWidth > 0
       ? `translate3d(${-(position * slideWidth) + dragX}px,0,0)`
       : `translate3d(${(-position * percentPerSlide).toFixed(6)}%,0,0)`
-  const activeRealIndex = position === 0 ? count - 1 : position === clonedSlides.length - 1 ? 0 : position - 1
   const rotationPaused = isHovered || isDocumentHidden || prefersReducedMotion
 
   if (count === 0) return null
@@ -195,23 +207,21 @@ export default function Slider({
     >
       <div
         className={`flex h-[clamp(640px,56vw,760px)] ${withTransition ? 'transition-transform duration-500 ease-in-out motion-reduce:transition-none' : ''}`}
-        style={{ width: slideWidth > 0 ? `${totalWidth}px` : `${clonedSlides.length * 100}%`, transform: translate }}
+        style={{ width: slideWidth > 0 ? `${totalWidth}px` : `${visibleIndices.length * 100}%`, transform: translate }}
         onTransitionEnd={onTransitionEnd}
       >
-        {clonedSlides.map((child, i) => (
+        {visibleIndices.map((slideIndex, i) => (
           <div
-            key={i}
+            key={`${slideIndex}-${i}`}
             className={`h-[clamp(640px,56vw,760px)] shrink-0 ${i === position ? 'slider-slide-active' : ''}`}
             style={{ width: slideWidth > 0 ? `${slideWidth}px` : `${percentPerSlide}%` }}
             role="group"
             aria-roledescription={carousel.slideRoleDescription}
-            aria-label={carousel.slidePosition
-              .replace('{current}', String(i === 0 ? count : i === clonedSlides.length - 1 ? 1 : i))
-              .replace('{total}', String(count))}
+            aria-label={carousel.slidePosition.replace('{current}', String(slideIndex + 1)).replace('{total}', String(count))}
             aria-hidden={i !== position}
             inert={i !== position}
           >
-            <div className="flex h-[clamp(640px,56vw,760px)] w-full flex-col">{child}</div>
+            <div className="flex h-[clamp(640px,56vw,760px)] w-full flex-col">{slidesArray[slideIndex]}</div>
           </div>
         ))}
       </div>
@@ -236,7 +246,7 @@ export default function Slider({
       <div className="absolute inset-x-0 bottom-3 z-20 hidden justify-center px-3 sm:bottom-5 xl:flex">
         <div className="flex max-w-[calc(100vw-2.5rem)] flex-wrap items-center justify-center">
           {slidesArray.map((_, i) => {
-            const isActive = activeRealIndex === i
+            const isActive = activeIndex === i
             return (
               <button
                 key={i}

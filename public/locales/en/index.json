@@ -4348,6 +4348,7 @@
     "brandName": "AeroSun Energy Private Limited",
     "brandTagline": "Power from Sun and Wind",
     "companyRegistration": "CIN:U35106AP2026PTC128748",
+    "patrioticLine": "Sāre jahāṉ se achchhā, Hindostān hamārā.",
     "companyMobile": "Mobile: 8099181075",
     "primaryNavigationLabel": "Primary navigation",
     "mobileNavigationLabel": "Mobile primary navigation",
@@ -10153,9 +10154,25 @@
       "monthlyAverageElectricityBillPlaceholder": "Monthly Average Electricity Bill",
       "interestedInFinancing": "Interested in Financing?",
       "interestedInFinancingPlaceholder": "Interested in Financing?",
-      "solarNeedOptions": ["Residential", "Commercial", "Industrial", "Agricultural", "Other"],
-      "electricityBillOptions": ["Below ₹1,500", "₹1,500 – ₹3,000", "₹3,000 – ₹5,000", "₹5,000 – ₹10,000", "Above ₹10,000"],
-      "financingOptions": ["Yes", "No", "Not sure"],
+      "solarNeedOptions": [
+        "Residential",
+        "Commercial",
+        "Industrial",
+        "Agricultural",
+        "Other"
+      ],
+      "electricityBillOptions": [
+        "Below ₹1,500",
+        "₹1,500 – ₹3,000",
+        "₹3,000 – ₹5,000",
+        "₹5,000 – ₹10,000",
+        "Above ₹10,000"
+      ],
+      "financingOptions": [
+        "Yes",
+        "No",
+        "Not sure"
+      ],
       "submit": "Get a Free Quote",
       "submitVariants": [
         "Get a Free Quote",
@@ -11991,8 +12008,16 @@
           "capacityTitle": "Suitable Rooftop Solar Plant Capacity for Households",
           "consumptionLabel": "Average Monthly Electricity Consumption (units)",
           "capacityLabel": "Suitable Rooftop Solar Plant Capacity",
-          "consumptionValues": ["0–150", "150–300", ">300"],
-          "capacityValues": ["1–2 kW", "2–3 kW", "Above 3 kW"]
+          "consumptionValues": [
+            "0–150",
+            "150–300",
+            ">300"
+          ],
+          "capacityValues": [
+            "1–2 kW",
+            "2–3 kW",
+            "Above 3 kW"
+          ]
         },
         "steps": [
           {
@@ -12299,7 +12324,12 @@
       "eyebrow": "PM Surya Ghar: Muft Bijli Yojana",
       "titleAccent": "Consumer",
       "title": "Application Journey",
-      "stakeholders": ["Consumer", "Vendor", "DISCOM", "REC"],
+      "stakeholders": [
+        "Consumer",
+        "Vendor",
+        "DISCOM",
+        "REC"
+      ],
       "applyLabel": "Apply for Rooftop Solar",
       "steps": [
         {
