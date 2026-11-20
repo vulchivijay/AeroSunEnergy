@@ -415,50 +415,49 @@ export function SolarEstimation() {
                 </p>
               </div>
             </div>
+
+            <div className="mt-7 grid gap-3">
+              <article className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
+                    {e.roofRequired}
+                </p>
+                <p className="mt-2 text-xl font-black tracking-tight text-slate-950 sm:text-2xl">
+                    <DigitalNumber value={calculation.roofArea.toLocaleString('en-IN')} /> <span className="text-sm font-semibold">{e.squareFootUnit}</span>
+                </p>
+              </article><article className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
+                    {calculatorText.idealSystemSize}
+                </p>
+                <p className="mt-3 text-2xl font-black tracking-tight text-sky-700 sm:text-3xl">
+                    <DigitalNumber value={formatSystemCapacity(calculation.recommendedKw, e.capacityUnit)} />
+                </p>
+                <p className="mt-2 text-sm text-slate-500">
+                    <DigitalNumber value={calculation.dailyGeneration} /> {calculatorText.averageDailyGeneration}
+                </p>
+              </article>
+            </div>
           </div>
 
           <div className="bg-linear-to-br from-[#f7faff] via-[#f2f4ff] to-[#eef9fb] p-5 sm:p-7 lg:p-9">
             <div className="grid gap-4 sm:grid-cols-2">
-              <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+              
+              <article className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
                 <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
-                  {calculatorText.idealSystemSize}
+                    {e.annualGeneration}
                 </p>
-                <p className="mt-3 text-4xl font-black tracking-tight text-sky-700">
-                  <DigitalNumber value={formatSystemCapacity(calculation.recommendedKw, e.capacityUnit)} />
-                </p>
-                <p className="mt-2 text-sm text-slate-500">
-                  <DigitalNumber value={calculation.dailyGeneration} /> {calculatorText.averageDailyGeneration}
+                <p className="mt-2 text-xl font-black tracking-tight text-slate-950 sm:text-2xl">
+                    <DigitalNumber value={calculation.annualGeneration.toLocaleString('en-IN')} /> <span className="text-sm font-semibold">{e.generationUnit}</span>
                 </p>
               </article>
-
-              <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+              <article className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
                 <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
-                  {e.annualSavings}
+                    {e.annualSavings}
                 </p>
-                <p className="mt-3 text-3xl font-black tracking-tight text-emerald-600 sm:text-4xl">
-                  ~<DigitalNumber value={formatCurrency(calculation.annualSavings)} />
-                </p>
-              </article>
-
-              <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
-                <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
-                  {e.annualGeneration}
-                </p>
-                <p className="mt-2 text-2xl font-black tracking-tight text-slate-950">
-                  <DigitalNumber value={calculation.annualGeneration.toLocaleString('en-IN')} /> <span className="text-sm font-semibold">{e.generationUnit}</span>
-                </p>
-              </article>
-
-              <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
-                <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
-                  {e.roofRequired}
-                </p>
-                <p className="mt-2 text-2xl font-black tracking-tight text-slate-950">
-                  <DigitalNumber value={calculation.roofArea.toLocaleString('en-IN')} /> <span className="text-sm font-semibold">{e.squareFootUnit}</span>
+                <p className="mt-3 text-2xl font-black tracking-tight text-emerald-600 sm:text-3xl">
+                    ~<DigitalNumber value={formatCurrency(calculation.annualSavings)} />
                 </p>
               </article>
             </div>
-
             <div className="mt-5 rounded-2xl border border-amber-200/80 bg-linear-to-br from-amber-50 via-orange-50 to-amber-100 p-5 sm:p-6">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
