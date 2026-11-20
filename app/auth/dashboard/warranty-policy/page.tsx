@@ -9,7 +9,7 @@ import { useLocale } from '@/lib/LocaleContext'
 import { SharedFormField } from '@/app/components/forms/SharedFormField'
 import { createBusinessContactSchema } from '@/app/components/forms/businessContactSchema'
 import { getFirstFormErrorMessage } from '@/lib/formValidation'
-import { useToast } from '@/app/components/ui/ToastProvider'
+import { useToast } from '@/app/components/ui/ToastContext'
 
 const createWarrantyPolicySchema = (validation: typeof import('@/public/locales/en/index.json').businessForms.warrantyPolicy.validation) => z.object({
   ...createBusinessContactSchema(validation).shape,

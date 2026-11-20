@@ -4,7 +4,7 @@ import { useState, type FormEvent, type ReactNode } from "react";
 import { useLocale } from "@/lib/LocaleContext";
 import { FormDataNotice } from "@/app/components/forms/FormDataNotice";
 import { submitWebsiteForm } from "@/lib/websiteFormSubmission";
-import { useToast } from "@/app/components/ui/ToastProvider";
+import { useToast } from "@/app/components/ui/ToastContext";
 
 function SectionTitle({ number, title }: { number: string; title: string }) {
   return (

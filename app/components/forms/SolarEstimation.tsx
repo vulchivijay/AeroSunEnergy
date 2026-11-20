@@ -6,7 +6,7 @@ import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import { useLocale } from '@/lib/LocaleContext'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
-import { useToast } from '@/app/components/ui/ToastProvider'
+import { useToast } from '@/app/components/ui/ToastContext'
 
 type InputMode = 'bill' | 'systemSize'
 
@@ -21,7 +21,7 @@ type Calculation = {
   subsidy: number
   effectiveCost: number
   gstEstimate: number
-  netMeteringCharge: number | null
+  netMeteringCharge: number
   netMeteringWaiverAvailable: boolean
   netMeteringWaived: boolean
   finalEffectiveCost: number
@@ -36,6 +36,13 @@ const AP_NET_METERING_WAIVER_MAX_KW = 10
 const SAVINGS_ESTIMATE_YEARS = 25
 const KW_PER_MW = 1000
 const MAX_SYSTEM_SIZE_KW = 100 * KW_PER_MW
+
+const getNetMeteringCharge = (capacityKw: number) => {
+  if (capacityKw <= 5) return 0
+  if (capacityKw <= 100) return 1000
+  if (capacityKw <= 1000) return 10000
+  return Math.round((capacityKw / KW_PER_MW) * 25000)
+}
 
 const currencyFormatter = new Intl.NumberFormat('en-IN', {
   style: 'currency',
@@ -149,7 +156,9 @@ export function SolarEstimation() {
   const netMeteringWaiverAvailable =
     selectedPropertyIndex === 0 && recommendedKw <= AP_NET_METERING_WAIVER_MAX_KW
   const netMeteringWaived = netMeteringWaiverAvailable && assumeNetMeteringWaiver
-  const netMeteringCharge = netMeteringWaived ? 0 : null
+  const netMeteringCharge = netMeteringWaived
+    ? 0
+    : getNetMeteringCharge(recommendedKw)
   const calculation: Calculation = {
     recommendedKw,
     monthlyUnits,
@@ -205,7 +214,7 @@ export function SolarEstimation() {
       `${e.roofRequired}: ${calculation.roofArea} ${e.squareFootUnit}`,
       `${calculatorText.effectiveCost}: ${formatCurrency(calculation.effectiveCost)}`,
       `${calculatorText.gstEstimate}: ${formatCurrency(calculation.gstEstimate)}`,
-      `${calculatorText.netMeteringFee}: ${calculation.netMeteringCharge === 0 ? formatCurrency(0) : calculation.netMeteringWaiverAvailable ? calculatorText.netMeteringNotIncluded : calculatorText.netMeteringVaries}`,
+      `${calculatorText.netMeteringFee}: ${formatCurrency(calculation.netMeteringCharge)}`,
       `${calculation.netMeteringWaived ? calculatorText.finalEffectiveCost : calculatorText.finalEffectiveCostBeforeMetering}: ${formatCurrency(calculation.finalEffectiveCost)}`,
     ].join('\n')
     const url = `https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(message)}`
@@ -498,13 +507,30 @@ export function SolarEstimation() {
                 <div className="flex items-start justify-between gap-3">
                   <span className="text-slate-600">{calculatorText.netMeteringFee}</span>
                   <span className="text-right font-semibold text-slate-900">
-                    {calculation.netMeteringCharge === 0
-                      ? formatCurrency(calculation.netMeteringCharge)
-                      : calculation.netMeteringWaiverAvailable
-                        ? calculatorText.netMeteringNotIncluded
-                        : calculatorText.netMeteringVaries}
+                    {formatCurrency(calculation.netMeteringCharge)}
                   </span>
                 </div>
+              </div>
+
+              <div className="mt-4 overflow-hidden rounded-xl border border-slate-200 bg-white/75">
+                <table className="w-full text-left text-xs text-slate-700">
+                  <caption className="border-b border-slate-200 px-3 py-2 text-left font-bold text-slate-800">
+                    Metering charge schedule
+                  </caption>
+                  <tbody>
+                    {[
+                      ['Up to 5 kW', 'Nil'],
+                      ['Above 5 kW to 100 kW', '₹ 1,000'],
+                      ['Above 100 kW to 1,000 kW', '₹ 10,000'],
+                      ['Above 1,000 kW', '₹ 25,000 per MW'],
+                    ].map(([capacity, charge]) => (
+                      <tr key={capacity} className="border-b border-slate-100 last:border-b-0">
+                        <th scope="row" className="px-3 py-2 font-medium">{capacity}</th>
+                        <td className="px-3 py-2 text-right font-bold text-slate-900">{charge}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
 
               {calculation.netMeteringWaiverAvailable && (
@@ -612,11 +638,7 @@ export function SolarEstimation() {
               <LeadSummary label={calculatorText.gstEstimate} value={formatCurrency(calculation.gstEstimate)} />
               <LeadSummary
                 label={calculatorText.netMeteringFee}
-                value={calculation.netMeteringCharge === 0
-                  ? formatCurrency(0)
-                  : calculation.netMeteringWaiverAvailable
-                    ? calculatorText.netMeteringNotIncluded
-                    : calculatorText.netMeteringVaries}
+                value={formatCurrency(calculation.netMeteringCharge)}
               />
               <LeadSummary
                 label={calculation.netMeteringWaived
