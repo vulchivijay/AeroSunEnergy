@@ -1607,8 +1607,19 @@ function Navbar() {
       <div className="relative border-b border-white/15 bg-white/5 text-white/90 backdrop-blur-xl">
         <div className="mx-auto flex min-h-8 w-full flex-col items-start gap-1 px-3 py-1 text-xs tracking-[0.08em] sm:px-6 sm:text-sm sm:tracking-[0.12em] lg:flex-row lg:items-center lg:justify-between lg:gap-3 lg:px-8">
           <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
-            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6b45e] shadow-sm" aria-hidden="true" />
+            <Building2 className="h-3.5 w-3.5 shrink-0 text-[#d6b45e]" strokeWidth={1.8} aria-hidden="true" />
             {t.navbar.companyRegistration}
+          </span>
+          <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
+            <svg className="h-3.5 w-5 shrink-0 rounded-[2px] shadow-sm" viewBox="0 0 30 20" role="img" aria-label="Indian flag">
+              <rect width="30" height="20" fill="#138808" />
+              <rect width="30" height="13.34" fill="#fff" />
+              <rect width="30" height="6.67" fill="#ff9933" />
+              <circle cx="15" cy="10" r="3" fill="none" stroke="#000080" strokeWidth=".7" />
+              <circle cx="15" cy="10" r=".55" fill="#000080" />
+              <path d="M15 7v6m-3-3h6m-5.12-2.12 4.24 4.24m0-4.24-4.24 4.24" stroke="#000080" strokeWidth=".45" />
+            </svg>
+            {t.navbar.patrioticLine}
           </span>
           <span className="flex items-center gap-2 whitespace-nowrap uppercase text-white/80 lg:ml-3">
             <Phone className="h-3 w-3 text-amber-500" strokeWidth={1.8} aria-hidden="true" />
