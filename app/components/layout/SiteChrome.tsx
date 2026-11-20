@@ -723,100 +723,48 @@ function CookieConsent() {
 const STORAGE_KEY = 'aerosun_lord_ganesha_modal'
 const LORD_IMAGE_INDEX_KEY = 'aerosun_lord_image_index'
 const MODAL_TTL_MS = 24 * 60 * 60 * 1000
-function getIpStorageKey(ip: string) {
-  return `${STORAGE_KEY}:${ip}`
-}
 
 function Lord() {
   const { t } = useLocale()
   const lords = t.componentData.lordModal.lords
   const [open, setOpen] = useState(false)
   const [lordIndex, setLordIndex] = useState(0)
-  const [resolvedIp, setResolvedIp] = useState<string | null>(null)
-  const [isReady, setIsReady] = useState(false)
   const dialogRef = useRef<HTMLDivElement | null>(null)
   const closeButtonRef = useRef<HTMLButtonElement | null>(null)
   const showModal = useCallback(() => {
-    const storedIndex = Number(localStorage.getItem(LORD_IMAGE_INDEX_KEY))
-    const nextIndex =
-      Number.isInteger(storedIndex) && storedIndex >= 0
-        ? storedIndex % lords.length
-        : 0
+    let nextIndex = 0
+    try {
+      const storedIndex = Number(localStorage.getItem(LORD_IMAGE_INDEX_KEY))
+      if (Number.isInteger(storedIndex) && storedIndex >= 0) {
+        nextIndex = storedIndex % lords.length
+      }
+      localStorage.setItem(LORD_IMAGE_INDEX_KEY, String((nextIndex + 1) % lords.length))
+    } catch {
+      // Storage is optional; the modal can still be shown without persisting its image index.
+    }
 
     setLordIndex(nextIndex)
-    localStorage.setItem(LORD_IMAGE_INDEX_KEY, String((nextIndex + 1) % lords.length))
     setOpen(true)
   }, [lords.length])
 
   useEffect(() => {
-    let cancelled = false
-
-    const resolveIp = async () => {
-      try {
-        const response = await fetch('https://api.ipify.org?format=json', {
-          method: 'GET',
-          cache: 'no-store',
-        })
-
-        if (!response.ok) {
-          throw new Error('Unable to resolve IP')
-        }
-
-        const data = (await response.json()) as { ip?: string }
-        const ip = data.ip ?? 'unknown'
-
-        if (cancelled) return
-
-        setResolvedIp(ip)
-        setIsReady(true)
-
-        const storageKey = getIpStorageKey(ip)
-        const existing = localStorage.getItem(storageKey)
-
-        if (!existing) {
-          showModal()
-          return
-        }
-
-        try {
-          const parsed = JSON.parse(existing) as { ts?: number }
-          const shouldShow = !parsed.ts || Date.now() - Number(parsed.ts) >= MODAL_TTL_MS
-          if (shouldShow) {
-            showModal()
-          }
-        } catch {
-          showModal()
-        }
-      } catch {
-        if (cancelled) return
-
-        const fallbackKey = getIpStorageKey('unknown')
-        const existing = localStorage.getItem(fallbackKey)
-        setResolvedIp('unknown')
-        setIsReady(true)
-
-        if (!existing) {
-          showModal()
-          return
-        }
-
-        try {
-          const parsed = JSON.parse(existing) as { ts?: number }
-          const shouldShow = !parsed.ts || Date.now() - Number(parsed.ts) >= MODAL_TTL_MS
-          if (shouldShow) {
-            showModal()
-          }
-        } catch {
-          showModal()
-        }
+    let shouldShow = true
+    try {
+      const existing = localStorage.getItem(STORAGE_KEY)
+      if (existing) {
+        const parsed = JSON.parse(existing) as { ts?: unknown }
+        const timestamp = typeof parsed.ts === 'number' ? parsed.ts : Number.NaN
+        shouldShow =
+          !Number.isFinite(timestamp) || Date.now() - timestamp >= MODAL_TTL_MS
       }
+    } catch {
+      shouldShow = true
     }
 
-    void resolveIp()
-
-    return () => {
-      cancelled = true
-    }
+    const timer = window.setTimeout(() => {
+      if (shouldShow) showModal()
+    }, 0)
+    return () => window.clearTimeout(timer)
   }, [showModal])
 
   const lord = lords[lordIndex] ?? lords[0]
@@ -824,10 +772,12 @@ function Lord() {
 
   const dismiss = useCallback(() => {
     setOpen(false)
-    if (resolvedIp) {
-      localStorage.setItem(getIpStorageKey(resolvedIp), JSON.stringify({ ts: Date.now() }))
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ ts: Date.now() }))
+    } catch {
+      // Storage is optional; dismissing the modal must still work.
     }
-  }, [resolvedIp])
+  }, [])
 
   useEffect(() => {
     if (!open) return
@@ -872,10 +822,6 @@ function Lord() {
       }
     }
   }, [dismiss, open])
-
-  if (!isReady) {
-    return <div className="hidden" aria-hidden="true" />
-  }
 
   if (!open) return null
 

@@ -73,7 +73,7 @@ export default function OptimizedImage({
         }`}
         placeholder={placeholder ?? (computedBlurDataURL ? 'blur' : 'empty')}
         blurDataURL={computedBlurDataURL}
-        sizes={rest.sizes ?? '100vw'}
+        sizes={rest.sizes}
         onLoad={(event) => {
           setSettledSrc(src)
           setSpinnerSrc((current) => current === src ? null : current)

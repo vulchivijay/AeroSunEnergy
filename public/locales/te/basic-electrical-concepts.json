@@ -66,7 +66,7 @@
             "Easy speed control"
           ]
         },
-        "image": "/images/basic-electrical-concepts/dc-motor.png"
+        "image": "/images/basics/dc-motor.webp"
       },
       {
         "name": "AC Motor",
@@ -89,7 +89,7 @@
             "Low maintenance"
           ]
         },
-        "image": "/images/basic-electrical-concepts/ac-motor.png"
+        "image": "/images/basics/ac-motor.webp"
       },
       {
         "name": "Generator",
@@ -110,7 +110,7 @@
             "Renewable integration"
           ]
         },
-        "image": "/images/basic-electrical-concepts/generator.png"
+        "image": "/images/basics/generator.webp"
       },
       {
         "name": "Battery",
@@ -134,7 +134,7 @@
             "Essential for off-grid systems"
           ]
         },
-        "image": "/images/basic-electrical-concepts/battery.png"
+        "image": "/images/basics/battery.webp"
       },
       {
         "name": "LED",
@@ -157,7 +157,7 @@
             "Long lifespan"
           ]
         },
-        "image": "/images/basic-electrical-concepts/led.png"
+        "image": "/images/basics/led.webp"
       },
       {
         "name": "Resistor",
@@ -179,7 +179,7 @@
             "Controls current"
           ]
         },
-        "image": "/images/basic-electrical-concepts/resistor.png"
+        "image": "/images/basics/resistor.webp"
       },
       {
         "name": "Capacitor",
@@ -201,7 +201,7 @@
             "Improves circuit performance"
           ]
         },
-        "image": "/images/basic-electrical-concepts/capacitor.png"
+        "image": "/images/basics/capacitor.webp"
       },
       {
         "name": "Diode",
@@ -223,7 +223,7 @@
             "Enables AC to DC conversion"
           ]
         },
-        "image": "/images/basic-electrical-concepts/diode.png"
+        "image": "/images/basics/diode.webp"
       },
       {
         "name": "Transistor",
@@ -244,7 +244,7 @@
             "Fast operation"
           ]
         },
-        "image": "/images/basic-electrical-concepts/transistor.png"
+        "image": "/images/basics/transistor.webp"
       },
       {
         "name": "Relay",
@@ -265,7 +265,7 @@
             "Safe control"
           ]
         },
-        "image": "/images/basic-electrical-concepts/relay.png"
+        "image": "/images/basics/relay.webp"
       },
       {
         "name": "Solar Panel",
@@ -288,7 +288,7 @@
             "Low maintenance"
           ]
         },
-        "image": "/images/basic-electrical-concepts/solar-panel.png"
+        "image": "/images/basics/solar-panel.webp"
       },
       {
         "name": "Solar Charge Controller",
@@ -309,7 +309,7 @@
             "Improves efficiency"
           ]
         },
-        "image": "/images/basic-electrical-concepts/solar-charge-controller.png"
+        "image": "/images/basics/solar-charge-controller.webp"
       },
       {
         "name": "Voltage Regulator",
@@ -330,7 +330,7 @@
             "Stable performance"
           ]
         },
-        "image": "/images/basic-electrical-concepts/voltage-regulator.png"
+        "image": "/images/basics/voltage-regulator.webp"
       },
       {
         "name": "Bridge Rectifier",
@@ -351,7 +351,7 @@
             "Reliable output"
           ]
         },
-        "image": "/images/basic-electrical-concepts/bridge-rectifier.png"
+        "image": "/images/basics/bridge-rectifier.webp"
       },
       {
         "name": "Buck Converter",
@@ -372,7 +372,7 @@
             "Low heat loss"
           ]
         },
-        "image": "/images/basic-electrical-concepts/buck-converter.png"
+        "image": "/images/basics/buck-converter.webp"
       },
       {
         "name": "Boost Converter",
@@ -393,7 +393,7 @@
             "Compact design"
           ]
         },
-        "image": "/images/basic-electrical-concepts/boost-converter.png"
+        "image": "/images/basics/boost-converter.webp"
       },
       {
         "name": "Wind Turbine",
@@ -414,7 +414,7 @@
             "Sustainable"
           ]
         },
-        "image": "/images/basic-electrical-concepts/wind-turbine.png"
+        "image": "/images/basics/wind-turbine.webp"
       },
       {
         "name": "Inverter",
@@ -435,7 +435,7 @@
             "Efficient conversion"
           ]
         },
-        "image": "/images/basic-electrical-concepts/inverter.png"
+        "image": "/images/basics/inverter.webp"
       },
       {
         "name": "Transformer",
@@ -455,7 +455,7 @@
             "Efficient voltage conversion"
           ]
         },
-        "image": "/images/basic-electrical-concepts/transformer.png"
+        "image": "/images/basics/transformer.webp"
       },
       {
         "name": "Battery Management System (BMS)",
@@ -476,7 +476,7 @@
             "Extends battery life"
           ]
         },
-        "image": "/images/basic-electrical-concepts/battery-management-system-bms.png"
+        "image": "/images/basics/battery-management-system-bms.webp"
       },
       {
         "name": "Multimeter",
@@ -497,7 +497,7 @@
             "Essential tool"
           ]
         },
-        "image": "/images/basic-electrical-concepts/multimeter.png"
+        "image": "/images/basics/multimeter.webp"
       },
       {
         "name": "Ammeter",
@@ -517,7 +517,7 @@
             "Accurate current monitoring"
           ]
         },
-        "image": "/images/basic-electrical-concepts/ammeter.png"
+        "image": "/images/basics/ammeter.webp"
       },
       {
         "name": "Voltmeter",
@@ -537,7 +537,7 @@
             "Precise voltage reading"
           ]
         },
-        "image": "/images/basic-electrical-concepts/voltmeter.png"
+        "image": "/images/basics/voltmeter.webp"
       },
       {
         "name": "Temperature Sensor",
@@ -559,7 +559,7 @@
             "Essential for automation"
           ]
         },
-        "image": "/images/basic-electrical-concepts/temperature-sensor.png"
+        "image": "/images/basics/temperature-sensor.webp"
       },
       {
         "name": "Light Sensor (LDR)",
@@ -579,7 +579,7 @@
             "Low cost"
           ]
         },
-        "image": "/images/basic-electrical-concepts/light-sensor-ldr.png"
+        "image": "/images/basics/light-sensor-ldr.webp"
       },
       {
         "name": "IR Sensor",
@@ -600,7 +600,7 @@
             "Fast response"
           ]
         },
-        "image": "/images/basic-electrical-concepts/ir-sensor.png"
+        "image": "/images/basics/ir-sensor.webp"
       },
       {
         "name": "MOSFET",
@@ -621,7 +621,7 @@
             "Fast switching"
           ]
         },
-        "image": "/images/basic-electrical-concepts/mosfet.png"
+        "image": "/images/basics/mosfet.webp"
       },
       {
         "name": "555 Timer IC",
@@ -644,7 +644,7 @@
             "Low cost"
           ]
         },
-        "image": "/images/basic-electrical-concepts/555-timer-ic.png"
+        "image": "/images/basics/555-timer-ic.webp"
       },
       {
         "name": "Operational Amplifier (Op-Amp)",
@@ -665,7 +665,7 @@
             "Versatile"
           ]
         },
-        "image": "/images/basic-electrical-concepts/operational-amplifier-op-amp.png"
+        "image": "/images/basics/operational-amplifier-op-amp.webp"
       },
       {
         "name": "Arduino",
@@ -686,7 +686,7 @@
             "Highly flexible"
           ]
         },
-        "image": "/images/basic-electrical-concepts/arduino.png"
+        "image": "/images/basics/arduino.webp"
       },
       {
         "name": "Electrical Wire",
@@ -707,7 +707,7 @@
             "Efficient conduction"
           ]
         },
-        "image": "/images/basic-electrical-concepts/electrical-wire.png"
+        "image": "/images/basics/electrical-wire.webp"
       },
       {
         "name": "Breadboard",
@@ -728,7 +728,7 @@
             "Easy to modify"
           ]
         },
-        "image": "/images/basic-electrical-concepts/breadboard.png"
+        "image": "/images/basics/breadboard.webp"
       },
       {
         "name": "Printed Circuit Board (PCB)",
@@ -750,7 +750,7 @@
             "Reliable"
           ]
         },
-        "image": "/images/basic-electrical-concepts/printed-circuit-board-pcb.png"
+        "image": "/images/basics/printed-circuit-board-pcb.webp"
       },
       {
         "name": "Soldering Iron",
@@ -771,7 +771,7 @@
             "Durable"
           ]
         },
-        "image": "/images/basic-electrical-concepts/soldering-iron.png"
+        "image": "/images/basics/soldering-iron.webp"
       },
       {
         "name": "Fuse",
@@ -792,7 +792,7 @@
             "Reliable protection"
           ]
         },
-        "image": "/images/basic-electrical-concepts/fuse.png"
+        "image": "/images/basics/fuse.webp"
       },
       {
         "name": "Circuit Breaker",
@@ -813,7 +813,7 @@
             "Safe operation"
           ]
         },
-        "image": "/images/basic-electrical-concepts/circuit-breaker.png"
+        "image": "/images/basics/circuit-breaker.webp"
       },
       {
         "name": "Electrical Connector",
@@ -834,7 +834,7 @@
             "Safe disconnection"
           ]
         },
-        "image": "/images/basic-electrical-concepts/electrical-connector.png"
+        "image": "/images/basics/electrical-connector.webp"
       },
       {
         "name": "Switch",
@@ -856,7 +856,7 @@
             "Reliable"
           ]
         },
-        "image": "/images/basic-electrical-concepts/switch.png"
+        "image": "/images/basics/switch.webp"
       },
       {
         "name": "Terminal Block",
@@ -877,7 +877,7 @@
             "Secure connection"
           ]
         },
-        "image": "/images/basic-electrical-concepts/terminal-block.png"
+        "image": "/images/basics/terminal-block.webp"
       },
       {
         "name": "Heat Shrink Tube",
@@ -898,7 +898,7 @@
             "Water resistant"
           ]
         },
-        "image": "/images/basic-electrical-concepts/heat-shrink-tube.png"
+        "image": "/images/basics/heat-shrink-tube.webp"
       },
       {
         "name": "Solar Power System",
@@ -921,7 +921,7 @@
             "Cost savings"
           ]
         },
-        "image": "/images/basic-electrical-concepts/solar-power-system.png"
+        "image": "/images/basics/solar-power-system.webp"
       },
       {
         "name": "Wind Energy System",
@@ -944,7 +944,7 @@
             "Low cost"
           ]
         },
-        "image": "/images/basic-electrical-concepts/wind-energy-system.png"
+        "image": "/images/basics/wind-energy-system.webp"
       },
       {
         "name": "Hybrid Solar Wind System",
@@ -967,7 +967,7 @@
             "Max efficiency"
           ]
         },
-        "image": "/images/basic-electrical-concepts/hybrid-solar-wind-system.png"
+        "image": "/images/basics/hybrid-solar-wind-system.webp"
       },
       {
         "name": "LED Circuit DIY",
@@ -988,7 +988,7 @@
             "Beginner friendly"
           ]
         },
-        "image": "/images/basic-electrical-concepts/led-circuit-diy.png"
+        "image": "/images/basics/led-circuit-diy.webp"
       },
       {
         "name": "Motor as Generator DIY",
@@ -1010,7 +1010,7 @@
             "Simple setup"
           ]
         },
-        "image": "/images/basic-electrical-concepts/motor-as-generator-diy.png"
+        "image": "/images/basics/motor-as-generator-diy.webp"
       },
       {
         "name": "Battery Charging System",
@@ -1032,7 +1032,7 @@
             "Efficient charging"
           ]
         },
-        "image": "/images/basic-electrical-concepts/battery-charging-system.png"
+        "image": "/images/basics/battery-charging-system.webp"
       },
       {
         "name": "DC to AC System",
@@ -1051,7 +1051,7 @@
             "Supports AC loads"
           ]
         },
-        "image": "/images/basic-electrical-concepts/dc-to-ac-system.png"
+        "image": "/images/basics/dc-to-ac-system.webp"
       },
       {
         "name": "Energy Storage System",
@@ -1073,7 +1073,7 @@
             "Energy backup"
           ]
         },
-        "image": "/images/basic-electrical-concepts/energy-storage-system.png"
+        "image": "/images/basics/energy-storage-system.webp"
       },
       {
         "name": "Off-Grid System",
@@ -1093,7 +1093,7 @@
             "Energy independence"
           ]
         },
-        "image": "/images/basic-electrical-concepts/off-grid-system.png"
+        "image": "/images/basics/off-grid-system.webp"
       },
       {
         "name": "Home Electrical System",
@@ -1114,7 +1114,7 @@
             "Efficient usage"
           ]
         },
-        "image": "/images/basic-electrical-concepts/home-electrical-system.png"
+        "image": "/images/basics/home-electrical-system.webp"
       }
     ]
   }
