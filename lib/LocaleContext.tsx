@@ -1,24 +1,29 @@
 'use client'
 
-import { createContext, useContext, useEffect, useSyncExternalStore, ReactNode } from 'react'
+import { createContext, useCallback, useContext, useEffect, useMemo, useState, useSyncExternalStore, ReactNode } from 'react'
 import en from '@/public/locales/en/index.json'
-import hi from '@/public/locales/hi/index.json'
-import te from '@/public/locales/te/index.json'
-import ta from '@/public/locales/ta/index.json'
-import kn from '@/public/locales/kn/index.json'
-import ml from '@/public/locales/ml/index.json'
-import enBasicElectricalConcepts from '@/public/locales/en/basic-electrical-concepts.json'
-import hiBasicElectricalConcepts from '@/public/locales/hi/basic-electrical-concepts.json'
-import teBasicElectricalConcepts from '@/public/locales/te/basic-electrical-concepts.json'
-import taBasicElectricalConcepts from '@/public/locales/ta/basic-electrical-concepts.json'
-import knBasicElectricalConcepts from '@/public/locales/kn/basic-electrical-concepts.json'
-import mlBasicElectricalConcepts from '@/public/locales/ml/basic-electrical-concepts.json'
 
 export type Locale = 'en' | 'hi' | 'te' | 'ta' | 'kn' | 'ml'
 
-const locales = { en, hi, te, ta, kn, ml }
 const LOCALE_STORAGE_KEY = 'locale'
 const LOCALE_CHANGE_EVENT = 'aerosun-locale-change'
+
+const localeLoaders: Record<Exclude<Locale, 'en'>, () => Promise<unknown>> = {
+  hi: () => import('@/public/locales/hi/index.json').then((module) => module.default),
+  te: () => import('@/public/locales/te/index.json').then((module) => module.default),
+  ta: () => import('@/public/locales/ta/index.json').then((module) => module.default),
+  kn: () => import('@/public/locales/kn/index.json').then((module) => module.default),
+  ml: () => import('@/public/locales/ml/index.json').then((module) => module.default),
+}
+
+const conceptLocaleLoaders: Record<Locale, () => Promise<LocaleConceptFile>> = {
+  en: () => import('@/public/locales/en/basic-electrical-concepts.json').then((module) => module.default),
+  hi: () => import('@/public/locales/hi/basic-electrical-concepts.json').then((module) => module.default),
+  te: () => import('@/public/locales/te/basic-electrical-concepts.json').then((module) => module.default),
+  ta: () => import('@/public/locales/ta/basic-electrical-concepts.json').then((module) => module.default),
+  kn: () => import('@/public/locales/kn/basic-electrical-concepts.json').then((module) => module.default),
+  ml: () => import('@/public/locales/ml/basic-electrical-concepts.json').then((module) => module.default),
+}
 
 export function isLocale(value: string): value is Locale {
   return value === 'en' || value === 'hi' || value === 'te' ||
@@ -81,15 +86,6 @@ type LocaleConceptFile = {
 
 export type Translations = typeof en
 
-const basicElectricalConceptLocales: Record<Locale, LocaleConceptFile> = {
-  en: enBasicElectricalConcepts,
-  hi: hiBasicElectricalConcepts,
-  te: teBasicElectricalConcepts,
-  ta: taBasicElectricalConcepts,
-  kn: knBasicElectricalConcepts,
-  ml: mlBasicElectricalConcepts,
-}
-
 function mergeLocaleData<T>(fallback: T, localized: unknown): T {
   if (Array.isArray(fallback)) {
     if (!Array.isArray(localized)) return fallback
@@ -127,15 +123,16 @@ function mergeLocaleData<T>(fallback: T, localized: unknown): T {
   return (localized === undefined ? fallback : localized) as T
 }
 
-export function getBasicElectricalConceptData(locale: Locale): ConceptCollection {
-  const localeFile = basicElectricalConceptLocales[locale]
-  const fallbackFile = basicElectricalConceptLocales.en
-
-  const collection =
+export async function getBasicElectricalConceptData(locale: Locale): Promise<ConceptCollection> {
+  const localeFile = await conceptLocaleLoaders[locale]()
+  let collection =
     localeFile.basic_electrical_concepts ??
-    localeFile.electrical_concepts ??
-    fallbackFile.basic_electrical_concepts ??
-    fallbackFile.electrical_concepts
+    localeFile.electrical_concepts
+
+  if (!collection && locale !== 'en') {
+    const fallbackFile = await conceptLocaleLoaders.en()
+    collection = fallbackFile.basic_electrical_concepts ?? fallbackFile.electrical_concepts
+  }
 
   if (!collection) {
     throw new Error(`Missing basic electrical concepts data for locale "${locale}" and English fallback`)
@@ -162,22 +159,61 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     getStoredLocale,
     () => 'en',
   )
+  const [localizedTranslations, setLocalizedTranslations] = useState<{
+    locale: Locale
+    translations: Translations
+  } | null>(null)
 
   useEffect(() => {
     document.documentElement.lang = locale
   }, [locale])
 
-  const setLocale = (l: Locale) => {
+  useEffect(() => {
+    if (locale === 'en') return
+
+    let cancelled = false
+    void localeLoaders[locale]()
+      .then((localized) => {
+        if (!cancelled) {
+          setLocalizedTranslations({
+            locale,
+            translations: mergeLocaleData(en, localized),
+          })
+        }
+      })
+      .catch((error: unknown) => {
+        if (cancelled) return
+        console.error(`Unable to load translations for locale "${locale}".`, error)
+        setLocalizedTranslations(null)
+      })
+
+    return () => {
+      cancelled = true
+    }
+  }, [locale])
+
+  const setLocale = useCallback((l: Locale) => {
     try {
       window.localStorage.setItem(LOCALE_STORAGE_KEY, l)
     } catch {
-      // ignore
+      console.error(`Unable to save locale preference "${l}".`)
     }
     window.dispatchEvent(new Event(LOCALE_CHANGE_EVENT))
-  }
+  }, [])
+
+  const translations = locale === 'en'
+    ? en
+    : localizedTranslations?.locale === locale
+      ? localizedTranslations.translations
+      : en
+
+  const contextValue = useMemo(
+    () => ({ locale, setLocale, t: translations }),
+    [locale, setLocale, translations],
+  )
 
   return (
-    <LocaleContext.Provider value={{ locale, setLocale, t: mergeLocaleData(en, locales[locale]) }}>
+    <LocaleContext.Provider value={contextValue}>
       {children}
     </LocaleContext.Provider>
   )
