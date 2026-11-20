@@ -42,16 +42,6 @@ export function ContentSectionEyebrow({
   )
 }
 
-export function ContentCheckIcon({ backgroundClassName }: { backgroundClassName: string }) {
-  return (
-    <div className={`flex h-10 w-10 items-center justify-center rounded-2xl shadow-inner ${backgroundClassName}`}>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-4 w-4" aria-hidden="true">
-        <path d="M5 13.5 9 17l10-10" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    </div>
-  )
-}
-
 export function ContentFeatureCard({
   title,
   description,
@@ -137,7 +127,11 @@ export function ContentInfoPanel({
   return (
     <div className={`border-t border-slate-200 pt-5 ${themeClassName}`}>
       <div className="mb-3 flex items-center gap-3">
-        <ContentCheckIcon backgroundClassName={checkBackgroundClassName} />
+        <div className={`flex h-10 w-10 items-center justify-center rounded-2xl shadow-inner ${checkBackgroundClassName}`}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-4 w-4" aria-hidden="true">
+            <path d="M5 13.5 9 17l10-10" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </div>
         <h3 className={`text-lg font-bold ${titleClassName}`}>{title}</h3>
       </div>
       <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-600">

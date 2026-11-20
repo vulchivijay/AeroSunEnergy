@@ -2,7 +2,7 @@
 
 import { Fragment, useEffect, useState, type FormEvent } from 'react'
 import { Database, FileText, MailPlus, Users, type LucideIcon } from 'lucide-react'
-import { useToast } from '@/app/components/ui/ToastProvider'
+import { useToast } from '@/app/components/ui/ToastContext'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 
 type DashboardRole = 'admin' | 'operator' | 'monitor'

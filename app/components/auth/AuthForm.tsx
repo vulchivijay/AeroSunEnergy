@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useLocale } from '@/lib/LocaleContext'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
-import { useToast } from '@/app/components/ui/ToastProvider'
+import { useToast } from '@/app/components/ui/ToastContext'
 
 type AuthFormProps = {
   mode: 'login' | 'signup'

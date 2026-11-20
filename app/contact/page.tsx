@@ -2,14 +2,14 @@
 
 import Link from 'next/link'
 import { motion } from '@/lib/motion'
-import { useEffect, useState, type FormEvent, type ReactNode } from 'react'
-import FaqCard, { solarFaqs } from '@/app/components/ui/FaqCard'
+import { useEffect, useId, useState, type FormEvent, type ReactNode } from 'react'
+import en from '@/public/locales/en/index.json'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
 import { SolarEstimation } from '@/app/components/forms/SolarEstimation'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
-import { useToast } from '@/app/components/ui/ToastProvider'
+import { useToast } from '@/app/components/ui/ToastContext'
 import { electricityBillOptions, financingOptions, indianStates, solarNeedOptions } from '@/lib/contactFormOptions'
 
 const channelIconComponents: Record<string, ReactNode> = {
@@ -364,4 +364,52 @@ export default function Contact() {
       </section>
     </main>
   )
+}
+
+type FaqCardProps = {
+  question: string;
+  answer: string;
+  defaultOpen?: boolean;
+};
+
+const solarFaqs = en.solarFaqs.items;
+
+function FaqCard({ question, answer, defaultOpen = false }: FaqCardProps) {
+  const { t } = useLocale();
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+  const answerId = useId();
+  const questionId = useId();
+  const faqIndex = solarFaqs.findIndex((faq) => faq.question === question);
+  const localizedFaq = faqIndex >= 0 ? t.solarFaqs.items[faqIndex] : undefined;
+  const displayQuestion = localizedFaq?.question ?? question;
+  const displayAnswer = localizedFaq?.answer ?? answer;
+
+  return (
+    <div className={`overflow-hidden rounded-2xl border bg-white/24 p-0 transition-all duration-300 ${isOpen ? 'border-[#F59E0B]/70 bg-[#fffaf1]' : 'border-[#d8c9ab]/70'}`}>
+      <button
+        type="button"
+        onClick={() => setIsOpen((prev) => !prev)}
+        className="flex w-full items-center justify-between gap-3 px-5 py-4 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-amber-700 sm:px-6"
+        aria-expanded={isOpen}
+        aria-controls={answerId}
+        aria-label={`${displayQuestion} — ${isOpen ? t.solarFaqs.collapseAnswer : t.solarFaqs.expandAnswer}`}
+        id={questionId}
+      >
+        <span className="text-sm font-black tracking-[0.03em] text-[#1f2a44] sm:text-lg">{displayQuestion}</span>
+        <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-lg font-bold transition ${isOpen ? 'border-[#F59E0B]/60 bg-[#F59E0B] text-white' : 'border-[#F59E0B]/60 bg-[#fff3df] text-[#D97706]'}`}>
+          {isOpen ? '\u2212' : '+'}
+        </span>
+      </button>
+
+      <div
+        id={answerId}
+        role="region"
+        aria-labelledby={questionId}
+        hidden={!isOpen}
+        className="border-t border-[#f0e3ce] px-5 pb-5 pt-4 sm:px-6"
+      >
+        <p className="text-sm leading-8 text-slate-700">{displayAnswer}</p>
+      </div>
+    </div>
+  );
 }

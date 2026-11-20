@@ -1,16 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Orbitron, Poppins, Roboto } from "next/font/google";
-import { JsonLd } from "@/app/components/seo";
-import { LocaleProvider } from "@/lib/LocaleContext";
-import { BackToTop, Lord } from "@/app/components/layout";
+
 import SiteChrome from "@/app/components/layout/SiteChrome";
-import { PerformanceMonitor } from "@/app/components/performance";
-import CookieConsent from "@/app/components/cookies/CookieConsent";
-import ConsentAwareTracking from "@/app/components/cookies/ConsentAwareTracking";
-import Notifications from "@/app/components/layout/Notifications";
-import { NetworkStatus } from "@/app/components/system/NetworkStatus";
-import ProductionProtector from "@/app/components/security/ProductionProtector";
-import { ToastProvider } from "@/app/components/ui/ToastProvider";
 
 import "./globals.css";
 
@@ -191,23 +182,9 @@ export default function RootLayout({
         className={`${roboto.variable} ${poppins.variable} ${orbitron.variable} bg-white text-gray-900 transition-colors duration-150`}
       >
         {/* Keep the body free of the dark class while dark mode is temporarily paused. */}
-        {process.env.NODE_ENV === "production" ? <ProductionProtector /> : null}
-        <JsonLd />
-        <ConsentAwareTracking
-          gtmId={GTM_ID}
-          gaMeasurementId={GA_MEASUREMENT_ID}
-        />
-        <PerformanceMonitor />
-        <LocaleProvider>
-          <ToastProvider>
-            <NetworkStatus />
-            <Notifications />
-            <Lord />
-            <SiteChrome>{children}</SiteChrome>
-            <BackToTop />
-            <CookieConsent />
-          </ToastProvider>
-        </LocaleProvider>
+        <SiteChrome gtmId={GTM_ID} gaMeasurementId={GA_MEASUREMENT_ID}>
+          {children}
+        </SiteChrome>
       </body>
     </html>
   );

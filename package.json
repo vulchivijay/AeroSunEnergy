@@ -21,7 +21,8 @@
     "postbuild": "node scripts/submit-indexnow.js --non-blocking",
     "start": "next start -H 0.0.0.0",
     "lint": "eslint .",
-    "audit:prod": "npm audit --omit=dev"
+    "audit:prod": "npm audit --omit=dev",
+    "branchsync": "git pull & git checkout main & git pull origin main & git checkout developer & git fetch origin & git reset --hard origin/main & git push --force-with-lease origin developer"
   },
   "dependencies": {
     "@hookform/resolvers": "^7.0.6",

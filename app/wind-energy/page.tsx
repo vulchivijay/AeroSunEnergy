@@ -5,15 +5,10 @@ import { getSliderImagePath } from '@/lib/sliderImages'
 import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 import { getAccentOrDefault } from '@/lib/utils/utils'
 import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
-import {
-  OptimizedImage,
-  WindBenefitCard,
-  WindCapacityTable,
-  WindComparisonTable,
-  WindFeatureCard,
-  WindInfoPanel,
-  WindSectionEyebrow,
-} from '../components/ui'
+import { OptimizedImage, WindBenefitCard, WindCapacityTable, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from '../components/ui'
+import type { ReactNode } from 'react'
+import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
+import { ContentBenefitCard, contentAccentText, contentBenefitBorders, contentCheckBackgrounds, ContentFeatureCard, ContentInfoPanel, ContentSectionEyebrow, type ContentAccent } from '@/app/components/ui/SharedContentComponents'
 
 export default function WindEnergyPage() {
   const { t } = useLocale()
@@ -279,5 +274,36 @@ export default function WindEnergyPage() {
       </section>
       <TirupatiEnergySection background="second" />
     </main>
+  )
+}
+
+function WindComparisonTable({ rows }: { rows: { system: string; detail: string; use: string }[] }) {
+  const { t } = useLocale()
+  const ui = t.ui
+
+  return (
+    <div className="overflow-x-auto rounded-2xl border border-emerald-200 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400">
+      <table
+        aria-label={`${ui.systemType}, ${ui.howItWorks}, ${ui.typicalUse}`}
+        className="w-full min-w-[780px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3"
+      >
+        <thead className="bg-amber-700 text-sm font-bold uppercase tracking-[0.18em] text-white">
+          <tr>
+            <th scope="col">{ui.systemType}</th>
+            <th scope="col">{ui.howItWorks}</th>
+            <th scope="col">{ui.typicalUse}</th>
+          </tr>
+        </thead>
+        <tbody>
+        {rows.map((row) => (
+          <tr key={row.system} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
+            <th scope="row" className="font-semibold text-slate-900"><DigitalNumber value={row.system} /></th>
+            <td className="text-slate-700"><DigitalNumber value={row.detail} /></td>
+            <td className="text-slate-700"><DigitalNumber value={row.use} /></td>
+          </tr>
+        ))}
+        </tbody>
+      </table>
+    </div>
   )
 }

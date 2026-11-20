@@ -4,15 +4,10 @@ import { useLocale } from '@/lib/LocaleContext'
 import { getSliderImagePath } from '@/lib/sliderImages'
 import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
-import {
-  CapacityTable,
-  FeatureCard,
-  BenefitCard,
-  InfoPanel,
-  OptimizedImage,
-  SectionEyebrow,
-  SubsidyCard,
-} from '../components/ui'
+import { FeatureCard, BenefitCard, InfoPanel, OptimizedImage, SectionEyebrow } from '../components/ui'
+import type { ReactNode } from 'react'
+import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
+import { ContentBenefitCard, contentAccentText, contentBenefitBorders, contentCheckBackgrounds, ContentFeatureCard, ContentInfoPanel, ContentSectionEyebrow, type ContentAccent } from '@/app/components/ui/SharedContentComponents'
 
 export default function SolarEnergyPage() {
   const { t } = useLocale()
@@ -309,5 +304,54 @@ export default function SolarEnergyPage() {
       </section>
       <TirupatiEnergySection background="first" />
     </main>
+  )
+}
+
+function SubsidyCard({
+  label,
+  value,
+  note,
+}: {
+  label: string
+  value: string
+  note: string
+}) {
+  return (
+    <div className="border-t border-emerald-200 py-5">
+      <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-700">{label}</p>
+      <div className="mt-3 text-3xl font-bold tracking-tight text-slate-900">{value}</div>
+      <p className="mt-2 text-sm leading-6 text-slate-600">{note}</p>
+    </div>
+  )
+}
+
+function CapacityTable() {
+  const { t } = useLocale()
+  const ui = t.ui
+
+  return (
+    <div className="overflow-x-auto rounded-2xl border border-emerald-200 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400">
+      <table
+        aria-label={`${ui.averageMonthlyUsage}, ${ui.suitableRooftopCapacity}, ${ui.bestFit}`}
+        className="w-full min-w-[620px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3"
+      >
+        <thead className="bg-amber-700 text-sm font-bold uppercase tracking-[0.18em] text-white">
+          <tr>
+            <th scope="col">{ui.averageMonthlyUsage}</th>
+            <th scope="col">{ui.suitableRooftopCapacity}</th>
+            <th scope="col">{ui.bestFit}</th>
+          </tr>
+        </thead>
+        <tbody>
+        {t.solarPage.capacityTable.rows.map((row) => (
+          <tr key={row.usage} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
+            <th scope="row" className="font-semibold text-slate-900"><DigitalNumber value={row.usage} /></th>
+            <td className="font-black text-emerald-700"><DigitalNumber value={row.capacity} /></td>
+            <td className="text-slate-700"><DigitalNumber value={row.tag} /></td>
+          </tr>
+        ))}
+        </tbody>
+      </table>
+    </div>
   )
 }
