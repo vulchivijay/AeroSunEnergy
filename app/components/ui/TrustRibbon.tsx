@@ -62,7 +62,7 @@ export function TrustRibbon({
             aria-hidden="true"
           />
           <div className="flex items-center gap-4 px-5 py-4 pl-6 sm:gap-5 sm:px-7 sm:py-5 sm:pl-8">
-            <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-amber-200/40 bg-white/10 text-amber-200 shadow-[0_0_28px_rgba(245,199,106,0.16)] motion-safe:animate-[pulse_3s_ease-in-out_infinite] sm:h-14 sm:w-14">
+            <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-amber-200/40 bg-white/10 text-amber-200 motion-safe:animate-[pulse_3s_ease-in-out_infinite] sm:h-14 sm:w-14">
               <span
                 className="absolute inset-[-6px] rounded-full border border-amber-200/20 motion-safe:animate-slow-ping"
                 aria-hidden="true"
@@ -76,13 +76,13 @@ export function TrustRibbon({
                 aria-hidden="true"
               />
               <span
-                className="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full bg-emerald-300/90 shadow-[0_0_14px_rgba(110,231,183,0.9)] motion-safe:animate-[pulse_2.2s_ease-in-out_infinite]"
+                className="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full bg-emerald-300/90 motion-safe:animate-[pulse_2.2s_ease-in-out_infinite]"
                 aria-hidden="true"
               />
               <ShieldCheck className="h-6 w-6 transition-transform duration-500 group-hover/ribbon:scale-110" strokeWidth={1.8} aria-hidden="true" />
             </span>
             <div className="min-w-0 border-l border-white/15 pl-4 sm:pl-5">
-              <p className="max-w-4xl text-lg text-white tracking-[0.16em]">
+              <p className="text-md text-white tracking-[0.16em]">
                 {t.ui.transparentSolarExperience}
               </p>
             </div>
