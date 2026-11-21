@@ -1,24 +1,23 @@
-'use client'
-
-import { useLocale } from '@/lib/LocaleContext'
+import type { Translations } from '@/lib/LocaleContext'
+import { getRequestTranslations } from '@/lib/serverLocale'
 import { getAccentOrDefault } from '@/lib/utils/utils'
 import { BankEMICalculator } from './components/forms/BankEMICalculator'
 import { SolarEstimation } from './components/forms/SolarEstimation'
 import TirupatiEnergySection from './components/sections/TirupatiEnergySection'
 
-import { BenefitCard, FeatureCard, HybridBenefitCard, HybridFeatureCard, HybridInfoPanel, HybridSectionEyebrow, HybridTable, InfoPanel, ReadMoreToggle, SectionEyebrow, TrustRibbon, WindBenefitCard, WindCapacityTable, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from './components/ui'
+import { BenefitCard, FeatureCard, HybridBenefitCard, HybridFeatureCard, HybridInfoPanel, HybridSectionEyebrow, HybridTable, InfoPanel, SectionEyebrow, TrustRibbon, WindBenefitCard, WindCapacityTable, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from './components/ui'
 
 import Image from 'next/image'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
-import { ArrowLeft, ArrowRight, ArrowUpRight, BadgeCheck, CalendarDays, ClipboardCheck, FileCheck2, Mail, MapPin, Phone, ShieldCheck, Sun, Zap } from 'lucide-react'
+import { ArrowUpRight, BadgeCheck, CalendarDays, ClipboardCheck, FileCheck2, Mail, MapPin, Phone, ShieldCheck, Sun, Zap } from 'lucide-react'
 import Link from 'next/link'
-import { useState } from 'react'
 import { getSliderImagePath } from '@/lib/sliderImages'
 import Slider from '@/app/components/ui/Slider'
 import OptimizedImage from '@/app/components/ui/OptimizedImage'
 import { HeroSlideContent, type HeroSlideData } from '@/app/components/ui/HeroSlideContent'
 import { Info } from 'lucide-react'
-import { useEffect } from 'react'
+import CountdownDays from '@/app/components/home/CountdownDays'
+import ProjectEvidenceSection from '@/app/components/home/ProjectEvidenceSection'
 
 const homeBenefitAccents = ['emerald', 'sky', 'amber', 'violet'] as const
 
@@ -26,8 +25,7 @@ function getHomeBenefitAccent(index: number) {
   return homeBenefitAccents[index % homeBenefitAccents.length] ?? 'emerald'
 }
 
-function RecognitionHighlight() {
-  const { t } = useLocale()
+function RecognitionHighlight({ t }: { t: Translations }) {
   const recognitions = t.home.recognition
 
   return (
@@ -67,8 +65,8 @@ function RecognitionHighlight() {
   )
 }
 
-export default function Home() {
-  const { t } = useLocale()
+export default async function Home() {
+  const t = await getRequestTranslations()
   const home = t.home
   const offer = home.offer
   const solarCards = offer.cards
@@ -76,33 +74,29 @@ export default function Home() {
   const whySolar = home.whySolar
   const wind = home.wind
   const hybrid = home.hybrid
-  const [offerExpanded, setOfferExpanded] = useState(false)
-  const [windExpanded, setWindExpanded] = useState(false)
-  const [hybridExpanded, setHybridExpanded] = useState(false)
-
   return (
     <main>
-      <HomeHeroSlider />
+      <HomeHeroSlider t={t} />
       <TrustRibbon />
-      <SchemeBanner />
+      <SchemeBanner t={t} />
       {/* Solar Section */}
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
-        <div className="mx-auto max-w-7xl">  
-          <div className="mb-8 flex items-center justify-between gap-4">
+        <div className="mx-auto max-w-7xl">
+          <details className="group">
+            <summary className="mb-8 flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
             <div>
               <SectionEyebrow>{offer.eyebrow}</SectionEyebrow>
               <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
                 {offer.title}
               </h2>
             </div>
-            <ReadMoreToggle
-              expanded={offerExpanded}
-              onToggle={() => setOfferExpanded((expanded) => !expanded)}
-              controlsId="what-we-offer-content"
-              labelClassName="text-emerald-700 underline decoration-emerald-300 hover:text-emerald-950"
-            />
-          </div>
-          <div id="what-we-offer-content" hidden={!offerExpanded}>
+              <span className="inline-flex shrink-0 items-center gap-2 text-sm text-emerald-700 underline decoration-emerald-300 hover:text-emerald-950 sm:text-base">
+                <span className="group-open:hidden">{t.ui.readMore}</span>
+                <span className="hidden group-open:inline">{t.ui.showLess}</span>
+                <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-open:rotate-90" aria-hidden="true" />
+              </span>
+            </summary>
+            <div id="what-we-offer-content">
           <div className="mb-10 text-lg leading-8 text-black">
             {offer.description}
           </div>
@@ -114,6 +108,7 @@ export default function Home() {
                 description={card.description}
                 points={card.points}
                 accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
+                label={t.ui.solarSolution}
               />
             ))}
           </div>
@@ -125,6 +120,7 @@ export default function Home() {
                 description={card.description}
                 points={card.points}
                 accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
+                label={t.ui.solarSolution}
               />
             ))}
           </div>
@@ -179,36 +175,37 @@ export default function Home() {
               ))}
             </div>
           </div>
-          </div>
+            </div>
+          </details>
         </div>
       </section>
-      <RecognitionHighlight />
-      <CompanyTrustSection />
-      <WhySolarSection />
-      <SolarJourneySection />
-      <QuoteTransparencySection />
-      <ProjectEvidenceSection />
+      <RecognitionHighlight t={t} />
+      <CompanyTrustSection t={t} />
+      <WhySolarSection t={t} />
+      <SolarJourneySection t={t} />
+      <QuoteTransparencySection t={t} />
+      <ProjectEvidenceSection content={home.trustSections.evidence} />
       <SolarEstimation />
       <BankEMICalculator />
       <TirupatiEnergySection />
       {/* Wind Energy Section */}
       <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-8 flex items-center justify-between gap-4">
+          <details className="group">
+            <summary className="mb-8 flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
             <div>
               <WindSectionEyebrow>{wind.eyebrow}</WindSectionEyebrow>
               <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
                 {wind.title}
               </h2>
             </div>
-            <ReadMoreToggle
-              expanded={windExpanded}
-              onToggle={() => setWindExpanded((expanded) => !expanded)}
-              controlsId="wind-energy-content"
-              labelClassName="text-sky-700 underline decoration-sky-300 hover:text-sky-950"
-            />
-          </div>
-          <div id="wind-energy-content" hidden={!windExpanded}>
+              <span className="inline-flex shrink-0 items-center gap-2 text-sm text-sky-700 underline decoration-sky-300 hover:text-sky-950 sm:text-base">
+                <span className="group-open:hidden">{t.ui.readMore}</span>
+                <span className="hidden group-open:inline">{t.ui.showLess}</span>
+                <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-open:rotate-90" aria-hidden="true" />
+              </span>
+            </summary>
+            <div id="wind-energy-content">
             <div className="grid gap-6 lg:grid-cols-3">
               {wind.cards.map((card) => (
                 <WindFeatureCard
@@ -233,27 +230,28 @@ export default function Home() {
             <div className="mt-8">
               <WindCapacityTable rows={wind.capacity} />
             </div>
-          </div>
+            </div>
+          </details>
         </div>
       </section>
       {/* Hybrid Energy Section */}
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl ">
-          <div className="mb-8 flex items-center justify-between gap-4">
+          <details className="group">
+            <summary className="mb-8 flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
             <div>
               <HybridSectionEyebrow>{hybrid.eyebrow}</HybridSectionEyebrow>
               <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
                 {hybrid.title}
               </h2>
             </div>
-            <ReadMoreToggle
-              expanded={hybridExpanded}
-              onToggle={() => setHybridExpanded((expanded) => !expanded)}
-              controlsId="hybrid-energy-content"
-              labelClassName="text-violet-700 underline decoration-violet-300 hover:text-violet-950"
-            />
-          </div>
-          <div id="hybrid-energy-content" hidden={!hybridExpanded}>
+              <span className="inline-flex shrink-0 items-center gap-2 text-sm text-violet-700 underline decoration-violet-300 hover:text-violet-950 sm:text-base">
+                <span className="group-open:hidden">{t.ui.readMore}</span>
+                <span className="hidden group-open:inline">{t.ui.showLess}</span>
+                <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-open:rotate-90" aria-hidden="true" />
+              </span>
+            </summary>
+            <div id="hybrid-energy-content">
             <div className="grid gap-6 lg:grid-cols-3">
               {hybrid.cards.map((card) => (
                 <HybridFeatureCard
@@ -278,10 +276,11 @@ export default function Home() {
             <div className="mt-8">
               <HybridTable rows={hybrid.table} />
             </div>
-          </div>
+            </div>
+          </details>
         </div>
       </section>
-      <Brands />
+      <Brands t={t} />
     </main>
   )
 }
@@ -339,10 +338,8 @@ const featuredBrandNames = new Set(['Adani Solar', 'Tata Power Solar', 'Waaree E
 
 const featuredBrands = sortedBrands.filter((brand) => featuredBrandNames.has(brand.name))
 
-function Brands() {
-  const { t } = useLocale()
+function Brands({ t }: { t: Translations }) {
   const section = t.home.brandSection
-  const [brandsExpanded, setBrandsExpanded] = useState(false)
 
   return (
     <section
@@ -354,7 +351,8 @@ function Brands() {
         aria-hidden="true"
       />
       <div className="relative mx-auto max-w-7xl">
-        <header className="mb-7 border-t border-slate-300/70 pt-5 sm:mb-8 sm:pt-6">
+        <details className="group">
+        <summary className="mb-7 list-none cursor-pointer border-t border-slate-300/70 pt-5 [&::-webkit-details-marker]:hidden sm:mb-8 sm:pt-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="min-w-0">
               <p className="inline-flex items-center gap-2 rounded-full border border-amber-700/20 bg-amber-100/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.24em] text-amber-900">
@@ -368,17 +366,15 @@ function Brands() {
                 {section.subtitle}
               </p>
             </div>
-            <ReadMoreToggle
-              expanded={brandsExpanded}
-              onToggle={() => setBrandsExpanded((expanded) => !expanded)}
-              controlsId="brands-content"
-              className="self-start sm:self-end"
-              labelClassName="text-amber-800 underline decoration-amber-300 hover:text-amber-950"
-            />
+            <span className="inline-flex shrink-0 items-center gap-2 self-start text-sm text-amber-800 underline decoration-amber-300 hover:text-amber-950 sm:self-end sm:text-base">
+              <span className="group-open:hidden">{t.ui.readMore}</span>
+              <span className="hidden group-open:inline">{t.ui.showLess}</span>
+              <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-open:rotate-90" aria-hidden="true" />
+            </span>
           </div>
-        </header>
+        </summary>
 
-        <div id="brands-content" hidden={!brandsExpanded}>
+        <div id="brands-content">
           <p className="mb-7 max-w-3xl border-l-2 border-amber-500 pl-4 text-xs leading-5 text-slate-600 sm:text-sm sm:leading-6">
             {section.priceDisclaimer}
           </p>
@@ -415,7 +411,6 @@ function Brands() {
                     width={150}
                     height={150}
                     sizes="160px"
-                    unoptimized
                     className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
@@ -497,6 +492,7 @@ function Brands() {
           {section.moreBrandsAvailable}
         </p>
         </div>
+        </details>
       </div>
     </section>
   )
@@ -512,8 +508,7 @@ const serviceFactStyles = [
   'border-violet-200 bg-violet-50 text-violet-800',
 ]
 
-function CompanyTrustSection() {
-  const { t } = useLocale()
+function CompanyTrustSection({ t }: { t: Translations }) {
   const content = t.home.trustSections.company
   const footer = t.footer
   const addressUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(footer.address)}`
@@ -619,8 +614,7 @@ function CompanyTrustSection() {
   )
 }
 
-function WhySolarSection() {
-  const { t } = useLocale()
+function WhySolarSection({ t }: { t: Translations }) {
   const content = t.home.trustSections.whySolar
   const borderColors = ['border-l-[#b8d7ec]', 'border-l-[#c5dfc2]', 'border-l-[#efd9ad]'] as const
 
@@ -652,99 +646,7 @@ function WhySolarSection() {
   )
 }
 
-function ProjectEvidenceSection() {
-  const { t } = useLocale()
-  const content = t.home.trustSections.evidence
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [testimonialsExpanded, setTestimonialsExpanded] = useState(false)
-  const testimonials = content.testimonials.map(
-    (_, index) => content.testimonials[(activeIndex + index) % content.testimonials.length],
-  )
-
-  const showPrevious = () => {
-    setActiveIndex((index) => (index - 1 + content.testimonials.length) % content.testimonials.length)
-  }
-  const showNext = () => {
-    setActiveIndex((index) => (index + 1) % content.testimonials.length)
-  }
-
-  return (
-    <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="testimonials-title">
-      <div className="mx-auto max-w-7xl">
-        <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <div>
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-800/15 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-emerald-800">{content.eyebrow}</p>
-            <h2 id="testimonials-title" className="mt-3 text-3xl font-black tracking-tight text-[#102b28] sm:text-4xl">
-              {content.title}
-            </h2>
-          </div>
-          <div className="flex items-end justify-between gap-4 lg:pb-1">
-            <p className="max-w-3xl text-sm leading-7 text-black sm:text-base">{content.description}</p>
-            <ReadMoreToggle
-              expanded={testimonialsExpanded}
-              onToggle={() => setTestimonialsExpanded((expanded) => !expanded)}
-              controlsId="testimonials-content"
-              labelClassName="text-emerald-700 underline decoration-emerald-300 hover:text-emerald-950"
-            />
-          </div>
-        </div>
-
-        <div id="testimonials-content" hidden={!testimonialsExpanded}>
-        <div className="mt-8 grid grid-cols-[auto_minmax(0,1fr)_auto] items-stretch gap-2 sm:gap-4">
-          <button
-            type="button"
-            onClick={showPrevious}
-            aria-label={content.previousLabel}
-            className="my-auto flex h-10 w-10 items-center justify-center rounded-full border border-amber-900/15 bg-white text-slate-900 shadow-sm transition hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-800 sm:h-12 sm:w-12"
-          >
-            <ArrowLeft className="h-5 w-5" aria-hidden="true" />
-          </button>
-
-          <div className="grid min-w-0 grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3" aria-live="polite">
-            {testimonials.map((testimonial, index) => (
-              <article
-                key={`${activeIndex}-${index}`}
-                className={`flex min-h-64 flex-col justify-between rounded-2xl border border-[#cbd5cc] bg-white p-6 shadow-sm sm:p-8 ${index === 1 ? 'hidden md:flex' : ''} ${index === 2 ? 'hidden lg:flex' : ''}`}
-              >
-                <div className="blur-md">
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-amber-800">{content.placeholderLabel}</p>
-                  <blockquote className="mt-5 text-lg font-semibold leading-8 text-slate-950 sm:text-xl">
-                    “{testimonial.quote}”
-                  </blockquote>
-                </div>
-                <div className="mt-8 border-t border-slate-100 pt-5 blur-md">
-                  <p className="font-bold text-slate-950">{testimonial.customer}</p>
-                  <p className="mt-1 text-sm text-slate-700">{testimonial.location}</p>
-                  <p className="mt-3 text-sm font-medium text-emerald-900">{testimonial.system}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <button
-            type="button"
-            onClick={showNext}
-            aria-label={content.nextLabel}
-            className="my-auto flex h-10 w-10 items-center justify-center rounded-full border border-amber-900/15 bg-white text-slate-900 shadow-sm transition hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-800 sm:h-12 sm:w-12"
-          >
-            <ArrowRight className="h-5 w-5" aria-hidden="true" />
-          </button>
-        </div>
-
-        <div className="mt-5 flex flex-col gap-4 rounded-2xl border border-amber-300 bg-[#fff3df] p-5 sm:flex-row sm:items-center sm:justify-between">
-          <p className="max-w-3xl text-sm leading-6 text-amber-950">{content.note}</p>
-          <Link href="/contact" prefetch={false} className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-amber-950 underline decoration-amber-500 underline-offset-4">
-            {content.cta}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
-        </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function SolarJourneySection() {
-  const { t } = useLocale()
+function SolarJourneySection({ t }: { t: Translations }) {
   const content = t.home.trustSections.journey
 
   return (
@@ -779,8 +681,7 @@ function SolarJourneySection() {
   )
 }
 
-function QuoteTransparencySection() {
-  const { t } = useLocale()
+function QuoteTransparencySection({ t }: { t: Translations }) {
   const content = t.home.trustSections.proposal
 
   return (
@@ -855,8 +756,7 @@ type Slide = HeroSlideData & { panelClass: string }
 
 const homeSlideImageNumbers = [1, 2, 3, 7, 8, 9, 13, 14, 15]
 
-function HomeHeroSlider() {
-  const { t } = useLocale()
+function HomeHeroSlider({ t }: { t: Translations }) {
   const slides: Slide[] = t.home.heroSlider.map((slide, index) => {
     const imageNumber = homeSlideImageNumbers[index]
     if (imageNumber === undefined) {
@@ -924,29 +824,11 @@ function HomeHeroSlider() {
 
 const TARGET_DATE = new Date('2027-03-31T23:59:59+05:30')
 
-function getDaysRemaining(target: Date, now: number) {
-  const diff = Math.max(target.getTime() - now, 0)
-  return String(Math.floor(diff / 86400000)).padStart(3, '0')
-}
-
-function SchemeBanner() {
-  const { t } = useLocale()
+function SchemeBanner({ t }: { t: Translations }) {
   const banner = t.home.schemeBanner
   const capacityGuide = banner.capacityGuide
   const digitalFontStyle = t.componentData.companyAge.digitalFontStyle
   const capacityRows = t.solarPage.capacityTable.rows
-
-  const [now, setNow] = useState<number | null>(null)
-
-  useEffect(() => {
-    const updateNow = () => setNow(Date.now())
-    updateNow()
-
-    const interval = window.setInterval(updateNow, 60000)
-    return () => window.clearInterval(interval)
-  }, [])
-
-  const daysRemaining = now === null ? '000' : getDaysRemaining(TARGET_DATE, now)
 
   return (
     <section className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-9 text-[#172554] sm:px-6 sm:py-11 lg:px-10 lg:py-12">
@@ -1021,7 +903,10 @@ function SchemeBanner() {
                   className="block text-4xl font-bold leading-none tabular-nums text-cyan-200"
                   style={digitalFontStyle}
                 >
-                  {daysRemaining}
+                  <CountdownDays
+                    targetTime={TARGET_DATE.getTime()}
+                    initialDays="000"
+                  />
                 </span>
                 <span className="mt-2 block text-base font-semibold uppercase tracking-wide text-indigo-100">
                   {banner.daysLabel}

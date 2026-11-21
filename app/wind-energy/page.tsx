@@ -1,18 +1,14 @@
-'use client'
-
-import { useLocale } from '@/lib/LocaleContext'
 import { getSliderImagePath } from '@/lib/sliderImages'
+import { getRequestTranslations } from '@/lib/serverLocale'
 import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 import { getAccentOrDefault } from '@/lib/utils/utils'
 import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
 import { OptimizedImage, WindBenefitCard, WindCapacityTable, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from '../components/ui'
 import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
-import type { ReactNode } from 'react'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
-import { ContentBenefitCard, contentAccentText, contentBenefitBorders, contentCheckBackgrounds, ContentFeatureCard, ContentInfoPanel, ContentSectionEyebrow, type ContentAccent } from '@/app/components/ui/SharedContentComponents'
 
-export default function WindEnergyPage() {
-  const { t } = useLocale()
+export default async function WindEnergyPage() {
+  const t = await getRequestTranslations()
   const windPage = t.windPage
 
   const windSlidesLocalized: HeroSliderSlide[] = windPage.hero.slides.map((slide, index) => ({
@@ -93,57 +89,63 @@ export default function WindEnergyPage() {
 
       {/* <SharedHeroSlider slides={windSlidesLocalized} ariaLabel={windPage.labels.sliderAriaLabel} interval={5200} /> */}
 
-      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        <div className="mb-8 max-w-3xl">
-          <WindSectionEyebrow>{windPage.overview.eyebrow}</WindSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.overview.title}</h2>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-2">
-          {turbineTypesLocalized.map((type) => (
-            <WindFeatureCard
-              key={type.title}
-              title={type.title}
-              description={type.description}
-              points={type.highlights}
-              accent={getAccentOrDefault(type.accent, ['emerald', 'amber', 'violet'] as const, 'sky')}
-            />
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        <div className="rounded-2xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-sm sm:p-8">
-          <div className="mb-6 flex items-center justify-between gap-3">
-            <div>
-              <WindSectionEyebrow>{windPage.classification.eyebrow}</WindSectionEyebrow>
-              <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">{windPage.classification.title}</h3>
-            </div>
-            <div className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.25em] text-slate-200 sm:block">
-              {windPage.classification.badge}
-            </div>
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="mb-8 max-w-3xl">
+            <WindSectionEyebrow>{windPage.overview.eyebrow}</WindSectionEyebrow>
+            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.overview.title}</h2>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-3">
-            {deploymentTypesLocalized.map((item, index) => (
-              <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-lg font-bold text-emerald-300">
-                  {index + 1}
-                </div>
-                <p className="text-sm leading-7 text-slate-100">{item}</p>
-              </div>
+          <div className="grid gap-6 lg:grid-cols-2">
+            {turbineTypesLocalized.map((type) => (
+              <WindFeatureCard
+                key={type.title}
+                title={type.title}
+                description={type.description}
+                points={type.highlights}
+                accent={getAccentOrDefault(type.accent, ['emerald', 'amber', 'violet'] as const, 'sky')}
+              />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        <div className="mb-8 max-w-3xl">
-          <WindSectionEyebrow>{windPage.electrical.eyebrow}</WindSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.electrical.title}</h2>
-        </div>
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="rounded-2xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-sm sm:p-8">
+            <div className="mb-6 flex items-center justify-between gap-3">
+              <div>
+                <WindSectionEyebrow>{windPage.classification.eyebrow}</WindSectionEyebrow>
+                <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">{windPage.classification.title}</h3>
+              </div>
+              <div className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.25em] text-slate-200 sm:block">
+                {windPage.classification.badge}
+              </div>
+            </div>
 
-        <WindComparisonTable rows={systemConfigsLocalized} />
+            <div className="grid gap-4 md:grid-cols-3">
+              {deploymentTypesLocalized.map((item, index) => (
+                <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-lg font-bold text-emerald-300">
+                    {index + 1}
+                  </div>
+                  <p className="text-sm leading-7 text-slate-100">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="mb-8 max-w-3xl">
+            <WindSectionEyebrow>{windPage.electrical.eyebrow}</WindSectionEyebrow>
+            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.electrical.title}</h2>
+          </div>
+
+          <WindComparisonTable rows={systemConfigsLocalized} />
+        </div>
       </section>
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
@@ -161,118 +163,124 @@ export default function WindEnergyPage() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        <div className="mb-8 max-w-3xl">
-          <WindSectionEyebrow>{windPage.capacity.eyebrow}</WindSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.capacity.title}</h2>
-        </div>
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="mb-8 max-w-3xl">
+            <WindSectionEyebrow>{windPage.capacity.eyebrow}</WindSectionEyebrow>
+            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.capacity.title}</h2>
+          </div>
 
-        <WindCapacityTable rows={capacityBandsLocalized} />
+          <WindCapacityTable rows={capacityBandsLocalized} />
+        </div>
       </section>
 
-      <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-            <div>
-              <WindSectionEyebrow>{windPage.strategy.eyebrow}</WindSectionEyebrow>
-              <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.strategy.title}</h2>
-              <div className="mt-6 space-y-5 text-sm leading-7 text-slate-700">
-                <p>
-                  {windPage.labels.strategyDescription[0]}
-                </p>
-                <p>
-                  {windPage.labels.strategyDescription[1]}
-                </p>
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+              <div>
+                <WindSectionEyebrow>{windPage.strategy.eyebrow}</WindSectionEyebrow>
+                <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.strategy.title}</h2>
+                <div className="mt-6 space-y-5 text-sm leading-7 text-slate-700">
+                  <p>
+                    {windPage.labels.strategyDescription[0]}
+                  </p>
+                  <p>
+                    {windPage.labels.strategyDescription[1]}
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
-              <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700">{windPage.labels.aeroSunView}</p>
-              <div className="mt-4 space-y-3 text-md leading-7 text-slate-700">
-                {windPage.strategy.points.map((point, index) => (
-                  <div key={point} className="rounded-2xl bg-white p-3">{index + 1}. {point}</div>
-                ))}
+              <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
+                <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700">{windPage.labels.aeroSunView}</p>
+                <div className="mt-4 space-y-3 text-md leading-7 text-slate-700">
+                  {windPage.strategy.points.map((point, index) => (
+                    <div key={point} className="rounded-2xl bg-white p-3">{index + 1}. {point}</div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        <div className="mb-8 max-w-3xl">
-          <WindSectionEyebrow>{windPage.labels.serviceSections}</WindSectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.labels.serviceSectionsTitle}</h2>
-        </div>
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="mb-8 max-w-3xl">
+            <WindSectionEyebrow>{windPage.labels.serviceSections}</WindSectionEyebrow>
+            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{windPage.labels.serviceSectionsTitle}</h2>
+          </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
-          {serviceSectionsLocalized.map((section) => (
-            <div key={section.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="text-2xl font-bold text-slate-900">{section.title}</h3>
-              <p className="mt-2 text-sm leading-7 text-slate-700">{section.heading}</p>
-              <p className="mt-4 text-md leading-6 text-slate-600">{section.overview}</p>
+          <div className="grid gap-8 lg:grid-cols-2">
+            {serviceSectionsLocalized.map((section) => (
+              <div key={section.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <h3 className="text-2xl font-bold text-slate-900">{section.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-slate-700">{section.heading}</p>
+                <p className="mt-4 text-md leading-6 text-slate-600">{section.overview}</p>
 
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <div>
-                  <h4 className="text-md font-semibold text-slate-800">{windPage.labels.applications}</h4>
-                  <ul className="mt-2 space-y-2 text-md leading-6 text-slate-600">
-                    {section.applications.map((app) => (
-                      <li key={app.title} className="flex gap-3">
-                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <div>
-                          <div className="font-medium text-slate-800">{app.title}</div>
-                          <div className="text-md leading-6 text-slate-600">{app.description}</div>
-                        </div>
-                      </li>
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <h4 className="text-md font-semibold text-slate-800">{windPage.labels.applications}</h4>
+                    <ul className="mt-2 space-y-2 text-md leading-6 text-slate-600">
+                      {section.applications.map((app) => (
+                        <li key={app.title} className="flex gap-3">
+                          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </div>
+                          <div>
+                            <div className="font-medium text-slate-800">{app.title}</div>
+                            <div className="text-md leading-6 text-slate-600">{app.description}</div>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="text-md font-semibold text-slate-800">{windPage.labels.keyBenefits}</h4>
+                    <ul className="mt-2 space-y-2 text-md leading-6 text-slate-600">
+                      {section.benefits.map((benefit) => (
+                        <li key={benefit} className="flex gap-3">
+                          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </div>
+                          <div className="text-md leading-6 text-slate-600">{benefit}</div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-6 rounded-2xl bg-slate-50 p-4 text-md text-slate-700">
+                  <div className="flex items-center justify-between">
+                    <div className="font-medium">{windPage.labels.illustrativeCalculation}</div>
+                    <div className="text-md text-slate-500">{section.calculation.label}</div>
+                  </div>
+                  <div className="mt-2 flex gap-2 text-lg font-bold">
+                    <div className="text-emerald-600">{section.calculation.result}</div>
+                    <div className="text-slate-500">{section.calculation.formula}</div>
+                  </div>
+                  <div className="mt-2 text-md text-slate-500">{section.calculation.note}</div>
+                </div>
+
+                <div className="mt-6 border-t border-slate-200 pt-4">
+                  <h4 className="text-md font-semibold text-slate-800">{windPage.labels.faqs}</h4>
+                  <div className="mt-2 space-y-3 text-md leading-6 text-slate-600">
+                    {section.faqs.map((faq) => (
+                      <div key={faq.question} className="flex flex-col gap-1">
+                        <div className="font-medium text-slate-800">{faq.question}</div>
+                        <div className="text-md">{faq.answer}</div>
+                      </div>
                     ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 className="text-md font-semibold text-slate-800">{windPage.labels.keyBenefits}</h4>
-                  <ul className="mt-2 space-y-2 text-md leading-6 text-slate-600">
-                    {section.benefits.map((benefit) => (
-                      <li key={benefit} className="flex gap-3">
-                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <div className="text-md leading-6 text-slate-600">{benefit}</div>
-                      </li>
-                    ))}
-                  </ul>
+                  </div>
                 </div>
               </div>
-
-              <div className="mt-6 rounded-2xl bg-slate-50 p-4 text-md text-slate-700">
-                <div className="flex items-center justify-between">
-                  <div className="font-medium">{windPage.labels.illustrativeCalculation}</div>
-                  <div className="text-md text-slate-500">{section.calculation.label}</div>
-                </div>
-                <div className="mt-2 flex gap-2 text-lg font-bold">
-                  <div className="text-emerald-600">{section.calculation.result}</div>
-                  <div className="text-slate-500">{section.calculation.formula}</div>
-                </div>
-                <div className="mt-2 text-md text-slate-500">{section.calculation.note}</div>
-              </div>
-
-              <div className="mt-6 border-t border-slate-200 pt-4">
-                <h4 className="text-md font-semibold text-slate-800">{windPage.labels.faqs}</h4>
-                <div className="mt-2 space-y-3 text-md leading-6 text-slate-600">
-                  {section.faqs.map((faq) => (
-                    <div key={faq.question} className="flex flex-col gap-1">
-                      <div className="font-medium text-slate-800">{faq.question}</div>
-                      <div className="text-md">{faq.answer}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
       <TirupatiEnergySection background="second" />
@@ -280,8 +288,8 @@ export default function WindEnergyPage() {
   )
 }
 
-function WindComparisonTable({ rows }: { rows: { system: string; detail: string; use: string }[] }) {
-  const { t } = useLocale()
+async function WindComparisonTable({ rows }: { rows: { system: string; detail: string; use: string }[] }) {
+  const t = await getRequestTranslations()
   const ui = t.ui
 
   return (

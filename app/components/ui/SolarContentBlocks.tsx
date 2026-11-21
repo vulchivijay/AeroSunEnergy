@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react'
-import { useLocale } from '@/lib/LocaleContext'
 
 import {
   ContentBenefitCard,
@@ -39,20 +38,20 @@ export function FeatureCard({
   description,
   points,
   accent = 'emerald',
+  label,
 }: {
   title: string
   description: string
   points: string[]
   accent?: AccentTone
+  label: string
 }) {
-  const { t } = useLocale()
-
   return (
     <ContentFeatureCard
       title={title}
       description={description}
       points={points}
-      label={t.ui.solarSolution}
+      label={label}
       icon={renderSolarIcon(contentAccentText[accent])}
       cardClassName="group h-full border-t border-slate-300 py-6 transition-colors hover:border-emerald-600"
       featureClassName={contentAccentText[accent]}

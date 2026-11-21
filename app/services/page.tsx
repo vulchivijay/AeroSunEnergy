@@ -1,5 +1,3 @@
-'use client'
-
 import {
   ArrowDownRight,
   ArrowRight,
@@ -15,14 +13,14 @@ import {
 } from 'lucide-react'
 import { OptimizedImage } from '@/app/components/ui'
 import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
-import { useLocale } from '@/lib/LocaleContext'
+import { getRequestTranslations } from '@/lib/serverLocale'
 import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 
 const divisionIcons = [Sun, Wind, Zap, Gauge]
 const capabilityIcons = [Compass, DraftingCompass, Settings2, ArrowRight, Gauge, Lightbulb]
 
-export default function ServicesPage() {
-  const { t } = useLocale()
+export default async function ServicesPage() {
+  const t = await getRequestTranslations()
   const page = t.servicesPage
   const labels = page.labels
 
@@ -31,7 +29,7 @@ export default function ServicesPage() {
       <header className="relative isolate min-h-[620px] overflow-hidden bg-[#102a43] text-white sm:min-h-[680px]">
         <div className="absolute inset-0 -z-10">
           <OptimizedImage
-            src="/images/slider/slider-1.webp"
+            src="/images/slider/slider-7.webp"
             alt={labels.heroImageAlt}
             fill
             priority
@@ -90,42 +88,44 @@ export default function ServicesPage() {
 
       <TrustRibbon />
 
-      <section id="service-divisions" className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div className="max-w-3xl">
-            <p className="inline-flex w-fit rounded-full border border-emerald-800/15 bg-emerald-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-emerald-800">{labels.serviceStructure}</p>
-            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{labels.serviceStructureTitle}</h2>
+      <section id="service-divisions" className="bg-gradient-to-br from-white to-[#f1f2f6]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-3xl">
+              <p className="inline-flex w-fit rounded-full border border-emerald-800/15 bg-emerald-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-emerald-800">{labels.serviceStructure}</p>
+              <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{labels.serviceStructureTitle}</h2>
+            </div>
+            <p className="max-w-sm text-sm leading-6 text-slate-600">{labels.completeSolutionsDescription}</p>
           </div>
-          <p className="max-w-sm text-sm leading-6 text-slate-600">{labels.completeSolutionsDescription}</p>
-        </div>
 
-        <div className="grid gap-4 lg:grid-cols-2">
-          {page.servicePackages.map((service, index) => {
-            const Icon = divisionIcons[index] ?? Zap
-            return (
-              <article key={service.title} className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-md sm:p-8">
-                <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${service.accent}`} />
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <span className="font-mono text-xs font-bold tracking-[0.18em] text-[#137c63]">{labels.division} 0{index + 1}</span>
-                    <h3 className="mt-3 text-2xl font-black tracking-tight text-slate-950 sm:text-3xl">{service.title}</h3>
+          <div className="grid gap-4 lg:grid-cols-2">
+            {page.servicePackages.map((service, index) => {
+              const Icon = divisionIcons[index] ?? Zap
+              return (
+                <article key={service.title} className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-md sm:p-8">
+                  <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${service.accent}`} />
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <span className="font-mono text-xs font-bold tracking-[0.18em] text-[#137c63]">{labels.division} 0{index + 1}</span>
+                      <h3 className="mt-3 text-2xl font-black tracking-tight text-slate-950 sm:text-3xl">{service.title}</h3>
+                    </div>
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#eaf2e9] text-[#137c63] transition group-hover:bg-[#087a61] group-hover:text-white">
+                      <Icon className="h-5 w-5" strokeWidth={1.8} aria-hidden="true" />
+                    </span>
                   </div>
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#eaf2e9] text-[#137c63] transition group-hover:bg-[#087a61] group-hover:text-white">
-                    <Icon className="h-5 w-5" strokeWidth={1.8} aria-hidden="true" />
-                  </span>
-                </div>
-                <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600 sm:text-sm">{service.description}</p>
-                <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
-                  {service.points.map((point) => (
-                    <li key={point} className="flex items-start gap-2.5 rounded-2xl bg-slate-50 px-3 py-2.5 text-sm leading-5 text-slate-700">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#137c63]" aria-hidden="true" />
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            )
-          })}
+                  <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600 sm:text-sm">{service.description}</p>
+                  <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
+                    {service.points.map((point) => (
+                      <li key={point} className="flex items-start gap-2.5 rounded-2xl bg-slate-50 px-3 py-2.5 text-sm leading-5 text-slate-700">
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#137c63]" aria-hidden="true" />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              )
+            })}
+          </div>
         </div>
       </section>
 
@@ -157,76 +157,80 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        <div className="overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] p-6 text-white shadow-sm sm:p-8 lg:p-12">
-          <div className="mb-8 max-w-3xl">
-            <p className="inline-flex w-fit rounded-full border border-amber-300/25 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-amber-200">{labels.deliveryModel}</p>
-            <h2 className="mt-3 text-3xl font-black tracking-tighter sm:text-5xl">{labels.deliveryModelTitle}</h2>
-          </div>
-          <div className="grid gap-3 xl:grid-cols-2">
-            {page.packages.map((pkg, index) => (
-              <article key={pkg.name} className="rounded-2xl border border-white/15 bg-white/[0.07] p-5 sm:p-6">
-                <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <h3 className="text-xl font-bold text-white">{pkg.name}</h3>
-                  <span className="font-mono text-xs font-bold text-amber-200">PACKAGE 0{index + 1}</span>
-                </div>
-                <p className="mt-2 text-sm font-bold uppercase tracking-[0.18em] text-sky-100/80">{pkg.customers}</p>
-                <ul className="mt-5 grid gap-2 sm:grid-cols-2">
-                  {pkg.services.map((service) => (
-                    <li key={service} className="flex items-start gap-2 text-sm leading-6 text-white/80">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300" aria-hidden="true" />
-                      {service}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] p-6 text-white shadow-sm sm:p-8 lg:p-12">
+            <div className="mb-8 max-w-3xl">
+              <p className="inline-flex w-fit rounded-full border border-amber-300/25 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-amber-200">{labels.deliveryModel}</p>
+              <h2 className="mt-3 text-3xl font-black tracking-tighter sm:text-5xl">{labels.deliveryModelTitle}</h2>
+            </div>
+            <div className="grid gap-3 xl:grid-cols-2">
+              {page.packages.map((pkg, index) => (
+                <article key={pkg.name} className="rounded-2xl border border-white/15 bg-white/[0.07] p-5 sm:p-6">
+                  <div className="flex flex-wrap items-baseline justify-between gap-2">
+                    <h3 className="text-xl font-bold text-white">{pkg.name}</h3>
+                    <span className="font-mono text-xs font-bold text-amber-200">PACKAGE 0{index + 1}</span>
+                  </div>
+                  <p className="mt-2 text-sm font-bold uppercase tracking-[0.18em] text-sky-100/80">{pkg.customers}</p>
+                  <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+                    {pkg.services.map((service) => (
+                      <li key={service} className="flex items-start gap-2 text-sm leading-6 text-white/80">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300" aria-hidden="true" />
+                        {service}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-14 lg:px-10">
-        <div className="grid gap-6 lg:grid-cols-[1fr_0.92fr]">
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-            <p className="inline-flex w-fit rounded-full border border-sky-800/15 bg-sky-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-sky-800">{labels.roadmap}</p>
-            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950">{labels.roadmapTitle}</h2>
-            <div className="relative mt-7 space-y-4 before:absolute before:bottom-7 before:left-[1.15rem] before:top-7 before:w-px before:bg-emerald-200">
-              {page.labels.roadmapPhases.map((phase, index) => (
-                <div key={phase.label} className="relative flex gap-4 rounded-2xl bg-slate-50 p-4">
-                  <span className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-4 border-white bg-emerald-700 font-mono text-sm font-bold text-white shadow-sm">
-                    0{index + 1}
-                  </span>
-                  <div>
-                    <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#137c63]">{phase.label}</p>
-                    <p className="mt-1 text-sm font-semibold leading-6 text-slate-800">{phase.description}</p>
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="grid gap-6 lg:grid-cols-[1fr_0.92fr]">
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+              <p className="inline-flex w-fit rounded-full border border-sky-800/15 bg-sky-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-sky-800">{labels.roadmap}</p>
+              <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950">{labels.roadmapTitle}</h2>
+              <div className="relative mt-7 space-y-4 before:absolute before:bottom-7 before:left-[1.15rem] before:top-7 before:w-px before:bg-emerald-200">
+                {page.labels.roadmapPhases.map((phase, index) => (
+                  <div key={phase.label} className="relative flex gap-4 rounded-2xl bg-slate-50 p-4">
+                    <span className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-4 border-white bg-emerald-700 font-mono text-sm font-bold text-white shadow-sm">
+                      0{index + 1}
+                    </span>
+                    <div>
+                      <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#137c63]">{phase.label}</p>
+                      <p className="mt-1 text-sm font-semibold leading-6 text-slate-800">{phase.description}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </article>
+                ))}
+              </div>
+            </article>
 
-          <article className="relative isolate flex min-h-[420px] flex-col justify-end overflow-hidden rounded-2xl bg-slate-950 p-6 text-white sm:p-8">
-            <div className="absolute inset-0 -z-10">
-              <OptimizedImage
-                src="/images/slider/slider-2.webp"
-                alt={labels.roadmapImageAlt}
-                fill
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                className="object-cover opacity-55"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#102a43] via-[#102a43]/50 to-transparent" />
-            </div>
-            <p className="inline-flex w-fit rounded-full border border-amber-300/25 bg-black/25 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-amber-200">{labels.finalRecommendation}</p>
-            <h3 className="mt-3 max-w-lg text-3xl font-black tracking-tighter sm:text-4xl">{labels.finalRecommendationTitle}</h3>
-            <ul className="mt-5 space-y-2.5">
-              {labels.recommendationItems.map((item) => (
-                <li key={item} className="flex items-center gap-3 text-sm font-medium text-white/90">
-                  <Check className="h-4 w-4 text-amber-200" aria-hidden="true" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </article>
+            <article className="relative isolate flex min-h-[420px] flex-col justify-end overflow-hidden rounded-2xl bg-slate-950 p-6 text-white sm:p-8">
+              <div className="absolute inset-0 -z-10">
+                <OptimizedImage
+                  src="/images/slider/slider-2.webp"
+                  alt={labels.roadmapImageAlt}
+                  fill
+                  sizes="(min-width: 1024px) 45vw, 100vw"
+                  className="object-cover opacity-55"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#102a43] via-[#102a43]/50 to-transparent" />
+              </div>
+              <p className="inline-flex w-fit rounded-full border border-amber-300/25 bg-black/25 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-amber-200">{labels.finalRecommendation}</p>
+              <h3 className="mt-3 max-w-lg text-3xl font-black tracking-tighter sm:text-4xl">{labels.finalRecommendationTitle}</h3>
+              <ul className="mt-5 space-y-2.5">
+                {labels.recommendationItems.map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-sm font-medium text-white/90">
+                    <Check className="h-4 w-4 text-amber-200" aria-hidden="true" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -266,35 +270,37 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        <div className="mb-8 max-w-3xl">
-          <p className="inline-flex w-fit rounded-full border border-sky-800/15 bg-sky-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-sky-800">{labels.systemTypes}</p>
-          <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{labels.systemTypesTitle}</h2>
-          <p className="mt-4 text-sm leading-7 text-slate-600">{labels.systemTypesDescription}</p>
-        </div>
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="mb-8 max-w-3xl">
+            <p className="inline-flex w-fit rounded-full border border-sky-800/15 bg-sky-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-sky-800">{labels.systemTypes}</p>
+            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{labels.systemTypesTitle}</h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600">{labels.systemTypesDescription}</p>
+          </div>
 
-        <div className="grid gap-4 xl:grid-cols-3">
-          {page.systemTypes.map((system, index) => (
-            <article key={system.type} className={`rounded-2xl border p-6 shadow-sm ${system.accent}`}>
-              <div className="flex items-center justify-between gap-3">
-                <span className="font-mono text-xs font-bold tracking-[0.2em] opacity-70">SYSTEM 0{index + 1}</span>
-                <span className="rounded-full bg-white/80 px-3 py-1 text-sm font-bold uppercase tracking-[0.15em] text-slate-700">{system.badge}</span>
-              </div>
-              <h3 className="mt-5 text-2xl font-black">{system.type}</h3>
-              <p className="mt-3 text-sm leading-6">{system.description}</p>
-              <ul className="mt-5 space-y-2.5">
-                {system.benefits.map((benefit) => (
-                  <li key={benefit} className="flex items-start gap-2 text-sm leading-5">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
-                    {benefit}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-6 rounded-2xl bg-white/75 px-4 py-3 text-sm leading-6 text-slate-700">
-                <span className="font-bold">{labels.bestFor}</span> {system.bestFor}
-              </p>
-            </article>
-          ))}
+          <div className="grid gap-4 xl:grid-cols-3">
+            {page.systemTypes.map((system, index) => (
+              <article key={system.type} className={`rounded-2xl border p-6 shadow-sm ${system.accent}`}>
+                <div className="flex items-center justify-between gap-3">
+                  <span className="font-mono text-xs font-bold tracking-[0.2em] opacity-70">SYSTEM 0{index + 1}</span>
+                  <span className="rounded-full bg-white/80 px-3 py-1 text-sm font-bold uppercase tracking-[0.15em] text-slate-700">{system.badge}</span>
+                </div>
+                <h3 className="mt-5 text-2xl font-black">{system.type}</h3>
+                <p className="mt-3 text-sm leading-6">{system.description}</p>
+                <ul className="mt-5 space-y-2.5">
+                  {system.benefits.map((benefit) => (
+                    <li key={benefit} className="flex items-start gap-2 text-sm leading-5">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+                      {benefit}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-6 rounded-2xl bg-white/75 px-4 py-3 text-sm leading-6 text-slate-700">
+                  <span className="font-bold">{labels.bestFor}</span> {system.bestFor}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
       <TirupatiEnergySection background="first" />

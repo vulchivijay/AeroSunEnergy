@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent, type ReactNode } from "react";
+import { useState, type FormEvent } from "react";
 import { useLocale } from "@/lib/LocaleContext";
 import { FormDataNotice } from "@/app/components/forms/FormDataNotice";
 import { submitWebsiteForm } from "@/lib/websiteFormSubmission";

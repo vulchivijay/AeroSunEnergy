@@ -1,18 +1,11 @@
-'use client'
-
 import Link from 'next/link'
-import { motion } from '@/lib/motion'
-import { useEffect, useId, useState, type FormEvent, type ReactNode } from 'react'
-import en from '@/public/locales/en/index.json'
-import { useLocale } from '@/lib/LocaleContext'
+import { ArrowUpRight } from 'lucide-react'
+import type { ReactNode } from 'react'
 import { OptimizedImage } from '@/app/components/ui'
-import { ReadMoreToggle } from '@/app/components/ui/ReadMoreToggle'
 import { SolarEstimation } from '@/app/components/forms/SolarEstimation'
-import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
-import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
-import { useToast } from '@/app/components/ui/ToastContext'
-import { electricityBillOptions, financingOptions, indianStates, solarNeedOptions } from '@/lib/contactFormOptions'
+import ContactForm from '@/app/components/forms/ContactForm'
 import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
+import { getRequestTranslations } from '@/lib/serverLocale'
 
 const channelIconComponents: Record<string, ReactNode> = {
   email: (
@@ -33,20 +26,10 @@ const channelIconComponents: Record<string, ReactNode> = {
     </svg>
   ),
 }
-
-export default function Contact() {
-  const { locale, t } = useLocale()
-  const toast = useToast()
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [faqExpanded, setFaqExpanded] = useState(false)
+export default async function Contact() {
+  const t = await getRequestTranslations()
   const channelIconIds = t.componentData.contact.channelIconIds
   const c = t.contact
-  const [selectedSubmit, setSelectedSubmit] = useState<{
-    locale: typeof locale
-    label: string
-  } | null>(null)
-  const submitVariants = c.form.submitVariants
-  const submitLabel = selectedSubmit?.locale === locale ? selectedSubmit.label : c.form.submit
   const footer = t.footer
   const navbar = t.navbar
   const referralProgram = t.home.referralProgram
@@ -68,40 +51,6 @@ export default function Contact() {
   const energyBadgeSuffix = c.energyBadgeSuffix
 
   const contactHighlights = c.highlights
-
-  useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * submitVariants.length)
-    // Keep the first render deterministic for SSR; select a variant after hydration.
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setSelectedSubmit({ locale, label: submitVariants[randomIndex] })
-    // LocaleProvider rebuilds merged arrays on unrelated renders; only locale changes require a new choice.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [locale])
-
-  async function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    const form = event.currentTarget
-    const formData = new FormData(form)
-    setIsSubmitting(true)
-
-    try {
-      const referenceCode = await submitWebsiteForm('contact', {
-        fullName: String(formData.get('fullName') ?? '').trim(),
-        email: String(formData.get('email') ?? '').trim(),
-        phone: String(formData.get('phone') ?? '').trim(),
-        solarNeed: String(formData.get('solarNeed') ?? '').trim(),
-        state: String(formData.get('state') ?? '').trim(),
-        monthlyAverageElectricityBill: String(formData.get('monthlyAverageElectricityBill') ?? '').trim(),
-        interestedInFinancing: String(formData.get('interestedInFinancing') ?? '').trim(),
-      })
-      toast.success(`${c.form.success} ${t.formSubmission.referenceLabel}: ${referenceCode}`)
-      form.reset()
-    } catch {
-      toast.error(t.formSubmission.error)
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
 
   const contactSteps = c.steps.map((step, index) => ({
     ...step,
@@ -132,10 +81,7 @@ export default function Contact() {
             <span className="hidden text-sm font-semibold uppercase tracking-[0.18em] text-slate-500 sm:block">{location}</span>
           </div>
           <div className="grid min-h-[34rem] overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(135deg,#dbeafe_0%,#e0f2fe_55%,#ecfdf5_100%)] lg:grid-cols-[1fr_0.92fr]">
-            <motion.div
-              initial={{ opacity: 0, x: -18 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.45, ease: 'easeOut' }}
+            <div
               className="relative flex flex-col justify-between overflow-hidden p-7 sm:p-11 lg:p-14"
             >
               <div className="pointer-events-none absolute -bottom-36 -left-36 h-[28rem] w-[28rem] rounded-full border border-sky-900/10" aria-hidden="true" />
@@ -164,11 +110,8 @@ export default function Contact() {
                 <span className="text-sm font-bold uppercase tracking-[0.18em] text-slate-600">{c.badge}</span>
                 <span className="text-right text-sm font-black text-slate-900">{c.projectBrief}</span>
               </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 1.03 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, ease: 'easeOut', delay: 0.08 }}
+            </div>
+            <div
               className="relative min-h-80 overflow-hidden bg-[#102a43] lg:min-h-full"
             >
               <OptimizedImage
@@ -185,7 +128,7 @@ export default function Contact() {
               <div className="absolute bottom-7 left-7 max-w-xs border-l-2 border-amber-300 pl-4 text-sm font-semibold leading-7 text-white sm:bottom-10 sm:left-10">
                 {projectStory}
               </div>
-            </motion.div>
+            </div>
           </div>
           <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(120deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] text-white">
             <div className="grid lg:grid-cols-[0.75fr_1.25fr]">
@@ -239,54 +182,7 @@ export default function Contact() {
                 <h2 id="contact-form-title" className="mt-3 text-3xl font-black leading-tight tracking-tighter">{c.form.title}</h2>
                 <p className="mt-4 text-sm leading-7 text-slate-700">{c.form.description}</p>
               </div>
-              <form className="grid gap-4 p-5 sm:p-8" onSubmit={handleContactSubmit}>
-                <label className="block text-sm font-semibold text-slate-800">
-                  {c.form.fullName} <span className="text-red-600" aria-hidden="true">*</span>
-                  <input className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="fullName" type="text" autoComplete="name" minLength={2} maxLength={100} required placeholder={c.form.fullNamePlaceholder} />
-                </label>
-                <label className="block text-sm font-semibold text-slate-800">
-                  {c.form.phone} <span className="text-red-600" aria-hidden="true">*</span>
-                  <input className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="phone" type="tel" autoComplete="tel" inputMode="tel" pattern="(?:\+?91)?[6-9][0-9]{9}" maxLength={13} required placeholder={c.form.phonePlaceholder} />
-                </label>
-                <label className="block text-sm font-semibold text-slate-800">
-                  {c.form.solarNeed} <span className="text-red-600" aria-hidden="true">*</span>
-                  <select className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="solarNeed" required defaultValue="">
-                    <option value="" disabled>{c.form.solarNeedPlaceholder}</option>
-                    {solarNeedOptions.map((option, index) => <option key={option.value} value={option.value}>{c.form.solarNeedOptions[index]}</option>)}
-                  </select>
-                </label>
-                <label className="block text-sm font-semibold text-slate-800">
-                  {c.form.state} <span className="text-red-600" aria-hidden="true">*</span>
-                  <select className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="state" required defaultValue="">
-                    <option value="" disabled>{c.form.statePlaceholder}</option>
-                    {indianStates.map((state) => <option key={state} value={state}>{state}</option>)}
-                  </select>
-                </label>
-                <label className="block text-sm font-semibold text-slate-800">
-                  {c.form.monthlyAverageElectricityBill} <span className="text-red-600" aria-hidden="true">*</span>
-                  <select className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="monthlyAverageElectricityBill" required defaultValue="">
-                    <option value="" disabled>{c.form.monthlyAverageElectricityBillPlaceholder}</option>
-                    {electricityBillOptions.map((option, index) => <option key={option.value} value={option.value}>{c.form.electricityBillOptions[index]}</option>)}
-                  </select>
-                </label>
-                <label className="block text-sm font-semibold text-slate-800">
-                  {c.form.interestedInFinancing}
-                  <select className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="interestedInFinancing" defaultValue="">
-                    <option value="" disabled>{c.form.interestedInFinancingPlaceholder}</option>
-                    {financingOptions.map((option, index) => <option key={option.value} value={option.value}>{c.form.financingOptions[index]}</option>)}
-                  </select>
-                </label>
-                <label className="block text-sm font-semibold text-slate-800">
-                  {c.form.email} <span className="text-red-600" aria-hidden="true">*</span>
-                  <input className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15" name="email" type="email" autoComplete="email" maxLength={254} required placeholder={c.form.emailPlaceholder} />
-                </label>
-                <div className="space-y-3">
-                  <FormDataNotice />
-                  <button className="inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#087a61] px-6 py-3 text-base font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61] disabled:cursor-wait disabled:opacity-70" type="submit" disabled={isSubmitting}>
-                    {isSubmitting ? t.formSubmission.saving : submitLabel}
-                  </button>
-                </div>
-              </form>
+              <ContactForm content={c.form} />
             </div>
           </div>
         </div>
@@ -347,84 +243,43 @@ export default function Contact() {
         <div className="pointer-events-none absolute -bottom-20 right-0 h-72 w-72 rounded-full bg-fuchsia-300/25 blur-3xl" aria-hidden="true" />
 
         <div className="relative mx-auto max-w-7xl">
-          <header className="py-2 sm:py-5">
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <p className="inline-flex w-fit items-center gap-2 rounded-full border border-indigo-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-indigo-900">
+          <details className="group py-2 sm:py-5">
+            <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
+              <span>
+                <span className="inline-flex w-fit items-center gap-2 rounded-full border border-indigo-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-indigo-900">
                   <span className="h-2 w-2 rounded-full bg-fuchsia-500" aria-hidden="true" />
                   {faqHeader}
-                </p>
+                </span>
                 <h2 id="contact-faq-title" className="mt-5 text-4xl font-black leading-tight tracking-tighter text-slate-950 sm:text-5xl">
                   {faqTitle}
                 </h2>
-                <p className="mt-5 max-w-md text-sm leading-7 text-slate-700 sm:text-base">
+                <span className="mt-5 block max-w-md text-sm leading-7 text-slate-700 sm:text-base">
                   {faqIntro}
-                </p>
-              </div>
-              <ReadMoreToggle
-                expanded={faqExpanded}
-                onToggle={() => setFaqExpanded((expanded) => !expanded)}
-                controlsId="contact-faq-content"
-                labelClassName="text-amber-800 underline decoration-amber-300 hover:text-amber-950"
-              />
+                </span>
+              </span>
+              <span className="inline-flex shrink-0 items-center gap-2 pt-2 text-sm text-amber-800 underline decoration-amber-300 sm:text-base">
+                {t.ui.readMore}
+                <ArrowUpRight className="h-5 w-5 transition-transform group-open:rotate-90" aria-hidden="true" />
+              </span>
+            </summary>
+            <div className="space-y-3 py-3 sm:py-5">
+              {t.solarFaqs.items.map((faq) => (
+                <details
+                  key={faq.question}
+                  className="overflow-hidden rounded-2xl border border-[#d8c9ab]/70 bg-white/24 p-0"
+                >
+                  <summary className="cursor-pointer px-5 py-4 text-sm font-black tracking-[0.03em] text-[#1f2a44] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-amber-700 sm:px-6 sm:text-lg">
+                    {faq.question}
+                  </summary>
+                  <div className="border-t border-[#f0e3ce] px-5 pb-5 pt-4 sm:px-6">
+                    <p className="text-sm leading-8 text-slate-700">{faq.answer}</p>
+                  </div>
+                </details>
+              ))}
             </div>
-          </header>
-
-          <div id="contact-faq-content" hidden={!faqExpanded} className="space-y-3 py-3 sm:py-5">
-            {solarFaqs.map((faq) => (
-              <FaqCard key={faq.question} question={faq.question} answer={faq.answer} />
-            ))}
-          </div>
+          </details>
         </div>
       </section>
     </main>
   )
-}
-
-type FaqCardProps = {
-  question: string;
-  answer: string;
-  defaultOpen?: boolean;
-};
-
-const solarFaqs = en.solarFaqs.items;
-
-function FaqCard({ question, answer, defaultOpen = false }: FaqCardProps) {
-  const { t } = useLocale();
-  const [isOpen, setIsOpen] = useState(defaultOpen);
-  const answerId = useId();
-  const questionId = useId();
-  const faqIndex = solarFaqs.findIndex((faq) => faq.question === question);
-  const localizedFaq = faqIndex >= 0 ? t.solarFaqs.items[faqIndex] : undefined;
-  const displayQuestion = localizedFaq?.question ?? question;
-  const displayAnswer = localizedFaq?.answer ?? answer;
-
-  return (
-    <div className={`overflow-hidden rounded-2xl border bg-white/24 p-0 transition-all duration-300 ${isOpen ? 'border-[#F59E0B]/70 bg-[#fffaf1]' : 'border-[#d8c9ab]/70'}`}>
-      <button
-        type="button"
-        onClick={() => setIsOpen((prev) => !prev)}
-        className="flex w-full items-center justify-between gap-3 px-5 py-4 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-amber-700 sm:px-6"
-        aria-expanded={isOpen}
-        aria-controls={answerId}
-        aria-label={`${displayQuestion} — ${isOpen ? t.solarFaqs.collapseAnswer : t.solarFaqs.expandAnswer}`}
-        id={questionId}
-      >
-        <span className="text-sm font-black tracking-[0.03em] text-[#1f2a44] sm:text-lg">{displayQuestion}</span>
-        <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-lg font-bold transition ${isOpen ? 'border-[#F59E0B]/60 bg-[#F59E0B] text-white' : 'border-[#F59E0B]/60 bg-[#fff3df] text-[#D97706]'}`}>
-          {isOpen ? '\u2212' : '+'}
-        </span>
-      </button>
-
-      <div
-        id={answerId}
-        role="region"
-        aria-labelledby={questionId}
-        hidden={!isOpen}
-        className="border-t border-[#f0e3ce] px-5 pb-5 pt-4 sm:px-6"
-      >
-        <p className="text-sm leading-8 text-slate-700">{displayAnswer}</p>
-      </div>
-    </div>
-  );
 }

@@ -1,8 +1,6 @@
-'use client'
-
 import Link from 'next/link'
 import { ArrowUpRight, BadgeIndianRupee, Landmark } from 'lucide-react'
-import { useLocale } from '@/lib/LocaleContext'
+import { getRequestTranslations } from '@/lib/serverLocale'
 import { BankEMICalculator } from '@/app/components/forms/BankEMICalculator'
 
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
@@ -23,8 +21,8 @@ function renderTerms(value: LoanTermsValue) {
   return <p><DigitalNumber value={value} /></p>
 }
 
-export default function FinancePage() {
-  const { t } = useLocale()
+export default async function FinancePage() {
+  const t = await getRequestTranslations()
   const page = t.financePage
 
   return (
@@ -156,8 +154,8 @@ const markerColors = [
   'bg-amber-500',
 ]
 
-function ConsumerApplicationJourney() {
-  const { t } = useLocale()
+async function ConsumerApplicationJourney() {
+  const t = await getRequestTranslations()
   const journey = t.financePage.applicationJourney
 
   return (

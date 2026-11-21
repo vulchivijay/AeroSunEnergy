@@ -1,11 +1,9 @@
-'use client'
-
 import Link from 'next/link'
-import { useLocale } from '@/lib/LocaleContext'
+import { getRequestTranslations } from '@/lib/serverLocale'
 import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 
-export default function CancellationRefundPage() {
-  const { t } = useLocale()
+export default async function CancellationRefundPage() {
+  const t = await getRequestTranslations()
   const content = t.legalPages.cancellationRefund
 
   return (

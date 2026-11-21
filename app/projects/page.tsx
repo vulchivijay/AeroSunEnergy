@@ -1,35 +1,13 @@
-'use client'
-
-import { useMemo, useState } from 'react'
-import { useLocale } from '@/lib/LocaleContext'
+import { getRequestTranslations } from '@/lib/serverLocale'
 import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
+import ProjectStatusFilter from '@/app/components/projects/ProjectStatusFilter'
 
-type ProjectStatus = 'In Queue' | 'In Progress' | 'Completed'
-
-type ProjectCard = {
-  title: string
-  location: string
-  type: string
-  status: ProjectStatus
-  summary: string
-}
-
-export default function ProjectsPage() {
-  const { t } = useLocale()
+export default async function ProjectsPage() {
+  const t = await getRequestTranslations()
   const projectsPage = t.projectsPage
   const projectCategoriesData = projectsPage.projectCategories
   const projectStepsData = projectsPage.projectSteps
-  const statusMetaData = projectsPage.statusMeta
-  const projectCards: ProjectCard[] = projectsPage.projectCards
-  const tabs = projectsPage.statusTabs as ProjectStatus[]
   const labels = projectsPage.labels
-
-  const [activeTab, setActiveTab] = useState<ProjectStatus>('In Queue')
-
-  const filteredProjects = useMemo(
-    () => projectCards.filter((project) => project.status === activeTab),
-    [activeTab, projectCards],
-  )
 
   return (
     <main className="min-h-screen bg-[#f7f7f2] text-slate-800">
@@ -115,56 +93,7 @@ export default function ProjectsPage() {
             <div className="h-px bg-linear-to-r from-emerald-100 via-sky-100 to-transparent" />
           </section>
 
-          <section id="project-pipeline" className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white to-[#f1f2f6] shadow-sm">
-            <div className="flex items-start gap-4 p-5 sm:p-6">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-md font-bold text-emerald-800">02</span>
-              <div className="min-w-0 flex-1">
-                <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.statusOverview}</h2>
-                <p className="mt-2 text-md leading-6 text-slate-600">{labels.statusDescription}</p>
-                <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-3">
-                  <div role="group" aria-label={labels.statusFilterLabel} className="flex flex-wrap gap-2 border-b border-slate-200 pb-3">
-                    {tabs.map((tab) => {
-                      const isActive = activeTab === tab
-                      return (
-                        <button
-                          key={tab}
-                          type="button"
-                          onClick={() => setActiveTab(tab)}
-                          aria-pressed={isActive}
-                          className={`inline-flex min-h-11 items-center gap-2 rounded-full px-4 py-2 text-md font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 ${isActive ? 'bg-slate-900 text-white shadow-sm' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
-                        >
-                          <span className={`inline-flex h-2.5 w-2.5 rounded-full ${isActive ? 'bg-emerald-400' : 'bg-slate-400'}`} aria-hidden="true" />
-                          {statusMetaData[tab].label}
-                        </button>
-                      )
-                    })}
-                  </div>
-                  <div className="pt-5">
-                    {filteredProjects.length === 0 ? (
-                      <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-5 py-10 text-center">
-                        <h3 className="text-xl font-bold tracking-tight text-slate-900">{labels.emptyProjectsTitle.replace('{status}', statusMetaData[activeTab].label)}</h3>
-                        <p className="mx-auto mt-2 max-w-lg text-md leading-7 text-slate-600">{labels.emptyProjectsDescription}</p>
-                      </div>
-                    ) : (
-                      <div className="grid gap-4 md:grid-cols-2">
-                        {filteredProjects.map((project) => (
-                          <article key={`${project.title}-${project.location}`} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                            <span className={`inline-flex rounded-full border px-2.5 py-1 text-[12px] font-bold uppercase tracking-[0.18em] ${statusMetaData[project.status].tone}`}>{statusMetaData[project.status].label}</span>
-                            <div className={`mt-4 h-1.5 rounded-full bg-linear-to-r ${statusMetaData[project.status].accent}`} aria-hidden="true" />
-                            <h3 className="mt-4 text-lg font-bold text-slate-900">{project.title}</h3>
-                            <p className="mt-2 text-md text-slate-500">{project.location}</p>
-                            <p className="mt-3 text-md font-medium text-slate-700">{project.type}</p>
-                            <p className="mt-3 text-md leading-7 text-slate-600">{project.summary}</p>
-                          </article>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="h-px bg-linear-to-r from-emerald-100 via-sky-100 to-transparent" />
-          </section>
+          <ProjectStatusFilter content={projectsPage} />
 
           <p className="mt-7 rounded-2xl border border-emerald-200/80 bg-white p-5 text-md leading-7 text-slate-600">
             {labels.contactPrompt}{' '}

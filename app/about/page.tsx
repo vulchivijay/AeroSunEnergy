@@ -1,17 +1,14 @@
-'use client'
-
 import Link from 'next/link'
 import { Check, Sun, Wind, Zap } from 'lucide-react'
-import { motion } from '@/lib/motion'
 import { OptimizedImage } from '@/app/components/ui'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
-import { useLocale } from '@/lib/LocaleContext'
+import { getRequestTranslations } from '@/lib/serverLocale'
 import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 
 const systemIcons = [Sun, Wind, Zap]
 
-export default function AboutPage() {
-  const { t } = useLocale()
+export default async function AboutPage() {
+  const t = await getRequestTranslations()
   const a = t.about
   const content = a.pageContent
   const aboutSection = a.aboutSection
@@ -63,12 +60,7 @@ export default function AboutPage() {
         </div>
 
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:px-10 lg:py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45 }}
-            className="max-w-3xl"
-          >
+          <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#137c63]/15 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
               <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
               {pageStrings.badge}
@@ -109,7 +101,7 @@ export default function AboutPage() {
                 {pageStrings.productCatalogue}
               </Link>
             </div>
-          </motion.div>
+          </div>
 
           <div className="relative mx-auto w-full max-w-md lg:ml-auto">
             <div className="absolute -inset-5 rounded-4xl bg-teal-700/10 blur-3xl" />
@@ -452,17 +444,14 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
       <section id="about" className="relative isolate overflow-hidden bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 text-[#152b29] sm:px-6 sm:py-14 lg:px-10 lg:py-16">
         <div className="pointer-events-none absolute -right-28 top-0 h-[30rem] w-[30rem] rounded-full border border-teal-800/10" aria-hidden="true" />
         <div className="pointer-events-none absolute -right-20 top-8 h-[25rem] w-[25rem] rounded-full border border-amber-700/[0.08]" aria-hidden="true" />
 
         <div className="relative mx-auto max-w-7xl">
-          <motion.div
+          <div
             className="grid items-center gap-12 xl:grid-cols-[1.15fr_0.85fr] xl:gap-20"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
           >
             <div className="min-w-0">
               <p className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-teal-900/10 bg-white/75 px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] text-teal-800 before:h-1.5 before:w-1.5 before:shrink-0 before:rounded-full before:bg-amber-500 before:content-['']">
@@ -504,7 +493,7 @@ export default function AboutPage() {
                 </p>
               </div>
             </article>
-          </motion.div>
+          </div>
 
           <div className="mt-12 grid gap-4 border-y border-teal-900/15 py-6 sm:mt-16 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-teal-900/15 sm:py-7">
             {stats.map((item, index) => (

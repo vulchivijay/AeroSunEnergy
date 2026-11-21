@@ -1,7 +1,9 @@
 'use client'
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, useSyncExternalStore, ReactNode } from 'react'
+import { useRouter } from 'next/navigation'
 import en from '@/public/locales/en/index.json'
+import { mergeLocaleData } from '@/lib/localeData'
 
 export type Locale = 'en' | 'hi' | 'te' | 'ta' | 'kn' | 'ml'
 
@@ -30,13 +32,33 @@ export function isLocale(value: string): value is Locale {
     value === 'ta' || value === 'kn' || value === 'ml'
 }
 
-function getStoredLocale(): Locale {
+function getLocalStorageLocale(): Locale | undefined {
   try {
     const saved = window.localStorage.getItem(LOCALE_STORAGE_KEY)
-    return saved && isLocale(saved) ? saved : 'en'
+    return saved && isLocale(saved) ? saved : undefined
   } catch {
-    return 'en'
+    return undefined
   }
+}
+
+function getCookieLocale(): Locale | undefined {
+  const saved = document.cookie
+    .split(';')
+    .map((cookie) => cookie.trim())
+    .find((cookie) => cookie.startsWith(`${LOCALE_STORAGE_KEY}=`))
+    ?.slice(LOCALE_STORAGE_KEY.length + 1)
+
+  return saved && isLocale(saved) ? saved : undefined
+}
+
+function getStoredLocale(): Locale {
+  return getLocalStorageLocale() ?? getCookieLocale() ?? 'en'
+}
+
+function saveLocaleCookie(locale: Locale) {
+  const secure = window.location.protocol === 'https:' ? '; Secure' : ''
+  document.cookie =
+    `${LOCALE_STORAGE_KEY}=${locale}; Path=/; Max-Age=31536000; SameSite=Lax${secure}`
 }
 
 function subscribeToLocale(callback: () => void) {
@@ -86,43 +108,6 @@ type LocaleConceptFile = {
 
 export type Translations = typeof en
 
-function mergeLocaleData<T>(fallback: T, localized: unknown): T {
-  if (Array.isArray(fallback)) {
-    if (!Array.isArray(localized)) return fallback
-
-    const merged = fallback.map((value, index) =>
-      index < localized.length
-        ? mergeLocaleData(value, localized[index])
-        : value,
-    )
-    merged.push(...localized.slice(fallback.length))
-    return merged as T
-  }
-
-  if (fallback !== null && typeof fallback === 'object') {
-    const localizedRecord =
-      localized !== null && typeof localized === 'object'
-        ? (localized as Record<string, unknown>)
-        : {}
-    const fallbackRecord = fallback as Record<string, unknown>
-    const merged: Record<string, unknown> = {}
-
-    for (const [key, value] of Object.entries(fallbackRecord)) {
-      merged[key] = key in localizedRecord
-        ? mergeLocaleData(value, localizedRecord[key])
-        : value
-    }
-
-    for (const [key, value] of Object.entries(localizedRecord)) {
-      if (!(key in fallbackRecord)) merged[key] = value
-    }
-
-    return merged as T
-  }
-
-  return (localized === undefined ? fallback : localized) as T
-}
-
 export async function getBasicElectricalConceptData(locale: Locale): Promise<ConceptCollection> {
   const localeFile = await conceptLocaleLoaders[locale]()
   let collection =
@@ -154,6 +139,7 @@ const LocaleContext = createContext<LocaleContextValue>({
 })
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
+  const router = useRouter()
   const locale = useSyncExternalStore<Locale>(
     subscribeToLocale,
     getStoredLocale,
@@ -163,6 +149,15 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     locale: Locale
     translations: Translations
   } | null>(null)
+
+  useEffect(() => {
+    const preferredLocale = getLocalStorageLocale()
+    const cookieLocale = getCookieLocale()
+    if (preferredLocale && preferredLocale !== cookieLocale) {
+      saveLocaleCookie(preferredLocale)
+      router.refresh()
+    }
+  }, [router])
 
   useEffect(() => {
     document.documentElement.lang = locale
@@ -198,8 +193,10 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     } catch {
       console.error(`Unable to save locale preference "${l}".`)
     }
+    saveLocaleCookie(l)
     window.dispatchEvent(new Event(LOCALE_CHANGE_EVENT))
-  }, [])
+    router.refresh()
+  }, [router])
 
   const translations = locale === 'en'
     ? en
