@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useLocale } from '@/lib/LocaleContext'
+import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 
 export default function CancellationRefundPage() {
   const { t } = useLocale()
@@ -29,6 +30,8 @@ export default function CancellationRefundPage() {
           </div>
         </div>
       </header>
+
+      <TrustRibbon />
 
       <div className="mx-auto max-w-5xl space-y-6 px-4 py-10 sm:px-6 sm:py-14 lg:px-10">
         <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">

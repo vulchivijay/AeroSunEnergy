@@ -6,6 +6,7 @@ import { motion } from '@/lib/motion'
 import { OptimizedImage } from '@/app/components/ui'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import { useLocale } from '@/lib/LocaleContext'
+import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 
 const systemIcons = [Sun, Wind, Zap]
 
@@ -53,6 +54,7 @@ export default function AboutPage() {
   }))
   return (
     <main className="overflow-hidden bg-white text-slate-900">
+      <TrustRibbon />
       <section id="story" className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] text-[#152b29]">
         <div className="pointer-events-none absolute inset-0 -z-10" />
         <div className="absolute -right-36 top-20 -z-10 h-[34rem] w-[34rem] rounded-full border border-teal-900/[0.08] sm:right-[-8rem]">

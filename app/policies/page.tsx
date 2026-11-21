@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useLocale } from '@/lib/LocaleContext'
+import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 
 export default function PoliciesPage() {
   const { t } = useLocale()
@@ -44,6 +45,8 @@ export default function PoliciesPage() {
           </div>
         </div>
       </header>
+
+      <TrustRibbon />
 
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[minmax(0,1fr)_290px] lg:gap-12 lg:px-10 lg:py-16">
         <article className="min-w-0">

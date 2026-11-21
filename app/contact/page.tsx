@@ -12,6 +12,7 @@ import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useToast } from '@/app/components/ui/ToastContext'
 import { electricityBillOptions, financingOptions, indianStates, solarNeedOptions } from '@/lib/contactFormOptions'
+import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 
 const channelIconComponents: Record<string, ReactNode> = {
   email: (
@@ -316,7 +317,9 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      
+
+      <TrustRibbon />
+
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white border-y border-slate-200 bg-slate-50 px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16" aria-labelledby="contact-referral-title">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <div className="max-w-3xl">
