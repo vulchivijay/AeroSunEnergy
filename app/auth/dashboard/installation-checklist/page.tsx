@@ -10,6 +10,7 @@ import { SharedFormField } from '@/app/components/forms/SharedFormField'
 import { createBusinessContactSchema } from '@/app/components/forms/businessContactSchema'
 import { getFirstFormErrorMessage } from '@/lib/formValidation'
 import { useToast } from '@/app/components/ui/ToastContext'
+import { DashboardCollapsibleSection } from '@/app/components/ui/DashboardCollapsibleSection'
 
 const createChecklistSchema = (validation: typeof import('@/public/locales/en/index.json').businessForms.installationChecklist.validation) => z.object({
 	...createBusinessContactSchema(validation).shape,
@@ -124,17 +125,19 @@ export default function InstallationChecklistPage() {
 
 					<div className="space-y-4">
 						{content.sections.map((section, index) => (
-							<section
+							<DashboardCollapsibleSection
 								key={section.title}
 								id={`checklist-phase-${index + 1}`}
-								className={`scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 shadow-sm ${index % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}
+								title={section.title}
+								titleClassName="text-lg font-extrabold tracking-tight text-slate-950"
+								contentClassName="mt-3"
+								className={`scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 p-5 shadow-sm sm:p-6 ${index % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}
 							>
-								<div className="flex items-start gap-4 p-5 sm:p-6">
+								<div className="flex items-start gap-4">
 									<span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-amber-200 bg-amber-50 font-mono text-md font-bold text-amber-800">
 										{String(index + 1).padStart(2, '0')}
 									</span>
 									<div className="min-w-0 flex-1">
-										<h2 className="text-lg font-extrabold tracking-tight text-slate-950">{section.title}</h2>
 										<p className="mt-3 text-md leading-7 text-slate-600 sm:text-sm">{section.text}</p>
 										<ul className="mt-4 space-y-2.5">
 											{section.points.map((item) => (
@@ -147,7 +150,7 @@ export default function InstallationChecklistPage() {
 									</div>
 								</div>
 								<div className="h-px bg-linear-to-r from-amber-100 via-orange-100 to-transparent" />
-							</section>
+							</DashboardCollapsibleSection>
 						))}
 					</div>
 

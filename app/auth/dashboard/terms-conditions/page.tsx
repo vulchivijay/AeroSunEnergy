@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useLocale } from '@/lib/LocaleContext'
+import { DashboardCollapsibleSection } from '@/app/components/ui/DashboardCollapsibleSection'
 
 export default function TermsPage() {
   const { t } = useLocale()
@@ -78,9 +79,12 @@ export default function TermsPage() {
 
           <div className="space-y-5">
             {content.sections.map((section, index) => (
-              <section
+              <DashboardCollapsibleSection
                 key={section.heading}
                 id={`terms-${index + 1}`}
+                ariaLabel={section.heading}
+                title={section.heading}
+                titleClassName="text-lg font-extrabold tracking-tight text-slate-950 sm:text-xl"
                 className={`scroll-mt-28 rounded-2xl border border-slate-200 p-5 shadow-sm transition-shadow hover:shadow-md sm:p-6 ${index % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}
               >
                 <div className="flex items-start gap-4">
@@ -88,7 +92,6 @@ export default function TermsPage() {
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <div className="min-w-0">
-                    <h2 className="text-lg font-extrabold tracking-tight text-slate-950 sm:text-xl">{section.heading}</h2>
                     <p className="mt-3 text-sm leading-7 text-slate-600">{section.content}</p>
                     <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
                       {section.bullets.map((item) => (
@@ -102,7 +105,7 @@ export default function TermsPage() {
                     </ul>
                   </div>
                 </div>
-              </section>
+              </DashboardCollapsibleSection>
             ))}
           </div>
 
