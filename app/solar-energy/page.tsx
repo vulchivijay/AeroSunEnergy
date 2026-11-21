@@ -83,24 +83,26 @@ export default async function SolarEnergyPage() {
 
       {/* <SharedHeroSlider slides={solarSlidesLocalized} ariaLabel={solarPage.hero.eyebrow} /> */}
 
-      <section id="solar-offerings" className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        <div className="mb-8 max-w-3xl">
-          <SectionEyebrow>{solarPage.offer.eyebrow}</SectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">{solarPage.offer.title}</h2>
-          <p className="mt-4 text-sm leading-8 text-slate-700">{solarPage.offer.description}</p>
-        </div>
+      <section id="solar-offerings" className="bg-gradient-to-br from-white to-[#f1f2f6]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="mb-8 max-w-3xl">
+            <SectionEyebrow>{solarPage.offer.eyebrow}</SectionEyebrow>
+            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">{solarPage.offer.title}</h2>
+            <p className="mt-4 text-sm leading-8 text-slate-700">{solarPage.offer.description}</p>
+          </div>
 
-        <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
-          {offeringsLocalized.map((service) => (
-            <FeatureCard
-              key={service.title}
-              title={service.title}
-              description={service.description}
-              points={service.points}
-              accent={service.title.includes('Street') ? 'amber' : service.title.includes('Thermal') ? 'sky' : service.title.includes('Fencing') ? 'violet' : 'emerald'}
-              label={t.ui.solarSolution}
-            />
-          ))}
+          <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
+            {offeringsLocalized.map((service) => (
+              <FeatureCard
+                key={service.title}
+                title={service.title}
+                description={service.description}
+                points={service.points}
+                accent={service.title.includes('Street') ? 'amber' : service.title.includes('Thermal') ? 'sky' : service.title.includes('Fencing') ? 'violet' : 'emerald'}
+                label={t.ui.solarSolution}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -127,16 +129,18 @@ export default async function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        <div className="mb-8 max-w-3xl">
-          <SectionEyebrow>{solarPage.systemTypes.eyebrow}</SectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">{solarPage.systemTypes.title}</h2>
-        </div>
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="mb-8 max-w-3xl">
+            <SectionEyebrow>{solarPage.systemTypes.eyebrow}</SectionEyebrow>
+            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">{solarPage.systemTypes.title}</h2>
+          </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
-          {systemTypesLocalized.map((type) => (
-            <FeatureCard key={type.title} title={type.title} description={type.description} points={type.benefits} accent={type.title.includes('Off-grid') ? 'amber' : type.title.includes('Hybrid') ? 'violet' : 'emerald'} label={t.ui.solarSolution} />
-          ))}
+          <div className="grid gap-6 lg:grid-cols-3">
+            {systemTypesLocalized.map((type) => (
+              <FeatureCard key={type.title} title={type.title} description={type.description} points={type.benefits} accent={type.title.includes('Off-grid') ? 'amber' : type.title.includes('Hybrid') ? 'violet' : 'emerald'} label={t.ui.solarSolution} />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -155,22 +159,24 @@ export default async function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        <div className="mb-8 max-w-3xl">
-          <SectionEyebrow>{solarPage.subsidy.eyebrow}</SectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">{solarPage.subsidy.title}</h2>
-          <p className="mt-4 text-sm leading-8 text-slate-700">{solarPage.subsidy.description}</p>
-          <p className="mt-4 rounded-2xl border border-[#dce9df] bg-[#eaf2e9] px-4 py-3 text-sm leading-6 text-slate-700">{t.subsidyNotice}</p>
-        </div>
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="mb-8 max-w-3xl">
+            <SectionEyebrow>{solarPage.subsidy.eyebrow}</SectionEyebrow>
+            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">{solarPage.subsidy.title}</h2>
+            <p className="mt-4 text-sm leading-8 text-slate-700">{solarPage.subsidy.description}</p>
+            <p className="mt-4 rounded-2xl border border-[#dce9df] bg-[#eaf2e9] px-4 py-3 text-sm leading-6 text-slate-700">{t.subsidyNotice}</p>
+          </div>
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {solarPage.subsidy.cards.map((card) => (
-            <SubsidyCard key={card.label} label={card.label} value={card.value} note={card.note} />
-          ))}
-        </div>
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {solarPage.subsidy.cards.map((card) => (
+              <SubsidyCard key={card.label} label={card.label} value={card.value} note={card.note} />
+            ))}
+          </div>
 
-        <div className="mt-8">
-          <CapacityTable />
+          <div className="mt-8">
+            <CapacityTable />
+          </div>
         </div>
       </section>
 
@@ -191,50 +197,52 @@ export default async function SolarEnergyPage() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-            <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-[#137c63]">{comparisonMeta.label}</p>
-            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">{comparisonMeta.title}</h2>
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+              <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-[#137c63]">{comparisonMeta.label}</p>
+              <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">{comparisonMeta.title}</h2>
 
-            <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
-              <div className="grid grid-cols-1 border-b border-slate-200 bg-[linear-gradient(145deg,#71300c_0%,#92370b_55%,#a94208_100%)] text-sm font-semibold uppercase tracking-[0.18em] text-white md:grid-cols-[1.3fr_0.9fr_0.8fr_1.4fr]">
-                <div className="px-4 py-3">{t.ui.systemType}</div>
-                <div className="px-4 py-3">{comparisonMeta.battery}</div>
-                <div className="px-4 py-3">{comparisonMeta.grid}</div>
-                <div className="px-4 py-3">{comparisonMeta.typicalUse}</div>
-              </div>
+              <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+                <div className="grid grid-cols-1 border-b border-slate-200 bg-[linear-gradient(145deg,#71300c_0%,#92370b_55%,#a94208_100%)] text-sm font-semibold uppercase tracking-[0.18em] text-white md:grid-cols-[1.3fr_0.9fr_0.8fr_1.4fr]">
+                  <div className="px-4 py-3">{t.ui.systemType}</div>
+                  <div className="px-4 py-3">{comparisonMeta.battery}</div>
+                  <div className="px-4 py-3">{comparisonMeta.grid}</div>
+                  <div className="px-4 py-3">{comparisonMeta.typicalUse}</div>
+                </div>
 
-              <div className="divide-y divide-slate-200">
-                {solarComparisonRows.map((row) => (
-                  <div key={row.type} className="grid gap-3 px-4 py-4 text-md text-slate-700 md:grid-cols-[1.3fr_0.9fr_0.8fr_1.4fr] md:gap-0">
-                    <div className="font-bold text-slate-900">{row.type}</div>
-                    <div>{row.battery}</div>
-                    <div>{row.grid}</div>
-                    <div>{row.use}</div>
-                  </div>
-                ))}
+                <div className="divide-y divide-slate-200">
+                  {solarComparisonRows.map((row) => (
+                    <div key={row.type} className="grid gap-3 px-4 py-4 text-md text-slate-700 md:grid-cols-[1.3fr_0.9fr_0.8fr_1.4fr] md:gap-0">
+                      <div className="font-bold text-slate-900">{row.type}</div>
+                      <div>{row.battery}</div>
+                      <div>{row.grid}</div>
+                      <div>{row.use}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(145deg,#71300c_0%,#92370b_55%,#a94208_100%)] p-5 shadow-sm">
-            <div className="relative h-72 overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
-              <OptimizedImage
-                src="/images/slider/slider-6.webp"
-                alt={solarPage.featuredImageAlt}
-                fill
-                sizes="(min-width: 1024px) 30vw, 100vw"
-                className="object-cover opacity-85"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-slate-950/85 via-slate-900/30 to-transparent" />
-            </div>
-            <div className="mt-5 rounded-2xl border border-amber-400/20 bg-amber-500/10 p-4">
-              <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-amber-200">{comparisonMeta.recommendedFocus}</p>
-              <h3 className="mt-2 text-xl font-bold text-white">{comparisonMeta.focusTitle}</h3>
-              <p className="mt-2 text-sm leading-7 text-slate-200">
-                {comparisonMeta.recommendationDescription}
-              </p>
+            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(145deg,#71300c_0%,#92370b_55%,#a94208_100%)] p-5 shadow-sm">
+              <div className="relative h-72 overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
+                <OptimizedImage
+                  src="/images/slider/slider-6.webp"
+                  alt={solarPage.featuredImageAlt}
+                  fill
+                  sizes="(min-width: 1024px) 30vw, 100vw"
+                  className="object-cover opacity-85"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-slate-950/85 via-slate-900/30 to-transparent" />
+              </div>
+              <div className="mt-5 rounded-2xl border border-amber-400/20 bg-amber-500/10 p-4">
+                <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-amber-200">{comparisonMeta.recommendedFocus}</p>
+                <h3 className="mt-2 text-xl font-bold text-white">{comparisonMeta.focusTitle}</h3>
+                <p className="mt-2 text-sm leading-7 text-slate-200">
+                  {comparisonMeta.recommendationDescription}
+                </p>
+              </div>
             </div>
           </div>
         </div>

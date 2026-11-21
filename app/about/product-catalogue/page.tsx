@@ -81,7 +81,7 @@ export default async function ProductCataloguePage() {
           className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_8%,rgba(99,102,241,0.08),transparent_38%),radial-gradient(ellipse_at_5%_100%,rgba(56,189,248,0.1),transparent_35%)]"
           aria-hidden="true"
         />
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[#137c63]/15 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
             <span className="h-1.5 w-1.5 rounded-full bg-amber-500" aria-hidden="true" />
             {c.hero.badge}
@@ -120,7 +120,7 @@ export default async function ProductCataloguePage() {
       </section>
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="01"
             eyebrow={c.residential.eyebrow}
@@ -150,7 +150,7 @@ export default async function ProductCataloguePage() {
       </section>
 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="02"
             eyebrow={c.commercial.eyebrow}
@@ -179,7 +179,7 @@ export default async function ProductCataloguePage() {
       </section>
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="03"
             eyebrow={c.agricultural.eyebrow}
@@ -212,7 +212,7 @@ export default async function ProductCataloguePage() {
       </section>
 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="04"
             eyebrow={c.offGrid.eyebrow}
@@ -239,7 +239,7 @@ export default async function ProductCataloguePage() {
       </section>
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="05"
             eyebrow={c.battery.eyebrow}
@@ -276,7 +276,7 @@ export default async function ProductCataloguePage() {
       </section>
 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="06"
             eyebrow={c.wind.eyebrow}
@@ -322,7 +322,7 @@ export default async function ProductCataloguePage() {
       </section>
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="07"
             eyebrow={c.hybrid.eyebrow}
@@ -344,7 +344,7 @@ export default async function ProductCataloguePage() {
       </section>
 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="08"
             eyebrow={c.consultation.eyebrow}
@@ -375,7 +375,7 @@ export default async function ProductCataloguePage() {
       </section>
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="09"
             eyebrow={c.whyChoose.eyebrow}
@@ -396,7 +396,7 @@ export default async function ProductCataloguePage() {
       </section>
 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="overflow-hidden rounded-2xl">
             <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
               <div className="bg-[linear-gradient(145deg,#581c87_0%,#7e22ce_55%,#a21caf_100%)] p-7 text-white sm:p-10">

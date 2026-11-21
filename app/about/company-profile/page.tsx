@@ -89,7 +89,7 @@ export default async function CompanyProfilePage() {
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_8%,rgba(217,119,6,0.1),transparent_38%),radial-gradient(ellipse_at_5%_100%,rgba(251,191,36,0.12),transparent_35%)]"
           aria-hidden="true"
         />
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <p className="inline-flex items-center gap-2 rounded-full border border-[#137c63]/15 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
             <span
               className="h-1.5 w-1.5 rounded-full bg-amber-500"
@@ -167,7 +167,7 @@ export default async function CompanyProfilePage() {
       </section>
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="01"
             eyebrow={cp.section1Eyebrow}
@@ -178,7 +178,7 @@ export default async function CompanyProfilePage() {
       </section>
 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="02"
             eyebrow={cp.section2Eyebrow}
@@ -191,7 +191,7 @@ export default async function CompanyProfilePage() {
       </section>
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="03"
             eyebrow={cp.section3Eyebrow}
@@ -204,7 +204,7 @@ export default async function CompanyProfilePage() {
       </section>
 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="04"
             eyebrow={cp.section4Eyebrow}
@@ -255,7 +255,7 @@ export default async function CompanyProfilePage() {
       </section>
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="05"
             eyebrow={cp.productSectionEyebrow}
@@ -288,7 +288,7 @@ export default async function CompanyProfilePage() {
       </section>
 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="06"
             eyebrow={cp.innovationEyebrow}
@@ -317,7 +317,7 @@ export default async function CompanyProfilePage() {
       </section>
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="07"
             eyebrow={cp.technologyDevelopmentEyebrow}
@@ -343,7 +343,7 @@ export default async function CompanyProfilePage() {
       </section>
 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="08"
             eyebrow={cp.whoWeServeEyebrow}
@@ -352,7 +352,7 @@ export default async function CompanyProfilePage() {
           />
           <BulletList items={customerSegments} />
         </div>
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="09"
             eyebrow={cp.manufacturingEyebrow}
@@ -367,7 +367,7 @@ export default async function CompanyProfilePage() {
       </section>
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="10"
             eyebrow={cp.qualityEyebrow}
@@ -395,7 +395,7 @@ export default async function CompanyProfilePage() {
       </section>
 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="11"
             eyebrow={cp.whyWorkEyebrow}
@@ -413,7 +413,7 @@ export default async function CompanyProfilePage() {
       </section>
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <SectionHeading
             number="12"
             eyebrow={cp.futureEyebrow}
@@ -439,7 +439,7 @@ export default async function CompanyProfilePage() {
       </section>
 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="grid lg:grid-cols-[0.8fr_1.2fr] overflow-hidden rounded-2xl border border-slate-200 bg-white">
             <div className="bg-[linear-gradient(145deg,#713f12_0%,#92400e_55%,#a16207_100%)] p-7 text-white sm:p-10">
               <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-amber-200">
