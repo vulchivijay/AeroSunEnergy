@@ -1,8 +1,7 @@
 'use client'
 
-import { ArrowUpRight } from 'lucide-react'
 import { useId, useState, type ReactNode } from 'react'
-import { useLocale } from '@/lib/LocaleContext'
+import { ReadMoreToggle } from './ReadMoreToggle'
 
 export function DashboardCollapsibleSection({
   title,
@@ -27,7 +26,6 @@ export function DashboardCollapsibleSection({
   ariaLabel?: string
   id?: string
 }) {
-  const { t } = useLocale()
   const generatedId = useId()
   const contentId = `dashboard-collapse-${generatedId.replace(/:/g, '')}`
   const [expanded, setExpanded] = useState(defaultExpanded)
@@ -40,19 +38,12 @@ export function DashboardCollapsibleSection({
           {eyebrow && <div className="mb-2">{eyebrow}</div>}
           {title && <Heading className={titleClassName}>{title}</Heading>}
         </div>
-        <button
-          type="button"
-          className="group inline-flex shrink-0 items-center gap-2 text-sm text-sky-800 underline decoration-sky-300 underline-offset-4 transition hover:text-sky-950 sm:text-base"
-          onClick={() => setExpanded((current) => !current)}
-          aria-expanded={expanded}
-          aria-controls={contentId}
-        >
-          <span>{expanded ? t.ui.showLess : t.ui.readMore}</span>
-          <ArrowUpRight
-            className={`h-5 w-5 transition-transform duration-300 ${expanded ? 'rotate-90' : 'group-hover:translate-x-0.5 group-hover:-translate-y-0.5'}`}
-            aria-hidden="true"
-          />
-        </button>
+        <ReadMoreToggle
+          expanded={expanded}
+          onToggle={() => setExpanded((current) => !current)}
+          controlsId={contentId}
+          labelClassName="text-sky-800 underline decoration-sky-300 hover:text-sky-950"
+        />
       </div>
       <div id={contentId} className={contentClassName} hidden={!expanded}>
         {children}

@@ -2,11 +2,11 @@
 
 import Link from 'next/link'
 import { motion } from '@/lib/motion'
-import { ArrowUpRight } from 'lucide-react'
 import { useEffect, useId, useState, type FormEvent, type ReactNode } from 'react'
 import en from '@/public/locales/en/index.json'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
+import { ReadMoreToggle } from '@/app/components/ui/ReadMoreToggle'
 import { SolarEstimation } from '@/app/components/forms/SolarEstimation'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
@@ -358,19 +358,12 @@ export default function Contact() {
                   {faqIntro}
                 </p>
               </div>
-              <button
-                type="button"
-                className="group inline-flex shrink-0 items-center gap-2 text-sm text-amber-800 underline decoration-amber-300 underline-offset-4 transition hover:text-amber-950 sm:text-base"
-                onClick={() => setFaqExpanded((expanded) => !expanded)}
-                aria-expanded={faqExpanded}
-                aria-controls="contact-faq-content"
-              >
-                <span>{faqExpanded ? t.ui.showLess : t.ui.readMore}</span>
-                <ArrowUpRight
-                  className={`h-5 w-5 transition-transform duration-300 ${faqExpanded ? 'rotate-90' : 'group-hover:translate-x-0.5 group-hover:-translate-y-0.5'}`}
-                  aria-hidden="true"
-                />
-              </button>
+              <ReadMoreToggle
+                expanded={faqExpanded}
+                onToggle={() => setFaqExpanded((expanded) => !expanded)}
+                controlsId="contact-faq-content"
+                labelClassName="text-amber-800 underline decoration-amber-300 hover:text-amber-950"
+              />
             </div>
           </header>
 

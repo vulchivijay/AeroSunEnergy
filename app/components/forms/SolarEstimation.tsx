@@ -1,9 +1,10 @@
 'use client'
 
 import { useId, useState, type FormEvent } from 'react'
-import { ArrowUpRight, Calculator, Landmark, Tag, type LucideIcon } from 'lucide-react'
+import { Calculator, Landmark, Tag, type LucideIcon } from 'lucide-react'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
+import { ReadMoreToggle } from '@/app/components/ui/ReadMoreToggle'
 import { useLocale } from '@/lib/LocaleContext'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useToast } from '@/app/components/ui/ToastContext'
@@ -765,16 +766,12 @@ export function SolarEstimation() {
               {solarGstGuide.title}
             </h2>
           </div>
-          <button
-            type="button"
-            className="group inline-flex shrink-0 items-center gap-2 text-sm text-emerald-700 underline decoration-emerald-300 underline-offset-4 transition hover:text-emerald-950 sm:text-base"
-            onClick={() => setGstGuideExpanded((expanded) => !expanded)}
-            aria-expanded={gstGuideExpanded}
-            aria-controls={`${leadFormId}-gst-content`}
-          >
-            <span>{gstGuideExpanded ? t.ui.showLess : t.ui.readMore}</span>
-            <ArrowUpRight className={`h-5 w-5 transition-transform duration-300 ${gstGuideExpanded ? 'rotate-90' : 'group-hover:translate-x-0.5 group-hover:-translate-y-0.5'}`} aria-hidden="true" />
-          </button>
+          <ReadMoreToggle
+            expanded={gstGuideExpanded}
+            onToggle={() => setGstGuideExpanded((expanded) => !expanded)}
+            controlsId={`${leadFormId}-gst-content`}
+            labelClassName="text-emerald-700 underline decoration-emerald-300 hover:text-emerald-950"
+          />
         </div>
 
         <div id={`${leadFormId}-gst-content`} hidden={!gstGuideExpanded}>

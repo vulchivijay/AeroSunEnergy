@@ -6,7 +6,7 @@ import { BankEMICalculator } from './components/forms/BankEMICalculator'
 import { SolarEstimation } from './components/forms/SolarEstimation'
 import TirupatiEnergySection from './components/sections/TirupatiEnergySection'
 
-import { BenefitCard, FeatureCard, HybridBenefitCard, HybridFeatureCard, HybridInfoPanel, HybridSectionEyebrow, HybridTable, InfoPanel, SectionEyebrow, WindBenefitCard, WindCapacityTable, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from './components/ui'
+import { BenefitCard, FeatureCard, HybridBenefitCard, HybridFeatureCard, HybridInfoPanel, HybridSectionEyebrow, HybridTable, InfoPanel, ReadMoreToggle, SectionEyebrow, WindBenefitCard, WindCapacityTable, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from './components/ui'
 
 import Image from 'next/image'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
@@ -94,16 +94,12 @@ export default function Home() {
                 {offer.title}
               </h2>
             </div>
-            <button
-              type="button"
-              className="group inline-flex shrink-0 items-center gap-2 text-sm text-emerald-700 underline decoration-emerald-300 underline-offset-4 transition hover:text-emerald-950 sm:text-base"
-              onClick={() => setOfferExpanded((expanded) => !expanded)}
-              aria-expanded={offerExpanded}
-              aria-controls="what-we-offer-content"
-            >
-              <span>{offerExpanded ? t.ui.showLess : t.ui.readMore}</span>
-              <ArrowUpRight className={`h-5 w-5 transition-transform duration-300 ${offerExpanded ? 'rotate-90' : 'group-hover:translate-x-0.5 group-hover:-translate-y-0.5'}`} aria-hidden="true" />
-            </button>
+            <ReadMoreToggle
+              expanded={offerExpanded}
+              onToggle={() => setOfferExpanded((expanded) => !expanded)}
+              controlsId="what-we-offer-content"
+              labelClassName="text-emerald-700 underline decoration-emerald-300 hover:text-emerald-950"
+            />
           </div>
           <div id="what-we-offer-content" hidden={!offerExpanded}>
           <div className="mb-10 text-lg leading-8 text-black">
@@ -204,16 +200,12 @@ export default function Home() {
                 {wind.title}
               </h2>
             </div>
-            <button
-              type="button"
-              className="group inline-flex shrink-0 items-center gap-2 text-sm text-sky-700 underline decoration-sky-300 underline-offset-4 transition hover:text-sky-950 sm:text-base"
-              onClick={() => setWindExpanded((expanded) => !expanded)}
-              aria-expanded={windExpanded}
-              aria-controls="wind-energy-content"
-            >
-              <span>{windExpanded ? t.ui.showLess : t.ui.readMore}</span>
-              <ArrowUpRight className={`h-5 w-5 transition-transform duration-300 ${windExpanded ? 'rotate-90' : 'group-hover:translate-x-0.5 group-hover:-translate-y-0.5'}`} aria-hidden="true" />
-            </button>
+            <ReadMoreToggle
+              expanded={windExpanded}
+              onToggle={() => setWindExpanded((expanded) => !expanded)}
+              controlsId="wind-energy-content"
+              labelClassName="text-sky-700 underline decoration-sky-300 hover:text-sky-950"
+            />
           </div>
           <div id="wind-energy-content" hidden={!windExpanded}>
             <div className="grid gap-6 lg:grid-cols-3">
@@ -253,16 +245,12 @@ export default function Home() {
                 {hybrid.title}
               </h2>
             </div>
-            <button
-              type="button"
-              className="group inline-flex shrink-0 items-center gap-2 text-sm text-violet-700 underline decoration-violet-300 underline-offset-4 transition hover:text-violet-950 sm:text-base"
-              onClick={() => setHybridExpanded((expanded) => !expanded)}
-              aria-expanded={hybridExpanded}
-              aria-controls="hybrid-energy-content"
-            >
-              <span>{hybridExpanded ? t.ui.showLess : t.ui.readMore}</span>
-              <ArrowUpRight className={`h-5 w-5 transition-transform duration-300 ${hybridExpanded ? 'rotate-90' : 'group-hover:translate-x-0.5 group-hover:-translate-y-0.5'}`} aria-hidden="true" />
-            </button>
+            <ReadMoreToggle
+              expanded={hybridExpanded}
+              onToggle={() => setHybridExpanded((expanded) => !expanded)}
+              controlsId="hybrid-energy-content"
+              labelClassName="text-violet-700 underline decoration-violet-300 hover:text-violet-950"
+            />
           </div>
           <div id="hybrid-energy-content" hidden={!hybridExpanded}>
             <div className="grid gap-6 lg:grid-cols-3">
@@ -379,16 +367,13 @@ function Brands() {
                 {section.subtitle}
               </p>
             </div>
-            <button
-              type="button"
-              className="group inline-flex shrink-0 items-center gap-2 self-start text-sm text-amber-800 underline decoration-amber-300 underline-offset-4 transition hover:text-amber-950 sm:self-end sm:text-base"
-              onClick={() => setBrandsExpanded((expanded) => !expanded)}
-              aria-expanded={brandsExpanded}
-              aria-controls="brands-content"
-            >
-              <span>{brandsExpanded ? t.ui.showLess : t.ui.readMore}</span>
-              <ArrowUpRight className={`h-5 w-5 transition-transform duration-300 ${brandsExpanded ? 'rotate-90' : 'group-hover:translate-x-0.5 group-hover:-translate-y-0.5'}`} aria-hidden="true" />
-            </button>
+            <ReadMoreToggle
+              expanded={brandsExpanded}
+              onToggle={() => setBrandsExpanded((expanded) => !expanded)}
+              controlsId="brands-content"
+              className="self-start sm:self-end"
+              labelClassName="text-amber-800 underline decoration-amber-300 hover:text-amber-950"
+            />
           </div>
         </header>
 
@@ -694,16 +679,12 @@ function ProjectEvidenceSection() {
           </div>
           <div className="flex items-end justify-between gap-4 lg:pb-1">
             <p className="max-w-3xl text-sm leading-7 text-black sm:text-base">{content.description}</p>
-            <button
-              type="button"
-              className="group inline-flex shrink-0 items-center gap-2 text-sm text-emerald-700 underline decoration-emerald-300 underline-offset-4 transition hover:text-emerald-950 sm:text-base"
-              onClick={() => setTestimonialsExpanded((expanded) => !expanded)}
-              aria-expanded={testimonialsExpanded}
-              aria-controls="testimonials-content"
-            >
-              <span>{testimonialsExpanded ? t.ui.showLess : t.ui.readMore}</span>
-              <ArrowUpRight className={`h-5 w-5 transition-transform duration-300 ${testimonialsExpanded ? 'rotate-90' : 'group-hover:translate-x-0.5 group-hover:-translate-y-0.5'}`} aria-hidden="true" />
-            </button>
+            <ReadMoreToggle
+              expanded={testimonialsExpanded}
+              onToggle={() => setTestimonialsExpanded((expanded) => !expanded)}
+              controlsId="testimonials-content"
+              labelClassName="text-emerald-700 underline decoration-emerald-300 hover:text-emerald-950"
+            />
           </div>
         </div>
 

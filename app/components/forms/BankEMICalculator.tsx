@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ArrowUpRight, Landmark } from 'lucide-react'
 import { useLocale } from '@/lib/LocaleContext'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
+import { ReadMoreToggle } from '@/app/components/ui/ReadMoreToggle'
 
 type LoanBand = 'upToTwoLakhs' | 'aboveTwoLakhs'
 
@@ -144,16 +145,12 @@ export function BankEMICalculator() {
               {labels.description}
             </p>
           </div>
-          <button
-            type="button"
-            className="group inline-flex shrink-0 items-center gap-2 text-sm text-orange-800 underline decoration-orange-300 underline-offset-4 transition hover:text-orange-950 sm:text-base"
-            onClick={() => setIsExpanded((expanded) => !expanded)}
-            aria-expanded={isExpanded}
-            aria-controls="bank-emi-calculator-content"
-          >
-            <span>{isExpanded ? t.ui.showLess : t.ui.readMore}</span>
-            <ArrowUpRight className={`h-5 w-5 transition-transform duration-300 ${isExpanded ? 'rotate-90' : 'group-hover:translate-x-0.5 group-hover:-translate-y-0.5'}`} aria-hidden="true" />
-          </button>
+          <ReadMoreToggle
+            expanded={isExpanded}
+            onToggle={() => setIsExpanded((expanded) => !expanded)}
+            controlsId="bank-emi-calculator-content"
+            labelClassName="text-orange-800 underline decoration-orange-300 hover:text-orange-950"
+          />
         </div>
       </header>
 

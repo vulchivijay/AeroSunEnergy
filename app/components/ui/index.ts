@@ -4,6 +4,7 @@ export { default as Slider } from './Slider'
 export { default as OptimizedImage } from './OptimizedImage'
 
 export { DigitalNumber } from './DigitalNumber'
+export { ReadMoreToggle } from './ReadMoreToggle'
 export {
   SectionEyebrow,
   FeatureCard,
