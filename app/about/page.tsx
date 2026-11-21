@@ -54,7 +54,6 @@ export default function AboutPage() {
   }))
   return (
     <main className="overflow-hidden bg-white text-slate-900">
-      <TrustRibbon />
       <section id="story" className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] text-[#152b29]">
         <div className="pointer-events-none absolute inset-0 -z-10" />
         <div className="absolute -right-36 top-20 -z-10 h-[34rem] w-[34rem] rounded-full border border-teal-900/[0.08] sm:right-[-8rem]">
@@ -147,6 +146,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <TrustRibbon />
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
