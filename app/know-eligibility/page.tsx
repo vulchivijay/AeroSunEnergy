@@ -1,14 +1,12 @@
-'use client'
-
 import Link from 'next/link'
-import { useLocale } from '@/lib/LocaleContext'
+import { getRequestTranslations } from '@/lib/serverLocale'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 
 import { BadgeCheck, ClipboardCheck, KeyRound, Monitor, PanelsTopLeft, Smartphone, type LucideIcon } from 'lucide-react'
 
-export default function KnowEligibilityPage() {
-  const { t } = useLocale()
+export default async function KnowEligibilityPage() {
+  const t = await getRequestTranslations()
   const page = t.knowEligibilityPage
   const labels = page.labels
 
@@ -239,8 +237,8 @@ const stepIcons: LucideIcon[] = [
   PanelsTopLeft,
 ]
 
-function ConsumerRegistrationProcess() {
-  const { t } = useLocale()
+async function ConsumerRegistrationProcess() {
+  const t = await getRequestTranslations()
   const eligibility = t.knowEligibilityPage
   const process = eligibility.labels.consumerRegistration
   const benefits = process.benefits

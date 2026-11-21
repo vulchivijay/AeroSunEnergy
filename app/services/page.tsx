@@ -1,5 +1,3 @@
-'use client'
-
 import {
   ArrowDownRight,
   ArrowRight,
@@ -15,14 +13,14 @@ import {
 } from 'lucide-react'
 import { OptimizedImage } from '@/app/components/ui'
 import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
-import { useLocale } from '@/lib/LocaleContext'
+import { getRequestTranslations } from '@/lib/serverLocale'
 import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 
 const divisionIcons = [Sun, Wind, Zap, Gauge]
 const capabilityIcons = [Compass, DraftingCompass, Settings2, ArrowRight, Gauge, Lightbulb]
 
-export default function ServicesPage() {
-  const { t } = useLocale()
+export default async function ServicesPage() {
+  const t = await getRequestTranslations()
   const page = t.servicesPage
   const labels = page.labels
 

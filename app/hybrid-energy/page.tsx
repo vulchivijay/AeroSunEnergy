@@ -1,7 +1,5 @@
-'use client'
-
-import { useLocale } from '@/lib/LocaleContext'
 import { getSliderImagePath } from '@/lib/sliderImages'
+import { getRequestTranslations } from '@/lib/serverLocale'
 import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 import { getAccentOrDefault } from '@/lib/utils/utils'
 import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
@@ -15,8 +13,8 @@ import {
 } from '../components/ui'
 import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 
-export default function HybridEnergyPage() {
-  const { t } = useLocale()
+export default async function HybridEnergyPage() {
+  const t = await getRequestTranslations()
   const hybridPage = t.hybridPage
 
   const hybridSlidesLocalized: HeroSliderSlide[] = hybridPage.hero.slides.map((slide, index) => ({

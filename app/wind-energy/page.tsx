@@ -1,7 +1,5 @@
-'use client'
-
-import { useLocale } from '@/lib/LocaleContext'
 import { getSliderImagePath } from '@/lib/sliderImages'
+import { getRequestTranslations } from '@/lib/serverLocale'
 import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 import { getAccentOrDefault } from '@/lib/utils/utils'
 import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
@@ -11,8 +9,8 @@ import type { ReactNode } from 'react'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import { ContentBenefitCard, contentAccentText, contentBenefitBorders, contentCheckBackgrounds, ContentFeatureCard, ContentInfoPanel, ContentSectionEyebrow, type ContentAccent } from '@/app/components/ui/SharedContentComponents'
 
-export default function WindEnergyPage() {
-  const { t } = useLocale()
+export default async function WindEnergyPage() {
+  const t = await getRequestTranslations()
   const windPage = t.windPage
 
   const windSlidesLocalized: HeroSliderSlide[] = windPage.hero.slides.map((slide, index) => ({
@@ -280,8 +278,8 @@ export default function WindEnergyPage() {
   )
 }
 
-function WindComparisonTable({ rows }: { rows: { system: string; detail: string; use: string }[] }) {
-  const { t } = useLocale()
+async function WindComparisonTable({ rows }: { rows: { system: string; detail: string; use: string }[] }) {
+  const t = await getRequestTranslations()
   const ui = t.ui
 
   return (

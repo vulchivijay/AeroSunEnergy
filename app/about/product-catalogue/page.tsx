@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import {
   ArrowRight,
@@ -14,7 +12,7 @@ import {
   Wind,
   Zap,
 } from 'lucide-react'
-import { useLocale } from '@/lib/LocaleContext'
+import { getRequestTranslations } from '@/lib/serverLocale'
 
 function SectionHeading({
   number,
@@ -72,8 +70,8 @@ function DetailCard({
   )
 }
 
-export default function ProductCataloguePage() {
-  const { t } = useLocale()
+export default async function ProductCataloguePage() {
+  const t = await getRequestTranslations()
   const c = t.productCataloguePage
 
   return (

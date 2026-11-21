@@ -1,7 +1,5 @@
-'use client'
-
 import Link from 'next/link'
-import { useLocale } from '@/lib/LocaleContext'
+import { getRequestTranslations } from '@/lib/serverLocale'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 
@@ -103,8 +101,8 @@ function renderBlocks(blocks: DocumentaryBlock[]) {
   })
 }
 
-export default function SaveEarthPage() {
-  const { t } = useLocale()
+export default async function SaveEarthPage() {
+  const t = await getRequestTranslations()
   const content = t.saveEarthPage
 
   return (

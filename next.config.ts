@@ -210,6 +210,16 @@ const nextConfig: NextConfig = {
 
     return [
       ...docsHeaders,
+      {
+        source: '/((?!_next/static|images|api|favicon.ico).*)',
+        headers: [
+          {
+            key: 'Vary',
+            value:
+              'Cookie, cf-ipcity, cf-region, cf-region-code, x-vercel-ip-city, x-vercel-ip-country-region',
+          },
+        ],
+      },
       { source: '/:path*', headers: productionCacheHeaders },
       { source: '/_next/static/:path*', headers: productionCacheHeaders },
       { source: '/images/:path*', headers: productionCacheHeaders },

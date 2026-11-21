@@ -21,6 +21,7 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
         width={80}
         height={62}
         priority
+        style={{ height: "auto" }}
         className="h-auto w-16 shrink-0 object-contain sm:w-20"
       />
       <div className="flex min-w-0 flex-col items-start justify-center text-left">

@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import {
   ArrowRight,
@@ -12,7 +10,7 @@ import {
   Wind,
   Zap,
 } from "lucide-react";
-import { useLocale } from "@/lib/LocaleContext";
+import { getRequestTranslations } from "@/lib/serverLocale";
 
 function SectionHeading({
   number,
@@ -69,8 +67,8 @@ function BulletList({ items }: { items: string[] }) {
   );
 }
 
-export default function CompanyProfilePage() {
-  const { t } = useLocale();
+export default async function CompanyProfilePage() {
+  const t = await getRequestTranslations();
   const cp = t.about.companyProfile;
   const missionPoints = cp.missionPoints;
   const solarSolutions = cp.solarSolutions;
@@ -88,8 +86,7 @@ export default function CompanyProfilePage() {
   return (
     <main className="overflow-hidden bg-white text-slate-900">
       <section className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] text-[#152b29]">
-        <div
-          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_8%,rgba(217,119,6,0.1),transparent_38%),radial-gradient(ellipse_at_5%_100%,rgba(251,191,36,0.12),transparent_35%)]"
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_8%,rgba(217,119,6,0.1),transparent_38%),radial-gradient(ellipse_at_5%_100%,rgba(251,191,36,0.12),transparent_35%)]"
           aria-hidden="true"
         />
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
@@ -169,7 +166,7 @@ export default function CompanyProfilePage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-7xl space-y-12 px-4 py-12 sm:space-y-16 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+      <div className="px-4 py-12 sm:space-y-16 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
         <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
           <SectionHeading
             number="01"

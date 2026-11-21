@@ -1,7 +1,5 @@
-'use client'
-
-import { useLocale } from '@/lib/LocaleContext'
 import { getSliderImagePath } from '@/lib/sliderImages'
+import { getRequestTranslations } from '@/lib/serverLocale'
 import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
 import { FeatureCard, BenefitCard, InfoPanel, OptimizedImage, SectionEyebrow } from '../components/ui'
@@ -10,8 +8,8 @@ import type { ReactNode } from 'react'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import { ContentBenefitCard, contentAccentText, contentBenefitBorders, contentCheckBackgrounds, ContentFeatureCard, ContentInfoPanel, ContentSectionEyebrow, type ContentAccent } from '@/app/components/ui/SharedContentComponents'
 
-export default function SolarEnergyPage() {
-  const { t } = useLocale()
+export default async function SolarEnergyPage() {
+  const t = await getRequestTranslations()
   const solarPage = t.solarPage
   const solarSlidesLocalized: HeroSliderSlide[] = solarPage.hero.slides.map((slide, index) => ({
     ...slide,
@@ -100,6 +98,7 @@ export default function SolarEnergyPage() {
               description={service.description}
               points={service.points}
               accent={service.title.includes('Street') ? 'amber' : service.title.includes('Thermal') ? 'sky' : service.title.includes('Fencing') ? 'violet' : 'emerald'}
+              label={t.ui.solarSolution}
             />
           ))}
         </div>
@@ -136,7 +135,7 @@ export default function SolarEnergyPage() {
 
         <div className="grid gap-6 lg:grid-cols-3">
           {systemTypesLocalized.map((type) => (
-            <FeatureCard key={type.title} title={type.title} description={type.description} points={type.benefits} accent={type.title.includes('Off-grid') ? 'amber' : type.title.includes('Hybrid') ? 'violet' : 'emerald'} />
+            <FeatureCard key={type.title} title={type.title} description={type.description} points={type.benefits} accent={type.title.includes('Off-grid') ? 'amber' : type.title.includes('Hybrid') ? 'violet' : 'emerald'} label={t.ui.solarSolution} />
           ))}
         </div>
       </section>
@@ -328,8 +327,8 @@ function SubsidyCard({
   )
 }
 
-function CapacityTable() {
-  const { t } = useLocale()
+async function CapacityTable() {
+  const t = await getRequestTranslations()
   const ui = t.ui
 
   return (
