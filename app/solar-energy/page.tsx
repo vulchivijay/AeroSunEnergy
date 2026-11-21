@@ -4,9 +4,7 @@ import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySecti
 import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
 import { FeatureCard, BenefitCard, InfoPanel, OptimizedImage, SectionEyebrow } from '../components/ui'
 import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
-import type { ReactNode } from 'react'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
-import { ContentBenefitCard, contentAccentText, contentBenefitBorders, contentCheckBackgrounds, ContentFeatureCard, ContentInfoPanel, ContentSectionEyebrow, type ContentAccent } from '@/app/components/ui/SharedContentComponents'
 
 export default async function SolarEnergyPage() {
   const t = await getRequestTranslations()
