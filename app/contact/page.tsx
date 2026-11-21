@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from '@/lib/motion'
+import { ArrowUpRight } from 'lucide-react'
 import { useEffect, useId, useState, type FormEvent, type ReactNode } from 'react'
 import en from '@/public/locales/en/index.json'
 import { useLocale } from '@/lib/LocaleContext'
@@ -36,6 +37,7 @@ export default function Contact() {
   const { locale, t } = useLocale()
   const toast = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [faqExpanded, setFaqExpanded] = useState(false)
   const channelIconIds = t.componentData.contact.channelIconIds
   const c = t.contact
   const [selectedSubmit, setSelectedSubmit] = useState<{
@@ -343,19 +345,36 @@ export default function Contact() {
 
         <div className="relative mx-auto max-w-7xl">
           <header className="py-2 sm:py-5">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-indigo-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-indigo-900">
-              <span className="h-2 w-2 rounded-full bg-fuchsia-500" aria-hidden="true" />
-              {faqHeader}
-            </p>
-            <h2 id="contact-faq-title" className="mt-5 text-4xl font-black leading-tight tracking-tighter text-slate-950 sm:text-5xl">
-              {faqTitle}
-            </h2>
-            <p className="mt-5 max-w-md text-sm leading-7 text-slate-700 sm:text-base">
-              {faqIntro}
-            </p>
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="inline-flex w-fit items-center gap-2 rounded-full border border-indigo-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-indigo-900">
+                  <span className="h-2 w-2 rounded-full bg-fuchsia-500" aria-hidden="true" />
+                  {faqHeader}
+                </p>
+                <h2 id="contact-faq-title" className="mt-5 text-4xl font-black leading-tight tracking-tighter text-slate-950 sm:text-5xl">
+                  {faqTitle}
+                </h2>
+                <p className="mt-5 max-w-md text-sm leading-7 text-slate-700 sm:text-base">
+                  {faqIntro}
+                </p>
+              </div>
+              <button
+                type="button"
+                className="group inline-flex shrink-0 items-center gap-2 text-sm text-amber-800 underline decoration-amber-300 underline-offset-4 transition hover:text-amber-950 sm:text-base"
+                onClick={() => setFaqExpanded((expanded) => !expanded)}
+                aria-expanded={faqExpanded}
+                aria-controls="contact-faq-content"
+              >
+                <span>{faqExpanded ? t.ui.showLess : t.ui.readMore}</span>
+                <ArrowUpRight
+                  className={`h-5 w-5 transition-transform duration-300 ${faqExpanded ? 'rotate-90' : 'group-hover:translate-x-0.5 group-hover:-translate-y-0.5'}`}
+                  aria-hidden="true"
+                />
+              </button>
+            </div>
           </header>
 
-          <div className="space-y-3 py-3 sm:py-5">
+          <div id="contact-faq-content" hidden={!faqExpanded} className="space-y-3 py-3 sm:py-5">
             {solarFaqs.map((faq) => (
               <FaqCard key={faq.question} question={faq.question} answer={faq.answer} />
             ))}
