@@ -13,6 +13,7 @@ import {
   HybridTable,
   OptimizedImage,
 } from '../components/ui'
+import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 
 export default function HybridEnergyPage() {
   const { t } = useLocale()
@@ -100,6 +101,8 @@ export default function HybridEnergyPage() {
           </div>
         </div>
       </header>
+
+      <TrustRibbon />
 
       {/* <SharedHeroSlider slides={hybridSlidesLocalized} ariaLabel={hybridPage.labels.sliderAriaLabel} /> */}
 

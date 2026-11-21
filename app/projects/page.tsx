@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react'
 import { useLocale } from '@/lib/LocaleContext'
+import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 
 type ProjectStatus = 'In Queue' | 'In Progress' | 'Completed'
 
@@ -67,6 +68,8 @@ export default function ProjectsPage() {
           </div>
         </div>
       </header>
+
+      <TrustRibbon />
 
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[minmax(0,1fr)_290px] lg:gap-12 lg:px-10 lg:py-16">
         <article className="min-w-0">

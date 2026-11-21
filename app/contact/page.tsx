@@ -6,11 +6,13 @@ import { useEffect, useId, useState, type FormEvent, type ReactNode } from 'reac
 import en from '@/public/locales/en/index.json'
 import { useLocale } from '@/lib/LocaleContext'
 import { OptimizedImage } from '@/app/components/ui'
+import { ReadMoreToggle } from '@/app/components/ui/ReadMoreToggle'
 import { SolarEstimation } from '@/app/components/forms/SolarEstimation'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useToast } from '@/app/components/ui/ToastContext'
 import { electricityBillOptions, financingOptions, indianStates, solarNeedOptions } from '@/lib/contactFormOptions'
+import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 
 const channelIconComponents: Record<string, ReactNode> = {
   email: (
@@ -36,6 +38,7 @@ export default function Contact() {
   const { locale, t } = useLocale()
   const toast = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [faqExpanded, setFaqExpanded] = useState(false)
   const channelIconIds = t.componentData.contact.channelIconIds
   const c = t.contact
   const [selectedSubmit, setSelectedSubmit] = useState<{
@@ -314,7 +317,9 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      
+
+      <TrustRibbon />
+
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white border-y border-slate-200 bg-slate-50 px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16" aria-labelledby="contact-referral-title">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <div className="max-w-3xl">
@@ -343,19 +348,29 @@ export default function Contact() {
 
         <div className="relative mx-auto max-w-7xl">
           <header className="py-2 sm:py-5">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-indigo-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-indigo-900">
-              <span className="h-2 w-2 rounded-full bg-fuchsia-500" aria-hidden="true" />
-              {faqHeader}
-            </p>
-            <h2 id="contact-faq-title" className="mt-5 text-4xl font-black leading-tight tracking-tighter text-slate-950 sm:text-5xl">
-              {faqTitle}
-            </h2>
-            <p className="mt-5 max-w-md text-sm leading-7 text-slate-700 sm:text-base">
-              {faqIntro}
-            </p>
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="inline-flex w-fit items-center gap-2 rounded-full border border-indigo-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-indigo-900">
+                  <span className="h-2 w-2 rounded-full bg-fuchsia-500" aria-hidden="true" />
+                  {faqHeader}
+                </p>
+                <h2 id="contact-faq-title" className="mt-5 text-4xl font-black leading-tight tracking-tighter text-slate-950 sm:text-5xl">
+                  {faqTitle}
+                </h2>
+                <p className="mt-5 max-w-md text-sm leading-7 text-slate-700 sm:text-base">
+                  {faqIntro}
+                </p>
+              </div>
+              <ReadMoreToggle
+                expanded={faqExpanded}
+                onToggle={() => setFaqExpanded((expanded) => !expanded)}
+                controlsId="contact-faq-content"
+                labelClassName="text-amber-800 underline decoration-amber-300 hover:text-amber-950"
+              />
+            </div>
           </header>
 
-          <div className="space-y-3 py-3 sm:py-5">
+          <div id="contact-faq-content" hidden={!faqExpanded} className="space-y-3 py-3 sm:py-5">
             {solarFaqs.map((faq) => (
               <FaqCard key={faq.question} question={faq.question} answer={faq.answer} />
             ))}

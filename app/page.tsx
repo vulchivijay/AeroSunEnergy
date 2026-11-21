@@ -6,7 +6,7 @@ import { BankEMICalculator } from './components/forms/BankEMICalculator'
 import { SolarEstimation } from './components/forms/SolarEstimation'
 import TirupatiEnergySection from './components/sections/TirupatiEnergySection'
 
-import { BenefitCard, FeatureCard, HybridBenefitCard, HybridFeatureCard, HybridInfoPanel, HybridSectionEyebrow, HybridTable, InfoPanel, SectionEyebrow, WindBenefitCard, WindCapacityTable, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from './components/ui'
+import { BenefitCard, FeatureCard, HybridBenefitCard, HybridFeatureCard, HybridInfoPanel, HybridSectionEyebrow, HybridTable, InfoPanel, ReadMoreToggle, SectionEyebrow, TrustRibbon, WindBenefitCard, WindCapacityTable, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from './components/ui'
 
 import Image from 'next/image'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
@@ -76,20 +76,33 @@ export default function Home() {
   const whySolar = home.whySolar
   const wind = home.wind
   const hybrid = home.hybrid
+  const [offerExpanded, setOfferExpanded] = useState(false)
+  const [windExpanded, setWindExpanded] = useState(false)
+  const [hybridExpanded, setHybridExpanded] = useState(false)
 
   return (
     <main>
       <HomeHeroSlider />
+      <TrustRibbon />
       <SchemeBanner />
       {/* Solar Section */}
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl">  
-          <div className="mb-8">
-            <SectionEyebrow>{offer.eyebrow}</SectionEyebrow>
-            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
-              {offer.title}
-            </h2>
+          <div className="mb-8 flex items-center justify-between gap-4">
+            <div>
+              <SectionEyebrow>{offer.eyebrow}</SectionEyebrow>
+              <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
+                {offer.title}
+              </h2>
+            </div>
+            <ReadMoreToggle
+              expanded={offerExpanded}
+              onToggle={() => setOfferExpanded((expanded) => !expanded)}
+              controlsId="what-we-offer-content"
+              labelClassName="text-emerald-700 underline decoration-emerald-300 hover:text-emerald-950"
+            />
           </div>
+          <div id="what-we-offer-content" hidden={!offerExpanded}>
           <div className="mb-10 text-lg leading-8 text-black">
             {offer.description}
           </div>
@@ -166,6 +179,7 @@ export default function Home() {
               ))}
             </div>
           </div>
+          </div>
         </div>
       </section>
       <RecognitionHighlight />
@@ -180,70 +194,90 @@ export default function Home() {
       {/* Wind Energy Section */}
       <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-8">
-            <WindSectionEyebrow>{wind.eyebrow}</WindSectionEyebrow>
-            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
-              {wind.title}
-            </h2>
+          <div className="mb-8 flex items-center justify-between gap-4">
+            <div>
+              <WindSectionEyebrow>{wind.eyebrow}</WindSectionEyebrow>
+              <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
+                {wind.title}
+              </h2>
+            </div>
+            <ReadMoreToggle
+              expanded={windExpanded}
+              onToggle={() => setWindExpanded((expanded) => !expanded)}
+              controlsId="wind-energy-content"
+              labelClassName="text-sky-700 underline decoration-sky-300 hover:text-sky-950"
+            />
           </div>
-          <div className="grid gap-6 lg:grid-cols-3">
-            {wind.cards.map((card) => (
-              <WindFeatureCard
-                key={card.title}
-                title={card.title}
-                description={card.description}
-                points={card.points}
-                accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
-              />
-            ))}
-          </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {wind.benefits.map((item, index) => (
-              <WindBenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
-            ))}
-          </div>
-          <div className="mt-10 grid gap-5 lg:grid-cols-2">
-            {wind.panels.map((panel) => (
-            <WindInfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['emerald', 'amber'] as const, 'sky')} content={panel.content} />
-            ))}
-          </div>
-          <div className="mt-8">
-            <WindCapacityTable rows={wind.capacity} />
+          <div id="wind-energy-content" hidden={!windExpanded}>
+            <div className="grid gap-6 lg:grid-cols-3">
+              {wind.cards.map((card) => (
+                <WindFeatureCard
+                  key={card.title}
+                  title={card.title}
+                  description={card.description}
+                  points={card.points}
+                  accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
+                />
+              ))}
+            </div>
+            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+              {wind.benefits.map((item, index) => (
+                <WindBenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
+              ))}
+            </div>
+            <div className="mt-10 grid gap-5 lg:grid-cols-2">
+              {wind.panels.map((panel) => (
+              <WindInfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['emerald', 'amber'] as const, 'sky')} content={panel.content} />
+              ))}
+            </div>
+            <div className="mt-8">
+              <WindCapacityTable rows={wind.capacity} />
+            </div>
           </div>
         </div>
       </section>
       {/* Hybrid Energy Section */}
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl ">
-          <div className="mb-8">
-            <HybridSectionEyebrow>{hybrid.eyebrow}</HybridSectionEyebrow>
-            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
-              {hybrid.title}
-            </h2>
+          <div className="mb-8 flex items-center justify-between gap-4">
+            <div>
+              <HybridSectionEyebrow>{hybrid.eyebrow}</HybridSectionEyebrow>
+              <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
+                {hybrid.title}
+              </h2>
+            </div>
+            <ReadMoreToggle
+              expanded={hybridExpanded}
+              onToggle={() => setHybridExpanded((expanded) => !expanded)}
+              controlsId="hybrid-energy-content"
+              labelClassName="text-violet-700 underline decoration-violet-300 hover:text-violet-950"
+            />
           </div>
-          <div className="grid gap-6 lg:grid-cols-3">
-            {hybrid.cards.map((card) => (
-              <HybridFeatureCard
-                key={card.title}
-                title={card.title}
-                description={card.description}
-                points={card.points}
-                accent={getAccentOrDefault(card.accent, ['sky', 'violet', 'amber'] as const, 'emerald')}
-              />
-            ))}
-          </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {hybrid.benefits.map((item, index) => (
-              <HybridBenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
-            ))}
-          </div>
-          <div className="mt-10 grid gap-5 lg:grid-cols-2">
-            {hybrid.panels.map((panel) => (
-            <HybridInfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['sky', 'violet'] as const, 'emerald')} content={panel.content} />
-            ))}
-          </div>
-          <div className="mt-8">
-            <HybridTable rows={hybrid.table} />
+          <div id="hybrid-energy-content" hidden={!hybridExpanded}>
+            <div className="grid gap-6 lg:grid-cols-3">
+              {hybrid.cards.map((card) => (
+                <HybridFeatureCard
+                  key={card.title}
+                  title={card.title}
+                  description={card.description}
+                  points={card.points}
+                  accent={getAccentOrDefault(card.accent, ['sky', 'violet', 'amber'] as const, 'emerald')}
+                />
+              ))}
+            </div>
+            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+              {hybrid.benefits.map((item, index) => (
+                <HybridBenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
+              ))}
+            </div>
+            <div className="mt-10 grid gap-5 lg:grid-cols-2">
+              {hybrid.panels.map((panel) => (
+              <HybridInfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['sky', 'violet'] as const, 'emerald')} content={panel.content} />
+              ))}
+            </div>
+            <div className="mt-8">
+              <HybridTable rows={hybrid.table} />
+            </div>
           </div>
         </div>
       </section>
@@ -308,6 +342,7 @@ const featuredBrands = sortedBrands.filter((brand) => featuredBrandNames.has(bra
 function Brands() {
   const { t } = useLocale()
   const section = t.home.brandSection
+  const [brandsExpanded, setBrandsExpanded] = useState(false)
 
   return (
     <section
@@ -333,18 +368,20 @@ function Brands() {
                 {section.subtitle}
               </p>
             </div>
-            <p className="inline-flex w-fit shrink-0 items-center gap-2 rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-sm font-semibold text-slate-800 shadow-sm">
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-amber-100 text-amber-800" aria-hidden="true">
-                ↓
-              </span>
-              {section.priceOrder}
-            </p>
+            <ReadMoreToggle
+              expanded={brandsExpanded}
+              onToggle={() => setBrandsExpanded((expanded) => !expanded)}
+              controlsId="brands-content"
+              className="self-start sm:self-end"
+              labelClassName="text-amber-800 underline decoration-amber-300 hover:text-amber-950"
+            />
           </div>
-          <p className="mt-4 max-w-3xl border-l-2 border-amber-500 pl-4 text-xs leading-5 text-slate-600 sm:text-sm sm:leading-6">
-            {section.priceDisclaimer}
-          </p>
         </header>
 
+        <div id="brands-content" hidden={!brandsExpanded}>
+          <p className="mb-7 max-w-3xl border-l-2 border-amber-500 pl-4 text-xs leading-5 text-slate-600 sm:text-sm sm:leading-6">
+            {section.priceDisclaimer}
+          </p>
         <ul
           className="mx-auto grid max-w-5xl list-none justify-items-center gap-5 sm:gap-6 lg:gap-8"
           style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 18rem), 1fr))' }}
@@ -459,6 +496,7 @@ function Brands() {
         >
           {section.moreBrandsAvailable}
         </p>
+        </div>
       </div>
     </section>
   )
@@ -618,6 +656,7 @@ function ProjectEvidenceSection() {
   const { t } = useLocale()
   const content = t.home.trustSections.evidence
   const [activeIndex, setActiveIndex] = useState(0)
+  const [testimonialsExpanded, setTestimonialsExpanded] = useState(false)
   const testimonials = content.testimonials.map(
     (_, index) => content.testimonials[(activeIndex + index) % content.testimonials.length],
   )
@@ -639,9 +678,18 @@ function ProjectEvidenceSection() {
               {content.title}
             </h2>
           </div>
-          <p className="max-w-3xl text-sm leading-7 text-black sm:text-base lg:pb-1">{content.description}</p>
+          <div className="flex items-end justify-between gap-4 lg:pb-1">
+            <p className="max-w-3xl text-sm leading-7 text-black sm:text-base">{content.description}</p>
+            <ReadMoreToggle
+              expanded={testimonialsExpanded}
+              onToggle={() => setTestimonialsExpanded((expanded) => !expanded)}
+              controlsId="testimonials-content"
+              labelClassName="text-emerald-700 underline decoration-emerald-300 hover:text-emerald-950"
+            />
+          </div>
         </div>
 
+        <div id="testimonials-content" hidden={!testimonialsExpanded}>
         <div className="mt-8 grid grid-cols-[auto_minmax(0,1fr)_auto] items-stretch gap-2 sm:gap-4">
           <button
             type="button"
@@ -688,6 +736,7 @@ function ProjectEvidenceSection() {
           <Link href="/contact" prefetch={false} className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-amber-950 underline decoration-amber-500 underline-offset-4">
             {content.cta}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
           </Link>
+        </div>
         </div>
       </div>
     </section>

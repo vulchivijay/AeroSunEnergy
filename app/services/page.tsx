@@ -14,6 +14,7 @@ import {
   Zap,
 } from 'lucide-react'
 import { OptimizedImage } from '@/app/components/ui'
+import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 import { useLocale } from '@/lib/LocaleContext'
 import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 
@@ -86,6 +87,8 @@ export default function ServicesPage() {
           </div>
         </div>
       </header>
+
+      <TrustRibbon />
 
       <section id="service-divisions" className="bg-gradient-to-br from-white to-[#f1f2f6] mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">

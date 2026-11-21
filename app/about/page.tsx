@@ -6,6 +6,7 @@ import { motion } from '@/lib/motion'
 import { OptimizedImage } from '@/app/components/ui'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import { useLocale } from '@/lib/LocaleContext'
+import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 
 const systemIcons = [Sun, Wind, Zap]
 
@@ -145,6 +146,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <TrustRibbon />
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">

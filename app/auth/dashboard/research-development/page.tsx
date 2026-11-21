@@ -2,6 +2,7 @@
 
 import { useLocale } from "@/lib/LocaleContext";
 import { DigitalNumber } from "@/app/components/ui/DigitalNumber";
+import { DashboardCollapsibleSection } from "@/app/components/ui/DashboardCollapsibleSection";
 
 type HeadingBlock = {
   type: "heading";
@@ -619,30 +620,19 @@ export default function ResearchDevelopmentPage() {
 
       <div id="research-content">
         {sections.map((section, sectionIndex) => (
-          <section
+          <DashboardCollapsibleSection
             key={section.heading?.id ?? "opening"}
             id={section.heading?.id}
+            title={section.heading ? <InlineContent text={section.heading.text} /> : undefined}
+            titleClassName="max-w-4xl text-3xl font-black leading-tight tracking-tight text-slate-950 sm:text-4xl"
+            contentClassName="mt-8"
             className={
               sectionIndex % 2 === 0
-                ? "scroll-mt-8 bg-gradient-to-br from-[#f1f2f6] to-white"
-                : "scroll-mt-8 border-y border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6]"
+                ? "scroll-mt-8 bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
+                : "scroll-mt-8 border-y border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
             }
           >
-            <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-              {section.heading && (
-                <div className="mb-8 grid gap-4 border-b border-emerald-900/10 pb-6 sm:grid-cols-[auto_1fr] sm:items-start ">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-emerald-900 font-mono text-md font-bold text-lime-300">
-                    {String(
-                      navigationSections.findIndex(
-                        (item) => item.heading.id === section.heading?.id,
-                      ) + 1,
-                    ).padStart(2, "0")}
-                  </span>
-                  <h2 className="max-w-4xl text-3xl font-black leading-tight tracking-tight text-slate-950  sm:text-4xl">
-                    <InlineContent text={section.heading.text} />
-                  </h2>
-                </div>
-              )}
+            <div className="mx-auto max-w-7xl">
               <div
                 className={
                   section.heading ? "max-w-5xl sm:ml-15" : "max-w-5xl"
@@ -656,7 +646,7 @@ export default function ResearchDevelopmentPage() {
                 ))}
               </div>
             </div>
-          </section>
+          </DashboardCollapsibleSection>
         ))}
       </div>
 

@@ -4,6 +4,7 @@ import { useId, useState, type FormEvent } from 'react'
 import { Calculator, Landmark, Tag, type LucideIcon } from 'lucide-react'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
+import { ReadMoreToggle } from '@/app/components/ui/ReadMoreToggle'
 import { useLocale } from '@/lib/LocaleContext'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useToast } from '@/app/components/ui/ToastContext'
@@ -122,6 +123,7 @@ export function SolarEstimation() {
   const [leadNameValue, setLeadNameValue] = useState('')
   const [leadPhoneValue, setLeadPhoneValue] = useState('')
   const [showLeadForm, setShowLeadForm] = useState(false)
+  const [gstGuideExpanded, setGstGuideExpanded] = useState(false)
   const [whatsAppFallbackUrl, setWhatsAppFallbackUrl] = useState<string | null>(null)
   const [leadFormPending, setLeadFormPending] = useState(false)
 
@@ -752,15 +754,27 @@ export function SolarEstimation() {
         className="mx-auto mt-10 max-w-7xl rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
         aria-labelledby={`${leadFormId}-gst-title`}
       >
-        <p className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-700">
-          {solarGstGuide.eyebrow}
-        </p>
-        <h2
-          id={`${leadFormId}-gst-title`}
-          className="mt-2 text-2xl font-black tracking-tight text-slate-950 sm:text-3xl"
-        >
-          {solarGstGuide.title}
-        </h2>
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-700">
+              {solarGstGuide.eyebrow}
+            </p>
+            <h2
+              id={`${leadFormId}-gst-title`}
+              className="mt-2 text-2xl font-black tracking-tight text-slate-950 sm:text-3xl"
+            >
+              {solarGstGuide.title}
+            </h2>
+          </div>
+          <ReadMoreToggle
+            expanded={gstGuideExpanded}
+            onToggle={() => setGstGuideExpanded((expanded) => !expanded)}
+            controlsId={`${leadFormId}-gst-content`}
+            labelClassName="text-emerald-700 underline decoration-emerald-300 hover:text-emerald-950"
+          />
+        </div>
+
+        <div id={`${leadFormId}-gst-content`} hidden={!gstGuideExpanded}>
         <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-600">
           {solarGstGuide.intro}
         </p>
@@ -802,6 +816,7 @@ export function SolarEstimation() {
               </li>
             ))}
           </ul>
+        </div>
         </div>
       </section>
     </section>

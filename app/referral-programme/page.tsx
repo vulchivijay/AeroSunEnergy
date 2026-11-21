@@ -5,6 +5,7 @@ import { ArrowUpRight, Gift } from 'lucide-react'
 import { useLocale } from '@/lib/LocaleContext'
 import { useToast } from '@/app/components/ui/ToastContext'
 import { INDIAN_MOBILE_HTML_PATTERN } from '@/lib/validation/contact'
+import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 
 export default function ReferralProgrammePage() {
   return (
@@ -119,6 +120,8 @@ function ReferralProgramSection() {
         </aside>
       </div>
     </section>
+
+    <TrustRibbon />
 
     <section
       id="referral-program"

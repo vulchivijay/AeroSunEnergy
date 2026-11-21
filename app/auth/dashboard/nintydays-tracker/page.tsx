@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { useLocale } from "@/lib/LocaleContext";
 import { DigitalNumber } from "@/app/components/ui/DigitalNumber";
+import { DashboardCollapsibleSection } from "@/app/components/ui/DashboardCollapsibleSection";
 
 export default function NinetyDayTrackerPage() {
   const { t } = useLocale();
@@ -127,16 +128,14 @@ export default function NinetyDayTrackerPage() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
+      <DashboardCollapsibleSection
+        title={trackerPage.plan.summary}
+        eyebrow={<p className="text-[12px] font-black uppercase tracking-[0.24em] text-[#9b4b42]">{trackerPage.plan.eyebrow}</p>}
+        titleClassName="max-w-3xl text-3xl font-black leading-tight tracking-[0.055em] text-[#202b43] sm:text-4xl"
+        contentClassName="mt-10"
+        className="bg-gradient-to-br from-[#f1f2f6] to-white px-5 py-14 sm:px-8 sm:py-20 lg:px-10"
+      >
         <div className="mx-auto max-w-7xl">
-          <div className="mb-10">
-            <p className="text-[12px] font-black uppercase tracking-[0.24em] text-[#9b4b42] ">
-              {trackerPage.plan.eyebrow}
-            </p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-black leading-tight tracking-[0.055em] text-[#202b43]  sm:text-4xl">
-              {trackerPage.plan.summary}
-            </h2>
-          </div>
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {trackerPage.actionPlan.map((stage, index) => (
@@ -167,7 +166,7 @@ export default function NinetyDayTrackerPage() {
             ))}
           </div>
         </div>
-      </section>
+      </DashboardCollapsibleSection>
 
       <section className="mx-auto max-w-7xl bg-gradient-to-br from-white to-[#f1f2f6] px-5 pt-14 pb-14 sm:px-8 sm:pt-20 sm:pb-20 lg:px-10">
         <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">

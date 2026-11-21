@@ -5,6 +5,7 @@ import { getSliderImagePath } from '@/lib/sliderImages'
 import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
 import { FeatureCard, BenefitCard, InfoPanel, OptimizedImage, SectionEyebrow } from '../components/ui'
+import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 import type { ReactNode } from 'react'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import { ContentBenefitCard, contentAccentText, contentBenefitBorders, contentCheckBackgrounds, ContentFeatureCard, ContentInfoPanel, ContentSectionEyebrow, type ContentAccent } from '@/app/components/ui/SharedContentComponents'
@@ -79,6 +80,8 @@ export default function SolarEnergyPage() {
           </div>
         </div>
       </header>
+
+      <TrustRibbon />
 
       {/* <SharedHeroSlider slides={solarSlidesLocalized} ariaLabel={solarPage.hero.eyebrow} /> */}
 

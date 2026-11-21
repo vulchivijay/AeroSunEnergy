@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useLocale } from '@/lib/LocaleContext'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
+import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 
 type DocumentaryBlock =
   | { type: 'heading'; level: 2 | 3; text: string; id: string }
@@ -182,6 +183,8 @@ export default function SaveEarthPage() {
           </div>
         </div>
       </header>
+
+      <TrustRibbon />
 
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-12 lg:px-10 lg:py-16">
         <aside className="lg:sticky lg:top-28 lg:self-start">

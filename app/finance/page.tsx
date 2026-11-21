@@ -6,6 +6,7 @@ import { useLocale } from '@/lib/LocaleContext'
 import { BankEMICalculator } from '@/app/components/forms/BankEMICalculator'
 
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
+import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 import { BadgeCheck, Building2, ClipboardCheck, FileCheck2, FileText, Hammer, House, PanelsTopLeft, Send, Store, UserRound, Wrench, type LucideIcon } from 'lucide-react'
 
 type LoanTermsValue = string | string[]
@@ -46,6 +47,8 @@ export default function FinancePage() {
           </div>
         </div>
       </section>
+
+      <TrustRibbon />
 
       <BankEMICalculator />
 

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import AuthForm from '@/app/components/auth/AuthForm'
+import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 
 export const metadata: Metadata = {
   title: 'Sign in | AeroSun Energy',
@@ -25,5 +26,10 @@ export const metadata: Metadata = {
 }
 
 export default function AuthPage() {
-  return <AuthForm mode="login" />
+  return (
+    <>
+      <TrustRibbon />
+      <AuthForm mode="login" />
+    </>
+  )
 }
