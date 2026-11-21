@@ -166,17 +166,19 @@ export default async function CompanyProfilePage() {
         </div>
       </section>
 
-      <div className="px-4 py-12 sm:space-y-16 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
           <SectionHeading
             number="01"
             eyebrow={cp.section1Eyebrow}
             title={cp.section1Title}
             description={cp.section1Description}
           />
-        </section>
+        </div>
+      </section>
 
-        <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
           <SectionHeading
             number="02"
             eyebrow={cp.section2Eyebrow}
@@ -185,9 +187,11 @@ export default async function CompanyProfilePage() {
           <p className="max-w-4xl rounded-2xl border border-slate-200 bg-slate-50 p-6 text-base leading-8 text-slate-700 sm:p-8 sm:text-lg">
             {cp.section2Text}
           </p>
-        </section>
+        </div>
+      </section>
 
-        <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
           <SectionHeading
             number="03"
             eyebrow={cp.section3Eyebrow}
@@ -196,9 +200,11 @@ export default async function CompanyProfilePage() {
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
             <BulletList items={missionPoints} />
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
           <SectionHeading
             number="04"
             eyebrow={cp.section4Eyebrow}
@@ -245,9 +251,11 @@ export default async function CompanyProfilePage() {
           <p className="mt-5 rounded-2xl border border-amber-200 bg-[#fff8ed] px-5 py-4 text-sm leading-7 text-amber-950">
             {cp.waitNote}
           </p>
-        </section>
+        </div>
+      </section>
 
-        <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
           <SectionHeading
             number="05"
             eyebrow={cp.productSectionEyebrow}
@@ -276,21 +284,21 @@ export default async function CompanyProfilePage() {
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="bg-gradient-to-br from-white to-[#f1f2f6] grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <SectionHeading
-              number="06"
-              eyebrow={cp.innovationEyebrow}
-              title={cp.innovationTitle}
-              description={cp.innovationDescription}
-            />
-            <p className="rounded-2xl border-l-4 border-amber-500 bg-white px-5 py-4 text-sm leading-7 text-slate-600 shadow-sm">
-              {cp.innovationNote}
-            </p>
-          </div>
-          <ol className="grid gap-3 sm:grid-cols-2">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+          <SectionHeading
+            number="06"
+            eyebrow={cp.innovationEyebrow}
+            title={cp.innovationTitle}
+            description={cp.innovationDescription}
+          />
+          <p className="rounded-2xl border-l-4 border-amber-500 bg-white px-5 py-4 text-sm leading-7 text-slate-600 shadow-sm">
+            {cp.innovationNote}
+          </p>
+          <ol className="mt-8 grid gap-3 sm:grid-cols-2">
             {innovationFocus.map((item, index) => (
               <li
                 key={item}
@@ -305,9 +313,11 @@ export default async function CompanyProfilePage() {
               </li>
             ))}
           </ol>
-        </section>
+        </div>
+      </section>
 
-        <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
           <SectionHeading
             number="07"
             eyebrow={cp.technologyDevelopmentEyebrow}
@@ -329,33 +339,35 @@ export default async function CompanyProfilePage() {
               </li>
             ))}
           </ol>
-        </section>
+        </div>
+      </section>
 
-        <section className="bg-gradient-to-br from-white to-[#f1f2f6] grid gap-10 lg:grid-cols-2">
-          <div>
-            <SectionHeading
-              number="08"
-              eyebrow={cp.whoWeServeEyebrow}
-              title={cp.whoWeServeTitle}
-              description={cp.whoWeServeDescription}
-            />
-            <BulletList items={customerSegments} />
-          </div>
-          <div>
-            <SectionHeading
-              number="09"
-              eyebrow={cp.manufacturingEyebrow}
-              title={cp.manufacturingTitle}
-              description={cp.manufacturingDescription}
-            />
-            <BulletList items={manufacturingModel} />
-            <p className="mt-5 text-sm leading-7 text-slate-600">
-              {cp.manufacturingNote}
-            </p>
-          </div>
-        </section>
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+          <SectionHeading
+            number="08"
+            eyebrow={cp.whoWeServeEyebrow}
+            title={cp.whoWeServeTitle}
+            description={cp.whoWeServeDescription}
+          />
+          <BulletList items={customerSegments} />
+        </div>
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+          <SectionHeading
+            number="09"
+            eyebrow={cp.manufacturingEyebrow}
+            title={cp.manufacturingTitle}
+            description={cp.manufacturingDescription}
+          />
+          <BulletList items={manufacturingModel} />
+          <p className="mt-5 text-sm leading-7 text-slate-600">
+            {cp.manufacturingNote}
+          </p>
+        </div>
+      </section>
 
-        <section className="bg-gradient-to-br from-[#f1f2f6] to-white rounded-2xl p-6 shadow-sm sm:p-8">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
           <SectionHeading
             number="10"
             eyebrow={cp.qualityEyebrow}
@@ -376,33 +388,32 @@ export default async function CompanyProfilePage() {
               </div>
             ))}
           </div>
-          <p className="mt-7 border-t border-slate-200 pt-5 text-sm leading-7 text-slate-700">
+          <p className="mt-5 border-t border-slate-200 pt-5 text-sm leading-7 text-slate-700">
             {cp.qualityNote}
           </p>
-        </section>
+        </div>
+      </section>
 
-        <section className="bg-gradient-to-br from-white to-[#f1f2f6] grid gap-10 lg:grid-cols-2">
-          <div>
-            <SectionHeading
-              number="11"
-              eyebrow={cp.whyWorkEyebrow}
-              title={cp.whyWorkTitle}
-              description={cp.whyWorkDescription}
-            />
-          </div>
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+          <SectionHeading
+            number="11"
+            eyebrow={cp.whyWorkEyebrow}
+            title={cp.whyWorkTitle}
+            description={cp.whyWorkDescription}
+          />
           <div className="grid gap-3 sm:grid-cols-2">
             {reasonsToWorkWithUs.map((reason) => (
-              <div
-                key={reason}
-                className="rounded-2xl border border-slate-200 bg-white p-5 text-sm font-semibold leading-7 text-slate-700 shadow-sm"
-              >
+              <div key={reason} className="p-2 text-md leading-7 text-slate-700">
                 {reason}
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
           <SectionHeading
             number="12"
             eyebrow={cp.futureEyebrow}
@@ -424,10 +435,12 @@ export default async function CompanyProfilePage() {
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="bg-gradient-to-br from-white to-[#f1f2f6] overflow-hidden rounded-2xl border border-slate-200 bg-white">
-          <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
+      <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+          <div className="grid lg:grid-cols-[0.8fr_1.2fr] overflow-hidden rounded-2xl border border-slate-200 bg-white">
             <div className="bg-[linear-gradient(145deg,#713f12_0%,#92400e_55%,#a16207_100%)] p-7 text-white sm:p-10">
               <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-amber-200">
                 13 / {cp.contactEyebrow}
@@ -489,8 +502,8 @@ export default async function CompanyProfilePage() {
               </Link>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
   );
 }
