@@ -61,6 +61,7 @@ export function BankEMICalculator() {
   const [repoRate, setRepoRate] = useState(DEFAULT_REPO_RATE)
   const [isHomeLoanCustomer, setIsHomeLoanCustomer] = useState(true)
   const [homeLoanRateInput, setHomeLoanRateInput] = useState('')
+  const [isExpanded, setIsExpanded] = useState(false)
   const borrowerMargin = loanBand === 'upToTwoLakhs' ? 0.1 : 0.2
   const estimatedProjectCost = Math.ceil(loanAmount / (1 - borrowerMargin))
   const borrowerContribution = estimatedProjectCost - loanAmount
@@ -129,19 +130,34 @@ export function BankEMICalculator() {
         <div className="absolute -right-20 -top-24 h-96 w-96 rounded-full border border-orange-900/[0.06]" />
       </div>
       <header className="relative mx-auto mb-8 max-w-7xl">
-        <div className="mb-4 inline-flex min-w-0 items-center gap-2 rounded-full border border-orange-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-orange-900 shadow-sm sm:text-sm">
-          <Landmark size={14} strokeWidth={2.2} className="text-orange-600" aria-hidden="true" />
-          {labels.badge}
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <div className="mb-4 inline-flex min-w-0 items-center gap-2 rounded-full border border-orange-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-orange-900 shadow-sm sm:text-sm">
+              <Landmark size={14} strokeWidth={2.2} className="text-orange-600" aria-hidden="true" />
+              {labels.badge}
+            </div>
+            <h2 className="max-w-6xl text-left text-3xl font-black leading-tight tracking-tight text-black sm:text-4xl lg:text-5xl">
+              {labels.title}
+              <span className="text-orange-600"> {labels.titleAccent}</span>
+            </h2>
+            <p className="mt-4 max-w-4xl text-base leading-7 text-slate-600 sm:text-lg">
+              {labels.description}
+            </p>
+          </div>
+          <button
+            type="button"
+            className="group inline-flex shrink-0 items-center gap-2 text-sm text-orange-800 underline decoration-orange-300 underline-offset-4 transition hover:text-orange-950 sm:text-base"
+            onClick={() => setIsExpanded((expanded) => !expanded)}
+            aria-expanded={isExpanded}
+            aria-controls="bank-emi-calculator-content"
+          >
+            <span>{isExpanded ? t.ui.showLess : t.ui.readMore}</span>
+            <ArrowUpRight className={`h-5 w-5 transition-transform duration-300 ${isExpanded ? 'rotate-90' : 'group-hover:translate-x-0.5 group-hover:-translate-y-0.5'}`} aria-hidden="true" />
+          </button>
         </div>
-        <h2 className="max-w-6xl text-left text-3xl font-black leading-tight tracking-tight text-black sm:text-4xl lg:text-5xl">
-          {labels.title}
-          <span className="text-orange-600"> {labels.titleAccent}</span>
-        </h2>
-        <p className="mt-4 max-w-4xl text-base leading-7 text-slate-600 sm:text-lg">
-          {labels.description}
-        </p>
       </header>
 
+      <div id="bank-emi-calculator-content" hidden={!isExpanded}>
         <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-2xl shadow-sm lg:grid-cols-2 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
           <div className="min-w-0 rounded-3xl border border-[#dce8df] bg-linear-to-br from-[#eaf3e9] via-[#f2f7ef] to-[#e3efe4] p-4 text-[#173c2b] shadow-[0_24px_70px_-52px_rgba(15,23,42,0.55)] sm:p-6 xl:p-7">
           <div className="mb-7">
@@ -490,6 +506,7 @@ export function BankEMICalculator() {
             </p>
           </div>
         </aside>
+      </div>
       </div>
     </section>
   )
