@@ -82,7 +82,7 @@ export default async function Home() {
       {/* Solar Section */}
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl">
-          <details className="group">
+          <details className="group" open>
             <summary className="mb-8 flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
             <div>
               <SectionEyebrow>{offer.eyebrow}</SectionEyebrow>
