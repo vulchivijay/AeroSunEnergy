@@ -9,7 +9,7 @@ import { BenefitCard, FeatureCard, HybridBenefitCard, HybridFeatureCard, HybridI
 
 import Image from 'next/image'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
-import { ArrowUpRight, BadgeCheck, CalendarDays, ClipboardCheck, FileCheck2, Mail, MapPin, Phone, ShieldCheck, Sun, Zap } from 'lucide-react'
+import { ArrowUpRight, BadgeCheck, BriefcaseBusiness, CalendarDays, ClipboardCheck, FileCheck2, Mail, MapPin, Phone, Rocket, ShieldCheck, Sun, Zap } from 'lucide-react'
 import Link from 'next/link'
 import { getSliderImagePath } from '@/lib/sliderImages'
 import Slider from '@/app/components/ui/Slider'
@@ -29,35 +29,109 @@ function RecognitionHighlight({ t }: { t: Translations }) {
   const recognitions = t.home.recognition
 
   return (
-    <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 lg:py-16 sm:py-14">
-      <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 overflow-hidden rounded-2xl border border-[#e2e8e2] bg-white shadow-sm lg:grid-cols-[1.05fr_1fr_1fr]">
-          <div className="flex flex-col justify-center bg-[#e1ece3] p-7 sm:p-9 lg:p-11">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[#137c63]/15 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
+    <section className="bg-transparent p-0">
+      <div className="relative isolate grid min-h-[720px] w-full grid-cols-1 gap-8 overflow-hidden bg-[linear-gradient(112deg,#06143f_0%,#07398f_38%,#352ecc_70%,#e74398_90%,#ff7b55_100%)] px-5 py-8 text-white sm:min-h-[650px] sm:px-8 sm:py-10 md:px-10 lg:min-h-[390px] lg:grid-cols-[0.78fr_1.22fr] lg:items-center lg:gap-8 lg:px-8 lg:py-8 xl:aspect-[3.2/1] xl:min-h-0 xl:gap-10 xl:px-10">
+        <div
+          className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_80%_80%,rgba(255,156,91,0.32),transparent_35%),radial-gradient(ellipse_at_50%_0%,rgba(61,131,255,0.23),transparent_42%)]"
+          aria-hidden="true"
+        />
+        <svg
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[150px] w-full sm:h-[180px] lg:h-[220px] xl:h-[54%]"
+          viewBox="0 0 1600 260"
+          preserveAspectRatio="none"
+          fill="none"
+          aria-hidden="true"
+        >
+          <defs>
+            <radialGradient id="credentials-sun-glow">
+              <stop stopColor="#fff6b8" stopOpacity=".9" />
+              <stop offset=".3" stopColor="#ffbd55" stopOpacity=".42" />
+              <stop offset="1" stopColor="#ff925f" stopOpacity="0" />
+            </radialGradient>
+            <linearGradient id="credentials-horizon-glow" x1="0" x2="1">
+              <stop stopColor="#9b9bff" stopOpacity=".8" />
+              <stop offset=".45" stopColor="#ffc66d" />
+              <stop offset="1" stopColor="#ff9b64" />
+            </linearGradient>
+            <clipPath id="credentials-panel-clip">
+              <path d="M0 150 338 190 478 260H0z" />
+            </clipPath>
+          </defs>
+          <g transform="translate(0 25)">
+            <circle cx="320" cy="150" r="112" fill="url(#credentials-sun-glow)" />
+            <circle cx="320" cy="150" r="49" fill="#ffd46a" />
+            <path d="M320 101V65M285 115l-30-30m100 30 30-30M271 150h-36m134 0h36m-120 35-30 30m100-30 30 30" stroke="#fff0a5" strokeOpacity=".95" strokeWidth="3" strokeLinecap="round" />
+          </g>
+          <path transform="translate(0 25)" d="M0 157c122-26 214-14 310 2 96 16 145-23 238-8 95 15 157 55 264 34 131-26 224-31 330-14 139 22 269-27 458-42v131H0z" fill="#453073" fillOpacity=".55" />
+          <path d="M0 191c135-24 247-33 366-10 118 24 209 39 331 21 105-16 193-26 300-14 143 17 264 9 398-15 76-13 142-18 205-17v104H0z" fill="#10205c" fillOpacity=".8" />
+          <path d="M0 215c190-17 300-33 426-7 130 27 223 42 356 22 151-23 239-25 371-11 149 16 291 13 447-16v77H0z" fill="#071642" fillOpacity=".88" />
+          <path d="M0 185c165-17 270 21 381 26 129 7 191-36 321-13 182 32 263 49 439 22 156-24 287-33 459-45" stroke="url(#credentials-horizon-glow)" strokeWidth="4" />
+          <path d="M0 150 338 190 478 260H0z" fill="#102568" fillOpacity=".96" stroke="#c3e4ff" strokeOpacity=".78" strokeWidth="2" />
+          <g clipPath="url(#credentials-panel-clip)" stroke="#b7ddff" strokeOpacity=".78" strokeWidth="2">
+            <path d="M68 158 96 260M136 166 191 260M203 174 287 260M270 182 382 260M0 178 373 208M0 205 408 225M0 232 443 243" />
+          </g>
+          <path d="M600 225V100" stroke="#fff1d2" strokeOpacity=".94" strokeWidth="4" strokeLinecap="round" />
+          <g
+            className="motion-safe:animate-spin"
+            style={{
+              transformBox: 'view-box',
+              transformOrigin: '600px 100px',
+              animationDuration: '12s',
+            }}
+          >
+            <path d="M600 100V20m0 80-69 40m69-40 69 40" stroke="#fff1d2" strokeOpacity=".94" strokeWidth="4" strokeLinecap="round" />
+            <path d="M600 100V20m0 80-69 40m69-40 69 40" stroke="#ffd98b" strokeOpacity=".55" strokeWidth="1.5" />
+          </g>
+          <circle cx="600" cy="100" r="6" fill="#fff1d2" />
+        </svg>
+
+        <div className="relative z-10 flex min-w-0 flex-col justify-center lg:pl-1">
+          <div className="flex max-w-[320px] items-center gap-3">
+            <span className="h-px flex-1 bg-amber-300/90" aria-hidden="true" />
+            <p className="whitespace-nowrap rounded-full bg-[#dcecff] px-4 py-1 text-xs font-extrabold uppercase tracking-[0.16em] text-[#17345f] sm:text-sm">
               {t.home.recognitionHeader.badge}
             </p>
-            <h2 className="mt-4 max-w-md text-3xl font-bold leading-tight tracking-tight text-[#152b29] sm:text-4xl">
-              {t.home.recognitionHeader.title}
-            </h2>
-            <p className="mt-4 max-w-lg text-sm leading-6 text-slate-700 sm:text-base sm:leading-7">
-              {t.home.recognitionHeader.description}
-            </p>
+            <span className="h-px flex-1 bg-amber-300/90" aria-hidden="true" />
           </div>
+          <h2 className="mt-4 max-w-[540px] border-l-[5px] border-amber-400 pl-4 font-serif text-3xl font-bold leading-[1.04] tracking-tight text-[#fffaf1] sm:text-4xl lg:text-[clamp(2rem,3vw,3rem)]">
+            {t.home.recognitionHeader.title}
+          </h2>
+          <p className="mt-3 max-w-[480px] pl-5 text-sm leading-5 text-blue-50/90 sm:text-base sm:leading-6">
+            {t.home.recognitionHeader.description}
+          </p>
+        </div>
+
+        <div className="relative z-10 grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-3 xl:gap-4">
           {recognitions.map((item, index) => (
-            <div
+            <article
               key={item.title}
-              className="flex min-w-0 flex-col justify-center border-t border-[#e5e9e5] bg-white p-7 sm:p-9 lg:border-l lg:border-t-0 lg:p-11"
+              className="relative flex min-h-[238px] min-w-0 flex-col justify-center border border-[#fffaf1]/75 bg-[#101c69]/25 px-4 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,.12)] backdrop-blur-[2px] sm:min-h-[250px] sm:px-5 sm:py-5 lg:min-h-[264px] lg:px-4 lg:py-4 xl:min-h-0 xl:h-full xl:px-5"
+              style={{
+                clipPath:
+                  'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px))',
+              }}
             >
-              <span className={`inline-flex w-fit rounded-full px-3 py-1 text-sm font-bold uppercase tracking-[0.14em] ${index === 0 ? 'bg-[#eaf2e9] text-[#14785e]' : 'bg-[#fff1dc] text-[#a95600]'}`}>
+              <div className="flex items-center gap-3">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-[#fffaf1]/80 bg-white/[0.06] text-blue-50 sm:h-12 sm:w-12">
+                  {index === 0 ? (
+                    <BriefcaseBusiness className="h-6 w-6" strokeWidth={1.7} aria-hidden="true" />
+                  ) : (
+                    <Rocket className="h-6 w-6" strokeWidth={1.7} aria-hidden="true" />
+                  )}
+                </span>
+                <span className="h-px flex-1 bg-[#fffaf1]/80" aria-hidden="true" />
+              </div>
+              <p className={`mt-3 w-fit max-w-full rounded-full px-3 py-1 text-[11px] font-extrabold uppercase leading-tight tracking-[0.1em] text-[#101b54] sm:text-xs ${index === 0 ? 'bg-[#cde4ff]' : 'bg-[#ffb52e]'}`}>
                 {item.subtitle}
-              </span>
-              <h3 className="mt-6 text-2xl font-semibold leading-tight tracking-tight text-[#152b29] sm:text-[26px]">
+              </p>
+              <h3 className="mt-2 font-serif text-xl font-bold leading-tight text-[#fffaf1] sm:text-2xl lg:text-[clamp(1.15rem,1.8vw,1.75rem)]">
                 {item.title}
               </h3>
-              <p className="mt-3 max-w-lg text-sm leading-6 text-[#597079] sm:text-base sm:leading-7">
+              <span className="mt-2 h-[3px] w-12 bg-amber-400" aria-hidden="true" />
+              <p className="mt-2 max-w-lg text-[13px] leading-[1.45] text-blue-50/95 sm:text-sm">
                 {item.text}
               </p>
-            </div>
+            </article>
           ))}
         </div>
       </div>
