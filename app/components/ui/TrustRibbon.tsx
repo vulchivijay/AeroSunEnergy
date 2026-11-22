@@ -59,18 +59,16 @@ function StepIcon({ kind }: { kind: StepKind }) {
 function EnergyLandscape() {
   return (
     <svg
-      className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[47%] w-full sm:h-[53%]"
+      className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[47%] w-full sm:h-[53%] lg:h-[68%]"
       viewBox="0 0 1600 430"
       preserveAspectRatio="xMidYMax slice"
       fill="none"
       aria-hidden="true"
     >
       <defs>
-        <linearGradient id="trust-landscape-fade" x1="800" y1="0" x2="800" y2="430" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#101d78" stopOpacity="0" />
-          <stop offset=".48" stopColor="#111a69" stopOpacity=".22" />
-          <stop offset="1" stopColor="#06133e" stopOpacity=".94" />
-        </linearGradient>
+        <clipPath id="trust-solar-panel-clip">
+          <path d="M980 360 1318 310 1458 420H980Z" />
+        </clipPath>
         <linearGradient id="trust-solar-glow" x1="430" y1="200" x2="1450" y2="430" gradientUnits="userSpaceOnUse">
           <stop stopColor="#5546ff" stopOpacity=".9" />
           <stop offset=".48" stopColor="#ffc66d" stopOpacity=".98" />
@@ -90,21 +88,51 @@ function EnergyLandscape() {
         </filter>
       </defs>
 
-      <path d="M0 0h1600v430H0z" fill="url(#trust-landscape-fade)" />
-      <ellipse cx="1320" cy="264" rx="250" ry="195" fill="url(#trust-sun-glow)" />
+      <ellipse
+        className="motion-safe:animate-pulse"
+        style={{ animationDuration: '5.5s' }}
+        cx="1320"
+        cy="264"
+        rx="250"
+        ry="195"
+        fill="url(#trust-sun-glow)"
+      />
       <circle cx="1320" cy="264" r="82" fill="#ffc85e" fillOpacity=".62" filter="url(#trust-sun-aura)" />
       <circle cx="1320" cy="264" r="76" fill="url(#trust-sun-disc)" />
-      <path d="M1320 154v-38m-70 40-27-27m167 27 27-27m-212 98-38-10m265 10 38-10" stroke="#ffe08a" strokeOpacity=".88" strokeWidth="4" strokeLinecap="round" />
-      <path d="M0 267c150-35 270 19 414 2 135-16 223-96 368-73 131 21 211 85 340 55 176-42 283-2 478 10v169H0z" fill="#39266f" fillOpacity=".42" />
-      <path d="M0 316c166-54 300-28 456-3 158 25 263-58 401-37 182 28 253 49 405 6 144-41 231-32 338-4v152H0z" fill="#101b60" fillOpacity=".75" />
-      <path d="M0 358c190-35 332-49 495-8 149 38 258-15 380-7 160 11 254 39 399 6 119-27 226-51 326-30v111H0z" fill="#07143f" fillOpacity=".9" />
+      <path d="M1535 205v175" stroke="#fff5df" strokeOpacity=".95" strokeWidth="4" strokeLinecap="round" />
+      <g
+        className="motion-safe:animate-spin"
+        style={{
+          transformBox: 'view-box',
+          transformOrigin: '1535px 205px',
+          animationDuration: '12s',
+        }}
+      >
+        <path d="M1535 205v-42m0 42-36 21m36-21 36 21" stroke="#fff5df" strokeOpacity=".96" strokeWidth="4" strokeLinecap="round" />
+        <path d="M1535 205v-42m0 42-36 21m36-21 36 21" stroke="#ffd98b" strokeOpacity=".58" strokeWidth="1.5" strokeLinecap="round" />
+      </g>
+      <circle cx="1535" cy="205" r="6" fill="#fff5df" />
+      <path d="M0 267c150-35 270 19 414 2 135-16 223-96 368-73 131 21 211 85 340 55 176-42 283-2 478 10v169H0z" fill="#39266f" fillOpacity=".24" />
+      <path d="M0 316c166-54 300-28 456-3 158 25 263-58 401-37 182 28 253 49 405 6 144-41 231-32 338-4v152H0z" fill="#101b60" fillOpacity=".34" />
+      <path d="M0 358c190-35 332-49 495-8 149 38 258-15 380-7 160 11 254 39 399 6 119-27 226-51 326-30v111H0z" fill="#07143f" fillOpacity=".42" />
+      <path
+        className="motion-safe:animate-spin"
+        style={{
+          transformBox: 'view-box',
+          transformOrigin: '1320px 264px',
+          animationDuration: '28s',
+        }}
+        d="M1320 176v-44M1320 352v44M1232 264h-44M1408 264h44M1258 202l-31-31M1382 202l31-31M1258 326l-31 31M1382 326l31 31"
+        stroke="#fff0a5"
+        strokeOpacity=".96"
+        strokeWidth="4"
+        strokeLinecap="round"
+      />
 
-      <path d="M1515 185v183" stroke="#f8d6e7" strokeOpacity=".86" strokeWidth="5" />
-      <circle cx="1515" cy="181" r="7" fill="#ffe8a2" />
-      <path d="m1515 181 5-105m-5 105-90-43m90 43 83-50" stroke="#ffe1a2" strokeOpacity=".88" strokeWidth="5" strokeLinecap="round" />
-
-      <path d="m420 375 760 0 116 55H330z" fill="#101d68" fillOpacity=".8" stroke="url(#trust-solar-glow)" strokeWidth="3" />
-      <path d="m520 375 34 55m118-55 25 55m118-55 16 55m118-55 6 55m118-55-4 55M455 389h783m-810 16h837m-863 15h890" stroke="#a7d8ff" strokeOpacity=".66" strokeWidth="2" />
+      <path d="M980 360 1318 310 1458 420H980Z" fill="#101d68" stroke="url(#trust-solar-glow)" strokeWidth="3" />
+      <g clipPath="url(#trust-solar-panel-clip)" stroke="#b8e0ff" strokeOpacity=".76" strokeWidth="2">
+        <path d="M1048 350 1076 420m39-80 56 80m12-90 84 90m-17-100 112 100m-61-108 144 108M980 375 1353 338M980 390 1388 365M980 405 1423 393" />
+      </g>
       <path d="M0 337c242 38 415 61 625 21s356-94 558-34 291 36 417-11" stroke="url(#trust-solar-glow)" strokeWidth="4" />
     </svg>
   )
@@ -117,7 +145,7 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
       className={className}
     >
       <div
-        className="relative isolate min-h-[900px] w-full overflow-hidden bg-[#08164e] text-white sm:min-h-[760px] md:aspect-[3.2/1] md:min-h-[320px]"
+        className="relative isolate min-h-[900px] w-full overflow-hidden bg-[#08164e] text-white sm:min-h-[760px] md:aspect-[3/1] md:min-h-[360px]"
         style={{
           background:
             'radial-gradient(ellipse at 82% 80%, rgba(255,180,89,.38), transparent 34%), radial-gradient(ellipse at 54% 8%, rgba(70,151,255,.25), transparent 36%), linear-gradient(112deg,#06143f 0%,#102c9e 34%,#4932b3 64%,#9a3fa7 82%,#f27d61 100%)',
@@ -133,8 +161,8 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
         />
         <EnergyLandscape />
 
-        <div className="relative z-10 grid min-h-[900px] gap-8 px-6 py-9 sm:min-h-[760px] sm:px-10 sm:py-12 md:absolute md:inset-0 md:min-h-0 md:grid-cols-[44%_48.5%] md:items-center md:gap-0 md:px-[3.3%] md:py-[2.5%] lg:px-[3.5%]">
-          <div className="max-w-[620px] self-center">
+        <div className="relative z-10 grid min-h-[900px] gap-8 px-6 py-9 sm:min-h-[760px] sm:px-10 sm:py-12 md:absolute md:inset-0 md:min-h-0 md:grid-cols-[48.5%_49.5%] md:items-center md:gap-0 md:px-[3.3%] md:py-[2.5%] lg:px-[3.5%]">
+          <div className="max-w-[620px] self-center md:-translate-y-6">
             <div className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.25em] text-sky-100 shadow-lg shadow-blue-950/10 backdrop-blur-md sm:text-xs">
               <span className="h-2 w-2 rounded-full bg-amber-300 shadow-[0_0_14px_rgba(255,211,109,0.9)]" />
               The AeroSun Promise
@@ -155,7 +183,7 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
             </p>
           </div>
 
-          <div className="relative min-h-[400px] sm:min-h-[450px] md:h-full md:min-h-0">
+          <div className="relative min-h-[400px] sm:min-h-[450px] md:h-full md:min-h-0 md:-translate-y-6">
             <svg
               className="pointer-events-none absolute inset-0 z-0 hidden h-full w-full md:block"
               viewBox="0 0 800 300"
@@ -205,7 +233,7 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
                 <article
                   key={step.number}
                   className={[
-                    'relative flex min-h-[128px] flex-col justify-between rounded-[1.1rem] border border-white/30 bg-[#281f69]/50 p-3 shadow-[0_16px_38px_rgba(3,10,48,.22)] backdrop-blur-xl sm:min-h-[140px] sm:p-4 md:absolute md:h-[82px] md:min-h-0 md:w-[23%] md:rounded-[1rem] md:p-2 lg:h-[clamp(82px,8vw,112px)] lg:p-3',
+                    'relative flex min-h-[128px] flex-col justify-between rounded-[1.1rem] border border-white/30 bg-[#281f69]/50 p-3 shadow-[0_16px_38px_rgba(3,10,48,.22)] backdrop-blur-xl sm:min-h-[140px] sm:p-4 md:absolute md:h-[82px] md:min-h-0 md:w-[22.2%] md:rounded-[1rem] md:p-2 lg:h-[clamp(82px,8vw,112px)] lg:p-3',
                     index === 0 ? 'md:left-0 md:top-[42%]' : '',
                     index === 1 ? 'md:left-[25%] md:top-[32%]' : '',
                     index === 2 ? 'md:left-[50%] md:top-[21%]' : '',
