@@ -278,8 +278,9 @@ export function SolarEstimation() {
         </h1>
       </div>
 
-      <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl shadow-sm">
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl shadow-sm border border-slate-200">
         <div className="grid lg:grid-cols-[minmax(300px,0.75fr)_1.45fr]">
+          
           <div className="bg-linear-to-r from-[#137c63] to-[#20A44A] p-6 text-white sm:p-8 lg:p-10">
             <h2 className="max-w-sm text-3xl font-black leading-tight tracking-tight sm:text-4xl">
               {e.savingsTitle} <span className="text-emerald-400">{e.savingsTitleAccent}</span>
@@ -417,8 +418,11 @@ export function SolarEstimation() {
                 </p>
               </div>
             </div>
+          </div>
 
-            <div className="mt-7 grid gap-3">
+          <div className="bg-linear-to-br from-[#f7faff] via-[#f2f4ff] to-[#eef9fb] p-5 sm:p-7 lg:p-9">
+            <div className="grid gap-4 sm:grid-cols-2">
+              
               <article className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
                 <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
                     {e.roofRequired}
@@ -426,7 +430,9 @@ export function SolarEstimation() {
                 <p className="mt-2 text-xl font-black tracking-tight text-slate-950 sm:text-2xl">
                     <DigitalNumber value={calculation.roofArea.toLocaleString('en-IN')} /> <span className="text-sm font-semibold">{e.squareFootUnit}</span>
                 </p>
-              </article><article className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+              </article>
+              
+              <article className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
                 <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
                     {calculatorText.idealSystemSize}
                 </p>
@@ -437,12 +443,7 @@ export function SolarEstimation() {
                     <DigitalNumber value={calculation.dailyGeneration} /> {calculatorText.averageDailyGeneration}
                 </p>
               </article>
-            </div>
-          </div>
 
-          <div className="bg-linear-to-br from-[#f7faff] via-[#f2f4ff] to-[#eef9fb] p-5 sm:p-7 lg:p-9">
-            <div className="grid gap-4 sm:grid-cols-2">
-              
               <article className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
                 <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
                     {e.annualGeneration}
@@ -451,6 +452,7 @@ export function SolarEstimation() {
                     <DigitalNumber value={calculation.annualGeneration.toLocaleString('en-IN')} /> <span className="text-sm font-semibold">{e.generationUnit}</span>
                 </p>
               </article>
+
               <article className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
                 <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
                     {e.annualSavings}
@@ -460,6 +462,7 @@ export function SolarEstimation() {
                 </p>
               </article>
             </div>
+
             <div className="mt-5 rounded-2xl border border-amber-200/80 bg-linear-to-br from-amber-50 via-orange-50 to-amber-100 p-5 sm:p-6">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
@@ -493,7 +496,7 @@ export function SolarEstimation() {
               <p className="mt-4 text-right text-xs text-slate-500">{calculatorText.taxesExtra}</p>
             </div>
 
-            <div className="mt-4 rounded-2xl border border-emerald-200/80 bg-linear-to-br from-emerald-50 via-green-50 to-emerald-100 p-5 shadow-sm sm:p-6">
+            <div className="mt-4 rounded-2xl border border-emerald-200/80 bg-linear-to-br from-emerald-50 via-green-50 to-emerald-100 p-5 shadow-sm sm:p-6 hidden">
               <span className="inline-flex items-center rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-indigo-900">
                 {calculation.netMeteringWaived
                   ? calculatorText.finalEffectiveCost
