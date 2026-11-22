@@ -85,7 +85,7 @@ function RecognitionHighlight({ t }: { t: Translations }) {
           <circle cx="600" cy="100" r="6" fill="#fff1d2" />
         </svg>
 
-        <div className="relative z-10 flex min-w-0 flex-col justify-center lg:pl-1">
+        <div className="relative z-10 flex min-w-0 flex-col justify-center lg:-translate-y-12 lg:pl-1">
           <div className="flex max-w-[320px] items-center gap-3">
             <span className="h-px flex-1 bg-amber-300/90" aria-hidden="true" />
             <p className="whitespace-nowrap rounded-full bg-[#dcecff] px-4 py-1 text-xs font-extrabold uppercase tracking-[0.16em] text-[#17345f] sm:text-sm">
@@ -101,16 +101,31 @@ function RecognitionHighlight({ t }: { t: Translations }) {
           </p>
         </div>
 
-        <div className="relative z-10 grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-3 xl:gap-4">
+        <div className="relative z-10 grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 lg:-translate-y-12 lg:gap-3 xl:gap-4">
           {recognitions.map((item, index) => (
             <article
               key={item.title}
-              className="relative flex min-h-[238px] min-w-0 flex-col justify-center border border-[#fffaf1]/75 bg-[#101c69]/25 px-4 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,.12)] backdrop-blur-[2px] sm:min-h-[250px] sm:px-5 sm:py-5 lg:min-h-[264px] lg:px-4 lg:py-4 xl:min-h-0 xl:h-full xl:px-5"
+              className="relative flex min-h-[238px] min-w-0 flex-col justify-center bg-[#101c69]/25 px-4 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,.12)] backdrop-blur-[2px] sm:min-h-[250px] sm:px-5 sm:py-5 lg:min-h-[264px] lg:px-4 lg:py-4 xl:min-h-0 xl:h-full xl:px-5"
               style={{
                 clipPath:
-                  'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px))',
+                  'polygon(0 0, 96% 0, 100% 6%, 100% 94%, 96% 100%, 4% 100%, 0 94%)',
               }}
             >
+              <svg
+                className="pointer-events-none absolute inset-0 z-10 h-full w-full"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M1 1H95L99 6V94L95 99H5L1 94Z"
+                  stroke="#fffaf1"
+                  strokeOpacity=".9"
+                  strokeWidth="1.5"
+                  vectorEffect="non-scaling-stroke"
+                />
+              </svg>
               <div className="flex items-center gap-3">
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-[#fffaf1]/80 bg-white/[0.06] text-blue-50 sm:h-12 sm:w-12">
                   {index === 0 ? (
