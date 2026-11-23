@@ -79,19 +79,37 @@ function PriceItem({
   label,
   value,
   valueClassName,
+  featured = false,
 }: {
   icon: LucideIcon
   label: string
   value: string
   valueClassName: string
+  featured?: boolean
 }) {
   return (
-    <div className="min-w-0 text-center">
-      <Icon className="mx-auto h-5 w-5 text-slate-400" aria-hidden="true" />
-      <p className="mt-2 text-xs leading-5 text-slate-500">{label}</p>
-      <p className={`mt-1 whitespace-nowrap text-lg font-extrabold tracking-tight sm:text-xl ${valueClassName}`}>
-        <DigitalNumber value={value} />
-      </p>
+    <div
+      className={`min-w-0 rounded-2xl border p-4 text-left sm:p-5 ${
+        featured
+          ? 'border-amber-300/60 bg-linear-to-br from-amber-200 via-amber-100 to-yellow-50 shadow-[0_12px_30px_rgba(251,191,36,0.12)]'
+          : 'border-white/10 bg-white/[0.05]'
+      }`}
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className={`text-xs font-medium leading-5 ${featured ? 'text-amber-950/70' : 'text-slate-300'}`}>
+            {label}
+          </p>
+          <p className={`mt-3 whitespace-nowrap text-xl font-black tracking-tight sm:text-2xl ${valueClassName}`}>
+            <DigitalNumber value={value} />
+          </p>
+        </div>
+        <span className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl ${
+          featured ? 'bg-amber-900/10 text-amber-900' : 'bg-white/10 text-sky-200'
+        }`}>
+          <Icon className="h-5 w-5" aria-hidden="true" />
+        </span>
+      </div>
     </div>
   )
 }
@@ -463,37 +481,48 @@ export function SolarEstimation() {
               </article>
             </div>
 
-            <div className="mt-5 rounded-2xl border border-amber-200/80 bg-linear-to-br from-amber-50 via-orange-50 to-amber-100 p-5 sm:p-6">
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
-                  {calculatorText.pricingBreakdown}
-                </h2>
-                <p className="text-xs font-semibold text-slate-600">
-                  <DigitalNumber value={formatSystemCapacity(calculation.recommendedKw, e.capacityUnit)} /> · {currentPropertyType}
+            <div className="relative mt-5 overflow-hidden rounded-[1.75rem] border border-indigo-950 bg-linear-to-br from-[#0b1536] via-[#13244b] to-[#0d3a3b] p-4 text-white shadow-xl shadow-indigo-950/15 sm:p-6">
+              <div className="pointer-events-none absolute -right-16 -top-24 h-56 w-56 rounded-full bg-emerald-300/10 blur-3xl" aria-hidden="true" />
+              <div className="pointer-events-none absolute -bottom-28 left-1/3 h-48 w-48 rounded-full bg-sky-300/10 blur-3xl" aria-hidden="true" />
+              <div className="relative">
+                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
+                  <div className="flex items-center gap-3">
+                    <span className="h-8 w-1 rounded-full bg-linear-to-b from-emerald-300 to-sky-300" aria-hidden="true" />
+                    <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-white sm:text-sm">
+                      {calculatorText.pricingBreakdown}
+                    </h2>
+                  </div>
+                  <p className="rounded-full border border-white/15 bg-white/[0.06] px-3 py-1.5 text-xs font-semibold text-slate-200">
+                    <DigitalNumber value={formatSystemCapacity(calculation.recommendedKw, e.capacityUnit)} /> · {currentPropertyType}
+                  </p>
+                </div>
+
+                <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                  <PriceItem
+                    icon={Tag}
+                    label={calculatorText.priceBeforeSubsidy}
+                    value={formatCurrency(calculation.totalPrice)}
+                    valueClassName="text-white"
+                  />
+                  <PriceItem
+                    icon={Landmark}
+                    label={calculatorText.governmentSubsidy}
+                    value={formatCurrency(calculation.subsidy)}
+                    valueClassName="text-emerald-300"
+                  />
+                  <PriceItem
+                    icon={Calculator}
+                    label={calculatorText.effectiveCost}
+                    value={formatCurrency(calculation.effectiveCost)}
+                    valueClassName="text-slate-950"
+                    featured
+                  />
+                </div>
+
+                <p className="mt-4 border-t border-white/10 pt-3 text-right text-xs leading-5 text-slate-300">
+                  {calculatorText.taxesExtra}
                 </p>
               </div>
-
-              <div className="mt-5 grid gap-4 sm:grid-cols-3">
-                <PriceItem
-                  icon={Tag}
-                  label={calculatorText.priceBeforeSubsidy}
-                  value={formatCurrency(calculation.totalPrice)}
-                  valueClassName="text-slate-950"
-                />
-                <PriceItem
-                  icon={Landmark}
-                  label={calculatorText.governmentSubsidy}
-                  value={formatCurrency(calculation.subsidy)}
-                  valueClassName="text-emerald-600"
-                />
-                <PriceItem
-                  icon={Calculator}
-                  label={calculatorText.effectiveCost}
-                  value={formatCurrency(calculation.effectiveCost)}
-                  valueClassName="text-emerald-700"
-                />
-              </div>
-              <p className="mt-4 text-right text-xs text-slate-500">{calculatorText.taxesExtra}</p>
             </div>
 
             <div className="mt-4 rounded-2xl border border-emerald-200/80 bg-linear-to-br from-emerald-50 via-green-50 to-emerald-100 p-5 shadow-sm sm:p-6 hidden">
