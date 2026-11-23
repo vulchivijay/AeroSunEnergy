@@ -3404,7 +3404,7 @@
       "priceBeforeSubsidy": "ధర (సబ్సిడీ మరియు GST మినహా)",
       "governmentSubsidy": "ప్రభుత్వ సబ్సిడీ (PM Surya Ghar)",
       "effectiveCost": "సబ్సిడీ తర్వాత (GST/మీటరింగ్‌కు ముందు)",
-      "taxesExtra": "*క్రింది అంచనాలో సూచనాత్మక GST ఉంది; మీటరింగ్ ఛార్జీలు మారవచ్చు.",
+      "taxesExtra": "*క్రింది అంచనాలో సూచనాత్మక GST చేర్చబడలేదు; మీటరింగ్ ఛార్జీలు మారవచ్చు.",
       "finalEffectiveCost": "సబ్సిడీ తర్వాత అంచనా తుది ఖర్చు",
       "finalEffectiveCostBeforeMetering": "నెట్ మీటరింగ్ ఛార్జీలకు ముందు అంచనా ఖర్చు",
       "gstEstimate": "అంచనా GST (8.9% EPC)",

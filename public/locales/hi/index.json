@@ -3404,7 +3404,7 @@
       "priceBeforeSubsidy": "कीमत (सब्सिडी और GST से पहले)",
       "governmentSubsidy": "सरकारी सब्सिडी (PM Surya Ghar)",
       "effectiveCost": "सब्सिडी के बाद (GST/मीटर शुल्क से पहले)",
-      "taxesExtra": "*नीचे दिए अनुमान में सांकेतिक GST शामिल है; मीटर शुल्क अलग हो सकते हैं।",
+      "taxesExtra": "*नीचे दिए अनुमान में सांकेतिक GST शामिल नहीं है; मीटर शुल्क अलग हो सकते हैं।",
       "finalEffectiveCost": "सब्सिडी के बाद अनुमानित अंतिम लागत",
       "finalEffectiveCostBeforeMetering": "नेट मीटरिंग शुल्क से पहले अनुमानित लागत",
       "gstEstimate": "अनुमानित GST (8.9% EPC)",

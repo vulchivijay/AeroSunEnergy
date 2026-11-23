@@ -10283,7 +10283,7 @@
       "priceBeforeSubsidy": "Price (Excl. Subsidy & GST)",
       "governmentSubsidy": "Govt Subsidy (PM Surya Ghar)",
       "effectiveCost": "Cost after subsidy (before GST/metering)",
-      "taxesExtra": "*The estimate below includes indicative GST; metering fees may vary.",
+      "taxesExtra": "*The estimate below excluded indicative GST; metering fees may vary.",
       "finalEffectiveCost": "Estimated final cost after subsidy",
       "finalEffectiveCostBeforeMetering": "Estimated cost before net-metering fees",
       "gstEstimate": "Estimated GST (8.9% EPC)",
