@@ -5,7 +5,7 @@ import { BankEMICalculator } from './components/forms/BankEMICalculator'
 import { SolarEstimation } from './components/forms/SolarEstimation'
 import TirupatiEnergySection from './components/sections/TirupatiEnergySection'
 
-import { BenefitCard, FeatureCard, HybridBenefitCard, HybridFeatureCard, HybridInfoPanel, HybridSectionEyebrow, HybridTable, InfoPanel, SectionEyebrow, TrustRibbon, WindBenefitCard, WindCapacityTable, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from './components/ui'
+import { BenefitCard, FeatureCard, HybridBenefitCard, HybridFeatureCard, HybridInfoPanel, HybridSectionEyebrow, HybridTable, InfoPanel, SectionEyebrow, solarOfferingImages, TrustRibbon, WindBenefitCard, WindCapacityTable, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from './components/ui'
 
 import Image from 'next/image'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
@@ -192,7 +192,7 @@ export default async function Home() {
             {offer.description}
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
-            {solarCards.map((card) => (
+            {solarCards.map((card, index) => (
               <FeatureCard
                 key={card.title}
                 title={card.title}
@@ -200,11 +200,12 @@ export default async function Home() {
                 points={card.points}
                 accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
                 label={t.ui.solarSolution}
+                imageSrc={solarOfferingImages[index]}
               />
             ))}
           </div>
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {home.moreSolarCards.map((card) => (
+            {home.moreSolarCards.map((card, index) => (
               <FeatureCard
                 key={card.title}
                 title={card.title}
@@ -212,6 +213,7 @@ export default async function Home() {
                 points={card.points}
                 accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
                 label={t.ui.solarSolution}
+                imageSrc={solarOfferingImages[solarCards.length + index]}
               />
             ))}
           </div>

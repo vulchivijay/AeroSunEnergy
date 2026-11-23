@@ -2,7 +2,7 @@ import { getSliderImagePath } from '@/lib/sliderImages'
 import { getRequestTranslations } from '@/lib/serverLocale'
 import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
-import { FeatureCard, BenefitCard, InfoPanel, OptimizedImage, SectionEyebrow } from '../components/ui'
+import { FeatureCard, BenefitCard, InfoPanel, OptimizedImage, SectionEyebrow, solarOfferingImages, solarSystemImages } from '../components/ui'
 import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 
@@ -90,7 +90,7 @@ export default async function SolarEnergyPage() {
           </div>
 
           <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
-            {offeringsLocalized.map((service) => (
+            {offeringsLocalized.map((service, index) => (
               <FeatureCard
                 key={service.title}
                 title={service.title}
@@ -98,6 +98,7 @@ export default async function SolarEnergyPage() {
                 points={service.points}
                 accent={service.title.includes('Street') ? 'amber' : service.title.includes('Thermal') ? 'sky' : service.title.includes('Fencing') ? 'violet' : 'emerald'}
                 label={t.ui.solarSolution}
+                imageSrc={solarOfferingImages[index]}
               />
             ))}
           </div>
@@ -135,8 +136,8 @@ export default async function SolarEnergyPage() {
           </div>
 
           <div className="grid gap-6 lg:grid-cols-3">
-            {systemTypesLocalized.map((type) => (
-              <FeatureCard key={type.title} title={type.title} description={type.description} points={type.benefits} accent={type.title.includes('Off-grid') ? 'amber' : type.title.includes('Hybrid') ? 'violet' : 'emerald'} label={t.ui.solarSolution} />
+            {systemTypesLocalized.map((type, index) => (
+              <FeatureCard key={type.title} title={type.title} description={type.description} points={type.benefits} accent={type.title.includes('Off-grid') ? 'amber' : type.title.includes('Hybrid') ? 'violet' : 'emerald'} label={t.ui.solarSolution} imageSrc={solarSystemImages[index]} />
             ))}
           </div>
         </div>

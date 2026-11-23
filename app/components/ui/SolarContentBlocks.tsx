@@ -13,6 +13,21 @@ import {
 
 export type AccentTone = ContentAccent
 
+export const solarOfferingImages = [
+  '/images/slider/slider-1.webp',
+  '/images/slider/slider-2.webp',
+  '/images/slider/slider-5.webp',
+  '/images/slider/slider-4.webp',
+  '/images/slider/slider-6.webp',
+  '/images/slider/slider-3.webp',
+] as const
+
+export const solarSystemImages = [
+  '/images/slider/slider-1.webp',
+  '/images/slider/slider-2.webp',
+  '/images/slider/slider-3.webp',
+] as const
+
 const renderSolarIcon = (colorClass: string) => {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={`h-4 w-4 ${colorClass}`} aria-hidden="true">
@@ -39,12 +54,14 @@ export function FeatureCard({
   points,
   accent = 'emerald',
   label,
+  imageSrc,
 }: {
   title: string
   description: string
   points: string[]
   accent?: AccentTone
   label: string
+  imageSrc?: string
 }) {
   return (
     <ContentFeatureCard
@@ -57,6 +74,8 @@ export function FeatureCard({
       featureClassName={contentAccentText[accent]}
       titleClassName="text-slate-900"
       pointIconClassName="bg-emerald-50 text-emerald-700"
+      imageSrc={imageSrc}
+      accent={accent}
     />
   )
 }

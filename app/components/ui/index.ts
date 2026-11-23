@@ -10,6 +10,8 @@ export {
   SectionEyebrow,
   FeatureCard,
   BenefitCard,
+  solarOfferingImages,
+  solarSystemImages,
 
   InfoPanel,
 
