@@ -5,7 +5,7 @@ import { BankEMICalculator } from './components/forms/BankEMICalculator'
 import { SolarEstimation } from './components/forms/SolarEstimation'
 import TirupatiEnergySection from './components/sections/TirupatiEnergySection'
 
-import { BenefitCard, FeatureCard, HybridBenefitCard, HybridFeatureCard, HybridInfoPanel, HybridSectionEyebrow, HybridTable, InfoPanel, RooftopSolarContentBlock, SectionEyebrow, solarOfferingImages, TrustRibbon, WindBenefitCard, WindCapacityTable, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from './components/ui'
+import { BenefitCard, FeatureCard, HybridContentBlock, HybridFeatureCard, HybridInfoPanel, HybridSectionEyebrow, HybridTable, InfoPanel, RooftopSolarContentBlock, SectionEyebrow, solarOfferingImages, TrustRibbon, WindCapacityTable, WindContentBlock, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from './components/ui'
 import { hybridSolutionImages, windSolutionImages } from './components/ui/EnergyContentImages'
 
 import Image from 'next/image'
@@ -301,10 +301,8 @@ export default async function Home() {
                 />
               ))}
             </div>
-            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-              {wind.benefits.map((item, index) => (
-                <WindBenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
-              ))}
+            <div className="mt-10">
+              <WindContentBlock eyebrow={wind.eyebrow} title={wind.title} description={t.windPage.hero.subtitle} benefits={wind.benefits} imageSrc={windSolutionImages[0]} />
             </div>
             <div className="mt-10 grid gap-5 lg:grid-cols-2">
               {wind.panels.map((panel) => (
@@ -348,10 +346,8 @@ export default async function Home() {
                 />
               ))}
             </div>
-            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-              {hybrid.benefits.map((item, index) => (
-                <HybridBenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
-              ))}
+            <div className="mt-10">
+              <HybridContentBlock eyebrow={hybrid.eyebrow} title={hybrid.title} description={t.hybridPage.hero.subtitle} benefits={hybrid.benefits} imageSrc={hybridSolutionImages[0]} />
             </div>
             <div className="mt-10 grid gap-5 lg:grid-cols-2">
               {hybrid.panels.map((panel) => (

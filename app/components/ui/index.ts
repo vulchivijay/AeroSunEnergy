@@ -22,6 +22,7 @@ export {
 export {
   WindSectionEyebrow,
   WindFeatureCard,
+  WindContentBlock,
   WindBenefitCard,
   WindInfoPanel,
   WindCapacityTable,
@@ -30,6 +31,7 @@ export {
 export {
   HybridSectionEyebrow,
   HybridFeatureCard,
+  HybridContentBlock,
   HybridBenefitCard,
   HybridInfoPanel,
   HybridTable,

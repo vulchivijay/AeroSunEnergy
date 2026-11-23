@@ -4,7 +4,7 @@ import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySecti
 import { getAccentOrDefault } from '@/lib/utils/utils'
 import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
 import {
-  HybridBenefitCard,
+  HybridContentBlock,
   HybridFeatureCard,
   HybridInfoPanel,
   HybridSectionEyebrow,
@@ -162,17 +162,20 @@ export default async function HybridEnergyPage() {
 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-          <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="grid gap-5 sm:grid-cols-2">
-              {keyBenefitsLocalized.map((benefit) => (
-                <HybridBenefitCard key={benefit} title={benefit.split(' ').slice(0, 3).join(' ') || hybridPage.labels.benefitFallback} description={benefit} />
-              ))}
-            </div>
+          <HybridContentBlock
+            eyebrow={hybridPage.hero.eyebrow}
+            title={`${hybridPage.hero.title} ${hybridPage.hero.titleAccent}`}
+            description={hybridPage.hero.subtitle}
+            benefits={keyBenefitsLocalized.map((benefit) => ({
+              title: benefit.split(' ').slice(0, 3).join(' ') || hybridPage.labels.benefitFallback,
+              description: benefit,
+            }))}
+            imageSrc={hybridSolutionImages[0]}
+          />
 
-            <div className="space-y-5">
+          <div className="mt-10 grid gap-5 lg:grid-cols-2">
               <HybridInfoPanel title={hybridPage.common.whyWorks} content={keyBenefitsLocalized} accent="emerald" />
               <HybridInfoPanel title={hybridPage.common.feasibilityChecklist} content={hybridPage.labels.feasibilityItems} accent="sky" />
-            </div>
           </div>
         </div>
       </section>

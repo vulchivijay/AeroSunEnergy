@@ -3,7 +3,7 @@ import { getRequestTranslations } from '@/lib/serverLocale'
 import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 import { getAccentOrDefault } from '@/lib/utils/utils'
 import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
-import { OptimizedImage, WindBenefitCard, WindCapacityTable, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from '../components/ui'
+import { OptimizedImage, WindCapacityTable, WindContentBlock, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from '../components/ui'
 import { windSolutionImages } from '../components/ui/EnergyContentImages'
 import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
@@ -151,17 +151,20 @@ export default async function WindEnergyPage() {
       </section>
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-          <div className="grid gap-5 sm:grid-cols-2">
-            {keyBenefitsLocalized.map((benefit) => (
-              <WindBenefitCard key={benefit} title={benefit.split(' ').slice(0, 3).join(' ') || 'Benefit'} description={benefit} />
-            ))}
-          </div>
+        <WindContentBlock
+          eyebrow={windPage.hero.eyebrow}
+          title={windPage.overview.title}
+          description={windPage.hero.subtitle}
+          benefits={keyBenefitsLocalized.map((benefit) => ({
+            title: benefit.split(' ').slice(0, 3).join(' ') || 'Benefit',
+            description: benefit,
+          }))}
+          imageSrc={windSolutionImages[0]}
+        />
 
-          <div className="space-y-5">
+        <div className="mt-10 grid gap-5 lg:grid-cols-2">
             <WindInfoPanel title={windPage.benefits.title} content={keyBenefitsLocalized} accent="sky" />
             <WindInfoPanel title={windPage.benefits.feasibility} content={strategicPointsLocalized} accent="emerald" />
-          </div>
         </div>
       </section>
 

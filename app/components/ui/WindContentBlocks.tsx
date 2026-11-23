@@ -2,6 +2,7 @@
 
 import type { ReactNode } from 'react'
 import Image from 'next/image'
+import { BatteryCharging, CircleDollarSign, Gauge, MapPin, Wind } from 'lucide-react'
 import { useLocale } from '@/lib/LocaleContext'
 import { DigitalNumber } from './DigitalNumber'
 import {
@@ -10,6 +11,7 @@ import {
   contentBenefitBorders,
   contentCheckBackgrounds,
   contentFeatureCardAccents,
+  ContentHighlightsBlock,
   ContentInfoPanel,
   ContentSectionEyebrow,
   type ContentAccent,
@@ -86,6 +88,33 @@ export function WindFeatureCard({
       </div>
       <span className={`absolute inset-x-0 bottom-0 h-1 ${contentFeatureCardAccents[accent]}`} aria-hidden="true" />
     </article>
+  )
+}
+
+export function WindContentBlock({
+  eyebrow,
+  title,
+  description,
+  benefits,
+  imageSrc,
+}: {
+  eyebrow: string
+  title: string
+  description: string
+  benefits: { title: string; description: string }[]
+  imageSrc: string
+}) {
+  return (
+    <ContentHighlightsBlock
+      eyebrow={eyebrow}
+      title={title}
+      description={description}
+      imageSrc={imageSrc}
+      badgeIcon={Wind}
+      badgeIconClassName="text-sky-600"
+      benefits={benefits}
+      benefitIcons={[Wind, CircleDollarSign, Gauge, MapPin, BatteryCharging]}
+    />
   )
 }
 

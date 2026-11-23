@@ -71,7 +71,7 @@ export function RooftopSolarContentBlock({
     <div className="grid gap-6 bg-[#fffdfa] lg:grid-cols-[minmax(17rem,0.44fr)_minmax(0,1fr)] lg:gap-8">
       <figure className="relative min-h-[26rem] overflow-hidden rounded-[1.5rem] bg-[#dbe6ff] sm:min-h-[32rem] lg:min-h-[39rem]">
         <Image
-          src="/images/solar-rooftop-scene.svg"
+          src={solarSystemImages[0]}
           alt=""
           fill
           sizes="(min-width: 1280px) 28vw, (min-width: 640px) 50vw, 100vw"
