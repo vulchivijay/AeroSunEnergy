@@ -19,7 +19,7 @@ const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-logo",
   weight: ["700"],
-  preload: false,
+  preload: true,
   display: "swap",
   adjustFontFallback: true,
   fallback: ["system-ui", "sans-serif"],
@@ -29,7 +29,7 @@ const orbitron = Orbitron({
   subsets: ["latin"],
   variable: "--font-digital",
   weight: ["600", "700"],
-  preload: false,
+  preload: true,
   display: "swap",
   fallback: ["monospace"],
 });
