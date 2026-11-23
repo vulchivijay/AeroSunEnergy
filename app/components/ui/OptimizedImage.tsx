@@ -50,7 +50,7 @@ export default function OptimizedImage({
     >
       {isLoading && (
         <div
-          className={`absolute inset-0 animate-pulse bg-linear-to-br from-slate-200 via-slate-100 to-slate-200 motion-reduce:animate-none    ${
+          className={`absolute inset-0 animate-pulse bg-linear-to-br from-slate-200 via-slate-100 to-slate-200 motion-reduce:animate-none ${
             skeletonClassName ?? ''
           }`}
           aria-hidden="true"
@@ -59,7 +59,7 @@ export default function OptimizedImage({
       {showSpinner && (
         <div className="absolute inset-0 flex items-center justify-center" role="status" aria-label={t.ui.loadingImage}>
           <span
-            className="h-9 w-9 animate-spin rounded-full border-4 border-slate-400/40 border-t-slate-700   motion-reduce:animate-none"
+            className="h-9 w-9 animate-spin rounded-full border-4 border-slate-400/40 border-t-slate-700 motion-reduce:animate-none"
             aria-hidden="true"
           />
         </div>

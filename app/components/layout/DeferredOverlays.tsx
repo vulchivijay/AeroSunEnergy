@@ -76,29 +76,29 @@ function CookieConsent() {
       >
         <div>
           <div className="w-full">
-            <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700 ">
+            <p className=" uppercase text-emerald-700    text-xs font-semibold tracking-wide leading-5">
               {labels.title}
             </p>
-            <h2 className="mt-2 text-2xl font-bold text-slate-900 ">
+            <h2 className="mt-2 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
               {labels.headline}
             </h2>
-            <p className="mt-3 text-md leading-7 text-slate-600 ">
+            <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {labels.description}
             </p>
           </div>
 
-          <div className="mt-5 flex flex-col gap-2 border-t border-slate-200 pt-4 sm:flex-row sm:justify-end ">
+          <div className="mt-5 flex flex-col gap-2 border-t border-slate-200 pt-4 sm:flex-row sm:justify-end">
             <button
               type="button"
               onClick={() => saveConsent('declined')}
-              className="inline-flex min-h-11 text-nowrap items-center justify-center rounded-full border border-slate-300 bg-white px-5 py-2.5 text-md text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700     "
+              className="inline-flex min-h-11 text-nowrap items-center justify-center rounded-full border border-slate-300 bg-white px-5 py-2.5 text-base text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
             >
               {labels.reject}
             </button>
             <button
               type="button"
               onClick={() => saveConsent('accepted')}
-              className="inline-flex min-h-11 text-nowrap items-center justify-center rounded-full bg-[#15803D] px-5 py-2.5 text-md text-white shadow-sm  transition hover:bg-[#18833a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+              className="inline-flex min-h-11 text-nowrap items-center justify-center rounded-full bg-[#15803D] px-5 py-2.5 text-base text-white shadow-sm transition hover:bg-[#18833a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
             >
               {labels.accept}
             </button>
@@ -249,8 +249,8 @@ function Lord() {
             />
           </div>
 
-          <h2 id="lord-blessing-title" className="mb-2 text-3xl font-semibold tracking-tight">{blessing.title}</h2>
-          <p id="lord-blessing-description" className="max-w-md text-[14px] text-gray-900">
+          <h2 id="lord-blessing-title" className="mb-2 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{blessing.title}</h2>
+          <p id="lord-blessing-description" className="max-w-md  text-gray-900      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {blessing.body}
           </p>
         </div>

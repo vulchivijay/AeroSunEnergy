@@ -21,15 +21,15 @@ export default function TirupatiEnergySection({
       <div className="mx-auto max-w-7xl">
         <div className="relative rounded-xl border border-slate-200 bg-[#eaf2e9] p-6 sm:p-8 lg:px-12 lg:py-10">
           <div className="max-w-4xl pt-20 sm:pt-32 lg:pt-0 lg:pr-52">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#087a61] sm:text-xs">
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 uppercase text-[#087a61]    text-xs font-semibold tracking-wide leading-5">
               {content.eyebrow}
             </p>
 
-            <h2 className="mt-5 text-3xl font-bold leading-tight tracking-tight text-[#102b28] sm:text-4xl lg:text-[2.75rem]">
+            <h2 className="mt-5 text-[#102b28] text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
               {content.title}
             </h2>
 
-            <p className="mt-5 max-w-4xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+            <p className="mt-5 max-w-4xl text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {content.description}
             </p>
           </div>
@@ -53,7 +53,7 @@ export default function TirupatiEnergySection({
             <Link
               href="/contact"
               prefetch={false}
-              className="relative z-10 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#12865e] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#0f704e] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#087a61]"
+              className="relative z-10 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#12865e] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#0f704e] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#087a61] tracking-normal"
             >
               {content.contactCta}
               <ArrowUpRight className="h-4 w-4 shrink-0" strokeWidth={2.2} aria-hidden="true" />

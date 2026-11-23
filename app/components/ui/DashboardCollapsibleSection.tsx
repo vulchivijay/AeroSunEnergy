@@ -10,7 +10,7 @@ export function DashboardCollapsibleSection({
   contentClassName = '',
   defaultExpanded = true,
   headingLevel = 'h2',
-  titleClassName = 'text-xl font-bold text-slate-900',
+  titleClassName = 'text-slate-900',
   eyebrow,
   ariaLabel,
   id,
@@ -30,13 +30,17 @@ export function DashboardCollapsibleSection({
   const contentId = `dashboard-collapse-${generatedId.replace(/:/g, '')}`
   const [expanded, setExpanded] = useState(defaultExpanded)
   const Heading = headingLevel
+  const headingClasses =
+    headingLevel === 'h3'
+      ? 'text-xl sm:text-2xl font-semibold !tracking-tight leading-snug'
+      : 'text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug'
 
   return (
     <section id={id} className={className} aria-label={ariaLabel}>
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0">
           {eyebrow && <div className="mb-2">{eyebrow}</div>}
-          {title && <Heading className={titleClassName}>{title}</Heading>}
+          {title && <Heading className={`${headingClasses} ${titleClassName}`}>{title}</Heading>}
         </div>
         <ReadMoreToggle
           expanded={expanded}

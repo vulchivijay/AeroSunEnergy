@@ -47,25 +47,25 @@ export default async function HybridEnergyPage() {
         </div>
         <div className="relative mx-auto grid min-h-[620px] w-full max-w-7xl items-center gap-8 px-4 py-10 sm:min-h-[680px] sm:px-6 sm:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-10">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-violet-200/25 bg-white/[0.07] px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-violet-200">
+            <div className="inline-flex items-center gap-2 rounded-full border border-violet-200/25 bg-white/[0.07] px-3 py-1.5 text-xs uppercase text-violet-200 text-xs font-semibold tracking-wide leading-5">
               <span className="h-2 w-2 rounded-full bg-emerald-300" aria-hidden="true" />
               {hybridPage.hero.eyebrow}
             </div>
-            <h1 className="mt-6 max-w-3xl text-5xl font-black leading-[0.98] tracking-tighter text-white sm:text-6xl lg:text-8xl">
+            <h1 className="mt-6 max-w-3xl text-white text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
               {hybridPage.hero.title}
               <span className="block bg-linear-to-r from-emerald-300 via-cyan-200 to-violet-300 bg-clip-text text-transparent">{hybridPage.hero.titleAccent}</span>
             </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl">
+            <p className="mt-5 max-w-2xl text-slate-200       text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {hybridPage.hero.subtitle}
             </p>
           </div>
           <div className="relative overflow-hidden rounded-xl border border-slate-700 bg-white/[0.06] p-5 backdrop-blur-sm sm:p-6">
             <div className="flex items-center justify-between gap-3">
               <div>
-                <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-emerald-200">{hybridPage.hero.tagline}</p>
-                <p className="mt-1 text-xl font-black tracking-tight text-white sm:text-2xl">{hybridPage.hero.supporting}</p>
+                <p className=" uppercase text-emerald-200    text-xs font-semibold tracking-wide leading-5">{hybridPage.hero.tagline}</p>
+                <p className="mt-1  text-white    text-lg font-semibold tracking-normal leading-snug">{hybridPage.hero.supporting}</p>
               </div>
-              <span className="rounded-xl border border-emerald-200/20 bg-emerald-300/10 px-3 py-2 text-[12px] font-bold uppercase tracking-[0.14em] text-emerald-100">{hybridPage.labels.statusBalanced}</span>
+              <span className="rounded-xl border border-emerald-200/20 bg-emerald-300/10 px-3 py-2 text-xs uppercase text-emerald-100 text-xs font-semibold tracking-wide leading-5">{hybridPage.labels.statusBalanced}</span>
             </div>
             <div className="relative mt-7 grid grid-cols-2 gap-3">
               <svg viewBox="0 0 300 130" preserveAspectRatio="none" className="pointer-events-none absolute inset-x-0 top-7 z-0 h-24 w-full text-emerald-200/50" aria-hidden="true">
@@ -73,26 +73,26 @@ export default async function HybridEnergyPage() {
               </svg>
               {hybridPage.labels.sources.map(({ label, detail }, index) => (
                 <div key={label} className="relative z-10 rounded-xl border border-slate-700 bg-slate-950/25 p-3.5 text-center sm:p-4">
-                  <span className={`mx-auto flex h-10 w-10 items-center justify-center rounded-full text-md font-black ${index === 0 ? 'bg-amber-300 text-slate-950' : 'bg-sky-300 text-slate-950'}`}>
+                  <span className={`mx-auto flex h-10 w-10 items-center justify-center rounded-full text-base font-bold ${index === 0 ? 'bg-amber-300 text-slate-950' : 'bg-sky-300 text-slate-950'} tracking-normal`}>
                     {index === 0 ? (
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42m0-14.14-1.42 1.42M6.35 17.65l-1.42 1.42" /></svg>
                     ) : (
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5" aria-hidden="true"><path d="M3 8h13a3 3 0 1 0-3-3M2 12h17a3 3 0 1 1-3 3M4 16h8" strokeLinecap="round" /></svg>
                     )}
                   </span>
-                  <p className="mt-2 text-md font-bold text-white">{label}</p>
-                  <p className="text-md text-slate-300">{detail}</p>
+                  <p className="mt-2 text-white      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{label}</p>
+                  <p className="text-slate-300      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{detail}</p>
                 </div>
               ))}
               <div className="relative z-10 col-span-2 mx-auto w-full max-w-56 rounded-xl border border-emerald-200/25 bg-emerald-300/10 p-3.5 text-center">
-                <p className="text-md font-bold text-emerald-100">{hybridPage.labels.storageTagline}</p>
-                <p className="mt-1 text-md text-slate-200">{hybridPage.labels.storageSupporting}</p>
+                <p className="text-emerald-100      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{hybridPage.labels.storageTagline}</p>
+                <p className="mt-1 text-slate-200      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{hybridPage.labels.storageSupporting}</p>
               </div>
             </div>
             <div className="mt-5 flex flex-wrap gap-2 border-t border-slate-700 pt-4">
               {hybridPage.labels.deploymentModes.map(({ label, detail }) => (
-                <span key={label} className="rounded-full border border-slate-700 bg-white/[0.05] px-3 py-1.5 text-md text-slate-200">
-                  <strong className="font-bold text-white">{label}</strong> · {detail}
+                <span key={label} className="rounded-full border border-slate-700 bg-white/[0.05] px-3 py-1.5 text-base text-slate-200">
+                  <strong className="font-bold text-white tracking-normal">{label}</strong> · {detail}
                 </span>
               ))}
             </div>
@@ -108,7 +108,7 @@ export default async function HybridEnergyPage() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 max-w-3xl">
             <HybridSectionEyebrow>{hybridPage.categories.eyebrow}</HybridSectionEyebrow>
-            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{hybridPage.categories.title}</h2>
+            <h2 className="mt-3 text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{hybridPage.categories.title}</h2>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-2">
@@ -131,9 +131,9 @@ export default async function HybridEnergyPage() {
             <div className="mb-6 flex items-center justify-between gap-3">
               <div>
                 <HybridSectionEyebrow>{hybridPage.integration.eyebrow}</HybridSectionEyebrow>
-                <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">{hybridPage.integration.title}</h3>
+                <h3 className="mt-2 text-white text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{hybridPage.integration.title}</h3>
               </div>
-              <div className="hidden rounded-full border border-slate-700 bg-white/5 px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.25em] text-slate-200 sm:block">
+              <div className="hidden rounded-full border border-slate-700 bg-white/5 px-3 py-2 text-xs uppercase text-slate-200 sm:block text-xs font-semibold tracking-wide leading-5">
                 {hybridPage.integration.badge}
               </div>
             </div>
@@ -141,10 +141,10 @@ export default async function HybridEnergyPage() {
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {integrationTypesLocalized.map((item, index) => (
                 <div key={item} className="rounded-xl border border-slate-700 bg-white/5 p-4">
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-lg font-bold text-emerald-300">
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-lg font-bold text-emerald-300 tracking-normal">
                     {index + 1}
                   </div>
-                  <p className="text-sm leading-7 text-slate-100">{item}</p>
+                  <p className="text-slate-100      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item}</p>
                 </div>
               ))}
             </div>
@@ -173,7 +173,7 @@ export default async function HybridEnergyPage() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 max-w-3xl">
             <HybridSectionEyebrow>{hybridPage.solutions.eyebrow}</HybridSectionEyebrow>
-            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{hybridPage.solutions.title}</h2>
+            <h2 className="mt-3 text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{hybridPage.solutions.title}</h2>
           </div>
 
           <div className="space-y-8">
@@ -181,36 +181,36 @@ export default async function HybridEnergyPage() {
               <article key={service.title} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
                 <div className="mb-6 flex items-center justify-between gap-3">
                   <div>
-                    <p className="text-[12px] font-black uppercase tracking-[0.28em] text-emerald-700">{hybridPage.labels.servicePrefix} {index + 1}</p>
-                    <h3 className="mt-2 text-2xl font-black tracking-[0.04em] text-slate-900 sm:text-3xl">{service.title}</h3>
+                    <p className=" uppercase text-emerald-700    text-xs font-semibold tracking-wide leading-5">{hybridPage.labels.servicePrefix} {index + 1}</p>
+                    <h3 className="mt-2 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{service.title}</h3>
                   </div>
-                  <div className="hidden rounded-full border border-emerald-200 bg-emerald-50 px-3 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-emerald-700 sm:block">
+                  <div className="hidden rounded-full border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs uppercase text-emerald-700 sm:block text-xs font-semibold tracking-wide leading-5">
                     {hybridPage.labels.systemBadge}
                   </div>
                 </div>
 
                 <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
                   <div>
-                    <h4 className="text-xl font-bold text-slate-900">{service.heading}</h4>
-                    <p className="mt-4 text-sm leading-8 text-slate-700">{service.overview}</p>
+                    <h4 className=" text-slate-900 text-lg font-semibold tracking-normal leading-snug">{service.heading}</h4>
+                    <p className="mt-4 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{service.overview}</p>
 
                     <div className="mt-6 grid gap-4 md:grid-cols-3">
                       {service.applications.map((item) => (
                         <div key={item.title} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                          <p className="text-md font-black uppercase tracking-[0.18em] text-slate-600">{hybridPage.labels.application}</p>
-                          <h5 className="mt-3 text-lg font-bold text-slate-900">{item.title}</h5>
-                          <p className="mt-2 text-md leading-6 text-slate-700">{item.description}</p>
+                          <p className="uppercase text-slate-600    text-xs font-semibold tracking-wide leading-5">{hybridPage.labels.application}</p>
+                          <h5 className="mt-3 text-slate-900 text-base font-semibold tracking-normal leading-snug">{item.title}</h5>
+                          <p className="mt-2 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item.description}</p>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-5">
-                    <p className="text-[12px] font-black uppercase tracking-[0.26em] text-emerald-700">{hybridPage.labels.benefits}</p>
-                    <ul className="mt-4 space-y-3 text-md leading-7 text-slate-700">
+                    <p className=" uppercase text-emerald-700    text-xs font-semibold tracking-wide leading-5">{hybridPage.labels.benefits}</p>
+                    <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700">
                       {service.benefits.map((benefit) => (
                         <li key={benefit} className="flex items-start gap-3 rounded-xl bg-white/70 p-3">
-                          <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-700 text-[12px] font-black text-white">✓</span>
+                          <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-700 text-xs font-bold text-white tracking-normal">✓</span>
                           <span>{benefit}</span>
                         </li>
                       ))}
@@ -220,20 +220,20 @@ export default async function HybridEnergyPage() {
 
                 <div className="mt-8 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
                   <div className="rounded-xl border border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ffffff_100%)] p-5">
-                    <p className="text-[12px] font-black uppercase tracking-[0.24em] text-sky-700">{hybridPage.labels.exampleCalculation}</p>
-                    <h4 className="mt-3 text-xl font-black tracking-[0.03em] text-slate-900">{service.calculation.label}</h4>
-                    <p className="mt-3 font-mono text-md leading-7 text-slate-800">{service.calculation.formula}</p>
-                    <div className="mt-4 rounded-xl bg-slate-900 p-3 text-md font-semibold text-white">{service.calculation.result}</div>
-                    <p className="mt-4 text-md leading-6 text-slate-700">{service.calculation.note}</p>
+                    <p className=" uppercase text-sky-700    text-xs font-semibold tracking-wide leading-5">{hybridPage.labels.exampleCalculation}</p>
+                    <h4 className="mt-3 text-slate-900 text-lg font-semibold tracking-normal leading-snug">{service.calculation.label}</h4>
+                    <p className="mt-3 font-mono text-slate-800       tabular-nums text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{service.calculation.formula}</p>
+                    <div className="mt-4 rounded-xl bg-slate-900 p-3 text-base font-semibold text-white tracking-normal">{service.calculation.result}</div>
+                    <p className="mt-4 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{service.calculation.note}</p>
                   </div>
 
                   <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                    <p className="text-[12px] font-black uppercase tracking-[0.24em] text-slate-600">{hybridPage.labels.faqs}</p>
+                    <p className=" uppercase text-slate-600    text-xs font-semibold tracking-wide leading-5">{hybridPage.labels.faqs}</p>
                     <div className="mt-4 space-y-4">
                       {service.faqs.map((item) => (
                         <div key={item.question} className="rounded-xl border border-slate-200 bg-white p-3.5">
-                          <p className="text-md font-black text-slate-900">{item.question}</p>
-                          <p className="mt-2 text-md leading-7 text-slate-700">{item.answer}</p>
+                          <p className="text-slate-900      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item.question}</p>
+                          <p className="mt-2 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item.answer}</p>
                         </div>
                       ))}
                     </div>
@@ -243,13 +243,13 @@ export default async function HybridEnergyPage() {
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a
                     href="/contact"
-                    className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-3 text-md font-semibold text-white transition hover:bg-slate-700"
+                    className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-3 text-base font-semibold text-white transition hover:bg-slate-700 tracking-normal"
                   >
                     {hybridPage.labels.requestAssessment}
                   </a>
                   <a
                     href="/auth/dashboard/customer-enquiry"
-                    className="inline-flex items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 px-5 py-3 text-md font-semibold text-emerald-700 transition hover:border-emerald-300 hover:bg-emerald-100"
+                    className="inline-flex items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 px-5 py-3 text-base font-semibold text-emerald-700 transition hover:border-emerald-300 hover:bg-emerald-100 tracking-normal"
                   >
                     {hybridPage.labels.enquireNow}
                   </a>
@@ -264,7 +264,7 @@ export default async function HybridEnergyPage() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 max-w-3xl">
             <HybridSectionEyebrow>{hybridPage.fit.eyebrow}</HybridSectionEyebrow>
-            <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{hybridPage.labels.typicalCombinations}</h2>
+            <h2 className="mt-3 text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{hybridPage.labels.typicalCombinations}</h2>
           </div>
 
           <HybridTable rows={projectRowsLocalized} />
@@ -277,14 +277,14 @@ export default async function HybridEnergyPage() {
             <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
               <div>
                 <HybridSectionEyebrow>{hybridPage.labels.recommendedLaunch}</HybridSectionEyebrow>
-                <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{hybridPage.labels.productPriorities}</h2>
+                <h2 className="mt-3 text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{hybridPage.labels.productPriorities}</h2>
                 <div className="mt-6 space-y-3">
                   {productPrioritiesLocalized.map((item, index) => (
                     <div key={item} className="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 text-md font-bold text-emerald-700">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 text-base font-bold text-emerald-700 tracking-normal">
                         {index + 1}
                       </div>
-                      <div className="text-sm font-medium text-slate-800">{item}</div>
+                      <div className="text-sm font-medium text-slate-800 tracking-normal">{item}</div>
                     </div>
                   ))}
                 </div>
@@ -302,9 +302,9 @@ export default async function HybridEnergyPage() {
                   <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-900/30 to-transparent" />
                 </div>
                 <div className="mt-5 rounded-xl border border-emerald-400/20 bg-emerald-500/10 p-4">
-                  <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-200">{hybridPage.labels.keyInsight}</p>
-                  <h3 className="mt-2 text-xl font-bold text-white">{hybridPage.labels.insightTitle}</h3>
-                  <p className="mt-2 text-sm leading-7 text-slate-200">
+                  <p className=" uppercase text-emerald-200    text-xs font-semibold tracking-wide leading-5">{hybridPage.labels.keyInsight}</p>
+                  <h3 className="mt-2 text-white text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{hybridPage.labels.insightTitle}</h3>
+                  <p className="mt-2 text-slate-200      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                     {hybridPage.labels.insightDescription}
                   </p>
                 </div>

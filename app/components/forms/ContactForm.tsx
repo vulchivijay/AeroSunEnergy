@@ -74,7 +74,7 @@ export default function ContactForm({
 
   return (
     <form className="grid gap-4 p-5 sm:p-8" onSubmit={handleSubmit}>
-      <label className="block text-sm font-semibold text-slate-800">
+      <label className="block text-slate-800 text-xs sm:text-sm font-semibold tracking-normal leading-5">
         {content.fullName} <span className="text-red-600" aria-hidden="true">*</span>
         <input
           className="mt-1.5 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
@@ -87,7 +87,7 @@ export default function ContactForm({
           placeholder={content.fullNamePlaceholder}
         />
       </label>
-      <label className="block text-sm font-semibold text-slate-800">
+      <label className="block text-slate-800 text-xs sm:text-sm font-semibold tracking-normal leading-5">
         {content.phone} <span className="text-red-600" aria-hidden="true">*</span>
         <input
           className="mt-1.5 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
@@ -101,7 +101,7 @@ export default function ContactForm({
           placeholder={content.phonePlaceholder}
         />
       </label>
-      <label className="block text-sm font-semibold text-slate-800">
+      <label className="block text-slate-800 text-xs sm:text-sm font-semibold tracking-normal leading-5">
         {content.solarNeed} <span className="text-red-600" aria-hidden="true">*</span>
         <select
           className="mt-1.5 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
@@ -119,7 +119,7 @@ export default function ContactForm({
           ))}
         </select>
       </label>
-      <label className="block text-sm font-semibold text-slate-800">
+      <label className="block text-slate-800 text-xs sm:text-sm font-semibold tracking-normal leading-5">
         {content.state} <span className="text-red-600" aria-hidden="true">*</span>
         <select
           className="mt-1.5 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
@@ -137,7 +137,7 @@ export default function ContactForm({
           ))}
         </select>
       </label>
-      <label className="block text-sm font-semibold text-slate-800">
+      <label className="block text-slate-800 text-xs sm:text-sm font-semibold tracking-normal leading-5">
         {content.monthlyAverageElectricityBill}{" "}
         <span className="text-red-600" aria-hidden="true">*</span>
         <select
@@ -156,7 +156,7 @@ export default function ContactForm({
           ))}
         </select>
       </label>
-      <label className="block text-sm font-semibold text-slate-800">
+      <label className="block text-slate-800 text-xs sm:text-sm font-semibold tracking-normal leading-5">
         {content.interestedInFinancing}
         <select
           className="mt-1.5 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
@@ -173,7 +173,7 @@ export default function ContactForm({
           ))}
         </select>
       </label>
-      <label className="block text-sm font-semibold text-slate-800">
+      <label className="block text-slate-800 text-xs sm:text-sm font-semibold tracking-normal leading-5">
         {content.email} <span className="text-red-600" aria-hidden="true">*</span>
         <input
           className="mt-1.5 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
@@ -188,7 +188,7 @@ export default function ContactForm({
       <div className="space-y-3">
         <FormDataNotice />
         <button
-          className="inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-[#087a61] px-6 py-3 text-base font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61] disabled:cursor-wait disabled:opacity-70"
+          className="inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-[#087a61] px-6 py-3 text-base font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61] disabled:cursor-wait disabled:opacity-70 tracking-normal"
           type="submit"
           disabled={isSubmitting}
         >

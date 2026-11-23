@@ -14,7 +14,7 @@ export default function Loading() {
       className="fixed inset-0 z-[60] flex items-center justify-center bg-white/85 backdrop-blur-sm"
     >
       <div className="w-full max-w-md px-6">
-        <div className="mb-6 flex items-center justify-between text-[12px] font-semibold uppercase tracking-[0.32em] text-slate-600">
+        <div className="mb-6 flex items-center justify-between text-xs uppercase text-slate-600 text-xs font-semibold tracking-wide leading-5">
           <span>{content.loading}</span>
           <span className="inline-flex items-center gap-2">
             <span aria-hidden="true" className="page-loader-spinner h-3.5 w-3.5 rounded-full border-2 border-[#20A44A]/30 border-t-[#20A44A]" />

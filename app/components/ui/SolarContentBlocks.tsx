@@ -55,7 +55,7 @@ export function FeatureCard({
       icon={renderSolarIcon(contentAccentText[accent])}
       cardClassName="group h-full border-t border-slate-300 py-6 transition-colors hover:border-emerald-600"
       featureClassName={contentAccentText[accent]}
-      titleClassName="tracking-[0.05em] text-slate-900"
+      titleClassName="text-slate-900"
       pointIconClassName="bg-emerald-50 text-emerald-700"
     />
   )
@@ -76,7 +76,7 @@ export function BenefitCard({
       description={description}
       cardClassName={`rounded-xl border-l-4 ${contentBenefitBorders[accent]} bg-[#edf3e9] p-5`}
       iconClassName="bg-emerald-50 text-emerald-700"
-      titleClassName="tracking-[0.04em] text-slate-900"
+      titleClassName="text-slate-900"
     />
   )
 }
@@ -97,7 +97,7 @@ export function InfoPanel({
       content={content}
       themeClassName="bg-transparent text-slate-900"
       checkBackgroundClassName={contentCheckBackgrounds[accent ?? 'emerald']}
-      titleClassName="tracking-[0.04em]"
+      titleClassName="text-slate-900"
     />
   )
 }

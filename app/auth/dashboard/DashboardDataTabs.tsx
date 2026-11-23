@@ -129,7 +129,7 @@ function renderSubmissionDetails(row: DashboardRow) {
     <dl className="grid gap-x-4 gap-y-1 sm:grid-cols-2">
       {details.map(([field, value]) => (
         <div key={field} className="min-w-0">
-          <dt className="inline text-xs font-semibold text-slate-500">{formatFieldLabel(field)}: </dt>
+          <dt className="inline text-xs font-semibold text-slate-500 tracking-normal">{formatFieldLabel(field)}: </dt>
           <dd className={`inline text-sm text-slate-800 ${field === 'message' ? 'line-clamp-2' : 'break-words'}`}>
             {renderNumericValue(value)}
           </dd>
@@ -202,9 +202,9 @@ function UserAccessManager({ row, actorRole, onSaved }: UserAccessManagerProps) 
 
   return (
     <div className="mt-4 rounded-xl border border-slate-200 bg-emerald-50/50 p-3">
-      <p className="text-xs font-bold uppercase tracking-wide text-emerald-900">Account access</p>
+      <p className="uppercase text-emerald-900    text-xs font-semibold tracking-wide leading-5">Account access</p>
       <div className="mt-2 flex flex-wrap items-center gap-3">
-        <label className="flex items-center gap-2 text-sm text-slate-700">
+        <label className="flex items-center gap-2 text-slate-700 text-xs sm:text-sm font-semibold tracking-normal leading-5">
           Role
           <select
             value={role}
@@ -219,7 +219,7 @@ function UserAccessManager({ row, actorRole, onSaved }: UserAccessManagerProps) 
             {actorRole === 'admin' && <option value="admin">Admin</option>}
           </select>
         </label>
-        <label className="flex items-center gap-2 text-sm text-slate-700">
+        <label className="flex items-center gap-2 text-slate-700 text-xs sm:text-sm font-semibold tracking-normal leading-5">
           <input
             type="checkbox"
             checked={approved}
@@ -233,12 +233,12 @@ function UserAccessManager({ row, actorRole, onSaved }: UserAccessManagerProps) 
           type="button"
           disabled={disabled || saving}
           onClick={() => void saveAccess()}
-          className="min-h-9 rounded-full bg-emerald-800 px-4 text-xs font-bold text-white hover:bg-emerald-900 disabled:cursor-not-allowed disabled:opacity-50"
+          className="min-h-9 rounded-full bg-emerald-800 px-4 text-xs font-bold text-white hover:bg-emerald-900 disabled:cursor-not-allowed disabled:opacity-50 tracking-normal"
         >
           {saving ? 'Saving…' : 'Save access'}
         </button>
       </div>
-      {disabled && <p className="mt-2 text-xs text-slate-600">Only an admin can change an admin account.</p>}
+      {disabled && <p className="mt-2 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">Only an admin can change an admin account.</p>}
     </div>
   )
 }
@@ -400,9 +400,9 @@ export default function DashboardDataTabs() {
   }
 
   return (
-    <section className="mt-6 grid overflow-hidden rounded-xl border border-slate-200 bg-white/25 shadow-sm backdrop-blur-xl lg:grid-cols-[230px_minmax(0,1fr)]">
+    <section className="mt-6 grid overflow-hidden rounded-xl border border-slate-200 bg-white/25 shadow-sm backdrop-blur-xl lg:grid-cols-[230px_minmax(0,1fr)] ">
       <aside className="border-b border-slate-200 bg-white/20 p-4 lg:border-b-0 lg:border-r lg:p-5">
-        <p className="px-2 text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">Workspace</p>
+        <p className="px-2  uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">Workspace</p>
         <nav className="mt-3 flex gap-2 overflow-x-auto pb-1 lg:flex-col lg:overflow-visible" aria-label="Database collections">
           {collections.map((collection) => {
             const Icon = getCollectionIcon(collection)
@@ -416,7 +416,7 @@ export default function DashboardDataTabs() {
                   activeCollection === collection
                     ? 'border-emerald-200 bg-emerald-50 text-emerald-900'
                     : 'border-transparent text-slate-600 hover:bg-white hover:text-slate-950'
-                }`}
+                } tracking-normal`}
               >
                 <Icon className="mr-2 h-4 w-4 shrink-0" aria-hidden="true" />
                 {formatCollectionName(collection)}
@@ -425,19 +425,19 @@ export default function DashboardDataTabs() {
           })}
         </nav>
         <div className="mt-5 hidden rounded-xl border border-slate-200 bg-white/55 p-3 lg:block">
-          <p className="text-[11px] font-bold uppercase tracking-wide text-slate-500">Access level</p>
-          <p className="mt-1 text-sm font-bold capitalize text-slate-900">{role}</p>
-          <p className="mt-1 text-xs leading-5 text-slate-500">
+          <p className=" uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">Access level</p>
+          <p className="mt-1 capitalize text-slate-900      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{role}</p>
+          <p className="mt-1 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {role === 'admin' ? 'Full record management' : role === 'operator' ? 'Business record management' : 'Read-only access'}
           </p>
         </div>
       </aside>
 
-      <div className="min-w-0 p-4 sm:p-6 lg:p-8" aria-live="polite">
+      <div className="min-w-0 p-4 sm:p-6 lg:p-8 " aria-live="polite">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="text-xl font-bold capitalize text-slate-950">{formatCollectionName(activeCollection || 'Collections')}</h2>
-            <p className="mt-1 text-sm leading-6 text-slate-600">
+            <h2 className=" capitalize text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{formatCollectionName(activeCollection || 'Collections')}</h2>
+            <p className="mt-1 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {role === 'admin'
                 ? 'Admin access · manage collection records and account roles.'
                 : role === 'operator'
@@ -447,7 +447,7 @@ export default function DashboardDataTabs() {
           </div>
           <div className="flex flex-wrap items-end gap-3">
             {activeCollection === 'website_form_submissions' && (
-              <label className="grid gap-1.5 text-xs font-bold uppercase tracking-wide text-slate-500">
+              <label className="grid gap-1.5 uppercase text-slate-500 text-xs sm:text-sm font-semibold tracking-normal leading-5">
                 Filter by form
                 <select
                   value={formType}
@@ -468,7 +468,7 @@ export default function DashboardDataTabs() {
                   setShowCreateForm((current) => !current)
                   setEditingId(null)
                 }}
-                className="min-h-10 rounded-full bg-emerald-800 px-4 text-sm font-bold text-white hover:bg-emerald-900"
+                className="min-h-10 rounded-full bg-emerald-800 px-4 text-sm font-bold text-white hover:bg-emerald-900 tracking-normal"
               >
                 {showCreateForm ? 'Cancel' : 'New record'}
               </button>
@@ -476,33 +476,33 @@ export default function DashboardDataTabs() {
           </div>
         </div>
 
-        <div className="mt-6 grid gap-3 sm:grid-cols-3">
-          <article className="rounded-xl border border-slate-200 bg-white/45 p-4">
-            <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">Matching records</p>
-            <p className="mt-2 text-3xl font-semibold text-slate-950">
+        <div className="mt-6 grid gap-3 sm:grid-cols-3 ">
+          <article className="rounded-xl border border-slate-200 bg-white/45 p-4 ">
+            <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">Matching records</p>
+            <p className="mt-2 text-slate-950 text-lg font-semibold tracking-normal leading-snug tabular-nums">
               <DigitalNumber value={data ? data.total.toLocaleString() : '—'} />
             </p>
-            <p className="mt-1 truncate text-xs text-slate-500">{formatCollectionName(activeCollection || 'Collections')}</p>
+            <p className="mt-1 truncate text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{formatCollectionName(activeCollection || 'Collections')}</p>
           </article>
-          <article className="rounded-xl border border-slate-200 bg-white/45 p-4">
-            <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">Visible on this page</p>
-            <p className="mt-2 text-3xl font-semibold text-slate-950">
+          <article className="rounded-xl border border-slate-200 bg-white/45 p-4 ">
+            <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">Visible on this page</p>
+            <p className="mt-2 text-slate-950 text-lg font-semibold tracking-normal leading-snug tabular-nums">
               <DigitalNumber value={data ? data.rows.length : '—'} />
             </p>
-            <p className="mt-1 text-xs text-slate-500">Records currently loaded</p>
+            <p className="mt-1 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">Records currently loaded</p>
           </article>
-          <article className="rounded-xl border border-slate-200 bg-white/45 p-4">
-            <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">Page</p>
-            <p className="mt-2 text-3xl font-semibold text-slate-950">
+          <article className="rounded-xl border border-slate-200 bg-white/45 p-4 ">
+            <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">Page</p>
+            <p className="mt-2 text-slate-950 text-lg font-semibold tracking-normal leading-snug tabular-nums">
               <DigitalNumber value={data ? `${data.page} / ${pageCount}` : '—'} />
             </p>
-            <p className="mt-1 text-xs text-slate-500">Pagination position</p>
+            <p className="mt-1 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">Pagination position</p>
           </article>
         </div>
 
         {canCreateRecords && showCreateForm && (
           <form onSubmit={(event) => void submitRecord(event, 'create')} className="mt-5 rounded-xl border border-emerald-200 bg-emerald-50/40 p-4">
-            <label className="grid gap-2 text-sm font-bold text-slate-800">
+            <label className="grid gap-2 text-slate-800 text-xs sm:text-sm font-semibold tracking-normal leading-5">
               New record (JSON)
               <textarea
                 value={createJson}
@@ -510,10 +510,10 @@ export default function DashboardDataTabs() {
                 rows={7}
                 spellCheck={false}
                 placeholder="Enter a JSON object for the new record."
-                className="w-full rounded-lg border border-slate-300 bg-white p-3 font-mono text-xs text-slate-800 outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
+                className="w-full rounded-lg border border-slate-300 bg-white p-3 font-mono text-xs text-slate-800 outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15 tabular-nums"
               />
             </label>
-            <button type="submit" disabled={savingRecord} className="mt-3 min-h-10 rounded-full bg-emerald-800 px-4 text-sm font-bold text-white hover:bg-emerald-900 disabled:opacity-50">
+            <button type="submit" disabled={savingRecord} className="mt-3 min-h-10 rounded-full bg-emerald-800 px-4 text-sm font-bold text-white hover:bg-emerald-900 disabled:opacity-50 tracking-normal">
               {savingRecord ? 'Saving…' : 'Create record'}
             </button>
           </form>
@@ -522,31 +522,31 @@ export default function DashboardDataTabs() {
         {error ? (
           <div className="mt-6 rounded-xl border border-rose-200 bg-rose-50 p-5 text-sm text-rose-800" role="alert">
             <p>{error}</p>
-            <button type="button" onClick={() => setRetryCount((current) => current + 1)} className="mt-3 font-bold underline underline-offset-2">
+            <button type="button" onClick={() => setRetryCount((current) => current + 1)} className="mt-3 font-bold underline underline-offset-2 tracking-normal">
               Retry
             </button>
           </div>
         ) : loadingCollections || (activeCollection !== '' && loading) ? (
-          <div className="mt-6 rounded-xl bg-slate-50 px-5 py-12 text-center text-sm font-medium text-slate-500" role="status">
+          <div className="mt-6 rounded-xl bg-slate-50 px-5 py-12 text-center text-sm font-medium text-slate-500 tracking-normal" role="status">
             Loading records…
           </div>
         ) : !activeCollection ? (
           <div className="mt-6 rounded-xl border border-dashed border-slate-300 bg-slate-50 px-5 py-12 text-center">
-            <p className="font-semibold text-slate-800">No collections found</p>
-            <p className="mt-1 text-sm text-slate-500">Database collections will appear here when available.</p>
+            <p className="text-slate-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">No collections found</p>
+            <p className="mt-1 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">Database collections will appear here when available.</p>
           </div>
         ) : data?.rows.length ? (
           <>
             <div className="mt-6 overflow-x-auto overscroll-x-contain rounded-xl border border-slate-200" tabIndex={0} aria-label={`${formatCollectionName(activeCollection)} records table`}>
               <table className="min-w-max w-full text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
-                <thead className="bg-amber-700 text-xs font-bold uppercase tracking-wide text-white">
+                <thead className="bg-amber-700 uppercase text-white text-xs font-semibold tracking-wide leading-5">
                   <tr>
                     {columns.map((column) => (
-                      <th key={column} className="whitespace-nowrap px-4 py-3 font-bold">
+                      <th key={column} className="whitespace-nowrap px-4 py-3 font-bold tracking-normal">
                         {isFormSubmissions && column === 'payload' ? 'Submitted details' : column.replace(/_/g, ' ')}
                       </th>
                     ))}
-                    {hasActions && <th className="whitespace-nowrap px-4 py-3 font-bold">Actions</th>}
+                    {hasActions && <th className="whitespace-nowrap px-4 py-3 font-bold tracking-normal">Actions</th>}
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-emerald-100">
@@ -581,7 +581,7 @@ export default function DashboardDataTabs() {
                                   setEditingId(isEditing ? null : id)
                                   setEditJson(editableJson(row))
                                 }}
-                                className="min-h-9 rounded-full border border-slate-300 px-3 text-xs font-bold text-slate-700 hover:bg-slate-50"
+                                className="min-h-9 rounded-full border border-slate-300 px-3 text-xs font-bold text-slate-700 hover:bg-slate-50 tracking-normal"
                               >
                                 {isEditing ? 'Cancel edit' : 'Edit'}
                               </button>
@@ -590,7 +590,7 @@ export default function DashboardDataTabs() {
                               <button
                                 type="button"
                                 onClick={() => void deleteRecord(id)}
-                                className="min-h-9 rounded-full border border-rose-200 px-3 text-xs font-bold text-rose-700 hover:bg-rose-50"
+                                className="min-h-9 rounded-full border border-rose-200 px-3 text-xs font-bold text-rose-700 hover:bg-rose-50 tracking-normal"
                               >
                                 Delete
                               </button>
@@ -611,7 +611,7 @@ export default function DashboardDataTabs() {
                       <tr className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
                         <td colSpan={columns.length + Number(hasActions)} className="p-4">
                           <form onSubmit={(event) => void submitRecord(event, 'update', id)} className="max-w-4xl">
-                            <label className="grid gap-2 text-sm font-bold text-slate-800">
+                            <label className="grid gap-2 text-slate-800 text-xs sm:text-sm font-semibold tracking-normal leading-5">
                               Update record (JSON)
                               <textarea
                                 value={editJson}
@@ -619,10 +619,10 @@ export default function DashboardDataTabs() {
                                 rows={8}
                                 spellCheck={false}
                                 placeholder="Enter the updated JSON object."
-                                className="w-full rounded-lg border border-slate-300 bg-white p-3 font-mono text-xs text-slate-800 outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
+                                className="w-full rounded-lg border border-slate-300 bg-white p-3 font-mono text-xs text-slate-800 outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15 tabular-nums"
                               />
                             </label>
-                            <button type="submit" disabled={savingRecord} className="mt-3 min-h-10 rounded-full bg-emerald-800 px-4 text-sm font-bold text-white hover:bg-emerald-900 disabled:opacity-50">
+                            <button type="submit" disabled={savingRecord} className="mt-3 min-h-10 rounded-full bg-emerald-800 px-4 text-sm font-bold text-white hover:bg-emerald-900 disabled:opacity-50 tracking-normal">
                               {savingRecord ? 'Saving…' : 'Save changes'}
                             </button>
                           </form>
@@ -636,7 +636,7 @@ export default function DashboardDataTabs() {
               </table>
             </div>
 
-            <div className="mt-4 flex flex-col gap-3 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
+            <div className="mt-4 flex flex-col gap-3 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between ">
               <p>
                 <DigitalNumber value={`${data.total.toLocaleString()} records · Page ${data.page} of ${pageCount}`} />
               </p>
@@ -645,7 +645,7 @@ export default function DashboardDataTabs() {
                   type="button"
                   disabled={data.page <= 1 || loading}
                   onClick={() => setPage((current) => Math.max(1, current - 1))}
-                  className="min-h-10 rounded-full border border-slate-300 px-4 font-semibold text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-45"
+                  className="min-h-10 rounded-full border border-slate-300 px-4 font-semibold text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-45 tracking-normal"
                 >
                   Previous
                 </button>
@@ -653,7 +653,7 @@ export default function DashboardDataTabs() {
                   type="button"
                   disabled={data.page >= pageCount || loading}
                   onClick={() => setPage((current) => current + 1)}
-                  className="min-h-10 rounded-full border border-slate-300 px-4 font-semibold text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-45"
+                  className="min-h-10 rounded-full border border-slate-300 px-4 font-semibold text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-45 tracking-normal"
                 >
                   Next
                 </button>
@@ -662,8 +662,8 @@ export default function DashboardDataTabs() {
           </>
         ) : (
           <div className="mt-6 rounded-xl border border-dashed border-slate-300 bg-slate-50 px-5 py-12 text-center">
-            <p className="font-semibold text-slate-800">No records found</p>
-            <p className="mt-1 text-sm text-slate-500">Records in this collection will appear here.</p>
+            <p className="text-slate-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">No records found</p>
+            <p className="mt-1 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">Records in this collection will appear here.</p>
           </div>
         )}
       </div>

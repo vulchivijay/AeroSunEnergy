@@ -90,15 +90,15 @@ function RecognitionHighlight({ t }: { t: Translations }) {
         <div className="relative z-10 flex min-w-0 flex-col justify-center lg:-translate-y-12 lg:pl-1">
           <div className="flex max-w-[320px] items-center gap-3">
             <span className="h-px flex-1 bg-amber-300/90" aria-hidden="true" />
-            <p className="whitespace-nowrap rounded-full bg-[#dcecff] px-4 py-1 text-xs font-extrabold uppercase tracking-[0.16em] text-[#17345f] sm:text-sm">
+            <p className="whitespace-nowrap rounded-full bg-[#dcecff] px-4 py-1 uppercase text-[#17345f]    text-xs font-semibold tracking-wide leading-5">
               {t.home.recognitionHeader.badge}
             </p>
             <span className="h-px flex-1 bg-amber-300/90" aria-hidden="true" />
           </div>
-          <h2 className="mt-4 max-w-[540px] border-l-[5px] border-amber-400 pl-4 font-serif text-3xl font-bold leading-[1.04] tracking-tight text-[#fffaf1] sm:text-4xl lg:text-[clamp(2rem,3vw,3rem)]">
+          <h2 className="mt-4 max-w-[540px] border-l-[5px] border-amber-400 pl-4 font-serif text-[#fffaf1] text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
             {t.home.recognitionHeader.title}
           </h2>
-          <p className="mt-3 max-w-[480px] pl-5 text-sm leading-5 text-blue-50/90 sm:text-base sm:leading-6">
+          <p className="mt-3 max-w-[480px] pl-5 text-blue-50/90      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {t.home.recognitionHeader.description}
           </p>
         </div>
@@ -107,7 +107,7 @@ function RecognitionHighlight({ t }: { t: Translations }) {
           {recognitions.map((item, index) => (
             <article
               key={item.title}
-              className="relative flex min-h-[238px] min-w-0 flex-col justify-center bg-[#101c69]/25 px-4 py-5  backdrop-blur-[2px] sm:min-h-[250px] sm:px-5 sm:py-5 lg:min-h-[264px] lg:px-4 lg:py-4 xl:min-h-0 xl:h-full xl:px-5"
+              className="relative flex min-h-[238px] min-w-0 flex-col justify-center bg-[#101c69]/25 px-4 py-5 backdrop-blur-[2px] sm:min-h-[250px] sm:px-5 sm:py-5 lg:min-h-[264px] lg:px-4 lg:py-4 xl:min-h-0 xl:h-full xl:px-5"
               style={{
                 clipPath:
                   'polygon(0 0, 96% 0, 100% 6%, 100% 94%, 96% 100%, 4% 100%, 0 94%)',
@@ -138,14 +138,14 @@ function RecognitionHighlight({ t }: { t: Translations }) {
                 </span>
                 <span className="h-px flex-1 bg-[#fffaf1]/80" aria-hidden="true" />
               </div>
-              <p className={`mt-3 w-fit max-w-full rounded-full px-3 py-1 text-[11px] font-extrabold uppercase leading-tight tracking-[0.1em] text-[#101b54] sm:text-xs ${index === 0 ? 'bg-[#cde4ff]' : 'bg-[#ffb52e]'}`}>
+              <p className={`mt-3 w-fit max-w-full rounded-full px-3 py-1 uppercase text-[#101b54] ${index === 0 ? 'bg-[#cde4ff]' : ' bg-[#ffb52e]    '} text-xs font-semibold tracking-wide leading-5`}>
                 {item.subtitle}
               </p>
-              <h3 className="mt-2 font-serif text-xl font-bold leading-tight text-[#fffaf1] sm:text-2xl lg:text-[clamp(1.15rem,1.8vw,1.75rem)]">
+              <h3 className="mt-2 font-serif text-[#fffaf1] text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
                 {item.title}
               </h3>
               <span className="mt-2 h-[3px] w-12 bg-amber-400" aria-hidden="true" />
-              <p className="mt-2 max-w-lg text-[13px] leading-[1.45] text-blue-50/95 sm:text-sm">
+              <p className="mt-2 max-w-lg  text-blue-50/95      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 {item.text}
               </p>
             </article>
@@ -177,7 +177,7 @@ export default async function Home() {
             <summary className="mb-8 flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
             <div>
               <SectionEyebrow>{offer.eyebrow}</SectionEyebrow>
-              <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
+              <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
                 {offer.title}
               </h2>
             </div>
@@ -218,12 +218,12 @@ export default async function Home() {
           <div className="mt-12 rounded-xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
             <div className="mb-6">
               <SectionEyebrow>{home.rooftopSolar.eyebrow}</SectionEyebrow>
-              <h3 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">
+              <h3 className="mt-3 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
                 {home.rooftopSolar.title}
               </h3>
             </div>
 
-            <p className="max-w-4xl text-lg leading-8 text-slate-700">
+            <p className="max-w-4xl text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {home.rooftopSolar.description}
             </p>
 
@@ -242,7 +242,7 @@ export default async function Home() {
           <div className="mt-12 rounded-xl border border-slate-200 bg-white p-6 lg:p-8">
             <div className="mb-6">
               <SectionEyebrow>{home.systemTypeSection.eyebrow}</SectionEyebrow>
-              <h3 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">
+              <h3 className="mt-3 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
                 {home.systemTypeSection.title}
               </h3>
             </div>
@@ -255,7 +255,7 @@ export default async function Home() {
           <div className="mt-12 rounded-xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
             <div className="mb-6">
               <SectionEyebrow>{home.whySolarSection.eyebrow}</SectionEyebrow>
-              <h3 className="mt-3 text-3xl font-black tracking-tighter text-slate-900">
+              <h3 className="mt-3 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
                 {home.whySolarSection.title}
               </h3>
             </div>
@@ -286,7 +286,7 @@ export default async function Home() {
             <summary className="mb-8 flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
             <div>
               <WindSectionEyebrow>{wind.eyebrow}</WindSectionEyebrow>
-              <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
+              <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
                 {wind.title}
               </h2>
             </div>
@@ -327,12 +327,12 @@ export default async function Home() {
       </section>
       {/* Hybrid Energy Section */}
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
-        <div className="mx-auto max-w-7xl ">
+        <div className="mx-auto max-w-7xl">
           <details className="group" open>
             <summary className="mb-8 flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
             <div>
               <HybridSectionEyebrow>{hybrid.eyebrow}</HybridSectionEyebrow>
-              <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-900 sm:text-4xl">
+              <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
                 {hybrid.title}
               </h2>
             </div>
@@ -434,26 +434,26 @@ function Brands({ t }: { t: Translations }) {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-16 sm:px-6 lg:px-10 lg:py-20"
+      className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-16 sm:px-6 lg:px-10 lg:py-20 "
       aria-labelledby="brand-section-title"
     >
       <div
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-size-[48px_48px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-size-[48px_48px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)] "
         aria-hidden="true"
       />
-      <div className="relative mx-auto max-w-7xl">
-        <details className="group" open>
+      <div className="relative mx-auto max-w-7xl ">
+        <details className="group " open>
         <summary className="mb-7 list-none cursor-pointer border-t border-slate-300 pt-5 [&::-webkit-details-marker]:hidden sm:mb-8 sm:pt-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="min-w-0">
-              <p className="inline-flex items-center gap-2 rounded-full border border-amber-700/20 bg-amber-100/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.24em] text-amber-900">
+              <p className="inline-flex items-center gap-2 rounded-full border border-amber-700/20 bg-amber-100/80 px-4 py-1.5 uppercase text-amber-900    text-xs font-semibold tracking-wide leading-5">
                 <span className="h-2 w-2 rounded-full bg-emerald-600 shadow-sm" aria-hidden="true" />
                 {section.eyebrow}
               </p>
-              <h2 id="brand-section-title" className="mt-4 max-w-3xl text-2xl font-black tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
+              <h2 id="brand-section-title" className="mt-4 max-w-3xl text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
                 {section.title}
               </h2>
-              <p className="mt-2 max-w-2xl text-sm leading-6 text-black sm:text-base">
+              <p className="mt-2 max-w-2xl text-black      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 {section.subtitle}
               </p>
             </div>
@@ -466,11 +466,11 @@ function Brands({ t }: { t: Translations }) {
         </summary>
 
         <div id="brands-content">
-          <p className="mb-7 max-w-3xl border-l-2 border-amber-500 pl-4 text-xs leading-5 text-slate-600 sm:text-sm sm:leading-6">
+          <p className="mb-7 max-w-3xl border-l-2 border-amber-500 pl-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {section.priceDisclaimer}
           </p>
         <ul
-          className="mx-auto grid max-w-5xl list-none justify-items-center gap-5 sm:gap-6 lg:gap-8"
+          className="mx-auto grid max-w-5xl list-none justify-items-center gap-5 sm:gap-6 lg:gap-8 "
           style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 18rem), 1fr))' }}
         >
           {featuredBrands.map((brand, index) => {
@@ -482,7 +482,7 @@ function Brands({ t }: { t: Translations }) {
             return (
               <li
                 key={brand.file}
-                className="group relative flex h-full w-full max-w-sm min-w-0 flex-col overflow-hidden rounded-xl border p-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-4"
+                className="group relative flex h-full w-full max-w-sm min-w-0 flex-col overflow-hidden rounded-xl border p-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-4 "
                 style={{
                   borderColor: `hsl(${brand.hue} 68% 72%)`,
                   background: `linear-gradient(145deg, hsl(${brand.hue} 82% 95%), #fff 48%, hsl(${brand.hue} 76% 89%))`,
@@ -490,7 +490,7 @@ function Brands({ t }: { t: Translations }) {
                 }}
               >
                 <div
-                  className="hidden relative h-24 items-center justify-center overflow-hidden rounded-xl border border-slate-200  sm:h-28 sm:p-2"
+                  className="hidden relative h-24 items-center justify-center overflow-hidden rounded-xl border border-slate-200 sm:h-28 sm:p-2"
                   style={{
                     background: `radial-gradient(circle at 50% 0%, white, hsl(${brand.hue} 75% 96%) 78%)`,
                     boxShadow: `inset 0 0 0 1px hsl(${brand.hue} 55% 90%)`,
@@ -505,11 +505,11 @@ function Brands({ t }: { t: Translations }) {
                     className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <h3 className="mt-2 text-center text-xl font-bold text-slate-900">
+                <h3 className="mt-2 text-center text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
                   {brandName}
                 </h3>
                 <div className="mt-2">
-                  <p className="text-center text-xs font-bold uppercase tracking-wide text-slate-500">
+                  <p className="text-center uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">
                     {section.materialTypesLabel}
                   </p>
                   <div className="mt-1 flex min-h-7 flex-wrap items-center justify-center gap-1">
@@ -517,7 +517,7 @@ function Brands({ t }: { t: Translations }) {
                       brand.materialTypes.map((materialType) => (
                         <span
                           key={materialType}
-                          className="rounded-full border border-slate-300 bg-white/80 px-2 py-1 text-center text-xs font-semibold text-slate-700"
+                          className="rounded-full border border-slate-300 bg-white/80 px-2 py-1 text-center text-xs font-semibold text-slate-700 tracking-normal"
                         >
                           {section.materialTypes[materialType]}
                         </span>
@@ -529,16 +529,16 @@ function Brands({ t }: { t: Translations }) {
                     )}
                   </div>
                 </div>
-                <div className="mt-2 flex min-h-[2.5rem] flex-col items-center justify-center gap-1">
+                <div className="mt-2 flex min-h-[2.5rem] flex-col items-center justify-center gap-1 ">
                   {index === 0 && maxPrice !== null && (
-                    <span className="rounded-full bg-slate-950 px-2 py-1 text-center text-[10px] leading-3 tracking-[0.12em] text-white shadow-sm">
+                    <span className="rounded-full bg-slate-950 px-2 py-1 text-center text-xs text-white shadow-sm text-xs font-semibold tracking-wide leading-5">
                       {section.topPriceLabel}
                     </span>
                   )}
                   {brand.prices.map((price) => (
                     <span
                       key={price}
-                      className="w-full max-w-[14rem] rounded-full border px-2 py-1 text-center text-xs font-bold leading-4"
+                      className="w-full max-w-[14rem] rounded-full border px-2 py-1 text-center text-xs font-bold leading-4 tracking-normal tabular-nums"
                       style={{
                         backgroundColor: `hsl(${brand.hue} 76% 92%)`,
                         borderColor: `hsl(${brand.hue} 64% 76%)`,
@@ -551,21 +551,21 @@ function Brands({ t }: { t: Translations }) {
                 </div>
                 {maxPrice !== null && formattedMaxPrice ? (
                   <div
-                    className="sr-only mt-3 flex min-h-[4.5rem] flex-col items-center justify-center rounded-xl border px-2 py-2 text-center"
+                    className="sr-only mt-3 flex min-h-[4.5rem] flex-col items-center justify-center rounded-xl border px-2 py-2 text-center "
                     style={{
                       borderColor: `hsl(${brand.hue} 58% 78%)`,
                       backgroundColor: `hsl(${brand.hue} 78% 94%)`,
                     }}
                   >
-                    <span className="text-xs font-black uppercase tracking-[0.12em] text-slate-600">
+                    <span className="uppercase text-slate-600 text-xs font-semibold tracking-wide leading-5">
                       {section.maxListedLabel}
                     </span>
-                    <span className="text-lg font-black tabular-nums text-slate-950 sm:text-xl">
-                      <DigitalNumber value={`₹${formattedMaxPrice}`} /><span className="ml-1 text-xs font-bold text-slate-600">/Wp</span>
+                    <span className="text-lg font-bold tabular-nums text-slate-950 sm:text-xl tracking-normal">
+                      <DigitalNumber value={`₹${formattedMaxPrice}`} /><span className="ml-1 text-xs font-bold text-slate-600 tracking-normal">/Wp</span>
                     </span>
                   </div>
                 ) : (
-                  <div className="mt-2 flex min-h-8 items-center justify-center rounded-xl border border-dashed border-slate-300 bg-white/70 px-2 py-1 text-center text-sm font-bold text-slate-600">
+                  <div className="mt-2 flex min-h-8 items-center justify-center rounded-xl border border-dashed border-slate-300 bg-white/70 px-2 py-1 text-center text-sm font-bold text-slate-600 tracking-normal">
                     {section.quoteRequired}
                   </div>
                 )}
@@ -578,7 +578,7 @@ function Brands({ t }: { t: Translations }) {
         </ul>
         <p
           aria-hidden="true"
-          className="mt-22 select-none bg-[linear-gradient(145deg,#ff9933_0%,#ff9933_33%,#ffffff_33%,#ffffff_66%,#138808_66%,#138808_100%)] bg-clip-text text-center text-3xl font-black uppercase tracking-[0.2em] text-transparent drop-shadow-sm sm:text-5xl"
+          className="mt-22 select-none bg-[linear-gradient(145deg,#ff9933_0%,#ff9933_33%,#ffffff_33%,#ffffff_66%,#138808_66%,#138808_100%)] bg-clip-text text-center uppercase text-transparent drop-shadow-sm    text-xs font-semibold tracking-wide leading-5"
         >
           {section.moreBrandsAvailable}
         </p>
@@ -606,27 +606,27 @@ function CompanyTrustSection({ t }: { t: Translations }) {
 
   return (
     <section
-      className="relative isolate bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 text-slate-900 sm:px-6 lg:px-10 lg:py-16 sm:py-14"
+      className="relative isolate bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 text-slate-900 sm:px-6 lg:px-10 lg:py-16 sm:py-14 "
       aria-labelledby="company-trust-title"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_8%_0%,rgba(99,102,241,0.12),transparent_35%),radial-gradient(ellipse_at_94%_100%,rgba(14,165,233,0.11),transparent_32%)]" aria-hidden="true" />
-      <div className="relative mx-auto max-w-7xl">
-        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_8%_0%,rgba(99,102,241,0.12),transparent_35%),radial-gradient(ellipse_at_94%_100%,rgba(14,165,233,0.11),transparent_32%)] " aria-hidden="true" />
+      <div className="relative mx-auto max-w-7xl ">
+        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start ">
           <div className="lg:sticky lg:top-24 lg:self-start">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-indigo-700">{content.eyebrow}</p>
-            <h2 id="company-trust-title" className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 uppercase text-indigo-700    text-xs font-semibold tracking-wide leading-5">{content.eyebrow}</p>
+            <h2 id="company-trust-title" className="mt-3 text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
               {content.title}
             </h2>
-            <p className="mt-4 max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
+            <p className="mt-4 max-w-xl text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {content.description}
             </p>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-3 sm:grid-cols-2 ">
             <div className="rounded-xl border border-slate-200 bg-white/70 p-4 shadow-sm sm:col-span-2">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">{content.legalEntityLabel}</p>
-              <p className="mt-2 text-xl font-bold text-slate-950">{t.about.companyProfile.contactCompany}</p>
-              <p className="sr-only mt-3 text-sm font-semibold leading-5 text-slate-700">{content.identifiersText}</p>
+              <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">{content.legalEntityLabel}</p>
+              <p className="mt-2  text-slate-950    text-lg font-semibold tracking-normal leading-snug">{t.about.companyProfile.contactCompany}</p>
+              <p className="sr-only mt-3 text-sm font-semibold leading-5 text-slate-700 tracking-normal">{content.identifiersText}</p>
             </div>
 
             <a
@@ -637,51 +637,51 @@ function CompanyTrustSection({ t }: { t: Translations }) {
             >
               <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-indigo-600" aria-hidden="true" />
               <span className="min-w-0">
-                <span className="block text-sm font-bold uppercase tracking-[0.18em] text-slate-500">{content.officeLabel}</span>
+                <span className="block uppercase text-slate-500 text-xs font-semibold tracking-wide leading-5">{content.officeLabel}</span>
                 <span className="mt-1 block text-sm leading-6 text-slate-700">{footer.address}</span>
-                <span className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-indigo-700">
+                <span className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-indigo-700 tracking-normal">
                   {content.mapCta}<ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                 </span>
               </span>
             </a>
 
-            <div className="grid gap-3">
+            <div className="grid gap-3 ">
               <a
                 href={`tel:${footer.phoneHref}`}
-                className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white/75 p-4 shadow-sm transition hover:border-indigo-300 hover:bg-white"
+                className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white/75 p-4 shadow-sm transition hover:border-indigo-300 hover:bg-white "
               >
-                <Phone className="h-5 w-5 shrink-0 text-indigo-600" aria-hidden="true" />
+                <Phone className="h-5 w-5 shrink-0 text-indigo-600 " aria-hidden="true" />
                 <span>
-                  <span className="block text-sm font-bold uppercase tracking-[0.18em] text-slate-500">{content.phoneLabel}</span>
-                  <span className="mt-1 block text-sm text-slate-700"><DigitalNumber value={footer.phone} /></span>
+                  <span className="block uppercase text-slate-500 text-xs font-semibold tracking-wide leading-5">{content.phoneLabel}</span>
+                  <span className="mt-1 block text-sm text-slate-700 tabular-nums"><DigitalNumber value={footer.phone} /></span>
                 </span>
               </a>
               <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white/75 p-4 shadow-sm">
                 <Mail className="h-5 w-5 shrink-0 text-indigo-600" aria-hidden="true" />
                 <span className="min-w-0">
-                  <span className="block text-sm font-bold uppercase tracking-[0.18em] text-slate-500">{content.emailLabel}</span>
+                  <span className="block uppercase text-slate-500 text-xs font-semibold tracking-wide leading-5">{content.emailLabel}</span>
                   <span className="mt-1 block break-all text-sm text-slate-700">{footer.email}</span>
                 </span>
               </div>
             </div>
 
-            <div className="rounded-xl border border-slate-200 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_55%,#f0edff_100%)] p-5 text-slate-800 shadow-sm sm:col-span-2 sm:p-6">
-              <p className="text-sm leading-7 text-slate-700 sm:text-base sm:leading-8">
+            <div className="rounded-xl border border-slate-200 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_55%,#f0edff_100%)] p-5 text-slate-800 shadow-sm sm:col-span-2 sm:p-6 ">
+              <p className="text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 {content.residentialServiceDescription}
               </p>
-              <div className="mt-5 grid grid-cols-2 gap-3 xl:grid-cols-4">
+              <div className="mt-5 grid grid-cols-2 gap-3 xl:grid-cols-4 ">
                 {content.serviceFacts.map((fact, index) => {
                   const Icon = serviceFactIcons[index] ?? BadgeCheck
                   const style = serviceFactStyles[index] ?? 'border-slate-200 bg-slate-50 text-slate-700'
 
                   return (
                     <div key={fact.label} className={`flex min-w-0 items-center gap-3 rounded-xl border p-3 ${style}`}>
-                      <Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
-                      <span className="min-w-0">
-                        <span className="block text-xs font-bold uppercase tracking-[0.12em] sm:text-sm">
+                      <Icon className="h-5 w-5 shrink-0 " aria-hidden="true" />
+                      <span className="min-w-0 ">
+                        <span className="block uppercase text-xs font-semibold tracking-wide leading-5">
                           {fact.label}
                         </span>
-                        <span className="mt-1 block text-sm font-bold text-slate-900">
+                        <span className="mt-1 block text-sm font-bold text-slate-900 tracking-normal tabular-nums">
                           <DigitalNumber value={fact.value} />
                         </span>
                       </span>
@@ -696,7 +696,7 @@ function CompanyTrustSection({ t }: { t: Translations }) {
         <Link
           href="/contact"
           prefetch={false}
-          className="mt-7 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#A3D977] px-5 py-3 text-sm font-bold text-slate-900 transition hover:bg-[#c7efa4] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className="mt-7 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#A3D977] px-5 py-3 text-sm font-bold text-slate-900 transition hover:bg-[#c7efa4] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 tracking-normal"
         >
           {content.contactCta}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
         </Link>
@@ -715,10 +715,10 @@ function WhySolarSection({ t }: { t: Translations }) {
       aria-labelledby="why-solar-title"
     >
       <div className="mx-auto max-w-7xl">
-        <p className="inline-flex w-fit rounded-full border border-slate-200 bg-[#eaf3fc] px-4 py-2 text-xs font-black uppercase tracking-[0.12em] text-[#075da8]">
+        <p className="inline-flex w-fit rounded-full border border-slate-200 bg-[#eaf3fc] px-4 py-2 uppercase text-[#075da8]    text-xs font-semibold tracking-wide leading-5">
           {content.eyebrow}
         </p>
-        <h2 id="why-solar-title" className="mt-4 text-3xl font-black tracking-tight sm:text-4xl">
+        <h2 id="why-solar-title" className="mt-4 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
           {content.title}
         </h2>
         <div className="mt-8 grid gap-5 lg:grid-cols-3">
@@ -727,8 +727,8 @@ function WhySolarSection({ t }: { t: Translations }) {
               key={card.title}
               className={`h-full rounded-xl border border-slate-200 border-l-4 ${borderColors[index % borderColors.length]} bg-white p-6 shadow-sm sm:p-8`}
             >
-              <h3 className="text-xl font-bold leading-8 text-slate-950">{card.title}</h3>
-              <p className="mt-4 text-base leading-8 text-slate-700">{card.description}</p>
+              <h3 className=" text-slate-950 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{card.title}</h3>
+              <p className="mt-4 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{card.description}</p>
             </article>
           ))}
         </div>
@@ -744,26 +744,26 @@ function SolarJourneySection({ t }: { t: Translations }) {
     <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="solar-journey-title">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
-          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-emerald-800">{content.eyebrow}</p>
-          <h2 id="solar-journey-title" className="mt-3 text-3xl font-black tracking-tight text-emerald-950 sm:text-4xl">
+          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 uppercase text-emerald-800    text-xs font-semibold tracking-wide leading-5">{content.eyebrow}</p>
+          <h2 id="solar-journey-title" className="mt-3 text-emerald-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
             {content.title}
           </h2>
-          <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">{content.description}</p>
+          <p className="mt-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.description}</p>
         </div>
 
         <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {content.steps.map((step, index) => (
             <li key={step.title} className="relative rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-              <span className="font-mono text-xs font-bold tracking-[0.15em] text-emerald-700">{String(index + 1).padStart(2, '0')}</span>
-              <h3 className="mt-4 text-base font-extrabold text-slate-950">{step.title}</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-600">{step.description}</p>
+              <span className="font-mono text-emerald-700 text-xs font-semibold tracking-wide leading-5 tabular-nums">{String(index + 1).padStart(2, '0')}</span>
+              <h3 className="mt-4 text-slate-950 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{step.title}</h3>
+              <p className="mt-2 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{step.description}</p>
             </li>
           ))}
         </ol>
 
         <div className="mt-6 flex flex-col gap-4 rounded-xl bg-linear-to-r from-[#e7f2eb] via-[#f5f0e2] to-[#e8e7f8] p-5 text-slate-800 sm:flex-row sm:items-center sm:justify-between">
-          <p className="max-w-3xl text-sm leading-6 text-slate-700">{content.estimateNote}</p>
-          <Link href="/solar-calculator" className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-[#A3D977] px-5 py-3 text-sm font-bold text-emerald-950 transition hover:bg-[#c7efa4]">
+          <p className="max-w-3xl text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.estimateNote}</p>
+          <Link href="/solar-calculator" className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-[#A3D977] px-5 py-3 text-sm font-bold text-emerald-950 transition hover:bg-[#c7efa4] tracking-normal">
             {content.cta}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
@@ -783,11 +783,11 @@ function QuoteTransparencySection({ t }: { t: Translations }) {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_10%_0%,rgba(129,140,248,0.13),transparent_35%),radial-gradient(ellipse_at_100%_100%,rgba(56,189,248,0.12),transparent_32%)]" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:gap-12">
         <header className="lg:sticky lg:top-24 lg:self-start">
-          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-indigo-700">{content.eyebrow}</p>
-          <h2 id="quote-transparency-title" className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
+          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 uppercase text-indigo-700    text-xs font-semibold tracking-wide leading-5">{content.eyebrow}</p>
+          <h2 id="quote-transparency-title" className="mt-3 text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
             {content.title}
           </h2>
-          <p className="mt-4 max-w-xl text-sm leading-7 text-slate-600 sm:text-base">{content.description}</p>
+          <p className="mt-4 max-w-xl text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.description}</p>
         </header>
 
         <div className="space-y-4">
@@ -796,7 +796,7 @@ function QuoteTransparencySection({ t }: { t: Translations }) {
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-300 text-slate-900">
                 <FileCheck2 className="h-5 w-5" aria-hidden="true" />
               </span>
-              <h3 className="text-xl font-extrabold text-slate-950">{content.quoteHeading}</h3>
+              <h3 className=" text-slate-950 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{content.quoteHeading}</h3>
             </div>
             <ul className="mt-5 grid gap-3 sm:grid-cols-2">
               {content.quoteItems.map((item) => (
@@ -813,7 +813,7 @@ function QuoteTransparencySection({ t }: { t: Translations }) {
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-200 text-sky-950">
                 <ShieldCheck className="h-5 w-5" aria-hidden="true" />
               </span>
-              <h3 className="text-xl font-extrabold text-slate-950">{content.warrantyHeading}</h3>
+              <h3 className=" text-slate-950 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{content.warrantyHeading}</h3>
             </div>
             <ul className="mt-5 grid gap-3">
               {content.warrantyItems.map((item) => (
@@ -826,13 +826,13 @@ function QuoteTransparencySection({ t }: { t: Translations }) {
           </article>
 
           <div className="flex flex-col gap-3 rounded-xl bg-amber-300 p-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-end sm:p-5">
-            <Link href="/#brand-section-title" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-center text-sm font-semibold text-slate-900 transition hover:bg-amber-50">
+            <Link href="/#brand-section-title" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-center text-sm font-semibold text-slate-900 transition hover:bg-amber-50 tracking-normal">
               {content.brandCta}<ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
             </Link>
-            <Link href="/auth/dashboard/warranty-policy" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-center text-sm font-semibold text-slate-900 transition hover:bg-amber-50">
+            <Link href="/auth/dashboard/warranty-policy" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-center text-sm font-semibold text-slate-900 transition hover:bg-amber-50 tracking-normal">
               {content.warrantyCta}<ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
             </Link>
-            <Link href="/auth/dashboard/customer-enquiry" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-indigo-700 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-indigo-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700">
+            <Link href="/auth/dashboard/customer-enquiry" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-indigo-700 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-indigo-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700 tracking-normal">
               {content.quoteCta}<ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
             </Link>
           </div>
@@ -876,13 +876,13 @@ function HomeHeroSlider({ t }: { t: Translations }) {
           <div className="absolute inset-y-0 left-0 w-[52%] bg-[radial-gradient(circle_at_12%_78%,rgba(32,164,74,0.16),transparent_34%),radial-gradient(circle_at_48%_18%,rgba(14,165,233,0.10),transparent_28%)]" />
           <div className="absolute left-4 top-1/2 hidden -translate-y-1/2 flex-col gap-2 lg:flex" aria-hidden="true">
             <span className="h-14 w-px bg-gradient-to-b from-transparent via-[#137c63]/50 to-transparent" />
-            <span className="h-1.5 w-1.5 rounded-full bg-[#f59e0b] " />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#f59e0b]" />
             <span className="h-14 w-px bg-gradient-to-b from-transparent via-[#137c63]/50 to-transparent" />
           </div>
           <div className="group relative flex h-[clamp(640px,56vw,760px)] w-full items-center justify-start p-4 sm:p-8 lg:pl-[9vw] lg:pr-[7vw]">
             <div className="relative w-full overflow-hidden rounded-xl border border-slate-200 bg-[linear-gradient(135deg,rgba(255,255,255,0.94),rgba(244,250,246,0.82))] shadow-md backdrop-blur-xl before:absolute before:inset-y-0 before:left-0 before:w-1 before:bg-[linear-gradient(180deg,#ff9933_0%,#ff9933_33%,#ffffff_33%,#ffffff_66%,#138808_66%,#138808_100%)] before: before:content-[''] after:absolute after:-right-14 after:-top-16 after:h-36 after:w-36 after:rounded-full after:border after:border-[#137c63]/10 after:content-[''] lg:w-1/2">
               <div className="absolute right-5 top-6 h-14 w-14 rounded-full border border-[#20a44a]/15 sm:h-20 sm:w-20" aria-hidden="true" />
-              <div className="absolute right-10 top-11 h-2.5 w-2.5 rounded-full bg-[#20a44a]/70  sm:right-13 sm:top-15" aria-hidden="true" />
+              <div className="absolute right-10 top-11 h-2.5 w-2.5 rounded-full bg-[#20a44a]/70 sm:right-13 sm:top-15" aria-hidden="true" />
               <HeroSlideContent
                 slide={slide}
                 actions={
@@ -890,13 +890,13 @@ function HomeHeroSlider({ t }: { t: Translations }) {
                   <Link
                     href="/contact"
                     prefetch={false}
-                    className="rounded-full bg-[#137c63] px-4 py-2 text-md font-black uppercase tracking-[0.18em] text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#0f5f4b]"
+                    className="rounded-full bg-[#137c63] px-4 py-2 uppercase text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#0f5f4b] text-xs font-semibold tracking-wide leading-5"
                   >
                     {t.hero.buttons.quote}
                   </Link>
                   <Link
                     href="/solar-calculator"
-                    className="rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-md font-black uppercase tracking-[0.18em] text-[#102b28] transition hover:-translate-y-0.5 hover:border-[#137c63]/40 hover:bg-white"
+                    className="rounded-full border border-slate-200 bg-white/70 px-4 py-2 uppercase text-[#102b28] transition hover:-translate-y-0.5 hover:border-[#137c63]/40 hover:bg-white text-xs font-semibold tracking-wide leading-5"
                   >
                     {t.hero.buttons.estimateSavings}
                   </Link>
@@ -922,76 +922,79 @@ function SchemeBanner({ t }: { t: Translations }) {
   const capacityRows = t.solarPage.capacityTable.rows
 
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-9 text-[#172554] sm:px-6 sm:py-11 lg:px-10 lg:py-12">
-      <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-32 h-80 w-80 rounded-full bg-white/55 blur-3xl" />
-      <div aria-hidden="true" className="pointer-events-none absolute -bottom-40 left-1/4 h-80 w-80 rounded-full bg-[#ede9fe]/55 blur-3xl" />
+    <section className="relative isolate overflow-hidden bg-gradient-to-br from-slate-50 via-white to-emerald-50/60 px-4 py-10 text-[#172554] sm:px-6 sm:py-12 lg:px-10 lg:py-14 ">
+      <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-32 h-80 w-80 rounded-full bg-white/55 blur-3xl " />
+      <div aria-hidden="true" className="pointer-events-none absolute -bottom-40 left-1/4 h-80 w-80 rounded-full bg-[#ede9fe]/55 blur-3xl " />
 
-      <div className="relative mx-auto max-w-7xl">
-        <div className="grid items-center gap-x-10 gap-y-7 lg:grid-cols-[minmax(0,1fr)_auto]">
-          <div className="flex min-w-0 items-start gap-4 sm:gap-6">
-            <span aria-hidden="true" className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/75 text-2xl font-black text-indigo-800 shadow-sm  ring-1 ring-indigo-900/10 sm:h-14 sm:w-14 sm:text-3xl">
-              ₹
-            </span>
-            <div className="min-w-0">
-              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-indigo-900 sm:text-xs">
-                <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-amber-500" />
-                {banner.badge}
+      <div className="relative mx-auto max-w-7xl ">
+        <div className="relative isolate overflow-hidden rounded-xl border border-slate-700 bg-gradient-to-br from-[#0f1d4a] via-[#172554] to-emerald-900 p-6 text-white shadow-md sm:p-8 lg:p-9">
+          <div aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full border border-amber-200/20" />
+          <div className="relative z-10 grid items-end gap-x-10 gap-y-7 lg:grid-cols-[minmax(0,1fr)_auto]">
+            <div className="flex min-w-0 items-start gap-4 sm:gap-6">
+              <span aria-hidden="true" className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-2xl font-bold text-amber-200 shadow-sm sm:h-14 sm:w-14 sm:text-3xl tracking-normal">
+                ₹
+              </span>
+              <div className="min-w-0">
+                <div className="inline-flex items-center gap-2 rounded-full border border-amber-200/30 bg-white/10 px-4 py-2 uppercase text-amber-100 text-xs font-semibold tracking-wide leading-5">
+                  <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-amber-500" />
+                  {banner.badge}
+                </div>
+                <h2 className="mt-3 text-white text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
+                  {banner.title}{' '}
+                  <span className="font-semibold text-amber-200 tracking-normal">{banner.titleAccent}</span>
+                </h2>
+                <p className="mt-3 max-w-4xl text-blue-50/90      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                  {banner.description}
+                </p>
               </div>
-              <h2 className="mt-3 text-[26px] font-bold leading-tight tracking-tight text-slate-950 sm:text-3xl lg:text-4xl">
-                {banner.title}{' '}
-                <span className="font-semibold text-indigo-800">{banner.titleAccent}</span>
-              </h2>
-              <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-700 sm:text-base sm:leading-7">
-                {banner.description}
-              </p>
             </div>
-          </div>
 
-          <div className="flex flex-wrap items-center gap-3 pl-16 lg:pl-0">
-            <Link
-              href="/contact"
-              prefetch={false}
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-indigo-700 px-5 text-sm font-bold text-white shadow-sm  transition hover:bg-indigo-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700"
-            >
-              {banner.ctaPrimary}
-            </Link>
-            <Link
-              href="/know-eligibility"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-indigo-900/25 bg-white/45 px-5 text-sm font-bold text-slate-800 transition hover:bg-white/75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700"
-            >
-              {banner.ctaSecondary}
-            </Link>
+            <div className="flex flex-wrap items-center gap-3 pl-16 lg:justify-end lg:pl-0">
+              <Link
+                href="/contact"
+                prefetch={false}
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-amber-300 px-5 text-sm font-bold text-slate-950 shadow-sm transition hover:bg-amber-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-200 tracking-normal"
+              >
+                {banner.ctaPrimary}
+              </Link>
+              <Link
+                href="/know-eligibility"
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/30 bg-white/10 px-5 text-sm font-bold text-white transition hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-200 tracking-normal"
+              >
+                {banner.ctaSecondary}
+              </Link>
+            </div>
           </div>
         </div>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          <div className="relative isolate overflow-hidden rounded-xl border border-emerald-300/70 bg-gradient-to-br from-[#064e3b] to-[#047857] p-5 text-white shadow-sm ">
-            <div aria-hidden="true" className="pointer-events-none absolute -right-10 -top-12 -z-10 h-36 w-36 rounded-full bg-lime-300/15 blur-2xl" />
-            <div className="text-sm font-bold uppercase tracking-[0.18em] text-emerald-100">{banner.cardLabel}</div>
-            <div className="mt-3 text-3xl font-black tracking-tight text-lime-200 sm:text-4xl">
+        <div className="mt-5 grid items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4 ">
+          <div className="relative isolate min-h-56 overflow-hidden rounded-xl border border-emerald-300/70 bg-gradient-to-br from-[#064e3b] to-[#047857] p-5 text-white shadow-sm sm:p-6 ">
+            <div aria-hidden="true" className="pointer-events-none absolute -right-10 -top-12 -z-10 h-36 w-36 rounded-full bg-lime-300/15 blur-2xl " />
+            <div className="uppercase text-emerald-100 text-xs font-semibold tracking-wide leading-5">{banner.cardLabel}</div>
+            <div className="mt-5 text-3xl font-bold tracking-tight text-lime-200 sm:text-4xl ">
               <DigitalNumber value={banner.subsidyAmount} />
             </div>
-            <div className="mt-2 inline-flex rounded-full border border-slate-700 bg-white/10 px-3 py-1 text-xs font-semibold text-emerald-50">
+            <div className="mt-4 inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-semibold text-emerald-50 tracking-normal">
               {banner.max} {banner.perHome}
             </div>
           </div>
 
-          <div className="relative flex items-start gap-3 overflow-hidden rounded-xl border border-amber-200 bg-gradient-to-br from-[#fffdf7] to-[#fff3d8] p-5 shadow-sm ">
-            <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-amber-400 text-amber-950 shadow-sm ">
+          <div className="relative flex min-h-56 items-center gap-3 overflow-hidden rounded-xl border border-amber-200 bg-gradient-to-br from-[#fffdf7] to-[#fff3d8] p-5 shadow-sm sm:p-6">
+            <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-amber-400 text-amber-950 shadow-sm">
               <Info className="h-5 w-5" aria-hidden="true" />
             </span>
-            <p className="text-sm font-medium leading-6 text-amber-950 sm:text-[15px] sm:leading-7">
+            <p className="text-amber-950       text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {t.subsidyNotice}
             </p>
           </div>
 
-          <div className="relative isolate overflow-hidden rounded-xl border border-slate-700 bg-gradient-to-br from-[#172554] via-[#1e3a8a] to-[#312e81] p-5 text-white shadow-sm ">
+          <div className="relative isolate flex min-h-56 flex-col overflow-hidden rounded-xl border border-slate-700 bg-gradient-to-br from-[#172554] via-[#1e3a8a] to-[#312e81] p-5 text-white shadow-sm sm:p-6">
             <div aria-hidden="true" className="pointer-events-none absolute -bottom-16 -right-10 -z-10 h-40 w-40 rounded-full bg-cyan-300/15 blur-2xl" />
-            <div className="text-sm font-bold uppercase tracking-[0.16em] text-cyan-100">{banner.badgeSuffix}</div>
-            <div className="mt-4 flex justify-center">
-              <div className="w-full max-w-40 rounded-xl border border-slate-700 px-4 py-4 text-center  ">
+            <div className="uppercase text-cyan-100 text-xs font-semibold tracking-wide leading-5">{banner.badgeSuffix}</div>
+            <div className="mt-auto flex justify-center pt-5">
+              <div className="w-full max-w-40 rounded-xl border border-white/15 bg-white/5 px-4 py-4 text-center">
                 <span
-                  className="block text-4xl font-bold leading-none tabular-nums text-cyan-200"
+                  className="block text-4xl font-bold leading-none tabular-nums text-cyan-200 tracking-normal"
                   style={digitalFontStyle}
                 >
                   <CountdownDays
@@ -999,69 +1002,67 @@ function SchemeBanner({ t }: { t: Translations }) {
                     initialDays="000"
                   />
                 </span>
-                <span className="mt-2 block text-base font-semibold uppercase tracking-wide text-indigo-100">
+                <span className="mt-2 block uppercase text-indigo-100 text-xs font-semibold tracking-wide leading-5">
                   {banner.daysLabel}
                 </span>
               </div>
             </div>
           </div>
 
-          <div className="relative isolate overflow-hidden rounded-xl border border-violet-200 bg-gradient-to-br from-white to-violet-100 p-5 shadow-sm ">
+          <div className="relative isolate flex min-h-56 flex-col overflow-hidden rounded-xl border border-violet-200 bg-gradient-to-br from-white to-violet-100 p-5 shadow-sm sm:p-6">
             <div aria-hidden="true" className="pointer-events-none absolute -right-8 -top-10 -z-10 h-28 w-28 rounded-full bg-fuchsia-300/30 blur-2xl" />
-            <div className="text-sm font-bold uppercase tracking-[0.18em] text-violet-800">{banner.offerLabel}</div>
-            <p className="mt-3 text-[15px] font-semibold leading-6 text-violet-950 sm:text-base sm:leading-7">{banner.offerText}</p>
+            <div className="uppercase text-violet-800 text-xs font-semibold tracking-wide leading-5">{banner.offerLabel}</div>
+            <p className="mt-auto pt-5  text-violet-950      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{banner.offerText}</p>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-slate-200 pt-8">
-          <div className="grid items-start gap-6 xl:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] xl:gap-10">
-            <div className="max-w-2xl">
-              <p className="text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-                {capacityGuide.description}
-              </p>
-              <a
-                href="https://pmsuryaghar.gov.in/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-1 border-b border-[#12865e]/40 pb-1 text-sm font-bold text-[#087a61] transition-colors hover:border-[#087a61] hover:text-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61]"
-              >
-                {capacityGuide.portalCta}
-                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-              </a>
-            </div>
+        <div className="mt-6 grid items-stretch gap-5 xl:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] xl:gap-6 ">
+          <div className="flex flex-col items-start justify-center rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <p className="text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+              {capacityGuide.description}
+            </p>
+            <a
+              href="https://pmsuryaghar.gov.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-full bg-emerald-800 px-5 py-3 text-sm font-bold text-white transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700 tracking-normal"
+            >
+              {capacityGuide.portalCta}
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[620px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
-                  <caption className="sr-only">{t.ui.suitableRooftopCapacity}</caption>
-                  <thead className="bg-amber-700 font-bold text-white">
-                    <tr className="text-sm font-bold uppercase tracking-[0.16em]">
-                      <th scope="col" className="px-5 py-5 sm:px-6">
-                        {t.ui.averageMonthlyUsage}
-                      </th>
-                      <th scope="col" className="px-5 py-5 sm:px-6">
-                        {t.ui.suitableRooftopCapacity}
-                      </th>
-                      <th scope="col" className="px-5 py-5 sm:px-6">
-                        {t.ui.bestFit}
-                      </th>
+          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm ">
+            <div className="overflow-x-auto ">
+              <table className="w-full min-w-[620px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3 ">
+                <caption className="sr-only">{t.ui.suitableRooftopCapacity}</caption>
+                <thead className="bg-amber-700 font-bold text-white tracking-normal">
+                  <tr className="uppercase text-xs font-semibold tracking-wide leading-5">
+                    <th scope="col" className="px-5 py-5 sm:px-6">
+                      {t.ui.averageMonthlyUsage}
+                    </th>
+                    <th scope="col" className="px-5 py-5 sm:px-6">
+                      {t.ui.suitableRooftopCapacity}
+                    </th>
+                    <th scope="col" className="px-5 py-5 sm:px-6">
+                      {t.ui.bestFit}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-emerald-100 ">
+                  {capacityRows.map((row) => (
+                    <tr key={row.usage} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70 ">
+                      <td className="px-5 py-5 text-[#172a28] sm:px-6 tabular-nums"><DigitalNumber value={row.usage} /></td>
+                      <td className="px-5 py-5 font-bold text-[#087a61] sm:px-6 tracking-normal tabular-nums"><DigitalNumber value={row.capacity} /></td>
+                      <td className="px-5 py-5 text-slate-500 sm:px-6 tabular-nums"><DigitalNumber value={row.tag} /></td>
                     </tr>
-                  </thead>
-                  <tbody className="divide-y divide-emerald-100">
-                    {capacityRows.map((row) => (
-                      <tr key={row.usage} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
-                        <td className="px-5 py-5 text-[#172a28] sm:px-6"><DigitalNumber value={row.usage} /></td>
-                        <td className="px-5 py-5 font-bold text-[#087a61] sm:px-6"><DigitalNumber value={row.capacity} /></td>
-                        <td className="px-5 py-5 text-slate-500 sm:px-6"><DigitalNumber value={row.tag} /></td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p className="bg-[#fff4e5] px-5 py-4 text-xs leading-5 text-slate-600 sm:px-6 sm:text-[13px]">
-                {capacityGuide.notice}
-              </p>
+                  ))}
+                </tbody>
+              </table>
             </div>
+            <p className="bg-[#fff4e5] px-5 py-4 text-slate-600 sm:px-6      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+              {capacityGuide.notice}
+            </p>
           </div>
         </div>
       </div>

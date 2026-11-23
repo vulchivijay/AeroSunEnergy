@@ -152,14 +152,14 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
 
         <div className="relative z-10 grid min-h-[900px] gap-8 px-6 py-9 sm:min-h-[760px] sm:px-10 sm:py-12 md:absolute md:inset-0 md:min-h-0 md:grid-cols-[48.5%_49.5%] md:items-center md:gap-0 md:px-[3.3%] md:py-[2.5%] lg:px-[3.5%]">
           <div className="max-w-[620px] self-center md:-translate-y-6">
-            <div className="inline-flex items-center gap-3 rounded-full border border-slate-700 bg-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.25em] text-sky-100 shadow-md  backdrop-blur-md sm:text-xs">
-              <span className="h-2 w-2 rounded-full bg-amber-300 " />
+            <div className="inline-flex items-center gap-3 rounded-full border border-slate-700 bg-white/10 px-4 py-2 text-xs uppercase text-sky-100 shadow-md backdrop-blur-md text-xs font-semibold tracking-wide leading-5">
+              <span className="h-2 w-2 rounded-full bg-amber-300" />
               {content.eyebrow}
             </div>
 
             <h1
               id="aerosun-banner-title"
-              className="mt-3 max-w-[650px] font-serif text-[clamp(1.7rem,3.5vw,4.5rem)] font-bold leading-[.99] tracking-[-0.045em] text-white md:mt-4"
+              className="mt-3 max-w-[650px] font-serif text-white md:mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight"
             >
               <span className="block whitespace-nowrap">{content.titleFirst}</span>
               <span className="mt-1 block whitespace-nowrap bg-gradient-to-r from-amber-100 via-orange-200 to-rose-200 bg-clip-text italic text-transparent">
@@ -167,7 +167,7 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
               </span>
             </h1>
 
-            <p className="mt-3 max-w-[590px] text-[13px] leading-[1.45] tracking-[0.015em] text-blue-50/95 sm:text-sm md:mt-3 md:text-[clamp(11px,1vw,15px)] lg:text-[clamp(12px,1.05vw,17px)]">
+            <p className="mt-3 max-w-[590px]  text-blue-50/95 md:mt-3    text-xs font-semibold tracking-wide leading-5">
               {content.description}
             </p>
           </div>
@@ -198,7 +198,7 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
             </svg>
 
             <div
-              className="absolute left-1/2 top-0 z-20 grid h-[68px] w-[68px] -translate-x-1/2 place-items-center rounded-full border border-amber-200/20 bg-white/[0.06]  sm:h-[82px] sm:w-[82px] md:left-[7%] md:top-[1%] md:h-[86px] md:w-[86px] md:translate-x-0"
+              className="absolute left-1/2 top-0 z-20 grid h-[68px] w-[68px] -translate-x-1/2 place-items-center rounded-full border border-amber-200/20 bg-white/[0.06] sm:h-[82px] sm:w-[82px] md:left-[7%] md:top-[1%] md:h-[86px] md:w-[86px] md:translate-x-0"
               aria-hidden="true"
             >
               <span className="absolute inset-2 rounded-full border border-sky-200/20" />
@@ -229,7 +229,7 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
                     index === 3 ? 'md:left-[75%] md:top-[9%]' : '',
                   ].join(' ')}
                 >
-                  <span className="absolute -top-3 left-1/2 z-10 grid h-7 w-7 -translate-x-1/2 place-items-center rounded-full border border-amber-100/70 bg-[#5b3e99] text-xs font-semibold text-amber-50 ">
+                  <span className="absolute -top-3 left-1/2 z-10 grid h-7 w-7 -translate-x-1/2 place-items-center rounded-full border border-amber-100/70 bg-[#5b3e99] text-xs font-semibold text-amber-50">
                     {step.number}
                   </span>
                   <div className="flex flex-1 items-center justify-center pt-2">

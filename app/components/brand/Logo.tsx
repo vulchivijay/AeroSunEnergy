@@ -30,15 +30,11 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
         >
           <span
             data-brand-name
-            className={`relative whitespace-nowrap pr-2 text-2xl font-bold tracking-wider text-[#20A44A] sm:text-3xl
-              compact
-                ? ""
-                : ""
-            `}
+            className="relative whitespace-nowrap pr-2 text-2xl font-bold tracking-wider text-[#20A44A] sm:text-3xl"
           >
             {t.logo.wordmark}
             <sup
-              className={`absolute right-0 text-[10px] font-normal top-1 text-[#ffffff] ${compact ? "" : ""}`}
+              className="absolute right-0 top-1 text-[9px] font-normal text-white"
             >
               {t.logo.trademark}
             </sup>
@@ -51,11 +47,7 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
           </span>
         </div>
         <div
-          className={`max-w-[16rem] whitespace-normal break-keep text-[12px] tracking-[0.08em] line-clamp-2
-            compact
-              ? "text-[#ffffff]"
-              : "text-[#333333]"
-          `}
+          className="max-w-[16rem] whitespace-normal break-keep text-xs sm:text-sm font-normal tracking-normal leading-5 line-clamp-2 text-white"
         >
           ---- {t.navbar.brandTagline} ----
         </div>

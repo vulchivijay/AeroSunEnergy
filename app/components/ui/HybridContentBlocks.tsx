@@ -58,7 +58,7 @@ export function HybridFeatureCard({
       icon={renderHybridIcon(contentAccentText[accent])}
       cardClassName="group h-full border-t border-slate-300 py-6 transition-colors hover:border-violet-600"
       featureClassName={contentAccentText[accent]}
-      titleClassName="tracking-tighter text-slate-900"
+      titleClassName="text-slate-900"
       pointIconClassName="bg-violet-50 text-violet-700"
     />
   )
@@ -79,7 +79,7 @@ export function HybridBenefitCard({
       description={description}
       cardClassName={`rounded-xl border-l-4 ${contentBenefitBorders[accent]} bg-[#f0edfa] p-5`}
       iconClassName="bg-violet-100 text-violet-700"
-      titleClassName="tracking-tighter text-slate-900"
+      titleClassName="text-slate-900"
     />
   )
 }
@@ -99,7 +99,7 @@ export function HybridInfoPanel({
       content={content}
       themeClassName="bg-transparent text-slate-900"
       checkBackgroundClassName={contentCheckBackgrounds[accent]}
-      titleClassName="tracking-tighter"
+      titleClassName="text-slate-900"
     />
   )
 }
@@ -109,12 +109,12 @@ export function HybridTable({ rows }: { rows: { label: string; value: string; us
   const ui = t.ui
 
   return (
-    <div className="overflow-x-auto rounded-xl border border-emerald-200 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400">
+    <div className="overflow-x-auto rounded-xl border border-emerald-200 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400 ">
       <table
         aria-label={`${ui.systemType}, ${ui.typicalConfiguration}, ${ui.customerFit}`}
-        className="w-full min-w-[760px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3"
+        className="w-full min-w-[760px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3 "
       >
-        <thead className="bg-amber-700 text-sm font-bold uppercase tracking-[0.18em] text-white">
+        <thead className="bg-amber-700 uppercase text-white text-xs font-semibold tracking-wide leading-5">
           <tr>
             <th scope="col">{ui.systemType}</th>
             <th scope="col">{ui.typicalConfiguration}</th>
@@ -123,10 +123,10 @@ export function HybridTable({ rows }: { rows: { label: string; value: string; us
         </thead>
         <tbody>
         {rows.map((row) => (
-          <tr key={row.label} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
-            <th scope="row" className="font-semibold text-slate-900"><DigitalNumber value={row.label} /></th>
-            <td className="text-slate-700"><DigitalNumber value={row.value} /></td>
-            <td className="text-slate-700"><DigitalNumber value={row.use} /></td>
+          <tr key={row.label} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70 ">
+            <th scope="row" className="font-semibold text-slate-900 tracking-normal tabular-nums"><DigitalNumber value={row.label} /></th>
+            <td className="text-slate-700 tabular-nums"><DigitalNumber value={row.value} /></td>
+            <td className="text-slate-700 tabular-nums"><DigitalNumber value={row.use} /></td>
           </tr>
         ))}
         </tbody>

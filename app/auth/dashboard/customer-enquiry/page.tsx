@@ -9,12 +9,12 @@ import { useToast } from "@/app/components/ui/ToastContext";
 function SectionTitle({ number, title }: { number: string; title: string }) {
   return (
     <div className="mb-5 flex items-center gap-3 border-b border-slate-200 pb-3">
-      <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-emerald-700 font-mono text-md font-bold text-white">
+      <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-emerald-700 font-mono text-base font-bold text-white tracking-normal tabular-nums">
         {number}
       </span>
       <h2
         id={`quotation-section-${number}`}
-        className="scroll-mt-28 text-lg font-black uppercase tracking-wide text-slate-900 sm:text-xl"
+        className="scroll-mt-28 uppercase text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug"
       >
         {title}
       </h2>
@@ -52,8 +52,8 @@ function TextField({
   labelTextClassName?: string;
 }) {
   return (
-    <label className={`block min-w-0 ${className}`}>
-      <span className={`mb-1.5 block text-md font-bold ${labelTextClassName}`}>
+    <label className={`block min-w-0 ${className}     text-xs sm:text-sm font-semibold tracking-normal leading-5`}>
+      <span className={`mb-1.5 block text-base font-bold ${labelTextClassName} tracking-normal`}>
         {label}
         {required && <span aria-hidden="true"> *</span>}
       </span>
@@ -68,7 +68,7 @@ function TextField({
         minLength={minLength}
         step={step}
         pattern={pattern}
-        className="min-h-10 w-full min-w-0 max-w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-md text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
+        className="min-h-10 w-full min-w-0 max-w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-base text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
       />
     </label>
   );
@@ -88,8 +88,8 @@ function SelectField({
   placeholder: string;
 }) {
   return (
-    <label className="block min-w-0">
-      <span className="mb-1.5 block text-md font-bold text-slate-700">
+    <label className="block min-w-0 text-xs sm:text-sm font-semibold tracking-normal leading-5">
+      <span className="mb-1.5 block text-base font-bold text-slate-700 tracking-normal">
         {label}
         {required && <span aria-hidden="true"> *</span>}
       </span>
@@ -97,7 +97,7 @@ function SelectField({
         name={name}
         required={required}
         defaultValue=""
-        className="min-h-10 w-full min-w-0 max-w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-md text-slate-900 outline-none transition focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
+        className="min-h-10 w-full min-w-0 max-w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-base text-slate-900 outline-none transition focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
       >
         <option value="" disabled>
           {placeholder}
@@ -134,7 +134,7 @@ function EditableTable({
   return (
     <div className="overflow-x-auto rounded-xl border border-slate-200">
       <table className="w-full min-w-[640px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
-        <thead className="bg-amber-700 text-sm font-bold uppercase tracking-wide text-white">
+        <thead className="bg-amber-700 uppercase text-white text-xs font-semibold tracking-wide leading-5">
           <tr>
             <th className="border-b border-r border-slate-200 px-3 py-2.5">
               {rowHeader}
@@ -154,7 +154,7 @@ function EditableTable({
             <tr key={row.label} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
               <th
                 scope="row"
-                className="min-w-52 border-b border-r border-slate-200 px-3 py-2 text-left font-semibold text-slate-700"
+                className="min-w-52 border-b border-r border-slate-200 px-3 py-2 text-left font-semibold text-slate-700 tracking-normal"
               >
                 {row.label}
               </th>
@@ -170,7 +170,7 @@ function EditableTable({
                     step={field.step}
                     placeholder={field.label}
                     aria-label={`${row.label}: ${field.label}`}
-                    className="min-h-9 w-full rounded-lg border border-slate-200 bg-white px-2 text-md text-slate-900 outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
+                    className="min-h-9 w-full rounded-lg border border-slate-200 bg-white px-2 text-base text-slate-900 outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
                   />
                 </td>
               ))}
@@ -200,7 +200,7 @@ function ChoiceGroup({
 }) {
   return (
     <fieldset className="min-w-0">
-      <legend className="mb-2 text-md font-bold text-slate-700">
+      <legend className="mb-2 text-base font-bold text-slate-700 tracking-normal">
         {legend}
         {required && <span aria-hidden="true"> *</span>}
       </legend>
@@ -208,7 +208,7 @@ function ChoiceGroup({
         {options.map((option, index) => (
           <label
             key={option}
-            className="flex min-w-0 items-start gap-2 rounded-xl border border-slate-200 bg-white p-2.5 text-md leading-5 text-slate-700"
+            className="flex min-w-0 items-start gap-2 rounded-xl border border-slate-200 bg-white p-2.5 text-slate-700 text-xs sm:text-sm font-semibold tracking-normal leading-5"
           >
             <input
               type="radio"
@@ -275,13 +275,13 @@ export default function CustomerEnquiryPage() {
   return (
     <main className="min-h-screen w-full bg-[#f7f7f2] px-4 py-10 sm:px-6 lg:px-8">
       <header className="mx-auto mb-8 max-w-7xl rounded-xl border border-slate-200 bg-linear-to-br from-white/75 via-sky-50/65 to-cyan-100/55 p-6 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/60 sm:p-8">
-        <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-[#eaf2e9] px-4 py-2 text-md font-bold uppercase tracking-[0.18em] text-emerald-800">
+        <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-[#eaf2e9] px-4 py-2 uppercase text-emerald-800    text-xs font-semibold tracking-wide leading-5">
           {page.eyebrow}
         </p>
-        <h1 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
+        <h1 className="mt-3 text-slate-950 text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
           {page.title}
         </h1>
-        <p className="mt-3 max-w-3xl text-md leading-7 text-slate-600 sm:text-lg sm:leading-8">{page.description}</p>
+        <p className="mt-3 max-w-3xl text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{page.description}</p>
       </header>
       <div className="mx-auto grid max-w-7xl items-start gap-8 lg:grid-cols-[minmax(0,1fr)_16rem]">
         <form
@@ -303,16 +303,16 @@ export default function CustomerEnquiryPage() {
           className="min-w-0 space-y-6 rounded-xl border border-slate-200 bg-white p-3 shadow-sm sm:p-5 lg:p-6"
         >
           <header className="rounded-xl border border-slate-700 bg-linear-to-br from-sky-900/65 via-cyan-800/55 to-slate-900/65 p-5 text-white shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:p-6">
-            <p className="text-md font-bold uppercase tracking-[0.2em] text-lime-300">
+            <p className="uppercase text-lime-300    text-xs font-semibold tracking-wide leading-5">
               {page.companyName}
             </p>
-            <h1 className="mt-2 text-2xl font-black uppercase leading-tight sm:text-4xl">
+            <h1 className="mt-2 uppercase text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
               {page.title}
             </h1>
-            <p className="mt-2 text-md font-semibold text-emerald-100">
+            <p className="mt-2 text-emerald-100      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.companyTagline}
             </p>
-            <p className="mt-3 text-md uppercase tracking-wide text-emerald-50/80">
+            <p className="mt-3 uppercase text-emerald-50/80    text-xs font-semibold tracking-wide leading-5">
               {page.proposalTitle}
             </p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -350,33 +350,33 @@ export default function CustomerEnquiryPage() {
 
           <section className="rounded-xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <SectionTitle number="01" title={page.sections[0]} />
-            <div className="grid gap-3 text-md text-slate-700 sm:grid-cols-2">
+            <div className="grid gap-3 text-base text-slate-700 sm:grid-cols-2">
               <p>
-                <strong>{page.companyName}</strong>
+                <strong className="tracking-normal">{page.companyName}</strong>
               </p>
               <p>
-                <strong>{page.company.cin}</strong> {page.company.cinValue}
+                <strong className="tracking-normal">{page.company.cin}</strong> {page.company.cinValue}
               </p>
-              <p className="sm:col-span-2">
-                <strong>{page.company.registeredOffice}</strong>{" "}
+              <p className="sm:col-span-2      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                <strong className="tracking-normal">{page.company.registeredOffice}</strong>{" "}
                 {page.company.registeredOfficeValue}
               </p>
               <p>
-                <strong>{page.company.msme}</strong> {page.company.msmeValue}
+                <strong className="tracking-normal">{page.company.msme}</strong> {page.company.msmeValue}
               </p>
               <p>
-                <strong>{page.company.startupIndia}</strong>{" "}
+                <strong className="tracking-normal">{page.company.startupIndia}</strong>{" "}
                 {page.company.startupIndiaValue}
               </p>
               <p>
-                <strong>{page.company.website}</strong>{" "}
+                <strong className="tracking-normal">{page.company.website}</strong>{" "}
                 {page.company.websiteValue}
               </p>
               <p>
-                <strong>{page.company.email}</strong> {page.contactEmail}
+                <strong className="tracking-normal">{page.company.email}</strong> {page.contactEmail}
               </p>
               <p>
-                <strong>{page.company.phone}</strong> {page.phoneValue}
+                <strong className="tracking-normal">{page.company.phone}</strong> {page.phoneValue}
               </p>
             </div>
           </section>
@@ -485,10 +485,10 @@ export default function CustomerEnquiryPage() {
               />
             </div>
             <div className="mt-4 rounded-xl border border-slate-200 bg-white p-4">
-              <h3 className="text-md font-bold text-slate-900">
+              <h3 className="text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
                 {page.projectObjective}
               </h3>
-              <p className="mt-2 text-md leading-6 text-slate-700">
+              <p className="mt-2 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 {page.projectObjectiveCopy}
               </p>
             </div>
@@ -520,7 +520,7 @@ export default function CustomerEnquiryPage() {
                 ],
               }))}
             />
-            <p className="mt-3 text-md leading-5 text-slate-600">
+            <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.technicalSpecificationNote}
             </p>
           </section>
@@ -545,7 +545,7 @@ export default function CustomerEnquiryPage() {
                 ],
               }))}
             />
-            <p className="mt-3 text-md leading-5 text-slate-600">
+            <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.billOfMaterialsNote}
             </p>
           </section>
@@ -554,7 +554,7 @@ export default function CustomerEnquiryPage() {
             <SectionTitle number="06" title={page.sections[5]} />
             <div className="overflow-x-auto rounded-xl border border-slate-200">
               <table className="w-full min-w-[520px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
-                <thead className="bg-amber-700 font-bold uppercase text-white">
+                <thead className="bg-amber-700 uppercase text-white text-xs font-semibold tracking-wide leading-5">
                   <tr>
                     <th className="px-3 py-3">{page.serialNumber}</th>
                     <th className="px-3 py-3">{page.descriptionLabel}</th>
@@ -590,7 +590,7 @@ export default function CustomerEnquiryPage() {
                   ].map(([label, name]) => (
                     <tr
                       key={name}
-                      className="border-t border-slate-200 odd:bg-white even:bg-emerald-50/70 font-semibold transition-colors hover:bg-emerald-100/70"
+                      className="border-t border-slate-200 odd:bg-white even:bg-emerald-50/70 font-semibold transition-colors hover:bg-emerald-100/70 tracking-normal"
                     >
                       <th colSpan={2} className="px-3 py-2 text-left">
                         {label}
@@ -625,7 +625,7 @@ export default function CustomerEnquiryPage() {
                 placeholder={page.gstPlaceholder}
               />
             </div>
-            <p className="mt-3 text-md leading-5 text-slate-600">
+            <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.gstNote}
             </p>
           </section>
@@ -641,7 +641,7 @@ export default function CustomerEnquiryPage() {
                 fields: [{ label, name, type: "number", min: 0, step: "any" }],
               }))}
             />
-            <h3 className="mb-3 mt-5 text-md font-bold text-slate-900">
+            <h3 className="mb-3 mt-5 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
               {page.generationAssumptions}
             </h3>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -649,7 +649,7 @@ export default function CustomerEnquiryPage() {
                 <TextField key={name} label={label} name={name} />
               ))}
             </div>
-            <p className="mt-4 rounded-xl bg-amber-50 p-4 text-md leading-5 text-amber-950">
+            <p className="mt-4 rounded-xl bg-amber-50 p-4 text-amber-950      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.generationDisclaimer}
             </p>
           </section>
@@ -668,7 +668,7 @@ export default function CustomerEnquiryPage() {
                 />
               ))}
             </div>
-            <h3 className="mb-3 mt-5 text-md font-bold text-slate-900">
+            <h3 className="mb-3 mt-5 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
               {page.calculationAssumptions}
             </h3>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -709,14 +709,14 @@ export default function CustomerEnquiryPage() {
                 placeholder={page.selectOption}
               />
             </div>
-            <p className="mt-4 text-md leading-5 text-slate-600">
+            <p className="mt-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.savingsDisclaimer}
             </p>
           </section>
 
           <section className="rounded-xl border border-emerald-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <SectionTitle number="09" title={page.sections[8]} />
-            <p className="mb-4 text-md text-slate-600">
+            <p className="mb-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.scopeInstructions}
             </p>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -730,7 +730,7 @@ export default function CustomerEnquiryPage() {
                 />
               ))}
             </div>
-            <h3 className="mb-3 mt-6 text-md font-bold text-slate-900">
+            <h3 className="mb-3 mt-6 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
               {page.scheduleTitle}
             </h3>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -743,38 +743,38 @@ export default function CustomerEnquiryPage() {
                 />
               ))}
             </div>
-            <p className="mt-4 text-md leading-5 text-slate-600">
+            <p className="mt-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.scheduleNote}
             </p>
           </section>
 
           <section className="rounded-xl border border-amber-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
             <SectionTitle number="10" title={page.sections[9]} />
-            <p className="mb-4 text-md text-slate-600">
+            <p className="mb-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.exclusionsIntro}
             </p>
             <ol className="grid gap-2 sm:grid-cols-2">
               {page.exclusions.map((item, index) => (
                 <li
                   key={item}
-                  className="flex gap-3 rounded-xl bg-white p-3 text-md leading-5 text-slate-700"
+                  className="flex gap-3 rounded-xl bg-white p-3 text-base leading-5 text-slate-700"
                 >
-                  <span className="font-mono font-bold text-amber-700">
+                  <span className="font-mono font-bold text-amber-700 tracking-normal tabular-nums">
                     {index + 1}.
                   </span>
                   {item}
                 </li>
               ))}
             </ol>
-            <label className="mt-4 block">
-              <span className="mb-1.5 block text-md font-bold text-slate-700">
+            <label className="mt-4 block text-xs sm:text-sm font-semibold tracking-normal leading-5">
+              <span className="mb-1.5 block text-base font-bold text-slate-700 tracking-normal">
                 {page.additionalWork}
               </span>
               <textarea
                 name="additional_work"
                 rows={2}
                 placeholder={page.additionalWorkPlaceholder}
-                className="w-full min-w-0 max-w-full resize-y rounded-lg border border-slate-300 bg-white px-3 py-2 text-md"
+                className="w-full min-w-0 max-w-full resize-y rounded-lg border border-slate-300 bg-white px-3 py-2 text-base"
               />
             </label>
           </section>
@@ -798,14 +798,14 @@ export default function CustomerEnquiryPage() {
                 ],
               }))}
             />
-            <p className="mt-4 text-md leading-5 text-slate-600">
+            <p className="mt-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.warrantyCoverageNote}
             </p>
           </section>
 
           <section className="rounded-xl border border-sky-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
             <SectionTitle number="12" title={page.sections[11]} />
-            <p className="mb-4 text-md text-slate-600">
+            <p className="mb-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.paymentScheduleIntro}
             </p>
             <div className="grid gap-3 sm:grid-cols-2">
@@ -814,7 +814,7 @@ export default function CustomerEnquiryPage() {
                   key={milestone}
                   className="grid gap-3 rounded-xl border border-slate-200 bg-white p-4 sm:grid-cols-2"
                 >
-                  <p className="self-center text-md font-semibold text-slate-700">
+                  <p className="self-center text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                     {milestone}
                   </p>
                   <TextField
@@ -838,7 +838,7 @@ export default function CustomerEnquiryPage() {
                 </div>
               ))}
             </div>
-            <p className="mt-3 text-right text-md font-black text-emerald-900">
+            <p className="mt-3 text-right text-emerald-900      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.totalPaymentPercentage}
             </p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -855,7 +855,7 @@ export default function CustomerEnquiryPage() {
               <TextField label={page.ifscCode} name="bank_ifsc" />
               <TextField label={page.branch} name="bank_branch" />
             </div>
-            <p className="mt-3 text-md italic text-slate-600">
+            <p className="mt-3 italic text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.bankDetailsNote}
             </p>
           </section>
@@ -866,9 +866,9 @@ export default function CustomerEnquiryPage() {
               {page.termsAndConditions.map((term, index) => (
                 <li
                   key={term}
-                  className="flex gap-3 rounded-xl bg-slate-50 p-3 text-md leading-5 text-slate-700"
+                  className="flex gap-3 rounded-xl bg-slate-50 p-3 text-base leading-5 text-slate-700"
                 >
-                  <span className="font-mono font-bold text-emerald-700">
+                  <span className="font-mono font-bold text-emerald-700 tracking-normal tabular-nums">
                     {index + 1}.
                   </span>
                   {term}
@@ -879,7 +879,7 @@ export default function CustomerEnquiryPage() {
 
           <section className="rounded-xl border border-emerald-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
             <SectionTitle number="14" title={page.sections[13]} />
-            <p className="mb-4 text-md leading-6 text-slate-700">
+            <p className="mb-4 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.acceptanceCopy}
             </p>
             <div className="grid gap-3 sm:grid-cols-2">
@@ -911,7 +911,7 @@ export default function CustomerEnquiryPage() {
 
           <section className="rounded-xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <SectionTitle number="15" title={page.sections[14]} />
-            <p className="mb-4 text-md font-semibold text-slate-800">
+            <p className="mb-4 text-slate-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.forCompany}
             </p>
             <div className="grid gap-3 sm:grid-cols-2">
@@ -939,37 +939,37 @@ export default function CustomerEnquiryPage() {
                 required
               />
             </div>
-            <label className="mt-3 block">
-              <span className="mb-1.5 block text-md font-bold text-slate-700">
+            <label className="mt-3 block text-xs sm:text-sm font-semibold tracking-normal leading-5">
+              <span className="mb-1.5 block text-base font-bold text-slate-700 tracking-normal">
                 {page.companySeal}
               </span>
               <input
                 name="company_seal"
                 placeholder={page.companySealPlaceholder}
-                className="min-h-10 w-full min-w-0 max-w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-md"
+                className="min-h-10 w-full min-w-0 max-w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-base"
               />
             </label>
           </section>
 
           <section className="rounded-xl bg-gradient-to-br from-[#f1f2f6] to-white p-5 text-slate-900 sm:p-7">
-            <h2 className="text-xl font-black uppercase tracking-wide">
+            <h2 className=" uppercase text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
               {page.thankYou}
             </h2>
-            <p className="mt-2 font-semibold">{page.companyName}</p>
-            <p className="mt-1 text-md text-emerald-800">
+            <p className="mt-2      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{page.companyName}</p>
+            <p className="mt-1 text-emerald-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.companyTagline}
             </p>
-            <p className="mt-4 text-md leading-6 text-slate-700">
+            <p className="mt-4 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.company.websiteValue} · {page.contactEmail} ·{" "}
               {page.phoneValue}
             </p>
-            <p className="mt-2 font-mono text-md text-emerald-800">
+            <p className="mt-2 font-mono text-emerald-800       tabular-nums text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.documentReference}
             </p>
           </section>
 
           <div className="flex flex-col gap-3 border-t border-slate-200 pt-5 sm:flex-row sm:items-center sm:justify-between">
-            <label className="flex items-start gap-3 text-md leading-6 text-slate-700">
+            <label className="flex items-start gap-3 text-slate-700 text-xs sm:text-sm font-semibold tracking-normal leading-5">
               <input
                 type="checkbox"
                 name="accept_terms"
@@ -982,19 +982,19 @@ export default function CustomerEnquiryPage() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-emerald-800 px-6 py-3 text-md font-bold text-white transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800 disabled:cursor-wait disabled:opacity-70"
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-emerald-800 px-6 py-3 text-base font-bold text-white transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800 disabled:cursor-wait disabled:opacity-70 tracking-normal"
             >
               {isSubmitting ? t.formSubmission.saving : page.submit}
             </button>
           </div>
-          <p className="text-right text-md text-slate-500">
+          <p className="text-right text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {page.requiredFieldsNote}
           </p>
           <FormDataNotice />
-          {isSubmitting && <p className="text-md text-emerald-800" role="status">{t.formSubmission.saving}</p>}
+          {isSubmitting && <p className="text-emerald-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7" role="status">{t.formSubmission.saving}</p>}
         </form>
         <aside className="min-w-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-24">
-          <h2 className="mb-4 text-md font-black uppercase tracking-wide text-slate-900">
+          <h2 className="mb-4 uppercase text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
             {page.quotationSectionsTitle}
           </h2>
           <nav aria-label={page.quotationSectionsAriaLabel}>
@@ -1005,9 +1005,9 @@ export default function CustomerEnquiryPage() {
                   <li key={number}>
                     <a
                       href={`#quotation-section-${number}`}
-                      className="flex gap-2 rounded-xl px-2 py-1.5 text-md leading-5 text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-800"
+                      className="flex gap-2 rounded-xl px-2 py-1.5 text-base leading-5 text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-800"
                     >
-                      <span className="font-mono font-bold text-emerald-700">
+                      <span className="font-mono font-bold text-emerald-700 tracking-normal tabular-nums">
                         {number}
                       </span>
                       <span>{section}</span>
