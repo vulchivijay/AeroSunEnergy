@@ -9,6 +9,7 @@ import { BenefitCard, FeatureCard, HybridBenefitCard, HybridFeatureCard, HybridI
 
 import Image from 'next/image'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
+import WindTurbineIllustration from '@/app/components/ui/WindTurbineIllustration'
 import { ArrowUpRight, BadgeCheck, BriefcaseBusiness, CalendarDays, ClipboardCheck, FileCheck2, Mail, MapPin, Phone, Rocket, ShieldCheck, Sun, Zap } from 'lucide-react'
 import Link from 'next/link'
 import { getSliderImagePath } from '@/lib/sliderImages'
@@ -69,12 +70,6 @@ function RecognitionHighlight({ t }: { t: Translations }) {
             <circle cx="320" cy="150" r="49" fill="#ffd46a" />
           </g>
           <path
-            className="motion-safe:animate-spin"
-            style={{
-              transformBox: 'view-box',
-              transformOrigin: '20% 67.3%',
-              animationDuration: '28s',
-            }}
             d="M320 126V90M355 140l30-30M369 175h36M355 210l30 30M320 224v36M285 210l-30 30M271 175h-36M285 140l-30-30"
             stroke="#fff0a5"
             strokeOpacity=".9"
@@ -89,19 +84,7 @@ function RecognitionHighlight({ t }: { t: Translations }) {
           <g clipPath="url(#credentials-panel-clip)" stroke="#b7ddff" strokeOpacity=".78" strokeWidth="2">
             <path d="M68 158 96 260M136 166 191 260M203 174 287 260M270 182 382 260M0 178 373 208M0 205 408 225M0 232 443 243" />
           </g>
-          <path d="M600 225V100" stroke="#fff1d2" strokeOpacity=".94" strokeWidth="4" strokeLinecap="round" />
-          <g
-            className="motion-safe:animate-spin"
-            style={{
-              transformBox: 'view-box',
-              transformOrigin: '600px 100px',
-              animationDuration: '12s',
-            }}
-          >
-            <path d="M600 100V20m0 80-69 40m69-40 69 40" stroke="#fff1d2" strokeOpacity=".94" strokeWidth="4" strokeLinecap="round" />
-            <path d="M600 100V20m0 80-69 40m69-40 69 40" stroke="#ffd98b" strokeOpacity=".55" strokeWidth="1.5" />
-          </g>
-          <circle cx="600" cy="100" r="6" fill="#fff1d2" />
+          <WindTurbineIllustration x={540} y={38} width={120} height={222} />
         </svg>
 
         <div className="relative z-10 flex min-w-0 flex-col justify-center lg:-translate-y-12 lg:pl-1">

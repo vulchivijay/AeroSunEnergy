@@ -1,10 +1,15 @@
+'use client'
+
+import { useLocale } from '@/lib/LocaleContext'
+import WindTurbineIllustration from './WindTurbineIllustration'
+
 type StepKind = 'consultation' | 'quotation' | 'system' | 'installation'
 
-const steps: { number: string; title: string; kind: StepKind }[] = [
-  { number: '1', title: 'Consultation', kind: 'consultation' },
-  { number: '2', title: 'Clear quotation', kind: 'quotation' },
-  { number: '3', title: 'System options explained', kind: 'system' },
-  { number: '4', title: 'Installation and beyond', kind: 'installation' },
+const steps: { number: string; kind: StepKind }[] = [
+  { number: '1', kind: 'consultation' },
+  { number: '2', kind: 'quotation' },
+  { number: '3', kind: 'system' },
+  { number: '4', kind: 'installation' },
 ]
 
 function StepIcon({ kind }: { kind: StepKind }) {
@@ -99,26 +104,7 @@ function EnergyLandscape() {
       />
       <circle cx="1320" cy="264" r="82" fill="#ffc85e" fillOpacity=".62" filter="url(#trust-sun-aura)" />
       <circle cx="1320" cy="264" r="76" fill="url(#trust-sun-disc)" />
-      <path d="M1535 205v175" stroke="#fff5df" strokeOpacity=".95" strokeWidth="4" strokeLinecap="round" />
-      <g
-        className="motion-safe:animate-spin"
-        style={{
-          transformBox: 'view-box',
-          transformOrigin: '1535px 205px',
-          animationDuration: '12s',
-        }}
-      >
-        <path d="M1535 205v-58m0 58-50 29m50-29 50 29" stroke="#fff5df" strokeOpacity=".96" strokeWidth="4" strokeLinecap="round" />
-        <path d="M1535 205v-58m0 58-50 29m50-29 50 29" stroke="#ffd98b" strokeOpacity=".58" strokeWidth="1.5" strokeLinecap="round" />
-      </g>
-      <circle cx="1535" cy="205" r="6" fill="#fff5df" />
       <path
-        className="motion-safe:animate-spin"
-        style={{
-          transformBox: 'view-box',
-          transformOrigin: '82.5% 61.4%',
-          animationDuration: '28s',
-        }}
         d="M1320 176v-44M1320 352v44M1232 264h-44M1408 264h44M1258 202l-31-31M1382 202l31-31M1258 326l-31 31M1382 326l31 31"
         stroke="#fff0a5"
         strokeOpacity=".96"
@@ -128,6 +114,7 @@ function EnergyLandscape() {
       <path d="M0 267c150-35 270 19 414 2 135-16 223-96 368-73 131 21 211 85 340 55 176-42 283-2 478 10v169H0z" fill="#39266f" fillOpacity=".24" />
       <path d="M0 316c166-54 300-28 456-3 158 25 263-58 401-37 182 28 253 49 405 6 144-41 231-32 338-4v152H0z" fill="#101b60" fillOpacity=".34" />
       <path d="M0 358c190-35 332-49 495-8 149 38 258-15 380-7 160 11 254 39 399 6 119-27 226-51 326-30v111H0z" fill="#07143f" fillOpacity=".42" />
+      <WindTurbineIllustration x={1450} y={150} width={100} height={280} />
       <path d="M980 360 1318 310 1458 420H980Z" fill="#101d68" stroke="url(#trust-solar-glow)" strokeWidth="3" />
       <g clipPath="url(#trust-solar-panel-clip)" stroke="#b8e0ff" strokeOpacity=".76" strokeWidth="2">
         <path d="M1048 350 1076 420m39-80 56 80m12-90 84 90m-17-100 112 100m-61-108 144 108M980 375 1353 338M980 390 1388 365M980 405 1423 393" />
@@ -138,6 +125,9 @@ function EnergyLandscape() {
 }
 
 export function TrustRibbon({ className = '' }: { className?: string } = {}) {
+  const { t } = useLocale()
+  const content = t.home.trustRibbon
+
   return (
     <section
       aria-labelledby="aerosun-banner-title"
@@ -164,21 +154,21 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
           <div className="max-w-[620px] self-center md:-translate-y-6">
             <div className="inline-flex items-center gap-3 rounded-full border border-slate-700 bg-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.25em] text-sky-100 shadow-md  backdrop-blur-md sm:text-xs">
               <span className="h-2 w-2 rounded-full bg-amber-300 " />
-              The AeroSun Promise
+              {content.eyebrow}
             </div>
 
             <h1
               id="aerosun-banner-title"
               className="mt-3 max-w-[650px] font-serif text-[clamp(1.7rem,3.5vw,4.5rem)] font-bold leading-[.99] tracking-[-0.045em] text-white md:mt-4"
             >
-              <span className="block whitespace-nowrap">Solar, clearly planned.</span>
+              <span className="block whitespace-nowrap">{content.titleFirst}</span>
               <span className="mt-1 block whitespace-nowrap bg-gradient-to-r from-amber-100 via-orange-200 to-rose-200 bg-clip-text italic text-transparent">
-                Every step of the way.
+                {content.titleSecond}
               </span>
             </h1>
 
             <p className="mt-3 max-w-[590px] text-[13px] leading-[1.45] tracking-[0.015em] text-blue-50/95 sm:text-sm md:mt-3 md:text-[clamp(11px,1vw,15px)] lg:text-[clamp(12px,1.05vw,17px)]">
-              Trust AeroSun Energy for a transparent, dependable solar experience from your first consultation through installation and beyond. We provide clear quotations, explain your system options, and keep you informed at every stage—so you can make confident decisions with no unexpected costs or surprises.
+              {content.description}
             </p>
           </div>
 
@@ -246,7 +236,7 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
                     <StepIcon kind={step.kind} />
                   </div>
                   <h2 className="mx-auto mt-1 max-w-[10rem] text-center text-[11px] font-semibold leading-tight text-white sm:text-xs md:text-[clamp(9px,.8vw,13px)]">
-                    {step.title}
+                    {content.steps[step.kind]}
                   </h2>
                 </article>
               ))}
