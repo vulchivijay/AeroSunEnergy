@@ -166,11 +166,11 @@ function Footer() {
 					<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_88%_45%,rgba(245,199,106,0.18),transparent_35%)]" aria-hidden="true" />
 					<div className="relative grid items-center gap-10 lg:grid-cols-[1fr_auto]">
 						<div className="max-w-3xl">
-							<p className="flex items-center gap-3 uppercase text-white    text-xs font-semibold tracking-wide leading-5">
+							<p className="flex items-center gap-3 uppercase text-white text-xs tracking-wide leading-5">
 								<span className="h-px w-8 bg-white" />
 								{t.navbar.brandName}
 							</p>
-							<h2 className="mt-5 text-slate-200 text-2xl leading-snug">
+							<h2 className="mt-5 text-slate-200 text-2xl sm:text-3xl leading-snug">
 								{footer.heroTitle}
 							</h2>
 							<p className="mt-5 max-w-2xl text-slate-100 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
@@ -224,7 +224,7 @@ function Footer() {
 									title={socialMetadataByPlatform[platform].title}
 									itemProp="sameAs"
 									data-social={dataSocial}
-									className="group flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white/70 text-slate-600 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-amber-200/50 hover:bg-white/15 hover:text-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#137c63]"
+									className="group flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white/70 text-slate-600 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-emerald-300/60 hover:bg-linear-to-r hover:from-[#137c63] hover:to-[#20A44A] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#137c63]"
 								>
 									{icon}
 								</Link>
@@ -696,7 +696,7 @@ function Notifications() {
   }, [])
 
   return (
-    <div className="border-b border-slate-200 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] px-3 py-2 text-slate-800 shadow-sm sm:px-5">
+    <div className=" bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] px-3 py-2 text-slate-800 shadow-sm sm:px-5">
       <div className="relative mx-auto flex w-full items-center gap-3 overflow-hidden bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] text-white shadow-sm">
         <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-amber-300 via-sky-400 to-violet-500" aria-hidden="true" />
         <div className="ml-3 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-950/80 text-white shadow-sm">
@@ -706,13 +706,13 @@ function Notifications() {
         <div id="site-notification-content" hidden={!isExpanded} className="min-w-0 flex-1 py-2">
           <div className="mb-1 flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-white shadow-sm" aria-hidden="true" />
-            <span className="uppercase text-white text-xs font-semibold tracking-wide leading-5">
+            <span className="uppercase text-white text-xs tracking-wide leading-5">
               {t.notifications.badge}
             </span>
           </div>
-          <p className="text-white      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+          <p className="text-white text-sm sm:text-base leading-5">
             {notificationText}
-            <span className="text-xs sm:text-sm font-semibold underline underline-offset-4 text-[#ffb321]">{notificationBoldText}</span>
+            <span className="text-xs sm:text-sm underline underline-offset-4 text-[#ffb321]">{notificationBoldText}</span>
             {notificationEndText}
           </p>
         </div>
@@ -1307,7 +1307,7 @@ function Navbar() {
       <div className="absolute -right-12 top-0 h-32 w-32 rounded-full bg-amber-200/20 blur-3xl " />
 
       <div className="relative border-b border-slate-700 bg-white/5 text-white/90 backdrop-blur-xl ">
-        <div className="mx-auto flex min-h-8 w-full flex-col items-start gap-1 px-3 py-1 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:gap-3 lg:px-8 text-xs font-semibold tracking-wide leading-5 ">
+        <div className="mx-auto flex min-h-8 w-full flex-col items-start gap-1 px-3 py-1 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:gap-3 lg:px-8 text-xs tracking-wide leading-5">
           <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
             <Building2 className="h-3.5 w-3.5 shrink-0 text-[#d6b45e]" strokeWidth={1.8} aria-hidden="true" />
             {t.navbar.companyRegistration}
