@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="1000" viewBox="0 0 640 1000" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="320" y1="0" x2="320" y2="575" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9DB9EC"/>
+      <stop offset=".54" stop-color="#D4DDF2"/>
+      <stop offset="1" stop-color="#F7CDAE"/>
+    </linearGradient>
+    <radialGradient id="sun-glow" cx="0" cy="0" r="1" gradientTransform="matrix(0 154 -154 0 512 358)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8D6" stop-opacity=".92"/>
+      <stop offset=".38" stop-color="#FFE7A0" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#FFD98B" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="roof" x1="96" y1="354" x2="535" y2="676" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#233B72"/>
+      <stop offset="1" stop-color="#101F4D"/>
+    </linearGradient>
+    <linearGradient id="wall" x1="296" y1="514" x2="296" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDF8"/>
+      <stop offset="1" stop-color="#E9E8E1"/>
+    </linearGradient>
+    <linearGradient id="window" x1="350" y1="611" x2="350" y2="814" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B7D1E6"/>
+      <stop offset="1" stop-color="#55769B"/>
+    </linearGradient>
+    <clipPath id="panels">
+      <path d="m18 359 622 181v119L18 478V359Z"/>
+    </clipPath>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h640v1000H0z"/>
+  <path fill="url(#sun-glow)" d="M320 180h320v360H320z"/>
+  <circle cx="512" cy="358" r="52" fill="#FFF2BC"/>
+  <circle cx="512" cy="358" r="36" fill="#FFF9D9"/>
+  <path fill="#F4F4F0" fill-opacity=".72" d="M87 228c9-22 31-37 57-37 31 0 56 21 62 49 23 1 41 20 41 43H60c0-25 12-45 27-55Zm262 28c6-16 22-27 40-27 22 0 39 15 43 35 17 1 30 15 30 32H242c0-18 9-33 22-40 7-14 21-23 37-23 22 0 41 17 44 39h4Z"/>
+  <path fill="#C5C6CC" fill-opacity=".5" d="M0 438c81-30 137-32 222-5 75 24 141 21 219-5 83-27 132-16 199 4v126H0V438Z"/>
+  <path fill="#6E83A5" fill-opacity=".58" d="M0 481c89-28 160-23 237 4 88 31 153 22 231-5 65-22 111-17 172-1v111H0V481Z"/>
+
+  <path fill="url(#wall)" d="M0 506h640v494H0z"/>
+  <path fill="#D9D7CF" d="M0 506h640v22H0z"/>
+  <path fill="#F7F6F1" d="M0 528h640v14H0z"/>
+  <path fill="#D8D6CF" d="M0 951h640v49H0z"/>
+
+  <path fill="#8A634E" d="m0 475 640 187v36L0 510v-35Z"/>
+  <path fill="#B98460" d="m0 475 640 187v14L0 496v-21Z"/>
+  <path fill="url(#roof)" d="m0 333 640 190v145L0 479V333Z"/>
+  <path fill="#172B5A" d="m0 333 640 190v25L0 358v-25Z"/>
+  <g clip-path="url(#panels)" stroke="#9CBCE5" stroke-opacity=".82" stroke-width="3">
+    <path d="m6 374 646 188M5 409l646 188M4 444l646 188M3 479l646 188M3 514l646 188"/>
+    <path d="m72 332 3 197m87-170 3 197m87-170 3 197m87-170 3 197m87-170 3 197m87-170 3 197"/>
+  </g>
+  <path stroke="#283D6A" stroke-width="7" d="m0 479 640 190"/>
+  <path stroke="#D69A67" stroke-width="10" d="m0 511 640 190"/>
+
+  <g transform="translate(-63 0)">
+    <path fill="url(#window)" d="M305 609h156v205H305z"/>
+    <path fill="#E8E7E0" d="M296 600h174v13H296zM296 810h174v14H296zM296 613h13v197h-13zM457 613h13v197h-13z"/>
+    <path stroke="#F5F2E9" stroke-width="9" d="M383 613v195m-74-98h147"/>
+    <path fill="#D3D0C8" d="M285 839h194v13H285z"/>
+    <path fill="#A2A4A0" d="M281 852h202v11H281z"/>
+  </g>
+
+  <path fill="#5B835A" d="M84 1000c10-88 20-124 49-175 5 54 3 121-4 175H84Z"/>
+  <path fill="#769967" d="M30 1000c-2-75 7-118 38-162 9 59 8 111 1 162H30Z"/>
+  <path fill="#4C7653" d="M119 1000c9-68 30-113 70-147-3 67-16 112-37 147h-33Z"/>
+  <path fill="#A4B27D" d="M55 1000c16-49 37-78 67-96-9 45-22 76-42 96H55Z"/>
+  <path fill="#C47983" d="M39 814c-13-15-9-33 8-38 15-4 28 8 25 24-2 12-15 18-33 14Zm81-26c-13-15-8-32 9-37 15-4 27 9 23 24-3 12-16 17-32 13Zm-51 49c-12-13-7-29 8-33 14-4 25 8 22 21-3 11-15 15-30 12Z"/>
+  <circle cx="57" cy="800" r="7" fill="#EACB89"/>
+  <circle cx="132" cy="787" r="7" fill="#EACB89"/>
+  <circle cx="82" cy="837" r="6" fill="#EACB89"/>
+  <path fill="#536F4F" d="M0 990c53-13 104-10 160 10H0v-10Z"/>
+</svg>

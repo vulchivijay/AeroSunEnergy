@@ -24,7 +24,7 @@ export const contentBenefitBorders: Record<ContentAccent, string> = {
   violet: 'border-l-[#d0c3e6]',
 }
 
-const featureCardAccents: Record<ContentAccent, string> = {
+export const contentFeatureCardAccents: Record<ContentAccent, string> = {
   emerald: 'bg-sky-400',
   amber: 'bg-amber-400',
   sky: 'bg-violet-500',
@@ -100,7 +100,7 @@ export function ContentFeatureCard({
         {hasImage ? (
           <div>
             <span className={`uppercase ${featureClassName} text-xs font-bold tracking-widest leading-5`}>{label}</span>
-            <div className={`mt-2 h-1 w-12 rounded-full ${featureCardAccents[accent]}`} aria-hidden="true" />
+            <div className={`mt-2 h-1 w-12 rounded-full ${contentFeatureCardAccents[accent]}`} aria-hidden="true" />
           </div>
         ) : (
           <div className="mb-5 flex items-center justify-between gap-4 border-b border-slate-200 pb-4">
@@ -123,7 +123,7 @@ export function ContentFeatureCard({
           </ul>
         )}
       </div>
-      {hasImage && <span className={`absolute inset-x-0 bottom-0 h-1 ${featureCardAccents[accent]}`} aria-hidden="true" />}
+      {hasImage && <span className={`absolute inset-x-0 bottom-0 h-1 ${contentFeatureCardAccents[accent]}`} aria-hidden="true" />}
     </article>
   )
 }

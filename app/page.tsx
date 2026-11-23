@@ -5,7 +5,8 @@ import { BankEMICalculator } from './components/forms/BankEMICalculator'
 import { SolarEstimation } from './components/forms/SolarEstimation'
 import TirupatiEnergySection from './components/sections/TirupatiEnergySection'
 
-import { BenefitCard, FeatureCard, HybridBenefitCard, HybridFeatureCard, HybridInfoPanel, HybridSectionEyebrow, HybridTable, InfoPanel, SectionEyebrow, solarOfferingImages, TrustRibbon, WindBenefitCard, WindCapacityTable, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from './components/ui'
+import { BenefitCard, FeatureCard, HybridBenefitCard, HybridFeatureCard, HybridInfoPanel, HybridSectionEyebrow, HybridTable, InfoPanel, RooftopSolarContentBlock, SectionEyebrow, solarOfferingImages, TrustRibbon, WindBenefitCard, WindCapacityTable, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from './components/ui'
+import { hybridSolutionImages, windSolutionImages } from './components/ui/EnergyContentImages'
 
 import Image from 'next/image'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
@@ -217,24 +218,13 @@ export default async function Home() {
               />
             ))}
           </div>
-          <div className="mt-12 rounded-xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
-            <div className="mb-6">
-              <SectionEyebrow>{home.rooftopSolar.eyebrow}</SectionEyebrow>
-              <h3 className="mt-3 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
-                {home.rooftopSolar.title}
-              </h3>
-            </div>
-
-            <p className="max-w-4xl text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-              {home.rooftopSolar.description}
-            </p>
-
-            <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {home.rooftopSolar.benefits.map((benefit, index) => (
-                <BenefitCard key={benefit.title} title={benefit.title} description={benefit.description} accent={getHomeBenefitAccent(index)} />
-              ))}
-            </div>
-
+          <div className="mt-12">
+            <RooftopSolarContentBlock
+              eyebrow={home.rooftopSolar.eyebrow}
+              title={home.rooftopSolar.title}
+              description={home.rooftopSolar.description}
+              benefits={home.rooftopSolar.benefits}
+            />
             <div className="mt-8">
               {home.rooftopSolar.panels.map((panel) => (
                 <InfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['amber', 'sky'] as const, 'emerald')} content={panel.content} />
@@ -300,13 +290,14 @@ export default async function Home() {
             </summary>
             <div id="wind-energy-content">
             <div className="grid gap-6 lg:grid-cols-3">
-              {wind.cards.map((card) => (
+              {wind.cards.map((card, index) => (
                 <WindFeatureCard
                   key={card.title}
                   title={card.title}
                   description={card.description}
                   points={card.points}
                   accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
+                  imageSrc={windSolutionImages[index]}
                 />
               ))}
             </div>
@@ -346,13 +337,14 @@ export default async function Home() {
             </summary>
             <div id="hybrid-energy-content">
             <div className="grid gap-6 lg:grid-cols-3">
-              {hybrid.cards.map((card) => (
+              {hybrid.cards.map((card, index) => (
                 <HybridFeatureCard
                   key={card.title}
                   title={card.title}
                   description={card.description}
                   points={card.points}
                   accent={getAccentOrDefault(card.accent, ['sky', 'violet', 'amber'] as const, 'emerald')}
+                  imageSrc={hybridSolutionImages[index]}
                 />
               ))}
             </div>

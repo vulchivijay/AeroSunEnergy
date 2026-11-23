@@ -4,6 +4,7 @@ import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySecti
 import { getAccentOrDefault } from '@/lib/utils/utils'
 import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
 import { OptimizedImage, WindBenefitCard, WindCapacityTable, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from '../components/ui'
+import { windSolutionImages } from '../components/ui/EnergyContentImages'
 import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 
@@ -40,47 +41,47 @@ export default async function WindEnergyPage() {
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,25,47,0.94)_0%,rgba(22,48,82,0.78)_52%,rgba(22,48,82,0.28)_100%)]" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#102a43]/80 via-transparent to-[#102a43]/25" />
         </div>
-        <div className="relative mx-auto grid min-h-[620px] w-full max-w-7xl items-center gap-8 px-4 py-10 sm:min-h-[680px] sm:px-6 sm:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-10">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-sky-200/25 bg-sky-300/10 px-3 py-1.5 text-xs uppercase text-sky-200 text-xs font-semibold tracking-wide leading-5">
-              <span className="h-2 w-2 rounded-full bg-sky-300" aria-hidden="true" />
+        <div className="relative mx-auto flex min-h-[620px] max-w-7xl flex-col justify-between px-4 py-10 sm:min-h-[680px] sm:px-6 sm:py-14 lg:px-10">
+          <div className="flex items-center gap-4">
+            <span className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-white/10 px-4 py-2 uppercase text-white/90 backdrop-blur-md text-xs font-semibold tracking-wide leading-5">
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-300" aria-hidden="true" />
               {windPage.hero.eyebrow}
-            </div>
-            <h1 className="mt-6 max-w-3xl text-white text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
-              {windPage.hero.title}
-              <span className="block text-sky-300">{windPage.hero.titleAccent}</span>
-            </h1>
-            <p className="mt-5 max-w-2xl text-slate-200       text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-              {windPage.hero.subtitle}
-            </p>
+            </span>
           </div>
-          <div className="relative overflow-hidden rounded-xl border border-slate-700 bg-slate-900/65 p-5 backdrop-blur-sm sm:p-6">
-            <div className="absolute right-0 top-0 h-40 w-40 rounded-bl-full bg-sky-400/10" aria-hidden="true" />
-            <div className="relative flex min-h-44 items-center justify-between gap-5">
-              <div className="space-y-4">
-                {windPage.hero.variants.map((variant, index) => (
-                  <div key={variant.label} className="flex items-center gap-3">
-                    <span className={`flex h-9 w-9 items-center justify-center rounded-xl text-base font-bold ${index === 0 ? 'bg-sky-300 text-slate-950' : index === 1 ? 'bg-cyan-300 text-slate-950' : 'bg-emerald-300 text-slate-950'} tracking-normal`}>
-                      {index + 1}
-                    </span>
-                    <span>
-                      <span className="block text-base font-bold text-white tracking-normal">{variant.label}</span>
-                      <span className="block text-base text-slate-300">{variant.detail}</span>
-                    </span>
-                  </div>
-                ))}
+          <div className="grid items-end gap-10 py-16 lg:grid-cols-[1.25fr_0.75fr] lg:py-20">
+            <div className="max-w-4xl">
+              <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
+                {windPage.hero.title}
+                <span className="block text-amber-200">{windPage.hero.titleAccent}</span>
+              </h1>
+              <p className="mt-6 max-w-2xl text-white/75 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                {windPage.hero.subtitle}
+              </p>
+            </div>
+            <div className="relative max-w-md rounded-xl border border-slate-700 bg-[#102a43]/65 p-5 backdrop-blur-lg sm:p-6 lg:ml-auto">
+              <div className="flex items-center justify-between gap-5">
+                <div>
+                  <p className="inline-flex w-fit rounded-full border border-amber-300/25 bg-white/10 px-3 py-1.5 uppercase text-amber-200 text-xs font-semibold tracking-wide leading-5">{windPage.hero.resourceFirst}</p>
+                  <p className="mt-3 text-white text-lg font-semibold tracking-normal leading-snug">{windPage.hero.siteDesigned}</p>
+                </div>
+                <svg viewBox="0 0 180 190" fill="none" className="h-32 w-28 shrink-0 text-sky-300 sm:h-40 sm:w-36" aria-hidden="true">
+                  <path d="M92 80v101M80 181h24" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+                  <circle cx="92" cy="79" r="6" fill="currentColor" />
+                  <path d="M92 73 83 16q-2-12 8-7l9 54M98 80l51-26q11-6 10 5l-4 9-51 17M89 84 47 124q-9 9-13-1l-2-10 48-36" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" />
+                  <path d="M18 45c20-12 35-12 51 0M10 61c18-10 31-10 46 0M126 136c14-8 25-8 38 0M130 151c12-7 21-7 32 0" stroke="#bae6fd" strokeWidth="2" strokeLinecap="round" opacity=".8" />
+                  <circle cx="92" cy="79" r="54" stroke="currentColor" strokeDasharray="3 7" opacity=".28" />
+                </svg>
               </div>
-              <svg viewBox="0 0 180 190" fill="none" className="h-40 w-36 shrink-0 text-sky-300 sm:h-48 sm:w-44" aria-hidden="true">
-                <path d="M92 80v101M80 181h24" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-                <circle cx="92" cy="79" r="6" fill="currentColor" />
-                <path d="M92 73 83 16q-2-12 8-7l9 54M98 80l51-26q11-6 10 5l-4 9-51 17M89 84 47 124q-9 9-13-1l-2-10 48-36" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" />
-                <path d="M18 45c20-12 35-12 51 0M10 61c18-10 31-10 46 0M126 136c14-8 25-8 38 0M130 151c12-7 21-7 32 0" stroke="#bae6fd" strokeWidth="2" strokeLinecap="round" opacity=".8" />
-                <circle cx="92" cy="79" r="54" stroke="currentColor" strokeDasharray="3 7" opacity=".28" />
-              </svg>
             </div>
-            <div className="mt-4 flex items-center justify-between border-t border-slate-700 pt-4 text-xs uppercase text-sky-100 text-xs font-semibold tracking-wide leading-5">
-              <span>{windPage.hero.resourceFirst}</span><span className="h-px flex-1 mx-3 bg-sky-300/30" aria-hidden="true" /><span>{windPage.hero.siteDesigned}</span>
-            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-3 border-t border-slate-700 pt-5 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-white/20">
+            {windPage.hero.variants.map((variant, index) => (
+              <div key={variant.label} className="flex flex-col justify-center px-2 py-2 sm:px-5 sm:first:pl-0">
+                <span className="font-mono text-sm text-amber-200 tabular-nums">0{index + 1}</span>
+                <p className="mt-1 text-white text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{variant.label}</p>
+                <p className="mt-1 text-white/75 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{variant.detail}</p>
+              </div>
+            ))}
           </div>
         </div>
       </header>
@@ -97,13 +98,14 @@ export default async function WindEnergyPage() {
           </div>
 
           <div className="grid gap-6 lg:grid-cols-2">
-            {turbineTypesLocalized.map((type) => (
+            {turbineTypesLocalized.map((type, index) => (
               <WindFeatureCard
                 key={type.title}
                 title={type.title}
                 description={type.description}
                 points={type.highlights}
                 accent={getAccentOrDefault(type.accent, ['emerald', 'amber', 'violet'] as const, 'sky')}
+                imageSrc={windSolutionImages[index]}
               />
             ))}
           </div>

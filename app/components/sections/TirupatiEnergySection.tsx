@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowUpRight, Sun, Wind, Zap } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowUpRight } from 'lucide-react'
 import { useLocale } from '@/lib/LocaleContext'
 
 export default function TirupatiEnergySection({
@@ -17,47 +18,55 @@ export default function TirupatiEnergySection({
       : 'bg-gradient-to-br from-[#f1f2f6] to-white'
 
   return (
-    <section className={`${backgroundClassName} px-4 py-12 sm:px-6 lg:px-10 lg:py-16 sm:py-14`}>
-      <div className="mx-auto max-w-7xl">
-        <div className="relative rounded-xl border border-slate-200 bg-[#eaf2e9] p-6 sm:p-8 lg:px-12 lg:py-10">
-          <div className="max-w-4xl pt-20 sm:pt-32 lg:pt-0 lg:pr-52">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 uppercase text-[#087a61]    text-xs font-semibold tracking-wide leading-5">
-              {content.eyebrow}
-            </p>
-
-            <h2 className="mt-5 text-[#102b28] text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
-              {content.title}
-            </h2>
-
-            <p className="mt-5 max-w-4xl text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-              {content.description}
-            </p>
-          </div>
-
-          <div className="absolute right-4 top-4 flex h-20 w-20 items-center justify-center sm:right-6 sm:top-6 sm:h-32 sm:w-32 lg:right-10 lg:top-8 lg:h-40 lg:w-40" aria-hidden="true">
-            <div className="absolute inset-2 rounded-full border border-[#3d5a80]/45" />
-            <div className="absolute inset-5 motion-safe:animate-[spin_28s_linear_infinite] rounded-full border border-dashed border-[#7b2cbf]/60 motion-reduce:animate-none" />
-            <div className="absolute inset-0 motion-safe:animate-[spin_38s_linear_infinite_reverse] rounded-full border border-[#1d3557]/35 motion-reduce:animate-none" />
-            <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-[#ff6b6b] text-[#183153] shadow-sm sm:h-16 sm:w-16 lg:h-20 lg:w-20">
-              <Sun className="h-6 w-6 motion-safe:animate-[spin_20s_linear_infinite] motion-reduce:animate-none sm:h-9 sm:w-9 lg:h-10 lg:w-10" strokeWidth={1.5} />
+    <section className={`${backgroundClassName} p-4 sm:p-5`}>
+      <div className="mx-auto max-w-[1648px]">
+        <div className="relative isolate min-h-[34rem] overflow-hidden rounded-[1.25rem] border border-white/20 bg-[#091b49] shadow-xl shadow-slate-900/20 sm:min-h-[30rem] lg:min-h-[27rem]">
+          <Image
+            src="/images/tirupati-energy-scene.svg?v=13"
+            alt=""
+            fill
+            unoptimized
+            sizes="(min-width: 1688px) 1648px, calc(100vw - 2.5rem)"
+            className="object-cover object-[right_55%] lg:object-[center_55%]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#071b49]/95 via-[#071b49]/60 to-[#071b49]/15 lg:bg-gradient-to-r lg:from-[#071b49]/95 lg:via-[#102868]/45 lg:via-55% lg:to-transparent" />
+          <div className="pointer-events-none absolute right-[6%] top-0 z-[2] h-full w-32 sm:w-40 lg:w-56" aria-hidden="true">
+            <div className="absolute bottom-[35%] left-1/2 top-[30%] w-3 -translate-x-1/2 rounded-t-full bg-gradient-to-r from-[#b5bfd0] via-[#f5f0e7] to-[#b5bfd0] shadow-md sm:w-3.5 lg:w-4" />
+            <div className="absolute left-1/2 top-[calc(30%_-_4rem)] h-32 w-32 -translate-x-1/2 motion-safe:animate-[spin_24s_linear_infinite] motion-reduce:animate-none sm:top-[calc(30%_-_5rem)] sm:h-40 sm:w-40 lg:top-[calc(30%_-_7rem)] lg:h-56 lg:w-56">
+              <svg viewBox="0 0 200 200" className="h-full w-full overflow-visible drop-shadow-md">
+                <g transform="translate(100 100) rotate(15)" fill="#F5F0E7">
+                  <path d="M-5 4-9-5-3-91Q0-101 3-91L9-5 5 4Z" />
+                  <path d="M-5 4-9-5-3-91Q0-101 3-91L9-5 5 4Z" transform="rotate(120)" />
+                  <path d="M-5 4-9-5-3-91Q0-101 3-91L9-5 5 4Z" transform="rotate(240)" />
+                  <circle r="8" fill="#FFF2D8" />
+                </g>
+              </svg>
             </div>
-            <span className="absolute right-1 top-2 flex h-6 w-6 items-center justify-center rounded-full border border-slate-700 bg-[#254d70] text-[#9bf6ff] sm:right-2 sm:top-3 sm:h-8 sm:w-8">
-              <Wind className="h-3 w-3 sm:h-4 sm:w-4" />
-            </span>
-            <span className="absolute bottom-2 left-0 flex h-6 w-6 items-center justify-center rounded-full border border-slate-700 bg-[#7b2cbf] text-[#ffd6a5] sm:bottom-3 sm:left-1 sm:h-8 sm:w-8">
-              <Zap className="h-3 w-3 sm:h-4 sm:w-4" />
-            </span>
           </div>
 
-          <div className="mt-7 flex justify-end">
-            <Link
-              href="/contact"
-              prefetch={false}
-              className="relative z-10 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#12865e] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#0f704e] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#087a61] tracking-normal"
-            >
-              {content.contactCta}
-              <ArrowUpRight className="h-4 w-4 shrink-0" strokeWidth={2.2} aria-hidden="true" />
-            </Link>
+          <div className="relative z-10 flex min-h-[34rem] items-end px-6 py-8 sm:min-h-[30rem] sm:px-10 sm:py-10 lg:min-h-[27rem] lg:items-center lg:px-12 lg:py-12">
+            <div className="w-full max-w-3xl lg:w-[62%] lg:max-w-[58rem]">
+              <p className="inline-flex w-fit items-center rounded-full border border-white/30 bg-white/15 px-5 py-3 text-xs font-semibold uppercase tracking-wide text-white shadow-lg backdrop-blur-sm sm:px-6 sm:text-base">
+                {content.eyebrow}
+              </p>
+
+              <h2 className="mt-5 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
+                {content.title}
+              </h2>
+
+              <p className="mt-4 max-w-3xl text-sm leading-6 text-white/90 sm:text-base sm:leading-7 lg:text-xl">
+                {content.description}
+              </p>
+
+              <Link
+                href="/contact"
+                prefetch={false}
+                className="mt-7 inline-flex min-h-[4.25rem] items-center justify-center gap-2 rounded-full bg-amber-400 px-8 py-4 text-base font-bold text-[#10234f] shadow-lg shadow-amber-950/20 transition hover:bg-amber-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-300 sm:px-9 sm:text-xl"
+              >
+                {content.contactCta}
+                <ArrowUpRight className="h-4 w-4 shrink-0" strokeWidth={2.2} aria-hidden="true" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

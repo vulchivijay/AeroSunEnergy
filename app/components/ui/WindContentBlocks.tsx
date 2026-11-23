@@ -1,6 +1,7 @@
 'use client'
 
 import type { ReactNode } from 'react'
+import Image from 'next/image'
 import { useLocale } from '@/lib/LocaleContext'
 import { DigitalNumber } from './DigitalNumber'
 import {
@@ -8,7 +9,7 @@ import {
   contentAccentText,
   contentBenefitBorders,
   contentCheckBackgrounds,
-  ContentFeatureCard,
+  contentFeatureCardAccents,
   ContentInfoPanel,
   ContentSectionEyebrow,
   type ContentAccent,
@@ -27,8 +28,8 @@ export function WindSectionEyebrow({ children }: { children: ReactNode }) {
   return (
     <ContentSectionEyebrow
       className="py-2"
-      dotClassName="bg-sky-600"
-      labelClassName="text-sky-700"
+      dotClassName="bg-emerald-600"
+      labelClassName="text-emerald-700"
     >
       {children}
     </ContentSectionEyebrow>
@@ -38,35 +39,60 @@ export function WindSectionEyebrow({ children }: { children: ReactNode }) {
 export function WindFeatureCard({
   title,
   description,
-  points = [],
-  accent = 'sky',
+  points,
+  accent = 'emerald',
+  imageSrc,
 }: {
   title: string
   description: string
-  points?: string[]
+  points: string[]
   accent?: ContentAccent
+  imageSrc: string
 }) {
   const { t } = useLocale()
   const ui = t.ui
   return (
-    <ContentFeatureCard
-      title={title}
-      description={description}
-      points={points}
-      label={ui.windSolution}
-      icon={renderWindIcon(contentAccentText[accent])}
-      cardClassName="group h-full rounded-xl border border-sky-200 bg-gradient-to-br from-[#e0f2fe] via-[#f0f9ff] to-[#ecfeff] p-6 shadow-sm transition-colors hover:border-sky-400"
-      featureClassName={contentAccentText[accent]}
-      titleClassName="text-slate-900"
-      pointIconClassName="bg-sky-50 text-sky-700"
-    />
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg">
+      <div className="relative aspect-[2.25/1] overflow-hidden bg-slate-100">
+        <Image
+          src={imageSrc}
+          alt={title}
+          fill
+          sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent" aria-hidden="true" />
+        <span className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-slate-900 shadow-sm backdrop-blur-sm [&_svg]:h-6 [&_svg]:w-6">
+          {renderWindIcon(contentAccentText[accent])}
+        </span>
+      </div>
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
+        <div>
+          <span className={`uppercase ${contentAccentText[accent]} text-xs font-bold tracking-widest leading-5`}>{ui.windSolution}</span>
+          <div className={`mt-2 h-1 w-12 rounded-full ${contentFeatureCardAccents[accent]}`} aria-hidden="true" />
+        </div>
+        <h3 className="mt-2 text-slate-900 text-lg font-semibold leading-snug">{title}</h3>
+        <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{description}</p>
+        {points.length > 0 && (
+          <ul className="mt-4 divide-y divide-slate-200 text-xs leading-5 font-normal text-slate-700 sm:text-sm">
+            {points.map((point) => (
+              <li key={point} className="flex items-start gap-2.5 py-2.5 first:pt-0 last:pb-0">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-sm font-bold text-emerald-700 tracking-normal">✓</span>
+                <span className="leading-5">{point}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+      <span className={`absolute inset-x-0 bottom-0 h-1 ${contentFeatureCardAccents[accent]}`} aria-hidden="true" />
+    </article>
   )
 }
 
 export function WindBenefitCard({
   title,
   description,
-  accent = 'sky',
+  accent = 'emerald',
 }: {
   title: string
   description: string
@@ -76,8 +102,8 @@ export function WindBenefitCard({
     <ContentBenefitCard
       title={title}
       description={description}
-      cardClassName={`rounded-xl border-l-4 ${contentBenefitBorders[accent]} bg-gradient-to-br from-[#e6f4fa] via-[#eff9f7] to-[#f0fdfa] p-5`}
-      iconClassName="bg-sky-100 text-sky-700"
+      cardClassName={`rounded-xl border-l-4 ${contentBenefitBorders[accent]} bg-[#edf3e9] p-5`}
+      iconClassName="bg-emerald-50 text-emerald-700"
       titleClassName="text-slate-900"
     />
   )
@@ -86,7 +112,7 @@ export function WindBenefitCard({
 export function WindInfoPanel({
   title,
   content,
-  accent = 'sky',
+  accent = 'emerald',
 }: {
   title: string
   content: string[]
@@ -96,7 +122,7 @@ export function WindInfoPanel({
     <ContentInfoPanel
       title={title}
       content={content}
-      themeClassName="rounded-xl border border-slate-200 bg-gradient-to-br from-[#e0f7fa] via-[#f0f9ff] to-[#ecfeff] p-5 text-slate-900"
+      themeClassName="bg-transparent text-slate-900"
       checkBackgroundClassName={contentCheckBackgrounds[accent]}
       titleClassName="text-slate-900"
     />

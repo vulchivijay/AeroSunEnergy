@@ -113,7 +113,7 @@ export function BankEMICalculator() {
       interestRate,
       repaymentMonths: months,
     }
-  }, [homeLoanRateInput, homeLoanRateMarkup, isHomeLoanCustomer, loanAmount, loanBand, maxHomeLoanRate, minHomeLoanRate, repoRate, tenureMonths])
+  }, [homeLoanRateInput, homeLoanRateMarkup, loanAmount, loanBand, maxHomeLoanRate, minHomeLoanRate, repoRate, tenureMonths])
 
   const minLoanAmount =
     loanBand === 'upToTwoLakhs' ? MIN_LOAN_UP_TO_TWO_LAKHS : MIN_LOAN_ABOVE_TWO_LAKHS
@@ -185,38 +185,40 @@ export function BankEMICalculator() {
                 {labels.description}
               </p>
             </div>
-            <div hidden={!isExpanded} className="relative mx-auto mt-8 aspect-square w-full max-w-[19rem]">
-              <div className="absolute inset-1 rounded-full border border-amber-300/35" aria-hidden="true" />
-              <div className="absolute inset-[5%] rounded-full border-[0.55rem] border-amber-400 shadow-[0_0_30px_rgba(251,191,36,0.3)]" aria-hidden="true" />
-              <div className="absolute inset-[12%] rounded-full border border-blue-200/20" aria-hidden="true" />
-              <div className="relative z-10 grid h-full place-items-center p-7 text-center">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-blue-100">
+            <div hidden={!isExpanded} className="relative mx-auto mt-8 w-full max-w-[19rem]">
+              <div className="relative aspect-square">
+                <div className="absolute inset-1 rounded-full border border-amber-300/35" aria-hidden="true" />
+                <div className="absolute inset-[5%] rounded-full border-[0.55rem] border-amber-400 shadow-[0_0_30px_rgba(251,191,36,0.3)]" aria-hidden="true" />
+                <div className="absolute inset-[12%] rounded-full border border-blue-200/20" aria-hidden="true" />
+                <div className="absolute inset-[16%] z-10 flex min-w-0 flex-col items-center justify-center px-2 text-center">
+                  <p className="max-w-full text-[0.65rem] font-semibold uppercase tracking-widest text-blue-100 sm:text-xs">
                     {labels.monthlyEmi}
                   </p>
-                  <div className="mt-2 flex flex-wrap items-baseline justify-center gap-x-2 gap-y-1">
-                    <span
-                      className={`tracking-tight text-amber-400 ${
-                        calculation ? 'text-5xl font-bold sm:text-6xl' : 'text-sm font-medium'
-                      }`}
-                    >
-                      {calculation ? <DigitalNumber value={formatCurrency(calculation.emi)} /> : labels.enterHomeLoanRate}
+                  {calculation ? (
+                    <>
+                      <span className="mt-2 block max-w-full whitespace-nowrap text-4xl font-bold leading-none tracking-tight text-amber-400 sm:text-5xl">
+                        <DigitalNumber value={formatCurrency(calculation.emi)} />
+                      </span>
+                      <span className="mt-2 text-sm text-blue-100 sm:text-base">{labels.month}</span>
+                    </>
+                  ) : (
+                    <span className="mt-2 max-w-full break-words text-sm font-medium leading-5 text-amber-400">
+                      {labels.enterHomeLoanRate}
                     </span>
-                    {calculation && <span className="text-sm text-blue-100 sm:text-base">{labels.month}</span>}
-                  </div>
-                  {calculation && (
-                    <div className="mt-5 flex flex-wrap justify-center gap-2">
-                      <span className="rounded-full border border-amber-300/60 bg-blue-950/60 px-3 py-1.5 text-xs text-white">
-                        <DigitalNumber value={formatTenure(tenureMonths)} />
-                      </span>
-                      <span className="rounded-full border border-amber-300/60 bg-blue-950/60 px-3 py-1.5 text-xs text-white">
-                        {labels.calculatedInterestRate}:{' '}
-                        <DigitalNumber value={calculation.interestRate.toFixed(2)} />%
-                      </span>
-                    </div>
                   )}
                 </div>
               </div>
+              {calculation && (
+                <div className="mt-4 flex min-w-0 flex-wrap justify-center gap-2">
+                  <span className="max-w-full rounded-full border border-amber-300/60 bg-blue-950/60 px-3 py-1.5 text-center text-xs leading-5 text-white">
+                    <DigitalNumber value={formatTenure(tenureMonths)} />
+                  </span>
+                  <span className="max-w-full break-words rounded-full border border-amber-300/60 bg-blue-950/60 px-3 py-1.5 text-center text-xs leading-5 text-white">
+                    {labels.calculatedInterestRate}:{' '}
+                    <DigitalNumber value={calculation.interestRate.toFixed(2)} />%
+                  </span>
+                </div>
+              )}
             </div>
           </aside>
 
@@ -394,7 +396,7 @@ export function BankEMICalculator() {
                     <button
                       type="button"
                       aria-pressed={isHomeLoanCustomer}
-                      onClick={() => setIsHomeLoanCustomer(true)}
+                      onClick={() => updateHomeLoanCustomer(true)}
                       className={`rounded-xl border px-3 py-2.5 text-xs font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 sm:text-sm ${
                         isHomeLoanCustomer
                           ? 'border-blue-700 bg-blue-700 text-white'
@@ -406,7 +408,7 @@ export function BankEMICalculator() {
                     <button
                       type="button"
                       aria-pressed={!isHomeLoanCustomer}
-                      onClick={() => setIsHomeLoanCustomer(false)}
+                      onClick={() => updateHomeLoanCustomer(false)}
                       className={`rounded-xl border px-3 py-2.5 text-xs font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 sm:text-sm ${
                         !isHomeLoanCustomer
                           ? 'border-blue-700 bg-blue-700 text-white'
@@ -423,8 +425,8 @@ export function BankEMICalculator() {
                     <input
                       id="bank-emi-home-loan-rate"
                       type="number"
-                      min={0}
-                      max={MAX_HOME_LOAN_RATE}
+                      min={minHomeLoanRate}
+                      max={maxHomeLoanRate}
                       step={0.01}
                       inputMode="decimal"
                       value={homeLoanRateInput}
@@ -435,8 +437,8 @@ export function BankEMICalculator() {
                       aria-invalid={
                         homeLoanRateInput !== '' &&
                         (!Number.isFinite(Number(homeLoanRateInput)) ||
-                          Number(homeLoanRateInput) < 0 ||
-                          Number(homeLoanRateInput) > MAX_HOME_LOAN_RATE)
+                          Number(homeLoanRateInput) < minHomeLoanRate ||
+                          Number(homeLoanRateInput) > maxHomeLoanRate)
                       }
                     />
                     <span className="text-sm font-bold text-slate-600 tracking-normal">%</span>
