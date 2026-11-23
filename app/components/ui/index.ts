@@ -12,6 +12,8 @@ export {
   BenefitCard,
   solarOfferingImages,
   solarSystemImages,
+  solarOfferingAccents,
+  solarSystemAccents,
 
   InfoPanel,
 

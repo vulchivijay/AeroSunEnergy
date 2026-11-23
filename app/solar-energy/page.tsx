@@ -2,7 +2,7 @@ import { getSliderImagePath } from '@/lib/sliderImages'
 import { getRequestTranslations } from '@/lib/serverLocale'
 import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
 import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
-import { FeatureCard, BenefitCard, InfoPanel, OptimizedImage, SectionEyebrow, solarOfferingImages, solarSystemImages } from '../components/ui'
+import { FeatureCard, BenefitCard, InfoPanel, OptimizedImage, SectionEyebrow, solarOfferingAccents, solarOfferingImages, solarSystemAccents, solarSystemImages } from '../components/ui'
 import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 
@@ -96,7 +96,7 @@ export default async function SolarEnergyPage() {
                 title={service.title}
                 description={service.description}
                 points={service.points}
-                accent={service.title.includes('Street') ? 'amber' : service.title.includes('Thermal') ? 'sky' : service.title.includes('Fencing') ? 'violet' : 'emerald'}
+                accent={solarOfferingAccents[index] ?? 'emerald'}
                 label={t.ui.solarSolution}
                 imageSrc={solarOfferingImages[index]}
               />
@@ -137,7 +137,7 @@ export default async function SolarEnergyPage() {
 
           <div className="grid gap-6 lg:grid-cols-3">
             {systemTypesLocalized.map((type, index) => (
-              <FeatureCard key={type.title} title={type.title} description={type.description} points={type.benefits} accent={type.title.includes('Off-grid') ? 'amber' : type.title.includes('Hybrid') ? 'violet' : 'emerald'} label={t.ui.solarSolution} imageSrc={solarSystemImages[index]} />
+              <FeatureCard key={type.title} title={type.title} description={type.description} points={type.benefits} accent={solarSystemAccents[index] ?? 'emerald'} label={t.ui.solarSolution} imageSrc={solarSystemImages[index]} />
             ))}
           </div>
         </div>

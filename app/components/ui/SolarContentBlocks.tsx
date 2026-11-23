@@ -28,6 +28,17 @@ export const solarSystemImages = [
   '/images/slider/slider-3.webp',
 ] as const
 
+export const solarOfferingAccents: AccentTone[] = [
+  'emerald',
+  'amber',
+  'sky',
+  'violet',
+  'amber',
+  'emerald',
+]
+
+export const solarSystemAccents: AccentTone[] = ['emerald', 'amber', 'violet']
+
 const renderSolarIcon = (colorClass: string) => {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={`h-4 w-4 ${colorClass}`} aria-hidden="true">
