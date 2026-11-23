@@ -72,7 +72,7 @@ function CookieConsent() {
     <div className="fixed inset-x-0 bottom-0 z-[80] flex justify-center p-4 sm:p-6">
       <aside
         aria-label={labels.title}
-        className="w-full max-w-5xl rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-lg backdrop-blur-xl"
+        className="w-full max-w-5xl rounded-xl border border-slate-200 bg-white/95 p-5 shadow-md backdrop-blur-xl"
       >
         <div>
           <div className="w-full">
@@ -98,7 +98,7 @@ function CookieConsent() {
             <button
               type="button"
               onClick={() => saveConsent('accepted')}
-              className="inline-flex min-h-11 text-nowrap items-center justify-center rounded-full bg-[#15803D] px-5 py-2.5 text-md text-white shadow-sm shadow-emerald-600/20 transition hover:bg-[#18833a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+              className="inline-flex min-h-11 text-nowrap items-center justify-center rounded-full bg-[#15803D] px-5 py-2.5 text-md text-white shadow-sm  transition hover:bg-[#18833a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
             >
               {labels.accept}
             </button>
@@ -225,13 +225,13 @@ function Lord() {
         aria-labelledby="lord-blessing-title"
         aria-describedby="lord-blessing-description"
         tabIndex={-1}
-        className="relative z-10 w-full max-w-md rounded-3xl bg-white p-6 text-gray-900 shadow-lg"
+        className="relative z-10 w-full max-w-md rounded-xl bg-white p-6 text-gray-900 shadow-md"
       >
         <button
           ref={closeButtonRef}
           type="button"
           aria-label={t.blessingModal.closeLabel}
-          className="absolute right-4 top-4 inline-flex items-center justify-center w-6 h-6 rounded-sm text-gray-600 transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+          className="absolute right-4 top-4 inline-flex items-center justify-center w-6 h-6 rounded-lg text-gray-600 transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
           onClick={dismiss}
         >
           ✕

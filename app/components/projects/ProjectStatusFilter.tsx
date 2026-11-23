@@ -31,7 +31,7 @@ export default function ProjectStatusFilter({
   return (
     <section
       id="project-pipeline"
-      className="scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white to-[#f1f2f6] shadow-sm"
+      className="scroll-mt-28 overflow-hidden rounded-xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] shadow-sm"
     >
       <div className="flex items-start gap-4 p-5 sm:p-6">
         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-md font-bold text-emerald-800">
@@ -44,7 +44,7 @@ export default function ProjectStatusFilter({
           <p className="mt-2 text-md leading-6 text-slate-600">
             {content.labels.statusDescription}
           </p>
-          <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-3">
+          <div className="mt-5 rounded-xl border border-slate-200 bg-white p-3">
             <div
               role="group"
               aria-label={content.labels.statusFilterLabel}
@@ -71,7 +71,7 @@ export default function ProjectStatusFilter({
             </div>
             <div className="pt-5">
               {filteredProjects.length === 0 ? (
-                <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-5 py-10 text-center">
+                <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50 px-5 py-10 text-center">
                   <h3 className="text-xl font-bold tracking-tight text-slate-900">
                     {content.labels.emptyProjectsTitle.replace(
                       "{status}",
@@ -87,7 +87,7 @@ export default function ProjectStatusFilter({
                   {filteredProjects.map((project) => (
                     <article
                       key={`${project.title}-${project.location}`}
-                      className="rounded-2xl border border-slate-200 bg-slate-50 p-5"
+                      className="rounded-xl border border-slate-200 bg-slate-50 p-5"
                     >
                       <span
                         className={`inline-flex rounded-full border px-2.5 py-1 text-[12px] font-bold uppercase tracking-[0.18em] ${statusMeta[project.status].tone}`}

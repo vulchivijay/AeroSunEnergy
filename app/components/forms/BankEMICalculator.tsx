@@ -62,7 +62,7 @@ export function BankEMICalculator() {
   const [repoRate, setRepoRate] = useState(DEFAULT_REPO_RATE)
   const [isHomeLoanCustomer, setIsHomeLoanCustomer] = useState(true)
   const [homeLoanRateInput, setHomeLoanRateInput] = useState('')
-  const [isExpanded, setIsExpanded] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(true)
   const borrowerMargin = loanBand === 'upToTwoLakhs' ? 0.1 : 0.2
   const estimatedProjectCost = Math.ceil(loanAmount / (1 - borrowerMargin))
   const borrowerContribution = estimatedProjectCost - loanAmount
@@ -155,8 +155,8 @@ export function BankEMICalculator() {
       </header>
 
       <div id="bank-emi-calculator-content" hidden={!isExpanded}>
-        <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-2xl shadow-sm lg:grid-cols-2 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
-          <div className="min-w-0 rounded-3xl border border-[#dce8df] bg-linear-to-br from-[#eaf3e9] via-[#f2f7ef] to-[#e3efe4] p-4 text-[#173c2b] shadow-[0_24px_70px_-52px_rgba(15,23,42,0.55)] sm:p-6 xl:p-7">
+        <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-xl shadow-sm lg:grid-cols-2 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+          <div className="min-w-0 rounded-xl border border-slate-200 bg-linear-to-br from-[#eaf3e9] via-[#f2f7ef] to-[#e3efe4] p-4 text-[#173c2b] shadow-sm sm:p-6 xl:p-7">
           <div className="mb-7">
             <p className="text-md font-bold uppercase tracking-[0.17em] text-emerald-800">
               {labels.loanDetails}
@@ -178,9 +178,9 @@ export function BankEMICalculator() {
                     )
                   }}
                   style={indiaFlagGradientStyle}
-                  className={`rounded-xl px-3 py-3 text-sm font-bold transition hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 ${
+                  className={`rounded-lg px-3 py-3 text-sm font-bold transition hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 ${
                     loanBand === 'upToTwoLakhs'
-                      ? 'text-emerald-950 shadow-lg'
+                      ? 'text-emerald-950 shadow-md'
                       : 'text-slate-700 shadow-md'
                   }`}
                 >
@@ -196,9 +196,9 @@ export function BankEMICalculator() {
                     )
                   }}
                   style={indiaFlagGradientStyle}
-                  className={`rounded-xl px-3 py-3 text-sm font-bold transition hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 ${
+                  className={`rounded-lg px-3 py-3 text-sm font-bold transition hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 ${
                     loanBand === 'aboveTwoLakhs'
-                      ? 'text-emerald-950 shadow-lg'
+                      ? 'text-emerald-950 shadow-md'
                       : 'text-slate-700 shadow-md'
                   }`}
                 >
@@ -210,7 +210,7 @@ export function BankEMICalculator() {
             <div>
               <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
                 <label htmlFor="bank-emi-loan" className="text-md font-semibold text-slate-700 sm:text-sm">{labels.loanAmount}</label>
-                <output htmlFor="bank-emi-loan" style={digitalFontStyle} className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
+                <output htmlFor="bank-emi-loan" style={digitalFontStyle} className="ml-auto whitespace-nowrap rounded-xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
                   {formatCurrency(loanAmount)}
                 </output>
               </div>
@@ -242,7 +242,7 @@ export function BankEMICalculator() {
             <div>
               <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
                 <label htmlFor="bank-emi-tenure" className="text-md font-semibold text-slate-700 sm:text-sm">{labels.loanTenure}</label>
-                <output htmlFor="bank-emi-tenure" style={digitalFontStyle} className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
+                <output htmlFor="bank-emi-tenure" style={digitalFontStyle} className="ml-auto whitespace-nowrap rounded-xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
                   {formatTenure(tenureMonths)}
                 </output>
               </div>
@@ -280,7 +280,7 @@ export function BankEMICalculator() {
                     <label htmlFor="bank-emi-repo-rate" className="text-md font-semibold text-slate-700 sm:text-sm">
                       {labels.repoRate}
                     </label>
-                    <output htmlFor="bank-emi-repo-rate" className="ml-auto whitespace-nowrap rounded-2xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
+                    <output htmlFor="bank-emi-repo-rate" className="ml-auto whitespace-nowrap rounded-xl bg-[#e6eefb] px-2 py-1.5 text-right text-xs font-bold tabular-nums text-[#173c2b] sm:px-4 sm:py-2 sm:text-sm">
                       <DigitalNumber value={repoRate.toFixed(2)} />% <span className="text-md font-medium text-slate-700">{labels.perAnnum}</span>
                     </output>
                   </div>
@@ -316,10 +316,10 @@ export function BankEMICalculator() {
                       type="button"
                       aria-pressed={isHomeLoanCustomer}
                       onClick={() => setIsHomeLoanCustomer(true)}
-                      className={`rounded-xl border px-3 py-2.5 text-xs font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-700 sm:text-sm ${
+                      className={`rounded-lg border px-3 py-2.5 text-xs font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-700 sm:text-sm ${
                         isHomeLoanCustomer
                           ? 'border-orange-700 bg-white text-orange-950'
-                          : 'border-orange-100 bg-white/90 text-slate-700 hover:bg-amber-50'
+                          : 'border-slate-700 bg-white/90 text-slate-700 hover:bg-amber-50'
                       }`}
                     >
                       {labels.homeLoanCustomer}
@@ -328,10 +328,10 @@ export function BankEMICalculator() {
                       type="button"
                       aria-pressed={!isHomeLoanCustomer}
                       onClick={() => setIsHomeLoanCustomer(false)}
-                      className={`rounded-xl border px-3 py-2.5 text-xs font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-700 sm:text-sm ${
+                      className={`rounded-lg border px-3 py-2.5 text-xs font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-700 sm:text-sm ${
                         !isHomeLoanCustomer
                           ? 'border-orange-700 bg-white text-orange-950'
-                          : 'border-orange-100 bg-white/90 text-slate-700 hover:bg-amber-50'
+                          : 'border-slate-700 bg-white/90 text-slate-700 hover:bg-amber-50'
                       }`}
                     >
                       {labels.nonHomeLoanCustomer}
@@ -340,7 +340,7 @@ export function BankEMICalculator() {
                   <label htmlFor="bank-emi-home-loan-rate" className="mt-4 block text-sm font-semibold text-slate-700">
                     {labels.homeLoanRate}
                   </label>
-                  <div className="mt-2 flex items-center rounded-xl border border-orange-200 bg-white px-3 py-2.5 focus-within:ring-2 focus-within:ring-orange-400">
+                  <div className="mt-2 flex items-center rounded-lg border border-orange-200 bg-white px-3 py-2.5 focus-within:ring-2 focus-within:ring-orange-400">
                     <input
                       id="bank-emi-home-loan-rate"
                       type="number"
@@ -377,7 +377,7 @@ export function BankEMICalculator() {
             </div>
           </div>
 
-          <div className="mt-6 rounded-2xl border border-emerald-100 bg-emerald-50/70 p-4 sm:mt-7">
+          <div className="mt-6 rounded-xl border border-slate-200 bg-emerald-50/70 p-4 sm:mt-7">
             <p className="text-sm font-bold text-emerald-950">{labels.guidelineSummary}</p>
             <dl className="mt-3 space-y-2 text-sm">
               <div className="flex justify-between gap-3">
@@ -409,7 +409,7 @@ export function BankEMICalculator() {
           <div className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full border border-orange-900/[0.07]" aria-hidden="true" />
           <div className="pointer-events-none absolute -right-7 -top-11 h-44 w-44 rounded-full border border-orange-900/[0.07]" aria-hidden="true" />
           <div className="relative z-10 flex flex-1 flex-col">
-            <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-4 text-center shadow-sm sm:p-5">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-4 text-center shadow-sm sm:p-5">
               <div aria-hidden="true" className="pointer-events-none absolute -right-12 -top-14 h-36 w-36 rounded-full bg-emerald-300/15 blur-2xl" />
               <p className="relative text-xs font-bold uppercase tracking-[0.18em] text-slate-500">{labels.monthlyEmi}</p>
               <div className="relative mt-3 flex flex-wrap items-baseline justify-center gap-x-2 gap-y-1">
@@ -424,20 +424,20 @@ export function BankEMICalculator() {
               </div>
               {calculation && (
                 <div className="relative mt-4 flex flex-wrap justify-center gap-2">
-                  <span className="rounded-full border border-orange-900/10 bg-orange-50 px-3 py-1 text-xs text-orange-950">
+                  <span className="rounded-full border border-slate-200 bg-orange-50 px-3 py-1 text-xs text-orange-950">
                     {labels.calculatedInterestRate}:{' '}
                     <span className="font-bold text-orange-950">
                       <DigitalNumber value={calculation.interestRate.toFixed(2)} />%
                     </span>
                   </span>
-                  <span className="rounded-full border border-orange-900/10 bg-orange-50 px-3 py-1 text-xs text-orange-950">
+                  <span className="rounded-full border border-slate-200 bg-orange-50 px-3 py-1 text-xs text-orange-950">
                     {formatTenure(tenureMonths)}
                   </span>
                 </div>
               )}
             </div>
 
-            <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:mt-7 sm:p-5">
+            <div className="mt-6 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:mt-7 sm:p-5">
               <div className="flex items-center justify-between gap-3">
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-orange-950">
                   {labels.repaymentSnapshot}
@@ -493,7 +493,7 @@ export function BankEMICalculator() {
             <Link
               href="/contact"
               prefetch={false}
-              className="mt-7 inline-flex w-full flex-wrap items-center justify-center gap-2 rounded-full border border-amber-300/70 bg-linear-to-r from-amber-500 to-orange-500 px-4 py-3.5 text-center text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:from-emerald-600 hover:to-emerald-500 hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600 sm:px-5 sm:text-md"
+              className="mt-7 inline-flex w-full flex-wrap items-center justify-center gap-2 rounded-full border border-amber-300/70 bg-linear-to-r from-amber-500 to-orange-500 px-4 py-3.5 text-center text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:from-emerald-600 hover:to-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600 sm:px-5 sm:text-md"
             >
               {labels.contactAction}
               <ArrowUpRight size={17} strokeWidth={2.2} aria-hidden="true" />

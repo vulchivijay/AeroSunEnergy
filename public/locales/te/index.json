@@ -275,6 +275,18 @@
         "text": "నవీనత ఆధారిత పునరుత్పాదక ఇంధన వ్యాపారారంభం మరియు విస్తరణకు అధికారిక గుర్తింపు."
       }
     ],
+    "trustRibbon": {
+      "eyebrow": "AeroSun వాగ్దానం",
+      "titleFirst": "సౌర పరిష్కారం, స్పష్టమైన ప్రణాళికతో.",
+      "titleSecond": "ప్రతి దశలో మీతో.",
+      "description": "మొదటి సంప్రదింపు నుంచి స్థాపన అనంతర సేవల వరకు పారదర్శకమైన, నమ్మకమైన సౌర అనుభవం కోసం AeroSun Energyను విశ్వసించండి. మేము స్పష్టమైన కోట్‌లను అందించి, సిస్టమ్ ఎంపికలను వివరిస్తూ, ప్రతి దశలో మీకు సమాచారం అందిస్తాము—అనుకోని ఖర్చులు లేకుండా మీరు నమ్మకంగా నిర్ణయించుకునేందుకు.",
+      "steps": {
+        "consultation": "సంప్రదింపు",
+        "quotation": "స్పష్టమైన కోట్",
+        "system": "సిస్టమ్ ఎంపికలు",
+        "installation": "స్థాపన & మద్దతు"
+      }
+    },
     "trustSections": {
       "company": {
         "eyebrow": "నిజమైన బృందం, స్పష్టమైన వివరాలు",
@@ -2992,6 +3004,10 @@
       "instagram": {
         "label": "Instagramలో AeroSun Energyని అనుసరించండి, కొత్త ట్యాబ్‌లో తెరవబడుతుంది",
         "title": "Instagramలో AeroSun Energyని అనుసరించండి (కొత్త ట్యాబ్‌లో తెరవబడుతుంది)"
+      },
+      "youtube": {
+        "label": "YouTubeలో AeroSun Energyని సబ్‌స్క్రైబ్ చేయండి, కొత్త ట్యాబ్‌లో తెరవబడుతుంది",
+        "title": "YouTubeలో AeroSun Energy ఛానెల్‌ను తెరవండి (కొత్త ట్యాబ్‌లో తెరవబడుతుంది)"
       }
     },
     "solutions": [
@@ -12832,6 +12848,12 @@
           "platform": "instagram",
           "dataSocial": "instagram",
           "iconId": "instagram"
+        },
+        {
+          "href": "https://www.youtube.com/@vulchivijayakumar",
+          "platform": "youtube",
+          "dataSocial": "youtube",
+          "iconId": "youtube"
         }
       ]
     },

@@ -28,7 +28,7 @@ function SectionHeading({
   return (
     <div className="mb-8 max-w-3xl">
       <p
-        className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? "border-amber-300/20 bg-white/[0.08] text-amber-200" : "border-teal-900/10 bg-white/75 text-teal-800"}`}
+        className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? "border-amber-300/20 bg-white/[0.08] text-amber-200" : "border-slate-200 bg-white/75 text-teal-800"}`}
       >
         {number} / {eyebrow}
       </p>
@@ -90,7 +90,7 @@ export default async function CompanyProfilePage() {
           aria-hidden="true"
         />
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-          <p className="inline-flex items-center gap-2 rounded-full border border-[#137c63]/15 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
+          <p className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
             <span
               className="h-1.5 w-1.5 rounded-full bg-amber-500"
               aria-hidden="true"
@@ -116,7 +116,7 @@ export default async function CompanyProfilePage() {
             {cp.downloadLabel}
           </a>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-2xl border border-[#e2e8e2] bg-white/85 p-5">
+            <div className="rounded-xl border border-slate-200 bg-white/85 p-5">
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#137c63]">
                 {cp.officeLabel}
               </p>
@@ -124,7 +124,7 @@ export default async function CompanyProfilePage() {
                 {cp.officeText}
               </p>
             </div>
-            <div className="rounded-2xl border border-[#e2e8e2] bg-white/85 p-5">
+            <div className="rounded-xl border border-slate-200 bg-white/85 p-5">
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#137c63]">
                 {cp.cinLabel}
               </p>
@@ -132,7 +132,7 @@ export default async function CompanyProfilePage() {
                 U35106AP2026PTC128748
               </p>
             </div>
-            <div className="rounded-2xl border border-[#e2e8e2] bg-white/85 p-5 sm:col-span-2 lg:col-span-1">
+            <div className="rounded-xl border border-slate-200 bg-white/85 p-5 sm:col-span-2 lg:col-span-1">
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#137c63]">
                 {cp.focusLabel}
               </p>
@@ -184,7 +184,7 @@ export default async function CompanyProfilePage() {
             eyebrow={cp.section2Eyebrow}
             title={cp.section2Title}
           />
-          <p className="max-w-4xl rounded-2xl border border-slate-200 bg-slate-50 p-6 text-base leading-8 text-slate-700 sm:p-8 sm:text-lg">
+          <p className="max-w-4xl rounded-xl border border-slate-200 bg-slate-50 p-6 text-base leading-8 text-slate-700 sm:p-8 sm:text-lg">
             {cp.section2Text}
           </p>
         </div>
@@ -197,7 +197,7 @@ export default async function CompanyProfilePage() {
             eyebrow={cp.section3Eyebrow}
             title={cp.section3Title}
           />
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+          <div className="rounded-xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
             <BulletList items={missionPoints} />
           </div>
         </div>
@@ -211,7 +211,7 @@ export default async function CompanyProfilePage() {
             title={cp.section4Title}
           />
           <div className="grid gap-5 lg:grid-cols-3">
-            <article className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
+            <article className="rounded-xl border border-slate-200 bg-white p-6 sm:p-8">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-50 text-teal-800">
                 <Sun className="h-5 w-5" aria-hidden="true" />
               </div>
@@ -220,7 +220,7 @@ export default async function CompanyProfilePage() {
                 <BulletList items={solarSolutions} />
               </div>
             </article>
-            <article className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
+            <article className="rounded-xl border border-slate-200 bg-white p-6 sm:p-8">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-50 text-sky-800">
                 <Wind className="h-5 w-5" aria-hidden="true" />
               </div>
@@ -232,7 +232,7 @@ export default async function CompanyProfilePage() {
                 <BulletList items={windDevelopment} />
               </div>
             </article>
-            <article className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
+            <article className="rounded-xl border border-slate-200 bg-white p-6 sm:p-8">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-50 text-amber-800">
                 <Zap className="h-5 w-5" aria-hidden="true" />
               </div>
@@ -248,7 +248,7 @@ export default async function CompanyProfilePage() {
               </p>
             </article>
           </div>
-          <p className="mt-5 rounded-2xl border border-amber-200 bg-[#fff8ed] px-5 py-4 text-sm leading-7 text-amber-950">
+          <p className="mt-5 rounded-xl border border-amber-200 bg-[#fff8ed] px-5 py-4 text-sm leading-7 text-amber-950">
             {cp.waitNote}
           </p>
         </div>
@@ -261,7 +261,7 @@ export default async function CompanyProfilePage() {
             eyebrow={cp.productSectionEyebrow}
             title={cp.productSectionTitle}
           />
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white">
             <div className="grid grid-cols-1 gap-2 bg-[linear-gradient(145deg,#713f12_0%,#92400e_55%,#a16207_100%)] px-5 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white sm:grid-cols-[0.8fr_1.2fr] sm:gap-0 sm:px-7">
               <span>{cp.productTableCategory}</span>
               <span>{cp.productTableServices}</span>
@@ -295,14 +295,14 @@ export default async function CompanyProfilePage() {
             title={cp.innovationTitle}
             description={cp.innovationDescription}
           />
-          <p className="rounded-2xl border-l-4 border-amber-500 bg-white px-5 py-4 text-sm leading-7 text-slate-600 shadow-sm">
+          <p className="rounded-xl border-l-4 border-amber-500 bg-white px-5 py-4 text-sm leading-7 text-slate-600 shadow-sm">
             {cp.innovationNote}
           </p>
           <ol className="mt-8 grid gap-3 sm:grid-cols-2">
             {innovationFocus.map((item, index) => (
               <li
                 key={item}
-                className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+                className="flex gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
               >
                 <span className="font-mono text-sm font-bold text-teal-700">
                   {String(index + 1).padStart(2, "0")}
@@ -328,7 +328,7 @@ export default async function CompanyProfilePage() {
             {developmentSteps.map((step, index) => (
               <li
                 key={step}
-                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+                className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
               >
                 <span className="font-mono text-sm font-bold text-teal-700">
                   {String(index + 1).padStart(2, "0")}
@@ -424,7 +424,7 @@ export default async function CompanyProfilePage() {
             {futurePriorities.map((priority, index) => (
               <div
                 key={priority}
-                className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+                className="flex gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
               >
                 <span className="font-mono text-sm font-bold text-teal-700">
                   {String(index + 1).padStart(2, "0")}
@@ -440,7 +440,7 @@ export default async function CompanyProfilePage() {
 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-          <div className="grid lg:grid-cols-[0.8fr_1.2fr] overflow-hidden rounded-2xl border border-slate-200 bg-white">
+          <div className="grid lg:grid-cols-[0.8fr_1.2fr] overflow-hidden rounded-xl border border-slate-200 bg-white">
             <div className="bg-[linear-gradient(145deg,#713f12_0%,#92400e_55%,#a16207_100%)] p-7 text-white sm:p-10">
               <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-amber-200">
                 13 / {cp.contactEyebrow}

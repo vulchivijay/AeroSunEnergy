@@ -54,7 +54,7 @@ export default async function WindEnergyPage() {
               {windPage.hero.subtitle}
             </p>
           </div>
-          <div className="relative overflow-hidden rounded-2xl border border-sky-100/15 bg-slate-900/65 p-5 backdrop-blur-sm sm:p-6">
+          <div className="relative overflow-hidden rounded-xl border border-slate-700 bg-slate-900/65 p-5 backdrop-blur-sm sm:p-6">
             <div className="absolute right-0 top-0 h-40 w-40 rounded-bl-full bg-sky-400/10" aria-hidden="true" />
             <div className="relative flex min-h-44 items-center justify-between gap-5">
               <div className="space-y-4">
@@ -78,7 +78,7 @@ export default async function WindEnergyPage() {
                 <circle cx="92" cy="79" r="54" stroke="currentColor" strokeDasharray="3 7" opacity=".28" />
               </svg>
             </div>
-            <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-4 text-[12px] font-bold uppercase tracking-[0.2em] text-sky-100">
+            <div className="mt-4 flex items-center justify-between border-t border-slate-700 pt-4 text-[12px] font-bold uppercase tracking-[0.2em] text-sky-100">
               <span>{windPage.hero.resourceFirst}</span><span className="h-px flex-1 mx-3 bg-sky-300/30" aria-hidden="true" /><span>{windPage.hero.siteDesigned}</span>
             </div>
           </div>
@@ -112,20 +112,20 @@ export default async function WindEnergyPage() {
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-          <div className="rounded-2xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-sm sm:p-8">
+          <div className="rounded-xl border border-slate-200 bg-slate-900 p-6 text-slate-100 shadow-sm sm:p-8">
             <div className="mb-6 flex items-center justify-between gap-3">
               <div>
                 <WindSectionEyebrow>{windPage.classification.eyebrow}</WindSectionEyebrow>
                 <h3 className="mt-2 text-2xl font-bold text-white sm:text-3xl">{windPage.classification.title}</h3>
               </div>
-              <div className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.25em] text-slate-200 sm:block">
+              <div className="hidden rounded-full border border-slate-700 bg-white/5 px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.25em] text-slate-200 sm:block">
                 {windPage.classification.badge}
               </div>
             </div>
 
             <div className="grid gap-4 md:grid-cols-3">
               {deploymentTypesLocalized.map((item, index) => (
-                <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div key={item} className="rounded-xl border border-slate-700 bg-white/5 p-4">
                   <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-lg font-bold text-emerald-300">
                     {index + 1}
                   </div>
@@ -176,7 +176,7 @@ export default async function WindEnergyPage() {
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
               <div>
                 <WindSectionEyebrow>{windPage.strategy.eyebrow}</WindSectionEyebrow>
@@ -191,11 +191,11 @@ export default async function WindEnergyPage() {
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
+              <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-5">
                 <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-emerald-700">{windPage.labels.aeroSunView}</p>
                 <div className="mt-4 space-y-3 text-md leading-7 text-slate-700">
                   {windPage.strategy.points.map((point, index) => (
-                    <div key={point} className="rounded-2xl bg-white p-3">{index + 1}. {point}</div>
+                    <div key={point} className="rounded-xl bg-white p-3">{index + 1}. {point}</div>
                   ))}
                 </div>
               </div>
@@ -213,7 +213,7 @@ export default async function WindEnergyPage() {
 
           <div className="grid gap-8 lg:grid-cols-2">
             {serviceSectionsLocalized.map((section) => (
-              <div key={section.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div key={section.title} className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                 <h3 className="text-2xl font-bold text-slate-900">{section.title}</h3>
                 <p className="mt-2 text-sm leading-7 text-slate-700">{section.heading}</p>
                 <p className="mt-4 text-md leading-6 text-slate-600">{section.overview}</p>
@@ -255,7 +255,7 @@ export default async function WindEnergyPage() {
                   </div>
                 </div>
 
-                <div className="mt-6 rounded-2xl bg-slate-50 p-4 text-md text-slate-700">
+                <div className="mt-6 rounded-xl bg-slate-50 p-4 text-md text-slate-700">
                   <div className="flex items-center justify-between">
                     <div className="font-medium">{windPage.labels.illustrativeCalculation}</div>
                     <div className="text-md text-slate-500">{section.calculation.label}</div>
@@ -293,10 +293,10 @@ async function WindComparisonTable({ rows }: { rows: { system: string; detail: s
   const ui = t.ui
 
   return (
-    <div className="overflow-x-auto rounded-2xl border border-emerald-200 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400">
+    <div className="overflow-x-auto rounded-xl border border-emerald-200 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400">
       <table
         aria-label={`${ui.systemType}, ${ui.howItWorks}, ${ui.typicalUse}`}
-        className="w-full min-w-[780px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3"
+        className="w-full min-w-[780px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3"
       >
         <thead className="bg-amber-700 text-sm font-bold uppercase tracking-[0.18em] text-white">
           <tr>

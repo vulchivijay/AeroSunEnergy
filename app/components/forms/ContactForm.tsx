@@ -77,7 +77,7 @@ export default function ContactForm({
       <label className="block text-sm font-semibold text-slate-800">
         {content.fullName} <span className="text-red-600" aria-hidden="true">*</span>
         <input
-          className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
+          className="mt-1.5 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
           name="fullName"
           type="text"
           autoComplete="name"
@@ -90,7 +90,7 @@ export default function ContactForm({
       <label className="block text-sm font-semibold text-slate-800">
         {content.phone} <span className="text-red-600" aria-hidden="true">*</span>
         <input
-          className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
+          className="mt-1.5 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
           name="phone"
           type="tel"
           autoComplete="tel"
@@ -104,7 +104,7 @@ export default function ContactForm({
       <label className="block text-sm font-semibold text-slate-800">
         {content.solarNeed} <span className="text-red-600" aria-hidden="true">*</span>
         <select
-          className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
+          className="mt-1.5 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
           name="solarNeed"
           required
           defaultValue=""
@@ -122,7 +122,7 @@ export default function ContactForm({
       <label className="block text-sm font-semibold text-slate-800">
         {content.state} <span className="text-red-600" aria-hidden="true">*</span>
         <select
-          className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
+          className="mt-1.5 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
           name="state"
           required
           defaultValue=""
@@ -141,7 +141,7 @@ export default function ContactForm({
         {content.monthlyAverageElectricityBill}{" "}
         <span className="text-red-600" aria-hidden="true">*</span>
         <select
-          className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
+          className="mt-1.5 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
           name="monthlyAverageElectricityBill"
           required
           defaultValue=""
@@ -159,7 +159,7 @@ export default function ContactForm({
       <label className="block text-sm font-semibold text-slate-800">
         {content.interestedInFinancing}
         <select
-          className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
+          className="mt-1.5 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
           name="interestedInFinancing"
           defaultValue=""
         >
@@ -176,7 +176,7 @@ export default function ContactForm({
       <label className="block text-sm font-semibold text-slate-800">
         {content.email} <span className="text-red-600" aria-hidden="true">*</span>
         <input
-          className="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
+          className="mt-1.5 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
           name="email"
           type="email"
           autoComplete="email"
@@ -188,7 +188,7 @@ export default function ContactForm({
       <div className="space-y-3">
         <FormDataNotice />
         <button
-          className="inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#087a61] px-6 py-3 text-base font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61] disabled:cursor-wait disabled:opacity-70"
+          className="inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-[#087a61] px-6 py-3 text-base font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61] disabled:cursor-wait disabled:opacity-70"
           type="submit"
           disabled={isSubmitting}
         >

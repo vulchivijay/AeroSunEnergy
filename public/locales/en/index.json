@@ -4504,6 +4504,18 @@
         "text": "Official recognition for innovation-led renewable energy entrepreneurship and expansion."
       }
     ],
+    "trustRibbon": {
+      "eyebrow": "The AeroSun Promise",
+      "titleFirst": "Solar, clearly planned.",
+      "titleSecond": "Every step of the way.",
+      "description": "Trust AeroSun Energy for a transparent, dependable solar experience from your first consultation through installation and beyond. We provide clear quotations, explain your system options, and keep you informed at every stage—so you can make confident decisions with no unexpected costs or surprises.",
+      "steps": {
+        "consultation": "Consultation",
+        "quotation": "Clear quotation",
+        "system": "System options explained",
+        "installation": "Installation and beyond"
+      }
+    },
     "trustSections": {
       "company": {
         "eyebrow": "A real team, clear details",
@@ -7809,6 +7821,10 @@
       "instagram": {
         "label": "Follow AeroSun Energy on Instagram, opens in a new tab",
         "title": "Follow AeroSun Energy on Instagram (opens in new tab)"
+      },
+      "youtube": {
+        "label": "Subscribe to AeroSun Energy on YouTube, opens in a new tab",
+        "title": "Subscribe to AeroSun Energy on YouTube (opens in new tab)"
       }
     },
     "solutions": [
@@ -12922,6 +12938,12 @@
           "platform": "instagram",
           "dataSocial": "instagram",
           "iconId": "instagram"
+        },
+        {
+          "href": "https://www.youtube.com/@vulchivijayakumar",
+          "platform": "youtube",
+          "dataSocial": "youtube",
+          "iconId": "youtube"
         }
       ]
     },

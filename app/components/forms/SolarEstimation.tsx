@@ -65,7 +65,7 @@ const clamp = (value: number, min: number, max: number) =>
 
 function LeadSummary({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex items-start justify-between gap-4 border-b border-white/10 pb-2 text-sm last:border-b-0 last:pb-0">
+    <div className="flex items-start justify-between gap-4 border-b border-slate-700 pb-2 text-sm last:border-b-0 last:pb-0">
       <span className="text-emerald-100/75">{label}</span>
       <span className="text-right font-bold text-white">
         <DigitalNumber value={value} />
@@ -79,19 +79,37 @@ function PriceItem({
   label,
   value,
   valueClassName,
+  featured = false,
 }: {
   icon: LucideIcon
   label: string
   value: string
   valueClassName: string
+  featured?: boolean
 }) {
   return (
-    <div className="min-w-0 text-center">
-      <Icon className="mx-auto h-5 w-5 text-slate-400" aria-hidden="true" />
-      <p className="mt-2 text-xs leading-5 text-slate-500">{label}</p>
-      <p className={`mt-1 whitespace-nowrap text-lg font-extrabold tracking-tight sm:text-xl ${valueClassName}`}>
-        <DigitalNumber value={value} />
-      </p>
+    <div
+      className={`min-w-0 rounded-xl border p-4 text-left sm:p-5 ${
+        featured
+          ? 'border-amber-300/60 bg-linear-to-br from-amber-200 via-amber-100 to-yellow-50 shadow-sm'
+          : 'border-slate-700 bg-white/[0.05]'
+      }`}
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className={`text-xs font-medium leading-5 ${featured ? 'text-amber-950/70' : 'text-slate-300'}`}>
+            {label}
+          </p>
+          <p className={`mt-3 whitespace-nowrap text-xl font-black tracking-tight sm:text-2xl ${valueClassName}`}>
+            <DigitalNumber value={value} />
+          </p>
+        </div>
+        <span className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl ${
+          featured ? 'bg-amber-900/10 text-amber-900' : 'bg-white/10 text-sky-200'
+        }`}>
+          <Icon className="h-5 w-5" aria-hidden="true" />
+        </span>
+      </div>
     </div>
   )
 }
@@ -123,7 +141,7 @@ export function SolarEstimation() {
   const [leadNameValue, setLeadNameValue] = useState('')
   const [leadPhoneValue, setLeadPhoneValue] = useState('')
   const [showLeadForm, setShowLeadForm] = useState(false)
-  const [gstGuideExpanded, setGstGuideExpanded] = useState(false)
+  const [gstGuideExpanded, setGstGuideExpanded] = useState(true)
   const [whatsAppFallbackUrl, setWhatsAppFallbackUrl] = useState<string | null>(null)
   const [leadFormPending, setLeadFormPending] = useState(false)
 
@@ -278,7 +296,7 @@ export function SolarEstimation() {
         </h1>
       </div>
 
-      <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl shadow-sm border border-slate-200">
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-xl shadow-sm border border-slate-200">
         <div className="grid lg:grid-cols-[minmax(300px,0.75fr)_1.45fr]">
           
           <div className="bg-linear-to-r from-[#137c63] to-[#20A44A] p-6 text-white sm:p-8 lg:p-10">
@@ -348,7 +366,7 @@ export function SolarEstimation() {
                   <label htmlFor={monthlyBillInputId} className="sr-only">
                     {e.monthlyBillAriaLabel}
                   </label>
-                  <div className="flex items-center rounded-2xl border border-white/15 bg-white/10 px-4 py-3.5 focus-within:ring-2 focus-within:ring-emerald-400">
+                  <div className="flex items-center rounded-lg border border-slate-700 bg-white/10 px-4 py-3.5 focus-within:ring-2 focus-within:ring-emerald-400">
                     <span className="text-xl font-bold text-emerald-100" aria-hidden="true">₹</span>
                     <input
                       id={monthlyBillInputId}
@@ -360,7 +378,7 @@ export function SolarEstimation() {
                       value={monthlyBillInput}
                       onChange={(event) => setMonthlyBillInput(event.target.value)}
                       onBlur={normalizeMonthlyBill}
-                      className="min-w-0 flex-1 bg-transparent px-3 text-2xl font-[family-name:var(--font-digital)] font-extrabold tabular-nums text-white outline-none placeholder:text-emerald-100/50 rounded-xl"
+                      className="min-w-0 flex-1 bg-transparent px-3 text-2xl font-[family-name:var(--font-digital)] font-extrabold tabular-nums text-white outline-none placeholder:text-emerald-100/50 rounded-lg"
                     />
                     <span className="whitespace-nowrap text-sm text-emerald-100/70">{calculatorText.monthSuffix}</span>
                   </div>
@@ -374,7 +392,7 @@ export function SolarEstimation() {
                   <label htmlFor={systemSizeInputId} className="sr-only">
                     {calculatorText.systemSize}
                   </label>
-                  <div className="flex items-center rounded-2xl border border-white/15 bg-white/10 px-4 py-3.5 focus-within:ring-2 focus-within:ring-emerald-400">
+                  <div className="flex items-center rounded-lg border border-slate-700 bg-white/10 px-4 py-3.5 focus-within:ring-2 focus-within:ring-emerald-400">
                     <input
                       id={systemSizeInputId}
                       type="number"
@@ -385,7 +403,7 @@ export function SolarEstimation() {
                       value={systemSizeInput}
                       onChange={(event) => setSystemSizeInput(event.target.value)}
                       onBlur={normalizeSystemSize}
-                      className="min-w-0 flex-1 bg-transparent px-1 text-2xl font-[family-name:var(--font-digital)] font-extrabold tabular-nums text-white outline-none rounded-xl"
+                      className="min-w-0 flex-1 bg-transparent px-1 text-2xl font-[family-name:var(--font-digital)] font-extrabold tabular-nums text-white outline-none rounded-lg"
                     />
                     <span className="text-sm font-bold text-emerald-100">{e.capacityUnit}</span>
                   </div>
@@ -401,10 +419,10 @@ export function SolarEstimation() {
               </p>
 
               <div
-                className={`mt-6 rounded-2xl border p-4 ${
+                className={`mt-6 rounded-xl border p-4 ${
                   selectedPropertyIndex === 0
                     ? 'border-emerald-300/15 bg-emerald-400/50'
-                    : 'border-white/10 bg-white/5'
+                    : 'border-slate-700 bg-white/5'
                 }`}
               >
                 <p
@@ -423,7 +441,7 @@ export function SolarEstimation() {
           <div className="bg-linear-to-br from-[#f7faff] via-[#f2f4ff] to-[#eef9fb] p-5 sm:p-7 lg:p-9">
             <div className="grid gap-4 sm:grid-cols-2">
               
-              <article className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+              <article className="min-w-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
                 <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
                     {e.roofRequired}
                 </p>
@@ -432,7 +450,7 @@ export function SolarEstimation() {
                 </p>
               </article>
               
-              <article className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+              <article className="min-w-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
                 <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
                     {calculatorText.idealSystemSize}
                 </p>
@@ -444,7 +462,7 @@ export function SolarEstimation() {
                 </p>
               </article>
 
-              <article className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+              <article className="min-w-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
                 <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
                     {e.annualGeneration}
                 </p>
@@ -453,7 +471,7 @@ export function SolarEstimation() {
                 </p>
               </article>
 
-              <article className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+              <article className="min-w-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
                 <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
                     {e.annualSavings}
                 </p>
@@ -463,40 +481,51 @@ export function SolarEstimation() {
               </article>
             </div>
 
-            <div className="mt-5 rounded-2xl border border-amber-200/80 bg-linear-to-br from-amber-50 via-orange-50 to-amber-100 p-5 sm:p-6">
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
-                  {calculatorText.pricingBreakdown}
-                </h2>
-                <p className="text-xs font-semibold text-slate-600">
-                  <DigitalNumber value={formatSystemCapacity(calculation.recommendedKw, e.capacityUnit)} /> · {currentPropertyType}
+            <div className="relative mt-5 overflow-hidden rounded-xl border border-slate-700 bg-linear-to-br from-[#0b1536] via-[#13244b] to-[#0d3a3b] p-4 text-white shadow-md  sm:p-6">
+              <div className="pointer-events-none absolute -right-16 -top-24 h-56 w-56 rounded-full bg-emerald-300/10 blur-3xl" aria-hidden="true" />
+              <div className="pointer-events-none absolute -bottom-28 left-1/3 h-48 w-48 rounded-full bg-sky-300/10 blur-3xl" aria-hidden="true" />
+              <div className="relative">
+                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-700 pb-4">
+                  <div className="flex items-center gap-3">
+                    <span className="h-8 w-1 rounded-full bg-linear-to-b from-emerald-300 to-sky-300" aria-hidden="true" />
+                    <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-white sm:text-sm">
+                      {calculatorText.pricingBreakdown}
+                    </h2>
+                  </div>
+                  <p className="rounded-full border border-slate-700 bg-white/[0.06] px-3 py-1.5 text-xs font-semibold text-slate-200">
+                    <DigitalNumber value={formatSystemCapacity(calculation.recommendedKw, e.capacityUnit)} /> · {currentPropertyType}
+                  </p>
+                </div>
+
+                <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                  <PriceItem
+                    icon={Tag}
+                    label={calculatorText.priceBeforeSubsidy}
+                    value={formatCurrency(calculation.totalPrice)}
+                    valueClassName="text-white"
+                  />
+                  <PriceItem
+                    icon={Landmark}
+                    label={calculatorText.governmentSubsidy}
+                    value={formatCurrency(calculation.subsidy)}
+                    valueClassName="text-emerald-300"
+                  />
+                  <PriceItem
+                    icon={Calculator}
+                    label={calculatorText.effectiveCost}
+                    value={formatCurrency(calculation.effectiveCost)}
+                    valueClassName="text-slate-950"
+                    featured
+                  />
+                </div>
+
+                <p className="mt-4 border-t border-slate-700 pt-3 text-right text-xs leading-5 text-slate-300">
+                  {calculatorText.taxesExtra}
                 </p>
               </div>
-
-              <div className="mt-5 grid gap-4 sm:grid-cols-3">
-                <PriceItem
-                  icon={Tag}
-                  label={calculatorText.priceBeforeSubsidy}
-                  value={formatCurrency(calculation.totalPrice)}
-                  valueClassName="text-slate-950"
-                />
-                <PriceItem
-                  icon={Landmark}
-                  label={calculatorText.governmentSubsidy}
-                  value={formatCurrency(calculation.subsidy)}
-                  valueClassName="text-emerald-600"
-                />
-                <PriceItem
-                  icon={Calculator}
-                  label={calculatorText.effectiveCost}
-                  value={formatCurrency(calculation.effectiveCost)}
-                  valueClassName="text-emerald-700"
-                />
-              </div>
-              <p className="mt-4 text-right text-xs text-slate-500">{calculatorText.taxesExtra}</p>
             </div>
 
-            <div className="mt-4 rounded-2xl border border-emerald-200/80 bg-linear-to-br from-emerald-50 via-green-50 to-emerald-100 p-5 shadow-sm sm:p-6 hidden">
+            <div className="mt-4 rounded-xl border border-slate-200 bg-linear-to-br from-emerald-50 via-green-50 to-emerald-100 p-5 shadow-sm sm:p-6 hidden">
               <span className="inline-flex items-center rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-indigo-900">
                 {calculation.netMeteringWaived
                   ? calculatorText.finalEffectiveCost
@@ -528,7 +557,7 @@ export function SolarEstimation() {
                       ['Above 100 kW to 1,000 kW', '₹ 10,000'],
                       ['Above 1,000 kW', '₹ 25,000 per MW'],
                     ].map(([capacity, charge]) => (
-                      <tr key={capacity} className="border-b border-slate-100 last:border-b-0">
+                      <tr key={capacity} className="border-b border-slate-200 last:border-b-0">
                         <th scope="row" className="px-3 py-2 font-medium">{capacity}</th>
                         <td className="px-3 py-2 text-right font-bold text-slate-900">{charge}</td>
                       </tr>
@@ -602,7 +631,7 @@ export function SolarEstimation() {
                 setShowLeadForm(true)
                 setWhatsAppFallbackUrl(null)
               }}
-              className="mt-5 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-full border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-5 py-4 text-base font-extrabold text-white shadow-sm transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
+              className="mt-5 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-full border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-5 py-4 text-base font-extrabold text-white shadow-sm transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
             >
               {calculatorText.quoteCta}
               <span aria-hidden="true">→</span>
@@ -617,7 +646,7 @@ export function SolarEstimation() {
       {showLeadForm && (
         <section
           id={leadFormId}
-          className="mx-auto mt-8 grid max-w-7xl overflow-hidden rounded-2xl border border-white/10 bg-white shadow-sm lg:grid-cols-[0.85fr_1.15fr]"
+          className="mx-auto mt-8 grid max-w-7xl overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm lg:grid-cols-[0.85fr_1.15fr]"
           aria-labelledby={`${leadFormId}-title`}
         >
           <div className="bg-linear-to-r from-[#137c63] to-[#20A44A] p-6 text-white sm:p-8">
@@ -669,7 +698,7 @@ export function SolarEstimation() {
                   value={leadNameValue}
                   onChange={(event) => setLeadNameValue(event.target.value)}
                   placeholder={e.leadNamePlaceholder}
-                  className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
+                  className="w-full rounded-lg border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
                 />
               </label>
               <label className="block">
@@ -686,7 +715,7 @@ export function SolarEstimation() {
                   value={leadPhoneValue}
                   onChange={(event) => setLeadPhoneValue(event.target.value)}
                   placeholder={e.leadMobilePlaceholder}
-                  className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
+                  className="w-full rounded-lg border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
                 />
               </label>
               <label className="block">
@@ -701,7 +730,7 @@ export function SolarEstimation() {
                   maxLength={6}
                   required
                   placeholder={e.leadPinCodePlaceholder}
-                  className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
+                  className="w-full rounded-lg border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
                 />
               </label>
               <label className="block">
@@ -712,7 +741,7 @@ export function SolarEstimation() {
                   required
                   value={leadPropertyIndex}
                   onChange={(event) => setLeadPropertyIndex(event.target.value === '' ? '' : Number(event.target.value))}
-                  className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
+                  className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
                 >
                   <option value="" disabled>{e.propertyTypePlaceholder}</option>
                   {e.propertyTypeOptions.map((propertyType, index) => (
@@ -754,7 +783,7 @@ export function SolarEstimation() {
       )}
 
       <section
-        className="mx-auto mt-10 max-w-7xl rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
+        className="mx-auto mt-10 max-w-7xl rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
         aria-labelledby={`${leadFormId}-gst-title`}
       >
         <div className="flex items-start justify-between gap-4">
@@ -783,23 +812,23 @@ export function SolarEstimation() {
         </p>
 
         <div className="mt-6 grid gap-4 lg:grid-cols-3">
-          <article className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <article className="rounded-xl border border-slate-200 bg-slate-50 p-5">
             <h3 className="font-bold text-slate-900">{solarGstGuide.componentsTitle}</h3>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-600">
               {solarGstGuide.components.map((point) => <li key={point}>{point}</li>)}
             </ul>
           </article>
-          <article className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <article className="rounded-xl border border-slate-200 bg-slate-50 p-5">
             <h3 className="font-bold text-slate-900">{solarGstGuide.billingTitle}</h3>
             <p className="mt-3 text-sm leading-6 text-slate-600">{solarGstGuide.billing}</p>
           </article>
-          <article className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <article className="rounded-xl border border-slate-200 bg-slate-50 p-5">
             <h3 className="font-bold text-slate-900">{solarGstGuide.itcTitle}</h3>
             <p className="mt-3 text-sm leading-6 text-slate-600">{solarGstGuide.itc}</p>
           </article>
         </div>
 
-        <p className="mt-5 rounded-2xl bg-emerald-50 p-4 text-sm leading-6 text-emerald-950">
+        <p className="mt-5 rounded-xl bg-emerald-50 p-4 text-sm leading-6 text-emerald-950">
           {solarGstGuide.quoteTip}
         </p>
         <p className="mt-4 text-xs leading-5 text-slate-500">{solarGstGuide.disclaimer}</p>

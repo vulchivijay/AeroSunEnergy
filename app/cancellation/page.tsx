@@ -12,7 +12,7 @@ export default async function CancellationRefundPage() {
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_82%_12%,rgba(251,191,36,0.2),transparent_36%),radial-gradient(ellipse_at_12%_90%,rgba(14,165,233,0.2),transparent_38%)]" />
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] text-sky-100">
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] text-sky-100">
               <span className="h-1.5 w-1.5 rounded-full bg-amber-300" />
               {content.badge}
             </div>
@@ -23,7 +23,7 @@ export default async function CancellationRefundPage() {
               {content.description}
             </p>
           </div>
-          <div className="mt-9 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/15 pt-5 text-xs font-bold uppercase tracking-[0.16em] text-sky-100/80 sm:text-sm">
+          <div className="mt-9 flex flex-wrap gap-x-8 gap-y-3 border-t border-slate-700 pt-5 text-xs font-bold uppercase tracking-[0.16em] text-sky-100/80 sm:text-sm">
             {content.headerTopics.map((topic) => <span key={topic}>{topic}</span>)}
           </div>
         </div>
@@ -32,7 +32,7 @@ export default async function CancellationRefundPage() {
       <TrustRibbon />
 
       <div className="mx-auto max-w-5xl space-y-6 px-4 py-10 sm:px-6 sm:py-14 lg:px-10">
-        <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+        <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
           <p className="text-sm leading-8 text-slate-700">{content.intro}</p>
           <div className="mt-6 rounded-xl border-l-4 border-emerald-700 bg-[#eaf2e9] p-5">
             <h2 className="text-sm font-black uppercase tracking-[0.16em] text-emerald-900">{content.commitmentTitle}</h2>
@@ -40,7 +40,7 @@ export default async function CancellationRefundPage() {
           </div>
         </section>
 
-        <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+        <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
           <h2 className="text-xl font-black text-slate-950 sm:text-2xl">{content.definitionsTitle}</h2>
           <dl className="mt-5 grid gap-3 sm:grid-cols-2">
             {content.definitions.map((item) => (
@@ -52,7 +52,7 @@ export default async function CancellationRefundPage() {
           </dl>
         </section>
 
-        <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+        <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
           <h2 className="text-xl font-black text-slate-950 sm:text-2xl">{content.policyTitle}</h2>
 
           <div className="mt-6 rounded-xl border border-amber-200 bg-amber-50/70 p-5">
@@ -85,14 +85,14 @@ export default async function CancellationRefundPage() {
           </div>
         </section>
 
-        <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+        <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
           <h2 className="text-xl font-black text-slate-950 sm:text-2xl">{content.refundProcessTitle}</h2>
           <ol className="mt-5 list-decimal space-y-3 pl-5 text-sm leading-7 text-slate-700">
             {content.refundProcess.map((item) => <li key={item}>{item}</li>)}
           </ol>
         </section>
 
-        <section className="rounded-2xl bg-[#102a43] p-6 text-white shadow-sm sm:p-8">
+        <section className="rounded-xl bg-[#102a43] p-6 text-white shadow-sm sm:p-8">
           <h2 className="text-xl font-black sm:text-2xl">{content.contactTitle}</h2>
           <p className="mt-2 text-sm leading-7 text-slate-200">{content.contactIntro}</p>
           <dl className="mt-5 grid gap-4 text-sm sm:grid-cols-2">
@@ -113,7 +113,7 @@ export default async function CancellationRefundPage() {
               <dd className="mt-1 leading-6">{content.address}</dd>
             </div>
           </dl>
-          <p className="mt-6 border-t border-white/15 pt-5 text-sm text-slate-200">
+          <p className="mt-6 border-t border-slate-700 pt-5 text-sm text-slate-200">
             {content.moreQuestions}{' '}
             <Link href="/contact" className="font-bold text-amber-200 underline underline-offset-4 hover:text-white">
               {content.contactLink}

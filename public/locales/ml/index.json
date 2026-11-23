@@ -4504,6 +4504,18 @@
         "text": "നവീകരണാധിഷ്ഠിത പുനരുപയോഗ ഊർജ സംരംഭകത്വത്തിനും വിപുലീകരണത്തിനുമുള്ള ഔദ്യോഗിക അംഗീകാരം."
       }
     ],
+    "trustRibbon": {
+      "eyebrow": "AeroSun വാഗ്ദാനം",
+      "titleFirst": "സൗരോർജം, വ്യക്തമായ ആസൂത്രണത്തോടെ.",
+      "titleSecond": "ഓരോ ഘട്ടത്തിലും.",
+      "description": "ആദ്യ കൂടിയാലോചന മുതൽ സ്ഥാപനം കഴിഞ്ഞുള്ള സേവനം വരെയുള്ള സുതാര്യവും വിശ്വസനീയവുമായ സൗരോർജ അനുഭവത്തിനായി AeroSun Energy-യെ വിശ്വസിക്കൂ. വ്യക്തമായ ക്വട്ടേഷനുകൾ നൽകുകയും സിസ്റ്റം തിരഞ്ഞെടുപ്പുകൾ വിശദീകരിക്കുകയും ഓരോ ഘട്ടത്തിലും നിങ്ങളെ അറിയിക്കുകയും ചെയ്യുന്നു—അപ്രതീക്ഷിത ചെലവുകളോ ആശ്ചര്യങ്ങളോ ഇല്ലാതെ ആത്മവിശ്വാസത്തോടെ തീരുമാനിക്കാം.",
+      "steps": {
+        "consultation": "കൂടിയാലോചന",
+        "quotation": "വ്യക്തമായ ക്വട്ടേഷൻ",
+        "system": "സിസ്റ്റം തിരഞ്ഞെടുപ്പ്",
+        "installation": "സ്ഥാപനവും പിന്തുണയും"
+      }
+    },
     "trustSections": {
       "company": {
         "eyebrow": "യഥാർത്ഥ ടീം, വ്യക്തമായ വിവരങ്ങൾ",
@@ -7713,6 +7725,10 @@
       "instagram": {
         "label": "പുതിയ ടാബിൽ AeroSun Energyയെ Instagram-ൽ പിന്തുടരുക",
         "title": "പുതിയ ടാബിൽ AeroSun Energyയുടെ Instagram പേജ് തുറക്കുക"
+      },
+      "youtube": {
+        "label": "പുതിയ ടാബിൽ YouTube-ൽ AeroSun Energy സബ്സ്ക്രൈബ് ചെയ്യുക",
+        "title": "പുതിയ ടാബിൽ AeroSun Energyയുടെ YouTube ചാനൽ തുറക്കുക"
       }
     },
     "solutions": [
@@ -12620,6 +12636,12 @@
           "platform": "instagram",
           "dataSocial": "instagram",
           "iconId": "instagram"
+        },
+        {
+          "href": "https://www.youtube.com/@vulchivijayakumar",
+          "platform": "youtube",
+          "dataSocial": "youtube",
+          "iconId": "youtube"
         }
       ]
     },

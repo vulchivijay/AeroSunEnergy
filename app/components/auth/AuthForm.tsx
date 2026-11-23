@@ -76,7 +76,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
       <div className="absolute -left-24 top-8 -z-10 h-64 w-64 rounded-full bg-emerald-200/50 blur-3xl" aria-hidden="true" />
       <div className="absolute -right-20 bottom-0 -z-10 h-72 w-72 rounded-full bg-amber-100/70 blur-3xl" aria-hidden="true" />
 
-      <section className="w-full max-w-md rounded-2xl border border-emerald-950/10 bg-gradient-to-br from-white to-[#f1f2f6] p-6 shadow-sm sm:p-8">
+      <section className="w-full max-w-md rounded-xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-6 shadow-sm sm:p-8">
         <div className="mb-8">
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-emerald-700">{auth.brand}</p>
           <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
@@ -93,7 +93,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
               {auth.fullName}
               <input
                 autoComplete="name"
-                className="mt-2 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10"
+                className="mt-2 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10"
                 maxLength={100}
                 minLength={2}
                 name="name"
@@ -107,7 +107,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
             {auth.emailAddress}
             <input
               autoComplete="email"
-              className="mt-2 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10"
+              className="mt-2 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10"
               maxLength={254}
               name="email"
               placeholder={auth.emailPlaceholder}
@@ -120,7 +120,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
             {auth.password}
             <input
               autoComplete={isSignup ? 'new-password' : 'current-password'}
-              className="mt-2 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10"
+              className="mt-2 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10"
               maxLength={128}
               minLength={isSignup ? 12 : 1}
               name="password"
@@ -135,7 +135,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
               {auth.confirmPassword}
               <input
                 autoComplete="new-password"
-                className="mt-2 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10"
+                className="mt-2 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10"
                 maxLength={128}
                 minLength={12}
                 name="confirmPassword"

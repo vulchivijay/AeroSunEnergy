@@ -68,9 +68,9 @@ function renderBlocks(blocks: DocumentaryBlock[]) {
 
     if (block.type === 'table') {
       return (
-        <div key={`table-${index}`} className="my-7 overflow-hidden rounded-2xl border border-emerald-100">
+        <div key={`table-${index}`} className="my-7 overflow-hidden rounded-xl border border-slate-200">
           <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-emerald-100 text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
+            <table className="min-w-full divide-y divide-emerald-100 text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
               <thead className="bg-amber-700 font-bold uppercase tracking-wider text-white">
                 <tr>
                   {block.headers.map((header, headerIndex) => (
@@ -109,10 +109,10 @@ export default async function SaveEarthPage() {
     <main className="min-h-screen bg-[#f7f7f2] text-slate-800">
       <header className="relative isolate overflow-hidden bg-[linear-gradient(135deg,#78350f_0%,#b45309_55%,#7c2d12_100%)] text-white">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_78%_12%,rgba(251,191,36,0.2),transparent_38%),radial-gradient(ellipse_at_12%_95%,rgba(249,115,22,0.15),transparent_36%)]" />
-        <div className="absolute -right-36 top-12 -z-10 h-[30rem] w-[30rem] rounded-full border border-white/10 sm:right-[-8rem]">
-          <div className="absolute inset-8 rounded-full border border-white/10" />
-          <div className="absolute inset-16 rounded-full border border-white/10" />
-          <div className="absolute inset-24 rounded-full border border-white/10" />
+        <div className="absolute -right-36 top-12 -z-10 h-[30rem] w-[30rem] rounded-full border border-slate-700 sm:right-[-8rem]">
+          <div className="absolute inset-8 rounded-full border border-slate-700" />
+          <div className="absolute inset-16 rounded-full border border-slate-700" />
+          <div className="absolute inset-24 rounded-full border border-slate-700" />
         </div>
 
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:px-10">
@@ -139,7 +139,7 @@ export default async function SaveEarthPage() {
               </a>
               <Link
                 href="/contact"
-                className="rounded-full border border-white/25 px-6 py-3 text-sm font-bold text-white transition hover:border-amber-200/60 hover:bg-white/10"
+                className="rounded-full border border-slate-700 px-6 py-3 text-sm font-bold text-white transition hover:border-amber-200/60 hover:bg-white/10"
               >
                 {content.connectWithAeroSunEnergy}
               </Link>
@@ -147,8 +147,8 @@ export default async function SaveEarthPage() {
           </div>
 
           <div className="relative mx-auto w-full max-w-sm lg:ml-auto">
-            <div className="rounded-2xl border border-white/15 bg-white/[0.08] p-5 shadow-sm shadow-black/20">
-              <div className="flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-2xl bg-[linear-gradient(155deg,#7c2d12_0%,#9a3412_58%,#78350f_100%)] p-7">
+            <div className="rounded-xl border border-slate-700 bg-white/[0.08] p-5 shadow-sm ">
+              <div className="flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-xl bg-[linear-gradient(155deg,#7c2d12_0%,#9a3412_58%,#78350f_100%)] p-7">
                 <div className="flex items-center justify-between text-[12px] font-bold uppercase tracking-[0.22em] text-amber-100">
                   <span>{content.fieldNotes}</span>
                   <span className="h-2 w-2 rounded-full bg-amber-300" />
@@ -161,7 +161,7 @@ export default async function SaveEarthPage() {
                     {content.everyActionMatters}
                   </p>
                 </div>
-                <div className="flex items-end justify-between border-t border-white/15 pt-5">
+                <div className="flex items-end justify-between border-t border-slate-700 pt-5">
                   <span className="max-w-[12rem] text-md leading-5 text-amber-100/90">
                     {content.tagline}
                   </span>
@@ -175,7 +175,7 @@ export default async function SaveEarthPage() {
           </div>
         </div>
 
-        <div className="border-t border-white/10">
+        <div className="border-t border-slate-700">
           <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-4 py-5 text-[12px] font-bold uppercase tracking-[0.2em] text-amber-100/80 sm:px-6 lg:px-10">
             {content.highlights.map((highlight) => <span key={highlight}>{highlight}</span>)}
           </div>
@@ -188,10 +188,10 @@ export default async function SaveEarthPage() {
         <aside className="lg:sticky lg:top-28 lg:self-start">
           <nav
             aria-label={content.contentsAriaLabel}
-            className="overflow-hidden rounded-2xl border border-slate-200 bg-white"
+            className="overflow-hidden rounded-xl border border-slate-200 bg-white"
           >
-            <div className="border-b border-slate-100 px-5 py-5">
-              <p className="inline-flex w-fit rounded-full border border-[#137c63]/15 bg-[#eaf2e9] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
+            <div className="border-b border-slate-200 px-5 py-5">
+              <p className="inline-flex w-fit rounded-full border border-slate-200 bg-[#eaf2e9] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
                 {content.navigateGuide}
               </p>
               <p className="mt-1 text-sm font-semibold text-slate-900">{content.contentsTitle}</p>
@@ -220,7 +220,7 @@ export default async function SaveEarthPage() {
         <article className="min-w-0 space-y-8">
           <section
             id="documentary"
-            className="scroll-mt-28 overflow-hidden rounded-2xl border border-amber-200/20 bg-gradient-to-br from-white to-[#f1f2f6] p-6 text-slate-900 shadow-sm sm:p-8"
+            className="scroll-mt-28 overflow-hidden rounded-xl border border-amber-200/20 bg-gradient-to-br from-white to-[#f1f2f6] p-6 text-slate-900 shadow-sm sm:p-8"
           >
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-8 bg-amber-300" />
@@ -235,10 +235,10 @@ export default async function SaveEarthPage() {
             <section
               key={section.heading.id}
               id={section.heading.id}
-              className={`scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200 ${index % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}
+              className={`scroll-mt-28 overflow-hidden rounded-xl border border-slate-200 ${index % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}
             >
               <div
-                className={`border-b border-slate-100 px-6 py-7 sm:px-9 sm:py-8 ${
+                className={`border-b border-slate-200 px-6 py-7 sm:px-9 sm:py-8 ${
                   index % 2 === 0 ? 'bg-slate-50' : 'bg-[#f8fafc]'
                 }`}
               >
@@ -259,10 +259,10 @@ export default async function SaveEarthPage() {
             </section>
           ))}
 
-          <footer className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
+          <footer className="rounded-xl border border-slate-200 bg-white p-6 sm:p-8">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="inline-flex w-fit rounded-full border border-[#137c63]/15 bg-[#eaf2e9] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
+                <p className="inline-flex w-fit rounded-full border border-slate-200 bg-[#eaf2e9] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
                   {content.footerBadge}
                 </p>
                 <p className="mt-2 max-w-xl text-lg font-bold leading-7 text-slate-900">

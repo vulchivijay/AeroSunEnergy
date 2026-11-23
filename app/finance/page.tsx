@@ -29,7 +29,7 @@ export default async function FinancePage() {
     <main className="min-h-screen bg-slate-50 text-slate-900">
       <section className="bg-gradient-to-br from-slate-950 via-sky-950 to-blue-900 px-4 py-12 text-white sm:px-6 sm:py-16 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold text-sky-100">
+          <div className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-white/10 px-4 py-2 text-sm font-bold text-sky-100">
             <Landmark className="h-4 w-4" aria-hidden="true" />
             {page.eyebrow}
           </div>
@@ -53,14 +53,14 @@ export default async function FinancePage() {
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-10">
         <div className="mb-6 grid gap-4 sm:grid-cols-2">
           {page.loanBands.map((band) => (
-            <article key={band.title} className="rounded-2xl border border-sky-100 bg-white p-5 shadow-sm sm:p-6">
+            <article key={band.title} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
               <p className="text-sm font-bold uppercase tracking-[0.14em] text-sky-800">{band.title}</p>
               <p className="mt-2 text-2xl font-black text-slate-950"><DigitalNumber value={band.amount} /></p>
             </article>
           ))}
         </div>
 
-        <section id="loan-comparison" aria-labelledby="loan-comparison-title" className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <section id="loan-comparison" aria-labelledby="loan-comparison-title" className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
           <div className="flex items-start gap-3 border-b border-slate-200 p-5 sm:p-6">
             <BadgeIndianRupee className="mt-1 h-6 w-6 shrink-0 text-sky-700" aria-hidden="true" />
             <div>
@@ -70,7 +70,7 @@ export default async function FinancePage() {
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[900px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
+            <table className="w-full min-w-[900px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
               <thead className="bg-amber-700 font-bold text-white">
                 <tr>
                   <th scope="col" className="w-16 border border-slate-300 px-4 py-3">{page.headers.number}</th>
@@ -102,11 +102,11 @@ export default async function FinancePage() {
         <ConsumerApplicationJourney />
 
         <section id="loan-application" className="mt-6 grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5 sm:p-6">
+          <div className="rounded-xl border border-amber-200 bg-amber-50 p-5 sm:p-6">
             <h2 className="text-lg font-black text-amber-950">{page.disclaimerTitle}</h2>
             <p className="mt-2 text-sm leading-6 text-amber-950/85">{page.disclaimer}</p>
           </div>
-          <div className="rounded-2xl bg-slate-950 p-5 text-white sm:p-6">
+          <div className="rounded-xl bg-slate-950 p-5 text-white sm:p-6">
             <h2 className="text-lg font-black">{page.applicationTitle}</h2>
             <p className="mt-2 text-sm leading-6 text-slate-300">{page.applicationDescription}</p>
             <Link
@@ -162,7 +162,7 @@ async function ConsumerApplicationJourney() {
     <section
       id="consumer-application-journey"
       aria-labelledby="consumer-application-journey-title"
-      className="mt-8 overflow-hidden rounded-3xl border border-sky-100 bg-white px-4 py-8 shadow-sm sm:px-7 sm:py-10"
+      className="mt-8 overflow-hidden rounded-xl border border-slate-200 bg-white px-4 py-8 shadow-sm sm:px-7 sm:py-10"
     >
       <header className="text-center">
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-sky-800">{journey.eyebrow}</p>
@@ -171,7 +171,7 @@ async function ConsumerApplicationJourney() {
         </h2>
       </header>
 
-      <ul className="mx-auto mt-7 grid max-w-5xl grid-cols-2 overflow-hidden rounded-2xl bg-slate-50 p-2 sm:grid-cols-4">
+      <ul className="mx-auto mt-7 grid max-w-5xl grid-cols-2 overflow-hidden rounded-xl bg-slate-50 p-2 sm:grid-cols-4">
         {journey.stakeholders.map((stakeholder, index) => {
           const Icon = stakeholderIcons[index] ?? Building2
           return (
@@ -193,7 +193,7 @@ async function ConsumerApplicationJourney() {
           href="https://pmsuryaghar.gov.in/"
           target="_blank"
           rel="noreferrer"
-          className="inline-flex min-h-12 items-center justify-center rounded-xl bg-sky-800 px-6 py-3 text-sm font-bold text-white transition hover:bg-sky-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-800"
+          className="inline-flex min-h-12 items-center justify-center rounded-lg bg-sky-800 px-6 py-3 text-sm font-bold text-white transition hover:bg-sky-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-800"
         >
           {journey.applyLabel}
         </a>
@@ -204,7 +204,7 @@ async function ConsumerApplicationJourney() {
           const Icon = journeyIcons[index] ?? FileText
           const markerColor = markerColors[index] ?? 'bg-sky-500'
           return (
-            <li key={step.title} className="relative rounded-2xl border border-slate-200 bg-slate-50/70 p-4 pl-16">
+            <li key={step.title} className="relative rounded-xl border border-slate-200 bg-slate-50/70 p-4 pl-16">
               <span className={`absolute left-4 top-4 flex h-9 w-9 items-center justify-center rounded-full text-sm font-black text-white ${markerColor}`}>
                 {index + 1}
               </span>

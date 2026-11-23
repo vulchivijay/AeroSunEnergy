@@ -19,9 +19,9 @@ export default function TirupatiEnergySection({
   return (
     <section className={`${backgroundClassName} px-4 py-12 sm:px-6 lg:px-10 lg:py-16 sm:py-14`}>
       <div className="mx-auto max-w-7xl">
-        <div className="relative rounded-2xl border border-[#cfe0d1] bg-[#eaf2e9] p-6 sm:p-8 lg:px-12 lg:py-10">
+        <div className="relative rounded-xl border border-slate-200 bg-[#eaf2e9] p-6 sm:p-8 lg:px-12 lg:py-10">
           <div className="max-w-4xl pt-20 sm:pt-32 lg:pt-0 lg:pr-52">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[#087a61]/15 bg-white/80 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#087a61] sm:text-xs">
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#087a61] sm:text-xs">
               {content.eyebrow}
             </p>
 
@@ -41,10 +41,10 @@ export default function TirupatiEnergySection({
             <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-[#ff6b6b] text-[#183153] shadow-sm sm:h-16 sm:w-16 lg:h-20 lg:w-20">
               <Sun className="h-6 w-6 motion-safe:animate-[spin_20s_linear_infinite] motion-reduce:animate-none sm:h-9 sm:w-9 lg:h-10 lg:w-10" strokeWidth={1.5} />
             </div>
-            <span className="absolute right-1 top-2 flex h-6 w-6 items-center justify-center rounded-full border border-white/10 bg-[#254d70] text-[#9bf6ff] sm:right-2 sm:top-3 sm:h-8 sm:w-8">
+            <span className="absolute right-1 top-2 flex h-6 w-6 items-center justify-center rounded-full border border-slate-700 bg-[#254d70] text-[#9bf6ff] sm:right-2 sm:top-3 sm:h-8 sm:w-8">
               <Wind className="h-3 w-3 sm:h-4 sm:w-4" />
             </span>
-            <span className="absolute bottom-2 left-0 flex h-6 w-6 items-center justify-center rounded-full border border-white/10 bg-[#7b2cbf] text-[#ffd6a5] sm:bottom-3 sm:left-1 sm:h-8 sm:w-8">
+            <span className="absolute bottom-2 left-0 flex h-6 w-6 items-center justify-center rounded-full border border-slate-700 bg-[#7b2cbf] text-[#ffd6a5] sm:bottom-3 sm:left-1 sm:h-8 sm:w-8">
               <Zap className="h-3 w-3 sm:h-4 sm:w-4" />
             </span>
           </div>

@@ -1,10 +1,15 @@
+'use client'
+
+import { useLocale } from '@/lib/LocaleContext'
+import WindTurbineIllustration from './WindTurbineIllustration'
+
 type StepKind = 'consultation' | 'quotation' | 'system' | 'installation'
 
-const steps: { number: string; title: string; kind: StepKind }[] = [
-  { number: '1', title: 'Consultation', kind: 'consultation' },
-  { number: '2', title: 'Clear quotation', kind: 'quotation' },
-  { number: '3', title: 'System options explained', kind: 'system' },
-  { number: '4', title: 'Installation and beyond', kind: 'installation' },
+const steps: { number: string; kind: StepKind }[] = [
+  { number: '1', kind: 'consultation' },
+  { number: '2', kind: 'quotation' },
+  { number: '3', kind: 'system' },
+  { number: '4', kind: 'installation' },
 ]
 
 function StepIcon({ kind }: { kind: StepKind }) {
@@ -99,36 +104,17 @@ function EnergyLandscape() {
       />
       <circle cx="1320" cy="264" r="82" fill="#ffc85e" fillOpacity=".62" filter="url(#trust-sun-aura)" />
       <circle cx="1320" cy="264" r="76" fill="url(#trust-sun-disc)" />
-      <path d="M1535 205v175" stroke="#fff5df" strokeOpacity=".95" strokeWidth="4" strokeLinecap="round" />
-      <g
-        className="motion-safe:animate-spin"
-        style={{
-          transformBox: 'view-box',
-          transformOrigin: '1535px 205px',
-          animationDuration: '12s',
-        }}
-      >
-        <path d="M1535 205v-42m0 42-36 21m36-21 36 21" stroke="#fff5df" strokeOpacity=".96" strokeWidth="4" strokeLinecap="round" />
-        <path d="M1535 205v-42m0 42-36 21m36-21 36 21" stroke="#ffd98b" strokeOpacity=".58" strokeWidth="1.5" strokeLinecap="round" />
-      </g>
-      <circle cx="1535" cy="205" r="6" fill="#fff5df" />
-      <path d="M0 267c150-35 270 19 414 2 135-16 223-96 368-73 131 21 211 85 340 55 176-42 283-2 478 10v169H0z" fill="#39266f" fillOpacity=".24" />
-      <path d="M0 316c166-54 300-28 456-3 158 25 263-58 401-37 182 28 253 49 405 6 144-41 231-32 338-4v152H0z" fill="#101b60" fillOpacity=".34" />
-      <path d="M0 358c190-35 332-49 495-8 149 38 258-15 380-7 160 11 254 39 399 6 119-27 226-51 326-30v111H0z" fill="#07143f" fillOpacity=".42" />
       <path
-        className="motion-safe:animate-spin"
-        style={{
-          transformBox: 'view-box',
-          transformOrigin: '1320px 264px',
-          animationDuration: '28s',
-        }}
         d="M1320 176v-44M1320 352v44M1232 264h-44M1408 264h44M1258 202l-31-31M1382 202l31-31M1258 326l-31 31M1382 326l31 31"
         stroke="#fff0a5"
         strokeOpacity=".96"
         strokeWidth="4"
         strokeLinecap="round"
       />
-
+      <path d="M0 267c150-35 270 19 414 2 135-16 223-96 368-73 131 21 211 85 340 55 176-42 283-2 478 10v169H0z" fill="#39266f" fillOpacity=".24" />
+      <path d="M0 316c166-54 300-28 456-3 158 25 263-58 401-37 182 28 253 49 405 6 144-41 231-32 338-4v152H0z" fill="#101b60" fillOpacity=".34" />
+      <path d="M0 358c190-35 332-49 495-8 149 38 258-15 380-7 160 11 254 39 399 6 119-27 226-51 326-30v111H0z" fill="#07143f" fillOpacity=".42" />
+      <WindTurbineIllustration x={1450} y={150} width={100} height={280} />
       <path d="M980 360 1318 310 1458 420H980Z" fill="#101d68" stroke="url(#trust-solar-glow)" strokeWidth="3" />
       <g clipPath="url(#trust-solar-panel-clip)" stroke="#b8e0ff" strokeOpacity=".76" strokeWidth="2">
         <path d="M1048 350 1076 420m39-80 56 80m12-90 84 90m-17-100 112 100m-61-108 144 108M980 375 1353 338M980 390 1388 365M980 405 1423 393" />
@@ -139,6 +125,9 @@ function EnergyLandscape() {
 }
 
 export function TrustRibbon({ className = '' }: { className?: string } = {}) {
+  const { t } = useLocale()
+  const content = t.home.trustRibbon
+
   return (
     <section
       aria-labelledby="aerosun-banner-title"
@@ -163,23 +152,23 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
 
         <div className="relative z-10 grid min-h-[900px] gap-8 px-6 py-9 sm:min-h-[760px] sm:px-10 sm:py-12 md:absolute md:inset-0 md:min-h-0 md:grid-cols-[48.5%_49.5%] md:items-center md:gap-0 md:px-[3.3%] md:py-[2.5%] lg:px-[3.5%]">
           <div className="max-w-[620px] self-center md:-translate-y-6">
-            <div className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.25em] text-sky-100 shadow-lg shadow-blue-950/10 backdrop-blur-md sm:text-xs">
-              <span className="h-2 w-2 rounded-full bg-amber-300 shadow-[0_0_14px_rgba(255,211,109,0.9)]" />
-              The AeroSun Promise
+            <div className="inline-flex items-center gap-3 rounded-full border border-slate-700 bg-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.25em] text-sky-100 shadow-md  backdrop-blur-md sm:text-xs">
+              <span className="h-2 w-2 rounded-full bg-amber-300 " />
+              {content.eyebrow}
             </div>
 
             <h1
               id="aerosun-banner-title"
               className="mt-3 max-w-[650px] font-serif text-[clamp(1.7rem,3.5vw,4.5rem)] font-bold leading-[.99] tracking-[-0.045em] text-white md:mt-4"
             >
-              <span className="block whitespace-nowrap">Solar, clearly planned.</span>
+              <span className="block whitespace-nowrap">{content.titleFirst}</span>
               <span className="mt-1 block whitespace-nowrap bg-gradient-to-r from-amber-100 via-orange-200 to-rose-200 bg-clip-text italic text-transparent">
-                Every step of the way.
+                {content.titleSecond}
               </span>
             </h1>
 
             <p className="mt-3 max-w-[590px] text-[13px] leading-[1.45] tracking-[0.015em] text-blue-50/95 sm:text-sm md:mt-3 md:text-[clamp(11px,1vw,15px)] lg:text-[clamp(12px,1.05vw,17px)]">
-              Trust AeroSun Energy for a transparent, dependable solar experience from your first consultation through installation and beyond. We provide clear quotations, explain your system options, and keep you informed at every stage—so you can make confident decisions with no unexpected costs or surprises.
+              {content.description}
             </p>
           </div>
 
@@ -209,7 +198,7 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
             </svg>
 
             <div
-              className="absolute left-1/2 top-0 z-20 grid h-[68px] w-[68px] -translate-x-1/2 place-items-center rounded-full border border-amber-200/20 bg-white/[0.06] shadow-[0_0_30px_rgba(255,203,103,.18)] sm:h-[82px] sm:w-[82px] md:left-[7%] md:top-[1%] md:h-[86px] md:w-[86px] md:translate-x-0"
+              className="absolute left-1/2 top-0 z-20 grid h-[68px] w-[68px] -translate-x-1/2 place-items-center rounded-full border border-amber-200/20 bg-white/[0.06]  sm:h-[82px] sm:w-[82px] md:left-[7%] md:top-[1%] md:h-[86px] md:w-[86px] md:translate-x-0"
               aria-hidden="true"
             >
               <span className="absolute inset-2 rounded-full border border-sky-200/20" />
@@ -233,21 +222,21 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
                 <article
                   key={step.number}
                   className={[
-                    'relative flex min-h-[128px] flex-col justify-between rounded-[1.1rem] border border-white/30 bg-[#281f69]/50 p-3 shadow-[0_16px_38px_rgba(3,10,48,.22)] backdrop-blur-xl sm:min-h-[140px] sm:p-4 md:absolute md:h-[82px] md:min-h-0 md:w-[22.2%] md:rounded-[1rem] md:p-2 lg:h-[clamp(82px,8vw,112px)] lg:p-3',
+                    'relative flex min-h-[128px] flex-col justify-between rounded-xl border border-slate-700 bg-[#281f69]/50 p-3 shadow-md backdrop-blur-xl sm:min-h-[140px] sm:p-4 md:absolute md:h-[82px] md:min-h-0 md:w-[22.2%] md:p-2 lg:h-[clamp(82px,8vw,112px)] lg:p-3',
                     index === 0 ? 'md:left-0 md:top-[42%]' : '',
                     index === 1 ? 'md:left-[25%] md:top-[32%]' : '',
                     index === 2 ? 'md:left-[50%] md:top-[21%]' : '',
                     index === 3 ? 'md:left-[75%] md:top-[9%]' : '',
                   ].join(' ')}
                 >
-                  <span className="absolute -top-3 left-1/2 z-10 grid h-7 w-7 -translate-x-1/2 place-items-center rounded-full border border-amber-100/70 bg-[#5b3e99] text-xs font-semibold text-amber-50 shadow-[0_0_18px_rgba(255,203,103,.35)]">
+                  <span className="absolute -top-3 left-1/2 z-10 grid h-7 w-7 -translate-x-1/2 place-items-center rounded-full border border-amber-100/70 bg-[#5b3e99] text-xs font-semibold text-amber-50 ">
                     {step.number}
                   </span>
                   <div className="flex flex-1 items-center justify-center pt-2">
                     <StepIcon kind={step.kind} />
                   </div>
                   <h2 className="mx-auto mt-1 max-w-[10rem] text-center text-[11px] font-semibold leading-tight text-white sm:text-xs md:text-[clamp(9px,.8vw,13px)]">
-                    {step.title}
+                    {content.steps[step.kind]}
                   </h2>
                 </article>
               ))}

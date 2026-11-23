@@ -62,14 +62,14 @@ export default function InstallationChecklistPage() {
 
 	return (
 		<main className="min-h-screen bg-[#f7f7f2] text-slate-800">
-			<header className="relative isolate overflow-hidden border-b border-white/25 bg-linear-to-br from-slate-950/75 via-amber-950/60 to-sky-950/75 text-white shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/10">
+			<header className="relative isolate overflow-hidden border-b border-slate-700 bg-linear-to-br from-slate-950/75 via-amber-950/60 to-sky-950/75 text-white shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/10">
 				<div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_18%_90%,rgba(245,158,11,0.22),transparent_38%),radial-gradient(ellipse_at_88%_10%,rgba(14,165,233,0.2),transparent_34%)]" />
 				<div className="absolute -right-20 top-[-12rem] -z-10 h-[35rem] w-[35rem] rounded-full border border-amber-100/10">
 					<div className="absolute inset-10 rounded-full border border-amber-100/10" />
 					<div className="absolute inset-20 rounded-full border border-amber-100/10" />
 					<div className="absolute inset-32 rounded-full border border-amber-100/10" />
 				</div>
-				<div className="mx-auto my-6 grid w-[calc(100%-2rem)] max-w-7xl items-center gap-10 rounded-2xl border border-white/35 bg-white/20 px-5 py-14 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:px-8 sm:py-20 lg:my-8 lg:grid-cols-[1fr_auto] lg:px-10">
+				<div className="mx-auto my-6 grid w-[calc(100%-2rem)] max-w-7xl items-center gap-10 rounded-xl border border-slate-200 bg-white/20 px-5 py-14 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:px-8 sm:py-20 lg:my-8 lg:grid-cols-[1fr_auto] lg:px-10">
 					<div className="max-w-3xl">
 						<div className="inline-flex items-center gap-2 rounded-full border border-amber-100/20 bg-white/5 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-amber-100">
 							<span className="h-1.5 w-1.5 rounded-full bg-amber-300 shadow-sm" />
@@ -83,7 +83,7 @@ export default function InstallationChecklistPage() {
 							{labels.heroDescription}
 						</p>
 					</div>
-					<div className="flex w-fit items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.06] px-5 py-4 backdrop-blur">
+					<div className="flex w-fit items-center gap-4 rounded-xl border border-slate-700 bg-white/[0.06] px-5 py-4 backdrop-blur">
 						<span className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-300/10 text-xl text-amber-200">{content.sections.length}</span>
 						<span className="text-md leading-5 text-slate-300">
 							{labels.projectLifecycle}
@@ -91,7 +91,7 @@ export default function InstallationChecklistPage() {
 						</span>
 					</div>
 				</div>
-				<div className="border-t border-white/10">
+				<div className="border-t border-slate-700">
 					<div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-amber-100/60 sm:px-8 lg:px-10">
 						{labels.quickLinks.map((item) => <span key={item}>{item}</span>)}
 					</div>
@@ -100,7 +100,7 @@ export default function InstallationChecklistPage() {
 
 			<div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-12 lg:px-10 lg:py-16">
 				<article className="min-w-0">
-					<div className="mb-8 rounded-2xl border border-amber-200/80 bg-white p-6 shadow-sm sm:p-8">
+					<div className="mb-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
 						<div className="flex items-start gap-4">
 							<span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-lg text-amber-800">i</span>
 							<div>
@@ -110,9 +110,9 @@ export default function InstallationChecklistPage() {
 								</p>
 							</div>
 						</div>
-						<div className="mt-6 grid gap-3 border-t border-slate-100 pt-5 sm:grid-cols-3">
+						<div className="mt-6 grid gap-3 border-t border-slate-200 pt-5 sm:grid-cols-3">
 							{content.summaryCards.map((card, index) => (
-								<div key={card.title} className="flex gap-3 rounded-2xl bg-[#f4f8fc] p-3">
+								<div key={card.title} className="flex gap-3 rounded-xl bg-[#f4f8fc] p-3">
 									<span className="font-mono text-md font-bold text-amber-700">0{index + 1}</span>
 									<span className="text-md leading-5 text-slate-600">
 										<strong className="block text-md text-slate-900">{card.title}</strong>
@@ -131,7 +131,7 @@ export default function InstallationChecklistPage() {
 								title={section.title}
 								titleClassName="text-lg font-extrabold tracking-tight text-slate-950"
 								contentClassName="mt-3"
-								className={`scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200/80 p-5 shadow-sm sm:p-6 ${index % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}
+								className={`scroll-mt-28 overflow-hidden rounded-xl border border-slate-200 p-5 shadow-sm sm:p-6 ${index % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}
 							>
 								<div className="flex items-start gap-4">
 									<span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-amber-200 bg-amber-50 font-mono text-md font-bold text-amber-800">
@@ -154,7 +154,7 @@ export default function InstallationChecklistPage() {
 						))}
 					</div>
 
-					<p className="mt-7 rounded-2xl border border-amber-200/80 bg-white p-5 text-md leading-7 text-slate-600">
+					<p className="mt-7 rounded-xl border border-slate-200 bg-white p-5 text-md leading-7 text-slate-600">
 						{labels.contactPromptBefore}{' '}
 						<a href="/contact" className="font-bold text-amber-800 underline decoration-amber-300 underline-offset-4 hover:text-orange-800">
 							{labels.contactLink}
@@ -164,8 +164,8 @@ export default function InstallationChecklistPage() {
 				</article>
 
 				<aside className="space-y-5 lg:self-start">
-					<nav aria-label={labels.sectionsLabel} className="overflow-hidden rounded-2xl border border-amber-200/80 bg-white shadow-sm">
-						<div className="border-b border-slate-100 px-5 py-4">
+					<nav aria-label={labels.sectionsLabel} className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+						<div className="border-b border-slate-200 px-5 py-4">
 							<p className="text-[12px] font-black uppercase tracking-[0.2em] text-amber-800">{labels.findPhase}</p>
 							<p className="mt-1 text-md font-bold text-slate-900">{labels.projectLifecycle}</p>
 						</div>
@@ -184,14 +184,14 @@ export default function InstallationChecklistPage() {
 						</ol>
 					</nav>
 
-					<section className={`rounded-2xl border border-amber-200 p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
+					<section className={`rounded-xl border border-amber-200 p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
 						<p className="text-[12px] font-black uppercase tracking-[0.2em] text-amber-800">{labels.projectEssentials}</p>
 						<ul className="mt-4 space-y-3 text-md leading-6 text-slate-700">
 							{labels.projectEssentialsItems.map((item) => <li key={item}>{item}</li>)}
 						</ul>
 					</section>
 
-					<div className="rounded-2xl border border-amber-200 bg-[#101c32] p-5 text-white shadow-sm">
+					<div className="rounded-xl border border-amber-200 bg-[#101c32] p-5 text-white shadow-sm">
 						<p className="text-[12px] font-black uppercase tracking-[0.2em] text-amber-300">{labels.submissionForm}</p>
 						<h2 className="mt-2 text-xl font-extrabold tracking-tight">{labels.recordStatus}</h2>
 						<form
@@ -210,7 +210,7 @@ export default function InstallationChecklistPage() {
 									{...register('checklistStatus')}
 									aria-invalid={Boolean(errors.checklistStatus)}
 									aria-describedby={errors.checklistStatus ? 'checklistStatus-error' : undefined}
-									className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white outline-none transition focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
+									className="w-full rounded-lg border border-slate-700 bg-white/5 px-4 py-3 text-md text-white outline-none transition focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
 								>
 									<option value="" className="text-slate-900">{labels.fields.checklistStatus.placeholder}</option>
 									{labels.statusOptions.map((option) => <option key={option} value={option} className="text-slate-900">{option}</option>)}
@@ -218,14 +218,14 @@ export default function InstallationChecklistPage() {
 								{errors.checklistStatus && <p id="checklistStatus-error" className="mt-2 text-md text-rose-300">{errors.checklistStatus.message}</p>}
 							</div>
 
-							<label className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 text-md leading-6 text-slate-200">
-								<input type="checkbox" {...register('safetyCheck')} aria-invalid={Boolean(errors.safetyCheck)} aria-describedby={errors.safetyCheck ? 'safetyCheck-error' : undefined} className="mt-1 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+							<label className="flex items-start gap-3 rounded-xl border border-slate-700 bg-white/5 p-3 text-md leading-6 text-slate-200">
+								<input type="checkbox" {...register('safetyCheck')} aria-invalid={Boolean(errors.safetyCheck)} aria-describedby={errors.safetyCheck ? 'safetyCheck-error' : undefined} className="mt-1 h-4 w-4 rounded-lg border-slate-300 text-amber-500 focus:ring-amber-400" />
 								<span>{labels.fields.safetyCheck}</span>
 							</label>
 							{errors.safetyCheck && <p id="safetyCheck-error" className="text-md text-rose-300">{errors.safetyCheck.message}</p>}
 
-							<label className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 text-md leading-6 text-slate-200">
-								<input type="checkbox" {...register('commissioningCheck')} aria-invalid={Boolean(errors.commissioningCheck)} aria-describedby={errors.commissioningCheck ? 'commissioningCheck-error' : undefined} className="mt-1 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+							<label className="flex items-start gap-3 rounded-xl border border-slate-700 bg-white/5 p-3 text-md leading-6 text-slate-200">
+								<input type="checkbox" {...register('commissioningCheck')} aria-invalid={Boolean(errors.commissioningCheck)} aria-describedby={errors.commissioningCheck ? 'commissioningCheck-error' : undefined} className="mt-1 h-4 w-4 rounded-lg border-slate-300 text-amber-500 focus:ring-amber-400" />
 								<span>{labels.fields.commissioningCheck}</span>
 							</label>
 							{errors.commissioningCheck && <p id="commissioningCheck-error" className="text-md text-rose-300">{errors.commissioningCheck.message}</p>}
@@ -239,7 +239,7 @@ export default function InstallationChecklistPage() {
 									aria-invalid={Boolean(errors.notes)}
 									aria-describedby={errors.notes ? 'notes-error' : undefined}
 									placeholder={labels.fields.notes.placeholder}
-									className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white placeholder:text-slate-300 outline-none transition focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
+									className="w-full rounded-lg border border-slate-700 bg-white/5 px-4 py-3 text-md text-white placeholder:text-slate-300 outline-none transition focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
 								/>
 								{errors.notes && <p id="notes-error" className="mt-2 text-md text-rose-300">{errors.notes.message}</p>}
 							</div>
@@ -280,7 +280,7 @@ function Field({ label, name, placeholder, type = 'text', register, error }: Fie
 			register={register}
 			error={error}
 			labelClassName="mb-2 block text-md font-semibold text-slate-100"
-			inputClassName="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-md text-white placeholder:text-slate-300 outline-none transition-all duration-200 focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
+			inputClassName="w-full rounded-lg border border-slate-700 bg-white/5 px-4 py-3 text-md text-white placeholder:text-slate-300 outline-none transition-all duration-200 focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
 			errorClassName="mt-2 text-md text-rose-300"
 		/>
 	)

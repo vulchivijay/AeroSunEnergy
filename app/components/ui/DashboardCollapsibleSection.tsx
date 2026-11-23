@@ -8,7 +8,7 @@ export function DashboardCollapsibleSection({
   children,
   className = '',
   contentClassName = '',
-  defaultExpanded = false,
+  defaultExpanded = true,
   headingLevel = 'h2',
   titleClassName = 'text-xl font-bold text-slate-900',
   eyebrow,

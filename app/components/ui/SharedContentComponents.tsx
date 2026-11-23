@@ -127,7 +127,7 @@ export function ContentInfoPanel({
   return (
     <div className={`border-t border-slate-200 pt-5 ${themeClassName}`}>
       <div className="mb-3 flex items-center gap-3">
-        <div className={`flex h-10 w-10 items-center justify-center rounded-2xl shadow-inner ${checkBackgroundClassName}`}>
+        <div className={`flex h-10 w-10 items-center justify-center rounded-xl  ${checkBackgroundClassName}`}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-4 w-4" aria-hidden="true">
             <path d="M5 13.5 9 17l10-10" strokeLinecap="round" strokeLinejoin="round" />
           </svg>

@@ -4504,6 +4504,18 @@
         "text": "ನವೀನತೆ ಆಧಾರಿತ ನವೀಕರಿಸಬಹುದಾದ ಇಂಧನ ಉದ್ಯಮಶೀಲತೆ ಮತ್ತು ವಿಸ್ತರಣೆಗೆ ಅಧಿಕೃತ ಮಾನ್ಯತೆ."
       }
     ],
+    "trustRibbon": {
+      "eyebrow": "AeroSun ಭರವಸೆ",
+      "titleFirst": "ಸೌರಶಕ್ತಿ, ಸ್ಪಷ್ಟ ಯೋಜನೆಯೊಂದಿಗೆ.",
+      "titleSecond": "ಪ್ರತಿ ಹಂತದಲ್ಲೂ.",
+      "description": "ಮೊದಲ ಸಮಾಲೋಚನೆಯಿಂದ ಸ್ಥಾಪನೆ ಮತ್ತು ನಂತರದ ಸೇವೆಯವರೆಗೆ ಪಾರದರ್ಶಕ, ನಂಬಿಕಾರ್ಹ ಸೌರ ಅನುಭವಕ್ಕಾಗಿ AeroSun Energy ಅನ್ನು ನಂಬಿ. ನಾವು ಸ್ಪಷ್ಟ ಕೊಟೇಶನ್‌ಗಳನ್ನು ನೀಡಿ, ವ್ಯವಸ್ಥೆಯ ಆಯ್ಕೆಗಳನ್ನು ವಿವರಿಸಿ, ಪ್ರತಿಯೊಂದು ಹಂತದಲ್ಲೂ ನಿಮಗೆ ಮಾಹಿತಿ ನೀಡುತ್ತೇವೆ—ಅನಿರೀಕ್ಷಿತ ವೆಚ್ಚಗಳಿಲ್ಲದೆ ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ನಿರ್ಧರಿಸಲು.",
+      "steps": {
+        "consultation": "ಸಮಾಲೋಚನೆ",
+        "quotation": "ಸ್ಪಷ್ಟ ಕೊಟೇಶನ್",
+        "system": "ವ್ಯವಸ್ಥೆಯ ಆಯ್ಕೆಗಳು",
+        "installation": "ಅಳವಡಿಕೆ ಮತ್ತು ಬೆಂಬಲ"
+      }
+    },
     "trustSections": {
       "company": {
         "eyebrow": "ನೈಜ ತಂಡ, ಸ್ಪಷ್ಟ ಮಾಹಿತಿ",
@@ -7713,6 +7725,10 @@
       "instagram": {
         "label": "Follow AeroSun Energy on Instagram, opens in a new tab",
         "title": "Follow AeroSun Energy on Instagram (opens in new tab)"
+      },
+      "youtube": {
+        "label": "Subscribe to AeroSun Energy on YouTube, opens in a new tab",
+        "title": "Subscribe to AeroSun Energy on YouTube (opens in new tab)"
       }
     },
     "solutions": [
@@ -12620,6 +12636,12 @@
           "platform": "instagram",
           "dataSocial": "instagram",
           "iconId": "instagram"
+        },
+        {
+          "href": "https://www.youtube.com/@vulchivijayakumar",
+          "platform": "youtube",
+          "dataSocial": "youtube",
+          "iconId": "youtube"
         }
       ]
     },

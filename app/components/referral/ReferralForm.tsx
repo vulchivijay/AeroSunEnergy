@@ -69,10 +69,10 @@ export default function ReferralForm({
   }
 
   const inputClassName =
-    "mt-1.5 min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15";
+    "mt-1.5 min-h-11 w-full rounded-lg border border-slate-300 bg-white px-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15";
 
   return (
-    <div className="min-w-0 rounded-2xl bg-[#f8f7f1] p-5 text-slate-900 shadow-sm sm:p-7 lg:p-9">
+    <div className="min-w-0 rounded-xl bg-[#f8f7f1] p-5 text-slate-900 shadow-sm sm:p-7 lg:p-9">
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0">
           <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#087a61] sm:text-sm">
