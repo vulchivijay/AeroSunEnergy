@@ -14,7 +14,7 @@ export default function ProjectEvidenceSection({
   content: EvidenceContent;
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [testimonialsExpanded, setTestimonialsExpanded] = useState(false);
+  const [testimonialsExpanded, setTestimonialsExpanded] = useState(true);
   const testimonials = content.testimonials.map(
     (_, index) =>
       content.testimonials[(activeIndex + index) % content.testimonials.length],

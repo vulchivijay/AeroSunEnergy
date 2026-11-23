@@ -243,7 +243,7 @@ export default async function Contact() {
         <div className="pointer-events-none absolute -bottom-20 right-0 h-72 w-72 rounded-full bg-fuchsia-300/25 blur-3xl" aria-hidden="true" />
 
         <div className="relative mx-auto max-w-7xl">
-          <details className="group py-2 sm:py-5">
+          <details className="group py-2 sm:py-5" open>
             <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
               <span>
                 <span className="inline-flex w-fit items-center gap-2 rounded-full border border-indigo-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-indigo-900">

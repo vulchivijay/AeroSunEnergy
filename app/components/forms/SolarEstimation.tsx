@@ -141,7 +141,7 @@ export function SolarEstimation() {
   const [leadNameValue, setLeadNameValue] = useState('')
   const [leadPhoneValue, setLeadPhoneValue] = useState('')
   const [showLeadForm, setShowLeadForm] = useState(false)
-  const [gstGuideExpanded, setGstGuideExpanded] = useState(false)
+  const [gstGuideExpanded, setGstGuideExpanded] = useState(true)
   const [whatsAppFallbackUrl, setWhatsAppFallbackUrl] = useState<string | null>(null)
   const [leadFormPending, setLeadFormPending] = useState(false)
 

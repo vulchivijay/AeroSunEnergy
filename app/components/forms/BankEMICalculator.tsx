@@ -62,7 +62,7 @@ export function BankEMICalculator() {
   const [repoRate, setRepoRate] = useState(DEFAULT_REPO_RATE)
   const [isHomeLoanCustomer, setIsHomeLoanCustomer] = useState(true)
   const [homeLoanRateInput, setHomeLoanRateInput] = useState('')
-  const [isExpanded, setIsExpanded] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(true)
   const borrowerMargin = loanBand === 'upToTwoLakhs' ? 0.1 : 0.2
   const estimatedProjectCost = Math.ceil(loanAmount / (1 - borrowerMargin))
   const borrowerContribution = estimatedProjectCost - loanAmount

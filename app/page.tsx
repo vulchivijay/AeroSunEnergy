@@ -282,7 +282,7 @@ export default async function Home() {
       {/* Wind Energy Section */}
       <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl">
-          <details className="group">
+          <details className="group" open>
             <summary className="mb-8 flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
             <div>
               <WindSectionEyebrow>{wind.eyebrow}</WindSectionEyebrow>
@@ -328,7 +328,7 @@ export default async function Home() {
       {/* Hybrid Energy Section */}
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl ">
-          <details className="group">
+          <details className="group" open>
             <summary className="mb-8 flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
             <div>
               <HybridSectionEyebrow>{hybrid.eyebrow}</HybridSectionEyebrow>
@@ -442,7 +442,7 @@ function Brands({ t }: { t: Translations }) {
         aria-hidden="true"
       />
       <div className="relative mx-auto max-w-7xl">
-        <details className="group">
+        <details className="group" open>
         <summary className="mb-7 list-none cursor-pointer border-t border-slate-300 pt-5 [&::-webkit-details-marker]:hidden sm:mb-8 sm:pt-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="min-w-0">
