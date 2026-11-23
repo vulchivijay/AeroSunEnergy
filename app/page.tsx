@@ -68,14 +68,11 @@ function RecognitionHighlight({ t }: { t: Translations }) {
             />
             <circle cx="320" cy="150" r="49" fill="#ffd46a" />
           </g>
-          <path transform="translate(0 25)" d="M0 157c122-26 214-14 310 2 96 16 145-23 238-8 95 15 157 55 264 34 131-26 224-31 330-14 139 22 269-27 458-42v131H0z" fill="#453073" fillOpacity=".55" />
-          <path d="M0 191c135-24 247-33 366-10 118 24 209 39 331 21 105-16 193-26 300-14 143 17 264 9 398-15 76-13 142-18 205-17v104H0z" fill="#10205c" fillOpacity=".8" />
-          <path d="M0 215c190-17 300-33 426-7 130 27 223 42 356 22 151-23 239-25 371-11 149 16 291 13 447-16v77H0z" fill="#071642" fillOpacity=".88" />
           <path
             className="motion-safe:animate-spin"
             style={{
               transformBox: 'view-box',
-              transformOrigin: '320px 175px',
+              transformOrigin: '20% 67.3%',
               animationDuration: '28s',
             }}
             d="M320 126V90M355 140l30-30M369 175h36M355 210l30 30M320 224v36M285 210l-30 30M271 175h-36M285 140l-30-30"
@@ -84,6 +81,9 @@ function RecognitionHighlight({ t }: { t: Translations }) {
             strokeWidth="3"
             strokeLinecap="round"
           />
+          <path transform="translate(0 25)" d="M0 157c122-26 214-14 310 2 96 16 145-23 238-8 95 15 157 55 264 34 131-26 224-31 330-14 139 22 269-27 458-42v131H0z" fill="#453073" fillOpacity=".55" />
+          <path d="M0 191c135-24 247-33 366-10 118 24 209 39 331 21 105-16 193-26 300-14 143 17 264 9 398-15 76-13 142-18 205-17v104H0z" fill="#10205c" fillOpacity=".8" />
+          <path d="M0 215c190-17 300-33 426-7 130 27 223 42 356 22 151-23 239-25 371-11 149 16 291 13 447-16v77H0z" fill="#071642" fillOpacity=".88" />
           <path d="M0 185c165-17 270 21 381 26 129 7 191-36 321-13 182 32 263 49 439 22 156-24 287-33 459-45" stroke="url(#credentials-horizon-glow)" strokeWidth="4" />
           <path d="M0 150 338 190 478 260H0z" fill="#102568" stroke="#c3e4ff" strokeOpacity=".78" strokeWidth="2" />
           <g clipPath="url(#credentials-panel-clip)" stroke="#b7ddff" strokeOpacity=".78" strokeWidth="2">
