@@ -108,18 +108,15 @@ function EnergyLandscape() {
           animationDuration: '12s',
         }}
       >
-        <path d="M1535 205v-42m0 42-36 21m36-21 36 21" stroke="#fff5df" strokeOpacity=".96" strokeWidth="4" strokeLinecap="round" />
-        <path d="M1535 205v-42m0 42-36 21m36-21 36 21" stroke="#ffd98b" strokeOpacity=".58" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M1535 205v-58m0 58-50 29m50-29 50 29" stroke="#fff5df" strokeOpacity=".96" strokeWidth="4" strokeLinecap="round" />
+        <path d="M1535 205v-58m0 58-50 29m50-29 50 29" stroke="#ffd98b" strokeOpacity=".58" strokeWidth="1.5" strokeLinecap="round" />
       </g>
       <circle cx="1535" cy="205" r="6" fill="#fff5df" />
-      <path d="M0 267c150-35 270 19 414 2 135-16 223-96 368-73 131 21 211 85 340 55 176-42 283-2 478 10v169H0z" fill="#39266f" fillOpacity=".24" />
-      <path d="M0 316c166-54 300-28 456-3 158 25 263-58 401-37 182 28 253 49 405 6 144-41 231-32 338-4v152H0z" fill="#101b60" fillOpacity=".34" />
-      <path d="M0 358c190-35 332-49 495-8 149 38 258-15 380-7 160 11 254 39 399 6 119-27 226-51 326-30v111H0z" fill="#07143f" fillOpacity=".42" />
       <path
         className="motion-safe:animate-spin"
         style={{
           transformBox: 'view-box',
-          transformOrigin: '1320px 264px',
+          transformOrigin: '82.5% 61.4%',
           animationDuration: '28s',
         }}
         d="M1320 176v-44M1320 352v44M1232 264h-44M1408 264h44M1258 202l-31-31M1382 202l31-31M1258 326l-31 31M1382 326l31 31"
@@ -128,7 +125,9 @@ function EnergyLandscape() {
         strokeWidth="4"
         strokeLinecap="round"
       />
-
+      <path d="M0 267c150-35 270 19 414 2 135-16 223-96 368-73 131 21 211 85 340 55 176-42 283-2 478 10v169H0z" fill="#39266f" fillOpacity=".24" />
+      <path d="M0 316c166-54 300-28 456-3 158 25 263-58 401-37 182 28 253 49 405 6 144-41 231-32 338-4v152H0z" fill="#101b60" fillOpacity=".34" />
+      <path d="M0 358c190-35 332-49 495-8 149 38 258-15 380-7 160 11 254 39 399 6 119-27 226-51 326-30v111H0z" fill="#07143f" fillOpacity=".42" />
       <path d="M980 360 1318 310 1458 420H980Z" fill="#101d68" stroke="url(#trust-solar-glow)" strokeWidth="3" />
       <g clipPath="url(#trust-solar-panel-clip)" stroke="#b8e0ff" strokeOpacity=".76" strokeWidth="2">
         <path d="M1048 350 1076 420m39-80 56 80m12-90 84 90m-17-100 112 100m-61-108 144 108M980 375 1353 338M980 390 1388 365M980 405 1423 393" />

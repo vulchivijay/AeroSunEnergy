@@ -185,8 +185,8 @@ export default async function Home() {
   return (
     <main>
       <HomeHeroSlider t={t} />
-      <TrustRibbon />
       <SchemeBanner t={t} />
+      <TrustRibbon />
       {/* Solar Section */}
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl">
