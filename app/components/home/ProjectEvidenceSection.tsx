@@ -38,7 +38,7 @@ export default function ProjectEvidenceSection({
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-800/15 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-emerald-800">
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-emerald-800">
               {content.eyebrow}
             </p>
             <h2
@@ -69,7 +69,7 @@ export default function ProjectEvidenceSection({
               type="button"
               onClick={showPrevious}
               aria-label={content.previousLabel}
-              className="my-auto flex h-10 w-10 items-center justify-center rounded-full border border-amber-900/15 bg-white text-slate-900 shadow-sm transition hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-800 sm:h-12 sm:w-12"
+              className="my-auto flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-900 shadow-sm transition hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-800 sm:h-12 sm:w-12"
             >
               <ArrowLeft className="h-5 w-5" aria-hidden="true" />
             </button>
@@ -81,7 +81,7 @@ export default function ProjectEvidenceSection({
               {testimonials.map((testimonial, index) => (
                 <article
                   key={`${activeIndex}-${index}`}
-                  className={`flex min-h-64 flex-col justify-between rounded-2xl border border-[#cbd5cc] bg-white p-6 shadow-sm sm:p-8 ${index === 1 ? "hidden md:flex" : ""} ${index === 2 ? "hidden lg:flex" : ""}`}
+                  className={`flex min-h-64 flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8 ${index === 1 ? "hidden md:flex" : ""} ${index === 2 ? "hidden lg:flex" : ""}`}
                 >
                   <div className="blur-md">
                     <p className="text-xs font-bold uppercase tracking-[0.18em] text-amber-800">
@@ -91,7 +91,7 @@ export default function ProjectEvidenceSection({
                       “{testimonial.quote}”
                     </blockquote>
                   </div>
-                  <div className="mt-8 border-t border-slate-100 pt-5 blur-md">
+                  <div className="mt-8 border-t border-slate-200 pt-5 blur-md">
                     <p className="font-bold text-slate-950">
                       {testimonial.customer}
                     </p>
@@ -110,13 +110,13 @@ export default function ProjectEvidenceSection({
               type="button"
               onClick={showNext}
               aria-label={content.nextLabel}
-              className="my-auto flex h-10 w-10 items-center justify-center rounded-full border border-amber-900/15 bg-white text-slate-900 shadow-sm transition hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-800 sm:h-12 sm:w-12"
+              className="my-auto flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-900 shadow-sm transition hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-800 sm:h-12 sm:w-12"
             >
               <ArrowRight className="h-5 w-5" aria-hidden="true" />
             </button>
           </div>
 
-          <div className="mt-5 flex flex-col gap-4 rounded-2xl border border-amber-300 bg-[#fff3df] p-5 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-5 flex flex-col gap-4 rounded-xl border border-amber-300 bg-[#fff3df] p-5 sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-3xl text-sm leading-6 text-amber-950">
               {content.note}
             </p>

@@ -68,7 +68,7 @@ function TextField({
         minLength={minLength}
         step={step}
         pattern={pattern}
-        className="min-h-10 w-full min-w-0 max-w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-md text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
+        className="min-h-10 w-full min-w-0 max-w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-md text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
       />
     </label>
   );
@@ -97,7 +97,7 @@ function SelectField({
         name={name}
         required={required}
         defaultValue=""
-        className="min-h-10 w-full min-w-0 max-w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-md text-slate-900 outline-none transition focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
+        className="min-h-10 w-full min-w-0 max-w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-md text-slate-900 outline-none transition focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
       >
         <option value="" disabled>
           {placeholder}
@@ -132,17 +132,17 @@ function EditableTable({
   }[];
 }) {
   return (
-    <div className="overflow-x-auto rounded-xl border border-emerald-100">
-      <table className="w-full min-w-[640px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
+    <div className="overflow-x-auto rounded-xl border border-slate-200">
+      <table className="w-full min-w-[640px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
         <thead className="bg-amber-700 text-sm font-bold uppercase tracking-wide text-white">
           <tr>
-            <th className="border-b border-r border-emerald-100 px-3 py-2.5">
+            <th className="border-b border-r border-slate-200 px-3 py-2.5">
               {rowHeader}
             </th>
             {headers.map((header) => (
               <th
                 key={header}
-                className="border-b border-r border-emerald-100 px-3 py-2.5 last:border-r-0"
+                className="border-b border-r border-slate-200 px-3 py-2.5 last:border-r-0"
               >
                 {header}
               </th>
@@ -154,14 +154,14 @@ function EditableTable({
             <tr key={row.label} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
               <th
                 scope="row"
-                className="min-w-52 border-b border-r border-slate-100 px-3 py-2 text-left font-semibold text-slate-700"
+                className="min-w-52 border-b border-r border-slate-200 px-3 py-2 text-left font-semibold text-slate-700"
               >
                 {row.label}
               </th>
               {row.fields.map((field) => (
                 <td
                   key={field.name}
-                  className="min-w-36 border-b border-r border-slate-100 px-2 py-1.5 last:border-r-0"
+                  className="min-w-36 border-b border-r border-slate-200 px-2 py-1.5 last:border-r-0"
                 >
                   <input
                     name={field.name}
@@ -170,12 +170,12 @@ function EditableTable({
                     step={field.step}
                     placeholder={field.label}
                     aria-label={`${row.label}: ${field.label}`}
-                    className="min-h-9 w-full rounded-xl border border-slate-200 bg-white px-2 text-md text-slate-900 outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
+                    className="min-h-9 w-full rounded-lg border border-slate-200 bg-white px-2 text-md text-slate-900 outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
                   />
                 </td>
               ))}
               {row.unit !== undefined && (
-                <td className="border-b border-slate-100 px-3 py-2.5 text-slate-600">
+                <td className="border-b border-slate-200 px-3 py-2.5 text-slate-600">
                   {row.unit}
                 </td>
               )}
@@ -208,7 +208,7 @@ function ChoiceGroup({
         {options.map((option, index) => (
           <label
             key={option}
-            className="flex min-w-0 items-start gap-2 rounded-2xl border border-slate-200 bg-white p-2.5 text-md leading-5 text-slate-700"
+            className="flex min-w-0 items-start gap-2 rounded-xl border border-slate-200 bg-white p-2.5 text-md leading-5 text-slate-700"
           >
             <input
               type="radio"
@@ -274,8 +274,8 @@ export default function CustomerEnquiryPage() {
 
   return (
     <main className="min-h-screen w-full bg-[#f7f7f2] px-4 py-10 sm:px-6 lg:px-8">
-      <header className="mx-auto mb-8 max-w-7xl rounded-2xl border border-sky-100/80 bg-linear-to-br from-white/75 via-sky-50/65 to-cyan-100/55 p-6 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/60 sm:p-8">
-        <p className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-800/15 bg-[#eaf2e9] px-4 py-2 text-md font-bold uppercase tracking-[0.18em] text-emerald-800">
+      <header className="mx-auto mb-8 max-w-7xl rounded-xl border border-slate-200 bg-linear-to-br from-white/75 via-sky-50/65 to-cyan-100/55 p-6 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/60 sm:p-8">
+        <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-[#eaf2e9] px-4 py-2 text-md font-bold uppercase tracking-[0.18em] text-emerald-800">
           {page.eyebrow}
         </p>
         <h1 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
@@ -300,9 +300,9 @@ export default function CustomerEnquiryPage() {
                 lastPercentageInput.setCustomValidity("");
             }
           }}
-          className="min-w-0 space-y-6 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm sm:p-5 lg:p-6"
+          className="min-w-0 space-y-6 rounded-xl border border-slate-200 bg-white p-3 shadow-sm sm:p-5 lg:p-6"
         >
-          <header className="rounded-2xl border border-white/30 bg-linear-to-br from-sky-900/65 via-cyan-800/55 to-slate-900/65 p-5 text-white shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:p-6">
+          <header className="rounded-xl border border-slate-700 bg-linear-to-br from-sky-900/65 via-cyan-800/55 to-slate-900/65 p-5 text-white shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:p-6">
             <p className="text-md font-bold uppercase tracking-[0.2em] text-lime-300">
               {page.companyName}
             </p>
@@ -348,7 +348,7 @@ export default function CustomerEnquiryPage() {
             </div>
           </header>
 
-          <section className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
+          <section className="rounded-xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <SectionTitle number="01" title={page.sections[0]} />
             <div className="grid gap-3 text-md text-slate-700 sm:grid-cols-2">
               <p>
@@ -381,7 +381,7 @@ export default function CustomerEnquiryPage() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-sky-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
+          <section className="rounded-xl border border-sky-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
             <SectionTitle number="02" title={page.sections[1]} />
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               <TextField
@@ -454,7 +454,7 @@ export default function CustomerEnquiryPage() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
+          <section className="rounded-xl border border-emerald-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <SectionTitle number="03" title={page.sections[2]} />
             <div className="grid gap-3 sm:grid-cols-2">
               <TextField
@@ -484,7 +484,7 @@ export default function CustomerEnquiryPage() {
                 options={page.installationTypes}
               />
             </div>
-            <div className="mt-4 rounded-2xl border border-emerald-100 bg-white p-4">
+            <div className="mt-4 rounded-xl border border-slate-200 bg-white p-4">
               <h3 className="text-md font-bold text-slate-900">
                 {page.projectObjective}
               </h3>
@@ -494,7 +494,7 @@ export default function CustomerEnquiryPage() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-slate-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
+          <section className="rounded-xl border border-slate-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
             <SectionTitle number="04" title={page.sections[3]} />
             <EditableTable
               rowHeader={page.parameter}
@@ -525,7 +525,7 @@ export default function CustomerEnquiryPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
+          <section className="rounded-xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <SectionTitle number="05" title={page.sections[4]} />
             <EditableTable
               rowHeader={page.billOfMaterialsRowHeader}
@@ -550,10 +550,10 @@ export default function CustomerEnquiryPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
+          <section className="rounded-xl border border-emerald-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
             <SectionTitle number="06" title={page.sections[5]} />
-            <div className="overflow-x-auto rounded-xl border border-emerald-100">
-              <table className="w-full min-w-[520px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
+            <div className="overflow-x-auto rounded-xl border border-slate-200">
+              <table className="w-full min-w-[520px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
                 <thead className="bg-amber-700 font-bold uppercase text-white">
                   <tr>
                     <th className="px-3 py-3">{page.serialNumber}</th>
@@ -565,7 +565,7 @@ export default function CustomerEnquiryPage() {
                   {page.priceItems.map((item, index) => (
                     <tr
                       key={item}
-                      className="border-t border-emerald-100 odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70"
+                      className="border-t border-slate-200 odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70"
                     >
                       <td className="px-3 py-2">{index + 1}</td>
                       <td className="px-3 py-2">{item}</td>
@@ -577,7 +577,7 @@ export default function CustomerEnquiryPage() {
                           step="0.01"
                           placeholder="0.00"
                           aria-label={`${item} ${page.amountInRupees}`}
-                          className="min-h-9 w-full rounded-xl border border-slate-200 px-2"
+                          className="min-h-9 w-full rounded-lg border border-slate-200 px-2"
                         />
                       </td>
                     </tr>
@@ -590,7 +590,7 @@ export default function CustomerEnquiryPage() {
                   ].map(([label, name]) => (
                     <tr
                       key={name}
-                      className="border-t border-emerald-100 odd:bg-white even:bg-emerald-50/70 font-semibold transition-colors hover:bg-emerald-100/70"
+                      className="border-t border-slate-200 odd:bg-white even:bg-emerald-50/70 font-semibold transition-colors hover:bg-emerald-100/70"
                     >
                       <th colSpan={2} className="px-3 py-2 text-left">
                         {label}
@@ -604,7 +604,7 @@ export default function CustomerEnquiryPage() {
                           required={name === "price_total"}
                           placeholder="0.00"
                           aria-label={`${label} ${page.amountInRupees}`}
-                          className="min-h-9 w-full rounded-xl border border-slate-200 px-2"
+                          className="min-h-9 w-full rounded-lg border border-slate-200 px-2"
                         />
                       </td>
                     </tr>
@@ -630,7 +630,7 @@ export default function CustomerEnquiryPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-sky-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
+          <section className="rounded-xl border border-sky-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <SectionTitle number="07" title={page.sections[6]} />
             <EditableTable
               rowHeader={page.parameter}
@@ -649,12 +649,12 @@ export default function CustomerEnquiryPage() {
                 <TextField key={name} label={label} name={name} />
               ))}
             </div>
-            <p className="mt-4 rounded-2xl bg-amber-50 p-4 text-md leading-5 text-amber-950">
+            <p className="mt-4 rounded-xl bg-amber-50 p-4 text-md leading-5 text-amber-950">
               {page.generationDisclaimer}
             </p>
           </section>
 
-          <section className="rounded-2xl border border-slate-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
+          <section className="rounded-xl border border-slate-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
             <SectionTitle number="08" title={page.sections[7]} />
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {page.financialParameters.map((parameter) => (
@@ -714,7 +714,7 @@ export default function CustomerEnquiryPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
+          <section className="rounded-xl border border-emerald-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <SectionTitle number="09" title={page.sections[8]} />
             <p className="mb-4 text-md text-slate-600">
               {page.scopeInstructions}
@@ -748,7 +748,7 @@ export default function CustomerEnquiryPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-amber-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
+          <section className="rounded-xl border border-amber-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
             <SectionTitle number="10" title={page.sections[9]} />
             <p className="mb-4 text-md text-slate-600">
               {page.exclusionsIntro}
@@ -757,7 +757,7 @@ export default function CustomerEnquiryPage() {
               {page.exclusions.map((item, index) => (
                 <li
                   key={item}
-                  className="flex gap-3 rounded-2xl bg-white p-3 text-md leading-5 text-slate-700"
+                  className="flex gap-3 rounded-xl bg-white p-3 text-md leading-5 text-slate-700"
                 >
                   <span className="font-mono font-bold text-amber-700">
                     {index + 1}.
@@ -774,12 +774,12 @@ export default function CustomerEnquiryPage() {
                 name="additional_work"
                 rows={2}
                 placeholder={page.additionalWorkPlaceholder}
-                className="w-full min-w-0 max-w-full resize-y rounded-xl border border-slate-300 bg-white px-3 py-2 text-md"
+                className="w-full min-w-0 max-w-full resize-y rounded-lg border border-slate-300 bg-white px-3 py-2 text-md"
               />
             </label>
           </section>
 
-          <section className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
+          <section className="rounded-xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <SectionTitle number="11" title={page.sections[10]} />
             <EditableTable
               rowHeader={page.equipment}
@@ -803,7 +803,7 @@ export default function CustomerEnquiryPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-sky-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
+          <section className="rounded-xl border border-sky-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
             <SectionTitle number="12" title={page.sections[11]} />
             <p className="mb-4 text-md text-slate-600">
               {page.paymentScheduleIntro}
@@ -812,7 +812,7 @@ export default function CustomerEnquiryPage() {
               {paymentMilestones.map((milestone, index) => (
                 <div
                   key={milestone}
-                  className="grid gap-3 rounded-2xl border border-slate-200 bg-white p-4 sm:grid-cols-2"
+                  className="grid gap-3 rounded-xl border border-slate-200 bg-white p-4 sm:grid-cols-2"
                 >
                   <p className="self-center text-md font-semibold text-slate-700">
                     {milestone}
@@ -860,13 +860,13 @@ export default function CustomerEnquiryPage() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
+          <section className="rounded-xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <SectionTitle number="13" title={page.sections[12]} />
             <ol className="grid gap-2 sm:grid-cols-2">
               {page.termsAndConditions.map((term, index) => (
                 <li
                   key={term}
-                  className="flex gap-3 rounded-2xl bg-slate-50 p-3 text-md leading-5 text-slate-700"
+                  className="flex gap-3 rounded-xl bg-slate-50 p-3 text-md leading-5 text-slate-700"
                 >
                   <span className="font-mono font-bold text-emerald-700">
                     {index + 1}.
@@ -877,7 +877,7 @@ export default function CustomerEnquiryPage() {
             </ol>
           </section>
 
-          <section className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
+          <section className="rounded-xl border border-emerald-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
             <SectionTitle number="14" title={page.sections[13]} />
             <p className="mb-4 text-md leading-6 text-slate-700">
               {page.acceptanceCopy}
@@ -909,7 +909,7 @@ export default function CustomerEnquiryPage() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
+          <section className="rounded-xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <SectionTitle number="15" title={page.sections[14]} />
             <p className="mb-4 text-md font-semibold text-slate-800">
               {page.forCompany}
@@ -946,12 +946,12 @@ export default function CustomerEnquiryPage() {
               <input
                 name="company_seal"
                 placeholder={page.companySealPlaceholder}
-                className="min-h-10 w-full min-w-0 max-w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-md"
+                className="min-h-10 w-full min-w-0 max-w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-md"
               />
             </label>
           </section>
 
-          <section className="rounded-2xl bg-gradient-to-br from-[#f1f2f6] to-white p-5 text-slate-900 sm:p-7">
+          <section className="rounded-xl bg-gradient-to-br from-[#f1f2f6] to-white p-5 text-slate-900 sm:p-7">
             <h2 className="text-xl font-black uppercase tracking-wide">
               {page.thankYou}
             </h2>
@@ -993,7 +993,7 @@ export default function CustomerEnquiryPage() {
           <FormDataNotice />
           {isSubmitting && <p className="text-md text-emerald-800" role="status">{t.formSubmission.saving}</p>}
         </form>
-        <aside className="min-w-0 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-24">
+        <aside className="min-w-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-24">
           <h2 className="mb-4 text-md font-black uppercase tracking-wide text-slate-900">
             {page.quotationSectionsTitle}
           </h2>

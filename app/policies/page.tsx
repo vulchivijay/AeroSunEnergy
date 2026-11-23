@@ -29,7 +29,7 @@ export default async function PoliciesPage() {
               {content.description}
             </p>
           </div>
-          <div className="flex w-fit items-center gap-4 rounded-2xl border border-white/15 bg-white/[0.08] px-5 py-4">
+          <div className="flex w-fit items-center gap-4 rounded-xl border border-slate-700 bg-white/[0.08] px-5 py-4">
             <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-300/15 text-xl text-sky-200">◎</span>
             <span className="text-sm leading-5 text-slate-200">
               {content.updatedLabel}
@@ -37,7 +37,7 @@ export default async function PoliciesPage() {
             </span>
           </div>
         </div>
-        <div className="border-t border-white/10">
+        <div className="border-t border-slate-700">
           <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-4 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-sky-100/75 sm:px-6 lg:px-10">
             {content.headerTopics.map((topic) => <span key={topic}>{topic}</span>)}
           </div>
@@ -48,7 +48,7 @@ export default async function PoliciesPage() {
 
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[minmax(0,1fr)_290px] lg:gap-12 lg:px-10 lg:py-16">
         <article className="min-w-0">
-          <div className="mb-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <div className="mb-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-lg text-sky-800">i</span>
               <div>
@@ -58,9 +58,9 @@ export default async function PoliciesPage() {
                 </p>
               </div>
             </div>
-            <div className="mt-6 grid gap-3 border-t border-slate-100 pt-5 sm:grid-cols-3">
+            <div className="mt-6 grid gap-3 border-t border-slate-200 pt-5 sm:grid-cols-3">
               {content.summaryItems.map((item, index) => (
-                <div key={item.label} className="flex gap-3 rounded-2xl bg-slate-50 p-3">
+                <div key={item.label} className="flex gap-3 rounded-xl bg-slate-50 p-3">
                   <span className="font-mono text-sm font-bold text-sky-700">0{index + 1}</span>
                   <span className="text-sm leading-5 text-slate-600">
                     <strong className="block text-sm text-slate-900">{item.label}</strong>
@@ -76,7 +76,7 @@ export default async function PoliciesPage() {
               <section
                 key={section.heading}
                 id={`privacy-${index + 1}`}
-                className={`scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200 ${index % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}
+                className={`scroll-mt-28 overflow-hidden rounded-xl border border-slate-200 ${index % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}
               >
                 <div className="flex items-start gap-4 p-5 sm:p-6">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-sky-200 bg-sky-50 font-mono text-sm font-bold text-sky-800">
@@ -100,7 +100,7 @@ export default async function PoliciesPage() {
             ))}
           </div>
 
-          <p className="mt-7 rounded-2xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-600">
+          <p className="mt-7 rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-600">
             {content.clarification}{' '}
             <Link href="/contact" className="font-bold text-sky-800 underline decoration-sky-300 underline-offset-4 hover:text-indigo-800">
               {content.contactLink}
@@ -110,8 +110,8 @@ export default async function PoliciesPage() {
         </article>
 
         <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
-          <nav aria-label={content.navLabel} className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
-            <div className="border-b border-slate-100 px-5 py-4">
+          <nav aria-label={content.navLabel} className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+            <div className="border-b border-slate-200 px-5 py-4">
               <p className="text-[12px] font-black uppercase tracking-[0.2em] text-sky-800">{content.findTopic}</p>
               <p className="mt-1 text-sm font-bold text-slate-900">{content.contents}</p>
             </div>
@@ -130,14 +130,14 @@ export default async function PoliciesPage() {
             </ol>
           </nav>
 
-          <section className={`rounded-2xl p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
+          <section className={`rounded-xl p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
             <p className="text-[12px] font-black uppercase tracking-[0.2em] text-sky-800">{content.protectedInfoTitle}</p>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
               {content.protectedInfo.map((item) => <li key={item}>{item}</li>)}
             </ul>
           </section>
 
-          <section className={`rounded-2xl border border-[#dce9df] p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}>
+          <section className={`rounded-xl border border-slate-200 p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}>
             <p className="text-[12px] font-black uppercase tracking-[0.2em] text-[#137c63]">{content.principlesTitle}</p>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
               {content.principles.map((item) => <li key={item}>{item}</li>)}

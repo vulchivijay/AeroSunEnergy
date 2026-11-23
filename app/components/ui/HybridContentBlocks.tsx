@@ -77,7 +77,7 @@ export function HybridBenefitCard({
     <ContentBenefitCard
       title={title}
       description={description}
-      cardClassName={`rounded-2xl border-l-4 ${contentBenefitBorders[accent]} bg-[#f0edfa] p-5`}
+      cardClassName={`rounded-xl border-l-4 ${contentBenefitBorders[accent]} bg-[#f0edfa] p-5`}
       iconClassName="bg-violet-100 text-violet-700"
       titleClassName="tracking-tighter text-slate-900"
     />
@@ -109,10 +109,10 @@ export function HybridTable({ rows }: { rows: { label: string; value: string; us
   const ui = t.ui
 
   return (
-    <div className="overflow-x-auto rounded-2xl border border-emerald-200 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400">
+    <div className="overflow-x-auto rounded-xl border border-emerald-200 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400">
       <table
         aria-label={`${ui.systemType}, ${ui.typicalConfiguration}, ${ui.customerFit}`}
-        className="w-full min-w-[760px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3"
+        className="w-full min-w-[760px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3"
       >
         <thead className="bg-amber-700 text-sm font-bold uppercase tracking-[0.18em] text-white">
           <tr>

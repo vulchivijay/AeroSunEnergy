@@ -42,7 +42,7 @@ export default async function ServicesPage() {
 
         <div className="mx-auto flex min-h-[620px] max-w-7xl flex-col justify-between px-4 py-10 sm:min-h-[680px] sm:px-6 sm:py-14 lg:px-10">
           <div className="flex items-center justify-between gap-4">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.22em] text-white/90 backdrop-blur-md sm:text-xs">
+            <span className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.22em] text-white/90 backdrop-blur-md sm:text-xs">
               <span className="h-1.5 w-1.5 rounded-full bg-amber-300" aria-hidden="true" />
               {labels.badge}
             </span>
@@ -63,7 +63,7 @@ export default async function ServicesPage() {
               </p>
             </div>
 
-            <div className="max-w-md rounded-2xl border border-white/15 bg-[#102a43]/65 p-5 backdrop-blur-lg sm:p-6 lg:ml-auto">
+            <div className="max-w-md rounded-xl border border-slate-700 bg-[#102a43]/65 p-5 backdrop-blur-lg sm:p-6 lg:ml-auto">
               <p className="inline-flex w-fit rounded-full border border-amber-300/25 bg-white/10 px-3 py-1.5 text-sm font-bold uppercase tracking-[0.2em] text-amber-200">{labels.coreModel}</p>
               <p className="mt-3 text-lg font-semibold leading-7 text-white sm:text-xl">{labels.coreModelSteps}</p>
               <div className="mt-5 flex items-center gap-2" aria-hidden="true">
@@ -75,7 +75,7 @@ export default async function ServicesPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 border-t border-white/20 pt-5 sm:grid-cols-4 sm:gap-0 sm:divide-x sm:divide-white/20">
+          <div className="grid grid-cols-2 gap-3 border-t border-slate-700 pt-5 sm:grid-cols-4 sm:gap-0 sm:divide-x sm:divide-white/20">
             {labels.portfolioBenefits.map((benefit, index) => (
               <div key={benefit} className="flex items-center gap-2 px-2 text-xs font-medium text-white/80 sm:px-5 sm:first:pl-0">
                 <span className="font-mono text-sm text-amber-200">0{index + 1}</span>
@@ -92,7 +92,7 @@ export default async function ServicesPage() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-3xl">
-              <p className="inline-flex w-fit rounded-full border border-emerald-800/15 bg-emerald-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-emerald-800">{labels.serviceStructure}</p>
+              <p className="inline-flex w-fit rounded-full border border-slate-200 bg-emerald-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-emerald-800">{labels.serviceStructure}</p>
               <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{labels.serviceStructureTitle}</h2>
             </div>
             <p className="max-w-sm text-sm leading-6 text-slate-600">{labels.completeSolutionsDescription}</p>
@@ -102,21 +102,21 @@ export default async function ServicesPage() {
             {page.servicePackages.map((service, index) => {
               const Icon = divisionIcons[index] ?? Zap
               return (
-                <article key={service.title} className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-md sm:p-8">
+                <article key={service.title} className="group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-md sm:p-8">
                   <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${service.accent}`} />
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <span className="font-mono text-xs font-bold tracking-[0.18em] text-[#137c63]">{labels.division} 0{index + 1}</span>
                       <h3 className="mt-3 text-2xl font-black tracking-tight text-slate-950 sm:text-3xl">{service.title}</h3>
                     </div>
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#eaf2e9] text-[#137c63] transition group-hover:bg-[#087a61] group-hover:text-white">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#eaf2e9] text-[#137c63] transition group-hover:bg-[#087a61] group-hover:text-white">
                       <Icon className="h-5 w-5" strokeWidth={1.8} aria-hidden="true" />
                     </span>
                   </div>
                   <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600 sm:text-sm">{service.description}</p>
                   <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
                     {service.points.map((point) => (
-                      <li key={point} className="flex items-start gap-2.5 rounded-2xl bg-slate-50 px-3 py-2.5 text-sm leading-5 text-slate-700">
+                      <li key={point} className="flex items-start gap-2.5 rounded-xl bg-slate-50 px-3 py-2.5 text-sm leading-5 text-slate-700">
                         <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#137c63]" aria-hidden="true" />
                         {point}
                       </li>
@@ -133,7 +133,7 @@ export default async function ServicesPage() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
             <div>
-              <p className="inline-flex w-fit rounded-full border border-amber-800/15 bg-amber-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-amber-800">{labels.commonCapabilities}</p>
+              <p className="inline-flex w-fit rounded-full border border-slate-200 bg-amber-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-amber-800">{labels.commonCapabilities}</p>
               <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{labels.commonCapabilitiesTitle}</h2>
               <span className="mt-6 block h-1 w-16 rounded-full bg-gradient-to-r from-amber-500 to-[#137c63]" aria-hidden="true" />
             </div>
@@ -159,14 +159,14 @@ export default async function ServicesPage() {
 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-          <div className="overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] p-6 text-white shadow-sm sm:p-8 lg:p-12">
+          <div className="overflow-hidden rounded-xl bg-[linear-gradient(135deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] p-6 text-white shadow-sm sm:p-8 lg:p-12">
             <div className="mb-8 max-w-3xl">
               <p className="inline-flex w-fit rounded-full border border-amber-300/25 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-amber-200">{labels.deliveryModel}</p>
               <h2 className="mt-3 text-3xl font-black tracking-tighter sm:text-5xl">{labels.deliveryModelTitle}</h2>
             </div>
             <div className="grid gap-3 xl:grid-cols-2">
               {page.packages.map((pkg, index) => (
-                <article key={pkg.name} className="rounded-2xl border border-white/15 bg-white/[0.07] p-5 sm:p-6">
+                <article key={pkg.name} className="rounded-xl border border-slate-700 bg-white/[0.07] p-5 sm:p-6">
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <h3 className="text-xl font-bold text-white">{pkg.name}</h3>
                     <span className="font-mono text-xs font-bold text-amber-200">PACKAGE 0{index + 1}</span>
@@ -190,12 +190,12 @@ export default async function ServicesPage() {
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="grid gap-6 lg:grid-cols-[1fr_0.92fr]">
-            <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-              <p className="inline-flex w-fit rounded-full border border-sky-800/15 bg-sky-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-sky-800">{labels.roadmap}</p>
+            <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+              <p className="inline-flex w-fit rounded-full border border-slate-200 bg-sky-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-sky-800">{labels.roadmap}</p>
               <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950">{labels.roadmapTitle}</h2>
               <div className="relative mt-7 space-y-4 before:absolute before:bottom-7 before:left-[1.15rem] before:top-7 before:w-px before:bg-emerald-200">
                 {page.labels.roadmapPhases.map((phase, index) => (
-                  <div key={phase.label} className="relative flex gap-4 rounded-2xl bg-slate-50 p-4">
+                  <div key={phase.label} className="relative flex gap-4 rounded-xl bg-slate-50 p-4">
                     <span className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-4 border-white bg-emerald-700 font-mono text-sm font-bold text-white shadow-sm">
                       0{index + 1}
                     </span>
@@ -208,7 +208,7 @@ export default async function ServicesPage() {
               </div>
             </article>
 
-            <article className="relative isolate flex min-h-[420px] flex-col justify-end overflow-hidden rounded-2xl bg-slate-950 p-6 text-white sm:p-8">
+            <article className="relative isolate flex min-h-[420px] flex-col justify-end overflow-hidden rounded-xl bg-slate-950 p-6 text-white sm:p-8">
               <div className="absolute inset-0 -z-10">
                 <OptimizedImage
                   src="/images/slider/slider-2.webp"
@@ -238,7 +238,7 @@ export default async function ServicesPage() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-3xl">
-              <p className="inline-flex w-fit rounded-full border border-emerald-800/15 bg-emerald-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-emerald-800">{labels.completeSolutions}</p>
+              <p className="inline-flex w-fit rounded-full border border-slate-200 bg-emerald-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-emerald-800">{labels.completeSolutions}</p>
               <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{labels.completeSolutionsTitle}</h2>
               <p className="mt-4 text-sm leading-7 text-slate-600">{labels.completeSolutionsDescription}</p>
             </div>
@@ -249,7 +249,7 @@ export default async function ServicesPage() {
 
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {page.solarPillars.map((service, index) => (
-              <article key={service.title} className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-md">
+              <article key={service.title} className="group overflow-hidden rounded-xl border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-md">
                 <div className={`h-1.5 bg-gradient-to-r ${service.accent}`} />
                 <div className="p-5 sm:p-6">
                   <p className="font-mono text-xs font-bold tracking-[0.18em] text-[#137c63]">0{index + 1} / {labels.ourServices}</p>
@@ -273,14 +273,14 @@ export default async function ServicesPage() {
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 max-w-3xl">
-            <p className="inline-flex w-fit rounded-full border border-sky-800/15 bg-sky-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-sky-800">{labels.systemTypes}</p>
+            <p className="inline-flex w-fit rounded-full border border-slate-200 bg-sky-50 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-sky-800">{labels.systemTypes}</p>
             <h2 className="mt-3 text-3xl font-black tracking-tighter text-slate-950 sm:text-5xl">{labels.systemTypesTitle}</h2>
             <p className="mt-4 text-sm leading-7 text-slate-600">{labels.systemTypesDescription}</p>
           </div>
 
           <div className="grid gap-4 xl:grid-cols-3">
             {page.systemTypes.map((system, index) => (
-              <article key={system.type} className={`rounded-2xl border p-6 shadow-sm ${system.accent}`}>
+              <article key={system.type} className={`rounded-xl border p-6 shadow-sm ${system.accent}`}>
                 <div className="flex items-center justify-between gap-3">
                   <span className="font-mono text-xs font-bold tracking-[0.2em] opacity-70">SYSTEM 0{index + 1}</span>
                   <span className="rounded-full bg-white/80 px-3 py-1 text-sm font-bold uppercase tracking-[0.15em] text-slate-700">{system.badge}</span>
@@ -295,7 +295,7 @@ export default async function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-                <p className="mt-6 rounded-2xl bg-white/75 px-4 py-3 text-sm leading-6 text-slate-700">
+                <p className="mt-6 rounded-xl bg-white/75 px-4 py-3 text-sm leading-6 text-slate-700">
                   <span className="font-bold">{labels.bestFor}</span> {system.bestFor}
                 </p>
               </article>

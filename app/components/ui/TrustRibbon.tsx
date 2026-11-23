@@ -162,8 +162,8 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
 
         <div className="relative z-10 grid min-h-[900px] gap-8 px-6 py-9 sm:min-h-[760px] sm:px-10 sm:py-12 md:absolute md:inset-0 md:min-h-0 md:grid-cols-[48.5%_49.5%] md:items-center md:gap-0 md:px-[3.3%] md:py-[2.5%] lg:px-[3.5%]">
           <div className="max-w-[620px] self-center md:-translate-y-6">
-            <div className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.25em] text-sky-100 shadow-lg shadow-blue-950/10 backdrop-blur-md sm:text-xs">
-              <span className="h-2 w-2 rounded-full bg-amber-300 shadow-[0_0_14px_rgba(255,211,109,0.9)]" />
+            <div className="inline-flex items-center gap-3 rounded-full border border-slate-700 bg-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.25em] text-sky-100 shadow-md  backdrop-blur-md sm:text-xs">
+              <span className="h-2 w-2 rounded-full bg-amber-300 " />
               The AeroSun Promise
             </div>
 
@@ -208,7 +208,7 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
             </svg>
 
             <div
-              className="absolute left-1/2 top-0 z-20 grid h-[68px] w-[68px] -translate-x-1/2 place-items-center rounded-full border border-amber-200/20 bg-white/[0.06] shadow-[0_0_30px_rgba(255,203,103,.18)] sm:h-[82px] sm:w-[82px] md:left-[7%] md:top-[1%] md:h-[86px] md:w-[86px] md:translate-x-0"
+              className="absolute left-1/2 top-0 z-20 grid h-[68px] w-[68px] -translate-x-1/2 place-items-center rounded-full border border-amber-200/20 bg-white/[0.06]  sm:h-[82px] sm:w-[82px] md:left-[7%] md:top-[1%] md:h-[86px] md:w-[86px] md:translate-x-0"
               aria-hidden="true"
             >
               <span className="absolute inset-2 rounded-full border border-sky-200/20" />
@@ -232,14 +232,14 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
                 <article
                   key={step.number}
                   className={[
-                    'relative flex min-h-[128px] flex-col justify-between rounded-[1.1rem] border border-white/30 bg-[#281f69]/50 p-3 shadow-[0_16px_38px_rgba(3,10,48,.22)] backdrop-blur-xl sm:min-h-[140px] sm:p-4 md:absolute md:h-[82px] md:min-h-0 md:w-[22.2%] md:rounded-[1rem] md:p-2 lg:h-[clamp(82px,8vw,112px)] lg:p-3',
+                    'relative flex min-h-[128px] flex-col justify-between rounded-xl border border-slate-700 bg-[#281f69]/50 p-3 shadow-md backdrop-blur-xl sm:min-h-[140px] sm:p-4 md:absolute md:h-[82px] md:min-h-0 md:w-[22.2%] md:p-2 lg:h-[clamp(82px,8vw,112px)] lg:p-3',
                     index === 0 ? 'md:left-0 md:top-[42%]' : '',
                     index === 1 ? 'md:left-[25%] md:top-[32%]' : '',
                     index === 2 ? 'md:left-[50%] md:top-[21%]' : '',
                     index === 3 ? 'md:left-[75%] md:top-[9%]' : '',
                   ].join(' ')}
                 >
-                  <span className="absolute -top-3 left-1/2 z-10 grid h-7 w-7 -translate-x-1/2 place-items-center rounded-full border border-amber-100/70 bg-[#5b3e99] text-xs font-semibold text-amber-50 shadow-[0_0_18px_rgba(255,203,103,.35)]">
+                  <span className="absolute -top-3 left-1/2 z-10 grid h-7 w-7 -translate-x-1/2 place-items-center rounded-full border border-amber-100/70 bg-[#5b3e99] text-xs font-semibold text-amber-50 ">
                     {step.number}
                   </span>
                   <div className="flex flex-1 items-center justify-center pt-2">

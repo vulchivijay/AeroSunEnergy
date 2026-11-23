@@ -41,7 +41,7 @@ export default function DashboardHeader({
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-white/15 bg-[#102a43] text-white shadow-sm">
+      <header className="sticky top-0 z-40 border-b border-slate-700 bg-[#102a43] text-white shadow-sm">
         <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
           <div className="flex min-h-[72px] items-center justify-between gap-4">
             <Link
@@ -67,7 +67,7 @@ export default function DashboardHeader({
                 onChange={(event) => {
                   if (isLocale(event.target.value)) setLocale(event.target.value)
                 }}
-                className="min-h-10 max-w-28 rounded-lg border border-white/20 bg-white/10 px-2 text-xs font-semibold text-white outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+                className="min-h-10 max-w-28 rounded-lg border border-slate-700 bg-white/10 px-2 text-xs font-semibold text-white outline-none focus-visible:ring-2 focus-visible:ring-white/70"
               >
                 {languageOptions.map((option) => (
                   <option key={option.code} value={option.code} className="bg-white text-slate-900">

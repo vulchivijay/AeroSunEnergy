@@ -29,7 +29,7 @@ function SectionHeading({
 }) {
   return (
     <div className="mb-7 max-w-3xl">
-      <p className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? 'border-amber-300/20 bg-white/[0.08] text-amber-200' : 'border-teal-900/10 bg-white/75 text-teal-800'}`}>
+      <p className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? 'border-amber-300/20 bg-white/[0.08] text-amber-200' : 'border-slate-200 bg-white/75 text-teal-800'}`}>
         {number} / {eyebrow}
       </p>
       <h2 className={`mt-4 text-3xl font-black leading-[1.05] tracking-tighter sm:text-4xl lg:text-5xl ${inverse ? 'text-white' : 'text-[#152b29]'}`}>
@@ -63,7 +63,7 @@ function DetailCard({
   children: React.ReactNode
 }) {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
+    <div className="rounded-xl border border-slate-200 bg-white p-5 sm:p-6">
       <h3 className="mb-4 text-sm font-bold text-[#152b29]">{title}</h3>
       {children}
     </div>
@@ -82,7 +82,7 @@ export default async function ProductCataloguePage() {
           aria-hidden="true"
         />
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[#137c63]/15 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
+          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
             <span className="h-1.5 w-1.5 rounded-full bg-amber-500" aria-hidden="true" />
             {c.hero.badge}
           </p>
@@ -108,7 +108,7 @@ export default async function ProductCataloguePage() {
             {c.hero.audiences.map(({ label, description }, index) => {
               const Icon = [Sun, Building2, Tractor, Zap][index]
               return (
-                <div key={label} className="rounded-2xl border border-[#e2e8e2] bg-white/85 p-5">
+                <div key={label} className="rounded-xl border border-slate-200 bg-white/85 p-5">
                   <Icon className="h-5 w-5 text-[#137c63]" aria-hidden="true" />
                   <p className="mt-4 text-[11px] font-bold uppercase tracking-[0.2em] text-[#137c63]">{label}</p>
                   <p className="mt-1 text-sm font-semibold text-[#152b29]">{description}</p>
@@ -261,7 +261,7 @@ export default async function ProductCataloguePage() {
             <DetailCard title={c.battery.selectionLabel}>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {c.battery.selection.map((item, index) => (
-                  <p key={item} className="flex gap-3 rounded-2xl bg-[#f7fbf8] p-4 text-sm leading-7 text-slate-700">
+                  <p key={item} className="flex gap-3 rounded-xl bg-[#f7fbf8] p-4 text-sm leading-7 text-slate-700">
                     <span className="font-mono text-sm font-bold text-teal-700">{String(index + 1).padStart(2, '0')}</span>
                     {item}
                   </p>
@@ -289,16 +289,16 @@ export default async function ProductCataloguePage() {
             <span className="font-mono text-lg font-bold text-amber-800">100 W – 10 kW</span>
           </div>
           <div className="grid gap-5 lg:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-5 sm:p-6">
+            <div className="rounded-xl border border-slate-700 bg-white/[0.06] p-5 sm:p-6">
               <h3 className="mb-4 text-sm font-bold">{c.wind.applicationsLabel}</h3>
               <BulletList items={c.wind.applications} />
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-5 sm:p-6">
+            <div className="rounded-xl border border-slate-700 bg-white/[0.06] p-5 sm:p-6">
               <h3 className="mb-4 text-sm font-bold">{c.wind.focusLabel}</h3>
               <BulletList items={c.wind.focus} />
             </div>
           </div>
-          <div className="mt-5 rounded-2xl border border-amber-200/20 bg-black/10 p-6 sm:p-8">
+          <div className="mt-5 rounded-xl border border-amber-200/20 bg-black/10 p-6 sm:p-8">
             <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-amber-800">{c.wind.projectLabel}</p>
             <h3 className="mt-3 text-2xl font-black sm:text-3xl">{c.wind.productName}</h3>
             <p className="mt-2 text-sm text-slate-700">{c.wind.configurationLabel}</p>
@@ -334,7 +334,7 @@ export default async function ProductCataloguePage() {
             <DetailCard title={c.hybrid.applicationsLabel}><BulletList items={c.hybrid.applications} /></DetailCard>
             <DetailCard title={c.hybrid.benefitsLabel}><BulletList items={c.hybrid.benefits} /></DetailCard>
           </div>
-          <p className="mt-5 rounded-2xl border border-[#dce9df] bg-[#eaf2e9] px-5 py-4 text-sm leading-7 text-slate-700">
+          <p className="mt-5 rounded-xl border border-slate-200 bg-[#eaf2e9] px-5 py-4 text-sm leading-7 text-slate-700">
             {c.hybrid.caveat}
           </p>
           <p className="mt-5 border-l-2 border-amber-500 pl-4 font-semibold italic text-teal-800">
@@ -354,7 +354,7 @@ export default async function ProductCataloguePage() {
           <DetailCard title={c.consultation.servicesLabel}>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
               {c.consultation.services.map((service, index) => (
-                <p key={service} className="flex gap-3 rounded-2xl bg-[#f7fbf8] p-4 text-sm leading-7 text-slate-700">
+                <p key={service} className="flex gap-3 rounded-xl bg-[#f7fbf8] p-4 text-sm leading-7 text-slate-700">
                   <span className="font-mono text-sm font-bold text-teal-700">{String(index + 1).padStart(2, '0')}</span>
                   {service}
                 </p>
@@ -364,7 +364,7 @@ export default async function ProductCataloguePage() {
           <h3 className="mb-5 mt-8 text-xl font-bold text-[#112c2a]">{c.consultation.processLabel}</h3>
           <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {c.consultation.process.map(({ title, detail }, index) => (
-              <li key={title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+              <li key={title} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
                 <span className="font-mono text-sm font-bold text-teal-700">{String(index + 1).padStart(2, '0')}</span>
                 <h4 className="mt-3 font-bold text-[#112c2a]">{title}</h4>
                 <p className="mt-2 text-sm leading-7 text-slate-600">{detail}</p>
@@ -386,7 +386,7 @@ export default async function ProductCataloguePage() {
           </p>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {c.whyChoose.reasons.map((reason) => (
-              <p key={reason} className="flex gap-3 rounded-2xl bg-white p-4 text-sm leading-7 text-slate-700">
+              <p key={reason} className="flex gap-3 rounded-xl bg-white p-4 text-sm leading-7 text-slate-700">
                 <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-teal-600" aria-hidden="true" />
                 {reason}
               </p>
@@ -397,7 +397,7 @@ export default async function ProductCataloguePage() {
 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-          <div className="overflow-hidden rounded-2xl">
+          <div className="overflow-hidden rounded-xl">
             <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
               <div className="bg-[linear-gradient(145deg,#581c87_0%,#7e22ce_55%,#a21caf_100%)] p-7 text-white sm:p-10">
                 <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-amber-200">10 / {c.contact.eyebrow}</p>
@@ -434,7 +434,7 @@ export default async function ProductCataloguePage() {
                 </Link>
               </div>
             </div>
-            <p className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm leading-7 text-slate-600">
+            <p className="rounded-xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm leading-7 text-slate-600">
               {c.disclaimer}
             </p>
           </div>

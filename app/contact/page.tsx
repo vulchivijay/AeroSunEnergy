@@ -80,14 +80,14 @@ export default async function Contact() {
             <p className="text-sm font-black uppercase tracking-[0.2em] text-[#137c63]">AeroSun Energy <span className="mx-2 text-amber-600">/</span> {contactUs}</p>
             <span className="hidden text-sm font-semibold uppercase tracking-[0.18em] text-slate-500 sm:block">{location}</span>
           </div>
-          <div className="grid min-h-[34rem] overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(135deg,#dbeafe_0%,#e0f2fe_55%,#ecfdf5_100%)] lg:grid-cols-[1fr_0.92fr]">
+          <div className="grid min-h-[34rem] overflow-hidden rounded-xl border border-slate-200 bg-[linear-gradient(135deg,#dbeafe_0%,#e0f2fe_55%,#ecfdf5_100%)] lg:grid-cols-[1fr_0.92fr]">
             <div
               className="relative flex flex-col justify-between overflow-hidden p-7 sm:p-11 lg:p-14"
             >
-              <div className="pointer-events-none absolute -bottom-36 -left-36 h-[28rem] w-[28rem] rounded-full border border-sky-900/10" aria-hidden="true" />
-              <div className="pointer-events-none absolute -bottom-20 -left-20 h-80 w-80 rounded-full border border-sky-900/10" aria-hidden="true" />
+              <div className="pointer-events-none absolute -bottom-36 -left-36 h-[28rem] w-[28rem] rounded-full border border-slate-200" aria-hidden="true" />
+              <div className="pointer-events-none absolute -bottom-20 -left-20 h-80 w-80 rounded-full border border-slate-200" aria-hidden="true" />
               <div className="relative">
-                <p className="inline-flex items-center gap-3 rounded-full border border-sky-900/15 bg-white/60 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-slate-800">
+                <p className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/60 px-4 py-2 text-sm font-black uppercase tracking-[0.2em] text-slate-800">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#137c63]" />
                   {navbar.startProject}
                 </p>
@@ -100,13 +100,13 @@ export default async function Contact() {
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
                     href="/solar-calculator"
-                    className="inline-flex items-center justify-center rounded-full border border-sky-900/20 bg-white/40 px-6 py-3.5 text-sm font-bold text-slate-800 transition hover:bg-white/75"
+                    className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white/40 px-6 py-3.5 text-sm font-bold text-slate-800 transition hover:bg-white/75"
                   >
                     {c.estimationButton}
                   </Link>
                 </div>
               </div>
-              <div className="relative mt-12 flex items-end justify-between gap-4 border-t border-sky-900/15 pt-4">
+              <div className="relative mt-12 flex items-end justify-between gap-4 border-t border-slate-200 pt-4">
                 <span className="text-sm font-bold uppercase tracking-[0.18em] text-slate-600">{c.badge}</span>
                 <span className="text-right text-sm font-black text-slate-900">{c.projectBrief}</span>
               </div>
@@ -122,7 +122,7 @@ export default async function Contact() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#102a43]/75 via-transparent to-[#102a43]/10" />
-              <div className="absolute right-8 top-8 flex h-28 w-28 items-center justify-center rounded-full border border-white/70 bg-amber-300 text-center text-[12px] font-black uppercase leading-4 tracking-[0.16em] text-slate-900 shadow-sm sm:right-12 sm:top-12 sm:h-36 sm:w-36">
+              <div className="absolute right-8 top-8 flex h-28 w-28 items-center justify-center rounded-full border border-slate-200 bg-amber-300 text-center text-[12px] font-black uppercase leading-4 tracking-[0.16em] text-slate-900 shadow-sm sm:right-12 sm:top-12 sm:h-36 sm:w-36">
                 {energyBadge} <span className="mx-1 text-[#137c63]">+</span> {energyBadgeAccent}<br />{energyBadgeSuffix}
               </div>
               <div className="absolute bottom-7 left-7 max-w-xs border-l-2 border-amber-300 pl-4 text-sm font-semibold leading-7 text-white sm:bottom-10 sm:left-10">
@@ -130,9 +130,9 @@ export default async function Contact() {
               </div>
             </div>
           </div>
-          <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(120deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] text-white">
+          <div className="mt-5 overflow-hidden rounded-xl border border-slate-200 bg-[linear-gradient(120deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] text-white">
             <div className="grid lg:grid-cols-[0.75fr_1.25fr]">
-              <div className="flex flex-col justify-center border-b border-white/10 p-6 sm:p-9 lg:border-b-0 lg:border-r">
+              <div className="flex flex-col justify-center border-b border-slate-700 p-6 sm:p-9 lg:border-b-0 lg:border-r">
                   <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-200">{contactUs}</p>
                   <h2 className="mt-4 text-3xl font-black leading-tight tracking-tighter sm:text-4xl">{contactCardTitle}</h2>
                   <p className="mt-4 text-sm leading-7 text-sky-100/85">{connectionPrompt}</p>
@@ -142,7 +142,7 @@ export default async function Contact() {
                   <a
                     key={channel.label}
                     href={channel.href}
-                    className="group flex min-h-36 items-start gap-4 border-b border-white/10 p-6 transition-colors hover:bg-white/[0.06] sm:p-7 lg:border-b-0 lg:border-r lg:last:border-r-0"
+                    className="group flex min-h-36 items-start gap-4 border-b border-slate-700 p-6 transition-colors hover:bg-white/[0.06] sm:p-7 lg:border-b-0 lg:border-r lg:last:border-r-0"
                   >
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-amber-300 text-slate-900 transition-transform group-hover:rotate-[-8deg]">
                       {channel.icon}
@@ -175,7 +175,7 @@ export default async function Contact() {
         </div>
         <SolarEstimation />
         <div className="px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16" aria-labelledby="contact-form-title">
-          <div className="overflow-hidden mx-auto max-w-7xl rounded-2xl border border-slate-200">
+          <div className="overflow-hidden mx-auto max-w-7xl rounded-xl border border-slate-200">
             <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
               <div className="bg-[linear-gradient(145deg,#bfdbfe_0%,#ddd6fe_52%,#fbcfe8_100%)] p-6 text-slate-900 sm:p-9">
                 <p className="text-xs font-black uppercase tracking-[0.2em] text-indigo-900">{contactUs}</p>
@@ -188,7 +188,7 @@ export default async function Contact() {
         </div>
 
         <div className="overflow-hidden bg-[linear-gradient(135deg,#dbeafe_0%,#e0f2fe_55%,#ecfdf5_100%)] text-white px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-          <div className="mx-auto max-w-7xl rounded-2xl border border-slate-200 ">
+          <div className="mx-auto max-w-7xl rounded-xl border border-slate-200 ">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
               <div>
                 <p className="text-sm font-black uppercase tracking-[0.2em] text-[#137c63]">{stepIntroLabel}</p>
@@ -201,7 +201,7 @@ export default async function Contact() {
                 </Link>
               </div>
             </div>
-            <div className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 lg:grid-cols-3">
+            <div className="mt-8 grid gap-px overflow-hidden rounded-xl border border-slate-200 bg-slate-200 lg:grid-cols-3">
               {contactSteps.map((step) => (
                 <article key={step.title} className="bg-white p-6 sm:p-8">
                   <span className="font-mono text-sm font-bold text-[#137c63]">{step.number} <span className="text-slate-500">/ 03</span></span>
@@ -266,12 +266,12 @@ export default async function Contact() {
               {t.solarFaqs.items.map((faq) => (
                 <details
                   key={faq.question}
-                  className="overflow-hidden rounded-2xl border border-[#d8c9ab]/70 bg-white/24 p-0"
+                  className="overflow-hidden rounded-xl border border-slate-200 bg-white/24 p-0"
                 >
                   <summary className="cursor-pointer px-5 py-4 text-sm font-black tracking-[0.03em] text-[#1f2a44] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-amber-700 sm:px-6 sm:text-lg">
                     {faq.question}
                   </summary>
-                  <div className="border-t border-[#f0e3ce] px-5 pb-5 pt-4 sm:px-6">
+                  <div className="border-t border-slate-200 px-5 pb-5 pt-4 sm:px-6">
                     <p className="text-sm leading-8 text-slate-700">{faq.answer}</p>
                   </div>
                 </details>

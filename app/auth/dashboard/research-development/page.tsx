@@ -257,7 +257,7 @@ function InlineContent({
       return (
         <code
           key={index}
-          className="rounded-2xl bg-emerald-950/[0.06] px-1.5 py-0.5 font-mono text-[0.92em] text-emerald-950  "
+          className="rounded-xl bg-emerald-950/[0.06] px-1.5 py-0.5 font-mono text-[0.92em] text-emerald-950  "
         >
           {digitalNumbers ? <DigitalNumber value={part.slice(1, -1)} /> : part.slice(1, -1)}
         </code>
@@ -295,7 +295,7 @@ function MathExpression({ expression }: { expression: string }) {
   }
 
   return (
-    <span className="rounded-2xl bg-emerald-950/[0.06] px-1.5 py-0.5 font-mono text-md text-emerald-950  ">
+    <span className="rounded-xl bg-emerald-950/[0.06] px-1.5 py-0.5 font-mono text-md text-emerald-950  ">
       {expression}
     </span>
   );
@@ -309,7 +309,7 @@ function DisplayMath({ expression }: { expression: string }) {
     expression.replace(/\s+/g, "") === "P_{\\text{wind}}=\\frac{1}{2}\\rhoAv^3"
   ) {
     return (
-      <div className="my-7 overflow-x-auto rounded-2xl border border-emerald-900/15 bg-emerald-50/80 px-5 py-6 text-center  ">
+      <div className="my-7 overflow-x-auto rounded-xl border border-slate-200 bg-emerald-50/80 px-5 py-6 text-center  ">
         <div
           role="math"
           aria-label={accessible.windPowerFormula}
@@ -334,7 +334,7 @@ function DisplayMath({ expression }: { expression: string }) {
   }
 
   return (
-    <pre className="my-7 overflow-x-auto rounded-2xl border border-emerald-900/15 bg-emerald-50/80 px-5 py-4 text-center font-mono text-sm text-emerald-950   ">
+    <pre className="my-7 overflow-x-auto rounded-xl border border-slate-200 bg-emerald-50/80 px-5 py-4 text-center font-mono text-sm text-emerald-950   ">
       <code>{expression}</code>
     </pre>
   );
@@ -401,8 +401,8 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
 
   if (block.type === "table") {
     return (
-      <div className="my-7 overflow-x-auto rounded-2xl border border-emerald-100 bg-white shadow-sm">
-        <table className="w-full min-w-[34rem] border-collapse text-left text-sm leading-6 text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
+      <div className="my-7 overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
+        <table className="w-full min-w-[34rem] border-collapse text-left text-sm leading-6 text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
           <thead className="bg-amber-700 font-bold text-white">
             <tr>
               {block.headers.map((cell, index) => (
@@ -433,9 +433,9 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
 
   if (block.type === "code") {
     return (
-      <div className="my-7 overflow-hidden rounded-2xl border border-emerald-900/20 bg-[#10251f] shadow-sm shadow-emerald-950/10">
+      <div className="my-7 overflow-hidden rounded-xl border border-slate-700 bg-[#10251f] shadow-sm ">
         {block.language && (
-          <p className="border-b border-white/10 px-4 py-2 font-mono text-xs uppercase tracking-[0.18em] text-emerald-200/70">
+          <p className="border-b border-slate-700 px-4 py-2 font-mono text-xs uppercase tracking-[0.18em] text-emerald-200/70">
             {block.language}
           </p>
         )}
@@ -464,7 +464,7 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
   }
 
   return (
-    <hr className="my-10 border-0 border-t border-emerald-900/15 " />
+    <hr className="my-10 border-0 border-t border-slate-200 " />
   );
 }
 
@@ -513,10 +513,10 @@ export default function ResearchDevelopmentPage() {
     <main className="overflow-hidden bg-[#f5f6ef] text-slate-900  ">
       <section className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] text-slate-900">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_8%,rgba(52,211,153,0.2),transparent_38%),radial-gradient(ellipse_at_5%_100%,rgba(163,217,119,0.11),transparent_35%)]" />
-        <div className="absolute -right-36 top-12 -z-10 h-[34rem] w-[34rem] rounded-full border border-white/[0.08] sm:right-[-8rem]">
-          <div className="absolute inset-10 rounded-full border border-white/[0.08]" />
-          <div className="absolute inset-20 rounded-full border border-white/[0.08]" />
-          <div className="absolute inset-32 rounded-full border border-white/[0.08]" />
+        <div className="absolute -right-36 top-12 -z-10 h-[34rem] w-[34rem] rounded-full border border-slate-700 sm:right-[-8rem]">
+          <div className="absolute inset-10 rounded-full border border-slate-700" />
+          <div className="absolute inset-20 rounded-full border border-slate-700" />
+          <div className="absolute inset-32 rounded-full border border-slate-700" />
         </div>
 
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:px-10 lg:py-24">
@@ -553,8 +553,8 @@ export default function ResearchDevelopmentPage() {
           </div>
 
           <aside className="relative mx-auto w-full max-w-md lg:ml-auto">
-            <div className="absolute -inset-5 rounded-4xl bg-emerald-400/15 blur-3xl" />
-            <div className="relative rounded-2xl border border-white/15 bg-[#14372f] p-6 shadow-sm shadow-black/30 backdrop-blur-sm sm:p-8">
+            <div className="absolute -inset-5 rounded-full bg-emerald-400/15 blur-3xl" />
+            <div className="relative rounded-xl border border-slate-700 bg-[#14372f] p-6 shadow-sm  backdrop-blur-sm sm:p-8">
               <p className="inline-flex w-fit rounded-full border border-lime-200/20 bg-white/[0.06] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-lime-200">
                 {copy.text[6]}
               </p>
@@ -564,11 +564,11 @@ export default function ResearchDevelopmentPage() {
               <p className="mt-4 text-sm leading-7 text-emerald-50/80">
                 {copy.text[8]}
               </p>
-              <div className="mt-7 grid grid-cols-3 gap-2 border-t border-white/10 pt-5">
+              <div className="mt-7 grid grid-cols-3 gap-2 border-t border-slate-700 pt-5">
                 {inline[0].map((item, index) => (
                   <div
                     key={item}
-                    className="rounded-2xl border border-white/10 bg-white/[0.04] p-3"
+                    className="rounded-xl border border-slate-700 bg-white/[0.04] p-3"
                   >
                     <span className="font-mono text-xs text-lime-200/70">
                       0{index + 1}
@@ -601,7 +601,7 @@ export default function ResearchDevelopmentPage() {
                   <li key={heading.id}>
                     <a
                       href={`#${heading.id}`}
-                      className="group flex gap-3 rounded-2xl border border-slate-200 bg-[#f7f8f2] px-3 py-2.5 text-md leading-6 text-slate-700 transition hover:border-emerald-300 hover:bg-emerald-50     "
+                      className="group flex gap-3 rounded-xl border border-slate-200 bg-[#f7f8f2] px-3 py-2.5 text-md leading-6 text-slate-700 transition hover:border-emerald-300 hover:bg-emerald-50     "
                     >
                       <span className="font-mono text-xs font-bold text-emerald-700 ">
                         {String(index + 1).padStart(2, "0")}

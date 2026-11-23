@@ -146,15 +146,15 @@ function Footer() {
 	return (
 		<footer
 			id="contact"
-			className="relative w-full overflow-hidden border-t border-white/25 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(23,37,84,0.96),rgba(23,37,84,0.96))] text-white/90 shadow-sm before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-amber-400 before:via-white/40 before:to-sky-300"
+			className="relative w-full overflow-hidden border-t border-slate-700 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(23,37,84,0.96),rgba(23,37,84,0.96))] text-white/90 shadow-sm before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-amber-400 before:via-white/40 before:to-sky-300"
 		>
 			<div className="pointer-events-none absolute -right-40 top-0 h-[34rem] w-[34rem] rounded-full border border-amber-700/10" aria-hidden="true" />
 
-			<div className="pointer-events-none absolute -right-24 top-16 h-[24rem] w-[24rem] rounded-full border border-slate-500/10" aria-hidden="true" />
+			<div className="pointer-events-none absolute -right-24 top-16 h-[24rem] w-[24rem] rounded-full border border-slate-700" aria-hidden="true" />
 
 			<div className="relative mx-auto max-w-7xl px-5 pb-14 pt-14 sm:px-8 sm:pb-20 sm:pt-20 lg:px-10">
 
-				<section className="relative mb-14 overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#d72b0b_0%,#f99104_52%,#faf206_100%)] p-7 text-slate-900 sm:p-10 lg:mb-20 lg:p-14 shadow-sm">
+				<section className="relative mb-14 overflow-hidden rounded-xl bg-[linear-gradient(135deg,#d72b0b_0%,#f99104_52%,#faf206_100%)] p-7 text-slate-900 sm:p-10 lg:mb-20 lg:p-14 shadow-sm">
 					<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_88%_45%,rgba(245,199,106,0.18),transparent_35%)]" aria-hidden="true" />
 					<div className="relative grid items-center gap-10 lg:grid-cols-[1fr_auto]">
 						<div className="max-w-3xl">
@@ -216,7 +216,7 @@ function Footer() {
 									title={socialMetadataByPlatform[platform].title}
 									itemProp="sameAs"
 									data-social={dataSocial}
-									className="group flex h-11 w-11 items-center justify-center rounded-full border border-slate-300/70 bg-white/70 text-slate-600 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[#A5D6A7] hover:bg-[#073515] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#137c63]"
+									className="group flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white/70 text-slate-600 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[#A5D6A7] hover:bg-[#073515] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#137c63]"
 								>
 									{icon}
 								</Link>
@@ -307,7 +307,7 @@ function Footer() {
 								</a>
 							</li>
 						</ul>
-						<div className="mt-6 flex items-center gap-2 border-t border-white/20 pt-4 text-sm text-white/75">
+						<div className="mt-6 flex items-center gap-2 border-t border-slate-700 pt-4 text-sm text-white/75">
 							<Sun className="h-4 w-4 text-amber-300" aria-hidden="true" />
 							<Wind className="h-4 w-4 text-sky-200" aria-hidden="true" />
 							<span>{footer.solarWindHybrid}</span>
@@ -315,7 +315,7 @@ function Footer() {
 					</section>
 				</div>
 
-				<section aria-labelledby="footer-newsletter" className="mt-14 grid gap-6 rounded-2xl bg-[#147e62] p-6 shadow-sm sm:p-8 lg:grid-cols-[1fr_1fr] lg:items-center">
+				<section aria-labelledby="footer-newsletter" className="mt-14 grid gap-6 rounded-xl bg-[#147e62] p-6 shadow-sm sm:p-8 lg:grid-cols-[1fr_1fr] lg:items-center">
 					<div>
 						<h2 id="footer-newsletter" className="text-2xl leading-[1.05] tracking-[0.045em] text-slate-200 sm:text-3xl">{footer.stayPowered}</h2>
 						<p className="mt-2 max-w-xl text-sm tracking-[0.06em] leading-6 text-slate-100">{footer.newsletterDescription}</p>
@@ -335,7 +335,7 @@ function Footer() {
 									setNewsletterEmail(event.target.value)
 								}}
 								placeholder={footer.newsletterPlaceholder}
-								className="min-h-12 min-w-0 flex-1 rounded-xl border border-slate-300 bg-white px-5 text-sm text-slate-900 outline-none transition placeholder:text-slate-800 placeholder:text-sm placeholder:tracking-[0.09em] focus:border-[#137c63] focus:ring-2 focus:ring-emerald-700/20"
+								className="min-h-12 min-w-0 flex-1 rounded-lg border border-slate-300 bg-white px-5 text-sm text-slate-900 outline-none transition placeholder:text-slate-800 placeholder:text-sm placeholder:tracking-[0.09em] focus:border-[#137c63] focus:ring-2 focus:ring-emerald-700/20"
 							/>
 							<button type="submit" disabled={newsletterPending} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 text-sm text-[#1fa34a] transition hover:bg-[#DCEDC8] tracking-[0.045em] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7] disabled:cursor-wait disabled:opacity-70">
 								{newsletterPending ? t.formSubmission.saving : footer.subscribe} <Send className="h-4 w-4" aria-hidden="true" />
@@ -348,11 +348,11 @@ function Footer() {
 
 			</div>
 
-			<div className="border-t border-white/15 bg-white/5 backdrop-blur">
-				<p className="flex flex-row w-full justify-center gap-1 border-t border-white/15 p-5 text-sm text-white/75 sm:px-8 lg:px-10">
+			<div className="border-t border-slate-700 bg-white/5 backdrop-blur">
+				<p className="flex flex-row w-full justify-center gap-1 border-t border-slate-700 p-5 text-sm text-white/75 sm:px-8 lg:px-10">
 					🚧 {footer.developmentNotice} <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" aria-label={footer.attributionLinkLabel} className="text-amber-500 animate-pulse transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200">{footer.attributionLinkText}</Link>
 				</p>
-				<div className="flex w-full flex-col items-center justify-between gap-1 border-t border-white/15 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
+				<div className="flex w-full flex-col items-center justify-between gap-1 border-t border-slate-700 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
 					<div className="flex flex-wrap items-center justify-center gap-1 text-[12px] uppercase tracking-[0.14em] text-white/70">
 						{footer.legalLinks.map((link: { href: string; label: string }) => (
               <Fragment key={link.href}>
@@ -367,7 +367,7 @@ function Footer() {
             {footer.attribution} <DigitalNumber value={footer.copyright.replace('{year}', String(currentYear))} />
 					</p>
 				</div>
-				<div className="border-t border-white/15 px-5 py-4 sm:px-8 lg:px-10">
+				<div className="border-t border-slate-700 px-5 py-4 sm:px-8 lg:px-10">
 					<CompanyAge />
 				</div>
 			</div>
@@ -518,7 +518,7 @@ function BackToTop() {
       type="button"
       aria-label="Scroll to top"
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      className="fixed bottom-5 right-5 z-50 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/60 bg-linear-to-br from-[#FF9933] via-white to-[#138808] text-[#075e3b] transition hover:-translate-y-0.5 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500"
+      className="fixed bottom-5 right-5 z-50 inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-linear-to-br from-[#FF9933] via-white to-[#138808] text-[#075e3b] transition hover:-translate-y-0.5 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500"
     >
       <svg
         viewBox="0 0 32 32"
@@ -671,7 +671,7 @@ function NetworkStatus() {
       <button
         type="button"
         onClick={retry}
-        className="inline-flex min-h-9 items-center gap-2 rounded-full border border-white/20 px-3 py-1.5 text-md font-semibold text-[#d6e8b9] transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6e8b9]"
+        className="inline-flex min-h-9 items-center gap-2 rounded-full border border-slate-700 px-3 py-1.5 text-md font-semibold text-[#d6e8b9] transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6e8b9]"
       >
         <RefreshCw className="h-3.5 w-3.5" aria-hidden="true" />
         {content.retry}
@@ -692,7 +692,7 @@ function Notifications() {
   }, [])
 
   return (
-    <div className="border-b border-sky-900/10 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] px-3 py-2 text-slate-800 shadow-sm sm:px-5">
+    <div className="border-b border-slate-200 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] px-3 py-2 text-slate-800 shadow-sm sm:px-5">
       <div className="relative mx-auto flex w-full items-center gap-3 overflow-hidden bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] text-white shadow-sm">
         <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-amber-300 via-sky-400 to-violet-500" aria-hidden="true" />
         <div className="ml-3 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-950/80 text-white shadow-sm">
@@ -725,7 +725,7 @@ function Notifications() {
           aria-label={isExpanded ? t.notifications.toggleClose : t.notifications.toggleOpen}
           aria-expanded={isExpanded}
           aria-controls="site-notification-content"
-          className="mr-2 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/20 text-white transition hover:border-amber-300/60 hover:bg-white/10 hover:text-amber-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
+          className="mr-2 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-700 text-white transition hover:border-amber-300/60 hover:bg-white/10 hover:text-amber-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
         >
           {isExpanded ? (
             <ChevronUp className="h-4 w-4" aria-hidden="true" />
@@ -820,7 +820,7 @@ function PerformanceMonitor() {
     : [{ label: 'Perf', value: 'Loading…' }]
 
   return (
-    <div className="fixed bottom-4 right-4 z-40 rounded-2xl border border-slate-700/80 bg-slate-950/85 px-3 py-2 text-[12px] font-medium shadow-md shadow-slate-950/30 backdrop-blur-sm">
+    <div className="fixed bottom-4 right-4 z-40 rounded-xl border border-slate-700 bg-slate-950/85 px-3 py-2 text-[12px] font-medium shadow-md  backdrop-blur-sm">
       <div className="mb-1 flex items-center gap-2 text-[12px] uppercase tracking-[0.24em] text-sky-300">
         <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-sm" />
         Perf
@@ -951,7 +951,7 @@ function ToastProvider({ children }: { children: ReactNode }) {
             role={item.kind === 'error' ? 'alert' : 'status'}
             aria-live={item.kind === 'error' ? 'assertive' : 'polite'}
             aria-atomic="true"
-            className={`pointer-events-auto flex items-start gap-3 rounded-2xl border bg-white p-4 shadow-md ${
+            className={`pointer-events-auto flex items-start gap-3 rounded-xl border bg-white p-4 shadow-md ${
               item.kind === 'success'
                 ? 'border-emerald-200'
                 : item.kind === 'error'
@@ -1088,12 +1088,12 @@ function Navbar() {
           <>
             <span className={`relative flex h-8 w-8 items-center justify-center rounded-full border transition-all duration-300 ${
               active
-                ? 'border-white/45 bg-white/20 text-white shadow-sm'
-                : 'border-white/25 bg-white/10 text-white/90 shadow-sm group-hover:border-amber-200/50 group-hover:bg-white/15 group-hover:text-amber-100'
+                ? 'border-slate-200 bg-white/20 text-white shadow-sm'
+                : 'border-slate-700 bg-white/10 text-white/90 shadow-sm group-hover:border-amber-200/50 group-hover:bg-white/15 group-hover:text-amber-100'
             }`}>
               <Icon className="h-4 w-4" strokeWidth={1.7} aria-hidden="true" />
               {disabled && (
-                <span className="absolute left-[50%] -top-1 translate-[-50%] z-10 whitespace-nowrap rounded-t-2xl rounded-br-2xl border border-[#333333]/20 bg-[#e5e7eb] px-1.5 py-0.5 text-[9px] cursor-default  uppercase tracking-[0.1em] text-[#333333] shadow-sm">
+                <span className="absolute left-[50%] -top-1 translate-[-50%] z-10 whitespace-nowrap rounded-t-xl rounded-br-xl border border-slate-200 bg-[#e5e7eb] px-1.5 py-0.5 text-[9px] cursor-default  uppercase tracking-[0.1em] text-[#333333] shadow-sm">
                   {comingSoonLabel}
                 </span>
               )}
@@ -1102,7 +1102,7 @@ function Navbar() {
           </>
         )}
         {disabled && (
-          <span className={`${mobile ? 'inline-flex' : 'hidden'} items-center gap-1.5 rounded-full border border-[#333333]/20 bg-[#e5e7eb] px-2 py-1 text-xs  uppercase tracking-[0.12em] text-[#333333]`}>
+          <span className={`${mobile ? 'inline-flex' : 'hidden'} items-center gap-1.5 rounded-full border border-slate-200 bg-[#e5e7eb] px-2 py-1 text-xs  uppercase tracking-[0.12em] text-[#333333]`}>
             <span className="h-1.5 w-1.5 rounded-full bg-[#333333]/50" aria-hidden="true" />
             {comingSoonLabel}
           </span>
@@ -1159,7 +1159,7 @@ function Navbar() {
               onClick={closeMenu}
               aria-current={active ? 'page' : undefined}
               aria-label={`${t.navbar.goTo} ${link.label}`}
-              className={`flex min-h-12 min-w-0 flex-1 items-center rounded-xl px-4 py-3 text-sm font-medium transition ${
+              className={`flex min-h-12 min-w-0 flex-1 items-center rounded-lg px-4 py-3 text-sm font-medium transition ${
                 active
                   ? 'bg-[#18833a] text-white ring-1 ring-inset ring-[#18833a]/50'
                   : 'text-white/90 hover:bg-white/10 hover:text-amber-100'
@@ -1184,7 +1184,7 @@ function Navbar() {
           <div
             id="mobile-about-submenu"
             hidden={!submenuOpen}
-            className="ml-5 rounded-2xl border border-white/15 bg-indigo-950/40 p-2 shadow-sm backdrop-blur-xl"
+            className="ml-5 rounded-xl border border-slate-700 bg-indigo-950/40 p-2 shadow-sm backdrop-blur-xl"
           >
             {link.children.map((child) => {
               const childActive = pathname === child.href
@@ -1195,7 +1195,7 @@ function Navbar() {
                   href={child.href}
                   onClick={closeMenu}
                   aria-current={childActive ? 'page' : undefined}
-                  className={`flex min-h-10 items-center rounded-xl px-3 py-2 text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300 ${
+                  className={`flex min-h-10 items-center rounded-lg px-3 py-2 text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300 ${
                     childActive
                       ? 'bg-[#18833a]  text-white'
                       : 'text-white/85 hover:bg-white/10 hover:text-amber-100'
@@ -1229,7 +1229,7 @@ function Navbar() {
               : 'group-hover/nav:visible group-hover/nav:opacity-100 group-focus-within/nav:visible group-focus-within/nav:opacity-100'
           }`}
         >
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-1.5 shadow-lg">
+          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-1.5 shadow-md">
             {link.children.map((child) => {
               const childActive = pathname === child.href
               const ChildIcon = getNavigationIcon(child.href)
@@ -1264,8 +1264,8 @@ function Navbar() {
         role="group"
         aria-label={t.navbar.languageLabel}
         className={inline
-          ? 'mt-2 grid gap-1 rounded-2xl border border-white/15 bg-white/10 p-1.5 text-white'
-          : 'absolute right-0 top-[calc(100%+0.65rem)] z-[60] w-48 overflow-hidden rounded-2xl border border-[#333333]/15 bg-[#e5e7eb] p-1.5 text-[#333333] shadow-lg'}
+          ? 'mt-2 grid gap-1 rounded-xl border border-slate-700 bg-white/10 p-1.5 text-white'
+          : 'absolute right-0 top-[calc(100%+0.65rem)] z-[60] w-48 overflow-hidden rounded-xl border border-slate-200 bg-[#e5e7eb] p-1.5 text-[#333333] shadow-md'}
       >
         {languageOptions.map((option) => (
           <button
@@ -1297,12 +1297,12 @@ function Navbar() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 border-b border-white/25 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] text-white shadow-md ring-1 ring-inset ring-white/10 backdrop-blur-2xl"
+      className="sticky top-0 z-50 border-b border-slate-700 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] text-white shadow-md ring-1 ring-inset ring-white/10 backdrop-blur-2xl"
     >
       <div className="absolute -left-10 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-sky-300/20 blur-3xl" />
       <div className="absolute -right-12 top-0 h-32 w-32 rounded-full bg-amber-200/20 blur-3xl" />
 
-      <div className="relative border-b border-white/15 bg-white/5 text-white/90 backdrop-blur-xl">
+      <div className="relative border-b border-slate-700 bg-white/5 text-white/90 backdrop-blur-xl">
         <div className="mx-auto flex min-h-8 w-full flex-col items-start gap-1 px-3 py-1 text-xs tracking-[0.08em] sm:px-6 sm:text-sm sm:tracking-[0.12em] lg:flex-row lg:items-center lg:justify-between lg:gap-3 lg:px-8">
           <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
             <Building2 className="h-3.5 w-3.5 shrink-0 text-[#d6b45e]" strokeWidth={1.8} aria-hidden="true" />
@@ -1336,7 +1336,7 @@ function Navbar() {
           </div>
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-2 border-l border-white/20 pl-3 xl:flex 2xl:gap-3 2xl:pl-5">
+        <div className="hidden shrink-0 items-center gap-2 border-l border-slate-700 pl-3 xl:flex 2xl:gap-3 2xl:pl-5">
           <div className="relative">
             <button
               type="button"
@@ -1344,7 +1344,7 @@ function Navbar() {
               aria-label={t.navbar.languageLabel}
               aria-expanded={langOpen}
               aria-controls="desktop-language-options"
-              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 text-[12px]  tracking-wider text-white shadow-sm transition hover:border-white/50 hover:bg-white/20 hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-slate-700 bg-white/10 px-3 text-[12px]  tracking-wider text-white shadow-sm transition hover:border-slate-200 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
             >
               <Globe2 className="h-4 w-4 text-sky-200" aria-hidden="true" />
               {languageOptions.find((option) => option.code === locale)?.shortLabel}
@@ -1357,7 +1357,7 @@ function Navbar() {
             href="/aerosun-energy.pdf"
             download="aerosun-energy.pdf"
             aria-label={t.navbar.downloadVoucher}
-            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-amber-300/70 bg-linear-to-r from-amber-500 to-orange-500 px-3 text-sm  text-white shadow-sm transition hover:-translate-y-0.5 hover:from-emerald-600 hover:to-emerald-500 hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-amber-300/70 bg-linear-to-r from-amber-500 to-orange-500 px-3 text-sm  text-white shadow-sm transition hover:-translate-y-0.5 hover:from-emerald-600 hover:to-emerald-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
           >
             <ArrowDownToLine className="h-4 w-4 shrink-0" aria-hidden="true" />
             <span className="hidden min-w-0 max-w-[7rem] 2xl:block">
@@ -1371,7 +1371,7 @@ function Navbar() {
             title={t.navbar.startProjectTitle}
             aria-label={t.navbar.startProjectAriaLabel}
             data-cta="start-project"
-            className="group inline-flex min-h-11 items-center gap-1 rounded-full border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-4 text-sm  text-white shadow-sm ring-1 ring-inset ring-white/15 transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-emerald-400"
+            className="group inline-flex min-h-11 items-center gap-1 rounded-full border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-4 text-sm  text-white shadow-sm ring-1 ring-inset ring-white/15 transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-emerald-400"
           >
             <span className="min-w-0 max-w-[8rem] whitespace-normal break-keep text-center leading-tight line-clamp-2">{t.navbar.startProject}</span>
             <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
@@ -1387,8 +1387,8 @@ function Navbar() {
             }}
             className={`inline-flex h-11 w-11 items-center justify-center rounded-full border shadow-sm transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300 ${
               menuOpen
-                ? 'border-white/50 bg-white/20 text-white ring-2 ring-white/20'
-                : 'border-white/30 bg-white/10 text-white hover:border-amber-200/50 hover:bg-white/20'
+                ? 'border-slate-200 bg-white/20 text-white ring-2 ring-white/20'
+                : 'border-slate-700 bg-white/10 text-white hover:border-amber-200/50 hover:bg-white/20'
             }`}
             aria-label={menuOpen ? t.navbar.closeMenu : t.navbar.toggleMenu}
             aria-expanded={menuOpen}
@@ -1402,7 +1402,7 @@ function Navbar() {
       <div
         id="mobile-primary-navigation"
         hidden={!menuOpen}
-        className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-white/20 bg-[linear-gradient(135deg,rgba(23,37,84,1),rgba(49,46,129,1),rgba(15,23,42,1))] px-4 pb-6 pt-3 text-white shadow-lg backdrop-blur-2xl sm:px-6 xl:hidden"
+        className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-slate-700 bg-[linear-gradient(135deg,rgba(23,37,84,1),rgba(49,46,129,1),rgba(15,23,42,1))] px-4 pb-6 pt-3 text-white shadow-md backdrop-blur-2xl sm:px-6 xl:hidden"
       >
         <nav aria-label={t.navbar.mobileNavigationLabel} className="mx-auto max-w-3xl space-y-1">
           <p className="mb-3 flex items-center gap-2 px-2 text-sm uppercase tracking-[0.2em] text-sky-200">
@@ -1410,7 +1410,7 @@ function Navbar() {
             {t.navbar.exploreLabel}
           </p>
           {navLinks.map((link) => renderNavigationLink(link, true))}
-          <div className="border-t border-white/15 px-2 pt-4">
+          <div className="border-t border-slate-700 px-2 pt-4">
             <button
               type="button"
               onClick={() => setLangOpen((open) => !open)}
@@ -1430,7 +1430,7 @@ function Navbar() {
             </button>
             {renderLanguageOptions('mobile-language-options', langOpen, true)}
           </div>
-          <div className="grid gap-3 border-t border-white/15 pt-4 sm:grid-cols-2">
+          <div className="grid gap-3 border-t border-slate-700 pt-4 sm:grid-cols-2">
             <Link
               href="/contact"
               prefetch={false}
@@ -1444,7 +1444,7 @@ function Navbar() {
               href="/aerosun-energy.pdf"
               download="aerosun-energy.pdf"
               onClick={closeMenu}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-amber-300/70 bg-white/60 px-5 text-sm  text-amber-800 shadow-sm transition hover:border-amber-500/60 hover:bg-amber-50 hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-amber-300/70 bg-white/60 px-5 text-sm  text-amber-800 shadow-sm transition hover:border-amber-500/60 hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
             >
               <ArrowDownToLine className="h-4 w-4 shrink-0" aria-hidden="true" />
               <span className="min-w-0 max-w-[9rem] whitespace-normal break-keep leading-tight line-clamp-2">{t.navbar.downloadVoucher}</span>

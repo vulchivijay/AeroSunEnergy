@@ -23,9 +23,9 @@ export function HeroSlideContent({
   const isPremium = variant === 'premium'
 
   return (
-    <div className={`relative z-10 w-full min-w-0 rounded-2xl p-4 shadow-sm backdrop-blur-[3px] sm:p-6 ${isLight ? '' : isPremium ? 'grid grid-cols-1 gap-0 lg:p-12' : 'lg:p-8 shadow-slate-950/20'}`}>
+    <div className={`relative z-10 w-full min-w-0 rounded-xl p-4 shadow-sm backdrop-blur-[3px] sm:p-6 ${isLight ? '' : isPremium ? 'grid grid-cols-1 gap-0 lg:p-12' : 'lg:p-8 '}`}>
       <div className={isPremium ? 'lg:pr-2' : ''}>
-        <span className={`slider-reveal-badge mb-4 inline-flex max-w-full whitespace-normal break-words rounded-full border px-3 py-1 text-sm uppercase tracking-[0.16em] shadow-sm sm:text-[12px] sm:tracking-[0.28em] ${isLight ? 'border-transparent bg-transparent text-black' : isPremium ? 'border-[#137c63]/15 bg-[#137c63]/8 text-[#0f5f4b]' : `border-white/15 bg-white/10 text-white ${slide.badgeClass}`}`}>
+        <span className={`slider-reveal-badge mb-4 inline-flex max-w-full whitespace-normal break-words rounded-full border px-3 py-1 text-sm uppercase tracking-[0.16em] shadow-sm sm:text-[12px] sm:tracking-[0.28em] ${isLight ? 'border-transparent bg-transparent text-black' : isPremium ? 'border-slate-200 bg-[#137c63]/8 text-[#0f5f4b]' : `border-slate-700 bg-white/10 text-white ${slide.badgeClass}`}`}>
           {slide.badge}
         </span>
         <h1 className={`slider-reveal-title text-3xl font-black leading-tight tracking-[0.01em] sm:text-4xl sm:leading-none sm:tracking-[0.06em] ${isLight ? 'text-black lg:text-[4.25rem]' : isPremium ? 'max-w-[660px] text-[#102b28] lg:text-[30px] lg:leading-tight lg:tracking-[-0.02em]' : 'text-white lg:text-[4.25rem]'}`}>
@@ -40,7 +40,7 @@ export function HeroSlideContent({
           {slide.tags.map((tag) => (
             <span
               key={tag}
-              className={`max-w-full whitespace-normal break-words rounded-full border px-3 py-1.5 text-sm uppercase tracking-[0.12em] shadow-sm sm:text-[12px] sm:tracking-[0.2em] ${isLight ? 'border-transparent bg-transparent text-black' : isPremium ? 'border-[#137c63]/12 bg-white/65 text-[#246052]' : `border-white/15 bg-slate-950/50 text-white ${slide.chipClass}`}`}
+              className={`max-w-full whitespace-normal break-words rounded-full border px-3 py-1.5 text-sm uppercase tracking-[0.12em] shadow-sm sm:text-[12px] sm:tracking-[0.2em] ${isLight ? 'border-transparent bg-transparent text-black' : isPremium ? 'border-[#137c63]/12 bg-white/65 text-[#246052]' : `border-slate-700 bg-slate-950/50 text-white ${slide.chipClass}`}`}
             >
               {tag}
             </span>

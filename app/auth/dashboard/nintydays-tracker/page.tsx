@@ -24,10 +24,10 @@ export default function NinetyDayTrackerPage() {
         className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] text-slate-900"
       >
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_8%,rgba(242,184,75,0.22),transparent_38%),radial-gradient(ellipse_at_5%_100%,rgba(237,115,87,0.18),transparent_35%)]" />
-        <div className="absolute -right-36 top-20 -z-10 h-[34rem] w-[34rem] rounded-full border border-white/[0.1] sm:right-[-8rem]">
-          <div className="absolute inset-10 rounded-full border border-white/[0.1]" />
-          <div className="absolute inset-20 rounded-full border border-white/[0.1]" />
-          <div className="absolute inset-32 rounded-full border border-white/[0.1]" />
+        <div className="absolute -right-36 top-20 -z-10 h-[34rem] w-[34rem] rounded-full border border-slate-700 sm:right-[-8rem]">
+          <div className="absolute inset-10 rounded-full border border-slate-700" />
+          <div className="absolute inset-20 rounded-full border border-slate-700" />
+          <div className="absolute inset-32 rounded-full border border-slate-700" />
         </div>
 
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:px-10 lg:py-24">
@@ -37,7 +37,7 @@ export default function NinetyDayTrackerPage() {
             transition={{ duration: 0.45 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-amber-900/20 bg-white/70 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-amber-800">
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-amber-800">
               <span className="h-1.5 w-1.5 rounded-full bg-[#f2b84b]" />
               {trackerPage.hero.badge}
             </div>
@@ -79,9 +79,9 @@ export default function NinetyDayTrackerPage() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="relative mx-auto w-full max-w-md lg:ml-auto"
           >
-            <div className="absolute -inset-5 rounded-4xl bg-[#ed7357]/20 blur-3xl" />
-            <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-white/[0.07] p-4 shadow-sm shadow-black/30 backdrop-blur-sm">
-              <div className="relative overflow-hidden rounded-2xl bg-[linear-gradient(155deg,#37466b_0%,#202c49_55%,#3b3557_100%)] p-6">
+            <div className="absolute -inset-5 rounded-full bg-[#ed7357]/20 blur-3xl" />
+            <div className="relative overflow-hidden rounded-xl border border-slate-700 bg-white/[0.07] p-4 shadow-sm  backdrop-blur-sm">
+              <div className="relative overflow-hidden rounded-xl bg-[linear-gradient(155deg,#37466b_0%,#202c49_55%,#3b3557_100%)] p-6">
                 <div className="flex items-center justify-between gap-3">
                   <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-[#d7deee]">
                     {trackerPage.overview.title}
@@ -92,7 +92,7 @@ export default function NinetyDayTrackerPage() {
                   />
                 </div>
 
-                <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div className="mt-6 rounded-xl border border-slate-700 bg-white/5 p-4">
                   <div className="flex items-end justify-between gap-3">
                     <div>
                       <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-[#d7deee]">
@@ -113,7 +113,7 @@ export default function NinetyDayTrackerPage() {
                   {trackerPage.overview.highlights.map((item) => (
                     <div
                       key={item}
-                      className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-md text-[#edf0f7]"
+                      className="flex items-center gap-3 rounded-xl border border-slate-700 bg-white/5 px-3 py-2 text-md text-[#edf0f7]"
                     >
                       <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#ed7357] text-white">
                         <Sheet className="h-3.5 w-3.5" aria-hidden="true" />
@@ -141,7 +141,7 @@ export default function NinetyDayTrackerPage() {
             {trackerPage.actionPlan.map((stage, index) => (
               <div
                 key={stage.title}
-                className="rounded-2xl border border-[#c9cde0] bg-[#fbfaf7] p-5 shadow-sm  "
+                className="rounded-xl border border-slate-200 bg-[#fbfaf7] p-5 shadow-sm  "
               >
                 <div className="mb-4 flex items-center gap-3">
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-linear-to-br from-[#f2b84b] to-[#ed7357] text-md font-black text-[#30243a]">
@@ -180,9 +180,9 @@ export default function NinetyDayTrackerPage() {
             <div className="mt-6 h-1 w-16 rounded-full bg-[#ed7357]" />
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-emerald-100 bg-[#fffdf8] shadow-sm">
+          <div className="overflow-hidden rounded-xl border border-slate-200 bg-[#fffdf8] shadow-sm">
             <div className="overflow-x-auto">
-              <table className="min-w-full text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-emerald-100 [&_td]:border-b [&_td]:border-emerald-100 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
+              <table className="min-w-full text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
                 <thead className="bg-amber-700 font-bold text-white">
                   <tr>
                     <th className="font-black uppercase tracking-[0.16em]">
@@ -213,7 +213,7 @@ export default function NinetyDayTrackerPage() {
       </section>
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-5 py-14 sm:px-8 sm:pb-20 lg:px-10">
-        <div className="mx-auto max-w-7xl rounded-2xl border border-[#e5b997] bg-[#f7e3d3] p-7 shadow-sm  ">
+        <div className="mx-auto max-w-7xl rounded-xl border border-[#e5b997] bg-[#f7e3d3] p-7 shadow-sm  ">
           <p className="text-[12px] font-black uppercase tracking-[0.28em] text-[#9b4b42] ">
             {trackerPage.assumptionsTitle}
           </p>
@@ -246,7 +246,7 @@ export default function NinetyDayTrackerPage() {
             {trackerPage.phases.map((phase, index) => (
               <article
                 key={phase.period}
-                className="overflow-hidden rounded-2xl border border-[#bdcfcd] bg-[#fbfaf7] shadow-sm  "
+                className="overflow-hidden rounded-xl border border-slate-200 bg-[#fbfaf7] shadow-sm  "
               >
                 <div className="flex flex-wrap items-center gap-3 bg-[#273854] px-5 py-4 text-white">
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#f2b84b] text-md font-black text-[#30243a]">
@@ -272,7 +272,7 @@ export default function NinetyDayTrackerPage() {
                     ))}
                   </ul>
                   {"target" in phase && (
-                    <div className="mt-5 rounded-2xl border border-[#e5b997] bg-[#f7e3d3] p-4  ">
+                    <div className="mt-5 rounded-xl border border-[#e5b997] bg-[#f7e3d3] p-4  ">
                       <p className="font-bold text-[#723f3d] ">
                         {phase.target}
                       </p>
@@ -282,7 +282,7 @@ export default function NinetyDayTrackerPage() {
                     </div>
                   )}
                   {"outcome" in phase && (
-                    <div className="mt-5 rounded-2xl border border-[#bdcfcd] bg-[#e5efed] p-4  ">
+                    <div className="mt-5 rounded-xl border border-slate-200 bg-[#e5efed] p-4  ">
                       <p className="text-[12px] font-black uppercase tracking-[0.18em] text-[#356c68] ">
                         {trackerPage.plan.expectedResult}
                       </p>
@@ -299,14 +299,14 @@ export default function NinetyDayTrackerPage() {
       </section>
 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-5 py-14 text-slate-900 sm:px-8 sm:pb-20 lg:px-10">
-        <div className="mx-auto max-w-7xl rounded-2xl border border-white/10 bg-[#263451] p-7 shadow-sm ">
+        <div className="mx-auto max-w-7xl rounded-xl border border-slate-700 bg-[#263451] p-7 shadow-sm ">
           <p className="text-[12px] font-black uppercase tracking-[0.28em] text-amber-800">
             {trackerPage.recommendation.eyebrow}
           </p>
           <p className="mt-5 text-xl leading-9 text-slate-700">
             {trackerPage.recommendation.description}
           </p>
-          <div className="mt-6 rounded-2xl border border-[#ed7357]/40 bg-[#ed7357]/10 p-5">
+          <div className="mt-6 rounded-xl border border-[#ed7357]/40 bg-[#ed7357]/10 p-5">
             <p className="text-[12px] font-black uppercase tracking-[0.22em] text-rose-800">
               {trackerPage.recommendation.personalEyebrow}
             </p>

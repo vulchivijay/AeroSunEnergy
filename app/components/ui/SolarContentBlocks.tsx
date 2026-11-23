@@ -74,7 +74,7 @@ export function BenefitCard({
     <ContentBenefitCard
       title={title}
       description={description}
-      cardClassName={`rounded-2xl border-l-4 ${contentBenefitBorders[accent]} bg-[#edf3e9] p-5`}
+      cardClassName={`rounded-xl border-l-4 ${contentBenefitBorders[accent]} bg-[#edf3e9] p-5`}
       iconClassName="bg-emerald-50 text-emerald-700"
       titleClassName="tracking-[0.04em] text-slate-900"
     />

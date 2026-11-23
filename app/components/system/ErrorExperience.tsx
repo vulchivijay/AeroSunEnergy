@@ -30,7 +30,7 @@ type ErrorExperienceProps = {
 function Action({ action, primary }: { action: ErrorAction; primary: boolean }) {
   const className = primary
     ? 'group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#d6e8b9] px-6 py-3 text-md font-bold text-[#10251f] transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d6e8b9]'
-    : 'group inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-6 py-3 text-md font-semibold text-white transition hover:border-white/40 hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'
+    : 'group inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-slate-700 bg-white/[0.04] px-6 py-3 text-md font-semibold text-white transition hover:border-white/40 hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'
   const icon = primary
     ? <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
     : <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
@@ -59,12 +59,12 @@ function ErrorIllustration({
 
   return (
     <div
-      className="relative mx-auto flex aspect-[1.08] w-full max-w-[34rem] items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-[#092d25] shadow-sm"
+      className="relative mx-auto flex aspect-[1.08] w-full max-w-[34rem] items-center justify-center overflow-hidden rounded-xl border border-slate-700 bg-[#092d25] shadow-sm"
       aria-hidden="true"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_36%,rgba(245,199,106,0.20),transparent_35%),linear-gradient(155deg,rgba(163,217,119,0.08),transparent_55%)]" />
-      <div className="absolute inset-5 rounded-2xl border border-white/[0.07]" />
-      <div className="absolute left-8 top-8 flex items-center gap-2 rounded-full border border-white/10 bg-[#071b17]/70 px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-white/60 backdrop-blur">
+      <div className="absolute inset-5 rounded-xl border border-slate-700" />
+      <div className="absolute left-8 top-8 flex items-center gap-2 rounded-full border border-slate-700 bg-[#071b17]/70 px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-white/60 backdrop-blur">
         <span className={`h-1.5 w-1.5 rounded-full ${isLandscape ? 'bg-[#a3d977]' : 'bg-[#f5c76a]'}`} />
         {isLandscape ? t.systemUi.illustration.landscapeStatus : t.systemUi.illustration.systemStatus}
       </div>
@@ -79,7 +79,7 @@ function ErrorIllustration({
           <Sun className="absolute right-[21%] top-[27%] h-10 w-10 text-[#f5c76a]" strokeWidth={1.2} />
           <div className="absolute bottom-[13%] left-[-10%] h-[43%] w-[82%] rotate-[-12deg] rounded-full bg-[#123e31]" />
           <div className="absolute bottom-[5%] right-[-12%] h-[37%] w-[84%] rotate-[10deg] rounded-full bg-[#0b3529]" />
-          <div className="absolute bottom-[16%] left-[12%] h-[17%] w-[31%] -rotate-[12deg] overflow-hidden rounded-2xl border border-[#a3d977]/40 bg-[#153e38] shadow-sm">
+          <div className="absolute bottom-[16%] left-[12%] h-[17%] w-[31%] -rotate-[12deg] overflow-hidden rounded-xl border border-[#a3d977]/40 bg-[#153e38] shadow-sm">
             <PanelsTopLeft className="h-full w-full p-2 text-[#a3d977]/80" strokeWidth={1} />
           </div>
           <div className="absolute bottom-[23%] right-[21%] h-[29%] w-[1.5px] bg-white/70" />
@@ -97,11 +97,11 @@ function ErrorIllustration({
           <div className="absolute inset-x-[16%] top-[34%] h-[1px] bg-gradient-to-r from-transparent via-[#a3d977]/55 to-transparent" />
           <div className="absolute left-[22%] top-[34%] h-2 w-2 rounded-full bg-[#a3d977] shadow-sm" />
           <div className="absolute right-[22%] top-[34%] h-2 w-2 rounded-full bg-[#f5c76a] shadow-sm" />
-          <div className="absolute left-[23%] top-[28%] h-12 w-12 rounded-2xl border border-[#a3d977]/20 bg-[#a3d977]/[0.06]" />
-          <div className="absolute right-[21%] top-[28%] flex h-12 w-12 items-center justify-center rounded-2xl border border-[#f5c76a]/25 bg-[#f5c76a]/[0.08]">
+          <div className="absolute left-[23%] top-[28%] h-12 w-12 rounded-xl border border-[#a3d977]/20 bg-[#a3d977]/[0.06]" />
+          <div className="absolute right-[21%] top-[28%] flex h-12 w-12 items-center justify-center rounded-xl border border-[#f5c76a]/25 bg-[#f5c76a]/[0.08]">
             <CircleAlert className="h-6 w-6 text-[#f5c76a]" strokeWidth={1.3} />
           </div>
-          <div className="absolute bottom-[24%] left-1/2 flex h-20 w-20 -translate-x-1/2 items-center justify-center rounded-2xl border border-white/10 bg-[#071b17]/80 shadow-sm">
+          <div className="absolute bottom-[24%] left-1/2 flex h-20 w-20 -translate-x-1/2 items-center justify-center rounded-xl border border-slate-700 bg-[#071b17]/80 shadow-sm">
             <Zap className="h-9 w-9 text-[#a3d977]" strokeWidth={1.3} />
           </div>
           <div className="absolute bottom-[14%] left-[18%] right-[18%] h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
@@ -150,12 +150,12 @@ export function ErrorExperience({
           </div>
 
           {helpfulLinks.length > 0 && (
-            <nav aria-label={t.systemUi.notFound.helpfulLinksAriaLabel} className="mt-9 border-t border-white/10 pt-5">
+            <nav aria-label={t.systemUi.notFound.helpfulLinksAriaLabel} className="mt-9 border-t border-slate-700 pt-5">
               <p className="text-md font-semibold uppercase tracking-[0.16em] text-white/45">{t.systemUi.notFound.helpfulLinksHeading}</p>
               <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
                 {helpfulLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-md text-white/70 underline decoration-white/20 underline-offset-4 transition hover:text-[#d6e8b9] hover:decoration-[#d6e8b9] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d6e8b9]">
+                    <Link href={link.href} className="text-md text-white/70 underline decoration-white/20 underline-offset-4 transition hover:text-[#d6e8b9] hover:decoration-[#d6e8b9] focus-visible:rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d6e8b9]">
                       {link.label}
                     </Link>
                   </li>

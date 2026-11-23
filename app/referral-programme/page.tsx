@@ -31,7 +31,7 @@ function ReferralProgramSection({
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_10%_0%,rgba(129,140,248,0.13),transparent_35%),radial-gradient(ellipse_at_100%_100%,rgba(56,189,248,0.12),transparent_32%)]" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>
-          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-indigo-700/15 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-indigo-700">
+          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-indigo-700">
             <span className="h-2 w-2 rounded-full bg-emerald-600" aria-hidden="true" />
             {landing.badge}
           </p>
@@ -44,13 +44,13 @@ function ReferralProgramSection({
           </p>
         </div>
 
-        <aside className="rounded-2xl border border-white/80 bg-white/75 p-5 shadow-sm sm:p-6">
-          <p className="rounded-2xl border-l-2 border-amber-500 bg-[#fff3df] px-4 py-3 text-sm font-semibold leading-6 text-amber-950">
+        <aside className="rounded-xl border border-slate-200 bg-white/75 p-5 shadow-sm sm:p-6">
+          <p className="rounded-xl border-l-2 border-amber-500 bg-[#fff3df] px-4 py-3 text-sm font-semibold leading-6 text-amber-950">
             {landing.earningsNote}
           </p>
           <ul className="mt-4 grid gap-2 sm:grid-cols-3 lg:grid-cols-1">
             {landing.benefits.map((benefit, index) => (
-              <li key={benefit} className="flex items-center gap-3 rounded-2xl border border-slate-100 bg-white/80 p-3 text-sm font-semibold text-slate-700">
+              <li key={benefit} className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white/80 p-3 text-sm font-semibold text-slate-700">
                 <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-black ${index === 0 ? 'bg-emerald-100 text-emerald-800' : index === 1 ? 'bg-sky-100 text-sky-800' : 'bg-amber-100 text-amber-800'}`} aria-hidden="true">
                   ✓
                 </span>
@@ -90,7 +90,7 @@ function ReferralProgramSection({
 
           <ol className="mt-8 space-y-3 sm:mt-10">
             {content.steps.map((step, index) => (
-              <li key={step.title} className="flex gap-4 rounded-2xl bg-white/70 p-4 sm:p-5">
+              <li key={step.title} className="flex gap-4 rounded-xl bg-white/70 p-4 sm:p-5">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-base font-black text-amber-800">
                   {String(index + 1).padStart(2, '0')}
                 </span>
@@ -102,7 +102,7 @@ function ReferralProgramSection({
             ))}
           </ol>
 
-          <div className="mt-4 flex gap-3 rounded-2xl bg-white/70 p-4">
+          <div className="mt-4 flex gap-3 rounded-xl bg-white/70 p-4">
             <Gift className="mt-0.5 h-5 w-5 shrink-0 text-amber-800" aria-hidden="true" />
             <p className="text-sm leading-6 text-slate-700">
               <span className="font-bold text-slate-950">{content.rewardNoteTitle} </span>
@@ -118,7 +118,7 @@ function ReferralProgramSection({
     <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="referral-process-title">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
-          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-800/15 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-emerald-800">
+          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-emerald-800">
             {landing.processEyebrow}
           </p>
           <h2 id="referral-process-title" className="mt-3 text-3xl font-black tracking-tight text-emerald-950 sm:text-4xl">
@@ -127,7 +127,7 @@ function ReferralProgramSection({
         </div>
         <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {landing.processSteps.map((step, index) => (
-            <li key={step.title} className="rounded-2xl border border-emerald-900/10 bg-white p-5 shadow-sm sm:p-6">
+            <li key={step.title} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
               <span className="font-mono text-xs font-bold tracking-[0.15em] text-emerald-700">
                 {String(index + 1).padStart(2, '0')}
               </span>
@@ -144,7 +144,7 @@ function ReferralProgramSection({
       <div className="relative mx-auto max-w-7xl">
         <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <header>
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-indigo-700/15 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-indigo-700">
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-indigo-700">
               {landing.earningsEyebrow}
             </p>
             <h2 id="referral-earnings-title" className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
@@ -155,7 +155,7 @@ function ReferralProgramSection({
         </div>
 
         <div className="mt-8 grid gap-4 lg:grid-cols-2">
-          <article className="rounded-2xl border border-white/80 border-l-4 border-l-[#b8d8ec] bg-white/80 p-5 shadow-sm sm:p-6">
+          <article className="rounded-xl border border-slate-200 border-l-4 border-l-[#b8d8ec] bg-white/80 p-5 shadow-sm sm:p-6">
             <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">{landing.basicTitle}</p>
             <p className="mt-2 text-3xl font-black text-[#087a61]">
               {landing.basicRate}<span className="ml-1 text-sm font-bold text-slate-500">{landing.perKilowatt}</span>
@@ -163,7 +163,7 @@ function ReferralProgramSection({
             <p className="mt-3 text-sm leading-6 text-slate-600">{landing.basicDescription}</p>
             <div className="mt-4 space-y-2">
               {landing.rewardTiers.map((tier) => (
-                <div key={tier.systemSize} className="flex items-center justify-between gap-3 rounded-2xl border border-slate-100 bg-white/80 px-3 py-2.5 text-sm">
+                <div key={tier.systemSize} className="flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white/80 px-3 py-2.5 text-sm">
                   <span className="text-slate-600">{tier.systemSize}</span>
                   <strong className="text-[#087a61]">{tier.basicReward}</strong>
                 </div>
@@ -171,7 +171,7 @@ function ReferralProgramSection({
             </div>
           </article>
 
-          <article className="rounded-2xl border border-white/80 border-l-4 border-l-[#c5dfc2] bg-[linear-gradient(135deg,#e7f2eb_0%,#ffffff_55%,#e8e7f8_100%)] p-5 text-slate-900 shadow-sm sm:p-6">
+          <article className="rounded-xl border border-slate-200 border-l-4 border-l-[#c5dfc2] bg-[linear-gradient(135deg,#e7f2eb_0%,#ffffff_55%,#e8e7f8_100%)] p-5 text-slate-900 shadow-sm sm:p-6">
             <div className="flex items-start justify-between gap-3">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.12em] text-emerald-800">{landing.guidedTitle}</p>
@@ -186,7 +186,7 @@ function ReferralProgramSection({
             <p className="mt-3 text-sm leading-6 text-slate-600">{landing.guidedDescription}</p>
             <ul className="mt-4 space-y-2 text-xs leading-5 text-slate-700 sm:text-sm">
               {landing.guidanceTasks.map((task) => (
-                <li key={task} className="flex gap-2 rounded-2xl bg-white/70 p-3">
+                <li key={task} className="flex gap-2 rounded-xl bg-white/70 p-3">
                   <span className="text-emerald-700" aria-hidden="true">✓</span>
                   <span>{task}</span>
                 </li>
@@ -195,7 +195,7 @@ function ReferralProgramSection({
             <p className="mt-3 text-xs font-bold text-emerald-900">{landing.guidedBonus}</p>
             <div className="mt-4 space-y-2">
               {landing.rewardTiers.map((tier) => (
-                <div key={tier.systemSize} className="flex items-center justify-between gap-3 rounded-2xl border border-emerald-900/10 bg-white/80 px-3 py-2.5 text-sm">
+                <div key={tier.systemSize} className="flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white/80 px-3 py-2.5 text-sm">
                   <span className="text-slate-600">{tier.systemSize}</span>
                   <strong className="text-emerald-900">{tier.guidedReward}</strong>
                 </div>
@@ -204,7 +204,7 @@ function ReferralProgramSection({
           </article>
         </div>
 
-        <aside className="mt-5 flex flex-col gap-3 rounded-2xl border border-amber-300 bg-[#fff3df] p-5 text-amber-950 sm:flex-row sm:items-center">
+        <aside className="mt-5 flex flex-col gap-3 rounded-xl border border-amber-300 bg-[#fff3df] p-5 text-amber-950 sm:flex-row sm:items-center">
           <p className="text-sm leading-6">
             <strong>{landing.guidanceNoteTitle} </strong>
             {landing.guidanceNote}
@@ -216,7 +216,7 @@ function ReferralProgramSection({
 
     <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 lg:px-10 lg:py-16 sm:py-14" aria-labelledby="referral-faq-title">
       <div className="mx-auto max-w-7xl">
-        <p className="inline-flex w-fit rounded-full border border-[#075da8]/15 bg-[#eaf3fc] px-4 py-2 text-xs font-black uppercase tracking-[0.12em] text-[#075da8]">
+        <p className="inline-flex w-fit rounded-full border border-slate-200 bg-[#eaf3fc] px-4 py-2 text-xs font-black uppercase tracking-[0.12em] text-[#075da8]">
           {landing.faqEyebrow}
         </p>
         <h2 id="referral-faq-title" className="mt-4 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
@@ -224,7 +224,7 @@ function ReferralProgramSection({
         </h2>
         <dl className="mt-7 grid gap-4 sm:grid-cols-3">
           {landing.faqs.map((faq, index) => (
-            <div key={faq.question} className={`h-full rounded-2xl border border-[#d1e2f2] border-l-4 ${index === 0 ? 'border-l-[#b8d7ec]' : index === 1 ? 'border-l-[#c5dfc2]' : 'border-l-[#efd9ad]'} bg-white p-5 shadow-sm sm:p-6`}>
+            <div key={faq.question} className={`h-full rounded-xl border border-slate-200 border-l-4 ${index === 0 ? 'border-l-[#b8d7ec]' : index === 1 ? 'border-l-[#c5dfc2]' : 'border-l-[#efd9ad]'} bg-white p-5 shadow-sm sm:p-6`}>
               <dt className="font-bold leading-6 text-slate-950">{faq.question}</dt>
               <dd className="mt-2 text-sm leading-6 text-slate-600">{faq.answer}</dd>
             </div>
