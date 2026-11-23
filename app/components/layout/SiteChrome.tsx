@@ -9,7 +9,6 @@ import Link from 'next/link'
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react'
 import Logo from '@/app/components/brand/Logo'
 import { isLocale, LocaleProvider, useLocale, type Locale } from '@/lib/LocaleContext'
-import { isProductionComingSoonLink } from '@/lib/navigation'
 import { ArrowDownToLine, ArrowRight, ArrowUp, ArrowUpRight, Banknote, Building2, Check, ChevronDown, ChevronUp, Globe, Globe2, House, Info, Mail, MapPin, Megaphone, Menu, PanelsTopLeft, PackageOpen, Phone, RefreshCw, Send, Sun, WifiOff, Wind, X, Zap, type LucideIcon } from 'lucide-react'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
@@ -230,7 +229,7 @@ function Footer() {
 						<ul className="space-y-1">
 							{visibleNavLinks.map((link) => (
 								<li key={link.label}>
-									{(link as { disabled?: boolean }).disabled || isProductionComingSoonLink(link.href) ? (
+									{(link as { disabled?: boolean }).disabled ? (
 										<span className="flex min-h-10 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-white/50">
 											<span className="min-w-0">{link.label}</span>{comingSoonBadge}
 										</span>
@@ -247,7 +246,7 @@ function Footer() {
 						<ul className="space-y-1">
 							{quickEnquiries.map((item) => (
 								<li key={item.href}>
-									{(item as { disabled?: boolean }).disabled || isProductionComingSoonLink(item.href) ? (
+									{(item as { disabled?: boolean }).disabled ? (
 										<span className="flex min-h-9 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-white/50">
 											<span className="min-w-0">{item.label}</span>{comingSoonBadge}
 										</span>
@@ -267,16 +266,10 @@ function Footer() {
 						<ul className="space-y-1">
 							{solutions.map((solution) => (
 								<li key={solution.label}>
-									{isProductionComingSoonLink(solution.href) ? (
-										<span className="flex min-h-10 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-white/50">
-											<span className="min-w-0">{solution.label}</span>{comingSoonBadge}
-										</span>
-									) : (
-										<Link href={solution.href} aria-current={isActive(solution.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(solution.href) ? ' text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
-											<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(solution.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
-											{solution.label}
-										</Link>
-									)}
+									<Link href={solution.href} aria-current={isActive(solution.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(solution.href) ? ' text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
+										<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(solution.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
+										{solution.label}
+									</Link>
 								</li>
 							))}
 						</ul>
@@ -1067,7 +1060,7 @@ function Navbar() {
   }
 
   function renderNavigationLink(link: NavigationLink, mobile = false) {
-    const disabled = Boolean(link.disabled) || isProductionComingSoonLink(link.href)
+    const disabled = Boolean(link.disabled)
     const active = isActive(link.href) && !disabled
     const Icon = getNavigationIcon(link.href)
     const comingSoonLabel = t.navbar.comingSoon
