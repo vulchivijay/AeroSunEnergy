@@ -20,28 +20,28 @@ export default async function ProjectsPage() {
         </div>
         <div className="mx-auto my-6 grid w-[calc(100%-2rem)] max-w-7xl items-center gap-10 rounded-xl border border-slate-200 bg-white/20 px-5 py-14 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:px-8 sm:py-20 lg:my-8 lg:grid-cols-[1fr_auto] lg:px-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-white/5 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-emerald-100">
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-white/5 px-3 py-1.5 text-xs uppercase text-emerald-100 text-xs font-semibold tracking-wide leading-5">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-300 shadow-sm" />
               {labels.badge}
             </div>
-            <h1 className="mt-6 text-4xl font-black tracking-[0.065em] text-white sm:text-6xl lg:text-7xl">
+            <h1 className="mt-6 text-white text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
               {labels.heroTitle}
               <span className="mt-1 block text-emerald-300">{labels.heroTitleAccent}</span>
             </h1>
-            <p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-sm sm:leading-8">
+            <p className="mt-5 max-w-2xl text-slate-300      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {labels.heroDescription}
             </p>
           </div>
           <div className="flex w-fit items-center gap-4 rounded-xl border border-slate-700 bg-white/[0.06] px-5 py-4 backdrop-blur">
             <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-300/10 text-xl text-emerald-200">↗</span>
-            <span className="text-md leading-5 text-slate-300">
+            <span className="text-base leading-5 text-slate-300">
               {labels.projectFocus}
-              <strong className="block text-md font-bold text-white">{labels.projectFocusSteps}</strong>
+              <strong className="block text-base font-bold text-white tracking-normal">{labels.projectFocusSteps}</strong>
             </span>
           </div>
         </div>
         <div className="border-t border-slate-700">
-          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-emerald-100/60 sm:px-8 lg:px-10">
+          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-xs uppercase text-emerald-100/60 sm:px-8 lg:px-10 text-xs font-semibold tracking-wide leading-5">
             {labels.projectTypes.map((item) => <span key={item}>{item}</span>)}
           </div>
         </div>
@@ -55,15 +55,15 @@ export default async function ProjectsPage() {
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-lg text-emerald-800">i</span>
               <div>
-                <p className="inline-flex w-fit rounded-full border border-slate-200 bg-emerald-50 px-3 py-1.5 text-[12px] font-black uppercase tracking-[0.18em] text-emerald-800">{labels.approach}</p>
-                <p className="mt-2 text-md leading-7 text-slate-600 sm:text-sm">{labels.approachDescription}</p>
+                <p className="inline-flex w-fit rounded-full border border-slate-200 bg-emerald-50 px-3 py-1.5  uppercase text-emerald-800    text-xs font-semibold tracking-wide leading-5">{labels.approach}</p>
+                <p className="mt-2 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{labels.approachDescription}</p>
               </div>
             </div>
             <div className="mt-6 grid gap-3 border-t border-slate-200 pt-5 sm:grid-cols-2">
               {projectStepsData.map((step, index) => (
                 <div key={step} className="flex gap-3 rounded-xl bg-[#f4f8fc] p-3">
-                  <span className="font-mono text-md font-bold text-emerald-700">0{index + 1}</span>
-                  <span className="text-md leading-5 text-slate-600">{step}</span>
+                  <span className="font-mono text-base font-bold text-emerald-700 tracking-normal tabular-nums">0{index + 1}</span>
+                  <span className="text-base leading-5 text-slate-600">{step}</span>
                 </div>
               ))}
             </div>
@@ -71,18 +71,18 @@ export default async function ProjectsPage() {
 
           <section id="project-categories" className="scroll-mt-28 mb-8 overflow-hidden rounded-xl border border-slate-200 bg-gradient-to-br from-[#f1f2f6] to-white shadow-sm">
             <div className="flex items-start gap-4 p-5 sm:p-6">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-md font-bold text-emerald-800">01</span>
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 font-mono text-base font-bold text-emerald-800 tracking-normal tabular-nums">01</span>
               <div className="min-w-0 flex-1">
-                <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{labels.solutions}</h2>
+                <h2 className="text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{labels.solutions}</h2>
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
                   {projectCategoriesData.map((project) => (
                     <div key={project.title} className="rounded-xl bg-[#f4f8fc] p-4">
                       <div className={`mb-3 h-1.5 rounded-full bg-linear-to-r ${project.accent}`} aria-hidden="true" />
-                      <h3 className="text-md font-bold text-slate-900">{project.title}</h3>
-                      <p className="mt-2 text-md leading-6 text-slate-600">{project.description}</p>
+                      <h3 className="text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{project.title}</h3>
+                      <p className="mt-2 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{project.description}</p>
                       <ul className="mt-3 flex flex-wrap gap-2">
                         {project.outcomes.map((outcome) => (
-                          <li key={outcome} className="rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[12px] font-semibold text-slate-600">{outcome}</li>
+                          <li key={outcome} className="rounded-full border border-slate-200 bg-white px-2.5 py-1 text-xs font-semibold text-slate-600 tracking-normal">{outcome}</li>
                         ))}
                       </ul>
                     </div>
@@ -95,18 +95,18 @@ export default async function ProjectsPage() {
 
           <ProjectStatusFilter content={projectsPage} />
 
-          <p className="mt-7 rounded-xl border border-slate-200 bg-white p-5 text-md leading-7 text-slate-600">
+          <p className="mt-7 rounded-xl border border-slate-200 bg-white p-5 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {labels.contactPrompt}{' '}
-            <a href="/auth/dashboard/customer-enquiry" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800">{labels.contactEnquiryLink}</a>
-            {' '}{labels.or}{' '}<a href="/services" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800">{labels.contactServicesLink}</a>.
+            <a href="/auth/dashboard/customer-enquiry" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800 tracking-normal">{labels.contactEnquiryLink}</a>
+            {' '}{labels.or}{' '}<a href="/services" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800 tracking-normal">{labels.contactServicesLink}</a>.
           </p>
         </article>
 
         <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
           <nav aria-label={labels.sectionsLabel} className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
             <div className="border-b border-slate-200 px-5 py-4">
-              <p className="inline-flex w-fit rounded-full border border-slate-200 bg-emerald-50 px-3 py-1.5 text-[12px] font-black uppercase tracking-[0.18em] text-emerald-800">{labels.findTopic}</p>
-              <p className="mt-1 text-md font-bold text-slate-900">{labels.projectOverview}</p>
+              <p className="inline-flex w-fit rounded-full border border-slate-200 bg-emerald-50 px-3 py-1.5  uppercase text-emerald-800    text-xs font-semibold tracking-wide leading-5">{labels.findTopic}</p>
+              <p className="mt-1 text-slate-900      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{labels.projectOverview}</p>
             </div>
             <ol className="space-y-1 p-3">
               {[
@@ -115,8 +115,8 @@ export default async function ProjectsPage() {
                 ['project-pipeline', labels.statusOverview],
               ].map(([id, label], index) => (
                 <li key={id}>
-                  <a href={`#${id}`} className="flex items-start gap-3 rounded-xl px-3 py-2.5 text-md leading-5 text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-900">
-                    <span className="font-mono font-bold text-emerald-700/70">{String(index + 1).padStart(2, '0')}</span>
+                  <a href={`#${id}`} className="flex items-start gap-3 rounded-xl px-3 py-2.5 text-base leading-5 text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-900">
+                    <span className="font-mono font-bold text-emerald-700/70 tracking-normal tabular-nums">{String(index + 1).padStart(2, '0')}</span>
                     <span>{label}</span>
                   </a>
                 </li>
@@ -124,15 +124,15 @@ export default async function ProjectsPage() {
             </ol>
           </nav>
           <section className="rounded-xl bg-gradient-to-br from-[#f1f2f6] to-white p-5">
-            <p className="inline-flex w-fit rounded-full border border-slate-200 bg-white/70 px-3 py-1.5 text-[12px] font-black uppercase tracking-[0.18em] text-emerald-800">{labels.planningPriorities}</p>
-            <ul className="mt-4 space-y-3 text-md leading-6 text-slate-700">
+            <p className="inline-flex w-fit rounded-full border border-slate-200 bg-white/70 px-3 py-1.5  uppercase text-emerald-800    text-xs font-semibold tracking-wide leading-5">{labels.planningPriorities}</p>
+            <ul className="mt-4 space-y-3 text-base leading-6 text-slate-700">
               {labels.planningSteps.map((step) => <li key={step}>{step}</li>)}
             </ul>
           </section>
           <section className="rounded-xl border border-emerald-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
-            <p className="inline-flex w-fit rounded-full border border-slate-200 bg-white/75 px-3 py-1.5 text-[12px] font-black uppercase tracking-[0.18em] text-emerald-800">{labels.startConversation}</p>
-            <p className="mt-3 text-md leading-6 text-slate-700">{labels.startConversationDescription}</p>
-            <a href="/auth/dashboard/customer-enquiry" className="mt-4 inline-flex rounded-full bg-[#101c32] px-4 py-2.5 text-md font-bold text-white transition hover:bg-emerald-900">{labels.requestConsultation}</a>
+            <p className="inline-flex w-fit rounded-full border border-slate-200 bg-white/75 px-3 py-1.5  uppercase text-emerald-800    text-xs font-semibold tracking-wide leading-5">{labels.startConversation}</p>
+            <p className="mt-3 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{labels.startConversationDescription}</p>
+            <a href="/auth/dashboard/customer-enquiry" className="mt-4 inline-flex rounded-full bg-[#101c32] px-4 py-2.5 text-base font-bold text-white transition hover:bg-emerald-900 tracking-normal">{labels.requestConsultation}</a>
           </section>
         </aside>
       </div>

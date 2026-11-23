@@ -10,6 +10,11 @@ export {
   SectionEyebrow,
   FeatureCard,
   BenefitCard,
+  RooftopSolarContentBlock,
+  solarOfferingImages,
+  solarSystemImages,
+  solarOfferingAccents,
+  solarSystemAccents,
 
   InfoPanel,
 
@@ -17,6 +22,7 @@ export {
 export {
   WindSectionEyebrow,
   WindFeatureCard,
+  WindContentBlock,
   WindBenefitCard,
   WindInfoPanel,
   WindCapacityTable,
@@ -25,6 +31,7 @@ export {
 export {
   HybridSectionEyebrow,
   HybridFeatureCard,
+  HybridContentBlock,
   HybridBenefitCard,
   HybridInfoPanel,
   HybridTable,

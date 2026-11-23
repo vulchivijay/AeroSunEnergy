@@ -70,29 +70,31 @@ export default function SiteChrome({
 }
 
 
+const socialIconClassName = 'h-5 w-5 shrink-0'
+
 const socialIconComponents: Record<string, ReactNode> = {
 	twitter: (
-		<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+		<svg xmlns="http://www.w3.org/2000/svg" className={socialIconClassName} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 			<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
 		</svg>
 	),
 	linkedin: (
-		<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+		<svg xmlns="http://www.w3.org/2000/svg" className={socialIconClassName} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 			<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
 		</svg>
 	),
 	facebook: (
-		<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+		<svg xmlns="http://www.w3.org/2000/svg" className={socialIconClassName} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 			<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
 		</svg>
 	),
 	instagram: (
-		<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+		<svg xmlns="http://www.w3.org/2000/svg" className={socialIconClassName} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 			<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
 		</svg>
 	),
 	youtube: (
-		<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+		<svg xmlns="http://www.w3.org/2000/svg" className="h-[1.375rem] w-[1.375rem] shrink-0" fill="none" viewBox="3 6 18 12" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
 			<rect x="3" y="6" width="18" height="12" rx="4" />
 			<path d="m10 9 5 3-5 3z" fill="currentColor" stroke="none" />
 		</svg>
@@ -116,7 +118,7 @@ function Footer() {
 	const quickEnquiries = queries
 	const visibleNavLinks = [...navLinks.filter((link) => link.href !== '/policies'), { label: footer.referralProgram, href: '/referral-programme' }]
 	const comingSoonBadge = (
-		<span className="inline-flex items-center gap-1.5 border-l border-amber-200/30 pl-2 text-[9px] uppercase tracking-[0.16em] text-amber-200">
+		<span className="inline-flex items-center gap-1.5 border-l border-amber-200/30 pl-2 uppercase text-amber-200 text-xs font-semibold tracking-wide leading-5">
 			<span className="h-px w-2 bg-amber-200/70" aria-hidden="true" />
 			{t.navbar.comingSoon}
 		</span>
@@ -152,26 +154,26 @@ function Footer() {
 	return (
 		<footer
 			id="contact"
-			className="relative w-full overflow-hidden border-t border-slate-700 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(23,37,84,0.96),rgba(23,37,84,0.96))] text-white/90 shadow-sm before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-amber-400 before:via-white/40 before:to-sky-300"
+			className="relative w-full overflow-hidden border-t border-slate-700 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(23,37,84,0.96),rgba(23,37,84,0.96))] text-white/90 shadow-sm before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-amber-400 before:via-white/40 before:to-sky-300 "
 		>
-			<div className="pointer-events-none absolute -right-40 top-0 h-[34rem] w-[34rem] rounded-full border border-amber-700/10" aria-hidden="true" />
+			<div className="pointer-events-none absolute -right-40 top-0 h-[34rem] w-[34rem] rounded-full border border-amber-700/10 " aria-hidden="true" />
 
-			<div className="pointer-events-none absolute -right-24 top-16 h-[24rem] w-[24rem] rounded-full border border-slate-700" aria-hidden="true" />
+			<div className="pointer-events-none absolute -right-24 top-16 h-[24rem] w-[24rem] rounded-full border border-slate-700 " aria-hidden="true" />
 
-			<div className="relative mx-auto max-w-7xl px-5 pb-14 pt-14 sm:px-8 sm:pb-20 sm:pt-20 lg:px-10">
+			<div className="relative mx-auto max-w-7xl px-5 pb-14 pt-14 sm:px-8 sm:pb-20 sm:pt-20 lg:px-10 ">
 
 				<section className="relative mb-14 overflow-hidden rounded-xl bg-[linear-gradient(135deg,#d72b0b_0%,#f99104_52%,#faf206_100%)] p-7 text-slate-900 sm:p-10 lg:mb-20 lg:p-14 shadow-sm">
 					<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_88%_45%,rgba(245,199,106,0.18),transparent_35%)]" aria-hidden="true" />
 					<div className="relative grid items-center gap-10 lg:grid-cols-[1fr_auto]">
 						<div className="max-w-3xl">
-							<p className="flex items-center gap-3 text-sm  uppercase tracking-[0.24em] text-white">
+							<p className="flex items-center gap-3 uppercase text-white text-xs tracking-wide leading-5">
 								<span className="h-px w-8 bg-white" />
 								{t.navbar.brandName}
 							</p>
-							<h2 className="mt-5 text-4xl leading-[1.05] tracking-[0.045em] text-slate-200 sm:text-5xl lg:text-6xl">
+							<h2 className="mt-5 text-slate-200 text-2xl sm:text-3xl leading-snug">
 								{footer.heroTitle}
 							</h2>
-							<p className="mt-5 max-w-2xl text-sm leading-7 text-slate-100 sm:text-lg">
+							<p className="mt-5 max-w-2xl text-slate-100 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
 								{footer.heroDescription}
 							</p>
 							<Link
@@ -201,16 +203,16 @@ function Footer() {
 					</div>
 				</section>
 
-				<div className="mb-10 h-px w-full origin-left animate-[pulse_3s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-indigo-200/60 to-transparent motion-reduce:animate-none" aria-hidden="true" />
+				<div className="mb-10 h-px w-full origin-left animate-[pulse_3s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-indigo-200/60 to-transparent motion-reduce:animate-none " aria-hidden="true" />
 
-				<div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1.1fr_1fr] lg:gap-x-8">
+				<div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1.1fr_1fr] lg:gap-x-8 ">
 					<section aria-labelledby="footer-brand">
 						<div className="inline-flex max-w-full p-2">
 							<Logo />
 						</div>
-						<h2 id="footer-brand" className="mt-6 hidden text-sm  tracking-wide text-slate-900">{t.navbar.brandName}</h2>
-						<p className="mt-1 text-sm font-medium text-[#F5C76A] hidden">&ldquo;{t.navbar.brandTagline}&rdquo;</p>
-						<p className="mt-4 max-w-sm text-sm leading-7 text-white/75">{footer.brandDesc}</p>
+						<h2 id="footer-brand" className="mt-6 hidden text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{t.navbar.brandName}</h2>
+						<p className="mt-1 text-[#F5C76A] hidden      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">&ldquo;{t.navbar.brandTagline}&rdquo;</p>
+						<p className="mt-4 max-w-sm text-white/75      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{footer.brandDesc}</p>
 						<div className="mt-6 flex flex-wrap gap-3" role="group" aria-label={footer.followUs}>
 							{socialLinks.map(({ href, platform, dataSocial, icon }) => (
 								<Link
@@ -222,7 +224,7 @@ function Footer() {
 									title={socialMetadataByPlatform[platform].title}
 									itemProp="sameAs"
 									data-social={dataSocial}
-									className="group flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white/70 text-slate-600 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[#A5D6A7] hover:bg-[#073515] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#137c63]"
+									className="group flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white/70 text-slate-600 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-emerald-300/60 hover:bg-linear-to-r hover:from-[#137c63] hover:to-[#20A44A] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#137c63]"
 								>
 									{icon}
 								</Link>
@@ -231,7 +233,7 @@ function Footer() {
 					</section>
 
 					<nav aria-labelledby="footer-navigation">
-						<h2 id="footer-navigation" className="mb-5 text-sm uppercase text-sky-200">{footer.quickLinks}</h2>
+						<h2 id="footer-navigation" className="mb-5 uppercase text-sky-200 text-2xl leading-snug">{footer.quickLinks}</h2>
 						<ul className="space-y-0.5">
 							{visibleNavLinks.map((link) => (
 								<li key={link.label}>
@@ -240,7 +242,7 @@ function Footer() {
 											<span className="min-w-0">{link.label}</span>{comingSoonBadge}
 										</span>
 									) : (
-										<Link href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`group inline-flex min-h-9 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(link.href) ? ' text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
+										<Link href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`group inline-flex min-h-9 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(link.href) ? 'text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
 											<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(link.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
 											{link.label}
 										</Link>
@@ -248,7 +250,7 @@ function Footer() {
 								</li>
 							))}
 						</ul>
-						<h3 className="mb-3 mt-7 text-sm uppercase text-amber-200">{footer.quickEnquiries}</h3>
+						<h3 className="mb-3 mt-7 uppercase text-amber-200 text-2xl leading-snug">{footer.quickEnquiries}</h3>
 						<ul className="space-y-0.5">
 							{quickEnquiries.map((item) => (
 								<li key={item.href}>
@@ -257,7 +259,7 @@ function Footer() {
 											<span className="min-w-0">{item.label}</span>{comingSoonBadge}
 										</span>
 									) : (
-										<Link href={item.href} prefetch={item.href !== '/auth/dashboard/installation-checklist' && item.href !== '/auth/dashboard/customer-agreement'} aria-current={isActive(item.href) ? 'page' : undefined} className={`group inline-flex min-h-9 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(item.href) ? ' text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
+										<Link href={item.href} prefetch={item.href !== '/auth/dashboard/installation-checklist' && item.href !== '/auth/dashboard/customer-agreement'} aria-current={isActive(item.href) ? 'page' : undefined} className={`group inline-flex min-h-9 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(item.href) ? 'text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
 											<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(item.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
 											{item.label}
 										</Link>
@@ -268,11 +270,11 @@ function Footer() {
 					</nav>
 
 					<nav aria-labelledby="footer-solutions">
-						<h2 id="footer-solutions" className="mb-5 text-sm uppercase text-sky-200">{footer.ourSolutions}</h2>
+						<h2 id="footer-solutions" className="mb-5 uppercase text-sky-200 text-2xl leading-snug">{footer.ourSolutions}</h2>
 						<ul className="space-y-0.5">
 							{solutions.map((solution) => (
 								<li key={solution.label}>
-									<Link href={solution.href} aria-current={isActive(solution.href) ? 'page' : undefined} className={`group inline-flex min-h-9 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(solution.href) ? ' text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
+									<Link href={solution.href} aria-current={isActive(solution.href) ? 'page' : undefined} className={`group inline-flex min-h-9 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(solution.href) ? 'text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
 										<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(solution.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
 										{solution.label}
 									</Link>
@@ -282,8 +284,8 @@ function Footer() {
 					</nav>
 
 					<section aria-labelledby="footer-contact">
-						<h2 id="footer-contact" className="mb-5 text-sm uppercase text-sky-200">{footer.contactInformation}</h2>
-						<ul className="space-y-4 text-sm leading-6 text-white/80">
+						<h2 id="footer-contact" className="mb-5 uppercase text-sky-200 text-2xl leading-snug">{footer.contactInformation}</h2>
+						<ul className="space-y-4 text-sm leading-6 text-white/80 ">
 							<li className="flex items-start gap-3">
 								<MapPin className="mt-1 h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />
 								<a href={mapUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 focus-visible:text-amber-100">
@@ -294,9 +296,9 @@ function Footer() {
 								<Mail className="h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />
 								<span className="break-all">{footer.email}</span>
 							</li>
-							<li className="flex items-center gap-3">
-								<Phone className="h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />
-								<a href={`tel:${footer.phoneHref}`} className="transition-colors hover:text-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 focus-visible:text-amber-100"><DigitalNumber value={footer.phone} /></a>
+							<li className="flex items-center gap-3 ">
+								<Phone className="h-4 w-4 shrink-0 text-amber-300 " aria-hidden="true" />
+								<a href={`tel:${footer.phoneHref}`} className="transition-colors hover:text-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 focus-visible:text-amber-100 "><DigitalNumber value={footer.phone} /></a>
 							</li>
 							<li className="flex items-center gap-3">
 								<Globe className="h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />
@@ -323,11 +325,11 @@ function Footer() {
 
 				<section aria-labelledby="footer-newsletter" className="mt-14 grid gap-6 rounded-xl bg-[#147e62] p-6 shadow-sm sm:p-8 lg:grid-cols-[1fr_1fr] lg:items-center">
 					<div>
-						<h2 id="footer-newsletter" className="text-2xl leading-[1.05] tracking-[0.045em] text-slate-200 sm:text-3xl">{footer.stayPowered}</h2>
-						<p className="mt-2 max-w-xl text-sm tracking-[0.06em] leading-6 text-slate-100">{footer.newsletterDescription}</p>
+						<h2 id="footer-newsletter" className="text-slate-200 text-2xl leading-snug">{footer.stayPowered}</h2>
+						<p className="mt-2 max-w-xl text-slate-100 text-xs sm:text-sm font-normal leading-5">{footer.newsletterDescription}</p>
 					</div>
 					<form onSubmit={handleNewsletterSubmit} className="w-full">
-						<label htmlFor="footer-newsletter-email" className="sr-only">{footer.newsletterEmailLabel}</label>
+						<label htmlFor="footer-newsletter-email" className="sr-only text-xs sm:text-sm tracking-normal leading-5">{footer.newsletterEmailLabel}</label>
 						<div className="flex flex-col gap-3 sm:flex-row">
 							<input
 								id="footer-newsletter-email"
@@ -341,32 +343,31 @@ function Footer() {
 									setNewsletterEmail(event.target.value)
 								}}
 								placeholder={footer.newsletterPlaceholder}
-								className="min-h-12 min-w-0 flex-1 rounded-lg border border-slate-300 bg-white px-5 text-sm text-slate-900 outline-none transition placeholder:text-slate-800 placeholder:text-sm placeholder:tracking-[0.09em] focus:border-[#137c63] focus:ring-2 focus:ring-emerald-700/20"
+								className="min-h-12 min-w-0 flex-1 rounded-lg border border-slate-300 bg-white px-5 text-slate-900 outline-none transition placeholder:text-slate-800 focus:border-[#137c63] focus:ring-2 focus:ring-emerald-700/20 text-sm sm:text-base font-normal tracking-normal leading-6"
 							/>
-							<button type="submit" disabled={newsletterPending} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 text-sm text-[#1fa34a] transition hover:bg-[#DCEDC8] tracking-[0.045em] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7] disabled:cursor-wait disabled:opacity-70">
+							<button type="submit" disabled={newsletterPending} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 text-[#1fa34a] transition hover:bg-[#DCEDC8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A5D6A7] disabled:cursor-wait disabled:opacity-70 text-sm sm:text-base font-semibold tracking-normal leading-6">
 								{newsletterPending ? t.formSubmission.saving : footer.subscribe} <Send className="h-4 w-4" aria-hidden="true" />
 							</button>
 						</div>
-						<p className="mt-3 text-sm tracking-[0.06em] leading-5 text-slate-200">{footer.newsletterHint}</p>
-						<FormDataNotice className="text-slate-200 tracking-[0.06em]" />
+						<p className="my-5 text-slate-200 text-sm sm:text-base font-normal tracking-normal sm:leading-5">{footer.newsletterHint}</p>
+						<FormDataNotice className="text-slate-200" />
 					</form>
 				</section>
 
 			</div>
 
-			<div className="border-t border-slate-700 bg-white/5 backdrop-blur">
-				<div className="flex w-full flex-col items-center justify-between gap-1 border-t border-slate-700 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
-					<div className="flex flex-wrap items-center justify-center gap-1 text-[12px] uppercase tracking-[0.14em] text-white/70">
+			<div className="border-t border-slate-700 bg-white/5 backdrop-blur ">
+				<div className="flex w-full flex-col items-center justify-between gap-1 border-t border-slate-700 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10 ">
+					<div className="flex flex-wrap items-center justify-center gap-1 text-xs uppercase text-white/70 font-semibold tracking-wide leading-5">
 						{footer.legalLinks.map((link: { href: string; label: string }) => (
               <Fragment key={link.href}>
                 <Link href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`transition-colors hover:text-amber-100 ${isActive(link.href) ? 'text-amber-200' : ''}`}>
                 {link.label}</Link>
                 <span className="inline-flex px-1 text-amber-500 last:hidden">|</span>
               </Fragment>
-
 						))}
 					</div>
-					<p className="text-[13px] text-white/70">
+					<p className="text-white/50 tabular-nums text-xs font-normal tracking-normal leading-6 sm:leading-7">
             {footer.attribution} <DigitalNumber value={footer.copyright.replace('{year}', String(currentYear))} />
 					</p>
 				</div>
@@ -474,16 +475,16 @@ function CompanyAge() {
 	const formattedStartDate = formatter.format(START_DATE)
 
 	return (
-		<p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm text-white/75">
+		<p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-white/75      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
 			<span>
 				{companyAge.operatingSince}{' '}
 				<span className="text-sm" style={digitalFontStyle}>{formattedStartDate}</span>
 			</span>
 			{units && (
-				<span className="inline-flex items-baseline gap-1.5 text-sm tracking-[0.08em]" style={digitalFontStyle}>
+				<span className="inline-flex items-baseline gap-1.5 text-xs font-semibold tracking-wide leading-5" style={digitalFontStyle}>
 					{units.map(({ value, label }) => (
 						<span key={`${label}-${value}`} className="whitespace-nowrap">
-							<span className="text-sm tracking-[0.08em] text-amber-200">
+							<span className="text-amber-200 text-xs font-semibold tracking-wide leading-5">
 								{String(value).padStart(2, '0')}
 							</span>{' '}
 							{label}
@@ -665,16 +666,16 @@ function NetworkStatus() {
       role="status"
       aria-live="polite"
       aria-label={content.accessibilityLabel}
-      className="relative z-[70] flex flex-wrap items-center justify-center gap-x-3 gap-y-2 border-b border-[#f5c76a]/20 bg-[#092d25] px-4 py-3 text-center text-md text-white"
+      className="relative z-[70] flex flex-wrap items-center justify-center gap-x-3 gap-y-2 border-b border-[#f5c76a]/20 bg-[#092d25] px-4 py-3 text-center text-base text-white"
     >
       <WifiOff className="h-4 w-4 shrink-0 text-[#f5c76a]" aria-hidden="true" />
-      <p>
+      <p className="text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
         {content.offlineMessage}
       </p>
       <button
         type="button"
         onClick={retry}
-        className="inline-flex min-h-9 items-center gap-2 rounded-full border border-slate-700 px-3 py-1.5 text-md font-semibold text-[#d6e8b9] transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6e8b9]"
+        className="inline-flex min-h-9 items-center gap-2 rounded-full border border-slate-700 px-3 py-1.5 text-sm sm:text-base font-semibold tracking-normal leading-6 text-[#d6e8b9] transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6e8b9]"
       >
         <RefreshCw className="h-3.5 w-3.5" aria-hidden="true" />
         {content.retry}
@@ -695,7 +696,7 @@ function Notifications() {
   }, [])
 
   return (
-    <div className="border-b border-slate-200 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] px-3 py-2 text-slate-800 shadow-sm sm:px-5">
+    <div className=" bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] px-3 py-2 text-slate-800 shadow-sm sm:px-5">
       <div className="relative mx-auto flex w-full items-center gap-3 overflow-hidden bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] text-white shadow-sm">
         <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-amber-300 via-sky-400 to-violet-500" aria-hidden="true" />
         <div className="ml-3 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-950/80 text-white shadow-sm">
@@ -705,19 +706,19 @@ function Notifications() {
         <div id="site-notification-content" hidden={!isExpanded} className="min-w-0 flex-1 py-2">
           <div className="mb-1 flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-white shadow-sm" aria-hidden="true" />
-            <span className="text-sm uppercase tracking-[0.2em] text-white">
+            <span className="uppercase text-white text-xs tracking-wide leading-5">
               {t.notifications.badge}
             </span>
           </div>
-          <p className="text-xs leading-relaxed text-white sm:text-sm">
+          <p className="text-white text-sm sm:text-base leading-5">
             {notificationText}
-            <span className="text-xs underline underline-offset-4 text-[#ffb321] sm:text-sm">{notificationBoldText}</span>
+            <span className="text-xs sm:text-sm underline underline-offset-4 text-[#ffb321]">{notificationBoldText}</span>
             {notificationEndText}
           </p>
         </div>
 
         {!isExpanded && (
-          <span className="min-w-0 flex-1 truncate text-xs font-bold uppercase tracking-[0.18em] text-[#F59E0B]">
+          <span className="min-w-0 flex-1 truncate uppercase text-[#F59E0B] text-xs font-semibold tracking-wide leading-5">
             {t.notifications.badge}
           </span>
         )}
@@ -823,16 +824,16 @@ function PerformanceMonitor() {
     : [{ label: 'Perf', value: 'Loading…' }]
 
   return (
-    <div className="fixed bottom-4 right-4 z-40 rounded-xl border border-slate-700 bg-slate-950/85 px-3 py-2 text-[12px] font-medium shadow-md  backdrop-blur-sm">
-      <div className="mb-1 flex items-center gap-2 text-[12px] uppercase tracking-[0.24em] text-sky-300">
+    <div className="fixed bottom-4 right-4 z-40 rounded-xl border border-slate-700 bg-slate-950/85 px-3 py-2 text-xs font-medium shadow-md backdrop-blur-sm tracking-normal ">
+      <div className="mb-1 flex items-center gap-2 uppercase text-sky-300 text-xs font-semibold tracking-wide leading-5">
         <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-sm" />
         Perf
       </div>
-      <div className="space-y-1 text-slate-200">
+      <div className="space-y-1 text-slate-200 ">
         {rows.map((row) => (
-          <div key={row.label} className="flex items-center justify-between gap-4">
+          <div key={row.label} className="flex items-center justify-between gap-4 ">
             <span className="text-slate-400">{row.label}</span>
-            <span className="font-semibold text-white"><DigitalNumber value={row.value} /></span>
+            <span className="font-semibold text-white tracking-normal tabular-nums"><DigitalNumber value={row.value} /></span>
           </div>
         ))}
       </div>
@@ -963,7 +964,7 @@ function ToastProvider({ children }: { children: ReactNode }) {
             }`}
           >
             <ToastIcon kind={item.kind} />
-            <p className="min-w-0 flex-1 text-sm font-medium leading-5 text-slate-800">{item.message}</p>
+            <p className="min-w-0 flex-1 text-slate-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item.message}</p>
             <button
               type="button"
               onClick={() => dismiss(item.id)}
@@ -1075,7 +1076,7 @@ function Navbar() {
               ? 'bg-linear-to-r from-[#137c63] to-[#20A44A] text-white shadow-sm ring-1 ring-inset ring-white/40'
               : 'text-white/90 hover:bg-white/10 hover:text-amber-100 hover:shadow-sm'
         }`
-      : `group relative z-10 flex h-full min-w-0 flex-col items-center gap-1 rounded-xl px-1 py-1.5 text-sm transition-colors xl:text-xs 2xl:text-[13px] ${
+      : `group relative z-10 flex h-full min-w-0 flex-col items-center gap-1 rounded-xl px-1 py-1.5 text-sm transition-colors xl:text-xs ${
           active
             ? 'bg-linear-to-r from-[#137c63] to-[#20A44A] text-white shadow-sm'
             : disabled
@@ -1096,7 +1097,7 @@ function Navbar() {
             }`}>
               <Icon className="h-4 w-4" strokeWidth={1.7} aria-hidden="true" />
               {disabled && (
-                <span className="absolute left-[50%] -top-1 translate-[-50%] z-10 whitespace-nowrap rounded-t-xl rounded-br-xl border border-slate-200 bg-[#e5e7eb] px-1.5 py-0.5 text-[9px] cursor-default  uppercase tracking-[0.1em] text-[#333333] shadow-sm">
+                <span className="absolute left-[50%] -top-1 translate-[-50%] z-10 whitespace-nowrap rounded-t-xl rounded-br-xl border border-slate-200 bg-[#e5e7eb] px-1.5 py-0.5 cursor-default uppercase text-[#333333] shadow-sm text-xs font-semibold tracking-wide leading-5">
                   {comingSoonLabel}
                 </span>
               )}
@@ -1105,7 +1106,7 @@ function Navbar() {
           </>
         )}
         {disabled && (
-          <span className={`${mobile ? 'inline-flex' : 'hidden'} items-center gap-1.5 rounded-full border border-slate-200 bg-[#e5e7eb] px-2 py-1 text-xs  uppercase tracking-[0.12em] text-[#333333]`}>
+          <span className={`${mobile ? 'inline-flex' : 'hidden'} items-center gap-1.5 rounded-full border border-slate-200 bg-[#e5e7eb] px-2 py-1 uppercase text-[#333333] text-xs font-semibold tracking-wide leading-5`}>
             <span className="h-1.5 w-1.5 rounded-full bg-[#333333]/50" aria-hidden="true" />
             {comingSoonLabel}
           </span>
@@ -1166,7 +1167,7 @@ function Navbar() {
                 active
                   ? 'bg-[#18833a] text-white ring-1 ring-inset ring-[#18833a]/50'
                   : 'text-white/90 hover:bg-white/10 hover:text-amber-100'
-              }`}
+              } tracking-normal`}
             >
               {link.label}
             </Link>
@@ -1200,7 +1201,7 @@ function Navbar() {
                   aria-current={childActive ? 'page' : undefined}
                   className={`flex min-h-10 items-center rounded-lg px-3 py-2 text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300 ${
                     childActive
-                      ? 'bg-[#18833a]  text-white'
+                      ? 'bg-[#18833a] text-white'
                       : 'text-white/85 hover:bg-white/10 hover:text-amber-100'
                   }`}
                 >
@@ -1244,7 +1245,7 @@ function Navbar() {
                   aria-current={childActive ? 'page' : undefined}
                   className={`flex items-center rounded-xl px-3 py-2.5 text-left text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#333333] ${
                     childActive
-                      ? 'bg-[#18833a]  text-white'
+                      ? 'bg-[#18833a] text-white'
                       : 'text-[#333333] hover:bg-[#18833a] hover:text-white'
                   }`}
                 >
@@ -1286,7 +1287,7 @@ function Navbar() {
                   : 'bg-[#333333]/10 text-[#333333]'
                 : inline
                   ? 'text-white/85 hover:bg-white/10'
-                  : 'text-[#333333] hover:bg-[#333333]/5'
+                  : 'text-[#333333] hover:bg-[#333333]/5 tracking-normal'
             }`}
           >
             <span>{option.label}</span>
@@ -1300,13 +1301,13 @@ function Navbar() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 border-b border-slate-700 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] text-white shadow-md ring-1 ring-inset ring-white/10 backdrop-blur-2xl"
+      className="sticky top-0 z-50 border-b border-slate-700 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] text-white shadow-md ring-1 ring-inset ring-white/10 backdrop-blur-2xl "
     >
-      <div className="absolute -left-10 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-sky-300/20 blur-3xl" />
-      <div className="absolute -right-12 top-0 h-32 w-32 rounded-full bg-amber-200/20 blur-3xl" />
+      <div className="absolute -left-10 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-sky-300/20 blur-3xl " />
+      <div className="absolute -right-12 top-0 h-32 w-32 rounded-full bg-amber-200/20 blur-3xl " />
 
-      <div className="relative border-b border-slate-700 bg-white/5 text-white/90 backdrop-blur-xl">
-        <div className="mx-auto flex min-h-8 w-full flex-col items-start gap-1 px-3 py-1 text-xs tracking-[0.08em] sm:px-6 sm:text-sm sm:tracking-[0.12em] lg:flex-row lg:items-center lg:justify-between lg:gap-3 lg:px-8">
+      <div className="relative border-b border-slate-700 bg-white/5 text-white/90 backdrop-blur-xl ">
+        <div className="mx-auto flex min-h-8 w-full flex-col items-start gap-1 px-3 py-1 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:gap-3 lg:px-8 text-xs tracking-wide leading-5">
           <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
             <Building2 className="h-3.5 w-3.5 shrink-0 text-[#d6b45e]" strokeWidth={1.8} aria-hidden="true" />
             {t.navbar.companyRegistration}
@@ -1322,8 +1323,8 @@ function Navbar() {
             </svg>
             {t.navbar.patrioticLine}
           </span>
-          <span className="flex items-center gap-2 whitespace-nowrap uppercase text-white/80 lg:ml-3">
-            <Phone className="h-3 w-3 text-amber-500" strokeWidth={1.8} aria-hidden="true" />
+          <span className="flex items-center gap-2 whitespace-nowrap uppercase text-white/80 lg:ml-3 text-xs font-semibold tracking-wide leading-5 tabular-nums">
+            <Phone className="h-3 w-3 text-amber-500 " strokeWidth={1.8} aria-hidden="true" />
             <DigitalNumber value={t.navbar.companyMobile} />
           </span>
         </div>
@@ -1347,7 +1348,7 @@ function Navbar() {
               aria-label={t.navbar.languageLabel}
               aria-expanded={langOpen}
               aria-controls="desktop-language-options"
-              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-slate-700 bg-white/10 px-3 text-[12px]  tracking-wider text-white shadow-sm transition hover:border-slate-200 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-slate-700 bg-white/10 px-3 text-sm font-semibold tracking-wide leading-5 text-white shadow-sm transition hover:border-slate-200 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
             >
               <Globe2 className="h-4 w-4 text-sky-200" aria-hidden="true" />
               {languageOptions.find((option) => option.code === locale)?.shortLabel}
@@ -1360,7 +1361,7 @@ function Navbar() {
             href="/aerosun-energy.pdf"
             download="aerosun-energy.pdf"
             aria-label={t.navbar.downloadVoucher}
-            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-amber-300/70 bg-linear-to-r from-amber-500 to-orange-500 px-3 text-sm  text-white shadow-sm transition hover:-translate-y-0.5 hover:from-emerald-600 hover:to-emerald-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-amber-300/70 bg-linear-to-r from-amber-500 to-orange-500 px-3 text-sm text-white shadow-sm transition hover:-translate-y-0.5 hover:from-emerald-600 hover:to-emerald-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
           >
             <ArrowDownToLine className="h-4 w-4 shrink-0" aria-hidden="true" />
             <span className="hidden min-w-0 max-w-[7rem] 2xl:block">
@@ -1374,7 +1375,7 @@ function Navbar() {
             title={t.navbar.startProjectTitle}
             aria-label={t.navbar.startProjectAriaLabel}
             data-cta="start-project"
-            className="group inline-flex min-h-11 items-center gap-1 rounded-full border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-4 text-sm  text-white shadow-sm ring-1 ring-inset ring-white/15 transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-emerald-400"
+            className="group inline-flex min-h-11 items-center gap-1 rounded-full border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-4 text-sm text-white shadow-sm ring-1 ring-inset ring-white/15 transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-emerald-400"
           >
             <span className="min-w-0 max-w-[8rem] whitespace-normal break-keep text-center leading-tight line-clamp-2">{t.navbar.startProject}</span>
             <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
@@ -1408,7 +1409,7 @@ function Navbar() {
         className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-slate-700 bg-[linear-gradient(135deg,rgba(23,37,84,1),rgba(49,46,129,1),rgba(15,23,42,1))] px-4 pb-6 pt-3 text-white shadow-md backdrop-blur-2xl sm:px-6 xl:hidden"
       >
         <nav aria-label={t.navbar.mobileNavigationLabel} className="mx-auto max-w-3xl space-y-1">
-          <p className="mb-3 flex items-center gap-2 px-2 text-sm uppercase tracking-[0.2em] text-sky-200">
+          <p className="mb-3 flex items-center gap-2 px-2 uppercase text-sky-200    text-xs font-semibold tracking-wide leading-5">
             <span className="h-px w-5 bg-white/35" />
             {t.navbar.exploreLabel}
           </p>
@@ -1447,7 +1448,7 @@ function Navbar() {
               href="/aerosun-energy.pdf"
               download="aerosun-energy.pdf"
               onClick={closeMenu}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-amber-300/70 bg-white/60 px-5 text-sm  text-amber-800 shadow-sm transition hover:border-amber-500/60 hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-amber-300/70 bg-white/60 px-5 text-sm text-amber-800 shadow-sm transition hover:border-amber-500/60 hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
             >
               <ArrowDownToLine className="h-4 w-4 shrink-0" aria-hidden="true" />
               <span className="min-w-0 max-w-[9rem] whitespace-normal break-keep leading-tight line-clamp-2">{t.navbar.downloadVoucher}</span>

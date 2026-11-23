@@ -10177,7 +10177,7 @@
       "priceBeforeSubsidy": "ಬೆಲೆ (ಸಬ್ಸಿಡಿ ಮತ್ತು GST ಹೊರತುಪಡಿಸಿ)",
       "governmentSubsidy": "ಸರ್ಕಾರಿ ಸಬ್ಸಿಡಿ (PM Surya Ghar)",
       "effectiveCost": "ಸಬ್ಸಿಡಿ ನಂತರ (GST/ಮೀಟರಿಂಗ್‌ಗೂ ಮುನ್ನ)",
-      "taxesExtra": "*ಕೆಳಗಿನ ಅಂದಾಜಿನಲ್ಲಿ ಸೂಚಕ GST ಸೇರಿದೆ; ಮೀಟರಿಂಗ್ ಶುಲ್ಕಗಳು ಬದಲಾಗಬಹುದು.",
+      "taxesExtra": "*ಕೆಳಗಿನ ಅಂದಾಜಿನಲ್ಲಿ ಸೂಚಕ GST ಸೇರಿಸಲಾಗಿಲ್ಲ; ಮೀಟರಿಂಗ್ ಶುಲ್ಕಗಳು ಬದಲಾಗಬಹುದು.",
       "finalEffectiveCost": "ಸಬ್ಸಿಡಿ ನಂತರದ ಅಂದಾಜು ಅಂತಿಮ ವೆಚ್ಚ",
       "finalEffectiveCostBeforeMetering": "ನೆಟ್ ಮೀಟರಿಂಗ್ ಶುಲ್ಕಗಳ ಮುಂಚಿನ ಅಂದಾಜು ವೆಚ್ಚ",
       "gstEstimate": "ಅಂದಾಜು GST (8.9% EPC)",

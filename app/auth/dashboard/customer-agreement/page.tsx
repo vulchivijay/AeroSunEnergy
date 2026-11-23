@@ -98,28 +98,28 @@ export default function CustomerAgreementPage() {
         </div>
         <div className="mx-auto my-6 grid w-[calc(100%-2rem)] max-w-7xl items-center gap-10 rounded-xl border border-slate-200 bg-white/20 px-5 py-14 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:px-8 sm:py-20 lg:my-8 lg:grid-cols-[1fr_auto] lg:px-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-100/20 bg-white/5 px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.24em] text-indigo-100">
+            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-100/20 bg-white/5 px-3 py-1.5 text-xs uppercase text-indigo-100 text-xs font-semibold tracking-wide leading-5">
               <span className="h-1.5 w-1.5 rounded-full bg-indigo-300 shadow-sm" />
               {content.hero.badge}
             </div>
-            <h1 className="mt-6 text-4xl font-black tracking-[0.065em] text-white sm:text-6xl lg:text-7xl">
+            <h1 className="mt-6 text-white text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
               {content.hero.titleStart}
               <span className="mt-1 block text-sky-300">{content.hero.titleEnd}</span>
             </h1>
-            <p className="mt-5 max-w-2xl text-md leading-7 text-slate-300 sm:text-sm sm:leading-8">
+            <p className="mt-5 max-w-2xl text-slate-300      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {content.hero.description}
             </p>
           </div>
           <div className="flex w-fit items-center gap-4 rounded-xl border border-slate-700 bg-white/[0.06] px-5 py-4 backdrop-blur">
             <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-300/10 text-xl text-indigo-200">7</span>
-            <span className="text-md leading-5 text-slate-300">
+            <span className="text-base leading-5 text-slate-300">
               {content.hero.lifecycle}
-              <strong className="block text-md font-bold text-white">{content.hero.lifecycleDescription}</strong>
+              <strong className="block text-base font-bold text-white tracking-normal">{content.hero.lifecycleDescription}</strong>
             </span>
           </div>
         </div>
         <div className="border-t border-slate-700">
-          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-indigo-100/60 sm:px-8 lg:px-10">
+          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-5 py-4 text-xs uppercase text-indigo-100/60 sm:px-8 lg:px-10 text-xs font-semibold tracking-wide leading-5">
             {content.hero.topics.map((topic) => <span key={topic}>{topic}</span>)}
           </div>
         </div>
@@ -131,8 +131,8 @@ export default function CustomerAgreementPage() {
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-100 text-lg text-indigo-800">i</span>
               <div>
-                <p className="text-[12px] font-black uppercase tracking-[0.2em] text-indigo-800">{content.overview.title}</p>
-                <p className="mt-2 text-md leading-7 text-slate-600 sm:text-sm">
+                <p className=" uppercase text-indigo-800    text-xs font-semibold tracking-wide leading-5">{content.overview.title}</p>
+                <p className="mt-2 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                     {content.overview.description}
                 </p>
               </div>
@@ -140,19 +140,19 @@ export default function CustomerAgreementPage() {
             <div className="mt-6 grid gap-3 border-t border-slate-200 pt-5 sm:grid-cols-3">
               {content.overview.cards.map((card, index) => (
                 <div key={card.title} className="flex gap-3 rounded-xl bg-[#f4f8fc] p-3">
-                  <span className="font-mono text-md font-bold text-indigo-700">0{index + 1}</span>
-                  <span className="text-md leading-5 text-slate-600">
-                    <strong className="block text-md text-slate-900">{card.title}</strong>
+                  <span className="font-mono text-base font-bold text-indigo-700 tracking-normal tabular-nums">0{index + 1}</span>
+                  <span className="text-base leading-5 text-slate-600">
+                    <strong className="block text-base text-slate-900">{card.title}</strong>
                     {card.description}
                   </span>
                 </div>
               ))}
             </div>
-            <h2 className="mt-6 text-md font-bold text-slate-900">{content.overview.coreStepsTitle}</h2>
+            <h2 className="mt-6 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.overview.coreStepsTitle}</h2>
             <ol className="mt-3 grid gap-2 sm:grid-cols-2">
               {content.overview.steps.map((step, index) => (
-                <li key={step} className="flex gap-3 rounded-xl bg-[#f4f8fc] p-3 text-md leading-5 text-slate-600">
-                  <span className="font-mono font-bold text-indigo-700">{String(index + 1).padStart(2, '0')}</span>
+                <li key={step} className="flex gap-3 rounded-xl bg-[#f4f8fc] p-3 text-base leading-5 text-slate-600">
+                  <span className="font-mono font-bold text-indigo-700 tracking-normal tabular-nums">{String(index + 1).padStart(2, '0')}</span>
                   <span>{step}</span>
                 </li>
               ))}
@@ -163,15 +163,15 @@ export default function CustomerAgreementPage() {
             {content.sections.map((section, index) => (
               <section key={section.title} id={`agreement-process-${index + 1}`} className={`scroll-mt-28 overflow-hidden rounded-xl border border-slate-200 shadow-sm ${index % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}>
                 <div className="flex items-start gap-4 p-5 sm:p-6">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-indigo-200 bg-indigo-50 font-mono text-md font-bold text-indigo-800">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-indigo-200 bg-indigo-50 font-mono text-base font-bold text-indigo-800 tracking-normal tabular-nums">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <div className="min-w-0 flex-1">
-                    <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{section.title.replace(/^(?:\d+\.\s*)/, '')}</h2>
-                    <p className="mt-3 text-md leading-7 text-slate-600 sm:text-sm">{section.text}</p>
+                    <h2 className="text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{section.title.replace(/^(?:\d+\.\s*)/, '')}</h2>
+                    <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{section.text}</p>
                     <ul className="mt-4 space-y-2.5">
                       {section.points.map((point) => (
-                        <li key={point} className="flex items-start gap-3 text-md leading-6 text-slate-600">
+                        <li key={point} className="flex items-start gap-3 text-base leading-6 text-slate-600">
                           <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500" />
                           <span>{point}</span>
                         </li>
@@ -184,38 +184,38 @@ export default function CustomerAgreementPage() {
             ))}
           </div>
 
-          <p className="mt-7 rounded-xl border border-slate-200 bg-white p-5 text-md leading-7 text-slate-600">
+          <p className="mt-7 rounded-xl border border-slate-200 bg-white p-5 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {content.contact.question}{' '}
-            <span className="font-bold text-indigo-800">{content.contact.emailLabel}</span>.
+            <span className="font-bold text-indigo-800 tracking-normal">{content.contact.emailLabel}</span>.
           </p>
         </article>
 
         <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
           <nav aria-label={content.navigation.ariaLabel} className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
             <div className="border-b border-slate-200 px-5 py-4">
-              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-indigo-800">{content.navigation.findTopic}</p>
-              <p className="mt-1 text-md font-bold text-slate-900">{content.navigation.projectProcess}</p>
+              <p className=" uppercase text-indigo-800    text-xs font-semibold tracking-wide leading-5">{content.navigation.findTopic}</p>
+              <p className="mt-1 text-slate-900      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.navigation.projectProcess}</p>
             </div>
             <ol className="max-h-[55vh] space-y-1 overflow-y-auto p-3 lg:max-h-[calc(100vh-15rem)]">
               {content.sections.map((section, index) => (
                 <li key={section.title}>
-                  <a href={`#agreement-process-${index + 1}`} className="flex items-start gap-3 rounded-xl px-3 py-2.5 text-md leading-5 text-slate-600 transition hover:bg-indigo-50 hover:text-indigo-900">
-                    <span className="font-mono font-bold text-indigo-700/70">{String(index + 1).padStart(2, '0')}</span>
+                  <a href={`#agreement-process-${index + 1}`} className="flex items-start gap-3 rounded-xl px-3 py-2.5 text-base leading-5 text-slate-600 transition hover:bg-indigo-50 hover:text-indigo-900">
+                    <span className="font-mono font-bold text-indigo-700/70 tracking-normal tabular-nums">{String(index + 1).padStart(2, '0')}</span>
                     <span>{section.title.replace(/^(?:\d+\.\s*)/, '')}</span>
                   </a>
                 </li>
               ))}
               <li>
-                <a href="#customer-agreement-form" className="flex items-start gap-3 rounded-xl px-3 py-2.5 text-md leading-5 text-slate-600 transition hover:bg-indigo-50 hover:text-indigo-900">
-                  <span className="font-mono font-bold text-indigo-700/70">{content.navigation.formMarker}</span>
+                <a href="#customer-agreement-form" className="flex items-start gap-3 rounded-xl px-3 py-2.5 text-base leading-5 text-slate-600 transition hover:bg-indigo-50 hover:text-indigo-900">
+                  <span className="font-mono font-bold text-indigo-700/70 tracking-normal tabular-nums">{content.navigation.formMarker}</span>
                   <span>{content.navigation.agreementForm}</span>
                 </a>
               </li>
             </ol>
           </nav>
           <section className={`rounded-xl p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}>
-            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-indigo-800">{content.beforeAccepting.title}</p>
-            <ul className="mt-4 space-y-3 text-md leading-6 text-slate-700">
+            <p className=" uppercase text-indigo-800    text-xs font-semibold tracking-wide leading-5">{content.beforeAccepting.title}</p>
+            <ul className="mt-4 space-y-3 text-base leading-6 text-slate-700">
               {content.beforeAccepting.items.map((item) => <li key={item}>{item}</li>)}
             </ul>
           </section>
@@ -232,27 +232,27 @@ export default function CustomerAgreementPage() {
             <header className="overflow-hidden rounded-xl border border-slate-700 bg-linear-to-r from-indigo-950/65 via-blue-900/55 to-cyan-900/60 p-4 text-white shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:p-5">
               <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-slate-700 bg-white/8 text-xl font-black shadow-sm">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-slate-700 bg-white/8 text-xl font-bold shadow-sm tracking-normal">
                     C
                   </div>
                   <div>
-                    <p className="text-[12px] font-black uppercase tracking-[0.34em] text-indigo-100/85">{formCopy.agreement}</p>
-                    <h2 className="mt-1 text-2xl font-black tracking-[0.06em] sm:text-3xl">{formCopy.title}</h2>
+                    <p className=" uppercase text-indigo-100/85    text-xs font-semibold tracking-wide leading-5">{formCopy.agreement}</p>
+                    <h2 className="mt-1 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{formCopy.title}</h2>
                   </div>
                 </div>
 
-                <div className="grid gap-2 text-md sm:grid-cols-3 lg:min-w-104">
+                <div className="grid gap-2 text-base sm:grid-cols-3 lg:min-w-104">
                   <div className="rounded-xl border border-slate-700 bg-white/5 px-3 py-2">
-                    <p className="text-[12px] font-black uppercase tracking-[0.28em] text-indigo-100/75">{formCopy.referenceLabel}</p>
-                    <p className="mt-1 font-semibold">{formCopy.reference}</p>
+                    <p className=" uppercase text-indigo-100/75    text-xs font-semibold tracking-wide leading-5">{formCopy.referenceLabel}</p>
+                    <p className="mt-1      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{formCopy.reference}</p>
                   </div>
                   <div className="rounded-xl border border-slate-700 bg-white/5 px-3 py-2">
-                    <p className="text-[12px] font-black uppercase tracking-[0.28em] text-indigo-100/75">{formCopy.date}</p>
-                    <p className="mt-1 font-semibold">{formCopy.datePlaceholder}</p>
+                    <p className=" uppercase text-indigo-100/75    text-xs font-semibold tracking-wide leading-5">{formCopy.date}</p>
+                    <p className="mt-1      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{formCopy.datePlaceholder}</p>
                   </div>
                   <div className="rounded-xl border border-slate-700 bg-white/5 px-3 py-2">
-                    <p className="text-[12px] font-black uppercase tracking-[0.28em] text-indigo-100/75">{formCopy.status}</p>
-                    <p className="mt-1 font-semibold text-emerald-300">{formCopy.pendingSign}</p>
+                    <p className=" uppercase text-indigo-100/75    text-xs font-semibold tracking-wide leading-5">{formCopy.status}</p>
+                    <p className="mt-1 text-emerald-300      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{formCopy.pendingSign}</p>
                   </div>
                 </div>
               </div>
@@ -263,8 +263,8 @@ export default function CustomerAgreementPage() {
                 <div className="grid gap-4 lg:grid-cols-2">
                   <div className="rounded-xl border border-sky-200 bg-linear-to-br from-[#ebf8ff] via-white to-[#f5fbff] p-4 shadow-sm sm:p-5">
                     <div className="mb-3 flex items-center gap-3">
-                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-sky-700 to-cyan-700 text-lg font-black text-white shadow-sm ">1</span>
-                      <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">{formCopy.agreementDetails}</h2>
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-sky-700 to-cyan-700 text-lg font-bold text-white shadow-sm tracking-normal">1</span>
+                      <h2 className="text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{formCopy.agreementDetails}</h2>
                     </div>
                     <div className="space-y-4">
                       <Field label={formCopy.agreementNumber} name="agreementNumber" placeholder={formCopy.agreementNumberPlaceholder} register={register} compact />
@@ -275,8 +275,8 @@ export default function CustomerAgreementPage() {
 
                   <div className="rounded-xl border border-emerald-200 bg-linear-to-br from-[#f1fff9] via-white to-[#f7fff7] p-4 shadow-sm sm:p-5">
                     <div className="mb-3 flex items-center gap-3">
-                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-lime-500 text-lg font-black text-slate-950 shadow-sm ">2</span>
-                      <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">{formCopy.customerDetails}</h2>
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-lime-500 text-lg font-bold text-slate-950 shadow-sm tracking-normal">2</span>
+                      <h2 className="text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{formCopy.customerDetails}</h2>
                     </div>
                     <div className="space-y-4">
                       <Field label={formCopy.customerName} name="customerName" placeholder={formCopy.customerNamePlaceholder} register={register} error={errors.customerName} compact />
@@ -289,16 +289,16 @@ export default function CustomerAgreementPage() {
 
                 <div className="rounded-xl border border-violet-200 bg-linear-to-br from-[#f6f1ff] via-white to-[#f7f8ff] p-4 shadow-sm sm:p-5">
                   <div className="mb-4 flex items-center gap-3 border-b border-violet-200 pb-3">
-                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-violet-700 to-indigo-600 text-lg font-black text-white shadow-sm ">3</span>
-                    <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">{formCopy.projectDetails}</h2>
+                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-violet-700 to-indigo-600 text-lg font-bold text-white shadow-sm tracking-normal">3</span>
+                    <h2 className="text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{formCopy.projectDetails}</h2>
                   </div>
 
                   <div className="grid gap-4 md:grid-cols-2">
                     <fieldset className="md:col-span-2">
-                      <legend className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">{formCopy.projectType}</legend>
+                      <legend className="mb-2 block text-xs uppercase text-slate-700 text-xs font-semibold tracking-wide leading-5">{formCopy.projectType}</legend>
                       <div className="grid grid-cols-2 gap-2 rounded-xl border border-violet-200 bg-white/80 p-2.5 sm:grid-cols-3">
                         {formCopy.projectTypeOptions.map((option) => (
-                          <label key={option} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-2 py-2 text-[12px] font-medium text-slate-700">
+                          <label key={option} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-2 py-2 text-xs text-slate-700 text-xs sm:text-sm font-semibold tracking-normal leading-5">
                             <input type="radio" value={option} {...register('projectType')} className="h-4 w-4 accent-violet-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-700" />
                             <span>{option}</span>
                           </label>
@@ -316,16 +316,16 @@ export default function CustomerAgreementPage() {
                 <div className="grid gap-4 lg:grid-cols-2">
                   <section className={`rounded-xl border border-amber-200 p-4 shadow-sm sm:p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
                     <div className="mb-3 flex items-center gap-3 border-b border-amber-200 pb-3">
-                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-orange-500 text-lg font-black text-slate-950 shadow-sm ">4</span>
-                      <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">{formCopy.commercialTerms}</h2>
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-orange-500 text-lg font-bold text-slate-950 shadow-sm tracking-normal">4</span>
+                      <h2 className="text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{formCopy.commercialTerms}</h2>
                     </div>
 
                     <div className="overflow-hidden rounded-xl border border-amber-200 bg-white/80">
-                      <div className="grid grid-cols-[1.5fr_0.8fr_0.9fr_0.9fr] border-b border-amber-200 bg-amber-50 text-[12px] font-black uppercase tracking-[0.18em] text-slate-700">
+                      <div className="grid grid-cols-[1.5fr_0.8fr_0.9fr_0.9fr] border-b border-amber-200 bg-amber-50 text-xs uppercase text-slate-700 text-xs font-semibold tracking-wide leading-5">
                         {formCopy.milestoneHeaders.map((header) => <div key={header} className="px-3 py-3">{header}</div>)}
                       </div>
                       {formCopy.milestones.map((milestone, index) => (
-                        <div key={milestone} className="grid grid-cols-[1.5fr_0.8fr_0.9fr_0.9fr] border-b border-slate-200 last:border-b-0 text-md text-slate-700">
+                        <div key={milestone} className="grid grid-cols-[1.5fr_0.8fr_0.9fr_0.9fr] border-b border-slate-200 last:border-b-0 text-base text-slate-700">
                           <div className="border-r border-slate-200 px-3 py-3">{index + 1}. {milestone}</div>
                           <div className="border-r border-slate-200 px-3 py-3"><div className="h-7 rounded-lg border border-dashed border-slate-200 bg-slate-50/60" /></div>
                           <div className="border-r border-slate-200 px-3 py-3"><div className="h-7 rounded-lg border border-dashed border-slate-200 bg-slate-50/60" /></div>
@@ -337,13 +337,13 @@ export default function CustomerAgreementPage() {
 
                   <section className={`rounded-xl border border-emerald-200 p-4 shadow-sm sm:p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}>
                     <div className="mb-3 flex items-center gap-3 border-b border-emerald-200 pb-3">
-                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-teal-500 text-lg font-black text-slate-950 shadow-sm ">5</span>
-                      <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">{formCopy.scopeOfWork}</h2>
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-teal-500 text-lg font-bold text-slate-950 shadow-sm tracking-normal">5</span>
+                      <h2 className="text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{formCopy.scopeOfWork}</h2>
                     </div>
 
-                    <div className="space-y-2 text-md text-slate-700">
+                    <div className="space-y-2 text-base text-slate-700">
                       {formCopy.scopeItems.map((item) => (
-                        <label key={item} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2.5">
+                        <label key={item} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs sm:text-sm font-semibold tracking-normal leading-5">
                           <input type="checkbox" value={item} {...register('scopeItems')} className="h-4 w-4 accent-emerald-600" />
                           <span>{item}</span>
                         </label>
@@ -354,14 +354,14 @@ export default function CustomerAgreementPage() {
 
                 <section className={`rounded-xl border border-rose-200 p-4 shadow-sm sm:p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
                   <div className="mb-3 flex items-center gap-3 border-b border-rose-200 pb-3">
-                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-rose-500 to-pink-500 text-lg font-black text-white shadow-sm ">6</span>
-                    <h2 className="text-lg font-black tracking-[0.04em] text-slate-900">{formCopy.termsAndConditions}</h2>
+                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-rose-500 to-pink-500 text-lg font-bold text-white shadow-sm tracking-normal">6</span>
+                    <h2 className="text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{formCopy.termsAndConditions}</h2>
                   </div>
 
-                  <ol className="space-y-2 text-md leading-7 text-slate-700">
+                  <ol className="space-y-2 text-base leading-7 text-slate-700">
                     {formCopy.terms.map((item, index) => (
                       <li key={item} className="flex gap-3">
-                        <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-rose-100 text-[12px] font-black text-rose-700">{index + 1}</span>
+                        <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-rose-100 text-xs font-bold text-rose-700 tracking-normal">{index + 1}</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -371,12 +371,12 @@ export default function CustomerAgreementPage() {
 
               <aside className="rounded-xl border border-indigo-200 bg-linear-to-br from-[#0b1e46] via-[#132c5e] to-[#0a1d45] p-4 text-white shadow-sm sm:p-5">
                 <div className="mb-4 flex items-center gap-3 border-b border-slate-700 pb-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-lg font-black">7</span>
-                  <h2 className="text-lg font-black tracking-[0.04em]">{formCopy.acceptance}</h2>
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-lg font-bold tracking-normal">7</span>
+                  <h2 className=" text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{formCopy.acceptance}</h2>
                 </div>
 
                 <div className="space-y-4">
-                  <p className="text-md leading-7 text-slate-200">
+                  <p className="text-slate-200      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                     {formCopy.acceptanceStatement}
                   </p>
 
@@ -388,17 +388,17 @@ export default function CustomerAgreementPage() {
                     <Field label={formCopy.place} name="acceptancePlace" placeholder={formCopy.placePlaceholder} register={register} compact dark />
                   </div>
 
-                  <label className="flex items-start gap-3 rounded-xl border border-slate-700 bg-white/5 p-3 text-md leading-6 text-slate-200">
+                  <label className="flex items-start gap-3 rounded-xl border border-slate-700 bg-white/5 p-3 text-slate-200 text-xs sm:text-sm font-semibold tracking-normal leading-5">
                     <input type="checkbox" {...register('agreed')} aria-invalid={Boolean(errors.agreed)} aria-describedby={errors.agreed ? 'agreed-error' : undefined} className="mt-1 h-4 w-4 rounded-lg border-slate-300 text-indigo-500 focus:ring-indigo-400" />
                     <span>{formCopy.acceptCheckbox}</span>
                   </label>
-                  {errors.agreed && <p id="agreed-error" className="text-md text-rose-300">{errors.agreed.message}</p>}
+                  {errors.agreed && <p id="agreed-error" className="text-rose-300      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.agreed.message}</p>}
 
                   <FormDataNotice className="text-slate-300" />
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex w-full items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-md font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-indigo-900 disabled:cursor-not-allowed disabled:opacity-60"
+                    className="inline-flex w-full items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-base font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-indigo-900 disabled:cursor-not-allowed disabled:opacity-60 tracking-normal"
                   >
                     {isSubmitting ? t.formSubmission.saving : formCopy.submit}
                   </button>
@@ -434,9 +434,9 @@ function Field({ label, name, placeholder, type = 'text', register, error, compa
       register={register}
       error={error}
       wrapperClassName={compact ? '' : 'md:col-span-2'}
-      labelClassName={`mb-2 block text-[12px] font-black uppercase tracking-[0.22em] ${dark ? 'text-slate-200' : 'text-slate-700'}`}
-      inputClassName={`h-11 w-full rounded-lg border px-4 py-3 text-md outline-none transition-all duration-200 placeholder:text-slate-600 focus:ring-4 ${dark ? 'border-slate-700 bg-white/5 text-white placeholder:text-slate-400 focus:border-indigo-400 focus:ring-indigo-600/30' : 'border-slate-200 bg-white text-slate-900 focus:border-sky-500 focus:ring-sky-100'}`}
-      errorClassName="mt-2 text-md text-rose-300"
+      labelClassName={`mb-2 block text-xs sm:text-sm font-semibold uppercase tracking-wide leading-5 ${dark ? 'text-slate-200' : 'text-slate-700'}`}
+      inputClassName={`h-11 w-full rounded-lg border px-4 py-3 text-sm sm:text-base font-normal tracking-normal leading-6 outline-none transition-all duration-200 placeholder:text-slate-600 focus:ring-4 ${dark ? 'border-slate-700 bg-white/5 text-white placeholder:text-slate-400 focus:border-indigo-400 focus:ring-indigo-600/30' : 'border-slate-200 bg-white text-slate-900 focus:border-sky-500 focus:ring-sky-100'}`}
+      errorClassName="mt-2 text-xs sm:text-sm font-normal tracking-normal leading-5 text-rose-300"
     />
   )
 }

@@ -28,18 +28,18 @@ function SectionHeading({
   return (
     <div className="mb-8 max-w-3xl">
       <p
-        className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? "border-amber-300/20 bg-white/[0.08] text-amber-200" : "border-slate-200 bg-white/75 text-teal-800"}`}
+        className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 uppercase before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? "border-amber-300/20 bg-white/[0.08] text-amber-200" : " border-slate-200 bg-white/75 text-teal-800    "} text-xs font-semibold tracking-wide leading-5`}
       >
         {number} / {eyebrow}
       </p>
       <h2
-        className={`mt-4 text-3xl font-black leading-[1.05] tracking-tighter sm:text-4xl lg:text-5xl ${inverse ? "text-white" : "text-[#152b29]"}`}
+        className={`mt-4 ${inverse ? "text-white" : "text-[#152b29]"} text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug`}
       >
         {title}
       </h2>
       {description && (
         <p
-          className={`mt-4 text-sm leading-7 sm:text-base sm:leading-8 ${inverse ? "text-indigo-100/90" : "text-slate-600"}`}
+          className={`mt-4 ${inverse ? "text-indigo-100/90" : " text-slate-600      "}      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}
         >
           {description}
         </p>
@@ -90,53 +90,53 @@ export default async function CompanyProfilePage() {
           aria-hidden="true"
         />
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-          <p className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#137c63]">
+          <p className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">
             <span
               className="h-1.5 w-1.5 rounded-full bg-amber-500"
               aria-hidden="true"
             />
             {cp.badge}
           </p>
-          <h1 className="mt-6 max-w-4xl text-4xl font-black leading-[1.02] tracking-tighter text-[#152b29] sm:text-6xl lg:text-7xl">
+          <h1 className="mt-6 max-w-4xl text-[#152b29] text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
             {cp.title}
             <span className="mt-2 block text-[#137c63]">{cp.subtitle}</span>
           </h1>
-          <p className="mt-5 text-sm font-bold uppercase tracking-[0.2em] text-slate-600">
+          <p className="mt-5 uppercase text-slate-600    text-xs font-semibold tracking-wide leading-5">
             {cp.motto}
           </p>
-          <p className="mt-6 max-w-3xl text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
+          <p className="mt-6 max-w-3xl text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {cp.intro}
           </p>
           <a
             href="/company-profile.pdf"
             download="company-profile.pdf"
-            className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#087a61] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61]"
+            className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#087a61] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61] tracking-normal"
           >
             <Download className="h-4 w-4" aria-hidden="true" />
             {cp.downloadLabel}
           </a>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <div className="rounded-xl border border-slate-200 bg-white/85 p-5">
-              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#137c63]">
+              <p className=" uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">
                 {cp.officeLabel}
               </p>
-              <p className="mt-2 text-sm leading-7 text-[#152b29]">
+              <p className="mt-2 text-[#152b29]      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 {cp.officeText}
               </p>
             </div>
             <div className="rounded-xl border border-slate-200 bg-white/85 p-5">
-              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#137c63]">
+              <p className=" uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">
                 {cp.cinLabel}
               </p>
-              <p className="mt-2 font-mono text-lg font-bold tracking-wide text-[#137c63]">
+              <p className="mt-2 font-mono text-[#137c63]     tabular-nums text-xs font-semibold tracking-wide leading-5">
                 U35106AP2026PTC128748
               </p>
             </div>
             <div className="rounded-xl border border-slate-200 bg-white/85 p-5 sm:col-span-2 lg:col-span-1">
-              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#137c63]">
+              <p className=" uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">
                 {cp.focusLabel}
               </p>
-              <div className="mt-3 flex flex-wrap gap-2 text-sm font-semibold text-[#152b29]">
+              <div className="mt-3 flex flex-wrap gap-2 text-sm font-semibold text-[#152b29] tracking-normal">
                 {cp.focusTags?.map((tag: string, idx: number) => (
                   <span key={tag} className="inline-flex items-center gap-1.5">
                     {idx === 0 && (
@@ -184,7 +184,7 @@ export default async function CompanyProfilePage() {
             eyebrow={cp.section2Eyebrow}
             title={cp.section2Title}
           />
-          <p className="max-w-4xl rounded-xl border border-slate-200 bg-slate-50 p-6 text-base leading-8 text-slate-700 sm:p-8 sm:text-lg">
+          <p className="max-w-4xl rounded-xl border border-slate-200 bg-slate-50 p-6 text-slate-700 sm:p-8      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {cp.section2Text}
           </p>
         </div>
@@ -215,7 +215,7 @@ export default async function CompanyProfilePage() {
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-50 text-teal-800">
                 <Sun className="h-5 w-5" aria-hidden="true" />
               </div>
-              <h3 className="mt-5 text-xl font-bold">{cp.solarTitle}</h3>
+              <h3 className="mt-5 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{cp.solarTitle}</h3>
               <div className="mt-4">
                 <BulletList items={solarSolutions} />
               </div>
@@ -224,8 +224,8 @@ export default async function CompanyProfilePage() {
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-50 text-sky-800">
                 <Wind className="h-5 w-5" aria-hidden="true" />
               </div>
-              <h3 className="mt-5 text-xl font-bold">{cp.windTitle}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600">
+              <h3 className="mt-5 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{cp.windTitle}</h3>
+              <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 {cp.windProductIntro}
               </p>
               <div className="mt-4">
@@ -236,19 +236,19 @@ export default async function CompanyProfilePage() {
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-50 text-amber-800">
                 <Zap className="h-5 w-5" aria-hidden="true" />
               </div>
-              <h3 className="mt-5 text-xl font-bold">{cp.hybridTitle}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600">
+              <h3 className="mt-5 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{cp.hybridTitle}</h3>
+              <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 {cp.hybridIntro}
               </p>
               <div className="mt-4">
                 <BulletList items={hybridApplications} />
               </div>
-              <p className="mt-4 text-sm leading-7 text-slate-600">
+              <p className="mt-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 {cp.hybridFinal}
               </p>
             </article>
           </div>
-          <p className="mt-5 rounded-xl border border-amber-200 bg-[#fff8ed] px-5 py-4 text-sm leading-7 text-amber-950">
+          <p className="mt-5 rounded-xl border border-amber-200 bg-[#fff8ed] px-5 py-4 text-amber-950      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {cp.waitNote}
           </p>
         </div>
@@ -262,7 +262,7 @@ export default async function CompanyProfilePage() {
             title={cp.productSectionTitle}
           />
           <div className="overflow-hidden rounded-xl border border-slate-200 bg-white">
-            <div className="grid grid-cols-1 gap-2 bg-[linear-gradient(145deg,#713f12_0%,#92400e_55%,#a16207_100%)] px-5 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white sm:grid-cols-[0.8fr_1.2fr] sm:gap-0 sm:px-7">
+            <div className="grid grid-cols-1 gap-2 bg-[linear-gradient(145deg,#713f12_0%,#92400e_55%,#a16207_100%)] px-5 py-4 text-xs uppercase text-white sm:grid-cols-[0.8fr_1.2fr] sm:gap-0 sm:px-7 text-xs font-semibold tracking-wide leading-5">
               <span>{cp.productTableCategory}</span>
               <span>{cp.productTableServices}</span>
             </div>
@@ -275,7 +275,7 @@ export default async function CompanyProfilePage() {
                     : "bg-slate-50"
                 }`}
               >
-                <span className="font-semibold text-[#112c2a]">
+                <span className="font-semibold text-[#112c2a] tracking-normal">
                   {category}
                 </span>
                 <span className="text-slate-600">
@@ -295,7 +295,7 @@ export default async function CompanyProfilePage() {
             title={cp.innovationTitle}
             description={cp.innovationDescription}
           />
-          <p className="rounded-xl border-l-4 border-amber-500 bg-white px-5 py-4 text-sm leading-7 text-slate-600 shadow-sm">
+          <p className="rounded-xl border-l-4 border-amber-500 bg-white px-5 py-4 text-slate-600 shadow-sm      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {cp.innovationNote}
           </p>
           <ol className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -304,7 +304,7 @@ export default async function CompanyProfilePage() {
                 key={item}
                 className="flex gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
               >
-                <span className="font-mono text-sm font-bold text-teal-700">
+                <span className="font-mono text-sm font-bold text-teal-700 tracking-normal tabular-nums">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <span className="text-sm leading-7 text-slate-700">
@@ -330,10 +330,10 @@ export default async function CompanyProfilePage() {
                 key={step}
                 className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
               >
-                <span className="font-mono text-sm font-bold text-teal-700">
+                <span className="font-mono text-sm font-bold text-teal-700 tracking-normal tabular-nums">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <p className="mt-3 text-sm leading-7 text-slate-700">
+                <p className="mt-3 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {step}
                 </p>
               </li>
@@ -360,7 +360,7 @@ export default async function CompanyProfilePage() {
             description={cp.manufacturingDescription}
           />
           <BulletList items={manufacturingModel} />
-          <p className="mt-5 text-sm leading-7 text-slate-600">
+          <p className="mt-5 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {cp.manufacturingNote}
           </p>
         </div>
@@ -388,7 +388,7 @@ export default async function CompanyProfilePage() {
               </div>
             ))}
           </div>
-          <p className="mt-5 border-t border-slate-200 pt-5 text-sm leading-7 text-slate-700">
+          <p className="mt-5 border-t border-slate-200 pt-5 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {cp.qualityNote}
           </p>
         </div>
@@ -404,7 +404,7 @@ export default async function CompanyProfilePage() {
           />
           <div className="grid gap-3 sm:grid-cols-2">
             {reasonsToWorkWithUs.map((reason) => (
-              <div key={reason} className="p-2 text-md leading-7 text-slate-700">
+              <div key={reason} className="p-2 text-base leading-7 text-slate-700">
                 {reason}
               </div>
             ))}
@@ -426,10 +426,10 @@ export default async function CompanyProfilePage() {
                 key={priority}
                 className="flex gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
               >
-                <span className="font-mono text-sm font-bold text-teal-700">
+                <span className="font-mono text-sm font-bold text-teal-700 tracking-normal tabular-nums">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <p className="text-sm leading-7 text-slate-700">
+                <p className="text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {priority}
                 </p>
               </div>
@@ -442,21 +442,21 @@ export default async function CompanyProfilePage() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="grid lg:grid-cols-[0.8fr_1.2fr] overflow-hidden rounded-xl border border-slate-200 bg-white">
             <div className="bg-[linear-gradient(145deg,#713f12_0%,#92400e_55%,#a16207_100%)] p-7 text-white sm:p-10">
-              <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-amber-200">
+              <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2  uppercase text-amber-200    text-xs font-semibold tracking-wide leading-5">
                 13 / {cp.contactEyebrow}
               </p>
-              <h2 className="mt-4 text-3xl font-black leading-[1.05] tracking-tighter sm:text-4xl">
+              <h2 className="mt-4 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
                 {cp.contactTitle}
               </h2>
-              <p className="mt-4 text-lg font-semibold italic text-indigo-100">
+              <p className="mt-4 italic text-indigo-100    text-lg font-semibold tracking-normal leading-snug">
                 {cp.contactTagline}
               </p>
             </div>
             <div className="space-y-5 p-7 sm:p-10">
-              <h3 className="text-xl font-bold text-[#112c2a]">
+              <h3 className=" text-[#112c2a] text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
                 {cp.contactCompany}
               </h3>
-              <p className="flex gap-3 text-sm leading-7 text-slate-600">
+              <p className="flex gap-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 <MapPin
                   className="mt-1 h-4 w-4 shrink-0 text-teal-700"
                   aria-hidden="true"
@@ -492,7 +492,7 @@ export default async function CompanyProfilePage() {
               </a>
               <Link
                 href="/contact"
-                className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-[#087a61] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61]"
+                className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-[#087a61] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#075e4b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087a61] tracking-normal"
               >
                 {cp.contactAction}
                 <ArrowRight

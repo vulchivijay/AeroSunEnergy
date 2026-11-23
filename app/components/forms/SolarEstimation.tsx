@@ -65,9 +65,9 @@ const clamp = (value: number, min: number, max: number) =>
 
 function LeadSummary({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex items-start justify-between gap-4 border-b border-slate-700 pb-2 text-sm last:border-b-0 last:pb-0">
+    <div className="flex items-start justify-between gap-4 border-b border-slate-700 pb-2 text-sm last:border-b-0 last:pb-0 ">
       <span className="text-emerald-100/75">{label}</span>
-      <span className="text-right font-bold text-white">
+      <span className="text-right font-bold text-white tracking-normal tabular-nums">
         <DigitalNumber value={value} />
       </span>
     </div>
@@ -92,15 +92,15 @@ function PriceItem({
       className={`min-w-0 rounded-xl border p-4 text-left sm:p-5 ${
         featured
           ? 'border-amber-300/60 bg-linear-to-br from-amber-200 via-amber-100 to-yellow-50 shadow-sm'
-          : 'border-slate-700 bg-white/[0.05]'
+          : 'border-slate-700 bg-white/[0.05] '
       }`}
     >
-      <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <p className={`text-xs font-medium leading-5 ${featured ? 'text-amber-950/70' : 'text-slate-300'}`}>
+      <div className="flex items-start justify-between gap-3 ">
+        <div className="min-w-0 ">
+          <p className={` ${featured ? 'text-amber-950/70' : ' text-slate-300      '}      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}>
             {label}
           </p>
-          <p className={`mt-3 whitespace-nowrap text-xl font-black tracking-tight sm:text-2xl ${valueClassName}`}>
+          <p className={`mt-3 whitespace-nowrap text-lg sm:text-xl ${valueClassName} font-semibold tracking-normal leading-snug tabular-nums`}>
             <DigitalNumber value={value} />
           </p>
         </div>
@@ -284,26 +284,26 @@ export function SolarEstimation() {
     e.propertyTypeOptions[selectedPropertyIndex] ?? calculatorText.homeOption
 
   return (
-    <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 lg:py-16 sm:py-14">
+    <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 lg:py-16 sm:py-14 ">
       <div className="mx-auto mb-8 max-w-7xl">
-        <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-indigo-900 sm:text-sm">
+        <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 uppercase text-indigo-900    text-xs font-semibold tracking-wide leading-5">
           <span className="h-1.5 w-1.5 rounded-full bg-amber-500" aria-hidden="true" />
           {e.solarCalculatorEyebrow}
         </p>
-        <h1 className="max-w-6xl text-left text-3xl font-black leading-tight tracking-tight text-black sm:text-4xl lg:text-5xl">
+        <h1 className="max-w-6xl text-left text-black text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
           {e.solarCalculatorTitle}{' '}
           <span className="text-indigo-700">{e.solarCalculatorTitleAccent}</span>
         </h1>
       </div>
 
-      <div className="mx-auto max-w-7xl overflow-hidden rounded-xl shadow-sm border border-slate-200">
-        <div className="grid lg:grid-cols-[minmax(300px,0.75fr)_1.45fr]">
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-xl shadow-sm border border-slate-200 ">
+        <div className="grid lg:grid-cols-[minmax(300px,0.75fr)_1.45fr] ">
           
-          <div className="bg-linear-to-r from-[#137c63] to-[#20A44A] p-6 text-white sm:p-8 lg:p-10">
-            <h2 className="max-w-sm text-3xl font-black leading-tight tracking-tight sm:text-4xl">
+          <div className="bg-linear-to-r from-[#137c63] to-[#20A44A] p-6 text-white sm:p-8 lg:p-10 ">
+            <h2 className="max-w-sm text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
               {e.savingsTitle} <span className="text-emerald-400">{e.savingsTitleAccent}</span>
             </h2>
-            <p className="mt-3 max-w-sm text-sm leading-6 text-emerald-100/80">
+            <p className="mt-3 max-w-sm text-emerald-100/80      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {e.savingsDescription}
             </p>
 
@@ -316,7 +316,7 @@ export function SolarEstimation() {
                   selectedPropertyIndex === 0
                     ? 'bg-white text-emerald-950 shadow-sm'
                     : 'text-emerald-100/75 hover:text-white'
-                }`}
+                } tracking-normal`}
               >
                 {calculatorText.homeOption}
               </button>
@@ -328,14 +328,14 @@ export function SolarEstimation() {
                   selectedPropertyIndex !== 0
                     ? 'bg-white text-emerald-950 shadow-sm'
                     : 'text-emerald-100/75 hover:text-white'
-                }`}
+                } tracking-normal`}
               >
                 {calculatorText.commercialOption}
               </button>
             </div>
 
-            <div className="mt-8">
-              <div className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-emerald-100/80">
+            <div className="mt-8 ">
+              <div className="mb-3 uppercase text-emerald-100/80 text-xs font-semibold tracking-wide leading-5">
                 {inputMode === 'bill' ? calculatorText.billAmount : calculatorText.systemSize}
               </div>
               <div className="inline-flex rounded-full bg-white/10 p-1" role="group" aria-label={e.adjustUsage}>
@@ -345,7 +345,7 @@ export function SolarEstimation() {
                   onClick={() => setInputMode('bill')}
                   className={`rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
                     inputMode === 'bill' ? 'bg-white text-emerald-950' : 'text-emerald-100/75 hover:text-white'
-                  }`}
+                  } tracking-normal`}
                 >
                   {calculatorText.billAmount}
                 </button>
@@ -355,19 +355,19 @@ export function SolarEstimation() {
                   onClick={() => setInputMode('systemSize')}
                   className={`rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
                     inputMode === 'systemSize' ? 'bg-white text-emerald-950' : 'text-emerald-100/75 hover:text-white'
-                  }`}
+                  } tracking-normal`}
                 >
                   {calculatorText.systemSize}
                 </button>
               </div>
 
               {inputMode === 'bill' ? (
-                <div className="mt-4">
-                  <label htmlFor={monthlyBillInputId} className="sr-only">
+                <div className="mt-4 ">
+                  <label htmlFor={monthlyBillInputId} className="sr-only text-xs sm:text-sm font-semibold tracking-normal leading-5">
                     {e.monthlyBillAriaLabel}
                   </label>
                   <div className="flex items-center rounded-lg border border-slate-700 bg-white/10 px-4 py-3.5 focus-within:ring-2 focus-within:ring-emerald-400">
-                    <span className="text-xl font-bold text-emerald-100" aria-hidden="true">₹</span>
+                    <span className="text-xl font-bold text-emerald-100 tracking-normal" aria-hidden="true">₹</span>
                     <input
                       id={monthlyBillInputId}
                       type="number"
@@ -378,18 +378,18 @@ export function SolarEstimation() {
                       value={monthlyBillInput}
                       onChange={(event) => setMonthlyBillInput(event.target.value)}
                       onBlur={normalizeMonthlyBill}
-                      className="min-w-0 flex-1 bg-transparent px-3 text-2xl font-[family-name:var(--font-digital)] font-extrabold tabular-nums text-white outline-none placeholder:text-emerald-100/50 rounded-lg"
+                      className="min-w-0 flex-1 bg-transparent px-3 text-2xl font-[family-name:var(--font-digital)] font-bold text-white outline-none placeholder:text-emerald-100/50 rounded-lg tracking-normal"
                     />
                     <span className="whitespace-nowrap text-sm text-emerald-100/70">{calculatorText.monthSuffix}</span>
                   </div>
-                  <div className="mt-2 flex justify-between text-xs text-emerald-100/60">
+                  <div className="mt-2 flex justify-between text-xs text-emerald-100/60 ">
                     <span><DigitalNumber value={e.monthlyBillMinimum} /></span>
                     <span><DigitalNumber value={e.monthlyBillMaximum} /></span>
                   </div>
                 </div>
               ) : (
-                <div className="mt-4">
-                  <label htmlFor={systemSizeInputId} className="sr-only">
+                <div className="mt-4 ">
+                  <label htmlFor={systemSizeInputId} className="sr-only text-xs sm:text-sm font-semibold tracking-normal leading-5">
                     {calculatorText.systemSize}
                   </label>
                   <div className="flex items-center rounded-lg border border-slate-700 bg-white/10 px-4 py-3.5 focus-within:ring-2 focus-within:ring-emerald-400">
@@ -403,18 +403,18 @@ export function SolarEstimation() {
                       value={systemSizeInput}
                       onChange={(event) => setSystemSizeInput(event.target.value)}
                       onBlur={normalizeSystemSize}
-                      className="min-w-0 flex-1 bg-transparent px-1 text-2xl font-[family-name:var(--font-digital)] font-extrabold tabular-nums text-white outline-none rounded-lg"
+                      className="min-w-0 flex-1 bg-transparent px-1 text-2xl font-[family-name:var(--font-digital)] font-bold text-white outline-none rounded-lg tracking-normal"
                     />
-                    <span className="text-sm font-bold text-emerald-100">{e.capacityUnit}</span>
+                    <span className="text-sm font-bold text-emerald-100 tracking-normal">{e.capacityUnit}</span>
                   </div>
-                  <div className="mt-2 flex justify-between text-xs text-emerald-100/60">
+                  <div className="mt-2 flex justify-between text-xs text-emerald-100/60 ">
                     <span><DigitalNumber value={`1 ${e.capacityUnit}`} /></span>
                     <span><DigitalNumber value="100 MW" /></span>
                   </div>
                 </div>
               )}
 
-              <p className="mt-4 text-sm text-emerald-100/75">
+              <p className="mt-4 text-emerald-100/75       tabular-nums text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 {e.estimatedMonthlyUsage}: <DigitalNumber value={calculation.monthlyUnits.toLocaleString('en-IN')} /> {e.unitsSuffix}
               </p>
 
@@ -426,9 +426,9 @@ export function SolarEstimation() {
                 }`}
               >
                 <p
-                  className={`text-sm ${
-                    selectedPropertyIndex === 0 ? 'text-emerald-80' : 'text-emerald-100/90'
-                  }`}
+                  className={` ${
+                    selectedPropertyIndex === 0 ? 'text-emerald-80' : ' text-emerald-100/90      '
+                  }      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}
                 >
                   {selectedPropertyIndex === 0
                     ? calculatorText.residentialSubsidyNote
@@ -438,61 +438,61 @@ export function SolarEstimation() {
             </div>
           </div>
 
-          <div className="bg-linear-to-br from-[#f7faff] via-[#f2f4ff] to-[#eef9fb] p-5 sm:p-7 lg:p-9">
-            <div className="grid gap-4 sm:grid-cols-2">
+          <div className="bg-linear-to-br from-[#f7faff] via-[#f2f4ff] to-[#eef9fb] p-5 sm:p-7 lg:p-9 ">
+            <div className="grid gap-4 sm:grid-cols-2 ">
               
-              <article className="min-w-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
-                <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
+              <article className="min-w-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5 ">
+                <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">
                     {e.roofRequired}
                 </p>
-                <p className="mt-2 text-xl font-black tracking-tight text-slate-950 sm:text-2xl">
-                    <DigitalNumber value={calculation.roofArea.toLocaleString('en-IN')} /> <span className="text-sm font-semibold">{e.squareFootUnit}</span>
+                <p className="mt-2 text-lg sm:text-xl text-slate-950 font-semibold tracking-normal leading-snug tabular-nums">
+                    <DigitalNumber value={calculation.roofArea.toLocaleString('en-IN')} /> <span className="text-sm font-semibold tracking-normal">{e.squareFootUnit}</span>
                 </p>
               </article>
               
-              <article className="min-w-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
-                <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
+              <article className="min-w-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5 ">
+                <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">
                     {calculatorText.idealSystemSize}
                 </p>
-                <p className="mt-3 text-2xl font-black tracking-tight text-sky-700 sm:text-3xl">
+                <p className="mt-3 text-sky-700 text-lg font-semibold tracking-normal leading-snug tabular-nums">
                     <DigitalNumber value={formatSystemCapacity(calculation.recommendedKw, e.capacityUnit)} />
                 </p>
-                <p className="mt-2 text-sm text-slate-500">
+                <p className="mt-2 text-slate-500       tabular-nums text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                     <DigitalNumber value={calculation.dailyGeneration} /> {calculatorText.averageDailyGeneration}
                 </p>
               </article>
 
-              <article className="min-w-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
-                <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
+              <article className="min-w-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5 ">
+                <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">
                     {e.annualGeneration}
                 </p>
-                <p className="mt-2 text-xl font-black tracking-tight text-slate-950 sm:text-2xl">
-                    <DigitalNumber value={calculation.annualGeneration.toLocaleString('en-IN')} /> <span className="text-sm font-semibold">{e.generationUnit}</span>
+                <p className="mt-2 text-lg sm:text-xl text-slate-950 font-semibold tracking-normal leading-snug tabular-nums">
+                    <DigitalNumber value={calculation.annualGeneration.toLocaleString('en-IN')} /> <span className="text-sm font-semibold tracking-normal">{e.generationUnit}</span>
                 </p>
               </article>
 
-              <article className="min-w-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
-                <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
+              <article className="min-w-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5 ">
+                <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">
                     {e.annualSavings}
                 </p>
-                <p className="mt-3 text-2xl font-black tracking-tight text-emerald-600 sm:text-3xl">
+                <p className="mt-3 text-emerald-600 text-lg sm:text-xl font-semibold tracking-normal leading-snug tabular-nums">
                     ~<DigitalNumber value={formatCurrency(calculation.annualSavings)} />
                 </p>
               </article>
             </div>
 
-            <div className="relative mt-5 overflow-hidden rounded-xl border border-slate-700 bg-linear-to-br from-[#0b1536] via-[#13244b] to-[#0d3a3b] p-4 text-white shadow-md  sm:p-6">
-              <div className="pointer-events-none absolute -right-16 -top-24 h-56 w-56 rounded-full bg-emerald-300/10 blur-3xl" aria-hidden="true" />
-              <div className="pointer-events-none absolute -bottom-28 left-1/3 h-48 w-48 rounded-full bg-sky-300/10 blur-3xl" aria-hidden="true" />
-              <div className="relative">
-                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-700 pb-4">
+            <div className="relative mt-5 overflow-hidden rounded-xl border border-slate-700 bg-linear-to-br from-[#0b1536] via-[#13244b] to-[#0d3a3b] p-4 text-white shadow-md sm:p-6 ">
+              <div className="pointer-events-none absolute -right-16 -top-24 h-56 w-56 rounded-full bg-emerald-300/10 blur-3xl " aria-hidden="true" />
+              <div className="pointer-events-none absolute -bottom-28 left-1/3 h-48 w-48 rounded-full bg-sky-300/10 blur-3xl " aria-hidden="true" />
+              <div className="relative ">
+                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-700 pb-4 ">
                   <div className="flex items-center gap-3">
                     <span className="h-8 w-1 rounded-full bg-linear-to-b from-emerald-300 to-sky-300" aria-hidden="true" />
-                    <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-white sm:text-sm">
+                    <h2 className="uppercase text-white text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
                       {calculatorText.pricingBreakdown}
                     </h2>
                   </div>
-                  <p className="rounded-full border border-slate-700 bg-white/[0.06] px-3 py-1.5 text-xs font-semibold text-slate-200">
+                  <p className="rounded-full border border-slate-700 bg-white/[0.06] px-3 py-1.5 text-slate-200       tabular-nums text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                     <DigitalNumber value={formatSystemCapacity(calculation.recommendedKw, e.capacityUnit)} /> · {currentPropertyType}
                   </p>
                 </div>
@@ -519,14 +519,14 @@ export function SolarEstimation() {
                   />
                 </div>
 
-                <p className="mt-4 border-t border-slate-700 pt-3 text-right text-xs leading-5 text-slate-300">
+                <p className="mt-4 border-t border-slate-700 pt-3 text-right text-slate-300      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {calculatorText.taxesExtra}
                 </p>
               </div>
             </div>
 
-            <div className="mt-4 rounded-xl border border-slate-200 bg-linear-to-br from-emerald-50 via-green-50 to-emerald-100 p-5 shadow-sm sm:p-6 hidden">
-              <span className="inline-flex items-center rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-indigo-900">
+            <div className="mt-4 rounded-xl border border-slate-200 bg-linear-to-br from-emerald-50 via-green-50 to-emerald-100 p-5 shadow-sm sm:p-6 hidden ">
+              <span className="inline-flex items-center rounded-full border border-slate-200 bg-white/70 px-4 py-2 uppercase text-indigo-900 text-xs font-semibold tracking-wide leading-5">
                 {calculation.netMeteringWaived
                   ? calculatorText.finalEffectiveCost
                   : calculatorText.finalEffectiveCostBeforeMetering}
@@ -535,11 +535,11 @@ export function SolarEstimation() {
               <div className="mt-4 grid gap-3 text-sm sm:grid-cols-2">
                 <div className="flex items-start justify-between gap-3">
                   <span className="text-slate-600">{calculatorText.gstEstimate}</span>
-                  <span className="font-semibold text-slate-900">{formatCurrency(calculation.gstEstimate)}</span>
+                  <span className="font-semibold text-slate-900 tracking-normal">{formatCurrency(calculation.gstEstimate)}</span>
                 </div>
                 <div className="flex items-start justify-between gap-3">
                   <span className="text-slate-600">{calculatorText.netMeteringFee}</span>
-                  <span className="text-right font-semibold text-slate-900">
+                  <span className="text-right font-semibold text-slate-900 tracking-normal">
                     {formatCurrency(calculation.netMeteringCharge)}
                   </span>
                 </div>
@@ -547,7 +547,7 @@ export function SolarEstimation() {
 
               <div className="mt-4 overflow-hidden rounded-xl border border-slate-200 bg-white/75">
                 <table className="w-full text-left text-xs text-slate-700">
-                  <caption className="border-b border-slate-200 px-3 py-2 text-left font-bold text-slate-800">
+                  <caption className="border-b border-slate-200 px-3 py-2 text-left font-bold text-slate-800 tracking-normal">
                     Metering charge schedule
                   </caption>
                   <tbody>
@@ -558,8 +558,8 @@ export function SolarEstimation() {
                       ['Above 1,000 kW', '₹ 25,000 per MW'],
                     ].map(([capacity, charge]) => (
                       <tr key={capacity} className="border-b border-slate-200 last:border-b-0">
-                        <th scope="row" className="px-3 py-2 font-medium">{capacity}</th>
-                        <td className="px-3 py-2 text-right font-bold text-slate-900">{charge}</td>
+                        <th scope="row" className="px-3 py-2 font-medium tracking-normal">{capacity}</th>
+                        <td className="px-3 py-2 text-right font-bold text-slate-900 tracking-normal">{charge}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -567,7 +567,7 @@ export function SolarEstimation() {
               </div>
 
               {calculation.netMeteringWaiverAvailable && (
-                <label className="mt-4 flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-3 text-sm leading-5 text-slate-700">
+                <label className="mt-4 flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-3 text-slate-700 text-xs sm:text-sm font-semibold tracking-normal leading-5">
                   <input
                     type="checkbox"
                     checked={assumeNetMeteringWaiver}
@@ -578,34 +578,34 @@ export function SolarEstimation() {
                 </label>
               )}
 
-              <div className="mt-4 flex flex-wrap items-end justify-between gap-3 border-t border-slate-200 pt-4">
-                <span className="text-sm font-bold text-slate-700">
+              <div className="mt-4 flex flex-wrap items-end justify-between gap-3 border-t border-slate-200 pt-4 ">
+                <span className="text-sm font-bold text-slate-700 tracking-normal">
                   {calculation.netMeteringWaived
                     ? calculatorText.finalEffectiveCost
                     : calculatorText.finalEffectiveCostBeforeMetering}
                 </span>
-                <span className="text-2xl font-black tracking-tight text-emerald-700">
+                <span className="text-2xl font-bold tracking-tight text-emerald-700 tabular-nums">
                   <DigitalNumber value={formatCurrency(calculation.finalEffectiveCost)} />
                 </span>
               </div>
 
-              <p className="mt-3 text-xs leading-5 text-slate-500">
+              <p className="mt-3 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 {calculatorText.epcGstAssumption}
               </p>
               {calculation.netMeteringWaived ? (
-                <p className="mt-2 text-xs leading-5 text-slate-500">
+                <p className="mt-2 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {calculatorText.netMeteringWaiverNote}{' '}
                   <a
                     href="https://aperc.gov.in/admin/upload/ProceedingsonwaiverofApplicationfeeandMeterCosttoSRTSupto10kW.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold text-sky-700 underline underline-offset-2"
+                    className="font-semibold text-sky-700 underline underline-offset-2 tracking-normal"
                   >
                     {calculatorText.apercOrderLabel}
                   </a>
                 </p>
               ) : (
-                <p className="mt-2 text-xs leading-5 text-amber-800">
+                <p className="mt-2 text-amber-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {calculation.netMeteringWaiverAvailable
                     ? calculatorText.netMeteringPotentialWaiverNote
                     : calculatorText.netMeteringVariesNote}{' '}
@@ -614,7 +614,7 @@ export function SolarEstimation() {
                       href="https://aperc.gov.in/admin/upload/ProceedingsonwaiverofApplicationfeeandMeterCosttoSRTSupto10kW.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-semibold text-sky-700 underline underline-offset-2"
+                      className="font-semibold text-sky-700 underline underline-offset-2 tracking-normal"
                     >
                       {calculatorText.apercOrderLabel}
                     </a>
@@ -631,12 +631,12 @@ export function SolarEstimation() {
                 setShowLeadForm(true)
                 setWhatsAppFallbackUrl(null)
               }}
-              className="mt-5 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-full border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-5 py-4 text-base font-extrabold text-white shadow-sm transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
+              className="mt-5 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-full border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-5 py-4 text-base font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400 tracking-normal"
             >
               {calculatorText.quoteCta}
               <span aria-hidden="true">→</span>
             </button>
-            <p className="mt-4 text-center text-xs leading-5 text-slate-500">
+            <p className="mt-4 text-center text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {calculatorText.assumptions}
             </p>
           </div>
@@ -650,10 +650,10 @@ export function SolarEstimation() {
           aria-labelledby={`${leadFormId}-title`}
         >
           <div className="bg-linear-to-r from-[#137c63] to-[#20A44A] p-6 text-white sm:p-8">
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-amber-100">
+            <p className="uppercase text-amber-100    text-xs font-semibold tracking-wide leading-5">
               {e.freeAssessmentLabel}
             </p>
-            <h2 id={`${leadFormId}-title`} className="mt-3 text-3xl font-black tracking-tight">
+            <h2 id={`${leadFormId}-title`} className="mt-3 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
               {e.freeAssessmentCta}
             </h2>
             <div className="mt-6 space-y-3">
@@ -680,13 +680,13 @@ export function SolarEstimation() {
                 value={formatCurrency(calculation.finalEffectiveCost)}
               />
             </div>
-            <p className="mt-6 text-sm leading-5 text-emerald-100/80">{e.whatsAppDisclosure}</p>
+            <p className="mt-6 text-emerald-100/80      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{e.whatsAppDisclosure}</p>
           </div>
 
           <form onSubmit={handleLeadFormSubmit} className="p-6 sm:p-8">
             <div className="grid gap-4 sm:grid-cols-2">
-              <label className="block">
-                <span className="mb-1.5 block text-sm font-bold text-slate-700">{e.leadName}</span>
+              <label className="block text-xs sm:text-sm font-semibold tracking-normal leading-5">
+                <span className="mb-1.5 block text-sm font-bold text-slate-700 tracking-normal">{e.leadName}</span>
                 <input
                   id={leadNameInputId}
                   name="name"
@@ -701,8 +701,8 @@ export function SolarEstimation() {
                   className="w-full rounded-lg border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
                 />
               </label>
-              <label className="block">
-                <span className="mb-1.5 block text-sm font-bold text-slate-700">{e.leadMobile}</span>
+              <label className="block text-xs sm:text-sm font-semibold tracking-normal leading-5">
+                <span className="mb-1.5 block text-sm font-bold text-slate-700 tracking-normal">{e.leadMobile}</span>
                 <input
                   id={leadPhoneInputId}
                   name="phone"
@@ -718,8 +718,8 @@ export function SolarEstimation() {
                   className="w-full rounded-lg border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
                 />
               </label>
-              <label className="block">
-                <span className="mb-1.5 block text-sm font-bold text-slate-700">{e.leadPinCode}</span>
+              <label className="block text-xs sm:text-sm font-semibold tracking-normal leading-5">
+                <span className="mb-1.5 block text-sm font-bold text-slate-700 tracking-normal">{e.leadPinCode}</span>
                 <input
                   id={leadPinInputId}
                   name="pinCode"
@@ -733,8 +733,8 @@ export function SolarEstimation() {
                   className="w-full rounded-lg border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
                 />
               </label>
-              <label className="block">
-                <span className="mb-1.5 block text-sm font-bold text-slate-700">{e.leadPropertyType}</span>
+              <label className="block text-xs sm:text-sm font-semibold tracking-normal leading-5">
+                <span className="mb-1.5 block text-sm font-bold text-slate-700 tracking-normal">{e.leadPropertyType}</span>
                 <select
                   id={leadPropertyTypeInputId}
                   name="propertyType"
@@ -755,7 +755,7 @@ export function SolarEstimation() {
               <button
                 type="submit"
                 disabled={leadFormPending}
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-emerald-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 disabled:cursor-wait disabled:opacity-70"
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-emerald-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 disabled:cursor-wait disabled:opacity-70 tracking-normal"
               >
                 {leadFormPending ? t.formSubmission.saving : e.whatsAppMyReport}
                 <span className="ml-2" aria-hidden="true">↗</span>
@@ -763,13 +763,13 @@ export function SolarEstimation() {
               <button
                 type="button"
                 onClick={() => setShowLeadForm(false)}
-                className="inline-flex min-h-12 items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-500"
+                className="inline-flex min-h-12 items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-500 tracking-normal"
               >
                 {e.cancelAssessment}
               </button>
             </div>
             {whatsAppFallbackUrl && (
-              <p className="mt-4 text-sm font-semibold text-emerald-800" aria-live="polite">
+              <p className="mt-4 text-emerald-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7" aria-live="polite">
                 <a href={whatsAppFallbackUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
                   {e.openWhatsAppFallback}
                 </a>
@@ -788,12 +788,12 @@ export function SolarEstimation() {
       >
         <div className="flex items-start justify-between gap-4">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-700">
+            <p className="uppercase text-emerald-700    text-xs font-semibold tracking-wide leading-5">
               {solarGstGuide.eyebrow}
             </p>
             <h2
               id={`${leadFormId}-gst-title`}
-              className="mt-2 text-2xl font-black tracking-tight text-slate-950 sm:text-3xl"
+              className="mt-2 text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug"
             >
               {solarGstGuide.title}
             </h2>
@@ -807,33 +807,33 @@ export function SolarEstimation() {
         </div>
 
         <div id={`${leadFormId}-gst-content`} hidden={!gstGuideExpanded}>
-        <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-600">
+        <p className="mt-3 max-w-4xl text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {solarGstGuide.intro}
         </p>
 
         <div className="mt-6 grid gap-4 lg:grid-cols-3">
           <article className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-            <h3 className="font-bold text-slate-900">{solarGstGuide.componentsTitle}</h3>
+            <h3 className="text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{solarGstGuide.componentsTitle}</h3>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-600">
               {solarGstGuide.components.map((point) => <li key={point}>{point}</li>)}
             </ul>
           </article>
           <article className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-            <h3 className="font-bold text-slate-900">{solarGstGuide.billingTitle}</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-600">{solarGstGuide.billing}</p>
+            <h3 className="text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{solarGstGuide.billingTitle}</h3>
+            <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{solarGstGuide.billing}</p>
           </article>
           <article className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-            <h3 className="font-bold text-slate-900">{solarGstGuide.itcTitle}</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-600">{solarGstGuide.itc}</p>
+            <h3 className="text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{solarGstGuide.itcTitle}</h3>
+            <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{solarGstGuide.itc}</p>
           </article>
         </div>
 
-        <p className="mt-5 rounded-xl bg-emerald-50 p-4 text-sm leading-6 text-emerald-950">
+        <p className="mt-5 rounded-xl bg-emerald-50 p-4 text-emerald-950      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {solarGstGuide.quoteTip}
         </p>
-        <p className="mt-4 text-xs leading-5 text-slate-500">{solarGstGuide.disclaimer}</p>
+        <p className="mt-4 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{solarGstGuide.disclaimer}</p>
         <div className="mt-5 border-t border-slate-200 pt-4">
-          <h3 className="text-sm font-bold text-slate-800">{solarGstGuide.sourcesTitle}</h3>
+          <h3 className="text-slate-800 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{solarGstGuide.sourcesTitle}</h3>
           <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-2 text-sm">
             {solarGstGuide.sources.map((source) => (
               <li key={source.url}>

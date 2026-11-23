@@ -17,15 +17,15 @@ export default async function PoliciesPage() {
         </div>
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1fr_auto] lg:px-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-sky-100/20 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-sky-100">
+            <div className="inline-flex items-center gap-2 rounded-full border border-sky-100/20 bg-white/10 px-4 py-2 uppercase text-sky-100 text-xs font-semibold tracking-wide leading-5">
               <span className="h-1.5 w-1.5 rounded-full bg-sky-300 shadow-sm" />
               {content.badge}
             </div>
-            <h1 className="mt-6 text-4xl font-black tracking-tighter text-white sm:text-6xl lg:text-7xl">
+            <h1 className="mt-6 text-white text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
               {content.title}
               <span className="mt-1 block text-sky-300">{content.titleAccent}</span>
             </h1>
-            <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-200 sm:text-base sm:leading-8">
+            <p className="mt-5 max-w-2xl text-slate-200      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {content.description}
             </p>
           </div>
@@ -33,12 +33,12 @@ export default async function PoliciesPage() {
             <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-300/15 text-xl text-sky-200">◎</span>
             <span className="text-sm leading-5 text-slate-200">
               {content.updatedLabel}
-              <strong className="block text-sm font-bold text-white">{content.effectiveDate}</strong>
+              <strong className="block text-sm font-bold text-white tracking-normal">{content.effectiveDate}</strong>
             </span>
           </div>
         </div>
         <div className="border-t border-slate-700">
-          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-4 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-sky-100/75 sm:px-6 lg:px-10">
+          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-8 gap-y-3 px-4 py-4 text-xs uppercase text-sky-100/75 sm:px-6 lg:px-10 text-xs font-semibold tracking-wide leading-5">
             {content.headerTopics.map((topic) => <span key={topic}>{topic}</span>)}
           </div>
         </div>
@@ -52,8 +52,8 @@ export default async function PoliciesPage() {
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-lg text-sky-800">i</span>
               <div>
-                <p className="text-[12px] font-black uppercase tracking-[0.2em] text-sky-800">{content.summaryTitle}</p>
-                <p className="mt-2 text-sm leading-7 text-slate-600">
+                <p className=" uppercase text-sky-800    text-xs font-semibold tracking-wide leading-5">{content.summaryTitle}</p>
+                <p className="mt-2 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {content.summary}
                 </p>
               </div>
@@ -61,7 +61,7 @@ export default async function PoliciesPage() {
             <div className="mt-6 grid gap-3 border-t border-slate-200 pt-5 sm:grid-cols-3">
               {content.summaryItems.map((item, index) => (
                 <div key={item.label} className="flex gap-3 rounded-xl bg-slate-50 p-3">
-                  <span className="font-mono text-sm font-bold text-sky-700">0{index + 1}</span>
+                  <span className="font-mono text-sm font-bold text-sky-700 tracking-normal tabular-nums">0{index + 1}</span>
                   <span className="text-sm leading-5 text-slate-600">
                     <strong className="block text-sm text-slate-900">{item.label}</strong>
                     {item.text}
@@ -79,12 +79,12 @@ export default async function PoliciesPage() {
                 className={`scroll-mt-28 overflow-hidden rounded-xl border border-slate-200 ${index % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}
               >
                 <div className="flex items-start gap-4 p-5 sm:p-6">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-sky-200 bg-sky-50 font-mono text-sm font-bold text-sky-800">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-sky-200 bg-sky-50 font-mono text-sm font-bold text-sky-800 tracking-normal tabular-nums">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <div className="min-w-0 flex-1">
-                    <h2 className="text-lg font-extrabold tracking-tight text-slate-950">{section.heading}</h2>
-                    <p className="mt-3 text-sm leading-7 text-slate-600">{section.content}</p>
+                    <h2 className="text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{section.heading}</h2>
+                    <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{section.content}</p>
                     <ul className="mt-4 space-y-2.5">
                       {section.bullets.map((item) => (
                         <li key={item} className="flex items-start gap-3 text-sm leading-7 text-slate-600">
@@ -100,9 +100,9 @@ export default async function PoliciesPage() {
             ))}
           </div>
 
-          <p className="mt-7 rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-600">
+          <p className="mt-7 rounded-xl border border-slate-200 bg-white p-5 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {content.clarification}{' '}
-            <Link href="/contact" className="font-bold text-sky-800 underline decoration-sky-300 underline-offset-4 hover:text-indigo-800">
+            <Link href="/contact" className="font-bold text-sky-800 underline decoration-sky-300 underline-offset-4 hover:text-indigo-800 tracking-normal">
               {content.contactLink}
             </Link>{' '}
             {content.clarificationEnd}
@@ -112,8 +112,8 @@ export default async function PoliciesPage() {
         <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
           <nav aria-label={content.navLabel} className="overflow-hidden rounded-xl border border-slate-200 bg-white">
             <div className="border-b border-slate-200 px-5 py-4">
-              <p className="text-[12px] font-black uppercase tracking-[0.2em] text-sky-800">{content.findTopic}</p>
-              <p className="mt-1 text-sm font-bold text-slate-900">{content.contents}</p>
+              <p className=" uppercase text-sky-800    text-xs font-semibold tracking-wide leading-5">{content.findTopic}</p>
+              <p className="mt-1 text-slate-900      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.contents}</p>
             </div>
             <ol className="max-h-[55vh] space-y-1 overflow-y-auto p-3 lg:max-h-[calc(100vh-15rem)]">
               {content.sections.map((section, index) => (
@@ -122,7 +122,7 @@ export default async function PoliciesPage() {
                     href={`#privacy-${index + 1}`}
                     className="flex items-start gap-3 rounded-xl px-3 py-2.5 text-sm leading-5 text-slate-600 transition hover:bg-sky-50 hover:text-sky-900"
                   >
-                    <span className="font-mono font-bold text-sky-700/70">{String(index + 1).padStart(2, '0')}</span>
+                    <span className="font-mono font-bold text-sky-700/70 tracking-normal tabular-nums">{String(index + 1).padStart(2, '0')}</span>
                     <span>{section.heading.replace(/^\d+\.\s*/, '')}</span>
                   </a>
                 </li>
@@ -131,14 +131,14 @@ export default async function PoliciesPage() {
           </nav>
 
           <section className={`rounded-xl p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
-            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-sky-800">{content.protectedInfoTitle}</p>
+            <p className=" uppercase text-sky-800    text-xs font-semibold tracking-wide leading-5">{content.protectedInfoTitle}</p>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
               {content.protectedInfo.map((item) => <li key={item}>{item}</li>)}
             </ul>
           </section>
 
           <section className={`rounded-xl border border-slate-200 p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}>
-            <p className="text-[12px] font-black uppercase tracking-[0.2em] text-[#137c63]">{content.principlesTitle}</p>
+            <p className=" uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">{content.principlesTitle}</p>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
               {content.principles.map((item) => <li key={item}>{item}</li>)}
             </ul>

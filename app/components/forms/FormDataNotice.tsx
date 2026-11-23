@@ -6,7 +6,7 @@ export function FormDataNotice({ className = 'text-slate-500' }: { className?: s
   const { t } = useLocale()
 
   return (
-    <p className={`text-xs leading-5 ${className}`}>
+    <p className={`${className} text-sm sm:text-base font-normal tracking-normal sm:leading-5`}>
       {t.formDataNotice.prefix}
     </p>
   )

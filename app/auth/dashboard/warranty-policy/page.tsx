@@ -66,16 +66,16 @@ export default function WarrantyPolicyPage() {
           <header className="bg-linear-to-r from-[#0b1e46] via-[#123b72] to-[#0d6d8d] px-5 py-5 text-white sm:px-7">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-slate-700 bg-white/10 text-xl font-black shadow-sm">
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-slate-700 bg-white/10 text-xl font-bold shadow-sm tracking-normal">
                   W
                 </div>
                 <div>
-                  <p className="text-[12px] font-black uppercase tracking-[0.36em] text-sky-100/80">{labels.badge}</p>
-                  <h1 className="mt-1 text-2xl font-black tracking-[0.06em] sm:text-3xl">{labels.title}</h1>
+                  <p className=" uppercase text-sky-100/80    text-xs font-semibold tracking-wide leading-5">{labels.badge}</p>
+                  <h1 className="mt-1 text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">{labels.title}</h1>
                 </div>
               </div>
 
-              <div className="inline-flex items-center gap-2 self-start rounded-full border border-slate-700 bg-white/5 px-3 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-sky-100">
+              <div className="inline-flex items-center gap-2 self-start rounded-full border border-slate-700 bg-white/5 px-3 py-2 text-xs uppercase text-sky-100 text-xs font-semibold tracking-wide leading-5">
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-sm" />
                 {labels.support}
               </div>
@@ -132,7 +132,7 @@ export default function WarrantyPolicyPage() {
               />
 
               <div>
-                <label htmlFor="productLine" className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
+                <label htmlFor="productLine" className="mb-2 block text-xs uppercase text-slate-700 text-xs sm:text-sm font-semibold tracking-normal leading-5">
                   {labels.fields.productLine.label}
                 </label>
                 <select
@@ -140,12 +140,12 @@ export default function WarrantyPolicyPage() {
                   {...register('productLine')}
                   aria-invalid={Boolean(errors.productLine)}
                   aria-describedby={errors.productLine ? 'productLine-error' : undefined}
-                  className="h-12 w-full rounded-lg border border-sky-200 bg-sky-50/70 px-4 text-md text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
+                  className="h-12 w-full rounded-lg border border-sky-200 bg-sky-50/70 px-4 text-base text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
                 >
                   <option value="">{labels.fields.productLine.placeholder}</option>
                   {labels.productOptions.map((option) => <option key={option} value={option}>{option}</option>)}
                 </select>
-                {errors.productLine && <p id="productLine-error" className="mt-2 text-md text-rose-600">{errors.productLine.message}</p>}
+                {errors.productLine && <p id="productLine-error" className="mt-2 text-rose-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.productLine.message}</p>}
               </div>
 
               <Field
@@ -158,7 +158,7 @@ export default function WarrantyPolicyPage() {
               />
 
               <div>
-                <label htmlFor="servicePlan" className="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700">
+                <label htmlFor="servicePlan" className="mb-2 block text-xs uppercase text-slate-700 text-xs sm:text-sm font-semibold tracking-normal leading-5">
                   {labels.fields.servicePlan.label}
                 </label>
                 <select
@@ -166,32 +166,32 @@ export default function WarrantyPolicyPage() {
                   {...register('servicePlan')}
                   aria-invalid={Boolean(errors.servicePlan)}
                   aria-describedby={errors.servicePlan ? 'servicePlan-error' : undefined}
-                  className="h-12 w-full rounded-lg border border-emerald-200 bg-emerald-50/70 px-4 text-md text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"
+                  className="h-12 w-full rounded-lg border border-emerald-200 bg-emerald-50/70 px-4 text-base text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"
                 >
                   <option value="">{labels.fields.servicePlan.placeholder}</option>
                   {labels.serviceOptions.map((option) => <option key={option} value={option}>{option}</option>)}
                 </select>
-                {errors.servicePlan && <p id="servicePlan-error" className="mt-2 text-md text-rose-600">{errors.servicePlan.message}</p>}
+                {errors.servicePlan && <p id="servicePlan-error" className="mt-2 text-rose-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.servicePlan.message}</p>}
               </div>
             </div>
 
             <div className="rounded-xl border border-slate-200 bg-linear-to-br from-slate-50 via-white to-sky-50 p-4">
-              <label className="flex items-start gap-3 text-md leading-6 text-slate-700">
+              <label className="flex items-start gap-3 text-slate-700 text-xs sm:text-sm font-semibold tracking-normal leading-5">
                 <input
                   type="checkbox"
                   {...register('acceptTerms')}
                   className="mt-1 h-4 w-4 rounded-lg border-slate-300 text-sky-600 focus:ring-sky-500"
                 />
-                <span className="font-medium">
+                <span className="font-medium tracking-normal">
                   {labels.fields.acceptTerms}
                 </span>
               </label>
-              {errors.acceptTerms && <p className="mt-2 text-md text-rose-600">{errors.acceptTerms.message}</p>}
+              {errors.acceptTerms && <p className="mt-2 text-rose-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.acceptTerms.message}</p>}
             </div>
 
             <FormDataNotice />
             <div className="flex flex-col gap-3 border-t border-slate-200 pt-4 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex items-center gap-2 text-[12px] font-black uppercase tracking-[0.24em] text-slate-500">
+              <div className="flex items-center gap-2 text-xs uppercase text-slate-500 text-xs font-semibold tracking-wide leading-5">
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
                 {labels.serviceConfirmation}
               </div>
@@ -199,7 +199,7 @@ export default function WarrantyPolicyPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-md font-black uppercase tracking-[0.18em] text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-sky-900 disabled:cursor-not-allowed disabled:opacity-60"
+                className="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 uppercase text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-sky-900 disabled:cursor-not-allowed disabled:opacity-60 text-sm font-semibold tracking-wide leading-5"
               >
                 {isSubmitting ? t.formSubmission.saving : labels.submit}
               </button>
@@ -234,9 +234,9 @@ function Field({ label, name, placeholder, type = 'text', register, error, accen
       type={type}
       register={register}
       error={error}
-      labelClassName="mb-2 block text-[12px] font-black uppercase tracking-[0.22em] text-slate-700"
-      inputClassName={`h-12 w-full rounded-lg border px-4 text-md text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:ring-4 ${accentClasses[accent]}`}
-      errorClassName="mt-2 text-md text-rose-600"
+      labelClassName="mb-2 block text-xs sm:text-sm font-semibold uppercase tracking-wide leading-5 text-slate-700"
+      inputClassName={`h-12 w-full rounded-lg border px-4 text-sm sm:text-base font-normal tracking-normal leading-6 text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-600 focus:ring-4 ${accentClasses[accent]}`}
+      errorClassName="mt-2 text-xs sm:text-sm font-normal tracking-normal leading-5 text-rose-600"
     />
   )
 }

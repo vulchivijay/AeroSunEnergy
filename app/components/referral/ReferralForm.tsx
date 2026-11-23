@@ -75,13 +75,13 @@ export default function ReferralForm({
     <div className="min-w-0 rounded-xl bg-[#f8f7f1] p-5 text-slate-900 shadow-sm sm:p-7 lg:p-9">
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#087a61] sm:text-sm">
+          <p className="uppercase text-[#087a61]    text-xs font-semibold tracking-wide leading-5">
             {content.title}
           </p>
-          <h3 className="mt-3 text-2xl font-bold leading-tight text-[#122b2a] sm:text-3xl">
+          <h3 className="mt-3 text-[#122b2a] text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
             {content.conversationTitle}
           </h3>
-          <p className="mt-2 text-sm leading-6 text-slate-600">
+          <p className="mt-2 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {content.description}
           </p>
         </div>
@@ -92,7 +92,7 @@ export default function ReferralForm({
 
       <form className="mt-6 space-y-5 sm:mt-7" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-2 sm:gap-y-5">
-          <label className="block text-xs font-medium text-slate-600 sm:text-sm">
+          <label className="block text-slate-600 text-xs sm:text-sm font-semibold tracking-normal leading-5">
             {content.referrerNameLabel}
             <input
               className={inputClassName}
@@ -105,7 +105,7 @@ export default function ReferralForm({
               required
             />
           </label>
-          <label className="block text-xs font-medium text-slate-600 sm:text-sm">
+          <label className="block text-slate-600 text-xs sm:text-sm font-semibold tracking-normal leading-5">
             {content.referrerPhoneLabel}
             <input
               className={inputClassName}
@@ -119,7 +119,7 @@ export default function ReferralForm({
               required
             />
           </label>
-          <label className="block text-xs font-medium text-slate-600 sm:text-sm">
+          <label className="block text-slate-600 text-xs sm:text-sm font-semibold tracking-normal leading-5">
             {content.referredNameLabel}
             <input
               className={inputClassName}
@@ -131,7 +131,7 @@ export default function ReferralForm({
               required
             />
           </label>
-          <label className="block text-xs font-medium text-slate-600 sm:text-sm">
+          <label className="block text-slate-600 text-xs sm:text-sm font-semibold tracking-normal leading-5">
             {content.referredPhoneLabel}
             <input
               className={inputClassName}
@@ -144,7 +144,7 @@ export default function ReferralForm({
               required
             />
           </label>
-          <label className="block text-xs font-medium text-slate-600 sm:text-sm">
+          <label className="block text-slate-600 text-xs sm:text-sm font-semibold tracking-normal leading-5">
             {content.postalCodeLabel}
             <input
               className={inputClassName}
@@ -158,7 +158,7 @@ export default function ReferralForm({
               required
             />
           </label>
-          <label className="block text-xs font-medium text-slate-600 sm:text-sm">
+          <label className="block text-slate-600 text-xs sm:text-sm font-semibold tracking-normal leading-5">
             {content.propertyTypeLabel}
             <select
               className={inputClassName}
@@ -178,7 +178,7 @@ export default function ReferralForm({
           </label>
         </div>
 
-        <label className="flex cursor-pointer items-start gap-3 text-xs leading-5 text-slate-500 sm:text-sm">
+        <label className="flex cursor-pointer items-start gap-3 text-slate-500 text-xs sm:text-sm font-semibold tracking-normal leading-5">
           <input
             className="mt-1 h-4 w-4 shrink-0 accent-emerald-800"
             name="consent"
@@ -189,12 +189,12 @@ export default function ReferralForm({
           <span>{content.consent}</span>
         </label>
 
-        <p className="text-xs leading-5 text-slate-500">
+        <p className="text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {content.privacyPrefix}
         </p>
 
         <button
-          className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#17865e] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#126f4e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#17865e] disabled:cursor-wait disabled:opacity-70"
+          className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#17865e] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#126f4e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#17865e] disabled:cursor-wait disabled:opacity-70 tracking-normal"
           type="submit"
           disabled={submitting}
         >

@@ -78,22 +78,22 @@ export default function AuthForm({ mode }: AuthFormProps) {
 
       <section className="w-full max-w-md rounded-xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-6 shadow-sm sm:p-8">
         <div className="mb-8">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-emerald-700">{auth.brand}</p>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+          <p className="uppercase text-emerald-700    text-xs font-semibold tracking-wide leading-5">{auth.brand}</p>
+          <h1 className="mt-3 text-slate-950 text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
             {isSignup ? auth.signupHeading : auth.loginHeading}
           </h1>
-          <p className="mt-2 text-sm leading-6 text-slate-600">
+          <p className="mt-2 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {isSignup ? auth.signupDescription : auth.loginDescription}
           </p>
         </div>
 
         <form className="space-y-5" onSubmit={handleSubmit}>
           {isSignup && (
-            <label className="block text-sm font-semibold text-slate-800">
+            <label className="block text-slate-800 text-xs sm:text-sm font-semibold tracking-normal leading-5">
               {auth.fullName}
               <input
                 autoComplete="name"
-                className="mt-2 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10"
+                className="mt-2 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10 tracking-normal"
                 maxLength={100}
                 minLength={2}
                 name="name"
@@ -103,11 +103,11 @@ export default function AuthForm({ mode }: AuthFormProps) {
             </label>
           )}
 
-          <label className="block text-sm font-semibold text-slate-800">
+          <label className="block text-slate-800 text-xs sm:text-sm font-semibold tracking-normal leading-5">
             {auth.emailAddress}
             <input
               autoComplete="email"
-              className="mt-2 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10"
+              className="mt-2 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10 tracking-normal"
               maxLength={254}
               name="email"
               placeholder={auth.emailPlaceholder}
@@ -116,11 +116,11 @@ export default function AuthForm({ mode }: AuthFormProps) {
             />
           </label>
 
-          <label className="block text-sm font-semibold text-slate-800">
+          <label className="block text-slate-800 text-xs sm:text-sm font-semibold tracking-normal leading-5">
             {auth.password}
             <input
               autoComplete={isSignup ? 'new-password' : 'current-password'}
-              className="mt-2 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10"
+              className="mt-2 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10 tracking-normal"
               maxLength={128}
               minLength={isSignup ? 12 : 1}
               name="password"
@@ -131,11 +131,11 @@ export default function AuthForm({ mode }: AuthFormProps) {
           </label>
 
           {isSignup && (
-            <label className="block text-sm font-semibold text-slate-800">
+            <label className="block text-slate-800 text-xs sm:text-sm font-semibold tracking-normal leading-5">
               {auth.confirmPassword}
               <input
                 autoComplete="new-password"
-                className="mt-2 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10"
+                className="mt-2 min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-base font-normal outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-700/10 tracking-normal"
                 maxLength={128}
                 minLength={12}
                 name="confirmPassword"
@@ -149,7 +149,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
           <FormDataNotice />
 
           <button
-            className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-emerald-800 px-5 text-sm font-bold text-white transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-emerald-800 disabled:cursor-wait disabled:opacity-65"
+            className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-emerald-800 px-5 text-sm font-bold text-white transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-emerald-800 disabled:cursor-wait disabled:opacity-65 tracking-normal"
             disabled={pending}
             type="submit"
           >
@@ -157,10 +157,10 @@ export default function AuthForm({ mode }: AuthFormProps) {
           </button>
         </form>
 
-        <p className="mt-7 text-center text-sm text-slate-600">
+        <p className="mt-7 text-center text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {isSignup ? auth.alreadyHaveAccount : auth.newToAeroSun}{' '}
           <Link
-            className="font-bold text-emerald-800 underline-offset-4 hover:underline"
+            className="font-bold text-emerald-800 underline-offset-4 hover:underline tracking-normal"
             href={isSignup ? '/auth/login' : '/auth/signup'}
           >
             {isSignup ? auth.loginLink : auth.signupLink}

@@ -233,7 +233,7 @@ function InlineContent({
           href={linkMatch[2].replace(/\\&/g, "&")}
           target="_blank"
           rel="noreferrer"
-          className="font-semibold text-emerald-800 underline decoration-emerald-500/40 underline-offset-4 transition hover:text-emerald-600  "
+          className="font-semibold text-emerald-800 underline decoration-emerald-500/40 underline-offset-4 transition hover:text-emerald-600 tracking-normal"
         >
           <InlineContent text={linkMatch[1]} digitalNumbers={digitalNumbers} />
         </a>
@@ -247,7 +247,7 @@ function InlineContent({
       return (
         <strong
           key={index}
-          className="font-bold text-slate-950 "
+          className="font-bold text-slate-950 tracking-normal "
         >
           {digitalNumbers ? <DigitalNumber value={part.slice(2, -2)} /> : part.slice(2, -2)}
         </strong>
@@ -257,7 +257,7 @@ function InlineContent({
       return (
         <code
           key={index}
-          className="rounded-xl bg-emerald-950/[0.06] px-1.5 py-0.5 font-mono text-[0.92em] text-emerald-950  "
+          className="rounded-xl bg-emerald-950/[0.06] px-1.5 py-0.5 font-mono text-base text-emerald-950 tabular-nums"
         >
           {digitalNumbers ? <DigitalNumber value={part.slice(1, -1)} /> : part.slice(1, -1)}
         </code>
@@ -295,7 +295,7 @@ function MathExpression({ expression }: { expression: string }) {
   }
 
   return (
-    <span className="rounded-xl bg-emerald-950/[0.06] px-1.5 py-0.5 font-mono text-md text-emerald-950  ">
+    <span className="rounded-xl bg-emerald-950/[0.06] px-1.5 py-0.5 font-mono text-base text-emerald-950 tabular-nums">
       {expression}
     </span>
   );
@@ -309,14 +309,14 @@ function DisplayMath({ expression }: { expression: string }) {
     expression.replace(/\s+/g, "") === "P_{\\text{wind}}=\\frac{1}{2}\\rhoAv^3"
   ) {
     return (
-      <div className="my-7 overflow-x-auto rounded-xl border border-slate-200 bg-emerald-50/80 px-5 py-6 text-center  ">
+      <div className="my-7 overflow-x-auto rounded-xl border border-slate-200 bg-emerald-50/80 px-5 py-6 text-center">
         <div
           role="math"
           aria-label={accessible.windPowerFormula}
-          className="flex items-center justify-center gap-2 font-serif text-2xl text-emerald-950  sm:gap-3 sm:text-3xl"
+          className="flex items-center justify-center gap-2 font-serif text-2xl text-emerald-950 sm:gap-3 sm:text-3xl"
         >
           <span className="italic">
-            P<sub className="text-xs not-italic sm:text-md">wind</sub>
+            P<sub className="text-xs not-italic sm:text-base">wind</sub>
           </span>
           <span>=</span>
           <span className="inline-grid text-center text-sm leading-tight sm:text-lg">
@@ -326,7 +326,7 @@ function DisplayMath({ expression }: { expression: string }) {
           <span className="italic">ρ</span>
           <span className="italic">A</span>
           <span className="italic">
-            v<sup className="text-md not-italic">3</sup>
+            v<sup className="text-base not-italic">3</sup>
           </span>
         </div>
       </div>
@@ -334,7 +334,7 @@ function DisplayMath({ expression }: { expression: string }) {
   }
 
   return (
-    <pre className="my-7 overflow-x-auto rounded-xl border border-slate-200 bg-emerald-50/80 px-5 py-4 text-center font-mono text-sm text-emerald-950   ">
+    <pre className="my-7 overflow-x-auto rounded-xl border border-slate-200 bg-emerald-50/80 px-5 py-4 text-center font-mono text-sm text-emerald-950 tabular-nums">
       <code>{expression}</code>
     </pre>
   );
@@ -343,12 +343,12 @@ function DisplayMath({ expression }: { expression: string }) {
 function MarkdownBlockView({ block }: { block: ContentBlock }) {
   if (block.type === "heading") {
     if (block.level === 1) return null;
-    const classes = "font-black tracking-tight text-slate-950 ";
+    const classes = "text-slate-950 ";
     if (block.level === 2) {
       return (
         <h3
           id={block.id}
-          className={`mb-4 mt-11 scroll-mt-24 border-l-2 border-emerald-500 pl-4 text-2xl sm:text-3xl ${classes}`}
+          className={`mb-4 mt-11 scroll-mt-24 border-l-2 border-emerald-500 pl-4 ${classes} text-xl sm:text-2xl font-semibold !tracking-tight leading-snug`}
         >
           <InlineContent text={block.text} />
         </h3>
@@ -358,14 +358,14 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
       return (
         <h4
           id={block.id}
-          className={`mb-3 mt-8 text-xl sm:text-2xl ${classes}`}
+          className={`mb-3 mt-8 ${classes} text-lg font-semibold !tracking-tight leading-snug`}
         >
           <InlineContent text={block.text} />
         </h4>
       );
     }
     return (
-      <h5 id={block.id} className={`mb-3 mt-6 text-lg ${classes}`}>
+      <h5 id={block.id} className={`mb-3 mt-6 ${classes} text-base font-semibold !tracking-tight leading-snug`}>
         <InlineContent text={block.text} />
       </h5>
     );
@@ -373,7 +373,7 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
 
   if (block.type === "paragraph") {
     return (
-      <p className="my-4 text-sm leading-8 text-slate-700 ">
+      <p className="my-4 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
         {block.lines.map((line, index) => (
           <span key={index}>
             {index > 0 ? " " : ""}
@@ -388,7 +388,7 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
     const List = block.ordered ? "ol" : "ul";
     return (
       <List
-        className={`my-5 space-y-3 pl-6 text-sm leading-8 text-slate-700 marker:font-bold marker:text-emerald-700   ${block.ordered ? "list-decimal" : "list-disc"}`}
+        className={`my-5 space-y-3 pl-6 text-sm leading-8 text-slate-700 marker:font-bold marker:text-emerald-700 ${block.ordered ? "list-decimal" : "list-disc"} tracking-normal`}
       >
         {block.items.map((item, index) => (
           <li key={index} className="pl-1">
@@ -403,10 +403,10 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
     return (
       <div className="my-7 overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
         <table className="w-full min-w-[34rem] border-collapse text-left text-sm leading-6 text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
-          <thead className="bg-amber-700 font-bold text-white">
+          <thead className="bg-amber-700 font-bold text-white tracking-normal">
             <tr>
               {block.headers.map((cell, index) => (
-                <th key={index} className="px-4 py-3 font-bold">
+                <th key={index} className="px-4 py-3 font-bold tracking-normal">
                   {<InlineContent text={cell} />}
                 </th>
               ))}
@@ -418,7 +418,7 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
                 {block.headers.map((_, cellIndex) => (
                   <td
                     key={cellIndex}
-                    className="border-t border-slate-200 px-4 py-3 align-top text-slate-700  "
+                    className="border-t border-slate-200 px-4 py-3 align-top text-slate-700"
                   >
                     <InlineContent text={row[cellIndex] ?? ""} digitalNumbers />
                   </td>
@@ -433,13 +433,13 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
 
   if (block.type === "code") {
     return (
-      <div className="my-7 overflow-hidden rounded-xl border border-slate-700 bg-[#10251f] shadow-sm ">
+      <div className="my-7 overflow-hidden rounded-xl border border-slate-700 bg-[#10251f] shadow-sm">
         {block.language && (
-          <p className="border-b border-slate-700 px-4 py-2 font-mono text-xs uppercase tracking-[0.18em] text-emerald-200/70">
+          <p className="border-b border-slate-700 px-4 py-2 font-mono uppercase text-emerald-200/70     tabular-nums text-xs font-semibold tracking-wide leading-5">
             {block.language}
           </p>
         )}
-        <pre className="overflow-x-auto p-5 font-mono text-md leading-6 text-emerald-50">
+        <pre className="overflow-x-auto p-5 font-mono text-base leading-6 text-emerald-50 tabular-nums">
           <code>{block.text}</code>
         </pre>
       </div>
@@ -452,7 +452,7 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
 
   if (block.type === "quote") {
     return (
-      <blockquote className="my-6 border-l-4 border-lime-400 bg-emerald-50/80 px-5 py-4 text-lg font-medium leading-8 text-emerald-950  ">
+      <blockquote className="my-6 border-l-4 border-lime-400 bg-emerald-50/80 px-5 py-4 text-lg font-medium leading-8 text-emerald-950 tracking-normal">
         {block.lines.map((line, index) => (
           <p key={index}>
             {index > 0 && <br />}
@@ -464,7 +464,7 @@ function MarkdownBlockView({ block }: { block: ContentBlock }) {
   }
 
   return (
-    <hr className="my-10 border-0 border-t border-slate-200 " />
+    <hr className="my-10 border-0 border-t border-slate-200" />
   );
 }
 
@@ -510,7 +510,7 @@ export default function ResearchDevelopmentPage() {
   );
 
   return (
-    <main className="overflow-hidden bg-[#f5f6ef] text-slate-900  ">
+    <main className="overflow-hidden bg-[#f5f6ef] text-slate-900">
       <section className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] text-slate-900">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_8%,rgba(52,211,153,0.2),transparent_38%),radial-gradient(ellipse_at_5%_100%,rgba(163,217,119,0.11),transparent_35%)]" />
         <div className="absolute -right-36 top-12 -z-10 h-[34rem] w-[34rem] rounded-full border border-slate-700 sm:right-[-8rem]">
@@ -521,30 +521,30 @@ export default function ResearchDevelopmentPage() {
 
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:px-10 lg:py-24">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-800/20 bg-white/70 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.24em] text-emerald-800">
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-800/20 bg-white/70 px-3 py-1.5 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">
               <span className="h-1.5 w-1.5 rounded-full bg-lime-300" />
               {copy.text[0]}
             </div>
-            <p className="mt-8 text-md font-bold uppercase tracking-[0.3em] text-emerald-800">
+            <p className="mt-8 uppercase text-emerald-800    text-xs font-semibold tracking-wide leading-5">
               {sourceTitle?.text ?? copy.text[1]}
             </p>
-            <h1 className="mt-4 max-w-3xl text-4xl font-black leading-[1.02] tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
+            <h1 className="mt-4 max-w-3xl text-slate-950 text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
               {sourceSubtitle?.text ?? copy.text[2]}
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-700 sm:text-xl">
+            <p className="mt-7 max-w-2xl text-slate-700       text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {copy.text[3]}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#research-content"
-                className="rounded-full bg-lime-300 px-5 py-3 text-md font-bold text-emerald-950 transition hover:bg-lime-200"
+                className="rounded-full bg-lime-300 px-5 py-3 text-base font-bold text-emerald-950 transition hover:bg-lime-200 tracking-normal"
               >
                 {copy.text[4]}
               </a>
               {navigationSections[0]?.heading && (
                 <a
                   href={`#${navigationSections[0].heading.id}`}
-                  className="rounded-full border border-emerald-800/30 px-5 py-3 text-md font-bold text-emerald-900 transition hover:bg-emerald-50"
+                  className="rounded-full border border-emerald-800/30 px-5 py-3 text-base font-bold text-emerald-900 transition hover:bg-emerald-50 tracking-normal"
                 >
                   {copy.text[5]}
                 </a>
@@ -554,14 +554,14 @@ export default function ResearchDevelopmentPage() {
 
           <aside className="relative mx-auto w-full max-w-md lg:ml-auto">
             <div className="absolute -inset-5 rounded-full bg-emerald-400/15 blur-3xl" />
-            <div className="relative rounded-xl border border-slate-700 bg-[#14372f] p-6 shadow-sm  backdrop-blur-sm sm:p-8">
-              <p className="inline-flex w-fit rounded-full border border-lime-200/20 bg-white/[0.06] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-lime-200">
+            <div className="relative rounded-xl border border-slate-700 bg-[#14372f] p-6 shadow-sm backdrop-blur-sm sm:p-8">
+              <p className="inline-flex w-fit rounded-full border border-lime-200/20 bg-white/[0.06] px-3 py-1.5 uppercase text-lime-200    text-xs font-semibold tracking-wide leading-5">
                 {copy.text[6]}
               </p>
-              <p className="mt-4 text-2xl font-black leading-tight text-white sm:text-3xl">
+              <p className="mt-4 text-white    text-lg font-semibold tracking-normal leading-snug">
                 {copy.text[7]}
               </p>
-              <p className="mt-4 text-sm leading-7 text-emerald-50/80">
+              <p className="mt-4 text-emerald-50/80      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 {copy.text[8]}
               </p>
               <div className="mt-7 grid grid-cols-3 gap-2 border-t border-slate-700 pt-5">
@@ -570,10 +570,10 @@ export default function ResearchDevelopmentPage() {
                     key={item}
                     className="rounded-xl border border-slate-700 bg-white/[0.04] p-3"
                   >
-                    <span className="font-mono text-xs text-lime-200/70">
+                    <span className="font-mono text-xs text-lime-200/70 tabular-nums">
                       0{index + 1}
                     </span>
-                    <p className="mt-1 text-md font-bold text-white">{item}</p>
+                    <p className="mt-1 text-white      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item}</p>
                   </div>
                 ))}
               </div>
@@ -585,11 +585,11 @@ export default function ResearchDevelopmentPage() {
       {navigationSections.length > 0 && (
         <nav
           aria-label={copy.text[9]}
-          className="border-b border-slate-200 bg-white  "
+          className="border-b border-slate-200 bg-white"
         >
           <div className="mx-auto max-w-7xl px-5 py-8 sm:px-8 lg:px-10">
             <details>
-              <summary className="cursor-pointer list-none text-xs font-black uppercase tracking-[0.24em] text-emerald-800 marker:hidden ">
+              <summary className="cursor-pointer list-none uppercase text-emerald-800 marker:hidden text-sm font-semibold tracking-wide leading-5">
                 {copy.text[10]}
                 <span className="ml-2 font-medium normal-case tracking-normal text-slate-500">
                   {copy.text[11]}
@@ -601,12 +601,12 @@ export default function ResearchDevelopmentPage() {
                   <li key={heading.id}>
                     <a
                       href={`#${heading.id}`}
-                      className="group flex gap-3 rounded-xl border border-slate-200 bg-[#f7f8f2] px-3 py-2.5 text-md leading-6 text-slate-700 transition hover:border-emerald-300 hover:bg-emerald-50     "
+                      className="group flex gap-3 rounded-xl border border-slate-200 bg-[#f7f8f2] px-3 py-2.5 text-base leading-6 text-slate-700 transition hover:border-emerald-300 hover:bg-emerald-50"
                     >
-                      <span className="font-mono text-xs font-bold text-emerald-700 ">
+                      <span className="font-mono text-xs font-bold text-emerald-700 tracking-normal tabular-nums">
                         {String(index + 1).padStart(2, "0")}
                       </span>
-                      <span className="group-hover:text-emerald-800 ">
+                      <span className="group-hover:text-emerald-800">
                         {heading.text}
                       </span>
                     </a>
@@ -624,7 +624,7 @@ export default function ResearchDevelopmentPage() {
             key={section.heading?.id ?? "opening"}
             id={section.heading?.id}
             title={section.heading ? <InlineContent text={section.heading.text} /> : undefined}
-            titleClassName="max-w-4xl text-3xl font-black leading-tight tracking-tight text-slate-950 sm:text-4xl"
+            titleClassName="max-w-4xl text-slate-950"
             contentClassName="mt-8"
             className={
               sectionIndex % 2 === 0
@@ -652,10 +652,10 @@ export default function ResearchDevelopmentPage() {
 
       <section className={`text-slate-900 ${sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-          <p className="inline-flex w-fit rounded-full border border-emerald-800/20 bg-white/70 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-emerald-800">
+          <p className="inline-flex w-fit rounded-full border border-emerald-800/20 bg-white/70 px-4 py-2 uppercase text-emerald-800    text-xs font-semibold tracking-wide leading-5">
             {copy.text[1]}
           </p>
-          <p className="mt-3 max-w-3xl text-2xl font-black leading-tight sm:text-3xl">
+          <p className="mt-3 max-w-3xl    text-lg font-semibold tracking-normal leading-snug">
             {copy.text[13]}
           </p>
         </div>
