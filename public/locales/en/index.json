@@ -7809,6 +7809,10 @@
       "instagram": {
         "label": "Follow AeroSun Energy on Instagram, opens in a new tab",
         "title": "Follow AeroSun Energy on Instagram (opens in new tab)"
+      },
+      "youtube": {
+        "label": "Subscribe to AeroSun Energy on YouTube, opens in a new tab",
+        "title": "Subscribe to AeroSun Energy on YouTube (opens in new tab)"
       }
     },
     "solutions": [
@@ -12922,6 +12926,12 @@
           "platform": "instagram",
           "dataSocial": "instagram",
           "iconId": "instagram"
+        },
+        {
+          "href": "https://www.youtube.com/@vulchivijayakumar",
+          "platform": "youtube",
+          "dataSocial": "youtube",
+          "iconId": "youtube"
         }
       ]
     },

@@ -7713,6 +7713,10 @@
       "instagram": {
         "label": "പുതിയ ടാബിൽ AeroSun Energyയെ Instagram-ൽ പിന്തുടരുക",
         "title": "പുതിയ ടാബിൽ AeroSun Energyയുടെ Instagram പേജ് തുറക്കുക"
+      },
+      "youtube": {
+        "label": "പുതിയ ടാബിൽ YouTube-ൽ AeroSun Energy സബ്സ്ക്രൈബ് ചെയ്യുക",
+        "title": "പുതിയ ടാബിൽ AeroSun Energyയുടെ YouTube ചാനൽ തുറക്കുക"
       }
     },
     "solutions": [
@@ -12620,6 +12624,12 @@
           "platform": "instagram",
           "dataSocial": "instagram",
           "iconId": "instagram"
+        },
+        {
+          "href": "https://www.youtube.com/@vulchivijayakumar",
+          "platform": "youtube",
+          "dataSocial": "youtube",
+          "iconId": "youtube"
         }
       ]
     },
