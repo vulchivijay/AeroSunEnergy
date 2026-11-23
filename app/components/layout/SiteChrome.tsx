@@ -226,15 +226,15 @@ function Footer() {
 
 					<nav aria-labelledby="footer-navigation">
 						<h2 id="footer-navigation" className="mb-5 text-sm uppercase text-sky-200">{footer.quickLinks}</h2>
-						<ul className="space-y-1">
+						<ul className="space-y-0.5">
 							{visibleNavLinks.map((link) => (
 								<li key={link.label}>
 									{(link as { disabled?: boolean }).disabled ? (
-										<span className="flex min-h-10 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-white/50">
+										<span className="flex min-h-9 w-full flex-col items-start justify-center gap-0.5 py-1 text-sm text-white/50">
 											<span className="min-w-0">{link.label}</span>{comingSoonBadge}
 										</span>
 									) : (
-										<Link href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(link.href) ? ' text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
+										<Link href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`group inline-flex min-h-9 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(link.href) ? ' text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
 											<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(link.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
 											{link.label}
 										</Link>
@@ -243,7 +243,7 @@ function Footer() {
 							))}
 						</ul>
 						<h3 className="mb-3 mt-7 text-sm uppercase text-amber-200">{footer.quickEnquiries}</h3>
-						<ul className="space-y-1">
+						<ul className="space-y-0.5">
 							{quickEnquiries.map((item) => (
 								<li key={item.href}>
 									{(item as { disabled?: boolean }).disabled ? (
@@ -251,7 +251,7 @@ function Footer() {
 											<span className="min-w-0">{item.label}</span>{comingSoonBadge}
 										</span>
 									) : (
-										<Link href={item.href} prefetch={item.href !== '/auth/dashboard/installation-checklist' && item.href !== '/auth/dashboard/customer-agreement'} aria-current={isActive(item.href) ? 'page' : undefined} className={`group inline-flex min-h-11 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(item.href) ? ' text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
+										<Link href={item.href} prefetch={item.href !== '/auth/dashboard/installation-checklist' && item.href !== '/auth/dashboard/customer-agreement'} aria-current={isActive(item.href) ? 'page' : undefined} className={`group inline-flex min-h-9 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(item.href) ? ' text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
 											<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(item.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
 											{item.label}
 										</Link>
@@ -263,10 +263,10 @@ function Footer() {
 
 					<nav aria-labelledby="footer-solutions">
 						<h2 id="footer-solutions" className="mb-5 text-sm uppercase text-sky-200">{footer.ourSolutions}</h2>
-						<ul className="space-y-1">
+						<ul className="space-y-0.5">
 							{solutions.map((solution) => (
 								<li key={solution.label}>
-									<Link href={solution.href} aria-current={isActive(solution.href) ? 'page' : undefined} className={`group inline-flex min-h-10 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(solution.href) ? ' text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
+									<Link href={solution.href} aria-current={isActive(solution.href) ? 'page' : undefined} className={`group inline-flex min-h-9 items-center gap-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 ${isActive(solution.href) ? ' text-amber-200' : 'text-white/80 hover:text-amber-100 focus-visible:text-amber-100'}`}>
 										<span className={`h-px transition-all group-hover:w-3 group-focus-visible:w-3 ${isActive(solution.href) ? 'w-3 bg-[#A5D6A7]' : 'w-0 bg-[#A5D6A7]'}`} aria-hidden="true" />
 										{solution.label}
 									</Link>
@@ -349,9 +349,6 @@ function Footer() {
 			</div>
 
 			<div className="border-t border-slate-700 bg-white/5 backdrop-blur">
-				<p className="flex flex-row w-full justify-center gap-1 border-t border-slate-700 p-5 text-sm text-white/75 sm:px-8 lg:px-10">
-					🚧 {footer.developmentNotice} <Link href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" aria-label={footer.attributionLinkLabel} className="text-amber-500 animate-pulse transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200">{footer.attributionLinkText}</Link>
-				</p>
 				<div className="flex w-full flex-col items-center justify-between gap-1 border-t border-slate-700 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
 					<div className="flex flex-wrap items-center justify-center gap-1 text-[12px] uppercase tracking-[0.14em] text-white/70">
 						{footer.legalLinks.map((link: { href: string; label: string }) => (
