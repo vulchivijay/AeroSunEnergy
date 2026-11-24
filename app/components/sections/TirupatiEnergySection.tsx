@@ -18,9 +18,9 @@ export default function TirupatiEnergySection({
       : 'bg-gradient-to-br from-[#f1f2f6] to-white'
 
   return (
-    <section className={`${backgroundClassName} p-4 sm:p-5`}>
+    <section className={`${backgroundClassName}`}>
       <div className="mx-auto max-w-[1648px]">
-        <div className="relative isolate min-h-[34rem] overflow-hidden rounded-[1.25rem] border border-white/20 bg-[#091b49] shadow-xl shadow-slate-900/20 sm:min-h-[30rem] lg:min-h-[27rem]">
+        <div className="relative isolate min-h-[34rem] overflow-hidden border border-white/20 bg-[#091b49] shadow-xl shadow-slate-900/20 sm:min-h-[30rem] lg:min-h-[27rem]">
           <Image
             src="/images/tirupati-energy-scene.svg?v=13"
             alt=""
@@ -46,7 +46,7 @@ export default function TirupatiEnergySection({
 
           <div className="relative z-10 flex min-h-[34rem] items-end px-6 py-8 sm:min-h-[30rem] sm:px-10 sm:py-10 lg:min-h-[27rem] lg:items-center lg:px-12 lg:py-12">
             <div className="w-full max-w-3xl lg:w-[62%] lg:max-w-[58rem]">
-              <p className="inline-flex w-fit items-center rounded-full border border-white/30 bg-white/15 px-5 py-3 text-xs font-semibold uppercase tracking-wide text-white shadow-lg backdrop-blur-sm sm:px-6 sm:text-base">
+              <p className="inline-flex w-fit items-center rounded-full border border-white/30 bg-white/15 px-5 py-3 text-xs uppercase tracking-wide text-white shadow-lg backdrop-blur-sm sm:px-6 sm:text-base">
                 {content.eyebrow}
               </p>
 
@@ -61,7 +61,7 @@ export default function TirupatiEnergySection({
               <Link
                 href="/contact"
                 prefetch={false}
-                className="mt-7 inline-flex min-h-[4.25rem] items-center justify-center gap-2 rounded-full bg-amber-400 px-8 py-4 text-base font-bold text-[#10234f] shadow-lg shadow-amber-950/20 transition hover:bg-amber-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-300 sm:px-9 sm:text-xl"
+                className="mt-7 inline-flex min-h-[3.25rem] items-center justify-center gap-2 rounded-full bg-amber-400 px-6 py-2 text-base font-semibold text-[#10234f] shadow-lg shadow-amber-950/20 transition hover:bg-amber-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-300 sm:px-8 sm:text-sm"
               >
                 {content.contactCta}
                 <ArrowUpRight className="h-4 w-4 shrink-0" strokeWidth={2.2} aria-hidden="true" />
