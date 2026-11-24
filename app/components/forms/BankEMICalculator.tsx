@@ -13,7 +13,6 @@ import {
 } from 'lucide-react'
 import { useLocale } from '@/lib/LocaleContext'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
-import { ReadMoreToggle } from '@/app/components/ui/ReadMoreToggle'
 
 type LoanBand = 'upToTwoLakhs' | 'aboveTwoLakhs'
 
@@ -70,7 +69,6 @@ export function BankEMICalculator() {
   const [repoRate, setRepoRate] = useState(DEFAULT_REPO_RATE)
   const [isHomeLoanCustomer, setIsHomeLoanCustomer] = useState(true)
   const [homeLoanRateInput, setHomeLoanRateInput] = useState('')
-  const [isExpanded, setIsExpanded] = useState(true)
   const borrowerMargin = loanBand === 'upToTwoLakhs' ? 0.1 : 0.2
   const estimatedProjectCost = Math.ceil(loanAmount / (1 - borrowerMargin))
   const borrowerContribution = estimatedProjectCost - loanAmount
@@ -157,9 +155,7 @@ export function BankEMICalculator() {
   return (
     <section className="relative isolate overflow-hidden bg-[#fff8ed] px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
       <div
-        className={`relative mx-auto grid max-w-7xl overflow-hidden rounded-[2rem] border border-orange-100 bg-[#fffaf2] shadow-xl shadow-slate-900/10 ${
-          isExpanded ? 'lg:grid-cols-[minmax(19rem,0.82fr)_minmax(0,1.18fr)]' : ''
-        }`}
+        className="relative mx-auto grid max-w-7xl overflow-hidden rounded-[2rem] border border-orange-100 bg-[#fffaf2] shadow-xl shadow-slate-900/10 lg:grid-cols-[minmax(19rem,0.82fr)_minmax(0,1.18fr)]"
       >
           <aside className="relative order-first flex min-w-0 flex-col overflow-hidden bg-[#071a49] p-5 text-white sm:p-7 lg:col-start-1 lg:row-start-1 lg:p-8">
             <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full border border-blue-300/20" aria-hidden="true" />
@@ -170,12 +166,6 @@ export function BankEMICalculator() {
                   <Landmark size={14} strokeWidth={2.2} className="text-amber-300" aria-hidden="true" />
                   {labels.badge}
                 </div>
-                <ReadMoreToggle
-                  expanded={isExpanded}
-                  onToggle={() => setIsExpanded((expanded) => !expanded)}
-                  controlsId="bank-emi-calculator-controls"
-                  labelClassName="shrink-0 text-amber-200 underline decoration-amber-400/60 hover:text-white"
-                />
               </div>
               <h2 className="mt-5 max-w-xl text-left text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl">
                 {labels.title}
@@ -185,7 +175,7 @@ export function BankEMICalculator() {
                 {labels.description}
               </p>
             </div>
-            <div hidden={!isExpanded} className="relative mx-auto mt-8 w-full max-w-[19rem]">
+            <div className="relative mx-auto mt-8 w-full max-w-[19rem]">
               <div className="relative aspect-square">
                 <div className="absolute inset-1 rounded-full border border-amber-300/35" aria-hidden="true" />
                 <div className="absolute inset-[5%] rounded-full border-[0.55rem] border-amber-400 shadow-[0_0_30px_rgba(251,191,36,0.3)]" aria-hidden="true" />
@@ -222,7 +212,7 @@ export function BankEMICalculator() {
             </div>
           </aside>
 
-          <main id="bank-emi-calculator-controls" hidden={!isExpanded} className="relative min-w-0 bg-[#fffaf2] p-5 text-[#10234f] sm:p-7 lg:col-start-2 lg:row-start-1 lg:p-8">
+          <main id="bank-emi-calculator-controls" className="relative min-w-0 bg-[#fffaf2] p-5 text-[#10234f] sm:p-7 lg:col-start-2 lg:row-start-1 lg:p-8">
             <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-amber-200/30 blur-3xl" aria-hidden="true" />
             <div className="relative z-10">
           <div className="mb-5 border-b border-orange-200 pb-4">
@@ -506,7 +496,7 @@ export function BankEMICalculator() {
             </div>
           </main>
 
-          <footer hidden={!isExpanded} className="relative bg-[#071a49] text-white lg:col-span-2">
+          <footer className="relative bg-[#071a49] text-white lg:col-span-2">
             <div className="grid lg:grid-cols-[minmax(12rem,1.1fr)_minmax(0,6fr)]">
               <div className="flex items-center gap-3 border-b border-amber-400/70 p-4 sm:p-5 lg:border-b-0 lg:border-r">
                 <Calculator size={30} className="shrink-0 text-amber-400" aria-hidden="true" />

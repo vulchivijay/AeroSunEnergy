@@ -4,7 +4,6 @@ import { useId, useState, type FormEvent } from 'react'
 import { Calculator, Landmark, Tag, type LucideIcon } from 'lucide-react'
 import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
-import { ReadMoreToggle } from '@/app/components/ui/ReadMoreToggle'
 import { useLocale } from '@/lib/LocaleContext'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useToast } from '@/app/components/ui/ToastContext'
@@ -141,7 +140,6 @@ export function SolarEstimation() {
   const [leadNameValue, setLeadNameValue] = useState('')
   const [leadPhoneValue, setLeadPhoneValue] = useState('')
   const [showLeadForm, setShowLeadForm] = useState(false)
-  const [gstGuideExpanded, setGstGuideExpanded] = useState(true)
   const [whatsAppFallbackUrl, setWhatsAppFallbackUrl] = useState<string | null>(null)
   const [leadFormPending, setLeadFormPending] = useState(false)
 
@@ -798,15 +796,9 @@ export function SolarEstimation() {
               {solarGstGuide.title}
             </h2>
           </div>
-          <ReadMoreToggle
-            expanded={gstGuideExpanded}
-            onToggle={() => setGstGuideExpanded((expanded) => !expanded)}
-            controlsId={`${leadFormId}-gst-content`}
-            labelClassName="text-emerald-700 underline decoration-emerald-300 hover:text-emerald-950"
-          />
         </div>
 
-        <div id={`${leadFormId}-gst-content`} hidden={!gstGuideExpanded}>
+        <div id={`${leadFormId}-gst-content`}>
         <p className="mt-3 max-w-4xl text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {solarGstGuide.intro}
         </p>

@@ -174,20 +174,15 @@ export default async function Home() {
       {/* Solar Section */}
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl">
-          <details className="group" open>
-            <summary className="mb-8 flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+          <div>
+            <div className="mb-8 flex items-center justify-between gap-4">
             <div>
               <SectionEyebrow>{offer.eyebrow}</SectionEyebrow>
               <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
                 {offer.title}
               </h2>
             </div>
-              <span className="inline-flex shrink-0 items-center gap-2 text-sm text-emerald-700 underline decoration-emerald-300 hover:text-emerald-950 sm:text-base">
-                <span className="group-open:hidden">{t.ui.readMore}</span>
-                <span className="hidden group-open:inline">{t.ui.showLess}</span>
-                <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-open:rotate-90" aria-hidden="true" />
-              </span>
-            </summary>
+            </div>
             <div id="what-we-offer-content">
           <div className="mb-10 text-lg leading-8 text-black">
             {offer.description}
@@ -259,7 +254,7 @@ export default async function Home() {
             </div>
           </div>
             </div>
-          </details>
+          </div>
         </div>
       </section>
       <RecognitionHighlight t={t} />
@@ -274,20 +269,15 @@ export default async function Home() {
       {/* Wind Energy Section */}
       <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl">
-          <details className="group" open>
-            <summary className="mb-8 flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+          <div>
+            <div className="mb-8 flex items-center justify-between gap-4">
             <div>
               <WindSectionEyebrow>{wind.eyebrow}</WindSectionEyebrow>
               <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
                 {wind.title}
               </h2>
             </div>
-              <span className="inline-flex shrink-0 items-center gap-2 text-sm text-sky-700 underline decoration-sky-300 hover:text-sky-950 sm:text-base">
-                <span className="group-open:hidden">{t.ui.readMore}</span>
-                <span className="hidden group-open:inline">{t.ui.showLess}</span>
-                <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-open:rotate-90" aria-hidden="true" />
-              </span>
-            </summary>
+            </div>
             <div id="wind-energy-content">
             <div className="grid gap-6 lg:grid-cols-3">
               {wind.cards.map((card, index) => (
@@ -313,26 +303,21 @@ export default async function Home() {
               <WindCapacityTable rows={wind.capacity} />
             </div>
             </div>
-          </details>
+          </div>
         </div>
       </section>
       {/* Hybrid Energy Section */}
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl">
-          <details className="group" open>
-            <summary className="mb-8 flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+          <div>
+            <div className="mb-8 flex items-center justify-between gap-4">
             <div>
               <HybridSectionEyebrow>{hybrid.eyebrow}</HybridSectionEyebrow>
               <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
                 {hybrid.title}
               </h2>
             </div>
-              <span className="inline-flex shrink-0 items-center gap-2 text-sm text-violet-700 underline decoration-violet-300 hover:text-violet-950 sm:text-base">
-                <span className="group-open:hidden">{t.ui.readMore}</span>
-                <span className="hidden group-open:inline">{t.ui.showLess}</span>
-                <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-open:rotate-90" aria-hidden="true" />
-              </span>
-            </summary>
+            </div>
             <div id="hybrid-energy-content">
             <div className="grid gap-6 lg:grid-cols-3">
               {hybrid.cards.map((card, index) => (
@@ -358,7 +343,7 @@ export default async function Home() {
               <HybridTable rows={hybrid.table} />
             </div>
             </div>
-          </details>
+          </div>
         </div>
       </section>
       <Brands t={t} />
@@ -432,8 +417,8 @@ function Brands({ t }: { t: Translations }) {
         aria-hidden="true"
       />
       <div className="relative mx-auto max-w-7xl ">
-        <details className="group " open>
-        <summary className="mb-7 list-none cursor-pointer border-t border-slate-300 pt-5 [&::-webkit-details-marker]:hidden sm:mb-8 sm:pt-6">
+        <div>
+        <div className="mb-7 border-t border-slate-300 pt-5 sm:mb-8 sm:pt-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="min-w-0">
               <p className="inline-flex items-center gap-2 rounded-full border border-amber-700/20 bg-amber-100/80 px-4 py-1.5 uppercase text-amber-900    text-xs font-semibold tracking-wide leading-5">
@@ -447,13 +432,8 @@ function Brands({ t }: { t: Translations }) {
                 {section.subtitle}
               </p>
             </div>
-            <span className="inline-flex shrink-0 items-center gap-2 self-start text-sm text-amber-800 underline decoration-amber-300 hover:text-amber-950 sm:self-end sm:text-base">
-              <span className="group-open:hidden">{t.ui.readMore}</span>
-              <span className="hidden group-open:inline">{t.ui.showLess}</span>
-              <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-open:rotate-90" aria-hidden="true" />
-            </span>
           </div>
-        </summary>
+        </div>
 
         <div id="brands-content">
           <p className="mb-7 max-w-3xl border-l-2 border-amber-500 pl-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
@@ -573,7 +553,7 @@ function Brands({ t }: { t: Translations }) {
           {section.moreBrandsAvailable}
         </p>
         </div>
-        </details>
+        </div>
       </div>
     </section>
   )
