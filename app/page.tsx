@@ -11,7 +11,7 @@ import { hybridSolutionImages, windSolutionImages } from './components/ui/Energy
 import Image from 'next/image'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import WindTurbineIllustration from '@/app/components/ui/WindTurbineIllustration'
-import { ArrowUpRight, BadgeCheck, BriefcaseBusiness, CalendarDays, ClipboardCheck, FileCheck2, Mail, MapPin, Phone, Rocket, ShieldCheck, Sun, Zap } from 'lucide-react'
+import { ArrowUpRight, BadgeCheck, BriefcaseBusiness, CalendarDays, ClipboardCheck, FileCheck2, FileText, HardHat, House, Mail, MapPin, MessageCircle, Phone, Rocket, ShieldCheck, Sun, Zap } from 'lucide-react'
 import Link from 'next/link'
 import { getSliderImagePath } from '@/lib/sliderImages'
 import Slider from '@/app/components/ui/Slider'
@@ -783,32 +783,120 @@ function WhySolarSection({ t }: { t: Translations }) {
 
 function SolarJourneySection({ t }: { t: Translations }) {
   const content = t.home.trustSections.journey
+  const journeyIcons = [FileText, MessageCircle, House, ClipboardCheck, HardHat]
+  const stepPositions = ['lg:top-0', 'lg:top-[20%]', 'lg:top-[40%]', 'lg:top-[60%]', 'lg:top-[80%]']
 
   return (
-    <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="solar-journey-title">
-      <div className="mx-auto max-w-7xl">
-        <div className="max-w-3xl">
-          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 uppercase text-emerald-800    text-xs font-semibold tracking-wide leading-5">{content.eyebrow}</p>
-          <h2 id="solar-journey-title" className="mt-3 text-emerald-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
-            {content.title}
-          </h2>
-          <p className="mt-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.description}</p>
+    <section
+      className="relative isolate overflow-hidden bg-[#06111d] px-4 py-10 text-white sm:px-6 sm:py-14 lg:px-10 lg:py-16"
+      aria-labelledby="solar-journey-title"
+    >
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_72%_45%,rgba(16,54,60,0.36),transparent_48%),linear-gradient(110deg,#071321_0%,#06111d_58%,#030b13_100%)]" aria-hidden="true" />
+      <div className="relative mx-auto max-w-7xl">
+        <div className="grid gap-8 lg:grid-cols-[minmax(17rem,0.78fr)_minmax(0,1.22fr)] lg:items-stretch lg:gap-8">
+          <div className="relative isolate flex min-h-[25rem] flex-col justify-start overflow-hidden sm:min-h-[27rem] lg:min-h-[43rem]">
+            <Image
+              src="/images/slider/slider-3.webp"
+              alt=""
+              fill
+              sizes="(min-width: 1024px) 34vw, 100vw"
+              className="pointer-events-none absolute inset-x-0 bottom-0 top-auto !h-[58%] object-cover object-center opacity-45 [mask-image:linear-gradient(to_bottom,transparent,black_38%)]"
+              aria-hidden="true"
+            />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[58%] bg-gradient-to-t from-[#06111d] via-[#06111d]/35 to-transparent" aria-hidden="true" />
+            <div className="relative z-10">
+              <p className="inline-flex w-fit items-center rounded-md border border-amber-500 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-amber-400 sm:text-xs">
+                {content.eyebrow}
+              </p>
+              <h2 id="solar-journey-title" className="mt-5 max-w-lg text-4xl font-bold leading-[0.98] !tracking-tight text-white sm:text-5xl lg:text-6xl">
+                From bill
+                <br />
+                to build.
+              </h2>
+              <p className="mt-4 max-w-sm text-xl font-medium leading-snug text-slate-100 sm:text-2xl">
+                {content.title}
+              </p>
+              <span className="mt-5 block h-1 w-14 rounded-full bg-lime-400 shadow-[0_0_16px_rgba(163,255,0,0.6)]" aria-hidden="true" />
+              <p className="mt-4 max-w-md text-sm leading-6 text-slate-300 sm:text-base sm:leading-7">
+                {content.description}
+              </p>
+            </div>
+          </div>
+
+          <div className="relative min-w-0 lg:py-1">
+            <svg
+              className="pointer-events-none absolute inset-0 z-0 hidden h-full w-full lg:block"
+              viewBox="0 0 800 700"
+              preserveAspectRatio="none"
+              fill="none"
+              aria-hidden="true"
+            >
+              <defs>
+                <filter id="solar-journey-glow" x="-40%" y="-20%" width="180%" height="140%">
+                  <feGaussianBlur stdDeviation="5" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+              <path
+                d="M650 58C790 84 774 142 424 190S130 260 650 330C790 365 775 415 185 470S135 555 650 610"
+                stroke="#a3ff00"
+                strokeWidth="3"
+                strokeLinecap="round"
+                filter="url(#solar-journey-glow)"
+              />
+            </svg>
+
+            <ol className="relative grid gap-3 lg:min-h-[43rem] lg:gap-0">
+              {content.steps.map((step, index) => {
+                const StepIcon = journeyIcons[index % journeyIcons.length]
+                const isLeftAligned = index % 2 === 0
+
+                return (
+                  <li
+                    key={step.title}
+                    className={`relative z-10 lg:absolute lg:w-[78%] ${stepPositions[index] ?? 'lg:top-[80%]'} ${isLeftAligned ? 'lg:left-4' : 'lg:right-4'}`}
+                  >
+                    <article className="relative grid min-h-[6.25rem] grid-cols-[2.5rem_3.25rem_minmax(0,1fr)] items-center gap-3 rounded-xl border border-sky-200/20 bg-[linear-gradient(110deg,rgba(24,41,54,0.96),rgba(12,27,40,0.96))] px-3 py-3 shadow-[0_12px_30px_rgba(0,0,0,0.25)] backdrop-blur-sm sm:grid-cols-[3rem_3.5rem_minmax(0,1fr)] sm:gap-4 sm:px-4">
+                      <span className="text-center text-3xl font-bold leading-none !tracking-tight text-lime-400 sm:text-4xl">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <span className="grid h-12 place-items-center border-l border-slate-400/60 pl-3 text-slate-100 sm:h-14 sm:pl-4">
+                        <StepIcon className="h-8 w-8 stroke-[1.7] sm:h-9 sm:w-9" aria-hidden="true" />
+                      </span>
+                      <div className="min-w-0">
+                        <h3 className="text-base font-semibold leading-snug !tracking-tight text-white sm:text-lg">
+                          {step.title}
+                        </h3>
+                        <p className="mt-1 text-xs leading-5 text-slate-300 sm:text-sm sm:leading-5">
+                          {step.description}
+                        </p>
+                      </div>
+                    </article>
+                    <span
+                      className={`pointer-events-none absolute top-1/2 z-20 hidden h-3.5 w-3.5 -translate-y-1/2 rounded-full border-[3px] border-white bg-lime-400 shadow-[0_0_0_5px_rgba(163,255,0,0.12),0_0_18px_5px_rgba(163,255,0,0.8)] lg:block ${isLeftAligned ? '-right-[7px]' : '-left-[7px]'}`}
+                      aria-hidden="true"
+                    />
+                  </li>
+                )
+              })}
+            </ol>
+          </div>
         </div>
 
-        <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {content.steps.map((step, index) => (
-            <li key={step.title} className="relative rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-              <span className="font-mono text-emerald-700 text-xs font-semibold tracking-wide leading-5 tabular-nums">{String(index + 1).padStart(2, '0')}</span>
-              <h3 className="mt-4 text-slate-950 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{step.title}</h3>
-              <p className="mt-2 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{step.description}</p>
-            </li>
-          ))}
-        </ol>
-
-        <div className="mt-6 flex flex-col gap-4 rounded-xl bg-linear-to-r from-[#e7f2eb] via-[#f5f0e2] to-[#e8e7f8] p-5 text-slate-800 sm:flex-row sm:items-center sm:justify-between">
-          <p className="max-w-3xl text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.estimateNote}</p>
-          <Link href="/solar-calculator" className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-[#A3D977] px-5 py-3 text-sm font-bold text-emerald-950 transition hover:bg-[#c7efa4] tracking-normal">
-            {content.cta}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+        <div className="mt-8 flex flex-col gap-4 rounded-xl border border-amber-500 bg-[#111b22]/95 p-4 text-amber-400 shadow-[0_0_24px_rgba(245,158,11,0.08)] sm:flex-row sm:items-center sm:justify-between sm:px-5">
+          <div className="flex items-start gap-3">
+            <Info className="mt-0.5 h-5 w-5 shrink-0 text-amber-400" aria-hidden="true" />
+            <p className="text-xs leading-5 sm:text-sm sm:leading-5">{content.estimateNote}</p>
+          </div>
+          <Link
+            href="/solar-calculator"
+            className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-lg bg-lime-400 px-5 py-3 text-sm font-bold text-slate-950 shadow-[0_0_18px_rgba(163,255,0,0.22)] transition hover:bg-lime-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-300 tracking-normal"
+          >
+            {content.cta}
+            <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
       </div>
