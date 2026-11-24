@@ -11,7 +11,7 @@ import { hybridSolutionImages, windSolutionImages } from './components/ui/Energy
 import Image from 'next/image'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import WindTurbineIllustration from '@/app/components/ui/WindTurbineIllustration'
-import { ArrowUpRight, BadgeCheck, BriefcaseBusiness, CalendarDays, ClipboardCheck, FileCheck2, Mail, MapPin, Phone, Rocket, ShieldCheck, Sun, Zap } from 'lucide-react'
+import { ArrowLeftRight, ArrowUpRight, BadgeCheck, BadgeIndianRupee, BatteryCharging, BriefcaseBusiness, CalendarDays, ClipboardCheck, FileCheck2, FileText, HardHat, House, Leaf, Mail, MapPin, MessageCircle, Network, PanelsTopLeft, Phone, Rocket, ShieldCheck, Sun, Zap } from 'lucide-react'
 import Link from 'next/link'
 import { getSliderImagePath } from '@/lib/sliderImages'
 import Slider from '@/app/components/ui/Slider'
@@ -233,17 +233,75 @@ export default async function Home() {
                   ))}
                 </div>
               </div>
-              <div className="mt-12 rounded-xl border border-slate-200 bg-white p-6 lg:p-8">
-                <div className="mb-6">
-                  <SectionEyebrow>{home.systemTypeSection.eyebrow}</SectionEyebrow>
-                  <h3 className="mt-3 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
+              <div role="region" aria-labelledby="system-types-title" className="relative isolate mt-12 scroll-mt-24 overflow-hidden rounded-[2rem] border border-[#eadfc7] bg-[#fff9ed] px-4 py-8 shadow-sm sm:px-7 sm:py-10 lg:px-9">
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(255,224,153,0.28),transparent_48%)]" aria-hidden="true" />
+                <Sun className="pointer-events-none absolute left-1/2 top-5 hidden h-6 w-6 -translate-x-[7.2rem] text-amber-400 sm:block" aria-hidden="true" />
+                <Sun className="pointer-events-none absolute left-1/2 top-5 hidden h-6 w-6 translate-x-[6.2rem] text-amber-400 sm:block" aria-hidden="true" />
+                <div className="relative z-10 mx-auto w-full max-w-none text-center">
+                  <p className="inline-flex items-center rounded-full bg-[#155d38] px-8 py-2.5 text-base font-bold uppercase tracking-[0.12em] text-white shadow-md shadow-emerald-950/15 sm:text-lg">
+                    {home.systemTypeSection.eyebrow}
+                  </p>
+                  <h3 id="system-types-title" className="mt-3 font-sans text-3xl font-bold leading-tight !tracking-tight text-[#0b4327] sm:text-4xl lg:text-[2.5rem]">
                     {home.systemTypeSection.title}
                   </h3>
+                  <span className="mx-auto mt-3 block h-1.5 w-36 -rotate-2 rounded-full bg-amber-400" aria-hidden="true" />
                 </div>
-                <div className="grid gap-5 lg:grid-cols-3">
-                  {systemTypes.map((item) => (
-                    <InfoPanel key={item.title} title={item.title} accent={getAccentOrDefault(item.accent, ['amber', 'sky'] as const, 'emerald')} content={item.content} />
-                  ))}
+
+                <div className="relative z-10 mt-7 grid items-stretch gap-4 lg:grid-cols-3 lg:gap-5">
+                  {systemTypes.map((item, index) => {
+                    const featureIcons = [
+                      [ArrowLeftRight, BadgeIndianRupee],
+                      [BatteryCharging, MapPin],
+                      [Network, ShieldCheck],
+                    ]
+                    const cardStyles = [
+                      {
+                        background: 'bg-[linear-gradient(145deg,#e9f3e3,#f7f8e9)]',
+                        border: 'border-emerald-100',
+                        icon: 'bg-amber-100 text-emerald-900',
+                      },
+                      {
+                        background: 'bg-[linear-gradient(145deg,#fff0cf,#fff8e9)]',
+                        border: 'border-amber-100',
+                        icon: 'bg-emerald-100 text-emerald-900',
+                      },
+                      {
+                        background: 'bg-[linear-gradient(145deg,#e0f0eb,#f0f7ef)]',
+                        border: 'border-teal-100',
+                        icon: 'bg-amber-100 text-emerald-900',
+                      },
+                    ]
+                    const style = cardStyles[index % cardStyles.length]
+                    const icons = featureIcons[index % featureIcons.length]
+
+                    return (
+                      <article
+                        key={item.title}
+                        className={`flex h-full flex-col overflow-hidden rounded-[1.5rem] border ${style.border} ${style.background} p-4 shadow-[0_10px_18px_-12px_rgba(47,54,34,0.45)] sm:p-5 lg:p-6`}
+                      >
+                        <SystemTypeIllustration index={index} />
+                        <h4 className="mt-1 flex min-h-12 items-center justify-center rounded-full bg-[#155d38] px-3 py-2 text-center text-xl font-bold !tracking-tight text-white sm:text-2xl">
+                          {item.title}
+                        </h4>
+                        <ul className="mt-4 grid flex-1 content-start gap-3">
+                          {item.content.map((description, featureIndex) => {
+                            const FeatureIcon = icons[featureIndex % icons.length]
+
+                            return (
+                              <li key={description} className="flex items-center gap-3">
+                                <span className={`grid h-14 w-14 shrink-0 place-items-center rounded-full ${style.icon}`}>
+                                  <FeatureIcon className="h-8 w-8" strokeWidth={2} aria-hidden="true" />
+                                </span>
+                                <p className="text-base font-semibold leading-6 text-[#17264a] sm:text-lg sm:leading-6">
+                                  {description}
+                                </p>
+                              </li>
+                            )
+                          })}
+                        </ul>
+                      </article>
+                    )
+                  })}
                 </div>
               </div>
               <div className="relative isolate mt-12 overflow-hidden rounded-[2rem] border border-[#e7dfc9] bg-[#fff9ed] p-5 shadow-sm sm:p-7 lg:p-9">
@@ -749,32 +807,178 @@ function CompanyTrustSection({ t }: { t: Translations }) {
   )
 }
 
+function SystemTypeIllustration({ index }: { index: number }) {
+  const isOffGrid = index === 1
+  const isHybrid = index === 2
+
+  return (
+    <div className={`relative mx-[-0.5rem] h-[13.5rem] overflow-hidden sm:mx-0 ${index === 0 ? 'bg-[#e6f0dc]' : isOffGrid ? 'bg-[#ffedc8]' : 'bg-[#dff0e9]'}`} aria-hidden="true">
+      <span className="absolute left-4 top-3 z-20 text-4xl font-extrabold leading-none !tracking-tight text-[#1450e8]">
+        {String(index + 1).padStart(2, '0')}
+      </span>
+      <svg viewBox="0 0 360 190" className="h-full w-full" fill="none">
+        <circle cx="292" cy="42" r="18" fill="#FFC928" />
+        <path d="M292 9V2m0 80v-7m-33-33h-7m82 0h-7m-58-23-6-6m58 58-6-6m0-46 6-6m-52 58 6-6" stroke="#FFB80E" strokeWidth="4" strokeLinecap="round" />
+
+        <path d="M18 157c8-13 22-14 32-1 6-15 24-19 35-3 9-13 25-11 30 3h235v26H18v-25Z" fill="#8DBB58" />
+        <path d="M44 166c6-11 18-11 24 0m-8 0c7-13 21-13 28 0m180 0c6-12 19-13 26-1m-7 1c7-12 20-12 27 0" stroke="#5B963C" strokeWidth="5" strokeLinecap="round" />
+
+        <path d="m66 116 66-58 72 58" fill="#A5653B" stroke="#794726" strokeWidth="5" strokeLinejoin="round" />
+        <path d="M78 112 132 66l58 46v52H78v-52Z" fill="#FFF9E8" stroke="#B77A4E" strokeWidth="4" />
+        <path d="M87 116h30v25H87zm77 0h17v18h-17z" fill="#A9DDF1" stroke="#9A6038" strokeWidth="3" />
+        <path d="M127 124h25v40h-25z" fill="#B56B3C" stroke="#8F522D" strokeWidth="3" />
+        <circle cx="146" cy="145" r="2" fill="#FDE68A" />
+
+        <path d="m77 107 35-39h64l34 39H77Z" fill="#1683C5" stroke="#23486B" strokeWidth="4" strokeLinejoin="round" />
+        <path d="m90 104 28-33m-8 36 27-39m-9 40 25-38m-9 38 22-34M85 91h112m-122 9h131" stroke="#D7F2FF" strokeWidth="2" />
+
+        <path d="M197 143h44" stroke="#16874B" strokeWidth="5" strokeLinecap="round" />
+        <rect x="187" y="130" width="31" height="28" rx="4" fill="white" stroke="#38556C" strokeWidth="3" />
+        <path d="m202 135-5 9h6l-3 8 9-11h-6l3-6h-4Z" fill="#37B764" />
+
+        {isOffGrid || isHybrid ? (
+          <>
+            <path d="M218 144h35" stroke="#16874B" strokeWidth="5" strokeLinecap="round" />
+            <rect x="250" y="128" width="45" height="35" rx="6" fill="white" stroke="#16874B" strokeWidth="4" />
+            <rect x="295" y="139" width="5" height="13" rx="2" fill="#16874B" />
+            <rect x="258" y="136" width="28" height="19" rx="3" fill="#B8E5AE" />
+            <path d="M263 141h18m-18 5h18" stroke="#16874B" strokeWidth="3" strokeLinecap="round" />
+          </>
+        ) : null}
+
+        <path
+          d="M326 68 305 165m21-97 22 97m-38-25h33m-29-24h25m-21-23h17m-25 47 33-24m0 24-33-24m8 0 25-23m-17 0 17-17M301 72h46m-50 24h54M301 165h49"
+          stroke={isOffGrid ? '#87929B' : '#344A5E'}
+          strokeWidth="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        {isOffGrid ? (
+          <path d="m310 76 32 32m0-32-32 32" stroke="#E24B3B" strokeWidth="7" strokeLinecap="round" />
+        ) : (
+          <>
+            <path d={`M218 144h${isHybrid ? '85' : '83'} `} stroke="#16874B" strokeWidth="4" strokeLinecap="round" />
+            <path d="m272 137 8 7-8 7m23-7 8-7m0 0-8-7" stroke="#F59E0B" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          </>
+        )}
+      </svg>
+    </div>
+  )
+}
+
+function SolarReviewIllustration({ index }: { index: number }) {
+  if (index === 0) {
+    return (
+      <div className="relative flex h-40 items-center justify-center overflow-hidden" aria-hidden="true">
+        <span className="absolute h-28 w-52 rounded-full bg-sky-100/80" />
+        <Sun className="absolute right-[18%] top-1 h-14 w-14 text-amber-500" strokeWidth={1.7} />
+        <div className="relative z-10 w-32 -rotate-6 rounded-xl border-2 border-[#173c7a] bg-white p-3 shadow-md">
+          <div className="flex items-center justify-between text-sm font-extrabold text-[#10235a]">
+            <span>BILL</span>
+            <Zap className="h-5 w-5 fill-amber-400 text-amber-500" />
+          </div>
+          <span className="mt-2 block h-1.5 w-16 rounded-full bg-slate-300" />
+          <span className="mt-1.5 block h-1.5 w-20 rounded-full bg-slate-200" />
+          <div className="mt-3 flex h-7 items-end gap-1">
+            <span className="h-3 w-2 rounded-t-sm bg-lime-500" />
+            <span className="h-5 w-2 rounded-t-sm bg-lime-600" />
+            <span className="h-4 w-2 rounded-t-sm bg-lime-500" />
+            <span className="h-6 w-2 rounded-t-sm bg-lime-600" />
+          </div>
+        </div>
+        <Leaf className="absolute bottom-3 left-[16%] h-10 w-10 -rotate-45 fill-lime-600 text-lime-700" />
+        <Leaf className="absolute bottom-2 right-[16%] h-10 w-10 rotate-45 fill-lime-600 text-lime-700" />
+      </div>
+    )
+  }
+
+  if (index === 1) {
+    return (
+      <div className="relative flex h-40 items-center justify-center overflow-hidden" aria-hidden="true">
+        <span className="absolute bottom-0 h-28 w-56 rounded-full bg-sky-100/80" />
+        <Sun className="absolute right-[17%] top-1 h-12 w-12 text-amber-500" strokeWidth={1.7} />
+        <House className="relative z-10 h-24 w-24 text-[#b86c37]" strokeWidth={1.8} />
+        <span className="absolute bottom-5 left-1/2 z-20 -translate-x-1/2 -translate-y-5">
+          <PanelsTopLeft className="h-10 w-14 -rotate-6 text-blue-700" strokeWidth={2.2} />
+        </span>
+        <BadgeIndianRupee className="absolute right-[22%] top-8 z-20 h-11 w-11 rounded-full bg-amber-300 p-1.5 text-amber-900 shadow-sm" strokeWidth={1.8} />
+        <Leaf className="absolute bottom-1 left-[15%] h-9 w-9 -rotate-45 fill-lime-600 text-lime-700" />
+        <Leaf className="absolute bottom-1 right-[14%] h-9 w-9 rotate-45 fill-lime-600 text-lime-700" />
+      </div>
+    )
+  }
+
+  return (
+    <div className="relative flex h-40 items-center justify-center overflow-hidden" aria-hidden="true">
+      <span className="absolute h-28 w-56 rounded-full bg-orange-100/80" />
+      <ClipboardCheck className="relative z-10 h-28 w-24 rounded-xl bg-white p-2 text-[#1450e8] drop-shadow-md" strokeWidth={1.8} />
+      <BadgeCheck className="absolute bottom-2 right-[23%] z-20 h-12 w-12 rounded-full bg-white text-lime-600 drop-shadow-sm" strokeWidth={2.3} />
+      <Sun className="absolute right-[20%] top-1 h-10 w-10 text-amber-500" strokeWidth={1.7} />
+      <Leaf className="absolute bottom-1 left-[15%] h-9 w-9 -rotate-45 fill-lime-600 text-lime-700" />
+    </div>
+  )
+}
+
 function WhySolarSection({ t }: { t: Translations }) {
   const content = t.home.trustSections.whySolar
-  const borderColors = ['border-l-[#b8d7ec]', 'border-l-[#c5dfc2]', 'border-l-[#efd9ad]'] as const
+  const accents = [
+    { border: 'border-t-[#1450e8]', number: 'text-[#1450e8]', stroke: 'bg-sky-200' },
+    { border: 'border-t-[#4cae20]', number: 'text-[#1450e8]', stroke: 'bg-lime-200' },
+    { border: 'border-t-[#f28a08]', number: 'text-[#1450e8]', stroke: 'bg-orange-200' },
+  ] as const
 
   return (
     <section
-      className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 text-slate-950 sm:px-6 lg:px-10 lg:py-16 sm:py-14"
+      className="relative isolate overflow-hidden bg-[#fff1df] px-4 py-12 text-[#10204b] sm:px-6 sm:py-14 lg:px-10 lg:py-16"
       aria-labelledby="why-solar-title"
     >
-      <div className="mx-auto max-w-7xl">
-        <p className="inline-flex w-fit rounded-full border border-slate-200 bg-[#eaf3fc] px-4 py-2 uppercase text-[#075da8]    text-xs font-semibold tracking-wide leading-5">
-          {content.eyebrow}
-        </p>
-        <h2 id="why-solar-title" className="mt-4 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
-          {content.title}
-        </h2>
-        <div className="mt-8 grid gap-5 lg:grid-cols-3">
-          {content.cards.map((card, index) => (
-            <article
-              key={card.title}
-              className={`h-full rounded-xl border border-slate-200 border-l-4 ${borderColors[index % borderColors.length]} bg-white p-6 shadow-sm sm:p-8`}
-            >
-              <h3 className=" text-slate-950 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{card.title}</h3>
-              <p className="mt-4 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{card.description}</p>
-            </article>
-          ))}
+      <div className="pointer-events-none absolute right-0 top-0 hidden h-64 w-full max-w-3xl overflow-hidden sm:block lg:h-72" aria-hidden="true">
+        <Image
+          src="/images/slider/slider-1.webp"
+          alt=""
+          fill
+          sizes="(min-width: 1280px) 55vw, (min-width: 640px) 70vw, 100vw"
+          className="object-cover object-[72%_28%] opacity-35 [mask-image:linear-gradient(to_left,black,transparent_95%)]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#fff1df]/20 to-[#fff1df]" />
+      </div>
+      <Leaf className="pointer-events-none absolute -bottom-8 -left-7 hidden h-28 w-28 -rotate-45 fill-lime-600/50 text-lime-700/40 sm:block" aria-hidden="true" />
+      <Leaf className="pointer-events-none absolute -bottom-12 left-12 hidden h-24 w-24 rotate-45 fill-lime-600/40 text-lime-700/30 sm:block" aria-hidden="true" />
+
+      <div className="relative mx-auto max-w-7xl">
+        <div className="max-w-3xl">
+          <p className="inline-flex w-fit rounded-full bg-[#1450e8] px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-white shadow-sm">
+            {content.eyebrow}
+          </p>
+          <h2 id="why-solar-title" className="mt-4 max-w-3xl font-serif text-3xl font-bold leading-[1.08] !tracking-tight text-[#10204b] sm:text-4xl lg:text-5xl">
+            {content.title}
+          </h2>
+          <span className="mt-4 block h-1.5 w-20 rounded-full bg-orange-500" aria-hidden="true" />
+        </div>
+
+        <div className="mt-7 grid items-stretch gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+          {content.cards.map((card, index) => {
+            const accent = accents[index % accents.length]
+
+            return (
+              <article
+                key={card.title}
+                className={`flex h-full flex-col overflow-hidden rounded-2xl border border-orange-100 border-t-[5px] ${accent.border} bg-[#fffdf8] px-5 pb-6 pt-4 shadow-[0_10px_20px_-14px_rgba(74,49,22,0.5)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_16px_24px_-14px_rgba(74,49,22,0.35)] sm:px-6`}
+              >
+                <span className={`text-4xl font-extrabold leading-none !tracking-tight ${accent.number}`} aria-label={`Review item ${String(index + 1).padStart(2, '0')}`}>
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <span className={`mt-2 h-1.5 w-10 -rotate-12 rounded-full ${accent.stroke}`} aria-hidden="true" />
+                <SolarReviewIllustration index={index} />
+                <h3 className="mt-1 font-serif text-xl font-bold leading-tight !tracking-tight text-[#10204b] sm:text-2xl">
+                  {card.title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#24314f] sm:text-base sm:leading-6">
+                  {card.description}
+                </p>
+              </article>
+            )
+          })}
         </div>
       </div>
     </section>
@@ -783,32 +987,120 @@ function WhySolarSection({ t }: { t: Translations }) {
 
 function SolarJourneySection({ t }: { t: Translations }) {
   const content = t.home.trustSections.journey
+  const journeyIcons = [FileText, MessageCircle, House, ClipboardCheck, HardHat]
+  const stepPositions = ['lg:top-0', 'lg:top-[20%]', 'lg:top-[40%]', 'lg:top-[60%]', 'lg:top-[80%]']
 
   return (
-    <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="solar-journey-title">
-      <div className="mx-auto max-w-7xl">
-        <div className="max-w-3xl">
-          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 uppercase text-emerald-800    text-xs font-semibold tracking-wide leading-5">{content.eyebrow}</p>
-          <h2 id="solar-journey-title" className="mt-3 text-emerald-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
-            {content.title}
-          </h2>
-          <p className="mt-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.description}</p>
+    <section
+      className="relative isolate overflow-hidden bg-[#06111d] px-4 py-10 text-white sm:px-6 sm:py-14 lg:px-10 lg:py-16"
+      aria-labelledby="solar-journey-title"
+    >
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_72%_45%,rgba(16,54,60,0.36),transparent_48%),linear-gradient(110deg,#071321_0%,#06111d_58%,#030b13_100%)]" aria-hidden="true" />
+      <div className="relative mx-auto max-w-7xl">
+        <div className="grid gap-8 lg:grid-cols-[minmax(17rem,0.78fr)_minmax(0,1.22fr)] lg:items-stretch lg:gap-8">
+          <div className="relative isolate flex min-h-[25rem] flex-col justify-start overflow-hidden sm:min-h-[27rem] lg:min-h-[43rem]">
+            <Image
+              src="/images/slider/slider-3.webp"
+              alt=""
+              fill
+              sizes="(min-width: 1024px) 34vw, 100vw"
+              className="pointer-events-none absolute inset-x-0 bottom-0 top-auto !h-[58%] object-cover object-center opacity-45 [mask-image:linear-gradient(to_bottom,transparent,black_38%)]"
+              aria-hidden="true"
+            />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[58%] bg-gradient-to-t from-[#06111d] via-[#06111d]/35 to-transparent" aria-hidden="true" />
+            <div className="relative z-10">
+              <p className="inline-flex w-fit items-center rounded-md border border-amber-500 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-amber-400 sm:text-xs">
+                {content.eyebrow}
+              </p>
+              <h2 id="solar-journey-title" className="mt-5 max-w-lg text-4xl font-bold leading-[0.98] !tracking-tight text-white sm:text-5xl lg:text-6xl">
+                From bill
+                <br />
+                to build.
+              </h2>
+              <p className="mt-4 max-w-sm text-xl font-medium leading-snug text-slate-100 sm:text-2xl">
+                {content.title}
+              </p>
+              <span className="mt-5 block h-1 w-14 rounded-full bg-lime-400 shadow-[0_0_16px_rgba(163,255,0,0.6)]" aria-hidden="true" />
+              <p className="mt-4 max-w-md text-sm leading-6 text-slate-300 sm:text-base sm:leading-7">
+                {content.description}
+              </p>
+            </div>
+          </div>
+
+          <div className="relative min-w-0 lg:py-1">
+            <svg
+              className="pointer-events-none absolute inset-0 z-0 hidden h-full w-full lg:block"
+              viewBox="0 0 800 700"
+              preserveAspectRatio="none"
+              fill="none"
+              aria-hidden="true"
+            >
+              <defs>
+                <filter id="solar-journey-glow" x="-40%" y="-20%" width="180%" height="140%">
+                  <feGaussianBlur stdDeviation="5" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+              <path
+                d="M650 58C790 84 774 142 424 190S130 260 650 330C790 365 775 415 185 470S135 555 650 610"
+                stroke="#a3ff00"
+                strokeWidth="3"
+                strokeLinecap="round"
+                filter="url(#solar-journey-glow)"
+              />
+            </svg>
+
+            <ol className="relative grid gap-3 lg:min-h-[43rem] lg:gap-0">
+              {content.steps.map((step, index) => {
+                const StepIcon = journeyIcons[index % journeyIcons.length]
+                const isLeftAligned = index % 2 === 0
+
+                return (
+                  <li
+                    key={step.title}
+                    className={`relative z-10 lg:absolute lg:w-[78%] ${stepPositions[index] ?? 'lg:top-[80%]'} ${isLeftAligned ? 'lg:left-4' : 'lg:right-4'}`}
+                  >
+                    <article className="relative grid min-h-[6.25rem] grid-cols-[2.5rem_3.25rem_minmax(0,1fr)] items-center gap-3 rounded-xl border border-sky-200/20 bg-[linear-gradient(110deg,rgba(24,41,54,0.96),rgba(12,27,40,0.96))] px-3 py-3 shadow-[0_12px_30px_rgba(0,0,0,0.25)] backdrop-blur-sm sm:grid-cols-[3rem_3.5rem_minmax(0,1fr)] sm:gap-4 sm:px-4">
+                      <span className="text-center text-3xl font-bold leading-none !tracking-tight text-lime-400 sm:text-4xl">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <span className="grid h-12 place-items-center border-l border-slate-400/60 pl-3 text-slate-100 sm:h-14 sm:pl-4">
+                        <StepIcon className="h-8 w-8 stroke-[1.7] sm:h-9 sm:w-9" aria-hidden="true" />
+                      </span>
+                      <div className="min-w-0">
+                        <h3 className="text-base font-semibold leading-snug !tracking-tight text-white sm:text-lg">
+                          {step.title}
+                        </h3>
+                        <p className="mt-1 text-xs leading-5 text-slate-300 sm:text-sm sm:leading-5">
+                          {step.description}
+                        </p>
+                      </div>
+                    </article>
+                    <span
+                      className={`pointer-events-none absolute top-1/2 z-20 hidden h-3.5 w-3.5 -translate-y-1/2 rounded-full border-[3px] border-white bg-lime-400 shadow-[0_0_0_5px_rgba(163,255,0,0.12),0_0_18px_5px_rgba(163,255,0,0.8)] lg:block ${isLeftAligned ? '-right-[7px]' : '-left-[7px]'}`}
+                      aria-hidden="true"
+                    />
+                  </li>
+                )
+              })}
+            </ol>
+          </div>
         </div>
 
-        <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {content.steps.map((step, index) => (
-            <li key={step.title} className="relative rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-              <span className="font-mono text-emerald-700 text-xs font-semibold tracking-wide leading-5 tabular-nums">{String(index + 1).padStart(2, '0')}</span>
-              <h3 className="mt-4 text-slate-950 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{step.title}</h3>
-              <p className="mt-2 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{step.description}</p>
-            </li>
-          ))}
-        </ol>
-
-        <div className="mt-6 flex flex-col gap-4 rounded-xl bg-linear-to-r from-[#e7f2eb] via-[#f5f0e2] to-[#e8e7f8] p-5 text-slate-800 sm:flex-row sm:items-center sm:justify-between">
-          <p className="max-w-3xl text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.estimateNote}</p>
-          <Link href="/solar-calculator" className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-[#A3D977] px-5 py-3 text-sm font-bold text-emerald-950 transition hover:bg-[#c7efa4] tracking-normal">
-            {content.cta}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+        <div className="mt-8 flex flex-col gap-4 rounded-xl border border-amber-500 bg-[#111b22]/95 p-4 text-amber-400 shadow-[0_0_24px_rgba(245,158,11,0.08)] sm:flex-row sm:items-center sm:justify-between sm:px-5">
+          <div className="flex items-start gap-3">
+            <Info className="mt-0.5 h-5 w-5 shrink-0 text-amber-400" aria-hidden="true" />
+            <p className="text-xs leading-5 sm:text-sm sm:leading-5">{content.estimateNote}</p>
+          </div>
+          <Link
+            href="/solar-calculator"
+            className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-lg bg-lime-400 px-5 py-3 text-sm font-bold text-slate-950 shadow-[0_0_18px_rgba(163,255,0,0.22)] transition hover:bg-lime-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-300 tracking-normal"
+          >
+            {content.cta}
+            <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
       </div>
