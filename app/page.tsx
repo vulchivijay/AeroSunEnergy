@@ -5,7 +5,7 @@ import { BankEMICalculator } from './components/forms/BankEMICalculator'
 import { SolarEstimation } from './components/forms/SolarEstimation'
 import TirupatiEnergySection from './components/ui/TirupatiEnergySection'
 
-import { BenefitCard, FeatureCard, HybridContentBlock, HybridFeatureCard, HybridInfoPanel, HybridSectionEyebrow, HybridTable, InfoPanel, RooftopSolarContentBlock, SectionEyebrow, solarOfferingImages, TrustRibbon, WindCapacityTable, WindContentBlock, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from './components/ui'
+import { FeatureCard, HybridContentBlock, HybridFeatureCard, HybridInfoPanel, HybridSectionEyebrow, HybridTable, InfoPanel, RooftopSolarContentBlock, SectionEyebrow, SolarBenefitCard, solarOfferingImages, TrustRibbon, WindCapacityTable, WindContentBlock, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from './components/ui'
 import { hybridSolutionImages, windSolutionImages } from './components/ui/EnergyContentImages'
 
 import Image from 'next/image'
@@ -20,12 +20,6 @@ import { HeroSlideContent, type HeroSlideData } from '@/app/components/ui/HeroSl
 import { Info } from 'lucide-react'
 import CountdownDays from '@/app/components/home/CountdownDays'
 import ProjectEvidenceSection from '@/app/components/home/ProjectEvidenceSection'
-
-const homeBenefitAccents = ['emerald', 'sky', 'amber', 'violet'] as const
-
-function getHomeBenefitAccent(index: number) {
-  return homeBenefitAccents[index % homeBenefitAccents.length] ?? 'emerald'
-}
 
 function RecognitionHighlight({ t }: { t: Translations }) {
   const recognitions = t.home.recognition
@@ -252,17 +246,23 @@ export default async function Home() {
                   ))}
                 </div>
               </div>
-              <div className="mt-12 rounded-xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
-                <div className="mb-6">
+              <div className="relative isolate mt-12 overflow-hidden rounded-[2rem] border border-[#e7dfc9] bg-[#fff9ed] p-5 shadow-sm sm:p-7 lg:p-9">
+                <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_0%_0%,rgba(255,230,167,0.42),transparent_35%),radial-gradient(ellipse_at_100%_0%,rgba(147,171,89,0.15),transparent_24%)]" />
+                <svg className="pointer-events-none absolute right-0 top-0 h-20 w-40 text-[#78934d]/70" viewBox="0 0 160 80" fill="none" aria-hidden="true">
+                  <path d="M92 0c-2 23 9 37 31 42C128 20 115 5 92 0Z" fill="currentColor" />
+                  <path d="M122 0c-1 24 11 38 32 43C157 20 145 5 122 0Z" fill="currentColor" />
+                  <path d="M143 13c-1 22 5 37 17 45V16c-6-3-11-4-17-3Z" fill="currentColor" />
+                </svg>
+                <div className="relative z-10 mb-6">
                   <SectionEyebrow>{home.whySolarSection.eyebrow}</SectionEyebrow>
                   <h3 className="mt-3 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
                     {home.whySolarSection.title}
                   </h3>
                 </div>
 
-                <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                <div className="relative z-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
                   {whySolar.map((item, index) => (
-                    <BenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
+                    <SolarBenefitCard key={item.title} title={item.title} description={item.description} index={index} />
                   ))}
                 </div>
               </div>
@@ -309,8 +309,8 @@ export default async function Home() {
               <WindContentBlock eyebrow={wind.eyebrow} title={wind.title} description={t.windPage.hero.subtitle} benefits={wind.benefits} imageSrc={windSolutionImages[0]} />
             </div>
             <div className="mt-10 grid gap-5 lg:grid-cols-2">
-              {wind.panels.map((panel) => (
-              <WindInfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['emerald', 'amber'] as const, 'sky')} content={panel.content} />
+              {wind.panels.map((panel, index) => (
+              <WindInfoPanel key={panel.title} title={panel.title} index={index} accent={getAccentOrDefault(panel.accent, ['emerald', 'amber'] as const, 'sky')} content={panel.content} />
               ))}
             </div>
             <div className="mt-8">
@@ -350,8 +350,8 @@ export default async function Home() {
               <HybridContentBlock eyebrow={hybrid.eyebrow} title={hybrid.title} description={t.hybridPage.hero.subtitle} benefits={hybrid.benefits} imageSrc={hybridSolutionImages[0]} />
             </div>
             <div className="mt-10 grid gap-5 lg:grid-cols-2">
-              {hybrid.panels.map((panel) => (
-              <HybridInfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['sky', 'violet'] as const, 'emerald')} content={panel.content} />
+              {hybrid.panels.map((panel, index) => (
+              <HybridInfoPanel key={panel.title} title={panel.title} index={index} accent={getAccentOrDefault(panel.accent, ['sky', 'violet'] as const, 'emerald')} content={panel.content} />
               ))}
             </div>
             <div className="mt-8">
@@ -480,7 +480,7 @@ function Brands({ t }: { t: Translations }) {
               <span className="h-4 w-4 rounded-full bg-[#14843c]" aria-hidden="true" />
               {section.eyebrow}
             </p>
-            <h2 id="brand-section-title" className="mt-6 max-w-5xl text-[#0b1745] text-4xl sm:text-5xl lg:text-6xl font-bold !tracking-tight leading-[1.1]">
+            <h2 id="brand-section-title" className="mt-6 max-w-5xl text-[#0b1745] text-3xl sm:text-4xl font-semibold !tracking-tight leading-[1.1]">
               {section.title}
             </h2>
             <p className="mt-2 max-w-4xl text-slate-600 text-base lg:text-2xl font-normal tracking-normal leading-6 lg:leading-8">
@@ -492,7 +492,7 @@ function Brands({ t }: { t: Translations }) {
           </div>
         </div>
 
-        <div id="brands-content" className="relative z-10">
+        <div id="brands-content" className="relative z-10 mt-8">
           <ul
             className="mx-auto grid w-full list-none grid-cols-1 justify-items-center gap-4 sm:gap-5 min-[900px]:grid-cols-3 lg:gap-5"
           >
@@ -694,7 +694,7 @@ function CompanyTrustSection({ t }: { t: Translations }) {
             </div>
 
             <div className="rounded-xl border border-slate-200 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_55%,#f0edff_100%)] p-5 text-slate-800 shadow-sm sm:col-span-2 sm:p-6 ">
-              <p className="text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+              <p className="text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 {content.residentialServiceDescription}
               </p>
               <div className="mt-5 grid grid-cols-2 gap-3 xl:grid-cols-4 ">

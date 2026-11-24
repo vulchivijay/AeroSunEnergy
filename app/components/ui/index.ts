@@ -9,6 +9,7 @@ export {
   SectionEyebrow,
   FeatureCard,
   BenefitCard,
+  SolarBenefitCard,
   RooftopSolarContentBlock,
   solarOfferingImages,
   solarSystemImages,

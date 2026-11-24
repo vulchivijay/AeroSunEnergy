@@ -174,8 +174,8 @@ export default async function HybridEnergyPage() {
           />
 
           <div className="mt-10 grid gap-5 lg:grid-cols-2">
-              <HybridInfoPanel title={hybridPage.common.whyWorks} content={keyBenefitsLocalized} accent="emerald" />
-              <HybridInfoPanel title={hybridPage.common.feasibilityChecklist} content={hybridPage.labels.feasibilityItems} accent="sky" />
+              <HybridInfoPanel title={hybridPage.common.whyWorks} content={keyBenefitsLocalized} index={0} accent="emerald" />
+              <HybridInfoPanel title={hybridPage.common.feasibilityChecklist} content={hybridPage.labels.feasibilityItems} index={1} accent="sky" />
           </div>
         </div>
       </section>
