@@ -634,100 +634,116 @@ function CompanyTrustSection({ t }: { t: Translations }) {
 
   return (
     <section
-      className="relative isolate bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 text-slate-900 sm:px-6 lg:px-10 lg:py-16 sm:py-14 "
+      className="relative isolate overflow-hidden bg-gradient-to-br from-[#fbf9ff] via-[#f5f4ff] to-[#eaf2ff] px-4 py-12 text-slate-900 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
       aria-labelledby="company-trust-title"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_8%_0%,rgba(99,102,241,0.12),transparent_35%),radial-gradient(ellipse_at_94%_100%,rgba(14,165,233,0.11),transparent_32%)] " aria-hidden="true" />
-      <div className="relative mx-auto max-w-7xl ">
-        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start ">
-          <div className="lg:sticky lg:top-24 lg:self-start">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 uppercase text-indigo-700    text-xs font-semibold tracking-wide leading-5">{content.eyebrow}</p>
-            <h2 id="company-trust-title" className="mt-3 text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
-              {content.title}
-            </h2>
-            <p className="mt-4 max-w-xl text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-              {content.description}
-            </p>
-          </div>
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_14%_14%,rgba(255,255,255,0.92),transparent_38%),radial-gradient(ellipse_at_88%_22%,rgba(196,181,253,0.25),transparent_36%),radial-gradient(ellipse_at_75%_100%,rgba(147,197,253,0.22),transparent_40%)]" aria-hidden="true" />
+      <div className="pointer-events-none absolute bottom-0 left-0 z-0 h-56 w-[78%] sm:h-64 lg:h-[47%] lg:w-[43%]" aria-hidden="true">
+        <Image
+          src="/images/slider/slider-1.webp"
+          alt=""
+          fill
+          sizes="(min-width: 1024px) 43vw, 78vw"
+          className="object-cover object-left-bottom"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#f6f5fd]/45 to-[#f6f5fd]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#f6f5fd]" />
+      </div>
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-8 lg:grid-cols-[minmax(18rem,0.72fr)_minmax(0,1.6fr)] lg:items-center lg:gap-10">
+        <div className="relative flex min-h-[25rem] flex-col justify-center pb-36 sm:min-h-[27rem] sm:pb-40 lg:min-h-[34rem] lg:pb-0">
+          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-violet-500 bg-white/75 px-4 py-2 uppercase text-violet-700 text-xs font-bold tracking-[0.08em] leading-5 shadow-sm">
+            {content.eyebrow}
+          </p>
+          <h2 id="company-trust-title" className="mt-5 max-w-xl text-slate-950 text-4xl sm:text-5xl lg:text-[3.25rem] font-bold !tracking-tight leading-[1.05]">
+            {content.title}
+          </h2>
+          <div className="mt-3 h-2 w-36 -rotate-2 rounded-full bg-emerald-600" aria-hidden="true" />
+          <p className="mt-4 max-w-md text-slate-700 text-base sm:text-lg font-normal tracking-normal leading-6 sm:leading-7">
+            {content.description}
+          </p>
+          <Link
+            href="/contact"
+            prefetch={false}
+            className="mt-7 inline-flex min-h-14 w-fit items-center gap-2 rounded-2xl bg-emerald-700 px-6 py-3 text-base font-bold text-white shadow-[0_12px_24px_-12px_rgba(5,150,105,0.75)] transition hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 tracking-normal"
+          >
+            {content.contactCta}<ArrowUpRight className="h-5 w-5" aria-hidden="true" />
+          </Link>
+        </div>
 
-          <div className="grid gap-3 sm:grid-cols-2 ">
-            <div className="rounded-xl border border-slate-200 bg-white/70 p-4 shadow-sm sm:col-span-2">
-              <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">{content.legalEntityLabel}</p>
-              <p className="mt-2  text-slate-950    text-lg font-semibold tracking-normal leading-snug">{t.about.companyProfile.contactCompany}</p>
-              <p className="sr-only mt-3 text-sm font-semibold leading-5 text-slate-700 tracking-normal">{content.identifiersText}</p>
-            </div>
-
+        <div className="grid min-w-0 gap-4">
+          <div className="grid gap-3 md:grid-cols-[1.1fr_1fr]">
             <a
               href={addressUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex min-h-24 items-start gap-3 rounded-lg border border-slate-200 bg-white/75 p-4 shadow-sm transition hover:border-indigo-300 hover:bg-white"
+              className="group flex min-h-40 items-start gap-4 rounded-[1.35rem] border border-white/80 bg-white/75 p-5 shadow-[0_16px_34px_-24px_rgba(30,41,59,0.4)] backdrop-blur-md transition hover:bg-white sm:p-6"
             >
-              <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-indigo-600" aria-hidden="true" />
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-violet-100/80 text-violet-700">
+                <MapPin className="h-7 w-7" aria-hidden="true" />
+              </span>
+              <span className="h-24 w-px shrink-0 bg-slate-200" aria-hidden="true" />
               <span className="min-w-0">
-                <span className="block uppercase text-slate-500 text-xs font-semibold tracking-wide leading-5">{content.officeLabel}</span>
-                <span className="mt-1 block text-sm leading-6 text-slate-700">{footer.address}</span>
-                <span className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-indigo-700 tracking-normal">
-                  {content.mapCta}<ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                <span className="block uppercase text-slate-600 text-xs font-bold tracking-wide leading-5">{content.officeLabel}</span>
+                <span className="mt-1 block text-sm sm:text-base leading-6 text-slate-800">{footer.address}</span>
+                <span className="mt-2 inline-flex items-center gap-1 text-sm font-bold text-violet-700 tracking-normal">
+                  {content.mapCta}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                 </span>
               </span>
             </a>
 
-            <div className="grid gap-3 ">
+            <div className="grid gap-3">
               <a
                 href={`tel:${footer.phoneHref}`}
-                className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white/75 p-4 shadow-sm transition hover:border-indigo-300 hover:bg-white "
+                className="flex min-h-[5.5rem] items-center gap-4 rounded-[1.35rem] border border-white/80 bg-white/75 p-4 shadow-[0_16px_34px_-24px_rgba(30,41,59,0.4)] backdrop-blur-md transition hover:bg-white sm:px-5"
               >
-                <Phone className="h-5 w-5 shrink-0 text-indigo-600 " aria-hidden="true" />
-                <span>
-                  <span className="block uppercase text-slate-500 text-xs font-semibold tracking-wide leading-5">{content.phoneLabel}</span>
-                  <span className="mt-1 block text-sm text-slate-700 tabular-nums"><DigitalNumber value={footer.phone} /></span>
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-violet-100/80 text-violet-700">
+                  <Phone className="h-6 w-6" aria-hidden="true" />
+                </span>
+                <span className="h-12 w-px shrink-0 bg-slate-200" aria-hidden="true" />
+                <span className="min-w-0">
+                  <span className="block uppercase text-slate-600 text-xs font-bold tracking-wide leading-5">{content.phoneLabel}</span>
+                  <span className="mt-1 block text-base sm:text-lg font-bold text-slate-900 tabular-nums"><DigitalNumber value={footer.phone} /></span>
                 </span>
               </a>
-              <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white/75 p-4 shadow-sm">
-                <Mail className="h-5 w-5 shrink-0 text-indigo-600" aria-hidden="true" />
-                <span className="min-w-0">
-                  <span className="block uppercase text-slate-500 text-xs font-semibold tracking-wide leading-5">{content.emailLabel}</span>
-                  <span className="mt-1 block break-all text-sm text-slate-700">{footer.email}</span>
+              <div className="flex min-h-[5.5rem] items-center gap-4 rounded-[1.35rem] border border-white/80 bg-white/75 p-4 shadow-[0_16px_34px_-24px_rgba(30,41,59,0.4)] backdrop-blur-md sm:px-5">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-violet-100/80 text-violet-700">
+                  <Mail className="h-6 w-6" aria-hidden="true" />
                 </span>
-              </div>
-            </div>
-
-            <div className="rounded-xl border border-slate-200 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_55%,#f0edff_100%)] p-5 text-slate-800 shadow-sm sm:col-span-2 sm:p-6 ">
-              <p className="text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                {content.residentialServiceDescription}
-              </p>
-              <div className="mt-5 grid grid-cols-2 gap-3 xl:grid-cols-4 ">
-                {content.serviceFacts.map((fact, index) => {
-                  const Icon = serviceFactIcons[index] ?? BadgeCheck
-                  const style = serviceFactStyles[index] ?? 'border-slate-200 bg-slate-50 text-slate-700'
-
-                  return (
-                    <div key={fact.label} className={`flex min-w-0 items-center gap-3 rounded-xl border p-3 ${style}`}>
-                      <Icon className="h-5 w-5 shrink-0 " aria-hidden="true" />
-                      <span className="min-w-0 ">
-                        <span className="block uppercase text-xs font-semibold tracking-wide leading-5">
-                          {fact.label}
-                        </span>
-                        <span className="mt-1 block text-sm font-bold text-slate-900 tracking-normal tabular-nums">
-                          <DigitalNumber value={fact.value} />
-                        </span>
-                      </span>
-                    </div>
-                  )
-                })}
+                <span className="h-12 w-px shrink-0 bg-slate-200" aria-hidden="true" />
+                <span className="min-w-0">
+                  <span className="block uppercase text-slate-600 text-xs font-bold tracking-wide leading-5">{content.emailLabel}</span>
+                  <span className="mt-1 block break-all text-sm sm:text-base font-bold text-slate-900">{footer.email}</span>
+                </span>
               </div>
             </div>
           </div>
-        </div>
 
-        <Link
-          href="/contact"
-          prefetch={false}
-          className="mt-7 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#A3D977] px-5 py-3 text-sm font-bold text-slate-900 transition hover:bg-[#c7efa4] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 tracking-normal"
-        >
-          {content.contactCta}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-        </Link>
+          <div className="rounded-[1.5rem] border border-white/80 bg-white/75 p-5 text-slate-800 shadow-[0_18px_38px_-24px_rgba(30,41,59,0.42)] backdrop-blur-md sm:p-6">
+            <p className="text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+              {content.residentialServiceDescription}
+            </p>
+            <div className="mt-5 grid grid-cols-2 gap-3 min-[1100px]:grid-cols-4">
+              {content.serviceFacts.map((fact, index) => {
+                const Icon = serviceFactIcons[index] ?? BadgeCheck
+                const style = serviceFactStyles[index] ?? 'border-slate-200 bg-slate-50 text-slate-700'
+
+                return (
+                  <div key={fact.label} className={`flex min-w-0 items-center gap-3 rounded-2xl border p-3 sm:p-3.5 ${style}`}>
+                    <Icon className="h-6 w-6 shrink-0" aria-hidden="true" />
+                    <span className="min-w-0">
+                      <span className="block uppercase text-[0.65rem] font-bold tracking-wide leading-4">
+                        {fact.label}
+                      </span>
+                      <span className="mt-1 block text-sm font-bold text-slate-900 tracking-normal tabular-nums">
+                        <DigitalNumber value={fact.value} />
+                      </span>
+                    </span>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )
