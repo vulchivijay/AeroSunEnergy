@@ -3,7 +3,7 @@ import { getRequestTranslations } from '@/lib/serverLocale'
 import { getAccentOrDefault } from '@/lib/utils/utils'
 import { BankEMICalculator } from './components/forms/BankEMICalculator'
 import { SolarEstimation } from './components/forms/SolarEstimation'
-import TirupatiEnergySection from './components/sections/TirupatiEnergySection'
+import TirupatiEnergySection from './components/ui/TirupatiEnergySection'
 
 import { BenefitCard, FeatureCard, HybridContentBlock, HybridFeatureCard, HybridInfoPanel, HybridSectionEyebrow, HybridTable, InfoPanel, RooftopSolarContentBlock, SectionEyebrow, solarOfferingImages, TrustRibbon, WindCapacityTable, WindContentBlock, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from './components/ui'
 import { hybridSolutionImages, windSolutionImages } from './components/ui/EnergyContentImages'
@@ -424,150 +424,156 @@ function Brands({ t }: { t: Translations }) {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-16 sm:px-6 lg:px-10 lg:py-20 "
+      className="relative isolate overflow-hidden bg-[#f7f5f1] px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
       aria-labelledby="brand-section-title"
     >
       <div
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-size-[48px_48px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)] "
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.025)_1px,transparent_1px)] bg-size-[48px_48px]"
         aria-hidden="true"
       />
-      <div className="relative mx-auto max-w-7xl ">
-        <div>
-        <div className="mb-7 border-t border-slate-300 pt-5 sm:mb-8 sm:pt-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div className="min-w-0">
-              <p className="inline-flex items-center gap-2 rounded-full border border-amber-700/20 bg-amber-100/80 px-4 py-1.5 uppercase text-amber-900    text-xs font-semibold tracking-wide leading-5">
-                <span className="h-2 w-2 rounded-full bg-emerald-600 shadow-sm" aria-hidden="true" />
-                {section.eyebrow}
-              </p>
-              <h2 id="brand-section-title" className="mt-4 max-w-3xl text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
-                {section.title}
-              </h2>
-              <p className="mt-2 max-w-2xl text-black      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                {section.subtitle}
-              </p>
-            </div>
+      <div className="relative mx-auto max-w-7xl">
+        <div className="relative mb-6 min-h-[12rem] overflow-hidden sm:mb-7">
+          <Image
+            src="/images/slider/slider-5.webp"
+            alt=""
+            fill
+            sizes="(min-width: 1280px) 1280px, 100vw"
+            className="object-cover object-[center_55%]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f7f5f1] via-[#f7f5f1]/95 to-[#f7f5f1]/15" aria-hidden="true" />
+          <div className="relative z-10 max-w-3xl py-4 sm:py-5">
+            <h2 id="brand-section-title" className="max-w-3xl text-[#0b1745] text-3xl sm:text-4xl font-bold !tracking-tight leading-tight">
+              {section.title}
+            </h2>
+            <p className="mt-2 max-w-2xl text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+              {section.subtitle}
+            </p>
           </div>
         </div>
 
-        <div id="brands-content">
-          <p className="mb-7 max-w-3xl border-l-2 border-amber-500 pl-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+        <div id="brands-content" className="relative z-10">
+          <p className="mb-7 max-w-3xl border-l-4 border-amber-500 py-1 pl-3 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {section.priceDisclaimer}
           </p>
-        <ul
-          className="mx-auto grid max-w-5xl list-none justify-items-center gap-5 sm:gap-6 lg:gap-8 "
-          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 18rem), 1fr))' }}
-        >
-          {featuredBrands.map((brand, index) => {
-            const maxPrice = getHighestListedPrice(brand.prices)
-            const formattedMaxPrice = maxPrice?.toLocaleString('en-IN', { maximumFractionDigits: 2 })
-            const brandName =
-              brand.name === 'Freyr Energy' ? section.freyrEnergy : brand.name
+          <ul
+            className="mx-auto grid max-w-5xl list-none justify-items-center gap-4 sm:gap-5 lg:gap-6"
+            style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 18rem), 1fr))' }}
+          >
+            {featuredBrands.map((brand, index) => {
+              const maxPrice = getHighestListedPrice(brand.prices)
+              const formattedMaxPrice = maxPrice?.toLocaleString('en-IN', { maximumFractionDigits: 2 })
+              const brandName =
+                brand.name === 'Freyr Energy' ? section.freyrEnergy : brand.name
 
-            return (
-              <li
-                key={brand.file}
-                className="group relative flex h-full w-full max-w-sm min-w-0 flex-col overflow-hidden rounded-xl border p-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-4 "
-                style={{
-                  borderColor: `hsl(${brand.hue} 68% 72%)`,
-                  background: `linear-gradient(145deg, hsl(${brand.hue} 82% 95%), #fff 48%, hsl(${brand.hue} 76% 89%))`,
-                  boxShadow: `0 22px 55px -38px hsl(${brand.hue} 75% 55% / 0.8)`,
-                }}
-              >
-                <div
-                  className="hidden relative h-24 items-center justify-center overflow-hidden rounded-xl border border-slate-200 sm:h-28 sm:p-2"
+              return (
+                <li
+                  key={brand.file}
+                  className="group relative flex min-h-[17.5rem] w-full max-w-sm min-w-0 flex-col overflow-hidden rounded-2xl border p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-5"
                   style={{
-                    background: `radial-gradient(circle at 50% 0%, white, hsl(${brand.hue} 75% 96%) 78%)`,
-                    boxShadow: `inset 0 0 0 1px hsl(${brand.hue} 55% 90%)`,
+                    borderColor: `hsl(${brand.hue} 68% 72%)`,
+                    background: `linear-gradient(145deg, hsl(${brand.hue} 82% 95%), hsl(${brand.hue} 72% 96%) 48%, hsl(${brand.hue} 76% 89%))`,
+                    boxShadow: `0 22px 55px -38px hsl(${brand.hue} 75% 55% / 0.8)`,
                   }}
                 >
-                  <Image
-                    src={`/brands/${brand.file}`}
-                    alt={brandName}
-                    width={150}
-                    height={150}
-                    sizes="160px"
-                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <h3 className="mt-2 text-center text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
-                  {brandName}
-                </h3>
-                <div className="mt-2">
-                  <p className="text-center uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">
-                    {section.materialTypesLabel}
-                  </p>
-                  <div className="mt-1 flex min-h-7 flex-wrap items-center justify-center gap-1">
-                    {brand.materialTypes.length > 0 ? (
-                      brand.materialTypes.map((materialType) => (
-                        <span
-                          key={materialType}
-                          className="rounded-full border border-slate-300 bg-white/80 px-2 py-1 text-center text-xs font-semibold text-slate-700 tracking-normal"
-                        >
-                          {section.materialTypes[materialType]}
+                  <svg
+                    className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-14 w-full"
+                    viewBox="0 0 360 70"
+                    preserveAspectRatio="none"
+                    aria-hidden="true"
+                  >
+                    <path d="M0 42c60-28 107 7 164 0s100-34 196-5v33H0z" fill={`hsl(${brand.hue} 72% 82%)`} />
+                    <path d="M0 56c72-25 122 1 190-5s112-21 170-9v28H0z" fill={`hsl(${brand.hue} 74% 77%)`} fillOpacity=".58" />
+                  </svg>
+                  <div className="relative z-10 flex min-h-0 flex-1 flex-col">
+                    <div className="flex h-14 max-w-[13rem] items-center">
+                      <Image
+                        src={`/brands/${brand.file}`}
+                        alt={brandName}
+                        width={220}
+                        height={100}
+                        sizes="220px"
+                        className="h-full w-full object-contain object-left transition-transform duration-300 group-hover:scale-[1.03]"
+                      />
+                    </div>
+                    <h3 className="mt-2 text-left text-slate-900 text-xl sm:text-2xl font-bold !tracking-tight leading-snug">
+                      {brandName}
+                    </h3>
+                    <div className="mt-3 h-px w-full" style={{ backgroundColor: `hsl(${brand.hue} 42% 70%)` }} aria-hidden="true" />
+                    <div className="mt-3">
+                      <p className="uppercase text-slate-600 text-xs font-semibold tracking-wide leading-5">
+                        {section.materialTypesLabel}
+                      </p>
+                      <div className="mt-0.5 flex min-h-6 flex-wrap items-center gap-1">
+                        {brand.materialTypes.length > 0 ? (
+                          brand.materialTypes.map((materialType) => (
+                            <span
+                              key={materialType}
+                              className="rounded-full border border-slate-300 bg-white/80 px-2 py-1 text-center text-xs font-semibold text-slate-700 tracking-normal"
+                            >
+                              {section.materialTypes[materialType]}
+                            </span>
+                          ))
+                        ) : (
+                          <span className="text-sm text-slate-800">
+                            {section.currentModelsLabel}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <div className="mt-3 flex min-h-8 flex-wrap items-center justify-start gap-2">
+                      {index === 0 && maxPrice !== null && (
+                        <span className="rounded-full bg-emerald-800 px-3 py-1.5 text-center text-xs font-semibold tracking-wide leading-5 text-white shadow-sm">
+                          {section.topPriceLabel}
                         </span>
-                      ))
-                    ) : (
-                      <span className="text-center text-xs text-slate-500">
-                        {section.undefinedMaterialType}
-                      </span>
-                    )}
+                      )}
+                      {brand.prices.map((price) => (
+                        <span
+                          key={price}
+                          className="w-auto max-w-full rounded-full border px-3 py-1.5 text-center text-xs font-bold leading-4 tracking-normal tabular-nums"
+                          style={{
+                            backgroundColor: `hsl(${brand.hue} 76% 88%)`,
+                            borderColor: `hsl(${brand.hue} 64% 76%)`,
+                            color: `hsl(${brand.hue} 58% 25%)`,
+                          }}
+                        >
+                          <DigitalNumber value={price} />
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-                <div className="mt-2 flex min-h-[2.5rem] flex-col items-center justify-center gap-1 ">
-                  {index === 0 && maxPrice !== null && (
-                    <span className="rounded-full bg-slate-950 px-2 py-1 text-center text-xs text-white shadow-sm text-xs font-semibold tracking-wide leading-5">
-                      {section.topPriceLabel}
-                    </span>
-                  )}
-                  {brand.prices.map((price) => (
-                    <span
-                      key={price}
-                      className="w-full max-w-[14rem] rounded-full border px-2 py-1 text-center text-xs font-bold leading-4 tracking-normal tabular-nums"
+                  {maxPrice !== null && formattedMaxPrice ? (
+                    <div
+                      className="sr-only mt-3 flex min-h-[4.5rem] flex-col items-center justify-center rounded-xl border px-2 py-2 text-center"
                       style={{
-                        backgroundColor: `hsl(${brand.hue} 76% 92%)`,
-                        borderColor: `hsl(${brand.hue} 64% 76%)`,
-                        color: `hsl(${brand.hue} 58% 25%)`,
+                        borderColor: `hsl(${brand.hue} 58% 78%)`,
+                        backgroundColor: `hsl(${brand.hue} 78% 94%)`,
                       }}
                     >
-                      <DigitalNumber value={price} />
-                    </span>
-                  ))}
-                </div>
-                {maxPrice !== null && formattedMaxPrice ? (
-                  <div
-                    className="sr-only mt-3 flex min-h-[4.5rem] flex-col items-center justify-center rounded-xl border px-2 py-2 text-center "
-                    style={{
-                      borderColor: `hsl(${brand.hue} 58% 78%)`,
-                      backgroundColor: `hsl(${brand.hue} 78% 94%)`,
-                    }}
-                  >
-                    <span className="uppercase text-slate-600 text-xs font-semibold tracking-wide leading-5">
-                      {section.maxListedLabel}
-                    </span>
-                    <span className="text-lg font-bold tabular-nums text-slate-950 sm:text-xl tracking-normal">
-                      <DigitalNumber value={`₹${formattedMaxPrice}`} /><span className="ml-1 text-xs font-bold text-slate-600 tracking-normal">/Wp</span>
-                    </span>
-                  </div>
-                ) : (
-                  <div className="mt-2 flex min-h-8 items-center justify-center rounded-xl border border-dashed border-slate-300 bg-white/70 px-2 py-1 text-center text-sm font-bold text-slate-600 tracking-normal">
-                    {section.quoteRequired}
-                  </div>
-                )}
-                <p className="sr-only mt-auto flex min-h-[5.5rem] items-center justify-center rounded-xl border border-slate-200 bg-white/60 px-2 py-2 text-center text-sm leading-4 text-slate-600 sm:text-sm sm:leading-5">
-                  {brand.basis}
-                </p>
-              </li>
-            )
-          })}
-        </ul>
-        <p
-          aria-hidden="true"
-          className="mt-22 select-none bg-[linear-gradient(145deg,#ff9933_0%,#ff9933_33%,#ffffff_33%,#ffffff_66%,#138808_66%,#138808_100%)] bg-clip-text text-center uppercase text-transparent drop-shadow-sm    text-xs font-semibold tracking-wide leading-5"
-        >
-          {section.moreBrandsAvailable}
-        </p>
-        </div>
+                      <span className="uppercase text-slate-600 text-xs font-semibold tracking-wide leading-5">
+                        {section.maxListedLabel}
+                      </span>
+                      <span className="text-lg font-bold tabular-nums text-slate-950 sm:text-xl tracking-normal">
+                        <DigitalNumber value={`₹${formattedMaxPrice}`} /><span className="ml-1 text-xs font-bold text-slate-600 tracking-normal">/Wp</span>
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="mt-2 flex min-h-8 items-center justify-center rounded-xl border border-dashed border-slate-300 bg-white/70 px-2 py-1 text-center text-sm font-bold text-slate-600 tracking-normal">
+                      {section.quoteRequired}
+                    </div>
+                  )}
+                  <p className="sr-only mt-auto flex min-h-[5.5rem] items-center justify-center rounded-xl border border-slate-200 bg-white/60 px-2 py-2 text-center text-sm leading-4 text-slate-600 sm:text-sm sm:leading-5">
+                    {brand.basis}
+                  </p>
+                </li>
+              )
+            })}
+          </ul>
+          <p
+            aria-hidden="true"
+            className="mt-12 select-none bg-[linear-gradient(145deg,#ff9933_0%,#ff9933_33%,#ffffff_33%,#ffffff_66%,#138808_66%,#138808_100%)] bg-clip-text text-center uppercase text-transparent drop-shadow-sm text-xs font-semibold tracking-wide leading-5"
+          >
+            {section.moreBrandsAvailable}
+          </p>
         </div>
       </div>
     </section>

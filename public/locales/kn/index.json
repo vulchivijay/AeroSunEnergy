@@ -4801,7 +4801,7 @@
       "topPriceLabel": "ಅತ್ಯಧಿಕ ಪಟ್ಟಿಬದ್ಧ ಬೆಲೆ",
       "freyrEnergy": "Freyr Energy",
       "materialTypesLabel": "ಮಾಡ್ಯೂಲ್ ಪ್ರಕಾರಗಳು",
-      "undefinedMaterialType": "ನಿರ್ದಿಷ್ಟಪಡಿಸಿಲ್ಲ",
+      "currentModelsLabel": "ಪ್ರಸ್ತುತ ಮಾದರಿಗಳ ಬಗ್ಗೆ ಕೇಳಿ",
       "materialTypes": {
         "monocrystalline": "ಮೊನೋಕ್ರಿಸ್ಟಲೈನ್",
         "polycrystalline": "ಪಾಲಿಕ್ರಿಸ್ಟಲೈನ್",

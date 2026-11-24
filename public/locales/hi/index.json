@@ -572,7 +572,7 @@
       "topPriceLabel": "सबसे अधिक",
       "freyrEnergy": "Freyr Energy",
       "materialTypesLabel": "मॉड्यूल के प्रकार",
-      "undefinedMaterialType": "निर्दिष्ट नहीं",
+      "currentModelsLabel": "मौजूदा मॉडलों के बारे में पूछें",
       "materialTypes": {
         "monocrystalline": "मोनोक्रिस्टलाइन",
         "polycrystalline": "पॉलीक्रिस्टलाइन",

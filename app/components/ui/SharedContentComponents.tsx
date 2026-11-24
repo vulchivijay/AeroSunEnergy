@@ -79,7 +79,7 @@ export function ContentHighlightsBlock({
       </figure>
 
       <div className="flex flex-col justify-center py-2 sm:py-4 lg:py-6">
-        <h3 className="text-3xl font-bold leading-tight tracking-tight text-[#0b1c50] sm:text-4xl lg:text-[2.75rem]">
+        <h3 className="text-2xl font-semibold leading-tight !tracking-tight text-[#0b1c50] sm:text-3xl leading-snug">
           {title}
         </h3>
         <div className="mt-3 h-1.5 w-24 rounded-full bg-amber-400" aria-hidden="true" />

@@ -4801,7 +4801,7 @@
       "topPriceLabel": "அதிகபட்ச பட்டியல் விலை",
       "freyrEnergy": "Freyr Energy",
       "materialTypesLabel": "மாட்யூல் வகைகள்",
-      "undefinedMaterialType": "குறிப்பிடப்படவில்லை",
+      "currentModelsLabel": "தற்போதைய மாடல்கள் பற்றி கேளுங்கள்",
       "materialTypes": {
         "monocrystalline": "மோனோகிரிஸ்டலின்",
         "polycrystalline": "பாலிகிரிஸ்டலின்",

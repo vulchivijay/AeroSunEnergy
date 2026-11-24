@@ -1,6 +1,6 @@
 import { getSliderImagePath } from '@/lib/sliderImages'
 import { getRequestTranslations } from '@/lib/serverLocale'
-import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
+import TirupatiEnergySection from '@/app/components/ui/TirupatiEnergySection'
 import { getAccentOrDefault } from '@/lib/utils/utils'
 import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
 import { OptimizedImage, WindCapacityTable, WindContentBlock, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from '../components/ui'

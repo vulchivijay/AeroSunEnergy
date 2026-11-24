@@ -4801,7 +4801,7 @@
       "topPriceLabel": "Highest listed",
       "freyrEnergy": "Freyr Energy",
       "materialTypesLabel": "Module types",
-      "undefinedMaterialType": "Undefined",
+      "currentModelsLabel": "Ask us about current models",
       "materialTypes": {
         "monocrystalline": "Monocrystalline",
         "polycrystalline": "Polycrystalline",
