@@ -11,7 +11,7 @@ import { hybridSolutionImages, windSolutionImages } from './components/ui/Energy
 import Image from 'next/image'
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import WindTurbineIllustration from '@/app/components/ui/WindTurbineIllustration'
-import { ArrowUpRight, BadgeCheck, BriefcaseBusiness, CalendarDays, ClipboardCheck, FileCheck2, FileText, HardHat, House, Mail, MapPin, MessageCircle, Phone, Rocket, ShieldCheck, Sun, Zap } from 'lucide-react'
+import { ArrowUpRight, BadgeCheck, BadgeIndianRupee, BriefcaseBusiness, CalendarDays, ClipboardCheck, FileCheck2, FileText, HardHat, House, Leaf, Mail, MapPin, MessageCircle, PanelsTopLeft, Phone, Rocket, ShieldCheck, Sun, Zap } from 'lucide-react'
 import Link from 'next/link'
 import { getSliderImagePath } from '@/lib/sliderImages'
 import Slider from '@/app/components/ui/Slider'
@@ -749,32 +749,119 @@ function CompanyTrustSection({ t }: { t: Translations }) {
   )
 }
 
+function SolarReviewIllustration({ index }: { index: number }) {
+  if (index === 0) {
+    return (
+      <div className="relative flex h-40 items-center justify-center overflow-hidden" aria-hidden="true">
+        <span className="absolute h-28 w-52 rounded-full bg-sky-100/80" />
+        <Sun className="absolute right-[18%] top-1 h-14 w-14 text-amber-500" strokeWidth={1.7} />
+        <div className="relative z-10 w-32 -rotate-6 rounded-xl border-2 border-[#173c7a] bg-white p-3 shadow-md">
+          <div className="flex items-center justify-between text-sm font-extrabold text-[#10235a]">
+            <span>BILL</span>
+            <Zap className="h-5 w-5 fill-amber-400 text-amber-500" />
+          </div>
+          <span className="mt-2 block h-1.5 w-16 rounded-full bg-slate-300" />
+          <span className="mt-1.5 block h-1.5 w-20 rounded-full bg-slate-200" />
+          <div className="mt-3 flex h-7 items-end gap-1">
+            <span className="h-3 w-2 rounded-t-sm bg-lime-500" />
+            <span className="h-5 w-2 rounded-t-sm bg-lime-600" />
+            <span className="h-4 w-2 rounded-t-sm bg-lime-500" />
+            <span className="h-6 w-2 rounded-t-sm bg-lime-600" />
+          </div>
+        </div>
+        <Leaf className="absolute bottom-3 left-[16%] h-10 w-10 -rotate-45 fill-lime-600 text-lime-700" />
+        <Leaf className="absolute bottom-2 right-[16%] h-10 w-10 rotate-45 fill-lime-600 text-lime-700" />
+      </div>
+    )
+  }
+
+  if (index === 1) {
+    return (
+      <div className="relative flex h-40 items-center justify-center overflow-hidden" aria-hidden="true">
+        <span className="absolute bottom-0 h-28 w-56 rounded-full bg-sky-100/80" />
+        <Sun className="absolute right-[17%] top-1 h-12 w-12 text-amber-500" strokeWidth={1.7} />
+        <House className="relative z-10 h-24 w-24 text-[#b86c37]" strokeWidth={1.8} />
+        <span className="absolute bottom-5 left-1/2 z-20 -translate-x-1/2 -translate-y-5">
+          <PanelsTopLeft className="h-10 w-14 -rotate-6 text-blue-700" strokeWidth={2.2} />
+        </span>
+        <BadgeIndianRupee className="absolute right-[22%] top-8 z-20 h-11 w-11 rounded-full bg-amber-300 p-1.5 text-amber-900 shadow-sm" strokeWidth={1.8} />
+        <Leaf className="absolute bottom-1 left-[15%] h-9 w-9 -rotate-45 fill-lime-600 text-lime-700" />
+        <Leaf className="absolute bottom-1 right-[14%] h-9 w-9 rotate-45 fill-lime-600 text-lime-700" />
+      </div>
+    )
+  }
+
+  return (
+    <div className="relative flex h-40 items-center justify-center overflow-hidden" aria-hidden="true">
+      <span className="absolute h-28 w-56 rounded-full bg-orange-100/80" />
+      <ClipboardCheck className="relative z-10 h-28 w-24 rounded-xl bg-white p-2 text-[#1450e8] drop-shadow-md" strokeWidth={1.8} />
+      <BadgeCheck className="absolute bottom-2 right-[23%] z-20 h-12 w-12 rounded-full bg-white text-lime-600 drop-shadow-sm" strokeWidth={2.3} />
+      <Sun className="absolute right-[20%] top-1 h-10 w-10 text-amber-500" strokeWidth={1.7} />
+      <Leaf className="absolute bottom-1 left-[15%] h-9 w-9 -rotate-45 fill-lime-600 text-lime-700" />
+    </div>
+  )
+}
+
 function WhySolarSection({ t }: { t: Translations }) {
   const content = t.home.trustSections.whySolar
-  const borderColors = ['border-l-[#b8d7ec]', 'border-l-[#c5dfc2]', 'border-l-[#efd9ad]'] as const
+  const accents = [
+    { border: 'border-t-[#1450e8]', number: 'text-[#1450e8]', stroke: 'bg-sky-200' },
+    { border: 'border-t-[#4cae20]', number: 'text-[#1450e8]', stroke: 'bg-lime-200' },
+    { border: 'border-t-[#f28a08]', number: 'text-[#1450e8]', stroke: 'bg-orange-200' },
+  ] as const
 
   return (
     <section
-      className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 text-slate-950 sm:px-6 lg:px-10 lg:py-16 sm:py-14"
+      className="relative isolate overflow-hidden bg-[#fff1df] px-4 py-12 text-[#10204b] sm:px-6 sm:py-14 lg:px-10 lg:py-16"
       aria-labelledby="why-solar-title"
     >
-      <div className="mx-auto max-w-7xl">
-        <p className="inline-flex w-fit rounded-full border border-slate-200 bg-[#eaf3fc] px-4 py-2 uppercase text-[#075da8]    text-xs font-semibold tracking-wide leading-5">
-          {content.eyebrow}
-        </p>
-        <h2 id="why-solar-title" className="mt-4 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
-          {content.title}
-        </h2>
-        <div className="mt-8 grid gap-5 lg:grid-cols-3">
-          {content.cards.map((card, index) => (
-            <article
-              key={card.title}
-              className={`h-full rounded-xl border border-slate-200 border-l-4 ${borderColors[index % borderColors.length]} bg-white p-6 shadow-sm sm:p-8`}
-            >
-              <h3 className=" text-slate-950 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{card.title}</h3>
-              <p className="mt-4 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{card.description}</p>
-            </article>
-          ))}
+      <div className="pointer-events-none absolute right-0 top-0 hidden h-64 w-full max-w-3xl overflow-hidden sm:block lg:h-72" aria-hidden="true">
+        <Image
+          src="/images/slider/slider-1.webp"
+          alt=""
+          fill
+          sizes="(min-width: 1280px) 55vw, (min-width: 640px) 70vw, 100vw"
+          className="object-cover object-[72%_28%] opacity-35 [mask-image:linear-gradient(to_left,black,transparent_95%)]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#fff1df]/20 to-[#fff1df]" />
+      </div>
+      <Leaf className="pointer-events-none absolute -bottom-8 -left-7 hidden h-28 w-28 -rotate-45 fill-lime-600/50 text-lime-700/40 sm:block" aria-hidden="true" />
+      <Leaf className="pointer-events-none absolute -bottom-12 left-12 hidden h-24 w-24 rotate-45 fill-lime-600/40 text-lime-700/30 sm:block" aria-hidden="true" />
+
+      <div className="relative mx-auto max-w-7xl">
+        <div className="max-w-3xl">
+          <p className="inline-flex w-fit rounded-full bg-[#1450e8] px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-white shadow-sm">
+            {content.eyebrow}
+          </p>
+          <h2 id="why-solar-title" className="mt-4 max-w-3xl font-serif text-3xl font-bold leading-[1.08] !tracking-tight text-[#10204b] sm:text-4xl lg:text-5xl">
+            {content.title}
+          </h2>
+          <span className="mt-4 block h-1.5 w-20 rounded-full bg-orange-500" aria-hidden="true" />
+        </div>
+
+        <div className="mt-7 grid items-stretch gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+          {content.cards.map((card, index) => {
+            const accent = accents[index % accents.length]
+
+            return (
+              <article
+                key={card.title}
+                className={`flex h-full flex-col overflow-hidden rounded-2xl border border-orange-100 border-t-[5px] ${accent.border} bg-[#fffdf8] px-5 pb-6 pt-4 shadow-[0_10px_20px_-14px_rgba(74,49,22,0.5)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_16px_24px_-14px_rgba(74,49,22,0.35)] sm:px-6`}
+              >
+                <span className={`text-4xl font-extrabold leading-none !tracking-tight ${accent.number}`} aria-label={`Review item ${String(index + 1).padStart(2, '0')}`}>
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <span className={`mt-2 h-1.5 w-10 -rotate-12 rounded-full ${accent.stroke}`} aria-hidden="true" />
+                <SolarReviewIllustration index={index} />
+                <h3 className="mt-1 font-serif text-xl font-bold leading-tight !tracking-tight text-[#10204b] sm:text-2xl">
+                  {card.title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#24314f] sm:text-base sm:leading-6">
+                  {card.description}
+                </p>
+              </article>
+            )
+          })}
         </div>
       </div>
     </section>
