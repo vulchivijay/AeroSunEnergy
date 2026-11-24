@@ -43,12 +43,14 @@ export function WindFeatureCard({
   description,
   points,
   accent = 'emerald',
+  descriptionClassName = '',
   imageSrc,
 }: {
   title: string
   description: string
   points: string[]
   accent?: ContentAccent
+  descriptionClassName?: string
   imageSrc: string
 }) {
   const { t } = useLocale()
@@ -74,7 +76,7 @@ export function WindFeatureCard({
           <div className={`mt-2 h-1 w-12 rounded-full ${contentFeatureCardAccents[accent]}`} aria-hidden="true" />
         </div>
         <h3 className="mt-2 text-slate-900 text-lg font-semibold leading-snug">{title}</h3>
-        <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{description}</p>
+        <p className={`mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7 ${descriptionClassName}`}>{description}</p>
         {points.length > 0 && (
           <ul className="mt-4 divide-y divide-slate-200 text-xs leading-5 font-normal text-slate-700 sm:text-sm">
             {points.map((point) => (

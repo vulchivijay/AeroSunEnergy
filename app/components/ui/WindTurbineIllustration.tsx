@@ -17,7 +17,7 @@ export default function WindTurbineIllustration({
       y={y}
       width={width}
       height={height}
-      viewBox="0 0 100 300"
+      viewBox="-65 -40 230 345"
       fill="none"
       aria-hidden="true"
     >
@@ -32,9 +32,11 @@ export default function WindTurbineIllustration({
             animationDuration: '20s',
           }}
         >
-          <path d="M50 75c-4-10-11-33-11-55 10 11 17 33 14 54z" fill="#e6edf2" stroke="#fff5df" strokeOpacity=".8" strokeWidth="2" />
-          <path d="M50 75c-4-10-11-33-11-55 10 11 17 33 14 54z" transform="rotate(120 50 75)" fill="#e6edf2" stroke="#fff5df" strokeOpacity=".8" strokeWidth="2" />
-          <path d="M50 75c-4-10-11-33-11-55 10 11 17 33 14 54z" transform="rotate(240 50 75)" fill="#e6edf2" stroke="#fff5df" strokeOpacity=".8" strokeWidth="2" />
+          <g transform="translate(50 75) scale(2) translate(-50 -75)">
+            <path d="M50 75c-4-10-11-33-11-55 10 11 17 33 14 54z" fill="#e6edf2" stroke="#fff5df" strokeOpacity=".8" strokeWidth="1" />
+            <path d="M50 75c-4-10-11-33-11-55 10 11 17 33 14 54z" transform="rotate(120 50 75)" fill="#e6edf2" stroke="#fff5df" strokeOpacity=".8" strokeWidth="1" />
+            <path d="M50 75c-4-10-11-33-11-55 10 11 17 33 14 54z" transform="rotate(240 50 75)" fill="#e6edf2" stroke="#fff5df" strokeOpacity=".8" strokeWidth="1" />
+          </g>
         </g>
         <path d="M48 69c13-6 28-5 40 2l-2 7-38 3z" fill="#dbe5ed" stroke="#fff5df" strokeOpacity=".75" strokeWidth="2" />
         <circle cx="50" cy="75" r="7" fill="#fff5df" stroke="#9fb4c5" strokeWidth="2" />

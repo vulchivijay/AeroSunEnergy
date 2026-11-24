@@ -160,6 +160,7 @@ export function FeatureCard({
   points,
   accent = 'emerald',
   label,
+  descriptionClassName,
   imageSrc,
 }: {
   title: string
@@ -167,12 +168,14 @@ export function FeatureCard({
   points: string[]
   accent?: AccentTone
   label: string
+  descriptionClassName?: string
   imageSrc?: string
 }) {
   return (
     <ContentFeatureCard
       title={title}
       description={description}
+      descriptionClassName={descriptionClassName}
       points={points}
       label={label}
       icon={renderSolarIcon(contentAccentText[accent])}

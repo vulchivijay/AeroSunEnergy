@@ -94,8 +94,6 @@ function EnergyLandscape() {
       </defs>
 
       <ellipse
-        className="motion-safe:animate-pulse"
-        style={{ animationDuration: '5.5s' }}
         cx="1320"
         cy="264"
         rx="250"
@@ -110,11 +108,24 @@ function EnergyLandscape() {
         strokeOpacity=".96"
         strokeWidth="4"
         strokeLinecap="round"
-      />
+      >
+        <animate
+          attributeName="stroke-opacity"
+          values=".45;1;.45"
+          dur="2.4s"
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="stroke-width"
+          values="3;5;3"
+          dur="2.4s"
+          repeatCount="indefinite"
+        />
+      </path>
       <path d="M0 267c150-35 270 19 414 2 135-16 223-96 368-73 131 21 211 85 340 55 176-42 283-2 478 10v169H0z" fill="#39266f" fillOpacity=".24" />
       <path d="M0 316c166-54 300-28 456-3 158 25 263-58 401-37 182 28 253 49 405 6 144-41 231-32 338-4v152H0z" fill="#101b60" fillOpacity=".34" />
       <path d="M0 358c190-35 332-49 495-8 149 38 258-15 380-7 160 11 254 39 399 6 119-27 226-51 326-30v111H0z" fill="#07143f" fillOpacity=".42" />
-      <WindTurbineIllustration x={1450} y={150} width={100} height={280} />
+      <WindTurbineIllustration x={1400} y={150} width={200} height={280} />
       <path d="M980 360 1318 310 1458 420H980Z" fill="#101d68" stroke="url(#trust-solar-glow)" strokeWidth="3" />
       <g clipPath="url(#trust-solar-panel-clip)" stroke="#b8e0ff" strokeOpacity=".76" strokeWidth="2">
         <path d="M1048 350 1076 420m39-80 56 80m12-90 84 90m-17-100 112 100m-61-108 144 108M980 375 1353 338M980 390 1388 365M980 405 1423 393" />
@@ -152,7 +163,7 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
 
         <div className="relative z-10 grid min-h-[900px] gap-8 px-6 py-9 sm:min-h-[760px] sm:px-10 sm:py-12 md:absolute md:inset-0 md:min-h-0 md:grid-cols-[48.5%_49.5%] md:items-center md:gap-0 md:px-[3.3%] md:py-[2.5%] lg:px-[3.5%]">
           <div className="max-w-[620px] self-center md:-translate-y-6">
-            <div className="inline-flex items-center gap-3 rounded-full border border-slate-700 bg-white/10 px-4 py-2 text-xs uppercase text-sky-100 shadow-md backdrop-blur-md text-xs font-semibold tracking-wide leading-5">
+            <div className="inline-flex items-center gap-3 rounded-full border border-slate-700 bg-white/10 px-4 py-2 text-xs uppercase text-sky-100 shadow-md backdrop-blur-md text-xs tracking-wide leading-5">
               <span className="h-2 w-2 rounded-full bg-amber-300" />
               {content.eyebrow}
             </div>
@@ -167,7 +178,7 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
               </span>
             </h1>
 
-            <p className="mt-3 max-w-[590px]  text-blue-50/95 md:mt-3    text-xs font-semibold tracking-wide leading-5">
+            <p className="mt-3 max-w-[590px]  text-blue-50/95 md:mt-3    text-xs tracking-wide leading-5">
               {content.description}
             </p>
           </div>
@@ -229,13 +240,13 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
                     index === 3 ? 'md:left-[75%] md:top-[9%]' : '',
                   ].join(' ')}
                 >
-                  <span className="absolute -top-3 left-1/2 z-10 grid h-7 w-7 -translate-x-1/2 place-items-center rounded-full border border-amber-100/70 bg-[#5b3e99] text-xs font-semibold text-amber-50">
+                  <span className="absolute -top-3 left-1/2 z-10 grid h-7 w-7 -translate-x-1/2 place-items-center rounded-full border border-amber-100/70 bg-[#5b3e99] text-xs text-amber-50">
                     {step.number}
                   </span>
                   <div className="flex flex-1 items-center justify-center pt-2">
                     <StepIcon kind={step.kind} />
                   </div>
-                  <h2 className="mx-auto mt-1 max-w-[10rem] text-center text-[11px] font-semibold leading-tight text-white sm:text-xs md:text-[clamp(9px,.8vw,13px)]">
+                  <h2 className="mx-auto mt-1 max-w-[10rem] text-center text-[11px] leading-tight text-white sm:text-xs md:text-[clamp(9px,.8vw,13px)]">
                     {content.steps[step.kind]}
                   </h2>
                 </article>

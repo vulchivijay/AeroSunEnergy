@@ -148,6 +148,7 @@ export function ContentFeatureCard({
   featureClassName,
   titleClassName,
   pointIconClassName,
+  descriptionClassName = '',
   imageSrc,
   accent = 'emerald',
 }: {
@@ -160,6 +161,7 @@ export function ContentFeatureCard({
   featureClassName: string
   titleClassName: string
   pointIconClassName: string
+  descriptionClassName?: string
   imageSrc?: string
   accent?: ContentAccent
 }) {
@@ -199,7 +201,7 @@ export function ContentFeatureCard({
         <h3 className={`${hasImage ? 'mt-2 ' : ''}${titleClassName} ${hasImage ? 'text-lg font-semibold leading-snug' : 'text-xl sm:text-2xl font-semibold !tracking-tight leading-snug'}`}>
           {title}
         </h3>
-        <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{description}</p>
+        <p className={`mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7 ${descriptionClassName}`}>{description}</p>
         {points.length > 0 && (
           <ul className={`${hasImage ? 'mt-4 ' : 'mt-5 '}${hasImage ? 'text-xs sm:text-sm leading-5' : 'text-sm sm:text-base leading-6 sm:leading-7'} divide-y divide-slate-200 font-normal text-slate-700`}>
             {points.map((point) => (

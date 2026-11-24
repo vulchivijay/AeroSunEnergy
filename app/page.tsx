@@ -61,8 +61,6 @@ function RecognitionHighlight({ t }: { t: Translations }) {
           </defs>
           <g transform="translate(0 25)">
             <circle
-              className="motion-safe:animate-pulse"
-              style={{ animationDuration: '5.5s' }}
               cx="320"
               cy="150"
               r="112"
@@ -76,7 +74,20 @@ function RecognitionHighlight({ t }: { t: Translations }) {
             strokeOpacity=".9"
             strokeWidth="3"
             strokeLinecap="round"
-          />
+          >
+            <animate
+              attributeName="stroke-opacity"
+              values=".45;1;.45"
+              dur="2.4s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="stroke-width"
+              values="2;4;2"
+              dur="2.4s"
+              repeatCount="indefinite"
+            />
+          </path>
           <path transform="translate(0 25)" d="M0 157c122-26 214-14 310 2 96 16 145-23 238-8 95 15 157 55 264 34 131-26 224-31 330-14 139 22 269-27 458-42v131H0z" fill="#453073" fillOpacity=".55" />
           <path d="M0 191c135-24 247-33 366-10 118 24 209 39 331 21 105-16 193-26 300-14 143 17 264 9 398-15 76-13 142-18 205-17v104H0z" fill="#10205c" fillOpacity=".8" />
           <path d="M0 215c190-17 300-33 426-7 130 27 223 42 356 22 151-23 239-25 371-11 149 16 291 13 447-16v77H0z" fill="#071642" fillOpacity=".88" />
@@ -85,7 +96,7 @@ function RecognitionHighlight({ t }: { t: Translations }) {
           <g clipPath="url(#credentials-panel-clip)" stroke="#b7ddff" strokeOpacity=".78" strokeWidth="2">
             <path d="M68 158 96 260M136 166 191 260M203 174 287 260M270 182 382 260M0 178 373 208M0 205 408 225M0 232 443 243" />
           </g>
-          <WindTurbineIllustration x={540} y={38} width={120} height={222} />
+          <WindTurbineIllustration x={400} y={38} width={200} height={222} />
         </svg>
 
         <div className="relative z-10 flex min-w-0 flex-col justify-center lg:-translate-y-12 lg:pl-1">
@@ -184,75 +195,77 @@ export default async function Home() {
             </div>
             </div>
             <div id="what-we-offer-content">
-          <div className="mb-10 text-lg leading-8 text-black">
-            {offer.description}
-          </div>
-          <div className="grid gap-6 lg:grid-cols-3">
-            {solarCards.map((card, index) => (
-              <FeatureCard
-                key={card.title}
-                title={card.title}
-                description={card.description}
-                points={card.points}
-                accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
-                label={t.ui.solarSolution}
-                imageSrc={solarOfferingImages[index]}
-              />
-            ))}
-          </div>
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {home.moreSolarCards.map((card, index) => (
-              <FeatureCard
-                key={card.title}
-                title={card.title}
-                description={card.description}
-                points={card.points}
-                accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
-                label={t.ui.solarSolution}
-                imageSrc={solarOfferingImages[solarCards.length + index]}
-              />
-            ))}
-          </div>
-          <div className="mt-12">
-            <RooftopSolarContentBlock
-              eyebrow={home.rooftopSolar.eyebrow}
-              title={home.rooftopSolar.title}
-              description={home.rooftopSolar.description}
-              benefits={home.rooftopSolar.benefits}
-            />
-            <div className="mt-8">
-              {home.rooftopSolar.panels.map((panel) => (
-                <InfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['amber', 'sky'] as const, 'emerald')} content={panel.content} />
-              ))}
-            </div>
-          </div>
-          <div className="mt-12 rounded-xl border border-slate-200 bg-white p-6 lg:p-8">
-            <div className="mb-6">
-              <SectionEyebrow>{home.systemTypeSection.eyebrow}</SectionEyebrow>
-              <h3 className="mt-3 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
-                {home.systemTypeSection.title}
-              </h3>
-            </div>
-            <div className="grid gap-5 lg:grid-cols-3">
-              {systemTypes.map((item) => (
-                <InfoPanel key={item.title} title={item.title} accent={getAccentOrDefault(item.accent, ['amber', 'sky'] as const, 'emerald')} content={item.content} />
-              ))}
-            </div>
-          </div>
-          <div className="mt-12 rounded-xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
-            <div className="mb-6">
-              <SectionEyebrow>{home.whySolarSection.eyebrow}</SectionEyebrow>
-              <h3 className="mt-3 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
-                {home.whySolarSection.title}
-              </h3>
-            </div>
+              <div className="mb-10 text-lg leading-8 text-black">
+                {offer.description}
+              </div>
+              <div className="grid gap-6 lg:grid-cols-3">
+                {solarCards.map((card, index) => (
+                  <FeatureCard
+                    key={card.title}
+                    title={card.title}
+                    description={card.description}
+                    descriptionClassName="truncate"
+                    points={[]}
+                    accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
+                    label={t.ui.solarSolution}
+                    imageSrc={solarOfferingImages[index]}
+                  />
+                ))}
+              </div>
+              <div className="mt-10 grid gap-6 lg:grid-cols-3">
+                {home.moreSolarCards.map((card, index) => (
+                  <FeatureCard
+                    key={card.title}
+                    title={card.title}
+                    description={card.description}
+                    descriptionClassName="truncate"
+                    points={[]}
+                    accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
+                    label={t.ui.solarSolution}
+                    imageSrc={solarOfferingImages[solarCards.length + index]}
+                  />
+                ))}
+              </div>
+              <div className="mt-12">
+                <RooftopSolarContentBlock
+                  eyebrow={home.rooftopSolar.eyebrow}
+                  title={home.rooftopSolar.title}
+                  description={home.rooftopSolar.description}
+                  benefits={home.rooftopSolar.benefits}
+                />
+                <div className="mt-8">
+                  {home.rooftopSolar.panels.map((panel) => (
+                    <InfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['amber', 'sky'] as const, 'emerald')} content={panel.content} />
+                  ))}
+                </div>
+              </div>
+              <div className="mt-12 rounded-xl border border-slate-200 bg-white p-6 lg:p-8">
+                <div className="mb-6">
+                  <SectionEyebrow>{home.systemTypeSection.eyebrow}</SectionEyebrow>
+                  <h3 className="mt-3 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
+                    {home.systemTypeSection.title}
+                  </h3>
+                </div>
+                <div className="grid gap-5 lg:grid-cols-3">
+                  {systemTypes.map((item) => (
+                    <InfoPanel key={item.title} title={item.title} accent={getAccentOrDefault(item.accent, ['amber', 'sky'] as const, 'emerald')} content={item.content} />
+                  ))}
+                </div>
+              </div>
+              <div className="mt-12 rounded-xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
+                <div className="mb-6">
+                  <SectionEyebrow>{home.whySolarSection.eyebrow}</SectionEyebrow>
+                  <h3 className="mt-3 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
+                    {home.whySolarSection.title}
+                  </h3>
+                </div>
 
-            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {whySolar.map((item, index) => (
-                <BenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
-              ))}
-            </div>
-          </div>
+                <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                  {whySolar.map((item, index) => (
+                    <BenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -285,7 +298,8 @@ export default async function Home() {
                   key={card.title}
                   title={card.title}
                   description={card.description}
-                  points={card.points}
+                  descriptionClassName="truncate"
+                  points={[]}
                   accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
                   imageSrc={windSolutionImages[index]}
                 />
@@ -325,7 +339,8 @@ export default async function Home() {
                   key={card.title}
                   title={card.title}
                   description={card.description}
-                  points={card.points}
+                  descriptionClassName="truncate"
+                  points={[]}
                   accent={getAccentOrDefault(card.accent, ['sky', 'violet', 'amber'] as const, 'emerald')}
                   imageSrc={hybridSolutionImages[index]}
                 />
