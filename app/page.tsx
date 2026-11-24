@@ -398,7 +398,7 @@ const brandImages: Brand[] = [
   { file: 'servotech-power-systems.webp', name: 'Servotech', hue: 5, prices: ['≈ ₹25/Wp'], basis: 'Company-stated average; model-specific quote needed.', materialTypes: [] },
   { file: 'tata-power-solar.webp', name: 'Tata Power Solar', hue: 225, prices: ['₹26–32/Wp'], basis: 'Dealer/market listings; varies by model and DCR status.', materialTypes: [] },
   { file: 'vikram-solar.webp', name: 'Vikram Solar', hue: 165, prices: ['₹18.6–30/Wp'], basis: 'Non-DCR to DCR market examples.', materialTypes: [] },
-  { file: 'waaree-energies.webp', name: 'Waaree Energies', hue: 29, prices: ['₹17.4/Wp · non-DCR', '₹27.9/Wp · DCR'], basis: 'Official-store examples; listed prices exclude GST.', materialTypes: [] },
+  { file: 'waaree-energies.webp', name: 'Waaree Energies', hue: 29, prices: ['₹21.4/Wp · non-DCR', '₹27.9/Wp · DCR'], basis: 'Official-store examples; listed prices exclude GST.', materialTypes: [] },
 ]
 
 function getHighestListedPrice(prices: string[]): number | null {
@@ -424,7 +424,7 @@ function Brands({ t }: { t: Translations }) {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-[#f7f5f1] px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
+      className="relative isolate overflow-hidden bg-[#f7f5f1] px-4 pt-0 pb-8 sm:px-4 lg:px-7 lg:pb-9"
       aria-labelledby="brand-section-title"
     >
       <div
@@ -432,32 +432,69 @@ function Brands({ t }: { t: Translations }) {
         aria-hidden="true"
       />
       <div className="relative mx-auto max-w-7xl">
-        <div className="relative mb-6 min-h-[12rem] overflow-hidden sm:mb-7">
-          <Image
-            src="/images/slider/slider-5.webp"
-            alt=""
-            fill
-            sizes="(min-width: 1280px) 1280px, 100vw"
-            className="object-cover object-[center_55%]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#f7f5f1] via-[#f7f5f1]/95 to-[#f7f5f1]/15" aria-hidden="true" />
-          <div className="relative z-10 max-w-3xl py-4 sm:py-5">
-            <h2 id="brand-section-title" className="max-w-3xl text-[#0b1745] text-3xl sm:text-4xl font-bold !tracking-tight leading-tight">
+        <div className="relative mb-3 min-h-[19rem] overflow-hidden">
+          <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+            <div className="absolute right-9 top-6 h-[17rem] w-[17rem] rounded-full bg-[radial-gradient(circle_at_35%_35%,#fff4b0_0%,#ffc74d_52%,#ff9c35_100%)]" />
+            <svg
+              className="absolute bottom-0 right-0 h-full w-[32%] min-w-[19rem]"
+              viewBox="0 0 340 164"
+              preserveAspectRatio="none"
+            >
+              <defs>
+                <linearGradient id="brand-panel-fill" x1="0" x2="1" y1="1" y2="0">
+                  <stop stopColor="#0d3157" />
+                  <stop offset="1" stopColor="#285c86" />
+                </linearGradient>
+                <clipPath id="brand-panel-clip">
+                  <path d="M0 164 340 42v122z" />
+                </clipPath>
+                <linearGradient id="brand-panel-edge" x1="0" x2="1">
+                  <stop stopColor="white" stopOpacity="0" />
+                  <stop offset=".22" stopColor="white" stopOpacity=".4" />
+                  <stop offset=".48" stopColor="white" />
+                </linearGradient>
+                <mask id="brand-panel-mask">
+                  <rect width="340" height="164" fill="url(#brand-panel-edge)" />
+                </mask>
+              </defs>
+              <g mask="url(#brand-panel-mask)">
+                <path d="M0 164 340 42v122z" fill="url(#brand-panel-fill)" />
+                <g clipPath="url(#brand-panel-clip)" fill="none" stroke="#8eb2c7" strokeOpacity=".7" strokeWidth="1.5">
+                  <path d="m-20 154 380-45M-20 126 360 81M-20 98 360 53M-20 70 360 25M-20 42 360-3" />
+                  <path d="m55 180 285-150M112 180 340 60M169 180 340 88M226 180 340 116M283 180 340 144" />
+                </g>
+                <path d="M0 164 340 42" fill="none" stroke="#d8e6e9" strokeOpacity=".7" strokeWidth="2" />
+              </g>
+              <g fill="#4a8d3c">
+                <path d="M270 164c-8-27-7-48 5-66 15 21 14 43-5 66Z" />
+                <path d="M289 164c-1-35 7-56 24-72 7 28-1 52-24 72Z" />
+                <path d="M311 164c8-30 20-48 39-58 0 28-13 48-39 58Z" />
+                <path d="M258 164c-20-22-29-42-25-63 23 14 32 34 25 63Z" />
+                <path d="M328 164c15-20 31-31 50-33-8 22-25 34-50 33Z" />
+              </g>
+            </svg>
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,#f7f5f1_0%,#f7f5f1_62%,rgba(247,245,241,.35)_74%,transparent_100%)] backdrop-blur-[2px]" />
+          </div>
+          <div className="relative z-10 max-w-5xl pt-10 pl-2">
+            <p className="inline-flex items-center gap-3 rounded-full bg-[#ffe89a] px-4 py-2 text-[#17472c] text-sm font-bold uppercase tracking-[0.06em] leading-5 shadow-sm lg:gap-4 lg:px-5 lg:text-lg">
+              <span className="h-4 w-4 rounded-full bg-[#14843c]" aria-hidden="true" />
+              {section.eyebrow}
+            </p>
+            <h2 id="brand-section-title" className="mt-6 max-w-5xl text-[#0b1745] text-4xl sm:text-5xl lg:text-6xl font-bold !tracking-tight leading-[1.1]">
               {section.title}
             </h2>
-            <p className="mt-2 max-w-2xl text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            <p className="mt-2 max-w-4xl text-slate-600 text-base lg:text-2xl font-normal tracking-normal leading-6 lg:leading-8">
               {section.subtitle}
+            </p>
+            <p className="mt-6 max-w-[50rem] border-l-[6px] border-amber-500 py-1 pl-4 text-slate-700 text-sm lg:text-xl font-medium tracking-normal leading-5 lg:leading-6">
+              {section.priceDisclaimer}
             </p>
           </div>
         </div>
 
         <div id="brands-content" className="relative z-10">
-          <p className="mb-7 max-w-3xl border-l-4 border-amber-500 py-1 pl-3 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-            {section.priceDisclaimer}
-          </p>
           <ul
-            className="mx-auto grid max-w-5xl list-none justify-items-center gap-4 sm:gap-5 lg:gap-6"
-            style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 18rem), 1fr))' }}
+            className="mx-auto grid w-full list-none grid-cols-1 justify-items-center gap-4 sm:gap-5 min-[900px]:grid-cols-3 lg:gap-5"
           >
             {featuredBrands.map((brand, index) => {
               const maxPrice = getHighestListedPrice(brand.prices)
@@ -468,7 +505,7 @@ function Brands({ t }: { t: Translations }) {
               return (
                 <li
                   key={brand.file}
-                  className="group relative flex min-h-[17.5rem] w-full max-w-sm min-w-0 flex-col overflow-hidden rounded-2xl border p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-5"
+                  className="group relative flex min-h-[17.5rem] w-full min-w-0 flex-col overflow-hidden rounded-2xl border p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-5 lg:min-h-[22.625rem] lg:rounded-[1.5rem] lg:p-7"
                   style={{
                     borderColor: `hsl(${brand.hue} 68% 72%)`,
                     background: `linear-gradient(145deg, hsl(${brand.hue} 82% 95%), hsl(${brand.hue} 72% 96%) 48%, hsl(${brand.hue} 76% 89%))`,
@@ -476,7 +513,7 @@ function Brands({ t }: { t: Translations }) {
                   }}
                 >
                   <svg
-                    className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-14 w-full"
+                    className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-14 w-full lg:h-16"
                     viewBox="0 0 360 70"
                     preserveAspectRatio="none"
                     aria-hidden="true"
@@ -485,25 +522,25 @@ function Brands({ t }: { t: Translations }) {
                     <path d="M0 56c72-25 122 1 190-5s112-21 170-9v28H0z" fill={`hsl(${brand.hue} 74% 77%)`} fillOpacity=".58" />
                   </svg>
                   <div className="relative z-10 flex min-h-0 flex-1 flex-col">
-                    <div className="flex h-14 max-w-[13rem] items-center">
+                    <div className="flex h-14 w-full max-w-[13rem] items-center lg:h-16 lg:max-w-[15rem]">
                       <Image
                         src={`/brands/${brand.file}`}
                         alt={brandName}
                         width={220}
                         height={100}
                         sizes="220px"
-                        className="h-full w-full object-contain object-left transition-transform duration-300 group-hover:scale-[1.03]"
+                        className="h-auto w-auto max-h-full max-w-full object-contain object-left transition-transform duration-300 group-hover:scale-[1.03]"
                       />
                     </div>
-                    <h3 className="mt-2 text-left text-slate-900 text-xl sm:text-2xl font-bold !tracking-tight leading-snug">
+                    <h3 className="mt-2 text-left text-slate-900 text-xl sm:text-2xl font-bold !tracking-tight leading-snug lg:text-[2rem]">
                       {brandName}
                     </h3>
-                    <div className="mt-3 h-px w-full" style={{ backgroundColor: `hsl(${brand.hue} 42% 70%)` }} aria-hidden="true" />
+                    <div className="mt-3 h-px w-full lg:mt-4" style={{ backgroundColor: `hsl(${brand.hue} 42% 70%)` }} aria-hidden="true" />
                     <div className="mt-3">
-                      <p className="uppercase text-slate-600 text-xs font-semibold tracking-wide leading-5">
+                      <p className="uppercase text-slate-600 text-xs font-semibold tracking-wide leading-5 lg:text-sm">
                         {section.materialTypesLabel}
                       </p>
-                      <div className="mt-0.5 flex min-h-6 flex-wrap items-center gap-1">
+                      <div className="mt-5 flex min-h-6 flex-wrap items-center gap-1">
                         {brand.materialTypes.length > 0 ? (
                           brand.materialTypes.map((materialType) => (
                             <span
@@ -514,29 +551,29 @@ function Brands({ t }: { t: Translations }) {
                             </span>
                           ))
                         ) : (
-                          <span className="text-sm text-slate-800">
+                          <span className="text-sm text-slate-800 lg:text-lg">
                             {section.currentModelsLabel}
                           </span>
                         )}
                       </div>
                     </div>
-                    <div className="mt-3 flex min-h-8 flex-wrap items-center justify-start gap-2">
+                    <div className="mt-3 flex min-h-8 flex-wrap items-center justify-start gap-2 lg:-mx-3 lg:mt-5 lg:min-h-10">
                       {index === 0 && maxPrice !== null && (
-                        <span className="rounded-full bg-emerald-800 px-3 py-1.5 text-center text-xs font-semibold tracking-wide leading-5 text-white shadow-sm">
+                        <span className="rounded-full bg-emerald-800 px-3 py-1.5 text-center text-xs font-semibold tracking-wide leading-5 text-white shadow-sm lg:px-4 lg:py-2.5 lg:text-base">
                           {section.topPriceLabel}
                         </span>
                       )}
                       {brand.prices.map((price) => (
                         <span
                           key={price}
-                          className="w-auto max-w-full rounded-full border px-3 py-1.5 text-center text-xs font-bold leading-4 tracking-normal tabular-nums"
+                          className="w-auto max-w-full rounded-full border px-1.5 py-1.5 text-center text-[11px] font-bold leading-4 tracking-normal tabular-nums shadow-sm lg:px-5 lg:py-2.5 lg:text-base lg:leading-5"
                           style={{
                             backgroundColor: `hsl(${brand.hue} 76% 88%)`,
                             borderColor: `hsl(${brand.hue} 64% 76%)`,
                             color: `hsl(${brand.hue} 58% 25%)`,
                           }}
                         >
-                          <DigitalNumber value={price} />
+                          {price}
                         </span>
                       ))}
                     </div>
