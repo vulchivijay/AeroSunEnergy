@@ -2,17 +2,14 @@
 
 import type { ReactNode } from 'react'
 import Image from 'next/image'
-import { BatteryCharging, CircleDollarSign, RefreshCw, ShieldCheck, Zap } from 'lucide-react'
+import { BatteryCharging, CircleDollarSign, RefreshCw, ShieldCheck, Sun, Zap } from 'lucide-react'
 import { useLocale } from '@/lib/LocaleContext'
 import { DigitalNumber } from './DigitalNumber'
 import {
-  ContentBenefitCard,
+  ContentIllustratedBenefitCard,
   contentAccentText,
-  contentBenefitBorders,
-  contentCheckBackgrounds,
   contentFeatureCardAccents,
   ContentHighlightsBlock,
-  ContentInfoPanel,
   ContentSectionEyebrow,
   type ContentAccent,
 } from './SharedContentComponents'
@@ -44,12 +41,14 @@ export function HybridFeatureCard({
   description,
   points,
   accent = 'emerald',
+  descriptionClassName = '',
   imageSrc,
 }: {
   title: string
   description: string
   points: string[]
   accent?: ContentAccent
+  descriptionClassName?: string
   imageSrc: string
 }) {
   const { t } = useLocale()
@@ -75,7 +74,7 @@ export function HybridFeatureCard({
           <div className={`mt-2 h-1 w-12 rounded-full ${contentFeatureCardAccents[accent]}`} aria-hidden="true" />
         </div>
         <h3 className="mt-2 text-slate-900 text-lg font-semibold leading-snug">{title}</h3>
-        <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{description}</p>
+        <p className={`mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7 ${descriptionClassName}`}>{description}</p>
         {points.length > 0 && (
           <ul className="mt-4 divide-y divide-slate-200 text-xs leading-5 font-normal text-slate-700 sm:text-sm">
             {points.map((point) => (
@@ -123,18 +122,25 @@ export function HybridBenefitCard({
   title,
   description,
   accent = 'emerald',
+  index = 0,
 }: {
   title: string
   description: string
   accent?: ContentAccent
+  index?: number
 }) {
   return (
-    <ContentBenefitCard
+    <ContentIllustratedBenefitCard
       title={title}
       description={description}
-      cardClassName={`rounded-xl border-l-4 ${contentBenefitBorders[accent]} bg-[#edf3e9] p-5`}
-      iconClassName="bg-emerald-50 text-emerald-700"
-      titleClassName="text-slate-900"
+      index={index}
+      illustration={
+        <div className="pointer-events-none absolute right-1 top-4 h-24 w-24" aria-hidden="true">
+          <Sun className="absolute right-1 top-0 h-12 w-12 fill-[#f8c64b] text-[#f8c64b]" strokeWidth={1.7} />
+          <BatteryCharging className={`absolute bottom-0 left-0 h-14 w-14 ${contentAccentText[accent]}`} strokeWidth={1.8} />
+          <Zap className="absolute bottom-1 right-0 h-9 w-9 text-[#d9ad2a]" strokeWidth={2} />
+        </div>
+      }
     />
   )
 }
@@ -143,19 +149,48 @@ export function HybridInfoPanel({
   title,
   content,
   accent = 'emerald',
+  index = 0,
 }: {
   title: string
   content: string[]
   accent?: Exclude<ContentAccent, 'amber'>
+  index?: number
 }) {
+  const Illustration = index % 2 === 0 ? RefreshCw : BatteryCharging
+
   return (
-    <ContentInfoPanel
-      title={title}
-      content={content}
-      themeClassName="bg-transparent text-slate-900"
-      checkBackgroundClassName={contentCheckBackgrounds[accent]}
-      titleClassName="text-slate-900"
-    />
+    <article className="group relative min-h-[17rem] overflow-hidden rounded-[1.6rem] border border-[#d9dac4] bg-[linear-gradient(145deg,#fffefa_0%,#fffdf7_58%,#f5f4e8_100%)] p-6 shadow-[0_10px_18px_-13px_rgba(28,38,19,0.55)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_22px_-13px_rgba(28,38,19,0.5)] sm:p-7">
+      <svg
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-14 w-full"
+        viewBox="0 0 360 70"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path d="M0 50c66-26 104 8 168 1s117-38 192-8v27H0z" fill="#e4e8cd" />
+        <path d="M0 61c70-21 122 1 190-5s116-23 170-11v25H0z" fill="#dce3c1" fillOpacity=".76" />
+      </svg>
+      <div className="relative z-10">
+        <span className="inline-flex min-w-12 items-center justify-center rounded-xl bg-[#e5e7cc] px-3 py-1 text-lg font-bold leading-7 text-[#173622]">
+          {String(index + 1).padStart(2, '0')}
+        </span>
+        <div className="pointer-events-none absolute right-1 top-4 h-24 w-24" aria-hidden="true">
+          <Sun className="absolute right-1 top-0 h-12 w-12 fill-[#f8c64b] text-[#f8c64b]" strokeWidth={1.7} />
+          <Illustration className={`absolute bottom-1 left-0 h-14 w-14 ${contentAccentText[accent]}`} strokeWidth={1.8} />
+          <Zap className="absolute bottom-0 right-0 h-9 w-9 text-[#d9ad2a]" strokeWidth={2} />
+        </div>
+        <h3 className="mt-4 max-w-[66%] font-serif text-[1.45rem] font-bold leading-[1.08] tracking-tight text-[#102b1c] sm:text-[1.7rem]">
+          {title}
+        </h3>
+        <ul className="mt-5 max-w-[82%] space-y-2 text-sm leading-6 text-[#29332c] sm:text-base">
+          {content.map((item) => (
+            <li key={item} className="flex items-start gap-3">
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#71884e]" aria-hidden="true" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </article>
   )
 }
 

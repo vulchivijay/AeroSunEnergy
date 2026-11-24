@@ -4,12 +4,12 @@ export { default as Slider } from './Slider'
 export { default as OptimizedImage } from './OptimizedImage'
 
 export { DigitalNumber } from './DigitalNumber'
-export { ReadMoreToggle } from './ReadMoreToggle'
 export { TrustRibbon } from './TrustRibbon'
 export {
   SectionEyebrow,
   FeatureCard,
   BenefitCard,
+  SolarBenefitCard,
   RooftopSolarContentBlock,
   solarOfferingImages,
   solarSystemImages,

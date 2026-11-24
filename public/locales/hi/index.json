@@ -572,7 +572,7 @@
       "topPriceLabel": "सबसे अधिक",
       "freyrEnergy": "Freyr Energy",
       "materialTypesLabel": "मॉड्यूल के प्रकार",
-      "undefinedMaterialType": "निर्दिष्ट नहीं",
+      "currentModelsLabel": "मौजूदा मॉडलों के बारे में पूछें",
       "materialTypes": {
         "monocrystalline": "मोनोक्रिस्टलाइन",
         "polycrystalline": "पॉलीक्रिस्टलाइन",
@@ -3084,9 +3084,7 @@
     "suitableRooftopCapacity": "उपयुक्त रूफटॉप क्षमता",
     "bestFit": "सबसे उपयुक्त",
     "howItWorks": "यह कैसे काम करता है",
-    "readMore": "और पढ़ें",
     "transparentSolarExperience": "Trust AeroSun Energy for a transparent, dependable solar experience from your first consultation through installation and beyond. We provide clear quotations, explain your system options, and keep you informed at every stage—so you can make confident decisions with no unexpected costs or surprises.",
-    "showLess": "कम दिखाएं",
     "comingSoon": "जल्द आ रहा है"
   },
   "companyAge": {
@@ -3124,7 +3122,7 @@
     "loanDetailsSub": "लोन श्रेणी चुनें और अनुमान समायोजित करें",
     "loanCategory": "लोन श्रेणी",
     "loanUpToTwoLakhs": "₹2 लाख तक",
-    "loanAboveTwoLakhs": "₹2 लाख से अधिक · अधिकतम ₹6 लाख",
+    "loanAboveTwoLakhs": "₹2 लाख से ₹6 लाख",
     "loanAmount": "लोन राशि",
     "loanTenure": "कुल लोन अवधि",
     "projectCost": "अनुमानित परियोजना लागत",

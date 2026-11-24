@@ -4801,7 +4801,7 @@
       "topPriceLabel": "அதிகபட்ச பட்டியல் விலை",
       "freyrEnergy": "Freyr Energy",
       "materialTypesLabel": "மாட்யூல் வகைகள்",
-      "undefinedMaterialType": "குறிப்பிடப்படவில்லை",
+      "currentModelsLabel": "தற்போதைய மாடல்கள் பற்றி கேளுங்கள்",
       "materialTypes": {
         "monocrystalline": "மோனோகிரிஸ்டலின்",
         "polycrystalline": "பாலிகிரிஸ்டலின்",
@@ -7806,9 +7806,7 @@
     "suitableRooftopCapacity": "பொருத்தமான கூரை சூரிய திறன்",
     "bestFit": "பொருத்தமான பயன்பாடு",
     "howItWorks": "செயல்படும் முறை",
-    "readMore": "மேலும் படிக்க",
     "transparentSolarExperience": "Trust AeroSun Energy for a transparent, dependable solar experience from your first consultation through installation and beyond. We provide clear quotations, explain your system options, and keep you informed at every stage—so you can make confident decisions with no unexpected costs or surprises.",
-    "showLess": "குறைவாகக் காட்டு",
     "comingSoon": "Coming soon"
   },
   "productCataloguePage": {
@@ -9076,7 +9074,7 @@
     "loanDetailsSub": "கடன் வகையைத் தேர்ந்தெடுத்து மதிப்பீட்டை மாற்றுங்கள்",
     "loanCategory": "கடன் வகை",
     "loanUpToTwoLakhs": "₹2 லட்சம் வரை",
-    "loanAboveTwoLakhs": "₹2 லட்சத்துக்கு மேல் · அதிகபட்சம் ₹6 லட்சம்",
+    "loanAboveTwoLakhs": "₹2 லட்சம் முதல் ₹6 லட்சம் வரை",
     "loanAmount": "கடன் தொகை",
     "loanTenure": "மொத்தக் கடன் காலம்",
     "projectCost": "மதிப்பிடப்பட்ட திட்டச் செலவு",

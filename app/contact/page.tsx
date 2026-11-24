@@ -243,8 +243,8 @@ export default async function Contact() {
         <div className="pointer-events-none absolute -bottom-20 right-0 h-72 w-72 rounded-full bg-fuchsia-300/25 blur-3xl" aria-hidden="true" />
 
         <div className="relative mx-auto max-w-7xl">
-          <details className="group py-2 sm:py-5" open>
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
+          <div className="py-2 sm:py-5">
+            <div className="flex items-start justify-between gap-4">
               <span>
                 <span className="inline-flex w-fit items-center gap-2 rounded-full border border-indigo-200 bg-white/70 px-4 py-2 uppercase text-indigo-900 text-xs font-semibold tracking-wide leading-5">
                   <span className="h-2 w-2 rounded-full bg-fuchsia-500" aria-hidden="true" />
@@ -257,11 +257,7 @@ export default async function Contact() {
                   {faqIntro}
                 </span>
               </span>
-              <span className="inline-flex shrink-0 items-center gap-2 pt-2 text-sm text-amber-800 underline decoration-amber-300 sm:text-base">
-                {t.ui.readMore}
-                <ArrowUpRight className="h-5 w-5 transition-transform group-open:rotate-90" aria-hidden="true" />
-              </span>
-            </summary>
+            </div>
             <div className="space-y-3 py-3 sm:py-5">
               {t.solarFaqs.items.map((faq) => (
                 <details
@@ -277,7 +273,7 @@ export default async function Contact() {
                 </details>
               ))}
             </div>
-          </details>
+          </div>
         </div>
       </section>
     </main>

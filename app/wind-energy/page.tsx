@@ -1,6 +1,6 @@
 import { getSliderImagePath } from '@/lib/sliderImages'
 import { getRequestTranslations } from '@/lib/serverLocale'
-import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
+import TirupatiEnergySection from '@/app/components/ui/TirupatiEnergySection'
 import { getAccentOrDefault } from '@/lib/utils/utils'
 import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
 import { OptimizedImage, WindCapacityTable, WindContentBlock, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from '../components/ui'
@@ -163,8 +163,8 @@ export default async function WindEnergyPage() {
         />
 
         <div className="mt-10 grid gap-5 lg:grid-cols-2">
-            <WindInfoPanel title={windPage.benefits.title} content={keyBenefitsLocalized} accent="sky" />
-            <WindInfoPanel title={windPage.benefits.feasibility} content={strategicPointsLocalized} accent="emerald" />
+            <WindInfoPanel title={windPage.benefits.title} content={keyBenefitsLocalized} index={0} accent="sky" />
+            <WindInfoPanel title={windPage.benefits.feasibility} content={strategicPointsLocalized} index={1} accent="emerald" />
         </div>
       </section>
 

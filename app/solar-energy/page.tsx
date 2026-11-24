@@ -1,6 +1,6 @@
 import { getSliderImagePath } from '@/lib/sliderImages'
 import { getRequestTranslations } from '@/lib/serverLocale'
-import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
+import TirupatiEnergySection from '@/app/components/ui/TirupatiEnergySection'
 import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
 import { FeatureCard, BenefitCard, InfoPanel, OptimizedImage, SectionEyebrow, solarOfferingAccents, solarOfferingImages, solarSystemAccents, solarSystemImages } from '../components/ui'
 import { TrustRibbon } from '@/app/components/ui/TrustRibbon'

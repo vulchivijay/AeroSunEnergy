@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
-import { ReadMoreToggle } from "@/app/components/ui/ReadMoreToggle";
 import type { Translations } from "@/lib/LocaleContext";
 
 type EvidenceContent = Translations["home"]["trustSections"]["evidence"];
@@ -14,7 +13,6 @@ export default function ProjectEvidenceSection({
   content: EvidenceContent;
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [testimonialsExpanded, setTestimonialsExpanded] = useState(true);
   const testimonials = content.testimonials.map(
     (_, index) =>
       content.testimonials[(activeIndex + index) % content.testimonials.length],
@@ -52,18 +50,10 @@ export default function ProjectEvidenceSection({
             <p className="max-w-3xl text-black      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {content.description}
             </p>
-            <ReadMoreToggle
-              expanded={testimonialsExpanded}
-              onToggle={() =>
-                setTestimonialsExpanded((expanded) => !expanded)
-              }
-              controlsId="testimonials-content"
-              labelClassName="text-emerald-700 underline decoration-emerald-300 hover:text-emerald-950"
-            />
           </div>
         </div>
 
-        <div id="testimonials-content" hidden={!testimonialsExpanded}>
+        <div id="testimonials-content">
           <div className="mt-8 grid grid-cols-[auto_minmax(0,1fr)_auto] items-stretch gap-2 sm:gap-4">
             <button
               type="button"

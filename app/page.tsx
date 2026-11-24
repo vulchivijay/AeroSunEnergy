@@ -3,9 +3,9 @@ import { getRequestTranslations } from '@/lib/serverLocale'
 import { getAccentOrDefault } from '@/lib/utils/utils'
 import { BankEMICalculator } from './components/forms/BankEMICalculator'
 import { SolarEstimation } from './components/forms/SolarEstimation'
-import TirupatiEnergySection from './components/sections/TirupatiEnergySection'
+import TirupatiEnergySection from './components/ui/TirupatiEnergySection'
 
-import { BenefitCard, FeatureCard, HybridContentBlock, HybridFeatureCard, HybridInfoPanel, HybridSectionEyebrow, HybridTable, InfoPanel, RooftopSolarContentBlock, SectionEyebrow, solarOfferingImages, TrustRibbon, WindCapacityTable, WindContentBlock, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from './components/ui'
+import { FeatureCard, HybridContentBlock, HybridFeatureCard, HybridInfoPanel, HybridSectionEyebrow, HybridTable, InfoPanel, RooftopSolarContentBlock, SectionEyebrow, SolarBenefitCard, solarOfferingImages, TrustRibbon, WindCapacityTable, WindContentBlock, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from './components/ui'
 import { hybridSolutionImages, windSolutionImages } from './components/ui/EnergyContentImages'
 
 import Image from 'next/image'
@@ -20,12 +20,6 @@ import { HeroSlideContent, type HeroSlideData } from '@/app/components/ui/HeroSl
 import { Info } from 'lucide-react'
 import CountdownDays from '@/app/components/home/CountdownDays'
 import ProjectEvidenceSection from '@/app/components/home/ProjectEvidenceSection'
-
-const homeBenefitAccents = ['emerald', 'sky', 'amber', 'violet'] as const
-
-function getHomeBenefitAccent(index: number) {
-  return homeBenefitAccents[index % homeBenefitAccents.length] ?? 'emerald'
-}
 
 function RecognitionHighlight({ t }: { t: Translations }) {
   const recognitions = t.home.recognition
@@ -61,8 +55,6 @@ function RecognitionHighlight({ t }: { t: Translations }) {
           </defs>
           <g transform="translate(0 25)">
             <circle
-              className="motion-safe:animate-pulse"
-              style={{ animationDuration: '5.5s' }}
               cx="320"
               cy="150"
               r="112"
@@ -76,7 +68,20 @@ function RecognitionHighlight({ t }: { t: Translations }) {
             strokeOpacity=".9"
             strokeWidth="3"
             strokeLinecap="round"
-          />
+          >
+            <animate
+              attributeName="stroke-opacity"
+              values=".45;1;.45"
+              dur="2.4s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="stroke-width"
+              values="2;4;2"
+              dur="2.4s"
+              repeatCount="indefinite"
+            />
+          </path>
           <path transform="translate(0 25)" d="M0 157c122-26 214-14 310 2 96 16 145-23 238-8 95 15 157 55 264 34 131-26 224-31 330-14 139 22 269-27 458-42v131H0z" fill="#453073" fillOpacity=".55" />
           <path d="M0 191c135-24 247-33 366-10 118 24 209 39 331 21 105-16 193-26 300-14 143 17 264 9 398-15 76-13 142-18 205-17v104H0z" fill="#10205c" fillOpacity=".8" />
           <path d="M0 215c190-17 300-33 426-7 130 27 223 42 356 22 151-23 239-25 371-11 149 16 291 13 447-16v77H0z" fill="#071642" fillOpacity=".88" />
@@ -85,7 +90,7 @@ function RecognitionHighlight({ t }: { t: Translations }) {
           <g clipPath="url(#credentials-panel-clip)" stroke="#b7ddff" strokeOpacity=".78" strokeWidth="2">
             <path d="M68 158 96 260M136 166 191 260M203 174 287 260M270 182 382 260M0 178 373 208M0 205 408 225M0 232 443 243" />
           </g>
-          <WindTurbineIllustration x={540} y={38} width={120} height={222} />
+          <WindTurbineIllustration x={400} y={38} width={200} height={222} />
         </svg>
 
         <div className="relative z-10 flex min-w-0 flex-col justify-center lg:-translate-y-12 lg:pl-1">
@@ -174,92 +179,95 @@ export default async function Home() {
       {/* Solar Section */}
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl">
-          <details className="group" open>
-            <summary className="mb-8 flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+          <div>
+            <div className="mb-8 flex items-center justify-between gap-4">
             <div>
               <SectionEyebrow>{offer.eyebrow}</SectionEyebrow>
               <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
                 {offer.title}
               </h2>
             </div>
-              <span className="inline-flex shrink-0 items-center gap-2 text-sm text-emerald-700 underline decoration-emerald-300 hover:text-emerald-950 sm:text-base">
-                <span className="group-open:hidden">{t.ui.readMore}</span>
-                <span className="hidden group-open:inline">{t.ui.showLess}</span>
-                <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-open:rotate-90" aria-hidden="true" />
-              </span>
-            </summary>
+            </div>
             <div id="what-we-offer-content">
-          <div className="mb-10 text-lg leading-8 text-black">
-            {offer.description}
-          </div>
-          <div className="grid gap-6 lg:grid-cols-3">
-            {solarCards.map((card, index) => (
-              <FeatureCard
-                key={card.title}
-                title={card.title}
-                description={card.description}
-                points={card.points}
-                accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
-                label={t.ui.solarSolution}
-                imageSrc={solarOfferingImages[index]}
-              />
-            ))}
-          </div>
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {home.moreSolarCards.map((card, index) => (
-              <FeatureCard
-                key={card.title}
-                title={card.title}
-                description={card.description}
-                points={card.points}
-                accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
-                label={t.ui.solarSolution}
-                imageSrc={solarOfferingImages[solarCards.length + index]}
-              />
-            ))}
-          </div>
-          <div className="mt-12">
-            <RooftopSolarContentBlock
-              eyebrow={home.rooftopSolar.eyebrow}
-              title={home.rooftopSolar.title}
-              description={home.rooftopSolar.description}
-              benefits={home.rooftopSolar.benefits}
-            />
-            <div className="mt-8">
-              {home.rooftopSolar.panels.map((panel) => (
-                <InfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['amber', 'sky'] as const, 'emerald')} content={panel.content} />
-              ))}
-            </div>
-          </div>
-          <div className="mt-12 rounded-xl border border-slate-200 bg-white p-6 lg:p-8">
-            <div className="mb-6">
-              <SectionEyebrow>{home.systemTypeSection.eyebrow}</SectionEyebrow>
-              <h3 className="mt-3 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
-                {home.systemTypeSection.title}
-              </h3>
-            </div>
-            <div className="grid gap-5 lg:grid-cols-3">
-              {systemTypes.map((item) => (
-                <InfoPanel key={item.title} title={item.title} accent={getAccentOrDefault(item.accent, ['amber', 'sky'] as const, 'emerald')} content={item.content} />
-              ))}
-            </div>
-          </div>
-          <div className="mt-12 rounded-xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
-            <div className="mb-6">
-              <SectionEyebrow>{home.whySolarSection.eyebrow}</SectionEyebrow>
-              <h3 className="mt-3 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
-                {home.whySolarSection.title}
-              </h3>
-            </div>
+              <div className="mb-10 text-lg leading-8 text-black">
+                {offer.description}
+              </div>
+              <div className="grid gap-6 lg:grid-cols-3">
+                {solarCards.map((card, index) => (
+                  <FeatureCard
+                    key={card.title}
+                    title={card.title}
+                    description={card.description}
+                    descriptionClassName="truncate"
+                    points={[]}
+                    accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
+                    label={t.ui.solarSolution}
+                    imageSrc={solarOfferingImages[index]}
+                  />
+                ))}
+              </div>
+              <div className="mt-10 grid gap-6 lg:grid-cols-3">
+                {home.moreSolarCards.map((card, index) => (
+                  <FeatureCard
+                    key={card.title}
+                    title={card.title}
+                    description={card.description}
+                    descriptionClassName="truncate"
+                    points={[]}
+                    accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
+                    label={t.ui.solarSolution}
+                    imageSrc={solarOfferingImages[solarCards.length + index]}
+                  />
+                ))}
+              </div>
+              <div className="mt-12">
+                <RooftopSolarContentBlock
+                  eyebrow={home.rooftopSolar.eyebrow}
+                  title={home.rooftopSolar.title}
+                  description={home.rooftopSolar.description}
+                  benefits={home.rooftopSolar.benefits}
+                />
+                <div className="mt-8">
+                  {home.rooftopSolar.panels.map((panel) => (
+                    <InfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['amber', 'sky'] as const, 'emerald')} content={panel.content} />
+                  ))}
+                </div>
+              </div>
+              <div className="mt-12 rounded-xl border border-slate-200 bg-white p-6 lg:p-8">
+                <div className="mb-6">
+                  <SectionEyebrow>{home.systemTypeSection.eyebrow}</SectionEyebrow>
+                  <h3 className="mt-3 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
+                    {home.systemTypeSection.title}
+                  </h3>
+                </div>
+                <div className="grid gap-5 lg:grid-cols-3">
+                  {systemTypes.map((item) => (
+                    <InfoPanel key={item.title} title={item.title} accent={getAccentOrDefault(item.accent, ['amber', 'sky'] as const, 'emerald')} content={item.content} />
+                  ))}
+                </div>
+              </div>
+              <div className="relative isolate mt-12 overflow-hidden rounded-[2rem] border border-[#e7dfc9] bg-[#fff9ed] p-5 shadow-sm sm:p-7 lg:p-9">
+                <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_0%_0%,rgba(255,230,167,0.42),transparent_35%),radial-gradient(ellipse_at_100%_0%,rgba(147,171,89,0.15),transparent_24%)]" />
+                <svg className="pointer-events-none absolute right-0 top-0 h-20 w-40 text-[#78934d]/70" viewBox="0 0 160 80" fill="none" aria-hidden="true">
+                  <path d="M92 0c-2 23 9 37 31 42C128 20 115 5 92 0Z" fill="currentColor" />
+                  <path d="M122 0c-1 24 11 38 32 43C157 20 145 5 122 0Z" fill="currentColor" />
+                  <path d="M143 13c-1 22 5 37 17 45V16c-6-3-11-4-17-3Z" fill="currentColor" />
+                </svg>
+                <div className="relative z-10 mb-6">
+                  <SectionEyebrow>{home.whySolarSection.eyebrow}</SectionEyebrow>
+                  <h3 className="mt-3 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
+                    {home.whySolarSection.title}
+                  </h3>
+                </div>
 
-            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {whySolar.map((item, index) => (
-                <BenefitCard key={item.title} title={item.title} description={item.description} accent={getHomeBenefitAccent(index)} />
-              ))}
+                <div className="relative z-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                  {whySolar.map((item, index) => (
+                    <SolarBenefitCard key={item.title} title={item.title} description={item.description} index={index} />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-            </div>
-          </details>
         </div>
       </section>
       <RecognitionHighlight t={t} />
@@ -274,20 +282,15 @@ export default async function Home() {
       {/* Wind Energy Section */}
       <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl">
-          <details className="group" open>
-            <summary className="mb-8 flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+          <div>
+            <div className="mb-8 flex items-center justify-between gap-4">
             <div>
               <WindSectionEyebrow>{wind.eyebrow}</WindSectionEyebrow>
               <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
                 {wind.title}
               </h2>
             </div>
-              <span className="inline-flex shrink-0 items-center gap-2 text-sm text-sky-700 underline decoration-sky-300 hover:text-sky-950 sm:text-base">
-                <span className="group-open:hidden">{t.ui.readMore}</span>
-                <span className="hidden group-open:inline">{t.ui.showLess}</span>
-                <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-open:rotate-90" aria-hidden="true" />
-              </span>
-            </summary>
+            </div>
             <div id="wind-energy-content">
             <div className="grid gap-6 lg:grid-cols-3">
               {wind.cards.map((card, index) => (
@@ -295,7 +298,8 @@ export default async function Home() {
                   key={card.title}
                   title={card.title}
                   description={card.description}
-                  points={card.points}
+                  descriptionClassName="truncate"
+                  points={[]}
                   accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
                   imageSrc={windSolutionImages[index]}
                 />
@@ -305,34 +309,29 @@ export default async function Home() {
               <WindContentBlock eyebrow={wind.eyebrow} title={wind.title} description={t.windPage.hero.subtitle} benefits={wind.benefits} imageSrc={windSolutionImages[0]} />
             </div>
             <div className="mt-10 grid gap-5 lg:grid-cols-2">
-              {wind.panels.map((panel) => (
-              <WindInfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['emerald', 'amber'] as const, 'sky')} content={panel.content} />
+              {wind.panels.map((panel, index) => (
+              <WindInfoPanel key={panel.title} title={panel.title} index={index} accent={getAccentOrDefault(panel.accent, ['emerald', 'amber'] as const, 'sky')} content={panel.content} />
               ))}
             </div>
             <div className="mt-8">
               <WindCapacityTable rows={wind.capacity} />
             </div>
             </div>
-          </details>
+          </div>
         </div>
       </section>
       {/* Hybrid Energy Section */}
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl">
-          <details className="group" open>
-            <summary className="mb-8 flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+          <div>
+            <div className="mb-8 flex items-center justify-between gap-4">
             <div>
               <HybridSectionEyebrow>{hybrid.eyebrow}</HybridSectionEyebrow>
               <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
                 {hybrid.title}
               </h2>
             </div>
-              <span className="inline-flex shrink-0 items-center gap-2 text-sm text-violet-700 underline decoration-violet-300 hover:text-violet-950 sm:text-base">
-                <span className="group-open:hidden">{t.ui.readMore}</span>
-                <span className="hidden group-open:inline">{t.ui.showLess}</span>
-                <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-open:rotate-90" aria-hidden="true" />
-              </span>
-            </summary>
+            </div>
             <div id="hybrid-energy-content">
             <div className="grid gap-6 lg:grid-cols-3">
               {hybrid.cards.map((card, index) => (
@@ -340,7 +339,8 @@ export default async function Home() {
                   key={card.title}
                   title={card.title}
                   description={card.description}
-                  points={card.points}
+                  descriptionClassName="truncate"
+                  points={[]}
                   accent={getAccentOrDefault(card.accent, ['sky', 'violet', 'amber'] as const, 'emerald')}
                   imageSrc={hybridSolutionImages[index]}
                 />
@@ -350,15 +350,15 @@ export default async function Home() {
               <HybridContentBlock eyebrow={hybrid.eyebrow} title={hybrid.title} description={t.hybridPage.hero.subtitle} benefits={hybrid.benefits} imageSrc={hybridSolutionImages[0]} />
             </div>
             <div className="mt-10 grid gap-5 lg:grid-cols-2">
-              {hybrid.panels.map((panel) => (
-              <HybridInfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['sky', 'violet'] as const, 'emerald')} content={panel.content} />
+              {hybrid.panels.map((panel, index) => (
+              <HybridInfoPanel key={panel.title} title={panel.title} index={index} accent={getAccentOrDefault(panel.accent, ['sky', 'violet'] as const, 'emerald')} content={panel.content} />
               ))}
             </div>
             <div className="mt-8">
               <HybridTable rows={hybrid.table} />
             </div>
             </div>
-          </details>
+          </div>
         </div>
       </section>
       <Brands t={t} />
@@ -398,7 +398,7 @@ const brandImages: Brand[] = [
   { file: 'servotech-power-systems.webp', name: 'Servotech', hue: 5, prices: ['≈ ₹25/Wp'], basis: 'Company-stated average; model-specific quote needed.', materialTypes: [] },
   { file: 'tata-power-solar.webp', name: 'Tata Power Solar', hue: 225, prices: ['₹26–32/Wp'], basis: 'Dealer/market listings; varies by model and DCR status.', materialTypes: [] },
   { file: 'vikram-solar.webp', name: 'Vikram Solar', hue: 165, prices: ['₹18.6–30/Wp'], basis: 'Non-DCR to DCR market examples.', materialTypes: [] },
-  { file: 'waaree-energies.webp', name: 'Waaree Energies', hue: 29, prices: ['₹17.4/Wp · non-DCR', '₹27.9/Wp · DCR'], basis: 'Official-store examples; listed prices exclude GST.', materialTypes: [] },
+  { file: 'waaree-energies.webp', name: 'Waaree Energies', hue: 29, prices: ['₹21.4/Wp · non-DCR', '₹27.9/Wp · DCR'], basis: 'Official-store examples; listed prices exclude GST.', materialTypes: [] },
 ]
 
 function getHighestListedPrice(prices: string[]): number | null {
@@ -424,156 +424,194 @@ function Brands({ t }: { t: Translations }) {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-16 sm:px-6 lg:px-10 lg:py-20 "
+      className="relative isolate overflow-hidden bg-[#f7f5f1] px-4 pt-0 pb-8 sm:px-4 lg:px-7 lg:pb-9"
       aria-labelledby="brand-section-title"
     >
       <div
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-size-[48px_48px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)] "
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.025)_1px,transparent_1px)] bg-size-[48px_48px]"
         aria-hidden="true"
       />
-      <div className="relative mx-auto max-w-7xl ">
-        <details className="group " open>
-        <summary className="mb-7 list-none cursor-pointer border-t border-slate-300 pt-5 [&::-webkit-details-marker]:hidden sm:mb-8 sm:pt-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div className="min-w-0">
-              <p className="inline-flex items-center gap-2 rounded-full border border-amber-700/20 bg-amber-100/80 px-4 py-1.5 uppercase text-amber-900    text-xs font-semibold tracking-wide leading-5">
-                <span className="h-2 w-2 rounded-full bg-emerald-600 shadow-sm" aria-hidden="true" />
-                {section.eyebrow}
-              </p>
-              <h2 id="brand-section-title" className="mt-4 max-w-3xl text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
-                {section.title}
-              </h2>
-              <p className="mt-2 max-w-2xl text-black      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                {section.subtitle}
-              </p>
-            </div>
-            <span className="inline-flex shrink-0 items-center gap-2 self-start text-sm text-amber-800 underline decoration-amber-300 hover:text-amber-950 sm:self-end sm:text-base">
-              <span className="group-open:hidden">{t.ui.readMore}</span>
-              <span className="hidden group-open:inline">{t.ui.showLess}</span>
-              <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-open:rotate-90" aria-hidden="true" />
-            </span>
+      <div className="relative mx-auto max-w-7xl">
+        <div className="relative mb-3 min-h-[19rem] overflow-hidden">
+          <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+            <div className="absolute right-9 top-6 h-[17rem] w-[17rem] rounded-full bg-[radial-gradient(circle_at_35%_35%,#fff4b0_0%,#ffc74d_52%,#ff9c35_100%)]" />
+            <svg
+              className="absolute bottom-0 right-0 h-full w-[32%] min-w-[19rem]"
+              viewBox="0 0 340 164"
+              preserveAspectRatio="none"
+            >
+              <defs>
+                <linearGradient id="brand-panel-fill" x1="0" x2="1" y1="1" y2="0">
+                  <stop stopColor="#0d3157" />
+                  <stop offset="1" stopColor="#285c86" />
+                </linearGradient>
+                <clipPath id="brand-panel-clip">
+                  <path d="M0 164 340 42v122z" />
+                </clipPath>
+                <linearGradient id="brand-panel-edge" x1="0" x2="1">
+                  <stop stopColor="white" stopOpacity="0" />
+                  <stop offset=".22" stopColor="white" stopOpacity=".4" />
+                  <stop offset=".48" stopColor="white" />
+                </linearGradient>
+                <mask id="brand-panel-mask">
+                  <rect width="340" height="164" fill="url(#brand-panel-edge)" />
+                </mask>
+              </defs>
+              <g mask="url(#brand-panel-mask)">
+                <path d="M0 164 340 42v122z" fill="url(#brand-panel-fill)" />
+                <g clipPath="url(#brand-panel-clip)" fill="none" stroke="#8eb2c7" strokeOpacity=".7" strokeWidth="1.5">
+                  <path d="m-20 154 380-45M-20 126 360 81M-20 98 360 53M-20 70 360 25M-20 42 360-3" />
+                  <path d="m55 180 285-150M112 180 340 60M169 180 340 88M226 180 340 116M283 180 340 144" />
+                </g>
+                <path d="M0 164 340 42" fill="none" stroke="#d8e6e9" strokeOpacity=".7" strokeWidth="2" />
+              </g>
+              <g fill="#4a8d3c">
+                <path d="M270 164c-8-27-7-48 5-66 15 21 14 43-5 66Z" />
+                <path d="M289 164c-1-35 7-56 24-72 7 28-1 52-24 72Z" />
+                <path d="M311 164c8-30 20-48 39-58 0 28-13 48-39 58Z" />
+                <path d="M258 164c-20-22-29-42-25-63 23 14 32 34 25 63Z" />
+                <path d="M328 164c15-20 31-31 50-33-8 22-25 34-50 33Z" />
+              </g>
+            </svg>
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,#f7f5f1_0%,#f7f5f1_62%,rgba(247,245,241,.35)_74%,transparent_100%)] backdrop-blur-[2px]" />
           </div>
-        </summary>
+          <div className="relative z-10 max-w-5xl pt-10 pl-2">
+            <p className="inline-flex items-center gap-3 rounded-full bg-[#ffe89a] px-4 py-2 text-[#17472c] text-sm font-bold uppercase tracking-[0.06em] leading-5 shadow-sm lg:gap-4 lg:px-5 lg:text-lg">
+              <span className="h-4 w-4 rounded-full bg-[#14843c]" aria-hidden="true" />
+              {section.eyebrow}
+            </p>
+            <h2 id="brand-section-title" className="mt-6 max-w-5xl text-[#0b1745] text-3xl sm:text-4xl font-semibold !tracking-tight leading-[1.1]">
+              {section.title}
+            </h2>
+            <p className="mt-2 max-w-4xl text-slate-600 text-base lg:text-2xl font-normal tracking-normal leading-6 lg:leading-8">
+              {section.subtitle}
+            </p>
+            <p className="mt-6 max-w-[50rem] border-l-[6px] border-amber-500 py-1 pl-4 text-slate-700 text-sm lg:text-xl font-medium tracking-normal leading-5 lg:leading-6">
+              {section.priceDisclaimer}
+            </p>
+          </div>
+        </div>
 
-        <div id="brands-content">
-          <p className="mb-7 max-w-3xl border-l-2 border-amber-500 pl-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-            {section.priceDisclaimer}
-          </p>
-        <ul
-          className="mx-auto grid max-w-5xl list-none justify-items-center gap-5 sm:gap-6 lg:gap-8 "
-          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 18rem), 1fr))' }}
-        >
-          {featuredBrands.map((brand, index) => {
-            const maxPrice = getHighestListedPrice(brand.prices)
-            const formattedMaxPrice = maxPrice?.toLocaleString('en-IN', { maximumFractionDigits: 2 })
-            const brandName =
-              brand.name === 'Freyr Energy' ? section.freyrEnergy : brand.name
+        <div id="brands-content" className="relative z-10 mt-8">
+          <ul
+            className="mx-auto grid w-full list-none grid-cols-1 justify-items-center gap-4 sm:gap-5 min-[900px]:grid-cols-3 lg:gap-5"
+          >
+            {featuredBrands.map((brand, index) => {
+              const maxPrice = getHighestListedPrice(brand.prices)
+              const formattedMaxPrice = maxPrice?.toLocaleString('en-IN', { maximumFractionDigits: 2 })
+              const brandName =
+                brand.name === 'Freyr Energy' ? section.freyrEnergy : brand.name
 
-            return (
-              <li
-                key={brand.file}
-                className="group relative flex h-full w-full max-w-sm min-w-0 flex-col overflow-hidden rounded-xl border p-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-4 "
-                style={{
-                  borderColor: `hsl(${brand.hue} 68% 72%)`,
-                  background: `linear-gradient(145deg, hsl(${brand.hue} 82% 95%), #fff 48%, hsl(${brand.hue} 76% 89%))`,
-                  boxShadow: `0 22px 55px -38px hsl(${brand.hue} 75% 55% / 0.8)`,
-                }}
-              >
-                <div
-                  className="hidden relative h-24 items-center justify-center overflow-hidden rounded-xl border border-slate-200 sm:h-28 sm:p-2"
+              return (
+                <li
+                  key={brand.file}
+                  className="group relative flex min-h-[17.5rem] w-full min-w-0 flex-col overflow-hidden rounded-2xl border p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-5 lg:min-h-[22.625rem] lg:rounded-[1.5rem] lg:p-7"
                   style={{
-                    background: `radial-gradient(circle at 50% 0%, white, hsl(${brand.hue} 75% 96%) 78%)`,
-                    boxShadow: `inset 0 0 0 1px hsl(${brand.hue} 55% 90%)`,
+                    borderColor: `hsl(${brand.hue} 68% 72%)`,
+                    background: `linear-gradient(145deg, hsl(${brand.hue} 82% 95%), hsl(${brand.hue} 72% 96%) 48%, hsl(${brand.hue} 76% 89%))`,
+                    boxShadow: `0 22px 55px -38px hsl(${brand.hue} 75% 55% / 0.8)`,
                   }}
                 >
-                  <Image
-                    src={`/brands/${brand.file}`}
-                    alt={brandName}
-                    width={150}
-                    height={150}
-                    sizes="160px"
-                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <h3 className="mt-2 text-center text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
-                  {brandName}
-                </h3>
-                <div className="mt-2">
-                  <p className="text-center uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">
-                    {section.materialTypesLabel}
-                  </p>
-                  <div className="mt-1 flex min-h-7 flex-wrap items-center justify-center gap-1">
-                    {brand.materialTypes.length > 0 ? (
-                      brand.materialTypes.map((materialType) => (
-                        <span
-                          key={materialType}
-                          className="rounded-full border border-slate-300 bg-white/80 px-2 py-1 text-center text-xs font-semibold text-slate-700 tracking-normal"
-                        >
-                          {section.materialTypes[materialType]}
+                  <svg
+                    className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-14 w-full lg:h-16"
+                    viewBox="0 0 360 70"
+                    preserveAspectRatio="none"
+                    aria-hidden="true"
+                  >
+                    <path d="M0 42c60-28 107 7 164 0s100-34 196-5v33H0z" fill={`hsl(${brand.hue} 72% 82%)`} />
+                    <path d="M0 56c72-25 122 1 190-5s112-21 170-9v28H0z" fill={`hsl(${brand.hue} 74% 77%)`} fillOpacity=".58" />
+                  </svg>
+                  <div className="relative z-10 flex min-h-0 flex-1 flex-col">
+                    <div className="flex h-14 w-full max-w-[13rem] items-center lg:h-16 lg:max-w-[15rem]">
+                      <Image
+                        src={`/brands/${brand.file}`}
+                        alt={brandName}
+                        width={220}
+                        height={100}
+                        sizes="220px"
+                        className="h-auto w-auto max-h-full max-w-full object-contain object-left transition-transform duration-300 group-hover:scale-[1.03]"
+                      />
+                    </div>
+                    <h3 className="mt-2 text-left text-slate-900 text-xl sm:text-2xl font-bold !tracking-tight leading-snug lg:text-[2rem]">
+                      {brandName}
+                    </h3>
+                    <div className="mt-3 h-px w-full lg:mt-4" style={{ backgroundColor: `hsl(${brand.hue} 42% 70%)` }} aria-hidden="true" />
+                    <div className="mt-3">
+                      <p className="uppercase text-slate-600 text-xs font-semibold tracking-wide leading-5 lg:text-sm">
+                        {section.materialTypesLabel}
+                      </p>
+                      <div className="mt-5 flex min-h-6 flex-wrap items-center gap-1">
+                        {brand.materialTypes.length > 0 ? (
+                          brand.materialTypes.map((materialType) => (
+                            <span
+                              key={materialType}
+                              className="rounded-full border border-slate-300 bg-white/80 px-2 py-1 text-center text-xs font-semibold text-slate-700 tracking-normal"
+                            >
+                              {section.materialTypes[materialType]}
+                            </span>
+                          ))
+                        ) : (
+                          <span className="text-sm text-slate-800 lg:text-lg">
+                            {section.currentModelsLabel}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <div className="mt-3 flex min-h-8 flex-wrap items-center justify-start gap-2 lg:-mx-3 lg:mt-5 lg:min-h-10">
+                      {index === 0 && maxPrice !== null && (
+                        <span className="rounded-full bg-emerald-800 px-3 py-1.5 text-center text-xs font-semibold tracking-wide leading-5 text-white shadow-sm lg:px-4 lg:py-2.5 lg:text-base">
+                          {section.topPriceLabel}
                         </span>
-                      ))
-                    ) : (
-                      <span className="text-center text-xs text-slate-500">
-                        {section.undefinedMaterialType}
-                      </span>
-                    )}
+                      )}
+                      {brand.prices.map((price) => (
+                        <span
+                          key={price}
+                          className="w-auto max-w-full rounded-full border px-1.5 py-1.5 text-center text-[11px] font-bold leading-4 tracking-normal tabular-nums shadow-sm lg:px-5 lg:py-2.5 lg:text-base lg:leading-5"
+                          style={{
+                            backgroundColor: `hsl(${brand.hue} 76% 88%)`,
+                            borderColor: `hsl(${brand.hue} 64% 76%)`,
+                            color: `hsl(${brand.hue} 58% 25%)`,
+                          }}
+                        >
+                          {price}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-                <div className="mt-2 flex min-h-[2.5rem] flex-col items-center justify-center gap-1 ">
-                  {index === 0 && maxPrice !== null && (
-                    <span className="rounded-full bg-slate-950 px-2 py-1 text-center text-xs text-white shadow-sm text-xs font-semibold tracking-wide leading-5">
-                      {section.topPriceLabel}
-                    </span>
-                  )}
-                  {brand.prices.map((price) => (
-                    <span
-                      key={price}
-                      className="w-full max-w-[14rem] rounded-full border px-2 py-1 text-center text-xs font-bold leading-4 tracking-normal tabular-nums"
+                  {maxPrice !== null && formattedMaxPrice ? (
+                    <div
+                      className="sr-only mt-3 flex min-h-[4.5rem] flex-col items-center justify-center rounded-xl border px-2 py-2 text-center"
                       style={{
-                        backgroundColor: `hsl(${brand.hue} 76% 92%)`,
-                        borderColor: `hsl(${brand.hue} 64% 76%)`,
-                        color: `hsl(${brand.hue} 58% 25%)`,
+                        borderColor: `hsl(${brand.hue} 58% 78%)`,
+                        backgroundColor: `hsl(${brand.hue} 78% 94%)`,
                       }}
                     >
-                      <DigitalNumber value={price} />
-                    </span>
-                  ))}
-                </div>
-                {maxPrice !== null && formattedMaxPrice ? (
-                  <div
-                    className="sr-only mt-3 flex min-h-[4.5rem] flex-col items-center justify-center rounded-xl border px-2 py-2 text-center "
-                    style={{
-                      borderColor: `hsl(${brand.hue} 58% 78%)`,
-                      backgroundColor: `hsl(${brand.hue} 78% 94%)`,
-                    }}
-                  >
-                    <span className="uppercase text-slate-600 text-xs font-semibold tracking-wide leading-5">
-                      {section.maxListedLabel}
-                    </span>
-                    <span className="text-lg font-bold tabular-nums text-slate-950 sm:text-xl tracking-normal">
-                      <DigitalNumber value={`₹${formattedMaxPrice}`} /><span className="ml-1 text-xs font-bold text-slate-600 tracking-normal">/Wp</span>
-                    </span>
-                  </div>
-                ) : (
-                  <div className="mt-2 flex min-h-8 items-center justify-center rounded-xl border border-dashed border-slate-300 bg-white/70 px-2 py-1 text-center text-sm font-bold text-slate-600 tracking-normal">
-                    {section.quoteRequired}
-                  </div>
-                )}
-                <p className="sr-only mt-auto flex min-h-[5.5rem] items-center justify-center rounded-xl border border-slate-200 bg-white/60 px-2 py-2 text-center text-sm leading-4 text-slate-600 sm:text-sm sm:leading-5">
-                  {brand.basis}
-                </p>
-              </li>
-            )
-          })}
-        </ul>
-        <p
-          aria-hidden="true"
-          className="mt-22 select-none bg-[linear-gradient(145deg,#ff9933_0%,#ff9933_33%,#ffffff_33%,#ffffff_66%,#138808_66%,#138808_100%)] bg-clip-text text-center uppercase text-transparent drop-shadow-sm    text-xs font-semibold tracking-wide leading-5"
-        >
-          {section.moreBrandsAvailable}
-        </p>
+                      <span className="uppercase text-slate-600 text-xs font-semibold tracking-wide leading-5">
+                        {section.maxListedLabel}
+                      </span>
+                      <span className="text-lg font-bold tabular-nums text-slate-950 sm:text-xl tracking-normal">
+                        <DigitalNumber value={`₹${formattedMaxPrice}`} /><span className="ml-1 text-xs font-bold text-slate-600 tracking-normal">/Wp</span>
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="mt-2 flex min-h-8 items-center justify-center rounded-xl border border-dashed border-slate-300 bg-white/70 px-2 py-1 text-center text-sm font-bold text-slate-600 tracking-normal">
+                      {section.quoteRequired}
+                    </div>
+                  )}
+                  <p className="sr-only mt-auto flex min-h-[5.5rem] items-center justify-center rounded-xl border border-slate-200 bg-white/60 px-2 py-2 text-center text-sm leading-4 text-slate-600 sm:text-sm sm:leading-5">
+                    {brand.basis}
+                  </p>
+                </li>
+              )
+            })}
+          </ul>
+          <p
+            aria-hidden="true"
+            className="mt-12 select-none bg-[linear-gradient(145deg,#ff9933_0%,#ff9933_33%,#ffffff_33%,#ffffff_66%,#138808_66%,#138808_100%)] bg-clip-text text-center uppercase text-transparent drop-shadow-sm text-xs font-semibold tracking-wide leading-5"
+          >
+            {section.moreBrandsAvailable}
+          </p>
         </div>
-        </details>
       </div>
     </section>
   )
@@ -596,100 +634,116 @@ function CompanyTrustSection({ t }: { t: Translations }) {
 
   return (
     <section
-      className="relative isolate bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 text-slate-900 sm:px-6 lg:px-10 lg:py-16 sm:py-14 "
+      className="relative isolate overflow-hidden bg-gradient-to-br from-[#fbf9ff] via-[#f5f4ff] to-[#eaf2ff] px-4 py-12 text-slate-900 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
       aria-labelledby="company-trust-title"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_8%_0%,rgba(99,102,241,0.12),transparent_35%),radial-gradient(ellipse_at_94%_100%,rgba(14,165,233,0.11),transparent_32%)] " aria-hidden="true" />
-      <div className="relative mx-auto max-w-7xl ">
-        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start ">
-          <div className="lg:sticky lg:top-24 lg:self-start">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 uppercase text-indigo-700    text-xs font-semibold tracking-wide leading-5">{content.eyebrow}</p>
-            <h2 id="company-trust-title" className="mt-3 text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
-              {content.title}
-            </h2>
-            <p className="mt-4 max-w-xl text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-              {content.description}
-            </p>
-          </div>
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_14%_14%,rgba(255,255,255,0.92),transparent_38%),radial-gradient(ellipse_at_88%_22%,rgba(196,181,253,0.25),transparent_36%),radial-gradient(ellipse_at_75%_100%,rgba(147,197,253,0.22),transparent_40%)]" aria-hidden="true" />
+      <div className="pointer-events-none absolute bottom-0 left-0 z-0 h-56 w-[78%] sm:h-64 lg:h-[47%] lg:w-[43%]" aria-hidden="true">
+        <Image
+          src="/images/slider/slider-1.webp"
+          alt=""
+          fill
+          sizes="(min-width: 1024px) 43vw, 78vw"
+          className="object-cover object-left-bottom"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#f6f5fd]/45 to-[#f6f5fd]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#f6f5fd]" />
+      </div>
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-8 lg:grid-cols-[minmax(18rem,0.72fr)_minmax(0,1.6fr)] lg:items-center lg:gap-10">
+        <div className="relative flex min-h-[25rem] flex-col justify-center pb-36 sm:min-h-[27rem] sm:pb-40 lg:min-h-[34rem] lg:pb-0">
+          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-violet-500 bg-white/75 px-4 py-2 uppercase text-violet-700 text-xs font-bold tracking-[0.08em] leading-5 shadow-sm">
+            {content.eyebrow}
+          </p>
+          <h2 id="company-trust-title" className="mt-5 max-w-xl text-slate-950 text-4xl sm:text-5xl lg:text-[3.25rem] font-bold !tracking-tight leading-[1.05]">
+            {content.title}
+          </h2>
+          <div className="mt-3 h-2 w-36 -rotate-2 rounded-full bg-emerald-600" aria-hidden="true" />
+          <p className="mt-4 max-w-md text-slate-700 text-base sm:text-lg font-normal tracking-normal leading-6 sm:leading-7">
+            {content.description}
+          </p>
+          <Link
+            href="/contact"
+            prefetch={false}
+            className="mt-7 inline-flex min-h-14 w-fit items-center gap-2 rounded-2xl bg-emerald-700 px-6 py-3 text-base font-bold text-white shadow-[0_12px_24px_-12px_rgba(5,150,105,0.75)] transition hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 tracking-normal"
+          >
+            {content.contactCta}<ArrowUpRight className="h-5 w-5" aria-hidden="true" />
+          </Link>
+        </div>
 
-          <div className="grid gap-3 sm:grid-cols-2 ">
-            <div className="rounded-xl border border-slate-200 bg-white/70 p-4 shadow-sm sm:col-span-2">
-              <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">{content.legalEntityLabel}</p>
-              <p className="mt-2  text-slate-950    text-lg font-semibold tracking-normal leading-snug">{t.about.companyProfile.contactCompany}</p>
-              <p className="sr-only mt-3 text-sm font-semibold leading-5 text-slate-700 tracking-normal">{content.identifiersText}</p>
-            </div>
-
+        <div className="grid min-w-0 gap-4">
+          <div className="grid gap-3 md:grid-cols-[1.1fr_1fr]">
             <a
               href={addressUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex min-h-24 items-start gap-3 rounded-lg border border-slate-200 bg-white/75 p-4 shadow-sm transition hover:border-indigo-300 hover:bg-white"
+              className="group flex min-h-40 items-start gap-4 rounded-[1.35rem] border border-white/80 bg-white/75 p-5 shadow-[0_16px_34px_-24px_rgba(30,41,59,0.4)] backdrop-blur-md transition hover:bg-white sm:p-6"
             >
-              <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-indigo-600" aria-hidden="true" />
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-violet-100/80 text-violet-700">
+                <MapPin className="h-7 w-7" aria-hidden="true" />
+              </span>
+              <span className="h-24 w-px shrink-0 bg-slate-200" aria-hidden="true" />
               <span className="min-w-0">
-                <span className="block uppercase text-slate-500 text-xs font-semibold tracking-wide leading-5">{content.officeLabel}</span>
-                <span className="mt-1 block text-sm leading-6 text-slate-700">{footer.address}</span>
-                <span className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-indigo-700 tracking-normal">
-                  {content.mapCta}<ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                <span className="block uppercase text-slate-600 text-xs font-bold tracking-wide leading-5">{content.officeLabel}</span>
+                <span className="mt-1 block text-sm sm:text-base leading-6 text-slate-800">{footer.address}</span>
+                <span className="mt-2 inline-flex items-center gap-1 text-sm font-bold text-violet-700 tracking-normal">
+                  {content.mapCta}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                 </span>
               </span>
             </a>
 
-            <div className="grid gap-3 ">
+            <div className="grid gap-3">
               <a
                 href={`tel:${footer.phoneHref}`}
-                className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white/75 p-4 shadow-sm transition hover:border-indigo-300 hover:bg-white "
+                className="flex min-h-[5.5rem] items-center gap-4 rounded-[1.35rem] border border-white/80 bg-white/75 p-4 shadow-[0_16px_34px_-24px_rgba(30,41,59,0.4)] backdrop-blur-md transition hover:bg-white sm:px-5"
               >
-                <Phone className="h-5 w-5 shrink-0 text-indigo-600 " aria-hidden="true" />
-                <span>
-                  <span className="block uppercase text-slate-500 text-xs font-semibold tracking-wide leading-5">{content.phoneLabel}</span>
-                  <span className="mt-1 block text-sm text-slate-700 tabular-nums"><DigitalNumber value={footer.phone} /></span>
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-violet-100/80 text-violet-700">
+                  <Phone className="h-6 w-6" aria-hidden="true" />
+                </span>
+                <span className="h-12 w-px shrink-0 bg-slate-200" aria-hidden="true" />
+                <span className="min-w-0">
+                  <span className="block uppercase text-slate-600 text-xs font-bold tracking-wide leading-5">{content.phoneLabel}</span>
+                  <span className="mt-1 block text-base sm:text-lg font-bold text-slate-900 tabular-nums"><DigitalNumber value={footer.phone} /></span>
                 </span>
               </a>
-              <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white/75 p-4 shadow-sm">
-                <Mail className="h-5 w-5 shrink-0 text-indigo-600" aria-hidden="true" />
-                <span className="min-w-0">
-                  <span className="block uppercase text-slate-500 text-xs font-semibold tracking-wide leading-5">{content.emailLabel}</span>
-                  <span className="mt-1 block break-all text-sm text-slate-700">{footer.email}</span>
+              <div className="flex min-h-[5.5rem] items-center gap-4 rounded-[1.35rem] border border-white/80 bg-white/75 p-4 shadow-[0_16px_34px_-24px_rgba(30,41,59,0.4)] backdrop-blur-md sm:px-5">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-violet-100/80 text-violet-700">
+                  <Mail className="h-6 w-6" aria-hidden="true" />
                 </span>
-              </div>
-            </div>
-
-            <div className="rounded-xl border border-slate-200 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_55%,#f0edff_100%)] p-5 text-slate-800 shadow-sm sm:col-span-2 sm:p-6 ">
-              <p className="text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                {content.residentialServiceDescription}
-              </p>
-              <div className="mt-5 grid grid-cols-2 gap-3 xl:grid-cols-4 ">
-                {content.serviceFacts.map((fact, index) => {
-                  const Icon = serviceFactIcons[index] ?? BadgeCheck
-                  const style = serviceFactStyles[index] ?? 'border-slate-200 bg-slate-50 text-slate-700'
-
-                  return (
-                    <div key={fact.label} className={`flex min-w-0 items-center gap-3 rounded-xl border p-3 ${style}`}>
-                      <Icon className="h-5 w-5 shrink-0 " aria-hidden="true" />
-                      <span className="min-w-0 ">
-                        <span className="block uppercase text-xs font-semibold tracking-wide leading-5">
-                          {fact.label}
-                        </span>
-                        <span className="mt-1 block text-sm font-bold text-slate-900 tracking-normal tabular-nums">
-                          <DigitalNumber value={fact.value} />
-                        </span>
-                      </span>
-                    </div>
-                  )
-                })}
+                <span className="h-12 w-px shrink-0 bg-slate-200" aria-hidden="true" />
+                <span className="min-w-0">
+                  <span className="block uppercase text-slate-600 text-xs font-bold tracking-wide leading-5">{content.emailLabel}</span>
+                  <span className="mt-1 block break-all text-sm sm:text-base font-bold text-slate-900">{footer.email}</span>
+                </span>
               </div>
             </div>
           </div>
-        </div>
 
-        <Link
-          href="/contact"
-          prefetch={false}
-          className="mt-7 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#A3D977] px-5 py-3 text-sm font-bold text-slate-900 transition hover:bg-[#c7efa4] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 tracking-normal"
-        >
-          {content.contactCta}<ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-        </Link>
+          <div className="rounded-[1.5rem] border border-white/80 bg-white/75 p-5 text-slate-800 shadow-[0_18px_38px_-24px_rgba(30,41,59,0.42)] backdrop-blur-md sm:p-6">
+            <p className="text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+              {content.residentialServiceDescription}
+            </p>
+            <div className="mt-5 grid grid-cols-2 gap-3 min-[1100px]:grid-cols-4">
+              {content.serviceFacts.map((fact, index) => {
+                const Icon = serviceFactIcons[index] ?? BadgeCheck
+                const style = serviceFactStyles[index] ?? 'border-slate-200 bg-slate-50 text-slate-700'
+
+                return (
+                  <div key={fact.label} className={`flex min-w-0 items-center gap-3 rounded-2xl border p-3 sm:p-3.5 ${style}`}>
+                    <Icon className="h-6 w-6 shrink-0" aria-hidden="true" />
+                    <span className="min-w-0">
+                      <span className="block uppercase text-[0.65rem] font-bold tracking-wide leading-4">
+                        {fact.label}
+                      </span>
+                      <span className="mt-1 block text-sm font-bold text-slate-900 tracking-normal tabular-nums">
+                        <DigitalNumber value={fact.value} />
+                      </span>
+                    </span>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )
