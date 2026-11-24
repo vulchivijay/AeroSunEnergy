@@ -1,6 +1,6 @@
 import { getSliderImagePath } from '@/lib/sliderImages'
 import { getRequestTranslations } from '@/lib/serverLocale'
-import TirupatiEnergySection from '@/app/components/sections/TirupatiEnergySection'
+import TirupatiEnergySection from '@/app/components/ui/TirupatiEnergySection'
 import { getAccentOrDefault } from '@/lib/utils/utils'
 import type { HeroSliderSlide } from '../components/ui/SharedHeroSlider'
 import {
@@ -174,8 +174,8 @@ export default async function HybridEnergyPage() {
           />
 
           <div className="mt-10 grid gap-5 lg:grid-cols-2">
-              <HybridInfoPanel title={hybridPage.common.whyWorks} content={keyBenefitsLocalized} accent="emerald" />
-              <HybridInfoPanel title={hybridPage.common.feasibilityChecklist} content={hybridPage.labels.feasibilityItems} accent="sky" />
+              <HybridInfoPanel title={hybridPage.common.whyWorks} content={keyBenefitsLocalized} index={0} accent="emerald" />
+              <HybridInfoPanel title={hybridPage.common.feasibilityChecklist} content={hybridPage.labels.feasibilityItems} index={1} accent="sky" />
           </div>
         </div>
       </section>

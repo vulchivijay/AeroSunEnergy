@@ -4792,7 +4792,7 @@
     },
     "brandSection": {
       "eyebrow": "Our brand directory",
-      "title": "Explore solar brands in one place",
+      "title": "Explore solar brands in one place.",
       "subtitle": "Discover the solar and energy brands featured across our solutions.",
       "priceDisclaimer": "Indicative prices per Wp. Final pricing varies by model, DCR status, GST, seller and order quantity; confirm a current quote before purchase.",
       "quoteRequired": "Quote required",
@@ -4801,7 +4801,7 @@
       "topPriceLabel": "Highest listed",
       "freyrEnergy": "Freyr Energy",
       "materialTypesLabel": "Module types",
-      "undefinedMaterialType": "Undefined",
+      "currentModelsLabel": "Ask us about current models",
       "materialTypes": {
         "monocrystalline": "Monocrystalline",
         "polycrystalline": "Polycrystalline",
@@ -7902,9 +7902,7 @@
     "suitableRooftopCapacity": "Suitable rooftop capacity",
     "bestFit": "Best fit",
     "howItWorks": "How it works",
-    "readMore": "Read more",
     "transparentSolarExperience": "Trust AeroSun Energy for a transparent, dependable solar experience from your first consultation through installation and beyond. We provide clear quotations, explain your system options, and keep you informed at every stage — so you can make confident decisions with no unexpected costs or surprises.",
-    "showLess": "Show less",
     "comingSoon": "Coming soon"
   },
   "productCataloguePage": {
@@ -9172,7 +9170,7 @@
     "loanDetailsSub": "Choose a loan band and adjust the estimate",
     "loanCategory": "Loan category",
     "loanUpToTwoLakhs": "Up to ₹2 lakh",
-    "loanAboveTwoLakhs": "Above ₹2 lakh · max ₹6 lakh",
+    "loanAboveTwoLakhs": "₹2 lakh to ₹6 lakh",
     "loanAmount": "Loan amount",
     "loanTenure": "Total loan term",
     "projectCost": "Estimated project cost",
