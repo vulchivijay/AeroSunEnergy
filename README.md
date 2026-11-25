@@ -143,7 +143,7 @@ GOOGLE_CUSTOM_SEARCH_API_KEY=your_google_api_key
 GOOGLE_CUSTOM_SEARCH_CX=your_programmable_search_engine_id
 ```
 
-GTM and Analytics IDs are read during the build for prerendered pages. Set `_NEXT_PUBLIC_GTM_ID` and either `_NEXT_PUBLIC_GA_MEASUREMENT_ID` or `_NEXT_PUBLIC_GA_STREAM_ID` in the build environment (or `.env`) before `npm run build`. The prebuild status output checks for their presence but never prints values.
+GTM and Analytics IDs are read during the build for prerendered pages. Set `_NEXT_PUBLIC_GTM_ID`, `_NEXT_PUBLIC_GOOGLE_ADS_ID`, and either `_NEXT_PUBLIC_GA_MEASUREMENT_ID` or `_NEXT_PUBLIC_GA_STREAM_ID` in the build environment (or `.env`) before `npm run build`. After cookie consent, the app loads GTM and the direct Google tag with `afterInteractive`. Avoid configuring the same Ads or Analytics destinations in GTM and the direct tag, or events may be duplicated. The prebuild status output checks for variable presence but never prints values.
 
 You can also run the check directly:
 
