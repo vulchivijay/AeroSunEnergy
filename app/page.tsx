@@ -280,7 +280,7 @@ export default async function Home() {
                         className={`flex h-full flex-col overflow-hidden rounded-[1.5rem] border ${style.border} ${style.background} p-4 shadow-[0_10px_18px_-12px_rgba(47,54,34,0.45)] sm:p-5 lg:p-6`}
                       >
                         <SystemTypeIllustration index={index} />
-                        <h4 className="mt-1 flex min-h-12 items-center justify-center rounded-full bg-[#155d38] px-3 py-2 text-center text-xl font-bold !tracking-tight text-white sm:text-2xl">
+                        <h4 className="mt-1 flex min-h-12 items-center justify-center rounded-full bg-[#155d38] px-3 py-2 text-center font-semibold text-xl !tracking-tight text-white">
                           {item.title}
                         </h4>
                         <ul className="mt-4 grid flex-1 content-start gap-3">
@@ -288,11 +288,11 @@ export default async function Home() {
                             const FeatureIcon = icons[featureIndex % icons.length]
 
                             return (
-                              <li key={description} className="flex items-center gap-3">
+                              <li key={description} className="flex items-start gap-3">
                                 <span className={`grid h-14 w-14 shrink-0 place-items-center rounded-full ${style.icon}`}>
                                   <FeatureIcon className="h-8 w-8" strokeWidth={2} aria-hidden="true" />
                                 </span>
-                                <p className="text-base font-semibold leading-6 text-[#17264a] sm:text-lg sm:leading-6">
+                                <p className="text-base leading-6 text-[#17264a] sm:text-md sm:leading-6">
                                   {description}
                                 </p>
                               </li>
@@ -817,6 +817,11 @@ function SystemTypeIllustration({ index }: { index: number }) {
         {String(index + 1).padStart(2, '0')}
       </span>
       <svg viewBox="0 0 360 190" className="h-full w-full" fill="none">
+        <defs>
+          <clipPath id={`system-type-panel-grid-${index}`}>
+            <path d="m77 107 35-39h64l34 39H77Z" />
+          </clipPath>
+        </defs>
         <circle cx="292" cy="42" r="18" fill="#FFC928" />
         <path d="M292 9V2m0 80v-7m-33-33h-7m82 0h-7m-58-23-6-6m58 58-6-6m0-46 6-6m-52 58 6-6" stroke="#FFB80E" strokeWidth="4" strokeLinecap="round" />
 
@@ -829,8 +834,13 @@ function SystemTypeIllustration({ index }: { index: number }) {
         <path d="M127 124h25v40h-25z" fill="#B56B3C" stroke="#8F522D" strokeWidth="3" />
         <circle cx="146" cy="145" r="2" fill="#FDE68A" />
 
-        <path d="m77 107 35-39h64l34 39H77Z" fill="#1683C5" stroke="#23486B" strokeWidth="4" strokeLinejoin="round" />
-        <path d="m90 104 28-33m-8 36 27-39m-9 40 25-38m-9 38 22-34M85 91h112m-122 9h131" stroke="#D7F2FF" strokeWidth="2" />
+        <g transform="translate(-8 0)">
+          <path d="m77 107 35-39h64l34 39H77Z" fill="#1683C5" />
+          <g clipPath={`url(#system-type-panel-grid-${index})`} stroke="#D7F2FF" strokeWidth="2">
+            <path d="M88 112 126 62M112 112 150 62M136 112 174 62M160 112 198 62M70 82H220M70 94H220M70 104H220" />
+          </g>
+          <path d="m77 107 35-39h64l34 39H77Z" fill="none" stroke="#23486B" strokeWidth="4" strokeLinejoin="round" />
+        </g>
 
         <path d="M197 143h44" stroke="#16874B" strokeWidth="5" strokeLinecap="round" />
         <rect x="187" y="130" width="31" height="28" rx="4" fill="white" stroke="#38556C" strokeWidth="3" />
@@ -838,16 +848,24 @@ function SystemTypeIllustration({ index }: { index: number }) {
 
         {isOffGrid || isHybrid ? (
           <>
-            <path d="M218 144h35" stroke="#16874B" strokeWidth="5" strokeLinecap="round" />
-            <rect x="250" y="128" width="45" height="35" rx="6" fill="white" stroke="#16874B" strokeWidth="4" />
-            <rect x="295" y="139" width="5" height="13" rx="2" fill="#16874B" />
-            <rect x="258" y="136" width="28" height="19" rx="3" fill="#B8E5AE" />
-            <path d="M263 141h18m-18 5h18" stroke="#16874B" strokeWidth="3" strokeLinecap="round" />
+            <path d="M218 144h16" stroke="#16874B" strokeWidth="5" strokeLinecap="round" />
+            <g transform="translate(-16 0)">
+              <rect x="250" y="128" width="45" height="35" rx="6" fill="white" stroke="#16874B" strokeWidth="4" />
+              <rect x="295" y="139" width="5" height="13" rx="2" fill="#16874B" />
+              <rect x="258" y="136" width="28" height="19" rx="3" fill="#B8E5AE" />
+              <path d="M263 141h18m-18 5h18" stroke="#16874B" strokeWidth="3" strokeLinecap="round" />
+            </g>
           </>
         ) : null}
 
+        {isHybrid ? (
+          <path d="M284 144H303" stroke="#16874B" strokeWidth="4" strokeLinecap="round" />
+        ) : !isOffGrid ? (
+          <path d="M218 144H303" stroke="#16874B" strokeWidth="4" strokeLinecap="round" />
+        ) : null}
+
         <path
-          d="M326 68 305 165m21-97 22 97m-38-25h33m-29-24h25m-21-23h17m-25 47 33-24m0 24-33-24m8 0 25-23m-17 0 17-17M301 72h46m-50 24h54M301 165h49"
+          d="M318 82L302 164M334 82L350 164M298 82H354M312 101H340M308 122H344M304 143H348M302 164H350M312 101L344 122M340 101L308 122M308 122L348 143M344 122L304 143M304 143L350 164M348 143L302 164M302 74V82M326 72V82M350 74V82"
           stroke={isOffGrid ? '#87929B' : '#344A5E'}
           strokeWidth="3"
           strokeLinecap="round"
@@ -856,10 +874,13 @@ function SystemTypeIllustration({ index }: { index: number }) {
         {isOffGrid ? (
           <path d="m310 76 32 32m0-32-32 32" stroke="#E24B3B" strokeWidth="7" strokeLinecap="round" />
         ) : (
-          <>
-            <path d={`M218 144h${isHybrid ? '85' : '83'} `} stroke="#16874B" strokeWidth="4" strokeLinecap="round" />
-            <path d="m272 137 8 7-8 7m23-7 8-7m0 0-8-7" stroke="#F59E0B" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-          </>
+          <path
+            d={isHybrid ? 'M289 140L285 144L289 148M297 140L301 144L297 148' : 'M255 139L250 144L255 149M265 139L270 144L265 149'}
+            stroke="#F59E0B"
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         )}
       </svg>
     </div>
@@ -992,23 +1013,19 @@ function SolarJourneySection({ t }: { t: Translations }) {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-[#06111d] px-4 py-10 text-white sm:px-6 sm:py-14 lg:px-10 lg:py-16"
+      className="relative isolate overflow-hidden bg-[#06111d] bg-cover bg-center bg-no-repeat px-4 py-10 text-white sm:px-6 sm:py-14 lg:px-10 lg:py-16"
+      style={{
+        backgroundImage:
+          "linear-gradient(110deg, rgba(7, 19, 33, 0.58), rgba(6, 17, 29, 0.62) 58%, rgba(3, 11, 19, 0.68)), url('/images/slider/slider-3.webp')",
+      }}
       aria-labelledby="solar-journey-title"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_72%_45%,rgba(16,54,60,0.36),transparent_48%),linear-gradient(110deg,#071321_0%,#06111d_58%,#030b13_100%)]" aria-hidden="true" />
       <div className="relative mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-[minmax(17rem,0.78fr)_minmax(0,1.22fr)] lg:items-stretch lg:gap-8">
-          <div className="relative isolate flex min-h-[25rem] flex-col justify-start overflow-hidden sm:min-h-[27rem] lg:min-h-[43rem]">
-            <Image
-              src="/images/slider/slider-3.webp"
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 34vw, 100vw"
-              className="pointer-events-none absolute inset-x-0 bottom-0 top-auto !h-[58%] object-cover object-center opacity-45 [mask-image:linear-gradient(to_bottom,transparent,black_38%)]"
-              aria-hidden="true"
-            />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[58%] bg-gradient-to-t from-[#06111d] via-[#06111d]/35 to-transparent" aria-hidden="true" />
-            <div className="relative z-10">
+          <div
+            className="relative isolate flex min-h-[25rem] flex-col justify-start overflow-hidden sm:min-h-[27rem] lg:min-h-[43rem]"
+          >
+            <div className="relative z-10 w-full rounded-2xl border border-white/20 bg-[#06111d]/45 p-5 shadow-[0_24px_70px_rgba(0,0,0,0.34)] backdrop-blur-xl sm:p-6">
               <p className="inline-flex w-fit items-center rounded-md border border-amber-500 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-amber-400 sm:text-xs">
                 {content.eyebrow}
               </p>
@@ -1027,10 +1044,10 @@ function SolarJourneySection({ t }: { t: Translations }) {
             </div>
           </div>
 
-          <div className="relative min-w-0 lg:py-1">
+          <div className="relative min-w-0">
             <svg
               className="pointer-events-none absolute inset-0 z-0 hidden h-full w-full lg:block"
-              viewBox="0 0 800 700"
+              viewBox="0 0 800 880"
               preserveAspectRatio="none"
               fill="none"
               aria-hidden="true"
@@ -1045,7 +1062,7 @@ function SolarJourneySection({ t }: { t: Translations }) {
                 </filter>
               </defs>
               <path
-                d="M650 58C790 84 774 142 424 190S130 260 650 330C790 365 775 415 185 470S135 555 650 610"
+                d="M650 72C790 100 774 185 185 248C130 300 130 370 650 424C790 460 775 530 185 600C150 650 135 720 650 776"
                 stroke="#a3ff00"
                 strokeWidth="3"
                 strokeLinecap="round"
@@ -1053,7 +1070,7 @@ function SolarJourneySection({ t }: { t: Translations }) {
               />
             </svg>
 
-            <ol className="relative grid gap-3 lg:min-h-[43rem] lg:gap-0">
+            <ol className="relative grid gap-3 lg:min-h-[55rem] lg:gap-0">
               {content.steps.map((step, index) => {
                 const StepIcon = journeyIcons[index % journeyIcons.length]
                 const isLeftAligned = index % 2 === 0
@@ -1063,7 +1080,7 @@ function SolarJourneySection({ t }: { t: Translations }) {
                     key={step.title}
                     className={`relative z-10 lg:absolute lg:w-[78%] ${stepPositions[index] ?? 'lg:top-[80%]'} ${isLeftAligned ? 'lg:left-4' : 'lg:right-4'}`}
                   >
-                    <article className="relative grid min-h-[6.25rem] grid-cols-[2.5rem_3.25rem_minmax(0,1fr)] items-center gap-3 rounded-xl border border-sky-200/20 bg-[linear-gradient(110deg,rgba(24,41,54,0.96),rgba(12,27,40,0.96))] px-3 py-3 shadow-[0_12px_30px_rgba(0,0,0,0.25)] backdrop-blur-sm sm:grid-cols-[3rem_3.5rem_minmax(0,1fr)] sm:gap-4 sm:px-4">
+                    <article className="relative grid min-h-[6.25rem] grid-cols-[2.5rem_3.25rem_minmax(0,1fr)] items-center gap-3 rounded-xl border border-sky-200/20 bg-[linear-gradient(110deg,rgba(24,41,54,0.78),rgba(12,27,40,0.78))] px-3 py-3 shadow-[0_12px_30px_rgba(0,0,0,0.25)] backdrop-blur-sm sm:grid-cols-[3rem_3.5rem_minmax(0,1fr)] sm:gap-4 sm:px-4 lg:h-[9rem]">
                       <span className="text-center text-3xl font-bold leading-none !tracking-tight text-lime-400 sm:text-4xl">
                         {String(index + 1).padStart(2, '0')}
                       </span>
