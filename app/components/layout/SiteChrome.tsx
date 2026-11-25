@@ -170,7 +170,7 @@ function Footer() {
 								<span className="h-px w-8 bg-white" />
 								{t.navbar.brandName}
 							</p>
-							<h2 className="mt-5 text-slate-200 text-2xl sm:text-3xl leading-snug">
+							<h2 className="mt-5 text-slate-200 text-3xl sm:text-4xl leading-snug">
 								{footer.heroTitle}
 							</h2>
 							<p className="mt-5 max-w-2xl text-slate-100 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
@@ -325,8 +325,8 @@ function Footer() {
 
 				<section aria-labelledby="footer-newsletter" className="mt-14 grid gap-6 rounded-xl bg-[#147e62] p-6 shadow-sm sm:p-8 lg:grid-cols-[1fr_1fr] lg:items-center">
 					<div>
-						<h2 id="footer-newsletter" className="text-slate-200 text-2xl leading-snug">{footer.stayPowered}</h2>
-						<p className="mt-2 max-w-xl text-slate-100 text-xs sm:text-sm font-normal leading-5">{footer.newsletterDescription}</p>
+						<h2 id="footer-newsletter" className="text-slate-200 text-2xl sm:text-3xl leading-snug">{footer.stayPowered}</h2>
+						<p className="mt-2 max-w-xl text-slate-100 text-sm sm:text-base font-normal tracking-normal sm:leading-5">{footer.newsletterDescription}</p>
 					</div>
 					<form onSubmit={handleNewsletterSubmit} className="w-full">
 						<label htmlFor="footer-newsletter-email" className="sr-only text-xs sm:text-sm tracking-normal leading-5">{footer.newsletterEmailLabel}</label>
@@ -358,7 +358,7 @@ function Footer() {
 
 			<div className="border-t border-slate-700 bg-white/5 backdrop-blur ">
 				<div className="flex w-full flex-col items-center justify-between gap-1 border-t border-slate-700 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10 ">
-					<div className="flex flex-wrap items-center justify-center gap-1 text-xs uppercase text-white/70 font-semibold tracking-wide leading-5">
+					<div className="flex flex-wrap items-center justify-center gap-1 text-xs uppercase text-white/70 tracking-wide leading-5">
 						{footer.legalLinks.map((link: { href: string; label: string }) => (
               <Fragment key={link.href}>
                 <Link href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} className={`transition-colors hover:text-amber-100 ${isActive(link.href) ? 'text-amber-200' : ''}`}>

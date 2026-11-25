@@ -198,7 +198,7 @@ export default async function Home() {
                     key={card.title}
                     title={card.title}
                     description={card.description}
-                    descriptionClassName="truncate"
+                    descriptionClassName="line-clamp-3"
                     points={[]}
                     accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
                     label={t.ui.solarSolution}
@@ -212,7 +212,7 @@ export default async function Home() {
                     key={card.title}
                     title={card.title}
                     description={card.description}
-                    descriptionClassName="truncate"
+                    descriptionClassName="line-clamp-3"
                     points={[]}
                     accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
                     label={t.ui.solarSolution}
@@ -280,7 +280,7 @@ export default async function Home() {
                         className={`flex h-full flex-col overflow-hidden rounded-[1.5rem] border ${style.border} ${style.background} p-4 shadow-[0_10px_18px_-12px_rgba(47,54,34,0.45)] sm:p-5 lg:p-6`}
                       >
                         <SystemTypeIllustration index={index} />
-                        <h4 className="mt-1 flex min-h-12 items-center justify-center rounded-full bg-[#155d38] px-3 py-2 text-center text-xl font-bold !tracking-tight text-white sm:text-2xl">
+                        <h4 className="mt-1 flex min-h-12 items-center justify-center rounded-full bg-[#155d38] px-3 py-2 text-center font-semibold text-xl !tracking-tight text-white">
                           {item.title}
                         </h4>
                         <ul className="mt-4 grid flex-1 content-start gap-3">
@@ -288,11 +288,11 @@ export default async function Home() {
                             const FeatureIcon = icons[featureIndex % icons.length]
 
                             return (
-                              <li key={description} className="flex items-center gap-3">
+                              <li key={description} className="flex items-start gap-3">
                                 <span className={`grid h-14 w-14 shrink-0 place-items-center rounded-full ${style.icon}`}>
                                   <FeatureIcon className="h-8 w-8" strokeWidth={2} aria-hidden="true" />
                                 </span>
-                                <p className="text-base font-semibold leading-6 text-[#17264a] sm:text-lg sm:leading-6">
+                                <p className="text-base leading-6 text-[#17264a] sm:text-md sm:leading-6">
                                   {description}
                                 </p>
                               </li>
@@ -356,7 +356,7 @@ export default async function Home() {
                   key={card.title}
                   title={card.title}
                   description={card.description}
-                  descriptionClassName="truncate"
+                  descriptionClassName="line-clamp-3"
                   points={[]}
                   accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
                   imageSrc={windSolutionImages[index]}
@@ -397,7 +397,7 @@ export default async function Home() {
                   key={card.title}
                   title={card.title}
                   description={card.description}
-                  descriptionClassName="truncate"
+                  descriptionClassName="line-clamp-3"
                   points={[]}
                   accent={getAccentOrDefault(card.accent, ['sky', 'violet', 'amber'] as const, 'emerald')}
                   imageSrc={hybridSolutionImages[index]}
@@ -477,62 +477,80 @@ const featuredBrandNames = new Set(['Adani Solar', 'Tata Power Solar', 'Waaree E
 
 const featuredBrands = sortedBrands.filter((brand) => featuredBrandNames.has(brand.name))
 
+function BrandSectionBackground() {
+  return (
+    <div className="pointer-events-none absolute inset-0 z-0 hidden min-[900px]:block" aria-hidden="true">
+      <svg
+        className="absolute inset-0 h-full w-full"
+        viewBox="0 0 1280 800"
+        preserveAspectRatio="xMidYMin slice"
+        aria-hidden="true"
+      >
+        <defs>
+          <radialGradient id="brand-sun-glow" cx="1085" cy="155" r="205" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#ffba52" stopOpacity=".64" />
+            <stop offset=".62" stopColor="#ffba52" stopOpacity=".22" />
+            <stop offset="1" stopColor="#ffc764" stopOpacity="0" />
+          </radialGradient>
+          <linearGradient id="brand-sun" x1="960" x2="1210" y1="42" y2="268" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#ffe99f" />
+            <stop offset=".58" stopColor="#ffc65e" />
+            <stop offset="1" stopColor="#ff9f35" />
+          </linearGradient>
+          <linearGradient id="brand-panel-fill" x1="850" x2="1280" y1="300" y2="78" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#061b36" />
+            <stop offset=".58" stopColor="#0d315a" />
+            <stop offset="1" stopColor="#1c4c76" />
+          </linearGradient>
+          <linearGradient id="brand-ground" x1="870" x2="1280" y1="360" y2="800" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#8cae62" stopOpacity="0" />
+            <stop offset=".42" stopColor="#8cae62" stopOpacity=".08" />
+            <stop offset="1" stopColor="#8cae62" stopOpacity=".18" />
+          </linearGradient>
+          <clipPath id="brand-panel-clip">
+            <path d="m835 302 195-124L1280 78v224z" />
+          </clipPath>
+        </defs>
+        <path d="M730 800V460c128-72 215 5 320-44 83-39 153-96 230-80v464z" fill="url(#brand-ground)" />
+        <circle cx="1085" cy="155" r="205" fill="url(#brand-sun-glow)" />
+        <circle cx="1085" cy="155" r="132" fill="url(#brand-sun)" />
+        <path d="m835 302 195-124 250-100v224z" fill="url(#brand-panel-fill)" />
+        <g clipPath="url(#brand-panel-clip)" fill="none" stroke="#a8c9df" strokeOpacity=".82" strokeWidth="2">
+          <path d="m814 295 466-56m-441 38 441-54m-416 36 416-52m-391 34 391-50m-366 32 366-48m-341 30 341-46m-316 28 316-44m-291 26 291-42" />
+          <path d="m870 330 215-177m-145 165 224-177m-153 165 233-177m-162 165 242-177m-171 165 251-177m-180 165 260-177" />
+        </g>
+        <path d="m835 302 195-124 250-100" fill="none" stroke="#dceaf2" strokeOpacity=".9" strokeWidth="2.5" />
+        <path d="M1280 78v224" fill="none" stroke="#dceaf2" strokeOpacity=".58" strokeWidth="2.5" />
+        <g>
+          <path d="M1162 312c-49-75-52-144-12-203 52 54 61 122 12 203Z" fill="#347b39" />
+          <path d="M1201 312c-8-98 17-167 78-217 20 85-6 158-78 217Z" fill="#4a913d" />
+          <path d="M1240 312c24-84 66-135 128-157-5 77-48 129-128 157Z" fill="#5c9b43" />
+          <path d="M1138 312c-65-53-94-112-81-176 70 39 96 95 81 176Z" fill="#6ba34a" />
+          <path d="M1181 312c-78-23-125-67-140-133 77 13 126 55 140 133Z" fill="#8aae4e" />
+          <path d="M1204 800c-84-159-81-314 11-464 76 168 67 322-11 464Z" fill="#4a913d" fillOpacity=".2" />
+          <path d="M1262 800c-21-185 29-329 153-438 17 166-34 314-153 438Z" fill="#5c9b43" fillOpacity=".18" />
+          <path d="M1130 800c-125-112-172-239-140-381 121 91 171 216 140 381Z" fill="#8aae4e" fillOpacity=".16" />
+        </g>
+      </svg>
+    </div>
+  )
+}
+
 function Brands({ t }: { t: Translations }) {
   const section = t.home.brandSection
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-[#f7f5f1] px-4 pt-0 pb-8 sm:px-4 lg:px-7 lg:pb-9"
+      className="relative isolate overflow-hidden bg-[#f7f5f1] px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
       aria-labelledby="brand-section-title"
     >
       <div
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.025)_1px,transparent_1px)] bg-size-[48px_48px]"
         aria-hidden="true"
       />
-      <div className="relative mx-auto max-w-7xl">
-        <div className="relative mb-3 min-h-[19rem] overflow-hidden">
-          <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-            <div className="absolute right-9 top-6 h-[17rem] w-[17rem] rounded-full bg-[radial-gradient(circle_at_35%_35%,#fff4b0_0%,#ffc74d_52%,#ff9c35_100%)]" />
-            <svg
-              className="absolute bottom-0 right-0 h-full w-[32%] min-w-[19rem]"
-              viewBox="0 0 340 164"
-              preserveAspectRatio="none"
-            >
-              <defs>
-                <linearGradient id="brand-panel-fill" x1="0" x2="1" y1="1" y2="0">
-                  <stop stopColor="#0d3157" />
-                  <stop offset="1" stopColor="#285c86" />
-                </linearGradient>
-                <clipPath id="brand-panel-clip">
-                  <path d="M0 164 340 42v122z" />
-                </clipPath>
-                <linearGradient id="brand-panel-edge" x1="0" x2="1">
-                  <stop stopColor="white" stopOpacity="0" />
-                  <stop offset=".22" stopColor="white" stopOpacity=".4" />
-                  <stop offset=".48" stopColor="white" />
-                </linearGradient>
-                <mask id="brand-panel-mask">
-                  <rect width="340" height="164" fill="url(#brand-panel-edge)" />
-                </mask>
-              </defs>
-              <g mask="url(#brand-panel-mask)">
-                <path d="M0 164 340 42v122z" fill="url(#brand-panel-fill)" />
-                <g clipPath="url(#brand-panel-clip)" fill="none" stroke="#8eb2c7" strokeOpacity=".7" strokeWidth="1.5">
-                  <path d="m-20 154 380-45M-20 126 360 81M-20 98 360 53M-20 70 360 25M-20 42 360-3" />
-                  <path d="m55 180 285-150M112 180 340 60M169 180 340 88M226 180 340 116M283 180 340 144" />
-                </g>
-                <path d="M0 164 340 42" fill="none" stroke="#d8e6e9" strokeOpacity=".7" strokeWidth="2" />
-              </g>
-              <g fill="#4a8d3c">
-                <path d="M270 164c-8-27-7-48 5-66 15 21 14 43-5 66Z" />
-                <path d="M289 164c-1-35 7-56 24-72 7 28-1 52-24 72Z" />
-                <path d="M311 164c8-30 20-48 39-58 0 28-13 48-39 58Z" />
-                <path d="M258 164c-20-22-29-42-25-63 23 14 32 34 25 63Z" />
-                <path d="M328 164c15-20 31-31 50-33-8 22-25 34-50 33Z" />
-              </g>
-            </svg>
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,#f7f5f1_0%,#f7f5f1_62%,rgba(247,245,241,.35)_74%,transparent_100%)] backdrop-blur-[2px]" />
-          </div>
+      <BrandSectionBackground />
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <div className="relative z-10 mb-3 min-h-[19rem] overflow-hidden">
           <div className="relative z-10 max-w-5xl pt-10 pl-2">
             <p className="inline-flex items-center gap-3 rounded-full bg-[#ffe89a] px-4 py-2 text-[#17472c] text-sm font-bold uppercase tracking-[0.06em] leading-5 shadow-sm lg:gap-4 lg:px-5 lg:text-lg">
               <span className="h-4 w-4 rounded-full bg-[#14843c]" aria-hidden="true" />
@@ -817,6 +835,11 @@ function SystemTypeIllustration({ index }: { index: number }) {
         {String(index + 1).padStart(2, '0')}
       </span>
       <svg viewBox="0 0 360 190" className="h-full w-full" fill="none">
+        <defs>
+          <clipPath id={`system-type-panel-grid-${index}`}>
+            <path d="m77 107 35-39h64l34 39H77Z" />
+          </clipPath>
+        </defs>
         <circle cx="292" cy="42" r="18" fill="#FFC928" />
         <path d="M292 9V2m0 80v-7m-33-33h-7m82 0h-7m-58-23-6-6m58 58-6-6m0-46 6-6m-52 58 6-6" stroke="#FFB80E" strokeWidth="4" strokeLinecap="round" />
 
@@ -829,8 +852,13 @@ function SystemTypeIllustration({ index }: { index: number }) {
         <path d="M127 124h25v40h-25z" fill="#B56B3C" stroke="#8F522D" strokeWidth="3" />
         <circle cx="146" cy="145" r="2" fill="#FDE68A" />
 
-        <path d="m77 107 35-39h64l34 39H77Z" fill="#1683C5" stroke="#23486B" strokeWidth="4" strokeLinejoin="round" />
-        <path d="m90 104 28-33m-8 36 27-39m-9 40 25-38m-9 38 22-34M85 91h112m-122 9h131" stroke="#D7F2FF" strokeWidth="2" />
+        <g transform="translate(-8 0)">
+          <path d="m77 107 35-39h64l34 39H77Z" fill="#1683C5" />
+          <g clipPath={`url(#system-type-panel-grid-${index})`} stroke="#D7F2FF" strokeWidth="2">
+            <path d="M88 112 126 62M112 112 150 62M136 112 174 62M160 112 198 62M70 82H220M70 94H220M70 104H220" />
+          </g>
+          <path d="m77 107 35-39h64l34 39H77Z" fill="none" stroke="#23486B" strokeWidth="4" strokeLinejoin="round" />
+        </g>
 
         <path d="M197 143h44" stroke="#16874B" strokeWidth="5" strokeLinecap="round" />
         <rect x="187" y="130" width="31" height="28" rx="4" fill="white" stroke="#38556C" strokeWidth="3" />
@@ -838,16 +866,24 @@ function SystemTypeIllustration({ index }: { index: number }) {
 
         {isOffGrid || isHybrid ? (
           <>
-            <path d="M218 144h35" stroke="#16874B" strokeWidth="5" strokeLinecap="round" />
-            <rect x="250" y="128" width="45" height="35" rx="6" fill="white" stroke="#16874B" strokeWidth="4" />
-            <rect x="295" y="139" width="5" height="13" rx="2" fill="#16874B" />
-            <rect x="258" y="136" width="28" height="19" rx="3" fill="#B8E5AE" />
-            <path d="M263 141h18m-18 5h18" stroke="#16874B" strokeWidth="3" strokeLinecap="round" />
+            <path d="M218 144h16" stroke="#16874B" strokeWidth="5" strokeLinecap="round" />
+            <g transform="translate(-16 0)">
+              <rect x="250" y="128" width="45" height="35" rx="6" fill="white" stroke="#16874B" strokeWidth="4" />
+              <rect x="295" y="139" width="5" height="13" rx="2" fill="#16874B" />
+              <rect x="258" y="136" width="28" height="19" rx="3" fill="#B8E5AE" />
+              <path d="M263 141h18m-18 5h18" stroke="#16874B" strokeWidth="3" strokeLinecap="round" />
+            </g>
           </>
         ) : null}
 
+        {isHybrid ? (
+          <path d="M284 144H303" stroke="#16874B" strokeWidth="4" strokeLinecap="round" />
+        ) : !isOffGrid ? (
+          <path d="M218 144H303" stroke="#16874B" strokeWidth="4" strokeLinecap="round" />
+        ) : null}
+
         <path
-          d="M326 68 305 165m21-97 22 97m-38-25h33m-29-24h25m-21-23h17m-25 47 33-24m0 24-33-24m8 0 25-23m-17 0 17-17M301 72h46m-50 24h54M301 165h49"
+          d="M318 82L302 164M334 82L350 164M298 82H354M312 101H340M308 122H344M304 143H348M302 164H350M312 101L344 122M340 101L308 122M308 122L348 143M344 122L304 143M304 143L350 164M348 143L302 164M302 74V82M326 72V82M350 74V82"
           stroke={isOffGrid ? '#87929B' : '#344A5E'}
           strokeWidth="3"
           strokeLinecap="round"
@@ -856,10 +892,13 @@ function SystemTypeIllustration({ index }: { index: number }) {
         {isOffGrid ? (
           <path d="m310 76 32 32m0-32-32 32" stroke="#E24B3B" strokeWidth="7" strokeLinecap="round" />
         ) : (
-          <>
-            <path d={`M218 144h${isHybrid ? '85' : '83'} `} stroke="#16874B" strokeWidth="4" strokeLinecap="round" />
-            <path d="m272 137 8 7-8 7m23-7 8-7m0 0-8-7" stroke="#F59E0B" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-          </>
+          <path
+            d={isHybrid ? 'M289 140L285 144L289 148M297 140L301 144L297 148' : 'M255 139L250 144L255 149M265 139L270 144L265 149'}
+            stroke="#F59E0B"
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         )}
       </svg>
     </div>
@@ -992,23 +1031,19 @@ function SolarJourneySection({ t }: { t: Translations }) {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-[#06111d] px-4 py-10 text-white sm:px-6 sm:py-14 lg:px-10 lg:py-16"
+      className="relative isolate overflow-x-clip bg-[#06111d] bg-cover bg-center bg-no-repeat px-4 py-10 text-white sm:px-6 sm:py-14 lg:px-10 lg:py-16"
+      style={{
+        backgroundImage:
+          "linear-gradient(110deg, rgba(7, 19, 33, 0.58), rgba(6, 17, 29, 0.62) 58%, rgba(3, 11, 19, 0.68)), url('/images/slider/slider-3.webp')",
+      }}
       aria-labelledby="solar-journey-title"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_72%_45%,rgba(16,54,60,0.36),transparent_48%),linear-gradient(110deg,#071321_0%,#06111d_58%,#030b13_100%)]" aria-hidden="true" />
       <div className="relative mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-[minmax(17rem,0.78fr)_minmax(0,1.22fr)] lg:items-stretch lg:gap-8">
-          <div className="relative isolate flex min-h-[25rem] flex-col justify-start overflow-hidden sm:min-h-[27rem] lg:min-h-[43rem]">
-            <Image
-              src="/images/slider/slider-3.webp"
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 34vw, 100vw"
-              className="pointer-events-none absolute inset-x-0 bottom-0 top-auto !h-[58%] object-cover object-center opacity-45 [mask-image:linear-gradient(to_bottom,transparent,black_38%)]"
-              aria-hidden="true"
-            />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[58%] bg-gradient-to-t from-[#06111d] via-[#06111d]/35 to-transparent" aria-hidden="true" />
-            <div className="relative z-10">
+          <div
+            className="relative isolate flex min-h-[25rem] flex-col justify-start sm:min-h-[27rem] lg:min-h-[43rem]"
+          >
+            <div className="relative z-10 w-full rounded-2xl border border-white/20 bg-[#06111d]/45 p-5 shadow-[0_24px_70px_rgba(0,0,0,0.34)] backdrop-blur-xl sm:p-6 lg:sticky lg:top-36 lg:self-start">
               <p className="inline-flex w-fit items-center rounded-md border border-amber-500 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-amber-400 sm:text-xs">
                 {content.eyebrow}
               </p>
@@ -1027,10 +1062,10 @@ function SolarJourneySection({ t }: { t: Translations }) {
             </div>
           </div>
 
-          <div className="relative min-w-0 lg:py-1">
+          <div className="relative min-w-0">
             <svg
               className="pointer-events-none absolute inset-0 z-0 hidden h-full w-full lg:block"
-              viewBox="0 0 800 700"
+              viewBox="0 0 800 880"
               preserveAspectRatio="none"
               fill="none"
               aria-hidden="true"
@@ -1045,7 +1080,7 @@ function SolarJourneySection({ t }: { t: Translations }) {
                 </filter>
               </defs>
               <path
-                d="M650 58C790 84 774 142 424 190S130 260 650 330C790 365 775 415 185 470S135 555 650 610"
+                d="M650 72C790 100 774 185 185 248C130 300 130 370 650 424C790 460 775 530 185 600C150 650 135 720 650 776"
                 stroke="#a3ff00"
                 strokeWidth="3"
                 strokeLinecap="round"
@@ -1053,7 +1088,7 @@ function SolarJourneySection({ t }: { t: Translations }) {
               />
             </svg>
 
-            <ol className="relative grid gap-3 lg:min-h-[43rem] lg:gap-0">
+            <ol className="relative grid gap-3 lg:min-h-[55rem] lg:gap-0">
               {content.steps.map((step, index) => {
                 const StepIcon = journeyIcons[index % journeyIcons.length]
                 const isLeftAligned = index % 2 === 0
@@ -1063,7 +1098,7 @@ function SolarJourneySection({ t }: { t: Translations }) {
                     key={step.title}
                     className={`relative z-10 lg:absolute lg:w-[78%] ${stepPositions[index] ?? 'lg:top-[80%]'} ${isLeftAligned ? 'lg:left-4' : 'lg:right-4'}`}
                   >
-                    <article className="relative grid min-h-[6.25rem] grid-cols-[2.5rem_3.25rem_minmax(0,1fr)] items-center gap-3 rounded-xl border border-sky-200/20 bg-[linear-gradient(110deg,rgba(24,41,54,0.96),rgba(12,27,40,0.96))] px-3 py-3 shadow-[0_12px_30px_rgba(0,0,0,0.25)] backdrop-blur-sm sm:grid-cols-[3rem_3.5rem_minmax(0,1fr)] sm:gap-4 sm:px-4">
+                    <article className="relative grid min-h-[6.25rem] grid-cols-[2.5rem_3.25rem_minmax(0,1fr)] items-center gap-3 rounded-xl border border-sky-200/20 bg-[linear-gradient(110deg,rgba(24,41,54,0.78),rgba(12,27,40,0.78))] px-3 py-3 shadow-[0_12px_30px_rgba(0,0,0,0.25)] backdrop-blur-sm sm:grid-cols-[3rem_3.5rem_minmax(0,1fr)] sm:gap-4 sm:px-4 lg:h-[9rem]">
                       <span className="text-center text-3xl font-bold leading-none !tracking-tight text-lime-400 sm:text-4xl">
                         {String(index + 1).padStart(2, '0')}
                       </span>

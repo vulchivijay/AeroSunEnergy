@@ -20,7 +20,7 @@ export default function TirupatiEnergySection({
   return (
     <section className={`${backgroundClassName}`}>
       <div className="mx-auto max-w-[1648px]">
-        <div className="relative isolate min-h-[34rem] overflow-hidden border border-white/20 bg-[#091b49] shadow-xl shadow-slate-900/20 sm:min-h-[30rem] lg:min-h-[27rem]">
+        <div className="relative isolate min-h-[42.5rem] overflow-hidden border border-white/20 bg-[#091b49] shadow-xl shadow-slate-900/20 sm:min-h-[37.5rem] lg:min-h-[33.75rem]">
           <Image
             src="/images/tirupati-energy-scene.svg?v=13"
             alt=""
@@ -44,7 +44,7 @@ export default function TirupatiEnergySection({
             </div>
           </div>
 
-          <div className="relative z-10 flex min-h-[34rem] items-end px-6 py-8 sm:min-h-[30rem] sm:px-10 sm:py-10 lg:min-h-[27rem] lg:items-center lg:px-12 lg:py-12">
+          <div className="relative z-10 flex min-h-[42.5rem] items-end px-6 py-8 sm:min-h-[37.5rem] sm:px-10 sm:py-10 lg:min-h-[33.75rem] lg:items-center lg:px-12 lg:py-12">
             <div className="w-full max-w-3xl lg:w-[62%] lg:max-w-[58rem]">
               <p className="inline-flex w-fit items-center rounded-full border border-white/30 bg-white/15 px-5 py-3 text-xs uppercase tracking-wide text-white shadow-lg backdrop-blur-sm sm:px-6 sm:text-base">
                 {content.eyebrow}
