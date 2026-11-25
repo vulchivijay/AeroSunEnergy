@@ -1,4 +1,4 @@
-import type { Dispatch, SetStateAction } from 'react'
+import { createElement, type Dispatch, type SetStateAction } from 'react'
 import Link from 'next/link'
 import { ChevronDown, type LucideIcon } from 'lucide-react'
 
@@ -40,7 +40,7 @@ export function NavbarNavigationLink({
 }) {
     const disabled = Boolean(link.disabled)
     const active = isActive(link.href) && !disabled
-    const Icon = getNavigationIcon(link.href)
+    const navigationIcon = getNavigationIcon(link.href)
     const classes = mobile
       ? `flex min-h-12 w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium transition ${
           disabled
@@ -68,7 +68,11 @@ export function NavbarNavigationLink({
                 ? 'border-slate-200 bg-white/20 text-white shadow-sm'
                 : 'border-slate-700 bg-white/10 text-white/90 shadow-sm group-hover:border-amber-200/50 group-hover:bg-white/15 group-hover:text-amber-100'
             }`}>
-              <Icon className="h-4 w-4" strokeWidth={1.7} aria-hidden="true" />
+              {createElement(navigationIcon, {
+                className: 'h-4 w-4',
+                strokeWidth: 1.7,
+                'aria-hidden': true,
+              })}
               {disabled && (
                 <span className="absolute left-[50%] -top-1 translate-[-50%] z-10 whitespace-nowrap rounded-t-xl rounded-br-xl border border-slate-200 bg-[#e5e7eb] px-1.5 py-0.5 cursor-default uppercase text-[#333333] shadow-sm text-xs font-semibold tracking-wide leading-5">
                   {comingSoonLabel}
@@ -165,7 +169,7 @@ export function NavbarNavigationLink({
           >
             {link.children.map((child) => {
               const childActive = pathname === child.href
-              const ChildIcon = getNavigationIcon(child.href)
+              const childIcon = getNavigationIcon(child.href)
               return (
                 <Link
                   key={child.href}
@@ -178,7 +182,11 @@ export function NavbarNavigationLink({
                       : 'text-white/85 hover:bg-white/10 hover:text-amber-100'
                   }`}
                 >
-                  <ChildIcon className="mr-3 h-4 w-4 shrink-0" strokeWidth={1.7} aria-hidden="true" />
+                  {createElement(childIcon, {
+                    className: 'mr-3 h-4 w-4 shrink-0',
+                    strokeWidth: 1.7,
+                    'aria-hidden': true,
+                  })}
                   {child.label}
                 </Link>
               )
@@ -209,7 +217,7 @@ export function NavbarNavigationLink({
           <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-1.5 shadow-md">
             {link.children.map((child) => {
               const childActive = pathname === child.href
-              const ChildIcon = getNavigationIcon(child.href)
+              const childIcon = getNavigationIcon(child.href)
               return (
                 <Link
                   key={child.href}
@@ -222,7 +230,11 @@ export function NavbarNavigationLink({
                       : 'text-[#333333] hover:bg-[#18833a] hover:text-white'
                   }`}
                 >
-                  <ChildIcon className="mr-3 h-4 w-4 shrink-0" strokeWidth={1.7} aria-hidden="true" />
+                  {createElement(childIcon, {
+                    className: 'mr-3 h-4 w-4 shrink-0',
+                    strokeWidth: 1.7,
+                    'aria-hidden': true,
+                  })}
                   {child.label}
                 </Link>
               )

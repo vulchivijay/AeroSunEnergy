@@ -237,7 +237,11 @@ export function BankEmiCalculatorControls({
               ) : (
                 <>
                   <p className="text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{labels.customerType}</p>
-                  <BankEmiLoanBandSelector labels={labels} loanBand={loanBand} updateLoanBand={updateLoanBand} />
+                  <BankEmiLoanBandSelector
+                    labels={labels}
+                    isHomeLoanCustomer={isHomeLoanCustomer}
+                    updateHomeLoanCustomer={updateHomeLoanCustomer}
+                  />
                   <label htmlFor="bank-emi-home-loan-rate" className="mt-4 block text-slate-700 text-xs sm:text-sm tracking-normal leading-5">
                     {labels.homeLoanRate}
                   </label>

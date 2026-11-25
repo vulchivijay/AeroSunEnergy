@@ -1,9 +1,16 @@
 import type { useLocale } from '@/lib/LocaleContext'
-import type { LoanBand } from './BankEmiCalculatorControls'
 
 type BankEmiLabels = ReturnType<typeof useLocale>['t']['bankEmi']
 
-export function BankEmiLoanBandSelector({ labels, loanBand, updateLoanBand }: { labels: BankEmiLabels; loanBand: LoanBand; updateLoanBand: (band: LoanBand) => void }) {
+export function BankEmiLoanBandSelector({
+  labels,
+  isHomeLoanCustomer,
+  updateHomeLoanCustomer,
+}: {
+  labels: BankEmiLabels
+  isHomeLoanCustomer: boolean
+  updateHomeLoanCustomer: (isCustomer: boolean) => void
+}) {
   return (
 <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2" role="group" aria-label={labels.customerType}>
                     <button
