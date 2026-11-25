@@ -41,7 +41,7 @@ export function HybridFeatureCard({
   description,
   points,
   accent = 'emerald',
-  descriptionClassName = '',
+  descriptionClassName = 'line-clamp-3',
   imageSrc,
 }: {
   title: string

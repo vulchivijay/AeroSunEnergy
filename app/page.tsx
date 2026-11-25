@@ -198,7 +198,7 @@ export default async function Home() {
                     key={card.title}
                     title={card.title}
                     description={card.description}
-                    descriptionClassName="truncate"
+                    descriptionClassName="line-clamp-3"
                     points={[]}
                     accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
                     label={t.ui.solarSolution}
@@ -212,7 +212,7 @@ export default async function Home() {
                     key={card.title}
                     title={card.title}
                     description={card.description}
-                    descriptionClassName="truncate"
+                    descriptionClassName="line-clamp-3"
                     points={[]}
                     accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
                     label={t.ui.solarSolution}
@@ -356,7 +356,7 @@ export default async function Home() {
                   key={card.title}
                   title={card.title}
                   description={card.description}
-                  descriptionClassName="truncate"
+                  descriptionClassName="line-clamp-3"
                   points={[]}
                   accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
                   imageSrc={windSolutionImages[index]}
@@ -397,7 +397,7 @@ export default async function Home() {
                   key={card.title}
                   title={card.title}
                   description={card.description}
-                  descriptionClassName="truncate"
+                  descriptionClassName="line-clamp-3"
                   points={[]}
                   accent={getAccentOrDefault(card.accent, ['sky', 'violet', 'amber'] as const, 'emerald')}
                   imageSrc={hybridSolutionImages[index]}
@@ -477,62 +477,80 @@ const featuredBrandNames = new Set(['Adani Solar', 'Tata Power Solar', 'Waaree E
 
 const featuredBrands = sortedBrands.filter((brand) => featuredBrandNames.has(brand.name))
 
+function BrandSectionBackground() {
+  return (
+    <div className="pointer-events-none absolute inset-0 z-0 hidden min-[900px]:block" aria-hidden="true">
+      <svg
+        className="absolute inset-0 h-full w-full"
+        viewBox="0 0 1280 800"
+        preserveAspectRatio="xMidYMin slice"
+        aria-hidden="true"
+      >
+        <defs>
+          <radialGradient id="brand-sun-glow" cx="1085" cy="155" r="205" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#ffba52" stopOpacity=".64" />
+            <stop offset=".62" stopColor="#ffba52" stopOpacity=".22" />
+            <stop offset="1" stopColor="#ffc764" stopOpacity="0" />
+          </radialGradient>
+          <linearGradient id="brand-sun" x1="960" x2="1210" y1="42" y2="268" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#ffe99f" />
+            <stop offset=".58" stopColor="#ffc65e" />
+            <stop offset="1" stopColor="#ff9f35" />
+          </linearGradient>
+          <linearGradient id="brand-panel-fill" x1="850" x2="1280" y1="300" y2="78" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#061b36" />
+            <stop offset=".58" stopColor="#0d315a" />
+            <stop offset="1" stopColor="#1c4c76" />
+          </linearGradient>
+          <linearGradient id="brand-ground" x1="870" x2="1280" y1="360" y2="800" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#8cae62" stopOpacity="0" />
+            <stop offset=".42" stopColor="#8cae62" stopOpacity=".08" />
+            <stop offset="1" stopColor="#8cae62" stopOpacity=".18" />
+          </linearGradient>
+          <clipPath id="brand-panel-clip">
+            <path d="m835 302 195-124L1280 78v224z" />
+          </clipPath>
+        </defs>
+        <path d="M730 800V460c128-72 215 5 320-44 83-39 153-96 230-80v464z" fill="url(#brand-ground)" />
+        <circle cx="1085" cy="155" r="205" fill="url(#brand-sun-glow)" />
+        <circle cx="1085" cy="155" r="132" fill="url(#brand-sun)" />
+        <path d="m835 302 195-124 250-100v224z" fill="url(#brand-panel-fill)" />
+        <g clipPath="url(#brand-panel-clip)" fill="none" stroke="#a8c9df" strokeOpacity=".82" strokeWidth="2">
+          <path d="m814 295 466-56m-441 38 441-54m-416 36 416-52m-391 34 391-50m-366 32 366-48m-341 30 341-46m-316 28 316-44m-291 26 291-42" />
+          <path d="m870 330 215-177m-145 165 224-177m-153 165 233-177m-162 165 242-177m-171 165 251-177m-180 165 260-177" />
+        </g>
+        <path d="m835 302 195-124 250-100" fill="none" stroke="#dceaf2" strokeOpacity=".9" strokeWidth="2.5" />
+        <path d="M1280 78v224" fill="none" stroke="#dceaf2" strokeOpacity=".58" strokeWidth="2.5" />
+        <g>
+          <path d="M1162 312c-49-75-52-144-12-203 52 54 61 122 12 203Z" fill="#347b39" />
+          <path d="M1201 312c-8-98 17-167 78-217 20 85-6 158-78 217Z" fill="#4a913d" />
+          <path d="M1240 312c24-84 66-135 128-157-5 77-48 129-128 157Z" fill="#5c9b43" />
+          <path d="M1138 312c-65-53-94-112-81-176 70 39 96 95 81 176Z" fill="#6ba34a" />
+          <path d="M1181 312c-78-23-125-67-140-133 77 13 126 55 140 133Z" fill="#8aae4e" />
+          <path d="M1204 800c-84-159-81-314 11-464 76 168 67 322-11 464Z" fill="#4a913d" fillOpacity=".2" />
+          <path d="M1262 800c-21-185 29-329 153-438 17 166-34 314-153 438Z" fill="#5c9b43" fillOpacity=".18" />
+          <path d="M1130 800c-125-112-172-239-140-381 121 91 171 216 140 381Z" fill="#8aae4e" fillOpacity=".16" />
+        </g>
+      </svg>
+    </div>
+  )
+}
+
 function Brands({ t }: { t: Translations }) {
   const section = t.home.brandSection
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-[#f7f5f1] px-4 pt-0 pb-8 sm:px-4 lg:px-7 lg:pb-9"
+      className="relative isolate overflow-hidden bg-[#f7f5f1] px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
       aria-labelledby="brand-section-title"
     >
       <div
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.025)_1px,transparent_1px)] bg-size-[48px_48px]"
         aria-hidden="true"
       />
-      <div className="relative mx-auto max-w-7xl">
-        <div className="relative mb-3 min-h-[19rem] overflow-hidden">
-          <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-            <div className="absolute right-9 top-6 h-[17rem] w-[17rem] rounded-full bg-[radial-gradient(circle_at_35%_35%,#fff4b0_0%,#ffc74d_52%,#ff9c35_100%)]" />
-            <svg
-              className="absolute bottom-0 right-0 h-full w-[32%] min-w-[19rem]"
-              viewBox="0 0 340 164"
-              preserveAspectRatio="none"
-            >
-              <defs>
-                <linearGradient id="brand-panel-fill" x1="0" x2="1" y1="1" y2="0">
-                  <stop stopColor="#0d3157" />
-                  <stop offset="1" stopColor="#285c86" />
-                </linearGradient>
-                <clipPath id="brand-panel-clip">
-                  <path d="M0 164 340 42v122z" />
-                </clipPath>
-                <linearGradient id="brand-panel-edge" x1="0" x2="1">
-                  <stop stopColor="white" stopOpacity="0" />
-                  <stop offset=".22" stopColor="white" stopOpacity=".4" />
-                  <stop offset=".48" stopColor="white" />
-                </linearGradient>
-                <mask id="brand-panel-mask">
-                  <rect width="340" height="164" fill="url(#brand-panel-edge)" />
-                </mask>
-              </defs>
-              <g mask="url(#brand-panel-mask)">
-                <path d="M0 164 340 42v122z" fill="url(#brand-panel-fill)" />
-                <g clipPath="url(#brand-panel-clip)" fill="none" stroke="#8eb2c7" strokeOpacity=".7" strokeWidth="1.5">
-                  <path d="m-20 154 380-45M-20 126 360 81M-20 98 360 53M-20 70 360 25M-20 42 360-3" />
-                  <path d="m55 180 285-150M112 180 340 60M169 180 340 88M226 180 340 116M283 180 340 144" />
-                </g>
-                <path d="M0 164 340 42" fill="none" stroke="#d8e6e9" strokeOpacity=".7" strokeWidth="2" />
-              </g>
-              <g fill="#4a8d3c">
-                <path d="M270 164c-8-27-7-48 5-66 15 21 14 43-5 66Z" />
-                <path d="M289 164c-1-35 7-56 24-72 7 28-1 52-24 72Z" />
-                <path d="M311 164c8-30 20-48 39-58 0 28-13 48-39 58Z" />
-                <path d="M258 164c-20-22-29-42-25-63 23 14 32 34 25 63Z" />
-                <path d="M328 164c15-20 31-31 50-33-8 22-25 34-50 33Z" />
-              </g>
-            </svg>
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,#f7f5f1_0%,#f7f5f1_62%,rgba(247,245,241,.35)_74%,transparent_100%)] backdrop-blur-[2px]" />
-          </div>
+      <BrandSectionBackground />
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <div className="relative z-10 mb-3 min-h-[19rem] overflow-hidden">
           <div className="relative z-10 max-w-5xl pt-10 pl-2">
             <p className="inline-flex items-center gap-3 rounded-full bg-[#ffe89a] px-4 py-2 text-[#17472c] text-sm font-bold uppercase tracking-[0.06em] leading-5 shadow-sm lg:gap-4 lg:px-5 lg:text-lg">
               <span className="h-4 w-4 rounded-full bg-[#14843c]" aria-hidden="true" />
@@ -1013,7 +1031,7 @@ function SolarJourneySection({ t }: { t: Translations }) {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-[#06111d] bg-cover bg-center bg-no-repeat px-4 py-10 text-white sm:px-6 sm:py-14 lg:px-10 lg:py-16"
+      className="relative isolate overflow-x-clip bg-[#06111d] bg-cover bg-center bg-no-repeat px-4 py-10 text-white sm:px-6 sm:py-14 lg:px-10 lg:py-16"
       style={{
         backgroundImage:
           "linear-gradient(110deg, rgba(7, 19, 33, 0.58), rgba(6, 17, 29, 0.62) 58%, rgba(3, 11, 19, 0.68)), url('/images/slider/slider-3.webp')",
@@ -1023,9 +1041,9 @@ function SolarJourneySection({ t }: { t: Translations }) {
       <div className="relative mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-[minmax(17rem,0.78fr)_minmax(0,1.22fr)] lg:items-stretch lg:gap-8">
           <div
-            className="relative isolate flex min-h-[25rem] flex-col justify-start overflow-hidden sm:min-h-[27rem] lg:min-h-[43rem]"
+            className="relative isolate flex min-h-[25rem] flex-col justify-start sm:min-h-[27rem] lg:min-h-[43rem]"
           >
-            <div className="relative z-10 w-full rounded-2xl border border-white/20 bg-[#06111d]/45 p-5 shadow-[0_24px_70px_rgba(0,0,0,0.34)] backdrop-blur-xl sm:p-6">
+            <div className="relative z-10 w-full rounded-2xl border border-white/20 bg-[#06111d]/45 p-5 shadow-[0_24px_70px_rgba(0,0,0,0.34)] backdrop-blur-xl sm:p-6 lg:sticky lg:top-36 lg:self-start">
               <p className="inline-flex w-fit items-center rounded-md border border-amber-500 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-amber-400 sm:text-xs">
                 {content.eyebrow}
               </p>
