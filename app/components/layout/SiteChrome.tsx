@@ -698,12 +698,7 @@ function NetworkStatus() {
 function Notifications() {
   const { t } = useLocale()
   const { text: notificationText, highlight: notificationBoldText, tail: notificationEndText } = t.notifications
-  const [isExpanded, setIsExpanded] = useState(true)
-
-  useEffect(() => {
-    const timeout = window.setTimeout(() => setIsExpanded(false), 10_000)
-    return () => window.clearTimeout(timeout)
-  }, [])
+  const [isExpanded, setIsExpanded] = useState(false)
 
   return (
     <div className=" bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] px-3 py-2 text-slate-800 shadow-sm sm:px-5">
