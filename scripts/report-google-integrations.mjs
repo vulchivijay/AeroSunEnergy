@@ -12,18 +12,24 @@ function report(label, configured) {
 
 console.log("Production build environment status (values are not printed):");
 console.log("Google integrations:");
-report("_GOOGLE_SITE_VERIFICATION", isConfigured("_GOOGLE_SITE_VERIFICATION"));
 report(
-  "Google Analytics measurement ID (_NEXT_PUBLIC_GA_MEASUREMENT_ID, _NEXT_PUBLIC_GA_STREAM_ID, or GA_MEASUREMENT_ID)",
+  "_NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION",
+  isConfigured("_NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION"),
+);
+report(
+  "Google Analytics measurement ID (_NEXT_PUBLIC_GA_MEASUREMENT_ID or _NEXT_PUBLIC_GA_STREAM_ID)",
   isConfigured(
     "_NEXT_PUBLIC_GA_MEASUREMENT_ID",
     "_NEXT_PUBLIC_GA_STREAM_ID",
-    "GA_MEASUREMENT_ID",
   ),
 );
 report(
-  "Google Tag Manager container ID (_NEXT_PUBLIC_GTM_ID or GTM_ID)",
-  isConfigured("_NEXT_PUBLIC_GTM_ID", "GTM_ID"),
+  "Google Tag Manager container ID (_NEXT_PUBLIC_GTM_ID)",
+  isConfigured("_NEXT_PUBLIC_GTM_ID"),
+);
+report(
+  "Google Ads tag ID (_NEXT_PUBLIC_GOOGLE_ADS_ID)",
+  isConfigured("_NEXT_PUBLIC_GOOGLE_ADS_ID"),
 );
 report("BING_SITE_VERIFICATION", isConfigured("BING_SITE_VERIFICATION"));
 console.log("MongoDB application connection:");

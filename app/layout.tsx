@@ -34,13 +34,13 @@ const orbitron = Orbitron({
   fallback: ["monospace"],
 });
 
-const GTM_ID = process.env._NEXT_PUBLIC_GTM_ID || process.env.GTM_ID;
+const GTM_ID = process.env._NEXT_PUBLIC_GTM_ID;
+const GOOGLE_ADS_ID = process.env._NEXT_PUBLIC_GOOGLE_ADS_ID;
 const GA_MEASUREMENT_ID =
   process.env._NEXT_PUBLIC_GA_MEASUREMENT_ID ||
-  process.env._NEXT_PUBLIC_GA_STREAM_ID ||
-  process.env.GA_MEASUREMENT_ID;
-const _GOOGLE_SITE_VERIFICATION =
-  process.env._GOOGLE_SITE_VERIFICATION || undefined;
+  process.env._NEXT_PUBLIC_GA_STREAM_ID;
+const GOOGLE_SITE_VERIFICATION =
+  process.env._NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined;
 const BING_SITE_VERIFICATION =
   process.env.BING_SITE_VERIFICATION || "CFCE648996D804079C4F28B5C09CE9D3";
 
@@ -160,7 +160,7 @@ export const metadata: Metadata = {
     images: ["https://aerosunenergy.in/images/og-image.webp"],
   },
   verification: {
-    google: _GOOGLE_SITE_VERIFICATION,
+    google: GOOGLE_SITE_VERIFICATION,
     other: {
       "msvalidate.01": BING_SITE_VERIFICATION,
     },
@@ -182,7 +182,11 @@ export default function RootLayout({
         className={`${roboto.variable} ${poppins.variable} ${orbitron.variable} bg-white text-gray-900 transition-colors duration-150`}
       >
         {/* Keep the body free of the dark class while dark mode is temporarily paused. */}
-        <SiteChrome gtmId={GTM_ID} gaMeasurementId={GA_MEASUREMENT_ID}>
+        <SiteChrome
+          gtmId={GTM_ID}
+          googleAdsId={GOOGLE_ADS_ID}
+          gaMeasurementId={GA_MEASUREMENT_ID}
+        >
           {children}
         </SiteChrome>
       </body>
