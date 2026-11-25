@@ -1,247 +1,25 @@
 'use client'
 
-import { Fragment, useEffect, useState, type FormEvent } from 'react'
-import { Database, FileText, MailPlus, Users, type LucideIcon } from 'lucide-react'
+import { useEffect, useState, type FormEvent } from 'react'
 import { useToast } from '@/app/components/ui/ToastContext'
-import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
-
-type DashboardRole = 'admin' | 'operator' | 'monitor'
-type DashboardRow = Record<string, unknown> & { id?: string }
-type DashboardResponse = {
-  collection: string
-  page: number
-  pageSize: number
-  total: number
-  role: DashboardRole
-  rows: DashboardRow[]
-}
-type CollectionsResponse = {
-  collections: string[]
-  role: DashboardRole
-}
-
-const formTypeOptions = [
-  ['all', 'All form types'],
-  ['contact', 'Contact'],
-  ['newsletter', 'Newsletter'],
-  ['solar_assessment', 'Solar assessment'],
-  ['customer_enquiry', 'Customer enquiry'],
-  ['warranty_policy', 'Warranty'],
-  ['purchase_order', 'Purchase order'],
-  ['invoice_receipt', 'Invoice / receipt'],
-  ['customer_agreement', 'Customer agreement'],
-  ['installation_checklist', 'Installation checklist'],
-] as const
-const formSubmissionFields: Record<string, string[]> = {
-  contact: ['fullName', 'email', 'phone', 'solarNeed', 'state', 'monthlyAverageElectricityBill', 'interestedInFinancing', 'projectType', 'message'],
-  newsletter: ['email'],
-  solar_assessment: ['name', 'phone', 'propertyType', 'monthlyBill', 'pinCode'],
-  customer_enquiry: ['customer_name', 'customer_email', 'mobile_number', 'project_name', 'price_total'],
-  warranty_policy: ['customerName', 'email', 'phone', 'projectName', 'productLine'],
-  purchase_order: ['customerName', 'poNumber', 'projectTitle', 'supplierName', 'totalValue'],
-  invoice_receipt: ['customerName', 'invoiceNumber', 'projectName', 'amount', 'paymentMode'],
-  customer_agreement: ['customerName', 'projectReference', 'projectType', 'systemCapacity', 'quotedAmount'],
-  installation_checklist: ['customerName', 'companyName', 'projectName', 'siteLocation', 'installationDate', 'checklistStatus'],
-}
-const collectionIcons: Record<string, LucideIcon> = {
-  auth_users: Users,
-  website_form_submissions: MailPlus,
-  solar_referrals: FileText,
-}
-
-function isRecord(value: unknown): value is Record<string, unknown> {
-  return typeof value === 'object' && value !== null && !Array.isArray(value)
-}
-
-function isDashboardRole(value: unknown): value is DashboardRole {
-  return value === 'admin' || value === 'operator' || value === 'monitor'
-}
-
-function isCollectionsResponse(value: unknown): value is CollectionsResponse {
-  return isRecord(value) &&
-    Array.isArray(value.collections) &&
-    value.collections.every((collection) => typeof collection === 'string') &&
-    isDashboardRole(value.role)
-}
-
-function isDashboardResponse(value: unknown): value is DashboardResponse {
-  return isRecord(value) &&
-    typeof value.collection === 'string' &&
-    typeof value.page === 'number' &&
-    typeof value.pageSize === 'number' &&
-    typeof value.total === 'number' &&
-    isDashboardRole(value.role) &&
-    Array.isArray(value.rows) &&
-    value.rows.every(isRecord)
-}
-
-function formatValue(value: unknown): string {
-  if (value === null || value === undefined || value === '') return '—'
-  if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') return String(value)
-  if (Array.isArray(value)) return value.map(formatValue).join(', ')
-  return JSON.stringify(value) ?? String(value)
-}
-
-function renderNumericValue(value: unknown) {
-  if (typeof value === 'number') return <DigitalNumber value={value} />
-  if (
-    typeof value === 'string' &&
-    /^[\s₹$+-]*\d[\d,. /:-]*(?:[a-zA-Z²/]+)?\s*%?$/.test(value)
-  ) {
-    return <DigitalNumber value={value} />
-  }
-  return formatValue(value)
-}
-
-function formatFieldLabel(field: string): string {
-  return field
-    .replace(/([a-z])([A-Z])/g, '$1 $2')
-    .replace(/_/g, ' ')
-    .replace(/\b\w/g, (letter) => letter.toUpperCase())
-}
-
-function formatSubmissionDate(value: unknown): string {
-  if (typeof value !== 'string') return formatValue(value)
-  const dateOnly = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value)
-  if (dateOnly) return `${dateOnly[3]}-${dateOnly[2]}-${dateOnly[1]}`
-
-  const date = new Date(value)
-  if (Number.isNaN(date.getTime())) return value
-  const day = String(date.getDate()).padStart(2, '0')
-  const month = String(date.getMonth() + 1).padStart(2, '0')
-  return `${day}-${month}-${date.getFullYear()}`
-}
-
-function renderSubmissionDetails(row: DashboardRow) {
-  const payload = row.payload
-  if (!isRecord(payload)) return '—'
-  const fields = formSubmissionFields[String(row.form_type)] ?? []
-  const details = fields
-    .filter((field) => payload[field] !== undefined && payload[field] !== null && payload[field] !== '')
-    .map((field) => [
-      field,
-      /date/i.test(field) ? formatSubmissionDate(payload[field]) : payload[field],
-    ] as const)
-
-  if (details.length === 0) return '—'
-
-  return (
-    <dl className="grid gap-x-4 gap-y-1 sm:grid-cols-2">
-      {details.map(([field, value]) => (
-        <div key={field} className="min-w-0">
-          <dt className="inline text-xs font-semibold text-slate-500 tracking-normal">{formatFieldLabel(field)}: </dt>
-          <dd className={`inline text-sm text-slate-800 ${field === 'message' ? 'line-clamp-2' : 'break-words'}`}>
-            {renderNumericValue(value)}
-          </dd>
-        </div>
-      ))}
-    </dl>
-  )
-}
-
-function formatCollectionName(collection: string): string {
-  if (collection === 'website_form_submissions') return 'Form submissions'
-  return collection.replace(/_/g, ' ')
-}
-
-function getCollectionIcon(collection: string): LucideIcon {
-  return collectionIcons[collection] ?? Database
-}
-
-function editableJson(row: DashboardRow): string {
-  const fields = Object.fromEntries(Object.entries(row).filter(([key]) => key !== 'id'))
-  return JSON.stringify(fields, null, 2)
-}
-
-async function getApiError(response: Response): Promise<string> {
-  try {
-    const body: unknown = await response.json()
-    if (isRecord(body) && typeof body.error === 'string') return body.error.replace(/_/g, ' ')
-  } catch {
-    return `Request failed (${response.status}).`
-  }
-  return `Request failed (${response.status}).`
-}
-
-type UserAccessManagerProps = {
-  row: DashboardRow
-  actorRole: DashboardRole
-  onSaved: () => void
-}
-
-function UserAccessManager({ row, actorRole, onSaved }: UserAccessManagerProps) {
-  const toast = useToast()
-  const [role, setRole] = useState<DashboardRole>(isDashboardRole(row.role) ? row.role : 'monitor')
-  const [approved, setApproved] = useState(row.approved === true)
-  const [saving, setSaving] = useState(false)
-  const isAdminAccount = row.role === 'admin'
-  const disabled = actorRole === 'operator' && isAdminAccount
-
-  async function saveAccess() {
-    if (typeof row.id !== 'string') {
-      toast.error('This account has no supported record ID.')
-      return
-    }
-
-    setSaving(true)
-    try {
-      const response = await fetch('/api/dashboard', {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'manage_user', id: row.id, role, approved }),
-      })
-      if (!response.ok) throw new Error(await getApiError(response))
-      toast.success('Account access updated.')
-      onSaved()
-    } catch (saveError) {
-      toast.error(saveError instanceof Error ? saveError.message : 'Account access could not be updated.')
-    } finally {
-      setSaving(false)
-    }
-  }
-
-  return (
-    <div className="mt-4 rounded-xl border border-slate-200 bg-emerald-50/50 p-3">
-      <p className="uppercase text-emerald-900    text-xs font-semibold tracking-wide leading-5">Account access</p>
-      <div className="mt-2 flex flex-wrap items-center gap-3">
-        <label className="flex items-center gap-2 text-slate-700 text-xs sm:text-sm font-semibold tracking-normal leading-5">
-          Role
-          <select
-            value={role}
-            disabled={disabled || saving}
-            onChange={(event) => {
-              if (isDashboardRole(event.target.value)) setRole(event.target.value)
-            }}
-            className="min-h-9 rounded-lg border border-slate-300 bg-white px-2 text-sm disabled:opacity-60"
-          >
-            <option value="monitor">Monitor</option>
-            <option value="operator">Operator</option>
-            {actorRole === 'admin' && <option value="admin">Admin</option>}
-          </select>
-        </label>
-        <label className="flex items-center gap-2 text-slate-700 text-xs sm:text-sm font-semibold tracking-normal leading-5">
-          <input
-            type="checkbox"
-            checked={approved}
-            disabled={disabled || saving}
-            onChange={(event) => setApproved(event.target.checked)}
-            className="size-4 accent-emerald-800"
-          />
-          Approved to sign in
-        </label>
-        <button
-          type="button"
-          disabled={disabled || saving}
-          onClick={() => void saveAccess()}
-          className="min-h-9 rounded-full bg-emerald-800 px-4 text-xs font-bold text-white hover:bg-emerald-900 disabled:cursor-not-allowed disabled:opacity-50 tracking-normal"
-        >
-          {saving ? 'Saving…' : 'Save access'}
-        </button>
-      </div>
-      {disabled && <p className="mt-2 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">Only an admin can change an admin account.</p>}
-    </div>
-  )
-}
+import { DashboardRecordsTable } from './DashboardRecordsTable'
+import { DashboardCollectionSidebar } from './DashboardCollectionSidebar'
+import { DashboardCollectionOverview } from './DashboardCollectionOverview'
+import {
+  editableJson,
+  formatCollectionName,
+  formatSubmissionDate,
+  formatValue,
+  formTypeOptions,
+  getApiError,
+  isCollectionsResponse,
+  isDashboardResponse,
+  isRecord,
+  renderNumericValue,
+  renderSubmissionDetails,
+  type DashboardResponse,
+  type DashboardRole,
+} from './DashboardDataUtils'
 
 export default function DashboardDataTabs() {
   const toast = useToast()
@@ -401,104 +179,31 @@ export default function DashboardDataTabs() {
 
   return (
     <section className="mt-6 grid overflow-hidden rounded-xl border border-slate-200 bg-white/25 shadow-sm backdrop-blur-xl lg:grid-cols-[230px_minmax(0,1fr)] ">
-      <aside className="border-b border-slate-200 bg-white/20 p-4 lg:border-b-0 lg:border-r lg:p-5">
-        <p className="px-2  uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">Workspace</p>
-        <nav className="mt-3 flex gap-2 overflow-x-auto pb-1 lg:flex-col lg:overflow-visible" aria-label="Database collections">
-          {collections.map((collection) => {
-            const Icon = getCollectionIcon(collection)
-            return (
-              <button
-                key={collection}
-                type="button"
-                aria-pressed={activeCollection === collection}
-                onClick={() => chooseCollection(collection)}
-                className={`flex min-h-11 min-w-fit items-center rounded-lg border px-3 text-left text-sm font-bold capitalize transition lg:w-full ${
-                  activeCollection === collection
-                    ? 'border-emerald-200 bg-emerald-50 text-emerald-900'
-                    : 'border-transparent text-slate-600 hover:bg-white hover:text-slate-950'
-                } tracking-normal`}
-              >
-                <Icon className="mr-2 h-4 w-4 shrink-0" aria-hidden="true" />
-                {formatCollectionName(collection)}
-              </button>
-            )
-          })}
-        </nav>
-        <div className="mt-5 hidden rounded-xl border border-slate-200 bg-white/55 p-3 lg:block">
-          <p className=" uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">Access level</p>
-          <p className="mt-1 capitalize text-slate-900      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{role}</p>
-          <p className="mt-1 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-            {role === 'admin' ? 'Full record management' : role === 'operator' ? 'Business record management' : 'Read-only access'}
-          </p>
-        </div>
-      </aside>
+      <DashboardCollectionSidebar
+        collections={collections}
+        activeCollection={activeCollection}
+        role={role}
+        onChooseCollection={chooseCollection}
+      />
 
       <div className="min-w-0 p-4 sm:p-6 lg:p-8 " aria-live="polite">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 className=" capitalize text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{formatCollectionName(activeCollection || 'Collections')}</h2>
-            <p className="mt-1 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-              {role === 'admin'
-                ? 'Admin access · manage collection records and account roles.'
-                : role === 'operator'
-                  ? 'Operator access · manage business records and approved account roles.'
-                  : 'Monitor access · read-only view of collection records.'}
-            </p>
-          </div>
-          <div className="flex flex-wrap items-end gap-3">
-            {activeCollection === 'website_form_submissions' && (
-              <label className="grid gap-1.5 uppercase text-slate-500 text-xs sm:text-sm font-semibold tracking-normal leading-5">
-                Filter by form
-                <select
-                  value={formType}
-                  onChange={(event) => {
-                    setFormType(event.target.value)
-                    setPage(1)
-                  }}
-                  className="min-h-10 rounded-lg border border-slate-300 bg-white px-3 text-sm font-medium normal-case tracking-normal text-slate-800 outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
-                >
-                  {formTypeOptions.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
-                </select>
-              </label>
-            )}
-            {canCreateRecords && (
-              <button
-                type="button"
-                onClick={() => {
-                  setShowCreateForm((current) => !current)
-                  setEditingId(null)
-                }}
-                className="min-h-10 rounded-full bg-emerald-800 px-4 text-sm font-bold text-white hover:bg-emerald-900 tracking-normal"
-              >
-                {showCreateForm ? 'Cancel' : 'New record'}
-              </button>
-            )}
-          </div>
-        </div>
-
-        <div className="mt-6 grid gap-3 sm:grid-cols-3 ">
-          <article className="rounded-xl border border-slate-200 bg-white/45 p-4 ">
-            <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">Matching records</p>
-            <p className="mt-2 text-slate-950 text-lg font-semibold tracking-normal leading-snug tabular-nums">
-              <DigitalNumber value={data ? data.total.toLocaleString() : '—'} />
-            </p>
-            <p className="mt-1 truncate text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{formatCollectionName(activeCollection || 'Collections')}</p>
-          </article>
-          <article className="rounded-xl border border-slate-200 bg-white/45 p-4 ">
-            <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">Visible on this page</p>
-            <p className="mt-2 text-slate-950 text-lg font-semibold tracking-normal leading-snug tabular-nums">
-              <DigitalNumber value={data ? data.rows.length : '—'} />
-            </p>
-            <p className="mt-1 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">Records currently loaded</p>
-          </article>
-          <article className="rounded-xl border border-slate-200 bg-white/45 p-4 ">
-            <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">Page</p>
-            <p className="mt-2 text-slate-950 text-lg font-semibold tracking-normal leading-snug tabular-nums">
-              <DigitalNumber value={data ? `${data.page} / ${pageCount}` : '—'} />
-            </p>
-            <p className="mt-1 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">Pagination position</p>
-          </article>
-        </div>
+        <DashboardCollectionOverview
+          activeCollection={activeCollection}
+          role={role}
+          data={data}
+          pageCount={pageCount}
+          formType={formType}
+          canCreateRecords={canCreateRecords}
+          showCreateForm={showCreateForm}
+          onFormTypeChange={(value) => {
+            setFormType(value)
+            setPage(1)
+          }}
+          onToggleCreateForm={() => {
+            setShowCreateForm((current) => !current)
+            setEditingId(null)
+          }}
+        />
 
         {canCreateRecords && showCreateForm && (
           <form onSubmit={(event) => void submitRecord(event, 'create')} className="mt-5 rounded-xl border border-emerald-200 bg-emerald-50/40 p-4">
@@ -536,130 +241,45 @@ export default function DashboardDataTabs() {
             <p className="mt-1 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">Database collections will appear here when available.</p>
           </div>
         ) : data?.rows.length ? (
-          <>
-            <div className="mt-6 overflow-x-auto overscroll-x-contain rounded-xl border border-slate-200" tabIndex={0} aria-label={`${formatCollectionName(activeCollection)} records table`}>
-              <table className="min-w-max w-full text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
-                <thead className="bg-amber-700 uppercase text-white text-xs font-semibold tracking-wide leading-5">
-                  <tr>
-                    {columns.map((column) => (
-                      <th key={column} className="whitespace-nowrap px-4 py-3 font-bold tracking-normal">
-                        {isFormSubmissions && column === 'payload' ? 'Submitted details' : column.replace(/_/g, ' ')}
-                      </th>
-                    ))}
-                    {hasActions && <th className="whitespace-nowrap px-4 py-3 font-bold tracking-normal">Actions</th>}
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-emerald-100">
-                  {data.rows.map((row, index) => {
-                const id = typeof row.id === 'string' ? row.id : ''
-                const isEditing = id !== '' && editingId === id
-                return (
-                  <Fragment key={id || `${data.collection}-${index}`}>
-                    <tr className="align-top text-slate-700 odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
-                      {columns.map((column) => (
-                        <td key={column} className={`${column === 'payload' ? 'min-w-[20rem] max-w-[34rem]' : 'min-w-[8rem] max-w-[28rem]'} whitespace-normal px-4 py-3`}>
-                          <div className="break-words">
-                            {column === 'payload'
-                              ? isFormSubmissions
-                                ? renderSubmissionDetails(row)
-                                : renderNumericValue(row[column])
-                              : column === 'created_at' || column === 'updated_at'
-                                ? renderNumericValue(formatSubmissionDate(row[column]))
-                                : isFormSubmissions && column === 'form_type'
-                                  ? formTypeOptions.find(([value]) => value === row[column])?.[1] ?? formatValue(row[column])
-                                  : renderNumericValue(row[column])}
-                          </div>
-                        </td>
-                      ))}
-                      {hasActions && (
-                        <td className="min-w-[12rem] px-4 py-3">
-                          <div className="flex flex-wrap gap-2">
-                            {canEditRecords && id && (
-                              <button
-                                type="button"
-                                onClick={() => {
-                                  setEditingId(isEditing ? null : id)
-                                  setEditJson(editableJson(row))
-                                }}
-                                className="min-h-9 rounded-full border border-slate-300 px-3 text-xs font-bold text-slate-700 hover:bg-slate-50 tracking-normal"
-                              >
-                                {isEditing ? 'Cancel edit' : 'Edit'}
-                              </button>
-                            )}
-                            {canDeleteRecords && id && (
-                              <button
-                                type="button"
-                                onClick={() => void deleteRecord(id)}
-                                className="min-h-9 rounded-full border border-rose-200 px-3 text-xs font-bold text-rose-700 hover:bg-rose-50 tracking-normal"
-                              >
-                                Delete
-                              </button>
-                            )}
-                          </div>
-                          {hasUserAccessControls && (
-                            <UserAccessManager
-                              key={`${id}-${String(row.role)}-${String(row.approved)}`}
-                              row={row}
-                              actorRole={role}
-                              onSaved={() => setRetryCount((current) => current + 1)}
-                            />
-                          )}
-                        </td>
-                      )}
-                    </tr>
-                    {isEditing && (
-                      <tr className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
-                        <td colSpan={columns.length + Number(hasActions)} className="p-4">
-                          <form onSubmit={(event) => void submitRecord(event, 'update', id)} className="max-w-4xl">
-                            <label className="grid gap-2 text-slate-800 text-xs sm:text-sm font-semibold tracking-normal leading-5">
-                              Update record (JSON)
-                              <textarea
-                                value={editJson}
-                                onChange={(event) => setEditJson(event.target.value)}
-                                rows={8}
-                                spellCheck={false}
-                                placeholder="Enter the updated JSON object."
-                                className="w-full rounded-lg border border-slate-300 bg-white p-3 font-mono text-xs text-slate-800 outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15 tabular-nums"
-                              />
-                            </label>
-                            <button type="submit" disabled={savingRecord} className="mt-3 min-h-10 rounded-full bg-emerald-800 px-4 text-sm font-bold text-white hover:bg-emerald-900 disabled:opacity-50 tracking-normal">
-                              {savingRecord ? 'Saving…' : 'Save changes'}
-                            </button>
-                          </form>
-                        </td>
-                      </tr>
-                    )}
-                  </Fragment>
-                )
-              })}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="mt-4 flex flex-col gap-3 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between ">
-              <p>
-                <DigitalNumber value={`${data.total.toLocaleString()} records · Page ${data.page} of ${pageCount}`} />
-              </p>
-              <div className="flex gap-2">
-                <button
-                  type="button"
-                  disabled={data.page <= 1 || loading}
-                  onClick={() => setPage((current) => Math.max(1, current - 1))}
-                  className="min-h-10 rounded-full border border-slate-300 px-4 font-semibold text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-45 tracking-normal"
-                >
-                  Previous
-                </button>
-                <button
-                  type="button"
-                  disabled={data.page >= pageCount || loading}
-                  onClick={() => setPage((current) => current + 1)}
-                  className="min-h-10 rounded-full border border-slate-300 px-4 font-semibold text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-45 tracking-normal"
-                >
-                  Next
-                </button>
-              </div>
-            </div>
-          </>
+          <DashboardRecordsTable
+            collection={activeCollection}
+            collectionLabel={formatCollectionName(activeCollection)}
+            rows={data.rows}
+            columns={columns}
+            isFormSubmissions={isFormSubmissions}
+            hasActions={hasActions}
+            canEditRecords={canEditRecords}
+            canDeleteRecords={canDeleteRecords}
+            hasUserAccessControls={hasUserAccessControls}
+            role={role}
+            editingId={editingId}
+            editJson={editJson}
+            savingRecord={savingRecord}
+            pageCount={pageCount}
+            pageNumber={data.page}
+            total={data.total}
+            loading={loading}
+            renderCell={(row, column) =>
+              column === 'payload'
+                ? isFormSubmissions
+                  ? renderSubmissionDetails(row)
+                  : renderNumericValue(row[column])
+                : column === 'created_at' || column === 'updated_at'
+                  ? renderNumericValue(formatSubmissionDate(row[column]))
+                  : isFormSubmissions && column === 'form_type'
+                    ? formTypeOptions.find(([value]) => value === row[column])?.[1] ?? formatValue(row[column])
+                    : renderNumericValue(row[column])
+            }
+            onToggleEdit={(row, id, isEditing) => {
+              setEditingId(isEditing ? null : id)
+              setEditJson(editableJson(row))
+            }}
+            onDeleteRecord={(id) => void deleteRecord(id)}
+            onEditJsonChange={setEditJson}
+            onSaveRecord={(event, mode, id) => void submitRecord(event, mode, id)}
+            onAccessSaved={() => setRetryCount((current) => current + 1)}
+            onPageChange={setPage}
+          />
         ) : (
           <div className="mt-6 rounded-xl border border-dashed border-slate-300 bg-slate-50 px-5 py-12 text-center">
             <p className="text-slate-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">No records found</p>

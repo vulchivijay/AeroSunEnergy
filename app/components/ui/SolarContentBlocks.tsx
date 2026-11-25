@@ -1,23 +1,6 @@
 import type { ReactNode } from 'react'
-import Image from 'next/image'
-import {
-  ArrowDown,
-  ArrowLeftRight,
-  BadgeCheck,
-  BadgeIndianRupee,
-  BatteryCharging,
-  CalendarDays,
-  Cloud,
-  Coins,
-  House,
-  Leaf,
-  PanelsTopLeft,
-  Sun,
-} from 'lucide-react'
-
 import {
   ContentBenefitCard,
-  ContentIllustratedBenefitCard,
   contentAccentText,
   contentBenefitBorders,
   contentCheckBackgrounds,
@@ -29,18 +12,15 @@ import {
 
 export type AccentTone = ContentAccent
 
+export { RooftopSolarContentBlock, solarSystemImages } from './RooftopSolarContentBlock'
+export { SolarBenefitCard } from './SolarBenefitCard'
+
 export const solarOfferingImages = [
   '/images/slider/slider-1.webp',
   '/images/slider/slider-2.webp',
   '/images/slider/slider-5.webp',
   '/images/slider/slider-4.webp',
   '/images/slider/slider-6.webp',
-  '/images/slider/slider-3.webp',
-] as const
-
-export const solarSystemImages = [
-  '/images/slider/slider-1.webp',
-  '/images/slider/slider-2.webp',
   '/images/slider/slider-3.webp',
 ] as const
 
@@ -55,99 +35,6 @@ export const solarOfferingAccents: AccentTone[] = [
 
 export const solarSystemAccents: AccentTone[] = ['emerald', 'amber', 'violet']
 
-const rooftopBenefitIcons = [Coins, CalendarDays, BadgeCheck, Leaf, House, ArrowLeftRight] as const
-const rooftopBenefitAccents = [
-  { border: 'border-l-[#3472ff]', number: 'bg-blue-100 text-blue-900', icon: 'text-[#10235a]' },
-  { border: 'border-l-[#b69aff]', number: 'bg-violet-100 text-violet-900', icon: 'text-[#10235a]' },
-  { border: 'border-l-[#b69aff]', number: 'bg-violet-100 text-violet-900', icon: 'text-[#10235a]' },
-  { border: 'border-l-[#3472ff]', number: 'bg-blue-100 text-blue-900', icon: 'text-[#10235a]' },
-  { border: 'border-l-[#3472ff]', number: 'bg-blue-100 text-blue-900', icon: 'text-[#10235a]' },
-  { border: 'border-l-[#b69aff]', number: 'bg-violet-100 text-violet-900', icon: 'text-[#10235a]' },
-] as const
-
-type RooftopSolarBenefit = {
-  title: string
-  description: string
-}
-
-export function RooftopSolarContentBlock({
-  eyebrow,
-  title,
-  description,
-  benefits,
-}: {
-  eyebrow: string
-  title: string
-  description: string
-  benefits: RooftopSolarBenefit[]
-}) {
-  return (
-    <div className="grid gap-6 bg-[#fffdfa] lg:grid-cols-[minmax(17rem,0.44fr)_minmax(0,1fr)] lg:gap-8">
-      <figure className="relative min-h-[26rem] overflow-hidden rounded-[1.5rem] bg-[#dbe6ff] sm:min-h-[32rem] lg:min-h-[39rem]">
-        <Image
-          src={solarSystemImages[0]}
-          alt=""
-          fill
-          sizes="(min-width: 1280px) 28vw, (min-width: 640px) 50vw, 100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#12224e]/25 via-transparent to-white/10" aria-hidden="true" />
-        <div className="absolute left-4 right-4 top-5 flex items-center justify-center gap-3 rounded-full border border-white/80 bg-white/90 px-3 py-3 text-[#10235a] shadow-lg shadow-slate-900/10 backdrop-blur-sm sm:left-6 sm:right-6 sm:gap-4 sm:px-5">
-          <div className="flex shrink-0 items-center gap-2">
-            <Sun className="h-7 w-7 text-amber-500" strokeWidth={1.7} aria-hidden="true" />
-            <svg viewBox="0 0 36 28" fill="none" className="h-7 w-9 text-[#10235a]" aria-hidden="true">
-              <path d="M3 11h30l-3 13H6L3 11Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-              <path d="M10 12 9 23m9-11v11m9-11 1 11M5 17h26" stroke="currentColor" strokeWidth="1.5" />
-            </svg>
-          </div>
-          <span className="h-8 w-px shrink-0 bg-slate-300" aria-hidden="true" />
-          <span className="min-w-0 text-center text-xs font-bold uppercase tracking-[0.16em] sm:text-sm sm:tracking-[0.2em]">
-            {eyebrow}
-          </span>
-        </div>
-      </figure>
-
-      <div className="flex flex-col justify-center py-2 sm:py-4 lg:py-6">
-        <h3 className="text-2xl font-semibold leading-tight !tracking-tight text-[#0b1c50] sm:text-3xl leading-snug">
-          {title}
-        </h3>
-        <div className="mt-3 h-1.5 w-24 rounded-full bg-amber-400" aria-hidden="true" />
-        <p className="mt-4 max-w-4xl text-sm leading-6 text-[#1d2b50] sm:text-base sm:leading-7">
-          {description}
-        </p>
-
-        <div className="mt-7 grid gap-4 sm:grid-cols-2">
-          {benefits.map((benefit, index) => {
-            const Icon = rooftopBenefitIcons[index % rooftopBenefitIcons.length]
-            const accent = rooftopBenefitAccents[index % rooftopBenefitAccents.length]
-
-            return (
-              <article
-                key={benefit.title}
-                className={`flex min-h-[8.25rem] items-center gap-3 rounded-2xl border border-slate-200 ${accent.border} border-l-4 bg-white/80 px-3 py-4 shadow-sm sm:gap-4 sm:px-4`}
-              >
-                <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold ${accent.number}`} aria-hidden="true">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <span className="h-11 w-px shrink-0 bg-slate-300" aria-hidden="true" />
-                <Icon className={`h-9 w-9 shrink-0 ${accent.icon}`} strokeWidth={1.7} aria-hidden="true" />
-                <div className="min-w-0">
-                  <h4 className="text-base font-bold leading-tight text-[#0b1c50] sm:text-lg">
-                    {benefit.title}
-                  </h4>
-                  <p className="mt-1.5 text-sm leading-5 text-[#293654]">
-                    {benefit.description}
-                  </p>
-                </div>
-              </article>
-            )
-          })}
-        </div>
-      </div>
-    </div>
-  )
-}
-
 const renderSolarIcon = (colorClass: string) => {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={`h-4 w-4 ${colorClass}`} aria-hidden="true">
@@ -156,6 +43,7 @@ const renderSolarIcon = (colorClass: string) => {
     </svg>
   )
 }
+
 export function SectionEyebrow({ children }: { children: ReactNode }) {
   return (
     <ContentSectionEyebrow
@@ -223,93 +111,6 @@ export function BenefitCard({
   )
 }
 
-function SolarBenefitIllustration({ index }: { index: number }) {
-  const sun = <Sun className="absolute right-1 top-0 h-12 w-12 fill-[#f8c64b] text-[#f8c64b]" strokeWidth={1.7} />
-  const leaf = 'absolute h-10 w-10 fill-[#75914d] text-[#75914d]'
-
-  const illustration = (() => {
-    switch (index % 6) {
-      case 0:
-        return (
-          <>
-            {sun}
-            <Cloud className="absolute left-0 top-8 h-14 w-14 fill-[#fffdf6] text-[#76905b]" strokeWidth={2} />
-            <span className="absolute left-5 top-[3.05rem] text-xs font-extrabold text-[#183a27]">CO₂</span>
-            <ArrowDown className="absolute bottom-0 left-10 h-8 w-8 text-[#638347]" strokeWidth={3} />
-            <Leaf className={`${leaf} bottom-2 right-0 rotate-[25deg]`} />
-          </>
-        )
-      case 1:
-        return (
-          <>
-            <Sun className="absolute left-5 top-0 h-12 w-12 fill-[#f8c64b] text-[#f8c64b]" strokeWidth={1.7} />
-            <Leaf className={`${leaf} bottom-1 left-0 -rotate-[38deg]`} />
-            <Leaf className={`${leaf} bottom-1 right-0 rotate-[38deg]`} />
-          </>
-        )
-      case 2:
-        return (
-          <>
-            {sun}
-            <Coins className="absolute bottom-1 left-0 h-12 w-12 text-[#789257]" strokeWidth={2.2} />
-            <Coins className="absolute bottom-1 left-8 h-12 w-12 text-[#789257]" strokeWidth={2.2} />
-            <BadgeIndianRupee className="absolute bottom-0 right-0 h-12 w-12 rounded-full bg-[#f5d761] p-1 text-[#a78316]" strokeWidth={1.8} />
-          </>
-        )
-      case 3:
-        return (
-          <>
-            <Sun className="absolute right-2 top-0 h-11 w-11 fill-[#f8c64b] text-[#f8c64b]" strokeWidth={1.7} />
-            <House className="absolute bottom-0 left-0 h-[4.5rem] w-[4.5rem] text-[#66834a]" strokeWidth={2} />
-            <PanelsTopLeft className="absolute bottom-5 right-0 h-10 w-10 -rotate-12 text-[#66834a]" strokeWidth={2} />
-            <Leaf className={`${leaf} bottom-0 right-0 rotate-[35deg]`} />
-          </>
-        )
-      case 4:
-        return (
-          <>
-            <Sun className="absolute left-2 top-0 h-16 w-16 fill-[#f8c64b] text-[#f8c64b]" strokeWidth={1.7} />
-            <Leaf className={`${leaf} bottom-0 left-0 -rotate-[35deg]`} />
-            <Leaf className={`${leaf} bottom-0 right-0 rotate-[35deg]`} />
-          </>
-        )
-      default:
-        return (
-          <>
-            <Sun className="absolute right-0 top-0 h-14 w-14 fill-[#f8c64b] text-[#f8c64b]" strokeWidth={1.7} />
-            <BatteryCharging className="absolute bottom-0 left-0 h-[4.5rem] w-[4.5rem] rounded-lg bg-[#fffdf6] text-[#66834a]" strokeWidth={2} />
-            <Leaf className={`${leaf} bottom-0 right-0 rotate-[35deg]`} />
-          </>
-        )
-    }
-  })()
-
-  return (
-    <div className="pointer-events-none absolute right-1 top-4 h-24 w-24" aria-hidden="true">
-      {illustration}
-    </div>
-  )
-}
-
-export function SolarBenefitCard({
-  title,
-  description,
-  index,
-}: {
-  title: string
-  description: string
-  index: number
-}) {
-  return (
-    <ContentIllustratedBenefitCard
-      title={title}
-      description={description}
-      index={index}
-      illustration={<SolarBenefitIllustration index={index} />}
-    />
-  )
-}
-
 export function InfoPanel({
   title,
   content,
@@ -319,7 +120,6 @@ export function InfoPanel({
   content: string[]
   accent?: Exclude<ContentAccent, 'violet'>
 }) {
-
   return (
     <ContentInfoPanel
       title={title}
