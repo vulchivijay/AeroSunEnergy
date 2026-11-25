@@ -1,31 +1,14 @@
 'use client'
 
 import { useId, useState, type FormEvent } from 'react'
-import { Calculator, Landmark, Tag, type LucideIcon } from 'lucide-react'
-import { FormDataNotice } from '@/app/components/forms/FormDataNotice'
-import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import { useLocale } from '@/lib/LocaleContext'
 import { submitWebsiteForm } from '@/lib/websiteFormSubmission'
 import { useToast } from '@/app/components/ui/ToastContext'
-
-type InputMode = 'bill' | 'systemSize'
-
-type Calculation = {
-  recommendedKw: number
-  monthlyUnits: number
-  annualGeneration: number
-  dailyGeneration: number
-  annualSavings: number
-  roofArea: number
-  totalPrice: number
-  subsidy: number
-  effectiveCost: number
-  gstEstimate: number
-  netMeteringCharge: number
-  netMeteringWaiverAvailable: boolean
-  netMeteringWaived: boolean
-  finalEffectiveCost: number
-}
+import { SolarGstGuide } from './SolarGstGuide'
+import { SolarCalculatorControls } from './SolarCalculatorControls'
+import { SolarCalculationResults } from './SolarCalculationResults'
+import { SolarAssessmentLeadForm } from './SolarAssessmentLeadForm'
+import type { Calculation, InputMode } from './SolarCalculatorControls'
 
 const AVERAGE_TARIFF_PER_UNIT = 8.5
 const MONTHLY_GENERATION_PER_KW = 120
@@ -61,57 +44,6 @@ const formatSystemCapacity = (capacityKw: number, capacityUnit: string) =>
 
 const clamp = (value: number, min: number, max: number) =>
   Math.min(max, Math.max(min, value))
-
-function LeadSummary({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex items-start justify-between gap-4 border-b border-slate-700 pb-2 text-sm last:border-b-0 last:pb-0 ">
-      <span className="text-emerald-100/75">{label}</span>
-      <span className="text-right font-bold text-white tracking-normal tabular-nums">
-        <DigitalNumber value={value} />
-      </span>
-    </div>
-  )
-}
-
-function PriceItem({
-  icon: Icon,
-  label,
-  value,
-  valueClassName,
-  featured = false,
-}: {
-  icon: LucideIcon
-  label: string
-  value: string
-  valueClassName: string
-  featured?: boolean
-}) {
-  return (
-    <div
-      className={`min-w-0 rounded-xl border p-4 text-left sm:p-5 ${
-        featured
-          ? 'border-amber-300/60 bg-linear-to-br from-amber-200 via-amber-100 to-yellow-50 shadow-sm'
-          : 'border-slate-700 bg-white/[0.05] '
-      }`}
-    >
-      <div className="flex items-start justify-between gap-3 ">
-        <div className="min-w-0 ">
-          <p className={` ${featured ? 'text-amber-950/70' : ' text-slate-300      '}      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}>
-            {label}
-          </p>
-          <p className={`mt-3 whitespace-nowrap text-lg sm:text-xl ${valueClassName} font-semibold tracking-normal leading-snug tabular-nums`}>
-            <DigitalNumber value={value} />
-          </p>
-        </div>
-        <span className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl ${
-          featured ? 'bg-amber-900/10 text-amber-900' : 'bg-white/10 text-sky-200'
-        }`}>
-          <Icon className="h-5 w-5" aria-hidden="true" />
-        </span>
-      </div>
-    </div>
-  )
-}
 
 export function SolarEstimation() {
   const { t } = useLocale()
@@ -296,553 +228,72 @@ export function SolarEstimation() {
 
       <div className="mx-auto max-w-7xl overflow-hidden rounded-xl shadow-sm border border-slate-200 ">
         <div className="grid lg:grid-cols-[minmax(300px,0.75fr)_1.45fr] ">
-          
-          <div className="bg-linear-to-r from-[#137c63] to-[#20A44A] p-6 text-white sm:p-8 lg:p-10 ">
-            <h2 className="max-w-sm text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
-              {e.savingsTitle} <span className="text-emerald-400">{e.savingsTitleAccent}</span>
-            </h2>
-            <p className="mt-3 max-w-sm text-emerald-100/80      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-              {e.savingsDescription}
-            </p>
-
-            <div className="mt-7 inline-flex rounded-full bg-white/10 p-1" role="group" aria-label={e.leadPropertyType}>
-              <button
-                type="button"
-                aria-pressed={selectedPropertyIndex === 0}
-                onClick={() => setSelectedPropertyIndex(0)}
-                className={`rounded-full px-5 py-2.5 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
-                  selectedPropertyIndex === 0
-                    ? 'bg-white text-emerald-950 shadow-sm'
-                    : 'text-emerald-100/75 hover:text-white'
-                } tracking-normal`}
-              >
-                {calculatorText.homeOption}
-              </button>
-              <button
-                type="button"
-                aria-pressed={selectedPropertyIndex !== 0}
-                onClick={() => setSelectedPropertyIndex(1)}
-                className={`rounded-full px-5 py-2.5 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
-                  selectedPropertyIndex !== 0
-                    ? 'bg-white text-emerald-950 shadow-sm'
-                    : 'text-emerald-100/75 hover:text-white'
-                } tracking-normal`}
-              >
-                {calculatorText.commercialOption}
-              </button>
-            </div>
-
-            <div className="mt-8 ">
-              <div className="mb-3 uppercase text-emerald-100/80 text-xs font-semibold tracking-wide leading-5">
-                {inputMode === 'bill' ? calculatorText.billAmount : calculatorText.systemSize}
-              </div>
-              <div className="inline-flex rounded-full bg-white/10 p-1" role="group" aria-label={e.adjustUsage}>
-                <button
-                  type="button"
-                  aria-pressed={inputMode === 'bill'}
-                  onClick={() => setInputMode('bill')}
-                  className={`rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
-                    inputMode === 'bill' ? 'bg-white text-emerald-950' : 'text-emerald-100/75 hover:text-white'
-                  } tracking-normal`}
-                >
-                  {calculatorText.billAmount}
-                </button>
-                <button
-                  type="button"
-                  aria-pressed={inputMode === 'systemSize'}
-                  onClick={() => setInputMode('systemSize')}
-                  className={`rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
-                    inputMode === 'systemSize' ? 'bg-white text-emerald-950' : 'text-emerald-100/75 hover:text-white'
-                  } tracking-normal`}
-                >
-                  {calculatorText.systemSize}
-                </button>
-              </div>
-
-              {inputMode === 'bill' ? (
-                <div className="mt-4 ">
-                  <label htmlFor={monthlyBillInputId} className="sr-only text-xs sm:text-sm font-semibold tracking-normal leading-5">
-                    {e.monthlyBillAriaLabel}
-                  </label>
-                  <div className="flex items-center rounded-lg border border-slate-700 bg-white/10 px-4 py-3.5 focus-within:ring-2 focus-within:ring-emerald-400">
-                    <span className="text-xl font-bold text-emerald-100 tracking-normal" aria-hidden="true">₹</span>
-                    <input
-                      id={monthlyBillInputId}
-                      type="number"
-                      inputMode="numeric"
-                      min={500}
-                      max={50000}
-                      step={100}
-                      value={monthlyBillInput}
-                      onChange={(event) => setMonthlyBillInput(event.target.value)}
-                      onBlur={normalizeMonthlyBill}
-                      className="min-w-0 flex-1 bg-transparent px-3 text-2xl font-[family-name:var(--font-digital)] font-bold text-white outline-none placeholder:text-emerald-100/50 rounded-lg tracking-normal"
-                    />
-                    <span className="whitespace-nowrap text-sm text-emerald-100/70">{calculatorText.monthSuffix}</span>
-                  </div>
-                  <div className="mt-2 flex justify-between text-xs text-emerald-100/60 ">
-                    <span><DigitalNumber value={e.monthlyBillMinimum} /></span>
-                    <span><DigitalNumber value={e.monthlyBillMaximum} /></span>
-                  </div>
-                </div>
-              ) : (
-                <div className="mt-4 ">
-                  <label htmlFor={systemSizeInputId} className="sr-only text-xs sm:text-sm font-semibold tracking-normal leading-5">
-                    {calculatorText.systemSize}
-                  </label>
-                  <div className="flex items-center rounded-lg border border-slate-700 bg-white/10 px-4 py-3.5 focus-within:ring-2 focus-within:ring-emerald-400">
-                    <input
-                      id={systemSizeInputId}
-                      type="number"
-                      inputMode="numeric"
-                      min={1}
-                      max={MAX_SYSTEM_SIZE_KW}
-                      step={1}
-                      value={systemSizeInput}
-                      onChange={(event) => setSystemSizeInput(event.target.value)}
-                      onBlur={normalizeSystemSize}
-                      className="min-w-0 flex-1 bg-transparent px-1 text-2xl font-[family-name:var(--font-digital)] font-bold text-white outline-none rounded-lg tracking-normal"
-                    />
-                    <span className="text-sm font-bold text-emerald-100 tracking-normal">{e.capacityUnit}</span>
-                  </div>
-                  <div className="mt-2 flex justify-between text-xs text-emerald-100/60 ">
-                    <span><DigitalNumber value={`1 ${e.capacityUnit}`} /></span>
-                    <span><DigitalNumber value="100 MW" /></span>
-                  </div>
-                </div>
-              )}
-
-              <p className="mt-4 text-emerald-100/75       tabular-nums text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                {e.estimatedMonthlyUsage}: <DigitalNumber value={calculation.monthlyUnits.toLocaleString('en-IN')} /> {e.unitsSuffix}
-              </p>
-
-              <div
-                className={`mt-6 rounded-xl border p-4 ${
-                  selectedPropertyIndex === 0
-                    ? 'border-emerald-300/15 bg-emerald-400/50'
-                    : 'border-slate-700 bg-white/5'
-                }`}
-              >
-                <p
-                  className={` ${
-                    selectedPropertyIndex === 0 ? 'text-emerald-80' : ' text-emerald-100/90      '
-                  }      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}
-                >
-                  {selectedPropertyIndex === 0
-                    ? calculatorText.residentialSubsidyNote
-                    : calculatorText.commercialSubsidyNote}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-linear-to-br from-[#f7faff] via-[#f2f4ff] to-[#eef9fb] p-5 sm:p-7 lg:p-9 ">
-            <div className="grid gap-4 sm:grid-cols-2 ">
-              
-              <article className="min-w-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5 ">
-                <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">
-                    {e.roofRequired}
-                </p>
-                <p className="mt-2 text-lg sm:text-xl text-slate-950 font-semibold tracking-normal leading-snug tabular-nums">
-                    <DigitalNumber value={calculation.roofArea.toLocaleString('en-IN')} /> <span className="text-sm font-semibold tracking-normal">{e.squareFootUnit}</span>
-                </p>
-              </article>
-              
-              <article className="min-w-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5 ">
-                <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">
-                    {calculatorText.idealSystemSize}
-                </p>
-                <p className="mt-3 text-sky-700 text-lg font-semibold tracking-normal leading-snug tabular-nums">
-                    <DigitalNumber value={formatSystemCapacity(calculation.recommendedKw, e.capacityUnit)} />
-                </p>
-                <p className="mt-2 text-slate-500       tabular-nums text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                    <DigitalNumber value={calculation.dailyGeneration} /> {calculatorText.averageDailyGeneration}
-                </p>
-              </article>
-
-              <article className="min-w-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5 ">
-                <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">
-                    {e.annualGeneration}
-                </p>
-                <p className="mt-2 text-lg sm:text-xl text-slate-950 font-semibold tracking-normal leading-snug tabular-nums">
-                    <DigitalNumber value={calculation.annualGeneration.toLocaleString('en-IN')} /> <span className="text-sm font-semibold tracking-normal">{e.generationUnit}</span>
-                </p>
-              </article>
-
-              <article className="min-w-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5 ">
-                <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">
-                    {e.annualSavings}
-                </p>
-                <p className="mt-3 text-emerald-600 text-lg sm:text-xl font-semibold tracking-normal leading-snug tabular-nums">
-                    ~<DigitalNumber value={formatCurrency(calculation.annualSavings)} />
-                </p>
-              </article>
-            </div>
-
-            <div className="relative mt-5 overflow-hidden rounded-xl border border-slate-700 bg-linear-to-br from-[#0b1536] via-[#13244b] to-[#0d3a3b] p-4 text-white shadow-md sm:p-6 ">
-              <div className="pointer-events-none absolute -right-16 -top-24 h-56 w-56 rounded-full bg-emerald-300/10 blur-3xl " aria-hidden="true" />
-              <div className="pointer-events-none absolute -bottom-28 left-1/3 h-48 w-48 rounded-full bg-sky-300/10 blur-3xl " aria-hidden="true" />
-              <div className="relative ">
-                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-700 pb-4 ">
-                  <div className="flex items-center gap-3">
-                    <span className="h-8 w-1 rounded-full bg-linear-to-b from-emerald-300 to-sky-300" aria-hidden="true" />
-                    <h2 className="uppercase text-white text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
-                      {calculatorText.pricingBreakdown}
-                    </h2>
-                  </div>
-                  <p className="rounded-full border border-slate-700 bg-white/[0.06] px-3 py-1.5 text-slate-200       tabular-nums text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                    <DigitalNumber value={formatSystemCapacity(calculation.recommendedKw, e.capacityUnit)} /> · {currentPropertyType}
-                  </p>
-                </div>
-
-                <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                  <PriceItem
-                    icon={Tag}
-                    label={calculatorText.priceBeforeSubsidy}
-                    value={formatCurrency(calculation.totalPrice)}
-                    valueClassName="text-white"
-                  />
-                  <PriceItem
-                    icon={Landmark}
-                    label={calculatorText.governmentSubsidy}
-                    value={formatCurrency(calculation.subsidy)}
-                    valueClassName="text-emerald-300"
-                  />
-                  <PriceItem
-                    icon={Calculator}
-                    label={calculatorText.effectiveCost}
-                    value={formatCurrency(calculation.effectiveCost)}
-                    valueClassName="text-slate-950"
-                    featured
-                  />
-                </div>
-
-                <p className="mt-4 border-t border-slate-700 pt-3 text-right text-slate-300      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                  {calculatorText.taxesExtra}
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-4 rounded-xl border border-slate-200 bg-linear-to-br from-emerald-50 via-green-50 to-emerald-100 p-5 shadow-sm sm:p-6 hidden ">
-              <span className="inline-flex items-center rounded-full border border-slate-200 bg-white/70 px-4 py-2 uppercase text-indigo-900 text-xs font-semibold tracking-wide leading-5">
-                {calculation.netMeteringWaived
-                  ? calculatorText.finalEffectiveCost
-                  : calculatorText.finalEffectiveCostBeforeMetering}
-              </span>
-
-              <div className="mt-4 grid gap-3 text-sm sm:grid-cols-2">
-                <div className="flex items-start justify-between gap-3">
-                  <span className="text-slate-600">{calculatorText.gstEstimate}</span>
-                  <span className="font-semibold text-slate-900 tracking-normal">{formatCurrency(calculation.gstEstimate)}</span>
-                </div>
-                <div className="flex items-start justify-between gap-3">
-                  <span className="text-slate-600">{calculatorText.netMeteringFee}</span>
-                  <span className="text-right font-semibold text-slate-900 tracking-normal">
-                    {formatCurrency(calculation.netMeteringCharge)}
-                  </span>
-                </div>
-              </div>
-
-              <div className="mt-4 overflow-hidden rounded-xl border border-slate-200 bg-white/75">
-                <table className="w-full text-left text-xs text-slate-700">
-                  <caption className="border-b border-slate-200 px-3 py-2 text-left font-bold text-slate-800 tracking-normal">
-                    Metering charge schedule
-                  </caption>
-                  <tbody>
-                    {[
-                      ['Up to 5 kW', 'Nil'],
-                      ['Above 5 kW to 100 kW', '₹ 1,000'],
-                      ['Above 100 kW to 1,000 kW', '₹ 10,000'],
-                      ['Above 1,000 kW', '₹ 25,000 per MW'],
-                    ].map(([capacity, charge]) => (
-                      <tr key={capacity} className="border-b border-slate-200 last:border-b-0">
-                        <th scope="row" className="px-3 py-2 font-medium tracking-normal">{capacity}</th>
-                        <td className="px-3 py-2 text-right font-bold text-slate-900 tracking-normal">{charge}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              {calculation.netMeteringWaiverAvailable && (
-                <label className="mt-4 flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-3 text-slate-700 text-xs sm:text-sm font-semibold tracking-normal leading-5">
-                  <input
-                    type="checkbox"
-                    checked={assumeNetMeteringWaiver}
-                    onChange={(event) => setAssumeNetMeteringWaiver(event.target.checked)}
-                    className="mt-1 h-4 w-4 shrink-0 accent-emerald-700"
-                  />
-                  <span>{calculatorText.netMeteringEligibilityCheck}</span>
-                </label>
-              )}
-
-              <div className="mt-4 flex flex-wrap items-end justify-between gap-3 border-t border-slate-200 pt-4 ">
-                <span className="text-sm font-bold text-slate-700 tracking-normal">
-                  {calculation.netMeteringWaived
-                    ? calculatorText.finalEffectiveCost
-                    : calculatorText.finalEffectiveCostBeforeMetering}
-                </span>
-                <span className="text-2xl font-bold tracking-tight text-emerald-700 tabular-nums">
-                  <DigitalNumber value={formatCurrency(calculation.finalEffectiveCost)} />
-                </span>
-              </div>
-
-              <p className="mt-3 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                {calculatorText.epcGstAssumption}
-              </p>
-              {calculation.netMeteringWaived ? (
-                <p className="mt-2 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                  {calculatorText.netMeteringWaiverNote}{' '}
-                  <a
-                    href="https://aperc.gov.in/admin/upload/ProceedingsonwaiverofApplicationfeeandMeterCosttoSRTSupto10kW.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-semibold text-sky-700 underline underline-offset-2 tracking-normal"
-                  >
-                    {calculatorText.apercOrderLabel}
-                  </a>
-                </p>
-              ) : (
-                <p className="mt-2 text-amber-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                  {calculation.netMeteringWaiverAvailable
-                    ? calculatorText.netMeteringPotentialWaiverNote
-                    : calculatorText.netMeteringVariesNote}{' '}
-                  {calculation.netMeteringWaiverAvailable && (
-                    <a
-                      href="https://aperc.gov.in/admin/upload/ProceedingsonwaiverofApplicationfeeandMeterCosttoSRTSupto10kW.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-semibold text-sky-700 underline underline-offset-2 tracking-normal"
-                    >
-                      {calculatorText.apercOrderLabel}
-                    </a>
-                  )}
-                </p>
-              )}
-            </div>
-
-            <button
-              type="button"
-              aria-expanded={showLeadForm}
-              aria-controls={leadFormId}
-              onClick={() => {
-                setShowLeadForm(true)
-                setWhatsAppFallbackUrl(null)
-              }}
-              className="mt-5 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-full border border-emerald-300/60 bg-linear-to-r from-[#137c63] to-[#20A44A] px-5 py-4 text-base font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:from-[#126b2e] hover:to-[#18833a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400 tracking-normal"
-            >
-              {calculatorText.quoteCta}
-              <span aria-hidden="true">→</span>
-            </button>
-            <p className="mt-4 text-center text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-              {calculatorText.assumptions}
-            </p>
-          </div>
+          <SolarCalculatorControls
+            e={e}
+            calculatorText={calculatorText}
+            calculation={calculation}
+            inputMode={inputMode}
+            setInputMode={setInputMode}
+            monthlyBillInput={monthlyBillInput}
+            setMonthlyBillInput={setMonthlyBillInput}
+            systemSizeInput={systemSizeInput}
+            setSystemSizeInput={setSystemSizeInput}
+            monthlyBillInputId={monthlyBillInputId}
+            systemSizeInputId={systemSizeInputId}
+            normalizeMonthlyBill={normalizeMonthlyBill}
+            normalizeSystemSize={normalizeSystemSize}
+            selectedPropertyIndex={selectedPropertyIndex}
+            setSelectedPropertyIndex={setSelectedPropertyIndex}
+            maxSystemSizeKw={MAX_SYSTEM_SIZE_KW}
+          />
+          <SolarCalculationResults
+            e={e}
+            calculatorText={calculatorText}
+            calculation={calculation}
+            currentPropertyType={currentPropertyType}
+            formatCurrency={formatCurrency}
+            formatSystemCapacity={formatSystemCapacity}
+            assumeNetMeteringWaiver={assumeNetMeteringWaiver}
+            setAssumeNetMeteringWaiver={setAssumeNetMeteringWaiver}
+            showLeadForm={showLeadForm}
+            setShowLeadForm={setShowLeadForm}
+            leadFormId={leadFormId}
+            setWhatsAppFallbackUrl={setWhatsAppFallbackUrl}
+          />
         </div>
       </div>
-
       {showLeadForm && (
-        <section
-          id={leadFormId}
-          className="mx-auto mt-8 grid max-w-7xl overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm lg:grid-cols-[0.85fr_1.15fr]"
-          aria-labelledby={`${leadFormId}-title`}
-        >
-          <div className="bg-linear-to-r from-[#137c63] to-[#20A44A] p-6 text-white sm:p-8">
-            <p className="uppercase text-amber-100    text-xs font-semibold tracking-wide leading-5">
-              {e.freeAssessmentLabel}
-            </p>
-            <h2 id={`${leadFormId}-title`} className="mt-3 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
-              {e.freeAssessmentCta}
-            </h2>
-            <div className="mt-6 space-y-3">
-              <LeadSummary label={e.leadPropertyType} value={currentPropertyType} />
-              <LeadSummary label={e.monthlyBill} value={formatCurrency(monthlyBill)} />
-              <LeadSummary
-                label={e.recommendedCapacity}
-                value={formatSystemCapacity(calculation.recommendedKw, e.capacityUnit)}
-              />
-              <LeadSummary label={e.annualGeneration} value={`${calculation.annualGeneration.toLocaleString('en-IN')} ${e.generationUnit}`} />
-              <LeadSummary label={e.annualSavings} value={`${formatCurrency(calculation.annualSavings)}/${e.yearSuffix}`} />
-              <LeadSummary label={e.twentyFiveYearSavings} value={formatCurrency(calculation.annualSavings * SAVINGS_ESTIMATE_YEARS)} />
-              <LeadSummary label={e.roofRequired} value={`${calculation.roofArea} ${e.squareFootUnit}`} />
-              <LeadSummary label={calculatorText.effectiveCost} value={formatCurrency(calculation.effectiveCost)} />
-              <LeadSummary label={calculatorText.gstEstimate} value={formatCurrency(calculation.gstEstimate)} />
-              <LeadSummary
-                label={calculatorText.netMeteringFee}
-                value={formatCurrency(calculation.netMeteringCharge)}
-              />
-              <LeadSummary
-                label={calculation.netMeteringWaived
-                  ? calculatorText.finalEffectiveCost
-                  : calculatorText.finalEffectiveCostBeforeMetering}
-                value={formatCurrency(calculation.finalEffectiveCost)}
-              />
-            </div>
-            <p className="mt-6 text-emerald-100/80      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{e.whatsAppDisclosure}</p>
-          </div>
-
-          <form onSubmit={handleLeadFormSubmit} className="p-6 sm:p-8">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <label className="block text-xs sm:text-sm font-semibold tracking-normal leading-5">
-                <span className="mb-1.5 block text-sm font-bold text-slate-700 tracking-normal">{e.leadName}</span>
-                <input
-                  id={leadNameInputId}
-                  name="name"
-                  type="text"
-                  autoComplete="name"
-                  minLength={2}
-                  maxLength={100}
-                  required
-                  value={leadNameValue}
-                  onChange={(event) => setLeadNameValue(event.target.value)}
-                  placeholder={e.leadNamePlaceholder}
-                  className="w-full rounded-lg border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
-                />
-              </label>
-              <label className="block text-xs sm:text-sm font-semibold tracking-normal leading-5">
-                <span className="mb-1.5 block text-sm font-bold text-slate-700 tracking-normal">{e.leadMobile}</span>
-                <input
-                  id={leadPhoneInputId}
-                  name="phone"
-                  type="tel"
-                  inputMode="tel"
-                  autoComplete="tel"
-                  pattern="(?:\+?91)?[6-9][0-9]{9}"
-                  maxLength={13}
-                  required
-                  value={leadPhoneValue}
-                  onChange={(event) => setLeadPhoneValue(event.target.value)}
-                  placeholder={e.leadMobilePlaceholder}
-                  className="w-full rounded-lg border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
-                />
-              </label>
-              <label className="block text-xs sm:text-sm font-semibold tracking-normal leading-5">
-                <span className="mb-1.5 block text-sm font-bold text-slate-700 tracking-normal">{e.leadPinCode}</span>
-                <input
-                  id={leadPinInputId}
-                  name="pinCode"
-                  type="text"
-                  inputMode="numeric"
-                  autoComplete="postal-code"
-                  pattern="[1-9][0-9]{5}"
-                  maxLength={6}
-                  required
-                  placeholder={e.leadPinCodePlaceholder}
-                  className="w-full rounded-lg border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
-                />
-              </label>
-              <label className="block text-xs sm:text-sm font-semibold tracking-normal leading-5">
-                <span className="mb-1.5 block text-sm font-bold text-slate-700 tracking-normal">{e.leadPropertyType}</span>
-                <select
-                  id={leadPropertyTypeInputId}
-                  name="propertyType"
-                  required
-                  value={leadPropertyIndex}
-                  onChange={(event) => setLeadPropertyIndex(event.target.value === '' ? '' : Number(event.target.value))}
-                  className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-600 focus:ring-4 focus:ring-sky-100"
-                >
-                  <option value="" disabled>{e.propertyTypePlaceholder}</option>
-                  {e.propertyTypeOptions.map((propertyType, index) => (
-                    <option key={propertyType} value={index}>{propertyType}</option>
-                  ))}
-                </select>
-              </label>
-            </div>
-
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <button
-                type="submit"
-                disabled={leadFormPending}
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-emerald-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 disabled:cursor-wait disabled:opacity-70 tracking-normal"
-              >
-                {leadFormPending ? t.formSubmission.saving : e.whatsAppMyReport}
-                <span className="ml-2" aria-hidden="true">↗</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => setShowLeadForm(false)}
-                className="inline-flex min-h-12 items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-500 tracking-normal"
-              >
-                {e.cancelAssessment}
-              </button>
-            </div>
-            {whatsAppFallbackUrl && (
-              <p className="mt-4 text-emerald-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7" aria-live="polite">
-                <a href={whatsAppFallbackUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
-                  {e.openWhatsAppFallback}
-                </a>
-              </p>
-            )}
-            <div className="mt-4">
-              <FormDataNotice />
-            </div>
-          </form>
-        </section>
+        <SolarAssessmentLeadForm
+          e={e}
+          calculatorText={calculatorText}
+          calculation={calculation}
+          currentPropertyType={currentPropertyType}
+          monthlyBill={monthlyBill}
+          formatCurrency={formatCurrency}
+          formatSystemCapacity={formatSystemCapacity}
+          leadFormId={leadFormId}
+          leadNameInputId={leadNameInputId}
+          leadPhoneInputId={leadPhoneInputId}
+          leadPinInputId={leadPinInputId}
+          leadPropertyTypeInputId={leadPropertyTypeInputId}
+          leadPropertyIndex={leadPropertyIndex}
+          setLeadPropertyIndex={setLeadPropertyIndex}
+          leadNameValue={leadNameValue}
+          setLeadNameValue={setLeadNameValue}
+          leadPhoneValue={leadPhoneValue}
+          setLeadPhoneValue={setLeadPhoneValue}
+          leadFormPending={leadFormPending}
+          whatsAppFallbackUrl={whatsAppFallbackUrl}
+          savingsEstimateYears={SAVINGS_ESTIMATE_YEARS}
+          savingLabel={t.formSubmission.saving}
+          onSubmit={handleLeadFormSubmit}
+          onCancel={() => setShowLeadForm(false)}
+        />
       )}
-
-      <section
-        className="mx-auto mt-10 max-w-7xl rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
-        aria-labelledby={`${leadFormId}-gst-title`}
-      >
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <p className="uppercase text-emerald-700    text-xs font-semibold tracking-wide leading-5">
-              {solarGstGuide.eyebrow}
-            </p>
-            <h2
-              id={`${leadFormId}-gst-title`}
-              className="mt-2 text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug"
-            >
-              {solarGstGuide.title}
-            </h2>
-          </div>
-        </div>
-
-        <div id={`${leadFormId}-gst-content`}>
-        <p className="mt-3 max-w-4xl text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-          {solarGstGuide.intro}
-        </p>
-
-        <div className="mt-6 grid gap-4 lg:grid-cols-3">
-          <article className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-            <h3 className="text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{solarGstGuide.componentsTitle}</h3>
-            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-600">
-              {solarGstGuide.components.map((point) => <li key={point}>{point}</li>)}
-            </ul>
-          </article>
-          <article className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-            <h3 className="text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{solarGstGuide.billingTitle}</h3>
-            <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{solarGstGuide.billing}</p>
-          </article>
-          <article className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-            <h3 className="text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{solarGstGuide.itcTitle}</h3>
-            <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{solarGstGuide.itc}</p>
-          </article>
-        </div>
-
-        <p className="mt-5 rounded-xl bg-emerald-50 p-4 text-emerald-950      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-          {solarGstGuide.quoteTip}
-        </p>
-        <p className="mt-4 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{solarGstGuide.disclaimer}</p>
-        <div className="mt-5 border-t border-slate-200 pt-4">
-          <h3 className="text-slate-800 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{solarGstGuide.sourcesTitle}</h3>
-          <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-            {solarGstGuide.sources.map((source) => (
-              <li key={source.url}>
-                <a
-                  href={source.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sky-700 underline decoration-sky-300 underline-offset-4 hover:text-sky-900"
-                >
-                  {source.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        </div>
-      </section>
+      <SolarGstGuide
+        guide={solarGstGuide}
+        titleId={`${leadFormId}-gst-title`}
+      />
     </section>
   )
 }
