@@ -599,7 +599,7 @@ function ConsentAwareTracking({
         <Script
           id="google-tag-manager"
           src={`https://www.googletagmanager.com/gtm.js?id=${gtmId}`}
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
       </>
     )
@@ -612,7 +612,7 @@ function ConsentAwareTracking({
       <Script
         id="google-gtag"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtagId}`}
-        strategy="lazyOnload"
+        strategy="afterInteractive"
       />
       <Script id="google-gtag-config" strategy="afterInteractive">
         {`
