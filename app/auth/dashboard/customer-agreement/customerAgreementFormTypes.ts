@@ -1,0 +1,20 @@
+export type AgreementFormValues = {
+  customerName: string;
+  companyName?: string;
+  email: string;
+  phone: string;
+  agreementNumber?: string;
+  agreementDate?: string;
+  projectReference?: string;
+  projectType?: string;
+  systemCapacity?: string;
+  projectLocation?: string;
+  quotedAmount?: string;
+  siteAccessDate?: string;
+  scopeItems?: string[];
+  acceptanceCustomerName?: string;
+  signature?: string;
+  acceptanceDate?: string;
+  acceptancePlace?: string;
+  agreed: boolean;
+};
