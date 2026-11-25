@@ -37,6 +37,7 @@ const orbitron = Orbitron({
 const GTM_ID = process.env._NEXT_PUBLIC_GTM_ID;
 const GOOGLE_ADS_ID = process.env._NEXT_PUBLIC_GOOGLE_ADS_ID;
 const GA_MEASUREMENT_ID =
+  process.env._NEXT_PUBLIC_GOOGLE_ANALYTICS_ID ||
   process.env._NEXT_PUBLIC_GA_MEASUREMENT_ID ||
   process.env._NEXT_PUBLIC_GA_STREAM_ID;
 const GOOGLE_SITE_VERIFICATION =

@@ -564,13 +564,9 @@ function ConsentAwareTracking({
 }) {
   const { t } = useLocale()
   const pathname = usePathname()
-  const adsTagIds = Array.from(
-    new Set(
-      [googleAdsId, ...t.componentData.consentAwareTracking.adsTagIds].filter(
-        (id): id is string => Boolean(id),
-      ),
-    ),
-  )
+  const adsTagIds = googleAdsId
+    ? [googleAdsId]
+    : t.componentData.consentAwareTracking.adsTagIds
   const [hasConsent, setHasConsent] = useState(false)
 
   useEffect(() => {
@@ -601,25 +597,28 @@ function ConsentAwareTracking({
 
   if (!hasConsent) return null
 
+  if (gtmId) {
+    return (
+      <>
+        <Script id="google-tag-manager-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+          `}
+        </Script>
+        <Script
+          id="google-tag-manager"
+          src={`https://www.googletagmanager.com/gtm.js?id=${gtmId}`}
+          strategy="afterInteractive"
+        />
+      </>
+    )
+  }
+
   const gtagId = gaMeasurementId || adsTagIds[0]
 
   return (
     <>
-      {gtmId ? (
-        <>
-          <Script id="google-tag-manager-init" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
-            `}
-          </Script>
-          <Script
-            id="google-tag-manager"
-            src={`https://www.googletagmanager.com/gtm.js?id=${gtmId}`}
-            strategy="afterInteractive"
-          />
-        </>
-      ) : null}
       <Script
         id="google-gtag"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtagId}`}
