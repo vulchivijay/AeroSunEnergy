@@ -134,7 +134,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 npm run build
 ```
 
-The production build runs as a Next.js server so authentication and form API routes can connect to MongoDB. The `prebuild` step loads `.env` and prints whether Google integration and MongoDB environment variables are present without displaying their values. Google tracking scripts still require cookie consent. The `postbuild` step submits the sitemap via IndexNow and prints a Google index verification summary; external SEO check failures are reported but do not fail an otherwise successful build. IndexNow requires the key to be available at `https://aerosunenergy.in/<key>.txt` with the file contents exactly matching the key. Run `npm run google:index-check` to run the SEO checks in strict mode.
+The production build runs as a Next.js server so authentication and form API routes can connect to MongoDB. The `prebuild` step loads `.env` and prints a `PRESENT` or `NOT PRESENT` status for each tracked Google, Bing, and MongoDB environment variable without displaying its value. Google tracking scripts still require cookie consent. The `postbuild` step submits the sitemap via IndexNow and prints a Google index verification summary; external SEO check failures are reported but do not fail an otherwise successful build. IndexNow requires the key to be available at `https://aerosunenergy.in/<key>.txt` with the file contents exactly matching the key. Run `npm run google:index-check` to run the SEO checks in strict mode.
 
 To enable the Google index verification step, set these environment variables before running the build:
 
@@ -143,7 +143,7 @@ GOOGLE_CUSTOM_SEARCH_API_KEY=your_google_api_key
 GOOGLE_CUSTOM_SEARCH_CX=your_programmable_search_engine_id
 ```
 
-GTM and Analytics IDs are read during the build for prerendered pages. Set `_NEXT_PUBLIC_GTM_ID`, `_NEXT_PUBLIC_GOOGLE_ADS_ID`, and either `_NEXT_PUBLIC_GA_MEASUREMENT_ID` or `_NEXT_PUBLIC_GA_STREAM_ID` in the build environment (or `.env`) before `npm run build`. After cookie consent, the app loads GTM and the direct Google tag with `afterInteractive`. Avoid configuring the same Ads or Analytics destinations in GTM and the direct tag, or events may be duplicated. The prebuild status output checks for variable presence but never prints values.
+GTM and Analytics IDs are read during the build for prerendered pages. Set the required IDs in the build environment (or `.env`) before `npm run build`; the prebuild report lists each recognized variable separately. After cookie consent, the app loads GTM with `afterInteractive` when a container ID is configured; direct Google tags are used only as a fallback when GTM is not configured. This avoids loading the same destinations through both methods.
 
 You can also run the check directly:
 
