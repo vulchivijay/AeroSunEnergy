@@ -85,7 +85,7 @@ function WhySolarSection({ t }: { t: Translations }) {
 
       <div className="relative mx-auto max-w-7xl">
         <div className="max-w-3xl">
-          <p className="inline-flex w-fit rounded-full bg-[#1450e8] px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-white shadow-sm">
+          <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] inline-flex w-fit items-center gap-2 rounded-full bg-[#1450e8] px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-white shadow-sm">
             {content.eyebrow}
           </p>
           <h2 id="why-solar-title" className="mt-4 max-w-3xl font-serif text-3xl font-bold leading-[1.08] !tracking-tight text-[#10204b] sm:text-4xl lg:text-5xl">

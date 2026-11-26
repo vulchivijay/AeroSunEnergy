@@ -23,7 +23,7 @@ export function WindEnergyServicesSections({ t }: { t: Translations }) {
                 <p className="mt-4 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{section.overview}</p>
 
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                  <>
+                  <div>
                     <h4 className="text-slate-800 text-lg font-semibold tracking-normal leading-snug">{windPage.labels.applications}</h4>
                     <ul className="mt-2 space-y-2 text-base leading-6 text-slate-600">
                       {section.applications.map((app) => (
@@ -33,16 +33,16 @@ export function WindEnergyServicesSections({ t }: { t: Translations }) {
                               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                             </svg>
                           </div>
-                          <>
+                          <div>
                             <div className="font-medium text-slate-800 tracking-normal">{app.title}</div>
                             <div className="text-base leading-6 text-slate-600">{app.description}</div>
-                          </>
+                          </div>
                         </li>
                             ))}
                     </ul>
-                  </>
+                  </div>
 
-                  <>
+                  <div>
                     <h4 className="text-slate-800 text-lg font-semibold tracking-normal leading-snug">{windPage.labels.keyBenefits}</h4>
                     <ul className="mt-2 space-y-2 text-base leading-6 text-slate-600">
                       {section.benefits.map((benefit) => (
@@ -54,9 +54,9 @@ export function WindEnergyServicesSections({ t }: { t: Translations }) {
                           </div>
                           <div className="text-base leading-6 text-slate-600">{benefit}</div>
                         </li>
-                            ))}
+                      ))}
                     </ul>
-                  </>
+                  </div>
                 </div>
 
                 <div className="mt-6 rounded-xl bg-slate-50 p-4 text-base text-slate-700">
@@ -83,7 +83,7 @@ export function WindEnergyServicesSections({ t }: { t: Translations }) {
                   </div>
                 </div>
               </div>
-                  ))}
+            ))}
           </div>
         </div>
       </section>

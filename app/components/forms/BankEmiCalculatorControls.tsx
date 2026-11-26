@@ -111,8 +111,8 @@ export function BankEmiCalculatorControls({
           <p className="mt-1 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{labels.loanDetailsSub}</p>
         </div>
 
-        <>
-          <>
+        <div>
+          <div>
             <p className="text-sm font-bold text-[#10234f]">{labels.loanCategory}</p>
             <div className="mt-2 grid grid-cols-1 overflow-hidden rounded-full border border-blue-900/20 bg-white/70 sm:grid-cols-2" role="group" aria-label={labels.loanCategory}>
               <button
@@ -140,7 +140,7 @@ export function BankEmiCalculatorControls({
                 {labels.loanAboveTwoLakhs}
               </button>
             </div>
-          </>
+          </div>
 
           <div className="mt-5 grid gap-5">
             <BankEmiLoanAmountControl
@@ -201,7 +201,7 @@ export function BankEmiCalculatorControls({
               </span>
               <div className="min-w-0">
                 {loanBand === 'upToTwoLakhs' ? (
-                  <>
+                  <div>
                     <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
                       <label htmlFor="bank-emi-repo-rate" className="text-sm font-bold text-[#10234f]">
                         {labels.repoRate}
@@ -233,9 +233,9 @@ export function BankEmiCalculatorControls({
                     <p className="mt-2 text-emerald-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                       {labels.calculatedInterestRate}: {(repoRate + 0.5).toFixed(2)}% {labels.perAnnum}
                     </p>
-                  </>
+                  </div>
               ) : (
-                <>
+                <div>
                   <p className="text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{labels.customerType}</p>
                   <BankEmiLoanBandSelector
                     labels={labels}
@@ -285,13 +285,13 @@ export function BankEmiCalculatorControls({
                       {labels.enterHomeLoanRate}
                     </p>
                   )}
-                </>
+                </div>
               )}
               </div>
             </div>
           </div>
 
-        </>
+        </div>
         <BankEmiLoanGuidance labels={labels} loanBand={loanBand} />
       </div>
     </main>

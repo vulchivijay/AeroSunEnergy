@@ -74,7 +74,7 @@ function CookieConsent() {
         aria-label={labels.title}
         className="w-full max-w-5xl rounded-xl border border-slate-200 bg-white/95 p-5 shadow-md backdrop-blur-xl"
       >
-        <>
+        <div>
           <div className="w-full">
             <p className="uppercase text-emerald-700 text-xs font-semibold tracking-wide leading-5">
               {labels.title}
@@ -103,7 +103,7 @@ function CookieConsent() {
               {labels.accept}
             </button>
           </div>
-        </>
+        </div>
       </aside>
     </div>
   )

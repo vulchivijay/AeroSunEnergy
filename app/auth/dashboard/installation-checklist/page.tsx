@@ -72,7 +72,7 @@ export default function InstallationChecklistPage() {
       <div className="mx-auto my-6 grid w-[calc(100%-2rem)] max-w-7xl items-center gap-10 rounded-xl border border-slate-200 bg-white/20 px-5 py-14 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:px-8 sm:py-20 lg:my-8 lg:grid-cols-[1fr_auto] lg:px-10">
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-amber-100/20 bg-white/5 px-3 py-1.5 text-xs uppercase text-amber-100 text-xs font-semibold tracking-wide leading-5">
-            <span className="h-1.5 w-1.5 rounded-full bg-amber-300 shadow-sm" />
+            <span className="shrink-0 h-2 w-2 rounded-full bg-current shadow-sm" />
             {labels.badge}
           </div>
           <h1 className="mt-6 text-white text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
@@ -103,12 +103,12 @@ export default function InstallationChecklistPage() {
         <div className="mb-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
           <div className="flex items-start gap-4">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-lg text-amber-800">i</span>
-            <>
+            <div>
               <p className="uppercase text-amber-800 text-xs font-semibold tracking-wide leading-5">{labels.glanceTitle}</p>
               <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 {labels.glanceDescription}
               </p>
-            </>
+            </div>
           </div>
           <div className="mt-6 grid gap-3 border-t border-slate-200 pt-5 sm:grid-cols-3">
             {content.summaryCards.map((card, index) => (
@@ -203,7 +203,7 @@ export default function InstallationChecklistPage() {
               <Field key={name} {...labels.fields[name]} name={name} type={name === 'email' ? 'email' : name === 'phone' ? 'tel' : name === 'installationDate' ? 'date' : 'text'} register={register} error={errors[name]} />
 							))}
 
-            <>
+            <div>
               <label htmlFor="checklistStatus" className="mb-2 block text-slate-100 text-xs sm:text-sm font-semibold tracking-normal leading-5">{labels.fields.checklistStatus.label}</label>
               <select
                 id="checklistStatus"
@@ -216,7 +216,7 @@ export default function InstallationChecklistPage() {
                 {labels.statusOptions.map((option) => <option key={option} value={option} className="text-slate-900">{option}</option>)}
               </select>
               {errors.checklistStatus && <p id="checklistStatus-error" className="mt-2 text-rose-300 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.checklistStatus.message}</p>}
-            </>
+            </div>
 
             <label className="flex items-start gap-3 rounded-xl border border-slate-700 bg-white/5 p-3 text-slate-200 text-xs sm:text-sm font-semibold tracking-normal leading-5">
               <input type="checkbox" {...register('safetyCheck')} aria-invalid={Boolean(errors.safetyCheck)} aria-describedby={errors.safetyCheck ? 'safetyCheck-error' : undefined} className="mt-1 h-4 w-4 rounded-lg border-slate-300 text-amber-500 focus:ring-amber-400" />
@@ -230,7 +230,7 @@ export default function InstallationChecklistPage() {
             </label>
             {errors.commissioningCheck && <p id="commissioningCheck-error" className="text-rose-300 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.commissioningCheck.message}</p>}
 
-            <>
+            <div>
               <label htmlFor="notes" className="mb-2 block text-slate-100 text-xs sm:text-sm font-semibold tracking-normal leading-5">{labels.fields.notes.label}</label>
               <textarea
                 id="notes"
@@ -242,7 +242,7 @@ export default function InstallationChecklistPage() {
                 className="w-full rounded-lg border border-slate-700 bg-white/5 px-4 py-3 text-base text-white placeholder:text-slate-300 outline-none transition focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
               />
               {errors.notes && <p id="notes-error" className="mt-2 text-rose-300 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.notes.message}</p>}
-            </>
+            </div>
 
             <FormDataNotice className="text-amber-100/70" />
             <button

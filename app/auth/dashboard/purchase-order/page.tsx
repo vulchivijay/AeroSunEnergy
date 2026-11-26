@@ -66,7 +66,7 @@ export default function PurchaseOrderPage() {
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.12),transparent_18%),linear-gradient(180deg,#f8fafc_0%,#ecfdf5_28%,#f8fafc_100%)] px-4 py-10 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 text-center">
-          <span className="inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-4 py-2 text-xs uppercase text-emerald-700 shadow-sm backdrop-blur-sm text-xs font-semibold tracking-wide leading-5">
+          <span className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex items-center rounded-full border border-emerald-200 bg-white/80 px-4 py-2 text-xs uppercase text-emerald-700 shadow-sm backdrop-blur-sm text-xs font-semibold tracking-wide leading-5">
             {labels.badge}
           </span>
           <h1 className="mt-5 text-slate-900 text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
@@ -182,7 +182,7 @@ export default function PurchaseOrderPage() {
                   error={errors.supplierName}
                 />
 
-                <>
+                <div>
                   <label htmlFor="productLine" className="mb-2 block text-slate-100 text-xs sm:text-sm font-semibold tracking-normal leading-5">
                     {labels.fields.productLine.label}
                   </label>
@@ -197,7 +197,7 @@ export default function PurchaseOrderPage() {
                     {labels.productOptions.map((option) => <option key={option} value={option} className="text-slate-900">{option}</option>)}
                   </select>
                   {errors.productLine && <p id="productLine-error" className="mt-2 text-rose-300 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.productLine.message}</p>}
-                </>
+                </div>
 
                 <Field
                   label={labels.fields.quantity.label}

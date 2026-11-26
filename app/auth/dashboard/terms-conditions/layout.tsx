@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions',
+  title: 'Review your account terms and conditions',
   description: 'Secure terms and conditions workspace for authorized AeroSun Energy users.',
   keywords: [
     'AeroSun Energy terms and conditions',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     canonical: '/auth/dashboard/terms-conditions',
   },
   openGraph: {
-    title: 'Terms & Conditions | AeroSun Energy Dashboard',
+    title: 'Review your account terms and conditions | AeroSun Energy Private Limited',
     description: 'Secure terms and conditions workspace for authorized AeroSun Energy users.',
     url: 'https://aerosunenergy.in/auth/dashboard/terms-conditions',
     siteName: 'AeroSun Energy',

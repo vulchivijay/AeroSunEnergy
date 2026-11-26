@@ -21,7 +21,7 @@ export default async function ProjectsPage() {
         <div className="mx-auto my-6 grid w-[calc(100%-2rem)] max-w-7xl items-center gap-10 rounded-xl border border-slate-200 bg-white/20 px-5 py-14 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:px-8 sm:py-20 lg:my-8 lg:grid-cols-[1fr_auto] lg:px-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100/20 bg-white/5 px-3 py-1.5 text-xs uppercase text-emerald-100 text-xs font-semibold tracking-wide leading-5">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-300 shadow-sm" />
+              <span className="shrink-0 h-2 w-2 rounded-full bg-current shadow-sm" />
               {labels.badge}
             </div>
             <h1 className="mt-6 text-white text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
@@ -54,10 +54,10 @@ export default async function ProjectsPage() {
           <section id="project-approach" className="scroll-mt-28 mb-8 rounded-xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-6 shadow-sm sm:p-8">
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-lg text-emerald-800">i</span>
-              <>
-                <p className="inline-flex w-fit rounded-full border border-slate-200 bg-emerald-50 px-3 py-1.5 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">{labels.approach}</p>
+              <div>
+                <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex w-fit rounded-full border border-slate-200 bg-emerald-50 px-3 py-1.5 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">{labels.approach}</p>
                 <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{labels.approachDescription}</p>
-              </>
+              </div>
             </div>
             <div className="mt-6 grid gap-3 border-t border-slate-200 pt-5 sm:grid-cols-2">
               {projectStepsData.map((step, index) => (
@@ -82,7 +82,7 @@ export default async function ProjectsPage() {
                       <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{project.description}</p>
                       <ul className="mt-3 flex flex-wrap gap-2">
                         {project.outcomes.map((outcome) => (
-                          <li key={outcome} className="rounded-full border border-slate-200 bg-white px-2.5 py-1 text-xs font-semibold text-slate-600 tracking-normal">{outcome}</li>
+                          <li key={outcome} className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 rounded-full border border-slate-200 bg-white px-2.5 py-1 text-xs font-semibold text-slate-600 tracking-normal">{outcome}</li>
                         ))}
                       </ul>
                     </div>
@@ -105,7 +105,7 @@ export default async function ProjectsPage() {
         <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
           <nav aria-label={labels.sectionsLabel} className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
             <div className="border-b border-slate-200 px-5 py-4">
-              <p className="inline-flex w-fit rounded-full border border-slate-200 bg-emerald-50 px-3 py-1.5 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">{labels.findTopic}</p>
+              <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex w-fit rounded-full border border-slate-200 bg-emerald-50 px-3 py-1.5 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">{labels.findTopic}</p>
               <p className="mt-1 text-slate-900 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{labels.projectOverview}</p>
             </div>
             <ol className="space-y-1 p-3">
@@ -124,13 +124,13 @@ export default async function ProjectsPage() {
             </ol>
           </nav>
           <section className="rounded-xl bg-gradient-to-br from-[#f1f2f6] to-white p-5">
-            <p className="inline-flex w-fit rounded-full border border-slate-200 bg-white/70 px-3 py-1.5 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">{labels.planningPriorities}</p>
+            <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex w-fit rounded-full border border-slate-200 bg-white/70 px-3 py-1.5 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">{labels.planningPriorities}</p>
             <ul className="mt-4 space-y-3 text-base leading-6 text-slate-700">
               {labels.planningSteps.map((step) => <li key={step}>{step}</li>)}
             </ul>
           </section>
           <section className="rounded-xl border border-emerald-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
-            <p className="inline-flex w-fit rounded-full border border-slate-200 bg-white/75 px-3 py-1.5 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">{labels.startConversation}</p>
+            <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex w-fit rounded-full border border-slate-200 bg-white/75 px-3 py-1.5 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">{labels.startConversation}</p>
             <p className="mt-3 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{labels.startConversationDescription}</p>
             <a href="/auth/dashboard/customer-enquiry" className="mt-4 inline-flex rounded-full bg-[#101c32] px-4 py-2.5 text-base font-bold text-white transition hover:bg-emerald-900 tracking-normal">{labels.requestConsultation}</a>
           </section>

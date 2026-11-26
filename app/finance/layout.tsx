@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Solar Financing Options | PM Surya Ghar Loan Guide | AeroSun Energy',
+  title: 'Explore solar financing and PM Surya Ghar loan options',
   description:
-    'Review the PM Surya Ghar standard solar-loan product, eligibility conditions, loan limits, subsidy and application steps. Confirm current terms with your bank.',
+    'Explore PM Surya Ghar solar loans, rooftop solar financing, eligibility, subsidy details, repayment terms, and application steps. Confirm current offers with your bank.',
   keywords: [
     'PM Surya Ghar solar loan',
     'rooftop solar financing',
@@ -20,14 +20,19 @@ export const metadata: Metadata = {
     'solar subsidy application process',
     'solar loan repayment terms',
     'AeroSun solar financing guide',
+    'PM Surya Ghar Muft Bijli Yojana',
+    'rooftop solar subsidy India',
+    'solar EMI calculator',
+    'solar system cost in India',
+    'solar panel price in India',
   ],
   alternates: {
     canonical: '/finance',
   },
   openGraph: {
-    title: 'Solar Financing Options | AeroSun Energy',
+    title: 'Explore solar financing and PM Surya Ghar loan options | AeroSun Energy Private Limited',
     description:
-      'A comparison of PM Surya Ghar solar-loan terms and eligibility for rooftop solar customers.',
+      'Explore PM Surya Ghar solar loans, rooftop solar financing, eligibility, subsidy details, repayment terms, and application steps. Confirm current offers with your bank.',
     url: 'https://aerosunenergy.in/finance',
     siteName: 'AeroSun Energy',
     type: 'website',

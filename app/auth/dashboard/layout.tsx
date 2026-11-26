@@ -5,16 +5,33 @@ import DashboardHeader from './DashboardHeader'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Dashboard',
-    template: '%s | AeroSun Dashboard',
+    default: 'Manage your secure AeroSun Energy dashboard',
+    template: '%s | AeroSun Energy Private Limited',
   },
   description:
     'Secure AeroSun Energy workspace for account records, customer forms, and project documents.',
+  keywords: [
+    'AeroSun Energy dashboard',
+    'solar project dashboard',
+    'renewable energy project management',
+    'customer project records',
+    'solar installation tracking',
+    'wind energy project records',
+    'hybrid energy projects',
+    'customer enquiry management',
+    'solar customer agreements',
+    'installation checklist',
+    'solar equipment purchase orders',
+    'renewable energy invoices',
+    'solar warranty records',
+    'project document management',
+    'AeroSun staff workspace',
+  ],
   alternates: {
     canonical: '/auth/dashboard',
   },
   openGraph: {
-    title: 'Dashboard | AeroSun Energy',
+    title: 'Access your secure AeroSun Energy dashboard | AeroSun Energy Private Limited',
     description: 'Secure AeroSun Energy workspace for authorized account users.',
     url: 'https://aerosunenergy.in/auth/dashboard',
     siteName: 'AeroSun Energy',

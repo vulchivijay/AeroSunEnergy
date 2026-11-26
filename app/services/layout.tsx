@@ -1,17 +1,10 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Renewable Energy Services | Solar, Wind & Hybrid Solutions by AeroSun Energy',
+  title: 'Explore our solar, wind, and hybrid energy services',
   description:
-    'AeroSun Energy offers renewable energy services including solar consultation, wind energy support, hybrid system design, installation, maintenance, and technical support for homes, businesses, farms, and industrial projects in India.',
+    'Explore renewable energy services for solar, wind, and hybrid projects, including consultation, system design, installation, maintenance, and technical support.',
   keywords: [
-    'solar energy services in Tirupati',
-    'wind energy services in Tirupati',
-    'renewable energy services in Tirupati',
-    'solar installation services in Tirupati',
-    'solar system design in Tirupati',
-    'solar project consultation in Tirupati',
-    'renewable energy company in Tirupati',
     'renewable energy services',
     'solar energy services India',
     'wind energy services',
@@ -44,9 +37,9 @@ export const metadata: Metadata = {
     canonical: '/services',
   },
   openGraph: {
-    title: 'Renewable Energy Services | Solar, Wind & Hybrid Solutions by AeroSun Energy',
+    title: 'Explore our solar, wind, and hybrid energy services | AeroSun Energy Private Limited',
     description:
-      'Solar, wind, and hybrid energy services covering consultation, design, engineering, installation, maintenance, and monitoring.',
+      'Explore renewable energy services for solar, wind, and hybrid projects, including consultation, system design, installation, maintenance, and technical support.',
     url: 'https://aerosunenergy.in/services',
     siteName: 'AeroSun Energy',
     type: 'website',

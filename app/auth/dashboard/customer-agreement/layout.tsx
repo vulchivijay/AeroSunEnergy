@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Customer Agreement',
+  title: 'Review your customer agreement',
   description: 'Secure customer agreement workspace for authorized AeroSun Energy users.',
   keywords: [
     'customer agreement AeroSun Energy',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     canonical: '/auth/dashboard/customer-agreement',
   },
   openGraph: {
-    title: 'Customer Agreement | AeroSun Energy Dashboard',
+    title: 'Review your customer agreement | AeroSun Energy Private Limited',
     description: 'Secure customer agreement workspace for authorized AeroSun Energy users.',
     url: 'https://aerosunenergy.in/auth/dashboard/customer-agreement',
     siteName: 'AeroSun Energy',

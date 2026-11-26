@@ -98,155 +98,151 @@ export function HomeSolarOfferingsSections({ t }: { t: Translations }) {
       <TrustRibbon />
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl">
-          <>
-            <div className="mb-8 flex items-center justify-between gap-4">
-              <>
-                <SectionEyebrow>{offer.eyebrow}</SectionEyebrow>
-                <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
-                  {offer.title}
-                </h2>
-              </>
+          <div className="mb-8 gap-4">
+            <SectionEyebrow>{offer.eyebrow}</SectionEyebrow>
+            <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
+              {offer.title}
+            </h2>
+          </div>
+          <div id="what-we-offer-content">
+            <div className="mb-10 text-lg leading-8 text-black">
+              {offer.description}
             </div>
-            <div id="what-we-offer-content">
-              <div className="mb-10 text-lg leading-8 text-black">
-                {offer.description}
-              </div>
-              <div className="grid gap-6 lg:grid-cols-3">
-                {solarCards.map((card, index) => (
-                  <FeatureCard
-                    key={card.title}
-                    title={card.title}
-                    description={card.description}
-                    descriptionClassName="line-clamp-3"
-                    points={[]}
-                    accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
-                    label={t.ui.solarSolution}
-                    imageSrc={solarOfferingImages[index]}
-                  />
-                      ))}
-              </div>
-              <div className="mt-10 grid gap-6 lg:grid-cols-3">
-                {home.moreSolarCards.map((card, index) => (
-                  <FeatureCard
-                    key={card.title}
-                    title={card.title}
-                    description={card.description}
-                    descriptionClassName="line-clamp-3"
-                    points={[]}
-                    accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
-                    label={t.ui.solarSolution}
-                    imageSrc={solarOfferingImages[solarCards.length + index]}
-                  />
-                      ))}
-              </div>
-              <div className="mt-12">
-                <RooftopSolarContentBlock
-                  eyebrow={home.rooftopSolar.eyebrow}
-                  title={home.rooftopSolar.title}
-                  description={home.rooftopSolar.description}
-                  benefits={home.rooftopSolar.benefits}
+            <div className="grid gap-6 lg:grid-cols-3">
+              {solarCards.map((card, index) => (
+                <FeatureCard
+                  key={card.title}
+                  title={card.title}
+                  description={card.description}
+                  descriptionClassName="line-clamp-3"
+                  points={[]}
+                  accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
+                  label={t.ui.solarSolution}
+                  imageSrc={solarOfferingImages[index]}
                 />
-                <div className="mt-8">
-                  {home.rooftopSolar.panels.map((panel) => (
-                    <InfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['amber', 'sky'] as const, 'emerald')} content={panel.content} />
-                        ))}
-                </div>
-              </div>
-              <div role="region" aria-labelledby="system-types-title" className="relative isolate mt-12 scroll-mt-24 overflow-hidden px-4 py-8 sm:px-7 sm:py-10 lg:px-9">
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(255,224,153,0.28),transparent_48%)]" aria-hidden="true" />
-                <Sun className="pointer-events-none absolute left-1/2 top-5 hidden h-6 w-6 -translate-x-[7.2rem] text-amber-400 sm:block" aria-hidden="true" />
-                <Sun className="pointer-events-none absolute left-1/2 top-5 hidden h-6 w-6 translate-x-[6.2rem] text-amber-400 sm:block" aria-hidden="true" />
-                <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 shadow-sm py-2">
-                  <span className="inline-flex h-2 w-2 items-center justify-center rounded-full bg-emerald-600" aria-hidden="true"></span>
-                  <p className="uppercase text-emerald-700 text-xs font-semibold tracking-wide leading-5">{home.systemTypeSection.eyebrow}</p>
-                </div>
-
-                <div className="relative z-10 mx-auto w-full max-w-none">
-                  <h3 id="system-types-title" className="mt-3 font-sans text-3xl font-bold leading-tight !tracking-tight text-[#0b4327] sm:text-4xl lg:text-[2.5rem]">
-                    {home.systemTypeSection.title}
-                  </h3>
-                  <span className="mx-auto mt-3 block h-1.5 w-36 -rotate-2 rounded-full bg-amber-400" aria-hidden="true" />
-                </div>
-
-                <div className="relative z-10 mt-7 grid items-stretch gap-4 lg:grid-cols-3 lg:gap-5">
-                  {systemTypes.map((item, index) => {
-                          const featureIcons = [
-                            [ArrowLeftRight, BadgeIndianRupee],
-                            [BatteryCharging, MapPin],
-                            [Network, ShieldCheck],
-                          ]
-                          const cardStyles = [
-                            {
-                              background: 'bg-[linear-gradient(145deg,#e9f3e3,#f7f8e9)]',
-                              border: 'border-emerald-100',
-                              icon: 'bg-amber-100 text-emerald-900',
-                            },
-                            {
-                              background: 'bg-[linear-gradient(145deg,#fff0cf,#fff8e9)]',
-                              border: 'border-amber-100',
-                              icon: 'bg-emerald-100 text-emerald-900',
-                            },
-                            {
-                              background: 'bg-[linear-gradient(145deg,#e0f0eb,#f0f7ef)]',
-                              border: 'border-teal-100',
-                              icon: 'bg-amber-100 text-emerald-900',
-                            },
-                          ]
-                          const style = cardStyles[index % cardStyles.length]
-                          const icons = featureIcons[index % featureIcons.length]
-
-                          return (
-                            <article
-                              key={item.title}
-                              className={`flex h-full flex-col overflow-hidden rounded-[1.5rem] border ${style.border} ${style.background} p-4 shadow-[0_10px_18px_-12px_rgba(47,54,34,0.45)] sm:p-5 lg:p-6`}
-                            >
-                              <SystemTypeIllustration index={index} />
-                              <h4 className="mt-1 flex min-h-12 items-center justify-center rounded-full bg-[#155d38] px-3 py-2 text-center font-semibold text-xl !tracking-tight text-white">
-                                {item.title}
-                              </h4>
-                              <ul className="mt-4 grid flex-1 content-start gap-3">
-                                {item.content.map((description, featureIndex) => {
-                                  const FeatureIcon = icons[featureIndex % icons.length]
-
-                                  return (
-                                    <li key={description} className="flex items-start gap-3">
-                                      <span className={`grid h-14 w-14 shrink-0 place-items-center rounded-full ${style.icon}`}>
-                                        <FeatureIcon className="h-8 w-8" strokeWidth={2} aria-hidden="true" />
-                                      </span>
-                                      <p className="text-base leading-6 text-[#17264a] sm:text-md sm:leading-6">
-                                        {description}
-                                      </p>
-                                    </li>
-                                  )
-                                })}
-                              </ul>
-                            </article>
-                          )
-                        })}
-                </div>
-              </div>
-              <div className="relative isolate mt-12 overflow-hidden rounded-[2rem] p-5 sm:p-7 lg:p-9">
-                <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_0%_0%,rgba(255,230,167,0.42),transparent_35%),radial-gradient(ellipse_at_100%_0%,rgba(147,171,89,0.15),transparent_24%)]" />
-                <svg className="pointer-events-none absolute right-0 top-0 h-20 w-40 text-[#78934d]/70" viewBox="0 0 160 80" fill="none" aria-hidden="true">
-                  <path d="M92 0c-2 23 9 37 31 42C128 20 115 5 92 0Z" fill="currentColor" />
-                  <path d="M122 0c-1 24 11 38 32 43C157 20 145 5 122 0Z" fill="currentColor" />
-                  <path d="M143 13c-1 22 5 37 17 45V16c-6-3-11-4-17-3Z" fill="currentColor" />
-                </svg>
-                <div className="relative z-10 mb-6">
-                  <SectionEyebrow>{home.whySolarSection.eyebrow}</SectionEyebrow>
-                  <h3 className="mt-3 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
-                    {home.whySolarSection.title}
-                  </h3>
-                </div>
-
-                <div className="relative z-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-                  {whySolar.map((item, index) => (
-                    <SolarBenefitCard key={item.title} title={item.title} description={item.description} index={index} />
-                        ))}
-                </div>
+                    ))}
+            </div>
+            <div className="mt-10 grid gap-6 lg:grid-cols-3">
+              {home.moreSolarCards.map((card, index) => (
+                <FeatureCard
+                  key={card.title}
+                  title={card.title}
+                  description={card.description}
+                  descriptionClassName="line-clamp-3"
+                  points={[]}
+                  accent={getAccentOrDefault(card.accent, ['amber', 'sky', 'violet'] as const, 'emerald')}
+                  label={t.ui.solarSolution}
+                  imageSrc={solarOfferingImages[solarCards.length + index]}
+                />
+                    ))}
+            </div>
+            <div className="mt-12">
+              <RooftopSolarContentBlock
+                eyebrow={home.rooftopSolar.eyebrow}
+                title={home.rooftopSolar.title}
+                description={home.rooftopSolar.description}
+                benefits={home.rooftopSolar.benefits}
+              />
+              <div className="mt-8">
+                {home.rooftopSolar.panels.map((panel) => (
+                  <InfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['amber', 'sky'] as const, 'emerald')} content={panel.content} />
+                      ))}
               </div>
             </div>
-          </>
+            <div role="region" aria-labelledby="system-types-title" className="relative isolate mt-12 scroll-mt-24 overflow-hidden px-4 py-8 sm:px-7 sm:py-10 lg:px-9">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(255,224,153,0.28),transparent_48%)]" aria-hidden="true" />
+              <Sun className="pointer-events-none absolute left-1/2 top-5 hidden h-6 w-6 -translate-x-[7.2rem] text-amber-400 sm:block" aria-hidden="true" />
+              <Sun className="pointer-events-none absolute left-1/2 top-5 hidden h-6 w-6 translate-x-[6.2rem] text-amber-400 sm:block" aria-hidden="true" />
+              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 shadow-sm py-2">
+                <span className="inline-flex h-2 w-2 shrink-0 items-center justify-center rounded-full bg-current text-emerald-700" aria-hidden="true"></span>
+                <p className="uppercase text-emerald-700 text-xs font-semibold tracking-wide leading-5">{home.systemTypeSection.eyebrow}</p>
+              </div>
+
+              <div className="relative z-10 mx-auto w-full max-w-none">
+                <h3 id="system-types-title" className="mt-3 font-sans text-3xl font-bold leading-tight !tracking-tight text-[#0b4327] sm:text-4xl lg:text-[2.5rem]">
+                  {home.systemTypeSection.title}
+                </h3>
+                <span className="mx-auto mt-3 block h-1.5 w-36 -rotate-2 rounded-full bg-amber-400" aria-hidden="true" />
+              </div>
+
+              <div className="relative z-10 mt-7 grid items-stretch gap-4 lg:grid-cols-3 lg:gap-5">
+                {systemTypes.map((item, index) => {
+                        const featureIcons = [
+                          [ArrowLeftRight, BadgeIndianRupee],
+                          [BatteryCharging, MapPin],
+                          [Network, ShieldCheck],
+                        ]
+                        const cardStyles = [
+                          {
+                            background: 'bg-[linear-gradient(145deg,#e9f3e3,#f7f8e9)]',
+                            border: 'border-emerald-100',
+                            icon: 'bg-amber-100 text-emerald-900',
+                          },
+                          {
+                            background: 'bg-[linear-gradient(145deg,#fff0cf,#fff8e9)]',
+                            border: 'border-amber-100',
+                            icon: 'bg-emerald-100 text-emerald-900',
+                          },
+                          {
+                            background: 'bg-[linear-gradient(145deg,#e0f0eb,#f0f7ef)]',
+                            border: 'border-teal-100',
+                            icon: 'bg-amber-100 text-emerald-900',
+                          },
+                        ]
+                        const style = cardStyles[index % cardStyles.length]
+                        const icons = featureIcons[index % featureIcons.length]
+
+                        return (
+                          <article
+                            key={item.title}
+                            className={`flex h-full flex-col overflow-hidden rounded-[1.5rem] border ${style.border} ${style.background} p-4 shadow-[0_10px_18px_-12px_rgba(47,54,34,0.45)] sm:p-5 lg:p-6`}
+                          >
+                            <SystemTypeIllustration index={index} />
+                            <h4 className="mt-1 flex min-h-12 items-center justify-center rounded-full bg-[#155d38] px-3 py-2 text-center font-semibold text-xl !tracking-tight text-white">
+                              {item.title}
+                            </h4>
+                            <ul className="mt-4 grid flex-1 content-start gap-3">
+                              {item.content.map((description, featureIndex) => {
+                                const FeatureIcon = icons[featureIndex % icons.length]
+
+                                return (
+                                  <li key={description} className="flex items-start gap-3">
+                                    <span className={`grid h-14 w-14 shrink-0 place-items-center rounded-full ${style.icon}`}>
+                                      <FeatureIcon className="h-8 w-8" strokeWidth={2} aria-hidden="true" />
+                                    </span>
+                                    <p className="text-base leading-6 text-[#17264a] sm:text-md sm:leading-6">
+                                      {description}
+                                    </p>
+                                  </li>
+                                )
+                              })}
+                            </ul>
+                          </article>
+                        )
+                      })}
+              </div>
+            </div>
+            <div className="relative isolate mt-12 overflow-hidden rounded-[2rem] p-5 sm:p-7 lg:p-9">
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_0%_0%,rgba(255,230,167,0.42),transparent_35%),radial-gradient(ellipse_at_100%_0%,rgba(147,171,89,0.15),transparent_24%)]" />
+              <svg className="pointer-events-none absolute right-0 top-0 h-20 w-40 text-[#78934d]/70" viewBox="0 0 160 80" fill="none" aria-hidden="true">
+                <path d="M92 0c-2 23 9 37 31 42C128 20 115 5 92 0Z" fill="currentColor" />
+                <path d="M122 0c-1 24 11 38 32 43C157 20 145 5 122 0Z" fill="currentColor" />
+                <path d="M143 13c-1 22 5 37 17 45V16c-6-3-11-4-17-3Z" fill="currentColor" />
+              </svg>
+              <div className="relative z-10 mb-6">
+                <SectionEyebrow>{home.whySolarSection.eyebrow}</SectionEyebrow>
+                <h3 className="mt-3 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
+                  {home.whySolarSection.title}
+                </h3>
+              </div>
+
+              <div className="relative z-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                {whySolar.map((item, index) => (
+                  <SolarBenefitCard key={item.title} title={item.title} description={item.description} index={index} />
+                      ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>

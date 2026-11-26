@@ -118,7 +118,7 @@ export default async function SaveEarthPage() {
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:px-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-3 rounded-full border border-amber-200/25 bg-white/10 px-4 py-2 uppercase text-amber-100 text-xs font-semibold tracking-wide leading-5">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-300 shadow-sm" />
+              <span className="shrink-0 h-2 w-2 rounded-full bg-current shadow-sm" />
               {content.heroBadge}
             </div>
             <h1 className="mt-6 text-white text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
@@ -153,14 +153,14 @@ export default async function SaveEarthPage() {
                   <span>{content.fieldNotes}</span>
                   <span className="h-2 w-2 rounded-full bg-amber-300" />
                 </div>
-                <>
+                <div>
                   <div className="text-white/10 text-xs font-semibold tracking-wide leading-5">
                     <DigitalNumber value={content.heroNumber} />
                   </div>
                   <p className="-mt-5 max-w-[15rem] text-white text-lg font-semibold tracking-normal leading-snug">
                     {content.everyActionMatters}
                   </p>
-                </>
+                </div>
                 <div className="flex items-end justify-between border-t border-slate-700 pt-5">
                   <span className="max-w-[12rem] text-base leading-5 text-amber-100/90">
                     {content.tagline}
@@ -191,7 +191,7 @@ export default async function SaveEarthPage() {
             className="overflow-hidden rounded-xl border border-slate-200 bg-white"
           >
             <div className="border-b border-slate-200 px-5 py-5">
-              <p className="inline-flex w-fit rounded-full border border-slate-200 bg-[#eaf2e9] px-4 py-2 uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">
+              <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex w-fit rounded-full border border-slate-200 bg-[#eaf2e9] px-4 py-2 uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">
                 {content.navigateGuide}
               </p>
               <p className="mt-1 text-slate-900 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.contentsTitle}</p>
@@ -224,7 +224,7 @@ export default async function SaveEarthPage() {
           >
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-8 bg-amber-300" />
-              <p className="inline-flex w-fit rounded-full border border-amber-800/20 bg-white/70 px-4 py-2 uppercase text-amber-800 text-xs font-semibold tracking-wide leading-5">
+              <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex w-fit rounded-full border border-amber-800/20 bg-white/70 px-4 py-2 uppercase text-amber-800 text-xs font-semibold tracking-wide leading-5">
                 {content.documentaryLabel}
               </p>
             </div>
@@ -243,7 +243,7 @@ export default async function SaveEarthPage() {
                 }`}
               >
                 <div className="mb-4 flex items-center gap-3">
-                  <span className="rounded-full border border-slate-200 bg-white px-4 py-2 uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">
+                  <span className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 rounded-full border border-slate-200 bg-white px-4 py-2 uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">
                     {content.sectionLabel} {String(index + 1).padStart(2, '0')}
                   </span>
                   <span className="h-px flex-1 bg-slate-200" />
@@ -261,14 +261,14 @@ export default async function SaveEarthPage() {
 
           <footer className="rounded-xl border border-slate-200 bg-white p-6 sm:p-8">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-              <>
-                <p className="inline-flex w-fit rounded-full border border-slate-200 bg-[#eaf2e9] px-4 py-2 uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">
+              <div>
+                <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex w-fit rounded-full border border-slate-200 bg-[#eaf2e9] px-4 py-2 uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">
                   {content.footerBadge}
                 </p>
                 <p className="mt-2 max-w-xl text-slate-900 text-lg font-semibold tracking-normal leading-snug">
                   {content.footerDescription}
                 </p>
-              </>
+              </div>
               <Link
                 href="/contact"
                 className="inline-flex shrink-0 items-center justify-center rounded-full bg-[#087a61] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#075e4b] tracking-normal"

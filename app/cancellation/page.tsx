@@ -13,7 +13,7 @@ export default async function CancellationRefundPage() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-white/10 px-4 py-2 uppercase text-sky-100 text-xs font-semibold tracking-wide leading-5">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-300" />
+              <span className="shrink-0 h-2 w-2 rounded-full bg-current" />
               {content.badge}
             </div>
             <h1 className="mt-6 text-white text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
@@ -96,22 +96,22 @@ export default async function CancellationRefundPage() {
           <h2 className="text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.contactTitle}</h2>
           <p className="mt-2 text-slate-200 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.contactIntro}</p>
           <dl className="mt-5 grid gap-4 text-sm sm:grid-cols-2">
-            <>
+            <div>
               <dt className="font-bold text-sky-200 tracking-normal">{content.emailLabel}</dt>
               <dd className="mt-1"><a className="underline underline-offset-4 hover:text-amber-200" href={`mailto:${content.email}`}>{content.email}</a></dd>
-            </>
-            <>
+            </div>
+            <div>
               <dt className="font-bold text-sky-200 tracking-normal">{content.phoneLabel}</dt>
               <dd className="mt-1"><a className="underline underline-offset-4 hover:text-amber-200" href={`tel:${content.phone}`}>{content.phone}</a></dd>
-            </>
-            <>
+            </div>
+            <div>
               <dt className="font-bold text-sky-200 tracking-normal">{content.websiteLabel}</dt>
               <dd className="mt-1"><a className="underline underline-offset-4 hover:text-amber-200" href={`https://${content.website}`} target="_blank" rel="noopener noreferrer">{content.website}</a></dd>
-            </>
-            <>
+            </div>
+            <div>
               <dt className="font-bold text-sky-200 tracking-normal">{content.addressLabel}</dt>
               <dd className="mt-1 leading-6">{content.address}</dd>
-            </>
+            </div>
           </dl>
           <p className="mt-6 border-t border-slate-700 pt-5 text-slate-200 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {content.moreQuestions}{' '}

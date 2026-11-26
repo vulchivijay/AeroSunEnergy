@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Research & Development',
+  title: 'Explore renewable energy research and development',
   description: 'Secure research and development workspace for authorized AeroSun Energy users.',
   keywords: [
     'solar energy research and development',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     canonical: '/auth/dashboard/research-development',
   },
   openGraph: {
-    title: 'Research & Development | AeroSun Dashboard',
+    title: 'Explore renewable energy research and development | AeroSun Energy Private Limited',
     description: 'Secure research and development workspace for authorized AeroSun Energy users.',
     url: 'https://aerosunenergy.in/auth/dashboard/research-development',
     siteName: 'AeroSun Energy',

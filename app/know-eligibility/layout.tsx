@@ -1,18 +1,10 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Check Your Solar Eligibility & Rooftop Subsidy Options | AeroSun Energy',
+  title: 'Check your eligibility for rooftop solar and available subsidies',
   description:
-    'Understand rooftop solar and subsidy eligibility with AeroSun Energy, including household requirements, system sizing, and renewable energy project suitability in India.',
+    'Check rooftop solar eligibility, system-size needs, PM Surya Ghar subsidy requirements, and project suitability for homes and businesses.',
   keywords: [
-    'solar eligibility check Tirupati',
-    'rooftop solar eligibility Tirupati',
-    'solar subsidy eligibility Tirupati',
-    'PM Surya Ghar eligibility Tirupati',
-    'residential solar eligibility Tirupati',
-    'commercial solar eligibility Tirupati',
-    'solar project feasibility Tirupati',
-    'solar roof suitability Tirupati',
     'solar eligibility check',
     'rooftop solar eligibility India',
     'PM Surya Ghar eligibility',
@@ -41,9 +33,9 @@ export const metadata: Metadata = {
     canonical: '/know-eligibility',
   },
   openGraph: {
-    title: 'Check Your Solar Eligibility & Rooftop Subsidy Options | AeroSun Energy',
+    title: 'Check your eligibility for rooftop solar and available subsidies | AeroSun Energy Private Limited',
     description:
-      'Learn whether your property qualifies for rooftop solar and subsidy support with AeroSun Energy expert guidance.',
+      'Check rooftop solar eligibility, system-size needs, PM Surya Ghar subsidy requirements, and project suitability for homes and businesses.',
     url: 'https://aerosunenergy.in/know-eligibility',
     siteName: 'AeroSun Energy',
     type: 'website',

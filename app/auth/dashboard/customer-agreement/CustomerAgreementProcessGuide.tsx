@@ -13,12 +13,12 @@ export function CustomerAgreementProcessGuide({
         <section className="mb-8 rounded-xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-6 shadow-sm sm:p-8">
           <div className="flex items-start gap-4">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-100 text-lg text-indigo-800">i</span>
-            <>
+            <div>
               <p className="uppercase text-indigo-800 text-xs font-semibold tracking-wide leading-5">{content.overview.title}</p>
               <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 {content.overview.description}
               </p>
-            </>
+            </div>
           </div>
           <div className="mt-6 grid gap-3 border-t border-slate-200 pt-5 sm:grid-cols-3">
             {content.overview.cards.map((card, index) => (

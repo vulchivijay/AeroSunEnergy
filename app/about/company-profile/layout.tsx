@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AeroSun Energy Company Profile | Solar, Wind & Hybrid Energy Solutions',
+  title: 'Learn about our renewable energy expertise and company mission',
   description:
-    'Explore AeroSun Energy Private Limited’s company profile, vision, mission, solar and wind solutions, innovation focus, development approach, quality commitments and future direction.',
+    'Learn about AeroSun Energy’s mission, renewable energy expertise, solar and wind technologies, hybrid systems, and project development approach.',
   keywords: [
     'AeroSun Energy company profile',
     'AeroSun Energy Private Limited',
@@ -15,19 +15,20 @@ export const metadata: Metadata = {
     'hybrid vertical axis wind turbine',
     'agricultural renewable energy',
     'off-grid renewable energy',
-    'renewable energy company Tirupati',
-    'solar energy company in Tirupati',
-    'wind energy solutions in Tirupati',
-    'hybrid energy solutions in Tirupati',
     'AeroSun Energy vision and mission',
+    'solar panel price in India',
+    'rooftop solar subsidy India',
+    'PM Surya Ghar rooftop solar',
+    'solar battery storage',
+    'small wind turbine for agriculture',
   ],
   alternates: {
     canonical: '/about/company-profile',
   },
   openGraph: {
-    title: 'AeroSun Energy Company Profile | Solar, Wind & Hybrid Energy Solutions',
+    title: 'Learn about our renewable energy expertise and company mission | AeroSun Energy Private Limited',
     description:
-      'Learn about AeroSun Energy’s renewable-energy solutions, technology development, quality and safety commitments, and long-term priorities.',
+      'Learn about AeroSun Energy’s mission, renewable energy expertise, solar and wind technologies, hybrid systems, and project development approach.',
     url: 'https://aerosunenergy.in/about/company-profile',
     siteName: 'AeroSun Energy',
     type: 'website',

@@ -9,7 +9,7 @@ export function AboutServicesAndCommitmentsSections({ t }: { t: Translations }) 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white text-[#152b29]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 max-w-3xl">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 uppercase text-[#137c63] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] text-xs font-semibold tracking-wide leading-5">{content.commitmentsBadge}</p>
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 uppercase text-[#137c63] before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] text-xs font-semibold tracking-wide leading-5">{content.commitmentsBadge}</p>
             <h2 className="mt-3 text-[#152b29] text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.commitmentsHeading}</h2>
           </div>
           <div className="grid gap-5 lg:grid-cols-2">
@@ -31,10 +31,10 @@ export function AboutServicesAndCommitmentsSections({ t }: { t: Translations }) 
                   ))}
           </div>
           <div className="mt-8 flex flex-col gap-5 rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-6">
-            <>
+            <div>
               <p className="uppercase text-[#a95600] text-xs font-semibold tracking-wide leading-5">{content.contactCalloutTitle}</p>
               <p className="mt-2 text-[#152b29] text-lg font-semibold tracking-normal leading-snug">{content.contactCalloutDescription}</p>
-            </>
+            </div>
             <a href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#087a61] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[#075e4b] tracking-normal">
               {content.contactAction} <span aria-hidden="true" className="ml-2">&rarr;</span>
             </a>
@@ -44,7 +44,7 @@ export function AboutServicesAndCommitmentsSections({ t }: { t: Translations }) 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 max-w-3xl">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-[#eaf2e9] px-4 py-2 uppercase text-[#137c63] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] text-xs font-semibold tracking-wide leading-5">{content.workBadge}</p>
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-[#eaf2e9] px-4 py-2 uppercase text-[#137c63] before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] text-xs font-semibold tracking-wide leading-5">{content.workBadge}</p>
             <h2 className="mt-3 text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.workHeading}</h2>
           </div>
           <div className="grid gap-5 lg:grid-cols-2">

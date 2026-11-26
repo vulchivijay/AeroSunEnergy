@@ -22,10 +22,10 @@ export function FooterNewsletterSignup({
 }) {
   return (
     <section aria-labelledby="footer-newsletter" className="mt-14 grid gap-6 rounded-xl bg-[#147e62] p-6 shadow-sm sm:p-8 lg:grid-cols-[1fr_1fr] lg:items-center">
-      <>
+      <div>
         <h2 id="footer-newsletter" className="text-slate-200 text-2xl sm:text-3xl leading-snug">{footer.stayPowered}</h2>
         <p className="mt-2 max-w-xl text-slate-100 text-sm sm:text-base font-normal tracking-normal sm:leading-5">{footer.newsletterDescription}</p>
-      </>
+      </div>
       <form onSubmit={onSubmit} className="w-full">
         <label htmlFor="footer-newsletter-email" className="sr-only text-xs sm:text-sm tracking-normal leading-5">{footer.newsletterEmailLabel}</label>
         <div className="flex flex-col gap-3 sm:flex-row">

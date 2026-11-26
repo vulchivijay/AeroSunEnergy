@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Warranty Policy',
+  title: 'Review your product warranty coverage and policy',
   description: 'Secure warranty policy workspace for authorized AeroSun Energy users.',
   keywords: [
     'warranty policy AeroSun Energy',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     canonical: '/auth/dashboard/warranty-policy',
   },
   openGraph: {
-    title: 'Warranty Policy | AeroSun Energy Dashboard',
+    title: 'Review your product warranty coverage and policy | AeroSun Energy Private Limited',
     description: 'Secure warranty policy workspace for authorized AeroSun Energy users.',
     url: 'https://aerosunenergy.in/auth/dashboard/warranty-policy',
     siteName: 'AeroSun Energy',

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '90-Day Tracker',
+  title: 'Track your 90-day business plan and project progress',
   description: 'Secure 90-day tracker for authorized AeroSun Energy users.',
   keywords: [
     '90-day business tracker',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     canonical: '/auth/dashboard/nintydays-tracker',
   },
   openGraph: {
-    title: '90-Day Tracker | AeroSun Energy Dashboard',
+    title: 'Track your 90-day business plan and project progress | AeroSun Energy Private Limited',
     description: 'Secure 90-day tracker for authorized AeroSun Energy users.',
     url: 'https://aerosunenergy.in/auth/dashboard/nintydays-tracker',
     siteName: 'AeroSun Energy',

@@ -1,15 +1,10 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Save Earth with Solar, Wind & Hybrid Renewable Energy | AeroSun Energy',
+  title: 'Discover how clean energy can support climate action',
   description:
-    'Learn how rooftop solar, wind, and hybrid renewable energy solutions help reduce emissions, protect the environment, and build a cleaner future with AeroSun Energy.',
+    'Learn how solar, wind, and hybrid renewable energy can reduce emissions and support a cleaner future through practical energy solutions.',
   keywords: [
-    'clean energy solutions in Tirupati',
-    'renewable energy in Tirupati Andhra Pradesh',
-    'solar energy for a greener Tirupati',
-    'solar and wind energy Tirupati',
-    'sustainable energy solutions Tirupati',
     'Save Earth initiative',
     'renewable energy and climate action',
     'solar for environment',
@@ -38,9 +33,9 @@ export const metadata: Metadata = {
     canonical: '/save-earth',
   },
   openGraph: {
-    title: 'Save Earth with Solar, Wind & Hybrid Renewable Energy | AeroSun Energy',
+    title: 'Discover how clean energy can support climate action | AeroSun Energy Private Limited',
     description:
-      'Our planet, our responsibility: explore environmental challenges and practical solutions for a sustainable future.',
+      'Learn how solar, wind, and hybrid renewable energy can reduce emissions and support a cleaner future through practical energy solutions.',
     url: 'https://aerosunenergy.in/save-earth',
     siteName: 'AeroSun Energy',
     type: 'website',

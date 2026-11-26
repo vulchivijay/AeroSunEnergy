@@ -1,18 +1,10 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Solar & Renewable Energy Product Catalogue | AeroSun Energy',
+  title: 'Explore solar, wind, and hybrid renewable energy products',
   description:
-    'Explore AeroSun Energy’s residential, commercial, agricultural, off-grid, battery, wind and hybrid renewable-energy solutions, consultation services and project process.',
+    'Browse solar panels, inverters, batteries, off-grid systems, small wind turbines, and hybrid renewable energy solutions for homes, farms, and businesses.',
   keywords: [
-    'solar products in Tirupati',
-    'solar panels and systems in Tirupati',
-    'commercial solar solutions in Tirupati',
-    'agricultural solar systems in Tirupati',
-    'off-grid solar systems in Tirupati',
-    'wind energy systems in Tirupati',
-    'solar wind hybrid systems in Tirupati',
-    'renewable energy products Tirupati',
     'AeroSun Energy product catalogue',
     'residential rooftop solar',
     'commercial industrial solar',
@@ -25,14 +17,17 @@ export const metadata: Metadata = {
     'renewable energy consultation',
     'solar feasibility assessment',
     'renewable energy solutions India',
+    'PM Surya Ghar solar system',
+    'solar inverter and battery',
+    'hybrid solar inverter',
   ],
   alternates: {
     canonical: '/about/product-catalogue',
   },
   openGraph: {
-    title: 'Solar & Renewable Energy Product Catalogue | AeroSun Energy',
+    title: 'Explore solar, wind, and hybrid renewable energy products | AeroSun Energy Private Limited',
     description:
-      'Discover AeroSun Energy’s renewable-energy solutions for homes, farms, businesses and institutions, including solar, battery, wind and hybrid systems.',
+      'Browse solar panels, inverters, batteries, off-grid systems, small wind turbines, and hybrid renewable energy solutions for homes, farms, and businesses.',
     url: 'https://aerosunenergy.in/about/product-catalogue',
     siteName: 'AeroSun Energy',
     type: 'website',

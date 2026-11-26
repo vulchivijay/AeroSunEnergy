@@ -63,7 +63,7 @@ export default function CustomerEnquiryPage() {
   return (
     <main className="min-h-screen w-full bg-[#f7f7f2] px-4 py-10 sm:px-6 lg:px-8">
       <header className="mx-auto mb-8 max-w-7xl rounded-xl border border-slate-200 bg-linear-to-br from-white/75 via-sky-50/65 to-cyan-100/55 p-6 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/60 sm:p-8">
-        <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-[#eaf2e9] px-4 py-2 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">
+        <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-[#eaf2e9] px-4 py-2 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">
           {page.eyebrow}
         </p>
         <h1 className="mt-3 text-slate-950 text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">

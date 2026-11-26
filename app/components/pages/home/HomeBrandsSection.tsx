@@ -129,8 +129,8 @@ export function HomeBrandsSection({ t }: { t: Translations }) {
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="relative z-10 mb-3 min-h-[19rem] overflow-hidden">
           <div className="relative z-10 max-w-5xl pt-10 pl-2">
-            <p className="inline-flex items-center gap-3 rounded-full bg-[#ffe89a] px-4 py-2 text-[#17472c] text-sm font-bold uppercase tracking-[0.06em] leading-5 shadow-sm lg:gap-4 lg:px-5 lg:text-lg">
-              <span className="h-4 w-4 rounded-full bg-[#14843c]" aria-hidden="true" />
+            <p className="inline-flex items-center gap-2 rounded-full bg-[#ffe89a] px-4 py-2 text-[#17472c] text-sm font-bold uppercase tracking-[0.06em] leading-5 shadow-sm lg:px-5 lg:text-lg">
+              <span className="h-2 w-2 shrink-0 rounded-full bg-current" aria-hidden="true" />
               {section.eyebrow}
             </p>
             <h2 id="brand-section-title" className="mt-6 max-w-5xl text-[#0b1745] text-3xl sm:text-4xl font-semibold !tracking-tight leading-[1.1]">
@@ -198,7 +198,7 @@ export function HomeBrandsSection({ t }: { t: Translations }) {
                           brand.materialTypes.map((materialType) => (
                             <span
                               key={materialType}
-                              className="rounded-full border border-slate-300 bg-white/80 px-2 py-1 text-center text-xs font-semibold text-slate-700 tracking-normal"
+                              className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 rounded-full border border-slate-300 bg-white/80 px-2 py-1 text-center text-xs font-semibold text-slate-700 tracking-normal"
                             >
                               {section.materialTypes[materialType]}
                             </span>
@@ -212,14 +212,14 @@ export function HomeBrandsSection({ t }: { t: Translations }) {
                     </div>
                     <div className="mt-3 flex min-h-8 flex-wrap items-center justify-start gap-2 lg:-mx-3 lg:mt-5 lg:min-h-10">
                       {index === 0 && maxPrice !== null && (
-                        <span className="rounded-full bg-emerald-800 px-3 py-1.5 text-center text-xs font-semibold tracking-wide leading-5 text-white shadow-sm lg:px-4 lg:py-2.5 lg:text-base">
+                        <span className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 rounded-full bg-emerald-800 px-3 py-1.5 text-center text-xs font-semibold tracking-wide leading-5 text-white shadow-sm lg:px-4 lg:py-2.5 lg:text-base">
                           {section.topPriceLabel}
                         </span>
                       )}
                       {brand.prices.map((price) => (
                         <span
                           key={price}
-                          className="w-auto max-w-full rounded-full border px-1.5 py-1.5 text-center text-[11px] font-bold leading-4 tracking-normal tabular-nums shadow-sm lg:px-5 lg:py-2.5 lg:text-base lg:leading-5"
+                          className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 w-auto max-w-full rounded-full border px-1.5 py-1.5 text-center text-[11px] font-bold leading-4 tracking-normal tabular-nums shadow-sm lg:px-5 lg:py-2.5 lg:text-base lg:leading-5"
                           style={{
                             backgroundColor: `hsl(${brand.hue} 76% 88%)`,
                             borderColor: `hsl(${brand.hue} 64% 76%)`,

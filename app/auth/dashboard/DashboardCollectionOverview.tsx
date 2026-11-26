@@ -32,7 +32,7 @@ export function DashboardCollectionOverview({
   return (
     <>
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <>
+        <div>
           <h2 className="capitalize text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{formatCollectionName(activeCollection || "Collections")}</h2>
           <p className="mt-1 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {role === "admin"
@@ -41,7 +41,7 @@ export function DashboardCollectionOverview({
                 ? "Operator access · manage business records and approved account roles."
                 : "Monitor access · read-only view of collection records."}
           </p>
-        </>
+        </div>
         <div className="flex flex-wrap items-end gap-3">
           {activeCollection === "website_form_submissions" && (
             <label className="grid gap-1.5 uppercase text-slate-500 text-xs sm:text-sm font-semibold tracking-normal leading-5">

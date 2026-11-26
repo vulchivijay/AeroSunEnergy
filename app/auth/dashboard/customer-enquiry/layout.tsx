@@ -1,17 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Customer Enquiry',
+  title: 'Manage customer enquiries',
   description: 'Secure customer enquiry workspace for authorized AeroSun Energy users.',
   keywords: [
-    'solar energy enquiry Tirupati',
-    'solar quote request Tirupati',
-    'wind energy enquiry Tirupati',
-    'hybrid energy enquiry Tirupati',
-    'renewable energy consultation Tirupati',
-    'solar project enquiry Tirupati',
-    'commercial solar enquiry Tirupati',
-    'residential solar enquiry Tirupati',
     'customer enquiry AeroSun Energy',
     'solar energy enquiry',
     'wind energy enquiry',
@@ -42,7 +34,7 @@ export const metadata: Metadata = {
     canonical: '/auth/dashboard/customer-enquiry',
   },
   openGraph: {
-    title: 'Customer Enquiry | AeroSun Energy Dashboard',
+    title: 'Manage customer enquiries | AeroSun Energy Private Limited',
     description: 'Secure customer enquiry workspace for authorized AeroSun Energy users.',
     url: 'https://aerosunenergy.in/auth/dashboard/customer-enquiry',
     siteName: 'AeroSun Energy',

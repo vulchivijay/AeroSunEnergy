@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Installation Checklist',
+  title: 'Review your installation checklist',
   description: 'Secure installation checklist for authorized AeroSun Energy users.',
   keywords: [
     'installation checklist AeroSun Energy',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     canonical: '/auth/dashboard/installation-checklist',
   },
   openGraph: {
-    title: 'Installation Checklist | AeroSun Energy Dashboard',
+    title: 'Review your installation checklist | AeroSun Energy Private Limited',
     description: 'Secure installation checklist for authorized AeroSun Energy users.',
     url: 'https://aerosunenergy.in/auth/dashboard/installation-checklist',
     siteName: 'AeroSun Energy',

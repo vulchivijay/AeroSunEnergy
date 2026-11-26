@@ -64,7 +64,7 @@ function ErrorIllustration({
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_36%,rgba(245,199,106,0.20),transparent_35%),linear-gradient(155deg,rgba(163,217,119,0.08),transparent_55%)]" />
       <div className="absolute inset-5 rounded-xl border border-slate-700" />
-      <div className="absolute left-8 top-8 flex items-center gap-2 rounded-full border border-slate-700 bg-[#071b17]/70 px-3 py-2 text-xs uppercase text-white/60 backdrop-blur text-xs font-semibold tracking-wide leading-5">
+      <div className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] absolute left-8 top-8 flex items-center gap-2 rounded-full border border-slate-700 bg-[#071b17]/70 px-3 py-2 text-xs uppercase text-white/60 backdrop-blur text-xs font-semibold tracking-wide leading-5">
         <span className={`h-1.5 w-1.5 rounded-full ${isLandscape ? 'bg-[#a3d977]' : 'bg-[#f5c76a]'}`} />
         {isLandscape ? t.systemUi.illustration.landscapeStatus : t.systemUi.illustration.systemStatus}
       </div>
@@ -74,7 +74,7 @@ function ErrorIllustration({
       </span>
 
       {isLandscape ? (
-        <>
+        <div>
           <div className="absolute right-[19%] top-[28%] h-16 w-16 rounded-full bg-[#f5c76a]/20 blur-2xl" />
           <Sun className="absolute right-[21%] top-[27%] h-10 w-10 text-[#f5c76a]" strokeWidth={1.2} />
           <div className="absolute bottom-[13%] left-[-10%] h-[43%] w-[82%] rotate-[-12deg] rounded-full bg-[#123e31]" />
@@ -91,9 +91,9 @@ function ErrorIllustration({
           </div>
           <div className="absolute bottom-[15%] left-[44%] h-[1px] w-[26%] rotate-[10deg] border-t border-dashed border-[#d6e8b9]/60" />
           <Wind className="absolute bottom-[11%] right-[12%] h-5 w-5 text-[#d6e8b9]/75" strokeWidth={1.3} />
-        </>
+        </div>
       ) : (
-        <>
+        <div>
           <div className="absolute inset-x-[16%] top-[34%] h-[1px] bg-gradient-to-r from-transparent via-[#a3d977]/55 to-transparent" />
           <div className="absolute left-[22%] top-[34%] h-2 w-2 rounded-full bg-[#a3d977] shadow-sm" />
           <div className="absolute right-[22%] top-[34%] h-2 w-2 rounded-full bg-[#f5c76a] shadow-sm" />
@@ -105,7 +105,7 @@ function ErrorIllustration({
             <Zap className="h-9 w-9 text-[#a3d977]" strokeWidth={1.3} />
           </div>
           <div className="absolute bottom-[14%] left-[18%] right-[18%] h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-        </>
+        </div>
       )}
     </div>
   )

@@ -1,15 +1,10 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About AeroSun Energy | Trusted Solar, Wind & Hybrid Energy Solutions in India',
+  title: 'Learn how we deliver solar, wind, and hybrid energy solutions',
   description:
-    'Learn about AeroSun Energy, a trusted renewable energy company delivering solar, wind, and hybrid power solutions for homes, businesses, farms, and industrial projects in India.',
+    'Meet the team behind AeroSun Energy and learn about our renewable energy mission, solar and wind solutions, and hybrid power projects for homes, farms, and businesses.',
   keywords: [
-    'renewable energy company in Tirupati',
-    'solar company in Tirupati Andhra Pradesh',
-    'wind energy company in Tirupati',
-    'solar and wind energy solutions in Tirupati',
-    'hybrid renewable energy company in Tirupati',
     'about AeroSun Energy',
     'AeroSun Energy company profile',
     'solar company in India',
@@ -40,9 +35,9 @@ export const metadata: Metadata = {
     canonical: '/about',
   },
   openGraph: {
-    title: 'About AeroSun Energy | Trusted Solar, Wind & Hybrid Energy Solutions in India',
+    title: 'Learn how we deliver solar, wind, and hybrid energy solutions | AeroSun Energy Private Limited',
     description:
-      'Discover the mission, values, and renewable energy expertise behind AeroSun Energy.',
+      'Meet the team behind AeroSun Energy and learn about our renewable energy mission, solar and wind solutions, and hybrid power projects for homes, farms, and businesses.',
     url: 'https://aerosunenergy.in/about',
     siteName: 'AeroSun Energy',
     type: 'website',

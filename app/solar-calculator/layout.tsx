@@ -1,18 +1,10 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Solar Calculator | Estimate Rooftop Solar Savings & Payback with AeroSun Energy',
+  title: 'Estimate your solar system cost, savings, and payback',
   description:
-    'Use AeroSun Energy’s solar estimation calculator to estimate rooftop solar capacity, savings potential, payback period, and return on investment for homes and businesses in India.',
+    'Estimate rooftop solar system size, installation cost, energy savings, payback, and return on investment for your home or business with our solar calculator.',
   keywords: [
-    'solar estimation calculator Tirupati',
-    'solar savings calculator Tirupati',
-    'rooftop solar estimate Tirupati',
-    'solar cost calculator Tirupati',
-    'solar system size calculator Tirupati',
-    'solar installation estimate Tirupati',
-    'home solar calculator Tirupati',
-    'commercial solar estimate Tirupati',
     'solar estimation calculator',
     'solar savings calculator',
     'rooftop solar estimate',
@@ -41,9 +33,9 @@ export const metadata: Metadata = {
     canonical: '/solar-calculator',
   },
   openGraph: {
-    title: 'Solar Calculator | Estimate Rooftop Solar Savings & Payback with AeroSun Energy',
+    title: 'Estimate your solar system cost, savings, and payback | AeroSun Energy Private Limited',
     description:
-      'Estimate your solar system size, potential savings, and ROI with AeroSun Energy.',
+      'Estimate rooftop solar system size, installation cost, energy savings, payback, and return on investment for your home or business with our solar calculator.',
     url: 'https://aerosunenergy.in/solar-calculator',
     siteName: 'AeroSun Energy',
     type: 'website',

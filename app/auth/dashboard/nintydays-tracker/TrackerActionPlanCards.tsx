@@ -60,12 +60,12 @@ export function TrackerPhaseCards({
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#f2b84b] text-base font-bold text-[#30243a] tracking-normal">
               {index + 1}
             </span>
-            <>
+            <div>
               <p className="uppercase text-[#cbd6e5] text-xs font-semibold tracking-wide leading-5">
                 {phase.period}
               </p>
               <h3 className="text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{phase.title}</h3>
-            </>
+            </div>
           </div>
           <div className="p-5">
             <ul className="space-y-3 text-sm leading-7 text-[#4c566d]">
