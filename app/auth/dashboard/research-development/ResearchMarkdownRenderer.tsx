@@ -41,7 +41,7 @@ export function InlineContent({
       (part.startsWith("__") && part.endsWith("__"))
     ) {
       return (
-        <strong key={index} className="font-bold text-slate-950 tracking-normal ">
+        <strong key={index} className="font-bold text-slate-950 tracking-normal">
           {digitalNumbers ? <DigitalNumber value={part.slice(2, -2)} /> : part.slice(2, -2)}
         </strong>
       );
@@ -163,7 +163,7 @@ export function MarkdownBlockView({ block }: { block: ContentBlock }) {
 
   if (block.type === "paragraph") {
     return (
-      <p className="my-4 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+      <p className="my-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
         {block.lines.map((line, index) => (
           <span key={index}>
             {index > 0 ? " " : ""}
@@ -220,7 +220,7 @@ export function MarkdownBlockView({ block }: { block: ContentBlock }) {
     return (
       <div className="my-7 overflow-hidden rounded-xl border border-slate-700 bg-[#10251f] shadow-sm">
         {block.language && (
-          <p className="border-b border-slate-700 px-4 py-2 font-mono uppercase text-emerald-200/70     tabular-nums text-xs font-semibold tracking-wide leading-5">
+          <p className="border-b border-slate-700 px-4 py-2 font-mono uppercase text-emerald-200/70 tabular-nums text-xs font-semibold tracking-wide leading-5">
             {block.language}
           </p>
         )}

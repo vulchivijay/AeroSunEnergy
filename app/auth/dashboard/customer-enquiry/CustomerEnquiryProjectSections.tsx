@@ -25,7 +25,7 @@ export function CustomerEnquiryProjectSections({
           <p>
             <strong className="tracking-normal">{page.company.cin}</strong> {page.company.cinValue}
           </p>
-          <p className="sm:col-span-2      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+          <p className="sm:col-span-2 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             <strong className="tracking-normal">{page.company.registeredOffice}</strong>{" "}
             {page.company.registeredOfficeValue}
           </p>
@@ -156,7 +156,7 @@ export function CustomerEnquiryProjectSections({
           <h3 className="text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
             {page.projectObjective}
           </h3>
-          <p className="mt-2 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+          <p className="mt-2 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {page.projectObjectiveCopy}
           </p>
         </div>
@@ -185,7 +185,7 @@ export function CustomerEnquiryProjectSections({
             ],
           }))}
         />
-        <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+        <p className="mt-3 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {page.technicalSpecificationNote}
         </p>
       </section>
@@ -210,7 +210,7 @@ export function CustomerEnquiryProjectSections({
             ],
           }))}
         />
-        <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+        <p className="mt-3 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {page.billOfMaterialsNote}
         </p>
       </section>

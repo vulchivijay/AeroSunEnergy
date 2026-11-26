@@ -16,14 +16,14 @@ function SectionHeading({
 }) {
   return (
     <div className="mb-7 max-w-3xl">
-      <p className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 uppercase before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? 'border-amber-300/20 bg-white/[0.08] text-amber-200' : ' border-slate-200 bg-white/75 text-teal-800    '} text-xs font-semibold tracking-wide leading-5`}>
+      <p className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 uppercase before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? 'border-amber-300/20 bg-white/[0.08] text-amber-200' : ' border-slate-200 bg-white/75 text-teal-800 '} text-xs font-semibold tracking-wide leading-5`}>
         {number} / {eyebrow}
       </p>
       <h2 className={`mt-4 ${inverse ? 'text-white' : 'text-[#152b29]'} text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug`}>
         {title}
       </h2>
       {description && (
-        <p className={`mt-4 ${inverse ? 'text-indigo-100/90' : ' text-slate-600      '}      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}>{description}</p>
+        <p className={`mt-4 ${inverse ? 'text-indigo-100/90' : ' text-slate-600 '} text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}>{description}</p>
       )}
     </div>
   )
@@ -85,23 +85,23 @@ export function ProductCatalogueWindSections({ t }: { t: Translations }) {
                   </div>
                 </div>
                 <div className="mt-5 rounded-xl border border-amber-200/20 bg-black/10 p-6 sm:p-8">
-                  <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2  uppercase text-amber-800    text-xs font-semibold tracking-wide leading-5">{c.wind.projectLabel}</p>
+                  <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 uppercase text-amber-800 text-xs font-semibold tracking-wide leading-5">{c.wind.projectLabel}</p>
                   <h3 className="mt-3 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{c.wind.productName}</h3>
-                  <p className="mt-2 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{c.wind.configurationLabel}</p>
+                  <p className="mt-2 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{c.wind.configurationLabel}</p>
                   <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                     {c.wind.configuration.map((item) => (
-                      <p key={item} className="flex gap-3 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                      <p key={item} className="flex gap-3 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                         <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-amber-300" aria-hidden="true" />
                         {item}
                       </p>
                     ))}
                   </div>
-                  <p className="mt-6 border-t border-slate-200 pt-5 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                  <p className="mt-6 border-t border-slate-200 pt-5 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                     <strong className="text-slate-950">{c.wind.statusLabel}</strong>{' '}
                     {c.wind.statusTemplate.replace('{status}', c.wind.status)}
                   </p>
                 </div>
-                <p className="mt-6 italic text-amber-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                <p className="mt-6 italic text-amber-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {c.wind.tagline}
                 </p>
               </div>
@@ -119,10 +119,10 @@ export function ProductCatalogueWindSections({ t }: { t: Translations }) {
                   <DetailCard title={c.hybrid.applicationsLabel}><BulletList items={c.hybrid.applications} /></DetailCard>
                   <DetailCard title={c.hybrid.benefitsLabel}><BulletList items={c.hybrid.benefits} /></DetailCard>
                 </div>
-                <p className="mt-5 rounded-xl border border-slate-200 bg-[#eaf2e9] px-5 py-4 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                <p className="mt-5 rounded-xl border border-slate-200 bg-[#eaf2e9] px-5 py-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {c.hybrid.caveat}
                 </p>
-                <p className="mt-5 border-l-2 border-amber-500 pl-4 italic text-teal-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                <p className="mt-5 border-l-2 border-amber-500 pl-4 italic text-teal-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {c.hybrid.tagline}
                 </p>
               </div>

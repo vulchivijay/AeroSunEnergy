@@ -63,13 +63,13 @@ export default function CustomerEnquiryPage() {
   return (
     <main className="min-h-screen w-full bg-[#f7f7f2] px-4 py-10 sm:px-6 lg:px-8">
       <header className="mx-auto mb-8 max-w-7xl rounded-xl border border-slate-200 bg-linear-to-br from-white/75 via-sky-50/65 to-cyan-100/55 p-6 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/60 sm:p-8">
-        <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-[#eaf2e9] px-4 py-2 uppercase text-emerald-800    text-xs font-semibold tracking-wide leading-5">
+        <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-[#eaf2e9] px-4 py-2 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">
           {page.eyebrow}
         </p>
         <h1 className="mt-3 text-slate-950 text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
           {page.title}
         </h1>
-        <p className="mt-3 max-w-3xl text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{page.description}</p>
+        <p className="mt-3 max-w-3xl text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{page.description}</p>
       </header>
       <div className="mx-auto grid max-w-7xl items-start gap-8 lg:grid-cols-[minmax(0,1fr)_16rem]">
         <form
@@ -91,16 +91,16 @@ export default function CustomerEnquiryPage() {
           className="min-w-0 space-y-6 rounded-xl border border-slate-200 bg-white p-3 shadow-sm sm:p-5 lg:p-6"
         >
           <header className="rounded-xl border border-slate-700 bg-linear-to-br from-sky-900/65 via-cyan-800/55 to-slate-900/65 p-5 text-white shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:p-6">
-            <p className="uppercase text-lime-300    text-xs font-semibold tracking-wide leading-5">
+            <p className="uppercase text-lime-300 text-xs font-semibold tracking-wide leading-5">
               {page.companyName}
             </p>
             <h1 className="mt-2 uppercase text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
               {page.title}
             </h1>
-            <p className="mt-2 text-emerald-100      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            <p className="mt-2 text-emerald-100 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.companyTagline}
             </p>
-            <p className="mt-3 uppercase text-emerald-50/80    text-xs font-semibold tracking-wide leading-5">
+            <p className="mt-3 uppercase text-emerald-50/80 text-xs font-semibold tracking-wide leading-5">
               {page.proposalTitle}
             </p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -145,18 +145,18 @@ export default function CustomerEnquiryPage() {
           <CustomerEnquiryClosingSections page={page} paymentMilestones={paymentMilestones} />
 
           <section className="rounded-xl bg-gradient-to-br from-[#f1f2f6] to-white p-5 text-slate-900 sm:p-7">
-            <h2 className=" uppercase text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
+            <h2 className="uppercase text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
               {page.thankYou}
             </h2>
-            <p className="mt-2      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{page.companyName}</p>
-            <p className="mt-1 text-emerald-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            <p className="mt-2 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{page.companyName}</p>
+            <p className="mt-1 text-emerald-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.companyTagline}
             </p>
-            <p className="mt-4 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            <p className="mt-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.company.websiteValue} · {page.contactEmail} ·{" "}
               {page.phoneValue}
             </p>
-            <p className="mt-2 font-mono text-emerald-800       tabular-nums text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            <p className="mt-2 font-mono text-emerald-800 tabular-nums text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {page.documentReference}
             </p>
           </section>
@@ -180,11 +180,11 @@ export default function CustomerEnquiryPage() {
               {isSubmitting ? t.formSubmission.saving : page.submit}
             </button>
           </div>
-          <p className="text-right text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+          <p className="text-right text-slate-500 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {page.requiredFieldsNote}
           </p>
           <FormDataNotice />
-          {isSubmitting && <p className="text-emerald-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7" role="status">{t.formSubmission.saving}</p>}
+          {isSubmitting && <p className="text-emerald-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7" role="status">{t.formSubmission.saving}</p>}
         </form>
         <aside className="min-w-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-24">
           <h2 className="mb-4 uppercase text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">

@@ -3,7 +3,7 @@ import type { LucideIcon } from 'lucide-react'
 
 export function SolarLeadSummary({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex items-start justify-between gap-4 border-b border-slate-700 pb-2 text-sm last:border-b-0 last:pb-0 ">
+    <div className="flex items-start justify-between gap-4 border-b border-slate-700 pb-2 text-sm last:border-b-0 last:pb-0">
       <span className="text-emerald-100/75">{label}</span>
       <span className="text-right font-bold text-white tracking-normal tabular-nums">
         <DigitalNumber value={value} />
@@ -33,9 +33,9 @@ export function SolarPriceItem({
           : 'border-slate-700 bg-white/[0.05] '
       }`}
     >
-      <div className="flex items-start justify-between gap-3 ">
-        <div className="min-w-0 ">
-          <p className={` ${featured ? 'text-amber-950/70' : ' text-slate-300      '}      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}>
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className={` ${featured ? 'text-amber-950/70' : ' text-slate-300 '} text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}>
             {label}
           </p>
           <p className={`mt-3 whitespace-nowrap text-lg sm:text-xl ${valueClassName} font-semibold tracking-normal leading-snug tabular-nums`}>

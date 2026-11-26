@@ -35,8 +35,8 @@ export function AboutHeroSections({ t }: { t: Translations }) {
     }
   return (
     <>
-      <section id="story" className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] text-[#152b29] ">
-              <div className="pointer-events-none absolute inset-0 -z-10 " />
+      <section id="story" className="relative isolate overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6] text-[#152b29]">
+              <div className="pointer-events-none absolute inset-0 -z-10" />
               <div className="absolute -right-36 top-20 -z-10 h-[34rem] w-[34rem] rounded-full border border-teal-900/[0.08] sm:right-[-8rem]">
                 <div className="absolute inset-10 rounded-full border border-teal-900/[0.08]" />
                 <div className="absolute inset-20 rounded-full border border-teal-900/[0.08]" />
@@ -53,10 +53,10 @@ export function AboutHeroSections({ t }: { t: Translations }) {
                     {pageStrings.companyTitleA}
                     <span className="mt-2 block text-[#137c63]">{pageStrings.companyTitleB}</span>
                   </h1>
-                  <p className="mt-5 uppercase text-slate-600    text-xs font-semibold tracking-wide leading-5">
+                  <p className="mt-5 uppercase text-slate-600 text-xs font-semibold tracking-wide leading-5">
                     {pageStrings.legalLabel}
                   </p>
-                  <p className="mt-6 max-w-xl text-slate-700       text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                  <p className="mt-6 max-w-xl text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                     {pageStrings.pitch.split(' • ').map((part, index) => (
                       <span key={part}>
                         {index > 0 && <span className="text-[#137c63]"> &middot; </span>}
@@ -65,10 +65,10 @@ export function AboutHeroSections({ t }: { t: Translations }) {
                     ))}
                   </p>
                   <div className="mt-8 border-l-2 border-[#087a61] pl-5">
-                    <p className=" uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">{pageStrings.promiseLabel}</p>
-                    <p className="mt-2  italic text-[#112c2a]    text-lg font-semibold tracking-normal leading-snug">&ldquo;{pageStrings.promiseText}&rdquo;</p>
+                    <p className="uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">{pageStrings.promiseLabel}</p>
+                    <p className="mt-2 italic text-[#112c2a] text-lg font-semibold tracking-normal leading-snug">&ldquo;{pageStrings.promiseText}&rdquo;</p>
                   </div>
-                  <p className="mt-8 max-w-2xl text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                  <p className="mt-8 max-w-2xl text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                     {pageStrings.intro}
                   </p>
                   <div className="mt-8 flex flex-wrap gap-3">
@@ -100,9 +100,9 @@ export function AboutHeroSections({ t }: { t: Translations }) {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/10 to-transparent" />
                       <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
-                        <p className=" uppercase text-amber-300    text-xs font-semibold tracking-wide leading-5">{content.founderRole}</p>
+                        <p className="uppercase text-amber-300 text-xs font-semibold tracking-wide leading-5">{content.founderRole}</p>
                         <h2 className="mt-2 text-white text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.founderName}</h2>
-                        <p className="mt-2 max-w-sm text-white/85      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                        <p className="mt-2 max-w-sm text-white/85 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                           {content.founderImageBio}
                         </p>
                       </div>
@@ -111,10 +111,10 @@ export function AboutHeroSections({ t }: { t: Translations }) {
                 </div>
               </div>
 
-              <div className="border-t border-slate-200 ">
-                <div className="mx-auto grid max-w-7xl gap-4 px-4 py-5 sm:grid-cols-3 sm:px-6 lg:px-10 ">
+              <div className="border-t border-slate-200">
+                <div className="mx-auto grid max-w-7xl gap-4 px-4 py-5 sm:grid-cols-3 sm:px-6 lg:px-10">
                   {companyStatsData.map((stat) => (
-                    <div key={stat.label} className="flex items-center justify-between gap-4 sm:justify-start sm:gap-5 ">
+                    <div key={stat.label} className="flex items-center justify-between gap-4 sm:justify-start sm:gap-5">
                       <span className="text-xs uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">{stat.label}</span>
                       <span className="text-sm font-semibold text-[#152b29] tracking-normal tabular-nums"><DigitalNumber value={stat.value} /></span>
                     </div>

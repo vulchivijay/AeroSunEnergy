@@ -16,14 +16,14 @@ function SectionHeading({
 }) {
   return (
     <div className="mb-7 max-w-3xl">
-      <p className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 uppercase before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? 'border-amber-300/20 bg-white/[0.08] text-amber-200' : ' border-slate-200 bg-white/75 text-teal-800    '} text-xs font-semibold tracking-wide leading-5`}>
+      <p className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 uppercase before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? 'border-amber-300/20 bg-white/[0.08] text-amber-200' : ' border-slate-200 bg-white/75 text-teal-800 '} text-xs font-semibold tracking-wide leading-5`}>
         {number} / {eyebrow}
       </p>
       <h2 className={`mt-4 ${inverse ? 'text-white' : 'text-[#152b29]'} text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug`}>
         {title}
       </h2>
       {description && (
-        <p className={`mt-4 ${inverse ? 'text-indigo-100/90' : ' text-slate-600      '}      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}>{description}</p>
+        <p className={`mt-4 ${inverse ? 'text-indigo-100/90' : ' text-slate-600 '} text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}>{description}</p>
       )}
     </div>
   )
@@ -67,7 +67,7 @@ export function ProductCatalogueHeroSections({ t }: { t: Translations }) {
                 aria-hidden="true"
               />
               <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-                <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">
+                <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">
                   <span className="h-1.5 w-1.5 rounded-full bg-amber-500" aria-hidden="true" />
                   {c.hero.badge}
                 </p>
@@ -75,10 +75,10 @@ export function ProductCatalogueHeroSections({ t }: { t: Translations }) {
                   {c.hero.title}
                   <span className="mt-2 block text-[#137c63]">{c.hero.titleAccent}</span>
                 </h1>
-                <p className="mt-5 uppercase text-slate-600    text-xs font-semibold tracking-wide leading-5">
+                <p className="mt-5 uppercase text-slate-600 text-xs font-semibold tracking-wide leading-5">
                   {c.hero.tagline}
                 </p>
-                <p className="mt-6 max-w-3xl text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                <p className="mt-6 max-w-3xl text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {c.hero.description}
                 </p>
                 <a
@@ -95,8 +95,8 @@ export function ProductCatalogueHeroSections({ t }: { t: Translations }) {
                     return (
                       <div key={label} className="rounded-xl border border-slate-200 bg-white/85 p-5">
                         <Icon className="h-5 w-5 text-[#137c63]" aria-hidden="true" />
-                        <p className="mt-4  uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">{label}</p>
-                        <p className="mt-1 text-[#152b29]      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{description}</p>
+                        <p className="mt-4 uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">{label}</p>
+                        <p className="mt-1 text-[#152b29] text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{description}</p>
                       </div>
                     )
                   })}
@@ -122,12 +122,12 @@ export function ProductCatalogueHeroSections({ t }: { t: Translations }) {
                   </DetailCard>
                   <DetailCard title={c.residential.benefitsLabel}><BulletList items={c.residential.benefits} /></DetailCard>
                   <DetailCard title={c.residential.customisationLabel}>
-                    <p className="text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                    <p className="text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                       {c.residential.customisation}
                     </p>
                   </DetailCard>
                 </div>
-                <p className="mt-5 border-l-2 border-amber-500 pl-4 italic text-teal-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                <p className="mt-5 border-l-2 border-amber-500 pl-4 italic text-teal-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {c.residential.tagline}
                 </p>
               </div>

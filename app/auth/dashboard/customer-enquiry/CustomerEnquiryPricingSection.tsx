@@ -80,7 +80,7 @@ export function CustomerEnquiryPricingSection({ page }: { page: CustomerEnquiryC
           placeholder={page.gstPlaceholder}
         />
       </div>
-      <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+      <p className="mt-3 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
         {page.gstNote}
       </p>
     </section>

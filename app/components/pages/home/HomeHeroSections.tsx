@@ -87,11 +87,11 @@ function SchemeBanner({ t }: { t: Translations }) {
   const capacityRows = t.solarPage.capacityTable.rows
 
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-br from-slate-50 via-white to-emerald-50/60 px-4 py-10 text-[#172554] sm:px-6 sm:py-12 lg:px-10 lg:py-14 ">
-      <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-32 h-80 w-80 rounded-full bg-white/55 blur-3xl " />
-      <div aria-hidden="true" className="pointer-events-none absolute -bottom-40 left-1/4 h-80 w-80 rounded-full bg-[#ede9fe]/55 blur-3xl " />
+    <section className="relative isolate overflow-hidden bg-gradient-to-br from-slate-50 via-white to-emerald-50/60 px-4 py-10 text-[#172554] sm:px-6 sm:py-12 lg:px-10 lg:py-14">
+      <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-32 h-80 w-80 rounded-full bg-white/55 blur-3xl" />
+      <div aria-hidden="true" className="pointer-events-none absolute -bottom-40 left-1/4 h-80 w-80 rounded-full bg-[#ede9fe]/55 blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl ">
+      <div className="relative mx-auto max-w-7xl">
         <div className="relative isolate overflow-hidden rounded-xl border border-slate-700 bg-gradient-to-br from-[#0f1d4a] via-[#172554] to-emerald-900 p-6 text-white shadow-md sm:p-8 lg:p-9">
           <div aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full border border-amber-200/20" />
           <div className="relative z-10 grid items-end gap-x-10 gap-y-7 lg:grid-cols-[minmax(0,1fr)_auto]">
@@ -108,7 +108,7 @@ function SchemeBanner({ t }: { t: Translations }) {
                   {banner.title}{' '}
                   <span className="font-semibold text-amber-200 tracking-normal">{banner.titleAccent}</span>
                 </h2>
-                <p className="mt-3 max-w-4xl text-blue-50/90      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                <p className="mt-3 max-w-4xl text-blue-50/90 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {banner.description}
                 </p>
               </div>
@@ -132,11 +132,11 @@ function SchemeBanner({ t }: { t: Translations }) {
           </div>
         </div>
 
-        <div className="mt-5 grid items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4 ">
-          <div className="relative isolate min-h-56 overflow-hidden rounded-xl border border-emerald-300/70 bg-gradient-to-br from-[#064e3b] to-[#047857] p-5 text-white shadow-sm sm:p-6 ">
-            <div aria-hidden="true" className="pointer-events-none absolute -right-10 -top-12 -z-10 h-36 w-36 rounded-full bg-lime-300/15 blur-2xl " />
+        <div className="mt-5 grid items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="relative isolate min-h-56 overflow-hidden rounded-xl border border-emerald-300/70 bg-gradient-to-br from-[#064e3b] to-[#047857] p-5 text-white shadow-sm sm:p-6">
+            <div aria-hidden="true" className="pointer-events-none absolute -right-10 -top-12 -z-10 h-36 w-36 rounded-full bg-lime-300/15 blur-2xl" />
             <div className="uppercase text-emerald-100 text-xs font-semibold tracking-wide leading-5">{banner.cardLabel}</div>
-            <div className="mt-5 text-3xl font-bold tracking-tight text-lime-200 sm:text-4xl ">
+            <div className="mt-5 text-3xl font-bold tracking-tight text-lime-200 sm:text-4xl">
               <DigitalNumber value={banner.subsidyAmount} />
             </div>
             <div className="mt-4 inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-semibold text-emerald-50 tracking-normal">
@@ -148,7 +148,7 @@ function SchemeBanner({ t }: { t: Translations }) {
             <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-amber-400 text-amber-950 shadow-sm">
               <Info className="h-5 w-5" aria-hidden="true" />
             </span>
-            <p className="text-amber-950       text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            <p className="text-amber-950 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {t.subsidyNotice}
             </p>
           </div>
@@ -177,13 +177,13 @@ function SchemeBanner({ t }: { t: Translations }) {
           <div className="relative isolate flex min-h-56 flex-col overflow-hidden rounded-xl border border-violet-200 bg-gradient-to-br from-white to-violet-100 p-5 shadow-sm sm:p-6">
             <div aria-hidden="true" className="pointer-events-none absolute -right-8 -top-10 -z-10 h-28 w-28 rounded-full bg-fuchsia-300/30 blur-2xl" />
             <div className="uppercase text-violet-800 text-xs font-semibold tracking-wide leading-5">{banner.offerLabel}</div>
-            <p className="mt-auto pt-5  text-violet-950      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{banner.offerText}</p>
+            <p className="mt-auto pt-5 text-violet-950 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{banner.offerText}</p>
           </div>
         </div>
 
-        <div className="mt-6 grid items-stretch gap-5 xl:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] xl:gap-6 ">
+        <div className="mt-6 grid items-stretch gap-5 xl:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] xl:gap-6">
           <div className="flex flex-col items-start justify-center rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-            <p className="text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            <p className="text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {capacityGuide.description}
             </p>
             <a
@@ -197,9 +197,9 @@ function SchemeBanner({ t }: { t: Translations }) {
             </a>
           </div>
 
-          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm ">
-            <div className="overflow-x-auto ">
-              <table className="w-full min-w-[620px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3 ">
+          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[620px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3">
                 <caption className="sr-only">{t.ui.suitableRooftopCapacity}</caption>
                 <thead className="bg-amber-700 font-bold text-white tracking-normal">
                   <tr className="uppercase text-xs font-semibold tracking-wide leading-5">
@@ -214,9 +214,9 @@ function SchemeBanner({ t }: { t: Translations }) {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-emerald-100 ">
+                <tbody className="divide-y divide-emerald-100">
                   {capacityRows.map((row) => (
-                    <tr key={row.usage} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70 ">
+                    <tr key={row.usage} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
                       <td className="px-5 py-5 text-[#172a28] sm:px-6 tabular-nums"><DigitalNumber value={row.usage} /></td>
                       <td className="px-5 py-5 font-bold text-[#087a61] sm:px-6 tracking-normal tabular-nums"><DigitalNumber value={row.capacity} /></td>
                       <td className="px-5 py-5 text-slate-500 sm:px-6 tabular-nums"><DigitalNumber value={row.tag} /></td>
@@ -225,7 +225,7 @@ function SchemeBanner({ t }: { t: Translations }) {
                 </tbody>
               </table>
             </div>
-            <p className="bg-[#fff4e5] px-5 py-4 text-slate-600 sm:px-6      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            <p className="bg-[#fff4e5] px-5 py-4 text-slate-600 sm:px-6 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {capacityGuide.notice}
             </p>
           </div>

@@ -62,7 +62,7 @@ export function UserAccessManager({ row, actorRole, onSaved }: UserAccessManager
 
   return (
     <div className="mt-4 rounded-xl border border-slate-200 bg-emerald-50/50 p-3">
-      <p className="uppercase text-emerald-900    text-xs font-semibold tracking-wide leading-5">Account access</p>
+      <p className="uppercase text-emerald-900 text-xs font-semibold tracking-wide leading-5">Account access</p>
       <div className="mt-2 flex flex-wrap items-center gap-3">
         <label className="flex items-center gap-2 text-slate-700 text-xs sm:text-sm font-semibold tracking-normal leading-5">
           Role
@@ -98,7 +98,7 @@ export function UserAccessManager({ row, actorRole, onSaved }: UserAccessManager
           {saving ? "Saving…" : "Save access"}
         </button>
       </div>
-      {disabled && <p className="mt-2 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">Only an admin can change an admin account.</p>}
+      {disabled && <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">Only an admin can change an admin account.</p>}
     </div>
   );
 }

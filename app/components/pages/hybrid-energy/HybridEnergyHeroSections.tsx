@@ -47,10 +47,10 @@ export function HybridEnergyHeroSections({ t }: { t: Translations }) {
                   </div>
                   <div className="relative max-w-md rounded-xl border border-slate-700 bg-[#102a43]/65 p-5 backdrop-blur-lg sm:p-6 lg:ml-auto">
                     <div className="flex items-center justify-between gap-3">
-                      <div>
+                      <>
                         <p className="inline-flex w-fit rounded-full border border-amber-300/25 bg-white/10 px-3 py-1.5 uppercase text-amber-200 text-xs font-semibold tracking-wide leading-5">{hybridPage.hero.tagline}</p>
                         <p className="mt-3 text-white text-lg font-semibold tracking-normal leading-snug">{hybridPage.hero.supporting}</p>
-                      </div>
+                      </>
                       <span className="rounded-xl border border-amber-200/20 bg-amber-300/10 px-3 py-2 text-xs uppercase text-amber-100 text-xs font-semibold tracking-wide leading-5">{hybridPage.labels.statusBalanced}</span>
                     </div>
                     <div className="relative mt-6 grid grid-cols-2 gap-3">

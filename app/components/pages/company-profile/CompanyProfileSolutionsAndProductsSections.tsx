@@ -17,7 +17,7 @@ function SectionHeading({
   return (
     <div className="mb-8 max-w-3xl">
       <p
-        className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 uppercase before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? "border-amber-300/20 bg-white/[0.08] text-amber-200" : " border-slate-200 bg-white/75 text-teal-800    "} text-xs font-semibold tracking-wide leading-5`}
+        className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 uppercase before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? "border-amber-300/20 bg-white/[0.08] text-amber-200" : " border-slate-200 bg-white/75 text-teal-800 "} text-xs font-semibold tracking-wide leading-5`}
       >
         {number} / {eyebrow}
       </p>
@@ -28,7 +28,7 @@ function SectionHeading({
       </h2>
       {description && (
         <p
-          className={`mt-4 ${inverse ? "text-indigo-100/90" : " text-slate-600      "}      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}
+          className={`mt-4 ${inverse ? "text-indigo-100/90" : " text-slate-600 "} text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}
         >
           {description}
         </p>
@@ -90,7 +90,7 @@ export function CompanyProfileSolutionsAndProductsSections({ t }: { t: Translati
                       <Wind className="h-5 w-5" aria-hidden="true" />
                     </div>
                     <h3 className="mt-5 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{cp.windTitle}</h3>
-                    <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                    <p className="mt-3 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                       {cp.windProductIntro}
                     </p>
                     <div className="mt-4">
@@ -102,18 +102,18 @@ export function CompanyProfileSolutionsAndProductsSections({ t }: { t: Translati
                       <Zap className="h-5 w-5" aria-hidden="true" />
                     </div>
                     <h3 className="mt-5 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{cp.hybridTitle}</h3>
-                    <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                    <p className="mt-3 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                       {cp.hybridIntro}
                     </p>
                     <div className="mt-4">
                       <BulletList items={hybridApplications} />
                     </div>
-                    <p className="mt-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                    <p className="mt-4 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                       {cp.hybridFinal}
                     </p>
                   </article>
                 </div>
-                <p className="mt-5 rounded-xl border border-amber-200 bg-[#fff8ed] px-5 py-4 text-amber-950      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                <p className="mt-5 rounded-xl border border-amber-200 bg-[#fff8ed] px-5 py-4 text-amber-950 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {cp.waitNote}
                 </p>
               </div>

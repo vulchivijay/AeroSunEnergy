@@ -11,16 +11,16 @@ export function ProductCatalogueContactSections({ t }: { t: Translations }) {
                 <div className="overflow-hidden rounded-xl">
                   <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
                     <div className="bg-[linear-gradient(145deg,#581c87_0%,#7e22ce_55%,#a21caf_100%)] p-7 text-white sm:p-10">
-                      <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2  uppercase text-amber-200    text-xs font-semibold tracking-wide leading-5">10 / {c.contact.eyebrow}</p>
+                      <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 uppercase text-amber-200 text-xs font-semibold tracking-wide leading-5">10 / {c.contact.eyebrow}</p>
                       <h2 className="mt-4 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{c.contact.title}</h2>
-                      <p className="mt-4 text-indigo-100/90      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                      <p className="mt-4 text-indigo-100/90 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                         {c.contact.description}
                       </p>
-                      <p className="mt-5 italic text-indigo-100    text-lg font-semibold tracking-normal leading-snug">{c.contact.tagline}</p>
+                      <p className="mt-5 italic text-indigo-100 text-lg font-semibold tracking-normal leading-snug">{c.contact.tagline}</p>
                     </div>
                     <div className="space-y-5 p-7 sm:p-10">
-                      <h3 className=" text-[#112c2a] text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{c.contact.company}</h3>
-                      <p className="flex gap-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                      <h3 className="text-[#112c2a] text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{c.contact.company}</h3>
+                      <p className="flex gap-3 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                         <MapPin className="mt-1 h-4 w-4 shrink-0 text-teal-700" aria-hidden="true" />
                         {c.contact.address}
                       </p>
@@ -45,7 +45,7 @@ export function ProductCatalogueContactSections({ t }: { t: Translations }) {
                       </Link>
                     </div>
                   </div>
-                  <p className="rounded-xl border border-slate-200 bg-slate-50 px-5 py-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                  <p className="rounded-xl border border-slate-200 bg-slate-50 px-5 py-4 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                     {c.disclaimer}
                   </p>
                 </div>

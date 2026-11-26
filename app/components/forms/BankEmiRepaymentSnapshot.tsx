@@ -28,10 +28,10 @@ export function BankEmiRepaymentSnapshot({
       <div className="grid lg:grid-cols-[minmax(12rem,1.1fr)_minmax(0,6fr)]">
         <div className="flex items-center gap-3 border-b border-amber-400/70 p-4 sm:p-5 lg:border-b-0 lg:border-r">
           <Calculator size={30} className="shrink-0 text-amber-400" aria-hidden="true" />
-          <div>
+          <>
             <p className="text-sm uppercase tracking-wide">{labels.repaymentSnapshot}</p>
             <p className="mt-1 text-sm uppercase tracking-wide text-amber-300">{labels.liveEstimate}</p>
-          </div>
+          </>
         </div>
         <dl className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
           <div className="border-b border-white/15 px-3 pb-3 pt-5 text-center sm:border-r">

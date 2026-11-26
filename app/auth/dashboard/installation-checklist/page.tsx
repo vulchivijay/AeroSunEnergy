@@ -79,7 +79,7 @@ export default function InstallationChecklistPage() {
 							{labels.heroTitle}
 							<span className="mt-1 block text-amber-300">{labels.heroTitleAccent}</span>
 						</h1>
-						<p className="mt-5 max-w-2xl text-slate-300      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+						<p className="mt-5 max-w-2xl text-slate-300 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
 							{labels.heroDescription}
 						</p>
 					</div>
@@ -103,12 +103,12 @@ export default function InstallationChecklistPage() {
 					<div className="mb-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
 						<div className="flex items-start gap-4">
 							<span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-lg text-amber-800">i</span>
-							<div>
-								<p className=" uppercase text-amber-800    text-xs font-semibold tracking-wide leading-5">{labels.glanceTitle}</p>
-								<p className="mt-2 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+							<>
+								<p className="uppercase text-amber-800 text-xs font-semibold tracking-wide leading-5">{labels.glanceTitle}</p>
+								<p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
 									{labels.glanceDescription}
 								</p>
-							</div>
+							</>
 						</div>
 						<div className="mt-6 grid gap-3 border-t border-slate-200 pt-5 sm:grid-cols-3">
 							{content.summaryCards.map((card, index) => (
@@ -138,7 +138,7 @@ export default function InstallationChecklistPage() {
 										{String(index + 1).padStart(2, '0')}
 									</span>
 									<div className="min-w-0 flex-1">
-										<p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{section.text}</p>
+										<p className="mt-3 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{section.text}</p>
 										<ul className="mt-4 space-y-2.5">
 											{section.points.map((item) => (
 												<li key={item} className="flex items-start gap-3 text-base leading-6 text-slate-600">
@@ -154,7 +154,7 @@ export default function InstallationChecklistPage() {
 						))}
 					</div>
 
-					<p className="mt-7 rounded-xl border border-slate-200 bg-white p-5 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+					<p className="mt-7 rounded-xl border border-slate-200 bg-white p-5 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
 						{labels.contactPromptBefore}{' '}
 						<a href="/contact" className="font-bold text-amber-800 underline decoration-amber-300 underline-offset-4 hover:text-orange-800 tracking-normal">
 							{labels.contactLink}
@@ -166,8 +166,8 @@ export default function InstallationChecklistPage() {
 				<aside className="space-y-5 lg:self-start">
 					<nav aria-label={labels.sectionsLabel} className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
 						<div className="border-b border-slate-200 px-5 py-4">
-							<p className=" uppercase text-amber-800    text-xs font-semibold tracking-wide leading-5">{labels.findPhase}</p>
-							<p className="mt-1 text-slate-900      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{labels.projectLifecycle}</p>
+							<p className="uppercase text-amber-800 text-xs font-semibold tracking-wide leading-5">{labels.findPhase}</p>
+							<p className="mt-1 text-slate-900 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{labels.projectLifecycle}</p>
 						</div>
 						<ol className="max-h-[45vh] space-y-1 overflow-y-auto p-3">
 							{content.sections.map((section, index) => (
@@ -185,14 +185,14 @@ export default function InstallationChecklistPage() {
 					</nav>
 
 					<section className={`rounded-xl border border-amber-200 p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
-						<p className=" uppercase text-amber-800    text-xs font-semibold tracking-wide leading-5">{labels.projectEssentials}</p>
+						<p className="uppercase text-amber-800 text-xs font-semibold tracking-wide leading-5">{labels.projectEssentials}</p>
 						<ul className="mt-4 space-y-3 text-base leading-6 text-slate-700">
 							{labels.projectEssentialsItems.map((item) => <li key={item}>{item}</li>)}
 						</ul>
 					</section>
 
 					<div className="rounded-xl border border-amber-200 bg-[#101c32] p-5 text-white shadow-sm">
-						<p className=" uppercase text-amber-300    text-xs font-semibold tracking-wide leading-5">{labels.submissionForm}</p>
+						<p className="uppercase text-amber-300 text-xs font-semibold tracking-wide leading-5">{labels.submissionForm}</p>
 						<h2 className="mt-2 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{labels.recordStatus}</h2>
 						<form
 							onSubmit={handleSubmit(onSubmit, (formErrors) => toast.error(getFirstFormErrorMessage(formErrors) ?? t.formSubmission.error))}
@@ -203,7 +203,7 @@ export default function InstallationChecklistPage() {
 								<Field key={name} {...labels.fields[name]} name={name} type={name === 'email' ? 'email' : name === 'phone' ? 'tel' : name === 'installationDate' ? 'date' : 'text'} register={register} error={errors[name]} />
 							))}
 
-							<div>
+							<>
 								<label htmlFor="checklistStatus" className="mb-2 block text-slate-100 text-xs sm:text-sm font-semibold tracking-normal leading-5">{labels.fields.checklistStatus.label}</label>
 								<select
 									id="checklistStatus"
@@ -215,22 +215,22 @@ export default function InstallationChecklistPage() {
 									<option value="" className="text-slate-900">{labels.fields.checklistStatus.placeholder}</option>
 									{labels.statusOptions.map((option) => <option key={option} value={option} className="text-slate-900">{option}</option>)}
 								</select>
-								{errors.checklistStatus && <p id="checklistStatus-error" className="mt-2 text-rose-300      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.checklistStatus.message}</p>}
-							</div>
+								{errors.checklistStatus && <p id="checklistStatus-error" className="mt-2 text-rose-300 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.checklistStatus.message}</p>}
+							</>
 
 							<label className="flex items-start gap-3 rounded-xl border border-slate-700 bg-white/5 p-3 text-slate-200 text-xs sm:text-sm font-semibold tracking-normal leading-5">
 								<input type="checkbox" {...register('safetyCheck')} aria-invalid={Boolean(errors.safetyCheck)} aria-describedby={errors.safetyCheck ? 'safetyCheck-error' : undefined} className="mt-1 h-4 w-4 rounded-lg border-slate-300 text-amber-500 focus:ring-amber-400" />
 								<span>{labels.fields.safetyCheck}</span>
 							</label>
-							{errors.safetyCheck && <p id="safetyCheck-error" className="text-rose-300      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.safetyCheck.message}</p>}
+							{errors.safetyCheck && <p id="safetyCheck-error" className="text-rose-300 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.safetyCheck.message}</p>}
 
 							<label className="flex items-start gap-3 rounded-xl border border-slate-700 bg-white/5 p-3 text-slate-200 text-xs sm:text-sm font-semibold tracking-normal leading-5">
 								<input type="checkbox" {...register('commissioningCheck')} aria-invalid={Boolean(errors.commissioningCheck)} aria-describedby={errors.commissioningCheck ? 'commissioningCheck-error' : undefined} className="mt-1 h-4 w-4 rounded-lg border-slate-300 text-amber-500 focus:ring-amber-400" />
 								<span>{labels.fields.commissioningCheck}</span>
 							</label>
-							{errors.commissioningCheck && <p id="commissioningCheck-error" className="text-rose-300      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.commissioningCheck.message}</p>}
+							{errors.commissioningCheck && <p id="commissioningCheck-error" className="text-rose-300 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.commissioningCheck.message}</p>}
 
-							<div>
+							<>
 								<label htmlFor="notes" className="mb-2 block text-slate-100 text-xs sm:text-sm font-semibold tracking-normal leading-5">{labels.fields.notes.label}</label>
 								<textarea
 									id="notes"
@@ -241,8 +241,8 @@ export default function InstallationChecklistPage() {
 									placeholder={labels.fields.notes.placeholder}
 									className="w-full rounded-lg border border-slate-700 bg-white/5 px-4 py-3 text-base text-white placeholder:text-slate-300 outline-none transition focus:border-amber-400 focus:ring-4 focus:ring-amber-600/30"
 								/>
-								{errors.notes && <p id="notes-error" className="mt-2 text-rose-300      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.notes.message}</p>}
-							</div>
+								{errors.notes && <p id="notes-error" className="mt-2 text-rose-300 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.notes.message}</p>}
+							</>
 
 							<FormDataNotice className="text-amber-100/70" />
 							<button

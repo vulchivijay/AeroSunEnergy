@@ -47,10 +47,10 @@ export function WindEnergyHeroSections({ t }: { t: Translations }) {
                   </div>
                   <div className="relative max-w-md rounded-xl border border-slate-700 bg-[#102a43]/65 p-5 backdrop-blur-lg sm:p-6 lg:ml-auto">
                     <div className="flex items-center justify-between gap-5">
-                      <div>
+                      <>
                         <p className="inline-flex w-fit rounded-full border border-amber-300/25 bg-white/10 px-3 py-1.5 uppercase text-amber-200 text-xs font-semibold tracking-wide leading-5">{windPage.hero.resourceFirst}</p>
                         <p className="mt-3 text-white text-lg font-semibold tracking-normal leading-snug">{windPage.hero.siteDesigned}</p>
-                      </div>
+                      </>
                       <svg viewBox="0 0 180 190" fill="none" className="h-32 w-28 shrink-0 text-sky-300 sm:h-40 sm:w-36" aria-hidden="true">
                         <path d="M92 80v101M80 181h24" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
                         <circle cx="92" cy="79" r="6" fill="currentColor" />

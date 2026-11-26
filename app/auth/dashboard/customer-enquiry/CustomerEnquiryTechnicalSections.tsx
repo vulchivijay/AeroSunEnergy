@@ -34,7 +34,7 @@ export function CustomerEnquiryTechnicalSections({
             <CustomerEnquiryTextField key={name} label={label} name={name} />
           ))}
         </div>
-        <p className="mt-4 rounded-xl bg-amber-50 p-4 text-amber-950      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+        <p className="mt-4 rounded-xl bg-amber-50 p-4 text-amber-950 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {page.generationDisclaimer}
         </p>
       </section>
@@ -94,14 +94,14 @@ export function CustomerEnquiryTechnicalSections({
             placeholder={page.selectOption}
           />
         </div>
-        <p className="mt-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+        <p className="mt-4 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {page.savingsDisclaimer}
         </p>
       </section>
 
       <section className="rounded-xl border border-emerald-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
         <CustomerEnquirySectionTitle number="09" title={page.sections[8]} />
-        <p className="mb-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+        <p className="mb-4 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {page.scopeInstructions}
         </p>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -128,14 +128,14 @@ export function CustomerEnquiryTechnicalSections({
             />
           ))}
         </div>
-        <p className="mt-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+        <p className="mt-4 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {page.scheduleNote}
         </p>
       </section>
 
       <section className="rounded-xl border border-amber-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
         <CustomerEnquirySectionTitle number="10" title={page.sections[9]} />
-        <p className="mb-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+        <p className="mb-4 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {page.exclusionsIntro}
         </p>
         <ol className="grid gap-2 sm:grid-cols-2">
@@ -183,7 +183,7 @@ export function CustomerEnquiryTechnicalSections({
             ],
           }))}
         />
-        <p className="mt-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+        <p className="mt-4 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {page.warrantyCoverageNote}
         </p>
       </section>

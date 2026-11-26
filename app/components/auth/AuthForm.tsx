@@ -78,11 +78,11 @@ export default function AuthForm({ mode }: AuthFormProps) {
 
       <section className="w-full max-w-md rounded-xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-6 shadow-sm sm:p-8">
         <div className="mb-8">
-          <p className="uppercase text-emerald-700    text-xs font-semibold tracking-wide leading-5">{auth.brand}</p>
+          <p className="uppercase text-emerald-700 text-xs font-semibold tracking-wide leading-5">{auth.brand}</p>
           <h1 className="mt-3 text-slate-950 text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
             {isSignup ? auth.signupHeading : auth.loginHeading}
           </h1>
-          <p className="mt-2 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+          <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {isSignup ? auth.signupDescription : auth.loginDescription}
           </p>
         </div>
@@ -157,7 +157,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
           </button>
         </form>
 
-        <p className="mt-7 text-center text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+        <p className="mt-7 text-center text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {isSignup ? auth.alreadyHaveAccount : auth.newToAeroSun}{' '}
           <Link
             className="font-bold text-emerald-800 underline-offset-4 hover:underline tracking-normal"

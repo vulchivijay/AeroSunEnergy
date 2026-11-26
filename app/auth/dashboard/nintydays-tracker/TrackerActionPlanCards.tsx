@@ -19,7 +19,7 @@ export function TrackerActionPlanCards({
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-linear-to-br from-[#f2b84b] to-[#ed7357] text-base font-bold text-[#30243a] tracking-normal">
               {index + 1}
             </span>
-            <h3 className=" text-[#202b43] text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
+            <h3 className="text-[#202b43] text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
               {stage.title}
             </h3>
           </div>
@@ -60,12 +60,12 @@ export function TrackerPhaseCards({
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#f2b84b] text-base font-bold text-[#30243a] tracking-normal">
               {index + 1}
             </span>
-            <div>
-              <p className=" uppercase text-[#cbd6e5]    text-xs font-semibold tracking-wide leading-5">
+            <>
+              <p className="uppercase text-[#cbd6e5] text-xs font-semibold tracking-wide leading-5">
                 {phase.period}
               </p>
-              <h3 className=" text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{phase.title}</h3>
-            </div>
+              <h3 className="text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{phase.title}</h3>
+            </>
           </div>
           <div className="p-5">
             <ul className="space-y-3 text-sm leading-7 text-[#4c566d]">
@@ -81,20 +81,20 @@ export function TrackerPhaseCards({
             </ul>
             {"target" in phase && (
               <div className="mt-5 rounded-xl border border-[#e5b997] bg-[#f7e3d3] p-4">
-                <p className="text-[#723f3d]      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                <p className="text-[#723f3d] text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {phase.target}
                 </p>
-                <p className="mt-1 text-[#784f4a]      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                <p className="mt-1 text-[#784f4a] text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {phase.note}
                 </p>
               </div>
             )}
             {"outcome" in phase && (
               <div className="mt-5 rounded-xl border border-slate-200 bg-[#e5efed] p-4">
-                <p className=" uppercase text-[#356c68]    text-xs font-semibold tracking-wide leading-5">
+                <p className="uppercase text-[#356c68] text-xs font-semibold tracking-wide leading-5">
                   {expectedResultLabel}
                 </p>
-                <p className="mt-1 text-[#293e4b]      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                <p className="mt-1 text-[#293e4b] text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {phase.outcome}
                 </p>
               </div>
@@ -112,11 +112,11 @@ export function TrackerWorkbookRows({
   rows: Translations["ninetyDayTrackerPage"]["sheetRows"];
 }) {
   return (
-    <tbody className="divide-y divide-emerald-100 ">
+    <tbody className="divide-y divide-emerald-100">
       {rows.map(([sheet, purpose]) => (
         <tr
           key={sheet}
-          className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70 "
+          className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70"
         >
           <td className="font-bold text-slate-900 tracking-normal tabular-nums">
             <DigitalNumber value={sheet} />

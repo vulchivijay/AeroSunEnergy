@@ -9,7 +9,7 @@ export function FooterContactInformation({ footer, mapUrl, companyAddress, websi
   return (
 <section aria-labelledby="footer-contact">
 						<h2 id="footer-contact" className="mb-5 uppercase text-sky-200 text-2xl leading-snug">{footer.contactInformation}</h2>
-						<ul className="space-y-4 text-sm leading-6 text-white/80 ">
+						<ul className="space-y-4 text-sm leading-6 text-white/80">
 							<li className="flex items-start gap-3">
 								<MapPin className="mt-1 h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />
 								<a href={mapUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 focus-visible:text-amber-100">
@@ -20,9 +20,9 @@ export function FooterContactInformation({ footer, mapUrl, companyAddress, websi
 								<Mail className="h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />
 								<span className="break-all">{footer.email}</span>
 							</li>
-							<li className="flex items-center gap-3 ">
-								<Phone className="h-4 w-4 shrink-0 text-amber-300 " aria-hidden="true" />
-								<a href={`tel:${footer.phoneHref}`} className="transition-colors hover:text-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 focus-visible:text-amber-100 "><DigitalNumber value={footer.phone} /></a>
+							<li className="flex items-center gap-3">
+								<Phone className="h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />
+								<a href={`tel:${footer.phoneHref}`} className="transition-colors hover:text-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 focus-visible:text-amber-100"><DigitalNumber value={footer.phone} /></a>
 							</li>
 							<li className="flex items-center gap-3">
 								<Globe className="h-4 w-4 shrink-0 text-amber-300" aria-hidden="true" />

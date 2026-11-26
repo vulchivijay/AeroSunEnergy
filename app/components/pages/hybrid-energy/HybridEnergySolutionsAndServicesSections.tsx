@@ -40,33 +40,33 @@ export function HybridEnergySolutionsAndServicesSections({ t }: { t: Translation
                   {serviceSectionsLocalized.map((service, index) => (
                     <article key={service.title} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
                       <div className="mb-6 flex items-center justify-between gap-3">
-                        <div>
-                          <p className=" uppercase text-emerald-700    text-xs font-semibold tracking-wide leading-5">{hybridPage.labels.servicePrefix} {index + 1}</p>
+                        <>
+                          <p className="uppercase text-emerald-700 text-xs font-semibold tracking-wide leading-5">{hybridPage.labels.servicePrefix} {index + 1}</p>
                           <h3 className="mt-2 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{service.title}</h3>
-                        </div>
+                        </>
                         <div className="hidden rounded-full border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs uppercase text-emerald-700 sm:block text-xs font-semibold tracking-wide leading-5">
                           {hybridPage.labels.systemBadge}
                         </div>
                       </div>
 
                       <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-                        <div>
-                          <h4 className=" text-slate-900 text-lg font-semibold tracking-normal leading-snug">{service.heading}</h4>
-                          <p className="mt-4 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{service.overview}</p>
+                        <>
+                          <h4 className="text-slate-900 text-lg font-semibold tracking-normal leading-snug">{service.heading}</h4>
+                          <p className="mt-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{service.overview}</p>
 
                           <div className="mt-6 grid gap-4 md:grid-cols-3">
                             {service.applications.map((item) => (
                               <div key={item.title} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                                <p className="uppercase text-slate-600    text-xs font-semibold tracking-wide leading-5">{hybridPage.labels.application}</p>
+                                <p className="uppercase text-slate-600 text-xs font-semibold tracking-wide leading-5">{hybridPage.labels.application}</p>
                                 <h5 className="mt-3 text-slate-900 text-base font-semibold tracking-normal leading-snug">{item.title}</h5>
-                                <p className="mt-2 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item.description}</p>
+                                <p className="mt-2 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item.description}</p>
                               </div>
                             ))}
                           </div>
-                        </div>
+                        </>
 
                         <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-5">
-                          <p className=" uppercase text-emerald-700    text-xs font-semibold tracking-wide leading-5">{hybridPage.labels.benefits}</p>
+                          <p className="uppercase text-emerald-700 text-xs font-semibold tracking-wide leading-5">{hybridPage.labels.benefits}</p>
                           <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700">
                             {service.benefits.map((benefit) => (
                               <li key={benefit} className="flex items-start gap-3 rounded-xl bg-white/70 p-3">
@@ -80,20 +80,20 @@ export function HybridEnergySolutionsAndServicesSections({ t }: { t: Translation
 
                       <div className="mt-8 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
                         <div className="rounded-xl border border-sky-200 bg-[linear-gradient(135deg,#eff6ff_0%,#ffffff_100%)] p-5">
-                          <p className=" uppercase text-sky-700    text-xs font-semibold tracking-wide leading-5">{hybridPage.labels.exampleCalculation}</p>
+                          <p className="uppercase text-sky-700 text-xs font-semibold tracking-wide leading-5">{hybridPage.labels.exampleCalculation}</p>
                           <h4 className="mt-3 text-slate-900 text-lg font-semibold tracking-normal leading-snug">{service.calculation.label}</h4>
-                          <p className="mt-3 font-mono text-slate-800       tabular-nums text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{service.calculation.formula}</p>
+                          <p className="mt-3 font-mono text-slate-800 tabular-nums text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{service.calculation.formula}</p>
                           <div className="mt-4 rounded-xl bg-slate-900 p-3 text-base font-semibold text-white tracking-normal">{service.calculation.result}</div>
-                          <p className="mt-4 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{service.calculation.note}</p>
+                          <p className="mt-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{service.calculation.note}</p>
                         </div>
 
                         <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                          <p className=" uppercase text-slate-600    text-xs font-semibold tracking-wide leading-5">{hybridPage.labels.faqs}</p>
+                          <p className="uppercase text-slate-600 text-xs font-semibold tracking-wide leading-5">{hybridPage.labels.faqs}</p>
                           <div className="mt-4 space-y-4">
                             {service.faqs.map((item) => (
                               <div key={item.question} className="rounded-xl border border-slate-200 bg-white p-3.5">
-                                <p className="text-slate-900      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item.question}</p>
-                                <p className="mt-2 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item.answer}</p>
+                                <p className="text-slate-900 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item.question}</p>
+                                <p className="mt-2 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item.answer}</p>
                               </div>
                             ))}
                           </div>

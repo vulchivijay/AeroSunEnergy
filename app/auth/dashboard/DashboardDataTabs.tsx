@@ -178,7 +178,7 @@ export default function DashboardDataTabs() {
   }
 
   return (
-    <section className="mt-6 grid overflow-hidden rounded-xl border border-slate-200 bg-white/25 shadow-sm backdrop-blur-xl lg:grid-cols-[230px_minmax(0,1fr)] ">
+    <section className="mt-6 grid overflow-hidden rounded-xl border border-slate-200 bg-white/25 shadow-sm backdrop-blur-xl lg:grid-cols-[230px_minmax(0,1fr)]">
       <DashboardCollectionSidebar
         collections={collections}
         activeCollection={activeCollection}
@@ -186,7 +186,7 @@ export default function DashboardDataTabs() {
         onChooseCollection={chooseCollection}
       />
 
-      <div className="min-w-0 p-4 sm:p-6 lg:p-8 " aria-live="polite">
+      <div className="min-w-0 p-4 sm:p-6 lg:p-8" aria-live="polite">
         <DashboardCollectionOverview
           activeCollection={activeCollection}
           role={role}
@@ -237,8 +237,8 @@ export default function DashboardDataTabs() {
           </div>
         ) : !activeCollection ? (
           <div className="mt-6 rounded-xl border border-dashed border-slate-300 bg-slate-50 px-5 py-12 text-center">
-            <p className="text-slate-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">No collections found</p>
-            <p className="mt-1 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">Database collections will appear here when available.</p>
+            <p className="text-slate-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">No collections found</p>
+            <p className="mt-1 text-slate-500 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">Database collections will appear here when available.</p>
           </div>
         ) : data?.rows.length ? (
           <DashboardRecordsTable
@@ -282,8 +282,8 @@ export default function DashboardDataTabs() {
           />
         ) : (
           <div className="mt-6 rounded-xl border border-dashed border-slate-300 bg-slate-50 px-5 py-12 text-center">
-            <p className="text-slate-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">No records found</p>
-            <p className="mt-1 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">Records in this collection will appear here.</p>
+            <p className="text-slate-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">No records found</p>
+            <p className="mt-1 text-slate-500 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">Records in this collection will appear here.</p>
           </div>
         )}
       </div>

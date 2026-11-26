@@ -85,14 +85,14 @@ export default function PerformanceMonitor() {
     : [{ label: 'Perf', value: 'Loading…' }]
 
   return (
-    <div className="fixed bottom-4 right-4 z-40 rounded-xl border border-slate-700 bg-slate-950/85 px-3 py-2 text-xs font-medium shadow-md backdrop-blur-sm tracking-normal ">
+    <div className="fixed bottom-4 right-4 z-40 rounded-xl border border-slate-700 bg-slate-950/85 px-3 py-2 text-xs font-medium shadow-md backdrop-blur-sm tracking-normal">
       <div className="mb-1 flex items-center gap-2 uppercase text-sky-300 text-xs font-semibold tracking-wide leading-5">
         <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-sm" />
         Perf
       </div>
-      <div className="space-y-1 text-slate-200 ">
+      <div className="space-y-1 text-slate-200">
         {rows.map((row) => (
-          <div key={row.label} className="flex items-center justify-between gap-4 ">
+          <div key={row.label} className="flex items-center justify-between gap-4">
             <span className="text-slate-400">{row.label}</span>
             <span className="font-semibold text-white tracking-normal tabular-nums"><DigitalNumber value={row.value} /></span>
           </div>

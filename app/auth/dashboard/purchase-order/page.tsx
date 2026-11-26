@@ -72,7 +72,7 @@ export default function PurchaseOrderPage() {
           <h1 className="mt-5 text-slate-900 text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
             {labels.title}
           </h1>
-          <p className="mx-auto mt-4 max-w-3xl text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+          <p className="mx-auto mt-4 max-w-3xl text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {labels.description}
           </p>
         </div>
@@ -82,7 +82,7 @@ export default function PurchaseOrderPage() {
             <CardContent className="p-5 sm:p-7 lg:p-8">
               <div className="space-y-6">
                 <DashboardCollapsibleSection title={labels.sections.summary.title} className="bg-gradient-to-br from-white to-[#f1f2f6]">
-                  <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                  <p className="mt-3 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                     {labels.sections.summary.text}
                   </p>
                 </DashboardCollapsibleSection>
@@ -94,19 +94,19 @@ export default function PurchaseOrderPage() {
                 </DashboardCollapsibleSection>
 
                 <DashboardCollapsibleSection title={labels.sections.delivery.title} className="bg-gradient-to-br from-white to-[#f1f2f6]">
-                  <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                  <p className="mt-3 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                     {labels.sections.delivery.text}
                   </p>
                 </DashboardCollapsibleSection>
 
                 <DashboardCollapsibleSection title={labels.sections.warranty.title} className="bg-gradient-to-br from-[#f1f2f6] to-white">
-                  <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                  <p className="mt-3 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                     {labels.sections.warranty.text}
                   </p>
                 </DashboardCollapsibleSection>
 
                 <DashboardCollapsibleSection title={labels.sections.riskCompliance.title} className="bg-gradient-to-br from-white to-[#f1f2f6]">
-                  <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                  <p className="mt-3 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                     {labels.sections.riskCompliance.text}
                   </p>
                 </DashboardCollapsibleSection>
@@ -116,7 +116,7 @@ export default function PurchaseOrderPage() {
 
           <Card className="overflow-hidden border border-slate-200 bg-linear-to-br from-slate-950 via-slate-900 to-emerald-950 text-white shadow-sm">
             <CardContent className="p-5 sm:p-7">
-              <p className=" uppercase text-emerald-200    text-xs font-semibold tracking-wide leading-5">{labels.formTitle}</p>
+              <p className="uppercase text-emerald-200 text-xs font-semibold tracking-wide leading-5">{labels.formTitle}</p>
               <h2 className="mt-3 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{labels.formHeading}</h2>
 
               <form
@@ -182,7 +182,7 @@ export default function PurchaseOrderPage() {
                   error={errors.supplierName}
                 />
 
-                <div>
+                <>
                   <label htmlFor="productLine" className="mb-2 block text-slate-100 text-xs sm:text-sm font-semibold tracking-normal leading-5">
                     {labels.fields.productLine.label}
                   </label>
@@ -196,8 +196,8 @@ export default function PurchaseOrderPage() {
                     <option value="" className="text-slate-900">{labels.fields.productLine.placeholder}</option>
                     {labels.productOptions.map((option) => <option key={option} value={option} className="text-slate-900">{option}</option>)}
                   </select>
-                  {errors.productLine && <p id="productLine-error" className="mt-2 text-rose-300      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.productLine.message}</p>}
-                </div>
+                  {errors.productLine && <p id="productLine-error" className="mt-2 text-rose-300 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.productLine.message}</p>}
+                </>
 
                 <Field
                   label={labels.fields.quantity.label}
@@ -249,7 +249,7 @@ export default function PurchaseOrderPage() {
                     {labels.fields.termsAccepted}
                   </span>
                 </label>
-                {errors.termsAccepted && <p className="text-rose-300      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.termsAccepted.message}</p>}
+                {errors.termsAccepted && <p className="text-rose-300 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.termsAccepted.message}</p>}
 
                 <FormDataNotice className="text-slate-300" />
                 <button

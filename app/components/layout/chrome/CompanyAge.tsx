@@ -99,7 +99,7 @@ export function CompanyAge() {
 	const formattedStartDate = formatter.format(START_DATE)
 
 	return (
-		<p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-white/75      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+		<p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-white/75 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
 			<span>
 				{companyAge.operatingSince}{' '}
 				<span className="text-sm" style={digitalFontStyle}>{formattedStartDate}</span>

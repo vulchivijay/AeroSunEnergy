@@ -16,7 +16,7 @@ export function SolarOfferingsSections({ t }: { t: Translations }) {
                 <div className="mb-8 max-w-3xl">
                   <SectionEyebrow>{solarPage.offer.eyebrow}</SectionEyebrow>
                   <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{solarPage.offer.title}</h2>
-                  <p className="mt-4 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{solarPage.offer.description}</p>
+                  <p className="mt-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{solarPage.offer.description}</p>
                 </div>
 
                 <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
@@ -39,7 +39,7 @@ export function SolarOfferingsSections({ t }: { t: Translations }) {
                 <div className="mb-8 max-w-3xl">
                   <SectionEyebrow>{solarPage.rooftop.eyebrow}</SectionEyebrow>
                   <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{solarPage.rooftop.title}</h2>
-                  <p className="mt-4 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{solarPage.rooftop.description}</p>
+                  <p className="mt-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{solarPage.rooftop.description}</p>
                 </div>
 
                 <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">

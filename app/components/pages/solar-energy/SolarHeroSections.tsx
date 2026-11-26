@@ -43,14 +43,14 @@ export function SolarHeroSections({ t }: { t: Translations }) {
                       {solarPage.hero.title}
                       <span className="block text-amber-200">{solarPage.hero.titleAccent}</span>
                     </h1>
-                    <p className="mt-6 max-w-2xl text-white/75       text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                    <p className="mt-6 max-w-2xl text-white/75 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                       {solarPage.hero.subtitle}
                     </p>
                   </div>
 
                   <div className="relative max-w-md rounded-xl border border-slate-700 bg-[#102a43]/65 p-5 backdrop-blur-lg sm:p-6 lg:ml-auto">
-                    <p className="inline-flex w-fit rounded-full border border-amber-300/25 bg-white/10 px-3 py-1.5 uppercase text-amber-200    text-xs font-semibold tracking-wide leading-5">{solarPage.hero.lead}</p>
-                    <p className="mt-3 text-white     text-lg font-semibold tracking-normal leading-snug">{solarPage.hero.pathway}</p>
+                    <p className="inline-flex w-fit rounded-full border border-amber-300/25 bg-white/10 px-3 py-1.5 uppercase text-amber-200 text-xs font-semibold tracking-wide leading-5">{solarPage.hero.lead}</p>
+                    <p className="mt-3 text-white text-lg font-semibold tracking-normal leading-snug">{solarPage.hero.pathway}</p>
                   </div>
                 </div>
 
@@ -58,8 +58,8 @@ export function SolarHeroSections({ t }: { t: Translations }) {
                   {solarPage.hero.options.map(({ name, detail }, index) => (
                     <div key={name} className="flex flex-col justify-center px-2 py-2 sm:px-5 sm:first:pl-0">
                       <span className="font-mono text-sm text-amber-200 tabular-nums">0{index + 1}</span>
-                      <p className="mt-1 text-white      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{name}</p>
-                      <p className="mt-1 text-white/75      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{detail}</p>
+                      <p className="mt-1 text-white text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{name}</p>
+                      <p className="mt-1 text-white/75 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{detail}</p>
                     </div>
                   ))}
                 </div>

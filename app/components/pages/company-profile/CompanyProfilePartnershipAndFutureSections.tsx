@@ -16,7 +16,7 @@ function SectionHeading({
   return (
     <div className="mb-8 max-w-3xl">
       <p
-        className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 uppercase before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? "border-amber-300/20 bg-white/[0.08] text-amber-200" : " border-slate-200 bg-white/75 text-teal-800    "} text-xs font-semibold tracking-wide leading-5`}
+        className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 uppercase before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? "border-amber-300/20 bg-white/[0.08] text-amber-200" : " border-slate-200 bg-white/75 text-teal-800 "} text-xs font-semibold tracking-wide leading-5`}
       >
         {number} / {eyebrow}
       </p>
@@ -27,7 +27,7 @@ function SectionHeading({
       </h2>
       {description && (
         <p
-          className={`mt-4 ${inverse ? "text-indigo-100/90" : " text-slate-600      "}      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}
+          className={`mt-4 ${inverse ? "text-indigo-100/90" : " text-slate-600 "} text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}
         >
           {description}
         </p>
@@ -78,7 +78,7 @@ export function CompanyProfilePartnershipAndFutureSections({ t }: { t: Translati
                       <span className="font-mono text-sm font-bold text-teal-700 tracking-normal tabular-nums">
                         {String(index + 1).padStart(2, "0")}
                       </span>
-                      <p className="text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                      <p className="text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                         {priority}
                       </p>
                     </div>

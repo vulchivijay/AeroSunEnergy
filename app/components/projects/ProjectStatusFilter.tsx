@@ -41,7 +41,7 @@ export default function ProjectStatusFilter({
           <h2 className="text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
             {content.labels.statusOverview}
           </h2>
-          <p className="mt-2 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+          <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {content.labels.statusDescription}
           </p>
           <div className="mt-5 rounded-xl border border-slate-200 bg-white p-3">
@@ -72,13 +72,13 @@ export default function ProjectStatusFilter({
             <div className="pt-5">
               {filteredProjects.length === 0 ? (
                 <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50 px-5 py-10 text-center">
-                  <h3 className=" text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
+                  <h3 className="text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
                     {content.labels.emptyProjectsTitle.replace(
                       "{status}",
                       statusMeta[activeTab].label,
                     )}
                   </h3>
-                  <p className="mx-auto mt-2 max-w-lg text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                  <p className="mx-auto mt-2 max-w-lg text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                     {content.labels.emptyProjectsDescription}
                   </p>
                 </div>
@@ -101,13 +101,13 @@ export default function ProjectStatusFilter({
                       <h3 className="mt-4 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
                         {project.title}
                       </h3>
-                      <p className="mt-2 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                      <p className="mt-2 text-slate-500 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                         {project.location}
                       </p>
-                      <p className="mt-3 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                      <p className="mt-3 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                         {project.type}
                       </p>
-                      <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                      <p className="mt-3 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                         {project.summary}
                       </p>
                     </article>

@@ -81,10 +81,10 @@ export function ContentFeatureCard({
       )}
       <div className={hasImage ? 'flex flex-1 flex-col p-5 sm:p-6' : ''}>
         {hasImage ? (
-          <div>
+          <>
             <span className={`uppercase ${featureClassName} text-xs font-bold tracking-widest leading-5`}>{label}</span>
             <div className={`mt-2 h-1 w-12 rounded-full ${contentFeatureCardAccents[accent]}`} aria-hidden="true" />
-          </div>
+          </>
         ) : (
           <div className="mb-5 flex items-center justify-between gap-4 border-b border-slate-200 pb-4">
             <span className={`uppercase ${featureClassName} text-xs font-semibold tracking-wide leading-5`}>{label}</span>

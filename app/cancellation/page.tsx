@@ -19,7 +19,7 @@ export default async function CancellationRefundPage() {
             <h1 className="mt-6 text-white text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
               {content.title}
             </h1>
-            <p className="mt-5 max-w-2xl text-slate-200      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            <p className="mt-5 max-w-2xl text-slate-200 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {content.description}
             </p>
           </div>
@@ -33,15 +33,15 @@ export default async function CancellationRefundPage() {
 
       <div className="mx-auto max-w-5xl space-y-6 px-4 py-10 sm:px-6 sm:py-14 lg:px-10">
         <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-          <p className="text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.intro}</p>
+          <p className="text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.intro}</p>
           <div className="mt-6 rounded-xl border-l-4 border-emerald-700 bg-[#eaf2e9] p-5">
             <h2 className="uppercase text-emerald-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.commitmentTitle}</h2>
-            <p className="mt-2 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.commitment}</p>
+            <p className="mt-2 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.commitment}</p>
           </div>
         </section>
 
         <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-          <h2 className=" text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.definitionsTitle}</h2>
+          <h2 className="text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.definitionsTitle}</h2>
           <dl className="mt-5 grid gap-3 sm:grid-cols-2">
             {content.definitions.map((item) => (
               <div key={item.term} className="rounded-xl bg-slate-50 p-4">
@@ -53,16 +53,16 @@ export default async function CancellationRefundPage() {
         </section>
 
         <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-          <h2 className=" text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.policyTitle}</h2>
+          <h2 className="text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.policyTitle}</h2>
 
           <div className="mt-6 rounded-xl border border-amber-200 bg-amber-50/70 p-5">
             <h3 className="text-slate-950 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{content.clientCancellationTitle}</h3>
-            <p className="mt-3 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.clientCancellation}</p>
+            <p className="mt-3 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.clientCancellation}</p>
           </div>
 
           <div className="mt-5 rounded-xl border border-emerald-200 bg-emerald-50/50 p-5">
             <h3 className="text-slate-950 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{content.automaticRefundTitle}</h3>
-            <p className="mt-2 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.automaticRefundIntro}</p>
+            <p className="mt-2 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.automaticRefundIntro}</p>
             <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm leading-7 text-slate-700">
               {content.automaticRefundCases.map((item) => <li key={item}>{item}</li>)}
             </ol>
@@ -74,46 +74,46 @@ export default async function CancellationRefundPage() {
               {content.companyCancellationCases.map((item) => (
                 <div key={item.heading} className="rounded-lg bg-white p-4">
                   <h4 className="text-slate-900 text-lg font-semibold tracking-normal leading-snug">{item.heading}</h4>
-                  <p className="mt-1 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item.description}</p>
-                  <p className="mt-2 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                  <p className="mt-1 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item.description}</p>
+                  <p className="mt-2 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                     <span className="font-semibold tracking-normal">{content.refundLabel}: </span>{item.refund}
                   </p>
                 </div>
               ))}
             </div>
-            <p className="mt-4 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.companyRefundTimeline}</p>
+            <p className="mt-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.companyRefundTimeline}</p>
           </div>
         </section>
 
         <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-          <h2 className=" text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.refundProcessTitle}</h2>
+          <h2 className="text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.refundProcessTitle}</h2>
           <ol className="mt-5 list-decimal space-y-3 pl-5 text-sm leading-7 text-slate-700">
             {content.refundProcess.map((item) => <li key={item}>{item}</li>)}
           </ol>
         </section>
 
         <section className="rounded-xl bg-[#102a43] p-6 text-white shadow-sm sm:p-8">
-          <h2 className=" text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.contactTitle}</h2>
-          <p className="mt-2 text-slate-200      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.contactIntro}</p>
+          <h2 className="text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.contactTitle}</h2>
+          <p className="mt-2 text-slate-200 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.contactIntro}</p>
           <dl className="mt-5 grid gap-4 text-sm sm:grid-cols-2">
-            <div>
+            <>
               <dt className="font-bold text-sky-200 tracking-normal">{content.emailLabel}</dt>
               <dd className="mt-1"><a className="underline underline-offset-4 hover:text-amber-200" href={`mailto:${content.email}`}>{content.email}</a></dd>
-            </div>
-            <div>
+            </>
+            <>
               <dt className="font-bold text-sky-200 tracking-normal">{content.phoneLabel}</dt>
               <dd className="mt-1"><a className="underline underline-offset-4 hover:text-amber-200" href={`tel:${content.phone}`}>{content.phone}</a></dd>
-            </div>
-            <div>
+            </>
+            <>
               <dt className="font-bold text-sky-200 tracking-normal">{content.websiteLabel}</dt>
               <dd className="mt-1"><a className="underline underline-offset-4 hover:text-amber-200" href={`https://${content.website}`} target="_blank" rel="noopener noreferrer">{content.website}</a></dd>
-            </div>
-            <div>
+            </>
+            <>
               <dt className="font-bold text-sky-200 tracking-normal">{content.addressLabel}</dt>
               <dd className="mt-1 leading-6">{content.address}</dd>
-            </div>
+            </>
           </dl>
-          <p className="mt-6 border-t border-slate-700 pt-5 text-slate-200      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+          <p className="mt-6 border-t border-slate-700 pt-5 text-slate-200 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {content.moreQuestions}{' '}
             <Link href="/contact" className="font-bold text-amber-200 underline underline-offset-4 hover:text-white tracking-normal">
               {content.contactLink}

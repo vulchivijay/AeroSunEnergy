@@ -59,11 +59,11 @@ export function SolarCalculatorControls({
   maxSystemSizeKw: number
 }) {
   return (
-          <div className="bg-linear-to-r from-[#137c63] to-[#20A44A] p-6 text-white sm:p-8 lg:p-10 ">
+          <div className="bg-linear-to-r from-[#137c63] to-[#20A44A] p-6 text-white sm:p-8 lg:p-10">
             <h2 className="max-w-sm text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
               {e.savingsTitle} <span className="text-emerald-400">{e.savingsTitleAccent}</span>
             </h2>
-            <p className="mt-3 max-w-sm text-emerald-100/80      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            <p className="mt-3 max-w-sm text-emerald-100/80 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {e.savingsDescription}
             </p>
 
@@ -94,7 +94,7 @@ export function SolarCalculatorControls({
               </button>
             </div>
 
-            <div className="mt-8 ">
+            <div className="mt-8">
               <div className="mb-3 uppercase text-emerald-100/80 text-xs font-semibold tracking-wide leading-5">
                 {inputMode === 'bill' ? calculatorText.billAmount : calculatorText.systemSize}
               </div>
@@ -122,7 +122,7 @@ export function SolarCalculatorControls({
               </div>
 
               {inputMode === 'bill' ? (
-                <div className="mt-4 ">
+                <div className="mt-4">
                   <label htmlFor={monthlyBillInputId} className="sr-only text-xs sm:text-sm font-semibold tracking-normal leading-5">
                     {e.monthlyBillAriaLabel}
                   </label>
@@ -142,13 +142,13 @@ export function SolarCalculatorControls({
                     />
                     <span className="whitespace-nowrap text-sm text-emerald-100/70">{calculatorText.monthSuffix}</span>
                   </div>
-                  <div className="mt-2 flex justify-between text-xs text-emerald-100/60 ">
+                  <div className="mt-2 flex justify-between text-xs text-emerald-100/60">
                     <span><DigitalNumber value={e.monthlyBillMinimum} /></span>
                     <span><DigitalNumber value={e.monthlyBillMaximum} /></span>
                   </div>
                 </div>
               ) : (
-                <div className="mt-4 ">
+                <div className="mt-4">
                   <label htmlFor={systemSizeInputId} className="sr-only text-xs sm:text-sm font-semibold tracking-normal leading-5">
                     {calculatorText.systemSize}
                   </label>
@@ -167,14 +167,14 @@ export function SolarCalculatorControls({
                     />
                     <span className="text-sm font-bold text-emerald-100 tracking-normal">{e.capacityUnit}</span>
                   </div>
-                  <div className="mt-2 flex justify-between text-xs text-emerald-100/60 ">
+                  <div className="mt-2 flex justify-between text-xs text-emerald-100/60">
                     <span><DigitalNumber value={`1 ${e.capacityUnit}`} /></span>
                     <span><DigitalNumber value="100 MW" /></span>
                   </div>
                 </div>
               )}
 
-              <p className="mt-4 text-emerald-100/75       tabular-nums text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+              <p className="mt-4 text-emerald-100/75 tabular-nums text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 {e.estimatedMonthlyUsage}: <DigitalNumber value={calculation.monthlyUnits.toLocaleString('en-IN')} /> {e.unitsSuffix}
               </p>
 
@@ -187,8 +187,8 @@ export function SolarCalculatorControls({
               >
                 <p
                   className={` ${
-                    selectedPropertyIndex === 0 ? 'text-emerald-80' : ' text-emerald-100/90      '
-                  }      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}
+                    selectedPropertyIndex === 0 ? 'text-emerald-80' : ' text-emerald-100/90 '
+                  } text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}
                 >
                   {selectedPropertyIndex === 0
                     ? calculatorText.residentialSubsidyNote

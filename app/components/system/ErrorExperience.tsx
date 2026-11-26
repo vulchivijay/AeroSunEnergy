@@ -130,17 +130,17 @@ export function ErrorExperience({
 
       <section className="relative mx-auto grid min-h-[min(720px,calc(100svh-10rem))] max-w-7xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16 lg:px-10">
         <div className="max-w-xl">
-          <p className="flex items-center gap-3 uppercase text-[#c2df9e]    text-xs font-semibold tracking-wide leading-5">
+          <p className="flex items-center gap-3 uppercase text-[#c2df9e] text-xs font-semibold tracking-wide leading-5">
             <span className="h-px w-8 bg-[#f5c76a]" />
             {eyebrow}
           </p>
-          <p className="mt-7 font-mono text-[#f5c76a]     tabular-nums text-xs font-semibold tracking-wide leading-5">
+          <p className="mt-7 font-mono text-[#f5c76a] tabular-nums text-xs font-semibold tracking-wide leading-5">
             {code}
           </p>
           <h1 className="mt-4 text-white text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
             {title}
           </h1>
-          <p className="mt-5 max-w-lg text-white/70      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+          <p className="mt-5 max-w-lg text-white/70 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {description}
           </p>
 
@@ -151,7 +151,7 @@ export function ErrorExperience({
 
           {helpfulLinks.length > 0 && (
             <nav aria-label={t.systemUi.notFound.helpfulLinksAriaLabel} className="mt-9 border-t border-slate-700 pt-5">
-              <p className="uppercase text-white/45    text-xs font-semibold tracking-wide leading-5">{t.systemUi.notFound.helpfulLinksHeading}</p>
+              <p className="uppercase text-white/45 text-xs font-semibold tracking-wide leading-5">{t.systemUi.notFound.helpfulLinksHeading}</p>
               <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
                 {helpfulLinks.map((link) => (
                   <li key={link.href}>

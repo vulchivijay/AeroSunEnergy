@@ -48,7 +48,7 @@ export function CustomerEnquiryTextField({
   labelTextClassName = "text-slate-700",
 }: TextFieldProps) {
   return (
-    <label className={`block min-w-0 ${className}     text-xs sm:text-sm font-semibold tracking-normal leading-5`}>
+    <label className={`block min-w-0 ${className} text-xs sm:text-sm font-semibold tracking-normal leading-5`}>
       <span className={`mb-1.5 block text-base font-bold ${labelTextClassName} tracking-normal`}>
         {label}
         {required && <span aria-hidden="true"> *</span>}

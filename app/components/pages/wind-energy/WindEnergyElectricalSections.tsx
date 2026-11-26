@@ -9,10 +9,10 @@ async function WindComparisonTable({ rows }: { rows: { system: string; detail: s
   const ui = t.ui
 
   return (
-    <div className="overflow-x-auto rounded-xl border border-emerald-200 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400 ">
+    <div className="overflow-x-auto rounded-xl border border-emerald-200 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400">
       <table
         aria-label={`${ui.systemType}, ${ui.howItWorks}, ${ui.typicalUse}`}
-        className="w-full min-w-[780px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3 "
+        className="w-full min-w-[780px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3"
       >
         <thead className="bg-amber-700 uppercase text-white text-xs font-semibold tracking-wide leading-5">
           <tr>
@@ -23,7 +23,7 @@ async function WindComparisonTable({ rows }: { rows: { system: string; detail: s
         </thead>
         <tbody>
         {rows.map((row) => (
-          <tr key={row.system} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70 ">
+          <tr key={row.system} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
             <th scope="row" className="font-semibold text-slate-900 tracking-normal tabular-nums"><DigitalNumber value={row.system} /></th>
             <td className="text-slate-700 tabular-nums"><DigitalNumber value={row.detail} /></td>
             <td className="text-slate-700 tabular-nums"><DigitalNumber value={row.use} /></td>

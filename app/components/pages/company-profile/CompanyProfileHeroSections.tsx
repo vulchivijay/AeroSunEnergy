@@ -17,7 +17,7 @@ function SectionHeading({
   return (
     <div className="mb-8 max-w-3xl">
       <p
-        className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 uppercase before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? "border-amber-300/20 bg-white/[0.08] text-amber-200" : " border-slate-200 bg-white/75 text-teal-800    "} text-xs font-semibold tracking-wide leading-5`}
+        className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 uppercase before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? "border-amber-300/20 bg-white/[0.08] text-amber-200" : " border-slate-200 bg-white/75 text-teal-800 "} text-xs font-semibold tracking-wide leading-5`}
       >
         {number} / {eyebrow}
       </p>
@@ -28,7 +28,7 @@ function SectionHeading({
       </h2>
       {description && (
         <p
-          className={`mt-4 ${inverse ? "text-indigo-100/90" : " text-slate-600      "}      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}
+          className={`mt-4 ${inverse ? "text-indigo-100/90" : " text-slate-600 "} text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}
         >
           {description}
         </p>
@@ -46,7 +46,7 @@ export function CompanyProfileHeroSections({ t }: { t: Translations }) {
                 aria-hidden="true"
               />
               <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-                <p className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">
+                <p className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">
                   <span
                     className="h-1.5 w-1.5 rounded-full bg-amber-500"
                     aria-hidden="true"
@@ -57,10 +57,10 @@ export function CompanyProfileHeroSections({ t }: { t: Translations }) {
                   {cp.title}
                   <span className="mt-2 block text-[#137c63]">{cp.subtitle}</span>
                 </h1>
-                <p className="mt-5 uppercase text-slate-600    text-xs font-semibold tracking-wide leading-5">
+                <p className="mt-5 uppercase text-slate-600 text-xs font-semibold tracking-wide leading-5">
                   {cp.motto}
                 </p>
-                <p className="mt-6 max-w-3xl text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                <p className="mt-6 max-w-3xl text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {cp.intro}
                 </p>
                 <a
@@ -73,23 +73,23 @@ export function CompanyProfileHeroSections({ t }: { t: Translations }) {
                 </a>
                 <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   <div className="rounded-xl border border-slate-200 bg-white/85 p-5">
-                    <p className=" uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">
+                    <p className="uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">
                       {cp.officeLabel}
                     </p>
-                    <p className="mt-2 text-[#152b29]      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                    <p className="mt-2 text-[#152b29] text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                       {cp.officeText}
                     </p>
                   </div>
                   <div className="rounded-xl border border-slate-200 bg-white/85 p-5">
-                    <p className=" uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">
+                    <p className="uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">
                       {cp.cinLabel}
                     </p>
-                    <p className="mt-2 font-mono text-[#137c63]     tabular-nums text-xs font-semibold tracking-wide leading-5">
+                    <p className="mt-2 font-mono text-[#137c63] tabular-nums text-xs font-semibold tracking-wide leading-5">
                       U35106AP2026PTC128748
                     </p>
                   </div>
                   <div className="rounded-xl border border-slate-200 bg-white/85 p-5 sm:col-span-2 lg:col-span-1">
-                    <p className=" uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">
+                    <p className="uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">
                       {cp.focusLabel}
                     </p>
                     <div className="mt-3 flex flex-wrap gap-2 text-sm font-semibold text-[#152b29] tracking-normal">

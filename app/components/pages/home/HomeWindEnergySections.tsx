@@ -13,14 +13,14 @@ export function HomeWindEnergySections({ t }: { t: Translations }) {
       <TirupatiEnergySection />
       <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 lg:px-10 sm:py-14 lg:py-16">
               <div className="mx-auto max-w-7xl">
-                <div>
+                <>
                   <div className="mb-8 flex items-center justify-between gap-4">
-                  <div>
+                  <>
                     <WindSectionEyebrow>{wind.eyebrow}</WindSectionEyebrow>
                     <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
                       {wind.title}
                     </h2>
-                  </div>
+                  </>
                   </div>
                   <div id="wind-energy-content">
                   <div className="grid gap-6 lg:grid-cols-3">
@@ -48,7 +48,7 @@ export function HomeWindEnergySections({ t }: { t: Translations }) {
                     <WindCapacityTable rows={wind.capacity} />
                   </div>
                   </div>
-                </div>
+                </>
               </div>
             </section>
     </>

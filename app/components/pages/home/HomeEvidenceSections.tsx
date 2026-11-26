@@ -14,11 +14,11 @@ function QuoteTransparencySection({ t }: { t: Translations }) {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_10%_0%,rgba(129,140,248,0.13),transparent_35%),radial-gradient(ellipse_at_100%_100%,rgba(56,189,248,0.12),transparent_32%)]" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:gap-12">
         <header className="lg:sticky lg:top-24 lg:self-start">
-          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 uppercase text-indigo-700    text-xs font-semibold tracking-wide leading-5">{content.eyebrow}</p>
+          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 uppercase text-indigo-700 text-xs font-semibold tracking-wide leading-5">{content.eyebrow}</p>
           <h2 id="quote-transparency-title" className="mt-3 text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
             {content.title}
           </h2>
-          <p className="mt-4 max-w-xl text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.description}</p>
+          <p className="mt-4 max-w-xl text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.description}</p>
         </header>
 
         <div className="space-y-4">
@@ -27,7 +27,7 @@ function QuoteTransparencySection({ t }: { t: Translations }) {
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-300 text-slate-900">
                 <FileCheck2 className="h-5 w-5" aria-hidden="true" />
               </span>
-              <h3 className=" text-slate-950 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{content.quoteHeading}</h3>
+              <h3 className="text-slate-950 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{content.quoteHeading}</h3>
             </div>
             <ul className="mt-5 grid gap-3 sm:grid-cols-2">
               {content.quoteItems.map((item) => (
@@ -44,7 +44,7 @@ function QuoteTransparencySection({ t }: { t: Translations }) {
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-200 text-sky-950">
                 <ShieldCheck className="h-5 w-5" aria-hidden="true" />
               </span>
-              <h3 className=" text-slate-950 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{content.warrantyHeading}</h3>
+              <h3 className="text-slate-950 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{content.warrantyHeading}</h3>
             </div>
             <ul className="mt-5 grid gap-3">
               {content.warrantyItems.map((item) => (

@@ -24,7 +24,7 @@ export function KnowEligibilityHeroSections({ t }: { t: Translations }) {
                     {labels.heroTitle}
                     <span className="mt-1 block text-emerald-300">{labels.heroTitleAccent}</span>
                   </h1>
-                  <p className="mt-5 max-w-2xl text-slate-300      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                  <p className="mt-5 max-w-2xl text-slate-300 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                     {labels.heroDescription}
                   </p>
                 </div>

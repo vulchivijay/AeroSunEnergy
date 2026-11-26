@@ -64,7 +64,7 @@ export function SolarAssessmentLeadForm({
           aria-labelledby={`${leadFormId}-title`}
         >
           <div className="bg-linear-to-r from-[#137c63] to-[#20A44A] p-6 text-white sm:p-8">
-            <p className="uppercase text-amber-100    text-xs font-semibold tracking-wide leading-5">
+            <p className="uppercase text-amber-100 text-xs font-semibold tracking-wide leading-5">
               {e.freeAssessmentLabel}
             </p>
             <h2 id={`${leadFormId}-title`} className="mt-3 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
@@ -94,7 +94,7 @@ export function SolarAssessmentLeadForm({
                 value={formatCurrency(calculation.finalEffectiveCost)}
               />
             </div>
-            <p className="mt-6 text-emerald-100/80      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{e.whatsAppDisclosure}</p>
+            <p className="mt-6 text-emerald-100/80 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{e.whatsAppDisclosure}</p>
           </div>
 
           <form onSubmit={onSubmit} className="p-6 sm:p-8">
@@ -183,7 +183,7 @@ export function SolarAssessmentLeadForm({
               </button>
             </div>
             {whatsAppFallbackUrl && (
-              <p className="mt-4 text-emerald-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7" aria-live="polite">
+              <p className="mt-4 text-emerald-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7" aria-live="polite">
                 <a href={whatsAppFallbackUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
                   {e.openWhatsAppFallback}
                 </a>

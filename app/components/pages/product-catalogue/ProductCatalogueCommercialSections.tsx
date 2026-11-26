@@ -15,14 +15,14 @@ function SectionHeading({
 }) {
   return (
     <div className="mb-7 max-w-3xl">
-      <p className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 uppercase before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? 'border-amber-300/20 bg-white/[0.08] text-amber-200' : ' border-slate-200 bg-white/75 text-teal-800    '} text-xs font-semibold tracking-wide leading-5`}>
+      <p className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 uppercase before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? 'border-amber-300/20 bg-white/[0.08] text-amber-200' : ' border-slate-200 bg-white/75 text-teal-800 '} text-xs font-semibold tracking-wide leading-5`}>
         {number} / {eyebrow}
       </p>
       <h2 className={`mt-4 ${inverse ? 'text-white' : 'text-[#152b29]'} text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug`}>
         {title}
       </h2>
       {description && (
-        <p className={`mt-4 ${inverse ? 'text-indigo-100/90' : ' text-slate-600      '}      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}>{description}</p>
+        <p className={`mt-4 ${inverse ? 'text-indigo-100/90' : ' text-slate-600 '} text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}>{description}</p>
       )}
     </div>
   )
@@ -83,7 +83,7 @@ export function ProductCatalogueCommercialSections({ t }: { t: Translations }) {
                     </ol>
                   </DetailCard>
                 </div>
-                <p className="mt-5 border-l-2 border-amber-500 pl-4 italic text-teal-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                <p className="mt-5 border-l-2 border-amber-500 pl-4 italic text-teal-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {c.commercial.tagline}
                 </p>
               </div>
@@ -107,15 +107,15 @@ export function ProductCatalogueCommercialSections({ t }: { t: Translations }) {
                   </DetailCard>
                   <DetailCard title={c.agricultural.benefitsLabel}><BulletList items={c.agricultural.benefits} /></DetailCard>
                   <DetailCard title={c.agricultural.considerationsLabel}>
-                    <p className="text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                    <p className="text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                       {c.agricultural.considerations}
                     </p>
-                    <p className="mt-4 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                    <p className="mt-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                       {c.agricultural.subsidyNote}
                     </p>
                   </DetailCard>
                 </div>
-                <p className="mt-5 border-l-2 border-amber-500 pl-4 italic text-teal-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                <p className="mt-5 border-l-2 border-amber-500 pl-4 italic text-teal-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {c.agricultural.tagline}
                 </p>
               </div>

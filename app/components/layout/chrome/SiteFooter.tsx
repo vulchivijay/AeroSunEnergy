@@ -98,13 +98,13 @@ export default function Footer() {
 	return (
 		<footer
 			id="contact"
-			className="relative w-full overflow-hidden border-t border-slate-700 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(23,37,84,0.96),rgba(23,37,84,0.96))] text-white/90 shadow-sm before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-amber-400 before:via-white/40 before:to-sky-300 "
+			className="relative w-full overflow-hidden border-t border-slate-700 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(23,37,84,0.96),rgba(23,37,84,0.96))] text-white/90 shadow-sm before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-amber-400 before:via-white/40 before:to-sky-300"
 		>
-			<div className="pointer-events-none absolute -right-40 top-0 h-[34rem] w-[34rem] rounded-full border border-amber-700/10 " aria-hidden="true" />
+			<div className="pointer-events-none absolute -right-40 top-0 h-[34rem] w-[34rem] rounded-full border border-amber-700/10" aria-hidden="true" />
 
-			<div className="pointer-events-none absolute -right-24 top-16 h-[24rem] w-[24rem] rounded-full border border-slate-700 " aria-hidden="true" />
+			<div className="pointer-events-none absolute -right-24 top-16 h-[24rem] w-[24rem] rounded-full border border-slate-700" aria-hidden="true" />
 
-			<div className="relative mx-auto max-w-7xl px-5 pb-14 pt-14 sm:px-8 sm:pb-20 sm:pt-20 lg:px-10 ">
+			<div className="relative mx-auto max-w-7xl px-5 pb-14 pt-14 sm:px-8 sm:pb-20 sm:pt-20 lg:px-10">
 
 				<section className="relative mb-14 overflow-hidden rounded-xl bg-[linear-gradient(135deg,#d72b0b_0%,#f99104_52%,#faf206_100%)] p-7 text-slate-900 sm:p-10 lg:mb-20 lg:p-14 shadow-sm">
 					<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_88%_45%,rgba(245,199,106,0.18),transparent_35%)]" aria-hidden="true" />
@@ -147,16 +147,16 @@ export default function Footer() {
 					</div>
 				</section>
 
-				<div className="mb-10 h-px w-full origin-left animate-[pulse_3s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-indigo-200/60 to-transparent motion-reduce:animate-none " aria-hidden="true" />
+				<div className="mb-10 h-px w-full origin-left animate-[pulse_3s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-indigo-200/60 to-transparent motion-reduce:animate-none" aria-hidden="true" />
 
-				<div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1.1fr_1fr] lg:gap-x-8 ">
+				<div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1.1fr_1fr] lg:gap-x-8">
 					<section aria-labelledby="footer-brand">
 						<div className="inline-flex max-w-full p-2">
 							<Logo />
 						</div>
 						<h2 id="footer-brand" className="mt-6 hidden text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{t.navbar.brandName}</h2>
-						<p className="mt-1 text-[#F5C76A] hidden      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">&ldquo;{t.navbar.brandTagline}&rdquo;</p>
-						<p className="mt-4 max-w-sm text-white/75      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{footer.brandDesc}</p>
+						<p className="mt-1 text-[#F5C76A] hidden text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">&ldquo;{t.navbar.brandTagline}&rdquo;</p>
+						<p className="mt-4 max-w-sm text-white/75 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{footer.brandDesc}</p>
 						<div className="mt-6 flex flex-wrap gap-3" role="group" aria-label={footer.followUs}>
 							{socialLinks.map(({ href, platform, dataSocial, icon }) => (
 								<Link
@@ -241,8 +241,8 @@ export default function Footer() {
 
 			</div>
 
-			<div className="border-t border-slate-700 bg-white/5 backdrop-blur ">
-				<div className="flex w-full flex-col items-center justify-between gap-1 border-t border-slate-700 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10 ">
+			<div className="border-t border-slate-700 bg-white/5 backdrop-blur">
+				<div className="flex w-full flex-col items-center justify-between gap-1 border-t border-slate-700 px-5 py-5 text-center sm:px-8 lg:flex-row lg:px-10">
 					<div className="flex flex-wrap items-center justify-center gap-1 text-xs uppercase text-white/70 tracking-wide leading-5">
 						{footer.legalLinks.map((link: { href: string; label: string }) => (
               <Fragment key={link.href}>

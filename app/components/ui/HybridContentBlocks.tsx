@@ -69,10 +69,10 @@ export function HybridFeatureCard({
         </span>
       </div>
       <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <div>
+        <>
           <span className={`uppercase ${contentAccentText[accent]} text-xs font-bold tracking-widest leading-5`}>{ui.hybridSystem}</span>
           <div className={`mt-2 h-1 w-12 rounded-full ${contentFeatureCardAccents[accent]}`} aria-hidden="true" />
-        </div>
+        </>
         <h3 className="mt-2 text-slate-900 text-lg font-semibold leading-snug">{title}</h3>
         <p className={`mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7 ${descriptionClassName}`}>{description}</p>
         {points.length > 0 && (
@@ -199,10 +199,10 @@ export function HybridTable({ rows }: { rows: { label: string; value: string; us
   const ui = t.ui
 
   return (
-    <div className="overflow-x-auto rounded-xl border border-emerald-200 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400 ">
+    <div className="overflow-x-auto rounded-xl border border-emerald-200 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300 [&::-webkit-scrollbar-thumb:hover]:bg-emerald-400">
       <table
         aria-label={`${ui.systemType}, ${ui.typicalConfiguration}, ${ui.customerFit}`}
-        className="w-full min-w-[760px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3 "
+        className="w-full min-w-[760px] border-collapse text-left text-sm text-slate-800 [&_th]:border-b [&_th]:border-slate-200 [&_td]:border-b [&_td]:border-slate-200 [&_th]:px-4 [&_th]:py-3 [&_td]:px-4 [&_td]:py-3"
       >
         <thead className="bg-amber-700 uppercase text-white text-xs font-semibold tracking-wide leading-5">
           <tr>
@@ -213,7 +213,7 @@ export function HybridTable({ rows }: { rows: { label: string; value: string; us
         </thead>
         <tbody>
         {rows.map((row) => (
-          <tr key={row.label} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70 ">
+          <tr key={row.label} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
             <th scope="row" className="font-semibold text-slate-900 tracking-normal tabular-nums"><DigitalNumber value={row.label} /></th>
             <td className="text-slate-700 tabular-nums"><DigitalNumber value={row.value} /></td>
             <td className="text-slate-700 tabular-nums"><DigitalNumber value={row.use} /></td>

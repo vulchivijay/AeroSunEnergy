@@ -30,7 +30,7 @@ export function AboutWorkAndImpactSections({ t }: { t: Translations }) {
                   className="grid items-center gap-12 xl:grid-cols-[1.15fr_0.85fr] xl:gap-20"
                 >
                   <div className="min-w-0">
-                    <p className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2.5  uppercase text-teal-800 before:h-1.5 before:w-1.5 before:shrink-0 before:rounded-full before:bg-amber-500 before:content-['']    text-xs font-semibold tracking-wide leading-5">
+                    <p className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2.5 uppercase text-teal-800 before:h-1.5 before:w-1.5 before:shrink-0 before:rounded-full before:bg-amber-500 before:content-[''] text-xs font-semibold tracking-wide leading-5">
                       {aboutSection.eyebrow} {aboutSection.brandFirst} {aboutSection.brandSecond}
                     </p>
 
@@ -64,7 +64,7 @@ export function AboutWorkAndImpactSections({ t }: { t: Translations }) {
                       {a.quote}
                     </blockquote>
                     <div className="mt-8 border-t border-slate-700 pt-5">
-                      <p className="uppercase text-amber-300    text-xs font-semibold tracking-wide leading-5">
+                      <p className="uppercase text-amber-300 text-xs font-semibold tracking-wide leading-5">
                         {aboutSection.visionHeading}
                       </p>
                     </div>
@@ -77,23 +77,23 @@ export function AboutWorkAndImpactSections({ t }: { t: Translations }) {
                       <span className="font-mono uppercase text-teal-700 text-xs font-semibold tracking-wide leading-5 tabular-nums">
                         0{index + 1} ·
                       </span>
-                      <div>
-                        <p className="uppercase text-teal-800    text-xs font-semibold tracking-wide leading-5">{item.title}</p>
-                        <p className="mt-2 text-[#112c2a]    text-lg font-semibold tracking-normal leading-snug">{item.value}</p>
-                      </div>
+                      <>
+                        <p className="uppercase text-teal-800 text-xs font-semibold tracking-wide leading-5">{item.title}</p>
+                        <p className="mt-2 text-[#112c2a] text-lg font-semibold tracking-normal leading-snug">{item.value}</p>
+                      </>
                     </div>
                   ))}
                 </div>
 
                 <div className="mt-12 grid gap-5 xl:grid-cols-2 xl:gap-6">
                   <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-                    <p className="uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">{aboutSection.solutionsEyebrow}</p>
+                    <p className="uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">{aboutSection.solutionsEyebrow}</p>
                     <h3 className="mt-3 text-[#152b29] text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{aboutSection.solutionsTitle}</h3>
-                    <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{aboutSection.solutionsDescription}</p>
+                    <p className="mt-3 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{aboutSection.solutionsDescription}</p>
                   </article>
 
                   <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-                    <p className="uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">{aboutSection.designEyebrow}</p>
+                    <p className="uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">{aboutSection.designEyebrow}</p>
                     <ul className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
                       {aboutSection.designPoints.map((point) => (
                         <li key={point} className="flex items-start gap-2.5 text-sm font-medium leading-6 text-slate-700 tracking-normal">
@@ -107,9 +107,9 @@ export function AboutWorkAndImpactSections({ t }: { t: Translations }) {
 
                 <div className="mt-5 grid gap-5 xl:grid-cols-[0.9fr_1.1fr]">
                   <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-                    <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">{aboutSection.technologyEyebrow}</p>
+                    <p className="uppercase text-slate-500 text-xs font-semibold tracking-wide leading-5">{aboutSection.technologyEyebrow}</p>
                     <h3 className="mt-3 text-[#112c2a] text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{aboutSection.technologyTitle}</h3>
-                    <p className="mt-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{aboutSection.technologyDescription}</p>
+                    <p className="mt-4 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{aboutSection.technologyDescription}</p>
                   </article>
 
                   <div className="grid gap-3 sm:grid-cols-3">
@@ -118,8 +118,8 @@ export function AboutWorkAndImpactSections({ t }: { t: Translations }) {
                         <span className="absolute -right-3 -top-3 opacity-10" aria-hidden="true">
                           <Icon className="h-20 w-20" strokeWidth={1} />
                         </span>
-                        <p className="relative uppercase text-teal-800    text-xs font-semibold tracking-wide leading-5">{label}</p>
-                        <p className="relative mt-8 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{value}</p>
+                        <p className="relative uppercase text-teal-800 text-xs font-semibold tracking-wide leading-5">{label}</p>
+                        <p className="relative mt-8 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{value}</p>
                         <span className="absolute bottom-4 right-4 font-mono text-sm font-semibold text-slate-500 tracking-normal tabular-nums">0{index + 1}</span>
                       </article>
                     ))}
@@ -128,10 +128,10 @@ export function AboutWorkAndImpactSections({ t }: { t: Translations }) {
 
                 <div className="mt-5 flex flex-col gap-5 rounded-xl border border-slate-700 bg-[linear-gradient(145deg,#172554_0%,#1e3a8a_55%,#312e81_100%)] p-6 text-white shadow-sm sm:p-8 lg:flex-row lg:items-end lg:justify-between">
                   <div className="max-w-3xl">
-                    <p className="uppercase text-amber-300    text-xs font-semibold tracking-wide leading-5">{aboutSection.futureHeading}</p>
-                    <p className="mt-3 text-teal-50/90      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{aboutSection.futureDescription}</p>
+                    <p className="uppercase text-amber-300 text-xs font-semibold tracking-wide leading-5">{aboutSection.futureHeading}</p>
+                    <p className="mt-3 text-teal-50/90 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{aboutSection.futureDescription}</p>
                   </div>
-                  <p className="max-w-sm border-l-2 border-amber-400 pl-4 text-white lg:text-right      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                  <p className="max-w-sm border-l-2 border-amber-400 pl-4 text-white lg:text-right text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                     {aboutSection.slogan}
                   </p>
                 </div>
