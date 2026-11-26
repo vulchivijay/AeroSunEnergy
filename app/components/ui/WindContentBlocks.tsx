@@ -68,10 +68,10 @@ export function WindFeatureCard({
         </span>
       </div>
       <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <>
+        <div>
           <span className={`uppercase ${contentAccentText[accent]} text-xs font-bold tracking-widest leading-5`}>{ui.windSolution}</span>
           <div className={`mt-2 h-1 w-12 rounded-full ${contentFeatureCardAccents[accent]}`} aria-hidden="true" />
-        </>
+        </div>
         <h3 className="mt-2 text-slate-900 text-lg font-semibold leading-snug">{title}</h3>
         <p className={`mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7 ${descriptionClassName}`}>{description}</p>
         {points.length > 0 && (

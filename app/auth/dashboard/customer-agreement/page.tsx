@@ -121,10 +121,10 @@ export default function CustomerAgreementPage() {
                   <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-slate-700 bg-white/8 text-xl font-bold shadow-sm tracking-normal">
                     C
                   </div>
-                  <>
+                  <div>
                     <p className="uppercase text-indigo-100/85 text-xs font-semibold tracking-wide leading-5">{formCopy.agreement}</p>
                     <h2 className="mt-1 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{formCopy.title}</h2>
-                  </>
+                  </div>
                 </div>
 
                 <div className="grid gap-2 text-base sm:grid-cols-3 lg:min-w-104">

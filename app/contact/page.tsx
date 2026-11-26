@@ -164,10 +164,10 @@ export default async function Contact() {
               {contactHighlights.map((item, index) => (
                 <article key={item.label} className="flex gap-4 border-t-2 border-[#137c63]/25 bg-white p-5">
                   <span className="font-mono text-sm font-bold text-[#137c63] tracking-normal tabular-nums">0{index + 1}</span>
-                  <>
+                  <div>
                     <p className="uppercase text-slate-600 text-xs font-semibold tracking-wide leading-5">{item.label}</p>
                     <p className="mt-2 text-slate-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item.value}</p>
-                  </>
+                  </div>
                 </article>
               ))}
             </div>
@@ -190,10 +190,10 @@ export default async function Contact() {
         <div className="overflow-hidden bg-[linear-gradient(135deg,#dbeafe_0%,#e0f2fe_55%,#ecfdf5_100%)] text-white px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mx-auto max-w-7xl rounded-xl border border-slate-200">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-              <>
+              <div>
                 <p className="uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">{stepIntroLabel}</p>
                 <h2 className="mt-4 max-w-xl text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{stepIntroTitle}</h2>
-              </>
+              </div>
               <div className="flex flex-col justify-between gap-5 border-t border-slate-200 pt-5 sm:flex-row sm:items-end">
                 <p className="max-w-md text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{stepIntroCopy}</p>
                 <Link href="/auth/dashboard/customer-enquiry" className="inline-flex w-fit items-center gap-3 text-sm font-bold text-[#087a61] transition hover:gap-4 tracking-normal">

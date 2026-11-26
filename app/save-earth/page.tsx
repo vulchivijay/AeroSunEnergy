@@ -153,14 +153,14 @@ export default async function SaveEarthPage() {
                   <span>{content.fieldNotes}</span>
                   <span className="h-2 w-2 rounded-full bg-amber-300" />
                 </div>
-                <>
+                <div>
                   <div className="text-white/10 text-xs font-semibold tracking-wide leading-5">
                     <DigitalNumber value={content.heroNumber} />
                   </div>
                   <p className="-mt-5 max-w-[15rem] text-white text-lg font-semibold tracking-normal leading-snug">
                     {content.everyActionMatters}
                   </p>
-                </>
+                </div>
                 <div className="flex items-end justify-between border-t border-slate-700 pt-5">
                   <span className="max-w-[12rem] text-base leading-5 text-amber-100/90">
                     {content.tagline}
@@ -261,14 +261,14 @@ export default async function SaveEarthPage() {
 
           <footer className="rounded-xl border border-slate-200 bg-white p-6 sm:p-8">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-              <>
+              <div>
                 <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex w-fit rounded-full border border-slate-200 bg-[#eaf2e9] px-4 py-2 uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">
                   {content.footerBadge}
                 </p>
                 <p className="mt-2 max-w-xl text-slate-900 text-lg font-semibold tracking-normal leading-snug">
                   {content.footerDescription}
                 </p>
-              </>
+              </div>
               <Link
                 href="/contact"
                 className="inline-flex shrink-0 items-center justify-center rounded-full bg-[#087a61] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#075e4b] tracking-normal"

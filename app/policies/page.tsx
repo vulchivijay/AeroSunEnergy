@@ -51,12 +51,12 @@ export default async function PoliciesPage() {
           <div className="mb-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-lg text-sky-800">i</span>
-              <>
+              <div>
                 <p className="uppercase text-sky-800 text-xs font-semibold tracking-wide leading-5">{content.summaryTitle}</p>
                 <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {content.summary}
                 </p>
-              </>
+              </div>
             </div>
             <div className="mt-6 grid gap-3 border-t border-slate-200 pt-5 sm:grid-cols-3">
               {content.summaryItems.map((item, index) => (

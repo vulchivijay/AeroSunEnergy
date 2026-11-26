@@ -54,10 +54,10 @@ export default async function ProjectsPage() {
           <section id="project-approach" className="scroll-mt-28 mb-8 rounded-xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-6 shadow-sm sm:p-8">
             <div className="flex items-start gap-4">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-lg text-emerald-800">i</span>
-              <>
+              <div>
                 <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex w-fit rounded-full border border-slate-200 bg-emerald-50 px-3 py-1.5 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">{labels.approach}</p>
                 <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{labels.approachDescription}</p>
-              </>
+              </div>
             </div>
             <div className="mt-6 grid gap-3 border-t border-slate-200 pt-5 sm:grid-cols-2">
               {projectStepsData.map((step, index) => (

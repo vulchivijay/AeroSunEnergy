@@ -193,7 +193,7 @@ export default function InvoiceReceiptPage() {
                   error={errors.amount}
                 />
 
-                <>
+                <div>
                   <label htmlFor="paymentMode" className="mb-2 block text-slate-100 text-xs sm:text-sm font-semibold tracking-normal leading-5">
                     {labels.fields.paymentMode.label}
                   </label>
@@ -208,9 +208,9 @@ export default function InvoiceReceiptPage() {
                     {labels.paymentOptions.map((option) => <option key={option} value={option} className="text-slate-900">{option}</option>)}
                   </select>
                   {errors.paymentMode && <p id="paymentMode-error" className="mt-2 text-rose-300 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.paymentMode.message}</p>}
-                </>
+                </div>
 
-                <>
+                <div>
                   <label htmlFor="receiptNote" className="mb-2 block text-slate-100 text-xs sm:text-sm font-semibold tracking-normal leading-5">
                     {labels.fields.receiptNote.label}
                   </label>
@@ -224,7 +224,7 @@ export default function InvoiceReceiptPage() {
                     className="w-full rounded-lg border border-slate-700 bg-white/5 px-4 py-3 text-base text-white outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-orange-500/30"
                   />
                   {errors.receiptNote && <p id="receiptNote-error" className="mt-2 text-rose-300 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.receiptNote.message}</p>}
-                </>
+                </div>
 
                 <label className="flex items-start gap-3 rounded-xl border border-slate-700 bg-white/5 p-3 text-slate-200 text-xs sm:text-sm font-semibold tracking-normal leading-5">
                   <input

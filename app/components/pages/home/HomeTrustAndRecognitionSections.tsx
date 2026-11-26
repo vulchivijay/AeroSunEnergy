@@ -178,7 +178,7 @@ function CompanyTrustSection({ t }: { t: Translations }) {
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#f6f5fd]" />
       </div>
       <div className="relative z-10 mx-auto grid max-w-7xl gap-8 lg:grid-cols-[minmax(18rem,0.72fr)_minmax(0,1.6fr)] lg:items-center lg:gap-10">
-        <div className="relative flex min-h-[25rem] flex-col justify-center pb-36 sm:min-h-[27rem] sm:pb-40 lg:min-h-[34rem] lg:pb-0">
+        <div className="relative flex min-h-[25rem] flex-col justify-center pb-36 sm:min-h-[27rem] sm:pb-40 lg:sticky lg:top-24 lg:min-h-[34rem] lg:pb-0 lg:self-start">
           <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] inline-flex w-fit items-center gap-2 rounded-full border border-violet-500 bg-white/75 px-4 py-2 uppercase text-violet-700 text-xs font-bold tracking-[0.08em] leading-5 shadow-sm">
             {content.eyebrow}
           </p>

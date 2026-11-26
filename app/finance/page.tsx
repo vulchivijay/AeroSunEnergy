@@ -63,10 +63,10 @@ export default async function FinancePage() {
         <section id="loan-comparison" aria-labelledby="loan-comparison-title" className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
           <div className="flex items-start gap-3 border-b border-slate-200 p-5 sm:p-6">
             <BadgeIndianRupee className="mt-1 h-6 w-6 shrink-0 text-sky-700" aria-hidden="true" />
-            <>
+            <div>
               <h2 id="loan-comparison-title" className="text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{page.productTitle}</h2>
               <p className="mt-2 max-w-4xl text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{page.tableDescription}</p>
-            </>
+            </div>
           </div>
 
           <div className="overflow-x-auto">

@@ -105,10 +105,10 @@ export default async function ServicesPage() {
                 <article key={service.title} className="group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#9fcbb5] hover:shadow-md sm:p-8">
                   <div className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${service.accent}`} />
                   <div className="flex items-start justify-between gap-4">
-                    <>
+                    <div>
                       <span className="font-mono text-[#137c63] text-xs font-semibold tracking-wide leading-5 tabular-nums">{labels.division} 0{index + 1}</span>
                       <h3 className="mt-3 text-slate-950 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{service.title}</h3>
-                    </>
+                    </div>
                     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#eaf2e9] text-[#137c63] transition group-hover:bg-[#087a61] group-hover:text-white">
                       <Icon className="h-5 w-5" strokeWidth={1.8} aria-hidden="true" />
                     </span>
@@ -132,11 +132,11 @@ export default async function ServicesPage() {
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white border-y border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
-            <>
+            <div>
               <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex w-fit rounded-full border border-slate-200 bg-amber-50 px-4 py-2 uppercase text-amber-800 text-xs font-semibold tracking-wide leading-5">{labels.commonCapabilities}</p>
               <h2 className="mt-3 text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{labels.commonCapabilitiesTitle}</h2>
               <span className="mt-6 block h-1 w-16 rounded-full bg-gradient-to-r from-amber-500 to-[#137c63]" aria-hidden="true" />
-            </>
+            </div>
             <div className="grid gap-x-8 sm:grid-cols-2">
               {page.serviceGrid.map((item, index) => {
                 const Icon = capabilityIcons[index] ?? Settings2
@@ -145,10 +145,10 @@ export default async function ServicesPage() {
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#eaf2e9] text-[#137c63]">
                       <Icon className="h-4 w-4" aria-hidden="true" />
                     </span>
-                    <>
+                    <div>
                       <h3 className="text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{item.title}</h3>
                       <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item.text}</p>
-                    </>
+                    </div>
                   </article>
                 )
               })}
@@ -199,10 +199,10 @@ export default async function ServicesPage() {
                     <span className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-4 border-white bg-emerald-700 font-mono text-sm font-bold text-white shadow-sm tracking-normal tabular-nums">
                       0{index + 1}
                     </span>
-                    <>
+                    <div>
                       <p className="uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">{phase.label}</p>
                       <p className="mt-1 text-slate-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{phase.description}</p>
-                    </>
+                    </div>
                   </div>
                 ))}
               </div>

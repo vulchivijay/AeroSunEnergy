@@ -30,7 +30,7 @@ function ReferralProgramSection({
       >
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_10%_0%,rgba(129,140,248,0.13),transparent_35%),radial-gradient(ellipse_at_100%_100%,rgba(56,189,248,0.12),transparent_32%)]" aria-hidden="true" />
         <div className="relative mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <>
+          <div>
             <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 uppercase text-indigo-700 text-xs font-semibold tracking-wide leading-5">
               <span className="shrink-0 h-2 w-2 rounded-full bg-current" aria-hidden="true" />
               {landing.badge}
@@ -42,7 +42,7 @@ function ReferralProgramSection({
             <p className="mt-4 max-w-2xl text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {landing.description}
             </p>
-          </>
+          </div>
 
           <aside className="rounded-xl border border-slate-200 bg-white/75 p-5 shadow-sm sm:p-6">
             <p className="rounded-xl border-l-2 border-amber-500 bg-[#fff3df] px-4 py-3 text-amber-950 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
@@ -173,12 +173,12 @@ function ReferralProgramSection({
 
             <article className="rounded-xl border border-slate-200 border-l-4 border-l-[#c5dfc2] bg-[linear-gradient(135deg,#e7f2eb_0%,#ffffff_55%,#e8e7f8_100%)] p-5 text-slate-900 shadow-sm sm:p-6">
               <div className="flex items-start justify-between gap-3">
-                <>
+                <div>
                   <p className="uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">{landing.guidedTitle}</p>
                   <p className="mt-2 text-[#087a61] text-lg font-semibold tracking-normal leading-snug">
                     {landing.guidedRate}<span className="ml-1 text-sm font-bold text-slate-500 tracking-normal">{landing.perKilowatt}</span>
                   </p>
-                </>
+                </div>
                 <span className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 rounded-full bg-amber-300 px-3 py-1 text-xs uppercase text-slate-900 text-xs font-semibold tracking-wide leading-5">
                   {landing.topRateBadge}
                 </span>
