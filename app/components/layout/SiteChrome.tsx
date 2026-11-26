@@ -62,7 +62,7 @@ export default function SiteChrome({
       <LocaleProvider>
         <ToastProvider>
           <NetworkStatus />
-          <Notifications />
+          {!isDashboardRoute && <Notifications />}
           <DeferredOverlayLoader />
           {!isDashboardRoute && <Navbar />}
           {children}

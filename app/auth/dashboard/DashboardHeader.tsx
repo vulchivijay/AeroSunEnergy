@@ -2,24 +2,56 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Database } from 'lucide-react'
+import {
+  CalendarDays,
+  ClipboardCheck,
+  Database,
+  FileText,
+  FlaskConical,
+  Handshake,
+  LayoutDashboard,
+  Receipt,
+  ShieldCheck,
+  ShoppingCart,
+  Users,
+} from 'lucide-react'
 
-import { isLocale, useLocale } from '@/lib/LocaleContext'
+import { useLocale } from '@/lib/LocaleContext'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useToast } from '@/app/components/ui/ToastContext'
 
-const dashboardLinks = [
-  { key: 'overview', href: '/auth/dashboard' },
-  { key: 'customerEnquiry', href: '/auth/dashboard/customer-enquiry' },
-  { key: 'customerAgreement', href: '/auth/dashboard/customer-agreement' },
-  { key: 'installationChecklist', href: '/auth/dashboard/installation-checklist' },
-  { key: 'invoiceReceipt', href: '/auth/dashboard/invoice-receipt' },
-  { key: 'purchaseOrder', href: '/auth/dashboard/purchase-order' },
-  { key: 'warrantyPolicy', href: '/auth/dashboard/warranty-policy' },
-  { key: 'tracker', href: '/auth/dashboard/nintydays-tracker' },
-  { key: 'researchDevelopment', href: '/auth/dashboard/research-development' },
-  { key: 'termsConditions', href: '/auth/dashboard/terms-conditions' },
+const dashboardGroups = [
+  {
+    label: null,
+    links: [
+      { key: 'overview', href: '/auth/dashboard', icon: LayoutDashboard },
+    ],
+  },
+  {
+    label: 'CUSTOMERS',
+    links: [
+      { key: 'customerEnquiry', href: '/auth/dashboard/customer-enquiry', icon: Users },
+      { key: 'customerAgreement', href: '/auth/dashboard/customer-agreement', icon: Handshake },
+    ],
+  },
+  {
+    label: 'OPERATIONS',
+    links: [
+      { key: 'installationChecklist', href: '/auth/dashboard/installation-checklist', icon: ClipboardCheck },
+      { key: 'tracker', href: '/auth/dashboard/nintydays-tracker', icon: CalendarDays },
+      { key: 'researchDevelopment', href: '/auth/dashboard/research-development', icon: FlaskConical },
+    ],
+  },
+  {
+    label: 'DOCUMENTS',
+    links: [
+      { key: 'invoiceReceipt', href: '/auth/dashboard/invoice-receipt', icon: Receipt },
+      { key: 'purchaseOrder', href: '/auth/dashboard/purchase-order', icon: ShoppingCart },
+      { key: 'warrantyPolicy', href: '/auth/dashboard/warranty-policy', icon: ShieldCheck },
+      { key: 'termsConditions', href: '/auth/dashboard/terms-conditions', icon: FileText },
+    ],
+  },
 ] as const
 
 type DashboardUser = {
@@ -36,8 +68,7 @@ export default function DashboardHeader({
   children: React.ReactNode
 }) {
   const pathname = usePathname() ?? ''
-  const { locale, setLocale, t } = useLocale()
-  const languageOptions = t.navbar.languages
+  const { t } = useLocale()
 
   return (
     <>
@@ -57,24 +88,6 @@ export default function DashboardHeader({
               </span>
             </Link>
             <div className="flex shrink-0 items-center gap-3">
-              <label className="sr-only text-xs sm:text-sm font-semibold tracking-normal leading-5" htmlFor="dashboard-language">
-                {t.navbar.languageLabel}
-              </label>
-              <select
-                id="dashboard-language"
-                aria-label={t.navbar.languageLabel}
-                value={locale}
-                onChange={(event) => {
-                  if (isLocale(event.target.value)) setLocale(event.target.value)
-                }}
-                className="min-h-10 max-w-28 rounded-lg border border-slate-700 bg-white/10 px-2 text-xs font-semibold text-white outline-none focus-visible:ring-2 focus-visible:ring-white/70 tracking-normal"
-              >
-                {languageOptions.map((option) => (
-                  <option key={option.code} value={option.code} className="bg-white text-slate-900">
-                    {option.shortLabel}
-                  </option>
-                ))}
-              </select>
               <div className="hidden text-right sm:block">
                 <p className="max-w-52 truncate text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{user.name || user.email}</p>
                 <p className="uppercase text-emerald-200 text-xs font-semibold tracking-wide leading-5">
@@ -94,28 +107,39 @@ export default function DashboardHeader({
           <p className="mb-3 hidden px-3 uppercase text-slate-500 md:block text-xs font-semibold tracking-wide leading-5">
             Main menu
           </p>
-          <div className="flex gap-1 overflow-x-auto md:flex-col">
-            {dashboardLinks.map((item) => {
-              const active =
-                item.href === '/auth/dashboard'
-                  ? pathname === item.href
-                  : pathname === item.href || pathname.startsWith(`${item.href}/`)
+          <div className="flex gap-2 overflow-x-auto md:block md:overflow-visible">
+            {dashboardGroups.map((group) => (
+              <section key={group.label ?? 'overview'} className="flex shrink-0 gap-1 md:mb-5 md:block md:space-y-1">
+                {group.label && (
+                  <p className="hidden px-3 pb-1 uppercase text-slate-400 text-xs font-semibold tracking-wide leading-5 md:block">
+                    {group.label}
+                  </p>
+                )}
+                {group.links.map((item) => {
+                  const active =
+                    item.href === '/auth/dashboard'
+                      ? pathname === item.href
+                      : pathname === item.href || pathname.startsWith(`${item.href}/`)
+                  const Icon = item.icon
 
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  aria-current={active ? 'page' : undefined}
-                  className={`min-h-10 shrink-0 rounded-lg px-3 py-2 text-xs font-semibold transition-colors md:w-full md:text-left ${
-                    active
-                      ? 'bg-emerald-50 text-emerald-800 ring-1 ring-inset ring-emerald-200'
-                      : 'text-slate-600 hover:bg-slate-100 hover:text-slate-950'
-                  } tracking-normal`}
-                >
-                  {t.navbar.dashboardPages[item.key]}
-                </Link>
-              )
-            })}
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      aria-current={active ? 'page' : undefined}
+                      className={`flex min-h-10 shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors md:w-full ${
+                        active
+                          ? 'bg-emerald-50 text-emerald-800 ring-1 ring-inset ring-emerald-200'
+                          : 'text-slate-600 hover:bg-slate-100 hover:text-slate-950'
+                      } tracking-normal`}
+                    >
+                      <Icon className="h-4 w-4 shrink-0" aria-hidden="true" />
+                      {t.navbar.dashboardPages[item.key]}
+                    </Link>
+                  )
+                })}
+              </section>
+            ))}
           </div>
         </nav>
         <div className="min-w-0 flex-1">{children}</div>
