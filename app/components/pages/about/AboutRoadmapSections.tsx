@@ -17,7 +17,7 @@ export function AboutRoadmapSections({ t }: { t: Translations }) {
             <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
               <div className="flex items-center justify-between gap-4">
                 <h3 className="text-slate-950 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{content.immediatePrioritiesHeading}</h3>
-                <span className="rounded-full bg-[#fff1dc] px-3 py-1 text-xs uppercase text-[#a95600] text-xs font-semibold tracking-wide leading-5">{content.currentStatusLabel}</span>
+                <span className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 rounded-full bg-[#fff1dc] px-3 py-1 text-xs uppercase text-[#a95600] text-xs font-semibold tracking-wide leading-5">{content.currentStatusLabel}</span>
               </div>
               <ol className="mt-6 space-y-3">
                 {content.currentGoals.map((goal, index) => (

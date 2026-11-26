@@ -179,7 +179,7 @@ function ReferralProgramSection({
                     {landing.guidedRate}<span className="ml-1 text-sm font-bold text-slate-500 tracking-normal">{landing.perKilowatt}</span>
                   </p>
                 </>
-                <span className="rounded-full bg-amber-300 px-3 py-1 text-xs uppercase text-slate-900 text-xs font-semibold tracking-wide leading-5">
+                <span className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 rounded-full bg-amber-300 px-3 py-1 text-xs uppercase text-slate-900 text-xs font-semibold tracking-wide leading-5">
                   {landing.topRateBadge}
                 </span>
               </div>

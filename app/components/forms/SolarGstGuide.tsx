@@ -16,7 +16,7 @@ export function SolarGstGuide({
     >
       <div className="flex items-start justify-between gap-4">
         <>
-          <p className="uppercase text-emerald-700 text-xs font-semibold tracking-wide leading-5">
+          <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 uppercase text-emerald-700 text-xs font-semibold tracking-wide leading-5">
             {guide.eyebrow}
           </p>
           <h2

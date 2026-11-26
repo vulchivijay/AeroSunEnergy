@@ -283,7 +283,7 @@ export default async function ServicesPage() {
               <article key={system.type} className={`rounded-xl border p-6 shadow-sm ${system.accent}`}>
                 <div className="flex items-center justify-between gap-3">
                   <span className="font-mono opacity-70 text-xs font-semibold tracking-wide leading-5 tabular-nums">SYSTEM 0{index + 1}</span>
-                  <span className="rounded-full bg-white/80 px-3 py-1 uppercase text-slate-700 text-xs font-semibold tracking-wide leading-5">{system.badge}</span>
+                  <span className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 rounded-full bg-white/80 px-3 py-1 uppercase text-slate-700 text-xs font-semibold tracking-wide leading-5">{system.badge}</span>
                 </div>
                 <h3 className="mt-5 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{system.type}</h3>
                 <p className="mt-3 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{system.description}</p>

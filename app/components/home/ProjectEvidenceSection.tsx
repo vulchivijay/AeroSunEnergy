@@ -35,7 +35,7 @@ export default function ProjectEvidenceSection({
     >
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <>
+          <div>
             <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">
               {content.eyebrow}
             </p>
@@ -45,7 +45,7 @@ export default function ProjectEvidenceSection({
             >
               {content.title}
             </h2>
-          </>
+          </div>
           <div className="flex items-end justify-between gap-4 lg:pb-1">
             <p className="max-w-3xl text-black text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {content.description}

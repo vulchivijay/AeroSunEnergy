@@ -80,7 +80,7 @@ function RecognitionHighlight({ t }: { t: Translations }) {
         <div className="relative z-10 flex min-w-0 flex-col justify-center lg:-translate-y-12 lg:pl-1">
           <div className="flex max-w-[320px] items-center gap-3">
             <span className="h-px flex-1 bg-amber-300/90" aria-hidden="true" />
-            <p className="whitespace-nowrap rounded-full bg-[#dcecff] px-4 py-1 uppercase text-[#17345f] text-xs font-semibold tracking-wide leading-5">
+            <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 whitespace-nowrap rounded-full bg-[#dcecff] px-4 py-1 uppercase text-[#17345f] text-xs font-semibold tracking-wide leading-5">
               {t.home.recognitionHeader.badge}
             </p>
             <span className="h-px flex-1 bg-amber-300/90" aria-hidden="true" />
@@ -128,7 +128,7 @@ function RecognitionHighlight({ t }: { t: Translations }) {
                 </span>
                 <span className="h-px flex-1 bg-[#fffaf1]/80" aria-hidden="true" />
               </div>
-              <p className={`mt-3 w-fit max-w-full rounded-full px-3 py-1 uppercase text-[#101b54] ${index === 0 ? 'bg-[#cde4ff]' : ' bg-[#ffb52e] '} text-xs font-semibold tracking-wide leading-5`}>
+              <p className={`before:inline-block before:h-2 before:w-2 before:shrink-0 before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 mt-3 w-fit max-w-full rounded-full px-3 py-1 uppercase text-[#101b54] ${index === 0 ? 'bg-[#cde4ff]' : ' bg-[#ffb52e] '} text-xs font-semibold tracking-wide leading-5`}>
                 {item.subtitle}
               </p>
               <h3 className="mt-2 font-serif text-[#fffaf1] text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
