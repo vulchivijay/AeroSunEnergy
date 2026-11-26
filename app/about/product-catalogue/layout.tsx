@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Solar & Renewable Energy Product Catalogue | AeroSun Energy',
+  title: 'Explore solar, wind, and hybrid renewable energy products',
   description:
-    'Explore AeroSun Energy’s residential, commercial, agricultural, off-grid, battery, wind and hybrid renewable-energy solutions, consultation services and project process.',
+    'Browse solar panels, inverters, batteries, off-grid systems, small wind turbines, and hybrid renewable energy solutions for homes, farms, and businesses.',
   keywords: [
     'AeroSun Energy product catalogue',
     'residential rooftop solar',
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     canonical: '/about/product-catalogue',
   },
   openGraph: {
-    title: 'Solar & Renewable Energy Product Catalogue | AeroSun Energy',
+    title: 'Explore solar, wind, and hybrid renewable energy products | AeroSun Energy Private Limited',
     description:
-      'Discover AeroSun Energy’s renewable-energy solutions for homes, farms, businesses and institutions, including solar, battery, wind and hybrid systems.',
+      'Browse solar panels, inverters, batteries, off-grid systems, small wind turbines, and hybrid renewable energy solutions for homes, farms, and businesses.',
     url: 'https://aerosunenergy.in/about/product-catalogue',
     siteName: 'AeroSun Energy',
     type: 'website',

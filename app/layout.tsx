@@ -48,11 +48,11 @@ const BING_SITE_VERIFICATION =
 
 export const metadata: Metadata = {
   title: {
-    default: "Solar Energy Solutions in Tirupati | AeroSun Energy",
-    template: "%s | AeroSun Energy",
+    default: "Explore solar, wind, and hybrid renewable energy solutions | AeroSun Energy Private Limited",
+    template: "%s | AeroSun Energy Private Limited",
   },
   description:
-    "AeroSun Energy is based in Tirupati, Andhra Pradesh, offering solar, wind, and hybrid energy solutions for homes, farms, businesses, and industries.",
+    "Discover solar, wind, and hybrid renewable energy solutions for homes, farms, and businesses, including rooftop solar, battery storage, and small wind systems.",
   keywords: [
     "solar energy",
     "solar panels",
@@ -116,9 +116,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Solar Energy Solutions in Tirupati | AeroSun Energy",
+    title: "Explore solar, wind, and hybrid renewable energy solutions | AeroSun Energy Private Limited",
     description:
-      "Based in Tirupati, Andhra Pradesh, AeroSun Energy provides solar, wind, and hybrid energy solutions for homes, farms, businesses, and industries.",
+      "Discover solar, wind, and hybrid renewable energy solutions for homes, farms, and businesses, including rooftop solar, battery storage, and small wind systems.",
     url: "https://aerosunenergy.in",
     siteName: "AeroSun Energy",
     locale: "en_IN",
@@ -134,9 +134,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Solar Energy Solutions in Tirupati | AeroSun Energy",
+    title: "Explore solar, wind, and hybrid renewable energy solutions | AeroSun Energy Private Limited",
     description:
-      "Based in Tirupati, Andhra Pradesh, AeroSun Energy provides solar, wind, and hybrid renewable energy solutions.",
+      "Discover solar, wind, and hybrid renewable energy solutions, including rooftop solar, battery storage, and small wind systems.",
     images: ["https://aerosunenergy.in/images/og-image.webp"],
   },
   verification: {

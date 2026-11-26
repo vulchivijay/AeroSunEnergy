@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Referral Programme | Share Solar & Earn Referral Incentives | AeroSun Energy',
+  title: 'Refer a friend for solar and earn referral rewards',
   description:
-    'Refer a neighbour or friend to AeroSun Energy for solar. Submit their details with permission, receive a reference code, and learn about the referral incentive terms.',
+    'Refer a friend for solar with AeroSun Energy. Learn how to submit a referral, receive a reference code, and review the current incentive terms.',
   keywords: [
     'AeroSun Energy referral programme',
     'solar referral programme',
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     canonical: '/referral-programme',
   },
   openGraph: {
-    title: 'Referral Programme | AeroSun Energy',
+    title: 'Refer a friend for solar and earn referral rewards | AeroSun Energy Private Limited',
     description:
-      'Share solar with a neighbour or friend and submit a referral to AeroSun Energy.',
+      'Refer a friend for solar with AeroSun Energy. Learn how to submit a referral, receive a reference code, and review the current incentive terms.',
     url: 'https://aerosunenergy.in/referral-programme',
     siteName: 'AeroSun Energy',
     type: 'website',

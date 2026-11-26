@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Policies | AeroSun Energy',
+  title: 'Review our privacy, cookie, and website policies',
   description:
-    'Review the AeroSun Energy privacy policy covering personal data collection, cookies, website analytics, user rights, and data protection practices for renewable energy enquiries and services.',
+    'Read our privacy, cookie, and website policies to learn how AeroSun Energy handles personal information, analytics, enquiries, and customer data.',
   keywords: [
     'AeroSun Energy privacy policy',
     'renewable energy privacy policy',
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
     canonical: '/policies',
   },
   openGraph: {
-    title: 'Policies | AeroSun Energy',
+    title: 'Review our privacy, cookie, and website policies | AeroSun Energy Private Limited',
     description:
-      'Understand how AeroSun Energy handles personal information, cookies, and user data protection on this website.',
+      'Read our privacy, cookie, and website policies to learn how AeroSun Energy handles personal information, analytics, enquiries, and customer data.',
     url: 'https://aerosunenergy.in/policies',
     siteName: 'AeroSun Energy',
     type: 'website',

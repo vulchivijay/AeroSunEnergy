@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Wind Energy in Tirupati | Small Turbines',
+  title: 'Discover small wind turbines and distributed wind energy systems',
   description:
-    'Explore small wind turbines, distributed wind systems, and solar-wind hybrid solutions for farms, businesses, and rural projects across India.',
+    'Discover small wind turbines, distributed wind systems, and solar-wind hybrid power for farms, businesses, and rural energy projects.',
   keywords: [
     'small wind turbines India',
     'wind turbine for farms',
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     canonical: '/wind-energy',
   },
   openGraph: {
-    title: 'Wind Energy in Tirupati | Small Turbines',
+    title: 'Discover small wind turbines and distributed wind energy systems | AeroSun Energy Private Limited',
     description:
-      'Explore small wind turbines, distributed wind systems, and solar-wind hybrid solutions for farms, businesses, and rural projects across India.',
+      'Discover small wind turbines, distributed wind systems, and solar-wind hybrid power for farms, businesses, and rural energy projects.',
     url: 'https://aerosunenergy.in/wind-energy',
     siteName: 'AeroSun Energy',
     type: 'website',

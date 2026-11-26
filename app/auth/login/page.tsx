@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthForm from '@/app/components/auth/AuthForm'
 
 export const metadata: Metadata = {
-  title: 'Sign in',
+  title: 'Sign in to view your dashboard and project resources',
   description: 'Sign in to your AeroSun Energy account to view your dashboard and project resources.',
   keywords: [
     'AeroSun Energy login',

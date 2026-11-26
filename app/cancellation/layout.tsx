@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Cancellation & Refund Policy',
+  title: 'Review our solar project cancellation and refund policy',
   description:
-    'Understand cancellation eligibility, non-refundable charges, refund conditions, timelines, and the process for AeroSun Energy rooftop solar projects.',
+    'Review solar project cancellation eligibility, refund terms, timelines, non-refundable charges, and how to submit a cancellation request to AeroSun Energy.',
   keywords: [
     'AeroSun Energy cancellation policy',
     'AeroSun Energy refund policy',
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     canonical: '/cancellation',
   },
   openGraph: {
-    title: 'Cancellation & Refund Policy',
+    title: 'Review our solar project cancellation and refund policy | AeroSun Energy Private Limited',
     description:
-      'Understand cancellation eligibility, non-refundable charges, refund conditions, timelines, and the process for AeroSun Energy rooftop solar projects.',
+      'Review solar project cancellation eligibility, refund terms, timelines, non-refundable charges, and how to submit a cancellation request to AeroSun Energy.',
     url: 'https://aerosunenergy.in/cancellation',
     siteName: 'AeroSun Energy',
     type: 'website',

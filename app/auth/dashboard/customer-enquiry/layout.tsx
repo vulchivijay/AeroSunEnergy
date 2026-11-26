@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Customer Enquiry',
+  title: 'Manage customer enquiries',
   description: 'Secure customer enquiry workspace for authorized AeroSun Energy users.',
   keywords: [
     'customer enquiry AeroSun Energy',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     canonical: '/auth/dashboard/customer-enquiry',
   },
   openGraph: {
-    title: 'Customer Enquiry | AeroSun Energy Dashboard',
+    title: 'Manage customer enquiries | AeroSun Energy Private Limited',
     description: 'Secure customer enquiry workspace for authorized AeroSun Energy users.',
     url: 'https://aerosunenergy.in/auth/dashboard/customer-enquiry',
     siteName: 'AeroSun Energy',

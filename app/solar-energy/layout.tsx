@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Solar Energy in Tirupati | Rooftop Solar',
+  title: 'Explore rooftop, off-grid, and commercial solar energy systems',
   description:
-    'Explore rooftop, off-grid, commercial, and agricultural solar solutions for homes, farms, businesses, and industries in Tirupati and across India.',
+    'Explore rooftop, off-grid, commercial, and agricultural solar systems, including panels, inverters, and battery storage for homes, farms, and businesses.',
   keywords: [
     'industrial solar solutions India',
     'off-grid solar systems India',
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     canonical: '/solar-energy',
   },
   openGraph: {
-    title: 'Solar Energy in Tirupati | Rooftop Solar',
+    title: 'Explore rooftop, off-grid, and commercial solar energy systems | AeroSun Energy Private Limited',
     description:
-      'Explore rooftop, off-grid, commercial, and agricultural solar solutions for homes, farms, businesses, and industries in Tirupati and across India.',
+      'Explore rooftop, off-grid, commercial, and agricultural solar systems, including panels, inverters, and battery storage for homes, farms, and businesses.',
     url: 'https://aerosunenergy.in/solar-energy',
     siteName: 'AeroSun Energy',
     type: 'website',

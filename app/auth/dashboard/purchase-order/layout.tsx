@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Purchase Order',
+  title: 'Manage your renewable energy equipment purchase orders',
   description: 'Secure purchase order workspace for authorized AeroSun Energy users.',
   keywords: [
     'purchase order AeroSun Energy',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     canonical: '/auth/dashboard/purchase-order',
   },
   openGraph: {
-    title: 'Purchase Order | AeroSun Energy Dashboard',
+    title: 'Manage your renewable energy equipment purchase orders | AeroSun Energy Private Limited',
     description: 'Secure purchase order workspace for authorized AeroSun Energy users.',
     url: 'https://aerosunenergy.in/auth/dashboard/purchase-order',
     siteName: 'AeroSun Energy',

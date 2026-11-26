@@ -5,8 +5,8 @@ import DashboardHeader from './DashboardHeader'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Dashboard',
-    template: '%s | AeroSun Dashboard',
+    default: 'Manage your secure AeroSun Energy dashboard',
+    template: '%s | AeroSun Energy Private Limited',
   },
   description:
     'Secure AeroSun Energy workspace for account records, customer forms, and project documents.',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     canonical: '/auth/dashboard',
   },
   openGraph: {
-    title: 'Dashboard | AeroSun Energy',
+    title: 'Access your secure AeroSun Energy dashboard | AeroSun Energy Private Limited',
     description: 'Secure AeroSun Energy workspace for authorized account users.',
     url: 'https://aerosunenergy.in/auth/dashboard',
     siteName: 'AeroSun Energy',

@@ -5,7 +5,9 @@ export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
-  title: 'Data Dashboard',
+  title: 'Manage customer records and project documents in your secure dashboard',
+  description:
+    'Secure data dashboard for authorized users to manage AeroSun Energy customer records, forms, and project documents.',
   robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
 }
 

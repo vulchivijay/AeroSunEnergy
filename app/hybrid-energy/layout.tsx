@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Hybrid Solar & Wind Systems in Tirupati',
+  title: 'Discover hybrid solar, wind, and battery energy systems',
   description:
-    'Combine solar, wind, and energy storage for reliable power at homes, businesses, farms, and microgrids in Tirupati and across India.',
+    'Explore hybrid solar, wind, and battery systems for reliable power at homes, farms, businesses, and microgrids, with on-grid and off-grid options.',
   keywords: [
     'solar wind hybrid systems India',
     'solar battery hybrid systems',
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     canonical: '/hybrid-energy',
   },
   openGraph: {
-    title: 'Hybrid Solar & Wind Systems in Tirupati',
+    title: 'Discover hybrid solar, wind, and battery energy systems | AeroSun Energy Private Limited',
     description:
-      'Combine solar, wind, and energy storage for reliable power at homes, businesses, farms, and microgrids in Tirupati and across India.',
+      'Explore hybrid solar, wind, and battery systems for reliable power at homes, farms, businesses, and microgrids, with on-grid and off-grid options.',
     url: 'https://aerosunenergy.in/hybrid-energy',
     siteName: 'AeroSun Energy',
     type: 'website',

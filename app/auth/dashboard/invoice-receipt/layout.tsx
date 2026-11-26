@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Invoice & Receipt',
+  title: 'View your invoices and payment receipts',
   description: 'Secure invoice and receipt workspace for authorized AeroSun Energy users.',
   keywords: [
     'invoice receipt AeroSun Energy',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     canonical: '/auth/dashboard/invoice-receipt',
   },
   openGraph: {
-    title: 'Invoice & Receipt | AeroSun Energy Dashboard',
+    title: 'View your invoices and payment receipts | AeroSun Energy Private Limited',
     description: 'Secure invoice and receipt workspace for authorized AeroSun Energy users.',
     url: 'https://aerosunenergy.in/auth/dashboard/invoice-receipt',
     siteName: 'AeroSun Energy',

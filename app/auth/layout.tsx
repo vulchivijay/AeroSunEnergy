@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Account | AeroSun Energy',
+  title: 'Manage your AeroSun Energy account',
   description: 'Sign in, create an account, or access your AeroSun Energy dashboard.',
   keywords: [
     'AeroSun Energy account',

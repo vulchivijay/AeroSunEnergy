@@ -3,7 +3,7 @@ import AuthForm from '@/app/components/auth/AuthForm'
 import { TrustRibbon } from '@/app/components/ui/TrustRibbon'
 
 export const metadata: Metadata = {
-  title: 'Sign in | AeroSun Energy',
+  title: 'Sign in to access your customer dashboard and project information',
   description: 'Sign in to your AeroSun Energy account to access your customer dashboard and project information.',
   keywords: [
     'AeroSun Energy sign in',
