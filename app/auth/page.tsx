@@ -21,6 +21,8 @@ export const metadata: Metadata = {
     'renewable project account access',
     'AeroSun client login',
     'customer project resources',
+    'solar panels for homes',
+    'solar for homeowners',
   ],
   robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
 }

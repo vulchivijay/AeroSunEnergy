@@ -30,6 +30,10 @@ export const metadata: Metadata = {
     'hybrid renewable energy company',
     'AeroSun Energy India',
     'solar energy for businesses',
+    'solar power',
+    'solar electricity',
+    'solar panels for homes',
+    'solar installation',
   ],
   alternates: {
     canonical: '/about',

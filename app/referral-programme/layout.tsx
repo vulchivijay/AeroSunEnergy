@@ -20,6 +20,11 @@ export const metadata: Metadata = {
     'solar customer recommendation',
     'AeroSun referral code',
     'solar incentive programme',
+    'solar for home',
+    'solar panels for homes',
+    'residential solar',
+    'solar power for homes',
+    'get solar',
   ],
   alternates: {
     canonical: '/referral-programme',

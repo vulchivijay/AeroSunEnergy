@@ -29,6 +29,10 @@ export const metadata: Metadata = {
     'energy project execution agreement',
     'renewable energy service agreement',
     'solar and wind service agreement',
+    'solar system installation',
+    'solar panel system',
+    'residential solar systems',
+    'solar power system',
   ],
   alternates: {
     canonical: '/auth/dashboard/customer-agreement',

@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     'wind solar hybrid system India',
     'wind energy for agriculture',
     'wind power for farms',
+    'wind and solar',
   ],
   alternates: {
     canonical: '/wind-energy',

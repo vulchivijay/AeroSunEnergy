@@ -27,6 +27,11 @@ export const metadata: Metadata = {
     'solar EPC checklist',
     'hybrid power installation checklist',
     'AeroSun Energy project readiness',
+    'solar power installation',
+    'solar system installation',
+    'solar panel installation',
+    'solar panels for home use',
+    'solar pv system',
   ],
   alternates: {
     canonical: '/auth/dashboard/installation-checklist',

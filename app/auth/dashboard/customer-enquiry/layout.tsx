@@ -29,6 +29,11 @@ export const metadata: Metadata = {
     'hybrid system inquiry',
     'commercial renewable energy enquiry',
     'renewable power solution enquiry',
+    'solar panel quote',
+    'solar power quotes',
+    'get solar panels for home',
+    'solar for home',
+    'commercial solar',
   ],
   alternates: {
     canonical: '/auth/dashboard/customer-enquiry',

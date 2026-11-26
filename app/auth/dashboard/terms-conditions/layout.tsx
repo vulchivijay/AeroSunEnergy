@@ -28,6 +28,11 @@ export const metadata: Metadata = {
     'website terms of use',
     'solar energy legal conditions',
     'green energy company policy',
+    'solar installation',
+    'solar panel service',
+    'solar system installation',
+    'solar panels for homes',
+    'solar panels for business',
   ],
   alternates: {
     canonical: '/auth/dashboard/terms-conditions',

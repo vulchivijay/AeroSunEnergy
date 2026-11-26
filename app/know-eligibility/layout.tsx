@@ -28,6 +28,13 @@ export const metadata: Metadata = {
     'renewable energy consultation eligibility',
     'roof suitability for solar',
     'solar project feasibility check',
+    'government solar scheme',
+    'solar for homeowners',
+    'solar panels for homes',
+    'solar for home',
+    'residential solar',
+    'residential solar systems',
+    'rooftop solar panels',
   ],
   alternates: {
     canonical: '/know-eligibility',

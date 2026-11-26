@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     'AeroSun project dashboard account',
     'renewable energy account signup',
     'AeroSun customer portal',
+    'solar for homeowners',
+    'solar power for homes',
+    'solar panels for homes',
   ],
   robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
 }
