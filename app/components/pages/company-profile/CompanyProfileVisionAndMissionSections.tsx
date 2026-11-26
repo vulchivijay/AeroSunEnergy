@@ -62,29 +62,29 @@ export function CompanyProfileVisionAndMissionSections({ t }: { t: Translations 
   return (
     <>
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
-              <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-                <SectionHeading
-                  number="02"
-                  eyebrow={cp.section2Eyebrow}
-                  title={cp.section2Title}
-                />
-                <p className="max-w-4xl rounded-xl border border-slate-200 bg-slate-50 p-6 text-slate-700 sm:p-8 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                  {cp.section2Text}
-                </p>
-              </div>
-            </section>
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <SectionHeading
+            number="02"
+            eyebrow={cp.section2Eyebrow}
+            title={cp.section2Title}
+          />
+          <p className="max-w-4xl rounded-xl border border-slate-200 bg-slate-50 p-6 text-slate-700 sm:p-8 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            {cp.section2Text}
+          </p>
+        </div>
+      </section>
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
-              <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-                <SectionHeading
-                  number="03"
-                  eyebrow={cp.section3Eyebrow}
-                  title={cp.section3Title}
-                />
-                <div className="rounded-xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
-                  <BulletList items={missionPoints} />
-                </div>
-              </div>
-            </section>
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <SectionHeading
+            number="03"
+            eyebrow={cp.section3Eyebrow}
+            title={cp.section3Title}
+          />
+          <div className="rounded-xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+            <BulletList items={missionPoints} />
+          </div>
+        </div>
+      </section>
     </>
   )
 }

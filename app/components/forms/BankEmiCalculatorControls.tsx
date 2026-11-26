@@ -101,48 +101,48 @@ export function BankEmiCalculatorControls({
   const clamp = clampValue
 
   return (
-          <main id="bank-emi-calculator-controls" className="relative min-w-0 bg-[#fffaf2] px-5 pb-5 pt-10 text-[#10234f] sm:px-7 sm:pb-7 sm:pt-12 lg:col-start-2 lg:row-start-1 lg:px-8 lg:pb-8 lg:pt-14">
-            <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-amber-200/30 blur-3xl" aria-hidden="true" />
-            <div className="relative z-10">
-          <div className="mb-5 border-b border-orange-200 pb-4">
-            <p className="uppercase text-[#10234f] text-xs font-bold tracking-widest leading-5">
-              {labels.loanDetails}
-            </p>
-              <p className="mt-1 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{labels.loanDetailsSub}</p>
-          </div>
+    <main id="bank-emi-calculator-controls" className="relative min-w-0 bg-[#fffaf2] px-5 pb-5 pt-10 text-[#10234f] sm:px-7 sm:pb-7 sm:pt-12 lg:col-start-2 lg:row-start-1 lg:px-8 lg:pb-8 lg:pt-14">
+      <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-amber-200/30 blur-3xl" aria-hidden="true" />
+      <div className="relative z-10">
+        <div className="mb-5 border-b border-orange-200 pb-4">
+          <p className="uppercase text-[#10234f] text-xs font-bold tracking-widest leading-5">
+            {labels.loanDetails}
+          </p>
+          <p className="mt-1 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{labels.loanDetailsSub}</p>
+        </div>
 
+        <>
           <>
-            <>
-              <p className="text-sm font-bold text-[#10234f]">{labels.loanCategory}</p>
-              <div className="mt-2 grid grid-cols-1 overflow-hidden rounded-full border border-blue-900/20 bg-white/70 sm:grid-cols-2" role="group" aria-label={labels.loanCategory}>
-                <button
-                  type="button"
-                  aria-pressed={loanBand === 'upToTwoLakhs'}
-                  onClick={() => updateLoanBand('upToTwoLakhs')}
-                  className={`min-h-11 rounded-full px-3 py-2.5 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 ${
+            <p className="text-sm font-bold text-[#10234f]">{labels.loanCategory}</p>
+            <div className="mt-2 grid grid-cols-1 overflow-hidden rounded-full border border-blue-900/20 bg-white/70 sm:grid-cols-2" role="group" aria-label={labels.loanCategory}>
+              <button
+                type="button"
+                aria-pressed={loanBand === 'upToTwoLakhs'}
+                onClick={() => updateLoanBand('upToTwoLakhs')}
+                className={`min-h-11 rounded-full px-3 py-2.5 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 ${
                     loanBand === 'upToTwoLakhs'
                       ? 'bg-blue-700 text-white shadow-md'
                       : 'text-[#10234f] hover:bg-orange-100'
                   } tracking-normal`}
-                >
-                  {labels.loanUpToTwoLakhs}
-                </button>
-                <button
-                  type="button"
-                  aria-pressed={loanBand === 'aboveTwoLakhs'}
-                  onClick={() => updateLoanBand('aboveTwoLakhs')}
-                  className={`min-h-11 rounded-full px-3 py-2.5 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 ${
+              >
+                {labels.loanUpToTwoLakhs}
+              </button>
+              <button
+                type="button"
+                aria-pressed={loanBand === 'aboveTwoLakhs'}
+                onClick={() => updateLoanBand('aboveTwoLakhs')}
+                className={`min-h-11 rounded-full px-3 py-2.5 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 ${
                     loanBand === 'aboveTwoLakhs'
                       ? 'bg-blue-700 text-white shadow-md'
                       : 'text-[#10234f] hover:bg-orange-100'
                   } tracking-normal`}
-                >
-                  {labels.loanAboveTwoLakhs}
-                </button>
-              </div>
-            </>
+              >
+                {labels.loanAboveTwoLakhs}
+              </button>
+            </div>
+          </>
 
-            <div className="mt-5 grid gap-5">
+          <div className="mt-5 grid gap-5">
             <BankEmiLoanAmountControl
               labels={labels}
               digitalFontStyle={digitalFontStyle}
@@ -161,37 +161,37 @@ export function BankEmiCalculatorControls({
                 <CalendarDays size={22} strokeWidth={1.8} aria-hidden="true" />
               </span>
               <div className="min-w-0">
-              <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
-                <label htmlFor="bank-emi-tenure" className="text-sm font-bold text-[#10234f]">{labels.loanTenure}</label>
-                <output htmlFor="bank-emi-tenure" style={digitalFontStyle} className="ml-auto whitespace-nowrap rounded-full bg-orange-200/80 px-3 py-1.5 text-right text-sm font-bold text-[#10234f] sm:px-4">
-                  {formatTenure(tenureMonths)}
-                </output>
-              </div>
-              <input
-                id="bank-emi-tenure"
-                type="range"
-                min={minTenureMonths}
-                max={maxTenureMonths}
-                step={1}
-                list="bank-emi-tenure-points"
-                value={tenureMonths}
-                onChange={(event) =>
+                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+                  <label htmlFor="bank-emi-tenure" className="text-sm font-bold text-[#10234f]">{labels.loanTenure}</label>
+                  <output htmlFor="bank-emi-tenure" style={digitalFontStyle} className="ml-auto whitespace-nowrap rounded-full bg-orange-200/80 px-3 py-1.5 text-right text-sm font-bold text-[#10234f] sm:px-4">
+                    {formatTenure(tenureMonths)}
+                  </output>
+                </div>
+                <input
+                  id="bank-emi-tenure"
+                  type="range"
+                  min={minTenureMonths}
+                  max={maxTenureMonths}
+                  step={1}
+                  list="bank-emi-tenure-points"
+                  value={tenureMonths}
+                  onChange={(event) =>
                   setTenureMonths(
                     clamp(Number(event.target.value), minTenureMonths, maxTenureMonths),
                   )
                 }
-                className={rangeInputClassName}
-                aria-label={labels.loanTenureAriaLabel}
-              />
-              <datalist id="bank-emi-tenure-points">
-                {getRangePoints(minTenureMonths, maxTenureMonths, 1).map((point) => (
-                  <option key={point} value={point} />
+                  className={rangeInputClassName}
+                  aria-label={labels.loanTenureAriaLabel}
+                />
+                <datalist id="bank-emi-tenure-points">
+                  {getRangePoints(minTenureMonths, maxTenureMonths, 1).map((point) => (
+                    <option key={point} value={point} />
                 ))}
-              </datalist>
-              <div className="mt-2 flex justify-between text-xs text-slate-500">
-                <span>{formatTenure(minTenureMonths)}</span>
-                <span>{formatTenure(maxTenureMonths)}</span>
-              </div>
+                </datalist>
+                <div className="mt-2 flex justify-between text-xs text-slate-500">
+                  <span>{formatTenure(minTenureMonths)}</span>
+                  <span>{formatTenure(maxTenureMonths)}</span>
+                </div>
               </div>
             </div>
 
@@ -200,40 +200,40 @@ export function BankEmiCalculatorControls({
                 <Percent size={22} strokeWidth={1.8} aria-hidden="true" />
               </span>
               <div className="min-w-0">
-              {loanBand === 'upToTwoLakhs' ? (
-                <>
-                  <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
-                    <label htmlFor="bank-emi-repo-rate" className="text-sm font-bold text-[#10234f]">
-                      {labels.repoRate}
-                    </label>
-                    <output htmlFor="bank-emi-repo-rate" className="ml-auto whitespace-nowrap rounded-full bg-orange-200/80 px-3 py-1.5 text-right text-sm font-bold tabular-nums text-[#10234f] sm:px-4">
-                      <DigitalNumber value={repoRate.toFixed(2)} />% <span className="text-base font-medium text-slate-700 tracking-normal">{labels.perAnnum}</span>
-                    </output>
-                  </div>
-                  <input
-                    id="bank-emi-repo-rate"
-                    type="range"
-                    min={minRepoRate}
-                    max={maxRepoRate}
-                    step={0.01}
-                    list="bank-emi-repo-rate-points"
-                    value={repoRate}
-                    onChange={(event) =>
+                {loanBand === 'upToTwoLakhs' ? (
+                  <>
+                    <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+                      <label htmlFor="bank-emi-repo-rate" className="text-sm font-bold text-[#10234f]">
+                        {labels.repoRate}
+                      </label>
+                      <output htmlFor="bank-emi-repo-rate" className="ml-auto whitespace-nowrap rounded-full bg-orange-200/80 px-3 py-1.5 text-right text-sm font-bold tabular-nums text-[#10234f] sm:px-4">
+                        <DigitalNumber value={repoRate.toFixed(2)} />% <span className="text-base font-medium text-slate-700 tracking-normal">{labels.perAnnum}</span>
+                      </output>
+                    </div>
+                    <input
+                      id="bank-emi-repo-rate"
+                      type="range"
+                      min={minRepoRate}
+                      max={maxRepoRate}
+                      step={0.01}
+                      list="bank-emi-repo-rate-points"
+                      value={repoRate}
+                      onChange={(event) =>
                       setRepoRate(clamp(Number(event.target.value), minRepoRate, maxRepoRate))
                     }
-                    className={rangeInputClassName}
-                    aria-label={labels.repoRateAriaLabel}
-                  />
-                  <datalist id="bank-emi-repo-rate-points">
-                    {getRangePoints(minRepoRate, maxRepoRate, 0.01).map((point) => (
-                      <option key={point} value={point} />
+                      className={rangeInputClassName}
+                      aria-label={labels.repoRateAriaLabel}
+                    />
+                    <datalist id="bank-emi-repo-rate-points">
+                      {getRangePoints(minRepoRate, maxRepoRate, 0.01).map((point) => (
+                        <option key={point} value={point} />
                     ))}
-                  </datalist>
-                  <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{labels.repoRateNote}</p>
-                  <p className="mt-2 text-emerald-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                    {labels.calculatedInterestRate}: {(repoRate + 0.5).toFixed(2)}% {labels.perAnnum}
-                  </p>
-                </>
+                    </datalist>
+                    <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{labels.repoRateNote}</p>
+                    <p className="mt-2 text-emerald-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                      {labels.calculatedInterestRate}: {(repoRate + 0.5).toFixed(2)}% {labels.perAnnum}
+                    </p>
+                  </>
               ) : (
                 <>
                   <p className="text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{labels.customerType}</p>
@@ -291,9 +291,9 @@ export function BankEmiCalculatorControls({
             </div>
           </div>
 
-          </>
-          <BankEmiLoanGuidance labels={labels} loanBand={loanBand} />
-            </div>
-          </main>
+        </>
+        <BankEmiLoanGuidance labels={labels} loanBand={loanBand} />
+      </div>
+    </main>
   )
 }

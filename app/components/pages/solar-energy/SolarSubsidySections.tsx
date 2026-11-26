@@ -39,12 +39,12 @@ async function CapacityTable() {
           </tr>
         </thead>
         <tbody>
-        {t.solarPage.capacityTable.rows.map((row) => (
-          <tr key={row.usage} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
-            <th scope="row" className="font-semibold text-slate-900 tracking-normal tabular-nums"><DigitalNumber value={row.usage} /></th>
-            <td className="font-bold text-emerald-700 tracking-normal tabular-nums"><DigitalNumber value={row.capacity} /></td>
-            <td className="text-slate-700 tabular-nums"><DigitalNumber value={row.tag} /></td>
-          </tr>
+          {t.solarPage.capacityTable.rows.map((row) => (
+            <tr key={row.usage} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
+              <th scope="row" className="font-semibold text-slate-900 tracking-normal tabular-nums"><DigitalNumber value={row.usage} /></th>
+              <td className="font-bold text-emerald-700 tracking-normal tabular-nums"><DigitalNumber value={row.capacity} /></td>
+              <td className="text-slate-700 tabular-nums"><DigitalNumber value={row.tag} /></td>
+            </tr>
         ))}
         </tbody>
       </table>
@@ -57,41 +57,41 @@ export function SolarSubsidySections({ t }: { t: Translations }) {
   return (
     <>
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
-              <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-                <div className="mb-8 max-w-3xl">
-                  <SectionEyebrow>{solarPage.subsidy.eyebrow}</SectionEyebrow>
-                  <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{solarPage.subsidy.title}</h2>
-                  <p className="mt-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{solarPage.subsidy.description}</p>
-                  <p className="mt-4 rounded-xl border border-slate-200 bg-[#eaf2e9] px-4 py-3 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{t.subsidyNotice}</p>
-                </div>
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="mb-8 max-w-3xl">
+            <SectionEyebrow>{solarPage.subsidy.eyebrow}</SectionEyebrow>
+            <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{solarPage.subsidy.title}</h2>
+            <p className="mt-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{solarPage.subsidy.description}</p>
+            <p className="mt-4 rounded-xl border border-slate-200 bg-[#eaf2e9] px-4 py-3 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{t.subsidyNotice}</p>
+          </div>
 
-                <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-                  {solarPage.subsidy.cards.map((card) => (
-                    <SubsidyCard key={card.label} label={card.label} value={card.value} note={card.note} />
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {solarPage.subsidy.cards.map((card) => (
+              <SubsidyCard key={card.label} label={card.label} value={card.value} note={card.note} />
                   ))}
-                </div>
+          </div>
 
-                <div className="mt-8">
-                  <CapacityTable />
-                </div>
-              </div>
-            </section>
+          <div className="mt-8">
+            <CapacityTable />
+          </div>
+        </div>
+      </section>
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white border-y border-slate-200 bg-slate-50">
-              <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-                <div className="rounded-xl border border-slate-200 bg-white p-6 sm:p-8">
-                  <SectionEyebrow>{solarPage.subsidy.strategicEyebrow}</SectionEyebrow>
-                  <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{solarPage.subsidy.strategicTitle}</h2>
-                  <div className="mt-6 grid gap-6 lg:grid-cols-2">
-                    <div className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700">
-                      {solarPage.subsidy.strategyOverview}
-                    </div>
-                    <div className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700">
-                      {solarPage.subsidy.strategyAdditionalOptions}
-                    </div>
-                  </div>
-                </div>
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="rounded-xl border border-slate-200 bg-white p-6 sm:p-8">
+            <SectionEyebrow>{solarPage.subsidy.strategicEyebrow}</SectionEyebrow>
+            <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{solarPage.subsidy.strategicTitle}</h2>
+            <div className="mt-6 grid gap-6 lg:grid-cols-2">
+              <div className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700">
+                {solarPage.subsidy.strategyOverview}
               </div>
-            </section>
+              <div className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700">
+                {solarPage.subsidy.strategyAdditionalOptions}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

@@ -53,19 +53,19 @@ function HomeHeroSlider({ t }: { t: Translations }) {
                 slide={slide}
                 actions={
                   <>
-                  <Link
-                    href="/contact"
-                    prefetch={false}
-                    className="rounded-full bg-[#137c63] px-4 py-2 uppercase text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#0f5f4b] text-xs font-semibold tracking-wide leading-5"
-                  >
-                    {t.hero.buttons.quote}
-                  </Link>
-                  <Link
-                    href="/solar-calculator"
-                    className="rounded-full border border-slate-200 bg-white/70 px-4 py-2 uppercase text-[#102b28] transition hover:-translate-y-0.5 hover:border-[#137c63]/40 hover:bg-white text-xs font-semibold tracking-wide leading-5"
-                  >
-                    {t.hero.buttons.estimateSavings}
-                  </Link>
+                    <Link
+                      href="/contact"
+                      prefetch={false}
+                      className="rounded-full bg-[#137c63] px-4 py-2 uppercase text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#0f5f4b] text-xs font-semibold tracking-wide leading-5"
+                    >
+                      {t.hero.buttons.quote}
+                    </Link>
+                    <Link
+                      href="/solar-calculator"
+                      className="rounded-full border border-slate-200 bg-white/70 px-4 py-2 uppercase text-[#102b28] transition hover:-translate-y-0.5 hover:border-[#137c63]/40 hover:bg-white text-xs font-semibold tracking-wide leading-5"
+                    >
+                      {t.hero.buttons.estimateSavings}
+                    </Link>
                   </>
                 }
                 variant="premium"

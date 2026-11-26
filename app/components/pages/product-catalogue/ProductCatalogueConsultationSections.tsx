@@ -48,55 +48,55 @@ export function ProductCatalogueConsultationSections({ t }: { t: Translations })
   return (
     <>
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
-              <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-                <SectionHeading
-                  number="08"
-                  eyebrow={c.consultation.eyebrow}
-                  title={c.consultation.title}
-                  description={c.consultation.description}
-                />
-                <DetailCard title={c.consultation.servicesLabel}>
-                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-                    {c.consultation.services.map((service, index) => (
-                      <p key={service} className="flex gap-3 rounded-xl bg-[#f7fbf8] p-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                        <span className="font-mono text-sm font-bold text-teal-700 tracking-normal tabular-nums">{String(index + 1).padStart(2, '0')}</span>
-                        {service}
-                      </p>
-                    ))}
-                  </div>
-                </DetailCard>
-                <h3 className="mb-5 mt-8 text-[#112c2a] text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{c.consultation.processLabel}</h3>
-                <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                  {c.consultation.process.map(({ title, detail }, index) => (
-                    <li key={title} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                      <span className="font-mono text-sm font-bold text-teal-700 tracking-normal tabular-nums">{String(index + 1).padStart(2, '0')}</span>
-                      <h4 className="mt-3 text-[#112c2a] text-lg font-semibold tracking-normal leading-snug">{title}</h4>
-                      <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{detail}</p>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-            </section>
-      <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
-              <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-                <SectionHeading
-                  number="09"
-                  eyebrow={c.whyChoose.eyebrow}
-                  title={c.whyChoose.title}
-                />
-                <p className="text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                  {c.whyChoose.description}
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <SectionHeading
+            number="08"
+            eyebrow={c.consultation.eyebrow}
+            title={c.consultation.title}
+            description={c.consultation.description}
+          />
+          <DetailCard title={c.consultation.servicesLabel}>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+              {c.consultation.services.map((service, index) => (
+                <p key={service} className="flex gap-3 rounded-xl bg-[#f7fbf8] p-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                  <span className="font-mono text-sm font-bold text-teal-700 tracking-normal tabular-nums">{String(index + 1).padStart(2, '0')}</span>
+                  {service}
                 </p>
-                <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                  {c.whyChoose.reasons.map((reason) => (
-                    <p key={reason} className="flex gap-3 rounded-xl bg-white p-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                      <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-teal-600" aria-hidden="true" />
-                      {reason}
-                    </p>
+                    ))}
+            </div>
+          </DetailCard>
+          <h3 className="mb-5 mt-8 text-[#112c2a] text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{c.consultation.processLabel}</h3>
+          <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {c.consultation.process.map(({ title, detail }, index) => (
+              <li key={title} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                <span className="font-mono text-sm font-bold text-teal-700 tracking-normal tabular-nums">{String(index + 1).padStart(2, '0')}</span>
+                <h4 className="mt-3 text-[#112c2a] text-lg font-semibold tracking-normal leading-snug">{title}</h4>
+                <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{detail}</p>
+              </li>
                   ))}
-                </div>
-              </div>
-            </section>
+          </ol>
+        </div>
+      </section>
+      <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <SectionHeading
+            number="09"
+            eyebrow={c.whyChoose.eyebrow}
+            title={c.whyChoose.title}
+          />
+          <p className="text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            {c.whyChoose.description}
+          </p>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            {c.whyChoose.reasons.map((reason) => (
+              <p key={reason} className="flex gap-3 rounded-xl bg-white p-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-teal-600" aria-hidden="true" />
+                {reason}
+              </p>
+                  ))}
+          </div>
+        </div>
+      </section>
     </>
   )
 }

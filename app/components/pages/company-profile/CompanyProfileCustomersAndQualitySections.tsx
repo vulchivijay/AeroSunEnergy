@@ -66,55 +66,55 @@ export function CompanyProfileCustomersAndQualitySections({ t }: { t: Translatio
   return (
     <>
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
-              <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-                <SectionHeading
-                  number="08"
-                  eyebrow={cp.whoWeServeEyebrow}
-                  title={cp.whoWeServeTitle}
-                  description={cp.whoWeServeDescription}
-                />
-                <BulletList items={customerSegments} />
-              </div>
-              <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-                <SectionHeading
-                  number="09"
-                  eyebrow={cp.manufacturingEyebrow}
-                  title={cp.manufacturingTitle}
-                  description={cp.manufacturingDescription}
-                />
-                <BulletList items={manufacturingModel} />
-                <p className="mt-5 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                  {cp.manufacturingNote}
-                </p>
-              </div>
-            </section>
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <SectionHeading
+            number="08"
+            eyebrow={cp.whoWeServeEyebrow}
+            title={cp.whoWeServeTitle}
+            description={cp.whoWeServeDescription}
+          />
+          <BulletList items={customerSegments} />
+        </div>
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <SectionHeading
+            number="09"
+            eyebrow={cp.manufacturingEyebrow}
+            title={cp.manufacturingTitle}
+            description={cp.manufacturingDescription}
+          />
+          <BulletList items={manufacturingModel} />
+          <p className="mt-5 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            {cp.manufacturingNote}
+          </p>
+        </div>
+      </section>
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
-              <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-                <SectionHeading
-                  number="10"
-                  eyebrow={cp.qualityEyebrow}
-                  title={cp.qualityTitle}
-                  description={cp.qualityDescription}
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <SectionHeading
+            number="10"
+            eyebrow={cp.qualityEyebrow}
+            title={cp.qualityTitle}
+            description={cp.qualityDescription}
+          />
+          <div className="grid gap-x-10 gap-y-4 sm:grid-cols-2 lg:grid-cols-4">
+            {qualityPractices.map((practice) => (
+              <div
+                key={practice}
+                className="flex gap-3 text-sm leading-7 text-slate-700"
+              >
+                <span
+                  className="mt-2 h-2 w-2 shrink-0 rounded-full bg-amber-300"
+                  aria-hidden="true"
                 />
-                <div className="grid gap-x-10 gap-y-4 sm:grid-cols-2 lg:grid-cols-4">
-                  {qualityPractices.map((practice) => (
-                    <div
-                      key={practice}
-                      className="flex gap-3 text-sm leading-7 text-slate-700"
-                    >
-                      <span
-                        className="mt-2 h-2 w-2 shrink-0 rounded-full bg-amber-300"
-                        aria-hidden="true"
-                      />
-                      {practice}
-                    </div>
-                  ))}
-                </div>
-                <p className="mt-5 border-t border-slate-200 pt-5 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                  {cp.qualityNote}
-                </p>
+                {practice}
               </div>
-            </section>
+                  ))}
+          </div>
+          <p className="mt-5 border-t border-slate-200 pt-5 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            {cp.qualityNote}
+          </p>
+        </div>
+      </section>
     </>
   )
 }

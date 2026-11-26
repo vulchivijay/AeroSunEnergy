@@ -45,58 +45,58 @@ export function CompanyProfileInnovationSections({ t }: { t: Translations }) {
   return (
     <>
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
-              <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-                <SectionHeading
-                  number="06"
-                  eyebrow={cp.innovationEyebrow}
-                  title={cp.innovationTitle}
-                  description={cp.innovationDescription}
-                />
-                <p className="rounded-xl border-l-4 border-amber-500 bg-white px-5 py-4 text-slate-600 shadow-sm text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                  {cp.innovationNote}
-                </p>
-                <ol className="mt-8 grid gap-3 sm:grid-cols-2">
-                  {innovationFocus.map((item, index) => (
-                    <li
-                      key={item}
-                      className="flex gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
-                    >
-                      <span className="font-mono text-sm font-bold text-teal-700 tracking-normal tabular-nums">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <span className="text-sm leading-7 text-slate-700">
-                        {item}
-                      </span>
-                    </li>
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <SectionHeading
+            number="06"
+            eyebrow={cp.innovationEyebrow}
+            title={cp.innovationTitle}
+            description={cp.innovationDescription}
+          />
+          <p className="rounded-xl border-l-4 border-amber-500 bg-white px-5 py-4 text-slate-600 shadow-sm text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            {cp.innovationNote}
+          </p>
+          <ol className="mt-8 grid gap-3 sm:grid-cols-2">
+            {innovationFocus.map((item, index) => (
+              <li
+                key={item}
+                className="flex gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+              >
+                <span className="font-mono text-sm font-bold text-teal-700 tracking-normal tabular-nums">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="text-sm leading-7 text-slate-700">
+                  {item}
+                </span>
+              </li>
                   ))}
-                </ol>
-              </div>
-            </section>
+          </ol>
+        </div>
+      </section>
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
-              <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-                <SectionHeading
-                  number="07"
-                  eyebrow={cp.technologyDevelopmentEyebrow}
-                  title={cp.technologyDevelopmentTitle}
-                  description={cp.technologyDevelopmentDescription}
-                />
-                <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                  {developmentSteps.map((step, index) => (
-                    <li
-                      key={step}
-                      className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
-                    >
-                      <span className="font-mono text-sm font-bold text-teal-700 tracking-normal tabular-nums">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <p className="mt-3 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                        {step}
-                      </p>
-                    </li>
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <SectionHeading
+            number="07"
+            eyebrow={cp.technologyDevelopmentEyebrow}
+            title={cp.technologyDevelopmentTitle}
+            description={cp.technologyDevelopmentDescription}
+          />
+          <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {developmentSteps.map((step, index) => (
+              <li
+                key={step}
+                className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+              >
+                <span className="font-mono text-sm font-bold text-teal-700 tracking-normal tabular-nums">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p className="mt-3 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                  {step}
+                </p>
+              </li>
                   ))}
-                </ol>
-              </div>
-            </section>
+          </ol>
+        </div>
+      </section>
     </>
   )
 }

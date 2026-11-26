@@ -61,65 +61,65 @@ export function ProductCatalogueCommercialSections({ t }: { t: Translations }) {
   return (
     <>
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
-              <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-                <SectionHeading
-                  number="02"
-                  eyebrow={c.commercial.eyebrow}
-                  title={c.commercial.title}
-                  description={c.commercial.description}
-                />
-                <div className="grid gap-5 lg:grid-cols-2">
-                  <DetailCard title={c.commercial.suitableForLabel}><BulletList items={c.commercial.suitableFor} /></DetailCard>
-                  <DetailCard title={c.commercial.solutionsLabel}><BulletList items={c.commercial.solutions} /></DetailCard>
-                  <DetailCard title={c.commercial.benefitsLabel}><BulletList items={c.commercial.benefits} /></DetailCard>
-                  <DetailCard title={c.commercial.approachLabel}>
-                    <ol className="space-y-3">
-                      {c.commercial.process.map((step, index) => (
-                        <li key={step} className="flex gap-3 text-sm leading-7 text-slate-700">
-                          <span className="font-mono text-sm font-bold text-teal-700 tracking-normal tabular-nums">{String(index + 1).padStart(2, '0')}</span>
-                          {step}
-                        </li>
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <SectionHeading
+            number="02"
+            eyebrow={c.commercial.eyebrow}
+            title={c.commercial.title}
+            description={c.commercial.description}
+          />
+          <div className="grid gap-5 lg:grid-cols-2">
+            <DetailCard title={c.commercial.suitableForLabel}><BulletList items={c.commercial.suitableFor} /></DetailCard>
+            <DetailCard title={c.commercial.solutionsLabel}><BulletList items={c.commercial.solutions} /></DetailCard>
+            <DetailCard title={c.commercial.benefitsLabel}><BulletList items={c.commercial.benefits} /></DetailCard>
+            <DetailCard title={c.commercial.approachLabel}>
+              <ol className="space-y-3">
+                {c.commercial.process.map((step, index) => (
+                  <li key={step} className="flex gap-3 text-sm leading-7 text-slate-700">
+                    <span className="font-mono text-sm font-bold text-teal-700 tracking-normal tabular-nums">{String(index + 1).padStart(2, '0')}</span>
+                    {step}
+                  </li>
                       ))}
-                    </ol>
-                  </DetailCard>
-                </div>
-                <p className="mt-5 border-l-2 border-amber-500 pl-4 italic text-teal-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                  {c.commercial.tagline}
-                </p>
-              </div>
-            </section>
+              </ol>
+            </DetailCard>
+          </div>
+          <p className="mt-5 border-l-2 border-amber-500 pl-4 italic text-teal-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            {c.commercial.tagline}
+          </p>
+        </div>
+      </section>
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
-              <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-                <SectionHeading
-                  number="03"
-                  eyebrow={c.agricultural.eyebrow}
-                  title={c.agricultural.title}
-                  description={c.agricultural.description}
-                />
-                <div className="grid gap-5 lg:grid-cols-2">
-                  <DetailCard title={c.agricultural.applicationsLabel}><BulletList items={c.agricultural.applications} /></DetailCard>
-                  <DetailCard title={c.agricultural.configurationsLabel}>
-                    <div className="space-y-4 text-sm leading-7 text-slate-700">
-                      {c.agricultural.configurations.map(({ label, description }) => (
-                        <p key={label}><strong className="text-slate-950">{label}</strong> {description}</p>
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <SectionHeading
+            number="03"
+            eyebrow={c.agricultural.eyebrow}
+            title={c.agricultural.title}
+            description={c.agricultural.description}
+          />
+          <div className="grid gap-5 lg:grid-cols-2">
+            <DetailCard title={c.agricultural.applicationsLabel}><BulletList items={c.agricultural.applications} /></DetailCard>
+            <DetailCard title={c.agricultural.configurationsLabel}>
+              <div className="space-y-4 text-sm leading-7 text-slate-700">
+                {c.agricultural.configurations.map(({ label, description }) => (
+                  <p key={label}><strong className="text-slate-950">{label}</strong> {description}</p>
                       ))}
-                    </div>
-                  </DetailCard>
-                  <DetailCard title={c.agricultural.benefitsLabel}><BulletList items={c.agricultural.benefits} /></DetailCard>
-                  <DetailCard title={c.agricultural.considerationsLabel}>
-                    <p className="text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                      {c.agricultural.considerations}
-                    </p>
-                    <p className="mt-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                      {c.agricultural.subsidyNote}
-                    </p>
-                  </DetailCard>
-                </div>
-                <p className="mt-5 border-l-2 border-amber-500 pl-4 italic text-teal-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                  {c.agricultural.tagline}
-                </p>
               </div>
-            </section>
+            </DetailCard>
+            <DetailCard title={c.agricultural.benefitsLabel}><BulletList items={c.agricultural.benefits} /></DetailCard>
+            <DetailCard title={c.agricultural.considerationsLabel}>
+              <p className="text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                {c.agricultural.considerations}
+              </p>
+              <p className="mt-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                {c.agricultural.subsidyNote}
+              </p>
+            </DetailCard>
+          </div>
+          <p className="mt-5 border-l-2 border-amber-500 pl-4 italic text-teal-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            {c.agricultural.tagline}
+          </p>
+        </div>
+      </section>
     </>
   )
 }

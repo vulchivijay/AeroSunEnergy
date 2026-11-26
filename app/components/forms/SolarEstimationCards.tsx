@@ -44,7 +44,8 @@ export function SolarPriceItem({
         </div>
         <span className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl ${
           featured ? 'bg-amber-900/10 text-amber-900' : 'bg-white/10 text-sky-200'
-        }`}>
+        }`}
+        >
           <Icon className="h-5 w-5" aria-hidden="true" />
         </span>
       </div>

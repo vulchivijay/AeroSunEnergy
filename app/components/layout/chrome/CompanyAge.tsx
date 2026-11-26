@@ -99,24 +99,24 @@ export function CompanyAge() {
 	const formattedStartDate = formatter.format(START_DATE)
 
 	return (
-		<p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-white/75 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-			<span>
-				{companyAge.operatingSince}{' '}
-				<span className="text-sm" style={digitalFontStyle}>{formattedStartDate}</span>
-			</span>
-			{units && (
-				<span className="inline-flex items-baseline gap-1.5 text-xs font-semibold tracking-wide leading-5" style={digitalFontStyle}>
-					{units.map(({ value, label }) => (
-						<span key={`${label}-${value}`} className="whitespace-nowrap">
-							<span className="text-amber-200 text-xs font-semibold tracking-wide leading-5">
-								{String(value).padStart(2, '0')}
-							</span>{' '}
-							{label}
-						</span>
+  <p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-white/75 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+    <span>
+      {companyAge.operatingSince}{' '}
+      <span className="text-sm" style={digitalFontStyle}>{formattedStartDate}</span>
+    </span>
+    {units && (
+    <span className="inline-flex items-baseline gap-1.5 text-xs font-semibold tracking-wide leading-5" style={digitalFontStyle}>
+      {units.map(({ value, label }) => (
+        <span key={`${label}-${value}`} className="whitespace-nowrap">
+          <span className="text-amber-200 text-xs font-semibold tracking-wide leading-5">
+            {String(value).padStart(2, '0')}
+          </span>{' '}
+          {label}
+        </span>
 					))}
-				</span>
+    </span>
 			)}
-		</p>
+  </p>
 	)
 }
 

@@ -61,67 +61,67 @@ export function ProductCatalogueOffGridSections({ t }: { t: Translations }) {
   return (
     <>
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
-              <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-                <SectionHeading
-                  number="04"
-                  eyebrow={c.offGrid.eyebrow}
-                  title={c.offGrid.title}
-                  description={c.offGrid.description}
-                />
-                <div className="grid gap-5 lg:grid-cols-3">
-                  <DetailCard title={c.offGrid.suitableForLabel}><BulletList items={c.offGrid.suitableFor} /></DetailCard>
-                  <DetailCard title={c.offGrid.componentsLabel}><BulletList items={c.offGrid.components} /></DetailCard>
-                  <DetailCard title={c.offGrid.designLabel}>
-                    <p className="mb-3 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{c.offGrid.sizingIntro}</p>
-                    <BulletList items={c.offGrid.designFactors} />
-                  </DetailCard>
-                </div>
-                <div className="mt-5">
-                  <DetailCard title={c.offGrid.benefitsLabel}>
-                    <BulletList items={c.offGrid.benefits} />
-                  </DetailCard>
-                </div>
-                <p className="mt-5 border-l-2 border-amber-500 pl-4 italic text-teal-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                  {c.offGrid.tagline}
-                </p>
-              </div>
-            </section>
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <SectionHeading
+            number="04"
+            eyebrow={c.offGrid.eyebrow}
+            title={c.offGrid.title}
+            description={c.offGrid.description}
+          />
+          <div className="grid gap-5 lg:grid-cols-3">
+            <DetailCard title={c.offGrid.suitableForLabel}><BulletList items={c.offGrid.suitableFor} /></DetailCard>
+            <DetailCard title={c.offGrid.componentsLabel}><BulletList items={c.offGrid.components} /></DetailCard>
+            <DetailCard title={c.offGrid.designLabel}>
+              <p className="mb-3 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{c.offGrid.sizingIntro}</p>
+              <BulletList items={c.offGrid.designFactors} />
+            </DetailCard>
+          </div>
+          <div className="mt-5">
+            <DetailCard title={c.offGrid.benefitsLabel}>
+              <BulletList items={c.offGrid.benefits} />
+            </DetailCard>
+          </div>
+          <p className="mt-5 border-l-2 border-amber-500 pl-4 italic text-teal-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            {c.offGrid.tagline}
+          </p>
+        </div>
+      </section>
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white">
-              <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-                <SectionHeading
-                  number="05"
-                  eyebrow={c.battery.eyebrow}
-                  title={c.battery.title}
-                  description={c.battery.description}
-                />
-                <div className="grid gap-5 lg:grid-cols-3">
-                  <DetailCard title={c.battery.applicationsLabel}><BulletList items={c.battery.applications} /></DetailCard>
-                  <DetailCard title={c.battery.optionsLabel}>
-                    <p className="text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                      {c.battery.options}
-                    </p>
-                  </DetailCard>
-                  <DetailCard title={c.battery.benefitsLabel}>
-                    <BulletList items={c.battery.benefits} />
-                  </DetailCard>
-                </div>
-                <div className="mt-5">
-                  <DetailCard title={c.battery.selectionLabel}>
-                    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                      {c.battery.selection.map((item, index) => (
-                        <p key={item} className="flex gap-3 rounded-xl bg-[#f7fbf8] p-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                          <span className="font-mono text-sm font-bold text-teal-700 tracking-normal tabular-nums">{String(index + 1).padStart(2, '0')}</span>
-                          {item}
-                        </p>
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <SectionHeading
+            number="05"
+            eyebrow={c.battery.eyebrow}
+            title={c.battery.title}
+            description={c.battery.description}
+          />
+          <div className="grid gap-5 lg:grid-cols-3">
+            <DetailCard title={c.battery.applicationsLabel}><BulletList items={c.battery.applications} /></DetailCard>
+            <DetailCard title={c.battery.optionsLabel}>
+              <p className="text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                {c.battery.options}
+              </p>
+            </DetailCard>
+            <DetailCard title={c.battery.benefitsLabel}>
+              <BulletList items={c.battery.benefits} />
+            </DetailCard>
+          </div>
+          <div className="mt-5">
+            <DetailCard title={c.battery.selectionLabel}>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                {c.battery.selection.map((item, index) => (
+                  <p key={item} className="flex gap-3 rounded-xl bg-[#f7fbf8] p-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                    <span className="font-mono text-sm font-bold text-teal-700 tracking-normal tabular-nums">{String(index + 1).padStart(2, '0')}</span>
+                    {item}
+                  </p>
                       ))}
-                    </div>
-                  </DetailCard>
-                </div>
-                <p className="mt-5 border-l-2 border-amber-500 pl-4 italic text-teal-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
-                  {c.battery.tagline}
-                </p>
               </div>
-            </section>
+            </DetailCard>
+          </div>
+          <p className="mt-5 border-l-2 border-amber-500 pl-4 italic text-teal-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            {c.battery.tagline}
+          </p>
+        </div>
+      </section>
     </>
   )
 }

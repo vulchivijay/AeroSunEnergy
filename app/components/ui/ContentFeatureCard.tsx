@@ -61,9 +61,13 @@ export function ContentFeatureCard({
   const hasImage = Boolean(imageSrc)
 
   return (
-    <article className={hasImage
-      ? 'group relative flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg'
-      : cardClassName}>
+    <article
+      className={
+        hasImage
+          ? 'group relative flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg'
+          : cardClassName
+      }
+    >
       {imageSrc && (
         <div className="relative aspect-[2.25/1] overflow-hidden bg-slate-100">
           <Image

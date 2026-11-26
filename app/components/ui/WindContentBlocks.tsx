@@ -210,12 +210,12 @@ export function WindCapacityTable({ rows }: { rows: { label: string; value: stri
           </tr>
         </thead>
         <tbody>
-        {rows.map((row) => (
-          <tr key={row.label} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
-            <th scope="row" className="font-semibold text-slate-900 tracking-normal tabular-nums"><DigitalNumber value={row.label} /></th>
-            <td className="font-bold text-sky-700 tracking-normal tabular-nums"><DigitalNumber value={row.value} /></td>
-            <td className="text-slate-700 tabular-nums"><DigitalNumber value={row.use} /></td>
-          </tr>
+          {rows.map((row) => (
+            <tr key={row.label} className="odd:bg-white even:bg-emerald-50/70 transition-colors hover:bg-emerald-100/70">
+              <th scope="row" className="font-semibold text-slate-900 tracking-normal tabular-nums"><DigitalNumber value={row.label} /></th>
+              <td className="font-bold text-sky-700 tracking-normal tabular-nums"><DigitalNumber value={row.value} /></td>
+              <td className="text-slate-700 tabular-nums"><DigitalNumber value={row.use} /></td>
+            </tr>
         ))}
         </tbody>
       </table>

@@ -133,9 +133,9 @@ export default async function Contact() {
           <div className="mt-5 overflow-hidden rounded-xl border border-slate-200 bg-[linear-gradient(120deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] text-white">
             <div className="grid lg:grid-cols-[0.75fr_1.25fr]">
               <div className="flex flex-col justify-center border-b border-slate-700 p-6 sm:p-9 lg:border-b-0 lg:border-r">
-                  <p className="uppercase text-amber-200 text-xs font-semibold tracking-wide leading-5">{contactUs}</p>
-                  <h2 className="mt-4 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{contactCardTitle}</h2>
-                  <p className="mt-4 text-sky-100/85 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{connectionPrompt}</p>
+                <p className="uppercase text-amber-200 text-xs font-semibold tracking-wide leading-5">{contactUs}</p>
+                <h2 className="mt-4 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{contactCardTitle}</h2>
+                <p className="mt-4 text-sky-100/85 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{connectionPrompt}</p>
               </div>
               <div className="grid grid-cols-2">
                 {channels.map((channel, index) => (
