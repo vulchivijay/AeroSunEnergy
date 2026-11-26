@@ -22,7 +22,7 @@ export default function TermsPage() {
               <h1 className="mt-6 text-white text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
                 {content.titleStart} <span className="text-amber-200">{content.titleJoiner}</span> {content.titleEnd}
               </h1>
-              <p className="mt-5 max-w-2xl text-violet-100      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+              <p className="mt-5 max-w-2xl text-violet-100 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 {content.description}
               </p>
             </div>
@@ -44,8 +44,8 @@ export default function TermsPage() {
         <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
           <nav aria-label={content.navLabel} className="overflow-hidden rounded-xl border border-slate-200 bg-white">
             <div className="border-b border-slate-200 px-5 py-4">
-              <p className=" uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">{content.contentsLabel}</p>
-              <p className="mt-1 text-slate-900      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.contents}</p>
+              <p className="uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">{content.contentsLabel}</p>
+              <p className="mt-1 text-slate-900 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.contents}</p>
             </div>
             <ol className="max-h-[55vh] space-y-1 overflow-y-auto p-3 lg:max-h-[calc(100vh-15rem)]">
               {content.sections.map((section, index) => (
@@ -62,8 +62,8 @@ export default function TermsPage() {
             </ol>
           </nav>
           <div className="rounded-xl border border-slate-200 bg-[#eaf2e9] p-5">
-            <p className=" uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">{content.reminderTitle}</p>
-            <p className="mt-3 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            <p className="uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">{content.reminderTitle}</p>
+            <p className="mt-3 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {content.reminder}
             </p>
           </div>
@@ -71,8 +71,8 @@ export default function TermsPage() {
 
         <article className="min-w-0">
           <div className="mb-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-            <p className=" uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">{content.readLabel}</p>
-            <p className="mt-3 max-w-4xl text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            <p className="uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">{content.readLabel}</p>
+            <p className="mt-3 max-w-4xl text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {content.intro}
             </p>
           </div>
@@ -92,7 +92,7 @@ export default function TermsPage() {
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <div className="min-w-0">
-                    <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{section.content}</p>
+                    <p className="mt-3 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{section.content}</p>
                     <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
                       {section.bullets.map((item) => (
                         <li key={item} className="flex items-start gap-3 rounded-xl bg-slate-50 px-3 py-3 text-sm leading-7 text-slate-700">
@@ -111,14 +111,14 @@ export default function TermsPage() {
 
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             <section className={`rounded-xl p-6 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
-              <p className=" uppercase text-amber-800    text-xs font-semibold tracking-wide leading-5">{content.keyPointsTitle}</p>
+              <p className="uppercase text-amber-800 text-xs font-semibold tracking-wide leading-5">{content.keyPointsTitle}</p>
               <h2 className="mt-2 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.responsibleTitle}</h2>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
                 {content.keyPoints.map((item) => <li key={item}>{item}</li>)}
               </ul>
             </section>
             <section className={`rounded-xl border border-amber-200 p-6 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}>
-              <p className=" uppercase text-amber-800    text-xs font-semibold tracking-wide leading-5">{content.importantTitle}</p>
+              <p className="uppercase text-amber-800 text-xs font-semibold tracking-wide leading-5">{content.importantTitle}</p>
               <h2 className="mt-2 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.projectInfoTitle}</h2>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
                 {content.projectInfo.map((item) => <li key={item}>{item}</li>)}
@@ -126,7 +126,7 @@ export default function TermsPage() {
             </section>
           </div>
 
-          <p className="mt-7 rounded-xl border border-slate-200 bg-white p-5 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+          <p className="mt-7 rounded-xl border border-slate-200 bg-white p-5 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {content.questions}{' '}
             <Link href="/contact" className="font-bold text-emerald-800 underline decoration-emerald-400 underline-offset-4 hover:text-emerald-950 tracking-normal">
               {content.contactLink}

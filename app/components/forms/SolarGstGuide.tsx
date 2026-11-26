@@ -15,8 +15,8 @@ export function SolarGstGuide({
       aria-labelledby={titleId}
     >
       <div className="flex items-start justify-between gap-4">
-        <div>
-          <p className="uppercase text-emerald-700    text-xs font-semibold tracking-wide leading-5">
+        <>
+          <p className="uppercase text-emerald-700 text-xs font-semibold tracking-wide leading-5">
             {guide.eyebrow}
           </p>
           <h2
@@ -25,11 +25,11 @@ export function SolarGstGuide({
           >
             {guide.title}
           </h2>
-        </div>
+        </>
       </div>
 
       <div id={`${titleId.replace(/-title$/, '')}-content`}>
-        <p className="mt-3 max-w-4xl text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+        <p className="mt-3 max-w-4xl text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {guide.intro}
         </p>
 
@@ -42,18 +42,18 @@ export function SolarGstGuide({
           </article>
           <article className="rounded-xl border border-slate-200 bg-slate-50 p-5">
             <h3 className="text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{guide.billingTitle}</h3>
-            <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{guide.billing}</p>
+            <p className="mt-3 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{guide.billing}</p>
           </article>
           <article className="rounded-xl border border-slate-200 bg-slate-50 p-5">
             <h3 className="text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{guide.itcTitle}</h3>
-            <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{guide.itc}</p>
+            <p className="mt-3 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{guide.itc}</p>
           </article>
         </div>
 
-        <p className="mt-5 rounded-xl bg-emerald-50 p-4 text-emerald-950      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+        <p className="mt-5 rounded-xl bg-emerald-50 p-4 text-emerald-950 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {guide.quoteTip}
         </p>
-        <p className="mt-4 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{guide.disclaimer}</p>
+        <p className="mt-4 text-slate-500 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{guide.disclaimer}</p>
         <div className="mt-5 border-t border-slate-200 pt-4">
           <h3 className="text-slate-800 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{guide.sourcesTitle}</h3>
           <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-2 text-sm">

@@ -128,12 +128,12 @@ export default function Navbar() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 border-b border-slate-700 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] text-white shadow-md ring-1 ring-inset ring-white/10 backdrop-blur-2xl "
+      className="sticky top-0 z-50 border-b border-slate-700 bg-[linear-gradient(135deg,rgba(23,37,84,0.96),rgba(49,46,129,0.92),rgba(15,23,42,0.98))] text-white shadow-md ring-1 ring-inset ring-white/10 backdrop-blur-2xl"
     >
-      <div className="absolute -left-10 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-sky-300/20 blur-3xl " />
-      <div className="absolute -right-12 top-0 h-32 w-32 rounded-full bg-amber-200/20 blur-3xl " />
+      <div className="absolute -left-10 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-sky-300/20 blur-3xl" />
+      <div className="absolute -right-12 top-0 h-32 w-32 rounded-full bg-amber-200/20 blur-3xl" />
 
-      <div className="relative border-b border-slate-700 bg-white/5 text-white/90 backdrop-blur-xl ">
+      <div className="relative border-b border-slate-700 bg-white/5 text-white/90 backdrop-blur-xl">
         <div className="mx-auto flex min-h-8 w-full flex-col items-start gap-1 px-3 py-1 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:gap-3 lg:px-8 text-xs tracking-wide leading-5">
           <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
             <Building2 className="h-3.5 w-3.5 shrink-0 text-[#d6b45e]" strokeWidth={1.8} aria-hidden="true" />
@@ -151,7 +151,7 @@ export default function Navbar() {
             {t.navbar.patrioticLine}
           </span>
           <span className="flex items-center gap-2 whitespace-nowrap uppercase text-white/80 lg:ml-3 text-xs font-semibold tracking-wide leading-5 tabular-nums">
-            <Phone className="h-3 w-3 text-amber-500 " strokeWidth={1.8} aria-hidden="true" />
+            <Phone className="h-3 w-3 text-amber-500" strokeWidth={1.8} aria-hidden="true" />
             <DigitalNumber value={t.navbar.companyMobile} />
           </span>
         </div>
@@ -238,7 +238,7 @@ export default function Navbar() {
         className="absolute inset-x-0 top-full max-h-[calc(100dvh-6.5rem)] overflow-y-auto border-t border-slate-700 bg-[linear-gradient(135deg,rgba(23,37,84,1),rgba(49,46,129,1),rgba(15,23,42,1))] px-4 pb-6 pt-3 text-white shadow-md backdrop-blur-2xl sm:px-6 xl:hidden"
       >
         <nav aria-label={t.navbar.mobileNavigationLabel} className="mx-auto max-w-3xl space-y-1">
-          <p className="mb-3 flex items-center gap-2 px-2 uppercase text-sky-200    text-xs font-semibold tracking-wide leading-5">
+          <p className="mb-3 flex items-center gap-2 px-2 uppercase text-sky-200 text-xs font-semibold tracking-wide leading-5">
             <span className="h-px w-5 bg-white/35" />
             {t.navbar.exploreLabel}
           </p>

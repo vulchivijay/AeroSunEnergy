@@ -69,10 +69,10 @@ export default function WarrantyPolicyPage() {
                 <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-slate-700 bg-white/10 text-xl font-bold shadow-sm tracking-normal">
                   W
                 </div>
-                <div>
-                  <p className=" uppercase text-sky-100/80    text-xs font-semibold tracking-wide leading-5">{labels.badge}</p>
+                <>
+                  <p className="uppercase text-sky-100/80 text-xs font-semibold tracking-wide leading-5">{labels.badge}</p>
                   <h1 className="mt-1 text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">{labels.title}</h1>
-                </div>
+                </>
               </div>
 
               <div className="inline-flex items-center gap-2 self-start rounded-full border border-slate-700 bg-white/5 px-3 py-2 text-xs uppercase text-sky-100 text-xs font-semibold tracking-wide leading-5">
@@ -131,7 +131,7 @@ export default function WarrantyPolicyPage() {
                 accent="indigo"
               />
 
-              <div>
+              <>
                 <label htmlFor="productLine" className="mb-2 block text-xs uppercase text-slate-700 text-xs sm:text-sm font-semibold tracking-normal leading-5">
                   {labels.fields.productLine.label}
                 </label>
@@ -145,8 +145,8 @@ export default function WarrantyPolicyPage() {
                   <option value="">{labels.fields.productLine.placeholder}</option>
                   {labels.productOptions.map((option) => <option key={option} value={option}>{option}</option>)}
                 </select>
-                {errors.productLine && <p id="productLine-error" className="mt-2 text-rose-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.productLine.message}</p>}
-              </div>
+                {errors.productLine && <p id="productLine-error" className="mt-2 text-rose-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.productLine.message}</p>}
+              </>
 
               <Field
                 label={labels.fields.warrantyStart.label}
@@ -157,7 +157,7 @@ export default function WarrantyPolicyPage() {
                 accent="emerald"
               />
 
-              <div>
+              <>
                 <label htmlFor="servicePlan" className="mb-2 block text-xs uppercase text-slate-700 text-xs sm:text-sm font-semibold tracking-normal leading-5">
                   {labels.fields.servicePlan.label}
                 </label>
@@ -171,8 +171,8 @@ export default function WarrantyPolicyPage() {
                   <option value="">{labels.fields.servicePlan.placeholder}</option>
                   {labels.serviceOptions.map((option) => <option key={option} value={option}>{option}</option>)}
                 </select>
-                {errors.servicePlan && <p id="servicePlan-error" className="mt-2 text-rose-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.servicePlan.message}</p>}
-              </div>
+                {errors.servicePlan && <p id="servicePlan-error" className="mt-2 text-rose-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.servicePlan.message}</p>}
+              </>
             </div>
 
             <div className="rounded-xl border border-slate-200 bg-linear-to-br from-slate-50 via-white to-sky-50 p-4">
@@ -186,7 +186,7 @@ export default function WarrantyPolicyPage() {
                   {labels.fields.acceptTerms}
                 </span>
               </label>
-              {errors.acceptTerms && <p className="mt-2 text-rose-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.acceptTerms.message}</p>}
+              {errors.acceptTerms && <p className="mt-2 text-rose-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.acceptTerms.message}</p>}
             </div>
 
             <FormDataNotice />

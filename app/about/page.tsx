@@ -10,7 +10,7 @@ export default async function AboutPage() {
   const t = await getRequestTranslations()
 
   return (
-    <main className="overflow-hidden bg-white text-slate-900 ">
+    <main className="overflow-hidden bg-white text-slate-900">
       <AboutHeroSections t={t} />
 
       <AboutStoryAndGovernanceSections t={t} />

@@ -32,16 +32,16 @@ export function DashboardCollectionOverview({
   return (
     <>
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <h2 className=" capitalize text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{formatCollectionName(activeCollection || "Collections")}</h2>
-          <p className="mt-1 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+        <>
+          <h2 className="capitalize text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{formatCollectionName(activeCollection || "Collections")}</h2>
+          <p className="mt-1 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {role === "admin"
               ? "Admin access · manage collection records and account roles."
               : role === "operator"
                 ? "Operator access · manage business records and approved account roles."
                 : "Monitor access · read-only view of collection records."}
           </p>
-        </div>
+        </>
         <div className="flex flex-wrap items-end gap-3">
           {activeCollection === "website_form_submissions" && (
             <label className="grid gap-1.5 uppercase text-slate-500 text-xs sm:text-sm font-semibold tracking-normal leading-5">
@@ -67,27 +67,27 @@ export function DashboardCollectionOverview({
         </div>
       </div>
 
-      <div className="mt-6 grid gap-3 sm:grid-cols-3 ">
-        <article className="rounded-xl border border-slate-200 bg-white/45 p-4 ">
-          <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">Matching records</p>
+      <div className="mt-6 grid gap-3 sm:grid-cols-3">
+        <article className="rounded-xl border border-slate-200 bg-white/45 p-4">
+          <p className="uppercase text-slate-500 text-xs font-semibold tracking-wide leading-5">Matching records</p>
           <p className="mt-2 text-slate-950 text-lg font-semibold tracking-normal leading-snug tabular-nums">
             <DigitalNumber value={data ? data.total.toLocaleString() : "—"} />
           </p>
-          <p className="mt-1 truncate text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{formatCollectionName(activeCollection || "Collections")}</p>
+          <p className="mt-1 truncate text-slate-500 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{formatCollectionName(activeCollection || "Collections")}</p>
         </article>
-        <article className="rounded-xl border border-slate-200 bg-white/45 p-4 ">
-          <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">Visible on this page</p>
+        <article className="rounded-xl border border-slate-200 bg-white/45 p-4">
+          <p className="uppercase text-slate-500 text-xs font-semibold tracking-wide leading-5">Visible on this page</p>
           <p className="mt-2 text-slate-950 text-lg font-semibold tracking-normal leading-snug tabular-nums">
             <DigitalNumber value={data ? data.rows.length : "—"} />
           </p>
-          <p className="mt-1 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">Records currently loaded</p>
+          <p className="mt-1 text-slate-500 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">Records currently loaded</p>
         </article>
-        <article className="rounded-xl border border-slate-200 bg-white/45 p-4 ">
-          <p className="uppercase text-slate-500    text-xs font-semibold tracking-wide leading-5">Page</p>
+        <article className="rounded-xl border border-slate-200 bg-white/45 p-4">
+          <p className="uppercase text-slate-500 text-xs font-semibold tracking-wide leading-5">Page</p>
           <p className="mt-2 text-slate-950 text-lg font-semibold tracking-normal leading-snug tabular-nums">
             <DigitalNumber value={data ? `${data.page} / ${pageCount}` : "—"} />
           </p>
-          <p className="mt-1 text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">Pagination position</p>
+          <p className="mt-1 text-slate-500 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">Pagination position</p>
         </article>
       </div>
     </>

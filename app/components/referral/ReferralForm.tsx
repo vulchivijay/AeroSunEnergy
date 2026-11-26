@@ -75,13 +75,13 @@ export default function ReferralForm({
     <div className="min-w-0 rounded-xl bg-[#f8f7f1] p-5 text-slate-900 shadow-sm sm:p-7 lg:p-9">
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0">
-          <p className="uppercase text-[#087a61]    text-xs font-semibold tracking-wide leading-5">
+          <p className="uppercase text-[#087a61] text-xs font-semibold tracking-wide leading-5">
             {content.title}
           </p>
           <h3 className="mt-3 text-[#122b2a] text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
             {content.conversationTitle}
           </h3>
-          <p className="mt-2 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+          <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {content.description}
           </p>
         </div>
@@ -189,7 +189,7 @@ export default function ReferralForm({
           <span>{content.consent}</span>
         </label>
 
-        <p className="text-slate-500      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+        <p className="text-slate-500 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {content.privacyPrefix}
         </p>
 

@@ -17,7 +17,7 @@ export function CustomerEnquiryClosingSections({
     <>
       <section className="rounded-xl border border-sky-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
         <SectionTitle number="12" title={page.sections[11]} />
-        <p className="mb-4 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+        <p className="mb-4 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {page.paymentScheduleIntro}
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -26,7 +26,7 @@ export function CustomerEnquiryClosingSections({
               key={milestone}
               className="grid gap-3 rounded-xl border border-slate-200 bg-white p-4 sm:grid-cols-2"
             >
-              <p className="self-center text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+              <p className="self-center text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 {milestone}
               </p>
               <TextField
@@ -50,7 +50,7 @@ export function CustomerEnquiryClosingSections({
             </div>
           ))}
         </div>
-        <p className="mt-3 text-right text-emerald-900      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+        <p className="mt-3 text-right text-emerald-900 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {page.totalPaymentPercentage}
         </p>
         <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -64,7 +64,7 @@ export function CustomerEnquiryClosingSections({
           <TextField label={page.ifscCode} name="bank_ifsc" />
           <TextField label={page.branch} name="bank_branch" />
         </div>
-        <p className="mt-3 italic text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+        <p className="mt-3 italic text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {page.bankDetailsNote}
         </p>
       </section>
@@ -88,7 +88,7 @@ export function CustomerEnquiryClosingSections({
 
       <section className="rounded-xl border border-emerald-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
         <SectionTitle number="14" title={page.sections[13]} />
-        <p className="mb-4 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+        <p className="mb-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {page.acceptanceCopy}
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -101,7 +101,7 @@ export function CustomerEnquiryClosingSections({
 
       <section className="rounded-xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
         <SectionTitle number="15" title={page.sections[14]} />
-        <p className="mb-4 text-slate-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+        <p className="mb-4 text-slate-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {page.forCompany}
         </p>
         <div className="grid gap-3 sm:grid-cols-2">

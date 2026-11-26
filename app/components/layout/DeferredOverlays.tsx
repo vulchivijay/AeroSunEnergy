@@ -74,15 +74,15 @@ function CookieConsent() {
         aria-label={labels.title}
         className="w-full max-w-5xl rounded-xl border border-slate-200 bg-white/95 p-5 shadow-md backdrop-blur-xl"
       >
-        <div>
+        <>
           <div className="w-full">
-            <p className=" uppercase text-emerald-700    text-xs font-semibold tracking-wide leading-5">
+            <p className="uppercase text-emerald-700 text-xs font-semibold tracking-wide leading-5">
               {labels.title}
             </p>
             <h2 className="mt-2 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
               {labels.headline}
             </h2>
-            <p className="mt-3 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            <p className="mt-3 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {labels.description}
             </p>
           </div>
@@ -103,7 +103,7 @@ function CookieConsent() {
               {labels.accept}
             </button>
           </div>
-        </div>
+        </>
       </aside>
     </div>
   )
@@ -250,7 +250,7 @@ function Lord() {
           </div>
 
           <h2 id="lord-blessing-title" className="mb-2 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{blessing.title}</h2>
-          <p id="lord-blessing-description" className="max-w-md  text-gray-900      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+          <p id="lord-blessing-description" className="max-w-md text-gray-900 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {blessing.body}
           </p>
         </div>

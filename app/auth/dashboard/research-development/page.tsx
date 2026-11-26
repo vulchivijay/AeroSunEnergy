@@ -45,13 +45,13 @@ export default function ResearchDevelopmentPage() {
               <span className="h-1.5 w-1.5 rounded-full bg-lime-300" />
               {copy.text[0]}
             </div>
-            <p className="mt-8 uppercase text-emerald-800    text-xs font-semibold tracking-wide leading-5">
+            <p className="mt-8 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">
               {sourceTitle?.text ?? copy.text[1]}
             </p>
             <h1 className="mt-4 max-w-3xl text-slate-950 text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
               {sourceSubtitle?.text ?? copy.text[2]}
             </h1>
-            <p className="mt-7 max-w-2xl text-slate-700       text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            <p className="mt-7 max-w-2xl text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {copy.text[3]}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -75,13 +75,13 @@ export default function ResearchDevelopmentPage() {
           <aside className="relative mx-auto w-full max-w-md lg:ml-auto">
             <div className="absolute -inset-5 rounded-full bg-emerald-400/15 blur-3xl" />
             <div className="relative rounded-xl border border-slate-700 bg-[#14372f] p-6 shadow-sm backdrop-blur-sm sm:p-8">
-              <p className="inline-flex w-fit rounded-full border border-lime-200/20 bg-white/[0.06] px-3 py-1.5 uppercase text-lime-200    text-xs font-semibold tracking-wide leading-5">
+              <p className="inline-flex w-fit rounded-full border border-lime-200/20 bg-white/[0.06] px-3 py-1.5 uppercase text-lime-200 text-xs font-semibold tracking-wide leading-5">
                 {copy.text[6]}
               </p>
-              <p className="mt-4 text-white    text-lg font-semibold tracking-normal leading-snug">
+              <p className="mt-4 text-white text-lg font-semibold tracking-normal leading-snug">
                 {copy.text[7]}
               </p>
-              <p className="mt-4 text-emerald-50/80      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+              <p className="mt-4 text-emerald-50/80 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 {copy.text[8]}
               </p>
               <div className="mt-7 grid grid-cols-3 gap-2 border-t border-slate-700 pt-5">
@@ -93,7 +93,7 @@ export default function ResearchDevelopmentPage() {
                     <span className="font-mono text-xs text-lime-200/70 tabular-nums">
                       0{index + 1}
                     </span>
-                    <p className="mt-1 text-white      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item}</p>
+                    <p className="mt-1 text-white text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item}</p>
                   </div>
                 ))}
               </div>
@@ -172,10 +172,10 @@ export default function ResearchDevelopmentPage() {
 
       <section className={`text-slate-900 ${sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-          <p className="inline-flex w-fit rounded-full border border-emerald-800/20 bg-white/70 px-4 py-2 uppercase text-emerald-800    text-xs font-semibold tracking-wide leading-5">
+          <p className="inline-flex w-fit rounded-full border border-emerald-800/20 bg-white/70 px-4 py-2 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">
             {copy.text[1]}
           </p>
-          <p className="mt-3 max-w-3xl    text-lg font-semibold tracking-normal leading-snug">
+          <p className="mt-3 max-w-3xl text-lg font-semibold tracking-normal leading-snug">
             {copy.text[13]}
           </p>
         </div>

@@ -22,9 +22,9 @@ export default function GlobalError({
       <body className="bg-[#071b17] text-white">
         <main className="grid min-h-screen place-items-center px-5 py-12">
           <section className="w-full max-w-xl rounded-xl border border-slate-700 bg-[#092d25] p-8 shadow-md sm:p-12">
-            <p className="font-mono text-[#f5c76a]     tabular-nums text-xs font-semibold tracking-wide leading-5">500</p>
+            <p className="font-mono text-[#f5c76a] tabular-nums text-xs font-semibold tracking-wide leading-5">500</p>
             <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">Something went wrong</h1>
-            <p className="mt-4 text-white/70      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            <p className="mt-4 text-white/70 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               An unexpected error occurred. Try again, or return to the home page.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">

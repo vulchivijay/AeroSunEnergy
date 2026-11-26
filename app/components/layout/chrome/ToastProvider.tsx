@@ -100,7 +100,7 @@ export default function ToastProvider({ children }: { children: ReactNode }) {
             }`}
           >
             <ToastIcon kind={item.kind} />
-            <p className="min-w-0 flex-1 text-slate-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item.message}</p>
+            <p className="min-w-0 flex-1 text-slate-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item.message}</p>
             <button
               type="button"
               onClick={() => dismiss(item.id)}

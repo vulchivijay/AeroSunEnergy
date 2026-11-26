@@ -87,7 +87,7 @@ export default function CustomerAgreementPage() {
               {content.hero.titleStart}
               <span className="mt-1 block text-sky-300">{content.hero.titleEnd}</span>
             </h1>
-            <p className="mt-5 max-w-2xl text-slate-300      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            <p className="mt-5 max-w-2xl text-slate-300 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {content.hero.description}
             </p>
           </div>
@@ -121,24 +121,24 @@ export default function CustomerAgreementPage() {
                   <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-slate-700 bg-white/8 text-xl font-bold shadow-sm tracking-normal">
                     C
                   </div>
-                  <div>
-                    <p className=" uppercase text-indigo-100/85    text-xs font-semibold tracking-wide leading-5">{formCopy.agreement}</p>
+                  <>
+                    <p className="uppercase text-indigo-100/85 text-xs font-semibold tracking-wide leading-5">{formCopy.agreement}</p>
                     <h2 className="mt-1 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{formCopy.title}</h2>
-                  </div>
+                  </>
                 </div>
 
                 <div className="grid gap-2 text-base sm:grid-cols-3 lg:min-w-104">
                   <div className="rounded-xl border border-slate-700 bg-white/5 px-3 py-2">
-                    <p className=" uppercase text-indigo-100/75    text-xs font-semibold tracking-wide leading-5">{formCopy.referenceLabel}</p>
-                    <p className="mt-1      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{formCopy.reference}</p>
+                    <p className="uppercase text-indigo-100/75 text-xs font-semibold tracking-wide leading-5">{formCopy.referenceLabel}</p>
+                    <p className="mt-1 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{formCopy.reference}</p>
                   </div>
                   <div className="rounded-xl border border-slate-700 bg-white/5 px-3 py-2">
-                    <p className=" uppercase text-indigo-100/75    text-xs font-semibold tracking-wide leading-5">{formCopy.date}</p>
-                    <p className="mt-1      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{formCopy.datePlaceholder}</p>
+                    <p className="uppercase text-indigo-100/75 text-xs font-semibold tracking-wide leading-5">{formCopy.date}</p>
+                    <p className="mt-1 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{formCopy.datePlaceholder}</p>
                   </div>
                   <div className="rounded-xl border border-slate-700 bg-white/5 px-3 py-2">
-                    <p className=" uppercase text-indigo-100/75    text-xs font-semibold tracking-wide leading-5">{formCopy.status}</p>
-                    <p className="mt-1 text-emerald-300      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{formCopy.pendingSign}</p>
+                    <p className="uppercase text-indigo-100/75 text-xs font-semibold tracking-wide leading-5">{formCopy.status}</p>
+                    <p className="mt-1 text-emerald-300 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{formCopy.pendingSign}</p>
                   </div>
                 </div>
               </div>
@@ -258,11 +258,11 @@ export default function CustomerAgreementPage() {
               <aside className="rounded-xl border border-indigo-200 bg-linear-to-br from-[#0b1e46] via-[#132c5e] to-[#0a1d45] p-4 text-white shadow-sm sm:p-5">
                 <div className="mb-4 flex items-center gap-3 border-b border-slate-700 pb-3">
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-lg font-bold tracking-normal">7</span>
-                  <h2 className=" text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{formCopy.acceptance}</h2>
+                  <h2 className="text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{formCopy.acceptance}</h2>
                 </div>
 
                 <div className="space-y-4">
-                  <p className="text-slate-200      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                  <p className="text-slate-200 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                     {formCopy.acceptanceStatement}
                   </p>
 
@@ -278,7 +278,7 @@ export default function CustomerAgreementPage() {
                     <input type="checkbox" {...register('agreed')} aria-invalid={Boolean(errors.agreed)} aria-describedby={errors.agreed ? 'agreed-error' : undefined} className="mt-1 h-4 w-4 rounded-lg border-slate-300 text-indigo-500 focus:ring-indigo-400" />
                     <span>{formCopy.acceptCheckbox}</span>
                   </label>
-                  {errors.agreed && <p id="agreed-error" className="text-rose-300      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.agreed.message}</p>}
+                  {errors.agreed && <p id="agreed-error" className="text-rose-300 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.agreed.message}</p>}
 
                   <FormDataNotice className="text-slate-300" />
                   <button

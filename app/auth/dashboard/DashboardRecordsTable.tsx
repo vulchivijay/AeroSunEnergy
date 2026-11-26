@@ -152,7 +152,7 @@ export function DashboardRecordsTable({
         </table>
       </div>
 
-      <div className="mt-4 flex flex-col gap-3 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between ">
+      <div className="mt-4 flex flex-col gap-3 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
         <p>
           <DigitalNumber value={`${total.toLocaleString()} records · Page ${pageNumber} of ${pageCount}`} />
         </p>

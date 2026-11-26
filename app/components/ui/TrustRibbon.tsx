@@ -178,7 +178,7 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
               </span>
             </h1>
 
-            <p className="mt-3 max-w-[590px]  text-blue-50/95 md:mt-3    text-xs tracking-wide leading-5">
+            <p className="mt-3 max-w-[590px] text-blue-50/95 md:mt-3 text-xs tracking-wide leading-5">
               {content.description}
             </p>
           </div>

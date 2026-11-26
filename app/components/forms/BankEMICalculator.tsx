@@ -159,49 +159,49 @@ export function BankEMICalculator() {
       <div
         className="relative mx-auto grid max-w-7xl overflow-hidden rounded-[2rem] border border-orange-100 bg-[#fffaf2] shadow-xl shadow-slate-900/10 lg:grid-cols-[minmax(19rem,0.82fr)_minmax(0,1.18fr)]"
       >
-          <BankEmiSummary
-            labels={labels}
-            calculation={calculation}
-            formattedEmi={formattedEmi}
-            emiTextSize={emiTextSize}
-            formattedTenure={formatTenure(tenureMonths)}
-          />
+        <BankEmiSummary
+          labels={labels}
+          calculation={calculation}
+          formattedEmi={formattedEmi}
+          emiTextSize={emiTextSize}
+          formattedTenure={formatTenure(tenureMonths)}
+        />
 
-          <BankEmiCalculatorControls
-            labels={labels}
-            digitalFontStyle={digitalFontStyle}
-            loanBand={loanBand}
-            updateLoanBand={updateLoanBand}
-            loanAmount={loanAmount}
-            setLoanAmount={setLoanAmount}
-            minLoanAmount={minLoanAmount}
-            maxLoanAmount={maxLoanAmount}
-            tenureMonths={tenureMonths}
-            setTenureMonths={setTenureMonths}
-            minTenureMonths={MIN_TENURE_MONTHS}
-            maxTenureMonths={MAX_TENURE_MONTHS}
-            formatTenure={formatTenure}
-            repoRate={repoRate}
-            setRepoRate={setRepoRate}
-            minRepoRate={MIN_REPO_RATE}
-            maxRepoRate={MAX_REPO_RATE}
-            isHomeLoanCustomer={isHomeLoanCustomer}
-            updateHomeLoanCustomer={updateHomeLoanCustomer}
-            homeLoanRateInput={homeLoanRateInput}
-            setHomeLoanRateInput={setHomeLoanRateInput}
-            minHomeLoanRate={minHomeLoanRate}
-            maxHomeLoanRate={maxHomeLoanRate}
-            calculation={calculation}
-            clampValue={clamp}
-          />
+        <BankEmiCalculatorControls
+          labels={labels}
+          digitalFontStyle={digitalFontStyle}
+          loanBand={loanBand}
+          updateLoanBand={updateLoanBand}
+          loanAmount={loanAmount}
+          setLoanAmount={setLoanAmount}
+          minLoanAmount={minLoanAmount}
+          maxLoanAmount={maxLoanAmount}
+          tenureMonths={tenureMonths}
+          setTenureMonths={setTenureMonths}
+          minTenureMonths={MIN_TENURE_MONTHS}
+          maxTenureMonths={MAX_TENURE_MONTHS}
+          formatTenure={formatTenure}
+          repoRate={repoRate}
+          setRepoRate={setRepoRate}
+          minRepoRate={MIN_REPO_RATE}
+          maxRepoRate={MAX_REPO_RATE}
+          isHomeLoanCustomer={isHomeLoanCustomer}
+          updateHomeLoanCustomer={updateHomeLoanCustomer}
+          homeLoanRateInput={homeLoanRateInput}
+          setHomeLoanRateInput={setHomeLoanRateInput}
+          minHomeLoanRate={minHomeLoanRate}
+          maxHomeLoanRate={maxHomeLoanRate}
+          calculation={calculation}
+          clampValue={clamp}
+        />
 
-          <BankEmiRepaymentSnapshot
-            labels={labels}
-            loanAmount={loanAmount}
-            estimatedProjectCost={estimatedProjectCost}
-            borrowerContribution={borrowerContribution}
-            calculation={calculation}
-          />
+        <BankEmiRepaymentSnapshot
+          labels={labels}
+          loanAmount={loanAmount}
+          estimatedProjectCost={estimatedProjectCost}
+          borrowerContribution={borrowerContribution}
+          calculation={calculation}
+        />
       </div>
     </section>
   )

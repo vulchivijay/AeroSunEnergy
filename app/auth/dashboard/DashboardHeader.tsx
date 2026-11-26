@@ -76,8 +76,8 @@ export default function DashboardHeader({
                 ))}
               </select>
               <div className="hidden text-right sm:block">
-                <p className="max-w-52 truncate      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{user.name || user.email}</p>
-                <p className=" uppercase text-emerald-200    text-xs font-semibold tracking-wide leading-5">
+                <p className="max-w-52 truncate text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{user.name || user.email}</p>
+                <p className="uppercase text-emerald-200 text-xs font-semibold tracking-wide leading-5">
                   {user.role}
                 </p>
               </div>
@@ -91,7 +91,7 @@ export default function DashboardHeader({
           className="border-b border-slate-200 bg-white px-4 py-2 md:sticky md:top-[72px] md:h-[calc(100vh-72px)] md:w-64 md:shrink-0 md:overflow-y-auto md:border-b-0 md:border-r md:px-4 md:py-6"
           aria-label="Dashboard pages"
         >
-          <p className="mb-3 hidden px-3 uppercase text-slate-500 md:block    text-xs font-semibold tracking-wide leading-5">
+          <p className="mb-3 hidden px-3 uppercase text-slate-500 md:block text-xs font-semibold tracking-wide leading-5">
             Main menu
           </p>
           <div className="flex gap-1 overflow-x-auto md:flex-col">
@@ -152,7 +152,7 @@ function LogoutButton() {
   }
 
   return (
-    <div>
+    <>
       <button
         className="inline-flex min-h-11 items-center justify-center rounded-full bg-emerald-800 px-5 text-sm font-bold text-white transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-emerald-800 disabled:cursor-wait disabled:opacity-65 tracking-normal"
         disabled={pending}
@@ -161,6 +161,6 @@ function LogoutButton() {
       >
         {pending ? 'Signing out...' : 'Sign out'}
       </button>
-    </div>
+    </>
   )
 }

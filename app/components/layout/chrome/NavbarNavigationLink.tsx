@@ -67,7 +67,8 @@ export function NavbarNavigationLink({
               active
                 ? 'border-slate-200 bg-white/20 text-white shadow-sm'
                 : 'border-slate-700 bg-white/10 text-white/90 shadow-sm group-hover:border-amber-200/50 group-hover:bg-white/15 group-hover:text-amber-100'
-            }`}>
+            }`}
+            >
               {createElement(navigationIcon, {
                 className: 'h-4 w-4',
                 strokeWidth: 1.7,

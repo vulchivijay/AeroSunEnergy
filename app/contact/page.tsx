@@ -77,7 +77,7 @@ export default async function Contact() {
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]overflow-hidden text-slate-950">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-5 flex items-center justify-between border-b border-slate-200 pb-4">
-            <p className="uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">AeroSun Energy <span className="mx-2 text-amber-600">/</span> {contactUs}</p>
+            <p className="uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">AeroSun Energy <span className="mx-2 text-amber-600">/</span> {contactUs}</p>
             <span className="hidden uppercase text-slate-500 sm:block text-xs font-semibold tracking-wide leading-5">{location}</span>
           </div>
           <div className="grid min-h-[34rem] overflow-hidden rounded-xl border border-slate-200 bg-[linear-gradient(135deg,#dbeafe_0%,#e0f2fe_55%,#ecfdf5_100%)] lg:grid-cols-[1fr_0.92fr]">
@@ -87,14 +87,14 @@ export default async function Contact() {
               <div className="pointer-events-none absolute -bottom-36 -left-36 h-[28rem] w-[28rem] rounded-full border border-slate-200" aria-hidden="true" />
               <div className="pointer-events-none absolute -bottom-20 -left-20 h-80 w-80 rounded-full border border-slate-200" aria-hidden="true" />
               <div className="relative">
-                <p className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/60 px-4 py-2 uppercase text-slate-800    text-xs font-semibold tracking-wide leading-5">
+                <p className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/60 px-4 py-2 uppercase text-slate-800 text-xs font-semibold tracking-wide leading-5">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#137c63]" />
                   {navbar.startProject}
                 </p>
                 <h1 className="mt-8 max-w-2xl text-slate-950 text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
                   {c.heroTitle}
                 </h1>
-                <p className="mt-6 max-w-xl text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+                <p className="mt-6 max-w-xl text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {c.heroDescription}
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
@@ -133,9 +133,9 @@ export default async function Contact() {
           <div className="mt-5 overflow-hidden rounded-xl border border-slate-200 bg-[linear-gradient(120deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] text-white">
             <div className="grid lg:grid-cols-[0.75fr_1.25fr]">
               <div className="flex flex-col justify-center border-b border-slate-700 p-6 sm:p-9 lg:border-b-0 lg:border-r">
-                  <p className="uppercase text-amber-200    text-xs font-semibold tracking-wide leading-5">{contactUs}</p>
-                  <h2 className="mt-4 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{contactCardTitle}</h2>
-                  <p className="mt-4 text-sky-100/85      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{connectionPrompt}</p>
+                <p className="uppercase text-amber-200 text-xs font-semibold tracking-wide leading-5">{contactUs}</p>
+                <h2 className="mt-4 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{contactCardTitle}</h2>
+                <p className="mt-4 text-sky-100/85 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{connectionPrompt}</p>
               </div>
               <div className="grid grid-cols-2">
                 {channels.map((channel, index) => (
@@ -164,10 +164,10 @@ export default async function Contact() {
               {contactHighlights.map((item, index) => (
                 <article key={item.label} className="flex gap-4 border-t-2 border-[#137c63]/25 bg-white p-5">
                   <span className="font-mono text-sm font-bold text-[#137c63] tracking-normal tabular-nums">0{index + 1}</span>
-                  <div>
-                    <p className="uppercase text-slate-600    text-xs font-semibold tracking-wide leading-5">{item.label}</p>
-                    <p className="mt-2 text-slate-800      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item.value}</p>
-                  </div>
+                  <>
+                    <p className="uppercase text-slate-600 text-xs font-semibold tracking-wide leading-5">{item.label}</p>
+                    <p className="mt-2 text-slate-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{item.value}</p>
+                  </>
                 </article>
               ))}
             </div>
@@ -178,9 +178,9 @@ export default async function Contact() {
           <div className="overflow-hidden mx-auto max-w-7xl rounded-xl border border-slate-200">
             <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
               <div className="bg-[linear-gradient(145deg,#bfdbfe_0%,#ddd6fe_52%,#fbcfe8_100%)] p-6 text-slate-900 sm:p-9">
-                <p className="uppercase text-indigo-900    text-xs font-semibold tracking-wide leading-5">{contactUs}</p>
+                <p className="uppercase text-indigo-900 text-xs font-semibold tracking-wide leading-5">{contactUs}</p>
                 <h2 id="contact-form-title" className="mt-3 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{c.form.title}</h2>
-                <p className="mt-4 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{c.form.description}</p>
+                <p className="mt-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{c.form.description}</p>
               </div>
               <ContactForm content={c.form} />
             </div>
@@ -190,12 +190,12 @@ export default async function Contact() {
         <div className="overflow-hidden bg-[linear-gradient(135deg,#dbeafe_0%,#e0f2fe_55%,#ecfdf5_100%)] text-white px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mx-auto max-w-7xl rounded-xl border border-slate-200">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-              <div>
-                <p className="uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">{stepIntroLabel}</p>
+              <>
+                <p className="uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">{stepIntroLabel}</p>
                 <h2 className="mt-4 max-w-xl text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{stepIntroTitle}</h2>
-              </div>
+              </>
               <div className="flex flex-col justify-between gap-5 border-t border-slate-200 pt-5 sm:flex-row sm:items-end">
-                <p className="max-w-md text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{stepIntroCopy}</p>
+                <p className="max-w-md text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{stepIntroCopy}</p>
                 <Link href="/auth/dashboard/customer-enquiry" className="inline-flex w-fit items-center gap-3 text-sm font-bold text-[#087a61] transition hover:gap-4 tracking-normal">
                   {submitEnquiry} <span aria-hidden="true">&rarr;</span>
                 </Link>
@@ -206,7 +206,7 @@ export default async function Contact() {
                 <article key={step.title} className="bg-white p-6 sm:p-8">
                   <span className="font-mono text-sm font-bold text-[#137c63] tracking-normal tabular-nums">{step.number} <span className="text-slate-500">/ 03</span></span>
                   <h3 className="mt-8 text-slate-950 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{step.title}</h3>
-                  <p className="mt-3 text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{step.description}</p>
+                  <p className="mt-3 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{step.description}</p>
                 </article>
               ))}
             </div>
@@ -219,11 +219,11 @@ export default async function Contact() {
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white border-y border-slate-200 bg-slate-50 px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16" aria-labelledby="contact-referral-title">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <div className="max-w-3xl">
-            <p className="uppercase text-[#137c63]    text-xs font-semibold tracking-wide leading-5">{referralProgram.eyebrow}</p>
+            <p className="uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">{referralProgram.eyebrow}</p>
             <h2 id="contact-referral-title" className="mt-2 text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
               {referralProgram.title}
             </h2>
-            <p className="mt-2 text-slate-600      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{referralProgram.description}</p>
+            <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{referralProgram.description}</p>
           </div>
           <Link
             href="/referral-programme"
@@ -268,7 +268,7 @@ export default async function Contact() {
                     {faq.question}
                   </summary>
                   <div className="border-t border-slate-200 px-5 pb-5 pt-4 sm:px-6">
-                    <p className="text-slate-700      text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{faq.answer}</p>
+                    <p className="text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{faq.answer}</p>
                   </div>
                 </details>
               ))}

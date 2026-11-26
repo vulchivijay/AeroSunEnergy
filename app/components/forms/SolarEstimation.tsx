@@ -214,9 +214,9 @@ export function SolarEstimation() {
     e.propertyTypeOptions[selectedPropertyIndex] ?? calculatorText.homeOption
 
   return (
-    <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 lg:py-16 sm:py-14 ">
+    <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 lg:py-16 sm:py-14">
       <div className="mx-auto mb-8 max-w-7xl">
-        <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 uppercase text-indigo-900    text-xs font-semibold tracking-wide leading-5">
+        <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 uppercase text-indigo-900 text-xs font-semibold tracking-wide leading-5">
           <span className="h-1.5 w-1.5 rounded-full bg-amber-500" aria-hidden="true" />
           {e.solarCalculatorEyebrow}
         </p>
@@ -226,8 +226,8 @@ export function SolarEstimation() {
         </h1>
       </div>
 
-      <div className="mx-auto max-w-7xl overflow-hidden rounded-xl shadow-sm border border-slate-200 ">
-        <div className="grid lg:grid-cols-[minmax(300px,0.75fr)_1.45fr] ">
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-xl shadow-sm border border-slate-200">
+        <div className="grid lg:grid-cols-[minmax(300px,0.75fr)_1.45fr]">
           <SolarCalculatorControls
             e={e}
             calculatorText={calculatorText}
