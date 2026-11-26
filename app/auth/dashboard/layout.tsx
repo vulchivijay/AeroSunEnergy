@@ -10,6 +10,23 @@ export const metadata: Metadata = {
   },
   description:
     'Secure AeroSun Energy workspace for account records, customer forms, and project documents.',
+  keywords: [
+    'AeroSun Energy dashboard',
+    'solar project dashboard',
+    'renewable energy project management',
+    'customer project records',
+    'solar installation tracking',
+    'wind energy project records',
+    'hybrid energy projects',
+    'customer enquiry management',
+    'solar customer agreements',
+    'installation checklist',
+    'solar equipment purchase orders',
+    'renewable energy invoices',
+    'solar warranty records',
+    'project document management',
+    'AeroSun staff workspace',
+  ],
   alternates: {
     canonical: '/auth/dashboard',
   },

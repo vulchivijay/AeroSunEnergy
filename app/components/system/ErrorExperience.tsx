@@ -74,7 +74,7 @@ function ErrorIllustration({
       </span>
 
       {isLandscape ? (
-        <>
+        <div>
           <div className="absolute right-[19%] top-[28%] h-16 w-16 rounded-full bg-[#f5c76a]/20 blur-2xl" />
           <Sun className="absolute right-[21%] top-[27%] h-10 w-10 text-[#f5c76a]" strokeWidth={1.2} />
           <div className="absolute bottom-[13%] left-[-10%] h-[43%] w-[82%] rotate-[-12deg] rounded-full bg-[#123e31]" />
@@ -91,9 +91,9 @@ function ErrorIllustration({
           </div>
           <div className="absolute bottom-[15%] left-[44%] h-[1px] w-[26%] rotate-[10deg] border-t border-dashed border-[#d6e8b9]/60" />
           <Wind className="absolute bottom-[11%] right-[12%] h-5 w-5 text-[#d6e8b9]/75" strokeWidth={1.3} />
-        </>
+        </div>
       ) : (
-        <>
+        <div>
           <div className="absolute inset-x-[16%] top-[34%] h-[1px] bg-gradient-to-r from-transparent via-[#a3d977]/55 to-transparent" />
           <div className="absolute left-[22%] top-[34%] h-2 w-2 rounded-full bg-[#a3d977] shadow-sm" />
           <div className="absolute right-[22%] top-[34%] h-2 w-2 rounded-full bg-[#f5c76a] shadow-sm" />
@@ -105,7 +105,7 @@ function ErrorIllustration({
             <Zap className="h-9 w-9 text-[#a3d977]" strokeWidth={1.3} />
           </div>
           <div className="absolute bottom-[14%] left-[18%] right-[18%] h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-        </>
+        </div>
       )}
     </div>
   )

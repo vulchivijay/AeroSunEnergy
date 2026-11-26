@@ -182,7 +182,7 @@ export default function PurchaseOrderPage() {
                   error={errors.supplierName}
                 />
 
-                <>
+                <div>
                   <label htmlFor="productLine" className="mb-2 block text-slate-100 text-xs sm:text-sm font-semibold tracking-normal leading-5">
                     {labels.fields.productLine.label}
                   </label>
@@ -197,7 +197,7 @@ export default function PurchaseOrderPage() {
                     {labels.productOptions.map((option) => <option key={option} value={option} className="text-slate-900">{option}</option>)}
                   </select>
                   {errors.productLine && <p id="productLine-error" className="mt-2 text-rose-300 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{errors.productLine.message}</p>}
-                </>
+                </div>
 
                 <Field
                   label={labels.fields.quantity.label}

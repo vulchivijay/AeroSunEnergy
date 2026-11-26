@@ -62,7 +62,7 @@ export function NavbarNavigationLink({
         {mobile ? (
           <span>{link.label}</span>
         ) : (
-          <>
+          <div>
             <span className={`relative flex h-8 w-8 items-center justify-center rounded-full border transition-all duration-300 ${
               active
                 ? 'border-slate-200 bg-white/20 text-white shadow-sm'
@@ -81,7 +81,7 @@ export function NavbarNavigationLink({
               )}
             </span>
             <span className="min-w-0 w-full max-w-full whitespace-normal break-keep text-center leading-tight line-clamp-2">{link.label}</span>
-          </>
+          </div>
         )}
         {disabled && (
           <span className={`${mobile ? 'inline-flex' : 'hidden'} items-center gap-1.5 rounded-full border border-slate-200 bg-[#e5e7eb] px-2 py-1 uppercase text-[#333333] text-xs font-semibold tracking-wide leading-5`}>

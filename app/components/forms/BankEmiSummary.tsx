@@ -46,12 +46,12 @@ export function BankEmiSummary({
               {labels.monthlyEmi}
             </p>
             {calculation ? (
-              <>
+              <div>
                 <span className={`mt-2 block max-w-full whitespace-nowrap ${emiTextSize} font-bold leading-none tracking-tight text-amber-400`}>
                   <DigitalNumber value={formattedEmi} />
                 </span>
                 <span className="mt-2 text-sm text-blue-100 sm:text-base">{labels.month}</span>
-              </>
+              </div>
             ) : (
               <span className="mt-2 max-w-full break-words text-sm font-medium leading-5 text-amber-400">
                 {labels.enterHomeLoanRate}

@@ -31,10 +31,10 @@ export function AboutServicesAndCommitmentsSections({ t }: { t: Translations }) 
                   ))}
           </div>
           <div className="mt-8 flex flex-col gap-5 rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-6">
-            <>
+            <div>
               <p className="uppercase text-[#a95600] text-xs font-semibold tracking-wide leading-5">{content.contactCalloutTitle}</p>
               <p className="mt-2 text-[#152b29] text-lg font-semibold tracking-normal leading-snug">{content.contactCalloutDescription}</p>
-            </>
+            </div>
             <a href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#087a61] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[#075e4b] tracking-normal">
               {content.contactAction} <span aria-hidden="true" className="ml-2">&rarr;</span>
             </a>

@@ -51,10 +51,10 @@ export function AboutRoadmapSections({ t }: { t: Translations }) {
       <section id="capabilities" className="bg-gradient-to-br from-white to-[#f1f2f6] border-y border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <>
+            <div>
               <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 uppercase text-teal-800 before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] text-xs font-semibold tracking-wide leading-5">{content.servicesBadge}</p>
               <h2 className="mt-3 max-w-3xl text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.servicesHeading}</h2>
-            </>
+            </div>
             <span className="text-sm font-semibold text-slate-600 tracking-normal">{content.servicesAudience}</span>
           </div>
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">

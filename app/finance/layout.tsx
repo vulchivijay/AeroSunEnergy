@@ -20,6 +20,11 @@ export const metadata: Metadata = {
     'solar subsidy application process',
     'solar loan repayment terms',
     'AeroSun solar financing guide',
+    'PM Surya Ghar Muft Bijli Yojana',
+    'rooftop solar subsidy India',
+    'solar EMI calculator',
+    'solar system cost in India',
+    'solar panel price in India',
   ],
   alternates: {
     canonical: '/finance',

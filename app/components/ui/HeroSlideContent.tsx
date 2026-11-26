@@ -32,7 +32,7 @@ export function HeroSlideContent({
           {slide.title}
         </h1>
       </div>
-      <>
+      <div>
         <p className={`slider-reveal-description mt-4 max-w-xl break-words ${isLight ? 'text-black' : isPremium ? 'text-slate-700' : 'text-slate-100'}text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7`}>
           {slide.description}
         </p>
@@ -47,7 +47,7 @@ export function HeroSlideContent({
           ))}
         </div>
         {actions && <div className="slider-reveal-actions mt-7 flex flex-wrap items-center gap-3 [&>*]:max-w-full [&>*]:whitespace-normal">{actions}</div>}
-      </>
+      </div>
     </div>
   )
 }

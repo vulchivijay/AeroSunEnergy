@@ -5,7 +5,6 @@ export const metadata: Metadata = {
   description:
     'Explore small wind turbines, distributed wind systems, and solar-wind hybrid solutions for farms, businesses, and rural projects across India.',
   keywords: [
-    'wind energy in Tirupati',
     'small wind turbines India',
     'wind turbine for farms',
     'distributed wind energy systems',
@@ -19,7 +18,11 @@ export const metadata: Metadata = {
     'renewable wind power',
     'AeroSun Energy wind',
     'wind energy solutions India',
-    'small wind energy in Tirupati',
+    'small wind turbine for home India',
+    'small wind turbine price India',
+    'wind solar hybrid system India',
+    'wind energy for agriculture',
+    'wind power for farms',
   ],
   alternates: {
     canonical: '/wind-energy',

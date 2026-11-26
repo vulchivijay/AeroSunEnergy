@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     'solar referral programme',
     'solar referral incentive India',
     'refer a friend for solar',
-    'solar referral Tirupati',
+    'solar referral bonus India',
     'renewable energy referral',
     'AeroSun solar customer referrals',
     'solar installation referral rewards',

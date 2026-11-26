@@ -47,14 +47,14 @@ export function AboutLeadershipAndStrengthsSections({ t }: { t: Translations }) 
                 <article key={profile.name} className="flex flex-col items-start gap-5 bg-white px-6 py-7 first:bg-[#eaf2e9] sm:px-8 sm:py-9 lg:px-7 xl:px-9">
                   <div className="flex flex-col items-start gap-4">
                     <span className="text-3xl font-bold text-[#152b29] tracking-normal">{profile.initials}</span>
-                    <>
+                    <div>
                       <h3 className="text-[#152b29] text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{profile.name}</h3>
                       <p className="mt-2 uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">{profile.role}</p>
-                    </>
+                    </div>
                   </div>
                   <p className="text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{profile.description}</p>
                 </article>
-                    ))}
+              ))}
             </div>
           </div>
 
@@ -76,10 +76,10 @@ export function AboutLeadershipAndStrengthsSections({ t }: { t: Translations }) 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6] text-slate-900">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-            <>
+            <div>
               <p className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 uppercase text-amber-900 before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] text-xs font-semibold tracking-wide leading-5">{content.whySectionBadge}</p>
               <h2 className="mt-3 max-w-2xl text-[#152b29] text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.whyHeading}</h2>
-            </>
+            </div>
             <p className="max-w-lg text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.whyDescription}</p>
           </div>
           <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">

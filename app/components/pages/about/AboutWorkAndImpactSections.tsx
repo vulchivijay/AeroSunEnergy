@@ -77,10 +77,10 @@ export function AboutWorkAndImpactSections({ t }: { t: Translations }) {
                 <span className="font-mono uppercase text-teal-700 text-xs font-semibold tracking-wide leading-5 tabular-nums">
                   0{index + 1} ·
                 </span>
-                <>
+                <div>
                   <p className="uppercase text-teal-800 text-xs font-semibold tracking-wide leading-5">{item.title}</p>
                   <p className="mt-2 text-[#112c2a] text-lg font-semibold tracking-normal leading-snug">{item.value}</p>
-                </>
+                </div>
               </div>
                   ))}
           </div>

@@ -98,14 +98,14 @@ export default function NinetyDayTrackerPage() {
 
                 <div className="mt-6 rounded-xl border border-slate-700 bg-white/5 p-4">
                   <div className="flex items-end justify-between gap-3">
-                    <>
+                    <div>
                       <p className="uppercase text-[#d7deee] text-xs font-semibold tracking-wide leading-5">
                         {trackerPage.overview.capitalLabel}
                       </p>
                       <p className="mt-2 text-white text-lg font-semibold tracking-normal leading-snug">
                         ₹1,00,000
                       </p>
-                    </>
+                    </div>
                     <WalletCards
                       className="h-10 w-10 text-[#f2b84b]"
                       aria-hidden="true"
@@ -147,7 +147,7 @@ export default function NinetyDayTrackerPage() {
 
       <section className="mx-auto max-w-7xl bg-gradient-to-br from-white to-[#f1f2f6] px-5 pt-14 pb-14 sm:px-8 sm:pt-20 sm:pb-20 lg:px-10">
         <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
-          <>
+          <div>
             <p className="uppercase text-[#9b4b42] text-xs font-semibold tracking-wide leading-5">
               {trackerPage.workbook.eyebrow}
             </p>
@@ -155,7 +155,7 @@ export default function NinetyDayTrackerPage() {
               {trackerPage.workbook.title}
             </h2>
             <div className="mt-6 h-1 w-16 rounded-full bg-[#ed7357]" />
-          </>
+          </div>
 
           <div className="overflow-hidden rounded-xl border border-slate-200 bg-[#fffdf8] shadow-sm">
             <div className="overflow-x-auto">
