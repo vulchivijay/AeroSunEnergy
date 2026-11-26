@@ -37,7 +37,7 @@ export function AboutLeadershipAndStrengthsSections({ t }: { t: Translations }) 
       <section id="leadership" className="bg-gradient-to-br from-[#f1f2f6] to-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="grid gap-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-x-8 lg:gap-x-12">
-            <p className="order-1 inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 uppercase text-[#137c63] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] sm:order-2 sm:mb-1 sm:justify-self-end text-xs font-semibold tracking-wide leading-5">{pageStrings.leadershipBadge}</p>
+            <p className="order-1 inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 uppercase text-[#137c63] before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] sm:order-2 sm:mb-1 sm:justify-self-end text-xs font-semibold tracking-wide leading-5">{pageStrings.leadershipBadge}</p>
             <h2 className="order-2 mt-0 max-w-4xl border-l-[3px] border-[#087a61] pl-5 text-[#152b29] sm:order-1 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{pageStrings.leadershipHeading}</h2>
             <p className="mt-0 border-b border-slate-200 pb-6 text-slate-600 sm:col-span-2 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               {pageStrings.leadershipIntro}
@@ -77,7 +77,7 @@ export function AboutLeadershipAndStrengthsSections({ t }: { t: Translations }) 
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <>
-              <p className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 uppercase text-amber-900 before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-300 before:content-[''] text-xs font-semibold tracking-wide leading-5">{content.whySectionBadge}</p>
+              <p className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 uppercase text-amber-900 before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] text-xs font-semibold tracking-wide leading-5">{content.whySectionBadge}</p>
               <h2 className="mt-3 max-w-2xl text-[#152b29] text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.whyHeading}</h2>
             </>
             <p className="max-w-lg text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{content.whyDescription}</p>

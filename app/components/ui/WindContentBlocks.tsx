@@ -27,7 +27,7 @@ export function WindSectionEyebrow({ children }: { children: ReactNode }) {
   return (
     <ContentSectionEyebrow
       className="py-2"
-      dotClassName="bg-emerald-600"
+      dotClassName="bg-emerald-700"
       labelClassName="text-emerald-700"
     >
       {children}

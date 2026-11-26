@@ -42,7 +42,7 @@ export default function ResearchDevelopmentPage() {
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:px-10 lg:py-24">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-800/20 bg-white/70 px-3 py-1.5 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">
-              <span className="h-1.5 w-1.5 rounded-full bg-lime-300" />
+              <span className="shrink-0 h-2 w-2 rounded-full bg-current" />
               {copy.text[0]}
             </div>
             <p className="mt-8 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">
@@ -75,7 +75,7 @@ export default function ResearchDevelopmentPage() {
           <aside className="relative mx-auto w-full max-w-md lg:ml-auto">
             <div className="absolute -inset-5 rounded-full bg-emerald-400/15 blur-3xl" />
             <div className="relative rounded-xl border border-slate-700 bg-[#14372f] p-6 shadow-sm backdrop-blur-sm sm:p-8">
-              <p className="inline-flex w-fit rounded-full border border-lime-200/20 bg-white/[0.06] px-3 py-1.5 uppercase text-lime-200 text-xs font-semibold tracking-wide leading-5">
+              <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex w-fit rounded-full border border-lime-200/20 bg-white/[0.06] px-3 py-1.5 uppercase text-lime-200 text-xs font-semibold tracking-wide leading-5">
                 {copy.text[6]}
               </p>
               <p className="mt-4 text-white text-lg font-semibold tracking-normal leading-snug">
@@ -172,7 +172,7 @@ export default function ResearchDevelopmentPage() {
 
       <section className={`text-slate-900 ${sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-          <p className="inline-flex w-fit rounded-full border border-emerald-800/20 bg-white/70 px-4 py-2 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">
+          <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex w-fit rounded-full border border-emerald-800/20 bg-white/70 px-4 py-2 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">
             {copy.text[1]}
           </p>
           <p className="mt-3 max-w-3xl text-lg font-semibold tracking-normal leading-snug">

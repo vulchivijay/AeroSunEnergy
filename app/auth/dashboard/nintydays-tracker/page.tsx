@@ -42,7 +42,7 @@ export default function NinetyDayTrackerPage() {
             className="max-w-3xl"
           >
             <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1.5 text-xs uppercase text-amber-800 text-xs font-semibold tracking-wide leading-5">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#f2b84b]" />
+              <span className="shrink-0 h-2 w-2 rounded-full bg-current" />
               {trackerPage.hero.badge}
             </div>
 

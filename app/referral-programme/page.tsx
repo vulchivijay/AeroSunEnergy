@@ -32,7 +32,7 @@ function ReferralProgramSection({
         <div className="relative mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <>
             <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 uppercase text-indigo-700 text-xs font-semibold tracking-wide leading-5">
-              <span className="h-2 w-2 rounded-full bg-emerald-600" aria-hidden="true" />
+              <span className="shrink-0 h-2 w-2 rounded-full bg-current" aria-hidden="true" />
               {landing.badge}
             </p>
             <h1 id="referral-landing-title" className="mt-4 text-slate-950 text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
@@ -118,7 +118,7 @@ function ReferralProgramSection({
       <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-14 sm:px-6 lg:px-10 lg:py-18" aria-labelledby="referral-process-title">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">
+            <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">
               {landing.processEyebrow}
             </p>
             <h2 id="referral-process-title" className="mt-3 text-emerald-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
@@ -144,7 +144,7 @@ function ReferralProgramSection({
         <div className="relative mx-auto max-w-7xl">
           <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <header>
-              <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 uppercase text-indigo-700 text-xs font-semibold tracking-wide leading-5">
+              <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 uppercase text-indigo-700 text-xs font-semibold tracking-wide leading-5">
                 {landing.earningsEyebrow}
               </p>
               <h2 id="referral-earnings-title" className="mt-3 text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
@@ -216,7 +216,7 @@ function ReferralProgramSection({
 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6] px-4 py-12 sm:px-6 lg:px-10 lg:py-16 sm:py-14" aria-labelledby="referral-faq-title">
         <div className="mx-auto max-w-7xl">
-          <p className="inline-flex w-fit rounded-full border border-slate-200 bg-[#eaf3fc] px-4 py-2 uppercase text-[#075da8] text-xs font-semibold tracking-wide leading-5">
+          <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex w-fit rounded-full border border-slate-200 bg-[#eaf3fc] px-4 py-2 uppercase text-[#075da8] text-xs font-semibold tracking-wide leading-5">
             {landing.faqEyebrow}
           </p>
           <h2 id="referral-faq-title" className="mt-4 text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">

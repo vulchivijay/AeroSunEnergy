@@ -44,7 +44,7 @@ export function HybridEnergySolutionsAndServicesSections({ t }: { t: Translation
                     <p className="uppercase text-emerald-700 text-xs font-semibold tracking-wide leading-5">{hybridPage.labels.servicePrefix} {index + 1}</p>
                     <h3 className="mt-2 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{service.title}</h3>
                   </>
-                  <div className="hidden rounded-full border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs uppercase text-emerald-700 sm:block text-xs font-semibold tracking-wide leading-5">
+                  <div className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 hidden rounded-full border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs uppercase text-emerald-700 sm:block text-xs font-semibold tracking-wide leading-5">
                     {hybridPage.labels.systemBadge}
                   </div>
                 </div>

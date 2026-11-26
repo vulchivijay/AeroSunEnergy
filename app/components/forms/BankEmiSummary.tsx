@@ -61,10 +61,10 @@ export function BankEmiSummary({
         </div>
         {calculation && (
           <div className="mt-4 flex min-w-0 flex-wrap justify-center gap-2">
-            <span className="max-w-full rounded-full border border-amber-300/60 bg-blue-950/60 px-3 py-1.5 text-center text-xs leading-5 text-white">
+            <span className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 max-w-full rounded-full border border-amber-300/60 bg-blue-950/60 px-3 py-1.5 text-center text-xs leading-5 text-white">
               <DigitalNumber value={formattedTenure} />
             </span>
-            <span className="max-w-full break-words rounded-full border border-amber-300/60 bg-blue-950/60 px-3 py-1.5 text-center text-xs leading-5 text-white">
+            <span className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 max-w-full break-words rounded-full border border-amber-300/60 bg-blue-950/60 px-3 py-1.5 text-center text-xs leading-5 text-white">
               {labels.calculatedInterestRate}:{' '}
               <DigitalNumber value={calculation.interestRate.toFixed(2)} />%
             </span>

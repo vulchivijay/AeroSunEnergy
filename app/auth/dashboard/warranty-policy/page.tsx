@@ -76,7 +76,7 @@ export default function WarrantyPolicyPage() {
               </div>
 
               <div className="inline-flex items-center gap-2 self-start rounded-full border border-slate-700 bg-white/5 px-3 py-2 text-xs uppercase text-sky-100 text-xs font-semibold tracking-wide leading-5">
-                <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-sm" />
+                <span className="shrink-0 h-2 w-2 rounded-full bg-current shadow-sm" />
                 {labels.support}
               </div>
             </div>

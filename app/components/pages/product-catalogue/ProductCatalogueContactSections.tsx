@@ -11,7 +11,7 @@ export function ProductCatalogueContactSections({ t }: { t: Translations }) {
           <div className="overflow-hidden rounded-xl">
             <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
               <div className="bg-[linear-gradient(145deg,#581c87_0%,#7e22ce_55%,#a21caf_100%)] p-7 text-white sm:p-10">
-                <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 uppercase text-amber-200 text-xs font-semibold tracking-wide leading-5">10 / {c.contact.eyebrow}</p>
+                <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 uppercase text-amber-200 text-xs font-semibold tracking-wide leading-5">10 / {c.contact.eyebrow}</p>
                 <h2 className="mt-4 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{c.contact.title}</h2>
                 <p className="mt-4 text-indigo-100/90 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                   {c.contact.description}

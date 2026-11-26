@@ -90,7 +90,7 @@ export default function ProjectStatusFilter({
                       className="rounded-xl border border-slate-200 bg-slate-50 p-5"
                     >
                       <span
-                        className={`inline-flex rounded-full border px-2.5 py-1 uppercase ${statusMeta[project.status].tone} text-xs font-semibold tracking-wide leading-5`}
+                        className={`before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex rounded-full border px-2.5 py-1 uppercase ${statusMeta[project.status].tone} text-xs font-semibold tracking-wide leading-5`}
                       >
                         {statusMeta[project.status].label}
                       </span>

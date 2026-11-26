@@ -217,7 +217,7 @@ export function SolarEstimation() {
     <section className="bg-gradient-to-br from-[#f1f2f6] to-white px-4 py-12 sm:px-6 lg:px-10 lg:py-16 sm:py-14">
       <div className="mx-auto mb-8 max-w-7xl">
         <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 uppercase text-indigo-900 text-xs font-semibold tracking-wide leading-5">
-          <span className="h-1.5 w-1.5 rounded-full bg-amber-500" aria-hidden="true" />
+          <span className="shrink-0 h-2 w-2 rounded-full bg-current" aria-hidden="true" />
           {e.solarCalculatorEyebrow}
         </p>
         <h1 className="max-w-6xl text-left text-black text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">

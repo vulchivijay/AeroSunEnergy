@@ -9,7 +9,7 @@ export function AboutServicesAndCommitmentsSections({ t }: { t: Translations }) 
       <section className="bg-gradient-to-br from-[#f1f2f6] to-white text-[#152b29]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 max-w-3xl">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 uppercase text-[#137c63] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] text-xs font-semibold tracking-wide leading-5">{content.commitmentsBadge}</p>
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 uppercase text-[#137c63] before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] text-xs font-semibold tracking-wide leading-5">{content.commitmentsBadge}</p>
             <h2 className="mt-3 text-[#152b29] text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.commitmentsHeading}</h2>
           </div>
           <div className="grid gap-5 lg:grid-cols-2">
@@ -44,7 +44,7 @@ export function AboutServicesAndCommitmentsSections({ t }: { t: Translations }) 
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 max-w-3xl">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-[#eaf2e9] px-4 py-2 uppercase text-[#137c63] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] text-xs font-semibold tracking-wide leading-5">{content.workBadge}</p>
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-[#eaf2e9] px-4 py-2 uppercase text-[#137c63] before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] text-xs font-semibold tracking-wide leading-5">{content.workBadge}</p>
             <h2 className="mt-3 text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.workHeading}</h2>
           </div>
           <div className="grid gap-5 lg:grid-cols-2">

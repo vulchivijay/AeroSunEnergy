@@ -90,7 +90,7 @@ export function SolarCalculationResults({
                 {calculatorText.pricingBreakdown}
               </h2>
             </div>
-            <p className="rounded-full border border-slate-700 bg-white/[0.06] px-3 py-1.5 text-slate-200 tabular-nums text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
+            <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 rounded-full border border-slate-700 bg-white/[0.06] px-3 py-1.5 text-slate-200 tabular-nums text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
               <DigitalNumber value={formatSystemCapacity(calculation.recommendedKw, e.capacityUnit)} /> · {currentPropertyType}
             </p>
           </div>
@@ -124,7 +124,7 @@ export function SolarCalculationResults({
       </div>
 
       <div className="mt-4 rounded-xl border border-slate-200 bg-linear-to-br from-emerald-50 via-green-50 to-emerald-100 p-5 shadow-sm sm:p-6 hidden">
-        <span className="inline-flex items-center rounded-full border border-slate-200 bg-white/70 px-4 py-2 uppercase text-indigo-900 text-xs font-semibold tracking-wide leading-5">
+        <span className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex items-center rounded-full border border-slate-200 bg-white/70 px-4 py-2 uppercase text-indigo-900 text-xs font-semibold tracking-wide leading-5">
           {calculation.netMeteringWaived
                   ? calculatorText.finalEffectiveCost
                   : calculatorText.finalEffectiveCostBeforeMetering}

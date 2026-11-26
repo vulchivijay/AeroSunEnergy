@@ -88,7 +88,7 @@ export default async function Contact() {
               <div className="pointer-events-none absolute -bottom-20 -left-20 h-80 w-80 rounded-full border border-slate-200" aria-hidden="true" />
               <div className="relative">
                 <p className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/60 px-4 py-2 uppercase text-slate-800 text-xs font-semibold tracking-wide leading-5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#137c63]" />
+                  <span className="shrink-0 h-2 w-2 rounded-full bg-current" />
                   {navbar.startProject}
                 </p>
                 <h1 className="mt-8 max-w-2xl text-slate-950 text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
@@ -247,7 +247,7 @@ export default async function Contact() {
             <div className="flex items-start justify-between gap-4">
               <span>
                 <span className="inline-flex w-fit items-center gap-2 rounded-full border border-indigo-200 bg-white/70 px-4 py-2 uppercase text-indigo-900 text-xs font-semibold tracking-wide leading-5">
-                  <span className="h-2 w-2 rounded-full bg-fuchsia-500" aria-hidden="true" />
+                  <span className="shrink-0 h-2 w-2 rounded-full bg-current" aria-hidden="true" />
                   {faqHeader}
                 </span>
                 <h2 id="contact-faq-title" className="mt-5 text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">

@@ -72,7 +72,7 @@ export default function InstallationChecklistPage() {
       <div className="mx-auto my-6 grid w-[calc(100%-2rem)] max-w-7xl items-center gap-10 rounded-xl border border-slate-200 bg-white/20 px-5 py-14 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:px-8 sm:py-20 lg:my-8 lg:grid-cols-[1fr_auto] lg:px-10">
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-amber-100/20 bg-white/5 px-3 py-1.5 text-xs uppercase text-amber-100 text-xs font-semibold tracking-wide leading-5">
-            <span className="h-1.5 w-1.5 rounded-full bg-amber-300 shadow-sm" />
+            <span className="shrink-0 h-2 w-2 rounded-full bg-current shadow-sm" />
             {labels.badge}
           </div>
           <h1 className="mt-6 text-white text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">

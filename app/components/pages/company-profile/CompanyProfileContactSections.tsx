@@ -10,7 +10,7 @@ export function CompanyProfileContactSections({ t }: { t: Translations }) {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="grid lg:grid-cols-[0.8fr_1.2fr] overflow-hidden rounded-xl border border-slate-200 bg-white">
             <div className="bg-[linear-gradient(145deg,#713f12_0%,#92400e_55%,#a16207_100%)] p-7 text-white sm:p-10">
-              <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 uppercase text-amber-200 text-xs font-semibold tracking-wide leading-5">
+              <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 uppercase text-amber-200 text-xs font-semibold tracking-wide leading-5">
                 13 / {cp.contactEyebrow}
               </p>
               <h2 className="mt-4 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">

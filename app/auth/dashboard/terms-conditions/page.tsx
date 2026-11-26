@@ -16,7 +16,7 @@ export default function TermsPage() {
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 rounded-full border border-violet-100/20 bg-white/10 px-4 py-2 uppercase text-violet-100 text-xs font-semibold tracking-wide leading-5">
-                <span className="h-1.5 w-1.5 rounded-full bg-amber-300" />
+                <span className="shrink-0 h-2 w-2 rounded-full bg-current" />
                 {content.badge}
               </div>
               <h1 className="mt-6 text-white text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">

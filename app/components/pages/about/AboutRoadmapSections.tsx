@@ -10,7 +10,7 @@ export function AboutRoadmapSections({ t }: { t: Translations }) {
       <section id="roadmap" className="bg-gradient-to-br from-[#f1f2f6] to-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 max-w-3xl">
-            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 uppercase text-[#137c63] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] text-xs font-semibold tracking-wide leading-5">{content.roadmapBadge}</p>
+            <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 uppercase text-[#137c63] before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] text-xs font-semibold tracking-wide leading-5">{content.roadmapBadge}</p>
             <h2 className="mt-3 text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.roadmapHeading}</h2>
           </div>
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
@@ -52,7 +52,7 @@ export function AboutRoadmapSections({ t }: { t: Translations }) {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <>
-              <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 uppercase text-teal-800 before:h-1.5 before:w-1.5 before:rounded-full before:bg-teal-600 before:content-[''] text-xs font-semibold tracking-wide leading-5">{content.servicesBadge}</p>
+              <p className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 uppercase text-teal-800 before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] text-xs font-semibold tracking-wide leading-5">{content.servicesBadge}</p>
               <h2 className="mt-3 max-w-3xl text-slate-950 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.servicesHeading}</h2>
             </>
             <span className="text-sm font-semibold text-slate-600 tracking-normal">{content.servicesAudience}</span>

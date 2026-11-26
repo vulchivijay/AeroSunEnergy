@@ -85,7 +85,7 @@ export function NavbarNavigationLink({
         )}
         {disabled && (
           <span className={`${mobile ? 'inline-flex' : 'hidden'} items-center gap-1.5 rounded-full border border-slate-200 bg-[#e5e7eb] px-2 py-1 uppercase text-[#333333] text-xs font-semibold tracking-wide leading-5`}>
-            <span className="h-1.5 w-1.5 rounded-full bg-[#333333]/50" aria-hidden="true" />
+            <span className="shrink-0 h-2 w-2 rounded-full bg-current" aria-hidden="true" />
             {comingSoonLabel}
           </span>
         )}

@@ -16,7 +16,7 @@ function SectionHeading({
 }) {
   return (
     <div className="mb-7 max-w-3xl">
-      <p className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 uppercase before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] ${inverse ? 'border-amber-300/20 bg-white/[0.08] text-amber-200' : ' border-slate-200 bg-white/75 text-teal-800 '} text-xs font-semibold tracking-wide leading-5`}>
+      <p className={`inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 uppercase before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] ${inverse ? 'border-amber-300/20 bg-white/[0.08] text-amber-200' : ' border-slate-200 bg-white/75 text-teal-800 '} text-xs font-semibold tracking-wide leading-5`}>
         {number} / {eyebrow}
       </p>
       <h2 className={`mt-4 ${inverse ? 'text-white' : 'text-[#152b29]'} text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug`}>
@@ -85,7 +85,7 @@ export function ProductCatalogueWindSections({ t }: { t: Translations }) {
             </div>
           </div>
           <div className="mt-5 rounded-xl border border-amber-200/20 bg-black/10 p-6 sm:p-8">
-            <p className="inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 uppercase text-amber-800 text-xs font-semibold tracking-wide leading-5">{c.wind.projectLabel}</p>
+            <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex w-fit rounded-full border border-amber-300/20 bg-white/[0.08] px-4 py-2 uppercase text-amber-800 text-xs font-semibold tracking-wide leading-5">{c.wind.projectLabel}</p>
             <h3 className="mt-3 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{c.wind.productName}</h3>
             <p className="mt-2 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{c.wind.configurationLabel}</p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

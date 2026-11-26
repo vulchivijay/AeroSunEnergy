@@ -31,7 +31,7 @@ export function WindEnergyHeroSections({ t }: { t: Translations }) {
         <div className="relative mx-auto flex min-h-[620px] max-w-7xl flex-col justify-between px-4 py-10 sm:min-h-[680px] sm:px-6 sm:py-14 lg:px-10">
           <div className="flex items-center gap-4">
             <span className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-white/10 px-4 py-2 uppercase text-white/90 backdrop-blur-md text-xs font-semibold tracking-wide leading-5">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-300" aria-hidden="true" />
+              <span className="shrink-0 h-2 w-2 rounded-full bg-current" aria-hidden="true" />
               {windPage.hero.eyebrow}
             </span>
           </div>
@@ -48,7 +48,7 @@ export function WindEnergyHeroSections({ t }: { t: Translations }) {
             <div className="relative max-w-md rounded-xl border border-slate-700 bg-[#102a43]/65 p-5 backdrop-blur-lg sm:p-6 lg:ml-auto">
               <div className="flex items-center justify-between gap-5">
                 <>
-                  <p className="inline-flex w-fit rounded-full border border-amber-300/25 bg-white/10 px-3 py-1.5 uppercase text-amber-200 text-xs font-semibold tracking-wide leading-5">{windPage.hero.resourceFirst}</p>
+                  <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex w-fit rounded-full border border-amber-300/25 bg-white/10 px-3 py-1.5 uppercase text-amber-200 text-xs font-semibold tracking-wide leading-5">{windPage.hero.resourceFirst}</p>
                   <p className="mt-3 text-white text-lg font-semibold tracking-normal leading-snug">{windPage.hero.siteDesigned}</p>
                 </>
                 <svg viewBox="0 0 180 190" fill="none" className="h-32 w-28 shrink-0 text-sky-300 sm:h-40 sm:w-36" aria-hidden="true">

@@ -164,7 +164,7 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
         <div className="relative z-10 grid min-h-[900px] gap-8 px-6 py-9 sm:min-h-[760px] sm:px-10 sm:py-12 md:absolute md:inset-0 md:min-h-0 md:grid-cols-[48.5%_49.5%] md:items-center md:gap-0 md:px-[3.3%] md:py-[2.5%] lg:px-[3.5%]">
           <div className="max-w-[620px] self-center md:-translate-y-6">
             <div className="inline-flex items-center gap-3 rounded-full border border-slate-700 bg-white/10 px-4 py-2 text-xs uppercase text-sky-100 shadow-md backdrop-blur-md text-xs tracking-wide leading-5">
-              <span className="h-2 w-2 rounded-full bg-amber-300" />
+              <span className="shrink-0 h-2 w-2 rounded-full bg-current" />
               {content.eyebrow}
             </div>
 

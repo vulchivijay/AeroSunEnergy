@@ -101,7 +101,7 @@ function SchemeBanner({ t }: { t: Translations }) {
               </span>
               <div className="min-w-0">
                 <div className="inline-flex items-center gap-2 rounded-full border border-amber-200/30 bg-white/10 px-4 py-2 uppercase text-amber-100 text-xs font-semibold tracking-wide leading-5">
-                  <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-amber-500" />
+                  <span aria-hidden="true" className="shrink-0 h-2 w-2 rounded-full bg-current" />
                   {banner.badge}
                 </div>
                 <h2 className="mt-3 text-white text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
@@ -139,7 +139,7 @@ function SchemeBanner({ t }: { t: Translations }) {
             <div className="mt-5 text-3xl font-bold tracking-tight text-lime-200 sm:text-4xl">
               <DigitalNumber value={banner.subsidyAmount} />
             </div>
-            <div className="mt-4 inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-semibold text-emerald-50 tracking-normal">
+            <div className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 mt-4 inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-semibold text-emerald-50 tracking-normal">
               {banner.max} {banner.perHome}
             </div>
           </div>

@@ -30,7 +30,7 @@ export function AboutWorkAndImpactSections({ t }: { t: Translations }) {
             className="grid items-center gap-12 xl:grid-cols-[1.15fr_0.85fr] xl:gap-20"
           >
             <div className="min-w-0">
-              <p className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2.5 uppercase text-teal-800 before:h-1.5 before:w-1.5 before:shrink-0 before:rounded-full before:bg-amber-500 before:content-[''] text-xs font-semibold tracking-wide leading-5">
+              <p className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2.5 uppercase text-teal-800 before:h-2 before:w-2 before:shrink-0 before:rounded-full before:bg-current before:content-[''] text-xs font-semibold tracking-wide leading-5">
                 {aboutSection.eyebrow} {aboutSection.brandFirst} {aboutSection.brandSecond}
               </p>
 
@@ -51,7 +51,7 @@ export function AboutWorkAndImpactSections({ t }: { t: Translations }) {
 
               <div className="mt-8 flex flex-wrap gap-2 text-xs font-medium text-slate-600 tracking-normal">
                 {aboutSection.audience.map((item) => (
-                  <span key={item} className="rounded-full border border-slate-300 bg-white/65 px-3 py-2">
+                  <span key={item} className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 rounded-full border border-slate-300 bg-white/65 px-3 py-2">
                     {item}
                   </span>
                       ))}

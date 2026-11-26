@@ -63,7 +63,7 @@ export default function InvoiceReceiptPage() {
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(249,115,22,0.12),transparent_18%),linear-gradient(180deg,#f8fafc_0%,#fff7ed_30%,#f8fafc_100%)] px-4 py-10 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 text-center">
-          <span className="inline-flex items-center rounded-full border border-orange-200 bg-white/80 px-4 py-2 text-xs uppercase text-orange-700 shadow-sm backdrop-blur-sm text-xs font-semibold tracking-wide leading-5">
+          <span className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex items-center rounded-full border border-orange-200 bg-white/80 px-4 py-2 text-xs uppercase text-orange-700 shadow-sm backdrop-blur-sm text-xs font-semibold tracking-wide leading-5">
             {labels.badge}
           </span>
           <h1 className="mt-5 text-slate-900 text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">

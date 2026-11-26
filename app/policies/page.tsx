@@ -18,7 +18,7 @@ export default async function PoliciesPage() {
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1fr_auto] lg:px-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-sky-100/20 bg-white/10 px-4 py-2 uppercase text-sky-100 text-xs font-semibold tracking-wide leading-5">
-              <span className="h-1.5 w-1.5 rounded-full bg-sky-300 shadow-sm" />
+              <span className="shrink-0 h-2 w-2 rounded-full bg-current shadow-sm" />
               {content.badge}
             </div>
             <h1 className="mt-6 text-white text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">

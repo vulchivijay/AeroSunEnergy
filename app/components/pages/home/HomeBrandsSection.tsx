@@ -198,7 +198,7 @@ export function HomeBrandsSection({ t }: { t: Translations }) {
                           brand.materialTypes.map((materialType) => (
                             <span
                               key={materialType}
-                              className="rounded-full border border-slate-300 bg-white/80 px-2 py-1 text-center text-xs font-semibold text-slate-700 tracking-normal"
+                              className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 rounded-full border border-slate-300 bg-white/80 px-2 py-1 text-center text-xs font-semibold text-slate-700 tracking-normal"
                             >
                               {section.materialTypes[materialType]}
                             </span>
@@ -219,7 +219,7 @@ export function HomeBrandsSection({ t }: { t: Translations }) {
                       {brand.prices.map((price) => (
                         <span
                           key={price}
-                          className="w-auto max-w-full rounded-full border px-1.5 py-1.5 text-center text-[11px] font-bold leading-4 tracking-normal tabular-nums shadow-sm lg:px-5 lg:py-2.5 lg:text-base lg:leading-5"
+                          className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 w-auto max-w-full rounded-full border px-1.5 py-1.5 text-center text-[11px] font-bold leading-4 tracking-normal tabular-nums shadow-sm lg:px-5 lg:py-2.5 lg:text-base lg:leading-5"
                           style={{
                             backgroundColor: `hsl(${brand.hue} 76% 88%)`,
                             borderColor: `hsl(${brand.hue} 64% 76%)`,

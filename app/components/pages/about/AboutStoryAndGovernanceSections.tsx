@@ -38,7 +38,7 @@ export function AboutStoryAndGovernanceSections({ t }: { t: Translations }) {
             <h2 className="mt-0 max-w-4xl border-l-[3px] border-[#087a61] pl-5 text-[#152b29] text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
               {pageStrings.storyHeading}
             </h2>
-            <p className="mb-1 inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 uppercase text-[#137c63] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500 before:content-[''] text-xs font-semibold tracking-wide leading-5">{pageStrings.storyBadge}</p>
+            <p className="mb-1 inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 uppercase text-[#137c63] before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] text-xs font-semibold tracking-wide leading-5">{pageStrings.storyBadge}</p>
             <div className="h-px w-full bg-gradient-to-r from-[#137c63]/25 via-amber-500/25 to-transparent sm:col-span-2" />
           </div>
           <div className="grid gap-7 pt-8 text-sm leading-7 text-slate-600 sm:grid-cols-2 sm:text-base sm:leading-8 lg:grid-cols-3 lg:gap-10">
@@ -72,7 +72,7 @@ export function AboutStoryAndGovernanceSections({ t }: { t: Translations }) {
               <div className="relative flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
                 <div className="max-w-2xl">
                   <p className="inline-flex items-center gap-2 rounded-full border border-amber-200/30 bg-white/[0.08] px-4 py-2 uppercase text-amber-200 text-xs font-semibold tracking-wide leading-5">
-                    <span className="h-1.5 w-1.5 rounded-full bg-amber-300" />
+                    <span className="shrink-0 h-2 w-2 rounded-full bg-current" />
                     {pageStrings.governanceBadge}
                   </p>
                   <h2 className="mt-4 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
@@ -100,7 +100,7 @@ export function AboutStoryAndGovernanceSections({ t }: { t: Translations }) {
                           <div className="min-w-0 flex-1">
                             <h3 className="text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{label}</h3>
                             <span className="mt-2 inline-flex max-w-full items-center gap-1.5 rounded-full border border-slate-200 bg-[#eaf2e9] px-2.5 py-1 text-xs uppercase text-[#14785e] text-xs font-semibold tracking-wide leading-5">
-                              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#087a61]" />
+                              <span className="h-2 w-2 shrink-0 rounded-full bg-current" />
                               {status}
                             </span>
                           </div>

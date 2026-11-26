@@ -154,7 +154,7 @@ export function HomeSolarOfferingsSections({ t }: { t: Translations }) {
               <Sun className="pointer-events-none absolute left-1/2 top-5 hidden h-6 w-6 -translate-x-[7.2rem] text-amber-400 sm:block" aria-hidden="true" />
               <Sun className="pointer-events-none absolute left-1/2 top-5 hidden h-6 w-6 translate-x-[6.2rem] text-amber-400 sm:block" aria-hidden="true" />
               <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 shadow-sm py-2">
-                <span className="inline-flex h-2 w-2 items-center justify-center rounded-full bg-emerald-600" aria-hidden="true"></span>
+                <span className="inline-flex h-2 w-2 shrink-0 items-center justify-center rounded-full bg-current text-emerald-700" aria-hidden="true"></span>
                 <p className="uppercase text-emerald-700 text-xs font-semibold tracking-wide leading-5">{home.systemTypeSection.eyebrow}</p>
               </div>
 

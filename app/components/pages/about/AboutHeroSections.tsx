@@ -46,7 +46,7 @@ export function AboutHeroSections({ t }: { t: Translations }) {
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:px-10 lg:py-20">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
+              <span className="shrink-0 h-2 w-2 rounded-full bg-current" />
               {pageStrings.badge}
             </div>
             <h1 className="mt-6 text-[#152b29] text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">

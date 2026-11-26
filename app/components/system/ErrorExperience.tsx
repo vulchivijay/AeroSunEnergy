@@ -64,7 +64,7 @@ function ErrorIllustration({
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_36%,rgba(245,199,106,0.20),transparent_35%),linear-gradient(155deg,rgba(163,217,119,0.08),transparent_55%)]" />
       <div className="absolute inset-5 rounded-xl border border-slate-700" />
-      <div className="absolute left-8 top-8 flex items-center gap-2 rounded-full border border-slate-700 bg-[#071b17]/70 px-3 py-2 text-xs uppercase text-white/60 backdrop-blur text-xs font-semibold tracking-wide leading-5">
+      <div className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] absolute left-8 top-8 flex items-center gap-2 rounded-full border border-slate-700 bg-[#071b17]/70 px-3 py-2 text-xs uppercase text-white/60 backdrop-blur text-xs font-semibold tracking-wide leading-5">
         <span className={`h-1.5 w-1.5 rounded-full ${isLandscape ? 'bg-[#a3d977]' : 'bg-[#f5c76a]'}`} />
         {isLandscape ? t.systemUi.illustration.landscapeStatus : t.systemUi.illustration.systemStatus}
       </div>

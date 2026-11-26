@@ -40,7 +40,7 @@ export function WindEnergyOverviewSections({ t }: { t: Translations }) {
                 <WindSectionEyebrow>{windPage.classification.eyebrow}</WindSectionEyebrow>
                 <h3 className="mt-2 text-white text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">{windPage.classification.title}</h3>
               </>
-              <div className="hidden rounded-full border border-slate-700 bg-white/5 px-3 py-2 text-xs uppercase text-slate-200 sm:block text-xs font-semibold tracking-wide leading-5">
+              <div className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 hidden rounded-full border border-slate-700 bg-white/5 px-3 py-2 text-xs uppercase text-slate-200 sm:block text-xs font-semibold tracking-wide leading-5">
                 {windPage.classification.badge}
               </div>
             </div>
