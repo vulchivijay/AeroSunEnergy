@@ -28,6 +28,9 @@ export const metadata: Metadata = {
     'clean energy for future generations',
     'AeroSun Energy environmental mission',
     'solar for a greener planet',
+    'solar power',
+    'solar electricity',
+    'sun energy',
   ],
   alternates: {
     canonical: '/save-earth',

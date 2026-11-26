@@ -28,6 +28,9 @@ export const metadata: Metadata = {
     'green energy company privacy',
     'renewable power privacy policy',
     'AeroSun Energy website policy',
+    'solar energy company',
+    'solar service',
+    'solar installation',
   ],
   alternates: {
     canonical: '/policies',

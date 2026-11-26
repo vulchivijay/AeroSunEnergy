@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     'distributed energy innovation',
     'AeroSun renewable technology',
     'clean energy research projects',
+    'solar technology',
+    'solar pv',
+    'solar pv system',
+    'photovoltaic panels',
+    'solar electric system',
   ],
   alternates: {
     canonical: '/auth/dashboard/research-development',

@@ -26,6 +26,13 @@ export const metadata: Metadata = {
     'solar and wind procurement',
     'project procurement agreement',
     'renewable supply documentation',
+    'solar panels',
+    'solar panels for business',
+    'commercial solar panel',
+    'solar technology',
+    'solar pv panels',
+    'solar panel system',
+    'buying solar panels',
   ],
   alternates: {
     canonical: '/auth/dashboard/purchase-order',

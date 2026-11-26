@@ -20,6 +20,8 @@ export const metadata: Metadata = {
     'customer login for solar projects',
     'wind energy customer portal',
     'AeroSun project resources',
+    'solar panels for homes',
+    'solar for homeowners',
   ],
   robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
 }

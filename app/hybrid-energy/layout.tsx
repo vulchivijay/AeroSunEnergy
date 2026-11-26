@@ -22,6 +22,8 @@ export const metadata: Metadata = {
     'solar wind hybrid system for farms',
     'hybrid solar system cost',
     'solar storage hybrid power',
+    'wind and solar',
+    'solar energy storage',
   ],
   alternates: {
     canonical: '/hybrid-energy',

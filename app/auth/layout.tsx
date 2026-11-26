@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     'solar installation account',
     'wind energy customer portal',
     'hybrid energy project account',
+    'solar for homeowners',
+    'solar power for homes',
+    'solar panels for homes',
   ],
   robots: {
     index: false,

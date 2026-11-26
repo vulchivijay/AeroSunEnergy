@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     'solar order cancellation policy India',
     'DISCOM approval refund policy',
     'solar installation refund eligibility',
+    'solar installation',
+    'solar system installation',
+    'solar panel installation',
+    'solar panel system',
   ],
   alternates: {
     canonical: '/cancellation',

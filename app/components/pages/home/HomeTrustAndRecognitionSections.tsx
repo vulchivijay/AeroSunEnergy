@@ -162,7 +162,7 @@ function CompanyTrustSection({ t }: { t: Translations }) {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-gradient-to-br from-[#fbf9ff] via-[#f5f4ff] to-[#eaf2ff] px-4 py-12 text-slate-900 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
+      className="relative isolate overflow-clip bg-gradient-to-br from-[#fbf9ff] via-[#f5f4ff] to-[#eaf2ff] px-4 py-12 text-slate-900 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
       aria-labelledby="company-trust-title"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_14%_14%,rgba(255,255,255,0.92),transparent_38%),radial-gradient(ellipse_at_88%_22%,rgba(196,181,253,0.25),transparent_36%),radial-gradient(ellipse_at_75%_100%,rgba(147,197,253,0.22),transparent_40%)]" aria-hidden="true" />
@@ -177,8 +177,8 @@ function CompanyTrustSection({ t }: { t: Translations }) {
         <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#f6f5fd]/45 to-[#f6f5fd]" />
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#f6f5fd]" />
       </div>
-      <div className="relative z-10 mx-auto grid max-w-7xl gap-8 lg:grid-cols-[minmax(18rem,0.72fr)_minmax(0,1.6fr)] lg:items-center lg:gap-10">
-        <div className="relative flex min-h-[25rem] flex-col justify-center pb-36 sm:min-h-[27rem] sm:pb-40 lg:sticky lg:top-24 lg:min-h-[34rem] lg:pb-0 lg:self-start">
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-8 lg:grid-cols-[minmax(18rem,0.72fr)_minmax(0,1.6fr)] lg:items-start lg:gap-10">
+        <div className="relative flex min-h-[25rem] flex-col justify-center pb-36 sm:min-h-[27rem] sm:pb-40 lg:sticky lg:top-24 lg:min-h-0 lg:justify-start lg:self-start lg:pb-0">
           <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] inline-flex w-fit items-center gap-2 rounded-full border border-violet-500 bg-white/75 px-4 py-2 uppercase text-violet-700 text-xs font-bold tracking-[0.08em] leading-5 shadow-sm">
             {content.eyebrow}
           </p>

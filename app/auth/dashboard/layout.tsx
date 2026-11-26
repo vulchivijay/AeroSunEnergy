@@ -26,6 +26,10 @@ export const metadata: Metadata = {
     'solar warranty records',
     'project document management',
     'AeroSun staff workspace',
+    'solar energy system',
+    'solar panel system',
+    'solar panels for homes',
+    'solar installation',
   ],
   alternates: {
     canonical: '/auth/dashboard',

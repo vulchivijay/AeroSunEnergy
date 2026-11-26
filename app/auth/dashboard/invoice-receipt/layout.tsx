@@ -27,6 +27,11 @@ export const metadata: Metadata = {
     'solar payment document',
     'wind turbine invoice',
     'AeroSun Energy transaction receipt',
+    'solar panel price',
+    'solar cost',
+    'solar system price',
+    'cost solar panels',
+    'solar panels for business',
   ],
   alternates: {
     canonical: '/auth/dashboard/invoice-receipt',

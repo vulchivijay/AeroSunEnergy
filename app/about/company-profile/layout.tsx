@@ -21,6 +21,10 @@ export const metadata: Metadata = {
     'PM Surya Ghar rooftop solar',
     'solar battery storage',
     'small wind turbine for agriculture',
+    'solar energy company',
+    'solar power company',
+    'solar panel company',
+    'residential solar companies',
   ],
   alternates: {
     canonical: '/about/company-profile',

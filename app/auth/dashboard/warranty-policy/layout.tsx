@@ -24,6 +24,11 @@ export const metadata: Metadata = {
     'renewable power system warranty',
     'AeroSun Energy support policy',
     'solar and wind system guarantee',
+    'solar panel system',
+    'solar panels for homes',
+    'solar panels for business',
+    'solar installation',
+    'solar panel service',
   ],
   alternates: {
     canonical: '/auth/dashboard/warranty-policy',

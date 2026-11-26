@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     'renewable energy sales pipeline',
     'solar business milestone tracker',
     'AeroSun Energy planning spreadsheet',
+    'solar energy company',
+    'solar power company',
+    'solar for business',
+    'solar panels for business',
+    'commercial solar',
   ],
   alternates: {
     canonical: '/auth/dashboard/nintydays-tracker',
