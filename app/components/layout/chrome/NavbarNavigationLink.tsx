@@ -177,7 +177,7 @@ export function NavbarNavigationLink({
                   href={child.href}
                   onClick={closeMenu}
                   aria-current={childActive ? 'page' : undefined}
-                  className={`flex min-h-10 items-center rounded-lg px-3 py-2 text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300 ${
+                  className={`flex min-h-10 items-center rounded-lg px-3 py-2 text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300 ${
                     childActive
                       ? 'bg-[#18833a] text-white'
                       : 'text-white/85 hover:bg-white/10 hover:text-amber-100'
@@ -225,7 +225,7 @@ export function NavbarNavigationLink({
                   href={child.href}
                   onClick={() => setDismissedDesktopSubmenu(link.href)}
                   aria-current={childActive ? 'page' : undefined}
-                  className={`flex items-center rounded-xl px-3 py-2.5 text-left text-sm transition-colors transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#333333] ${
+                  className={`flex items-center rounded-xl px-3 py-2.5 text-left text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#333333] ${
                     childActive
                       ? 'bg-[#18833a] text-white'
                       : 'text-[#333333] hover:bg-[#18833a] hover:text-white'
