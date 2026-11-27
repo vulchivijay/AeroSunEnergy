@@ -108,7 +108,7 @@ export function HybridEnergySolutionsAndServicesSections({ t }: { t: Translation
                     {hybridPage.labels.requestAssessment}
                   </a>
                   <a
-                    href="/auth/dashboard/customer-enquiry"
+                    href="/contact#contact-form-title"
                     className="inline-flex items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 px-5 py-3 text-base font-semibold text-emerald-700 transition hover:border-emerald-300 hover:bg-emerald-100 tracking-normal"
                   >
                     {hybridPage.labels.enquireNow}

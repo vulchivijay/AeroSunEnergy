@@ -97,7 +97,7 @@ export default async function ProjectsPage() {
 
           <p className="mt-7 rounded-xl border border-slate-200 bg-white p-5 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
             {labels.contactPrompt}{' '}
-            <a href="/auth/dashboard/customer-enquiry" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800 tracking-normal">{labels.contactEnquiryLink}</a>
+            <a href="/contact#contact-form-title" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800 tracking-normal">{labels.contactEnquiryLink}</a>
             {' '}{labels.or}{' '}<a href="/services" className="font-bold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-sky-800 tracking-normal">{labels.contactServicesLink}</a>.
           </p>
         </article>
@@ -132,7 +132,7 @@ export default async function ProjectsPage() {
           <section className="rounded-xl border border-emerald-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
             <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex w-fit rounded-full border border-slate-200 bg-white/75 px-3 py-1.5 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">{labels.startConversation}</p>
             <p className="mt-3 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{labels.startConversationDescription}</p>
-            <a href="/auth/dashboard/customer-enquiry" className="mt-4 inline-flex rounded-full bg-[#101c32] px-4 py-2.5 text-base font-bold text-white transition hover:bg-emerald-900 tracking-normal">{labels.requestConsultation}</a>
+            <a href="/contact#contact-form-title" className="mt-4 inline-flex rounded-full bg-[#101c32] px-4 py-2.5 text-base font-bold text-white transition hover:bg-emerald-900 tracking-normal">{labels.requestConsultation}</a>
           </section>
         </aside>
       </div>
