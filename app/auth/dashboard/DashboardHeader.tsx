@@ -20,9 +20,13 @@ import {
 } from 'lucide-react'
 
 import { useLocale } from '@/lib/LocaleContext'
-import { useState } from 'react'
+import { createContext, useCallback, useState, type ReactNode } from 'react'
 import { useRouter } from 'next/navigation'
 import { useToast } from '@/app/components/ui/ToastContext'
+
+export const DashboardSidebarContentContext = createContext<
+  ((content: ReactNode | null) => void) | null
+>(null)
 
 const dashboardGroups = [
   {
@@ -74,6 +78,11 @@ export default function DashboardHeader({
   const { t } = useLocale()
   const [search, setSearch] = useState('')
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
+  const [sidebarContent, setSidebarContent] = useState<ReactNode | null>(null)
+  const setDashboardSidebarContent = useCallback(
+    (content: ReactNode | null) => setSidebarContent(content),
+    [],
+  )
   const activeItem = dashboardGroups
     .map((group) =>
       group.links.find((item) =>
@@ -99,6 +108,7 @@ export default function DashboardHeader({
     .toUpperCase()
 
   return (
+    <DashboardSidebarContentContext.Provider value={setDashboardSidebarContent}>
     <div className="min-h-screen bg-white text-slate-900">
       <header className="sticky top-0 z-40 h-16 border-b border-slate-200 bg-white">
         <div
@@ -122,13 +132,13 @@ export default function DashboardHeader({
               <Image
                 src={sidebarCollapsed ? '/images/logo.webp' : '/images/logo-company.webp'}
                 alt="AeroSun Energy"
-                width={176}
+                width={220}
                 height={48}
                 priority
                 className={
                   sidebarCollapsed
                     ? 'h-7 w-7 shrink-0 object-contain'
-                    : 'h-auto w-full max-w-[176px] object-contain'
+                    : 'h-auto w-full max-w-[220px] object-contain'
                 }
               />
             </Link>
@@ -241,6 +251,11 @@ export default function DashboardHeader({
               )
             })}
           </nav>
+          {pathname === '/auth/dashboard' && sidebarContent && (
+            <div className={sidebarCollapsed ? 'hidden' : 'mt-1'}>
+              {sidebarContent}
+            </div>
+          )}
           <div className="mt-auto hidden border-t border-slate-100 pt-4 md:block">
             <p className={`mb-2 px-2 uppercase text-slate-400 text-xs font-semibold tracking-wide leading-5 ${
               sidebarCollapsed ? 'hidden' : ''
@@ -273,6 +288,7 @@ export default function DashboardHeader({
         <div className="min-w-0 flex-1">{children}</div>
       </div>
     </div>
+    </DashboardSidebarContentContext.Provider>
   )
 }
 

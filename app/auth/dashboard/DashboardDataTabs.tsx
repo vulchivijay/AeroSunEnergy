@@ -1,7 +1,8 @@
 'use client'
 
-import { useEffect, useState, type FormEvent } from 'react'
+import { useCallback, useContext, useEffect, useState, type FormEvent } from 'react'
 import { useToast } from '@/app/components/ui/ToastContext'
+import { DashboardSidebarContentContext } from './DashboardHeader'
 import { DashboardRecordsTable } from './DashboardRecordsTable'
 import { DashboardCollectionSidebar } from './DashboardCollectionSidebar'
 import { DashboardCollectionOverview } from './DashboardCollectionOverview'
@@ -23,6 +24,7 @@ import {
 
 export default function DashboardDataTabs() {
   const toast = useToast()
+  const setDashboardSidebarContent = useContext(DashboardSidebarContentContext)
   const [collections, setCollections] = useState<string[]>([])
   const [activeCollection, setActiveCollection] = useState('')
   const [role, setRole] = useState<DashboardRole>('monitor')
@@ -38,6 +40,29 @@ export default function DashboardDataTabs() {
   const [editingId, setEditingId] = useState<string | null>(null)
   const [editJson, setEditJson] = useState('')
   const [savingRecord, setSavingRecord] = useState(false)
+
+  const chooseCollection = useCallback((collection: string) => {
+    setActiveCollection(collection)
+    setPage(1)
+    setFormType('all')
+    setEditingId(null)
+  }, [])
+
+  useEffect(() => {
+    if (!setDashboardSidebarContent) return
+    return () => setDashboardSidebarContent(null)
+  }, [setDashboardSidebarContent])
+
+  useEffect(() => {
+    setDashboardSidebarContent?.(
+      <DashboardCollectionSidebar
+        collections={collections}
+        activeCollection={activeCollection}
+        role={role}
+        onChooseCollection={chooseCollection}
+      />,
+    )
+  }, [activeCollection, chooseCollection, collections, role, setDashboardSidebarContent])
 
   useEffect(() => {
     const controller = new AbortController()
@@ -131,13 +156,6 @@ export default function DashboardDataTabs() {
       ? [...new Set(data.rows.flatMap((row) => Object.keys(row)))]
       : []
 
-  function chooseCollection(collection: string) {
-    setActiveCollection(collection)
-    setPage(1)
-    setFormType('all')
-    setEditingId(null)
-  }
-
   async function submitRecord(event: FormEvent<HTMLFormElement>, mode: 'create' | 'update', id?: string) {
     event.preventDefault()
     setSavingRecord(true)
@@ -196,13 +214,6 @@ export default function DashboardDataTabs() {
             setShowCreateForm((current) => !current)
             setEditingId(null)
           }}
-        />
-
-        <DashboardCollectionSidebar
-          collections={collections}
-          activeCollection={activeCollection}
-          role={role}
-          onChooseCollection={chooseCollection}
         />
 
         {canCreateRecords && showCreateForm && (
