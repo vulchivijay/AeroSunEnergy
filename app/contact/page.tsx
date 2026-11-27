@@ -196,7 +196,7 @@ export default async function Contact() {
               </div>
               <div className="flex flex-col justify-between gap-5 border-t border-slate-200 pt-5 sm:flex-row sm:items-end">
                 <p className="max-w-md text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{stepIntroCopy}</p>
-                <Link href="/auth/dashboard/customer-enquiry" className="inline-flex w-fit items-center gap-3 text-sm font-bold text-[#087a61] transition hover:gap-4 tracking-normal">
+                <Link href="#contact-form-title" className="inline-flex w-fit items-center gap-3 text-sm font-bold text-[#087a61] transition hover:gap-4 tracking-normal">
                   {submitEnquiry} <span aria-hidden="true">&rarr;</span>
                 </Link>
               </div>

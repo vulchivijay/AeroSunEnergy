@@ -104,7 +104,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/customer-enquiry',
-        destination: '/auth/dashboard/customer-enquiry',
+        destination: '/contact',
         permanent: true,
       },
       {
