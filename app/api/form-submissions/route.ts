@@ -3,7 +3,7 @@ import { z } from 'zod'
 import { ObjectId } from 'mongodb'
 import { withApiLogging } from '@/lib/apiLogging'
 import { getDatabase, type WebsiteFormSubmissionDocument, type WebsiteFormSubmissionValue } from '@/lib/auth/database'
-import { getFormNotificationRecipient, queueFormNotification } from '@/lib/formSubmissionNotification'
+import { queueFormNotification } from '@/lib/formSubmissionNotification'
 import { isValidEmailAddress, normalizeIndianMobileNumber } from '@/lib/validation/contact'
 import { electricityBillOptions, financingOptions, indianStates, solarNeedOptions } from '@/lib/contactFormOptions'
 
@@ -384,12 +384,6 @@ async function postSubmission(request: Request) {
   const { formType } = parsed.data
   const data = normalizeSubmissionData(formType, parsed.data.data)
   const referenceCode = `ASF-${randomBytes(8).toString('hex').toUpperCase()}`
-  const notificationEmail = getFormNotificationRecipient()
-
-  if (!notificationEmail) {
-    console.error('Website form notification recipient is invalid.')
-    return jsonResponse({ error: 'notification_configuration_invalid' }, 503)
-  }
 
   try {
     const now = new Date()
@@ -405,7 +399,7 @@ async function postSubmission(request: Request) {
     })
 
     try {
-      await queueFormNotification(database, notificationEmail, formType, referenceCode, now)
+      await queueFormNotification(database, formType, referenceCode, data, now)
     } catch (error) {
       console.error(
         'Website form was saved, but its email notification could not be queued.',

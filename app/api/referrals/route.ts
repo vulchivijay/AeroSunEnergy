@@ -3,7 +3,7 @@ import { z } from 'zod'
 import { ObjectId } from 'mongodb'
 import { withApiLogging } from '@/lib/apiLogging'
 import { getDatabase } from '@/lib/auth/database'
-import { getFormNotificationRecipient, queueFormNotification } from '@/lib/formSubmissionNotification'
+import { queueFormNotification } from '@/lib/formSubmissionNotification'
 import { createIndianMobileSchema } from '@/lib/validation/contact'
 
 export const runtime = 'nodejs'
@@ -126,12 +126,6 @@ async function postReferral(request: Request) {
 
   const referral = parsed.data
   const referenceCode = `ASR-${randomBytes(8).toString('hex').toUpperCase()}`
-  const notificationEmail = getFormNotificationRecipient()
-
-  if (!notificationEmail) {
-    console.error('Referral notification recipient is invalid.')
-    return jsonResponse({ error: 'notification_configuration_invalid' }, 503)
-  }
 
   try {
     const now = new Date()
@@ -152,7 +146,21 @@ async function postReferral(request: Request) {
     })
 
     try {
-      await queueFormNotification(database, notificationEmail, 'referral', referenceCode, now)
+      await queueFormNotification(
+        database,
+        'referral',
+        referenceCode,
+        {
+          referrerName: referral.referrerName,
+          referrerPhone: referral.referrerPhone,
+          referredName: referral.referredName,
+          referredPhone: referral.referredPhone,
+          postalCode: referral.postalCode,
+          propertyType: referral.propertyType,
+          consent: referral.consent,
+        },
+        now,
+      )
     } catch (error) {
       console.error(
         'Referral was saved, but its email notification could not be queued.',
