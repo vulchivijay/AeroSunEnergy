@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { ObjectId } from 'mongodb'
 import { withApiLogging } from '@/lib/apiLogging'
 import { getDatabase, type WebsiteFormSubmissionDocument, type WebsiteFormSubmissionValue } from '@/lib/auth/database'
+import { getFormNotificationRecipient, queueFormNotification } from '@/lib/formSubmissionNotification'
 import { isValidEmailAddress, normalizeIndianMobileNumber } from '@/lib/validation/contact'
 import { electricityBillOptions, financingOptions, indianStates, solarNeedOptions } from '@/lib/contactFormOptions'
 
@@ -383,10 +384,17 @@ async function postSubmission(request: Request) {
   const { formType } = parsed.data
   const data = normalizeSubmissionData(formType, parsed.data.data)
   const referenceCode = `ASF-${randomBytes(8).toString('hex').toUpperCase()}`
+  const notificationEmail = getFormNotificationRecipient()
+
+  if (!notificationEmail) {
+    console.error('Website form notification recipient is invalid.')
+    return jsonResponse({ error: 'notification_configuration_invalid' }, 503)
+  }
 
   try {
     const now = new Date()
-    await (await getDatabase()).collection<WebsiteFormSubmissionDocument>('website_form_submissions').insertOne({
+    const database = await getDatabase()
+    await database.collection<WebsiteFormSubmissionDocument>('website_form_submissions').insertOne({
       _id: new ObjectId(),
       reference_code: referenceCode,
       form_type: formType,
@@ -395,6 +403,19 @@ async function postSubmission(request: Request) {
       created_at: now,
       updated_at: now,
     })
+
+    try {
+      await queueFormNotification(database, notificationEmail, formType, referenceCode, now)
+    } catch (error) {
+      console.error(
+        'Website form was saved, but its email notification could not be queued.',
+        getErrorCode(error),
+      )
+      return jsonResponse(
+        { error: 'email_notification_unavailable', referenceCode, submissionSaved: true },
+        503,
+      )
+    }
 
     return jsonResponse({ referenceCode }, 201)
   } catch (error) {
