@@ -73,7 +73,7 @@ export function SolarCalculationResults({
           <p className="uppercase text-slate-500 text-xs font-semibold tracking-wide leading-5">
             {e.annualSavings}
           </p>
-          <p className="mt-3 text-emerald-600 text-lg sm:text-xl font-semibold tracking-normal leading-snug tabular-nums">
+          <p className="mt-3 text-emerald-700 text-lg sm:text-xl font-semibold tracking-normal leading-snug tabular-nums">
             ~<DigitalNumber value={formatCurrency(calculation.annualSavings)} />
           </p>
         </article>
