@@ -1,7 +1,6 @@
 import { DigitalNumber } from "@/app/components/ui/DigitalNumber";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import { getSliderImagePath } from "@/lib/sliderImages";
 import Slider from "@/app/components/ui/Slider";
 import OptimizedImage from "@/app/components/ui/OptimizedImage";
 import { HeroSlideContent, type HeroSlideData } from "@/app/components/ui/HeroSlideContent";
@@ -11,17 +10,8 @@ import type { Translations } from '@/lib/LocaleContext';
 
 type Slide = HeroSlideData & { panelClass: string }
 
-const homeSlideImageNumbers = [1, 2, 3, 7, 8, 9, 13, 14, 15]
-
 function HomeHeroSlider({ t }: { t: Translations }) {
-  const slides: Slide[] = t.home.heroSlider.map((slide, index) => {
-    const imageNumber = homeSlideImageNumbers[index]
-    if (imageNumber === undefined) {
-      throw new Error(`Missing image mapping for home hero slide ${index + 1}`)
-    }
-
-    return { ...slide, image: getSliderImagePath(imageNumber) }
-  })
+  const slides: Slide[] = t.home.heroSlider
 
   return (
     <Slider autoplay interval={5000} pauseOnHover ariaLabel={t.home.heroSliderAriaLabel}>
