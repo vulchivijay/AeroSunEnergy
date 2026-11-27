@@ -83,7 +83,7 @@ export default function WarrantyPolicyPage() {
           </header>
 
           <div className="space-y-5 p-4 sm:p-6 lg:p-7">
-            <div className="grid gap-5 lg:grid-cols-2">
+            <div className="grid grid-cols-1 gap-5">
               <Field
                 label={labels.fields.customerName.label}
                 name="customerName"

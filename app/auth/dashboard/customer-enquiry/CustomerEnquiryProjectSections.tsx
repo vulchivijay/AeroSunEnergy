@@ -18,7 +18,7 @@ export function CustomerEnquiryProjectSections({
     <>
       <section className="rounded-xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
         <CustomerEnquirySectionTitle number="01" title={page.sections[0]} />
-        <div className="grid gap-3 text-base text-slate-700 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-3 text-base text-slate-700">
           <p>
             <strong className="tracking-normal">{page.companyName}</strong>
           </p>
@@ -51,7 +51,7 @@ export function CustomerEnquiryProjectSections({
 
       <section className="rounded-xl border border-sky-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
         <CustomerEnquirySectionTitle number="02" title={page.sections[1]} />
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-3">
           <CustomerEnquiryTextField
             label={page.customerName}
             name="customer_name"
@@ -124,7 +124,7 @@ export function CustomerEnquiryProjectSections({
 
       <section className="rounded-xl border border-emerald-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
         <CustomerEnquirySectionTitle number="03" title={page.sections[2]} />
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-3">
           <CustomerEnquiryTextField
             label={page.projectName}
             name="project_name"

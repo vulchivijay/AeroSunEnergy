@@ -77,7 +77,7 @@ export default function CustomerAgreementPage() {
           <div className="absolute inset-20 rounded-full border border-indigo-100/10" />
           <div className="absolute inset-32 rounded-full border border-indigo-100/10" />
         </div>
-        <div className="mx-auto my-6 grid w-[calc(100%-2rem)] max-w-7xl items-center gap-10 rounded-xl border border-slate-200 bg-white/20 px-5 py-14 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:px-8 sm:py-20 lg:my-8 lg:grid-cols-[1fr_auto] lg:px-10">
+        <div className="mx-auto my-6 grid grid-cols-1 w-[calc(100%-2rem)] max-w-7xl items-center gap-10 rounded-xl border border-slate-200 bg-white/20 px-5 py-14 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:px-8 sm:py-20 lg:my-8 lg:px-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-indigo-100/20 bg-white/5 px-3 py-1.5 text-xs uppercase text-indigo-100 text-xs font-semibold tracking-wide leading-5">
               <span className="shrink-0 h-2 w-2 rounded-full bg-current shadow-sm" />
@@ -144,9 +144,9 @@ export default function CustomerAgreementPage() {
               </div>
             </header>
 
-            <div className="grid gap-5 xl:grid-cols-[1.2fr_0.8fr]">
+            <div className="grid grid-cols-1 gap-5">
               <section className={`space-y-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-[#f1f2f6] to-white' : 'bg-gradient-to-br from-white to-[#f1f2f6]'}`}>
-                <div className="grid gap-4 lg:grid-cols-2">
+                <div className="grid grid-cols-1 gap-4">
                   <div className="rounded-xl border border-sky-200 bg-linear-to-br from-[#ebf8ff] via-white to-[#f5fbff] p-4 shadow-sm sm:p-5">
                     <div className="mb-3 flex items-center gap-3">
                       <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-sky-700 to-cyan-700 text-lg font-bold text-white shadow-sm tracking-normal">1</span>
@@ -179,10 +179,10 @@ export default function CustomerAgreementPage() {
                     <h2 className="text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{formCopy.projectDetails}</h2>
                   </div>
 
-                  <div className="grid gap-4 md:grid-cols-2">
+                  <div className="grid grid-cols-1 gap-4">
                     <fieldset className="md:col-span-2">
                       <legend className="mb-2 block text-xs uppercase text-slate-700 text-xs font-semibold tracking-wide leading-5">{formCopy.projectType}</legend>
-                      <div className="grid grid-cols-2 gap-2 rounded-xl border border-violet-200 bg-white/80 p-2.5 sm:grid-cols-3">
+                      <div className="grid grid-cols-1 gap-2 rounded-xl border border-violet-200 bg-white/80 p-2.5 sm:grid-cols-3">
                         {formCopy.projectTypeOptions.map((option) => (
                           <label key={option} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-2 py-2 text-xs text-slate-700 text-xs sm:text-sm font-semibold tracking-normal leading-5">
                             <input type="radio" value={option} {...register('projectType')} className="h-4 w-4 accent-violet-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-700" />
@@ -199,7 +199,7 @@ export default function CustomerAgreementPage() {
                   </div>
                 </div>
 
-                <div className="grid gap-4 lg:grid-cols-2">
+                <div className="grid grid-cols-1 gap-4">
                   <section className={`rounded-xl border border-amber-200 p-4 shadow-sm sm:p-5 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
                     <div className="mb-3 flex items-center gap-3 border-b border-amber-200 pb-3">
                       <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-orange-500 text-lg font-bold text-slate-950 shadow-sm tracking-normal">4</span>
@@ -255,7 +255,7 @@ export default function CustomerAgreementPage() {
                 </section>
               </section>
 
-              <aside className="rounded-xl border border-indigo-200 bg-linear-to-br from-[#0b1e46] via-[#132c5e] to-[#0a1d45] p-4 text-white shadow-sm sm:p-5">
+              <section className="rounded-xl border border-indigo-200 bg-linear-to-br from-[#0b1e46] via-[#132c5e] to-[#0a1d45] p-4 text-white shadow-sm sm:p-5">
                 <div className="mb-4 flex items-center gap-3 border-b border-slate-700 pb-3">
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-lg font-bold tracking-normal">7</span>
                   <h2 className="text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{formCopy.acceptance}</h2>
@@ -269,7 +269,7 @@ export default function CustomerAgreementPage() {
                   <Field label={formCopy.customerName} name="acceptanceCustomerName" placeholder={formCopy.customerNameAcceptancePlaceholder} register={register} compact dark />
                   <Field label={formCopy.signature} name="signature" placeholder={formCopy.signaturePlaceholder} register={register} compact dark />
 
-                  <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="grid grid-cols-1 gap-4">
                     <Field label={formCopy.date} name="acceptanceDate" placeholder={formCopy.datePlaceholder} register={register} compact dark />
                     <Field label={formCopy.place} name="acceptancePlace" placeholder={formCopy.placePlaceholder} register={register} compact dark />
                   </div>
@@ -290,7 +290,7 @@ export default function CustomerAgreementPage() {
                   </button>
 
                 </div>
-              </aside>
+              </section>
             </div>
           </form>
         </div>

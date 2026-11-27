@@ -39,7 +39,7 @@ export default function ResearchDevelopmentPage() {
           <div className="absolute inset-32 rounded-full border border-slate-700" />
         </div>
 
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:px-10 lg:py-24">
+        <div className="mx-auto grid grid-cols-1 max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-800/20 bg-white/70 px-3 py-1.5 uppercase text-emerald-800 text-xs font-semibold tracking-wide leading-5">
               <span className="shrink-0 h-2 w-2 rounded-full bg-current" />
@@ -116,7 +116,7 @@ export default function ResearchDevelopmentPage() {
                   {navigationSections.length} {copy.text[12]}
                 </span>
               </summary>
-              <ol className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+              <ol className="mt-5 grid grid-cols-1 gap-2 lg:grid-cols-3">
                 {navigationSections.map(({ heading }, index) => (
                   <li key={heading.id}>
                     <a

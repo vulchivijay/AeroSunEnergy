@@ -178,14 +178,7 @@ export default function DashboardDataTabs() {
   }
 
   return (
-    <section className="mt-6 grid overflow-hidden rounded-xl border border-slate-200 bg-white/25 shadow-sm backdrop-blur-xl lg:grid-cols-[230px_minmax(0,1fr)]">
-      <DashboardCollectionSidebar
-        collections={collections}
-        activeCollection={activeCollection}
-        role={role}
-        onChooseCollection={chooseCollection}
-      />
-
+    <section className="mt-6 overflow-hidden rounded-xl border border-slate-200 bg-white/25 shadow-sm backdrop-blur-xl">
       <div className="min-w-0 p-4 sm:p-6 lg:p-8" aria-live="polite">
         <DashboardCollectionOverview
           activeCollection={activeCollection}
@@ -203,6 +196,13 @@ export default function DashboardDataTabs() {
             setShowCreateForm((current) => !current)
             setEditingId(null)
           }}
+        />
+
+        <DashboardCollectionSidebar
+          collections={collections}
+          activeCollection={activeCollection}
+          role={role}
+          onChooseCollection={chooseCollection}
         />
 
         {canCreateRecords && showCreateForm && (

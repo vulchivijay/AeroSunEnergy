@@ -34,7 +34,7 @@ export default function NinetyDayTrackerPage() {
           <div className="absolute inset-32 rounded-full border border-slate-700" />
         </div>
 
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:px-10 lg:py-24">
+        <div className="mx-auto grid grid-cols-1 max-w-7xl items-center gap-12 px-5 py-14 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -146,7 +146,7 @@ export default function NinetyDayTrackerPage() {
       </DashboardCollapsibleSection>
 
       <section className="mx-auto max-w-7xl bg-gradient-to-br from-white to-[#f1f2f6] px-5 pt-14 pb-14 sm:px-8 sm:pt-20 sm:pb-20 lg:px-10">
-        <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
+        <div className="grid grid-cols-1 gap-10 lg:gap-16">
           <div>
             <p className="uppercase text-[#9b4b42] text-xs font-semibold tracking-wide leading-5">
               {trackerPage.workbook.eyebrow}

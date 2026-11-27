@@ -9,7 +9,7 @@ export function TrackerActionPlanCards({
   stages: Translations["ninetyDayTrackerPage"]["actionPlan"];
 }) {
   return (
-    <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+    <div className="grid grid-cols-1 gap-5 xl:grid-cols-3">
       {stages.map((stage: ActionPlanStage, index) => (
         <div
           key={stage.title}
@@ -50,7 +50,7 @@ export function TrackerPhaseCards({
   expectedResultLabel: string;
 }) {
   return (
-    <div className="grid gap-5 lg:grid-cols-2">
+    <div className="grid grid-cols-1 gap-5">
       {phases.map((phase: TrackerPhase, index) => (
         <article
           key={phase.period}
