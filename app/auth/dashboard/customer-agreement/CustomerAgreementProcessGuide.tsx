@@ -8,7 +8,7 @@ export function CustomerAgreementProcessGuide({
   content: CustomerAgreementCopy;
 }) {
   return (
-    <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[minmax(0,1fr)_290px] lg:gap-12 lg:px-10 lg:py-16">
+    <div className="mx-auto grid grid-cols-1 max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-14 lg:gap-12 lg:px-10 lg:py-16">
       <article className="min-w-0">
         <section className="mb-8 rounded-xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-6 shadow-sm sm:p-8">
           <div className="flex items-start gap-4">
@@ -32,7 +32,7 @@ export function CustomerAgreementProcessGuide({
             ))}
           </div>
           <h2 className="mt-6 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.overview.coreStepsTitle}</h2>
-          <ol className="mt-3 grid gap-2 sm:grid-cols-2">
+          <ol className="mt-3 grid grid-cols-1 gap-2">
             {content.overview.steps.map((step, index) => (
               <li key={step} className="flex gap-3 rounded-xl bg-[#f4f8fc] p-3 text-base leading-5 text-slate-600">
                 <span className="font-mono font-bold text-indigo-700 tracking-normal tabular-nums">{String(index + 1).padStart(2, "0")}</span>

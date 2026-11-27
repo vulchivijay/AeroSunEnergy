@@ -40,7 +40,7 @@ export default function TermsPage() {
         </div>
       </header>
 
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-12 lg:px-10 lg:py-16">
+      <div className="mx-auto grid grid-cols-1 max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-14 lg:gap-12 lg:px-10 lg:py-16">
         <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
           <nav aria-label={content.navLabel} className="overflow-hidden rounded-xl border border-slate-200 bg-white">
             <div className="border-b border-slate-200 px-5 py-4">
@@ -93,7 +93,7 @@ export default function TermsPage() {
                   </span>
                   <div className="min-w-0">
                     <p className="mt-3 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{section.content}</p>
-                    <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
+                    <ul className="mt-5 grid grid-cols-1 gap-2.5">
                       {section.bullets.map((item) => (
                         <li key={item} className="flex items-start gap-3 rounded-xl bg-slate-50 px-3 py-3 text-sm leading-7 text-slate-700">
                           <span className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-700 text-xs font-bold text-white tracking-normal">
@@ -109,7 +109,7 @@ export default function TermsPage() {
             ))}
           </div>
 
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
+          <div className="mt-8 grid grid-cols-1 gap-5">
             <section className={`rounded-xl p-6 ${content.sections.length % 2 === 0 ? 'bg-gradient-to-br from-white to-[#f1f2f6]' : 'bg-gradient-to-br from-[#f1f2f6] to-white'}`}>
               <p className="uppercase text-amber-800 text-xs font-semibold tracking-wide leading-5">{content.keyPointsTitle}</p>
               <h2 className="mt-2 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{content.responsibleTitle}</h2>

@@ -77,7 +77,7 @@ export default function PurchaseOrderPage() {
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="grid grid-cols-1 gap-6">
           <Card className="overflow-hidden border border-slate-200 bg-white/85 shadow-sm backdrop-blur-md">
             <CardContent className="p-5 sm:p-7 lg:p-8">
               <div className="space-y-6">

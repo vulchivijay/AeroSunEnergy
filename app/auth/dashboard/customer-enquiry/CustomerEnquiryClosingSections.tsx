@@ -20,11 +20,11 @@ export function CustomerEnquiryClosingSections({
         <p className="mb-4 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {page.paymentScheduleIntro}
         </p>
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-3">
           {paymentMilestones.map((milestone, index) => (
             <div
               key={milestone}
-              className="grid gap-3 rounded-xl border border-slate-200 bg-white p-4 sm:grid-cols-2"
+              className="grid grid-cols-1 gap-3 rounded-xl border border-slate-200 bg-white p-4"
             >
               <p className="self-center text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
                 {milestone}
@@ -53,7 +53,7 @@ export function CustomerEnquiryClosingSections({
         <p className="mt-3 text-right text-emerald-900 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {page.totalPaymentPercentage}
         </p>
-        <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-5 grid grid-cols-1 gap-3 lg:grid-cols-3">
           <TextField
             label={page.accountName}
             name="bank_account_name"
@@ -71,7 +71,7 @@ export function CustomerEnquiryClosingSections({
 
       <section className="rounded-xl border border-slate-200 bg-gradient-to-br from-white to-[#f1f2f6] p-5">
         <SectionTitle number="13" title={page.sections[12]} />
-        <ol className="grid gap-2 sm:grid-cols-2">
+        <ol className="grid grid-cols-1 gap-2">
           {page.termsAndConditions.map((term, index) => (
             <li
               key={term}
@@ -91,7 +91,7 @@ export function CustomerEnquiryClosingSections({
         <p className="mb-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {page.acceptanceCopy}
         </p>
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-3">
           <TextField label={page.customerName} name="acceptance_customer_name" required minLength={2} />
           <TextField label={page.signatureName} name="customer_signature" required minLength={2} />
           <TextField label={page.date} name="customer_acceptance_date" type="date" required />
@@ -104,7 +104,7 @@ export function CustomerEnquiryClosingSections({
         <p className="mb-4 text-slate-800 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {page.forCompany}
         </p>
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-3">
           <TextField label={page.authorisedRepresentative} name="authorised_representative" required minLength={2} />
           <TextField label={page.designation} name="authorised_designation" required />
           <TextField label={page.authorisedSignature} name="authorised_signature" required minLength={2} />

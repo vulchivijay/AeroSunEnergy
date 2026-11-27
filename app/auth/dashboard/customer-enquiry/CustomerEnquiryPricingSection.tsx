@@ -67,7 +67,7 @@ export function CustomerEnquiryPricingSection({ page }: { page: CustomerEnquiryC
           </tbody>
         </table>
       </div>
-      <div className="mt-4 grid gap-3 sm:grid-cols-2">
+      <div className="mt-4 grid grid-cols-1 gap-3">
         <CustomerEnquiryTextField
           label={page.totalAmountInWords}
           name="total_amount_words"

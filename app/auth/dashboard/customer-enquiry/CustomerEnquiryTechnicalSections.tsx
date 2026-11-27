@@ -29,7 +29,7 @@ export function CustomerEnquiryTechnicalSections({
         <h3 className="mb-3 mt-5 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
           {page.generationAssumptions}
         </h3>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-3">
           {page.generationAssumptionFields.map(({ label, name }) => (
             <CustomerEnquiryTextField key={name} label={label} name={name} />
           ))}
@@ -41,7 +41,7 @@ export function CustomerEnquiryTechnicalSections({
 
       <section className="rounded-xl border border-slate-200 bg-gradient-to-br from-[#f1f2f6] to-white p-5">
         <CustomerEnquirySectionTitle number="08" title={page.sections[7]} />
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-3">
           {page.financialParameters.map((parameter) => (
             <CustomerEnquiryTextField
               key={parameter.name}
@@ -56,7 +56,7 @@ export function CustomerEnquiryTechnicalSections({
         <h3 className="mb-3 mt-5 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
           {page.calculationAssumptions}
         </h3>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-3">
           <CustomerEnquiryTextField
             label={page.electricityTariff}
             name="electricity_tariff"
@@ -104,7 +104,7 @@ export function CustomerEnquiryTechnicalSections({
         <p className="mb-4 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {page.scopeInstructions}
         </p>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-3">
           {page.scopeActivities.map((activity, index) => (
             <CustomerEnquirySelectField
               key={activity}
@@ -118,7 +118,7 @@ export function CustomerEnquiryTechnicalSections({
         <h3 className="mb-3 mt-6 text-slate-900 text-xl sm:text-2xl font-semibold !tracking-tight leading-snug">
           {page.scheduleTitle}
         </h3>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-4">
           {page.scheduleActivities.map((activity, index) => (
             <CustomerEnquiryTextField
               key={activity}
@@ -138,7 +138,7 @@ export function CustomerEnquiryTechnicalSections({
         <p className="mb-4 text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
           {page.exclusionsIntro}
         </p>
-        <ol className="grid gap-2 sm:grid-cols-2">
+        <ol className="grid grid-cols-1 gap-2">
           {page.exclusions.map((item, index) => (
             <li
               key={item}

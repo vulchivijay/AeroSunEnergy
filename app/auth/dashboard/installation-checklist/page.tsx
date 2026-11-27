@@ -69,7 +69,7 @@ export default function InstallationChecklistPage() {
         <div className="absolute inset-20 rounded-full border border-amber-100/10" />
         <div className="absolute inset-32 rounded-full border border-amber-100/10" />
       </div>
-      <div className="mx-auto my-6 grid w-[calc(100%-2rem)] max-w-7xl items-center gap-10 rounded-xl border border-slate-200 bg-white/20 px-5 py-14 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:px-8 sm:py-20 lg:my-8 lg:grid-cols-[1fr_auto] lg:px-10">
+      <div className="mx-auto my-6 grid grid-cols-1 w-[calc(100%-2rem)] max-w-7xl items-center gap-10 rounded-xl border border-slate-200 bg-white/20 px-5 py-14 shadow-sm backdrop-blur-2xl ring-1 ring-inset ring-white/15 sm:px-8 sm:py-20 lg:my-8 lg:px-10">
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-amber-100/20 bg-white/5 px-3 py-1.5 text-xs uppercase text-amber-100 text-xs font-semibold tracking-wide leading-5">
             <span className="shrink-0 h-2 w-2 rounded-full bg-current shadow-sm" />
@@ -98,7 +98,7 @@ export default function InstallationChecklistPage() {
       </div>
     </header>
 
-    <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-12 lg:px-10 lg:py-16">
+    <div className="mx-auto grid grid-cols-1 max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-14 lg:gap-12 lg:px-10 lg:py-16">
       <article className="min-w-0">
         <div className="mb-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
           <div className="flex items-start gap-4">
@@ -190,8 +190,9 @@ export default function InstallationChecklistPage() {
             {labels.projectEssentialsItems.map((item) => <li key={item}>{item}</li>)}
           </ul>
         </section>
+      </aside>
 
-        <div className="rounded-xl border border-amber-200 bg-[#101c32] p-5 text-white shadow-sm">
+        <section className="rounded-xl border border-amber-200 bg-[#101c32] p-5 text-white shadow-sm">
           <p className="uppercase text-amber-300 text-xs font-semibold tracking-wide leading-5">{labels.submissionForm}</p>
           <h2 className="mt-2 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{labels.recordStatus}</h2>
           <form
@@ -254,8 +255,7 @@ export default function InstallationChecklistPage() {
             </button>
 
           </form>
-        </div>
-      </aside>
+        </section>
     </div>
   </main>
 	)

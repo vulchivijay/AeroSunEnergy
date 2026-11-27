@@ -71,7 +71,7 @@ export default function CustomerEnquiryPage() {
         </h1>
         <p className="mt-3 max-w-3xl text-slate-600 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{page.description}</p>
       </header>
-      <div className="mx-auto grid max-w-7xl items-start gap-8 lg:grid-cols-[minmax(0,1fr)_16rem]">
+      <div className="mx-auto grid grid-cols-1 max-w-7xl items-start gap-8">
         <form
           onSubmit={handleSubmit}
           onInput={(event) => {
@@ -103,7 +103,7 @@ export default function CustomerEnquiryPage() {
             <p className="mt-3 uppercase text-emerald-50/80 text-xs font-semibold tracking-wide leading-5">
               {page.proposalTitle}
             </p>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-5 grid grid-cols-1 gap-3 lg:grid-cols-4">
               <TextField
                 label={page.quotationReference}
                 name="quotation_reference"
