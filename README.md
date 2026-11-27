@@ -168,10 +168,10 @@ Cloud Run service environment variables and secrets are available to the running
 
 ```text
 _MONGODB_URI=FIRESTORE_MONGODB_COMPATIBLE_CONNECTION_STRING
-_MONGODB_DB=FIRESTORE_DATABASE_ID
+_MONGODB_DB=aerosunenergy-db
 ```
 
-Use the exact connection string and authentication options shown for the Firestore MongoDB-compatible endpoint. Do not add `NEXT_PUBLIC_` to these server-only variables.
+Use the exact connection string and authentication options shown for the Firestore MongoDB-compatible endpoint. The app and email queue use the `aerosunenergy-db` database. Do not add `NEXT_PUBLIC_` to these server-only variables.
 
 Create the required indexes before deployment (the application also ensures them on its first database connection):
 
@@ -183,7 +183,7 @@ This creates indexes for the `auth_users`, `auth_sessions`, `solar_referrals`, a
 
 Website form submissions are stored in `website_form_submissions` with their form-specific values in the `payload` document. Contact submissions include the solar need, state, monthly electricity-bill range, and optional financing interest alongside the customer's contact details; MongoDB stores these payloads without a separate collection migration.
 
-After saving a website form or referral, the server creates an email-queue document in the `mail` collection for the Firebase Trigger Email extension. Configure the extension to watch `mail` in the same Firestore database. The notification includes the form type and reference code, not the submitted payload; staff can view details in the dashboard. The recipient defaults to `customercare@aerosunenergy.in`; set the server-only `FORM_SUBMISSION_NOTIFICATION_EMAIL` variable on Cloud Run to use a different inbox. If the form is stored but its email document cannot be queued, the API reports `email_notification_unavailable` and includes the submission reference.
+After a successful form or referral save, the server writes an email request to `aerosunenergy-db.mail` through the same server-side Firestore MongoDB-compatible connection. Configure the Trigger Email extension to watch the `mail` collection in the `aerosunenergy-db` database and configure its SMTP settings. Notifications go to `customercare@aerosunenergy.in` and include submitted details, except banking and signature fields. If the form is stored but its email request cannot be queued, the API reports `email_notification_unavailable` and includes the submission reference.
 
 New accounts are created in the `auth_users` collection with `approved: false` and `role: "monitor"`. They cannot sign in until an administrator or operator sets `approved: true` and chooses `role: "monitor"` or `"operator"` in Firestore. Only an admin can assign the `"admin"` role. Set `approved: false` to suspend sign-in. Admins can read and manage visible collections; operators can read visible collections, manage business records, and approve/assign monitor or operator roles; monitors are read-only. The `auth_sessions` collection is intentionally hidden from the dashboard. Credential and token fields are always redacted from dashboard output. Existing accounts without `approved: true` remain unapproved until reviewed.
 
