@@ -4284,6 +4284,10 @@
           {
             "label": "ಉತ್ಪನ್ನಗಳ ಪಟ್ಟಿ",
             "href": "/about/product-catalogue"
+          },
+          {
+            "label": "ಸಂಶೋಧನೆ ಮತ್ತು ಅಭಿವೃದ್ಧಿ",
+            "href": "/about/research"
           }
         ]
       },

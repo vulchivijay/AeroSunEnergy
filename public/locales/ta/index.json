@@ -4284,6 +4284,10 @@
           {
             "label": "தயாரிப்பு பட்டியல்",
             "href": "/about/product-catalogue"
+          },
+          {
+            "label": "ஆராய்ச்சி & மேம்பாடு",
+            "href": "/about/research"
           }
         ]
       },

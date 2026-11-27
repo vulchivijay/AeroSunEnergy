@@ -45,7 +45,7 @@ const formatSystemCapacity = (capacityKw: number, capacityUnit: string) =>
 const clamp = (value: number, min: number, max: number) =>
   Math.min(max, Math.max(min, value))
 
-export function SolarEstimation() {
+export function SolarEstimation({ showGstGuide = true }: { showGstGuide?: boolean }) {
   const { t } = useLocale()
   const toast = useToast()
   const e = t.estimation
@@ -290,10 +290,12 @@ export function SolarEstimation() {
           onCancel={() => setShowLeadForm(false)}
         />
       )}
-      <SolarGstGuide
-        guide={solarGstGuide}
-        titleId={`${leadFormId}-gst-title`}
-      />
+      {showGstGuide && (
+        <SolarGstGuide
+          guide={solarGstGuide}
+          titleId={`${leadFormId}-gst-title`}
+        />
+      )}
     </section>
   )
 }

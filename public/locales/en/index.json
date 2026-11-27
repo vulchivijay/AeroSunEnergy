@@ -4284,6 +4284,10 @@
           {
             "label": "Product Catalogue",
             "href": "/about/product-catalogue"
+          },
+          {
+            "label": "Research & development",
+            "href": "/about/research"
           }
         ]
       },

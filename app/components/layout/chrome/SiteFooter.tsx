@@ -114,7 +114,7 @@ export default function Footer() {
               <span className="h-px w-8 bg-white" />
               {t.navbar.brandName}
             </p>
-            <h2 className="mt-5 text-slate-200 text-3xl sm:text-4xl leading-snug">
+            <h2 className="mt-5 text-slate-200 text-3xl sm:text-4xl font-semibold leading-snug">
               {footer.heroTitle}
             </h2>
             <p className="mt-5 max-w-2xl text-slate-100 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">
