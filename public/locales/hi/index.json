@@ -55,6 +55,10 @@
           {
             "label": "उत्पाद कैटलॉग",
             "href": "/about/product-catalogue"
+          },
+          {
+            "label": "अनुसंधान एवं विकास",
+            "href": "/about/research"
           }
         ]
       },

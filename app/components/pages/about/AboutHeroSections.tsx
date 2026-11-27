@@ -24,6 +24,7 @@ export function AboutHeroSections({ t }: { t: Translations }) {
       leadership: a.ctaLeadership,
       companyProfile: a.ctaCompanyProfile,
       productCatalogue: a.ctaProductCatalogue,
+      researchDevelopment: t.navbar.dashboardPages.researchDevelopment,
       storyBadge: a.storyBadge,
       storyHeading: a.storyHeading,
       governanceBadge: a.governanceBadge,
@@ -83,6 +84,9 @@ export function AboutHeroSections({ t }: { t: Translations }) {
               </Link>
               <Link href="/about/product-catalogue" className="rounded-full border border-[#137c63]/30 bg-white/50 px-5 py-3 text-sm font-bold text-[#075e4b] transition hover:bg-white/80 tracking-normal">
                 {pageStrings.productCatalogue}
+              </Link>
+              <Link href="/about/research" className="rounded-full border border-[#137c63]/30 bg-white/50 px-5 py-3 text-sm font-bold text-[#075e4b] transition hover:bg-white/80 tracking-normal">
+                {pageStrings.researchDevelopment}
               </Link>
             </div>
           </div>
