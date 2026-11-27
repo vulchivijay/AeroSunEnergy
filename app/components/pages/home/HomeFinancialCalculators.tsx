@@ -4,7 +4,7 @@ export function HomeFinancialCalculators() {
 
   return (
     <>
-      <SolarEstimation />
+      <SolarEstimation showGstGuide={false} />
       <BankEMICalculator />
     </>
   )

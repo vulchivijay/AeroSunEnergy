@@ -76,9 +76,50 @@ export default async function Contact() {
     <main className="overflow-hidden">
       <section className="bg-gradient-to-br from-white to-[#f1f2f6]overflow-hidden text-slate-950">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-          <div className="mb-5 flex items-center justify-between border-b border-slate-200 pb-4">
+          <div className="flex items-center justify-between border-b border-slate-200 pb-5">
             <p className="uppercase text-[#137c63] text-xs font-semibold tracking-wide leading-5">AeroSun Energy <span className="mx-2 text-amber-600">/</span> {contactUs}</p>
             <span className="hidden uppercase text-slate-500 sm:block text-xs font-semibold tracking-wide leading-5">{location}</span>
+          </div>
+          <div className="pt-7 pb-12 sm:pt-9 sm:pb-14 lg:pt-11 lg:pb-16" aria-labelledby="contact-form-title">
+            <div className="overflow-hidden mx-auto max-w-7xl rounded-xl border border-slate-200">
+              <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
+                <div className="bg-[linear-gradient(145deg,#bfdbfe_0%,#ddd6fe_52%,#fbcfe8_100%)] p-6 text-slate-900 sm:p-9">
+                  <p className="uppercase text-indigo-900 text-xs font-semibold tracking-wide leading-5">{contactUs}</p>
+                  <h2 id="contact-form-title" className="mt-3 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{c.form.title}</h2>
+                  <p className="mt-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{c.form.description}</p>
+                </div>
+                <ContactForm content={c.form} />
+              </div>
+            </div>
+          </div>
+          <div className="mb-12 sm:mb-14 lg:mb-16 overflow-hidden rounded-xl border border-slate-200 bg-[linear-gradient(120deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] text-white">
+            <div className="grid lg:grid-cols-[0.75fr_1.25fr]">
+              <div className="flex flex-col justify-center border-b border-slate-700 p-6 sm:p-9 lg:border-b-0 lg:border-r">
+                <p className="uppercase text-amber-200 text-xs font-semibold tracking-wide leading-5">{contactUs}</p>
+                <h2 className="mt-4 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{contactCardTitle}</h2>
+                <p className="mt-4 text-sky-100/85 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{connectionPrompt}</p>
+              </div>
+              <div className="grid grid-cols-2">
+                {channels.map((channel, index) => (
+                  <a
+                    key={channel.label}
+                    href={channel.href}
+                    className="group flex min-h-36 items-start gap-4 border-b border-slate-700 p-6 transition-colors hover:bg-white/[0.06] sm:p-7 lg:border-b-0 lg:border-r lg:last:border-r-0"
+                  >
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-amber-300 text-slate-900 transition-transform group-hover:rotate-[-8deg]">
+                      {channel.icon}
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block font-mono text-sm font-bold text-amber-200 tracking-normal tabular-nums">0{index + 1}</span>
+                      <span className="mt-3 block uppercase text-white/75 text-xs font-semibold tracking-wide leading-5">{channel.label}</span>
+                      <span className="mt-1 block break-words text-sm font-semibold leading-6 text-white group-hover:text-amber-200 tracking-normal">{channel.value}</span>
+                    </span>
+                    <span className="ml-auto text-lg text-amber-200 transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
+                    <span className="sr-only">{t.ui.openLink} {channel.label}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
           <div className="grid min-h-[34rem] overflow-hidden rounded-xl border border-slate-200 bg-[linear-gradient(135deg,#dbeafe_0%,#e0f2fe_55%,#ecfdf5_100%)] lg:grid-cols-[1fr_0.92fr]">
             <div
@@ -130,35 +171,6 @@ export default async function Contact() {
               </div>
             </div>
           </div>
-          <div className="mt-5 overflow-hidden rounded-xl border border-slate-200 bg-[linear-gradient(120deg,#102a43_0%,#1d4e89_55%,#2c698d_100%)] text-white">
-            <div className="grid lg:grid-cols-[0.75fr_1.25fr]">
-              <div className="flex flex-col justify-center border-b border-slate-700 p-6 sm:p-9 lg:border-b-0 lg:border-r">
-                <p className="uppercase text-amber-200 text-xs font-semibold tracking-wide leading-5">{contactUs}</p>
-                <h2 className="mt-4 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{contactCardTitle}</h2>
-                <p className="mt-4 text-sky-100/85 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{connectionPrompt}</p>
-              </div>
-              <div className="grid grid-cols-2">
-                {channels.map((channel, index) => (
-                  <a
-                    key={channel.label}
-                    href={channel.href}
-                    className="group flex min-h-36 items-start gap-4 border-b border-slate-700 p-6 transition-colors hover:bg-white/[0.06] sm:p-7 lg:border-b-0 lg:border-r lg:last:border-r-0"
-                  >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-amber-300 text-slate-900 transition-transform group-hover:rotate-[-8deg]">
-                      {channel.icon}
-                    </span>
-                    <span className="min-w-0">
-                      <span className="block font-mono text-sm font-bold text-amber-200 tracking-normal tabular-nums">0{index + 1}</span>
-                      <span className="mt-3 block uppercase text-white/75 text-xs font-semibold tracking-wide leading-5">{channel.label}</span>
-                      <span className="mt-1 block break-words text-sm font-semibold leading-6 text-white group-hover:text-amber-200 tracking-normal">{channel.value}</span>
-                    </span>
-                    <span className="ml-auto text-lg text-amber-200 transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
-                    <span className="sr-only">{t.ui.openLink} {channel.label}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
           <div className="mt-5">
             <div className="grid gap-3 sm:grid-cols-3">
               {contactHighlights.map((item, index) => (
@@ -173,19 +185,7 @@ export default async function Contact() {
             </div>
           </div>
         </div>
-        <SolarEstimation />
-        <div className="px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16" aria-labelledby="contact-form-title">
-          <div className="overflow-hidden mx-auto max-w-7xl rounded-xl border border-slate-200">
-            <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
-              <div className="bg-[linear-gradient(145deg,#bfdbfe_0%,#ddd6fe_52%,#fbcfe8_100%)] p-6 text-slate-900 sm:p-9">
-                <p className="uppercase text-indigo-900 text-xs font-semibold tracking-wide leading-5">{contactUs}</p>
-                <h2 id="contact-form-title" className="mt-3 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">{c.form.title}</h2>
-                <p className="mt-4 text-slate-700 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{c.form.description}</p>
-              </div>
-              <ContactForm content={c.form} />
-            </div>
-          </div>
-        </div>
+        <SolarEstimation showGstGuide={false} />
 
         <div className="overflow-hidden bg-[linear-gradient(135deg,#dbeafe_0%,#e0f2fe_55%,#ecfdf5_100%)] text-white px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
           <div className="mx-auto max-w-7xl rounded-xl border border-slate-200">
