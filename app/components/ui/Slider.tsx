@@ -22,6 +22,9 @@ export default function Slider({
 }: SliderProps) {
   const { t } = useLocale()
   const carousel = t.carousel
+  const fixedHeightClass = 'h-[clamp(640px,56vw,760px)]'
+  const viewportHeightClass = fixedHeightClass
+  const slideHeightClass = fixedHeightClass
   const regionLabel = ariaLabel ?? carousel.regionLabel
   const slidesArray = React.Children.toArray(children)
   const count = slidesArray.length
@@ -182,8 +185,8 @@ export default function Slider({
 
   if (count === 1) {
     return (
-      <div role="region" aria-label={regionLabel} className={`w-full relative h-[clamp(640px,56vw,760px)] overflow-hidden ${className}`}>
-        <div className="w-full">{slidesArray[0]}</div>
+      <div role="region" aria-label={regionLabel} className={`relative w-full ${viewportHeightClass} overflow-hidden ${className}`}>
+        <div className={`w-full ${slideHeightClass}`}>{slidesArray[0]}</div>
       </div>
     )
   }
@@ -203,17 +206,17 @@ export default function Slider({
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
       onPointerCancel={endDrag}
-      className={`relative h-[clamp(640px,56vw,760px)] w-full overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${className}`}
+      className={`relative w-full ${viewportHeightClass} overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${className}`}
     >
       <div
-        className={`flex h-[clamp(640px,56vw,760px)] ${withTransition ? 'transition-transform duration-500 ease-in-out motion-reduce:transition-none' : ''}`}
+        className={`flex ${slideHeightClass} ${withTransition ? 'transition-transform duration-500 ease-in-out motion-reduce:transition-none' : ''}`}
         style={{ width: slideWidth > 0 ? `${totalWidth}px` : `${visibleIndices.length * 100}%`, transform: translate }}
         onTransitionEnd={onTransitionEnd}
       >
         {visibleIndices.map((slideIndex, i) => (
           <div
             key={`${slideIndex}-${i}`}
-            className={`h-[clamp(640px,56vw,760px)] shrink-0 ${i === position ? 'slider-slide-active' : ''}`}
+            className={`shrink-0 ${slideHeightClass} ${i === position ? 'slider-slide-active' : ''}`}
             style={{ width: slideWidth > 0 ? `${slideWidth}px` : `${percentPerSlide}%` }}
             role="group"
             aria-roledescription={carousel.slideRoleDescription}
@@ -221,7 +224,7 @@ export default function Slider({
             aria-hidden={i !== position}
             inert={i !== position}
           >
-            <div className="flex h-[clamp(640px,56vw,760px)] w-full flex-col">{slidesArray[slideIndex]}</div>
+            <div className={`flex w-full flex-col ${slideHeightClass}`}>{slidesArray[slideIndex]}</div>
           </div>
         ))}
       </div>

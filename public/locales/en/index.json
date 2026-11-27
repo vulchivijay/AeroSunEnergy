@@ -4816,118 +4816,91 @@
     "heroSliderAriaLabel": "Featured renewable energy solutions",
     "heroSlider": [
       {
-        "badge": "Grid-tied rooftop",
-        "title": "Grid-tied Rooftop",
-        "description": "On-grid PV connected to the utility. Pros: lower cost (no batteries), net-metering, simple setup. Cons: no backup power during outages unless paired with storage.",
-        "tags": [
-          "Lower Capex",
-          "Net Metering"
-        ],
-        "image": "/images/slider/slider-1.webp",
+        "badge": "Regional bill examples",
+        "title": "Start with your electricity bill",
+        "description": "Sample monthly electricity bills from Kerala, Tamil Nadu, Karnataka and Andhra Pradesh show how household costs vary by usage and location.",
+        "tags": ["Regional examples","Bill comparison"],
+        "image": "/images/slider/slider-21.webp",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
       },
       {
-        "badge": "Off-grid autonomy",
-        "title": "Off-grid (Standalone)",
-        "description": "Fully independent systems with PV + batteries + charge controller. Pros: complete autonomy for remote sites. Cons: higher upfront cost and careful energy management required.",
-        "tags": [
-          "Battery-backed",
-          "Remote-ready"
-        ],
-        "image": "/images/slider/slider-2.webp",
+        "badge": "3 kW rooftop solar",
+        "title": "Estimate monthly solar generation",
+        "description": "A 3 kW rooftop system may produce around 12?16 units per day in suitable conditions. Actual generation varies with location, roof, weather and system design.",
+        "tags": ["12?16 units/day*","Site-dependent output"],
+        "image": "/images/slider/slider-22.webp",
         "badgeClass": "text-emerald-100",
         "chipClass": "text-emerald-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
       },
       {
-        "badge": "Hybrid resilience",
-        "title": "Hybrid (Grid + Battery)",
-        "description": "PV plus battery storage with ability to work with the grid. Pros: backup power, time-shifting, demand management. Cons: more complex controls and higher cost than grid-only.",
-        "tags": [
-          "Backup power",
-          "Smart control"
-        ],
-        "image": "/images/slider/slider-3.webp",
+        "badge": "Illustrative savings",
+        "title": "Explore potential annual savings",
+        "description": "These sample estimates compare possible yearly savings across four states. Results depend on household use, electricity tariff, solar output and applicable net-metering rules.",
+        "tags": ["State-wise examples","Not guaranteed"],
+        "image": "/images/slider/slider-23.webp",
         "badgeClass": "text-pink-100",
         "chipClass": "text-pink-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
       },
       {
-        "badge": "Urban rooftop",
-        "title": "Vertical Axis Turbine for Rooftops",
-        "description": "Compact rooftop wind systems are ideal for urban and semi-urban spaces where low-noise output, compact footprint, and adaptive installation matter most.",
-        "tags": [
-          "Low-noise",
-          "Rooftop"
-        ],
-        "image": "/images/slider/slider-7.webp",
+        "badge": "Warranty and care",
+        "title": "Know what is covered by your system",
+        "description": "The image summarizes example panel, inverter and balance-of-system coverage, plus cleaning benefits. Actual warranty terms and services depend on the selected products and plan.",
+        "tags": ["Product-specific terms","Check written coverage"],
+        "image": "/images/slider/slider-24.webp",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
       },
       {
-        "badge": "Commercial wind",
-        "title": "Large Wind Systems for Industry",
-        "description": "High-capacity turbines support factories, warehouses, and business campuses by reducing dependency on grid supply and improving renewable generation at scale.",
-        "tags": [
-          "Industrial",
-          "High output"
-        ],
-        "image": "/images/slider/slider-8.webp",
+        "badge": "3 kW cost estimate",
+        "title": "Understand the parts of a solar quote",
+        "description": "This illustrative on-grid estimate separates system price, GST and any eligible subsidy or finance. Final pricing depends on components, installation and current scheme rules.",
+        "tags": ["Indicative pricing","Eligibility varies"],
+        "image": "/images/slider/slider-25.webp",
         "badgeClass": "text-emerald-100",
         "chipClass": "text-emerald-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
       },
       {
-        "badge": "Farm power",
-        "title": "Wind for Agriculture & Irrigation",
-        "description": "Farm-based wind systems help power pumping, processing, and site loads while lowering energy costs in rural and peri-urban locations.",
-        "tags": [
-          "Agri-ready",
-          "Load support"
-        ],
-        "image": "/images/slider/slider-9.webp",
+        "badge": "Solar for households",
+        "title": "Understand potential bill savings",
+        "description": "Solar generation can reduce how much electricity a home buys from the grid. These bill examples are illustrative; actual savings depend on usage, tariff, system size and output.",
+        "tags": ["Home solar","Usage-based estimates"],
+        "image": "/images/slider/slider-26.webp",
         "badgeClass": "text-amber-100",
         "chipClass": "text-amber-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
       },
       {
-        "badge": "Solar + wind",
-        "title": "Continuous Renewable Generation",
-        "description": "Combined solar and wind generation creates a more reliable energy mix, covering daytime production and filling gaps during low-sun or high-wind periods.",
-        "tags": [
-          "24/7 supply",
-          "Balanced output"
-        ],
-        "image": "/images/slider/slider-13.webp",
+        "badge": "Know your baseline",
+        "title": "Compare your monthly electricity use",
+        "description": "Use recent bills and monthly consumption as a starting point for a solar assessment. State examples are illustrative and do not replace a site-specific estimate.",
+        "tags": ["Monthly usage","Local tariff"],
+        "image": "/images/slider/slider-21.webp",
         "badgeClass": "text-emerald-100",
         "chipClass": "text-emerald-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
       },
       {
-        "badge": "Smart control",
-        "title": "Hybrid Microgrid Energy Management",
-        "description": "Integrated controls coordinate solar, wind, storage, and load demand for better efficiency, backup readiness, and digital monitoring.",
-        "tags": [
-          "Smart dispatch",
-          "Battery sync"
-        ],
-        "image": "/images/slider/slider-14.webp",
+        "badge": "Plan your system size",
+        "title": "Match solar capacity to your home",
+        "description": "A 3 kW system is one example of rooftop generation. A site assessment should consider roof area, shading, orientation and household electricity use.",
+        "tags": ["Rooftop assessment","Right-size the system"],
+        "image": "/images/slider/slider-22.webp",
         "badgeClass": "text-violet-100",
         "chipClass": "text-violet-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
       },
       {
-        "badge": "Remote resilience",
-        "title": "Off-grid Hybrid for Isolated Locations",
-        "description": "Solar-wind hybrid systems with battery storage support remote homes, telecom towers, and rural sites where grid access is limited or unavailable.",
-        "tags": [
-          "Off-grid",
-          "Remote-ready"
-        ],
-        "image": "/images/slider/slider-15.webp",
+        "badge": "Savings depend on the details",
+        "title": "Turn estimates into a tailored plan",
+        "description": "Annual bill savings are estimates, not guarantees. A final projection needs your actual consumption, tariff, site conditions and applicable utility rules.",
+        "tags": ["Personalized estimate","Current rules apply"],
+        "image": "/images/slider/slider-23.webp",
         "badgeClass": "text-sky-100",
         "chipClass": "text-sky-50",
         "panelClass": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950"
