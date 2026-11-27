@@ -16,7 +16,7 @@ function HomeHeroSlider({ t }: { t: Translations }) {
   return (
     <Slider autoplay interval={5000} pauseOnHover ariaLabel={t.home.heroSliderAriaLabel}>
       {slides.map((slide, index) => (
-        <div key={slide.title} className="relative h-[clamp(640px,56vw,760px)] w-full overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6]">
+        <div key={slide.title} className="relative h-full w-full overflow-hidden bg-gradient-to-br from-white to-[#f1f2f6]">
           <div className="absolute inset-0">
             <OptimizedImage
               src={slide.image}
@@ -25,18 +25,16 @@ function HomeHeroSlider({ t }: { t: Translations }) {
               priority={index === 0}
               loading={index === 0 ? 'eager' : 'lazy'}
               sizes="100vw"
-              className="object-cover object-center"
             />
           </div>
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.78)_32%,rgba(255,255,255,0.18)_68%,rgba(255,255,255,0.04)_100%)]" />
-          <div className="absolute inset-y-0 left-0 w-[52%] bg-[radial-gradient(circle_at_12%_78%,rgba(32,164,74,0.16),transparent_34%),radial-gradient(circle_at_48%_18%,rgba(14,165,233,0.10),transparent_28%)]" />
+          <div className="absolute inset-0 bg-black/35" />
           <div className="absolute left-4 top-1/2 hidden -translate-y-1/2 flex-col gap-2 lg:flex" aria-hidden="true">
             <span className="h-14 w-px bg-gradient-to-b from-transparent via-[#137c63]/50 to-transparent" />
             <span className="h-1.5 w-1.5 rounded-full bg-[#f59e0b]" />
             <span className="h-14 w-px bg-gradient-to-b from-transparent via-[#137c63]/50 to-transparent" />
           </div>
-          <div className="group relative flex h-[clamp(640px,56vw,760px)] w-full items-center justify-start p-4 sm:p-8 lg:pl-[9vw] lg:pr-[7vw]">
-            <div className="relative w-full overflow-hidden rounded-xl border border-slate-200 bg-[linear-gradient(135deg,rgba(255,255,255,0.94),rgba(244,250,246,0.82))] shadow-md backdrop-blur-xl before:absolute before:inset-y-0 before:left-0 before:w-1 before:bg-[linear-gradient(180deg,#ff9933_0%,#ff9933_33%,#ffffff_33%,#ffffff_66%,#138808_66%,#138808_100%)] before: before:content-[''] after:absolute after:-right-14 after:-top-16 after:h-36 after:w-36 after:rounded-full after:border after:border-[#137c63]/10 after:content-[''] lg:w-1/2">
+          <div className="group relative z-10 flex h-full w-full items-center justify-start p-3 sm:p-8 lg:pl-[7vw] lg:pr-[5vw]">
+            <div className="relative w-full max-w-[720px] overflow-hidden rounded-xl border border-slate-200 bg-[linear-gradient(135deg,rgba(255,255,255,0.9),rgba(244,250,246,0.78))] shadow-md backdrop-blur-md before:absolute before:inset-y-0 before:left-0 before:w-1 before:bg-[linear-gradient(180deg,#ff9933_0%,#ff9933_33%,#ffffff_33%,#ffffff_66%,#138808_66%,#138808_100%)] before: before:content-[''] after:absolute after:-right-14 after:-top-16 after:h-36 after:w-36 after:rounded-full after:border after:border-[#137c63]/10 after:content-[''] lg:w-1/2">
               <div className="absolute right-5 top-6 h-14 w-14 rounded-full border border-[#20a44a]/15 sm:h-20 sm:w-20" aria-hidden="true" />
               <div className="absolute right-10 top-11 h-2.5 w-2.5 rounded-full bg-[#20a44a]/70 sm:right-13 sm:top-15" aria-hidden="true" />
               <HeroSlideContent
