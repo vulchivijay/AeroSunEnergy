@@ -60,7 +60,7 @@ export function SuitableForPanel({
   titleClassName,
 }: {
   title: string
-  content: string[]
+  content: Array<string | { title: string; description: string }>
   titleClassName: string
 }) {
   return (
@@ -78,19 +78,28 @@ export function SuitableForPanel({
         {content.map((item, index) => {
           const Icon = suitableForIcons[index % suitableForIcons.length]
           const style = suitableForStyles[index % suitableForStyles.length]
+          const itemTitle = typeof item === 'string' ? item : item.title
+          const itemDescription = typeof item === 'string' ? null : item.description
 
           return (
             <article
-              key={item}
+              key={itemTitle}
               className="relative min-h-24 overflow-hidden rounded-2xl border border-slate-200 bg-white px-3 py-4 shadow-[0_12px_30px_-20px_rgba(15,23,42,0.45)] transition duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-[0_16px_32px_-20px_rgba(15,23,42,0.5)]"
             >
-              <div className="flex h-full items-center gap-3 pr-1">
+              <div className="flex h-full items-start gap-3 pr-1">
                 <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${style.icon}`}>
                   <Icon className="h-5 w-5" strokeWidth={1.8} aria-hidden="true" />
                 </div>
-                <p className="min-w-0 text-sm font-bold leading-5 text-slate-900 sm:text-base">
-                  {item}
-                </p>
+                <div className="min-w-0 pb-3">
+                  <p className="text-sm font-bold leading-5 text-slate-900 sm:text-base">
+                    {itemTitle}
+                  </p>
+                  {itemDescription && (
+                    <p className="mt-1 line-clamp-3 text-xs leading-5 text-slate-600 sm:text-sm">
+                      {itemDescription}
+                    </p>
+                  )}
+                </div>
               </div>
               <span className={`absolute bottom-2 left-3 text-[0.65rem] font-bold tabular-nums ${style.number}`} aria-hidden="true">
                 {String(index + 1).padStart(2, '0')}

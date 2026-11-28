@@ -5028,12 +5028,30 @@
           "title": "ಇವರಿಗೆ ಸೂಕ್ತ",
           "accent": "sky",
           "content": [
-            "ಪ್ರತ್ಯೇಕ ಮನೆಗಳು",
-            "ಅಪಾರ್ಟ್‌ಮೆಂಟ್‌ಗಳು ಮತ್ತು ವಸತಿ ಸಮುದಾಯಗಳು",
-            "ವಾಣಿಜ್ಯ ಕಟ್ಟಡಗಳು",
-            "ಕೈಗಾರಿಕೆಗಳು ಮತ್ತು ಕಾರ್ಖಾನೆಗಳು",
-            "ಶೈಕ್ಷಣಿಕ ಸಂಸ್ಥೆಗಳು",
-            "ಆಸ್ಪತ್ರೆಗಳು ಮತ್ತು ಸರ್ಕಾರಿ ಕಟ್ಟಡಗಳು"
+            {
+              "title": "ಪ್ರತ್ಯೇಕ ಮನೆಗಳು",
+              "description": "ಮನೆಗಳ ವಿದ್ಯುತ್ ಬಿಲ್.offset ಮಾಡುವ ಮತ್ತು ಸ್ವಚ್ಛ ಶಕ್ತಿ ಉತ್ಪಾದಿಸುವ ಉಪಯುಕ್ತ ಮೇಲ್ಛಾವಣಿ ಇರುವ ಮನೆಗಳಿಗೆ ಸೂಕ್ತ."
+            },
+            {
+              "title": "ಅಪಾರ್ಟ್‌ಮೆಂಟ್‌ಗಳು ಮತ್ತು ವಸತಿ ಸಮುದಾಯಗಳು",
+              "description": "ಹಂಚಿದ ಮೇಲ್ಛಾವಣಿ ವ್ಯವಸ್ಥೆ ಸಾಮಾನ್ಯ ಪ್ರದೇಶಗಳಿಗೆ ಅಥವಾ ವಿಭಜಿತ ನಿವಾಸಿ ಲೋಡ್‌ಗಳಿಗೆ ಸಮನ್ವಿತ ಅನುಮೋದನೆಯೊಂದಿಗೆ ವಿದ್ಯುತ್ ನೀಡುತ್ತದೆ."
+            },
+            {
+              "title": "ವಾಣಿಜ್ಯ ಕಟ್ಟಡಗಳು",
+              "description": "ಕಾರ್ಯಾಲಯಗಳು, ಅಂಗಡಿಗಳು, ಶೋರೂಮ್‌ಗಳು ಮತ್ತು ಇತರ ವಾಣಿಜ್ಯ ಆಸ್ತಿಗಳ ಹಗಲಿನ ವಿದ್ಯುತ್ ವೆಚ್ಚವನ್ನು ಕಡಿಮೆ ಮಾಡುತ್ತದೆ."
+            },
+            {
+              "title": "ಕೈಗಾರಿಕೆಗಳು ಮತ್ತು ಕಾರ್ಖಾನೆಗಳು",
+              "description": "ಅಧಿಕ ಸಾಮರ್ಥ್ಯದ ವ್ಯವಸ್ಥೆಗಳು ಚಾಲನಾ ವಿದ್ಯುತ್ ವೆಚ್ಚವನ್ನು ಕಡಿಮೆ ಮಾಡಿ ಇಂಧನ ವಿಶ್ವಾಸಾರ್ಹತೆಯನ್ನು ಹೆಚ್ಚಿಸುತ್ತವೆ."
+            },
+            {
+              "title": "ಶೈಕ್ಷಣಿಕ ಸಂಸ್ಥೆಗಳು",
+              "description": "ಶಾಲೆಗಳು ಮತ್ತು ಕಾಲೇಜುಗಳ ಪುನರಾವರ್ತಿತ ಯುಟಿಲಿಟಿ ಬಿಲ್‌ಗಳನ್ನು ಕಡಿಮೆ ಮಾಡಿ ಸುಸ್ಥಿರತೆಯ ಗುರಿಗಳನ್ನು ಬೆಂಬಲಿಸುತ್ತದೆ."
+            },
+            {
+              "title": "ಆಸ್ಪತ್ರೆಗಳು ಮತ್ತು ಸರ್ಕಾರಿ ಕಟ್ಟಡಗಳು",
+              "description": "ಅಗತ್ಯ ಲೋಡ್‌ಗಳಿಗೆ ವಿಶ್ವಾಸಾರ್ಹ ಸೌರ ಉತ್ಪಾದನೆಯನ್ನು ನೀಡುತ್ತದೆ ಮತ್ತು ನಿರಂತರತೆಗೆ ಬ್ಯಾಕಪ್ ಯೋಜನೆಯನ್ನು ಬೆಂಬಲಿಸುತ್ತದೆ."
+            }
           ]
         }
       ]
@@ -5110,6 +5128,7 @@
     "wind": {
       "eyebrow": "ಗಾಳಿ ಶಕ್ತಿ",
       "title": "ಹಸಿರು ವಿದ್ಯುತ್ ಜಾಲಕ್ಕಾಗಿ ಗಾಳಿ ಶಕ್ತಿ ಪರಿಹಾರಗಳು",
+      "notice": "ಚಿತ್ರಗಳು ಪ್ರತಿನಿಧಿ ಮಾದರಿಗಳು, ನಿಜವಾದ ಉದಾಹರಣೆಗಳಲ್ಲ. ಪೋರ್ಟಬಲ್ ವಿನ್ಯಾಸಗಳು ಇನ್ನೂ ಸಿದ್ಧವಾಗಿಲ್ಲ; ಇವುಗಳು ಹೆಚ್ಚಿನ ಎತ್ತರದ ಬಳಕೆಗಾಗಿ ವಿನ್ಯಾಸಗೊಂಡಿವೆ.",
       "cards": [
         {
           "title": "ಸಮತಲ ಅಕ್ಷದ ಗಾಳಿ ಟರ್ಬೈನ್‌ಗಳು",
@@ -5208,6 +5227,7 @@
     "hybrid": {
       "eyebrow": "ಹೈಬ್ರಿಡ್ ಇಂಧನ",
       "title": "ವಿಶ್ವಾಸಾರ್ಹ ವಿದ್ಯುತ್‌ಗಾಗಿ ಸೌರ + ಗಾಳಿ ಹೈಬ್ರಿಡ್ ವ್ಯವಸ್ಥೆಗಳು",
+      "notice": "ಚಿತ್ರಗಳು ಪ್ರತಿನಿಧಿ ಮಾದರಿಗಳು, ನಿಜವಾದ ಉದಾಹರಣೆಗಳಲ್ಲ. ಪೋರ್ಟಬಲ್ ವಿನ್ಯಾಸಗಳು ಇನ್ನೂ ಸಿದ್ಧವಾಗಿಲ್ಲ; ಇವುಗಳು ಹೆಚ್ಚಿನ ಎತ್ತರದ ಬಳಕೆಗಾಗಿ ವಿನ್ಯಾಸಗೊಂಡಿವೆ.",
       "cards": [
         {
           "title": "ವಸತಿ ಸೌರ-ಗಾಳಿ ಹೈಬ್ರಿಡ್ ವ್ಯವಸ್ಥೆ",
@@ -5485,12 +5505,30 @@
         "Net Metering facility to export excess power to the grid"
       ],
       "suitableForItems": [
-        "Individual Houses",
-        "Apartments & Residential Communities",
-        "Commercial Buildings",
-        "Industries & Factories",
-        "Educational Institutions",
-        "Hospitals & Government Buildings"
+        {
+          "title": "Individual Houses",
+          "description": "Ideal for homes with usable roof space to offset household electricity bills and generate clean power."
+        },
+        {
+          "title": "Apartments & Residential Communities",
+          "description": "A shared rooftop system can supply common areas or divided resident loads with coordinated approvals."
+        },
+        {
+          "title": "Commercial Buildings",
+          "description": "Reduces daytime electricity costs for offices, shops, showrooms and other commercial properties."
+        },
+        {
+          "title": "Industries & Factories",
+          "description": "High-capacity systems help reduce operating power costs and improve energy reliability."
+        },
+        {
+          "title": "Educational Institutions",
+          "description": "Supports schools and colleges with lower recurring utility bills and practical sustainability goals."
+        },
+        {
+          "title": "Hospitals & Government Buildings",
+          "description": "Provides dependable solar generation for essential loads, with backup planning for continuity."
+        }
       ]
     },
     "capacityTable": {

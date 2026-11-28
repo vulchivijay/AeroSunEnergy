@@ -175,7 +175,7 @@ export function HomeBrandsSection({ t }: { t: Translations }) {
                     <path d="M0 56c72-25 122 1 190-5s112-21 170-9v28H0z" fill={`hsl(${brand.hue} 74% 77%)`} fillOpacity=".58" />
                   </svg>
                   <div className="relative z-10 flex min-h-0 flex-1 flex-col">
-                    <div className="flex h-14 w-full max-w-[13rem] items-center lg:h-16 lg:max-w-[15rem]">
+                    <div className="flex h-34 w-full max-w-[13rem] items-center lg:h-36 lg:max-w-[15rem]">
                       <Image
                         src={`/brands/${brand.file}`}
                         alt={brandName}

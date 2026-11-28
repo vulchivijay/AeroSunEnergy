@@ -137,7 +137,7 @@ export function SuitableForInfoPanel({
   content,
 }: {
   title: string
-  content: string[]
+  content: Array<string | { title: string; description: string }>
 }) {
   return (
     <SuitableForPanel

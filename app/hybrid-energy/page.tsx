@@ -4,12 +4,14 @@ import { HybridEnergyHeroSections } from '@/app/components/pages/hybrid-energy/H
 import { HybridEnergyCategoriesSections } from '@/app/components/pages/hybrid-energy/HybridEnergyCategoriesSections';
 import { HybridEnergySolutionsAndServicesSections } from '@/app/components/pages/hybrid-energy/HybridEnergySolutionsAndServicesSections';
 import { HybridEnergyApplicationsAndPrioritiesSections } from '@/app/components/pages/hybrid-energy/HybridEnergyApplicationsAndPrioritiesSections';
+import { EnergyDevelopmentNotice } from '@/app/components/ui/EnergyDevelopmentNotice';
 
 export default async function HybridEnergyPage() {
   const t = await getRequestTranslations()
 
   return (
     <main className="overflow-hidden bg-white text-slate-900">
+      <EnergyDevelopmentNotice>{t.home.hybrid.notice}</EnergyDevelopmentNotice>
       <HybridEnergyHeroSections t={t} />
 
       {/* <SharedHeroSlider slides={hybridSlidesLocalized} ariaLabel={hybridPage.labels.sliderAriaLabel} /> */}

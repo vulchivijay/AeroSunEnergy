@@ -156,6 +156,16 @@ export function BankEMICalculator() {
 
   return (
     <section className="relative isolate overflow-hidden bg-[#fff8ed] px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
+      <div className="mx-auto mb-8 max-w-7xl">
+        <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 uppercase text-indigo-900 text-xs font-semibold tracking-wide leading-5">
+          <span className="shrink-0 h-2 w-2 rounded-full bg-current" aria-hidden="true" />
+          {labels.badge}
+        </p>
+        <h1 className="max-w-6xl text-left text-black text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
+          {labels.title}
+          <span className="text-indigo-700"> {labels.titleAccent}</span>
+        </h1>
+      </div>
       <div
         className="relative mx-auto grid max-w-7xl overflow-hidden rounded-[2rem] border border-orange-100 bg-[#fffaf2] shadow-xl shadow-slate-900/10 lg:grid-cols-[minmax(19rem,0.82fr)_minmax(0,1.18fr)]"
       >

@@ -1,4 +1,5 @@
 import { getAccentOrDefault } from "@/lib/utils/utils";
+import { EnergyDevelopmentNotice } from "@/app/components/ui/EnergyDevelopmentNotice";
 import {
   HybridContentBlock,
   HybridFeatureCard,
@@ -20,6 +21,7 @@ export function HomeHybridEnergySection({ t }: { t: Translations }) {
           <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
             {hybrid.title}
           </h2>
+          <EnergyDevelopmentNotice variant="inline">{hybrid.notice}</EnergyDevelopmentNotice>
         </div>
         <div id="hybrid-energy-content">
           <div className="grid gap-6 lg:grid-cols-3">

@@ -5028,12 +5028,30 @@
           "title": "ആർക്കെല്ലാം അനുയോജ്യം",
           "accent": "sky",
           "content": [
-            "വ്യക്തിഗത വീടുകൾ",
-            "അപ്പാർട്ട്മെന്റുകളും താമസസമുച്ചയങ്ങളും",
-            "വാണിജ്യ കെട്ടിടങ്ങൾ",
-            "വ്യവസായങ്ങളും ഫാക്ടറികളും",
-            "വിദ്യാഭ്യാസ സ്ഥാപനങ്ങൾ",
-            "ആശുപത്രികളും സർക്കാർ കെട്ടിടങ്ങളും"
+            {
+              "title": "വ്യക്തിഗത വീടുകൾ",
+              "description": "ഗൃഹവിദ്യുതി ബില്ല് കുറയ്ക്കാനും ശുദ്ധശക്തി ഉണ്ടാക്കാനും ഉപയോഗയോഗ്യമായ മേൽക്കൂരയുള്ള വീടുകൾക്ക് അനുയോജ്യം."
+            },
+            {
+              "title": "അപ്പാർട്ട്മെന്റുകളും താമസസമുച്ചയങ്ങളും",
+              "description": "പങ്കിട്ട മേൽക്കൂര സംവിധാനം പൊതു മേഖലകൾക്കും വിഭജിക്കാവുന്ന വീട്ടുപയോഗത്തിനും ഏകോപിത അനുമതിയോടെ വൈദ്യുതി നൽകും."
+            },
+            {
+              "title": "വാണിജ്യ കെട്ടിടങ്ങൾ",
+              "description": "ഓഫീസുകൾ, കടകൾ, ഷോർറൂമുകൾ എന്നിവയ്ക്കുള്ള പകൽവൈദ്യുതി ചെലവുകൾ ഗണ്യമായി കുറയ്ക്കും."
+            },
+            {
+              "title": "വ്യവസായങ്ങളും ഫാക്ടറികളും",
+              "description": "ഉയർന്ന ശേഷിയുള്ള സംവിധാനം പ്രവർത്തനവൈദ്യുതി ചെലവ് കുറച്ച് ഊർജ്ജविश्वസനീയത വർദ്ധിപ്പിക്കുന്നു."
+            },
+            {
+              "title": "വിദ്യാഭ്യാസ സ്ഥാപനങ്ങൾ",
+              "description": "സ്കൂൾ, കോളേജ് എന്നിവയുടെ തുടർച്ചയായ യൂട്ടിലിറ്റി ബില്ലുകൾ കുറച്ച് സുസ്ഥിരതാ ലക്ഷ്യങ്ങളെ പിന്തുണയ്ക്കുന്നു."
+            },
+            {
+              "title": "ആശുപത്രികളും സർക്കാർ കെട്ടിടങ്ങളും",
+              "description": "അത്യാവശ്യ ലോഡുകൾക്ക് വിശ്വാസയോഗ്യമായ സോളാർ ഉൽപ്പാദനവും തുടർച്ചയ്ക്കായി ബാക്കപ്പ് പദ്ധതിയും നൽകുന്നു."
+            }
           ]
         }
       ]
@@ -5110,6 +5128,7 @@
     "wind": {
       "eyebrow": "കാറ്റാടി ഊർജം",
       "title": "ഹരിത ഗ്രിഡിനായി കാറ്റാടി വൈദ്യുതി പരിഹാരങ്ങൾ",
+      "notice": "ചിത്രങ്ങൾ പ്രാതിനിധിക മാത്രമാണ്, യഥാർത്ഥ ഉദാഹരണങ്ങളല്ല. പോർട്ടബിൾ ഡിസൈനുകൾ ഇതുവരെ തയ്യാറായിട്ടില്ല; ഉയർന്ന സ്ഥാനങ്ങളിൽ ഉപയോഗത്തിനായി രൂപകൽപന ചെയ്തവയാണിത്.",
       "cards": [
         {
           "title": "തിരശ്ചീന അച്ചുതണ്ടുള്ള കാറ്റാടി ടർബൈനുകൾ",
@@ -5208,6 +5227,7 @@
     "hybrid": {
       "eyebrow": "ഹൈബ്രിഡ് ഊർജം",
       "title": "വിശ്വസനീയ വൈദ്യുതിക്കായി സോളാർ + കാറ്റാടി ഹൈബ്രിഡ് സംവിധാനങ്ങൾ",
+      "notice": "ചിത്രങ്ങൾ പ്രാതിനിധിക മാത്രമാണ്, യഥാർത്ഥ ഉദാഹരണങ്ങളല്ല. പോർട്ടബിൾ ഡിസൈനുകൾ ഇതുവരെ തയ്യാറായിട്ടില്ല; ഉയർന്ന സ്ഥാനങ്ങളിൽ ഉപയോഗത്തിനായി രൂപകൽപന ചെയ്തവയാണിത്.",
       "cards": [
         {
           "title": "വാസസ്ഥല സോളാർ-കാറ്റാടി ഹൈബ്രിഡ്",
@@ -5485,12 +5505,30 @@
         "Net Metering facility to export excess power to the grid"
       ],
       "suitableForItems": [
-        "Individual Houses",
-        "Apartments & Residential Communities",
-        "Commercial Buildings",
-        "Industries & Factories",
-        "Educational Institutions",
-        "Hospitals & Government Buildings"
+        {
+          "title": "Individual Houses",
+          "description": "Ideal for homes with usable roof space to offset household electricity bills and generate clean power."
+        },
+        {
+          "title": "Apartments & Residential Communities",
+          "description": "A shared rooftop system can supply common areas or divided resident loads with coordinated approvals."
+        },
+        {
+          "title": "Commercial Buildings",
+          "description": "Reduces daytime electricity costs for offices, shops, showrooms and other commercial properties."
+        },
+        {
+          "title": "Industries & Factories",
+          "description": "High-capacity systems help reduce operating power costs and improve energy reliability."
+        },
+        {
+          "title": "Educational Institutions",
+          "description": "Supports schools and colleges with lower recurring utility bills and practical sustainability goals."
+        },
+        {
+          "title": "Hospitals & Government Buildings",
+          "description": "Provides dependable solar generation for essential loads, with backup planning for continuity."
+        }
       ]
     },
     "capacityTable": {
