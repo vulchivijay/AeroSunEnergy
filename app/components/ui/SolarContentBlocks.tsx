@@ -6,6 +6,7 @@ import {
   contentCheckBackgrounds,
   ContentFeatureCard,
   ContentInfoPanel,
+  SuitableForPanel,
   ContentSectionEyebrow,
   type ContentAccent,
 } from './SharedContentComponents'
@@ -126,6 +127,22 @@ export function InfoPanel({
       content={content}
       themeClassName="bg-transparent text-slate-900"
       checkBackgroundClassName={contentCheckBackgrounds[accent ?? 'emerald']}
+      titleClassName="text-slate-900"
+    />
+  )
+}
+
+export function SuitableForInfoPanel({
+  title,
+  content,
+}: {
+  title: string
+  content: string[]
+}) {
+  return (
+    <SuitableForPanel
+      title={title}
+      content={content}
       titleClassName="text-slate-900"
     />
   )

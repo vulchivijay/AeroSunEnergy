@@ -10,4 +10,4 @@ export {
 export type { ContentAccent } from './ContentFeatureCard'
 export { ContentBenefitCard } from './ContentBenefitCard'
 export { ContentIllustratedBenefitCard } from './ContentIllustratedBenefitCard'
-export { ContentInfoPanel } from './ContentInfoPanel'
+export { ContentInfoPanel, SuitableForPanel } from './ContentInfoPanel'
