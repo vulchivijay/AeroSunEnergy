@@ -17,11 +17,8 @@ const governanceIcons: LucideIcon[] = [
 
 export function AboutStoryAndGovernanceSections({ t }: { t: Translations }) {
   const a = t.about
-
   const content = a.pageContent
-
   const approvalRowsData = a.governanceRows
-
   const pageStrings = {
       badge: a.heroBadge,
       companyTitleA: a.heroTitleA,
