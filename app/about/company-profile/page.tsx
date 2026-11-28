@@ -13,17 +13,11 @@ export default async function CompanyProfilePage() {
   return (
     <main className="overflow-hidden bg-white text-slate-900">
       <CompanyProfileHeroSections t={t} />
-
       <CompanyProfileVisionAndMissionSections t={t} />
-
       <CompanyProfileSolutionsAndProductsSections t={t} />
-
       <CompanyProfileInnovationSections t={t} />
-
       <CompanyProfileCustomersAndQualitySections t={t} />
-
       <CompanyProfilePartnershipAndFutureSections t={t} />
-
       <CompanyProfileContactSections t={t} />
     </main>
   );

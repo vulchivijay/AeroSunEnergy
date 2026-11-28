@@ -12,15 +12,10 @@ export default async function AboutPage() {
   return (
     <main className="overflow-hidden bg-white text-slate-900">
       <AboutHeroSections t={t} />
-
       <AboutStoryAndGovernanceSections t={t} />
-
       <AboutLeadershipAndStrengthsSections t={t} />
-
       <AboutRoadmapSections t={t} />
-
       <AboutServicesAndCommitmentsSections t={t} />
-
       <AboutWorkAndImpactSections t={t} />
     </main>
   )

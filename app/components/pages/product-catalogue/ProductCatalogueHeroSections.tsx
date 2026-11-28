@@ -71,9 +71,9 @@ export function ProductCatalogueHeroSections({ t }: { t: Translations }) {
             <span className="shrink-0 h-2 w-2 rounded-full bg-current" aria-hidden="true" />
             {c.hero.badge}
           </p>
-          <h1 className="mt-6 max-w-5xl text-[#152b29] text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
+          <h1 className="mt-6 max-w-5xl text-[#137c63] text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
             {c.hero.title}
-            <span className="mt-2 block text-[#137c63]">{c.hero.titleAccent}</span>
+            <span className="mt-2 text-[#152b29]"> {c.hero.titleAccent} </span>
           </h1>
           <p className="mt-5 uppercase text-slate-600 text-xs font-semibold tracking-wide leading-5">
             {c.hero.tagline}

@@ -53,9 +53,9 @@ export function CompanyProfileHeroSections({ t }: { t: Translations }) {
             />
             {cp.badge}
           </p>
-          <h1 className="mt-6 max-w-4xl text-[#152b29] text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
+          <h1 className="mt-6 max-w-4xl text-[#137c63] text-3xl sm:text-4xl lg:text-5xl font-bold !tracking-tight leading-tight">
             {cp.title}
-            <span className="mt-2 block text-[#137c63]">{cp.subtitle}</span>
+            <span className="mt-2 text-[#152b29]"> {cp.subtitle} </span>
           </h1>
           <p className="mt-5 uppercase text-slate-600 text-xs font-semibold tracking-wide leading-5">
             {cp.motto}

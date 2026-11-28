@@ -46,7 +46,7 @@ export default function TirupatiEnergySection({
 
           <div className="relative z-10 flex min-h-[42.5rem] items-end px-6 py-8 sm:min-h-[37.5rem] sm:px-10 sm:py-10 lg:min-h-[33.75rem] lg:items-center lg:px-12 lg:py-12">
             <div className="w-full max-w-3xl lg:w-[62%] lg:max-w-[58rem]">
-              <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 inline-flex w-fit items-center rounded-full border border-white/30 bg-white/15 px-5 py-3 text-xs uppercase tracking-wide text-white shadow-lg backdrop-blur-sm sm:px-6 sm:text-base">
+              <p className="before:inline-block before:mr-2 before:h-2 before:w-2 before:shrink-0 before:align-middle before:rounded-full before:bg-current before:content-[''] inline-flex w-fit items-center rounded-full border border-white/30 bg-white/15 px-5 py-3 text-xs uppercase tracking-wide text-white shadow-lg backdrop-blur-sm sm:px-6 sm:text-base">
                 {content.eyebrow}
               </p>
 
