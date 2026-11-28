@@ -246,7 +246,7 @@ export function TrustRibbon({ className = '' }: { className?: string } = {}) {
                   <div className="flex flex-1 items-center justify-center pt-2">
                     <StepIcon kind={step.kind} />
                   </div>
-                  <h2 className="mx-auto mt-1 max-w-[10rem] text-center text-[11px] leading-tight text-white sm:text-xs md:text-[clamp(9px,.8vw,13px)]">
+                  <h2 className="mx-auto mt-1 max-w-[10rem] text-center text-xs leading-tight text-white">
                     {content.steps[step.kind]}
                   </h2>
                 </article>

@@ -17,9 +17,9 @@ export { SolarBenefitCard } from './SolarBenefitCard'
 
 export const solarOfferingImages = [
   '/images/slider/slider-1.webp',
-  '/images/slider/slider-2.webp',
-  '/images/slider/slider-5.webp',
-  '/images/slider/slider-4.webp',
+  '/images/slider/slider-19.webp',
+  '/images/slider/slider-20.webp',
+  '/images/slider/slider-27.webp',
   '/images/slider/slider-6.webp',
   '/images/slider/slider-3.webp',
 ] as const
