@@ -188,6 +188,11 @@ export default function DashboardHeader({
             sidebarCollapsed ? 'md:w-[72px] md:px-2' : 'md:w-80 md:px-3'
           }`}
         >
+          {pathname === '/auth/dashboard' && sidebarContent && (
+            <div className={sidebarCollapsed ? 'hidden' : 'mb-4'}>
+              {sidebarContent}
+            </div>
+          )}
           <label className={`relative mb-5 hidden ${sidebarCollapsed ? '' : 'md:block'}`}>
             <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" aria-hidden="true" />
             <input
@@ -245,11 +250,6 @@ export default function DashboardHeader({
                             {t.navbar.dashboardPages[item.key]}
                           </span>
                         </Link>
-                        {item.key === 'overview' && pathname === '/auth/dashboard' && sidebarContent && (
-                          <div className={sidebarCollapsed ? 'hidden' : 'hidden md:block'}>
-                            {sidebarContent}
-                          </div>
-                        )}
                       </div>
                     )
                   })}
