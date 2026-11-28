@@ -1,6 +1,5 @@
 import { DigitalNumber } from '@/app/components/ui/DigitalNumber'
 import type { useLocale } from '@/lib/LocaleContext'
-import { Landmark } from 'lucide-react'
 import type { EmiCalculation } from './BankEmiCalculatorControls'
 
 type BankEmiLabels = ReturnType<typeof useLocale>['t']['bankEmi']
@@ -22,16 +21,6 @@ export function BankEmiSummary({
       <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full border border-blue-300/20" aria-hidden="true" />
       <div className="pointer-events-none absolute -right-10 -top-10 h-52 w-52 rounded-full border border-amber-300/20" aria-hidden="true" />
       <div className="relative z-10">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-          <div className="inline-flex w-fit max-w-full min-w-0 items-center gap-2 rounded-full border border-amber-400/80 px-3 py-1.5 text-[0.65rem] font-semibold uppercase tracking-wide text-white">
-            <Landmark size={14} strokeWidth={2.2} className="text-amber-300" aria-hidden="true" />
-            {labels.badge}
-          </div>
-        </div>
-        <h2 className="mt-5 max-w-xl text-left text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl">
-          {labels.title}
-          <span className="text-amber-400"> {labels.titleAccent}</span>
-        </h2>
         <p className="mt-3 max-w-xl text-sm leading-6 text-blue-100 sm:text-base sm:leading-7">
           {labels.description}
         </p>

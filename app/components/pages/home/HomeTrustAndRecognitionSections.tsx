@@ -10,7 +10,7 @@ function RecognitionHighlight({ t }: { t: Translations }) {
 
   return (
     <section className="bg-transparent p-0">
-      <div className="relative isolate grid min-h-[720px] w-full grid-cols-1 gap-8 overflow-hidden bg-[linear-gradient(112deg,#06143f_0%,#07398f_38%,#352ecc_70%,#e74398_90%,#ff7b55_100%)] px-5 py-8 text-white sm:min-h-[650px] sm:px-8 sm:py-10 md:px-10 lg:min-h-[390px] lg:grid-cols-[0.78fr_1.22fr] lg:items-center lg:gap-8 lg:px-8 lg:py-8 xl:aspect-[3.2/1] xl:min-h-0 xl:gap-10 xl:px-10">
+      <div className="relative isolate grid min-h-[720px] w-full grid-cols-1 gap-8 overflow-hidden bg-[linear-gradient(112deg,#06143f_0%,#07398f_38%,#352ecc_70%,#e74398_90%,#ff7b55_100%)] px-5 py-8 text-white sm:min-h-[750px] sm:px-8 sm:py-10 md:px-10 lg:min-h-[490px] lg:grid-cols-[0.78fr_1.22fr] lg:items-center lg:gap-8 lg:px-8 lg:py-8 xl:aspect-[3.2/1] xl:min-h-0 xl:gap-10 xl:px-10">
         <div
           className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_80%_80%,rgba(255,156,91,0.32),transparent_35%),radial-gradient(ellipse_at_50%_0%,rgba(61,131,255,0.23),transparent_42%)]"
           aria-hidden="true"
@@ -80,7 +80,7 @@ function RecognitionHighlight({ t }: { t: Translations }) {
         <div className="relative z-10 flex min-w-0 flex-col justify-center lg:-translate-y-12 lg:pl-1">
           <div className="flex max-w-[320px] items-center gap-3">
             <span className="h-px flex-1 bg-amber-300/90" aria-hidden="true" />
-            <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 whitespace-nowrap rounded-full bg-[#dcecff] px-4 py-1 uppercase text-[#17345f] text-xs font-semibold tracking-wide leading-5">
+            <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 whitespace-nowrap rounded-full bg-[#dcecff] px-4 py-1 uppercase text-[#17345f] text-xs tracking-wide leading-5">
               {t.home.recognitionHeader.badge}
             </p>
             <span className="h-px flex-1 bg-amber-300/90" aria-hidden="true" />
@@ -179,7 +179,7 @@ function CompanyTrustSection({ t }: { t: Translations }) {
       </div>
       <div className="relative z-10 mx-auto grid max-w-7xl gap-8 lg:grid-cols-[minmax(18rem,0.72fr)_minmax(0,1.6fr)] lg:items-start lg:gap-10">
         <div className="relative flex min-h-[25rem] flex-col justify-center pb-36 sm:min-h-[27rem] sm:pb-40 lg:sticky lg:top-24 lg:min-h-0 lg:justify-start lg:self-start lg:pb-0">
-          <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] inline-flex w-fit items-center gap-2 rounded-full border border-violet-500 bg-white/75 px-4 py-2 uppercase text-violet-700 text-xs font-bold tracking-[0.08em] leading-5 shadow-sm">
+          <p className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] inline-flex w-fit items-center gap-2 rounded-full border border-violet-500 bg-white/75 px-4 py-2 uppercase text-violet-700 text-xs font-bold tracking-[0.06em] leading-5 shadow-sm">
             {content.eyebrow}
           </p>
           <h2 id="company-trust-title" className="mt-5 max-w-xl text-slate-950 text-4xl sm:text-5xl lg:text-[3.25rem] font-bold !tracking-tight leading-[1.05]">

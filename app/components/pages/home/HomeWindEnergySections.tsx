@@ -1,6 +1,7 @@
 import { getAccentOrDefault } from "@/lib/utils/utils";
 import TirupatiEnergySection from "@/app/components/ui/TirupatiEnergySection";
 import { WindCapacityTable, WindContentBlock, WindFeatureCard, WindInfoPanel, WindSectionEyebrow } from "@/app/components/ui";
+import { EnergyDevelopmentNotice } from "@/app/components/ui/EnergyDevelopmentNotice";
 import { windSolutionImages } from "@/app/components/ui/EnergyContentImages";
 import type { Translations } from '@/lib/LocaleContext';
 
@@ -18,6 +19,7 @@ export function HomeWindEnergySections({ t }: { t: Translations }) {
             <h2 className="mt-3 text-slate-900 text-2xl sm:text-3xl font-semibold !tracking-tight leading-snug">
               {wind.title}
             </h2>
+            <EnergyDevelopmentNotice variant="inline">{wind.notice}</EnergyDevelopmentNotice>
           </div>
           <div id="wind-energy-content">
             <div className="grid gap-6 lg:grid-cols-3">

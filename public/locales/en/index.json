@@ -5028,12 +5028,30 @@
           "title": "Suitable For",
           "accent": "sky",
           "content": [
-            "Individual Houses",
-            "Apartments & Residential Communities",
-            "Commercial Buildings",
-            "Industries & Factories",
-            "Educational Institutions",
-            "Hospitals & Government Buildings"
+            {
+              "title": "Individual Houses",
+              "description": "Ideal for homes with usable roof space to offset household electricity bills and generate clean power."
+            },
+            {
+              "title": "Apartments & Residential Communities",
+              "description": "A shared rooftop system can supply common areas or divided resident loads with coordinated approvals."
+            },
+            {
+              "title": "Commercial Buildings",
+              "description": "Reduces daytime electricity costs for offices, shops, showrooms and other commercial properties."
+            },
+            {
+              "title": "Industries & Factories",
+              "description": "High-capacity systems help reduce operating power costs and improve energy reliability."
+            },
+            {
+              "title": "Educational Institutions",
+              "description": "Supports schools and colleges with lower recurring utility bills and practical sustainability goals."
+            },
+            {
+              "title": "Hospitals & Government Buildings",
+              "description": "Provides dependable solar generation for essential loads, with backup planning for continuity."
+            }
           ]
         }
       ]
@@ -5110,6 +5128,7 @@
     "wind": {
       "eyebrow": "Wind Energy",
       "title": "Wind power solutions for a greener grid",
+      "notice": "Images are placeholders, not real-world examples. Portable designs aren’t ready yet; designed for high-altitude use.",
       "cards": [
         {
           "title": "Horizontal-Axis Wind Turbines",
@@ -5208,6 +5227,7 @@
     "hybrid": {
       "eyebrow": "Hybrid Energy",
       "title": "Solar + Wind hybrid systems for dependable power",
+      "notice": "Images are placeholders, not real-world examples. Portable designs aren’t ready yet; designed for high-altitude use.",
       "cards": [
         {
           "title": "Residential Solar-Wind Hybrid",
@@ -5485,12 +5505,30 @@
         "Net Metering facility to export excess power to the grid"
       ],
       "suitableForItems": [
-        "Individual Houses",
-        "Apartments & Residential Communities",
-        "Commercial Buildings",
-        "Industries & Factories",
-        "Educational Institutions",
-        "Hospitals & Government Buildings"
+        {
+          "title": "Individual Houses",
+          "description": "Ideal for homes with usable roof space to offset household electricity bills and generate clean power."
+        },
+        {
+          "title": "Apartments & Residential Communities",
+          "description": "A shared rooftop system can supply common areas or divided resident loads with coordinated approvals."
+        },
+        {
+          "title": "Commercial Buildings",
+          "description": "Reduces daytime electricity costs for offices, shops, showrooms and other commercial properties."
+        },
+        {
+          "title": "Industries & Factories",
+          "description": "High-capacity systems help reduce operating power costs and improve energy reliability."
+        },
+        {
+          "title": "Educational Institutions",
+          "description": "Supports schools and colleges with lower recurring utility bills and practical sustainability goals."
+        },
+        {
+          "title": "Hospitals & Government Buildings",
+          "description": "Provides dependable solar generation for essential loads, with backup planning for continuity."
+        }
       ]
     },
     "capacityTable": {

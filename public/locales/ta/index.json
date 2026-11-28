@@ -5028,12 +5028,30 @@
           "title": "யாருக்கு ஏற்றது",
           "accent": "sky",
           "content": [
-            "தனிப்பட்ட வீடுகள்",
-            "அடுக்குமாடி குடியிருப்புகள் மற்றும் குடியிருப்புச் சமூகங்கள்",
-            "வணிகக் கட்டிடங்கள்",
-            "தொழில்கள் மற்றும் தொழிற்சாலைகள்",
-            "கல்வி நிறுவனங்கள்",
-            "மருத்துவமனைகள் மற்றும் அரசு கட்டிடங்கள்"
+            {
+              "title": "தனிப்பட்ட வீடுகள்",
+              "description": "வீட்டின் மின்கட்டணத்தைச் சற்று குறைக்கவும் தூய்மையான மின்சாரத்தை உருவாக்கவும் பயன்படுத்தக்கூடிய கூரை இடம் உள்ள வீடுகளுக்கு ஏற்றது."
+            },
+            {
+              "title": "அடுக்குமாடி குடியிருப்புகள் மற்றும் குடியிருப்புச் சமூகங்கள்",
+              "description": "பகிரப்பட்ட கூரைச் சூரிய அமைப்பு பொதுப் பகுதிகளுக்கும் குடியிருப்பாளர் பயன்பாடுகளுக்கும் ஒருங்கிணைந்த அனுமதியுடன் மின்சாரம் வழங்கும்."
+            },
+            {
+              "title": "வணிகக் கட்டிடங்கள்",
+              "description": "அலுவலகங்கள், கடைகள், ஷோரூம்கள் மற்றும் பிற வணிகக் கட்டிடங்களின் பகல்நேர மின்சாரச் செலவைக் குறைக்கும்."
+            },
+            {
+              "title": "தொழில்கள் மற்றும் தொழிற்சாலைகள்",
+              "description": "உயர் திறன் கொண்ட அமைப்பு செயல்பாட்டு மின்சாரச் செலவைக் குறைத்து ஆற்றல் நம்பகத்தை மேம்படுத்தும்."
+            },
+            {
+              "title": "கல்வி நிறுவனங்கள்",
+              "description": "பள்ளிகள் மற்றும் கல்லூரிகளின் தொடர்ச்சியான பயன்பாட்டு மின்கட்டணத்தையும் நிலைத்தன்மை இலக்குகளையும் ஆதரிக்கும்."
+            },
+            {
+              "title": "மருத்துவமனைகள் மற்றும் அரசு கட்டிடங்கள்",
+              "description": "அத்தியாவசிய சுமைகளுக்கு நம்பகமான சூரிய உற்பத்தியை வழங்கும், தொடர்ச்சிக்கான காப்புப் திட்டமும் உதவியாக இருக்கும்."
+            }
           ]
         }
       ]
@@ -5110,6 +5128,7 @@
     "wind": {
       "eyebrow": "காற்றாலை ஆற்றல்",
       "title": "பசுமையான மின் கட்டத்திற்கான காற்றாலை மின்சாரத் தீர்வுகள்",
+      "notice": "படங்கள் உண்மையான உலக எடுத்துக்காட்டுகள் அல்ல, குறிப்புக்காக மட்டும். கையடக்க வடிவமைப்புகள் இன்னும் தயாராகவில்லை; இவை உயரமான இடங்களுக்காக வடிவமைக்கப்பட்டவை.",
       "cards": [
         {
           "title": "கிடைமட்ட அச்சு காற்றாலைகள்",
@@ -5208,6 +5227,7 @@
     "hybrid": {
       "eyebrow": "கலப்பு ஆற்றல்",
       "title": "நம்பகமான மின்சாரத்திற்கான சூரிய + காற்றாலை கலப்பு அமைப்புகள்",
+      "notice": "படங்கள் உண்மையான உலக எடுத்துக்காட்டுகள் அல்ல, குறிப்புக்காக மட்டும். கையடக்க வடிவமைப்புகள் இன்னும் தயாராகவில்லை; இவை உயரமான இடங்களுக்காக வடிவமைக்கப்பட்டவை.",
       "cards": [
         {
           "title": "குடியிருப்புகளுக்கான சூரிய-காற்றாலை கலப்பு அமைப்பு",
@@ -5485,12 +5505,30 @@
         "Net Metering facility to export excess power to the grid"
       ],
       "suitableForItems": [
-        "Individual Houses",
-        "Apartments & Residential Communities",
-        "Commercial Buildings",
-        "Industries & Factories",
-        "Educational Institutions",
-        "Hospitals & Government Buildings"
+        {
+          "title": "Individual Houses",
+          "description": "Ideal for homes with usable roof space to offset household electricity bills and generate clean power."
+        },
+        {
+          "title": "Apartments & Residential Communities",
+          "description": "A shared rooftop system can supply common areas or divided resident loads with coordinated approvals."
+        },
+        {
+          "title": "Commercial Buildings",
+          "description": "Reduces daytime electricity costs for offices, shops, showrooms and other commercial properties."
+        },
+        {
+          "title": "Industries & Factories",
+          "description": "High-capacity systems help reduce operating power costs and improve energy reliability."
+        },
+        {
+          "title": "Educational Institutions",
+          "description": "Supports schools and colleges with lower recurring utility bills and practical sustainability goals."
+        },
+        {
+          "title": "Hospitals & Government Buildings",
+          "description": "Provides dependable solar generation for essential loads, with backup planning for continuity."
+        }
       ]
     },
     "capacityTable": {
