@@ -133,13 +133,13 @@ export default function Navbar() {
       <div className="absolute -left-10 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-sky-300/20 blur-3xl" />
       <div className="absolute -right-12 top-0 h-32 w-32 rounded-full bg-amber-200/20 blur-3xl" />
 
-      <div className="relative border-b border-slate-700 bg-white/5 text-white/90 backdrop-blur-xl">
+      <div className="relative border-b border-slate-600 bg-white/5 text-white/90 backdrop-blur-xl">
         <div className="mx-auto flex min-h-8 w-full flex-col items-start gap-1 px-3 py-1 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:gap-3 lg:px-8 text-xs tracking-wide leading-5">
           <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
             <Building2 className="h-3.5 w-3.5 shrink-0 text-[#d6b45e]" strokeWidth={1.8} aria-hidden="true" />
             {t.navbar.companyRegistration}
           </span>
-          <span className="flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
+          <span className="hidden lg:flex min-w-0 shrink-0 items-center gap-2 whitespace-nowrap">
             <svg className="h-3.5 w-5 shrink-0 rounded-[2px] shadow-sm" viewBox="0 0 30 20" role="img" aria-label="Indian flag">
               <rect width="30" height="20" fill="#138808" />
               <rect width="30" height="13.34" fill="#fff" />

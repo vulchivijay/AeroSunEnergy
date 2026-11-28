@@ -233,7 +233,7 @@ export default function Slider({
         type="button"
         aria-label={carousel.previousSlide}
         onClick={prev}
-        className="absolute left-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-amber-300/70 bg-linear-to-r from-amber-500 to-orange-500 text-white shadow-sm transition hover:from-emerald-600 hover:to-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600 sm:left-4 sm:h-12 sm:w-12"
+        className="absolute left-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200/50 bg-linear-to-r from-[#137c63] to-[#20A44A] text-white shadow-sm transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#20A44A] sm:left-4 sm:h-12 sm:w-12"
       >
         ‹
       </button>
@@ -241,7 +241,7 @@ export default function Slider({
         type="button"
         aria-label={carousel.nextSlide}
         onClick={next}
-        className="absolute right-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-amber-300/70 bg-linear-to-r from-amber-500 to-orange-500 text-white shadow-sm transition hover:from-emerald-600 hover:to-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600 sm:right-4 sm:h-12 sm:w-12"
+        className="absolute right-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200/50 bg-linear-to-r from-[#137c63] to-[#20A44A] text-white shadow-sm transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#20A44A] sm:right-4 sm:h-12 sm:w-12"
       >
         ›
       </button>
