@@ -34,7 +34,10 @@ const orbitron = Orbitron({
   fallback: ["monospace"],
 });
 
-const GTM_ID = process.env._NEXT_PUBLIC_GTM_ID;
+const GTM_ID =
+  process.env._NEXT_PUBLIC_GTM_ID ||
+  process.env._NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID ||
+  "GTM-MFRLD628";
 const GOOGLE_ADS_ID = process.env._NEXT_PUBLIC_GOOGLE_ADS_ID;
 const GA_MEASUREMENT_ID =
   process.env._NEXT_PUBLIC_GOOGLE_ANALYTICS_ID ||
@@ -42,7 +45,7 @@ const GA_MEASUREMENT_ID =
   process.env._NEXT_PUBLIC_GA_STREAM_ID;
 const GOOGLE_SITE_VERIFICATION =
   process.env._NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
-  "Ne4zcF695B2vvEORY-FzGcJ4gllWu8WKGvMhob3zz-A";
+  "4ake-o4myYSacZqH6saBrPJVLpD7JqBSdZr7OKjy6sk";
 const BING_SITE_VERIFICATION =
   process.env.BING_SITE_VERIFICATION || "CFCE648996D804079C4F28B5C09CE9D3";
 
