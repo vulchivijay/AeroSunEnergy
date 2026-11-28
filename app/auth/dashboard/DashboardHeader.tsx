@@ -228,34 +228,35 @@ export default function DashboardHeader({
                     const Icon = item.icon
 
                     return (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        aria-current={active ? 'page' : undefined}
-                        aria-label={t.navbar.dashboardPages[item.key]}
-                        title={sidebarCollapsed ? t.navbar.dashboardPages[item.key] : undefined}
-                        className={`flex min-h-10 shrink-0 items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm font-medium tracking-normal transition-colors md:w-full ${
-                          active
-                            ? 'bg-[#f5f5f3] text-slate-900'
-                            : 'text-slate-600 hover:bg-slate-50 hover:text-slate-950'
-                        } ${sidebarCollapsed ? 'md:justify-center md:px-0' : ''}`}
-                      >
-                        <Icon className="h-4 w-4 shrink-0 text-slate-500" aria-hidden="true" />
-                        <span className={sidebarCollapsed ? 'hidden' : 'truncate'}>
-                          {t.navbar.dashboardPages[item.key]}
-                        </span>
-                      </Link>
+                      <div key={item.href}>
+                        <Link
+                          href={item.href}
+                          aria-current={active ? 'page' : undefined}
+                          aria-label={t.navbar.dashboardPages[item.key]}
+                          title={sidebarCollapsed ? t.navbar.dashboardPages[item.key] : undefined}
+                          className={`flex min-h-10 shrink-0 items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm font-medium tracking-normal transition-colors md:w-full ${
+                            active
+                              ? 'bg-[#f5f5f3] text-slate-900'
+                              : 'text-slate-600 hover:bg-slate-50 hover:text-slate-950'
+                          } ${sidebarCollapsed ? 'md:justify-center md:px-0' : ''}`}
+                        >
+                          <Icon className="h-4 w-4 shrink-0 text-slate-500" aria-hidden="true" />
+                          <span className={sidebarCollapsed ? 'hidden' : 'truncate'}>
+                            {t.navbar.dashboardPages[item.key]}
+                          </span>
+                        </Link>
+                        {item.key === 'overview' && pathname === '/auth/dashboard' && sidebarContent && (
+                          <div className={sidebarCollapsed ? 'hidden' : 'hidden md:block'}>
+                            {sidebarContent}
+                          </div>
+                        )}
+                      </div>
                     )
                   })}
                 </section>
               )
             })}
           </nav>
-          {pathname === '/auth/dashboard' && sidebarContent && (
-            <div className={sidebarCollapsed ? 'hidden' : 'mt-1'}>
-              {sidebarContent}
-            </div>
-          )}
           <div className="mt-auto hidden border-t border-slate-100 pt-4 md:block">
             <p className={`mb-2 px-2 uppercase text-slate-400 text-xs font-semibold tracking-wide leading-5 ${
               sidebarCollapsed ? 'hidden' : ''
