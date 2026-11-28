@@ -1,4 +1,4 @@
-import { FeatureCard, BenefitCard, InfoPanel, SectionEyebrow, solarOfferingAccents, solarOfferingImages } from '@/app/components/ui';
+import { FeatureCard, BenefitCard, InfoPanel, SuitableForInfoPanel, SectionEyebrow, solarOfferingAccents, solarOfferingImages } from '@/app/components/ui';
 import type { Translations } from '@/lib/LocaleContext';
 
 export function SolarOfferingsSections({ t }: { t: Translations }) {
@@ -50,7 +50,7 @@ export function SolarOfferingsSections({ t }: { t: Translations }) {
             </div>
 
             <div className="space-y-5">
-              <InfoPanel title={solarPage.rooftop.suitableFor} content={suitableForLocalized} accent="emerald" />
+              <SuitableForInfoPanel title={solarPage.rooftop.suitableFor} content={suitableForLocalized} />
               <InfoPanel title={solarPage.rooftop.keyBenefits} content={rooftopBenefitsLocalized} accent="sky" />
             </div>
           </div>

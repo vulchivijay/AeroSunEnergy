@@ -129,7 +129,7 @@ export function HomeBrandsSection({ t }: { t: Translations }) {
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="relative z-10 mb-3 min-h-[19rem] overflow-hidden">
           <div className="relative z-10 max-w-5xl pt-10 pl-2">
-            <p className="inline-flex items-center gap-2 rounded-full bg-[#ffe89a] px-4 py-2 text-[#17472c] text-sm font-bold uppercase tracking-[0.06em] leading-5 shadow-sm lg:px-5 lg:text-lg">
+            <p className="inline-flex items-center gap-2 rounded-full bg-[#ffe89a] px-4 py-2 text-[#17472c] text-xs font-semibold uppercase leading-5 shadow-sm tracking-wide">
               <span className="h-2 w-2 shrink-0 rounded-full bg-current" aria-hidden="true" />
               {section.eyebrow}
             </p>

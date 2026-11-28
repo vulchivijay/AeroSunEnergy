@@ -1,5 +1,5 @@
 import { getAccentOrDefault } from "@/lib/utils/utils";
-import { FeatureCard, InfoPanel, RooftopSolarContentBlock, SectionEyebrow, SolarBenefitCard, solarOfferingImages, TrustRibbon } from "@/app/components/ui";
+import { FeatureCard, SuitableForInfoPanel, RooftopSolarContentBlock, SectionEyebrow, SolarBenefitCard, solarOfferingImages, TrustRibbon } from "@/app/components/ui";
 import { ArrowLeftRight, BadgeIndianRupee, BatteryCharging, MapPin, Network, ShieldCheck, Sun } from "lucide-react";
 import type { Translations } from '@/lib/LocaleContext';
 
@@ -145,20 +145,23 @@ export function HomeSolarOfferingsSections({ t }: { t: Translations }) {
               />
               <div className="mt-8">
                 {home.rooftopSolar.panels.map((panel) => (
-                  <InfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['amber', 'sky'] as const, 'emerald')} content={panel.content} />
+                  <SuitableForInfoPanel key={panel.title} title={panel.title} content={panel.content} />
                 ))}
               </div>
             </div>
-            <div role="region" aria-labelledby="system-types-title" className="relative isolate mt-12 scroll-mt-24 overflow-hidden px-4 py-8 sm:px-7 sm:py-10 lg:px-9">
+            <div role="region" aria-labelledby="system-types-title" className="relative isolate mt-12 scroll-mt-24 overflow-hidden rounded-[2rem] px-4 py-8 sm:px-7 sm:py-10 lg:px-9">
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_0%_0%,rgba(255,230,167,0.42),transparent_35%),radial-gradient(ellipse_at_100%_0%,rgba(147,171,89,0.15),transparent_24%)]" />
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(255,224,153,0.28),transparent_48%)]" aria-hidden="true" />
               <Sun className="pointer-events-none absolute left-1/2 top-5 hidden h-6 w-6 -translate-x-[7.2rem] text-amber-400 sm:block" aria-hidden="true" />
               <Sun className="pointer-events-none absolute left-1/2 top-5 hidden h-6 w-6 translate-x-[6.2rem] text-amber-400 sm:block" aria-hidden="true" />
-              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 shadow-sm py-2">
-                <span className="inline-flex h-2 w-2 shrink-0 items-center justify-center rounded-full bg-current text-emerald-700" aria-hidden="true"></span>
-                <p className="uppercase text-emerald-700 text-xs font-semibold tracking-wide leading-5">{home.systemTypeSection.eyebrow}</p>
-              </div>
+              <svg className="pointer-events-none absolute right-0 top-0 h-20 w-40 text-[#78934d]/70" viewBox="0 0 160 80" fill="none" aria-hidden="true">
+                <path d="M92 0c-2 23 9 37 31 42C128 20 115 5 92 0Z" fill="currentColor" />
+                <path d="M122 0c-1 24 11 38 32 43C157 20 145 5 122 0Z" fill="currentColor" />
+                <path d="M143 13c-1 22 5 37 17 45V16c-6-3-11-4-17-3Z" fill="currentColor" />
+              </svg>
 
               <div className="relative z-10 mx-auto w-full max-w-none">
+                <SectionEyebrow>{home.systemTypeSection.eyebrow}</SectionEyebrow>
                 <h3 id="system-types-title" className="mt-3 font-sans text-3xl font-bold leading-tight !tracking-tight text-[#0b4327] sm:text-4xl lg:text-[2.5rem]">
                   {home.systemTypeSection.title}
                 </h3>

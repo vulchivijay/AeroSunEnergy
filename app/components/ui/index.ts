@@ -17,6 +17,7 @@ export {
   solarSystemAccents,
 
   InfoPanel,
+  SuitableForInfoPanel,
 
 } from './SolarContentBlocks'
 export {
