@@ -1,11 +1,11 @@
 export const windSolutionImages = [
-  '/images/slider/slider-7.webp',
-  '/images/slider/slider-8.webp',
-  '/images/slider/slider-9.webp',
+  '/images/slider/slider-28.webp',
+  '/images/slider/slider-29.webp',
+  '/images/slider/slider-30.webp',
 ] as const
 
 export const hybridSolutionImages = [
-  '/images/slider/slider-13.webp',
-  '/images/slider/slider-14.webp',
-  '/images/slider/slider-15.webp',
+  '/images/slider/slider-31.webp',
+  '/images/slider/slider-32.webp',
+  '/images/slider/slider-33.webp',
 ] as const

@@ -120,7 +120,7 @@ export function HomeSolarOfferingsSections({ t }: { t: Translations }) {
                   label={t.ui.solarSolution}
                   imageSrc={solarOfferingImages[index]}
                 />
-                    ))}
+              ))}
             </div>
             <div className="mt-10 grid gap-6 lg:grid-cols-3">
               {home.moreSolarCards.map((card, index) => (
@@ -134,7 +134,7 @@ export function HomeSolarOfferingsSections({ t }: { t: Translations }) {
                   label={t.ui.solarSolution}
                   imageSrc={solarOfferingImages[solarCards.length + index]}
                 />
-                    ))}
+              ))}
             </div>
             <div className="mt-12">
               <RooftopSolarContentBlock
@@ -146,7 +146,7 @@ export function HomeSolarOfferingsSections({ t }: { t: Translations }) {
               <div className="mt-8">
                 {home.rooftopSolar.panels.map((panel) => (
                   <InfoPanel key={panel.title} title={panel.title} accent={getAccentOrDefault(panel.accent, ['amber', 'sky'] as const, 'emerald')} content={panel.content} />
-                      ))}
+                ))}
               </div>
             </div>
             <div role="region" aria-labelledby="system-types-title" className="relative isolate mt-12 scroll-mt-24 overflow-hidden px-4 py-8 sm:px-7 sm:py-10 lg:px-9">
@@ -167,59 +167,59 @@ export function HomeSolarOfferingsSections({ t }: { t: Translations }) {
 
               <div className="relative z-10 mt-7 grid items-stretch gap-4 lg:grid-cols-3 lg:gap-5">
                 {systemTypes.map((item, index) => {
-                        const featureIcons = [
-                          [ArrowLeftRight, BadgeIndianRupee],
-                          [BatteryCharging, MapPin],
-                          [Network, ShieldCheck],
-                        ]
-                        const cardStyles = [
-                          {
-                            background: 'bg-[linear-gradient(145deg,#e9f3e3,#f7f8e9)]',
-                            border: 'border-emerald-100',
-                            icon: 'bg-amber-100 text-emerald-900',
-                          },
-                          {
-                            background: 'bg-[linear-gradient(145deg,#fff0cf,#fff8e9)]',
-                            border: 'border-amber-100',
-                            icon: 'bg-emerald-100 text-emerald-900',
-                          },
-                          {
-                            background: 'bg-[linear-gradient(145deg,#e0f0eb,#f0f7ef)]',
-                            border: 'border-teal-100',
-                            icon: 'bg-amber-100 text-emerald-900',
-                          },
-                        ]
-                        const style = cardStyles[index % cardStyles.length]
-                        const icons = featureIcons[index % featureIcons.length]
+                  const featureIcons = [
+                    [ArrowLeftRight, BadgeIndianRupee],
+                    [BatteryCharging, MapPin],
+                    [Network, ShieldCheck],
+                  ]
+                  const cardStyles = [
+                    {
+                      background: 'bg-[linear-gradient(145deg,#e9f3e3,#f7f8e9)]',
+                      border: 'border-emerald-100',
+                      icon: 'bg-amber-100 text-emerald-900',
+                    },
+                    {
+                      background: 'bg-[linear-gradient(145deg,#fff0cf,#fff8e9)]',
+                      border: 'border-amber-100',
+                      icon: 'bg-emerald-100 text-emerald-900',
+                    },
+                    {
+                      background: 'bg-[linear-gradient(145deg,#e0f0eb,#f0f7ef)]',
+                      border: 'border-teal-100',
+                      icon: 'bg-amber-100 text-emerald-900',
+                    },
+                  ]
+                  const style = cardStyles[index % cardStyles.length]
+                  const icons = featureIcons[index % featureIcons.length]
 
-                        return (
-                          <article
-                            key={item.title}
-                            className={`flex h-full flex-col overflow-hidden rounded-[1.5rem] border ${style.border} ${style.background} p-4 shadow-[0_10px_18px_-12px_rgba(47,54,34,0.45)] sm:p-5 lg:p-6`}
-                          >
-                            <SystemTypeIllustration index={index} />
-                            <h4 className="mt-1 flex min-h-12 items-center justify-center rounded-full bg-[#155d38] px-3 py-2 text-center font-semibold text-xl !tracking-tight text-white">
-                              {item.title}
-                            </h4>
-                            <ul className="mt-4 grid flex-1 content-start gap-3">
-                              {item.content.map((description, featureIndex) => {
-                                const FeatureIcon = icons[featureIndex % icons.length]
+                  return (
+                    <article
+                      key={item.title}
+                      className={`flex h-full flex-col overflow-hidden rounded-[1.5rem] border ${style.border} ${style.background} p-4 shadow-[0_10px_18px_-12px_rgba(47,54,34,0.45)] sm:p-5 lg:p-6`}
+                    >
+                      <SystemTypeIllustration index={index} />
+                      <h4 className="mt-1 flex min-h-12 items-center justify-center rounded-full bg-[#155d38] px-3 py-2 text-center font-semibold text-xl !tracking-tight text-white">
+                        {item.title}
+                      </h4>
+                      <ul className="mt-4 grid flex-1 content-start gap-3">
+                        {item.content.map((description, featureIndex) => {
+                          const FeatureIcon = icons[featureIndex % icons.length]
 
-                                return (
-                                  <li key={description} className="flex items-start gap-3">
-                                    <span className={`grid h-14 w-14 shrink-0 place-items-center rounded-full ${style.icon}`}>
-                                      <FeatureIcon className="h-8 w-8" strokeWidth={2} aria-hidden="true" />
-                                    </span>
-                                    <p className="text-base leading-6 text-[#17264a] sm:text-md sm:leading-6">
-                                      {description}
-                                    </p>
-                                  </li>
-                                )
-                              })}
-                            </ul>
-                          </article>
-                        )
-                      })}
+                          return (
+                            <li key={description} className="flex items-start gap-3">
+                              <span className={`grid h-14 w-14 shrink-0 place-items-center rounded-full ${style.icon}`}>
+                                <FeatureIcon className="h-8 w-8" strokeWidth={2} aria-hidden="true" />
+                              </span>
+                              <p className="text-base leading-6 text-[#17264a] sm:text-md sm:leading-6">
+                                {description}
+                              </p>
+                            </li>
+                          )
+                        })}
+                      </ul>
+                    </article>
+                  )
+                })}
               </div>
             </div>
             <div className="relative isolate mt-12 overflow-hidden rounded-[2rem] p-5 sm:p-7 lg:p-9">

@@ -121,18 +121,18 @@ function SchemeBanner({ t }: { t: Translations }) {
         </div>
 
         <div className="mt-5 grid items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          <div className="relative isolate min-h-56 overflow-hidden rounded-xl border border-emerald-300/70 bg-gradient-to-br from-[#064e3b] to-[#047857] p-5 text-white shadow-sm sm:p-6">
+          <div className="relative isolate overflow-hidden rounded-xl border border-emerald-300/70 bg-gradient-to-br from-[#064e3b] to-[#047857] p-5 text-white shadow-sm sm:p-6">
             <div aria-hidden="true" className="pointer-events-none absolute -right-10 -top-12 -z-10 h-36 w-36 rounded-full bg-lime-300/15 blur-2xl" />
             <div className="uppercase text-emerald-100 text-xs font-semibold tracking-wide leading-5">{banner.cardLabel}</div>
             <div className="mt-5 text-3xl font-bold tracking-tight text-lime-200 sm:text-4xl">
               <DigitalNumber value={banner.subsidyAmount} />
             </div>
-            <div className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 mt-4 inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-semibold text-emerald-50 tracking-normal">
+            <div className="before:inline-block before:h-2 before:w-2 before:shrink-0 before:self-center before:align-middle before:rounded-full before:bg-current before:content-[''] before:mr-2 mt-4 inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs text-emerald-50 tracking-normal">
               {banner.max} {banner.perHome}
             </div>
           </div>
 
-          <div className="relative flex min-h-56 items-center gap-3 overflow-hidden rounded-xl border border-amber-200 bg-gradient-to-br from-[#fffdf7] to-[#fff3d8] p-5 shadow-sm sm:p-6">
+          <div className="relative flex items-center gap-3 overflow-hidden rounded-xl border border-amber-200 bg-gradient-to-br from-[#fffdf7] to-[#fff3d8] p-5 shadow-sm sm:p-6">
             <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-amber-400 text-amber-950 shadow-sm">
               <Info className="h-5 w-5" aria-hidden="true" />
             </span>
@@ -141,7 +141,7 @@ function SchemeBanner({ t }: { t: Translations }) {
             </p>
           </div>
 
-          <div className="relative isolate flex min-h-56 flex-col overflow-hidden rounded-xl border border-slate-700 bg-gradient-to-br from-[#172554] via-[#1e3a8a] to-[#312e81] p-5 text-white shadow-sm sm:p-6">
+          <div className="relative isolate flex flex-col overflow-hidden rounded-xl border border-slate-700 bg-gradient-to-br from-[#172554] via-[#1e3a8a] to-[#312e81] p-5 text-white shadow-sm sm:p-6">
             <div aria-hidden="true" className="pointer-events-none absolute -bottom-16 -right-10 -z-10 h-40 w-40 rounded-full bg-cyan-300/15 blur-2xl" />
             <div className="uppercase text-cyan-100 text-xs font-semibold tracking-wide leading-5">{banner.badgeSuffix}</div>
             <div className="mt-auto flex justify-center pt-5">
@@ -155,14 +155,14 @@ function SchemeBanner({ t }: { t: Translations }) {
                     initialDays="000"
                   />
                 </span>
-                <span className="mt-2 block uppercase text-indigo-100 text-xs font-semibold tracking-wide leading-5">
+                <span className="mt-2 block uppercase text-indigo-100 text-xs tracking-wide leading-5">
                   {banner.daysLabel}
                 </span>
               </div>
             </div>
           </div>
 
-          <div className="relative isolate flex min-h-56 flex-col overflow-hidden rounded-xl border border-violet-200 bg-gradient-to-br from-white to-violet-100 p-5 shadow-sm sm:p-6">
+          <div className="relative isolate flex flex-col overflow-hidden rounded-xl border border-violet-200 bg-gradient-to-br from-white to-violet-100 p-5 shadow-sm sm:p-6">
             <div aria-hidden="true" className="pointer-events-none absolute -right-8 -top-10 -z-10 h-28 w-28 rounded-full bg-fuchsia-300/30 blur-2xl" />
             <div className="uppercase text-violet-800 text-xs font-semibold tracking-wide leading-5">{banner.offerLabel}</div>
             <p className="mt-auto pt-5 text-violet-950 text-sm sm:text-base font-normal tracking-normal leading-6 sm:leading-7">{banner.offerText}</p>
@@ -178,7 +178,7 @@ function SchemeBanner({ t }: { t: Translations }) {
               href="https://pmsuryaghar.gov.in/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-full bg-emerald-800 px-5 py-3 text-sm font-bold text-white transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700 tracking-normal"
+              className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-full bg-emerald-800 px-5 py-3 text-sm text-white transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700 tracking-normal"
             >
               {capacityGuide.portalCta}
               <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
